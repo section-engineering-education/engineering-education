@@ -1,15 +1,15 @@
-### Prerequisites
-Before learning this tutorial you need to have learned java. Know some basic java concepts and know how to compile and run java programs. HTML basics are also needed before learning this tutorial.
-### Applet definition
 
+### Applet definition
 Applet are small java program that are primarily used in internet programming. To run an applet program, you require an applet viewer or a web browser that supports java.
 
 An applet performs many functions like any application program, which includes performing arithmetic operations, playing sounds, accepts inputs from the user and displaying graphics. A webpage can comprise texts static images and also the java applets. When an applet program runs in a web page it can display moving images, produce sounds, and produce graphics.
 
 To display a java applet program in a web page it needs to be linked to a HTML program.
 
-### Types of applets
+### Prerequisites
+Before learning this tutorial you need to have learned java. Know some basic java concepts and know how to compile and run java programs. HTML basics are also needed before learning this tutorial.
 
+### Types of applets
 Applets are categorized based on how they embed into a web page i.e. Local and Remote applets
 
     Local applets-is a locally developed and stored applet. A local applet does not need to use an internet connection to be located simply because the directory is in the local system.
