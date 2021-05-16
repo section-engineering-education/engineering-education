@@ -16,12 +16,17 @@ In this tutorial, we learn the basics of Node.js REPL, how we can use this amazi
 ### Prerequisites
 
 This tutorial requires:
-1. Node.js Installed in your development local machine.
-2. Basic knowledge of JavaScript and Node.js.
+1. [Node.js](https://nodejs.org/en/download/) Installed in your development local machine.
+2. Basic knowledge of [JavaScript](https://www.section.io/engineering-education/search/?q=javascript) and [Node.js](https://www.section.io/engineering-education/search/?q=node.js).
 
 ### Objectives
 
-At the end of this tutorial, you should be able to use REPL tool to run your Node.js scripts.
+At the end of this tutorial, you should be able to :
+
+1.Basics on Node.js REPL tool.
+2.Perform various arithmetic operations
+3.Creating and using and functions 
+4.Creating global variables
 
 ### Getting started with REPL
 
@@ -214,10 +219,17 @@ undefined
 
 ### Conclusion
 
-In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment. 
-We've seen how we can perform different tasks such as basic artihmetic operations and creating functions without the necessity to create a `.js` file.  
+In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment.  
+We've various performed arithmetic operations using REPL. These basic operations included additions, subtractions, multiplications, quotients and division.
+We also imported the `[Math](https://mathjs.org/)` library in our REPL environment and accessed several methods to perform arithmetic operations such as generating a random number.  
+
+We learned how to create and use various methods and variables in the REPL. We noted that these are defined the same way as it would be in the `.js` files.
+Indeed, we further saw that the variables created remain accessible until the REPL session is terminated.
+
+
 
 ### Further reading
-Follow [this](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.
+You can follow these links to learn more about Node.js REPL:
+1.[official documentation](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.
 
 Happy Coding!!
