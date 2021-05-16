@@ -1,5 +1,5 @@
 ### Introduction
-Choosing the proper JavaScript framework for a project can be challenging and confusing, especially if many options that are resourceful and capable of facilitating project requirements are available. However, choosing the right one requires knowledge of several critical aspects.
+Choosing the proper JavaScript framework for a project can be challenging and confusing, especially if many options that are resourceful and capable of facilitating project requirements are available. However, selecting the right one requires knowledge of several critical aspects.
 
 For a developer choosing between different best frontend platforms like Angular and React for a project can be a struggle. At some point, developers get stuck even when making simple features work.
 
@@ -25,17 +25,17 @@ Price | Open-source | Open-source
 
 Next will be to compare the factors in details as below:
 
-#### Popularity Growth
+### Popularity Growth
 Angular and React have gained popularity over time in the discussion forums and a number of the developers’ community. However, React.js is a library compared to Angular, which is a fully-fledged framework.
 
 On the contrary, React.js, a library with comparatively more stars than Angular, is a fully-fledged framework. The main reason why React.js has more number of stars and fewer issues is because of its early release.
 
-#### Performance
+### Performance
 React.js is known for having boosting performance, but also Angular is not lagging in the competition.
 
 Angular has what it takes to optimal coding practices, leading to an established level of programming where performance is greatly enhanced. Therefore, the developers need to consider it while evaluating the Angular and React performance.
 
-For instance, optimizing the [digest cycle](https://www.dotsquares.com/news_events/what-is-digest-cycle-in-angular-js-and-how-does-it-make-two-way-data-binding-possible/#:~:text=Digest%20cycle%20is%20what%20Angular,the%20code%20encounters%20a%20directive.) for the proposed code structure. One can develop a [codebase](https://www.techopedia.com/definition/23962/codebase) for further modules, monitor and optimize the loop while verifying the changes that have been previously assessed.
+For instance, optimizing the [digest cycle](https://www.dotsquares.com/news_events/what-is-digest-cycle-in-angular-js-and-how-does-it-make-two-way-data-binding-possible/) for the proposed code structure. One can develop a [codebase](https://www.techopedia.com/definition/23962/codebase) for further modules, monitor and optimize the loop while verifying the changes that have been previously assessed.
 
 Angular has the [cacheFactory](https://docs.angularjs.org/api/ng/service/$cacheFactory) that works for memorization, which can be used for recalculating the data later.
 
@@ -43,8 +43,8 @@ React.js introduces the component reusability. It is a common practice among des
 
 Practising such coding habits leads to app performance consistency. It also ensures code quality and maintenance even if the application is complex.
 
-#### Testing
-A dynamically typed language like JavaScript makes testing challenging to achieve fully. Therefore code written in JavaScript has to go through a robust set of tests.
+### Testing
+JavaScript is a dynamically typed language and, thus, makes testing challenging to achieve fully. Therefore code written in JavaScript has to go through a robust set of tests.
 
 Angular offers several features, including isolation of the unit code written with testability in mind.
 
@@ -58,8 +58,8 @@ React.js also comes with test runners such as [Ava](https://www.npmjs.com/packag
 
 Jest is compatible with other features like [mocked modules](https://jestjs.io/docs/manual-mocks), [timers](https://jestjs.io/docs/timer-mocks), and [Jdsm](https://openbase.com/js/jest-date-mock) support. Also, libraries like Mocha are well-suited with requirements specific to the browser and support simulations such as a real browser.
 
-#### Code Quality
-Angular comes with a tool that improves code quality known as [AngularCLI](https://angular.io/cli). It supports integrations from [Angular Core](https://angular.io/api/core#:~:text=%40angular%2Fcorelink&text=Implements%20Angular's%20core%20functionality%2C%20low%2Dlevel%20services%2C%20and%20utilities.&text=Defines%20the%20decorators%20that%20supply,various%20testing%20and%20debugging%20facilities.), [Angular material](https://material.angular.io/guide/getting-started), making project deliveries easy and maintaining code quality.
+### Code Quality
+Angular comes with a tool that improves code quality known as [AngularCLI](https://angular.io/cli). It supports integrations from [Angular Core](https://angular.io/api/core), [Angular material](https://material.angular.io/guide/getting-started), making project deliveries easy and maintaining code quality.
 
 With AngularCLI, the learning curve of Angular has significantly been reduced. Developers can predict compilation behaviour. Due to this, the smooth build is generated, and iterating efforts by developers reduced, which may lead to bad code quality in the end.
 
@@ -67,8 +67,8 @@ React.js has many things that increase the code quality and give an identity dif
 
 It is easy to maintain code quality because of the code review practices put by React.js through the use of [Linters](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/). Moreover, it helps in generating consistent coding practices among the developers in a given organization. Linters follows a set of strict rules, and therefore, the codebase is kept consistent.
 
-#### Code Maintainability
-Angular is known for developing single-page applications. The single-page applications have complex structures with several programming modules. They tend to place program files in separate files.
+### Code Maintainability
+Angular is used for developing single-page applications. The single-page applications have complex structures with several programming modules. They tend to place program files in separate files.
 
 To maintain such a complex structure and keeping an application rich leads to a framework that allows for complex maintainability and capability to manage complex naming conventions.
 
@@ -85,7 +85,7 @@ React.js does allow developers to write in splits and makes it usable by compute
 
 React.js allows developers to create customized components that can display the uncontrolled input fields. Moreover, components can be easily recognized with unique naming conventions.
 
-#### Server Rendering
+### Server Rendering
 In Angular application is rendered first by creating a static view, then it gets interactive. It is entirely on developers to use both JSON and [client-side caching](https://medium.com/js-360/intro-to-client-side-caching-with-service-worker-354ce8ae831a) to boost the server's performance. Angular is the best when it comes to traffic reduction between client and server.
 
 An angular test requirement can reduce the code by minimizing the need for recompiling. It also quickly reflects the changes made in the frontend.
@@ -94,14 +94,14 @@ For the application to be [SEO](https://moz.com/beginners-guide-to-seo) strong, 
 
 Also, [renderToStaticMarkup()](https://reactjs.org/docs/react-dom-server.html) can be used to refrain from creating Document Object Model ([DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)) attributes such as data-react-id, responsible for creating a static page generator.
 
-#### Optimizing the bundle size
+### Optimizing the bundle size
 Working with single-page applications is easy but tricky when it comes to managing the bundle file size. Most websites do not load at first click, and this is so because the file has to be downloaded at the initial page called a bundle file. Therefore the file has to be optimized as much as possible.
 
 The bundle file size is essential to consider when developing an enterprise-grade application for it to run smoothly. In addition, analyzing the bundle file size is essential for optimizing the application's codebase.
 
 It is crucial to monitor the bundle file size because new features constantly added, and dependencies occur over the new requirements.
 
-#### Learning Curve
+### Learning Curve
 Angular is broad and flexible; for this reason, developers find it difficult to cover most topics in Angular at the initial stage. However, it is worth giving ample time at the first phase to enjoy better developing the applications. Angular has a higher learning curve compared to that of React.js at the initial stage.
 
 One is advised to pick on one based on project requirements. For example, angular is best when it comes to solving the most challenging problems in large-scale projects.
@@ -129,10 +129,10 @@ React.js will not request a developer first to learn and encounter the complexit
 ### Angular and React.js Use Cases
 Angular and React.js have both made popular applications used worldwide. Below are two cases for using Angular and React.js:
 
-#### Case 1:
+### Case 1:
 For a complex UI project and starting off the project from scratch, React.js is simpler to use. On the other hand, if a developer has a longer learning curve, Angular and React.js will be best because of their short learning curve.
 
-#### Case 2:
+### Case 2:
 Angular can be regarded as a complete package since it facilitates important functionalities as a built-in part. 
 
 One cannot compare Angular functionalities with a library like React.js. Nevertheless, typescript experts opt to use it as their framework of development.
