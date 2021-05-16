@@ -1,9 +1,23 @@
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-timers/
+title: Getting Started With Node.js Timers
+description: This tutorial will introduce and explain the Node.js timer module and how it can be used to control the execution of code.
+author: owino-wendy
+date: 2021-05-16T00:00:00-21:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/nodejs-timers/hero.jpg
+    alt: Node.js timers example image
+---
 ### Introduction
 Node.js has several utilities that we can use to schedule the execution of our code.
 Unlike most Node.js modules, the timer module is not imported. The methods are globally accessible to provide conformity with the JavaScript browser API.
 
-In this tutorial, we look at the Node.js timer module and how we can use this utility to control the execution of our codes.
+In this tutorial, we look at the Node.js timer module and how we can use this utility to control the execution of code.
 
 ### Table of contents
 
@@ -233,5 +247,5 @@ You can also get more information about Node.js timers [here](https://nodejs.org
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/) and [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
 
