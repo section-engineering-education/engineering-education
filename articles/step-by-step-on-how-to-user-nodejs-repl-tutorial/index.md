@@ -236,8 +236,8 @@ Indeed, we further saw that the variables created remain accessible until the RE
 
 ### Further reading
 You can follow these links to learn more about Node.js REPL:  
-1.[official documentation](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.
-2.[Resource](https://www.w3resource.com/node.js/nodejs-repl.php)
-3.[javapoint](https://www.javatpoint.com/nodejs-repl)
+1.[official documentation](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.  
+2.[Resource](https://www.w3resource.com/node.js/nodejs-repl.php)  
+3.[javapoint](https://www.javatpoint.com/nodejs-repl)  
 
 Happy Coding!!
