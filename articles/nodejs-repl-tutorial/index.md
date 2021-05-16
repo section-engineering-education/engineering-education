@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-repl-tutorial/
+title: Getting Started with Node.js REPL
+description: This tutorial will introduce and explain the Node.js REPL environment and how we can use this tool to run and debug JavaScript.
+author: odiwuor-amos
+date: 2021-05-16T00:00:00-21:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/nodejs-repl-tutorial/hero.jpg
+    alt: Node.js REPL example image
+---
+Node.js `Read-Eval-Print-Loop` (REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. 
+<!--more-->
 
-Node.js `Read-Eval-Print-Loop` (REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. It is also important to note that this tool does not require file creation to write code. REPL comes ready to use with the Node.js development environment.
+It is also important to note that this tool does not require file creation to write code. REPL comes ready to use with the Node.js development environment.
 
 A REPL has the following:
 - A read function, which accepts an expression from the user and parses it into a data structure in memory.
