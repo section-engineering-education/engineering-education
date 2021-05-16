@@ -1,15 +1,17 @@
 ### Introduction
 
-Node.js `Read-Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions.
-It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell.  
-It's also important to note that this tool does not require file creation to write codes. It comes with ready to use Node.js development environment.
+Node.js `Read-Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. It is also important to note that this tool does not require file creation to write codes. REPL comes with ready to use Node.js development environment.
 
 In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating `.js` files.
 
 ### Table of contents
-1. Introduction to REPL
-2. Basic Arithmetic operations using REPL
-3. Creating methods and variables using REPL
+
+- [Prerequisites](#prerequisites)
+- [Objectives](#objectives)
+- [Getting started with REPL](#getting-started-with-repl)
+- [Executing code using REPL](#executing-code-using-repl)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
 ### Prerequisites
 
@@ -18,6 +20,7 @@ This tutorial requires:
 2. Basic knowledge of JavaScript and Node.js.
 
 ### Objectives
+
 At the end of this tutorial, you should be able to use REPL tool to run your Node.js scripts.
 
 ### Getting started with REPL
@@ -68,13 +71,13 @@ undefined
 
 As shown in the output, you can as well use `Ctrl+D` or type `.exit`.  
 
-### Executing code using REPL.
+### Executing code using REPL
 
 As discussed previously, this tool simplifies work by providing a quick way to test Node.js code without creating files.  
 > It's also important to note that any valid JavaScript code can be executed using REPL.
 
 #### Performing Arithmetical operations in REPL
-In the previous example, we printed 'hello world' string on the screen, in this section let's dive in and look at arithmetics:  
+In the previous example, we printed `hello world` string on the screen, in this section let's dive in and look at arithmetics:  
 
 In your terminal, start REPL: 
 
@@ -83,7 +86,7 @@ node
 > 
 ```
 
-Let's perform basic addition, subtraction,modulus, division and multipliation respectively:
+Let's perform basic addition, subtraction, modulus, division and multiplication respectively:
 
 **Output:**  
 
@@ -145,7 +148,7 @@ node
 
 ```bash 
 Hello world
-undefined // this is the return value of this method, console.log()
+undefined # this is the return value of this method, console.log()
 > 
 ```
 
@@ -155,7 +158,7 @@ Next, let's create a function to add two numbers:
 
 ```bash
 > function addTwoNumbers(firstNumber,lastNumber) {
-... console.log(firstNumber+ lastNumber)
+... console.log(firstNumber + lastNumber)
 ... }
 undefined
 ```
@@ -172,7 +175,7 @@ undefined
 > 
 ```
 
-We call this method and pass it two parameters, `addTwoNumbers(20,40)`( you're free to pass any integer value).
+We call this method and pass it two parameters, `addTwoNumbers(20,40)` (you're free to pass any integer value).
 By pressing ENTER, the result is displayed on the screen as shown above.  
 
 
