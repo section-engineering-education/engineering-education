@@ -1,30 +1,31 @@
-### Prerequisites
-Before learning this tutorial you need to have learned java. Know some basic java concepts and know how to compile and run java programs. HTML basics are also needed before learning this tutorial.
 ### Applet definition
 
-Applet are small java program that are primarily used in internet programming. To run an applet program, you require an applet viewer or a web browser that supports java.
+Applet are small Java program that are primarily used in internet programming. To run an applet program, you require an applet viewer or a web browser that supports Java.
 
-An applet performs many functions like any application program, which includes performing arithmetic operations, playing sounds, accepts inputs from the user and displaying graphics. A webpage can comprise texts static images and also the java applets. When an applet program runs in a web page it can display moving images, produce sounds, and produce graphics.
+An applet performs many functions like any application program, which includes performing arithmetic operations, playing sounds, accepts inputs from the user and displaying graphics. A webpage can comprise texts static images and also the Java applets. When an applet program runs in a web page it can display moving images, produce sounds, and produce graphics.
 
-To display a java applet program in a web page it needs to be linked to a HTML program.
+To display a Java applet program in a web page it needs to be linked to a HTML program.
+
+### Prerequisites
+Before learning this tutorial you need to have learned Java. Know some basic Java concepts and know how to compile and run Java programs. HTML basics are also needed before learning this tutorial.
 
 ### Types of applets
 
 Applets are categorized based on how they embed into a web page i.e. Local and Remote applets
 
-    Local applets-is a locally developed and stored applet. A local applet does not need to use an internet connection to be located simply because the directory is in the local system.
+Local applets-is a locally developed and stored applet. A local applet does not need to use an internet connection to be located simply because the directory is in the local system.
 
-    Remote applet-is an applet stored in a remote computer that is connected to the internet. We downloaded it from the internet into our system and run it.
+Remote applet-is an applet stored in a remote computer that is connected to the internet. We downloaded it from the internet into our system and run it.
 
 The URL address specified in the applet’s HTML document as the CODEBASE is used to locate and load a remote applet
 
-        CODEBASE= http://www.netserve.com/applets
+CODEBASE= http://www.netserve.com/applets
 
 ### Preparing to write an applet
 
 To write and run an applet program, you need to have installed an applet viewer or a browser that supports java.
 
-1.  To build an applet code  .java
+1.  To build an applet code  .Java
 
 2.  To create an executable applet .class
 
@@ -34,12 +35,12 @@ To write and run an applet program, you need to have installed an applet viewer 
 
 5.  Create a HTML file.
 
-6.  The applet code is tested using browsers that supports java or an applet viewer.
+6.  The applet code is tested using browsers that supports Java or an applet viewer.
 
 ### Helloworld applet
 
 The following is a hello world applet named Hellojava.Java
-```java
+```Java
 
         Import Java.awt.*
 
@@ -54,7 +55,7 @@ The following is a hello world applet named Hellojava.Java
            {
 
                g.drawstring (“Hello world”,25,50);
-
+                /*the code is used to display hello world*/
            }
 
         }
@@ -73,9 +74,9 @@ There are five primary stages to follow to create an applet as stated below:
 
 5.  **DISPLAY/ PAINT**- this occurs once the output operations are to be performed on the screen. it is invoked once the applet once to repaint itself or after the start state start ().
 
-### Differences between an applet and a java stand alone application 
+### Differences between an applet and a Java stand alone application 
 
-Applets and standalone applications are java programs but they still differ because an applet completes slight tasks in the internet. An applet is not a full featured application. The differences are as stated.
+Applets and standalone applications are Java programs but they still differ because an applet completes slight tasks in the internet. An applet is not a full featured application. The differences are as stated.
 
 •   An applet does not use the main () method to start its code execution.
 
@@ -83,15 +84,15 @@ Applets and standalone applications are java programs but they still differ beca
 
 •   An applet follows strict rules that include restrictions and limitations to enhance security of the systems.
 
-•   To view an applet you need a JVM java virtual machine.
+•   To view an applet you need a JVM Java virtual machine.
 
 •   Applets cannot be run independently and are therefore run inside a web page using HTML tags, unlike the standalone application that is run independently.
 
 •   Applet may not use libraries from other languages.
 
-### Conversion of java application to applet
+### Conversion of Java application to applet
 
-A graphical java application that uses Abstract Windows Toolkit (AWT)and one that opens with the java program launcher can be easily converted into an applet and loaded into a web page in conversion of an application to an application to an applet we follow the steps below:
+A graphical Java application that uses Abstract Windows Toolkit (AWT)and one that opens with the Java program launcher can be easily converted into an applet and loaded into a web page in conversion of an application to an application to an applet we follow the steps below:
 
 1.  Create a HTML page with specific tasks to include an applet code.
 
@@ -111,10 +112,10 @@ A graphical java application that uses Abstract Windows Toolkit (AWT)and one tha
 
 An applet is invoked into a HTML file through embedding its directive to the HTML file.
 
-We view a HTML file through a java-enabled browser or an applet-viewer the basis of embedding an applet in a HTML file is usually the <applet> </applet> tags. The <applet> tag specifies the applet that needs to run . the parameters of width and height are also included to specify the panel size on which an applet should run. The </applet> tag closes the applet directives in the HTML file. Any browser that is not java enabled does not process information contained between the tags <applet> </applet> but processes other information not contained in the applet tags and not related to the applet.
+We view a HTML file through a Java-enabled browser or an applet-viewer the basis of embedding an applet in a HTML file is usually the <applet> </applet> tags. The <applet> tag specifies the applet that needs to run . the parameters of width and height are also included to specify the panel size on which an applet should run. The </applet> tag closes the applet directives in the HTML file. Any browser that is not Java enabled does not process information contained between the tags <applet> </applet> but processes other information not contained in the applet tags and not related to the applet.
 
 How to invoke an applet.
-```java
+```Java
     Import Java.awt.*
 
         Import Java.applet.*
@@ -123,12 +124,12 @@ How to invoke an applet.
 
         {
 
-           public void paint (graphics g) 
+           public void paint (graphics g) /*in drwawing the applet output we use the paint() which includes the graphics parameter describing the graphics environment on which an applet runs*/
 
            {
 
                g.drawstring (“My institution is one of the best”, 320,120);
-
+                /*the code displays my institution is one of the best*/
            }
 
         }
@@ -150,7 +151,15 @@ Below is how you invoke “My institution” applet .
     </html>
 ```
 ### Conclusion
-Through applet programming we can be able to modify our website and make it more fun and attractive. I hope this article be of great help in your coding life.
+In this tutorial we have learnt:
+1. What is an applet
+2. Types of applets
+3. Preparation of writing an applet program
+4. Life cycle of an applet
+5. Differences between an applet and a Java standalone application and the conversion 
+6. Invoking of an applet program 
+
+Happy coding.
 
 
 
