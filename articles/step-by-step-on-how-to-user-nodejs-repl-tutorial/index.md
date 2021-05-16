@@ -1,14 +1,14 @@
 ### Introduction
 
-Node.js `Read-Eval-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. It is also important to note that this tool does not require file creation to write codes. REPL comes with ready to use Node.js development environment.
+Node.js `Read-Eval-Print-Loop` (REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. It is also important to note that this tool does not require file creation to write code. REPL comes ready to use with the Node.js development environment.
 
 A REPL has the following:
-- A read function, which accepts an expression from the user and parses it into a data structure in memory .
-- An eval function, which takes the data structure and evaluates.
+- A read function, which accepts an expression from the user and parses it into a data structure in memory.
+- An eval function, which takes the data structure and evaluates the expression.
 - A print function, which prints the result.
 - A loop function, which runs the above three commands until termination
 
-In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating `.js` files.
+In this tutorial, we learn the basics of Node.js REPL and how we can use this amazing tool to run scripts without creating `.js` files.
 
 ### Table of contents
 
@@ -27,12 +27,12 @@ This tutorial requires:
 
 ### Objectives
 
-At the end of this tutorial, you should be able to :
+At the end of this tutorial, you would be able to:
 
-1.Basics on Node.js REPL tool.
-2.Perform various arithmetic operations
-3.Creating and using and functions 
-4.Creating global variables
+1. Understand the basics of the Node.js REPL tool.
+2. Perform various arithmetic operations
+3. Create and use functions within the REPL 
+4. Create global variables
 
 ### Getting started with REPL
 
@@ -174,7 +174,7 @@ Next, let's create a function to add two numbers:
 undefined
 ```
 
-We've a function `addTwoNumbers(arguments)` which takes two arguments, `firstNumber` and `lastNumber`.
+We have a function `addTwoNumbers(arguments)` which takes two arguments, `firstNumber` and `lastNumber`.
 This function, whenever it's called, logs out the addition of these two numbers.  
 
 **Output:**
@@ -226,18 +226,14 @@ undefined
 ### Conclusion
 
 In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment.  
-We've various performed arithmetic operations using REPL. These basic operations included additions, subtractions, multiplications, quotients and division.
-We also imported the `[Math](https://mathjs.org/)` library in our REPL environment and accessed several methods to perform arithmetic operations such as generating a random number.  
+We have performed various arithmetic operations using REPL. We also imported the [Math](https://mathjs.org/) library into our REPL environment and accessed several methods to perform arithmetic operations such as generating a random number. We learned how to create and use various methods and variables in the REPL. We noted that these are defined the same way as they would be in the .js files. We also observed that the variables created remain accessible until the REPL session is terminated.
 
-We learned how to create and use various methods and variables in the REPL. We noted that these are defined the same way as it would be in the `.js` files.
-Indeed, we further saw that the variables created remain accessible until the REPL session is terminated.
+### Further Reading
 
+You can follow these links to learn more about Node.js REPL:
 
-
-### Further reading
-You can follow these links to learn more about Node.js REPL:  
-1.[official documentation](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.  
-2.[Resource](https://www.w3resource.com/node.js/nodejs-repl.php)  
-3.[javapoint](https://www.javatpoint.com/nodejs-repl)  
+- [Node.js Official Documentation](https://nodejs.dev/learn/how-to-use-the-nodejs-repl)  
+- [Await keyword in REPL](https://nodejs.org/api/repl.html#repl_await_keyword)  
+- [JavaScript Shells](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells)  
 
 Happy Coding!!
