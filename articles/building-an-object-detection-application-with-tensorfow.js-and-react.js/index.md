@@ -7,7 +7,7 @@ Object detection is a method in computer vision and image processing that allows
 ### Prerequisites
 
 1. You need to have installed [Visual Studio](https://visualstudio.microsoft.com/) code editor on your computer. 
-2. A Linux operating system is preferred over Windows. However, Windows users can use a Windows 10 machine. For Linux users, any Linux machine is preferred, but I used Ubuntu 20.04 for this project. 
+2. A Linux operating system is preferred over Windows. For Linux users, any Linux operating sstem is preferred, but I used Ubuntu 20.04 for this project. 
 3. A machine with really good hardware specs is recommended for your machine to run the program on your local computer without peril i.e., a powerful processor and RAM of 4gb and above. 
 4. A webcam is also required to perform object detection in real-time.
 
@@ -87,7 +87,7 @@ import "./App.css";
 import { drawRect } from "./utilities";
 ```
 
-The next thing that we are going to do is to load our network into our model. This is achieved by issuing the following command:
+The second thing that we are going to do is to load our 'cocossd' model. This is achieved by issuing the following command:
 
 ```bash
     const net = await cocossd.load();
@@ -97,7 +97,7 @@ We first create a new variable called 'net'. We then wait for the 'cocossd' mode
 
 ### Make detection using TensorFlow.js
 
-The next thing that we want to do here is to make the detection using our computer webcam. We achieve this by issuing the following command:
+The third thing that we want to do here is to make the detection using our computer webcam. We achieve this by issuing the following command:
 
 ```bash
     const obj = await net.detect(video);
@@ -144,7 +144,7 @@ It is then executed with the command:
 ```
 This enables bounding boxes to be drawn on the video.
 
-To access and tinker with the complete block of code, you can find it [here](https://replit.com/@wmkinyan/RealTimeObjectDetectionTFJSReact#README.md).
+To access and tinker with the complete block of code, you can find it [here](https://github.com/wmkinyan/RealTimeObjectDetectionTFJSReact/).
 
 ### Conclusion
 
@@ -157,4 +157,3 @@ That wraps it up! In this tutorial, we have learned how to build an object detec
 1. [React](https://reactjs.org/)
 2. [TensorFlow](https://www.tensorflow.org/)
 3. [COCO SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
-4. [Full code](https://github.com/wmkinyan/RealTimeObjectDetectionTFJSReact/)
