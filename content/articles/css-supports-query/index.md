@@ -1,6 +1,6 @@
 ### Introduction
 
-A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders it into a useful visual representation. According to Wikipedia:
+A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders them into a useful visual representation. According to Wikipedia:
 
 > A browser engine is a core software component of every major web browser. The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
 
@@ -47,11 +47,11 @@ To demonstrate what problems may arise when a CSS feature isn't supported by a w
 
 _For more information about browser support for various CSS rules, visit [this site](https://caniuse.com/)._
 
-There are a major percentage of users who use older browser versions. New CSS features are being introduced on a regular basis. This makes supporting new features for older browser versions impractical. To solve this problem, we use the `@supports` feature query.
+There is a major percentage of users who use older browser versions. New CSS features are being introduced regularly. This makes supporting new features for older browser versions impractical. To solve this problem, we use the `@supports` feature query.
 
 ### Workaround using @supports
 
-The `@supports` CSS rule is used to specify CSS rules on the basis of browser support for one or more CSS features. This is called a feature query.
+The `@supports` CSS rule is used to specify CSS rules based on browser support for one or more CSS features. This is called a feature query.
 
 Let us start building a basic website to demonstrate the use of `@supports`. Open a text editor and create a file named `index.html`.
 
@@ -237,5 +237,5 @@ By using the `@supports` feature query, web developers can ensure can reach a wi
 To expand your knowledge about web rendering engines and browser support, check out the resources below:
 
 - [Behind the scenes of browser rendering](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/)
-- [Browser engine](https://en.wikipedia.org/wiki/Browser_engine#:~:text=A%20browser%20engine%20(also%20known,on%20a%20user%27s%20device.) - Wikipedia
+- [Browser engine](https://en.wikipedia.org/wiki/Browser_engine) - Wikipedia
 - [A tool to check browser compatibility](https://caniuse.com/)
