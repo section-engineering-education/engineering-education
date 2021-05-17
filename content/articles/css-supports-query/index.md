@@ -230,7 +230,7 @@ In the above example, we use the `@supports` feature query and the **not** opera
 - We took the `position: sticky` rule as an example and saw how it breaks in Firefox 22.
 - We used the `@supports` feature query to fix this problem and made it work in Firefox 22.
 
-By using the `@supports` feature query, web developers can ensure can reach a wider audience and ensure that websites work flawlessly with older browsers.
+By using the `@supports` feature query, web developers can ensure can reach a wider audience and ensure that websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
 
 ### Further Reading
 
