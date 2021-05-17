@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/mvc-mvp-mvvm/
-title: An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
+title: What are Architectural Patterns in Android?
 description: This article discussed the various architectural patterns used to design applications in Android.
 author: kanishkvardhan-a-n
 date: 2021-05-17T00:00:00-16:00
