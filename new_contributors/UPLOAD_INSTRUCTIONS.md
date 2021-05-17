@@ -41,7 +41,7 @@ Within the articles folder, create a new folder using the intended url for the a
 
 Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. For example:
 ```
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+![image title](/new-folder-name/image-name.jpg)
 ```
 If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
 
