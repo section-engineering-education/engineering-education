@@ -151,9 +151,3 @@ That wraps it up! In this tutorial, we have learned how to build an object detec
 2. [TensorFlow](https://www.tensorflow.org/)
 3. [COCO SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
 4. [Full code](https://github.com/wmkinyan/RealTimeObjectDetectionTFJSReact/)
-
----
-title: Sharon Kinyan
-type: engineering-education/author
----
-Sharon is a Kabarak University graduate who is passionate about coding and technologies that automate and improve the use of computer vision to solve real world problems. Her interests are in building web and mobile development using Artificial Intelligence. 
