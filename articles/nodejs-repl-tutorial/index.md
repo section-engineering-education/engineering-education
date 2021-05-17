@@ -6,7 +6,7 @@ url: /engineering-education/nodejs-repl-tutorial/
 title: Getting Started with Node.js REPL
 description: This tutorial will introduce and explain the Node.js REPL environment and how we can use this tool to run and debug JavaScript.
 author: odiwuor-amos
-date: 2021-05-16T00:00:00-21:00
+date: 2021-05-17T00:00:00-21:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
