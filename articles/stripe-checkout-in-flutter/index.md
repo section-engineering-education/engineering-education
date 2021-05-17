@@ -341,7 +341,7 @@ To see the payments made, navigate to the payment link on the sidebar of the das
 ### Conclusion
 In this tutorial, we learned how to integrate stripe checkout in a flutter. The tutorial explained a stepwise implementation with a mini-project. 
 
-You can find the project [here](). Create an API key and secret in the stripe dashboard to use when running the project on your computer. Reach out to me in case of any questions.
+You can find the project [here](https://github.com/jerimkaura/flutter-book/tree/main/stripe-checkout-flutter). Create an API key and secret in the stripe dashboard to use when running the project on your computer. Reach out to me in case of any questions.
 
 ### Further reading
 - [Stripe payment flutter package](https://pub.dev/packages/stripe_payment).
