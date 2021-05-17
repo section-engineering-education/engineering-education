@@ -2,12 +2,12 @@ Node.js is a very popular JavaScript framework. Node.js has been used to create 
 
 In most cases, Node.js developers use open-source [libraries and frameworks](/engineering-education/most-useful-nodejs-packages/) such as [Express.js](/engineering-education/express/). These libraries are readily available in the NPM registry.
 
-Whenever you use such packages, there is a lot of abstraction as you don't utilize the core functionalities of Node.js. The low-level logic Node.js of your application is hidden from you as these packages process and execute raw Node.js behind the scenes.
+Whenever you use such packages, there is a lot of abstraction hence you don't utilize the core functionalities of Node.js. The low-level logic Node.js of your application is hidden from you as these packages process and execute raw Node.js behind the scenes.
 
 One key thing to note is that these packages make [Node.js a popular technology](/engineering-education/why-node-js-is-popular/). On the other side, you can opt to use core Node.js to develop your applications. This way, you make use of the [vanilla Node.js](/engineering-education/pure-node-js-no-frameworks-or-packages/) functionalities. This blog will teach you how to use vanilla Node.js with no frameworks to build simple APIs.
 
 ### Goal
-In this guide, we'll build a simple REST API using functionalities core to Node.js itself. We're just using the barebones of [vanilla Node.js](https://nodejs.dev/learn) with the [HTTP module](https://nodejs.org/api/http.html#http_http) for creating and managing a server. This means we won't use NPM. Therefore no NPM associated dependencies, no `package.json`,  no `package-lock.json`, and no `node_module` folder. The aim is to demonstrate and give you an overview of how raw Node.js works and how it can be used without frameworks.
+In this guide, we'll build a simple REST API using functionalities core to Node.js itself. We're just using the bare-bones of [vanilla Node.js](https://nodejs.dev/learn) with the [HTTP module](https://nodejs.org/api/http.html#http_http) for creating and managing a server. This means we won't use NPM. Therefore no NPM associated dependencies, no `package.json`, no `package-lock.json`, and no `node_module` folder. The aim is to demonstrate and give you an overview of how raw Node.js works and how it can be used without frameworks.
 
 > **Note**: When working on any actual project, it is best to use Node.js libraries and packages. This way, you'll take full advantage of the readily available code to make your development workflow easier and faster.
 
@@ -23,9 +23,9 @@ Before creating the REST API, let's create a simple [HTTP API](https://nodejs.or
 
 Create a project folder and an `app.js` file.
 
-1. The first thing to pull is the [HTTP module](https://nodejs.org/api/http.html#http_http) from the Node.js using `require()`. This module is native to Node.js. You don't need any extra packages or libraries to access it, just Node.js runtime installed on your computer.
+1. The first thing to do is to pull the [HTTP module](https://nodejs.org/api/http.html#http_http) from Node.js using `require()` method. This module is native to Node.js. You don't need any extra packages or libraries to access it, just Node.js runtime installed on your computer.
 
-```js
+```Javascript
 const http = require("http");
 ```
 
@@ -37,40 +37,39 @@ This way, we make the necessary methods and functions available to set up a serv
 const PORT = process.env.PORT || 5000;
 ```
 
-3. To create the server, you need the HTTP module and then call the `createServer` method. I.e, `http.createServer`. Pass a response and a request that serves up your information. Then use;
+3. To create the server, you need to call the `createServer` method from the HTTP module. I.e, `http.createServer`. Pass a response and a request that serves up your information. Then use;
 
 - `req.url` to set the request access route/URL.
-- `req.method` 
+- `req.method`
 - `res.writeHead` to set any response headers.
 - `res.write()` to send the actual content for the response.
 - `res.end()` to end the response.
 
-```js
+```Javascript
 const server = http.createServer(async (req, res) => {
+	//set the request route
+	if (req.url === "/api" && req.method === "GET") {
+		//response headers
+		res.writeHead(200, { "Content-Type": "application/json" });
+		//set the response
+		res.write("Hi there, This is a Vanilla Node.js API");
+		//end the response
+		res.end();
+	}
 
-//set the request route
-  if (req.url === "/api" && req.method === "GET") {
-    //response headers
-    res.writeHead(200, { "Content-Type": "application/json" });
-    //set the response
-    res.write('Hi there, This is a Vanilla Node.js API');
-    //end the response
-    res.end();
-}
-
-// If no route present
-  else {
-    res.writeHead(404, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ message: "Route not found" }));
-  }
+	// If no route present
+	else {
+		res.writeHead(404, { "Content-Type": "application/json" });
+		res.end(JSON.stringify({ message: "Route not found" }));
+	}
 });
 ```
 
 4. Call the `listen()` method and pass in the `PORT` variable. Then add a `console.log()` message that will indicate the server is up and running.
 
-```js
+```Javascript
 server.listen(PORT, () => {
-  console.log(`server started on port: ${PORT}`);
+	console.log(`server started on port: ${PORT}`);
 });
 ```
 
@@ -83,7 +82,6 @@ server.listen(PORT, () => {
 ![A simple server response](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/a-simple-server-response.jpg)
 
 ### Setting up the REST API
-
 Let's now see how to set up a REST API using raw Node.js. We'll use a todos boilerplate to demonstrate this.
 
 Below is the project structure.
@@ -95,48 +93,46 @@ Below is the project structure.
 |   data.js
 |   utils.js
 
-No subfolders exist
+No sub-folders exist
 ```
 
 #### Adding test data
-
 **data.js**: Contains the temporary test data. The data is stored in a todos array. Each todo has an `id`, `title`, `description`, and `completed` value.
 
-```js
+```Javascript
 //data.js
 /** Todos List*/
 const todos = [
-  {
-    id: 1,
-    title: "Coding in Javascript",
-    description: "Working with functions in JavaScript",
-    completed: false,
-  },
-  {
-    id: 2,
-    title: "Cooking Supper",
-    description: "Preparing rice and chicken",
-    completed: false,
-  },
-  {
-    id: 3,
-    title: "Taking a walk",
-    description: "Easy time at the park",
-    completed: false,
-  },
-  {
-    id: 4,
-    title: "Watching Netflix",
-    description: "Enjoying the new premiered series",
-    completed: false,
-  },
+	{
+		id: 1,
+		title: "Coding in Javascript",
+		description: "Working with functions in JavaScript",
+		completed: false,
+	},
+	{
+		id: 2,
+		title: "Cooking Supper",
+		description: "Preparing rice and chicken",
+		completed: false,
+	},
+	{
+		id: 3,
+		title: "Taking a walk",
+		description: "Easy time at the park",
+		completed: false,
+	},
+	{
+		id: 4,
+		title: "Watching Netflix",
+		description: "Enjoying the new premiered series",
+		completed: false,
+	},
 ];
 module.exports = todos;
 ```
 
 #### Setting up the controllers
-
-**controllers.js**: Handles the logic behind each route. It C=comprises of a class `Controller` that has the following methods:
+**controllers.js**: Handles the logic behind each route. It comprises of a class `Controller` that has the following methods:
 
 - `getTodos()`: to fetch all todos.
 - `getTodo()`: to fetch a single todo.
@@ -144,117 +140,116 @@ module.exports = todos;
 - `updateTodo()`: to update a todo.
 - `deleteTodo()`: to delete a todo.
 
-```js
-//controller.js
+```Javascript
+// controller.js
 // Logic behind the functionalities
 const data = require("./data");
 
 class Controller {
-  // getting all todos
-  async getTodos() {
-    // return all todos
-    return new Promise((resolve, _) => resolve(data));
-  }
+	// getting all todos
+	async getTodos() {
+		// return all todos
+		return new Promise((resolve, _) => resolve(data));
+	}
 
-  // getting a single todo
-  async getTodo(id) {
-    return new Promise((resolve, reject) => {
-      // get the todo
-      let todo = data.find((todo) => todo.id === parseInt(id));
-      if (todo) {
-        // return the todo
-        resolve(todo);
-      } else {
-        // return an error
-        reject(`Todo with id ${id} not found `);
-      }
-    });
-  }
+	// getting a single todo
+	async getTodo(id) {
+		return new Promise((resolve, reject) => {
+			// get the todo
+			let todo = data.find((todo) => todo.id === parseInt(id));
+			if (todo) {
+				// return the todo
+				resolve(todo);
+			} else {
+				// return an error
+				reject(`Todo with id ${id} not found `);
+			}
+		});
+	}
 
-  // creating a todo
-  async createTodo(todo) {
-    return new Promise((resolve, _) => {
-      // create a todo, with random id and data sent
-      let newTodo = {
-        id: Math.floor(4 + Math.random() * 10),
-        ...todo,
-      };
+	// creating a todo
+	async createTodo(todo) {
+		return new Promise((resolve, _) => {
+			// create a todo, with random id and data sent
+			let newTodo = {
+				id: Math.floor(4 + Math.random() * 10),
+				...todo,
+			};
 
-      // return the new created todo
-      resolve(newTodo);
-    });
-  }
+			// return the new created todo
+			resolve(newTodo);
+		});
+	}
 
-  // updating a todo
-  async updateTodo(id) {
-    return new Promise((resolve, reject) => {
-      // get the todo.
-      let todo = data.find((todo) => todo.id === parseInt(id));
-      // if no todo, return an error
-      if (!todo) {
-        reject(`No todo with id ${id} found`);
-      }
-      //else, update it by setting completed to true
-      todo["completed"] = true;
-      // return the updated todo
-      resolve(todo);
-    });
-  }
+	// updating a todo
+	async updateTodo(id) {
+		return new Promise((resolve, reject) => {
+			// get the todo.
+			let todo = data.find((todo) => todo.id === parseInt(id));
+			// if no todo, return an error
+			if (!todo) {
+				reject(`No todo with id ${id} found`);
+			}
+			//else, update it by setting completed to true
+			todo["completed"] = true;
+			// return the updated todo
+			resolve(todo);
+		});
+	}
 
-  // deleting a todo
-  async deleteTodo(id) {
-    return new Promise((resolve, reject) => {
-      // get the todo
-      let todo = data.find((todo) => todo.id === parseInt(id));
-      // if no todo, return an error
-      if (!todo) {
-        reject(`No todo with id ${id} found`);
-      }
-      // else, return a success message
-      resolve(`Todo deleted successfully`);
-    });
-  }
+	// deleting a todo
+	async deleteTodo(id) {
+		return new Promise((resolve, reject) => {
+			// get the todo
+			let todo = data.find((todo) => todo.id === parseInt(id));
+			// if no todo, return an error
+			if (!todo) {
+				reject(`No todo with id ${id} found`);
+			}
+			// else, return a success message
+			resolve(`Todo deleted successfully`);
+		});
+	}
 }
 module.exports = Controller;
 ```
 
 #### Utility settings
-
 **utils.js**: Handle simple use cases in the API. It contains the `getReqData()` function, which gets the data sent by the client.
 
-```js
+```Javascript
 //utils.js
 function getReqData(req) {
-  return new Promise((resolve, reject) => {
-    try {
-      let body = "";
-      // listen to data sent by client
-      req.on("data", (chunk) => {
-        // append the string version to the body
-        body += chunk.toString();
-      });
-      // listen till the end
-      req.on("end", () => {
-        // send back the data
-        resolve(body);
-      });
-    } catch (error) {
-      reject(error);
-    }
-  });
+	return new Promise((resolve, reject) => {
+		try {
+			let body = "";
+			// listen to data sent by client
+			req.on("data", (chunk) => {
+				// append the string version to the body
+				body += chunk.toString();
+			});
+			// listen till the end
+			req.on("end", () => {
+				// send back the data
+				resolve(body);
+			});
+		} catch (error) {
+			reject(error);
+		}
+	});
 }
 module.exports = { getReqData };
 ```
 
 #### Setting the server and routes
-
 **app.js**: It contains;
+
 - The server configurations,
-- How different routes interact with diffrent server methods,
-- The port the server is started on, and
+- How different routes interact with different server methods,
+- The port the server is started on, and,
 - The functionality to start the server.
 
-```js
+```Javascript
 //app.js
 const http = require("http");
 const Todo = require("./controller");
@@ -263,107 +258,105 @@ const { getReqData } = require("./utils");
 const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(async (req, res) => {
+	// /api/todos : GET
+	if (req.url === "/api/todos" && req.method === "GET") {
+		// get the todos.
+		const todos = await new Todo().getTodos();
+		// set the status code, and content-type
+		res.writeHead(200, { "Content-Type": "application/json" });
+		// send the data
+		res.end(JSON.stringify(todos));
+	}
 
-  // /api/todos : GET
-  if (req.url === "/api/todos" && req.method === "GET") {
-    // get the todos.
-    const todos = await new Todo().getTodos();
-    // set the status code, and content-type
-    res.writeHead(200, { "Content-Type": "application/json" });
-    // send the data
-    res.end(JSON.stringify(todos));
-  }
+	// /api/todos/:id : GET
+	else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "GET") {
+		try {
+			// get id from url
+			const id = req.url.split("/")[3];
+			// get todo
+			const todo = await new Todo().getTodo(id);
+			// set the status code and content-type
+			res.writeHead(200, { "Content-Type": "application/json" });
+			// send the data
+			res.end(JSON.stringify(todo));
+		} catch (error) {
+			// set the status code and content-type
+			res.writeHead(404, { "Content-Type": "application/json" });
+			// send the error
+			res.end(JSON.stringify({ message: error }));
+		}
+	}
 
-  // /api/todos/:id : GET
-  else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "GET") {
-    try {
-      // get id from url
-      const id = req.url.split("/")[3];
-      // get todo
-      const todo = await new Todo().getTodo(id);
-      // set the status code and content-type
-      res.writeHead(200, { "Content-Type": "application/json" });
-      // send the data
-      res.end(JSON.stringify(todo));
-    } catch (error) {
-      // set the status code and content-type
-      res.writeHead(404, { "Content-Type": "application/json" });
-      // send the error
-      res.end(JSON.stringify({ message: error }));
-    }
-  }
+	// /api/todos/:id : DELETE
+	else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "DELETE") {
+		try {
+			// get the id from url
+			const id = req.url.split("/")[3];
+			// delete todo
+			let message = await new Todo().deleteTodo(id);
+			// set the status code and content-type
+			res.writeHead(200, { "Content-Type": "application/json" });
+			// send the message
+			res.end(JSON.stringify({ message }));
+		} catch (error) {
+			// set the status code and content-type
+			res.writeHead(404, { "Content-Type": "application/json" });
+			// send the error
+			res.end(JSON.stringify({ message: error }));
+		}
+	}
 
-  // /api/todos/:id : DELETE
-  else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "DELETE") {
-    try {
-      // get the id from url
-      const id = req.url.split("/")[3];
-      // delete todo
-      let message = await new Todo().deleteTodo(id);
-      // set the status code and content-type
-      res.writeHead(200, { "Content-Type": "application/json" });
-      // send the message
-      res.end(JSON.stringify({ message }));
-    } catch (error) {
-      // set the status code and content-type
-      res.writeHead(404, { "Content-Type": "application/json" });
-      // send the error
-      res.end(JSON.stringify({ message: error }));
-    }
-  }
+	// /api/todos/:id : UPDATE
+	else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "PATCH") {
+		try {
+			// get the id from the url
+			const id = req.url.split("/")[3];
+			// update todo
+			let updated_todo = await new Todo().updateTodo(id);
+			// set the status code and content-type
+			res.writeHead(200, { "Content-Type": "application/json" });
+			// send the message
+			res.end(JSON.stringify(updated_todo));
+		} catch (error) {
+			// set the status code and content type
+			res.writeHead(404, { "Content-Type": "application/json" });
+			// send the error
+			res.end(JSON.stringify({ message: error }));
+		}
+	}
 
-  // /api/todos/:id : UPDATE
-  else if (req.url.match(/\/api\/todos\/([0-9]+)/) && req.method === "PATCH") {
-    try {
-      // get the id from the url
-      const id = req.url.split("/")[3];
-      // update todo
-      let updated_todo = await new Todo().updateTodo(id);
-      // set the status code and content-type
-      res.writeHead(200, { "Content-Type": "application/json" });
-      // send the message
-      res.end(JSON.stringify(updated_todo));
-    } catch (error) {
-      // set the status code and content type
-      res.writeHead(404, { "Content-Type": "application/json" });
-      // send the error
-      res.end(JSON.stringify({ message: error }));
-    }
-  }
+	// /api/todos/ : POST
+	else if (req.url === "/api/todos" && req.method === "POST") {
+		// get the data sent along
+		let todo_data = await getReqData(req);
+		// create the todo
+		let todo = await new Todo().createTodo(JSON.parse(todo_data));
+		// set the status code and content-type
+		res.writeHead(200, { "Content-Type": "application/json" });
+		//send the todo
+		res.end(JSON.stringify(todo));
+	}
 
-  // /api/todos/ : POST
-  else if (req.url === "/api/todos" && req.method === "POST") {
-    // get the data sent along
-    let todo_data = await getReqData(req);
-    // create the todo
-    let todo = await new Todo().createTodo(JSON.parse(todo_data));
-    // set the status code and content-type
-    res.writeHead(200, { "Content-Type": "application/json" });
-    //send the todo
-    res.end(JSON.stringify(todo));
-  }
-
-  // No route present
-  else {
-    res.writeHead(404, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ message: "Route not found" }));
-  }
+	// No route present
+	else {
+		res.writeHead(404, { "Content-Type": "application/json" });
+		res.end(JSON.stringify({ message: "Route not found" }));
+	}
 });
 
 server.listen(PORT, () => {
-  console.log(`server started on port: ${PORT}`);
+	console.log(`server started on port: ${PORT}`);
 });
 ```
 
 ### Testing the app
-
 To start the server, run the following command from your terminal:
 
 ```bash
 node app.js
 ```
 
-This will set up the server up and running.
+This will set the server up and running.
 
 ![A simple server api](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/a-simple-server-api.jpg)
 
@@ -411,7 +404,7 @@ Let's test the different methods set in the API using Postman. If you are not fa
 ![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-update-a-todo.jpg)
 
 - The response should resemble the following:
-![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/update-todo.png)
+  ![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/update-todo.png)
 
 #### ADD a new todo
 **/API/todos POST**: This will add a new todo. The new todo will be sent back as a response but won't be saved in the `data.js`. To test it:
@@ -424,7 +417,7 @@ Let's test the different methods set in the API using Postman. If you are not fa
 
 - In the `Body` tab, under `raw`, select `JSON` in the dropdown to the right and enter data of the new todo (title, the description, and completed). For example;
 
-```js
+```Javascript
 {
    "title": "Vannila Node.js REST API",
     "description": "Working with responses and requests",
@@ -439,7 +432,7 @@ Let's test the different methods set in the API using Postman. If you are not fa
 
 ![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/create-todo.jpg)
 
->**Note**: The id may differ each time you send a request because it is generated randomly.
+> **Note**: The id may differ each time you send a request because it is generated randomly.
 
 And there you have it, a simple, pure Node.js REST API. I hope you found this tutorial helpful.
 
