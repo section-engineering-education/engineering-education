@@ -78,3 +78,5 @@ So, in this article, we went through three architecture patterns that can be use
 - Further Information: [Android Architectural Patterns](https://www.geeksforgeeks.org/android-architecture-patterns/)
 - Detailed explanation on Individual Patterns: [MVP](https://medium.com/android-news/architecture-patterns-in-android-abf99f2b6f70) | [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) | [MVVM](https://blog.mindorks.com/mvvm-architecture-android-tutorial-for-beginners-step-by-step-guide)
   
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
