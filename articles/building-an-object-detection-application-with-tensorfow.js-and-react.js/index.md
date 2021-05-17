@@ -4,6 +4,13 @@ So what is object detection?
 
 Object detection is a method in computer vision and image processing that allows us to find and locate where multiple objects are in an image or video. This algorithm draws bounding boxes around one or more objects in the image or video after detecting an object. These bounding boxes are defined by a point, width, and height. It then assigns the objects class labels, i.e., cat, dog, or car.
 
+### Prerequisites
+
+1. You need to have installed [Visual Studio](https://visualstudio.microsoft.com/) code editor on your computer. 
+2. A Linux operating system is preferred over Windows. However, Windows users can use a Windows 10 machine. For Linux users, any Linux machine is preferred, but I used Ubuntu 20.04 for this project. 
+3. A machine with really good hardware specs is recommended for your machine to run the program on your local computer without peril i.e., a powerful processor and RAM of 4gb and above. 
+4. A webcam is also required to perform object detection in real-time.
+
 ### Goals
 
 In this tutorial, we will put in place the following tasks:
@@ -45,7 +52,7 @@ code .
 
 That's 'code' followed with a full stop. That command should fire up our code editor.
 
-The next step that we need to do is start our React app using the 'npm start' command. This command is going to start our react app and open a new browser. It will go directly to the 'localhost 3000' by default. This is where our React app is going to start. 
+It is important to note that these next steps will now be perfomed on the vs code editor. We will need to start our React app using the 'npm start' command. This command is issued on the vs code's terminal. This command is going to start our react app and open a new browser. It will go directly to the 'localhost 3000' by default. This is where our React app is going to start. 
 
 Please make sure the 'npm' command is installed on your computer before issuing the 'npm start' command. If not, install it using the following command:
 
@@ -58,7 +65,7 @@ After issuing the 'npm install' command, you should see a 'node_modules' folder 
 
 We will use Microsoft's [COCO SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd) pre-trained model, which allows us to perform real-time object detection on images.
 
-We will install TensorFlow and the pre-built model into our application by issuing the following commands:
+On the 'App.js' folder, we will import TensorFlow and the pre-built model into our application by issuing the following commands:
 
 ```bash
     import * as tf from "@tensorflow/tfjs";
@@ -86,7 +93,7 @@ The next thing that we are going to do is to load our network into our model. Th
     const net = await cocossd.load();
 ```
 
-We first create a new variable called 'net'. Because our function is asynchronous, we wait for the 'cocossd' model to load.
+We first create a new variable called 'net'. We then wait for the 'cocossd' model to load. We use the 'load()' method for this task.
 
 ### Make detection using TensorFlow.js
 
