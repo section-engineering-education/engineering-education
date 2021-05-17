@@ -12,7 +12,7 @@ A web rendering engine is also known as a layout engine or a browser engine. The
 
 Since there are a lot of web engines, certain HTML/CSS features are supported only above a certain version of a browser. For example, the CSS `position: sticky` feature is only supported on Firefox version 26 and above. In this article, we will learn how to use modern CSS features in old browsers by using the CSS `@supports` rule.
 
-### Table of Contents
+### Table of contents
 
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -23,16 +23,17 @@ Since there are a lot of web engines, certain HTML/CSS features are supported on
 
 ### Prerequisites
 
-- Basic knowledge about HTML and CSS.
-- A code editor: [VSCode](https://code.visualstudio.com/download) is recommended.
+To follow along with this tutorial, you should have:
+- A basic knowledge about HTML and CSS.
+- A code editor, [VSCode](https://code.visualstudio.com/download) is recommended.
 
 ### Objectives
 
 - In this article, we shall explore how browser versions and CSS features are related.
 - We will also look at the `@supports` feature query and use it in an example.
-- We take the CSS rule `position: sticky` as an example and find a workaround to enable it on an older browser.
+- We will take the CSS rule `position: sticky` as an example and find a workaround to enable it on an older browser.
 
-### Problems with Browser Support
+### Problems with browser support
 
 To demonstrate what problems may arise when a CSS feature isn't supported by a web engine, let us take the example of the CSS rule: `position: sticky`. The table below demonstrates the browser support for the mentioned CSS rule:
 
@@ -173,11 +174,13 @@ Open this file on a modern browser. Let us use [Chrome version 90](https://www.g
 
 ![Position Sticky](/engineering-education/css-supports-query/sticky.jpg)
 
-**Position Sticky on Chrome 90**
+*Position Sticky on Chrome 90*
 
-Now, download and install Firefox version 22 from the [following link](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox. You will notice that the hero banner does not scroll. The `position: sticky` feature does not work.
+Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox. You will notice that the hero banner does not scroll. The `position: sticky` feature does not work.
 
 ![Position Sticky Firefox](/engineering-education/css-supports-query/sticky-firefox.jpg)
+
+*Position Sticky on Firefox 22*
 
 Let us now fix this using `@supports`.
 
@@ -230,7 +233,7 @@ In the above example, we use the `@supports` feature query and the **not** opera
 - We took the `position: sticky` rule as an example and saw how it breaks in Firefox 22.
 - We used the `@supports` feature query to fix this problem and made it work in Firefox 22.
 
-By using the `@supports` feature query, web developers can ensure can reach a wider audience and ensure that websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
+By using the `@supports` feature query, web developers can ensure that they can reach a wider audience by making their websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
 
 ### Further Reading
 
