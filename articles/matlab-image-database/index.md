@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/matlab-image-database/
-title: How to create a face database using Matlab
+url: /matlab-image-database/
+title: How to Create a Face Database using Matlab
 description: This article will be an introduction to creating face databases using Matlab. We will explore about Matlab, what face databases are, where it is used, and how to create one.
 author: atieno-dorine
-date: 2021-04-24T00:00:00-12:00
+date: 2021-05-17T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
