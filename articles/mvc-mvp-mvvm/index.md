@@ -1,8 +1,21 @@
-### What are Architectural Patterns in Android?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mvc-mvp-mvvm/
+title: An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
+description: This article discussed the various architectural patterns used to design applications in Android.
+author: kanishkvardhan-a-n
+date: 2021-05-17T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-
+  - url: /engineering-education/mvc-mvp-mvvm/hero.jpg
+    alt: Architectural Patterns example image
+---
 We use various mobile and web applications in our day-to-day life. These applications are aimed at making our computational experience simple and seamless. Some of these applications are compatible with mobile operating systems such as Android, iOS. Some are compatible with desktop operating systems such as Windows, macOS, Linux, etc. Some of these even may be cross-platform (applications that can be operated on more than one operating system).
+<!--more-->
 
 Even though these applications differ in aspects such as what they do, how they work, how it is built, etc.., few things remain the same -- a couple of them are: **unique architecture and User Interface**. These elements can serve as a key component to the overall application creation process. Having a better and unique UI can make a huge difference in how great an application is. The UI is solely not based on the developers' imagination, but also on the consumer who may be using it. The interface must be user-friendly so that it will be easier for the user to grasp the visual changes taking place in the application while using it.
 
