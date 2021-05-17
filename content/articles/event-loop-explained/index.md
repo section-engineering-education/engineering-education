@@ -27,7 +27,7 @@ JavaScript (JS) is not that clever. JS is a single-threaded language, meaning th
 
 The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works.
 
-![event loop 1](/engineering-educationhttps://media.giphy.com/media/RhBsyPkh1BC87DSIJe/giphy.gif)
+![event loop 1](https://media.giphy.com/media/RhBsyPkh1BC87DSIJe/giphy.gif)
 
 The purple ball represents the current state of the event loop. Like a movie, the browser redraws the screen on every frame. Between frames, JavaScript runs. When the script event ends, control is passed back to the browser to redraw any changes that occurred. This keeps animations or UX elements fluid while still computing the JavaScript in the background.  
 

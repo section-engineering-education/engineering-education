@@ -67,7 +67,7 @@ After installing Xrdp you need to add it to the "ssl-cert" group. Run the follow
 
 Now that Xrdp is setup open up your favorite RDP client and connect to your server at pot 3389 (Ex. 192.168.0.1).
 
-![](/engineering-educationhttps://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
+![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
 
 #### LXDE
 LXDE is significantly bigger than Xfce and will take longer to install than Xfce. Simply run:

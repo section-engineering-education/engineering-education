@@ -150,7 +150,7 @@ app.mainloop()
 
 #### Output:
 
-![](/engineering-educationencrypt.jpg)
+![](/engineering-education/steganography-in-python/encrypt.jpg)
 ### decrypt.py
 
 The algorithm to decode the encrypted file is as follows:

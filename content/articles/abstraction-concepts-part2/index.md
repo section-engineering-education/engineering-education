@@ -99,7 +99,7 @@ True
 ```
 One caveat is that while any instances of a subclass of an abstract class we register will return `True` as an instance, it will not have its attribute `echo`, and this is in keeping with **duck typing** (the type or the class of an object is less important than the methods it defines).
 
-![Image of Duck Typing Quote](/engineering-educationhttps://www.thebraziltimes.com/photos/29/19/52/2919525-B.jpg)
+![Image of Duck Typing Quote](https://www.thebraziltimes.com/photos/29/19/52/2919525-B.jpg)
 
 ### Polymorphism
 **Polymorphism** comes from the Greek word for "having many forms." It is the ability to treat objects of different types and classes similarly. Concretely, this means you can use the same operations on objects of different classes without knowing the specifics of its class implementation.

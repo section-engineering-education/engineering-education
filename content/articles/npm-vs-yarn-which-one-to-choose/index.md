@@ -149,7 +149,7 @@ You can again run `npm audit` to check your entire dependency trees. If any vuln
 
 To fix such package vulnerabilities, run `npm audit fix`, and your dependency trees will be fixed.
 
-![audit fix](/engineering-educationnpm-audit-fix.jpg)
+![audit fix](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-audit-fix.jpg)
 
 ### Ease of use
 One thing to consider before choosing a package manager would be the to see which interface is user friendly. This includes how the command line terminal looks after running commands such as `npm install` or `yarn add`.

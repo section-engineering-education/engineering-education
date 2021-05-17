@@ -19,7 +19,7 @@ As we have moved from the Industrial Age to the Information Age, questions arise
 
 This tension between the struggle for privacy and liberty has always been pitted against rigid government surveillance and control. Cryptoanarchy emerged in the 1980s and evolved to enable the [sovereign individual](https://medium.com/@RhysLindmark/the-sovereign-individual-book-review-takeaways-quotes-and-critique-ad9da55852b1) to use encryption themselves and create their own uncensorable and programmable digital tools and network.
 
-![Cryptoanarchy Logo](/engineering-educationhttps://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)<br/>
+![Cryptoanarchy Logo](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)<br/>
 *Image source: [cryptoanarchy](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)*
 
 ### Philosophy

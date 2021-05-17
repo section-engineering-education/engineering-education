@@ -19,7 +19,7 @@ Every day, we are generating over 2.5 quintillion or 2.5 exabytes of data. This 
 
 To help us visualize this amount of data, think about a byte as being as big as a United States Quarter. A quarter has a diameter of 0.955 inches, therefore having a surface area of pi * radius squared which is about 0.716 square inches. Therefore, 2.5 exabytes is equal to 2.5 quintillion quarters (or about 625 quadrillion US dollars). If you lay a quarter flat, like the image below, you can fit 182 quarters per square foot. This means that 2.5 quintillion quarters will cover the State of Texas a little under 1,834.5 times, and this amount of data is being generated every day on the Internet.
 
-![](/engineering-educationhttps://newsitech.weebly.com/uploads/2/0/5/4/20542424/img-1579_orig.jpg)
+![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/img-1579_orig.jpg)
 *Image source: [Newsitech](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/img-1579_orig.jpg)*
 
 ### How is all of this data stored?
