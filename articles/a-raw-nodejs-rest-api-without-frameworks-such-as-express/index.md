@@ -1,7 +1,21 @@
-Node.js is a very popular JavaScript framework. Node.js has been used to create applications of all levels. It shines most when used to build back-end services and APIs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/
+title: A Vanilla Node.js REST API Without Frameworks Such us Express
+description: In this article, we will build a simple REST API using functionalities core to node.js itself. We are going to use the bare-bones of vanilla Node.js with HTTP module for creating and managing a server.
+author: rose-waitherero
+date: 2021-05-17T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-In most cases, Node.js developers use open-source [libraries and frameworks](/engineering-education/most-useful-nodejs-packages/) such as [Express.js](/engineering-education/express/). These libraries are readily available in the NPM registry.
-
+  - url: /engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/hero.png
+    alt: Vanilla Node.js image example
+---
+Node.js is a very popular JavaScript framework. Node.js has been used to create applications of all levels. It shines most when used to build back-end services and APIs. In most cases, Node.js developers use open-source [libraries and frameworks](/engineering-education/most-useful-nodejs-packages/) such as [Express.js](/engineering-education/express/). These libraries are readily available in the NPM registry.
+<!--more-->
 Whenever you use such packages, there is a lot of abstraction hence you don't utilize the core functionalities of Node.js. The low-level logic Node.js of your application is hidden from you as these packages process and execute raw Node.js behind the scenes.
 
 One key thing to note is that these packages make [Node.js a popular technology](/engineering-education/why-node-js-is-popular/). On the other side, you can opt to use core Node.js to develop your applications. This way, you make use of the [vanilla Node.js](/engineering-education/pure-node-js-no-frameworks-or-packages/) functionalities. This blog will teach you how to use vanilla Node.js with no frameworks to build simple APIs.
@@ -75,11 +89,11 @@ server.listen(PORT, () => {
 
 5. The server is well set. Run `node app.js` to test it. This will log the `console.log()` message on your command screen.
 
-![A simple server api](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/a-simple-server-api.jpg)
+![A simple server api](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/a-simple-server-api.jpg)
 
 6. If you open `http://localhost:5000/api` on a browser, you'll be served the response as defined in the `res.write()`
 
-![A simple server response](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/a-simple-server-response.jpg)
+![A simple server response](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/a-simple-server-response.jpg)
 
 ### Setting up the REST API
 Let's now see how to set up a REST API using raw Node.js. We'll use a todos boilerplate to demonstrate this.
@@ -358,7 +372,7 @@ node app.js
 
 This will set the server up and running.
 
-![A simple server api](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/a-simple-server-api.jpg)
+![A simple server api](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/a-simple-server-api.jpg)
 
 ### Explore the API using Postman
 Let's test the different methods set in the API using Postman. If you are not familiar with Postman, check out this [tutorial](https://www.youtube.com/watch?v=uWrw0Bh7BVM).
@@ -368,43 +382,43 @@ Let's test the different methods set in the API using Postman. If you are not fa
 
 - Head over to Postman, open a new tab, and **SEND** a `GET` request to URL `http://localhost:5000/api/todos`.
 
-![Get all todos](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-get-all-todos.jpg)
+![Get all todos](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/postman-get-all-todos.jpg)
 
 - The response should resemble the following:
 
-![Get all todos](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/get-todos.png)
+![Get all todos](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/get-todos.png)
 
 #### Get a todo by id
 **/API/todos/:id GET**: This will fetch a single todo. To test it:
 
 - Open a separate tab in Postman and **SEND** a `GET` request to `http://localhost:5000/api/todos/:id`. Replace `:id` with an id of the todo you want to fetch.
 
-![Get a single todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-get-a-todo.jpg)
+![Get a single todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/postman-get-a-todo.jpg)
 
 - The response should resemble the following:
 
-![Get a single todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/get-todo.png)
+![Get a single todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/get-todo.png)
 
 #### DELETE a todo
 **/API/todos/:id DELETE**: This will delete a single todo. Since the data is temporary and not (saved) in a database, you will only receive a response message. To test it:
 
 - Open a separate tab in Postman and **SEND** a `DELETE` request to `http://localhost:5000/api/todos/:id`. Where `:id` represents the todo you want to delete.
 
-![Delete a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-delete-a-todo.jpg)
+![Delete a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/postman-delete-a-todo.jpg)
 
 - The response should resemble the following:
 
-![Delete a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/del-todo.png)
+![Delete a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/del-todo.png)
 
 #### UPDATE a todo
 **/API/todos/:id PATCH**: This will update a todo to indicate that the task is completed, i.e., `true` or `false`. You will see the effect on the postman response console. To test it:
 
 - Open a separate tab in Postman and **SEND** a `PATCH` request to `http://localhost:5000/api/todos/:id`. Where `:id` represents the todo (task) you want to mark as completed.
 
-![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-update-a-todo.jpg)
+![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/postman-update-a-todo.jpg)
 
 - The response should resemble the following:
-  ![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/update-todo.png)
+  ![Update a todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/update-todo.png)
 
 #### ADD a new todo
 **/API/todos POST**: This will add a new todo. The new todo will be sent back as a response but won't be saved in the `data.js`. To test it:
@@ -413,7 +427,7 @@ Let's test the different methods set in the API using Postman. If you are not fa
 - Select `POST`.
 - Enter URL `http://localhost:5000/api/todos`.
 
-![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/postman-add-a-new-todo.jpg)
+![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/postman-add-a-new-todo.jpg)
 
 - In the `Body` tab, under `raw`, select `JSON` in the dropdown to the right and enter data of the new todo (title, the description, and completed). For example;
 
@@ -425,15 +439,18 @@ Let's test the different methods set in the API using Postman. If you are not fa
 }
 ```
 
-![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/adding-a-new-todo.jpg)
+![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/adding-a-new-todo.jpg)
 
 - After filling, hit the **SEND** button.
 - The response should resemble the following:
 
-![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-expressjs/create-todo.jpg)
+![Add a new todo](/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/create-todo.jpg)
 
 > **Note**: The id may differ each time you send a request because it is generated randomly.
 
 And there you have it, a simple, pure Node.js REST API. I hope you found this tutorial helpful.
 
 Happy Coding!!!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
