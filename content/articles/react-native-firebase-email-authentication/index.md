@@ -15,23 +15,13 @@ images:
     alt: React Native Firebase Email Password Authentication Image
 ---
 In this tutorial, we will learn how to authenticate users with their email and password using Firebase's authentication module in a Non-Expo React Native application.
-
-### Firebase
-
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
-
-### Firebase Authentication
-
-Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
-
-The native Firebase SDKs ensures that a users authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
+<!--more-->
+To learn more about Firebase, refer to [this link](https://en.wikipedia.org/wiki/Firebase).
 
 ### Prerequisites
-
 The basics of React and React Native will not be covered in this tutorial. If you are not comfortable with the basics, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial).
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Development environment.
@@ -45,7 +35,6 @@ We'll be going through these steps in this article:
 9. Recap.
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -55,7 +44,6 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](env_setup.png)
 
 ### Cloning the starter code
-
 To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-email-password-auth-starter) on GitHub. Follow the Repository's README for instructions.
 
 For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-email-password-auth).
@@ -75,7 +63,6 @@ I've set up 2 screens in the `screens/` directory:
 In the _App.js_, the *Authentication* screen is exported. As we write the code for the, we will conditionally display the *Authenticated* screen after authenticating the user.
 
 ### Setting up the Firebase project
-
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -130,7 +117,6 @@ npm install @react-native-firebase/app
 ```
 
 ### Setting up Firebase Authentication
-
 Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
 ![Get Started Auth](auth_get_starterd.png)
@@ -158,7 +144,6 @@ dependencies {
 With this, the firebase authentication module is set up in our application.
 
 ### Create user acccount
-
 The Firebase `auth` module has a function called `createUserWithEmailAndPassword` that'll help creating a new user in the application with an email and a password.
 
 For exmaple:
@@ -236,7 +221,6 @@ return <Authentication createUser={createUser} />;
 ```
 
 ### Sign in user
-
 The Firebase `auth` module has a function called `signInWithEmailAndPassword` that'll sign in the user into the application with an email and a password.
 
 For exmaple, This will sign in the user into the app with the email ID:
@@ -277,7 +261,6 @@ Now, when a user presses the *signin* button, the `signInWithEmailAndPassword` i
 ![Signin](signin.gif)
 
 ### Signout
-
 We should use the `signOut` method in the auth module to sign out a user from the application.
 
 Let's import the `auth` module in *Authenticated.js*.
@@ -309,7 +292,6 @@ auth().onAuthStateChanged((user) => {
 ![Signout](signout.gif)
 
 ### Let's Recap
-
 1. We set up our development environment and created a React Native app.
 
 2. We created a Firebase project.
