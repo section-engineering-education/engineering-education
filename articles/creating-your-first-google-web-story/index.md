@@ -6,7 +6,7 @@ url: /engineering-education/creating-your-first-google-web-story/
 title: How to Create your First Google Web Story
 description: This article provides a step by step guide on how to create a Google Web Story. These stories can created using drag and drop tools or through coding.
 author: jethro-magaji
-date: 2021-05-15T00:00:00-13:00
+date: 2021-05-17T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
