@@ -30,7 +30,7 @@ Here, the developers can work on different parts of the pattern separately. As a
 
 Here the controller part is replaced by the presenter. The **Presenter** is responsible for accepting all the incoming inputs/requests from the user. It then transfers them to the **Model**. The model accesses the data the user wants and sends it back as a result to the **View**. Hence, the key task of the presenter is to deal with all the UI events so that users can retrieve their data. The role of model and view in [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) is the same as in MVC. One of the assisting factors to the application while using MVP is that the view is submissive. Its sole purpose is to approve all user activities and transfer the rest of the work to the presenter. Additionally, since all three parts are separated, debugging becomes simpler because unit testing can be done when other parts are still being developed.
 
-The layers are divided here just as they are in MVC. As a result, understanding the code becomes easier and its maintenance becomes simpler.  Similarly the code can be reused in other applications as well. Another added advantage of the MVP pattern is that the components do not have any logical relationships. However, if we look at it from another perspective, the pattern can suffer a disadvantage because the view would become passive to the model. In reality, applying this pattern would necessitate more experience and expertise. This means more time to put into development, deployment and unit testing.
+The layers are divided here just as they are in MVC. As a result, understanding the code becomes easier and its maintenance becomes simpler.  Similarly, the code can be reused in other applications as well. Another added advantage of the MVP pattern is that the components do not have any logical relationships. However, if we look at it from another perspective, the pattern can suffer a disadvantage because the view would become passive to the model. In reality, applying this pattern would necessitate more experience and expertise. This means more time to put into development, deployment and unit testing.
 
 #### Model View View-Model
 
@@ -50,9 +50,9 @@ This table will come in handy for you to recognize some fundamental points that 
 
 | MVC         | MVP         | MVVM        |
 | ----------- | ----------- |-------------|
-|A single controller can be shared by multiple views. As a result, the Controller and View have one-to-many relationships.             |One presenter is assigned to each view. As a result, there is a one-to-one relationship between the view and the presenter.             |View and ViewModel have a one-to-many relationships.|
+|A single controller can be shared by multiple views. As a result, the Controller and View have a one-to-many relationship.             |One presenter is assigned to each view. As a result, there is a one-to-one relationship between the view and the presenter.             |View and ViewModel have a one-to-many relationships.|
 |Determines which view needs to be updated.             |The related view of the presenter will be updated.              |The User Interface is modified by the ViewModel.|
-|The model is accessible to the View.          |There is no way for the View to communicate with the model.             |The model can be interacted with the View.|
+|The model is accessible to the View.          |There is no way for the View to communicate with the model.             |The model can interact with the View.|
 |The controller is responsible for the interaction between View and the Model.            |The Presenter acts as a link between the View and the Model.             |ViewModel connects the View and the Model.|
 
 ### Summary
