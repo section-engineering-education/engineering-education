@@ -64,7 +64,8 @@ Next, you import axios in your `src/main.js` file
 
 **How to make an API request and display data using Axios.**
 
-We will make the API request using a `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running asynchronously therefore, we use a promise based function with keywords [async/await](https://github.com/section-engineering-education/engineering-education/pull/2235). However, we also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle all errors that are detected.
+We will make the API request using a `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise based function with keywords [async/await](https://github.com/section-engineering-education/engineering-education/pull/2235). You may wonder why we used a promise based function, this is because a promise provides a way of montinoring the state of the API and acts as a container for the data that will eventually return.
+However, we also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle all errors that are detected.
 
 
 Copy the code below to your `App.vue` file
@@ -95,6 +96,30 @@ Copy the code below to your `App.vue` file
     }
     </script>
 ```
+The above block of code in the `methods` property will be explained line by line. 
+```
+async getData (){
+```
+A function named `getData()` is created . It is in this function the API will be called.
+The `async` keyword is prepended on the `getData` function to show that the function will return a promise.
+
+```
+try {
+        const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+```
+`try` property defines a block of code to be tested for errors as the code is executed. In the block of code `const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');`, a get request is made with the `get` keyword using axios i.e.`$http` to get data from the URL. `await` is prepended to the request because we are calling a promise. The request is stored in a variable called `response`.
+
+```
+  this.posts = response.data
+```
+The data gotten from the request is saved to the 'posts' array which is created in the data property.
+
+```
+    catch (error) {
+        console.log(error);
+    }
+```
+If any error occurs during the code execution, the error will be caught and logged in the console.
 
 After requesting for data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to access reactive data and events that are active with the `created` hook.
 
@@ -242,9 +267,9 @@ then in your `store` folder, access the `index.js` file and write the following 
 You will also need to install and import axios if you have not already done that. Check the earlier
  part of this tutorial for the steps.
  
- **Now let’s create:**
+ **Now let’s make the API request:**
  
- We will be working with the `store/index.js` file.
+We will be working with the `store/index.js` file.
 First, we create a `state` object which will contain all the application level state. It serves as the `data` object for store in a vuex project.
 ```
 
