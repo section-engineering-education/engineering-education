@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/best-practices-to-secure-a-docker-container/
+title: Docker Security - Best Practices to Secure a Docker Container
+description: This article will cover about Docker and its security. We will also see why it is important, and best practices to be kept into consideration.
+author: judy-nduati
+date: 2021-05-18T00:00:00-18:00
+topics: [Security, Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/best-practices-to-secure-a-docker-container/hero.jpg
+    alt: Docker security image example
+---
 Docker containers have taken the software engineering industry by storm. Containers are dominant and can be deployed anywhere. Because of this flexibility, the docker container environment faces several security vulnerabilities.
-
+<!--more-->
 We're going to be covering the security techniques and features that you can put in place to ensure that your
 - Docker environment
 - Docker host
