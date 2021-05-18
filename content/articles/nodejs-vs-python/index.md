@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-vs-python/hero.png
+  - url: /engineering-education/nodejs-vs-python/hero.png
     alt: Node.js example image
 ---
 In this article, we are going to look at the differences between Node.js and Python. The comparison between Node.js and Python proves to be a great battle. However, the decision of choosing either of the two technologies for your backend development depends on your project requirements. 
