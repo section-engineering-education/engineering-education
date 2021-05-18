@@ -6,7 +6,7 @@ url: /engineering-education/how-to-build-a-speedtyping-game-using-javascript/
 title: How to build a speed typing game using Javascript
 description: This article will be an introduction to building speed typing game using JavaScript. We will explore step by step on how to build a game using JavaScript.
 author: muktar-owolabi
-date: 2021-04-21T00:00:00-00:00
+date: 2021-05-18T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
