@@ -14,18 +14,19 @@ images:
   - url: /engineering-education/matlab-image-database/hero.jpg
     alt: Matlab sample Image
 ---
-Face databases are imagery data that are used for testing face processing algorithms like [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) for face recognition.
+Face databases are imagery data that are used when testing face processing algorithms like [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) for face recognition.
 <!--more-->
-In this tutorial, we will learn to code in MATLAB for recognizing a face from a database of human faces.
+In this tutorial, we will learn to code in MATLAB in order to recogne a face from a database of human faces.
 
 How the database works, depends on the type of algorithm you are going to use and the project you are implementing. For example, the PCA uses the [eigenspace](https://deepai.org/machine-learning-glossary-and-terms/eigenspace) to recognize the face from the database.
 
 The framework of this program can be used to create the database for other many objects, not only faces. In this case, we will use the WEBCAM to take some required snapshots of the face to make the database.
 
 ### Prerequisites
-1. [Matlab](https://www.mathworks.com/downloads/) must be installed in your pc.
+To follow this tutorial along - the reader will need the following:
+1. [Matlab](https://www.mathworks.com/downloads/) must be installed on your PC.
 2. A webcamera must be installed.
-3. Have a little knowledge in [Matlab](/engineering-education/getting-started-with-matlab/)
+3. Have a little knowledge in [Matlab](/engineering-education/getting-started-with-matlab/).
 
 ### Table of contents
 - [How to install webcam?](#how-to-install-the-webcam)
@@ -33,26 +34,29 @@ The framework of this program can be used to create the database for other many 
 - [Conclusion](#conclusion)
 
 #### How to install the webcam?
-1. Open the Matlab software on your pc. To download Matlab, refer [here](https://www.mathworks.com/downloads/).
+1. Open the Matlab software on your pc. To download Matlab, you can refer to [here](https://www.mathworks.com/downloads/).
 2. In the `Home` section, click on the `Add-Ons` drop-down arrow, then select the `Get hardware support packages`.
 
 ![Matlab dashboard](/engineering-education/matlab-image-database/windows1_1.png)
+
 *Matlab dashboard screen*
 
 3. On the search tab, type the package name, that is, Matlab support package for USB packages and search.
   
 ![Search page](/engineering-education/matlab-image-database/windows2_1.png)
+
 *Search page*
 
 4. Click on the `MATLAB Support Package for USB`.
 5. Click on `Install` to install.
 
 ![Hardware installation page](/engineering-education/matlab-image-database/windows3_1.png)
+
 *Hardware installation screen*
 
 Since the package is already installed in my PC, the `Install` button is shown as `Manage`.
 
-### Creating face database using Matlab
+### Creating the face database using Matlab
 The main aim of this tutorial is to create a face database of the user himself. This makes it easier to understand and carry out the various projects that require a face database.
 
 We first initialize the webcam.
@@ -61,7 +65,9 @@ We first initialize the webcam.
 cam = webcam;
 ```
 
-We then enter the required number of the faces `nof` to make our database. It is executed by the code below:
+We then enter the required number of the faces `nof` to make our database. 
+
+It is executed by the code below:
 
 ```Matlab
 nof = input('enter no. of required frames:');
@@ -86,7 +92,7 @@ while count <= nof
 img = snapshot(cam);
 ```
 
-The below code returns a cropped image using `myFaceDetect` function that returns the `croppedframe` and the bounding box points `bboxpoint`:
+The code below returns a cropped image using `myFaceDetect` function that returns the `croppedframe` and the bounding box points `bboxpoint`:
 
 ```Matlab
 [croppedFrame, bboxpoint] = myFaceDetect(img);
@@ -95,18 +101,20 @@ imshow(croppedFrame)
 
 Note that, in the code above we are not interested in the bounding boxes `bboxpoint` but the frame. The cropped frame will be stored in the same directory.
 
-We will then use the `if` and `else` statements to introduce the conditions for running the program.
+We will then use the `if` and `else` statements to introduce the conditions to run the program.
 
-If the cropped frame is not empty, it means that the face is detected and we are getting a cropped frame which you can store into any of your folders.
+If the cropped frame is not empty, this means that the face is detected and we are getting a cropped frame that you can store into any of your folders.
 
-It is preferable to create a separate folder. We then specify the path of that folder as shown:
+It is preferable to create a separate folder. 
+
+We then specify the path of that folder as shown:
 
 ```Matlab
 if ~isempty(croppedFrame)
 fileName = strcat('WRITE_YOUR_FOLDER_PATH',sprintf(‘%d.png’,count));
 ```
 
-We then use the `imwrite` function to write the cropped frame with the corresponding filename into the directory:
+We then use the `imwrite` function to write the cropped frame with the corresponding file name into the directory:
 
 ```Matlab
 imwrite(croppedFrame,'WRITE_YOUR_FILENAME');
@@ -116,15 +124,18 @@ count = count + 1;
 ```
 
 ![A Sample face image](/engineering-education/matlab-image-database/image_one.png)
+
 *A sample image of face*
 
-The `num2str` function provides the filename. This means that since the count is starting from `1` to `n` which is the number of given frames. So, filenames will be in the form of numbers.
-In the filename above, we have the file format as `.png`.
+The `num2str` function provides the file name. This means that since the count is starting from `1` to `n` which is the number of given frames. So, filenames will be in the form of numbers.
+
+In the file name above, we have the file format as `.png`.
 
 This means that we expect the name to be in the form below:
 `imageDatabase1.png`, `imageDatabase2.png`, `imageDatabase3.png` until `imageDatabaseN.png`.
 
 ![A list of images](/engineering-education/matlab-image-database/database.png)
+
 *A list of images*
 
 If there is no face detected in the cropped frame, then it should display `no face detected` in the workspace.
@@ -136,7 +147,7 @@ else
 disp('no face detected')
 ```
 
-Below is the full code of the `if` and `else` statement:
+Below is the full code of the `if` and `else` statements:
 
 ```Matlab
 if ~isempty(croppedFrame)
@@ -151,7 +162,9 @@ disp('no face detected')
 end
 ```
 
-The camera makes a snapshot after `0.1s` and resets the camera after the snapshot is made. This is regulated by the code below:
+The camera takes a snapshot after `0.1s` and resets the camera after the snapshot is made. 
+
+This is regulated by the code below:
 
 ```Matlab
 clf('reset')
@@ -159,13 +172,11 @@ pause(0.1)
 end 
 ```
 
-The `pause` time can be changed depending on the user's preference.
-
-After this, the camera object is cleared.
+The `pause` time can be changed depending on the user's preference. After this, the camera object is cleared.
 
 When you run the program, the face of the person in front of the camera is captured and stored. This is repeated until the number of the required images are obtained. The number of captured faces is displayed in the workspace.
 
-When the person in front of the camera hides his/her face or when there is nobody in front of the camera, then a text `no face is detected` is displayed on the workspace.
+When the person in front of the camera hides his/her face or when there is nobody in front of the camera, then a text `no face is detected` will be displayed on the workspace.
 
 When no face is detected, the counting stops, and restarts when the face is again detected until it obtains the required samples.
 
@@ -203,13 +214,13 @@ end
 ```
 
 ### Conclusion
-Matlab is used to create an image database. This is because it has a built-in webcam. This makes it efficient for creating a database for analysis.
+Matlab is used to create an image database. This is because it has a built-in webcam. This makes it efficient when creating a database for analysis.
 
 The image database can also be used in the deep neural system for training and validation. This can help in object recognition and other projects.
 
 Find the full source code [here](https://github.com/atienodorine3/face_database.git).
 
-Happy Coding.
+Happy coding!
 
 To learn more about databases your can, you can click [here](https://www.face-rec.org/databases).
 
