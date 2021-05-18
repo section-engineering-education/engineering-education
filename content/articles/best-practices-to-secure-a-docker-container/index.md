@@ -70,3 +70,6 @@ API and network security are resources used along with Docker. These resources a
 
 ### Wrapping up
 Securing Docker containers is essential and complex as well. With the above tips, you can manage a large and safe platform for containerized applications. The above practices are crucial because they will help you prevent security breaches and attacks.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
