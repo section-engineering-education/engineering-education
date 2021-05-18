@@ -4,22 +4,20 @@ status: publish
 published: true
 url: /engineering-education/enryption-in-mongodb/
 title: Encryption in MongoDB
-description: This article will cover the encryption, encryption at rest and some other terminologies related to this in MongoDB
+description: This article will cover the encryption at rest and some other terminologies related in MongoDB.
 author: harit-joshi
-date: 2021-04-18T00:00:00-21:15
+date: 2021-05-18T00:00:00-21:15
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/enryption-in-mongodb/hero.jpg
     alt: Encryption in MongoDB Image
 ---
-
 NoSQL is an alternative to traditional relational databases. NoSQL databases are quite useful when working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store, or retrieve information.
-
+<!--more-->
 In this article, we are going to learn about Encryption at rest in MongoDB with some examples.
 
 ### Prerequisites
-
 - MongoDB is installed in your system. To install MongoDB safely in your system visit the official documentation via this link
   <https://docs.mongodb.com/manual/installation/>
 
