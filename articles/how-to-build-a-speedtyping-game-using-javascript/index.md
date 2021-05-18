@@ -3,22 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-build-a-speedtyping-game-using-javascript/
-title: How to build a speed typing game using Javascript
-description: This article will be an introduction to building speed typing game using JavaScript. We will explore step by step on how to build a game using JavaScript.
+title: How to Build a Speed Typing Game using JavaScript
+description: This article will be an introduction on how to build a speed typing game using JavaScript. We will explore this is a step by step process.
 author: muktar-owolabi
 date: 2021-05-18T00:00:00-10:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-build-a-speedtyping-game-using-javascript/hero.jpg
     alt: Speed typing game image
 ---
-Javascript is a programming language that web developers use for creating dynamic web page features and interactivity in web projects.
+Javascript is a programming language that web developers use when creating dynamic web page features and interactivity in web projects.
 <!--more-->
-This tutorial focuses on using concepts such as Javascript, API calls, timers, DOM (Document Object Model) manipulation to build a speed typing game to improve your coding skills.
+This tutorial will focus on using concepts such as Javascript, API calls, timers, DOM (Document Object Model) manipulation to build a speed typing game to improve your coding skills.
 
-This should be interesting because you would learn and have fun simultaneously. The game could also turn out useful, as it could test and improve your typing abilities, while you would also have fun.
+This should be interesting because you will learn and have fun simultaneously. The game could also turn out useful, as it could test and improve your typing abilities.
 
 ### Table of contents
 - [Why learn Javascript?](#why-learn-javascript)
@@ -29,8 +29,9 @@ This should be interesting because you would learn and have fun simultaneously. 
 - [Additional Resources](#additional-resources)
 
 ### Prerequisites
+To follow this article along, a reader will need the following:
 - Text Editor: A text editor could be described as an application that allows an individual to create, open, and edit texts e.g. Visual Studio Code, Atom, Sublime, etc.
-- HTML: Hypertext Markup Language is the standard markup language used for creating web pages. The code is used to structure the web pages and their contents.
+- HTML: Hypertext Markup Language is the standard markup language used to create web pages. The code is used to structure the web pages and their contents.
 - CSS: Cascading Style Sheet is the language used to style an HTML document, describing how HTML documents should be displayed.
 - JavaScript: The programming language used to add interactivity to a web page.
 
@@ -56,7 +57,7 @@ To begin with our game’s development, we would have to first create an `index.
 
 [Tip: You can just type an exclamation mark (!) and hit "Enter". It's going to generate all the boilerplate for us (Boilerplates are sections of code or standardized texts commonly used in multiple places with little or no variation in web development)].
 
-We would need to create a `link` tag for our CSS and Javascript, since we would need CSS and Javascript to build the game. For our CSS, we would create a `stylesheet` link and call it `styles.css`.
+We will need to create a `link` tag for our CSS and Javascript, since we will need CSS and Javascript to build the game. For our CSS, we will create a `stylesheet` link and call it `styles.css`.
 
 ```html
 <link rel="stylesheet" href="styles.css">
@@ -64,26 +65,28 @@ We would need to create a `link` tag for our CSS and Javascript, since we would 
 
 and also a script tag for our JS and call it `script.js`.
 
-We would need to make sure we `defer` the script so that it would load after the body of the HTML as shown:
+We need to make sure we `defer` the script so that it loads after the body of the HTML as shown:
 
 ```html
 <script src="script.js" defer></script>
 ```  
 
-Now, we move on to the HTML file where we would add the timer, input, container, and quote texts.
+Now, we move on to the HTML file where we will add the timer, input, container, and quote texts.
 
-To create the timer, we would create a `div` with a class as `timer` and an `id` as `timer`, so that we can access it easily in Javascript.
+To create the timer, we create a `div` with a class as `timer` and an `id` as `timer`, so that we can access it easily in Javascript.
 
 ```html
 <!-- create a 'class' and 'id' to be easily accessed by css and javascript -->
 <div class="timer" id="timer"></div>
 ```
 
-Next, we would need a `div` with class as `container` and inside the `container` we have the quote and the text area. 
+Next, we need a `div` with class as `container` and inside the `container` we have the quote and the text area. 
 
-First, we would have to create a `div` with the `class` as `quote-display` and give it an `id` of `quoteDisplay` so as to access it in JavaScript.
+First, we have to create a `div` with the `class` as `quote-display` and give it an `id` of `quoteDisplay` so as to access it in JavaScript.
 
-Next, we need the `textarea` which is going to be the area where we type. We specify the `class` as `quote-input` and `id` as `quoteInput`. We would also set the `textarea` to `autofocus`, which implies that as our page loads, our cursor will make starting the typing incredibly easy by automatically focusing inside the box.
+Next, we need the `textarea` that is going to be the area where we type. We specify the `class` as `quote-input` and `id` as `quoteInput`. 
+
+We also need to set the `textarea` to `autofocus`, which implies that as our page loads, our cursor will make starting the typing incredibly easy by automatically focusing inside the box.
 
 ```html
 <!-- The 'container' will have both the quote and text area -->
@@ -93,9 +96,9 @@ Next, we need the `textarea` which is going to be the area where we type. We spe
 </div>
 ```
 
-Next, we would create a `styles.css` file where we would create all the styles for the game.
+Next, we create a `styles.css` file where we will create all the styles for the game.
 
-Firstly, we would set the `box-sizing` to `border-box`:
+Now we need to set the `box-sizing` to `border-box`:
 
 ```css
 /* This is to make working with 'widths', 'paddings' and 'margins' very much easier */
@@ -106,7 +109,7 @@ Firstly, we would set the `box-sizing` to `border-box`:
 
 This makes working with `widths`, `paddings`, and `margins` much easier.
 
-Then, we would style the `body` to the center of our `container`. To do that, we set the `margin` to `0`, to get rid of the scroll bar when the game is displayed and we would set the preferred `background-color`:
+Then, we style the `body` to the center of our `container`. To do that, we set the `margin` to `0`, to get rid of the scroll bar when the game is displayed and we set the preferred `background-color`:
 
 ```css
 /* Getting rid of the scroll bar, placing all of our contents at the center and setting our background color */
@@ -129,7 +132,7 @@ body, .quote-input {
 }
 ```
 
-Next, we would style our `.container`:
+Next, we style our `.container`:
 
 ```css
 /* Styling the text and quote container */
@@ -142,7 +145,7 @@ Next, we would style our `.container`:
 }
 ```
 
-Later, we have to style the `timer` so that it is placed over the text.  (The timer won't work until we add some Javascript)
+Later, we have to style the `timer` so that it is placed over the text. (The timer won't work until we add some Javascript).
 
 ```css
 /* Styling the timer */
@@ -155,7 +158,7 @@ Later, we have to style the `timer` so that it is placed over the text.  (The ti
 }
 ```
 
-Next thing, we would work on is `.quote-display`:
+Next thing, we will work on is `.quote-display`:
 
 ```css
 /* Styling the quote area */
@@ -184,7 +187,7 @@ Style the `.quoteInput`:
 }
 ```
 
-Select `.quoteInput` and put it in a `focus` state, the `border-color` would be made `black`, so that when we click on a text, it would be highlighted in black.
+Select `.quoteInput` and put it in a `focus` state, the `border-color` will be made `black`, so that when we click on a text, it's highlighted in black.
 
 ```css
 /* Creating a focus in the text  area to help know where the focus is */
@@ -193,7 +196,7 @@ Select `.quoteInput` and put it in a `focus` state, the `border-color` would be 
 }
 ```
 
-We would be creating a `.correct` and `.incorrect` class in our CSS, which we would be eventually linking with our Javascript:
+We will be creating a `.correct` and `.incorrect` class in our CSS, which we will be eventually linking with our Javascript:
 
 ```css
 /* Style for the color of text when typing correctly */
@@ -208,14 +211,14 @@ We would be creating a `.correct` and `.incorrect` class in our CSS, which we wo
 }
 ```
 
-#### Adding Javascript
-(This is where it gets interesting)
+#### Adding JavaScript
+(This is where it gets interesting).
 
-We create a `script.js` file where we would be writing all of our javascript.
+We create a `script.js` file where we will be writing all of our JavaScript.
 
-Getting our quotes into our text box is the first thing we would want to do.  This could be achieved by using a free API called [Random Quote Generator](api.quotable.io/random).
+Getting our quotes into our text box is the first thing we want to do. This could be achieved by using a free API called [Random Quote Generator](api.quotable.io/random).
 
-Whenever we access the URL, we would get a random quote from the `content` attribute of the API. So we would copy that URL, then go back to our `script.js` file to create a `const` variable that stores the URL.
+Whenever we access the URL, we get a random quote from the `content` attribute of the API. We copy that URL, then go back to our `script.js` file to create a `const` variable that stores the URL.
 
 ```js
 // creating a 'const' variable to store the URL for API of quote generator 
@@ -250,16 +253,16 @@ async function renderNewQuote() {
 }
 ```
 
-Remember in our HTML we created an `Id` for `quoteInput`, where we would type our quotes, and an `id` for `quoteDisplay` where we would show our quote.
+Remember in our HTML we created an `Id` for `quoteInput`, where we will type our quotes, and an `id` for `quoteDisplay` where we would show our quote.
 
-So, in the javascript file, we would create a `const` variable which we would call `quoteDisplayElement` and set it to `document.getElementById('quoteDisplay')`.
+So, in the JavaScript file, we will create a `const` variable which we can call `quoteDisplayElement` and set it to `document.getElementById('quoteDisplay')`.
 
 ```js
 // Creating a const variable of 'quoteDisplay'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 ```
 
-Then, we would go to our `async function` where we `renderNewQuote` and say that `quoteDisplayElement.innerText=quote`;
+Then, we go to our `async function` where we `renderNewQuote` and say that `quoteDisplayElement.innerText=quote`;
 
 ```js
 // Adding quotes to the quote area. 
@@ -269,16 +272,16 @@ async function renderNewQuote() {
 }
 ```
 
-Now, our quote would be put in its section and whenever we refresh, a new quote would generated.
+Now, our quote can be put in its section and whenever we refresh, a new quote will generated.
 
-So to add our input, what we would need to do is we would call `quoteInputElement`, then we would set it to:
+So to add our input, what we need to do is call `quoteInputElement`, then we set it to:
 
 ```js
 // Adding our texts value document.getElementByID('quoteInput')
 const quoteInputElement = document.getElementById('quoteInput')
 ```
 
-Then, we would go to our `async function` where we `renderNewQuote` and say that:
+Then, we go to our `async function` where we `renderNewQuote` and say that:
 
 ```js
 //To clear out the texts inside the text area anytime a new quote is generated
@@ -287,7 +290,7 @@ quoteInputElement.value = null
 
 Remember, we should be able to change the color of each quote to signify when the user is typing them right or wrong.
 
-To do that, we need an individual element for each character or quote, where we would need to go through a `loop`:
+To do that, we need an individual element for each character or quote, where we need to go through a `loop`:
 
 ```js
 //Getting individual element for each character to be able to change color to either right or wrong
@@ -302,13 +305,15 @@ quote.split('').forEach(character => {
 
 As we type characters in our text area, we are going to check to if the characters we are typing are correct. To that, we would need to set up an `EventListener`.
 
-The input element in the `EventListener` will get called every time something in the text area changes. What we want to do is to loop over all of the different `span`, all the different characters in the `quote` array, and then compare each character to the individual character in the input based on their positions, so that the first character in the display area compared to the first character in the input area.
+The input element in the `EventListener` will get called every time something in the text area changes. What we want to do is to loop over all of the different `span`, all the different characters in the `quote` array.
 
-The `correct` class would be added if they are similar and if they are different the `incorrect` class would be added.
+Then we compare each character to the individual character in the input based on their positions, so that the first character in the display area is compared to the first character in the input area.
 
-If we get to the point where the user typed everything correctly, we would want to move to the next quote, so we have to create a variable and call it as `correct`.
+The `correct` class will be added if they are similar, if they are different the `incorrect` class will be added.
 
-The `correct` variable would be set to `true` by default. It would be assumed that everything is correct and if something happens to be `incorrect` the variable would be `false`.
+If we get to the point where the user typed everything correctly, we want to move to the next quote, so we have to create a variable and call it as `correct`.
+
+The `correct` variable will be set to `true` by default. It'll be assumed that everything is correct and if something happens to be `incorrect` the variable will be `false`.
 
 So in a situation where the variable happens to be `true` we just want it to render the next quote:
 
@@ -339,16 +344,16 @@ quoteInputElement.addEventListener('input', () => { // The 'input' gets called e
 
 All we have left to do is to fix our `timer`.
 
-We would create a `startTimer` function and get our `timer` element.
+We create a `startTimer` function and get our `timer` element.
 
-If you remember, we created an element with the `id` of `timer` in our HTML, so we would just select the `id` of `timer`.
+If you remember, we created an element with the `id` of `timer` in our HTML, so we could just select the `id` of `timer`.
 
 ```js
 // Using const variable to store our 'timer' 
 const timerElement = document.getElementById('timer')
 ```
 
-Now, we would set the `timer` to 'zero':
+Now, we set the `timer` to 'zero':
 
 ```js
 //Setting our timer to start at '0'
@@ -371,11 +376,13 @@ This function is going to run every one second, but the `setInterval` isn't prec
 
 The value of `startTime` will be set to the current time and date. 
 
-Instead of calling `setInterval` we would call `getTimerTime`, which would take the current time, and subtract it from our `startTime`.
+Instead of calling `setInterval` we call `getTimerTime`, which takes the current time, and subtract it from our `startTime`.
 
 This is going to be in milliseconds and we want to convert this to seconds. To do so, we will divide by 1000, which will give us the time in seconds (in decimals). To make it integer, we use `Math.floor()`.
 
-All that is left now is setting the `text` of the timer. Our final code for our timer should be:
+All that is left now is setting the `text` of the timer. 
+
+Our final code for our timer should be:
 
 ```js
 // Setting a new date 
@@ -393,9 +400,9 @@ function getTimerTime() {
 }
 ```
 
-Our game should start counting up by now and every second, it’s going to tick up one more and why we know that it is accurate is because of the `startTime` and the currentDate(newDate) which is always accurate to the millisecond while `setInterval` is not accurate and we can’t depend on it.
+Our game should start counting up every second. It’s should tick up one more, because of the `startTime` and the currentDate(newDate) which is always accurate to the millisecond. While `setInterval` is not accurate and we can’t depend on it.
 
-So you can check it out now, everything should be working perfectly. Developing the game wasn’t so hard after all, right?
+So you can check it out now, everything should be working perfectly. 
 
 Congratulations!
 
@@ -408,10 +415,11 @@ Although the app works, it could be improved. We could still improve on the func
 
 Remember, practice makes perfect. Consistency is key.
 
-Here's the link to the GitHub repo for the completed project: [Source Code for Completed Project](https://github.com/CallmeMukty/Speed-typing-game)
+Here's the link to the GitHub repo for the completed project: [Source Code for Completed Project](https://github.com/CallmeMukty/Speed-typing-game).
 
-### Additional Resources
+Happy coding.
 
+### Additional resources
 - [HTML Script Defer Attribute (w3schools)](https://www.w3schools.com/tags/att_script_defer.asp)
 - [Javascript Async](https://www.w3schools.com/js/js_async.asp)
 - [Javascript Promises](https://www.w3schools.com/js/js_promise.asp)
