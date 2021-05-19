@@ -61,7 +61,7 @@ MongoDB utilizes the Advanced Encryption Standard (AES) 256-bit encryption algor
 
 Another feature that MongoDB provides is the option to turn encryption on in “FIPS mode” which means the encryption you use in MongoDB will be tested to the National Institute of Standards and Technology Federal Information Processing Standard. Solutions validated and tested to NIST FIPS are built to meet the highest security standards and compliance.
 
-For more information, you can visit MongoDB official documentation here <https://docs.mongodb.com/manual/tutorial/configure-ssl/>
+For more information, you can visit MongoDB official documentation here [official documentation here](https://docs.mongodb.com/manual/tutorial/configure-ssl/)
 
 ### Encryption performance in MongoDB
 When choosing to encrypt your MongoDB database, users should consider performance. Performance is a very important factor especially for developers who store large amounts of data that customers access daily through front-end applications. When a banking or retail application requests thousands or millions of records from a database daily, any latency or downtime can seriously impact business continuity and operations.
