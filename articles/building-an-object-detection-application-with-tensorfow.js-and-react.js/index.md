@@ -7,8 +7,8 @@ Object detection is a method in computer vision and image processing that allows
 ### Prerequisites
 
 1. You need to have installed [Visual Studio](https://visualstudio.microsoft.com/) code editor on your computer. 
-2. A Linux operating system is preferred over Windows. For Linux users, any Linux operating sstem is preferred, but I used Ubuntu 20.04 for this project. 
-3. A machine with really good hardware specs is recommended for your machine to run the program on your local computer without peril i.e., a powerful processor and RAM of 4gb and above. 
+2. A Linux operating system is preferred over Windows. For Linux users, any Linux operating system is preferred, but I used Ubuntu 20.04 for this project. 
+3. A machine with really good hardware specs is recommended for your machine to run the program on your local computer without peril i.e., a powerful processor and RAM of 4GB and above. 
 4. A webcam is also required to perform object detection in real-time.
 
 ### Goals
@@ -52,7 +52,7 @@ code .
 
 That's 'code' followed with a full stop. That command should fire up our code editor.
 
-It is important to note that these next steps will now be perfomed on the vs code editor. We will need to start our React app using the 'npm start' command. This command is issued on the vs code's terminal. This command is going to start our react app and open a new browser. It will go directly to the 'localhost 3000' by default. This is where our React app is going to start. 
+It is important to note that these next steps will now be performed on the VSCode editor. We will need to start our React app using the 'npm start' command. This command is issued on the vs code's terminal. This command is going to start our react app and open a new browser. It will go directly to the 'localhost 3000' by default. This is where our React app is going to start. 
 
 Please make sure the 'npm' command is installed on your computer before issuing the 'npm start' command. If not, install it using the following command:
 
@@ -157,3 +157,6 @@ That wraps it up! In this tutorial, we have learned how to build an object detec
 1. [React](https://reactjs.org/)
 2. [TensorFlow](https://www.tensorflow.org/)
 3. [COCO SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
