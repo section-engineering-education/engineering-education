@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-fix-memory-leaks-in-python/
-title: How to fix memory leaks in python?
+title: How to Fix Memory Leaks in Python?
 description: In this article, we will discuss about memory leaks, its causes and how to fix them.
 author: bashiir-isla
-date: 2021-05-05T00:00:00-17:00
+date: 2021-05-19T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: 
 images:
