@@ -1,3 +1,17 @@
+---
+layout: engineering-education
+title: Building an Object Detection Application with Tensorflow.js and React.js on Ubuntu 20.04
+description: Object detection is a method in computer vision and image processing that allows us to find and locate where multiple objects are in an image or video. This algorithm draws bounding boxes around one or more objects in the image or video after detecting an object.
+author: sharon-kinyan
+date: 2021-05-19T00:00:00-20:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  -url: /building-an-object-detection-application-with-tensorfow.js-and-react.js/hero.jpg
+  alt: object detection example image
+---
+In this article we will create an object detection application with Tensorflow.js and React.js on Ubuntu 20.04.
+<!--more-->
 Have you ever wondered how a self-driving car operates on its own? Or how the face unlock feature on your mobile phone works? The answer is through object detection.
 
 So what is object detection?
@@ -26,7 +40,7 @@ In this tutorial, we will put in place the following tasks:
 
 1. Use React.js for the standalone front-end application
 2. Capture images from the webcam for object detection
-3. Make detection using TensorFlow.js
+3. Achieve detection using TensorFlow.js
 
 ### Accessing the React Computer Vision Template
 
