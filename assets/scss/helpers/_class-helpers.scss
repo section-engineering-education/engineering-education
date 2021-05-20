@@ -1,0 +1,197 @@
+.pa-1 {
+  padding: 1%;
+}
+
+.pa-2 {
+  padding: 2%;
+}
+
+// half is 2.5%
+
+.pr-half {
+  padding-right: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-right: 2.5%;
+  }
+}
+
+.pl-half {
+  padding-left: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-left: 2.5%;
+  }
+}
+
+.prl-half {
+  padding-left: 5%;
+  padding-right: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+}
+
+.pa-3 {
+  padding: 3%;
+}
+
+.pa-4 {
+  padding: 4%;
+}
+
+.pa-5 {
+  padding: 5%;
+}
+
+.pa-10 {
+  padding: 10%;
+
+  @include mq($to: 920px) {
+    padding: 5%;
+  }
+}
+
+.prl-25 {
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.prl-5 {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.prl-10 {
+  padding-right: 10%;
+  padding-left: 10%;
+
+  @include mq($to: 920px) {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+.pl-5 {
+  padding-left: 5%;
+}
+
+.pr-5 {
+  padding-right: 5%;
+}
+
+.pl-10 {
+  padding-left: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-left: 10%;
+  }
+}
+
+.pr-10 {
+  padding-right: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-right: 10%;
+  }
+}
+
+.pt-5 {
+  padding-top: 5%;
+}
+
+.pb-5 {
+  padding-bottom: 5%;
+}
+
+.pt-10 {
+  padding-top: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-top: 10%;
+  }
+}
+
+.pb-10 {
+  padding-bottom: 5%;
+
+  @include mq($from: $breakpoint-small ) {
+    padding-bottom: 10%;
+  }
+}
+
+
+.mw-1 {
+  max-width: 1%;
+}
+
+.mw-2 {
+  max-width: 2%;
+}
+
+.mw-3 {
+  max-width: 3%;
+}
+
+.mw-4 {
+  max-width: 4%;
+}
+
+.mw-5 {
+  max-width: 5%;
+}
+
+.mw-10 {
+  max-width: 10%;
+}
+
+.mw-20 {
+  max-width: 20%;
+}
+
+.mw-30 {
+  max-width: 30%;
+}
+
+.mw-40 {
+  max-width: 40%;
+}
+
+.mw-50 {
+  max-width: 50%;
+}
+
+.mw-60 {
+  max-width: 60%;
+}
+
+.mw-70 {
+  max-width: 70%;
+}
+
+.mw-80 {
+  max-width: 80%;
+}
+
+.mw-90 {
+  max-width: 90%;
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
