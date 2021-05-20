@@ -14,7 +14,7 @@ images:
   alt: Subnetting image example
 ---
 In this article, we will get to understand important terms of the Network.
-
+<!--more-->
 ### Table of Contents
 - Internet Protocol (IP) Address
 - IPV4 Diagram
