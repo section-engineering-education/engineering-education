@@ -5,28 +5,27 @@ published: true
 url: /introduction-to-virtual-environments-and-dependency-managers/
 title: Introduction to Python Virtual Environments and Dependency Managers
 description: A beginner's guide to virtual environments and dependency managers in Python. We will look at five of the most used dependency managers in Python.
-author: adhing'a-fredrick
-date: 2021-04-27T00:00:00-13:00
-topics: []
+author: adhinga-fredrick
+date: 2021-05-20T00:00:00-12:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
 - url: /engineering-education/introduction-to-virtual-environments-and-dependency-managers/hero.png
   alt: Python Virtual Environment example
 ---
-Virtual environments. What are they and what are they used for?
+Virtual environments. What are they and what are they used for? This article will be a beginner's guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.
 <!--more-->
-
 From the [Python documentation](https://docs.python.org/3/library/venv.html):
 > A virtual environment is an isolated Python environment where a project's dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.
 
 Dependency managers are tools that enable easy management of a project's dependencies.
 
 #### The problems solved by virtual environments
-1. Managing projects with different dependencies. e.g. when one project requires `Django==2.6` but another project requires `Django==3.0.6`.
+1. Managing projects with different dependencies. For example, when one project requires `Django==2.6` but another project requires `Django==3.0.6`.
 2. Installation of Python packages and libraries.
 3. Dependency resolution. This is where you specify the requirements for a particular project's sub-dependency to avoid installation problems. 
-4. Reproduction of environments. One machine can be handling many projects in different environments.
+4. Reproduction of environments. One machine can handling many projects in different environments.
 
 ### Prerequisites
 This article assumes that the reader:
@@ -43,13 +42,12 @@ This article will look at the following most used virtual environments and depen
 5. [Poetry](#5.-Poetry)
 
 ### 1. Venv
-[Venv](https://docs.python.org/3/library/venv.html) is a Python's module that is used to create light weight virtual environments. It is the default virtual environment module for **Python 3**.
-It is one of the easiest modules for creating virtual environments.
+[Venv](https://docs.python.org/3/library/venv.html) is a Python's module that is used to create light weight virtual environments. It is the default virtual environment module for **Python 3**. It is one of the easiest modules around for creating virtual environments.
 
 #### Features
-* Python 3's default virtual environment tool.
-* It is a light weight module.
-* Stores all dependencies in a Scripts folder or bin  sub-folder (on linux).
+- Python 3's default virtual environment tool.
+- It is a light weight module.
+- Stores all dependencies in a Scripts folder or bin sub-folder (on linux).
 
 #### Installation
 Since Venv comes pre-installed in Python 3 or newer, there's no need to install it.
@@ -111,7 +109,7 @@ $ python -m pip freeze > requirements.txt
 ```
 
 #### Deactivating a virtual environment
-After you finish with the environment, deactivate it using:
+After you finish with the environment, deactivate it by using:
 
 ```bash
 $ deactivate.bat
@@ -121,16 +119,16 @@ $ deactivate.bat
 Since virtual environments are self-contained, when no longer needed, just delete the project's virtual environment directory (in this case `/venv` ).
 
 #### 2. Virtualenv
-**[Virtualenv](https://virtualenv.pypa.io/en/latest/)** is a third-party dependency manager tool for creating and managing Python projects. It is the most used and most popular virtual environment module for **Python 2**  language.
+**[Virtualenv](https://virtualenv.pypa.io/en/latest/)** is a third-party dependency manager tool used for creating and managing Python projects. It is the most used and most popular virtual environment module for the **Python 2**  language.
 
 >**Note** virtual environments do not come as a native feature for Python 2.
 
 #### The cons
-* It cannot be upgraded using [pip](https://pip.pypa.io/en/stable/installing/).
-* It cannot create and discover virtual environments for randomly installed python versions.
+- It cannot be upgraded using [pip](https://pip.pypa.io/en/stable/installing/).
+- It cannot create and discover virtual environments for randomly installed Python versions.
 
 #### Installation
-In order to order use Virtualenv, we first need to install it using the following command:
+In order to use Virtualenv, we first need to install it using the following command:
 
 ```bash
 $ pip install virtualenv
@@ -143,10 +141,9 @@ To create a virtual environment, run the following command:
 $ virtualenv venv
 ```
 
-Use *venv* as the name of your project's virtual environment.
-To activate and deactivate the virtual environment, use the same commands as [Venv](#1.-Venv).
+Use *venv* as the name of your project's virtual environment. To activate and deactivate the virtual environment, use the same commands as [Venv](#1.-Venv).
 
-#### Installing Dependencies
+#### Installing dependencies
 To install additional packages and libraries, use:
 
 ```bash
@@ -173,7 +170,7 @@ Before we use Pipenv, let's first install it. Run the following command on a ter
 $ pip install pipenv
 ```
 
-After running this, Pipenv will be installed on your machine. Here’s the part where we now say goodbye to `pip`. It has been indeed a journey!
+After running this, Pipenv will be installed on your machine. Here’s the part where we now say goodbye to `pip`. It has been a journey indeed!
 
 #### Creating a virtual environment
 After installation, we just need to install a Python module using Pipenv and **boom!**, we have a virtual environment.
@@ -182,7 +179,7 @@ After installation, we just need to install a Python module using Pipenv and **b
 $ pipenv install Django==2.0.13
 ```
 
-The command above automatically creates a `Pipfile` and a `Pipfile.lock` file in your project's virtual environment. These files are where your project dependencies are saved. These files are where your project dependencies are saved.
+The command above automatically creates a `Pipfile` and a `Pipfile.lock` file in your project's virtual environment. These files are where your project dependencies are saved. 
 
 If you wish to change the dependencies, you could change the default `Pipenv` configurations.
 
@@ -193,7 +190,7 @@ After creating our virtual environment, we can activate it by running the comman
 $ pipenv shell
 ```
 
-#### Uninstalling Packages
+#### Uninstalling packages
 You can uninstall a package from your project by running the following command:
 
 ```bash
@@ -209,13 +206,13 @@ For whatever reason you feel the need to remove a virtual environment, you can d
 $ pipenv --rm
 ```
 
-**Note:** With Pipenv, you can specify the version of Python to use, using the command below:
+>**Note** that with Pipenv, you can specify the version of Python to use, using the command below:
 
 ```bash
 $ pipenv --python path/to/python
 ```
 
-**Note**: You can get the specific Python version using [Pyenv](https://github.com/pyenv/pyenv).
+>**Note**: You can get the specific Python version using [Pyenv](https://github.com/pyenv/pyenv).
 
 ### 4. Conda
 **[Conda](https://conda.io/projects/conda/en/latest/index.html)** is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.
@@ -223,14 +220,13 @@ $ pipenv --python path/to/python
 Conda comes pre-installed in [anaconda](https://www.anaconda.com/) and [miniconda](https://docs.conda.io/en/latest/miniconda.html).  
 
 #### Features
-* You can [share](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment) environments.
-* Finding and installing packages -  Since Conda is also an environment manager, you can set up another environment to run a different version of Python, without interfering with the environment that runs your usual version of Python.
+- You can [share](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment) environments.
+- Finding and installing packages -  Since Conda is also an environment manager, you can set up another environment to run a different version of Python, without interfering with the environment that runs your usual version of Python.
 
 #### Installation
-Installing Conda is quite different from other dependency managers.
-The easiest way to install it is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/windows/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - a mini version of anaconda that contains only Conda and its dependencies.
+Installing Conda is a bit different from other dependency managers. The easiest way to install it is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/windows/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - a mini version of anaconda that contains only Conda and its dependencies.
 
-### Create an environment
+### Creating an environment
 To create a virtual environment using Conda, run the following command on a terminal.
 
 ```bash
@@ -263,16 +259,16 @@ $ conda deactivate
 **[Poetry](https://python-poetry.org/docs/)** is popularly known as a very feature-rich Python tool for project dependency management. It comes wrapped with a powerful CLI for creating and managing Python projects.
 
 #### Features
-* It comes with a `pyproject.toml` file that contains a `tool.poetry` section that is composed of several sections like README.md, name, author [etc](https://python-poetry.org/docs/pyproject/) for project documentation.
-* It is faster than most virtual environment tools.
-* It allows libraries declaration and auto updating of dependencies.
+- It comes with a `pyproject.toml` file that contains a `tool.poetry` section that is composed of several sections like README.md, name, author, [etc](https://python-poetry.org/docs/pyproject/) for project documentation.
+- It is faster than most virtual environment tools.
+- It allows libraries declaration and auto updating of dependencies.
 
 #### Installation
 Unlike other project dependency tools, Poetry comes with a custom installer that isolates it from the rest of your system by seperating its dependencies.
 
 Run the following command in the Windows Powershell.
 
-**Note**: This is the recommended way of installing `poetry` .
+>**Note**: This is the recommended way of installing `poetry` .
 
 ```bash
 $ (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
@@ -289,7 +285,7 @@ $ poetry new venv
 
 This will create a virtual environment directory structure like shown below:
 
-```text
+```bash
 venv
 ├── pyproject.toml
 ├── README.rst
@@ -313,7 +309,7 @@ or
 $ source {path_to_venv}\Scripts\activate.bat
 ```
 
-#### Adding Dependencies
+#### Adding dependencies
 To add a new dependency, use the following command:
 
 ```bash
@@ -332,6 +328,7 @@ You can deactivate a virtual environment using either:
 ```bash
 $ exit 
 ```
+
 This commands exits the virtual environment together with the powershell.
 
 or
@@ -348,6 +345,8 @@ When creating virtual environments, always try to use **venv** as the environmen
 It is generally a good practice to work with virtual environments as they save you hours of debugging common errors like the `No module error`. They also enable easy collaboration between developers.
 
 Good luck on your future projects.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
