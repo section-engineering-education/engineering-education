@@ -31,11 +31,14 @@ Open the newly cloned repository in your text editor. It should look something l
 Note: When working with multiple articles simultaneously, it's best to create and work on separate branches for each article. (Here is a [short video](https://www.youtube.com/watch?v=oPpnCh7InLY&t=577s) on how Github Branches work.)
 
 ### Create article folder structure
-Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) Be sure to:
-- Use all lowercase.
-- Use dashes in place of spaces.
-- Do not include any special characters.
-- Try to keep it under 40 characters.
+Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) 
+
+Be sure to:
+- **Use all lowercase.**
+- **Use dashes in place of spaces.**
+- **Do not include any special characters.**
+- **Try to keep it under 40 characters.**
+- -**Avoid using periods (.) or commas (,)
 
 ![create article folder](/static/images/create-article-folder.png)
 
