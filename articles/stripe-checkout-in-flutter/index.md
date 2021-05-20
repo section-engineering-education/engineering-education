@@ -347,3 +347,6 @@ You can find the project [here](https://github.com/jerimkaura/flutter-book/tree/
 - [Stripe payment flutter package](https://pub.dev/packages/stripe_payment).
 - [Flutter credit card package](https://pub.dev/packages/flutter_credit_card).
 - [Http Dart Package](https://pub.dev/packages/http).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
