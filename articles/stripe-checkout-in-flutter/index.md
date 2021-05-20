@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/stripe-checkout-in-flutter/
+title: Getting started with Stripe integrations in Flutter application
+description: This article explains a stepwise process of integrating Stripe payment API into a Flutter application.
+author: jerim-kaura
+date: 2021-05-20T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/stripe-checkout-in-flutter/hero.png
+   alt: Getting started with Stripe integrations in Flutter application example image
+---
+
 Stripe is an online payment platform that allows merchants to receive payment for products and services they sell. The company, besides processing payments, provides application programming interfaces for integrating payment systems in third-party applications. 
 
 In this tutorial, we will learn how to integrate stripe checkout into a flutter application.
