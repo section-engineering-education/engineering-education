@@ -1,5 +1,8 @@
 ---
 layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-subnetting/
 title: Introduction to Subnetting
 description: Subnetting is a partition process of splitting a single-page network into two or more strands. This process enhances the efficiency of the computer network. This article will give good detail on how subnetting works and the terminologies behind computer networking.
 author: anyebe-blessing-ene
@@ -8,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   -url: /engineering-education/introduction-to-subnetting/hero.jpg
-  alt: computer in a dark background
+  alt: Subnetting image example
 ---
 In this article, we will get to understand important terms of the Network.
 
