@@ -1,8 +1,7 @@
-HTTP has been the de facto protocol for communication in world wide web for along time. It is mainly based on the Client/Server architecture model. In 2015, the second release with improved features known as HTTP/2 was released to address its limitations by using methods such as compression, multiplexing and prioritization.
-
+HTTP protocol has been the foundation of internet communication for along time where its architecture is mainly based on the Client/Server model. What web applications have you built where load times suffers when waiting for assets to load and pushing them ahead of time would really help? This is what HTTP/2 aims to solve, improve web efficency. It was released in 2015 with improved features to address the HTTP/1 (version one) limitations. It uses methods such as compression, multiplexing and prioritization. to overcome the HTTP overheads.
 
 ### Goal
-In this Node.js tutorial, we will learn about HTTP/2 and server push, how it works, and its impact on performance. Let's begin!
+In this Node.js tutorial, we will learn about HTTP/2 and server push, how it works, and its impact on performance. We will use Node.js to build our HTTP/2 server. Let's begin!
 
 ### Prerequisites
 
@@ -17,7 +16,15 @@ To follow along with this tutorial:
 
 ### A brief on HTTP/2 and Server Push
 
-Server push works is what bundles our assets into one HTTP/2 call. Under the hood, the server issues a `PUSH_PROMISE`. Client browser can then use it without even depending on if the main HTML file needs it where the client is required to match the received push promises to make them look like a regular HTTP/2 GET calls.
+HTTP/2 will makes our web applications feel faster, simpler, and more robust.It uses new technologies such as multiplexing connections to take away the web's performance bottleneck. The primary goals of HTTP/2 include:
+- reducing overheads by compressing the server request headers.
+
+- Performing full request and response multiplexing over a single HTTP or TCP connection.
+
+- Using HTTP/2 Server Push and client caching. 
+
+Check more about this [here](https://developers.google.com/web/fundamentals/performance/http2).
+Server push works is what bundles our assets for a single client request into one HTTP/2 response. Instead of waiting for the browser to first load the HTML and determine which assets to download, we can push all the assets to the browser ahead of time. Under the hood, all the streams are initiated via `PUSH_PROMISE` containing HTTP headers of the promised resource. This will signal the server to push the described resources to the client ahead of the response time thus avoiding duplicate requests.
 
 ### Setting Up Our Project
 
@@ -50,15 +57,16 @@ For our boilerplate Node.js code, we need to create a package.json file and inst
 
 To restart our development server, we will use a nodemon package. Run the command `npm i -D nodemon` to install it as a development dependency. Our project structure now looks like:
 
-```
+```bash
 /http2-node-server-push
-  /node_modules
-  - index.js
-  - package.json
-  - package.lock.json
-  - server.crt
-  - server.key
+  node_modules/
+|--- index.js
+|--- server.crt
+|--- server.key
+package.json
+package.lock.json
 ```
+
 We will add this npm script into scripts of the `package.json` file to ease our server launch command which uses `nodemon` for auto-reloading:
 ```JSON
       "scripts": {
@@ -68,7 +76,7 @@ We will add this npm script into scripts of the `package.json` file to ease our 
 ```
 From here, we are now ready to implement server push using Express and spdy.
 
-Implementing a Server Push HTTP/2 Server with Node.js and Express.js
+## Implementing HTTP/2 and Server Push 
 Import the dependencies. Create the entry `index.js` file in the root of our folder (see project structure above).
 
 In the root of this folder, run the command `npm init -y` to set up a new project by generating an initial `package.json` file. Our project will two dependencies from the npm registry:
@@ -81,9 +89,6 @@ To install the packages using `npm`. Run the command :
 
 `npm install express spdy`
 
-### Generating server keys
-
-### Adding spdy library for HTTP/2 and Server Push
 
 
 Now we will create an HTTP2 secure server using `spdy` module. This server will serve the index.html file when the request url is “/” and also push all files from the “scripts” directory and “images” directory and the style.css file.
@@ -94,5 +99,5 @@ Now let’s go to https://localhost:3001. The HTTP/2 server is running on that p
 All other requests for script files and image files and stylesheet are received as “Push” from the server. If we check the console in the Node JS server then we will see only one request came this time that is for the url “/”.
 
 ### Conclusion
-Server push is extremely powerful and should be 
+Everyone knows the significance of improving the speed of our web qpplications. With a minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. Server push is extremely powerful and should be 
 HTTP/2 is becoming the new web standard with its great features that constantly improves web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency is greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push). Happy coding!
