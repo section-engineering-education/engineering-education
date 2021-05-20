@@ -1,9 +1,9 @@
 ### Introduction to Evolutionary Algorithms
 A computer program is built to follow rigid and explicit rules.
-This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that we find a powerful, population based optimization algorithm, Evolutionary algorithm.
+This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that, we find a powerful, population-based optimization algorithm, the Evolutionary algorithm (EA).
 
-An evolutionary algorithm mimics one of nature's most fascinating process, natural selection. Given a population, only fitter members will survive and produce new generations.
-Inspired by the model of evolution by Darwin in 1859, an EA can be used to approximate solutions. This can be used even when the most optimized approach known is still not fast enough to meet real world constraints [ Ex: [NP-Complete](https://www.ics.uci.edu/~eppstein/161/960312.html) ].
+An evolutionary algorithm mimics one of nature's most fascinating processes, natural selection. Given a population, only fitter members will survive and produce new generations.
+Inspired by the model of evolution by Darwin in 1859, an EA can be used to approximate solutions. This can be used even when the most optimized approach known is still not fast enough to meet real-world constraints [ Ex: [NP-Complete](https://www.ics.uci.edu/~eppstein/161/960312.html) ].
 
 ### Prerequisites
 The reader must have a good understanding of the Python Programming Language.
@@ -11,17 +11,17 @@ The reader must have a good understanding of the Python Programming Language.
 
 ### Table of contents
 1. [Phases of EA](#phases-of-ea)
-2. [Infinite Monkey Theorem](#the-infinite-monkey-theorem)
+2. [The Infinite Monkey Theorem](#the-infinite-monkey-theorem)
 3. [Why do we need Evolutionary Algorithms?](#why-do-we-need-evolutionary-algorithms)
 4. [Coding an Evolutionary Algorithm](#coding-an-evolutionary-algorithm)
-5. [Some fascinating examples of EA](#some-fascinating-outcomes-of-ea)
+5. [Some fascinating outcomes of EA](#some-fascinating-outcomes-of-ea)
 
 ### Phases of EA
-Let us start with a brief overview of the phases in an Evolutionary Algorithm. We will revisit these again to understand it in detail with a sample problem.
+Let us start with a brief overview of the phases in an Evolutionary Algorithm. We will revisit these to understand them in detail with a sample problem.
 
-An EA consists four phases:
+An EA consists of four phases:
 1. Initialization: A starting population of possible solutions. This is usually randomly populated.
-2. Selection: This step simulates the process of natural selection. We need to evaluate the fitness of the members of the population. A fitness function takes in the characteristics of the member and gives out a numerical representation of the viability of the solution. A portion of top-scoring members are selected.
+2. Selection: This step simulates the process of natural selection. We need to evaluate the fitness of the members of the population. A fitness function takes in the characteristics of the member and gives out a numerical representation of the viability of the solution. A portion of top-scoring members is selected.
 3. Genetic Operators: To generate the next generation of the population.
   - Recombination/Crossover: Combining the information of parents to produce one or more children.
   - Mutation: Introducing new genetic material into the generation by slightly modifying the children.
@@ -32,12 +32,9 @@ An EA consists four phases:
 To delve deeper into the aspects of EA, let us consider a problem with monkeys, our evolutionary ancestors.
 
 ### The Infinite Monkey Theorem
->The infinite monkey theorem states that
-a monkey hitting keys at random on a typewriter keyboard for an
-infinite amount of time will almost surely type any given text,
-such as the complete works of William Shakespeare.
+>The infinite monkey theorem states that a monkey hitting keys at random on a typewriter keyboard for an infinite amount of time will almost surely type any given text, such as the complete works of William Shakespeare.
 
-The actual chance that a monkey types the entire Julius Caesar is very slim. It is so minuscule that if it started at Big Bang, it still would still be typing. This is going to set the premise for the problem we are going to look at.
+The actual chance that a monkey types the entire Julius Caesar is very slim. It is so minuscule that if it started at Big Bang, it would still be typing. This is going to set the premise for the problem we are going to look at.
 
 Let us consider a monkey aiming to type a short phrase, say "Hello".
 The probability that the monkey gets one letter right, say "H", would be 1/54 as there are 27 possible lowercase and 27 possible uppercase characters to choose from. So, the probability that the monkey gets the word 'Hello' right would be:
@@ -45,8 +42,8 @@ The probability that the monkey gets one letter right, say "H", would be 1/54 as
 
 = 1 in 459165024
 
-If our monkey is a powerful simulation that can type a million characters a second, this is going to take about 7.6 min.
-7.6 Min is not a big time, then why do we need EA?
+If our monkey is a powerful simulation that can type a million characters a second, this is going to take about 7.6 minutes.
+7.6 minutes is not a great deal of time. If that's the case, why do we still need EA?
 
 ### Why do we need Evolutionary Algorithms?
 We considered the word "Hello", now let us look at the phrase "HelloWorld"
@@ -69,7 +66,9 @@ We are going to try to make our monkey type the word "Hello" to learn the finer 
 
 #### Step 1: Initialization
 Ideally, the initial set of solutions for our problem should have all the possible 5 letter words. But, this set is going to be of length 459165024. We do not need to keep every single value possible in our population. We will be creating new genetic material. Let us take our population size to be 50.
-<br/>So, let us create an array with 50 random strings of upper and lower case alphabets of length 5 [Equal to our target string]. We will be using random.choices() to get our random strings.
+
+So, let us create an array with 50 random strings of upper and lower case alphabets of length 5 [Equal to our target string]. We will be using the random.choices() method to get our random strings.
+
 ````python3
 import string
 import random
@@ -80,7 +79,7 @@ population = [''.join(random.choices(string.ascii_letters, k=len(target))) for _
 
 #### Step 2: Selection
 Fitness function is a way to find out how feasible a solution is.
-A proper fitness function to simulate your goal is one of the most important aspects of EA.
+Choosing a proper fitness function to simulate your goal is one of the most important aspects of EA.
 Our goal is to get the word "Hello". So, a neat and simple fitness score would give us the number of characters at their correct positions.
 
 So, for a string "Yello": <br/>
@@ -98,9 +97,10 @@ No matter how we combine the top 3 words, we are not going to get 'o' in the las
 
 Natural selection also doesn't entirely eliminate members with a low fitness score. They are less likely to survive. The probability of a member being selected to continue the generation must be based on the fitness score. A fitness score of 0 will perish, but the rest of them have a chance to survive. The best ones will have a much greater survival rate.
 
-To simulate this, let us put all the members of the population into a box called mating pool. The number of times the member is put in the box is based on the fitness function. Say, a member [Helxa] has a score of 3, it will be put in the mating pool (3/5)*100 = 60 times. While a member [Haxvs] with a score of 1 will be put in the pool (1/5)*100 = 20 times.
+To simulate this, let us put all the members of the population into a box called a mating pool. The number of times the member is put in the box is based on the fitness function. Say, a member [Helxa] has a score of 3, it will be put in the mating pool (3/5)*100 = 60 times. While a member [Haxvs] with a score of 1 will be put in the pool (1/5)*100 = 20 times.
 
-So when we pick two parents for generating the next generation, it is similar to picking 2 balls from a jar of balls. Picking the ball with most frequency [highest fitness score] is more likely
+So when we pick two parents for generating the next generation, it is similar to picking 2 balls from a jar of balls. Picking the ball with most frequency [highest fitness score] is more likely.
+
 ````python3
 def selection(population):
     mating_pool = []
@@ -112,20 +112,18 @@ def selection(population):
 ````
 
 #### Step 3: Genetic Operators
-Now we need to generate the next generation. This is the part where we
-induce variation in the population to tweak our population into the desired one.
+Now we need to generate the next generation. This is the part where we induce variation in the population to tweak our population into the desired one.
 
-#### Recombination/ Crossover
-This stochastic operation takes two [or more] parents and combines them to generate an
-offspring. Selection of parents is random, but the probability of selecting a particular candidate
-is based on the fitness score.
+##### Recombination/ Crossover
+This stochastic operation takes two (or more) parents and combines them to generate an offspring. The selection of parents is random, but the probability of selecting a particular candidate is based on the fitness score.
 
 Crossover operation for our problem could be:
 1. Taking half of each string and combining.
 2. Taking alternative characters from each of the strings.
-3. Choosing a random mid-point and taking first part till mid-point from one parent and the rest from the other.
+3. Choosing a random mid-point and taking the first part till mid-point from one parent and the rest from the other.
 
 We are going to go with the third option to include a bit more randomness.
+
 ````python3
 def crossover(a, b):
     child = [''] * len(a)
@@ -137,13 +135,14 @@ def crossover(a, b):
 
 ##### Mutation
 This unary operator modifies the child we got from recombination slightly.
-This change is random and unbiased. For our problem, we can just choose a random
-position in the string and replace it with a random letter.
-<br/>But, why do this?
-<br/> Consider a case where our whole population doesn't have the letter e. This is
-completely possible as our population is random. No matter how we combine two strings
-we will never reach our target as we will never be able to generate 'e' at the second position.
+This change is random and unbiased. For our problem, we can just choose a random position in the string and replace it with a random letter.
+
+But, why do this?
+
+Consider a case where our whole population doesn't have the letter 'e'. This is completely possible as our population is random. No matter how we combine two strings, we will never reach our target as we will never be able to generate 'e' at the second position.
+
 So, if our mutation rate is zero, our output will be similar to this.
+
 ````
 Generations:
 Gen:  1 megFo 2
@@ -196,7 +195,9 @@ Gen:  999 FelMo 3
 Gen:  1000 FelMo 3
 ````
 Okay, if this mutation is that important why don't we just mutate everything?
-<br/> Let us have a look at what happens if mutation rate is 1.
+
+Let us have a look at what happens if the mutation rate is 1.
+
 ````
 Gen:  219 wNlkB 1
 Gen:  220 bbTlq 1
@@ -208,11 +209,12 @@ Gen:  225 HGMns 1
 Gen:  226 Qiljq 1
 Gen:  227 ZGdpi 0
 ````
-Though this output is cropped, the effect of such randomness can be seen. Having a high mutation rate
-leads to loss of good solutions as even if we had gotten the string Aello, we could have altered it
-to some other string, say AGllo.
-<br/> So choosing a good mutation rate [between 0 and 1] is important.
+Though this output is cropped, the effect of such randomness can be seen. Having a high mutation rate leads to loss of good solutions as even if we had gotten the string 'Aello', we could have altered it to some other string, say 'AGllo'.
+
+So choosing a good mutation rate (between 0 and 1) is important.
+
 After some trial, we have chosen 0.1 to be our mutation rate.
+
 ````python3
 def mutate(a):
    mutationRate = 0.1
@@ -223,13 +225,13 @@ def mutate(a):
     return ''.join(a)
 ````
 ##### Replacement
-We have now obtained a new modified offspring from two parent nodes. Now we have to put it
-back in the population.
+We have now obtained a new modified offspring from two parent nodes. Now we have to put it back in the population.
 This survivor selection mechanism can either be:
-- Age based: Replace the oldest member of the population with the child
+- Age-based: Replace the oldest member of the population with the child
 - Fitness score based: Replace the weakest member with the child
 
-We have employed an age based replacement.
+We have employed an age-based replacement.
+
 ````python3
 def generation(mating_pool, number_of_gen):
     for i in range(len(population)):
@@ -241,13 +243,14 @@ def generation(mating_pool, number_of_gen):
     return number_of_gen
 ````
 #### Step 4: Termination
-So, when and how do we stop our evolutionary algorithm? Should we go on till we
-get our exact target? In most real life applications, we are content with approximations
-of the target.
-<br/>Some termination criteria are:
+So, when and how do we stop our evolutionary algorithm? Should we go on till we get our exact target? 
+
+In most real-life applications, we are contented with approximations of the target.
+
+Some termination criteria are:
 1. Maximally allowed CPU time elapses
 2. The number of generations has exceeded a limit
-3. Optimal fitness score is reached
+3. Optimal fitness score is reached.
 4. The fitness improvements are under a threshold value for a given amount of time
 5. The population diversity drops under a given threshold
 
@@ -384,9 +387,9 @@ Oh, and just in case you were wondering the real life effects of this thought ex
 
 You can have look at the monkey's work [here](https://web.archive.org/web/20090318143423/http://www.vivaria.net/experiments/notes/publication/NOTES_EN.pdf)
 
-### Some Fascinating Outcomes of EA
+### Some fascinating outcomes of EA
 Evolutionary Algorithms are basically a means of asking the computer to think.
-Sometimes these have given rise to some totally out of the box solutions.
+Sometimes these have given rise to some totally out-of-the-box solutions.
 Have a look at some of these. These made me gape in awe!
 
 ![walk-without-legs](/engineering-education/introduction-to-evolutionary-algorithms/EA.gif)
