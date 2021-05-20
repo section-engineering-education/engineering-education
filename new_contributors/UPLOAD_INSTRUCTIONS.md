@@ -26,12 +26,12 @@ Next, you will need to clone the repository to your local computer.
 
 Open the newly cloned repository in your text editor. It should look something like this (shown in Visual Studio Code):
 
-![repository text editor](/static/images/repository-text-editor.png)
+![repository text editor](/static/images/new-vs-code-shot.JPG)
 
 Note: When working with multiple articles simultaneously, it's best to create and work on separate branches for each article. (Here is a [short video](https://www.youtube.com/watch?v=oPpnCh7InLY&t=577s) on how Github Branches work.)
 
 ### Create article folder structure
-Within the articles folder, create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) Be sure to:
+Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) Be sure to:
 - Use all lowercase.
 - Use dashes in place of spaces.
 - Do not include any special characters.
