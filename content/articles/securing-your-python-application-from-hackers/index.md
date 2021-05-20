@@ -6,7 +6,7 @@ url: /engineering-education/securing-your-python-application-from-hackers/
 title: Securing Your Python Application from Hackers
 description: This tutorial will help the readers to secure their programs in application by going over some of the dangerous functions in Python.
 author: ahmad-mardeni
-date: 2021-05-12T00:00:00-10:00
+date: 2021-05-20T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
