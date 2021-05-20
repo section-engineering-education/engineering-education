@@ -89,7 +89,7 @@ If you would like to include a (step-by-step) video to one of your How To Guide 
 
 Upload the [video to YouTube](https://www.wix.com/blog/2019/02/how-to-upload-video-youtube-guide/) (if it isn't already).
 
-![Copy YouTube Embed Code](/images/yt-video-embed.png)
+![Copy YouTube Embed Code](/static/images/yt-video-embed.png)
 
 Take that copied embed code and paste it into your .md (markdown) file where you would like it to be placed. The code should look something like this:
 
