@@ -21,7 +21,7 @@ In this tutorial, we will look at the Node.js timer module and how we can use th
 
 ### Table of contents
 1. Scheduling timers
-2. Cancelling timers
+2. Canceling timers
 3. Summary
 
 ### Prerequisites
