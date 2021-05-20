@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-virtual-environments-and-dependency-managers/
+url: /introduction-to-virtual-environments-and-dependency-managers/
 title: Introduction to Python Virtual Environments and Dependency Managers
 description: A beginner's guide to virtual environments and dependency managers in Python. We will look at five of the most used dependency managers in Python.
 author: adhing'a-fredrick
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-- url: /engineering-education/python-virtual-environments-and-dependency-managers/hero.png
+- url: /engineering-education/introduction-to-virtual-environments-and-dependency-managers/hero.png
   alt: Python Virtual Environment example
 ---
 Virtual environments. What are they and what are they used for?
