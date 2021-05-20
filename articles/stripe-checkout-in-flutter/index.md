@@ -20,8 +20,8 @@ Stripe is an online payment platform that allows merchants to receive payment fo
 In this tutorial, we will learn how to integrate stripe checkout into a flutter application.
 
 ### Prerequisites
-1. A basic understanding of Flutter
-2. Flutter SDK installed on your computer
+1. A basic understanding of [Flutter](https://flutter.dev/).
+2. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer.
 3. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
 4. An emulator or a mobile device to run the project.
 
