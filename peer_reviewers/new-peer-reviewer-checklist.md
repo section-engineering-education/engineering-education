@@ -40,7 +40,7 @@
 
 - Section team reviews article (Round 1):
 
-	- Formatting [add front matter - check that description is around 150 characters - add hero image (if needed)]
+	- Formatting [[add front matter](https://github.com/section-io/engineering-education/blob/master/peer_reviewers/front-matter-process.md) - check that description is around 150 characters - add hero image (if needed)]
 
 	- Check all links work and lead to the intended website
 	
@@ -63,5 +63,12 @@
 - (if needed) Ask the student author to make any required revisions within the PR. Once the corrections are submitted, review changes.
 
 - (if needed) if the scope of the article is beyond Peer Reviewer Scope - Ping Manager with details and they will request a Revision (from the Section tech review committee)  in the open PR
+
+- add your PRL (peer reviewer line to the end of the article you reviewed) to get credit and payout. 
+Example: 
+```
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+```
 
 - Ping Manager for a Final Review and for them to Merge the approved PR.
