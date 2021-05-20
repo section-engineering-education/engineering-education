@@ -61,9 +61,9 @@ app.use(sessions({
 
 - `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key usually is long in a production environment, and it is a randomly generated string.
 
-- `resave` - takes a boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result to a race situtaion incase a client makes two parallel requests to the server. Thus modification made on the session of first request may be overwritten when the second request ends. The default value is `true`, however this may change at some point. `false` is a better alternative.
+- `resave` - takes a boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
 
-- `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is refered as `uninitialized`.
+- `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
 
 - `cookie: { maxAge:}` - this sets a cookie expiry headers. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
 
