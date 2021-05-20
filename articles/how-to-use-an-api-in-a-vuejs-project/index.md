@@ -1,3 +1,4 @@
+![hero image](/engineering-education/how-to-use-an-api-in-a-vuejs-project/hero.png)
 ### How to use an API on a Vue.js project
 
 #### Introduction
