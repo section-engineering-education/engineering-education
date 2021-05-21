@@ -68,7 +68,7 @@
 Example: 
 ```
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
 ```
 
 - Ping Manager for a Final Review and for them to Merge the approved PR.
