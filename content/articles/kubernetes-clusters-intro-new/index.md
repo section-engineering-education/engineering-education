@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/kubernetes-clusters-intro-new/hero.jpg
- alt: kubernetes cluster example image
+   alt: kubernetes cluster example image
 
 ---
 
