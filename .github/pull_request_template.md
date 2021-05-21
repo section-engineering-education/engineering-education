@@ -1,4 +1,8 @@
 ### Article checklist
+
+**ATTENTION: In your PR - add the ISSUE (topic form) # that this PR corresponds to. You can do this by also adding a comment that states **["This fixes #(enter your Idea Content Form #)"](https://youtu.be/TKJ4RdhyB5Y?t=278)** to link and close your Idea Content (issue) when the PR is merged.**
+      
+      
 **NOTE: (Please ensure that you have only one open issue + linked pull request at a time. This will ensure that we complete the article in a timely manner from inception to publishing.)**
 
 **If you have not already please go over our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for more tips and tricks on how to improve our overall technical writing.**
