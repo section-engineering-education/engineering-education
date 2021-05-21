@@ -1,9 +1,11 @@
-### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out. There are a few sections that are not seen in the breakdown, but can be seen in the image referenced below.
+### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out. There are a few sections that are not seen in the breakdown, but can be seen in the image referenced below. 
+
+DOES NOT HAVE TO BE IN BULLET FORMAT - that was for organization in this file.
  ---
 - layout: engineering-education
 - status: publish
 - published: true
-- url: /engineering-education/greedy-algorithms/
+- url: /greedy-algorithms/
 - title: Optimizing Stock Price Profit using Greedy Algorithms
 - description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
 - author: lalithnarayan-c
@@ -12,7 +14,7 @@
 - excerpt_separator: <!--more-->
 - images:
 
--  - url: /engineering-education/greedy-algorithms/hero.jpg
+-  - url: /greedy-algorithms/hero.jpg
 -    alt: Stock Price Greedy Algorithm example image
 - ---
 - Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading.

@@ -6,6 +6,7 @@ labels: ''
 assignees: ''
 
 ---
+
 Here is an example of a [Tutorial](/engineering-education/templating-your-static-site/).
 
 **Be sure to include all needed prerequisites the audience would need to follow your article, by including links to other helpful material and resources.**
