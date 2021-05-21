@@ -2,197 +2,199 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/running-and-managing-docker-new/
-title: Managing and Running Docker Containers
-description: This tutorial will give the readers an overview of how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage, and removing containers.
-author: terrence-aluda
-date: 2021-04-28T00:00:00-10:00
-topics: [Containers]
+url: /engineering-education/kubernetes-clusters-intro-new/
+title: Getting started with Kubernetes Clusters
+description: A Kubernetes Cluster manages containers that consist of nodes that work together to perform a particular operation. In this article, we explore the various alternatives available to deploy containers and understand the components of Kubernetes.
+author: sandra-moringa
+date: 2021-05-17T00:00:00-18:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/running-and-managing-docker-new/hero.jpg
-    alt: Docker Container Example Image
+   - url: /engineering-education/kubernetes-clusters-intro-new/hero.jpg
+     alt: kubernetes cluster example image
 ---
-On exposure to any container technology, the first thing to interact with is most probably a container image. This is a binary package that contains all files necessary to run an application inside a container.
-<!--more-->
 
-Containers are tools that simulate an Operating System environment and allows us to deploy our applications without necessarily worrying much about different configuration systems.
+A **Kubernetes Cluster** manages containers that consist of many nodes that are working together to perform a particular operation. Several cloud-based service providers allows us to create Kubernetes clusters using few commands. This option is recommended if one is getting started with Kubernetes because it allows us to get things up and running faster. Furthermore, the **minikube** tool only creates a *single-node cluster*.  Single node clusters do not have all features of a Kubernetes cluster making cloud providers a better option.
 
-We may decide to build an image from scratch from our local machines or decide to pull one from an image registry. Either way, you can run the image to produce a running application inside a container.
+### Installing in Public Cloud Providers
 
-You can get a nice introduction to Docker from these articles by [Francisca Adekanye](/engineering-education/authors/francisca-adekanye/):
+In this section, We will look at how to install Kubernetes in these Cloud Providers:
 
-- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
-- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+- Google Cloud Platform.
+- Microsoft Azure
 
-A Docker image is made up of a series of layers(File System Layers) in which each layer can either add, delete or modify a file from the preceding layer. This creates an overlay filesystem. To explain this in detail, we will look at the following figures:
+1. Google Cloud Platform
 
-```
-.
-└── container F: a machine's OS such as ArchLinux
-    └── container G: build upon F, by adding library1 v2.1.15
-        └── container H: build upon G, by adding library2 v1.9
+To use it, one needs to sign up for [the platform's Platform account](https://console.cloud.google.com/freetrial?_ga=2.256403528.294839319.1619953021-1551188299.1619953021) and install the [gcloud tool](https://cloud.google.com/sdk/docs/install).
 
-```
+> NOTE: We have to enable Billing for us to use this platform.
 
-Here, we have three containers: F, G, and H. G and H are created from F and share container F's files.
-
-You can also inherit from any inner layer. For example, if we inherit from container G by adding other versions of dependencies, we get such a diagram:
-
-```
-. (continuing from above)
-└── container G: build from #F, by adding library1 v2.1.15
-    └── container I: inherited from #G and uses library3 v4.2.8
-        └── container J: inherited from #I and uses library4 v3.2.1
-
-```
-
-The images are combined with a configuration file providing instructions on setting up the environment and executing an application endpoint. 
-
-#### Building application images using Dockerfiles
-A `Dockerfile` is a text file containing commands specified by a user(a developer) for building an image.
-
-Let's look at the example below for creating a lightweight image:
-
-```docker
-FROM alpine
-MAINTAINER <your-name> <your-email>
-COPY <application-directory> <destination>
-ENTRYPOINT ["<entrypoint>"]
-```
-
-The first line indicates we are creating the container from the slimmest image available.
-
-The second line just shows the author's details: name and email.
-
-The third line copies the files from the application directory on your system into the application directory on the Docker container.
-
-The last statement contains the command(`ENTRYPOINT`) used to start the application running in the container from where you've pointed the application to be. In this case, where you copied to.
-
-You can give the text file the name `DockerFile`.
-
-We can then create the image using the command format below:
+Once everything is in place, we set our default zone:
 
 ```bash
-$ docker build -t <image-name>:<image-version> .
-```
+     $ gcloud config set compute/zone <timezone>
+```     
 
-`-t` in defines the tag of the image. The other arguments will be the image name and the version.
-
-For example:
+And create our cluster:
 
 ```bash
-$ docker build -t sectionio-image:2.0 .
+     $ gcloud container clusters create <cluster>
 ```
 
-#### Image security
-We should take much consideration for our images' security and follow the best practices and recommendations.
-For example, we should not build containers with passwords put in any layer of the image because an attacker may build an image from layers containing the passwords and start some malicious activity.
+> It may take a few minutes
 
-#### Optimizing image sizes
-We also need to take care of the space our images take up. Consider the diagram below:
-
-```
-.
-└── layer F: contains a large file named 'MegaFile'
-    └── layer G: removes 'MegaFile'
-        └── layer H: builds on G
-```
-
-`MegaFile` is still contained in layer F implying that it goes through the network traffic which will eventually cut down on the performance.
-
-> When an image is removed, it is still available in the cluster but not accessible.
-
-Another challenge that we may experience is in building and caching our images. Each time a layer is changed, all other layers below it change. That means that they need to be rebuilt, pushed, and pulled again to deploy your image to production.
-
-To understand this more, consider these two figures:
-
-```
-.
-└── layer F: contains anaconda configuration
-    └── layer G: adds source code 'keras-test.py'
-        └── layer H: installs the 'matplotlib' library
-```
-
-VERSUS:
-
-```
-.
-└── layer F: contains anaconda configuration
-    └── layer G: installs the 'matplotlib' library
-        └── layer H: adds source code 'keras-test.py'
-```
-
-Consider some changes done on `keras-test.py`. In the first figure, only this change will be pulled or pushed while in the other image, both `keras-test.py` and the layer containing the `matplotlib` package need to be pulled and pushed, since the `matplotlib` layer is not independent of the `keras-test.py` layer which is above it.
-
-It's a good practice to consider the frequency of changes to the layers in our images and order them appropriately to enhance the performance.
-
-#### The Docker container runtime
-Docker has a CLI tool for deploying its containers. Here is an example command syntax of running an image:
+We can get the cluster's credentials using this command:
 
 ```bash
-$ docker container run --publish 8080:80 <image-name>
+     $ gcloud auth application-default login
 ```
+For detailed instructions, read the documentation [here](https://cloud.google.com/Kubernetes-engine/docs/how-to/).
 
-After starting the image, it maps port 8080 on our localhost to port 80 in our container. 
+2. Microsoft Azure
 
-Click [here](https://phoenixnap.com/kb/docker-run-command-with-examples) to read more on the `docker run` command.
+To get started, we click the shell icon in the toolbar to access the already provided shell:
 
-#### Limiting memory and CPU usage
-We can restrict our resource utilization and enforce fair usage of our hardware resources.
+![Shell icon](shell.png)
 
-To limit memory usage, we place the `--memory` and `--memory-swap` flags in the `docker run` command. 
+We can also install the shell in our local machines using the instructions contained [here](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-For example:
+Once the shell is up and running, we can create a resource group using this command:
 
 ```bash
-$ docker run -d --name <your-image> \
---publish 8080:80 \
---memory 600m \
---memory-swap 2G \
+     $ az group create --name=<group-name> --location=<location>
 ```
 
-Here we have limited our image to use 600MB of RAM and 2 GB of swap space.
-
-We do the same for the CPU by using the `--cpu-shares` and `--cpu-period` flags.
-
-Consider four containers: W, X, Y, and Z. W has a cpu-share of 1024 while the rest have a share of 512 each. When all the containers attempt to use 100% of CPU at the same time, W would receive 50% of the total CPU time while the rest get 16.667% each.
+We then create a cluster using:
 
 ```bash
-$ docker run -d --name <your-image> \
---memory 600m \
---memory-swap 2G \
---cpu-shares 1024 
+       --resource-group=<group-name> --name=<cluster-name>
 ```
 
-The `--cpu-period` sets the usage period of the CPU by the images. It works hand in hand with the `--cpu-quota` which is used to allocate the amount of time in microseconds that a container has access to the CPU resources as a function specified by `--cpu-period`. 
-
-For example, to set 50% CPU worth of run-time every 25ms we use this command:
+After the cluster is created, we can get credentials
+for the cluster using this command:
 
 ```bash
-$ docker run -d --cpu-period=25000 --cpu-quota=12500 <your-image>
+    $ az acs Kubernetes get-credentials --resource-group=<group-name> --name=<cluster-name>
 ```
 
-Click [here](https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources) to read more on resource utilization.
+One can find further instructions in the [Azure documentation](https://docs.microsoft.com/en-us/azure/aks/Kubernetes-walkthrough).
 
-#### Cleanup
-Deleting an image once done using the `docker rmi` command:
+3. Installing Kubernetes Locally
+
+> To use minikube, we need [hypervisor](https://www.vmware.com/topics/glossary/content/hypervisor) installed on our machines.
+
+The minikube tool can be found [here](https://github.com/Kubernetes/minikube). Links to binaries for one's Operating System of choice are made available at the same link. 
+
+After installation, create a cluster and start it using this command:
 
 ```bash
-$ docker rmi <tag-name>
+     $ minikube start
 ```
 
-OR
+We can pause it using:
 
 ```bash
-$ docker rmi <image-id>
+     $ minikube pause
 ```
 
-#### Conclusion
-This article gave us a brief overview of Docker container images and how to manage them. Hope you got some insights on application images and how you may optimize them for improved performance. Follow the links given to read more.
+When done with it, we halt using:
 
-Have a good one.
+```bash
+     $ minikube stop
+```    
+
+To remove the cluster, run:
+
+```bash
+$ minikube delete
+```
+
+More instructions can be found [here](https://minikube.sigs.k8s.io/docs/start/)
+
+### The Kubernetes Client
+
+Denoted as`kubectl`, the Kubernetes Client is used for managing, controlling our clusters. It also helps us check the health of our clusters.
+
+We can check a cluster version using:
+
+```bash
+$ kubectl version
+```
+
+We can check the health of the cluster using:
+
+```bash
+$ kubectl get componentstatuses
+```
+
+To list all nodes in a cluster, we run this command:
+
+```bash
+$ kubectl get nodes
+```
+
+We will get all the node names, their health statuses, and age.
+
+Run this to get more information about a certain node:
+
+```bash
+$ kubectl describe nodes <node-name>
+```
+### Common Cluster Components
+
+We are going to look at a few components that make up a Kubernetes Cluster, namely:
+
+- Kubernetes Proxy
+- Kubernetes DNS
+- Kubernetes UI
+
+1. Kubernetes Proxy(```kube-proxy```)
+
+It enables services not in a cluster to communicate with those in a cluster through a network through a set of rules. Kubernetes achieves this using an object called the `DaemonSet` which makes the proxy run in every node in the cluster. 
+
+To see the proxies, we use this:
+
+```bash
+$ kubectl get daemonSets --namespace=kube-system kube-proxy
+
+```
+We can implement the `kube-proxy` in three modes:
+- **User space** - Here, the proxy process does not run in the kernel network but in a user process level hence its name. It's not recommended because it is a slow method.
+- **iptables** - Unlike the User space mode, this mode operates in the kernel, and it operates in a round-robin style of scheduling services in a cluster. It is not used when there are many services because its scheduling style may lead to slow performance.
+- **IPVS** - (IP Virtual Server) Operates in the same manner as the **iptables**. It uses more efficient scheduling algorithms that reduce the delay time. Used where there are many services.
+
+Read more on Kubernetes Proxy [here](https://Kubernetes.io/docs/concepts/cluster-administration/proxies/)
+
+2. Kubernetes DNS
+
+Kubernetes runs a DNS server that provides easy identification of services in a cluster. It does so by assigning them names allowing us to access their functionality without getting to know their IP addresses.  
+
+We can view the DNS servers running by using this command:
+
+```bash
+$ kubectl get deployments --namespace=kube-system kube-dns
+```
+Read more on Kubernetes DNS [here](https://Kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+
+3. Kubernetes UI
+
+This is a web-based graphical user interface, and to see it, we use this command:
+
+```bash
+$ kubectl get deployments --namespace=kube-system Kubernetes-dashboard
+```
+
+We can then use the `kubectl proxy` to access the server on http://localhost:8001/api/v1/namespaces/Kubernetes-dashboard/services/https:Kubernetes-dashboard:/proxy/:
+
+```bash
+$ kubectl proxy
+```
+Read more on Kubernetes UI [here](https://Kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+
+### Conclusion
+
+We have gone through an elementary introduction to Kubernetes clusters. View content on the links attached to get more insights. 
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
