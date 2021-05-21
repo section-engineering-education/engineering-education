@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/running-and-managing-docker/
+url: /engineering-education/running-and-managing-docker-new/
 title: Managing and Running Docker Containers
 description: This tutorial will give the readers an overview of how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage, and removing containers.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/running-and-managing-docker/hero.jpg
+  - url: /engineering-education/running-and-managing-docker-new/hero.jpg
     alt: Docker Container Example Image
 ---
 On exposure to any container technology, the first thing to interact with is most probably a container image. This is a binary package that contains all files necessary to run an application inside a container.
