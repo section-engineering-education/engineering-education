@@ -6,7 +6,7 @@ url: /how-to-prevent-cross-site-scripting-in-node-js/
 title: How to Prevent Cross-Site Scripting in Node.js
 description: Cross-site scripting attacks (XSS) are common security issues in modern web security. XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious code.
 author: pauline-mwangi
-date: 2021-05-20T00:00:00-09:00
+date: 2021-05-20T00:00:00-13:00
 topics: [Node.js, Security]
 excerpt_separator: <!--more-->
 images:
