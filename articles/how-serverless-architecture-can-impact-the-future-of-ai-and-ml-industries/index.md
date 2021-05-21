@@ -84,3 +84,6 @@ Serverless computing makes the complicated AI development process more straightf
 The cloud provider must have handled several similar projects, with experience in hosting and handling machine learning and serverless architectures to ensure the infrastructure runs flawlessly.
 
 Some of the popular cloud providers include [AWS Lambda](https://aws.amazon.com/lambda/), [Google Cloud](https://cloud.google.com/functions/), [IBM Cloud](https://www.ibm.com/cloud), [Microsoft Azure](https://azure.microsoft.com/en-us/), [Oracle](https://www.oracle.com/cloud/), among others.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
