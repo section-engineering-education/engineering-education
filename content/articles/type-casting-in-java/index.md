@@ -94,7 +94,7 @@ In the example above, we have converted the double data type into an `int` data 
 To convert a primitive data type into an object, we need the [wrapper classes](https://beginnersbook.com/2017/09/wrapper-class-in-java/). We can take `string` inputs from the users e.g "1234".  If we want to work with integers, we need to convert the `string` to `int` data type and vice versa. i.e
 
 ```Java
-string a = "1234";
+String a = "1234";
 int b = Integer.parseInt(a);  // converting string to int
 ```
 
@@ -117,7 +117,7 @@ public class Main {
       
     int num = 67;
 
-    Double mydouble = new Double(num); // using Double wrapper class
+    Double myDouble = new Double(num); // using Double wrapper class
   
     // showing the double value
     System.out.println("My double is " + myDouble);
