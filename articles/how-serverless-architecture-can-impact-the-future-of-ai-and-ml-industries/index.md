@@ -7,18 +7,14 @@ Serverless does not refer to there is no real server in place. Instead, it means
 ### Goals for Serverless Architecture for AI and ML
 Apart from infrastructure maintenance and monitoring of the application, serverless machine learning has other goals.
 
-Machine Learning systems are usually built for complex problems. They perform several tasks such as processing and preprocessing data, training, and tuning AI models. Therefore [APIs](https://www.mulesoft.com/resources/api/what-is-an-api) should enable smooth execution and preferably developed in [Python](https://realpython.com/tutorials/machine-learning/), which is a top-level language. The reason for choosing Python is because of its simplicity. 
-Python offers concise and readable code. Its code is understandable by humans, which makes it easy to build models for machine learning.
-Developers tend to spend less time on language technicalities but rather put their efforts into solving a machine learning problem.
+Machine Learning systems are usually built for complex problems. They perform several tasks such as processing and preprocessing data, training models, and tuning AI models. Therefore [APIs](https://www.mulesoft.com/resources/api/what-is-an-api) should enable smooth execution.
 
 Steady data storage and smooth message transfers with no delays should be ensured by serverless computing and AI.
 
-Serverless should operate on [Lambda](https://www.serverless.com/aws-lambda), meaning a platform with a limited number of resources. It would mean with Lambda one does not need a lot of resources or either effort. Lambda lets one run the code without managing or provisioning servers.
-
-Also one can run code for virtually any application type or back-end services with zero administration. Lambda does all these by automatically and precisely allocating compute execution power based on the incoming requests of any traffic size.
-
 ### The Benefits of Using Serverless Architecture in AI and ML
 Serverless architecture gives many opportunities and provides many advantages that will make the machine learning model more efficient and smoother.
+
+You can run code for virtually any application type or back-end services with zero administration. The infrastructure provider does all these by automatically and precisely allocating compute execution power based on the incoming requests of any traffic size.
 
 Below are the advantages of ML and serverless architecture:
 
@@ -28,13 +24,13 @@ Below are the advantages of ML and serverless architecture:
 
 - **Independent Work**
 
-  Serverless computing and AI allow the development teams to work independently with minimal interference and delays. It is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
+  Serverless computing allow the development teams to work independently with minimal interference and delays. This is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
 
   Also, developers can apply changes, work on development or even execute the deployment independently.
 
 - **Autoscaling**
 
-  It allows the developer to focus on particular crucial tasks while the system automatically readjusts itself according to the scope. With Autoscaling, developers can be more flexible and make changes on the run, eliminating the need for storage prediction.
+  It allows the developer to focus on other tasks while the system automatically readjusts itself according to the scope. With Autoscaling, developers can be more flexible and make changes on the run, eliminating the need for storage prediction.
 
 ### Tips to Build Serverless Machine Learning Model
 
@@ -42,7 +38,7 @@ The following steps demonstrate one approach developers can use to build serverl
 
 - **Collect Data**
 
-  At this stage, information is gathered as much as possible then stored. The more information gathered, the better the ability of the ML system ability to make enhanced predictions. To avoid code imbalances, a developer should ensure that the same amount of data should be collected for each class.
+  At this stage, information is gathered as much as possible then stored. The more information gathered, the better the ability of the ML system ability to make enhanced predictions. To avoid code imbalances, a developer must ensure that the same amount of data is collected for each class.
 
 - **Preprocess Data**
 
@@ -61,7 +57,7 @@ The following steps demonstrate one approach developers can use to build serverl
 
   It is the last step of the AI development process, where the system is made available for offline and online prediction. Then the developer inspects the AI Platform Prediction, where all the model versions and model resources are stored. Lastly, the developer has to connect the local model version to the models stored in the cloud.
 
-### AI and ML Models on a Serverless Architecture Use Cases
+### Use Cases of AI and ML Models on a Serverless Architecture
 AI has taken over today's life, making it easier by revolutionizing automation and improving the business environments.
 
 Below are some use cases for machine learning algorithms on serverless architecture that makes the tasks easier and the data to be more precise:
@@ -83,7 +79,7 @@ Below are some use cases for machine learning algorithms on serverless architect
   AI has brought a new way of doing market research and establishing consumer behavior. An AI model records and analyzes the choices clients make and displays their personalized content.
 
 ### Conclusion
-Serverless computing makes the complicated AI development process more straightforward. However, choosing serverless architecture means handing over control of infrastructure to the third party and letting them manage and monitor it. Moreover, that's why it's advisable to choose a trusted cloud provider for the project.
+Serverless computing makes the complicated AI development process more straightforward. However, choosing serverless architecture means handing over control of infrastructure to the third party and letting them manage and monitor it. That's why it's advisable to choose a trusted cloud provider for the project.
 
 The cloud provider must have handled several similar projects, with experience in hosting and handling machine learning and serverless architectures to ensure the infrastructure runs flawlessly.
 
