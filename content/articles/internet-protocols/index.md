@@ -53,7 +53,7 @@ Internet protocol version 4, just as its name suggests, was the fourth version o
 
 #### IP Header
 
-![IPv4 Communication Protocol](Screenshot_20210428-104617.png)
+![IPv4 Communication Protocol](/engineering-education/content/articles/internet-protocols/version_two.png)
 
 IPv4 still controls the internet traffics despite the development of IPv6 using a 32bit address space providing over four million unique addresses.
 
@@ -86,7 +86,7 @@ Internet protocol version 6 is the newest version of the internet protocol suite
 
 #### IP Header
 
-![IPv6 Communication protocol](Screenshot_20210428-105316.png)
+![IPv6 Communication protocol](/engineering-education/content/articles/internet-protocols/version_one.png)
 
 IPv6 uses an address of 128 bits hence allowing 2^128 addresses. IPv6 is not designed to work together with IPv4; thus, there can not be any communication.	
 
