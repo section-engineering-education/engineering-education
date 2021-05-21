@@ -1,28 +1,27 @@
-Session based authentication is one in which the user state is stored on the server's memory. Authentication is the act of proving an assertion, such as the identity of a computer system user.
+A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state.
 
-A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in.
-
-A session will contain some unique data about that client to allow the server to keep track of the user's state.
+In Session based authentication, the user's state is stored in the memory of the server or a database. 
 
 ### How sessions works
-When the client makes a request to the server, the server will automatically create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will reference the session stored on the server-side because the cookie contains the session's unique id.
 
-We use that session ID to look up the session in the database or the session store to maintain a one-to-one match between a session and a cookie.
+When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server which'll be now stored on the client. This cookie will be sent on every request to the server.
 
-These cookies will be sent on every request to the server so that the server will know who this client is. This will make HTTP protocol connections stateful.
+We use this session ID recieve from the cookie in the server to look up the session in the database or the session store to maintain a one-to-one match between a session and a cookie. This will make HTTP protocol connections stateful.
 
 ### The difference between session and cookie
+
 As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie.
 
-A cookie has its data stored in the browser. The browser attaches that cookie [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) to every HTTP request that is sent to a server.
+A cookie is a [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) which is stored in the browser. The browser attaches cookies to every HTTP request that is sent to the server.
 
 In a cookie, you can't store a lot of data. A cookie cannot store any sort of user credentials or secret information. If we did that, a hacker could easily get hold of that information and steal personal data for malicious activities.
 
-On the other hand, session data is stored on the server-side, i.e., a database or a session store. Hence, it can accommodate larger amounts of data. To access data from the server-side, a session is authenticated with a secret key or a session id.
+On the other hand, the session data is stored on the server-side, i.e., a database or a session store. Hence, it can accommodate larger amounts of data. To access data from the server-side, a session is authenticated with a secret key or a session id that we get from the cookie on every request.
 
 To learn more about their differences, check this [Session vs Cookie](https://www.javatpoint.com/session-vs-cookies) tutorial.
 
 ### Prerequisites
+
 - Have [Node.js runtime](https://nodejs.org/en/download/) installed on your computer.
 
 - Basic knowledge on [how to use Node.js](https://nodejs.dev/learn/).
@@ -30,9 +29,16 @@ To learn more about their differences, check this [Session vs Cookie](https://ww
 - Basic understanding of how to create an [HTTP server using the Expres.js](/engineering-education/express/) library.
 
 ### Setting up the required environments and libraries
-This is a Node.js project. It uses NPM to manage its libraries and dependencies. You need to create a new project directory and initialize the Node.js with `npm init –y`. This will generate a `package.json` file that will manage the dependencies for this project's tutorial.
 
-The following libraries will help us set up a Node.js session.
+This is a Node.js project. It uses NPM to manage its dependencies. You need to create a new project directory and initialize the node app using:
+
+```bash
+npm init –y
+```
+
+This will generate a `package.json` file that will manage the dependencies for this project's tutorial.
+
+The following libraries will help us setup a Node.js session.
 
 - [Express](/engineering-education/express/) - a web framework for Node.js used to create HTTP web servers. Express provides an easy-to-use API to interact with the webserver.
 
@@ -44,9 +50,12 @@ The following libraries will help us set up a Node.js session.
 
 Install the above libraries using the command:
 
-`npm install express express-session cookie-parser body-parser`
+```bash
+npm install express express-session cookie-parser body-parser
+```
 
 ### Express-session Options and how to use it
+
 To set up the session, you need to set a couple of [Express-session](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
 
 ```js
@@ -59,13 +68,13 @@ app.use(sessions({
 }));
 ```
 
-- `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key usually is long in a production environment, and it is a randomly generated string.
-
+- `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key is usually long and randomly generated in a production environment.
+- 
 - `resave` - takes a boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
 
 - `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
 
-- `cookie: { maxAge:}` - this sets a cookie expiry headers. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
+- `cookie: { maxAge: oneDay }` - this sets the cookie expiry time. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
 
 ```js
 // creating 24 hours from milliseconds
@@ -75,11 +84,10 @@ const oneDay = 1000 * 60 * 60 * 24;
 Check the [documentation](https://www.npmjs.com/package/express-session#options) for all possible options and learn more about these options.
 
 ### Setting up the session middleware
+
 To initialize the session, we will set the session middleware inside the routes of the individual HTTP requests.
 
-When a client sends a request, the server will set a session ID and set the cookie equal to that session ID. A cookie is then stored in the set cookie HTTP header in the browser. Every time the browser (client) refreshes, the stored cookie will be a part of that request.
-
-Let's set the session middleware.
+When a client sends a request, the server will set a session ID and set the cookie equal to that session ID. The cookie is then stored in the set cookie HTTP header in the browser. Every time the browser (client) refreshes, the stored cookie will be a part of that request.
 
 We'll create a simple login form to demonstrate that.
 
@@ -204,9 +212,9 @@ app.get('/logout',(req,res) => {
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 ```
 
-In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. The server will verify the username and password against the database. If valid, the user will be granted the necessary data access.
+In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutoirial, we are storing them in these variables. The server will verify the username and password against these values. If valid, the user will be granted the necessary access.
 
-To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user in the server.
+To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user.
 
 If the credentials are valid, the server will create a temporary user session with a random string known as a session ID to identify that session.
 
