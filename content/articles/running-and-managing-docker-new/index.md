@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/running-and-managing-docker-new-new/
+url: /engineering-education/running-and-managing-docker/
 title: Managing and Running Docker Containers
 description: This tutorial will give the readers an overview of how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage, and removing containers.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/running-and-managing-docker-new-new/hero.jpg
+  - url: /engineering-education/running-and-managing-docker/hero.jpg
     alt: Docker Container Example Image
 ---
 On exposure to any container technology, the first thing to interact with is most probably a container image. This is a binary package that contains all files necessary to run an application inside a container.
@@ -48,7 +48,7 @@ You can also inherit from any inner layer. For example, if we inherit from conta
 
 ```
 
-The images are combined with a configuration file providing instructions on setting up the environment and executing an application endpoint.
+The images are combined with a configuration file providing instructions on setting up the environment and executing an application endpoint. 
 
 #### Building application images using Dockerfiles
 A `Dockerfile` is a text file containing commands specified by a user(a developer) for building an image.
@@ -135,14 +135,14 @@ Docker has a CLI tool for deploying its containers. Here is an example command s
 $ docker container run --publish 8080:80 <image-name>
 ```
 
-After starting the image, it maps port 8080 on our localhost to port 80 in our container.
+After starting the image, it maps port 8080 on our localhost to port 80 in our container. 
 
 Click [here](https://phoenixnap.com/kb/docker-run-command-with-examples) to read more on the `docker run` command.
 
 #### Limiting memory and CPU usage
 We can restrict our resource utilization and enforce fair usage of our hardware resources.
 
-To limit memory usage, we place the `--memory` and `--memory-swap` flags in the `docker run` command.
+To limit memory usage, we place the `--memory` and `--memory-swap` flags in the `docker run` command. 
 
 For example:
 
@@ -163,10 +163,10 @@ Consider four containers: W, X, Y, and Z. W has a cpu-share of 1024 while the re
 $ docker run -d --name <your-image> \
 --memory 600m \
 --memory-swap 2G \
---cpu-shares 1024
+--cpu-shares 1024 
 ```
 
-The `--cpu-period` sets the usage period of the CPU by the images. It works hand in hand with the `--cpu-quota` which is used to allocate the amount of time in microseconds that a container has access to the CPU resources as a function specified by `--cpu-period`.
+The `--cpu-period` sets the usage period of the CPU by the images. It works hand in hand with the `--cpu-quota` which is used to allocate the amount of time in microseconds that a container has access to the CPU resources as a function specified by `--cpu-period`. 
 
 For example, to set 50% CPU worth of run-time every 25ms we use this command:
 
