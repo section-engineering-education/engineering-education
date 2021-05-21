@@ -26,73 +26,97 @@ HTTP/2 will makes our web applications feel faster, simpler, and more robust.It 
 Check more about this [here](https://developers.google.com/web/fundamentals/performance/http2).
 Server push works is what bundles our assets for a single client request into one HTTP/2 response. Instead of waiting for the browser to first load the HTML and determine which assets to download, we can push all the assets to the browser ahead of time. Under the hood, all the streams are initiated via `PUSH_PROMISE` containing HTTP headers of the promised resource. This will signal the server to push the described resources to the client ahead of the response time thus avoiding duplicate requests.
 
+
+
 ### Setting Up Our Project
 
-First things first, we need to generate a key and a certificate as HTTP/2 will use HTTPS encryption by default. Go ahead and Google search “ssl key generation” or use the steps below:
+First things first, create a `http2-server-push` folder and open it on your IDE. In the root of the `http2-server-push` folder, run the command `npm init -y` to set up a new project by generating an initial `package.json` file. Our project will use two dependencies from the npm registry:
 
-- create a folder and name it `http2-node-server-push`:
+- `express`:  Express is a Node.js framework for building web applications and backend APIs.
 
-```bash 
-$ mkdir http2-node-server-push
-```
+- `spdy`: spdy is an express compatible module that creates HTTP/2 enabled servers in Node.js.
 
-- Navigate and open the `http2-node-server-push` folder in your IDE:
-```bash
-$ cd http2-node-server-push && code .
-```
-- finally, run the following command to generate a certificate and a key:
+- `nodemon`: nodemon is a development dependency module that will automatically restart our Node.js server.
 
-```bash
-$ openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
-```
-The command creates three SSL files:
-server.crt
-server.key
+To install these packages using `npm`. Run the command :
 
-We will be reading from `server` and `server.crt` files in your Node.js server script.
+`npm install express spdy`
+For the `devDependency` nodemon package add it using the command:
 
+`npm install -D nodemon` 
 
-For our boilerplate Node.js code, we need to create a package.json file and install our application dependencies:
-- Run the command ```npm init -y``` to ... and ...```npm i express spdy``` to ...
+HTTP/2 serves the assets via HTTPS. Run the following command to generate a key and a certificate:
 
-To restart our development server, we will use a nodemon package. Run the command `npm i -D nodemon` to install it as a development dependency. Our project structure now looks like:
+```openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt```
+For all prompts, click enter to leave all the fields empty. The command will creates a server.crt and server.key files. In our Node.js server script, we will read from `server.key` and `server.crt` files. Finally, add this npm `nodemon` server launch script in the `package.json` for auto-reloading:
+```JSON
+  "scripts": {
+    "devStart": "nodemon server.js",
+  },
+``` 
+Our project structure now looks like:
 
 ```bash
-/http2-node-server-push
+/http2-server-push
   node_modules/
-|--- index.js
 |--- server.crt
 |--- server.key
 package.json
 package.lock.json
 ```
+## Implementing HTTP/2 and Server Push using Express and spdy
+Import the dependencies. Create the entry `index.js` file in the root of our folder (see project structure above). Add the following Node.js script:
 
-We will add this npm script into scripts of the `package.json` file to ease our server launch command which uses `nodemon` for auto-reloading:
-```JSON
-      "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon server.js"
+```JS
+const spdy = require("spdy")
+const express = require("express")
+const fs = require("fs")
+const {promisify} = require("util")
+
+const readFile = promisify(fs.readFile)
+
+const app = express()
+
+app.use(express.static("public"))
+
+app.get("/push", async (req, res) => {
+  try {
+    if(res.push){
+      [
+        "/app.js",
+        "/styles.css",
+        "/images/image.png"
+      ].forEach(async (file) => {
+       res.push(file, {}).end(await readFile(`public${file}`))
+      })
+    }
+
+    res.writeHead(200)
+    res.end(await readFile("index.html"))
+  }catch(error){
+    res.status(500).send(error.toString())
+  }
+})
+
+spdy.createServer(
+  {
+    key: fs.readFileSync("./server.key"),
+    cert: fs.readFileSync("./server.crt")
   },
+  app
+).listen(8000, (err) => {
+  if(err){
+    throw new Error(err)
+  }
+  console.log("Listening on port 3001")
+})
 ```
-From here, we are now ready to implement server push using Express and spdy.
 
-## Implementing HTTP/2 and Server Push 
-Import the dependencies. Create the entry `index.js` file in the root of our folder (see project structure above).
+!!! Lots of images To Explain here....
 
-In the root of this folder, run the command `npm init -y` to set up a new project by generating an initial `package.json` file. Our project will two dependencies from the npm registry:
-
-- `express`:  Express is a Node.js framework for building web applications and backend APIs.
-
-- `spdy`: spdy is an express compatible module that creates HTTP/2 enabled servers in Node.js
-
-To install the packages using `npm`. Run the command :
-
-`npm install express spdy`
-
-
-
-Now we will create an HTTP2 secure server using `spdy` module. This server will serve the index.html file when the request url is “/” and also push all files from the “scripts” directory and “images” directory and the style.css file.
-Now run the node server and open up the browser. Open up the developer tool and go to Network tab. Go to the url https://localhost:3000. Normal https server is running on this port. (Since we are using self signed certificate to setup the TLS, chrome will show a warning. Get past that 😃). In the developer tool we will see that the browser has make requests for all files individually. Also in the console of our Node JS server we’ll see we have received requests for all additional resource files.
+- we create a HTTP/2 secure server using `spdy` module. 
+- This server will serve the index.html file when the request url is “/” and also push all files from the “scripts” directory and “images” directory and the style.css file.
+Now run the node server and open up the browser. Open up your developer tools and go to Network tab. Go to the url https://localhost:3000. Normal https server is running on this port. (Since we are using self signed certificate to setup the TLS, chrome will show a warning. Get past that 😃). In the developer tool we will see that the browser has make requests for all files individually. Also in the console of our Node JS server we’ll see we have received requests for all additional resource files.
 
 
 Now let’s go to https://localhost:3001. The HTTP/2 server is running on that port. Let’s check the Network tab again.
