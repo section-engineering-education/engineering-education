@@ -1,8 +1,8 @@
 [Artificial Intelligence](https://builtin.com/artificial-intelligence) is the future of technological progress, and many platforms are adopting it. These AI-driven platforms have helped us make quick and more innovative decisions. They have also revolutionized the customer experience, the business world, and business intelligence.
 
-A developers’ productivity and efficiency are greatly affected by the complexity of the [machine learning systems](https://www.sciencedirect.com/topics/computer-science/machine-learning-system) being built or managed. However, by the use of [serverless architecture](https://martinfowler.com/articles/serverless.html), most difficulties are solved. The serverless architecture effectively handles [machine learning models](https://developer.ibm.com/technologies/artificial-intelligence/articles/cc-models-machine-learning/) and resource management.
+A developer's productivity and efficiency are greatly affected by the complexity of the [machine learning systems](https://www.sciencedirect.com/topics/computer-science/machine-learning-system) being built or managed. However, by the use of [serverless architecture](https://martinfowler.com/articles/serverless.html), most difficulties are solved. The serverless architecture effectively handles [machine learning models](https://developer.ibm.com/technologies/artificial-intelligence/articles/cc-models-machine-learning/) and resource management.
 
-Serverless does not refer to there is no real server in place. Instead, it means that a third party handles an maintains the server infrastructure, scalability adjustment, and capacity planning. Serverless architecture gives the developers ample time and energy to concentrate on [AI model training](https://insidebigdata.com/2018/10/08/ai-training-work/) rather than managing the server's infrastructure.
+Serverless does not refer to there is no real server in place. Instead, it means that a third party handles and maintains the server infrastructure, scalability adjustment, and capacity planning. Serverless architecture gives the developers ample time and energy to concentrate on [AI model training](https://insidebigdata.com/2018/10/08/ai-training-work/) rather than managing the server's infrastructure.
 
 ### Goals for Serverless Architecture for AI and ML
 Apart from infrastructure maintenance and monitoring of the application, serverless machine learning has other goals.
@@ -11,7 +11,7 @@ Machine Learning systems are usually built for complex problems. They perform se
 Python offers concise and readable code. Its code is understandable by humans, which makes it easy to build models for machine learning.
 Developers tend to spend less time on language technicalities but rather put their efforts into solving a machine learning problem.
 
-Steady data storage and smooth message transfers with no delays should be ensured by serverless computing and the AI.
+Steady data storage and smooth message transfers with no delays should be ensured by serverless computing and AI.
 
 Serverless should operate on [Lambda](https://www.serverless.com/aws-lambda), meaning a platform with a limited number of resources. It would mean with Lambda one does not need a lot of resources or either effort. Lambda lets one run the code without managing or provisioning servers.
 
@@ -28,7 +28,7 @@ Below are the advantages of ML and serverless architecture:
 
 - **Independent Work**
 
-  Serverless computing and AI allows the development teams to work independently with minimal interference and delays. It is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
+  Serverless computing and AI allow the development teams to work independently with minimal interference and delays. It is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
 
   Also, developers can apply changes, work on development or even execute the deployment independently.
 
@@ -55,7 +55,7 @@ The following steps demonstrate one approach developers can use to build serverl
 
   It is a crucial step yet time-consuming. In the entire timeline of the machine learning project, data labeling takes about 25% of the time. The main objective is to ensure that the model is trained on legit examples with appropriate labels.
 
-  The labelled data shows that information pieces have been marked, and the model can predict what a developer wants.
+  The labeled data shows that information pieces have been marked, and the model can predict what a developer wants.
 
 - **Deploy the Model**
 
