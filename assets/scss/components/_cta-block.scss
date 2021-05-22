@@ -1,0 +1,151 @@
+.cta-block {
+
+  &-inner {
+
+    &-text {
+      @include flex-width-grid(100%);
+
+      @include mq($from: 720px ) {
+        @include flex-width-grid(50%);
+      }
+    }
+
+    &-text-wide {
+      @include flex-width-grid(90%);
+
+      @include mq($from: 720px ) {
+        @include flex-width-grid(65%);
+      }
+    }
+
+    &-button {
+
+      @include flex-width-grid(90%);
+      margin-top: pxem(30);
+      justify-content: flex-start;
+      display: block;
+
+      @include mq($from: 720px ) {
+        @include flex-width-grid(50%);
+        justify-content: center;
+        margin-top: 0;
+        display: flex;
+      }
+    }
+
+    &-button-wide {
+
+      @include flex-width-grid(100%);
+      margin-top: pxem(30);
+      justify-content: flex-start;
+      display: block;
+
+      @include mq($from: 720px ) {
+        @include flex-width-grid(30%);
+        justify-content: center;
+        margin-top: 0;
+        display: flex;
+      }
+    }
+  }
+}
+
+.cta-block-box {
+
+  &-inner {
+    position: relative;
+    z-index: 9;
+    background: $fill-white;
+  }
+
+  &-left-block {
+    width: pxem(118);
+    height: pxem(118);
+    background: $fill-blue;
+    top: 0;
+    left: 0;
+    margin-top: pxem(-40);
+    margin-left: pxem(-80);
+    transition: width 1s ease;
+    z-index: 9;
+  }
+
+  &-left-stripes {
+    display: block;
+    width: pxem(140);
+    height: pxem(140);
+    top: 0;
+    left: 0;
+    margin-left: pxem(-120);
+    background: repeating-linear-gradient(
+      -45deg,
+      $fill-blue,
+      $fill-white 2px,
+      $fill-white 13px,
+      $fill-blue 13px
+    );
+    transition: all 1s ease;
+  }
+
+  &-right-block {
+    width: pxem(212);
+    height: pxem(127);
+    background: $fill-blue;
+    border-left: pxem(5) solid $text-black;
+    bottom: 0;
+    right: 0;
+    margin-bottom: pxem(-70);
+    margin-top: pxem(-40);
+    margin-right: pxem(-80);
+    transition: all 1s ease;
+    z-index: 5;
+  }
+
+  &-right-stripes {
+    display: block;
+    width: pxem(155);
+    height: pxem(155);
+    bottom: 0;
+    right: 0;
+    margin-right: pxem(-130);
+    background: repeating-linear-gradient(
+      -45deg,
+      $fill-blue,
+      $fill-white 2px,
+      $fill-white 13px,
+      $fill-blue 13px
+    );
+    transition: all 1s ease;
+  }
+
+  &.-green-blocks {
+
+    .cta-block-box-left-block {
+      background: $fill-green;
+    }
+
+    .cta-block-box-left-stripes {
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-green,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-green 13px
+      );
+    }
+
+    .cta-block-box-right-block {
+      background: $fill-green;
+    }
+
+    .cta-block-box-right-stripes {
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-green,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-green 13px
+      );
+    }
+  }
+}
