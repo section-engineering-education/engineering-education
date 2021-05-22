@@ -176,3 +176,6 @@ My double is 67.0
 In this article, we have looked at the different ways of type casting our data type. We can now easily type cast from one data type to another.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
