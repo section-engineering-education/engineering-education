@@ -274,7 +274,7 @@ Run the following command in the Windows Powershell.
 $ (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
->**Note**: Even though it is possible to install it using **pip**, it is not recommended as it causes more dependency conflicts with other packages.
+> **Note**: Even though it is possible to install it using **pip**, it is not recommended as it causes more dependency conflicts with other packages.
 
 #### Creating a virtual environment
 To create a new virtual environment using Poetry, use:
