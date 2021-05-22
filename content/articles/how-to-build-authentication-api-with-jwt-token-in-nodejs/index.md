@@ -1,26 +1,26 @@
-It's pretty simple to write code and develop applications, but how about dealing with authentication and, most likely, Authorization? We'll learn how to utilize ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users in this tutorial.
+It's pretty simple to write code and develop applications, but how about dealing with authentication and, most likely, Authorization? We'll learn how to use ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users in this tutorial.
 
 ### Introduction to Authentication and Authorization
 
-Authentication and Authorization are frequently used interchangeably in security, particularly when it comes to getting access to a system. However, there is a significant distinction between successfully gaining entry into the house (Authentication) and what you can do while inside (Authorization).
+Authentication and Authorization are used in security, particularly when it comes to getting access to a system. Yet, there is a significant distinction between gaining entry into the house (Authentication) and what you can do while inside (Authorization).
 
 #### Authentication
 
 Authentication is the process of verifying a user's identification through the acquisition of credentials and using those credentials to confirm the user's identity. The authorization process begins if the credentials are legitimate. The Authentication process always follows the Authorization procedure.
 
-You were undoubtedly already aware of the authentication process because we all do it daily, whether at work (logging onto your computer) or at home (logging into a website). However, the truth is that most "things" connected to the Internet require you to prove your identity by providing credentials.
+You were already aware of the authentication process because we all do it daily, whether at work (logging onto your computer) or at home (logging into a website). Yet, the truth is that most "things" connected to the Internet require you to prove your identity by providing credentials.
 
 #### Authorization
 
-Authorization is the process of allowing authenticated users to access resources by determining whether or not they have system access permissions. By giving or denying specific licenses to an authenticated user, Authorization enables you to control access privileges.
+Authorization is the process of allowing authenticated users to access resources by determining whether they have system access permissions. By giving or denying specific licenses to an authenticated user, Authorization enables you to control access privileges.
 
-On the other hand, Authorization occurs after the system successfully authenticates your identity, granting you complete access to resources such as information, files, databases, funds, places, and nearly anything else. So said, Authorization affects your capacity to access the system and the extent to which you can do so.
+So, Authorization occurs after the system authenticates your identity, granting you complete access to resources such as information, files, databases, funds, places, and anything else. So said, Authorization affects your capacity to access the system and the extent to which you can do so.
 
 ### What is JWT
 
-JSON Web Tokens are an RFC 7519 open industry standard for securely representing claims between two parties. You can use jwt.io to decode, verify, and produce JWT.
+JSON Web Tokens are an RFC 7519 open industry standard for representing claims between two parties. You can use jwt.io to decode, verify, and produce JWT.
 
-JSON Web Token (JWT) is an open standard (RFC 7519) that specifies a compact and self-contained method for securely communicating information as a JSON object between two parties. Because it is digitally signed, this information can be checked and trusted. JWTs can be signed using a secret (using the HMAC algorithm) or an RSA or ECDSA public/private key combination. In a moment, we'll see some instances of how to use them.
+JSON Web Token (JWT) is an open standard (RFC 7519) that specifies a compact and self-contained method for communicating information as a JSON object between two parties. Because it is signed, this information can be checked and trusted. JWTs can be signed using a secret (using the HMAC algorithm) or an RSA or ECDSA public/private key combination. In a moment, we'll see some instances of how to use them.
 
 #### Prerequisite
 
@@ -80,7 +80,7 @@ npm install nodemon -D
 
 #### Step 5 - Create a NodeJS server and Connect your Database
 
-Now let's create our NodeJS Server and connect our database by adding the following snippet to you `app.js` `index.js` `database.js` `.env`, respectively.
+Now let's create our NodeJS Server and connect our database by adding the following snippet to you `app.js` `index.js` `database.js` `.env`, .
 
 In our `database.js.`
 
@@ -481,7 +481,7 @@ app.get("/welcome", auth, (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
 
-// This ias added to catch a request to an endpoint that does not exist in our application appropriately
+// This ias added to catch a request to an endpoint that does not exist in our application 
 // This should be the last route else any after it won't work
 app.use("*", (req, res) => {
   res.status(404).json({
@@ -498,7 +498,7 @@ module.exports = app;
 
 ```
 
-You can [click here](https://github.com/Olanetsoft/jwt-project) to check the complete code on github repository.
+You can [click here](https://github.com/Olanetsoft/jwt-project) to check the complete code on the GitHub repository.
 
 ### Conclusion
 
