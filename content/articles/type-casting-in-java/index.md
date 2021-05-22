@@ -1,5 +1,22 @@
-Type casting is a way of converting data from one data type to another data type. This process of data conversion is also known as type conversion or type coercion.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /type-casting-in-java/
+title: Type Casting in Java
+description: This article will educate the readers about what is type casting and the various types of type casting in the Java programming language.
+author: terrypha-wamaitha
+date: 2021-05-22T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/type-casting-in-java/hero.jpg
+    alt: Type Casting in Java Hero Image
+---
+Type casting is a way of converting data from one data type to another data type. This process of data conversion is also known as type conversion or type coercion.
+<!--more-->
+ 
 In Java, we can cast both reference and primitive data types. By using casting, data can not be changed but only the data type is changed.
 
 **Note:** Type casting is not possible for a `Boolean` data type.
