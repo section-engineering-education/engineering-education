@@ -1,4 +1,3 @@
- -0,0 +1,228 @@
 ---
 layout: engineering-education
 status: publish
@@ -15,6 +14,7 @@ images:
   - url: /engineering-education/how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/hero.jpg
     alt: How Serverless Architecture can Impact the Future of AI and ML Industries Hero Image
 ---
+
 [Artificial Intelligence](https://builtin.com/artificial-intelligence) is the future of technological progress, and many platforms are adopting it. These AI-driven platforms have helped us make quick and more innovative decisions. They have also revolutionized the customer experience, the business world, and business intelligence.
 <!--more-->
 
