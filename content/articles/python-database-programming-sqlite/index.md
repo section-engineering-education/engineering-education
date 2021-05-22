@@ -87,7 +87,7 @@ A database cursor is a control structure that is used to execute statements in o
 
 Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
 
-![](/python-database-programming-sqlite/first-pic.jpg)
+![](/engineering-education/python-database-programming-sqlite/first-pic.jpg)
 
 ### Database Queries
 #### INSERT
@@ -106,7 +106,7 @@ cur.execute(Insert_Students)
 
 To take a look at our data just click on **Browse Data** and here they are!
 
-![](/python-database-programming-sqlite/second-pic.jpg)
+![](/engineering-education/python-database-programming-sqlite/second-pic.jpg)
 
 #### SELECT
 Now if we want to retrieve data after executing a SELECT statement, we have to treat the cursor as an iterator, or we can call fetchall() to get a list of the matching rows.

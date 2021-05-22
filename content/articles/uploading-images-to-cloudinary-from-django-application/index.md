@@ -131,7 +131,7 @@ To use the Cloudinary Django library, we have to configure our `cloud_name`, `ap
 
 We can find our account-specific configuration credentials on the Dashboard page of the account console as shown below:
 
-![Cloudinary dashboard page](/uploading-images-to-cloudinary-from-django-application/dash.png)
+![Cloudinary dashboard page](/engineering-education/uploading-images-to-cloudinary-from-django-application/dash.png)
 
 *Cloudinary dashboard page*
 
@@ -191,11 +191,11 @@ Now, we can log in to the admin page.
 
 To login to the admin section, go to this link [localhost:8000/admin](localhost:8000/admin) and log in with our just created superuser details.
 
-![Django admin login page](/uploading-images-to-cloudinary-from-django-application/admin.png)
+![Django admin login page](/engineering-education/uploading-images-to-cloudinary-from-django-application/admin.png)
 
 *Django admin login page*
 
-![Django admin page](/uploading-images-to-cloudinary-from-django-application/django-admin.png)
+![Django admin page](/engineering-education/uploading-images-to-cloudinary-from-django-application/django-admin.png)
 
 *Django admin page*
 
@@ -203,11 +203,11 @@ Now, let's add an image in the photos category to test if it uploads to Cloudina
 
 Click on pictures, then click `Add Photo` to add an image.
 
-![Add photo](/uploading-images-to-cloudinary-from-django-application/add-photo.png)
+![Add photo](/engineering-education/uploading-images-to-cloudinary-from-django-application/add-photo.png)
 
 *Add photo*
 
-![Photo added](/uploading-images-to-cloudinary-from-django-application/photo-added.png)
+![Photo added](/engineering-education/uploading-images-to-cloudinary-from-django-application/photo-added.png)
 
 *Photo added*
 
@@ -286,7 +286,7 @@ Open the `index.html` file that we created earlier and paste the following code:
 
 In the code above, we used a `for-loop` to go through all the pictures.
 
-![Image of a fish](/uploading-images-to-cloudinary-from-django-application/fish-local.png)
+![Image of a fish](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
 
 *Image of a fish displayed on an HTML page*
 

@@ -202,7 +202,7 @@ $ node app.js
 
 I will use Postman to test the `/token/sign` route as shown below.
 
-![first web token](/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.PNG)
+![first web token](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.PNG)
 
 As of now, I have generated the first web token. Next, I will create a `/path1` and secure it using my JSON Web Token.
 
@@ -221,7 +221,7 @@ app.use(expressJWT({ secret: secret, algorithms: ['HS256']})
 
 Next, I will be testing `/path1` using Postman, with no token sent in the header.
 
-![401 Error](/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.PNG)
+![401 Error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.PNG)
 
 The app did not allow me to access the path. Accessing the path returns a `401 Unauthorized` as expected. The code below will allow access to `/path1` if the token obtained from `/token/sign` is sent along. 
 
@@ -240,7 +240,7 @@ app.get('/path1', (req, res) => {
 
 On adding the Bearer Token and accessing `/path1`, the success message is displayed as shown below:
 
-![success message](/getting-started-with-jwt-using-angular8-and-nodejs/success-token.PNG)
+![success message](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/success-token.PNG)
 
 Back to Angular, I will create a new component `home` by running the following command:
 
@@ -343,13 +343,13 @@ The command will compile the whole Angular project and open the page on the brow
 
 Press `F12` to open the developer console. Then, click on the **Sign In** button to get a token. Then click on the **Get Path1** Button to access the path as shown below:
 
-![web test success](/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.PNG)
+![web test success](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.PNG)
 
 To clear the token stored in local storage, I will refresh the browser. 
 
 Then I will try to access the path as shown below:
 
-![web test error](/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.PNG)
+![web test error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.PNG)
 
 We get a `401 Unauthorized` error. This shows that our application is now secure.
 

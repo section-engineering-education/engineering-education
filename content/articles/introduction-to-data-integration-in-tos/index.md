@@ -76,62 +76,62 @@ The following steps will enable you to download Talend Open Studio for data inte
 
 **Step 2:** On that page, click on free products.
 
-![Step 2](/introduction-to-data-integration-in-tos/step-2.jpg)
+![Step 2](/engineering-education/introduction-to-data-integration-in-tos/step-2.jpg)
 
 **Step 3:** After clicking on free products, you will find various options such as open studio for data integration, open studio for big data, and open studio for ESB. On the 'Open Studio for Data Integration' option, choose the operating system suitable for your device and click on it.
 
-![Step 3](/introduction-to-data-integration-in-tos/step-3.jpg)
+![Step 3](/engineering-education/introduction-to-data-integration-in-tos/step-3.jpg)
 
 **Step 4:** A dialogue box will appear. Click on 'save file' to download the setup file.
 
-![Step 4](/introduction-to-data-integration-in-tos/step-4.jpg)
+![Step 4](/engineering-education/introduction-to-data-integration-in-tos/step-4.jpg)
 
 **Step 5:** When the download is complete, go to the 'downloads' folder and double click on the setup file. 
 
-![Step 5](/introduction-to-data-integration-in-tos/step-5.jpg)
+![Step 5](/engineering-education/introduction-to-data-integration-in-tos/step-5.jpg)
 
 **Step 6:** The installation folder will open. Click on ‘Browse’ to choose the destination folder. 
 
-![Step 6](/introduction-to-data-integration-in-tos/step-6.jpg)
+![Step 6](/engineering-education/introduction-to-data-integration-in-tos/step-6.jpg)
 
 **Step 7:** Select the destination folder and click ‘OK’. 
 
-![Step 7](/introduction-to-data-integration-in-tos/step-7.jpg)
+![Step 7](/engineering-education/introduction-to-data-integration-in-tos/step-7.jpg)
 
 **Step 8:** Click on 'Install' to begin the installation process. 
 
-![Step 8](/introduction-to-data-integration-in-tos/step-8.jpg)
+![Step 8](/engineering-education/introduction-to-data-integration-in-tos/step-8.jpg)
 
 **Step 9:** When the setup process is complete, click on ‘Close’.
 
-![Step 9](/introduction-to-data-integration-in-tos/step-9.jpg)
+![Step 9](/engineering-education/introduction-to-data-integration-in-tos/step-9.jpg)
 
 **Step 10:** Open the destination folder that you chose. Open the installed folder. 
 
 **Step 11:** In the installed folder, click on the file **'TOS_DI-win-x86_64'**.
 
-![Step 11](/introduction-to-data-integration-in-tos/step-11.jpg)
+![Step 11](/engineering-education/introduction-to-data-integration-in-tos/step-11.jpg)
 
 **Step 12:** In the user license agreement, click on ‘I accept’. 
 
-![Step 12](/introduction-to-data-integration-in-tos/step-12.jpg)
+![Step 12](/engineering-education/introduction-to-data-integration-in-tos/step-12.jpg)
 
 **Step 13:** A new dialogue box will appear. Click on ‘Create a New Project’ and then click on ‘Finish’.
 
-![Step 13](/introduction-to-data-integration-in-tos/step-13.jpg)
+![Step 13](/engineering-education/introduction-to-data-integration-in-tos/step-13.jpg)
 
 **Step 14:** When the welcome message appears, click on ‘Close’.
 
-![Step 14](/introduction-to-data-integration-in-tos/step-14.png)
+![Step 14](/engineering-education/introduction-to-data-integration-in-tos/step-14.png)
 
 **Step  15:** You will then find the GUI that consists of all the tools needed for data integration. 
 
-![Step 15](/introduction-to-data-integration-in-tos/step-15.png)
+![Step 15](/engineering-education/introduction-to-data-integration-in-tos/step-15.png)
 
 ### The Graphical User Interface (GUI) for Talend Open Studio
 There are four sections or parts in the GUI of Talend Open Studio. These are the repository, design window, palette, and configuration tab. These sections perform specific functions during data integration. The following diagram highlights these sections. 
 
-![The GUI of TOS](/introduction-to-data-integration-in-tos/the-gui-of-tos.jpg)
+![The GUI of TOS](/engineering-education/introduction-to-data-integration-in-tos/the-gui-of-tos.jpg)
 
 #### The repository
 The repository displays a tree structure of all the technical items used to design jobs or describe business models. It's situated at the top left side of the GUI. 
@@ -142,11 +142,11 @@ It's merely a central store for items that are important for business modeling o
 
 If you want to create your first job in TOS, you should click on ‘Job Design’ in the repository section and then ‘Create Job’. 
 
-![Creating A New Job](/introduction-to-data-integration-in-tos/creating-a-new-job.jpg)
+![Creating A New Job](/engineering-education/introduction-to-data-integration-in-tos/creating-a-new-job.jpg)
 
 This will generate a table that requires you to fill in the job's name, purpose, and description.
 
-![Adding A New Job](/introduction-to-data-integration-in-tos/adding-a-new-job.jpg)
+![Adding A New Job](/engineering-education/introduction-to-data-integration-in-tos/adding-a-new-job.jpg)
 
 When you finish creating the job, the Talend integration components (discussed in the next section) will be available in the palette section. 
 
@@ -154,7 +154,7 @@ In the following diagram, various components can be chosen from the listed folde
 
 For example, the ‘Databases’ folder consists of components such as **tMysqlInput** and **tMysqlConnection**. The required component can be dragged into your workspace.
 
-![Dragging A Component](/introduction-to-data-integration-in-tos/dragging-a-component.jpg)
+![Dragging A Component](/engineering-education/introduction-to-data-integration-in-tos/dragging-a-component.jpg)
 
 #### The design window
 This part consists of three main features.

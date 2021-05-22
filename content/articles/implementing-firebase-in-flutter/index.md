@@ -37,7 +37,7 @@ You can learn more on setting up Flutter's development environment from [here](h
 ### Setting up the project
 Launch Android Studio and create a new Flutter project.
 
-![getting started](/implementing-firebase-in-flutter/getting-started.png)
+![getting started](/engineering-education/implementing-firebase-in-flutter/getting-started.png)
 
 Open the `pubspec.yaml` file and add the following Flutter dependencies.
 
@@ -53,23 +53,23 @@ Use the `pub get` command to retrieve appropriate dependencies.
 
 Next, open your browser and navigate to [Firebase's website](https://firebase.google.com/). We need to create a new firebase project, as shown below.
 
-![project name](/implementing-firebase-in-flutter/project-name.png)
+![project name](/engineering-education/implementing-firebase-in-flutter/project-name.png)
 
 Add your Flutter application to Firebase by clicking on the Android icon.
 
-![add app](/implementing-firebase-in-flutter/add-app.png)
+![add app](/engineering-education/implementing-firebase-in-flutter/add-app.png)
 
 Add your application's package name as shown in the image below. 
 
-![find package](/implementing-firebase-in-flutter/find-package.png)
+![find package](/engineering-education/implementing-firebase-in-flutter/find-package.png)
 
 You can find your package name in the app-level – `build.gradle` file. Click register app after completing this step.
 
-![package name](/implementing-firebase-in-flutter/package-name.png)
+![package name](/engineering-education/implementing-firebase-in-flutter/package-name.png)
 
 Download the `google-services.json` file and paste it into the `android/app` folder.
 
-![paste json](/implementing-firebase-in-flutter/paste-json.png)
+![paste json](/engineering-education/implementing-firebase-in-flutter/paste-json.png)
 
 Paste `classpath 'com.google.gms:google-services:4.3.3'` in the project level – `build.gradle` file.
 
@@ -92,7 +92,7 @@ apply plugin: 'com.google.gms.google-services'
 
 After the project is created successfully, navigate back to the Firebase console's realtime database section, and create a new database.
 
-![create database](/implementing-firebase-in-flutter/create-database.png)
+![create database](/engineering-education/implementing-firebase-in-flutter/create-database.png)
 
 In the `rules` section, ensure that you click on `test mode` rather than the `locked mode`. This allows us to read and write the data without authentication. Note that these rules should not be used in a production application since anyone can access the data.
 
@@ -112,7 +112,7 @@ We have successfully set up Firebase and the Flutter project. Let's design the U
 ### Building the UI
 The app will have a simple user interface. It will allow a user to input a word or sentence and click on a button to save it to the Firebase database.
 
-![ui](/implementing-firebase-in-flutter/ui.jpeg)
+![ui](/engineering-education/implementing-firebase-in-flutter/ui.jpeg)
 
 Create a new file called `home.dart.` In this file, create a `stateful class` and name it `HomePage.`
 We'll create a stateful widget and scaffold, as shown below.
@@ -346,11 +346,11 @@ class _HomePageState extends State<HomePage> {
 ### 5. Results
 When we click on the Save to Database button. The user input is stored in the real-time database, as shown below.
 
-![results](/implementing-firebase-in-flutter/firebaseresults.png)
+![results](/engineering-education/implementing-firebase-in-flutter/firebaseresults.png)
 
 The following items are also printed.
 
-![console results](/implementing-firebase-in-flutter/console.png)
+![console results](/engineering-education/implementing-firebase-in-flutter/console.png)
 
 ### Recap
 We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. Please remember these following points when you are working on your own project.

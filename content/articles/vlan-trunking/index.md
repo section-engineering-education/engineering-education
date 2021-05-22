@@ -30,7 +30,7 @@ There are two ways of categorizing VLAN enabled ports on network devices:
 Hence the name, **tagged ports.**
 **A trunk is a point-to-point link between two network devices that carry more than one VLAN.**
 
-![native-vs-trunk](/vlan-trunking/native-vs-trunk.jpg)
+![native-vs-trunk](/engineering-education/vlan-trunking/native-vs-trunk.jpg)
 
 In the diagram above, devices 1 and 2 have established Native VLANs with Switch 1. Similarly, devices 3 and 4 have Native VLANs established with Switch 2. Note that native VLANs transport untagged frames. However, when these untagged frames reach a trunk end, they need to be tagged to make sure the switch on the other side of the trunk can forward the frames to the right destinations. As a result, the switches with trunk ports add tags to the frames for identification - a process typically known as VLAN Encapsulation. Switch 1 tags all frames it receives from device 1 with VLAN ID 1 because device 1 belongs to VLAN 1, before forwarding the frames on the trunk. Similarly, it tags all frames from device 2 with VLAN ID 2. Switch 2, on receiving the tagged frames, decapsulates them to check which VLAN they are destined for and forwards them accordingly. Traffic on VLAN 1 will not be seen by devices in VLAN2 because Layer 2 unicast, multicast and broadcast traffic will not cross VLAN boundaries.
 
@@ -41,7 +41,7 @@ When a switch port is configured to function as a trunk port, it adds unique ide
 
 *Note: [IEEE 802.3](https://en.wikipedia.org/wiki/IEEE_802.3) is a standard that specifies the characteristics of physical layer and Media Access Control(MAC) layer for wired Ethernet connections, generally called LANs. It is also referred to as the Ethernet standard.*
 
-![dot1q-frame-format](/vlan-trunking/dot1q.jpg)
+![dot1q-frame-format](/engineering-education/vlan-trunking/dot1q.jpg)
 
 The dot1Q frame standard accommodates a VLAN tag in the original Ethernet frame. This VLAN tag is 4 bytes long and consists of the fields discussed below:
 1. **Tag Protocol ID(TPID)**: This field is used to identify the frame as IEEE 802.1q frame.  The value is set to 0x8100.

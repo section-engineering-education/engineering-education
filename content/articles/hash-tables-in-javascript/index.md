@@ -89,14 +89,14 @@ How can we resolve this issue? There are many methods of handling collisions. We
 
 In this strategy, you have to iterate between the pairs to find the key you are looking for. Separate chaining leads to inefficiency. It brings the time complexity closer to O(n). Meaning it depends linearly on the size of the input.
 
-![Separate Chaining](/hash-tables-in-javascript/separate-chaining.jpg)
+![Separate Chaining](/engineering-education/hash-tables-in-javascript/separate-chaining.jpg)
 
 [Image source](https://www.geeksforgeeks.org/implementing-our-own-hash-table-with-separate-chaining-in-java/)
 
 #### Linear probing
 In [linear probing](https://en.wikipedia.org/wiki/Linear_probing#:~:text=Linear%20probing%20is%20a%20scheme,by%20Gene%20Amdahl%2C%20Elaine%20M.), you add one element and move to the next position if the hashed index is available.
 
-![Linear Probing](/hash-tables-in-javascript/linear-probing.jpg)
+![Linear Probing](/engineering-education/hash-tables-in-javascript/linear-probing.jpg)
 
 [Image source](http://www.cs.emory.edu/~cheung/Courses/253/Syllabus/Map/open-addr.html)
 

@@ -27,11 +27,11 @@ Since we will be using PHP, make sure you have installed `Xampp` to help in runn
 
 Once the installation is complete, start the Xampp control panel and activate Apache by clicking the start button as highlighted below.
 
-![Apache image](/managing-file-uploads-in-html-forms-using-php/apachestart.jpg)
+![Apache image](/engineering-education/managing-file-uploads-in-html-forms-using-php/apachestart.jpg)
 
 After a few seconds, the Apache header should change to a green background to indicate the apache server is running. Check the image below for reference.
 
-![Apache running image ](/managing-file-uploads-in-html-forms-using-php/apachesuccess.jpg)
+![Apache running image ](/engineering-education/managing-file-uploads-in-html-forms-using-php/apachesuccess.jpg)
 
 ### Step 1 — Creating the PHP files
 Navigate to `C:\xampp\htdocs\` (the driver location will depend on where you installed your Xampp app) and create a new folder `test`.
@@ -63,7 +63,7 @@ To view the output of this code, head to your browser at http://localhost/test. 
 
 From the browser, you should have something like this.
 
-![form output](/managing-file-uploads-in-html-forms-using-php/formlayout.jpg)
+![form output](/engineering-education/managing-file-uploads-in-html-forms-using-php/formlayout.jpg)
 
 ### Step 1 — Creating the PHP logic to handle the file uploads
 In the form we created above, once we click the submit button an action seems to be taking place. Although the file we choose to upload seems to have been uploaded, we cannot locate them.
@@ -79,7 +79,7 @@ When saving files on a table record, we follow these steps.
 
 1. **Create a database** -> Head to the `xampp` control panel and start MySQL. Click the admin button to access the `phpMyAdmin` dashboard; this is where we will create our database.
 
-![mysql button](/managing-file-uploads-in-html-forms-using-php/mysqlbutton.jpg).
+![mysql button](/engineering-education/managing-file-uploads-in-html-forms-using-php/mysqlbutton.jpg).
 
 The admin button on the MySQL row should take you to your browser and display this.
 

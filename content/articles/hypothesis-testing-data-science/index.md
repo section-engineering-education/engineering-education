@@ -70,7 +70,7 @@ It is denoted as $H_0$.
 
 On the other hand, an alternative hypothesis results from the experiment that we hope to show. We want the alternative hypothesis to be true. It is the hypothesis that is the alternate of the null hypothesis. The image below shall aid in the understanding of these two types of hypotheses.
 
-![nullalternative](/hypothesis-testing-data-science/nullatlernative.png)
+![nullalternative](/engineering-education/hypothesis-testing-data-science/nullatlernative.png)
 
 *Null vs. alternative hypothesis*
 
@@ -81,7 +81,7 @@ After forming our null and alternative hypotheses, we should select a significan
 
 The image below visualizes the significance level.
 
-![significancelevel](/hypothesis-testing-data-science/significancelevel.png)
+![significancelevel](/engineering-education/hypothesis-testing-data-science/significancelevel.png)
 
 *Alpha = 5%, denoting significance level*
 

@@ -33,22 +33,22 @@ Let's now get started with setting up a new project.
 - Open XCode.
 - Now, click on "Create a New XCode Project".
 
-![Creating a new project](/ios-tasks-app-using-swift/create-new-project.png)
+![Creating a new project](/engineering-education/ios-tasks-app-using-swift/create-new-project.png)
 
 - Let's use the iOS > App template.
 
-![iOS App Template](/ios-tasks-app-using-swift/template.png)
+![iOS App Template](/engineering-education/ios-tasks-app-using-swift/template.png)
 
 - Let's name our app "AwesomeToDo". Select the other settings as shown below.
 
-![Initial App Settings](/ios-tasks-app-using-swift/app-settings.png)
+![Initial App Settings](/engineering-education/ios-tasks-app-using-swift/app-settings.png)
 
 - Click on "create".
 
 ### Implementation and coding
 Let's dive right into programming the application. Now, once we create the project, XCode takes us to the main IDE window. 
 
-![XCode Main Window](/ios-tasks-app-using-swift/xcode-main-window.png)
+![XCode Main Window](/engineering-education/ios-tasks-app-using-swift/xcode-main-window.png)
 
 #### Getting started
 To get started, click on the `ContentView.swift` file on the right pane. This file consists of the initial user interface of the project, where the views are defined. It consists of a struct, `ContentView` where the view is defined. 

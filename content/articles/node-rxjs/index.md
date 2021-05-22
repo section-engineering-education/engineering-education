@@ -48,7 +48,7 @@ From the code above, we import the Observable module. We then create the `Observ
 - `error` : executed when an error occurs
 - `complete` : executed when emission ends. It does not emit values unlike the others. The output of the code above is:
 
-![observer](/node-rxjs/rx-observer.png)
+![observer](/engineering-education/node-rxjs/rx-observer.png)
 
 Another way to create an observable is by using the `interval` operator. This creates an observable that emits values after a specified duration.
 

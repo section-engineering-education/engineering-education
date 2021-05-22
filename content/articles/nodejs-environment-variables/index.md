@@ -100,15 +100,15 @@ We can add this `.env` file to `.gitignore` so that our credentials are protecte
 ### Environment Variables in Deployment
 When deploying to services like [Section](/modules/node-js), Vercel, Netlify or Heroku, environment variables can be set so that our deployed apps can access them.
 
-![Netlify Dashboard](/nodejs-environment-variables/netlify-dash.png)
+![Netlify Dashboard](/engineering-education/nodejs-environment-variables/netlify-dash.png)
 
 Using Netlify as an example, open the Netlify Dashboard of the app you're about to deploy.
 
-![Netlify Settings](/nodejs-environment-variables/env-vars.png)
+![Netlify Settings](/engineering-education/nodejs-environment-variables/env-vars.png)
 
 Go to **Build and Deploy** -> **Environment Variables**
 
-![Environment Variables](/nodejs-environment-variables/set-vars.png)
+![Environment Variables](/engineering-education/nodejs-environment-variables/set-vars.png)
 
 Now, set the variables and save.
 

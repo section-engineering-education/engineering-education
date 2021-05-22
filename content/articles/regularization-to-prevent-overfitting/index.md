@@ -35,7 +35,7 @@ When a function fits a set of such datapoints too closely, the model learns from
 
 The image below shows the phenomena of overfitting, underfitting, and the correct fit.
 
-![overfitting](/regularization-to-prevent-overfitting/overfitting.png)
+![overfitting](/engineering-education/regularization-to-prevent-overfitting/overfitting.png)
 
 *Overfitting, correct fit, and underfitting.*
 

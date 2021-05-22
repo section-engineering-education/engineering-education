@@ -78,7 +78,7 @@ Let's initialize the config:
 npx tsc --init
 ```
 
-![TypeScript Configuration](/working-with-apis-in-typescript/tsconfig.png)
+![TypeScript Configuration](/engineering-education/working-with-apis-in-typescript/tsconfig.png)
 
 Image: **TypeScript Configuration File**
 
@@ -271,7 +271,7 @@ To test the API, let us first run the server:
 npm run start
 ```
 
-![Server Run Command](/working-with-apis-in-typescript/server-running.png)
+![Server Run Command](/engineering-education/working-with-apis-in-typescript/server-running.png)
 
 Image: **Starting the API server**
 
@@ -288,11 +288,11 @@ curl --request POST -H "Content-Type: application/json" -d '{"id": "5"}' localho
 
 As you see in the output, our basic API works perfectly.
 
-![API Response](/working-with-apis-in-typescript/api-response.png)
+![API Response](/engineering-education/working-with-apis-in-typescript/api-response.png)
 
 The post response is as follows:
 
-![POST API Response](/working-with-apis-in-typescript/post-response.jpg)
+![POST API Response](/engineering-education/working-with-apis-in-typescript/post-response.jpg)
 
 Image: **API Response Output**
 

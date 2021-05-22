@@ -40,11 +40,11 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 ### Step 3 – Switching to MotionLayout
 In this phase, we want to shift our default layout from ConstraintLayout to MotionLayout. This will allow us to access additional features such as transitions. Open the activity_main.xml file and switch from the code view to the design tab, as shown in the image below.
 
-![DESIGN](/how-to-implement-motion-layout-animation-in-android-studio/design.png)
+![DESIGN](/engineering-education/how-to-implement-motion-layout-animation-in-android-studio/design.png)
 
 Next, navigate to the `component tree` section and `right` click on the ConstraintLayout. A new window will pop up with several options. Select the `Convert to MotionLayout` menu item.
 
-![CONVERT](/how-to-implement-motion-layout-animation-in-android-studio/convert.png)
+![CONVERT](/engineering-education/how-to-implement-motion-layout-animation-in-android-studio/convert.png)
 
 An `activity_main_scene.xml` is generated when you click the `Convert to MotionLayout` button demonstrated above. Let’s better understand the contents of this file.
 
@@ -143,7 +143,7 @@ Open the `activity_main.xml` and switch to the `design` view, then follow the in
 ### Testing
 You can test the application by creating an APK and installing it on your phone. You will have completed this tutorial successfully if the `ImageView` zooms out and the button shifts from the bottom to the center of the screen.
 
-![demo](/how-to-implement-motion-layout-animation-in-android-studio/demo.gif)
+![demo](/engineering-education/how-to-implement-motion-layout-animation-in-android-studio/demo.gif)
 
 ### Conclusion
 Animation is a critical part of any application. MotionLayout makes it easy to incorporate this feature in Android apps. You can, therefore, use this knowledge to develop more appealing applications.

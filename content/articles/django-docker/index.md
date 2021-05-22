@@ -183,10 +183,10 @@ d73306a9fb04   django_todo:latest   "python manage.py ru…"   3 hours ago   Up 
 ```
 
 1. On your browser visit `localhost` on port 8000 to confirm if the `django_todo` application is running in the container.
-![Docker Hub image](/django-docker/docker_get.png)
+![Docker Hub image](/engineering-education/django-docker/docker_get.png)
 
 ### Publishing the Docker image to Docker Hub
-![Docker Hub image](/django-docker/docker_create.png)
+![Docker Hub image](/engineering-education/django-docker/docker_create.png)
 
 Docker Hub is a repository of container images that can be used to create Docker containers.
 

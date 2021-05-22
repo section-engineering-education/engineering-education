@@ -30,10 +30,10 @@ A Stack is a linear data structure. It stores items using the Last In, First Out
 
 ### Stack: Introduction
 
-| ![Stack, Books](/stack-data-structure-python/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. Stacks are similar to queues in that they are linear collections of items, but they differ in the order in which they are accessed. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
+| ![Stack, Books](/engineering-education/stack-data-structure-python/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. Stacks are similar to queues in that they are linear collections of items, but they differ in the order in which they are accessed. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
 |:---:|:---:|
 
-![Push Pop](/stack-data-structure-python/pushpop.png)
+![Push Pop](/engineering-education/stack-data-structure-python/pushpop.png)
 `push` in a stack is putting an item on top of the stack.
 
 `pop` in a stack is taking out the top item in the stack.

@@ -40,7 +40,7 @@ Let's look into some basic terminology used in grid and dive into building a lay
 
 This container acts as the parent of all the grid elements.
 
-![Grid Container](/css-grid/grid-basic.png)
+![Grid Container](/engineering-education/css-grid/grid-basic.png)
 
 ```html
 <div class="grid-parent-container">
@@ -68,7 +68,7 @@ In this example, a parent `grid-container` wraps around five children grid conta
 #### Grid Children
 The direct children of the `grid-parent-container`.
 
-![Grid Children](/css-grid/grid-sub-child.png)
+![Grid Children](/engineering-education/css-grid/grid-sub-child.png)
 
 ```html
 <div class="grid-parent-container">
@@ -99,7 +99,7 @@ The direct children of the `grid-parent-container`.
 
 In this example, the `sub-child` does not count as grid-children. Only the **direct children** of the `parent-container` count as grid-children.
 
-![CSS Grid Terminology](/css-grid/grid-terminology.png)
+![CSS Grid Terminology](/engineering-education/css-grid/grid-terminology.png)
 
 *Figure: CSS Grid Diagram - [Source](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/)*
 
@@ -131,13 +131,13 @@ Here, the `display: grid` property defines the parent grid container to be the e
 
 This generates a block level grid. This means that the grid takes up the entire line and other elements cannot co-exist with the grid.
 
-![Grid](/css-grid/display-grid.png)
+![Grid](/engineering-education/css-grid/display-grid.png)
 
 The `display: inline-grid` property defines the parent grid container to be an element with the class 'inline-grid-parent-container'. This generates an inline-level-grid.
 
 Other elements can take up the free space on the same line. The grid elements take up space according to its contents.
 
-![Inline Grid](/css-grid/inline-grid.png)
+![Inline Grid](/engineering-education/css-grid/inline-grid.png)
 
 #### grid-template-rows & grid-template-columns
 These properties define how the rows and columns of the grid layout are arranged. They set the grid-track size.
@@ -176,11 +176,11 @@ These properties define how the rows and columns of the grid layout are arranged
 
 The above code creates a grid of three rows of 25%, 50% and 25% size of the parent container, and five columns of 100px, 50px, 50px and 100px. The middle column would automatically take up the rest of the space.
 
-![Grid Template Areas](/css-grid/grid-template.png)
+![Grid Template Areas](/engineering-education/css-grid/grid-template.png)
 
 We can also use the `fr` unit. One fr or fraction takes up a fraction of the free space available in the grid container.
 
-![Grid Fraction](/css-grid/grid-fr.png)
+![Grid Fraction](/engineering-education/css-grid/grid-fr.png)
 
 ```html
 <style>
@@ -250,7 +250,7 @@ Add the code below between style tags in your HTML file.
 
 The above snippet will create a grid that is three columns wide and two rows tall. The top row will be comprised of area-1 and two cells of area-2. The bottom row will be composed of a cell of area-1 and two cells of area-3.
 
-![Grid Areas](/css-grid/grid-areas.png)
+![Grid Areas](/engineering-education/css-grid/grid-areas.png)
 
 The syntax of `grid-template-areas` provides a visualization of the defined grid structure.
 
@@ -259,7 +259,7 @@ The syntax of `grid-template-areas` provides a visualization of the defined grid
 ### Let's Code
 Our goal is to generate a simple image grid as shown. We have used random [Unsplash](https://unsplash.com/) images. The result may be different for every user.
 
-![Image Grid](/css-grid/image-grid.png)
+![Image Grid](/engineering-education/css-grid/image-grid.png)
 
 We start by defining our page's HTML.
 

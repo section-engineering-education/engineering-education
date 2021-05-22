@@ -33,7 +33,7 @@ Cloud Spanner supports automatic data replication. Instance configuration (the f
 
 These zones must come from within a single selected region. Multi-Regional configuration, on the other hand, supports data replication across four zones. These zones can come from different regions depending on what continent the user specifies.
 
-![GCP zones and regions](/deciding-between-cloud-spanner-and-microsoft-cosmos-db/gcp-regions-and-zones.jpg)
+![GCP zones and regions](/engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/gcp-regions-and-zones.jpg)
 
 [Image source](https://cloud.google.com/about/locations#regions)
 
@@ -54,7 +54,7 @@ With Azure Cosmos DB, users can build and distribute their applications across a
 
 The globally distributed, multi-model database is available in all regions where [Azure is available](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cosmos-db&regions=all). This is possible considering its turnkey global distribution that automatically scales and replicates data across various data centers in the Azure network.
 
-![Cosmos DB regions](/deciding-between-cloud-spanner-and-microsoft-cosmos-db/cosmos-db-regions.jpg)
+![Cosmos DB regions](/engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/cosmos-db-regions.jpg)
 
 [Image source](https://azure.microsoft.com/en-us/global-infrastructure/global-network/)
 

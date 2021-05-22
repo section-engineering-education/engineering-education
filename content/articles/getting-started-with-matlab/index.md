@@ -190,11 +190,11 @@ Using the MATLAB interpreter is not a wise choice when implementing and storing 
 
 Let's begin by clicking on *New Script*.
 
-![](/getting-started-with-matlab/1.PNG)
+![](/engineering-education/getting-started-with-matlab/1.PNG)
 
 Second, press on *New* followed by *Function*:
 
-![](/getting-started-with-matlab/2.PNG)
+![](/engineering-education/getting-started-with-matlab/2.PNG)
 
 It is that easy! 
 
@@ -224,7 +224,7 @@ Now let's move on to a complex example.
 
 We are going to create the following figure:
 
-![sin and cos waves](/getting-started-with-matlab/sin-cos.jpg)
+![sin and cos waves](/engineering-education/getting-started-with-matlab/sin-cos.jpg)
 
 We need to define t (a variable indicating time).
 ```matlab

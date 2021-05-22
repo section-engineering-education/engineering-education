@@ -420,15 +420,15 @@ To resolve it, please run this command to install the package.
 
 If we test the `posts` endpoint without authentication, we will face this error.
 
-![Test API Error](/build-a-restful-api-with-adonisjs/test-api-error.png)
+![Test API Error](/engineering-education/build-a-restful-api-with-adonisjs/test-api-error.png)
 
 The error is eliminated if we login using the `/api/login` or register via the `/api/register` endpoint to retrieve our API Token.
 
-![Test API Auth](/build-a-restful-api-with-adonisjs/test-api-auth.png)
+![Test API Auth](/engineering-education/build-a-restful-api-with-adonisjs/test-api-auth.png)
 
 We can access the protected endpoints after inserting the token as the `Authorization header` value.
 
-![Test API Header](/build-a-restful-api-with-adonisjs/test-api-header.png)
+![Test API Header](/engineering-education/build-a-restful-api-with-adonisjs/test-api-header.png)
 
 Follow the following video to test the API.
 

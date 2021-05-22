@@ -231,7 +231,7 @@ hugo server command
 
 The web server will be hosted at http://localhost:1313, and will automatically reload when you make any changes in your website's files.
 
-![Documentation-website-preview](/documentation-website-hugo/website.png)
+![Documentation-website-preview](/engineering-education/documentation-website-hugo/website.png)
 
 ### Step 7 - Build your website
 Build your website with the `hugo` command. The command will generate all your website's static files and store them in the `./public/` directory.

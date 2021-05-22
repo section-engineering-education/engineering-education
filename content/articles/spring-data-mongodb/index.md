@@ -281,15 +281,15 @@ spring.data.mongodb.port=27017
 
 2. Click on the `Database Access` side menu and add a database user.
 
-![Mongo Atlas database user](/spring-data-mongodb/mongo-atlas-create-user.png)
+![Mongo Atlas database user](/engineering-education/spring-data-mongodb/mongo-atlas-create-user.png)
 
 3. Click on the `Cluster` side menu and create a database.
 
-![Mongo Atlas create database](/spring-data-mongodb/mongo-db-collection.png)
+![Mongo Atlas create database](/engineering-education/spring-data-mongodb/mongo-db-collection.png)
 
 4. On the `Cluster` side menu, click on `connect` and select the connection method as `connect your application`. Copy the connection string.
 
-![Mongo Atlas connection string](/spring-data-mongodb/mongo-db-connection-string.png) 
+![Mongo Atlas connection string](/engineering-education/spring-data-mongodb/mongo-db-connection-string.png) 
 
 5. Add configurations below to the `application.properties` file.
 

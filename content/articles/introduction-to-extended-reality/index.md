@@ -27,7 +27,7 @@ This immersive technology employs a head mounted display (HMD) to provide an imm
 
 For example, VR developers may create an artificial world that makes users feel as if they are walking around on the moon. The first industries to adopt this kind of technology include the gaming and entertainment industries.
 
-![Virtual Reality](/introduction-to-extended-reality/virtual-reality.jpg)
+![Virtual Reality](/engineering-education/introduction-to-extended-reality/virtual-reality.jpg)
 
 [Image Source: Magic Holo](https://magic-holo.com/wp-content/uploads/2017/04/Virtual_Reality.jpg)
 
@@ -36,7 +36,7 @@ In this component of XR, smart devices are used to overlay sounds and digital gr
 
 Snapchat filters and Pokémon Go are good examples of this AR technology. In the game of Pokémon Go, digital creatures are overlaid onto the real world (via a phone screen). Snapchat filters involve putting digital objects such as glasses and hats (overlaid) onto the user’s head to provide unique experiences.
 
-![Augmented Reality](/introduction-to-extended-reality/augmented-reality.jpeg)
+![Augmented Reality](/engineering-education/introduction-to-extended-reality/augmented-reality.jpeg)
 
 [Image Source: Miro](https://miro.medium.com/max/1200/1*3F8SgP5Im17Kq9yPvy5rpA.jpeg)
 
@@ -79,14 +79,14 @@ In movie theatres, virtual reality has been used to provide audiences with 3D ex
 Extended reality is also increasingly being used in video games. There is an improved user experience because of the enhanced comprehensive participation effect.
 
 
-![Entertainment](/introduction-to-extended-reality/xr-games.jpg)
+![Entertainment](/engineering-education/introduction-to-extended-reality/xr-games.jpg)
 
 [Image Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Reality_check_ESA384313.jpg/1200px-Reality_check_ESA384313.jpg)
 
 #### Healthcare
 In the healthcare system, extended reality is being used by medical practitioners to visualize complex medical procedures. It also assists surgeons to plan for complicated surgeries.
 
-![Healthcare](/introduction-to-extended-reality/virtual-reality-in-medicine.jpeg)
+![Healthcare](/engineering-education/introduction-to-extended-reality/virtual-reality-in-medicine.jpeg)
 
 [Image Source: University of Virginia](https://news.med.virginia.edu/fac-dev-blog/wp-content/blogs.dir/364/files/2017/09/Virtual-Reality-Woman.jpeg?r=1)
 

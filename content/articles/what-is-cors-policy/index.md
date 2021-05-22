@@ -61,7 +61,7 @@ Running this `fetch()` command in the console acts as if the website was sending
 
 You should see a CORS error in your console, looking something like:
 
-![cors console error](/what-is-cors-policy/cors-failed.png)<br/>
+![cors console error](/engineering-education/what-is-cors-policy/cors-failed.png)<br/>
 The asset we tried to request was the string "Section is cool" from the Node.js web server. Our request was blocked because the server did not explicitly give our website permission.
 
 To fix this issue, we can add the 'Access-Control-Allow-Origin' to our web server. This HTTP header lets CORS know that we are okay with letting others request the asset. Simply add

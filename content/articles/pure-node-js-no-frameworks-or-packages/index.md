@@ -30,25 +30,25 @@ JavaScript has gotten a lot of love from the developer community. It is diverse 
 
 The steady growth of JavaScript has led to the development of powerful JavaScript libraries and frameworks such as Node.js.
 
-![Most popular language](/pure-node-js-no-frameworks-or-packages/most-popular-language.jpg)
+![Most popular language](/engineering-education/pure-node-js-no-frameworks-or-packages/most-popular-language.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents)
 
 Node.js is capable of building extremely fast and highly scalable applications. It has emerged as one of the Most Popular JavaScript Technologies.
 
-![The most popular technologies](/pure-node-js-no-frameworks-or-packages/popular-technologies.jpg)
+![The most popular technologies](/engineering-education/pure-node-js-no-frameworks-or-packages/popular-technologies.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 It has emerged as the most wanted web technology, based on a survey conducted by [stack overflow](https://insights.stackoverflow.com/survey/2020).
 
-![The most wanted technology](/pure-node-js-no-frameworks-or-packages/most-wanted-technology.jpg)
+![The most wanted technology](/engineering-education/pure-node-js-no-frameworks-or-packages/most-wanted-technology.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-other-frameworks-libraries-and-tools-wanted3)
 
 Node.js runtime [download metrics](https://nodejs.org/metrics/) speak for themselves.
 
-![Node.js download metrics](/pure-node-js-no-frameworks-or-packages/node-js-download-metrics.jpg)
+![Node.js download metrics](/engineering-education/pure-node-js-no-frameworks-or-packages/node-js-download-metrics.jpg)
 
 [Image Source](https://nodejs.org/metrics/)
 
@@ -130,11 +130,11 @@ server.listen(port, hostname, () => {
 
 Test the server by running `node app.js`.
 
-![Pure Node.js server running](/pure-node-js-no-frameworks-or-packages/server-running.jpg)
+![Pure Node.js server running](/engineering-education/pure-node-js-no-frameworks-or-packages/server-running.jpg)
 
 And it is working. Visit `http://127.0.0.1:3000/` to get the server response.
 
-![Pure Node.js server response](/pure-node-js-no-frameworks-or-packages/server-response.jpg)
+![Pure Node.js server response](/engineering-education/pure-node-js-no-frameworks-or-packages/server-response.jpg)
 
 You are done. You have created the simplest, purest Node.js server. Simple and straightforward, right? 
 

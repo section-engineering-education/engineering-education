@@ -25,7 +25,7 @@ This article provides a comprehensive comparison between these cloud computing p
 
 It also consists of offerings such as infrastructure as a service (IAAS), software as a service (SAAS), and platform as a service (PAAS). Examples of the services provided by AWS include networking, storage, remote computing, mobile development, email, analytics, and security.
 
-![Amazon Web Services](/aws-vs-google-cloud/amazon-web-services.png)
+![Amazon Web Services](/engineering-education/aws-vs-google-cloud/amazon-web-services.png)
 
 [Image Source: L2L International](https://www.l2linternational.com/wp-content/uploads/2018/08/amazonaws.png)
 
@@ -34,7 +34,7 @@ It also consists of offerings such as infrastructure as a service (IAAS), softwa
 
 Other tools offered by this platform include networking, Big Data, the internet of things (IoT), management tools, security, and Cloud AI. Google cloud services share the same infrastructure with other end-user products of Google which include: YouTube, Gmail, and Google Search.
 
-![Google Cloud Platform](/aws-vs-google-cloud/google-cloud-platform.jpg)
+![Google Cloud Platform](/engineering-education/aws-vs-google-cloud/google-cloud-platform.jpg)
 
 [Image Source: Software Logic](http://softwarelogic.net/wp-content/uploads/2017/07/google-cloud1.jpg)
 

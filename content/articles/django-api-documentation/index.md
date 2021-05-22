@@ -276,17 +276,17 @@ Now that we have implemented the code required to generate documentation for our
 #### Coreapi
 On your browser, navigate to `http://127.0.0.1:8000/docs/` to view the coreapi documentation. 
 
-![coreapi documentation](/django-api-documentation/coreapi.png)
+![coreapi documentation](/engineering-education/django-api-documentation/coreapi.png)
 
 #### Swagger
 On your browser, navigate to `http://127.0.0.1:8000/swagger/` to view the swagger documentation.
 
-![Swagger documentation](/django-api-documentation/swagger.png)
+![Swagger documentation](/engineering-education/django-api-documentation/swagger.png)
 
 #### redoc
 On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documentation.
 
-![redoc documentation](/django-api-documentation/redoc.png)
+![redoc documentation](/engineering-education/django-api-documentation/redoc.png)
 
 ### Conclusion
 Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.

@@ -69,7 +69,7 @@ Full-stack development entails working on the entire stack of the application. T
 
 A full-stack developer is required to have multiple skills to build an entire web application. These include coding, testing, debugging, and web design. This developer should also know about databases, APIs, security, algorithms, and [version control systems (VCS)](https://www.geeksforgeeks.org/version-control-systems/).
 
-![Full Stack Development](/front-end-vs-back-end-in-web-development/full-stack-development.png)
+![Full Stack Development](/engineering-education/front-end-vs-back-end-in-web-development/full-stack-development.png)
 
 [Image Source: Revenue River](https://www.revenueriver.co/hubfs/fullstack.jpeg#keepProtocol)
 

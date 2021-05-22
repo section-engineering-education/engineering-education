@@ -46,7 +46,7 @@ ls -l
 ```
 Then you will see the file's permissions, like the following:
 
-![Permissions Example](/user-groups-and-permissions-linux/1.png)
+![Permissions Example](/engineering-education/user-groups-and-permissions-linux/1.png)
 
 We will work with this part "-rw-r--r--".
 
@@ -56,7 +56,7 @@ The characters mean:
 - 'x' = execute. 
 - '-' = no permission.
 
-![Explain permissions](/user-groups-and-permissions-linux/2.png)
+![Explain permissions](/engineering-education/user-groups-and-permissions-linux/2.png)
 
 As we see above, the empty first part means that it is a file. If it were a directory then it will be the letter "d" instead.
 The second part means that the user "Home" has read and write permissions but he does not have the execute one.
@@ -107,7 +107,7 @@ For example, let's give every permission for all with:
 chmod 777 section.txt
 ```
 
-![Symbolic Mode Example](/user-groups-and-permissions-linux/3.png)
+![Symbolic Mode Example](/engineering-education/user-groups-and-permissions-linux/3.png)
 
 Then the permissions will be: `-rwxrwxrwx`.
 

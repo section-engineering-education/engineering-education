@@ -765,11 +765,11 @@ php artisan serve
 
 The expected output:
 
-![First Screenshot](/react-axios-post-laravel/screen-one.png)
+![First Screenshot](/engineering-education/react-axios-post-laravel/screen-one.png)
 
-![Second Screenshot](/react-axios-post-laravel/screen-two.png)
+![Second Screenshot](/engineering-education/react-axios-post-laravel/screen-two.png)
 
-![Third Screenshot](/react-axios-post-laravel/screen-three.png)
+![Third Screenshot](/engineering-education/react-axios-post-laravel/screen-three.png)
 
 #### Conclusion
 In this tutorial we got an overview on using the Axios library to send a HTTP request. A POST request which is used in making our applications RESTful. We saw the use of JSON in passing information between the backend and frontend. I will talk about other HTTP methods using these technologies in other tutorials.

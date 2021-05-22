@@ -36,7 +36,7 @@ Let’s take a look at this simple example:
 
 This is a simple example of the markup language with a few very basic tags. As you can see, the `<title>` tag is inside the `<head>` tag. The text, “This text displays the title of the web page” will be the title of the webpage in the header section. The main content of the webpage is what is inside the `<body>` tag. DOM structure for the above HTML code will be:
 
-![DOM-tree](/document-object-model/DOM1.jpg)
+![DOM-tree](/engineering-education/document-object-model/DOM1.jpg)
 
 The `<html>` node, or the root element, acts as the parent node to `<head>` and `<body>` nodes. The `<head>` and `<body>` nodes act as parent nodes to `<title>` and `<h1>` , `<p>` nodes respectively. In the same way, the hierarchy continues if any more elements or attributes are introduced in the web script.
 

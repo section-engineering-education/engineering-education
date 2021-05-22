@@ -37,17 +37,17 @@ These are the set of steps required to install Anaconda Package Manager. Choose 
 
 **Step 1**
 
-![Anaconda install screen](/data-science-setup/1.png)
+![Anaconda install screen](/engineering-education/data-science-setup/1.png)
 
 **Step 2**
 
-![Installation](/data-science-setup/2.png)
+![Installation](/engineering-education/data-science-setup/2.png)
 
 **Step 3**: Selecting the first option results in the Anaconda Package Manager getting added to the environment variables. This allows one to call the command `conda` from the terminal.
 
 Click on the install button to complete the installation.
 
-![Path Anaconda](/data-science-setup/3.png)
+![Path Anaconda](/engineering-education/data-science-setup/3.png)
 
 
 ### Installing machine learning libraries
@@ -98,7 +98,7 @@ We could search for it in the search bar on Anaconda's website to install it. An
 
 The anaconda website for scikit-learn should look like this:
 
-![sklearn](/data-science-setup/scikit-learn.png)
+![sklearn](/engineering-education/data-science-setup/scikit-learn.png)
 
 You will find a few varying commands. In most cases, the first command should work. However, in a rare scenario, if version conflicts occur, you may try the other commands and try it with other library versions. 
 
@@ -116,7 +116,7 @@ This idea was inspired by this [article](https://towardsdatascience.com/tensorfl
 #### Installing PyTorch
 PyTorch is relatively simple to install. Go to the Pytorch [website](https://pytorch.org/get-started/locally/). Under the *Get Started* tab, select the appropriate options. 
 
-![pytroch](/data-science-setup/pytorch.png)
+![pytroch](/engineering-education/data-science-setup/pytorch.png)
 
 Once selected, you should get your command below. Once that is done, just run the command in the virtual environment to avoid future compatibility issues.
 

@@ -41,7 +41,7 @@ We will use the toolbox to select the controls that we need in this game. First 
 
 This is how the form should look like after building the form, and remember that you can always change the fonts & the colors to whatever suits your taste!
 
-![mastermind_form](/getting-started-with-game-development-windows-forms/mastermind_form.png)
+![mastermind_form](/engineering-education/getting-started-with-game-development-windows-forms/mastermind_form.png)
 
 This is the table of the Texts & names of all the controls used in this form.
 

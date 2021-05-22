@@ -35,7 +35,7 @@ I also encourage you to have read up on [grid](/grid-search/) and [random](/rand
 
 ### Bayesian statistics
 
-![statistics](/bayesian-optimization/statistics.jpg)
+![statistics](/engineering-education/bayesian-optimization/statistics.jpg)
 
 [Source](https://www.reddit.com/r/machinelearningmemes/)
 
@@ -110,7 +110,7 @@ Where $y_{max}$ represents $max_iy_i$, which is the best value of the function $
 
 Let’s show how expected improvement acquires new hyperparameter settings. In the image below, A, B, and C are hyperparameter settings. These settings result from Gaussian processes. To select a setting, we need the acquisition function.
 
-![acquisition](/bayesian-optimization/acquisition.png)
+![acquisition](/engineering-education/bayesian-optimization/acquisition.png)
 
 *Expected improvement acquisition.*
 

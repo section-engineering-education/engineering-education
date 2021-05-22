@@ -67,7 +67,7 @@ The function `first_element()` takes an array passed in and prints the first ele
 
 Take a look at the graph representation below:
 
-![O-1-graph](/big-o-notation/o-1.png)
+![O-1-graph](/engineering-education/big-o-notation/o-1.png)
 
 *O(1) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*C--4xOJ1aDuUykTZ4z5UGg.png)
@@ -87,7 +87,7 @@ def show_array_elements(array):
 The code takes in an array using the function `show_array_elements()` and displays the array elements.
 If the array passed in as an argument only has **1** element, then the algorithm will only take **1 operation** to run and would similarly take **300** operations for an array with **300 elements**. The number of times the loop iterates depends on the number of array elements.
 
-![0n](/big-o-notation/o-n.png)
+![0n](/engineering-education/big-o-notation/o-n.png)
 
 *O(n) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*X5JanH7K1HPOarB4fJpTTg.png)</br>
@@ -111,7 +111,7 @@ The code has two loops, the *outer*, and the *inner*. The outer loop iterates n 
 
 Taking a case where the array has 3 elements; the outer loop takes 3 operations in total to iterate over each element. For every 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
 
-![02](/big-o-notation/n-square.png)
+![02](/engineering-education/big-o-notation/n-square.png)
 
 *O(n<sup>2</sup>) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*GKAnOWbIA7CRV4OUB3STZw.png)</br>
@@ -185,7 +185,7 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 |10000| 14|
 |100000| 17|
 
-![log_2_n](/big-o-notation/log-2-n.png)
+![log_2_n](/engineering-education/big-o-notation/log-2-n.png)
 
 *O(log<sub>2</sub>n) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*UHTWeGAoDrJL1mhvtKkVGw.png)

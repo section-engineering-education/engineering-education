@@ -119,7 +119,7 @@ If you'd like to take a look at the final code, please refer to [this GitHub Rep
 
 In the starter code, I've set up a simple screen with text and a button to switch to dark mode. I've also written all the CSS styles required for the dark mode and the light mode. Take a look at them or feel free to edit them in `src/App.css`.
 
-![Starter Screen](/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
+![Starter Screen](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
 
 ### Adding the Context and Reducer
 In the `src` folder, create a new file called `ThemeContext.js`. 
@@ -281,7 +281,7 @@ export default function SwitchButton() {
 
 Now, when you click on the button, the theme should change.
 
-![Toggle Mode](/dark-mode-for-react-app-using-context-api-and-hooks/toggle.gif)
+![Toggle Mode](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/toggle.gif)
 
 ### Let's Recap
 

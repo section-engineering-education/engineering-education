@@ -67,7 +67,7 @@ Understanding the UiPath architecture can help us understand how it works.
 
 The image below shows the architecture of UiPath:
 
-![UiPath Architecture](/introduction-to-uipath-in-rpa/uipath-architecture.jpg)
+![UiPath Architecture](/engineering-education/introduction-to-uipath-in-rpa/uipath-architecture.jpg)
 
 *[Image Source: EDUCBA](https://www.educba.com/academy/wp-content/uploads/2020/09/UiPath-Architecture-img.jpg)*
 

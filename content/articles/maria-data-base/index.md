@@ -58,23 +58,23 @@ Then run the installer by executing the command below.
 $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
 ```
 
-![XAMPP Setup Wizard](/maria-data-base/img1.png)
+![XAMPP Setup Wizard](/engineering-education/maria-data-base/img1.png)
 
 Click **Next** until the installation process is finished.
 
-![XAMPP Setup Wizard](/maria-data-base/img2.png)
+![XAMPP Setup Wizard](/engineering-education/maria-data-base/img2.png)
 
 Once the installation is finished, move to the Manage Servers tab and click **Start** to start all the services.
 
-![XAMPP Start Services](/maria-data-base/img3.png)
+![XAMPP Start Services](/engineering-education/maria-data-base/img3.png)
 
 To verify your installation open your browser at http://localhost/dashboard. You should see something like this.
 
-![XAMPP Setup Wizard](/maria-data-base/img4.png)
+![XAMPP Setup Wizard](/engineering-education/maria-data-base/img4.png)
 
 You can also open http://localhost/phpmyadmin/ to access PhpMyAdmin. You should see something like this.
 
-![localhost phpmyadmin](/maria-data-base/phpmyadmin.png)
+![localhost phpmyadmin](/engineering-education/maria-data-base/phpmyadmin.png)
 
 ### Step 2 -- Creating tables in MariaDB using SQL commands.
 Now that we have our environment working, we can start working with MariaDB. 
@@ -89,7 +89,7 @@ The terminal will ask you for a password, press Enter as we have not set any pas
 
 When you press Enter you should have the following output:
 
-![MariaDB in terminal](/maria-data-base/maria.png)
+![MariaDB in terminal](/engineering-education/maria-data-base/maria.png)
 
 The next thing to do is to create a Database. Let's create a Database called `school`. By executing the following sql command:
 
@@ -167,7 +167,7 @@ $ desc students;
 
 So far, we have created a database `school` and a table `students` inside it. Now, let's view this database school and its tables in PhpMyAdmin. Open your browser and navigate to http://localhost/phpmyadmin/. You should see something like this.
 
-![phpmyadmin database](/maria-data-base/database.png)
+![phpmyadmin database](/engineering-education/maria-data-base/database.png)
 
 ### Step 3 -- Creating a registration form
 Here, we will create a form and store the data collected from it in our `school` database.
@@ -243,7 +243,7 @@ h3 {
 
 The page should now look like this:
 
-![form](/maria-data-base/form.png)
+![form](/engineering-education/maria-data-base/form.png)
 
 Now, let's connect our form with the database. 
 
@@ -304,7 +304,7 @@ When you hit **Save**, the details above should be saved in our database.
 
 When we open http://localhost/phpmyadmin/ on the browser we should have something like this in our database.
 
-![Saved form data](/maria-data-base/database2.png)
+![Saved form data](/engineering-education/maria-data-base/database2.png)
 
 ### Step 5 -- Fetching data from the Database
 To fetch the data that we just saved, add the code below into `index.php` right under the `</form>` tag.
@@ -357,7 +357,7 @@ while($row = mysqli_fetch_array($result)) {
 
 On refreshing the page, we should see:
 
-![database2](/maria-data-base/img5.png)
+![database2](/engineering-education/maria-data-base/img5.png)
 
 The data at the bottom of the page has been fetched from the database.
 

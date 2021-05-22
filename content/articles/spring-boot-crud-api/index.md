@@ -59,7 +59,7 @@ The easiest way to create a new spring boot application is to use the [spring in
 - Extract the zip file and open the project in your favorite IDE.
 - Sync the dependencies with Gradle.
 
-![Project setup](/spring-boot-crud-api/generate-project.png)
+![Project setup](/engineering-education/spring-boot-crud-api/generate-project.png)
 
 ### Configuring Spring Datasource, JPA, Hibernate
 We are using the H2 database which is an in-memory database, meaning the data stored in the database is destroyed if the application is stopped or restarted.
@@ -354,7 +354,7 @@ public class TodoLoader implements CommandLineRunner {
 
 The final project structure should be as shown below.
 
-![project structure](/spring-boot-crud-api/project-structure.png)
+![project structure](/engineering-education/spring-boot-crud-api/project-structure.png)
 
 ### Testing the CRUD endpoints
 
@@ -370,19 +370,19 @@ The final project structure should be as shown below.
 }
 ```
 
-![Create Todo](/spring-boot-crud-api/create-todo.png)
+![Create Todo](/engineering-education/spring-boot-crud-api/create-todo.png)
 
 **Getting the list of todos**
 
 Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo` to get all the `todos`.
 
-![Get Todos](/spring-boot-crud-api/get-todos.png)
+![Get Todos](/engineering-education/spring-boot-crud-api/get-todos.png)
 
 **Getting a `Todo` by ID**
 
 Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the ID of the `Todo` at the end of the URL, in our case ID is 2.
 
-![Get Todo by Id](/spring-boot-crud-api/get-todo-by-id.png)
+![Get Todo by Id](/engineering-education/spring-boot-crud-api/get-todo-by-id.png)
 
 **Updating a `Todo`**
 
@@ -396,13 +396,13 @@ Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the ID of t
 }
 ```
 
-![Update Todo](/spring-boot-crud-api/update-todo.png)
+![Update Todo](/engineering-education/spring-boot-crud-api/update-todo.png)
 
 **Deleting a `Todo`**
 
 Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the end of the URL the ID of the `todo` to delete, in our case the ID is 2.
 
-![Delete Todo](/spring-boot-crud-api/delete-todo.png)
+![Delete Todo](/engineering-education/spring-boot-crud-api/delete-todo.png)
 
 ### Conclusion
 Now that you have learned how to create a Restful web service in Spring Boot, clone the project [here](https://github.com/paulodhiambo/springbootcrud) and `IN_PROGRESS` status to our `TodoStatus` enum in the `models` package.

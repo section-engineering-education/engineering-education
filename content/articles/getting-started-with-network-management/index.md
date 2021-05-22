@@ -102,7 +102,7 @@ A network management system is always designed and developed for the end-user to
 
 ### Fig.1 Network management system
 
-![Network-Management-System](/getting-started-with-network-management/hierarchical-nms.jpg)
+![Network-Management-System](/engineering-education/getting-started-with-network-management/hierarchical-nms.jpg)
 
 There are 3 types of network architectures:  
 

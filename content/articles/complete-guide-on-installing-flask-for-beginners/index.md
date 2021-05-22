@@ -118,7 +118,7 @@ Now, let’s proceed to structure the web application.
 ### Structuring your web application
 The structuring of your web application is the first thing to do before delving into the coding process, and below is a diagrammatic representation of how your Flask app should be structured:
 
-![image for web application structure](/complete-guide-on-installing-flask-for-beginners/web-app-structure.jpg)
+![image for web application structure](/engineering-education/complete-guide-on-installing-flask-for-beginners/web-app-structure.jpg)
 
 The first process in structuring your web application is to create an “**app**” folder, a `run.py` file and a "**requirement.txt**" file.
 

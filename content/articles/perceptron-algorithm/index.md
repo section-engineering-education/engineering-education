@@ -37,7 +37,7 @@ Let's consider the structure of the perceptron. The perceptron has four key comp
 3. Weighted Sum
 4. Thresholding using the unit-step function
 
-![perceptron](/perceptron-algorithm/perceptron.png)
+![perceptron](/engineering-education/perceptron-algorithm/perceptron.png)
 
 *[Image Source](https://stackoverflow.com/questions/40260412/could-someone-explain-this-neural-network-machine-learning-code)*
 
@@ -49,7 +49,7 @@ Using the weighted summing technique, the perceptron had a learnable parameter. 
 
 The weighted sum is sent through the thresholding function. The output of the thresholding functions is the output of the perceptron. The output indicates the confidence of the prediction. The larger the numerical value of the output, the greater the confidence of the prediction.
 
-![unit-step function](/perceptron-algorithm/unit-step.jpg)
+![unit-step function](/engineering-education/perceptron-algorithm/unit-step.jpg)
 
 *[Image Source](http://saedsayad.com/images/ANN_Unit_step.png)*
 
@@ -161,7 +161,7 @@ It will be a fun challenge to change the values of the learning rate and the num
 
 I have attached a screenshot of the terminal capturing the training and test accuracies.
 
-![output](/perceptron-algorithm/output.jpg)
+![output](/engineering-education/perceptron-algorithm/output.jpg)
 
 *Code Output*
 

@@ -755,22 +755,22 @@ Moment.js is mutable while date-fns is immutable; Moment.js keeps changing its o
 
 #### Statistical Differences
 - Size   
-![packages bundle size](/nodejs-date-and-time-objects-with-moment/size.png)
+![packages bundle size](/engineering-education/nodejs-date-and-time-objects-with-moment/size.png)
 <br>
 *[Image source](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e#:~:text=One%20of%20the%20biggest%20difference,momentjs%20change%20its%20own%20state.)*
 
 -   NPM download stats
-![npm download stats](/nodejs-date-and-time-objects-with-moment/npm-download-insights.png)
+![npm download stats](/engineering-education/nodejs-date-and-time-objects-with-moment/npm-download-insights.png)
 <br>
 *[Image source](https://nodejs.libhunt.com/compare-moment-vs-date-fns)*
 
 -   GitHub stats
-![github stats](/nodejs-date-and-time-objects-with-moment/github-stats.png)
+![github stats](/engineering-education/nodejs-date-and-time-objects-with-moment/github-stats.png)
 <br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
 -   Popularity and activity
-![popularity and activity](/nodejs-date-and-time-objects-with-moment/popularity-and-activity.png)
+![popularity and activity](/engineering-education/nodejs-date-and-time-objects-with-moment/popularity-and-activity.png)
 <br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 

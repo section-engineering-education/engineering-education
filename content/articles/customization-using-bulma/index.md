@@ -94,7 +94,7 @@ For example:
 </div>
 ```
 
-![Three Columns in Bulma](/customization-using-bulma/three-column.png)
+![Three Columns in Bulma](/engineering-education/customization-using-bulma/three-column.png)
 
 This snippet would create a responsive column layout with three columns of equal width. You can also specify the column size by using the size classes.
 
@@ -106,7 +106,7 @@ This snippet would create a responsive column layout with three columns of equal
 </div>
 ```
 
-![Uneven Three Columns in Bulma](/customization-using-bulma/three-column-uneven.png)
+![Uneven Three Columns in Bulma](/engineering-education/customization-using-bulma/three-column-uneven.png)
 
 The snippet above would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
 
@@ -135,7 +135,7 @@ Bulma comes with many built-in UI components. Let's try to create a card compone
 
 This code snippet would create a card component that would look like this:
 
-![Bulma Card](/customization-using-bulma/card.png)
+![Bulma Card](/engineering-education/customization-using-bulma/card.png)
 
 Bulma has many other components that you can find out about [here](https://bulma.io/documentation/components/).
 
@@ -186,7 +186,7 @@ Finally, let's create an HTML page with a basic button.
 
 Initially, our output would be a red and a green button. The `is-danger` modifier is by default red, and the `is-primary` modifier is by default green.
 
-![Bulma Buttons](/customization-using-bulma/buttons.png)
+![Bulma Buttons](/engineering-education/customization-using-bulma/buttons.png)
 
 Let's say we want to change these colors.
 
@@ -221,7 +221,7 @@ sass style.scss:style.css
 
 Now, the buttons have changed to pink and blue.
 
-![Bulma Buttons Themed](/customization-using-bulma/buttons-themed.png)
+![Bulma Buttons Themed](/engineering-education/customization-using-bulma/buttons-themed.png)
 
 If we want to change the primary font to Times New Roman for the entire document, we can use the `$family-primary` variable.
 
@@ -237,7 +237,7 @@ sass style.scss:style.css
 
 Now, the font of the document is changed to Times New Roman.
 
-![Bulma Buttons Font](/customization-using-bulma/buttons-font.png)
+![Bulma Buttons Font](/engineering-education/customization-using-bulma/buttons-font.png)
 
 An exhaustive list of customizable Bulma variables can be found [here](https://bulma.io/documentation/customize/variables/).
 

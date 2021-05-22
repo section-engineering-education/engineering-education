@@ -70,7 +70,7 @@ Here is an example of a form that submits data to a file named `index.php`. To h
 
 The output for the above code is as shown in the screenshot below.
 
-![HMTL Form](/working-with-forms-in-php/form.png)
+![HMTL Form](/engineering-education/working-with-forms-in-php/form.png)
 
 The `action` identifies the page where the form input is submitted. Data can be submitted on the same page as the form or on a different page. The `method` specifies how data is processed. This can be `POST`, `GET`, or `PUT`. The `GET` method collects data from the server and sends it in the URL. The data submitted via the `POST` method is stored in the HTTP request body and cannot be seen on the URL.
 

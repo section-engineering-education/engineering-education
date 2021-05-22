@@ -426,9 +426,9 @@ With all these steps followed, our Anime SPA is ready to go.
 
 Below, are few screenshots for you to compare :)
 
-![home page](/building-a-simple-angular-app/my-app-home.png)
+![home page](/engineering-education/building-a-simple-angular-app/my-app-home.png)
 
-![anime profile page](/building-a-simple-angular-app/my-app-anime-akira.png)
+![anime profile page](/engineering-education/building-a-simple-angular-app/my-app-anime-akira.png)
 
 ### Additional Resources
 - Refer to the [Angular Docs](https://angular.io/docs) for more info.

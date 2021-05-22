@@ -19,7 +19,7 @@ images:
 <!--more-->
 Data Studio is cloud-based, so anyone you want can see your reports anytime. When building a report, you can choose a template or create a new one. Editing a report is easy; simply insert and drag charts, then edit the charts using data filters and formatting. You can also add design components such as text, shapes, and images to tell a compelling story and communicate your goals.
 
-![img](/data-studio/overview.png)
+![img](/engineering-education/data-studio/overview.png)
 
 Data studio can load data from a variety of sources such as [Google Analytics](https://analytics.google.com/analytics/web/), [Google Sheets](https://sheets.google.com), [MySQL](https://www.mysql.com/), [CSV files](https://en.wikipedia.org/wiki/Comma-separated_values), [Google Ads](https://en.wikipedia.org/wiki/Google_Ads) and more. Developers can even create custom data connections for their own platform. Once you've connected data to Data Studio, your reports will dynamically update if the data changes, which means you don't have to redo manually. Data Studio is easy, free and customizable to your business needs.
 
@@ -34,36 +34,36 @@ To set up a Data Source, you'll choose a *connector*. [Connectors](https://datas
 
 The metrics and dimensions will appear in the data source so you can choose which data you'd like to visualize and how it should appear in Data Studio reports. The report is a blank canvas where you can create visualizations, and it *can* be multiple pages which help in organizing your reports in logical ways. You can choose from different types of charts available such as bar charts, time series, geo maps and more. When you add a chart to your report, it is automatically created from the data from your Data Source. You can tweak what data is shown and customize the chart's design.
 
-![img](/data-studio/flow.png)
+![img](/engineering-education/data-studio/flow.png)
 
 ### Guide for Building a Report
 Let's build a report based on some dummy data. First, log in with your Google account and go to [Data Studio](https://datastudio.google.com).
 #### Connect Data to Data Studio.
 For this article, we will use a dummy dataset made in Google Sheets [here](https://docs.google.com/spreadsheets/d/1sEC7zGBUG6X4TKc1pWuNyF7uufjQP5cBLQ0k5sLkags/edit?usp=sharing).
 
-![img](/data-studio/create.png)
+![img](/engineering-education/data-studio/create.png)
 
 Choose from the many official and third party connections depending on your data set.
 
-![img](/data-studio/connection.png)
+![img](/engineering-education/data-studio/connection.png)
 
 We selected Google Sheets Connector. Choose which spreadsheet you want to use as Data Set.
 
-![img](/data-studio/sheets.png)
+![img](/engineering-education/data-studio/sheets.png)
 
 After creating a Data Source, you can see the Dimensions and Metrics, and you can edit the data-type, field name, choose to hide certain fields and so on.
 
-![img](/data-studio/source.png)
+![img](/engineering-education/data-studio/source.png)
 
 Click on `Create Report` to make visualizations and build a report.
 
-![img](/data-studio/sure.png)
+![img](/engineering-education/data-studio/sure.png)
 
 #### Add Charts to the report
 
 Click on the `Add a Chart` drop-down menu to select a suitable graph or table for your data.
 
-![img](/data-studio/dropdown.png)
+![img](/engineering-education/data-studio/dropdown.png)
 
 Time Series is used to show the change in a metric with respect to time. Scorecards are used to display a number (profit, loss, count, etc.). Bar charts are used to display and compare different discrete categories of data. A Pie chart illustrates the numerical proportion. Geo maps can be used to show how a metric changes wrt a location (We need a field with Type = `Geo`). These are some ways to visualize data.
 
@@ -71,13 +71,13 @@ We can create a new field off of the existing fields. For example, if you want t
 
 Click on **Add a Field** in report or Data Source.
 
-![img](/data-studio/addField.png)
+![img](/engineering-education/data-studio/addField.png)
 
 Creating a new field is similar to creating [Excel Functions](https://www.excelfunctions.net/excel-math-functions.html). We can select from available math functions like SUM(), COUNT(), AVERAGE(), etc. Choose appropriate mathematical functions on fields to get desired output.
 
-![img](/data-studio/inloss.png)
+![img](/engineering-education/data-studio/inloss.png)
 
-![img](/data-studio/totloss.png)
+![img](/engineering-education/data-studio/totloss.png)
 
 
 #### Add and configure report controls.
@@ -86,12 +86,12 @@ Once you've built a report to visualize your data, you can empower viewers to re
 * A **filter control** allows viewers to select one or more dimension values from a list by which to filter the report.
 * A **data control** allows a report viewer to change the data set used by a specific type of data source.
 
-![img](/data-studio/datecontrol.png)
+![img](/engineering-education/data-studio/datecontrol.png)
 
 #### Share reports with others
 Once your report is ready, you can share it with others for collaboration or review. For reports, you can give others to view or edit access, at which point they'll receive an email with a link to view or edit that file. Viewers can view and interact with the report, while editors can make changes to the design, chart data, format, and so on. Similar to report sharing, you can give others to view or edit access to your data source files, at which point they'll receive an email with a link to view or edit that file.
 
-![img](/data-studio/sharing.png)
+![img](/engineering-education/data-studio/sharing.png)
 
 ### Conclusion
 Data Studio is a powerful data visualization tool for all. Developers can create their custom designs and charts, using JavaScript and CSS. We can even use Data Studio reports incorporating insights into and predictions from the data, using powerful tools such as [TensorFlow](https://www.tensorflow.org/). TensorFlow provides a JavaScript API called [TensorFlow.js](https://www.tensorflow.org/js) which can be even used for training complex neural networks.

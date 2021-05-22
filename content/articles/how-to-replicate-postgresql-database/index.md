@@ -29,7 +29,7 @@ It synchronizes the data in such a way that if the master server fails, one can 
 
 For this to happen there must be communication between the two hosts or two servers, through a network or internet as shown below.
 
-![LOCAL-EXAMPLE](/how-to-replicate-postgresql-database/local-network.png)
+![LOCAL-EXAMPLE](/engineering-education/how-to-replicate-postgresql-database/local-network.png)
 
 [Internet Example - *Image Source*](/how-to-replicate-postgresql-database/internet-network.png)
 
@@ -76,7 +76,7 @@ sudo passwd postgres
 su - postgres
 ```
 
-![postgres-login](/how-to-replicate-postgresql-database/postgres-login.png)
+![postgres-login](/engineering-education/how-to-replicate-postgresql-database/postgres-login.png)
 
 - Create replication user with the following command.
 
@@ -98,7 +98,7 @@ nano /etc/postgresql/10/main/pg_hba.conf
 host  replication       replication   MasterIP/24   md5
 ```
 
-![postgres-login](/how-to-replicate-postgresql-database/pg_hba-edit.png)
+![postgres-login](/engineering-education/how-to-replicate-postgresql-database/pg_hba-edit.png)
 
 `MasterIP is the IP address of the Master Server Computer`
 

@@ -50,7 +50,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-text-recognition/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-text-recognition/env_setup.png)
 
 ### Installing dependencies
 You can install these packages in advance or while going through the article.
@@ -89,23 +89,23 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](/react-native-firebase-text-recognition/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-text-recognition/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard. Upgrade your project to the Blaze plan.
 
-![New Dashboard](/react-native-firebase-text-recognition/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-text-recognition/new_dashboard.png)
 
 Now, click on the Android icon to add an Android app to the Firebase project.
 
-![register_app](/react-native-firebase-text-recognition/register_app.png)
+![register_app](/engineering-education/react-native-firebase-text-recognition/register_app.png)
 
 You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-text-recognition/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-text-recognition/package_name.png)
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
-![Download Google Services JSON](/react-native-firebase-text-recognition/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-text-recognition/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -139,23 +139,23 @@ npm install @react-native-firebase/app
 ### Setting up Cloud Vision API
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
-![Cloud Dashboard](/react-native-firebase-text-recognition/cloud_dashboard.png)
+![Cloud Dashboard](/engineering-education/react-native-firebase-text-recognition/cloud_dashboard.png)
 
 In the API & Service tab, head to the Libraries section.
 
-![API & Services Tab](/react-native-firebase-text-recognition/api_services.png)
+![API & Services Tab](/engineering-education/react-native-firebase-text-recognition/api_services.png)
 
 Search for Cloud Vision API.
 
-![API Library Section](/react-native-firebase-text-recognition/search_libraries.png)
+![API Library Section](/engineering-education/react-native-firebase-text-recognition/search_libraries.png)
 
 Once you open the API page, click on the Enable button.
 
-![Enable Cloud Vision](/react-native-firebase-text-recognition/enable_cloud_vision.png)
+![Enable Cloud Vision](/engineering-education/react-native-firebase-text-recognition/enable_cloud_vision.png)
 
 Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
-![Cloud Vision Metrics](/react-native-firebase-text-recognition/cloud_vision_dashboard.png)
+![Cloud Vision Metrics](/engineering-education/react-native-firebase-text-recognition/cloud_vision_dashboard.png)
 
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit to recognize text from images.
 
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-![Buttons](/react-native-firebase-text-recognition/buttons_ui.jpg)
+![Buttons](/engineering-education/react-native-firebase-text-recognition/buttons_ui.jpg)
 
 ### Adding media picker
 Let's install the `react-native-image-picker` to add these functionalities.
@@ -313,7 +313,7 @@ const onImageSelect = async (media) => {
 };
 ```
 
-![Image UI](/react-native-firebase-text-recognition/with_image.jpg)
+![Image UI](/engineering-education/react-native-firebase-text-recognition/with_image.jpg)
 
 ### Recognize the text from the image
 Let's install the package for Firebase ML.
@@ -377,7 +377,7 @@ We'll use this state to render the recognized text in the UI.
 </View>
 ```
 
-![Final Result](/react-native-firebase-text-recognition/final_result.jpg)
+![Final Result](/engineering-education/react-native-firebase-text-recognition/final_result.jpg)
 
 ### Additional configurations
 The `cloudDocumentTextRecognizerProcessImage` method accepts an optional [configuration object](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions).

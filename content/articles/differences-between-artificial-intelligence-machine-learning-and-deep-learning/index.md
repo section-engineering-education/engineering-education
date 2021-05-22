@@ -23,7 +23,7 @@ These three terms: Artificial Intelligence  (AI), Machine learning (ML), and Dee
 
 Let's depict these three terminologies to better understand them.
 
-![ai-ml-dl](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/ai-ml-dl.png)
+![ai-ml-dl](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/ai-ml-dl.png)
 
 From the above image, you can see that AI encompasses them all. DL is a sub-field of ML while ML is a subfield of AI.
 
@@ -118,7 +118,7 @@ The applications of RL include:
 ### What is Deep Learning (DL)?
 Deep Learning is a sub-field of ML inspired by the structure of our human brain. It uses [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) to identify patterns within unstructured data.
 
-![deep-learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/neural-networks.png)
+![deep-learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/neural-networks.png)
 
 *[Image Source: Math Works](https://www.mathworks.com/discovery/deep-learning.html)*
 

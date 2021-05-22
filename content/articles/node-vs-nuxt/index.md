@@ -46,11 +46,11 @@ Since traditional server-side rendering fails to provide a smooth user experienc
 
 Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
 
-![SSR](/node-vs-nuxt/ssr.png)<br>
+![SSR](/engineering-education/node-vs-nuxt/ssr.png)<br>
 
 *Figure: [Server Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
 
-![CSR](/node-vs-nuxt/csr.png)<br>
+![CSR](/engineering-education/node-vs-nuxt/csr.png)<br>
 
 *Figure: [Client Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
 
@@ -89,7 +89,7 @@ cd hello-node
 npm init
 ```
 
-![Node App Creation](/node-vs-nuxt/hello-node.png)
+![Node App Creation](/engineering-education/node-vs-nuxt/hello-node.png)
 
 - The above command initializes a project and creates a `package.json` file in the current directory. The package.json file is used to manage dependencies of the application.
 
@@ -170,7 +170,7 @@ npx create-nuxt-app hello-nuxt
   - **Rendering mode** -- We can set up our Nuxt application as a Universal application or a Single Page Application. Let's choose **Universal** mode.
   - **Deployment target** -- This configures Nuxt to be deployed to a server or static hosting service. Let's choose **Server**.
 
-![Create Nuxt App](/node-vs-nuxt/create-nuxt-app.png)
+![Create Nuxt App](/engineering-education/node-vs-nuxt/create-nuxt-app.png)
 
 - Nuxt creates a folder structure for us and also takes care of routing. Every `.vue` file under the `pages` folder is a route.
 
@@ -182,11 +182,11 @@ npm run dev
 
 - The application is initialized and runs on `localhost:3000`.
 
-![Run Nuxt App](/node-vs-nuxt/npm-run-dev.png)
+![Run Nuxt App](/engineering-education/node-vs-nuxt/npm-run-dev.png)
 
 - The web application can be viewed on the browser.
 
-![Web Application](/node-vs-nuxt/nuxt-app.png)
+![Web Application](/engineering-education/node-vs-nuxt/nuxt-app.png)
 
 - To modify our web app, we can start editing the `pages/index.vue` file.
 

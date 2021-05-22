@@ -40,7 +40,7 @@ The Simulink *library browser* will provide blocks, waves, functions, models, an
 
 To open the Library Browser, click on the Library Browser button in the toolbar of Simulink.
 
-![library browser](/understanding-simulink-using-matlab/picture1.png).
+![library browser](/engineering-education/understanding-simulink-using-matlab/picture1.png).
 
 ### Let's simulate!
 Let's start with a simple [sine wave](https://en.wikipedia.org/wiki/Sine_wave): `Y = 2sin(4x)`.
@@ -53,11 +53,11 @@ Drag & drop the blocks and double click on the sin wave to edit its properties.
 
 Set the Amplitude to 2, the Frequency to 4 & the sample time to 0.001, finally connect the wave to the scope with your left courser.
 
-![Simple sin wave](/understanding-simulink-using-matlab/picture2.png).
+![Simple sin wave](/engineering-education/understanding-simulink-using-matlab/picture2.png).
 
 Click on the run button from the Simulink toolbar then double click on the scope to display the wave.
 
-![Wave scope](/understanding-simulink-using-matlab/picture3.png).
+![Wave scope](/engineering-education/understanding-simulink-using-matlab/picture3.png).
 
 #### Sum of 2 waves
 In order to add 2 waves, you need to use the sum function from the library browser.
@@ -70,20 +70,20 @@ Let's simulate the following wave: `Y = 2sin(4x) + 5sin(6x)`.
 
 Drag & drop the blocks and double click on the sin waves to edit their properties.
 
-![Waves parameteres](/understanding-simulink-using-matlab/picture4.png).
+![Waves parameteres](/engineering-education/understanding-simulink-using-matlab/picture4.png).
 
 Connect the sin waves to the sum block and connect the sum block to the scope.
 
-![Sum block](/understanding-simulink-using-matlab/picture5.png).
+![Sum block](/engineering-education/understanding-simulink-using-matlab/picture5.png).
 
 Click on the run button from the Simulink toolbar, then double click on the scope to display the wave.
 
-![Wave block](/understanding-simulink-using-matlab/picture6.png).
+![Wave block](/engineering-education/understanding-simulink-using-matlab/picture6.png).
 
 #### Compounded wave
 We will simulate the following Compounded wave.
 
-![Wave equation](/understanding-simulink-using-matlab/picture7.jpg).
+![Wave equation](/engineering-education/understanding-simulink-using-matlab/picture7.jpg).
 
 - 3 Sin waves from Simulink > Sources > Sin wave.
 - A Scope to implement the wave from Simulink > Commonly used blocks.
@@ -94,7 +94,7 @@ Drag & drop the blocks and double click on the sin waves to edit their propertie
 
 >**Note** that in Simulink you can't add cos wave, so to change that you need to add pi/2 to the phase of a sin wave to change it to a cos wave.
 
-![Waves parameters](/understanding-simulink-using-matlab/picture8.png).
+![Waves parameters](/engineering-education/understanding-simulink-using-matlab/picture8.png).
 
 - Connect the first 2 sin waves to the product block, and from the product block connect the pipe to the first output of the scope & take another pipe to the sum block.
 - Connect the cos wave to the second scope output & take another pipe to the sum block.
@@ -102,11 +102,11 @@ Drag & drop the blocks and double click on the sin waves to edit their propertie
 
 This is how the waves should be connected:
 
-![Product block](/understanding-simulink-using-matlab/picture10.png).
+![Product block](/engineering-education/understanding-simulink-using-matlab/picture10.png).
 
 Click on the run button from the Simulink toolbar, then double click on the scope to display the wave.
 
-![Scope waves](/understanding-simulink-using-matlab/picture9.jpg).
+![Scope waves](/engineering-education/understanding-simulink-using-matlab/picture9.jpg).
 
 ### Conclusion
 In this tutorial, we have learned how to fetch blocks & functions from the Simulink library browser. We have also learned how to use the sum & product blocks to connect multiple waves and display them on a scope. Don’t forget to test out the waves with different amplitudes & frequencies to fully understand how it works.

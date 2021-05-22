@@ -82,7 +82,7 @@ An [array](https://www.geeksforgeeks.org/arrays-in-go/) is a collection of multi
 
 In other words, if there are 10 items of the same data type numbered from 0 to 9 (array indexes always start from 0), we can get the 6th item by simply looking at index 5 in the array. For example, if the user wants to store the scores obtained by 100 students in a test, he can use an integer array of length 100.
 
-![Array](/golang-advanced-programming-concepts/array.png)
+![Array](/engineering-education/golang-advanced-programming-concepts/array.png)
 
 *[Image Source](https://stackabuse.com/remove-element-from-an-array-in-java/)*
 

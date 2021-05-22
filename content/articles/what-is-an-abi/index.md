@@ -59,10 +59,10 @@ value: aaaaxxxxbbbbbbbb
 
 Most ABIs require the alignment of primitive types to be the same as the size:
 
-![Table 1](/what-is-an-abi/table1.JPG)
+![Table 1](/engineering-education/what-is-an-abi/table1.JPG)
 *[Image Source](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#figure.3.1)*
 
-![Table 2](/what-is-an-abi/table2.JPG)
+![Table 2](/engineering-education/what-is-an-abi/table2.JPG)
 *[Image Source](https://gankra.github.io/blah/rust-layouts-and-abis/#the-layoutsabis-of-builtins)*
 
 ### Structs
@@ -165,7 +165,7 @@ Passing data is done in two different ways. The first is when you compile a prog
 
 The reason we can use the stack to pass arguments is because the stack is predictable enough that at compile-time, offsets from the top of the stack can be used. Here is a picture to make the point more clear.
 
-!["Call stack"](/what-is-an-abi/image1.png)
+!["Call stack"](/engineering-education/what-is-an-abi/image1.png)
 
 *`rsp` and `esp` refer to the same register. `esp` is used in an x86 architecture and is the lower 4 bytes of `rsp` which is used in an x64 architecture.*
 

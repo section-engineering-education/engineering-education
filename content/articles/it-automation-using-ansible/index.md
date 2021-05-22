@@ -71,7 +71,7 @@ In this playbook, the first task creates a directory called test in my home dire
 
 The command to run the playbook is : ansible-playbook <playbook-name>.yml
 
-![Create directory image](/it-automation-using-ansible/create-directory.png)<br>
+![Create directory image](/engineering-education/it-automation-using-ansible/create-directory.png)<br>
 
 A folder called test has been created inside the examples folder in my home directory.
 

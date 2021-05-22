@@ -76,7 +76,7 @@ Here are four useful time series analysis techniques:
 3. **Seasonality**: The regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors. In seasonality, there's a situation in which the data experiences regular and predictable changes.
 4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals. The length of the cycle is described as the period. 
 
-![Simple](/introduction-to-time-series/img.jpg)
+![Simple](/engineering-education/introduction-to-time-series/img.jpg)
 
 ### Conclusion
 This article has gone through time-series forecasting methods, time-series forecasting, time-series analysis, and time series components. Hopefully, this article has given you a gentle introduction to the concept of time series. 

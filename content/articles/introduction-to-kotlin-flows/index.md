@@ -35,7 +35,7 @@ In this step, we are going to create a Kotlin console project managed by Gradle.
 
 Open IntelliJ and select `New Project`. On the next window, select Kotlin, console application. Choose the project JDK, download one if none is installed. 
 
-![New project](/introduction-to-kotlin-flows/new-project.png)
+![New project](/engineering-education/introduction-to-kotlin-flows/new-project.png)
 
 Give the project a name and click next. Leave the next screen to default settings and click finish.
 

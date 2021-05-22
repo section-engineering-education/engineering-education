@@ -70,17 +70,18 @@
     </p>
   </section>
 
-  <div class="section enged-listing-search flex align-center xs-pb-20 xs-pt-40 sm-pb-300 sm-pt-60">
+  <!-- <div class="section enged-listing-search flex align-center xs-pb-20 xs-pt-40 sm-pb-300 sm-pt-60">
     <div class="section-container enged-listing-search-container xs-mb-20">
       <div id="educationSearch"></div>
     </div>
-  </div>
+  </div> -->
+
   <section class="enged-listing-categories flex align-start xs-pb-40 sm-pb-60 md-pb-80">
     <div class="section-container enged-listing-categories-container">
       <p class="xs-pb-10 text-18-medium text-testimonial">Topics</p>
       <ul class="list-unstyled list-flex flex-wrap data-filter-group">
         {{ $currentPage := . }}
-        <li class="xs-pr-20"><a href="/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        <li class="xs-pr-20"><a href="/engineering-education/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
         {{ $baseurl := .Site.BaseURL }}
 
         {{ range .Site.Taxonomies.topics }}

@@ -50,7 +50,7 @@ For example, the words "intelligent" and "smart" would appear closer together in
 
 #### Model Architecture
 
-![Word2Vec model architecture](/what-is-word2vec/cbow-skipgram.PNG)
+![Word2Vec model architecture](/engineering-education/what-is-word2vec/cbow-skipgram.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1301.3781.pdf)*
 

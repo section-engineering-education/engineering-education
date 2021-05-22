@@ -17,7 +17,7 @@ images:
 <!--more-->
 JavaScript is an object-based scripting language used for creating interactive web pages. It is a well-established programming language. A survey conducted by [Stack Overflow](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers) shows that JavaScript is the most popular programming language in the world.
 
-![Most popular language stack overflow](/javascript-vs-typescript/most-popular-language-stack-overflow.jpg)
+![Most popular language stack overflow](/engineering-education/javascript-vs-typescript/most-popular-language-stack-overflow.jpg)
 
 [***Image Source***](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers)
 
@@ -63,9 +63,9 @@ sum(4,4)
 
 This code adds `a` to `b`. However, `c` is not a parameter of function `sum`. If you save this code with a `.ts` extension, the IDE will highlight errors at compilation time, as shown below.
 
-![TypeScript error](/javascript-vs-typescript/function-error.jpg)
+![TypeScript error](/engineering-education/javascript-vs-typescript/function-error.jpg)
 
-![TypeScript function error detected](/javascript-vs-typescript/function-error-detected.jpg)
+![TypeScript function error detected](/engineering-education/javascript-vs-typescript/function-error-detected.jpg)
 
 Here is another example.
 
@@ -84,9 +84,9 @@ function sum (a:number, b:number){
 sum("hello",4)
 ```
 
-![TypeScript static typing](/javascript-vs-typescript/static-typing.jpg)
+![TypeScript static typing](/engineering-education/javascript-vs-typescript/static-typing.jpg)
 
-![TypeScript static typing error](/javascript-vs-typescript/static-typing-error.jpg)
+![TypeScript static typing error](/engineering-education/javascript-vs-typescript/static-typing-error.jpg)
 
 Though these might seem like simple examples, it pays off when you work on more functions. This feature is not available in JavaScript. If your code has an error, you won't catch it until runtime. This can be annoying, especially for beginners.
 
@@ -167,19 +167,19 @@ TypeScript supports almost all browsers. The TypeScript compiler compiles the `.
 ### Community and popularity
 JavaScript is an old language and has an extensive community support over TypeScript. JavaScript has remained the most popular language for several years, as surveyed by both [stack overflow](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers) and [Red Monk](https://redmonk.com/sogrady/2021/03/01/language-rankings-1-21/).
 
-![Most popular language red monk](/javascript-vs-typescript/most-popular-language-red-monk.jpg)
+![Most popular language red monk](/engineering-education/javascript-vs-typescript/most-popular-language-red-monk.jpg)
 
 [***Image Source***](https://redmonk.com/sogrady/2021/03/01/language-rankings-1-21/)
 
 However, TypeScript's popularity is rising which indicates rapid growth. Currently, it is ranked the eighth most popular language.
 
-![Most loved language stack overflow](/javascript-vs-typescript/typescript-trend.jpg)
+![Most loved language stack overflow](/engineering-education/javascript-vs-typescript/typescript-trend.jpg)
 
 [***Image Source***](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers)
 
 It has even emerged among the most loved programming languages among developers.
 
-![Most loved language stack overflow](/javascript-vs-typescript/most-loved-language.jpg)
+![Most loved language stack overflow](/engineering-education/javascript-vs-typescript/most-loved-language.jpg)
 
 [***Image Source***](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
 
@@ -235,7 +235,7 @@ The above shows the quality of the code information between the two.
 
 - TypeScript supports [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense#:~:text=IntelliSense%20is%20a%20general%20term,%2C%20and%20%22code%20hinting.%22) tools that increase the development speed. Microsoft developed this navigation tool to offer the `auto complete` feature. It also provides active hints as the code is added. You can also set up hotkeys to access detailed descriptions.
 
-![TypeScript hotkeys](/javascript-vs-typescript/typescript-hotkeys.jpg)
+![TypeScript hotkeys](/engineering-education/javascript-vs-typescript/typescript-hotkeys.jpg)
 
 - TypeScript has more features than JavaScript because it is inspired by other languages. 
 
@@ -244,7 +244,7 @@ Some of these features include:
 2. Generics - lets you write generalized methods.
 3. Improved API documentation - TypeScript has tools like Visual Studio Code navigation that automatically allows developers to see parameter types, track variables, and functions that belong to external libraries and APIs.
 
-![TypeScript api documentation highlights](/javascript-vs-typescript/typescript-api-documentation-highlights.png)
+![TypeScript api documentation highlights](/engineering-education/javascript-vs-typescript/typescript-api-documentation-highlights.png)
 
 ### Use cases
 When you have a large codebase, TypeScript will help you bring your code to a single standard. Static typing speeds up the development process by detecting bugs in real-time. 

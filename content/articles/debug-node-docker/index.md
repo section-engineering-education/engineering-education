@@ -130,11 +130,11 @@ Finish up debugging your app in Chrome DevTools [here](/debug-node-devtools/#ste
 ### Step 5 -- Debugging with VS Code
 To debug your app in VS Code, make sure **Node: Auto Attach** setting is on. It enables VS Code to connect to your running app. To enable it, open the **Command Pallete**(`Ctrl+Shift+P`) and search for `Debug: Toggle Auto Attach`.
 
-![Enable auto attach VS Code](/debug-node-docker/enable-auto-attach.jpg)
+![Enable auto attach VS Code](/engineering-education/debug-node-docker/enable-auto-attach.jpg)
 
 You will also require **Docker Extension**. Open the **Extensions** tab and search for Docker and install it. The extension comes in handy in managing Docker images and containers.
 
-![Docker extension in VS Code](/debug-node-docker/docker-extension.jpg)
+![Docker extension in VS Code](/engineering-education/debug-node-docker/docker-extension.jpg)
 
 Configure your `launch.json` to look like the snippet below. You can create a `launch.json` file by opening Command Pallete and searching for `Debug: Open launch.json`.
 
@@ -161,7 +161,7 @@ If you are using Nodemon, add `"restart":true` under `configurations`. It will a
 
 Build your Docker image using Docker extension or use the command `docker build -t <your-image-name> .`
 
-![Building Docker image VS Code](/debug-node-docker/build-docker-image.jpg)
+![Building Docker image VS Code](/engineering-education/debug-node-docker/build-docker-image.jpg)
 
 Then, run it in a terminal exposing your ports:
 
@@ -173,11 +173,11 @@ $ docker run --rm -d  -p 3000:3000 -p  9229:9229  image-name:tag
 
 Open your file and set breakpoints by clicking on the left side of the number line. A red dot appears when a breakpoint has been set.
 
-![Setting breakpoints VS Code](/debug-node-docker/set-breakpoints-vscode.jpg)
+![Setting breakpoints VS Code](/engineering-education/debug-node-docker/set-breakpoints-vscode.jpg)
 
 Open the debug panel by clicking on the bug icon in the activity bar. Click the play button or press `F5` to attach VS Code to your running app. The bottom bar in VS Code will turn orange on a successful attach.
 
-![Attach process VS Code](/debug-node-docker/attach-to-node-docker.gif)
+![Attach process VS Code](/engineering-education/debug-node-docker/attach-to-node-docker.gif)
 
 Open or reload the listening port for your app in a browser. You can also use [curl](https://curl.haxx.se/) command to achieve the same effect.
 
@@ -185,7 +185,7 @@ Open or reload the listening port for your app in a browser. You can also use [c
 $ curl http://127.0.0.1:3000
 ```
 
-![Start debug session](/debug-node-docker/start-debug.gif)
+![Start debug session](/engineering-education/debug-node-docker/start-debug.gif)
 
 On hitting `Enter`, VS Code starts the debug session and pauses on the first breakpoint. You can use the continue button on the floating controls bar or `F5` to resume execution. You can also watch variables in the **watch** pane.
 

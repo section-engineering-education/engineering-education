@@ -29,14 +29,14 @@ For some people this may be preferable. If you have lots of users, you will need
 
 You'll need Node.js v12 or above. To check which version you have, go into a command prompt or terminal, and type `node -v`. The version number you get should be greater than 12.0. If this isn't the case, then just go to the [download page](https://nodejs.org/en/download/) and install the new version. [Here's a tutorial on how to install it on Windows](https://www.guru99.com/download-install-node-js.html).
 
-![The result of "node -v" should show a number greater than 12](/discord-bot-node/discordbot7.png)
+![The result of "node -v" should show a number greater than 12](/engineering-education/discord-bot-node/discordbot7.png)
 
 #### Creating The Bot
 First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create". This will create a new application that uses the Discord API.
 
-![The New Application button is in the top right corner](/discord-bot-node/discordbot1.png)
+![The New Application button is in the top right corner](/engineering-education/discord-bot-node/discordbot1.png)
 
-![Create](/discord-bot-node/discordbot2.png)
+![Create](/engineering-education/discord-bot-node/discordbot2.png)
 
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
@@ -44,11 +44,11 @@ Applications aren't necessarily bots, but bots are one of the most popular uses.
 
 On the left, you should see a "Bot" tab. Click on that.
 
-![The tab that says “Bot” is on the right side of the page](/discord-bot-node/discordbot3.png)
+![The tab that says “Bot” is on the right side of the page](/engineering-education/discord-bot-node/discordbot3.png)
 
 Now, click the "Add Bot" button.
 
-![The “Add Bot” button is in the top right corner](/discord-bot-node/discordbot4.png)
+![The “Add Bot” button is in the top right corner](/engineering-education/discord-bot-node/discordbot4.png)
 
 Give your new bot a name and an icon to make it stand out.
 
@@ -61,20 +61,20 @@ https://discord.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot
 
 You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can find on the application page. The client ID is a unique public ID that Discord uses to identify a bot. In this instance, we're telling Discord which bot we'd like to add to the server.
 
-![The client ID is on the “General Information” tab](/discord-bot-node/discordbot6.png)
+![The client ID is on the “General Information” tab](/engineering-education/discord-bot-node/discordbot6.png)
 
 Once you've traveled to this page, you'll need to specify which server to add it to. Then click "Authorize". This button puts the bot in your server, and you'll be ready!
 
 ### Set up Your Project
 Make a folder for your project. You can call it anything. Open up a command prompt or terminal, and `cd` to the folder you just created. You'll need to install the `discord.js` library. This makes it easy to interact with the Discord API. Type `npm install discord.js` to do this. NPM is the Node Package Manager, which we'll use to install discord.js. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux. The screenshot here is in command prompt.
 
-![The npm install discord.js command](/discord-bot-node/discordbot8.png)
+![The npm install discord.js command](/engineering-education/discord-bot-node/discordbot8.png)
 
 
 #### Getting Your Token
 The token for your bot is like a username and a password. It tells Discord which bot you want to control, and proves that you are the owner of the bot. **DO NOT GIVE AWAY YOUR DISCORD TOKEN!** I sometimes accidentally put my token on GitHub. Then I have to go through the trouble of resetting it. I'll show you how to hide it from GitHub in just a sec.
 
-![“Click Here To Reveal Your Token”](/discord-bot-node/discordbot5.png)
+![“Click Here To Reveal Your Token”](/engineering-education/discord-bot-node/discordbot5.png)
 
 If this project is on GitHub, you'll want to hide your token. In the root directory of your project, create a file called `token.txt`. You'll also need a file called `.gitignore`. If you already have this file, just add a line that says `token.txt`. Otherwise, create it and put that line in there. You might want to put some random text in `token.txt` first, and then push to make sure it’s actually hidden. Once you’re sure you’ve done it correctly, put the bot token in your `token.txt` file. Now, we can start coding.
 
@@ -98,7 +98,7 @@ client.login(token); // starts the bot up
 
 You can run this by using `node index.js`. Once you’ve done that, you should get this output:
 
-![The word “ready” appears in the command prompt](/discord-bot-node/discordbot9.png)
+![The word “ready” appears in the command prompt](/engineering-education/discord-bot-node/discordbot9.png)
 
 ### Creating Commands
 That's cool, but we want the bot to actually do something. The most common example is [ping-pong](https://www.youtube.com/watch?v=DEqrCI1018I), but we should do something a little more interesting. Let's generate random numbers. Whenever a user types in "?random", let's make the bot reply with a random number.
@@ -152,7 +152,7 @@ client.on("message", message => {
 
 To get the bot to say the random number, just go into any Discord channel that the bot has access to, and type "?random".
 
-![Typing "?random", and the bot replies with a random number](/discord-bot-node/discordbot0.png)
+![Typing "?random", and the bot replies with a random number](/engineering-education/discord-bot-node/discordbot0.png)
 
 There. Now to add more commands, you just add them to `commands`.
 

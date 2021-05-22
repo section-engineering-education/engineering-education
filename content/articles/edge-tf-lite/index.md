@@ -18,16 +18,16 @@ images:
 [Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that is needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years.
 <!--more-->
 
-![img](/edge-tf-lite/logo.png)
+![img](/engineering-education/edge-tf-lite/logo.png)
 
 
-![img](/edge-tf-lite/traditional.png)
+![img](/engineering-education/edge-tf-lite/traditional.png)
 
 Image Source: [Udacity](https://www.udacity.com/)
 
 The above diagram shows the traditional flow of data in a machine learning system. A device collects information from the environment, which is sent via a network connection to a back-end server that performs inference. The server sends some data back to the device if necessary.
 
-![img](/edge-tf-lite/edge.png)
+![img](/engineering-education/edge-tf-lite/edge.png)
 
 Image Source: [Udacity](https://www.udacity.com/)
 
@@ -126,7 +126,7 @@ We use the [MobileNet](https://arxiv.org/abs/1704.04861) image classification mo
 
 `image-classification.py`
 
-![img](/edge-tf-lite/steps.png)
+![img](/engineering-education/edge-tf-lite/steps.png)
 
 Image Source: [TensorFlow.org](https://www.tensorflow.org)
 
@@ -165,7 +165,7 @@ print(labels[top_indices[0]], predictions[top_indices[0]])
 
 We can expect sample input and output to be.
 
-![img](/edge-tf-lite/doginput.png)
+![img](/engineering-education/edge-tf-lite/doginput.png)
 
 #### TensorFlow Lite and TensorFlow compatibility
 

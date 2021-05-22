@@ -17,7 +17,7 @@ images:
 D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. With D3, we can bind data to a [DOM](https://www.w3schools.com/js/js_htmldom.asp) element and then apply data-driven transformations to the document. For example, we can create an HTML table from an array of numbers, or create an interactive [SVG](https://www.w3schools.com/graphics/svg_intro.asp) bar chart.
 <!--more-->
 
-![intro](/data-visualization-with-d3js/first.png)<br>
+![intro](/engineering-education/data-visualization-with-d3js/first.png)<br>
 You don't need much background knowledge about SVG but feel free to check out the resources listed at the end of this article. To run the examples in this article or play with D3.js, you can use [blockbuilder.org](https://blockbuilder.org) or [Observable](https://observablehq.com), where you can also view others' work and get inspiration.
 
 To use D3 in your local environment, [install](https://github.com/d3/d3/releases/) or insert this snippet:
@@ -51,7 +51,7 @@ d3.selectAll('rect')
 ```    
 This produces a bar chart:
 
-![bar chart d3 js](/data-visualization-with-d3js/second.png)
+![bar chart d3 js](/engineering-education/data-visualization-with-d3js/second.png)
 
 `d3.selectAll('rect')`  is a *selector*, which goes and selects all the "rect" elements in the document. Modifying documents using [DOM API](https://www.w3.org/DOM/DOMTR) is tedious and repetetive. With `d3.selectAll()`, we can use any CSS selector to select everything on the DOM.
 
@@ -92,7 +92,7 @@ svg.selectAll('rect')
 .attr('stroke', '#fff');
 </script>
 ```
-![d3 js enter exit](/data-visualization-with-d3js/enter.png)<br>
+![d3 js enter exit](/engineering-education/data-visualization-with-d3js/enter.png)<br>
 We have an empty selection `svg ` to which we are creating a `rect` element and appending it to the DOM for every iteration through the data. This can be very useful if the data is changing because we can change different properties based on data by writing functions in the `.attr()` functions.
 
 If we simply want to ***update*** a DOM element rather than adding new elements, we do this by:
@@ -114,10 +114,10 @@ d3.select('#content')
 ### Transitions
 **Without Transitions**
 
-![d3 js without transitions](/data-visualization-with-d3js/without.gif)<br>
+![d3 js without transitions](/engineering-education/data-visualization-with-d3js/without.gif)<br>
 **With Transitions**
 
-![ds js with transitions](/data-visualization-with-d3js/with.gif)<br>
+![ds js with transitions](/engineering-education/data-visualization-with-d3js/with.gif)<br>
 A transition is an interface for animating changes to the DOM. Instead of applying changes instantaneously, transitions interpolate smoothly over time, from a state-A to the desired state-B.
 
 If we want the result to be immediate then we can do :

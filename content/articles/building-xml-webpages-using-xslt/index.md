@@ -287,7 +287,7 @@ By following the step-by-step procedures above, you would have successfully buil
 
 Due to security concerns in several browsers like Google Chrome, the output can be viewed using the Internet Explorer browser. More details about the security concern in Google Chrome can be found [here](https://stackoverflow.com/questions/4558160/xsl-not-working-in-google-chrome).
 
-![A sample output of XML Webpage](/building-xml-webpages-using-xslt/output.PNG)
+![A sample output of XML Webpage](/engineering-education/building-xml-webpages-using-xslt/output.PNG)
 
 ### Conclusion
 In conclusion, we have gone through what XSLT is, how webpages are rendered, and how to build a sample XML webpage using XSLT. This article serves only as an introduction to building XML webpages using XSLT. It's highly recommended to try out the code manually by reading further from the referenced articles.

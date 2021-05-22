@@ -43,7 +43,7 @@ This can be expressed mathematically as shown below:
 y=B0 + B1x
 ```
 
-![Linear regression](/articles/an-introduction-to-machine-learning-using-c++/linearRegression.png)
+![Linear regression](/engineering-education/articles/an-introduction-to-machine-learning-using-c++/linearRegression.png)
 
 To put this into perspective, we can use linear regression to determine the amount of rainfall received in an area based on the temperature of the area. The dependent variable becomes the amount of rainfall received while the independent variable is temperature of the area.
 
@@ -67,7 +67,7 @@ Whereby:
 #### Algorithm for gradient descent
 Gradient descent is a repetitive optimization algorithm useful when finding the minimum of a function, in our case, the loss function. 
 
-![Gradient descent](/articles/an-introduction-to-machine-learning-using-c++/gradientdescent.png)
+![Gradient descent](/engineering-education/articles/an-introduction-to-machine-learning-using-c++/gradientdescent.png)
 
 Let's start with initialized values for `B0` and`B1` and basing on the error we get in each instance, we will update their value.
 
@@ -94,7 +94,7 @@ Let's define the dataset that we will be using for our tutorial.
 
 It's contained in the image below:
 
-![dataset1](/engineering-ed/articles/an-introduction-to-machine-learning-using-c++/dataset1.png)
+![dataset1](/engineering-education/engineering-ed/articles/an-introduction-to-machine-learning-using-c++/dataset1.png)
 
 We will use the first 5 values to train our algorithm and test it on the last value to see its performance:
 ```c++

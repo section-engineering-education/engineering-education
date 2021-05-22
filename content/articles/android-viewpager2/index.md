@@ -38,7 +38,7 @@ Let's get started!
 ### Step 1 — Creating an Android Project
 In this step, we're going to create our application. Open Android Studio and start a new project using the empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/android-viewpager2/app-name.png)
+![app name](/engineering-education/android-viewpager2/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
@@ -172,7 +172,7 @@ That's what we need for the `ViewPager2`. Now build and run the application.
 
 The output should look like this.
 
-![View pager gif](/android-viewpager2/view-pager.gif)
+![View pager gif](/engineering-education/android-viewpager2/view-pager.gif)
 
 To change the scroll orientation to vertical, add the following statement in the `onCreate` method.
 
@@ -182,7 +182,7 @@ pager.orientation = ViewPager2.ORIENTATION_VERTICAL
 
 It should resemble the demo below.
 
-![vertical orientation gif](/android-viewpager2/vertical-scroll.gif)
+![vertical orientation gif](/engineering-education/android-viewpager2/vertical-scroll.gif)
 
 ### Step 5 — Integrating TabLayout
 Now that our view pager is functioning as expected. Let's go ahead and integrate it with `TabLayout`.
@@ -207,7 +207,7 @@ In the function, we set the tabs' text to the position plus one. We add one beca
 
 Build and run the application. This is how it should look.
 
-![tab layout gif](/android-viewpager2/tab-layout.gif)
+![tab layout gif](/engineering-education/android-viewpager2/tab-layout.gif)
 
 Another essential feature of `TabLayout` is the `onTabSelectedListener`. This notifies the listeners whenever a tab's selected, unselected, or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We'll use toasts in our application for demonstration.
 
@@ -231,7 +231,7 @@ tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
 Build and rerun the app.
 
-![toasts gif](/android-viewpager2/toasts.gif)
+![toasts gif](/engineering-education/android-viewpager2/toasts.gif)
 
 ### Conclusion
 In this article, we have gone through creating the ViewPager2 component. We have also seen how we can integrate it with a TabLayout. This is a common UI component, and almost all apps that display data in page format use it.

@@ -29,7 +29,7 @@ The DNS system is used by such botnets to support their command and control infr
 
 The following diagram shows the structure of a botnet. 
 
-![Botnet Structure](/detecting-botnets-using-dns-based-technique/botnet-structure.png)
+![Botnet Structure](/engineering-education/detecting-botnets-using-dns-based-technique/botnet-structure.png)
 
 [Image Source: EC-Council-BLOG](https://blog.eccouncil.org/wp-content/uploads/2018/12/the-structure-of-a-botnet.png)
 
@@ -48,7 +48,7 @@ However, some botnets such as Torpig utilize low entropy domains to dodge being 
 
 Below is an example of a DNS server request from a non-existing domain.
  
-![Failed DNS Request](/detecting-botnets-using-dns-based-technique/failed-dns-request.png)
+![Failed DNS Request](/engineering-education/detecting-botnets-using-dns-based-technique/failed-dns-request.png)
 
 [Image Source: Super User](https://i.stack.imgur.com/trpaB.png)
 

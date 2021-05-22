@@ -53,7 +53,7 @@ Steps followed in KNN algorithm:
 
 To understand the algorithm mathematically, you could refer to [this](http://www.datascribble.com/blog/machine-learning/understanding-math-behind-knn-codes-python/) article.
 
-![KNN algorithm](/introduction-to-knn-algorithm/knn.png)
+![KNN algorithm](/engineering-education/introduction-to-knn-algorithm/knn.png)
 
 *[Image source](https://www.javatpoint.com/k-nearest-neighbor-algorithm-for-machine-learning): KNN algorithm shown visually*
 
@@ -69,7 +69,7 @@ You can download the dataset [here](https://github.com/srishilesh/Machine-learni
 
 A sample screenshot of the dataset is shown below:
 
-![Screenshot of the dataset](/introduction-to-knn-algorithm/dataset.PNG)
+![Screenshot of the dataset](/engineering-education/introduction-to-knn-algorithm/dataset.PNG)
 
 *Screenshot of diabetes dataset*
 
@@ -110,7 +110,7 @@ Now, you have to import the dataset and read it by using a function called `read
 data = pd.read_csv("diabetes.csv")
 ```
 
-![Dataset sample](/introduction-to-knn-algorithm/dataset.PNG)
+![Dataset sample](/engineering-education/introduction-to-knn-algorithm/dataset.PNG)
 
 *First 5 rows of the dataset*
 
@@ -121,7 +121,7 @@ In the KNN algorithm, we use Euclidean distance to find the distance between any
 
 The formula for Euclidean distance is:
 
-![Euclidean distance](/introduction-to-knn-algorithm/euclidean-distance.PNG)
+![Euclidean distance](/engineering-education/introduction-to-knn-algorithm/euclidean-distance.PNG)
 
 *The formula for Euclidean distance*
 

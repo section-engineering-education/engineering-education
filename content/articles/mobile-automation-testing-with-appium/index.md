@@ -72,7 +72,7 @@ Appium is also chosen by testers and developers because it offers the following 
   
 ### Appium architecture
 The following diagram shows the architecture of Appium:
-![Appium Architecture](/mobile-automation-testing-with-appium/appium-architecture.jpg)
+![Appium Architecture](/engineering-education/mobile-automation-testing-with-appium/appium-architecture.jpg)
 
 [Image Source: Software Testing Help](https://www.softwaretestinghelp.com/what-is-appium/)
 
@@ -104,7 +104,7 @@ The *XCUI test* allows users to write tests on iOS using Objective-C or Swift. T
 Appium works differently on iOS and Android. Let's look at how it works on these two platforms.
 
 #### How does Appium work on Android?
-![Appium on Android](/mobile-automation-testing-with-appium/appium-on-android.png)
+![Appium on Android](/engineering-education/mobile-automation-testing-with-appium/appium-on-android.png)
 
 [Image Source: Edureka](https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/Appium-on-Android-Appium-Architecture-edureka-4.png)
 
@@ -117,7 +117,7 @@ The following is a brief sequence of how Appium works on the Android platform:
 6. The test results are then sent to the server, which eventually sends HTTP responses to the Appium client. The HTTP responses contain status codes indicating success or server error.
 
 #### How does Appium work on iOS?
-![Appium on iOS](/mobile-automation-testing-with-appium/appium-on-ios.png)
+![Appium on iOS](/engineering-education/mobile-automation-testing-with-appium/appium-on-ios.png)
 
 [Image Source: Edureka](https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/Appium-on-iOS-Appium-Architecture-edureka-4.png)
 

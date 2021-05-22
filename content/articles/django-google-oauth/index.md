@@ -195,11 +195,11 @@ We add a base route that will display our template `index.html`. We also add a r
 ### Step 4 -- Create  and configure a new Google APIs project
 Head over to [Google Developer APIs Console](https://console.developers.google.com/apis) and create a new project. 
 
-![](/django-google-oauth/create-g-oauth-project.jpg)
+![](/engineering-education/django-google-oauth/create-g-oauth-project.jpg)
 
 Then, register your app by filling the [OAuth consent screen](https://console.developers.google.com/apis/credentials/consent).
 
-![](/django-google-oauth/g-oauth-consent-screen-1.jpg)
+![](/engineering-education/django-google-oauth/g-oauth-consent-screen-1.jpg)
 
 Then, create a new **OAuth client ID** under **[Credentials](https://console.developers.google.com/apis/credentials)**. Select **Web application** for the **Application type**.  
 
@@ -207,7 +207,7 @@ Then, add:
 - `http://127.0.0.1:8000` under **Authorized JavaScript origins**.
 - `http://127.0.0.1:8000/accounts/google/login/callback/` under  **Authorized redirect URIs**.
 
-![](/django-google-oauth/authorised-redirects.jpg)
+![](/engineering-education/django-google-oauth/authorised-redirects.jpg)
 
 After a successful OAuth client ID creation, copy `Your Client ID` and `Your Client Secret`, you will need them in step 5.
 
@@ -231,7 +231,7 @@ $ python manage.py runserver
 
 Open http://127.0.0.1:8000/admin and login to Django Admin.  Under `Sites` click `Add` and put `127.0.0.1:8000` as both the **Domain name** and **Display name**.
 
-![](create-dj-site.jpg)
+![](/engineering-education/django-google-oauth/create-dj-site.jpg)
 
 Then, under `Social Applications` click `Add` and fill in the details as follows:
 1. Provider: Google
@@ -240,7 +240,7 @@ Then, under `Social Applications` click `Add` and fill in the details as follows
 4. Secret key: <The Secret key you created in step 4>
 5. Sites: 127.0.0.1:8000
 
-![](/django-google-oauth/add-social-app.jpg)
+![](/engineering-education/django-google-oauth/add-social-app.jpg)
 
 Since you are currently logged in as a superuser, logout and login again using your Google account.
 
@@ -250,7 +250,7 @@ For example: `SITE_ID = 3`, etc.
 
 For more information look at [Django "sites" framework docs](https://docs.djangoproject.com/en/3.1/ref/contrib/sites/).
 
-![](/django-google-oauth/sign-in-with-google.jpg)
+![](/engineering-education/django-google-oauth/sign-in-with-google.jpg)
 
 After signing in with Google, you can check the user information obtained from Google at: `http://127.0.0.1:8000/admin/socialaccount/socialaccount/`. 
 

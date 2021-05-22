@@ -49,7 +49,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-phone-authentication/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-phone-authentication/env_setup.png)
 
 ### Cloning the starter code
 To focus more on the authentication module, you can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
@@ -58,7 +58,7 @@ For the final code, you can look at this [GitHub Repository](https://github.com/
 
 This will be the folder structure of the application.
 
-![Folder Structure](/react-native-firebase-phone-authentication/folder_structure.png)
+![Folder Structure](/engineering-education/react-native-firebase-phone-authentication/folder_structure.png)
 
 I've set up 3 screens in the `screens/` directory:
 
@@ -68,7 +68,7 @@ I've set up 3 screens in the `screens/` directory:
 
 - *Authenticated.js*: Screen that the user can see only if he is logged in.
 
-![screens](/react-native-firebase-phone-authentication/screens.jpg)
+![screens](/engineering-education/react-native-firebase-phone-authentication/screens.jpg)
 
 In the *App.js*, the PhoneNumber screen is exported. As we write the code for authentication, we will display various screens at various stages.
 
@@ -77,19 +77,19 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](/react-native-firebase-phone-authentication/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-phone-authentication/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard.
 
-![New Dashboard](/react-native-firebase-phone-authentication/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-phone-authentication/new_dashboard.png)
 
 Now, click on the Android icon to add an Android app to the Firebase project.
 
-![register_app](/react-native-firebase-phone-authentication/register_app.png)
+![register_app](/engineering-education/react-native-firebase-phone-authentication/register_app.png)
 
 You will need the package name of the application to register application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-phone-authentication/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-phone-authentication/package_name.png)
 
 You will also need the Debug signing certificate `SHA-1`. You can get that by running the following command in the project directory.
 
@@ -122,7 +122,7 @@ Now, proceed to the next step, you can download the `google-services.json` file.
 
 This file contains configurations that'll enable your application to access firebase services.
 
-![Download Google Services JSON](/react-native-firebase-phone-authentication/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-phone-authentication/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -156,11 +156,11 @@ npm install @react-native-firebase/app
 ### Setting up Firebase Authentication
 Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
-![Get Started Auth](/react-native-firebase-phone-authentication/auth_get_starterd.png)
+![Get Started Auth](/engineering-education/react-native-firebase-phone-authentication/auth_get_starterd.png)
 
 Next, you should enable phone authentication in the sign-in methods. Once you've enabled it, press save.
 
-![Signin-method](/react-native-firebase-phone-authentication/enabled.png)
+![Signin-method](/engineering-education/react-native-firebase-phone-authentication/enabled.png)
 
 Firebase must be able to verify that the requests are coming from your app.
 
@@ -170,7 +170,7 @@ There are two ways to accomplish this:
 
 In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used and needs to be permitted to access the DeviceCheck API.
 
-![Enable Device Verification API](/react-native-firebase-phone-authentication/advAPI.png)
+![Enable Device Verification API](/engineering-education/react-native-firebase-phone-authentication/advAPI.png)
 
 2. **reCAPTCHA**: If SafetyNet cannot be used, Firebase does a *reCAPTCHA* verification. The *reCAPTCHA* challenge can often be completed without the user having to solve anything.
 
@@ -372,14 +372,14 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
-![Signout](/react-native-firebase-phone-authentication/signout.gif)
+![Signout](/engineering-education/react-native-firebase-phone-authentication/signout.gif)
 
 ### Test phone numbers
 Firebase provides support for testing phone numbers.
 
 In the Firebase Console, click on the "Phone numbers for testing" dropdown in the "Phone" authentication provider.
 
-![Test Phone](/react-native-firebase-phone-authentication/test_phone.png)
+![Test Phone](/engineering-education/react-native-firebase-phone-authentication/test_phone.png)
 
 Enter a new phone number and a test code.
 
@@ -388,11 +388,11 @@ Once added, the number can be used with the `signInWithPhoneNumber` method. The 
 ### Result
 Here is the sign-in flow if the Device Verification API works properly.
 
-![With SafetyNet](/react-native-firebase-phone-authentication/safetynet.gif)
+![With SafetyNet](/engineering-education/react-native-firebase-phone-authentication/safetynet.gif)
 
 If the Device Verification API is not enabled, or if SafetyNet can't be reached, the auth module will use a *reCAPTCHA* to verify the request.
 
-![With Recaptch](/react-native-firebase-phone-authentication/recaptcha.gif)
+![With Recaptch](/engineering-education/react-native-firebase-phone-authentication/recaptcha.gif)
 
 ### Let's Recap
 1. We set up our development environment and created a React Native app.

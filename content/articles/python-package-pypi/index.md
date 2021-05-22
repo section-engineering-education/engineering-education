@@ -116,7 +116,7 @@ The next thing you need to do is navigate to the directory of your project where
 python setup.py sdist bdist_wheel
 ```
 
-![](/building-a-python-package-and-publishing-on-pypi/img.jpg)
+![](/engineering-education/building-a-python-package-and-publishing-on-pypi/img.jpg)
 
 *Image: Python example image PyPi*
 

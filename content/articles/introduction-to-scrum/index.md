@@ -35,7 +35,7 @@ Big projects are broken into smaller pieces that are delivered in several sprint
 
 The image below is a graphical summary of the Scrum framework. If your organization would use Scrum, where would your input be? After going through this article, I bet you will be able to answer the question.
 
-![Scrum Framework](/introduction-to-scrum/scrum_framework.jpg)
+![Scrum Framework](/engineering-education/introduction-to-scrum/scrum_framework.jpg)
 
 ### Scrum Team
 According to the [Scrum Guide](https://www.scrumguides.org/scrum-guide.html#team), the roles in Scrum are:
@@ -95,7 +95,7 @@ The product backlog consists of a list of features, functions, enhancements, and
 #### Sprint Backlog
 The current sprint backlog items are selected from high priority features in the product backlog. It is the output of the sprint planning event. The sprint backlog is modified throughout the sprint. Burndown charts are used to monitor sprint progress. A burndown chart shows the relationship between work left to do and time. See the diagram below.
 
-![Burn Down Chart](/introduction-to-scrum/burndown-chart-example.jpg)
+![Burn Down Chart](/engineering-education/introduction-to-scrum/burndown-chart-example.jpg)
 [Image Source](https://www.visual-paradigm.com/scrum/scrum-burndown-chart/)
 
 #### Increment

@@ -20,7 +20,7 @@ Thanks to the new CSS framework Tailwind, we can now add styles directly into ou
 
 The form will look like this when completed:
 
-![Login form](/how-to-create-a-responsive-form-using-tailwindcss/form.png)
+![Login form](/engineering-education/how-to-create-a-responsive-form-using-tailwindcss/form.png)
 
 ### Adding Tailwind CSS to your project
 There are various ways of including Tailwind into your project. The most recommended method is to use a package manager in order to make full use of the configuration possibilities via PostCSS using build tools.

@@ -54,7 +54,7 @@ Emscripten is a toolchain built using LLVM that will compile your C source code 
 
 Here is an overview of the toolchain:
 
-![Emcripten compiler toochain](/introduction-web-assembly/diagram.png)<br>
+![Emcripten compiler toochain](/engineering-education/introduction-web-assembly/diagram.png)<br>
 1. Using Clang, your C source code gets compiled into LLVM's [intermediate representation](https://en.wikipedia.org/wiki/Intermediate_representation)
 2. LLVM performs some optimization on that intermediate representation.
 3. Using a backend tool called asm2wasm, Emscripten converts the LLVM's IR to a .wasm module.
@@ -64,7 +64,7 @@ Emscripten ships with several tools that allow large C/C++ codebases to be fully
 ### Practical Example
 Let's get our hands dirty by building a small web application that generates the Fibonacci sequence with WebAssembly as our backend.
 
-![Web browser screenshot](/introduction-web-assembly/example.png)<br>
+![Web browser screenshot](/engineering-education/introduction-web-assembly/example.png)<br>
 First, let's set up our development environment by downloading and installing the [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html)
 
 Create a new directory for the project, and create a new for file `fibonacci.c` in that directory with the following code:

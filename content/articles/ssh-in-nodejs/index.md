@@ -116,7 +116,7 @@ The `ssh()` function takes the hostname, username, and password as the input and
 
 Once we get the output of the `df -h` command in the stdout variable, we pass it to the `parse()` function that parses the output and displays it in a presentable format.
 
-![df command](/ssh-in-nodejs/df.png)
+![df command](/engineering-education/ssh-in-nodejs/df.png)
 
 The output of the df command is hard to read and understand. Therefore, we need to parse it and extract the relevant data.
 

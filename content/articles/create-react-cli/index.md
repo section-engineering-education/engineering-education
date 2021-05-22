@@ -56,7 +56,7 @@ npx create-ink-app
 
 The last command creates a link executable for our application. It may take some time to complete this process. When you run `node cli` in the terminal, it should return this:
 
-![Image](/create-react-cli/first-1.png "image")
+![Image](/engineering-education/create-react-cli/first-1.png "image")
 
 There you have it, your first CLI using React. To achieve this in Node.js, it would have needed us to write a lot of code and it would have taken more time, not to mention more libraries.
 
@@ -300,7 +300,7 @@ To test our new creation, we run `node cli` in our terminal.
 
 It should return this:
 
-![final-result](/create-react-cli/section-final.png)
+![final-result](/engineering-education/create-react-cli/section-final.png)
 
 You can find a gif of the application in action  at this link [here](https://terminalizer.com/view/ad4a80d54380).
 

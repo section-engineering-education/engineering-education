@@ -46,39 +46,39 @@ The first step to use MySQL is to setup a MySQL development server and MySQL wor
 
 - Choose the setup type to install, as shown in the screenshot below.
 
-![Installing MySQL Server and MySQL Workbench](/mysql-with-node-js/start-installation.jpg)
+![Installing MySQL Server and MySQL Workbench](/engineering-education/mysql-with-node-js/start-installation.jpg)
 
 - Click next without changing the default settings. This will install the MySQL products provided by the installation catalog.
 
-![Installing MySQL Products](/mysql-with-node-js/install-setups.jpg)
+![Installing MySQL Products](/engineering-education/mysql-with-node-js/install-setups.jpg)
 
 - Click next until prompted to provide MySQL root password. Enter a password that you can remember. The password will be used to establish a connection to your MySQL server.
 
-![MySQL Root Password](/mysql-with-node-js/password.jpg)
+![MySQL Root Password](/engineering-education/mysql-with-node-js/password.jpg)
 
 - That's the server setup, and now you need to check if the server is working by providing the password you provided above.
 
-![Testing MySQL Server Connection](/mysql-with-node-js/server-test.jpg)
+![Testing MySQL Server Connection](/engineering-education/mysql-with-node-js/server-test.jpg)
 
 - This confirms that the server is up and running.
 
-![MySQL Server Connection Succeeded](/mysql-with-node-js/server-running.jpg)
+![MySQL Server Connection Succeeded](/engineering-education/mysql-with-node-js/server-running.jpg)
 
 - Finally, click `Finish` to complete the installation process.
 
-![Finishing MySQL Server and MySQL Workbench Installation](/mysql-with-node-js/finish-installation.jpg)
+![Finishing MySQL Server and MySQL Workbench Installation](/engineering-education/mysql-with-node-js/finish-installation.jpg)
 
 - This will automatically launch MySQL workbench.
 
-![Starting MySQL Workbench](/mysql-with-node-js/start-mysql-workbench.png)
+![Starting MySQL Workbench](/engineering-education/mysql-with-node-js/start-mysql-workbench.png)
 
 - MySQL Workbench already has a server setup with the password that we provided.
 
-![MySQL Server Ready](/mysql-with-node-js/server-ready.png)
+![MySQL Server Ready](/engineering-education/mysql-with-node-js/server-ready.png)
 
 - Under MySQL connections, click the connection as highlighted in the screenshot above. You will be prompted to enter the root password you set previously.
 
-![MySQL Root Password](/mysql-with-node-js/password.png)
+![MySQL Root Password](/engineering-education/mysql-with-node-js/password.png)
 
 For other operating systems, visit the MySQL [Mac](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html) and [Ubuntu](https://www.mysqltutorial.org/install-mysql-ubuntu/) installation docs.
 
@@ -138,11 +138,11 @@ The `connect()` function allows us to execute the database queries whenever a co
 
 Run `node app.js` to check if the connection is established.
 
-![MySQL Server Connection Established](/mysql-with-node-js/connection-established.png)
+![MySQL Server Connection Established](/engineering-education/mysql-with-node-js/connection-established.png)
 
 If you run into an error similar to the one shown below.
 
-![MySQL Server Connection Error](/mysql-with-node-js/error.jpg)
+![MySQL Server Connection Error](/engineering-education/mysql-with-node-js/error.jpg)
 
 Follow [these steps](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server).
 
@@ -192,11 +192,11 @@ Calling `createDB()` will create a new database named `Company`, if it does not 
 
 Run `node app.js`.
 
-![Create a MySQL Database Using Node.js](/mysql-with-node-js/db-created.png)
+![Create a MySQL Database Using Node.js](/engineering-education/mysql-with-node-js/db-created.png)
 
 Go ahead and check that your database was successfully created.
 
-![Create a MySQL Database Using Node.js](/mysql-with-node-js/database-created.jpg)
+![Create a MySQL Database Using Node.js](/engineering-education/mysql-with-node-js/database-created.jpg)
 
 Now that we have a database, we need to specify that inside `createConnection()` as shown below.
 
@@ -279,9 +279,9 @@ function createTableOffices() {
 
 Call `createTableOffices()` after the connection is established and run `node app.js` to execute the query. You may need to refresh the MySQL workbench to reflect the changes.
 
-![Refresh MySQL Workbench](/mysql-with-node-js/refresh.jpg)
+![Refresh MySQL Workbench](/engineering-education/mysql-with-node-js/refresh.jpg)
 
-![Create a MySQL Database Table and Rows Using Node.js](/mysql-with-node-js/table-and-rows-created.jpg)
+![Create a MySQL Database Table and Rows Using Node.js](/engineering-education/mysql-with-node-js/table-and-rows-created.jpg)
 
 In the code above: we've created a table called `offices`, included several rows and an `officeCode` was set to auto-increment. Every time we insert a record in this table, the `officeCode` will auto-increment without specifying that during the data insertion.
 
@@ -321,9 +321,9 @@ Call `insertOffices()` after the connection is established and run `node app.js`
 
 Go back to MySQL workbench. Hover over the office table and click the small icon on the far end to open the table and view the row you have inserted.
 
-![Open MySQL Workbench Table](/mysql-with-node-js/open-table.jpg)
+![Open MySQL Workbench Table](/engineering-education/mysql-with-node-js/open-table.jpg)
 
-![View MySQL Workbench Table Rows](/mysql-with-node-js/view-table-rows.jpg)
+![View MySQL Workbench Table Rows](/engineering-education/mysql-with-node-js/view-table-rows.jpg)
 
 Try inserting another office record.
 
@@ -353,7 +353,7 @@ function insertOffices() {
 
 Go ahead and try adding more offices to the `offices` table.
 
-![Add Rows into a MySQL Database Table Using Node.js](/mysql-with-node-js/add-more-rows.jpg)
+![Add Rows into a MySQL Database Table Using Node.js](/engineering-education/mysql-with-node-js/add-more-rows.jpg)
 
 ### Fetching from a database
 Fetching data allows displaying data to end-users.
@@ -524,7 +524,7 @@ app.get("/updateoffice/:officeCode", (req, res) => {
 
 Open `localhost:3000/updateoffice/1` to get the results and then open the offices' table to confirm the changes.
 
-![Update Fields in a MySQL Workbench Database Table Using Node.js](/mysql-with-node-js/fields-updated.jpg)
+![Update Fields in a MySQL Workbench Database Table Using Node.js](/engineering-education/mysql-with-node-js/fields-updated.jpg)
 
 SQL uses a set command to tell a MySQL server which values to update by setting the updating values. The `SET` value is followed by a `WHERE` condition to match the record we want to update.
 
@@ -545,7 +545,7 @@ app.get("/deleteoffice/:id", (req, res) => {
 
 Open `localhost:3000/deleteoffice/1` to get the results and then open the offices' table to confirm changes.
 
-![Delete records in a MySQL Workbench Database Table Using Node.js](/mysql-with-node-js/office-deleted.jpg)
+![Delete records in a MySQL Workbench Database Table Using Node.js](/engineering-education/mysql-with-node-js/office-deleted.jpg)
 
 ### Closing the connection
 Once the queries are executed, you need to close/terminate the connection. This ensures that all queries are executed and sends the quit packet to the MySQL server.

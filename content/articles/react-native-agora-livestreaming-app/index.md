@@ -66,17 +66,17 @@ Head to Agora and create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with Google, GitHub, or Cocos. Once you've signed up, you'll see the dashboard.
 
-![Agora Dashboard](/react-native-agora-livestreaming-app/agora_dashboard.png)
+![Agora Dashboard](/engineering-education/react-native-agora-livestreaming-app/agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Testing.
 
-![Agora New Project Form](/react-native-agora-livestreaming-app/agora_new_project.png)
+![Agora New Project Form](/engineering-education/react-native-agora-livestreaming-app/agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
-![Agora Project Management Console](/react-native-agora-livestreaming-app/agora_project_management_console.png)
+![Agora Project Management Console](/engineering-education/react-native-agora-livestreaming-app/agora_project_management_console.png)
 
 Now, click on the closed eye icon near the App ID to reveal it and copy that App ID. We'll need this later while setting up Agora in our app.
 
@@ -87,7 +87,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-agora-livestreaming-app/env_setup.png)
+![Env Setup](/engineering-education/react-native-agora-livestreaming-app/env_setup.png)
 
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
@@ -98,7 +98,7 @@ The Home Screen has 2 buttons, Start and Join. The Join button has a text input 
 
 This is the Home Screen you'll see when you open the app.
 
-![Homescreen](/react-native-agora-livestreaming-app/homescreen.jpeg)
+![Homescreen](/engineering-education/react-native-agora-livestreaming-app/homescreen.jpeg)
 
 ### Installing dependencies
 You can install these in advance or while going through the article.
@@ -482,7 +482,7 @@ loadingText: {
 },
 ```
 
-![Loading Screen](/react-native-agora-livestreaming-app/loading_screen.gif)
+![Loading Screen](/engineering-education/react-native-agora-livestreaming-app/loading_screen.gif)
 
 When the `joined` state is set to `true`, we need to show the livestream.
 

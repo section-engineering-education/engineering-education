@@ -87,7 +87,7 @@ Once the server is installed start it by running:
 
 After installing you can connect to your server by pointing your VNC client to your external IP at port 5901 (Ex. 196.168.0.1:5901).
 
-![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
+![](/engineering-educationhttps://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
 
 ### Finishing Up
 It is recommended that you install Firefox for web browsing before connecting to your newly installed GUI by running:

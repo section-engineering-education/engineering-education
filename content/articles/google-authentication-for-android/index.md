@@ -42,15 +42,15 @@ In this step, we will [create](https://developer.android.com/studio/projects/cre
 
 - Open Android Studio. Select *Start a new Android Studio project* and click on next.
 
-![Open Android Studio](/google-authentication-for-android/empty.png)
+![Open Android Studio](/engineering-education/google-authentication-for-android/empty.png)
 
 - Select *Empty Activity* and click on next.
 
-![Select on Empty Activity](/google-authentication-for-android/name.png)
+![Select on Empty Activity](/engineering-education/google-authentication-for-android/name.png)
 
 - We will name the project **GoogleSignUp**. Click on *Finish* and wait for the project to build.
 
-![Empty Activity](/google-authentication-for-android/newproject.png)
+![Empty Activity](/engineering-education/google-authentication-for-android/newproject.png)
 
 #### Step 2 – Creating the Google sign up button
 In this step, we will add a Google sign in button to our activity's resource file.
@@ -88,7 +88,7 @@ app:layout_constraintTop_toTopOf="parent" />
 
 **Note: Type `app:isDarkTheme="{Boolean}"`: To switch between blue theme and a gray-white theme for the button. The [library will handle](https://android-arsenal.com/details/1/7099) the changing of text color and background color. It also handles the change of color on button press or button clicks.**
 
-![Layout Resource File](/google-authentication-for-android/xml.png)
+![Layout Resource File](/engineering-education/google-authentication-for-android/xml.png)
 
 #### Step 3 - Setting up Firebase
 Set up and connect your project on Firebase by following instructions stated by Google [here](https://firebase.google.com/docs/android/setup).
@@ -241,13 +241,13 @@ Let's create an `UpdateUI` method that will be used to display the UI for the Go
 We are done! Let's run the app to test it out.
 
 #### Screen one
-![GoogleSignUp](/google-authentication-for-android/finalone.jpg)
+![GoogleSignUp](/engineering-education/google-authentication-for-android/finalone.jpg)
 
 #### Screen two
-![GoogleSignUp](/google-authentication-for-android/finaltwo.jpg)
+![GoogleSignUp](/engineering-education/google-authentication-for-android/finaltwo.jpg)
 
 #### Screen three
-![GoogleSignUp](/google-authentication-for-android/finalthree.jpg)
+![GoogleSignUp](/engineering-education/google-authentication-for-android/finalthree.jpg)
 
 You can access the full source code [here](https://github.com/BrianaNzivu/googlesignup).
 

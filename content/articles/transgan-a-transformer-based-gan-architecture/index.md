@@ -47,7 +47,7 @@ The research also discusses:
 Let's get into the details of the paper.
 
 ### The TransGAN architecture
-![The TransGAN architecture](/transgan-a-transformer-based-gan-architecture/transgan-architecture.PNG)
+![The TransGAN architecture](/engineering-education/transgan-a-transformer-based-gan-architecture/transgan-architecture.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
@@ -83,7 +83,7 @@ Backpropagation is then performed throughout the whole architecture to train the
 The type of data augmentation they use is borrowed from this [paper](https://arxiv.org/pdf/2006.10738.pdf). It highlights different augmentation techniques for GANs. Transformers don't have locality bias built into their architecture as CNNs do, they tend to need a lot more data. Data augmentation helps get around this problem by producing more data from the same dataset.
 
 #### 2. Co-training with self-supervised auxiliary task
-![Co-training with Self-Supervised Auxiliary Task](/transgan-a-transformer-based-gan-architecture/co-training.PNG)
+![Co-training with Self-Supervised Auxiliary Task](/engineering-education/transgan-a-transformer-based-gan-architecture/co-training.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
@@ -106,7 +106,7 @@ Throughout the training, they gradually increase the receptive field. In early t
 
 This is shown in the image below:
 
-![Gradually increasing receptive fiels](/transgan-a-transformer-based-gan-architecture/masked-pixel.PNG)
+![Gradually increasing receptive fiels](/engineering-education/transgan-a-transformer-based-gan-architecture/masked-pixel.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 

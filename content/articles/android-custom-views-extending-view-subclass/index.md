@@ -34,7 +34,7 @@ Let's get started
 ### Step 1 — Creating an Android Project
 In this step, we're going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and select API 21 for minimum SDK. This is because the features we will use require Android version 5.0.
 
-![app name](/android-custom-views-extending-view-subclass/app-name.png)
+![app name](/engineering-education/android-custom-views-extending-view-subclass/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
@@ -209,7 +209,7 @@ This will change the color of the text view every time the user selects a color.
 
 That's it! Build and run the app. The results should resemble the one below.
 
-![App](/android-custom-views-extending-view-subclass/app.gif)
+![App](/engineering-education/android-custom-views-extending-view-subclass/app.gif)
 
 ### Conclusion
 In this article, we have gone through creating a custom view by extending a widget. We have also seen how we can change the view's appearance by drawing. Creating custom views through this approach is a bit easier.

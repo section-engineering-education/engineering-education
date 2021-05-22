@@ -43,7 +43,7 @@ This article will enable you to integrate SMS functionality into a Node.js appli
 
 You have successfully created a Vonage account; your dashboard should look like this.
 
-![Vonage's Dashboard](/send-sms-in-nodejs-using-vonage-api/dashboard.png)
+![Vonage's Dashboard](/engineering-education/send-sms-in-nodejs-using-vonage-api/dashboard.png)
 
 ### Creating the Node.js application
 
@@ -158,7 +158,7 @@ Here is the code for the `index.html`:
 </body>
 </html>
 ```
-![Our application before sending the message](/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
+![Our application before sending the message](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
 
 ### Client-side JavaScript driver code
 We will create a public folder in the root of our application. In this public folder, we will create a `main.js` file to contain the JavaScript code for fetching the variables used to trigger the send-SMS functionality.
@@ -266,7 +266,7 @@ socket.on('smsStatus', function(data){
 
 ```
 
-![Success message](/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
+![Success message](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
 
 To start our server, we will define a port from where our application will run on the localhost. 
 
@@ -280,7 +280,7 @@ const server = app.listen(port, () =>{
 });
 ```
 
-![Text message in web messages application](/send-sms-in-nodejs-using-vonage-api/text-in-sms-app.png)
+![Text message in web messages application](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-in-sms-app.png)
 
 ### Conclusion
 We learned how to use Vonage's SMS API by creating an account, setting up the SMS API, and using the API to send messages to a provided number. The number used for testing must be registered under your account. 

@@ -25,7 +25,7 @@ Cryptography plays a crucial role in ensuring transactions are secure and anonym
 
 2. Asymmetric Encryption Cryptography: In this method, instead of using a single secret key, two keys are used: a public key and a private key. 
 
-![Assymetric Key cryptography](/bitcoin-vs-ethereum/Assymetric_Key_Cryptography.png)
+![Assymetric Key cryptography](/engineering-education/bitcoin-vs-ethereum/Assymetric_Key_Cryptography.png)
    
 [*Image Source*](https://cheapsslsecurity.com/blog/what-is-asymmetric-encryption-understand-with-simple-examples/)
 

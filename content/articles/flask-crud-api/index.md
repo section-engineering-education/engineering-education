@@ -142,7 +142,7 @@ db = SQLAlchemy(app)
 On your computer start the XAMPP control panel, start the Apache and MySQL servers.
 On your browser open `http://localhost/dashboard/` then `phpAdmin`, create a database with the name `todo` as shown below.
 
-![Creating database](/flask-crud-api/database.png)
+![Creating database](/engineering-education/flask-crud-api/database.png)
 
 `db = SQLAlchemy(app)` creates an object of the SQLAlchemy and stores it in a variable `db`.
 
@@ -302,21 +302,21 @@ To run our application, execute the below command in the projects root directory
 ### Testing the API endpoints
 **POST endpoint**
 
-![Create todo](/flask-crud-api/create-todo.png)
+![Create todo](/engineering-education/flask-crud-api/create-todo.png)
 
 **GET endpoint**
 
-![Get all todos](/flask-crud-api/get-todos.png)
+![Get all todos](/engineering-education/flask-crud-api/get-todos.png)
 
-![Get todo by id](/flask-crud-api/get-todo-by-id.png)
+![Get todo by id](/engineering-education/flask-crud-api/get-todo-by-id.png)
 
 **PUT endpoint**
 
-![Update todo](/flask-crud-api/update-todo.png)
+![Update todo](/engineering-education/flask-crud-api/update-todo.png)
 
 **DELETE endpoint**
 
-![Delete todo](/flask-crud-api/delete-todo.png)
+![Delete todo](/engineering-education/flask-crud-api/delete-todo.png)
 
 You can find the entire source code for the project [here](https://github.com/paulodhiambo/flaskcrudapi).
 

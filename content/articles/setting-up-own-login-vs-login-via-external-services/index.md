@@ -30,7 +30,7 @@ Suppose you get 10k comments on one of the posts on your service, or you get 1k 
 * Unable to map the comments/orders to the respective user who did it.
 * Partial or complete Denial of Service (DoS). These updates could have been done by a malicious script which in case of limited quantity products in e-commerce (and similar) services render them not be in a state to cater to relevant users.
 
-![Unless secured,the database can be compromised](/setting-up-own-login-vs-login-via-external-services/hacker-stealing-representation.jpg)
+![Unless secured,the database can be compromised](/engineering-education/setting-up-own-login-vs-login-via-external-services/hacker-stealing-representation.jpg)
 
 ### Basic Setup for Login-Signup Flow
  Login-Signup is the first line of security for any service. If this is breached, a malicious user can access data that is otherwise not allowed. The login interface should also verify for user access level during the process- vendors, delivery boy, buyer, etc. in case of e-commerce or editor, author, viewer in case of a blog, and similarly for other services.

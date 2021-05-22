@@ -41,7 +41,7 @@ At the end of this article, the reader is expected to be familiar with:
 
 The **TODO List** app will look like the screenshot below:
 
-![Final Project](/how-to-build-a-flutter-todo-app/final.jpg)
+![Final Project](/engineering-education/how-to-build-a-flutter-todo-app/final.jpg)
 
 **To-do list app built using Flutter**
 
@@ -64,7 +64,7 @@ We will be using a smartphone to run the app, follow this link to learn how to r
 
 Your app will be the flutter default app which should look like the screengrab below.
 
-![Flutter Default App](/how-to-build-a-flutter-todo-app/default.jpg)
+![Flutter Default App](/engineering-education/how-to-build-a-flutter-todo-app/default.jpg)
 
 **Flutter default after running any app for the first time**
 
@@ -120,7 +120,7 @@ This type of widget is dynamic. This means it can change its appearance when it 
 
 Edit your code to match the one in the picture below.
 
-![Flutter appbar](/how-to-build-a-flutter-todo-app/appbar.jpg )
+![Flutter appbar](/engineering-education/how-to-build-a-flutter-todo-app/appbar.jpg )
 
 ```dart
 class _TodoListState extends State<TodoList> {

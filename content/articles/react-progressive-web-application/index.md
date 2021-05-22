@@ -342,9 +342,9 @@ In this component:
 ### The React application so far
 Your app so far should look like this:
 
-![React-PWA-image](/react-progressive-web-application/react-pwa1.png)
+![React-PWA-image](/engineering-education/react-progressive-web-application/react-pwa1.png)
 
-![React-PWA-image2](/react-progressive-web-application/react-pwa2.png)
+![React-PWA-image2](/engineering-education/react-progressive-web-application/react-pwa2.png)
 
 
 ### Adding functionality to make it a Progressive Web App
@@ -481,13 +481,13 @@ To test this, we should generate the production build by running `npm run build`
 Try to simulating an offline experience. In your browser DevTools, in the Network tab, enable the offline checkbox and reload the app. The application should be able to work offline.
 
 The development version performance:
-![PWA Performance](/react-progressive-web-application/pwa-performance.png)
+![PWA Performance](/engineering-education/react-progressive-web-application/pwa-performance.png)
 
-![Requirements for PWA](/react-progressive-web-application/requirements.png)
+![Requirements for PWA](/engineering-education/react-progressive-web-application/requirements.png)
 
 Our app is now installable by clicking the plus (+) icon on Google Chrome near bookmarks icon and available for offline use.
 
-![PWA install](/react-progressive-web-application/install.png)
+![PWA install](/engineering-education/react-progressive-web-application/install.png)
 
 Check the deployed app on [Netlify](https://reactify-pwa.netlify.app/) and the project source code in the repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
 

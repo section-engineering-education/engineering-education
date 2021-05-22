@@ -102,7 +102,7 @@ Here, we have used the Headline component to display the title. To create a card
 
 We should get the results displayed in the emulator screenshot below:
 
-![react-native-paper-in-home-screen.png](/how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png)
+![react-native-paper-in-home-screen.png](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png)
 
 Next, we are going to implement the Setting screen. The Settings screen will be simple as it will only have a 'toggle component', that will allow us to toggle the theme modes within the app.
 
@@ -133,7 +133,7 @@ export default  ({ navigation }) => {
 
 We should see the result as they are displayed in the emulator screenshot below:
 
-![react-native-setting-screen.png](/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png)
+![react-native-setting-screen.png](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png)
 
 Here, we have added an icon as well as a switch component on the right. We are now done with the UI part of the tutorial. We can move on to the functionalities.
 
@@ -189,7 +189,7 @@ export default function App() {
 
 As a result, we will get the tab navigation bar at the bottom of the screen that we can use to navigate to different screens as shown in the demo below:
 
-![native.gif](/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif)
+![native.gif](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif)
 
 Our next step will be to add icons onto the tab bar items to make it look more appealing.
 
@@ -226,7 +226,7 @@ Next, we need to add the `screenOption` to the `Tab.Navigator` component usi
 
 We will get the result demonstrated in the demo below:
 
-![add-material-icon-to-bottom-tab.gif](/how-to-control-dark-mode-in-react-native-using-redux/add-material-icon-to-bottom-tab.gif)
+![add-material-icon-to-bottom-tab.gif](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/add-material-icon-to-bottom-tab.gif)
 
 As we can see, we've got the icons in our tabs and they display active as well as inactive states. Now, we move on to our main objective, implementing the dark mode theme.
 
@@ -264,7 +264,7 @@ The configuration is provided in the code snippet below:
 
 We'll notice that the entire app UI has changed to a dark theme, as we can see displayed in the following emulator screenshots:
 
-![react-native-dark-theme.png](/how-to-control-dark-mode-in-react-native-using-redux/react-native-dark-theme.png)
+![react-native-dark-theme.png](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-dark-theme.png)
 
 Here, we have given the user(s) the option to change to a dark theme using the components from the navigation and paper packages. Now, we need to add controls to it. We're going to do that by using the Redux mechanism.
 
@@ -431,7 +431,7 @@ export default () => {
 
 We should see the results shown in the emulator demo below:
 
-![change-theme-with-redux.gif](/how-to-control-dark-mode-in-react-native-using-redux/change-theme-with-redux.gif)
+![change-theme-with-redux.gif](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/change-theme-with-redux.gif)
 
 When we toggle the switch we change the theme of the entire app to dark mode and vice-versa.
 

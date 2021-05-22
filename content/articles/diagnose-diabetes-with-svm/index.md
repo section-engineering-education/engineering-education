@@ -73,7 +73,7 @@ profile
 
 Pandas-profiling gives us the dataset statistics.
 
-![Overview of the Dataset](/diagnose-diabetes-with-svm/overview.JPG)
+![Overview of the Dataset](/engineering-education/diagnose-diabetes-with-svm/overview.JPG)
 
 **Overview of the Dataset**
 
@@ -81,51 +81,51 @@ From the report above, we have nine variables and 768 rows. There are no missing
 
 Pandas-profiling also looks at each of the nine variables. For each variable, it gives us descriptive statistics. It generates a histogram that shows the data distribution of each variable.
 
-![Histogram - Pregnancy](/diagnose-diabetes-with-svm/pregnancy-histogram.JPG)
+![Histogram - Pregnancy](/engineering-education/diagnose-diabetes-with-svm/pregnancy-histogram.JPG)
 
 **Histogram - Pregnancy**
 
-![Histogram - Glucose & Blood Pressure](/diagnose-diabetes-with-svm/glucose-bloodpressure.JPG)
+![Histogram - Glucose & Blood Pressure](/engineering-education/diagnose-diabetes-with-svm/glucose-bloodpressure.JPG)
 
 **Histogram - Glucose & Blood Pressure**
 
-![Histogram - Skin Thickness & Insulin](/diagnose-diabetes-with-svm/skinthickness-insulin.JPG)
+![Histogram - Skin Thickness & Insulin](/engineering-education/diagnose-diabetes-with-svm/skinthickness-insulin.JPG)
 
 **Histogram - Skin Thickness & Insulin**
 
-![Histogram - BMI & Pedigree](/diagnose-diabetes-with-svm/BMI-Pedigree.JPG)
+![Histogram - BMI & Pedigree](/engineering-education/diagnose-diabetes-with-svm/BMI-Pedigree.JPG)
 
 **Histogram - BMI & Pedigree**
 
-![Histogram - Age & Outcome](/diagnose-diabetes-with-svm/age-outcome.JPG)
+![Histogram - Age & Outcome](/engineering-education/diagnose-diabetes-with-svm/age-outcome.JPG)
 
 **Histogram - Age & Outcome**
 
 We can see the mean, minimum, and maximum values of each variable. We can observe the correlation plot between each of the variables. 
 
-![Features Interaction](/diagnose-diabetes-with-svm/feature-interactions.JPG)
+![Features Interaction](/engineering-education/diagnose-diabetes-with-svm/feature-interactions.JPG)
 
 **Interaction of features**
 
 We can see the Pearson, Spearman, Kendall, and Phik correlation matrix heat map.
 
-![Feature Correlations](/diagnose-diabetes-with-svm/feature-correlations.JPG)
+![Feature Correlations](/engineering-education/diagnose-diabetes-with-svm/feature-correlations.JPG)
 
 **Correlations of features**
 
 We can visualize the missing values and know exactly where we have missing values in the dataset. None of the variables contains any missing value, so we can proceed to build our model.
 
-![Visualization of Missing Values](/diagnose-diabetes-with-svm/missing-values.JPG)
+![Visualization of Missing Values](/engineering-education/diagnose-diabetes-with-svm/missing-values.JPG)
 
 **Visualization of missing values**
 
 Finally, we can view the first ten rows and last ten rows of the dataset.
 
-![First Rows of the dataset](/diagnose-diabetes-with-svm/first-rows-of-dataset.JPG)
+![First Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/first-rows-of-dataset.JPG)
 
 **First rows of the dataset**
 
-![Last Rows of the dataset](/diagnose-diabetes-with-svm/last-rows-of-dataset.JPG)
+![Last Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/last-rows-of-dataset.JPG)
 
 **Last rows of the dataset**
 
@@ -138,7 +138,7 @@ X = dataset.iloc[:, :8]
 X.head()
 ```
 
-![Dataset Features](/diagnose-diabetes-with-svm/dataset-features.JPG)
+![Dataset Features](/engineering-education/diagnose-diabetes-with-svm/dataset-features.JPG)
 
 **Dataset features**
 
@@ -150,7 +150,7 @@ y = dataset["Outcome"]
 y.head()
 ```
 
-![Class Labels of the Dataset](/diagnose-diabetes-with-svm/class-labels.JPG)
+![Class Labels of the Dataset](/engineering-education/diagnose-diabetes-with-svm/class-labels.JPG)
 
 **Class labels**
 
@@ -164,25 +164,25 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75, rando
 print(X_train.shape)
 ```
 
-![Shape of X_train](/diagnose-diabetes-with-svm/xtrain-shape.JPG)
+![Shape of X_train](/engineering-education/diagnose-diabetes-with-svm/xtrain-shape.JPG)
 
 ```python
 print(y_train.shape)
 ```
 
-![Shape of y_train](/diagnose-diabetes-with-svm/ytrain-shape.JPG)
+![Shape of y_train](/engineering-education/diagnose-diabetes-with-svm/ytrain-shape.JPG)
 
 ```python
 print(X_test.shape)
 ```
 
-![Shape of X_test](/diagnose-diabetes-with-svm/xtest-shape.JPG)
+![Shape of X_test](/engineering-education/diagnose-diabetes-with-svm/xtest-shape.JPG)
 
 ```python
 print(y_test.shape)
 ```
 
-![Shape of y_test](/diagnose-diabetes-with-svm/ytest-shape.JPG)
+![Shape of y_test](/engineering-education/diagnose-diabetes-with-svm/ytest-shape.JPG)
 
 We can see the amount of data that we will use for training and testing.
 
@@ -190,7 +190,7 @@ We can see the amount of data that we will use for training and testing.
 X_train.head()
 ```
 
-![Training Set](/diagnose-diabetes-with-svm/training-set.JPG)
+![Training Set](/engineering-education/diagnose-diabetes-with-svm/training-set.JPG)
 
 **Training Set**
 
@@ -210,7 +210,7 @@ Let's view the first five rows of our training set after normalization.
 X_train[:5, :]
 ```
 
-![Normalized Training Set](/diagnose-diabetes-with-svm/normalized-train-set.JPG)
+![Normalized Training Set](/engineering-education/diagnose-diabetes-with-svm/normalized-train-set.JPG)
 
 **Normalized Training Set**
 
@@ -219,7 +219,7 @@ The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, a
 
 So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary is the hyperplane or curve that separates the positive class and the negative class. It could be linear or non-linear. 
 
-![Decision Boundary](/diagnose-diabetes-with-svm/decision-boundary.jpg)
+![Decision Boundary](/engineering-education/diagnose-diabetes-with-svm/decision-boundary.jpg)
 
 [Image Source: Logistic Regression and Decision Boundary](https://towardsdatascience.com/logistic-regression-and-decision-boundary-eab6e00c1e8)
 
@@ -239,7 +239,7 @@ for k in ('linear', 'poly', 'rbf', 'sigmoid'):
     print(accuracy_score(y_train, y_pred))
 ```
 
-![Accuracy of SVM Kernels](/diagnose-diabetes-with-svm/svm-kernerls-accuracy.JPG)
+![Accuracy of SVM Kernels](/engineering-education/diagnose-diabetes-with-svm/svm-kernerls-accuracy.JPG)
 
 **Accuracy of the SVM kernels**
 
@@ -267,7 +267,7 @@ patient = scaler.transform(patient)
 model.predict(patient)
 ```
 
-![Result of Single Prediction](/diagnose-diabetes-with-svm/single-prediction.JPG)
+![Result of Single Prediction](/engineering-education/diagnose-diabetes-with-svm/single-prediction.JPG)
 
 Let's create a numpy array containing the new patient record. We normalize the data before passing it to the model for prediction. We use the transform method this time instead of the fit_transform method. 
 
@@ -282,7 +282,7 @@ patient = scaler.transform(patient)
 model.predict(patient)
 ```
 
-![Result of Single Prediction](/diagnose-diabetes-with-svm/single-prediction-2.JPG)
+![Result of Single Prediction](/engineering-education/diagnose-diabetes-with-svm/single-prediction-2.JPG)
 
 We get 0, which means this patient does not have diabetes. Let us view our test set.
 
@@ -291,7 +291,7 @@ We get 0, which means this patient does not have diabetes. Let us view our test 
 X_test
 ```
 
-![Test Set](/diagnose-diabetes-with-svm/test-set.JPG)
+![Test Set](/engineering-education/diagnose-diabetes-with-svm/test-set.JPG)
 
 Now let's try to diagnose the third patient in the test set (with id 113). Remember, the index of the third patient is two since we start counting from 0.
 
@@ -300,7 +300,7 @@ Now let's try to diagnose the third patient in the test set (with id 113). Remem
 X_test.iloc[2]
 ```
 
-![Details of the Third Patient](/diagnose-diabetes-with-svm/third-patient-details.JPG)
+![Details of the Third Patient](/engineering-education/diagnose-diabetes-with-svm/third-patient-details.JPG)
 
 ```python
 # Convert dataframe to a numpy array
@@ -313,7 +313,7 @@ print("Model's Prediction:", model.predict(t_patient))
 print("Actual Prediction:", y_test.iloc[2])
 ```
 
-![Prediction of the Third Patient](/diagnose-diabetes-with-svm/model-prediction.JPG)
+![Prediction of the Third Patient](/engineering-education/diagnose-diabetes-with-svm/model-prediction.JPG)
 
 We can see that our model prediction is 0, and the actual prediction is also 0. This means our model made the correct prediction for this patient. The third patient does not have diabetes.
 
@@ -327,7 +327,7 @@ y_pred = model.predict(X_test)
 print("Accuracy Score:", accuracy_score(y_test, y_pred))
 ```
 
-![Accuracy Score of the Test Set](/diagnose-diabetes-with-svm/accuracy-score.JPG)
+![Accuracy Score of the Test Set](/engineering-education/diagnose-diabetes-with-svm/accuracy-score.JPG)
 
 We normalize the test set before making predictions. We have an accuracy of 77.60, which is lower than what we had on the training set. This is because the test set contains data our model has not seen before.
 
@@ -341,7 +341,7 @@ y_zero = np.zeros(y_test.shape)
 print(accuracy_score(y_test, y_zero))
 ```
 
-![Accuracy Score of All-Zero Prediction](/diagnose-diabetes-with-svm/accuracy-of-all-zero-prediction.JPG)
+![Accuracy Score of All-Zero Prediction](/engineering-education/diagnose-diabetes-with-svm/accuracy-of-all-zero-prediction.JPG)
 
 When we compare our test set with an all-zero array, we get an accuracy score of 67.7%. Our model accuracy is 67.7%, even when it predicts that no one in the test set has diabetes.
 
@@ -377,7 +377,7 @@ print("Recall is", recall)
 print("F1 score is", f1)
 ```
 
-![Precision Recall & F1 Score](/diagnose-diabetes-with-svm/precision-recall-f1.JPG)
+![Precision Recall & F1 Score](/engineering-education/diagnose-diabetes-with-svm/precision-recall-f1.JPG)
 
 **Precision, Recall, & F1-Score**
 
@@ -388,7 +388,7 @@ We can also generate a classification report.
 print(classification_report(y_test, y_pred))
 ```
 
-![Classification Report](/diagnose-diabetes-with-svm/classification-report.JPG)
+![Classification Report](/engineering-education/diagnose-diabetes-with-svm/classification-report.JPG)
 
 **Classification Report**
 

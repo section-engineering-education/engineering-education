@@ -161,7 +161,7 @@ print(even_spaced_array)
 
 Below are a few more array operations that are self-explanatory:
 
-![Self Explanatory Functions](/introduction-to-numpy/numpyfunc.jpg)
+![Self Explanatory Functions](/engineering-education/introduction-to-numpy/numpyfunc.jpg)
 
 Apart from mathematical computations, there will be a constant need to reshape or manipulate data in arrays. One simple transformation that can be done is to transpose a matrix. A tedious process like transforming a list of lists (a matrix) is done as follows:
 
@@ -234,7 +234,7 @@ Let's analyze the example where we transposed a matrix. One key point to remembe
 
 Upon crunching a few numbers, transposing a (10000 x 10000) matrix using for loops takes 58.8596s, and using NumPy it takes significantly lesser time. The reason behind such high performance is a tiny concept called [vectorization](https://www.geeksforgeeks.org/vectorization-in-python/) that NumPy implements. Vectorization groups element-wise operations together. Such a vectorized approach applies to all elements in an array.
 
-![Vectorized](/introduction-to-numpy/vectorized.jpg)
+![Vectorized](/engineering-education/introduction-to-numpy/vectorized.jpg)
 
 *Figure: [Vectorized Operations](https://lappweb.in2p3.fr/~paubert/ASTERICS_HPC/6-6-1-985.html)*
 
@@ -243,7 +243,7 @@ When an nd-arrays in NumPy and C are compared, the NumPy function produces a mas
 
 Let's compare Numpy arrays and Python lists. As shown in the chart below, as the number of elements increases, the breakeven size is around 200 elements.
 
- ![Graph](/introduction-to-numpy/numpyGraph.jpg)
+ ![Graph](/engineering-education/introduction-to-numpy/numpyGraph.jpg)
 
  *Figure: [NumPy array vs Python List ](https://github.com/Pballer/dc-ds-071519/blob/master/blogs/array_vs_list/numpy_array_vs_py_list.ipynb)*
 

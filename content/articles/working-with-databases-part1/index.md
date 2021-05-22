@@ -19,12 +19,12 @@ For the uninitiated, databases can seem a complicated, mythical thing that only 
 <!--more-->
 
 ### MongoDB Installation
-![mongodb.png](/working-with-databases-part1/mongodb.png)<br>
+![mongodb.png](/engineering-education/working-with-databases-part1/mongodb.png)<br>
 [MongoDB](https://www.mongodb.com/) is a popular NoSQL database that you can run both locally and in the cloud (called MongoDB Atlas.) NoSQL stands for not just SQL and means it is non-relational which makes it easier to adapt to different types of data.
 
 To run MongoDB locally, first you'll have to install the Community Server from their [site](https://www.mongodb.com/download-center/community). To start, we'll be interacting with the database through the command line. Windows users will have to add mongo (the command used to run MongoDB) to their PATH so they can run the command successfully.
 
-![system-environment-variables.png](/working-with-databases-part1/system-environment-variables.png)<br>
+![system-environment-variables.png](/engineering-education/working-with-databases-part1/system-environment-variables.png)<br>
 **Windows users only**: Type `env` into the search box and press Enter when the Edit the system environment variables result is selected. Click Environment Variables and click Path under System variables. Edit this and add a new entry containing `C:\Program Files\MongoDB\Server\4.2\bin`. You may need to update the 4.2 part when new versions of MongoDB Community Server are released.
 
 Click OK to exit all the dialog boxes.

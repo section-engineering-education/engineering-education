@@ -397,7 +397,7 @@ Let's test run our app. If you have the server running, terminate and restart. N
 
 Let's fill in the database with this dummy data: `username` as `Peter`, `email` as `peterdury@gmail.com`, and `password` as `password`.
 
-![Registration successful](/flask-database-integration-with-sqlalchemy/response.png)
+![Registration successful](/engineering-education/flask-database-integration-with-sqlalchemy/response.png)
 
 We received the registration successful message, but let's check the database to check if our user data is stored.
 

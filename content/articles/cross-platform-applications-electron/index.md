@@ -35,15 +35,15 @@ There are many different scenarios in which we can use Electron for building des
 * Better User Experience (UX) - offer a native app instead of a web page.
 
 ### Popular Electron Applications
-![popular electron apps](/cross-platform-applications-electron/popular-electron-apps.png)
+![popular electron apps](/engineering-education/cross-platform-applications-electron/popular-electron-apps.png)
 
 ### How does it work?
-![node chrome](/cross-platform-applications-electron/node-chrome.png)
+![node chrome](/engineering-education/cross-platform-applications-electron/node-chrome.png)
 Electron is based on [Node.js](https://nodejs.org/en/) and [Chromium](https://www.chromium.org/). From Chrome, we get HTML5 support, V8 engine, GPU acceleration, and Blink (the rendering engine). From Node, we get stuff the browser cannot do like FileSystem access and native modules that are compiled C and C++ programs.
 
 In an electron application, the client-side code has all the same privileges as the server-side code, so it can directly make third-party API requests.
 
-![electron workflow](/cross-platform-applications-electron/electron-workflow.png)
+![electron workflow](/engineering-education/cross-platform-applications-electron/electron-workflow.png)
 
 #### Electron Process Model
 In the `package.json` file, we define the main file, which is executed first when we start the application. The `main.js` file creates an application window, or a browser window instance, to run web pages. The main.js file will spawn the *Main Process*. The web page runs its processes known as *rendered processes*.

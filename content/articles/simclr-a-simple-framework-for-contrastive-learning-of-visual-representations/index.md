@@ -40,7 +40,7 @@ Throughout this article, this [paper](https://arxiv.org/pdf/2002.05709.pdf) publ
 Let's learn about the SimCLR framework's details and the results presented in the [paper](https://arxiv.org/pdf/2002.05709.pdf) published by Google.
 
 ### An overview of the SimCLR framework
-![An illustration of the proposed SimCLR framework](/https://1.bp.blogspot.com/--vH4PKpE9Yo/Xo4a2BYervI/AAAAAAAAFpM/vaFDwPXOyAokAC8Xh852DzOgEs22NhbXwCLcBGAsYHQ/s1600/image4.gif)
+![An illustration of the proposed SimCLR framework](/engineering-education/https://1.bp.blogspot.com/--vH4PKpE9Yo/Xo4a2BYervI/AAAAAAAAFpM/vaFDwPXOyAokAC8Xh852DzOgEs22NhbXwCLcBGAsYHQ/s1600/image4.gif)
 
 *[Image Source: Google AI Blog](https://ai.googleblog.com/2020/04/advancing-self-supervised-and-semi.html)*
 
@@ -52,7 +52,7 @@ The major components of the SimCLR framework include:
 4. The Contrastive Loss Function.
 
 #### Data Augmentation
-![The figure shows illustrations of the studied data augmentation operators](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/different-augmentation-techniques.PNG)
+![The figure shows illustrations of the studied data augmentation operators](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/different-augmentation-techniques.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
@@ -62,19 +62,19 @@ While previous methods to contrastive learning introduced architecture changes, 
 
 For example, consider this image below of the dog, with its global and local contrast.
 
-![The image of the dog with the global and local contrast](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/global-to-local.PNG)
+![The image of the dog with the global and local contrast](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/global-to-local.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
 Having learned about the contrast between the global and local views, the network is now able to contrast between the adjacent views of the same image shown below.
 
-![The image of the dog with adjacent views](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/adjacent-views.PNG)
+![The image of the dog with adjacent views](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/adjacent-views.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
 The paper also mentions a systematic study performed, that combined the different compositions of data augmentations—for example, combining cropping with other data augmentation techniques such as blur, color distortion, and noise. This is shown below. 
 
-![Different compositions of data augmentations](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/different-compositions-of-data-augmentations.PNG)
+![Different compositions of data augmentations](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/different-compositions-of-data-augmentations.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
@@ -90,7 +90,7 @@ This module's role is to map the image representations to a latent space where c
 #### The contrastive loss function (normalized temperature-scaled cross entropy (NT-Xent loss))
 The contrastive loss function is a modified version of the cross-entropy loss function, which is the most widely used loss function for supervised learning of deep classification models. The function is shown below.
 
-![The contrastive loss function](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/contrastive-loss-function.PNG)
+![The contrastive loss function](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/contrastive-loss-function.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
@@ -103,25 +103,25 @@ That's a simplistic view of what the contrastive loss function does in a nutshel
 #### Results of SimCLR
 1. One of the key findings of this paper is that self-supervised learning algorithms benefit more from scaling up than supervised learning algorithms.
 
-![The accuracy results pretrained on the ImageNet dataset](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/self-supervised-vs-supervised.PNG)
+![The accuracy results pretrained on the ImageNet dataset](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/self-supervised-vs-supervised.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
 2. The experiment batch sizes range from 256 to 8,192. The experiment found that the accuracy kept increasing as the batch sizes and the number of epochs increased, as shown below. 
 
-![Linear evaluation models (ResNet-50) trained with different batch size and epochs](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/training-with-different-batch-sizes-and-epochs.PNG)
+![Linear evaluation models (ResNet-50) trained with different batch size and epochs](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/training-with-different-batch-sizes-and-epochs.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
 3. An experiment on the ResNet-50 architecture with three different widths showed a significant gain in accuracy with an increase in the model width. These results are shown below.
 
-![Models with varied depths and widths](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/models-with-varied-depths-and-widths.PNG)
+![Models with varied depths and widths](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/models-with-varied-depths-and-widths.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
 4. The main results from the paper demonstrates that SimCLR wins against other state-of-the-art methods both with or without ResNet-50. From the results below, SimCLR can achieve a 76.5% top-1 accuracy. This is a 7% improvement over previous state-of-the-art models, which matches the performance of a ResNet-50, which has a more advanced architecture. 
 
-![ImageNet accuracies of linear classifiers trained on representations learned with different self-supervised methods](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/simclr-accuracy-results.PNG)
+![ImageNet accuracies of linear classifiers trained on representations learned with different self-supervised methods](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/simclr-accuracy-results.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 

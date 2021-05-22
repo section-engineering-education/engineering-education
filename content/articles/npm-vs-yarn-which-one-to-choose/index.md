@@ -81,13 +81,13 @@ For example, you would use `yarn add Express` to install express into your proje
 
 Below is a summary of some of the commonly used NPM vs Yarn Commands.
 
-![NPM and Yarn commands](/npm-vs-yarn-which-one-to-choose/npm-vs-yarn-commands.jpg)
+![NPM and Yarn commands](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-vs-yarn-commands.jpg)
 
 [***Image Source***](https://www.digitalocean.com/community/tutorials/nodejs-npm-yarn-cheatsheet)
 
 Some identical commands include:
 
-![similar NPM commands](/npm-vs-yarn-which-one-to-choose/similar-npm-vs-yarn-commands.jpg)
+![similar NPM commands](/engineering-education/npm-vs-yarn-which-one-to-choose/similar-npm-vs-yarn-commands.jpg)
 
 [***Image Source***](https://www.digitalocean.com/community/tutorials/nodejs-npm-yarn-cheatsheet)
 
@@ -141,15 +141,15 @@ NPM will use this integrity `SHA-512` key to perform an integrity check in each 
 
 NPM also audits every package during installation and informs you of possible vulnerabilities.
 
-![NPM Package Audit](/npm-vs-yarn-which-one-to-choose/npm-package-audit.jpg)
+![NPM Package Audit](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-package-audit.jpg)
 
 You can again run `npm audit` to check your entire dependency trees. If any vulnerabilities are found, NPM will give you a security recommendation.
 
-![NPM Audit Report](/npm-vs-yarn-which-one-to-choose/npm-audit-report.jpg)
+![NPM Audit Report](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-audit-report.jpg)
 
 To fix such package vulnerabilities, run `npm audit fix`, and your dependency trees will be fixed.
 
-![audit fix](npm-audit-fix.jpg)
+![audit fix](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-audit-fix.jpg)
 
 ### Ease of use
 One thing to consider before choosing a package manager would be the to see which interface is user friendly. This includes how the command line terminal looks after running commands such as `npm install` or `yarn add`.

@@ -36,7 +36,7 @@ The first thing to do is to check whether the IDE has [Ktor plugin](https://plug
 
 Open your IDE and select "New Project". Then go to the Ktor section to create a new ktor project. Ensure the settings are similar to the ones below.
 
-![starter](/introduction-to-kotlin-ktor/start.png)
+![starter](/engineering-education/introduction-to-kotlin-ktor/start.png)
 
 We are using `Gradle` and [`Netty`](https://netty.io/) engine for our server functionality. Gradle will handle our third party dependencies.
 

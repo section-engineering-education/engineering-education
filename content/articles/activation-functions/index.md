@@ -44,7 +44,7 @@ Let's list some of the activation functions that we will be covering in this tut
 #### Step activation function
 The step activation function, as discussed in the perceptron algorithm, is shown below. It is discontinuous, and therefore, the gradient computations are erroneous at points of discontinuity. 
 
-![step function graph](/activation-functions/step_function.png)
+![step function graph](/engineering-education/activation-functions/step_function.png)
 
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intmath.com%2Flaplace-transformation%2F1a-unit-step-functions-definition.php&psig=AOvVaw1XjHjFjI93-cSbYQYy1jYq&ust=1606899070976000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCMCuo-G0rO0CFQAAAAAdAAAAABAD)
 
@@ -57,7 +57,7 @@ It is given by the formula below:
 
 $$ sigmoid(x) = \frac{1}{1+\exp(-x)} $$
 
-![sigmoid function graph](/activation-functions/sigmoid.png)
+![sigmoid function graph](/engineering-education/activation-functions/sigmoid.png)
 
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40toprak.mhmt%2Factivation-functions-for-deep-learning-13d8b9b20e&psig=AOvVaw1LlfJR-_qjbU6wAMK-Rnzf&ust=1606899316672000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCPDwncy0rO0CFQAAAAAdAAAAABAD)
 
@@ -87,7 +87,7 @@ Mathematically this is written as:
 
 $$ softmax(x) = \frac{\exp(x)}{\sum_{i=0}^n \exp(x_i) } $$
 
-![softmax  function graph](/activation-functions/softmax.png)
+![softmax  function graph](/engineering-education/activation-functions/softmax.png)
 
 [*Image Source*](https://www.researchgate.net/figure/Softmax-activation-function_fig2_319121953) 
 
@@ -105,7 +105,7 @@ class Softmax():
 #### Hyperbolic tangent activation function
 This is similar to the sigmoid activation function, except for the range of output values. The range of the sigmoid output is $[0,1]$. The range of the tanH function is $[-1,1]$. The distinction between tanH and sigmoid is visible in the image shown below.
 
-![tanh  function graph](/activation-functions/tanh.png)
+![tanh  function graph](/engineering-education/activation-functions/tanh.png)
 
 [*Image Source*](https://debuggercafe.com/activation-functions-in-neural-networks/)
 
@@ -134,7 +134,7 @@ The first question that one must ask is how a non-continuous linear function wil
 
 A more detailed explanation for the working of ReLU is given at this [link](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/).
 
-![relu function graph](/activation-functions/relu.png)
+![relu function graph](/engineering-education/activation-functions/relu.png)
 
 [*Image Source*](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
@@ -161,7 +161,7 @@ Leaky ReLU is a modification of the Rectified Linear Unit. In ReLU, there is an 
 
 The negative values are multiplied by a constant between 0 and 1 and then passed through. This way, only a fraction of the negative values are passed through, thus striking a balance between gradient computations and information loss.
 
-![leakyrelu function graph](/activation-functions/leakyrelu.png)
+![leakyrelu function graph](/engineering-education/activation-functions/leakyrelu.png)
 
 [*Image Source*](https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96)
 

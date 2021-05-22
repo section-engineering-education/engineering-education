@@ -50,7 +50,7 @@ Social media platforms are incredibly influential. According to [internet live s
 In today’s world, it is normal to receive news from online sources like social media. News is often subjective to readers. We often choose to ingest content that appeals to the different emotions we have. So, considering this, the information that gets the most reach may not be real or accurate news. Additionally, real news may be twisted in transmission. A reader may end up with different versions of the same news. This may lead to information overload.
 
 #### Why you Should Care
-![misinformation](/automated-fake-news-detection/misinformation.jpg)
+![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
 
 [*Image Source*](https://unsplash.com/photos/zw3ExyW6x3Y)
 

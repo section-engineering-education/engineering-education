@@ -30,20 +30,20 @@ For further information on installation, refer to this [article](https://techvid
 
 The RStudio interface has four components that we make use of the most. Below is a preview of what the RStudio interface looks like.
 
-![rstuido](/introduction-to-r/rstudio.jpg)
+![rstuido](/engineering-education/introduction-to-r/rstudio.jpg)
 
 The four components are as follows:
 
 1. **Editor**: The editor is used to create R scripts. R scripts are executed using the **run** button or the console. The **run** button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    - Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
    - We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is typed and executed via the console, which we will cover in the next point.
-   ![](/introduction-to-r/R-Script.jpg)
+   ![](/engineering-education/introduction-to-r/R-Script.jpg)
 2. **Console and Terminal**: The **console** in R is similar to IDLE in Python. We can execute any command here. For this tutorial, you may use the **console**.
-   ![](/introduction-to-r/console.jpg)
+   ![](/engineering-education/introduction-to-r/console.jpg)
 3. **Environment Variables**: The **environment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
-   ![](/introduction-to-r/environment.jpg)
+   ![](/engineering-education/introduction-to-r/environment.jpg)
 4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required. Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time.
-   ![](/introduction-to-r/plot.jpg)
+   ![](/engineering-education/introduction-to-r/plot.jpg)
 
 ### R-Programming Basics
 In this article, we will be covering the following concepts:
@@ -174,7 +174,7 @@ Matrices are 2-dimensional (rectangular) structures used commonly in the field o
 
 Let's look at defining matrices.
 
-![three channels in an image](/introduction-to-r/image_channel.jpg)
+![three channels in an image](/engineering-education/introduction-to-r/image_channel.jpg)
 
 *[Image Source](https://www.sketchpad.net/channels1.htm)*
 

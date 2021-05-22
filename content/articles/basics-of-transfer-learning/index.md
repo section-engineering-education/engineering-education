@@ -87,7 +87,7 @@ It's also worth noting that it's possible to carry out transfer learning in the 
 #### Transfer learning strategies
 In line with this [paper](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf), the strategies explored below are a representation of the relationship between transfer learning and traditional machine learning. They show the possibilities of transfer learning in different traditional machine learning contexts.
 
-![strategies](/basics-of-transfer-learning/strategies.jpg)
+![strategies](/engineering-education/basics-of-transfer-learning/strategies.jpg)
 
 [Image of Transfer Learning Strategies](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
 

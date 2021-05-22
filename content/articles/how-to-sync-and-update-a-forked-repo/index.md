@@ -29,11 +29,11 @@ In this article, we shall briefly look at how we can submit work and contributio
 ### How to fork
 Now that you know, what a fork is, let's see how you can fork a repository to start working on your changes and contribute to a team project. Forking a project on GitHub is really easy, you just need to hit the fork button. On your GitHub account, go to the repository you want to fork. In this example, we are referring to https://github.com/section-io/engineering-education. To the upper left corner, click on the fork button and you will have successfully forked the repository.
 
-![forking repo](/how-to-sync-and-update-a-forked-repo/forking.png)
+![forking repo](/engineering-education/how-to-sync-and-update-a-forked-repo/forking.png)
 
 Now you have a copy of the original repository on your GitHub account.
 
-![forked repo](/how-to-sync-and-update-a-forked-repo/forked.png)
+![forked repo](/engineering-education/how-to-sync-and-update-a-forked-repo/forked.png)
 
 To start pushing, committing, and pulling, you need clone the repository you have forked (on your GitHub account) and a have copy on your computer to start working on your contributions.
 
@@ -42,21 +42,21 @@ To start pushing, committing, and pulling, you need clone the repository you hav
 #### Cloning using GitHub desktop
 If you are using the [GitHub desktop app,](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-github-desktop) cloning a repository is as easy as pie. To get started, download [GitHub desktop](https://desktop.github.com/) and install it into your computer and [authenticate and configure](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/authenticating-to-github) it with your GitHub account.
 
-![After sign in](/how-to-sync-and-update-a-forked-repo/after-github-signin.png)
+![After sign in](/engineering-education/how-to-sync-and-update-a-forked-repo/after-github-signin.png)
 
 To make GitHub desktop work easier, make sure you configure [GitHub desktop with a text editor](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/configuring-a-default-editor) such as [Visual Studio Code](https://code.visualstudio.com/).
 
 Once that is done, your GitHub account will load on the GitHub desktop. To start cloning, navigate to File then clone repository.
 
-![start cloning](/how-to-sync-and-update-a-forked-repo/start-github-clone.png)
+![start cloning](/engineering-education/how-to-sync-and-update-a-forked-repo/start-github-clone.png)
 
 A clone window will pop up, you will be able to see the repositories in your account, and choose the repository you want to clone.
 
-![cloning window](/how-to-sync-and-update-a-forked-repo/cloning-github-window.png)
+![cloning window](/engineering-education/how-to-sync-and-update-a-forked-repo/cloning-github-window.png)
 
 Alternatively, you may use the URL from GitHub remote repository, paste on the clone box of GitHub desktop, and initiate cloning, select your preferred location of the cloned repository to your local computer and you are done.
 
-![cloning progress](/how-to-sync-and-update-a-forked-repo/cloning-progress.png)
+![cloning progress](/engineering-education/how-to-sync-and-update-a-forked-repo/cloning-progress.png)
 
 #### Cloning using Git Bash
 Git uses [protocols](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) to transfer data from a remote server to your local machine. The main used URL protocols include:
@@ -72,14 +72,14 @@ Example
 ```bash
 git@github.com:section-io/engineering-education.git
 ```
-![SSH](/how-to-sync-and-update-a-forked-repo/ssh.png)
+![SSH](/engineering-education/how-to-sync-and-update-a-forked-repo/ssh.png)
 
 -   HTTP/HTTPS (Hyper text transfer protocol). The protocol of the web, most commonly used for transferring web page HTML data over the Internet. Git can be configured to communicate over HTTPS with encoded data [transmission](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone).
 
 ```bash
 http[s]://host.xz[:port]/path/to/repository.git/
 ```
-![HTTPS](/how-to-sync-and-update-a-forked-repo/https.png)
+![HTTPS](/engineering-education/how-to-sync-and-update-a-forked-repo/https.png)
 
 In this article, we shall use SSH URL protocol using [Git Bash](https://docs.github.com/en/github/using-git) to execute git commands. However, to get started with Git Bash, you need to do the following authentication.
 
@@ -162,44 +162,44 @@ When using a forked repo, the original repository will regularly be updated with
 ### Updating a fork using GitHub web UI
 The process is simple and clear. Go to your forked repository in your GitHub account, you will see the number of commits that the original repository has, and have and not been updated to your forked repository.
 
-![commit to upate](/how-to-sync-and-update-a-forked-repo/commits-to-update.png)
+![commit to upate](/engineering-education/how-to-sync-and-update-a-forked-repo/commits-to-update.png)
 
 Click compare.
 
-![compare](/how-to-sync-and-update-a-forked-repo/compare.png)
+![compare](/engineering-education/how-to-sync-and-update-a-forked-repo/compare.png)
 
 Use switch to base link.
 
-![switch to base](/how-to-sync-and-update-a-forked-repo/switch-to-base.png)
+![switch to base](/engineering-education/how-to-sync-and-update-a-forked-repo/switch-to-base.png)
 
 If the switch to base is not available, use the dropdown to manually select the repositories to compare. When the comparing selections are correctly selected, you will be able to see the commits that are not updated to your fork.
 
-![repo comparison](/how-to-sync-and-update-a-forked-repo/repo-comparison.png)
+![repo comparison](/engineering-education/how-to-sync-and-update-a-forked-repo/repo-comparison.png)
 
 Continue to the green button and create a pull request.
 
-![create pull request](/how-to-sync-and-update-a-forked-repo/create-pull-request.png)
+![create pull request](/engineering-education/how-to-sync-and-update-a-forked-repo/create-pull-request.png)
 
 Enter a title "updating my fork", comment as well, and proceed to
 create a pull request.
 
-![creating pull request](/how-to-sync-and-update-a-forked-repo/start-creating-pull-request.png)
+![creating pull request](/engineering-education/how-to-sync-and-update-a-forked-repo/start-creating-pull-request.png)
 
 Scroll to merge request.
 
-![merge pull request](/how-to-sync-and-update-a-forked-repo/merge-pull-request.png)
+![merge pull request](/engineering-education/how-to-sync-and-update-a-forked-repo/merge-pull-request.png)
 
 Confirm merge.
 
-![confirm merge](/how-to-sync-and-update-a-forked-repo/confirm-merge.png)
+![confirm merge](/engineering-education/how-to-sync-and-update-a-forked-repo/confirm-merge.png)
 
 And you are done, your fork is now updated successfully. The fork is updated on the remote and you now need to update the changes to your local repository. Go to your GitHub desktop and make sure your current repository you are working with is selected.
 
-![current repo](/how-to-sync-and-update-a-forked-repo/current-repo.png)
+![current repo](/engineering-education/how-to-sync-and-update-a-forked-repo/current-repo.png)
 
 You will able to see a "pull origin". What this does is it pulls the remote changes to your local repository.
 
-![update to local repo](/how-to-sync-and-update-a-forked-repo/update-to-local-repo.png)
+![update to local repo](/engineering-education/how-to-sync-and-update-a-forked-repo/update-to-local-repo.png)
 
 Click "pull origin" and your local repository will be updated and the same as the remote repository.
 
@@ -398,53 +398,53 @@ We have forked, cloned, our repository is up to date, plus we are ready to work 
 ### Submit contributions using GitHub desktop
 For convenience, open GitHub and open the repository with your preferred text editor.
 
-![open text editor](/how-to-sync-and-update-a-forked-repo/open-editor.png)
+![open text editor](/engineering-education/how-to-sync-and-update-a-forked-repo/open-editor.png)
 
 If you are using Visual Studio Code, your cloned folder should look similar to this
 
-![editor opened](/how-to-sync-and-update-a-forked-repo/editor-opened.png)
+![editor opened](/engineering-education/how-to-sync-and-update-a-forked-repo/editor-opened.png)
 
 Since we are trying to make our contributions to [Section](https://github.com/section-io/engineering-education), navigate to the articles folder.
 
-![articles folder](/how-to-sync-and-update-a-forked-repo/articles-folder.png)
+![articles folder](/engineering-education/how-to-sync-and-update-a-forked-repo/articles-folder.png)
 
 Create a folder to work with.
 
-![create folder](/how-to-sync-and-update-a-forked-repo/create-folder.png)
+![create folder](/engineering-education/how-to-sync-and-update-a-forked-repo/create-folder.png)
 
 Add your contributions (i.e. [index.md](https://guides.github.com/features/mastering-markdown/), hero image, and other media where necessary).
 
-![folder content](/how-to-sync-and-update-a-forked-repo/folder-contents.png)
+![folder content](/engineering-education/how-to-sync-and-update-a-forked-repo/folder-contents.png)
 
 When you are done adding all your content, you now need to commit the changes to your remote GitHub repository. Launch your GitHub desktop and you will be able to see the changes you have added.
 
-![changes](/how-to-sync-and-update-a-forked-repo/changes.png)
+![changes](/engineering-education/how-to-sync-and-update-a-forked-repo/changes.png)
 
 It is now simple from here, create a branch that will have your changes.
 
-![to create branch](/how-to-sync-and-update-a-forked-repo/to-create-branch.png)
+![to create branch](/engineering-education/how-to-sync-and-update-a-forked-repo/to-create-branch.png)
 
-![creating branch](/how-to-sync-and-update-a-forked-repo/creating-branch.png)
+![creating branch](/engineering-education/how-to-sync-and-update-a-forked-repo/creating-branch.png)
 
 Since we have our changes ready, we need to merge these changes to the branch we have created. i.e. "the changes on your folder and your work in progress will follow to the new branch" and click switch to branch.
 
-![switch to branch](/how-to-sync-and-update-a-forked-repo/switch-to-branch.png)
+![switch to branch](/engineering-education/how-to-sync-and-update-a-forked-repo/switch-to-branch.png)
 
 Publish the branch to your remote GitHub account and make sure you add a commit message as the summary.
 
-![commit to branch](/how-to-sync-and-update-a-forked-repo/commit-to-branch.png)
+![commit to branch](/engineering-education/how-to-sync-and-update-a-forked-repo/commit-to-branch.png)
 
 Your branch content is on your remote GitHub repository, and you need to create a pull request to the origin repository to contribute your changes.
 
-![branch pull request](/how-to-sync-and-update-a-forked-repo/branch-pull-request.png)
+![branch pull request](/engineering-education/how-to-sync-and-update-a-forked-repo/branch-pull-request.png)
 
 The create a pull request button will redirect you to your GitHub account where you now need to create a pull request. Make sure your title is relevant to the content you want to publish. Write a comment in the comment box with brief details of your content.
 
-![pull request redirect](/how-to-sync-and-update-a-forked-repo/pull-redirect.png)
+![pull request redirect](/engineering-education/how-to-sync-and-update-a-forked-repo/pull-redirect.png)
 
 Once the pull request button is hit, you are done, you have submitted your contributions successfully.
 
-![done](/how-to-sync-and-update-a-forked-repo/done.png)
+![done](/engineering-education/how-to-sync-and-update-a-forked-repo/done.png)
 
 Wait for your content to be reviewed and if any further changes are needed, a comment will be left by the reviewer suggesting possible changes you should make under your pull. Make your edits on your text editor and make a commit to update the changes and remember to have a summary of the commit you are making for better referencing.
 
@@ -554,15 +554,15 @@ git push origin my-first-contributions
 
 Your content is now on your remote forked repository. To share your contributions to the team, you need to make a pull request. Go to your GitHub account, under your forked repository.
 
-![compare and pull request](/how-to-sync-and-update-a-forked-repo/compare-and-pull-request.png)
+![compare and pull request](/engineering-education/how-to-sync-and-update-a-forked-repo/compare-and-pull-request.png)
 
 Click the compare and pull request button.
 
-![pull request redirect](/how-to-sync-and-update-a-forked-repo/pull-redirect.png)
+![pull request redirect](/engineering-education/how-to-sync-and-update-a-forked-repo/pull-redirect.png)
 
 And you are done. Wait for your content to be reviewed, make changes where necessary and your pull request will be merged to the team project.
 
-![done](/how-to-sync-and-update-a-forked-repo/done.png)
+![done](/engineering-education/how-to-sync-and-update-a-forked-repo/done.png)
 
 **Note:** every time you are making new contributions, ensure your remote fork and the local repository are up to date.
 

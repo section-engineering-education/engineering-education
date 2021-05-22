@@ -32,7 +32,7 @@ For the final code, you can look at this [GitHub Repository](https://github.com/
 
 In the starter code, I've set up a language and dialect select menu, two buttons to start/stop the speech recognition, and a box to display the transcript. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
 
-![Starter Code Screen](/speech-recognition-in-javascript/start_screen.png)
+![Starter Code Screen](/engineering-education/speech-recognition-in-javascript/start_screen.png)
 
 ### Let's code
 First, create a new JavaScript file and name it `speechRecognition.js`. Next, add the script to the HTML file using the `script` tag after the `body` tag.
@@ -281,7 +281,7 @@ if ("webkitSpeechRecognition" in window) {
 ### Result
 You can take a look at the deployed version of the project [here](https://zolomohan.github.io/speech-recognition-in-javascript/).
 
-![Final Result](/speech-recognition-in-javascript/final.gif)
+![Final Result](/engineering-education/speech-recognition-in-javascript/final.gif)
 
 ### Let's Recap
 - We cloned the starter code from the GitHub repository.

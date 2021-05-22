@@ -205,7 +205,7 @@ From here, we register the AdminBro adapter for mongoose and build a router for 
 ### Start the application
 At this point, we have the admin interface set up in our application. we need to ensure that our database and the express server are up and running. Open your browser and navigate to `http:localhost:8000/admin` endpoint for the admin dashboard:
 
-![adminBro-browser-test](/nodejs-adminbro/AdminBro.png).
+![adminBro-browser-test](/engineering-education/nodejs-adminbro/AdminBro.png).
 
 For the entire source code, check this [github repository](https://github.com/KayveTech/AdminBro-Express).
 

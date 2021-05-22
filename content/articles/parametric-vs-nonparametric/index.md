@@ -76,7 +76,7 @@ We mentioned that linear SVM is an example of a parametric model. This is becaus
 ### Parametric vs Non-Parametric models
 Since we can now define both parametric and non-parametric models, we can compare both in this following section. We will then look at the benefits and limitations of both types of models.
 
-![fit](/parametric-vs-nonparametric/fit.png)
+![fit](/engineering-education/parametric-vs-nonparametric/fit.png)
 
 *Results of parametric and non-parametric regression.*
 

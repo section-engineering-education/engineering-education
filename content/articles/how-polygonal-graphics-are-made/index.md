@@ -31,13 +31,13 @@ To explore how changing the number of vertices changes the approximation of the 
 
 Change the value of `poly` up or down to see how creating more subdivisions in a shape increases quality. The higher the vertex count, the more memory the shape takes up, and the more resources it needs to operate. This is why early movies and video games have models with much less detail than they do today.
 
-![7 divs](https://i.imgur.com/ScRkwYv.png)<br>
+![7 divs](/engineering-educationhttps://i.imgur.com/ScRkwYv.png)<br>
 *A cylinder with 7 subdivisions on the top face*
 
-![20_poly](https://i.imgur.com/jd9XR20.png)<br>
+![20_poly](/engineering-educationhttps://i.imgur.com/jd9XR20.png)<br>
 *A cylinder with 20 subdivisions on the top face*
 
-![100 divs](https://i.imgur.com/3KZLqAe.png)<br>
+![100 divs](/engineering-educationhttps://i.imgur.com/3KZLqAe.png)<br>
 *A cylinder with 100 subdivisions on the top face*
 
 ### Textures
@@ -64,7 +64,7 @@ box.subMeshes.push(new  BABYLON.SubMesh(0, 0, verticesCount, 0, 6, box));
 box.subMeshes.push(new  BABYLON.SubMesh(1, 1, verticesCount, 6, 6, box));
 ...
 ~~~
-![standard cube](https://i.imgur.com/r7p2oYC.png)<br>
+![standard cube](/engineering-educationhttps://i.imgur.com/r7p2oYC.png)<br>
 *The cube with the material applied to all faces*
 
 Try changing the `6` in the line to a `5`.
@@ -73,7 +73,7 @@ Try changing the `6` in the line to a `5`.
 ~~~
  In this example, we tell the mesh not to apply the material to one of the faces.
 
-![sube](https://i.imgur.com/zj1ZdBG.png)
+![sube](/engineering-educationhttps://i.imgur.com/zj1ZdBG.png)
 *Cube with the 6 changed to a 5*
 
 ### Transformations

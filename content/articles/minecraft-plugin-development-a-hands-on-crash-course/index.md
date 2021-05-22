@@ -70,7 +70,7 @@ Finally, it will ask what to call the root folder and where to put it. In case y
 
 The repository will also contain extra info about the setup you may be interested in. In the end, you should have a project structure like this:
 
-![basic setup](/minecraft-plugin-development-a-hands-on-crash-course/plugin-setup.png)
+![basic setup](/engineering-education/minecraft-plugin-development-a-hands-on-crash-course/plugin-setup.png)
 
 All this, except for the `.idea` folder and `(project name).iml` file, are the essential elements we need to get started. For this guide, you can disregard any other folders or files. 
 
@@ -78,7 +78,7 @@ Within the main package (in this case: src>main>java>me>john>amiscaray>minecraft
 
 That Java file, which is named the same as the artifact ID, should have the following basic structure:
 
-![plugin main class](/minecraft-plugin-development-a-hands-on-crash-course/plugin-main-class.png)
+![plugin main class](/engineering-education/minecraft-plugin-development-a-hands-on-crash-course/plugin-main-class.png)
 
 That file will be the main entry point of our plugin where all the magic starts. For that reason, I will be referring to it as our plugin's main class.
 

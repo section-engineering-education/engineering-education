@@ -79,7 +79,7 @@ kex
 
 A window should pop-up something like this:
 
-![kex](/internet-inconsistencies-with-r-programming/kex.jpg)  
+![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
 
 *Screen capture*  
 
@@ -92,17 +92,17 @@ sudo apt-get install r-base r-base-dev
 
 The following screens may appear:  
 
-![kexry](/internet-inconsistencies-with-r-programming/kexry.jpg)  
+![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
 
 *Screen capture*  
 
-![kexr](/internet-inconsistencies-with-r-programming/kexr.jpg)  
+![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)  
 
 *Screen capture*  
 
 Alternatively, using an R-programming application can be equally effective.  
 
-![r](/internet-inconsistencies-with-r-programming/r.jpg)  
+![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
 
 *Screen capture of RStudio*  
 
@@ -209,19 +209,19 @@ With reverse IP engineering being done on `45.88.197.212`, we can find five poss
 
 `Rattle` can generate data models. A decision tree model can provide a logical breakdown. Shown below, is a manually made IP address data frame:
 
-![dataframe](/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
+![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
 Typically, a decision tree selects the highest possible number as the optimal choice.
 
 In this scenario, the countries categorized as less optimal are analyzed. `Amsterdam`, `Netherlands`, and `Cyprus` were shown as the top three choices. `Lithuania` and `Germany` seemed to be less optimal.
 
-![decisiontree](/internet-inconsistencies-with-r-programming/rplot.jpeg)  
+![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 
 *Screen capture*  
 
 It is possible to evaluate variable importance from a random forest model. Variable importance is shown in the image below:
 
-![variableimportance](/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
+![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 
 *Screen capture*  
 
@@ -250,7 +250,7 @@ sudo curl http://ipinfo.io/45.88.197.212
 }
 ```  
 
-![ipinfolinux](/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
+![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
 
 *Screen capture*
 

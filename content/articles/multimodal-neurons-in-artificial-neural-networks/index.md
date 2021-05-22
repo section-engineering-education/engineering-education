@@ -46,14 +46,14 @@ A few examples of the neurons they found include:
 #### 1. Region Neurons
 This type of neuron responds to different kinds of images related to a particular geographic region and cities. In the example below, the neuron responds to the USA's architecture, nature of Europe's landscape, faces of Indians, and text related to West Africans.
 
-![Region Neurons](/multimodal-neurons-in-artificial-neural-networks/region-neuron.PNG)
+![Region Neurons](/engineering-education/multimodal-neurons-in-artificial-neural-networks/region-neuron.PNG)
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
 #### 2. Person Neurons
 They found neurons that respond to the faces of specific persons. For example, the images below show content associated with Donald Trump, Lady Gaga, Ariana Grande, and Elvis Presley. Besides faces, these neurons could also respond to texts, architectures, poses, and logos associated with the same persons. 
 
-![Person Neuron](/multimodal-neurons-in-artificial-neural-networks/person-neuron.PNG)
+![Person Neuron](/engineering-education/multimodal-neurons-in-artificial-neural-networks/person-neuron.PNG)
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
@@ -62,7 +62,7 @@ They found neurons that respond to words, facial expressions, and any content as
 
 This example is shown below:
 
-![Emotion Neuron](/multimodal-neurons-in-artificial-neural-networks/emotion-neuron.PNG)
+![Emotion Neuron](/engineering-education/multimodal-neurons-in-artificial-neural-networks/emotion-neuron.PNG)
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
@@ -73,7 +73,7 @@ So far we have seen that the multimodal neurons in the CLIP model respond well t
 
 This has been demonstrated below: 
 
-![Typographic Attacks](/multimodal-neurons-in-artificial-neural-networks/chihuahua-pizza.PNG)
+![Typographic Attacks](/engineering-education/multimodal-neurons-in-artificial-neural-networks/chihuahua-pizza.PNG)
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/#emotion-neurons)*
 
@@ -81,7 +81,7 @@ This has been demonstrated below:
 
 This example is demonstrated below:
 
-![Stroop Effect](/multimodal-neurons-in-artificial-neural-networks/green-color.PNG)
+![Stroop Effect](/engineering-education/multimodal-neurons-in-artificial-neural-networks/green-color.PNG)
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/#emotion-neurons)*
 

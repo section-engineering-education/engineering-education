@@ -64,7 +64,7 @@ choice = ["rock", "paper", "scissors"]
 
 Your terminal should display,
 
-![Input field](/python-projects-for-beginners/Input.PNG)
+![Input field](/engineering-education/python-projects-for-beginners/Input.PNG)
 
 **Random** is a built-in module that generates random values within a particular specified range.
 
@@ -101,7 +101,7 @@ game()
 
 You can run your code [here](https://repl.it/@Anitaachu/pythontest#main.py), and your terminal should display.
 
-![Rock-paper-scissor](/python-projects-for-beginners/RPS.png)
+![Rock-paper-scissor](/engineering-education/python-projects-for-beginners/RPS.png)
 
 Notice, we use the *if-else* method in Python. They are very important in programming. With these methods, we can build programs that make decisions based on certain conditions. 
 
@@ -134,7 +134,7 @@ Run your code [here](https://repl.it/@Anitaachu/pythontest#main.py).
 
 When you run this, the result in your terminal will be:
 
-![Input field](/python-projects-for-beginners/Input2.JPG)
+![Input field](/engineering-education/python-projects-for-beginners/Input2.JPG)
 
 ***While loop*** is used to run a set of commands multiple times as long as the condition is true, i.e., for a while loop to be executed, the condition must be set to *'True'*. The while loop also runs continuously. Therefore we use the ***break*** statement to stop the loop from running.
 
@@ -201,7 +201,7 @@ You can run the code [here](https://repl.it/@Anitaachu/pythontest#main.py).
 
 Let's see this in our terminal.
 
-![guessing game](/python-projects-for-beginners/guessinggame.png)
+![guessing game](/engineering-education/python-projects-for-beginners/guessinggame.png)
 
 The ***randint*** method returns an integer from a random range. Notice the indentations? In Python, indentation is very important, and improper indentation will cause an error, otherwise the codes may not run as intended.
 

@@ -39,7 +39,7 @@ Some other examples Reverse Proxies available are:
 - [Varnish](https://varnish-cache.org/intro/)
 
 ### Reverse Proxy Example
-![image](/nginx-reverse-proxy/reverse_proxy_working.png)
+![image](/engineering-education/nginx-reverse-proxy/reverse_proxy_working.png)
 
 This is an example of an architecture, where two apps are running in the background, but the clients have no idea about them. The clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
@@ -64,11 +64,11 @@ As we've mentioned earlier, we've got two Node.js Apps running on two different 
 
 **Server app running on Port 3000**
 
-![image](/nginx-reverse-proxy/server1.png)  
+![image](/engineering-education/nginx-reverse-proxy/server1.png)  
 
 **Client app running on Port 3001**  
 
-![image](/nginx-reverse-proxy/client1.png)
+![image](/engineering-education/nginx-reverse-proxy/client1.png)
 
 Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something that is more human-readable.
 
@@ -178,9 +178,9 @@ For the example above, the URLs are:
 ### Conclusion
 Here is the end result:
 
-![image](/nginx-reverse-proxy/client2.png)
+![image](/engineering-education/nginx-reverse-proxy/client2.png)
 
-![image](/nginx-reverse-proxy/server2.png)  
+![image](/engineering-education/nginx-reverse-proxy/server2.png)  
 
 Congratulations! You did it! :tada:
 

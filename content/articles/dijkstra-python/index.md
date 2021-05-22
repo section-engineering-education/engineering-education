@@ -28,7 +28,7 @@ We will first talk about some basic graph concepts because we are going to use t
 #### A basic introduction to Graphs
 Graphs are pictorial representations of connections between pairs of elements. The graphs in our case represent a network topology.
 
-![Graph 1](/dijkstra-python/graph-1.png)
+![Graph 1](/engineering-education/dijkstra-python/graph-1.png)
 
 The connections are referred to as **edges** while the elements are called **nodes**.
 
@@ -36,11 +36,11 @@ We have three types of graphs:
 1. **Undirected:** You can move using the edges towards any direction.
 2. **Directed:** The direction you can move is specified and shown using arrows.
 
-![Graph 2](/dijkstra-python/dir-undir-graph.png)
+![Graph 2](/engineering-education/dijkstra-python/dir-undir-graph.png)
 
 3. **Weighted:** The edges of weighted graphs denote a certain metric like distance, time taken to move using the edges, etc.
 
-![Graph 3](/dijkstra-python/weighted-graph.png)
+![Graph 3](/engineering-education/dijkstra-python/weighted-graph.png)
 
 #### Dijkstra's shortest path algorithm
 This algorithm is used to calculate and find the shortest path between nodes using the weights given in a graph. (In a network, the weights are given by link-state packets and contain information such as the health of the routers, traffic costs, etc.).
@@ -55,7 +55,7 @@ A node is then marked as **visited** and added to the path if the distance betwe
 #### An example illustrating the working of the algorithm
 The source node here is node **0**. We assume the weights show the distances.
 
-![Graph 4](/dijkstra-python/first-illustration.png)
+![Graph 4](/engineering-education/dijkstra-python/first-illustration.png)
 
 Initially, we have this list of distances. We mark the initial distances as INF (infinity) because we have not yet determined the actual distance except for node 0. After all, the distance from the node 0 to itself is 0.
 
@@ -71,13 +71,13 @@ Initially, we have this list of distances. We mark the initial distances as INF 
 
 We also have a list to keep track of only the visited nodes, and since we have started with node 0, we add it to the list (we denote a visited node by adding an asterisk beside it in the table and a red border around it on the graph).
 
-![Graph 5](/dijkstra-python/second-illustration.png)
+![Graph 5](/engineering-education/dijkstra-python/second-illustration.png)
 
 **{0}**
 
 We check the distances `0 -> 1` and `0 -> 2`, which are 2 and 6, respectively. We first update the distances from nodes 1 and 2 in the table.
 
-![Graph 6](/dijkstra-python/third-illustration.png)
+![Graph 6](/engineering-education/dijkstra-python/third-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -91,7 +91,7 @@ We check the distances `0 -> 1` and `0 -> 2`, which are 2 and 6, respectively. W
 
 We then choose the shortest one, which is `0 -> 1` and mark node 1 as visited and add it to the visited path list.
 
-![Graph 7](/dijkstra-python/fourth-illustration.png)
+![Graph 7](/engineering-education/dijkstra-python/fourth-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -109,7 +109,7 @@ Next, we check the nodes adjacent to the nodes added to the path(Nodes 2 and 3).
 
 To choose what to add to the path, we select the node with the shortest currently known distance to the source node, which is `0 -> 2` with distance 6.
 
-![Graph 8](/dijkstra-python/fifth-illustration.png)
+![Graph 8](/engineering-education/dijkstra-python/fifth-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -125,7 +125,7 @@ To choose what to add to the path, we select the node with the shortest currentl
 
 Next we have the distances `0 -> 1 -> 3`(2 + 5 = 7) and `0 -> 2 -> 3`(6 + 8 = 14) in which 7 is clearly the shorter distance, so we add node 3 to the path and mark it as visited.
 
-![Graph 9](/dijkstra-python/sixth-illustration.png)
+![Graph 9](/engineering-education/dijkstra-python/sixth-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -141,7 +141,7 @@ Next we have the distances `0 -> 1 -> 3`(2 + 5 = 7) and `0 -> 2 -> 3`(6 + 8 = 14
 
 We then check the next adjacent nodes (node 4 and 5) in which we have `0 -> 1 -> 3 -> 4` (7 + 10 = 17) for node 4 and `0 -> 1 -> 3 -> 5` (7 + 15 = 22) for node 5. We add node 4.
 
-![Graph 10](/dijkstra-python/seventh-illustration.png)
+![Graph 10](/engineering-education/dijkstra-python/seventh-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -166,7 +166,7 @@ We choose 22.
 Node 6
 `0 -> 1 -> 3 -> 4 -> 6`(17 + 2 = 19)
 
-![Graph 11](/dijkstra-python/eigth-illustration.png)
+![Graph 11](/engineering-education/dijkstra-python/eigth-illustration.png)
 
 |NODE|DISTANCE|
 ---|---|

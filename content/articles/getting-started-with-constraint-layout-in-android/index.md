@@ -56,15 +56,15 @@ Each element has four "circular-shaped-dots" on its edges known as `Constraint h
 
 In a later part of the tutorial, we'll learn about cases when we don't need to constrain a view at all. Meanwhile, a newly added view (in this case a `Button`) looks like this.
 
-![image](/getting-started-with-constraint-layout-in-android/adding-view.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/adding-view.png)
 
 To constrain a view, hold and drag the handle to the desired point. In this case, we'll attach a button fully to the parent.
 
-![image](/getting-started-with-constraint-layout-in-android/constraining-view.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/constraining-view.png)
 
 Notice the error icon disappears.
 
-![image](/getting-started-with-constraint-layout-in-android/constrained-view.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/constrained-view.png)
 
 The zigzag (sometimes curved) lines represent alignments and they're only visible in the preview. Alternatively, we can constrain it by writing the respective `XML code`.
 
@@ -115,7 +115,7 @@ The code snippet below shows how a view can be constrained `vertically` relative
 
 The above `XML code` has the following appearance in the preview:
 
-![image](/getting-started-with-constraint-layout-in-android/vertical-constraint.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/vertical-constraint.png)
 
 #### B). Horizontal alignment
 Similarly, a view can be constrained `horizontally` relative to another view.
@@ -146,7 +146,7 @@ See the code below.
 
 Preview:
 
-![image](/getting-started-with-constraint-layout-in-android/horizontal-constraint.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/horizontal-constraint.png)
 
 #### C). Using a constraint set
 In cases where we have views whose dimensions are the same, we can simplify their alignment by defining the dimension for one view then constraint the others to it so that they reflect the dimension. This is called `constraint set` alignment.
@@ -176,7 +176,7 @@ Referencing views need to set their width to `0dp`. This doesn't mean that the v
     app:layout_constraintTop_toBottomOf="@+id/a" />
 ```
 
-![image](/getting-started-with-constraint-layout-in-android/match-width.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/match-width.png)
 
 ##### ii). Matching height of the constraint set
 Similar to the width, we can make a view occupy a height equal to the `vertical` alignment points.
@@ -205,14 +205,14 @@ Similar to the width, we can make a view occupy a height equal to the `vertical`
 
 Preview:
 
-!["match constraint (height)"](/getting-started-with-constraint-layout-in-android/match-height.png)
+!["match constraint (height)"](/engineering-education/getting-started-with-constraint-layout-in-android/match-height.png)
 
 #### D). Baselines
 A baseline is a horizontal invisible line that is centered in a view. A view can only have one baseline used to align it horizontally.
 
 To add a baseline, right-click on the view that you want to align the baseline to that of another view. Select `show baseline`.
 
-!["show baseline"](/getting-started-with-constraint-layout-in-android/select-baseline.png)
+!["show baseline"](/engineering-education/getting-started-with-constraint-layout-in-android/select-baseline.png)
 
 Hold and drag the baseline (the same way as a handle) to the other view's baseline.
 
@@ -239,7 +239,7 @@ Hold and drag the baseline (the same way as a handle) to the other view's baseli
 
 Design preview:
 
-![image](/getting-started-with-constraint-layout-in-android/baseline.png "baseline constraining")
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/baseline.png "baseline constraining")
 
 Whenever we drag view `A`, view `B` is dragged as well.
 
@@ -248,7 +248,7 @@ Constraint layout has the capability of aligning views with respect to the cente
 
 See the figure below.
 
-![image](/getting-started-with-constraint-layout-in-android/circular-alignment.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/circular-alignment.png)
 
 Note that the angle is measured from the `normal` line.
 
@@ -331,17 +331,17 @@ For a chain to exist between two views, there must be a 1:1 alignment ratio betw
 
 Preview:
 
-![image](/getting-started-with-constraint-layout-in-android/horizontal-chain.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/horizontal-chain.png)
 
 We can also create a vertical chain like the one below.
 
-!["vertical chain"](/getting-started-with-constraint-layout-in-android/vertical-chain.png)
+!["vertical chain"](/engineering-education/getting-started-with-constraint-layout-in-android/vertical-chain.png)
 
 Here we have combined chains and the constraint set (width matching).
 
 The figure below shows different chain styles.
 
-![image](/getting-started-with-constraint-layout-in-android/chain-styles.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/chain-styles.png)
 
 To change the style, right-click on the chain then select a chain style.
 
@@ -357,7 +357,7 @@ The latter mentioned is preferred for its responsive outcome. The constraint gui
 
 To add a guideline in your layout, right-click on the layout then select `Guideline`. Alternatively, you can click the `Helpers icon` (picuted below) and select the respective helper.
 
-![icon](/getting-started-with-constraint-layout-in-android/helpers-icon.png)
+![icon](/engineering-education/getting-started-with-constraint-layout-in-android/helpers-icon.png)
 
 We're going to add a 20%-aligned vertical guideline and use it to constrain two buttons.
 
@@ -392,7 +392,7 @@ We're going to add a 20%-aligned vertical guideline and use it to constrain two 
 
 Preview:
 
-![image](/getting-started-with-constraint-layout-in-android/guideline.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/guideline.png)
 
 The position can be changed by dragging the guideline. It is paramount to **note** that a guideline's alignment is **independent** of the views on either of its sides.
 
@@ -432,7 +432,7 @@ For instance, in a left-oriented barrier, the views on the right side appear cap
 
 Preview:
 
-![image](/getting-started-with-constraint-layout-in-android/barrier.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/barrier.png)
 
 #### C). Group
 A group is an assembly of views. A group is a nice feature to use when you want to work with a variety of views in the same way. To create a group, we need to refer to the id's of the views we want to be members of the group.
@@ -539,7 +539,7 @@ A flow uses the `FCFS` (first come first served) algorithm where the order of vi
 ```
 
 Preview:
-![image](/getting-started-with-constraint-layout-in-android/flow.png)
+![image](/engineering-education/getting-started-with-constraint-layout-in-android/flow.png)
 
 ### Conclusion
 In this tutorial, we've learned how to design a responsive UI using constraint layout features. There might be new features in the future releases of constraint layout. Check out the [official documentation](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout) to learn more and keep yourself updated.

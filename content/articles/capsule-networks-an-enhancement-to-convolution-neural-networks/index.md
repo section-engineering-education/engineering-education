@@ -39,9 +39,9 @@ Convolutional Neural Networks have been used in the [Computer Vision](/computer-
 
 Let's look at an example to understand what I mean. Suppose I take an original image of a dog and flip it upside down, as shown below. 
 
-![Original image of a dog](/capsule-networks-an-enhancement-to-convolution-neural-networks/original-image.jpg)<br>
+![Original image of a dog](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/original-image.jpg)<br>
 
-![Flipped image of the original](/capsule-networks-an-enhancement-to-convolution-neural-networks/flipped-image.jpg)<br>
+![Flipped image of the original](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/flipped-image.jpg)<br>
 
 If we train the CNN on the original image and then feed in the dog's flipped image as the new input to the CNN, it will fail to identify the dog's features such as the eyes, nose, and mouth. This means that CNNs fail to learn the patterns of an image when its orientation is altered.
 
@@ -74,7 +74,7 @@ A slight adjustment to the object's rotation or its size, can change the vector'
 
 Below is an example of an output that denotes an object's location in a CapsNet. The vectors' length where the object is placed is longer than those of the vectors where the object isn't placed. The vectors' orientation could represent their position, rotation, size, or scale in the image.
 
-![Example of a vector with length and orientation in a CapsNet](/capsule-networks-an-enhancement-to-convolution-neural-networks/vector-length-orientation.PNG)<br>
+![Example of a vector with length and orientation in a CapsNet](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/vector-length-orientation.PNG)<br>
 
 *[Image Source: Intel](https://software.intel.com/content/www/us/en/develop/articles/understanding-capsule-network-architecture.html/)*
 
@@ -125,7 +125,7 @@ It's important to note that the squashing function preserves the vectors' orient
 
 The [paper](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/) introduces a new squashing (non-linearity) function shown below, that works best with capsules:
 
-![The squashing function used in ConvNets](/capsule-networks-an-enhancement-to-convolution-neural-networks/squashing-function.PNG)<br>
+![The squashing function used in ConvNets](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/squashing-function.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
@@ -134,7 +134,7 @@ The term $$v_j$$ refers to the output after applying the squashing function; the
 ### The CapsNet architecture
 The capsule network architecture contains an encoder and a decoder, with each component consisting of three layers.
 
-![A simple CapsNet with 3 layers](/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-3-layers.PNG)<br>
+![A simple CapsNet with 3 layers](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-3-layers.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
@@ -147,7 +147,7 @@ The encoder contains three layers:
 
 A good point to note about the network's encoder part is that there is no routing between Conv1 and the Primary Capsule layer. Routing only happens between the Primary Capsule and the DigitCaps Layer.
 
-![Decoder structure to reconstruct a digit from the DigitCaps layer representation](/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-digicaps-reconstruct.PNG)<br>
+![Decoder structure to reconstruct a digit from the DigitCaps layer representation](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-digicaps-reconstruct.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 

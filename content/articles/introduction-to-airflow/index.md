@@ -37,13 +37,13 @@ A typical workflow looks like this:
 
 Airflow automates the process of monitoring, scheduling, and distributing these tasks in workflow across nodes. In this context, a node is a computer or a [virtual machine](https://www.vmware.com/topics/glossary/content/virtual-machine). To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins.
 
-![pipeline](/introduction-to-airflow/pipelines.png)
+![pipeline](/engineering-education/introduction-to-airflow/pipelines.png)
 
 ### Core concepts
 #### DAGs
 [DAGs](https://en.wikipedia.org/wiki/Directed_acyclic_graph) are the core entities in Airflow's architecture. DAG stands for Directed Acyclic Graph. DAGs are a series of tasks that are executed as part of the workflow. For instance, each of the steps in the workflow described above is a part of the DAG. It describes the sequence in which tasks are executed and also tells us how tasks are dependent on each other. Some tasks might depend on the output of other tasks, and this creates a [dependency graph](https://en.wikipedia.org/wiki/Dependency_graph) that is managed by Airflow.  
 
-![dags](/introduction-to-airflow/dag.png)
+![dags](/engineering-education/introduction-to-airflow/dag.png)
 
 #### Operators
 According to the documentation, an operator describes a single task in a workflow, and are usually (but not always) atomic, meaning they can stand on their own and don’t need to share resources with any other operators. In other words, an operator determines what a task does in the DAG. Some operators that Airflow provides are:

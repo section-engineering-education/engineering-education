@@ -48,7 +48,7 @@ In this section, we will create a splash screen for our application using the la
 ### Step 1 – Create a new Android Studio Project
 Open Android Studio and select an Empty Activity. We shall name our project **SplashnSlides**. Click *Finish* and wait for the project to build.
 
-![Creating an Android Studio project](/implementing-a-splash-screen-and-introduction-sliders-in-android/new.jpg)
+![Creating an Android Studio project](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/new.jpg)
 
 ### Step 2 – Designing the Splash screen
 For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). 
@@ -103,7 +103,7 @@ That is it. Simple right?
 
 Let us run the app. We have a splash screen. Let us now work on getting introduction sliders.
 
-![Spash screen](/implementing-a-splash-screen-and-introduction-sliders-in-android/splash.jpg)
+![Spash screen](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/splash.jpg)
 
 ### B) Introduction Sliders
 Introduction sliders in Android applications are customarily used to give instructions or display features offered by an application. In this section, we shall implement introduction sliders in our application.
@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
 
 That is it! Let us run our app.
 
-![Introduction sliders](/implementing-a-splash-screen-and-introduction-sliders-in-android/intro.gif)
+![Introduction sliders](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/intro.gif)
 
 ### To wrap up
 We have learned about splash screens, we had an introduction to sliders, and how we implement them in an Android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications. 

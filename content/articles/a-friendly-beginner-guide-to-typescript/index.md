@@ -331,7 +331,7 @@ let welcomeUser = new WelcomeMessage("Idris"); // Welcome Idris
 ### Typescript features
 JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development).
 
-![typescript feature](/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
+![typescript feature](/engineering-education/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
 
 [Image Source](https://www.tutorialspoint.com/)
 

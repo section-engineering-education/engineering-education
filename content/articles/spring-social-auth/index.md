@@ -137,7 +137,7 @@ spring:
 
 Navigate to `http://localhost:8080` in your browser, you will be presented with a GitHub authentication screen as shown below.
 
-![Github authentication](/spring-social-auth/github-auth.png)
+![Github authentication](/engineering-education/spring-social-auth/github-auth.png)
 
 ### Google authentication
 Now that we have successfully implemented Github authentication, let's also implement Google authentication.
@@ -215,15 +215,15 @@ In this section, we are going to create a simple HTML for our homepage.
 
 When you navigate to `http://localhost:8080`, the web page below is displayed.
 
-![Homepage unauthenticated](/spring-social-auth/home.png)
+![Homepage unauthenticated](/engineering-education/spring-social-auth/home.png)
 
 On clicking Google auth the app redirects to the Google authentication screen as shown below.
 
-![Google authentication](/spring-social-auth/google-auth.png)
+![Google authentication](/engineering-education/spring-social-auth/google-auth.png)
 
 After successful authentication, a user is redirected to the homepage where their username is captured from the social profile. The screenshot below shows a username captured from the Google authentication.
 
-![Homepage authenticated](/spring-social-auth/logged-in.png)
+![Homepage authenticated](/engineering-education/spring-social-auth/logged-in.png)
 
 ### Conclusion
 Now that you have learned how to authenticate users in your Spring Boot application through Google and Github, implement Facebook social authentication in your Spring Boot application. 

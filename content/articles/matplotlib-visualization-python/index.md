@@ -17,7 +17,7 @@ images:
 Matplotlib is one of the most powerful and popular plotting libraries for Python and the numerical extension NumPy. It enables the creation of static, animated, and interactive visualizations in Python. Reading the matplotlib documentation is always ideal, but the amount of information available can be daunting. Therefore the following article is designed to gain a basic understanding of the library. Further, we will also understand the use cases of the library.
 <!--more-->
 
-![Parts-Figure](./matplotimage.png)
+![Parts-Figure](/engineering-education/matplotlib-visualization-python/matplotimage.png)
 
 [Source](https://matplotlib.org/3.1.1/)
 
@@ -78,7 +78,7 @@ We will be using the above-mentioned functions frequently during plotting.
 
 ### matplotlib
 
-![Parts-Figure](/matplotlib-visualization-python/anatomy.JPG)
+![Parts-Figure](/engineering-education/matplotlib-visualization-python/anatomy.JPG)
 [Source](https://matplotlib.org/3.1.1/)
 
 Each of the parts shown in the above figure is mutable. One should keep the above features in mind to enhance and give more information regarding the plots. Let us get into the generation of plots.

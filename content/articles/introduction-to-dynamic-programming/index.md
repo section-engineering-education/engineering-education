@@ -74,7 +74,7 @@ Consider the case when n = 5.
 
 As you can observe, fibonacci(4), fibonacci(3), fibonacci(2) are called multiple times. Take a look at the image below to get a better idea:
 
-![Fibonacci](/introduction-to-dynamic-programming/fibonacci.png)
+![Fibonacci](/engineering-education/introduction-to-dynamic-programming/fibonacci.png)
 
 [Image source](https://www.slitherintopython.com/assets/img/fibtree.png)
 

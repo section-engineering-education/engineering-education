@@ -353,7 +353,7 @@ Run the above call in a browse console. You will get something like:
 Window {window: Window, . . . .}
 ```
 
-![window objects](/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
+![window objects](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
 
 This is because the `test()` is called from a global context, and `this` will refer to a global object. In this case, a global object window is called from the browser. `this` is not defined by the caller. 
 
@@ -486,7 +486,7 @@ animals.printdomesticAnimals();
 
 The above example accesses the object's property `domesticAnimals` and prints the domestic animals in 3 seconds. Unfortunately, we ran into an error.
 
-![error](/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
+![error](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
 
 `setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else. 
 
@@ -514,7 +514,7 @@ let animals = {
 animals.printdomesticAnimals();
 ```
 
-![execution context](/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
+![execution context](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
 
 `this` inside `printdomesticAnimals()` points to the object `animals` with the `domesticAnimals` property. `this` inside `setTimeout()` points to the window object where property `domesticAnimals` is undefined.
 
@@ -538,7 +538,7 @@ animals.printdomesticAnimals();
 
 When we use the arrow function, we get the results as we expected.
 
-![inside arrow function](/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
+![inside arrow function](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
 
 #### Arrow functions with object literal
 Let's have an example that represents a [JavaScript object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).

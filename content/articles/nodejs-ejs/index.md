@@ -27,7 +27,7 @@ To follow this article along the reader will need:
 
 ### Project setup
 
-![Project structure](/nodejs-ejs/project-structure.png)
+![Project structure](/engineering-education/nodejs-ejs/project-structure.png)
 
 - `views` contains the `EJS` files and the `partials` contains the partial `EJS` files.
 - `app.js` file contains the express configurations and routes.
@@ -234,7 +234,7 @@ $ node app.js
 
 When we navigate to `localhost:3000/` in our browser, a page with all the posts is displayed as shown below.
 
-![Project structure](/nodejs-ejs/running-site.png)
+![Project structure](/engineering-education/nodejs-ejs/running-site.png)
 
 ### Conclusion
 Now that you have learned how to use `EJS` template tags and partials, create a website that reuses a footer and implements conditional statements within the `EJS` template. 

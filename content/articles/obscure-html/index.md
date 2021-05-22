@@ -55,8 +55,8 @@ By default, content within the `<details>` tags are hidden, but can be shown by 
 </details>
 ```
 
-![A details section before being expanded](details1.png)<br>
-![A details section after being expanded](details2.png)<br>
+![A details section before being expanded](/engineering-education/obscure-html/details1.png)<br>
+![A details section after being expanded](/engineering-education/obscure-html/details2.png)<br>
 #### Uses:
 
 * This could be used for an FAQ in a fairly obvious way

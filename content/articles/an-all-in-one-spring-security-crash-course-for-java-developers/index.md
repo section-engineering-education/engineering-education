@@ -530,7 +530,7 @@ Then, go to GitHub, click settings, developer settings, OAuth apps, and register
 
 Then add the following properties:
 
-![OAuth With Github Config](/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-config.png)
+![OAuth With Github Config](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-config.png)
 
 The Authorization callback URL, is the URL we will send to the user when authenticated. After registering the application, Github will give a `client ID` and the option to generate a `client secret`. We will need to add these to our spring project’s properties. 
 
@@ -552,7 +552,7 @@ spring:
 Then, when you run the app and go to the homepage you should see the following:
 
 
-![OAuth With Github Page](/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-page.png)
+![OAuth With Github Page](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-page.png)
 
 ### Conclusion
 In this guide, we went through how to use many of the key Spring security features. Although we went through rather quickly, hopefully, this guide has given you a good idea on how to secure your Spring Boot applications. As a next step, I would suggest trying to use this knowledge to secure an existing application you have. 

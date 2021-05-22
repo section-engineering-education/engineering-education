@@ -35,11 +35,11 @@ We will use a method called [Canny edge detection](https://opencv-python-tutroal
 
 Let's see how this works using a real example. Take the following image of the section logo:
 
-![Section logo](/computer-vision-straight-lines/section-logo.png)
+![Section logo](/engineering-education/computer-vision-straight-lines/section-logo.png)
 
 The edge image would look like the following:
 
-![Section logo edge image](/computer-vision-straight-lines/section-logo-edge.png)
+![Section logo edge image](/engineering-education/computer-vision-straight-lines/section-logo-edge.png)
 
 It might look like we are done and that we have found the straight lines, but that's because the Section logo is made up of only straight lines.
 
@@ -56,7 +56,7 @@ Before we start to find straight lines in the images, we will need to understand
 
 We, however, will not be using this definition. Instead, we will use what is called the [Hesse normal form](https://en.wikipedia.org/wiki/Hesse_normal_form) of a line.
 
-![Hesse normal form](/computer-vision-straight-lines/line_image.png)
+![Hesse normal form](/engineering-education/computer-vision-straight-lines/line_image.png)
 
 The equation that represents the red line is now: $\rho = x \cos(\theta) - y \sin(\theta)$ for some particular $\theta$ and $\rho$. This means that we can define a line as a point in $(\theta, \rho)$ space.
 
@@ -76,7 +76,7 @@ This works because any line can be represented with some $0 \leq \theta < 180$ a
 
 The whole process will end up looking like the following for each edge pixel. In this graph, the orange and purple points represent edges in image space.
 
-![Desmos plost](/computer-vision-straight-lines/desmos_plot.gif)
+![Desmos plost](/engineering-education/computer-vision-straight-lines/desmos_plot.gif)
 
 *I made this as an interactive Desmos plot [here](https://www.desmos.com/calculator/lvwhvdltth)*
 
@@ -94,7 +94,7 @@ This allows us to not just solve for intersections, but to also know how many po
 
 If we go back to our Section logo edge image and apply the Hough transform to it (or more specifically, to each edge) then we get the following result. (Note: I normalized the vote counts and applied a heat map so that the details are more visible.)
 
-![Section logo Hough space heat map](/computer-vision-straight-lines/section-logo-heat.png)
+![Section logo Hough space heat map](/engineering-education/computer-vision-straight-lines/section-logo-heat.png)
 
 Just like before, the X-dimension represents the $\theta$ values in the range $0$ to $180$ degrees, and the Y-dimension represents the $\rho$ values with 0 being halfway.
 
@@ -117,19 +117,19 @@ Furthermore, the bin sizes must be properly sized depending on the accuracy/vari
 ### Results
 When we finally run the full algorithm to get out our line, we can then plot the lines on the image. If we use our Section logo limited to 16 lines we get the following:
 
-![Section logo with lines](/computer-vision-straight-lines/section-logo_with_lines.png)
+![Section logo with lines](/engineering-education/computer-vision-straight-lines/section-logo_with_lines.png)
 
 The Section logo is made up of straight lines, so this example doesn't show the full extent of the abilities of this technique. If we instead use a more complicated image, we will get a better understanding of how well this method works.
 
 Take this image of cracks in ice, for example:
 
-![cracks in ice](/computer-vision-straight-lines/ice.jpg)
+![cracks in ice](/engineering-education/computer-vision-straight-lines/ice.jpg)
 
 None of the edges are 100% straight, but they are straight enough that we would expect them to be detected. For the edges to be detected, we will have to lower the "accuracy" for each possible line. We can do this by making the Hough space buckets larger in the $\rho$ dimension. This allows us to still detect straight lines, but to also allow for some variance in the position of each edge within.
 
 And with all that done, here is the resulting image with 10 lines:
 
-![cracked ice with lines](/computer-vision-straight-lines/hero.png)
+![cracked ice with lines](/engineering-education/computer-vision-straight-lines/hero.png)
 
 I would say that worked pretty well. You will notice how not all of the lines line up exactly with the image.
 This is because we decreased the line's $\rho$ accuracy.

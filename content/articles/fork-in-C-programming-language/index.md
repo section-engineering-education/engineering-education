@@ -31,7 +31,7 @@ In the computing field, **`fork()`** is the primary method of process creation o
 
 Let's start with the life-cycle of a process:
 
-![Process life-cycle](/fork-in-c-programming-language/ProcessState.jpg)
+![Process life-cycle](/engineering-education/fork-in-c-programming-language/ProcessState.jpg)
 
 [Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html)
 
@@ -67,7 +67,7 @@ Hello world!
 
 Where one of the output came from the parent process and the other one from the child process.
 
-![Simple fork](/fork-in-c-programming-language/fork.png)
+![Simple fork](/engineering-education/fork-in-c-programming-language/fork.png)
 
 Simply, we can tell that the result is 2 power of n, where n is the number of fork() system calls. 
 
@@ -110,7 +110,7 @@ int main() {
 
 I drew a brief sketch to help you understand the idea:
 
-![Fork](/fork-in-c-programming-language/fork1.png)
+![Fork](/engineering-education/fork-in-c-programming-language/fork1.png)
 
 Inside the first `if` condition a fork has occurred and it is checking if it is the child process, it then continues to execute its code. Otherwise (if its the parent process) it will not go through that `if`. Then, in the second `if`, it will only accept the parent process which holds the positive id. 
 
@@ -142,7 +142,7 @@ Hello world!
 Hello world!
 ```
 
-![Fork explaination](/fork-in-c-programming-language/fork2.png)
+![Fork explaination](/engineering-education/fork-in-c-programming-language/fork2.png)
 
 Because when the process that has been forked inside `dowork()` prints `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exits.
 

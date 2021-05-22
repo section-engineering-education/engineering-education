@@ -151,7 +151,7 @@ The above mentioned lifecycle methods are used most often. There are a few more 
 1. shouldComponentUpdate()
 2. getSnapshotBeforeUpdate()
 
-![Lifecycle Methods](/build-an-outlook-clone-using-react/Lifecycle-Methods.png)<br>
+![Lifecycle Methods](/engineering-education/build-an-outlook-clone-using-react/Lifecycle-Methods.png)<br>
 *Source:[programmingwithmosh.com](https://programmingwithmosh.com/javascript/react-lifecycle-methods/)*
 
 ### Code

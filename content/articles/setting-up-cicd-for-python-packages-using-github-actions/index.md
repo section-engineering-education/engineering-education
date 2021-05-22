@@ -278,7 +278,7 @@ Below is the final directory structure:
 
 Once this is achieved, push the code to the repository. Then navigate to the `Actions` tab and see something similar to the screenshot below:
 
-![actions.png](/setting-up-cicd-for-python-packages-using-github-actions/actions.png)
+![actions.png](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/actions.png)
 
 #### Things to note
 - If you're facing *"the user <username> is not allowed...",* change the name of the package in `setup.py` to `<username>_timechecker`.

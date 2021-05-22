@@ -52,7 +52,7 @@ Once installed, the following code can be executed seamlessly.
 ### Introduction
 In some cases, the dataset's non-linearity forbids a linear classifier from coming up with an accurate decision boundary. Therefore, one of the approaches taken is to project the lower-dimensional data into a higher-dimension to find a linear decision boundary. Consider the following example taken from [Christopher Olah's blog](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
 
-![spiral data](/linear-discriminant-analysis/spiral_data.gif)
+![spiral data](/engineering-education/linear-discriminant-analysis/spiral_data.gif)
 
 The other approach is to consider features that add maximum value to the process of modeling and prediction. If any feature is redundant, then it is dropped, and hence the dimensionality reduces. LDA is one such example. 
 
@@ -73,7 +73,7 @@ The aim of LDA is:
 
 Below is a picture to help explain:
 
-![LDA](/linear-discriminant-analysis/lda.png)
+![LDA](/engineering-education/linear-discriminant-analysis/lda.png)
 
 [*Image Source*](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Data_Compresssion_via_Dimensionality_Reduction_2_Linear_Discriminant_Analysis.php)
 
@@ -150,7 +150,7 @@ print("Original Data Size:",X_train.shape, "\nModified Data Size:", X_train_modi
 ```
 The output of the code should look like the image given below. The iris dataset has 3 classes. Observe the 3 classes and their relative positioning in a lower dimension.
 
-![output of code](/linear-discriminant-analysis/output.jpg)
+![output of code](/engineering-education/linear-discriminant-analysis/output.jpg)
 
 ### Conclusion
 In this article, we have looked at implementing the Linear Discriminant Analysis (LDA) from scratch. I suggest you implement the same on your own and check if you get the same output. Another fun exercise would be to implement the same algorithm on a different dataset. I hope you enjoyed reading this tutorial as much as I enjoyed writing it. Happy learning.

@@ -435,11 +435,11 @@ li:last-child {
 
 The image below shows the initial screen before selecting the breed of the dog and the image limit.
 
-![Output Screen 1](/why-you-should-use-celery-with-rabbitmq/gendog1.png)
+![Output Screen 1](/engineering-education/why-you-should-use-celery-with-rabbitmq/gendog1.png)
 
 Here, we see the rendering of dog images on the screen. The images rendered are the breed we selected in the previous screen.
 
-![Output Screen 2](/why-you-should-use-celery-with-rabbitmq/gendog2.png)
+![Output Screen 2](/engineering-education/why-you-should-use-celery-with-rabbitmq/gendog2.png)
 
 With our code setup and everything in order, the last 2 steps are starting the celery worker and our flask server.
 

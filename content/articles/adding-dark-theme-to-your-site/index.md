@@ -69,7 +69,7 @@ We are creating a simple webpage consisting of a container, in which we also add
 </html>
 ```
 
-![Output - HTML page](/adding-dark-theme-to-your-site/html-page.PNG)
+![Output - HTML page](/engineering-education/adding-dark-theme-to-your-site/html-page.PNG)
 
 *HTML page*
 
@@ -141,7 +141,7 @@ body {
 }
 ```
 
-![Output After Adding CSS](/adding-dark-theme-to-your-site/after-adding-css.png)
+![Output After Adding CSS](/engineering-education/adding-dark-theme-to-your-site/after-adding-css.png)
 
 *Output after adding CSS styling*
 
@@ -196,7 +196,7 @@ label:active:after {
 }
 ```
 
-![Toggle theme switch](/adding-dark-theme-to-your-site/toggle-switch.png)
+![Toggle theme switch](/engineering-education/adding-dark-theme-to-your-site/toggle-switch.png)
 
 *Toggle theme*
 
@@ -259,7 +259,7 @@ checkbox.addEventListener('change', () => {
 });
 ```
 
-![Dark Theme](/adding-dark-theme-to-your-site/dark-theme.png)
+![Dark Theme](/engineering-education/adding-dark-theme-to-your-site/dark-theme.png)
 
 *Dark theme webpage*
 

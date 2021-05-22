@@ -21,13 +21,13 @@ How can we find the fastest way from point A to point B? Solving problems like t
 
 ### What is a Graph?
 
-![Picture of a graph. The black circles are vertices and the red lines are edges.](normal_graph.png)
+![Picture of a graph. The black circles are vertices and the red lines are edges.](/engineering-education/breadth-first-search/normal_graph.png)
 
 This is a graph. Unlike in a tree, a graph is allowed to have circular references. Each point of the graph is called a *vertex*. The lines that connect the vertices are called *edges*.
 
 Some graphs may be *weighted*, meaning that some edges are longer than others. Some edges may be *directed*, as in, the connection can only go in one direction.
 
-![A graph with weights and directed edges](complex_graph.png)
+![A graph with weights and directed edges](/engineering-education/breadth-first-search/complex_graph.png)
 
 We’ll be focusing on unweighted graphs because BFS isn’t very useful otherwise. BFS can work on directed graphs, but figuring how to do that will be left as an exercise to the reader.
 
@@ -56,7 +56,7 @@ class Vertex {
 }
 ```
 
-A graph can be a HashMap containing a name for each vertex, and the vertex. If you don't know what a HashMap is, you may want to look at [this article](https://www.section.io/engineering-education/data-structures-python-part-1/).
+A graph can be a HashMap containing a name for each vertex, and the vertex. If you don't know what a HashMap is, you may want to look at [this article](/engineering-education/data-structures-python-part-1/).
 
 ```java
 class Graph {
@@ -154,18 +154,18 @@ public LinkedList<Vertex> breadthFirstSearch(String start, String end) {
 ```
 **The next several images demonstrate how exactly this code works:**
 
-![](/breadth-first-search/demo2_1.png)
+![](/engineering-education/breadth-first-search/demo2_1.png)
 
-![](/breadth-first-search/demo2_2.png)
+![](/engineering-education/breadth-first-search/demo2_2.png)
 
-![](/breadth-first-search/demo2_3.png)
+![](/engineering-education/breadth-first-search/demo2_3.png)
 
-![](/breadth-first-search/demo2_4.png)
+![](/engineering-education/breadth-first-search/demo2_4.png)
 
-![](/breadth-first-search/demo2_5.png)
+![](/engineering-education/breadth-first-search/demo2_5.png)
 
 ### Solving the Maze
 
 In case you were wondering, all you would need to do to solve a maze with this is to turn it into a graph
 
-![A maze. The maze contains a lot of black circles with letters inside of them, connected by red lines](/breadth-first-search/maze.png)
+![A maze. The maze contains a lot of black circles with letters inside of them, connected by red lines](/engineering-education/breadth-first-search/maze.png)

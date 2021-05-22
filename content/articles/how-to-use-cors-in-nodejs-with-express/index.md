@@ -19,7 +19,7 @@ Express allows you to configure and manage an HTTP server to access resources fr
 
 The three parts that form an [origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) are protocal, domain, and port.
 
-![The CORS origin concept](/how-to-use-cors-in-nodejs-with-express/origin.jpg)
+![The CORS origin concept](/engineering-education/how-to-use-cors-in-nodejs-with-express/origin.jpg)
 
 Today, there are many applications that depend on APIs to access different resources. Some of the popular APIs include weather, time, and fonts. There are also servers that host these APIs and ensure that information is delivered to websites and other end points. Therefore, making cross-origin calls, is a popular use case for the modern web application.
 
@@ -43,11 +43,11 @@ An API is a set procedure for two programs to communicate. This means that API r
 
 Here are two scenarios:
 
-![The CORS same-origin concept](/how-to-use-cors-in-nodejs-with-express/same-origin.jpg)
+![The CORS same-origin concept](/engineering-education/how-to-use-cors-in-nodejs-with-express/same-origin.jpg)
 
 The client and the server have the same origin. In this example, accessing resources will be successful. You're trying to access resources on your server, and the same server handles the request.
 
-![The CORS cross-origin concept](/how-to-use-cors-in-nodejs-with-express/diffrent-origin.jpg)
+![The CORS cross-origin concept](/engineering-education/how-to-use-cors-in-nodejs-with-express/diffrent-origin.jpg)
 
 The client and server have a different origin from each other, i.e., accessing resources from a different server. In this case, trying to make a request to a resource on the other server will fail. 
 
@@ -116,7 +116,7 @@ Make sure the server is up and running before performing the request above.
 
 We are fetching the ingredients information from another origin domain. The origin of this URL is not the one allowed to receive this response from this server. Therefore, it will throw the below CORS error.
 
-![CORS policy error](/how-to-use-cors-in-nodejs-with-express/cors-policy-error.jpg)
+![CORS policy error](/engineering-education/how-to-use-cors-in-nodejs-with-express/cors-policy-error.jpg)
 
 To solve this error, we need to add the CORS header to the server and give `https://www.section.io` access to the server response.
 
@@ -133,7 +133,7 @@ If you now perform the fetch command, it should work fine.
 
 However, if a fetch request is made from another web page, it will fail and throw the following error.
 
-![Cors policy header error](/how-to-use-cors-in-nodejs-with-express/cors-error-policy-header.jpg)
+![Cors policy header error](/engineering-education/how-to-use-cors-in-nodejs-with-express/cors-error-policy-header.jpg)
 
 This means that you only have access to our server's resources. You can have an array of these multiple origins, as shown below.
 

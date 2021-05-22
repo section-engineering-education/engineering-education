@@ -169,49 +169,49 @@ A success message: Server is Listening on https://localhost:3000 will be display
 ### Step 4: Test in a browser and API client
 Now that our server is serving up our SSL, we can try our <https://localhost:3000> link in our Firefox browser as shown below:
 
-![firefox not secure](/how-to-get-ssl-https-for-localhost/firefox-not-secure.PNG)
+![firefox not secure](/engineering-education/how-to-get-ssl-https-for-localhost/firefox-not-secure.PNG)
 
 We are close but not finished yet. Even after serving up our localhost with SSL and inspecting the signed certificate, Firefox would not trust the CA that signed this certificate, which is correct; we cannot be trusted as a CA.
 
 To deal with this, we first test our link with Postman as below:
 
-![postman error](/how-to-get-ssl-https-for-localhost/postman-error.PNG)
+![postman error](/engineering-education/how-to-get-ssl-https-for-localhost/postman-error.PNG)
 
 As can be seen above, the SSL certificate cannot be verified.
 
 ### Step 5: Importing CA Certificate to the browser
 For the browser to trust the CA certificate we created, there is a need to import the certificate. In Firefox, open *Options*, and navigate to *Privacy and Security* and click on *View Certificates* as shown below:
 
-![firefox privacy settings](/how-to-get-ssl-https-for-localhost/firefox-privacy-settings.PNG)
+![firefox privacy settings](/engineering-education/how-to-get-ssl-https-for-localhost/firefox-privacy-settings.PNG)
 
 Then click on import and choose the `CA.pem` and check the checkbox to trust the CA that has been just imported, and then click Ok.
 
 Next, we will test it in Firefox as demonstrated below:
 
-![firefox-secure](/how-to-get-ssl-https-for-localhost/firefox-secure.PNG)
+![firefox-secure](/engineering-education/how-to-get-ssl-https-for-localhost/firefox-secure.PNG)
 
 The browser is now ok, and they trust our CA and the certificate.
 
 ### Step 6: Configuring and testing the API Client
 The process of configuring the API Client is the same as the browser, and the difference is one has to disable certificate validation. In Postman settings, make sure that SSL certificate verification is turned off.
 
-![postman ssl off](/how-to-get-ssl-https-for-localhost/postman-ssl-off.PNG)
+![postman ssl off](/engineering-education/how-to-get-ssl-https-for-localhost/postman-ssl-off.PNG)
 
 Then we resend the request in Postman, and the results will be:
 
-![postman success](/how-to-get-ssl-https-for-localhost/postman-success.PNG)
+![postman success](/engineering-education/how-to-get-ssl-https-for-localhost/postman-success.PNG)
 
 We have been able to get a **200 OK** message, which is good at this stage. However, the problem is we still have red security warning because our SSL certificate is off. 
 
 The warning in details will look like this below:
 
-![postman red security error](/how-to-get-ssl-https-for-localhost/postman-red-security-error.PNG)
+![postman red security error](/engineering-education/how-to-get-ssl-https-for-localhost/postman-red-security-error.PNG)
 
 To solve this issue, we can add our CA to Postman. In the Postman settings, make sure that CA certificates are turned on and select the `CA.pem` file.
 
 Then rerun the request as shown below; this time, we will have a secure **200 OK** message.
 
-![postman success cert](/how-to-get-ssl-https-for-localhost/postman-success-cert.png)
+![postman success cert](/engineering-education/how-to-get-ssl-https-for-localhost/postman-success-cert.png)
 
 ### Conclusion
 In this guide, we have seen it is possible to have localhost served up with SSL. With the guide, we have been able to set the CA and used it to sign the SSL certificate. We changed the browser settings as well as the API client settings for them to accept the certificate.

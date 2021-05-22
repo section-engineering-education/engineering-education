@@ -485,11 +485,11 @@ High order functions are regular functions with the ability to accept other func
 
 If you have ever written a function that takes another function as an argument:
 
-![image title](/javascript-higher-order-functions//function-as-an-argument.png)
+![image title](/engineering-education/javascript-higher-order-functions//function-as-an-argument.png)
 
 Or a function that returns another function:
 
-![image title](/javascript-higher-order-functions/value-of-another-function.png)
+![image title](/engineering-education/javascript-higher-order-functions/value-of-another-function.png)
 
 You have actually applied a concept of high order function.
 

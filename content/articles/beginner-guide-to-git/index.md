@@ -62,7 +62,7 @@ $ git clone [url]
 ```
 
 Here's how to execute **git clone** command:
-![clone](/beginner-guide-to-git/clone.png)
+![clone](/engineering-education/beginner-guide-to-git/clone.png)
 
 ### Creating files
 You can use the git command to make the source code file in the folder. We can create a file with any extension by stating its type. Here's how to do it:
@@ -80,7 +80,7 @@ $ git status
 ```
 
 Here's how to execute **git status** command:
-![status](/beginner-guide-to-git/status.png)
+![status](/engineering-education/beginner-guide-to-git/status.png)
 
 
 ### Adding some files to the staging area
@@ -117,7 +117,7 @@ $ git commit -m "Anything you want to write"
 
 Here's how to execute add and commit:
 
-![add & commit](/beginner-guide-to-git/add-commit.png)
+![add & commit](/engineering-education/beginner-guide-to-git/add-commit.png)
 
 ### Pushing your code in the cloud
 This command helps to push all the local branches to GitHub. After this, you will be able to see your changes in your GitHub repo. This way, you would be able to keep track of all your source code by keeping it safe in the cloud.
@@ -127,7 +127,7 @@ $ git push
 
 Here's how to execute push:
 
-![push](/beginner-guide-to-git/push.png)
+![push](/engineering-education/beginner-guide-to-git/push.png)
 
 
 ### Getting your files into the working directory
@@ -138,7 +138,7 @@ $ git pull
 
 Here's how to execute the pull command:
 
-![pull](/beginner-guide-to-git/pull.png)
+![pull](/engineering-education/beginner-guide-to-git/pull.png)
 
 ### Conclusion
 Congratulations! Now you have a better understanding of the basics of Git and should be able to work on your projects, or in a group in a much more synchronized way.

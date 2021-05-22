@@ -505,7 +505,7 @@ We created three different route groups with a different prefix assigned to each
 
 You can test out your API immediately by using either [Postman](https://www.postman.com/) client or [Hoppscotch](https://hoppscotch.io/) on your browser before developing the frontend.
 
-![Test the API](/build-a-ticketing-app-with-adonisjs-and-vuejs/buildpreview.png)
+![Test the API](/engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/buildpreview.png)
 
 *Testing the API using Postman*
 

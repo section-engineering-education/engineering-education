@@ -47,7 +47,7 @@ Heaps are complete binary trees. Complete binary trees satisfy the following con
 - All levels are filled, except the last.
 - All the nodes are as far left as possible.
 
-![Complete Binary Tree](/heap-data-structure-python/complete-binary-tree.png)
+![Complete Binary Tree](/engineering-education/heap-data-structure-python/complete-binary-tree.png)
 
 *[Figure: Complete Binary Tree](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
@@ -88,7 +88,7 @@ A heap has the following methods:
 #### Maxheap using List
 We are going to do the list implementation of a heap. In this, the heap's level-order traversal would be stored as an array/list.
 
-![Level Order Traversal](/heap-data-structure-python/level-order-traversal.png)
+![Level Order Traversal](/engineering-education/heap-data-structure-python/level-order-traversal.png)
 
 *[Figure: Level-Order Traversal](https://qph.fs.quoracdn.net/main-qimg-0ddd0cbca44f70d7845cc2caba5a0853)*
 

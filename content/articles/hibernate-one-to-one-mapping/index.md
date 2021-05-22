@@ -48,7 +48,7 @@ mysql -u username -p
 
 A prompt will ask for your password and on entering, access will be granted showing the information below.
 
-![MySQL login](mysql-login.png)
+![MySQL login](/engineering-education/hibernate-one-to-one-mapping/mysql-login.png)
 
 Maven is a build tool for managing Java projects. Maven is based on the project object model (POM) which is an XML file containing configuration details and information about the project. 
 
@@ -68,7 +68,7 @@ Click Finish to generate a new maven project that contains all the files to be u
 
 In IntelliJ click file, new, project, and on the window that opens select maven, then click next and give your project a name. This will create a new maven project which has the following structure.
 
-![maven structure](maven-structure.png)
+![maven structure](/engineering-education/hibernate-one-to-one-mapping/maven-structure.png)
 
 Add the following dependencies to the file named pom.xml after the properties closing tag.
 
@@ -424,7 +424,7 @@ select * from customer;
 
 The new customer entry will be returned by the query and note the sub_id is null.
 
-![create customer](create-customer.png)
+![create customer](/engineering-education/hibernate-one-to-one-mapping/create-customer.png)
 
 
 #### Retrieving customer by id and assigning a new subscription to the customer using a setter method
@@ -477,7 +477,7 @@ public class CreateCustomerSubscription {
 
 A new record will be inserted in the subscription table and the customer sub_id column will be updated with the foreign key id referencing subscription that the customer was set to. This is because of the CascadeType.ALL which was set in the customer class.
 
-![customer subscription](customer-subscription.png)
+![customer subscription](/engineering-education/hibernate-one-to-one-mapping/customer-subscription.png)
 
 #### Retrieving customer by id and deleting to see cascade delete applied to the subscription
 
@@ -528,7 +528,7 @@ public class DeleteSubscription {
 
 Deleting a subscription will maintain the customer due to CascadeType.REMOVE being left out in subscription class.
 
-![deleting subscription](deleting-subscription.png)
+![deleting subscription](/engineering-education/hibernate-one-to-one-mapping/deleting-subscription.png)
 
 The subscription table will return an empty set while the customer table column sub_id will be updated to null.
 
@@ -582,7 +582,7 @@ public class UpdateCustomer {
 }
 ```
 
-![updating customer](updating-customer.png)
+![updating customer](/engineering-education/hibernate-one-to-one-mapping/updating-customer.png)
 
 ### Conclusion
 By covering and implementing these operations, a reader should be more confident to approach a one-to-one Hibernate task and deliver as required. 

@@ -36,29 +36,29 @@ pip install faunadb telegram python_telegram_bot
 ### Setting up the Fauna database
 Sign up on their website [here](https://dashboard.fauna.com/accounts/register) and create a new database with a name of your choice. This database will house the collections, documents, and other database elements relevant to this article.
 
-![database_dashboard](/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
+![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
 #### Setting up the Fauna collections
 The two collections you will need to create are the `Users` collection and the `Appointment` collection. Visit [here](https://gist.github.com/Chukslord1/734cbaa32324eba23fa2d359b7fb33e0) for information about creating the required collections.
 
-![create_collection](/building-an-appointment-scheduling-telegram-bot/create_collection.png)
+![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 #### Setting up the Fauna indexes
 To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. 
 
 Also visit [these](https://gist.github.com/Chukslord1/58430aaf25f1ce32b1d872d2b5e2547b) instructions on creating an index.
 
-![create_index](/building-an-appointment-scheduling-telegram-bot/create_index.png)
+![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
-![indexes](/building-an-appointment-scheduling-telegram-bot/indexes.png)
+![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
 ### Connecting Fauna to Python
 #### Setting up a Fauna API key
 Visit [here](https://gist.github.com/Chukslord1/17add481d7511b1b24ae33f8ef87c99b) for information on how to create and setup an API key. 
 
-![new_key](/building-an-appointment-scheduling-telegram-bot/new_key.png)
+![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
-![key](/building-an-appointment-scheduling-telegram-bot/key.png)
+![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
 ### Creating the Telegram Bot
 To learn how to create a telegram bot visit [here](https://gist.github.com/Chukslord1/f32d8178327705ba9104e3366a2cce95).
@@ -136,11 +136,11 @@ python app.py
 
 While your Python app is running, open your telegram app and search for the bot you created.
 
-![search_bot](/building-an-appointment-scheduling-telegram-bot/search_bot.png)
+![search_bot](/engineering-education/building-an-appointment-scheduling-telegram-bot/search_bot.png)
 
 Open your bot and start it by typing in the `/start` command. You will now receive a welcome message from the bot, as seen in the image below:
 
-![start_bot](/building-an-appointment-scheduling-telegram-bot/start_bot.png)
+![start_bot](/engineering-education/building-an-appointment-scheduling-telegram-bot/start_bot.png)
 
 #### Creating new appointments
 Now we will enable your telegram bot to create new appointments in the fauna database.
@@ -191,7 +191,7 @@ dispatcher.add_handler(CommandHandler("add_appointment", add_appointment))
 dispatcher.add_handler(MessageHandler(Filters.text, echo))
 ```
 
-![add_appointment](/building-an-appointment-scheduling-telegram-bot/add_appointment.png)
+![add_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/add_appointment.png)
 
 #### Listing appointments
 The following part will provide the feature of listing all the appointments saved for a user.
@@ -223,7 +223,7 @@ The update link is created by attaching `/update_` to the appointment’s id, wh
 
 If the query retrieved contains no data, this means the `event_message` is empty. Then, you sent a message to the user stating that the user has no appointments saved.
 
-![list_appointment](/building-an-appointment-scheduling-telegram-bot/list_appointment.png)
+![list_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/list_appointment.png)
 
 ```python
 def list_today_appointments(update, context):
@@ -257,7 +257,7 @@ dispatcher.add_handler(CommandHandler("list_appointments", list_appointments))
 dispatcher.add_handler(CommandHandler("list_today_appointments", list_today_appointments))
 ```
 
-![list_today_appointment](/building-an-appointment-scheduling-telegram-bot/list_today_appointment.png)
+![list_today_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/list_today_appointment.png)
 
 #### Updating appointments
 Now you will enable your bot to update appointments in the database.
@@ -293,7 +293,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/update_[0-9]*"), update_ap
 
 ```
 
-![update_appointment](/building-an-appointment-scheduling-telegram-bot/update_appointment.png)
+![update_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/update_appointment.png)
 
 #### Deleting appointments
 Now you will enable your bot to delete appointments from the database.
@@ -314,7 +314,7 @@ You set the `delete_appointment` method to get triggered by a message handler th
 dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_appointment))
 ```
 
-![delete_appointment](/building-an-appointment-scheduling-telegram-bot/delete_appointment.png)
+![delete_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/delete_appointment.png)
 
 ### Conclusion
 In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to use Fauna as the database in our python application.

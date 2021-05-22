@@ -43,11 +43,11 @@ Walmart Labs has written a well detailed [blog](https://medium.com/walmartglobal
 
 The two diagrams mentioned below detail the processes involved in server-side rendering and client-side rendering. We observe that server-side rendered applications are one step ahead of client-side rendered applications. They display the HTML and then load the JS files, therefore enhancing the user experience in terms of performance and loading time. It also falls in line with the 7 principles listed above.
 
-![](/node-versus-next-react-approach/ssr.jpg)
+![](/engineering-education/node-versus-next-react-approach/ssr.jpg)
 
 [Image Source](medium.com)
 
-![](/node-versus-next-react-approach/csr.jpg)
+![](/engineering-education/node-versus-next-react-approach/csr.jpg)
 
 [Image Source](medium.com)
 
@@ -118,7 +118,7 @@ nextsampleproject
 
 8. HTML files received when loading an application built using Next.js are shown in the figure below. The website you are viewing this blog on, is client-side rendered. Let's do something fun. Press **Cltrl+Shift+I** to access the developer tools and click on the **elements** option. You will find a *short piece of HTML* calling JS files as and when user inputs are received. Review the differences between the HTML file that you observe in the console and the image shown below.
 
-![](/node-versus-next-react-approach/ssr_lookup.jpg)
+![](/engineering-education/node-versus-next-react-approach/ssr_lookup.jpg)
 *Screenshot of the HTML rendered on Server-Side.*
 
 9. SSR enables enhanced Search-Engine-Optimization. SEO is easily performed using Next because search engines have more data to parse through. This helps websites stand out within search engines.

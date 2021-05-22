@@ -108,7 +108,7 @@ In this article, we will learn how to configure ether channels using the two pro
 
 Consider a network with three switches connected and 3 PCs each connected to a switch as shown:
 
-![EtherChannel Network](/etherchannel-technology/network-setup.jpg)
+![EtherChannel Network](/engineering-education/etherchannel-technology/network-setup.jpg)
 
 We have to configure the network to use one logical link instead of the two Fast Ethernet (Fa) links connecting the switches. 
 
@@ -289,7 +289,7 @@ S3(config-if)#do write
 
 With all the configurations done, we have created our ether channel. We can now verify if the port-channel exists and test if the PCs can communicate through the channels created.
 
-![EtherChannel Configured Network](/etherchannel-technology/etherchannel-configuration.jpg)
+![EtherChannel Configured Network](/engineering-education/etherchannel-technology/etherchannel-configuration.jpg)
 
 
 ### Step Four - EtherChannel verification
@@ -327,11 +327,11 @@ That is:
 - PC4 - 192.168.1.2
 - PC5 - 192.168.1.3
 
-![Static IP addressing](/etherchannel-technology/static-ip-addressing.jpg)
+![Static IP addressing](/engineering-education/etherchannel-technology/static-ip-addressing.jpg)
 
 Now let's ping `PC5` from `PC3.` It should send replies as shown.
 
-![Ping Connectivity](/etherchannel-technology/ping-pc.jpg)
+![Ping Connectivity](/engineering-education/etherchannel-technology/ping-pc.jpg)
 
 ### Troubleshooting EtherChannel
 In case the ether channel link is not operational, we can troubleshoot to find the errors and try to fix them.

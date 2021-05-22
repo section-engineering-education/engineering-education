@@ -20,11 +20,11 @@ You may have come across a website with a background effect that slightly look l
 
 [Example1:](https://codepen.io/matteobruni/pen/OJVZvPP)
 
-![image](/javascript-particles-effect-with-tsparticles/example1.gif)
+![image](/engineering-education/javascript-particles-effect-with-tsparticles/example1.gif)
 
 [Example2:](https://codepen.io/matteobruni/pen/BaNwOzB)
 
-![tsParticles Effect](/javascript-particles-effect-with-tsparticles/example2.gif)
+![tsParticles Effect](/engineering-education/javascript-particles-effect-with-tsparticles/example2.gif)
 
 [tsParticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help you include this type of animation into your websites. tsParticles is a lightweight animation library. As the name suggests, the library enables you move tiny particles on your web background, with many other fancy features.
 
@@ -141,11 +141,11 @@ The number can vary as you practice and create more of a different background. T
 
 For example:
 
-![index.html Browsed Page](/javascript-particles-effect-with-tsparticles/local-file-browser.png)
+![index.html Browsed Page](/engineering-education/javascript-particles-effect-with-tsparticles/local-file-browser.png)
 
 You will notice that there are no particles loaded. This is because we need to make sure we are using the live-server provided with your text editor when opening the `index.html` files.
 
-![index.html Served Page](/javascript-particles-effect-with-tsparticles/server-browser.png)
+![index.html Served Page](/engineering-education/javascript-particles-effect-with-tsparticles/server-browser.png)
 
 For example:
 
@@ -336,11 +336,11 @@ If you serve `index.html` , you should be seeing a background close to the sampl
 
 #### Using Circular Shapes with Randomized colors
 
-![Color Particles](/javascript-particles-effect-with-tsparticles/circular-randomized-colors.gif)
+![Color Particles](/engineering-education/javascript-particles-effect-with-tsparticles/circular-randomized-colors.gif)
 
 #### Using Bubbled Array Images as the Shape
 
-![Bubbled Particles](/javascript-particles-effect-with-tsparticles/bubbled-image.gif)
+![Bubbled Particles](/engineering-education/javascript-particles-effect-with-tsparticles/bubbled-image.gif)
 
 ### Particle Linking
 
@@ -358,7 +358,7 @@ links: {
 },
 ```
 
-![Particle Linking](/javascript-particles-effect-with-tsparticles/linked-particles.gif)
+![Particle Linking](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Interactivity
 
@@ -494,7 +494,7 @@ tsParticles.load("tsparticles", {
 });
 ```
 
-![Particles Interactivity](/javascript-particles-effect-with-tsparticles/linked-particles.gif)
+![Particles Interactivity](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Application Example
 
@@ -815,7 +815,7 @@ tsParticles.load("tsparticles", {
 
 ##### Output
 
-![Particles Background Application](/javascript-particles-effect-with-tsparticles/form.gif)
+![Particles Background Application](/engineering-education/javascript-particles-effect-with-tsparticles/form.gif)
 
 [***Sample source***](https://codepen.io/matteobruni/pen/xxGXELa)
 

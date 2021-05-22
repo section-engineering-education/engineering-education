@@ -52,7 +52,7 @@ YOLO algorithm works using the following three techniques:
 #### Residual blocks
 First, the image is divided into various grids. Each grid has a dimension of S x S. The following image shows how an input image is divided into grids. 
 
-![Grids](/introduction-to-yolo-algorithm-for-object-detection/grids.png)
+![Grids](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/grids.png)
 
 [Image Source](https://www.guidetomlandai.com/assets/img/computer_vision/grid.png)
 
@@ -69,7 +69,7 @@ Every bounding box in the image consists of the following attributes:
 
 The following image shows an example of a bounding box. The bounding box has been represented by a yellow outline. 
 
-![Bounding Box](/introduction-to-yolo-algorithm-for-object-detection/bounding-box.png)
+![Bounding Box](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/bounding-box.png)
 
 [Image Source](https://appsilondatascience.com/assets/uploads/2018/08/bbox-1.png)
 
@@ -82,7 +82,7 @@ Each grid cell is responsible for predicting the bounding boxes and their confid
 
 The following image provides a simple example of how IOU works. 
 
-![IOU](/introduction-to-yolo-algorithm-for-object-detection/iou.jpeg)
+![IOU](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/iou.jpeg)
 
 [Image Source](https://miro.medium.com/max/640/1*VuAsK1Wwa_mOxW2nK2UovQ.jpeg)
 
@@ -91,7 +91,7 @@ In the image above, there are two bounding boxes, one in green and the other one
 #### Combination of the three techniques
 The following image shows how the three techniques are applied to produce the final detection results.
 
-![How YOLO Algorithm Works](/introduction-to-yolo-algorithm-for-object-detection/how-yolo-algorithm-works.jpg)
+![How YOLO Algorithm Works](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/how-yolo-algorithm-works.jpg)
 
 [Image Source](https://www.guidetomlandai.com/assets/img/computer_vision/YOLO.PNG)
 

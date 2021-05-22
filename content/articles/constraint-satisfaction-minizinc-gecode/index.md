@@ -62,7 +62,7 @@ One example is any problem involving a graph, or a network of nodes.
 
 In the graph below, there are 5 nodes, and several connections between them. Each connection has a "cost", given by its number. In real life, each node could be a city (city 1, city 2, etc.), and each connection a road with a cost. So the road from city 1 to city 2 costs $2 toll (or takes 2 hours) to drive on.
 
-![TSP](/constraint-satisfaction-minizinc-gecode/tsp.gif)
+![TSP](/engineering-education/constraint-satisfaction-minizinc-gecode/tsp.gif)
 
 
 *Image source:[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Example_The_travelling_salesman_problem_(TSP).gif)*
@@ -86,7 +86,7 @@ Other problems break down to CSP components in a similar fashion, including "sch
 ### Our example problem: Map-coloring
 Map-coloring is easy to convert into a Constraint-Satisfaction Problem. Here, you want to color countries or states on a map, *without* coloring two touching states with the same color. We will find such a coloring style for the map below of the United States. We only look at the continental 48 states only, so we will exclude Alaska, Hawaii, and the territories.
 
-![us map](/constraint-satisfaction-minizinc-gecode/United_States_Public_Domain_Map.jpg)
+![us map](/engineering-education/constraint-satisfaction-minizinc-gecode/United_States_Public_Domain_Map.jpg)
 
 *Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:United_States_Public_Domain_Map.svg)*
 
@@ -106,7 +106,7 @@ If you don't see your OS, or need a 32-bit version, look for an alternative rele
 
 In this tutorial, we use MiniZinc 2.5.3 on Windows 10.
 
-![IMG1](/constraint-satisfaction-minizinc-gecode/img1.png)
+![IMG1](/engineering-education/constraint-satisfaction-minizinc-gecode/img1.png)
 
 Once you've downloaded the installer (named something like `MiniZincIDE-2.5.3-bundled-setup-win64.exe` in your Downloads folder), click to run it. 
 
@@ -116,7 +116,7 @@ A window will pop up asking for automatic-update checking. Click "No" unless you
 
 Finally, you will see an untitled MiniZinc project that looks something like this:
 
-![IMG2](/constraint-satisfaction-minizinc-gecode/img2.png)
+![IMG2](/engineering-education/constraint-satisfaction-minizinc-gecode/img2.png)
 
 Note that the "Solver configuration" in the top right corner says "Gecode 6.3.0". That's exactly what we want, as we're using Gecode as our solver. 
 

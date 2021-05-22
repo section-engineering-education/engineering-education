@@ -40,7 +40,7 @@ If the cost function represents this axis, we aim to establish the local minimum
 
 The following diagram shows a simple state-space diagram. The objective function has been shown on the y-axis, while the state-space represents the x-axis.
 
-![Hill Climbing Algorithm in AI](/understanding-hill-climbing-in-ai/hill-climbing-algorithm-in-ai.png)
+![Hill Climbing Algorithm in AI](/engineering-education/understanding-hill-climbing-in-ai/hill-climbing-algorithm-in-ai.png)
 
 [Image Source: Javat Point](https://static.javatpoint.com/tutorial/ai/images/hill-climbing-algorithm-in-ai.png)
 
@@ -64,7 +64,7 @@ In this region, the values attained by the neighboring states are the same. This
 
 This challenge can be overcome by taking a huge jump that will lead you to a non-plateau space. 
 
-![Plateau](/understanding-hill-climbing-in-ai/plateau.png)
+![Plateau](/engineering-education/understanding-hill-climbing-in-ai/plateau.png)
 
 [Image Source: Tutorial and Example](https://www.tutorialandexample.com/wp-content/uploads/2019/07/Plateau.png)
 
@@ -73,7 +73,7 @@ The hill-climbing algorithm may terminate itself when it reaches a ridge. This i
 
 This impediment can be solved by going in different directions at once. 
 
-![Ridge in Hill Climbing](/understanding-hill-climbing-in-ai/ridge-in-hill-climbing.png)
+![Ridge in Hill Climbing](/engineering-education/understanding-hill-climbing-in-ai/ridge-in-hill-climbing.png)
 
 [Image Source: VietMX Blog](https://www.maixuanviet.com/wp-content/uploads/2020/05/hill-climbing-algorithm-in-ai4.png)
 

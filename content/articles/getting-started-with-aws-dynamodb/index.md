@@ -60,7 +60,7 @@ To get access keys:
 
 - Navigate to users and select `add user` as shown in the screenshot.
 
-![AWS adding IAM user](/getting-started-with-aws-dynamodb/aws-adding-iam-user.jpg)
+![AWS adding IAM user](/engineering-education/getting-started-with-aws-dynamodb/aws-adding-iam-user.jpg)
 
 - Create an access key.
 - In the next steps, follow the instructions on screen.
@@ -92,7 +92,7 @@ aws configure
 
 You will be prompted to enter the values as shown in the screenshot below.
 
-![AWS CLI configure](/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
+![AWS CLI configure](/engineering-education/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
 
 Make sure you replace the values with your correct values. The user used in this exercise should have the role of `AmazonDynamoDBFullAccess`. Now you can run some commands such as create a table, delete table, among others. Follow [AWS DynamoDB CLI user guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-dynamodb.html) for the commands syntax.
 
@@ -231,7 +231,7 @@ The response is in a JSON format.
 
 You can have a better view of the data we inserted on the AWS console. In your logged in AWS console, navigate to the DynamoDB table we created as shown in the screenshot below.
 
-![AWS console DynamoDB query](/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
+![AWS console DynamoDB query](/engineering-education/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
 
 #### Update
 In this scenario, our table does not require an update operation.

@@ -24,7 +24,7 @@ Let us start by getting a better understanding of what Node.js is. Node.js is a 
 Ryan Dahl, the creator of [Node.js](https://en.wikipedia.org/wiki/Node.js), opted to use one of the most popular programming languages out there, JavaScript.
 Node.js increased the overall control developers had over applications. Developers can exercise a greater level of control over system calls, database calls, and network calls. Hence, we as developers can achieve better performing and feature-rich web applications. JavaScript is still one of the most preferred programming language across the world. As the StackOverflow survey results below can demonstrate. This feat achieved by JavaScript enables faster progress for all the libraries and frameworks associated with JS, including Node.js.
 
-![](/nodejs-frontend-backend/stackoverflowresults.jpg)
+![](/engineering-education/nodejs-frontend-backend/stackoverflowresults.jpg)
 *[Image Source](https://insights.stackoverflow.com/survey/2020)*
 
 <!-- Frontend -->

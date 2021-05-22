@@ -61,7 +61,7 @@ If a routing protocol uses Hop count as its metric, then the path with the least
 This path is then added to the routing table if there is no other routing protocol with less administrative distance.
 RIP uses hop count as its metric.
 
-![Hop count](/understanding-static-dynamic-routing/hop.jpg)
+![Hop count](/engineering-education/understanding-static-dynamic-routing/hop.jpg)
 
 In the image above, a sub-network-A device wants to reach another in sub-network-B; using hop count as its metric; the network will use Route 1 because it has the least Hop count value (2).
 
@@ -75,14 +75,14 @@ For a protocol that uses bandwidth capacity as its metric, the protocol determin
 
 Because metric can depend on single or many characteristics, Enhanced Interior Gateway Routing Protocol (EIGRP) uses a composite of bandwidth and delay to calculate its metric.
 
-![Bandwidth](/understanding-static-dynamic-routing/bandwidth.jpg)
+![Bandwidth](/engineering-education/understanding-static-dynamic-routing/bandwidth.jpg)
 
 In the figure above, Router 6 will prefer to send its traffic through router 8 rather than send it through router 7 because the route through router 8 has a higher bandwidth.
 
 #### Load
 Network load refers to the extent to which a network resource like a router or link between networks is used at any given period. For protocols that use load as their metric, the path with the least load is considered the best and added to the routing table to transmit the datagram to the destination subnet.
 
-![Load](/understanding-static-dynamic-routing/load.jpg)
+![Load](/engineering-education/understanding-static-dynamic-routing/load.jpg)
 
 ### Routing decision
 The primary function of a router is to forward a packet to its destination. The router achieves this by encapsulating the IP packet with the appropriate data link frame type of the egress port. This encapsulation happens after the router has determined the exit interface associated with the best path to forward that packet. 
@@ -99,7 +99,7 @@ The method of sending data to a destination sub-network using two or more paths 
 
 Load balancing is possible because a routing table can contain many paths associated with different exit interfaces of a router having an equal metric or cost path.
 
-![Load balancing](/understanding-static-dynamic-routing/load.jpg)
+![Load balancing](/engineering-education/understanding-static-dynamic-routing/load.jpg)
 
 In the figure above, the network uses RIP as its routing protocol. To send traffic to Sub-network B, Router 6 will distribute its traffic to Route 1 and 4 because they have an equal metric. For a well-configured network, load balancing increases the network's effectiveness and performance for both static and dynamic routes.
 
@@ -152,12 +152,12 @@ This route includes a destination host address, its corresponding network mask, 
 A default static route is used to send packets when an explicit route is not present in the routing table. This route is configured with 0.0.0.0/0 as its destination IPV4 address.
 
 By configuring a default static route, a router can match all packets to use this route.
-![Default static route](/understanding-static-dynamic-routing/default.jpg)
+![Default static route](/engineering-education/understanding-static-dynamic-routing/default.jpg)
 
 #### Summary route
 This route reduces the number of routing table entries required for many static routes. A summary route can only be implemented on contiguous routes that use the same exit interface or next-hop address.
 
-![Summary route](/understanding-static-dynamic-routing/summary-route.jpg)
+![Summary route](/engineering-education/understanding-static-dynamic-routing/summary-route.jpg)
 
 #### Route summarization
 A summary route can be calculated for contiguous addresses; this calculation can be done using either the binary or decimal (fastest) method.
@@ -191,7 +191,7 @@ From the first octet on the left-hand side, we can see that all the bits in that
 #### Floating static route
 A floating static route is a backup route to any static route or a dynamically learned route. This route is used only when the primary route fails or is unavailable.
 
-![Floating static route](/understanding-static-dynamic-routing/float.JPG)
+![Floating static route](/engineering-education/understanding-static-dynamic-routing/float.JPG)
 
 ### When to use static routes
 Static route can be used to:

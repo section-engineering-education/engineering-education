@@ -39,7 +39,7 @@ Follow [this documentation](https://reactnative.dev/docs/environment-setup) to s
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-facebook-authentication/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-facebook-authentication/env_setup.png)
 
 ### Cloning the starter code
 Clone the starter code from this [GitHub repository](https://github.com/zolomohan/react-native-firebase-facebook-auth-starter).
@@ -48,7 +48,7 @@ You can checkout the final code from this [GitHub Repository](https://github.com
 
 This will be the folder structure of the application.
 
-![Folder Structure](/react-native-firebase-facebook-authentication/folder_structure.png)
+![Folder Structure](/engineering-education/react-native-firebase-facebook-authentication/folder_structure.png)
 
 I've set up 2 screens in the `screens/` directory:
 
@@ -56,30 +56,30 @@ I've set up 2 screens in the `screens/` directory:
 
 - *Authenticated.js*: Screen that the user can see only if he is logged in.
 
-![Screens](/react-native-firebase-facebook-authentication/screens.jpg)
+![Screens](/engineering-education/react-native-firebase-facebook-authentication/screens.jpg)
 
 ### Setting up the Firebase project
 Head to the [Firebase console](https://console.firebase.google.com/u/0/), sign in to your account and Create a new project.
 
-![Create New Project](/react-native-firebase-facebook-authentication/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-facebook-authentication/firebase_new.png)
 
 You'll be presented with the dashboard once you create the new project.
 
-![New Dashboard](/react-native-firebase-facebook-authentication/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-facebook-authentication/new_dashboard.png)
 
 Now, click on the Android icon to add an Android app to the Firebase project.
 
-![register_app](/react-native-firebase-facebook-authentication/register_app.png)
+![register_app](/engineering-education/react-native-firebase-facebook-authentication/register_app.png)
 
 You'll need the package name of the application to register your application. You'll find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-facebook-authentication/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-facebook-authentication/package_name.png)
 
 In the next step, you should download the `google-services.json` file and place it in the `android/app` directory.
 
 This file contains configurations that'll enable your application to access firebase services.
 
-![Download Google Services JSON](/react-native-firebase-facebook-authentication/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-facebook-authentication/download_services.json.png)
 
 In the next step, It'll ask you to add configurations to the `build.gradle` files.
 
@@ -114,19 +114,19 @@ Head to [developers.facebook.com](https://developers.facebook.com/) and create a
 
 Go to the [Apps](https://developers.facebook.com/apps) section and create a new app.
 
-![Create FB App](/react-native-firebase-facebook-authentication/create_app.png)
+![Create FB App](/engineering-education/react-native-firebase-facebook-authentication/create_app.png)
 
 Once you create an application, you will be greeted with the App Dashboard. Add the Facebook Login product to your app from the dashboard.
 
-![App Dashboard](/react-native-firebase-facebook-authentication/fb_dashboard.png)
+![App Dashboard](/engineering-education/react-native-firebase-facebook-authentication/fb_dashboard.png)
 
 To find the App ID and the App secret, which will be required in the later steps, head to basic settings.
 
-![app_secret](/react-native-firebase-facebook-authentication/app_secret.png)
+![app_secret](/engineering-education/react-native-firebase-facebook-authentication/app_secret.png)
 
 Once you make a copy of it, scroll down until you find **Add Platform**.
 
-![add_platform](/react-native-firebase-facebook-authentication/add_platform.png)
+![add_platform](/engineering-education/react-native-firebase-facebook-authentication/add_platform.png)
 
 Once you click on it, Select Android. 
 
@@ -138,7 +138,7 @@ For the **Key Hash**, you need to generate it using [openSSL](https://www.openss
 
 Download the **K** version.
 
-![OpenSSL](/react-native-firebase-facebook-authentication/openssl.png)
+![OpenSSL](/engineering-education/react-native-firebase-facebook-authentication/openssl.png)
 
 Once you've downloaded it, extract it and copy the folder to `C:/`.
 
@@ -158,24 +158,24 @@ Output:
 
 Refer to this [StackOverflow question](https://stackoverflow.com/questions/7506392/how-to-create-android-facebook-key-hash) for more details on how to generate a Key Hash.
 
-![FB Android App](/react-native-firebase-facebook-authentication/fb_android_app.png)
+![FB Android App](/engineering-education/react-native-firebase-facebook-authentication/fb_android_app.png)
 
 For iOS setup, refer to this [Quick Start](https://developers.facebook.com/quickstarts/?platform=ios) Guide.
 
 ### Setting up Firebase authentication
 Head to the authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module of your project.
 
-![Get Started Auth](/react-native-firebase-facebook-authentication/auth_get_starterd.png)
+![Get Started Auth](/engineering-education/react-native-firebase-facebook-authentication/auth_get_starterd.png)
 
 Then, enable Facebook authentication in the sign-in methods. Once you've enabled it, provide the App ID and the App secret from the Facebook Developer Console and press Save.
 
-![Signin-method](/react-native-firebase-facebook-authentication/enable_fb_auth.png)
+![Signin-method](/engineering-education/react-native-firebase-facebook-authentication/enable_fb_auth.png)
 
 To complete the set up, you should add the OAuth redirect URI to your Facebook app configuration. Copy the OAuth redirect URI and head to the Facebook Developer console.
 
 Under Products, head to *Settings* in Facebook Login. Paste the redirect URI under *Valid OAuth Redirect URIs* in *Client OAuth Settings*.
 
-![Redirect URI](/react-native-firebase-facebook-authentication/redirect_uri.png)
+![Redirect URI](/engineering-education/react-native-firebase-facebook-authentication/redirect_uri.png)
 
 Now, let's head to the application and install the auth module.
 
@@ -390,7 +390,7 @@ return (
 );
 ```
 
-![Auth Screen](/react-native-firebase-facebook-authentication/signin.gif)
+![Auth Screen](/engineering-education/react-native-firebase-facebook-authentication/signin.gif)
 
 ### Sign out
 We should use the `signOut` method in the auth module to sign a user out from the application.
@@ -421,7 +421,7 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
-![Signout](/react-native-firebase-facebook-authentication/signout.gif)
+![Signout](/engineering-education/react-native-firebase-facebook-authentication/signout.gif)
 
 ### Let's recap
 1. We set up our development environment and created a React Native app.

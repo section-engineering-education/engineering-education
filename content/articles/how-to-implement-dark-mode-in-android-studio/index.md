@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
 
 If you have followed the above steps properly, your app should now have a dark mode. The following gif shows the dark mode in action.
 
-![demo](/how-to-implement-dark-mode-in-android-studio/demo.gif).
+![demo](/engineering-education/how-to-implement-dark-mode-in-android-studio/demo.gif).
 
 ### Conclusion
 Dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.

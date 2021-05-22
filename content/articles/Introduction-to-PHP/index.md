@@ -91,7 +91,7 @@ To run this code, open your browser at http://localhost/hello here, we append th
 
 You should see something like this image on your browser:
 
-![php helloworld!](/introduction-to-php/helloworld.png)
+![php helloworld!](/engineering-education/introduction-to-php/helloworld.png)
 
 Congratulations! You have written your first PHP program.
 

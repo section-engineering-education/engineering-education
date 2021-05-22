@@ -48,7 +48,7 @@ Teradata database has the following features:
 ### The architecture of Teradata
 The following diagram shows the architecture of Teradata.
 
-![Teradata Architecture](/an-overview-of-teradata-rdbms/teradata-architecture.png)
+![Teradata Architecture](/engineering-education/an-overview-of-teradata-rdbms/teradata-architecture.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/04/Components-of-Teradata-Architecture.png)
 
@@ -57,7 +57,7 @@ The architecture of Teradata is based on MPP (massively parallel processing). It
 #### Storage architecture
 This architecture is used when the client makes a storage query. The following diagram shows the storage architecture of Teradata.
 
-![Storage Architecture](/an-overview-of-teradata-rdbms/storage-architecture.png)
+![Storage Architecture](/engineering-education/an-overview-of-teradata-rdbms/storage-architecture.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/teradata/images/teradata-architecture2.png)
 
@@ -81,7 +81,7 @@ An AMP performs the following tasks:
 #### Retrieval architecture
 This architecture is used when a client makes a retrieval query. The diagram below shows the retrieval architecture of Teradata.
 
-![Retrieval Architecture](/an-overview-of-teradata-rdbms/retrieval-architecture.png)
+![Retrieval Architecture](/engineering-education/an-overview-of-teradata-rdbms/retrieval-architecture.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/teradata/images/teradata-architecture3.png)
 

@@ -272,13 +272,13 @@ A great recursion use case is a Fibonacci sequence. A Fibonacci takes two previo
 
 The first terms of a Fibonacci sequence are:
 
-![Fibonacci sequence](/an-introduction-to-memoization-in-javascript/fib1.png)
+![Fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/fib1.png)
 
 [Image Source](https://www.forex.com/en/education/education-themes/technical-analysis/fibonacci-theory/)
 
 Each number is the sum of the previous two numbers. Here is how the sequence is constructed.
 
-![Fibonacci sequence](/an-introduction-to-memoization-in-javascript/graphic-1-3-1.png)
+![Fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/graphic-1-3-1.png)
 
 [Image Source](https://www.sportsbettingdime.com/guides/strategy/fibonacci-sequence-betting/)
 
@@ -336,7 +336,7 @@ But `fibonacci(4)` has to return `fibonacci(3) + fibonacci(2)`.
 
 The program needs to compute `Fibonacci(3)`. It makes another call `Fibonacci(2) + Fibonacci(1)` to return `Fibonacci(3)`.
 
-![Recursive fibonacci sequence](/an-introduction-to-memoization-in-javascript/recursive-fib.jpg)
+![Recursive fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/recursive-fib.jpg)
 
 You get the idea. The function calls itself over and over until the fifth computation term is met. This is a lot of computations. The program will repeat the Fibonacci calls that were previously called when it returned the previous Fibonacci terms.
 

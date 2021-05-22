@@ -80,13 +80,13 @@ Intelligent agents work through three main components: sensors, actuators, and e
 
 The following diagram shows how these components are positioned in the AI system.
 
-![AI Sytem](/intelligent-agents-in-ai/ai-system.png)
+![AI Sytem](/engineering-education/intelligent-agents-in-ai/ai-system.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/ai/images/agents-in-ai.png)
 
 Inputs (percepts) from the environment are received by the intelligent agent through sensors. This agent uses artificial intelligence to make decisions using the acquired information/ observations. Actions are then triggered through actuators. Future decisions will be influenced by percept history and past actions.
 
-![How an Intelligent Agent Works](/intelligent-agents-in-ai/how-an-intelligent-agent-works.png)
+![How an Intelligent Agent Works](/engineering-education/intelligent-agents-in-ai/how-an-intelligent-agent-works.png)
 
 [Image Source: Geeks for Geeks](https://www.cdn.geeksforgeeks.org/wp-content/uploads/ai3-1.png)
 

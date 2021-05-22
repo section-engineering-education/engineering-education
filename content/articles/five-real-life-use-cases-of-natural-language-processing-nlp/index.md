@@ -38,7 +38,7 @@ This is made possible with the program breaking the language down into small bit
 
 Once a smart device, search function, or chatbot understands the language, it has to talk back in a manner that users will understand. This relates to natural language generation (NLG), and its responsibility is to take data from a search result and turn it into understandable language.
 
-![NLP vs NLU vs NLG](/five-real-life-use-cases-of-natural-language-processing-nlp/nlp-vs-nlu-vs-nlg.jpg)
+![NLP vs NLU vs NLG](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/nlp-vs-nlu-vs-nlg.jpg)
 
 [Image Source](https://www.cellstrat.com/2017/10/27/nlp-vs-nlu-vs-nlg/)
 
@@ -52,7 +52,7 @@ Writing tools, including [Grammarly](https://app.grammarly.com/), [WhiteSmoke](h
 
 Besides grammatical assistance, these tools check the clarity of the text and suggest better synonyms. With these tools, you are sure to improve your texts' readability and be able to convey your message appropriately. Grammar checkers have continued to introduce new features, and a tool like Grammarly allows you also to perform a plagiarism check.
 
-![Grammar Check Using Grammarly](/five-real-life-use-cases-of-natural-language-processing-nlp/grammar-check-using-grammarly.png)
+![Grammar Check Using Grammarly](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/grammar-check-using-grammarly.png)
 
 #### Chatbots
 Strong customer support is a goal for every business. Engaging employees to address customers' demands, day and night may pose various challenges. That is why virtual assistants and chatbots exist today. Chatbots are replacing traditional 24/7 support and companies' FAQs. We rely on NLP to train chatbots to behave in a certain way. Efficient chatbots interact and converse with people the way a human being would.
@@ -64,7 +64,7 @@ With [chatbots](https://chatbotslife.com/best-nlp-chatbot-platform-d3d80f441078)
 #### Search Autocorrect and Autocomplete
 Another critical application of NLP is the autocomplete function. If you start your search query on Google, you'll get many predictions of what you may be interested in (searching) based on the initial few words or characters you entered.
 
-![Google Autocomplete and Autocorrect](/five-real-life-use-cases-of-natural-language-processing-nlp/google-autocomplete-and-autocorrect.png)
+![Google Autocomplete and Autocorrect](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/google-autocomplete-and-autocorrect.png)
 
 How does Google suggest relevant keywords? It relies on the data that it catalogs based on what the other millions of Google users are searching for when inputting (similar) search terms. This is possible by using natural language processing that helps understand subtleties between various search terms. NLP also helps make sense of the data.
 
@@ -75,7 +75,7 @@ Machine translation tools have come to replace the traditional rule-based and di
 
 In the current world of globalization, businesses and individuals are taking advantage of language translation tools to break the language barrier and connect to people who speak different languages. All this is possible with the introduction of powerful machines, the availability of data, and evolution in the neural network field.
 
-![Language Translation using DeepL Translate](/five-real-life-use-cases-of-natural-language-processing-nlp/language-translation-using-deepl-translate.png)
+![Language Translation using DeepL Translate](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/language-translation-using-deepl-translate.png)
 
 #### Analytics
 Business decisions are difficult to make, and the best decisions are a product of [data-driven insights](/tableau-vs-power-bi/). However, businesses generate large amounts of data, and extracting meaningful insights may take a lot of time. To make quick and effective solutions, business people need to be provided with comprehensive information.

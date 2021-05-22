@@ -23,7 +23,7 @@ Virtualization is the technique of importing a Guest operating system on top of 
 ### What is Containerization?
 Containerization is a form of operating system virtualization, through which it runs applications in secluded user spaces called containers, all using the same shared operating system (OS).
 
-![Docker logo](/docker-concepts/Docker-logo.png)
+![Docker logo](/engineering-education/docker-concepts/Docker-logo.png)
 
 ### What is Docker?
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package. Initially, built for Linux, Docker now runs on Windows and macOS. To understand how Docker works, let’s look at some components you would use to create Docker-containerized applications.

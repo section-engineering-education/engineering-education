@@ -95,7 +95,7 @@ print(tuple1[1]) # Output: 1
 
 This tuple follows zero indexing.
 
-![Tuple Positive Indexing](/tuples-data-structure-python/tuple-positive-index.png)
+![Tuple Positive Indexing](/engineering-education/tuples-data-structure-python/tuple-positive-index.png)
 
 *Tuple Positive Indexing: Source -- [GeeksforGeeks](https://www.geeksforgeeks.org/python-tuples/)*
 
@@ -110,7 +110,7 @@ print(tuple1[-1]) # Output: 60
 print(tuple1[-3]) # Output: 40
 ```
 
-![Tuple Negative Indexing](/tuples-data-structure-python/tuple-negative-index.png)
+![Tuple Negative Indexing](/engineering-education/tuples-data-structure-python/tuple-negative-index.png)
 
 *Tuple Negative Indexing*
 
@@ -319,7 +319,7 @@ print(tuple1.index(24, 2, 5))
 
 - When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large. Using the `timeit` module in Python, we see that tuples are considerably faster to iterate when compared to lists.
 
-![Tuple Performance](/tuples-data-structure-python/tuples-performance.png)
+![Tuple Performance](/engineering-education/tuples-data-structure-python/tuples-performance.png)
 
 *Note: For more in-depth analysis of why tuples perform better, check out [this](https://stackoverflow.com/questions/68630/are-tuples-more-efficient-than-lists-in-python#comment2117930_68817) StackOverflow thread.*
 

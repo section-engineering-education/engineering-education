@@ -44,13 +44,13 @@ To get started, let's create an NPM account.
 
 - Go to the [npmjs website](https://www.npmjs.com/) and click on the **sign up** button.
 
-![npmjs Webpage](/npm-packages/npmjs-homepage.png)
+![npmjs Webpage](/engineering-education/npm-packages/npmjs-homepage.png)
 
 *[Image Source](https://www.npmjs.com/)*
 
 - Enter a username, email address, and password.
 
-![Create NPM Account](/npm-packages/npm-signup.png)
+![Create NPM Account](/engineering-education/npm-packages/npm-signup.png)
 
 *[Image Source](https://www.npmjs.com/)*
 
@@ -68,7 +68,7 @@ npm login
 
 - Now, enter your username, password and email ID.
 
-![NPM Login](/npm-packages/npm-login.png)
+![NPM Login](/engineering-education/npm-packages/npm-login.png)
 
 - We have successfully signed in.
 
@@ -138,7 +138,7 @@ Now that we've programmed the package, it's time to deploy it.
 npm publish
 ```
 
-![NPM Publish](/npm-packages/npm-publish.png)
+![NPM Publish](/engineering-education/npm-packages/npm-publish.png)
 
 - In a moment, you'll get an email from the NPM registry indicating that your package has been successfully published!
 
@@ -182,7 +182,7 @@ node index.js
 
 - The contest data from our NPM package would be printed out on the console. The retrieved data can be used to dynamically render elements on our front-end, store them in a database or process the data further. The possibilities are endless.
 
-![Result](/npm-packages/result.png)
+![Result](/engineering-education/npm-packages/result.png)
 
 - We have successfully deployed and tested our NPM package!
 

@@ -230,7 +230,7 @@ Our final code looks like this:
 
 The code (our button) should look like this:
 
-![Final Product](/introduction-to-tailwind-css/result.png)
+![Final Product](/engineering-education/introduction-to-tailwind-css/result.png)
 
 ### Conclusion
 Tailwind CSS is a game-changer to how we use CSS. As demonstrated above, utility classes are easy to use and learn. As a result, you should now be able to build a simple layout using Tailwind CSS.

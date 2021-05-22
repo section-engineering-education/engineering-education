@@ -18,12 +18,12 @@ Search engine optimization is a tool you may be familiar with using to help rank
 <!--more-->
 Although website optimization might differ slightly from optimization for mobile applications, they bind to the same algorithms. The difference lies in how you get users. For a user to have your application, they have to download and install that application. According to [statista](https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/) there are over 3 million applications in the Google Play store alone, and the number keeps growing day by day.
 
-![number of google play store apps](/google-play-store-application-optimization/number-of-google-play-store-apps.png)<br>
+![number of google play store apps](/engineering-education/google-play-store-application-optimization/number-of-google-play-store-apps.png)<br>
 *[Image source](https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/)*
 
 At the same time, the number of application downloads has also been increasing:
 
-![growing application downloads trend](/google-play-store-application-optimization/number-of-google-play-store-downloads.png)<br>
+![growing application downloads trend](/engineering-education/google-play-store-application-optimization/number-of-google-play-store-downloads.png)<br>
 *[Image source](https://www.statista.com/statistics/734332/google-play-app-installs-per-year/)*
 
 The big puzzle is how you can make your application discoverable to relevant users who might want to download it. Getting your application ranking at the top in a crowded app store is a big hustle. For that reason, you need to understand App Store optimization, or the process of optimizing your application ranking so as to appear higher in the store’s search results and be visible to potential customers.
@@ -52,10 +52,10 @@ Google allows you to include at most 50 characters in your title space. This all
 
 Below are two examples of titles with a short title description:
 
-![app store title example](/google-play-store-application-optimization/app-title-one.png)<br>
+![app store title example](/engineering-education/google-play-store-application-optimization/app-title-one.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.intsig.camscanner)*
 
-![app store title example](/google-play-store-application-optimization/app-title-two.png)<br>
+![app store title example](/engineering-education/google-play-store-application-optimization/app-title-two.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=pdf.tap.scanner)*
 
 These are two different applications, but can be considered competitors as they provide the same services. The titles are straightforward, easy to read, and relevant to the services they provide.
@@ -70,7 +70,7 @@ What matters in an icon:
 - Not too vague or generic; an icon should reflect directly and specifically what your application intends to provide to a user.
 - Not too cluttered; an icon should not include much content within itself. Just one central element of your application will be fine.
 
-![app package name example](/google-play-store-application-optimization/app-icon.png)<br>
+![app package name example](/engineering-education/google-play-store-application-optimization/app-icon.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.crossword.bible.cookies.find.english)*
 
 The above icon is straightforward and gives you a clear idea of the application. The icon is related to the way the application is used. The shape is not overly crowded, nor is it vague. With just one look, you get what the application is about.
@@ -81,7 +81,7 @@ An application is identified by its unique package name, which forms the applica
 
 For example:
 
-![app icon example](/google-play-store-application-optimization/package-name.png)<br>
+![app icon example](/engineering-education/google-play-store-application-optimization/package-name.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.miniclip.eightballpool)*
 
 The user included the keyword “eightballpool” as part of the application URL. This is a relevant keyword as it is the application name and a straightforward description of what the app provides.
@@ -92,7 +92,7 @@ Google Play Store provides two description previews for your application: a shor
 ##### Short description
 This is a quick, straightforward description, usually one sentence or phrase, that highlights the most important pieces of information about the application.
 
-![app short description example](/google-play-store-application-optimization/about-this-app.jpg)<br>
+![app short description example](/engineering-education/google-play-store-application-optimization/about-this-app.jpg)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.ikeyboard.theme.neon.love&hl=en&gl=US)*
 
 ##### Main description
@@ -100,7 +100,7 @@ The main description explains the application more in-depth so that a user can g
 
 Here is an example of a well-structured description:
 
-![app main description example](/google-play-store-application-optimization/main-description.jpg)<br>
+![app main description example](/engineering-education/google-play-store-application-optimization/main-description.jpg)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.ikeyboard.theme.neon.love&hl=en&gl=US)*
 
 The above description represents a keyboard application. Notice how the seller plays with the relevant keywords like “themes”, “keyboard”, “love”, “romantic”, etc. and how they combine them within different sentences and paragraphs as they explain the app. The seller balances the description's clarity with keywords relevant to the application.
@@ -125,17 +125,17 @@ A good screenshot includes:
 
 The following is a good example of well-illustrated screenshots:
 
-![app store screenshot example](/google-play-store-application-optimization/screenshots.png)<br>
+![app store screenshot example](/engineering-education/google-play-store-application-optimization/screenshots.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.miniclip.eightballpool)*
 
 When implementing this in a game app, make sure you include a short video that briefly illustrates how to play a game and the screen orientation supported by that game.
 
 For example:
 
-![app store screenshot example](/google-play-store-application-optimization/video-screen.png)
+![app store screenshot example](/engineering-education/google-play-store-application-optimization/video-screen.png)
 *[Image source](https://play.google.com/store/apps/details?id=com.tencent.ig)*
 
-![app store screenshot example](/google-play-store-application-optimization/screenshot-screen.png)<br>
+![app store screenshot example](/engineering-education/google-play-store-application-optimization/screenshot-screen.png)<br>
 *[Image source](https://play.google.com/store/apps/details?id=com.tencent.ig)*
 
 This video and a screenshot shows that the application has a sideways screen orientation rather than a vertical one.
@@ -149,22 +149,22 @@ Always indicate your application category. Searches are related to the applicati
 #### Application Updates
 Google Play Store considers freshness when dealing with an application. This shows that your application is regularly updated and may lead to it being promoted in the “Just Updated” section.
 
-![google play store just updated section](/google-play-store-application-optimization/just-updated.png)
+![google play store just updated section](/engineering-education/google-play-store-application-optimization/just-updated.png)
 
-![google play store just updated section](/google-play-store-application-optimization/new-and-updated-games.png)
+![google play store just updated section](/engineering-education/google-play-store-application-optimization/new-and-updated-games.png)
 
 The development of an application is evolutionary. At times, you need to modify features, add new features, or fix a bug. A top-ranking application needs to keep up with the latest technologies and improvements to reflect user feedback and preferences. Updating your application regularly minimizes the chances of fatal errors, as you are already solving them through the updates. This will result in getting more positive reviews.
 
 When you publish an update, always remember to clearly indicate the new features you have added or the bug you have fixed in the “What’s New” section.
 
-![google play store what's new section](/google-play-store-application-optimization/whats-new.png)
+![google play store what's new section](/engineering-education/google-play-store-application-optimization/whats-new.png)
 
 ##### Update strategy
 The best way to notify the user whenever you have a new update is by using Google core API that provides an in-app update flow within the context of your application.
 
 The API alerts users whenever you have a new version on the Play store by instructing them to update the application without opening the Play store. The API introduces an update interface within your application to show users that you have an update available. While users are using the application, they can update it immediately to bring the new updated features on board.
 
-![google play store update example](/google-play-store-application-optimization/flexible_flow.png)<br>
+![google play store update example](/engineering-education/google-play-store-application-optimization/flexible_flow.png)<br>
 *[Image source](https://developer.android.com/guide/playcore/in-app-updates)*
 
 The update process is well maintained by the Google Core API. A user doesn't have to activate auto-updates in the play store; the API will handle the update flow within the application.
@@ -175,7 +175,7 @@ Here is a [guide](https://developer.android.com/guide/playcore/in-app-updates) t
 
 App rating is the cumulative figure of users' feedback on a scale of 1 to 5 stars. It is your Play store ‘badge of honor’. Reviews are comment messages that users give as feedback.
 
-![google play store ratings and reviews](/google-play-store-application-optimization/cumulative-ratings.jpg)
+![google play store ratings and reviews](/engineering-education/google-play-store-application-optimization/cumulative-ratings.jpg)
 
 Play store ratings and reviews play a massive role in your application downloads. When a new user wants to download an application, they will often check reviews to decide whether to download your application. If positive, potential customers are more likely to hit “download” on your application.
 
@@ -201,7 +201,7 @@ Another example would be that you have, say, an e-commerce application. In this 
 
 Google announced an in-app review API that prompts users to submit Play Store ratings and reviews without leaving the application and without opening the Play Store. Users' reviews/ratings will eventually be displayed in the Google Play Store. This encourages users to give feedback on your application by making the process simpler. Here is a [guide](https://developer.android.com/guide/playcore/in-app-review) that will help you implement in-app reviews in your Android mobile application.
 
-![google play store reviews api](/google-play-store-application-optimization/iar-flow.jpg)<br>
+![google play store reviews api](/engineering-education/google-play-store-application-optimization/iar-flow.jpg)<br>
 *[Image source](https://developer.android.com/guide/playcore/in-app-review)*
 
 **Additional reviews and ratings strategies**
@@ -225,28 +225,28 @@ Be sure to establish and analyze clear KPIs. This will give you insight into how
 
 The illustration below shows how many new users this app gets and the number of users lost. The Google Play Store also records any crashes that occur as users interact with your application. This will help you stay on top of any bugs that might affect user experience. Otherwise, this will lead to more users uninstalling your application.
 
-![google play store kpis](/google-play-store-application-optimization/kpi-analysis.png)
+![google play store kpis](/engineering-education/google-play-store-application-optimization/kpi-analysis.png)
 
 From these figures, you can figure out why users are uninstalling your application. Here is a chart that highlights some of the common reasons why users uninstall applications.
 
-![google play store app uninstall reasons](/google-play-store-application-optimization/why-users-uninstall-applications.png)<br>
+![google play store app uninstall reasons](/engineering-education/google-play-store-application-optimization/why-users-uninstall-applications.png)<br>
 *[Image source](https://clevertap.com/blog/customer-experience-optimization/)*
 
 [Google Play Store analytics](https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&hl=en) also record traffic sources, or where your users come from, the acquisition rate, and the conversion rate of your application. Every time an application appears to a user and is downloaded, the Play Store calculates the conversion rate for you.
 
 From these figures, you can draw very conclusive metrics.
 
-![google play store metrics](/google-play-store-application-optimization/kpi-traffic-performances.png)
+![google play store metrics](/engineering-education/google-play-store-application-optimization/kpi-traffic-performances.png)
 
 The figure below records metrics based on the store listing factors we have discussed above. Out of 1394 visitors, 246 downloaded this application. This shows the inefficiency of the application in terms of the conversion rate. This may mean you need to look at store listing factors such as application icon, title and description, and positive reviews to increase your conversion rates.
 
-![google play store metrics](/google-play-store-application-optimization/conversion-rate.png)
+![google play store metrics](/engineering-education/google-play-store-application-optimization/conversion-rate.png)
 
-![google play store metrics](/google-play-store-application-optimization/conversion-rate-graph.png)
+![google play store metrics](/engineering-education/google-play-store-application-optimization/conversion-rate-graph.png)
 
 As previously mentioned, most of the users who visit your application page come from Google Play searches. Out of 14 visitors on Nov 23, 2020, 13 visitors came from keyword searches. As you can see, it is essential to be strategic when structuring your relevant keywords and handling other store listing factors.
 
-![google play store metrics](/google-play-store-application-optimization/traffic-source.png)
+![google play store metrics](/engineering-education/google-play-store-application-optimization/traffic-source.png)
 
 There is a lot more you can learn from the analysis of your KPIs. Always keep an eye on your Google Play console to [check how your application is performing](https://developer.android.com/distribute/best-practices/launch/monitor-stats), take the necessary measures based on the metrics that perform low, and adopt practices that will maintain your well-performing figures.
 

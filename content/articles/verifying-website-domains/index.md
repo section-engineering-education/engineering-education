@@ -67,7 +67,7 @@ NameError: name 'ip' is not defined
 
 *Screenshot*:
 
-![socket-error](/verifying-website-domains/socket1.jpg)
+![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 Because the domain name was removed due to unoriginality, error messages were displayed.
 
@@ -90,7 +90,7 @@ IP: 69.195.108.249
 
 *Screenshot*:
 
-![socket-valid](/verifying-website-domains/socket2.jpg)
+![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
 In `DNS`, a plentiful array of resource information is displayed given that the website domain is still active.
 
@@ -117,7 +117,7 @@ Output:
 
 *Screenshot*:
 
-![dns-ptr](/verifying-website-domains/dns-ptr.jpg)
+![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
 The PTR (Pointer Record) value determines if the domain can resolve.
 
@@ -174,9 +174,9 @@ Output:
 
 *Screenshots:*
 
-![dns-txt-mx](/verifying-website-domains/dns-ptr.jpg)
+![dns-txt-mx](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
-![dns-ns](/verifying-website-domains/dns-ptr.jpg)
+![dns-ns](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
 `Whois`, is a continuous recording registry for websites, it is one of several databases that compiles and lists website information.
 
@@ -201,7 +201,7 @@ Expiration date: None
 
 *Screenshot*:
 
-![whois-invalid](/verifying-website-domains/whois-invalid.jpg)
+![whois-invalid](/engineering-education/verifying-website-domains/whois-invalid.jpg)
 
 Null values would be an indication that modifications were made during the development of the website.
 
@@ -229,7 +229,7 @@ Expiration date: 2021-06-04 23:22:58
 *Screenshot*:
 
 
-![whois-valid](/verifying-website-domains/whois-valid.jpg)
+![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
 ### Next up, Windows PowerShell
 *Make sure to right-click and select the `Run as Administrator` option before running PowerShell.*
@@ -260,7 +260,7 @@ Partial Output:
 
 *Screenshot*:
 
-![power-curl](/verifying-website-domains/power-curl.jpg)
+![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
 Scroll down to the `text-primary` class layer to display all associated domains with the IP address.
 
@@ -339,7 +339,7 @@ Partial Output:
 
 *Screenshot*:
 
-![power-curl-domains](/verifying-website-domains/power-curl-domains.jpg)
+![power-curl-domains](/engineering-education/verifying-website-domains/power-curl-domains.jpg)
 
 When confronted with a domain that may appear authentic and genuine, it might be best to do some coding research first.
 

@@ -135,10 +135,10 @@ Before venturing out to write our main function, we need some API Tokens and Key
 
 First, we need to start up a new project in Firebase. Projects in Firebase are GCP projects that use **Firebase** services. This means that billing and permissions for projects are shared across consoles. A project is like a container with a unique project ID assigned to it.
 
-![Firebase Dashboard](/building-serverless-contact-form/dashboard.jpeg)<br>
+![Firebase Dashboard](/engineering-education/building-serverless-contact-form/dashboard.jpeg)<br>
 Once you’ve started a new project, we need to obtain the API keys and tokens. On the left pane, click the **Settings** icon -> **Project Settings** and select **Service Accounts** tab.
 
-![Firebase, Settings](/building-serverless-contact-form/settings.png)<br>
+![Firebase, Settings](/engineering-education/building-serverless-contact-form/settings.png)<br>
 Now, select **Node.js** and **Generate Private Key**, to generate the admin credentials private key in JavaScript. This private key is used to authenticate us as the admin of the project and give us various permissions. Download the generated private key and store it safely. We will need to import this file later while writing our Cloud Function.
 
 Now, we need to obtain our `firebase_CONFIG` variable from the console. To do this, go to **Settings**, scroll down and you will find a snippet with your firebase config. Copy the `databaseURL` and store it for later use.
@@ -253,7 +253,7 @@ Now, add this URL in the action attribute of your form, with the `METHOD = POST`
 Now let’s check whether our function is called whenever we click the **Submit** button.
 On the Google Cloud Platform Console, search for StackDriver Logging. You can also find it in the Firebase Console.
 
-![Settings, Function Logs](/building-serverless-contact-form/functions.png)
+![Settings, Function Logs](/engineering-education/building-serverless-contact-form/functions.png)
 
 ### Profit?!
 So we have successfully written and deployed a Cloud Function! We’ve seen an overview of how to do this, but I highly recommend you read the [documentation](https://cloud.google.com/docs) of Google Cloud Platforms and Firebase to get a proper understanding of how these tools and technologies work. Reading documentation and experimenting on things is the hard, yet best way to become an expert programmer.

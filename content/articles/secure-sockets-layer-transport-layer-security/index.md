@@ -33,7 +33,7 @@ In 2014, SSL 3.0 was found to be vulnerable to the [POODLE attack](https://en.wi
 
 SSL 3.0 was shortly followed by TLS 1.0 in 1999. We’ve had TLS 1.1, TLS 1.2 and TLS 1.3 so far. Recently in March 2020, TLS 1.0 and TLS 1.1 got deprecated. You can read more about the protocol’s history and development [here](https://en.wikipedia.org/wiki/Transport_Layer_Security#History_and_development).
 
-![SSL/TLS Timeline](/secure-sockets-layer-transport-layer-security/timeline.png)
+![SSL/TLS Timeline](/engineering-education/secure-sockets-layer-transport-layer-security/timeline.png)
 
 Before we dive into the working of SSL/TLS, let's familiarize ourselves with a few technical terms:
 
@@ -42,11 +42,11 @@ Two of the most widely used encryption techniques are briefly explained below:
 
 - **Symmetric key encryption** is the technique of encrypting information using cryptographic algorithms that use the same key for encryption and decryption. Such algorithms are called symmetric ciphers. When person A and person B communicate, they encrypt and decrypt their messages using a shared key. Care should be taken that this shared key isn’t compromised because it allows anybody to decrypt the ciphertext.
 
-![Symmetric key encryption](/secure-sockets-layer-transport-layer-security/Sym.png)
+![Symmetric key encryption](/engineering-education/secure-sockets-layer-transport-layer-security/Sym.png)
 
 - **Asymmetric key encryption** (also called public-key encryption) is the technique of encrypting information using cryptographic algorithms that use different keys for encryption and decryption. Such algorithms are called asymmetric ciphers. When **A** sends a message to **B**, it is encrypted using **B’s** public key. **B** decrypts **A’s** message using its private key, which isn’t known to anybody else. Asymmetric encryption is safer and more stable than symmetric encryption. However, it is computationally more expensive.
 
-![Asymmetric key encryption](/secure-sockets-layer-transport-layer-security/Asym.png)
+![Asymmetric key encryption](/engineering-education/secure-sockets-layer-transport-layer-security/Asym.png)
 
 2. **Cipher Suites** are a set of algorithms that are used to secure information being exchanged by the endpoints. A cipher suite announces the key exchange algorithm, the authentication algorithm, the bulk encryption algorithm and the Message Authentication Code (MAC) algorithm it supports. For example, a sample suite may look something like this  `ECDHE-ECDSA-AES256-GCM-SHA384`. Cipher suites are updated with safer algorithms from time to time. More information regarding cipher suites can be found [here](https://www.venafi.com/blog/what-are-cipher-suites).
  
@@ -76,7 +76,7 @@ The steps of TLS handshake with RSA key exchange algorithm are discussed below:
 7. **Server ready:** The server sends an encrypted "Finished" message using the session key.
 8. **Encryption with session keys:** The handshake is now complete, and the rest of the communication is encrypted using session keys.
 
-![TLS Handshake](/secure-sockets-layer-transport-layer-security/Handshake.png)
+![TLS Handshake](/engineering-education/secure-sockets-layer-transport-layer-security/Handshake.png)
 
 **Note:** [RFC 5246](https://tools.ietf.org/html/rfc5246#page-33) lays down the messages that are exchanged during the SSL/TLS handshake.
 

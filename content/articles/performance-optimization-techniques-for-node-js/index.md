@@ -37,7 +37,7 @@ console.log(content);
 console.log('waiting for the file to read.........');
 ```
 
-![Synchronous](/performance-optimization-techniques-for-node-js/synchronous.png)
+![Synchronous](/engineering-education/performance-optimization-techniques-for-node-js/synchronous.png)
 
 #### Asynchronous
 
@@ -55,7 +55,7 @@ fs.readFile("app.txt", "utf8", function (err, content) {
 console.log('waiting for the file to read.....');
 ```
 
-![Asynchronous](/performance-optimization-techniques-for-node-js/asynchronous.png)
+![Asynchronous](/engineering-education/performance-optimization-techniques-for-node-js/asynchronous.png)
 
 With the synchronous snippet, all processes are paused until the file reading is over. The `readFileSync()` will first read the file and store its data in the memory before printing the data and message in the console.
 

@@ -31,7 +31,7 @@ C++ allows the user to construct new classes from the existing classes. The new 
 ### Visibility Modes
 **Visibility mode defines whether the properties of super class are privately derived, publicly derived or protected derived.** The visibility mode plays an important role in controlling the access specifiers. They make sure that the properties are inherited accurately to the derived class. The properties of the base class are inherited in the following manner:
 
-![Visibility Modes](/extending-classes/ec.jpg)
+![Visibility Modes](/engineering-education/extending-classes/ec.jpg)
 
 The above chart shows how properties are inherited and in which state they will be if the base class and derived class are private, public or protected respectively.
 

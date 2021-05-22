@@ -37,7 +37,7 @@ When building the Machine Learning model, we will make use of the [Iris](https:/
 
 A glimpse of the data is as shown below:
 
-![A few rows of Iris dataset](/deploying-machine-learning-models-using-flask/Dataset.PNG)
+![A few rows of Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 ##### Classification Model
 Having chosen the dataset, it's time to build our classification model. Let's name the file `model.py`.
@@ -68,7 +68,7 @@ The CSV file of the dataset can be downloaded [here](https://gist.github.com/net
 data = pd.read_csv('./iris.csv')
 ```
 
-![Iris dataset](/deploying-machine-learning-models-using-flask/Dataset.PNG)
+![Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 As you see in the image, the target variable under the `variety` column has textual data. Since the textual data is made use of in building our Machine Learning model, we must encode the textual data as numbers.
 
@@ -288,9 +288,9 @@ Now, on running the flask server using the command `python server.py` on your te
 
 To view the landing page, append `/home` to the existing URL. You can view sample inputs and outputs in the below screenshots.
 
-![HTML page to accept details](/deploying-machine-learning-models-using-flask/Input.PNG)
+![HTML page to accept details](/engineering-education/deploying-machine-learning-models-using-flask/Input.PNG)
 
-![HTML page to display the variety of flower](/deploying-machine-learning-models-using-flask/Output.PNG)
+![HTML page to display the variety of flower](/engineering-education/deploying-machine-learning-models-using-flask/Output.PNG)
 
 From the above images, you can see that `Virginica` is the classified variety for the given inputs of sepal and petal.
 

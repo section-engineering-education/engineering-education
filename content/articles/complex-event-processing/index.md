@@ -48,7 +48,7 @@ Next comes the event processing. In this step, we can make inferences on the dat
 
 Finally, the last step is the response or action. In order to effectively respond to an event, actions are taken. These actions can be alerts, logging files, triggers for more complicated workflows, or automated actions. For the car example, the event 'LossOfTirePresure' can trigger a reaction process to note the pressure loss into the car's maintenance log and alert the driver via the car's portal that the tire pressure has decreased.
 
-![CEP1](/complex-event-processing/cep1.jpeg)<br/>
+![CEP1](/engineering-education/complex-event-processing/cep1.jpeg)<br/>
 *Image source: [Databricks](https://databricks.com/glossary/complex-event-processing)*
 
 ### What tools are available?

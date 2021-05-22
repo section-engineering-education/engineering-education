@@ -97,7 +97,7 @@ Now, on your other computer, open a browser and let's load the Grafana endpoint:
 
 You will be asked for that username and password that we saved previously. Once authenticated, you should see something like this:
 
-![grafana endpoint](/images/education/installing-k8-ubuntu/grafana.png)
+![grafana endpoint](/engineering-education/images/education/installing-k8-ubuntu/grafana.png)
 
 Now that we have the dashboard up and running, we'll use an [available image of the microbot app](https://github.com/dontrebootme/docker-microbot) to create an actual deployment on our local cluster. Run:
 ~~~
@@ -194,7 +194,7 @@ curl http://localhost:31848
 
 Externally, you can go back to the browser where you previously loaded the Grafana dashboard and access this service as well. *http://<YOUR_INTERNAL_IP>:<YOUR_PORT> (in my case: `http://192.168.1.45:31848`). NodePort is what exposes the service externally.
 
-![](/images/education/installing-k8-ubuntu/microbot.png)
+![](/engineering-education/images/education/installing-k8-ubuntu/microbot.png)
 
 MicroK8s will run until it is stopped. If you wish stop MicroK8s at anytime, run:
 ~~~

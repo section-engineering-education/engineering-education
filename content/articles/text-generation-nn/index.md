@@ -33,16 +33,16 @@ Text is a form of sequence data, to a neural network it is but a sequence of dig
 Recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
 [Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve machine learning problems which need to remember information about the past inputs. When processing sequential data, it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
 
-![rnn](/text-generation-nn/RNN-rolled.png)
+![rnn](/engineering-education/text-generation-nn/RNN-rolled.png)
 
 We will use a special type of RNN called [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/),  which are equipped to handle very large sequences of data. Simple RNNs  have a problem called the *[vanishing gradient problem](https://www.youtube.com/watch?v=qhXZsFVxGKo)*, because of which they cannot handle large sequences. LSTMs are designed to handle long-term dependencies.
 
-![lstm](/text-generation-nn/62.png)
+![lstm](/engineering-education/text-generation-nn/62.png)
 
 ### Text Generation Using RNN
 When working with text data *tokens* are words or characters and any network that can model the probability of the next token is called *language model*. A language model captures the statistical structure of the text. If we are training the neural network to predict the *next character*, it is called [Character Level Model](https://towardsdatascience.com/character-level-language-model-1439f5dd87fe). Similarly, we can train the model to predict the next word, given a sequence of words called [Word Level Models](https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/). We are implementing character level model.
 
-![model](/text-generation-nn/63.png)
+![model](/engineering-education/text-generation-nn/63.png)
 
 ### Implementing in Tensorflow
 #### The Dataset

@@ -70,7 +70,7 @@ SDLC models are the methodologies employed by organizations in the development o
 #### Waterfall model
 This model consists of various stages with inputs and outputs. The next stage cannot begin without the completion of the initial phase. Each phase uses the output of the previous phase as the input. The software product is tested once all the stages have been completed. 
 
-![Waterfall Model](/understanding-software-development-life-cycle/waterfall-model.png)
+![Waterfall Model](/engineering-education/understanding-software-development-life-cycle/waterfall-model.png)
 
 [Image Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png)
 
@@ -88,7 +88,7 @@ This model consists of various stages with inputs and outputs. The next stage ca
 #### Iterative model
 In this model, software development is first done on a small scale. In every single iteration, additional features are designed and added to the software. Each iteration involves coding and testing the software product. This cyclical process produces a software product in every cycle. This software has more features than the previous cycle. 
 
-![Iterative Model](/understanding-software-development-life-cycle/iterative-model.png)
+![Iterative Model](/engineering-education/understanding-software-development-life-cycle/iterative-model.png)
 
 [Image Source: Professional QA](https://www.professionalqa.com/assets/images/iterative-model.png)
 
@@ -106,7 +106,7 @@ In this model, software development is first done on a small scale. In every sin
 #### V-Model
 This model is an extension of the waterfall model. The development and testing stages are organized in a parallel way. This model consists of the verification stage on one side, and the validation or testing stage on the other side. These two sides are joined through coding. 
 
-![V-Model](/understanding-software-development-life-cycle/v-model.png)
+![V-Model](/engineering-education/understanding-software-development-life-cycle/v-model.png)
 
 [Image Source: Professional QA](https://www.professionalqa.com/assets/images/v-model.png)
 
@@ -126,7 +126,7 @@ This model combines aspects of the iterative and waterfall models. It goes beyon
 
 The software development process moves to the next step based on the evaluation done by the customer. The process moves along the spiral to the next phase. 
 
-![Spiral Model](/understanding-software-development-life-cycle/spiral-model.jpg)
+![Spiral Model](/engineering-education/understanding-software-development-life-cycle/spiral-model.jpg)
 
 [Image Source: Ultimate SDLC](https://ultimatesdlc.com/wp-content/uploads/2011/08/Boehm-Spiral-Model.jpg)
 
@@ -144,7 +144,7 @@ The software development process moves to the next step based on the evaluation 
 #### Agile model
 This is a combination of incremental and iterative models with more of a focus on customer satisfaction and adaptability. In this model, the development process is divided into incremental sections in iterations. In every iteration, cross-functional units work on areas such as planning, requirement analysis, design, coding, and testing. When each iteration ends, the product is shown to the customer and other stakeholders. The final product should meet all the specifications given by the customer. 
 
-![Agile Model](/understanding-software-development-life-cycle/agile-model.jpg)
+![Agile Model](/engineering-education/understanding-software-development-life-cycle/agile-model.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/sdlc/images/sdlc_agile_model.jpg)
 

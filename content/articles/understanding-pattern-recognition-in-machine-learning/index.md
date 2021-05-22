@@ -36,7 +36,7 @@ Pattern recognition is achieved by utilizing the concept of learning. Learning e
 
 The following image shows how data is used for training and testing. 
 
-![Training and Testing](/understanding-pattern-recognition-in-machine-learning/training-and-testing.png)
+![Training and Testing](/engineering-education/understanding-pattern-recognition-in-machine-learning/training-and-testing.png)
 
 [Image Source: Geeks for Geeks](https://media.geeksforgeeks.org/wp-content/uploads/patt_intro.png)
 
@@ -48,7 +48,7 @@ The testing set is used to validate the accuracy of the system. The testing data
 
 The pattern recognition process works in five main phases as shown in the image below:
 
-![Phases of Pattern Recognition](/understanding-pattern-recognition-in-machine-learning/phases-of-pattern-recognition.jpg)
+![Phases of Pattern Recognition](/engineering-education/understanding-pattern-recognition-in-machine-learning/phases-of-pattern-recognition.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/01/pattern-2.jpg)
 

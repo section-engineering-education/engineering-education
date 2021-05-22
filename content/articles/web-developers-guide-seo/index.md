@@ -86,7 +86,7 @@ They are as follows:
 
 These meta tags can be validated using [Facebook's tool](https://developers.facebook.com/tools/debug/). Let us look at how these property names help enhance the user experience in a Facebook post.
 
-![open graph protocol](/web-developers-guide-seo/opengraph.jpg)
+![open graph protocol](/engineering-education/web-developers-guide-seo/opengraph.jpg)
 *[Image Source](https://2.bp.blogspot.com/-kzdcNpZkkK0/VBHOHfDjlkI/AAAAAAAAALs/Ud6T0JfaB4A/s1600/SharedLink.png)*
 
 The `canonicalURL` mentioned in the meta tag is an alias for human-readable URLs. Let's understand it in detail. When we go to a link on Amazon's website, we find that the page URL has the book's name in it and some other details as well.
@@ -102,7 +102,7 @@ The name of the book may change which may lead to a change in the fetched URL. T
 <meta property="twitter:property_name" content="canonicalURL">
 ```
 
-![twitter cards](/web-developers-guide-seo/twittercards.jpg)
+![twitter cards](/engineering-education/web-developers-guide-seo/twittercards.jpg)
 
 *[Image Source](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup)*
 

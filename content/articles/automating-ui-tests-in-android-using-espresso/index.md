@@ -138,7 +138,7 @@ That's it. Let's run our test. Right-click on the test class name and select `Ru
 
 This is how the app test should run.
 
-![Test result](/automating-ui-tests-in-android-using-espresso/result.gif)
+![Test result](/engineering-education/automating-ui-tests-in-android-using-espresso/result.gif)
 
 ### Conclusion
 With that, you have seen how automated tests are written and how they run. Another perk of `espresso` is that it observes the activity lifecycle. Therefore, you don't have to write additional logic to handle them since espresso does it for you. Go ahead and automate your UI tests. It will save some time for you and hopefully, you will be more productive. 

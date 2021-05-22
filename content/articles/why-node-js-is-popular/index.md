@@ -30,12 +30,12 @@ Since then its popularity has wildly grown. For instance in [Github](https://git
 
 For the second year in a row, Node.js won the top spot in the StackOverflow's [2020 developer survey](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3). Over half of the respondents in the survey reported having used it in their projects.
 
-![Half of the respondents use Node.js](/why-node-js-is-popular/stackoverflow1.jpg)
+![Half of the respondents use Node.js](/engineering-education/why-node-js-is-popular/stackoverflow1.jpg)
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 Node.js took the first position as the most wanted technology in the survey.
 
-![most wanted technology 2020](/why-node-js-is-popular/stackoverflow2.jpg)
+![most wanted technology 2020](/engineering-education/why-node-js-is-popular/stackoverflow2.jpg)
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 According to Node.js [metrics](https://nodejs.org/metrics/), Node.js has been downloaded more than 1 billion times globally.

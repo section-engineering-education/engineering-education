@@ -85,7 +85,7 @@ sentiment_classifier = pipeline('sentiment-analysis')
 
 print(sentiment_classifier("This is an interesting article! I hope you are enjoying it."))
 ```
-![code output](/hugging-face/code_output.png)
+![code output](/engineering-education/hugging-face/code_output.png)
 
 The first time you run this, the model is downloaded. It's better to experiment with HuggingFace on Colab initially. The size of the models ranges from 50MB to GBs. 
 

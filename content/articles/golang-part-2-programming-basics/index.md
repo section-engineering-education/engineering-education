@@ -70,7 +70,7 @@ The `go run` command can be used to run the go programs. This command compiles a
 
 Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the `go run <file name>` command on your terminal. 
 
-![go run](/golang-part-2-programming-basics/go-run.png)
+![go run](/engineering-education/golang-part-2-programming-basics/go-run.png)
 
 
 #### Components
@@ -115,7 +115,7 @@ variable_name := value (shorthand)
 Keywords are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program.
 
 There are 25 keywords in Go:
-![go keywords](/golang-part-2-programming-basics/go-keywords.png)
+![go keywords](/engineering-education/golang-part-2-programming-basics/go-keywords.png)
 
 ##### Identifiers
 Identifiers are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc.
@@ -180,7 +180,7 @@ func main() {
 
 A user can execute multiple if-else statements and the statements are executed from the top down. As soon as one of the conditions is true, the statement associated with that is executed. This creates a "ladder" also called the if-else ladder.
 
-![control flow](/golang-part-2-programming-basics/control-flow.jpg)<br>
+![control flow](/engineering-education/golang-part-2-programming-basics/control-flow.jpg)<br>
 The basic structure of conditionals:
 
 ```

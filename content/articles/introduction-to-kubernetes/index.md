@@ -40,12 +40,12 @@ Kubernetes objects are defined using YAML or JSON files that are referred to as 
 #### Pod
 The pod is the fundamental building block of Kubernetes. It comprises one or more tightly coupled containers with a shared networking layer and file system volume. Higher-level components manage pods therefore, they are not explicitly defined in the manifest file.
 
-![Pod](/introduction-to-kubernetes/pod.png)
+![Pod](/engineering-education/introduction-to-kubernetes/pod.png)
 
 #### Deployment
 A deployment comprises a collection of pods defined by a template and a replica count. A specific value for replica count can be set, or a separate Kubernetes resource (horizontal pod autoscaller) can be used to control the replica count based on the CPU utilization.
 
-![Deployment](/introduction-to-kubernetes/deployment.png)
+![Deployment](/engineering-education/introduction-to-kubernetes/deployment.png)
 
 If three pods are running in the deployment crash due to machine failure, three more pods will be scheduled to run on a different machine. Deployments are best for deploying stateless applications where pods can be replaced without causing a cluster problem.
 

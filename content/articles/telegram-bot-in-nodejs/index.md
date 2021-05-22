@@ -197,23 +197,23 @@ Here are the results from telegram.
 
 #### Starting the bot
 
-![bot result 1](/telegram-bot-in-nodejs/image1.jpg)
+![bot result 1](/engineering-education/telegram-bot-in-nodejs/image1.jpg)
 
 #### Requesting for a dog photo
 
-![bot result 2](/telegram-bot-in-nodejs/image2.jpg)
+![bot result 2](/engineering-education/telegram-bot-in-nodejs/image2.jpg)
 
 #### Requesting for a cat photo
 
-![bot result 3](/telegram-bot-in-nodejs/image3.jpg)
+![bot result 3](/engineering-education/telegram-bot-in-nodejs/image3.jpg)
 
 #### Requesting phone number
 
-![bot result 4](/telegram-bot-in-nodejs/image4.jpg)
+![bot result 4](/engineering-education/telegram-bot-in-nodejs/image4.jpg)
 
 #### Requesting location
 
-![bot result 5](/telegram-bot-in-nodejs/image5.jpg)
+![bot result 5](/engineering-education/telegram-bot-in-nodejs/image5.jpg)
 
 Kindly check the source code in my GitHub repository [here](https://github.com/calebroHQ/telegram-chatbot-for-a--restaraunt).
 

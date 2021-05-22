@@ -84,7 +84,7 @@ data.columns
 data.info()
 ```
 
-![Data functions](/data-analytics-using-pandas/first.png)
+![Data functions](/engineering-education/data-analytics-using-pandas/first.png)
 
 The `head()` function prints the first 5 rows in the dataset by default. If a number 'n' is specified as an argument, it prints the first 'n' rows in the dataset.
 
@@ -101,7 +101,7 @@ data.quality.head(10)
 data.quality.tail(5)
 ```
 
-![More Functions](/data-analytics-using-pandas/second.png)
+![More Functions](/engineering-education/data-analytics-using-pandas/second.png)
 
 In a data frame, we can access individual columns by using the dot(.) operator.
 
@@ -116,11 +116,11 @@ data['pH'] = data['pH'].values.astype(int)
 data.head()
 ```
 
-![Describe](/data-analytics-using-pandas/third.png)
+![Describe](/engineering-education/data-analytics-using-pandas/third.png)
 
 The `describe()` function provides some statistical measures such as [mean, median](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/mean-and-median/v/statistics-intro-mean-median-and-mode), [standard deviation](https://www.mathsisfun.com/data/standard-deviation.html), minimum, and maximum values.
 
-![Astype](/data-analytics-using-pandas/fourth.png)
+![Astype](/engineering-education/data-analytics-using-pandas/fourth.png)
 
 The `astype()` function converts the data from its original type to the one specified in the argument. In the example above, we convert the 'pH' column that has `float` values to integers by specifying `int` as the argument.  
 
@@ -133,11 +133,11 @@ data = data.sort_values('alcohol', ascending=False)
 data.head(10)
 ```
 
-![Quality](/data-analytics-using-pandas/fifth.png)
+![Quality](/engineering-education/data-analytics-using-pandas/fifth.png)
 
 We created two new columns, 'good_wine' and 'bad_wine' as shown in the example above. The 'good_wine' column will have `True` wherever the 'quality' of the wine is greater than 5. The 'bad_wine' will have `True` wherever the 'quality' is less than or equal to 5.
 
-![Sort](/data-analytics-using-pandas/sixth.png)
+![Sort](/engineering-education/data-analytics-using-pandas/sixth.png)
 
 The `sort_values()` function sorts the data frame based on the specified column. In the example above, we specify the 'alcohol' column, and the data is sorted based on this column. `ascending=False` tells pandas to sort the data in descending order. This can be set to `True` if you want the data to be sorted in ascending order.
 
@@ -146,7 +146,7 @@ data = data.drop(columns=['good_wine', 'bad_wine'])
 data.head()
 ```
 
-![Drop](/data-analytics-using-pandas/seventh.png)
+![Drop](/engineering-education/data-analytics-using-pandas/seventh.png)
 
 The `drop()` function can be used to get rid of unwanted columns in the dataset. You can specify a list of columns as an argument, and Pandas will delete all these columns. As you can see in the image above, the 'good_wine' and 'bad_wine' columns have been removed.
 
