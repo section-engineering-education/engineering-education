@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/
 title: How Serverless Architecture can Impact the Future of AI and ML Industries
-description: In this article we cover how serverless architecture benefits the AI and ML industries.
+description: In this article we cover how serverless architecture will impact the future of the AI and ML industries.
 author: lewel-murithi
 date: 2021-05-22T00:00:00-18:00
 topics: []
