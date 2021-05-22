@@ -1,4 +1,22 @@
+ -0,0 +1,228 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/
+title: How Serverless Architecture can Impact the Future of AI and ML Industries
+description: In this article we cover how serverless architecture benefits the AI and ML industries.
+author: lewel-murithi
+date: 2021-05-22T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/hero.jpg
+    alt: How Serverless Architecture can Impact the Future of AI and ML Industries Hero Image
+---
 [Artificial Intelligence](https://builtin.com/artificial-intelligence) is the future of technological progress, and many platforms are adopting it. These AI-driven platforms have helped us make quick and more innovative decisions. They have also revolutionized the customer experience, the business world, and business intelligence.
+<!--more-->
 
 A developer's productivity and efficiency are greatly affected by the complexity of the [machine learning systems](https://www.sciencedirect.com/topics/computer-science/machine-learning-system) being built or managed. However, by the use of [serverless architecture](https://martinfowler.com/articles/serverless.html), most difficulties are solved. The serverless architecture effectively handles [machine learning models](https://developer.ibm.com/technologies/artificial-intelligence/articles/cc-models-machine-learning/) and resource management.
 
