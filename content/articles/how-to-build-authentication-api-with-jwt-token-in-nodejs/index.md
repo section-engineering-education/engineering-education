@@ -50,13 +50,15 @@ Create a directory and initialize npm by typing the following command:
 
 ```Bash
     mkdir jwt-project
+    cd jwt-project
     npm init -y
 ```
 
 - Linux
 
   ```Bash
-  mkdir jwt-projects
+  mkdir jwt-project
+  cd jwt-project
   npm init -y
   ```
 
