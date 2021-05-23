@@ -6,8 +6,11 @@ An evolutionary algorithm mimics one of nature's most fascinating processes, nat
 Inspired by the model of evolution by Darwin in 1859, an EA can be used to approximate solutions. This can be used even when the most optimized approach known is still not fast enough to meet real-world constraints [ Ex: [NP-Complete](https://www.ics.uci.edu/~eppstein/161/960312.html) ].
 
 ### Prerequisites
-The reader must have a good understanding of the Python Programming Language.
-<br/>You can start [here](https://www.section.io/engineering-education/a-beginners-guide-to-python/)
+The reader must have a good understanding of:
+1. The Python Programming Language
+2. Design and Analysis of Algorithms
+
+You can start [here](https://www.section.io/engineering-education/a-beginners-guide-to-python/)
 
 ### Table of contents
 1. [Phases of EA](#phases-of-ea)
@@ -82,7 +85,7 @@ Fitness function is a way to find out how feasible a solution is.
 Choosing a proper fitness function to simulate your goal is one of the most important aspects of EA.
 Our goal is to get the word "Hello". So, a neat and simple fitness score would give us the number of characters at their correct positions.
 
-So, for a string "Yello": <br/>
+So, for a string "Yello": 
 the fitness score would be 4 (for 'e', 'l', 'l', 'o')
 ````python3
 def fitness(source, target):
@@ -382,6 +385,8 @@ You can see that the algorithm took only 0.03 s to compute the output.
 We have successfully dissected and coded an EA. Our monkey finally learned to say 'Hello'.
 Yay! 🥳
 
+You can try running this code [here](https://replit.com/@tvashta/Evolutionary-Algorithms#main.py)
+
 Oh, and just in case you were wondering the real life effects of this thought experiment. In 2002, the University of Plymouth MediaLab Arts course studied the literary output of real monkeys. Well, monkeys are monkeys after all. Not only did they produce 5 pages of the letter S, they started pounding the keyboard with a stone. The director of the university's Institute of Digital Arts and Technology (i-DAT), said that monkeys
 > "are not random generators. They're more complex than that. ... They were quite interested in the screen, and they saw that when they typed a letter, something happened. There was a level of intention there."
 
@@ -393,6 +398,8 @@ Sometimes these have given rise to some totally out-of-the-box solutions.
 Have a look at some of these. These made me gape in awe!
 
 ![walk-without-legs](/engineering-education/introduction-to-evolutionary-algorithms/EA.gif)
+
+Source: [Robots that can adapt like animals: Cully A, Clune J, Tarapore D, Mouret JB](https://goo.gl/9cwFtw)
 
 ### References
 
