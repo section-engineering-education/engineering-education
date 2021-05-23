@@ -21,7 +21,7 @@ Just like you would have done with any application running on the Node.js runtim
 
 ### Setting up Typescript
 
-To set up Typescript with Node.js, you need Typescript dependencies provided by the NPM registry. To install the [Typescript compiler package](https://www.npmjs.com/package/typescript), run the following command.
+To set up Typescript with Node.js, you need Typescript dependencies. To install the [Typescript compiler package](https://www.npmjs.com/package/typescript), run the following command:
 
 ```bash
 npm install -g typescript
