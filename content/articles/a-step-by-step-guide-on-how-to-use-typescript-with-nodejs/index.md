@@ -97,7 +97,7 @@ Feel free to add or change this file as needed to configure the Typescript compi
 
 ### Using Typescript with Node.js
 
-Go ahead and create the folder `src` in your project directory. `src` host `.ts` files as explained earlier. Inside `src`, create an `index.ts` file and start writing some Typescript code. While writing down Typescript, it is advisable to have a Typescript compiler installed in your project's local dependencies. Run `npm install -D typescript` to do so.
+Go ahead and create the folder `src` in your project directory. `src` hosts the Typescript files as explained earlier. Inside `src`, create an `index.ts` file and start writing some Typescript code. While writing down Typescript, it is advisable to have a Typescript compiler installed in your project's local dependencies. Run `npm install -D typescript` to do so.
 
 ```ts
 function sum (num1:number, num2:number){
