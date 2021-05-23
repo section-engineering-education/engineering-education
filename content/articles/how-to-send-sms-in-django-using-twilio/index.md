@@ -1,8 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-send-sms-in-django-using-twilio/
+title: How to Send SMS in Django Using Twilio
+description: This article will be teaching us how to send SMS from a Django app using Twilio. We will be building a simple Django app to demonstrate how to send SMS from a Django app.
+author: shuaib-oseni
+date: 2021-05-23T00:00:00-12:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-send-sms-in-django-using-twilio/hero.png
+    alt: Django Twilio SMS
+---
 SMS is a good way to send alerts, notifications and to even authenticate users. There comes a time where by we need SMS functionality in our app. Either to send notifications to clients or even serve as a way of having a "multifactor authentication" feature.
+<!--more-->
 
 In this tutorial, we will build a simple Django app with SMS capability to send messages to a phone number once a particular condition is met.
 
-[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality to your app . It is actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
+[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality to your app . It is a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
@@ -18,7 +35,7 @@ A little understanding of Django would help the reader to follow along better.
 
 ### Creating and setting up a new Django project
 Let's start by creating a new virtual environment.
-
+dd
 A virtual environment allows you to create different spaces on your computer, with different set of libraries and versions.
 
 By creating a virtual environment, you'll be able to separate the necessary library installation for a project, without having to install them globally.
@@ -73,14 +90,14 @@ INSTALLED_APPS = [
 ```
 
 ### Setting up Twilio
-To get started with Twilio, we need to sign up on [Twilio's](https://twilio.com) website to create an account and also get a Twilio number.
+To get started with Twilio, we need to sign up on [Twilio](https://twilio.com) to create an account and to also get a Twilio number.
 
 Click on the `Sign Up` button and fill in your details to create an account.
 
 ### Creating a model
 Now lets define a simple class.
 
-In the `score` directory, edit the `models.py` file and add the following lines of code to it:
+In the `score` directory, edit the `models.py` file and add the following lines of code:
 
 ```python
 from django.db import models
@@ -152,7 +169,7 @@ We can find our account-specific configuration credentials on the Dashboard page
 
 Click on the "Get a trial number" button to get a trial number.
 
-A trial number is a free phone number assigned to you upon sign up by twilio for testing purpose.
+A trial number is a free phone number assigned to you upon sign up by Twilio for testing purposes.
 
 ![Trial number](/engineering-education/how-to-send-sms-in-django-using-twilio/trial-number.png)
 
@@ -203,7 +220,7 @@ class Score(models.Model):
 
 With a trial number, we can only send sms to a Twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
 
-For testing purpose, our verified number will be the number we submitted for phone number verification when we created our Twilio account.
+For testing purposes, our verified number will be the number we submitted for phone number verification when we created our Twilio account.
 
 Now head over to the django-admin page, add a score less than 80 and you should recieve an SMS.
 
@@ -223,3 +240,6 @@ For further learning on how to recieve phone calls, recieve test and perform oth
 That's all!
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
