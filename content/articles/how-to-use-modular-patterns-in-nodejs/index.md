@@ -29,7 +29,7 @@ It is easier to debug and share the code with other developers, this ease applic
 
 This concept is common in most programming languages. The concept is called modularity (Modular patterns). In this case, every single file is a module.
 
-Let’s say, for example, you are creating a calculator application. In this case, you can have a file that handles addition, and another file handling subtraction functionality. So, we have each file performing a specific arithmetical task.
+Let's say, for example, you are creating a calculator application. In this case, you can have a file that handles addition, and another file handling subtraction functionality. So, we have each file performing a specific arithmetical task.
 
 ### Scope and namespace
 This is a huge advantage for Node.js. When you use JavaScript without frameworks such as Node.js, there is no concept of public and private scope.
@@ -38,7 +38,7 @@ JavaScript offers local scope, which means the content of a function or an objec
 
 This might pollute the global namespace when executing this JavaScript code in the browser. Thus, you need to wrap the functions method in a function scope to enhance privacy and avoid populating the global namespace in the browser.
 
-Node.js does not implement the global namespace. In node.js, Module systems are implemented natively, based on the common JavaScript specifications.
+Node.js does not implement the global namespace. In node.js, modular systems are implemented natively, based on the common JavaScript specifications.
 
 This way, you implement a local namespace within every module. It contains variables, and properties that are private to a module until explicitly exposed/exported to other modules.
 
@@ -59,66 +59,66 @@ A node.js can be stateless or stateful:
 
 This tutorial will focus on creating modules, exporting and importing them to different files using Node.js.
 
-Let’s create some Node.js modules.
+Let's create some Node.js modules.
 
 ### Creating and importing a function module
 To start with, create a project folder and include the `app.js` and `main.js` files respectively, as shown below:
 
 ```js
-//app.js
+// app.js
 const sum = (num1,num2) => {
-    return 'The sum is '+(num1+num2);
+    return 'The sum is '+ (num1 + num2);
 }
 ```
 
 ```js
-//main.js
-const  result = sum(10,14)
+// main.js
+const result = sum(10,14)
 console.log(result);
 ```
 
-It is clear that `app.js` wants to access function `sum` from `main.js`.
+It is clear that `app.js` wants to access function `sum()` from `main.js`.
 
 When you run `node main.js`, it shows `undefined`. This is because `sum` is private to `main.js`. And cannot be accessible outside this module unless exposed publically to other modules.
 
 This is how modules are made available when required by other modules.
 
 ```js
-//app.js
-const sum = (num1,num2) => {
-    return 'The sum is '+(num1+num2);
+// app.js
+const sum = (num1, num2) => {
+    return 'The sum is '+ (num1 + num2);
 }
 
 module.exports = sum 
 ```
 
 ```js
-//main.js
+// main.js
 // search app.js in present directory
 const sum = require('./app.js')
 
-const  result = sum(10,14)
+const result = sum(10, 14)
 console.log(result); 
 ```
 
-Here, we have a function `sum` containing `module.exports`, which makes this function accessible outside of the module wherever we require that module.
+Here, we have a function `sum()` containing `module.exports`, which makes this function accessible outside of the module wherever we require that module.
 
 The object `module` uses the property `exports` to expose the function `sum` natively. The function is now explicitly accessible and can now be invoked in other modules such as `main.js`.
 
 To use this module, you need to import it to another modul using `require()`. Here, we import module `app.js` to module `main.js`.
 
-> Note:  The require() function is synchronous. `require()` caches the value of `module.exports` and returns that same value for all future `require()` calls. If the module should return different value, you should export a function that can be called afterward to return a new value.
+> Note: The require() function is synchronous. `require()` caches the value of `module.exports` and returns that same value for all future `require()` calls. If the module should return different value, you should export a function that can be called afterward to return a new value.
 
-When you run `node main.js`, you’ll get the results as expected.
+When you run `node main.js`, you'll get the results as expected.
 
 What if you have different functions and export them to `main.js`.
 
 This is how you would use the module system:
 
 ```js
-//app.js
-const sum = (num1,num2) => {
-    return 'The sum is '+(num1+num2);
+// app.js
+const sum = (num1, num2) => {
+    return 'The sum is '+ (num1 + num2);
 }
 
 const count = (anims) => {
@@ -137,11 +137,11 @@ module.exports = {
 ```
 
 ```js
-//main.js
+// main.js
 // search app.js in present directory
 const myModule = require('./app.js')
 
-const  result = myModule.sum(10,14)
+const result = myModule.sum(10,14)
 console.log(result); 
 
 const animals = myModule.count(['Sheep','Horse','Tiger','Pigeon'])
