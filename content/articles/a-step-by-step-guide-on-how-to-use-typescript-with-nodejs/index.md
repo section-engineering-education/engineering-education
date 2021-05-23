@@ -89,7 +89,7 @@ Here is an example of a `tsconfig.json` file option.
   },
   "exclude":[
     "./node_modules"
-]
+  ]
 }
 ```
 
