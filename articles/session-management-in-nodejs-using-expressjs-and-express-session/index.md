@@ -1,18 +1,18 @@
 A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state.
 
-In Session based authentication, the user's state is stored in the memory of the server or a database. 
+In session-based authentication, the user's state is stored in the server's memory or a database. 
 
 ### How sessions works
 
-When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server which'll be now stored on the client. This cookie will be sent on every request to the server.
+When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server, which will be now stored on the client. This cookie will be sent on every request to the server.
 
-We use this session ID recieve from the cookie in the server to look up the session in the database or the session store to maintain a one-to-one match between a session and a cookie. This will make HTTP protocol connections stateful.
+We use this session ID and look up the session saved in the database or the session store to maintain a one-to-one match between a session and a cookie. This will make HTTP protocol connections stateful.
 
 ### The difference between session and cookie
 
 As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie.
 
-A cookie is a [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) which is stored in the browser. The browser attaches cookies to every HTTP request that is sent to the server.
+A cookie is a [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) that is stored in the browser. The browser attaches cookies to every HTTP request that is sent to the server.
 
 In a cookie, you can't store a lot of data. A cookie cannot store any sort of user credentials or secret information. If we did that, a hacker could easily get hold of that information and steal personal data for malicious activities.
 
@@ -70,7 +70,7 @@ app.use(sessions({
 
 - `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key is usually long and randomly generated in a production environment.
 - 
-- `resave` - takes a boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
+- `resave` - takes a Boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
 
 - `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
 
@@ -91,7 +91,7 @@ When a client sends a request, the server will set a session ID and set the cook
 
 We'll create a simple login form to demonstrate that.
 
-**Here is the login form**, (`index.html`).
+Here is the login form (`index.html`).
 
 ```html
 <html>
@@ -113,7 +113,7 @@ We'll create a simple login form to demonstrate that.
 </html>
 ```
 
-**CSS to style the form**, (`app.css`).
+And some CSS to style the form (`app.css`).
 
 ```css
 body {
@@ -148,31 +148,27 @@ form input[type="submit"] {
 }
 ```
 
-**Setting up the server**, (`app.js`).
+Let's setup the server. Create an `app.js` file and set up the session server, as shown below.
+
+#### Import all the Node.js libraries that we explained earlier
 
 ```js
 const express=require('express');
 const cookieParser = require("cookie-parser");
 const bodyParser=require('body-parser');
 const sessions = require('express-session');
+```
 
-//username and password
-const myusername = 'user1'
-const mypassword = 'mypassword'
+#### Set the Express server options such as the port number
 
-const PORT = 4000;
-var session;
+```js
 const app = express();
+const PORT = 4000;
+```
 
-// get our app to use body parser 
-app.use(bodyParser.urlencoded({ extended: true }))
+#### Add the Express-session options
 
-// cookie parser middleware
-app.use(cookieParser());
-
-// serve css styling
-app.use(express.static(__dirname));
-
+```js
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
 
@@ -181,9 +177,51 @@ app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized:true,
     cookie: { maxAge: oneDay },
-    resave: false 
+    resave: false
 }));
+```
 
+#### Parse the HTML form
+As we explained, the Body-parser will help us parser an HTTP POST method request from an HTML document. Set the sever to use the Body-parser so that we can access this POST method. We also need to serve the CSS styling to format the outlook of the HTML form.
+
+```js
+// get our app to use a body-parser
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// serve css styling
+app.use(express.static(__dirname));
+```
+
+#### Set the Cookie-parser
+Define Cookie-parser usage so that the server can access the necessary option to save, read and access a cookie.
+
+```js
+
+// cookie parser middleware
+app.use(cookieParser());
+
+```
+
+#### Set the authentication credentials
+In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutorial, we are storing them in these variables.
+
+```js
+//username and password
+const myusername = 'user1'
+const mypassword = 'mypassword'
+```
+
+#### Add the endpoints
+
+We have three make routes here:
+
+1. `http://localhost:4000/`
+
+This will render and serve the HTML form to the client to fill in the login credentials. When a user attempts to log in, the server will verify the username and password against `myusername` and `mypassword` values and decide whether the information is valid or not.
+
+```js
+var session;
 app.get('/',(req,res) => {
     session=req.session;
     if(session.userid){
@@ -191,7 +229,23 @@ app.get('/',(req,res) => {
     }else
     res.sendFile('index.html',{root:__dirname})
 });
+```
 
+2. `http://localhost:4000/user`
+
+To set this session, the user will submit the credentials. The server will verify these credentials set in `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user.
+
+If the credentials are valid;
+
+- The user will be granted the necessary access.
+- The server will create a temporary user session with a random string known as a session ID to identify that session.
+- The server will send a cookie to the client's browser. The session ID is going to be placed inside this cookie.
+
+Once the client browser saves this cookie, it will send that cookie along with each subsequent request to the server. The server will validate the cookie against the session ID. If the validation is successful, the user is granted access to the requested resources on the server.
+
+If the credentials are invalid, the server will not grant this user access to the resources. No session will be initialized, and no cookie will be saved.
+
+```js
 app.post('/user',(req,res) => {
     if(req.body.username == myusename && req.body.password == mypassword){
         session=req.session;
@@ -203,32 +257,26 @@ app.post('/user',(req,res) => {
         res.send('invalid username or password');
     }
 })
+```
 
+3. `http://localhost:4000/logout`
+
+This will define the logout endpoint. When the user decides to log out, the server will destroy (`req.session.destroy();`) the session and clear out the cookie on the client-side. Cookies are cleared in the browser when the `maxAge` expires.
+
+```js
 app.get('/logout',(req,res) => {
     req.session.destroy();
     res.redirect('/');
 });
+```
 
+#### Listen to the port of the server
+
+```js
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 ```
 
-In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutoirial, we are storing them in these variables. The server will verify the username and password against these values. If valid, the user will be granted the necessary access.
-
-To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user.
-
-If the credentials are valid, the server will create a temporary user session with a random string known as a session ID to identify that session.
-
-The server will send a cookie to the client's browser. The session ID is going to be placed inside this cookie.
-
-Once the client browser saves this cookie, it's then going to send that cookie along with each subsequent request to the server.
-
-The server is going to validate the cookie against the session ID. If the validation is successful, the user is granted access to the requested resources on the server.
-
-If the credentials are invalid, the server will not grant this user access to the resources. No session will be initialized, and no cookie will be saved.
-
-When the user decides to log out, the server will destroy (`req.session.destroy();`) the session and clear out the cookie on the client-side. Cookies are cleared in the browser when the `maxAge` expires.
-
-Run the application using `node app.js`. This should start the server on the set port 4000.
+Your session application is now set. Run the application using `node app.js`. This should start the server on the set port 4000.
 
 ![An express server](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/express-server.jpg)
 
@@ -236,7 +284,7 @@ Open the server on the browser on route `http://localhost:4000/`, and you will b
 
 ![A served express server html form](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
 
-To be authenticated by the server, provide the credentials as specified in the server—username as `user1` and password as `mypassword`.
+To be authenticated by the server, provide the credentials specified in the server—username as `user1` and password as `mypassword`.
 
 ![Session user granted access](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
 
@@ -246,7 +294,7 @@ In this case, since we don't have a database to save the session, we will `conso
 
 ![Node.js session](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/session.jpg)
 
-These are the same values you would have saved in a production environment on the server-side into a database such as MongoDB, Postgres, etc.
+These are the same values you would have saved in a production environment on the server-side into a database such as MongoDB, PostgreSQL, etc.
 
 Let's see the cookie value saved in the browser.
 
@@ -260,11 +308,11 @@ The client won't be able to modify the contents of the cookie, and even if they 
 
 It's not a security concern if a third party can read the cookies.
 
-A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still have to maintain a one-to-one relationship to the user session. The cookie will be valid until set maxAge expires unless the user decides to log out.
+A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still has to maintain a one-to-one relationship to the user session. The cookie will be valid until set `maxAge` expires or the user decides to log out.
 
 When the user logs out, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
 
-### Conlusion
+### Conclusion
 That's all for this tutorial. This was a basic example, and I hope it helped you understand the concept of session management in Node.js using Express.js and Express-session.
 
 Happy Coding!!
