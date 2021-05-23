@@ -1,6 +1,6 @@
-Typescript, a JavaScript superset, is gaining tremendous popularity among developers. It incorporates every JavaScript feature with supplementary traits such as static typing, IntelliSense, and type checking.
+Typescript, a JavaScript superset, is gaining tremendous popularity among developers. It incorporates every JavaScript feature with supplementary traits such as static typing, and type checking.
 
-Many factors make Node.js a popular JavaScript framework. Node.js has a strong NPM (Node Package Manager) ecosystem that provides open-source code (packages) that you can use in any of your Node.js projects. Check out this fantastic article to learn more about why Node.js is a popular framework. Node.js is great for making server-side applications but It lacks some modern components such as type checking. A Node.js codebase can also be very hard to maintain.
+Many factors make Node.js a popular JavaScript framework. Node.js has a strong NPM (Node Package Manager) ecosystem that provides open-source code (packages) that you can use in any of your Node.js projects. Check out [this fantastic article](/why-node-js-is-popular/) to learn more about why Node.js is a popular framework. Node.js is great for making server-side applications but It lacks some modern components such as type checking. A Node.js codebase can also be very hard to maintain.
 
 Typescript supports these modern coding styles, such as static typing and type checking. It is made to build extensive and high-level applications. That's why it would be great to have Typescript as the primary language to support Node.js functionality. This allows you to write server-side-based applications with strong type checking, which allows you to avoid runtime type errors and other Typescript advantages and take full advantage of Node.js.
 
@@ -56,7 +56,7 @@ Let's edit this config file to include the necessary option for running Typescri
 
 - `"rootDir": "./src"` - a directory where the input Typescript files are stored. I named the folder are `src`.
 
-- `"outDir": "./build"` - this an output directory where the output structure of the compiled JavaScript will be saved. In this case, JavaScript code will be saved in a folder called to `build` in the root directory of the main project.
+- `"outDir": "./dist"` - this an output directory where the output structure of the compiled JavaScript will be saved. In this case, JavaScript code will be saved in a folder called to `dist` in the root directory of the main project.
 
 - `"moduleResolution": "node"` - a module import resolution algorithm that mimics the way the Node.js searches for modules in real-time.
 
