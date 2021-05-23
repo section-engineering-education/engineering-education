@@ -1,5 +1,21 @@
-When building applications, you don't write all your code in one single file. First, this would very hard to manage. If it's a large application, it would be very hard for a developer to come back to this code, refactor or extend the application functionalities. However, you can break down this complex application into small reusable parts.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-use-modular-patterns-in-nodejs/
+title: How to use modular patterns in Node.js
+description: This article goes through the basics of modularizing codes in Node.js. We will go through a few examples to understand the concepts better. 
+author: edwin-wachira
+date: 2021-05-23T00:00:00-18:30
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-use-modular-patterns-in-nodejs/hero.jpg
+    alt: Modular patterns image example
+---
+When building applications, you don't write all your code in one single file. First, this would very hard to manage. If it's a large application, it would be very hard for a developer to come back to this code, refactor or extend the application functionalities. However, you can break down this complex application into small reusable parts.
+<!--more-->
 In this article, we will learn in-detail about what modularization of code is, and how to do it. We will also be learning to modularize code in Node.js.
 
 ### Prerequisites
