@@ -137,7 +137,7 @@ You can now run `npm start` to execute the `index.ts`. And when you delete the d
 ### Using Typescript with packages
 The climax of using Typescript and Node.js is the ability to utilize the open-source NPM packages and frameworks. Let's demonstrated how we can use Typescript to start interacting with NPM libraries.
 
-This example will set up Typescript With Express.js. One thing that you should grab is [Express.js](https://www.npmjs.com/package/express) from the NPM registry. So run `npm install express`.
+This example will set up Typescript With Express.js. You should install [Express.js](https://www.npmjs.com/package/express) from the NPM registry. So run `npm install express`.
 
 **Note:** Always make sure you have [Node.js types checking package](https://www.npmjs.com/package/@types/node) installed whenever writing Typescript using Node.js.
 
