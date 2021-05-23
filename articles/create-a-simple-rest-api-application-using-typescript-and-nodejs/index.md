@@ -302,7 +302,7 @@ Go over to Postman and open a tab, select `GET` and enter the request URL as `ht
 
 ![A get request with Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-get-request.png)
 
-This will fetch all the posts and send a response back to the Postman console. The response comprises all posts as listed in the `https://jsonplaceholder.typicode.com/posts`.
+This will fetch all the posts and send a response back to the Response section. The response comprises all posts as listed in the `https://jsonplaceholder.typicode.com/posts`.
 
 ![Posts response from Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/posts-response.png)
 
@@ -330,7 +330,7 @@ In the space provided, enter the following (Feel free to change the values for `
 }
 ```
 
-This should return a response to the Postman console, as shown below.
+This should return a response to the Response section, as shown below.
 ![Update a post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/update-a-post.png)
 
 #### 4. Delete a single post
@@ -354,8 +354,11 @@ Select `POST` in the Postman methods dropdown menu. In the URL section, enter `h
 
 ![A new post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post.png)
 
-Feel free to change the values of `title` and `body`. Click send, and the following response should be returned back in the Postman console.
+Feel free to change the values of `title` and `body`. Click send, and the following response should be returned back in the Response section.
 
 ![A new post added](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post-added.png)
+
+### Conclusion
+Typescript is an incredible programming language. It gives an advantage the modern features to check your code as you type them down. This way, you catch errors even before runtime. Typescript is also statically typed. This will increase your productive time as you type and read through your code. If you haven't started learning Typescript, be sure to read this [tutorial](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 
 That's all for this tutorial. Happy coding! 💻😀
