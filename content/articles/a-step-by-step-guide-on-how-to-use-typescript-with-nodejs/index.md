@@ -135,7 +135,7 @@ You can now run `npm start` to execute the `index.ts`. And when you delete the d
 ![Ts-node compiler](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-compiler.png)
 
 ### Using Typescript with packages
-The climax of using Typescript and Node.js is the ability to utilize the open-source NPM packages and frameworks. Let's demonstrated how we can use Typescript to start interacting with NPM libraries.
+The climax of using Typescript and Node.js is the ability to utilize the open-source NPM packages and frameworks. Let me demonstrate how we can use Typescript to start interacting with NPM packages.
 
 This example will set up Typescript With Express.js. You should install [Express.js](https://www.npmjs.com/package/express) from the NPM registry. So run `npm install express`.
 
