@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/internet-protocols/
+url: /internet-protocols/
 title: Understanding IPV4 and IPV6 protocols
 description: This article will be a walk through the IPv4 and IPv6 Internet protocols which make communication on the internet possible. 
 author: mackrine-awino
@@ -136,5 +136,5 @@ The rapidly growing population of the world is pushing for the gradual phase-out
 Blissful reading!
 
 ---
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
 
