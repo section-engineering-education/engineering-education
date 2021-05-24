@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-evolutionary-algorithms/
+url: /introduction-to-evolutionary-algorithms/
 title: Introduction to Evolutionary Algorithms
 description: This article gives an introduction to Evolutionary Algorithms (EA).  
 author: adithi-narayan
@@ -16,9 +16,9 @@ images:
 ---
 
 ### Introduction to Evolutionary Algorithms
-A computer program is built to follow rigid and explicit rules.
-This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that, we find a powerful, population-based optimization algorithm, the Evolutionary algorithm (EA).
-
+A computer program is built to follow rigid and explicit rules. This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. 
+If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that, we find a powerful, population-based optimization algorithm, the Evolutionary algorithm (EA).
+<!--more-->
 An evolutionary algorithm mimics one of nature's most fascinating processes, natural selection. Given a population, only fitter members will survive and produce new generations.
 Inspired by the model of evolution by Darwin in 1859, an EA can be used to approximate solutions. This can be used even when the most optimized approach known is still not fast enough to meet real-world constraints [ Ex: [NP-Complete](https://www.ics.uci.edu/~eppstein/161/960312.html) ].
 
