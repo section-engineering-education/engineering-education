@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-evolutionary-algorithms/
+title: Introduction to Evolutionary Algorithms
+description: This article gives an introduction to Evolutionary Algorithms (EA).  
+author: adithi-narayan
+date: 2021-05-24T00:00:00-13:00
+topics: [Algorithms]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-evolutionary-algorithms/Hero.png 
+    alt: Introduction to Evolutionary Algorithms Hero Image
+---
+
 ### Introduction to Evolutionary Algorithms
 A computer program is built to follow rigid and explicit rules.
 This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that, we find a powerful, population-based optimization algorithm, the Evolutionary algorithm (EA).
@@ -10,7 +27,7 @@ The reader must have a good understanding of:
 1. The Python Programming Language
 2. Design and Analysis of Algorithms
 
-You can start [here](https://www.section.io/engineering-education/a-beginners-guide-to-python/)
+You can start [here](https://www.section.io/engineering-education/a-beginners-guide-to-python/) to learn about Python.
 
 ### Table of contents
 1. [Phases of EA](#phases-of-ea)
