@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/running-and-managing-docker/
+url: /running-and-managing-docker/
 title: Managing and Running Docker Containers
 description: This tutorial will give the readers an overview of how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage, and removing containers.
 author: terrence-aluda
