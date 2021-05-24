@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-use-modular-patterns-in-nodejs/
 title: How to Use Modular Patterns in Node.js
-description: This article will go through the basics of modularizing codes in Node.js. We will go through a few examples to understand the concepts better. 
+description: This article will go through the basics of modularizing codes in Node.js. This tutorial will focus on creating modules, exporting and importing them to different files using Node.js. 
 author: edwin-wachira
 date: 2021-05-24T00:00:00-11:30
 topics: [Node.js]
