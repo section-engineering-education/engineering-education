@@ -1,0 +1,48 @@
+{{ partial "seo/descriptors" . }}
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="theme-color" content="#00A86B" />
+
+{{ partial "seo/prefetch" . }}
+{{ if eq .Type "blog" }}
+  {{ partial "seo/blog-schema" . }}
+{{ else }}
+  {{ partial "seo/schema" . }}
+{{- end -}}
+
+{{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
+  <meta name="robots" content="index, follow" />
+{{- else -}}
+  <meta name="robots" content="noindex, nofollow" />
+{{- end -}}
+
+{{ hugo.Generator }}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="apple-touch-icon" href="/favicon.png?v=1">
+<link rel="icon" href="/favicon.ico?v=1">
+
+{{ $style := resources.Get "scss/styles.scss" | resources.ToCSS | resources.Minify }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
+
+<!-- Sajari SDK -->	
+<script src="https://unpkg.com/@sajari/sdk-js/dist.iife/index.js"></script>	
+<!-- End Sajari SDK -->
+
+<script>
+  let TABNAB_DEBUG = false;
+    setInterval(() => {
+      document.querySelectorAll('a[target="_blank"]:not([rel="noopener"])').forEach((link)=>{
+      link.rel="noopener"
+      TABNAB_DEBUG && console.log(`mitigated tabnabbing for link ${link.href}`);
+      })
+    },300);
+</script>
+{{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
+{{ partial "head-scripts" }}
+{{- end -}}
