@@ -1,15 +1,15 @@
+TEST COMMIT
+
 A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state.
 
 In session-based authentication, the user's state is stored in the server's memory or a database. 
 
 ### How sessions works
-
 When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server, which will be now stored on the client. This cookie will be sent on every request to the server.
 
 We use this session ID and look up the session saved in the database or the session store to maintain a one-to-one match between a session and a cookie. This will make HTTP protocol connections stateful.
 
 ### The difference between session and cookie
-
 As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie.
 
 A cookie is a [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) that is stored in the browser. The browser attaches cookies to every HTTP request that is sent to the server.
@@ -21,7 +21,6 @@ On the other hand, the session data is stored on the server-side, i.e., a databa
 To learn more about their differences, check this [Session vs Cookie](https://www.javatpoint.com/session-vs-cookies) tutorial.
 
 ### Prerequisites
-
 - Have [Node.js runtime](https://nodejs.org/en/download/) installed on your computer.
 
 - Basic knowledge on [how to use Node.js](https://nodejs.dev/learn/).
@@ -29,7 +28,6 @@ To learn more about their differences, check this [Session vs Cookie](https://ww
 - Basic understanding of how to create an [HTTP server using the Expres.js](/engineering-education/express/) library.
 
 ### Setting up the required environments and libraries
-
 This is a Node.js project. It uses NPM to manage its dependencies. You need to create a new project directory and initialize the node app using:
 
 ```bash
