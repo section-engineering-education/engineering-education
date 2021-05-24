@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-container-as-a-service/
+url: /getting-started-with-container-as-a-service/
 title: Getting started with Container as a Service
 description: This article will cover the evolution of container technology into a container as a service model, the essence of CaaS to developers, and the building blocks of container as a service. At the end of the article, the reader will learn how to work with available CaaS tools. 
 author: elly-omondi
-date: 2021-05-04T00:00:00-23:00
+date: 2021-05-24T00:00:00-14:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
