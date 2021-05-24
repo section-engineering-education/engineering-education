@@ -1,3 +1,5 @@
+TEST COMMIT
+
 It's pretty simple to write code and develop applications, but how about dealing with authentication and, most likely, Authorization? We'll learn how to use ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users in this tutorial.
 
 ### Introduction to Authentication and Authorization
