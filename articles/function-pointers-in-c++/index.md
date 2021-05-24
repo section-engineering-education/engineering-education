@@ -15,5 +15,37 @@ void (*fun_ptr)(int);
 We think of function pointers like normal C++ functions. Where `void` is the return type of the function. `*fun_ptr` is a pointer to a function taking one arguement of the type `int`. It's as if we are declaring a function called `*fun_ptr` which takes int and returns void. The key to writing the declaration for a function pointer is that we are writing out the declaration of a function but with `*fun_name` where you would normally place `func_name`. The declaration of the function pointer is preceded by the pointer symbol `*`. The function pointer can take more than one argument thus it can point to any function which takes two `integer`arguments and return `void`.
 
 ### Address of a function
+To get the address of a function, we are required to mention the name of the function. We do not need to call the function. Take an example below:
+```c++
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+  std::cout << "Address of a main() function is : " <<&main<< std::endl;  
+  return 0;  
+}  
+```
+
+We're displaying the address of a main() function in the above program. We only listed the name of the function, no brackets, and no parameters to print the address of a main() function. As a result, the address of a function is the name of the function without any brackets or parameters.
+
+### Interesting facts about function pointers
+- A function pointer, unlike other pointers, points to code rather than data. A function pointer usually stores the starting of executable code.
+- We don't use function pointers to allocate or de-allocate memory as we do with normal pointers.
+- The name of a function may also be used to find the address of that function. 
+- An array of function pointers can be used in the same way that regular pointers can.
+- Function pointers can be used in place of a switch case.
+-  Like normal data pointers, a function pointer can be passed as an argument and can also be returned from a function.
+
+### Calling a function indirectly
+We can use the name of a function to call the function with the aid of a function pointer. The syntax for calling the function through the function pointer is the same as for calling the function normally.
+
+Let's take a look at an example:
+```c++
 
 
+
+
+
+```
+
+### Passing function pointers as arguments
