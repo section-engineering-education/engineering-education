@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/running-and-managing-docker/hero.jpg
     alt: Docker Container Example Image
 ---
-Containers are tools that simulate an Operating System environment and allows us to deploy our applications without necessarily worrying (too much) about different configuration systems.
+Containers are tools that simulate an Operating System environment and allow us to deploy our applications without necessarily worrying (too much) about different configuration systems.
 <!--more-->
 On exposure to any container technology, the first thing to interact with is most probably a container image. This is a binary package that contains all files necessary to run an application inside a container.
 
