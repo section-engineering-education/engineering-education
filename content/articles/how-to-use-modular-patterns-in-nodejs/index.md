@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-modular-patterns-in-nodejs/
-title: How to use modular patterns in Node.js
-description: This article goes through the basics of modularizing codes in Node.js. We will go through a few examples to understand the concepts better. 
+url: /how-to-use-modular-patterns-in-nodejs/
+title: How to Use Modular Patterns in Node.js
+description: This article will go through the basics of modularizing codes in Node.js. We will go through a few examples to understand the concepts better. 
 author: edwin-wachira
-date: 2021-05-23T00:00:00-18:30
+date: 2021-05-24T00:00:00-11:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,18 +14,19 @@ images:
   - url: /engineering-education/how-to-use-modular-patterns-in-nodejs/hero.jpg
     alt: Modular patterns image example
 ---
-When building applications, you don't write all your code in one single file. First, this would very hard to manage. If it's a large application, it would be very hard for a developer to come back to this code, refactor or extend the application functionalities. However, you can break down this complex application into small reusable parts.
+In this article, we will learn in-detail about what modularization of code is, and how to do it. We will also be learning to modularize code in Node.js. When building applications, you don't write all your code in one single file. As this would very difficult to manage. 
 <!--more-->
-In this article, we will learn in-detail about what modularization of code is, and how to do it. We will also be learning to modularize code in Node.js.
+If it's a large application, it would be very hard for a developer to come back to this code, refactor or extend the application functionalities. However, you can break down this complex application into smaller reusable parts.
 
 ### Prerequisites
+To follow this article along it will be useful to have the following:
 - [Node.js installed](https://nodejs.org/en/download/).
-- Background knowledge of using [Node.js](https://nodejs.dev/learn).
+- A background knowledge of using [Node.js](https://nodejs.dev/learn).
 
 ### Introduction
-Typically, developers code application divided into several logical files. Each file has a different bit of code with certain functionality. This way, it will be easier to maintain your codebase, because each file has less code to accomplish a specific task.
+Typically, developers code is divided into several logical files. Each file has a different bit of code with certain functionality. This way, it is easier to maintain your codebase, because each file has less code to accomplish a specific task.
 
-It is easier to debug and share the code with other developers, this ease application contributions and maintenance.
+It is easier to debug and share the code with other developers, this makes it easier for application contributions and maintenance.
 
 This concept is common in most programming languages. The concept is called modularity (Modular patterns). In this case, every single file is a module.
 
@@ -38,14 +39,14 @@ JavaScript offers local scope, which means the content of a function or an objec
 
 This might pollute the global namespace when executing this JavaScript code in the browser. Thus, you need to wrap the functions method in a function scope to enhance privacy and avoid populating the global namespace in the browser.
 
-Node.js does not implement the global namespace. In node.js, modular systems are implemented natively, based on the common JavaScript specifications.
+Node.js does not implement the global namespace. In Node.js, modular systems are implemented natively, based on the common JavaScript specifications.
 
 This way, you implement a local namespace within every module. It contains variables, and properties that are private to a module until explicitly exposed/exported to other modules.
 
 This breaks down the application complexity into manageable units and separating concerns.
 
 ### Modularization
-A modular system provides a scalable framework for building complicated apps.
+A modular system provides a scalable framework when building complicated apps.
 
 These patterns can be implemented in several ways, but that depends on the modular programming paradigm of the host programming language.
 
@@ -53,7 +54,7 @@ In Node.js, the concept of Modular patterns has additional features that go beyo
 
 The Node.js modular functionality can be used to import functions, classes, objects, external files, core Node.js modules, and NPM modules.
 
-A node.js can be stateless or stateful:
+A Node.js can be stateless or stateful:
 - Stateless expose stateless entities such as class, objects, and methods.
 - Stateful exposes a stateful instance of an object such as a database connection, and an instance of third-party API service.
 
@@ -105,7 +106,7 @@ Here, we have a function `sum()` containing `module.exports`, which makes this f
 
 The object `module` uses the property `exports` to expose the function `sum` natively. The function is now explicitly accessible and can now be invoked in other modules such as `main.js`.
 
-To use this module, you need to import it to another modul using `require()`. Here, we import module `app.js` to module `main.js`.
+To use this module, you need to import it to another module using `require()`. Here, we import the module `app.js` to module `main.js`.
 
 > Note: The require() function is synchronous. `require()` caches the value of `module.exports` and returns that same value for all future `require()` calls. If the module should return different value, you should export a function that can be called afterward to return a new value.
 
@@ -171,7 +172,7 @@ module.exports = {
 }
 ```
 
-The is a class `Person` containing objects name and age. `Person` is exposed as a property of `module.exports`. We can access the class `Person` by importing the `person.js` module to main.js, as shown below.
+This is a class `Person` containing objects name and age. `Person` is exposed as a property of `module.exports`. We can access the class `Person` by importing the `person.js` module to main.js, as shown below.
 
 ```js
 // main.js
@@ -195,7 +196,7 @@ Run `node main.js` to log the results in the console.
 
 `exports` helps you expose objects and methods.
 
-Check this example to understand better:
+Check this example to better understand:
 
 ```js
 //circle.js
@@ -232,7 +233,7 @@ console.log(`Circumference of the circle is: ${circumference}`)
 Run `node app.js` to get the results.
 
 ### module.exports vs exports
-`exports` is just an alias variable for the convenience of writing lesser code. `exports` behaves as if there is an implicit line of code that assigns it to `module.exports` i.e.:
+`exports` is just an alias variable used for the convenience of writing less code. `exports` behaves as if there is an implicit line of code that assigns it to `module.exports` i.e.:
 
 ```js
 const exports = module.exports = {};
@@ -274,7 +275,7 @@ module.exports = {
 - `exports` is great when directly exposing named functions such as `exports.areaOfaCircle`.
 
 ### Using Node.js core modules
-Node.js is bundled with a couple of modules such as HTTP [file system](https://nodejs.org/api/fs.html) (fs) etc.
+Node.js is bundled with a couple of modules such as HTTP [file system](https://nodejs.org/api/fs.html) (fs)
 
 To use these modules in your project, you use the `require()` function to access an instance of modules.
 
@@ -285,11 +286,11 @@ Npm provides open sources packages that you can use within your project.
 
 When you install an `npm` package, dependencies are saved in a `node_modules` folder. For these modules to work, you need to import them using `require()`.
 
-To work with NPM modules, you have to run `npm init -y` to generate `package.json` file.
+To work with NPM modules, you have to run `npm init -y` to generate a `package.json` file.
 
 Run `npm install <package name>` to make a package available for your project.
 
-For example, `Moment` is an NPM module for displaying and formatting Node.js dates. Here is how you would use Moment
+For example, `Moment` is an NPM module used when trying to display and format Node.js dates. Here is how you would use Moment.
 
 Run `npm install moment` to install `Moment` dependencies for your project.
 
