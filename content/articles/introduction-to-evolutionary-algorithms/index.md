@@ -426,3 +426,6 @@ Source: [Robots that can adapt like animals: Cully A, Clune J, Tarapore D, Moure
 - [Genetic Cars](https://rednuht.org/genetic_cars_2/)
 - [Genetic Walkers](https://rednuht.org/genetic_walkers/)
 - [Some Out-of-the-box solutions by AI and EA](https://arxiv.org/pdf/1803.03453.pdf)
+
+---
+Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
