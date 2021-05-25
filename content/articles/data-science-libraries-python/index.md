@@ -122,7 +122,7 @@ plt.show()
 
 *Output* </br>
 
-!["cuberoot relation"](/engineering-educationcuberoot.png)
+![cuberoot relation](/engineering-education/data-science-libraries-python/cuberoot.png)
 
 ### Pandas
 

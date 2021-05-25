@@ -231,7 +231,7 @@ $ python manage.py runserver
 
 Open http://127.0.0.1:8000/admin and login to Django Admin.  Under `Sites` click `Add` and put `127.0.0.1:8000` as both the **Domain name** and **Display name**.
 
-![](/engineering-educationcreate-dj-site.jpg)
+![](/engineering-education/django-google-oauth/create-dj-site.jpg)
 
 Then, under `Social Applications` click `Add` and fill in the details as follows:
 1. Provider: Google

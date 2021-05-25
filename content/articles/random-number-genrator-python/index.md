@@ -127,7 +127,7 @@ However, there are [some variations](https://en.wikipedia.org/wiki/Xorshift#Vari
 #### Middle square algorithm
 Take the seed, square it, and just use the middle digits. To calculate the next number, you take the previous random number and use that as the seed.
 
-![A demonstration of the middle squares algorithm](/engineering-educationmiddle_squares.png)
+![A demonstration of the middle squares algorithm](/engineering-education/random-number-genrator-python/middle_squares.png)
 
 To generate a seed, you can choose from a couple of methods. You can use the current time or use `/dev/random` or `/dev/urandom` on Unix.
 

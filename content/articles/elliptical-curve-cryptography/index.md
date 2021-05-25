@@ -22,7 +22,7 @@ According to [Cloudflare](https://blog.cloudflare.com/a-relatively-easy-to-under
 ### What is Elliptical Curve Cryptography?
 To start, the general equation of an elliptical curve is:
 
-![y^2 = x63 +ax+b](/engineering-educationhttps://latex.codecogs.com/gif.latex?y^2&space;=&space;x^3&space;&plus;&space;ax&plus;b)
+![y^2 = x63 +ax+b](https://latex.codecogs.com/gif.latex?y^2&space;=&space;x^3&space;&plus;&space;ax&plus;b)
 
 These curves have two interesting features, being:
 

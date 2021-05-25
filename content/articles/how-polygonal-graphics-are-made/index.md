@@ -24,7 +24,7 @@ These faces are constructed by vertices made up of points. We can visualize thes
 
 For example, here is a [wireframe of a sphere](https://playground.babylonjs.com/#T4TNWL).
 
-![Sphere Wireframe](/engineering-educationhttps://i.imgur.com/gUnhTu4.png)<br>
+![Sphere Wireframe](https://i.imgur.com/gUnhTu4.png)<br>
 *Wireframe of a sphere*
 
 To explore how changing the number of vertices changes the approximation of the solid, try experimenting with the number of [tessellations on this cylinder](https://playground.babylonjs.com/#VR8AHB).

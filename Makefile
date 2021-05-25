@@ -25,7 +25,7 @@ inspect:
 	docker run --rm -ti --volume "$$(pwd):/src" $(IMAGE_NAME) bash
 
 deploy:
-	@# capture AWS environment variables from the environment, and inject them into the container
+  # capture AWS environment variables from the environment, and inject them into the container
 	@env | grep ^AWS > .env
 	docker run --env-file .env --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME) aws s3 sync --acl public-read --delete --exclude "docs/*" public/ s3://section-enged.section.io/
 	@rm .env
