@@ -261,7 +261,7 @@ app.listen(port, ()=>{
 });
 ```
 Now the application will send the push notification every time you refresh the browser as shown below:
-![The push notification of the application](/engineering-education/push-notifications-in-nodejs-using-service-workers/notification.png)
+![The push notification of the application](/engineering-education/content/articles/push-notifications-in-nodejs-using-service-workers/notification.png)
 
 ### Conclusion and further reading
 In this article, we learned how to use service workers to implement push notifications in a web application. You can find the complete code of the implementation [here](https://github.com/mercymeave/code-space/tree/main/push-notifications). To find more about the topic, you can check the resources in the following links:
