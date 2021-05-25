@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-is-docker-so-popular/
+url: /why-is-docker-so-popular/
 title: Why is Docker so Popular
 description: In this article, we will talk about Docker, why to use it, why is it so popular and finally its benefits.
 author: moses-m
-date: 2021-05-07T00:00:00-08:30
+date: 2021-05-25T00:00:00-08:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
