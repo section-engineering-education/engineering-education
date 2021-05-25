@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mvc-mvp-mvvm/
+url: /architectural-patterns-in-android/
 title: What are Architectural Patterns in Android?
 description: This article discussed the various architectural patterns used to design applications in Android.
 author: kanishkvardhan-a-n
-date: 2021-05-17T00:00:00-16:00
+date: 2021-05-26T00:00:00-02:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/mvc-mvp-mvvm/hero.jpg
+  - url: /architectural-patterns-in-android/hero.jpg
     alt: Architectural Patterns example image
 ---
 We use various mobile and web applications in our day-to-day life. These applications are aimed at making our computational experience simple and seamless. Some of these applications are compatible with mobile operating systems such as Android, iOS. Some are compatible with desktop operating systems such as Windows, macOS, Linux, etc. Some of these even may be cross-platform (applications that can be operated on more than one operating system).
@@ -55,7 +55,7 @@ In MVVM the code is broken down into smaller pieces and the main logic is separa
 
 Since the above architectural designs are based around the idea of collaborating with their own structure to achieve a positive outcome, each component has its own set of responsibilities. Model and View are shared by all of the patterns mentioned above. The third aspect is what distinguishes them from one another. As a result, here is a simplified mind map to help you visualize what each pattern represents.
 
-![Architectural Patterns](/engineering-education/mvc-mvp-mvvm/img.jpg)
+![Architectural Patterns](/architectural-patterns-in-android/img.jpg)
 
 ### A Quick Table of Comparison 
 
