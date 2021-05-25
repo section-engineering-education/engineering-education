@@ -13,7 +13,7 @@ You should know these before proceeding with this content.
 - Basic understanding of TypeScript and Node.js
 - Basic [understanding of Adonis.js](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
 - Building [APIs with AdonisJS](/engineering-education/build-a-restful-api-with-adonisjs/)
-- Basic [knowledge of Caching](https://masteringbackend.com/posts/caching-strategy-for-adonisjs-restful-api/)
+- Basic [knowledge of Caching](https://masteringbackend.com/posts/caching-strategy-for-restful-api/)
 
 ### Goals of the Tutorial
 
@@ -96,7 +96,7 @@ If you have all these checked, we are ready to dive right into the code.
 
 In the world of Caching, there are many Caching Strategies and methods available depending on the structure of your data structure and the different operations performed on the data; you can choose other Caching strategies depending on the features and type of the project.
 
-You can read through the [Best Caching Strategy for AdonisJS 5](https://masteringbackend.com/posts/caching-strategy-for-adonisjs-restful-api/) which will show you the different Caching Strategies, and choose which one depending on the features or type of project.
+You can read through the [Best Caching Strategy for AdonisJS 5](https://masteringbackend.com/posts/caching-strategy-for-restful-api/) which will show you the different Caching Strategies, and choose which one depending on the features or type of project.
 
 We will be using the **Cache Aside Strategy** for all the Read operations and a mixture of **Write Around** and **Write Through Strategy** for the Write operations.
 
