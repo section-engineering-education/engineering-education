@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /introduction-to-nodejs-15/
 title: Getting Started with Node.js 15
-description: This article outlines the new features in Node.js 15 and how they improve Node.js application development.
+description: This article outlines the new features in Node.js 15 and how they improve Node.js application development. To take advantage of experimental features, new NPM 7, V8.6, QUIC protocol, and bug fixes, developers should shift to Node.js 15. 
 author: lorna-moraa
 date: 2021-05-25T00:00:00-16:00
 topics: [Node.js]
