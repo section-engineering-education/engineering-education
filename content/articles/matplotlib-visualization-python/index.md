@@ -17,7 +17,7 @@ images:
 Matplotlib is one of the most powerful and popular plotting libraries for Python and the numerical extension NumPy. It enables the creation of static, animated, and interactive visualizations in Python. Reading the matplotlib documentation is always ideal, but the amount of information available can be daunting. Therefore the following article is designed to gain a basic understanding of the library. Further, we will also understand the use cases of the library.
 <!--more-->
 
-![Parts-Figure](matplotimage.png)
+![Parts-Figure](./matplotimage.png)
 
 [Source](https://matplotlib.org/3.1.1/)
 
