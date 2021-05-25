@@ -46,10 +46,42 @@ Since JavaScript doesn't support concurrency, Node.js worker make use of [v8](ht
 
 ### Using worker threads
 
+In this section, let's create a worker thread example and give it some dummy data.
 
+```js
+//add this code snippet to main.js
 
+const { Worker } = require('worker_threads')
 
+const runService = (data) => {
+    return new Promise((resolve, reject) => {
+    
+        // import workerExample.js script..
+    
+        const worker = new Worker('./workerExample.js', { data });
+        worker.on('message', resolve);
+        worker.on('error', reject);
+        worker.on('exit', (code) => {
+            if (code !== 0)
+                reject(new Error(`stopped with  ${code} exit code`));
+        })
+    })
+}
 
+const run = async () => {
+    const result = await runService('hello John Doe')
+    console.log(result);
+}
+
+run().catch(err => console.error(err))
+
+```
+
+```js
+// add this to workerExample.js file.
+const { data, parentPort } = require('worker_threads')
+parentPort.postMessage({ welcome: data })
+```
 
 
 
