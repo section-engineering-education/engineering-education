@@ -47,7 +47,8 @@ For the `devDependency` nodemon package add it using the command:
 
 HTTP/2 serves the assets via HTTPS. Run the following command to generate a key and a certificate:
 
-```openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt```
+```openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt```.
+
 For all prompts, click enter to leave all the fields empty. The command will creates a server.crt and server.key files. In our Node.js server script, we will read from `server.key` and `server.crt` files. Finally, add this npm `nodemon` server launch script in the `package.json` for auto-reloading:
 ```JSON
   "scripts": {
