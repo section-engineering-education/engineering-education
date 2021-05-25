@@ -92,7 +92,7 @@ So, let us create an array with 50 random strings of upper and lower case alphab
 ````python3
 import string
 import random
-target = "HelloWorld"
+target = "Hello"
 n = 50
 population = [''.join(random.choices(string.ascii_letters, k=len(target))) for _ in range(n)]
 ````
