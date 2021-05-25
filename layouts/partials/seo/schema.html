@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.section.io",
+      "logo": "https://www.section.io/images/logo.png",
+      "sameAs" : [
+      "https://twitter.com/section_io",
+      "https://www.linkedin.com/company/section_io/",
+      "https://github.com/section-engineering-education/engineering-education"
+      ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "WebPage",
+      "name" : "{{ .Title }}",
+      "headline" : "{{ .Title }}",
+      "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+      "url" : "{{ .Permalink }}"
+  }
+</script>
