@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-ui-layouts-in-android/
+url: /getting-started-with-ui-layouts-in-android/
 title: Getting Started With UI Layouts in Android
 description: This article will cover the different User Interface layouts used in Android application development. We will learn about the root element and view group layouts and their uses.
 author: briana-nzivu

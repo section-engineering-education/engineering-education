@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-google-oauth/
+url: /django-google-oauth/
 title: User Registration in Django using Google OAuth
 description: In this tutorial, we will look at how to register users in a Django app using Google OAuth. This process allows users to log in to multiple sites with the same credentials. 
 author: geoffrey-mungai
@@ -231,7 +231,7 @@ $ python manage.py runserver
 
 Open http://127.0.0.1:8000/admin and login to Django Admin.  Under `Sites` click `Add` and put `127.0.0.1:8000` as both the **Domain name** and **Display name**.
 
-![](create-dj-site.jpg)
+![](/engineering-education/django-google-oauth/create-dj-site.jpg)
 
 Then, under `Social Applications` click `Add` and fill in the details as follows:
 1. Provider: Google

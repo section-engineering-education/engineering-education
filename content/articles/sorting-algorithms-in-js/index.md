@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sorting-algorithms-in-js/
+url: /sorting-algorithms-in-js/
 title: Sorting Algorithms in JavaScript
 description: This article will cover how to implement sorting algorithms in Javascript. Sorting can be referred to as an operation performed to arrange records in some particular order.
 author: kennedy-mwangi

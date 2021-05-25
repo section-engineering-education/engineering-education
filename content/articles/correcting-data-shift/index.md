@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/correcting-data-shift/
+url: /correcting-data-shift/
 title: Correcting Dataset Shift in Machine Learning
 description: This article will be going over Dataset Shift and how to correct it in machine learning models to prevent performance degradation.
 author: collins-ayuya
@@ -28,7 +28,7 @@ These factors can alter the underlying relationships between input and output da
 4. Correcting dataset shift
 
 ### Prerequisites
-A general understanding of machine learning (ML) is required. This [post](/engineering-education/supervised-learning-algorithms/) can provide an introduction or a refresher on ML.
+A general understanding of machine learning (ML) is required. This [post](/supervised-learning-algorithms/) can provide an introduction or a refresher on ML.
 
 ### Dataset shift
 The phenomenon of dataset shift is defined by a change in the distribution of data. This change is between the training sets and test sets.

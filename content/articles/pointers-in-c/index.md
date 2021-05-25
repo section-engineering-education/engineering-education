@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/pointers-in-c/
+url: /pointers-in-c/
 title: Pointers in C
 description: Pointers are a hard concept to grasp for a lot of new programmers. This article will help you understand what pointers are in C and how to use them.   
 author: nimra-aftab

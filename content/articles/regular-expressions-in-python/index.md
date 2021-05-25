@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/regular-expressions-in-python/
+url: /regular-expressions-in-python/
 title: Regular Expressions in Python
 description: This tutorial will go through regular expressions (RegEx) in Python. In Python a regular expression is the pattern compiled into a series of bytecodes that is executed by an implementation of the finite state machine in C.
 author: prashanth-saravanan

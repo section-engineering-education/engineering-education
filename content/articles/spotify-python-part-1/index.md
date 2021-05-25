@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spotify-python-part-1/
+url: /spotify-python-part-1/
 title: Spotify API with Spotipy
 description: We will understand how to set up a spotipy project, the authentication process, and finishing it off, we'll start using some of the spotipy endpoints.
 author: joshua-welsh

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/software-testing-part1/
+url: /software-testing-part1/
 title: Introduction to Unit Testing
 description: This article will be an introduction to software testing, going over popular examples such as integration testing, unit testing, system testing, and regression testing. This article will mainly focus on unit testing.
 author: quadri-sheriff

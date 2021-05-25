@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-application-widgets-tutorial-in-java/
+url: /android-application-widgets-tutorial-in-java/
 title: Android Application Widgets Tutorial in Java
 description: In this article we will learn about Android application widgets and how to implement a widget in an Android app. We will discuss different types of widgets, their uses, and learn about the limitations of widgets.
 author: moses-chege

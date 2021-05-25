@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choosing-between-django-flask-and-fastapi/
+url: /choosing-between-django-flask-and-fastapi/
 title: Choosing between Django, Flask, and FastAPI
 description: This article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
 author: james-sandy

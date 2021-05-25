@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/setting-up-own-login-vs-login-via-external-services/
+url: /setting-up-own-login-vs-login-via-external-services/
 title: Setting Up Own Login vs Login via External Services
 description: Setting Up Own Login vs Login via External Services - OAuth, JWT, Hashing and Salt, Brute-force attack, Rainbow Tables, IP Rate Limiting.
 author: abel-mathew

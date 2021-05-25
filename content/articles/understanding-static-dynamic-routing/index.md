@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-static-dynamic-routing/
+url: /understanding-static-dynamic-routing/
 title: Understanding Dynamic and Static Routing
 description: In this article, we will look at Routing Information Protocol (RIP), Open Shortest Path First (OSPF), and Enhanced Interior Gateway Routing Protocol (EIGRP).
 author: rabo-james-bature

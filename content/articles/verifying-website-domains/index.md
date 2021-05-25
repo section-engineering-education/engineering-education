@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/verifying-website-domains/
+url: /verifying-website-domains/
 title: Verifying Website Domains
 description: This tutorial will explain how to programmatically retrieve DNS (Domain Name System) information. At the end of this tutorial, you will understand how to retrieve DNS (Domain Name System) information using the Python Shell.
 author: priya-kalyanakrishnan

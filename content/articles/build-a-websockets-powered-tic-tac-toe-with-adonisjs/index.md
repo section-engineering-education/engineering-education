@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/
+url: /build-a-websockets-powered-tic-tac-toe-with-adonisjs/
 title: Building a Websocket Powered Tic-Tac-Toe Game with Adonis.js
 description: In this article, we will learn about the WebSocket protocol. We will go over the details of building a Tic-Tac-Toe game using the WebSockets in Adonis.js.
 author: osinachi-chukwujama

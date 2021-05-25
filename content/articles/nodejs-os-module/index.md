@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-os-module/
+url: /nodejs-os-module/
 title: Getting Started with Node.js Module
 description: This tutorial introduces the basic concepts on Node.js OS module.  The os module is useful to get more information about a computer system. This may be important when a piece of knowledge about the hosting (maybe a server) platform is required.  
 author: miller-juma

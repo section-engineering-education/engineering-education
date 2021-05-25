@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/user-login-web-system/
+url: /user-login-web-system/
 title: How to Create a User Login Web System in Python
 description: How to create a user login system to protect the website from unauthorized access using Python on Ubuntu Server 18.04.
 author: gregory-manley

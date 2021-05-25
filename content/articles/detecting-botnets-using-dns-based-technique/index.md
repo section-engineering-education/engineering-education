@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/detecting-botnets-using-dns-based-technique/
+url: /detecting-botnets-using-dns-based-technique/
 title: Dectecting Botnets Using DNS-Based Technique
 description: In this article we will explore the DNS-based technique for detecting botnets. 
 author: paul-muriku

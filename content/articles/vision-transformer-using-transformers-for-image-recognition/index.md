@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/vision-transformer-using-transformers-for-image-recognition/
+url: /vision-transformer-using-transformers-for-image-recognition/
 title: Vision Transformer (ViT) - Using Transformers for Image Recognition
 description: This article will explore how transformers are directly applied to image recognition. This is a shift from previous architectures that proposed using attention with CNNs or changing modules in CNNs.
 author: willies-ogola

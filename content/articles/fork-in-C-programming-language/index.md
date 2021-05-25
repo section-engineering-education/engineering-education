@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/fork-in-c-programming-language/
+url: /fork-in-c-programming-language/
 title: Fork() in C Programming Language
 description: This tutorial will serve as an introduction to the fork function, which is used to create a copy of processes. We will discuss its detailed implementation with examples.  
 author: ahmad-mardeni

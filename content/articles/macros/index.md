@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/macros/
+url: /macros/
 title: Using Macros - C, Nim, and Rust
 description: DRY is a very important concept in software engineering. Sometimes, it seems like some repetition is required, but it isn't. Many languages have macros. Today we'll show you how to use them in C, Nim, and Rust.
 author: mike-white

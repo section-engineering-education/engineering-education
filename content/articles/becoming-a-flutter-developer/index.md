@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/becoming-a-flutter-developer/
+url: /becoming-a-flutter-developer/
 title: What it Takes to be a Flutter Developer
 description: In this article, the readers will understand what it takes to become a Flutter developer. The article also highlights the different tools and frameworks that help boost productivity.
 author: diana-mutheu

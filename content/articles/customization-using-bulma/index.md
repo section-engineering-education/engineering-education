@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/customization-using-bulma/
+url: /customization-using-bulma/
 title: Customize CSS using Bulma
 description: Bulma is a lightweight and open-source CSS framework that has excellent customization features that are perfect for rapid development.
 author: saiharsha-balasubramaniam

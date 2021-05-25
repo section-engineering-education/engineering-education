@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/
+url: /how-to-build-astatic-site-with-gatsbyjs/
 title: How to Build a Static site with Gatsby.js
 description: This tutorial will help developers on how to get started building their very first static site using Gatsby.js. It will cover the the advantages JAMstack and Gatsby.js.
 author: jethro-magaji

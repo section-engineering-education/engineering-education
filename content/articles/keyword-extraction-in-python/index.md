@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/keyword-extraction-in-python/
+url: /keyword-extraction-in-python/
 title: Keyword Extraction in Python
 description: The article covers the basics of keywords extraction and introduces the users to a method called TF-IDF for extracting important words from a document.
 author: adith-bharadwaj

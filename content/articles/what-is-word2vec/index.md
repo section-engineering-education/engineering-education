@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-word2vec/
+url: /what-is-word2vec/
 title: What is Word2Vec?
 description: In this article, we will explore a classic method that creates word embeddings in NLP. It assists computers to better understand human beings through natural language.
 author: wilkister-mumbi

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dive-into-batch-scripting-language/
+url: /dive-into-batch-scripting-language/
 title: Dive into the Batch Scripting Language
 description: In this tutorial we will go through how to
 author: ahmad-mardeni

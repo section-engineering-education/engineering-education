@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-constructors-in-c++/
+url: /introduction-to-constructors-in-c++/
 title: Introduction to Constructors in C++
 description: In this article we will go through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class.
 author: dawe-daniel

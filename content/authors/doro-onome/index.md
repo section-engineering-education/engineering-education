@@ -1,6 +1,6 @@
 ---
 title: Doro Onome
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/Dorochurchill/
 linkedin: https://www.linkedin.com/in/doro-onome/
 ---

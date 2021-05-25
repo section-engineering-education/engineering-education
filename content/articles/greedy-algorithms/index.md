@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/greedy-algorithms/
+url: /greedy-algorithms/
 title: Optimizing Stock Price Profit using Greedy Algorithms
 description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
 author: lalithnarayan-c

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-search-console-introduction/
+url: /google-search-console-introduction/
 title: Google Search Console - An Introduction
 description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
 author: louise-findlay
@@ -77,4 +77,4 @@ You should keep the redirect in place for a minimum of six months and you can st
 
 Congratulations, you’ve set up Google Search Console and learned how to fix errors, add a sitemap, monitor search traffic, and set up a proper redirect.
 
-Struggling to setup other Google services? Check out my [guide to setting up a professional business email using GSuite](/engineering-education/creating-professional-email).
+Struggling to setup other Google services? Check out my [guide to setting up a professional business email using GSuite](/creating-professional-email).

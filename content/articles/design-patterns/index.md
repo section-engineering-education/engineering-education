@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/design-patterns/
+url: /design-patterns/
 title: Understanding Design Patterns in Java
 description: This articles will discuss what a design pattern is. A desgin pattern is a reusable solution to a commonly occurring problem in software design. They can be thought of as guidelines for how to structure your objects and the relationships between them. 
 author: kiplangat-erick

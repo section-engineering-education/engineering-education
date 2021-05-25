@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
-<meta property="og:image" content='{{ if .Params.images }}{{ replaceRE "/$" "" .Site.BaseURL}}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
+<meta property="og:title" content="{{ if .Params.title }}{{ .Params.title }}{{ end }}">
+<meta property="og:image" content='{{ if .Params.images }}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
@@ -21,4 +21,4 @@
 <meta property="twitter:url" content="{{ .Permalink }}">
 <meta property="twitter:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
 <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="twitter:image" content='{{ if .Params.images }}{{ replaceRE "/$" "" .Site.BaseURL}}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
+<meta property="twitter:image" content='{{ if .Params.images }}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>

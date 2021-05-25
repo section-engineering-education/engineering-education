@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/blockchain-as-a-database/
+url: /blockchain-as-a-database/
 title: Blockchain as a database
 description: Blockchain is a distributed database existing on multiple computers at the same time. It is constantly growing as new sets of recordings, or 'blocks', are added to it.
 author: keerthi-v

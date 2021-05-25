@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-cli-input/
+url: /nodejs-cli-input/
 title: Node.js CLI Input
 description: This tutorial will give readers a detailed guide on how to get input from a user in a Node.js CLI application. We will be using event listeners and async iterators.
 author: mohan-raj

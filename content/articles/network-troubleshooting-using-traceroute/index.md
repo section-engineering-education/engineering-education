@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-troubleshooting-using-traceroute/
+url: /network-troubleshooting-using-traceroute/
 title: Network Troubleshooting using Traceroute
 description: This article will be an overview on the basic functionality behind traceroute, how to use the program, and finally, how to interpret data produced by the program.
 author: sudi-david

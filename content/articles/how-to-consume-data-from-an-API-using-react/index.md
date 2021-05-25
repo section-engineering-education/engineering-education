@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-consume-data-from-an-api-in-react/
+url: /how-to-consume-data-from-an-api-in-react/
 title: How to Consume Data from an API in a React application
 description: This tutorial provides a detailed overview how to consume data from an API in a React application. We will learn how to fetch and consume data from an API. We will use async and await when performing network operations.
 author: michael-barasa

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/top-ten-in-demand-technologies-to-learn/
+url: /top-ten-in-demand-technologies-to-learn/
 title: Top 10 In-Demand Technologies to Learn
 description: Technology is growing at a tremendous rate. This article describes 10 demanding technologies to learn and focus on building skills.
 author: judy-nduati

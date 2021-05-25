@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-date-and-time-objects-with-moment/
+url: /nodejs-date-and-time-objects-with-moment/
 title: Working with Moment.js Date Libraries
 description: Date and time Objects are those development difficulties that we jump into at some point when developing Node.js/JavaScript applications. This article discusses how to handle these objects with Moment.js library.
 author: joseph-chege

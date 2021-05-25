@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-android-views-and-view-groups/
+url: /introduction-to-android-views-and-view-groups/
 title: Introduction to Android Views and Viewgroups
 description: In this article we will go through creating views and viewgroups. We will also see some of the attributes associated with our views and viewgroups, where they are used and what they are used for.
 author: dawe-daniel

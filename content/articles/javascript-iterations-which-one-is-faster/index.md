@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-iterations-which-one-is-faster/
+url: /javascript-iterations-which-one-is-faster/
 title: JavaScript Iterations - Which One is Faster?
 description: This article goes through JavaScript iterations with examples to see which one performs faster when executing.
 author: joseph-chege

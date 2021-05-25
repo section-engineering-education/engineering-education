@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/
+url: /introduction-to-microservices-with-spring-and-eureka/
 title: Introduction to Microservices with Spring and Eureka
 description: This tutorial will cover the basics to microservices both in theory and in practice. Microservice architecture is a style of the service oriented architecture that arranges software as a collection of loosely coupled services.
 author: john-amiscaray

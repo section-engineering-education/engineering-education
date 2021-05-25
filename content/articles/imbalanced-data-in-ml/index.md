@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/imbalanced-data-in-ml/
+url: /imbalanced-data-in-ml/
 title: Handling Imbalanced Datasets in Machine Learning
 description: This article will be going over techniques used to handle imbalanced dataset in machine learning algorithms.
 author: collins-ayuya
@@ -28,7 +28,7 @@ Data powers machine learning algorithms. It's important to have balanced dataset
 3. Techniques to handle imbalanced data.
 
 ### Prerequisites
-One only needs to understand general machine learning concepts. They can be found in this [article](/engineering-education/supervised-learning-algorithms/).
+One only needs to understand general machine learning concepts. They can be found in this [article](/supervised-learning-algorithms/).
 
 ### Why is imbalance an issue?
 Data fuels machine learning algorithms. In the absence of a good quality dataset, even the best of algorithms struggles to produce good results. An imbalanced dataset is defined by great differences in the distribution of the classes in the dataset.
@@ -139,7 +139,7 @@ Therefore, when dealing with imbalanced datasets, it's wise to use the correct e
 
 Here is an [article](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234) that defines the metrics below in greater detail.
 
-As defined in my previous [article](/engineering-education/evaluating-ml-model-performance/):
+As defined in my previous [article](/evaluating-ml-model-performance/):
 
 Precision is the number of true positives against the total positive results predicted by a classifier.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/face-detection-matlab/
+url: /face-detection-matlab/
 title: Face Detection using Viola-Jones Algorithm in Matlab
 description: This article gives the reader a guide on how to use Viola-Jones algorithm to detect faces in realtime. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces.
 author: paul-juma

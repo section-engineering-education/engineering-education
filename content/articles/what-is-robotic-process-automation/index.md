@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-robotic-process-automation/
+url: /what-is-robotic-process-automation/
 title: Introduction to Robotic Process Automation
 description: This article describes RPA. It explains how it differs from traditional automation in terms of features and functionality. It also explains the importance of RPA and why we should consider it for enterprises.
 author: judy-nduati

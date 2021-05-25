@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/streamlit-ui-tutorial/
+url: /streamlit-ui-tutorial/
 title: How to Build a UI for your Model using Streamlit
 description: This tutorial will build a Logistic Regression Model to predict if a person would survive the Titanic Disaster. We will use Streamlit to build a web app and a UI for our Model. 
 author: rahul-banerjee

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-sitemaps/
+url: /introduction-to-sitemaps/
 title: Does your website need a sitemap?
 description: Sitemapping allows a webmaster to inform search engines about URLs on a website that are available for crawling. A Sitemap is an XML file that lists the URLs for a site.
 author: gregory-manley

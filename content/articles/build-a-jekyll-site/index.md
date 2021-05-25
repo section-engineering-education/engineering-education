@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-jekyll-site/
+url: /build-a-jekyll-site/
 title: Building a Blog site from Scratch using Jekyll
 description: This tutorial guides beginners on how to build a blog website from scratch using Jekyll using HTML and CSS.
 author: geoffrey-mungai
@@ -231,7 +231,7 @@ hero: /assets/images/welcome/hero.jpg
 Add the `new-site.jpg` image at the bottom of your file.
 
 ```markdown
-![demo image](/assets/images/welcome/new-site.jpg)
+![demo image](/engineering-education/assets/images/welcome/new-site.jpg)
 ```
 
 In your post layout file, add the hero image at the top.

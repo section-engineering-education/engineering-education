@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/adding-dark-theme-to-your-site/
+url: /adding-dark-theme-to-your-site/
 title: Dark Theme using CSS Variables and Local Storage
 description: In this article we will understand how to build dark theme webpages using CSS and local storage. We will also build a simple webpage for toggling between light and dark themes.
 author: phina-kersly

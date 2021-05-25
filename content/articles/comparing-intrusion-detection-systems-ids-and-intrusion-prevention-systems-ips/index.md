@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/
+url: /comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/
 title: Comparing Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)
 description: This article will discuss Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS), their problems, their significance to cybersecurity, and how they compare.
 author: eric-kahuha

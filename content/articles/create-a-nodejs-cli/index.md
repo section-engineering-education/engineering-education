@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-a-nodejs-cli/
+url: /create-a-nodejs-cli/
 title: Creating Command Line Interfaces using Node.js
 description: In this tutorial we will create a simple CLI application that takes two arguments to understand CLI basics.
 author: daniel-katungi

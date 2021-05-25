@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-sequalize-orm-for-nodejs/
+url: /introduction-to-sequalize-orm-for-nodejs/
 title: Introduction to Sequelize ORM for Node.js
 description: In this tutorial, we will introduce Object Relational Mapper in Node.js called Sequelize. We will also learn to sequelize a simple database in Node.js.
 author: oruko-pius

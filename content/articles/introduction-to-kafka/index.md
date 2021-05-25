@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kafka/
+url: /introduction-to-kafka/
 title: Introduction to Kafka
 description: This article serves to introduces the readers to the basics of Kafka, its history, architecture, and installation.
 author: adith-bharadwaj

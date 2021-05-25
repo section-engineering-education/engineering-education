@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/
+url: /how-to-create-a-responsive-form-using-tailwindcss/
 title: How to create a Responsive Form using Tailwind CSS
 description: In this article we will create a simple html form that is styled by tailwind css. Tailwind css is a new css framework that focusses on a utility first approach.
 author: monica-masae

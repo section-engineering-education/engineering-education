@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-static-typing/
+url: /python-static-typing/
 title: Static Typing in Python
 description: In this tutorial, we will learn the basics of using type hints and how they can be added to cod using annotations. It is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions.
 author: jerim-kaura

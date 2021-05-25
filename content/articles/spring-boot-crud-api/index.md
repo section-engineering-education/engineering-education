@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-crud-api/
+url: /spring-boot-crud-api/
 title: How to create CRUD API using Spring Boot
 description: This tutorial will be an introduction .
 author: odhiambo-paul

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mean-vs-mern/
+url: /mean-vs-mern/
 title: Breaking Down MEAN vs MERN Stacks
 description: This is an article about MEAN and MERN stacks with respect to different parameters, MongoDB, expressjs, and Node.js.
 author: richu-thomas

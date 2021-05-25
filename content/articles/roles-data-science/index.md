@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/roles-data-science/
+url: /roles-data-science/
 title: Roles in Data Science Industry
 description: In this article we will go over the responsibilities and various machine learning roles and the technologies associated with each position.
 author: lalithnarayan-c

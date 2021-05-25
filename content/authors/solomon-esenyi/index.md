@@ -1,6 +1,6 @@
 ---
 title: Solomon Esenyi
-type: engineering-education/author
+type: authors
 linkedin: https://www.linkedin.com/in/solomon-esenyi/
 twitter: https://twitter.com/lordghostx/
 ---

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-shell-scripting/
+url: /introduction-to-shell-scripting/
 title: Introduction to Shell Scripting
 description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
 author: rohan-reddy

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/docker-concepts/
+url: /docker-concepts/
 title: Understanding Docker Concepts
 description: The basic concepts of Docker, technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
 author: francisca-adekanye
@@ -68,4 +68,4 @@ Docker allows developing, testing, and deploying applications faster. A software
 
 - [Understanding Linux containers](https://www.redhat.com/en/topics/containers?intcmp=7016000000127cYAAQ)
 
-- [A Brief History Of Container Technology](/engineering-education/history-of-container-technology/)
+- [A Brief History Of Container Technology](/history-of-container-technology/)

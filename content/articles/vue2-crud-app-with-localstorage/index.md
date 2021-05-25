@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/vue2-crud-app-with-localstorage/
+url: /vue2-crud-app-with-localstorage/
 title: How to Make a CRUD app with Local Storage using Vue 2
 description: In this article, we will look at how to make a CRUD application that implements a Web browser's Local storage using Vue.js 2.
 author: espira-marvin

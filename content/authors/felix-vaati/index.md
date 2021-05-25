@@ -1,6 +1,6 @@
 ---
 title: Felix Vaati
-type: engineering-education/author
+type: authors
 interests: PHP & Kotlin
 github: https://github.com/Dyrstiu
 twitter: https://twitter.com/DyrstiuAppdh 

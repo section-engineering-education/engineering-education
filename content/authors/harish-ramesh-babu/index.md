@@ -1,6 +1,6 @@
 ---
 title: Harish Ramesh Babu
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/HarishTeens
 github: https://github.com/HarishTeens
 linkedin: https://www.linkedin.com/in/harish-ramesh-babu-76272221/

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-caching-in-nodejs-using-redis/
+url: /implementing-caching-in-nodejs-using-redis/
 title: Implementing Caching in Node.js using Redis
 description: In this article we will cover how to implement caching on a Node.js REST API using recipe labs API as our data source and redis as our cache.
 author: kennedy-mwangi

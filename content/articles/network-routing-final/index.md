@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-routing-final/
+url: /network-routing-final/
 title: Understanding Network Routing
 description: This article will be an overview on network routing. Routers use algorithms to make logical data decisions when selecting paths to forward packets. It makes the decisions using the current network states of where the packets would pass through.
 author: terrence-aluda

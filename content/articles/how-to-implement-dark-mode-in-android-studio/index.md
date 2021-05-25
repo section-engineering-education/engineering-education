@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-implement-dark-mode-in-android-studio/
+url: /how-to-implement-dark-mode-in-android-studio/
 title: How to Implement Dark Mode in Android
 description: This article will give the reader a guide on how to implement dark mode in Android using Android studio using Kotlin.
 author: michael-barasa

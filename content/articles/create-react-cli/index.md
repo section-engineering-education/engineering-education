@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-react-cli/
+url: /create-react-cli/
 title: Building CLI Applications using React.js
 description: In this tutorial we will create a simple CLI application using React.js framework and the INK library.
 author: daniel-katungi
@@ -17,7 +17,7 @@ Command-line applications have become popular in the developer ecosystem for sev
 <!--more-->
 As the complexity and functionalities of these terminal applications grow, so does the need for them to be created simpler and easier.
 
-In our [previous article](/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
+In our [previous article](/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
 
 React makes it very easy to create powerful and very interactive CLI applications. In this article, we will create a CLI with React.js instead of Node.js and see the difference.
 

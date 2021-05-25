@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/shuffle-a-list-algorithm/
+url: /shuffle-a-list-algorithm/
 title:  How to Shuffle a List Using the Fisher-Yates Method
 description: In this step-by-step guide, we use the Fisher-Yates algorithm to shuffle a list using JavaScript.
 author: mike-white

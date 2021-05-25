@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/maria-data-base/
+url: /maria-data-base/
 title: Creating and Connecting Maria Database to a PHP Registration Form 
 description: A tutorial that provides a detailed guide on how to create and connect a Maria database to a PHP registration form.
 author: erastus-muriithi

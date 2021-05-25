@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-airflow/
+url: /introduction-to-airflow/
 title: Introduction to Airflow
 description: In this article, we are going to explore the basics of Airflow and understand what makes it so popular.
 author: adith-bharadwaj

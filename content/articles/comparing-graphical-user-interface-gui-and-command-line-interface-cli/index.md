@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/comparing-graphical-user-interface-gui-and-command-line-interface-cli/
+url: /comparing-graphical-user-interface-gui-and-command-line-interface-cli/
 title: Comparing Graphical User Interface (GUI) and Command Line Interface (CLI)
 description: This article will discuss GUI and CLI and compare the two in terms of ease of use, multitasking, remote access, scripting, speed, and control.
 author: bridget-mwikali

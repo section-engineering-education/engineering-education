@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mathematics-for-machine-learning/
+url: /mathematics-for-machine-learning/
 title: Mathematics for Machine Learning
 description: This article is intended to go over the mathematics for machine learning, by providing a general overview on the topics behind ML and how they are used. 
 author: willies-ogola

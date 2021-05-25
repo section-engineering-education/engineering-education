@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-url-shortener
+url: /nodejs-url-shortener
 title: How to Build a Custom URL Shortener using Node.js, Express, and MongoDB
 description: In this article, we use Node.js, Express and MongoDB to build a custom URL shortener web app like Bit.ly.
 author: mary-njeri

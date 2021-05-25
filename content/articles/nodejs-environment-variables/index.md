@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-environment-variables/
+url: /nodejs-environment-variables/
 title: Environment Variables in Node.js
 description: Using the Node.js library dotenv to manage and load environment variables, we take a look at the purpose of environment variables, how to use them, and their role in a development environment.
 author: saiharsha-balasubramaniam

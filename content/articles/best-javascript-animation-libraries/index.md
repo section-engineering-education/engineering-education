@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/best-javascript-animation-libraries/
+url: /best-javascript-animation-libraries/
 title: The Top 9 JavaScript Animation Libraries
 description: In this tutorial we will go over the best JavaScript animation libraries such as anime.js, howler.js, and KUTE.js to name a few.
 author: judy-nduati

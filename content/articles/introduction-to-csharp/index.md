@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-csharp/
+url: /introduction-to-csharp/
 title: Introduction to C#
 description: This article will help the readers to understand the basics of C# and how to setup the development environment to write and compile C# code.
 author: geoffrey-mwangi

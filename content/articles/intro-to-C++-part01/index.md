@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intro-to-c-part1
+url: /intro-to-c-part1
 title: Introduction to C++
 description: This introduction is about C++ and goes through topics such as why C++?, who uses C++ in the industry, and basic implementation.
 author: parampreet-singh

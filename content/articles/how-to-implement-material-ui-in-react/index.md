@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-implement-material-ui-in-react/
+url: /how-to-implement-material-ui-in-react/
 title: How to Implement Material-UI in React
 description: This tutorial will provide a guideline on how to implement material ui in react applications. Material-UI is a simple library that allows developers to import and use different components to create a user interface in react applications.
 author: michael-barasa

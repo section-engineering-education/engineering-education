@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/conditional-automation-in-driving/
+url: /conditional-automation-in-driving/
 title: Conditional Automation in Driving - Level 3 Autonomous Cars
 description: This article will serve as an introduction to conditional automation in driving. In conditional automation, the level 3 car performs safety-critical functions such as acceleration, deceleration, and steering.
 author: onesmus-mbaabu

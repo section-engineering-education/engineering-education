@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-navigation-components/
+url: /android-navigation-components/
 title: Basics of Android Navigation Components
 description: This article goes through the basics of Android navigation components, we will look at how to implement a navigation graph manually and how to navigate to different destinations. It will also look on how to pass data between destinations using `safeArgs` and a bit of deep linking.
 author: linus-muema
@@ -17,7 +17,7 @@ images:
 As we all know, the jetpack navigation library was created to provide a better user experience with navigation. However, most developers do not know how to harness the full power of the library. This article is here to help you get a deeper understanding of the library and what it offers.
 <!--more-->
 ### Destinations and actions
-Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/engineering-education/bottom-navigation-bar-in-android/). 
+Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/bottom-navigation-bar-in-android/). 
 
 In the navigation graph, we have two very important units.
 

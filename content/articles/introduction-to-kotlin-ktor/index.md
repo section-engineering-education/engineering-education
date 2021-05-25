@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kotlin-ktor/
+url: /introduction-to-kotlin-ktor/
 title: Introduction to Kotlin Ktor
 description: In this article, we will take a short look on how to set up a restful Ktor service. We will explore the basic architecture of applications using this framework.
 author: linus-muema

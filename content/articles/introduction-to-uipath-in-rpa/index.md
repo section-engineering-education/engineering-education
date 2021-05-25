@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-uipath-in-rpa/
+url: /introduction-to-uipath-in-rpa/
 title: Introduction to UiPath in Robotic Process Automation (RPA)
 description: This article will be an introduction to Robotic Process Automation. We will explore a RPA tool called UiPath to see why it is widely used, how it works, and its use cases.
 author: onesmus-mbaabu

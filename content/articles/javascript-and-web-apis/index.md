@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-and-web-apis/
+url: /javascript-and-web-apis/
 title: How JavaScript Uses Web Browser APIs to Achieve Asynchronisity
 description: In this tutorial we will introduce us to Asynchronous JavaScript and walk through how JavaScript uses web browser APIs to achieve asynchronisity.
 author: adrian-murage
@@ -31,7 +31,7 @@ With an understanding of Asynchronous functionality you should be able to:
 
 ### Prerequisites
 Before you begin this guide you will need:
-- An understanding of what happens when [JavaScript executes your code](/engineering-education/js-execution-under-the-hood/).
+- An understanding of what happens when [JavaScript executes your code](/js-execution-under-the-hood/).
 
 ### Step 1 - When do you need Asynchronous JavaScript?
 ```JavaScript
@@ -111,7 +111,7 @@ For `printHello()` to be allowed back into JavaScript's Global Execution Context
 1. All of the synchronous code must have executed.
 2. The call stack must be empty.
 
-The process of checking these rules is referred to as the [Event Loop](/engineering-education/event-loop-explained/).
+The process of checking these rules is referred to as the [Event Loop](/event-loop-explained/).
 
 If the rules are satisfied, functionality sitting on the Task Queue is executed in the order they were added to the queue. First in, first out.
 

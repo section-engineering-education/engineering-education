@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-chrome-extension/
+url: /how-to-build-chrome-extension/
 title: How to Build Your First Chrome Extension
 description: This tutorial will provide fundamentals for building your first Chrome extension, empowering you to make any chrome extension that involves taking data/text from the page, running a script on it(or not) and replacing/altering it with something of your choosing.
 author: ria-thakkar

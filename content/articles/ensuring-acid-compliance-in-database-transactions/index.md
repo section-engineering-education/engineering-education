@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ensuring-acid-compliance-in-database-transactions/
+url: /ensuring-acid-compliance-in-database-transactions/
 title: ACID Compliance in Database Transactions
 description: This article will have a look at database transactions and all the four components of ACID compliance.
 author: eric-kahuha

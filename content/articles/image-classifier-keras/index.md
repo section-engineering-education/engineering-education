@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/image-classifier-keras/
+url: /image-classifier-keras/
 title: How to Build an Image Classifier with Keras
 description: In this article, we will learne how to build an image classifier using Keras. We will apply data augmentation to increase the size of our dataset. We will be able to visualize our training images.Image classification helps us recognize and identify images. 
 author: iniabasi-affiah
@@ -31,7 +31,7 @@ The colab notebook for this project is [here](https://github.com/Inyrkz/covid-cl
  
 ### Prerequisites
 Before we begin it would be helpful to have the following understanding on the:
-- Basics of Convolutional Neural Network. I recommend this [article](/engineering-education/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
+- Basics of Convolutional Neural Network. I recommend this [article](/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
 - Python Programming.
 - [Colab Notebook](https://colab.research.google.com/).
 

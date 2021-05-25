@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-ai-predicted-the-coronavirus-outbreak/
+url: /how-ai-predicted-the-coronavirus-outbreak/
 title: How AI predicted the Coronavirus Outbreak 
 description: This article will go over how using advanced analytical tools for Machine Learning (ML), and Artificial Intelligence (AI) allows us to disseminate infectious diseases spread insights around the world faster. 
 author: willies-ogola

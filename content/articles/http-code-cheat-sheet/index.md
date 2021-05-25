@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/http-code-cheat-sheet/
+url: /http-code-cheat-sheet/
 title: HTTP Code Cheat Sheet - What You Need to Know About HTTP Requests and Responses
 description: HTTP codes are important to understand, especially if you are developing a web application and are trying to debug based upon the console responses.
 author: gregory-manley

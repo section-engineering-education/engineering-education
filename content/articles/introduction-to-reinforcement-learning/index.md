@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-reinforcement-learning/
+url: /introduction-to-reinforcement-learning/
 title: Understanding Reinforcement Learning
 description: This article will go through reinforcement learning by exploring concepts like Q-learning, policy gradients, and actor-critics.
 author: willies-ogola

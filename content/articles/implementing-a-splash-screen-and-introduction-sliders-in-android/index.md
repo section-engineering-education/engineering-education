@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/
+url: /implementing-a-splash-screen-and-introduction-sliders-in-android/
 title: Implementing a Splash screen and Introduction Sliders in Android
 description: This article will illustrate how to add a splash screen and introduction sliders in an Android application.
 author: briana-nzivu

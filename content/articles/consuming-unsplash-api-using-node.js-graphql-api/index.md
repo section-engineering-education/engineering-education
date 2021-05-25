@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/
+url: /consuming-unsplash-api-using-node.js-graphql-api/
 title: Consuming the Unsplash API using Node.js Graphql API
 description: In this article, we will cover the process of creating an Unsplash developer account and implemented various functionalities provided by Unsplash API on a Node.js Graphql API.
 author: kennedy-mwangi

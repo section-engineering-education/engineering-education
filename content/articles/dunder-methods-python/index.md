@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dunder-methods-python/
+url: /dunder-methods-python/
 title: Dunder/Magic Methods in Python
 description: This article will talk about dunder methods like init, len, getitem, add, iadd, etc. Various example functions and classes will be discussed.
 author: rahul-banerjee

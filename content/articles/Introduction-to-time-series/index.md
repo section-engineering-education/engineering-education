@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-time-series/
+url: /introduction-to-time-series/
 title: Introduction to Time Series
 description: This article will give users an introduction to what time series is within machine learning. It is a deep learning concept, time series can be defined as a sequence or series of data points ordered in time.
 author: james-sandy

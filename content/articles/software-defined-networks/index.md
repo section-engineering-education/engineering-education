@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/software-defined-networks/
+url: /software-defined-networks/
 title: Transitioning from Traditional Networks to Software-Defined Networks (SDN)
 description: For an organization to effectively migrate to a software-defined network, IT administrators should embrace the advantages of SDN over a traditional network.
 author: aakash-rawal

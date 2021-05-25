@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-restful-api-with-adonisjs/
+url: /build-a-restful-api-with-adonisjs/
 title: Building a RESTful API with Adonis.js
 description: In this tutorial, we will create a RESTful API using Adonis.js. We will cover aspects such as authentication and authorization. The tutorial also covers best practices in structuring and building out your HTTPS endpoint and industry-standard responses.
 author: solomon-eseme

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/evolution-of-wifi6/
+url: /evolution-of-wifi6/
 title: The Evolution of Wi-Fi 6
 description: Wi-Fi 6 has arrived, providing faster speeds, higher volume device support, and advanced security protocols.
 author: gregory-manley

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/a-beginners-guide-to-python/
+url: /a-beginners-guide-to-python/
 title: A Beginners Guide to Python
 description: This article will serve as a beginners guide to Python. We will introduce the reader to the Python programming language and basic Python features like loops, variables, and classes.
 author: michael-barasa

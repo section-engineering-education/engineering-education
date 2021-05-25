@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-linux/
+url: /what-is-linux/
 title: What is Linux?
 description: Initially released on September 17th, 1991, by Linux Torvalds, Linux is a set of open source Unix-like operating systems.
 author: jesus-nunez

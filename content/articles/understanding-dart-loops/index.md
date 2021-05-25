@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-loops-and-iteration-in-dart/
+url: /understanding-loops-and-iteration-in-dart/
 title: Understanding Loops and Iteration in Dart
 description: In this article, the readers will understand about the different types of loops in Dart and how to use them.
 author: diana-mutheu

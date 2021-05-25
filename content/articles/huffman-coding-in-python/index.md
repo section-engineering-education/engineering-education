@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/huffman-coding-python/
+url: /huffman-coding-python/
 title: Huffman Coding with Python
 description: Huffman coding is a technique for text compression that uses data structures. This article explains the theory behind Huffman coding and implementation in Python.
 author: lalithnarayan-c

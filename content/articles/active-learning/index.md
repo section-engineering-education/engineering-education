@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/active-learning/
+url: /active-learning/
 title: Introduction to Active Learning
 description: This article will be discussing active learning, which is an approach where data that needs to be labeled to train a model is prioritized. The data that is prioritized has the highest impact on the performance of a model.
 author: collins-ayuya
@@ -26,7 +26,7 @@ By their very nature machine learning models are data-hungry. They require a lot
 - Query strategies.
 
 ### Prerequisites
-This article requires an understanding of supervised learning and machine learning in general. This [article](/engineering-education/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
+This article requires an understanding of supervised learning and machine learning in general. This [article](/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
 
 ### Active learning
 In supervised learning, a great amount of labeled data is needed for training. However, we might encounter a situation where we have a large pool of unlabelled data. To apply a supervised algorithm on such data, we would need to label every instance. However, this would be a tedious, time-consuming, and an expensive process.

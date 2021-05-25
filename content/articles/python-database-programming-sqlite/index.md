@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-database-programming-sqlite/
+url: /python-database-programming-sqlite/
 title: Python Database Programming - SQLite
 description: In this tutorial we will learn how to use the Python SQLite library, how to interact with it, and execute queries within a Python application.
 author: ahmad-mardeni
@@ -218,4 +218,4 @@ That means you have to pay attention when starting the transactions and committi
 
 ### Conclusion
 In this tutorial, you’ve learned how to use Python SQLite library, how to interact with it, and execute queries within a python application.
-However, this is just the tip of the iceberg! In the future, you’ll learn more about SQLite library as an advanced tutorial in our [Languages](/engineering-education/topic/languages/) section.
+However, this is just the tip of the iceberg! In the future, you’ll learn more about SQLite library as an advanced tutorial in our [Languages](/topic/languages/) section.

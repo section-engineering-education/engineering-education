@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cryptography-in-computer-networking/
+url: /cryptography-in-computer-networking/
 title: Cryptography in Computer Networking
 description: This article will be a walk through on computer cryptography and network security in general.  
 author: mackrine-awino

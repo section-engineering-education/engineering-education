@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-pythons-unittest/
+url: /working-with-pythons-unittest/
 title: Working with Pythons Unittest
 description: In this article, we'll see how we can use the unittest module to perform regression testing. Regression testing refers to retesting software to ensure that it works well after a change has been made.
 author: stephen-mwangi

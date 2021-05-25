@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-tailwind-css/
+url: /introduction-to-tailwind-css/
 title: Introduction to Tailwind CSS
 description: This article is an introduction to Tailwind CSS, we will cover different installation and configuration methods and how to use its utility-based classes. 
 author: daniel-katungi

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-generative-adversarial-networks/
+url: /introduction-to-generative-adversarial-networks/
 title: Basics of Generative Adversarial Networks
 description: This article introduces the readers to the basics of GANs, where and why they are used, how they are built, etc. It also explores the architecture of a simple GAN and the system flow.
 author: adith-bharadwaj

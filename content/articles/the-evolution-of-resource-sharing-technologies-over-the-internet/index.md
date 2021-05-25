@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-evolution-of-resource-sharing-technologies-over-the-internet/
+url: /the-evolution-of-resource-sharing-technologies-over-the-internet/
 title: The Evolution Of Resource Sharing Technologies over the Internet
 description: This article will discuss the different methods that have been implemented over the years to enable resource sharing over the internet. We will go over examples such as COBRA OMG, DCOM, Java RMI to name a few.
 author: kioko-mulwa

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-localstorage-with-javascript/
+url: /how-to-use-localstorage-with-javascript/
 title: How to Use Local Storage with JavaScript
 description: This article will cover how to use local storage in a browser with JavaScript. Local storage is a form of web storage that stores data for a long time.
 author: michael-barasa

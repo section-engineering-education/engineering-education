@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kubernetes/
+url: /introduction-to-kubernetes/
 title: Getting Started with Kubernetes
 description: This article will go over the various components found in Kubernetes architecture. We will include example YAML and JSON files used for deployment.
 author: odhiambo-paul
@@ -134,7 +134,7 @@ $ kubectl version --client
 ```
 
 ### Conclusion
-Now that you have learned various components found in Kubernetes, run a Kubernetes cluster locally using [minikube](https://minikube.sigs.k8s.io/docs/start/). The next article will cover deploying a Django application that we created [here](/engineering-education/django-crud-api/) to a Kubernetes cluster running locally.
+Now that you have learned various components found in Kubernetes, run a Kubernetes cluster locally using [minikube](https://minikube.sigs.k8s.io/docs/start/). The next article will cover deploying a Django application that we created [here](/django-crud-api/) to a Kubernetes cluster running locally.
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)

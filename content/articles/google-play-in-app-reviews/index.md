@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-play-in-app-reviews/
+url: /google-play-in-app-reviews/
 title: Google Play In-App Review using Android Studio
 description: This article will explain how to implement an in-app review API that prompts users to submit Play store ratings and reviews without leaving the application and without opening the Play store either.
 author: joseph-chege

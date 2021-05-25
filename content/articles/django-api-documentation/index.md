@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-api-documentation/
+url: /django-api-documentation/
 title: Getting started with Django API documentation
 description: This article will go over a step-by-step tutorial on how to document Django REST APIs with swagger, coreapi and redoc.
 author: okelo-violet

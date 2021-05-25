@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/
+url: /introduction-to-android-app-development-basic4android-b4a-part1/
 title: Introduction to Android App Development with Basic4Android (B4A)
 description: This article will be an introduction to Basic4Android (B4A). B4A is object-based and event-driven tool used to develop native Andriod mobile applications.
 author: benson-kariuki

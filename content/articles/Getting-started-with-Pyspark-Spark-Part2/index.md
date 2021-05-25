@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-pyspark-spark-part2/
+url: /getting-started-with-pyspark-spark-part2/
 title: Getting started with PySpark (Spark core and RDDs) - Spark Part 2
 description:  This article covers programming with Spark Core and RDD by applying them on a large dataset - Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
 author: keerthi-v

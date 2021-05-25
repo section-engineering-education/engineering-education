@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-javascript-modules/
+url: /introduction-to-javascript-modules/
 title: Introduction to Javascript Modules
 description: While writing programs, there are scenarios where you need to write several lines of code. This could make the code huge and complex to maintain. The simple solution to this problem is the use of Javascript modules. It ensures the organization and ease of code maintenance.
 author: miller-juma

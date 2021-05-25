@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/border-gateway-protocol/
+url: /border-gateway-protocol/
 title: Border Gateway Protocol - Why do we need it and how does it work?
 description: A brief introduction to the Internet's Border Gateway Protocol, its functioning, capabilities and importance. 
 author: shreya-a-n

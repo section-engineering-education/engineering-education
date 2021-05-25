@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deploying-your-android-app-to-google-play-store/
+url: /deploying-your-android-app-to-google-play-store/
 title: Deploying your Android App to Play Store
 description: This tutorial provides a detailed guide on the steps you should follow when deploying your Android application to the Play Store.
 author: christine-wasike

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/java-jdbc/
+url: /java-jdbc/
 title: Getting Started with Java JDBC
 description: This article introduces Java database connectivity. We will learn how to perform various database query operations from a Java application.
 author: paul-juma

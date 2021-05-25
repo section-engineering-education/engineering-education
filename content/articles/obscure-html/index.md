@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/obscure-html/
+url: /obscure-html/
 title: Five Obscure but Useful HTML Tags
 description: This article details five obscure  and not often used but useful HTML tags - All these will work with HTML5 - need to use JavaScript to render it later.
 author: mike-white
@@ -55,8 +55,8 @@ By default, content within the `<details>` tags are hidden, but can be shown by 
 </details>
 ```
 
-![A details section before being expanded](details1.png)<br>
-![A details section after being expanded](details2.png)<br>
+![A details section before being expanded](/engineering-education/obscure-html/details1.png)<br>
+![A details section after being expanded](/engineering-education/obscure-html/details2.png)<br>
 #### Uses:
 
 * This could be used for an FAQ in a fairly obvious way

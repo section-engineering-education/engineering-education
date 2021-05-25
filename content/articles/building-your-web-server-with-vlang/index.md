@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-web-server-with-vlang/
+url: /building-web-server-with-vlang/
 title: Building a Web Server using Vlang
 description: This tutorial will introduce us to the V programming language. We will look at installing Vlang in our local machine and creating a simple web server with Vlang.
 author: samuel-umoren

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-http-client/
+url: /laravel-http-client/
 title: Laravel 8 HTTP Client Introduction
 description: The tutorial will show you how to make requests using HTTP client in Laravel. This library will improve productivity by eliminating boilerplate code.
 author: miller-juma

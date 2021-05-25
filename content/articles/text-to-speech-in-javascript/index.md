@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/text-to-speech-in-javascript/
+url: /text-to-speech-in-javascript/
 title: Text to Speech using Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how they can implement text to speech using the Web Speech API in JavaScript. We will add listeners to control the instance when clicked.
 author: mohan-raj

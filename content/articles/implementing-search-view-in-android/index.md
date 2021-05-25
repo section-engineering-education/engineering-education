@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-search-view-in-android/
+url: /implementing-search-view-in-android/
 title: Implementing Search View in Android
 description: This tutorial will take the reader through creating and implementing search views in Android. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match.
 author: eric-gacoki

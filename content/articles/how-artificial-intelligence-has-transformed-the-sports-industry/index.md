@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-artificial-intelligence-has-transformed-the-sports-industry/
+url: /how-artificial-intelligence-has-transformed-the-sports-industry/
 title: How Artificial Intelligence has Transformed the Sports Industry
 description: This article outlines the importance of artificial intelligence in modern sports and how it has helped in sports evolution. It explains technology's role in today's sports and what we expect in the future. 
 author: pius-macharia
@@ -19,7 +19,7 @@ Modern sports have applied technology immensely, like many other aspects of life
 <!-- more -->
 The human body is the main protagonist of sports, while technology and science (Technoscience) play a support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
 
-This article outlines the importance of [artificial Intelligence](/engineering-education/artificial-intelligence-future/) (AI) in modern sports and how it has helped in sports evolution. It explains technology's role in today's sports and what we expect in the future.
+This article outlines the importance of [artificial Intelligence](/artificial-intelligence-future/) (AI) in modern sports and how it has helped in sports evolution. It explains technology's role in today's sports and what we expect in the future.
 
 ### Artificial Intelligence (AI) 
 Many technologies can learn, take information, analyze, and respond to it without waiting for humans to respond. It can also be defined as computer systems that can perform tasks that normally require human intelligence.

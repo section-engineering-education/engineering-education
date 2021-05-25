@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/job-scheduling-in-nodejs/
+url: /job-scheduling-in-nodejs/
 title: Introduction to Job Scheduling in Node.js
 description: In this article we will go through the basic syntax of the node-cron module. We will build a simple Node.js application that sends periodic emails.
 author: peter-kayere
@@ -52,9 +52,9 @@ It's now time to build our application.
 ### Prerequisites
 To follow through this tutorial, you will need to:
 1. Have Node.js installed.
-2. Have a basic knowledge of Node.js. [Here](/engineering-education/history-of-nodejs/) is an article to get you started.
-3. Have a basic knowledge of the `Express framework`. [Here](/engineering-education/express/) is an article to get you started.
-4. Be familiar with sending emails through `nodemailer`. Refer to [this](/engineering-education/node-mailer/) article for a deep dive into node-mailer.
+2. Have a basic knowledge of Node.js. [Here](/history-of-nodejs/) is an article to get you started.
+3. Have a basic knowledge of the `Express framework`. [Here](/express/) is an article to get you started.
+4. Be familiar with sending emails through `nodemailer`. Refer to [this](/node-mailer/) article for a deep dive into node-mailer.
 
 Let's get started.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/angular-http-client-quickstart-guide/
+url: /angular-http-client-quickstart-guide/
 title: Angular 11 - HTTP Client Quickstart Guide 
 description: This tutorial will go over Angular 11 HTTP Client module. Angular 11 HTTP client module makes it possible to make requests to a backend server.
 author: owino-wendy

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-smtp/
+url: /spring-boot-smtp/
 title: Getting started with Spring Boot SMTP
 description: This tutorial will go over the configurations of the Gmail SMTP server and how to send emails from a Spring Boot application.
 author: quinter-awuor

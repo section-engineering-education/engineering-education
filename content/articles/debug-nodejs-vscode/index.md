@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-nodejs-vscode/
+url: /debug-nodejs-vscode/
 title: Debugging a Node.js app in VS Code
 description: This is an article on how to debug Node.js in VS Code with no configurations, with configurations, and using nodemon.
 author: geoffrey-mungai

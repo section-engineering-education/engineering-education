@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/man-in-the-middle-attack/
+url: /man-in-the-middle-attack/
 title: Man in the Middle Attacks Explained
 description: Man-in-the-middle (MitM) attacks happen at different levels and in different forms. This article explains what a MitM attack is and how to mitigate the risks of it occurring in you application.
 author: richu-thomas

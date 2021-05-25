@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sentiment-analysis/
+url: /sentiment-analysis/
 title: Sentiment Analysis of Twitter Data
 description: Sentiment analysis is the process of extracting the *sentiment* from a piece of text and to classify it as positive, negative or neutral accordingly.
 author: rohan-reddy

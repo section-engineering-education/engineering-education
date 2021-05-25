@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-play-store-application-optimization/
+url: /google-play-store-application-optimization/
 title: Google Play Store Application Optimization
 description: This guide will discuss practical insights that will help your application climb the Google Play Store’s visibility ladder and increase download conversion rates.
 author: joseph-chege

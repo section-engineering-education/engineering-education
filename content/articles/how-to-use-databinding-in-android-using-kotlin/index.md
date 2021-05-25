@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-databinding-in-android-using-kotlin/
+url: /how-to-use-databinding-in-android-using-kotlin/
 title: Databinding in Android using Kotlin
 description: In this tutorial we will learn how to implement data binding in Andriod using Kotlin.
 author: michael-barasa
@@ -68,7 +68,7 @@ buildTypes {
 
 In the same `build.gradle` file, add the `lifecycle` library to your `dependencies`. This library helps connect the `UI` to a `ViewModel` and `LiveData`.
 
-Read more about `MVVM` architecture [here](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+Read more about `MVVM` architecture [here](/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 ```bash
 dependencies {

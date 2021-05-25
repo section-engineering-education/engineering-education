@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-dynamic-host-configuration/
+url: /introduction-to-dynamic-host-configuration/
 title: Introduction to Dynamic Host Configuration Protocol (DHCP)
 description: This tutorial will be a brief dive into understanding Dynamic Host Configuration Protocol. We will also get an in-depth review about the types of DHCP.
 author: rabo-james-bature

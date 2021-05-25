@@ -1,6 +1,6 @@
 ---
 title: Solomon Eseme
-type: engineering-education/author
+type: authors
 website: https://masteringbackend.com/
 github: https://github.com/kaperskyguru
 twitter: https://twitter.com/kaperskyguru

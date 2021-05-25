@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-rate-limiting-in-flask/
+url: /implementing-rate-limiting-in-flask/
 title: Implementing Rate Limiting in Flask APIs
 description: This tutorial introduces the reader to the Rate limiting is a technique for limiting network traffic in a system.
 author: solomon-esenyi

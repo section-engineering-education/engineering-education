@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-science-libraries-python/
+url: /data-science-libraries-python/
 title: Popular Data Science Libraries used in Python
 description: This is an article about the popular data science libraries used in Python, and how developers are using them for analysis.
 author: richu-thomas
@@ -122,7 +122,7 @@ plt.show()
 
 *Output* </br>
 
-!["cuberoot relation"](cuberoot.png)
+![cuberoot relation](/engineering-education/data-science-libraries-python/cuberoot.png)
 
 ### Pandas
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/linear-discriminant-analysis/
+url: /linear-discriminant-analysis/
 title: Linear Discriminant Analysis from Scratch
 description: In this article we will look at Linear Discriminant Analysis (LDA) theoretical concepts and look at its implementation from scratch using NumPy.
 author: lalithnarayan-c

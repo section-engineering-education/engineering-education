@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-web-scraping-using-python/
+url: /getting-started-with-web-scraping-using-python/
 title: Getting Started with Web Scraping using Python
 description: In this article we will learn about web scraping which is the process that makes pulling a huge amount of data from websites easier and faster.
 author: ahmad-mardeni

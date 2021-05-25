@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-docker/
+url: /spring-docker/
 title: How to Create Spring Boot Docker Images
 description: This tutorial will go over how to create Spring Boot Docker images. Docker is a great tool for building and packaging applications with their dependencies.
 author: odhiambo-paul
@@ -20,10 +20,10 @@ images:
 1. Have [Java Development Kit 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html/) or newer installed on your computer.
 2. Make sure [Docker](https://docs.docker.com/docker-for-windows/install/) is installed on your computer.
 
-To get started with Docker, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
+To get started with Docker, visit [Getting started with Docker](/getting-started-with-docker/).
 
 ### Project setup
-We will bundle and containerize the application that we created [here](/engineering-education/spring-boot-crud-api/). The application allowed us to perform CRUD functionalities on the Todo items via a REST API.
+We will bundle and containerize the application that we created [here](/spring-boot-crud-api/). The application allowed us to perform CRUD functionalities on the Todo items via a REST API.
 
 To check if `JDK` is installed and configured correctly on your computer, execute the command below.
 

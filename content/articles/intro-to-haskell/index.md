@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intro-to-haskell/
+url: /intro-to-haskell/
 title: Functional Programming with Haskell
 description: This article will serves as an introduction to functional programming with Haskell. Haskell uses a non-strict ("lazy") evaluation. This means expressions aren't evaluated unless it's necessary.   
 author: nimra-aftab

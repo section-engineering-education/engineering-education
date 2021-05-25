@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-firebase/
+url: /node-firebase/
 title: Node.js Firebase
 description: This is a short tutorial that shows how to use the firebase real-time database to store and listen to changes in the database and sending them to listening to clients in real time.
 author: linus-muema

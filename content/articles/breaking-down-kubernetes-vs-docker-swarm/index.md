@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/breaking-down-kubernetes-vs-docker-swarm/
+url: /breaking-down-kubernetes-vs-docker-swarm/
 title: Breaking Down Kubernetes vs Docker Swarm
 description: In this article, we'll explore the fundamentals of Docker and Kubernetes. Kubernetes and Docker Swarm are container orchestration tools that aid the automation and management of microservices in clusters.
 author: eric-kahuha

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-particles-effect-with-tsparticles/
+url: /javascript-particles-effect-with-tsparticles/
 title: JavaScript Particles Effect with tsParticles
 description: This article will go through how a developer can add tsParticles to WordPress blogs or any website using standard JavaScript.
 author: joseph-chege

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-binding-with-angular/
+url: /data-binding-with-angular/
 title: Introduction to Data Binding using Angular
 description: This tutorial will serve as an introduction to Data Binding using Angular with examples data methods.
 author: mahantesh-r

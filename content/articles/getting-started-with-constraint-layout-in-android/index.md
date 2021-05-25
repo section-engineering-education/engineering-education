@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-constraint-layout-in-android/
+url: /getting-started-with-constraint-layout-in-android/
 title: Getting Started with Constraint Layout in Android
 description: This article goes through designing and working with user interface elements in Android using the Constraint Layout using Andriod Studio IDE.
 author: eric-gacoki

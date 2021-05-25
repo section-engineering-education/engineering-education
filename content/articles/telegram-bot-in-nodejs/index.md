@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/telegram-bot-in-nodejs/
+url: /telegram-bot-in-nodejs/
 title:  Building your First Telegram Bot using Node.js and Telegraf
 description: In this tutorial, you will learn how to build telegram bots using Node.js and the Telegraf library. This will act as an introduction to the Telegram bot environment that will enable you to build other bots.
 author: ck-muithi

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-spring-websockets/
+url: /getting-started-with-spring-websockets/
 title: Getting Started with Spring WebSockets in Java
 description: A beginner's guide to WebSockets and implementing them in Spring with Java.  We will go over how to implement WebSockets in Java using Spring Boot, testing it with a simple web client.
 author: john-amiscaray

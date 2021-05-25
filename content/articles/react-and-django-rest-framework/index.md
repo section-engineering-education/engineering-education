@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-and-django-rest-framework/
+url: /react-and-django-rest-framework/
 title: Building a React.js Application using Django REST Framework
 description: In this tutorial, we will create a Todo application using React for the front-end and Django REST Framework for the backend.
 author: oruko-pius
@@ -139,7 +139,7 @@ We can now add and delete items from the admin page. Great!
 ![admin panel](/engineering-education/react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
-You can learn more about APIs in this amazing [article](/engineering-education/rest-api/).
+You can learn more about APIs in this amazing [article](/rest-api/).
 
 Install the `djangorestframework` and `django-cors-headers`:
 

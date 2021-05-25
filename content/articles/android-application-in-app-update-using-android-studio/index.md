@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-application-in-app-update-using-android-studio/
+url: /android-application-in-app-update-using-android-studio/
 title: Android Application In-App Update Using Android Studio
 description: This article acts as a guide on how to provide in-app updates using Android Studio. It discusses flexible and immediate updating techniques.
 author: joseph-chege

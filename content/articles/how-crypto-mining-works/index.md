@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-crypto-mining-works/
+url: /how-crypto-mining-works/
 title: How Does Cryptocurrency Mining Work?  
 description: This article will talk about what cryptocurrency mining is and how it works. Mining can be thought of as the “processor” for transactions on the blockchain.
 author: gregory-manley
@@ -105,7 +105,7 @@ In this article we have looked at how Bitcoin mining is completed from a higher 
 
 ### Additional Resources
 
-- [How to Build Your Own Private Blockchain](/engineering-education/how-to-build-your-own-private-blockchain/)
+- [How to Build Your Own Private Blockchain](/how-to-build-your-own-private-blockchain/)
 
 - [What is ablockchain](https://www.investopedia.com/terms/b/blockchain.asp)
 

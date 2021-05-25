@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/making-api-requests-using-retrofit-android/
+url: /making-api-requests-using-retrofit-android/
 title: Simple GET request using Retrofit in Android
 description: In this article, we will illustrate how to make API requests using Retrofit. We will create a simple application that shows a list of Marvel characters from an API.
 author: briana-nzivu
@@ -19,7 +19,7 @@ Networking is a crucial factor in mobile development. Most, if not all mobile ap
 Networking on the main thread stopped after the Honeycomb version was released. Google then developed [Volley in 2013](https://ymedialabs.com/google-volley).
 
 ### Introduction
-You can read my article on Volley [here](/engineering-education/making-api-requests-using-volley-android/). 
+You can read my article on Volley [here](/making-api-requests-using-volley-android/). 
 
 Volley offered something better: It was faster, provided better functionality, a simpler syntax, etc. Still, there was room for growth when it came to networking. 
 
@@ -46,7 +46,7 @@ Retrofit is used to perform the following tasks:
 - Supports convertors.
 
 ### Disadvantages of retrofit
-- It does not support image loading. It requires other libraries such as `Glide` and [`Picasso`](/engineering-education/using-picasso-in-android/).
+- It does not support image loading. It requires other libraries such as `Glide` and [`Picasso`](/using-picasso-in-android/).
 - It does not support setting priorities.
 
 ### Classes used in retrofit

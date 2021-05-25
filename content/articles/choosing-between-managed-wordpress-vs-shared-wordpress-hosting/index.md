@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choosing-between-managed-wordpress-vs-shared-wordpress-hosting/
+url: /choosing-between-managed-wordpress-vs-shared-wordpress-hosting/
 title: Choosing between Managed WordPress and Shared WordPress Hosting
 description: In this article we will discuss how managed WordPress and shared WordPress hosting work. We will go through the benefits and drawbacks of each to help you select the best option that suits your needs.
 author: eric-kahuha

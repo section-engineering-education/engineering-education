@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choose-native-vs-hybrid/
+url: /choose-native-vs-hybrid/
 title: Native vs Hybrid Applications 
 description: This article will point out the differences between native and hybrid applications to help beginners developers create mobile applications. 
 author: peter-ndegwa

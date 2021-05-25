@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-lake-vs-data-warehouse-vs-database/
+url: /data-lake-vs-data-warehouse-vs-database/
 title: Comparison Between Data Lakes, Data Warehouses, & Databases
 description: This article will go over data lakes, data warehouses, databases, their use cases.
 author: eric-kahuha
@@ -51,7 +51,7 @@ A database is a storage repository that houses structured data. All related data
 
 Data was stored on tapes, mostly write-only, during the early computer days. These storage systems were bulky and slow; thus, data scientists saw the need for a modern database management system.
 
-A database management system ([DBMS](/engineering-education/understanding-dbms/)) includes hardware, software, procedures, data, and database processing language as its components. With a DBMS, you can create, manipulate, and define a database, allowing you to easily store, analyze, and process data.
+A database management system ([DBMS](/understanding-dbms/)) includes hardware, software, procedures, data, and database processing language as its components. With a DBMS, you can create, manipulate, and define a database, allowing you to easily store, analyze, and process data.
 
 Besides, DBMS ensures the security and protection of databases and maintains data consistency for multiple users.
 

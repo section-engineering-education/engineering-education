@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/
+url: /an-all-in-one-spring-security-crash-course-for-java-developers/
 title: All-In-One Spring Security Crash Course for Java Developers
 description: This tutorial will cover a crash course on how to secure a Spring Boot application. We will cover the topics of authentication and authorization. Authorization is the process of verifying we allow the user to do what they are asking to do. Authentication is the process of verifying who it is that is sending a request.
 author: john-amiscaray

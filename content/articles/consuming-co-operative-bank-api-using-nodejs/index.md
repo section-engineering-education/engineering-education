@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/
+url: /consuming-co-operative-bank-api-using-nodejs/
 title: How to Consume a Co-operative Bank API using Node.js
 description: This article will show you how to consume a Co-operative Bank API using Node.js. The tutorial uses axios for HTTP requests and Express for setting up routes.
 author: kennedy-mwangi

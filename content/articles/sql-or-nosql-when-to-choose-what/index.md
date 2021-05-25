@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sql-or-nosql-when-to-choose-what/
+url: /sql-or-nosql-when-to-choose-what/
 title: SQL or NoSQL - Which Database is Ideal
 description: This article will dive into SQL and NoSQL databases, understand their structures, explore them in-depth, and understand how they work.
 author: joseph-chege

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-node-devtools/
+url: /debug-node-devtools/
 title: Debugging a Node.Js app using Chrome Dev Tools
 description: The article addresses how opening DevTools, setting breakpoints, and restarting app instances is helpful for debugging. Since Node.js apps can fail without error messages.
 author: geoffrey-mungai
@@ -108,7 +108,7 @@ The debugger pauses on your breakpoints while printing to the console, watch, ca
 ### Conclusion
 We have looked at how you can debug a local and remote app using Chrome DevTools. In DevTools, you can observe variable changes and track bugs more easily without printing to the console through watch variables and breakpoints. This also helps prevent security loopholes. By not logging sensitive data, data breaches and hacking can't occur.
 
-Alternatively, if you'd like to debug a Node.js app straight from Visual Studio Code, check out the [following article](/engineering-education/debug-nodejs-vscode/).
+Alternatively, if you'd like to debug a Node.js app straight from Visual Studio Code, check out the [following article](/debug-nodejs-vscode/).
 
 ---
 Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

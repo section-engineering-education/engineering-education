@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sorting-algorithms/
+url: /sorting-algorithms/
 title: How to Sort a List Using Algorithms
 description: A sorting algorithm is an algorithm that puts elements of a list in a certain order. Efficient sorting is important to optimizing the efficiency of other algorithms that require input data to be in sorted lists.
 author: mike-white

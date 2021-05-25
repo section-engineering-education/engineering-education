@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-language-localization/
+url: /laravel-language-localization/
 title: Laravel Language Localization
 description: This tutorial introduces the basic concepts of localization in Laravel 8.x. This feature ensures that an application adapts to different languages depending on the region.
 author: miller-juma

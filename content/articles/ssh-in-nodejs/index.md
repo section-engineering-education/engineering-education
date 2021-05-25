@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ssh-in-nodejs/
+url: /ssh-in-nodejs/
 title: Basics of SSH and Building an Application in Node.js
 description: In this article, we are going to explore the basics of SSH and build an application in Node.js to connect to a virtual machine and monitor system health.
 author: adith-bharadwaj

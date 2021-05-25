@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/visual-database-design-with-mysql-workbench/
+url: /visual-database-design-with-mysql-workbench/
 title: Visual Database Design with MySQL Workbench
 description: This article will be an introduction to visual database design. This tutorial will cover database design and modeling with MySQL Workbench. MySQL is used by database administrators, system developers, and database developers.
 author: benson-kariuki

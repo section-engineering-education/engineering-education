@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/key-design-of-hdfs-architecture/
+url: /key-design-of-hdfs-architecture/
 title: Key Design of HDFS Architecture
 description: This article will be a brief introduction to big data framework, the general design of HDFS architecture, ways of configuring HDFS data storage policies, co-location and it's benefits in HDFS.
 author: ruth-mare

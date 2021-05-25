@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/static-site-dynamic-nodejs-web-app/
+url: /static-site-dynamic-nodejs-web-app/
 title: Converting A Static Site to A Dynamic Node.js Web App
 description: How to build your first dynamic Node.js web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
@@ -25,7 +25,7 @@ First, make sure you’ve installed Node.js on your local machine or VPS hosting
 
 The Node.js installer comes bundled with the package manager NPM. NPM is a repository for Node Modules, reusable pieces of code that can extend the functionality of your server. It’s similar to a plugin repository, and Node Modules can be thought of as code snippets or libraries (depending on how large they are).
 
-*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. For more in-depth instructions, see my [guide](/engineering-education/working-with-databases-part1/#mongodb-installation) on How to Install MongoDB.
+*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. For more in-depth instructions, see my [guide](/working-with-databases-part1/#mongodb-installation) on How to Install MongoDB.
 
 
 ### Testing the Install
@@ -162,8 +162,8 @@ app.get('/', function (req, res) {
 ### Passing Server-Side Data
 Congratulations! You've successfully converted your static website to a Node.js web app. You've also created your first Express web server and learned the basics of EJS templating.
 
-Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/engineering-education/deploying-nodejs-web-app).
+Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/deploying-nodejs-web-app).
 
 If you want to build on the skills you've learned in this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/engineering-education/working-with-databases-part1/) and [Getting to Grips with APIs](/engineering-education/simple-guide-to-using-apis-nodejs) guides which will get you started.
+If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/working-with-databases-part1/) and [Getting to Grips with APIs](/simple-guide-to-using-apis-nodejs) guides which will get you started.

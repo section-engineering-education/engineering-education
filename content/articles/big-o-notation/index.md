@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/big-o-notation/
+url: /big-o-notation/
 title: Understanding the Big O Notation
 description: This article will be an overview on time and space complexities and how the Big O notation is a standard measure of complexity.
 author: terrence-aluda

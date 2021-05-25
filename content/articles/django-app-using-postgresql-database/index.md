@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-app-using-postgresql-database/
+url: /django-app-using-postgresql-database/
 title: Creating a Django App Using PostgreSQL Database
 description: In this article, we wil create a Hello World Django application using PostgreSQL database. PostgreSQL is a open-source object-relational database system that uses the SQL language.
 author: adeyemi-atoyegbe

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-studio/
+url: /data-studio/
 title: Introduction to Data Studio
 description: An Introduction to Data Studio - a free cloud based data visualization tool platform by Google to transform data sets to life.
 author: rohan-reddy

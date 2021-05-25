@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/documentation-website-hugo/
+url: /documentation-website-hugo/
 title: Building a Documentation Site from Scratch using Hugo
 description: This tutorial will go over how to create a documentation site for your software projects using Hugo static generator using the Docsy theme.
 author: quadri-sheriff

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-vs-django/
+url: /node-vs-django/
 title: Node.js vs Django
 description: Node.js and Django are technologies used in building versatile web and mobile applications. This article will analyze these two popular technologies. The article will critically give each member the pros and cons to help the reader choose the best technology depending on the project needs.
 author: pius-macharia

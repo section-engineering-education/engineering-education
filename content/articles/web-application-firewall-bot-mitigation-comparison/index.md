@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/web-application-firewall-bot-mitigation-comparison/
+url: /web-application-firewall-bot-mitigation-comparison/
 title: Web Application Firewall vs Bot Mitigation Solutions
 description: Web application firewalls and bot mitigation solutions both provide tooling to help prevent malicious activity from affecting web applications, but what exactly does each do and how do they differ?
 author: ivan-santos

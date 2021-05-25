@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-css-works-behind-the-scenes/
+url: /how-css-works-behind-the-scenes/
 title: How does CSS works behind the scenes?
 description: In this article we will explore what happens behind the scenes with CSS (Cascading Style Sheets). We will go over what parsing is within HTML.
 author: sarthak-duggal

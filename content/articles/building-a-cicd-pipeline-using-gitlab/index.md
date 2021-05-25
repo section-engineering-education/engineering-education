@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-cicd-pipeline-using-gitlab/
+url: /building-a-cicd-pipeline-using-gitlab/
 title: Building a CI/CD Pipeline using Gitlab
 description: This tutorial, we are going to explore the basics of Gitlab and Gitlab-ci by building a CI/CD pipeline and running it using the UI provided by Gitlab. 
 author: adith-bharadwaj

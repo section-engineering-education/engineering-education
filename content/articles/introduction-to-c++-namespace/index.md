@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-c++-namespace/
+url: /introduction-to-c++-namespace/
 title: Introduction to C++ Namespaces
 description: In this article, we will learn about Namespaces and how they are used in C++. Namespaces refers to various blocks that can be created in a program to group all similar objects, and you can refer to all variables, functions, or classes within a block.
 author: dawe-daniel

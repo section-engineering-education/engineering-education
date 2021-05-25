@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-testing
+url: /node-testing
 title: Testing Node.js Applications
 description: Testing Node.js application - Node.js is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. Testing is an important part of that process.
 author: rohan-reddy

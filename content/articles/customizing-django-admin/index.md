@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/customizing-django-admin/
+url: /customizing-django-admin/
 title: How to Customize the Django Admin Site
 description: This article will serve as a guide to customize the default Django administration site. Django admin is used to quickly manage a Django site content.
 author: samuel-mwangi

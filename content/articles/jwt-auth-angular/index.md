@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/jwt-auth-angular/
+url: /jwt-auth-angular/
 title: Angular 11 - JWT Authentication Example & Tutorial with PHP
 description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.  
 author: miller-juma

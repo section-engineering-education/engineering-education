@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/event-loop-explained/
+url: /event-loop-explained/
 title: The Event Loop Explained
 description: The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works. Understanding the event loop is the first step to creating great web-based software.
 author: nadiv-gold-edelstein
@@ -42,7 +42,7 @@ Try selecting text or clicking on buttons. Can't? Let's see why.
 
 Here is the event loop while our code is running.
 
-![blocked event loop](https://i.imgur.com/C1P1MR7.jpg)
+![blocked event loop](/engineering-educationhttps://i.imgur.com/C1P1MR7.jpg)
 
 It is stuck in our JavaScript infinite loop. The website can't re-render or handle other events, like clicks, because we haven't given control back to the browser.
 

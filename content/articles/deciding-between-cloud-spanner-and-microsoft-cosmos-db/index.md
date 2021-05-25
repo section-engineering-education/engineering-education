@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/
+url: /deciding-between-cloud-spanner-and-microsoft-cosmos-db/
 title: Deciding between Cloud Spanner and Microsoft Cosmos DB
 description: This article will discuss and compare the features of both Cloud Spanner and Microsoft Cosmos DB and highlight their advantages and disadvantages.
 author: eric-kahuha

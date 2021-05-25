@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/discord-bot-node/
+url: /discord-bot-node/
 title: Making a Discord Bot (With Node.js)
 description: Discord bots can do many things. They can manage voice chats, moderate servers, and makes Discord lots of fun. Making them is also fun. This tutorial shows you how to make your own.
 author: mike-white

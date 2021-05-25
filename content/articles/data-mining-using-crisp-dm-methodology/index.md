@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-mining-using-crisp-dm-methodology/
+url: /data-mining-using-crisp-dm-methodology/
 title: Data Mining using CRISP-DM methodology
 description: Introduction to CRISP-DM methodology and a tutorial on how to use this methhod to build successful data science projects and we will anaylze examples.
 author: srishilesh-p-s
@@ -169,7 +169,7 @@ Things to consider:
 
 Though the analysts might have analyzed the problem, visualizing, and presenting the clients/business managers' insights is the key step.
 
-Visualization can be done by plotting graphs, performing statistical analysis, or predicting the next possible outcome. To learn more about visualization, please refer to [this](/engineering-education/matplotlib-visualization-python/) article on Matplotlib visualizations and [this](/engineering-education/getting-started-with-data-visualization-using-pandas/) article on Pandas visualization.
+Visualization can be done by plotting graphs, performing statistical analysis, or predicting the next possible outcome. To learn more about visualization, please refer to [this](/matplotlib-visualization-python/) article on Matplotlib visualizations and [this](/getting-started-with-data-visualization-using-pandas/) article on Pandas visualization.
 
 ### Conclusion
 In conclusion, we have learned various CRISP-DM methodology steps and understood them by analyzing a case study. This can be understood better only by using this methodology for your next data science project.

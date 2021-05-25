@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/diving-deeper-into-js-objects/
+url: /diving-deeper-into-js-objects/
 title: Diving Deeper into JavaScript Objects
 description: In this article, we will cover JavaScript objects, object properties, implementing those functions into objects, object accessors, and common object methods.
 author: kennedy-mwangi

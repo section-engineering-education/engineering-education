@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/popular-machine-learning-datasets/
+url: /popular-machine-learning-datasets/
 title: Popular Machine Learning (ML) Datasets 
 description: This article be an overview of some of the most popular machine learning datasets commonly used in introductory machine learning classes or benchmarks for new models.
 author: willies-ogola

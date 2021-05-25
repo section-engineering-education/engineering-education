@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cloud-firestore/
+url: /cloud-firestore/
 title: Getting Started with Cloud Firestore
 description: This is a short article that shows developers how Cloud Firestore (a NoSQL database that applications can access) works and some of its basic operations.
 author: linus-muema
@@ -77,7 +77,7 @@ Within the code, you will find the following packages:
 
 - `random-words` - this will provide us with random words to save in the database.
 
-First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console. To get more information on firebase click through to [this previous article](/engineering-education/node-firebase/).
+First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console. To get more information on firebase click through to [this previous article](/node-firebase/).
 
 From the code, we have created a function to initialize firebase in the util file. Then we will import the required packages. We use the `firebase.firestore()` method to get an instance of Cloud Firestore database.
 

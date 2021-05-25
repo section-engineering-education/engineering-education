@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/making-api-requests-using-volley-android/
+url: /making-api-requests-using-volley-android/
 title: Making API Requests using Volley Android
 description: In this article, we will create an application that shows the Corona Virus statistics of the world. We will be using Volley to make the network calls.
 author: briana-nzivu

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kotlin-coroutines/
+url: /introduction-to-kotlin-coroutines/
 title: Introduction to Kotlin Coroutines
 description: This article shows you some of the basics of writing asynchronous code using coroutines. Coroutines help us consecutively write asynchronous code while not using callbacks.
 author: peter-kayere

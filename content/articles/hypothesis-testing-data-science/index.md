@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hypothesis-testing-data-science/
+url: /hypothesis-testing-data-science/
 title: Hypothesis Testing in Data Science
 description: This article will go over the concept of a hypothesis in data science and we will discuss its significance to machine learning. We will also give a basic overview of the steps taken to test a hypothesis.
 author: collins-ayuya

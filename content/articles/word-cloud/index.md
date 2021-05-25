@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/word-cloud/
+url: /word-cloud/
 title: Creating Word Clouds in Python
 description: In this article we will go over how code a program to generate word clouds by creating a virtual environment in Python 3.6 and using Anaconda.
 author: lalithnarayan-c
@@ -135,7 +135,7 @@ wordcloud_generator.create_word_cloud(clean_data)
 ```
 
 The output of the code pops in a separate window. It should look like the image shown below.
-![output of the code](output.jpg)
+![output of the code](/engineering-education/word-cloud/output.jpg)
 
 
 ### Conclusion

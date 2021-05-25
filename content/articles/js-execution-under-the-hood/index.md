@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/js-execution-under-the-hood/
+url: /js-execution-under-the-hood/
 title: What Happens When JavaScript Runs My Code?
 description: This guide will walk you through what happens when the JavaScript (a single-threaded language) engine runs your code.
 author: adrian-murage

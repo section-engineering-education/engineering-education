@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-serverless-contact-form/
+url: /building-serverless-contact-form/
 title: Building a Serverless Contact Form with Google Cloud Functions
 description: A walk through on how to build a serverless contact form, using google cloud functions. Known as FaaS or functions as a service.
 author: saiharsha-balasubramaniam

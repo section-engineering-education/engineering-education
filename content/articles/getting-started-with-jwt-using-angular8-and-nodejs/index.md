@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/
+url: /getting-started-with-jwt-using-angular8-and-nodejs/
 title: Getting Started with Json Web Auth using Angular 11 and Node.js
 description: In this article, we will look at how to implement Json Web Tokens (JWT) in Angular 11 using a simple Node.js server. Using JSON Web Tokens, makes an app secure since the services and communications between the server and the app are also secure.
 author: ephraim-njoroge

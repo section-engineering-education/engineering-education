@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/agora-cloud-recording/
+url: /agora-cloud-recording/
 title: Agora Cloud Recording
 description: This tutorial will give readers a detailed guide on how to set up an Express server to record audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
@@ -32,9 +32,9 @@ This tutorial is for applications that use [Agora](https://www.agora.io/) and wa
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
-- [Livestreaming](/engineering-education/react-native-agora-livestreaming-app/).
+- [Livestreaming](/react-native-agora-livestreaming-app/).
 
-- [Video Conferencing](/engineering-education/react-native-agora-video-conference-app/).
+- [Video Conferencing](/react-native-agora-video-conference-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
@@ -181,7 +181,7 @@ During the recording, you can query the recording session for the status, update
 
 We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream, and uploads it to the storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
 
-If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
+If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](/engineering-education/agora-express-token-server/).
 
 > At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer to [this FAQ answer](https://docs.agora.io/en/All/faq/string).
 

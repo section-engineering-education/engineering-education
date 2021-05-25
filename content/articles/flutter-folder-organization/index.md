@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/flutter-folder-organization/
+url: /flutter-folder-organization/
 title: Flutter Folder Organization
 description: In this article, we will learn the folder structure of a flutter application. Folder organization helps optimize the performance of an application.
 author: jerim-kaura

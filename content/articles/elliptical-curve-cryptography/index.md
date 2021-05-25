@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/elliptical-curve-cryptography/
+url: /elliptical-curve-cryptography/
 title: How Does Elliptical Curve Cryptography Work?
 description:  Elliptical curve cryptography is a next-generation public key cryptography system that provides a significant increase in security over previous generations.
 author: gregory-manley
@@ -34,7 +34,7 @@ When using elliptical curves for cryptography, only whole numbers or the resulti
 ### What Uses Elliptical Curves?
 The elliptical curve is used by Bitcoin, Ethereum, and many other cryptocurrencies. Specifically, Bitcoin uses the secp256k1 curve, which has the equation:
 
-![y^2=x^3+7](https://latex.codecogs.com/gif.latex?y^2=x^3&plus;7)
+![y^2=x^3+7](/engineering-educationhttps://latex.codecogs.com/gif.latex?y^2=x^3&plus;7)
 
 This equation is used to find the public key based upon a value (your private key, which is a random 256-bit integer) telling you how many times to do point addition. For Bitcoin, that point is:
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/variables-in-javascript/
+url: /variables-in-javascript/
 title: Variables in JavaScript
 description: This article will be discussing variables and the various scopes of the variables in JavaScript. We will use the JavaScript console to execute JavaScript code in this tutorial.
 author: caroline-gatwiri

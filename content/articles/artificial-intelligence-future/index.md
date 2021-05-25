@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/artificial-intelligence-future/
+url: /artificial-intelligence-future/
 title: Artificial Intelligence – Does it have a place in our future?
 description: description placeholder
 author: michael-zanoff

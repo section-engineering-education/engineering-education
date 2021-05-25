@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deciding-between-mariadb-and-mysql/
+url: /deciding-between-mariadb-and-mysql/
 title: Choosing Between MariaDB and MySQL
 description: This tutorial will outline the key differences and similarities of MariaDB and MySQL. It will also discuss the unique features of these database frameworks.  
 author: ernest-mwangi

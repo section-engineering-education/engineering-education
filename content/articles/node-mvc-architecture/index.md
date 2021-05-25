@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-mvc-architecture/
+url: /node-mvc-architecture/
 title: Node.js applications following an MVC architecture
 description: The article is about creating your Node.js applications following an MVC architecture pattern that divides the whole application into three parts.
 author: linus-muema

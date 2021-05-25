@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-protect-your-system-against-ransomware-as-a-service-raas/
+url: /how-to-protect-your-system-against-ransomware-as-a-service-raas/
 title: Protecting your System against Ransomware as a Service (RaaS)
 description: This article will go over Ransomware as a Service (RaaS), which enables cybercriminals to conduct their ransomware operations, including malware delivery and taking ransom payments through the dark web or as a hire-as-a-service arrangement.
 author: eric-kahuha

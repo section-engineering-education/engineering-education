@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/perceptron-algorithm/
+url: /perceptron-algorithm/
 title: Perceptron Algorithm - A Hands On Introduction
 description: This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy.
 author: lalithnarayan-c
@@ -21,7 +21,7 @@ A linear decision boundary can be visualized as a straight line demarcating the 
 We will also look at the perceptron's limitations and how it was overcome in the years that followed.
 
 ### Goals
-This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy. For a quick refresher on Numpy, refer to this [article](/engineering-education/matplotlib-visualization-python/).
+This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy. For a quick refresher on Numpy, refer to this [article](/matplotlib-visualization-python/).
 
 By the end of the article, you'll be able to code a perceptron, appreciate the significance of the model and, understand how it helped transform the field of neural networks as we know it.
 

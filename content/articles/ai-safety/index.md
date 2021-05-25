@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ai-safety/
+url: /ai-safety/
 title: Why be Concerned about AI Safety?
 description: This article will go through the reasons why researchers are concerned about AI safety We will go over what are some potential dangers, and more importantly discuss what we can do about it.
 author: mike-white

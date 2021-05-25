@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/install-a-gui-on-an-ubuntu-server-1804/
+url: /install-a-gui-on-an-ubuntu-server-1804/
 title: How to Install a GUI on an Ubuntu Server 18.04 for Easier Remote Management
 description: A tutorial on installing Xfce or LXDE GUIs onto an Ubuntu Server 18.04 Installation for Easier Remote Management - Linux-based Virtual Private Server (VPS) runs off of a command line with no graphical user interface (GUI).
 author: gregory-manley
@@ -87,7 +87,7 @@ Once the server is installed start it by running:
 
 After installing you can connect to your server by pointing your VNC client to your external IP at port 5901 (Ex. 196.168.0.1:5901).
 
-![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
+![](/engineering-educationhttps://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-23-at-3-33-52-pm_orig.png)
 
 ### Finishing Up
 It is recommended that you install Firefox for web browsing before connecting to your newly installed GUI by running:
