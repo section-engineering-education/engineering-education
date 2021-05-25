@@ -14,8 +14,7 @@ images:
   - url: /engineering-education/getting-started-with-container-as-a-service/hero.jpg
     alt: Containers
 ---
-There seems to be a trend where solutions nowadays rely on "the as a service" model/offering. I bet you have heard of Infrastructure as a Service, Platform as a Service, and even more.
-Containers have joined the trend with the evolution of the Container as a Service model for container-based solutions.
+There seems to be a trend where solutions nowadays rely on the (as a service) model/offering. I bet you have heard of Infrastructure as a Service, Platform as a Service, and even more. Containers have joined the trend with the evolution of the Container as a Service model for container-based solutions.
 <!--more-->
 Before reading any further, for an introduction to container technology, you can check out [this article](https://www.section.io/engineering-education/history-of-container-technology).
 
@@ -55,7 +54,6 @@ CaaS is more suitable for Microservice oriented applications because of the inde
 Like other 'as a service' models available, CaaS provides flexible options where users only pay for resources they are using.
 
 ### Benefits of Container as a Service
-
 - *Efficiency*: applications deployed through CaaS benefit from performance optimization configurations like Elastic Load Balancing, Log aggregation, Monitoring, and even health checks. These configurations ensure that development teams build highly visible and available distributed systems and applications.
 
 - *Speed*: creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because  Infrastructure is given little concentration. The speed provided by  CaaS guarantees a lightweight process of a software release.
@@ -66,7 +64,7 @@ Like other 'as a service' models available, CaaS provides flexible options where
  
 CaaS also makes it easier to launch application fixes, security patches, container level debugging, and required updates.
 
-### The container as a Service tools
+### The container as a service tool
 CaaS provides a hosted container orchestration engine (majorly Kubernetes) to provide containers, manage container clusters, handle scaling and failure management, and maintain the security of the deployed containers. With CaaS, cloud vendors usually cover all the networking, auto-scaling services, log management and monitoring, CI/CD functions, and other automation activities.
 
 Tools and platforms in CaaS are essential for integrating development and operations teams. Cloud market leaders have thus labored to provide these while using Kubernetes as the main orchestration engine to build upon.
@@ -80,10 +78,9 @@ This orchestration platform offers extensive security, reliability, and scalabil
 
 3. [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine): Google is the pioneer of Kubernetes, offers impactful services through GKE. These services speed up the development life-cycle of applications through pre-built deployment templates for Kubernetes applications and containers.
 
-
-4. [Section Edge Containers as a Service](https://www.section.io/modules/edge-containers-as-a-service/s): Section extends Containers as a Service from cloud to edge. Built on the backbone on Kubernetes, Section's Edge CaaS solution distributes containers across a flexible global edge network, delivering performance, security, and scalability benefits.
+4. [Section Edge Containers as a Service](https://www.section.io/modules/edge-containers-as-a-service/): Section extends Containers as a Service from cloud to edge. Built on the backbone on Kubernetes, Section's Edge CaaS solution distributes containers across a flexible global edge network, delivering performance, security, and scalability benefits.
  
-### Working with Amazon Elastic Container Service(ECS)
+### Working with Amazon Elastic Container Service (ECS)
 This section will illustrate the basics of Amazon Elastic container service.
 
 Amazon Elastic Container Service allows developers to work with APIs and web interfaces when launching, monitoring and managing container-based applications in Amazon Web Services.
@@ -112,6 +109,7 @@ An example of a task definition file that shows CPU and Memory limit, web server
     "cpu": "256",
 }
 ```
+
 Containers and applications can be launched on Amazon ECS through [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type or through [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type.
 An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
 
@@ -120,12 +118,13 @@ To get more feel of Amazon ECS, you can check out the [AWS site](https://aws.ama
 ### Conclusion
 Development teams should take advantage of CaaS offering to change their production life cycle because businesses experience immense benefits after adopting the CaaS model.
 
+Happy coding!
+
 ### References
 1. [Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service).
 2. [Amazon Elastic Cloud Service](https://aws.amazon.com/ecs/getting-started/).
 3. [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/#getting-started).
 4. [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine).
-
 
 
 ---
