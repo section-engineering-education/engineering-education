@@ -4,19 +4,19 @@ status: publish
 published: true
 url: /getting-started-with-strapi/
 title: Getting Started with Strapi API CMS
-description: This tutorial will introduce us to the Strapi Node.js API CMS. We will create a simple CRUD API using Strapi. We will also test these endpoints using Postman.
+description: This tutorial will introduce the reader to the Strapi Node.js API CMS. We will create a simple CRUD API using Strapi. We will also test these endpoints using Postman.
 author: geoffrey-mungai
-date: 2021-04-22T00:00:00-13:00
-topics: []
+date: 2021-05-25T00:00:00-10:00
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-strapi/hero.jpg
     alt: Strapi API example
 ---
-[Strapi](https://strapi.io) is an open-source headless CMS for building fast and easily manageable APIs written in JavaScript. It enables developers to make flexible API structures easily using a beautiful user interface. Strapi can be used with various databases including MongoDB, PostgreSQL, etc.
+[Strapi](https://strapi.io) is an open-source headless CMS used for building fast and easily manageable APIs written in JavaScript. It enables developers to make flexible API structures easily using a beautiful user interface. 
 <!--more-->
-
+Strapi can be used with various databases including MongoDB, PostgreSQL, etc.
 ### Prerequisites
 To follow along with this tutorial, you need [some understanding of REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/). You will also need [Postman](https://www.postman.com/downloads/) for testing API endpoints.
 
@@ -36,7 +36,7 @@ $ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 ```
 
-We will be using[ Yarn package manager](https://yarnpkg.com/) to create the Strapi project. Open a new terminal window and run the following command to install Yarn.
+We will be using [Yarn package manager](https://yarnpkg.com/) to create the Strapi project. Open a new terminal window and run the following command to install Yarn.
 
 ```bash
 $ npm install --global yarn
@@ -77,7 +77,7 @@ Let's create a `file` item (collection) containing a name and description field.
 8. Hit **Save** to save the collection and wait for the server to restart.
 
 ### Step 4 -- Creating the TYPES collection
-Let's another field to our field to the `file` item: the `type` field. This field will indicate the type of file. eg. a document, video, audio, etc.
+Let's add another field to the `file` item: the `type` field. This field will indicate the type of file. eg. a document, video, audio, etc.
 
 To see how we can do this, we'll create another collection type. 
 
@@ -160,7 +160,9 @@ Trying to hit the same endpoint again will return the text `Not Found`.
 ![Deleting an item](/engineering-education/getting-started-with-strapi/delete-item.png)
 
 ### The next steps
-With the collections in place, you can now you can consume your API using your awesome frontend. Strapi offers integrations for some frontend frameworks like [Vue.js](https://strapi.io/integrations/vuejs-cms), [Angular](https://strapi.io/integrations/angular-cms), [React](https://strapi.io/integrations/react-cms), etc. It also offers integrations with static site generators like [Hugo](https://strapi.io/integrations/hugo-cms). Strapi also has an Apollo-based [GraphQL plugin](https://strapi.io/documentation/developer-docs/latest/development/plugins/graphql.html) for querying content.
+With the collections in place, you can now consume your API using your awesome frontend. Strapi offers integrations for some frontend frameworks like [Vue.js](https://strapi.io/integrations/vuejs-cms), [Angular](https://strapi.io/integrations/angular-cms), [React](https://strapi.io/integrations/react-cms), etc. 
+
+It also offers integrations with static site generators like [Hugo](https://strapi.io/integrations/hugo-cms). Strapi also has an Apollo-based [GraphQL plugin](https://strapi.io/documentation/developer-docs/latest/development/plugins/graphql.html) for querying content.
 
 You can also browse through some of the available Strapi starters [here](https://strapi.io/starters). 
 
@@ -169,9 +171,11 @@ Strapi has many official and community-made [plugins](https://github.com/strapi/
 To deploy your Strapi API see the [deployment guidelines](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/deployment.html#hosting-provider-guides).
 
 ### Conclusion
-Strapi is such a cool and awesome tool when it comes to increasing productivity. It reduces the amount of code the developer has to write and manage. Strapi enables the developer to build a strong backend using an easy-to-use interface. Feel free to play around with Strapi. It has more than just collections to offer.
+Strapi is such a cool and awesome tool when it comes to increasing productivity. It reduces the amount of code the developer has to write and manage. Strapi enables the developer to build a strong backend using an easy-to-use interface. Feel free to play around with Strapi. 
 
-Happy Coding!
+It has more than just collections to offer.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
