@@ -42,7 +42,7 @@ Let us start with a brief overview of the phases in an Evolutionary Algorithm. W
 An EA consists of four phases:
 1. Initialization: A starting population of possible solutions. This is usually randomly populated.
 2. Selection: This step simulates the process of natural selection. We need to evaluate the fitness of the members of the population. A fitness function takes in the characteristics of the member and gives out a numerical representation of the viability of the solution. A portion of top-scoring members is selected.
-3. Genetic Operators: To generate the next generation of the population.
+3. Genetic operators: To generate the next generation of the population.
   - Recombination/Crossover: Combining the information of parents to produce one or more children.
   - Mutation: Introducing new genetic material into the generation by slightly modifying the children.
 4. Termination: The algorithm stops either on reaching some performance threshold or maximum runtime.
@@ -112,14 +112,14 @@ def fitness(source, target):
     return score
 ````
 Now that we have a way to find out which members make the cut, let us deal with selection. We could just select the top members. But, sometimes important genetic material can also be generated from the not-so-fit ones.
-For example, Say the top are Hellx, Hellq, Hellw and one with a very small fitness score (Score of 2) is ablco. Combining one of the top 3 with ablco, taking only the last letter from this would give us Hello.
+For example, let's say the top members are Hellx, Hellq, Hellw and one with a very small fitness score (Score of 2) is ablco. Combining one of the top 3 with ablco, taking only the last letter from this would give us Hello.
 No matter how we combine the top 3 words, we are not going to get 'o' in the last position, hence we won't get our target 'Hello'.
 
 Natural selection also doesn't entirely eliminate members with a low fitness score. They are less likely to survive. The probability of a member being selected to continue the generation must be based on the fitness score. A fitness score of 0 will perish, but the rest of them have a chance to survive. The best ones will have a much greater survival rate.
 
 To simulate this, let us put all the members of the population into a box called a mating pool. The number of times the member is put in the box is based on the fitness function. Say, a member [Helxa] has a score of 3, it will be put in the mating pool (3/5)*100 = 60 times. While a member [Haxvs] with a score of 1 will be put in the pool (1/5)*100 = 20 times.
 
-So when we pick two parents for generating the next generation, it is similar to picking 2 balls from a jar of balls. Picking the ball with most frequency [highest fitness score] is more likely.
+So when we pick two parents for generating the next generation, it is similar to picking 2 balls from a jar of balls. Picking the ball with most frequency (highest fitness score) is more likely.
 
 ````python3
 def selection(population):
@@ -131,13 +131,13 @@ def selection(population):
     return mating_pool
 ````
 
-#### Step 3: Genetic Operators
+#### Step 3: Genetic operators
 Now we need to generate the next generation. This is the part where we induce variation in the population to tweak our population into the desired one.
 
 ##### Recombination/ Crossover
 This stochastic operation takes two (or more) parents and combines them to generate an offspring. The selection of parents is random, but the probability of selecting a particular candidate is based on the fitness score.
 
-Crossover operation for our problem could be:
+The crossover operation for our problem could be:
 1. Taking half of each string and combining.
 2. Taking alternative characters from each of the strings.
 3. Choosing a random mid-point and taking the first part till mid-point from one parent and the rest from the other.
@@ -154,8 +154,7 @@ def crossover(a, b):
 ````
 
 ##### Mutation
-This unary operator modifies the child we got from recombination slightly.
-This change is random and unbiased. For our problem, we can just choose a random position in the string and replace it with a random letter.
+This unary operator modifies the child we got from recombination slightly. This change is random and unbiased. For our problem, we can just choose a random position in the string and replace it with a random letter.
 
 But, why do this?
 
@@ -214,7 +213,7 @@ Gen:  998 FelMo 3
 Gen:  999 FelMo 3
 Gen:  1000 FelMo 3
 ````
-Okay, if this mutation is that important why don't we just mutate everything?
+Okay, if this mutation is that important, why don't we just mutate everything?
 
 Let us have a look at what happens if the mutation rate is 1.
 
@@ -247,8 +246,8 @@ def mutate(a):
 ##### Replacement
 We have now obtained a new modified offspring from two parent nodes. Now we have to put it back in the population.
 This survivor selection mechanism can either be:
-- Age-based: Replace the oldest member of the population with the child
-- Fitness score based: Replace the weakest member with the child
+- Age-based: Replace the oldest member of the population with the child.
+- Fitness score based: Replace the weakest member of the population with the child.
 
 We have employed an age-based replacement.
 
@@ -267,12 +266,12 @@ So, when and how do we stop our evolutionary algorithm? Should we go on till we 
 
 In most real-life applications, we are contented with approximations of the target.
 
-Some termination criteria are:
-1. Maximally allowed CPU time elapses
-2. The number of generations has exceeded a limit
+Some termination criteria are when:
+1. Maximally allowed CPU time elapses.
+2. The number of generations has exceeded a limit.
 3. Optimal fitness score is reached.
-4. The fitness improvements are under a threshold value for a given amount of time
-5. The population diversity drops under a given threshold
+4. The fitness improvements are under a threshold value for a given amount of time.
+5. The population diversity drops under a given threshold.
 
 For our case, we have set the algorithm to stop if either the best solution or 1000 generations is reached.
 
