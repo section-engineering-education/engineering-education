@@ -3,7 +3,7 @@
 **Prerequisites:**
 - Github account
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
-- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown. See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet))
+- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown). See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Fork the repository
 In order to upload your prepared .md file to Github, first, click the **Fork** option in the upper right-hand corner (pictured below).
@@ -38,7 +38,7 @@ Be sure to:
 - **Use dashes in place of spaces.**
 - **Do not include any special characters.**
 - **Try to keep it under 40 characters.**
-- -**Avoid using periods (.) or commas (,)
+- -**Avoid using periods (.) or commas (,)**
 
 ![create article folder](/static/images/create-article-folder.png)
 
