@@ -16,7 +16,7 @@ images:
 ---
 There seems to be a trend where solutions nowadays rely on the (as a service) model/offering. I bet you have heard of Infrastructure as a Service, Platform as a Service, and even more. Containers have joined the trend with the evolution of the Container as a Service model for container-based solutions.
 <!--more-->
-Before reading any further, for an introduction to container technology, you can check out [this article](https://www.section.io/engineering-education/history-of-container-technology).
+Before reading any further, for an introduction to container technology, you can check out [this article](/engineering-education/history-of-container-technology/).
 
 ### Table of content
 This article will cover:
