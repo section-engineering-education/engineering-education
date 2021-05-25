@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-strapi/
+url: /getting-started-with-strapi/
 title: Getting Started with Strapi API CMS
 description: This tutorial will introduce us to the Strapi Node.js API CMS. We will create a simple CRUD API using Strapi. We will also test these endpoints using Postman.
 author: geoffrey-mungai
