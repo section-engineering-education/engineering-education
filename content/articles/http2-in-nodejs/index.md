@@ -27,7 +27,6 @@ Check more about this [here](https://developers.google.com/web/fundamentals/perf
 Server push works is what bundles our assets for a single client request into one HTTP/2 response. Instead of waiting for the browser to first load the HTML and determine which assets to download, we can push all the assets to the browser ahead of time. Under the hood, all the streams are initiated via `PUSH_PROMISE` containing HTTP headers of the promised resource. This will signal the server to push the described resources to the client ahead of the response time thus avoiding duplicate requests.
 
 
-
 ### Setting Up Our Project
 
 First things first, create a `http2-server-push` folder and open it on your IDE. In the root of the `http2-server-push` folder, run the command `npm init -y` to set up a new project by generating an initial `package.json` file. Our project will use two dependencies from the npm registry:
@@ -45,7 +44,7 @@ For the `devDependency` nodemon package add it using the command:
 
 `npm install -D nodemon` 
 
-HTTP/2 serves the assets via HTTPS. Run the following command to generate a key and a certificate:
+Most of the browsers will not support server push functionality unless its done from a secured server. Therefore, we will generate a key and a certificate for our application. Run the following command to generate an ssl certificate: 
 
 ```openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt```.
 
@@ -65,8 +64,10 @@ Our project structure now looks like:
 package.json
 package.lock.json
 ```
+
 ## Implementing HTTP/2 and Server Push using Express and spdy
-Import the dependencies. Create the entry `index.js` file in the root of our folder (see project structure above). Add the following Node.js script:
+
+Import the dependencies. Create the entry `index.js` file in the root of our folder (see project structure above). Add the following Node.js script inside the `index.js` file:
 
 ```JS
 const spdy = require("spdy")
@@ -113,16 +114,36 @@ spdy.createServer(
 })
 ```
 
-!!! Lots of images To Explain here....
+Let us now dissect the above code:
 
-- we create a HTTP/2 secure server using `spdy` module. 
-- This server will serve the index.html file when the request url is “/” and also push all files from the “scripts” directory and “images” directory and the style.css file.
-Now run the node server and open up the browser. Open up your developer tools and go to Network tab. Go to the url https://localhost:3000. Normal https server is running on this port. (Since we are using self signed certificate to setup the TLS, chrome will show a warning. Get past that 😃). In the developer tool we will see that the browser has make requests for all files individually. Also in the console of our Node JS server we’ll see we have received requests for all additional resource files.
+- Using the `spdy` module, we create a new  HTTP/2 server. 
+
+- We import the express package and instantiate a new express application.
+
+-  `app.use(express.static("public"))` is a middle that serves static files from the `public` folder.
+
+- Our express server needs to serve the requested `index.html` file when we navigate and hit the  “/” endpoint while pushing all the other files from the `public` folder such as images, scripts, and styleheets.
+
+- `spdy.createServer` is a method that is called to create our HTTP/2 server and listen for incoming requests at `port 3001`. It takes an instance of our app and an options object with our server key and certificate.
+
+Next, we need to run the node server. Open your browser and the developer tools and go to Network tab.
+In our application, we are using a self signed certificate to setup the TLS and hence the browser will show a warning. We need to get past this by clicking advanced and proceed with the site. Now let’s go to `https://localhost:3001` where our HTTP/2 server is running. Under the Network tab, we see that all our requests for our scripts, images and stylesheets will be received as “Push” from the server. 
+
+![http-push](./httppush.png).
+
+The logical flow of our application is like:
+- The client/browser will request the HTML document file.
+
+- This request is recieved by our backend server which processes the request before sending back the HTML document.
+
+- When sending the `/index.html`, the server identifies more resources such as `/app.js`, `/styles.css`, and `/images/image.png` needed so that our index file is rendered correctly. So the server will also pushe those files along with the `/index.html` file.
+
+- The browser will then render the page using the HTML document and its associated resources.
 
 
-Now let’s go to https://localhost:3001. The HTTP/2 server is running on that port. Let’s check the Network tab again.
-All other requests for script files and image files and stylesheet are received as “Push” from the server. If we check the console in the Node JS server then we will see only one request came this time that is for the url “/”.
+Still under the browser developer tools, we can confirm that the our application is using the version 2 of the HTTP protocol.
+
+![http-version](./http2support.png).
 
 ### Conclusion
-Everyone knows the significance of improving the speed of our web qpplications. With a minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. Server push is extremely powerful and should be 
-HTTP/2 is becoming the new web standard with its great features that constantly improves web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency is greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push). Happy coding!
+Everyone knows the significance of improving the speed of our web applications. With a minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. HTTP/2 is becoming the new web standard with its great features that constantly improves web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency is greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push). Happy coding!
