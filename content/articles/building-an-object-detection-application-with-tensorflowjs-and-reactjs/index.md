@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   
-  - url: engineering-education/building-an-object-detection-application-with-tensorflowjs-and-reactjs/hero.jpg
+  - url: /engineering-education/building-an-object-detection-application-with-tensorflowjs-and-reactjs/hero.jpg
     alt: object detection example image
 ---
 In this article we will create an object detection application with Tensorflow.js and React.js on Ubuntu 20.04.
