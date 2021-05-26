@@ -217,7 +217,7 @@ return Scaffold(
 );
 ```
 
-![Select Card](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/choose-card.jpg) 
+![Select Card](/engineering-education/stripe-checkout-in-flutter/choose-card.jpg) 
 
 ### Creating the service handler
 In the `service.dart` file, we will create a class that contains the API_URL, API_KEY, and the secret key as class members. We need these variables to access the stripe payment API services. 
@@ -335,7 +335,7 @@ We need two methods in the `StripeService` class to handle the payment depending
 
 This method also brings the pre-built new card form as shown below.
 
-![New Card](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/new-card.jpg) 
+![New Card](/engineering-education/stripe-checkout-in-flutter/new-card.jpg) 
 
 ### The payment intent
 We need a payment intent to send a payment request to the API using the URL supplied in the `StripeService` class using a post request. The snippets below show how to create the payment intent. The payment intent is created in the `StripeService` class.
@@ -365,11 +365,11 @@ static Future<Map<String, dynamic>> createPaymentIntent(String amount, String cu
 ### Confirm payment status
 Build and run the application to test it. To confirm payment, the API records every request made for a new card or a payment made. Head over to the Stripe dashboard and navigate to the developer section under logs. You should be able to see a list of requests made as shown below.
 
-![Logs](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/logs.png) 
+![Logs](/engineering-education/stripe-checkout-in-flutter/logs.png) 
 
 To see the payments made, navigate to the payment link on the sidebar of the dashboard. It should direct you to a list of payments made as shown below.
 
-![payments](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/payments.png) 
+![payments](/engineering-education/stripe-checkout-in-flutter/payments.png) 
 
 
 ### Conclusion
