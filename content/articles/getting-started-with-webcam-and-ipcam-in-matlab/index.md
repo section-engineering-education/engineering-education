@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/getting-started-with-webacm-and-ipcam-in-matlab/
 title: Getting started with Webcam and IPCam in Matlab
 description: This tutorial will be a brief dive into understanding Web camera and IP camera in Matlab. We will also build a simple application for capturing snapshots and live video streaming.
-author: queenter-bruce
+author: quenter-bruce
 date: 2021-05-02T00:00:00-19:30
 topics: []
 excerpt_separator: <!--more-->
