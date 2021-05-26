@@ -17,8 +17,7 @@ images:
 
 
 ### Introduction
-Node.js is known to be single-threaded, allowing for the execution of single command at a given time.  
-For example, executing processor intensive server-side code may block the event loop, slowing the execution of other subsequent requests.
+Node.js is known to be single-threaded, allowing for the execution of single command at a given time. For example, executing processor intensive server-side code may block the event loop, slowing the execution of other subsequent requests.
 For us to solve this problem, the worker threads module was introduced in Node.js v10.5.  
 
 In this tutorial, we walk through the concepts of the worker thread, how it works and how it'll help us perform CPU-intensive tasks without blocking other requests.
@@ -185,8 +184,7 @@ is an execution in the main thread that would be executed as we wait for the res
 We can therefore handle any other task without worrying about blocking the main thread as long as CPU intensive task is handled in the worker thread.
 
 ### Conclusion
-Node has always been criticized due to its performance when it comes to CPU-intensive tasks.
-The introduction of worker threads has improved the power of Node by effectively taking care of these shortcomings.  
+Node has always been criticized due to its performance when it comes to CPU-intensive tasks. The introduction of worker threads has improved the power of Node by effectively taking care of these shortcomings.  
 For more information about worker threads, visit its official documentation [here](https://nodejs.org/api/worker_threads.html#worker_threads_worker_threads).
 
 ---
