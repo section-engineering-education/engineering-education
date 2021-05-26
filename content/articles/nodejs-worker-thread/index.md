@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-worker-thread/
+url: /nodejs-worker-thread/
 title: Getting Started with Node.js worker thread
 description: This tutorial introduces the basic concepts on Node.js worker thread. The worker thread helps in executing CPU-intensive tasks without blocking other requests. 
 author: miller-juma
-date: 2021-05-26T00:00:00-17:00
+date: 2021-05-26T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
