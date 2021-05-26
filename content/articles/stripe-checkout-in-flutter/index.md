@@ -3,22 +3,21 @@ layout: engineering-education
 status: publish
 published: true
 url: /stripe-checkout-in-flutter/
-title: Getting started with Stripe Integrations in Flutter application
-description: This article explains a stepwise process of integrating Stripe payment API into a Flutter application.
+title: Getting started with Stripe Integrations in Flutter Application
+description: This article will explain a step by step process of integrating Stripe payment API into a Flutter application.
 author: jerim-kaura
 date: 2021-05-26T00:00:00-14:00
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/stripe-checkout-in-flutter/hero.png
+ - url: /engineering-education/stripe-checkout-in-flutter/hero.jpg
    alt: Getting started with Stripe integrations in Flutter application example image
 ---
-
-Stripe is an online payment platform that facilitates payment processing. The company, besides processing payments, provides application programming interfaces for integrating payment systems in third-party applications. 
-
+Stripe is an online payment platform that facilitates payment processing. Besides processing payments, the company provides application programming interfaces for integrating payment systems into third-party applications. 
+<!--more-->
 ### Goal
-This tutorial aims to expliain how to integrate stripe checkout into a flutter application. In the end, the reader should be able to understand the code snippets well and use them to build a mini-application that uses stripe checkout.
+This tutorial aims to expliain how to integrate Stripe checkout into a flutter application. In the end, the reader should be able to understand the code snippets well and use them to build a mini-application that uses stripe checkout.
 
 ### Prerequisites
 1. A basic understanding of [Flutter](https://flutter.dev/).
@@ -26,16 +25,17 @@ This tutorial aims to expliain how to integrate stripe checkout into a flutter a
 3. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
 4. An emulator or a mobile device to run the project.
 
-### Basic Overview
+### Basic overview
 The project will have two routes from the main homepage. The first route will direct the user to add a new card for payment, while the second route will direct the user to use existing cards for payment. 
 
-When a user chooses a new card for payment, we will use the `flutter_credit_card` package to yield a good-looking card form where the user will enter the card number, expiry date, and the security code. Afterward, a payment request is sent to the server which processes the request and informs the user of the payment process status as a success or a failure.
+When a user chooses a new card for payment, we will use the `flutter_credit_card` package to yield a good-looking card form where the user will enter the card number, expiry date, and the security code. 
 
+Then a payment request is sent to the server which processes the request and informs the user of the payment process status as a success or a failure.
 
 ### Creating a Stripe account
 To obtain a `publishable key` and `secret key` needed to access the API, head over to the [Stripe website](https://stripe.com/register) and create an account for free. Navigate to the Developer's dashboard to obtain your `publishable key` and `secret key`
 
-### Project Structure
+### Project structure
 Create a new flutter application. You can follow [this](https://flutter.dev/docs/get-started/test-drive#create-app) guide to create the new application.
 
 In the `lib` folder of your project, create two folders `pages` to contain the screens rendered to the user and `services` to contain the driver code files for the project.
@@ -44,7 +44,7 @@ In the `pages` folder, add two files. `home.dart` for the landing page and `card
 
 In the `services` folder, we will add a file `services.dart` that will handle most of the backend logic of the project. Your project structure should be as below:
 
-```
+```bash
 lib
     ┣ Services
     ┃   ┗ services.dart
@@ -58,7 +58,7 @@ lib
 We need the following dependencies for our project.
 - `flutter_credit_card`. This dependency will yield a nice credit card form when the user wants to add a new card to the app.
 - `stripe_payment`. This plugin will enable us to integrate stripe checkout easily.
-- `HTTP`. We need this for consuming http resources that we will fetch from the stripe API.
+- `HTTP`. We need this for consuming http resources that we will fetch from the Stripe API.
 - `progress_dialog`. We will use this to indicate progress as the user waits for a request to be processed.
 
 Head to `pubspec.yml` and add the following block of code:
@@ -72,7 +72,7 @@ dependencies:
   progress_dialog: ^1.2.2
 ```
 
-### Creating routes.
+### Creating routes
 In the `main.dart`, we will create a route to the `homepage` and another to the `existing cards` page. 
 
 Add the block of code below in the `main.dart` file to create the routes.
@@ -148,9 +148,10 @@ Widget build(BuildContext context) {
     );
   }
 ```
- ![Select payment method](/engineering-education/content/article/stripe-checkout-in-flutter/select-method.jpg) 
 
-The `onItemPress()` method has a swith case  to select a function depending on the choice the user makes. The code below shows the implementation of the method:
+![Select payment method](/engineering-education/content/article/stripe-checkout-in-flutter/select-method.jpg) 
+
+The `onItemPress()` method has a switch case to select a function depending on the choice the user makes. The code below shows the implementation of the method:
 ```dart
 onItemPress(BuildContext context, int index) async {
     switch (index) {
@@ -164,7 +165,9 @@ onItemPress(BuildContext context, int index) async {
 ```
 
 ### Existing cards page
-The existing cards contain a list of cards that can be used for testing the app. You can get the list of these cards from the flutter stripe dashboard. The code snippets below show the implementation of the existing cards page.
+The existing cards contain a list of cards that can be used for testing the app. You can get the list of these cards from the flutter stripe dashboard. 
+
+The code snippets below shows the implementation of the existing cards page.
 ```dart
 //an array of existing cards
  List cards = [
@@ -213,10 +216,13 @@ return Scaffold(
     ),
 );
 ```
- ![Select Card](/engineering-education/content/articles/stripe-checkout-in-flutter/choose-card.jpg) 
+
+![Select Card](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/choose-card.jpg) 
 
 ### Creating the service handler
-In the `service.dart` file, we will create a class that contains the API_URL, API_KEY, and the secret key as class members. We need these variables to access the stripe payment API services. The snippets below show the class:
+In the `service.dart` file, we will create a class that contains the API_URL, API_KEY, and the secret key as class members. We need these variables to access the stripe payment API services. 
+
+The snippets below show the class:
 ```dart
 
 class PaymentService {
@@ -238,6 +244,7 @@ class PaymentService {
     }
 }
 ```
+
 Next, we will create a class to contain the response given to the user after a payment request is processed. Add the snippets below in the `services.dart` file.
 ```dart
 
@@ -250,9 +257,11 @@ class PaymentResponse {
 }
 
 ```
+
 ### Card methods
 We need two methods in the `StripeService` class to handle the payment depending on the payment method chosen by the user. Add the code snippets below in the `services.dart` file in the `StripeService` class.
-1. Pay via existing card method
+
+1. Pay via existing card method:
 ```dart
   static Future<PaymentResponse> choseExistingCard(
     {String amount, String currency, CreditCard card}) async {
@@ -291,7 +300,7 @@ We need two methods in the `StripeService` class to handle the payment depending
 }
 ```
 
-2. Pay via a new card method.
+2. Pay via a new card method:
 
 ```dart
   static Future<StripeTransactionResponse> addNewCard({String amount, String currency}) async {
@@ -323,11 +332,14 @@ We need two methods in the `StripeService` class to handle the payment depending
     }
 }
 ```
+
 This method also brings the pre-built new card form as shown below.
-![New Card](/engineering-education/content/articles/stripe-checkout-in-flutter/new-card.jpg) 
+
+![New Card](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/new-card.jpg) 
 
 ### The payment intent
 We need a payment intent to send a payment request to the API using the URL supplied in the `StripeService` class using a post request. The snippets below show how to create the payment intent. The payment intent is created in the `StripeService` class.
+
 ```dart
 static Future<Map<String, dynamic>> createPaymentIntent(String amount, String currency) async {
     try {
@@ -349,20 +361,25 @@ static Future<Map<String, dynamic>> createPaymentIntent(String amount, String cu
     return null;
 }
 ```
+
 ### Confirm payment status
 Build and run the application to test it. To confirm payment, the API records every request made for a new card or a payment made. Head over to the Stripe dashboard and navigate to the developer section under logs. You should be able to see a list of requests made as shown below.
-![Logs](/engineering-education/content/articles/stripe-checkout-in-flutter/logs.png) 
+
+![Logs](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/logs.png) 
 
 To see the payments made, navigate to the payment link on the sidebar of the dashboard. It should direct you to a list of payments made as shown below.
-![payments](/engineering-education/content/articles/stripe-checkout-in-flutter/payments.png) 
+
+![payments](/engineering-education/stripe-checkout-in-flutter/stripe-checkout-in-flutter/payments.png) 
 
 
 ### Conclusion
-In this tutorial, we learned how to integrate stripe checkout in a flutter. The tutorial explained a stepwise implementation with a mini-project. 
+In this tutorial, we learned how to integrate stripe checkout in a Flutter app. The tutorial explained a stepwise implementation with a mini-project. 
 
 You can find the project [here](https://github.com/jerimkaura/flutter-book/tree/main/stripe-checkout-flutter). Create an API key and secret in the stripe dashboard to use when running the project on your computer. 
 
 Contact [me](www.twitter.com/jerimkaura) in case of any questions.
+
+Happy coding!
 
 ### Further reading
 - [Stripe payment flutter package](https://pub.dev/packages/stripe_payment).
