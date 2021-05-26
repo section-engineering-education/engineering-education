@@ -17,8 +17,8 @@ images:
 
 
 ### Introduction
-Node.js is known to be single-threaded allowing for the execution of single command at a given time.  
-For example, making requests to processor intensive server-side code may block the event loop, slowing the execution of other subsequent requests.
+Node.js is known to be single-threaded, allowing for the execution of single command at a given time.  
+For example, executing processor intensive server-side code may block the event loop, slowing the execution of other subsequent requests.
 For us to solve this problem, the worker threads module was introduced in Node.js v10.5.  
 
 In this tutorial, we walk through the concepts of the worker thread, how it works and how it'll help us perform CPU-intensive tasks without blocking other requests.
@@ -106,7 +106,7 @@ parentPort.postMessage({ welcome: WorkerData })
 { welcome: 'hello John Doe' }
 
 ```
-In our `main.js` script, we begin by importing `Worker` from `worker_threads`, then passing the data(filename) for the worker to process. 
+In our `main.js` script, we begin by importing `Worker` from `worker_threads`, then passing the `data(filename)` for the worker to process. 
 The next step involves listening to message events from the worker thread as seen in the `workerExample.js` service.  
 
 This worker service has the `WorkerData` sent from our main application and a way to send back processed data via `parentPort`. This object (`parentPort`) has `postMessage()` that we use to pass processed data.  
