@@ -1,7 +1,7 @@
 ### Getting started
 A pointer is a variable in the C# that stores the memory address of another variable.
 
-In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types`. The memory address of another kind is stored in a pointer type variable. Since it lacks an individual variable, the reference data type holds a reference to another data type. Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
+In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types`. The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, the reference data type holds a reference to another data type. Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
 
 ### Making a pointer style declaration
 In C#, we declare pointers as illustrated below:
@@ -21,10 +21,10 @@ Console.WriteLine((int)ptr)
 Console.WriteLine(*ptr)     .
 ```
 
-`w` is a pointer variable that can be used to hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to obtain a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
+`w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
 
 ### Safe and unsafe codes
-**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages which use safe codes with pointers, the C# programming language only allows the use of unsafe codes. The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
+**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes. The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
 
 The example below uses the unsafe codes:
 
@@ -63,7 +63,7 @@ namespace UnsafeCodeApplication
 
 ![Output](/engineering-education/active-learning/unsafe%20codes.PNG)
 
-There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor.  A collection of statements has been marked as unsafe in the example above. 
+There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. 
 
 Two variables, a and b, with values of 60 and 30, respectively, are used in the above code, and pointers contain their addresses. The output values and addresses of the statements are displayed by Console.writeline.
 
@@ -74,7 +74,7 @@ To learn more about garbage collectors [click here ](https://www.geeksforgeeks.o
 
 Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated. On the managed heap, reference types are managed. 
 
-After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are either set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of. For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory.
+After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of. For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory.
 
 An example program is illustrated below:
 
@@ -140,7 +140,7 @@ namespace UnsafeCodeApplication
 
 ![Output](/engineering-education/active-learning/pointers and methods .PNG)
 
-From the above code, unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20 respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
+From the above code, unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20, respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
 
 ### Conversions and pointers
 Pointer types do not inherit from objects in C#, and there is no way to convert pointer types to objects. As a result, pointers do not help boxing and unboxing. Conversions between different pointer types, as well as pointer types and integral types, are supported in C#.
@@ -163,7 +163,7 @@ int *pj = (int *) px;
 ```
 
 ### Pointers and arrays
-An array is a combination of data of the similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program as illustrated below.
+An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program as illustrated below.
 
 ```c#
 using System;
@@ -191,7 +191,7 @@ namespace UnsafeCodeApplication
 
 ![Output](pointers%20and%20arrays.PNG)
 
-The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed about pinning of objects where we pinned the array to a fixed memory allocation. The output of the above code will contain every array and its address simultaneously.
+The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every array and its address simultaneously.
 
 ### Pointers and structure
 In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. An example software is as follows:
