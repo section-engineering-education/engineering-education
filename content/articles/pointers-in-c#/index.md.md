@@ -65,12 +65,12 @@ namespace UnsafeCodeApplication
 
 There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. 
 
-Two variables, a and b, with values of 60 and 30, respectively, are used in the above code, and pointers contain their addresses. The output values and addresses of the statements are displayed by Console.writeline.
+Two variables `a` and `b` with the values of 60 and 30, respectively are used in the above code, and pointers contain their addresses. The output values and addresses of the statements are displayed by `Console.writeline`.
 
 ### Pinning an object 
 Pinning an object in C# entails restricting an object from moving into the garbage collector. 
 
-To learn more about garbage collectors [click here ](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
+To learn more about garbage collectors [click here](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
 
 Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated. On the managed heap, reference types are managed. 
 
@@ -104,7 +104,7 @@ namespace UnsafeCodeApplication
 
 ![**Output**](pinning%20an%20object%20.PNG)
 
-In the example above, we used a command to restrict the objects in the array to a fixed memory allocation. `fixed (int* ptr = array)` this part of the code performs that request.
+In the example above, we used a command to restrict the objects in the array to a fixed memory allocation. `fixed (int* ptr = array)` performs that request.
 
 ### Pointers and methods
 In C#, the pointers can be passed as a contention to a strategy as illustrated below:
@@ -150,7 +150,7 @@ C# upholds explicit and implicit pointers changes inside unmanaged settings. In 
 For explicit pointers, the cast operator (()) is essential. The conversion is from to in this instance.
 
 1. The type of pointer to other forms of the pointer.
-2. To other pointer types: byte, sbyte, short, ushort, int, uint, long, ulong
+2. To other pointer types: byte, sbyte, short, ushort, int, uint, long, ulong.
 3. Pointer type to sbyte, byte, uint, int, long, ulong, short, ushort types.
 
 An example of pointer conversion is illustrated below:
@@ -163,7 +163,7 @@ int *pj = (int *) px;
 ```
 
 ### Pointers and arrays
-An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program as illustrated below.
+An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program:
 
 ```c#
 using System;
