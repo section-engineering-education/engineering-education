@@ -188,3 +188,6 @@ We can therefore handle any other task without worrying about blocking the main 
 Node has always been criticized due to its performance when it comes to CPU-intensive tasks.
 The introduction of worker threads has improved the power of Node by effectively taking care of these shortcomings.  
 For more information about worker threads, visit its official documentation [here](https://nodejs.org/api/worker_threads.html#worker_threads_worker_threads).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
