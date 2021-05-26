@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /nodejs-worker-thread/
-title: Getting Started with Node.js worker thread
-description: This tutorial introduces the basic concepts on Node.js worker thread. The worker thread helps in executing CPU-intensive tasks without blocking other requests. 
+title: Getting Started with Node.js Worker Thread
+description: This tutorial will introduce the basic concepts on Node.js worker thread. The worker thread helps in executing CPU-intensive tasks without blocking other requests. 
 author: miller-juma
 date: 2021-05-26T00:00:00-12:00
 topics: [Node.js]
@@ -14,13 +14,12 @@ images:
  - url: /engineering-education/nodejs-worker-thread/hero.jpg
    alt: Node.js worker thread
 ---
-
-
-### Introduction
 Node.js is known to be single-threaded, allowing for the execution of single command at a given time. For example, executing processor intensive server-side code may block the event loop, slowing the execution of other subsequent requests.
-For us to solve this problem, the worker threads module was introduced in Node.js v10.5.  
+<!--more-->
+### Introduction
+For us to solve this problem, the worker threads module was introduced in Node.js v10.5. 
 
-In this tutorial, we walk through the concepts of the worker thread, how it works and how it'll help us perform CPU-intensive tasks without blocking other requests.
+In this tutorial, we will walk through the concepts of the worker thread, how it works and how it'll help us perform CPU-intensive tasks without blocking other requests.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -38,31 +37,29 @@ In this tutorial, we walk through the concepts of the worker thread, how it work
 
 ### Objectives
 At the end of this Node.js worker threads, you should be able to:
-
-- understand how Node.js worker threads work.
-- use worker threads.
+- Understand how Node.js worker threads work.
+- Use worker threads.
 - Get the best out of worker threads.
-- understand the concept of worker thread pooling.
+- Understand the concept of worker thread pooling.
 
-### Exploring the worker thread api in Node
+### Exploring the worker thread API in Node.js
 Node.js comes with the `worker_threads` module. This module helps in running JavaScript codes in parallel.  
 Worker threads are responsible for handling CPU-intensive tasks by transferring `ArrayBuffer` instances.  
 
 They have proven to be the best solution for CPU performance due to the following features:
 1. They run a single process with multiple threads.
-2. Executing one event loop per thread
-3. Running single JS Engine instance per thread
-4. Executing single Node.js instance per thread
+2. Executing one event loop per thread.
+3. Running single JS Engine instance per thread.
+4. Executing single Node.js instance per thread.
 
 ### How worker threads work
-The worker thread works by executing a piece of code specified by the main thread. Each worker executes in isolation from other workers.
-However, these workers can pass a message back and forth as required via a message channel.   
+The worker thread works by executing a piece of code specified by the main thread. Each worker executes in isolation from other workers. However, these workers can pass a message back and forth as required via a message channel.   
 
 Parent worker uses the `worker.postMessage()` to write message to a channel while child worker uses `parentPort.postMessage()` function.  
-Since JavaScript doesn't support concurrency, Node.js worker makes use of [v8](https://v8docs.nodesource.com/node-0.8/d5/dda/classv8_1_1_isolate.html) allowing the worker to run in complete isolation from other existing workers.  
+
+Since JavaScript doesn't support concurrency, Node.js worker makes use of [V8](https://v8docs.nodesource.com/node-0.8/d5/dda/classv8_1_1_isolate.html) allowing the worker to run in complete isolation from other existing workers.  
 
 ### Using worker threads
-
 In this section, let's create a worker thread example and pass it on to some dummy data.
 
 ```js
@@ -99,13 +96,16 @@ run().catch(err => console.error(err))
 const { WorkerData, parentPort } = require('worker_threads')
 parentPort.postMessage({ welcome: WorkerData })
 ```
-** Output**
+**Output**
+
 ```bash
 
 { welcome: 'hello John Doe' }
 
 ```
+
 In our `main.js` script, we begin by importing `Worker` from `worker_threads`, then passing the `data(filename)` for the worker to process. 
+
 The next step involves listening to message events from the worker thread as seen in the `workerExample.js` service.  
 
 This worker service has the `WorkerData` sent from our main application and a way to send back processed data via `parentPort`. This object (`parentPort`) has `postMessage()` that we use to pass processed data.  
@@ -114,8 +114,8 @@ This worker service has the `WorkerData` sent from our main application and a wa
 > Remember sharing memory could also be achieved by transferring `ArrayBuffer instances`.
 
 ### Creating and executing new workers
-
 In this section, let's take a look at CPU intensive example, generating a [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number) sequence. 
+
 This task, if generated without the worker threads, would block the main thread as the `nth` term increases.
 
 ```js
@@ -162,6 +162,7 @@ function getFibonacciNumber(num) {
 ```
 
 **Output**
+
 ```bash
 Execution in the main thread
 10th Fibonacci No: 55
@@ -170,9 +171,10 @@ It exited with code 0
 ```
 
 In the `index.js` file, we create a worker thread from an instance of the `Worker` class as we had seen in the previous example.  
+
 To get results, we listen to 3 events, 
-- `message` that is executed when a worker posts a message
-- `exit` event that is being triggered in case the worker stops the execution
+- `message` that is executed when a worker posts a message.
+- `exit` event that is being triggered in case the worker stops the execution.
 - `error` is triggered when an error occurs.
 
 Our last line in the `index.js`,
@@ -180,12 +182,17 @@ Our last line in the `index.js`,
 ```js
 console.log("Execution in main thread");
 ``` 
-is an execution in the main thread that would be executed as we wait for the results from the worker as seen in the above output.  
-We can therefore handle any other task without worrying about blocking the main thread as long as CPU intensive task is handled in the worker thread.
+
+This is an execution in the main thread that would be executed as we wait for the results from the worker as seen in the above output.
+
+We can therefore handle any other task without worrying about blocking the main thread as long as a CPU intensive task is handled in the worker thread.
 
 ### Conclusion
-Node has always been criticized due to its performance when it comes to CPU-intensive tasks. The introduction of worker threads has improved the power of Node by effectively taking care of these shortcomings.  
+Node.ja has always been criticized due to its performance when it comes to CPU-intensive tasks. The introduction of worker threads has improved the power of Node.js by effectively taking care of these shortcomings.  
+
 For more information about worker threads, visit its official documentation [here](https://nodejs.org/api/worker_threads.html#worker_threads_worker_threads).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
