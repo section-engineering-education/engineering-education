@@ -6,7 +6,7 @@ url: /stripe-checkout-in-flutter/
 title: Getting started with Stripe Integrations in Flutter Application
 description: This article will explain a step by step process of integrating Stripe payment API into a Flutter application.
 author: jerim-kaura
-date: 2021-05-26T00:00:00-14:00
+date: 2021-05-26T00:00:00-09:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
