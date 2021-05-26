@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/best-practices-to-secure-a-docker-container/
+url: /best-practices-to-secure-a-docker-container/
 title: Docker Security - Best Practices to Secure a Docker Container
 description: This article will cover about Docker and its security. We will also see why it is important, and best practices to be kept into consideration.
 author: judy-nduati
-date: 2021-05-18T00:00:00-18:00
+date: 2021-05-26T00:00:00-18:00
 topics: [Security, Containers]
 excerpt_separator: <!--more-->
 images:
