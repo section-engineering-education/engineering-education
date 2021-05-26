@@ -15,9 +15,10 @@ images:
    alt: Getting started with Stripe integrations in Flutter application example image
 ---
 
-Stripe is an online payment platform that allows merchants to receive payment for products and services they sell. The company, besides processing payments, provides application programming interfaces for integrating payment systems in third-party applications. 
+Stripe is an online payment platform that facilitates payment processing. The company, besides processing payments, provides application programming interfaces for integrating payment systems in third-party applications. 
 
-In this tutorial, we will learn how to integrate stripe checkout into a flutter application.
+### Goal
+This tutorial aims to expliain how to integrate stripe checkout into a flutter application. In the end, the reader should be able to understand the code snippets well and use them to build a mini-application that uses stripe checkout.
 
 ### Prerequisites
 1. A basic understanding of [Flutter](https://flutter.dev/).
@@ -41,7 +42,7 @@ In the `lib` folder of your project, create two folders `pages` to contain the s
 
 In the `pages` folder, add two files. `home.dart` for the landing page and `cards.dart` where the code for existing cards will go.
 
-In the `services` folder, we will add a file `services.dart` that will handle most of the backend logic of the project. The final project structure should look like this:
+In the `services` folder, we will add a file `services.dart` that will handle most of the backend logic of the project. Your project structure should be as below:
 
 ```
 lib
@@ -113,19 +114,19 @@ Widget build(BuildContext context) {
             title: Text('Home'),
         ),
         body: Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(23),
             child: ListView.separated(
             itemBuilder: (context, index) {
                 Icon icon;
                 Text text;
                 switch (index) {
                     case 0:
-                        icon = Icon(Icons.add_circle, color: theme.primaryColor);
-                        text = Text('Pay via new card');
+                        icon = Icon(Icons.add_circle, color: Colors.green);
+                        text = Text('ADD CARD');
                         break;
                     case 1:
-                        icon = Icon(Icons.credit_card, color: theme.primaryColor);
-                        text = Text('Pay via existing card');
+                        icon = Icon(Icons.credit_card, color: Colors.green);
+                        text = Text('CHOOSE CARD');
                         break;
                 }
 
@@ -140,7 +141,7 @@ Widget build(BuildContext context) {
                 );
             },
             separatorBuilder: (context, index) => Divider(
-                color: theme.primaryColor,
+                color: Colors.green,
             ),
             itemCount: 2),
         ),
@@ -154,49 +155,50 @@ The `onItemPress()` method has a swith case  to select a function depending on t
 onItemPress(BuildContext context, int index) async {
     switch (index) {
       case 0:
-        payViaNewCard(context); // call payvia new card function
+        addNewCard(context); // call pay via new card function
         break;
       case 1:
-        Navigator.pushNamed(context, '/existing-cards'); //calls the list of cards screen
+        Navigator.pushNamed(context, '/cards'); //calls the list of cards screen
         break;
     }
 ```
 
 ### Existing cards page
-The existing cards contain a list of cards that can be used for testing the app. The list of the cards can be obtained from the flutter dashboard. The code snippets below show the implementation of the existing cards page.
+The existing cards contain a list of cards that can be used for testing the app. You can get the list of these cards from the flutter stripe dashboard. The code snippets below show the implementation of the existing cards page.
 ```dart
-//list of existing cards
+//an array of existing cards
  List cards = [
     {
-      'cardNumber': '4242424242424242',
-      'expiryDate': '04/24',
+      'cardNumber': '4242424242434242',
+      'expiryDate': '04/22',
       'cardHolderName': 'Kaura Jerim',
       'cvvCode': '424',
       'showBackView': false,
     },
     {
-      'cardNumber': '5555555566554444',
-      'expiryDate': '04/23',
+      'cardNumber': '55555345966554444',
+      'expiryDate': '02/25',
       'cardHolderName': 'Jerim Kaura',
       'cvvCode': '123',
       'showBackView': false,
     }
   ];
 
+//Page widget
 Widget build(BuildContext context) {
 return Scaffold(
     appBar: AppBar(
-        title: Text('CHOSE CARD'),
+        title: Text('CHOSE YOUR CARD'),
     ),
     body: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(23),
         child: ListView.builder(
             itemCount: cards.length,
             itemBuilder: (BuildContext context, int index) {
             var card = cards[index];
             return InkWell(
                 onTap: () {
-                    payViaExistingCard(context, card);
+                    choseExistingCard(context, card);
                 },
                 child: CreditCardWidget(
                     cardNumber: card['cardNumber'],
@@ -214,15 +216,15 @@ return Scaffold(
  ![Select Card](/engineering-education/content/articles/stripe-checkout-in-flutter/choose-card.jpg) 
 
 ### Creating the service handler
-In the `service.dart` file, we will create a class that contains the API_URL, API_KEY, and the secret key as class members. These are the variables that we need to access the stripe payment API. The snippets below show the class:
+In the `service.dart` file, we will create a class that contains the API_URL, API_KEY, and the secret key as class members. We need these variables to access the stripe payment API services. The snippets below show the class:
 ```dart
 
-class StripeService {
-    static String apiBase = 'https://api.stripe.com/v1';
-    static String paymentApiUrl = '${StripeService.apiBase}/payment_intents';
-    static String secret =   'YOUR SECRET'; //your secret from stripe dashboard
+class PaymentService {
+    static String apiURL = 'https://api.stripe.com/v1';
+    static String paymentApiUrl = '${PaymentService.apiURL}/payment_intents';
+    static String secret =   'YOUR STRIPE SECRET'; //your secret from stripe dashboard
     static Map<String, String> headers = {
-        'Authorization': 'Bearer ${StripeService.secret}',
+        'Authorization': 'Bearer ${PaymentService.secret}',
         'Content-Type': 'application/x-www-form-urlencoded'
     };
     static init() {
@@ -239,12 +241,12 @@ class StripeService {
 Next, we will create a class to contain the response given to the user after a payment request is processed. Add the snippets below in the `services.dart` file.
 ```dart
 
-class StripeTransactionResponse {
-    String message; // message
+class PaymentResponse {
+    String message; // message from the response
     bool success; //state of the processs
 
-    //constructor
-    StripeTransactionResponse({this.message, this.success});
+    //class constructor
+    PaymentResponse({this.message, this.success});
 }
 
 ```
@@ -252,15 +254,15 @@ class StripeTransactionResponse {
 We need two methods in the `StripeService` class to handle the payment depending on the payment method chosen by the user. Add the code snippets below in the `services.dart` file in the `StripeService` class.
 1. Pay via existing card method
 ```dart
-  static Future<StripeTransactionResponse> payViaExistingCard(
+  static Future<PaymentResponse> choseExistingCard(
     {String amount, String currency, CreditCard card}) async {
     try {
-        var paymentMethod = await StripePayment.createPaymentMethod(PaymentMethodRequest(card: card));
-        var paymentIntent = await StripeService.createPaymentIntent(amount, currency);
+        var stripePaymentMethod = await StripePayment.createPaymentMethod(PaymentMethodRequest(card: card));
+        var stripePaymentIntent = await StripeService.createPaymentIntent(amount, currency);
         var response = await StripePayment.confirmPaymentIntent(
             PaymentIntent(
-                clientSecret: paymentIntent['client_secret'],
-                paymentMethodId: paymentMethod.id
+                clientSecret: stripePaymentIntent['client_secret'],
+                paymentMethodId: stripePaymentMethod.id
             )
         );
 
@@ -277,12 +279,12 @@ We need two methods in the `StripeService` class to handle the payment depending
                 success: false
             );
         }
-    } on PlatformException catch (err) {
+    } on PlatformException catch (error) {
         return StripeService.getPlatformExceptionErrorResult(err);
-    } catch (err) {
+    } catch (error) {
         return new StripeTransactionResponse(
              //convert the error to string and assign to message variable for json resposne
-            message: 'Transaction failed: ${err.toString()}',
+            message: 'Transaction failed: ${error.toString()}',
             success: false
         );
     }
@@ -292,12 +294,12 @@ We need two methods in the `StripeService` class to handle the payment depending
 2. Pay via a new card method.
 
 ```dart
-  static Future<StripeTransactionResponse> payWithNewCard({String amount, String currency}) async {
+  static Future<StripeTransactionResponse> addNewCard({String amount, String currency}) async {
     try {
-        var paymentMethod = await StripePayment.paymentRequestWithCardForm(CardFormPaymentRequest());
-        var paymentIntent = await StripeService.createPaymentIntent(amount, currency);
+        var stripePaymentMethod = await StripePayment.paymentRequestWithCardForm(CardFormPaymentRequest());
+        var stripePaymentIntent = await StripeService.createPaymentIntent(amount, currency);
         var response = await StripePayment.confirmPaymentIntent(
-            PaymentIntent(clientSecret: paymentIntent['client_secret'], paymentMethodId: paymentMethod.id));
+            PaymentIntent(clientSecret: stripePaymentIntent['client_secret'], paymentMethodId: stripePaymentMethod.id));
 
         if (response.status == 'succeeded') { //if the payment process success
             return new StripeTransactionResponse(
@@ -310,12 +312,12 @@ We need two methods in the `StripeService` class to handle the payment depending
                 success: false
             );
         }
-    } on PlatformException catch (err) {
-        return StripeService.getPlatformExceptionErrorResult(err);
-    } catch (err) {
+    } on PlatformException catch (error) {
+        return StripeService.getPlatformExceptionErrorResult(error);
+    } catch (error) {
         return new StripeTransactionResponse(
             //convert the error to string and assign to message variable
-            message: 'Transaction failed: ${err.toString()}', 
+            message: 'Transaction failed: ${error.toString()}', 
             success: false
         );
     }
@@ -341,8 +343,8 @@ static Future<Map<String, dynamic>> createPaymentIntent(String amount, String cu
                 headers: StripeService.headers //headers of the request specified in the base class
             );
         return jsonDecode(response.body); //decode the response to json
-    } catch (err) {
-        print('Error occured : ${err.toString()}');
+    } catch (error) {
+        print('Error occured : ${error.toString()}');
     }
     return null;
 }
@@ -358,7 +360,9 @@ To see the payments made, navigate to the payment link on the sidebar of the das
 ### Conclusion
 In this tutorial, we learned how to integrate stripe checkout in a flutter. The tutorial explained a stepwise implementation with a mini-project. 
 
-You can find the project [here](https://github.com/jerimkaura/flutter-book/tree/main/stripe-checkout-flutter). Create an API key and secret in the stripe dashboard to use when running the project on your computer. Reach out to me in case of any questions.
+You can find the project [here](https://github.com/jerimkaura/flutter-book/tree/main/stripe-checkout-flutter). Create an API key and secret in the stripe dashboard to use when running the project on your computer. 
+
+Contact [me](www.twitter.com/jerimkaura) in case of any questions.
 
 ### Further reading
 - [Stripe payment flutter package](https://pub.dev/packages/stripe_payment).
