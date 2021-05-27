@@ -6,7 +6,7 @@ url: /engineering-education/flutter-web-application/
 title: How to Build a Flutter web Application
 description: This article takes the reader through creating a web application using Flutter. Flutter for Web has recently moved from beta to stable. This is good news to developers since they can build highly secure and appealing websites. Flutter widgets are based on Google's material design principles. This means that even inexperienced Flutter developers can design quality applications.
 author: michael-barasa
-date: 2021-05-06T00:00:00-17:00
+date: 2021-05-27T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
