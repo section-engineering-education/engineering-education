@@ -13,19 +13,19 @@ In the recent past, applications used to be deployed over big servers. The respo
 - Apply the relevant security updates to the server.
 - Manage the scaling up of their server as usage scales up and manage to scale it down when they did not have much usage.
 
-Serverless computing came as a solution to such problems. This computing technology provides users with an execution model where a cloud provider executes a code by dynamically allocating resources. [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/), and [AWS](https://aws.amazon.com/) are examples of such cloud providers. This way, you only pay for the amount of resources you use to run the application code. As a result, you cut costs that you would have otherwise incurred when using traditional servers. The overall computing experience is 'serverless' because the cost of managing server resources is less.
+Serverless computing came as a solution to such problems. This computing technology provides users with an execution model, where a cloud provider executes a code by dynamically allocating resources. [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/), and [AWS](https://aws.amazon.com/) are examples of such cloud providers. This way, you only pay for the number of resources you used to run the application code. As a result, you cut costs that you would have otherwise incurred when using traditional servers. The overall computing experience is 'serverless' because the cost of managing server resources is less.
 
 ### Why we need containers
 
 If planning to move software from one computing environment to another, your biggest concern is probably whether the software will run correctly after all this is done. Containerization comes in to solve this problem. With containerization, different teams can work on different parts of the application independently. This allows faster software development as well as testing for possible errors.
 
-Organizations are creating more agile work environments to ensure more productivity in their workforce. [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/), for example, brings software developers and IT operators together to provide continuous delivery and shorten the system development lifecycle. Such teams need containers to solve application conflicts that may arise due to differences between these two environments.
+Organizations are creating more agile work environments to ensure more productivity in their workforce. [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/), for example, brings software developers and IT operators together to provide continuous delivery and shorten the system development life-cycle. Such teams need containers to solve application conflicts that may arise because of differences between these two environments.
 
 Containers are enablers of microservices applications. The lightweight nature of containers means they take up less space and are easy to boot up.
 
 ### Similarities between serverless computing and containers
 
-Both containers and serverless are famous today because they take up infrastructure management to allow developers to focus their attention on creating and running their code. This increases app development speed. The two technologies are suitable for component-based as well as [microservices architectures](https://www.section.io/blog/monolith-microservices-edge-computing/). Deployment and scaling are more cost-effective and faster when using these architectures compared to when using classic monolithic architecture. This is so because component-based and microservices architectures allow manipulating small parts of the app instead of the whole thing.
+Both containers and serverless are famous today because they take up infrastructure management to allow developers to focus their attention on creating and running their code. This increases app development speed. The two technologies are suitable for component-based as well as [microservices architectures](https://www.section.io/blog/monolith-microservices-edge-computing/). Deployment and scaling are more cost-effective and faster when using these architectures compared to when using classic monolithic architecture. This is so because component-based and microservices architectures allow for manipulating small parts of the app instead of the whole thing.
 
 ### Differences between serverless and containers
 
@@ -37,7 +37,7 @@ Serverless has restrictions in terms of memory and size. However, there are no l
 
 #### Ease of deployment
 
-Deployment in serverless is so straightforward. You only write the code, and the vendor takes care of the rest. Infrastructure administration is not required, upload your functions, and you're good to go. Containers require [Kubernetes](https://kubernetes.io/) and [Dockerfile](https://docs.docker.com/engine/reference/commandline/config/) configurations. As additional work, you need to build the image and move it to the registry.
+Deployment in serverless is so straightforward. You only write the code, and the vendor takes care of the rest. Infrastructure administration is not required, upload your functions, and you're ready. Containers require [Kubernetes](https://kubernetes.io/) and [Dockerfile](https://docs.docker.com/engine/reference/commandline/config/) configurations. As additional work, you need to build the image and move it to the registry.
 
 #### Cost
 
