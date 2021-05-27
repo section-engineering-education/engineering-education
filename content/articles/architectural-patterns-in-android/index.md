@@ -77,7 +77,10 @@ This table will come in handy for you to recognize some fundamental points that 
 
 | MVC         | MVP         | MVVM        |
 | ----------- | ----------- |-------------|
-|A single controller can be shared by multiple views. As a result, the Controller and View have a one-to-many relationship.|One presenter is assigned to each view. As a result, there is a one-to-one relationship between the view and the presenter. |View and ViewModel have a one-to-many relationships.| Determines which view needs to be updated. |The related view of the presenter will be updated.|The User Interface is modified by the ViewModel.||The model is accessible to the View.|There is no way for the View to communicate with the model.|The model can interact with the View.||The controller is responsible for the interaction between View and the Model.|The Presenter acts as a link between the View and the Model.|ViewModel connects the View and the Model.|
+|A single controller can be shared by multiple views. As a result, the Controller and View have a one-to-many relationship.|One presenter is assigned to each view. As a result, there is a one-to-one relationship between the view and the presenter. |View and ViewModel have a one-to-many relationships.|
+| Determines which view needs to be updated. |The related view of the presenter will be updated.|The User Interface is modified by the ViewModel.|
+|The model is accessible to the View.|There is no way for the View to communicate with the model.|The model can interact with the View.|
+|The controller is responsible for the interaction between View and the Model.|The Presenter acts as a link between the View and the Model.|ViewModel connects the View and the Model.|
 
 ### Summary
 In this article, we went through three architecture patterns that can be used while designing Android apps. While using design patterns in your apps is not mandatory, implementing them will definitely make the UI interface more user-friendly and will benefit in managing various functions and classes. 
