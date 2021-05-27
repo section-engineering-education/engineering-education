@@ -6,7 +6,7 @@ In this Node.js tutorial, we will learn about HTTP/2 and server push, how it wor
 ### Prerequisites
 
 To follow along with this tutorial:
-1. A basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming.
+1. A basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming is essential.
 
 2. You need a text editor installed on your system. My favorite is [VS Code](https://code.visualstudio.com/download).
 
@@ -129,7 +129,7 @@ Let us now dissect the above code:
 Next, we need to run the node server. Open your browser and the developer tools and go to the Network tab.
 In our application, we are using a self-signed certificate to set up the TLS and hence the browser will show a warning. We need to get past this by clicking advanced and proceed with the site. Now let’s go to `https://localhost:3001` where our HTTP/2 server is running. Under the Network tab, we see that all our requests for our scripts, images, and stylesheets will be received as “Push” from the server. 
 
-![http-push](./httppush.png).
+![http-push](/engineering-education/http2-in-nodejs/httppush.png).
 
 The logical flow of our application is like:
 - The client/browser will request the HTML document file.
@@ -143,7 +143,7 @@ The logical flow of our application is like:
 
 Still, under the browser developer tools, we can confirm that our application is using version 2 of the HTTP protocol.
 
-![http-version](./http2support.png).
+![http-version](/engineering-education/http2-in-nodejs/http2support.png).
 
 ### Conclusion
 Everyone knows the significance of improving the speed of our web applications. With minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. HTTP/2 is becoming the new web standard with its great features that constantly improve web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency are greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push). Happy coding!
