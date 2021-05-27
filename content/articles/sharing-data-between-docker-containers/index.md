@@ -1,4 +1,5 @@
 ### Sharing Data between Docker Containers
+![Hero Image](/engineering-education/how-to-share-data-between-docker-containers/hero.jpg)
 
 
 ### Introduction
