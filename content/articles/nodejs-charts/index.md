@@ -55,13 +55,124 @@
     ```
 
 #### Supported chart types in billboard.js
-`billboard.js` supports a variety of charts.
+`billboard.js` supports a variety of charts. Below are certain chart types supported by `billboard.js`.
+
+![Chart types](chart-types.png)
 
 #### Creating charts using billboard.js
+In this section, we are going to create a simple chart using billboard.js.
+1. Create an HTML file names `chart.html` in the project folder we created above.
+2. Add the code snippet below to the `chart.html` file.
+   ```html
+   <!DOCTYPE html>
 
+    <title>billboard.js application</title>
+
+    <head>
+    <!-- loading billboard.js styles from the cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css">
+
+    <!--Loading D3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Loading billboard.js scripts from the cdn --> 
+    <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+    </head>
+    <body>
+
+    </body>
+
+    </html>
+
+   ```
+3. Create a `div` with an id `charting` within the `body` tag in the `chart.html` file we created above.
+   ```html
+   <div id="charting"></div>
+   ```
+4. Create a file named `charting.js` in the root project directory and add the code snippet below.
+   
+   ```javascript
+   bb.generate({
+    bindto: "#charting",
+    data: {
+        columns: [
+            ["Java", 30, 200, 100, 170, 150, 250],
+            ["Python", 130, 100, 140, 35, 110, 50]
+        ],
+        types: {
+          Java: "area-spline",
+          Python: "step"
+        },
+        colors: {
+          Java: "blue",
+          Python: "green"
+        }
+    }
+    });
+   ```
+   - `bb.generate({})` generates a chart with the arguments passed it.
+   - `bindto: "#charting"` holds the `div` id where the chart will be displayed in our HTML file.
+   - ` data` holds an object with all the information required to create the chart.
+   - `columns` hold the data from which the chart will be plotted.
+   - `types` indicates the type of chart to be used. In our chart, we are using a line chart for Java and a step-chart for Python.
+   - `colors` specifies the color in which each data will be presented.
+5. Add the `charting.js` script to the `chart.html` file at the bottom of the `body` tag.
+   ```html
+   <script src="charting.js"></script>
+
+   ```
+   The chart shown below is plotted.
+   
+   ![Chart Image]()
 #### Displaying categorical data using billboard.js
+When a large set of data is to be displayed, then displaying them in categories becomes handy.
+1. Create a `div` with id `categorical` in the `chart.html` file we created earlier.
+2. Create a Javascript file named `categorical.js` in the root project directory and add the code snippet below.
+   ```javascript
+   var chart = bb.generate({
+    bindto: "#categorical",
+    data: {
+    x: "x",
+    columns: [
+        ["x", "www.siteone.com", "www.sitetwo.com", "www.sitethree.com", "www.sitefour.com"],
+        ["download", 30, 200, 100, 400],
+        ["upload", 90, 100, 140, 200]
+    ],
+    groups: [
+      [
+        "download",
+        "loading"
+      ]
+    ],
+        colors: {
+          download: "blue",
+          upload: "green"
+        },
+    type: "bar",
+    },
+    axis: {
+        x: {
+        type: "category"
+        }
+    },
+    bindto: "#categoryData"
+    });
+   ``` 
+The above categorical data is displayed in the chart as shown in the image below.
+
+![Image with Categorical data]()
 
 #### Chart themes in billboard.js
-
+`billboard.js` comes with various themes, some of which include:-
+- `graph`
+- `datalab`
+- `insight`
+- `default`
+  
+To use the above themes, load the CSS file provided by `billboard.js` into your HTML file as shown below.
+```Html
+<link rel="stylesheet" href="
+https://naver.github.io/billboard.js/release/latest/dist/theme/insight.css">
+```
 ### Conclusion
 Now that you have learned how to integrate `billboard.js` into a Node.js application, explore the available charts and themes from the [billboard.js official docs](https://naver.github.io/billboard.js/). Find the full source code of the application [here]().
