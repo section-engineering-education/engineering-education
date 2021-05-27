@@ -1,12 +1,28 @@
-### Sharing Data between Docker Containers
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/sharing-data-between-docker-containers/
+title: How to Share Data between Docker Containers
+description: This article will guide on how to share data between different Docker containers.
+author: 
+date: 2021-05-17T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/sharing-data-between-docker-containers/hero.jpg
+    alt: Creating your first Google Web Story
+---
+A container is a way of making a program run independently when moved from one environment to another. Containerization, on the other hand, is the process of packaging containers to make it easier to scale them out and enhance their portability.
+<!--more-->
 
-
-### Introduction
-So you have probably heard of containers, right? The likes of Docker, Kubernetes, and all that cool stuff. Before we dive into Docker, let's define what a container is. A container is a way of making a program run independently when moved from one environment to another. Containerization, on the other hand, is the process of packaging containers to make it easier to scale them out and enhance the portability of the containers. A Docker container enables you to develop, ship, and run your applications from your environment quicker. To get more about getting started with Docker, [Docker documentation](https://docs.docker.com/get-started/overview/) is an amazing reference.
+A Docker container enables you to develop, ship, and run your applications from your environment quicker. You can learn more about Docker from [here](https://docs.docker.com/get-started/overview/).
 
 ### Prerequisites
-To get started with Docker, we have to install it in our system.
-Check out this amazing [article](https://www.section.io/engineering-education/getting-started-with-docker/) on installing and getting up running with Docker. If you're not using Ubuntu be sure to check the official Docker [documentation](https://docs.docker.com/engine/install/) on how to do the same on your Operating System environment.
+To get started, we have to install Docker on our system.
+Check out this amazing [article](https://www.section.io/engineering-education/getting-started-with-docker/) on installing and getting up running with Docker. 
+
+If you're not using Ubuntu be sure to check the official Docker [documentation](https://docs.docker.com/engine/install/) on how to do the same on your Operating System environment.
 We will be using Ubuntu 20.04 for this tutorial but any environment is okay.
 
 ### Creating an Independent Volume
@@ -201,3 +217,6 @@ In this chapter we've seen how data sharing occurs among containers and how Dock
 
 ### Conclusion
 In this tutorial, you have learned how to create an independent docker volume that permits data to recur when a container is deleted, shared data across containers which had a caveat of the application being designed in a way to handle file locking to curb corruption of data. Ultimately, we mounted a shared volume as read-only.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
