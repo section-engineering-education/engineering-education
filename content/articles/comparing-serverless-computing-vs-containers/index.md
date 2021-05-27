@@ -1,4 +1,4 @@
-Applications hosted on traditional virtual machines and servers are less flexible and involve a high overhead cost. Containers and serverless computing are a solution to these weaknesses. They allow developers to build more flexible applications at low overhead costs.
+Applications hosted on traditional virtual machines and servers are less flexible and involve a high overhead cost. Containers and [serverless computing](https://www.cloudflare.com/learning/serverless/what-is-serverless/) are a solution to these weaknesses. They allow developers to build more flexible applications at low overhead costs.
 
 A developer may choose a container or serverless architecture depending on the needs of the application. The features of these two architectures overlap in some aspects, but they are not interchangeable technologies.
 
