@@ -57,7 +57,7 @@
 #### Supported chart types in billboard.js
 `billboard.js` supports a variety of charts. Below are certain chart types supported by `billboard.js`.
 
-![Chart types](chart-types.png)
+![Chart types](/engineering-education/nodejs-charts/chart-types.png)
 
 #### Creating charts using billboard.js
 In this section, we are going to create a simple chart using billboard.js.
@@ -123,7 +123,7 @@ In this section, we are going to create a simple chart using billboard.js.
    ```
    The chart shown below is plotted.
    
-   ![Chart Image]()
+   ![Chart Image](/engineering-education/nodejs-charts/basic-chart.png)
 #### Displaying categorical data using billboard.js
 When a large set of data is to be displayed, then displaying them in categories becomes handy.
 1. Create a `div` with id `categorical` in the `chart.html` file we created earlier.
@@ -160,7 +160,7 @@ When a large set of data is to be displayed, then displaying them in categories 
    ``` 
 The above categorical data is displayed in the chart as shown in the image below.
 
-![Image with Categorical data]()
+![Image with Categorical data](/engineering-education/nodejs-charts/categorical-chart.png)
 
 #### Chart themes in billboard.js
 `billboard.js` comes with various themes, some of which include:-
@@ -175,4 +175,4 @@ To use the above themes, load the CSS file provided by `billboard.js` into your 
 https://naver.github.io/billboard.js/release/latest/dist/theme/insight.css">
 ```
 ### Conclusion
-Now that you have learned how to integrate `billboard.js` into a Node.js application, explore the available charts and themes from the [billboard.js official docs](https://naver.github.io/billboard.js/). Find the full source code of the application [here]().
+Now that you have learned how to integrate `billboard.js` into a Node.js application, explore the available charts and themes from the [billboard.js official docs](https://naver.github.io/billboard.js/). Find the full source code of the application [here](https://replit.com/@qawuor/chart#chart.html).
