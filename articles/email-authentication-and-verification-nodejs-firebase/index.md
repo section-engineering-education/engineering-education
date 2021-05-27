@@ -108,13 +108,13 @@ In the `views` folder, create three HTML files named `login.html`, `signup.html`
 You can find  the files for the user interface in [this link.](https://replit.com/@PhinaKersly/Email-verification)
 
 #### Login page user interface
-![Login Page](/engineering-education/content/articles/firebase-email-auth/login.png)
+![Login Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/login.png)
 
 #### Sign up page user Interface
-![Ceate Account Page](/engineering-education/content/articles/firebase-email-auth/register.png)
+![Ceate Account Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/register.png)
 
 #### Profile page user interface
-![Ceate Account Page](/engineering-education/content/articles/firebase-email-auth/homepage.png)
+![Ceate Account Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/homepage.png)
 
 ### Adding Firebase to the application
 In the next phase, we will get to the core functions of the application. To use firebase, we need to obtain authorization for firebase to know who is accessing the firebase functions. We need to generate a `config` object for use with the application. To generate `config` object, check out [this guide](https://firebase.google.com/docs/web/setup#node.js-apps_1). Your final firebase `config` object should look like this:
@@ -199,13 +199,13 @@ Before the verification, the account verified status reads false meaning that th
     }  
 ```
 After the function is executed successfully, a link is sent to the email supplied during registration as shown below.
-![Email link ](/engineering-education/content/articles/firebase-email-auth/link-in-email.png)
+![Email link ](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-in-email.png)
 
 Upon clicking the link, the user is redirected to a new page. The page shows the verification process status as below: 
-![Email verification redirect](/engineering-education/content/articles/firebase-email-auth/link-redirect.png)
+![Email verification redirect](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-redirect.png)
 
 When the user gets back to their account, the account verified status changes to `true`.
-![Account Verified](/engineering-education/content/articles/firebase-email-auth/account-verified.png)
+![Account Verified](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/account-verified.png)
 
 ### Starting the server
 In this phase, we will test out application by running the command `nodemon start` in the terminal. We need to add the below code  in the `index.js` file:
