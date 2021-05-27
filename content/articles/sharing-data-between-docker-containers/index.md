@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: engineering-education
 status: publish
@@ -17,7 +18,6 @@ A container is a way of making a program run independently when moved from one e
 <!--more-->
 
 A Docker container enables you to develop, ship, and run your applications from your environment quicker. You can learn more about Docker from [here](https://docs.docker.com/get-started/overview/).
-
 ### Prerequisites
 To get started, we have to install Docker on our system.
 Check out this amazing [article](https://www.section.io/engineering-education/getting-started-with-docker/) on installing and getting up running with Docker. 
