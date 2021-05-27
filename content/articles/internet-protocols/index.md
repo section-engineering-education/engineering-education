@@ -87,7 +87,7 @@ This involes the use of both Unicast addressing mode and Broadcast addressing mo
 IPv6 was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 had exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case; IPv4 has continued to live on.
 
 #### IP Header
-![IPv6 Communication protocol](/engineering-education/content/articles/internet-protocols/version_one.png)
+![IPv6 Communication protocol](/engineering-education/internet-protocols/version_one.png)
 
 [Image from Wikipedia](https://www.wikipedia.org/)
 
