@@ -1,0 +1,29 @@
+<article>
+  <header>
+    <section class="hero-color flex align-center justify-center fill-blue">
+      <div class="hero-color-left relative">
+        <div class="hero-color-left-large-stripe"></div>
+        <div class="hero-color-left-small-color"></div>
+        <div class="hero-color-left-small-stripe"></div>
+      </div>
+      <div class="hero-color-middle flex align-center justify-center relative">
+        <div class="hero-color-middle-left-stripes"></div>
+        <div class="prl-5">
+          <h1 class="title-2 text-white xs-mb-10">{{ .Title }}</h1>
+          <p class="text-22-regular text-white">{{ .Description }}</p>
+        </div>
+        <div class="hero-color-middle-right-stripes"></div>
+      </div>
+      <div class="hero-color-right relative">
+        <div class="hero-color-right-large-stripe"></div>
+        <div class="hero-color-right-small-color"></div>
+      </div>
+    </section>
+  </header>
+  <div class="section-container blog-listing-posts-container">
+    <div style="padding: 4% 2% 2%;" class="section-container flex align-center justify-center text-18-regular">
+      {{ .Content }}
+
+    </div>
+  </div>
+</article>
