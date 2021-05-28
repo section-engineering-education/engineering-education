@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-charts/
+title: Getting Started with billboard.js charts
+description: This tutorial will go over the basics of billboard.js chart types and how to create different types of charts in billboard.js
+author: quinter-awuor
+date: 2021-05-28T00:00:00-09:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/nodejs-charts/hero.png
+    alt: Getting Started with billboard.js charts example image
+---
+
 ### Table of contents
 - [Table of contents](#table-of-contents)
 - [Getting started with billboard.js](#getting-started-with-billboardjs)
