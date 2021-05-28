@@ -104,7 +104,7 @@ Tabular representation of the differences between both versions of the internet 
 
 ### Subnet Mask
 
-This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnet;     
+This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnet;    
         For Network = 2^n where n = number of desired bits. 
         For Hosts = 2^n+2 
         Example  to calculate subnets and hosts:
