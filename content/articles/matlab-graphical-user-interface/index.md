@@ -102,5 +102,4 @@ we can also have an error test by putting a letter on the amplitude edit box as 
 we also see that the refresh push button turns grey after this alphabetic input. This means it is deactivated until a real number is inputted.
 
 ### Conclusion
-Matlab provides a good environment for creating the GUI. This is because it automatically generates the code for the design of the GUI. The generated codes also contain comments that make it easy for the programmer to understand what the code entails and also organize the callback functions. This makes it easy to work with and design a GUI. This automatic generation of the code also easen the programmer's work since the codes are so bulky to write. GUI makes it easy for the user to use the program without understanding what is going on.
-
+Matlab provides a good environment for creating the GUI. This is because it automatically generates the code for the design of the GUI. The generated codes also contain comments that make it easy for the programmer to understand what the code entails and also organize the callback functions. This makes it easy to work with and design a GUI. This automatic generation of the code also easen the programmer's work since the codes are so bulky to write. 
