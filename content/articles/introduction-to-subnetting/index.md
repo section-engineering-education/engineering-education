@@ -24,9 +24,12 @@ In this article, we will get to understand important terms of the Network.
 - Classless Inter-Domain Routing (CIDR)
 - Broadcast ID 
 
+### Perquisites
+- Basic network knowlede of the internet required. 
+
 Let’s dive right in.
 
-**Subnetting** is the process of partitioning a network into two or more networks based on utilization. It is a logical process of splitting a single-page network into more strands. Subnetting came into the internet in 1978. 
+**Subnetting** is the process of partitioning a network into two or more networks based on utilization. It is a logical process of splitting a single-page network into more strands. Subnetting came into the internet in 1981. 
 
 A protocol is a set of standards and rules that define the language that devices can use to communicate. There are several existing protocols used in networking such as TCP, UDP, IP and, ICMP. In this article, we will only discuss the IP.
 
@@ -49,11 +52,7 @@ ii. Network identity.
 
 #### Diagram of IPV4
 
-216     . 172      . 16     . 1
-
-@@ -49,7 +57,9 @@ One byte = Eight bits = One octet
-             ↓ 
-Thirty-two bits (4 x 8) = 4 bytes = 4 octet
+[Diagram](/introduction-to-subnetting-diagram-of-IPV4.jpeg)
 
 #### IP Classes
 
@@ -67,18 +66,31 @@ Classes are how you can identify network addresses on the internet. The network 
 
 #### According to the parts of the Class
 
-In a Class A network, 8 bits are for the network address. While the rest 24 bits are for the host parts of the address. In a Class B network, the initial 16 bits are the network part of the address. While the rest 16 bits are the host parts of the address. In a Class C network, 24 bits are for the network address while the remaining 8 bits are for the host parts of the address. 
+N stands for Network.
+H stands for Host.
+In a Class A network, 8 bits are for the network address. While the rest 24 bits are for the host parts of the address. Hence N|N|N|H.
+In a Class B network, the initial 16 bits are the network part of the address. While the rest 16 bits are the host parts of the address. Hence N|N|H|H.
+ In a Class C network, 24 bits are for the network address while the remaining 8 bits are for the host parts of the address. Hence N|H|H|H.
 Class D networks (Multicast) Utilized in the multicasting of applications. Multicasting is the process where a single source communicates with many receivers.
 Class E networks (Reserved): Most network implementations recognize this address as undefined.
+
+### Network ID and Host explained. 
+
+The network IDs recognize the network section the host fits in. The host IDs recognizes the single hosts in the same particular network section.
+A host can only communicate with other hosts on the same network section. In simple words, think of the network ID as the city you live in and the host as the particular place in the city you live in.
+
+  ![network-host-id](/introduction-to-subnetting/network-host-id.gif)
+  [image-source](http://www.firewall.cx/networking-topics/protocols/protocols-ip/165-protocols-ip-network-id.html)
 
 #### Public vs Private IP 
 
 Public addresses are the ones used to connect to the internet. With a public IP, you can organize your server (VPN, FTP, WEB, etc), and access any other devices from anywhere on the globe.
 Private IP addresses are limited. They cannot receive traffic from the internet. Used to work within the local network. 
-        Example:
-        i.10.0.0.1 - 10.255.255.255 
-        ii.ii. 172.16.0.0 - 172.32.255.255 
-        iii.iii. 192.168.0.0 - 192.168.255.255.
+        These private addresses are:
+
+        1. 10.0.0.1 - 10.255.255.255 
+        2. 172.16.0.0 - 172.32.255.255 
+        3. 192.168.0.0 - 192.168.255.255.
 
 #### IPV4 vs IPV6
 
@@ -96,7 +108,7 @@ Tabular representation of the differences between both versions of the internet 
 ### Subnet Mask
 
 This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnet;     
-        For Network = 2^n where n = number of desired bits. 
+        For Network = 2^n where n =  of desired bits. 
         For Hosts = 2^n+2 
         Example  to calculate subnets and hosts:
 @@ -110,13 +125,17 @@ To calculate subnets, networks, host ranges you will use a calculator.
@@ -117,16 +129,25 @@ Routed protocol and Routing protocol.
 **Routed Protocol:** This is a network protocol used to send user data between networks. It carries data such as web traffic, flies, messages, etc.
 **Routing Protocol**: A routed protocol finds paths (routes) for the IP and the routed protocol. Routing protocols run on Routers, Firewalls, Network servers with Network Operating Systems.
 
+#### Link to read more
+
+[What-is-the-difference-between-Routing-Protocols-and-Routed-Protocols](https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-the-difference-between-routing-protocols-and-routed-protocols.php)
+
 @@ -135,7 +154,8 @@ Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
 
 **Dynamic Routing(Adaptive):** A router learns dynamic routing by running routed protocols. It adds information to the routing table from connected users immediately.
 
 #### Advantages and disadvantages of each type of routing
 
-| Type of routing  | Advantages  | Disadvantages  |
-| ---------------- | ----------- | -------------- |
-| Static    | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore it is to handle this manually |
-@@ -149,15 +169,18 @@ Advantages and disadvantages of each type of routing;
+|Type of Routing | Advantages | Disadvantages |
+|--------------- |------------|---------------|
+| Static        | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore. Handles this manually. |
+| Static       | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots of topography is needed|
+| Default      | * They establish routes that will never go down | * They require a great deal of CPU power |
+| Dynamic      | * It is easier to configure | * It is less secure compared to static and default routing. |
+| Dynamic      | * It is effective in selecting the best route to a destination network. | * It is more expensive in terms of bandwidth and CPU. |
+
+
 
 **Broadcast Network:** The last ID of a subnet range used to communicate to the host bits within that network. 255.255.255.255 (Broadcast IP).
 
@@ -139,6 +160,13 @@ Routed protocol and Routing protocol.
 - Enhances performance and speed.   
 - Reduces network traffic. 
 - It simplifies the network.
+
+### Conclusion
+The internet today is an integral part of our lives. As such it is important that we are familiar with the core aspects of the network of things.
+
+Subnetting has made it effective to control network congestion. In essence, improving the speed and performance of networks.  
+
+Thank you for reading.
 
 ### References
 
