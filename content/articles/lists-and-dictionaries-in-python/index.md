@@ -14,7 +14,7 @@ images:
 - url: /engineering-education/lists-and-dictionaries-python/hero.jpg
   alt: Python Lists Dictionaries example
 ---
-Lists and dictionaries are one of the most often used data structures in Python for data storage and arrangement. This tutorial explains how to carry out access, modify operations etc, on lists and dictionaries.
+Lists and dictionaries are one of the most often used data structures in Python for data storage and arrangement. This tutorial will explain how to carry out access, modify operations, etc., on lists and dictionaries.
 <!--more-->
 
 ### Prerequisites
@@ -131,7 +131,7 @@ print(cars)           # ['Volvo', 'Skyline', 'Ford']
 ### Sorting a list
 Sorting is organizing your list by some basis, e.g. reverse order, ascending order, or alphabetical order.
 
-To sort a list, use the `.sort()` method to sort a list. To understand this better, let's arrange our list of cars alphabetically.
+To sort a list, use the `.sort()` method. To understand this better, let's arrange our list of cars alphabetically.
 
 ```python
 cars = ['Volvo', 'Subaru', 'Skyline', 'Ford']
@@ -160,7 +160,7 @@ In Python, we use a colon(:) as a slicing operator. Slicing follows the followin
 list_name[Index_start:Index_end]
 ```
 
-For example, when you request `[0:3]` python returns the items at index 0, 1, and 2. 
+For example, when you request `[0:3]`, Python returns the items at index 0, 1, and 2. 
 
 To illustrate this, let's take a look at the following code.
 
@@ -264,7 +264,7 @@ print(stock_1)        # {'type': 'Volvo', 'color': 'Black', 'year': 2021}
 ```
 
 ### Removing key:value pairs from dictionaries
-To remove a `key:value` pair you can use the `del` statement. Give the key you ought to remove and the name of the dictionary to the `del` statement. For instance, let’s remove the key `color` in our `stock_1` dictionary.
+To remove a `key:value` pair you can use the `del` statement. Give the key you're trying to remove and the name of the dictionary to the `del` statement. For instance, let’s remove the key `color` in our `stock_1` dictionary.
 
 ```python
 stock_1={
@@ -280,7 +280,9 @@ print(stock_1)         # {'type': 'Volvo', 'year': 2014}
 Python removes the key `color` and its related value `Black`. The rest of the dictionary remains intact.
 
 ### Looping through a dictionary
-To access everything stored in a dictionary, you can loop through the dictionary using a `for` loop. Assuming we have the names and models stored in a cars dictionary, we can access the name and model of each car using a `for` loop as follows:
+To access everything stored in a dictionary, you can loop through the dictionary using a `for` loop. 
+
+Assuming we have the names and models stored in a cars dictionary, we can access the name and model of each car using a `for` loop as follows:
 
 ```python
 cars={
@@ -301,11 +303,11 @@ In the example above, the `for` loop stores the key in the variable `name` and i
 
 ### Conclusion
 In this tutorial, we have gained an understanding of lists and dictionaries on how to:
-  - Access, alter and remove elements in both lists and dictionaries.
-  - Loop through dictionaries and lists.
-  - Sort and slice a list.
+- Access, alter and remove elements in both lists and dictionaries.
+- Loop through dictionaries and lists.
+- Sort and slice a list.
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
