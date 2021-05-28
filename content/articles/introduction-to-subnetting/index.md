@@ -20,9 +20,7 @@ In this article, we will get to understand important terms of the Network.
 - IPV4 Diagram
 - IP Classes
 - Public vs Private IP
-- IPV4 vs IPV6
-- Subnet Mask
-- Routing
+@@ -23,22 +23,30 @@ In this article we will get to understand important terms of the Network.
 - Classless Inter-Domain Routing (CIDR)
 - Broadcast ID 
 
@@ -52,6 +50,14 @@ ii. Network identity.
 #### Diagram of IPV4
 [](/introduction-to-subnetting/diagram-of-IPV4.jpeg)
 
+<<<<<<< HEAD
+=======
+216     . 172      . 16     . 1
+
+@@ -49,7 +57,9 @@ One byte = Eight bits = One octet
+             ↓ 
+Thirty-two bits (4 x 8) = 4 bytes = 4 octet
+>>>>>>> 4e2edd7f (added article)
 
 #### IP Classes
 
@@ -59,11 +65,7 @@ Classes are how you can identify network addresses on the internet. The network 
 
 |class | Range  | Parts of the class | Network IDs | Host IDs | Start address | End address | Leading bits | Size of network number bit field |
 | ---- | ------ | ------------------ | ----------- | -------- | ------------- | ----------- | ------------ | ------------------- |
-| A    | 1 -126 | N|H|H|H  | 128  | 16,777,216  | 0.0.0.0 | 127.255.255.255 | 0 | 8 |
-| B    | 128 -191 | N|N|H|H  | 16,384 | 65,536 | 128.0.0.0 | 191.255.255.255 | 10 | 16 |
-| C    | 192-223 | N|N|N|H  | 2,097,152 | 256 | 192.0.0.0 | 223.255.255.2555 | 110 | 24 |
-| D    | 224-239 | Not deThe network class an IP address fits into is ascertained by the binary numbersfined | Not defined | Not defined | 224.0.0.0 | 1110 | Not defined |
-| E    | 240-255 | Not defined | Not defined | Not defined | 240.0.0.0 | 1111 | Not defined |
+@@ -61,19 +71,22 @@ Thirty-two bits (4 x 8) = 4 bytes = 4 octet
 (Robles, 2021)
 **Note:** 127 is not included in the range as it's considered a loopback address. Any packet sent to this address loops back, there are over 16 million possible addresses here. Used to set up many server applications on the host, while they all listen to the same port number. Hence they resulted in calling it *localhost*. 
 
@@ -100,10 +102,7 @@ Private IP addresses are limited. They cannot receive traffic from the internet.
 
 Tabular representation of the differences between both versions of the internet protocol.
 
-| IPV4                    |     IPV6             |
-| ----------------------- | -------------------- |
-| The oldest version of the internet protocol | The newest version of the internet protocol |
-| 32 bits logical address  |  128 bits logical address  |
+@@ -84,12 +97,14 @@ Tabular representation of the differences between both versions of the internet
 | Uses dot-decimal notations, less suitable for mobile |  Uses hexadecimal colon-separated notations, best suited for mobile. |
 | Internet protocol security is optional  |  Internet protocol security is mandatory  |
 | The latest packet size is 576 bytes | The least packet size is 1208 bytes |
@@ -111,27 +110,14 @@ Tabular representation of the differences between both versions of the internet 
 | Networks configured with DHCP | Has its auto-configuration capabilities |
 | It is a numeric address method | It is an alphanumeric address method |
 | Has 5 different classes from A - E | Allows an unlimited number of IP addresses to be stored. |
-
+    
 ### Subnet Mask
 
 This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnet;    
         For Network = 2<sup>n</sup> where n = number of desired bits. 
         For Hosts = 2<sup>n+2</sup>
         Example  to calculate subnets and hosts:
-        Borrow 2 bits  (I.e n = 2)
-| S   | S   | H   | H   | H   | H   | H   | H   |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-        Number(#) of subnets = 22 = 4. 
-        Subnet mask = 2bits = 128 + 64 = 192
-        Range of hosts = 2^6 = 64   
-
-|        | Range      | Usable Range |
-| ------ | ---------- | ------------ |
-| Network ID | 0-63 | 65 - 126 |
-|     |  64-127 | 129 - 190 |
-| Broadcast Address | 192 - 255 |     |
-
-To calculate subnets, networks, host ranges you will use a calculator. 
+@@ -110,13 +125,17 @@ To calculate subnets, networks, host ranges you will use a calculator.
 IPSubnet Mask 	Calculator for IPV4: 
 (https://www.site24x7.com/tools/ipv4-subnetcalculator.html) 
 
@@ -140,7 +126,7 @@ IPSubnet Mask 	Calculator for IPV4:
 This is the specialized process of connecting different IP networks. Hosts of different networks cannot communicate with each other until routed. 
 
   ![routing](/introduction-to-subnetting/routing.jpg)
-  
+
   [Image source](https://computernetworkingnotes.com)
 
 IP routing process relies on two types of protocols; 
@@ -149,6 +135,7 @@ Routed protocol and Routing protocol.
 **Routed Protocol:** This is a network protocol used to send user data between networks. It carries data such as web traffic, flies, messages, etc.
 **Routing Protocol**: A routed protocol finds paths (routes) for the IP and the routed protocol. Routing protocols run on Routers, Firewalls, Network servers with Network Operating Systems.
 
+<<<<<<< HEAD
 Routing Protocols and the relating Routed Protocol (Bonaventure, 2018)
 | Routing Protocol   | Routed Protocol  |
 | ---------------- | ----------------- |
@@ -170,6 +157,9 @@ iii. Dynamic
 **Static Routing (Non-adaptive):** An administrator assigns the path. It is a route configured by adding to the routing table by an administrator. 
 
 **Default Routing:** This sends packets to IP addresses that do not have exact routes. Using the hop devices, regardless of their network type.
+=======
+@@ -135,7 +154,8 @@ Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
+>>>>>>> 4e2edd7f (added article)
 
 **Dynamic Routing(Adaptive):** A router learns dynamic routing by running routed protocols. It adds information to the routing table from connected users immediately.
 
@@ -178,6 +168,7 @@ iii. Dynamic
 | Type of routing  | Advantages  | Disadvantages  |
 | ---------------- | ----------- | -------------- |
 | Static    | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore it is to handle this manually |
+<<<<<<< HEAD
 |             | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots topography is needed. |
 |            | * Has no overhead CPU usage on the router. |     |
 | Default   | * They establish routes that will never go down | * They require a great deal of CPU power |
@@ -185,12 +176,15 @@ iii. Dynamic
 |            | * It is effective in selecting the best route to a destination network. | It is more expensive in terms of bandwidth and CPU. |
 
 **Classless Inter-Domain Routing (CIDR):** CIDR is based off on the idea of subnet masks. It makes it possible to create supernets adding to subnets. CIDR helps extend the number of available addresses. The CIDR stores as a suffix in the IP address like so; 201.105.34.7/24 (/24) is the CIDR in this address.
+=======
+@@ -149,15 +169,18 @@ Advantages and disadvantages of each type of routing;
+>>>>>>> 4e2edd7f (added article)
 
 **Broadcast Network:** The last ID of a subnet range used to communicate to the host bits within that network. 255.255.255.255 (Broadcast IP).
 
 ### Benefits of Subnetting
 
-- Conservation of IP addresses.
+- Conservation of IP addresses. 
 - Controls network growth. 
 - Enhances network security. 
 - Easier administration. 
