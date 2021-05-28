@@ -1,20 +1,23 @@
 ### GRAPHICAL USER INTERFACE IN MATLAB
-## Introduction
-## Prerequisites
+### Introduction
+A graphical user interface is a pictorial interface that allows the user to use an application without understanding the language.
+This is done by providing intuitive controls. The controls are the buttons that the user clicks to obtain a determined output and we will discuss later them in this article. GUI is an event-driven program. This is because it acquires input at any given time and uses the call back functions to execute the program and give results.
+In this article, we will be looking at the components that are used to construct the graphical user interface. We will also look at how to write the callback function of the components that make it possible for them to execute the controls. Matlab generates the codes for a GUI. This makes it a better tool for designing the GUI for engineering applications.
+### Prerequisites
 1. [Matlab](https://www.mathworks.com/downloads/) installed.
-2. proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
+2. A proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
 
-## How to access the graphical interface in Matlab
+### How to access the graphical interface in Matlab
 You can access the graphical user interface in Matlab by typing `guide` in Matlab’s workspace.
-![](/engineering-education/matlab-graphical-user-interface/image1.png)
+![the choices window for the GUI](image1.png)
 when this command is executed, the window that gives an option of the type of guide that you want to work with opens up. The options include; blank GUI(default), GUI with UI controls, GUI with axes and menu, and a modal question dialog.
 Here in this tutorial, we are to use a blank GUI. This is because this is the introduction to the user interface. After selecting the type of model that you will use, a new workspace opens us. This is where we will design our graphical user interface. On the left part of the workspace, we get the buttons that we will use while designing the user interface. The components are aligned and are nameless. To access the names, use the procedure below;
 - In the file folder, select the `preferences`.
-![](/engineering-education/matlab-graphical-user-interface/image2.png)
+![the components and the convas](image2.png)
 - Select the `show names in the component palette`
 - To enable the applied changes, click on the `apply` then `OK`.
-![](/engineering-education/matlab-graphical-user-interface/image3.png)
-![](/engineering-education/matlab-graphical-user-interface/image12.png)
+![enabling the components name to be visible](image3.png)
+![components and the names visible](image12.png)
 when you want to add a component to your canvas, you select it and drop it there. The components can be resized by dragging the edges. They can also be moved from one point to another by double-clicking the component and dragging it to the required position.
 
 We are now going to discuss the buttons that are used in the design of the user interface from top to the bottom.
@@ -31,22 +34,22 @@ We are now going to discuss the buttons that are used in the design of the user 
 11. `Axes` – They are used to add images, charts, and plots to the GUI and do not have a callback function.
 12. `Panel` – It is used to group the necessary GUI components. The name of the panel depends on the function of the buttons grouped. It has no callback function. Note that you need to add the panel first before adding the buttons.
 13. `Button Group` – It looks like the panel and it is used to add a group of radio buttons. When a radio button is added, it acts in a synchronized manner. To correct this, we write the callback function. This will ensure that only one radio button is `on`. You first add the button group before adding the radio buttons.
-## Simple example GUI
+### Simple example GUI
 We want to create a simple GUI. For easy work to design the GUI, we add all the required components in the canvas. For this sample GUI, we require the Panel, Static text, Axes, Push Button, Slider, and Edit Text. Drag and drop the components into the canvas as described earlier. The GUI components should be arranged as shown below;
 
-![](/engineering-education/matlab-graphical-user-interface/image5.png)
+![arrangement of components in our GUI](image5.png)
 We need to modify the characteristic of the components so that the GUI can make sense to the users. This is by changing the string type.
 To modify the characteristic of the component, double-click the component. we get a new window as shown;
-![](/engineering-education/matlab-graphical-user-interface/image6.png)
+![modification window for components](image6.png)
 This can also be done by selecting the component and selecting the property inspector at the top of the window.
 We can change the background color, foreground color, font size, font weight, string, and the tag of the components depending on how we want our GUI to appear. Note that the string of the components should be compatible with the component function and the tag should be easy and related to the component for easy identification of the callback function.
 We will modify the GUI and make it similar to the figure below;
-![](/engineering-education/matlab-graphical-user-interface/image7.png)
+![the appearance of new GUI after modification](image7.png)
 We will change the tag of the `Axes` to `axes`, `slider1` to `Freq`, `edit1` to `Amp`. Note that the tag for the static text is not necessary to change since they have no callback function for modification.
 
 When you try to run the GUI, it will prompt you to save it before it runs. GUI automatically generates the `.m file` and the `.fig file` for the GUI as shown below;
-![](/engineering-education/matlab-graphical-user-interface/image8.png)
-![](/engineering-education/matlab-graphical-user-interface/image9.png)
+![obtained .m file](image8.png)
+![obtained .fig file](image9.png)
 The `create` function is called right after the object is created and its properties set before displaying on the screen. The create function can also be used when additional initialization is required for an object beyond simply setting the properties in the Property inspector. For this sample, we will not use the create function. This is because it is used in a complex situation but this is just an introduction to GUI.
 What we want this GUI to carry out is to check the current frequency from the slider, the amplitude that the user inputs, and then draw a sine wave using these data. This means that we do not even require the callback function for the slider. We require the callback function for the refresh button since we click it for the plotting after getting the current data. We also require the callback function for the edit box for error checking. It will check the string that the user inputs and ensures that it is a number. This means we will use some validation methods to verify.
 Let's look at the callback function of the edit box. To locate the callback function of a component in the `.m file`;
@@ -69,7 +72,7 @@ else
 set(handles.ref,'Enable','on')
 end
 ```
-The first line of our code gets the user input using the `get` function. It then converts the input to double using the `str2double` function since the edit box receives string inputs. The program checks if the input is a real number. If it’s not, we use the `set` function to change the input to `Error: NaN` and disables the refresh button by setting the `handles` to `off` condition using `Enable`, `Off`. The set function is used to change the current state of the edit box to whatever it should display. If the input is real, we enable the refresh button that invokes the callback function. This is done using the `Enable`, `On` function.
+The first line of our code gets the user input using the `get` function. It then converts the input to double using the `str2double` function since the edit box receives string inputs. The program checks if the input is a real number. If it’s not, we use the `set` function to change the input to `Error: NaN` and disables the refresh button by setting the `handles` to `off` condition using `Enable`, `Off`. The set function is used to change the current state of the edit box to whatever it should display. If the input is real, we enable the refresh button that invokes the callback function. This is done using the `Enable`, `On` functions.
 Let's now look at the refresh button callback. write this code below this comment;
 >> Note that the position that you write you call back function doesn't interfere with the execution of the code. This is because the generated `.m file` only contains comments that are not executed.
 
@@ -93,12 +96,11 @@ grid on
 we first set the helping data, that is, the minimum frequency and the maximum frequency which is used to translate the value from the frequency slider. The variable `t` helps to generate the sine function and plot it. We get the amplitude from the user input as stated before. All these variables are then used to calculate the data `x` that is to be plotted.
 We then create the plot on the axes. To make the plottings appear on the axes, we use the `handles. axes` function and activate the axes using `set(handles. axes, ‘XminorTick’, 'on')` function.
 We can play with the various amplitudes and frequency and plots made as shown below;
-![](/engineering-education/matlab-graphical-user-interface/image10.png)
+![plots obtained when we run the program](image10.png)
 we can also have an error test by putting a letter on the amplitude edit box as shown below;
-![](/engineering-education/matlab-graphical-user-interface/image11.png)
+![output incase of NAN input](image11.png)
 we also see that the refresh push button turns grey after this alphabetic input. This means it is deactivated until a real number is inputted.
 
-## Conclusion
+### Conclusion
 Matlab provides a good environment for creating the GUI. This is because it automatically generates the code for the design of the GUI. The generated codes also contain comments that make it easy for the programmer to understand what the code entails and also organize the callback functions. This makes it easy to work with and design a GUI. This automatic generation of the code also easen the programmer's work since the codes are so bulky to write. GUI makes it easy for the user to use the program without understanding what is going on.
-
 
