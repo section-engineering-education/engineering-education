@@ -1,5 +1,8 @@
 ---
 layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-subnetting/
 title: Introduction to Subnetting
 description: Subnetting is a partition process of splitting a single-page network into two or more strands. This process enhances the efficiency of the computer network. This article will give good detail on how subnetting works and the terminologies behind computer networking.
 author: anyebe-blessing-ene
@@ -8,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   -url: /engineering-education/introduction-to-subnetting/hero.jpg
-  alt: computer in a dark background
+  alt: Subnetting image example
 ---
 In this article, we will get to understand important terms of the Network.
-
+<!--more-->
 ### Table of Contents
 - Internet Protocol (IP) Address
 - IPV4 Diagram
@@ -25,7 +28,7 @@ In this article, we will get to understand important terms of the Network.
 
 Let’s dive right in.
 
-**Subnetting** is the process of partitioning a network into two or more networks based on utilization. It is a logical process of splitting a single-page network into more strands. Subnetting came into the internet in 1978. 
+**Subnetting** is the process of partitioning a network into two or more networks based on utilization. It is a logical process of splitting a single-page network into more strands. Subnetting came into the internet in 1981. 
 
 A protocol is a set of standards and rules that define the language that devices can use to communicate. There are several existing protocols used in networking such as TCP, UDP, IP and, ICMP. In this article, we will only discuss the IP.
 
@@ -47,15 +50,8 @@ i. Host identity
 ii. Network identity.
 
 #### Diagram of IPV4
+[](/introduction-to-subnetting/diagram-of-IPV4.jpeg)
 
-216     . 172      . 16     . 1
-
-↓         ↓        ↓           ↓
-11011000.10101100.00010000.00000001
-↓ 
-One byte = Eight bits = One octet
-             ↓ 
-Thirty-two bits (4 x 8) = 4 bytes = 4 octet
 
 #### IP Classes
 
@@ -73,18 +69,32 @@ Classes are how you can identify network addresses on the internet. The network 
 
 #### According to the parts of the Class
 
-In a Class A network, 8 bits are for the network address. While the rest 24 bits are for the host parts of the address. In a Class B network, the initial 16 bits are the network part of the address. While the rest 16 bits are the host parts of the address. In a Class C network, 24 bits are for the network address while the remaining 8 bits are for the host parts of the address. 
+Network is denoted by N.
+H is denoted by H.
+In a Class A network, 8 bits are for the network address. While the rest 24 bits are for the host parts of the address. Hence N|N|N|H.
+In a Class B network, the initial 16 bits are the network part of the address. While the rest 16 bits are the host parts of the address. Hence N|N|H|H.
+In a Class C network, 24 bits are for the network address while the remaining 8 bits are for the host parts of the address. Hence N|H|H|H.
 Class D networks (Multicast) Utilized in the multicasting of applications. Multicasting is the process where a single source communicates with many receivers.
 Class E networks (Reserved): Most network implementations recognize this address as undefined.
+
+### Network ID and Host explained. 
+The network IDs recognizes the network section the host fits in. The host IDs recognizes the single hosts in the same particular network section.
+A host can only communicate directly with other host on the same network section. In simple words, think of the network ID has the city you live in and the host as the particular place in the city you live in.
+
+[Network and Host IDs](/introduction-to-subnetting/network-host-id.gif)
+[image source](http://www.firewall.cx/networking-topics/protocols/protocols-ip/165-protocols-ip-network-id.html)
 
 #### Public vs Private IP 
 
 Public addresses are the ones used to connect to the internet. With a public IP, you can organize your server (VPN, FTP, WEB, etc), and access any other devices from anywhere on the globe.
 Private IP addresses are limited. They cannot receive traffic from the internet. Used to work within the local network. 
-        Example:
-        i.10.0.0.1 - 10.255.255.255 
-        ii.ii. 172.16.0.0 - 172.32.255.255 
-        iii.iii. 192.168.0.0 - 192.168.255.255.
+        These private addresses are:
+
+        1. 10.0.0.1 - 10.255.255.255 
+
+        2. 172.16.0.0 - 172.32.255.255 
+
+        3. 192.168.0.0 - 192.168.255.255.
 
 #### IPV4 vs IPV6
 
@@ -105,8 +115,8 @@ Tabular representation of the differences between both versions of the internet 
 ### Subnet Mask
 
 This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnet;    
-        For Network = 2^n where n = number of desired bits. 
-        For Hosts = 2^n+2 
+        For Network = 2<sup>n</sup> where n = number of desired bits. 
+        For Hosts = 2<sup>n+2</sup>
         Example  to calculate subnets and hosts:
         Borrow 2 bits  (I.e n = 2)
 | S   | S   | H   | H   | H   | H   | H   | H   |
@@ -146,7 +156,16 @@ Routing Protocols and the relating Routed Protocol (Bonaventure, 2018)
 | RIP, NLSP, EIGRP  | IPX  |
 | RMTP, AURP, EIGRP | Appletalk  |
 
-Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
+#### Read more about routing and routed protocols
+[link](https://t.co/Gd5Ov7UpTL?amp=1)
+
+Routing is categorized into 3 places; 
+
+i. Static 
+
+ii. Default 
+
+iii. Dynamic
 
 **Static Routing (Non-adaptive):** An administrator assigns the path. It is a route configured by adding to the routing table by an administrator. 
 
@@ -159,11 +178,11 @@ Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
 | Type of routing  | Advantages  | Disadvantages  |
 | ---------------- | ----------- | -------------- |
 | Static    | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore it is to handle this manually |
-             | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots topography is needed. |
-             | * Has no overhead CPU usage on the router. |
+|             | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots topography is needed. |
+|            | * Has no overhead CPU usage on the router. |     |
 | Default   | * They establish routes that will never go down | * They require a great deal of CPU power |
 | Dynamic   | * It is easier to configure | * It is less secure compared to static and default routing. |
-            | * It is effective in selecting the best route to a destination network. | It is more expensive in terms of bandwidth and CPU. |
+|            | * It is effective in selecting the best route to a destination network. | It is more expensive in terms of bandwidth and CPU. |
 
 **Classless Inter-Domain Routing (CIDR):** CIDR is based off on the idea of subnet masks. It makes it possible to create supernets adding to subnets. CIDR helps extend the number of available addresses. The CIDR stores as a suffix in the IP address like so; 201.105.34.7/24 (/24) is the CIDR in this address.
 
@@ -178,6 +197,14 @@ Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
 - Enhances performance and speed.   
 - Reduces network traffic. 
 - It simplifies the network.
+
+### Conclusion
+
+The internet today is an integral part of our lives as such it is important that we are familiar with core aspects of the network of things.
+Subnetting has made it effective to control network congestion. In essence, improving the speed and performance networks.
+
+Thank you for reading.
+
 
 ### References
 
