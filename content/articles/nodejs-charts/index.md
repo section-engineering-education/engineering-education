@@ -194,3 +194,6 @@ https://naver.github.io/billboard.js/release/latest/dist/theme/insight.css">
 ```
 ### Conclusion
 Now that you have learned how to integrate `billboard.js` into a Node.js application, explore the available charts and themes from the [billboard.js official docs](https://naver.github.io/billboard.js/). Find the full source code of the application [here](https://replit.com/@qawuor/chart#chart.html).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
