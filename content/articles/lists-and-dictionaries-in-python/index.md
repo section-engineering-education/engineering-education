@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/lists-and-dictionaries-python/
+url: /lists-and-dictionaries-python/
 title: Working with Lists and Dictionaries in Python
 description: This tutorial will teach us how to work with lists and dictionaries in Python. We will look at how perform create, access, modify, and slice operations on list and dictionaries. 
 author: duncan-ndegwa
-date: 2021-04-23T00:00:00-13:00
+date: 2021-05-28T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
