@@ -43,7 +43,7 @@
 
 2. **Installation through npm.**
    To install `billboard.js` into our project through npm, we must initialize npm in the root directory of our project. 
-   - Open the terminal and change the current directory to our projects directory.
+   - Change to current terminal directory to our project directory.
    - Execute the command below to create `package.json` and `package.lock.json` files which are used by Node.js to manage external libraries added to Node.js applications.
   
     ```bash
@@ -96,8 +96,8 @@ In this section, we are going to create a simple chart using billboard.js.
     bindto: "#charting",
     data: {
         columns: [
-            ["Java", 30, 200, 100, 170, 150, 250],
-            ["Python", 130, 100, 140, 35, 110, 50]
+            ["Java", 10, 320, 400, 210, 90, 210],
+            ["Python", 310, 200, 210, 24, 220, 30]
         ],
         types: {
           Java: "area-spline",
@@ -127,7 +127,8 @@ In this section, we are going to create a simple chart using billboard.js.
 #### Displaying categorical data using billboard.js
 When a large set of data is to be displayed, then displaying them in categories becomes handy.
 1. Create a `div` with id `categorical` in the `chart.html` file we created earlier.
-2. Create a Javascript file named `categorical.js` in the root project directory and add the code snippet below.
+2. Create a Javascript file named `categorical.js` in the project directory.
+3. Add the code snippet below to the file created above.
    ```javascript
    var chart = bb.generate({
     bindto: "#categorical",
@@ -135,18 +136,18 @@ When a large set of data is to be displayed, then displaying them in categories 
     x: "x",
     columns: [
         ["x", "www.siteone.com", "www.sitetwo.com", "www.sitethree.com", "www.sitefour.com"],
-        ["download", 30, 200, 100, 400],
-        ["upload", 90, 100, 140, 200]
+        ["downloads", 50, 100, 200, 600],
+        ["uploads", 80, 110, 150, 220]
     ],
     groups: [
       [
-        "download",
+        "downloads",
         "loading"
       ]
     ],
         colors: {
-          download: "blue",
-          upload: "green"
+          downloads: "blue",
+          uploads: "green"
         },
     type: "bar",
     },
