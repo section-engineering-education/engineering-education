@@ -295,7 +295,7 @@ Next, we create a `mutation` property. The mutation property is were we can actu
 ```
 
     mutations: {
-            SET_Item (state, posts) {
+            SET_ITEMS (state, posts) {
                 state.posts = posts
             }
     },
@@ -309,8 +309,7 @@ Now we can call our API in the `actions` property. Actions are equivalent to mut
              try {
                       const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
                   // JSON responses are automatically parsed.
-                  this.posts = response.data
-                  commit('SET_Items', posts)
+                  commit('SET_ITEMS', response.data)
                }
               catch (error) {
                  console.log(error);
