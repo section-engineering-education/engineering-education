@@ -33,7 +33,7 @@ In this tutorial, our focus would be on integrating a GraphQL API into a Django 
 
 ## Project setup
 
-We will be creating an e-commerce catalog project. Firstly, let's create a directory for this project in our terminal. Add the following to your terminal:
+We will be creating an e-commerce catalog project. Let's start by creating a directory for this project in our terminal. Add the following to your terminal:
 
 ```bash
 > mkdir ecommerce
@@ -173,7 +173,7 @@ Let's proceed to our terminal to run migrations of models. By running migration 
 > python manage.py migrate
 ```
 
-Once migration is done, run local host to see if our app is running. To do this simply add the following code to your terminal
+Once migration is done, run local host to see if our app is running. Add the following code to your terminal to do this.
 
 ```python
 python manage.py runserver
@@ -206,7 +206,7 @@ INSTALLED_APPS = [
 
 ## Adding GraphQL to URL
 
-When working with GraphQL, the only endpoint/API exposed to the client is **/graphql**. Client can request and update data through this and only this endpoint. So then and there, we have fewer endpoints to maintain as compared to REST.
+The only endpoint/API accessible to the client while working with GraphQL is **/graphql**. This is the sole endpoint via which a client can request and change data. As a result, in comparison to REST, we have fewer endpoints to manage.
 
 Adding GraphQL view to our URL, in `ecommerce/urls.py` file. Add the following:
 
@@ -229,12 +229,11 @@ The URL contains our endpoint, where our GraphQL communications will be made. Fr
 
 ## Creating a schema
 
-GraphQL is a query language with a powerful type system that can be used to define an API's data structures. This data is represented in the GraphQL Schema!
+GraphQL is a query language with a powerful type system that can be used to define an API's data structures. The GraphQL Schema is used to represent this information!
 
-The schema can be thought of as a contract between the client and the server that specifies how the client can gain access to the database. 
+The schema is a contract between the client and the server that describes how the client can acquire access to the database.
 
-To be able to run GraphQL queries on your web application, you need to add a Schema, Object Types, and a view function that receives the GraphQL queries.
-
+You'll need to add a Schema, Object Types, and a view function that receives the GraphQL queries to be able to perform GraphQL queries in your web application.
  
 
 Let's define our schema, firstly in our app directory, we'll create a file called **schema.py** and add the following lines of code. 
@@ -303,8 +302,8 @@ schema = graphene.Schema(query=Query)
 In the above code,
 
 - We created schema for our three models (Category, Book, and Grocery).
-- We also imported, `DjangoObjectType` : which will present all fields on a Model through GraphQL.
-- `class Query` :  inherits from *'graphene.ObjectType'* class and supply the configuration for our            Graphql queries.
+- We also included `DjangoObjectType`: which uses GraphQL to display all fields on a Model.
+- `class Query` : inherits from *'graphene.ObjectType'* and provides the setting for our Graphql queries.
 - `resolve_categories, books, groceries`:  are used to open up categories, books, groceries queryset. These methods take in two parameters (root and info).
 - `graphene.Schema` : This query brings in data from our type(database)
 
@@ -358,7 +357,7 @@ class UpdateCategory(graphene.Mutation):
         title = graphene.String(required=True)
         id = graphene.ID()
 
-    # Class attributes defines the response of the mutation
+
     category = graphene.Field(CategoryType)
 
     @classmethod
@@ -484,9 +483,9 @@ Successful added to our database! 🎉
 
 ## Conclusion
 
-In this tutorial we were able to integrate GraphQL into Django using the Graphene-Django package. 
+Using the Graphene-Django package, we were able to incorporate GraphQL into Django in this tutorial.
 
-If implemented correctly, GraphQL in Django will result in an application that is extremely scalable and versatile. We however did not use all the features of the graphene package  such as updating and deleting data in all the models provided above but you can read more on it in the [GraphQL Docs](https://docs.graphene-python.org/projects/django/en/latest/installation/) for more guide. This tutorial provides a sneak peek of how GraphQL and Django can be integrated. There are lots of other functions you can add to your Django application using GraphQL. 
+If implemented correctly, GraphQL in Django will result in an application that is extremely scalable and versatile. We however did not use all the features of the graphene package  such as updating and deleting data in all the models provided above but you can read more on it in the [GraphQL Docs](https://docs.graphene-python.org/projects/django/en/latest/installation/) for more guide. This tutorial provides a sneak peek of how GraphQL and Django can be integrated. GraphQL may be used to add a variety of extra functionalities to your Django application.
 
 If you are getting started with GraphQL + Django, I hope this tutorial was of help to you! 
 
