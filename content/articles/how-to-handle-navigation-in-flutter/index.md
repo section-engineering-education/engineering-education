@@ -33,11 +33,13 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+// code for the home page layout
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
       ),
       body: Center(
+// code for the button in the home page 
         child: ElevatedButton(
           child: Text('Go to Login page'),
           onPressed: null,
@@ -57,19 +59,19 @@ Create a `login.dart` file and include the code below.
 
 ```dart
   import 'package:flutter/material.dart';
-  import 'package:flutter_navigation/route/route.dart' as route;
-
   class LoginPage extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
+// code for the login page layout
       return Scaffold(
         appBar: AppBar(
           title: Text('Login Page'),
         ),
         body: Center(
+// code for the button
           child: ElevatedButton(
             child: Text("Go to home page"),
-            onPressed: () => Navigator.pushNamed(context, route.homePage),
+            onPressed: null
           ),
         ),
       );
@@ -82,19 +84,20 @@ Create a `register.dart` file and include the following code.
 
 ```dart
   import 'package:flutter/material.dart';
-  import 'package:flutter_navigation/route/route.dart' as route;
 
   class RegisterPage extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
+// code for the register layout
       return Scaffold(
         appBar: AppBar(
           title: Text('Register Page'),
         ),
         body: Center(
+// code for button
           child: ElevatedButton(
             child: Text("Go to Login page"),
-            onPressed: () => Navigator.pushNamed(context, route.loginPage),
+            onPressed: null
           ),
         ),
       );
@@ -103,48 +106,23 @@ Create a `register.dart` file and include the following code.
 
 ```
 
-Next, update the `home.dart` page with code below
-
-```dart
-    import 'package:flutter/material.dart';
-import 'package:flutter_navigation/route/route.dart' as route;
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Go to Login page."),
-          onPressed: () => Navigator.pushNamed(context, route.loginPage),
-        ),
-      ),
-    );
-  }
-}
-
-```
-
-Next, we will create our navigation route. To do that let's update our `route.dart` file with the code below
+Next, we will create our navigation route. To do that, let's update our `route.dart` file with the code below
 
 ```dart
   import 'package:flutter/material.dart';
-
+ // importing our pages into our route.dart
   import 'package:flutter_navigation/views/home.dart';
   import 'package:flutter_navigation/views/login.dart';
   import 'package:flutter_navigation/views/register.dart';
 
-  // route names
+  // variable for our route names
   const String loginPage = 'login';
   const String homePage = 'home';
   const String registerPage = 'register';
 
   void login() {}
 
-  // controller function to control page route flow
+  // controller function with switch statement to control page route flow
   Route<dynamic> controller(RouteSettings settings) {
     switch (settings.name) {
       case loginPage:
@@ -170,7 +148,8 @@ Next we will update our `main.dart` file with the code below.
 
 ```dart
     import 'package:flutter/material.dart';
-import 'route/route.dart' as route;
+    // importing our route.dart into our main.dart 
+    import 'route/route.dart' as route;
 
 void main() {
   runApp(MyApp());
@@ -179,11 +158,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  // code for our main layout
     return MaterialApp(
       title: 'Flutter navigation',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
+      // code that is setting the first page you will see when you open your app
       onGenerateRoute: route.controller,
       initialRoute: route.loginPage,
     );
@@ -194,24 +175,28 @@ Here we imported out `route.dart` file as `route` then set the `onGenerateRoute`
 
 Finally, we will go to our pages and make a transition between each of them.
 
-To that, we will import out route.dart file inside each page in the view folder the import will look the code below.
+To do that, we will import our route.dart file inside each page in the view folder the import will look the code below.
 
 ```dart
+    // importing our route.dart file
     import 'package:tutorial_app/route/route.dart' as route;
 ```
 *Note* tutorial_app is the name of my project so yours should be the name of your project. 
 Next, we will replace the null in our onpressed function in all pages with the code below
 
-for the loginPage
-```dart
-    onPressed: () => Navigator.pushNamed(context, route.homePage),
-```
 for the homepage
 ```dart
+    // code that navigates us to the next page
     onPressed: () => Navigator.pushNamed(context, route.registerPage),
+```
+for the loginPage
+```dart
+    // code that navigates us to the next page
+    onPressed: () => Navigator.pushNamed(context, route.homePage),
 ```
 for the registerpage
 ```dart
+    // code that navigates us to the next page
     onPressed: () => Navigator.pushNamed(context, route.loginPage),
 ```
 We will save all files and reload the app. After reload we will be able to navigate or move across, into and back out of our pages.
