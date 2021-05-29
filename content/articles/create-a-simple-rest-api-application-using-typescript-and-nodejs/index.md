@@ -1,17 +1,35 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-simple-rest-api-using-typescript-and-nodejs/
+title: How to Create a Simple REST API Using TypeScript and Node.Js
+description: This article will be teaching us how to create a simple REST API using TypeScript and Node.js. We will be building a simple Node.js app to demonstrate how to use TypeScript with Node.js.
+author: antony-prince
+date: 2021-05-29T00:00:00-12:30
+topics: [Node.js, API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/hero.png
+    alt: TypeScript Node API
+---
 Typescript is a superset of JavaScript with additional features such as static types checking. Typescript is gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages for building extensive applications.
+<!--more-->
+According to the [Stack Overflow 2020 survey](https://insights.stackoverflow.com/survey/2020), Typescript is the second most beloved language with 61.7% votes. Just above popular languages such as Django and Kotlin, JavaScript, SQL, etc. Popular apps such as Slack are running on the Typescript.
 
-According to the [Stack Overflow 2020 survey](https://insights.stackoverflow.com/survey/2020), Typescript is the second most beloved language with 61.7% votes. Just above popular languages such as Django and Kotlin, JavaScript, SQL, etc. Popular apps such as Slack are on the Typescript.
-
-![The most beloved language](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/the-most-beloved-language.png)
+![The most beloved language](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/the-most-beloved-language.png)
 
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
 
 Just like JavaScript, it supports numerous frameworks such as Node.js.
 
-### Goal
-The main advantage of using both Typescript and Node.js together is to take the full benefits that this two have. Typescript is well known for supporting static typing to detect code errors during typing. It helps you catch errors at an early stage of development, creating a faster application development pipeline, unlike Node.js (JavaScript), where you only detect errors during the application runtime. Typescript is a good choice when building extensive applications.
+### The goal
+The main advantage of using both Typescript and Node.js together is to take the full benefits that this two have.
 
-On the side, Node.js is well known for its diverse open-source libraries, multi-threading ability, asynchronous, and event-driven code execution, being fast and light, etc.
+Typescript is well known for supporting static typing to detect code errors during typing. It helps you catch errors at an early stage of development, creating a faster application development pipeline, unlike Node.js (JavaScript), where you only detect errors during the application runtime. Typescript is a good choice when building extensive applications.
+
+On the other side, Node.js is well known for its diverse open-source libraries, multi-threading ability, asynchronous, and event-driven code execution, being fast and light, etc.
 
 Check out these two guides and learn more about the popularity two.
 
@@ -20,13 +38,13 @@ Check out these two guides and learn more about the popularity two.
 
 This article will explain how to use Typescript with Node.js. We'll create a simple REST API using Typescript and Node.js libraries to demonstrate this.
 
-The API implements some common web-based API methods such as GET, POST, DELETE, PUT, AND PATCH. We will use a post-application. The application will consume a [Free mock-up API](https://jsonplaceholder.typicode.com/posts) hosted in this [JSON placeholder server](https://jsonplaceholder.typicode.com/).
+The API implements some common web-based API methods such as GET, POST, DELETE, PUT, AND PATCH. We will use a post-application. The application will consume a [Free mock-up API](https://jsonplaceholder.typicode.com/posts) hosted on [this JSON placeholder server](https://jsonplaceholder.typicode.com/).
 
 ### Prerequisites
-- Ensure that you have [Node.js](https://nodejs.org/en/) and [Postman](https://www.postman.com/) installed on your computer.
-- Essential experience of how to write and execute [Typescript](/engineering-education/a-friendly-beginner-guide-to-typescript/).
+- Ensure that you have [Node.js](https://nodejs.org/en/) and [Postman](https://www.postman.com/) installed on your machine.
+- Ensure you have essential experience of how to write and execute [Typescript](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 - Be familiar with [Node.js](/engineering-education/history-of-nodejs/) and how to use libraries such as [Express.js](/engineering-education/express/).
-- Be familiar with how to [test APIs using Postman](https://www.youtube.com/watch?v=KFuaybrXCdw), (a tool for interacting with web-based APIs).
+- Be familiar with how to [test APIs using Postman](https://www.youtube.com/watch?v=KFuaybrXCdw) (a tool for interacting with web-based APIs).
 
 ### Installing Typescript
 Unlike JavaScript, Typescript doesn't run directly on the browser. To execute any Typescript written code, you need a Typescript compiler. This will compile Typescript into JavaScript. This way, it will be easier to executed and run the Typescripts on a browser. Since we are using Node.js, we will install Typescript from NPM using the command below.
@@ -113,8 +131,8 @@ Your project files and subfolders should be set up as shown below.
 
 Create the `source` folder inside your project directory. The source folder will include all the `.ts` files the application needs to run, as explained earlier.
 
-#### Setting up controllers
-Create the `controllers` folder, in it have the `posts.ts` file. This module will handle all the  API logic, i.e., getting posts, getting a single post, updating a post, deleting a post, and creating a post.
+#### Setting up the controllers
+Create the `controllers` folder. In it have the `posts.ts` file. This module will handle all the  API logic, i.e. getting posts, getting a single post, updating a post, deleting a post, and creating a post.
 
 `controllers/posts.ts`
 
@@ -204,12 +222,12 @@ export default { getPosts, getPost, updatePost, deletePost, addPost };
 We include all the necessary API methods such as;
 
 - `getPosts` - A request to fetch all posts in the list.
-- `getPost` - A request to fetch a single ost by id.
+- `getPost` - A request to fetch a single post by id.
 - `updatePost` - A request to update a post with new values.
 - `deletePost` - A request to delete an existing post.
 - `addPost` - A request to add a new post to the existing list.
 
-#### Adding routes
+#### Adding the routes
 Create the `routes` folder, in it have the `posts.ts` file. The file connects routes to their controllers.
 
 `routes/posts.ts`
@@ -292,7 +310,7 @@ npm run dev
 
 This will start the server as shown below;
 
-![The ts server](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/server.png)
+![The ts server](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/server.png)
 
 ### Step 7: Testing the API with Postman
 Postman is an interactive web-based APIs testing platform. We will test all the API endpoints as we defined earlier in the routing module.
@@ -300,26 +318,25 @@ Postman is an interactive web-based APIs testing platform. We will test all the 
 #### 1. Fetch all posts
 Go over to Postman and open a tab, select `GET` and enter the request URL as `http://localhost:6060/posts`. Click send to send this request.
 
-![A get request with Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-get-request.png)
+![A get request with Postman](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/a-get-request.png)
 
 This will fetch all the posts and send a response back to the Response section. The response comprises all posts as listed in the `https://jsonplaceholder.typicode.com/posts`.
 
-![Posts response from Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/posts-response.png)
+![Posts response from Postman](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/posts-response.png)
 
 #### 2. Fetch a single post
 Just like fetching all the posts, you can opt only to fetch a single post. This time the request URL will be `http://localhost:5000/posts/id`. Where the `id` is the id on the post you want to get.
 
 Let's say, fetch the post where id is 1, the requesting URL will be `http://localhost:6060/posts/1`. This should return a response of a single post.
 
-![Fetch a single post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/single-post.png)
+![Fetch a single post](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/single-post.png)
 
 #### 3. Update a post
 Let's say you wanted to change some values of a single post, such as the title or the post's body. In this case, you're sending an update request. In the Postman methods dropdown, select `PUT`. Enter the requesting URL as  `http://localhost:6060/posts/id`, where `id` the id of the post you want to update.
 
-Head over to the body tab, select row and
-In the body tab below, click on `raw` and `JSON` on the right dropdown.
+Head over to the body tab, select row and in the body tab below, click on `raw` and `JSON` on the right dropdown.
 
-![Postman put method](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/put.png)
+![Postman put method](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/put.png)
 
 In the space provided, enter the following (Feel free to change the values for `title` and `body`), and click `send`.
 
@@ -331,16 +348,16 @@ In the space provided, enter the following (Feel free to change the values for `
 ```
 
 This should return a response to the Response section, as shown below.
-![Update a post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/update-a-post.png)
+![Update a post](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/update-a-post.png)
 
 #### 4. Delete a single post
 To delete a post, select `DELETE` in the Postman methods dropdown menu. Enter the requesting URL as `http://localhost:6060/posts/id`. Where is `id` any id of the post you want to delete. Then click send.
 
-![delete_post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/delete-post.png)
+![delete_post](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/delete-post.png)
 
 This will return the following response.
 
-![A deleted post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-deleted-post.png)
+![A deleted post](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/a-deleted-post.png)
 
 #### 5. Add a new post
 Select `POST` in the Postman methods dropdown menu. In the URL section, enter `http://localhost:6060/posts`, In the tab below, select body, click `raw`, select `JSON` on the right end dropdown menu and enter;
@@ -352,13 +369,18 @@ Select `POST` in the Postman methods dropdown menu. In the URL section, enter `h
 }
 ```
 
-![A new post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post.png)
+![A new post](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/a-new-post.png)
 
 Feel free to change the values of `title` and `body`. Click send, and the following response should be returned back in the Response section.
 
-![A new post added](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post-added.png)
+![A new post added](/engineering-education/how-to-create-a-simple-rest-api-using-typescript-and-nodejs/a-new-post-added.png)
 
 ### Conclusion
 Typescript is an incredible programming language. It gives an advantage the modern features to check your code as you type them down. This way, you catch errors even before runtime. Typescript is also statically typed. This will increase your productive time as you type and read through your code. If you haven't started learning Typescript, be sure to read this [tutorial](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 
-That's all for this tutorial. Happy coding! 💻😀
+That's all for this tutorial. 
+
+Happy coding! 💻😀
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
