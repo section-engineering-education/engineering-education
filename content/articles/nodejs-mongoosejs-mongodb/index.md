@@ -38,7 +38,7 @@ Create a new file `server.js` for starting our Express.js server. Load `mongoose
 ```javascript
 const express = require("express");
 const mongoose = require("mongoose");
-const Router = require("./router")
+const Router = require("./routes")
 
 const app = express();
 
