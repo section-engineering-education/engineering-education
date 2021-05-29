@@ -1,6 +1,6 @@
 # How to handle Navigation in flutter
 ### Introduction
-One of the core concepts in all mobile applications is navigation, it allows a user to move between different pages. Navigating to different pages defines the workflow in any mobile application. This article will answer the question, how do we move between different pages? Using the flutter navigation and routing system. We will be building a simple app that will have an organized Navigation Named route with flutter.
+One of the core concepts in all mobile applications is navigation, it allows a user to move between different pages. Questions like how do we move between different pages will be answered in this article. We will be building a simple app that will have an organized Navigation Named route with flutter.
 ### Prerequisites
 Going through this guide Assumes you have an understanding of the basics of programming and a beginner-level knowledge of the flutter framework. the reader must be comfortable with creating a flutter project, basic flutter widgets, and layout in a flutter.
 ### Goal
@@ -13,11 +13,11 @@ How to conveniently handle navigation in flutter.
 In this tutorial, we will be programming with the dart programming language using the flutter framework. We will be using the VS Code text editor to write our code, But Android studio will work fine.
 
 ### Routes
-Generally, Routes can be seen as ways or courses taken in getting from a starting point to a destination.
+ The ways or course taken in getting from a point to a destination are called routes.
 Basically in app development routes can be seen as directions or paths a user takes within an app.
 
 ### Navigation
-Generally Navigation can be seen as finding a way to get to a particular place or destination.
+Generally, Navigation can be seen as finding a way to get to a particular place or destination.
 Navigation helps users to navigate or move across, into, and back out the pages or features of an app.
 
 In this tutorial, we are going to create a very simple and organized named route in flutter. To have everything organized we will structure our navigation route files in the project folder. 
@@ -27,7 +27,7 @@ Inside our views folder, we will create all the pages we will be using for our a
 
 ![Folder](/engineering-education/how-to-handle-navigation-in-flutter/image1.PNG)
 
-We will now go-ahead to create our pages,
+We will now go ahead to create our pages,
 Starting with the home, update the home.dart file with the code below.
 
 ```dart
@@ -51,133 +51,137 @@ class HomePage extends StatelessWidget {
 }
 
 ```
-the above code is going to show an appbar with the page title then a button to direct you to another page. The same thing is going to be done to the remaining pages.
+the above code is going to show an appbar with the page title then a button to direct you to another page. We will repeat the above code on all our pages.
 Update the login.dart file with the below code.
 
 ```dart
-    import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
+  import 'package:flutter_navigation/route/route.dart' as route;
 
-    class LoginPage extends StatelessWidget {
+  class LoginPage extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
-        return Scaffold(
+      return Scaffold(
         appBar: AppBar(
-            title: Text('Login Page'),
+          title: Text('Login Page'),
         ),
         body: Center(
-            child: ElevatedButton(
-            child: Text('Go to home page'),
-            onPressed: null,
-            ),
+          child: ElevatedButton(
+            child: Text("Go to home page"),
+            onPressed: () => Navigator.pushNamed(context, route.homePage),
+          ),
         ),
-        );
+      );
     }
-    }
+  }
 
 ```
 
 Update the register.dart file with the below code
 
 ```dart
-    import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
+  import 'package:flutter_navigation/route/route.dart' as route;
 
-    class RegisterPage extends StatelessWidget {
+  class RegisterPage extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
-        return Scaffold(
+      return Scaffold(
         appBar: AppBar(
-            title: Text('Register Page'),
+          title: Text('Register Page'),
         ),
         body: Center(
-            child: ElevatedButton(
-            child: Text('Go to Login page'),
-            onPressed: null,
-            ),
+          child: ElevatedButton(
+            child: Text("Go to Login page"),
+            onPressed: () => Navigator.pushNamed(context, route.loginPage),
+          ),
         ),
-        );
+      );
     }
-    }
+  }
 
 ```
 
 Update the home.dart page with code below
 ```dart
     import 'package:flutter/material.dart';
+import 'package:flutter_navigation/route/route.dart' as route;
 
-    class RegisterPage extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-        appBar: AppBar(
-            title: Text('Home Page'),
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Go to Login page."),
+          onPressed: () => Navigator.pushNamed(context, route.loginPage),
         ),
-        body: Center(
-            child: ElevatedButton(
-            child: Text('Go to Register page'),
-            onPressed: null,
-            ),
-        ),
-        );
-    }
-    }
+      ),
+    );
+  }
+}
 
 ```
 
 Next, we will create our navigation route. To do that let's update our route.dart file with the code below
 
 ```dart
-    import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
 
-    import 'package:tutorial_app/views/home.dart';
-    import 'package:tutorial_app/views/login.dart';
-    import 'package:tutorial_app/views/register.dart';
+  import 'package:flutter_navigation/views/home.dart';
+  import 'package:flutter_navigation/views/login.dart';
+  import 'package:flutter_navigation/views/register.dart';
 
-// route names
-const loginPage = 'login';
-const homePage = 'home';
-const registerPage = 'register';
+  // route names
+  const String loginPage = 'login';
+  const String homePage = 'home';
+  const String registerPage = 'register';
 
-// Control our page route flow
-Route<dynamic> controller(RouteSettings settings) {
-  switch (settings.name) {
-    case loginPage:
-      return MaterialPageRoute(builder: (context) => LoginPage());
-    case homePage:
-      return MaterialPageRoute(builder: (context) => HomePage());
-    case registerPage:
-      return MaterialPageRoute(builder: (context) => RegisterPage());
-    default:
-      throw ('This route name does not exist');
+  void login() {}
+
+  // controller function to control page route flow
+  Route<dynamic> controller(RouteSettings settings) {
+    switch (settings.name) {
+      case loginPage:
+        return MaterialPageRoute(builder: (context) => LoginPage());
+      case homePage:
+        return MaterialPageRoute(builder: (context) => HomePage());
+      case registerPage:
+        return MaterialPageRoute(builder: (context) => RegisterPage());
+      default:
+        throw ('this route name does not exist');
+    }
   }
-}
 
 ```
 we started by importing all pages from the views file in the project directory, make sure that instead of **tutorial_app** you use your own project name in the import. Next, we defined our route name as a constant variable, then declared a controller function to enable us to control our routing flow.\
-The controller function took an argument settings. The settings variable has two important parameters, settings.name, and settings.argument but we used only the setting.name parameter in this tutorial as seen in the switch case statement.\
+The controller function took an argument setting. The settings variable has two important parameters, settings.name, and settings.argument but we used only the setting.name parameter in this tutorial as seen in the switch case statement.\
 
 Next we will update our main.dart file with the code below
 ```dart
     import 'package:flutter/material.dart';
-    import 'route/route.dart' as route;
+import 'route/route.dart' as route;
 
-    void main() {
-    runApp(MyApp());
-    }
+void main() {
+  runApp(MyApp());
+}
 
-    class MyApp extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-        return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-            primarySwatch: Colors.blue,
-        ),
-        onGenerateRoute: route.controller,
-        initialRoute: route.loginPage,
-        );
-    }
-    }
-
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter navigation',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      onGenerateRoute: route.controller,
+      initialRoute: route.loginPage,
+    );
+  }
+}
 ```
 Here we imported out route.dart file as route then set the onGenerateRoute as our controller function and our initial route as our login page.
 
