@@ -1,34 +1,31 @@
-# How to handle Navigation in flutter
 ### Introduction
-One of the core concepts in all mobile applications is navigation, it allows a user to move between different pages. Questions like how do we move between different pages will be answered in this article. We will be building a simple app that will have an organized Navigation Named route with flutter.
-### Prerequisites
-Going through this guide Assumes you have an understanding of the basics of programming and a beginner-level knowledge of the flutter framework. the reader must be comfortable with creating a flutter project, basic flutter widgets, and layout in a flutter.
-### Goal
-After reading this article, the reader is expected to be familiar with:
-Navigation and routing
-Named route in flutter
-How to conveniently handle navigation in flutter.
+One of the core concepts in all mobile applications is navigation. It allows a user to move between different pages or activities. This article will show you how to navigate between different pages. We will be building a simple app that will have an organized Navigation Named route with flutter.
 
-### Requirements
-In this tutorial, we will be programming with the dart programming language using the flutter framework. We will be using the VS Code text editor to write our code, But Android studio will work fine.
+### Prerequisites
+This guide assumes that you have a basic understanding of the Flutter framework. You must be familiar with creating a Flutter project, basic Flutter widgets, and layouts. We will also be using Dart in this project. When it comes to the code editor, you can either use `Visual Studio Code` or `Android Studio`.
+
+### Goal
+This tutorial focuses on the following areas:
+- Navigation and routing
+- Named route in Flutter
 
 ### Routes
- The ways or course taken in getting from a point to a destination are called routes.
-Basically in app development routes can be seen as directions or paths a user takes within an app.
+The ways or course taken in getting from a point to a destination are called routes. In app development, routes can be seen as directions or paths that a user takes.
 
 ### Navigation
-Generally, Navigation can be seen as finding a way to get to a particular place or destination.
-Navigation helps users to navigate or move across, into, and back out the pages or features of an app.
+As stated, we are going to create a very simple and organized named route in Flutter. We will structure our navigation route files in the project folder. 
 
-In this tutorial, we are going to create a very simple and organized named route in flutter. To have everything organized we will structure our navigation route files in the project folder. 
-Inside our lib folder, we will create two folders with names route, and views. 
-Inside the route folder we will create a file name route.dart, this file will serve as a controller for managing the route.
-Inside our views folder, we will create all the pages we will be using for our application in our case we create the home, login, and register page.
+Inside our `lib` folder, we will create `two` folders; `route`, and `views`. 
 
-![Folder](/engineering-education/how-to-handle-navigation-in-flutter/image1.PNG)
+In the `route` folder, create a file named `route.dart`. This file will serve as a `controller` for managing the route.
 
-We will now go ahead to create our pages,
-Starting with the home, update the home.dart file with the code below.
+In the `views` folder, we will create all the `pages` we will be using for our application. This includes home, login, and register pages.
+
+![Folder](/engineering-education/how-to-handle-navigation-in-flutter/image1.png)
+
+Next, we will create our pages. 
+
+In the `views` folder, create a new file and name it `home.dart` then add the following code. 
 
 ```dart
 import 'package:flutter/material.dart';
@@ -51,8 +48,12 @@ class HomePage extends StatelessWidget {
 }
 
 ```
-the above code is going to show an appbar with the page title then a button to direct you to another page. We will repeat the above code on all our pages.
-Update the login.dart file with the below code.
+
+In the above code, we have included an appbar, page title, and button. We will direct the user to another page when the button is clicked. 
+
+We will repeat the above code in all our pages.
+
+Create a `login.dart` file and include the code below.
 
 ```dart
   import 'package:flutter/material.dart';
@@ -77,7 +78,7 @@ Update the login.dart file with the below code.
 
 ```
 
-Update the register.dart file with the below code
+Create a `register.dart` file and include the following code.
 
 ```dart
   import 'package:flutter/material.dart';
@@ -102,7 +103,8 @@ Update the register.dart file with the below code
 
 ```
 
-Update the home.dart page with code below
+Next, update the `home.dart` page with code below
+
 ```dart
     import 'package:flutter/material.dart';
 import 'package:flutter_navigation/route/route.dart' as route;
@@ -126,7 +128,7 @@ class HomePage extends StatelessWidget {
 
 ```
 
-Next, we will create our navigation route. To do that let's update our route.dart file with the code below
+Next, we will create our navigation route. To do that let's update our `route.dart` file with the code below
 
 ```dart
   import 'package:flutter/material.dart';
@@ -157,10 +159,15 @@ Next, we will create our navigation route. To do that let's update our route.dar
   }
 
 ```
-we started by importing all pages from the views file in the project directory, make sure that instead of **tutorial_app** you use your own project name in the import. Next, we defined our route name as a constant variable, then declared a controller function to enable us to control our routing flow.\
-The controller function took an argument setting. The settings variable has two important parameters, settings.name, and settings.argument but we used only the setting.name parameter in this tutorial as seen in the switch case statement.\
 
-Next we will update our main.dart file with the code below
+We started by importing all pages in the `views` folder. Make sure that you use your project name while importing the files. 
+
+Next, we defined our route name as a `constant` variable, then declared a `controller` function to enable us to control our routing flow.
+
+The `controller` function requires a setting to be passed in the arguments. The `settings` variable has two important parameters, `settings.name`, and `settings.argument`. We  will only use the `setting.name` parameter in this tutorials.
+
+Next we will update our `main.dart` file with the code below.
+
 ```dart
     import 'package:flutter/material.dart';
 import 'route/route.dart' as route;
@@ -183,10 +190,12 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-Here we imported out route.dart file as route then set the onGenerateRoute as our controller function and our initial route as our login page.
+Here we imported out `route.dart` file as `route` then set the `onGenerateRoute` as our `controller` function and our initial route as our login page.
 
-Finally, we will go to our pages and make a transition between each of them.\
-To that, we will import out route.dart file inside each page in the view folder the import will look the code below
+Finally, we will go to our pages and make a transition between each of them.
+
+To that, we will import out route.dart file inside each page in the view folder the import will look the code below.
+
 ```dart
     import 'package:tutorial_app/route/route.dart' as route;
 ```
@@ -209,19 +218,16 @@ We will save all files and reload the app. After reload we will be able to navig
 
 Our final app will look this;
 
-![Login Page](/engineering-education/how-to-handle-navigation-in-flutter/image2.PNG)
-![Home Page](/engineering-education/how-to-handle-navigation-in-flutter/image3.PNG)
-![Register Page](/engineering-education/how-to-handle-navigation-in-flutter/image1.PNG)
+![Login Page](/engineering-education/how-to-handle-navigation-in-flutter/image2.png)
+![Home Page](/engineering-education/how-to-handle-navigation-in-flutter/image3.png)
+![Register Page](/engineering-education/how-to-handle-navigation-in-flutter/image4.png)
 
 You will be able to navigate through all the pages.
 
-
 ### Conclusion
 
-We now have a simple app that has an organized navigation named route which enables us to move between different pages within our app. [Link to githup repo](https://github.com/wobin1/flutter-navigation)
+We now have a simple app that has an organized `Named Route` navigation. You can download the project from this [githup repo](https://github.com/wobin1/flutter-navigation). Using Named Routes helps us to reduce development time since it eliminates boiler plate code.
 
-To summarize, we learned a very simple and easy way of preventing our code from getting messy by having organized navigation named route.
- 
 ### Further reading
 - [Navigate with named route](https://flutter.dev/docs/cookbook/navigation/named-routes)
 - [Navigate to a new screen and back](https://flutter.dev/docs/cookbook/navigation/navigation-basics)
