@@ -110,11 +110,15 @@ Let's see how we can execute the above Typescript using Node.js. Run `tsc` to bu
 
 ![Compiled JavaScript](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/compiled-javascript.png)
 
-Now you should run `node dist/index.js` to print the results.
+Now run the below command to execute the code:
+
+```bash
+node dist/index.js
+``` 
 
 ![Results](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/sum-results.png)
 
-Running the above every single time in a development environment can be annoying. To make this process easier, you need to install a package called `ts-node`.
+Running the above commands every single time to compile and run in a development environment can be annoying. To make this process easier, you need to install a package called `ts-node`.
 
 ```bash
 npm install -D ts-node
