@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-eslint/
+url: /node-eslint/
 title: Linting in Node.js using ESLint
 description: Introduction to Linters this article will go over linters and how to use ESLint, a popular JavaScript Linter to maintain code quality in projects.
 author: saiharsha-balasubramaniam

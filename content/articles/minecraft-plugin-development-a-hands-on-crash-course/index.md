@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/minecraft-plugin-development-a-hands-on-crash-course/
+url: /minecraft-plugin-development-a-hands-on-crash-course/
 title: Minecraft Plugin Development - A Hands-On Crash Course
 description: This will be an interactive tutorial on the basics of coding our own Minecraft plugins.
 author: john-amiscaray

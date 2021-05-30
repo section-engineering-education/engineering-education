@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-firebase-in-flutter/
+url: /implementing-firebase-in-flutter/
 title: Firebase's Realtime Database in a Flutter Application
 description: In this tutorial we will focus on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. 
 author: michael-barasa

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/internet-inconsistencies-with-r-programming/
+url: /internet-inconsistencies-with-r-programming/
 title: Internet Inconsistencies with R-Programming
 description: This article will be an introduction to detecting inconsistences in the internet using R-programming. We will be using Kali Linux and R to detect the internet inconsistencies.
 author: priya-kalyanakrishnan

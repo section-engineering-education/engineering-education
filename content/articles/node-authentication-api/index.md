@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-authentication-api/
+url: /node-authentication-api/
 title: API Authentication with Node.js
 description: The article is about a basic authentication server with Node.js that gives API endpoints for authentication and provides a JSON web token with the login and signup requests.
 author: linus-muema

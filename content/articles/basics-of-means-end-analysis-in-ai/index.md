@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-means-end-analysis-in-ai/
+url: /basics-of-means-end-analysis-in-ai/
 title: Basics of Means End Analysis (MEA) in Artificial Intelligence (AI)
 description: This article explain will how MEA works and provides the algorithmic steps for implementing it. It will also provide an example of how a problem is solved using means end analysis. We will go over how this technique is used in real-life applications.
 author: grace-nkurikiyinka

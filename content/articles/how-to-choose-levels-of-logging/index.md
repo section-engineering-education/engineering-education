@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-choose-levels-of-logging/
+url: /how-to-choose-levels-of-logging/
 title: How to Choose Levels of Logging
 description: In this article we will discuss the various levels of logging, their functions and how to choose a logging level. We will also will give a historical background of logging levels and describes different logging levels.
 author: eric-kahuha

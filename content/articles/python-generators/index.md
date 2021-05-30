@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-generators/
+url: /python-generators/
 title: A Look at Python Generators
 description: In this article we will go over the concepts of generators in Python. Generators are useful when working with complex datasets and performing memory-intensive tasks.
 author: odhiambo-paul

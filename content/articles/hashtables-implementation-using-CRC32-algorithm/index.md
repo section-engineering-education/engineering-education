@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hashtables-implementation-using-crc32-algorithm/
+url: /hashtables-implementation-using-crc32-algorithm/
 title: Hash Table implementation using CRC32 algorithm
 description: In this article, we will learn how to create a hash table, go over the hashing process using a CRC32-algorithm, and implement essential hash functions. Our implementation will prove that hashing is an effective way to access data using a key-value pair easily.
 author: jerim-kaura

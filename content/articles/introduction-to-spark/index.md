@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-spark/
+url: /introduction-to-spark/
 title: Introduction to Apache Spark
 description: Introduction to the Apache Spark software library that is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 author: keerthi-v
@@ -39,7 +39,7 @@ MapReduce is implemented on top of HDFS, which has already divided the input fil
 - **Shuffle:** All data associated with the same output key are grouped into the same worker nodes by redistributing/shuffling them between nodes.
 - **Reduce:** Worker nodes process the output per key, in parallel.
 
-Example: ![img](./mapreduce.png)
+Example: ![img](/engineering-education./mapreduce.png)
 
 While Hadoop MapReduce was revolutionary for economically processing large datasets linearly, it doesn't perform if complicated or fast, real time processing is required. 
 
@@ -60,7 +60,7 @@ Therefore, as long as there is enough RAM, Spark can perform up to 100 times fas
 Cluster Manager, which allocates resources, is required for Spark. Spark supports Spark native cluster manager which can also run on a single machine, YARN, Kubernetes, or Mesos. It also needs a distributed storage system, and can work well most of the distributed storage systems present. It can also work on local file system on a single computer for development/testing purposes.
 
 Spark segregates its nodes into _Drivers_ and _Workers_. Driver nodes have a driver program which creates a `SparkContext` object. Worker nodes have processes that run computations and store data called _executors_. `SparkContext` connects to cluster manager and executors, and coordinates between them. `SparkContext` assigns _tasks_ to executors, to run in parallel. Driver schedules tasks on executors and sends application code.
-[![img](./spark.png)](http://spark.apache.org/docs/latest/cluster-overview.html)
+[![img](./spark.png)](/engineering-educationhttp://spark.apache.org/docs/latest/cluster-overview.html)
 
 
 

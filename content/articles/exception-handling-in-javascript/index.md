@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/exception-handling-in-javascript/
+url: /exception-handling-in-javascript/
 title: The Basics of Exception Handling in JavaScript
 description: In this article we will cover what exception handling is, the different types of errors, and the error objects in JavaScript. 
 author: judy-nduati

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-lambda-expressions-and-anonymous-functions/
+url: /working-with-lambda-expressions-and-anonymous-functions/
 title: Working with Lambda Expressions and Anonymous Functions
 description: Lambda expressions can be challenging to understand. This article aims to simplify the concept behind lambda expressions and how to use them.
 author: raphael-ndonga

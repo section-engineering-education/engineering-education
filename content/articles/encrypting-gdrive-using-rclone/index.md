@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/encrypting-gdrive-using-rclone/
+url: /encrypting-gdrive-using-rclone/
 title: How to Encrypt Google Drive using Rclone
 description: A how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.
 author: louise-findlay

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/assembly-part-2/
+url: /assembly-part-2/
 title: Assembly Part 2 - Let's Write Assembly!
 description: Learning assembly language, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/assembly-part-2/hero.jpg
     alt: computer image asm example
 ---
-In the [first part of this series](/engineering-education/assembly-part-1/), we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.
+In the [first part of this series](/assembly-part-1/), we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.
 <!--more-->
 
 **NOTE:** Unlike the first part, this part will only work on the Linux operating system. A virtual machine or WSL should also be able to run this.

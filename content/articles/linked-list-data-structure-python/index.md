@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/linked-list-data-structure-python/
+url: /linked-list-data-structure-python/
 title: Using the Linked List Data Structure in Python
 description: The linked list data structure is a linear data structure that is used to implement other data structures.
 author: saiharsha-balasubramaniam
@@ -26,10 +26,10 @@ Well, the Linked List is not as sophisticated as you think. It's extremely power
 
 *For more background on the different types of data structures in Python, check out the following articles:*
 
-- [Introduction](/engineering-education/data-structures-python-part-1/)
-- [List](/engineering-education/list-data-structure-python/)
-- [Stack](/engineering-education/stack-data-structure-python)
-- [Queue](/engineering-education/queue-data-structure-python/)
+- [Introduction](/data-structures-python-part-1/)
+- [List](/list-data-structure-python/)
+- [Stack](/stack-data-structure-python)
+- [Queue](/queue-data-structure-python/)
 
 ## Table of Contents
 

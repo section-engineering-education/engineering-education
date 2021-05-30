@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/complete-guide-on-installing-flask-for-beginners/
+url: /complete-guide-on-installing-flask-for-beginners/
 title: A Complete Guide on Installing Flask for Beginners
 description: This tutorial will walk you on how to install Flask, structure your web application professionally, and create a web page with Flask that prints hello world in your web browser. 
 author: adetu-ridwan

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-docker/
+url: /django-docker/
 title: How to Create Django Docker Images
 description: This tutorial will go over how to create Django Docker images. Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. 
 author: odhiambo-paul
@@ -21,10 +21,10 @@ images:
 2. Get Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 3. You will need [Docker](https://docs.docker.com/docker-for-windows/install/) installed on your computer.
 
-For Docker installation, setup, and a quick start, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
+For Docker installation, setup, and a quick start, visit [Getting started with Docker](/getting-started-with-docker/).
 
 ### Project setup
-We will be creating a Docker image for the Todo application that we created in [this](/engineering-education/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
+We will be creating a Docker image for the Todo application that we created in [this](/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
 
 Ensure `virtualenv` is installed on your computer by executing the command below.
 

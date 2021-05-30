@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/
+url: /understanding-tcp-ip-transport-layer-protocols/
 title: Understanding TCP/IP Transport Layer (Layer 3) protocols - TCP and UDP
 description: This tutorial will be a brief dive into the understanding the transport layer protocols like TCP and UDP. The transport layer is part of the TCP/IP networking model, sometimes called the networking architecture.
 author: rabo-james-bature

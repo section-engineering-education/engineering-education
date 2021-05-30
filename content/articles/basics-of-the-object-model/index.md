@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-the-object-model/
+url: /basics-of-the-object-model/
 title: The Basics of the Object Model
 description: This article will cover the basics of the object modeling. Object models refer to a visual representation of software or systems' objects, attributes, actions, and relationships.
 author: judy-nduati

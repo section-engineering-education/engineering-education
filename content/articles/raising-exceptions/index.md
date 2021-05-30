@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/raising-exceptions/
+url: /raising-exceptions/
 title: Raising Exceptions
 description: This article will go over how to manually throw exceptions in Python and use assertions for better debugging. Raising exceptions allows us to distinguish between regular events and something exceptional, such as errors.
 author: sophia-raji

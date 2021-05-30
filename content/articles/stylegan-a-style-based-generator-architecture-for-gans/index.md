@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/
+url: /stylegan-a-style-based-generator-architecture-for-gans/
 title: StyleGAN - A Style-Based Generator Architecture for Generative Adversarial Networks 
 description: Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. In this article, we will learn about the StyleGAN architecture in detail. 
 author: willies-ogola

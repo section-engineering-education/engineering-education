@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-wireless-networking/
+url: /introduction-to-wireless-networking/
 title: Introduction to Wireless Networking
 description: In this article, we discuss the defintiion of wireless networking, types of wireless networks, standards associated with wireless networks and benefits of wireless networking.
 author: miller-juma

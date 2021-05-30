@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-nodejs-good-for-online-store/
+url: /why-nodejs-good-for-online-store/
 title: Why Node.js is Good for Online Stores
 description: This article will explain why Node.js offers the perfect environment for developing e-commerce stores or applications. Node.js gives higher performance than other technologies. Node.js makes the development process faster and easier with ready-made frameworks.
 author: verah-ombui

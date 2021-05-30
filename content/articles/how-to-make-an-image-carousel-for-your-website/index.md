@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-make-an-image-carousel-for-your-website/
+url: /how-to-make-an-image-carousel-for-your-website/
 title: How to Make an Image Carousel Using Basic HTML, CSS, and JavaScript
 description: This tutorial will walk the reader through adding an image carousel to a website to improve the user interface. 
 author: eugiene-kanillar

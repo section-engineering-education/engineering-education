@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-ranges/
+url: /kotlin-ranges/
 title: Kotlin Range Operators
 description: This tutorial will go over the solutions offered by Kotlin ranges that help us perform specific actions quicker and easier.
 author: linus-muema

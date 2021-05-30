@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/software-testing-part2/
+url: /software-testing-part2/
 title: Introduction to Test-Driven Development
 description: This article will be an introduction to test driven development (TDD), how to write in TDD, the benefits of TDD, and the limitations of TDD. All the code samples in this tutorial are written in python.
 author: quadri-sheriff
@@ -16,7 +16,7 @@ images:
 ---
 In the first article of our software testing series, we talked about unit testing, how to run unit tests, their benefits, and limitations. 
 
-If you have not read the article and you would like to learn more about unit testing, check the article out the previous article called [Introduction to Unit Testing](/engineering-education/software-testing-part1).
+If you have not read the article and you would like to learn more about unit testing, check the article out the previous article called [Introduction to Unit Testing](/software-testing-part1).
 <!--more-->
 In this article, we are going to discuss Test-driven development (TDD), how to write in TDD, the benefits of TDD, and the limitations of TDD. All the code samples in this tutorial are written in Python and the tests are done with the pytest framework. Basic knowledge of Python or pytest will be nice to have but is not required to understand this article. 
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/setup-ssh-ubuntu-vm-aws/
+url: /setup-ssh-ubuntu-vm-aws/
 title: How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
 description: To check if the client is available on your Linux-based system, you will need to connect to an AWS account and a Linux machine or SSH client that you will use to SSH into the virtual machine.
 author: adrian-murage
@@ -18,7 +18,7 @@ Many modern web applications today are served from [the cloud](https://en.wikipe
 <!--more-->
 
 ### Introduction
-An [Introduction To Cloud Computing](/engineering-education/introduction-to-cloud-computing/) can be found on [Section's Engineering Education blog](/engineering-education/).
+An [Introduction To Cloud Computing](/introduction-to-cloud-computing/) can be found on [Section's Engineering Education blog](/).
 
 Web applications can be served on [Virtual Machines](https://en.wikipedia.org/wiki/Virtual_machine) provisioned on a public cloud. In this tutorial, we will cover exactly how to provision a Virtual Machine running Ubuntu 18.04 on AWS, and [SSH](https://en.wikipedia.org/wiki/Secure_Shell) into it.
 

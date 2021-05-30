@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-spring-data/
+url: /introduction-spring-data/
 title: Getting Started with Spring Data JPA in Kotlin
 description: This article takes the reader through creating a recipe application using spring data and Java Persistent API. JPA is a set of standards that define how Java objects are represented in a database.
 author: odhiambo-paul

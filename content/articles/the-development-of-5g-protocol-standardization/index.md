@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-development-of-5g-protocol-standardization/
+url: /the-development-of-5g-protocol-standardization/
 title: The Development of 5G Protocol Standardization
 description: This article will describe the 5G new technologies such as the NextGen core network and NR, defined in Rel-15 and Rel-16, the LTE evolution, 5G network model, and 5G security.
 author: ruth-mare

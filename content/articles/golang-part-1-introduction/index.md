@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/golang-part-1-introduction/
+url: /golang-part-1-introduction/
 title: Introduction to Golang
 description:  It covers the history of Golang, its purpose, where it is used, and how to install -  Go is  similar to C but with memory safety.
 author: adith-bharadwaj

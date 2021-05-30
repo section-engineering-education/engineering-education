@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/front-end-vs-back-end-in-web-development/
+url: /front-end-vs-back-end-in-web-development/
 title: Front End vs Back End in Web Development
 description: This article will be an introduction to front-end and back-end development. We will explore the difference between them, understand full-stack development and help you choose the right development path.
 author: onesmus-mbaabu

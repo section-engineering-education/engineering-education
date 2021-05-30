@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-classes-in-python-3.7+/
+url: /data-classes-in-python-3.7+/
 title: Data Classes in Python 3.7+
 description: In this tutorial, we will look at implementing data classes in Python 3.7. Data classes are classes that are declared using @dataclass decorator.
 author: oruko-pius

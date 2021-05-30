@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-mpls-and-mpls-vpn-technology/
+url: /introduction-to-mpls-and-mpls-vpn-technology/
 title: Introduction to MPLS and MPLS VPN technology
 description: This article briefly introduces Multi-protocol Label Switching(MPLS) and talks about how Virtual Private Networks running on MPLS cores offer reliability, security and enhanced performance.
 author: shreya-a-n

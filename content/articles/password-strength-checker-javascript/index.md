@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/password-strength-checker-javascript/
+url: /password-strength-checker-javascript/
 title: Password Strength Checker using Regular Expressions in JavaScript
 description: This tutorial will give readers a detailed guide on how to build a password strength checker using regular expressions in JavaScript.
 author: terrence-aluda

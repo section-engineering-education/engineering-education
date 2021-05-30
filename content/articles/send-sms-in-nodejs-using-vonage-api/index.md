@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/send-sms-in-nodejs-using-vonage-api/
+url: /send-sms-in-nodejs-using-vonage-api/
 title: How to Send SMS in Node.js using Vonage's SMS API
 description: This article provides a step by step guide on how to send SMS in Node.js using the Vonage API. Short text messages allow developers and companies to reach out to the target audience quickly. 
 author: mercy-meave

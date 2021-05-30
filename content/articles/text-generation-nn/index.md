@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/text-generation-nn/
+url: /text-generation-nn/
 title: Text Generation With RNN + TensorFlow
 description: Text generation with an RNN. Contents. Setup. Import TensorFlow and other libraries. Download the Shakespeare dataset. Process the text. Vectorize the text. The prediction task. Build The Model. Try the model. Train the model.
 author: rohan-reddy

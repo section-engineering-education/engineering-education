@@ -1,6 +1,6 @@
 ---
 title: Idris Olubisi
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/olanetsoft
 github: https://github.com/Olanetsoft
 linkedin: https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/

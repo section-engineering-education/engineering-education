@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/file-handling-in-cpp/
+url: /file-handling-in-cpp/
 title: File Handling in C++
 description: This article, will walk through how to implement the file handling function in C++, and we will cover the key working pointers of file handling.
 author: parampreet-singh

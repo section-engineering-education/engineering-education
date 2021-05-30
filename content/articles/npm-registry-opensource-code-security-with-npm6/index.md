@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/npm-registry-opensource-code-security-with-npm6/
+url: /npm-registry-opensource-code-security-with-npm6/
 title: Open-source packages & Code Security using NPM
 description: This article covers the NPM registry, open-source packages, and code security using npm6. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow.
 author: joseph-chege

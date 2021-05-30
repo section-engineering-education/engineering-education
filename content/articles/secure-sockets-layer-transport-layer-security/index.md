@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/secure-sockets-layer-transport-layer-security/
+url: /secure-sockets-layer-transport-layer-security/
 title: An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
 description: This article will be a brief introduction to the Secure Sockets Layer / Transport Layer Security Protocol. We would be discussing various SSL/TLS versions and how it works.
 author: kanishkvardhan-a-n

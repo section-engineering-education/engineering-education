@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/grid-search/
+url: /grid-search/
 title: Using Grid Search to Optimize Hyperparameters
 description: In this post, we dive into a key technique to optimize hyperparameters known as grid-search. We will define grid search and explore how it works through a simple Python example. 
 author: collins-ayuya
@@ -32,7 +32,7 @@ In this post, we will dive into a key technique to optimize hyperparameters know
 
 ### Prerequisites
 Before we begin it may be helpful to go over and install the following:
-• A section of this [article](/engineering-education/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
+• A section of this [article](/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
 
 • [VSCode](https://code.visualstudio.com/) will be my code editor, and we will be using Python as the language.
 

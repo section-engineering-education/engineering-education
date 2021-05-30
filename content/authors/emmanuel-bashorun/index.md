@@ -1,6 +1,6 @@
 ---
 title: Emmanuel Bashorun
-type: engineering-education/author
+type: authors
 github: https://github.com/Bashorun97/ 
 twitter: https://twitter.com/Bashorun__
 ---

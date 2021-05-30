@@ -1,6 +1,6 @@
 ---
 title: Onojakpor Ochuko
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/LordChuks3/
 linkedin: https://www.linkedin.com/in/ochuko-onojakpor-5a156515b/
 github: https://github.com/Chukslord1

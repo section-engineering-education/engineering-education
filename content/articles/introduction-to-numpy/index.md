@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-numpy/
+url: /introduction-to-numpy/
 title: A Not so Gentle Introduction to NumPy
 description: This article will go over NumPy (Numerical Python) which is a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
 author: adithi-giridharan

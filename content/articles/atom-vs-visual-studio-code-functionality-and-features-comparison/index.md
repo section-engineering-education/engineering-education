@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/
+url: /atom-vs-visual-studio-code-functionality-and-features-comparison/
 title: Atom vs. Visual Studio Code - Comparison on Functionalities and Features 
 description: This article will cover the functionalities and features of Atom and Visual Studio code editor.It will cover different plugins and components of both editors.
 author: judy-nduati

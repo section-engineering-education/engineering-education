@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/flask-crud-api/
+url: /flask-crud-api/
 title: How to create CRUD API in Flask
 description: This tutorial will go over how to create a CRUD API using Flask. Flask-SQLAlchemy is a Flask extension library that we will use to add SQLAlchemy to the Flask project.
 author: odhiambo-paul

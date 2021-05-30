@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nlp-transfer-learning/
+url: /nlp-transfer-learning/
 title: Introduction to Transfer Learning in NLP
 description: In this article we will be discussing the advances in the field of transfer learning for natural language processing (NLP). We will explain the concepts of the transformer and the attention mechanism.
 author: lalithnarayan-c

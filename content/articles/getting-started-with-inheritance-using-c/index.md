@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-inheritance-using-c/
+url: /getting-started-with-inheritance-using-c/
 title: Getting Started with Inheritance using C#
 description: This tutorial will go over the basics of Inheritance using C#, including the relationship between classes and how constructor are executed.
 author: mohamed-alghadban

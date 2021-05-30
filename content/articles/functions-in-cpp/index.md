@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/functions-in-cpp/
+url: /functions-in-cpp/
 title: Functions in C++
 description: Functions in C++, what are they? How do they work? In this article we will be going over one of the most fundamental idea in programming.
 author: parampreet-singh
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/functions-in-cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
-Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward.
+Let us continue from where we left off in the previous article [*Introduction to C++*](/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward.
 <!--more-->
 
 ### Functions in C++

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/secret-key-cryptography-in-js/
+url: /secret-key-cryptography-in-js/
 title: Implementing Secret Key Cryptography in JavaScript
 description: This article will serve as an introduction to secret key cryptography and go over some algorithms that use this method of secret key cryptography.
 author: kennedy-mwangi

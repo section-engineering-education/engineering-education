@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-grails-development-with-intellij/
+url: /introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
 description: This article will go over Grails, which is Java and Groovy framework used when developing agile web applications. Grails implements the MVCS (Model, View, and Controller) design pattern.
 author: sylvester-tamba

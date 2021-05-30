@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intersection-observer-api/
+url: /intersection-observer-api/
 title: How to use Intersection Observers in a Website
 description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading.
 author: wilson-gichuhi

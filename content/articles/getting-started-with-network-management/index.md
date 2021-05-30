@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-network-management/
+url: /getting-started-with-network-management/
 title: Introduction to Network Monitoring and Management
 description: In this article, we will look at an overview of Network Management System. We will discuss Network Management Requirements, Network Management Systems, and Simple Network Management protocols.
 author: miller-juma

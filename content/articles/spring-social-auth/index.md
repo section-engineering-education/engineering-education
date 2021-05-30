@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-social-auth/
+url: /spring-social-auth/
 title: Getting Started with Spring Boot Social Authentication
 description: This tutorial will go over Spring Boot social authentication with both google and github. Spring Boot social auth makes it possible for users to authenticate into Spring Boot applications using their existing social accounts.
 author: odhiambo-paul

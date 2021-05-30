@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/history-of-c-programming-language/
+url: /history-of-c-programming-language/
 title: A Brief History of C Programming
 description: There are many offshoots of the C programming language, including Objective-C, C++, and C#. None of these are the same language. Here's a brief history of C.
 author: gregory-manley

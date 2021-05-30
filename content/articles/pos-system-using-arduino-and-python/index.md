@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/pos-system-using-arduino-and-python/
+url: /pos-system-using-arduino-and-python/
 title: Point Of Sale Transaction System Using Arduino and Python
 description: Building a point of sale transaction system using Arduino and python using RFID-enabled ID cards to transact.
 author: lalithnarayan-c

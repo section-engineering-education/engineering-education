@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-datastore-in-kotlin/
+url: /getting-started-with-datastore-in-kotlin/
 title: Getting Started with Preference DataStore in Kotlin
 description: In this tutorial, we will learn how Jetpack DataStore works. We will work on how to change the UI mode of an app. Datastore uses Kotlin coroutines and flow to store data asynchronously, consistently, transactionally, and to handle data corruption.
 author: carol-musyoka

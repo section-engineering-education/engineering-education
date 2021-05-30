@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/document-object-model/
+url: /document-object-model/
 title: Understanding Document Object Model (DOM)
 description: Document object model (DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language). DOM is a programming API for HTML and XML documents.
 author: kanishkvardhan-a-n

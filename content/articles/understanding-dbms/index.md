@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-dbms/
+url: /understanding-dbms/
 title: Understanding Database Architecture and Models
 description: Learn the concepts of database and its three types of build architecture. Study the different aspects of the Hierarchical Data model, Network Data model, and Relational Data model.
 author: kanishkvardhan-a-n

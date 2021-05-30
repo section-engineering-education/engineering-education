@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ci-cd-setup-vue/
+url: /ci-cd-setup-vue/
 title: How to Set Up CI/CD in a Vue Project with Firebase Hosting and Github Actions
 description: In this tutorial, we will go over how to set up CI/CD in a Vue Project with Firebase Hosting and Github Actions. The main objective is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. 
 author: worawat-kaewsanmaung

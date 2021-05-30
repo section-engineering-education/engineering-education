@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/question-answering/
+url: /question-answering/
 title: An Introduction to Question Answering Systems
 description: Recently, I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in the vast field of Natural Language Processing.
 author: lalithnarayan-c
@@ -22,9 +22,9 @@ In this article, I have tried to put together the general trends in the field of
 ### Goal of Question Answering Systems
 What are the question answering systems trying to achieve? Given a question, should the system return the nearest answer? What if the answer is a mixture of multiple answers that it has been trained on? We are trying to build intelligent systems that don't just return documents related to the question, but extract relevant information within the documents and puts forth the detailed answer, like one that a human would have come up with. This task comes under the fields of [Information Retrieval ](https://nlp.stanford.edu/IR-book/pdf/01bool.pdf)(IR), [Information Extraction](https://www.ontotext.com/knowledgehub/fundamentals/information-extraction/) (IE), and Natural Language Processing (NLP).
 
-Google is a search engine. But, some questions are generated automatically while we search. This is due to the [knowledge graphs](/engineering-education/web-developers-guide-seo/#pagerank) that Google uses to represent vast amounts of data.
+Google is a search engine. But, some questions are generated automatically while we search. This is due to the [knowledge graphs](/web-developers-guide-seo/#pagerank) that Google uses to represent vast amounts of data.
 
-![google python_example](python_example.png)
+![google python_example](/engineering-educationpython_example.png)
 
 ### Structure of Question Answering System
 The design of a question answering system has specific vital components. There are three distinct modules used in a question-answering system:
@@ -34,7 +34,7 @@ The design of a question answering system has specific vital components. There a
 
 Each of these modules performs a different task to give relevant answers. The image below summarizes the entire architecture.
 
-![architecture of question answering system](architecture-qna.png)<br>
+![architecture of question answering system](/engineering-educationarchitecture-qna.png)<br>
 [*Image Source*](http://www.aliallam.net/upload/598575/documents/ECFF549932079694.pdf)
 
 ### Query Processing Module
@@ -64,7 +64,7 @@ The final module gets the list of concise documents filtered and ordered by the 
 
 
 ### Evaluating the answers obtained
-The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a detailed insight into evaluation metrics, refer to this [article](/engineering-education/evaluating-ml-model-performance/).
+The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a detailed insight into evaluation metrics, refer to this [article](/evaluating-ml-model-performance/).
 
 ### Applications
 The applications of such systems are varied and exciting. Currently used in commercial applications, these have a broad scope in almost every aspect. Humans are question-driven organisms, and therefore these systems are the easiest way for humans to interact with machines.

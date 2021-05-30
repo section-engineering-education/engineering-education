@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-rxjava/
+url: /android-rxjava/
 title: RxJava in Android
 description: This article will go through the basics of RxJava and some of its observables. Similar to other ReactiveX libraries, RxJava uses the observable pattern.
 author: linus-muema

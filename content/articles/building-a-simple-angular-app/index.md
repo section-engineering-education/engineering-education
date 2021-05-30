@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-simple-angular-app/
+url: /building-a-simple-angular-app/
 title: How to Build a Simple Angular SPA from Scratch
 description: This article will walk you on building a simple Angular application covering the basic and core Angular CLI concepts. The guide is handy for developers who are willing to have a hands-on experience, along with learning.
 author: mahantesh-r

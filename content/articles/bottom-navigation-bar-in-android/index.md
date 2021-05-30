@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/bottom-navigation-bar-in-android/
+url: /bottom-navigation-bar-in-android/
 title: Bottom Navigation Bar in Android Applications
 description: This article goes through how integrate a Bottom Navigation View using a Navigation Component to add the Navigation Views in an Android applications.
 author: briana-nzivu

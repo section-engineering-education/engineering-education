@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-theory-of-computation/
+url: /introduction-to-theory-of-computation/
 title: Introduction to the Theory of Computation
 description: This article will cover the basics of theory of computation and its role within the efficiency of computers such as the automata theory and complexity theory.
 author: elly-omondi

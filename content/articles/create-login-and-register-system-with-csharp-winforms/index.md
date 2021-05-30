@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-login-and-register-system-with-csharp-winforms/
+url: /create-login-and-register-system-with-csharp-winforms/
 title: Create Login and Register System with C# Winforms
 description: This article will go over how we can use C# to create a Desktop system with a login functionality. The object-oriented functionality can help in code re-use without doing much coding from scratch.
 author: sylvester-tamba

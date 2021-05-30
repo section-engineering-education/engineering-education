@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/develop-google-add-on/
+url: /develop-google-add-on/
 title: Developing a Google Add-on
 description: This article will go through creating a Google add-on by using apps script which is a javascript based scripting language created by google to make automation a reality and make third-party services and information available.
 author: peter-ndegwa

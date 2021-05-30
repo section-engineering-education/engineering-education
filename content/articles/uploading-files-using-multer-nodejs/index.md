@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/uploading-files-using-multer-nodejs/
+url: /uploading-files-using-multer-nodejs/
 title: Uploading Files Using Multer in a Node.js Application
 description: In this article, we will see how to use Multer to handle multipart/form-data using Node.js, Express and MongoDB.
 author: sarthak-duggal

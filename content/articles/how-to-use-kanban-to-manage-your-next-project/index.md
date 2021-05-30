@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-kanban-to-manage-your-next-project/
+url: /how-to-use-kanban-to-manage-your-next-project/
 title: How to Use Kanban to Manage Your Next Project
 description: This article will be an introduction to Kanban, which is an agile framework for project management. A Kanban board is made up of columns and Kanban cards. The columns represent different stages of a process or workflow. 
 author: benson-kariuki

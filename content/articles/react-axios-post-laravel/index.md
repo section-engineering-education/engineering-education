@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-axios-post-laravel/
+url: /react-axios-post-laravel/
 title: How to use React to Send a POST Request to a Laravel Application
 description: This tutorial will give readers a detailed guide on how to make a post request to a Laravel application using React and retrieve the response.
 author: terrence-aluda

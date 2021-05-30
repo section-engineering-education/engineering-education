@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tableau-vs-power-bi/
+url: /tableau-vs-power-bi/
 title: Data Collection with Tableau and Power BI
 description: This article will go over the two most commonly used data visualizations tools, Tableau and Power BI.
 author: eric-kahuha

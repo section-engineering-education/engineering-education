@@ -1,6 +1,6 @@
 ---
 title: Rahul Banerjee
-type: engineering-education/author
+type: authors
 linkedin: https://www.linkedin.com/in/rahulbanerjee2699/
 medium: https://rahul1999.medium.com/
 ---

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-prepare-for-coding-interviews/
+url: /how-to-prepare-for-coding-interviews/
 title: How to Prepare for Coding Interviews
 description: This article will help any developer (or future developers) prepare for coding interviews as they apply for jobs with software companies.
 author: adith-bharadwaj

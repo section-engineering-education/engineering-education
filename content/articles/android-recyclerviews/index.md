@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-recyclerviews/
+url: /android-recyclerviews/
 title: Basics of Android Recyclerviews
 description: This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView.
 author: linus-muema

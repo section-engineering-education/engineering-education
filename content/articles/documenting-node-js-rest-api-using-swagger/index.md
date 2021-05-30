@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/documenting-node-js-rest-api-using-swagger/
+url: /documenting-node-js-rest-api-using-swagger/
 title: Documenting a Node.js REST API using Swagger
 description: In this article, we will learn about API documentation using Swagger. Also, we will learn to document Node.js APIs using Swagger from scratch.
 author: kennedy-mwangi
@@ -28,7 +28,7 @@ To follow along in this article, it is essential to have the following:
 - Some basic knowledge of JavaScript.
 - Familiarity with building REST APIs using [Express.js](https://expressjs.com/). 
 
-If you are not familiar, you can reference this [article](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
+If you are not familiar, you can reference this [article](/restful-web-api-using-nodejs-postgressql-and-express/).
 
 ### Overview
 - [Introduction](#introduction)

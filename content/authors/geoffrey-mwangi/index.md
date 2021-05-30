@@ -1,6 +1,6 @@
 ---
 title: Geoffrey Mwangi
-type: engineering-education/author
+type: authors
 github: https://github.com/jeffmwangi442@gmail.com
 twitter: https://twitter.com/Jeff88295763
 ---

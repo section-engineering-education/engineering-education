@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dna-computing/
+url: /dna-computing/
 title: Introduction to DNA Computing and its Applications
 description: The article introduces to DNA computing, natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA.
 author: aditi-jayakumar

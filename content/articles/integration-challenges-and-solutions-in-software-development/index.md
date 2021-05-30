@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/integration-challenges-and-solutions-in-software-development/
+url: /integration-challenges-and-solutions-in-software-development/
 title: Integration Challenges and Solutions in Software Development
 description: This article will cover about system integration, why it is important, the challenges faced and success factors to be kept into consideration.
 author: judy-nduati

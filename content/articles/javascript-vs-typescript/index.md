@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-vs-typescript/
+url: /javascript-vs-typescript/
 title: JavaScript vs. TypeScript
 description: This article discusses the key differences and similarities between TypeScript and JavaScript. It also provides code snippets to show the distinct syntax in these two languages.
 author: catherine-macharia

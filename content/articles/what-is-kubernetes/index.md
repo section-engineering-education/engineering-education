@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-kubernetes/
+url: /what-is-kubernetes/
 title: What is Kubernetes?
 description: Kubernetes can expose a container using the DNS name or its own IP address. If traffic to a single container is high, Kubernetes is able to load balance and distribute the network traffic so that the deployment is stable.
 author: gregory-manley

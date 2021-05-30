@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-science-setup/
+url: /data-science-setup/
 title: Basic Setup for Data Science
 description: This article is an overview about how to setup your computer and install data science tools, by creating a basic Python setup using the Anaconda Package Manager.
 author: lalithnarayan-c

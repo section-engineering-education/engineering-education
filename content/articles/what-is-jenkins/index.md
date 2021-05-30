@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-jenkins/
+url: /what-is-jenkins/
 title: What is Jenkins
 description: Developers use Jenkins to continuously build and test software projects, making it easier to integrate changes to the project and making it easier for users to obtain a good build with no errors and bugs.
 author: judy-nduati

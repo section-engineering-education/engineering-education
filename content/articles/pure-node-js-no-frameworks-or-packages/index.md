@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/pure-node-js-no-frameworks-or-packages/
+url: /pure-node-js-no-frameworks-or-packages/
 title: Pure Node.js? Node.js without frameworks? An overview
 description: This article will help developers understand the nuances in using Node.js without frameworks. There is also a hands-on where we build a HTTP server with pure Node.js.
 author: joseph-chege
@@ -53,7 +53,7 @@ Node.js runtime [download metrics](https://nodejs.org/metrics/) speak for themse
 [Image Source](https://nodejs.org/metrics/)
 
 ### An overview
-One of the most influential [reasons for this popularity](/engineering-education/why-node-js-is-popular/) of Node.js is the availability of diverse open-source [frameworks and libraries](/engineering-education/most-useful-nodejs-packages/).
+One of the most influential [reasons for this popularity](/why-node-js-is-popular/) of Node.js is the availability of diverse open-source [frameworks and libraries](/most-useful-nodejs-packages/).
 
 A package (library) is code that has been written by someone else. It is developed to help the community solve day-to-day problems easily and quickly without re-writing code, especially for an extensive application.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dijkstra-python/
+url: /dijkstra-python/
 title: Understanding Dijkstra's Shortest Path Algorithm in Network Routing using Python
 description: This article will give the reader a guide on the Dijkstra algorithm. This is used to calculate and find the shortest path between nodes using the weights given in a graph. 
 author: terrence-aluda
@@ -19,7 +19,7 @@ In this article, we are going to talk about how Dijkstras algorithm finds the sh
 
 ### Dijkstra's Shortest Path Algorithm in Network routing using Python
 
-[Click here](/engineering-education/network-routing-final/) to view more about network routing.
+[Click here](/network-routing-final/) to view more about network routing.
 
 We will need a basic understanding of Python and its OOP concepts.
 

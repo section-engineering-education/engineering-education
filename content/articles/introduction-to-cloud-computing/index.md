@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-cloud-computing/
+url: /introduction-to-cloud-computing/
 title: Introduction To Cloud Computing
 description: Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.
 author: francisca-adekanye

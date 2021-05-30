@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/constraint-satisfaction-minizinc-gecode/
+url: /constraint-satisfaction-minizinc-gecode/
 title: Constraint-Satisfaction Problems with MiniZinc + Gecode
 description:  Constraint-Satisfaction Problems (CSPs) are a type of problem in computer science. In this tutorial, we will use MiniZinc and Gecode  to model and solve a simple graph-coloring problem. MiniZinc is a programming language built for CSPs. Gecode is a "solver" program for CSPs. 
 author: nicholas-kross

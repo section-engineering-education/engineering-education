@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-structures-python-part-1/
+url: /data-structures-python-part-1/
 title: Data Structures in Python - Part 1
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: saiharsha-balasubramaniam

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/microservices-and-nodejs/
+url: /microservices-and-nodejs/
 title: Is Node.js a Good Choice to Create an App based on Micro-services
 description: After reading this article, you should know the importance of using micro-services and the micro-services' key benefits when building apps. 
 author: pius-macharia

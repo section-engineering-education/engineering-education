@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/
+url: /implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/
 title: Implementing AWS S3 Functionalities on a Node.js GraphQL API
 description: In this article, we will cover the process of working with AWS S3 on a Node.js Graphql API.  Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application.
 author: kennedy-mwangi

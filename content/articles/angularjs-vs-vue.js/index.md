@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/angularjs-vs-vuejs/
+url: /angularjs-vs-vuejs/
 title: Key Features of Angular.js & Vue.js
 description:  This article analyzes the key features of Angular.js and Vue.js. These front-end and Javascript-based frameworks are popular among developers. Therefore, understanding their differences and similarity can help boost productivity.
 author: pius-macharia

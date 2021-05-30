@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/flask-database-integration-with-sqlalchemy/
+url: /flask-database-integration-with-sqlalchemy/
 title: Flask Database Integration with SQLAlchemy
 description: In this article we will understand how to work with SQLAlchemy in a Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
 author: adetu-ridwan
@@ -40,7 +40,7 @@ The prerequisites for this article includes understanding of the following conce
 - [Further reading](#further-reading)
 
 ### Setting up the work environment
-Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/engineering-education/implementing-flask-wtform/) which contains a registration form with all the routes setup.
+Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/implementing-flask-wtform/) which contains a registration form with all the routes setup.
 
 We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-sheet-advanced-features/
+url: /google-sheet-advanced-features/
 title: Leveraging Advanced Features in Google Sheets
 description: This article will go over advanced features in Google sheets, in an effort to help developers learn how to leverage these functionalities effectively.
 author: peter-ndegwa

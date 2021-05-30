@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-forms-in-php/
+url: /working-with-forms-in-php/
 title: Working with Forms in PHP
 description: This article will show you how to implement forms using PHP and HTML. The reader will also understand the GET and POST methods. POST creates data, GET reads data from the server, and PUT update data in the server.
 author: judy-nduati

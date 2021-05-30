@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-firebase-google-authentication/
+url: /react-native-firebase-google-authentication/
 title: Google OAuth using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to implement Google OAuth using Firebase in a Non-Expo React Native Application.
 author: mohan-raj

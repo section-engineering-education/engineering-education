@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-friend-functions-in-c++/
+url: /introduction-to-friend-functions-in-c++/
 title: Introduction to Friend Functions in C++
 description: In this article, we will learn about friend functions and friend class, what they and where they are used."Friendly" functions and classes reduce having the number of functions and help create programs that are maintainable.
 author: dawe-daniel

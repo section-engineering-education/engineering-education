@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-ransomware/
+url: /what-is-ransomware/
 title: What is Ransomware?
 description: Ransmoware is a type of cybersecurity threat, or malware (malicious software) that attackers use to hack into their victims' devices, and force them to pay a ransom.
 author: maitreyi-karanjkar
@@ -73,10 +73,10 @@ In the age of the Internet, keeping yourself safe from potential threats to your
 
 ### Additional Resources & Readings
 
-- [What is Anti-Malware?](/engineering-education/what-is-anti-virus-software/)
-- [What is a Denial of Service Attack?](/engineering-education/denial-of-service/)
-- [Man in the Middle Attacks Explained](/engineering-education/man-in-the-middle-attack/)
-- [Web Application Firewall vs Bot Mitigation Solutions](/engineering-education/web-application-firewall-bot-mitigation-comparison/)
+- [What is Anti-Malware?](/what-is-anti-virus-software/)
+- [What is a Denial of Service Attack?](/denial-of-service/)
+- [Man in the Middle Attacks Explained](/man-in-the-middle-attack/)
+- [Web Application Firewall vs Bot Mitigation Solutions](/web-application-firewall-bot-mitigation-comparison/)
 
 ---
 Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/lamp-stack/
+url: /lamp-stack/
 title: Understanding the LAMP Stack
 description: This article will be a brief introduction to the LAMP Stack. Solution stacks are a combination of software or application programs used to form a computing platform intended to provide web applications the appropriate framework.
 author: kanishkvardhan-a-n

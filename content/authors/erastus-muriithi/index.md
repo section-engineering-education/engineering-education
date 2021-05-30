@@ -1,6 +1,6 @@
 ---
 title: Erastus Muriithi
-type: engineering-education/author
+type: authors
 github: https://github.com/Erastuskanyatta/ 
 twitter: https://twitter.com/Erastus59017393
 ---

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-file-handling/
+url: /node-file-handling/
 title: File handling in Node.js
 description: Covering the basics of file handling in Node.js to perform various CRUD operations. The module offers functions to perform basic CRUD(Create, Read, Update, Delete) operations.
 author: lalithnarayan-c

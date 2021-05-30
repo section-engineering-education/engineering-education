@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/using-figma-for-web-design/
+url: /using-figma-for-web-design/
 title: Figma for Web Design - A Beginner's Guide
 description: This article takes the reader through an exciting web design tool known as figma. It provides a guide on how to get started with it. It also takes the reader through its user interface and some its basic tools for web design.
 author: onesmus-mbaabu

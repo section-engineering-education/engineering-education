@@ -1,6 +1,6 @@
 ---
 title: Carol Musyoka
-type: engineering-education/author
+type: authors
 github: https://github.com/carolinemusyoka
 ---
 

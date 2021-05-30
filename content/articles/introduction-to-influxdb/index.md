@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-influxdb/
+url: /introduction-to-influxdb/
 title: Introduction to InfluxDB
 description: In this tutorial, we will go through the basics of time-series data and the most popular time-series database called InfluxDB. We will install InfluxDB on our local system and execute an array of queries on time-series data.
 author: adith-bharadwaj

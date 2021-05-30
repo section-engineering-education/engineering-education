@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-data-mongodb/
+url: /spring-data-mongodb/
 title: Spring Data MongoDB
 description: This tutorial will walk us through how to create a Spring Boot CRUD API in Kotlin and MongoDB, add fields `dateCreated` and `lastModified` in the `Todo` data class.
 author: odhiambo-paul

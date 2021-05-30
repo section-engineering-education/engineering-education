@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-an-outlook-clone-using-react/
+url: /build-an-outlook-clone-using-react/
 title: Building An Outlook Clone with React
 description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c

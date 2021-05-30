@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-create-an-api-using-laravel/
+url: /how-to-create-an-api-using-laravel/
 title: How to Create an API using Laravel
 description: In this tutorial we will learn how to create a simple task manager API using Laravel which is a a vital PHP framework used in creating interactive websites and APIs.
 author: michael-barasa

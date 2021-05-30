@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-razorpay/
+url: /react-native-razorpay/
 title: React Native Razorpay Integration
 description: This tutorial provides readers with a detailed guide on how to implement Razorpay in a React Native application with the help of a Express server.
 author: mohan-raj
@@ -161,7 +161,7 @@ Let's start with building the server.
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/).
 > To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
-For extra information on how to create a [mock server with Postman](/engineering-education/guide-to-create-mock-server/) visit the link provided.
+For extra information on how to create a [mock server with Postman](/guide-to-create-mock-server/) visit the link provided.
 
 Let's install `Express` using `NPM`.
 

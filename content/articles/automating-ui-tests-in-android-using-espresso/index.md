@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/automating-ui-tests-in-android-using-espresso/
+url: /automating-ui-tests-in-android-using-espresso/
 title: Automating UI Tests in Android Using Espresso
 description: This article will cover how to automate UI tests in Andriod using the Espresso framework. Espresso is part of the `androidx` library which also observes the activity lifecycle. 
 author: peter-kayere
@@ -27,7 +27,7 @@ You just tell it the activity you want to open, which views you want to click on
 To follow through, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of the [Kotlin](/engineering-education/kotlin-collections/) programming language.
+  3. Have a basic understanding of the [Kotlin](/kotlin-collections/) programming language.
 
 Let's get started!
 

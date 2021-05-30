@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-ejs/
+url: /nodejs-ejs/
 title: Getting Started with EJS Templating Engine
 description: This tutorial will go over the basics of Node.js EJS templating engine and how to use it in Express.js application.
 author: quinter-awuor

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sql-user-defined-functions/
+url: /sql-user-defined-functions/
 title: Working with User-Defined Functions in SQL Server
 description: This tutorial will discuss user-defined functions in SQL Server. The concept of functions in SQL is similar to other programming languages like Python. The major difference being the way they are implemented.  
 author: rahul-banerjee

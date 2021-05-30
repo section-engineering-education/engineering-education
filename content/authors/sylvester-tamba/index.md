@@ -1,6 +1,6 @@
 ---
 title: Sylvester Tamba
-type: engineering-education/author
+type: authors
 linkedin: https://www.linkedin.com/in/sylvestertamba/
 twitter: https://twitter.com/sylvestertamba7
 ---

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-avl-trees/
+url: /introduction-to-avl-trees/
 title: Introduction to AVL trees
 description: This article will serve as an introduction to AVL trees or self-balancing trees which are an efficient data structures. They have efficient time and space complexities.
 author: prashanth-saravanan
@@ -19,7 +19,7 @@ Binary search trees (BSTs) are one of the most efficient data structures with th
 The [AVL tree](https://en.wikipedia.org/wiki/AVL_tree), named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm for the Organization of Information" has anchored its position as a need-to-understand data structure due to its performance increase from a regular BST.
 
 ### Prerequisites
-To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
+To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
 
 ### Table of contents
 1. [Introduction](#introduction)

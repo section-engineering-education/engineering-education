@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-differential-privacy/
+url: /understanding-differential-privacy/
 title: Understanding Differential Privacy
 description: Introduction to differential privacy and methods used to preserve privacy in databases and how it is used with machine learning, and deep learning.
 author: srishilesh-p-s

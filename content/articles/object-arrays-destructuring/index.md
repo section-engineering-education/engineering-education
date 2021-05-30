@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/object-arrays-destructuring/
+url: /object-arrays-destructuring/
 title: Objects, Arrays, and Destructuring in JavaScript
 description: This article goes over objects, arrays, and destructuring in JavaScript, to help developers have a better understanding of the basics.
 author: geoffrey-mungai

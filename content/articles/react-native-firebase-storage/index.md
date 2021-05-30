@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-firebase-storage/
+url: /react-native-firebase-storage/
 title: React Native Firebase Storage for Non-Expo Workflow
 description: This tutorial gives readers a detailed guide on how to implement firebase cloud storage for a Non-Expo React Native application.
 author: mohan-raj

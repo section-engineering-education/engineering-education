@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-scikit-learn-in-python/
+url: /introduction-to-scikit-learn-in-python/
 title: Introduction to Scikit Learn in Python
 description: This tutorial will be a brief dive into the multi-faceted world of scikit-learn in Python. SciKit-Learn is a vital library used to build statistical models to make predictions.
 author: prashanth-saravanan
@@ -22,7 +22,7 @@ A significant chunk of your work goes towards having the right approach towards 
 ### Prerequisites
 The reader is expected to understand basic libraries like NumPy and Pandas, machine learning, and machine learning algorithms, including linear and logistic regression, support vector machines and decision trees, and boosting algorithms. 
 
-For a better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](/engineering-education/introduction-to-numpy/), [Matplotlib](/engineering-education/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
+For a better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](/introduction-to-numpy/), [Matplotlib](/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
 
 ### Table of contents
 1. [Introduction](#introduction)

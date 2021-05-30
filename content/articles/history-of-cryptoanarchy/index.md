@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/history-of-cryptoanarchy/
+url: /history-of-cryptoanarchy/
 title: A History of Cryptoanarchy
 description: Overview of the anarchist philosophy and technologies predating Bitcoin.
 author: sophia-raji
@@ -19,7 +19,7 @@ As we have moved from the Industrial Age to the Information Age, questions arise
 
 This tension between the struggle for privacy and liberty has always been pitted against rigid government surveillance and control. Cryptoanarchy emerged in the 1980s and evolved to enable the [sovereign individual](https://medium.com/@RhysLindmark/the-sovereign-individual-book-review-takeaways-quotes-and-critique-ad9da55852b1) to use encryption themselves and create their own uncensorable and programmable digital tools and network.
 
-![Cryptoanarchy Logo](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)<br/>
+![Cryptoanarchy Logo](/engineering-educationhttps://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)<br/>
 *Image source: [cryptoanarchy](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)*
 
 ### Philosophy
@@ -45,7 +45,7 @@ May foresaw both an economic and social revolution, an anarchist dream of self-g
 
 ### Notable Cyberphunks
 
-![Richard Stallman with Julian Assange, who is holding an Edward Snowden Card](https://miro.medium.com/max/500/0*eT5LwH4rOihgpThm.jpeg)<br/>
+![Richard Stallman with Julian Assange, who is holding an Edward Snowden Card](/engineering-educationhttps://miro.medium.com/max/500/0*eT5LwH4rOihgpThm.jpeg)<br/>
 *Richard Stallman with Julian Assange, who is holding an Edward Snowden Card. (Image source: [The Ecuadorian Library](https://miro.medium.com/max/500/0*eT5LwH4rOihgpThm.jpeg))*
 
 - **Eric S. Raymond**: an open-source software advocate, [wrote extensively](http://www.catb.org/~esr/writings/anarchist.html) about libertarianism and anarchy: "The Founding Fathers did not intend for us to suffer under the weight of stifling regulatory bureaucracy, a redistributionist welfare state, and the IRS."
@@ -76,7 +76,7 @@ May foresaw both an economic and social revolution, an anarchist dream of self-g
 - Hal Finney's [Reusable Proof of Work](https://nakamotoinstitute.org/finney/rpow/index.html): allows for a limited form of token reuse
 - Stefan Brands' [electronic cash system](https://cryptome.org/jya/brands-dc.htm): designed core cryptographic protocols
 
-![Bitcoin](https://kryptomoney.com/wp-content/uploads/2018/07/KryptoMoney.com-BitMEX-Cryptocurrency-Exchange-I-billion-bitcoin-trading-volume-400x250.jpg)<br/>
+![Bitcoin](/engineering-educationhttps://kryptomoney.com/wp-content/uploads/2018/07/KryptoMoney.com-BitMEX-Cryptocurrency-Exchange-I-billion-bitcoin-trading-volume-400x250.jpg)<br/>
 *Image source: [kryptomoney](https://kryptomoney.com/wp-content/uploads/2018/07/KryptoMoney.com-BitMEX-Cryptocurrency-Exchange-I-billion-bitcoin-trading-volume-400x250.jpg)*
 
 ### Modern Cryptoanarchy

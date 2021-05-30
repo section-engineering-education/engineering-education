@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-array-operators-in-js/
+url: /how-to-use-array-operators-in-js/
 title: How to use Array Operators in JavaScript
 description: This article will be an introduction to JavaScript arrays, properties of JavaScript arrays, and operations executed on JavaScript arrays.
 author: kennedy-mwangi

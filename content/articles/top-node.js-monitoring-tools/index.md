@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/top-node.js-monitoring-tools/
+url: /top-node.js-monitoring-tools/
 title: Top Node.js Monitoring Tools
 description: This article shows you what you should monitor in Node.js and explains various Node.js monitoring tools. When it comes to application availability and other vital metrics.
 author: eric-kahuha

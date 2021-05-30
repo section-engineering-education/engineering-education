@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-nested-recycler-view/
+url: /android-nested-recycler-view/
 title: Introduction to Android Nested RecyclerView
 description: This article will explain how to implement a Nested RecyclerView. A RecyclerView widget recycles UI components. It creates components that allow users to scroll through the list. RecyclerView changes the UI components to the data they represent.
 author: joseph-chege

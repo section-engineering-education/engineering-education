@@ -33,3 +33,16 @@
 <!-- Sajari SDK -->	
 <script src="https://unpkg.com/@sajari/sdk-js/dist.iife/index.js"></script>	
 <!-- End Sajari SDK -->
+
+<script>
+  let TABNAB_DEBUG = false;
+    setInterval(() => {
+      document.querySelectorAll('a[target="_blank"]:not([rel="noopener"])').forEach((link)=>{
+      link.rel="noopener"
+      TABNAB_DEBUG && console.log(`mitigated tabnabbing for link ${link.href}`);
+      })
+    },300);
+</script>
+{{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
+{{ partial "head-scripts" }}
+{{- end -}}

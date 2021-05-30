@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-mongodb-custom-ranking/
+url: /nodejs-mongodb-custom-ranking/
 title: How to Perform Custom Ranking for Records from a MongoDB Database in Node.js
 description: This article will be an overview on custom ranking of data in MongoDB. We will learn how to create a database, collection, insert, and query the results.
 author: terrence-aluda

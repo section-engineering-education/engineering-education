@@ -1,6 +1,6 @@
 ---
 title: Peter Kayere
-type: engineering-education/author
+type: authors
 linkedIn: https://www.linkedin.com/in/peter-kayere-564b2718b/
 ---
 

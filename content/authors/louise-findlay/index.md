@@ -1,6 +1,6 @@
 ---
 title: Louise Findlay
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/louisefindlay23
 website: https://louisefindlay.com/
 ---

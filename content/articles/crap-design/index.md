@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/crap-design/
+url: /crap-design/
 title: From Crap Design to CRAP Design
 description: Even if you're a non-designer, you can still make a beautiful looking webpage for your project. Here are some tips to show you how- talking about contrast, repetition, alignment, proximity.
 author: mike-white

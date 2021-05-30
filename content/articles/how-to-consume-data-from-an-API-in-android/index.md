@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-consume-data-from-an-api-in-android/
+url: /how-to-consume-data-from-an-api-in-android/
 title: How To Consume Data From an API in Android
 description: This tutorial provides a guideline on how to make an API request based on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
 author: michael-barasa
@@ -129,7 +129,7 @@ In the above layout, we have assigned an ID to our components. We will use these
 The `EditText` widget allows us to get the user’s input. When clicked, the search button will initiate a request to the OMDb API. The `ImageView` and `TextViews` will display the data returned from the server.
 
 ### Step 5 - Connecting to the API
-This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 We need to do the following things in the `MainActivity`.
 - Initiate a `requestQueue`.

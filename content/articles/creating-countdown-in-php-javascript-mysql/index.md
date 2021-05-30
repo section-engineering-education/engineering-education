@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/creating-countdown-in-php-javascript-mysql/
+url: /creating-countdown-in-php-javascript-mysql/
 title: Creating Dynamic Countdown In PHP, JavaScript, and MySQL
 description: This tutorial will walk the reader through the process of creating a dynamic countdown. You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and a database.
 author: miller-juma

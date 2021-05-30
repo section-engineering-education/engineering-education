@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/bottom-sheet-dialogs-using-android-studio/
+url: /bottom-sheet-dialogs-using-android-studio/
 title: Implementing Bottom Sheet Dialogs using Android Studio
 description: This article explains how to use Bottom Sheets in Android. Bottom Sheets provide extra UI space, which can be used to present different details to the user.
 author: joseph-chege

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cross-platform-applications-electron/
+url: /cross-platform-applications-electron/
 title: Cross-Platform Applications With Electron
 description: Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologies.
 author: rohan-reddy

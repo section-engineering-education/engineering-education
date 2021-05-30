@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-hapi/
+url: /introduction-to-hapi/
 title: Introduction to hapi.js Framework
 description: Hapi.js(derived from Http-API) is an open-source Node.js framework used to build powerful and scalable web applications. We go over what is Hapi.js - what are some of its features.
 author: peter-kayere

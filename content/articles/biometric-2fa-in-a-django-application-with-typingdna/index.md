@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/biometric-2fa-in-a-django-application-with-typingdna/
+url: /biometric-2fa-in-a-django-application-with-typingdna/
 title: Getting Started with Biometric 2FA in a Django Application with TypingDNA
 description: This article will explain a step-by-step tutorial on how to implement two factor authentication in a Django application using the TypingDNA API.
 author: doro-onome

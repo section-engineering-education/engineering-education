@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/web-application-architectures-101/
+url: /web-application-architectures-101/
 title: Web Application Architectures - 101
 description: Web Apps are everywhere. Let's look into their structure and how they interact with various services - looking at server side rendering, client side rendering, and universal or isomorphic applications.
 author: saiharsha-balasubramaniam

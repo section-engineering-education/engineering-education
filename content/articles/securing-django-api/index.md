@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/securing-django-api/
+url: /securing-django-api/
 title: Introduction on Securing Django APIs
 description: This tutorial will be an introduction on how to secure a Django API, using token-based authentication and JavaScript web token to perform requests.
 author: odhiambo-paul
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/securing-django-api/hero.jpg
     alt: Django API web based tokens example image
 ---
-In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
+In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
 <!--more-->
 
 ### Token-based authentication
@@ -65,7 +65,7 @@ Run the command `./manage.py migrate` to create the table that will store the au
  ```
 
 ### Project setup
-Since this is a continuation of our previous [article](/engineering-education/django-crud-api/), we will be using the `Django_todo` application that we created there.
+Since this is a continuation of our previous [article](/django-crud-api/), we will be using the `Django_todo` application that we created there.
 
 If you don't have the application we created in the previous article, you can clone it from [here](https://github.com/paulodhiambo/django_todo/tree/master).
 

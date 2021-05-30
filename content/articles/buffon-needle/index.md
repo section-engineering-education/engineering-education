@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/buffon-needle/
+url: /buffon-needle/
 title: Simulation of Buffon's Needle problem in Python
 description: In this article we will speak about Buffon's Needle problem in Python by running a simulation and exploring pi.
 author: lalithnarayan-c

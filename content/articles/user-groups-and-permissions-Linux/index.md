@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/user-groups-and-permissions-linux/
+url: /user-groups-and-permissions-linux/
 title: User Groups and Permissions in Linux
 description: This tutorial will serve as an introduction to Linux operating system user groups and permissions. We will discuss how to create user groups and assign permissions to various user groups in Linux.  
 author: ahmad-mardeni

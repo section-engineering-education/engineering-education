@@ -1,6 +1,6 @@
 ---
 title: Eric Gacoki
-type: engineering-education/author
+type: authors
 interests: Android, Kotlin & Go-lang
 email: gacokieric@gmail.com
 twitter: https://twitter.com/eric_gacoki  

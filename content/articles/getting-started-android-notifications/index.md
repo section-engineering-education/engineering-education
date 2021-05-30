@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-android-notifications/
+url: /getting-started-android-notifications/
 title: Getting Started with Android Notifications
 description: This tutorial will go over how to create android notifications. A notification is a message widget that is displayed outside the application's user interface
 author: odhiambo-paul

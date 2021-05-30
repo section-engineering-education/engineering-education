@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-node-js-is-popular
+url: /why-node-js-is-popular
 title: Why is Node.js wildly popular among developers?
 description: Node.js is defined as a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js can be simply referred to as a technology. It is mainly used for backend operations.
 author: geoffrey-mungai

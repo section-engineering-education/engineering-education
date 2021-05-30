@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-web-assembly/
+url: /introduction-web-assembly/
 title: An Introduction to WebAssembly - Part 1
 description: WebAssembly is designed as an open standard that defines a portable binary-code format for programming languages, and a corresponding textual assembly language. Enabling deployment on the web for client and server applications.
 author: lucas-gompou

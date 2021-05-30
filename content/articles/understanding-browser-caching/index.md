@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-browser-caching/
+url: /understanding-browser-caching/
 title: Understanding Browser Caching
 description: In this article, we will explore the basics of browser caching in web browsing and understand how it works. We will go through the main headers used in caching and highlight some of the limitations of this phenomenon.  
 author: margret-munganyinka

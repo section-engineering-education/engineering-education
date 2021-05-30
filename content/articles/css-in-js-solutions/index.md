@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/css-in-js-solutions/
+url: /css-in-js-solutions/
 title: CSS in JS for Web Components
 description: This article will cover various techniques a developer can use in defining styles within app components during development than maintaining multiple stylesheets for a single app component.
 author: aransiola-ayodele

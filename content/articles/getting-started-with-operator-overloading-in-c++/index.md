@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-operator-overloading-in-c++/
+url: /getting-started-with-operator-overloading-in-c++/
 title: Getting Started with Operator Overloading in C++
 description:
 author: dawe-daniel

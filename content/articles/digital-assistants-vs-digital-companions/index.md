@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/digital-assistants-vs-digital-companions/
+url: /digital-assistants-vs-digital-companions/
 title: Digital Assistants vs. Digital Companions
 description: This article will provide an extensive comparison and discussion on the interrelatedness between digital assistants and digital companions. 
 author: pius-macharia

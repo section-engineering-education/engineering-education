@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/
+url: /how-to-use-javascript-arrow-functions-and-this-keyword/
 title: How To Use Javascript Arrow Functions & This Keyword
 description: This tutorial will explain Javascript arrow functions and the this keyword and how to use it
 author: joseph-chege
@@ -171,7 +171,7 @@ We can derive the following syntax.
 (paraml, param2) => {return expression; }
 ```
 
-Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
+Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
 
 They both need parentheses.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-knapsack-problem/
+url: /the-knapsack-problem/
 title: Breaking Down The Knapsack Problem
 description: In this article, we will discuss two approaches to the Knapsack Problem, including a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations.
 author: ian-jorquera

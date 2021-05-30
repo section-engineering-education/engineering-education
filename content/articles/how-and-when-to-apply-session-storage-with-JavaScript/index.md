@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/
+url: /how-and-when-to-apply-session-storage-with-javascript/
 title: How and When to Apply Session Storage with JavaScript
 description: In the guide, we will learn when it's best to use session storage and how to implement it using JavaScript. In this article we wil demonstrate how to store, retrieve, delete, and clear items in session storage.
 author: michael-barasa

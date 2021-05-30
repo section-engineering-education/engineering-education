@@ -1,6 +1,6 @@
 ---
 title: Caroline Gatwiri
-type: engineering-education/author
+type: authors
 github: https://github.com/twish-254
 ---
 

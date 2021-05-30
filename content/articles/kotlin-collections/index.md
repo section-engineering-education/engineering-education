@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-collections/
+url: /kotlin-collections/
 title: Kotlin Collections
 description: This article goes through some of the most common collections in Kotlin and addresses the common methods among those collections.
 author: linus-muema

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-python-package-and-publishing-on-pypi/
+url: /building-a-python-package-and-publishing-on-pypi/
 title: Building a Python Package and Publishing on PyPi (The Python Package Index)
 description: This tutorial will give readers a detailed guide on packages in Python and how to build one, it will take them through how to write their code, structure it, package it, and finally how to publish it on PyPI for their general python community.
 author: james-sandy

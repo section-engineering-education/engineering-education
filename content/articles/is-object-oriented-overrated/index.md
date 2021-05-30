@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/is-object-oriented-overrated/
+url: /is-object-oriented-overrated/
 title: Is Object-Oriented Overrated?
 description: Most professional programming languages are object-oriented, including Java and the C languages. Their key features such as encapsulation and inheritance have come under attack many times in recent memory. Object-oriented detractors claim these features are overcomplicated and make code writing and maintenance more difficult. 
 author: nicholas-kross

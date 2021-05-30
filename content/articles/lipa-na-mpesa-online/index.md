@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/lipa-na-mpesa-online/
+url: /lipa-na-mpesa-online/
 title: Implementing Lipa na Mpesa Online using Node.js
 description: In this article, we will cover an introduction to Mpesa, we will create a Safaricom developer account, an application, get an OAuth token, and implement Lipa na Mpesa online.
 author: kennedy-mwangi

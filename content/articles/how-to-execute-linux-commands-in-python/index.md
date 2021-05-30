@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-execute-linux-commands-in-python/
+url: /how-to-execute-linux-commands-in-python/
 title: How to Execute Linux Commands in Python
 description: This tutorial will serve and an introduction to Linux commands. We are going to look at how we can automate and run Linux commands in Python.
 author: adith-bharadwaj
@@ -26,7 +26,7 @@ Therefore, it is essential for anyone working in the tech industry to know how t
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- Basic understanding of [Linux](/engineering-education/what-is-linux/) and [shell scripting](/engineering-education/introduction-to-shell-scripting/).
+- Basic understanding of [Linux](/what-is-linux/) and [shell scripting](/introduction-to-shell-scripting/).
 - Basic programming skills in [Python](https://www.python.org/about/gettingstarted/).
 
 ### Introduction

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/breaking-down-load-balancers/
+url: /breaking-down-load-balancers/
 title: Breaking Down Load Balancers
 description: By adding a load balancer to a web application you not only increase the amount of servers that support a single application, but you also increase the reliably of an application with backups and fallback servers.
 author: gregory-manley

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-socket/
+url: /understanding-socket/
 title: Understanding Socket.io
 description: Websocket is a computer communication protocol that enables full-duplex communication between the client and server over a single TCP connection. Socket.io is event based meaning that the client and server communicate through events.
 author: peter-kayere

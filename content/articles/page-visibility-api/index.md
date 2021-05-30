@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/page-visibility-api/
+url: /page-visibility-api/
 title: Getting Started with the Page Visibility API
 description: In this tutorial, we will learn the basics of the Page visibility API by building a simple video playback controls webpage utilizing the HTML5 video tags.
 author: wilson-gichuhi

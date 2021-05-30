@@ -1,6 +1,6 @@
 ---
 title: Mackrine Awino
-type: engineering-education/author
+type: authors
 linkedin: https://www.linkedin.com/in/awino/
 github: https://github.com/awinomackrine
 ---

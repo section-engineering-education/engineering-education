@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-extensions/
+url: /kotlin-extensions/
 title: Kotlin Extensions
 description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
 author: linus-muema

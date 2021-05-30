@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-loss-functions-in-machine-learning/
+url: /understanding-loss-functions-in-machine-learning/
 title: Understanding Loss Functions in Machine Learning
 description: This tutorial will be a brief dive into the understanding loss functions used in Machine Learning.
 author: prashanth-saravanan
@@ -128,7 +128,7 @@ Pretty clever, isn't it?
 #### Categorical Cross Entropy Loss
 Categorical Cross Entropy loss is essentially Binary Cross Entropy Loss expanded to multiple classes. One requirement when categorical cross entropy loss function is used is that the labels should be [one-hot encoded](https://medium.com/@michaeldelsole/what-is-one-hot-encoding-and-how-to-do-it-f0ae272f1179). 
 
-This way, only one element will be non-zero as other elements in the vector would be multiplied by zero. This property is extended to an activation function called softmax, more of which can be found in [this article](/engineering-education/activation-functions/).
+This way, only one element will be non-zero as other elements in the vector would be multiplied by zero. This property is extended to an activation function called softmax, more of which can be found in [this article](/activation-functions/).
 
 #### Hinge Loss
 Another commonly used loss function for classification is the hinge loss. Hinge loss is primarily developed for [support vector machines](https://en.wikipedia.org/wiki/Support-vector_machine) for calculating the maximum margin from the hyperplane to the classes.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/all-about-fragments-in-android-applications/
+url: /all-about-fragments-in-android-applications/
 title: Introduction to Fragments in Android Applications
 description: In this tutorial we will learn how to add fragments and navigate across different screens in an Android application to enrich your UI design.
 author: michael-barasa

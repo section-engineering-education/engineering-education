@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nginx-reverse-proxy/
+url: /nginx-reverse-proxy/
 title: Deploying Multiple Applications to VMs with NGINX as a Reverse Proxy
 description: Introduction to the NGINX web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 author: harish-ramesh-babu
@@ -28,7 +28,7 @@ By the end of the article, you'll understand
 ### Reverse Proxy
 According to [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy), a reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server itself.    
 
-Refer to [this article](/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
+Refer to [this article](/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
 
 ### NGINX
 We will be using NGINX as a Reverse Proxy. According to [Wikipedia](https://en.wikipedia.org/wiki/Nginx),   

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-progressive-web-application/
+url: /react-progressive-web-application/
 title: React Progressive Web Application
 description: In this tutorial, we will create a Todo application using React and convert it into a Progressive Web Application using service workers.
 author: wilson-gichuhi

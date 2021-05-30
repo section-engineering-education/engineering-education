@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/uploading-images-to-cloudinary-from-django-application/
+url: /uploading-images-to-cloudinary-from-django-application/
 title: Uploading Images to Cloudinary from a Django Application
 description: This article will be an introduction to uploading images to Cloudinary using Django. We will be building a simple Django app to demonstrate how uploading images to Cloudinary is a better solution.
 author: shuaib-oseni

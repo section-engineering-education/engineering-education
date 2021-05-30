@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/open-source-licenses/
+url: /open-source-licenses/
 title: Guide to Open Source Licenses
 description: This article will go over some of the most commonly used open source license agreements. We will go over some of the most often used license agreements and understand their utilities.
 author: lalithnarayan-c

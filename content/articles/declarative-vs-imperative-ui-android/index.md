@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/declarative-vs-imperative-ui-android/
+url: /declarative-vs-imperative-ui-android/
 title: Declarative vs Imperative UI in Android
 description: In this article, we are going to have a look at the two types of UI frameworks, declarative and imperative. We will look at their difference and have a short introduction to jetpack compose.
 author: linus-muema

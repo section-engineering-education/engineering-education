@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/php-yii2-framework/
+url: /php-yii2-framework/
 title: Getting Started with Yii 2 PHP Framework
 description: A tutorial that provides a detailed guide on how to use the Yii 2 framework to create web applications. The Yii 2 framework supports the development of both the backend and the frontend.
 author: erastus-muriithi

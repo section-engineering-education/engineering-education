@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/guide-to-create-mock-server/
+url: /guide-to-create-mock-server/
 title: How to Create Your First Mock Server using Postman
 description: How to Create Your First Mock Server simulating APIs. It consists of all the extensive details, step-by-step instructions with images and resources links to help in the beginning of your open source deployment.
 author: aman-saxena

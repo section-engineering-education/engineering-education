@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sealed-classes-in-kotlin/
+url: /sealed-classes-in-kotlin/
 title: Sealed Classes in Kotlin
 description: This article provides a step by step guide on how to use Sealed classes in Kotlin. These classes are powerful and can save significant time.
 author: raphael-ndonga

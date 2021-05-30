@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/
+url: /how-to-fix-and-prevent-sql-injection-in-wordpress/
 title: How to fix and Prevent SQL Injection in WordPress
 description: Introduction to SQLi in WordPress, SQL injection (SQLi) is the injection or insertion of SQL code, usually via data transmitted from a website.
 author: james-kahwai

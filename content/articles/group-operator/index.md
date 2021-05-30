@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/group-operator-in-mongodb/
+url: /group-operator-in-mongodb/
 title: Group operator in MongoDB
 description:  This article will cover the $group operator in MongoDB, which is a part of aggregation, along with some use cases or applications and examples.
 author: harit-joshi

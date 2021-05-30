@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/speech-recognition-in-javascript/
+url: /speech-recognition-in-javascript/
 title: Speech Recognition Using the Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how to build a webpage that implements speech recognition using the Web Speech API in JavaScript.
 author: mohan-raj

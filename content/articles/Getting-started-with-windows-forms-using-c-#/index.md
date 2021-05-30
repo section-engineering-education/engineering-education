@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/
+url: /getting-started-with-windows-forms-using-c-sharp/
 title: Getting Started with Windows Forms Using C#
 description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
 author: mohamed-alghadban

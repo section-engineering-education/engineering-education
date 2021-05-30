@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/
+url: /dark-mode-for-react-app-using-context-api-and-hooks/
 title: Dark Mode for React Application using Context API and Hooks
 description: This tutorial gives readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
 author: mohan-raj

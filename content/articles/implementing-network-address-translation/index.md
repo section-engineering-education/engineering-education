@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-network-address-translation/
+url: /implementing-network-address-translation/
 title: Implementing Network Address Translation (NAT) on a Cisco Router
 description: This tutorial will be a brief dive into understanding the address translations like NAT and PAT. We will learn to implement static NAT, dynamic NAT and PAT.
 author: rabo-james-bature
@@ -132,7 +132,7 @@ Dynamic NAT reduces this problem to some degree. However, if a large percentage 
 
 To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP), User Datagram Protocol (UDP) and port numbers to transmit data.
 
-To learn more about TCP and UDP, it is highly recommeded to go over [this](/engineering-education/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
+To learn more about TCP and UDP, it is highly recommeded to go over [this](/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
 
 With these protocols, PAT can map multiple private addresses to one or more public addresses by ensuring that devices use different TCP and UDP port numbers for each session.
 

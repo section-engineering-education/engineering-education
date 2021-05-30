@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/batch-processing-vs-stream-processing/
+url: /batch-processing-vs-stream-processing/
 title: Batch Processing vs. Stream Processing
 description: This article will discuss batch processing and stream processing, their benefits, a few drawbacks, and some use cases.
 author: eric-kahuha

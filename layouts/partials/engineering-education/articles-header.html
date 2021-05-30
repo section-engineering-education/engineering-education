@@ -49,7 +49,7 @@
   <section >
     <div class="author-carousel">
       <div class="author-carousel-inner flex">
-        {{ range where .Site.Pages "Params.type" "engineering-education/author" | shuffle }}
+        {{ range where .Site.Pages "Params.type" "authors" | shuffle }}
         <a class="author-carousel-item link-basic" href="{{ .Permalink }}">
           <div class="author-carousel-item-wrap fill-white flex cta-shadow flex-column">
             {{ range .Pages }}
@@ -80,7 +80,7 @@
       <p class="xs-pb-10 text-18-medium text-testimonial">Topics</p>
       <ul class="list-unstyled list-flex flex-wrap data-filter-group">
         {{ $currentPage := . }}
-        <li class="xs-pr-20"><a href="/engineering-education" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        <li class="xs-pr-20"><a href="/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
         {{ $baseurl := .Site.BaseURL }}
 
         {{ range .Site.Taxonomies.topics }}

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ten-powerful-bi-tools-for-data-analysts/
+url: /ten-powerful-bi-tools-for-data-analysts/
 title: 10 Powerful Business Intelligence Tools for Data Analysts
 description: This article will discuss the most powerful Business Intelligence tools for Data Analysts and discuss the pricing and deployment models for them.
 author: onesmus-mbaabu
@@ -140,7 +140,7 @@ This is an excel-based BI tool that enables users to manage spreadsheets. It is 
 [Image Source: Software Advice](https://www.softwareadvice.com/imglib/products/screenshots/clear-analytics-3116-1536250913-large.png?v=ebadb284e4bd8a1fd7087825e3e4b86f)
   
 #### 7. Domo
-This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL (Extract, Transform, and Load), [data warehouse, and data lakes](/engineering-education/data-lake-vs-data-warehouse-vs-database/). ETL is a tool that extracts data from various sources, and transforms it into various forms before it is loaded into a data warehouse.
+This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL (Extract, Transform, and Load), [data warehouse, and data lakes](/data-lake-vs-data-warehouse-vs-database/). ETL is a tool that extracts data from various sources, and transforms it into various forms before it is loaded into a data warehouse.
 
 ##### Key features
 - It can visualize data in maps, charts, and graphs.

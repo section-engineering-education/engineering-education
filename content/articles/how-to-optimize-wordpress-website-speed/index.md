@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-optimize-wordpress-website-speed/
+url: /how-to-optimize-wordpress-website-speed/
 title: How to Optimize WordPress Website Speed
 description: This article is about WordPress speed optimization and the many plugins available to help in website speed optimization.
 author: benson-kariuki
@@ -122,7 +122,7 @@ To optimize the database, you can use optimization plugins. It is advisable to b
 
 Some of the plugins available for database optimization are [WP-Optimize](https://wordpress.org/plugins/wp-optimize/) and [WP-Sweep](https://wordpress.org/plugins/wp-sweep/).
 
-![](wp-optimize-database-optimization.jpeg)
+![](/engineering-educationwp-optimize-database-optimization.jpeg)
 
 See the screenshot above of WP-Optimize 3.1.2 free version database optimization
 
@@ -142,11 +142,11 @@ WordPress has a very good feature called post revisions. Whenever you update a p
 
 Overtime, post revisions can increase to a point where they can slow down your WordPress database. In the screenshot below, post revisions have accumulated to 93.
 
-![WordPress post revisions screenshot](wordpress-post-revisions-screenshot.jpeg)
+![WordPress post revisions screenshot](/engineering-educationwordpress-post-revisions-screenshot.jpeg)
 
 The solution for post revisions is to clean them from the database. You can use the WP-Optimize plugin to clean post revisions as shown in the screenshot below.
 
-![WP-Optimize post revisions cleanup](wp-optimize-post-revisions-cleanup.jpeg)
+![WP-Optimize post revisions cleanup](/engineering-educationwp-optimize-post-revisions-cleanup.jpeg)
 
 See the screenshot above of WP-Optimize 3.1.2 deleting post revisions
 
@@ -158,7 +158,7 @@ Set the post revisions limit to a number of your choice. A maximum of four revis
 define('WP_POST_REVISIONS', 4 )
 ```
 
-![WordPress wp-config editing](wp-config.php-edit.jpg)
+![WordPress wp-config editing](/engineering-educationwp-config.php-edit.jpg)
 
 #### Update PHP to the Latest Version
 WordPress is mainly written in PHP which is an open-source server-side scripting language. PHP is installed on your hosting server. PHP is undergoing active development to improve performance, fix bugs, enhance security, and other features.

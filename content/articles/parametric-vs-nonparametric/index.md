@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/parametric-vs-nonparametric/
+url: /parametric-vs-nonparametric/
 title: Parametric versus Non-Parametric Models
 description: This article will be an introduction to parametric and non-parametric models  A machine learning model with a set number of parameters is a parametric model. Those without a set number of parameters are referred to as non-parametric. 
 author: collins-ayuya
@@ -24,7 +24,7 @@ To tune the behavior of models for a given task, these models are parameterized.
 4. Parametric vs. Non-parametric models
 
 ### Prerequisites
-I would recommend this article on [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
+I would recommend this article on [supervised learning algorithms](/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
 
 ### Parameters
 A parameter can be described as a configuration variable that is intrinsic to the model. Model parameters are usually not set manually. Parameters are often mistaken for hyperparameters. Hyperparameters are configuration variables that are external to the model. Unlike parameters, hyperparameters are manually set.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hash-tables-in-javascript/
+url: /hash-tables-in-javascript/
 title: Hash Tables in JavaScript
 description: This article will go through creating and implementing hash tables in JavaScript. Hash tables are powerful data structures in the field of computing. They enable developers to find data quickly using keys.
 author: judy-nduati

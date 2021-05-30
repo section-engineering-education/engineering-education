@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/installing-k8-ubuntu-server/
+url: /installing-k8-ubuntu-server/
 title: How to Install a Single Node Kubernetes Cluster on Ubuntu
 description: Kubernetes is not limited to being installed only on Ubuntu server. It can be installed on Linux, Windows, and even macOS.
 author: gregory-manley
@@ -18,7 +18,7 @@ images:
 Kubernetes, or K8s, is an open-source system that is used to automate deployment, scaling and management of containerized applications. It provides a framework to run distributed systems, taking care of scaling and failover for your applications.
 <!--more-->
 
-In a recent article, I explained [what Kubernetes is](/engineering-education/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
+In a recent article, I explained [what Kubernetes is](/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
 
 We will be using MicroK8s for this installation. MicroK8s is a CNCF certified upstream Kubernetes deployment that is designed
 to run entirely on a workstation or edge device. All K8s services are run natively.
@@ -97,7 +97,7 @@ Now, on your other computer, open a browser and let's load the Grafana endpoint:
 
 You will be asked for that username and password that we saved previously. Once authenticated, you should see something like this:
 
-![grafana endpoint](/images/education/installing-k8-ubuntu/grafana.png)
+![grafana endpoint](/engineering-education/images/education/installing-k8-ubuntu/grafana.png)
 
 Now that we have the dashboard up and running, we'll use an [available image of the microbot app](https://github.com/dontrebootme/docker-microbot) to create an actual deployment on our local cluster. Run:
 ~~~
@@ -194,7 +194,7 @@ curl http://localhost:31848
 
 Externally, you can go back to the browser where you previously loaded the Grafana dashboard and access this service as well. *http://<YOUR_INTERNAL_IP>:<YOUR_PORT> (in my case: `http://192.168.1.45:31848`). NodePort is what exposes the service externally.
 
-![](/images/education/installing-k8-ubuntu/microbot.png)
+![](/engineering-education/images/education/installing-k8-ubuntu/microbot.png)
 
 MicroK8s will run until it is stopped. If you wish stop MicroK8s at anytime, run:
 ~~~

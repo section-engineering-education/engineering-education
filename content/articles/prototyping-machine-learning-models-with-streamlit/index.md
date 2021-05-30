@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/prototyping-machine-learning-models-with-streamlit/
+url: /prototyping-machine-learning-models-with-streamlit/
 title: Prototyping Machine learning models with Streamlit
 description: Most times machine learning engineers build models and will need to build a web or mobile app to prototype their models which is another stress on its own, this tutorial will show readers how to quickly prototype their ML models on web applications easily.
 author: james-sandy

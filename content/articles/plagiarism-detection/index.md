@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/plagiarism-detection/
+url: /plagiarism-detection/
 title: Automated Plagiarism Detection Bot
 description: Plagiarism Detection is how one can compare two documents and find out how similar they are. This article explores one of the more basic algorithms in finding the similarity of a document.
 author: earl-potters

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/evaluating-ml-model-performance/
+url: /evaluating-ml-model-performance/
 title: Evaluating Machine Learning Model Performance
 description: This article will be going over machine learning evaluation techniques and metrics used to test overall model performance such as holdout and cross validation.
 author: collins-ayuya
@@ -26,7 +26,7 @@ We expect machine learning models to provide accurate and trustworthy prediction
 4. Regression model evaluation metrics.
 
 ### Prerequisites
-A general understanding of machine learning is required to follow along. For an introduction or a refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/).
+A general understanding of machine learning is required to follow along. For an introduction or a refresher on some basic machine learning concepts check out this [article](/supervised-learning-algorithms/).
 
 ### Useful terms
 **Training set** – according to this insightful article on [model evaluation](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f), this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.

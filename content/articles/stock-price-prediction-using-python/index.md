@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/stock-price-prediction-using-python/
+url: /stock-price-prediction-using-python/
 title: Building a Stock Price Predictor Using Python
 description: In this tutorial, we will build an AI neural network model in Python to predict stock prices. Using Long short-term memory (LSTM) artificial recurrent neural network (RNN) architecture used in time series analysis.
 author: ahmad-mardeni
@@ -16,7 +16,7 @@ images:
 ---
 In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically, we will work with the **Tesla** stock, hoping that we can make Elon Musk happy along the way.
 <!--more-->
-If you are a beginner, it would be wise to check out [this article](/engineering-education/introduction-to-neural-networks/) about neural networks. 
+If you are a beginner, it would be wise to check out [this article](/introduction-to-neural-networks/) about neural networks. 
 
 To get the most out of this tutorial, it would be helpful to have the following prerequisites.
 

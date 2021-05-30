@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-animation-counter/
+url: /javascript-animation-counter/
 title: Creating an Animated Counter in JavaScript
 description: This article gives the reader a guide on how to create an animated counter in a web application using JavaScript. We will do this with a few JavaScript helper methods and by setting the duration for the animation.
 author: terrence-aluda

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-node-docker/
+url: /debug-node-docker/
 title: Debugging a Node.js app running in Docker
 description: This article is about debugging a Node.js app running in a Docker container. You need to add a debug script in your package.json to enable debugging in your Node.js app.
 author: geoffrey-mungai
@@ -18,24 +18,24 @@ Docker is one of the tools used by many developers today. You do not need to hav
 <!--more-->
 
 ### Introduction
-[Docker](https://www.docker.com/) is used to build, run, and deploy apps in [containers](/engineering-education/history-of-container-technology/). This way, all libraries, and dependencies can be packaged and deployed as a single package. Now you don't need to install Node.js to run or build a Node.js app. You just need Docker.
+[Docker](https://www.docker.com/) is used to build, run, and deploy apps in [containers](/history-of-container-technology/). This way, all libraries, and dependencies can be packaged and deployed as a single package. Now you don't need to install Node.js to run or build a Node.js app. You just need Docker.
 
 If you have ever worked on a project in a team, you're *probably* familiar with the "It works on my machine" problem. Docker took care of that too.
 
  If you are new to Docker, I recommend you go through the following articles. They will give you better understanding on Docker.
 
- 1. [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+ 1. [A Brief History of Container Technology](/history-of-container-technology/)
 
- 2. [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+ 2. [Understanding Docker Concepts](/docker-concepts/)
 
- 3. [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+ 3. [Getting Started with Docker](/getting-started-with-docker/)
 
- 4. [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+ 4. [Building a Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
 
 ### Prerequisites
 To follow along with this tutorial, you will need the following:
 
-- A Docker [installation](https://docs.docker.com/engine/install/) on your machine. For Linux users, you can install using [this](/engineering-education/getting-started-with-docker/) guide.
+- A Docker [installation](https://docs.docker.com/engine/install/) on your machine. For Linux users, you can install using [this](/getting-started-with-docker/) guide.
 - [Visual Studio Code](https://code.visualstudio.com/download) and/or a chromium-based browser .eg. [Google Chrome](https://www.google.com/chrome/).
 - Basic knowledge of Node.js and Docker concepts.
 
@@ -125,7 +125,7 @@ The above command runs your container in detached mode (`-d`) and maps remote po
 
 > Port 9229 is the default debug port for Node.js but you can change it if necessary.
 
-Finish up debugging your app in Chrome DevTools [here](/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools).
+Finish up debugging your app in Chrome DevTools [here](/debug-node-devtools/#step-2----open-chrome-devtools).
 
 ### Step 5 -- Debugging with VS Code
 To debug your app in VS Code, make sure **Node: Auto Attach** setting is on. It enables VS Code to connect to your running app. To enable it, open the **Command Pallete**(`Ctrl+Shift+P`) and search for `Debug: Toggle Auto Attach`.

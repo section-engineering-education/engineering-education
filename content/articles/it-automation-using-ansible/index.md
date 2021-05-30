@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/it-automation-using-ansible/
+url: /it-automation-using-ansible/
 title: Automation Using Ansible
 description: IT automation using Ansible, article covers the basics of IT automation, how it is used, and why it is important. It also covers the basics of Ansible with the relevant code.
 author: adith-bharadwaj
