@@ -33,11 +33,12 @@ This article will share how to implement Lottie animations in onboarding screens
 
   
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Sw6gz27DLFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
 
   
 
-Since the project is a bit wide, we shall only go through all the basics of Lottie animations on the app. You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link to follow along.
+Since the project is a bit wide, we shall only go through all the basics of Lottie animations on the app. You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link to follow along or download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
 
   
 
@@ -373,7 +374,10 @@ you might come across a lint error in the adapter,on this line,`root.img.setAnim
 
 # Output
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/Sw6gz27DLFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
+
+ You can download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true)
+
 
   
 
