@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/network-management-with-cdp-lldp/
 title: Networking Management Using CDP and LLDP Protocols.
-description: The objective of this article is to help one understand etherchannel technology and how it is configured  using a packet tracer.
+description: The objective of this article is to help one understand what is network management, protocols involved and how to configure the protocols using a packet tracer or any other network simulator tool.
 author: atonya-dennis
 date: 2021-05-29T00:00:00-09:00
 topics: [Networking]
