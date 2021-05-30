@@ -1,10 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/createjs-guide/
 title: Creating Dynamic Web Content With CreateJS
-
 description: A guide on creating dynamic content using CreateJS, a suite of Javascript libraries. These libraries allow for canvas manipulation, animations, sounds, and much more.
+author: john-amiscaray
+date: 2021-05-30T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/createjs-guide/hero.jpg
+    alt: CreateJS example image
+---
 
 ### Introduction
 
 The Web has evolved a lot, it nowadays allows for more lively content. In particular, HTML5 introduced new features for dynamic graphics and sounds. These have made it easier to create cool content from info-graphics to mini-games. One tool to help you do this is CreateJS.
+
+<!--more-->
 
 CreateJS is a suite of Javascript libraries to help you create interactive content. It allows for easy canvas manipulation, animations, sound effects, and asset loading. CreateJS is made up of four libraries, EaselJS, TweenJS, SoundJS, and PreloadJS. You can use them independently or in combination. In this guide, we will be going over some of the key features of each of these libraries so you can use them to create fun web content.
 
