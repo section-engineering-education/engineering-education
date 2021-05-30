@@ -166,7 +166,9 @@ const generatebtn = document.getElementById("generate");
 const form = document.getElementById("passwordGeneratorForm");
 ```
 
-Next, let's work on the character codes you will use to form the randomly generated password. Below is the code to create character codes for the application. For the uppercase codes, you will pass the low of 65, which is the value of uppercase A and the high value of 90 also, the uppercase Z you can recall from the ASCII table. You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table. This will then make you use the `.concat function` to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. For the symbols, they start at 33 and increase up to 47 and then continue at 58.
+Next, let's work on the character codes that we'll use to form the randomly generated password. Below is the code to create character codes for the application. 
+
+For the uppercase codes, you will pass the low of 65, which is the value of uppercase A and the high value of 90, the uppercase Z as you can recall from the ASCII table. You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table. We should make you use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. For the symbols, they start at 33 and increase up to 47 and then continue at 58.
 
 ```JavaScript
 // Generating Character Codes For The Application
@@ -179,7 +181,7 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(123, 126));
 ```
 
-The next thing you want to do is build the `copy` button and copy to clipboard functionality. You can achieve this by creating a `textarea` element, sets its value to the value you want to copy, append the `textarea` to the HTML document, select the value by using the `select()` method, execute the `exeCommand(copy)` method and remove the `textarea`. Now you are going to start with a `copybtnDOM` button. We will listen to the click event on the “copybtnDOM” element to the function when the event is triggered. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript. Below are the codes for building that functionality, and I will explain every syntax.
+The next thing you want to do is build the `copy` button and copy to clipboard functionality. We will listen to the click event on the “copybtnDOM” element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
 
 ```JavaScript
 // Copy Password Button
@@ -199,10 +201,17 @@ copybtnDOM.addEventListener("click", () => {
 });
 ```
 
-In the above code for `const textarea=document.createElement(‘textarea’)`, you just created a variable that will store any value that has to be copied, and you can get the value using the `resultDOM.innerText` because the text inside the `resultDOM` holds your randomly generated password. Then, the `if (!passwordToCopy) return;` just means if the “passwordToCopy” variable is empty, it should just return the function. The `textarea. value = passwordToCopy;` syntax is used to set the “textarea” value with the value you want to copy.
+In the above code for `const textarea = document.createElement(‘textarea’)`, you just created a variable that holds the textarea DOM element. You can get the value for the textarea using the `resultDOM.innerText`.
 
-Next is the `document.body.appendchild(textarea);` all you want to do here is append the text area value to the body of your document. The append child method adds a node to the end of the list of the children of a specified parent node. You need to select the elements you want to copy so you will use the `textarea. select();` method then to copy the elements, you will use the `document.execCommand(‘copy’);` method. This method executes the specified command for the selected part of an editable section which is the textarea. The `copy` command inside the function will copy the values of the editable section, after which you need to remove the “textarea” by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
-Also, if you click the button, you will observe that the page keeps reloading. You need to disable this reloading behavior by using a web API called `preventDefault`. This method will make sure the default behavior is not affecting the page. You can do this using the code below.
+Then, the `if (!passwordToCopy) return;` means if the “passwordToCopy” variable is empty, we should do nothing. The `textarea.value = passwordToCopy` syntax is used to set the “textarea” value with the value you want to copy.
+
+Next is the `document.body.appendchild(textarea);` all you want to do here is append the text area value to the body of your document. The append child method adds a node to the end of the list of the children of a specified parent node. 
+
+You need to select the elements you want to copy so you will use the `textarea.select();` method then to copy the elements, you will use the `document.execCommand(‘copy’);` method. This method executes the specified command for the selected part of an editable section which is the textarea. The `copy` command inside the function will copy the values of the editable section, after which you need to remove the “textarea” by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. 
+
+After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
+
+Also, if you click the button, you will observe that the page keeps reloading. You need to disable this reloading behavior by using a web API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below.
 
 ```JavaScript
 // Checking the options that are selected and setting the password
@@ -222,9 +231,13 @@ form.addEventListener("submit", (e) => {
 });
 ```
 
-In the above code, the first step you take is to disable the default behavior using the function `e.preventDefalult();`. You are listening to the submit event. To get the event, you will pass it to a function using the arrow functions the “e” represents the event. After that, you will be checking the multiple options. In other words, you can access the values inside the password length field by using the `.value` getter method, which returns the input value, also the `.checked` getter, which returns true if the checkboxes are selected or not. Still, it will return false if the checkboxes are not selected. If you look at the codes correctly, you will see that the values you are getting from the options are stored inside separate variables. We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments because you have only four options to select from and the values stored are the arguments by the variables you declared. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
+In the above code, the first step you take is to disable the default behavior of reloading the page when submitting a form using the function `e.preventDefalult();`. You are listening to the submit event. 
 
-Okay, next is the password generating function, which is the most critical function in our application because it will create the password you are getting from this function. Before you build the function, remember the above codes. You will see that the `generatePassword` function takes only four arguments, so you need to pass the four arguments when creating this function. Everything is going to be shown in the codes below, including building the whole password generating function.
+You can access the values inside the password field by using the `.value` getter method, which returns the input value. You can also use the `.checked` getter that'll return true if the checkboxes are selected or not. It will return false if the checkboxes are not selected. 
+
+We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
+
+Next, let's create the password generating function.
 
 ```JavaScript
 // The Password Generating Function
