@@ -12,11 +12,16 @@ topics: [HOW SWEET IS KUBERNETES?]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/quoyum-yusuf/hero.jpg
+  - url: /engineering-education/quoyum-yusuf/hero.jpeg
     alt: How sweet is Kubernetes cover image 
 ---
 
-![kubernetes.jpeg](kub.jpeg)
+
+
+
+### HOW SWEET IS KUBERNETES?
+
+![kubernetes.jpeg](hero.jpeg)
 
 What was your first impression when you read Kubernetes?
 
@@ -35,7 +40,7 @@ The Fleetman Application is built for  a company that needs to track the locatio
 
 ![Fleetman microservice](fleetman.png)
 
-**OVERVIEW OF FLEETMAN APPLICATION**
+### OVERVIEW OF FLEETMAN APPLICATION
 
 Obviously, we are not discussing fleetman’s application here, instead, we will be using fleetman’s application to better understand our content, do not be discombobulated if I did not explain the flow of the processes in the YAML files below in full.
 
@@ -44,7 +49,7 @@ Microservices of course obey the SOLID principle, the first being the Single Res
 
 The Position Simulation only simulates the positions of the truck at any point in time and that is its only job, once it reads the position, it hands it over to the Message Queue, the essence of a queue in any architecture of microservice is to avoid loss of data. Instead of making the position simulator and the tracker tightly coupled, a queue is introduced in between to avoid loss of data at any instance. The queue receives the data, keeping it waiting for the request from the position tracker. The queue implemented here is ActiveMQ, it is also utilized as a docker container. The position tracker gets the information from the queue and performs a lot of calculations with it, like calculating the speed a certain truck has covered. API Gateway is the single entry point to the entire application, its job is to match all requests incoming to underlying microservices.
 
-**WHAT KUBERNETES IS**
+### WHAT KUBERNETES IS
 
 In proper definition: Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
@@ -58,12 +63,12 @@ In proper definition: Kubernetes is an open-source system for automating deploym
 
 However, it’s better to see for ourselves how it works with the aid of the Fleetman application that I deployed on my repo as the instructional material.
 
-**WHAT KUBERNETES IS NOT**
+### WHAT KUBERNETES IS NOT
 
 Kubernetes is not an alternative to Docker. It is something more.
 
 
-**MAJOR CONCEPT IN KUBERNETES**
+### MAJOR CONCEPT IN KUBERNETES
 
 **DEPLOYMENT**
 
@@ -280,4 +285,4 @@ data:
 
 This is an external service in our application, and it addresses how the IP address in the browser is being linked to the right service in the node. Do not forget that services are attached to pods, and are just access points consisting of ports that, in turn, interact to be able to interacinteracts with our pods., The process through which pods are being scheduled across nodes in the form of replica sets is called the “Master Process”, and it is done with the aid of a “Scheduler”.
 
-**Thanks for reading.**
+### Thanks for reading.
