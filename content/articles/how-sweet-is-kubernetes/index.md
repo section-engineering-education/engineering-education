@@ -1,3 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published:true 
+url: /engineering-education/how-sweet-is-kubernetes/
+title: How sweet is Kubernetes?
+description: .
+author: qoyum-yusuf
+date: 2021-05-01T00:00:00-08:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/quoyum-yusuf/hero.jpg
+    alt: How sweet is Kubernetes cover image 
+---
+
+
+
+
 **HOW SWEET IS KUBERNETES?**
 
 ![kubernetes.jpeg](kub.jpeg)
