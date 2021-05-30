@@ -269,7 +269,7 @@ spec:
 ```
 **CONFIGMAP**
 
-This is a configuration that stores all external configurations of the application. External configurations include all third party configurations like database URL and ports.
+This is a configuration that stores all external configurations of the application. External configurations include all third-party configurations like database URLs and ports.
 
 ```insert code in here```
 ```
@@ -284,6 +284,6 @@ data:
 
 ![ingress](ingress.png)
 
-This is an external service in our application, and it addresses how the IP address in the browser is being linked to the right service in the node. Do not forget that services are attached to pods, and are just access points consisting of ports that, in turn, interact to be able to interacinteracts with our pods., The process through which pods are being scheduled across nodes in the form of replica sets is called the “Master Process”, and it is done with the aid of a “Scheduler”.
+This is an external service in our application, and it addresses how the IP address in the browser is being linked to the right service in the node. Do not forget that services are attached to pods, and are just access points consisting of ports that, in turn, interact to be able to interact with our pods. The process through which pods are being scheduled across nodes in the form of replica sets is called the “Master Process”, and it is done with the aid of a “Scheduler”.
 
 ### Thanks for reading.
