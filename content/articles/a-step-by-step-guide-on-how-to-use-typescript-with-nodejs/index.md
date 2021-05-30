@@ -201,27 +201,43 @@ app.listen(PORT, ():void => {
 
 When developing an extensive application, it's advisable to hook your project with watch parameters that will help you restart your server whenever you make and saves changes to your code structure. There are two main options:
 
-1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) basically watches `.ts` files, and whenever you make a change, it will restart the server for you. Run `npm install -D ts-node-dev` to install it. To use it, modify the `package.json` script tag as shown below.
+1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) basically watches `.ts` files, and whenever you make a change, it will restart the server for you. 
 
-```json
-"scripts": {
-  "dev": "ts-node-dev --respawn ./src/index.ts"
-}
-```
+  Run the below command to install it. 
 
-Then run `npm run dev`, and your server will be watched every time you make changes in your code.
+  ```bash
+  npm install -D ts-node-dev
+  ```
+
+  To use it, modify the `package.json` script tag as shown below.
+
+  ```json
+  "scripts": {
+    "dev": "ts-node-dev --respawn ./src/index.ts"
+  }
+  ```
+
+  Then run `npm run dev`, and your server will be watched every time you make changes in your code.
 
 ![Ts-node-dev](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-dev.png)
 
-2. Nodemon - [Nodemon](https://www.npmjs.com/package/nodemon) works the same as Ts-node-dev. Run `npm install -D nodemon` to install it. To use it in your project, edit the `package.json` script tag as follows.
+2. Nodemon - [Nodemon](https://www.npmjs.com/package/nodemon) works the same as Ts-node-dev.
 
-```json
-"scripts": {
-  "dev": "nodemon ./src/index.ts"
-}
-```
+  Run the below command to install it. 
 
-Then run `npm run dev`.
+  ```bash
+  npm install -D nodemon
+  ```
+  
+  To use it in your project, edit the `package.json` script tag as follows:
+  
+  ```json
+  "scripts": {
+    "dev": "nodemon ./src/index.ts"
+  }
+  ```
+
+  Then run `npm run dev`.
 
 ![Nodemon](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/nodemon.png)
 
