@@ -18,7 +18,7 @@ images:
 
 
 
-**HOW SWEET IS KUBERNETES?**
+### HOW SWEET IS KUBERNETES?
 
 ![kubernetes.jpeg](kub.jpeg)
 
