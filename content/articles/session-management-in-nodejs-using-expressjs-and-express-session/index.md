@@ -67,7 +67,7 @@ app.use(sessions({
 ```
 
 - `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key is usually long and randomly generated in a production environment.
-- 
+
 - `resave` - takes a Boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
 
 - `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
@@ -151,17 +151,16 @@ Let's setup the server. Create an `app.js` file and set up the session server, a
 #### Import all the Node.js libraries that we explained earlier
 
 ```js
-const express=require('express');
+const express = require('express');
 const cookieParser = require("cookie-parser");
 const bodyParser=require('body-parser');
 const sessions = require('express-session');
 ```
 
-#### Set the Express server options such as the port number
+#### Initialize the express app
 
 ```js
 const app = express();
-const PORT = 4000;
 ```
 
 #### Add the Express-session options
@@ -195,14 +194,12 @@ app.use(express.static(__dirname));
 Define Cookie-parser usage so that the server can access the necessary option to save, read and access a cookie.
 
 ```js
-
 // cookie parser middleware
 app.use(cookieParser());
-
 ```
 
 #### Set the authentication credentials
-In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutorial, we are storing them in these variables.
+In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively in this file as variables. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutorial, we are storing them in these variables.
 
 ```js
 //username and password
@@ -212,11 +209,11 @@ const mypassword = 'mypassword'
 
 #### Add the endpoints
 
-We have three make routes here:
+We have to make three routes here:
 
 1. `http://localhost:4000/`
 
-This will render and serve the HTML form to the client to fill in the login credentials. When a user attempts to log in, the server will verify the username and password against `myusername` and `mypassword` values and decide whether the information is valid or not.
+This will render and serve the HTML form to the client to fill in the login credentials. If the user is logged in, we'll display a link to logout.
 
 ```js
 var session;
@@ -231,7 +228,7 @@ app.get('/',(req,res) => {
 
 2. `http://localhost:4000/user`
 
-To set this session, the user will submit the credentials. The server will verify these credentials set in `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user.
+To create a session, the user will submit the credentials. The server will verify these credentials recieved in the request's body with the username and the password for the existing user.
 
 If the credentials are valid;
 
@@ -271,10 +268,17 @@ app.get('/logout',(req,res) => {
 #### Listen to the port of the server
 
 ```js
+const PORT = 4000;
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 ```
 
-Your session application is now set. Run the application using `node app.js`. This should start the server on the set port 4000.
+Your session application is now set. Run the application using:
+
+```bash
+node app.js
+```
+
+This should start the server on the set port 4000.
 
 ![An express server](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/express-server.jpg)
 
@@ -282,7 +286,7 @@ Open the server on the browser on route `http://localhost:4000/`, and you will b
 
 ![A served express server html form](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
 
-To be authenticated by the server, provide the credentials specified in the server—username as `user1` and password as `mypassword`.
+To be authenticated by the server, provide the credentials specified in the server: username as `user1` and password as `mypassword`.
 
 ![Session user granted access](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
 
@@ -302,15 +306,16 @@ Open the browser inspector tool > application > Cookies http://localhost:4000/.
 
 Every time you refresh this page, the request will be sent along with the value of this cookie within this localhost domain. If it matches with the session stored value, the server will authenticate this user.
 
-The client won't be able to modify the contents of the cookie, and even if they try to, it's going to break the signature of that cookie. This way, the server will be able to detect the modification very quickly.
-
 It's not a security concern if a third party can read the cookies.
+
+The client won't be able to modify the contents of the cookie, and even if they try to, it's going to break the signature of that cookie. This way, the server will be able to detect the modification.
 
 A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still has to maintain a one-to-one relationship to the user session. The cookie will be valid until set `maxAge` expires or the user decides to log out.
 
 When the user logs out, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
 
 ### Conclusion
+
 That's all for this tutorial. This was a basic example, and I hope it helped you understand the concept of session management in Node.js using Express.js and Express-session.
 
 Happy Coding!!
