@@ -9,6 +9,22 @@ curl -o doc.html <url/doc.html>
 
 The command makes a request to a server then stores the resulting webpage as doc.html or any name one might choose. The `-o` flag is used to add a filename that the webpage will be saved as.
 
+Let's have a look at other commands demonstrating specific selection of a protocol.
+
+```bash
+
+curl section.io
+
+```
+
+By default, cURL chooses the HTTP protocol. To switch to another protocol, preface the url with the protocol ie:
+
+```bash
+curl ftp://section.io
+
+```
+We are now using the FTP protocol.
+
 Other than the command-line, we can use cURL and display responses gotten from the requests on a webpage.
 In this article, we are going to look at using cURL in Node.js using the `node-libcurl` library.
 
@@ -73,13 +89,13 @@ We set various options using the `setOpt()` method. The first option is for pass
 ```javascript
 
 curlTest.on('end', function (statusCode, data, headers) {
-    console.info(statusCode);
-    console.info('---');
-    console.info(data);
-    console.info('---');
-    console.info(data.length);
-    console.info('---');
-    console.info(this.getInfo( 'TOTAL_TIME'));
+  console.info("Status code "+statusCode);
+  console.info('***');
+  console.info("Our response: "+data);
+  console.info('***');
+  console.info("Length: "+data.length);
+  console.info('***');
+  console.info("Total time taken: "+this.getInfo( 'TOTAL_TIME'));
     
     this.close();
   });
@@ -95,6 +111,38 @@ curlTest.perform();
 
 ```
 The line above is now used to perform the request hence the name of the method. It initiates the cURL request.
+
+Here is the full code:
+
+```javascript
+    const querystring = require('querystring');
+    const { Curl } = require('node-libcurl');
+    const terminate = curlTest.close.bind(curlTest);
+
+    const curlTest = new Curl();
+
+    curlTest.setOpt(Curl.option.URL, 'https://reqres.in/api/users');
+    curlTest.setOpt(Curl.option.POST, true)
+    curlTest.setOpt(Curl.option.POSTFIELDS, querystring.stringify({
+    name: "section",
+    job: "webdev"
+    }));
+
+    curlTest.on('end', function (statusCode, data, headers) {
+        console.info("Status code "+statusCode);
+        console.info('***');
+        console.info("Our response: "+data);
+        console.info('***');
+        console.info("Length: "+data.length);
+        console.info('***');
+        console.info("Total time taken: "+this.getInfo( 'TOTAL_TIME'));
+    
+        this.close();
+  });
+curlTest.on('error', terminate);
+
+curlTest.perform();
+```
 
 ***The expected output***
 
@@ -135,6 +183,6 @@ In case of any errors, refer to the official documentation [here](https://www.np
 
 ### Conclusion
 
-IN summary, we have seen what is cURL, how to install and use it in Node.js. It is a very helpful and lightweight tool.
+In summary, we have seen what is cURL, how to install and use it in Node.js. It is a very helpful and lightweight tool.
 
 Have a great read.
