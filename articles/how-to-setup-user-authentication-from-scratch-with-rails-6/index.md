@@ -12,6 +12,7 @@ To follow along in this article, it is helpful to have the following:
 - [yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Rails](https://rubygems.org/gems/rails) framework configured.
 - Basic knowledge of Ruby programming language.
+- A good understanding of the Rails framework. 
 - Basic understanding of Object Oriented Programming (OOP) paradigm.
 - Text editor installed. Preferrably [VS Code](https://code.visualstudio.com/)
 
