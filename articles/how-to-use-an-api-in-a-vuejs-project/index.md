@@ -1,8 +1,3 @@
-![hero image](/engineering-education/how-to-use-an-api-in-a-vuejs-project/hero.png)
-### How to use an API on a Vue.js project
-
-#### Introduction
-
 Recently, the majority of developers build applications using Javascript programming language and this constitutes the fact that most web applications have Javascript as one of their programming languages. To make the building process easier and faster for developers, a compiled version of Javascript was created which takes on one programming architecture and allows programmers to build any application on this framework.
 This complied version of JavaScript is called *JavaScript Framework*. Vue.js is one of the many JavaScript Frameworks.
 
