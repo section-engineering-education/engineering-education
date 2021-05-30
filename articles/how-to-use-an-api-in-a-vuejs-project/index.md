@@ -3,13 +3,13 @@ This complied version of JavaScript is called *JavaScript Framework*. Vue.js is 
 
 #### What is Vue.js
 
-[Vue.js](https://vuejs.org/v2/guide/index.html) is a progressive framework for JavaScript used to develop interactive user interfaces. Vue.js is called a progressive framework because it is user friendly and can be easily merged with different frameworks or library.
-When developing most projects using Vue.js, there will be a need to fetch or consume data from an API. This will make the front-end of the application interact with the backend of the application. The fetched data can be consumed on the front-end of the application.
+[Vue.js](https://vuejs.org/v2/guide/index.html) is a progressive framework for JavaScript used to develop interactive user interfaces. Vue.js is called a progressive framework because it is user-friendly and can be easily merged with different frameworks or libraries.
+When developing most projects using Vue.js, there will be a need to fetch or consume data from an API. This will make the front-end of the application interact with the backend of the application. The fetched data can be consumed on the front end of the application.
 
 #### What is an API?
 
-API stands for Application Programming Interface, which is a set of protocols that allow software programs to share data with each other. It is more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using two methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
-These concepts will be discussed externsively in the course of this article. Brace up! 
+API stands for Application Programming Interface, which is a set of protocols that allow software programs to share data. It is more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using two methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
+These concepts will be discussed extensively in the course of this article. Brace up! 
 
 #### Prerequisite
 
@@ -21,11 +21,11 @@ To understand and follow this article, you will need:
 
 #### Overview
 1. Using Axios to consume an API
-2. Using Fetch API method
+2. Using the Fetch API method
 3. Using APIs on Vuex
 4. Conclusion
 
-First, if you don't know how to create a vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
+First, if you don't know how to create a Vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
 
 There are two methods of consuming/using an API in a Vue.js project. These methods are:
 
@@ -37,8 +37,8 @@ There are two methods of consuming/using an API in a Vue.js project. These metho
 
 To use Axios on your project, you need to first install it. This can be done in two ways:
 
--  By using `npm` ; a standard package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
-- By using `yarn` ; a package manager that also acts as a project manager. It is synergetic with the npm registry and has exactly the same features. To install yarn in your project, paste the following line of code in your terminal `npm install --global yarn`
+-  By using `npm`; a standard package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
+- By using `yarn`; a package manager that also acts as a project manager. It is synergetic with the npm registry and has the same features. To install yarn in your project, paste the following line of code in your terminal `npm install --global yarn`
 
 
 With npm:
@@ -51,7 +51,7 @@ With yarn:
 ```
 yarn add axios
 ```
-Next, you import axios in your `src/main.js` file
+Next, you import Axios in your `src/main.js` file
 
 ```
 import axios from 'axios';
@@ -60,7 +60,7 @@ Vue.prototype.$http = axios;
 
 **How to make an API request and display data using Axios.**
 
-We will make the API request using a `get` method. A get method is used to call data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise based function with keywords [async/await](https://github.com/section-engineering-education/engineering-education/pull/2235). You may wonder why we used a promise based function, this is because a promise provides a way of montinoring the state of the API and acts as a container for the data that will eventually return.
+We will make the API request using a `get` method. A get method is used to call data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise-based function with keywords [async/await](https://github.com/section-engineering-education/engineering-education/pull/2235). You may wonder why we used a promise-based function, this is because a promise provides a way of monitoring the state of the API and acts as a container for the data that will eventually return.
 However, we also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle all errors that are detected.
 
 
@@ -122,7 +122,7 @@ catch (error) {
 
 If any error occurs during the code execution, the error will be caught and logged in the console.
 
-After requesting for data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to retrieve sensitive data and events that are active with the `created` hook.
+After requesting data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to retrieve sensitive data and events that are active with the `created` hook.
 
 ```
 <template></template>
@@ -201,7 +201,7 @@ created() {
 
 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a powerful and flexible method of flexible APIs. It produces a global fetch() method that provides a simple and rational way to fetch resources asynchronously over the network.
 
-To make request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the axios call above.
+To request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the Axios call above.
 
 ```
 <template>
@@ -264,12 +264,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 ```
 
-You will also need to install and import axios if you have not already done that. Check the earlier part of this tutorial for the steps.
+You will also need to install and import Axios if you have not already done that. Check the earlier part of this tutorial for the steps.
  
  **Now let’s make the API request:**
  
 We will be working with the `store/index.js` file.
-First, we create a `state` object which will contain all the application level state. It serves as the `data` object for store in a vuex project.
+First, we create a `state` object which will contain all the application-level state. It serves as the `data` object for the store in a vuex project.
 
 ```
 export default new Vuex.Store({
@@ -280,7 +280,7 @@ export default new Vuex.Store({
 }) 
 ```
  
-Next, we create a `getters` property. Getters are like `computed` properties for stores. It is used to determine derived state based on store state. In this tutorial, we will use it to return posts in the state.
+Next, we create a `getters` property. Getters are like `computed` properties for stores. It is used to determine derived states based on store states. In this tutorial, we will use it to return posts in the state.
  
 ```
 getters: {
@@ -290,7 +290,7 @@ getters: {
 },
 ```
 
-Next, we create a `mutation` property. The mutation property is were we can actually change state in Vuex store. There are very similar to events were we carry out actual state alterations.
+Next, we create a `mutation` property. The mutation property is where we can change the state in the Vuex store. There are very similar to events where we carry out actual state alterations.
 
 ```
 mutations: {
@@ -327,7 +327,7 @@ We can display data in our vue file. To do that, some steps need to be taken:
 import { mapState } from 'vuex';
 ```
 
-2. Call the API on a lifecycle hook `mounted` and employ `dispatch` method to call the action.
+2. Call the API on a lifecycle hook `mounted` and employ the `dispatch` method to call the action.
 
 ```
 mounted () {
@@ -358,9 +358,9 @@ computed: mapState([
 
 #### CONCLUSION
 
-In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex request as it allows multiple configuration of multiple request in one place.
+In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex requests as it allows multiple configurations of multiple requests in one place.
 
-We also considered consuming an API in a vuex project i.e. a project that manages multiple state.
+We also considered consuming an API in a vuex project i.e. a project that manages multiple states.
 
 I hope this article is of great help 🙂.
 
