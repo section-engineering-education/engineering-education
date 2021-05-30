@@ -76,7 +76,7 @@ Deployment is a configuration that provides declarative updates to applications.
 
 The kind of configuration we are declaring is deployment while, the name is position simulator. The container we used is on line 17, the position simulator release 1 from Richard Chesterwood repository. As we can see, ‘replicas’ is being specified as our replica set, and the template is what declares our pod. For a standard, YAML file even though can be separated, to ensure orderliness and separation of concerns, we write the services of each deployment in the same file, separating them with three dashes(-). Some do arrange theirs as all services in a separate file, that too is acceptable.
 
-insert code in here
+```insert code in here```
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -106,7 +106,7 @@ Kubernetes uses the concept of pods to interact with the container., A pod is an
 
 If you follow through the deployment of the position simulator, you will realize that a fragment of the script is actually declaring our pod. The part:
 
-insert code in here
+```insert code in here```
 ```
  template: # template for the pods
     metadata:
@@ -145,7 +145,7 @@ A node is like a single PC in a cluster where pods reside. There can be multiple
 
 Because of our database, we need a SECRET configuration whose, the function is to house or store secret data that we do not want to expose.
 
-insert code in here
+```insert code in here```
 ```
 apiVersion: v1
 kind: Secret
@@ -160,7 +160,7 @@ data:
 ```
 However, our database username and password that is kept secret is also not to be exposed to the world. Therefore, the only thing we are exposing is the key generated after converting them to base 64. To convert your username and password, write the following script on your terminal.
 
-insert code in here
+```insert code in here```
 ```
 echo -n “the content to convert” | base64
 
@@ -172,7 +172,7 @@ It is just like an endpoint or API points for Kubernetes, Service has a permanen
 
 Let's pull out the services in fleetman application as examples.
 
-insert code in here
+```insert code in here```
 ```
 apiVersion: v1
 kind: Service
@@ -194,7 +194,7 @@ spec:
   type: NodePort
 
 ```
-insert code in here
+```insert code in here```
 ```
 apiVersion: v1
 kind: Service
@@ -211,7 +211,7 @@ spec:
       nodePort: 30090
 ```
 
-insert code in here
+```insert code in here```
 ```
 kind: Service
 apiVersion: v1
@@ -225,7 +225,7 @@ spec:
       port: 27017
   type: ClusterIP
 ```
-insert code in here
+```insert code in here```
 ```
 apiVersion: v1
 kind: Service
@@ -246,7 +246,7 @@ spec:
   type: ClusterIP
 ```
 
-insert code in here
+```insert code in here```
 ```
 apiVersion: v1
 kind: Service
@@ -270,7 +270,8 @@ spec:
 **CONFIGMAP**
 
 This is a configuration that stores all external configurations of the application. External configurations include all third party configurations like database URL and ports.
-insert code in here
+
+```insert code in here```
 ```
 apiVersion: v1
 kind: ConfigMap
