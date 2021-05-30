@@ -149,7 +149,13 @@ This example will set up Typescript With Express.js. You should install [Express
 npm install -D @types/node
 ```
 
-Node.js packages are written in JavaScript and not Typescript. To get the type definitions for its packages, you need to install third-party packages called `@types`. For example, to use [Express type definations](https://www.npmjs.com/package/@types/express), install `@types/express` by running `npm install -D @types/express`. This will give you access to type definitions for Express.
+Node.js packages are written in JavaScript and not Typescript. To get the type definitions for its packages, you need to install third-party packages called `@types`. For example, to use [Express type definations](https://www.npmjs.com/package/@types/express), install `@types/express` by running:
+
+```bash
+npm install -D @types/express
+```
+
+This will give you access to type definitions for Express.
 
 Not all packages have `@types`. Package with types has the following NPM `@types` tag.
 
