@@ -39,12 +39,12 @@ We'll be going through these steps in this article:
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
-Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+> Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
 ![Env Setup](/engineering-education/react-native-firebase-email-password-authentication/env_setup.png)
 
 ### Cloning the starter code
-To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-email-password-auth-starter) on GitHub. Follow the Repository's README for instructions.
+To focus more on the authentication module, you can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-email-password-auth-starter) on GitHub. Follow the Repository's `README` for instructions.
 
 For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-email-password-auth).
 
@@ -54,7 +54,7 @@ This will be the folder structure of the application.
 
 I've set up 2 screens in the `screens/` directory:
 
-- _Authentication.js_: Screen to signin or create account.
+- _Authentication.js_: Screen to sign in or create an account.
 
 - _Authenticated.js_: Screen that the user can see only if he is logged in.
 
@@ -77,7 +77,7 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-email-password-authentication/register_app.png)
 
-You will need the package name of the application to register application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-firebase-email-password-authentication/package_name.png)
 
@@ -110,7 +110,7 @@ apply plugin: 'com.google.gms.google-services'
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
-Finally, We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+Finally, we should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
 
 ```bash
 npm install @react-native-firebase/app
@@ -121,7 +121,7 @@ Head over to the Authentication section in the dashboard and click on the `Get S
 
 ![Get Started Auth](/engineering-education/react-native-firebase-email-password-authentication/auth_get_starterd.png)
 
-Next, you should enable email/password authentication in the sign-in methods. Once you've enabled it, press save.
+Next, you should enable email/password authentication in the sign-in methods. Once you've enabled it, press `Save`.
 
 ![Enable Email](/engineering-education/react-native-firebase-email-password-authentication/enabled_email.png)
 
@@ -141,12 +141,12 @@ dependencies {
 }
 ```
 
-With this, the firebase authentication module is set up in our application.
+With this, the firebase authentication module is setup in our application.
 
-### Create user acccount
-The Firebase `auth` module has a function called `createUserWithEmailAndPassword` that'll help creating a new user in the application with an email and a password.
+### Create user account
+The Firebase `auth` module has a function called `createUserWithEmailAndPassword` that'll help to create a new user in the application with an email and a password.
 
-For exmaple:
+For example:
 
 ```JSX
 auth().createUserWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
@@ -154,7 +154,7 @@ auth().createUserWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
 
 This will create a new user in the Firebase app with the email ID `johndoe@gmail.com` and his respective password. Two users in the same application can't have the same email ID.
 
-This function will also signin the user into the application after creating an user account.
+This function will also sign in the user into the application after creating a user account.
 
 In the *App.js*, Let's import the `auth` module.
 
@@ -198,7 +198,7 @@ const [authenticated, setAuthenticated] = useState(false);
 
 The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
-You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in. 
+You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed out, otherwise, they are signed in.
 
 Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
 
@@ -223,12 +223,11 @@ return <Authentication createUser={createUser} />;
 ### Sign in user
 The Firebase `auth` module has a function called `signInWithEmailAndPassword` that'll sign in the user into the application with an email and a password.
 
-For exmaple, This will sign in the user into the app with the email ID:
+For example, This will sign in the user into the app with the email ID:
 
 ```JSX
 auth().signInWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
 ```
-
 
 Let's write a function that will accept an email and a password and call the `signInWithEmailAndPassword` to sign in the user.
 
@@ -306,10 +305,13 @@ auth().onAuthStateChanged((user) => {
 
 7. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
 
-8. We added a function to signin a user with the `signInWithEmailAndPassword` method from the `auth` module.
+8. We added a function to sign in a user with the `signInWithEmailAndPassword` method from the `auth` module.
 
 9. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
 
 Congratulations, :partying_face: You did it.
 
 Thanks for Reading!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
