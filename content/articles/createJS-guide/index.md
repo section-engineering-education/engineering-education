@@ -268,3 +268,6 @@ Now that we implemented the `spriteInit` method we need to call it at the end of
 ### Conclusion
 
 In this guide, we learned some of the fundamentals of creating content with createJS. We discussed the libraries it's comprised of, loading assets, drawing graphics, and animations. From here, you should be able to start playing around with building canvas art or games using these tools. Of course, this guide wasn't all-encompassing but you can learn a lot of createJS' well-written [documentation](https://createjs.com/). As well, check out [this replit](https://replit.com/@johna2002/createjs-guide#main.js) for the full code we wrote in this guide. I encourage you to copy the code and play around with it yourself so you can internalize these concepts.
+
+---
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
