@@ -1,4 +1,20 @@
-**HOW SWEET IS KUBERNETES?**
+---
+layout: engineering-education
+status: publish
+published:true 
+url: /engineering-education/how-sweet-is-kubernetes/
+title: How sweet is Kubernetes?
+description: How sweet is Kubernetes is an article which is targeted at simplifying concepts of Kubernetes for engineering students and aspiring DevOps professionals. It started with demystifying the basic concept of micro-service using Fleetman Tracking Application which is built on a simple micro-service architecture, using it as a tool to further explain the concepts of Kubernetes in the simplest manner. The tutorial will serve as a good foundation for beginners and also a means of enlightenment for intermediate-level developers and junior DevOps engineers.
+Grab a cup of coffee and enjoy the wonderful piece of work.
+author: qoyum-yusuf
+date: 2021-05-01T00:00:00-08:00
+topics: [HOW SWEET IS KUBERNETES?]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/quoyum-yusuf/hero.jpg
+    alt: How sweet is Kubernetes cover image 
+---
 
 ![kubernetes.jpeg](kub.jpeg)
 
@@ -28,10 +44,6 @@ Microservices of course obey the SOLID principle, the first being the Single Res
 
 The Position Simulation only simulates the positions of the truck at any point in time and that is its only job, once it reads the position, it hands it over to the Message Queue, the essence of a queue in any architecture of microservice is to avoid loss of data. Instead of making the position simulator and the tracker tightly coupled, a queue is introduced in between to avoid loss of data at any instance. The queue receives the data, keeping it waiting for the request from the position tracker. The queue implemented here is ActiveMQ, it is also utilized as a docker container. The position tracker gets the information from the queue and performs a lot of calculations with it, like calculating the speed a certain truck has covered. API Gateway is the single entry point to the entire application, its job is to match all requests incoming to underlying microservices.
 
-**WHAT KUBERNETES IS NOT**
-
-Kubernetes is not an alternative to Docker. It is something more.
-
 **WHAT KUBERNETES IS**
 
 In proper definition: Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
@@ -46,6 +58,11 @@ In proper definition: Kubernetes is an open-source system for automating deploym
 
 However, it’s better to see for ourselves how it works with the aid of the Fleetman application that I deployed on my repo as the instructional material.
 
+**WHAT KUBERNETES IS NOT**
+
+Kubernetes is not an alternative to Docker. It is something more.
+
+
 **MAJOR CONCEPT IN KUBERNETES**
 
 **DEPLOYMENT**
@@ -54,6 +71,7 @@ Deployment is a configuration that provides declarative updates to applications.
 
 The kind of configuration we are declaring is deployment while, the name is position simulator. The container we used is on line 17, the position simulator release 1 from Richard Chesterwood repository. As we can see, ‘replicas’ is being specified as our replica set, and the template is what declares our pod. For a standard, YAML file even though can be separated, to ensure orderliness and separation of concerns, we write the services of each deployment in the same file, separating them with three dashes(-). Some do arrange theirs as all services in a separate file, that too is acceptable.
 
+insert code in here
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -83,6 +101,7 @@ Kubernetes uses the concept of pods to interact with the container., A pod is an
 
 If you follow through the deployment of the position simulator, you will realize that a fragment of the script is actually declaring our pod. The part:
 
+insert code in here
 ```
  template: # template for the pods
     metadata:
@@ -121,6 +140,7 @@ A node is like a single PC in a cluster where pods reside. There can be multiple
 
 Because of our database, we need a SECRET configuration whose, the function is to house or store secret data that we do not want to expose.
 
+insert code in here
 ```
 apiVersion: v1
 kind: Secret
@@ -135,6 +155,7 @@ data:
 ```
 However, our database username and password that is kept secret is also not to be exposed to the world. Therefore, the only thing we are exposing is the key generated after converting them to base 64. To convert your username and password, write the following script on your terminal.
 
+insert code in here
 ```
 echo -n “the content to convert” | base64
 
@@ -146,6 +167,7 @@ It is just like an endpoint or API points for Kubernetes, Service has a permanen
 
 Let's pull out the services in fleetman application as examples.
 
+insert code in here
 ```
 apiVersion: v1
 kind: Service
@@ -167,6 +189,7 @@ spec:
   type: NodePort
 
 ```
+insert code in here
 ```
 apiVersion: v1
 kind: Service
@@ -182,6 +205,8 @@ spec:
       targetPort: 8081
       nodePort: 30090
 ```
+
+insert code in here
 ```
 kind: Service
 apiVersion: v1
@@ -195,6 +220,7 @@ spec:
       port: 27017
   type: ClusterIP
 ```
+insert code in here
 ```
 apiVersion: v1
 kind: Service
@@ -214,6 +240,8 @@ spec:
 
   type: ClusterIP
 ```
+
+insert code in here
 ```
 apiVersion: v1
 kind: Service
@@ -237,6 +265,7 @@ spec:
 **CONFIGMAP**
 
 This is a configuration that stores all external configurations of the application. External configurations include all third party configurations like database URL and ports.
+insert code in here
 ```
 apiVersion: v1
 kind: ConfigMap
