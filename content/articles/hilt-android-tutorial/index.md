@@ -4,12 +4,13 @@ status: publish
 published: true
 url: /hilt-android-tutorial/
 title: Using Hilt Dependecy Injection Framework in Android
-description: This article will guide on how to implement Hilt in Android projects using Kotlin. Hilt is a dependency injection framework that can help you save significant time.
+description: This article will guide the reader on how to implement Hilt in Android projects using Kotlin. Hilt is a dependency injection framework that can help you save significant time.
 author: raphael-ndonga
 date: 2021-05-31T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/hilt-android-tutorial/hero.jpg
     alt: Hilt Dependency Injection Framework
 ---
@@ -17,7 +18,7 @@ A *dependency* is an object that another object requires. In other words, the la
 <!--more-->
 
 ### Introduction
-*Dependency Injection* is whereby dependencies are provided to a class instead of the class having to create them itself. Hilt is a standardized way of enforcing dependency injection in an android application. 
+*Dependency Injection* is whereby dependencies are provided to a class instead of the class having to create them itself. Hilt is a standardized way of enforcing dependency injection in an Android application. 
 
 ### Goal
 This tutorial aims to:
@@ -25,9 +26,9 @@ This tutorial aims to:
 2. Explain why dependency injection is important.
 3. Show in detail how to use Hilt for dependency injection.
 
-### Pre-requisites
+### Prerequisites
 1. A basic understanding of object-oriented programming
-2. A basic understanding of Android app development with Kotlin
+2. A basic understanding of Android app development with Kotlin.
 3. [Android Studio 4.0](https://developer.android.com/studio) or higher.
 
 ### Table of contents
@@ -37,7 +38,7 @@ This tutorial aims to:
 4. Hilt and 3rd Party Libraries
 5. Conclusion
 
-### Part 1: Manual Dependency Injection
+### Part 1: Manual dependency injection
 ### Getting Started
 You can download this project from [here](https://github.com/RaphaelNdonga/hilt-tutorial).  
 
@@ -67,7 +68,9 @@ class SpanishPerson {
 
 Since English is the most widely spoken language, we need the Spanish person to learn it. 
 
-A possible solution is to instantiate the `EnglishPerson` class into the `SpanishPerson` class. However, this is not advisable:
+A possible solution is to instantiate the `EnglishPerson` class into the `SpanishPerson` class. 
+
+However, this is not advisable:
 
 ```kotlin
 class SpanishPerson {
@@ -77,7 +80,8 @@ class SpanishPerson {
     }
 }
 ```
-Now, the Spanish person is also English. This is *field injection*.
+
+Now, the Spanish person is also in English. This is *field injection*.
 
 However, this turns out to be a poor way of building classes. It violates the `Single Responsibility Principle`: A Spanish class should not concern itself with English matters!
 
@@ -95,7 +99,9 @@ class SpanishPerson(val englishPerson: EnglishPerson) {
 
 For `SpanishPerson` to function, it requires a dependency; `EnglishPerson`. This is *dependency injection* or *constructor injection*.
 
-It turns out that setting up your code in this manner has several benefits. When the Spaniard learns a new language, you simply add it to the constructor. You don't have to keep changing the code *inside* `SpanishPerson` class. The code is thus, more maintainable and flexible. This also makes it more testable and scalable.
+It turns out that setting up your code in this manner has several benefits. When the Spaniard learns a new language, you simply add it to the constructor. 
+
+You don't have to keep changing the code *inside* `SpanishPerson` class. The code is thus, more maintainable and flexible. This also makes it more testable and scalable.
 
 We can run the following code in the MainActivity:
 
@@ -116,7 +122,7 @@ class MainActivity : AppCompatActivity() {
 
 Run your app and open the `logcat`. Then, search for `EnglishPerson` and `SpanishPerson`:
 
-```
+```bash
 2021-05-04 20:18:57.663 20540-20540/com.example.android.hilttutorial I/EnglishPerson: Hello kind sir.
 
 2021-05-04 20:35:28.164 21573-21573/com.example.android.hilttutorial I/SpanishPerson: Despacito senor
@@ -131,8 +137,7 @@ There are a few things to note in the `MainActivity`.
 ### Dependency injection with Hilt
 Manual dependency injection works. However, as the app scales, it becomes cumbersome to manage dependencies. Though Hilt has a high setup cost, it is quite beneficial when scaling applications.
 
-### Getting Started with Hilt
-
+### Getting started with Hilt
 In the project's root build.gradle file, add the following statement:
 
 ```gradle
@@ -174,7 +179,7 @@ This gives `Hilt` access to the entire application. It creates a *dependency con
 
 Add the following code in the `AndroidManifest.xml` file under the application tag:
 
- ```xml
+```xml
  <application
  android:name=".MyApplication"
         ...>
@@ -216,9 +221,11 @@ class MainActivity : AppCompatActivity() {
 
 > **Note**: `@AndroidEntryPoint` annotates `Activities`, `Fragments`, `Views`, `Services` and `BroadcastReceivers`. It turn them into dependency containers.
 
-Run your app and open the logcat. Search for `EnglishPerson`:
+Run your app and open the logcat. 
 
-```
+Search for `EnglishPerson`:
+
+```bash
 com.example.android.hilttutorial I/EnglishPerson: Hello kind sir.
 ```
 
@@ -236,7 +243,7 @@ However, it's not as simple as the first case. To create `SpanishPerson`, it als
 
 Hilt already knows how to create `EnglishPerson`. So all is well.
 
-Instances that Hilt knows how to create go by the name *bindings*
+Instances that Hilt knows how to create go by the name *bindings*.
 
 So `EnglishPerson` and `SpanishPerson` are bindings.
 
@@ -258,9 +265,11 @@ class MainActivity : AppCompatActivity() {
 
 Brief and beautiful!
 
-Run the app and open the logcat. Search for `SpanishPerson` and `EnglishPerson`:
+Run the app and open the logcat. 
 
-```
+Search for `SpanishPerson` and `EnglishPerson`:
+
+```bash
 com.example.android.hilttutorial I/SpanishPerson: Despacito senor
 com.example.android.hilttutorial I/EnglishPerson: Hello kind sir.
 ```
@@ -303,9 +312,9 @@ class MainActivity : AppCompatActivity() {
 
 Before you run the code you might ask:
 
- Why replace the more specific `EnglishPerson` with the more generic `Person` type?
+Why replace the more specific `EnglishPerson` with the more generic `Person` type?
 
- Using the interfaces' type can be very useful. One use case is that code created in this manner is very testable. Using the type `Person` makes it easy to replace it with a fake one during testing.
+Using the interfaces' type can be very useful. One use case is that code created in this manner is very testable. Using the type `Person` makes it easy to replace it with a fake one during testing.
 
 However, when you run your app, it crashes at compile time. Hilt is unable to implement the interface. It does not know how to. Interfaces do not have constructors like classes do. It is impossible to @Inject them.
 
@@ -338,9 +347,11 @@ abstract class PersonModule {
 
 Since Hilt already knows how to implement `EnglishPerson`, all is well.
 
-Run the code and open the logcat. Search for 'EnglishPerson':
+Run the code and open the logcat. 
 
-```
+Search for 'EnglishPerson':
+
+```bash
 com.example.android.hilttutorial I/EnglishPerson: Hello kind sir
 ```
 
@@ -368,19 +379,22 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 Run your app and open the logcat. Search for 'SpanishPerson'
 
 Nothing?
 
 Try searching for 'EnglishPerson'
 
-```
+```bash
 com.example.android.hilttutorial I/EnglishPerson: Hello kind sir
 ```
 
 It seems that Hilt is using `EnglishPersonImpl` to generate instances of `SpanishPeople` as `EnglishPeople`!
 
-We need to differentiate them somehow. Add the following code outside `PersonModule` class but in the same file:
+We need to differentiate them somehow. 
+
+Add the following code outside `PersonModule` class but in the same file:
 
 ```kotlin
 @Qualifier
@@ -390,7 +404,7 @@ annotation class EnglishQualifier
 annotation class SpanishQualifier
 ```
 
-You will use these qualifiers to differentiate the `English` and `Spanish` Implementation.
+You will use these qualifiers to differentiate the `English` and `Spanish` implementation.
 
 Create another `abstract` function that implements `SpanishPerson`:
 
@@ -425,7 +439,9 @@ annotation class EnglishQualifier
 annotation class SpanishQualifier
 ```
 
-Head over to `MainActivity` and make a minor change. Add the qualifier:
+Head over to `MainActivity` and make a minor change. 
+
+Add the qualifier:
 
 ```kotlin
 @SpanishQualifier
@@ -433,15 +449,17 @@ Head over to `MainActivity` and make a minor change. Add the qualifier:
 lateinit var spanishPerson:Person
 ```
 
-Run your app and open the logcat. Search for `SpanishPerson`:
+Run your app and open the logcat. 
 
-```
+Search for `SpanishPerson`:
+
+```bash
 com.example.android.hilttutorial I/SpanishPerson: Despacito senor
 ```
 
 The code works now.
 
-### Part 4: Hilt and Third-Party Libraries
+### Part 4: Hilt and third-party libraries
 Hilt works well when we have access to constructors. But what if you can't access constructors? This happens when you import 3rd party libraries. You don't own the classes. Has the party stopped?
 
 Import the following `Gson` library:
@@ -465,11 +483,11 @@ object GsonModule {
 
 Through `@Provides`, the annotated function gives Hilt the following information:
 
-* The return type tells Hilt what type the function provides instances of.
+- The return type tells Hilt what type the function provides instances of.
 
-* The parameters tell Hilt the dependencies required to provide the type. In our case, there are none
+- The parameters tell Hilt the dependencies required to provide the type. In our case, there are none.
 
-* The function body tells Hilt how to provide an instance of the corresponding type. Hilt executes the function body every time it needs to provide an instance of that type.
+- The function body tells Hilt how to provide an instance of the corresponding type. Hilt executes the function body every time it needs to provide an instance of that type.
 
 Make the following changes to `MainActivity`:
 
@@ -487,7 +505,8 @@ class MainActivity : AppCompatActivity() {
 ```
 
 Run your app and open the logcat. Search for `MainActivityGson`.
-You'll find a lot of words, which is not important. The point is, you have injected the 3rd party library dependency successfully.
+
+You'll find a lot of words, which are not important. The point is, you have injected the 3rd party library dependency successfully.
 
 When it comes to classes such as `Gson`, `Retrofit` and `Room database`, we may need to make them available to the entire application.
 
@@ -554,7 +573,9 @@ This tutorial started by illustrating manual dependency injection. Manual depend
 
 Hilt then came in with its `@Inject` annotation that creates `injectable` fields, `methods`, and `constructors`. `@Inject` also helps Hilt know how to provide a certain class by giving it access to the constructor.
 
-You observed cases whereby the constructor might be unavailable. These include:
+You observed cases whereby the constructor might be unavailable. 
+
+These included:
 1. When an interface is used.
 2. When a 3rd party library is used.
 
@@ -564,8 +585,11 @@ When a constructor is unavailable, a module has to be used. A module is a class 
 
 `@Provides` provides the 3rd party library implementation. Hilt runs the function body each time to get the instance required.
 
-Hopefully, this article shines some light on dependency injection with Hilt. Go forth and inject!
+Hopefully, this article shines some light on dependency injection with Hilt. 
 
+Go forth and inject!
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
