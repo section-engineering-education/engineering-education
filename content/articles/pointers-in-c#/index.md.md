@@ -1,7 +1,27 @@
 ### Getting started
 A pointer is a variable in the C# that stores the memory address of another variable.
 
+### Introduction
+
 In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types`. The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, the reference data type holds a reference to another data type. Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
+
+### Table of Contents
+
+1. C# poiters
+
+2. Safe and unsafe codes
+
+3. Pinning an object  in C#
+
+4. Pointers and methods
+
+5. Conversions and pointers
+
+6. Pointers and arrays
+
+7. Pointers and structure
+
+Let's get started.
 
 ### Making a pointer style declaration
 In C#, we declare pointers as illustrated below:
@@ -59,10 +79,13 @@ namespace UnsafeCodeApplication
         }
     }
 } 
+
+60
+30
+1605887284
+1605887280
+
 ```
-
-![Output](/engineering-education/active-learning/unsafe%20codes.PNG)
-
 There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. 
 
 Two variables `a` and `b` with the values of 60 and 30, respectively are used in the above code, and pointers contain their addresses. The output values and addresses of the statements are displayed by `Console.writeline`.
@@ -101,8 +124,7 @@ namespace UnsafeCodeApplication
 
 }
 ```
-
-![**Output**](pinning%20an%20object%20.PNG)
+![output](/engineering-education/pointers_in_c#/pinning_an_object.png)
 
 In the example above, we used a command to restrict the objects in the array to a fixed memory allocation. `fixed (int* ptr = array)` performs that request.
 
@@ -134,12 +156,15 @@ namespace UnsafeCodeApplication
             Demo d = new Demo();
             d.Method();
         }
-    }
+    }   
 }
+
+60
+30
+1748493636
+1748493632
+
 ```
-
-![Output](/engineering-education/active-learning/pointers and methods .PNG)
-
 From the above code, unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20, respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
 
 ### Conversions and pointers
@@ -189,12 +214,12 @@ namespace UnsafeCodeApplication
 }
 ```
 
-![Output](pointers%20and%20arrays.PNG)
+![output](/engineering-education/pointers_in_c#/pointers_and_arrays.png)
 
 The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every array and its address simultaneously.
 
 ### Pointers and structure
-In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. An example software is as follows:
+In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. Example software is as follows:
 
 ```c#
 using System;
@@ -234,11 +259,18 @@ namespace UnsafeCodeApplication
         }
     }
 }
-```
 
-![Output](Pointers%20and%20strucure.PNG)
+Students details 1
+Student ID: 5 Fees: 45000
+Students details 2
+Student ID: 6 Fees: 43333
+```
 
 In the above example, structure student with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value type rather than reference type structures. There are two main method variables for students and fees pointers, initialized with A1 and A2 addresses. Computer compartment. Console.writeline() is used to display students details and fees.
 
 ### Conclusion
 Pointers show the memory address and execute unmanaged codes, as we have discovered. The reason behind why the unsafe statements are used is that the garbage collector does not track memory addresses in an unmanaged environment. Pointers are applied in queue and stack data types.
+
+### Further Reading
+
+1) [Learning C Sharp Programming](https://www.guru99.com/c-sharp-tutorial.html)
