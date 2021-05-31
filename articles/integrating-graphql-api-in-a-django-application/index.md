@@ -16,7 +16,7 @@ images:
 ---
 
 
-GraphQL is an open-source query language used to communicate data between the client (the browser) and the server. As explained in [GraphQL doc](https://graphql.org/)s, "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data..."
+GraphQL is an open-source query language used to communicate data between the client and the server. As explained in [GraphQL doc](https://graphql.org/)s, "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data..."
 
 Created by Facebook in 2012, GraphQL provides a runtime environment for Application Program Interfaces (API) which is easy to use, fast and developer-friendly. Over time, GraphQL has gained a wide range of use by companies such as Microsoft, Github, Shopify, Amazon, etc.
 
@@ -29,33 +29,33 @@ In this tutorial, our focus would be on integrating a GraphQL API into a Django 
 ### Prerequisites:
 
 - Basic knowledge of python
-- Basic knowledge of Django
+- A good understanding of Django
 
 ## Project setup
 
 We will be creating an e-commerce catalog project. Let's start by creating a directory for this project in our terminal. Add the following to your terminal:
 
 ```bash
-> mkdir ecommerce
-> cd ecommerce
+mkdir ecommerce
+cd ecommerce
 ```
 
  **Setting up a virtual environment**
 
-We'll be setting up a virtual environment for this project, a virtual environment helps in the installation of packages to help keep packages required by different projects separate by creating isolated Python virtual environments for them.
+We'll be setting up a virtual environment for this project. A virtual environment helps in the installation of packages to help keep packages required by different projects separate by creating isolated Python virtual environments for them.
 
-  To create a virtual environment, let's begin by installing virtual env add on your terminal, 
+  To create a virtual environment, let's begin by installing `virtualenv`. Run the following commands on your terminal: 
 
-```python
-> pip install virtualenv
-> virtualenv env
+```bash
+ pip install virtualenv
+ virtualenv env
 ```
 
 Let’s activate our virtual environment
 
 Mac OS / Linux:
 
-```python
+```bash
 source env/bin/activate
 ```
 
@@ -69,22 +69,22 @@ env\Scripts\activate
 Let's proceed to set up our Django dependency:
 
 ```bash
-> pip install django
+pip install django
 ```
 
- Once we have Django installed, we'll create our ecommerce project and app respectively:
+ Once we have Django installed, we'll create our E-commerce project and app respectively:
 
 ```bash
-> django-admin startproject ecommerce
-> cd ecommerce
-> django-admin startapp products
+django-admin startproject ecommerce
+cd ecommerce
+django-admin startapp products
 ```
 
  
 
 Now, we will proceed to our code editor. Open project in your code editor and in your project *settings.py* file, register your app. This way:
 
-```bash
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -100,7 +100,7 @@ INSTALLED_APPS = [
 
 Next step, we will be creating our products app models in the **'products/models.py'** file.
 
-```bash
+```python
 from django.db import models
 
 # Create your models here.
@@ -165,27 +165,27 @@ admin.site.register(Book)
 admin.site.register(Grocery)
 ```
 
-Let's proceed to our terminal to run migrations of models. By running migration these models are added to our database. In your terminal, add the following code:
+Let's proceed to our terminal to run migrations of models. By running migration these models are added to our database. In your terminal, run the following commands:
 
 ```bash
-> python manage.py makemigrations
+python manage.py makemigrations
 
-> python manage.py migrate
+python manage.py migrate
 ```
 
-Once migration is done, run local host to see if our app is running. Add the following code to your terminal to do this.
+Once migration is done, run the following command in your terminal to start the app.
 
-```python
+```bash
 python manage.py runserver
 ```
 
-Click on the link `[http://127.0.0.1:8000/](http://127.0.0.1:8000/)` in your terminal. If this shows on your browser,  then you are on a good track.
+Click on the link `[http://127.0.0.1:8000/](http://127.0.0.1:8000/)` in your terminal. If the app is displayed on your browser, then you are on the right track.
 
 ### Integrating GraphQL to our project
 
-We will be integrating GraphQL into our Django project. To begin, let's first install a package called *Graphene-Django.* On your terminal run
+We will be integrating GraphQL into our Django project. To begin, let's first install a package called *Graphene-Django.* On your terminal run:
 
-```python
+```bash
 pip install graphene-django
 ```
 
@@ -217,7 +217,7 @@ from graphene_django.views import GraphQLView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-		path("graphql", GraphQLView.as_view(graphiql=True)),
+    path("graphql", GraphQLView.as_view(graphiql=True)),
 ]
 ```
 
@@ -229,7 +229,7 @@ The URL contains our endpoint, where our GraphQL communications will be made. Fr
 
 ## Creating a schema
 
-GraphQL is a query language with a powerful type system that can be used to define an API's data structures. The GraphQL Schema is used to represent this information!
+GraphQL is a query language with a powerful type system that can be used to define an API's data structures. The GraphQL Schema is used to represent this information.
 
 The schema is a contract between the client and the server that describes how the client can acquire access to the database.
 
@@ -313,7 +313,7 @@ Next, we will test our API to make sure it's running successfully. To this my si
 
 Let's try some features to query the data in our database. We'll do this by using the GraphQL preview which is the play button at the top left of the navigation bar. 
 
-```python
+```bash
 {
   books{
       id
@@ -332,7 +332,7 @@ Let's try some features to query the data in our database. We'll do this by usin
 
 Our data is empty because we have not added any data to our database. One important step we must not forget is creating an admin user. Let's briefly do this by running the following lines of code on our terminal.
 
-```python
+```bash
 python manage.py createsuperuser
 ```
 
@@ -346,7 +346,7 @@ You can add data into any of the models.
 
 ### Adding Mutation
 
-In GraphQL mutation is used in adding, updating, and deleting data. It performs a similar function to the POST, DELETE and PUT method in REST API.
+In GraphQL, a mutation is used for adding, updating, and deleting data. It performs a similar function to the POST, DELETE and PUT method in REST API.
 
 In your **schema.py** file add the following lines of code:
 
@@ -449,7 +449,7 @@ Next, we proceed to testing our mutations and queries. Let's create a new catego
 
 Paste below mutation on the left side and click Play button
 
-```python
+```bash
 mutation {
  create_category:createCategory(title :"Plastic") {
   category {
@@ -460,7 +460,7 @@ mutation {
 }
 ```
 
-```python
+```bash
 mutation {
  
 create_book: createBook(input: {title:"Imagine this",author: "Shola", pages: 12, price: 1200, quantity: 4, description:"a brief description", status: "True"}){
