@@ -13,21 +13,13 @@ images:
   - url: /engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/hero.jpg
     alt: Beginner's guide to Lottie animations in Android using Kotlin 
 ---
-# Introduction
 
-Lottie is an open-source animation library, developed at Airbnb. It renders Adobe After Effects with BodyMovin on mobile(Android, iOS and React Native), web and windows. BodyMovin is an Adobe After Effects plugin that exports animations to a .json file.
+### Introduction
+Designing animations can be tedious and technical for most developers. **Lottie** is an open-source animation library developed by *Airbnb*. It renders Adobe After Effects with BodyMovin. **BodyMovin** is an Adobe After Effects plugin that exports animations to a JSON file. Lottie makes it easy to work with animations without downloading heavy animation files.
+Lottie helps developers achieve a clean UI, therefore achieving a good user experience. Lottie is easy to use, and the files can be accessed on their [site](https://lottiefiles.com/).
+Lottie is supported on mobile (Android, iOS, and React Native), web, and desktop applications.
 
-  
-
-Designing animations can be tedious and technical for most developers. Lottie makes it easy to work with animations without downloading heavy animation files.
-
-  
-
-Lottie is beautiful and helps you achieve a clean UI, therefore achieving a good user experience. They are easy to use and the files can be found on their site at www.lottiefiles.com
-
-  
-
-# Why use Lottie
+### Why use Lottie
 
   
 
