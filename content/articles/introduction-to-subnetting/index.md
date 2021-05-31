@@ -109,7 +109,7 @@ This is a term to denote the number of bits given to the network and the number 
         For Hosts = 2^n+2 
         Example  to calculate subnets and hosts:
 To calculate subnets, networks, host ranges you will use a calculator.
-Try the IPSubnet Mask Calculator for IPV4 [here](https://www.site24x7.com/tools/ipv4-subnetcalculator.html) 
+Try the IPSubnet Mask Calculator for IPV4 [here](https://www.site24x7.com/tools/ipv4-subnetcalculator.html). 
 
 ### Routing
 
@@ -125,7 +125,7 @@ IP routing process relies on two types of protocols; Routed protocol and Routing
 
 **Routing Protocol**: A routed protocol finds paths (routes) for the IP and the routed protocol. Routing protocols run on Routers, Firewalls, Network servers with Network Operating Systems.
 
-To read more on these two protocols, follow this [link](https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-the-difference-between-routing-protocols-and-routed-protocols.php)
+To read more on these two protocols, follow this [link](https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-the-difference-between-routing-protocols-and-routed-protocols.php).
 
 Routing is then split into 3 categories: 
 
