@@ -5,7 +5,7 @@ A website is based on the HTTP protocol. HTTP is a stateless protocol which mean
 In session-based authentication, the user's state is stored in the server's memory or a database. 
 
 ### How sessions works
-When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server, which will be now stored on the client. This cookie will be sent on every request to the server.
+When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server, which will now be stored on the client. This cookie will be sent on every request to the server.
 
 We use this session ID and look up the session saved in the database or the session store to maintain a one-to-one match between a session and a cookie. This will make HTTP protocol connections stateful.
 
@@ -44,12 +44,10 @@ The following libraries will help us setup a Node.js session.
 
 - [Cookie-parser](https://www.npmjs.com/package/cookie-parser) - used to parse cookie header to store data on the browser whenever a session is established on the server-side.
 
-- [Body-parser](https://www.npmjs.com/package/body-parser) - used to parse the body of an HTTP POST request.
-
 Install the above libraries using the command:
 
 ```bash
-npm install express express-session cookie-parser body-parser
+npm install express express-session cookie-parser
 ```
 
 ### Express-session Options and how to use it
@@ -87,14 +85,14 @@ To initialize the session, we will set the session middleware inside the routes 
 
 When a client sends a request, the server will set a session ID and set the cookie equal to that session ID. The cookie is then stored in the set cookie HTTP header in the browser. Every time the browser (client) refreshes, the stored cookie will be a part of that request.
 
-We'll create a simple login form to demonstrate that.
+We'll create a simple login form to demonstrate that. Create a `views` folder and add the following;
 
-Here is the login form (`index.html`).
+- Here is the login form (`index.html`).
 
 ```html
 <html>
 <head>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="views/app.css">
 </head>
 <body>
     <form action="/user" method="post">
@@ -111,7 +109,7 @@ Here is the login form (`index.html`).
 </html>
 ```
 
-And some CSS to style the form (`app.css`).
+- And some CSS to style the form inside the views folder (`app.css`).
 
 ```css
 body {
@@ -153,7 +151,6 @@ Let's setup the server. Create an `app.js` file and set up the session server, a
 ```js
 const express = require('express');
 const cookieParser = require("cookie-parser");
-const bodyParser=require('body-parser');
 const sessions = require('express-session');
 ```
 
@@ -161,6 +158,7 @@ const sessions = require('express-session');
 
 ```js
 const app = express();
+const PORT = 4000;
 ```
 
 #### Add the Express-session options
@@ -179,14 +177,14 @@ app.use(sessions({
 ```
 
 #### Parse the HTML form
-As we explained, the Body-parser will help us parser an HTTP POST method request from an HTML document. Set the sever to use the Body-parser so that we can access this POST method. We also need to serve the CSS styling to format the outlook of the HTML form.
+This will help us parser an HTTP POST method request from an HTML document. We also need to serve the CSS styling to format the outlook of the HTML form. Add the following express methods to perform these operations.
 
 ```js
-// get our app to use a body-parser
+// parsing the incoming data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// serve css styling
+//serving public file
 app.use(express.static(__dirname));
 ```
 
@@ -205,6 +203,9 @@ In this example, we are using a simple login application. To authenticate the us
 //username and password
 const myusername = 'user1'
 const mypassword = 'mypassword'
+
+// a variable to save a session
+var session;
 ```
 
 #### Add the endpoints
@@ -213,22 +214,21 @@ We have to make three routes here:
 
 1. `http://localhost:4000/`
 
-This will render and serve the HTML form to the client to fill in the login credentials. If the user is logged in, we'll display a link to logout.
+This will render and serve the HTML form to the client to fill in the login credentials. If the user is logged in, we'll display a logout link.
 
 ```js
-var session;
 app.get('/',(req,res) => {
     session=req.session;
     if(session.userid){
         res.send("welcome User <a href=\'/logout'>click to logout</a>");
     }else
-    res.sendFile('index.html',{root:__dirname})
+    res.sendFile('views/index.html',{root:__dirname})
 });
 ```
 
 2. `http://localhost:4000/user`
 
-To create a session, the user will submit the credentials. The server will verify these credentials recieved in the request's body with the username and the password for the existing user.
+To create a session, the user will submit the credentials. The server will verify these credentials received in the request's body with the username and the password for the existing user.
 
 If the credentials are valid;
 
@@ -242,14 +242,14 @@ If the credentials are invalid, the server will not grant this user access to th
 
 ```js
 app.post('/user',(req,res) => {
-    if(req.body.username == myusename && req.body.password == mypassword){
+    if(req.body.username == myusername && req.body.password == mypassword){
         session=req.session;
         session.userid=req.body.username;
         console.log(req.session)
         res.send(`Hey there, welcome <a href=\'/logout'>click to logout</a>`);
     }
     else{
-        res.send('invalid username or password');
+        res.send('Invalid username or password');
     }
 })
 ```
@@ -268,7 +268,6 @@ app.get('/logout',(req,res) => {
 #### Listen to the port of the server
 
 ```js
-const PORT = 4000;
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 ```
 
@@ -310,7 +309,7 @@ It's not a security concern if a third party can read the cookies.
 
 The client won't be able to modify the contents of the cookie, and even if they try to, it's going to break the signature of that cookie. This way, the server will be able to detect the modification.
 
-A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still has to maintain a one-to-one relationship to the user session. The cookie will be valid until set `maxAge` expires or the user decides to log out.
+A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still has to maintain a one-to-one relationship with the user session. The cookie will be valid until set `maxAge` expires or the user decides to log out.
 
 When the user logs out, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
 
