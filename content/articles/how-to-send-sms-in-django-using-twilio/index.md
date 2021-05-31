@@ -6,7 +6,7 @@ url: /how-to-send-sms-in-django-using-twilio/
 title: How to Send SMS in Django Using Twilio
 description: This article will be teaching us how to send SMS from a Django app using Twilio. We will be building a simple Django app to demonstrate how to send SMS from a Django app.
 author: shuaib-oseni
-date: 2021-05-23T00:00:00-12:30
+date: 2021-05-31T00:00:00-12:30
 topics: []
 excerpt_separator: <!--more-->
 images:
