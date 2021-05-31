@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /nodejs-network-requests-using-axios/
+title: Node.js Network requests using Axios
+description: This article goes through Axios and how to use it to make network request in Node.js. Axios is a very popular javascript framework used to perform network requests.
+author: peter-kayere
+date: 2021-05-31T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/nodejs-network-requests-using-axios/hero.jpg
+    alt: Node.js Network requests using Axios
+---
+
 ### Introduction
 
 In the modern technological world, it is very rear to find stand-alone applications. Most applications depend on resources from other applications. These resources are made available through the use of APIs. Servers are no exception. Though servers store their own relevant data, they sometimes need data from other servers. To access the data, servers need a way to communicate with the API(s) of the depended servers. This is where Axios comes in.
@@ -45,13 +61,15 @@ Now that our server is up and running, let's see what network requests are and w
 
 ### Getting started with axios
 
-We have mentioned network requests but we haven't said what it is. As the name suggests, network requests are requests sent from a client to a server over the internet. The client in this case can also be another server. Axios allows us to make http network requests from both the browser and Node.js applications. It allows us to make both get and post requests which are the most used http methods.
+We have mentioned network requests but we haven't said what it is. As the name suggests, network requests are requests sent from a client to a server over the internet. The client in this case can also be another server. Axios allows us to make `HTTP` requests from both the browser and Node.js applications. It allows us to make both `GET` and `POST` requests which are the most used `HTTP` methods.
 
-Let's see how we can make this types of requests.
+Let's see how we can make these types of requests.
 
 ### Get request
 
-All axios requests are created using the axios object we imported in the first code snippet. The axios object takes an object parameter. The object contains the request url and the http method associated with the request. Add the following code just before `app.listen` method.
+All axios requests are created using the axios object we imported in the first code snippet. The axios object takes an object parameter. The object contains the request url and the http method associated with the request.
+
+Add the following code just before `app.listen` method.
 
 ```Javascript
 app.get("/async", async (req, res) => {
@@ -67,7 +85,7 @@ app.get("/async", async (req, res) => {
 });
 ```
 
-In the above code, we have made an endpoint that makes a get request to the dog api. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
+In the above code, we have made an endpoint that makes a `GET` request to the dog api. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
 
 ```Javascript
 app.get("/promise", (req, res) => {
@@ -134,3 +152,7 @@ app.get("/promise", (req, res) => {
 This brings us to the end of our tutorial. In this article, we have gone through what axios is and how to use it to make get and post requests from Node.js. Axios also provides other http requests such put and patch which are not very popular, However, they use the same syntax as the two methods that we have gone through. Hope this helps you get started with axios.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
