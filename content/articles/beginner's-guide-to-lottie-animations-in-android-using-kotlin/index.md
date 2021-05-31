@@ -1,4 +1,18 @@
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: beginner's-guide-to-lottie-animations-in-android-using-kotlin
+title: Beginner's guide to Lottie animations in Android using Kotlin 
+description: This article explains how to use Lottie which is an open source animation library in Android applications using Kotlin. Lottie is beautiful and helps you achieve a clean UI, therefore achieving a good user experience.
+author: carol-musyoka
+date: 2021-05-31T00:00:00-10:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/hero.jpg
+    alt: Beginner's guide to Lottie animations in Android using Kotlin 
+---
 # Introduction
 
 Lottie is an open-source animation library, developed at Airbnb. It renders Adobe After Effects with BodyMovin on mobile(Android, iOS and React Native), web and windows. BodyMovin is an Adobe After Effects plugin that exports animations to a .json file.
