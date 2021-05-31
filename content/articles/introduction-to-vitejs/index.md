@@ -27,15 +27,15 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 
 - **Lighting fast HMR:** Regardless of the app size, Vite.js provides a fast Hot Module Replacement by re-bundling only the dependencies.
 
-- **Rich features:** Vite.js offers out of the box support for CSS, JSX, and JavaScript.
+- **Rich features:** Vite.js offers out-of-the-box support for CSS, JSX, and JavaScript.
 
 - **Optimized building:** Vite.js uses Rollup in build mode with multiple pages and library mode support.
 
 - **Fully typed APIs:** Vite.js offers Typescript typing and server-side rendering for APIs.
 
-- **Faster dependency pre-building:** When talking about other bundlers like webpack, parcel or Rollup, the rebuilding process occurs on every save, which may cause a delay in bundling.
+- **Faster dependency pre-building:** When talking about other bundlers like webpack, parcel, or Rollup, the rebuilding process occurs on every save, which may cause a delay in bundling.
 
-Among other advantage of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
+Among other advantages of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
 
 ## Installing Vite.js
 
@@ -140,9 +140,9 @@ Now, let's have a look at some files in our project folder:
 ![project structure](/introduction-to-vitejs/folder-structure.png)
 
 Looking at the project folder we have:
-- **node_modules:** this folder contains all the caches that the external modules depends upon.
+- **node_modules:** This folder contains all the caches that the external modules depend upon.
 
-- **src:** this folder contains the root components such as App.js and main.js for bootstraping your app.
+- **src:** this folder contains the root components such as App.js and main.js for bootstrapping your app.
 
 - **index.html:** this file serves as the source code and part of the module graph. This file also serves as the entry point of your app.
 
@@ -185,14 +185,14 @@ import { defineConfig } from 'vite'
 export default defineConfig(
 )
 ```
-## Key words
+## Keywords
 - NPM: Node Package Manager
 - HMR: Hot Module Replacement
 - API: Application Programming Interface
 - CSS: Cascading Style Sheets
 
 ## Conclution
-So far so good, we have seen how to install vitejs on our machine, its advantages and structure of it folders.
+So far so good, we have seen how to install vitejs on our machine, its advantages, and the structure of its folders.
 Don’t hesitate to read more about [Vite.js](https://www.vitejs.dev).
 
 ## Reference
