@@ -229,8 +229,6 @@ You also have to pay attention to vulnerabilities besides the language-specific 
 
 Till next time, happy coding Pythonistas!
 
-![Cat coding GIF](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
-
 ### Further reading
 1. [Exploiting Python pickles](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)
 2. [YAML Deserialization Attack in Python](https://www.exploit-db.com/docs/english/47655-yaml-deserialization-attack-in-python.pdf?utm_source=dlvr.it&utm_medium=twitter)
