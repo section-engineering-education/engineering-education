@@ -1,17 +1,17 @@
 A Password Generator is an application that can automatically generate passwords for you. These generated passwords consist of alphabets, numbers, and symbols. This application helps the user create a solid password that cannot be easily guessed or brute-forced.
-
+ 
 In this article, you will learn how to build a random password generator application with HTML, CSS, and JavaScript.
-
+ 
 ![password generator app](/engineering-education/how-to-build-a-random-password-generator-app-with-HTML-CSS-javascript/password-generator-app.jpg)
-
+ 
 ### Prerequisites
-
-The reader should have a fundamental knowledge of: HTML, CSS and a basic understanding of JavaScript, including functions.
-
+ 
+The reader should have a fundamental knowledge of HTML, CSS, and a basic understanding of JavaScript, including functions.
+ 
 ### Building the HTML Page for the Password Generator
-
+ 
 You will start by creating an HTML file and save it as `index.html`.
-
+ 
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -52,16 +52,16 @@ You will start by creating an HTML file and save it as `index.html`.
   </body>
 </html>
 ```
-
+ 
 Now, Let's create a file and save it as “layout.css.” This is where you will write all the CSS for the application. Below is the CSS for the application.
-
+ 
 ```CSS
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   height: 100vh;
   width: 100vw;
@@ -72,20 +72,20 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: #39378f;
 }
-
+ 
 .container {
   padding: 1rem 1.5rem;
   border: 1px solid black;
   width: 350px;
   background-color: #4abd15;
 }
-
+ 
 h2 {
   text-align: center;
   padding: 15px 0;
 }
-
-
+ 
+ 
 .option {
   display: flex;
   justify-content: space-between;
@@ -100,12 +100,12 @@ h2 {
   border: 1px solid black;
   padding: 0 5px;
 }
-
+ 
 .result-container #result {
   word-wrap: break-word;
   max-width: calc(100% - 40px);
 }
-
+ 
 .result__container #copy {
   height: 40px;
   width: 40px;
@@ -115,12 +115,12 @@ h2 {
   cursor: pointer;
   outline: none;
 }
-
+ 
 .result__container #copy:hover {
   background-color: #1c2541;
   color: #ffffff;
 }
-
+ 
 #generate {
   height: 40px;
   width: 100%;
@@ -133,27 +133,27 @@ h2 {
   cursor: pointer;
   outline: none;
 }
-
+ 
 #generate:hover {
   background-color: #5bc0be;
   color: #ffffff;
 }
 ```
-
+ 
 ### Understanding The ASCII Character Table
-
+ 
 First of all, I don’t advise you to jump straight to coding the JavaScript file without a prior understanding of the ASCII characters. Below is a table of the ASCII characters.
-
+ 
 ![ascii-table](ascii-table.jpg)
-
+ 
 Source:[https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb](https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb)
-
-ASCII stands for American Standard Code for Information Interchang. If you look at the uppercase A, it has a ASCII value of 65, and if you keep adding one to 65, you will get all the 26 uppercase characters. The lowercase begins at 97 and goes up to 122.The symbols are at various places in the image above.
-
+ 
+ASCII stands for American Standard Code for Information Interchange. If you look at the uppercase A, it has an ASCII value of 65, and if you keep adding one to 65, you will get all the 26 uppercase characters. The lowercase begins at 97 and goes up to 122. The symbols are at various places in the image above.
+ 
 ### Writing The Javascript
-
+ 
 Start by selecting the different HTML DOM elements in the javascript using the code below:
-
+ 
 ```JavaScript
 // Getting the DOM Elements
 const resultDOM = document.getElementById("result");
@@ -165,11 +165,9 @@ const symbolsDOM = document.getElementById("symbols");
 const generatebtn = document.getElementById("generate");
 const form = document.getElementById("passwordGeneratorForm");
 ```
-
-Next, let's work on the character codes that we'll use to form the randomly generated password. Below is the code to create character codes for the application. 
-
-For the uppercase codes, you will pass the low of 65, which is the value of uppercase A and the high value of 90, the uppercase Z as you can recall from the ASCII table. You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table. We should make you use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. For the symbols, they start at 33 and increase up to 47 and then continue at 58.
-
+ 
+Next, let's work on the character codes that we'll use to form the randomly generated password. For the uppercase codes, you will pass the low of 65, which is the value of uppercase A and the high value of 90, the uppercase Z as you can recall from the ASCII table. You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table. We should make you use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. The symbols start at 33 and increase up to 47 and then continue at 58.
+ 
 ```JavaScript
 // Generating Character Codes For The Application
 const UPPERCASE_CODES = arrayFromLowToHigh(65, 90);
@@ -180,65 +178,8 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
 ```
-
-The next thing you want to do is build the `copy` button and copy to clipboard functionality. We will listen to the click event on the “copybtnDOM” element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
-
-```JavaScript
-// Copy Password Button
-
-copybtnDOM.addEventListener("click", () => {
-  const textarea = document.createElement("textarea");
-  const passwordToCopy = resultDOM.innerText;
-  // A Case when Password is Empty
-  if (!passwordToCopy) return;
-  // Copy Functionality
-  textarea.value = passwordToCopy;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  textarea.remove();
-  alert("Password Copied to Clipboard");
-});
-```
-
-In the above code for `const textarea = document.createElement(‘textarea’)`, you just created a variable that holds the textarea DOM element. You can get the value for the textarea using the `resultDOM.innerText`.
-
-Then, the `if (!passwordToCopy) return;` means if the “passwordToCopy” variable is empty, we should do nothing. The `textarea.value = passwordToCopy` syntax is used to set the “textarea” value with the value you want to copy.
-
-Next is the `document.body.appendchild(textarea);` all you want to do here is append the text area value to the body of your document. The append child method adds a node to the end of the list of the children of a specified parent node. 
-
-You need to select the elements you want to copy so you will use the `textarea.select();` method then to copy the elements, you will use the `document.execCommand(‘copy’);` method. This method executes the specified command for the selected part of an editable section which is the textarea. The `copy` command inside the function will copy the values of the editable section, after which you need to remove the “textarea” by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. 
-
-After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
-
-Also, if you click the button, you will observe that the page keeps reloading. You need to disable this reloading behavior by using a web API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below.
-
-```JavaScript
-// Checking the options that are selected and setting the password
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const characterAmount = lengthDOM.value;
-  const includeUppercase = uppercaseDOM.checked;
-  const includeNumbers = numbersDOM.checked;
-  const includeSymbols = symbolsDOM.checked;
-  const password = generatePassword(
-    characterAmount,
-    includeUppercase,
-    includeNumbers,
-    includeSymbols
-  );
-  resultDOM.innerText = password;
-});
-```
-
-In the above code, the first step you take is to disable the default behavior of reloading the page when submitting a form using the function `e.preventDefalult();`. You are listening to the submit event. 
-
-You can access the values inside the password field by using the `.value` getter method, which returns the input value. You can also use the `.checked` getter that'll return true if the checkboxes are selected or not. It will return false if the checkboxes are not selected. 
-
-We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
-
-Next, let's create the password generating function.
-
+Next, you are going to create the password-generating function.
+ 
 ```JavaScript
 // The Password Generating Function
 let generatePassword = (
@@ -260,26 +201,32 @@ let generatePassword = (
   return passwordCharacters.join("");
 };
 ```
-
-Now let me explain the codes after passing the four arguments. You want the password to be lowercase if no option is checked. Inside the function, you will create a variable that will store an array of the character codes, and you will assign the lowercase character codes by using the `let charCodes`. After that, you need to check if the options are true or not by using the conditional statements `if (includeUppercase) charCodes` for uppercase code, `if (includeSymbols) charcodes` for symbol codes, and `if (includeNumbers) charcodes` for number codes. Now depending on the options selected, you concatenate the values to the `charCodes` variable. For the password that it will create, you will create an empty array and call it `passwordCharacters`. After that, you will create a loop that will loop until it reaches the number of characters you want. While inside the loop, you will generate random character codes from the available values in the `charCodes` array. And then convert the characters from the character codes and push them into the `passwordCharacters`array so that you have completed the `generatePasswordfunction`. Now you will loop till the character amount you are getting from the input field in the app. The `charCodes` variable has all the character codes. It all depends on the options the user selected. You will now generate a random index position of the array by using the ` math.random()` method, you multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next is the `Math.floor`, which will complete the number that is generated.
-
+ 
+Now let me explain the codes after passing the four arguments, for instance, if the username wants the password to be lowercase if no option is checked Inside the function, you will create a variable that will store an array of the character codes and you will assign the lowercase character codes by using the `let charCodes`. 
+ 
+After that, you need to check if the options are true or not by using the conditional statements `if (includeUppercase) charCodes` for uppercase code, `if (includeSymbols) charcodes` for symbol codes, and `if (includeNumbers) charcodes` for number codes. Now depending on the options selected you will concatenate the values to the `charCodes` variable For the password that it will create, then you will create an empty array and call it `passwordCharacters`. 
+ 
+Next, you will create a loop that will loop until it reaches the number of characters you want. While inside the loop, you will generate random character codes from the available values in the `charCodes` array, And then convert the characters from the character codes and push them into the `passwordCharacters`array so that you have completed the `generatePasswordfunction`. Now you will loop till the character amount you are getting from the input field in the application. The `charCodes` variable has all the character codes, It all depends on the options the user selected. 
+ 
+You will now generate a random index position of the array by using the ` math.random()` method, you multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next is the `Math.floor`, which will complete the number that is generated.
+ 
 Lastly, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
-
+ 
 All you need to do now is create a function that generates the decimal values of the characters, and in the end, you will convert all these values to characters using the method below.
-
+ 
 ```JavaScript
 // This is an example
-Let array FromlowToHigh = (low, high) => {
-Const array = [];
-For (let i = low; i <= high; i++) {
+let arrayFromlowToHigh = (low, high) => {
+const array = [];
+for (let i = low; i <= high; i++) {
  array.push(i);
 }
-Return array;
+return array;
 };
 ```
-
+ 
 The function will take two inputs: the highest and the other for the lowest value. It just increments until the highest value is achieved. All the incremented values are pushed to an array, and the function then returns the array, all you are doing is generating the character code function. Here is the code below.
-
+ 
 ```JavaScript
 // Character Code Generating Function
 function arrayFromLowToHigh(low, high) {
@@ -290,9 +237,68 @@ function arrayFromLowToHigh(low, high) {
   return array;
 }
 ```
-
+ 
+ 
+The next thing you want to do is build the `copy` button and copy to clipboard functionality. We will listen to the click event on the “copybtnDOM” element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
+ 
+```JavaScript
+// Copy Password Button
+ 
+copybtnDOM.addEventListener("click", () => {
+  const textarea = document.createElement("textarea");
+  const passwordToCopy = resultDOM.innerText;
+  // A Case when Password is Empty
+  if (!passwordToCopy) return;
+  // Copy Functionality
+  textarea.value = passwordToCopy;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  alert("Password Copied to Clipboard");
+});
+```
+ 
+In the above code for `const textarea = document.createElement(‘textarea’)`, you just created a variable that holds the textarea DOM element. You can get the value for the textarea using the `resultDOM.innerText`.
+ 
+Then, the `if (!passwordToCopy) return;` means if the “passwordToCopy” variable is empty, we should do nothing. The `textarea.value = passwordToCopy` syntax is used to set the “textarea” value with the value you want to copy.
+ 
+Next is the `document.body.appendchild(textarea);` all you want to do here is append the text area value to the body of your document. The append child method adds a node to the end of the list of the children of a specified parent node. 
+ 
+You need to select the elements you want to copy so you will use the `textarea.select();` method then to copy the elements, you will use the `document.execCommand(‘copy’);` method. This method executes the specified command for the selected part of an editable section which is the textarea. The `copy` command inside the function will copy the values of the editable section, after which you need to remove the “textarea” by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. 
+ 
+After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
+ 
+Also, if you click the button, you will observe that the page keeps reloading. You need to disable this reloading behavior by using a web API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below.
+ 
+```JavaScript
+// Checking the options that are selected and setting the password
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const characterAmount = lengthDOM.value;
+  const includeUppercase = uppercaseDOM.checked;
+  const includeNumbers = numbersDOM.checked;
+  const includeSymbols = symbolsDOM.checked;
+  const password = generatePassword(
+    characterAmount,
+    includeUppercase,
+    includeNumbers,
+    includeSymbols
+  );
+  resultDOM.innerText = password;
+});
+```
+ 
+In the above code, the first step you take is to disable the default behavior of reloading the page when submitting a form using the function `e.preventDefalult();`. You are listening to the submit event. 
+ 
+You can access the values inside the password field by using the `.value` getter method, which returns the input value. You can also use the `.checked` getter that'll return true if the checkboxes are selected or not. It will return false if the checkboxes are not selected. 
+ 
+We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments which are `characterAmount`, `includeUppercase`, `includeNumbers`, and `includeSymbols`. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
+ 
 Now, if you run the codes, our random password generator application would work perfectly well. We have successfully built our password generator application.
-
+ 
 ### Conclusion
-
+ 
 There are many other ways to build a random password generator application. This tutorial is just one way to achieve it. You can also research different ways of creating it as long as it performs the same functionality. If you want the source codes for this application, you can get them from my Github repo [here](https://github.com/destiny251/random-password-generator-app-).
+ 
+
