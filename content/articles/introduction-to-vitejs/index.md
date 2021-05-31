@@ -1,5 +1,4 @@
-![Vitejs](/introduction-to-vitejs/vite2.0 logo.jpg)
-# Introduction
+### Introduction
 
 Vite.js (a French word for "fast" or “quick”, pronounced /vit/) developed by the creator of Vue.js, Evan You.
 
@@ -7,7 +6,7 @@ Vite.js 2.0 is a front-end build tool or framework for designing a rich, elegant
 
 In this tutorial, we are going to install Vite 2.0 with all its dependencies and explore its advantages over other frameworks.
 
-## Prerequisites
+### Prerequisites
 
 It is assumed that the reader possesses the following:
 
@@ -15,7 +14,7 @@ It is assumed that the reader possesses the following:
 - [Node.js](www.nodejs.org) version 12 or later
 - Preferred text editor( Recommended: [VS Code](code.visualstudio.com) )
 
-## Why Vite.js
+### Why Vite.js
 
 Before we install Vite.js, let's have a look at the following advantages of Vite.js over other frameworks;
 
@@ -37,15 +36,15 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 
 Among other advantages of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
 
-## Installing Vite.js
+### Installing Vite.js
 
 In this tutorial, we are going to install Vite using npm and yarn.
 
-## Steps
+### Steps
 
 Open your terminal, navigate into the folder you want to install Vite.js, if you have one, else create a folder, navigate into the folder and run the following commands:
 
-### Installing using npm
+#### Installing using npm
 
 ```javascript
 npm init @vitejs/app
@@ -74,7 +73,7 @@ To run the build server, execute this command:
 npm run build
 ```
 
-### Installing using yarn
+#### Installing using yarn
 
 ```javascript
 yarn create @vitejs/app
@@ -103,7 +102,7 @@ To start the build server, run:
 yarn run build
 ```
 
-## Scaffolding Vite.js project
+### Scaffolding Vite.js project
 - Vite.js also supports template scaffolding for other frameworks like,
 - Vue
 - React
@@ -114,7 +113,8 @@ yarn run build
 
 All you have to do is to specify the project name and the desired template.
 
-**Example**
+#### **Example**
+
 To scaffold Vite plus react, just run the following commands:
 
 ```javascript
@@ -127,9 +127,9 @@ npm init @vitejs/app project-name --template react
 yarn create @vitejs/app project-name --template react
 ```
 
-## Project Folder Structure
+### Project Folder Structure
 Now, let's have a look at some files in our project folder:
-![project structure](/introduction-to-vitejs/folder-structure.png)
+![project structure](/engineering-education/introduction-to-vitejs/folder-structure.png)
 
 Looking at the project folder we have:
 - **node_modules:** This folder contains all the caches that the external modules depend upon.
@@ -177,16 +177,16 @@ import { defineConfig } from 'vite'
 export default defineConfig(
 )
 ```
-## Keywords
+### Keywords
 - NPM: Node Package Manager
 - HMR: Hot Module Replacement
 - API: Application Programming Interface
 - CSS: Cascading Style Sheets
 
-## Conclution
+### Conclution
 So far so good, we have seen how to install vitejs on our machine, its advantages, and the structure of its folders.
 Don’t hesitate to read more about [Vite.js](https://www.vitejs.dev).
 
-## Reference
+### Reference
 - www.vitejs.dev
 - www.stackoverflow.com
