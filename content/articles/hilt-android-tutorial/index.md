@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hilt-android-tutorial/
+url: /hilt-android-tutorial/
 title: Using Hilt Dependecy Injection Framework in Android
 description: This article will guide on how to implement Hilt in Android projects using Kotlin. Hilt is a dependency injection framework that can help you save significant time.
 author: raphael-ndonga
-date: 2021-06-23T00:00:00-11:00
+date: 2021-05-31T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
