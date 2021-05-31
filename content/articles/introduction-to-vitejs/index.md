@@ -52,11 +52,7 @@ npm init @vitejs/app
 ```
 
 Follow the prompts to continue:
-```javascript
-- Project name:
-- Select a framework:
-- Select a variant:
-```
+
 After a successful installation, run the following commands:
 
 ```javascript
@@ -85,11 +81,7 @@ yarn create @vitejs/app
 ```
 
 Follow the prompts to continue:
-```javascript
-- Project name:
-- Select a framework:
-- Select a variant:
-```
+
 After a successful installation, run the following commands:
 
 ```javascript
