@@ -3,29 +3,35 @@ It's pretty simple to write code and develop applications. But how about dealing
 We'll learn how to use ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users in this tutorial.
 
 ### Introduction to Authentication and Authorization
+
 Authentication and Authorization are used in security, particularly when it comes to getting access to a system. Yet, there is a significant distinction between gaining entry into a house (authentication) and what you can do while inside (Authorization).
 
 #### Authentication
+
 Authentication is the process of verifying a user's identification through the acquisition of credentials and using those credentials to confirm the user's identity. The authorization process begins if the credentials are legitimate. The authentication process always follows the authorization procedure.
 
 You were already aware of the authentication process because we all do it daily, whether at work (logging into your computer) or at home (logging into a website). Yet, the truth is that most "things" connected to the Internet require you to prove your identity by providing credentials.
 
 #### Authorization
+
 Authorization is the process of allowing authenticated users to access resources by determining whether they have system access permissions. By giving or denying specific licenses to an authenticated user, Authorization enables you to control access privileges.
 
 So, Authorization occurs after the system authenticates your identity, granting you complete access to resources such as information, files, databases, funds, places, and anything else. So said, Authorization affects your capacity to access the system and the extent to which you can do so.
 
 ### What is JWT
+
 JSON Web Tokens are an RFC 7519 open industry standard for representing claims between two parties. For example, you can use [jwt.io](https://jwt.io) to decode, verify, and produce JWT.
 
 JSON Web Token (JWT) specifies a compact and self-contained method for communicating information as a JSON object between two parties. Because it is signed, this information can be checked and trusted. JWTs can be signed using a secret (using the HMAC algorithm) or an RSA or ECDSA public/private key combination. In a moment, we'll see some instances of how to use them.
 
 #### Prerequisites
+
 - A working knowledge of Javascript.
 - A good understanding of NodeJS is required.
 - A basic understanding of MongoDB or any Database of your choice.
 
 ### API development using JWT token for authentication in NodeJS
+
 To get started, we need to set up our project.
 
 #### Step 1 - Open your IDE or code editor
@@ -46,7 +52,9 @@ Create a directory and initialize npm by typing the following command:
 
 ```bash
 mkdir jwt-project
+
 cd jwt-project
+
 npm init -y
 ```
 
@@ -54,20 +62,57 @@ npm init -y
 
 ```bash
 mkdir jwt-project
+
 cd jwt-project
+
 npm init -y
 ```
 
 #### Step 3 - Create files and directories as shown below
+
+In step 2, we initialize npm with the command `npm init -y`, which automatically created a package.json.
+We need to create the`model`,`middleware`,`config` directory and their files, e.g. `user.js`,`auth.js`,`database.js` using the command below.
+
+```bash
+mkdir model middleware config
+
+cd model
+
+touch user.js
+
+cd ..
+
+cd middleware
+
+touch auth.js
+
+cd ..
+
+cd config
+
+touch database.js
+
+```
+
+We can now create `index.js` and `app.js` file in the root directory of our project with the command.
+
+```bash
+touch app.js index.js
+```
+
+as shown in the image below:
+
 ![folder structure](/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/folder-struc.png)
 
 #### Step 4 - Install dependencies
+
 We'll install several dependencies like `mongoose`, `jsonwebtoken`, `express` `dotenv` `bcryptjs` and development dependency like `nodemon` to restart the server as we make changes automatically.
 
-We will install mongoose because I will be using MongoDB for storage while we validate user credentials against what we have in our database. The whole authentication process is not limited to the database we'll be using in this article.
+We will install mongoose because I will be using MongoDB for storage. At the same time, we validate user credentials against what we have in our database. So the whole authentication process is not limited to the database we'll be using in this article.
 
 ```bash
 npm install mongoose express jsonwebtoken dotenv bcryptjs
+
 npm install nodemon -D
 ```
 
@@ -76,6 +121,8 @@ npm install nodemon -D
 Now let's create our NodeJS server and connect our database by adding the following snippet to you `app.js`, `index.js` `, database.js` `.env`,.
 
 In our `database.js.`
+
+`config/database.js.`
 
 ```javascript
 const mongoose = require("mongoose");
@@ -105,6 +152,8 @@ exports.connect = () => {
 
 In our `app.js.`
 
+`jwt-project/app.js`
+
 ```javascript
 require("dotenv").config();
 require("./config/database").connect();
@@ -112,24 +161,17 @@ const express = require("express");
 
 const app = express();
 
+// Logic goes here
+
 app.use(express.json());
 
-// This should be the last route else any after it won't work
-app.use("*", (req, res) => {
-  res.status(404).json({
-    success: "false",
-    message: "Page not found",
-    error: {
-      statusCode: 404,
-      message: "You reached a route that is not defined on this server",
-    },
-  });
-});
 
 module.exports = app;
 ```
 
 In our `index.js.`
+
+`jwt-project/index.js`
 
 ```javascript
 const http = require("http");
@@ -151,6 +193,7 @@ In our `.env.`
 
 ```javascript
 API_PORT=4001
+
 MONGO_URI= //Your database URI here
 ```
 
@@ -171,6 +214,7 @@ Execute the command `npm run dev`.
 Both server and database should be up and running without crashing.
 
 #### Step 6 - Create a user model and route
+
 We'll define our schema for user details when signing up for the first time and validate against the credentials saved when logging in.
 
 Add the following snippet to `user.js` inside the `model` folder.
@@ -199,19 +243,21 @@ const User = require("./model/user");
 
 // Register
 app.post("/register", (req, res) => {
-
+// our register logic goes here...
 });
 
 // Login
 app.post("/login", (req, res) => {
-
+// our login logic goes here
 });
 ```
 
 #### Step 7 - Implement register and login functionality
+
 We'll be implementing these two routes in our application and using JWT to sign credentials and `bycrypt` to encrypt the password before storing it in our database.
 
-For the `/register` route, we will:
+For the `/register` route, we will modify the existing code:
+
 - get user input.
 - validate user input.
 - validate if the user already exists.
@@ -220,7 +266,11 @@ For the `/register` route, we will:
 Finally, create a signed JWT token.
 
 ```javascript
+// ...
+
 app.post("/register", async (req, res) => {
+
+  // Our register logic starts here
   try {
     // Get user input
     const { first_name, last_name, email, password } = req.body;
@@ -265,7 +315,10 @@ app.post("/register", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+  // Our register logic ends here
 });
+
+// ...
 ```
 
 > **Note:**: Update your `.env` file with a `TOKEN_KEY`, which can be a random string.
@@ -274,7 +327,8 @@ Using Postman to test, we'll get the response shown below after successful regis
 
 ![register](/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/register.png)
 
-For the `/login` route, we will:
+For the `/login` route, we will modify the existing code base:
+
 - get user input.
 - validate user input.
 - validate if the user exists.
@@ -282,7 +336,11 @@ For the `/login` route, we will:
 Finally, create a signed JWT token.
 
 ```javascript
+// ...
+
 app.post("/login", async (req, res) => {
+
+  // Our login logic starts here
   try {
     // Get user input
     const { email, password } = req.body;
@@ -314,7 +372,10 @@ app.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+  // Our register logic ends here
 });
+
+// ...
 ```
 
 Using Postman to test, we'll get the response shown below after successful login.
@@ -323,7 +384,7 @@ Using Postman to test, we'll get the response shown below after successful login
 
 #### Step 8 - Create middleware for authentication
 
-We can successfully create and log in a user, but we'll create a route that requires a user token in the header, which is the JWT token we generated earlier.
+We can successfully create and log in a user. Still, we'll create a route that requires a user token in the header, which is the JWT token we generated earlier.
 
 To do that, we'll create an `auth.js` file in the `middleware` folder inside our project. 
 
@@ -371,131 +432,17 @@ We can now add a `token` in the header with the key `x-access-token` and re-test
 
 ![success](/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/success-response.png)
 
-Here is what our `app.js` file looks like:
-
-```Javascript
-require("dotenv").config();
-require("./config/database").connect();
-const express = require("express");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-
-const User = require("./model/user");
-const auth = require("./middleware/auth");
-
-const app = express();
-
-app.use(express.json({ limit: "50mb" }));
-
-app.post("/register", async (req, res) => {
-  try {
-    // Get user input
-    const { first_name, last_name, email, password } = req.body;
-
-    // Validate user input
-    if (!(email && password && first_name && last_name)) {
-      res.status(400).send("All input is required");
-    }
-
-    // check if user already exist
-    // Validate if user exist in our database
-    const oldUser = await User.findOne({ email });
-
-    if (oldUser) {
-      return res.status(409).send("User Already Exist. Please Login");
-    }
-
-    //Encrypt user password
-    encryptedPassword = await bcrypt.hash(password, 10);
-
-    // Create user in our database
-    const user = await User.create({
-      first_name,
-      last_name,
-      email: email.toLowerCase(), // sanitize: convert email to lowercase
-      password: encryptedPassword,
-    });
-
-    // Create token
-    const token = jwt.sign(
-      { user_id: user._id, email },
-      process.env.TOKEN_KEY,
-      {
-        expiresIn: "2h",
-      }
-    );
-    // save user token
-    user.token = token;
-
-    // return new user
-    res.status(201).json(user);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-app.post("/login", async (req, res) => {
-  try {
-    // Get user input
-    const { email, password } = req.body;
-
-    // Validate user input
-    if (!(email && password)) {
-      res.status(400).send("All input is required");
-    }
-    // Validate if user exist in our database
-    const user = await User.findOne({ email });
-
-    if (user && (await bcrypt.compare(password, user.password))) {
-      // Create token
-      const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.TOKEN_KEY,
-        {
-          expiresIn: "2h",
-        }
-      );
-
-      // save user token
-      user.token = token;
-
-      // user
-      res.status(200).json(user);
-    }
-    res.status(400).send("Invalid Credentials");
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-app.get("/welcome", auth, (req, res) => {
-  res.status(200).send("Welcome 🙌 ");
-});
-
-// This is added to catch a request to an endpoint that does not exist in our application 
-// This should be the last route else any after it won't work
-app.use("*", (req, res) => {
-  res.status(404).json({
-    success: "false",
-    message: "Page not found",
-    error: {
-      statusCode: 404,
-      message: "You reached a route that is not defined on this server",
-    },
-  });
-});
-
-module.exports = app;
-```
 
 You can [click here](https://github.com/Olanetsoft/jwt-project) to check the complete code on GitHub.
 
 ### Conclusion
+
 We learned about JWT, authentication, Authorization and how to develop an API using JWT token for authentication in NodeJS.
 
 Happy coding!
 
 ### Resources
+
 - [JWT](https://jwt.io/)
 - [NodeJS](https://nodejs.org/en/)
 - [ExpressJS](https://expressjs.com/)
