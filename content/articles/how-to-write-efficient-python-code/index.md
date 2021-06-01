@@ -49,7 +49,7 @@ To recap, comprehension is great for quick imputation of data. However, it becom
 
 
 ### Lambda Functions
-Another function that makes us efficient in writing our python program is `lambda` functions otherwise known as __anonymous functions__ because they are nameless. They are one-line functions in python. Again just with list comprehension, they might not improve performance but they improve efficiency. It, however, does not work for complex functions but helps to improve the readability of smaller functions.
+Another function that makes us efficient in writing our python program is `lambda` functions otherwise known as __anonymous functions__ because they are nameless. They are basically one-line functions in python. Again just with list comprehension, they might not improve performance but they improve efficiency. It, however, does not work for complex functions but helps to improve the readability of smaller functions.
 
 It should be noted that lambdas return the expression by default, so we don't need to use the keyword `return`.
 
@@ -64,10 +64,12 @@ Note also, that when using lambdas without storing them into a variable, you nee
 
 # saving a lambda function into a variable
 multiply = lambda x,y: x * y
+
 multiply(4, 3)
 
 # Using if/else statements within a lambda to return the lesser number
 lesser = lambda x,y: x if x < y else y
+
 lesser(5,8)
 ```
 
@@ -82,8 +84,10 @@ The map function is used to iterate over a data collection and modify it.
 
 ```py
 # Example of a map function
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
+
 squared_nums = list(map(lambda x: x * x, nums))
+
 print(squared_nums)
 ```
 The map function takes two arguments, the function that would modify the data, and the data itself. In our example, we used the lambda function but we could as well have used it without lambdas.
@@ -93,8 +97,10 @@ Note that we use the `list` function to convert map object back to a list.
 The filter function is used to iterate over a data collection, and filter out data that doesn't meet a condition.
 ```py
 # Example of a filter function
-nums = [1,2,3,4,5,6,7,8,9,10]
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 even_nums = list(filter(lambda x: True if x % 2 == 0 else False, nums))
+
 print(even_nums)
 ```
 In our example, we are filtering out all odd numbers.
@@ -106,8 +112,10 @@ The reduce function takes a data collection and condenses it down to a single re
 # Example of a reduce function
 from functools import reduce
 
-nums = [5,6,7,8,9,10]
+nums = [5 ,6 , 7 ,8 , 9, 10]
+
 sum_of_nums = reduce(lambda a,b: a + b, nums)
+
 print(sum_of_nums)
 ```
 In our example, we used the reduce function to add up all the data in our list.
