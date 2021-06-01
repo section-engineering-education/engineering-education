@@ -220,7 +220,7 @@ This will render and serve the HTML form to the client to fill in the login cred
 app.get('/',(req,res) => {
     session=req.session;
     if(session.userid){
-        res.send("welcome User <a href=\'/logout'>click to logout</a>");
+        res.send("Welcome User <a href=\'/logout'>click to logout</a>");
     }else
     res.sendFile('views/index.html',{root:__dirname})
 });
