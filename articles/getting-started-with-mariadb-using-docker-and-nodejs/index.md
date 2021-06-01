@@ -1,5 +1,23 @@
-﻿### Introduction
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-mariadb-using-docker-and-nodejs/
+title: Getting Started with MariaDB Using Docker and NodeJS
+description: In this article, we will learn how to setup MariaDB inside a docker container and connect to it usind Express and NodeJS 
+author: ephraim-njoroge
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-mariadb-using-docker-and-nodejs/hero.jpg
+    alt: MariaDB Docker and NodeJS
+---
+ ### Introduction
 [MariaDB](https://mariadb.com/) has been a preferred database solution used by developers over the years. It is open-source and relational thus has a massive community of developers using it to build their applications' databases. In addition, [MariaDB Corporation](https://mariadb.com/) provides high-quality enterprise products that put MariaDB in front of other database vendors.
+
+<!--more-->
 
 Also, the [MariaDB Foundation](https://mariadb.org/), the custodian and guardian of the MariaDB community code, has significantly contributed to the MariaDB success.
 
@@ -178,3 +196,6 @@ The above command returns the below JSON response payload:
 As of now, the developer can now use a MariaDB with Node.js. MariaDB can offer a lot on how to build an innovative database to create modern applications.
 
 The code snippets used in this guide can be accessed at [GitHub Repo](https://github.com/ephnjor2021/mariadb-nodejs).
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
