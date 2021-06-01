@@ -49,7 +49,7 @@ To recap, comprehension is great for quick imputation of data. However, it becom
 
 
 ### Lambda Functions
-Another function that makes us efficient in writing our python code is `lambda` functions otherwise known as __anonymous functions__ because they are nameless. They are one-line functions in python. Again just with list comprehension, they might not improve performance but they improve efficiency. It, however, does not work for complex functions but helps to improve the readability of smaller functions.
+Another function that makes us efficient in writing our python program is `lambda` functions otherwise known as __anonymous functions__ because they are nameless. They are one-line functions in python. Again just with list comprehension, they might not improve performance but they improve efficiency. It, however, does not work for complex functions but helps to improve the readability of smaller functions.
 
 It should be noted that lambdas return the expression by default, so we don't need to use the keyword `return`.
 
@@ -163,7 +163,7 @@ print(factorial(5))
 We are using `lru_cache` function, Python's built-in memoization/caching system. This program would be very much faster than the previous factorial function we wrote earlier without `memoization`.
 
 ### Conclusion
-I am glad that you have reached the end of this article, I implore you to start using all this concept you have been introduced within your next python project and check it out our it does improve your efficiency as a developer.
+I am glad that you have reached the end of this article, I implore you to start using all this concept you have been introduced within your next python project and check it out how it does improve your efficiency as a developer.
 
 Happy coding!
 
