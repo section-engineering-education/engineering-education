@@ -141,9 +141,9 @@ They're used often in algorithms that involve __searching__ and __sorting__ beca
 
 These types of functions can often run into problems with speed, however, due to the function constantly calling itself. Enter `memoization`.
 
-Memoization helps this process by storing values that were already calculated to be used later.
+Memoization helps this process by storing values that were previously calculated to be used later.
 
-In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of previously called functions and returning the saved result when trying to calculate the same sequence.
+In computing, memoization is an optimization procedure used primarily to speed up computer programs by storing the results of previously called functions and returning the saved result when trying to calculate the same sequence.
 
 ```py
 # Using memoization with the factorial example
