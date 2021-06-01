@@ -38,7 +38,7 @@ In other terms, Let's say you have three different containers, I.e., a LAMP serv
 
 Another important thing to note is that each container is contained within itself with its configuration files. Each individual container can have its own IP address and its own network configuration. You can also go ahead and change those network configurations.
 
-Setting up a Linux server, you need a Linus operating system such as Ubuntu. Then you install the Linux Container software. once installed, you can log into it, and you will get a prompt that looks like any other Linux client
+Setting up a Linux server, you need a Linux operating system such as Ubuntu. Then you install the Linux Container software. Once installed, you can log into it, and you will get a prompt that looks like any other Linux client.
 
 ### Docker containers
 
