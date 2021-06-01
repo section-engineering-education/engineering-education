@@ -224,3 +224,9 @@ If did everything correctly, your app should be app and running!
 In this tutorial, we went over a successful deployment of a Docker application to AWS using Elastic Container Service using. We started by building a mini flask application. You can find the source code for the application [here.](https://github.com/victorelvice/Flask-app)
 Next, we dockerized the application in readiness for deployment and uploaded the docker image to an ECR repository.
 Lastly, we deployed the application to AWS.
+
+### Further Reading
+Please check out the links below for further understanding of Docker, AWS and Elastic Container Services.
+- [Docker](https://docs.docker.com/get-docker/)
+- [Amazon Web Services](https://aws.amazon.com/what-is-aws/)
+- [ Amazon Elastic Contaioner Service](https://docs.aws.amazon.com/ecs/index.html)
