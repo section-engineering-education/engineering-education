@@ -1,0 +1,1 @@
+Nelly is a Computer Engineering undergraduate student. She enjoys writing software and firmware for embedded microcontrollers. She beliefs in the power of teamwork to build a sense of comradely as engineers work towards achieving a common goal. 
