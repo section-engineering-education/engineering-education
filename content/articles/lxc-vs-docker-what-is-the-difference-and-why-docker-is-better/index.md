@@ -94,7 +94,7 @@ Docker engine has embedded configuration management commands that let you start 
 
 #### Popularity
 
-If popularity would be the only factor to be considered when choosing between these two containerization solutions, Docker would easily defeat LXC. Docker was launched in 2013. in its early stages, Docker used LXC but has subsequently modified its codebase to create a completely new container architecture.
+If popularity would be the only factor to be considered when choosing between these two containerization solutions, Docker would easily defeat LXC. Docker was launched in 2013. In its early stages, Docker used LXC but has subsequently modified its codebase to create a completely new container architecture.
 
 Many IT titans, including Netflix, Twitter, Google, and other web-scale organizations, have embraced Docker's application containerization strategy for its scalability benefits. Docker's popularity is booming, [according to ZDNet]((https://www.zdnet.com/article/what-is-Docker-and-why-is-it-so-darn-popular/), with over 3.5 million container-based applications and billions of container orchestration distributed using Docker.
 
