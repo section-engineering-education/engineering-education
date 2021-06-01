@@ -76,7 +76,7 @@ Docker goes hand in hand with versioning. When sharing this application, the ver
 
 ### Flexibility
 
-As we have explained above, Docker knows no environmental boundaries. Linux containers only support containerization with a Linux-based operating system. Thus a container only runs in one environment. That's not the case with Docker. If it works on your computer, it will work on my computer as well. Docker engine is well set to work constantly across all environments. If you set an application on a Windows-based server, it can be easily deployed in a Linux server without compatibility issues.
+As we have explained above, Docker knows no environmental boundaries. Linux containers only support containerization with a Linux-based operating system. Thus, a container only runs in one environment. That's not the case with Docker. If it works on your computer, it will work on my computer as well. Docker engine is well set to work constantly across all environments. If you set an application on a Windows-based server, it can be easily deployed in a Linux server without compatibility issues.
 
 With Docker containers, applications will work efficiently and correctly in different computer environments. it can be easily deployed and executed on other computer environments regardless of their host operating system or configurations
 
