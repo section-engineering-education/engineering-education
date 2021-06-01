@@ -16,7 +16,7 @@ Typically, in a virtual machine, you have a host machine where you install your 
 
 [Image source](https://www.docker.com/resources/what-container)
 
-The main issue with the above is that every instance running will need resource allocation, which can lead to over-allocation of the available resources. Every instance of an operating system has to have these resources allocated to it, and those resources will be used whether or not the server needs them.
+The main issue with the above is that every instance running will need resource allocation, which can lead to over-allocation of the available resources. Every instance of an operating system must have these resources allocated to it, and those resources will be used even if the server is not using them.
 
 If you have 16GB of RAM and start 4 Guest machines/servers, they will use all of the RAM that is currently available, i.e., each is allocated 4GB of ram. Even if the individual server only uses 1GB of RAM. Assuming each can run on 1GB of RAM, you just need 4 GB of RAM to boot up these four virtual hosts. But because the instances that they are in have been given 4 GB each, they are using 16GB of RAM within your virtual environment. If you were to add another virtual host, you wouldn't have enough RAM to start it. Every time a VM starts, all of the resources that have been assigned to it are automatically given to it. Those resources can't be assigned to another guest host. In the end, you'll have a lot of resources wasted.
 
