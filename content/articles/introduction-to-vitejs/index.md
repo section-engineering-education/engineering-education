@@ -129,7 +129,7 @@ yarn create @vitejs/app project-name --template react
 
 ### Project Folder Structure
 Now, let's have a look at some files in our project folder:
-![project structure](/engineering-education/introduction-to-vitejs/folder-structure.png)
+![project structure](/introduction-to-vitejs/folder-structure.png)
 
 Looking at the project folder we have:
 - **node_modules:** This folder contains all the caches that the external modules depend upon.
