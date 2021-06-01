@@ -5,7 +5,7 @@ published: true
 url: /http2-in-nodejs/
 title: Getting Started with HTTP/2 in Node.js
 description: This tutorial will go over the basics of HTTP/2 and how to build a Node.js HTTP/2 server. We will implement a simple Node.js server with HTTP/2 and server push.
-author: quinter-awuor
+author: bradley-biketi
 date: 2021-06-01T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
