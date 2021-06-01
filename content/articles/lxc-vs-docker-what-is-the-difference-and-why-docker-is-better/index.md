@@ -1,6 +1,6 @@
 Containers are the new technologies in the enterprise IT, and most seem to be very interested in this technology. Many are using them to develop and deploy applications to the public. Containers are useful for many reasons. They isolate applications and operating systems from the rest of the system, thus bringing speed and flexibility. They are portable and easy to clone and move to other operating systems. Thus, containers can be more or less of a virtualized software environment that the application or operating system runs on a host computer.
 
-There several kinds of container technologies you can you. These include Docker containers, Kubernetes containers, and Linux containers (LXC). This article will go over and compare LXC over Docker.
+There are several kinds of container technologies that you can use. They are Docker containers, Kubernetes containers, and Linux containers (LXC). This article will go over and compare LXC over Docker Containers.
 
 ### What is LXC, and what does it do
 
