@@ -20,7 +20,7 @@ The main issue with the above is that every instance running will need resource 
 
 Check this out. If you have 16GB of RAM and start 4 Guest machines/servers, they will use all of the RAM that is currently available, i.e., each is allocated 4GB of ram. Even if the individual server only uses 1GB of RAM. Assuming each can run on 1GB of RAM, you just need 4RAM to boot up these four virtual hosts. But because the instances that they are in have been given four gigs each, they are using 16GB of ram within your virtual environment. If you were to add another virtual host, you wouldn't have enough RAM to start it. Every time a VM starts, all of the resources that have been assigned to it are automatically given to it. Those resources can't be assigned to another guest host. In the end, you have lots of wasted resources.
 
-Another issue is that all the guest operating instances are running on a single machine. In case of any boot-up processes, or whenever you want to restart service for some reason, you have to reboot that entire computer. depending on what environment you are you're in, a couple of extra seconds matter
+Another issue is that all the guest operating instances are running on a single machine. In case of any boot-up processes, or whenever you want to restart the service for some reason, you have to reboot the entire computer. Depending on what environment you are you're in, a couple of extra seconds matter.
 
 #### LXC virtual environments (VE)
 
