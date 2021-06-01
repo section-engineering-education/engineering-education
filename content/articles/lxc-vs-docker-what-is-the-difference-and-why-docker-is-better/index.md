@@ -6,7 +6,7 @@ There several kinds of container technologies you can you. These include Docker 
 
 [LXC](https://linuxcontainers.org/LXC/introduction/) is a userspace interface for the [Linux kernel containment features](https://linuxcontainers.org/LXC/getting-started/). It uses a sophisticated API and simple tools to make it easy for Linux users to develop and maintain systems or application containers.
 
-To understand LXC well, let first discuss what a virtual machine is.
+To understand LXC well, let us first discuss what a virtual machine is.
 
 #### The concept of Virtual Machines (VM)
 
