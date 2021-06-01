@@ -90,7 +90,7 @@ Also, the Docker engine allows you to run multiple containers while sharing reso
 
 You don't have to set up a hypervisor or configure virtual machine images that are hard to set up and deploy. And there's no need to put up a guest OS.  Docker is quick as a result of this. To get to your application, you don't have to start up a complete operating system.
 
-Docker engine has embedded configuration management commands that let you start to stop pr restart a container within seconds right there in your host machine. Docker containers take up less disk space with no complex configuration to set, making them relatively faster in executing applications.
+Docker engine has embedded configuration management commands that let you start/stop or restart a container within seconds. Docker containers take up less disk space with no complex configuration to set, making them relatively faster in executing applications.
 
 #### Popularity
 
