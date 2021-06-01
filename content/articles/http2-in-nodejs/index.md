@@ -146,4 +146,9 @@ Still, under the browser developer tools, we can confirm that our application is
 ![http-version](/engineering-education/http2-in-nodejs/http2support.png).
 
 ### Conclusion
-Everyone knows the significance of improving the speed of our web applications. With minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. HTTP/2 is becoming the new web standard with its great features that constantly improve web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency are greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push). Happy coding!
+Everyone knows the significance of improving the speed of our web applications. With minimal code, we've implemented a simple Node.js server with HTTP/2 and server push. HTTP/2 is becoming the new web standard with its great features that constantly improve web efficiency while simplifying the development hassle. With features such as server push that enables us to send assets before even waiting for client requests, page load and latency are greatly improved. Check the source code on my [Github repo](https://github.com/Bradley8555/HTTP-2-Server-Push).
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
