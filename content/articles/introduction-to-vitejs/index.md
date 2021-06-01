@@ -134,9 +134,9 @@ Now, let's have a look at some files in our project folder:
 Looking at the project folder we have:
 - **node_modules:** This folder contains all the caches that the external modules depend upon.
 
-- **src:** this folder contains the root components such as App.js and main.js for bootstrapping your app.
+- **src:** This folder contains the root components such as App.js and main.js for bootstrapping your app.
 
-- **index.html:** this file serves as the source code and part of the module graph. This file also serves as the entry point of your app.
+- **index.html:** This file serves as the source code and part of the module graph. This file also serves as the entry point of your app.
 
 ```javascript
     <!DOCTYPE html>
@@ -158,7 +158,7 @@ Looking at the project folder we have:
     </html>
 ```
 
-- **package.json:** this file contains the build-in scripts,
+- **package.json:** This file contains the build-in scripts,
 ```javascript
   "scripts": {
     "dev": "vite",
@@ -167,16 +167,17 @@ Looking at the project folder we have:
 }
 ```
 
-- **vite.config.js**
+- **vite.config.js:** This file contains project configuration files, from setting a base url, plugins, where to output build files and also contains proxies to a back-end service.
 
 ```javascript
-// vite,config.js
-import { defineConfig } from 'vite'
+  // vite,config.js
+  import { defineConfig } from 'vite'
 
-// https://vitejs.dev/config/
-export default defineConfig(
-)
+  // https://vitejs.dev/config/
+  export default defineConfig(
+  )
 ```
+
 ### Keywords
 - NPM: Node Package Manager
 - HMR: Hot Module Replacement
@@ -185,8 +186,11 @@ export default defineConfig(
 
 ### Conclution
 So far so good, we have seen how to install vitejs on our machine, its advantages, and the structure of its folders.
+
+Vite is cool, easy to install and supports scaffolding with other front-end frameworks, it comes handy when looking for a framework that offers a minified scripts and styles.
 Don’t hesitate to read more about [Vite.js](https://www.vitejs.dev).
 
 ### Reference
 - www.vitejs.dev
+- www.dev.to
 - www.stackoverflow.com
