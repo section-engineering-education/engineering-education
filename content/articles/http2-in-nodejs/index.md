@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /http2-in-nodejs/
+title: Getting Started with HTTP/2 in Node.js
+description: This tutorial will go over the basics of HTTP/2 and how to build a Node.js HTTP/2 server.
+author: quinter-awuor
+date: 2021-06-01T00:00:00-12:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/http2-in-nodejs/hero.jpg
+    alt: Getting Started with HTTP/2 in Node.js example image
+---
+
 The HTTP protocol has been the foundation of internet communication for a long time. Its architecture is mainly based on the Client/Server model. What web applications have you built where load times suffer when waiting for assets to load and pushing them ahead of time would help? This is what HTTP/2 aims to solve, improving web efficiency. It was released in 2015 with improved features to address the HTTP/1 (version one) limitations. It uses methods such as compression, multiplexing, and prioritization. to overcome the HTTP overheads.
 
 ### Goal
