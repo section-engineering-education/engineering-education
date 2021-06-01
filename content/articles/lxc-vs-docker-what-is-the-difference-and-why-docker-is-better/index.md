@@ -10,7 +10,9 @@ To understand LXC well, let first discuss what a virtual machine is.
 
 #### The concept of Virtual Machines (VM)
 
-Typically, in a virtual machine, you have a host machine where you install your operating system. It could be Windows, macOS, or Linux on the host machine. When you use a virtual machine, you add or install hypervisors in your host operating system, for example, VirtualBox, VMware, and ESXi. You use the hypervisor to install a guest operating system to run on top of your host operating system. In this case, the guest OS is running as a virtual machine/container. Each of the guest operating systems you add is a complete operating system. all the hardware resources (RAM, CPU, HDD/SSD) attached to these guest virtual machines are virtualized. And the hypervisor is responsible for allocating the guest OS the hardware resources they need from your base/host machine in a virtualized fashion. Basically, you create an instance of an emulator that you can interact with just like an ordinary computer. The image below depicts this concept.
+Typically, in a virtual machine, you have a host machine where you install your operating system. The operating system could be Windows, macOS, or Linux. When you use a virtual machine, you add or install hypervisors in your host operating system like VirtualBox, VMware, and ESXi. You use the hypervisor to install a guest operating system to run on top of your host operating system. In this case, the guest OS is running as a virtual machine/container.
+
+ Each guest operating system you add is a complete operating system. All the hardware resources (RAM, CPU, HDD/SSD) attached to these guest virtual machines are virtualized and the hypervisor is responsible for allocating the guest OS the hardware resources they need from your base/host machine in a virtualized fashion. Basically, you create an instance of an emulator that can interact with the hardware just like an ordinary computer. The image below depicts this concept.
 
 ![Virtual machine architecture](/engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/virtual-machine-VM-architecture.jpeg)
 
