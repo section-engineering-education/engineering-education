@@ -24,7 +24,7 @@ Another issue is that all the guest operating instances are running on a single 
 
 #### LXC virtual environments (VE)
 
-On the other hand, [LXC](https://www.youtube.com/watch?v=CWmkSj_B-wo) (Linux Containers) is an operating system-level virtualization solution that enables the creation and operation of many isolated Linux virtual environments (VE) on a single centralized host. Containers, which are isolation levels, can isolate certain apps or simulate a fully different host.
+[LXC](https://www.youtube.com/watch?v=CWmkSj_B-wo) (Linux Containers) is a virtualization solution on the operating system-level that enables the creation and operation of many isolated Linux virtual environments (VE) on a single centralized host. Containers, which are isolation levels, can isolate certain apps or simulate a fully different host.
 
 LXC mitigates VM disadvantages. Linux containers enable the host CPU to effectively divide memory allocations into confinement levels known as namespaces. In comparison, a VM contains the whole operating system and machine setup/emulators, such as the hard disk, virtual CPUs, and network interfaces. Its whole enormous virtualized environment typically takes some time to boot and consumes a large amount of RAM and CPU. LXC virtual environment has no hardware preload emulation. Each virtual environment (an OS or an application) is loaded in a container and executes without any additional overhead and no hardware emulation. This means no penalty from software with limited memory. In the end, LXC will improve the performance of the bare metal as it only bundles the OS/application that is required.
 
