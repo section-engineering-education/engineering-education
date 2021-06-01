@@ -60,7 +60,17 @@ mongoose.connect('mongodb://localhost:27017/usersdb',
 
 We pass the `useNewUrlParser: true`, etc.  to `mongoose.connect()` to avoid the [`DeprecationWarning`](https://mongoosejs.com/docs/deprecations.html).
 
-To create a connection to MongoDB Atlas, use the following code. Replace the variables using your actual credentials.
+To create a connection to MongoDB Atlas, follow the following steps.
+
+1. Open your Cluster tab in MongoDb Atlas and click <kbd>CONNECT</kbd>.
+![Connect to cluster](clusters.png)
+
+2. Select `Connect your application` and choose Node.js for the driver.
+3. Copy the connection string.
+![Connection string](connect_to_db.png)
+
+
+With the connection at hand, create the following variables and replace their values using your actual credentials.
 
 `server.js`
 ```javascript
@@ -70,7 +80,7 @@ const cluster = "<cluster name>";
 const dbname = "myFirstDatabase";
 
 mongoose.connect(
-  `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`,
+  `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -78,13 +88,26 @@ mongoose.connect(
   }
 );
 ```
+> It's important to note that the cluster variable is the values appearing between the `@` and `.mongodb.net`. In my case the cluster variable is `cluster0.vte2d`.
+
+To make sure your connection was successful, add the following code right below your `mongoose.connect()`.
+
+`server.js`
+```javascript
+// ...
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
+```
 
 Then, set the app to listen to port 3000. 
 
 `server.js`
 ```javascript
 // ...
-app.use(Router); 
+app.use(Router);
 
 app.listen(3000, () => {
   console.log("Server is running at port 3000");
