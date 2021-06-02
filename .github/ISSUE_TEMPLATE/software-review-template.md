@@ -6,6 +6,7 @@ labels: ''
 assignees: ''
 
 ---
+
 **Be sure to include all needed prerequisites the audience would need to follow your article, by including links to other helpful material and resources.**
 
 Here is an example of a [Software Review](/engineering-education/introduction-to-jupyter-notebooks/).
@@ -35,5 +36,3 @@ NOTE: We encourage you to reach out to your peer community to get your article r
 - Who will be the most exciting about this new tech - who is the ideal audience in your mind that would benefit from the review?
 - Layout any needed background information on the new tech being introduced.
 - Include any needed background on the situation, industry, or in the literature to best explain the new technology.
-
-
