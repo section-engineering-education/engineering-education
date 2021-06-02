@@ -49,7 +49,7 @@
   <section >
     <div class="author-carousel">
       <div class="author-carousel-inner flex">
-        {{ range where .Site.Pages "Params.type" "authors" | shuffle }}
+        {{ range first 25 (where .Site.Pages "Params.type" "authors" | shuffle) }}
         <a class="author-carousel-item link-basic" href="{{ .Permalink }}">
           <div class="author-carousel-item-wrap fill-white flex cta-shadow flex-column">
             {{ range .Pages }}
