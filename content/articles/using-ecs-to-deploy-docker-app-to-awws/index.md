@@ -1,5 +1,5 @@
 ### Introduction
-Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run. ECS was developed by Amazon in response to the rise of containerization. ESC enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
+Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run. ECS was developed by Amazon in response to the rise of containerization. ECS enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
 
 [Docker](https://www.docker.com/products/docker-desktop) is a containerization technology that allows packaging of an application and its libraries into one so that the application can easily be run without need to do futher configurations.
 
