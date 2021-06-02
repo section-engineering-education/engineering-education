@@ -3,7 +3,7 @@ Elastic Container Service (ECS) is a cloud computing services provided by Amazon
 
 [Docker](https://www.docker.com/products/docker-desktop) is a containerization technology that allows packaging of an application and its libraries into one so that the application can easily be run without need to do futher configurations.
 
-[Amazon Web Services](https://aws.amazon.com/)(AWS) is a cloud computing platform for deploying and hosting web applications. Besided cloud services, AWS also provides distributed computing services. On of the services is Elastic Container Services (ECS).
+[Amazon Web Services](https://aws.amazon.com/) (AWS) is a cloud computing platform for deploying and hosting web applications. Besides cloud services, AWS also provides distributed computing services. One of the services is Elastic Container Services (ECS).
 
 ### Goal
 In this article, we will understand how to deploy a Docker-based application to Amazon Web Services using Elastic Container Service. Flask is a python framework for building web applications. We need flask to create a small web project to deploy to AWS. I prefer flask for its simplicity and besides, it does not require any special tools to work with. By the end of the tutorial, you will be able to understand how to create, dockerize and deploy a flask app. Be sure to follow along.
