@@ -91,7 +91,7 @@ In the above code snippet, we create a `posts` array containing all the posts.  
 
 We finally export the router making it possible to import and use it in our `index.js` file.
 
-#### Rate limiter implementation
+#### Rate limiter implementation using third party library
 `express-rate-limiter` is an npm package used for API rate-limiting in Node.js. To use `express-rate-limiter` in our application, we must install it.
 Execute the command below to install `express-rate-limiter` in our application.
 
@@ -128,6 +128,102 @@ app.listen(port, () => {
 - `headers` indicated whether to add headers to show the total number of requests and the duration to wait before trying to make requests again.
   
 Hooray!🥳 we have implemented rate-limiter to our API.
+
+#### Implementing a custom rate limiter using Redis
+In this section we are going to implement a custom rate-limiter using Redis to store the IP address of each user against the number of requests the user have made in the window duration. For this section, make sure you have [Redis](https://redis.io/download) installed on your computer.
+
+We need two packages to implement our custom rate limiter, `redis` to enable us connect to Redis and `moment` to enable us manipulate Javascript dates.
+
+Excecute the command below to install `moment` and `redis` packages into our application.
+
+```bash
+$ npm install --save redis moment
+```
+In the root project directory, create a file named `customLimitter.js` and add the code snippet below.
+
+```Javascript
+import moment from 'moment';
+import redis from 'redis';
+
+const redis_client = redis.createClient();
+const WINDOW_DURATION_IN_HOURS = 24;
+const MAX_WINDOW_REQUEST_COUNT = 100;
+const WINDOW_LOG_DURATION_IN_HOURS = 1;
+
+
+export const customLimiter = (req, res, next) => {
+    try {
+        //Checks if the Redis client is present
+        if (!redis_client) {
+            throw new Error('Redis client does not exist!');
+            process.exit(1);
+        }
+        //Gets the records of the current user base on the IP address, returns a null if the is no user found
+        redis_client.get(req.ip, function(err, record) {
+            if (err) throw err;
+            const currentTime = moment();
+            console.log(record);
+            //When there is no user record then a new record is created for the user and stored in the Redis storage
+            if (record == null) {
+                let newRecord = [];
+                let requestLog = {
+                    requestTimeStamp: currentTime.unix(),
+                    requestCount: 1
+                };
+                newRecord.push(requestLog);
+                redis_client.set(req.ip, JSON.stringify(newRecord));
+                next();
+            }
+            //When the record is found then its value is parsed and the number of requests the user has made within the last window is calculated
+            let data = JSON.parse(record);
+            let windowBeginTimestamp = moment()
+                .subtract(WINDOW_DURATION_IN_HOURS, 'hours')
+                .unix();
+            let requestsinWindow = data.filter(entry => {
+                return entry.requestTimeStamp > windowBeginTimestamp;
+            });
+            console.log('requestsinWindow', requestsinWindow);
+            let totalWindowRequestsCount = requestsinWindow.reduce((accumulator, entry) => {
+                return accumulator + entry.requestCount;
+            }, 0);
+            //WHen the number of requests made is more than or equal to the maximum then an error is returned
+            if (totalWindowRequestsCount >= MAX_WINDOW_REQUEST_COUNT) {
+                res
+                    .status(429)
+                    .jsend.error(
+                    `You have exceeded the ${MAX_WINDOW_REQUEST_COUNT} requests in ${WINDOW_DURATION_IN_HOURS} hrs limit!`
+                );
+            } else {
+                //When the number of requests made are less than the maximum the a new entry is logged
+                let lastRequestLog = data[data.length - 1];
+                let potentialCurrentWindowIntervalStartTimeStamp = currentTime
+                    .subtract(WINDOW_LOG_DURATION_IN_HOURS, 'hours')
+                    .unix();
+                //When the interval has not passed from the last request, then the counter increments
+                if (lastRequestLog.requestTimeStamp > potentialCurrentWindowIntervalStartTimeStamp) {
+                    lastRequestLog.requestCount++;
+                    data[data.length - 1] = lastRequestLog;
+                } else {
+                    //When the interval has passed, a new entry for current user and timestamp is logged
+                    data.push({
+                        requestTimeStamp: currentTime.unix(),
+                        requestCount: 1
+                    });
+                }
+                redis_client.set(req.ip, JSON.stringify(data));
+                next();
+            }
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+```
+ In the above code snippet, we have added and `Redis` and `moment` into our application. We are using Redis as an in-memory database for tracking user activity, while moment helps us to manipulate Javascript dates.
+
+ `customLimiter` middleware contains the logic that tracks the user activity and saves it in Redis.
 
 #### Testing
 When we make a `GET` request `localhost:3000/posts`, we get a response as shown below.
