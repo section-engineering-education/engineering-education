@@ -4,10 +4,10 @@ Wakanda is an open-source platform which authorizes the user to easily and quick
 ### Features of Wakanda JavaScript Framework 
 There are very nice features which make Wakanda JavaScript stand out in this modern Day. 
 
-##Wakanda database
+#### Wakanda database
 The Wakanda Database itself stands out for me, especially when it is paired perfectly with the Wakanda Server. It has been able to offer same experience as that of Mongo and CouchDB since it uses modern NoSQL with similar portability as SQLite. Wakanda JavaScript framework saves stress and time since it is portable, ready to use. 
 
-##Wakanda server
+#### Wakanda server
 Wakanda server runs and hosts the backend applications in the course of production and development It is a multi-threaded HTTP server which incorporates server-side JavaScript APIs unmasked in REST. Everything needed is already written to the users in JavaScript. It is also saving time since the user does mot have to go in configuration tasks. It is also portable. This Wakanda server lowers the cost of both configuration and development by using pre-bundled components; 
 
 **JavaScript Application Server** 
@@ -21,7 +21,7 @@ Its is essential for data security, helps in data manipulation through use of Ja
 **Authentication (directory)**
 It helps in exposing both the REST API and server side JavaScript API.it is responsible for authentication of management sessions and users.
 
-##Wakanda studio
+#### Wakanda studio
 Wakanda studio helps to develop and test apps locally together with troubleshooting your environment. In this era where everyone is craving for a code editor Wakanda has taken a different turn of coming up with IDE. Wakanda's main objective is to give a quick and easy way in project scaffolding. Wakanda is the solution. The philosophy behind this Wakanda studio which simplifies developers lives who have decided to work with Wakanda JavaScript framework stack is called RAD (Rapid Application Development).
 
 Do you love react? You can change scaffolding your project and adapt it as you desire. Wakanda identifies and acknowledges the three critical parts in all the application. These crucial parts are all used in initial scaffolding. They include backend, web and the mobile. Studio has a code editor emanating from extension updatable, an application prototype, deploy solutions, code mirror and git integration. This studio gives the user the whole view of application;
