@@ -275,3 +275,6 @@ We've also discussed how we can use SweetAlert over the CDN without necessarily 
 For more information, you can read sweetalert documentation [here](https://sweetalert2.github.io).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
