@@ -112,7 +112,7 @@ The code for the `db.js` will be as follows:
 
 ```JavaScript
 // here we import the mariadb
-var mariadb = require('mariadb');
+const mariadb = require('mariadb');
 
 // here we create a new connection pool
 const pool = mariadb.createPool({
