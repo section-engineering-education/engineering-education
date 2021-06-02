@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /top-container-orchestration-tools/
+title: Top Container Orchestration tools
+description: This tutorial will be a brief dive into understanding Containers technology. We'll deep dive into various orchestration tools, and explore them in detail.
+author: esther-waithera
+date: 2021-06-02T00:00:00-23:30
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/top-container-orchestration-tools/hero.jpg
+    alt: Containers hero image
+---
 If you have applications to develop, deploy and run, containers come in handy. [Containers](https://www.docker.com/resources/what-container) are technologies that enable you to package an application to be run with its dependencies quickly and effectively from one computing environment to another.
-
+<!--more-->
 With containers, applications are moved seamlessly between servers. Therefore, you need a management system that automatically runs containers, shuts them down when needed, and controls how containers access resources. That is where orchestration tools come in.
 
 Container orchestration tools enable developers to manage and automate containerized application tasks. These tasks include linking containers, running instances, provisioning hosts, and rescheduling failed containers.
