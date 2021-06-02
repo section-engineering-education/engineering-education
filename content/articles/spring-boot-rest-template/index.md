@@ -170,20 +170,20 @@ public class RestConsumer {
     
 #### Testing the endpoints
 **GET request**
-![GET request](get-request.png)
+![GET request](/engineering-education/spring-boot-rest-template/get-todos.png)
 
 **POST request**
-![POST request](post-request.png)
+![POST request](/engineering-education/spring-boot-rest-template/create-todo.png)
 
 **PUT request**
-![PUT request](put-request.png)
+![PUT request](/engineering-education/spring-boot-rest-template/update-todo.png)
 
 **DELETE request**
-![DELETE request](delete-request.png)
+![DELETE request](/engineering-education/spring-boot-rest-template/delete-todo.png)
 
 
 ### Conclusion
-Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. Find the complete source code for the application [here]().
+Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. Find the complete source code for the application [here](https://replit.com/@elizabeth962/RestTemplate#).
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
