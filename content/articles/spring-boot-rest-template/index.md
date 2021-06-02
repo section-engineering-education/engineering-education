@@ -184,3 +184,6 @@ public class RestConsumer {
 
 ### Conclusion
 Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. Find the complete source code for the application [here]().
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
