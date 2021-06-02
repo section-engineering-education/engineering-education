@@ -1,6 +1,21 @@
-TEST COMMIT
+---
+layout: engineering-education
+status: publish
+published: true
+url: /session-management-in-nodejs-using-expressjs-and-express-session/
+title: Session Management in NodeJS using ExpressJS and Express Session
+description: This tutorial will help the readers in developing a session based authentication system and how to manage sessions using ExpressJS and Express Session in NodeJS. 
+author: catherine-macharia
+date: 2021-06-01T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/hero.jpg
+    alt: Session Management in NodeJS using ExpressJS and Express Session Hero Image
+---
 
 A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state.
+<!--more-->
 
 In session-based authentication, the user's state is stored in the server's memory or a database. 
 
