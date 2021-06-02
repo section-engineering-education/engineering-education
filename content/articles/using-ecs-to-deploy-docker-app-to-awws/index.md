@@ -146,7 +146,7 @@ You should have a screen like the below:
 
 
 ### Uploading the Docker Image to the Repository
-Next. we need to upload the docker image we created to ECR.
+Next, we need to upload the docker image we created to ECR.
 First login to the user by retrieving an authentication and using the token to authenticate the user. Execute the command below:
 ```shell
 aws ecr get-login-password --region YOUR REGION | docker login --username AWS --password-stdin YOUR ID.dkr.ecr.YOUR REGION.amazonaws.com
