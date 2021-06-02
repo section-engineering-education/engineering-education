@@ -1,18 +1,24 @@
 ### Introduction
-In this tutorial, we discuss about this beautiful, customizable and responsive popup notification using Angular 11.
-We'll look at sweetalert in depth, its features and how to integrate with angular to replace the default JavaScript alert notification.  
+In this tutorial, we discuss this beautiful, customizable and responsive popup notification using Angular 11.
+We'll look at sweetalert in-depth, its features, and how to integrate with angular to replace the default JavaScript alert notification.  
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Setting up Angular 11 environment](#setting-up-angular-11-environment)
-- [Installing SweetAlert Package in Angular 11](#installing-sweetAlert-package-in-angular-11)
+- [Installing SweetAlert package in Angular 11](#installing-sweetalert-package-in-angular-11)
+- [Creating success alert using SweetAlert](#creating-success-alert-using-sweetalert)
+- [Creating warning alert using SweetAlert](#creating-warning-alert-using-sweetalert)
+- [Creating question alert using SweetAlert](#creating-question-alert-using-sweetalert)
+- [Creating error alert using SweetAlert](#creating-error-alert-using-sweetalert)
+- [Conclusion](#conclusion)
+
 
 ### Prerequisites
 To successfully follow this tutorial, you need to be conversant with the following:
 
 - Basic JavaScript especially how to use alerts.
-- Installation of third party packages in Angular.
+- Installation of third-party packages in Angular.
 - You should be comfortable using Node Package Manager ([npm](https://www.npmjs.com)).
 - Node.js and Angular CLI installed in your local development machine. 
 
@@ -21,14 +27,14 @@ To successfully follow this tutorial, you need to be conversant with the followi
 By the end of this Angular SweetAlert tutorial, you should be able to perform the following:
 
 - Set Up Angular Environment.
-- Add SweetAlert package to your Angular application.
-- Import and use the package to create popup messages such as warning, question and success.
+- Add the SweetAlert package to your Angular application.
+- Import and use the package to create popup messages such as warning, question, and success.
 - Customize the default settings of Sweetalert such as resizing the popup boxes.
 - Animate the popup boxes.
 
 ### Setting up Angular 11 environment
 
-Before we start using SweetAlert tool, we first need to set up our Angular project enviroment.  
+Before we start using the SweetAlert tool, we first need to set up our Angular project environment.  
 
 Run the following command in your terminal:
 
@@ -42,14 +48,14 @@ cd sweetalert-example
 
 ```
 
-### Installing SweetAlert Package in Angular 11ss
+### Installing `sweetalert` package in Angular 11
 To download and install sweetAlert package in your angular application, run the following command: 
 
 ```bash
 npm install sweetalert2
 
 ```
-Upon completion, add the sweetAlert CSS to `angular.json` file to show interactive popups as shown below:
+Upon completion, add the sweetAlert CSS to the `angular.json` file to show interactive popups as shown below:
 ```json
 ----------------------------
 "styles": [
@@ -75,7 +81,7 @@ In the `app.component.ts` file, import the sweetAlert `Swal` module:
 ```ts
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 ```
-This module gives us an access to the SweetAlert `fire()` method that we uses to fire triggered button click events.  
+This module gives us access to the SweetAlert `fire()` method that we use to fire triggered button click events.  
 
 To create a success alert, let add the following to our `app.component.ts`:
 
@@ -95,7 +101,7 @@ ngOnInit(): void
   )
 }
 /**
-   * this method displays a simple success message to the user
+   * This method displays a simple success message to the user
    * @param title
    * @param message
    * @param icon
@@ -116,7 +122,7 @@ ngOnInit(): void
 **Output:**
 ![SweeAlertSuccess](engineering-education/sweetalert-success)
 
-In the above typescript, we import the `Swal` module from SweetAlert package installed previously. We then invoke the `Swal.fire()` method and pass it a few parameters to display the alert as shown in the above screenshot.
+In the above typescript, we import the `Swal` module from the SweetAlert package installed previously. We then invoke the `Swal.fire()` method and pass it a few parameters to display the alert as shown in the above screenshot.
 
 
 ### Creating Warning alert using SweetAlert
@@ -140,7 +146,7 @@ ngOnInit(): void
   )
 }
 /**
-   * this method displays a simple warning message to the user
+   * This method displays a simple warning message to the user
    * @param title
    * @param message
    * @param icon
@@ -183,7 +189,7 @@ ngOnInit(): void
   )
 }
 /**
-   * this method displays a simple question message to the user
+   * This method displays a simple question message to the user
    * @param title
    * @param message
    * @param icon
@@ -225,7 +231,7 @@ ngOnInit(): void
   )
 }
 /**
-   * this method displays a simple question message to the user
+   * This method displays a simple question message to the user
    * @param title
    * @param message
    * @param icon
@@ -247,8 +253,8 @@ ngOnInit(): void
 ![error-alert](engineering-education/error-alert.png)
 
 ### Conclusion
-In this tutorial, we've seen how we can create beautiful, user interectiv alerts. We seen how we can install the SweeAlert package in our Angular application and adding its CSS to the `angular.json` file.
-We've also discussed how we can use SweetAlert over the CDN without neccessarily installing the package in our application.
+In this tutorial, we've seen how we can create beautiful, user interactive alerts. We have seen how we can install the SweeAlert package in our Angular application and adding its CSS to the `angular.json` file.
+We've also discussed how we can use SweetAlert over the CDN without necessarily installing the package in our application.
 For more information, you can read sweetalert documentation [here](https://sweetalert2.github.io).
 
 Happy Coding!
