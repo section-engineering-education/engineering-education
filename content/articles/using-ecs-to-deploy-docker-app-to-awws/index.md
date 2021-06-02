@@ -21,7 +21,7 @@ To create the flask app, we need to install `flask`. In the directory of the pro
 ```bash
 pip install flask
 ```
-Next, create two files `requirements.txt` to hold the project libraries and dependencies and `app.py`. 
+Next, create two files `requirements.txt` to hold the project libraries, its dependencies, and `app.py`. 
 Add the scripts below to the `app.py` file:
 ```py
 from flask import Flask, render_template
