@@ -39,9 +39,9 @@ Rate limiting is a feature used to control outgoing and incoming requests in a s
    $ node index.js
    ```
 
-The provided code contains an API that returns a list of books when we send a `GET` request to the `/posts` endpoint. We will implement a rate limiter to limit the number of requests a user can make to this endpoint in a given duration. We are going to use a middleware layer to implement the rate limiter.
+The provided code contains an API that returns a list of books when we send a `GET` request to the `/posts` endpoint. We are going to implement a rate limiter that restricts API access to a given number of requests within a specied duration. We are going to use a middleware layer to implement the rate limiter.
 
-Since there is no authentication for users, we will implement the rate limiter using the IP address property. We can obtain the IP address from the requests object through `req.ip`.
+Since there is no authentication for users, we will implement the rate limiter using the IP address property. `req.ip` returns the IP addresss from the request object. 
 
 In the project root directory, create a new file names `routes.js` and add the code snippets below.
 
@@ -110,9 +110,9 @@ const app = express()
 const port = 3000
 
 app.use(rateLimit({
-  windowMs: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
+  windowMs: 12 * 60 * 60 * 1000, // 12 hour duration in milliseconds
   max: 5,
-  message: 'You have exceeded 100 requests in 24 hours limit!', 
+  message: 'You exceeded 100 requests in 12 hour limit!', 
   headers: true,
 }))
 
@@ -123,7 +123,7 @@ app.listen(port, () => {
 })
 ```
 - `windowMs` is the window size. In our case, we used a 24 hours window duration in milliseconds.
-- `max` is the number of allowed requests per window for each user.
+- `max` is the maximum amount of requests a user can make within a given window duration.
 - `message` is the response message that a user gets whenever they have exceeded the limit.
 - `headers` indicated whether to add headers to show the total number of requests and the duration to wait before trying to make requests again.
   
@@ -139,7 +139,7 @@ Excecute the command below to install `moment` and `redis` packages into our app
 ```bash
 $ npm install --save redis moment
 ```
-In the root project directory, create a file named `customLimitter.js` and add the code snippet below.
+In the root project directory, create a file named `customLimitter.js`. Add the code snippet below to the `customLimitter.js` file created above.
 
 ```Javascript
 import moment from 'moment';
@@ -155,14 +155,13 @@ export const customLimiter = (req, res, next) => {
     try {
         //Checks if the Redis client is present
         if (!redis_client) {
-            throw new Error('Redis client does not exist!');
+            console.log('Redis client does not exist!');
             process.exit(1);
         }
         //Gets the records of the current user base on the IP address, returns a null if the is no user found
-        redis_client.get(req.ip, function(err, record) {
-            if (err) throw err;
+        redis_client.get(req.ip, function(error, record) {
+            if (error) throw error;
             const currentTime = moment();
-            console.log(record);
             //When there is no user record then a new record is created for the user and stored in the Redis storage
             if (record == null) {
                 let newRecord = [];
@@ -186,7 +185,7 @@ export const customLimiter = (req, res, next) => {
             let totalWindowRequestsCount = requestsinWindow.reduce((accumulator, entry) => {
                 return accumulator + entry.requestCount;
             }, 0);
-            //WHen the number of requests made is more than or equal to the maximum then an error is returned
+            //if maximum number of requests is exceeded then an error is returned
             if (totalWindowRequestsCount >= MAX_WINDOW_REQUEST_COUNT) {
                 res
                     .status(429)
