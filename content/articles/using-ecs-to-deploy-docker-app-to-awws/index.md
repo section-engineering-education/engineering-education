@@ -162,7 +162,7 @@ Tag the built image so that you can upload it to the created repository
 docker tag test:latest YOUR ID.dkr.ecr.YOUR REGION.amazonaws.com/test:latest
 ```
 Finally, we need to push the image to the AWS repository
-```
+```bash
 docker push YOUR ID.dkr.ecr.YOUR REGION.amazonaws.com/test:latest
 ```
 ![Docker push command](/engineering-education/using-ECS-to-deploy-a-docker-app-to-AWS/upload-to-repository.png)
