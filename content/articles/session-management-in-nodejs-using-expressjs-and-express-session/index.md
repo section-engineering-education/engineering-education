@@ -3,21 +3,19 @@ layout: engineering-education
 status: publish
 published: true
 url: /session-management-in-nodejs-using-expressjs-and-express-session/
-title: Session Management in NodeJS using ExpressJS and Express Session
-description: This tutorial will help the readers in developing a session based authentication system and how to manage sessions using ExpressJS and Express Session in NodeJS. 
+title: Session Management in Node.js using ExpressJS and Express Session
+description: This tutorial will help the reader develop a session based authentication system and go over how to manage sessions using Express.js and Express Session in Node.js. 
 author: catherine-macharia
 date: 2021-06-02T00:00:00-10:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/hero.jpg
     alt: Session Management in NodeJS using ExpressJS and Express Session Hero Image
 ---
-
-A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state.
+A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. 
 <!--more-->
-
-In session-based authentication, the user's state is stored in the server's memory or a database. 
+This is where the session comes in. A session will contain some unique data about that client to allow the server to keep track of the user's state. In session-based authentication, the user's state is stored in the server's memory or a database. 
 
 ### How sessions works
 When the client makes a login request to the server, the server will create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will contain the session's unique id stored on the server, which will now be stored on the client. This cookie will be sent on every request to the server.
@@ -37,9 +35,7 @@ To learn more about their differences, check this [Session vs Cookie](https://ww
 
 ### Prerequisites
 - Have [Node.js runtime](https://nodejs.org/en/download/) installed on your computer.
-
 - Basic knowledge on [how to use Node.js](https://nodejs.dev/learn/).
-
 - Basic understanding of how to create an [HTTP server using the Expres.js](/engineering-education/express/) library.
 
 ### Setting up the required environments and libraries
@@ -54,9 +50,7 @@ This will generate a `package.json` file that will manage the dependencies for t
 The following libraries will help us setup a Node.js session.
 
 - [Express](/engineering-education/express/) - a web framework for Node.js used to create HTTP web servers. Express provides an easy-to-use API to interact with the webserver.
-
 - [Express-session](https://www.npmjs.com/package/express-session) - an HTTP server-side framework used to create and manage a session middleware. This tutorial is all about sessions. Thus Express-session library will be the main focus.
-
 - [Cookie-parser](https://www.npmjs.com/package/cookie-parser) - used to parse cookie header to store data on the browser whenever a session is established on the server-side.
 
 Install the above libraries using the command:
@@ -65,8 +59,7 @@ Install the above libraries using the command:
 npm install express express-session cookie-parser
 ```
 
-### Express-session Options and how to use it
-
+### Express-session options and how to use them
 To set up the session, you need to set a couple of [Express-session](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
 
 ```js
@@ -83,7 +76,7 @@ app.use(sessions({
 
 - `resave` - takes a Boolean value. It enables the session to be stored back to the session store, even if the session was never modified during the request. This can result in a race situation in case a client makes two parallel requests to the server. Thus modification made on the session of the first request may be overwritten when the second request ends. The default value is `true`. However, this may change at some point. `false` is a better alternative.
 
-- `saveUninitialized` - Allow any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
+- `saveUninitialized` - this allows any `uninitialized` session to be sent to the store. When a session is created but not modified, it is referred to as `uninitialized`.
 
 - `cookie: { maxAge: oneDay }` - this sets the cookie expiry time. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
 
@@ -95,12 +88,11 @@ const oneDay = 1000 * 60 * 60 * 24;
 Check the [documentation](https://www.npmjs.com/package/express-session#options) for all possible options and learn more about these options.
 
 ### Setting up the session middleware
-
 To initialize the session, we will set the session middleware inside the routes of the individual HTTP requests.
 
 When a client sends a request, the server will set a session ID and set the cookie equal to that session ID. The cookie is then stored in the set cookie HTTP header in the browser. Every time the browser (client) refreshes, the stored cookie will be a part of that request.
 
-We'll create a simple login form to demonstrate that. Create a `views` folder and add the following;
+We'll create a simple login form to demonstrate that. Create a `views` folder and add the following:
 
 - Here is the login form (`index.html`).
 
@@ -212,7 +204,9 @@ app.use(cookieParser());
 ```
 
 #### Set the authentication credentials
-In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively in this file as variables. In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutorial, we are storing them in these variables.
+In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively in this file as variables. 
+
+In a production environment, these credentials are usually saved in a database. For the sake of simplicity in this tutorial, we are storing them in these variables.
 
 ```js
 //username and password
@@ -224,7 +218,6 @@ var session;
 ```
 
 #### Add the endpoints
-
 We have to make three routes here:
 
 1. `http://localhost:4000/`
@@ -245,8 +238,7 @@ app.get('/',(req,res) => {
 
 To create a session, the user will submit the credentials. The server will verify these credentials received in the request's body with the username and the password for the existing user.
 
-If the credentials are valid;
-
+If the credentials are valid:
 - The user will be granted the necessary access.
 - The server will create a temporary user session with a random string known as a session ID to identify that session.
 - The server will send a cookie to the client's browser. The session ID is going to be placed inside this cookie.
@@ -329,10 +321,9 @@ A cookie doesn't carry any meaningful data inside of them. It just contains the 
 When the user logs out, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
 
 ### Conclusion
-
 That's all for this tutorial. This was a basic example, and I hope it helped you understand the concept of session management in Node.js using Express.js and Express-session.
 
-Happy Coding!!
+Happy coding!!
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
