@@ -1,4 +1,18 @@
-# How to create a simple Dark-Mode using CSS and JavaScript along with Switch
+---
+layout: engineering-education
+status: draft
+published: false
+url: /creating-a-dark-mode-with-javascript-and-css/
+title: How to create a simple Dark-Mode using CSS and JavaScript along with Switch
+description: In this article we will understand how to create dark mode  using CSS and javaScripT along Switch
+author: chandramouli-dasari
+date: 2021-02-06T00:00:00-22:09
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/creating-a-dark-mode-with-javascript-and-css/hero.png
+    alt: Dark mode using CSS and JavaScripT along Switch
+---
 
 **In the write-up I want to explain how to create a simple Dark Mode with JavaScript and CSS in few lines. If you're a little familiar with JavaScript and CSS I'm sure you can understand this easily and I will explain in detail so beginners can understand easily**
 
@@ -232,3 +246,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
 In this article, we've covered how to create a Dark mode using CSS and JavaScript along with a switch in a simple way. Now we can perform many styles to switch button and font style and more as you like. Finally, we saw how we can create a dark mode using CSS and javascript and we can include it in our projects and websites also. And I hope I explained everything in detail and hands-on. See you in the next article until then 
 Happy Coding!
 
+---
+Peer Review Contributions by: 
