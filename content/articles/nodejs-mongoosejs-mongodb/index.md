@@ -1,9 +1,28 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /nodejs-mongoosejs-mongodb/
+title: How to Connect MongoDB to Node.js Using Mongoose
+description: In this tutorial we will look at how to connect a MongoDB instance with a Node.js application. 
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/nodejs-mongoosejs-mongodb/hero.jpg
+    alt: MongoDB NodeJS and Mongoose
+---
+
 ### How to Connect MongoDB to Node.js Using Mongoose
 MongoDB is one of the most widely used No-SQL databases in the developer world today. No-SQL databases allow developers to send and retrieve data as JSON documents, instead of SQL objects. To work with MongoDB in a Node.js app, we can use Mongoose.
 
 [Mongoose.js](https://mongoosejs.com) connects your MongoDB clusters or collections with your Node.js app. It enables you to create schemas for your documents. Mongoose provides a lot of functionality for creating and working with schemas. 
 
 In this tutorial we will look at how to connect a MongoDB instance with a Node.js application.
+
+<!--more-->
 
 ### Prerequisites
 Before we move on, you'll need to have the following:
@@ -232,3 +251,6 @@ In this tutorial, we have looked at how to set up Mongoose. We have also looked 
 I hope you find this article helpful. 
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
