@@ -22,9 +22,9 @@ Axios is a very popular javascript framework used to perform network requests. A
 
 ### Prerequisites
 
-To follow through this article you need to have Node.js installed and understand its basics. How to set up a simple server, and how to do some basic configuration. Go through [this]() article to get yourself up to speed.
+To follow through this article you need to have Node.js installed and understand its basics. How to set up a simple server, and how to do some basic configuration. Go through [this](/engineering-education/building-a-basic-api-with-nodejs/) Node.js introduction article to get yourself up to speed.
 
-Through this article, we are going to make network requests to a free dogs api from our Node.js application. Our application will be sending back the response it receives from the api.
+Through this article, we are going to make network requests to a free JSON placeholder api from our Node.js application. Our application will be sending back the response it receives from the api.
 
 Let's get started!
 
@@ -33,9 +33,11 @@ Let's get started!
 Start by creating a new Node.js project. Create a folder with the name of your choice and run the following commands from the terminal.
 
 ```bash
-npm init // to create a new package.json file.
-npm i express axios async promise // to install express, axios, promises and asyncjs.
+npm init
+npm i express axios
 ```
+
+npm init initializes a new node.js application whereas the second command installs express and axios.
 
 With that done, let's go ahead and create our server.
 
@@ -44,12 +46,14 @@ Create an index.js file and write the following code in it.
 ```Javascript
 const express = require("express");
 const app = express();
-const axios = require("axios");
+const axios = require("axios").create({baseUrl: "https://jsonplaceholder.typicode.com/"});
 
 app.listen(2400, () => {
 	console.log("Server started at port 2400");
 });
 ```
+
+Here, we import the required dependencies, i.e. express and axios. In the axios import, we use the create method to specify the base url, this is the url that our axios object will prepend to all our requests.
 
 Run the server using this command.
 
@@ -75,7 +79,7 @@ Add the following code just before `app.listen` method.
 app.get("/async", async (req, res) => {
 	try {
 		const response = await axios({
-			url: "https://dog.ceo/api/breeds/list/all",
+			url: "users",
 			method: "get",
 		});
 		res.status(200).json(response.data);
@@ -85,12 +89,12 @@ app.get("/async", async (req, res) => {
 });
 ```
 
-In the above code, we have made an endpoint that makes a `GET` request to the dog api. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
+In the above code, we have made an endpoint that makes a `GET` request to the JSON placeholder api. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
 
 ```Javascript
 app.get("/promise", (req, res) => {
 	axios({
-		url: "https://dog.ceo/api/breeds/list/all",
+		url: "users",
 		method: "get",
 	})
 		.then(response => {
@@ -109,22 +113,24 @@ Alternatively, instead of writing the url and the method, you can call the metho
 Example;
 
 ```Javascript
-axios.get("https://dog.ceo/api/breeds/list/all")
+axios.get("users")
 ```
 
 ### Post requests
 
-For post requests, axios object takes in the url, method and the body to post. Since the dogs api does not allow us to make post requests, we are just going to have a look at how this request can be made but not with a real API.
+For post requests, axios object takes in the url, method and the body to post.
 
 To make a post request, all you need to do is to call the post method from the axios object and pass in the body to be posted.
 
 Below is a code example using the async/await method.
 
 ```Javascript
-app.post("/async/post/name", async (req, res) => {
+app.post("/async/post/", async (req, res) => {
 	try {
-		const response = await axios.post("https://namesite.com", {
-			name: "Peter",
+		const response = await axios.post("posts", {
+			title: "Foo",
+			body: "bar",
+			userID: 1
 		});
 		res.status(200).json(response);
 	} catch (err) {
@@ -136,8 +142,12 @@ app.post("/async/post/name", async (req, res) => {
 When using promises, the code will be as follows.
 
 ```Javascript
-app.get("/promise", (req, res) => {
-	axios.post("https://dog.ceo/api/breeds/list/all")
+app.get("/promise/post", (req, res) => {
+	axios.post("posts", {
+		title: "Foo",
+		body: "bar",
+		userID: 1
+	})
 		.then(response => {
 			res.status(200).json(response.data);
 		})
