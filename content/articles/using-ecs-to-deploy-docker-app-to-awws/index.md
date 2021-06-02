@@ -38,7 +38,7 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-Create a folder named  `templates` which contains the HTML files rendered on the webpage. In the folder, create a file named `index.html` the add the snippets below.
+Create a folder named `templates` which contains the HTML files rendered on the webpage. In the folder, create a file named `index.html`, then the add the snippets below:
 ```html
 <!DOCTYPE html>
 <html lang="en">
