@@ -6,14 +6,18 @@ url: /spring-boot-rest-template/
 title: Getting Started with Spring Boot RestTemplate
 description: This tutorial will go over the basics of Spring Boot RestTemplate, how to integrate with Spring Boot and consume RESTful web services.
 author: elizabeth-akinyi
-date: 2021-06-02T00:00:00-12:00
+date: 2021-06-02T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-boot-rest-template/hero.png
+  - url: /engineering-education/spring-boot-rest-template/hero.jpg
     alt: Getting Started with Spring Boot RestTemplate
 ---
+Consuming RESTful web services requires a lot of boilerplate code. Spring Boot REST template was created to simplify REST services consumption in a Spring Boot application.
+ <!--more-->
+### Getting started with Spring Boot RestTemplate
+In this tutorial, we are going to create a Spring Boot application that consumes the [json placeholder](https://jsonplaceholder.typicode.com/posts) API.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -26,9 +30,6 @@ images:
   - [Testing the endpoints](#testing-the-endpoints)
 - [Conclusion](#conclusion)
 
-### Getting started with Spring Boot RestTemplate
-Consuming RESTful web services requires a lot of boilerplate code. Spring Boot REST template was created to simplify REST services consumption in a Spring Boot application. In this tutorial, we are going to create a Spring Boot application that consumes the [json placeholder](https://jsonplaceholder.typicode.com/posts) API.
-
 ### Prerequisites
 1. [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
 2. An IDE. I use [Intelij IDEA](https://www.jetbrains.com/idea/promo/?gclid=CjwKCAjwtdeFBhBAEiwAKOIy53VpyHjaRAKTPawL_snUuQ3whe9loukEM8zCPNBUUERCH7PqxklNnxoCg1sQAvD_BwE).
@@ -36,13 +37,10 @@ Consuming RESTful web services requires a lot of boilerplate code. Spring Boot R
    
 ### Project setup
 We are going to use [spring initializr](https://start.spring.io/) to bootstrap our application.
-
-1. Visit [spring initializr](https://start.spring.io/), input the project name as `RestTemplate`.
-2. Add `Spring Web` and `Lombok` as project dependencies.
-3. Click on generate project button to download the project boilerplate code as a zip file.
-4. Extract the zip file and open the uncompressed file in your favorite IDE. 
-
-
+- Visit [spring initializr](https://start.spring.io/), input the project name as `RestTemplate`.
+- Add `Spring Web` and `Lombok` as project dependencies.
+- Click on generate project button to download the project boilerplate code as a zip file.
+- Extract the zip file and open the uncompressed file in your favorite IDE. 
 
 #### Application layer
 In the `RestTemplateApplication.java` file update the code snippets as shown below. 
@@ -67,7 +65,8 @@ public class RestTemplateApplication {
 }
 
 ```
-In the above code snippet, we are injecting the `getRestTemplate()` function into our application as a `Bean`.
+
+In the code snippet above, we are injecting the `getRestTemplate()` function into our application as a `Bean`.
 
 #### Domain layer
 In the root project directory, create a new package named `domain`. Create a new java class file named `Post` and add the code snippet below.
@@ -98,8 +97,8 @@ public class Post {
 - `@Data` - annotation generates `getters` and `setters` for the member variables of the `Post class`.
 
 #### Controller layer
-1. In the root project directory, create a package named `controllers`.
-2. In the `controllers` directory we have created above, create a java class named `RestConsumer` and add the code snippets below.
+- In the root project directory, create a package named `controllers`.
+- In the `controllers` directory we have created above, create a java class named `RestConsumer` and add the code snippets below.
    
 ```java
 import com.example.resttemplate.domain.Post;
@@ -157,33 +156,42 @@ public class RestConsumer {
 }
 
 ```
+
 - `@RestController` - marks `RestConsumer` class as a RestController. Spring Boot Rest controllers handle the incoming and outgoing HTTP requests.
 - ` RestTemplate ` is injected through the constructor of the `RestController` class. Spring Boot 5.0 and later, encourages constructor injection rather than field injection.
 - ` @RequestMapping()` - adds the path from which the resource can be accessed.
 - `getProductList()` function gets all the `post` from the [json placeholder](https://jsonplaceholder.typicode.com/posts/).
-- RestTemplate take in 4 parameters:-
-  1. URL - the endpoint from which we can access the resource.
-  2. HTTP Method - HTTP method used to access the resource, i.e GET, POST, DELETE and PUT.
-  3. Entity - HTTP Entity containing the headers and the data to be sent i.e in POST and PUT requests.
-  4. Data class - A java class representing the data being transmitted, i.e in our POST request we are transmitting a POST while in our DELETE request we are receiving String as a response.
+- RestTemplate take in 4 parameters:
+    1. URL - the endpoint from which we can access the resource.
+    2. HTTP Method - HTTP method used to access the resource, i.e GET, POST, DELETE and PUT.
+    3. Entity - HTTP Entity containing the headers and the data to be sent i.e in POST and PUT requests.
+    4. Data class - A java class representing the data being transmitted, i.e in our POST request we are transmitting a POST while in our DELETE request we are receiving String as a response.
 - `httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));` sets the data type to be transmitted to `JSON` only.
     
 #### Testing the endpoints
+
 **GET request**
+
 ![GET request](/engineering-education/spring-boot-rest-template/get-todos.png)
 
 **POST request**
+
 ![POST request](/engineering-education/spring-boot-rest-template/create-todo.png)
 
 **PUT request**
+
 ![PUT request](/engineering-education/spring-boot-rest-template/update-todo.png)
 
 **DELETE request**
+
 ![DELETE request](/engineering-education/spring-boot-rest-template/delete-todo.png)
 
-
 ### Conclusion
-Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. Find the complete source code for the application [here](https://replit.com/@elizabeth962/RestTemplate#).
+Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. 
+
+You can find the complete source code for the application [here](https://replit.com/@elizabeth962/RestTemplate#).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
