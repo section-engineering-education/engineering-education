@@ -120,7 +120,7 @@ ngOnInit(): void
 ```
 
 **Output:**
-![SweeAlertSuccess](engineering-education/sweetalert-success)
+![SweeAlertSuccess](engineering-education/angular-11-notifications/success-sweetalert.png)
 
 In the above typescript, we import the `Swal` module from the SweetAlert package installed previously. We then invoke the `Swal.fire()` method and pass it a few parameters to display the alert as shown in the above screenshot.
 
@@ -165,7 +165,7 @@ ngOnInit(): void
 ```
 
 **Output:**
-![warning-alert](engineering-education/warning-alert.png)
+![warning-alert](engineering-education/angular-11-notifications/warning-alert.png)
 
 > You notice that the functionality remains the same, apart from message and icon.
 
@@ -208,7 +208,7 @@ ngOnInit(): void
 ```
 
 **Output:**
-![question-alert](engineering-education/question-alert.png)
+![question-alert](engineering-education/angular-11-notifications/question-alert.png)
 
 ### Creating error alert using SweetAlert
 
@@ -250,7 +250,7 @@ ngOnInit(): void
 ```
 
 **Output:**
-![error-alert](engineering-education/error-alert.png)
+![error-alert](engineering-education/angular-11-notifications/error-alert.png)
 
 ### Conclusion
 In this tutorial, we've seen how we can create beautiful, user interactive alerts. We have seen how we can install the SweeAlert package in our Angular application and adding its CSS to the `angular.json` file.
