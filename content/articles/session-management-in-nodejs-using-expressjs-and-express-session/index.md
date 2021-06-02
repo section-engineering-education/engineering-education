@@ -6,7 +6,7 @@ url: /session-management-in-nodejs-using-expressjs-and-express-session/
 title: Session Management in NodeJS using ExpressJS and Express Session
 description: This tutorial will help the readers in developing a session based authentication system and how to manage sessions using ExpressJS and Express Session in NodeJS. 
 author: catherine-macharia
-date: 2021-06-01T00:00:00-10:30
+date: 2021-06-02T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
