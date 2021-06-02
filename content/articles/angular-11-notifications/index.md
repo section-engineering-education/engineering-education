@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-11-notifications/
+title: Getting Started with Angular 11 Notifications
+description: This tutorial will go over Angular 11 notifications, alerts and how to use them in an Angular application.
+author: odiwuor-amos
+date: 2021-06-02T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/angular-11-notifications/hero.jpg
+    alt:  Getting Started with Angular 11 Notifications
+---
+
 ### Introduction
 In this tutorial, we discuss this beautiful, customizable and responsive popup notification using Angular 11.
 We'll look at sweetalert in-depth, its features, and how to integrate with angular to replace the default JavaScript alert notification.  
