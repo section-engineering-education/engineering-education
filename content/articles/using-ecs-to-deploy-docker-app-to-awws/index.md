@@ -10,7 +10,7 @@ In this article, we will understand how to deploy a Docker-based application to 
 
 ### Prerequisites
 You will need the following for the tutorial.
-1.  A text editor to create the flask application. I use [vscode](https://code.visualstudio.com/Download).
+1.  A text editor to create the flask application. I use [VSCode](https://code.visualstudio.com/Download).
 2.  A basic understanding of Python and Flask Framework.
 3.  [Docker](https://www.docker.com/products/docker-desktop) installed on your computer.
 4.  [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed.
