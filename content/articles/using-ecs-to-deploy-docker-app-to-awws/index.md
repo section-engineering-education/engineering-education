@@ -229,4 +229,4 @@ Lastly, we deployed the application to AWS.
 Please check out the links below for further understanding of Docker, AWS and Elastic Container Services.
 - [Docker](https://docs.docker.com/get-docker/)
 - [Amazon Web Services](https://aws.amazon.com/what-is-aws/)
-- [ Amazon Elastic Contaioner Service](https://docs.aws.amazon.com/ecs/index.html)
+- [Amazon Elastic Container Service](https://docs.aws.amazon.com/ecs/index.html)
