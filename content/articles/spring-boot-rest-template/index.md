@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-rest-template/
+title: Getting Started with Spring Boot RestTemplate
+description: This tutorial will go over the basics of Spring Boot RestTemplate, how to integrate with Spring Boot and consume RESTful web services.
+author: elizabeth-akinyi
+date: 2021-06-02T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-boot-rest-template/hero.png
+    alt: Getting Started with Spring Boot RestTemplate
+---
+
 ### Table of contents
 - [Table of contents](#table-of-contents)
 - [Getting started with Spring Boot RestTemplate](#getting-started-with-spring-boot-resttemplate)
