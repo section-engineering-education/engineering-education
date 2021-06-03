@@ -474,7 +474,7 @@ mutation {
 
 Successful added to our database! 🎉
 
-## Conclusion
+### Conclusion
 
 Using the Graphene-Django package, we were able to incorporate GraphQL into Django in this tutorial.
 
