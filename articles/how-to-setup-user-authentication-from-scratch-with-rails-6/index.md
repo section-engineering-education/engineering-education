@@ -747,3 +747,6 @@ Please visit [Go_Rails](https://gorails.com/) for more Ruby on Rails content, in
 You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
 
 Happy coding!!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
