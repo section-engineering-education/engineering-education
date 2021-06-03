@@ -109,3 +109,6 @@ LXC offers the advantages of a VE on Linux, most notably the ability to isolate 
 On the other hand, LXC's capabilities have been significantly enhanced by Docker. Docker is garnering a rising user base due to its evident benefits and capacity to share and duplicate any Docker-created packages. It is taking the lead above VMs and VEs.
 
 As a developer is good to learn these technologies which are taking the IT world by storm. Other containerization technologies are worth checking include [Kubernetes](https://kubernetes.io/), [Amazon ECS](https://aws.amazon.com/ecs/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&ecs-blogs.sort-by=item.additionalFields.createdDate&ecs-blogs.sort-order=desc), [rkt](https://www.openshift.com/learn/topics/rkt), and [Mesos](http://mesos.apache.org/)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
