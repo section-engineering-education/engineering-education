@@ -144,78 +144,39 @@ animationView.playAnimation()
 ```
 This function will load the file and parse the animation.
 
-# Functionality
-
-Because I have used an adapter to display the contents of the animation, the functionality is in the adapter, in the `bind` function
+#### Step five: Adding functionality to the application.
+Since we use an adapter to display the animation's content, write the following code in your adapter's `bind` function.
 
 ```kotlin
-
 fun bind(onBoardingPage: OnboardingPage) {
-
 val res = root.context.resources
-
 root.titleTv?.text = res.getString(onBoardingPage.titleResource)
-
 root.subTitleTv?.text = res.getString(onBoardingPage.subTitleResource)
-
 root.descTV?.text = res.getString(onBoardingPage.descriptionResource)
-
 root.img.setAnimation(onBoardingPage.logoResource)
-
 root.img. playAnimation()
-
-  
-
 }
-
 ```
+- `.setAnimation` - This sets the raw animations to the image view.
+- `.playAnimation()` - This plays the animation.
 
-`.setAnimation`, sets the raw animations to the image view
-
-`.playAnimation()`, plays the animation
-
-  
-
-# 4. MainActivity
-
-If you use the mainActivity to add a function, you will have to create a function to set up the animation.
-
-  
-
+Next, in your `Mainctivity.kt` create a `setupAnimation` function and add the following lines of code: 
 ```kotlin
-
 fun setupAnimation(){
-
 val animation = findViewById<LottieAnimationView>(R.id.progressBar)
-
 animation.speed = 2.0F // How fast does the animation play
-
 animation.progress = 50F // Starts the animation from 50% of the beginning
-
 animation.addAnimatorUpdateListener {
-
 // Called every time the frame of the animation changes
-
 }
-
 animation.repeatMode = LottieDrawable.RESTART // Restarts the animation (you can choose to reverse it as well)
-
 animation.cancelAnimation() // Cancels the animation
-
 }
-
 ```
-
 You shall use;
-
-`.speed`- for setting how fast the animation plays
-
--`.progress`- to choose where the animation starts
-
--`repeatMode` - restarts the animation
-
-  
-  
+`.speed`- To set the speed at which the animation plays.
+-`.progress`- To choose where the animation starts.
+-`repeatMode` - restarts the animation.
 
 # The error I ran into
 
