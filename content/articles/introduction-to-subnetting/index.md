@@ -57,6 +57,12 @@ Classes are how you can identify network addresses on the internet. The network 
 
 |class | Range  | Parts of the class | Network IDs | Host IDs | Start address | End address | Leading bits | Size of network number bit field |
 | ---- | ------ | ------------------ | ----------- | -------- | ------------- | ----------- | ------------ | ------------------- |
+| A | 1-126 | N|H|H|H | 128 | 16,777,216 | 0.0.0.0 | 127.255.255.255 | 0 | 8 |
+| B | 128-191 | N|N|H|H | 16,384 | 65,536 | 128.0.0.0 | 191.255.255.255 | 10 | 16|
+| C | 192-223 | N|N|N|H | 2,097,152 | 256 | 192.0.0.0 | 223.255.255.255 | 110 | 24 |
+| D | 224-239 | Not defined | Not defined | Not defined | 224.0.0.0 | 239.255.255.255 | 1110 | Not defined |
+| E | 240-255 | Not defined | Not defined | Not defined | 240.0.0.0 | 255.255.255.255 | 1111 | Not defined |
+
 @@ -61,19 +71,22 @@ Thirty-two bits (4 x 8) = 4 bytes = 4 octet
 (Robles, 2021)
 **Note:** 127 is not included in the range as it's considered a loopback address. Any packet sent to this address loops back, there are over 16 million possible addresses here. Used to set up many server applications on the host, while they all listen to the same port number. Hence they resulted in calling it *localhost*. 
@@ -145,7 +151,7 @@ ii. Default
 
 iii. Dynamic
 
-**Static Routing (Non-adaptive):** An administrator assigns the path. It is a route configured by adding to the routing table by an administrator. 
+**Static Routing (Non-adaptive):** An administrator assigns the path. It is a route configured by adding to the routing table by an administrator.
 
 **Default Routing:** This sends packets to IP addresses that do not have exact routes. Using the hop devices, regardless of their network type.
 
