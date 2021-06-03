@@ -276,4 +276,8 @@ Pointers show the memory address and execute unmanaged codes, as we have discove
 
 ### Further Reading
 
-1. [Learning C Sharp Programming](https://www.guru99.com/c-sharp-tutorial.html)
+1. [Introduction to C#](https://www.section.io/engineering-education/introduction-to-csharp/)
+2. [Getting Started with Windows Forms Using C#](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/)
+3. [Variables, Data Types and Control Statements in C#](https://www.section.io/engineering-education/variables-data-types-and-control-statements-in-csharp/)
+4. [Getting Started with Inheritance using C#](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/)
+
