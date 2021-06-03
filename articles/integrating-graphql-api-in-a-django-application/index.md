@@ -28,7 +28,7 @@ In this tutorial, our focus would be on integrating a GraphQL API into a Django 
 
 ### Prerequisites:
 
-- Basic knowledge of python.
+- Basic knowledge of [python](https://www.python.org/downloads/).
 - A good understanding of Django.
 
 ### Project setup
@@ -40,7 +40,7 @@ mkdir ecommerce
 cd ecommerce
 ```
 
- **Setting up a virtual environment**
+**Setting up a virtual environment**
 
 We'll be setting up a virtual environment for this project. A virtual environment helps in the installation of packages to help keep packages required by different projects separate by creating isolated Python virtual environments for them.
 
@@ -180,7 +180,7 @@ Click on the link `[http://127.0.0.1:8000/](http://127.0.0.1:8000/)` in your ter
 
 ### Integrating GraphQL into our project
 
-We will be integrating GraphQL into our Django project. To begin, let's first install a package called *Graphene-Django.* On your terminal run:
+We will be integrating GraphQL into our Django project. To begin, let's first install a package called [Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/). On your terminal run:
 
 ```bash
 pip install graphene-django
