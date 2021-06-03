@@ -106,7 +106,7 @@ To avoid bombarding you with a lot of jargon, I've summarized the results of the
 
 1. As the patient continued to do the task of imagining letters and allowing the computer to process these signals repeatedly, the patient was able to type 90 characters per minute for each trial day. This doubled the record compared to previous BCI records for typing. 
 
-2. Since our brain's baseline neural signals change day after day, the handwriting decoder had to be retrained with new data every single day. This retraining had to be accounted for especially when working with models like this. You wouldn't want your training signals to look this way one day and a different way another day. This would make your model not work correctly.
+2. Since our brain's baseline neural signals change day after day, the handwriting decoder had to be retrained with new data every single day. This retraining had to be accounted for especially when working with models like this. You wouldn't want your training signals to look a certain way one day and a different way another day. This would make your model work incorrectly.
 
 3. The character and word error rates reduced by 0.89% and 3.4% respectively when the offline language model system was used. The result from the word error rate is comparable to state-of-the-art speech recognition systems which range between 4-5%. This is well within the accepted range of being usable.
 
