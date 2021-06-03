@@ -79,7 +79,7 @@ The figure represents the 2D visualization of the neural activity made using t-S
 
 ### Decoding handwritten sentences
 
-So, now that they were successful in representing neural activities in their respective letters, the researchers faced a new challenge. Could they replicate the same success in decoding entire handwritten sentences instead of only letters in real-time?
+Now that they were successful in representing neural activities in their respective letters, the researchers faced a new challenge. Could they replicate the same success in decoding entire handwritten sentences instead of only letters in real-time?
 
 Let's see how they went about with this.
 
