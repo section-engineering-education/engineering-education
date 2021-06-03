@@ -245,7 +245,28 @@ Upon clicking the link, the user is redirected to a new page. The p
 
 ![Email verification redirect](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-redirect.png)
 
-When the user gets back to their account, the account verified status changes to `true`.
+### Check verification status
+Once a user has successfully verified an account by clicking the link send to their email, we need to update the verification status in the profile page. Add the snippets below in the user profile page to check the verification status and render onto the  profile page.
+```js
+firebase.initializeApp(config); 
+firebase.auth().onAuthStateChanged(
+    function(user) {
+        if(user){
+            var emailVerified = user.emailVerified;
+            var email = user.email;
+            var data =  '<h4> Hello, ' + email + '</h4>' +
+                        '<h4>Account verified: ' + emailVerified + '</h1>';
+            document.getElementById("wrapper").innerHTML = data
+            if(emailVerified == true){
+                document.getElementById("verify").style.display = "none"
+            }
+        } else {
+            console.log("No user found")
+        }
+    }
+); 
+```
+When the user gets back to their account, the account verified status changes to `true` and the `verify` button also dissappears.
 
 ![Account Verified](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/account-verified.png)
 
