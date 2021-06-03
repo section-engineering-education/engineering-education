@@ -158,7 +158,7 @@ var config = {
     authDomain: "YOUR AUTH DOMAIN",
     databaseURL: "YOUR DATABASE URL",
     projectId: "YOUR PROJECT ID",
-    storageBucket: "STORAGE BUCKET,
+    storageBucket: "STORAGE BUCKET",
     messagingSenderId: "MESSAGE SENDER ID",
     appId: "YOUR APPLICATION ID"
 };
