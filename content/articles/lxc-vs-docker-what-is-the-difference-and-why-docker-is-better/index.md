@@ -1,4 +1,4 @@
-Containers has gained traction in enterprise IT for the past few years, and most developers seem to be very interested in this technology. Many are using them to develop and deploy applications to the public. Containers are useful for many reasons. They isolate applications and operating systems from the rest of the system, thus bringing speed and flexibility. They are portable and easy to clone and move to other operating systems. Thus, containers can be more or less of a virtualized software environment that the application or operating system runs on a host computer.
+Containers have gained traction in enterprise IT for the past few years, and most developers seem to be very interested in this technology. Many are using them to develop and deploy applications to the public. Containers are useful for many reasons. They isolate applications and operating systems from the rest of the system, thus bringing speed and flexibility. They are portable and easy to clone and move to other operating systems. Thus, containers can be more or less of a virtualized software environment that the application or operating system runs on a host computer.
 
 There are several kinds of container technologies that you can use. They are Docker containers, Kubernetes containers, and Linux containers (LXC). This article will go over and compare LXC over Docker Containers.
 
@@ -12,7 +12,7 @@ To understand LXC well, let us first discuss what a virtual machine is.
 
 Typically, in a virtual machine, you have a host machine where you install your operating system. The operating system could be Windows, macOS, or Linux. When you use a virtual machine, you add or install hypervisors in your host operating system like VirtualBox, VMware, and ESXi. You use the hypervisor to install a guest operating system to run on top of your host operating system. In this case, the guest OS is running as a virtual machine/container.
 
- Each guest operating system you add is a complete operating system. All the hardware resources (RAM, CPU, HDD/SSD) attached to these guest virtual machines are virtualized and the hypervisor is responsible for allocating the guest OS the hardware resources they need from your base/host machine in a virtualized fashion. Basically, you create an instance of an emulator that can interact with the hardware just like an ordinary computer. The image below depicts this concept.
+ Each guest operating system you add is a complete operating system. All the hardware resources (RAM, CPU, HDD/SSD) attached to these guest virtual machines are virtualized and the hypervisor is responsible for allocating the guest OS the hardware resources they need from your base/host machine in a virtualized fashion. You create an instance of an emulator that can interact with the hardware just like an ordinary computer. The image below depicts this concept.
 
 ![Virtual machine architecture](/engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/virtual-machine-VM-architecture.jpeg)
 
@@ -38,7 +38,7 @@ In simple terms, in LXC virtual environments (VE), you create containers for the
 
 In other terms, Let's say you have three different containers, I.e., a LAMP server, a DHCP container, and a DNS container. In this case, all the configuration files are contained within this container. And they all share the underlying resources. In this case, resource allocation will be much easier as compared to VMs. If the LAMP server needs a lot of resources, it can be allocated to it. So if the DNS container doesn't need a lot of RAM, and the LAMP server is demanding additional RAM now, that additional memory not used in the DNS server can be assigned to the LAMP server to speed up this container's services. Resources are allocated according to the need of every container.
 
-Another important thing to note is that each container is contained within itself with its configuration files. Each individual container can have its own IP address and its own network configuration. You can also go ahead and change those network configurations.
+Another important thing to note is that each container is contained within itself with its configuration files. Each container can have its IP address and its network configuration. You can also go ahead and change those network configurations.
 
 Setting up a Linux server, you need a Linux operating system such as Ubuntu. Then you install the Linux Container software. Once installed, you can log into it, and you will get a prompt that looks like any other Linux client.
 
@@ -52,15 +52,15 @@ Let's interpret this with a diagram.
 
 [Image source](https://www.Docker.com/resources/what-container)
 
-The above containerization concept has the infrastructure and an operating system added to it. In contrast to LXC, there is no guest operating system. Instead, it has a Docker demon that runs directly on the operating system. Docker demons facilitate creating, running, and managing the containers. Each instance of a container runs one process (application). Each application is isolated and runs without affecting other applications. So, in this case, each app is containerized with its own configuration files.
+The above containerization concept has the infrastructure and an operating system added to it. In contrast to LXC, there is no guest operating system. Instead, it has a Docker demon that runs directly on the operating system. Docker demons facilitate creating, running, and managing the containers. Each instance of a container runs one process (application). Each application is isolated and runs without affecting other applications. So, in this case, each app is containerized with its configuration files.
 
-Docker demons allow containers to pingback resources from the host machine. In this case, the demons allocate resources to this container depending on how much a container needs to run.
+Docker demons allow containers to ping back resources from the host machine. In this case, the demons allocate resources to this container depending on how much a container needs to run.
 
 ### What is the major difference between Linux and Docker containers
 
 LXC focuses on OS containerization, while Docker thrives on application containerization. Docker is single-purpose application virtualization, and LXC is multi-purpose operating system virtualization.
 
-In this case, LXC specializes in deploying Linux Virtual machines. A container is like a VM with a fully functional OS environment. However, the OS has to support and handle the features and capabilities of a Linux environment. You can SSH into an LXC container, operate it like an operating system, and install any application or services, and everything will work as expected.
+In this case, LXC specializes in deploying Linux Virtual machines. A container is like a VM with a fully functional OS environment. However, the OS has to support and handle the features and capabilities of a Linux environment. You can SSH into an LXC container, operate it as an operating system, and install any application or services, and everything will work as expected.
 
 This is not the case with Docker. Docker specializes in deploying applications. Docker containers aren't lightweight virtual machines. Thus they can't be considered as such. Docker containers are limited to a single application due to their architecture. Although Docker runs natively in a Linux environment, it is not entirely dependent on Linux, and it supports other operating systems such as Windows and macOS.
 
@@ -100,7 +100,7 @@ If popularity would be the only factor to be considered when choosing between th
 
 Many IT titans, including Netflix, Twitter, Google, and other web-scale organizations, have embraced Docker's application containerization strategy for its scalability benefits. Docker's popularity is booming, [according to ZDNet]((https://www.zdnet.com/article/what-is-Docker-and-why-is-it-so-darn-popular/), with over 3.5 million container-based applications and billions of container orchestration distributed using Docker.
 
-One of the reasons for Docker's popularity is the approach it used to concur its target market. Containers were designed to go beyond the LXC Operating system and into the more detailed realm of an application that fits many organizations and enterprises.
+One of the reasons for Docker's popularity is the approach it used to concur with its target market. Containers were designed to go beyond the LXC Operating system and into the more detailed realm of an application that fits many organizations and enterprises.
 
 ### Conclusion
 
