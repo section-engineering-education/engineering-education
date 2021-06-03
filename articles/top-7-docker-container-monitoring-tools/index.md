@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /top-7-docker-container-monitoring-tools/
+title: Top 7 Docker Monitoring Tooks
+description: This article will discuss the top 7 monitoring tools for Docker containers in the industry and discuss their pros and cons.
+author: bridget-mwikali
+date: 2021-05-03T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/top-7-docker-container-monitoring-tools/hero.jpg
+    alt: Top 7 Docker Monitoring Tooks Hero image
+---
 DevOps teams rely on monitoring systems to detect and address performance issues faster. The use of Docker containers is steadily rising, and it is critical to get docker container log management and monitoring right from the start.
+<!--more-->
 
 A variety of Docker container monitoring tools are available. Each of them has its strengths and weaknesses that you should carefully evaluate before choosing a tool.
 
