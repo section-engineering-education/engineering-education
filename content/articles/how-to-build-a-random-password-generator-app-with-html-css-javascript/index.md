@@ -298,3 +298,5 @@ Now, if you run the codes, our random password generator application would work 
  
 There are many other ways to build a random password generator application. This tutorial is just one way to achieve it. You can also research different ways of creating it as long as it performs the same functionality. If you want the source codes for this application, you can get them from my Github repo [here](https://github.com/destiny251/random-password-generator-app-).
  
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
