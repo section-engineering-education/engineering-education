@@ -3,34 +3,34 @@ layout: engineering-education
 status: publish
 published: true
 url: /angular-11-routing/
-title: Getting Started with Angular 11 routing 
-description: This tutorial will go over the process of creating Angular application using Routers
+title: Getting Started with Angular 11 Routing 
+description: This tutorial will go over the process of creating Angular application using Routers. We will learn the basics of Router outlets, navigations, routes, and paths to generate a complete Angular Single Page Application (SPA).
 author: owino-wendy
-date: 2021-06-02T00:00:00-14:00
+date: 2021-06-03T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/angular-11-routing/hero.jpg
     alt: Getting Started with Angular 11 routing 
 ---
+Web applications nowadays are user-friendly and convenient to use. If you are here, you probably may have heard of Single Page Applications ([SPA](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)). These are applications that work inside browsers and do not require page refresh during navigations. Normally, these pages are loaded once while their contents are dynamically added. 
+<!--more-->
 
 ### Introduction
-Web applications nowadays are user-friendly and convenient to use. Indeed, if you're here, you probably may have heard of Single Page Applications ([SPA](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)). These are applications that work inside browsers and do not require page refresh during navigations. Normally, these pages are loaded once while their contents are dynamically added.   
-An example of a SPA is [section](https://www.section.io/engineering-education/), indicated by forwarding slashes followed by navigation content. For example, all articles on this platform are located on `https://www.section.io/engineering-education/`.
+An example of a SPA is [Section](https://www.section.io/engineering-education/), indicated by forwarding slashes followed by navigation content. For example, all articles on this platform are located on `https://www.section.io/engineering-education/`.
 
-This tutorial walks you through the process of creating your Angular application using Routers.
-We'll learn the basics of Router outlets, navigations, routes, and paths to generate a complete Angular Single Page Application (SPA).  
+This tutorial will walk you through the process of creating your Angular application using Routers. We'll learn the basics of Router outlets, navigations, routes, and paths to generate a complete Angular Single Page Application (SPA).  
 
-> For you to be able to follow this tutorial along, it's a necessity to have basic knowledge of Angular.
+> For you to be able to follow this tutorial along, it'll be a necessity to have basic knowledge of Angular.
 
-### Getting started with Angular Router
-
+### Getting started with Angular router
 Angular Router is a core part of Angular that aids in building a single-page application. It's located in the `@angular/router package`.  
+
 It has a complete routing library for constructing multiple route outlets. It also supports several features such as [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) and routing guards for access control et cetera.
 
 ### Routes and paths
-
-Routes are objects. At the lowest level, they comprise Angular components and paths, and sometimes `redirectTo`. This provides more details about a specific route plus a  component to load on navigation. Paths are part URLs that are used to locate a resource.  
+Routes are objects. At the lowest level, they comprise Angular components and paths, and sometimes `redirectTo`. This provides more details about a specific route plus a component to load on navigation. Paths are part URLs that are used to locate a resource.  
 
 An example of a route:
 
@@ -47,11 +47,12 @@ An example of a route:
 ------------------------------
 
 ```
-You notice that these routes contain at least a path, associated with its component.
 
-### The Angular Router-Outlet
+You'll notice that these routes contain at least a path associated with its component.
 
-Router-Outlet is an Angular directive from the router library that is used to insert the component matched by routes to be displayed on the screen.  
+### The Angular router-outlet
+Router-Outlet is an Angular directive from the router library that is used to insert the component matched by routes to be displayed on the screen.
+
 It's exported by the `RouterModule` and added to the template as shown below:  
 
 ```html
@@ -60,8 +61,7 @@ It's exported by the `RouterModule` and added to the template as shown below:
 ```
 
 ### Angular route guards
-In our web applications, there are resources that we usually restrict their access to authenticated users only. This feature is made possible by angular using the 
-route guards.
+In our web applications, there are resources that we usually restrict their access to authenticated users only. This feature is made possible by Angular using the route guards.
 
 Let's look at an example:
 
@@ -96,10 +96,11 @@ export class AuthGuard implements CanActivate
 
 ```
 
-In this authentication guard script, we implement the `CanActivate` while overriding the `canActivate()` method returning a boolean.
-If it returns, and access is allowed to the component else the user is redirected to the login page.  
+In this authentication guard script, we implemented the `CanActivate` while overriding the `canActivate()` method returning a boolean.
 
-### Navigation Directives
+If it returns, and access is allowed to the component, otherwise the user is redirected to the login page.  
+
+### Navigation directives
 Normally, we create navigation links in HTML using the `<a href='#'>link</a>` tags. In an Angular application, `href` in the `<a>` tag is replaced with the `routerLink` as shown below:
 
 ```html
@@ -110,13 +111,14 @@ Normally, we create navigation links in HTML using the `<a href='#'>link</a>` ta
 ### Routing in action
 Now that we have got the basics of Angular routing, let's create a single application page.  
 
-#### Step 1: Generate a new Angular Project
+#### Step 1: Generate a new Angular project
 In this step, let's create a simple Angular application, 'routing-example' by running the following command on the terminal:    
 
 ```bash
 ng new routing-example
 
 ```
+
 This prompts you to answer `Yes/No` questions as shown below:
 
 ```bash
@@ -135,9 +137,10 @@ This prompts you to answer `Yes/No` questions as shown below:
       Stylus [ https://stylus-lang.com  
 ----------------------
 ```
-Enter `Yes` for the angular routing option to generate the routing module for our application.  
 
-### Generate components:
+Enter `Yes` for the Angular routing option to generate the routing module for our application.  
+
+### Generate components
 Since we're going to define routes using components, let's generate these components by running the following commands:
 
 ```bash
@@ -187,7 +190,6 @@ In the @NgModule(), we import the `RouterModule` and pass it the routes we defin
 We then make this `RouterModule` accessible by other modules by exporting it.  
 
 ### Setting up router outlet
-
 Now that we've defined our application routes, let's now add the Router-Outlet to our main application template, `app.component.html` as seen below:  
 
 ```html
@@ -195,6 +197,7 @@ Now that we've defined our application routes, let's now add the Router-Outlet t
 <router-outlet></router-outlet>
 
 ```
+
 Next, import the `app. routing-module` in the `app. module`.
 
 ```ts
@@ -219,20 +222,22 @@ import { MyDashboardComponent } from './app.component';
 export class AppModule { }
 
 ```
-You've reached this far? congratulations, now let's serve our application:  
+
+You've reached this far? Congratulations, now let's serve our application:  
 
 ```bash
 cd routing-example
 ng serve
 ```
+
 This will start your application on port `4200` by default or the immediate port if `4200` is in use. You can now navigate to this route and test your routes.  
 
 ### Conclusion
 In this tutorial, we've discussed the powerful Angular routing tool. We discussed how we can define routes and build a complete single-page application. 
-We've discussed other Angular routing concepts such as router outlets, paths, and routes. 
-We also introduced the concept of angular routing guards, by looking at an example of user authentication.
 
-Happy Coding!
+We've discussed other Angular routing concepts such as router outlets, paths, and routes. We also introduced the concept of Angular routing guards, by looking at an example of user authentication.
+
+Happy coding!
 
 ---
 Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
