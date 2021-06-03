@@ -233,3 +233,6 @@ We've discussed other Angular routing concepts such as router outlets, paths, an
 We also introduced the concept of angular routing guards, by looking at an example of user authentication.
 
 Happy Coding!
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
