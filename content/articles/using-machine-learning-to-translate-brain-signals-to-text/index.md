@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-machine-learning-to-translate-brain-signals-to-text/
+title: Using Machine Learning to Translate Brain Signals to Text
+description: In this article, we will explore how machine learning is used to decode and translate brain neural signals into handwritten text.
+author: willies-ogola
+date: 2021-06-03T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /using-machine-learning-to-translate-brain-signals-to-text/hero.jpg
+    alt: brain signals example image
+---
+Developing brain-computer interfaces (BCI) that can decode and translate brain signals will depend on us being able to decode more of these signals in a way that is useful for people such as those with paralysis.
+<!--more-->
+
 Can we use the brain's neural activities from people imagining handwriting to decode letters, words, and even sentences?
 
 In this [paper](https://www.nature.com/articles/s41586-021-03506-2) published in the Nature journal by researchers from Stanford, they were interested in investigating whether complex gestures and motor functions such as handwriting can be decoded from our neural activities. Complex human movements such as handwriting have over the years been a hard task to solve. This is because pulling information from these complex neural brain data isn't easy. But, they were able to solve this problem using machine learning. It decoded these complex neural signals and converted them into texts and words.
