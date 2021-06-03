@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kubernetes-clusters-intro/
+url: kubernetes-clusters-intro/
 title: Getting started with Kubernetes Clusters
 description: A Kubernetes Cluster manages containers that consist of nodes that work together to perform a particular operation. In this article, we explore the various alternatives available to deploy containers and understand the components of Kubernetes.
 author: sandra-moringa
-date: 2021-05-17T00:00:00-18:00
+date: 2021-06-3T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/kubernetes-clusters-intro/hero.jpg
+ - url: kubernetes-clusters-intro/hero.jpg
    alt: kubernetes cluster example image
 
 ---
@@ -198,4 +198,4 @@ Read more on Kubernetes UI [here](https://Kubernetes.io/docs/tasks/access-applic
 We have gone through an elementary introduction to Kubernetes clusters. View content on the links attached to get more insights.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](authors/lalithnarayan-c/)
