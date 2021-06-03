@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-random-password-generator-app-with-html-css-javascript/
+title: How to Build a Random Password Generator app with HTML, CSS and JavaScript
+description: In this tutorial, we will create a random password generator application with just using HTML, CSS and JavaScript.
+author: destiny-etinagbedia
+date: 2021-06-02T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-build-a-random-password-generator-app-with-html-css-javascript/hero.jpg
+    alt: How to Build a Random Password Generator app with HTML, CSS and JavaScript Hero Image
+---
+
 A Password Generator is an application that can automatically generate passwords for you. These generated passwords consist of alphabets, numbers, and symbols. This application helps the user create a solid password that cannot be easily guessed or brute-forced.
- 
+<!--more-->
+
 In this article, you will learn how to build a random password generator application with HTML, CSS, and JavaScript.
  
 ![password generator app](/engineering-education/how-to-build-a-random-password-generator-app-with-HTML-CSS-javascript/password-generator-app.jpg)
