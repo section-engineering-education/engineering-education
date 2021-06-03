@@ -48,16 +48,8 @@ i. Host identity
 ii. Network identity.
 
 #### Diagram of IPV4
-[](/introduction-to-subnetting/diagram-of-IPV4.jpeg)
+[](/introduction-to-subnetting/structure-of-IPV4.jpg)
 
-<<<<<<< HEAD
-=======
-216     . 172      . 16     . 1
-
-@@ -49,7 +57,9 @@ One byte = Eight bits = One octet
-             ↓ 
-Thirty-two bits (4 x 8) = 4 bytes = 4 octet
->>>>>>> 4e2edd7f (added article)
 
 #### IP Classes
 
@@ -135,7 +127,6 @@ Routed protocol and Routing protocol.
 **Routed Protocol:** This is a network protocol used to send user data between networks. It carries data such as web traffic, flies, messages, etc.
 **Routing Protocol**: A routed protocol finds paths (routes) for the IP and the routed protocol. Routing protocols run on Routers, Firewalls, Network servers with Network Operating Systems.
 
-<<<<<<< HEAD
 Routing Protocols and the relating Routed Protocol (Bonaventure, 2018)
 | Routing Protocol   | Routed Protocol  |
 | ---------------- | ----------------- |
@@ -157,9 +148,6 @@ iii. Dynamic
 **Static Routing (Non-adaptive):** An administrator assigns the path. It is a route configured by adding to the routing table by an administrator. 
 
 **Default Routing:** This sends packets to IP addresses that do not have exact routes. Using the hop devices, regardless of their network type.
-=======
-@@ -135,7 +154,8 @@ Routing is categorized into 3 places; i. Static ii.Default iii. Dynamic
->>>>>>> 4e2edd7f (added article)
 
 **Dynamic Routing(Adaptive):** A router learns dynamic routing by running routed protocols. It adds information to the routing table from connected users immediately.
 
@@ -168,7 +156,6 @@ iii. Dynamic
 | Type of routing  | Advantages  | Disadvantages  |
 | ---------------- | ----------- | -------------- |
 | Static    | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore it is to handle this manually |
-<<<<<<< HEAD
 |             | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots topography is needed. |
 |            | * Has no overhead CPU usage on the router. |     |
 | Default   | * They establish routes that will never go down | * They require a great deal of CPU power |
@@ -176,9 +163,6 @@ iii. Dynamic
 |            | * It is effective in selecting the best route to a destination network. | It is more expensive in terms of bandwidth and CPU. |
 
 **Classless Inter-Domain Routing (CIDR):** CIDR is based off on the idea of subnet masks. It makes it possible to create supernets adding to subnets. CIDR helps extend the number of available addresses. The CIDR stores as a suffix in the IP address like so; 201.105.34.7/24 (/24) is the CIDR in this address.
-=======
-@@ -149,15 +169,18 @@ Advantages and disadvantages of each type of routing;
->>>>>>> 4e2edd7f (added article)
 
 **Broadcast Network:** The last ID of a subnet range used to communicate to the host bits within that network. 255.255.255.255 (Broadcast IP).
 
