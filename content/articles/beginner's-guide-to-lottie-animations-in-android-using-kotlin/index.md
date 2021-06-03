@@ -36,215 +36,113 @@ Basic knowledge of android and Kotlin.
 ### Goal
 At the end of this tutorial, the reader should understand how to use and implement Lottie animations in Android applications. 
 
-### Step one - Create a new Android Studio Project.
+#### Step one: Create a new Android Studio Project.
 In this step, we will create a new Android Create a new android project on Android Studio
 
-### Step two - Choosing an animation file to use on your app
-
+#### Step two: Choosing an animation file to use on your app
 Head over to Lottie's [website](www.lottiefiles.com) and choose the animations of your choice. Most of the animations are free, while others one has to pay to use them.  Download the .json file. In our project, let us create a res/raw folder. Save the .json animations on there.
-
-  
-
 On your android project, create a `res/raw` folder. Save the `.json` animations on there.
 
-  
-  
-
-# 2. Adding dependencies
-
-In your `build. gradle` (project level), add the Lottie Animation library. Make sure you check out the latest library version and sync the changes.
-
-  
-
+#### Step three: Adding Lottie dependencies to the project.
+In the `build. gradle` (project level), add the Lottie Animation library. Make sure you check out the latest library version and sync the changes.
 ```gradle
-
 //Lottie Animation
-
 implementation 'com.airbnb.android:lottie:3.4.0'
-
 ```
-
-We shall also use other non-related libraries for this project. Which can be found [here](https://github.com/carolinemusyoka/LottieAnimation)
-
-  
-
-# 3. The layout
-
-  
-
-```xml
-
-<?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-
-xmlns:android="http://schemas.android.com/apk/res/android"
-
-xmlns:app="http://schemas.android.com/apk/res-auto"
-
-xmlns:tools="http://schemas.android.com/tools"
-
-android:layout_width="match_parent"
-
-android:layout_height="match_parent"
-
-android:layout_marginTop="@dimen/margin_16">
-
-  
-
-<TextView
-
-android:id="@+id/titleTv"
-
-android:layout_width="0dp"
-
-android:layout_height="wrap_content"
-
-android:layout_marginStart="16dp"
-
-android:layout_marginEnd="16dp"
-
-android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-
-android:textColor="@color/dark"
-
-app:layout_constraintEnd_toEndOf="parent"
-
-app:layout_constraintStart_toStartOf="parent"
-
-app:layout_constraintTop_toTopOf="parent"/>
-
-  
-
-<TextView
-
-android:id="@+id/subTitleTv"
-
-android:layout_width="0dp"
-
-android:layout_height="wrap_content"
-
-android:layout_marginStart="16dp"
-
-android:layout_marginEnd="16dp"
-
-android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-
-android:textColor="@color/dark"
-
-android:textStyle="bold"
-
-app:layout_constraintEnd_toEndOf="parent"
-
-app:layout_constraintStart_toStartOf="parent"
-
-app:layout_constraintTop_toBottomOf="@+id/titleTv"/>
-
-  
-
-<com.airbnb.lottie.LottieAnimationView
-
-android:id="@+id/img"
-
-android:layout_width="0dp"
-
-android:layout_height="0dp"
-
-android:layout_marginStart="32dp"
-
-android:layout_marginEnd="32dp"
-
-android:adjustViewBounds="true"
-
-app:layout_constraintBottom_toBottomOf="parent"
-
-app:layout_constraintDimensionRatio="1:1"
-
-app:layout_constraintEnd_toEndOf="parent"
-
-app:layout_constraintStart_toStartOf="parent"
-
-app:layout_constraintTop_toTopOf="parent"
-
-app:layout_constraintVertical_bias="0.4"
-
-app:lottie_loop="true"
-
-app:lottie_speed="1"
-
-tools:ignore="ContentDescription"/>
-
-  
-
-<TextView
-
-android:id="@+id/descTV"
-
-android:layout_width="0dp"
-
-android:layout_height="wrap_content"
-
-android:gravity="center"
-
-android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-
-android:textColor="@color/dark"
-
-app:layout_constraintEnd_toEndOf="@+id/img"
-
-app:layout_constraintStart_toStartOf="@+id/img"
-
-app:layout_constraintTop_toBottomOf="@+id/img"/>
-
-  
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-```
-
-The layout has basic elements;
-
-- Textview for heading
-
-- Buttons for navigation
-
+We shall also use other non-related libraries for this project which can be found [here](https://github.com/carolinemusyoka/LottieAnimation).
+
+#### Step four: Designing the project's layout.
+In this step, we will design our application's layout. The layout will only have three basic elements;
+- A Textview which contains a heading.
+- Buttons which will be used for navigation.
 - LottieAnimationView
 
-  
-# LottieAnimationView
+##### LottieAnimationView
 The view is added just like any other element in the layout. Some of the attributes you shall come across are like:
+- `lottie_loop` - A boolean to ensure that the animation stays in a loop.
+- `lottie_speed` - This determines the speed of the animation.
+- `lottie_autoplay` - A boolean that starts the animation.
+- `lottie_url` - The JSON URL from the website. 
 
+**Note: If you want your animations to rely on the internet, you can use this attribute, the json URL from the animation on the official website. Saves you space on your app, but it will not work offline. The file is small, so downloading it is recommended.** 
+
+- `lottie_rawRes` - This contains the bundled animation on your app.
+- `lottie_fileName` - If you have added the JSON files to the assets folder, use this instead of `lottie_rawRes`.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="@dimen/margin_16">
   
-
-- `lottie_loop`, that is a boolean to ensure that the animation stays on a loop, - `lottie_speed`, that determines the speed of the animation
-
-- `lottie_autoplay`, a boolean that starts the animation
-
-- `lottie_url`, the json url from the website. If you want your animations to rely on the internet, you can just use this attribute, the json url from the animation on the official website. Saves you space on your app, but it won’t work offline. The file is small, so downloading it is recommended.
-
-- `lottie_rawRes`, contains the bundled animation on your app.
-
-- `lottie_fileName`, if you have added the JSON files to the assets folder, use this instead of `lottie_rawRes`
-
+<TextView
+android:id="@+id/titleTv"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginEnd="16dp"
+android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+android:textColor="@color/dark"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"/>
   
-
-You can also load the animation “programmatically” from the MainActivity
-
+<TextView
+android:id="@+id/subTitleTv"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginEnd="16dp"
+android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+android:textColor="@color/dark"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/titleTv"/>
   
+<com.airbnb.lottie.LottieAnimationView
+android:id="@+id/img"
+android:layout_width="0dp"
+android:layout_height="0dp"
+android:layout_marginStart="32dp"
+android:layout_marginEnd="32dp"
+android:adjustViewBounds="true"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintDimensionRatio="1:1"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.4"
+app:lottie_loop="true"
+app:lottie_speed="1"
+tools:ignore="ContentDescription"/>
+  
+<TextView
+android:id="@+id/descTV"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+android:textColor="@color/dark"
+app:layout_constraintEnd_toEndOf="@+id/img"
+app:layout_constraintStart_toStartOf="@+id/img"
+app:layout_constraintTop_toBottomOf="@+id/img"/>
+  
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+You can also load the animation “programmatically” from the MainActivity.kt.
 
 ```kotlin
-
 val animationView:LottieAnimationView = findViewById(R.id.animation_view)
-
 animationView.setAnimation("hello-world.json")
-
 animationView.loop(true)
-
 animationView.playAnimation()
 ```
-- This will load the file and parse the animation .
-
-  
+This function will load the file and parse the animation.
 
 # Functionality
 
