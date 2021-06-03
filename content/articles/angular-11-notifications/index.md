@@ -6,7 +6,7 @@ url: /angular-11-notifications/
 title: Getting Started with Angular 11 Notifications
 description: This tutorial will go over Angular 11 notifications, alerts, and how to use them in an Angular application. We will also discuss how we can use SweetAlert over the CDN without necessarily installing the package in our application.
 author: odiwuor-amos
-date: 2021-06-02T00:00:00-16:00
+date: 2021-06-03T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
