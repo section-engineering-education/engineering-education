@@ -170,7 +170,7 @@ From the above information, it's clear that R1 and S2 are directly connected to 
 **NOTE: When configuring LLDP, one has to configure it on every device for it to discover and gather information about the neighboring devices. For CDP it's already configured by default so there is no need of configuring it unless it is disabled.**
 
 ### Conclusion
-As we have seen, Layer 2 discovery protocols can be used to share information with and discover information about neighboring connected devices in large networks. This information is crucial in analyzing the network topology, troubleshooting for failures, and documenting the network.
+As we have seen, Layer 2 discovery protocols can share information with and discover information about neighboring connected devices in extensive networks. This information is crucial in analyzing the network topology, troubleshooting for failures, and documenting the network.
 To summarize:
 - We learned what Network Management is.
 - We explored different Layer 2 protocols used in network management.
