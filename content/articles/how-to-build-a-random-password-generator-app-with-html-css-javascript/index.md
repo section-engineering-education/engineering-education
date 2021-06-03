@@ -10,7 +10,7 @@ The reader should have a fundamental knowledge of HTML, CSS, and a basic underst
  
 ### Building the HTML Page for the Password Generator
  
-You will start by creating an HTML file and save it as `index.html`.
+Let's start by creating an HTML file and saving it as `index.html`. Copy the code below to the HTML file.
  
 ```HTML
 <!DOCTYPE html>
@@ -142,7 +142,7 @@ h2 {
  
 ### Understanding The ASCII Character Table
  
-First of all, I don’t advise you to jump straight to coding the JavaScript file without a prior understanding of the ASCII characters. Below is a table of the ASCII characters.
+I don’t advise you to jump straight to coding the JavaScript file without a prior understanding of the ASCII characters. Below is a table of the ASCII characters.
  
 ![ascii-table](ascii-table.jpg)
  
@@ -178,7 +178,8 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
 ```
-Next, you are going to create the password-generating function.
+
+Next, let's create the password-generating function.
  
 ```JavaScript
 // The Password Generating Function
@@ -201,27 +202,27 @@ let generatePassword = (
   return passwordCharacters.join("");
 };
 ```
+
+For instance, if the user wants the password to be lowercase and if no option is checked, inside the function, we'll create a variable that'll store an array of character codes and assign the lowercase character codes. 
  
-Now let me explain the codes after passing the four arguments, for instance, if the username wants the password to be lowercase if no option is checked Inside the function, you will create a variable that will store an array of the character codes and you will assign the lowercase character codes by using the `let charCodes`. 
+After that, you need to check if the options are true or not by using the conditional statements. Now depending on the options selected you will concatenate the values to the `charCodes` variable For the password that it will create. Then, create an empty array and call it `passwordCharacters`. 
  
-After that, you need to check if the options are true or not by using the conditional statements `if (includeUppercase) charCodes` for uppercase code, `if (includeSymbols) charcodes` for symbol codes, and `if (includeNumbers) charcodes` for number codes. Now depending on the options selected you will concatenate the values to the `charCodes` variable For the password that it will create, then you will create an empty array and call it `passwordCharacters`. 
+Next, create a loop that'll loop until it reaches the number of characters you want. While inside the loop, generate random character codes from the available values in the `charCodes` array, And then convert the characters from the character codes and push them into the `passwordCharacters`. Now, loop till the character amount you are getting from the input field in the application. The `charCodes` variable has all the character codes, It all depends on the options the user selected. 
  
-Next, you will create a loop that will loop until it reaches the number of characters you want. While inside the loop, you will generate random character codes from the available values in the `charCodes` array, And then convert the characters from the character codes and push them into the `passwordCharacters`array so that you have completed the `generatePasswordfunction`. Now you will loop till the character amount you are getting from the input field in the application. The `charCodes` variable has all the character codes, It all depends on the options the user selected. 
- 
-You will now generate a random index position of the array by using the ` math.random()` method, you multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next is the `Math.floor`, which will complete the number that is generated.
+Now, generate a random index position of the array by using the `math.random()` method and multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next, floor the numder using `Math.floor`, which will complete the number that is generated.
  
 Lastly, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
  
-All you need to do now is create a function that generates the decimal values of the characters, and in the end, you will convert all these values to characters using the method below.
+All you need to do now is create a function that generates the decimal values of the characters, and in the end, convert all these values to characters using the method below.
  
 ```JavaScript
 // This is an example
 let arrayFromlowToHigh = (low, high) => {
-const array = [];
-for (let i = low; i <= high; i++) {
- array.push(i);
-}
-return array;
+  const array = [];
+  for (let i = low; i <= high; i++) {
+   array.push(i);
+  }
+  return array;
 };
 ```
  
@@ -237,7 +238,6 @@ function arrayFromLowToHigh(low, high) {
   return array;
 }
 ```
- 
  
 The next thing you want to do is build the `copy` button and copy to clipboard functionality. We will listen to the click event on the “copybtnDOM” element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
  
