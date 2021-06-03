@@ -341,88 +341,88 @@ Rails provides us with form builder object yielded by `form_with` which contains
 
 - Create a `sign_up` form:
 
-```bash
-touch `app/views/registrations/new.html.erb`
-```
+  ```bash
+  touch `app/views/registrations/new.html.erb`
+  ```
 
-```erb
-<h1>Sign Up</h1>
-<%= form_with model: @user, url: sign_up_path do |f| %>
-  <p>
-  <%= f.label 'email' %><br>
-  <%= f.text_field :email %>
-  </p>
-  <p>
-  <%= f.label 'password' %><br>
-  <%= f.password_field :password %>
-  </p>
-  <p>
-  <%= f.label 'password_confirmation' %><br>
-  <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-  <%= f.submit 'Sign Up' %>
-  </p>
-<% end %>
-```
+  ```erb
+  <h1>Sign Up</h1>
+  <%= form_with model: @user, url: sign_up_path do |f| %>
+    <p>
+    <%= f.label 'email' %><br>
+    <%= f.text_field :email %>
+    </p>
+    <p>
+    <%= f.label 'password' %><br>
+    <%= f.password_field :password %>
+    </p>
+    <p>
+    <%= f.label 'password_confirmation' %><br>
+    <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+    <%= f.submit 'Sign Up' %>
+    </p>
+  <% end %>
+  ```
 
 The `sign_up` form creates a form_tag and this is scoped to our `User` model enabling us to populate our fields with the attributes from `User` object.
 
 - Create a `sign_in` form:
 
-```bash
-touch `app/views/sessions/new.html.erb
-```
+  ```bash
+  touch `app/views/sessions/new.html.erb
+  ```
 
-```erb
-<h1>Sign In</h1>
-<%= form_with url: sign_in_path do |f| %>
-  <p>
-  <%= f.label 'email:'%><br>
-  <%= f.text_field :email, id: 'email' %>
-  </p>
-  <p>
-  <%= f.label 'password:'%><br>
-  <%= f.password_field :password, id: 'password' %>
-  </p>
-  <p>
-  <%= f.submit 'Log In' %>
-  </p>
-<% end %>
-```
+  ```erb
+  <h1>Sign In</h1>
+  <%= form_with url: sign_in_path do |f| %>
+    <p>
+    <%= f.label 'email:'%><br>
+    <%= f.text_field :email, id: 'email' %>
+    </p>
+    <p>
+    <%= f.label 'password:'%><br>
+    <%= f.password_field :password, id: 'password' %>
+    </p>
+    <p>
+    <%= f.submit 'Log In' %>
+    </p>
+  <% end %>
+  ```
 
 - Create a `password_edit` form
 
-```bash
-touch `app/views/passwords/edit.html.erb`
-```
+  ```bash
+  touch `app/views/passwords/edit.html.erb`
+  ```
 
-```erb
-<h1>Edit Password</h1>
-<%= form_with model: Current.user, url: edit_password_path do |f| %>
-  <p>
-  <%= f.label 'password:'%><br>
-  <%= f.password_field :password %>
-  </p>
-  <p>
-  <%= f.label 'password_confirmation:'%><br>
-  <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-  <%= f.submit 'Update' %>
-  </p>
-<% end %>
-```
+  ```erb
+  <h1>Edit Password</h1>
+  <%= form_with model: Current.user, url: edit_password_path do |f| %>
+    <p>
+    <%= f.label 'password:'%><br>
+    <%= f.password_field :password %>
+    </p>
+    <p>
+    <%= f.label 'password_confirmation:'%><br>
+    <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+    <%= f.submit 'Update' %>
+    </p>
+  <% end %>
+  ```
 
 - Open `app/views/layouts/application.html.erb` and update `<body>` tag to:
 
-```erb
- <body>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-   <%= yield %>
- </body>
-```
+  ```erb
+   <body>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+     <%= yield %>
+   </body>
+  ```
 
 Within the context of a layout, `<%= yield %>` identifies a section where content from the view should be inserted.
 
@@ -654,7 +654,7 @@ def create
   ```
   
 - Remember to add a link in `app/views/sessions/new.html.erb` to reset your passwords, update the file to match the above.
-- 
+ 
   ```erb
   <h1>Sign In</h1>
   <%= form_with url: sign_in_path do |f| %>
@@ -677,8 +677,8 @@ def create
   ![pass_reset_mail](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/pass_reset_mail.png)
   
 - To send the Welcome email, we will have to update our `create` action in `app/controllers/registrations_controller.rb` to:
-- 
-  ```rb
+ 
+  ```erb
   def create
     @user = User.new(user_params)
     if @user.save
@@ -695,7 +695,9 @@ def create
   ![welcome_mailer](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/welcome_mailer.png)
   
 ### Summary
+
 In this article, we have implemented a complete Rails authentication system by following the below steps:
+
 - [Project Setup](#project-setup)
 - [Basic understanding of MVC](#basic-understanding-of-MVC)
 - [Configuring routes](#configuring-routes)
@@ -703,15 +705,23 @@ In this article, we have implemented a complete Rails authentication system by f
 - [Configuring views](#configuring-views)
 - [Resetting the password](#resetting-the-password)
 - [Setting up mailers](#setting-up-mailers)
+
 The finalized code can be accessed from [here](https://github.com/Njunu-sk/Rails-Authentication). Feel free to give the project a star.
+
 ### Conclusion
+
 We have learned about the MVC design and built an authentication system from scratch and set up an Action Mailer and ActiveJob to send our emails and session security in Rails.
+
 Please visit [Go_Rails](https://gorails.com/) for more Ruby on Rails content, including the above in this tutorial.
 
 ### References
+
 - [Rails_edge_guides](https://edgeguides.rubyonrails.org)
+
 - [Code_project](https://www.codeproject.com/articles/575551/user-authentication-in-ruby-on-rails)
+
 You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
+
 Happy coding!!
 
 ---
