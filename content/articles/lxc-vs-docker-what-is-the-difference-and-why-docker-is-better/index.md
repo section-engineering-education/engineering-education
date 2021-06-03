@@ -8,7 +8,7 @@ There are several kinds of container technologies that you can use. They are Doc
 
 To understand LXC well, let us first discuss what a virtual machine is.
 
-#### The concept of Virtual Machines (VM)
+### The concept of Virtual Machines (VM)
 
 Typically, in a virtual machine, you have a host machine where you install your operating system. The operating system could be Windows, macOS, or Linux. When you use a virtual machine, you add or install hypervisors in your host operating system like VirtualBox, VMware, and ESXi. You use the hypervisor to install a guest operating system to run on top of your host operating system. In this case, the guest OS is running as a virtual machine/container.
 
@@ -24,7 +24,7 @@ If you have 16GB of RAM and start 4 Guest machines/servers, they will use all of
 
 Another issue is that all the guest operating instances are running on a single machine. In case of any boot-up processes, or whenever you want to restart the service for some reason, you have to reboot the entire computer. Depending on what environment you are you're in, a couple of extra seconds matter.
 
-#### LXC virtual environments (VE)
+### LXC virtual environments (VE)
 
 [LXC](https://www.youtube.com/watch?v=CWmkSj_B-wo) (Linux Containers) is a virtualization solution on the operating system-level that enables the creation and operation of many isolated Linux virtual environments (VE) on a single centralized host. Containers, which are isolation levels, can isolate certain apps or simulate a fully different host.
 
