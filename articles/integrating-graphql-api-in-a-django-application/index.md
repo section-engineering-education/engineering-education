@@ -211,10 +211,11 @@ Adding GraphQL view to our URL, in `ecommerce/urls.py` file. Add the following:
 from django.contrib import admin
 from django.urls import path
 from graphene_django.views import GraphQLView
+from products.schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("graphql", GraphQLView.as_view(graphiql=True)),
+    path("graphql", GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
 ```
 
@@ -232,8 +233,7 @@ A schema is a contract between the client and the server that describes how the 
 
 You'll need to add a Schema, Object Types, and a view function that receives the GraphQL queries to be able to perform GraphQL queries in your web application.
  
-
-Let's define our schema, firstly in our app directory, we'll create a file called **schema.py** and add the following lines of code. 
+Let's define our schema, in the `products/` directory, we'll create a file called **schema.py** and add the following lines of code. 
 
 ```python
 import graphene
@@ -321,7 +321,6 @@ Let's try some features to query the data in our database. We'll do this by usin
       price
       quantity
       description
-      imageurl
       status
     }
 }
