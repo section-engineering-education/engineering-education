@@ -128,7 +128,7 @@ As we wrap up, I'd like to point out that this isn't something that will be avai
 
 Interesting research. What a time to be alive!
 
-If you're interested to learn more about similar projects, [Braingate](https://www.braingate.org/) is a good place to start.
+If you're interested in learning more about similar projects, [Braingate](https://www.braingate.org/) is a good place to start.
 
 ### References
 
