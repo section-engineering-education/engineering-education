@@ -2,17 +2,19 @@
 Web applications nowadays are user-friendly and convenient to use. Indeed, if you're here, you probably may have heard of Single Page Applications ([SPA](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)). These are applications that work inside browsers and do not require page refresh during navigations. Normally, these pages are loaded once while their contents are dynamically added.   
 An example of a SPA is [section](https://www.section.io/engineering-education/), indicated by forwarding slashes followed by navigation content. For example, all articles on this platform are located on `https://www.section.io/engineering-education/`.
 
-This tutorial will walk you through the process of creating your Angular 11 application using Routers. This is a complete tutorial that will teach you everything you need to know about Angular Routers from the ground up to the complete application.
+This tutorial walks you through the process of creating your Angular application using Routers.
 We'll learn the basics of Router outlets, navigations, routes, and paths to generate a complete Angular Single Page Application (SPA).  
 
-> For you to be able to follow this tutorial along, basic knowledge in Angular is required.
+> For you to be able to follow this tutorial along, it's a necessity to have basic knowledge of Angular.
 
 ### Getting started with Angular Router
+
 Angular Router is a core part of Angular that aids in building a single-page application. It's located in the `@angular/router package.  
-It has a complete routing library for constructing multiple route outlets. It also supports several features such as lazy loading as we will discuss shortly, and routing guards for access control et cetera.
+It has a complete routing library for constructing multiple route outlets. It also supports several features such as [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) and routing guards for access control et cetera.
 
 ### Routes and paths
-Routes are objects. At the lowest level, they(route object) comprise Angular components and paths, and sometimes `redirectTo`. This provides more details about a specific route on which component it should load. Paths are part URLs that are used to locate a resource.  
+
+Routes are objects. At the lowest level, they comprise Angular components and paths, and sometimes `redirectTo`. This provides more details about a specific route plus a  component to load on navigation. Paths are part URLs that are used to locate a resource.  
 
 An example of a route:
 
@@ -32,6 +34,7 @@ An example of a route:
 You notice that these routes contain at least a path, associated with its component.
 
 ### The Angular Router-Outlet
+
 Router-Outlet is an Angular directive from the router library that is used to insert the component matched by routes to be displayed on the screen.  
 It's exported by the `RouterModule` and added to the template as shown below:  
 
@@ -101,6 +104,7 @@ ng new routing-example
 This prompts you to answer `Yes/No` questions as shown below:
 
 ```bash
+// while creating a new angular project, these sets of questions are displayed.
 ---------------------
     ? Do you want to enforce stricter type checking and stricter bundle budgets in t
     he workspace?
@@ -175,11 +179,10 @@ Now that we've defined our application routes, let's now add the Router-Outlet t
 <router-outlet></router-outlet>
 
 ```
-Now, let's import the `app. routing-module` in the `app. module` to ensure our routes are globally available.
+Next, import the `app. routing-module` in the `app. module`.
 
 ```ts
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+--------------------------------------
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentComponent } from './app.component';
@@ -191,7 +194,7 @@ import { MyDashboardComponent } from './app.component';
     StudentComponent
   ],
   imports: [
-    BrowserModule,
+    ---------------
     AppRoutingModule
   ],
   providers: [],
