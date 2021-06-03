@@ -53,7 +53,7 @@ Write
 
 *[Image Source: HHMI](https://www.hhmi.org/news/brain-computer-interface-turns-mental-handwriting-into-text-on-screen)*
 
-The figure shows two tiny arrays of implanted electrodes relaying information from the brain area of the patient. It controls the hands and arms to an algorithm. The algorithm then translates these signals into letters that appear on a screen. 
+The figure shows two tiny arrays of implanted electrodes relaying information from the brain of the patient. It controls the hands and arms to an algorithm. The algorithm then translates these signals into letters that appear on a screen.
 
 Let's try and understand how they do this.
 
