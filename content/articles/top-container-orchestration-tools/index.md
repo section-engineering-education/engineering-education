@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /top-container-orchestration-tools/
+url: /engineering-education/top-container-orchestration-tools/
 title: Top Container Orchestration tools
 description: This tutorial will be a brief dive into understanding Containers technology. We'll deep dive into various orchestration tools, and explore them in detail.
 author: esther-waithera
