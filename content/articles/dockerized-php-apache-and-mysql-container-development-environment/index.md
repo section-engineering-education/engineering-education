@@ -1,5 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+title: How to Setup and run PHP Websites using Docker Containers with PHP Apache and MySQL
+description: This article explains about how to setup docker containers using Apache and MySQL. We will also learn to build a PHP website and run them.
+author: joseph-chege
+date: 2021-06-03T00:00:00-10:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/dockerized-php-apache-and-mysql-container-development-environment/hero.png
+    alt: PHP Docker containers image
+---
 [Container technology](/engineering-education/history-of-container-technology) is growing day by day. It's a technology that makes application development much easier and faster. It has a clean architecture that ensures application services utilize resources sustainably by dividing an application into smaller services called images. This allows you to set up each service independently without affecting how the other services run.
-
+<!--more-->
 In this case, [Docker](/engineering-education/docker-concepts/) provides a [docker-compose](https://docs.docker.com/compose/) file that allows you to set all your application environments and run a few commands to fully set up your application in a more elegant and faster approach.
 
 Let's take the case of running a PHP application. You would have to install all environments that you need to run PHP scripts. You need an apache server installed in your server/system and probably a MySQL database. Then set up each environment in a way that will allow you to run your PHP-driven website.
