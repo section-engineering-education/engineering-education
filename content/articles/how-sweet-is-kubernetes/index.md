@@ -21,7 +21,7 @@ images:
 
 ### HOW SWEET IS KUBERNETES?
 
-![kubernetes.jpeg](hero.jpeg)
+![hero.jpg](hero.jpeg)
 
 What was your first impression when you read Kubernetes?
 
