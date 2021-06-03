@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-11-routing/
+title: Getting Started with Angular 11 routing 
+description: This tutorial will go over the process of creating Angular application using Routers
+author: owino-wendy
+date: 2021-06-02T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/angular-11-routing/hero.jpg
+    alt: Getting Started with Angular 11 routing 
+---
+
 ### Introduction
 Web applications nowadays are user-friendly and convenient to use. Indeed, if you're here, you probably may have heard of Single Page Applications ([SPA](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)). These are applications that work inside browsers and do not require page refresh during navigations. Normally, these pages are loaded once while their contents are dynamically added.   
 An example of a SPA is [section](https://www.section.io/engineering-education/), indicated by forwarding slashes followed by navigation content. For example, all articles on this platform are located on `https://www.section.io/engineering-education/`.
