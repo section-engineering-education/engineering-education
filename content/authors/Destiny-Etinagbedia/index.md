@@ -1,4 +1,3 @@
-
 ---
 title: Destiny Etinagbedia
 type: engineering-education/author
