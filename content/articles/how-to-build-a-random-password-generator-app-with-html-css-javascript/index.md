@@ -205,11 +205,11 @@ let generatePassword = (
 
 For instance, if the user wants the password to be lowercase and if no option is checked, inside the function, we'll create a variable that'll store an array of character codes and assign the lowercase character codes. 
  
-After that, you need to check if the options are true or not by using the conditional statements. Now depending on the options selected you will concatenate the values to the `charCodes` variable For the password that it will create. Then, create an empty array and call it `passwordCharacters`. 
+After that, you need to check if the options are true or not by using conditional statements. Now depending on the options selected you will concatenate the values to the `charCodes` variable For the password that it will create. Then, create an empty array and call it `passwordCharacters`. 
  
 Next, create a loop that'll loop until it reaches the number of characters you want. While inside the loop, generate random character codes from the available values in the `charCodes` array, And then convert the characters from the character codes and push them into the `passwordCharacters`. Now, loop till the character amount you are getting from the input field in the application. The `charCodes` variable has all the character codes, It all depends on the options the user selected. 
  
-Now, generate a random index position of the array by using the `math.random()` method and multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next, floor the numder using `Math.floor`, which will complete the number that is generated.
+Now, generate a random index position of the array by using the `math.random()` method and multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next, floor the number using `Math.floor`, which will complete the number that is generated.
  
 Lastly, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
  
@@ -301,4 +301,3 @@ Now, if you run the codes, our random password generator application would work 
  
 There are many other ways to build a random password generator application. This tutorial is just one way to achieve it. You can also research different ways of creating it as long as it performs the same functionality. If you want the source codes for this application, you can get them from my Github repo [here](https://github.com/destiny251/random-password-generator-app-).
  
-
