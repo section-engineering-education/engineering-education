@@ -134,5 +134,3 @@ If you're interested to learn more about similar projects, [Braingate](https://w
 1. [High-performance brain-to-text communication via handwriting](https://www.nature.com/articles/s41586-021-03506-2)
 
 2. [Brain Computer Interface Turns Mental Handwriting into Text on Screen](https://www.hhmi.org/news/brain-computer-interface-turns-mental-handwriting-into-text-on-screen)
-
-3. [Hero image](https://unsplash.com/photos/byp5TTxUbL0)
