@@ -174,62 +174,40 @@ animation.cancelAnimation() // Cancels the animation
 }
 ```
 You shall use;
-`.speed`- To set the speed at which the animation plays.
--`.progress`- To choose where the animation starts.
--`repeatMode` - restarts the animation.
+- `.speed`- To set the speed at which the animation plays.
+- `.progress`- To choose where the animation starts.
+- `repeatMode` - restarts the animation.
 
-# The error I ran into
-
-When using a class that holds the animation files like this,
+### Errors experienced.
+When using a class that holds the animation files like this:
 
 ```kotlin
-
 enum class OnboardingPage(
-
 @StringRes val titleResource: Int,
-
 @StringRes val subTitleResource: Int,
-
 @StringRes val descriptionResource: Int,
-
 @DrawableRes val logoResource: Int
-
 ) {
-
-  
-
 ONE(R.string.onboarding_slide1_title, R.string.onboarding_slide1_subtitle,R.string.onboarding_slide1_desc, R.raw.comp),
-
 TWO(R.string.onboarding_slide2_title, R.string.onboarding_slide1_subtitle,R.string.onboarding_slide1_desc, R.raw.jump),
-
 THREE(R.string.onboarding_slide3_title, R.string.onboarding_slide1_subtitle,R.string.onboarding_slide1_desc, R.raw.cycling)
-
-  
-
 }
-
 ```
+One might come across a lint error in the adapter, on this line:
+``` kotlin 
+root.img.setAnimation(onBoardingPage.logoResource).
+```
+If you add the `@SuppressLint` annotation, the project will not run. The error does not necessarily affect the functionality of the app.
 
-you might come across a lint error in the adapter,on this line,`root.img.setAnimation(onBoardingPage.logoResource)`. If you add the `@SuppressLint` annotation, the project will not run. The error does not necessarily affect the functionality of the app.
-
-  
-
-# Output
-
+### Output
+Let us run the app.
 ![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
+You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link. In case of any clarification or any problem, do not hesitate to raise an issue in the same repository. You can download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
 
- You can download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true)
-
-
-  You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link to follow along or download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
-
-
-# References
-
+### References
 - [Lottie](www.lottiefiles.com)
-
 - [Lottie Docs](https://airbnb.io/lottie/)
 
-# Conclusion
-
-Lottie Animations can be used all around the app, from splash screens, onboarding screens, empty state layouts, bottom navigations, etc. Be sure to try out ways to incorporate it into your app. Happy coding!!
+### Conclusion
+Lottie Animations can be used all around the app, from splash screens, onboarding screens, empty state layouts, bottom navigations, and many other ways. Be sure to try out ways to incorporate it into your app. 
+Happy coding!
