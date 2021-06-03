@@ -137,6 +137,7 @@ Here is where the user creates an account using an email and passwor
 #### Login page user interface
 
 On this page, the user enters his email and password set during signing up.
+
 ![Login Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/login.png)
 
 #### Profile page user interface
@@ -179,7 +180,7 @@ function createAccount(){
         var errorCode = error.code
 
         //error message
-        var errorMessage = erorr.message                
+        var errorMessage = error.message                
     }).then(() => {
         //redirect the user to profile page
         window.location.assign("/profile");
@@ -192,7 +193,25 @@ function createAccount(){
 The login function takes the user's email and password then calls Firebase to authenticate the user. It returns an error if the user does not exist or the password is wrong. Add the snippets below in the `script` tag of the login page.
 
 ```js
+// initialize firebase
+firebase.initializeApp(config);
 
+function login() {
+    // obtain user email and user password from HTML
+    var userEmail = document.getElementById("email_field").value;
+    var userPass = document.getElementById("password_field").value;
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+        //error code
+        var errorCode = error.code
+        //errod message
+        var errorMessage = erorr.message
+        //show error message
+        window.alert("Error : " + errorMessage);
+    }).then(() => {
+        //redirect the user to profile page
+        window.location.assign("/profile");
+    });
+}
 ```
 
 ### Send Email Verification Link
@@ -233,6 +252,7 @@ When the user gets back to their account, the account verified status
 ### Starting the server
 
 In this phase, we will test our application by running the command `nodemon start` in the terminal. We need to add the below code  in the `index.js` file:
+
 ```js
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
