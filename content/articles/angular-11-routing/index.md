@@ -25,7 +25,7 @@ We'll learn the basics of Router outlets, navigations, routes, and paths to gene
 
 ### Getting started with Angular Router
 
-Angular Router is a core part of Angular that aids in building a single-page application. It's located in the `@angular/router package.  
+Angular Router is a core part of Angular that aids in building a single-page application. It's located in the `@angular/router package`.  
 It has a complete routing library for constructing multiple route outlets. It also supports several features such as [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) and routing guards for access control et cetera.
 
 ### Routes and paths
