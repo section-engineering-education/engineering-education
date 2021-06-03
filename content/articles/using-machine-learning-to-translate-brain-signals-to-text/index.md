@@ -46,7 +46,8 @@ Recently, there has been a lot of interest in researching how our brains represe
 
 In this article, we will explore how machine learning is used to decode and translate brain neural signals into handwritten texts. Indeed, it is a first of its kind. Previous BCI research has focused on restoring motor skills such as reading and grasping. Not much focus has been put in researching the use of BCI to solve complex behavioral tasks. This article aims to tackle that. 
 
-The researchers in this study worked with a paralysis patient with a spinal code injury. He was paralyzed from the neck downwards with his hand movements completely non-functional. The goal was to make the patient attempt to imagine writing with a pen on a piece of paper as if his hands weren't paralyzed. 
+The researchers in this study worked with a paralysis patient with a spinal cord injury. He was paralyzed from the neck downwards, including not being able to move his hands. The goal was to make the patient imagine writing with a pen on a piece of paper as if his hands weren't paralyzed. 
+Write
 
 ![Patient with electrode implants imagining handwriting](/engineering-education/using-machine-learning-to-translate-brain-signals-to-text/electrode-implants.PNG)
 
