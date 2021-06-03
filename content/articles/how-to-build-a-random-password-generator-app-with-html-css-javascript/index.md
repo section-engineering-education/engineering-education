@@ -151,6 +151,8 @@ Source:[https://favpng.com/png_view/binary-code-ascii-character-encoding-value-p
 ASCII stands for American Standard Code for Information Interchange. If you look at the uppercase A, it has an ASCII value of 65, and if you keep adding one to 65, you will get all the 26 uppercase characters. The lowercase begins at 97 and goes up to 122. The symbols are at various places in the image above.
  
 ### Writing The Javascript
+
+#### Select DOM Elements
  
 Start by selecting the different HTML DOM elements in the javascript using the code below:
  
@@ -165,6 +167,8 @@ const symbolsDOM = document.getElementById("symbols");
 const generatebtn = document.getElementById("generate");
 const form = document.getElementById("passwordGeneratorForm");
 ```
+
+#### Generate Character Codes
  
 Next, let's work on the character codes that we'll use to form the randomly generated password. For the uppercase codes, you will pass the low of 65, which is the value of uppercase A and the high value of 90, the uppercase Z as you can recall from the ASCII table. You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table. We should make you use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. The symbols start at 33 and increase up to 47 and then continue at 58.
  
@@ -178,6 +182,21 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
 ```
+
+The function `arrayFromLowToHigh` will take two inputs: the highest and the other for the lowest value. It just increments until the highest value is achieved. All the incremented values are pushed to an array, and the function then returns the array, all you are doing is generating the character code function. Here is the code below.
+ 
+```JavaScript
+// Character Code Generating Function
+function arrayFromLowToHigh(low, high) {
+  const array = [];
+  for (let i = low; i <= high; i++) {
+    array.push(i);
+  }
+  return array;
+}
+```
+
+#### Generate Password
 
 Next, let's create the password-generating function.
  
@@ -212,32 +231,8 @@ Next, create a loop that'll loop until it reaches the number of characters you w
 Now, generate a random index position of the array by using the `math.random()` method and multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next, floor the number using `Math.floor`, which will complete the number that is generated.
  
 Lastly, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
- 
-All you need to do now is create a function that generates the decimal values of the characters, and in the end, convert all these values to characters using the method below.
- 
-```JavaScript
-// This is an example
-let arrayFromlowToHigh = (low, high) => {
-  const array = [];
-  for (let i = low; i <= high; i++) {
-   array.push(i);
-  }
-  return array;
-};
-```
- 
-The function will take two inputs: the highest and the other for the lowest value. It just increments until the highest value is achieved. All the incremented values are pushed to an array, and the function then returns the array, all you are doing is generating the character code function. Here is the code below.
- 
-```JavaScript
-// Character Code Generating Function
-function arrayFromLowToHigh(low, high) {
-  const array = [];
-  for (let i = low; i <= high; i++) {
-    array.push(i);
-  }
-  return array;
-}
-```
+
+#### Copy Button
  
 The next thing you want to do is build the `copy` button and copy to clipboard functionality. We will listen to the click event on the “copybtnDOM” element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
  
@@ -268,8 +263,10 @@ Next is the `document.body.appendchild(textarea);` all you want to do here is ap
 You need to select the elements you want to copy so you will use the `textarea.select();` method then to copy the elements, you will use the `document.execCommand(‘copy’);` method. This method executes the specified command for the selected part of an editable section which is the textarea. The `copy` command inside the function will copy the values of the editable section, after which you need to remove the “textarea” by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. 
  
 After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
+
+#### Put it all together
  
-Also, if you click the button, you will observe that the page keeps reloading. You need to disable this reloading behavior by using a web API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below.
+If you click the copy button, you'll observe that the page keeps reloading. You should disable this reloading behavior by using an event API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below.
  
 ```JavaScript
 // Checking the options that are selected and setting the password
