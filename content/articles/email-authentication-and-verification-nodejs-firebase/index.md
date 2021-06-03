@@ -159,7 +159,7 @@ var config = {
     databaseURL: "YOUR DATABASE URL",
     projectId: "YOUR PROJECT ID",
     storageBucket: "STORAGE BUCKET,
-    messagingSenderId: "5MESSAGE SENDER ID",
+    messagingSenderId: "MESSAGE SENDER ID",
     appId: "YOUR APPLICATION ID"
 };
 ```
