@@ -1,4 +1,4 @@
-# Hashing in Data Structure
+### Hashing in Data Structure
 
 In hashing the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 
@@ -24,18 +24,18 @@ A collision can not be completely avoided but can be minimized using a 'good' ha
 
 The chances of hash collision are less if the table size is a prime number.
 
-### How to choose Hash Function:
+#### How to choose Hash Function:
 
 - An efficient hash function should be built such that the index value of the added item is distributed equally across the table.
 - An effective collision resolution technique should be created to generate an alternate index for a key whose hash index corresponds to a previously inserted position in a hash table.
 - We must select a hash algorithm that is fast to calculate.
 
-### Characteristics of a Good Hash Function :
+#### Characteristics of a Good Hash Function :
 
 - **Uniform Distribution**: For distribution throughout the constructed table.
 - **Fast**: The generation of hash should be very fast, and should not produce any considerable overhead.
 
-### Collision Hashing Techniques:
+#### Collision Hashing Techniques:
 
 1. **Open Hashing (Separate Chaining)**: In this using Linked List, new nodes are added to the list, the key act as the head pointer, pointing to a number of nodes having different values.If there is any collision two elements having same hash value we store both of them in a same linked list.
 
@@ -75,7 +75,7 @@ A hash table's load factor T is defined as:
 
 Generally, if the load factor is greater than 0.5, we increase the size of the bucket array and rehash all the key-value pairs again.
 
-### How Hashing Gets O(1) Complexity?
+#### How Hashing Gets O(1) Complexity?
 
 Given the above examples, one would wonder how hashing may be O(1) if several items map to the same place...  </br> 
 The solution to this problem is straightforward. We use the load factor to ensure that each block, (for example linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice this load factor is constant ( generally 10 or 20 ). As a result, searching in 20 or 10 elements become constant.<br/>
@@ -262,6 +262,6 @@ int main(){
 
 ```
 
-### Output
+#### Output
 
 ![output](./Capture.PNG)
