@@ -9,6 +9,7 @@ When developing most projects using Vue.js, there will be a need to fetch or con
 #### What is an API?
 
 API stands for Application Programming Interface, which is a set of protocols that allow software programs to share data. It is more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using two methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
+
 These concepts will be discussed extensively in the course of this article. Brace up! 
 
 #### Prerequisite
@@ -25,7 +26,7 @@ To understand and follow this article, you will need:
 3. Using APIs on Vuex
 4. Conclusion
 
-First, if you don't know how to create a Vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
+If you don't know how to create a Vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
 
 There are two methods of consuming/using an API in a Vue.js project. These methods are:
 
@@ -38,35 +39,39 @@ There are two methods of consuming/using an API in a Vue.js project. These metho
 To use Axios on your project, you need to first install it. This can be done in two ways:
 
 -  By using `npm`; a standard package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
+
 - By using `yarn`; a package manager that also acts as a project manager. It is synergetic with the npm registry and has the same features. To install yarn in your project, paste the following line of code in your terminal `npm install --global yarn`
 
 
 With npm:
 
-```
+```bash
 npm i axios
 ```
+
 With yarn:
 
-```
+```bash
 yarn add axios
 ```
+
 Next, you import Axios in your `src/main.js` file
 
-```
+```JavaScript
 import axios from 'axios';
 Vue.prototype.$http = axios;
 ```
 
 **How to make an API request and display data using Axios.**
 
-We will make the API request using a `get` method. A get method is used to call data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise-based function with keywords [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function). You may wonder why we used a promise-based function, this is because a promise is a stand-in for a value not necessarily known when the promise is created.
-However, we also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle the error if one occurs.
+We will make the API request using a `get` method. A get method is used to call data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise-based function with keywords [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function). You may wonder why we used a promise-based function. This is because a promise is a stand-in for a value not necessarily known when the promise is created. You can learn more about Promises in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+
+We also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle the error if one occurs.
 
 
-Copy the code below to your `App.vue` file
+Copy the code below to your `App.vue` file:
 
-```
+```JavaScript
 <template></template>
 
 <script>
@@ -95,26 +100,28 @@ async getData () {
 
 The above block of code in the `methods` property will be explained line by line. 
 
-```
+```JavaScript
 async getData (){
 ```
 
-A function named `getData()` is created . It is in this function the API will be called.
-The `async` keyword is prepended on the `getData` function to show that the function will return a promise.
+A function named `getData()` is created . It is in this function the API will be called. The `async` keyword is prepended on the `getData` function to show that the function will make use of promise and we'll be using it to await to pause the execution of the function until the promise is resolved.
 
-```
+```JavaScript
 try {
     const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
 ```
 
-`try` property defines a block of code to be tested for errors as the code is executed. In the block of code `const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');`, a get request is made with the `get` keyword using axios i.e.`$http` to get data from the URL. `await` is prepended to the request because the `get` function will return a promise. The data returned from the API after the promise is resolved and will be stored in the variable `response`.
+`try` property defines a block of code to be tested for errors as the code is executed. In the block of code `const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');`, a get request is made with the `get` keyword using axios i.e.`$http` to get data from the URL. 
 
-```
+`await` is prepended to the request because the `get` function will return a promise. The data returned from the API after the promise is resolved and will be stored in the variable `response`.
+
+```JavaScript
 this.posts = response.data
 ```
-The data gotten from the request is saved to the 'posts' array which is created in the data property.
 
-```
+The data we get from the request is saved to the 'posts' array which is created in the data property.
+
+```JavaScript
 catch (error) {
     console.log(error);
 }
@@ -124,7 +131,7 @@ If any error occurs during the code execution, the error will be caught and logg
 
 After requesting data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to retrieve sensitive data and events that are active with the `created` hook.
 
-```
+```JavaScript
 <template></template>
 
 <script>
@@ -159,7 +166,7 @@ created() {
 
 We can now display the data in the template by looping through the posts using [v-for](https://vuejs.org/v2/guide/list.html) directive
 
-```
+```JavaScript
 <template>
      <div>
          <div v-for="post in posts">
@@ -196,14 +203,13 @@ created() {
 </script>
 ```
 
-
 #### Using Fetch API method
 
 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a powerful and flexible method of flexible APIs. It produces a global fetch() method that provides a simple and rational way to fetch resources asynchronously over the network.
 
 To request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the Axios call above.
 
-```
+```JavaScript
 <template>
      <div>
          <ul v-for="post in posts">
@@ -247,17 +253,19 @@ created() {
 
 To make use of VueX, you will first need to install the VueX package on your Vue application.
 
-```
+```bash
 vue create project
 ```
+
 OR
 
-```
+```bash
 npm install vuex --save
 ```
-then in your `store` folder, access the `index.js` file and write the following code
 
-```
+Then, in your `store` folder, access the `index.js` file and write the following code
+
+```JavaScript
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -266,12 +274,12 @@ Vue.use(Vuex);
 
 You will also need to install and import Axios if you have not already done that. Check the earlier part of this tutorial for the steps.
  
- **Now let’s make the API request:**
+**Now let’s make the API request:**
  
 We will be working with the `store/index.js` file.
 First, we create a `state` object which will contain all the application-level state. It serves as the `data` object for the store in a vuex project.
 
-```
+```JavaScript
 export default new Vuex.Store({
  state: {
     posts: [],
@@ -282,7 +290,7 @@ export default new Vuex.Store({
  
 Next, we create a `getters` property. Getters are like `computed` properties for stores. It is used to determine derived states based on store states. In this tutorial, we will use it to return posts in the state.
  
-```
+```JavaScript
 getters: {
     posts: state => {
         return state.posts;
@@ -292,7 +300,7 @@ getters: {
 
 Next, we create a `mutation` property. The mutation property is where we can change the state in the Vuex store. There are very similar to events where we carry out actual state alterations.
 
-```
+```JavaScript
 mutations: {
         SET_ITEMS (state, posts) {
             state.posts = posts
@@ -302,18 +310,17 @@ mutations: {
 
 Now we can call our API in the `actions` property. Actions are equivalent to mutations only that actions commit mutations rather than mutating the state and also actions can hold asynchronous operations. Let’s go ahead with the API call.
 
-```
+```JavaScript
 actions: {
    async loadPosts ({ commit }) {
      try {
-              const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+           const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
           // JSON responses are automatically parsed.
           commit('SET_ITEMS', response.data)
        }
       catch (error) {
          console.log(error);
      }
-
    }
 },
 ```
@@ -322,14 +329,14 @@ We can display data in our vue file. To do that, some steps need to be taken:
 
 1. Import `mapState` from vuex, this is to help generate computed getter functions for us.
 
-```
+```JavaScript
 <script>
 import { mapState } from 'vuex';
 ```
 
 2. Call the API on a lifecycle hook `mounted` and employ the `dispatch` method to call the action.
 
-```
+```JavaScript
 mounted () {
     this.$store.dispatch('loadPosts')
 },
@@ -337,7 +344,7 @@ mounted () {
 
 3. Add mapState on your computed:
 
-```
+```JavaScript
 computed: mapState([
         'posts'
   ]),
@@ -346,7 +353,7 @@ computed: mapState([
 
 4. Finally display data on your template.
 
-```
+```JavaScript
 <template>
      <div>
          <ul v-for="post in posts">
@@ -356,7 +363,7 @@ computed: mapState([
 </template>
 ```
 
-#### CONCLUSION
+#### Conclusion
 
 In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex requests as it allows multiple configurations of multiple requests in one place.
 
