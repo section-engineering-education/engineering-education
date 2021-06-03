@@ -1,8 +1,24 @@
-Vite.js (a French word for "fast" or “quick”, pronounced /vit/) developed by the creator of Vue.js, Evan You.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-vitejs/
+title: Introduction to ViteJS 2.0
+description: This article will provide a detailed introduction on what Vite.js is and how it's superior over other frameworks. It also provides the reader a detailed guide on how to set it up.
+author: 
+date: 2021-06-03T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Vite.js 2.0 is a front-end build tool or framework for designing a rich, elegant and sleek User Interface, it is referred to as the next-generation framework for front-end tooling.
+  - url: /engineering-education/introduction-to-vitejs/hero.jpg
+    alt:  Introduction to ViteJS 2.0 Hero Image
+---
 
-In this tutorial, we are going to install Vite 2.0 with all its dependencies and explore its advantages over other frameworks.
+Vite.js (a French word for "fast" or “quick”, pronounced /vit/) developed by the creator of Vue.js, Evan You. Vite.js 2.0 is a front-end build tool or framework for designing a rich, elegant and sleek User Interface, it is referred to as the next-generation framework for front-end tooling.
+<!--more-->
+
+In this tutorial, we are going to install Vite 2.0 with all the dependencies and explore its advantages over other frameworks.
 
 ### Prerequisites
 
