@@ -124,7 +124,7 @@ Please find on Github the full code for the paper [here](https://github.com/fwil
 
 ### Wrapping Up
 
-As we wrap up, I'd like to point out that this isn't something that will be available to the general public. This is because such a procedure would need implanting electrodes into people's brains. This is something I'm sure many people would mind. It is still in its early experimental phase. Only one patient was used to get these results. More tests still need to be done on more patients to see how well this novel system generalizes. But, the findings obtained from this experiment hold huge promises and would solve a lot of real-world problems. Their biggest hope is that their invention would one day help people with complications such as paralysis. This would enable patients with the disease to able to communicate, both faster and better. 
+As we wrap up, I'd like to point out that this isn't something that will be available to the general public. This is because such a procedure would need implanting electrodes into people's brains. It is still in the experimental phase. Only one patient was used to get these results. More tests still need to be done on more patients to see how well this novel system generalizes. But, the findings obtained from this experiment show huge promise and would have a lot of impactful real-world uses. Their biggest hope is that their invention will one day help people with complications such as paralysis. This would enable patients to communicate, both faster and better. It would also offer them inclusion in the usage of impactful technology, whose purpose is to make lives better.
 
 Interesting research. What a time to be alive!
 
