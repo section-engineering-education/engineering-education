@@ -373,6 +373,7 @@ The `sign_up` form creates a form_tag and this is scoped to our `User` model ena
 ```bash
 touch `app/views/sessions/new.html.erb
 ```
+
 ```erb
 <h1>Sign In</h1>
 <%= form_with url: sign_in_path do |f| %>
@@ -389,10 +390,13 @@ touch `app/views/sessions/new.html.erb
   </p>
 <% end %>
 ```
+
 - Create a `password_edit` form
+
 ```bash
 touch `app/views/passwords/edit.html.erb`
 ```
+
 ```erb
 <h1>Edit Password</h1>
 <%= form_with model: Current.user, url: edit_password_path do |f| %>
@@ -409,7 +413,9 @@ touch `app/views/passwords/edit.html.erb`
   </p>
 <% end %>
 ```
+
 - Open `app/views/layouts/application.html.erb` and update `<body>` tag to:
+
 ```erb
  <body>
    <p class="notice"><%= notice %></p>
@@ -417,8 +423,11 @@ touch `app/views/passwords/edit.html.erb`
    <%= yield %>
  </body>
 ```
+
 Within the context of a layout, `<%= yield %>` identifies a section where content from the view should be inserted.
+
 - Open `app/views/welcome/index.html.erb` and add:
+
   ```erb
   <% if Current.user %>
     Logged in as: <%= Current.user.email %><br>
@@ -430,12 +439,19 @@ Within the context of a layout, `<%= yield %>` identifies a section where conten
     <%= link_to 'Login', sign_in_path %>
   <% end %>
   ```
-We check to see if `Current.user` is present and provide an `edit_password_link` and a `sign_out_button`. If not, a `sign_up_link` and `login_link` is seen.
+  
+  We check to see if `Current.user` is present and provide an `edit_password_link` and a `sign_out_button`. If not, a `sign_up_link` and `login_link` is seen.
+  
 - Refresh your app and check to see if you can create a new account, sign_in and edit your password.
+
 ![sign_up](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/sign_up.png)
+
 ### Resetting the password
+
 We already have our routes in place,we can now update our controllers and views to reset passwords.
-- touch `app/controllers/password_resets_controller.rb`
+
+- touch `app/controllers/password_resets_controller.rb`:
+
   ```rb
   class PasswordResetsController < ApplicationController
     def new; end
@@ -460,11 +476,15 @@ We already have our routes in place,we can now update our controllers and views 
     end
   end
   ```
+  
   The above controller is responsible for resetting user passwords.
+  
   The `edit` action finds signed user with a valid token and purpose, passwords can only be changed with valid tokens if not an `ActiveSupport::MessageVerifier` is raised.
+  
   The `update` action updates user's password with valid tokens and redirects to the `sign_in_path`.
   We have to `configure our mailers` before we complete this action, for a user has to receive an email and reset the password.
   Before we configure the mailers, let's create the views by running the command `touch app/views/password_resets/edit.html.erb`.
+  
   ```erb
   <h1>Reset your password?</h1>
   <%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |f| %>
@@ -481,7 +501,9 @@ We already have our routes in place,we can now update our controllers and views 
     </p>
   <% end %>
   ```
+  
 - Create another file `app/views/password_resets/new.html.erb` and add the following:
+
   ```erb
   <h1>Forgot your password?</h1>
   <%= form_with url: password_reset_path do |f| %>
@@ -494,13 +516,18 @@ We already have our routes in place,we can now update our controllers and views 
     </p>
   <% end %>
   ```
+  
 ### Setting up mailers
-- We generate our mailers using the above command
+
+- We generate our mailers using the below command:
+
   ```bash
   rails generate mailer Password reset
   ```
   Several files are created by the generator but the most important file is the `app/mailers/password_mailer.rb` and the view files.
+  
 - Update `app/mailers/password_mailers.rb` to this:
+
   ```rb
   class PasswordMailer < ApplicationMailer
     def reset
@@ -511,25 +538,33 @@ We already have our routes in place,we can now update our controllers and views 
     end
   end
   ```
+  
   The `PasswordMailer` is responsible for setting up a token used in the `passwordsresets_controller.rb`. It defines a `reset` action which creates a token and sends email to the user.
+  
 Our views should look like this:
+
 ```bash
 touch `app/views/password_mailer/reset.html.erb`
 ```
+
 ```erb
 Hi <%= params[:user].email %>,<br>
 Someone requested a password reset.
 Click the link above if you recognise the activity, link expires in 15 minutes
 <%= link_to 'Reset Password', password_reset_edit_url(token: @token) %>
 ```
+
 And our `app/views/password_mailer/reset.text.erb`:
+
 ```erb
 Hi <%= params[:user].email %>
 Someone requested a password reset.
 Click the link above if you recognise the activity, link expires in 15 minutes
 <%= password_reset_edit_url(token: @token) %>
 ```
+
 Add a create action in `app/controllers/password_resets_controller.rb` above the edit action:
+
 ```rb
 def create
     @user = User.find_by(email: params[:email])
@@ -541,10 +576,15 @@ def create
     redirect_to root_path, notice: 'Please check your email to reset the password'
   end
 ```
+
 - Note: in our `app/controllers/password_reset_controller.rb` we have called out mailer class `PasswordMailer.with(user: @user).reset.deliver_later`, the `deliver_later` is part of [Action_job](https://edgeguides.rubyonrails.org/active_job_basics.html) it enables us to que background jobs.
+
 - One more setting before we send our emails, we need to open up our `app/config/environments/development.rb` and add `config.action_mailer.default_url_options = { host: "localhost:3000" }` in the block.
+
 - In `app/config/environments/development.rb` let's set up to use gmail.
-  Add the following in the block
+
+  Add the following in the block:
+  
   ```rb
   config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
@@ -557,12 +597,16 @@ def create
       enable_starttls_auto: true
     }
   ```
+  
   Change the `email` and `password` to match your credentials.
-- Now create a welcome mailer
+  
+- Now create a welcome mailer:
+
   ```bash
   rails generate mailer Welcome
   ```
-- Update the `app/mailers/welcome_mailer.rb`
+- Update the `app/mailers/welcome_mailer.rb`:
+
   ```rb
   class WelcomeMailer < ApplicationMailer
     # sends a welcome email
@@ -573,8 +617,11 @@ def create
     end
   end
   ```
+  
 - The `WelcomeMailer` defines a `welcome_email` action which is responsible for sending a welcome email to a signed in user.
-  Update your mailer views in `app/views/welcome_mailer/welcome_email.html.erb`
+
+  Update your mailer views in `app/views/welcome_mailer/welcome_email.html.erb`:
+  
   ```erb
   <!DOCTYPE html>
   <html>
@@ -594,7 +641,9 @@ def create
     </body>
   </html>
   ```
+  
 - And our `app/views/welcome_mailer/welcome_email.text.erb` to:
+
   ```erb
   Welcome to example.com, <%= @user.email %>
   ===============================================
@@ -603,7 +652,9 @@ def create
   To login to the site, just follow this link: <%= @url %>.
   Thanks for joining and have a great day!
   ```
+  
 - Remember to add a link in `app/views/sessions/new.html.erb` to reset your passwords, update the file to match the above.
+- 
   ```erb
   <h1>Sign In</h1>
   <%= form_with url: sign_in_path do |f| %>
@@ -621,9 +672,12 @@ def create
     </p>
   <% end %>
   ```
-  Try resetting your password and you should see something close to this,
+  Try resetting your password and you should see something close to this:
+  
   ![pass_reset_mail](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/pass_reset_mail.png)
+  
 - To send the Welcome email, we will have to update our `create` action in `app/controllers/registrations_controller.rb` to:
+- 
   ```rb
   def create
     @user = User.new(user_params)
@@ -639,6 +693,7 @@ def create
   ```
   Welcome email should be similar to this:
   ![welcome_mailer](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/welcome_mailer.png)
+  
 ### Summary
 In this article, we have implemented a complete Rails authentication system by following the below steps:
 - [Project Setup](#project-setup)
@@ -652,8 +707,12 @@ The finalized code can be accessed from [here](https://github.com/Njunu-sk/Rails
 ### Conclusion
 We have learned about the MVC design and built an authentication system from scratch and set up an Action Mailer and ActiveJob to send our emails and session security in Rails.
 Please visit [Go_Rails](https://gorails.com/) for more Ruby on Rails content, including the above in this tutorial.
+
 ### References
 - [Rails_edge_guides](https://edgeguides.rubyonrails.org)
 - [Code_project](https://www.codeproject.com/articles/575551/user-authentication-in-ruby-on-rails)
 You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
 Happy coding!!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
