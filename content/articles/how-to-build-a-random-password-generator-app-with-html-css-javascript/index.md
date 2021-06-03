@@ -20,7 +20,7 @@ A Password Generator is an application that can automatically generate passwords
 
 In this article, you will learn how to build a random password generator application with HTML, CSS, and JavaScript.
  
-![password generator app](/engineering-education/how-to-build-a-random-password-generator-app-with-HTML-CSS-javascript/password-generator-app.jpg)
+![password generator app](/engineering-education/how-to-build-a-random-password-generator-app-with-html-css-javascript/password-generator-app.jpg)
  
 ### Prerequisites
  
@@ -162,7 +162,7 @@ h2 {
  
 I don’t advise you to jump straight to coding the JavaScript file without a prior understanding of the ASCII characters. Below is a table of the ASCII characters.
  
-![ascii-table](ascii-table.jpg)
+![ascii-table](/engineering-education/how-to-build-a-random-password-generator-app-with-html-css-javascript/ascii-table.jpg)
  
 Source:[https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb](https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb)
  
