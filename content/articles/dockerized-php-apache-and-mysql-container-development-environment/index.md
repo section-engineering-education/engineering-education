@@ -53,7 +53,6 @@ We are starting from scratch; make sure you have no containers and images runnin
 ![No running Docker container](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/no-running-docker-container.png)
 
 ### Laying down docker-compose YML file
-
 Docker-compose allows you to set the parameters of the necessary images that you want to run in your application. In our case, we will use [Docker hub official images](https://hub.docker.com/search?image_filter=official&type=image) such as [PHP Apache](https://hub.docker.com/_/php), and [MySQL](https://hub.docker.com/_/mysql). We will write their parameters in a `.yml` file. A `.yaml` will work as well.
 
 Go ahead and create a project folder and create a `.yml` file inside that folder. For example, `docker-compose.yml`.
@@ -140,7 +139,6 @@ Refresh on your browser (`http://localhost:8000/`), and the results of this simp
 And congratulations! You now have a containerize PHP website.
 
 ### Setup a MySQL database container
-
 Probably you would want to set up a database to interact with your website. We will create another service to provide MySQL support inside the PHP container.
 
 Let's add the MySQL service into the `docker-compose.yml` file. To setup MySQL, we need to customize some environment, such as
