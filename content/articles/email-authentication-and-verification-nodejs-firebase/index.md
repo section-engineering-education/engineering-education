@@ -204,7 +204,7 @@ function login() {
         //error code
         var errorCode = error.code
         //errod message
-        var errorMessage = erorr.message
+        var errorMessage = error.message
         //show error message
         window.alert("Error : " + errorMessage);
     }).then(() => {
@@ -217,7 +217,7 @@ function login() {
 ### Send Email Verification Link
 
 This function is responsible for extracting the user email from the database and sending a unique link to the email used during account creating. 
-Before the verification, the account verified status reads ``false` meaning that the account is not verified.
+Before the verification, the account verified status reads `false` meaning that the account is not verified.
 
 ```js
 //initialize firebase
