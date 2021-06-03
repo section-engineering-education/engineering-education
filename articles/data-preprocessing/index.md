@@ -30,7 +30,7 @@ Here is how to achieve this.
 Dataset = read_csv('data.csv')
 ```
 
-This code imports our data stored in CSV format. We can have a look at our data using 'view()' function:
+This code imports our data stored in CSV format. We can have a look at our data using the 'view()' function:
 
 ```r
 view( Dataset)
@@ -72,33 +72,37 @@ Dataset$Age = ifelse(is.na(Dataset$Age),
 
 **What does the code above really do?**
 
-- `Dataset$Age`: simply take the Age column from our dataset. 
+`Dataset$Age`: simply take the Age column from our dataset.
+
 In the Age column, we've just taken from our data set, we need to replace the missing data and at the same time keep the data that is not missing, This objective is achieved by the use of the if-else statement.
-Our `ifelse` statement is taking three parameters.
 
-   The first parameter is if the condition is true, the second parameter is the value we input if the condition is true and the third parameter is the action we take if the condition is false.
+Our `ifelse` statement is taking three parameters:
 
-   Our condition is is.na(Dataset$Age). This will tell us if a value in the Dataset$Age is missing or not. It returns a logical output, YES if a value is missing and NO if a value is not missing. The second parameter, the 'ave()' function, finds the mean of the Age column. Because this column reports NA values, we need to exclude the null data in the calculation of the mean else we shall obtain the mean as NA. This is the reason we pass `na.rm = TRUE` in our mean function just as to declare those values that should be used and those should be excluded when calculating the mean of the vector Age.
+- The first parameter is if the condition is true.
+- The second parameter is the value we input if the condition is true.
+- The third parameter is the action we take if the condition is false.
 
-   The third condition is the value that will be returned if the value in the Age column of the dataset is not missing.
+Our condition is `is.na(Dataset$Age)`. This will tell us if a value in the Dataset$Age is missing or not. It returns a logical output, YES if a value is missing and NO if a value is not missing. The second parameter, the 'ave()' function, finds the mean of the Age column. Because this column reports NA values, we need to exclude the null data in the calculation of the mean else we shall obtain the mean as NA. This is the reason we pass `na.rm = TRUE` in our mean function just as to declare those values that should be used and those should be excluded when calculating the mean of the vector Age.
 
-   Executing the code we obtain:
+The third condition is the value that will be returned if the value in the Age column of the dataset is not missing.
 
-   ![replaced Age_NA value](/engineering-education/data-preprocessing/dataset1.png)
+Executing the code we obtain:
 
-   The missing value that was in the Age column of our data set has successfully been replaced with the mean of the same column.
+![replaced Age_NA value](/engineering-education/data-preprocessing/dataset1.png)
 
-   We do the same for the Salary column by executing the code below:
+The missing value that was in the Age column of our data set has successfully been replaced with the mean of the same column.
 
-   ```r
-   Dataset$Salary = ifelse(is.na(Dataset$Salary),
-                     ave(Dataset$Salary, FUN = function (x)mean(x, na.rm = TRUE)),
-                     Dataset$Salary)
-   ```
-                     
-   ![replaced NA_value of the Salary column](/engineering-education/data-preprocessing/dataset2.png)
+We do the same for the Salary column by executing the code below:
 
-   The missing value that was in the Salary column was successfully replaced with the mean of the same column as well.
+```r
+Dataset$Salary = ifelse(is.na(Dataset$Salary),
+                 ave(Dataset$Salary, FUN = function (x)mean(x, na.rm = TRUE)),
+                 Dataset$Salary)
+```
+
+![replaced NA_value of the Salary column](/engineering-education/data-preprocessing/dataset2.png)
+
+The missing value that was in the Salary column was successfully replaced with the mean of the same column as well.
 
 ### Step 3: Encoding Categorical Data.
 Encoding refers to transforming text data into numeric data. Encoding Categorical data simply means we are transforming data that fall into categories into numeric data. In our dataset, the Country column is Categorical data with 3 levels i.e. France, Spain, and Germany. The purchased column is Categorical data as well with 2 categories, i.e. YES and NO.
@@ -136,8 +140,10 @@ View(Dataset)
 
 Our purchased column was successfully encoded into 0,s, and 1,s.
 
-### Step 4: Splitting the Dataset into the Training and Test sets.
-In machine learning, we split data into two parts.
+### Step 4: Splitting the Dataset into the Training and Test set
+
+In machine learning, we split data into two parts:
+
 - Training set: the part of the data that we implement our machine learning model on.
 - Test set: the part of the data that we evaluate the performance of our machine learning model on.
   
@@ -147,7 +153,6 @@ Using our dataset, let's split it into the training and test sets.
 To begin with, we first load the required library.
 
 ```r
-
 library(caTools)# required library for data splition
 set.seed(123)
 split = sample.split(Dataset$Purchased, SplitRatio = 0.8)# returns true if observation goes to the Training set and false if observation goes to the test set.
@@ -157,18 +162,20 @@ training_set = subset(Dataset, split == TRUE)
 test_set = subset(Dataset, split == FALSE)
 training_set
 test_set
-
 ```
 
-Executing our code yields.
+Executing our code yields:
 
-#### Training set
+**Training Set**:
+
 ![training_set](/engineering-education/data-preprocessing/training_set.png)
 
 From the results it clear that eight observations, 0.8 of our dataset observations, were split into the training set.
 
-#### Test set
+**Test Set**:
+
 ![test_set](/engineering-education/data-preprocessing/test_set.png)
+
 From the output it clear that two observations went to the test set.
 
 ### Step 6: Feature Scaling
@@ -179,18 +186,23 @@ The formula for these two techniques is as below.
 
 Now, let's scale both the training set and test set of our dataset separately.
 
-Here is how we achieve this,
+Here is how we achieve this:
+
 ```r
 training_set[, 2:3] = scale(training_set[, 2:3])
 test_set[, 2:3] = scale(test_set[, 2:3])
 training_set
 test_set
 ```
+
 Executing our code we obtain:
-#### training_set
+
+**Training Set**:
+
 ![scale(training_set)](/engineering-education/data-preprocessing/scaled_training_set.png)
 
-#### test_set
+**Test Set**:
+
 ![scale(test_set)](/engineering-education/data-preprocessing/scaled_test_set.png.png)
 
 Our training and test set were successfully scaled.
@@ -199,6 +211,7 @@ Note that in our code we specified the columns to be scale. If we fail to do so,
 ```r 
 training_set = scale(training_set)# returns an error
 ```
+
 The reason is that our encoded columns are not treated as numeric entries.
 
 ### Conclusion
