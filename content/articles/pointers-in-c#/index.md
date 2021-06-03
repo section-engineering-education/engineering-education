@@ -1,16 +1,20 @@
 ### Introduction
 
-In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types`. The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, the reference data type holds a reference to another data type. Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
+In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
+
+The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces etc.
+
+Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
 
 ### Table of contents
 
-1. [Making a pointer style declaration](#making-a-pointer-style-declaration)
-2. [Safe and unsafe codes](#safe-and-unsafe-codes)
-3. [Pinning an object](#Pinning-an-object)
-4. [Pointers and methods](#pointers-and-methods)
-5. [Conversions and pointers](#conversions-and-pointers)
-6. [Pointers and arrays](#pointers-and-arrays)
-7. [Pointers and structure](#pointers-and-structure)
+- [Making a pointer style declaration](#making-a-pointer-style-declaration)
+- [Safe and unsafe codes](#safe-and-unsafe-codes)
+- [Pinning an object](#Pinning-an-object)
+- [Pointers and methods](#pointers-and-methods)
+- [Conversions and pointers](#conversions-and-pointers)
+- [Pointers and arrays](#pointers-and-arrays)
+- [Pointers and structure](#pointers-and-structure)
 
 ### Making a pointer style declaration
 In C#, we declare pointers as illustrated below:
@@ -27,7 +31,7 @@ Consider the following example:
 int w=76
 int *ptr =&w;
 Console.WriteLine((int)ptr) 
-Console.WriteLine(*ptr)     .
+Console.WriteLine(*ptr)    
 ```
 
 `w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
@@ -84,15 +88,13 @@ There are various methods for executing statements as unmanaged, such as using a
 We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we dislayed them.
 
 ### Pinning an object 
-Pinning an object in C# entails restricting an object from moving into the garbage collector. 
-
-To learn more about garbage collectors [click here](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
+Pinning an object in C# entails restricting an object from moving into the [garbage collector](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
 
 Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated. On the managed heap, reference types are managed. 
 
-After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of. For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory.
+After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of.
 
-An example program is illustrated below:
+For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory. For example:
 
 ```c#
 using System;
@@ -213,7 +215,7 @@ namespace UnsafeCodeApplication
 
 ![output](/engineering-education/pointers_in_c#/pointers_and_arrays.png)
 
-The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every array and its address simultaneously.
+The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
 ### Pointers and structure
 In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. Example software is as follows:
