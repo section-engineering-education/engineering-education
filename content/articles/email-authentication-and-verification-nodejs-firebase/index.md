@@ -1,4 +1,4 @@
-### Introductionn
+### Introduction
 
 Email verification is a mechanism to ensure that a system does not stack its database with fake email addresses. An account remains unverified until the user verifies it through a unique link sent to his/her email address.
 In the meantime, the system restricts the account from the core functionalities of the application.
@@ -14,8 +14,8 @@ By the end of this article, you will understand the logic of email 
 - [Prerequisites](#prerequisites)
 - [Project setup](#project-setup)
 - [Building the server-side](#building-the-server)
-    - [Import the dependencies](#import-the-dependencies)
-    - [Routing](#creating-the-application-routes)
+   - [Import the dependencies](#import-the-dependencies)
+   - [Routing](#creating-the-application-routes)
 - [Building the UI](#the-user-interface)
 - [Adding Firebase to the application](#adding-firebase-to-the-application)
 - [Create Account Function](#create-account-function)
