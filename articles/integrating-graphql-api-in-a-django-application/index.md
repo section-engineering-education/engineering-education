@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/integrating-graphql-api-in-a-django-application/
-title: Integrating GraphQL API in a Django application
+url: /integrating-graphql-api-in-a-django-application/
+title: Integrating GraphQL API into a Django application
 description: This article provides a guide to using GraphQL in a Django application.
 author: anita-achu
-date: 2021-05-16T00:00:00-10:00
+date: 2021-06-03T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images: 
@@ -482,3 +482,6 @@ If implemented correctly, GraphQL in Django will result in an application that i
 If you are getting started with GraphQL + Django, I hope this tutorial was of help to you! 
 
 Happy coding!🙂
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
