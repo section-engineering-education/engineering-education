@@ -12,12 +12,12 @@ excerpt_separator: <!--more-->
 images: 
 
   - url: /engineering-education/integrating-graphql-api-in-a-django-application/hero.jpg
-    alt: graphql+django
+    alt: Integrating GraphQL API in a Django application Hero Image
 ---
 
-
 GraphQL is an open-source query language used to communicate data between the client and the server. As explained in [GraphQL doc](https://graphql.org/)s, "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data..."
-
+<!--more-->
+ 
 Created by Facebook in 2012, GraphQL provides a runtime environment for Application Program Interfaces (API) which is easy to use, fast and developer-friendly. Over time, GraphQL has gained a wide range of use by companies such as Microsoft, Github, Shopify, Amazon, etc.
 
 The most outstanding attribute of GraphQL is that it returns the requested data from multiple sources with just a single request this makes it more preferred than RESTAPI which is the alternative.
@@ -28,10 +28,10 @@ In this tutorial, our focus would be on integrating a GraphQL API into a Django 
 
 ### Prerequisites:
 
-- Basic knowledge of python
-- A good understanding of Django
+- Basic knowledge of python.
+- A good understanding of Django.
 
-## Project setup
+### Project setup
 
 We will be creating an e-commerce catalog project. Let's start by creating a directory for this project in our terminal. Add the following to your terminal:
 
@@ -44,11 +44,11 @@ cd ecommerce
 
 We'll be setting up a virtual environment for this project. A virtual environment helps in the installation of packages to help keep packages required by different projects separate by creating isolated Python virtual environments for them.
 
-  To create a virtual environment, let's begin by installing `virtualenv`. Run the following commands on your terminal: 
+To create a virtual environment, let's begin by installing `virtualenv`. Run the following commands on your terminal: 
 
 ```bash
- pip install virtualenv
- virtualenv env
+pip install virtualenv
+virtualenv env
 ```
 
 Let’s activate our virtual environment
@@ -72,15 +72,13 @@ Let's proceed to set up our Django dependency:
 pip install django
 ```
 
- Once we have Django installed, we'll create our E-commerce project and app respectively:
+Once we have Django installed, we'll create our E-commerce project and app respectively:
 
 ```bash
 django-admin startproject ecommerce
 cd ecommerce
 django-admin startapp products
 ```
-
- 
 
 Now, we will proceed to our code editor. Open project in your code editor and in your project *settings.py* file, register your app. This way:
 
@@ -96,7 +94,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Creating models
+### Creating models
 
 Next step, we will be creating our products app models in the **'products/models.py'** file.
 
@@ -169,7 +167,6 @@ Let's proceed to our terminal to run migrations of models. By running migration 
 
 ```bash
 python manage.py makemigrations
-
 python manage.py migrate
 ```
 
@@ -204,7 +201,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Adding GraphQL to URL
+### Adding GraphQL to URL
 
 The only endpoint/API accessible to the client while working with GraphQL is **/graphql**. This is the sole endpoint via which a client can request and change data. As a result, in comparison to REST, we have fewer endpoints to manage.
 
@@ -227,7 +224,7 @@ The URL contains our endpoint, where our GraphQL communications will be made. Fr
 - Then, we added a URL called **"graphql".** Lastly, we set *`graphiql=True`* this will enable us to use graphiql.
 
 
-## Creating a schema
+### Creating a schema
 
 GraphQL is a query language with a powerful type system that can be used to define an API's data structures. The GraphQL Schema is used to represent this information.
 
@@ -436,8 +433,6 @@ class Mutation(graphene.ObjectType):
     update_book = UpdateBook.Field()
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
-   
- 
 ```
 
 - We created classes to add and update data to our models.
@@ -462,24 +457,22 @@ mutation {
 
 ```bash
 mutation {
- 
-create_book: createBook(input: {title:"Imagine this",author: "Shola", pages: 12, price: 1200, quantity: 4, description:"a brief description", status: "True"}){
-book {
-id,
-title,
-author,
-pages,
-price,
-quantity,
-description,
-status
-}
-}
+  create_book: createBook(input: {title:"Imagine this",author: "Shola", pages: 12, price: 1200, quantity: 4, description:"a brief description", status: "True"}){
+    book {
+      id,
+      title,
+      author,
+      pages,
+      price,
+      quantity,
+      description,
+      status
+    }
+  }
 }
 ```
 
 Successful added to our database! 🎉
-
 
 ## Conclusion
 
