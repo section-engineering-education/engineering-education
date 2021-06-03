@@ -93,7 +93,7 @@ cd project-folder-name
 To install all the dependencies, run this command:
 
 ```javascript
-yarn i
+yarn
 ```
 
 To start the development server, run:
@@ -120,7 +120,7 @@ yarn run build
 
 All you have to do is to specify the project name and the desired template.
 
-#### **Example**
+**Example:**
 
 To scaffold Vite plus react, just run the following commands:
 
@@ -161,7 +161,6 @@ Looking at the project folder we have:
 
 <body>
     <div id="root"></div>
-
     <script type="module" src="/src/main.js"></script>
 </body>
 
