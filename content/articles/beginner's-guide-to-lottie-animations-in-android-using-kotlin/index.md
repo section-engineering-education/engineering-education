@@ -20,35 +20,16 @@ Lottie helps developers achieve a clean UI, therefore achieving a good user expe
 Lottie is supported on mobile (Android, iOS, and React Native), web, and desktop applications.
 
 ### Why use Lottie
-
-  
-
-- Simple UI elements. Lottie is light and the JSON files exported are small-sized. The animations also have a clear resolution.
-
+- Simple UI elements - Lottie is light and the JSON files exported are small-sized. 
+- Dynamic scenes - You can tell a narrative across several shots, making it interactive.
+- Alter animations to your liking - The animations offered on Lottie can be altered from speed to color to progress hence meeting the developer's need.
 - Improved user experience.
+- Pairs well across all mobile devices(in our case), even slow-performing ones, since it is lightweight.
+- The animations also have a clear resolution.
 
-- Pairs well across all mobile devices(in our case), even slow-performing ones, since it is light-weight
+This article will share how to implement Lottie animations in onboarding screens using Kotlin. Since the project is a bit wide, we shall only go through all the basics of Lottie animations on the app. 
 
-- Dynamic scenes. You can tell a narrative across several shots making it interactive.
-
-- Alter animations to your liking. From speed to colour to progress.
-
-  
-
-This article will share how to implement Lottie animations in onboarding screens using Kotlin.
-
-  
-
-
-![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
-
-  
-
-Since the project is a bit wide, we shall only go through all the basics of Lottie animations on the app. You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link to follow along or download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
-
-  
-
-# Prerequisites
+### Prerequisites
 
 Basic knowledge of android and Kotlin.
 
@@ -385,7 +366,8 @@ you might come across a lint error in the adapter,on this line,`root.img.setAnim
  You can download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true)
 
 
-  
+  You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link to follow along or download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
+
 
 # References
 
