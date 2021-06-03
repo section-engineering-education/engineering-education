@@ -56,7 +56,7 @@ The above containerization concept has the infrastructure and an operating syste
 
 Docker demons allow containers to ping back resources from the host machine. In this case, the demons allocate resources to this container depending on how much a container needs to run.
 
-### What is the major difference between Linux and Docker containers
+### What is the major difference between Linux and Docker containers?
 
 LXC focuses on OS containerization, while Docker thrives on application containerization. Docker is single-purpose application virtualization, and LXC is multi-purpose operating system virtualization.
 
@@ -64,7 +64,7 @@ In this case, LXC specializes in deploying Linux Virtual machines. A container i
 
 This is not the case with Docker. Docker specializes in deploying applications. Docker containers aren't lightweight virtual machines. Thus they can't be considered as such. Docker containers are limited to a single application due to their architecture. Although Docker runs natively in a Linux environment, it is not entirely dependent on Linux, and it supports other operating systems such as Windows and macOS.
 
-### Why Docker is better
+### Why Docker is better?
 
 #### Portability
 
