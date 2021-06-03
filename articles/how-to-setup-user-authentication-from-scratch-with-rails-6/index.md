@@ -1,6 +1,23 @@
-User Authentication is a fundamental in the security of web resources. While setting up user authentication in a `rails` program, the [devise gem](https://rubygems.org/gems/devise) is a popular tool. However, at times it can be too big and complicated to customize especially when building a simple application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-setup-user-authentication-from-scratch-with-rails-6/
+title: How to Setup User Authentication from Scratch with Rails 6
+description: In this tutorial, we will build the authentication system for a Ruby on Rails 6 application from scratch.
+author: njunu-simon
+date: 2021-06-2T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-In this tutorial, we will set up user authentication from scratch in Rails 6.
+  - url: /engineering-education/react-progressive-web-application/hero.jpg
+    alt: React Progressive Web Application example Image
+---
+User Authentication is a fundamental in the security of web resources. While setting up user authentication in a `rails` program, the [devise gem](https://rubygems.org/gems/devise) is a popular tool. However, at times it can be too big and complicated to customize especially when building a simple application.
+<!--more-->
+
+In this tutorial, we'll set up user authentication from scratch in Rails 6.
 
 ### Prerequisites
 
