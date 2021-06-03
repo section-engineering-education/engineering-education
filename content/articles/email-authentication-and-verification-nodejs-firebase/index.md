@@ -126,7 +126,7 @@ We need three routes for this project:
 ### The User Interface
 
 In the `views` folder, create three HTML files named `login.html`, `signup.html`, and `profile.html`. 
-You can find  the files for the user interface in [this link.](https://replit.com/@PhinaKersly/Email-verification)
+You can find the files for the user interface in [this link.](https://replit.com/@PhinaKersly/Email-verification)
 
 #### Sign up page user Interface
 Here is where the user creates an account using an email and password.
@@ -235,7 +235,7 @@ Before the verification, the account verified status reads ``false` mea
     }  
 ```
 
-After the function is  successfully executed, a link is sent to the email supplied during registration as shown below.
+After the function is successfully executed, a link is sent to the email supplied during registration as shown below.
 ![Email link ](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-in-email.png)
 
 Upon clicking the link, the user is redirected to a new page. The page shows the verification process status as below: 
@@ -256,7 +256,7 @@ In this phase, we will test our application by running the command `
 
 ### Conclusion and Further Reading
 
-In This tutorial, we learned how email authentication and verification are done using Firebase. Through the tutorial, we can appreciate how useful this functionality can be in ensuring that users are legitimate before accessing the resources of a given system.
+In this tutorial, we learned how email authentication and verification are done using Firebase. Through the tutorial, we can appreciate how useful this functionality can be in ensuring that users are legitimate before accessing the resources of a given system.
 You can find the entire source code of the application [here](https://replit.com/@PhinaKersly/Email-verification).  Just be sure to replace the Firebase `config object` with your own.
 
 To find more about the topic, you can check the resources in the following links:
