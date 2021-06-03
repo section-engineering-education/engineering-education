@@ -4,8 +4,7 @@ status: publish
 published:true 
 url: /engineering-education/how-sweet-is-kubernetes/
 title: How sweet is Kubernetes?
-description: How sweet is Kubernetes is an article which is targeted at simplifying concepts of Kubernetes for engineering students and aspiring DevOps professionals. It started with demystifying the basic concept of micro-service using Fleetman Tracking Application which is built on a simple micro-service architecture, using it as a tool to further explain the concepts of Kubernetes in the simplest manner. The tutorial will serve as a good foundation for beginners and also a means of enlightenment for intermediate-level developers and junior DevOps engineers.
-Grab a cup of coffee and enjoy the wonderful piece of work.
+description: This article simplifies concepts of Kubernetes. It starts with demystifying the basic concept of micro-service using Fleetman Tracking Application which is built on a simple micro-service architecture, using it further to explain the concepts of Kubernetes.
 author: qoyum-yusuf
 date: 2021-05-01T00:00:00-08:00
 topics: [HOW SWEET IS KUBERNETES?]
@@ -21,7 +20,6 @@ images:
 
 ### HOW SWEET IS KUBERNETES?
 
-![kubernetes.jpeg](hero.jpeg)
 
 What was your first impression when you read Kubernetes?
 
