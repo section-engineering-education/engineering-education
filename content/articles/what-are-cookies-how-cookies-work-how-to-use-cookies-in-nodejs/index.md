@@ -327,8 +327,13 @@ app.set("views", path.join(__dirname, "views"));
 const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
+  // check if user is logged in, by checking cookie
+  let username = req.cookies.username;
+
   // render the home page
-  return res.render("home");
+  return res.render("home", {
+    username,
+  });
 });
 
 app.get("/login", (req, res) => {
@@ -409,9 +414,14 @@ The server will render the following EJS views.
     <body>
         <div class="welcome">
             <h4>
-                Hello there, welcome.
+                Hello there,welcome.
             </h4>
+            <%if(locals.username){%>
+            <p>You are logged in as <%=username%></p>
+            <a href="/logout">Logout</a>
+            <%} else { %>
             <a href="/login">Login</a>
+            <% } %>
         </div>
     </body>
 </html>
