@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hashing-in-data-structure/
+title: Hashing in data structure
+description: In this article, we will explore how the hash function converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
+author: anubhav-bansal
+date: 2021-06-04T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /hashing-in-data-structure/hero.jpg 
+    alt: hero image example image
+---
 ### Hashing in Data Structure
 
 In hashing the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
@@ -266,5 +282,10 @@ int main(){
 
 ![output](./Capture.PNG)
 
+<<<<<<< HEAD
 The execution of the above code can be found here:-
 [code implementation](https://replit.com/@Anubhavb11/HashMap#main.cpp)
+=======
+---
+Peer Review Contributions by: [Willies Ogola](https://www.section.io/engineering-education/authors/willies-ogola/)
+>>>>>>> d20e6e087a3810b7ceecfa7b1174e5e2d6fda8a4
