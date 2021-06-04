@@ -57,7 +57,7 @@ Let's edit this config file to include the necessary option for running Typescri
 
 - `"rootDir": "./src"` - a directory where the input Typescript files are stored. I named the folder are `src`.
 
-- `"outDir": "./dist"` - this an output directory where the output structure of the compiled JavaScript will be saved. In this case, JavaScript code will be saved in a folder called to `dist` in the root directory of the main project.
+- `"outDir": "./dist"` - this an output directory where the output structure of the compiled JavaScript will be saved. In this case, JavaScript code will be saved in a folder called `dist` in the root directory of the main project.
 
 - `"moduleResolution": "node"` - a module import resolution algorithm that mimics the way the Node.js searches for modules in real-time.
 
@@ -127,7 +127,7 @@ npm install -D ts-node
 
 [Ts-node](https://www.npmjs.com/package/ts-node) allows us to point to a Typescript file. It will run `.ts`, compile it and run it with Node.js for us.
 
-> When using Ts-node, make sure you have Typescript installed in your project. To install it, run `npm install -D typescript`.
+> When using Ts-node, make sure you have Typescript installed in your local project. To install it, run `npm install -D typescript`.
 
 Go ahead and configure your `package.json` script tag and start the build command as shown below.
 
@@ -205,7 +205,7 @@ app.listen(PORT, ():void => {
 
 When developing an extensive application, it's advisable to hook your project with watch parameters that will help you restart your server whenever you make and saves changes to your code structure. There are two main options:
 
-1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) basically watches `.ts` files, and whenever you make a change, it will restart the server for you.
+1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) watches `.ts` files, and whenever you make a change, it will restart the server for you.
 
   Run the below command to install it.
 
