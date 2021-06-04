@@ -1,11 +1,27 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/uploading-files-using-formidable-nodejs/
+title: Uploading Files Using Formidable in a Node.js Application
+description: In this article, we will see how to use Formidab;e to handle multipart/form-data using Node.js, Express and MongoDB.
+author: sarthak-duggal
+date: 2021-01-18T00:00:00-17:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/uploading-files-using-formidable-nodejs/hero.jpg
+    alt: Node.js Application Formidable example image
+---
+
 Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before we submit it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. If we don't specify it, form-data gets encoded with the default type.
 
 ### Introduction
 
 This is usually the case when we are dealing with text-only data like name, email, password, etc.
-But, **if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data."** We need this value when we are using forms that have a file upload control.
+But if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data". We need this value when we are using forms that have a file upload control.
 
-Now, in this article, We will learn how we can upload files using node.js, express, and formidable. **Formidable is a Node.js module for parsing form data, especially file uploads.**
+In this article, we will learn how we can upload files using node.js, express, and formidable. Formidable is a Node.js module for parsing form data, especially file uploads.
 
 ### Prerequisites
 
