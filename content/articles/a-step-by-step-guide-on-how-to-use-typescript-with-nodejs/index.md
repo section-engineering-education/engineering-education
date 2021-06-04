@@ -1,12 +1,13 @@
 Typescript, a JavaScript superset, is gaining tremendous popularity among developers. It incorporates every JavaScript feature with supplementary traits such as static typing, and type checking.
 
-Many factors make Node.js a popular JavaScript framework. Node.js has a strong NPM (Node Package Manager) ecosystem that provides open-source code (packages) that you can use in any of your Node.js projects. Check out [this fantastic article](/why-node-js-is-popular/) to learn more about why Node.js is a popular framework. Node.js is great for making server-side applications but It lacks some modern components such as type checking. A Node.js codebase can also be very hard to maintain.
+Many factors make Node.js a popular JavaScript framework. Node.js has a strong NPM (Node Package Manager) ecosystem that provides open-source code (packages) that you can use in any of your Node.js projects. Check out [this fantastic article](/why-node-js-is-popular/) to learn more about why Node.js is a popular framework. Node.js is great for making server-side applications, but it lacks some modern components such as type checking. A Node.js codebase can also be very hard to maintain.
 
 Typescript supports these modern coding styles, such as static typing and type checking. It is made to build extensive and high-level applications. That's why it would be great to have Typescript as the primary language to support Node.js functionality. This allows you to write server-side-based applications with strong type checking, which allows you to avoid runtime type errors and other Typescript advantages and take full advantage of Node.js.
 
 To benefit from these vital Node.js features, you need to set up and configure your Typescript with Node.js runtime. This guide will teach you how to set up and run your Typescript application with Node.js and run some Node.js packages within your Typescript application.
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/en/download/) installed on your computer.
 - Basic [understanding of Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4).
 - Basic [understanding of Typescript](https://www.youtube.com/watch?v=2pZmKW9-I_k&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI).
@@ -114,7 +115,7 @@ Now run the below command to execute the code:
 
 ```bash
 node dist/index.js
-``` 
+```
 
 ![Results](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/sum-results.png)
 
@@ -125,6 +126,8 @@ npm install -D ts-node
 ```
 
 [Ts-node](https://www.npmjs.com/package/ts-node) allows us to point to a Typescript file. It will run `.ts`, compile it and run it with Node.js for us.
+
+> When using Ts-node, make sure you have Typescript installed in your project. To install it, run `npm install -D typescript`.
 
 Go ahead and configure your `package.json` script tag and start the build command as shown below.
 
@@ -139,6 +142,7 @@ You can now run `npm start` to execute the `index.ts`. And when you delete the d
 ![Ts-node compiler](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-compiler.png)
 
 ### Using Typescript with packages
+
 The climax of using Typescript and Node.js is the ability to utilize the open-source NPM packages and frameworks. Let me demonstrate how we can use Typescript to start interacting with NPM packages.
 
 This example will set up Typescript With Express.js. You should install [Express.js](https://www.npmjs.com/package/express) from the NPM registry. So run `npm install express`.
@@ -181,7 +185,7 @@ const app:Application = express();
 const PORT = process.env.PORT || 8000;
 ```
 
-- Set an end point/route.
+- Set an endpoint/route.
 
 ```ts
 app.get("/", (req:Request, res:Response):void => {
@@ -201,9 +205,9 @@ app.listen(PORT, ():void => {
 
 When developing an extensive application, it's advisable to hook your project with watch parameters that will help you restart your server whenever you make and saves changes to your code structure. There are two main options:
 
-1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) basically watches `.ts` files, and whenever you make a change, it will restart the server for you. 
+1. Ts-node-dev - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev) basically watches `.ts` files, and whenever you make a change, it will restart the server for you.
 
-  Run the below command to install it. 
+  Run the below command to install it.
 
   ```bash
   npm install -D ts-node-dev
@@ -221,9 +225,9 @@ When developing an extensive application, it's advisable to hook your project wi
 
 ![Ts-node-dev](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-dev.png)
 
-2. Nodemon - [Nodemon](https://www.npmjs.com/package/nodemon) works the same as Ts-node-dev.
+2. Nodemon - [Nodemon](https://www.npmjs.com/package/nodemon) works the same as Ts-node-dev . It is a Node.js package used to watch `.js` files when creating a server. Whenever you make a change and save the server file, Nodemon will automatically restart the server for you.
 
-  Run the below command to install it. 
+  Run the below command to install it.
 
   ```bash
   npm install -D nodemon
