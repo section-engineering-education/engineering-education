@@ -138,6 +138,11 @@ namespace UnsafeCodeApplication
     }
 
 }
+```
+
+And the output is:
+
+```
 Value of array[0]=5
 Address of the array[0]=-773935792
 Value of array[1]=6
@@ -240,7 +245,10 @@ namespace UnsafeCodeApplication
     }
 
 }
+```
+And the output is:
 
+```
 Value of array[0]=10
 Address of the array[0]=-521514320
 Value of array[1]=20
