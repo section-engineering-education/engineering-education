@@ -1,4 +1,19 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /email-authentication-and-verification-nodejs-firebase/
+title: Email Authentication and Verification using Node.js and Firebase
+description: In this article, we will understand the logic of email verification and go through a stepwise implementation of the same using Node.js, Firebase and Express.
+author: phina-kersly
+date: 2021-06-03T00:00:00-12:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/email-authentication-and-verification-nodejs-firebase/hero.jpg
+    alt: Email Authentication example image
+---
 
 Email verification is a mechanism to ensure that a system does not stack its database with fake email addresses. An account remains unverified until the user verifies it through a unique link sent to his/her email address.
 In the meantime, the system restricts the account from the core functionalities of the application.
