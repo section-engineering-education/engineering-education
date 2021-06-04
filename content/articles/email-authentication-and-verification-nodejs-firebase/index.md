@@ -290,3 +290,5 @@ To find more about the topic, you can check the resources in the fo
 - Adding Firebase to Node.js: https://firebase.google.com/docs/web/setup
 - Managing Firebase users: https://firebase.google.com/docs/auth/web/manage-users
 
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
