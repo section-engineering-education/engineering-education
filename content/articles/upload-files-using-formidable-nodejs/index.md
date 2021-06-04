@@ -10,8 +10,8 @@ Now, in this article, We will learn how we can upload files using node.js, expre
 ### Prerequisites
 
 1. Good understanding of Node.JS and NPM.
-2. MongoDB must be installed in your device and you need to have a working information of it.
-3. Good understanding of the Command-Line or Integrated Terminal in code-editors.
+2. MongoDB must be installed in your device and you need to have a basic understanding of the database.
+3. Good understanding of the command line or integrated terminal in code editors.
 
 ### Goals of the tutorial
 
@@ -20,13 +20,11 @@ Now, in this article, We will learn how we can upload files using node.js, expre
 3. How to manage and store those files on the server side.
 4. How to view those files on the Frontend.
 
-**However, since half of these topics are already covered in my previous article, therefore I will refer to that article wherever it will be needed.**
+However, since half of these topics are already covered in my previous article, therefore I will refer to that article wherever it will be needed.
 
 ### Project setup
 
-For Project setup, you can refer to my previous article [here](https://www.section.io/engineering-education/uploading-files-using-multer-nodejs/). **You have to comply with every step till I give the introduction of Multer.**
-
-So, you must have executed these things, if you have followed along with my previous article.
+For Project setup, you can refer to my [previous article](https://www.section.io/engineering-education/uploading-files-using-multer-nodejs/). You have to follow every step until I give the introduction to Multer. The steps basically involved the following:
 
 1. Folder Structure
 2. Setting up MongoDB with Mongoose and
@@ -36,7 +34,8 @@ Also, for reference. Your app.js file and folder structure should look like this
 
 ![app.js](/upload-files-using-formidable-nodejs/appjs.png)
 
-**Folder Structure:-** <br/>
+**Folder Structure:-**
+
 ├───model (folder) <br/>
 │ └───fileSchema.js (file) <br/>
 ├───node_modules (folder) <br/>
@@ -52,10 +51,9 @@ Also, for reference. Your app.js file and folder structure should look like this
 
 ### Formidable
 
-As mentioned previously, **Formidable is a Node.js module for parsing form data, especially file uploads.**
-Let’s start by installing Formidable.
+As mentioned previously, `formidable` is a Node.js module for parsing form data, especially file uploads.
 
-Write this command in your terminal:
+Let’s start by installing formidable. Write this command in your terminal:
 
 ```bash
 npm install formidable
@@ -67,30 +65,31 @@ After installing the package, we will import it at the top of the app.js file:
 const formidable = require("formidable");
 ```
 
-Then we will start by creating an API endpoint to upload the file.
-**Note**: Make sure that the endpoint used to render the page is at the end of all the API endpoints.
+Then we will create an API endpoint to upload the file.
+
+**Note: _Make sure that the endpoint used to render the page is at the end of all the API endpoints._**
 
 ```javascript
-//API Endpoint for uploading file
+// API Endpoint for uploading file
 app.post("/api/uploadFile", (req, res) => {
   // Stuff to be added soon
 });
 ```
 
-### Let’s start using Formidable
+### Let’s start using formidable
 
-Formidable works by creating a sort of instance of the form data that is coming from the client-side. It will be an object instance with some default key-value pairs that we can change following our requirements. So, let's take a look at it.
+The package works by creating an instance of the form data that is coming from the client-side. It will be an object instance with some default key-value pairs that we can change following our requirements. Let's have a look at it.
 
-Start by adding this piece of code in the above API callback function:
+Add this piece of code in the above API callback function:
 
 ```javascript
 const form = formidable.IncomingForm();
 console.log(form);
 ```
 
-Now, we can see the form data by sending the request with files on this API. But, before that, we need to make small changes in our HTML code in the index.ejs file.
+We can see the form data by sending the request with files on this API. But, before that, we need to make small changes in our HTML code i.e. in the `index.ejs` file.
 
-Open that file and change the value of the action attribute in the form to '/api/uploadFile'.
+Change the value of the action attribute in the form to `/api/uploadFile`.
 
 ```html
 <form action="/api/uploadFile" enctype="multipart/form-data" method="POST">
@@ -99,9 +98,7 @@ Open that file and change the value of the action attribute in the form to '/api
 </form>
 ```
 
-Now, if you will attempt to upload to something from your rendered web page after restarting your server, you should see something like this on your terminal.
-
-This is my output. Yours will be different based on what you uploaded.
+If you upload something from your rendered web page after restarting your server, you should see something like this on your terminal.
 
 ```bash
 IncomingForm {
@@ -131,17 +128,17 @@ IncomingForm {
 }
 ```
 
-As you can see, we have many properties in this object, **including encoding, maxFileSize,** and so on. With these properties, we can configure Formidable in our way.
+As you can see, we have many properties in this object including `encoding`, `maxFileSize` and so on. With these properties, we can configure formidable in our specification.
 
-So, first things first. We have to create a variable pointing to the directory/ folder in which we want to store the files. To do this, write this simple piece of code after creating the form instance.
+We have to create a variable pointing to the directory/folder in which we want to store the files. To do this, add the following code after creating the form instance.
 
 ```javascript
 const uploadFolder = path.join(__dirname, "public", "files");
 ```
 
-Now, our **uploadFolder variable points to the files folder** under public directory which is present at the root level of our project.
+Now, our `uploadFolder` variable points to the folder under the `public` directory which is present at the root level of our project.
 
-Finally, let's start with some basic configuration by altering few properties in the form instance:
+Finally, let's change the configuration by altering few properties in the form instance:
 
 ```javascript
 // Basic Configuration
@@ -151,15 +148,15 @@ form.uploadDir = uploadFolder;
 console.log(form);
 ```
 
-1. **"multiples" property is set to false by default** if you will see in the form object that we logged in the console. But, we can set it to true, so that the user can add more than one file at once. **Also, we have to add the multiple attributes in the input tag in the HTML** to make sure that the user is able to upload multiple files, so do not forget to do it.
+1. `multiples` property is set to false by default as seen in the form object we logged in the console. We can set it to true so that the user can add more than one file at once. Also, we have to add the multiple attributes in the input tag in the HTML to make sure that the user is able to upload multiple files.
 
-2. We can additionally restrict the size of the file that we choose the user to upload.
-   **Note**:- Mention the size in Bytes. **Default is 200MB and we are limiting it to 5MB.**
+2. We can restrict the size of the file that the user to uploads. Default is 200MB but we are limiting it to 5MB.
 
-3. And, last but not the least. We have to change the uploads directory to the one we created.
+3. And last but not least, we have to change the uploads directory to the one we created.
 
 You can also alter many other properties, but this is enough for most of the use cases.
-Now, if we log form instance in our console one more time, we can see the difference in the above-mentioned properties.
+
+If we log form instance in our console one more time, we can see the difference in the above-mentioned properties.
 
 ```bash
 IncomingForm {
@@ -189,9 +186,9 @@ IncomingForm {
 }
 ```
 
-Since we are done with our basic configuration, **we can begin parsing our files.** To do this, we have a built-in **parse function, which we can call on our form instance.**
+Since we are done with our basic configuration, we can begin parsing our files. To do this, we use a built-in parsing function which we can call on our form instance.
 
-Add this piece of code below configuration and then I will explain what it does.
+Add this piece of code below configuration.
 
 ```javascript
 // Parsing
@@ -211,15 +208,15 @@ form.parse(req, async (err, fields, files) => {
 
 #### .parse(request, callback)
 
-The "parse" function **parses an incoming Node.js request containing form data.** If a callback is provided, **all fields and files are collected and passed to the callback.**
+The "parse" function parses an incoming Node.js request containing form data. If a callback is provided, all fields and files are collected and passed to the callback.
 
-We aim to parse and store these files according to our own needs, thus we need to take a look at them before we work on them. Hence, **we have two log statements to take a look at the data we get in the callback function.**
+We aim to parse and store these files according to our own needs, thus we need to take a look at them before we work on them. Hence, we have two log statements to take a look at the data we get in the callback function.
 
-Also, we will take care of any sort of error we can have at the very first step due to the fact **we do not want to parse any kind of files with some potential errors.** To do this, we are checking **if there is some kind of error.** If we have, then **we can send the response with a status code of 400, depicting a bad request.**
+Also, we will take care of any errors that may arise at the very first step. This is because we do not want to parse any files with some potential errors. To do this, we are checking if there are any errors. If we do, we can send the response with a status code of 400, depicting a bad request.
 
-Now, if you will try to run this code by submitting some kind of file, **you will see the log of parsed form data in the console.** Note that a new file would already have been created in your files folder under public. But, that file will not be readable due to the fact that there is no extension for that file yet.
+If you will this code by submitting a file, you will see the log of parsed form data in the console. Note that a new file will already have been created in your files folder under public. But, that file will not be readable since there is no extension for the file yet.
 
-**Your logged data should look something like this.**
+Your logged data should look something like this.
 
 ```bash
 {}
@@ -257,11 +254,11 @@ Now, if you will try to run this code by submitting some kind of file, **you wil
 }
 ```
 
-The **"fields" object is typically empty** and additionally, we do not want it. In the files object, we can see the name of the input tag "myFile" as we referred to in our HTML. **We even have access to the name of the file with the original extension.** All this information will help us save and manage our files more precisely.
+The `fields` object is empty and we do not want it. In the files object, we can see the name of the input tag (`myFile`) as we referred to in our HTML. We even have access to the name of the file with the original extension. All this information will help us save and manage our files more precisely.
 
-Before moving ahead, we have to look at a special case. **Since the user can upload multiple files at once, the incoming parsed data will be an array of objects** and not just a single object. So, we have to check each time if we are getting multiple files or single before working on it further.
+Before moving ahead, we have to look at a special case. Since the user can upload multiple files at once, the incoming parsed data will be an array of objects. So, we have to check each time if we are getting multiple files or single before working on it further.
 
-**Data with multiple files can look something like this.**
+Data with multiple files looks something similar to this.
 
 ```bash
 {
@@ -276,7 +273,7 @@ Before moving ahead, we have to look at a special case. **Since the user can upl
 
 1. We will handle single files and multiple files separately.
 2. In both scenarios, we will check if the file is valid by creating a separate function.
-3. If the file isn't valid, then we will throw an error and if it is, we will rename it and store the file name in our database.
+3. If the file isn't valid, then we will throw an error. If it is, we will rename it and store the file name in our database.
 
 Now, add this piece of code and then we will walk through each step.
 
@@ -326,9 +323,7 @@ if (!files.myFile.length) {
 }
 ```
 
-#### Walk-through
-
-1. In the very first step, we are checking if the user has uploaded multiple files or not. We are doing this by **checking the length of the myFile property in the files parsed data.** Note that, when we try to upload multiple files, myFile comes as an array of objects. If the length is zero, then it means only a single file has been uploaded.
+1. In the very first step, we are checking if the user has uploaded multiple files or not. We are doing this by checking the length of the myFile property in the files parsed data. If the length is zero, then it means only a single file has been uploaded.
 
 2. The next step is to take a look at whether the uploaded file is valid or not. We are doing this by creating a special function that goes like this.
 
@@ -343,32 +338,36 @@ const isFileValid = (file) => {
 };
 ```
 
-In this function, **we are extracting the original extension of the file uploaded. If it exists in our described valid extensions array, then we can return true, in any other case false.**
+In this function, we are extracting the original extension of the file uploaded. If it exists in our described valid extensions array, then we can return true, otherwise we return false.
 
-3. We are **creating a valid file name by removing all the "spaces" with "dashes".** We are doing this **with the help of Regular expressions and encodeURIComponent() function.**
-4. If the file is not valid, we are throwing an error.
-   If it is, we are renaming the file in our files directory with the help of the fs module which comes with Node.js (Don't forget it include it at the top of your file). After that, we can store the name of the file in our MongoDB cloud database that we hosted earlier in this tutorial.
+3. We are creating a valid file name by removing all the "spaces" with "dashes". This is done through the help of Regular expressions and `encodeURIComponent()` function.
 
-**Try completing the else block for multiple files on your own!!**
+4. If the file is not valid, we are throwing an error. If it is, we are renaming the file in our files directory with the help of the `fs` module which is a core module in Node.js
 
-**Here is the whole upload function for your reference.**
+**Don't forget to import the `fs` module at the top of your file**.
+
+After that, we can store the name of the file in our MongoDB cloud database that we hosted earlier in this tutorial.
+
+Try completing the else block for multiple files on your own! Here is the whole upload function for reference purposes.
 
 ![app.js](/upload-files-using-formidable-nodejs/appjs2.png)
 
-With this, if you will try to upload a file or image with a valid extension. It will be saved in your files directory with the name definition that we defined. Also, the file name gets stored in your cloud database so that we can access that on our front end.
+With this, if you will try to upload a file or image with a valid extension. It will be saved in your files directory with the name definition that we defined. Also, the file name gets stored in your cloud database so that you can access it on our front end.
 
 #### View these files on frontend.
 
-To learn how we can view these files, you can again refer to my previous article [here](https://www.section.io/engineering-education/uploading-files-using-multer-nodejs/).
+To learn how we can view these files, you can again refer to my [previous article](/engineering-education/uploading-files-using-multer-nodejs/).
 
 ### Formidable vs Multer
 
-My preceding article was about Multer and this article is about Formidable.
+My preceding article was about Multer and this article is about Formidable. Both are npm packages yet one serves as a module and one as middleware.
 
-They each are npm packages yet one serves as a module and one as middleware.
-
-**I discovered Formidable simpler to work with due to the fact configuring Multer is lot more complicated than Formidable.** But, there are some use instances where you will have to work with Multer. **For example, if you choose to resize images before saving them on your server, then Multer provides something known as Buffer storage, that can help you.**
+I found `formidable` simpler to work with due to the fact configuring `multer` is lot more complicated . But, there are some use instances where you will have to work with multer. For instance, if you choose to resize images before saving them on your server, then multer provides something known as a `Buffer storage` that can help you.
 
 So, it largely depends on your use case and what you find easier to use.
 
-To learn about this comparison in extra depth, you can refer to this article [here](https://bytearcher.com/articles/formidable-vs-busboy-vs-multer-vs-multiparty/).
+To learn about this comparison in extra depth, you can refer to [this article](https://bytearcher.com/articles/formidable-vs-busboy-vs-multer-vs-multiparty/).
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
