@@ -21,6 +21,7 @@ By the end of this article, you will understand the logic of email 
 - [Create Account Function](#create-account-function)
 - [Login Functionality](#login-function)
 - [Sending Verification Link Email](#send-email-verification-link)
+- [Check verification Status](#check-verification-status)
 - [Running the server](#starting-the-server)
 - [Conclusion & Further Reading](#conclusion-and-further-reading)
 
