@@ -5,8 +5,8 @@ published: true
 url: /how-to-create-a-simple-rest-api-using-typescript-and-nodejs/
 title: How to Create a Simple REST API Using TypeScript and Node.Js
 description: This article will be teaching us how to create a simple REST API using TypeScript and Node.js. We will be building a simple Node.js app to demonstrate how to use TypeScript with Node.js.
-author: antony-prince
-date: 2021-05-29T00:00:00-12:30
+author: antony-gitau
+date: 2021-06-04T00:00:00-12:30
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
