@@ -9,7 +9,7 @@ Data types are explicitly included within the value data form. Integers, charact
 ### Table of contents
 
 - [Making a pointer style declaration](#making-a-pointer-style-declaration)
-- [How to run unsafe codes].(#How-to-run-unsafe-codes)
+- [How to run unsafe codes](#How-to-run-unsafe-codes)
 - [Safe and unsafe codes](#safe-and-unsafe-codes)
 - [Pinning an object](#Pinning-an-object)
 - [Pointers and methods](#pointers-and-methods)
