@@ -6,7 +6,7 @@ url: /email-authentication-and-verification-nodejs-firebase/
 title: Email Authentication and Verification using Node.js and Firebase
 description: In this article, we will understand the logic of email verification and go through a stepwise implementation of the same using Node.js, Firebase and Express.
 author: phina-kersly
-date: 2021-06-03T00:00:00-12:00
+date: 2021-06-04T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,14 @@ images:
   - url: /engineering-education/email-authentication-and-verification-nodejs-firebase/hero.jpg
     alt: Email Authentication example image
 ---
-
-Email verification is a mechanism to ensure that a system does not stack its database with fake email addresses. An account remains unverified until the user verifies it through a unique link sent to his/her email address.
-In the meantime, the system restricts the account from the core functionalities of the application.
+Email verification is a mechanism to ensure that a system does not stack its database with fake email addresses. An account remains unverified until the user verifies it through a unique link sent to his/her email address. 
+<!--more-->
+In the meantime, the system restricts the account from the core functionalities of the application.
 
 ### Goal
-
-By the end of this article, you will understand the logic of email verification. We will go through a stepwise implementation of the same using Node.js, Firebase, and Express by building a sample login and registration system.
+By the end of this article, you will understand the logic of email verification. We will go through a step by step implementation of the same using Node.js, Firebase,and Express by building a sample login and registration system.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -42,22 +40,19 @@ By the end of this article, you will understand the logic of email 
 
 
 ### Prerequisites
-
-To effectively follow along with me in this tutorial:
-
+To follow this artice along with me effectively:
 - You will need to have [Node.js](https://nodejs.org/en/) installed on your computer.
 - A basic understanding of Node.js.
 - A suitable code editor. I will go with [Visual Studio Code](https://code.visualstudio.com/download).
 
 ### Project setup
-
-We will set up the project just like any other `Node.js` project. Execute the command below to get started.
+We will set up the project just like any other `Node.js` project. Execute the command below to get started.
 
 ```bash
 npm init -y
 ```
 
-> Next, we will install the required dependencies. We need `express` for our backend, `body-parser` to handle HTTP requests, `ejs` to render our HTML files, and `nodemon` to constantly update the changes as we develop the application.
+> Next, we will install the required dependencies. We need `express` for our backend, `body-parser` to handle HTTP requests, `ejs` to render our HTML files, and `nodemon` to constantly update the changes as we develop the application.
 
 Execute the command below to install the dependencies:
 
@@ -65,7 +60,9 @@ Execute the command below to install the dependencies:
 npm install --save express, body-parser, ejs, nodemon
 ```
 
-Next, we will create all the files and directories for the project. The project structure should be as below.
+Next, we will create all the files and directories for the project. 
+
+The project structure should be as below.
 
 ```bash
     ┣ node-modules
@@ -81,11 +78,9 @@ Next, we will create all the files and directories for the project. 
 ```
 
 ### Building the server 
-
-The `index.js` file is the entry point of the application. It will also act as the server file for the project. 
+The `index.js` file is the entry point of the application. It will also act as the server file for the project. 
 
 #### Import the dependencies
-
 To bring in the dependencies, add the snippets below to your `index.js` file.
 
 ```js
@@ -109,10 +104,9 @@ app.use(express.static("static"));
 ```
 
 ### Creating the application routes
-
 We need three routes for this project:
 
-- The default route is the `signup` where the user registers and automatically logs into their account. 
+- The default route is the `signup` where the user registers and automatically logs into their account. 
 
 ```js
 //sign up route
@@ -121,7 +115,7 @@ app.get("/signup", function (req, res) {
 });
 ```
 
-- The next route is the `login` route which takes the user to the login page. On the login page the user logs into their account using an email and password supplied during registration.
+- The next route is the `login` route which takes the user to the login page. On the login page the user logs into their account using an email and password supplied during registration.
 
 ```js
 //login route
@@ -130,7 +124,8 @@ app.get("/login", function (req, res) {
 });
 ```
 
-- The last route is the `profile` route takes the user to his profile page where the user can see his account status and request a verification link.
+- The last route is the `profile` route, which takes the user to his profile page where the user can see his account status and request a verification link.
+
 
 ```js
 //user profile route
@@ -139,34 +134,33 @@ app.get("/profile", function (req, res) {
 });
 ```
 
-### The User Interface
+### The user interface
+In the `views` folder, create three HTML files named `login.html`, `signup.html`, and `profile.html`. 
 
-In the `views` folder, create three HTML files named `login.html`, `signup.html`, and `profile.html`. 
 You can find the files for the user interface in [this link.](https://replit.com/@PhinaKersly/Email-verification)
 
-#### Sign up page user Interface
-
+#### Sign up page user interface
 Here is where the user creates an account using an email and password.
 
-![Register Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/register.png)
+![Register Page](/engineering-education/email-authentication-and-verification-nodejs-firebase/register.png)
 
 #### Login page user interface
-
 On this page, the user enters his email and password set during signing up.
 
-![Login Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/login.png)
+![Login Page](/engineering-education/email-authentication-and-verification-nodejs-firebase/login.png)
 
 #### Profile page user interface
+On the user profile page, the user can request account verification and check the verification status of their accounts.
 
-On the user profile page, the user can request account verification and check the verification status of their accounts.
-
-![Home Page](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/homepage.png)
+![Home Page](/engineering-education/email-authentication-and-verification-nodejs-firebase/homepage.png)
 
 ### Adding Firebase to the application
+In the next phase, we will get to the core functions of the application. To use Firebase, we need to obtain authorization for Firebase to know who is accessing the Firebase functions. We need to generate a `config` object to use with the application. 
 
-In the next phase, we will get to the core functions of the application. To use Firebase, we need to obtain authorization for Firebase to know who is accessing the Firebase functions. We need to generate a `config` object for use with the application. 
 
-To generate `config` object, check out [this guide](https://firebase.google.com/docs/web/setup#node.js-apps_1). Your final Firebase `config` object should look like this:
+To generate the `config` object, check out [this guide](https://firebase.google.com/docs/web/setup#node.js-apps_1). 
+
+Your final Firebase `config` object should look like this:
 
 ```js
 var config = {
@@ -180,9 +174,9 @@ var config = {
 };
 ```
 
-### Create Account Function
+### Create account function
+This function calls Firebase auth to create a new account with the supplied email and password. After a successful account creation, the function automatically logs the user into their account and redirects them to the profile page.
 
-This function calls Firebase auth to create a new account with the supplied email and password. After successful account creation, the function automatically logs the user into their account and redirects them to the profile page.
 
 ```js
 // initialize firebase
@@ -204,9 +198,8 @@ function createAccount(){
 }
 ```
 
-### Login Function
-
-The login function takes the user's email and password then calls Firebase to authenticate the user. It returns an error if the user does not exist or the password is wrong. Add the snippets below in the `script` tag of the login page.
+### Login function
+The login function takes the user's email and password then calls Firebase to authenticate the user. It returns an error if the user does not exist or the password is wrong. Add the snippets below in the `script` tag of the login page.
 
 ```js
 // initialize firebase
@@ -230,10 +223,8 @@ function login() {
 }
 ```
 
-### Send Email Verification Link
-
-This function is responsible for extracting the user email from the database and sending a unique link to the email used during account creating. 
-Before the verification, the account verified status reads `false` meaning that the account is not verified.
+### Send email verification link
+This function is responsible for extracting the user email from the database and sending a unique link to the email used during account creating. Before the verification, the account verified status reads `false` meaning that the account is not verified.
 
 ```js
 //initialize firebase
@@ -253,16 +244,20 @@ function sendVerificationEmail() {
 }
 ```
 
-After the function is successfully executed, a link is sent to the email supplied during registration as shown below.
+After the function is successfully executed, a link is sent to the email supplied during registration as shown below.
 
-![Email link ](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-in-email.png)
+![Email link](/engineering-education/email-authentication-and-verification-nodejs-firebase/link-in-mail.png)
 
-Upon clicking the link, the user is redirected to a new page. The page shows the verification process status as below: 
+Upon clicking the link, the user is redirected to a new page. 
 
-![Email verification redirect](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/link-redirect.png)
+The page shows the verification process status as below: 
+
+![Email verification redirect](/engineering-education/email-authentication-and-verification-nodejs-firebase/link-redirect.png)
 
 ### Check verification status
-Once a user has successfully verified an account by clicking the link send to their email, we need to update the verification status in the profile page. Add the snippets below in the user profile page to check the verification status and render onto the  profile page.
+Once a user has successfully verified an account by clicking the link sent to their email, we need to update the verification status in the profile page. 
+
+Add the snippets below in the user profile page to check the verification status and render onto the  profile page.
 ```js
 firebase.initializeApp(config); 
 firebase.auth().onAuthStateChanged(
@@ -282,13 +277,14 @@ firebase.auth().onAuthStateChanged(
     }
 ); 
 ```
-When the user gets back to their account, the account verified status changes to `true` and the `verify` button also dissappears.
+When the user gets back to their account, the account verified status changes to `true` and the `verify` button also dissappears.
 
-![Account Verified](/engineering-education/content/articles/email-authentication-and-verification-nodejs-firebase/account-verified.png)
+![Account Verified](/engineering-education/email-authentication-and-verification-nodejs-firebase/account-verified.png)
 
 ### Starting the server
+In this phase, we will test our application by running the command `nodemon start` in the terminal. 
 
-In this phase, we will test our application by running the command `nodemon start` in the terminal. We need to add the below code  in the `index.js` file:
+We need to add the below code  in the `index.js` file:
 
 ```js
 const PORT = process.env.PORT || 5000;
@@ -297,13 +293,17 @@ app.listen(PORT, () => {
 });
 ```
 
-### Conclusion and Further Reading
+### Conclusion
+In this tutorial, we learned how email authentication and verification are done using Firebase. Through the tutorial, we can appreciated how useful this functionality can be in ensuring that users are legitimate before accessing the resources of agiven system. 
 
-In this tutorial, we learned how email authentication and verification are done using Firebase. Through the tutorial, we can appreciate how useful this functionality can be in ensuring that users are legitimate before accessing the resources of a given system. You can find the entire source code of the application [here](https://replit.com/@PhinaKersly/Email-verification).  Just be sure to replace the Firebase `config object` with your own.
+You can find the entire source code of the application [here](https://replit.com/@PhinaKersly/Email-verification).  Just be sure to replace the Firebase `config object` with your own.
 
+Happy coding!
+
+#### Further readings
 To find more about the topic, you can check the resources in the following links:
-- Adding Firebase to Node.js: https://firebase.google.com/docs/web/setup
-- Managing Firebase users: https://firebase.google.com/docs/auth/web/manage-users
+- [Adding Firebase to Node.js](https://firebase.google.com/docs/web/setup)
+- [Managing Firebase users](https://firebase.google.com/docs/auth/web/manage-users)
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
