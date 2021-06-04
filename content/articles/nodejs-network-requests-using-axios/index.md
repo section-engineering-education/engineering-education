@@ -37,7 +37,7 @@ npm init
 npm i express axios
 ```
 
-npm init initializes a new node.js application whereas the second command installs express and axios.
+`npm init` initializes a new node.js application whereas the second command installs `express` and `axios`.
 
 With that done, let's go ahead and create our server.
 
