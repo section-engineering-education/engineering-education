@@ -22,7 +22,7 @@ We generate a hash for the input using the hash function and then store the elem
 
 ![HashTable](./HashIntro.PNG)
 
-**Hash Table**: Hash table is a collection of Key-Value pairs. It used when the searching, insertion of an element is required to be fast.
+**Hash Table**: Hash table is a collection of Key-Value pairs. It is used when the searching, insertion of an element is required to be fast.
 
 Operation in hash function:
 
@@ -36,7 +36,7 @@ Operation in hash function:
 **Hash Collision**: When two or more inputs are mapped to the same keys as used in the hash table.
 Example: h("John") == h( "joe")
 
-A collision can not be completely avoided but can be minimized using a 'good' hash function and a bigger table size.<br/>
+A collision can not be completely avoided but can be minimized using a 'good' hash function and a bigger table size.
 
 The chances of hash collision are less if the table size is a prime number.
 
@@ -53,36 +53,44 @@ The chances of hash collision are less if the table size is a prime number.
 
 #### Collision Hashing Techniques:
 
-1. **Open Hashing (Separate Chaining)**: In this using Linked List, new nodes are added to the list, the key act as the head pointer, pointing to a number of nodes having different values.If there is any collision two elements having same hash value we store both of them in a same linked list.
+1. **Open Hashing (Separate Chaining)**: In this using Linked List, new nodes are added to the list, the key act as the head pointer, pointing to several nodes having different values. If any collision two elements is having same hash value we store both of them in a same linked list.
 
-   Lets cosnidser a example of a simple hash function<br/>
+   Lets cosnidser a example of a simple hash function
+   
    `h(key) = key%table size`
 
-   In a hash table with the size 7<br/>
-   h(27) = 27%7 = 6<br/>
-   h(130) = 130%7 = 4<br/>
+   In a hash table with the size 7
+   
+   h(27) = 27%7 = 6
+   
+   h(130) = 130%7 = 4
 
    ![Example](./hashMap_1.PNG)
 
-   If we insert a new element (18, "Saleema" ), that would also go to the 4th index.<br/>
-   h(18) = 18%7 = 4<br/>
+   If we insert a new element (18, "Saleema" ), that would also go to the 4th index.
+   
+   h(18) = 18%7 = 4
 
    ![Example](./hashMap_2.PNG);
 
-   For separate chaining, the worst case scenario is when all of the key will get the same hash value and will be inserted in the same linked list.We can avoid that by using a good hash function.
+   For separate chaining, the worst-case scenario is when all of the keys will get the same hash value and will be inserted in the same linked list. We can avoid that by using a good hash function.
 
 2. **Closed Hashing (Open Addressing)**: In this, we find the "next" vacant bucket in Hash Table and store the value in that bucket.
 
-   1. **Linear Probing**: We linearly go to every next bucket and see if it is vacant or not.<br/>
+   1. **Linear Probing**: We linearly go to every next bucket and see if it is vacant or not.
+  
       `rehash(key) = (n+1)%tablesize`
 
-   2. **Quadratic Probing**: We go to the 1st, 4th, 9th ... bucket and check if they are vacant or not.<br/>
+   2. **Quadratic Probing**: We go to the 1st, 4th, 9th ... bucket and check if they are vacant or not.
+   
       `rehash(key) = (n+ k<sup>2</sup> ) % tablesize
 
-3. **Double Hashing**: Here we subject the generated key from the hash function to a second hash function.<br/>
+3. **Double Hashing**: Here we subject the generated key from the hash function to a second hash function.
+
    ` h2(key) != 0 and h2 != h1`
 
-**Load Factor**: This is a measurement of how full a hash table may become before its capacity is increased. <br/>
+**Load Factor**: This is a measurement of how full a hash table may become before its capacity is increased. 
+
 A hash table's load factor T is defined as:
 
 - N = number of elements in T - Current Size
@@ -93,12 +101,14 @@ Generally, if the load factor is greater than 0.5, we increase the size of the b
 
 #### How Hashing Gets O(1) Complexity?
 
-Given the above examples, one would wonder how hashing may be O(1) if several items map to the same place...  </br> 
-The solution to this problem is straightforward. We use the load factor to ensure that each block, (for example linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice this load factor is constant ( generally 10 or 20 ). As a result, searching in 20 or 10 elements become constant.<br/>
+Given the above examples, one would wonder how hashing may be O(1) if several items map to the same place...  
 
-If the average number of items in a block exceeds the load factor, the elements are rehash with a larger hash table size.
+The solution to this problem is straightforward. We use the load factor to ensure that each block, (for example linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice this load factor is constant ( generally 10 or 20 ). As a result, searching in 20 or 10 elements become constant.
 
-**Rehashing**: <br/>
+If the average number of items in a block exceeds the load factor, the elements are rehashed with a larger hash table size.
+
+**Rehashing**
+
 When the load factor gets "too high" (specified by the threshold value), the process of raising the size of the hash table begins, expecting that collisions would become more common.
 
 - Typically, double the size of the table (but still prime).
@@ -282,10 +292,8 @@ int main(){
 
 ![output](./Capture.PNG)
 
-<<<<<<< HEAD
 The execution of the above code can be found here:-
 [code implementation](https://replit.com/@Anubhavb11/HashMap#main.cpp)
 =======
 ---
 Peer Review Contributions by: [Willies Ogola](https://www.section.io/engineering-education/authors/willies-ogola/)
->>>>>>> d20e6e087a3810b7ceecfa7b1174e5e2d6fda8a4
