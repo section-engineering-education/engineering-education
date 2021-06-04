@@ -9,6 +9,7 @@ Data types are explicitly included within the value data form. Integers, charact
 ### Table of contents
 
 - [Making a pointer style declaration](#making-a-pointer-style-declaration)
+- [How to run unsafe codes].(#How-to-run-unsafe-codes)
 - [Safe and unsafe codes](#safe-and-unsafe-codes)
 - [Pinning an object](#Pinning-an-object)
 - [Pointers and methods](#pointers-and-methods)
@@ -28,13 +29,32 @@ Where `*` is called the de-reference administrator. The de-reference administrat
 Consider the following example: 
 
 ```c#
-int w=76
-int *ptr =&w;
-Console.WriteLine((int)ptr) 
-Console.WriteLine(*ptr)    
+public class Program
+    {
+        static unsafe void Main(string[] args)
+        {
+            int w = 76;
+            int* ptr = &w;
+            Console.WriteLine((int)ptr);
+            Console.WriteLine(*ptr);
+        }
+    }    
 ```
 
 `w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
+
+### How to run unsafe codes
+The following is the procedure on how to allow the use of unsafe codes in your visual studio edition:
+Go to the View tab first.
+1. Choose Solution Explorer from the drop-down menu.
+
+2. Double-click the Property option in the Solution Explorer to expand it.
+
+3. Select the ”Allow unsafe code” option and mark it as Check.
+
+The diagram below show how to allow unsafe codes:
+
+![output](/engineering-education/pointers_in_c#/activating_unsafe_code.png)
 
 ### Safe and unsafe codes
 **Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes. The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
@@ -83,7 +103,7 @@ And the output is:
 1605887280
 ```
 
-There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. 
+There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. The addresses output may differ from macchine to machine, it is determined by the values addresses in your computer. 
 
 We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we dislayed them.
 
@@ -118,8 +138,17 @@ namespace UnsafeCodeApplication
     }
 
 }
+Value of array[0]=5
+Address of the array[0]=-773935792
+Value of array[1]=6
+Address of the array[1]=-773935788
+Value of array[2]=7
+Address of the array[2]=-773935784
+Value of array[3]=8
+Address of the array[3]=-773935780
+Value of array[4]=9
+Address of the array[4]=-773935776
 ```
-![output](/engineering-education/pointers_in_c#/pinning_an_object.png)
 
 In the example above, we used a command to restrict the objects in the array to a fixed memory allocation. `fixed (int* ptr = array)` performs that request.
 
@@ -211,9 +240,19 @@ namespace UnsafeCodeApplication
     }
 
 }
-```
 
-![output](/engineering-education/pointers_in_c#/pointers_and_arrays.png)
+Value of array[0]=10
+Address of the array[0]=-521514320
+Value of array[1]=20
+Address of the array[1]=-5215143224
+Value of array[2]=30
+Address of the array[2]=-521514328
+Value of array[3]=40
+Address of the array[3]=-521514332
+Value of array[4]=50
+Address of the array[4]=-521514336
+
+```
 
 The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
