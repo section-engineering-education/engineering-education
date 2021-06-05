@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/function-pointers-in-c++/
+title: Function Pointers in C++
+description: This article introduces the reader to the working and examples of function pointers in C++. Function pointers are pointers that point to functions by storing their starting address or entry point of the block of memory containing the instructions.
+author: dawe-daniel
+date: 2021-06-05T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/function-pointers-in-c++/hero.jpg
+    alt: C++ Function Pointer Image Example
+---
 ### Introduction 
-Pointers are used to point to data. Like normal data pointers, we have `function pointers` that point to `functions`. Function pointers store the address of a function. In greater detail, they store the starting address or entry point of the block of memory containing all the instructions in a function. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve. For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will introduce the you to the working and examples of the function pointer along with code examples.
+Pointers are used to point to data. Like normal data pointers, we have `function pointers` that point to `functions`. Function pointers store the address of a function. In greater detail, they store the starting address or entry point of the block of memory containing all the instructions in a function. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve.
+<!--more-->
+For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will introduce the you to the working and examples of the function pointer along with code examples.
 
 ### Prerequisites
 To follow through this article, the reader should:
@@ -166,3 +184,6 @@ In the program above, the function pointer is passed as an argument to the `func
 This article has gone through function pointers. We have seen the importance of function pointers through where they are used and how they make our programs easier to develop and maintain. I hope you found this article easy to read, intuitive, and applicable in your day-to-day work.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
