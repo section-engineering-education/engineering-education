@@ -49,6 +49,7 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 - **Fully typed APIs:** Vite.js offers Typescript typing and server-side rendering for APIs.
 
 - **Faster dependency pre-building:** When talking about other bundlers like webpack, parcel, or Rollup, the rebuilding process occurs on every save, which may cause a delay in bundling.
+
 - **Browser Support:** The default build targets browsers that support both native ESM via script tags and native ESM dynamic import. Legacy browsers can be supported via the official @vitejs/plugin-legacy - see the Building for Production section for more details.
 
 Among other advantages of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
