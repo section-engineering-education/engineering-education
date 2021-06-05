@@ -200,7 +200,7 @@ Looking at the project folder we have:
 ```
 
 - **package.json:** This file contains the scripts, dependencies, etc.
-- 
+
 ```JSON
 "scripts": {
   "dev": "vite",
