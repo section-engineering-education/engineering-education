@@ -1,6 +1,21 @@
-### Introduction
-Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run. ECS was developed by Amazon in response to the rise of containerization. ECS enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-ecs-to-deploy-docker-app-to-aws/
+title: Using ECS to deploy a docker app to AWS
+description: This article will cover deploying Docker containers to AWS using ECS. Docker is a software platform that allows you to create and deploy applications and services in the form of containers. We use Flask framework to build a simple application and deploy it via Docker.
+author: victor-elvis
+date: 2021-06-05T00:00:00-18:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-ecs-to-deploy-docker-app-to-aws/hero.jpg
+    alt: AWS Docker image example
+---
+Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run. ECS was developed by Amazon in response to the rise of containerization. ECS enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
+<!--more-->
 [Docker](https://www.docker.com/products/docker-desktop) is a containerization technology that allows packaging of an application and its libraries into one so that the application can easily be run without need to do futher configurations.
 
 [Amazon Web Services](https://aws.amazon.com/) (AWS) is a cloud computing platform for deploying and hosting web applications. Besides cloud services, AWS also provides distributed computing services. One of the services is Elastic Container Services (ECS).
