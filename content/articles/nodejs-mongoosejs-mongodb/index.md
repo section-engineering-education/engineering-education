@@ -4,25 +4,22 @@ status: publish
 published: true
 url: /nodejs-mongoosejs-mongodb/
 title: How to Connect MongoDB to Node.js Using Mongoose
-description: In this tutorial we will look at how to connect a MongoDB instance with a Node.js application. 
-author: 
-date: 
-topics: []
+description: In this tutorial, we will look at how to establish a database connection and how to create a schema for our collections in Mongoose. Mongoose can be used to connect to both MongoDB and MongoDB Atlas to your Node.js app.  
+author: nancy-maina
+date: 2021-06-05T00:00:00-11:30
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/nodejs-mongoosejs-mongodb/hero.jpg
-    alt: MongoDB NodeJS and Mongoose
+    alt: MongoDB Node.js and Mongoose
 ---
+[Mongoose.js](https://mongoosejs.com) connects your MongoDB clusters or collections with your Node.js app. It enables you to create schemas for your documents. Mongoose provides a lot of functionality when creating and working with schemas. 
+<!--more-->
+In this tutorial we will look at how to connect a MongoDB instance with a Node.js application.
 
 ### How to Connect MongoDB to Node.js Using Mongoose
 MongoDB is one of the most widely used No-SQL databases in the developer world today. No-SQL databases allow developers to send and retrieve data as JSON documents, instead of SQL objects. To work with MongoDB in a Node.js app, we can use Mongoose.
-
-[Mongoose.js](https://mongoosejs.com) connects your MongoDB clusters or collections with your Node.js app. It enables you to create schemas for your documents. Mongoose provides a lot of functionality for creating and working with schemas. 
-
-In this tutorial we will look at how to connect a MongoDB instance with a Node.js application.
-
-<!--more-->
 
 ### Prerequisites
 Before we move on, you'll need to have the following:
@@ -30,7 +27,7 @@ Before we move on, you'll need to have the following:
 - A MongoDB instance running on your machine. You won't need this if you want to use MongoDB Atlas.
 - Some knowledge of Node.js and Express.js.
 
-### Step 1 - Installing Mongoose on a Node.js Environment
+### Step 1 - Installing Mongoose on a Node.js environment
 Create and navigate to a new folder by running the following commands on a terminal.
 
 ```bash
@@ -51,9 +48,10 @@ $ yarn add express mongoose
 ```
 
 ### Step 2 -- Creating the connection
-Create a new file `server.js` for starting our Express.js server. Load `mongoose` and `express` by adding the following code to `server.js`.
+Create a new file `server.js` to start our Express.js server. Load `mongoose` and `express` by adding the following code to `server.js`.
 
 `server.js`
+
 ```javascript
 const express = require("express");
 const mongoose = require("mongoose");
@@ -67,6 +65,7 @@ app.use(express.json());
 Then connect to a local MongoDB instance using the `mongoose.connect()` function.
 
 `server.js`
+
 ```javascript
 mongoose.connect('mongodb://localhost:27017/usersdb',
   {
@@ -79,19 +78,21 @@ mongoose.connect('mongodb://localhost:27017/usersdb',
 
 We pass the `useNewUrlParser: true`, etc.  to `mongoose.connect()` to avoid the [`DeprecationWarning`](https://mongoosejs.com/docs/deprecations.html).
 
-To create a connection to MongoDB Atlas, follow the following steps.
+To create a connection to MongoDB Atlas, follow the next steps.
 
-1. Open your Cluster tab in MongoDb Atlas and click <kbd>CONNECT</kbd>.
-![Connect to cluster](clusters.png)
+1. Open your Cluster tab in MongoDb Atlas and click `CONNECT`.
+
+![Connect to cluster](/engineering-education/nodejs-mongoosejs-mongodb/clusters.png)
 
 2. Select `Connect your application` and choose Node.js for the driver.
 3. Copy the connection string.
-![Connection string](connect_to_db.png)
 
+![Connection string](/engineering-education/nodejs-mongoosejs-mongodb/connect_to_db.png)
 
 With the connection at hand, create the following variables and replace their values using your actual credentials.
 
 `server.js`
+
 ```javascript
 const username = "<mongodb username>";
 const password = "<password>";
@@ -107,11 +108,13 @@ mongoose.connect(
   }
 );
 ```
+
 > It's important to note that the cluster variable is the values appearing between the `@` and `.mongodb.net`. In my case the cluster variable is `cluster0.vte2d`.
 
 To make sure your connection was successful, add the following code right below your `mongoose.connect()`.
 
 `server.js`
+
 ```javascript
 // ...
 const db = mongoose.connection;
@@ -141,6 +144,7 @@ Now let's define a collection schema for our application.
 Create another file `models.js` and add the following code.
 
 `models.js`
+
 ```javascript
 const mongoose = require("mongoose");
 
@@ -167,9 +171,10 @@ We then export the schema using the last 2 lines.
 ### Step 4 -- Creating the POST endpoint
 Create a new file `routes.js`. This file defines the endpoints for our app.
 
-Load `express` and the schema we created in step 3 by adding the following code.
+Load `express` and the schema we created in Step 3 by adding the following code.
 
 `routes.js`
+
 ```javascript
 const express = require("express");
 const userModel = require("./models");
@@ -179,6 +184,7 @@ const app = express();
 Then create the POST endpoint by adding the following code.
 
 `routes.js`
+
 ```javascript
 // ...
 app.post("/add_user", async (request, response) => {
@@ -193,7 +199,7 @@ app.post("/add_user", async (request, response) => {
 });
 ```
 
-We create a route `/add_user` for adding a new user to the database. We parse the content to be saved to the database using the line `const user = new userModel(request.body);`.
+We create a route `/add_user` to add a new user to the database. We parse the content to be saved to the database using the line `const user = new userModel(request.body);`.
 
 We then use a `try/catch` block to save the object to the database using the `.save()` method.
 
@@ -201,6 +207,7 @@ We then use a `try/catch` block to save the object to the database using the `.s
 Add the following lines of code to the `routes.js` file.
 
 `routes.js`
+
 ```javascript
 // ...
 app.get("/users", async (request, response) => {
@@ -219,6 +226,7 @@ We create a route `/users` to retrieve all the users saved using the `/add_user`
 Finally, export these endpoints by adding the line below.
 
 `routes.js`
+
 ```javascript
 // ...
 module.exports = app;
@@ -235,20 +243,20 @@ Now, let's test the two endpoints we created above.
 
 Open Postman and make a `POST` request to the `http://localhost:3000/add_user` endpoint.
 
-![Add user to database](add_user.png)
+![Add user to database](/engineering-education/nodejs-mongoosejs-mongodb/add_user.png)
 
 A new `user` is added to the database. You can check your collections to confirm this.
 
 Make a `GET` request to the `http://localhost:3000/users` endpoint. 
 
-![GET all users](get_users.png)
+![GET all users](/engineering-education/nodejs-mongoosejs-mongodb/get_users.png)
 
 The endpoint returns a list of all the `users` added to the database.
 
 ### Conclusion
 In this tutorial, we have looked at how to set up Mongoose. We have also looked at how to establish a database connection and how to create a schema for our collections. Mongoose can be used to connect to both MongoDB and MongoDB Atlas to your Node.js app. 
 
-I hope you find this article helpful. 
+I hope you found this article helpful. 
 
 Happy coding!
 
