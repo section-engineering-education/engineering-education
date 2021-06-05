@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/using-ecs-to-deploy-docker-app-to-aws/hero.jpg
     alt: AWS Docker image example
 ---
-Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run.
+Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services (AWS) to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run.
 <!--more-->
 ECS was developed by Amazon in response to the rise of containerization. ECS enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-Create a folder named `templates` which contains the HTML files rendered on the webpage. In the folder, create a file named `index.html`, then the add the snippets below:
+Create a folder named `templates` which contains the HTML files rendered on the webpage. In this folder, create a file named `index.html`, then the add the snippets below:
 
 ```html
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ Now, head over to the browser on  `http://127.0.0.1:5000/` to see if the applica
 ![App running locally](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/app-running.png)
 
 ### Dockerizing the flask app
-Now that our application is up and running, we need to dockerize it. Dockerization is packaging the application and its environmental libraries and dependencies into one so that the app can run anywhere without having to perform new environmental configurations.
+Now that our application is up and running, we need to dockerize it. Dockerization is packaging the application and its environmental libraries and dependencies into one, so that the app can run anywhere without having to perform new environmental configurations.
 
 First, we need to create a `dockerfile`. The docker file is used by the Docker engine to create a new docker image of the application container. It sets up an environment needed to run the application.
 
@@ -141,7 +141,7 @@ CMD ["python", "./app.py"]
 ### Running the container
 In this phase, we will combine all the files and run the docker container.
 
-Startup the docker desktop the execute the command below:
+Startup the `Docker Desktop` the execute the command below:
 
 ```bash
 docker build -t app .
@@ -167,7 +167,7 @@ Execute the command below to set up the user via terminal.
 aws configure
 ```
 
-Insert the access key ID of the user you created above and the access key. Strike the enter key to leave the remaining settings as default.
+Insert the `Access key ID` of the user you created above and the access key. Strike the enter key to leave the remaining settings as default.
 
 You should have the details set as below:
 
@@ -194,7 +194,7 @@ First login to the user by retrieving an authentication and using the token to a
 
 Execute the command below:
 
-```shell
+```bash
 aws ecr get-login-password --region YOUR REGION | docker login --username AWS --password-stdin YOUR ID.dkr.ecr.YOUR REGION.amazonaws.com
 ```
 
@@ -225,11 +225,11 @@ These commands can be found in the repository by clicking the `view push command
 3. Select on `EC2 Linux + Networking` then proceed to the next step.
 4. On the next page, insert the cluster name. I called mine `test`.
 5. Set `Provisioning Model` as `On-Demand Instance`.
-6. For `EC2 Instance type` select `t3a.micro`.
+6. For `EC2 Instance type`, select `t3a.micro`.
 7. Under networking, set the VPC to the default VPC.
 8. Set the `Subnets` to the first subnet in the dropdown.
 9. Set the `Auto-assign public IP` to `Enabled`.
-10. For the `security group`, use the default value.
+10. For the `Security group`, use the default value.
 11. Click on create the wait for the process to finish.
 
 If the procedure is successful, then you should see a window as below:
@@ -248,7 +248,7 @@ If the procedure is successful, then you should see a window as below:
 
 ### Deploy the created task
 1. In the left sidebar, click clusters.
-2. Select the created cluster
+2. Select the created cluster.
 3. In the cluster page click the `tasks` tab then run a `new task`.
 4. On the next page, select `EC2` as the launch type.
 5. Under `task definition`, select the task you created above. It automatically fills in.
@@ -259,7 +259,7 @@ If you head back to the cluster page and clusk the created cluster, you should s
 ![Rask Running](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/task-running.png)
 
 ### Testing the URL
-Now we are almost done. We need to test our application deployment status. 
+Now, we are almost done. We need to test our application deployment status.
 1. In the EC2 instances, go to Network and security. 
 2. Under the security groups, select the default.
 3. Scroll down to `edit inbound rules`.
@@ -268,7 +268,7 @@ Now we are almost done. We need to test our application deployment status.
 6. You configurations should be as below before clicking the save button.
 ![Edit inbound rules](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/edit-inbound-rules.png)
 
-For the selected instance, copy the public DNS URL. The instance public DNS is displayed on the page. Paste it into a new tab of your browser on port 8888.
+For the selected instance, copy the public DNS URL. The instance public DNS is displayed on the page. Paste it into a new tab of your browser on port `8888`.
 
 If did everything correctly, your app should be app and running!
 
