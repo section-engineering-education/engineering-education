@@ -6,7 +6,7 @@ url: /how-to-setup-user-authentication-from-scratch-with-rails-6/
 title: How to Setup User Authentication from Scratch with Rails 6
 description: In this tutorial, we will build the authentication system for a Ruby on Rails 6 application from scratch.
 author: njunu-simon
-date: 2021-06-03T00:00:00-16:00
+date: 2021-06-04T00:00:00-16:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
