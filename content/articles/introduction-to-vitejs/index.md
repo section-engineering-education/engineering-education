@@ -20,7 +20,7 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 
 - **Instant server-side rendering:** Contrary to other frameworks, Vite starts the server instantly, taking the dependencies that don't often change and rebuild them using esbuild (an extremely fast javascript bundler).
 
-- **CSS preprocessor:** Vite.js offers CSS preprocessor support for LESS and SASS.
+- **CSS Preprocessors:** To be able use css preprocessors in vite, you have to install its corresponding preprocessor.
 
 - **Mono repo support:** Vite.js provides support for multiple file rendering within the dist folder.
 
@@ -33,6 +33,7 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 - **Fully typed APIs:** Vite.js offers Typescript typing and server-side rendering for APIs.
 
 - **Faster dependency pre-building:** When talking about other bundlers like webpack, parcel, or Rollup, the rebuilding process occurs on every save, which may cause a delay in bundling.
+- **Browser Support:** The default build targets browsers that support both native ESM via script tags and native ESM dynamic import. Legacy browsers can be supported via the official @vitejs/plugin-legacy - see the Building for Production section for more details.
 
 Among other advantages of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
 
@@ -127,6 +128,20 @@ npm init @vitejs/app project-name --template react
 yarn create @vitejs/app project-name --template react
 ```
 
+#### Adding CSSPreprocessor
+To add css prprocessor in your project,run the follwing commands:
+
+``` javascript
+ .scss and .sass
+npm install -D sass or yarn add sass
+
+ .less
+npm install -D less or yarn add less
+
+ .styl and .stylus
+npm install -D stylus or yarn add stylus
+
+```
 ### Project Folder Structure
 Now, let's have a look at some files in our project folder:
 ![project structure](/introduction-to-vitejs/folder-structure.png)
