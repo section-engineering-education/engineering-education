@@ -14,9 +14,8 @@ images:
     alt: PM2 with Node.js
 ---
 
-### PM2
 
-You may be familiar with starting your Node applications by using the default script ``npm start``, which will generally run your server directly. This may appear enough initially, but in the real world where your app encounters an error (e.g. requesting a file that doesn’t exist), your app will crash not only for the user who encountered the error but for everyone…that’s bad. This is where PM2 comes in.
+You may be familiar with starting your Node applications by using the default script `npm start`, which will generally run your server directly. This may appear enough initially, but in the real world where your app encounters an error (e.g. requesting a file that doesn’t exist), your app will crash not only for the user who encountered the error but for everyone…that’s bad. This is where PM2 comes in.
 
 PM2 or PM2, or Process Manager 2 is an incredibly versatile production process manager written in Node.js. This article will cover PM2, its advantages, how to use it, and why PM2 is popular amongst organizations.
 
@@ -33,9 +32,11 @@ Before discussing PM2 we will first start with the root of its existence that is
 ### What is Node JS?
 
 Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser and whose architecture is based on single-threaded non-blocking
-concurrent io. It is a lightweight web framework and very friendly to beginners.
+concurrent input/output. It is a lightweight web framework and very friendly to beginners.
 
 Node.js is written in C, C++, and JavaScript, and it is built on the open-source V8 JavaScript engine which also powers JS in browsers such as Google Chrome. As V8 supports new features in JavaScript, they are incorporated into Node.
+
+V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Chrome and in Node.js, among others. To know more about it you can visit to the official documentation via [this link](https://v8.dev/). 
 
 It also has access to a C++ library called Libuv which provides Node.js to have access to OS, filesystem, and to the event, loop to manage asynchronous operations.
 
@@ -62,23 +63,20 @@ In this example, we are using Node’s built-in fs module to read a script.js fi
 
 ### Advantages of Node.js
 
-1. It offers high performance in real-time:
-   Web applications powered by Node.js benefit massively from its ability to multitask. Unlike other platforms, its single-threaded, event-driven architecture processes multiple concurrent requests efficiently.
-   &nbsp;
+### It offers high performance in real-time
+   Web applications powered by Node.js benefit massively from its ability to multitask. Unlike other platforms, its single-threaded, event-driven architecture        processes multiple concurrent requests efficiently.
 
-2. Easy Scalability for Modern Applications:
+### Easy Scalability for Modern Applications
    With a growing consumer base of tens of millions of users like Netflix, Walmart, Google, etc have regarded Node.js as a viable solution for scalability.
    The cutting-edge technology comes with tons of features like the cluster module.
-   &nbsp;
 
-3. Offers Community Support to Simplify Development:
-   With millions of developers contributing actively to the Node.js community, you can expect extensive support from development experts across the globe to solve even the most peculiar development problems.
-   For instance, NPM, a package manager for JavaScript, is the biggest package manager registry in the world. It offers numerous tools and libraries available readily for you to use in your project.
-   &nbsp;
+### Offers Community Support to Simplify Development
+   With millions of developers contributing actively to the Node.js community, you can expect extensive support from development experts across the globe to solve    even the most peculiar development problems.
+   For instance, NPM, a package manager for JavaScript, is the biggest package manager registry in the world. It offers numerous tools and libraries available        readily for you to use in your project.
 
-4. Node.js reduces Loading Time by Quick Caching:
-   Node.js made it really easy for developers to reduce task workload and re-execution of code with its caching module. So every time the first module of your web application gets a request, it gets cached in the in-app memory which is really efficient for frequently visited websites.
-   &nbsp;
+### Node.js reduces Loading Time by Quick Caching
+   Node.js made it really easy for developers to reduce task workload and re-execution of code with its caching module. So every time the first module of your web    application gets a request, it gets cached in the in-app memory which is really efficient for frequently visited websites.
+   
 
 Node.js allows you to use Microservices that further lets you segregate your application into smaller parts. This way, you get to define tasks and allocate them efficiently among different teams to fast-track the development, deployment, and maintenance of each division of your application.
 
@@ -130,7 +128,7 @@ or if you want to save some time so you can also go to this link [this link](htt
 After having a successful installation of Node.js and npm ie. node package manager first thing we need to do is to install PM2 globally on your machine:
 
 ``` bash
-$ npm i -g pm2
+npm i -g pm2
 
 ```
 
@@ -138,7 +136,7 @@ or you can also use this command if the above command doesn't work:
 
 ``` bash
 
-$ npm install pm2@latest -g
+npm install pm2@latest -g
 
 ```
 
@@ -146,13 +144,13 @@ if you prefer yarn as your package manager then,
 
 ``` bash
 
-$ sudo yarn global add pm2
+sudo yarn global add pm2
 
 ```
 
 ### Starting and Configuring PM2
 
-To start a process under PM2, all you have to do is run ``` pm2 start <app> ```. An app being the name of the file you’re running. PM2 will output something like this for Windows users.
+To start a process under PM2, all you have to do is run ` pm2 start <app> `. An app being the name of the file you’re running. PM2 will output something like this for Windows users.
 
 ``` bash
 
@@ -191,7 +189,7 @@ This can be customized after starting an app by using the restart subcommand wit
 
 ``` bash
 
-$ sudo pm2 restart old-app-name --name new-app-name
+sudo pm2 restart old-app-name --name new-app-name
 
 ```
 
@@ -199,7 +197,7 @@ PM2 will automatically restart applications running under it, but we will need t
 
 ``` bash
 
-$ sudo pm2 startup systemd
+sudo pm2 startup systemd
 
 ```
 
@@ -225,7 +223,7 @@ Next, we will want to tell PM2 which apps to start on boot. We can do this by sa
 
 ``` bash
 
-$ sudo pm2 save
+sudo pm2 save
 
 [PM2] Saving current process list...
 [PM2] Successfully saved in /home/deployer/.pm2/dump.pm2
@@ -242,28 +240,25 @@ To enable the cluster mode, just pass the -i option:
 
 ``` bash
 
-$ sudo pm2 start server.js -i max
+sudo pm2 start server.js -i max
 
 ```
 
-``max`` means that PM2 will auto-detect the number of available CPUs and run as many processes as possible.
+`max` means that PM2 will auto-detect the number of available CPUs and run as many processes as possible.
 
 ### Advantages of PM2
 
-1. Built-in clustering:
+### Built-in clustering
 PM2 internally handles all of the above logic for you so you don’t have to change anything in your code.
-&nbsp;
 
-2. Scaling your cluster in realtime:
-You can scale your cluster anytime by hitting ``pm2 scale <app name> <n>`` where <n> can be a consistent number which the cluster will scale up or down to.
-&nbsp;
+### Scaling your cluster in realtime
+You can scale your cluster anytime by hitting `pm2 scale <app name> <n>` where <n> can be a consistent number which the cluster will scale up or down to.
 
-3. Updating your apps in production with zero downtime"
+### Updating your apps in production with zero downtime
 PM2 reload ``<app name>`` feature will restart your workers one by one, and each worker will wait till the new one has spawned before killing the old one.
 This way, your server keeps running even when you are deploying the new patch straight to production.
-&nbsp;
 
-4. Apps will stay alive:
+### Apps will stay alive
 If any of your workers happens to die, PM2 will restart them immediately so you don’t have to worry about that either.
 
 ### Log Management in PM2
@@ -271,11 +266,11 @@ If any of your workers happens to die, PM2 will restart them immediately so you 
 PM2 has built-in log management. It aggregates log data from all of your applications and writes it to a single source for viewing. You can even view the logs in real-time to see what’s going on under the hood with your application. Log Management from PM2 comes with log rotation as well, which is important, especially if you’re app is outputting verbose logs on a frequent basis.
 These are some basic command which you can use to handle the logs of your app:
 
- ``pm2 logs`` : Outputs logs from all running applications.
+ `pm2 logs` Outputs logs from all running applications.
 
- ``pm2 logs app`` :  Outputs logs from only the app application.
+ `pm2 logs app`  Outputs logs from only the app application.
 
- ``pm2 flush`` : Flushes all log data, freeing up disk space.
+ `pm2 flush` Flushes all log data, freeing up disk space.
 
 The most important thing to do is to enable log rotation. By this PM2 will split one big chunk of the log file into many smaller files that are more manageable for PM2. To do this, run the following command:
 
