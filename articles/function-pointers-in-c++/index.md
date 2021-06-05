@@ -1,5 +1,5 @@
 ### Introduction 
-Pointers are used to point to data. Like normal data pointers, we have `function pointers` that point to `functions`. Function pointers store the address of a function. In greater detail, they store the starting address or entry point of the block of memory containing all the instructions in a function. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve. For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will introduce the reader to the working and examples of the function pointer along with code examples.
+Pointers are used to point to data. Like normal data pointers, we have `function pointers` that point to `functions`. Function pointers store the address of a function. In greater detail, they store the starting address or entry point of the block of memory containing all the instructions in a function. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve. For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will introduce the you to the working and examples of the function pointer along with code examples.
 
 ### Prerequisites
 To follow through this article, the reader should:
@@ -12,10 +12,10 @@ To follow through this article, the reader should:
 void (*fun_ptr)(int);
        fun_ptr = &fun;
 ```
-We think of function pointers like normal C++ functions. Where `void` is the return type of the function. `*fun_ptr` is a pointer to a function taking one argument of the type `int`. It's as if we are declaring a function called `*fun_ptr` which takes `int` and returns `void`. The key to writing the declaration for a function pointer is that we are writing out the declaration of a function. But with `*fun_name` where you would place `func_name`. The declaration of the function pointer is preceded by the pointer symbol `*`. The function pointer can take more than one argument thus it can point to any function which takes two `integer` arguments and return `void`.
+We think of function pointers like normal C++ functions. Where `void` is the return type of the function. `*fun_ptr` is a pointer to a function taking one argument of the type `int`. It's as if we are declaring a function called `*fun_ptr` which takes `int` and returns `void`. The key to writing the declaration for a function pointer is that we are writing out the declaration of a function, but with `*fun_name` where you would place `func_name`. The declaration of the function pointer is preceded by the pointer symbol `*`. The function pointer can take more than one argument, thus it can point to any function which takes two `integer` arguments and return `void`.
 
 ### Address of a function
-To get the address of a function, we are required to mention the name of the function. We do not need to call the function. Take an example below:
+To get the address of a function, we are required to mention the name of the function. We do not need to call the function. Consider example below:
 
 ```c++
 #include <iostream>  
@@ -27,13 +27,13 @@ int main()
 }  
 ```
 
-We're displaying the address of a main() function in the program above. We only listed the name of the function, no brackets, and no parameters to print the address of a main() function. As a result, the address of a function is the name of the function without any brackets or parameters.
+In the program above, we're displaying the address of our main() function. We only listed the name of the function, no brackets, and no parameters to print the address of the main() function. As a result, the address of a function is the name of the function without any brackets or parameters.
 
 ### Interesting facts about function pointers
 - A function pointer, unlike other pointers, points to code rather than data. A function pointer usually stores the start of executable code.
 - We don't use function pointers to allocate or de-allocate memory as we do with normal pointers.
 - The name of a function may also be used to find the address of that function as we had seen in the program above. 
-- An array of function pointers can be used in the same way that regular pointers are used. The program in our point 5 will show this for easier understanding.
+- An array of function pointers can be used in the same way that regular pointers are used. The program in our fifth point will demonstrate this for easier understanding.
 - Function pointers can be used in place of a switch case. We can take a look at the example below to understand this better:
 
 ```c++
@@ -73,7 +73,7 @@ Output:
 ```bash
 Enter Choice: 0 to add, 1 to minus and 2 to multiply
 ```
-In the program above, the user is asked to choose between o, 1, and 2 to perform different operations thus emulating a switch case. 
+In the program above, the user is asked to choose between 0, 1, and 2 to perform different operations thus emulating a switch case. 
 -  Like normal data pointers, a function pointer can be passed as an argument and can also be returned from a function.
 
 ### Calling a function indirectly
@@ -103,7 +103,7 @@ Output:
 ```bash
 Sum value is : 17
 ```
-We declare the function pointer, `int (*funcptr)(int,int)`, and then store the address of the `add()` function in `funcptr` in the preceding program. This means that the address of the `add()` method is stored in `funcptr`. We can now use funcptr to invoke the add() method. The `add()` function is called by the phrase `funcptr(7,10)`, and the result is put in the `sum` variable.
+We declare the function pointer, `int (*funcptr)(int,int)`, and then store the address of the `add()` function in `funcptr` in the preceding program. This means that the address of the `add()` method is stored in `funcptr`. We can now use `funcptr` to invoke the `add()` method. The `add()` function is called by the phrase `funcptr(7,10)`, and the result is put in the `sum` variable.
 
 ### Example 2
 ```c++
@@ -157,7 +157,7 @@ int main()
 ```
 Go ahead and run the code [here](https://replit.com/@Dawe7/Funcptr-as-arguments#main.cpp)
 Output:
- ```bash
+```bash
  function 1 is called
 ```
 In the program above, the function pointer is passed as an argument to the `function2()` function. The address of `function1()` is provided to the func2() function by the `main()` method. The `function2()` function is indirectly invoking the `function1()` function in this manner.
