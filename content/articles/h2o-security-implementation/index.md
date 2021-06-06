@@ -44,14 +44,12 @@ Data access is not universal. If a database is used, permissions can also limit 
 
 #### Allocating Data to Lower Risk
 
-File permission is one of several options to access a data file. Reading, writing, and executing are all default settings that can be implemented. Password protection is also another file protector that can be distributed based on roles.  
-As a reminder, the code below is one of many methods to enforce permissions. The code below specifies group permission for reading.  
+File permission is one of several options to access a data file. Reading, writing, and executing are all default settings that can be implemented. Password protection is also another file protector that can be distributed based on roles. As a reminder, the code below is one of many methods to enforce permissions. The code below specifies group permission for reading.  
 
 ```python
 import os, sys, stat
 os.chmod(“./filename.csv”,  stat.S_IRGRP)
 ```
-
 This code below can move filename.csv to an offline folder and can no longer be accessible online at any time. Moving a file to a different online folder location.  
 
 ```bash
