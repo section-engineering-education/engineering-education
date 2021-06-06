@@ -10,9 +10,6 @@ Security in the data analytical space is important to consider internally and ex
 * [Installation](#installation)
 * [Identify Change](#identify-change)
 * [Allocating Data to Lower Risk](#allocating-data-to-lower-risk)
-* [Cyberattack Prevention](cyberattack-prevention)
-* [Conclusion](#conclusion)
-* [References](#references)
 
 #### Prerequisites
 
