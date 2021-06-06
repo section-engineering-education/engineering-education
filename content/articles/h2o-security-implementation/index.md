@@ -13,9 +13,10 @@ Security in the data analytical space is important to consider internally and ex
 
 #### Prerequisites
 
-* Linux computer Operating System (OS) or Linux container with `root` authorization.
+* Linux computer Operating System (OS) or Linux container with `root` authorization (this tutorial uses [Kali Linux](https://kali.org/).
 * Basic Bash knowledge.
 * Python (preferably 3.3+, tutorial uses 3.9).
+* Read [H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/index.html)
 * Bash installations: H<sub>2</sub>O, Java, `keytools`, and a Linux text editor.
 * Python installation of H<sub>2</sub>O.
 * Some Java coding knowledge.
@@ -32,12 +33,12 @@ For any security mechanism to become stable, generation of authentication files 
 One noticeable SSL internode security change is when false becomes true as shown below.  
 
 ![false](/engineering-education/h2o-security-implementation/false.jpg)    
-_Connection without internal security_  
+_Connection without internal security._  
 
 After following Standalone/AWS and Java instructions, a message with a specific URL dedicated to H<sub>2</sub>O appears and can be used for `h2o.init()`.  
 
 ![true](/engineering-education/h2o-security-implementation/true.jpg)    
-_Connection with internal security_  
+_Connection with internal security._  
 
 Data access is not universal. If a database is used, permissions can also limit who can gain specific data access when logging in and during active state.  
 
@@ -90,7 +91,7 @@ public class Check
 ```  
 
 
-The Java application can be used in a real SQL injection scenario. Input with any spacing combination mentioned with `alter`, `drop`, and `insert` can result in an error message. For example, retrieving data with `select`.
+This Java application can be used in a real SQL injection scenario. Input with any spacing combination mentioned with `alter`, `drop`, and `insert` can result in an error message. For example, retrieving data with `select`.
 
 **Input**:  
 select table  
