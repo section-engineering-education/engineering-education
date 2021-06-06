@@ -6,7 +6,7 @@ url: /matlab-graphical-user-interface/
 title: Getting started with Graphical User Interface in Matlab
 description: This article will cover basics of GUI creation using Matlab. We will also build a simple GUI using Matlab, and explore all components that are used for building.
 author: linet-achieng
-date: 2021-05-26T00:00:00-18:00
+date: 2021-06-07T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -27,12 +27,8 @@ Matlab generates the codes for a GUI. This makes it a better tool for designing 
 2. A proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
 
 ### Table of content
-- [GRAPHICAL USER INTERFACE IN MATLAB](#graphical-user-interface-in-matlab)
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Table of content](#table-of-content)
 - [How to access the GUI](#how-to-access-the-gui)
-- [Components of GUI](#components-of-gui)
 - [Example GUI](#example-gui)
 - [Conclusion](#conclusion)
 
