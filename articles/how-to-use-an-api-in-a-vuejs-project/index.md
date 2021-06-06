@@ -77,7 +77,10 @@ Copy the code below to your `App.vue` file:
 <script>
 export default {
 data()  {
-posts: [ ]
+return {
+
+      posts: [],
+    }
 
 },
 
@@ -137,7 +140,10 @@ After requesting data from the API, you will need to call it on a lifecycle hook
 <script>
 export default {
 data()  {
-posts: [ ]
+return {
+
+      posts: [],
+    }
 
 },
 
@@ -169,7 +175,7 @@ We can now display the data in the template by looping through the posts using [
 ```JavaScript
 <template>
      <div>
-         <div v-for="post in posts">
+         <div v-for="post in posts" v-bind:key="post.id" >
              <h2>{{ post.title }}</h2>
               <p>{{ post.body }}</p>
          </div>
@@ -179,7 +185,10 @@ We can now display the data in the template by looping through the posts using [
 <script>
 export default {
 data()  {
-  posts: [ ]
+return {
+
+      posts: [],
+    }
 },
 
 methods: {
@@ -212,8 +221,9 @@ To request with the Fetch API, you just have to make the request directly with t
 ```JavaScript
 <template>
      <div>
-         <ul v-for="post in posts">
+         <ul v-for="post in posts" v-bind:key="post.id">
              <li>{{ post.title }}</li>
+              <p>{{ post.body }}</p>
          </ul>
       </div>
 </template>
@@ -221,7 +231,10 @@ To request with the Fetch API, you just have to make the request directly with t
 <script>
 export default {
 data()  {
-  posts: [ ]
+  return {
+
+      posts: [],
+    }
 },
 
 methods: {
@@ -356,11 +369,74 @@ computed: mapState([
 ```JavaScript
 <template>
      <div>
-         <ul v-for="post in posts">
+         <ul v-for="post in posts" v-bind:key="post.id">
              <li>{{ post.title }}</li>
+             <p>{{ post.body }}</p>
          </ul>
       </div>
 </template>
+```
+Here is the whole code snippet
+
+For the `store` file
+```JavaScript
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+ state: {
+    posts: [],
+  },
+
+getters: {
+    posts: state => {
+        return state.posts;
+    }
+},
+mutations: {
+        SET_ITEMS (state, posts) {
+            state.posts = posts
+        }
+},
+actions: {
+   async loadPosts ({ commit }) {
+     try {
+           const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+          // JSON responses are automatically parsed.
+          commit('SET_ITEMS', response.data)
+       }
+      catch (error) {
+         console.log(error);
+     }
+   }
+},
+}) 
+```
+
+For your vue file:
+
+```JavaScript
+<template>
+     <div>
+         <ul v-for="post in posts" v-bind:key="post.id">
+             <li>{{ post.title }}</li>
+             <p>{{ post.body }}</p>
+         </ul>
+      </div>
+</template>
+<script>
+import { mapState } from 'vuex';
+
+mounted () {
+    this.$store.dispatch('loadPosts')
+},
+computed: mapState([
+        'posts'
+  ]),
+
+</script>
 ```
 
 #### Conclusion
