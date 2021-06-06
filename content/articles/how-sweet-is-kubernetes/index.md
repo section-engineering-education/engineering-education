@@ -16,7 +16,7 @@ images:
 ---
 
 ### Introduction
-What was your first impression when you read Kubernetes?
+What was your first impression when you hear Kubernetes?
 I bet you were already thinking, "Oh no, here comes another tech buzzword. Already sounds like a difficult concept."
 Well, you are not so right. However, let us dive in!
 We will be using the Fleetman application to explain the concept of Kubernetes.
@@ -130,7 +130,7 @@ echo -n “the content to convert” | base64
 ```
 
 #### Service
-This is like an endpoint or API point for Kubernetes. A Service always has a permanent IP address and that it why it must be aatched to the pod whose IP address changes time to time when it's down. This means the IP of our Service never changes, whereas a pod's IP changes when updated. For this reason, there is a service attached to all pods. Several pods can be attached to one service, and this further shows how important our replica sets is, when one dies, another is being fired up almost immediately.
+This is like an endpoint or API point for Kubernetes. A Service always has a permanent IP address and that it why it must be aatched to the pod whose IP address changes time to time when it's down. This means the IP of our Service never changes, whereas a pod's IP changes when updated. For such an important reason, there is a service attached to all pods. Several pods can be attached to one service, and this further shows how important our replica sets is, when one dies, another is being fired up almost immediately.
 Let us pull out the services in the Fleetman application as examples.
 
 ```yaml
