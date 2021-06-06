@@ -26,9 +26,21 @@ Matlab generates the codes for a GUI. This makes it a better tool for designing 
 1. [Matlab](https://www.mathworks.com/downloads/) must be installed.
 2. A proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
 
+### Table of content
+- [GRAPHICAL USER INTERFACE IN MATLAB](#graphical-user-interface-in-matlab)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Table of content](#table-of-content)
+- [How to access the GUI](#how-to-access-the-gui)
+- [Components of GUI](#components-of-gui)
+- [Example GUI](#example-gui)
+- [Conclusion](#conclusion)
+
 ### How to access the GUI?
 You can access the GUI by typing `guide` in the workspace.
-![the choices window for the GUI](image1.png)
+
+![the choices window for the GUI](/engineering-education/matlab-graphical-user-interface/image1.png)
+*Choices window for the GUI*
 
 When Matlab GUI executes this command, a new window opens up. This window gives various GUI templates that the user can use for the design.
 
@@ -36,11 +48,18 @@ In this article, we are to use a blank GUI template because it will help us appl
 
 The design will be done on the canvas using the aligned components on the left side of the window. The names of each component will not visible, unless we do so. To make the names visible, we follow the below procedure:
 - Click the file folder and select the `preferences`.
-![the components and the canvas](image2.png)
+
+![the components and the canvas](/engineering-education/matlab-graphical-user-interface/image2.png)
+*The components and the canvas*
+
 - Select the `show names in the component palette`
 - To activate these changes, click on the `apply` then `OK`.
-![enabling the components name to be visible](image3.png)
-![components and the names visible](image12.png)
+
+![How to enable the components name to be visible](/engineering-education/matlab-graphical-user-interface/image3.png)
+*How to enable the components name to be visible*
+
+![Here the components and their names are visible](/engineering-education/matlab-graphical-user-interface/image12.png)
+*Here the components and their names are visible*
 
 To add a component to the workspace, you select it and drop it there. The size of the components can be changed by dragging the edges. Changing the position can be done by double-clicking and dragging it.
 
@@ -62,10 +81,14 @@ Let's look at each of the components before using them.
 ### Example GUI
 We want to create a simple GUI. We first add the required components - Panel, Static text, Axes, Push Button, Slider, and Edit Text. Add the components as explained earlier and arrange them as shown below:
 
-![arrangement of components in our GUI](image5.png)
+![Arrangement of components in our GUI](/engineering-education/matlab-graphical-user-interface/image5.png)
+*Arrangement of components in our GUI*
+
 We then modify the components as needed. When you double-click the component that you want to modify, a new window opens up as shown:
 
-![modification window for components](image6.png)
+![Modification window for components](/engineering-education/matlab-graphical-user-interface/image6.png)
+*Modification window for components*
+
 We can also achieve this by clicking the property inspector situated at the top of the window.
 
 We can change the background color, foreground color, font size, font weight, string, and the tag of the components depending on the design structure.
@@ -73,15 +96,21 @@ We can change the background color, foreground color, font size, font weight, st
 When modifying the string components, ensure that the name is meaningful, which enables easier identification of the callback in the `.m` file.
 
 Modify the GUI and make it similar to the below figure;
-![the appearance of new GUI after modification](image7.png)
+![the appearance of new GUI after modification](/engineering-education/matlab-graphical-user-interface/image7.png)
+*Appearance of new GUI after modification*
+
 We will change the tag of the `Axes` to `axes`, `slider1` to `Freq`, `edit1` to `Amp`.
 
 > Note that, the tag for the static text and other components that do not have a callback function is not necessary to change.
 
 Save the GUI before running. Upon running the GUI, `.m` file is automatically generated before the `.fig` file shows up.
 
-![obtained .m file](image8.png)
-![obtained .fig file](image9.png)
+![Generated .m file](/engineering-education/matlab-graphical-user-interface/image8.png)
+*Generated .m file*
+
+![obtained .fig file](/engineering-education/matlab-graphical-user-interface/image9.png)
+*obtained .fig file*
+
 The object is first created and properties are set before the `create function` is called.
 
 The `create function` can also be used in the modification of the components rather than using the property inspector. This is done by initializing the properties. It is complex and requires more understanding of Matlab, so we will not use it in this example.
@@ -141,15 +170,18 @@ We can input various amplitudes and frequencies and see the various plots.
 
 Below is a sample:
 
-![plots obtained when we run the program](image10.png)
+![Plots obtained when we run the program](/engineering-education/matlab-graphical-user-interface/image10.png)
+*Plots obtained when we run the program*
+
 To ensure that our error check functions properly, we input a letter to see an error message on edit text box, which on refresh turns grey. This means that it does not invoke the callback until the input is changed to a real number. This shows that it is deactivated. This is shown in the figure below:
 
-![output incase of NAN input](image11.png)
+![output incase of NAN input](/engineering-education/matlab-graphical-user-interface/image11.png)
+*output incase of NAN input*
 
 ### Conclusion
-Matlab provides a good environment for creating the GUI. This is because it automatically generates the code for the design of the GUI. The generated codes also contain comments that make it easy for the programmer to understand what the code entails and also organize the callback functions. This makes the programmer's work easy and saves him/her from the bulky codes.
+Matlab provides a good environment for creating the GUI. This is because it automatically generates the code for the design of the GUI. The generated codes also contain comments that make it easy for the programmer to understand what the code entails and also organize the callback functions.
 
-This makes Matlab an efficient tool for creating GUI. The purpose of the GUI is to create an interface for use by everyone. This makes it an important tool for engineers in implementing their projects.
+This makes the programmer's work easy and saves him/her from the bulky codes. This makes Matlab an efficient tool for creating GUI. The purpose of the GUI is to create an interface for use by everyone. This makes it an important tool for engineers in implementing their projects.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
