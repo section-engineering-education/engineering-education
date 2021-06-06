@@ -23,7 +23,7 @@ Security in the data analytical space is important to consider internally and ex
 
 #### Installation
 
-This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable that most people may not have a Linux OS. One of several solutions for compatibility is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is usually known for ethical Pentesting while Ubuntu LTS is a version generally used among individuals.  
+This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable that most people may not have a Linux OS. One of several solutions for compatibility is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical Pentesting while Ubuntu LTS is a version generally used among individuals.  
 
 For any security mechanism to become stable, generation of authentication files is necessary. Refer to the instructions at the [H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/index.html) website to generate `keystore` and `truststore` authentication files.  
 
@@ -34,7 +34,7 @@ One noticeable SSL internode security change is when false becomes true as shown
 ![false](/engineering-education/h2o-security-implementation/false.jpg)    
 _Connection without internal security_  
 
-After following Standalone/AWS and Java instructions, a message with a specific URL dedicated to H<sub>2</sub>O and can be used for `h2o.init()`.  
+After following Standalone/AWS and Java instructions, a message with a specific URL dedicated to H<sub>2</sub>O appears and can be used for `h2o.init()`.  
 
 ![true](/engineering-education/h2o-security-implementation/true.jpg)    
 _Connection with internal security_  
@@ -63,7 +63,7 @@ mv ./filename.csv ./offline/
 
 While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations are well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
 
-For example, the following Java application can detect SQL keywords and combinations. If a java-based relational database was used, this code below can detect and refuse basic SQL injection attacks.  
+For example, the following Java application can detect SQL keywords and combinations. If a java-based relational database is preferred, this code below can detect and refuse basic SQL injection attacks.  
 
 ```Java
 import static java.lang.System.in;
@@ -90,7 +90,7 @@ public class Check
 ```  
 
 
-Input with any spacing combination mentioned with `alter`, `drop`, and `insert`. For example, retrieving data with `select` would result in an error message.  
+The Java application can be used in a real SQL injection scenario. Input with any spacing combination mentioned with `alter`, `drop`, and `insert` can result in an error message. For example, retrieving data with `select`.
 
 **Input**:  
 select table  
