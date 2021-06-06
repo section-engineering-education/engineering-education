@@ -1,15 +1,13 @@
 ### Introduction
-
 In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
 
-The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
+The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference-type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
 
 Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
 
 ### Table of contents
-
 - [Making a pointer style declaration](#making-a-pointer-style-declaration)
-- [How to run unsafe codes](#How-to-run-unsafe-codes)
+- [How to run unsafe codes](#how-to-run-unsafe-codes)
 - [Safe and unsafe codes](#safe-and-unsafe-codes)
 - [Pinning an object](#Pinning-an-object)
 - [Pointers and methods](#pointers-and-methods)
@@ -44,20 +42,20 @@ public class Program
 `w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
 
 ### How to run unsafe codes
-The following is the procedure on how to allow the use of unsafe codes in your visual studio edition:
-Go to the View tab first.
-1. Choose Solution Explorer from the drop-down menu.
+Let's learn how to allow the use of unsafe codes in your [VS code](https://code.visualstudio.com/):
+
+1. Go to the View tab. Then choose Solution Explorer from the drop-down menu.
 
 2. Double-click the Property option in the Solution Explorer to expand it.
 
-3. Select the ”Allow unsafe code” option and mark it as Check.
-
-The diagram below shows how to allow unsafe codes:
+3. Check the "Allow unsafe code" option.
 
 ![output](/engineering-education/pointers_in_c#/activating_unsafe_code.png)
 
 ### Safe and unsafe codes
-**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes. The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
+**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes.
+
+ The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
 
 The example below uses the unsafe codes:
 
@@ -103,7 +101,9 @@ And the output is:
 1605887280
 ```
 
-There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. The addresses output may differ from machine to machine, it is determined by the values addresses in your computer. 
+> The addresses output may differ from machine to machine, it is determined by the values addresses in your computer. 
+
+There are various methods for executing statements as unmanaged, such as using a Modifier or a Constructor. A collection of statements has been marked as unsafe in the example above. 
 
 We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we displayed them.
 
@@ -155,7 +155,7 @@ Value of array[4]=9
 Address of the array[4]=-773935776
 ```
 
-In the example above, we used a command to restrict the objects in the array to a fixed memory allocation. `fixed (int* ptr = array)` performs that request.
+We used `fixed (int* ptr = array)` to restrict the objects in the array to a fixed memory allocation.
 
 ### Pointers and methods
 In C#, the pointers can be passed as a contention to a strategy as the following:
@@ -198,20 +198,20 @@ The output is:
 1748493632
 ```
 
-Unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20, respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
+Unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20 respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
 
 ### Conversions and pointers
 Pointer types do not inherit from objects in C#, and there is no way to convert pointer types to objects. As a result, pointers do not help boxing and unboxing. Conversions between different pointer types, as well as pointer types and integral types, are supported in C#.
 
 C# upholds explicit and implicit pointers changes inside unmanaged settings. In implicit pointers, conversions are from null type to pointer type and also from any pointer type to type void * type.
 
-For explicit pointers, the cast operator (()) is essential. The conversion is from to in this instance.
+For explicit pointers, the cast operator (()) is essential. The conversion is from to in this instance:
 
 1. The type of pointer to other forms of the pointer.
 2. To other pointer types: byte, sbyte, short, ushort, int, uint, long, ulong.
 3. Pointer type to sbyte, byte, uint, int, long, ulong, short, ushort types.
 
-An example of pointer conversion is illustrated below:
+Let's make an example of pointer conversion:
 
 ```c#
 char k = 'U';  
@@ -316,10 +316,12 @@ Students details 2
 Student ID: 6 Fees: 43333
 ```
 
-The structure student with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value-type rather than reference-type structures. There are two main method variables for students and fees pointers, initialized with A1 and A2 addresses. Computer compartment. Console.writeline() is used to display student's details and fees.
+The structure `student` with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value-type rather than reference-type structures. There are two main method variables for students and fees pointers, initialized with `A1` and `A2` addresses. Console.writeline() is used to display student's details and fees.
 
 ### Conclusion
 Pointers show the memory address and execute unmanaged codes, as we have discovered. The reason behind why the unsafe statements are used is that the garbage collector does not track memory addresses in an unmanaged environment. Pointers are applied in queue and stack data types.
+
+Till next time, happy coding!
 
 ### Further Reading
 
