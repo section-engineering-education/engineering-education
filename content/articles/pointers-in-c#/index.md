@@ -2,7 +2,7 @@
 
 In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
 
-The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces etc.
+The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
 
 Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
 
@@ -52,7 +52,7 @@ Go to the View tab first.
 
 3. Select the ”Allow unsafe code” option and mark it as Check.
 
-The diagram below show how to allow unsafe codes:
+The diagram below shows how to allow unsafe codes:
 
 ![output](/engineering-education/pointers_in_c#/activating_unsafe_code.png)
 
@@ -103,9 +103,9 @@ And the output is:
 1605887280
 ```
 
-There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. The addresses output may differ from macchine to machine, it is determined by the values addresses in your computer. 
+There are various methods for executing statements as unmanaged, such as using a Modifier or a constructor. A collection of statements has been marked as unsafe in the example above. The addresses output may differ from machine to machine, it is determined by the values addresses in your computer. 
 
-We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we dislayed them.
+We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we displayed them.
 
 ### Pinning an object 
 Pinning an object in C# entails restricting an object from moving into the [garbage collector](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
@@ -265,7 +265,7 @@ Address of the array[4]=-521514336
 The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
 ### Pointers and structure
-In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. Example software is as follows:
+In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. For example:
 
 ```c#
 using System;
@@ -316,7 +316,7 @@ Students details 2
 Student ID: 6 Fees: 43333
 ```
 
-In the above example, structure student with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value type rather than reference type structures. There are two main method variables for students and fees pointers, initialized with A1 and A2 addresses. Computer compartment. Console.writeline() is used to display students details and fees.
+The structure student with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value-type rather than reference-type structures. There are two main method variables for students and fees pointers, initialized with A1 and A2 addresses. Computer compartment. Console.writeline() is used to display student's details and fees.
 
 ### Conclusion
 Pointers show the memory address and execute unmanaged codes, as we have discovered. The reason behind why the unsafe statements are used is that the garbage collector does not track memory addresses in an unmanaged environment. Pointers are applied in queue and stack data types.
