@@ -1,7 +1,21 @@
-### GRAPHICAL USER INTERFACE IN MATLAB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /matlab-graphical-user-interface/
+title: Getting started with Graphical User Interface in Matlab
+description: This article will cover basics of GUI creation using Matlab. We will also build a simple GUI using Matlab, and explore all components that are used for building.
+author: linet-achieng
+date: 2021-05-26T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/matlab-graphical-user-interface/hero.jpg
+    alt: Matlab GUI image example
+---
 A Graphical User Interface (GUI) is a pictorial interface that allows the user to use an application without understanding the language.
-
+<!--more-->
 This is done by providing intuitive controls. The controls are the buttons that the user clicks to obtain a determined output. GUI is an event-driven program. This is because it acquires input at any given time and uses the callback functions to execute the program and give results.
 
 In this article, we will be looking at the components that are used to construct the graphical user interface. We will also look at how to write the callback function of the components that make it possible for them to execute the controls.
