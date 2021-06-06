@@ -1,6 +1,22 @@
-### Introduction
-In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /pointers-in-c#/
+title: Pointers In C#
+description: In this tutorial, we will learn about C# pointers, how to declare them, how to use them with arrays, structures, and a lot more.
+author: kelvin-munene
+date: 2021-06-06T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/pointers-in-c#/hero.jpg
+    alt: C# with a computer
+---
+In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
+<!--more-->
+### Introduction
 The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference-type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
 
 Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
@@ -330,3 +346,5 @@ Till next time, happy coding!
 3. [Variables, Data Types and Control Statements in C#](https://www.section.io/engineering-education/variables-data-types-and-control-statements-in-csharp/)
 4. [Getting Started with Inheritance using C#](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/)
 
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
