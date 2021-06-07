@@ -153,19 +153,26 @@ yarn create @vitejs/app project-name --template react
 ```
 
 #### Adding CSSPreprocessor
-To add CSS preprocessor in your project, run the following commands:
+To add CSS preprocessors into your project, run the following commands:
 
-``` javascript
- .scss and .sass
-npm install -D sass or yarn add sass
+- [SASS](https://sass-lang.com/):
 
- .less
-npm install -D less or yarn add less
+  ```bash
+  npm install -D sass
+  ```
+ 
+- [LESS](https://lesscss.org/):
 
- .styl and .stylus
-npm install -D stylus or yarn add stylus
+  ```bash
+  npm install -D less
+  ```
+  
+- [Stylus](https://stylus-lang.com/):
+ 
+  ```bash
+  npm install -D stylus
+  ```
 
-```
 ### Project Folder Structure
 
 Now, let's have a look at some files in our project folder:
