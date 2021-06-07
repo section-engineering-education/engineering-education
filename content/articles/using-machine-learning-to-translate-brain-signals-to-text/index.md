@@ -32,11 +32,17 @@ In this [paper](https://www.nature.com/articles/s41586-021-03506-2) published in
 
 Before we dive in, it is crucial to understand these three terminologies:
 
-1. [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) 
+1. Principal Component Analysis (PCA) 
 
-2. [t-distributed stochastic neighbor embedding (t-SNE)](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding) 
+It is a dimensionality reduction technique that compute principal components by reducing the dimensions of large datasets into smaller ones. Though reduced into smaller sets (principal components), these data should still contain most of the important information from the larger dataset. This process is performed on data as it tends to be hard to compute datasets with large dimensions. Read more on it [here](https://en.wikipedia.org/wiki/Principal_component_analysis). 
 
-3. [Brain-computer interface (BCI)](https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface) 
+2. t-distributed Stochastic Neighbor Embedding (t-SNE) 
+
+It is a statistical technique suitable for visualizing high dimensional data. It achieves this process by embedding high-dimensional data into a low-dimensional space of two (2D) or three-dimensional (3D) map. Read more on it [here](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding).
+
+3. Brain-computer interface (BCI)
+
+It is a computer-based system that recognizes the intent of a user through the use of brain signals. It decodes the brains neural activities and translates it into outputs that replace, restore, enhances, or improve human functions. Read more on it [here](https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface). 
 
 Now that we understand these terminologies, let's get started!
 
@@ -59,7 +65,7 @@ Let's try and understand how they do this.
 
 ### Neural representation of handwriting
 
-To visualize the neural activities recorded during the attempted writing from the patient's brain, two machine learning techniques were used:
+To visualize the neural activities recorded during the attempted writing from the patient's brain, two machine learning techniques were used. These techniques are essential as neural signals tend to be too complex with a lot of dimensions. These signals also contain unnecesary background noise which we may not require in our task. These two techniques are used to visualize and reduce the complex dimensions of the signal enabling us achieve only the required ones. 
 
 1. Principal Component Analysis (PCA) is one of the methods for dimensionality reduction. It takes your data and extracts the components that have the highest amount of variance. The goal of PCA in this experiment was to extract the top three neural signals (components) associated with handwriting. It also eliminated things such as background noise or things that might not be relevant to our task.
 
