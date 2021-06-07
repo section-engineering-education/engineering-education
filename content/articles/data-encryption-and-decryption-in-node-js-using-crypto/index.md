@@ -72,7 +72,11 @@ First, you will import the `crypto` module.
 const crypto = require ("crypto");
 ```
 
-While encrypting data, it's vital to use an algorithm. In this project, we use `aes-256-cbc`. The IV (initialization vector) is used here to hold 16 bytes of random data from the `randomBytes()` function. `Securitykey` holds 32 bytes of random data. Below is the code.
+While encrypting data, it's vital to use an algorithm. In this project, we use `aes-256-cbc`.
+
+The `crypto.randomBytes()` method is used to generate a cryptographically well-built artificial random data and the number of bytes to be generated in the written code.
+
+The IV (initialization vector) is used here to hold 16 bytes of random data from the `randomBytes()` method and `Securitykey` holds 32 bytes of random data.
 
 ```JavaScript
 const crypto = require("crypto");
