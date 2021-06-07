@@ -17,7 +17,7 @@ images:
 
 You may be familiar with starting your Node applications by using the default script `npm start`, which will generally run your server directly. This may appear enough initially, but in the real world where your app encounters an error (e.g. requesting a file that doesn’t exist), your app will crash not only for the user who encountered the error but for everyone…that’s bad. This is where PM2 comes in.
 <!--more-->
-PM2 or PM2, or Process Manager 2 is an incredibly versatile production process manager written in Node.js. This article will cover PM2, its advantages, how to use it, and why PM2 is popular amongst organizations.
+PM2  or Process Manager 2 is an incredibly versatile production process manager written in Node.js. This article will cover PM2, its advantages, how to use it, and why PM2 is popular amongst organizations.
 
 ### Prerequisites
 
