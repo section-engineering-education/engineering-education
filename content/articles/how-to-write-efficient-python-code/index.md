@@ -111,7 +111,7 @@ The `map` function coupled with lambda function allows us to modify our list wit
 
 Note that we use the `list` function to convert map object back to a list.
 
-The second is `filter`, the filter function is used to you guessed it, filter out unwanted data from our list.
+The second is `filter`, the filter function is used to filter out unwanted data from our list.
 
 Let's take a look at an example.
 
