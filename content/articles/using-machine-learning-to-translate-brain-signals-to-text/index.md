@@ -7,7 +7,7 @@ title: Using Machine Learning to Translate Brain Signals to Text
 description: In this article, we will explore how machine learning is used to decode and translate brain neural signals into handwritten text.
 author: willies-ogola
 date: 2021-06-03T00:00:00-16:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -32,15 +32,15 @@ In this [paper](https://www.nature.com/articles/s41586-021-03506-2) published in
 
 Before we dive in, it is crucial to understand these three terminologies:
 
-1. Principal Component Analysis (PCA) 
+**1. Principal Component Analysis (PCA)**
 
-It is a dimensionality reduction technique that compute principal components by reducing the dimensions of large datasets into smaller ones. Though reduced into smaller sets (principal components), these data should still contain most of the important information from the larger dataset. This process is performed on data as it tends to be hard to compute datasets with large dimensions. Read more on it [here](https://en.wikipedia.org/wiki/Principal_component_analysis). 
+It is a dimensionality reduction technique that computes principal components by reducing the dimensions of large datasets into smaller ones. Though reduced into smaller sets (principal components), these data should still contain most of the important information from the larger dataset. This process is performed on data as it tends to be hard to compute datasets with large dimensions. Read more on it [here](https://en.wikipedia.org/wiki/Principal_component_analysis). 
 
-2. t-distributed Stochastic Neighbor Embedding (t-SNE) 
+**2. t-distributed Stochastic Neighbor Embedding (t-SNE)** 
 
 It is a statistical technique suitable for visualizing high dimensional data. It achieves this process by embedding high-dimensional data into a low-dimensional space of two (2D) or three-dimensional (3D) map. Read more on it [here](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding).
 
-3. Brain-computer interface (BCI)
+**3. Brain-computer interface (BCI)**
 
 It is a computer-based system that recognizes the intent of a user through the use of brain signals. It decodes the brains neural activities and translates it into outputs that replace, restore, enhances, or improve human functions. Read more on it [here](https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface). 
 
