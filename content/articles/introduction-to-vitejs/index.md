@@ -188,24 +188,24 @@ Looking at the project folder we have:
 
 - **index.html:** This file serves as the source code and part of the module graph. This file also serves as the entry point of your app.
 
-```HTML
-<!DOCTYPE html>
-<html lang="en">
+  ```HTML
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-</head>
+  <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Vite App</title>
+  </head>
 
-<body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.js"></script>
-</body>
+  <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.js"></script>
+  </body>
 
-</html>
-```
+  </html>
+  ```
 
 - **package.json:** This file contains the scripts, dependencies, etc of the project.
 
