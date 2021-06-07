@@ -127,9 +127,7 @@ R2           Gig 0/0          172            R       C2900       Gig 0/1
 R1#
 ```
 
-From the information, it's clear that `S1` and `R2` are connected to `R1` as seen from the network setup.
-
-Interfaces, hold time, capabilities, port ID, the platform is all displayed.
+From the information, it's clear that `S1` and `R2` are connected to `R1` as seen from the network setup. The interfaces, hold time, capabilities, port ID, the platform are displayed.
 
 For more details about the neighboring devices, such as the IP address of the devices, `show cdp neighbor detail` command shown.
 
@@ -189,9 +187,9 @@ S2                  Gig0/0         120        B               Fa0/1
 Total entries displayed: 2
 ```
 
-From the above information, it's clear that `R1` and `S2` are directly connected to `R2` as seen from the network setup.
+From the above information, it's clear that `R1` and `S2` are directly connected to `R2` as seen from the network setup.The interfaces, hold time, capabilities, port ID, the platform are displayed.
 
-Interfaces, hold time, capabilities, port ID, the platform is all displayed. For more details about the neighboring devices, such as the IP address of the devices, `show lldp neighbor detail` command is used.
+For more details about the neighboring devices, such as the IP address of the devices, `show lldp neighbor detail` command is used.
 
 > NOTE: When configuring LLDP, one has to configure it on every device for it to discover and gather information about the neighboring devices. For CDP it's already configured by default so there is no need of configuring it unless it is disabled.
 
