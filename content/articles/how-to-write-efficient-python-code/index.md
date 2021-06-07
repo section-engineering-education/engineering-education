@@ -74,7 +74,7 @@ def even_or_odd(n):
 
 print(even_or_odd(10))
 ```
-This took us about five lines of code to write, with `lambdas` I'm happy to say it will only take us one line.
+This took us about five lines of code to write, with `lambdas` I'm happy to say that it'll only take only one line.
 
 ```py
 print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
