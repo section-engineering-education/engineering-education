@@ -27,7 +27,7 @@ To follow this tutorial along - the reader should have the following:
 
 - Some prior knowledge about Node.js and should be familiar with Linux commands and operating system.
 
-Before discussing PM2 we will first start with the root of its existence that is Node.js so as to have a clear understanding of PM2.
+Before discussing PM2, we will first start with the root of its existence i.e., Node.js, so as to have a clear understanding of PM2.
 
 ### What is Node JS?
 
