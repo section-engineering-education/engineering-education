@@ -1,6 +1,21 @@
-## Fundamentals of container security
-Containers are executable units of an application that are packaged, along with its libraries and dependencies required to run the application. Containers make it possible for developers to deploy and maintain applications seamlessly across different environments.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/fundamentals-of-container-security/
+title: Fundamentals of Container Security
+description: In this tutorial, you will learn about Containers, and the best practices to follow to make them secure.
+author: ck-muithi
+date: 2021-06-07T00:00:00-15:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/fundamentals-of-container-security/hero.jpg
+    alt: Contianer security image
+---
+Containers are executable units of an application that are packaged, along with its libraries and dependencies required to run the application. Containers make it possible for developers to deploy and maintain applications seamlessly across different environments.
+<!--more-->
 To grasp the security issues surrounding container technology, we must first understand what containers are and their role in the software development life-cycle.
 
 Container technology has changed how developers and teams ship, deploy and maintain code, but this has come with its fair share of security risks.
