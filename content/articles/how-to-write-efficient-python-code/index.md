@@ -92,7 +92,7 @@ In this section, we looked at `lambdas` a very quick way of writing function. Th
 ### Map, Filter and Reduce
 When working with a list filled with data, `map`, `filter` and `reduce` gives us the ability to perform common list manipulation task that will have taken us a few lines of code to implement.
 
-The first on the list is `map`, with map function we can modify our list however we want. 
+The first on the list is `map`. With the `map` function we can modify our list however we want. 
 
 Let's take a look at an example.
 
