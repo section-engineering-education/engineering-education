@@ -1,43 +1,53 @@
 Web applications have access to large amounts of data that belongs to people, organizations, and governments. The more the data is accessed, the higher the threat to data security. In the software development industry, developers use cryptography and encryption techniques to protect sensitive data from malicious parties.
 
-Cryptography is used to secure data stored in a database or being transferred over a network in the software development industry. When handling, moving, and storing data, you must do it safely and securely. Most data securities are executed in the back-end of a web application. Thus as a node.js developer, you should understand how to encrypt and decrypt data to secure data processed by your system. Node.js has a built-in library called `crypto` for data encryption and decryption.
+Cryptography is used to secure data stored in a database or being transferred over a network in the software development industry. When handling, moving, and storing data, you must do it safely and securely. Thus as a node.js developer, you should understand how to encrypt and decrypt data to secure data processed by your system. Node.js has a built-in library called `crypto` for data encryption and decryption.
 
-The purpose of encryption and decryption is to provide data security. This article will help you learn how to use Node.js `crypto` module to encrypt and decrypt data in your applications. Also, it will give an overview of [cryptography in node.js](https://nodejs.org/api/crypto.html).
+The purpose of encryption and decryption is to provide data security. This article will help you learn how to use the Node.js `crypto` module to encrypt and decrypt data in your applications. Also, it will give an overview of [cryptography in node.js](https://nodejs.org/api/crypto.html).
 
 ### Table of contents
-[Cryptography in node.js](#cryptography-in-nodejs)
-[Node.js crypto module](#nodejs-crypto-module)
-[How to encrypt data in Node.js](#how-to-encrypt-data-in-nodejs)
-[How to decrypt data in Node.js](#how-to-decrypt-data-in-nodejs)
+
+- [Cryptography in node.js](#cryptography-in-nodejs)
+- [Node.js crypto module](#nodejs-crypto-module)
+- [How to encrypt data in Node.js](#how-to-encrypt-data-in-nodejs)
+- [How to decrypt data in Node.js](#how-to-decrypt-data-in-nodejs)
 
 ### Prerequisites
-A comprehensive understanding of [cryptography](https://nodejs.org/api/crypto.html) and node.js is needed before reading this article. To follow along with this article, you should have:
-- [Node.js](https://nodejs.org/en/download/) installed in your working environment
-- Text editor such as [Visual Studio Code](https://code.visualstudio.com/download)
+
+A comprehensive understanding of [cryptography](https://nodejs.org/api/crypto.html) and node.js is required before reading this article. To follow along with this article, you should have:
+
+- [Node.js](https://nodejs.org/en/download/) installed in your working environment.
+- Text editor such as [Visual Studio Code](https://code.visualstudio.com/download).
 
 ### Cryptography in node.js
-Cryptography is crucial for software development. Data needs to be protected. Cryptography is a study of techniques to keep data secure. It makes information a secret by converting plaintext into unreadable text and vice versa. Hence only the sender and the receiver of data can understand its content.
 
-The three main components of a cryptosystem include plaintext, ciphertext, and algorithm. To make information a secret, use a cipher, an algorithm that converts plaintext into ciphertext. The process of converting data into unreadable text is called encryption, and the reverse process is called decryption.
+Cryptography is crucial for software development. Data must be protected. Cryptography is a study of techniques on how to keep the data secure. It converts the data into a secret by converting plaintext into unreadable text and vice versa. Hence only the sender and the receiver of that data can understand its content.
 
-Cryptographic algorithms use a key to convert plaintext to ciphertext. Converting ciphertext back to plaintext is possible only if you have the right key with you. Using the same key for encryption and decryption is called [symmetric encryption](https://en.wikipedia.org/wiki/Symmetric-key_algorithm). Using one key for encryption and another for decryption is called [asymmetric encryption](https://www.sciencedirect.com/topics/computer-science/asymmetric-encryption).
+The three main components of a cryptosystem include plaintext, ciphertext, and algorithm. To make information a secret, we use a cipher and an algorithm that converts plaintext into ciphertext. The process of converting data into unreadable text is called encryption, and the reverse process is called decryption.
+
+Cryptographic algorithms use a key to convert plaintext to ciphertext. Converting ciphertext back to plaintext is possible only if you have the right key with you. 
+
+Using the same key for encryption and decryption is called [symmetric encryption](https://en.wikipedia.org/wiki/Symmetric-key_algorithm). 
+
+Using one key for encryption and another for decryption is called [asymmetric encryption](https://www.sciencedirect.com/topics/computer-science/asymmetric-encryption).
 
 Node.js developers need to understand how to keep their application data safe. Protecting data from malicious attackers is of importance. To protect data in Node.js applications, you can [hash passwords](https://docs.oracle.com/cd/E26180_01/Platform.94/ATGPersProgGuide/html/s0506passwordhashing01.html) and store them in the database. This way, data cannot be converted into plaintext after it is hashed. It has to be verified.
 
-When malicious attackers access the database, they cant decode the encrypted data. This is because data in the database is protected. Cyber attackers cannot decrypt encrypted data if they do not have the key to help them do so. Therefore, this is what the Node.js crypto module does.
+If malicious attackers gain access to the database, they won't be able to read the data since it's encrypted. Cyber attackers cannot decrypt encrypted data if they do not have the key to help them do so.
 
 ### Node.js crypto module
+
 The Node.js `crypto` module provides cryptographic operations to help you secure your Node.js application. The [`crypto`](https://nodejs.org/api/crypto.html) module is a wrapper for open SSL cryptographic functions. It supports hashes, HMAC for authentication, ciphers, deciphers, and more.
 
 As stated earlier, `crypto` is a built-in library in Node.js. Thus it doesn't require installation and configuration before using it in your Node.js applications. The `crypto` module handles an algorithm that performs encryption and decryption of data. This is used for security purposes like user authentication by storing passwords in the database in an encrypted form.
 
 The `crypto` module allows you to hash plain texts before storing them in a database. Hashed data can not be decrypted with a specific key, like encrypted data. An HMAC is responsible for a Hash-based Message Authentication Code, which hashes keys and values to create a final hash.
 
-You may want to encrypt and decrypt data for transmission purposes. This is where `cipher` and `decipher` functions come in. You encrypt data with `cipher` and decrypt it with `decipher`. Also, you may want to encrypt data before storing it in the database. You use the `cipher` function.
+You may want to encrypt and decrypt data for transmission purposes. This is where `cipher` and `decipher` functions come in. You encrypt data with `cipher` and decrypt it with `decipher`. Also, you may want to encrypt data before storing it in the database.
 
-To verify encrypted or hashed passwords to validate they are correct. It would be best if you had a `verify` function. All those are reasons why developers use the `crypto` module in Node.js applications. Let us explore data encryption and decryption and how it is implemented in Node.js applications.
+To verify encrypted or hashed passwords, it would be best if you had a `verify` function. Let us explore data encryption and decryption and how it is implemented in Node.js applications using `crypto`.
 
 ### Getting started with a Node.js project
+
 To create a Node.js project, [install Node.js](https://nodejs.org/en/) if it is not installed on your computer. We will create a Node.js project to work with `crypto` where you will learn how to encrypt and decrypt data. To start, execute the following command:
 
 ```Javascript
