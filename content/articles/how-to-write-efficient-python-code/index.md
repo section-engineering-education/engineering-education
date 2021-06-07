@@ -107,7 +107,7 @@ print(squared_nums)
 
 The map function takes two arguments, the function that would modify the data, and the data itself. In our example, we used the lambda function but we could as well have used it without lambdas.
 
-Map function coupled with lambda function allows us to modify our list with just one line of code
+The `map` function coupled with lambda function allows us to modify our list with just one line of code.
 
 Note that we use the `list` function to convert map object back to a list.
 
