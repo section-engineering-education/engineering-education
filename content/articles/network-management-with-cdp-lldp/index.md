@@ -57,16 +57,16 @@ The neighbor device information displayed include:
 - Hold time - is the time it takes for a neighbor device to receive the message containing the neighbor device information.
   
 #### Cisco Discovery Protocol (CDP)
-Cisco Discovery Protocol (CDP) is a cisco-based proprietary protocol enabled on the cisco devices by default to help network administrators collect information about both locally attached and remote devices.
+Cisco Discovery Protocol (CDP) is a Cisco-based proprietary protocol enabled on the Cisco devices by default to help network administrators collect information about both locally attached and remote devices.
 
 Using this protocol, one can gather hardware and protocol information about neighboring devices useful for troubleshooting and network management.
 
-CDP works only on cisco devices and only provides information about connected devices. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
+CDP works only on Cisco devices and only provides information about connected devices. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
 
 #### Link Layer Discovery Protocol (LLDP)
-Link Layer Discovery Protocol (LLDP) functions like the CDP protocol, but it is an industry-standard protocol, not limited to cisco devices only but works in multi-vendor environments.
+Link Layer Discovery Protocol (LLDP) functions like the CDP protocol, but it is an industry-standard protocol, not limited to Cisco devices only but works in multi-vendor environments.
 
-Usually, it is disabled on cisco devices so we must manually configure it as we will see. LLDP sends the LLDP messages containing neighbor information after every 30 seconds and has a hold time of 120 seconds.
+Usually, it is disabled on Cisco devices so we must manually configure it as we will see. LLDP sends the LLDP messages containing neighbor information after every 30 seconds and has a hold time of 120 seconds.
 
 > NOTE: When devices receive both CDP and LLDP massages, they process and discard the messages. They do not forward the messages to other devices on the network.
 
@@ -78,7 +78,7 @@ Consider the network below with two routers connected, two switches each connect
 ![CDP-LLDP Network Configuration](/engineering-education/network-management-with-cdp-lldp/network.jpg)
 
 #### CDP configuration
-For CDP, it's configured on cisco devices only by default. To verify this and display its information `show cdp` command used in the privileged exec mode.
+For CDP, it's configured on Cisco devices only by default. To verify this and display its information `show cdp` command used in the privileged exec mode.
 
 ```bash
 R1>enable
