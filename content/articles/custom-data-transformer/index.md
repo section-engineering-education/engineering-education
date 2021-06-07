@@ -30,7 +30,7 @@ OUR_ROOT_URL = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 OUR_PATH = "datasets/housing"
 OUR_DATA_URL = OUR_ROOT_URL + OUR_PATH + "/housing.tgz"
 
-def fetch_housing_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
+def get_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
       if not os.path.isdir(our_path):
             os.makedirs(our_path)
       zipfile_path = os.path.join(our_path, "housing.tgz")
@@ -39,10 +39,26 @@ def fetch_housing_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
       our_zip_file.extractall(path=our_path)
       our_zip_file.close()
 
+get_data()
 ```
 
 The code is for downloading the data from the url so we won't dwell so much on it.
-We first import the `os` module for interacting with the Operating System. 
-Thereafter, we import the `tarfile` module for acccessing and manipulating tar files.
-Lastly, we import the `urllib` for using url manipulation functions.
+We first import the `os` module for interacting with the Operating System. Thereafter, we import the `tarfile` module for acccessing and manipulating tar files. Lastly, we import the `urllib` for using url manipulation functions.
+ 
+We then set our paths appropriately. In the `get_data()` function, we make a directory for our data, retrieve it from the url then extracting and storing it. So, in youir workijng directory, you will notice a directory called *datasets* created. On opening it, you will get another directory called *housing* with a file named **housing.csv** in it. We will use this file.
+
+We call the function.
+
+We then have this code for loading the csv file.
+
+```python
+import pandas as pd
+
+def load_our_data(our_path=OUR_PATH):
+    our_file_path = os.path.join(our_path, "housing.csv")
+    return pd.read_csv(our_file_path)
+
+load_our_data()
+```
+We first import the `pandas` library  which later loads the csv data from the specified path, `our_file_path`.
 
