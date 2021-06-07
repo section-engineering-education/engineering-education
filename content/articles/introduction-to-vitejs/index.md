@@ -207,29 +207,28 @@ Looking at the project folder we have:
 </html>
 ```
 
-- **package.json:** This file contains the scripts, dependencies, etc.
+- **package.json:** This file contains the scripts, dependencies, etc of the project.
 
-```JSON
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "serve": "vite preview"
-}
-```
+- **vite.config.js:** 
 
-- **vite.config.js:** This file contains project configuration files, from setting a base URL, plugins, where to output build files, and also contains proxies to a back-end service.
+  This file contains project configuration files, setting a base URL, plugins, where to output build files, and also contains proxies to a back-end service.
 
-```JavaScript
-// vite,config.js
-import { defineConfig } from 'vite'
+  ```JavaScript
+  // vite,config.js
+  import { defineConfig } from 'vite'
 
-// https://vitejs.dev/config/
-export default defineConfig()
-```
+  // https://vitejs.dev/config/
+  export default defineConfig()
+  ```
 
 ### Conclusion
 
-So far so good. We have seen how to install Vite.js on our machine, its advantages, and the folder structure of a Vite.js project.
+So far so good. We have seen:
+
+- How to install Vite.js on our machine.
+- Its advantages.
+- How to add CSS preprocessors to the project.
+- Folder structure of a Vite.js project.
 
 Vite is cool, easy to install, and supports scaffolding with other front-end frameworks. It comes in handy when looking for a framework that offers a minified scripts and styles.
 
