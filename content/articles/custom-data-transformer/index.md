@@ -63,6 +63,16 @@ our_dataset = load_our_data()
 ```
 We first import the `pandas` library  which later loads the csv data from the specified path, `our_file_path`.
 
+You can view the data using this codes:
+
+```python
+our_dataset.head()
+```
+
+```python
+housing.info()
+```
+
 #### Cleaning the data
 
 The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that.
@@ -166,4 +176,10 @@ our_dataset_prepared = full_pipeline.fit_transform(housing)
 
 ```
 
-The `ColumnTransformer`
+The `ColumnTransformer` is used to transform columns seperately and combine the features produced by each transformer to form a single feature space.
+
+### Conclusion
+
+We have seen the various steps for getting the data, transforming it and then implementing all the steps in a pipeline. Hope you got some insights.
+
+Have a good one.
