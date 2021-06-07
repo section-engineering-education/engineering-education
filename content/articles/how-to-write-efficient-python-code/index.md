@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/how-to-write-efficient-python-code/hero.jpg
     alt: Python example image
 ---
-As a beginner programmer, writing efficient python code is not the main goal but rather to learn the basic syntax, the flow of the language and how to think like a programmer. But things get interesting when you are trying to advance to an intermediate level developer and really become a true nerd, no pun intended.
+As a beginner programmer, writing efficient python code is not the main goal but rather to learn the basic syntax, the flow of the language, and how to think like a programmer. But things get interesting when you are trying to advance to an intermediate-level developer and become a true nerd, no pun intended.
 
 Writing efficient python code is one of the ways a beginner programmer can advance to become an intermediate programmer and appreciate code readability coupled with the productivity of a developer.
 <!--more-->
@@ -29,7 +29,7 @@ Let's go over the syntax of list comprehension;
 
 *result* = [*transform* *iteration* *filter*]
 
-The __result__ would be the final list containing our data, the __transform__ is the value of each data in our list, it keeps on changing as the value of the iterator changes. The __iteration__ is basically a loop that helps populate our list with the required amount of data. Finally, the __filter__ (optional) is used to filter out the data that we don't want.
+The __result__ would be the final list containing our data, the __transform__ is the value of each data in our list, it keeps on changing as the value of the iterator changes. The __iteration__ is a loop that helps populate our list with the required amount of data. Finally, the __filter__ (optional) is used to filter out the data that we don't want.
 
 Before we take a look at an example of list comprehension, let's take a look at the traditional way of generating a list with data so we can compare the two ways.
 
@@ -61,9 +61,9 @@ nums = ['True' if x % 2 == 0 else 'False' for x in range(20)]
 print(nums)
 ```
 
-With these two examples above, we added the ability to use `if/else` statement in our list comprehension. It should be noted that `elif` statement can't be used within list comprehension.
+With these two examples above, we added the ability to use the `if/else` statement in our list comprehension. It should be noted that the `elif` statement can't be used within list comprehension.
 
-In this section, we learnt about using list comprehension to generate our list for us with data with ease. In the next section, we will be taking a look at `lambda` functions.
+In this section, we learned about using list comprehension to generate our list for us with data with ease. In the next section, we will be taking a look at `lambda` functions.
 
 
 ### Lambda Functions
@@ -121,9 +121,9 @@ print(squared_nums)
 
 The map function takes two arguments, the function that would modify the data, and the data itself. In our example, we used the lambda function but we could as well have used it without lambdas.
 
-The `map` function coupled with lambda function allows us to modify our list with just one line of code.
+The `map` function coupled with the lambda function allows us to modify our list with just one line of code.
 
-Note that we use the `list` function to convert map object back to a list.
+Note that we use the `list` function to convert map objects back to a list.
 
 The second is `filter`, the filter function is used to filter out unwanted data from our list.
 
@@ -139,7 +139,7 @@ print(even_nums)
 ```
 In our example, we are filtering out all odd numbers.
 
-Note that we use the `list` function to convert filter object back to a list.
+Note that we use the `list` function to convert filter objects back to a list.
 
 And finally, the `reduce` function, helps to reduce the items in our list to just one value
 
@@ -159,7 +159,7 @@ In our example, we used the reduce function to add up all the data in our list.
 
 Note that we have to import `reduce` from `functools` before we can use it.
 
-The `map`, `filter` and `reduce` saves us time from creating our own list manipulation function. They are useful for many common cases.
+The `map`, `filter`, and `reduce` save us time from creating our list manipulation function. They are useful for many common cases.
 
 ### Conclusion
 I am glad that you have reached the end of this article, I implore you to start using all this concept you have been introduced within your next python project and check out how it does improve your efficiency as a developer.
