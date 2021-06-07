@@ -20,7 +20,7 @@ Writing efficient python code is one of the ways a beginner programmer can advan
 This tutorial is focused on teaching you how to write efficient python code. By the end of this tutorial, you will be equipped with the tools needed to improve your productivity as a developer. Tools we would be using include `list comprehension`, `lambda`, etc.
 
 ### Prerequisites
-To follow along with this tutorial a basic understanding of python is required as well a python interpreter should be installed on your local environment.
+To follow along with this tutorial, a basic understanding of python is required. A python interpreter should be installed in your local environment.
 
 ### List Comprehension
 List comprehension allows us to generate our list with data using one line of code. This is our first journey in writing efficient python code.
