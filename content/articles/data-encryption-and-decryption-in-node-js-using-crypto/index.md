@@ -221,6 +221,6 @@ This article looked at data encryption and decryption in Node.js using the `cryp
 - Cryptography in Node.js
 - Node.js crypto module
 
-I hope you've a gained a solid knowledge about encryption and decryption and how to use the `crypto` module in Node.js applications to implement encryption and decryption.
+I hope you've gained a solid knowledge about encryption and decryption and how to use the `crypto` module in Node.js applications to implement encryption and decryption.
 
 Happy Coding!
