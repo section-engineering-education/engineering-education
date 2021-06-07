@@ -6,10 +6,10 @@ Docker is the most popular containerization technology and it has quickly become
  
 Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container.
  
-Containerization refers to the packaging of an application and all of its dependencies into a single, compact, and isolated container.
+The packaging of an application and all of its dependencies into a single, efficiently arranged, and isolated container is known as containerization.
  
 ### Why Containerizing an App
-Containerizing an app will enable the app to run in the same fashion irrespective of the computer it runs on.
+Containerizing an app allows it to execute in the same way regardless of the workspace or computer it is deployed on.
  
 A small difference in the version of an external library can change the functionality of your application, making it behave slightly different from a different environment.
  
