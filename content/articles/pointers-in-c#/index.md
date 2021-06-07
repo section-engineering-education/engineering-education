@@ -86,10 +86,8 @@ namespace UnsafeCodeApplication
         {
             unsafe
             {
-                int m = 60;
-                int n = 30;
-                int* ptr1 = &m;
-                int* ptr2 = &n;
+                int m = 60,n=30;
+                int* ptr1 = &m, ptr2 = &n;
                 Console.WriteLine(*ptr1);    
                 Console.WriteLine(*ptr2);    
                 Console.WriteLine((int)ptr1); 
@@ -184,10 +182,8 @@ namespace UnsafeCodeApplication
     {
         public unsafe void Method()
         {
-            int x = 60;
-            int y = 30;
-            int* ptr1 = &x;
-            int* ptr2 = &y;
+            int x = 60,y = 30;
+            int* ptr1 = &x,ptr2 = &y;
             Console.WriteLine(*ptr1);       
             Console.WriteLine(*ptr2);       
             Console.WriteLine((int)ptr1);   
@@ -213,6 +209,8 @@ The output is:
 1748493636
 1748493632
 ```
+> The addresses output may differ from machine to machine, it is determined by the values addresses in your computer.
+
 
 Unmanaged codes are used with the method which has two variables `x` and `y` with values 50 and 20 respectively. Pointers `*ptr1` and `*ptr2` point to their memory addresses.
 
@@ -235,6 +233,7 @@ char *pk = &k;
 void *px = pk; 
 int *pj = (int *) px; 
 ```
+From the example above, the syntax `void *px = pk;` carry out an implicit conversion from pointer type to void * type.  The syntax `int *pj = (int *) px;` carry out a explicit conversion using casting operator from pointer type to int type.
 
 ### Pointers and arrays
 An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program:
@@ -277,6 +276,7 @@ Value of array[4]=50
 Address of the array[4]=-521514336
 
 ```
+> The addresses output may differ from machine to machine, it is determined by the values addresses in your computer.
 
 The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
@@ -297,7 +297,8 @@ namespace UnsafeCodeApplication
         public student(int a, double b)
         {
             studentID = a;
-            fees = b;
+                fees = b;
+            
         }
     };
     class Program
@@ -307,10 +308,9 @@ namespace UnsafeCodeApplication
         {
             unsafe
             {
-                student A1 = new student(005, 45000);
-                student A2 = new student(006, 43333);
-                student* A1_ptr = &A1;
-                student* A2_ptr = &A2;
+                student A1 = new student(005, 45000), A2 = new student(006, 43333);
+
+                student* A1_ptr = &A1, A2_ptr = &A2;
                 Console.WriteLine("Student details 1");
                 Console.WriteLine("student ID: {0} Fees: {1}",
                 A1_ptr->studentID, A1_ptr->fees);
