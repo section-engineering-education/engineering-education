@@ -233,7 +233,8 @@ char *pk = &k;
 void *px = pk; 
 int *pj = (int *) px; 
 ```
-From the example above, the syntax `void *px = pk;` carry out an implicit conversion from pointer type to void * type.  The syntax `int *pj = (int *) px;` carry out a explicit conversion using casting operator from pointer type to int type.
+
+`void *px = pk;` carry out an implicit conversion from pointer type to void * type. `int *pj = (int *) px;` carry out an explicit conversion using casting operator from pointer type to int type.
 
 ### Pointers and arrays
 An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program:
