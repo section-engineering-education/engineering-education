@@ -278,7 +278,7 @@ PM2 allows us to focus on building amazing applications without worrying about t
 
 This is only a small snippet of what you can do with PM2, but you have to try it out yourself to see the power of PM2 that it has to offer.
 
-To find more information about PM2 check out the official docs via [this link](https://pm2.keymetrics.io/)
+To find more information about PM2 check out the official docs via [this link](https://pm2.keymetrics.io/).
 
 I hope you enjoyed reading this article as much as I enjoyed writing it.
 
