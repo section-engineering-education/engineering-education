@@ -112,7 +112,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 rooms,  bedrooms, population, household = 3,4,5,6
 
-class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
+class CustomTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, add_bedrooms_per_room = True):
         self.add_bedrooms_per_room = add_bedrooms_per_room
         
@@ -128,10 +128,20 @@ class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
         else:
             return np.c_[X, rooms_per_household, population_per_household]
 
+attrib_adder = CustomTransformer(add_bedrooms_per_room=False)
+our_extra_attributes = attrib_adder.transform(our_dataset.values            
+
 ```
 
-For our transformer to work smoothly with Scikit-Learn, we should have 3 mthods:
+For our transformer to work smoothly with Scikit-Learn, we should have 3 methods:
 
 1. `fit()`
-2. `fit_transform()`
-3. `
+2. `transform()`
+3. `fit_transform`
+
+The last one is gotten automatically by using the `TransformerMixin` as a base class. The `BaseEstimator` lets us get the `set_params()` and `get_params()` methods that are helpful in hyperparameter tuning.
+
+We get the three extra attributes in the `transform()` method by dividing appropriate attributes e.g to get the rooms per household, we divide the number of rooms by the number of households.
+
+#### Our pipeline
+
