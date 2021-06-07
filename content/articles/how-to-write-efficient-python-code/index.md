@@ -87,7 +87,7 @@ even_or_odd(8)
 ```
 If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable as well serves as the function call.
 
-In this section, we looked at `lambdas` a very quick way of writing function. They don't work for very complex functions. In the next section, we will take a look at three very useful functions namely `map`, `filter`, `reduce`.
+In this section, we looked at `lambdas` a very quick way of writing function. They don't work well for very complex functions. In the next section, we'll take a look at three very useful functions namely `map`, `filter`, and `reduce`.
 
 ### Map, Filter and Reduce
 When working with a list filled with data, `map`, `filter` and `reduce` gives us the ability to perform common list manipulation task that will have taken us a few lines of code to implement.
