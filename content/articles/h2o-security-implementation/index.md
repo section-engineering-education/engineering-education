@@ -24,7 +24,7 @@ Security in the data analytical space is important to consider internally and ex
 
 #### Installation
 
-This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable that most people may not have a Linux OS. One of several solutions for compatibility is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical Pentesting while Ubuntu LTS is a version generally used among individuals.  
+This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable when individuals may not have a Linux OS. One of several solutions for this compatibility issue is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical pen-testing while Ubuntu LTS is a version generally used among individuals.  
 
 For any security mechanism to become stable, generation of authentication files is necessary. Refer to the instructions at the [H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/index.html) website to generate `keystore` and `truststore` authentication files.  
 
@@ -60,7 +60,7 @@ mv ./filename.csv ./offline/
 
 #### Cyberattack Prevention
 
-While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations are well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
+While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations can appear to become a well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
 
 For example, the following Java application can detect SQL keywords and combinations. If a java-based relational database is preferred, this code below can detect and refuse basic SQL injection attacks.  
 
@@ -101,7 +101,7 @@ It is beneficial to include all SQL-oriented commands to stop each attempt of ne
 
 #### Conclusion
 
-Technological cyberattacks can increase as technological complexities allow vulnerabilities. There are a number of mechanisms to secure and protect data. Although when attacks are successful, it is ideal to keep alternative options available to manage risk and recover from impact. Protecting data is one approach to keeping data safe.  
+Technological cyberattacks can increase as technological complexities allow vulnerabilities. There are a number of mechanisms to secure and protect data. When attacks are successful, it is ideal to keep alternative options available to manage risk and recover from impact. Protecting data is one approach to keeping data safe.  
 
 #### Takeaways
 
