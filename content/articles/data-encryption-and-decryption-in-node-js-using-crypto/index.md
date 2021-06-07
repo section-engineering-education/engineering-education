@@ -48,32 +48,33 @@ To verify encrypted or hashed passwords, it would be best if you had a `verify` 
 
 ### Getting started with a Node.js project
 
-To create a Node.js project, [install Node.js](https://nodejs.org/en/) if it is not installed on your computer. We will create a Node.js project to work with `crypto` where you will learn how to encrypt and decrypt data. To start, execute the following command:
+We'll create a Node.js project to work with `crypto` where you'll learn how to encrypt and decrypt data. To start, execute the following command:
 
-```Javascript
+```bash
 npm init -y
 ``` 
 
-By default, the `crypto` module is an in-built Node.js library. But if Node.js is installed manually, `crypto` may not be shipped with it. You can install it by executing the following command.
+By default, the `crypto` module is an in-built Node.js library. But if Node.js is installed manually, `crypto` may not be shipped with it. You can install it by executing the following command:
 
-```Javascript
+```bash
 npm install crypto --save
 ```
 
 You do not need to execute the command if `crypto` is installed using pre-built packages.
 
 ### How to encrypt data in Node.js
+
 To get started, create the `app.js` file and define our encryption functions as shown below.
 
-First, you will require the `crypto` module.
+First, you will import the `crypto` module.
 
-```Javascript
+```JavaScript
 const crypto = require ("crypto");
 ```
 
-While encrypting data, it is vital to use an algorithm. In this project, we use `aes-256-cbc`. The iv (initialization vector) is used. It generates 16 bytes of random data `randomBytes()`. Constant `Securitykey` also generates 32 bytes of random data while data is encrypted. Below is the code.
+While encrypting data, it's vital to use an algorithm. In this project, we use `aes-256-cbc`. The IV (initialization vector) is used here to hold 16 bytes of random data from the `randomBytes()` function. `Securitykey` holds 32 bytes of random data. Below is the code.
 
-```Javascript
+```JavaScript
 const crypto = require("crypto");
 
 const algorithm = "aes-256-cbc"; 
@@ -88,7 +89,7 @@ const message = "This is a secret message";
 const Securitykey = crypto.randomBytes(32);
 ```
 
-To encrypt the data `cipher` function is used. The `cipher` function in our project is made using `createCipheriv()` function from `crypto` module. Pass the first argument as the algorithm we are using, the second argument as the `Securitykey` and `iv` as the third argument.
+To encrypt the data `cipher` function is used. The `cipher` function in our project is made using the `createCipheriv()` function from `crypto` module. Pass the first argument as the algorithm we are using, the second argument as the `Securitykey` and `iv` as the third argument.
 
 To encrypt the message, use the `update()` method on the `cipher`. Then pass the `message` as the first argument, the input encoding (`utf-8`) as a second argument, and the output encoding (`hex`) as the third argument.
 
@@ -116,7 +117,7 @@ const cipher = crypto.createCipheriv("aes-256-cbc", Securitykey, iv);
 let encryptedData = cipher.update(message, "utf-8", "hex");
  ```
 
- The code tells `cipher` to stop encryption using the `final()` method. When the `final()` method is called, the `cipher` can't be used once more to encrypt data. The message is then encrypted, and malicious attackers can't understand the encoded data. Below is an example of how to encrypt data.
+The code tells `cipher` to stop encryption using the `final()` method. When the `final()` method is called, the `cipher` can't be used once more to encrypt data. The message is then encrypted, and malicious attackers can't understand the encoded data. Below is an example of how to encrypt data.
 
  ```Javascript
  // crypto module
@@ -146,13 +147,14 @@ encryptedData += cipher.final("hex");
 console.log("Encrypted message: " + encryptedData);
  ```
 
- Here is the output:
+Here is the output:
 ![Data encryption output](/engineering-education/data-encryption-and-decryption-in-node-js-using-crypto/encrypt.jpg)
 
 ### How to decrypt data in Node.js
+
 Decrypting data follows the same format and steps followed while encrypting data. In our Node.js project, we will use the `decipher` function to decrypt data. Our project encrypts and decrypts data.
 
-Below is an example of how to encrypt data.
+Below is an example of how to encrypt data:
 
 ```Javascript
 // the decipher function
@@ -165,7 +167,7 @@ decryptedData += decipher.final("utf8");
 console.log("Decrypted message: " + decryptedData);
 ```
 
-Follow the below example to encrypt and decrypt data using crypto.
+Follow the below example to encrypt and decrypt data using crypto:
 
 ```Javascript
 // crypto module
@@ -205,12 +207,16 @@ console.log("Decrypted message: " + decryptedData);
 ```
 
 Here is the output:
+
 ![Data encryption and decryption output](/engineering-education/data-encryption-and-decryption-in-node-js-using-crypto/encrypt-decrypt.jpg)
 
 ### Wrapping up
+
 This article looked at data encryption and decryption in Node.js using the `crypto` module. Also, it touched on:
+
 - Cryptography in Node.js
 - Node.js crypto module
 
-I hope the samples given will be handy while encrypting data in Node.js.
+I hope you've a gained a solid knowledge about encryption and decryption and how to use the `crypto` module in Node.js applications to implement encryption and decryption.
+
 Happy Coding!
