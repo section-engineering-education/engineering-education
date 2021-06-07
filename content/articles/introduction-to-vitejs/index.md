@@ -5,8 +5,8 @@ published: true
 url: /introduction-to-vitejs/
 title: Introduction to ViteJS 2.0
 description: This article will provide a detailed introduction on what Vite.js is and how it's superior over other frameworks. It also provides the reader a detailed guide on how to set it up.
-author: 
-date: 2021-06-03T00:00:00-11:00
+author: abdulazeez-saidu
+date: 2021-06-07T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 
 - **Instant server-side rendering:** Contrary to other frameworks, Vite starts the server instantly, taking the dependencies that don't often change and rebuild them using esbuild (an extremely fast javascript bundler).
 
-- **CSS Preprocessors:** To be able use css preprocessors in vite, you have to install its corresponding preprocessor.
+- **CSS Preprocessors:** To be able to use CSS preprocessors in Vite, you have to install its corresponding preprocessor.
 
 - **Mono repo support:** Vite.js provides support for multiple file rendering within the `dist/` folder.
 
@@ -60,7 +60,7 @@ In this tutorial, we are going to install Vite using npm and yarn.
 
 ### Steps
 
-Open your terminal, navigate into the folder you want to install Vite.js and run the following commands:
+Open your terminal, navigate into the folder you want to install Vite.js, and run the following commands:
 
 #### Installing using npm
 
@@ -153,7 +153,7 @@ yarn create @vitejs/app project-name --template react
 ```
 
 #### Adding CSSPreprocessor
-To add css prprocessor in your project,run the follwing commands:
+To add CSS preprocessor in your project, run the following commands:
 
 ``` javascript
  .scss and .sass
@@ -209,7 +209,7 @@ Looking at the project folder we have:
 }
 ```
 
-- **vite.config.js:** This file contains project configuration files, from setting a base url, plugins, where to output build files and also contains proxies to a back-end service.
+- **vite.config.js:** This file contains project configuration files, from setting a base URL, plugins, where to output build files, and also contains proxies to a back-end service.
 
 ```javascript
 // vite,config.js
@@ -228,13 +228,14 @@ export default defineConfig()
 
 ### Conclusion
 
-So far so good, we have seen how to install vitejs on our machine, its advantages, and the structure of its folders.
+So far so good, we have seen how to install Vite.js on our machine, its advantages, and the structure of its folders.
 
-Vite is cool, easy to install and supports scaffolding with other front-end frameworks, it comes handy when looking for a framework that offers a minified scripts and styles.
+Vite is cool, easy to install, and supports scaffolding with other front-end frameworks, it comes in handy when looking for a framework that offers a minified scripts and styles.
 
 Don’t hesitate to read more about [Vite.js](https://www.vitejs.dev).
 
 ### Reference
+
 - www.vitejs.dev
 - www.dev.to
 - www.stackoverflow.com
