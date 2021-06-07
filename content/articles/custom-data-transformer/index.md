@@ -119,7 +119,7 @@ This is where we will create the custom transformer. We will be adding these thr
 
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
-
+#initialising column numbers
 rooms,  bedrooms, population, household = 3,4,5,6
 
 class CustomTransformer(BaseEstimator, TransformerMixin):
