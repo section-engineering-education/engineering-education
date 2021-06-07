@@ -42,7 +42,7 @@ Now that we understand these terminologies, let's get started!
 
 ### Brief overview
 
-Recently, there has been a lot of interest in researching how our brains represent the things that we encounter in our lives. Developing brain-computer interfaces (BCI) that can decode and translate brain signals will depend on us being able to decode more of these signals in a way that is useful for people such as those with paralysis. If you'd like to see more of these researches, feel free to check out [Braingate](https://www.braingate.org/). It is a research company that focuses on developing BCI technologies to restore mobility and communication.
+Recently, there has been a lot of interest in researching how our brains represent the things that we perform in our lives i.e., walking, speaking, and writing. Developing brain-computer interfaces (BCI) that can decode and translate brain signals will depend on us being able to decode more of these signals in a way that is useful for people such as those with paralysis. If you'd like to see more of these researches, feel free to check out [Braingate](https://www.braingate.org/). It is a research company that focuses on developing BCI technologies to restore mobility and communication.
 
 In this article, we will explore how machine learning is used to decode and translate brain neural signals into handwritten texts. Indeed, it is a first of its kind. Previous BCI research has focused on restoring motor skills such as reading and grasping. Not much focus has been put in researching the use of BCI to solve complex behavioral tasks. This article aims to tackle that. 
 
@@ -110,7 +110,7 @@ To avoid bombarding you with a lot of jargon, I've summarized the results of the
 
 3. The character and word error rates reduced by 0.89% and 3.4% respectively when the offline language model system was used. The result from the word error rate is comparable to state-of-the-art speech recognition systems which range between 4-5%. This is well within the accepted range of being usable.
 
-4. As the participant imagined writing the letters and symbols, the sensors implanted in his brain picked up on patterns of electrical activity which the algorithm interpreted to trace the path of his imaginary. 
+4. As the participant imagined writing the letters and symbols, the sensors implanted in his brain picked up on patterns of electrical activity which the algorithm interpreted to trace the path of his imaginary letters and symbols. 
 
 ![Interpretation](/engineering-education/using-machine-learning-to-translate-brain-signals-to-text/interpretation.PNG)
 
@@ -118,7 +118,7 @@ To avoid bombarding you with a lot of jargon, I've summarized the results of the
 
 Impressive, right?
 
-5. Finally, this research proved that as much as someone is paralyzed, the brain signals for movement still remain. Tapping into this can help build BCI systems that can help solve a lot of tasks.
+5. Finally, this research proved that as much as someone is paralyzed, the brain signals for movement still remain functional. Tapping into this can help build BCI systems that can help solve a lot of tasks.
 
 Please find on Github the full code for the paper [here](https://github.com/fwillett/handwritingBCI).
 
