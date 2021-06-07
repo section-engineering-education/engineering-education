@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-typescript-with-nodejs/
+title: How to use TypeScript with Nodejs
+description: This tutorial will provide the readers with a detailed guide no how to use TypeScript with Node.js and how to set up a Node.js project with TypeScript.
+author: faith-musyoka
+date: 2021-06-07T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-use-typescript-with-nodejs/hero.jpg
+    alt: How to use TypeScript with Nodejs Image
+---
 Typescript, a JavaScript superset, is gaining tremendous popularity among developers. It incorporates every JavaScript feature with supplementary traits such as static typing, and type checking.
+<!--more-->
 
 Many factors make Node.js a popular JavaScript framework. Node.js has a strong NPM (Node Package Manager) ecosystem that provides open-source code (packages) that you can use in any of your Node.js projects. Check out [this fantastic article](/why-node-js-is-popular/) to learn more about why Node.js is a popular framework. Node.js is great for making server-side applications, but it lacks some modern components such as type checking. A Node.js codebase can also be very hard to maintain.
 
@@ -53,7 +70,7 @@ Let's edit this config file to include the necessary option for running Typescri
 
 - `"target": "es6"` - One key thing you need to define is the version of JavaScript the compiler will output. If you need more advanced JavaScript features, such as using the arrow functions, `const`, and `let`, you can choose to use ES6 or a higher version. The target option allows you to use and follow the new JavaScript patterns. Most of today's browsers only understand the es6 version of JavaScript. We need to tell the Typescript compiler to transpile our Typescript code into es6 JavaScript.
 
-- `"module": "commonjs"` - this is the JavaScript module formatting system for structuring and organizing JavaScript code. This let's the compiler use module functions such as `require()` and objects such as `module.exports`.
+- `"module": "commonjs"` - this is the JavaScript module formatting system for structuring and organizing JavaScript code. This lets the compiler use module functions such as `require()` and objects such as `module.exports`.
 
 - `"rootDir": "./src"` - a directory where the input Typescript files are stored. I named the folder are `src`.
 
