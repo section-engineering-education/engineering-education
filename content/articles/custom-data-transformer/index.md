@@ -58,7 +58,80 @@ def load_our_data(our_path=OUR_PATH):
     our_file_path = os.path.join(our_path, "housing.csv")
     return pd.read_csv(our_file_path)
 
-load_our_data()
+our_dataset = load_our_data()
+
 ```
 We first import the `pandas` library  which later loads the csv data from the specified path, `our_file_path`.
 
+#### Cleaning the data
+
+The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that.
+
+```python 
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy="median")
+
+our_dataset_num = our_dataset.drop("ocean_proximity", axis=1)
+imputer.fit(our_dataset_num)
+X = imputer.transform(our_dataset_num)
+our_dataset_num = pd.DataFrame(X, columns=our_dataset_num.columns)
+
+```
+
+We drop the *ocean_proximity* attribute because it's a text attribute which will handle in the next section.
+
+The result produced is an array so we convert it to a DataFrame.
+
+#### Handling text and categorical attributes
+
+We cannot handle text and numerical attributes in the same manner e.g we cannot compute the median of text.
+
+We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly.
+
+```python
+from sklearn.preprocessing import OrdinalEncoder
+
+our_text_cats = our_dataset[['ocean_proximity']]
+our_encoder = OrdinalEncoder()
+our_encoded_dataset = our_encoder.fit_transform(our_text_cats)
+
+```
+
+### Our transformer
+
+This is where we will create the custom transformer. We will be adding these three attributes:
+- Rooms per household
+- Population per household
+- Bedrooms per household
+
+```python
+
+import numpy as np
+from sklearn.base import BaseEstimator, TransformerMixin
+
+rooms,  bedrooms, population, household = 3,4,5,6
+
+class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
+    def __init__(self, add_bedrooms_per_room = True):
+        self.add_bedrooms_per_room = add_bedrooms_per_room
+        
+    def fit(self, X, y = None):
+        return self
+    
+    def transform(self, X, y = None):
+        rooms_per_household = X[:, rooms] / X[:, household]
+        population_per_household = X[:, population] / X[:, household]
+        if self.add_bedrooms_per_room:
+            bedrooms_per_room = X[:, bedrooms] / X[:, rooms]
+            return np.c_[X, rooms_per_household, population_per_household, bedrooms_per_room]
+        else:
+            return np.c_[X, rooms_per_household, population_per_household]
+
+```
+
+For our transformer to work smoothly with Scikit-Learn, we should have 3 mthods:
+
+1. `fit()`
+2. `fit_transform()`
+3. `
