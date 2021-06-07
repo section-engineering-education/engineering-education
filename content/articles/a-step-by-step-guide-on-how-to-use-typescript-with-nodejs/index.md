@@ -250,3 +250,6 @@ When developing an extensive application, it's advisable to hook your project wi
 Typescript will help you in the development process so that you don't struggle with bugs and minor errors. It catches errors during compilation and before code runtime. This gives you an eye ahead to figure out and fix runtime errors. This will improve your development speed, especially when building an extensive application.
 
 Typescript has become a [popular language](/engineering-education/typescript-static-typing/) among JavaScript developers. Check this [tutorial](/engineering-education/a-friendly-beginner-guide-to-typescript/) and learn how to get started with Typescript.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
