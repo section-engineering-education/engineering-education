@@ -124,7 +124,9 @@ We used two variables `a` and `b` with the values of 60 and 30 respectively, and
 ### Pinning an object 
 Pinning an object in C# entails restricting an object from moving into the [garbage collector](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
 
-Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated. On the managed heap, reference types are managed. 
+Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated.
+
+ On the managed heap, reference types are managed. 
 
 After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of.
 
@@ -279,7 +281,9 @@ Address of the array[4]=-521514336
 ```
 > The addresses output may differ from machine to machine, it is determined by the values addresses in your computer.
 
-The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
+The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. 
+
+We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
 ### Pointers and structure
 In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. For example:
@@ -333,7 +337,9 @@ Students details 2
 Student ID: 6 Fees: 43333
 ```
 
-The structure `student` with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value-type rather than reference-type structures. There are two main method variables for students and fees pointers, initialized with `A1` and `A2` addresses. Console.writeline() is used to display student's details and fees.
+The structure `student` with student ID and fees configure the builder to initialize values. Pointers indicate structures that contain primitive value-type rather than reference-type structures. 
+
+There are two main method variables for students and fees pointers, initialized with `A1` and `A2` addresses. Console.writeline() is used to display student's details and fees.
 
 ### Conclusion
 Pointers show the memory address and execute unmanaged codes, as we have discovered. The reason behind why the unsafe statements are used is that the garbage collector does not track memory addresses in an unmanaged environment. Pointers are applied in queue and stack data types.
