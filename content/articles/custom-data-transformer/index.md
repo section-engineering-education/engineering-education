@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In machine learning, a data transformer is a tool used to make a dataset fit for the training process. Scikit-Learn is a Python library containing methods that help us achieve ou r machine learning process faster. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create your own custom transformer for your data.
+In machine learning, a data transformer is a tool used to make a dataset fit for the training process. Scikit-Learn is a Python library containing methods that help us achieve our machine learning process faster. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
 
 In this article, we will look at how to do that.
 
@@ -11,7 +11,7 @@ In this article, we will look at how to do that.
 1. A good understanding of the Python language.
 2. Familiarity with the Numpy and Pandas library.
 3. A basic knowledge in using Jupyter Notebooks or any other notebook-based technology e.g Google Colabs.
-4. Python and the above mentioned libraries installed.
+4. Python and the above-mentioned libraries installed.
 
 Let's jump into it.
 
@@ -43,13 +43,13 @@ get_data()
 ```
 
 The code is for downloading the data from the url so we won't dwell so much on it.
-We first import the `os` module for interacting with the Operating System. Thereafter, we import the `tarfile` module for acccessing and manipulating tar files. Lastly, we import the `urllib` for using url manipulation functions.
+We first import the `os` module for interacting with the Operating System. Thereafter, we import the `tarfile` module for accessing and manipulating tar files. Lastly, we import the `urllib` for using URL manipulation functions.
  
-We then set our paths appropriately. In the `get_data()` function, we make a directory for our data, retrieve it from the url then extracting and storing it. So, in youir workijng directory, you will notice a directory called *datasets* created. On opening it, you will get another directory called *housing* with a file named **housing.csv** in it. We will use this file.
+We then set our paths appropriately. In the `get_data()` function, we make a directory for our data, retrieve it from the URL then extracting and storing it. So, in your working directory, you will notice a directory called *datasets* created. On opening it, you will get another directory called *housing* with a file named **housing.csv** in it. We will use this file.
 
 We call the function.
 
-We then have this code for loading the csv file.
+We then have this code for loading the CSV file.
 
 ```python
 import pandas as pd
@@ -61,9 +61,9 @@ def load_our_data(our_path=OUR_PATH):
 our_dataset = load_our_data()
 
 ```
-We first import the `pandas` library  which later loads the csv data from the specified path, `our_file_path`.
+We first import the `pandas` library which later loads the CSV data from the specified path, `our_file_path`.
 
-You can view the data using this codes:
+You can view the data using these codes:
 
 ```python
 our_dataset.head()
@@ -89,7 +89,7 @@ our_dataset_numeric = pd.DataFrame(X, columns=our_dataset_num.columns)
 
 ```
 
-We drop the *ocean_proximity* attribute because it's a text attribute which will handle in the next section.
+We drop the *ocean_proximity* attribute because it's a text attribute that will handle in the next section.
 
 The result produced is an array so we convert it to a DataFrame.
 
@@ -176,10 +176,10 @@ our_dataset_prepared = full_pipeline.fit_transform(housing)
 
 ```
 
-The `ColumnTransformer` is used to transform columns seperately and combine the features produced by each transformer to form a single feature space.
+The `ColumnTransformer` is used to transform columns separately and combine the features produced by each transformer to form a single feature space.
 
 ### Conclusion
 
-We have seen the various steps for getting the data, transforming it and then implementing all the steps in a pipeline. Hope you got some insights.
+We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. Hope you got some insights.
 
 Have a good one.
