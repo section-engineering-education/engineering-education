@@ -15,6 +15,8 @@ In this article, we will look at how to do that.
 
 Let's jump into it.
 
+> The code snippets are tailored for a notebook but you can as well use normal python files.
+
 ### Getting Started
 
 #### Loading the data
