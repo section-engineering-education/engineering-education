@@ -1,8 +1,6 @@
 ---
 title: Linet Achieng
-type: engineering-education/author
+type: authors
 ---
-Linet Achieng is an Electrical engineering student at the Technical University of Mombasa.
- She does Artificial Intelligence and Machine Learning.
- Her hobbies are traveling, reading novels and scatting.
+Linet Achieng is an Electrical engineering student at the Technical University of Mombasa. She likes to learn about Artificial Intelligence and Machine Learning. Her hobbies are traveling, reading novels, and scatting.
 
