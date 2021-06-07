@@ -64,7 +64,7 @@ Open your terminal, navigate into the folder you want to install Vite.js, and ru
 
 #### Installing using npm
 
-```javascript
+```bash
 npm init @vitejs/app
 ```
 
@@ -72,31 +72,31 @@ Follow the prompts to continue:
 
 After a successful installation, run the following commands:
 
-```javascript
+```bash
 cd project-folder-name
 ```
 
 To install all the dependencies, run:
 
-```javascript
+```bash
 npm i
 ```
 
 To start the development server run:
 
-```javascript
+```bash
 npm run dev
 ```
 
 To run the build server, execute this command:
 
-```javascript
+```bash
 npm run build
 ```
 
 #### Installing using yarn
 
-```javascript
+```bash
 yarn create @vitejs/app
 ```
 
@@ -104,31 +104,32 @@ Follow the prompts to continue:
 
 After a successful installation, run the following commands:
 
-```javascript
+```bash
 cd project-folder-name
 ```
 
 To install all the dependencies, run this command:
 
-```javascript
+```bash
 yarn
 ```
 
 To start the development server, run:
 
-```javascript
+```bash
 yarn run dev
 ```
 
 To start the build server, run:
 
-```javascript
+```bash
 yarn run build
 ```
 
 ### Scaffolding Vite.js project
 
-- Vite.js also supports template scaffolding for other frameworks like,
+Vite.js also supports template scaffolding for other frameworks like:
+
 - Vue
 - React
 - Vanilla
@@ -142,13 +143,13 @@ All you have to do is to specify the project name and the desired template.
 
 To scaffold Vite plus react, just run the following commands:
 
-```javascript
+```bash
 npm init @vitejs/app project-name --template react
 ```
 
 **OR**
 
-```javascript
+```bash
 yarn create @vitejs/app project-name --template react
 ```
 
@@ -218,7 +219,7 @@ Looking at the project folder we have:
 
 - **vite.config.js:** This file contains project configuration files, from setting a base URL, plugins, where to output build files, and also contains proxies to a back-end service.
 
-```javascript
+```JavaScript
 // vite,config.js
 import { defineConfig } from 'vite'
 
@@ -226,26 +227,13 @@ import { defineConfig } from 'vite'
 export default defineConfig()
 ```
 
-### Keywords
-
-- NPM: Node Package Manager
-- HMR: Hot Module Replacement
-- API: Application Programming Interface
-- CSS: Cascading Style Sheets
-
 ### Conclusion
 
-So far so good, we have seen how to install Vite.js on our machine, its advantages, and the structure of its folders.
+So far so good. We have seen how to install Vite.js on our machine, its advantages, and the folder structure of a Vite.js project.
 
-Vite is cool, easy to install, and supports scaffolding with other front-end frameworks, it comes in handy when looking for a framework that offers a minified scripts and styles.
+Vite is cool, easy to install, and supports scaffolding with other front-end frameworks. It comes in handy when looking for a framework that offers a minified scripts and styles.
 
 Don’t hesitate to read more about [Vite.js](https://www.vitejs.dev).
-
-### Reference
-
-- www.vitejs.dev
-- www.dev.to
-- www.stackoverflow.com
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
