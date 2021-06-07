@@ -23,29 +23,35 @@ This tutorial is focused on teaching you how to write efficient python code. By 
 To follow along with this tutorial, a basic understanding of python is required. A python interpreter should be installed in your local environment.
 
 ### List Comprehension
-List comprehension allows us to generate our list with data using one line of code. This is our first journey in writing efficient python code.
+List comprehension is a technique of creating a list containing data with a single line of code. It's common in various programming languages including Python. 
 
-Let's take a look at the traditional way of generating our list with data.
+Let's go over the syntax of list comprehension;
 
-```py
+*result* = [*transform* *iteration* *filter*]
+
+The __result__ would be the final list containing our data, the __transform__ is the value of each data in our list, it keeps on changing as the value of the iterator changes. The __iteration__ is basically a loop that helps populate our list with the required amount of data. Finally, the __filter__ (optional) is used to filter out the data that we don't want.
+
+Before we take a look at an example of list comprehension, let's take a look at the traditional way of generating a list with data so we can compare the two ways.
+
+```python
 nums = []
 for x in range(10):
-  nums.append(x)
+    nums.append(x)
 
 print(nums)
 ```
 It took us about 3 lines of code. Let's try to be more efficient using `list comprehension`.
 
-```py
+```python
 nums = [x for x in range(10)]
 
 print(nums)
 ```
 Voilà, just one line of code to achieve the earlier result. It is way quicker to write once you understand the syntax and flow of `list comprehension`.
 
-Let's take a look at two more complex examples.
+Let's take a look at two more complex examples by adding __filters__.
 
-```py
+```python
 nums = [x for x in range(20) if x % 2 != 0]
 
 print(nums)
@@ -61,27 +67,35 @@ In this section, we learnt about using list comprehension to generate our list f
 
 
 ### Lambda Functions
-`Lambda` function is basically a one-line function in python. They are also anonymous function because they are nameless.
+`Lambda` functions is a technique in Python of written our functions on a single line. They are regarded as anonymous (nameless) functions. They are also not suited for complex functions. Just like with list comprehension, they make our code small and concise.
 
-Let's take a look at an example of a regular function in Python.
+Let's take a look at the syntax;
 
-```py
+__lambda__ arguments: expression
+
+The value at the left is referred to as the arguments, while the values at the right are the expression. Let's break the syntax further.
+
+__lambda__ arguments: value_to_return __if__ condition __else__ value_to_return
+
+Before we take a look at an example of lambda functions, let's take a look at an example of a regular function in Python so we can compare the two ways.
+
+```python
 def even_or_odd(n):
-  if n % 2 == 0:
-    return "Even"
-  else:
-    return "Odd"
+    if n % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
 
 print(even_or_odd(10))
 ```
 This took us about five lines of code to write, with `lambdas` I'm happy to say that it'll only take only one line.
 
-```py
+```python
 print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
 ```
 We can also store them inside variables.
 
-```py
+```python
 even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
 even_or_odd(8)
 ```
@@ -96,7 +110,7 @@ The first on the list is `map`. With the `map` function we can modify our list h
 
 Let's take a look at an example.
 
-```py
+```python
 # Example of a map function
 nums = [1, 2, 3, 4, 5]
 
@@ -115,7 +129,7 @@ The second is `filter`, the filter function is used to filter out unwanted data 
 
 Let's take a look at an example.
 
-```py
+```python
 # Example of a filter function
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -131,7 +145,7 @@ And finally, the `reduce` function, helps to reduce the items in our list to jus
 
 Let's take a look at an example.
 
-```py
+```python
 # Example of a reduce function
 from functools import reduce
 
