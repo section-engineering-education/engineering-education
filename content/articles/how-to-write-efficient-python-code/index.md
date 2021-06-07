@@ -85,7 +85,7 @@ We can also store them inside variables.
 even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
 even_or_odd(8)
 ```
-If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable as well serves as the function call.
+If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable serves as the identifier to call the function.
 
 In this section, we looked at `lambdas` a very quick way of writing function. They don't work well for very complex functions. In the next section, we'll take a look at three very useful functions namely `map`, `filter`, and `reduce`.
 
