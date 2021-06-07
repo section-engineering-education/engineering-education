@@ -1,11 +1,8 @@
 <nav class="section-nav">
   <div class="section-nav-inner flex align-center justify-space-between">
     <div class="section-nav-primary flex align-center">
-      {{ if not .IsHome }}
-      <a href="/" class="section-logo decoration-none">
-      {{ else }}
-      <span href="/" class="section-logo decoration-none">
-      {{ end }}
+      <a href="https://www.section.io/" class="section-logo decoration-none">
+
         <svg width="117" height="40" aria-label="Section Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
             <path id="logoc" d="M0 39.174h116.87V.437H0z"/>
@@ -23,11 +20,9 @@
             </g>
           </g>
         </svg>
-        {{ if not .IsHome }}
+
       </a>
-      {{ else }}
-      </span>
-      {{ end }}
+   
       <div style="position: relative;" class="section-nav-primary-uncollapsed">
         <ul class="section-nav-main list-flex">
 
@@ -51,7 +46,7 @@
                   <li class="xs-mb-10 xs-mt-20 text-15 text-blue"><strong>AppStack</strong></li>
                   <li class="xs-mb-10"><a href="/modules/nodejs-edge-hosting/" class="text-15 text-color decoration-none">Node.js Edge Hosting</a></li>
                   <li class="xs-mb-10 xs-mt-20 text-15 text-blue"><strong>RunStack</strong></li>
-                  <li class="xs-mb-10"><a href="/modules/custom-edge-workload/" class="text-15 text-color decoration-none">Containers</a></li>
+                  <li class="xs-mb-10"><a href="/modules/edge-containers-as-a-service/" class="text-15 text-color decoration-none">Containers</a></li>
                   <li class="xs-mb-10"><a href="/modules/custom-edge-workload/" class="text-15 text-color decoration-none">Serverless</a></li>
                 </ul>
               </ul>
@@ -86,7 +81,11 @@
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources">Edge Content Library</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/solution-briefs">Solution Briefs</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/videos">Product Videos</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education">Engineering Education</a></li>
+              {{ if hugo.Environment | eq "development" }}
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/">Engineering Education</a></li>
+              {{ else }}
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/">Engineering Education</a></li>
+              {{ end }}
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about">About Section</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/solutions-partners">Partners</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/changelog">Changelog</a></li>
@@ -115,11 +114,9 @@
   </div>
   <div class="section-nav-mobile fill-green">
     <div class="section-nav-mobile-wrap">
-      {{ if not .IsHome }}
-      <a href="/" class="section-logo decoration-none">
-      {{ else }}
-      <span href="/" class="section-logo decoration-none">
-      {{ end }}
+      
+      <a href="https://www.section.io/" class="section-logo decoration-none">
+    
         <svg width="117" height="39" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <path id="a" d="M0 38.884h117V.057H0z"/>
@@ -135,11 +132,9 @@
           </g>
         </g>
       </svg>
-      {{ if not .IsHome }}
+ 
       </a>
-      {{ else }}
-      </span>
-      {{ end }}
+    
       <div class="section-nav-triggers-close pointer"><span> <svg width="20" height="19" xmlns="http://www.w3.org/2000/svg">
         <g fill="#FFF" fill-rule="nonzero">
           <path d="M2.575-.046l16.97 16.97-2.12 2.122L.455 2.076z"/>
@@ -182,7 +177,11 @@
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources">Content Library</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/solution-briefs">Solution Briefs</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/changelog">Changelog</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education">Engineering Education</a></li>
+            {{ if hugo.Environment | eq "development" }}
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/">Engineering Education</a></li>
+            {{ else }}
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/">Engineering Education</a></li>
+            {{ end }}
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/solutions-partners">Partners</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about">About Section</a></li>
           </ul>
