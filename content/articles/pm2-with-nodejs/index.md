@@ -82,7 +82,7 @@ Node.js allows you to use Microservices that further lets you segregate your app
 
 ### What is PM2?
 
-PM2 is a free open source, advanced, efficient, and cross-platform production-level process manager for Node.js with a built-in load balancer. It works on Linux, macOS as well as Windows. It supports app monitoring, efficient management of micro-services/processes, graceful start and shutdown of apps.
+PM2 is a free open source, advanced, efficient, and cross-platform production-level process manager for Node.js with a built-in load balancer. It works on Linux, macOS as well as Windows. It supports app monitoring, efficient management of micro-services/processes, graceful start, and shutdown of apps.
 It keeps your apps “alive forever” with auto restarts and can be enabled to start at system boot, thus allowing for High Availability (HA) configurations.
 
 ### Why PM2?
