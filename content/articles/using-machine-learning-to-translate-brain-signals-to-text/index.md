@@ -89,7 +89,7 @@ Now that they were successful in representing neural activities in their respect
 
 Let's see how they went about with this.
 
-They achieved this by using a Recurrent Neural Network (RNN). You can read more about RNN's [here](https://en.wikipedia.org/wiki/Recurrent_neural_network).
+They achieved this by using a Recurrent Neural Network (RNN). You can read more about RNNs [here](https://en.wikipedia.org/wiki/Recurrent_neural_network).
 
 The RNN is trained to convert the brain's neural activity data into probabilities. These probabilities describe the likelihood of each character being written within a certain window of time. It assigns the probability of that data being associated with any particular character or sign based on the embedding that we explained earlier. 
 
