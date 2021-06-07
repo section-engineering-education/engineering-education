@@ -195,7 +195,7 @@ console.log("Decrypted message: " + decryptedData);
 ```
 
 Here is the output:
-![Data encryption output](/engineering-education/data-encryption-and-decryption-in-node-js-using-crypto/encrypt-decrypt.jpg)
+![Data encryption and decryption output](/engineering-education/data-encryption-and-decryption-in-node-js-using-crypto/encrypt-decrypt.jpg)
 
 ### Wrapping up
 This article looked at data encryption and decryption in Node.js using the `crypto` module. Also, it touched on:
