@@ -15,7 +15,7 @@ images:
 ---
 As a beginner programmer, writing efficient python code is not the main goal but rather to learn the basic syntax, the flow of the language and how to think like a programmer. But things get interesting when you are trying to advance to an intermediate level developer and really become a true nerd, no pun intended.
 
-Writing efficient python code is one of the ways a beginner programmer can advance to become an intermediate programmer and really appreciate code readability coupled with the productivity of a developer.
+Writing efficient python code is one of the ways a beginner programmer can advance to become an intermediate programmer and appreciate code readability coupled with the productivity of a developer.
 <!--more-->
 This tutorial is focused on teaching you how to write efficient python code. By the end of this tutorial, you will be equipped with the tools needed to improve your productivity as a developer. Tools we would be using include `list comprehension`, `lambda`, etc.
 
