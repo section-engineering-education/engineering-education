@@ -1,6 +1,23 @@
-# GETTING STARTED WITH CSS
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-css/
+title: Getting Started With CSS
+description: In this article we will go over how to select elements using different styles, doing various manipulations to the elements selected, changing the font and width of an element , and lastly, using CSS to style HTML.  
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-css/hero.jpg
+    alt: CSS beginners 
+---
 CSS is an abbreviation for cascading style sheets. It is a  language used to style the display of a document written in a markup language like HTML. Alongside HTML and JavaScript, CSS is a foundational technology of the worldwide web.
+
+<!--more-->
+
 ## Functions of CSS
 CSS helps developers change the presentation of web pages and make them responsive to different types of gadgets. It also helps them apply elements like lists and headings consistently throughout the site pages.
 
@@ -190,3 +207,5 @@ This should also be incorporated into your HTML element like this;
 
    3.[rapidtables](https://www.rapidtables.com/web/color/RGB_Color.html)
 
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
