@@ -50,7 +50,7 @@ File permission is one of several options to access a data file. Reading, writin
 import os, sys, stat
 os.chmod(“./filename.csv”,  stat.S_IRGRP)
 ```
-This code below can move filename.csv to an offline folder and can no longer be accessible online at any time. Moving a file to a different online folder location.  
+This code below can move filename.csv to an offline folder and can no longer be accessible online at any time. Moving a file to a different online folder location without general access is another option.  
 
 ```bash
 mv ./filename.csv ./offline/
