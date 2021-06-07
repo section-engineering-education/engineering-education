@@ -26,9 +26,9 @@ It is assumed that the reader possesses the following:
 
 - Basic understanding of JavaScript or TypeScript
 
-- [Node.js](www.nodejs.org) version 12 or later.
+- [Node.js](https://www.nodejs.org) version 12 or later.
 
-- Preferred text editor (Recommended: [VS Code](code.visualstudio.com))
+- Preferred text editor (Recommended: [VS Code](https://code.visualstudio.com))
 
 ### Why Vite.js?
 
