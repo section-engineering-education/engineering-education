@@ -75,7 +75,7 @@ imputer = SimpleImputer(strategy="median")
 our_dataset_num = our_dataset.drop("ocean_proximity", axis=1)
 imputer.fit(our_dataset_num)
 X = imputer.transform(our_dataset_num)
-our_dataset_num = pd.DataFrame(X, columns=our_dataset_num.columns)
+our_dataset_numeric = pd.DataFrame(X, columns=our_dataset_num.columns)
 
 ```
 
@@ -128,7 +128,7 @@ class CustomTransformer(BaseEstimator, TransformerMixin):
         else:
             return np.c_[X, rooms_per_household, population_per_household]
 
-attrib_adder = CustomTransformer(add_bedrooms_per_room=False)
+attrib_adder = CustomTransformer()
 our_extra_attributes = attrib_adder.transform(our_dataset.values            
 
 ```
@@ -144,4 +144,26 @@ The last one is gotten automatically by using the `TransformerMixin` as a base c
 We get the three extra attributes in the `transform()` method by dividing appropriate attributes e.g to get the rooms per household, we divide the number of rooms by the number of households.
 
 #### Our pipeline
+For the data transformation steps to be executed in the correct order, we implement them in a pipeline.
 
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+
+numeric_pipeline = Pipeline([
+        ('imputer', SimpleImputer(strategy="median")),
+        ('attribs_adder', CustomTransformer()),
+    ])
+numeric_attribs = list(our_dataset_numeric)
+text_attribs = ["ocean_proximity"]
+
+our_full_pipeline = ColumnTransformer([
+        ("numeric", numeric_pipeline, numeric_attribs),
+        ("text", OrdinalEncoder(), text_attribs),
+    ])
+
+our_dataset_prepared = full_pipeline.fit_transform(housing)
+
+```
+
+The `ColumnTransformer`
