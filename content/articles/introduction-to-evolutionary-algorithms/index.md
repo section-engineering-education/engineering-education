@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-evolutionary-algorithms/hero.png 
+  - url: /engineering-education/introduction-to-evolutionary-algorithms/Hero.png 
     alt: Introduction to Evolutionary Algorithms Hero Image
 ---
 A computer program is built to follow rigid and explicit rules. This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. 
