@@ -1,5 +1,5 @@
 ### Getting started with Node.js and JIMP image processing
-In a web application that involves dealing with images, image editing is important. When images are resized to a given dimensions before storing or adding watermark to images for branding purpose i.e Tik tok adds their logo to images and videos for branding purposes.
+JIMP eliminates the boilerplate code required to resize images to a given dimension before storing or adding watermark to images for branding purposes.
 
 In a Node.js application, [Javascript Image Manipulation Program](https://github.com/oliver-moran/jimp) makes it easier to manipulate images to achieve whatever design we want. JIMP provides the functionality to crop, resize, blur, and add effects to Images.
 
@@ -16,6 +16,7 @@ In a Node.js application, [Javascript Image Manipulation Program](https://github
   - [Rotating an image](#rotating-an-image)
   - [Blurring an image](#blurring-an-image)
   - [Adding an image overlay](#adding-an-image-overlay)
+  - [Running the program](#running-the-program)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -44,7 +45,7 @@ JIMP supports several image formats which includes:-
 - `@jimp/gif`
 
 #### Reading an image 
-JIMP is built on the callback and promise base APIS for image manipulations. We use the JIMP static method `jimp. read` to read the image that is to be processed. `jimp. read` takes an image as the input.
+JIMP is built on the callback and promise based APIS for image manipulations. We use the JIMP static method `jimp. read` to read the image that is to be processed. `jimp. read` takes an image path as the input.
 
 `jimp. read` image input can be:-
 1. URL to the image.
@@ -83,10 +84,10 @@ async function resize() {
 resize();
 ```
 
-Original image.
+Original image:
 ![Original image](/engineering-education/jimp-image-processing/original-image.jpg)
 
-Resized image.
+Resized image:
 ![Resized image](/engineering-education/jimp-image-processing/resized-image.png)
 
 `Jimp. AUTO` can be passed in the place of height or width to resize the image while maintaining the aspect ratio. `Jimp. AUTO` can only be passed for either height or width at a time.
@@ -167,7 +168,7 @@ async function blur() {
 }
 blur()
 ```
-Blurred image
+Blurred image:
 ![Blurred image](/engineering-education/jimp-image-processing/blurred-image.png)
 
 #### Adding an image overlay
@@ -199,9 +200,16 @@ async function waterMark(waterMarkImage) {
 }
 waterMark('https://destatic.blob.core.windows.net/images/nodejs-logo.png');
 ```
-Overlay image:
+Watermarked image:
 
 ![Watermarked image](/engineering-education/jimp-image-processing/watermarked-image.png)
+
+#### Running the program
+1. On the terminal, navigate to the project directory.
+2. Execute the command below to run our program.
+   ```bash
+   $ node index.js
+   ```
 
 ### Conclusion
 Now that you have learned how to use JIMP in a Node.js application, add watermarks to images that users upload to your Node.js application using JIMP. You can download the full source code [here](https://replit.com/@flavianadhiambo/image-editing#index.js).
