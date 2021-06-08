@@ -4,50 +4,57 @@ status: publish
 published: true
 url: /goole-sheets-api-in-nodejs/
 title: Getting Started with Google sheets API in Node.js
-description: This tutorial explains a step by step tutorial on how to integrate Google sheets API into a Node.js application
+description: This tutorial will go through a step by step tutorial on how to integrate Google sheets API into a Node.js application
 author: mia-roberts
-date: 2021-06-08T00:00:00-14:00
-topics: [Node.js]
+date: 2021-06-08T00:00:00-12:00
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/google-sheets-api-nodejs/hero.jpg
     alt: Getting Started with Google sheets API in Node.js
 ---
-
-### Introduction.
-Google Sheets API enables programmers to create applications that can read, write, and update a google spreadsheet.
-In advanced stages of programming, google sheets can act as a database from where an application fetches data and renders it to a UI template. However, this tutorial will focus on achieving the functions of Google Sheets using Nodejs. 
-
-### Goal.
-This tutorial aims to demonstrate the functions that can be used to read and write into a google sheet using the google sheets api by building an application that inserts into and reads data from an existing google sheet.
+Google Sheets API enables programmers to create applications that can read, write, and update a Google spreadsheet.
+In advanced stages of programming, Google sheets can act as a database from where an application fetches data and renders it to a UI template. 
+<!--more-->
+However, this tutorial will focus on achieving the functions of Google Sheets using Node.js. 
+### Goal
+This tutorial aims to demonstrate the functions that can be used to read and write into a Google sheet using the Google sheets API by building an application that inserts into and reads data from an existing Google sheet.
 
 ### Prerequisites
-To effectively follow along with me, you need to have the following tools and skills:
-- You will need to have [Nodejs](https://nodejs.org/en/) installed on your computer
-- A basic understanding of Nodejs and javascript
-- Code editor. I will use [visual studio]((https://code.visualstudio.com/download) code.
-- Google Cloud Console.
+To effectively follow along with me, you'll need to have the following tools and skills:
+- You will need to have [Node.js](https://nodejs.org/en/) installed on your computer.
+- A basic understanding of Node.js and JavaScript.
+- A code editor. I will be using [visual studio](https://code.visualstudio.com/download) code.
+- Google cloud console.
 
-### The Google Cloud Console.
-The google cloud console is a web-based platform that enables developers to build and deploy applications on the Google Infrastructure. The platform allows one to create a project them specify the resources to use in the project, or add specific resources to an existing project.
-To use a resource on Google Cloud Console, one needs to have a google account and access credentials for the specific resource he wants to use.
+### The Google cloud console
+The Google cloud console is a web-based platform that enables developers to build and deploy applications on the Google Infrastructure. 
+
+The platform allows one to create a project and specify the resources to be used in the project, or add specific resources to an existing project.
+
+To use a resource on Google Cloud Console, one needs to have a Google account and access credentials for the specific resource we wants to use.
+
 For our case, we will be using Google Sheets API, therefore, we need to have access credentials for the API.
 
 
-### Creating Access Credentials
-We need a client ID and secret to access the drive storage. Follow the steps below to obtain the client secret and ID
+### Creating access credentials
+We need a client ID and secret to access the drive storage. 
+
+Follow the steps below to obtain the client secret and ID:
 1. Visit the [console.cloud.google.com](https://console.cloud.google.com/).
 2. Create a new project if you do not have an existing project.
 3. Select the project and select `APIs and services`.
-4. Click on `ENABLE APIS AND SERVICES`
+4. Click on `ENABLE APIS AND SERVICES`.
 5. In the search box, search for `google sheets API` then enable it for the project created.
-6. Once you have enabled the API, select `CREATE CREDENTIALS` for accessing the API. In the drop-down menu, select `Service Account`. 
+6. Once you have enabled the API, select `CREATE CREDENTIALS` to access the API. In the drop-down menu, select `Service Account`. 
 7. In the next screen, provide the details required then click `CREATE`.
 8. The next two steps are optional, just click `CONTINUE` and then `DONE`.
 9. Copy the email address and save it on the clipboard. Click on the email address to go to the next screen. Under keys, select `Create new key`.
 10. Select `JSON` as the keyType then `Create`. This process downloads a JSON file of the Key.
-11. Move the downloaded JSON file into the same folder as the project and, since the name is too long, we can rename it as `keys.json`. The file should look like the one below:
+11. Move the downloaded JSON file into the same folder as the project and, since the name is too long, we can rename it as `keys.json`. 
+
+The file should look like the one below:
 ```json
 {
   "type": "service_account",
@@ -63,19 +70,22 @@ We need a client ID and secret to access the drive storage. Follow the steps bel
 }
 ```
 
-### Creating a google sheets file.
-Next, we create a google sheet file and share it with the email we copied in step 9 above. From the email, our application will read, edit and update the contents of the google sheets file. Be sure to set the role of the email to `editor`. Our google sheets file will be used to collect article suggestions and their authors as shown below.
-![Google Sheets File](/engineering-education/google-sheets-api-in-nodejs/sheet-file.png)
+### Creating a Google sheets file
+Next, we create a google sheet file and share it with the email we copied in step 9 above. From the email, our application will read, edit, and update the contents of the Google sheets file. 
 
+Be sure to set the role of the email to `editor`. Our Google sheets file will be used to collect article suggestions and their authors as shown below.
+
+![Google Sheets File](/engineering-education/google-sheets-api-in-nodejs/sheet-file.png)
 
 ### Getting started
 Create a directory named `google-sheet-api` by executing the command below.
+
 ```bash
 mkdir google-sheet-api
 cd google-sheet-api
 ```
 
-To create the node application, we will run the command below to initialize an empty `package.json` file. The `package.json` defines the project's useful information such as project version, development dependencies, and other relevant scripts.
+To create the Node.js application, we will run the command below to initialize an empty `package.json` file. The `package.json` defines the project's useful information such as project version, development dependencies, and other relevant scripts.
 
 ```bash
 npm init -y
@@ -145,9 +155,12 @@ app.post("/", async (req, res) => {
 const spreadsheetId = "YOUR SPREADSHEET ID";
 ```
 
-### Writing into the spreadsheet.
+### Writing into the spreadsheet
 We will create a form to collect data and sent it to our spreadsheets. The form will have two fields for the article title and another for the author.
-To create the form, create a folder named `views` then a file called `index.ejs`. In the file created, add the snippets below:
+
+To create the form, create a folder named `views` then a file called `index.ejs`. 
+
+In the file created, add the snippets below:
 
 ```html
 <!DOCTYPE html>
@@ -193,6 +206,7 @@ To create the form, create a folder named `views` then a file called `index.ejs`
 </body>
 </html>
 ```
+
 ![Form to collect data](/engineering-education/google-sheets-api-in-nodejs/form.png)
 
 The function to write into the spreadsheets takes the auth object, spreadsheet ID, and the range of cells to write onto, the value entered by the user, and the resource object containing the information to insert into the rows. 
@@ -239,6 +253,7 @@ app.listen(port, ()=>{
 });
 ```
 Head to your browser on localhost port 3000, fill in the form, and click the submit button. You should have a success message as shown and data entered into the Google Sheets file.
+
 ![success message](/engineering-education/google-sheets-api-in-nodejs/success.png)
 
 
@@ -247,8 +262,10 @@ In this tutorial, we demonstrated how to integrated google sheets api into a nod
 
 You can find the source code for the entire project [here](https://github.com/mia-roberts/google-sheets-api).
 
-### Final Thoughts
-Google Sheets has a wide range of applications. Programmers can explore not only to maximize its functionalities but also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use google sheets to records attendance using QR-codes. Besides, we can use google sheets to extract data from financial websites as [this tutorial](https://www.youtube.com/watch?v=2JX8Y24PAlM) explains. Through proper research, we could understand how to make large-scale applications from the ideas presented in these videos.
+### Final thoughts
+Google Sheets has a wide range of applications. Programmers can explore not only to maximize its functionalities but also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use google sheets to records attendance using QR-codes. 
+
+Besides, we can use google sheets to extract data from financial websites as [this tutorial](https://www.youtube.com/watch?v=2JX8Y24PAlM) explains. Through proper research, we could understand how to make large-scale applications from the ideas presented in these videos.
 
 Good luck coding!
 
