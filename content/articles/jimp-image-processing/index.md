@@ -230,3 +230,6 @@ Watermarked image:
 
 ### Conclusion
 Now that you have learned how to use JIMP in a Node.js application, add watermarks to images that users upload to your Node.js application using JIMP. You can download the full source code [here](https://replit.com/@flavianadhiambo/image-editing#index.js).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
