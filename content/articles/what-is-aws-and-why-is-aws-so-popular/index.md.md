@@ -66,25 +66,25 @@ Let's have a look at the [2020 survey](https://insights.stackoverflow.com/survey
 
 AWS was categorized as a platform with operating systems such as Linux and Windows and container technologies such as Docker and Kubernetes. However, about 26% of the respondents/ developers Used AWS for the development of their work.
 
-![Popular platforms](popular-platforms.png)
+![Popular platforms](/engineering-education/what-is-aws-and-why-is-aws-so-popular/popular-platforms.png)
 
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-platforms-all-respondents5)
 
 The above findings were much higher than AWS's close competitor Google Cloud Platform and Microsoft Azure.
 
-![Cloud service providers](cloud-service-providers.png)
+![Cloud service providers](/engineering-education/what-is-aws-and-why-is-aws-so-popular/cloud-service-providers.png)
 
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-platforms-all-respondents5)
 
 The finding showed that AWS is one of the top platforms that developers love to use.
 
-![Most loved platform](most-loved-platform.png)
+![Most loved platform](/engineering-education/what-is-aws-and-why-is-aws-so-popular/most-loved-platform.png)
 
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-platforms-loved5)
 
 Interestingly, about 26% of these developers who do not use these platforms showed a great interest in building and developing using AWS.
 
-![Most wanted -platform](most-wanted-platform.png)
+![Most wanted -platform](/engineering-education/what-is-aws-and-why-is-aws-so-popular/most-wanted-platform.png)
 
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-platforms-wanted5)
 
@@ -102,7 +102,7 @@ AWS was introduced earlier before its main competitors. This gave AWS an upper h
 
 AWS spans 80 and Availability Zone within 25 geographic regions around the world.
 
-![AWS global infrastructure](aws-global-infrastructure.png)
+![AWS global infrastructure](/engineering-education/what-is-aws-and-why-is-aws-so-popular/aws-global-infrastructure.png)
 
 [Image source](https://aws.amazon.com/about-aws/global-infrastructure/)
 
