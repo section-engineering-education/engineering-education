@@ -1,8 +1,8 @@
-# How to Implement Caching in AdonisJS 5.
+# How to Implement caching in AdonisJS 5.
 
 The performance of a web application is becoming an integral part of the application as many statistics have shown that slow web applications can result in loss of traffic, sales, and incomes in many different ways.
 
-In this article, we will learn how to implement a Caching System on our Forum API developed with AdonisJS and integrate the newly created Caching Package for the new AdonisJS 5 with optimum Caching experience.
+In this article, we will learn how to implement a caching system on our Forum API developed with AdonisJS and integrate the newly created caching Package for the new AdonisJS 5 with optimum caching experience.
 
 In this article, we will continue and improve the performance of the Forum API developed with the [building Restful API with AdonisJS 5 tutorial.](/engineering-education/build-a-restful-api-with-adonisjs/) You can take a peek at what we built in the previous article to know what the API is about.
 
@@ -13,15 +13,15 @@ You should know these before proceeding with this content.
 - Basic understanding of TypeScript and Node.js
 - Basic [understanding of Adonis.js](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
 - Building [APIs with AdonisJS](/engineering-education/build-a-restful-api-with-adonisjs/)
-- Basic [knowledge of Caching](https://masteringbackend.com/posts/caching-strategy-for-restful-api/)
+- Basic [knowledge of caching](https://masteringbackend.com/posts/caching-strategy-for-restful-api/)
 
 ### Goals of the Tutorial
 
-I will be showing you the best practice in handling Caching in Adonisjs, and we will build a real-world Forum app to demonstrate how to boost performance with a good Caching Strategy.
+I will be showing you the best practice in handling caching in Adonisjs, and we will build a real-world Forum app to demonstrate how to boost performance with a good caching Strategy.
 
 Students will learn how to build a high-performance API with Adonisjs
-Students will learn how to implement a Caching System in AdonisJS Restful API
-Students will learn about the concept of Caching and how to scale large App with it.
+Students will learn how to implement a caching system in AdonisJS Restful API
+Students will learn about the concept of caching and how to scale large App with it.
 Students will learn best practices in building performance-oriented Web apps with AdonisJS.
 
 ### Install AdonisJS
@@ -40,7 +40,7 @@ But we will continue with the Forum API we have already developed with the artic
 
 ### Setting up Adonis Cache
 
-After installing and setting up your Adonis 5 RestFul API project, we will install and configure our Caching Package that will simplify implementing our Caching Strategy to the Forum API to improve the performance or response time of the API.
+After installing and setting up your Adonis 5 RestFul API project, we will install and configure our caching Package that will simplify implementing our caching Strategy to the Forum API to improve the performance or response time of the API.
 
 Run the following command to install the Adonis Cache package.
 
@@ -58,7 +58,9 @@ node ace configure @kaperskyguru/adonis-cache
 
 Next, open the `.env` file, inform the Cache Package to use `redis` as our Cache Driver, and move below to configure our Redis server, so our Cache Package can communicate successfully to the Redis Server.
 
-    CACHE_DRIVER=redis
+```bash
+CACHE_DRIVER=redis
+```
 
 The default driver is set to `file`, but you can read the documentation to understand the different drivers and configure them.
 
@@ -88,15 +90,15 @@ node ace invoke @adonisjs/redis
 
 There are more configurations and twerks for even better usage of Redis than the default options we have just accepted. You can read more about Adonis Redis configuration [here](https://docs.adonisjs.com/guides/redis).
 
-### Handling Caching Adonisjs 5
+### Handling caching Adonisjs 5
 
-Before implementing the Caching, you should have [cloned the Forum API project](https://github.com/Kaperskyguru/adonisjs-forum-api), installed and configured Redis Server, AdonisJS Redis, and the Caching Package we will be using in this project.
+Before implementing the caching, you should have [cloned the Forum API project](https://github.com/Kaperskyguru/adonisjs-forum-api), installed and configured Redis Server, AdonisJS Redis, and the caching Package we will be using in this project.
 
 If you have all these checked, we are ready to dive right into the code.
 
-In the world of Caching, there are many Caching Strategies and methods available depending on the structure of your data structure and the different operations performed on the data; you can choose other Caching strategies depending on the features and type of the project.
+In the world of caching, there are many caching Strategies and methods available depending on the structure of your data structure and the different operations performed on the data; you can choose other caching strategies depending on the features and type of the project.
 
-You can read through the [Best Caching Strategy for AdonisJS 5](https://masteringbackend.com/posts/caching-strategy-for-restful-api/) which will show you the different Caching Strategies, and choose which one depending on the features or type of project.
+You can read through the [Best caching Strategy for AdonisJS 5](https://masteringbackend.com/posts/caching-strategy-for-restful-api/) which will show you the different caching Strategies, and choose which one depending on the features or type of project.
 
 We will be using the **Cache Aside Strategy** for all the Read operations and a mixture of **Write Around** and **Write Through Strategy** for the Write operations.
 
@@ -198,11 +200,11 @@ The Write Operations first goes to the Database (Write Around) before updating t
 
 ### Step 3 → Testing the Performance
 
-Now that we have implemented our Caching System in our project, let's run some tests and see how the performance of our API is improved.
+Now that we have implemented our caching system in our project, let's run some tests using ![Postman](https://www.postman.com/) and see how the performance of our API is improved.
 
-We will compare both the previous API without Caching and with Caching to see the difference in seconds.
+We will compare both the previous API without caching and with caching to see the difference in seconds.
 
-First, we have the result of the performance without implementing our Cache System. However, the result is pretty fast, though, comparing the payload, which is minimal, about two ticket collections.
+First, we have the result of the performance without implementing our Cache system. However, the result is pretty fast, though, comparing the payload, which is minimal, about two ticket collections.
 
 So we have a **643ms response time** on our API request.
 
@@ -212,10 +214,10 @@ Next, we will look at the same result set and request but to a Cache endpoint.
 
 ![Test Forum With Cache](/engineering-education/how-to-implement-caching-in-adonisjs-5/forum_cache.png)
 
-At a glance, you will see that there is a significant improvement in the response time from **643 response time** without a Cache to **12ms response time** with a Cache System implemented.
+At a glance, you will see that there is a significant improvement in the response time from **643 response time** without a Cache to **12ms response time** with a Cache system implemented.
 
 ### Conclusion
 
-Caching should be an integral part of the application development process if you need to achieve good performance and speed in your project.
+caching should be an integral part of the application development process if you need to achieve good performance and speed in your project.
 
-How to Implementing Caching in AdonisJS 5 shows precisely how to implement a Caching and improve the response time in your AdonisJS projects.
+How to Implementing caching in AdonisJS 5 shows precisely how to implement a caching and improve the response time in your AdonisJS projects.
