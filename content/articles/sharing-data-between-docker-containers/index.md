@@ -2,30 +2,33 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sharing-data-between-docker-containers/
-title: How to Share Data between Docker Containers
+url: /sharing-data-between-docker-containers/
+title: How to Share Data Between Docker Containers
 description: This article will guide you on how to share data between different Docker containers. Docker volumes can help you persist and manage data.
 author: oruko-pius
-date: 2021-06-12T00:00:00-13:00
-topics: []
+date: 2021-06-07T00:00:00-17:00
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/sharing-data-between-docker-containers/hero.jpg
     alt: Sharing Data between Docker Containers
 ---
 A container is a way of making a program run independently when moved from one environment to another. Containerization, on the other hand, is the process of packaging containers to make it easier to scale them out and enhance their portability.
 <!--more-->
-A Docker container enables you to develop and run your applications from your environment quickly. You can learn more about Docker from [here](https://docs.docker.com/get-started/overview/).
+A Docker container enables you to develop and run your applications from your environment quickly. You can learn more about Docker from [here](/engineering-education/topic/containers/).
 
 ### Prerequisites
-To get started, we have to install Docker on our system. Check out this amazing [article](https://www.section.io/engineering-education/getting-started-with-docker/) on getting started with Docker. 
+To get started, we have to install Docker on our system. Check out this amazing [article](/engineering-education/getting-started-with-docker/) on Getting Started with Docker. 
 
 If you're not using Ubuntu be sure to review the official [documentation](https://docs.docker.com/engine/install/) on how to install Docker on your Operating System environment.
 
 > Note that we will be using `Ubuntu 20.04` in this tutorial.
 
-### Creating an Independent Volume
-Docker volumes are system files that are attached to containers and help to persist data. Docker volumes are also vital when one wants to share data across different containers. Let's get started.
+### Creating an independent volume
+Docker volumes are system files that are attached to containers and help to persist data. Docker volumes are also vital when one wants to share data across different containers. 
+
+Let's get started.
 
 We'll use the `docker volume create` command to create a volume without associating it to any container.
 
@@ -85,7 +88,9 @@ The output is:
 ]
 ```
 
-The output is in a JSON array format. It shows the `timestamp` of the inspection. The `Driver` and `Scope` are both in our local system. However, the `Labels` and `Options` are empty since we did not specify them. The `Mountpoint` shows the path that the volume resides in. The `name` property indicates the volume we are inspecting.
+The output is in a JSON array format. It shows the `timestamp` of the inspection. The `Driver` and `Scope` are both in our local system. 
+
+However, the `Labels` and `Options` are empty since we did not specify them. The `Mountpoint` shows the path that the volume resides in. The `name` property indicates the volume we are inspecting.
 
 Next, let's start a new container and attach `NewVol1`:
 
@@ -103,7 +108,7 @@ root@b4a69fffc60a:/# exit
 exit
 ```
 
-### Creating a Volume from an Existing Directory with Data
+### Creating a volume from an existing directory with data
 In this step, we will create a volume inside a container with data.
 
 At the `/var` path, let's set up a container and add a Docker volume:
@@ -114,7 +119,7 @@ root@976fbd71c0a7:/# exit
 exit
 ```
 
-Note that contents from the `/var` directory are duplicated in the Docker volume. We also attach the volume to the latest container and exit the current directory.
+>Note that contents from the `/var` directory are duplicated in the Docker volume. We also attach the volume to the latest container and exit the current directory.
 
 We are using the `ls` command as opposed to the default `bash` for launching the shell:
 
@@ -127,7 +132,7 @@ The `newvol2` index duplicates the components in the `/var` directory.
 
 Using this method to attach `/var/` helps in rendering the image.
 
-### Sharing Data Between Multiple Docker Containers
+### Sharing data between multiple Docker containers
 More often than not we'll want various containers to mount to similar Docker volume. However, Docker doesn't handle [file locking](https://www.baeldung.com/linux/file-locking). To write various containers to the volume, the current environment of the containers should be a device that supports shared data stores.
 
 #### Creating Container3 and DataVolume3
@@ -147,7 +152,7 @@ exit
 
 We then exit the container and navigate to the host terminal where we create a new container that attaches data volume from `Container3`.
 
-#### Create Container4 and Attach Volumes from Container3
+#### Create Container4 and attach volumes from Container3
 Let's attach `Container3` to the newly created `Container4` as shown below:
 
 ```bash
@@ -189,8 +194,10 @@ root@1ef4d68f08b2:/# exit
 exit
 ```
 
-#### Start Container5 and Attach the Volume Read-Only
-If a container has been mounted by a data volume, we don't unmount it as a typical Linux file. We set up a new container and make the volume read-only. Appending the `:ro` flag at the end of the container name makes it `read-only`, as shown below:
+#### Start Container5 and attach the volume read-only
+If a container has been mounted by a data volume, we don't unmount it as a typical Linux file. We set up a new container and make the volume read-only. 
+
+Appending the `:ro` flag at the end of the container name makes it `read-only`, as shown below:
 
 ```bash
 docker run -ti --name=Container5 --volumes-from Container3:ro ubuntu
@@ -213,7 +220,12 @@ docker volume rm NewVol3
 ```
 
 ### Conclusion
-In this tutorial, you have learned how to create an independent Docker volume that persists data when a container is deleted. It also facilitates data sharing across different containers. The file locking mechanism reduces data corruption. Lastly, we have also learned how to mount a shared volume and make it read-only.
+In this tutorial, we have learned how to create an independent Docker volume that persists data when a container is deleted. It also facilitates data sharing across different containers. 
+
+The file locking mechanism reduces data corruption. Lastly, we have also learned how to mount a shared volume and make it read-only.
+
+### Other resources
+- [Docker](https://docs.docker.com/get-started/overview/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
