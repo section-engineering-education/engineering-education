@@ -76,15 +76,16 @@ While encrypting data, it's vital to use an algorithm. In this project, we use `
 
 The `crypto.randomBytes()` method is used to generate a cryptographically well-built artificial random data and the number of bytes to be generated in the written code.
 
-The IV (initialization vector) is used here to hold 16 bytes of random data from the `randomBytes()` method and `Securitykey` holds 32 bytes of random data.
+The `initVector` (initialization vector) is used here to hold 16 bytes of random data from the `randomBytes()` method and `Securitykey` holds 32 bytes of random data.
 
 ```JavaScript
+// crypto module
 const crypto = require("crypto");
 
 const algorithm = "aes-256-cbc"; 
 
 // generate 16 bytes of random data
-const iv = crypto.randomBytes(16);
+const initVector = crypto.randomBytes(16);
 
 // protected data
 const message = "This is a secret message";
@@ -97,14 +98,14 @@ To encrypt the data `cipher` function is used. The `cipher` function in our proj
 
 To encrypt the message, use the `update()` method on the `cipher`. Then pass the `message` as the first argument, the input encoding (`utf-8`) as a second argument, and the output encoding (`hex`) as the third argument.
 
- ```Javascript
- // crypto module
+ ```JavaScript
+// crypto module
 const crypto = require("crypto");
 
 const algorithm = "aes-256-cbc"; 
 
 // generate 16 bytes of random data
-const iv = crypto.randomBytes(16);
+const initVector = crypto.randomBytes(16);
 
 // protected data
 const message = "This is a secret message";
@@ -113,7 +114,7 @@ const message = "This is a secret message";
 const Securitykey = crypto.randomBytes(32);
 
 // the cipher function
-const cipher = crypto.createCipheriv("aes-256-cbc", Securitykey, iv);
+const cipher = crypto.createCipheriv(algorithm, Securitykey, initVector);
 
 // encrypt the message
 // the input encoding
@@ -123,14 +124,14 @@ let encryptedData = cipher.update(message, "utf-8", "hex");
 
 The code tells `cipher` to stop encryption using the `final()` method. When the `final()` method is called, the `cipher` can't be used once more to encrypt data. The message is then encrypted, and malicious attackers can't understand the encoded data. Below is an example of how to encrypt data.
 
- ```Javascript
+ ```JavaScript
  // crypto module
 const crypto = require("crypto");
 
 const algorithm = "aes-256-cbc"; 
 
 // generate 16 bytes of random data
-const iv = crypto.randomBytes(16);
+const initVector = crypto.randomBytes(16);
 
 // protected data
 const message = "This is a secret message";
@@ -138,8 +139,8 @@ const message = "This is a secret message";
 // secret key generate 32 bytes of random data
 const Securitykey = crypto.randomBytes(32);
 
-// the cipher functionn
-const cipher = crypto.createCipheriv("aes-256-cbc", Securitykey, iv);
+// the cipher function
+const cipher = crypto.createCipheriv(algorithm, Securitykey, initVector);
 
 // encrypt the message
 // the input encoding
@@ -160,9 +161,9 @@ Decrypting data follows the same format and steps followed while encrypting data
 
 Below is an example of how to encrypt data:
 
-```Javascript
+```JavaScript
 // the decipher function
-const decipher = crypto.createDecipheriv("aes-256-cbc", Securitykey, iv);
+const decipher = crypto.createDecipheriv(algorithm, Securitykey, initVector);
 
 let decryptedData = decipher.update(encryptedData, "hex", "utf-8");
 
@@ -173,14 +174,14 @@ console.log("Decrypted message: " + decryptedData);
 
 Follow the below example to encrypt and decrypt data using crypto:
 
-```Javascript
+```JavaScript
 // crypto module
 const crypto = require("crypto");
 
 const algorithm = "aes-256-cbc"; 
 
 // generate 16 bytes of random data
-const iv = crypto.randomBytes(16);
+const initVector = crypto.randomBytes(16);
 
 // protected data
 const message = "This is a secret message";
@@ -189,7 +190,7 @@ const message = "This is a secret message";
 const Securitykey = crypto.randomBytes(32);
 
 // the cipher function
-const cipher = crypto.createCipheriv("aes-256-cbc", Securitykey, iv);
+const cipher = crypto.createCipheriv(algorithm, Securitykey, initVector);
 
 // encrypt the message
 // the input encoding
@@ -201,7 +202,7 @@ encryptedData += cipher.final("hex");
 console.log("Encrypted message: " + encryptedData);
 
 // the decipher function
-const decipher = crypto.createDecipheriv("aes-256-cbc", Securitykey, iv);
+const decipher = crypto.createDecipheriv(algorithm, Securitykey, initVector);
 
 let decryptedData = decipher.update(encryptedData, "hex", "utf-8");
 
