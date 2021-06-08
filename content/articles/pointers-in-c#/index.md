@@ -6,7 +6,7 @@ url: /pointers-in-c#/
 title: Pointers In C#
 description: In this tutorial, we will learn about C# pointers, how to declare them, how to use them with arrays, structures, and a lot more.
 author: kelvin-munene
-date: 2021-06-06T00:00:00-16:00
+date: 2021-06-08T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
