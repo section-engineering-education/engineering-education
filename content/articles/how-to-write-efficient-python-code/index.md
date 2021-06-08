@@ -29,7 +29,7 @@ List comprehension is a technique of creating a list containing data with a sing
 
 Let's go over the syntax of list comprehension;
 
-*result* = [*transform* *iteration* *filter*]
+\**result*\* = [\**transform*\* \**iteration*\* \**filter*\*]
 
 The __result__ would be the final list containing our data, the __transform__ is the value of each data in our list, it keeps on changing as the value of the iterator changes. The __iteration__ is a loop that helps populate our list with the required amount of data. Finally, the __filter__ (optional) is used to filter out the data that we don't want.
 
@@ -42,6 +42,10 @@ for x in range(10):
 
 print(nums)
 ```
+
+```bash
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 It took us about 3 lines of code. Let's try to be more efficient using `list comprehension`.
 
 ```python
@@ -49,6 +53,11 @@ nums = [x for x in range(10)]
 
 print(nums)
 ```
+
+```bash
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
 Voilà, just one line of code to achieve the earlier result. It is way quicker to write once you understand the syntax and flow of `list comprehension`.
 
 Let's take a look at two more complex examples by adding __filters__.
@@ -57,10 +66,20 @@ Let's take a look at two more complex examples by adding __filters__.
 nums = [x for x in range(20) if x % 2 != 0]
 
 print(nums)
+```
 
-nums = ['True' if x % 2 == 0 else 'False' for x in range(20)]
+```bash
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+```python
+nums = ['True' if x % 2 == 0 else 'False' for x in range(10)]
 
 print(nums)
+```
+
+```bash
+['True', 'False', 'True', 'False', 'True', 'False', 'True', 'False', 'True', 'False']
 ```
 
 With these two examples above, we added the ability to use the `if/else` statement in our list comprehension. It should be noted that the `elif` statement can't be used within list comprehension.
@@ -90,17 +109,32 @@ def even_or_odd(n):
 
 print(even_or_odd(10))
 ```
+
+```bash
+Odd
+```
+
 This took us about five lines of code to write, with `lambdas` I'm happy to say that it'll only take only one line.
 
 ```python
 print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
 ```
+
+```bash
+Odd
+```
+
 We can also store them inside variables.
 
 ```python
 even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
 even_or_odd(8)
 ```
+
+```bash
+'Even'
+```
+
 If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable serves as the identifier to call the function.
 
 In this section, we looked at `lambdas` a very quick way of writing function. They don't work well for very complex functions. In the next section, we'll take a look at three very useful functions namely `map`, `filter`, and `reduce`.
@@ -121,6 +155,10 @@ squared_nums = list(map(lambda x: x * x, nums))
 print(squared_nums)
 ```
 
+```bash
+[1, 4, 9, 16, 25]
+```
+
 The map function takes two arguments, the function that would modify the data, and the data itself. In our example, we used the lambda function but we could as well have used it without lambdas.
 
 The `map` function coupled with the lambda function allows us to modify our list with just one line of code.
@@ -139,6 +177,11 @@ even_nums = list(filter(lambda x: True if x % 2 == 0 else False, nums))
 
 print(even_nums)
 ```
+
+```bash
+[2, 4, 6, 8, 10]
+```
+
 In our example, we are filtering out all odd numbers.
 
 Note that we use the `list` function to convert filter objects back to a list.
@@ -157,6 +200,11 @@ sum_of_nums = reduce(lambda a,b: a + b, nums)
 
 print(sum_of_nums)
 ```
+
+```bash
+45
+```
+
 In our example, we used the reduce function to add up all the data in our list.
 
 Note that we have to import `reduce` from `functools` before we can use it.
