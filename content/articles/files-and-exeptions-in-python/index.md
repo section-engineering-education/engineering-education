@@ -214,11 +214,11 @@ with open(filename) as f_obj:
 
  contents = f_obj.read()
 
- ```
+```
 
  Since Python can not read a file that does not exist, it raises an exception:
 
- ```python
+```python
 
 Traceback (most recent call last):
 
@@ -228,7 +228,7 @@ Traceback (most recent call last):
 
 FileNotFoundError: [Errno 2] No such file or directory: ‘john.txt’
 
- ```
+```
 
 Since Python can not find the file, we are opening it creates an exception that is the *FileNotFoundError* exception. In this example, the **open()** function creates the error. To solve this error, use the try block just before the line, which involves the **open()** function:
 
@@ -248,8 +248,7 @@ except FileNotFoundError:
 
  print(msg) # Sorry, the file John.txt does not exist.
 
- ```
-
+```
 ### Conclusion
 
 In this article, we have learnt how to:
