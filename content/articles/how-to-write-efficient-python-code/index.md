@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
-status: draft
-published: false
+status: publish
+published: true
 url: /how-to-write-efficient-python-code/
 title: How to write efficient Python code
 description: This tutorial provides the reader with detailed guid on how to use List Comprehensions, Lambda functions and Array functions to write efficiently as a python developer.
