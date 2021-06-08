@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-encryption-and-decryption-in-node-js-using-crypto/
+title: Data Encryption and Decryption in NodeJS using Crypto 
+description: This article provides a detailed guide on how to use the crypto module to implement encryption and decryption in a Node.js application.
+author: judy-nduati
+date: 2021-06-08T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/data-encryption-and-decryption-in-node-js-using-crypto/hero.jpg
+    alt: Data Encryption and Decryption in NodeJS using Crypto Hero Image
+---
 Web applications have access to large amounts of data that belongs to people, organizations, and governments. The more the data is accessed, the higher the threat to data security. In the software development industry, developers use cryptography and encryption techniques to protect sensitive data from malicious parties.
+<!--more-->
 
 Cryptography is used to secure data stored in a database or being transferred over a network in the software development industry. When handling, moving, and storing data, you must do it safely and securely. Thus as a node.js developer, you should understand how to encrypt and decrypt data to secure data processed by your system. Node.js has a built-in library called `crypto` for data encryption and decryption.
 
