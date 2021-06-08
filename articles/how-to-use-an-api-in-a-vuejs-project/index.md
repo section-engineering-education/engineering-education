@@ -76,28 +76,26 @@ Copy the code below to your `App.vue` file:
 
 <script>
 export default {
-data()  {
-return {
-
+  data() {
+    return {
       posts: [],
-    }
+    };
+  },
 
-},
-
-methods: {
-async getData () {
-     try {
-              const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-              // JSON responses are automatically parsed.
-              this.posts = response.data
-           }
-          catch (error) {
-             console.log(error);
-         }
-
-       }
-   }
-}
+  methods: {
+    async getData() {
+      try {
+        const response = await this.$http.get(
+          "http://jsonplaceholder.typicode.com/posts"
+        );
+        // JSON responses are automatically parsed.
+        this.posts = response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+};
 </script>
 ```
 
@@ -139,34 +137,31 @@ After requesting data from the API, you will need to call it on a lifecycle hook
 
 <script>
 export default {
-data()  {
-return {
-
+  data() {
+    return {
       posts: [],
-    }
+    };
+  },
 
-},
+  methods: {
+    async getData() {
+      try {
+        const response = await this.$http.get(
+          "http://jsonplaceholder.typicode.com/posts"
+        );
+        // JSON responses are automatically parsed.
+        this.posts = response.data;
+        console.log(posts);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 
-methods: {
-async getData () {
-     try {
-              const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-             // JSON responses are automatically parsed.
-              this.posts = response.data
-              console.log(posts)
-           }
-          catch (error) {
-             console.log(error);
-         }
-
-       }
-   },
-
-
-created() {
+  created() {
     this.getData();
   },
-}
+};
 </script>
 ```
 
@@ -174,41 +169,39 @@ We can now display the data in the template by looping through the posts using [
 
 ```JavaScript
 <template>
-     <div>
-         <div v-for="post in posts" v-bind:key="post.id" >
-             <h2>{{ post.title }}</h2>
-              <p>{{ post.body }}</p>
-         </div>
-      </div>
+  <div>
+    <div v-for="post in posts" v-bind:key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-data()  {
-return {
-
+  data() {
+    return {
       posts: [],
-    }
-},
+    };
+  },
 
-methods: {
-async getData () {
-     try {
-              const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-              this.posts = response.data
-           }
-          catch (error) {
-             console.log(error);
-         }
+  methods: {
+    async getData() {
+      try {
+        const response = await this.$http.get(
+          "http://jsonplaceholder.typicode.com/posts"
+        );
+        this.posts = response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 
-       }
-   },
-
-
-created() {
+  created() {
     this.getData();
   },
-}
+};
 </script>
 ```
 
@@ -220,41 +213,38 @@ To request with the Fetch API, you just have to make the request directly with t
 
 ```JavaScript
 <template>
-     <div>
-         <ul v-for="post in posts" v-bind:key="post.id">
-             <li>{{ post.title }}</li>
-              <p>{{ post.body }}</p>
-         </ul>
-      </div>
+  <div>
+    <ul v-for="post in posts" v-bind:key="post.id">
+      <li>{{ post.title }}</li>
+      <p>{{ post.body }}</p>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-data()  {
-  return {
-
+  data() {
+    return {
       posts: [],
-    }
-},
+    };
+  },
 
-methods: {
-async getData () {
-     try {
-              const response = await fetch('http://jsonplaceholder.typicode.com/posts');
-              this.posts = response.data
-           }
-          catch (error) {
-             console.log(error);
-         }
+  methods: {
+    async getData() {
+      try {
+        let response = await fetch("http://jsonplaceholder.typicode.com/posts");
+        response = await response.json();
+        this.posts = response;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 
-       }
-   },
-
-
-created() {
+  created() {
     this.getData();
   },
-}
+};
 </script>
 ```
 
@@ -297,7 +287,6 @@ export default new Vuex.Store({
  state: {
     posts: [],
   },
-
 }) 
 ```
  
@@ -305,9 +294,9 @@ Next, we create a `getters` property. Getters are like `computed` properties for
  
 ```JavaScript
 getters: {
-    posts: state => {
-        return state.posts;
-    }
+  posts: state => {
+    return state.posts;
+  }
 },
 ```
 
@@ -315,9 +304,9 @@ Next, we create a `mutation` property. The mutation property is where we can cha
 
 ```JavaScript
 mutations: {
-        SET_ITEMS (state, posts) {
-            state.posts = posts
-        }
+  SET_ITEMS (state, posts) {
+    state.posts = posts
+  }
 },
 ```
 
@@ -325,16 +314,16 @@ Now we can call our API in the `actions` property. Actions are equivalent to mut
 
 ```JavaScript
 actions: {
-   async loadPosts ({ commit }) {
-     try {
-           const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-          // JSON responses are automatically parsed.
-          commit('SET_ITEMS', response.data)
-       }
-      catch (error) {
-         console.log(error);
-     }
+ async loadPosts ({ commit }) {
+   try {
+      const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+      // JSON responses are automatically parsed.
+      commit('SET_ITEMS', response.data)
+    }
+    catch (error) {
+     console.log(error);
    }
+ }
 },
 ```
 
@@ -351,7 +340,7 @@ import { mapState } from 'vuex';
 
 ```JavaScript
 mounted () {
-    this.$store.dispatch('loadPosts')
+  this.$store.dispatch('loadPosts')
 },
 ```
 
@@ -359,8 +348,8 @@ mounted () {
 
 ```JavaScript
 computed: mapState([
-        'posts'
-  ]),
+  'posts'
+]),
 </script>
 ```
 
@@ -368,17 +357,19 @@ computed: mapState([
 
 ```JavaScript
 <template>
-     <div>
-         <ul v-for="post in posts" v-bind:key="post.id">
-             <li>{{ post.title }}</li>
-             <p>{{ post.body }}</p>
-         </ul>
-      </div>
+  <div>
+     <ul v-for="post in posts" v-bind:key="post.id">
+       <li>{{ post.title }}</li>
+       <p>{{ post.body }}</p>
+     </ul>
+  </div>
 </template>
 ```
-Here is the whole code snippet
 
-For the `store` file
+Here is the whole code snippet:
+
+For the `store` file:
+
 ```JavaScript
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -430,11 +421,11 @@ For your vue file:
 import { mapState } from 'vuex';
 
 mounted () {
-    this.$store.dispatch('loadPosts')
+  this.$store.dispatch('loadPosts')
 },
 computed: mapState([
-        'posts'
-  ]),
+      'posts'
+]),
 
 </script>
 ```
