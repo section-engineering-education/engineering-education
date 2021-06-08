@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /introduction-to-evolutionary-algorithms/
 title: Introduction to Evolutionary Algorithms
-description: This article gives an introduction to Evolutionary Algorithms (EA).  
+description: This article gives an introduction to Evolutionary Algorithms (EA). An evolutionary algorithm mimics one of nature's most fascinating processes, natural selection. Given a population, only fitter members will survive and produce new generations. 
 author: adithi-narayan
 date: 2021-06-07T00:00:00-14:00
 topics: []
