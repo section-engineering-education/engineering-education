@@ -47,10 +47,11 @@ $GLOBALS is a PHP variables that is used in accessing other variables , function
 
 Below is an example of superglobal $GLOBAL in use:)
 
-     <!doctype html>
-     <html>
-     <head>
-     <title>$GLOBAL example</title>
+```html
+   <!doctype html>
+   <html>
+   <head>
+   <title>$GLOBAL example</title>
      </head>
      <body>
      <?php
@@ -68,8 +69,8 @@ Below is an example of superglobal $GLOBAL in use:)
 
       ?>
     </body>
-    </html>
-
+   </html>
+```
 In the above example, the variable $c is accessible both in the function and outside because is within the $GLOBALS array.
 
 2. ### $_SERVER
@@ -84,12 +85,12 @@ $_SERVER is a superglobal that keeps information headers, paths, and locations o
 - $_SERVER['SCRIPT_NAME']- This returns the current script's path.
 
 Below is a sample code showing how the elements above can be used:)
-
-       <!doctype html>
-       <html>
-       <head>
-       <title> $_SERVER example</title>
-       </head>
+``` html
+   <!doctype html>
+   <html>
+   <head>
+   <title> $_SERVER example</title>
+   </head>
        <body>
        <?php
        // PHP script
@@ -102,7 +103,8 @@ Below is a sample code showing how the elements above can be used:)
               echo $_SERVER['SCRIPT_NAME'];
         ?>
        </body>
-       </html>
+   </html>
+   ```
 
 The output of the above code would be :
 
@@ -120,25 +122,27 @@ The HTML form is structured in a way that $_GET is used as a [method](https://ww
 
 An example of an HTML form is shown below where varriable $_GET is implemented:
 
-         <!doctype html>
-         <html>
-         <head>
-         <title>$_GET example</title>
+``` html
+   <!doctype html>
+   <html>
+   <head>
+   <title>$_GET example</title>
 
-         </head>
-         <body>
+   </head>
+      <body>
          //html form
-         <form action="" method="GET">
-              <label>Name</label>
-              <input type="text" name="Name">
-              <label>Email</label>
-              <input type="text" name="Email">
-              <button>Submit</button>
+      <form action="" method="GET">
+          <label>Name</label>
+          <input type="text" name="Name">
+          <label>Email</label>
+          <input type="text" name="Email">
+          <button>Submit</button>
 
-              </form>
+      </form>
 
           </body>
-          </html>
+   </html>
+   ```
 
 When a user clicks the Submit button, the information from the form is sent with the GET method and is displayed in the URL however, only up to 2048 characters can be sent at a time.
 
@@ -148,26 +152,28 @@ The $_POST variable just like the $_GET variable collects values from a HTML for
 
 Information sent using the POST method is not displayed in the URL hence not visible. There is also no limit to the number of characters that can be sent at a time.
 An example is shown below:)
+```html
+    <!doctype html>
+    <html>
+    <head>
+    <title>$_POST example</title>
 
-          <!doctype html>
-          <html>
-          <head>
-          <title>$_POST example</title>
-
-          </head>
-          <body>
+    </head>
+      <body>
           //html form
-          <form action="" method="POST">
-              <label>Name</label>
-              <input type="text" name="Name">
-              <label>Email</label>
-              <input type="text" name="Email">
-              <button>Submit</button>
+      <form action="" method="POST">
+         <label>Name</label>
+         <input type="text" name="Name">
+         <label>Email</label>
+         <input type="text" name="Email">
+         <button>Submit</button>
 
-          </form>
+      </form>
 
-          </body>
-          </html>
+      </body>
+     </html>
+```
+    
 
 ### Why does POST take preference to GET?
 
@@ -185,7 +191,7 @@ It contains the contents of $_GET, $_POST and even $_COOKIE by default.
 Data from various fields can be collected by PHP using the $_REQUEST variable.
 
 Below is an implementation example:)
-
+```html
      <!doctype html>
      <html>
      <head>
@@ -219,7 +225,8 @@ Below is an implementation example:)
         ?>
 
            </body>
-          </html>
+       </html>
+```
 
 The output of the above code will be the name that had been submitted from the form and if no name was submitted it will print a message "Empty name".
 
@@ -238,32 +245,33 @@ When a user leaves a site the session is automatically destroyed. This is done w
 session_destroy()
 
 The example below demonstrates the use of $_SESSION:
+```html
+<? php
 
-       <? php
+    session_start;
 
-         session_start;
+?>
+ <!doctype html>
+ <html>
+ <head>
+ <title>$_SESSION demonstration code</title>
 
-        ?>
-       <!doctype html>
-       <html>
-       <head>
-       <title>$_SESSION demonstration code</title>
+ </head>
+ <body>
+ <?php
+   //Set session varriables
 
-       </head>
-       <body>
-       <?php
-       //Set session varriables
+    $_SESSION["name"]="Mackrine";
+    $_SESSION["favcolor"]="Blue";
+    echo "session varriables are set";
+?>
+ <?php
+   session_destroy();
+?>
 
-        $_SESSION["name"]="Mackrine";
-        $_SESSION["favcolor"]="Blue";
-        echo "session varriables are set";
-        ?>
-       <?php
-          session_destroy();
-         ?>
-
-        </body>
-        </html>
+ </body>
+</html>
+```
 
 7. ### $_COOKIE
 A cookie is a small file that is kept in a client by the server. It identifies the user. Whenever a client requests a page, the cookie is sent together with the page. PHP creates cookies using the function setcookie( )
@@ -274,23 +282,23 @@ setcookie(cookie_name,cookie_value, expiry, path, domain,secure,httponly)
 The syntax has many parameters. However, only one is required, the rest are optional.
 
 After creation, the cookie is retrieved using the superglobal $_COOKIE. The program code below shows how to create and retrieve a cookie.
+``` php
+  <?php
 
-           <?php
+    $cookie_name = "uname";
+    $cookie_value = "Mackrine";
 
-             $cookie_name = "uname";
-             $cookie_value = "Mackrine";
+   //setting cookie
 
-             //setting cookie
+    setcookie($cookie-name, $cookie-value, time()+(86400*30),"/");
 
-             setcookie($cookie-name, $cookie-value, time()+(86400*30),"/");
+     ?>
+    <!doctype html>
+    <html>
+    <body>
+    <?php
 
-              ?>
-          <!doctype html>
-          <html>
-          <body>
-          <?php
-
-        if(isset($_COOKIE[$cookie_name]))
+       if(isset($_COOKIE[$cookie_name]))
         {
             echo "Cookie name:" .$cookie_name;
             echo "<br>";
@@ -302,10 +310,10 @@ After creation, the cookie is retrieved using the superglobal $_COOKIE. The prog
             echo $cookie_name. " is not set!";
 
          }
-         ?>
-         </body>
-         </html>
-
+    ?>
+    </body>
+    </html>
+```
 
 A cookie can also be deleted using the setcookie( ) function only with a past expiry date.
 
@@ -328,24 +336,4 @@ $_FILES is a variable that contains items that are uploaded using [HTTP](https:/
 
 Superglobals are in conclusion the core of PHP language and a large part of the PHP language requires the different superglobals for the programs to be complete and functional.
 
-### Blissful reading!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Blissful reading!
