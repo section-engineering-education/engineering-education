@@ -233,8 +233,7 @@ export default {
     async getData() {
       try {
         let response = await fetch("http://jsonplaceholder.typicode.com/posts");
-        response = await response.json();
-        this.posts = response;
+        this.posts = await response.json();;
       } catch (error) {
         console.log(error);
       }
