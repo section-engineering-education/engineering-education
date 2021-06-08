@@ -26,7 +26,6 @@ with open(‘years.txt’) as file_object:
 The name of the file to be opened is passed to the `open()` function as its only argument.. Python looks for the **years.txt** file in the folder where our Python file is stored. The `open()` function returns an object representing the file (years.txt) which is then stored in  variable file_object.
 
 The keyword `with` closes the file when access to it is no longer need. The `read()` method is used to read the whole data in the file and store it in contents.
-
 We get the following results after we run the above code:
 
 ```python
@@ -60,10 +59,10 @@ One of the simplest ways to save data is to write to a file. The output will sti
 When writing text to a file, we use the `open()` function with two arguments. First argument is the filename while the second argument is the mode in which you want to open the file. 
 
 There are 4 modes in which you can open a file:
- 1.Read mode (‘r’) 
- 2.Write mode (‘w’) 
- 3.Append mode (‘a’)
- 4.read and write (‘r+’)
+- Read mode (‘r’) 
+- Write mode (‘w’) 
+- Append mode (‘a’)
+- Read and write (‘r+’)
 
 #### Writing to an empty file
 If the file you are writing does not exist at all, the `open()` function auto-generates the file.
@@ -87,7 +86,6 @@ To add data into a file, open it in *append mode*. Any data you write will be p
 Let’s add some lines in the **student.txt** file
 
 ```python
-
 with open(‘student.txt’, ‘a’) as file_object: #’a’ argument to open the file for appending
 
       file_object.write(“I am 6 years old\n”)
@@ -114,7 +112,6 @@ print(6/0)
 ```
 
 When we run the above code Python gives the following trace-back:
-
 ```python
 Traceback (most recent call last):
   File “C:\Users\ADMIN\PycharmProject\pythonProject\main.py”, line 1, in <module>
@@ -144,7 +141,7 @@ with open(filename) as f_obj:
  contents = f_obj.read()
 ```
 
- Since Python can not read a file that does not exist, it raises an exception:
+Since Python can not read a file that does not exist, it raises an exception:
 
 ```python
 Traceback (most recent call last):
@@ -167,11 +164,11 @@ except FileNotFoundError:
 
 ### Conclusion
 In this article, we have learnt how to:
- - Read from a file
- - Work with a File’s Contents
- - Write to a File
- - Handle the ZeroDivisionError Exception
- - Handle the FileNotFoundError Exception
+- Read from a file
+- Work with a File’s Contents
+- Write to a File
+- Handle the ZeroDivisionError Exception
+- Handle the FileNotFoundError Exception
 
 ### Further reading
 For more information about files and exceptions in Python, see the links below:
