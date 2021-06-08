@@ -16,7 +16,7 @@ The purpose of encryption and decryption is to provide data security. This artic
 A comprehensive understanding of [cryptography](https://nodejs.org/api/crypto.html) and node.js is required before reading this article. To follow along with this article, you should have:
 
 - [Node.js](https://nodejs.org/en/download/) installed in your working environment.
-- Text editor such as [Visual Studio Code](https://code.visualstudio.com/download).
+- A Text editor such as [Visual Studio Code](https://code.visualstudio.com/download).
 
 ### Cryptography in node.js
 
@@ -42,7 +42,7 @@ As stated earlier, `crypto` is a built-in library in Node.js. Thus it doesn't re
 
 The `crypto` module allows you to hash plain texts before storing them in a database. Hashed data can not be decrypted with a specific key, like encrypted data. An HMAC is responsible for a Hash-based Message Authentication Code, which hashes keys and values to create a final hash.
 
-You may want to encrypt and decrypt data for transmission purposes. This is where `cipher` and `decipher` functions come in. You encrypt data with `cipher` and decrypt it with `decipher`. Also, you may want to encrypt data before storing it in the database.
+You may want to encrypt and decrypt data for transmission purposes. This is where `cipher` and `decipher` functions come in. You encrypt data with a `cipher` and decrypt it with a `decipher`. Also, you may want to encrypt data before storing it in the database.
 
 To verify encrypted or hashed passwords, it would be best if you had a `verify` function. Let us explore data encryption and decryption and how it is implemented in Node.js applications using `crypto`.
 
@@ -94,7 +94,7 @@ const message = "This is a secret message";
 const Securitykey = crypto.randomBytes(32);
 ```
 
-To encrypt the data `cipher` function is used. The `cipher` function in our project is made using the `createCipheriv()` function from `crypto` module. Pass the first argument as the algorithm we are using, the second argument as the `Securitykey` and `iv` as the third argument.
+To encrypt the data `cipher` function is used. The `cipher` function in our project is made using the `createCipheriv()` function from the `crypto` module. Pass the first argument as the algorithm we are using, the second argument as the `Securitykey`, and `iv` as the third argument.
 
 To encrypt the message, use the `update()` method on the `cipher`. Then pass the `message` as the first argument, the input encoding (`utf-8`) as a second argument, and the output encoding (`hex`) as the third argument.
 
