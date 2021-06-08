@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /jimp-image-processing/
+title: Getting Started with JIMP image processing
+description: This tutorial will go over the basics of JIMP image processing package in a Node.js application
+author: flavian-adhiambo
+date: 2021-06-08T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/jimp-image-processing/hero.jpg
+    alt: Getting Started with JIMP image processing
+---
+
 ### Getting started with Node.js and JIMP image processing
 JIMP eliminates the boilerplate code required to resize images to a given dimension before storing or adding watermark to images for branding purposes.
 
