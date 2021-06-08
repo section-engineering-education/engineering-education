@@ -43,6 +43,8 @@ for x in range(10):
 print(nums)
 ```
 
+__Result__
+
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
@@ -53,6 +55,8 @@ nums = [x for x in range(10)]
 
 print(nums)
 ```
+
+__Result__
 
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -68,6 +72,8 @@ nums = [x for x in range(20) if x % 2 != 0]
 print(nums)
 ```
 
+__Result__
+
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
@@ -77,6 +83,8 @@ nums = ['True' if x % 2 == 0 else 'False' for x in range(10)]
 
 print(nums)
 ```
+
+__Result__
 
 ```bash
 ['True', 'False', 'True', 'False', 'True', 'False', 'True', 'False', 'True', 'False']
@@ -110,6 +118,8 @@ def even_or_odd(n):
 print(even_or_odd(10))
 ```
 
+__Result__
+
 ```bash
 Odd
 ```
@@ -119,6 +129,8 @@ This took us about five lines of code to write, with `lambdas` I'm happy to say 
 ```python
 print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
 ```
+
+__Result__
 
 ```bash
 Odd
@@ -130,6 +142,8 @@ We can also store them inside variables.
 even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
 even_or_odd(8)
 ```
+
+__Result__
 
 ```bash
 'Even'
@@ -155,6 +169,8 @@ squared_nums = list(map(lambda x: x * x, nums))
 print(squared_nums)
 ```
 
+__Result__
+
 ```bash
 [1, 4, 9, 16, 25]
 ```
@@ -178,6 +194,8 @@ even_nums = list(filter(lambda x: True if x % 2 == 0 else False, nums))
 print(even_nums)
 ```
 
+__Result__
+
 ```bash
 [2, 4, 6, 8, 10]
 ```
@@ -200,6 +218,8 @@ sum_of_nums = reduce(lambda a,b: a + b, nums)
 
 print(sum_of_nums)
 ```
+
+__Result__
 
 ```bash
 45
