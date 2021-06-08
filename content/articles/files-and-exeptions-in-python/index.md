@@ -1,11 +1,11 @@
 
-Files are identified locations on disk where associated data is stored. Working with files will make your programs fast when analyzing masses of data. Exceptions are special objects that Python uses to manage errors that occur when a program is running. In this tutorial, we’ll learn about file operations in Python. These operations include reading, writing, and appending to a file. We will also learn about handling the ZeroDivisionError and FileNotFoundError exception.
+Files are identified locations on disk where associated data is stored. Working with files will make your programs fast when analyzing masses of data. Exceptions are special objects that Python uses to manage errors that occur when a program is running. In this tutorial, we’ll learn about file operations in Python. These operation include reading, writing, and appending to a file. We will also learn about handling the ZeroDivisionError and FileNotFoundError exception.
 
 ### Prerequisites
 Have some basic knowledge of Python language.
 
 ### Reading from a file
-When working with data from a text file, you must first read it into memory. To read a file, you must have a file that exists.
+Working with data in a text file, you need to read the file into memory first. To read a file, you must have a file with some data.
 
 Let’s create a text file containing a list of years from 2020 to 2022 using an editor and save it in the same folder that stores our Python files as **years.txt**. The **years.txt** file should have:
 
@@ -23,11 +23,13 @@ with open(‘years.txt’) as file_object:
  print(contents)
 ```
 
-The name of the file to be opened is passed to the `open()` function as its only argument.. Python looks for the **years.txt** file in the folder where our Python file is stored. The `open()` function returns an object representing the file (years.txt) which is then stored in  variable file_object.
+The `open()` function takes one argument which is the name of the file to be opened. Python looks for the **years.txt** file in the folder where our Python file is stored. The `open()` function returns an object representing the file (years.txt) which is then stored in  variable file_object.
 
-The keyword `with` closes the file when access to it is no longer need. The `read()` method is used to read the whole data in the file and store it in contents.
+The keyword `with` closes the file when access to it is no longer need.
 
-We get the following results after we run the above code:
+The `read()` method is used to read the whole data in the file and store it in contents.
+
+When we run the above code, we get the output as:
 
 ```python
 #OUTPUT
@@ -37,6 +39,7 @@ We get the following results after we run the above code:
 ```
 
 ### Working with a file’s contents
+
 Now you have learnt how to read a file into memory, let’s try doing something with that data. Let’s create a single line holding all the digits in the **years.txt** file without white spaces in it.
 
 ```python
@@ -47,19 +50,21 @@ for line in lines: # create a loop that adds each line of digits to yrs_string
      yrs_string += line.rstrip() #.rstrip() removes the newline character from each line
 print(yrs_string) # print this string
 print(len(yrs_string)) # print how long the string is 
+
  # OUTPUT
  # 209020702089
  # 12
 ```
 
->**NOTE:**Python treats all text in a text file as a string when reading it. If you read a number from a file and you want to carry out arithmetic operations, convert it to float using the `float()` function or integer using the `int()` function.
+>**NOTE:**When reading from a text file, Python interprets all the text as a string. If you read a number from a file and you want to carry out arithmetic operations, convert it to float using the `float()` function or integer using the `int()` function.
 
 ### Writing to a file
-One of the simplest ways to save data is to write to a file. The output will still be even after we close the terminal having our program’s outputs.
+Writing to a file is one of the easiest ways to save data. The output will still be even after we close the terminal having our program’s outputs.
 
 When writing text to a file, we use the `open()` function with two arguments. First argument is the filename while the second argument is the mode in which you want to open the file. 
 
 There are 4 modes in which you can open a file:
+
  1.Read mode (‘r’) 
  2.Write mode (‘w’) 
  3.Append mode (‘a’)
@@ -67,6 +72,7 @@ There are 4 modes in which you can open a file:
 
 #### Writing to an empty file
 If the file you are writing does not exist at all, the `open()` function auto-generates the file.
+
 Example:
 
 ```python
@@ -83,7 +89,8 @@ My name is Felix.
 >**NOTE:**When opening a file in ‘w’ mode and the file exists, Python will delete the file before returning the file object.
 
 #### Appending to a file
-To add data into a file, open it in *append mode*. Any data you write will be placed at the end of the file.
+To add data into a file, open the file in *append mode*. Any data you write will be placed at the end of the file.
+
 Let’s add some lines in the **student.txt** file
 
 ```python
@@ -95,6 +102,7 @@ with open(‘student.txt’, ‘a’) as file_object: #’a’ argument to open 
 ```
 
 The new **student.txt** file looks like this:
+
 ```
 My name is Felix.
 I am 6 years old
@@ -102,7 +110,7 @@ I love playing games
 ```
 
 ### Exceptions
-Exceptions are unique objects that Python uses to control errors that occur when a program is running. Exceptions errors arise when correct syntactically Python programs produce an error. Python creates an exception object whenever these mistakes occur.. When we write codes that deal with the exception, our programs will continue running. If we don’t our programs will stop executing and show a trace-back, which is very hard for a user to understand.
+Exceptions are unique objects that Python uses to control errors that occur when a program is running. Exceptions errors arise when correct syntactically Python programs produce an error. When these errors arise, Python creates an exception object. When we write codes that deal with the exception, our programs will continue running. If we don’t our programs will stop executing and show a trace-back, which is very hard for a user to understand.
 
 Python uses the *try-except* block to control exceptions. A try-except block informs Python how to act when an exception emerges. Our programs will continue to execute even if things go wrong.
 
@@ -119,6 +127,7 @@ When we run the above code Python gives the following trace-back:
 Traceback (most recent call last):
   File “C:\Users\ADMIN\PycharmProject\pythonProject\main.py”, line 1, in <module>
  print(6/0)
+
 ZeroDivisionError: division by zero
 ```
 
@@ -135,7 +144,7 @@ except ZeroDivisionError:
  print(“You can’t divide by zero!”) # You can’t divide by zero!
 ```
 
-#### Handling the FileNotFoundError exception
+### Handling the FileNotFoundError exception
 Errors will always arise when working with files that are missing. Python may fail to get file if you have written the wrong spelling of filename, or the file never exists. We handle this situation by applying the try-except block. For example, the program below tries to read a file that doesn’t exist on my computer.
 
 ```python
@@ -164,7 +173,6 @@ except FileNotFoundError:
  msg = “Sorry, the file “+ filename + “does not exist.”
  print(msg) # Sorry, the file John.txt does not exist.
 ```
-
 ### Conclusion
 In this article, we have learnt how to:
  - Read from a file
@@ -173,8 +181,3 @@ In this article, we have learnt how to:
  - Handle the ZeroDivisionError Exception
  - Handle the FileNotFoundError Exception
 
-### Further reading
-For more information about files and exceptions in Python, see the links below:
-- [Exception-handling in Python](https://www.programiz.com/python-programming/exception-handling)
-- [Python files](https://www.tutorialspoint.com/python/python_files_io.htm)
-- [Files and Exceptions](https://www.softcover.io/read/e4cd0fd9/conversational-python/ch6_files_excepts)
