@@ -31,7 +31,7 @@ Let's go over the syntax of list comprehension;
 
 \**result*\* = [\**transform*\* \**iteration*\* \**filter*\*]
 
-The __result__ would be the final list containing our data, the __transform__ is the value of each data in our list, it keeps on changing as the value of the iterator changes. The __iteration__ is a loop that helps populate our list with the required amount of data. Finally, the __filter__ (optional) is used to filter out the data that we don't want.
+The *result* would be the final list containing our data, the *transform* is the value of each data in our list, it keeps on changing as the value of the iterator changes. The *iteration* is a loop that helps populate our list with the required amount of data. Finally, the *filter* (optional) is used to filter out the data that we don't want.
 
 Before we take a look at an example of list comprehension, let's take a look at the traditional way of generating a list with data so we can compare the two ways.
 
@@ -43,7 +43,7 @@ for x in range(10):
 print(nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -56,7 +56,7 @@ nums = [x for x in range(10)]
 print(nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -64,7 +64,7 @@ __Result__
 
 Voilà, just one line of code to achieve the earlier result. It is way quicker to write once you understand the syntax and flow of `list comprehension`.
 
-Let's take a look at two more complex examples by adding __filters__.
+Let's take a look at two more complex examples by adding *filters*.
 
 ```python
 nums = [x for x in range(20) if x % 2 != 0]
@@ -72,13 +72,13 @@ nums = [x for x in range(20) if x % 2 != 0]
 print(nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-__Another Example__
+**Another Example**
 
 ```python
 nums = ['True' if x % 2 == 0 else 'False' for x in range(10)]
@@ -86,7 +86,7 @@ nums = ['True' if x % 2 == 0 else 'False' for x in range(10)]
 print(nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 ['True', 'False', 'True', 'False', 'True', 'False', 'True', 'False', 'True', 'False']
@@ -102,11 +102,11 @@ In this section, we learned about using list comprehension to generate our list 
 
 Let's take a look at the syntax;
 
-__lambda__ arguments: expression
+*lambda* arguments: expression
 
 The value at the left is referred to as the arguments, while the values at the right are the expression. Let's break the syntax further.
 
-__lambda__ arguments: value_to_return __if__ condition __else__ value_to_return
+*lambda* arguments: value_to_return *if* condition *else* value_to_return
 
 Before we take a look at an example of lambda functions, let's take a look at an example of a regular function in Python so we can compare the two ways.
 
@@ -120,7 +120,7 @@ def even_or_odd(n):
 print(even_or_odd(10))
 ```
 
-__Result__
+**Output:**
 
 ```bash
 Odd
@@ -132,7 +132,7 @@ This took us about five lines of code to write, with `lambdas` I'm happy to say 
 print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
 ```
 
-__Result__
+**Output:**
 
 ```bash
 Odd
@@ -145,10 +145,10 @@ even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
 even_or_odd(8)
 ```
 
-__Result__
+**Output:**
 
 ```bash
-'Even'
+Even
 ```
 
 If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable serves as the identifier to call the function.
@@ -171,7 +171,7 @@ squared_nums = list(map(lambda x: x * x, nums))
 print(squared_nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 [1, 4, 9, 16, 25]
@@ -196,7 +196,7 @@ even_nums = list(filter(lambda x: True if x % 2 == 0 else False, nums))
 print(even_nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 [2, 4, 6, 8, 10]
@@ -221,7 +221,7 @@ sum_of_nums = reduce(lambda a,b: a + b, nums)
 print(sum_of_nums)
 ```
 
-__Result__
+**Output:**
 
 ```bash
 45
