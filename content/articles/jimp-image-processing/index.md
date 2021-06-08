@@ -1,5 +1,5 @@
 ### Getting started with Node.js and JIMP image processing
-In a web application that involves dealing with images, image manipulation becomes one of the sought-after features.
+In a web application that involves dealing with images, image editing is important. When images are resized to a given dimensions before storing or adding watermark to images for branding purpose i.e Tik tok adds their logo to images and videos for branding purposes.
 
 In a Node.js application, [Javascript Image Manipulation Program](https://github.com/oliver-moran/jimp) makes it easier to manipulate images to achieve whatever design we want. JIMP provides the functionality to crop, resize, blur, and add effects to Images.
 
@@ -50,9 +50,9 @@ JIMP is built on the callback and promise base APIS for image manipulations. We 
 1. URL to the image.
 2. Image path on the file system.
 
-Add the code snippet below into the `index.js` file created above.
+The code snippet below demonstrates how to read an image in JIMP.
 ```javascript
-Jimp.read('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
   .then(image => {
     // Process the image
   })
@@ -74,7 +74,7 @@ Add the code snippet below into `index.js` file.
 const Jimp = require('jimp');
 async function resize() {
   // reads the image
-  const image = await Jimp.read('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  const image = await Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   // resizes the image to width 150 and heigth 150.
   await image.resize(150, 150);
   // saves the image on the file system
@@ -84,10 +84,10 @@ resize();
 ```
 
 Original image.
-![]()
+![Original image](/engineering-education/jimp-image-processing/original-image.jpg)
 
 Resized image.
-![]()
+![Resized image](/engineering-education/jimp-image-processing/resized-image.png)
 
 `Jimp. AUTO` can be passed in the place of height or width to resize the image while maintaining the aspect ratio. `Jimp. AUTO` can only be passed for either height or width at a time.
 
@@ -109,7 +109,7 @@ Add the code snippet below into the `index.js` file.
 ```javascript
 async function crop() {
   // reads the image
-  const image = await Jimp.read('https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg');
+  const image = await Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   // crops the image
   await image.crop(500, 500, 150, 150);
   // Saves the image to the file system
@@ -119,7 +119,7 @@ crop()
 ```
 
 Cropped image:
-![]()
+![Cropped image](/engineering-education/jimp-image-processing/cropped-image.png)
 
 #### Rotating an image
 JIMP provides a `rotate()` method that can be used to rotate an image through the angle provided while maintaining the dimensions of the image.
@@ -134,7 +134,7 @@ Add the code snippet below into the `index.md` file.
 ```javascript
 async function rotate() {
   // reads the image
-  const image = await Jimp.read('https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg');
+  const image = await Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   // rotates the image
   await image.rotate(45);
   // Saves the image into the file system
@@ -144,7 +144,7 @@ rotate()
 ```
 
 Rotated image:
-![]()
+![Rotated image](/engineering-education/jimp-image-processing/rotated-image.png)
 
 #### Blurring an image
 JIMP uses the blur algorithm which blurs an image by a given `x` pixels. JIMP provides the `blur()` method which takes in the blur pixes.
@@ -154,12 +154,12 @@ Syntax:
 blur(r)
 ```
 
-Add the code snippet below into the `index.md` file.
+Add the code snippet below into the `index.js` file.
 
 ```javascript
 async function blur() {
   // reads the image
-  const image = await Jimp.read('https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg');
+  const image = await Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   // blurs the image with the given number of pixels
   await image.blur(20);
   // Saves the image into the disk
@@ -168,7 +168,7 @@ async function blur() {
 blur()
 ```
 Blurred image
-![]()
+![Blurred image](/engineering-education/jimp-image-processing/blurred-image.png)
 
 #### Adding an image overlay
 JIMP provides a `composite()` method that adds an image over another image at `x` and `y` positions.
@@ -186,7 +186,7 @@ async function waterMark(waterMarkImage) {
   // resizes the watermark image
   watermark = watermark.resize(300,300);
   // reads the image
-  const image = await Jimp.read('https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg');
+  const image = await Jimp.read('https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   //adds the watermark to the image at point 0, 0
  watermark = await watermark
   image.composite(watermark, 0, 0, {
@@ -201,7 +201,7 @@ waterMark('https://destatic.blob.core.windows.net/images/nodejs-logo.png');
 ```
 Overlay image:
 
-![]()
+![Watermarked image](/engineering-education/jimp-image-processing/watermarked-image.png)
 
 ### Conclusion
-Now that you have learned how to use JIMP in a Node.js application, add watermarks to images that users upload to your Node.js application using JIMP. You can download the full source code [here]().
+Now that you have learned how to use JIMP in a Node.js application, add watermarks to images that users upload to your Node.js application using JIMP. You can download the full source code [here](https://replit.com/@flavianadhiambo/image-editing#index.js).
