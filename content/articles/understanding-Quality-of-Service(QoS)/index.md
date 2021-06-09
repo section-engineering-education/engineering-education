@@ -64,5 +64,6 @@ Furthermore, the UDP protocol differs from the TCP protocol because the protocol
 
 5.	The technology prevents packet loss. During transit, packets may be dropped due to network failure or inefficiency, network congestion, a defective router or switch, loose connection, or poor signal. QoS prevents packet loss by prioritizing traffic and allocating a proper bandwidth for the optimal running of high-performance applications.
 
-### Conclusion 
+### Conclusion
+ 
 In this article, we learned what Quality of service (QoS) is, how QoS utilizes techniques such as traffic marking, queuing, and the resource reservation protocol to guarantee the optimal performance of critical applications on a network. Additionally, the article identifies the importance of QoS on a network.
