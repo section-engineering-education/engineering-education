@@ -6,7 +6,7 @@ url: /applet-programming-in-java/
 title: How to Build Applet Programs in Java
 description: This tutorial will guide on how to create Applet applications in Java and host them on a web page. Applets allow developers to add more features to a web application.
 author: paul-mwangi
-date: 2021-06-17T00:00:00-16:00
+date: 2021-06-9T00:00:00-21:00
 topics: []
 excerpt_separator: <!--more-->
 images:
