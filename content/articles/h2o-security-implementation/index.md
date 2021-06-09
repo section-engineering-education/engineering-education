@@ -62,7 +62,9 @@ mv ./filename.csv ./offline/
 
 While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations can appear to become a well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
 
-For example, the following Java application can detect SQL keywords and combinations. If a java-based relational database is preferred, this code below can detect and refuse basic SQL injection attacks.  
+Before a data file is read inside a H<sub>2</sub>O instance, it is very likely the data file originated from a database.  
+
+For example, the following if-then statement can detect frequently used SQL keywords and combinations. If a database written in Java is connected to H<sub>2</sub>, this code below can detect and refuse basic SQL injection attacks.  
 
 ```Java
 import static java.lang.System.in;
