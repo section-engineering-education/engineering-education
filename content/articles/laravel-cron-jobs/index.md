@@ -270,3 +270,6 @@ In this tutorial, we've discussed Laravel cron jobs. We looked at two different 
 We looked at an example of scheduling a cron job to send [section](section.io) Edge as a service to users weekly.  We also discussed how to register the artisan commands in the `kernel.php` script.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
