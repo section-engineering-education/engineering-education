@@ -14,6 +14,8 @@ images:
    url: hero.jpg
    alt: First Hop Redundancy Protocol example image
 
+--- 
+
 Organizations use various protocols to prevent a single point failure in their works. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime.
 
 This article will look at how FHRP is used to achieve redundancy in networks, variety of FHRP, and then configure Hot Standby Redundancy Protocol (HSRP), a Cisco proprietary protocol used in the implementation of FHRP.
@@ -94,7 +96,7 @@ When configuring HSRP on a Cisco router, the following steps are used:
 - To ensure that a new election is triggered when another router with higher priority is added to the HSRP group, use the ```standby preempt``` interface command
 
 ### Configuring HSRP protocol on a Cisco router
-![Topology used in this tutorial](/engineering-education/concept-of-first-hop-redundancy-protocol/topo.jpeg)
+![Topology used in this tutorial](concept-of-first-hop-redundancy-protocol/topo.jpeg)
 
 The topology above will be used to configure HSRP for a better understanding of this tutorial.
 
@@ -103,7 +105,7 @@ To configure HRSP on the active router, the following steps are used:
 2.	To configure the HSRP IP address, using the ```standby 2 ip 172.10.1.10```. This command sets the standby group number to 2, and the virtual address, which will be the default gateway for all devices on this group, is set to '172.10.1.10'.
 3.	The ```standby 2 priority 150``` command sets the active router's priority to 150 and allows the router to be elected as the **active router** because it has the highest priority value in the standby group.
 4.	Use the ```standby preempt``` to ensure that a new election is triggered when another router with higher priority is added to the standby group.
-![Active router configuration on a Cisco router](/engineering-education/concept-of-first-hop-redundancy-protocol/topo.jpeg)
+![Active router configuration on a Cisco router](concept-of-first-hop-redundancy-protocol/topo.jpeg)
 The image above shows the configuration of an active router.
 
 Configuring HSRP on the **standby router**
@@ -111,7 +113,7 @@ The following steps are used to configure a standby router.
 1.	Configure the HSRP version using the ```standby version 2``` interface command on the interface gigabit 0/0. This command will enable the HSRP version on the interface.
 2.	To configure the HSRP IP address, using the ```standby 2 ip 172.10.1.10``` . This command sets the standby group number to 2, and the virtual address, which will be the default gateway for all devices on this group, is set to '172.10.1.10'.
 This router takes over the forwarding of the packet only when the active router fails.
-![standby router configuration on a Cisco router](/engineering-education/concept-of-first-hop-redundancy-protocol/stanby.jpeg)
+![standby router configuration on a Cisco router](concept-of-first-hop-redundancy-protocol/stanby.jpeg)
 The image above shows the configuration of a standby router
 To summarize, the reader has learned the following:
 - What a default gateway is
