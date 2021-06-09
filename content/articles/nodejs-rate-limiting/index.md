@@ -45,8 +45,6 @@ Rate limiting is a feature used to control outgoing and incoming requests in a s
 
 The provided code contains an API that returns a list of books when we send a `GET` request to the `/posts` endpoint. We are going to implement a rate limiter that restricts API access to a given number of requests within a specied duration. We are going to use a middleware layer to implement the rate limiter.
 
-Since there is no authentication for users, we will implement the rate limiter using the IP address property. `req.ip` returns the IP addresss from the request object.
-
 In the project root directory, create a new file names `routes.js` and add the code snippets below.
 
 ```javascript
