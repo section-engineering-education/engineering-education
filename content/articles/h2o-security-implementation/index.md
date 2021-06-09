@@ -2,7 +2,7 @@
 
 #### Introduction
 
-Security in the data analytical space is important to consider internally and externally. While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access. In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle.  
+Security in the data analytical space is important to consider internally and externally. While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access. In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle. Security considers the following: the H<sub>2</sub>O instance, data file, and database.   
 
 #### Table of Contents
 
