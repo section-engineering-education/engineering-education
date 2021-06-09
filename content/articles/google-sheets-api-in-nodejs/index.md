@@ -71,7 +71,7 @@ The file should look like the one below:
 ```
 
 ### Creating a Google sheets file
-Next, we create a google sheet file and share it with the email we copied in step 9 above. From the email, our application will read, edit, and update the contents of the Google sheets file. 
+Next, we create a Google sheet file and share it with the email we copied in step 9 above. From the email, our application will read, edit, and update the contents of the Google sheets file. 
 
 Be sure to set the role of the email to `editor`. Our Google sheets file will be used to collect article suggestions and their authors as shown below.
 
@@ -93,17 +93,17 @@ npm init -y
 
 ### Installing dependencies
 Next, we will install the required dependencies. 
->We will use `express` to render dynamic pages, `ejs` for the frontend, `nodemon` for live update during development, and `googleapis` to access the google sheets api.
 
-To install the required project dependencies, we need to execute the following command in our  vscode terminal:
+>We will use `express` to render dynamic pages, `ejs` for the frontend, `nodemon` for live update during development, and `googleapis` to access the Google sheets api.
+
+To install the required project dependencies, we need to execute the following command in our vscode terminal:
 ```bash
     npm install –save googleapis express nodemon
 ```
 
 Next, we create the entry point of the application. Create a file named `index.js` in the main folder. We will write most of our code in this file.
 
-
-### Integrating the API.
+### Integrating the API
 In the `index.js`, import the installed dependecies as follows:
 ```js
 // inlcude express 
@@ -119,8 +119,7 @@ const app = express();
 app.set("view engine", "ejs");
 ```
 
-We will write the next set of snippest under the post route in the `index.js` file.
-Here is a look at the app.post route before we add the snippets.
+We will write the next set of snippest under the post route in the `index.js` file. Here is a look at the app.post route before we add the snippets.
 ```js
 app.post("/", async (req, res) => {
     const { request, name } = req.body;
@@ -142,14 +141,14 @@ app.post("/", async (req, res) => {
     const authClientObject = await auth.getClient();
 ```
 
-#### Instance of Google Sheets API
+#### Instance of Google sheets API
 ```js
 //Google sheets instance
     const googleSheetsInstance = google.sheets({ version: "v4", auth: authClientObject });
 ```
 
 #### Extract the spreadsheets ID from the URL
->The spreadsheet ID be obtained from the URL of the google sheets. It is the alphanumeric value that is between the `/d/` and the `/edit` in the URL of your spreadsheet.
+>The spreadsheet ID to be obtained from the URL of the Google sheets. It is the alphanumeric value that is between the `/d/` and the `/edit` in the URL of your spreadsheet.
 ```js
 // spreadsheet id
 const spreadsheetId = "YOUR SPREADSHEET ID";
@@ -210,6 +209,7 @@ In the file created, add the snippets below:
 ![Form to collect data](/engineering-education/google-sheets-api-in-nodejs/form.png)
 
 The function to write into the spreadsheets takes the auth object, spreadsheet ID, and the range of cells to write onto, the value entered by the user, and the resource object containing the information to insert into the rows. 
+
 ```js
 ```
 
