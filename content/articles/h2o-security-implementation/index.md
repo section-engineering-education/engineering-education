@@ -8,8 +8,8 @@ Security in the data analytical space is important to consider internally and ex
 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
-* [Identify Change](#identify-change)
-* [Allocating Data to Lower Risk](#allocating-data-to-lower-risk)
+* [Instance Internal Security](#instance-internal-security)
+* [Data File Security](#data-file-security)
 
 #### Prerequisites
 
@@ -28,7 +28,7 @@ This section is to emphasize on the fact that Bash is appropriate for this tutor
 
 For any security mechanism to become stable, generation of authentication files is necessary. Refer to the instructions at the [H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security) website to generate `keystore` and `truststore` authentication files.  
 
-#### Identify Change
+#### Instance Internal Security
 
 One noticeable SSL internode security change is when false becomes true as shown below.  
 
@@ -42,7 +42,7 @@ _Connection with internal security._
 
 Data access is not universal. If a database is used, permissions can also limit who can gain specific data access when logging in and during active state.  
 
-#### Allocating Data to Lower Risk
+#### Data File Security
 
 File permission is one of several options to access a data file. Reading, writing, and executing are all default settings that can be implemented. Password protection is also another file protector that can be distributed based on roles. As a reminder, the code below is one of many methods to enforce permissions. The code below specifies group permission for reading.  
 
@@ -58,7 +58,7 @@ mv ./filename.csv ./offline/
 
 [Quantitative security measurements](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals) can depend on the dataset value associated with recovery, loss, and technology costs.  
 
-#### Cyberattack Prevention
+#### Database Security
 
 While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations can appear to become a well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
 
