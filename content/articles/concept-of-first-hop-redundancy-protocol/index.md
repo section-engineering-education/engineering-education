@@ -14,7 +14,6 @@ images:
    url: hero.jpg
    alt: First Hop Redundancy Protocol example image
 
---- 
 
 Organizations use various protocols to prevent a single point failure in their works. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime.
 
