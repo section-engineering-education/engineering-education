@@ -15,7 +15,7 @@ images:
     alt: How to Build a Random Password Generator app with HTML, CSS and JavaScript Hero Image
 ---
 
-A Password Generator is an application that can automatically generate passwords for you. These generated passwords consist of alphabets, numbers, and symbols. This application helps the user create a solid password that cannot be easily guessed or brute-forced.
+A Password Generator is an application that can auto-generate passwords for you. These generated passwords comprise alphabets, numbers, and symbols. This application helps the user create a solid password that cannot be easily guessed or brute-forced.
 <!--more-->
 
 In this article, you will learn how to build a random password generator application with HTML, CSS, and JavaScript.
@@ -189,7 +189,7 @@ Next, let's work on the character codes that we'll use to form the randomly gene
 
 You will also do this for the lowercase characters and numbers. But generating the character codes for the symbols is different because they are allocated in the various places of the ASCII table.
 
-You have to use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. The symbols start at 33 and increase up to 47 and then continue at 58.
+Use the `concat` function to combine them into a single array. This function is a method in JavaScript which allows the concatenation of strings and arrays. The symbols start at 33 and increase up to 47 and then continue at 58.
  
 ```JavaScript
 // Generating Character Codes For The Application
@@ -248,7 +248,7 @@ Next, create a loop that'll loop until it reaches the number of characters you w
  
 Now, generate a random index position of the array by using the `math.random()` method and multiply it with the `charCodes.length` to restrict it to generate numbers up to the highest index position. Next, floor the number using `Math.floor`, which will complete the number that is generated.
  
-Lastly, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
+Last, the `String.fromCharCode(characterCode)` will generate the string from the character code, and the `passwordCharacters.push()` will push the character to the array, the `return passwordCharacters.join(“)` will convert the array to a string and return it.
 
 #### Copy button
 The next thing you want to do is to build the `copy` button and copy to clipboard functionality. We will listen to the click event on the `copybtnDOM` element. Meanwhile, inside that function, you will create a `textarea` element using the `createElement` method in javascript.
@@ -281,7 +281,7 @@ You need to select the elements you want to copy so you will use the `textarea.s
 
 The `copy` command inside the function will copy the values of the editable section, after which you need to remove the `textarea` by using the `textarea.remove();`. This will give the user a notification that the password is successfully copied. 
  
-After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written down, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
+After that, you will code a “simple alert” for it to show it, the `alert(‘password copied to clipboard’)` function. With all these written, the application can not yet generate random passwords because you have not finished implementing the functionality that creates random passwords.
 
 #### Put it all together
 If you click the copy button, you'll observe that the page keeps reloading. You should disable this reloading behavior by using an event API called `preventDefault`. This method will make sure the default behavior i.e., reloading when submitting a form is not affecting the page. You can do this using the code below:
@@ -308,12 +308,12 @@ In the above code, the first step you take is to disable the default behavior of
  
 You can access the values inside the password field by using the `.value` getter method, which returns the input value. You can also use the `.checked` getter that'll return true if the checkboxes are selected or not. It will return false if the checkboxes are not selected. 
  
-We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments which are `characterAmount`, `includeUppercase`, `includeNumbers`, and `includeSymbols`. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
+We are going to create a variable called `password`. This variable will store the value returned by the `generatePassword` function. The `generatePassword` function takes four arguments which are `characterAmount`, `includeUppercase`, `includeNumbers`, and `includeSymbols`. Last, the `innerText` method would target the text inside `resultDOM` then change it with the generated password.
  
 Now, if you run the codes, our random password generator application would work perfectly well. We have successfully built our password generator application.
  
 ### Conclusion
-There are many other ways to build a random password generator application. This tutorial is just one way to achieve it. You can also research different ways of creating it as long as it performs the same functionality. [Here](https://github.com/destiny251/random-password-generator-app-) you can find the source code of our application.
+There are many other ways to build a random password generator application. This tutorial is just one way to achieve it. You can also research different ways of creating it as long as it performs the same functionality. [Here](https://github.com/destiny251/random-password-generator-app-) you can find the source code for our application.
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
