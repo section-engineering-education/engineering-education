@@ -235,3 +235,6 @@ In this tutorial, I explained how to set up Google Drive with Node.js. We wrote 
 ### Further Reading
 - [Google Drive API](https://developers.google.com/drive/api/v3/about-sdk)
 - [Google APIs](https://www.npmjs.com/package/googleapis)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
