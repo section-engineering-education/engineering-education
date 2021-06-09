@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /nodejs-rate-limiting/
+title: Getting Started with Node.js rate limiting
+description: This tutorial will go over the basics of API rate limiting and how to implement rate limiting in a Node.js application
+author: odhiambo-paul
+date: 2021-06-09T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/nodejs-rate-limiting/hero.png
+    alt: Getting Started with Node.js rate limiting
+---
+
 ### Node.js Rate Limiting
 
 The rate-limiting feature makes it possible to secure the Backend API from malicious attacks. It allows us to cap the number of requests that a user can make to our APIs. Rate limiting is widely used by API providers to limit the number of requests an unsubscribed user can make within a given duration i.e. [https://newsapi.org](https://newsapi.org/pricing) limits users with developer accounts only to make 100 requests per day.
