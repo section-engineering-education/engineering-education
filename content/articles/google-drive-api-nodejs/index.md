@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /google-drive-api-nodejs/
+title: Getting Started with Google Drive Node.js API
+description: This tutorial will go through a step by step tutorial on how to integrate Google Drive API into a Node.js application
+author: paul-romans
+date: 2021-06-08T00:00:00-17:00
+topics: [Node.js, API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/google-drive-api-nodejs/hero.png
+    alt: Getting Started with Google sheets API in Node.js
+---
 
 ### Introduction
 Google Drive API is a Google product developed to enable developers to create applications that use Google Drive cloud storage.
@@ -21,7 +37,7 @@ Through the API, you can develop an application that seamlessly integrates Googl
 - [Further Reading](#further-reading)
 
 ### Goal
-At the end of this tutorial, we will build a basic `Node.js` application that uploads, deletes, and generate a sharable link of a file uploaded in Google Drive. We will use the API to carry out all these activities.
+By the end of this tutorial, we shall have built a basic `Node.js` application that uploads, deletes, and generate a sharable link of a file uploaded in Google Drive. We will use the API to carry out all these activities.
 
 >This tutorial mainly focuses on the backend integration of the API.
 
