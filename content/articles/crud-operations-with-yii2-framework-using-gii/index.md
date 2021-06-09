@@ -1,8 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /crud-operations-with-yii2-framework-using-gii/
+title: CRUD Operations With YII2 Framework Using GII
+description: This article takes the reader through creating and carrying out CRUD operations using the YII 2 framework. YII 2 framework contains a module known as GII which is used to generate code for performing CRUD operations.
+author: beatrice-muriithi
+date: 2021-06-09T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/crud-operations-with-yii2-framework-using-gii/hero.png
+    alt: CRUD operations image example
+---
 
-Programmers who have ever worked with the database are likely to have worked with CRUD Operations. These operations are very important when a developer wants to learn any web framework.
+Programmers who have ever worked with the database are likely to have worked with CRUD Operations. These operations are very important when a developer wants to learn any web framework. In this article, we will learn how to carry out CRUD operations using the [YII 2 framework](https://www.yiiframework.com/).
 
-In this article, we will learn how to carry out CRUD operations using the [YII 2 framework](https://www.yiiframework.com/).
+<!--more-->
 
 ### What is CRUD?
 
@@ -236,3 +250,6 @@ CRUD is an operation that is very important for a web application developer. It 
 Try it in your next web application project.
 
 Happy coding! 🙂
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
