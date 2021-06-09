@@ -1,5 +1,4 @@
-
-Data preprocessing is the initial phase of machine learning where data is prepared for machine learning models. This part is very crucial in machine learning and needs to be done properly and systematically. If not, we will end up building models that are not accurate for their purpose.
+Data preprocessing is the initial phase of machine learning where data is prepared for machine learning models. This part is crucial in machine learning and needs to be performed properly and systematically. If not, we will end up building models that are not accurate for their purpose.
 
 In this article, we shall learn all steps that are involved in the data preprocessing stage. 
 
@@ -33,7 +32,7 @@ Dataset = read_csv('data.csv')
 This code imports our data stored in CSV format. We can have a look at our data using the 'view()' function:
 
 ```r
-view( Dataset)
+view(Dataset)
 ```
 
 Upon executing we obtain our dataset as below.
