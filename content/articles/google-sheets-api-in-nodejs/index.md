@@ -210,11 +210,7 @@ In the file created, add the snippets below:
 
 The function to write into the spreadsheets takes the auth object, spreadsheet ID, and the range of cells to write onto, the value entered by the user, and the resource object containing the information to insert into the rows. 
 
-```js
-```
-
 > The resource object has a child value, which is an array of the data to be entered into the sheets. The array length depends on the number of columns of the spreadsheet.
-
 
 ```js
     //write data into the google sheets
@@ -229,8 +225,8 @@ The function to write into the spreadsheets takes the auth object, spreadsheet I
     });
 ```
 
-### Reading from the google sheets file
-The function that reads from the google sheets file takes auth object, spreadsheetsID and the range of cells to read from. The snippets below are used to read the file contents.
+### Reading from the Google sheets file
+The function that reads from the Google sheets file takes auth object, spreadsheets ID and the range of cells to read from. The snippets below are used to read the file contents.
 ```js
     //Read front the spreadsheet
     const readData = await googleSheetsInstance.spreadsheets.values.get({
@@ -252,18 +248,20 @@ app.listen(port, ()=>{
     console.log(`server started on ${port}`)
 });
 ```
-Head to your browser on localhost port 3000, fill in the form, and click the submit button. You should have a success message as shown and data entered into the Google Sheets file.
+
+Head to your browser on localhost port 3000, fill in the form, and click the submit button. You should have a success message as shown below and the data entered into the Google sheets file.
 
 ![success message](/engineering-education/google-sheets-api-in-nodejs/success.png)
 
-
 ### Conclusion
-In this tutorial, we demonstrated how to integrated google sheets api into a node js Application. We created a sheets file and wrote functions to read and write from the file. Now go ahead and implement the same in your project. 
+In this tutorial, we demonstrated how to integrated Google sheets API into a Node.js application. We created a sheets file and wrote functions to read and write from the file. 
+
+Now go ahead and implement the same in your project. 
 
 You can find the source code for the entire project [here](https://github.com/mia-roberts/google-sheets-api).
 
 ### Final thoughts
-Google Sheets has a wide range of applications. Programmers can explore not only to maximize its functionalities but also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use google sheets to records attendance using QR-codes. 
+Google sheets has a wide range of applications. Programmers can explore not only to maximize its functionalities but also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use google sheets to records attendance using QR-codes. 
 
 Besides, we can use google sheets to extract data from financial websites as [this tutorial](https://www.youtube.com/watch?v=2JX8Y24PAlM) explains. Through proper research, we could understand how to make large-scale applications from the ideas presented in these videos.
 
