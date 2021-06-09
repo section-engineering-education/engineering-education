@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In machine learning, a data transformer is a tool used to make a dataset fit for the training process. Scikit-Learn is a Python library containing methods that help us achieve our machine learning process faster. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
+In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit-Learn is a Python library containing methods that help us achieve our machine learning process faster. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
 
 In this article, we will look at how to do that.
 
@@ -10,12 +10,12 @@ In this article, we will look at how to do that.
 
 1. A good understanding of the Python language.
 2. Familiarity with the Numpy and Pandas library.
-3. A basic knowledge in using Jupyter Notebooks or any other notebook-based technology e.g Google Colabs.
-4. Python and the above-mentioned libraries installed.
+3. A basic knowledge in using Jupyter Notebooks or any other notebook-based technology, e.g., Google Colab.
+4. Python and the libraries mentioned above installed.
 
 Let's jump into it.
 
-> The code snippets are tailored for a notebook but you can as well use normal python files.
+> The code snippets are tailored for a notebook, but you can also use regular python files.
 
 ### Getting Started
 
@@ -44,8 +44,8 @@ def get_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
 get_data()
 ```
 
-The code is for downloading the data from the url so we won't dwell so much on it.
-We first import the `os` module for interacting with the Operating System. Thereafter, we import the `tarfile` module for accessing and manipulating tar files. Lastly, we import the `urllib` for using URL manipulation functions.
+The code is for downloading the data from the URL to not dwell on it.
+We first import the `os` module for interacting with the Operating System. After that, we import the `tarfile` module for accessing and manipulating tar files. Lastly, we import the `urllib` for using URL manipulation functions.
  
 We then set our paths appropriately. In the `get_data()` function, we make a directory for our data, retrieve it from the URL then extracting and storing it. So, in your working directory, you will notice a directory called *datasets* created. On opening it, you will get another directory called *housing* with a file named **housing.csv** in it. We will use this file.
 
@@ -63,7 +63,7 @@ def load_our_data(our_path=OUR_PATH):
 our_dataset = load_our_data()
 
 ```
-We first import the `pandas` library which later loads the CSV data from the specified path, `our_file_path`.
+We first import the `pandas` library, which loads the CSV data from the specified path, `our_file_path`.
 
 You can view the data using these codes:
 
@@ -93,11 +93,11 @@ our_dataset_numeric = pd.DataFrame(X, columns=our_dataset_num.columns)
 
 We drop the *ocean_proximity* attribute because it's a text attribute that will handle in the next section.
 
-The result produced is an array so we convert it to a DataFrame.
+The result produced is an array, so we convert it to a DataFrame.
 
 #### Handling text and categorical attributes
 
-We cannot handle text and numerical attributes in the same manner e.g we cannot compute the median of text.
+We cannot handle text and numerical attributes similarly. For example, we cannot compute the median of text.
 
 We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly.
 
@@ -145,7 +145,7 @@ our_extra_attributes = attrib_adder.transform(our_dataset.values
 
 ```
 
-For our transformer to work smoothly with Scikit-Learn, we should have 3 methods:
+For our transformer to work smoothly with Scikit-Learn, we should have three methods:
 
 1. `fit()`
 2. `transform()`
@@ -153,10 +153,10 @@ For our transformer to work smoothly with Scikit-Learn, we should have 3 methods
 
 The last one is gotten automatically by using the `TransformerMixin` as a base class. The `BaseEstimator` lets us get the `set_params()` and `get_params()` methods that are helpful in hyperparameter tuning.
 
-We get the three extra attributes in the `transform()` method by dividing appropriate attributes e.g to get the rooms per household, we divide the number of rooms by the number of households.
+We get the three extra attributes in the `transform()` method by dividing appropriate attributes. An example would be the following: To get the rooms per household, we divide the number of rooms by the number of households.
 
 #### Our pipeline
-For the data transformation steps to be executed in the correct order, we implement them in a pipeline.
+We implement them in a pipeline for the data transformation steps to be executed in the correct order.
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -182,6 +182,5 @@ The `ColumnTransformer` is used to transform columns separately and combine the 
 
 ### Conclusion
 
-We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. Hope you got some insights.
+We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. I hope you got some insights.
 
-Have a good one.
