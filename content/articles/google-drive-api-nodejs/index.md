@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /google-drive-api-nodejs/
 title: Getting Started with Google Drive Node.js API
-description: This tutorial will go through a step by step tutorial on how to integrate Google Drive API into a Node.js application.
+description: This tutorial will go through a step by step tutorial on how to integrate Google Drive API into a Node.js application. We will write functions to upload, delete, and share a file in Google Drive. 
 author: paul-romans
 date: 2021-06-09T00:00:00-14:00
 topics: [Node.js, API]
