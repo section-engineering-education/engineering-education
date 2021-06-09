@@ -2,6 +2,8 @@
 
 #### Introduction
 
+H<sub>2</sub>O is a library compatible with many coding languages including Python. This library can be used to analyze descriptive and predictive trends. It is similar to other machine learning libraries in Python. The option to include security is a hidden advantage that many Python libraries may not include. Read on to find out how security can be implemented throughout the data analysis cycle when using H<sub>2</sub>O with Python.  
+
 Security in the data analytical space is important to consider internally and externally. While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access. In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle. Security considers the following: the H<sub>2</sub>O instance, data file, and database.   
 
 #### Table of Contents
@@ -120,7 +122,10 @@ Happy Coding!
 
 #### References
 
+[H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/index.html)  
+[How to create H<sub>2</sub>O instances](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/starting-h2o.html#from-python)  
+[How to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security)  
+[How to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python)  
+[Educational References](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals)  
 [Linux Container Option 1](https://www.zdnet.com/article/minimal-ubuntu-for-containers-and-clouds/#:~:text=While%20that%20release%20is%20useful%20mostly%20for%20hobbyists%2C,the%20standard%20Docker%20Hub%20Ubuntu%2018.04%20LTS%20image.)  
 [Linux Container Option 2](https://kali.org/)  
-[H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/index.html)  
-[Educational References](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals)  
