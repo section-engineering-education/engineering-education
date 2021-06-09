@@ -261,9 +261,9 @@ Now go ahead and implement the same in your project.
 You can find the source code for the entire project [here](https://github.com/mia-roberts/google-sheets-api).
 
 ### Final thoughts
-Google sheets has a wide range of applications. Programmers can explore not only to maximize its functionalities but also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use google sheets to records attendance using QR-codes. 
+Google sheets has a wide range of applications. Programmers can explore to maximize its functionalities and also to make better applications. For instance, [this tutorial](https://www.youtube.com/watch?v=Pxm5o3VkkFE) explains how to use Google sheets to records attendance using QR-codes. 
 
-Besides, we can use google sheets to extract data from financial websites as [this tutorial](https://www.youtube.com/watch?v=2JX8Y24PAlM) explains. Through proper research, we could understand how to make large-scale applications from the ideas presented in these videos.
+Besides, we can use Google sheets to extract data from financial websites as [this tutorial](https://www.youtube.com/watch?v=2JX8Y24PAlM) explains. Through proper research, we could understand how to make large-scale applications from the ideas presented in these videos.
 
 Good luck coding!
 
