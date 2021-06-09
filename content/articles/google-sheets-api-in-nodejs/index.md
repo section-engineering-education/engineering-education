@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /google-sheets-api-in-nodejs/
-title: Getting Started with Google sheets API in Node.js
+title: Getting Started with Google Sheets API in Node.js
 description: This tutorial will go through a step by step tutorial on how to integrate Google sheets API into a Node.js application
 author: mia-roberts
-date: 2021-06-08T00:00:00-12:00
+date: 2021-06-08T00:00:00-17:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
