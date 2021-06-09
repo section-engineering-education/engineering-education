@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /concept-of-first-hop-redundancy-protocol/
+url: concept-of-first-hop-redundancy-protocol/
 title: Concept of First Hop Redundancy Protocol
 description: Organizations use various protocols to prevent a single point failure in their systems. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime. In this article we discuss FHRP in detail and how it is used to achieve redundancy in networks.
 author: rabo-james-bature
