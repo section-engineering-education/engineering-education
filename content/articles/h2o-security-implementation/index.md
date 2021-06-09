@@ -16,7 +16,7 @@ Security in the data analytical space is important to consider internally and ex
 * Linux computer Operating System (OS) or Linux container with `root` authorization (this tutorial uses [Kali Linux](https://kali.org/).
 * Basic Bash knowledge.
 * Python (preferably 3.3+, tutorial uses 3.9).
-* Prior knowledge on [how to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python), [how to create H<sub>2</sub>O instances](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/starting-h2o.html#from-python), and [how to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security
+* Prior knowledge on [how to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python), [how to create H<sub>2</sub>O instances](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/starting-h2o.html#from-python), and [how to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security)
 * Bash installations: H<sub>2</sub>O, Java, `keytools`, and a Linux text editor.
 * Python installation of H<sub>2</sub>O.
 * Some Java coding knowledge.
