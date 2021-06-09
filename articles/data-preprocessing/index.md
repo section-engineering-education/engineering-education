@@ -6,7 +6,7 @@ In this article, we shall learn all steps that are involved in the data preproce
 ### Prerequisites
 
 1. [RStudio](https://www.rstudio.com/products/rstudio/download/) installed on your computer.
-2. Package packages('caTools') installed.
+2. Package packages('caTools') installed. Follow [this](https://www.rdocumentation.org/packages/caTools/versions/1.17.1) link for installation instructions.
 
 ### Steps in Data Preprocessing
 - [Steps in Data Preprocessing](#steps-in-data-preprocessing)
