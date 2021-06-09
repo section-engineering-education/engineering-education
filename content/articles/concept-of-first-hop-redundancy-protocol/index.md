@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: concept-of-first-hop-redundancy-protocol/
+title: Concept of First Hop Redundancy Protocol
+description: Organizations use various protocols to prevent a single point failure in their systems. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime. In this article we discuss FHRP in detail and how it is used to achieve redundancy in networks.
+author: rabo-james-bature
+date: 2021-06-10T00:00:00-18:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+   url: hero.jpg
+   alt: First Hop Redundancy Protocol example image
+
 Organizations use various protocols to prevent a single point failure in their works. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime.
 
 This article will look at how FHRP is used to achieve redundancy in networks, variety of FHRP, and then configure Hot Standby Redundancy Protocol (HSRP), a Cisco proprietary protocol used in the implementation of FHRP.
