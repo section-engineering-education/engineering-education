@@ -10,6 +10,7 @@ Security in the data analytical space is important to consider internally and ex
 * [Installation](#installation)
 * [Instance Internal Security](#instance-internal-security)
 * [Data File Security](#data-file-security)
+* [Database Security](#database-security)
 
 #### Prerequisites
 
