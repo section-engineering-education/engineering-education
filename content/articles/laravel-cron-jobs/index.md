@@ -13,7 +13,7 @@ In this tutorial, we'll discuss Laravel cron jobs in-depth, with our focus on cr
 
 
 ### Objectives
-At the end of this task scheduling tutorial, you should be able to create and schedule tasks using Laravel. Additionally, you should be able to create Laravel artisan commands which play a crucial part in task scheduling.  
+At the end of this tutorial, you should be able to create and schedule tasks using Laravel. Additionally, you should be able to create Laravel artisan commands which play a crucial part in task scheduling.  
 
 ### Prerequisites
 - Basic Knowledge of PHP and Laravel.
@@ -28,7 +28,7 @@ A cron has 3 main components:
 - The command that is used to execute the script.
 - The output. This depends on the action on the executed script.
 
-Cron is configured in a crontab/cron table to manage the task scheduling process. This configuration file contains all the cron jobs for each task specified.  
+Cron is configured in a crontab to manage the task scheduling process. This configuration file contains all the cron jobs for each task specified.  
 
 ### Laravel cron jobs
 
@@ -77,7 +77,7 @@ class Kernel extends ConsoleKernel
 }
 ```
 In the above example, we have a task that's being executed hourly to remove inactive users in an application.
-Within the `schedule()` method, we have a database query that deletes inactive users. This type of implementation is referred to as `scheduling task using closures`.  
+Within the `schedule()` method, we have a database query that deletes inactive users. This is referred to as `scheduling task using closures`.  
 
 You can view all your scheduled tasks by running the following command:
 ```bash
@@ -113,41 +113,21 @@ This creates the `PromotionalEmails.php` file in the `app/Console/Commands` fold
 
 <?php
 
-namespace App\Console\Commands;
-
-use Illuminate\Console\Command;
+---------------------------------------------------
 
 class PromotionalEmails extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
+  
     protected $signature = 'command:name';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
+   
     protected $description = 'Command description';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle()
     {
         return 0;
@@ -181,35 +161,14 @@ use Illuminate\Console\Command;
 
 class PromotionalEmails extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'promotional:email';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Sending out promotional emails to application users';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
     }
-
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle()
     {
 
@@ -217,7 +176,6 @@ class PromotionalEmails extends Command
             'message' => 'Hello, did you know that moving services to the Edge is complicated but Section makes it easy. ',
         ];
 
-        // Finding a random word
         $key = array_rand($message);
         $value = $message[$key];
 
@@ -278,17 +236,10 @@ Output:
 Laravel Framework 8.46.0
 
 Usage:
-  command [options] [arguments]
+  --------------------------------
 
 Options:
-  -h, --help            Display help for the given command. When no command is given display help for the list command
-  -q, --quiet           Do not output any message
-  -V, --version         Display this application version
-      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
-  -n, --no-interaction  Do not ask any interactive question
-      --env[=ENV]       The environment the command should run under
-  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output, and 3 for debug
-
+--------------------------------------------
 Available commands:
 -------------------------------------------------------------
  promotional
