@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/
 title: How Serverless Architecture can Impact the Future of AI and ML Industries
-description: In this article we cover how serverless architecture will impact the future of the AI and ML industries.
+description: In this article, we cover how serverless architecture will impact the future of the AI and ML industries.
 author: lewel-murithi
 date: 2021-05-22T00:00:00-18:00
 topics: []
@@ -15,24 +15,24 @@ images:
     alt: How Serverless Architecture can Impact the Future of AI and ML Industries Hero Image
 ---
 
-[Artificial Intelligence](https://builtin.com/artificial-intelligence) is the future of technological progress, and many platforms are adopting it. These AI-driven platforms have helped us make quick and more innovative decisions. They have also revolutionized the customer experience, the business world, and business intelligence.
+[Artificial Intelligence](https://builtin.com/artificial-intelligence) is the future of technological progress thus many platforms are adopting it. These AI-driven platforms have helped us make quick and more innovative decisions. They have revolutionized the customer experience, the business world, and business intelligence.
 <!--more-->
 
-A developer's productivity and efficiency are greatly affected by the complexity of the [machine learning systems](https://www.sciencedirect.com/topics/computer-science/machine-learning-system) being built or managed. However, by the use of [serverless architecture](https://martinfowler.com/articles/serverless.html), most difficulties are solved. The serverless architecture effectively handles [machine learning models](https://developer.ibm.com/technologies/artificial-intelligence/articles/cc-models-machine-learning/) and resource management.
+A developer's productivity and efficiency are greatly affected by the complexity of the [machine learning systems](https://www.sciencedirect.com/topics/computer-science/machine-learning-system) that's being built or managed. However, by the use of a [serverless architecture](https://martinfowler.com/articles/serverless.html), most of the difficulties that are faced by the developers are solved. The serverless architecture effectively handles the [machine learning models](https://developer.ibm.com/technologies/artificial-intelligence/articles/cc-models-machine-learning/) and manages the resources effectively.
 
-Serverless does not refer to there is no real server in place. Instead, it means that a third party handles and maintains the server infrastructure, scalability adjustment, and capacity planning. Serverless architecture gives the developers ample time and energy to concentrate on [AI model training](https://insidebigdata.com/2018/10/08/ai-training-work/) rather than managing the server's infrastructure.
+Serverless doesn't mean that there's no server in place. It means a third party handles and maintains the server infrastructure, scalability adjustment, and capacity planning. Serverless architecture gives the developers ample time and energy to concentrate on [AI model training](https://insidebigdata.com/2018/10/08/ai-training-work/) rather than managing the server's infrastructure.
 
 ### Goals for Serverless Architecture for AI and ML
 Apart from infrastructure maintenance and monitoring of the application, serverless machine learning has other goals.
 
 Machine Learning systems are usually built for complex problems. They perform several tasks such as processing and preprocessing data, training models, and tuning AI models. Therefore [APIs](https://www.mulesoft.com/resources/api/what-is-an-api) should enable smooth execution.
 
-Steady data storage and smooth message transfers with no delays should be ensured by serverless computing and AI.
+A steady data storage and smooth message transfers with no delays should be ensured by serverless computing and AI.
 
 ### The Benefits of Using Serverless Architecture in AI and ML
 Serverless architecture gives many opportunities and provides many advantages that will make the machine learning model more efficient and smoother.
 
-You can run code for virtually any application type or back-end services with zero administration. The infrastructure provider does all these by automatically and precisely allocating compute execution power based on the incoming requests of any traffic size.
+You can run code for virtually any application type or back-end services with zero administration. The infrastructure provider performs this by precisely allocating compute execution power based on the incoming requests of any traffic size on its own.
 
 Below are the advantages of ML and serverless architecture:
 
@@ -42,7 +42,7 @@ Below are the advantages of ML and serverless architecture:
 
 - **Independent Work**
 
-  Serverless computing allow the development teams to work independently with minimal interference and delays. This is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
+  Serverless computing allows the development teams to work independently with minimal interference and delays. This is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
 
   Also, developers can apply changes, work on development or even execute the deployment independently.
 
@@ -76,7 +76,7 @@ The following steps demonstrate one approach developers can use to build serverl
   It is the last step of the AI development process, where the system is made available for offline and online prediction. Then the developer inspects the AI Platform Prediction, where all the model versions and model resources are stored. Lastly, the developer has to connect the local model version to the models stored in the cloud.
 
 ### Use Cases of AI and ML Models on a Serverless Architecture
-AI has taken over today's life, making it easier by revolutionizing automation and improving the business environments.
+AI has taken over today's life, making it easier by revolutionizing automation and improving the business environment.
 
 Below are some use cases for machine learning algorithms on serverless architecture that makes the tasks easier and the data to be more precise:
 
