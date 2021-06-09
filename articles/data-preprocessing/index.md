@@ -23,7 +23,7 @@ In this article, we shall learn all steps that are involved in the data preproce
 
 #### Step 1: Importing the Dataset
 
-Before we start preparing our data, first we need to load it in RStudio IDE.
+Before we start preparing our data, first we need to dowload it from [here](https://github.com/Daniel695/data) and load it in RStudio IDE.
 Here is how to achieve this.
 
 ```r
