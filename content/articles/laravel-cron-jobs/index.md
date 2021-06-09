@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/laravel-cron-jobs/hero.jpg
+ - url: /engineering-education/laravel-cron-jobs/hero.png
    alt:  Getting Started with Laravel cron jobs
 ---
 
