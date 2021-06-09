@@ -1,4 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /node-curl/
+title: Making cURL Requests in Node.js
+description: In this article, we are going to go through using cURL in Node.js using the `node-libcurl` library. We are going to go through the libraries' introductory functionalities, and in our case, we will look at form submission. This is chosen because it is easier for a beginner to understand.
+author: vincent-ngunzulu
+date: 2021-06-09T00:00:00-07:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/node-curl/hero.jpg
+    alt: cURL requests image example
+---
+
+### Introduction
+
 **cURL(client URL)** is a free tool used to make network requests from the terminal using various protocols available. It's very useful when one wants an application to request without necessarily engaging a user e.g checking and validating the access token for using an API. For backend developers like me, it may come in handy when we want to send form data to test our APIs without designing a user interface for a form. Of course, there is Postman but, with this, you can customize and have more control over it.
+
+<!--more-->
 
 It supports various protocols such as HTTP, FTP, FILE, etc. Other than the command-line, we can use cURL to display responses gotten from the requests on a webpage. An example of a cURL command is shown below:
 
