@@ -260,3 +260,7 @@ When we exceed the limit, we get the response as shown below.
 ### Conclusion
 
 Now that you have learned how to implement rate-limiting in a Node.js application, implement the rate limiter in your application to control the traffic in your application. The complete source of the application can be downloaded from [here](https://replit.com/@paulodhiambo/rate-limiter).
+
+---
+
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
