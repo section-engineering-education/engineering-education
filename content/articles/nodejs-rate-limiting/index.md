@@ -258,5 +258,4 @@ When we exceed the limit, we will get the following response:
 You have learned how to implement rate-limiting in a Node.js application, and how to implement the rate limiter in your application to control the traffic. You can find the complete code [here](https://replit.com/@paulodhiambo/rate-limiter).
 
 ---
-
-Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
