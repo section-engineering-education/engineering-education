@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /nodejs-rate-limiting/
-title: Getting started with Node.js rate limiting
+title: Getting Started with Node.js Rate Limiting
 description: This tutorial will go over the basics of API rate limiting and how to implement rate limiting in a Node.js application
 author: odhiambo-paul
-date: 2021-06-10T00:00:00-10:00
+date: 2021-06-10T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -21,7 +21,7 @@ Rate limiting is a feature used to control outgoing and incoming requests in a s
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
-1. A General understanding of HTTP requests/responses.
+1. A general understanding of HTTP requests/responses.
 2. [Node.js](https://nodejs.org/en/) and [Redis](https://redis.io/download) installed on your computer.
 3. Some knowledge of [Node.js](https://www.w3schools.com/nodejs/).
 
