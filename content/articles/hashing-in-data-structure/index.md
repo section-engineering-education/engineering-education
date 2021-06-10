@@ -16,27 +16,27 @@ images:
 ---
 ### Hashing in Data Structure
 
-In hashing the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
+In hashing, the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 
 We generate a hash for the input using the hash function and then store the element using the generated hash as the key in the hash table.
 
 ![HashTable](./HashIntro.PNG)
 
-**Hash Table**: Hash table is a collection of Key-Value pairs. It is used when the searching, insertion of an element is required to be fast.
+**Hash Table**: The hash table is a collection of key-value pairs. It is used when the searching or insertion of an element is required to be fast.
 
 Operation in hash function:
 
 - **Insert** - T[ h(key) ] = value;
-  - Calculate the hash, use it as the key and store the value in hash table.
+  - It calculates the hash, uses it as the key and stores the value in hash table.
 - **Delete** - T[ h(key) ] = NULL;
-  - Calculate the hash, reset the value stored in the hash table for that key.
+  - It calculates the hash, resets the value stored in the hash table for that key.
 - **Search** - return T[ h(key) ];
-  - Calculate the hash, find and return the value stored in the hash table for that key.
+  - It calculates the hash, finds and returns the value stored in the hash table for that key.
 
 **Hash Collision**: When two or more inputs are mapped to the same keys as used in the hash table.
 Example: h("John") == h( "joe")
 
-A collision can not be completely avoided but can be minimized using a 'good' hash function and a bigger table size.
+A collision cannot be completely avoided but can be minimized using a 'good' hash function and a bigger table size.
 
 The chances of hash collision are less if the table size is a prime number.
 
@@ -55,7 +55,7 @@ The chances of hash collision are less if the table size is a prime number.
 
 1. **Open Hashing (Separate Chaining)**: In this using Linked List, new nodes are added to the list, the key act as the head pointer, pointing to several nodes having different values. If any collision two elements is having same hash value we store both of them in a same linked list.
 
-   Lets cosnidser a example of a simple hash function
+Let's consider an example of a simple hash function	
    
    `h(key) = key%table size`
 
@@ -73,7 +73,7 @@ The chances of hash collision are less if the table size is a prime number.
 
    ![Example](./hashMap_2.PNG);
 
-   For separate chaining, the worst-case scenario is when all of the keys will get the same hash value and will be inserted in the same linked list. We can avoid that by using a good hash function.
+   For separate chaining, the worst-case scenario is when all of the keys will get the same hash value and will be inserted in the same linked list. We can avoid this by using a good hash function.
 
 2. **Closed Hashing (Open Addressing)**: In this, we find the "next" vacant bucket in Hash Table and store the value in that bucket.
 
@@ -91,7 +91,7 @@ The chances of hash collision are less if the table size is a prime number.
 
 **Load Factor**: This is a measurement of how full a hash table may become before its capacity is increased. 
 
-A hash table's load factor T is defined as:
+The hash table's load factor, T, is defined as:
 
 - N = number of elements in T - Current Size
 - M = size of T - Table Size
@@ -103,7 +103,7 @@ Generally, if the load factor is greater than 0.5, we increase the size of the b
 
 Given the above examples, one would wonder how hashing may be O(1) if several items map to the same place...  
 
-The solution to this problem is straightforward. We use the load factor to ensure that each block, (for example linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice this load factor is constant ( generally 10 or 20 ). As a result, searching in 20 or 10 elements become constant.
+The solution to this problem is straightforward. We use the load factor to ensure that each block, for example, (linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice, this load factor is constant ( generally 10 or 20 ). As a result, searching in 10 or 20 elements become constant.
 
 If the average number of items in a block exceeds the load factor, the elements are rehashed with a larger hash table size.
 
@@ -114,7 +114,7 @@ When the load factor gets "too high" (specified by the threshold value), the pro
 - Typically, double the size of the table (but still prime).
 - All existing items must be reinserted into the hash table.
 
-Now let's deep dive into the code I will implement everything in code that we have learned till now.
+Now let's deep dive into the code. I will implement everything in code that we have learned till now.
 
 ```C++
 #include<iostream>
@@ -288,12 +288,12 @@ int main(){
 
 ```
 
+The complete execution of the above code can be found [here](https://replit.com/@Anubhavb11/HashMap#main.cpp).
+=======
+
 #### Output
 
 ![output](./Capture.PNG)
 
-The execution of the above code can be found here:-
-[code implementation](https://replit.com/@Anubhavb11/HashMap#main.cpp)
-=======
 ---
 Peer Review Contributions by: [Willies Ogola](https://www.section.io/engineering-education/authors/willies-ogola/)
