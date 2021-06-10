@@ -16,7 +16,7 @@ images:
 ---
 
 ### Introduction
-Containerization involves the packaging of code and its dependencies together. To understand containerization with Docker and Kubernetes, this guide provides an example of developing a simple application, containerizing, and deploying it to Kubernetes.
+Containerization involves the packaging of code and its dependencies together. To understand containerization with Docker and Kubernetes, this guide provides an example of developing a simple application, containerizing, and deploying it to a Kubernetes cluster.
 
 
 ### Prerequisites
@@ -28,9 +28,9 @@ You will need the following for the tutorial:
 
 
 ### Understanding Docker & Containers
-Docker is an open-source containerization tool that packages applications into small units called containers. A docker container image is a standalone software package that contains all the requirements for an application to run. 
+Docker is an open-source containerization tool that packages applications into small units called containers. A Docker container image is a standalone software package that contains all the requirements for an application to run. 
 
-Without docker, a developer can send a running code to a tester, but upon running, the code might not run on the tester's system. However, with Docker, an application is packaged with all the requirements and dependencies, hence a Docker container can run on any platform.
+Without Docker, a developer can send a running code to a tester, but upon running, the code might not run on the tester's system. However, with Docker, an application is packaged with all the requirements and dependencies, hence a Docker container can run on any platform with Docker runtime.
 
 ### What is Kubernetes?
 Kubernetes assists in the orchestration of containerized applications to run on a cluster of hosts. It automates the deployment and management of Dockerized applications in cloud platforms. It levies the deployment team in the manual processes of deployment and scaling applications.
@@ -229,5 +229,7 @@ This tutorial should help a beginner to get started with containerization using 
 
 You can find the source code for the application in [this](https://github.com/bastian-zab/flask-app-with-docker-and-kubernetes) link.
 
+Happy Coding!
 
-
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
