@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /deploy-docker-container-to-kubernetes-cluster/
+title: How to deploy Docker container to a Kubernetes cluster
+description: This tutorial explains how to containerize a Flask application and deploy to a Kubernetes cluster
+author: samuel-zabastian
+date: 2021-06-10T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/deploy-docker-container-to-kubernetes-cluster/hero.png
+   alt:  How to deploy Docker container to a Kubernetes cluster
+---
+
 ### Introduction
 Containerization involves the packaging of code and its dependencies together. To understand containerization with Docker and Kubernetes, this guide provides an example of developing a simple application, containerizing, and deploying it to Kubernetes.
 
