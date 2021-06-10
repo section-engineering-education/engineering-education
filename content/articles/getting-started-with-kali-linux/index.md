@@ -1,4 +1,4 @@
-## Getting started with Kali Linux
+### Getting started with Kali Linux
 **Kali Linux** is the most popular penetration testing platform that provides a variety of security auditing tools used by security specialists and hackers in day-to-day encounters.
 
 Tools available on Kali Linux enable the user to gather information, perform exploits and prevent their devices from exploits.
