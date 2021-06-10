@@ -61,9 +61,7 @@ public class Program
 Let's learn how to allow the use of unsafe codes in your [VS code](https://code.visualstudio.com/):
 
 1. Go to the View tab. Then choose Solution Explorer from the drop-down menu.
-
 2. Double-click the Property option in the Solution Explorer to expand it.
-
 3. Check the "Allow unsafe code" option.
 
 ![output](/engineering-education/pointers_in_c#/activating_unsafe_code.png)
@@ -126,7 +124,7 @@ Pinning an object in C# entails restricting an object from moving into the [garb
 
 Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated.
 
- On the managed heap, reference types are managed. 
+On the managed heap, reference types are managed. 
 
 After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of.
 
