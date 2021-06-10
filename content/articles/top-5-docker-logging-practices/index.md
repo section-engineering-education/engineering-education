@@ -12,7 +12,7 @@ Docker introduced the concept of [logging drivers](https://docs.docker.com/confi
 
 ### Docker logging challenges
 
-Docker logging has its own share of challenges. The disposable and transient nature of Docker containers means that you risk losing all the logs or data generated during the existence of that Docker container when the container shuts down. While this is arguably not a big issue and happens by default, a Docker container may shut down unexpectedly.
+Docker logging has its own share of challenges. The disposable and transient nature of Docker containers means you risk losing all the logs or data generated during the existence of that Docker container when the container shuts down. While this is arguably not a big issue and happens by default, a Docker container may shut down unexpectedly.
 
 When this happens, you need to find out what went wrong with your containers. But it is not usually an easy task to deal with complex Docker environments with multiple containers running in large clusters. You need to map log events with their respective containers or applications. This is highly challenging, and that is why you need to master the best practices to logging your Docker container.
 
@@ -20,7 +20,7 @@ When this happens, you need to find out what went wrong with your containers. Bu
 
 #### Logging directly from your application
 
-In this Docker logging method, applications inside containers handle their own logging using a logging framework. A good example is the Java app that uses [Log4j2](https://logging.apache.org/log4j/2.x/) format logs and sends them to a remote centralized location, skipping OS and Docker.
+In this Docker logging method, applications inside containers handle their logging using a logging framework. A good example is the Java app that uses [Log4j2](https://logging.apache.org/log4j/2.x/) format logs and sends them to a remote centralized location, skipping OS and Docker.
 
 With this solution, developers get the most control over the logging event. But this also creates an extra load on the application process. Containers are transient in nature. That means you need to ensure the logging framework is not limited to not only the container itself. Otherwise, logs stored in the container's file system are lost if the container is shut down or terminated.
 
@@ -31,7 +31,7 @@ With this solution, developers get the most control over the logging event. But 
 - The independence of applications from containers and the host is a plus.
 
  |
-- You may have to forward logs to a remote storage or configure a persistent data volume to prevent data loss.
+- You may have to forward logs to remote storage or configure a persistent data volume to prevent data loss.
 
  |
 
@@ -43,7 +43,7 @@ The transient nature of containers dictates that you store log events in a data 
 | --- | --- |
 |
 - A perfect solution when you need to centralize and store logs over a long period.
-- It allows sharing of a single data volume to multiple containers.
+- It allows sharing of a single data volume with multiple containers.
  |
 - You risk losing log data when moving containers to different hosts.
  |
@@ -74,18 +74,18 @@ This approach uses logging containers to log your Docker environment. Each appli
 - Allows full customization of each application's solution.
  |
 - Challenging to set up.
-- Consumes more resources compared to dedicated logging approach.
+- Consumes more resources compared to the dedicated logging approach.
 - You must treat both the logging container and the application as single units.
  |
 
 #### Dedicated logging container solution
 
-Another method to log your Docker is to dedicate a container purely to collecting logs. This method does not depend on a host machine. The dedicated logging container helps in managing log files within the Docker environment. It also aggregates logs from other containers automatically and monitors, analyzes, and stores or forwards the files to a central location. Besides, it allows you to collect logs through streams of Docker API data, stats, and log events.
+Another method to log your Docker is to dedicate a container purely to collect logs. This method does not depend on a host machine. The dedicated logging container helps in managing log files within the Docker environment. It also aggregates logs from other containers automatically and monitors, analyzes, and stores or forwards the files to a central location. Besides, it allows you to collect logs through streams of Docker API data, stats, and log events.
 
 | Pros | Cons |
 | --- | --- |
 |
-- Scaling is very straightforward. You deploy more logging containers when the need arises.
+- Scaling is straightforward. You deploy more logging containers when the need arises.
 - Dependencies on the host machine are eliminated.
  |
 - You need to define the logging container and the application container clearly.
