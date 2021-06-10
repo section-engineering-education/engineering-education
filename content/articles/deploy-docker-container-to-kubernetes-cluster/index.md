@@ -113,7 +113,7 @@ gunicorn==20.0.4
 ```
 
 ### Creating a Dockerfile
-The docker file is used by the Docker engine to create a new docker image of the application container. It sets up an environment needed to run the application. Create a file called `Dockerfile` and add the snippets below:
+The Dockerfile is used by the Docker engine to create a new Docker image of the application container. It sets up an environment needed to run the application. Create a file called `Dockerfile` and add the snippets below:
 ```py
 # We need python 3.8
 FROM python:3.8
@@ -135,7 +135,7 @@ CMD ["python", "/app/app.py"]
 ```
 
 ### Generating the application image
-Startup the docker desktop, then execute the command below:
+Startup the Docker desktop, then execute the command below:
 
 ```bash
     docker build --tag flask-test-app:latest .
@@ -192,7 +192,7 @@ The file has two parts:
 
 The benefit of multiple replicas is that if an instance crashes, the other application instances continue running.
 
-The `deployment.yaml` file is connected to the docker image created earlier, therefore to deploy the application to the Kubernetes cluster, we use the docker image. The image will automatically create containers for the application when we deploy the application.
+The `deployment.yaml` file is connected to the Docker image created earlier, therefore to deploy the application to the Kubernetes cluster, we use the Docker image. The image will automatically create containers for the application when we deploy the application.
 
 ### Deploying to Kubernetes Service
 We have dockerized our Flask application, and now we need to deploy it to a Kubernetes engine. Execute the command below in your terminal:
@@ -224,7 +224,7 @@ This command will open the application in a browser as shown below:
 ![Deployed app](/engineering-education/deploy-docker-container-to-kubernetes-cluster/app-deployed.png)
 
 ### Conclusion
-In this tutorial, we created a web application using the Flask framework. We went ahead and created a docker image of the application. Lastly, we successfully deployed the app to the Kubernetes cluster using minikube.
+In this tutorial, we created a web application using the Flask framework. We went ahead and created a Docker image of the application. Lastly, we successfully deployed the app to the Kubernetes cluster using Minikube.
 This tutorial should help a beginner to get started with containerization using Docker containers and Kubernetes clusters.
 
 You can find the source code for the application in [this](https://github.com/bastian-zab/flask-app-with-docker-and-kubernetes) link.
