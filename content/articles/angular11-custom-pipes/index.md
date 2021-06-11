@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /angular11-custom-pipes/
 title: Getting Started with Angular 11 custom pipes
-description: This tutorial will go through process of using these pipes to transform display data, and how we can create custom pipes 
+description: This tutorial will go through the process of using these pipes to transform display data, and how we can create custom pipes 
 author: bhanji-brilliant
 date: 2021-06-11T00:00:00-16:00
 topics: []
@@ -16,21 +16,25 @@ images:
 ---
 
 ### Introduction
-While developing Angular applications, a situation may arise where you need to transform or format your display data on the HTML template. For example, you may need to display the price of products in USD or in any other currency. Angular provides inbuilt pipes that we can use to format our data as we desire.  
+While developing Angular applications, a situation may arise where you need to transform or format your display data on the HTML template. For example, you may need to display the price of products in USD or any other currency. Angular provides inbuilt pipes that we can use to format our data as we desire.  
 
-In this tutorial, i'll be walking you through the process of using these pipes to transform display data, and how we can create our own custom pipes to meet our needs.   
+In this tutorial, I'll be walking you through the process of using these pipes to transform display data, and how we can create our custom pipes to meet our needs.   
 
 ### Table of contents
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
 - [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
 - [Getting started with Angular 12 Pipes](#getting-started-with-angular-12-pipes)
-- [Formatting  HTML template data using in-built Angular pipes](#formatting-HTML-template-data-using-in-built-Angular-pipes)
+- [Formatting HTML template data using in-built Angular pipes](#formatting-html-template-data-using-in-built-angular-pipes)
+- [Creating custom pipes](#creating-custom-pipes)
+- [Conclusion](#conclusion)
 
 ### Objectives
 By the end of this tutorial, you should be able to use the inbuilt Angular pipes to format your display data on the HTML template, as well as creating your own Angular custom pipes.
 
 ### Prerequisites
-- You should atleast have basic knowledge in Angular 2+. In this post, we'll use Angular 12.0.3.
+- You should at least have basic knowledge in Angular 2+. In this post, we'll use Angular 12.0.3.
 - Angular HTML templates and Angular CLI.
 
 ### Getting started with Angular 12 Pipes
@@ -42,9 +46,9 @@ Angular pipes are denoted using `|` character as shown in the example below:
 ```
 In the above syntax, we've two parts, the text to format and the pipe. When this code is executed, the text `I'LL BE DISPLAYED ON SCREEN IN LOWERCASE` will be displayed in lowercase. And that's it.  
 
-> It's also important to note that Angular pipe takes different types of data types, ranging from arrays,dates, strings and integers.
+> It's also important to note that Angular pipe takes different types of data types, ranging from arrays, dates, strings, and integers.
 
-In the next section, let's look at examples invollving inbuilt Angular pipes.
+In the next section, let's look at examples involving inbuilt Angular pipes.
 
 ### Formatting HTML template data using in-built Angular pipes
 Let's start by creating Angular 12 application, `custom-angular-pipes`. You can as well skip this section if you already have an application installed.  
@@ -57,7 +61,7 @@ cd custom-angular-pipes
 ng serve
 
 ```
-Now that we've an application ready, open your browser and type the following:
+Now that we have an application ready, open your browser and type the following:
 
 ```bash
 http://localhost:4200
@@ -105,9 +109,9 @@ Save and open the `app.component.ts` file in the `src/app/` directory and add th
 Output:
 ![Lowercase and uppercase](/engineering-education/angular11-custom-pipes/text-case.png)
 
-In the above script, you realise that on executing your code, the text displayed on the screen depends on the type of pipe used.   
+In the above script, you realize that on executing your code, the text displayed on the screen depends on the type of pipe used.   
 
-Let's have a quick look at currency pipe and how we can customize it to take the currency of your desire.  
+Let's have a quick look at the currency pipe and how we can customize it to take the currency of your desire.  
 
 Add the following in your `app.component.ts` file
 
@@ -148,13 +152,13 @@ Add the following to the template
 Output:
 ![Currency](/engineering-education/angular11-custom-pipes/currency.png)
 
-In the above currency pipe example, we 've seen how we can customize currency pipe to accomodate any currency that we desire to use since it defaults to USD.
+In the above currency pipe example, we've seen how we can customize currency pipe to accommodate any currency that we desire to use since it defaults to USD.
 
 Angular has several inbuilt [pipes](https://angular.io/guide/pipes) that we can use to format data in the template.
 
 ### Creating custom pipes
 
-Now that we've seen how to use inbuilt pipes, let's now create our own pipes which are not shipped with Angular.   
+Now that we've seen how to use inbuilt pipes, let's now create our pipes that are not shipped with Angular.   
 In this example, we create an Angular pipe to capitalize our text.
 
 Run the following command on the terminal:
@@ -168,7 +172,7 @@ CREATE src/app/capitalize.pipe.ts (225 bytes)
 UPDATE src/app/app.module.ts (465 bytes)
 ```
 
-It automactically adds this pipe in the `src/app/app.module.ts`.
+It automatically adds this pipe in the `src/app/app.module.ts`.
 
 ```ts
 ........................................................
@@ -243,7 +247,7 @@ In the above code snippet, we've created a custom pipe to transform our text to 
 
 ### Conclusion
 
-In this tutorial, we've discussed a handful of concepts, ranging from Angular installation to creation of our own pipes. We've seen how we can use the inbuilt pipes to format our data in the HTML templates for display. We also looked at the creation of Angular custom pipes which are not shipped with Angular by default.
+In this tutorial, we've discussed a handful of concepts, ranging from Angular installation to the creation of our pipes. We've seen how we can use the inbuilt pipes to format our data in the HTML templates for display. We also looked at the creation of Angular custom pipes which are not shipped with Angular by default.
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
