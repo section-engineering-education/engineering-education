@@ -1,5 +1,22 @@
-### Introduction
-A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders them into a useful visual representation. According to Wikipedia:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /css-supports-query/
+title: CSS supports query
+description: In this tutorial, we will learn about the various web rendering engines, and we will talk about the supports feature query.
+author: saiharsha-balasubramaniam
+date: 2021-06-11T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images: 
+
+  - url: /engineering-education/css-supports-query/hero.jpg
+    alt: CSS supports query hero image
+---
+A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders them into a useful visual representation.
+<!--more-->
+According to Wikipedia:
 
 > A browser engine is a core software component of every major web browser. The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
 
@@ -255,3 +272,6 @@ To expand your knowledge about web rendering engines and browser support, check 
 - [Behind the scenes of browser rendering](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/)
 - [Browser engine](https://en.wikipedia.org/wiki/Browser_engine)
 - [A tool to check browser compatibility](https://caniuse.com/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
