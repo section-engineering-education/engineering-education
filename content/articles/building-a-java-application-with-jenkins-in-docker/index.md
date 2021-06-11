@@ -6,30 +6,34 @@ url: /building-a-java-application-with-jenkins-in-docker/
 title: How to Build a Java Application with Jenkins in Docker
 description: This article will show you how to build and host a Java application online using Jenkins and Docker containers. Jenkins allows to trigger the build process in case of any committs or changes.
 author: divine-odazie
-date: 2021-06-30T00:00:00-18:00
-topics: []
+date: 2021-06-11T00:00:00-10:00
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-java-application-with-jenkins-in-docker/hero.png
     alt: Building a Java Application with Jenkins in Docker
 ---
-Over the past three years, the way we build software has undergone significant change. Today, developers can create new technologies within months and deploy them. The introduction of new tools such as [Jenkins](https://www.jenkins.io/) and [Docker](https://www.docker.com/) has helped to boost productivity.
+The introduction of new tools such as [Jenkins](https://www.jenkins.io/) and [Docker](https://www.docker.com/) has helped to boost productivity. Over the past three years, the way we build software has undergone significant changes. Today, developers can create new technologies within months and deploy them.
 <!--more-->
-We can automate building, testing, and deployment of software by running `Jenkins` in  a `Docker` container. This facilitates continuous integration and delivery. Including Jenkins in Docker also solves several incompatibility issues. Docker does this by simplifying the task of running Jenkins to as little as two commands; `docker pull` and `docker run`.
+We can automate building, testing, and deployment of software by running `Jenkins` in  a `Docker` container. This facilitates continuous integration and delivery. Including Jenkins in Docker also solves several incompatibility issues. 
+
+Docker does this by simplifying the task of running Jenkins to as little as two commands; `docker pull` and `docker run`.
 
 ### Goal
 In this tutorial, we will set up Jenkins in a Docker container. We will also build and dockerize a Java application.
 
 ### Prerequisites
 - Basic knowledge of Java, Maven, Git, and the command line.
-- Understanding of Docker and its commands
+- Understanding of Docker and its commands.
 - A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice
 
-### Creating a Demo Java Application
+### Creating a demo Java application
 We will create a simple Java console application and unit test it. This demo application will only check if an input is `even` or `odd`.
 
-To start, let’s create a new `Maven` project with `IntelliJ IDEA`. We will use the following IntelliJ settings:
+To start, let’s create a new `Maven` project with `IntelliJ IDEA`. 
+
+We will use the following IntelliJ settings:
 
 ![intelliJ Settings](/engineering-education/building-a-java-application-with-jenkins-in-docker/intellij-settings.png)
 
@@ -67,7 +71,9 @@ In our `pom.xml` file, we will add the code below:
     </project>
 ```
 
-To finish up our application configuration, we need to add `JUnit 5` dependency for writing tests. Let’s update the `pom.xml` file to make sure that this dependency is present:
+To finish up our application configuration, we need to add `JUnit 5` dependency for writing tests. 
+
+Let’s update the `pom.xml` file to make sure that this dependency is present:
 
 ```xml
     <dependencies>
@@ -85,7 +91,9 @@ To finish up our application configuration, we need to add `JUnit 5` dependency 
 
 In `src/main/java` path, let’s create a class called `Main`. It will contain the code for our simple console application. 
 
-In the `Main` class, let’s add the `main` method to run our code. Note that some IDEs such as [NetBeans](https://netbeans.apache.org/download/index.html) usually autogenerate this code:
+In the `Main` class, let’s add the `main` method to run our code. 
+
+Note that some IDEs such as [NetBeans](https://netbeans.apache.org/download/index.html) usually autogenerate this code:
 
 ```java
     public class Main {
@@ -95,7 +103,9 @@ In the `Main` class, let’s add the `main` method to run our code. Note that so
     }
 ```
 
-Finally, let’s create a simple `static` method called `checkIfInputIsAnEvenNumber`. It will check if an input is even or odd:
+Next, let’s create a simple `static` method called `checkIfInputIsAnEvenNumber`. 
+
+It will check if an input is even or odd:
 
 ```java
     public static boolean checkIfInputIsAnEvenNumber(int number){
@@ -103,7 +113,7 @@ Finally, let’s create a simple `static` method called `checkIfInputIsAnEvenNum
     }
 ```
 
-- In the above code snippet, we are creating a `static` method so that we can write unit tests. We want to see how Jenkins will automate testing.
+- In the code snippet above, we are creating a `static` method so that we can write unit tests. We want to see how Jenkins will automate testing.
 
 - If the input `int` is even or odd, the method will return true or false respectively.
 
@@ -138,7 +148,9 @@ Now, let’s write a unit test to test our `checkIfInputIsAnEvenNumber` method. 
     }
 ```
 
-You can run the above test in your IDE. Alternatively, we can use a `Maven` command to run all our unit tests in the command line, as shown below:
+You can run the test above in your IDE. 
+
+Alternatively, we can use a `Maven` command to run all our unit tests in the command line, as shown below:
 
 ```bash
     $ mvn test
@@ -158,10 +170,10 @@ Let's change the test input data to `22` and run the `Maven` command:
 
 The test passes. In a few steps, we will see how Jenkins can automate this process.
 
-### Hosting the Demo Application on GitHub 
+### Hosting the demo application on GitHub 
 We are going to push our `Java` application code to `GitHub`. When we make any change (commit) to our application on GitHub, `Jenkins` will trigger a `post-commit` build process remotely.  
 
-- To start, [create a new GitHub repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository)
+- To start, [create a new GitHub repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
 
 - Then open up the terminal.
 
@@ -203,7 +215,7 @@ For more detailed instructions on adding our existing application to GitHub, you
 
 ### Setting up Jenkins in Docker
 
-**Docker-in-Docker**
+#### Docker-in-Docker
 As we set up Jenkins in Docker, we need to remember the goal of our setup: `dockerizing of an application`. For this to happen, we need to execute `docker commands`, as well as access other containers. 
 
 To achieve this functionality, we need a `Dockerfile` that configures a `Jenkins environment`. It will be capable of running Docker commands and managing docker containers.
@@ -249,7 +261,9 @@ After running the above command, visit localhost `localhost:8080` to set up Jenk
 
 ![getting started with jenkins](/engineering-education/building-a-java-application-with-jenkins-in-docker/jenkins-getting-started.png)
 
-We can get the `admin` password from what command `returns`. See what is looks like:
+We can get the `admin` password from what command `returns`. 
+
+See what is looks like:
 
 ![initial admin password](/engineering-education/building-a-java-application-with-jenkins-in-docker/initial-admin-password.png)
 
@@ -265,14 +279,16 @@ And to get the password:
     $ cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-Next, we select `Install suggested plugins`. Jenkins will automatically download essential plugins:
+Next, we select `Install suggested plugins`. 
+
+Jenkins will automatically download essential plugins:
 
 ![plugins installation](/engineering-education/building-a-java-application-with-jenkins-in-docker/plugins-installation.png)
 
 
 **Jenkins global configurations**
 
-Firstly, we will configure the `JDK`, `Maven`, and `Git` on our Jenkins console to enable Jenkins to clone our repository and build our application.
+First, we will configure the `JDK`, `Maven`, and `Git` on our Jenkins console to enable Jenkins to clone our repository and build our application.
 
 In our Jenkins console, go to `Manage Jenkins`.
 
@@ -280,7 +296,7 @@ In our Jenkins console, go to `Manage Jenkins`.
 
 Under `System Configurations`, click on `Global Tool Configuration`.
 
-![jenkins configuration](/building-a-java-application-with-jenkins-in-docker/jenkins-configuration.png)
+![jenkins configuration](/engineering-education/building-a-java-application-with-jenkins-in-docker/jenkins-configuration.png)
 
 
 **JDK config**
@@ -303,8 +319,10 @@ Then if we’re using either `macOS` or `Linux`, we run:
 
 Check out this [article](https://www.baeldung.com/find-java-home) on finding `JAVA_HOME`.
 
-**Maven config**
-We can direct `Jenkins` to download `Maven` from `Apache servers` instead of the `Maven directory` on our system. Follow the guideline shown in the image below:
+#### Maven config
+We can direct `Jenkins` to download `Maven` from `Apache servers` instead of the `Maven directory` on our system. 
+
+Follow the guideline shown in the image below:
 
 ![maven configurations](/engineering-education/building-a-java-application-with-jenkins-in-docker/maven-config.png)
 
@@ -344,7 +362,9 @@ We will give the `Schedule` five stars with this demo application, which is the 
 
 To learn more on polling SCM, check out this article [What is poll SCM in Jenkins?](https://askinglot.com/what-is-poll-scm-in-jenkins)
 
-Next, we skip the `Build Environment` tab. In the `Build` window, we will add two `Invoke top-level Maven targets` steps. Finally, we click on `apply` and save our `Freestyle project` configuration.
+Next, we skip the `Build Environment` tab. In the `Build` window, we will add two `Invoke top-level Maven targets` steps. 
+
+Finally, we click on `apply` and save our `Freestyle project` configuration.
 
 ![build steps](/engineering-education/building-a-java-application-with-jenkins-in-docker/maven-build-step.png)
 
@@ -364,23 +384,28 @@ Our console output should look a lot like the image below:
 
 If we commit changes, we don’t need to manually click `Build Now`. Jenkins will automatically build our Freestyle project.
 
-### Building and Deploying our Docker image to Docker Hub
+### Building and deploying our Docker image to Docker Hub
 We are almost there. What’s left is for us to configure Jenkins to build the Docker image of our Java application and deploy that image to Docker Hub. 
 
-To achieve this, we need a few Jenkins plugins installed. In `Manage Jenkins`, select `Manage Plugins` under `System Configurations`, `search` and `install` the following plugins:
+To achieve this, we need a few Jenkins plugins installed. 
 
+In `Manage Jenkins`, select `Manage Plugins` under `System Configurations`, `search` and `install` the following plugins:
 - docker-build-step
 - CloudBees Docker Build and Publish
 
 ![docker plugins](/engineering-education/building-a-java-application-with-jenkins-in-docker/docker-plugins.png)
 
-To check if the plugins have been installed, let’s go back to our Freestyle project configuration and in the `Build` tab, click on `Add build step`. We will see the `Docker Build and Publish` option:
+To check if the plugins have been installed, let’s go back to our Freestyle project configuration and in the `Build` tab, click on `Add build step`. 
+
+We will see the `Docker Build and Publish` option:
 
 ![check docker build step](/engineering-education/building-a-java-application-with-jenkins-in-docker/check-docker-build-step.png)
 
 To build a Docker image, we need a Dockerfile to notify docker which base image to build our image from and other Java-related configurations. We also need to generate a JAR (Java ARchive) file.
 
-In the `build profile`, navigate to the `pom.xml` file and add a [finalName](https://kb.novaordis.com/index.php/Maven_pom.xml#:~:text=finalName%20modifies%20the%20name%20of,named%20artifacts%20in%20the%20repository.). This `finalname` will be our `JAR name`:
+In the `build profile`, navigate to the `pom.xml` file and add a [finalName](https://kb.novaordis.com/index.php/Maven_pom.xml#:~:text=finalName%20modifies%20the%20name%20of,named%20artifacts%20in%20the%20repository.). 
+
+This `finalname` will be our `JAR name`:
 
 ```xml
     <build>
@@ -396,7 +421,9 @@ To generate our JAR run:
 
 We can find our JAR in the  `target/`  directory of the project.
 
-Now let’s create our `Dockerfile`. Open the `terminal` and navigate to our Java application directory:
+Now let’s create our `Dockerfile`. 
+
+Open the `terminal` and navigate to our Java application directory:
 
 ```bash
     $ touch Dockerfile
@@ -404,7 +431,7 @@ Now let’s create our `Dockerfile`. Open the `terminal` and navigate to our Jav
 
 And in our `Dockerfile`:
 
-```
+```bash
     FROM openjdk:8
     ADD target/java-jenkins-docker.jar java-jenkins-docker.jar
     ENTRYPOINT ["java", "-jar","java-jenkins-docker.jar"]
@@ -416,7 +443,6 @@ Add the new files and then commit the changes to the GitHub repository. This wil
 Now we can add our `build steps` to build and deploy our Java application’s Docker image. For this, we will need a `Docker Hub account`. You can create one [here](https://hub.docker.com/signup). 
 
 Then, in the `build step` set:
-
 - Repository name: `Docker_id/jar_name` example `kikiodazie/java-jenkins-docker`
 - For this demo, we will leave the rest of the fields empty then `Apply` and `save`.
 
@@ -438,13 +464,18 @@ To complete this process, input your login credentials:
 
 ![docker hub login](/engineering-education/building-a-java-application-with-jenkins-in-docker/docker-hub-login.png)
 
-Go back to your project and click `Build Now`, then navigate to the console output. The output should look, as shown in the image below. This means that our image has been successfully built and pushed to Docker Hub:
+Go back to your project and click `Build Now`, then navigate to the console output. The output should look, as shown in the image below. 
+
+This means that our image has been successfully built and pushed to Docker Hub:
 
 ![docker image push](/engineering-education/building-a-java-application-with-jenkins-in-docker/docker-image-push.png)
 
 ### Conclusion
-In this tutorial, we have learned how to set up and configure Jenkins in Docker. We also built and tested a Java application code and hosted it on Github. We gave Jenkins access to our Docker Hub account to perform post-commit build triggers. Lastly, we learned about Docker-in-Docker and how to build Docker images in a Docker container.
+In this tutorial, we have learned how to set up and configure Jenkins in Docker. We also built and tested a Java application code and hosted it on Github. 
 
+We gave Jenkins access to our Docker Hub account to perform post-commit build triggers. Finally, we learned about Docker-in-Docker and how to build Docker images in a Docker container.
+
+Happy coding!
 
 ### References
 - [Building CI/CD pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
