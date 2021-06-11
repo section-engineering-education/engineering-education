@@ -52,7 +52,7 @@ Follow the steps below to update and upgrade Kali Linux:
 
   * Start the **terminal** by:
         
-       * Clicking the **cltr+alt+T** buttons simultaneously or
+       * Holding the **cltr+alt+T** buttons simultaneously or
        * Using the GUI(Graphical User Interface), go to the applications section and double click on the terminal option.
 
 Now run the command below on the terminal to update and upgrade your Kali Linux.
