@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /css-supports-query/
-title: CSS supports query
+title: Using modern CSS features in old browsers using @supports
 description: In this tutorial, we will learn about the various web rendering engines, and we will talk about the supports feature query.
 author: saiharsha-balasubramaniam
 date: 2021-06-11T00:00:00-13:00
