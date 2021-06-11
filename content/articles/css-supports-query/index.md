@@ -1,51 +1,46 @@
 ### Introduction
-
 A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders them into a useful visual representation. According to Wikipedia:
 
 > A browser engine is a core software component of every major web browser. The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
 
-A web rendering engine is also known as a layout engine or a browser engine. There are various browser engines such as:
+A web rendering engine is also known as a layout engine or a browser engine.
 
-- [WebKit](https://webkit.org/) by Apple
-- [Blink](https://www.chromium.org/blink) by Google
-- [Gecko](<https://en.wikipedia.org/wiki/Gecko_(software)>) by Mozilla
+ There are various browser engines such as:
+- [WebKit](https://webkit.org/) by Apple.
+- [Blink](https://www.chromium.org/blink) by Google.
+- [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) by Mozilla.
 
-Since there are a lot of web engines, certain HTML/CSS features are supported only above a certain version of a browser. For example, the CSS `position: sticky` feature is only supported on Firefox version 26 and above. In this article, we will learn how to use modern CSS features in old browsers by using the CSS `@supports` rule.
+Since there are a lot of web engines, certain HTML/CSS features are supported only in a certain version of a browser. For example, the CSS `position: sticky` feature is only supported on Firefox version 26 and above. In this article, we will learn how to use modern CSS features in old browsers by using the CSS `@supports` rule.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [Problems with Browser Support](#problems-with-browser-support)
+- [Problems with browser support](#problems-with-browser-support)
 - [Workaround using @supports](#workaround-using-@supports)
 - [Conclusion](#conclusion)
-- [Further Reading](#further-reading)
+- [Further reading](#further-reading)
 
 ### Prerequisites
-
 To follow along with this tutorial, you should have:
-- A basic knowledge about HTML and CSS.
+- A basic knowledge of HTML and CSS.
 - A code editor, [VSCode](https://code.visualstudio.com/download) is recommended.
 
 ### Objectives
-
 - In this article, we shall explore how browser versions and CSS features are related.
 - We will also look at the `@supports` feature query and use it in an example.
 - We will take the CSS rule `position: sticky` as an example and find a workaround to enable it on an older browser.
 
 ### Problems with browser support
-
 We might encounter certain issues with our website due to the following reasons:
-
 - When the browser version does not support that specific feature.
 - When the browser handles it diffrently than it should, due to a bug.
 - When the browser has partial support for the feature, and is not enabled by default.
 
 When the browser version does not support the specific feature, we can work around this by introducing a fallback. The fallback replicates the behavior using older CSS features. When the browser has a bug, we can raise an issue to the developer team through GitHub and get it fixed. When the browser has partial support for the feature, we can enable it by a browser flag or configuration setting. In this article, we are going to concentrate on how to introduce a fallback using the `@supports` feature query.
 
-To demonstrate what problems may arise when a CSS feature isn't supported by a web engine, let us take the example of the CSS rule: `position: sticky`. The table below demonstrates the browser support for the mentioned CSS rule:
+To demonstrate what problems may arise when a CSS feature isn't supported by a web engine.
 
-**Browser Support for `position: sticky`**
+For example, the table below demonstrates the browser support for the CSS rule: `position: sticky`:
 
 | **Browser**       | **Supported Version** |
 | ----------------- | --------------------- |
@@ -59,12 +54,9 @@ _For more information about browser support for various CSS rules, visit [this s
 There is a major percentage of users who use older browser versions. New CSS features are being introduced regularly. This makes supporting new features for older browser versions impractical. To solve this problem, we use the `@supports` feature query.
 
 ### Workaround using @supports
-
 The `@supports` CSS rule is used to specify CSS rules based on browser support for one or more CSS features. This is called a feature query.
 
-Let us start building a basic website to demonstrate the use of `@supports`. Open a text editor and create a file named `index.html`.
-
-**`index.html`**
+Let us start building a basic website to demonstrate the use of `@supports`. Open a text editor and create a file named `index.html` and add the following code:
 
 ```html
 <html lang="en">
@@ -186,9 +178,7 @@ Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firef
 
 *Position Sticky on Firefox 22*
 
-Let us now fix this using `@supports`.
-
-**`index.html`**
+Let us now fix this using `@supports`:
 
 ```html
 <style>
@@ -228,7 +218,7 @@ Let us now fix this using `@supports`.
 
 If you run it on Firefox 22, you would notice that the hero banner sticks to the top, even when we scroll to the bottom of the page.
 
-In the above example, we use the `@supports` feature query and the **not** operator to check for the browsers that do not support the `position: sticky` CSS rule. We specify some alternative CSS rules for older browsers within the `@supports` block so that the CSS doesn't break in older browsers.
+In the example above, we used the `@supports` feature query and the **not** operator to check for the browsers that do not support the `position: sticky` CSS rule. We specified some alternative CSS rules for older browsers within the `@supports` block so that the CSS doesn't break in older browsers.
 
 There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. The **or** operator is used when we want the block properties to be applied when one of the expressions are true. For example, we can use the **or** operator with vendor prefixes.
 
@@ -241,7 +231,7 @@ There are also the **and** and **or** operators that can be used to evaluate var
     }
 ```
 
-The above block of code will execute only if the `transform-style` property is supported on the browser. 
+The code above will execute only if the `transform-style` property is supported on the browser. 
 
 ```css
 @supports (display: table-cell) and (display: grid) {
@@ -249,10 +239,9 @@ The above block of code will execute only if the `transform-style` property is s
 }
 ```
 
-In the above snippet, the CSS rules will be applied only on browsers that support both `grid` and `table-cell` display properties.
+This CSS rules will be applied only on browsers that support both `grid` and `table-cell` display properties.
 
 ### Conclusion
-
 - In this article, we learnt about the various web rendering engines and how they vary across browsers.
 - We saw how certain CSS features are not supported in certain older versions of browsers.
 - We took the `position: sticky` rule as an example and saw how it breaks in Firefox 22.
@@ -262,9 +251,7 @@ In the above snippet, the CSS rules will be applied only on browsers that suppor
 By using the `@supports` feature query, web developers can ensure that they can reach a wider audience by making their websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
 
 ### Further Reading
-
 To expand your knowledge about web rendering engines and browser support, check out the resources below:
-
 - [Behind the scenes of browser rendering](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/)
-- [Browser engine](https://en.wikipedia.org/wiki/Browser_engine) - Wikipedia
+- [Browser engine](https://en.wikipedia.org/wiki/Browser_engine)
 - [A tool to check browser compatibility](https://caniuse.com/)
