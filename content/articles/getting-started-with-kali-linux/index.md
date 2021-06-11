@@ -6,12 +6,12 @@ Tools available on Kali Linux enable the user to gather information, perform exp
 
 ### Installing Kali Linux
 
-For beginners, it is advised to have your Kali Linux in a **virtual box**. 
+For beginners, it may seem complex having Kali Linux as your main operating system since you will mostly be running commands on a terminal rather than using the GUI(Graphical User Interface). It is therefore advised to have your Kali Linux in a **virtual box**. This enables you to do your other operations in the main operating system.
 You can have your Kali Linux in your favorite virtual box. Available virtual boxes include:
 
-  * Vmware virtual box
-  * Hyper V virtual box
-  * Kernel-based virtual box 
+  * [Vmware virtual box](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
+  * [Hyper V virtual box](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)
+  * [Oracle virtual box](https://filehippo.com/download_virtualbox/) 
   
 For our tutorial, we will use VMware virtual box (My favorite).
 
@@ -19,14 +19,14 @@ For our tutorial, we will use VMware virtual box (My favorite).
 
 First, before installing the VMware you have to download the Kali Linux iso. Use the link below:
 
-  * Kali Linux iso.
+  * [Kali Linux iso](https://www.kali.org/get-kali/#kali-platforms)
 
 #### Download Vmware virtual box
 After successfully downloading the kali Linux iso, you can now download the VMware virtual box using the link below.
 
-  * Vmware virtual box.
+  * [Vmware virtual box](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html).
 
-Follow the "Installing Vmware " tutorials to successfully install the VMware virtual box.
+Follow the [Installing Vmware](https://forums.tomshardware.com/faq/how-to-install-vmware-workstation-in-windows-10.3273363/) tutorials to successfully install the VMware virtual box.
 
 #### Installing Kali Linux in Vmware virtual box
 
@@ -219,8 +219,10 @@ Nmap is a tool that gathers information by scanning the target's IP address or U
 To access Nmap, type in the `Nmap` command on the terminal followed by the target to scan as shown in the example below:
 
 ```bash
-    $ map scanme.nmap.org
+    $ nmap scanme.nmap.org
 ```
+
+To learn more on [nmap](https://www.section.io/engineering-education/nmap-network-scanner/), go through the tutorial linked.
 
    2. **Password attacks**
 
@@ -233,7 +235,7 @@ It works by use of dictionary method to perform brute force on the target.
 
 You can access various tools available on John the Ripper by typing in the keywords eg `john`, `maller`, `unshadow`, `unique` etc.
 
-You can learn
+You can learn more about [John the Ripper](https://www.varonis.com/blog/john-the-ripper/) in the article linked.
 
    3. **Reverse Engineering**
 
@@ -243,7 +245,7 @@ Tools available: `NASM tool`, `Clang`
 
 NASM tool allows users to program an assembler. You can do so by saving the assembly code on the cherry tree with the .asm extension. On the terminal run the commands depending on the code you are running.
 
-You can learn more about the NASM tool [here](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
+You can learn more on  [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/) here.
 
    4. **Exploitation**
 
@@ -260,7 +262,7 @@ To access Metasploit Framework on your terminal, run the `msfconsole` command an
 ```
 ![msfconsole](/engineering-education/getting-started-with-kali-linux/msfconsole.png)
 
-You can learn more about the Metasploit Framework in this [article](https://www.section.io/engineering-education/getting-started-with-metasploit-framework).
+You can learn more about [metasploit framework](https://www.section.io/engineering-education/getting-started-with-metasploit-framework/) in the article linked.
 
    5. **Sniffing and Spoofing**
 
@@ -270,7 +272,7 @@ Tools available: `Wireshark`, `Responder`
 
 This is the world's popular network protocol analyzer. It lets users monitor what's happening on the network from a microscopic perspective.
 
-To learn more, check out [wireshark](https://tools.kali.org-informationn-gathering/wireshark) tutorial.
+To learn more, check out [wireshark](https://www.varonis.com/blog/how-to-use-wireshark/) tutorial.
 
    6. **Post Exploitation**
 
@@ -280,12 +282,16 @@ Tools available: `Powersploit`, `Searchsploit`
 
 This is a series of Powershell scripts that comes in handy during a post-exploitation scenario in an authorized penetration testing. They can be used in code execution, script modification, persistence, and bypass an anti-virus.
  
- You can learn more about Powersploit in the article linked.
+ You can learn more about [Powersploit](https://www.cyberpunk.rs/powersploit-powershell-post-exploitation-framework) in the article linked.
  
- ### Conclusion
+ ### Summary
  
  In this article, we have learned:
  - Installing Kali Linux in a Virtual Box.
  - Updating Kali Linux to the latest version and running some major commands.
  - Major tools used in Kali Linux.
  
+### Conclusion
+From this article, we have learned that to comfortably use Kali Linux, you don't need to know how to use all the tools. You just need to know how to use some major tools and run major commands from the terminal.
+With continuous practice, you will comfortably use Kali Linux.
+Good Luck!
