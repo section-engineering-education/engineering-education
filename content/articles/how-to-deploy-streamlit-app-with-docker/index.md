@@ -330,7 +330,7 @@ docker build -t streamlitapp:latest .f Dockerfile
 The Output will be a shown below
 
 ```bash
-Sending build context to Docker daemon  34.90kb
+Sending building context to the Docker daemon  34.90kb
 Step 1/8 : FROM python:3.8
   --->d6568b1g3y4h
 Step 2/8 : WORKDIR /app
