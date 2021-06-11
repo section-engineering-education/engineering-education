@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular11-custom-pipes/
+title: Getting Started with Angular 11 custom pipes
+description: This tutorial will go through process of using these pipes to transform display data, and how we can create custom pipes 
+author: bhanji-brilliant
+date: 2021-06-11T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/angular11-custom-pipes/hero.jpg
+   alt:  Getting Started with Angular 11 custom pipes
+---
+
 ### Introduction
 While developing Angular applications, a situation may arise where you need to transform or format your display data on the HTML template. For example, you may need to display the price of products in USD or in any other currency. Angular provides inbuilt pipes that we can use to format our data as we desire.  
 
