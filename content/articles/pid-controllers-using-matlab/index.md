@@ -85,6 +85,33 @@ The system stabilizes when the Kd is 8 and the Kp is 24. When we look at the res
 ![plot of final response and initial response](/engineering-education/pid-controllers-using-matlab/PID11.png)
 Our PID controller is the final values of Kp, Ki, and Kd. We now use the PID function to get the Gc. when we type `Gc` in the command window, we get the transfer function.
 ![transfer function](/engineering-education/pid-controllers-using-matlab/PID12.png)
+Below is the full code in order;
+```matlab
+%PID example
 
+clear all
+clc
+
+num = [ 1 ];
+den = [ 1 3 1];
+
+Gp = tf(num, den);
+H = [ 1 ];
+M = feedback( Gp, H);
+step(M)
+hold on
+grid on
+
+%%
+Kp = 24;
+Ki = 2;
+Kd = 8;
+
+Gc = pid(Kp,Ki,Kd);
+
+Mc = feedback(Gc*Gp, H);
+step(Mc)
+grid on
+```
 ### Conclusion
 Matlab helps in the analysis of the response and can be used to obtain a steady-state response as shown before. This helps to attain the optimum performance in a system which is the requirement of a system. This makes Matlab a special tool for the analysis of a system response. 
