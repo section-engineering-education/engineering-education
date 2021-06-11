@@ -181,7 +181,7 @@ def predict_gender(data):
 ```
 6. Adding styling for the app
 
-We will use material UI for styles and icons.
+We will use material UI for styles and icons for our app.
 ```python
 def load_css(file_name):
     with open(file_name) as f:
