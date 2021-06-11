@@ -24,7 +24,7 @@ We will build a simple machine learning model to predict the gender of a person 
 We will use a dataset of names commonly used by people.
 Part of the data is as shown below:
 
-![A Snip of the data ](/engineering-education/how-to-deploy-streamlit-app-with-docker/data.png)
+![A Snip of the data ](/engineering-education/content/articles/how-to-deploy-streamlit-app-with-docker/data.png)
 
 ### installation of the required packages.
 We need the following packages
@@ -261,11 +261,11 @@ Our userinterface will be as shown below.
 
 1. A prediction where the output is male.
 
-![Male Prediction](/engineering-education/how-to-deploy-streamlit-app-with-docker/male-prediction.png)
+![Male Prediction](/engineering-education/content/articles/how-to-deploy-streamlit-app-with-docker/male-prediction.png)
 
 2. Prediction where the output is female
 
-![Female Prediction](/engineering-education/how-to-deploy-streamlit-app-with-docker/female-prediction.png)
+![Female Prediction](/engineering-education/content/articles/how-to-deploy-streamlit-app-with-docker/female-prediction.png)
 
 
 ### Dockerizing the streamlit app
