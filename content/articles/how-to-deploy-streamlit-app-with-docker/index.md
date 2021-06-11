@@ -1,12 +1,12 @@
 
-### Deploying a streamlit app using docker.
-Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, after building a machine learning app with streamlit we shall use docker to deploy the app.
+### Deploying a simple streamlit app using docker from scratch.
+Docker is a virtulisation platform that is designed create, run and deploy applications through use of containers, after building our simple machine learning app using streamlit we shall use docker to deploy the app.
 
-In this tutorial, We will first create a simple machine learning model, save it into a pickle file and finally create its interface using streamlit.
+In this tutorial, We will first create a simple machine learning model, save it into a pickle file to be loaded into our platform and finally create its interface using streamlit.
 Finally after creating the streamlit app we shall use docker to deploy it.
 ### Table of Content
 - [Prerequisites](#prerequisites)
-- [Getting started](#getting-started)
+- [Lets Start](#getting-started)
 - [Streamlit](#streamlit)
 - [Dockerizing the streamlit app](#dockerizing-the-streamlit-app)
 - [Conclusion](#conclusion)
@@ -17,12 +17,12 @@ Finally after creating the streamlit app we shall use docker to deploy it.
 1. A good understanding of python.
 2. Good knowledge of machine learning models.
 
-### Getting started
-We get started by building a simple machine learning model.
+### Lets Start 
+Lets Start by building a simple machine learning prediction model.
 We will build a simple machine learning model to predict the gender of a person based on the inputted by the user.
 ### Dataset
 We will use a dataset of names commonly used by people.
-Part of the data is as shown below:
+The format of our data used is as shown:
 
 ![A Snip of the data ](/engineering-education/how-to-deploy-streamlit-app-with-docker/data.png)
 
@@ -252,7 +252,7 @@ So will set our app with the different styles:
   Padding: 10px,
   App Title: Gender Classifier App
 
-Finally we can run our app using the following command.
+We then run our app using this command.
 ```bash
 streamlit run app.py
 ```
@@ -330,31 +330,31 @@ docker build -t streamlitapp:latest .f Dockerfile
 The Output will be a shown below
 
 ```bash
-Sending build context to Docker daemon  29.78kb
-Step 1/8 : FROM python:3.7
-  --->d660b1f1t3e
+Sending build context to Docker daemon  34.90kb
+Step 1/8 : FROM python:3.8
+  --->d6568b1g3y4h
 Step 2/8 : WORKDIR /app
   --->Using Cache
-  --->87cdf5dftbfd
+  --->25cyf5dfpbfd
 Step 3/8 : COPY requirements.txt ./requirements.txt
     --->Using Cache
-    --->52ddf5dffbfd
+    --->52jdf5dffbfd
 Step 4/8 : RUN pip install -r requiremts.txt
     --->Using Cache
     --->81cdf5dffedf
 Step 5/8 : EXPOSE 8501
     --->Using Cache
-    --->62d29aad9eb
+    --->62d29afd9eb
 Step 6/8 : COPY ./app
-    --->9cbaeb07t4d
+    --->9rraeb07t4d
 Step 6/8 : EXPOSE 8501
-    --->4b2a54h557cc
+    --->4b2ap4h557cc
 Step 7/8 : ENTRYPOINT ["streamlit", "run"]
     --->2egaeb07tdte
 Removing intermediate container 5ta3824edte
- ---> 73dv092ecsee7
+ ---> 65dv092efstfu   
 step 8/8 : CMD ["app.py"]
-Successfully built 73dv092ecsee7
+Successfully built 65dv092efstfu 
 Successfully tagged streamlitapp:latest
 ```
 - To view all of you images use the following command.
@@ -364,7 +364,7 @@ docker image ls
 - output is as shown
 ```bash
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-streamlitapp                 latest             73dv092ecsee7        2 minutes ago       1.24GB
+streamlitapp                 latest             65dv092efstfu        2 minutes ago       1.24GB
 testapp                      latest             d660b1f1t3e         1 weeks ago          794MB
 ```
 4. Creating a container
@@ -373,7 +373,7 @@ docker run -p 8501:8501 streamlitapp:latest
 ```
 Result:
 ```bash
-dv092e0ff6btdte593a3cad9e50ef01f1t3e89fe41816624edted7fb1f1tfd1f
+gv092e0ff6btdte593a7dad8e50ef01f7t3e89fy41816624gdted7fu1h1bid1o
 ```
 It also start our streamlit app in the following urls:
 
