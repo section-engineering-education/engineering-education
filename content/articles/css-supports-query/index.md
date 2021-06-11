@@ -53,11 +53,15 @@ We might encounter certain issues with our website due to the following reasons:
 - When the browser handles it differently than it should, due to a bug.
 - When the browser has partial support for the feature and is not enabled by default.
 
-When the browser version does not support the specific feature, we can work around this by introducing a fallback. The fallback replicates the behavior using older CSS features. When the browser has a bug, we can raise an issue to the developer team through GitHub and get it fixed. When the browser has partial support for the feature, we can enable it by a browser flag or configuration setting. In this article, we are going to concentrate on how to introduce a fallback using the `@supports` feature query.
+When the browser version does not support the specific feature, we can work around this by introducing a fallback. The fallback replicates the behavior using older CSS features. When the browser has a bug, we can raise an issue to the developer team through GitHub and get it fixed.
+
+When the browser has partial support for the feature, we can enable it by a browser flag or configuration setting.
+
+In this article, we are going to concentrate on how to introduce a fallback using the `@supports` feature query.
 
 To demonstrate what problems may arise when a CSS feature isn't supported by a web engine.
 
-For example, the table below demonstrates the browser support for the CSS rule: `position: sticky`:
+For example, the table below demonstrates the browser support for the CSS rule `position: sticky`:
 
 | **Browser**       | **Supported Version** |
 | ----------------- | --------------------- |
@@ -73,7 +77,7 @@ There is a major percentage of users who use older browser versions. New CSS fea
 ### Workaround using @supports
 The `@supports` CSS rule is used to specify CSS rules based on browser support for one or more CSS features. This is called a feature query.
 
-Let us start building a basic website to demonstrate the use of `@supports`. Open a text editor and create a file named `index.html` and add the following code:
+Let us start building a basic website to demonstrate the use of `@supports`. Open a text editor, create a file named `index.html`, and add the following code:
 
 ```html
 <html lang="en">
@@ -189,7 +193,7 @@ Open this file on a modern browser. Let us use [Chrome version 90](https://www.g
 
 *Position Sticky on Chrome 90*
 
-Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox. You will notice that the hero banner does not scroll. The `position: sticky` feature does not work.
+Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox, you will notice that the hero banner does not scroll. The `position: sticky` feature does not work.
 
 ![Position Sticky Firefox](/engineering-education/css-supports-query/sticky-firefox.jpg)
 
@@ -237,9 +241,13 @@ If you run it on Firefox 22, you would notice that the hero banner sticks to the
 
 In the example above, we used the `@supports` feature query and the **not** operator to check for the browsers that do not support the `position: sticky` CSS rule. We specified some alternative CSS rules for older browsers within the `@supports` block so that the CSS doesn't break in older browsers.
 
-There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. The **or** operator is used when we want the block properties to be applied when one of the expressions is true. For example, we can use the **or** operator with vendor prefixes.
+There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. 
 
-*Note: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than others. For example, the prefix -moz is used with CSS rules specific to Firefox. To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/)*
+The **or** operator is used when we want the block properties to be applied when one of the expressions is true. For example, we can use the **or** operator with vendor prefixes.
+
+*Note: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than others. For example, the prefix -moz is used with CSS rules specific to Firefox. 
+
+To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/).*
 
 ```css
 @supports (transform-style: preserve) or (-moz-transform-style: preserve) or 
@@ -267,7 +275,7 @@ These CSS rules will be applied only on browsers that support both `grid` and `t
 
 By using the `@supports` feature query, web developers can ensure that they can reach a wider audience by making their websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
 
-### Further Reading
+### Further reading
 To expand your knowledge about web rendering engines and browser support, check out the resources below:
 - [Behind the scenes of browser rendering](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/)
 - [Browser engine](https://en.wikipedia.org/wiki/Browser_engine)
