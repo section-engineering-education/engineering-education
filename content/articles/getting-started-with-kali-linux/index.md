@@ -69,7 +69,7 @@ To be able to efficiently operate on Kali Linux, you should be able to run some 
 
 You can also navigate through Kali Linux courtesy of the **Graphical User Interface (GUI)** feature. Despite that, it is recommended to `use the terminal` to navigate through Kali Linux since it is super fast and not so hard to learn the commands.
 
-So without much, let's dive right in.
+So without much delay, let's dive right in.
 
    1. **Changing password**
    
@@ -105,10 +105,10 @@ To list all the directories and files in the present working directory, run the 
 
    4. **Listing hidden files**
 
-For you to list all the hidden and non-hidden files in the directory, use the `ls -la` command since the la command will now display the hidden files.
+For you to list all the hidden and non-hidden files in the directory, use the `ls -la` command since the 'la' command will now display the hidden files.
 
 ```bash
-    $ ls -la
+    $ ls -la 
 ```
 ![ls -la](/engineering-education/getting-started-with-kali-linux/ls-la.png)
 
@@ -145,11 +145,14 @@ Running the command above will pop up a window of the browser stated.
 
    7. **Creating a directory**
 
-To create a new directory( Commonly known as a folder in Windows), run the `mkdir` command followed by the preferred name of the directory and run the command as shown in the example below:
+To create a new directory (commonly known as a folder in Windows), run the `mkdir` command followed by the preferred name of the directory and run the command as shown in the example below:
+
 ```bash
     $ mkdir New
 ```
+
 ![mkdir](/engineering-education/getting-started-with-kali-linux/mkdir.png)
+
 **Note:** The directory will be created on your present working directory.
 
 To relatively remove a directory, simply run the `rmdir` command before the directory name as shown below:
@@ -240,7 +243,7 @@ Tools available: `NASM tool`, `Clang`
 
 NASM tool allows users to program an assembler. You can do so by saving the assembly code on the cherry tree with the .asm extension. On the terminal run the commands depending on the code you are running.
 
-You can learn more on  [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/) here.
+You can learn more about the NASM tool [here](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
 
    4. **Exploitation**
 
@@ -250,8 +253,6 @@ Tools available: `Metasploit Framework`, `Proxychains`
 
 Metasploit Framework is a powerful penetration tool that has numerous modules used to examine a system's vulnerability and possibly exploit it.
 
-You can learn more on "Metasploit Framework" in the article linked.
-
 To access Metasploit Framework on your terminal, run the `msfconsole` command and the fancy Metasploit framework pops up with `msf 5 > ` shell to run commands.
 
 ```bash
@@ -259,7 +260,7 @@ To access Metasploit Framework on your terminal, run the `msfconsole` command an
 ```
 ![msfconsole](/engineering-education/getting-started-with-kali-linux/msfconsole.png)
 
-You can learn more about [metasploit framework](https://www.section.io/engineering-education/getting-started-with-metasploit-framework) in the article linked.
+You can learn more about the Metasploit Framework in this [article](https://www.section.io/engineering-education/getting-started-with-metasploit-framework).
 
    5. **Sniffing and Spoofing**
 
