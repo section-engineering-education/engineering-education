@@ -59,7 +59,7 @@ This code below can move filename.csv to an offline folder and can no longer be 
 mv ./filename.csv ./offline/
 ```
 
-[Quantitative security measurements](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals) can depend on the dataset value associated with recovery, loss, and technology costs.  
+[Quantitative security measurements](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals) can depend on the dataset value associated with recovery, loss, and technology costs. 
 
 #### Database Security
 
@@ -127,5 +127,5 @@ Happy Coding!
 [How to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security)  
 [How to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python)  
 [Educational References](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals)  
-[Linux Container Option 1](https://www.zdnet.com/article/minimal-ubuntu-for-containers-and-clouds/#:~:text=While%20that%20release%20is%20useful%20mostly%20for%20hobbyists%2C,the%20standard%20Docker%20Hub%20Ubuntu%2018.04%20LTS%20image.)  
+[Linux Container Option 1](https://ubuntu.com/download/desktop)  
 [Linux Container Option 2](https://kali.org/)  
