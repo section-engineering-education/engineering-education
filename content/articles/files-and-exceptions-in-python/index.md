@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
 - url: /engineering-education/files-and-exceptions-in-python/hero.jpg
-  alt: Python Lists Dictionaries example
+  alt: Python files exceptions example
 ---
 Files are identified locations on a disk where associated data is stored. Working with files will make your programs fast when analyzing masses of data. Exceptions are special objects that any programming language uses to manage errors that occur when a program is running.
 <!--more-->
