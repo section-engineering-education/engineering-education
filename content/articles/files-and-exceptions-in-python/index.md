@@ -196,3 +196,6 @@ For more information about files and exceptions in Python, see the links below:
 - [Exception-handling in Python](https://www.programiz.com/python-programming/exception-handling)
 - [Python files](https://www.tutorialspoint.com/python/python_files_io.htm)
 - [Files and Exceptions](https://www.softcover.io/read/e4cd0fd9/conversational-python/ch6_files_excepts)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
