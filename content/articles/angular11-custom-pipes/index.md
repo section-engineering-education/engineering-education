@@ -245,16 +245,5 @@ In the above code snippet, we've created a custom pipe to transform our text to 
 
 In this tutorial, we've discussed a handful of concepts, ranging from Angular installation to creation of our own pipes. We've seen how we can use the inbuilt pipes to format our data in the HTML templates for display. We also looked at the creation of Angular custom pipes which are not shipped with Angular by default.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
