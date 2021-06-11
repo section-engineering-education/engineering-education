@@ -33,8 +33,8 @@ To follow along with this tutorial, you should have:
 ### Problems with browser support
 We might encounter certain issues with our website due to the following reasons:
 - When the browser version does not support that specific feature.
-- When the browser handles it diffrently than it should, due to a bug.
-- When the browser has partial support for the feature, and is not enabled by default.
+- When the browser handles it differently than it should, due to a bug.
+- When the browser has partial support for the feature and is not enabled by default.
 
 When the browser version does not support the specific feature, we can work around this by introducing a fallback. The fallback replicates the behavior using older CSS features. When the browser has a bug, we can raise an issue to the developer team through GitHub and get it fixed. When the browser has partial support for the feature, we can enable it by a browser flag or configuration setting. In this article, we are going to concentrate on how to introduce a fallback using the `@supports` feature query.
 
@@ -220,9 +220,9 @@ If you run it on Firefox 22, you would notice that the hero banner sticks to the
 
 In the example above, we used the `@supports` feature query and the **not** operator to check for the browsers that do not support the `position: sticky` CSS rule. We specified some alternative CSS rules for older browsers within the `@supports` block so that the CSS doesn't break in older browsers.
 
-There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. The **or** operator is used when we want the block properties to be applied when one of the expressions are true. For example, we can use the **or** operator with vendor prefixes.
+There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. The **or** operator is used when we want the block properties to be applied when one of the expressions is true. For example, we can use the **or** operator with vendor prefixes.
 
-*Note: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than the others. For example, the prefix -moz is used with CSS rules specific to Firefox. To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/)*
+*Note: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than others. For example, the prefix -moz is used with CSS rules specific to Firefox. To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/)*
 
 ```css
 @supports (transform-style: preserve) or (-moz-transform-style: preserve) or 
@@ -239,14 +239,14 @@ The code above will execute only if the `transform-style` property is supported 
 }
 ```
 
-This CSS rules will be applied only on browsers that support both `grid` and `table-cell` display properties.
+These CSS rules will be applied only on browsers that support both `grid` and `table-cell` display properties.
 
 ### Conclusion
-- In this article, we learnt about the various web rendering engines and how they vary across browsers.
+- In this article, we learned about the various web rendering engines and how they vary across browsers.
 - We saw how certain CSS features are not supported in certain older versions of browsers.
 - We took the `position: sticky` rule as an example and saw how it breaks in Firefox 22.
 - We used the `@supports` feature query to fix this problem and made it work in Firefox 22.
-- We learnt about the various conditional operators that can be used with `@supports`.
+- We learned about the various conditional operators that can be used with `@supports`.
 
 By using the `@supports` feature query, web developers can ensure that they can reach a wider audience by making their websites work flawlessly with older browsers. For the finished code used in this article, visit [this link](https://glitch.com/edit/#!/surf-utopian-antelope).
 
