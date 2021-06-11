@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /files-and-exceptions-in-python/
+title: Files and Exceptions in Python
+description: This tutorial will teach us how to work with files and exceptions in Python. We will look at how perform read, write, and append data to a file, and we'll see how to handle errors using exceptions. 
+author: duncan-ndegwa
+date: 2021-06-12T00:00:00-00:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+- url: /engineering-education/files-and-exceptions-in-python/hero.jpg
+  alt: Python Lists Dictionaries example
+---
 Files are identified locations on a disk where associated data is stored. Working with files will make your programs fast when analyzing masses of data. Exceptions are special objects that any programming language uses to manage errors that occur when a program is running.
-
+<!--more-->
 In this tutorial, we'll learn about file operations in Python. These operations include reading, writing, and appending to a file. We will also learn about handling the `ZeroDivisionError` and `FileNotFoundError` exception.
 
 ### Prerequisites
