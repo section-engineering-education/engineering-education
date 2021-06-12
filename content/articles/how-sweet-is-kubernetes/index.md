@@ -29,8 +29,7 @@ The Fleetman Application is an application that tracks the location of trucks as
 This article is not about the Fleetman application. Instead, we will be using Fleetman to understand our content better.
 Microservices obey the **SOLID** principle, which is:
 - `Single Responsibility Principle`, A module must do one thing, as well as each part of the microservice architecture should do just one thing.
-- `The Position Simulation` only simulates the positions of the truck at any point in time, and that is its only job.
-As soon as the position is calculated and known, the `Message Queue` will be transfered the data. The essence of a queue in any architecture of microservice is to avoid loss of data. The queue receives the data, keeping it waiting for the request from the position tracker. The queue implemented here is **ActiveM.** It is also utilized as a docker container. The position tracker gets the information from the queue and performs many calculations, like calculating the speed a particular truck has covered. **API Gateway** is a cluster of gateway and acts like gatekeeper for authentication. It provides one access point to the cluster and match all requests incoming to underlying microservices.
+- `The Position Simulation` only simulates the positions of the truck at any point in time, and that is its only job. As soon as the position is calculated and known, the data is transferred to the `Message Queue`. The essence of a queue in any architecture of a microservice is to avoid loss of data. The queue receives the data, keeping it waiting for the request from the position tracker. The queue implemented here is **ActiveM.** It is also utilized as a docker container. The position tracker gets the information from the queue and performs many calculations, like calculating the speed a particular truck has covered. **API Gateway** is a cluster gateway and acts as the gatekeeper for authentication. It provides one access point to the cluster and matches all requests incoming to underlying microservices.
 
 ![Fleetman microservice](/engineering-education/qoyum_yusuf/fleetman.png)
 
@@ -43,17 +42,16 @@ Kubernetes is not a replacement for Docker. It is something more.
 #### Kubernetes Vs. Docker**
 | s/n | Docker  |  Kubernetes  |
 |----|----------------------------|:----------------------------------    |
-| 1.|Docker is used for building images and managing them in a container.  | Kubernetes is meant to manage containers built by docker effectively; hence the reason why Kubernetes is termed an orchestration tool.  |
+| 1.|Docker is used for building images and managing them in a container.  | Kubernetes manages containers built by Docker effectively, making it an orchestration tool.  |
 | 2. |Docker runs on a single node. | Kubernetes runs across clusters. |
-| 3. |Docker is built by three y-connector graduates. | Kubernetes is built by some Google engineers but its now being managed as an open-source project |
+| 3. |Docker is built by three y-connector graduates. | Google engineers developed Kubernetes, but it is now being managed as an open-source project |
 
 However, it is better to see how it works with the aid of the Fleetman application that I deployed on my repo as the instructional material.
 
 ### Notable Concept in Kubernetes.
 
 #### Deployment
-Deployment can be explained as a configuration script which provides declarative updates to applications. It gives engineers the freedom to describe the life span of an application, such as which image to use for the application, the total number of pods there should be, and how those pods should be updated. It also gives the configurative priviledge to determine the number of replica sets to be produced per pod. It as well aid the maintainance of the cluster in order to avoid the minutest downtime. It can be compared to a blueprint of a house to the house, it is that blueprint that defines how every pod feature will behave or look like.
-The configuration we are declaring is in the deployment, while the name is the position simulator. The container we used is on line 17, and the position simulator release `one` from Richard Chesterwood repository. As we can see, 'replicas' is being specified as our replica set, and the template declares our pod. For a standard, `YAML` file even though it can be separated, to ensure orderliness and separation of concerns, we write the services of each deployment in the same file, separating them with three dashes(-). Some do arrange theirs as all services in a separate file. That is also acceptable.
+Deployment is a configuration script that provides declarative updates to applications. It gives engineers the freedom to describe the life span of an application, such as which image to use for the application, the total number of pods there should be, and how those pods should be updated. It also gives the configurative privilege to determine the number of replica sets to be produced per pod. It as well aids with the maintenance of the cluster in order to avoid the minutest downtime. It can be compared to a blueprint of a house. It defines how every pod feature will behave or look. The configuration we are declaring is in the deployment, while the name is in the position simulator. The container we used is on `line 17`, and the position simulator release `one` from the Richard Chesterwood repository. As we can see, 'replicas' is specified as our replica set, and the template declares our pod. For a standard, `YAML` file even though it can be separated, to ensure orderliness and separation of concerns, we write the services of each deployment in the same file, separating them with three dashes(-). Some do arrange theirs as all services in a separate file. That is also acceptable.
 
 ```yaml
 apiVersion: apps/v1
@@ -79,9 +77,7 @@ spec:
 ```
 
 #### Pod.
-Kubernetes interact with the container only through the concept of pods. A pod is an abstraction of a container and, each container is entirely saved in the pod for Kubernetes to interact with. We can, therefore, say that the pod is the only way a Kubernetes system can interact with a container. Pods are represented as a template in our `yaml` files for deployment.
-If you follow through with the deployment of the position simulator, you will realize that a fragment of the script is declaring our pod. 
-
+Kubernetes interacts with a container only through the concept of pods. A pod is an abstraction of a container. Each container is entirely saved in a pod. Therefore, we can say that the pod is the only way a Kubernetes system can interact with a container. Pods are represented as a template in our `Yaml` files for deployment. If you follow through with the deployment of the position simulator, you will realize that a fragment of the script is declaring our pod.
 ```yaml
  template: # template defining our pod
     metadata:
@@ -97,22 +93,19 @@ If you follow through with the deployment of the position simulator, you will re
 ```
 
 #### Replica Sets
-Replica sets can be defined as abstraction of a pod, almost same way as pods being an abstractions of a container. 
-Why are replica sets so important? High availability is one of the advantages orchestration offers, and that is exactly why a replica set is needed in our configuration. To ensure the applications run absolutely well with zero or minimum downtime. There are certain conditions when our pods seems to be shutting down, we will surely be guaranteed there are many other copies with the help of replica sets. In our cluster, replica sets are stored somewhere in one of our nodes that only the **Scheduler** knows, there can always as many replica sets per pod as possible in a node. 
-It is specified as replicas in the deployment we showed above.
+A replica set is an abstraction of a pod, almost the same way as pods being an abstraction of a container. Why are replica sets so important? High availability is one of the advantages it offers, which is why it is used for configuration. It ensures applications run well with zero or minimal downtime. If a pod seems to be shutting down, we will surely be guaranteed there are many other copies with the help of replica sets. In our cluster, replica sets are stored somewhere in one of our nodes that only the `Scheduler` knows. There can be as many replica sets per pod as possible in a node. It is specified as replicas in the deployment we showed above.
 
 ##### How does a Replica Set differ from Deployment?
 There are few differences between deployment and a replica set, the most important one is that:
-- A replica set makes sure that for a pod, a certain number of replicas are running every time. However, a deployment as mentioned earlier helps manage Replica Sets and provides declarative updates to the pods alongside some other important features.
-- When new features as updates are made to our image, for a replica set, the application shuts down because another one is being fired up. This is a great demerit on its part as there would be downtime for the period of creation, unlike a deployment that ensures that the old replica sets continue running till the new one is being fired up. As soon as the new pod runs, the old one will be shut down totally, while making sure there is no downtime at all.
+- A replica set makes sure that a certain number of replicas are running for a pod every time. However, as mentioned earlier, a deployment helps manage Replica Sets and provides declarative updates to the pods alongside other essential features.
+- When updates are made to our application for a replica set, the application shuts down as another one is fired up. This is a demerit on its part as there would be downtime for the creation period, unlike a deployment that ensures that the old replica sets continue running till the new one is fired up. As soon as the new pod runs, the old one is totally shut down, making sure there is no downtime at all.
 
 #### Node
-A node is similar to our laptops, infact our laptops can be considered as a node in a real kubernetes cluster. It is like one of the personal computer in a cluster where live the pods. It is possible to have in a node several pods but the fewest count of nodes that can be present in a cluster is two, one node can not make a cluster. Inside a node, there is at least a pod and a container that the pod abstracted. Atimes, a situation where there are more than one container in a pod might be observed, that doesnt mean it is the right practice. However, the standard practice can only be one container in a pod. There can also be several pods in a node, with each one having its service.
+A node is similar to our laptops. Our laptops can be considered as a node in a real Kubernetes cluster. It is like a personal computer in a cluster where the pods live. It is possible to have in a node several pods, but the fewest count of nodes that can be present in a cluster is two. One node can not make a cluster. Inside a node, there is at least a pod and a container that the pod abstracted. At times, there might be a situation where there is more than one container in a pod,  but it is not the proper practice. There can also be several pods in a node, with each one having its service. 
 ![node](/engineering-education/qoyum_yusuf/node.png)
 
 #### Secrets
-To conceal the information in our database, we need a SECRET configuration. The function of `secret` is to house or store confidential data that must not be exposed at production.
-
+To conceal the information in our database, we need a SECRET configuration. The function of a secret is to house or store confidential data that must not be exposed at production.
 ```yaml
 apiVersion: version1
 kind: Secret
@@ -123,23 +116,21 @@ data:
    mongo-root-username: d2l6YXJkY2FsaWRhZA==
    mongo-root-password: T2xhdHVuZGU4IQ==
 ```
-However, our database username and password are also kept secret. Therefore, the only thing we are exposing is the key generated after converting them to base 64. To convert your username and password, write these simple script on your terminal.
+However, our database username and password are also kept secret. Therefore, the only thing we are exposing is the key generated after converting them to base 64. To convert your username and password, write this simple statement on your terminal.
 
 ```terminal
 echo -n “the content to convert” | base64
 ```
 
 #### Service
-This is like an endpoint or API point for Kubernetes. A Service always has a permanent IP address and that it why it must be aatched to the pod whose IP address changes time to time when it's down. This means the IP of our Service never changes, whereas a pod's IP changes when updated. For such an important reason, there is a service attached to all pods. Several pods can be attached to one service, and this further shows how important our replica sets is, when one dies, another is being fired up almost immediately.
-Let us pull out the services in the Fleetman application as examples.
-
+A Service is an endpoint or API point for Kubernetes. A Service always has a permanent IP address, and that is why it must be attached to the pod whose IP address changes from time to time when it is down. This means the IP of our Service never changes, whereas a pod's IP changes when updated. For such an important reason, there is a service attached to all pods. Several pods can be attached to one service, which further shows how vital our replica sets are. Let us pull out the services in the Fleetman application as examples.
 ```yaml
 apiVersion: version1
 kind: service
 metadata:
   name: Api-Gateway
 spec:
-  # Explains which pod will to be represented by this Service
+  # Explains which pod will be represented by this service
   # The service serves as a network endpoint for one of other 
   # services or users trying to access through the browser.
   selector:
@@ -229,7 +220,7 @@ data:
   database_url: mongo-db-app
 ```
 #### Ingress
-Ingress addresses the linkage between the IP address in the browser and the right service in the node that will be responsible for answering the request. As we earlier learnt that services are attached to pods and are just mere access points consisting of ports which later communicate with the pods. The process through which pods are scheduled across nodes as replica sets is called the "Master Process." It is done with the aid of a "Scheduler."
+Ingress addresses the linkage between the IP address in the browser and the right service in the node responsible for answering the request. As we earlier learned, services are attached to pods and are mere access points consisting of ports that later communicate with the pods. The process through which pods are scheduled across nodes as replica sets is called the "Master Process." It is done with the aid of a "Scheduler."
 ![ingress](/engineering-education/qoyum_yusuf/ingress.png)
 
 
