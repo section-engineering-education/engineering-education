@@ -23,7 +23,8 @@ Tools available on Kali Linux enable the user to gather information, perform exp
 
 ### Installing Kali Linux
 
-For beginners, it may seem complex having Kali Linux as your main operating system since you will mostly be running commands on a terminal rather than using the GUI(Graphical User Interface). It is therefore advised to have your Kali Linux in a **virtual box**. This enables you to do your other operations in the main operating system.
+For beginners, it may seem complex having Kali Linux as your main operating system since you will mostly be running commands on a terminal rather than using the Graphical User Interface (GUI). It is therefore advised to have your Kali Linux in a **virtual box**. This enables you to do your other operations in the main operating system.
+
 You can have your Kali Linux in your favorite virtual box. Available virtual boxes include:
 
   * [Vmware virtual box](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
@@ -34,12 +35,13 @@ For our tutorial, we will use VMware virtual box (My favorite).
 
 #### Download Kali Linux iso
 
-First, before installing the VMware you have to download the Kali Linux iso. Use the link below:
+First, before installing the VMware you have to download the Kali Linux iso. Use the link below to get to the download page:
 
   * [Kali Linux iso](https://www.kali.org/get-kali/#kali-platforms)
 
 #### Download Vmware virtual box
-After successfully downloading the kali Linux iso, you can now download the VMware virtual box using the link below.
+
+After successfully downloading the kali Linux iso, you can now download the VMware virtual box using the link below:
 
   * [Vmware virtual box](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html).
 
@@ -49,11 +51,11 @@ Follow the [Installing Vmware](https://forums.tomshardware.com/faq/how-to-instal
 
 You now have all the requirements to successfully set up Kali Linux inside the VMware virtual box.
 
-Lastly, follow the guidelines in the "Installing Kali Linux in VMware " to successfully install Kali Linux.
+Lastly, follow the guidelines in the "Installing Kali Linux in VMware" to successfully install Kali Linux.
 
 ![Login page](/engineering-education/getting-started-with-kali-linux/login.png)
 
-And Cheers! You have successfully installed Kali Linux and now ready to learn.
+Cheers! You have successfully installed Kali Linux and now ready to learn.
 
 ### Starting Kali Linux
 
@@ -129,9 +131,9 @@ For you to list all the hidden and non-hidden files in the directory, use the `l
 ```
 ![ls -la](/engineering-education/getting-started-with-kali-linux/ls-la.png)
 
-You will notice that some file names are preceded with a dot, those are the hidden files. They cannot be seen in GUI.
+You will notice that some file names are preceded with a dot, those are the hidden files. They cannot be seen in the GUI.
 
-   5. **Changing Directory**
+   5. **Changing directory**
 
 To navigate into a directory, type in the `cd` keyword followed by the directory name. An example is shown below.
 
@@ -149,9 +151,9 @@ To move a step back from the present directory, just type the `cd ..` command. D
 
 **Trick:** If you are not sure of a command, you can type in half of the command and press the tab key to autocomplete the command. You can also double-tap the tab key to see the available options of the half command typed.
 
-   6. **Accessing the Internet**
+   6. **Accessing the internet browser**
 
-To be able to access the internet, just type in the name of your favorite browser eg.  `firefox` or `chrome` and you will get a pop-up of the browser.
+To be able to access the internet browser, just type in the name of your favorite browser eg.  `firefox` or `chrome` and you will get a pop-up of the browser.
 
 ```bash
     $ firefox
@@ -223,7 +225,7 @@ Kali Linux provides a wide range of security auditing tools but for this tutoria
  
 We will categorize the tools according to their functionality:
 
-   1. **Information gathering and Vulnerability analysis**
+   1. **Information gathering and vulnerability analysis**
    
 Tools available: `Nmap`, `Zenmap` etc.
 
@@ -231,7 +233,7 @@ Tools available: `Nmap`, `Zenmap` etc.
 
 Let's discuss Nmap since it is the commonly used information-gathering tool.
 
-Nmap is a tool that gathers information by scanning the target's IP address or URL. You can learn more about Nmap scanning and interpretation from the "Introduction to Nmap" tutorial.
+Nmap is a tool that gathers information by scanning the target's IP address or URL. You can learn more about Nmap scanning and interpretation from the "Introduction to Nmap" tutorial linked below.
 
 To access Nmap, type in the `Nmap` command on the terminal followed by the target to scan as shown in the example below:
 
@@ -309,6 +311,7 @@ This is a series of Powershell scripts that comes in handy during a post-exploit
  - Major tools used in Kali Linux.
  
 ### Conclusion
+
 From this article, we have learned that to comfortably use Kali Linux, you don't need to know how to use all the tools. You just need to know how to use some major tools and run major commands from the terminal. With continuous practice, you will comfortably use Kali Linux.
 
 Good Luck!
