@@ -30,22 +30,19 @@ Lottie is supported on mobile (Android, iOS, and React Native), web, and desktop
 This article will share how to implement Lottie animations in onboarding screens using Kotlin. Since the project is a bit wide, we shall only go through all the basics of Lottie animations on the app. 
 
 ### Prerequisites
-
-- Basic knowledge of android development
-- Solid understanding of Kotlin
-- Familiarity with Android Studio
+The reader should:
+- Have basic knowledge of developing Android applications.
+- Have a solid understanding of [Kotlin](https://developer.android.com/kotlin?gclid=CjwKCAjwtpGGBhBJEiwAyRZX2kIAPNCmlb-8y8TkwFKq50N3Q2WyrbK_z9z5pdtJ7vNcw4LlHy4MSxoCSMQQAvD_BwE&gclsrc=aw.ds) programming language.
+- Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwtpGGBhBJEiwAyRZX2qdVjJro5K05vugN8QfNBViTy3W1-q_LVgwHMndmCJmFxTZpPiSHuRoCAY8QAvD_BwE&gclsrc=aw.ds) installed.
 
 ### Goal
 At the end of this tutorial, the reader should understand how to use and implement Lottie animations in Android applications. 
 
 #### Step one: Create a new Android Studio Project.
-In this step, we will create a new Android. 
-Open Android Studio and select create New Project. In the Select a Project Template window, select Empty Activity and click Next, Fill in the required fields and click finish.
+In this step, we will create a new Android project. Open Android Studio and select Create New Project - > Empty Activity and click Next. Fill in the required fields and click finish.
 
 #### Step two: Choosing an animation file to use on your app
-Head over to Lottie's [website](www.lottiefiles.com) and choose the animations of your choice. Most of the animations are free, while others one has to pay to use them.  Download the .json file. In our project, let us create a res/raw folder. Save the .json animations on there.
-On your android project, create a `res/raw` folder. Right click on res folder, select New-> Resource package and name it `raw`. 
-Save the `.json` animations on that folder.
+Head over to Lottie's [website](www.lottiefiles.com) and choose the animations of your choice. Most of the animations are free, while others one has to pay to use them.  Download the .json file. In our project, let us create a res/raw folder. Save the .json animations on there. On your android project, create a `res/raw` folder. Right-click on res folder, select New-> Resource package, and name it `raw`. Save the .json animations on that folder.
 
 #### Step three: Adding Lottie dependencies to the project.
 In the `build. gradle` (project level), add the Lottie Animation library. Make sure you check out the latest library version and sync the changes.
