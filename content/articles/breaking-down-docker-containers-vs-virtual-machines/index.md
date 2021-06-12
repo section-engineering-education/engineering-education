@@ -2,30 +2,29 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-handle-navigation-in-flutter/
-title: How to Handle Navigation in Flutter
-description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
-author: nathaniel-dauda-wobin
-date: 2021-06-01T00:00:00-18:00
+url: /breaking-down-docker-containers-vs-virtual-machines/
+title: Breaking Down Docker Containers vs. Virtual Machines 
+description: This article will discuss the key differences between Docker containers and virtual machines.
+date: 2021-06-30T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
-    alt: Handling Navigation in Flutter
+  - url: /engineering-education/breaking-down-docker-containers-vs-virtual-machines/hero.jpg
+    alt: Docker Containers and Virtual Machines
 ---
-One of the core concepts in all mobile applications is navigation. It allows a user to move between different pages or activities. Navigation increases an app's functionality. It enables developers to include numerous features on different screens.
+[Containers](/engineering-education/history-of-container-technology/) and virtual machines (VMs) help maximize the value you get from the available software resources and computer hardware. Virtual machines are historically popular for their ability to allow users to run multiple operating systems simultaneously, as well as utilize the same hardware resources.
 <!--more-->
-Containers(/engineering-education/history-of-container-technology/) and virtual machines (VMs) help maximize the value you get from the available software resources and computer hardware. Virtual machines are historically popular for their ability to allow users to run multiple operating systems simultaneously and share the same hardware resources. VMs are run by a hypervisor that allows a single host computer to support more than one guest virtual machine by sharing processing, memory, and other resources.
+Virtual machines depend heavily on a [hypervisor](https://www.vmware.com/topics/glossary/content/hypervisor). It allows a single host computer to support several guest virtual machines. This is made possible through the sharing of different resources including processing power and memory.
 
-Container revolution is here with us, and it improves the visualization approach by providing greater efficiency. This is so because container technology eliminates the need for hypervisors and multiple virtual machines.
+Containers, on the other hand, enhance visualization and overall efficiency. This is because they eliminate the need for hypervisors and multiple virtual machines.
 
-Both these two technologies are similar in many ways, including their abilities to improve IT efficiency, enhance software development lifecycle, offer application portability, and make the work of DevOps easier.
+However, containers and virtual machines are similar in many ways. This includes their ability to improve IT efficiency, as well as enhance the software development lifecycle. The two technologies also support application portability which simplify the work of DevOps.
 
-This article discusses how virtual machines and containers work and explains their main pros and cons. It also guides you on which approach to choose depending on your resources and needs.
+### Goal
+This article discusses how virtual machines and containers work, as well as their pros and cons. It also guides you on which technology to choose depending on your resources and needs.
 
 ### How VMs work
-
 Virtual machines operate through [virtualization technology](https://en.wikipedia.org/wiki/Virtualization). This computing technology stimulates virtual hardware to create virtual versions of resources such as desktop computers and servers that allow multiple virtual machines to run on a single computer system. This way, users optimize the usage of their computer hardware resources.
 
 In such an arrangement, the physical machine is referred to as the host and the VMs the guests. A [hypervisor](https://en.wikipedia.org/wiki/Hypervisor#) manages this process and provides resources such as storage and memory from the host computer to guests. VMs use the same hardware resources, meaning that their operations might overrun each other. Thankfully, the hypervisor schedules such procedures to avoid overrun. The presence of a hypervisor is a mandatory condition for virtual machines to work. It virtualizes and distributes host resources.
