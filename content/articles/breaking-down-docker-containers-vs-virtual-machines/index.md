@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
+author: nathaniel-dauda-wobin
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+One of the core concepts in all mobile applications is navigation. It allows a user to move between different pages or activities. Navigation increases an app's functionality. It enables developers to include numerous features on different screens.
+<!--more-->
 Containers(/engineering-education/history-of-container-technology/) and virtual machines (VMs) help maximize the value you get from the available software resources and computer hardware. Virtual machines are historically popular for their ability to allow users to run multiple operating systems simultaneously and share the same hardware resources. VMs are run by a hypervisor that allows a single host computer to support more than one guest virtual machine by sharing processing, memory, and other resources.
 
 Container revolution is here with us, and it improves the visualization approach by providing greater efficiency. This is so because container technology eliminates the need for hypervisors and multiple virtual machines.
@@ -65,3 +83,6 @@ Virtual machines are best applicable when:
 Virtual machines and containers alike continue to play significant roles in today's digital world. The two differ in many ways, but the most notable one is that containers allow users to virtualize an operating system, allowing multiple workloads to run on a single operating system instance. Virtual machines virtualize hardware resources to run on multiple operating system instances.
 
 With containers running on VMs, organizations leverage their existing tools for monitoring, backup, and automation. Also, they use the existing virtual machine-savvy teams to operate and manage containerized environments.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
