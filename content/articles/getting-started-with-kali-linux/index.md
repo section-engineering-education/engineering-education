@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-metasploit-framework/
+title: Getting Started with the Metasploit Framework
+description: In this article, we will learn how to install the Metasploit framework then getting started with the basic commands. When doing penetration-testing, one should first scan the network for vulnerabilities and gather the necessary information to perform an exploit. 
+author: kimosop-wakanda
+date: 2021-05-04T00:00:00-08:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-metasploit-framework/hero.jpg
+    alt: Metasploit Image
+---
+
 ### Getting started with Kali Linux
 
 **Kali Linux** is the most popular penetration testing platform that provides a variety of security auditing tools used by security specialists and hackers in day-to-day encounters.
@@ -292,6 +309,9 @@ This is a series of Powershell scripts that comes in handy during a post-exploit
  - Major tools used in Kali Linux.
  
 ### Conclusion
-From this article, we have learned that to comfortably use Kali Linux, you don't need to know how to use all the tools. You just need to know how to use some major tools and run major commands from the terminal.
-With continuous practice, you will comfortably use Kali Linux.
+From this article, we have learned that to comfortably use Kali Linux, you don't need to know how to use all the tools. You just need to know how to use some major tools and run major commands from the terminal. With continuous practice, you will comfortably use Kali Linux.
+
 Good Luck!
+
+---
+Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
