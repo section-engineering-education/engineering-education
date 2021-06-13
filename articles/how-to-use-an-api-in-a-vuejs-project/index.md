@@ -441,10 +441,13 @@ export default {
 
 #### Conclusion
 
-In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex requests as it allows multiple configurations of multiple requests in one place.
+In this tutorial, we have looked at two ways to interact with APIs in a vue.js project. Both methods of interacting with the APIs are similar in many ways and both get the job done. However, it's advised to use Axios for more complex requests as it allows many configurations of multiple requests in one place.
 
 We also considered consuming an API in a vuex project i.e. a project that manages multiple states.
 
 I hope this article is of great help 🙂.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
