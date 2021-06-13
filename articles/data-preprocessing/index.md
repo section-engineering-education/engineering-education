@@ -215,3 +215,6 @@ The reason is that our encoded columns are not treated as numeric entries.
 
 ### Conclusion
 This is the end of our data preprocessing journey. Our data is now well prepared to give machine learning models that can predict future outcomes effectively. I hope you enjoyed every step to this end. Happy learning.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
