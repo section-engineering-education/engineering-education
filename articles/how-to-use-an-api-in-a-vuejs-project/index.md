@@ -1,42 +1,40 @@
-Recently, the majority of developers build applications using Javascript programming language and this constitutes the fact that most web applications have Javascript as one of their programming languages. To make the building process easier and faster for developers, a compiled version of Javascript was created which takes on one programming architecture and allows programmers to build any application on this framework.
-This complied version of JavaScript is called *JavaScript Framework*. Vue.js is one of the many JavaScript Frameworks.
+A lot of developers build applications using Javascript and this constitutes the fact that most web applications have Javascript as one of their main programming languages. JavaScript frameworks were buily to make the development process easier and faster for the developers. Vue.js is one of the many JavaScript Frameworks. Other popular JavaScript frameworks are React and Angular.
 
 #### What is Vue.js
 
-[Vue.js](https://vuejs.org/v2/guide/index.html) is a progressive framework for JavaScript used to develop interactive user interfaces. Vue.js is called a progressive framework because it is user-friendly and can be easily merged with different frameworks or libraries.
-When developing most projects using Vue.js, there will be a need to fetch or consume data from an API. This will make the front-end of the application interact with the backend of the application. The fetched data can be consumed on the front end of the application.
+[Vue.js](https://vuejs.org/v2/guide/index.html) is a progressive framework for JavaScript which is used to develop interactive user interfaces. Vue.js is called a progressive framework because it is user-friendly and can be easily merged with different frameworks or libraries.
+
+When developing most projects using Vue.js, there'll be a need to fetch or consume data from an API. This is used to make the front-end interact with the backend of the application. The fetched data can be consumed on the front end of the application.
 
 #### What is an API?
 
-API stands for Application Programming Interface, which is a set of protocols that allow software programs to share data. It is more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using two methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
+API stands for Application Programming Interface, which is a set of protocols that allow applications to share data. It's more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using either one of these methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
 
 These concepts will be discussed extensively in the course of this article. Brace up! 
 
 #### Prerequisite
 
-To understand and follow this article, you will need:
+To understand and follow this article, you should have:
 
 - [Node.js](https://nodejs.org/en/download/) installed on your computer.
-- to have Vue.js installed on your computer. If you don't already have it installed, click [here](https://vuejs.org/v2/guide/installation.html) to do so.
-- to understand key concepts in Vue.js. You can learn it [here](https://vuejs.org/v2/guide/index.html).
+- Vue.js installed on your computer. If you don't already have it installed, refer to this [documentation](https://vuejs.org/v2/guide/installation.html).
+- Understood the key concepts in Vue.js. You can learn it from the [Vue.js guide](https://vuejs.org/v2/guide/index.html).
 
 #### Overview
 1. Using Axios to consume an API
 2. Using the Fetch API method
-3. Using APIs on Vuex
+3. Using APIs in Vuex
 4. Conclusion
 
 If you don't know how to create a Vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
 
-There are two methods of consuming/using an API in a Vue.js project. These methods are:
-
 #### Using Axios to consume APIs
 
-[Axios](https://www.npmjs.com/package/axios) is a promise-based HTTP client which makes it suitable for fetching data during server-side display. It works on both browser and Node apps.
+[Axios](https://www.npmjs.com/package/axios) is a promise-based HTTP client which makes it suitable for fetching data during server-side display. It works on both browser and Node apps. Axios is a library that is built around the Fetch API.
 
 **Axios Installation**
 
-To use Axios on your project, you need to first install it. This can be done in two ways:
+To use Axios in your project, you should install it. This can be done in two ways:
 
 -  By using `npm`; a standard package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
 
@@ -55,16 +53,18 @@ With yarn:
 yarn add axios
 ```
 
-Next, you import Axios in your `src/main.js` file
+Next, you should import Axios in your `src/main.js` file
 
 ```JavaScript
 import axios from 'axios';
 Vue.prototype.$http = axios;
 ```
 
-**How to make an API request and display data using Axios.**
+**How to make an API request and display data using Axios**
 
-We will make the API request using a `get` method. A get method is used to call data from a resource, the resource in this context is our API.  We want this API request running synchronously therefore, we use a promise-based function with keywords [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function). You may wonder why we used a promise-based function. This is because a promise is a stand-in for a value not necessarily known when the promise is created. You can learn more about Promises in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+We'll make the API request using the `get` method. A get method is used to fetch data from an API. We want this API request running asynchronously therefore, we use a promise-based function with the keywords [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function). 
+
+You may wonder why we used a promise-based function. This is because a promise is a stand-in for a value not necessarily known when the promise is created. Since API requests take an undeterminable amount of time, we use promises. You can learn more about Promises in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
 We also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle the error if one occurs.
 
@@ -105,7 +105,7 @@ The above block of code in the `methods` property will be explained line by line
 async getData (){
 ```
 
-A function named `getData()` is created . It is in this function the API will be called. The `async` keyword is prepended on the `getData` function to show that the function will make use of promise and we'll be using it to await to pause the execution of the function until the promise is resolved.
+A function named `getData()` is created . In this function, the API will be called. The `async` keyword is prepended on the `getData` function to show that the function will make use of promises and we'll be using it to await to pause the execution of the function until the promise is resolved.
 
 ```JavaScript
 try {
@@ -128,7 +128,7 @@ catch (error) {
 }
 ```
 
-If any error occurs during the code execution, the error will be caught and logged in the console.
+If any error occurs during the execution, the error will be caught and logged in the console.
 
 After requesting data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to retrieve sensitive data and events that are active with the `created` hook.
 
@@ -165,7 +165,7 @@ export default {
 </script>
 ```
 
-We can now display the data in the template by looping through the posts using [v-for](https://vuejs.org/v2/guide/list.html) directive
+We can now display the data in the template by looping through the posts using [v-for](https://vuejs.org/v2/guide/list.html) directive.
 
 ```JavaScript
 <template>
