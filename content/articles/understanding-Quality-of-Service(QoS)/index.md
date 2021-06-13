@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-quality-of-service(QoS)/
+title: Understanding Quality of Service (QoS)
+description: In this article, we will explore Quality of Service and its importance to a network.
+author: sudi-david
+date: 2021-06-14T00:00:00-16:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /understanding-quality-of-service(QoS)/hero.jpg
+    alt: QoS example image
+---
+QoS is an essential set of technologies that allows one to optimize their network to run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
+<!--more-->
+
 ### Understanding Quality of Service (QoS)
 
 People optimize their networks to ensure that the networks perform at full potential. QoS is an essential set of technologies that allows one to optimize their network to run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
