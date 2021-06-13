@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-interact-with-an-api-from-a-vuejs-application/
+title: How to Interact With an API from a Vue.js Application
+description: This tutorial will provide the readers a detialed guide on how to interact with an API from a Vue.js application using Fetch and Axios.
+author: edidiong-etok
+date: 2021-06-13T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-interact-with-an-api-from-a-vuejs-application/hero.jpg
+    alt: How to Interact With an API from a Vue.js Application Hero Image
+---
 A lot of developers build applications using Javascript and this constitutes the fact that most web applications have Javascript as one of their main programming languages. JavaScript frameworks were buily to make the development process easier and faster for the developers. Vue.js is one of the many JavaScript Frameworks. Other popular JavaScript frameworks are React and Angular.
+<!--more-->
 
 #### What is Vue.js
 
