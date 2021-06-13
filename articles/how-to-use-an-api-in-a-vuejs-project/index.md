@@ -325,7 +325,18 @@ actions: {
 },
 ```
 
-We can display data in our vue file. To do that, some steps need to be taken:
+Now, we should import the store in `src/main.js` and pass it to our Vue app.
+
+```JavaScript
+import store from "../store/index";
+
+new Vue({
+  render: (h) => h(App),
+  store,
+}).$mount("#app");
+```
+
+Now, we can display the data in our vue file. To do that, some steps need to be taken:
 
 1. Using the `computed` proprty, we access the content of the `getters` method in the store. 
 
