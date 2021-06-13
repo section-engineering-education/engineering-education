@@ -291,38 +291,38 @@ export default new Vuex.Store({
 Next, we create a `getters` property. Getters are like `computed` properties for stores. It is used to determine derived states based on store states. In this tutorial, we will use it to return posts in the state.
  
 ```JavaScript
-getters: {
-  posts: state => {
-    return state.posts;
-  }
-},
+  getters: {
+    posts: state => {
+      return state.posts;
+    }
+  },
 ```
 
 Next, we create a `mutation` property. The mutation property is where we can change the state in the Vuex store. There are very similar to events where we carry out actual state alterations.
 
 ```JavaScript
-mutations: {
-  SET_ITEMS (state, posts) {
-    state.posts = posts
-  }
-},
+  mutations: {
+    SET_ITEMS (state, posts) {
+      state.posts = posts
+    }
+  },
 ```
 
 Now we can call our API in the `actions` property. Actions are equivalent to mutations only that actions commit mutations rather than mutating the state and also actions can hold asynchronous operations. Let’s go ahead with the API call.
 
 ```JavaScript
-actions: {
- async loadPosts ({ commit }) {
-   try {
-      const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-      // JSON responses are automatically parsed.
-      commit('SET_ITEMS', response.data)
-    }
-    catch (error) {
-     console.log(error);
+  actions: {
+   async loadPosts ({ commit }) {
+     try {
+        const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+        // JSON responses are automatically parsed.
+        commit('SET_ITEMS', response.data)
+      }
+      catch (error) {
+       console.log(error);
+     }
    }
- }
-},
+  },
 ```
 
 Now, we should import the store in `src/main.js` and pass it to our Vue app.
@@ -343,21 +343,20 @@ Now, we can display the data in our vue file. To do that, some steps need to be 
 ```JavaScript
 <script>
 export default {
-computed: {
-    posts() {
-         return this.$store.getters.posts;
-      },
-  },
+  computed: {
+      posts() {
+           return this.$store.getters.posts;
+        },
+    },
 ```
 
 2. Call the API on a lifecycle hook `created` and employ the `dispatch` method to call the action.
 
 ```JavaScript
-created() {
+  created() {
     this.$store.dispatch('loadPosts');
-     
   },
-},
+}
 </script>
 ```
 
@@ -366,10 +365,10 @@ created() {
 ```JavaScript
 <template>
   <div>
-     <ul v-for="post in posts" v-bind:key="post.id">
-       <li>{{ post.title }}</li>
-       <p>{{ post.body }}</p>
-     </ul>
+    <div v-for="post in posts" v-bind:key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
   </div>
 </template>
 ```
@@ -418,12 +417,12 @@ For your vue file:
 
 ```JavaScript
 <template>
-     <div>
-         <ul v-for="post in posts" v-bind:key="post.id">
-             <li>{{ post.title }}</li>
-             <p>{{ post.body }}</p>
-         </ul>
-      </div>
+  <div>
+    <div v-for="post in posts" v-bind:key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -434,8 +433,7 @@ export default {
       },
   },
   created() {
-    this.$store.dispatch('loadPosts');
-     
+    this.$store.dispatch('loadPosts');  
   },
 }
 </script>
