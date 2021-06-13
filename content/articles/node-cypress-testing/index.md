@@ -39,7 +39,7 @@ node_modules/.bin/cypress open
 
 You can remove the `example` folder since we will be writing our own tests from scratch.
 
-Next up, we will configure cypress to work with out local server. Add a script to start our cypress binary in our package.json file.
+Next up, we will configure cypress to work with our local server. Add a script to start our cypress binary in our package.json file.
 
 ```json
   "scripts": {
@@ -96,7 +96,7 @@ This is a basic form with 2 fields and a submit button. We add a script below to
 
 Now that we have the basics done, we can now get into the real testing and see what cypress can do.
 
-To view the page, run `npx serve` to render the index file. The command also copies the url in your clipboard so you can directly paste it in your browser.
+To view the page, run `npx serve` to render the index file. The command also copies the url in your clipboard so you can directly paste it into your browser.
 
 #### Step 3: Writing tests
 
@@ -110,7 +110,7 @@ describe("Forms test", () => {
 });
 ```
 
-_Fun fact: the same keyword is used in `mocha` testing framework._
+_Fun fact: the same keyword is used in the `mocha` testing framework._
 
 All the tests involving our forms will go in here. It receives the name of the collection/suite of the tests and a callback that holds all the actual tests. To test a single action, we use the `it` keyword. First, let's test whether we can get to the form. Go ahead and add the following inside the describe function.
 
@@ -138,7 +138,7 @@ Another great thing about cypress is that the test GUI actively listens to the c
 
 The cypress GUI is interactive and you can explore by checking which elements are tested individually by clicking on the test name.
 
-Let's test the form inputs. We can use the `.type` method to mimick a user typing action in a field and ensure the value returned by the input is still the same.
+Let's test the form inputs. We can use the `.type` method to mimic a user typing action in a field and ensure the value returned by the input is still the same.
 
 For that, add the following test still under the forms test suite.
 
@@ -148,7 +148,7 @@ it("can fill the form", () => {
 });
 ```
 
-The test passes, obviously! You can try out different values and check for differenced. If you notice, we used the `id` attribute to get the input. We can also use the `name` attribute too.
+The test passes, obviously! You can try out different values and check for differences. If you notice, we used the `id` attribute to get the input. We can also use the `name` attribute too.
 
 We use the `.should` method with the `have.value` assertion to confirm the value. You can read more about assertions in [this section](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Assertions) of the docs.
 
@@ -160,12 +160,12 @@ it("can submit the form", () => {
 });
 ```
 
-The result of submitting the form is logged in the console so you can check the chrome devtools for the value.
+The result of submitting the form is logged in the console so you can check the chrome dev tools for the value.
 
 ### Conclusion
 
 Those are just a few tests you can carry out using cypress. There are methods like `.on` and `.its`. You can go ahead and play around with the values as you learn more about testing. There are network request tests with cypress which can help mock the functionality after submitting your form.
 
-Cypress makes testing easy for developers and ensure your follow a clean TDD approach when creating your applications. You can find the source code for this tutorial on [Github](https://github.conm/LinusMuema/cypress-testing).
+Cypress makes testing easy for developers and ensures you follow a clean TDD approach when creating your applications. You can find the source code for this tutorial on [Github](https://github.conm/LinusMuema/cypress-testing).
 
 Have fun coding!
