@@ -338,7 +338,7 @@ new Vue({
 
 Now, we can display the data in our vue file. To do that, some steps need to be taken:
 
-1. Using the `computed` proprty, we access the content of the `getters` method in the store. 
+1. Using the `computed` property, we access the content of the `getters` method in the store. 
 
 ```JavaScript
 <script>
