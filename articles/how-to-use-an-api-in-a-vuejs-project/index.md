@@ -270,11 +270,10 @@ Then, in your `store` folder, access the `index.js` file and write the following
 ```JavaScript
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from "axios";
 
 Vue.use(Vuex);
 ```
-
-You will also need to install and import Axios if you have not already done that. Check the earlier part of this tutorial for the steps.
  
 **Now let’s make the API request:**
  
@@ -328,31 +327,30 @@ actions: {
 
 We can display data in our vue file. To do that, some steps need to be taken:
 
-1. Import `mapState` from vuex, this is to help generate computed getter functions for us.
+1. Using the `computed` proprty, we access the content of the `getters` method in the store. 
 
 ```JavaScript
 <script>
-import { mapState } from 'vuex';
+export default {
+computed: {
+    posts() {
+         return this.$store.getters.posts;
+      },
+  },
 ```
 
-2. Call the API on a lifecycle hook `mounted` and employ the `dispatch` method to call the action.
+2. Call the API on a lifecycle hook `created` and employ the `dispatch` method to call the action.
 
 ```JavaScript
-mounted () {
-  this.$store.dispatch('loadPosts')
+created() {
+    this.$store.dispatch('loadPosts');
+     
+  },
 },
-```
-
-3. Add mapState on your computed:
-
-```JavaScript
-computed: mapState([
-  'posts'
-]),
 </script>
 ```
 
-4. Finally display data on your template.
+3. Finally display data on your template.
 
 ```JavaScript
 <template>
@@ -372,6 +370,7 @@ For the `store` file:
 ```JavaScript
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -393,8 +392,7 @@ mutations: {
 actions: {
    async loadPosts ({ commit }) {
      try {
-           const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-          // JSON responses are automatically parsed.
+           const response = await axios.get('http://jsonplaceholder.typicode.com/posts');
           commit('SET_ITEMS', response.data)
        }
       catch (error) {
@@ -416,16 +414,19 @@ For your vue file:
          </ul>
       </div>
 </template>
+
 <script>
-import { mapState } from 'vuex';
-
-mounted () {
-  this.$store.dispatch('loadPosts')
-},
-computed: mapState([
-      'posts'
-]),
-
+export default {
+  computed: {
+    posts() {
+         return this.$store.getters.posts;
+      },
+  },
+  created() {
+    this.$store.dispatch('loadPosts');
+     
+  },
+}
 </script>
 ```
 
