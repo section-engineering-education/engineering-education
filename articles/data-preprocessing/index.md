@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-preprocessing-in-r/
+title: Data Preprocessing in R
+description: This artilce provides the reader a detailed guide on how to preprocess a dataset before using it to train models. Data Preprocessing is crucial in machine learning and needs to be performed properly and systematically.
+author: 
+date: 2021-01-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/data-preprocessing-in-r/hero.jpg
+    alt: Data Preprocessing in R Hero Image
+---
 Data preprocessing is the initial phase of machine learning where data is prepared for machine learning models. This part is crucial in machine learning and needs to be performed properly and systematically. If not, we will end up building models that are not accurate for their purpose.
 
 In this article, we shall learn all steps that are involved in the data preprocessing stage. 
@@ -39,7 +55,7 @@ Upon executing we obtain our dataset as below.
 
 **Output**
 
-![replaced Dataset](/engineering-education/data-preprocessing/Dataset.png)
+![replaced Dataset](/engineering-education/data-preprocessing-in-r/Dataset.png)
 
 Our dataset has four columns and ten observations, it shows how customers from three different countries with different ages and salaries responded to the purchase of a certain product.
 
@@ -87,7 +103,7 @@ The third condition is the value that will be returned if the value in the Age c
 
 Executing the code we obtain:
 
-![replaced Age_NA value](/engineering-education/data-preprocessing/dataset1.png)
+![replaced Age_NA value](/engineering-education/data-preprocessing-in-r/dataset1.png)
 
 The missing value that was in the Age column of our data set has successfully been replaced with the mean of the same column.
 
@@ -99,7 +115,7 @@ Dataset$Salary = ifelse(is.na(Dataset$Salary),
                  Dataset$Salary)
 ```
 
-![replaced NA_value of the Salary column](/engineering-education/data-preprocessing/dataset2.png)
+![replaced NA_value of the Salary column](/engineering-education/data-preprocessing-in-r/dataset2.png)
 
 The missing value that was in the Salary column was successfully replaced with the mean of the same column as well.
 
@@ -118,7 +134,7 @@ Dataset$Country = factor(Dataset$Country,
 
 Executing the code above we obtain.
 #### Output
-![Encoded Country_names](/engineering-education/data-preprocessing/encode1.png)
+![Encoded Country_names](/engineering-education/data-preprocessing-in-r/encode1.png)
 
 Our country names were successfully replaced with numbers.
 
@@ -135,7 +151,7 @@ as.factor(Dataset$Purchased)
 Using the  `view()` function we obtain.
 View(Dataset)
 
-![Encoded Purchased column](/engineering-education/data-preprocessing/encode_Purchased.png)
+![Encoded Purchased column](/engineering-education/data-preprocessing-in-r/encode_Purchased.png)
 
 Our purchased column was successfully encoded into 0,s, and 1,s.
 
@@ -167,13 +183,13 @@ Executing our code yields:
 
 **Training Set**:
 
-![training_set](/engineering-education/data-preprocessing/training_set.png)
+![training_set](/engineering-education/data-preprocessing-in-r/training_set.png)
 
 From the results it clear that eight observations, 0.8 of our dataset observations, were split into the training set.
 
 **Test Set**:
 
-![test_set](/engineering-education/data-preprocessing/test_set.png)
+![test_set](/engineering-education/data-preprocessing-in-r/test_set.png)
 
 From the output it clear that two observations went to the test set.
 
@@ -181,7 +197,7 @@ From the output it clear that two observations went to the test set.
 It's a common case that in most datasets, features also known as inputs, are not on the same scale. Many Machine learning models are euclidian distant-based. It happens that, the features with the large units dominate those with small units when it comes to calculation of the euclidian distance and it will be as if those features with small units do not exist. To ensure this is not the case, we need to encode our features so that they all fall in the range between -3 and 3. There are several ways we can use to scale our features. The most used one is the standardization and normalization technique. The normalization technique is used when the data is normally distributed while standardization works with both normally distributed and the data that is not normally distributed.
 The formula for these two techniques is as below.
 
-![scaling formula](/engineering-education/data-preprocessing/one.png)
+![scaling formula](/engineering-education/data-preprocessing-in-r/one.png)
 
 Now, let's scale both the training set and test set of our dataset separately.
 
@@ -198,11 +214,11 @@ Executing our code we obtain:
 
 **Training Set**:
 
-![scale(training_set)](/engineering-education/data-preprocessing/scaled_training_set.png)
+![scale(training_set)](/engineering-education/data-preprocessing-in-r/scaled_training_set.png)
 
 **Test Set**:
 
-![scale(test_set)](/engineering-education/data-preprocessing/scaled_test_set.png.png)
+![scale(test_set)](/engineering-education/data-preprocessing-in-r/scaled_test_set.png.png)
 
 Our training and test set were successfully scaled.
 Note that in our code we specified the columns to be scale. If we fail to do so, R will through us an error i.e.
