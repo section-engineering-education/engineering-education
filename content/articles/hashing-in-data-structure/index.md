@@ -16,6 +16,8 @@ images:
 ---
 ### Hashing in Data Structure
 
+Hashing is the process of converting input of any length into a fixed size string or a number using an algorithm.
+
 In hashing, the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 
 We generate a hash for the input using the hash function and then store the element using the generated hash as the key in the hash table.
@@ -53,7 +55,7 @@ The chances of hash collision are less if the table size is a prime number.
 
 #### Collision Hashing Techniques:
 
-1. **Open Hashing (Separate Chaining)**: In this using Linked List, new nodes are added to the list, the key act as the head pointer, pointing to several nodes having different values. If any collision two elements is having same hash value we store both of them in a same linked list.
+1. **Open Hashing (Separate Chaining)**: It is the most commonly used collision hashing techniques implemented using Lined List. When any two or more element collied at the same location, these element are chained into a singly linked list called chain.In this we chain all the elements in a linked list that hash to the same slot.
 
 Let's consider an example of a simple hash function	
    
@@ -109,10 +111,9 @@ If the average number of items in a block exceeds the load factor, the elements 
 
 **Rehashing**
 
-When the load factor gets "too high" (specified by the threshold value), the process of raising the size of the hash table begins, expecting that collisions would become more common.
-
-- Typically, double the size of the table (but still prime).
-- All existing items must be reinserted into the hash table.
+When the load factor gets "too high" (specified by the threshold value),collisions would become more common, so rehashing comes as a solution to this problem, we increase the size of the hash table,
+- Typically, double the size of the table.
+- All existing items must be reinserted into the new doubled size hash table.
 
 Now let's deep dive into the code. I will implement everything in code that we have learned till now.
 
@@ -294,6 +295,20 @@ The complete execution of the above code can be found [here](https://replit.com/
 #### Output
 
 ![output](./Capture.PNG)
+
+* In the output you can see we have inserted different kye value pairs into the custom hash table build by us.Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
+
+* Searching happening in O(1) because of the hash table.
+
+#### Conclusion
+
+With the help of hash tables we are able to insert, search and delete in O(1) time which is the great achievement.Hash tables are widely used for making our code more efficient and faster. Here are the some problems of data structures you can try and think the approach using hash tables
+
+[Leet Code Problem 1](https://leetcode.com/problems/two-sum/)
+
+[Leet Code Problem 2](https://leetcode.com/problems/employee-importance/)
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Willies Ogola](https://www.section.io/engineering-education/authors/willies-ogola/)
