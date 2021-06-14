@@ -298,7 +298,7 @@ The complete execution of the above code can be found [here](https://replit.com/
 
 * In the output you can see we have inserted different key-value pairs into the custom hash table build by us. Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
 
-* Searching happening in O(1) because of the hash table.
+* Using the search function we can find the value of are key in O(1) time complexity.
 
 #### Conclusion
 
