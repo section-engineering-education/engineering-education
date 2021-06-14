@@ -3,12 +3,19 @@ layout: engineering-education
 status: publish
 published: true
 url: /introduction-to-subnetting/
+
 title: Introduction to Subnetting
+
 description: Subnetting is a partition process of splitting a single-page network into two or more strands. This process enhances the efficiency of the computer network. This article will give good detail on how subnetting works and the terminologies behind computer networking.
+
 author: anyebe-blessing-ene
+
 date: 2021-05-20T00:00:00-10:30
+
 topics: []
-excerpt_separator: <!--more-->
+
+excerpt_separator: 
+<!--more-->
 images:
   -url: /engineering-education/introduction-to-subnetting/hero.jpg
   alt: Subnetting image example
@@ -50,7 +57,26 @@ i. Host identity
 ii. Network identity.
 
 #### Diagram of IPV4
-[](/introduction-to-subnetting/diagram-of-IPV4.jpg)
+
+![IPV4](/introduction-to-subnetting/diagram-of-IPV4.jpeg)
+[image-Source](https://study.com/academy/lesson/ipv4-address-structure-classes-and-types.html)
+
+
+
+#### IPV4 vs IPV6
+
+
+Tabular representation of the differences between both versions of the internet protocol.
+
+|  **IPV4**  | **IPV6**  |
+| ------------ | ------------- |
+| Uses dot-decimal notations, less suitable for mobile |  Uses hexadecimal colon-separated notations, best suited for mobile. |
+| Internet protocol security is optional  |   Internet protocol security is mandatory  | 
+|  The latest packet size is 576 bytes  |  The latest packet size is 1208 byte  | 
+| Its security depends on applications  |  Has its own security protocol called IPSec  |
+|  Networks configured with DHCP  |  Has its auto-configuration capabilities  |
+|  It is a numeric address method  |  It is an alphanumeric address method  |
+|  Has 5 different classes from A - E  |  Allows an unlimited number of IP addresses to be stored |
 
 
 #### IP Classes
@@ -98,18 +124,6 @@ Private IP addresses are limited. They cannot receive traffic from the internet.
 
         3. 192.168.0.0 - 192.168.255.255.
 
-#### IPV4 vs IPV6
-
-
-Tabular representation of the differences between both versions of the internet protocol.
-
-| Uses dot-decimal notations, less suitable for mobile |  Uses hexadecimal colon-separated notations, best suited for mobile. |
-| Internet protocol security is optional  |  Internet protocol security is mandatory  |
-| The latest packet size is 576 bytes | The least packet size is 1208 bytes |
-| Its security depends on applications | Has its own security protocol called IPSec | 
-| Networks configured with DHCP | Has its auto-configuration capabilities |
-| It is a numeric address method | It is an alphanumeric address method | 
-| Has 5 different classes from A - E | Allows an unlimited number of IP addresses to be stored. |
     
 ### Subnet Mask
 
@@ -117,7 +131,25 @@ This is a term to denote the number of bits given to the network and the number 
         For Network = 2<sup>n</sup> where n = number of desired bits. 
         For Hosts = 2<sup>n+2</sup>
         Example  to calculate subnets and hosts:
-@@ -110,13 +125,17 @@ To calculate subnets, networks, host ranges you will use a calculator.
+
+        Borrow 2 bits  (I.e <sup>n</sup>= 2)
+
+        | S  | S  | H  | H  | H  | H  |  H  | H  |
+        
+         Number(#) of subnets = 2<sup>2</sup> = 4. 
+        Subnet mask = 2bits = 128 + 64 = 192
+        Range of hosts = 2<sup>6</sup> = 64  
+
+        | -     | Range   | Usable Range   |
+        | ------ | ------ | -------------- |
+        | Network ID  |  0 - 63  |  65 - 126  |
+        | ""          |  64 - 127  |  129 - 190 |
+        | Broadcast Address | 192 - 255 |  -   |
+
+       
+
+       
+         To calculate subnets, networks, host ranges you will use a calculator.
 IPSubnet Mask 	Calculator for IPV4: 
 (https://www.site24x7.com/tools/ipv4-subnetcalculator.html) 
 
