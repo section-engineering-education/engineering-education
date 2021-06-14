@@ -6,7 +6,7 @@ url: /getting-started-with-css/
 title: Getting Started with CSS
 description: In this article we will go over how to select elements using different styles. We will go over how to make various manipulations to the selected elements, changing the font and width of an element, and using CSS to style HTML.  
 author: lucy-maina
-date: 2021-06-06T00:00:00-11:00
+date: 2021-06-13T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
