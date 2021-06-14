@@ -6,7 +6,7 @@ url: /getting-started-with-kali-linux/
 title: Getting Started with Kali Linux
 description: In this article, we will learn about Kali Linux. It is a penetration-testing platform that provides a variety of security auditing tools used by security specialists and hackers in day-to-day encounters.
 author: kimosop-wakanda
-date: 2021-06-12T00:00:00-16:30
+date: 2021-06-14T00:00:00-16:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -23,7 +23,7 @@ Tools available on Kali Linux enable the user to gather information, perform exp
 
 ### Installing Kali Linux
 
-For beginners, it may seem complex having Kali Linux as your main operating system since you will mostly be running commands on a terminal rather than using the Graphical User Interface (GUI). It is therefore advised to have your Kali Linux in a **virtual box**. This enables you to do your other operations in the main operating system.
+For beginners, it may seem complex having Kali Linux as your main operating system since you will mostly be running commands on a terminal rather than using the Graphical User Interface (GUI). It is therefore advised to have your Kali Linux installed in a **virtual box**. This enables you to do your other operations in the main operating system.
 
 You can have your Kali Linux in your favorite virtual box. Available virtual boxes include:
 
@@ -92,7 +92,7 @@ So without much delay, let's dive right in.
 
    1. **Changing password**
    
-For security purposes, you are advised to change your password from the default password to a password of your choosing. You can do so by running the command below:
+For security purposes, you are advised to change your password from the default password to a password of your choice. You can do so by running the command below:
 
 ```bash
     $ passwd
@@ -291,7 +291,7 @@ Tools available: `Wireshark`, `Responder`
 
 This is the world's popular network protocol analyzer. It lets users monitor what's happening on the network from a microscopic perspective.
 
-To learn more, check out [wireshark](https://www.varonis.com/blog/how-to-use-wireshark/) tutorial.
+To learn more, check out this [wireshark](https://www.varonis.com/blog/how-to-use-wireshark/) tutorial.
 
    6. **Post Exploitation**
 
