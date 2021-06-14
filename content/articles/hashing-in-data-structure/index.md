@@ -16,7 +16,7 @@ images:
 ---
 ### Hashing in Data Structure
 
-Hashing is the process of converting input of any length into a fixed size string or a number using an algorithm.
+Hashing is the process of converting an input of any length into a fixed size string or a number using an algorithm.
 
 In hashing, the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 
@@ -48,7 +48,7 @@ The chances of hash collision are less if the table size is a prime number.
 - An effective collision resolution technique should be created to generate an alternate index for a key whose hash index corresponds to a previously inserted position in a hash table.
 - We must select a hash algorithm that is fast to calculate.
 
-#### Characteristics of a Good Hash Function :
+#### Characteristics of a good Hash Function :
 
 - **Uniform Distribution**: For distribution throughout the constructed table.
 - **Fast**: The generation of hash should be very fast, and should not produce any considerable overhead.
@@ -101,18 +101,18 @@ The hash table's load factor, T, is defined as:
 
 Generally, if the load factor is greater than 0.5, we increase the size of the bucket array and rehash all the key-value pairs again.
 
-#### How Hashing Gets O(1) Complexity?
+#### How Hashing gets O(1) complexity?
 
 Given the above examples, one would wonder how hashing may be O(1) if several items map to the same place...  
 
-The solution to this problem is straightforward. We use the load factor to ensure that each block, for example, (linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice, this load factor is constant ( generally 10 or 20 ). As a result, searching in 10 or 20 elements become constant.
+The solution to this problem is straightforward. We use the load factor to ensure that each block, for example, (linked list in a separate chaining strategy), stores the maximum amount of elements fewer than the load factor on average. Also, in practice, this load factor is constant (generally 10 or 20). As a result, searching in 10 or 20 elements become constant.
 
 If the average number of items in a block exceeds the load factor, the elements are rehashed with a larger hash table size.
 
 **Rehashing**
 
-When the load factor gets "too high" (specified by the threshold value), collisions would become more common, so rehashing comes as a solution to this problem, we increase the size of the hash table,
-- Typically, double the size of the table.
+When the load factor gets "too high" (specified by the threshold value), collisions would become more common, so rehashing comes as a solution to this problem.
+- We increase the size of the hash table, typically, doubling the size of the table.
 - All existing items must be reinserted into the new doubled size hash table.
 
 Now let's deep dive into the code. I will implement everything in code that we have learned till now.
@@ -290,17 +290,18 @@ int main(){
 ```
 
 The complete execution of the above code can be found [here](https://replit.com/@Anubhavb11/HashMap#main.cpp).
+
 =======
 
 #### Output
 
 ![output](./Capture.PNG)
 
-* In the output you can see we have inserted different key-value pairs into the custom hash table build by us. Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
+* In the output, you can see we have inserted different key-value pairs into the custom hash table build by us. Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
 
-* Using the search function we can find the value of are key in O(1) time complexity.
+* Using the search function, we can find the value of the key in O(1) time complexity.
 
-#### Conclusion
+### Conclusion
 
 With the help of hash tables, we can insert, search and delete in O(1) time which is a great achievement. Hash tables are widely used for making our code more efficient and faster. Here are some problems of data structures you can try and think the approach using hash tables.
 
