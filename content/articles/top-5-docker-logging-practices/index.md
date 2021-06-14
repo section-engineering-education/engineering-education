@@ -94,3 +94,11 @@ Another method to log your Docker is to dedicate a container purely to collect l
 ### Conclusion
 
 There are many approaches to logging your Docker. Each of the methods has its strengths and weaknesses, and their no clearly defined solution to logging and managing your Docker logs.
+
+### Further readings
+
+[Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
+
+[A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+
+[Top 7 Docker Monitoring Tools](/engineering-education/top-7-docker-container-monitoring-tools/)
