@@ -55,7 +55,7 @@ The chances of hash collision are less if the table size is a prime number.
 
 #### Collision Hashing Techniques:
 
-1. **Open Hashing (Separate Chaining)**: It is the most commonly used collision hashing techniques implemented using Lined List. When any two or more element collied at the same location, these element are chained into a singly linked list called chain.In this we chain all the elements in a linked list that hash to the same slot.
+1. **Open Hashing (Separate Chaining)**: It is the most commonly used collision hashing technique implemented using Lined List. When any two or more elements collide at the same location, these elements are chained into a single-linked list called a chain. In this, we chain all the elements in a linked list that hash to the same slot.
 
 Let's consider an example of a simple hash function	
    
@@ -111,7 +111,7 @@ If the average number of items in a block exceeds the load factor, the elements 
 
 **Rehashing**
 
-When the load factor gets "too high" (specified by the threshold value),collisions would become more common, so rehashing comes as a solution to this problem, we increase the size of the hash table,
+When the load factor gets "too high" (specified by the threshold value), collisions would become more common, so rehashing comes as a solution to this problem, we increase the size of the hash table,
 - Typically, double the size of the table.
 - All existing items must be reinserted into the new doubled size hash table.
 
@@ -296,13 +296,13 @@ The complete execution of the above code can be found [here](https://replit.com/
 
 ![output](./Capture.PNG)
 
-* In the output you can see we have inserted different kye value pairs into the custom hash table build by us.Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
+* In the output you can see we have inserted different key-value pairs into the custom hash table build by us. Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
 
 * Searching happening in O(1) because of the hash table.
 
 #### Conclusion
 
-With the help of hash tables we are able to insert, search and delete in O(1) time which is the great achievement.Hash tables are widely used for making our code more efficient and faster. Here are the some problems of data structures you can try and think the approach using hash tables
+With the help of hash tables, we can insert, search and delete in O(1) time which is a great achievement. Hash tables are widely used for making our code more efficient and faster. Here are some problems of data structures you can try and think the approach using hash tables.
 
 [Leet Code Problem 1](https://leetcode.com/problems/two-sum/)
 
