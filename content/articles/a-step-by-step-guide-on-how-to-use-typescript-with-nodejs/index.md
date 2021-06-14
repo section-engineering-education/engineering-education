@@ -40,7 +40,7 @@ Just like you would have done with any application running on the Node.js runtim
 
 To generate the Node.js package.json file, run `npm init`. This will introduce systematic questions about your project. This prompts the way you would set up the regular Node.js project. Alternatively, run  `npm init -y` and override the `packages.json` file with the default values.
 
-![packages.json file](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/package-json-file.png)
+![packages.json file](/engineering-education/how-to-use-typescript-with-nodejs/package-json-file.png)
 
 ### Setting up Typescript
 To set up Typescript with Node.js, you need Typescript dependencies. To install the [Typescript compiler package](https://www.npmjs.com/package/typescript), run the following command:
@@ -53,7 +53,7 @@ The command above will install the Typescript compiler globally. This means any 
 
 Run `tsc --version` to confirm if the compiler is installed.
 
-![TSC version checking](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/tsc-version.png)
+![TSC version checking](/engineering-education/how-to-use-typescript-with-nodejs/tsc-version.png)
 
 > Note: Typescript code doesn't build directly on a browser (no browser will read Typescript directly). A browser will only read JavaScript code. To invoke any Typescript code, you need a compiler to transpile Typescript to browser executable JavaScript. Typescript will only help you in the development process so that you benefit from its features.
 
@@ -62,11 +62,11 @@ To initialize the Typescript project with Node.js, create a [tsconfig.json](http
 
 The config file stores the options for the Typescript compiler. Alternatively, you can run `tsc --init` to automatically create this file in whatever directory you're in.
 
-![Generating tsconfig.json file](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/generateing-tsconfig-file.png)
+![Generating tsconfig.json file](/engineering-education/how-to-use-typescript-with-nodejs/generateing-tsconfig-file.png)
 
 This file is the Typescript configuration file. It specifies typescript compile options.
 
-![tsconfig.json file](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/tsconfig-file.png)
+![tsconfig.json file](/engineering-education/how-to-use-typescript-with-nodejs/tsconfig-file.png)
 
 The `tsconfig.json` file has many options. It's good to know when to turn things on and off. TSC reads this file and uses these options to transpile Typescript into brower readable JavaScript.
 
@@ -133,7 +133,7 @@ console.log(sum(8,4))
 
 Let's see how we can execute the above Typescript using Node.js. Run `tsc` to build Typescript into JavaScript. This will build, compile and output JavaScript code into the path you specified in `"outDir": "./dist"` of the `config.json` file.
 
-![Compiled JavaScript](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/compiled-javascript.png)
+![Compiled JavaScript](/engineering-education/how-to-use-typescript-with-nodejs/compiled-javascript.png)
 
 Now run the command below to execute the code:
 
@@ -141,7 +141,7 @@ Now run the command below to execute the code:
 node dist/index.js
 ```
 
-![Results](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/sum-results.png)
+![Results](/engineering-education/how-to-use-typescript-with-nodejs/sum-results.png)
 
 Running the above commands every single time to compile and run in a development environment can be annoying. To make this process easier, you need to install a package called `ts-node`.
 
@@ -163,7 +163,7 @@ Go ahead and configure your `package.json` script tag and start the build comman
 
 You can now run `npm start` to execute the `index.ts`. And when you delete the dist folder with the compiled `index.js` then still run `npm start`, you will get the same results.
 
-![Ts-node compiler](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-compiler.png)
+![Ts-node compiler](/engineering-education/how-to-use-typescript-with-nodejs/ts-node-compiler.png)
 
 ### Using Typescript with packages
 The climax of using Typescript and Node.js is the ability to utilize the open-source NPM packages and frameworks. Let me demonstrate how we can use Typescript to start interacting with NPM packages.
@@ -190,7 +190,7 @@ This will give you access to type definitions for Express.
 
 Not all packages have `@types`. Package with types has the following NPM `@types` tag.
 
-![Npm types declarations](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/npm-types-declarations.png)
+![Npm types declarations](/engineering-education/how-to-use-typescript-with-nodejs/npm-types-declarations.png)
 
 Let's set a simple Express server using Typescript.
 
@@ -252,7 +252,7 @@ To use it, modify the `package.json` script tag as shown below.
 
 Then run `npm run dev`, and your server will be watched every time you make changes in your code.
 
-![Ts-node-dev](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/ts-node-dev.png)
+![Ts-node-dev](/engineering-education/how-to-use-typescript-with-nodejs/ts-node-dev.png)
 
 2. Nodemon - [Nodemon](https://www.npmjs.com/package/nodemon) works the same as Ts-node-dev . It is a Node.js package used to watch `.js` files when creating a server. Whenever you make a change and save the server file, Nodemon will automatically restart the server for you.
 
@@ -272,7 +272,7 @@ To use it in your project, edit the `package.json` script tag as follows:
 
 Then run `npm run dev`.
 
-![Nodemon](/engineering-education/a-step-by-step-guide-on-how-to-use-typescript-with-nodejs/nodemon.png)
+![Nodemon](/engineering-education/how-to-use-typescript-with-nodejs/nodemon.png)
 
 ### Conclusion
 Typescript will help you in the development process so that you don't struggle with bugs and minor errors. It catches errors during compilation and before code runtime. 
