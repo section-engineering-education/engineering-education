@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /nodejs-network-requests-using-axios/
-title: Node.js Network requests using Axios
-description: This article goes through Axios and how to use it to make network request in Node.js. Axios is a very popular javascript framework used to perform network requests.
+title: Node.js Network Requests using Axios
+description: This article shows how to use Axios to make network request in Node.js. Axios is a very popular JavaScript framework used to perform network requests.
 author: peter-kayere
-date: 2021-05-31T00:00:00-14:00
+date: 2021-06-14T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,15 +16,15 @@ images:
 
 ### Introduction
 
-In the modern technological world, it is very rear to find stand-alone applications. Most applications depend on resources from other applications. These resources are made available through the use of APIs. Servers are no exception. Though servers store their own relevant data, they sometimes need data from other servers. To access the data, servers need a way to communicate with the API(s) of the depended servers. This is where Axios comes in.
+In the modern technological world, it is very rare to find stand-alone applications. Most applications depend on resources from other applications. These resources are made available through the use of APIs. Servers are no exception. Though servers store their own relevant data, they sometimes need data from other servers. To access the data, servers need a way to communicate with the API(s) of the depended servers. This is where Axios comes in.
 
-Axios is a very popular javascript framework used to perform network requests. Axios works both on the browser and Node.js runtime. Axios is promise based but also allows the modern async/await methods. This article goes through Axios and how to use it to make network request in Node.js.
+Axios is a very popular JavaScript framework used to perform network requests. Axios works both on the browser and Node.js runtime. Axios is promise based but also allows the modern async/await methods. This article goes through Axios and how to use it to make network request in Node.js.
 
 ### Prerequisites
 
-To follow through this article you need to have Node.js installed and understand its basics. How to set up a simple server, and how to do some basic configuration. Go through [this](/engineering-education/building-a-basic-api-with-nodejs/) Node.js introduction article to get yourself up to speed.
+To follow this article, you need to have Node.js installed and to understand the basics such as how to set up a simple server and to configure it. Go through [this](/engineering-education/building-a-basic-api-with-nodejs/) Node.js introduction article to get yourself up to speed.
 
-Through this article, we are going to make network requests to a free JSON placeholder api from our Node.js application. Our application will be sending back the response it receives from the api.
+Through this article, we are going to make network requests to a free JSON placeholder API from our Node.js application. Our application will be sending back the response it receives from the API.
 
 Let's get started!
 
@@ -53,7 +53,7 @@ app.listen(2400, () => {
 });
 ```
 
-Here, we import the required dependencies, i.e. express and axios. In the axios import, we use the create method to specify the base url, this is the url that our axios object will prepend to all our requests.
+Here, we import the required dependencies, i.e. express and axios. In the axios import, we use the create method to specify the base URL, this is the URL that our axios object will prepend to all our requests.
 
 Run the server using this command.
 
@@ -65,13 +65,13 @@ Now that our server is up and running, let's see what network requests are and w
 
 ### Getting started with axios
 
-We have mentioned network requests but we haven't said what it is. As the name suggests, network requests are requests sent from a client to a server over the internet. The client in this case can also be another server. Axios allows us to make `HTTP` requests from both the browser and Node.js applications. It allows us to make both `GET` and `POST` requests which are the most used `HTTP` methods.
+We have mentioned network requests but we haven't said what that is. As the name suggests, network requests are requests sent from a client to a server over the internet. The client in this case can also be another server. Axios allows us to make `HTTP` requests from both the browser and Node.js applications. It allows us to make both `GET` and `POST` requests which are the most used `HTTP` methods.
 
 Let's see how we can make these types of requests.
 
-### Get request
+### GET request
 
-All axios requests are created using the axios object we imported in the first code snippet. The axios object takes an object parameter. The object contains the request url and the http method associated with the request.
+All axios requests are created using the axios object we imported in the first code snippet. The axios object takes an object parameter. The object contains the request URL and the HTTP method associated with the request.
 
 Add the following code just before `app.listen` method.
 
@@ -89,7 +89,7 @@ app.get("/async", async (req, res) => {
 });
 ```
 
-In the above code, we have made an endpoint that makes a `GET` request to the JSON placeholder api. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
+In the above code, we have made an endpoint that makes a `GET` request to the JSON placeholder API. The endpoint then returns the response it receives from the server. The axios object returns a promise but we are able to use the async/await method which makes our code appear sequential. However, you can still use the promise library. This is how the code will look like.
 
 ```Javascript
 app.get("/promise", (req, res) => {
@@ -106,9 +106,9 @@ app.get("/promise", (req, res) => {
 });
 ```
 
-Test the two endpoints using postman and observe the output.
+Test the two endpoints using Postman and observe the output.
 
-Alternatively, instead of writing the url and the method, you can call the method directly from the object and just pass in the url.
+Alternatively, instead of writing the URL and the method, you can call the method directly from the object and just pass in the URL.
 
 Example;
 
@@ -116,11 +116,11 @@ Example;
 axios.get("users")
 ```
 
-### Post requests
+### POST requests
 
-For post requests, axios object takes in the url, method and the body to post.
+For POST requests, the axios object takes in the URL, method and the body to POST.
 
-To make a post request, all you need to do is to call the post method from the axios object and pass in the body to be posted.
+To make a POST request, all you need to do is to call the POST method from the axios object and pass in the body to be posted.
 
 Below is a code example using the async/await method.
 
@@ -139,7 +139,7 @@ app.post("/async/post/", async (req, res) => {
 });
 ```
 
-When using promises, the code will be as follows.
+When using promises, the code will be as follows:
 
 ```Javascript
 app.get("/promise/post", (req, res) => {
@@ -159,7 +159,7 @@ app.get("/promise/post", (req, res) => {
 
 ### Conclusion
 
-This brings us to the end of our tutorial. In this article, we have gone through what axios is and how to use it to make get and post requests from Node.js. Axios also provides other http requests such put and patch which are not very popular, However, they use the same syntax as the two methods that we have gone through. Hope this helps you get started with axios.
+This brings us to the end of our tutorial. In this article, we have gone through what axios is and how to use it to make GET and POST requests from Node.js. Axios also provides other HTTP requests such PUT and PATH but they are not very popular however, they use the same syntax as the two methods that we have gone through. Hope this helps you get started with axios.
 
 Happy coding!
 
