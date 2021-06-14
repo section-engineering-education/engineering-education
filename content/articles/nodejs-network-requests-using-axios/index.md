@@ -13,10 +13,9 @@ images:
   - url: /engineering-education/nodejs-network-requests-using-axios/hero.jpg
     alt: Node.js Network requests using Axios
 ---
-
-### Introduction
 In the modern technological world, it is very rare to find stand-alone applications. Most applications depend on resources from other applications. These resources are made available through the use of APIs. Servers are no exception. Though servers store their own relevant data, they sometimes need data from other servers. To access the data, servers need a way to communicate with the API(s) of the depended servers. This is where Axios comes in.
-
+<!--more-->
+### Introduction
 Axios is a very popular JavaScript framework used to perform network requests. Axios works both on the browser and Node.js runtime. Axios is promise based but also allows the modern async/await methods. This article goes through Axios and how to use it to make network request in Node.js.
 
 ### Prerequisites
