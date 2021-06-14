@@ -6,8 +6,8 @@ url: /how-to-use-typescript-with-nodejs/
 title: How to use TypeScript with Nodejs
 description: This tutorial will provide the readers with a detailed guide no how to use TypeScript with Node.js and how to set up a Node.js project with TypeScript.
 author: faith-musyoka
-date: 2021-06-07T00:00:00-11:00
-topics: []
+date: 2021-06-14T00:00:00-16:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
