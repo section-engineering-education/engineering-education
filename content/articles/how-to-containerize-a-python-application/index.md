@@ -1,77 +1,92 @@
-# How to Containerize a Python Application
-![heroimage](/engineering-education/how-to-containerize-a-python-application/hero.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
+author: nathaniel-dauda-wobin
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+One of the core concepts in all mobile applications is navigation. It allows a user to move between different pages or activities. Navigation increases an app's functionality. It enables developers to include numerous features on different screens.
+<!--more-->
  
-### What is Docker and Understanding the Basics
-Docker is the most popular containerization technology and it has quickly become the de facto standard when talking about containers.
+### What is Docker
+[Docker](https://www.docker.com/) is among the most popular containerization technologies. It has quickly become the de facto standard when talking about containers.
  
-Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container.
+Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container. This process is known as containerization.
  
-The packaging of an application and all of its dependencies into a single, efficiently arranged, and isolated container is known as containerization.
+### Why containerizing an app is important
+Containerizing an app allows it to execute in the same way regardless of the workspace or computer that it is deployed on.
  
-### Why Containerizing an App
-Containerizing an app allows it to execute in the same way regardless of the workspace or computer it is deployed on.
+A small difference in the version of an external library can change the functionality of your application, thus, causing it to behave differently.
  
-A small difference in the version of an external library can change the functionality of your application, making it behave slightly different from a different environment.
+The beauty of Docker is that if you containerize your application and transfer the image to your colleague's computer, you can be sure that the application will have the same performance on both devices. This is because the container includes all the application's dependencies.
  
-The beauty of docker is that if you build your application into a container image and transfer the same container image to your colleague’s computer, you can be sure that the application will function identically on both computers. This is because the container includes all dependencies for the application inside it.
- 
-### Images and Container
-Docker files, which are read-only templates, are used to create containers. Containers are instances that are deployed from such templates.
- 
-Images and containers are inextricably linked, and both are required to run the Docker software platform. For more information on Docker images, see this [page.](stackify.com/docker-image-vs-container-everything-you-need-to-know/amp/)
- 
+### Images and containers
+Docker files, which are read-only templates, are used to create containers. Therefore, images and containers are inextricably linked, and both are required to run the Docker software platform. For more information on Docker images, visit this [page](stackify.com/docker-image-vs-container-everything-you-need-to-know/amp/).
  
 ### Goal
-In this article, you will learn how to build a simple python application using Flask and Docker as our container, more specifically with Docker compose. Docker Compose makes working with and configuring Docker containers and services much simpler. You can build with any python framework you love working with e.g Django, Pylons, Web2py e.t.c.
+In this article, you will learn how to build a simple python application using Flask and Docker compose. Docker Compose helps to manage containers and other related services.
  
 ### Prerequisites 
-* Basic understanding of python.
-* Basic understanding of command line.
-* A code editor(IDE) such as vs code or pycharm.
+- Basic understanding of Python and Flask.
+- Basic understanding of the command line.
+- A code editor(IDE) such as VS code or Pycharm.
  
 Install Docker, Docker Compose via the links below:
-* [Install Docker via this link.](www.docker.com) 
-* [Install Docker compose via this link.](www.doc.docker.com)
+- [Docker](www.docker.com) 
+- [Docker compose](https://docs.docker.com/compose/)
  
-Congrats, we are about to start building.
- 
-### Step 1 - Application Structure 
+### Step 1 - Application structure 
 Our application will look like this at the end
  
-```docker
+```
     |---- docker-compose.yml
     |---- app
            |---- app.py
     |---- requirements.txt
 ```
     
-We will create a new repository for our project called **docker** using our command line.
+We will create a new repository for our project called `docker` using our command line.
  
-Open your command line, You can use the one that comes with vs code after its installation.
+Open your command prompt and enter the following line. You can use the command line that comes with VS code after its installation.
  
-```
+```bash
 mkdir docker && cd docker
 ```
-Next, we create our Docker compose file in **docker** directory using a command line. In a moment, we'll create our application services using the Docker Compose file.
-```
+
+Next, we will create our `Docker compose` file in the `docker` directory. In a moment, we'll create our application's services using the `Docker Compose` file.
+
+```bash
 touch docker-compose.yml
 ```
- 
-Our project should now look like this.
+
+Our project's structure should now look like this.
+
 ```
 docker
  |---- docker-compose.yml
 ```  
-Before we do something else, let's finish developing our Flask application.
+
+Before we go further, let's develop our `Flask` application.
  
 ### Step 2 - Building our Flask App
-In your command line or terminal move into the flask directory.
+Create a new directory called `flask` and then navigate into it using the following command.
+
 ```
 cd flask
 ```
-Inside the fkask directory, create a folder called **app**. Inside the folder create your **app.py**, file, this will contain our flask application.
 
-Our flask application would be a simple flask application that will look like this.
+Inside the `flask` directory, create a new folder and name it `app`. Inside this folder, create your `app.py`, file, this will contain our `Flask` application.
+
+The Flask application will look as shown below.
  
 **app.py**
 ```
@@ -85,6 +100,7 @@ def hello_world():
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 ```
+
 That's our flask app that returns 'Flask Dockerized’ when we run it.
  
 ### Step 3 - Create our Requirements file
