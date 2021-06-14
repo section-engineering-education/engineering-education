@@ -40,65 +40,52 @@ You can run any application type or back-end services virtually with zero admini
 
 Below are the advantages of ML and serverless architecture:
 
-- **Fair pricing**
+#### Fair pricing
+Serverless architecture facilitates execution-based pricing, which means that you are billed only for the actively running services. Thus, the approach makes the pricing mode flexible and reduces the cost drastically.
 
-  Serverless architecture facilitates execution-based pricing, which means that you are billed only for the actively running services. Thus, the approach makes the pricing mode flexible and reduces the cost drastically.
+#### Independent work
+Serverless computing allows the development teams to work independently with minimal interference and delays. This is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
 
-- **Independent work**
+Also, developers can apply changes, work on development or even execute the deployment independently.
 
-  Serverless computing allows the development teams to work independently with minimal interference and delays. This is because each model is treated as a separate function. The function can be invoked at any time without disrupting the other parts of the system.
-
-  Also, developers can apply changes, work on development or even execute the deployment independently.
-
-- **Autoscaling**
-
-  It allows the developer to focus on other tasks while the system automatically readjusts itself according to the scope. With Autoscaling, developers can be more flexible and make changes on the run, eliminating the need for storage prediction.
+#### Autoscaling
+It allows the developer to focus on other tasks while the system automatically readjusts itself according to the scope. With Autoscaling, developers can be more flexible and make changes on the run, eliminating the need for storage prediction.
 
 ### Tips to build Serverless Machine Learning model
-
 The following steps demonstrate one approach developers can use to build serverless computing and AI:
 
-- **Collect data**
+#### Collect data
+At this stage, information is gathered as much as possible then stored. The more information gathered, the better the ability of the ML system to make enhanced predictions. To avoid code imbalances, a developer must ensure that the same amount of data is collected for each class.
 
-  At this stage, information is gathered as much as possible then stored. The more information gathered, the better the ability of the ML system to make enhanced predictions. To avoid code imbalances, a developer must ensure that the same amount of data is collected for each class.
+#### Preprocess data
+This step revolves around two main aspects:
+- *Good quality data*: the data should be thoroughly checked and irrelevant parts must be eliminated to avoid any interference in the future.
+- *The data should not be too big*: you should adjust the size of the data so that a single instance can process the data without being overwhelmed.
 
-- **Preprocess data**
+#### Label data
+It is a crucial step yet time-consuming. In the entire timeline of the machine learning project, data labeling takes about 25% of the time. The main objective is to ensure that the model is trained on legit examples with appropriate labels.
 
-  This step revolves around two main aspects:
+The labeled data shows that information pieces have been marked, and the model can predict what a developer wants.
 
-  - *Good quality data*: the data should be thoroughly checked and irrelevant parts must be eliminated to avoid any interference in the future.
-  - *The data should not be too big*: you should adjust the size of the data so that a single instance can process the data without being overwhelmed.
-
-- **Label data**
-
-  It is a crucial step yet time-consuming. In the entire timeline of the machine learning project, data labeling takes about 25% of the time. The main objective is to ensure that the model is trained on legit examples with appropriate labels.
-
-  The labeled data shows that information pieces have been marked, and the model can predict what a developer wants.
-
-- **Deploy the model**
-
-  It is the last step of the AI development process, where the system is made available for offline and online prediction. Then the developer inspects the AI Platform Prediction, where all the model versions and model resources are stored. Lastly, the developer has to connect the local model version to the models stored in the cloud.
+#### Deploy the model
+It is the last step of the AI development process, where the system is made available for offline and online prediction. Then the developer inspects the AI Platform Prediction, where all the model versions and model resources are stored. Lastly, the developer has to connect the local model version to the models stored in the cloud.
 
 ### Use cases of AI and ML models on a Serverless architecture
 AI has taken over today's life, making it easier by revolutionizing automation and improving the business environment.
 
 Below are some use cases for machine learning algorithms on serverless architecture that makes the tasks easier and the data more precise:
 
-- **Making customer suggestions**
+#### Making customer suggestions
+Applications that use GPS gather customer data such as location and consumer behavior to predict and provide personalized suggestions on their preferences or next purchase. AI determines the frequency of notifications and comes up with several suggestions that the app users may tolerate and enjoy before turning them off. It enhances the user experience and assures that customers find the content helpful.
 
-  Applications that use GPS gather customer data such as location and consumer behavior to predict and provide personalized suggestions on their preferences or next purchase. AI determines the frequency of notifications and comes up with several suggestions that the app users may tolerate and enjoy before turning them off. It enhances the user experience and assures that customers find the content helpful.
+#### Risk assessment
+AI models can determine whether a customer is financially viable to increase their purchasing power. First, the system will assess their credit history, account information, and any other requirement. Then the system concludes whether to proceed with a transaction or freeze it until the previous bills have been covered.
 
-- **Risk assessment**
+#### Logistics
+The essential parts of logistics are observing the routes and establishing traffic overloads and how they affect customers. AI assesses the routes and recommends alternatives to assist the business to make informed decisions and improve customer experience.
 
-  AI models can determine whether a customer is financially viable to increase their purchasing power. First, the system will assess their credit history, account information, and any other requirement. Then the system concludes whether to proceed with a transaction or freeze it until the previous bills have been covered.
-
-- **Logistics**
-
-  The essential parts of logistics are observing the routes and establishing traffic overloads and how they affect customers. AI assesses the routes and recommends alternatives to assist the business to make informed decisions and improve customer experience.
-
-- **Personalized content**
-
-  AI has brought a new way of doing market research and establishing consumer behavior. An AI model records and analyzes the choices clients make and displays their personalized content.
+#### Personalized content
+AI has brought a new way of doing market research and establishing consumer behavior. An AI model records and analyzes the choices clients make and displays their personalized content.
 
 ### Conclusion
 Serverless computing makes the complicated AI development process more straightforward. However, choosing serverless architecture means handing over control of infrastructure to the third party and letting them manage and monitor it. That's why it's advisable to choose a trusted cloud provider for the project.
