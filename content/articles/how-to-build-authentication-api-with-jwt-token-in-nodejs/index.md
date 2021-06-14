@@ -1,8 +1,23 @@
-It's pretty simple to write code and develop applications. But how about dealing with authentication and, most likely, authorization? 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-authentication-api-with-jwt-token-in-nodejs/
+title: How to Build an Authentication API with JWT Token in Node.js
+description: This tutorial will provide a step by step guide on how to create an authentication API with JWT in Node.js. 
+author: idris-olubisi
+date: 2021-03-31T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /how-to-build-authentication-api-with-jwt-token-in-nodejs/hero.png
+    alt: Auth Authentication Authorization JWT Node API
+---
+It's pretty simple to write code and develop applications. But how about dealing with authentication. And most likely, authorization? 
+<!--more-->
+In this tutorial, we will learn how to use ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users.
 
-We'll learn how to use ***JWT*** in ***NodeJS*** to secure endpoints and even authenticate users in this tutorial.
-
-### Introduction to authentication and authorization
+### What is authentication and authorization
 Authentication and authorization are used in security, particularly when it comes to getting access to a system. Yet, there is a significant distinction between gaining entry into a house (authentication) and what you can do while inside (authorization).
 
 #### Authentication
@@ -16,15 +31,16 @@ Authorization is the process of allowing authenticated users to access resources
 So, authorization occurs after the system authenticates your identity, granting you complete access to resources such as information, files, databases, funds, places, and anything else. That said, authorization affects your capacity to access the system and the extent to which you can do so.
 
 ### What is JWT
-JSON Web Tokens are an RFC 7519 open industry standard for representing claims between two parties. For example, you can use [jwt.io](https://jwt.io) to decode, verify, and produce JWT.
+JSON Web Tokens (JWT) are an RFC 7519 open industry standard for representing claims between two parties. For example, you can use [jwt.io](https://jwt.io) to decode, verify, and produce JWT.
 
-JSON Web Token (JWT) specifies a compact and self-contained method for communicating information as a JSON object between two parties. Because it is signed, this information can be checked and trusted. JWTs can be signed using a secret (using the HMAC algorithm) or an RSA or ECDSA public/private key combination. In a moment, we'll see some instances of how to use them.
+JWT specifies a compact and self-contained method for communicating information as a JSON object between two parties. Because it is signed, this information can be checked and trusted. JWTs can be signed using a secret (using the HMAC algorithm) or an RSA or ECDSA public/private key combination. In a moment, we'll see some instances of how to use them.
 
 #### Prerequisites
 To follow along with this tutorial, you will need:
-- A working knowledge of Javascript.
+- A working knowledge of JavaScript.
 - A good understanding of NodeJS.
 - A basic understanding of MongoDB or any database of your choice.
+- [Postman](https://www.postman.com/) and some knowledge on how to use Postman.
 
 ### API development using JWT token for authentication in NodeJS
 To get started, we need to set up our project.
@@ -95,7 +111,7 @@ npm install nodemon -D
 ```
 
 #### Step 4 - Create a NodeJS server and connect your database
-Now let's create our NodeJS server and connect our database by adding the following snippet to you `app.js`, `index.js` `, database.js` `.env`,.
+Now, let's create our NodeJS server and connect our database by adding the following snippets to your `app.js`, `index.js` `, database.js` `.env` in that order.
 
 In our `database.js.`
 
@@ -159,7 +175,7 @@ server.listen(port, () => {
 });
 ```
 
-If you notice, our file has some environment variables. You can create a new  `.env` file if you haven't and add your variables before starting our application.
+If you notice, our file needs some environment variables. You can create a new  `.env` file if you haven't and add your variables before starting our application.
 
 In our `.env.`
 
@@ -179,14 +195,14 @@ To start our server, edit the scripts object in our `package.json` to look like 
   }
 ```
 
-The snippet above has been successfully inserted into app.js, index.js, and database.js. First, we built our node.js server in index.js and imported the app.js file with routes configured. Then, as indicated in database.js, we used mongoose to create a connection to our database.
+The snippet above has been successfully inserted into `app.js`, `index.js`, and `database.js`. First, we built our node.js server in `index.js` and imported the app.js file with routes configured. Then, as indicated in `database.js`, we used `mongoose` to create a connection to our database.
 
 Execute the command `npm run dev`.
 
 Both the server and the database should be up and running without crashing.
 
 #### Step 5 - Create user model and route
-We'll define our schema for user details when signing up for the first time and validate them against the saved credentials when logging in.
+We'll define our schema for the user details when signing up for the first time and validate them against the saved credentials when logging in.
 
 Add the following snippet to `user.js` inside the `model` folder.
 
@@ -295,7 +311,7 @@ app.post("/register", async (req, res) => {
 // ...
 ```
 
-> **Note:**: Update your `.env` file with a `TOKEN_KEY`, which can be a random string.
+> **Note:** Update your `.env` file with a `TOKEN_KEY`, which can be a random string.
 
 Using Postman to test the endpoint, we'll get the response shown below after successful registration.
 
@@ -419,3 +435,6 @@ Happy coding!
 - [JWT](https://jwt.io/)
 - [NodeJS](https://nodejs.org/en/)
 - [ExpressJS](https://expressjs.com/)
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
