@@ -6,7 +6,7 @@ url: /engineering-education/react-native-firebase-email-password-authentication/
 title: Email/Password Authentication Using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to add Firebase's email/password authentication in a Non-Expo React Native application.
 author: mohan-raj
-date: 2021-01-24T00:00:00-15:00
+date: 2021-06-14T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
