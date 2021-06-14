@@ -29,26 +29,26 @@ People optimize their networks to ensure that the networks perform at full poten
 
 QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications. Some of these techniques are the resource reservation protocol (RSVP), queuing, and traffic marking.  
 
-#### **a.	Traffic Marking**
+#### Traffic Marking
 QoS works by identifying the various applications or activities that would benefit from managing a network’s traffic. After identifying these applications, QoS marks the specific traffic that needs managing. Marking the network’s traffic allow routers to create separate virtual queues for each application. There are various ways in which routers mark network traffic. These ways include Class of Service (CoS) and Differentiated Services Code Point (DSCP). 
 
-#### i.	Class of Service (CoS)
+##### Class of Service (CoS)
 
 >**Note:** Class of service usually is accessible within an MPLS (Multi-Protocol Label Switching) provision.
 
 COS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Altering the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
 
-#### ii.	Differentiated Service Code Point (DSCP)	 
+##### Differentiated Service Code Point (DSCP)	 
 
 **DSCP** is a section in an IP packet that assigns varying levels of services to a network’s traffic. Assigning varying levels of service is achieved through tagging a DSCP code to each packet on the network and matching it with the equivalent level of service. DSCP marks packets in the layer three packet header.
 
 >**Note:** DSCP constitutes the IP Precedence and Type of Service fields. Thus, DSCP can be used in old routers that solely support IP precedence as DSCP values are synonymous with the IP precedence fields.
 
-#### **b.	Queuing**
+#### Queuing
 
 Queuing is the process of making policies that provide special treatment to various data streams over others. The process is made possible by utilizing special high-performance memory buffers found in switches and routers called queues. 
 
-#### i.	What is a Queue
+##### What is a Queue
 
 
 A **Queue** is a high-performance buffer in a router or a switch that holds traffic until it can be processed or serialized. Routers and switches have two types of hardware queues, ingress (inbound) and egress (outbound) queues.
@@ -56,21 +56,21 @@ A **Queue** is a high-performance buffer in a router or a switch that holds traf
 >**Note:** An ingress queue holds packets till a router’s CPU pushes the data to a suitable interface. An egress queue holds packets that a router serializes onto an Ethernet cable.
 
 
-Hardware queues are characterised as standard or strict priority queues. The standard queues treat all traffic as equal. In these queues, no traffic receives special treatment. On the contrary, the strict priority queues are dedicated to high priority traffic; thus, QoS-enabled interfaces utilize this type of queue to process high priority packets.
+Hardware queues are characterized as standard or strict priority queues. The standard queues treat all traffic as equal. In these queues, no traffic receives special treatment. On the contrary, the strict priority queues are dedicated to high priority traffic; thus, QoS-enabled interfaces utilize this type of queue to process high priority packets.
 
 
-#### ii.	How High Priority Traffic is Processed
+##### How High Priority Traffic is Processed
 
 Routers direct any traffic marked with a higher DSCP or IP value into the strict priority queues. Here, traffic marked as high priority is processed faster than other traffic, thus increasing one’s network performance and reducing the chances of routers dropping packets during congestion.
 
-#### **c.	Resource Reservation Protocol (RSVP)**
+#### Resource Reservation Protocol (RSVP)**
 RSVP is a transport layer protocol that reserves network resources to get varying Quality of Services (QoS) for an application’s data streams. The protocol accomplishes its task by sending out RSVP messages from a source to a receiver and vice versa. RSVP messages are classified into two: path and reservation messages.
 
 - **Path messages** are sent from a source to a receiver by storing the path state at each node in the message’s path. The path states direct a receiver to reserve network resources on each node that it passes on the network.
 
 - **Reservation messages** are sent from a receiver to a sender along the route of the path message. These messages identify the resources required by a data stream.
 
-#### **Importance of QoS**
+### Importance of QoS
 
 1.	It guarantees the optimal performance of applications that need high bandwidth for real-time traffic. Applications such as video conferencing applications, VoIP, streaming applications, and online gaming are some of the special applications that are bandwidth-intensive and highly sensitive to jitters and latency.
 
