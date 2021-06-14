@@ -66,3 +66,9 @@ A combination of the two models is a game-changer in the cloud computing arena. 
 ### Conclusion
 
 Organizations are no longer thinking of serverless and containers as two competing technologies. Instead, they have realized that containers and serverless can work together by complementing each other's weaknesses. As such, they are appreciating the need to use these two architectures together.
+
+### Further readings
+
+[A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+
+[Containers vs. VMs vs. Serverless at the Edge](/blog/containers-vm-serverless-edge-computing/)
