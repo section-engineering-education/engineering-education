@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-firebase-email-password-authentication/
-title: Email/Password Authentication Using Firebase in React Native
+url: /react-native-firebase-email-password-authentication/
+title: Email/Password Authentication using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to add Firebase's email/password authentication in a Non-Expo React Native application.
 author: mohan-raj
 date: 2021-06-14T00:00:00-13:00
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-firebase-email-password-authentication/hero.jpg
+  - url: /engineering-education/react-native-firebase-email-password-authentication/hero.jpeg
     alt: React Native Firebase Email Password Authentication Image
 ---
-In this tutorial, we will learn how to authenticate users with their email and password using Firebase's authentication module in a Non-Expo React Native application.
+In this tutorial, we will learn how to authenticate users with their email and password using Firebases authentication module in a Non-Expo React Native application.
 <!--more-->
 To learn more about Firebase, refer to [this link](https://en.wikipedia.org/wiki/Firebase).
 
@@ -28,7 +28,7 @@ We'll be going through these steps in this article:
 2. Cloning the starter code.
 3. Setting up the Firebase project.
 4. Setting up Firebase Authentication.
-5. Create Account.
+5. Creating an Account.
 6. Sign in to Existing Account.
 7. Authenticated Screen.
 8. Signout.
@@ -54,13 +54,13 @@ This will be the folder structure of the application.
 
 I've set up 2 screens in the `screens/` directory:
 
-- _Authentication.js_: Screen to sign in or create an account.
+- *Authentication.js*: Screen to sign in or create an account.
 
-- _Authenticated.js_: Screen that the user can see only if he is logged in.
+- *Authenticated.js*: Screen that the user can see only if he is logged in.
 
 ![Screens](/engineering-education/react-native-firebase-email-password-authentication/screens.jpg)
 
-In the _App.js_, the *Authentication* screen is exported. As we write the code for the, we will conditionally display the *Authenticated* screen after authenticating the user.
+In the *App.js*, the *Authentication* screen is exported. As we write the code, we will conditionally display the *Authenticated* screen after authenticating the user.
 
 ### Setting up the Firebase project
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
@@ -73,7 +73,7 @@ Once you create a new project, you'll see the dashboard.
 
 ![New Dashboard](/engineering-education/react-native-firebase-email-password-authentication/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-email-password-authentication/register_app.png)
 
@@ -81,7 +81,7 @@ You will need the package name of the application to register the application. Y
 
 ![Package Name](/engineering-education/react-native-firebase-email-password-authentication/package_name.png)
 
-Now, Proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+Now, proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
 This file contains configurations that'll enable your application to access firebase services.
 
@@ -91,7 +91,7 @@ After adding the file, proceed to the next step. It will ask you to add some con
 
 First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
 
-```gradle
+```bash
 buildscript {
   dependencies {
     // ... other dependencies
@@ -103,21 +103,21 @@ buildscript {
 
 Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
 
-```Gradle
+```bash
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 ```
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
-Finally, we should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
 
 ```bash
 npm install @react-native-firebase/app
 ```
 
-### Setting up Firebase Authentication
-Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
+### Setting up Firebase authentication
+Head over to the authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
 ![Get Started Auth](/engineering-education/react-native-firebase-email-password-authentication/auth_get_starterd.png)
 
@@ -133,7 +133,7 @@ npm install @react-native-firebase/auth
 
 Let's declare the dependency for the authentication module in the `android/app/build.gradle` file using the [Firebase Android BoM](https://firebase.google.com/docs/android/learn-more?authuser=0#bom)
 
-```gradle
+```bash
 dependencies {
     // Add these lines
     implementation platform('com.google.firebase:firebase-bom:26.3.0')
@@ -141,9 +141,9 @@ dependencies {
 }
 ```
 
-With this, the firebase authentication module is setup in our application.
+With this, the Firebase authentication module is setup in our application.
 
-### Create user account
+### Creating an user account
 The Firebase `auth` module has a function called `createUserWithEmailAndPassword` that'll help to create a new user in the application with an email and a password.
 
 For example:
@@ -156,7 +156,7 @@ This will create a new user in the Firebase app with the email ID `johndoe@gmail
 
 This function will also sign in the user into the application after creating a user account.
 
-In the *App.js*, Let's import the `auth` module.
+In the *App.js*, let's import the `auth` module.
 
 ```JSX
 import auth from '@react-native-firebase/auth';
@@ -176,7 +176,7 @@ const createUser = (email, password) => {
 };
 ```
 
-Now, Let's pass this function to the *Authentication* screen.
+Now, let's pass this function to the *Authentication* screen.
 
 ```JSX
 return <Authentication createUser={createUser} />;
@@ -223,7 +223,7 @@ return <Authentication createUser={createUser} />;
 ### Sign in user
 The Firebase `auth` module has a function called `signInWithEmailAndPassword` that'll sign in the user into the application with an email and a password.
 
-For example, This will sign in the user into the app with the email ID:
+For example, this will sign in the user into the app with the email ID:
 
 ```JSX
 auth().signInWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
@@ -243,7 +243,7 @@ const signin = (email, password) => {
 };
 ```
 
-Now, Let's pass this function to the *Authentication* screen.
+Now, let's pass this function to the *Authentication* screen.
 
 ```JSX
 return <Authentication signin={signin} createUser={createUser} />;
@@ -255,7 +255,7 @@ When the user presses the *signin* button, we should call this function. We shou
 <Button title="signin" onPress={() => props.signin(email, password)} />
 ```
 
-Now, when a user presses the *signin* button, the `signInWithEmailAndPassword` is called with the email and password, and this signin the user into the app. If there is any error, we'll display it to the user using `alert()`.
+Now, when a user presses the *signin* button, the `signInWithEmailAndPassword` is called with the email and password, and this allows the user into the app. If there is any error, we'll display it to the user using `alert()`.
 
 ![Signin](/engineering-education/react-native-firebase-email-password-authentication/signin.gif)
 
@@ -274,7 +274,7 @@ Let's call the `signOut` method when the user presses the signout button.
 <Button title="Signout" onPress={() => auth().signOut()} />
 ```
 
-Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
+Now, when the user presses the button, the auth module will sign the user out from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
 
 Thus, we should set the authenticated state to `false` if we receive `null`.
 
@@ -307,11 +307,11 @@ auth().onAuthStateChanged((user) => {
 
 8. We added a function to sign in a user with the `signInWithEmailAndPassword` method from the `auth` module.
 
-9. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+9. We used the `auth` module to sign the user out from the application from the *Authenticated* screen.
 
 Congratulations, :partying_face: You did it.
 
-Thanks for Reading!
+Thanks for reading!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
