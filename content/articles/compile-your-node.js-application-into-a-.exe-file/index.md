@@ -299,8 +299,9 @@ Once done run the following command on the terminal to start the build process:
 nexe --build
 ```
 
-It will create a new executable file with the same name as our root directory's name "executable". By default, it will use the system O/S and architecture type as the targets for the system so that you can quickly run it on your system.
-Run it using the command below on Ubuntu:
+I'll create a new executable file with the same name as our root directory's name "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system.
+
+Run the generated executable using the command below on Ubuntu:
 
 ```bash
 ./executable
