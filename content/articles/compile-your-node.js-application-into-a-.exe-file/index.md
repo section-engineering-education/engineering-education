@@ -390,7 +390,7 @@ Run the following command in which we'll call the pkg module and the entry point
 pkg index.js
 ```
 
-This will only compile our app entry point into three different executable files since no targets were specified.
+This will compile our app's entry point into three different executable files since no targets were specified.
 Just wait for some time for the process to complete. Head over to the main directory. You will find three newly generated files. These are the:
 
 - for Windows (index-win.exe)
