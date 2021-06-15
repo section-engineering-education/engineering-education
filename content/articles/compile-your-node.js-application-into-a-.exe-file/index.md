@@ -264,7 +264,7 @@ Now let us compile our project into an executable file with all needed packages 
 
 #### nexe installation
 
-Run in the Terminal the following to install `nexe` globally:
+Run the following command in the terminal to install `nexe` globally:
 
 ```bash
 npm i nexe -g
