@@ -66,7 +66,7 @@ Let us see why the users prefer executable files in the first place. Some advant
 
 Two of the most commonly used packages used to compile javascript files into executables are:
 
-- [nexe](https://www.npmjs.com/package/nexe "npmjs.com nexe/nexe documentation"): It is a simple command-line utility that compiles your Node.js application into a single executable file. By default, it converts it into a windows format. You can quickly jump over to its section by clicking [here](#nexe "nexe").
+- [nexe](https://www.npmjs.com/package/nexe "npmjs.com nexe/nexe documentation"): It is a simple command-line utility that compiles your Node.js application into a single executable file. By default, it converts it into a Windows executable. You can quickly jump over to its section by clicking [here](#nexe "nexe").
 - [pkg](https://www.npmjs.com/package/pkg): It is a node package that can convert your node app into several executable files for different Operating systems (all at once) or of an individual  O/S. You can quickly jump over to its section by clicking [here](#pkg "pkg").
 
 We shall now get a simple node.js application that is running and use it as our application.
