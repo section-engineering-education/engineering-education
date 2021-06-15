@@ -6,8 +6,8 @@ url: /how-to-build-authentication-api-with-jwt-token-in-nodejs/
 title: How to Build an Authentication API with JWT Token in Node.js
 description: This tutorial will provide a step by step guide on how to create an authentication API with JWT in Node.js. 
 author: idris-olubisi
-date: 2021-03-31T00:00:00-11:00
-topics: []
+date: 2021-06-15T00:00:00-09:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /how-to-build-authentication-api-with-jwt-token-in-nodejs/hero.png
