@@ -256,7 +256,7 @@ node index.js
 ```
 
 Open a browser and open the app by visiting `localhost:5000`.
-Once done, let's see how each module operates.
+Once done, let's use the packages to convert it the application into an executable file.
 
 ### nexe
 
