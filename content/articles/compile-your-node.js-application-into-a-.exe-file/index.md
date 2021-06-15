@@ -310,7 +310,7 @@ Run the generated executable using the command below on Ubuntu:
 It automatically logs out "Server at 5000" meaning that it is running. Access the application in the preferred browser at `localhost:5000`.
 You can close it using `Ctrl + C`.
 
-To prove that it is only the entry point is compiled and not the resources found in the root directory such as the ones in the "views" folder, just copy and paste the executable file in a separate folder and run it. It pops up errors since it is unable to access the resources.
+To prove that only the entry point is compiled and not the resources found in the root directory such as the ones in the "views" folder, just copy and paste the executable file in a separate folder and run it. It pops up errors since the application will be unable to access the resources.
 
 #### Compile the entire project into an executable using nexe
 
