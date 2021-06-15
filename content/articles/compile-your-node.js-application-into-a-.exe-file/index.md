@@ -40,8 +40,8 @@ For one to easily follow up with this tutorial, you require a minimum of the fol
 
 - Basic web development skills.
 - Some javascript coding skills.
-- Node.js installed in your machine. If not, download it [here](https://nodejs.org/en/download/ "Node.js download").
-- An IDE. I highly recommend Visual Studio Code which is free and highly customizable. You can download it [here](https://code.visualstudio.com/download "Visual Studio Code download").
+- Node.js installed in your machine. If not, download it from their [website](https://nodejs.org/en/download/).
+- An IDE. I highly recommend Visual Studio Code which is free and highly customizable. You can download it from [here](https://code.visualstudio.com/download).
 - A stable internet connection.
 
 If you are all set on the above requirements, let us look at some packages in which we can use to accomplish our goal.
