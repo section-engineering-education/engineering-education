@@ -88,7 +88,7 @@ npm i express
 
 #### Folder Structure
 
-The app will look as shown below:
+The folder structure of the application will look as shown below:
 
 ```bash
 ├──  node_modules (folder)
