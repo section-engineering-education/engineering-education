@@ -1,21 +1,29 @@
+### Prequesties
+
+The readers should know:
+
+- [Network traffic](https://www.fortinet.com/resources/cyberglossary/network-traffic)
+
+- [Layers 3 of the OSI Model](https://www.infoblox.com/glossary/layer-3-of-the-osi-model-network-layer/)
+
 ### Understanding Quality of Service (QoS)
 
-People optimize their networks to ensure that the networks perform at full potential. QoS is an essential set of technologies that allows one to optimize their network to run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
+Networks have become an important asset in todays world. Users of a network can share files, data and other types of information with oneanother over a network. Thus one can optimize their network to ensure that it performs at its full potential. QoS is an essential set of technologies that allows one to optimize their network so that it can run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
 
 ### What Is QoS 
 
 **QoS** is a group of technologies that allow people to manage their network’s traffic, thus guaranteeing the optimum performance of essential applications in their workplace or home. Through QoS, one can be able to prioritize network traffic, control jitters, and lower latency. Furthermore, QoS allows one to optimize the performance of specific applications on their network and gain visibility into their network’s bit rate and packet rate. Lastly, one can configure how packets are routed in their network to avoid transmission delays.
+>- Bit rate is the number of bits that are sent over a network per second while packet rate is the number of packets being sent per second. 
 
-### How Does it Work
+### How Does QoS Work
 
-QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications. Some of these techniques are the resource reservation protocol (RSVP), queuing, and traffic marking.  
+QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications such as VoIP, video confrencing,and online gaming. Some of these techniques are the resource reservation protocol (RSVP), queuing, and traffic marking.  
 
 #### **a.	Traffic Marking**
 QoS works by identifying the various applications or activities that would benefit from managing a network’s traffic. After identifying these applications, QoS marks the specific traffic that needs managing. Marking the network’s traffic allow routers to create separate virtual queues for each application. There are various ways in which routers mark network traffic. These ways include Class of Service (CoS) and Differentiated Services Code Point (DSCP). 
 
 #### i.	Class of Service (CoS)
 
->**Note:** Class of service usually is accessible within an MPLS (Multi-Protocol Label Switching) provision.
 
 COS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Altering the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
 
@@ -60,10 +68,17 @@ Furthermore, the UDP protocol differs from the TCP protocol because the protocol
 
 3.	QoS brings the possibility to plan and manage their network resources. Planning allows a person to prioritize traffic, applications, data flows, users, and network resources, thus ensuring optimal performance. Additionally, planning reduces costs and the need to invest in link expansion.
 
-4.	QoS enhances user experience. Since QoS guarantees the optimal performance of critical applications, enterprises that utilize the technology report an increase in employee performance and satisfaction. This results in tasks being completed to the required standards and in due time. 
+4.	QoS enhances user experience. Since QoS guarantees the optimal performance of critical applications like VoIP, enterprises that utilize the technology can see an increase in task completion due to improved user experience.
 
 5.	The technology prevents packet loss. During transit, packets may be dropped due to network failure or inefficiency, network congestion, a defective router or switch, loose connection, or poor signal. QoS prevents packet loss by prioritizing traffic and allocating a proper bandwidth for the optimal running of high-performance applications.
 
 ### Conclusion
  
 In this article, we learned what Quality of service (QoS) is, how QoS utilizes techniques such as traffic marking, queuing, and the resource reservation protocol to guarantee the optimal performance of critical applications on a network. Additionally, the article identifies the importance of QoS on a network.
+
+### Further reading
+- [Learn more about network layers.](https://www.geeksforgeeks.org/layers-of-osi-model/)
+
+- [Learn more about data packets.](https://www.techrepublic.com/article/exploring-the-anatomy-of-a-data-packet/) 
+
+- [Learn more about jitters and latency](https://www.itprc.com/jitter-vs-latency/)
