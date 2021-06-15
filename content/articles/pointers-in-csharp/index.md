@@ -66,7 +66,7 @@ Let's learn how to allow the use of unsafe codes in your [VS code](https://code.
 2. Double-click the Property option in the Solution Explorer to expand it.
 3. Check the "Allow unsafe code" option.
 
-![output](/engineering-education/pointers_in_csharp/activating_unsafe_code.png)
+![output](/engineering-education/pointers-in-csharp/activating_unsafe_code.png)
 
 ### Safe and unsafe codes
 **Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. 
