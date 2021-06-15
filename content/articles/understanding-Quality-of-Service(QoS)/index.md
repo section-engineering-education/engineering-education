@@ -43,7 +43,7 @@ People optimize their networks to ensure that the networks perform at full poten
 
 ### How Does QoS Work
 
-QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications such as VoIP, video confrencing,and online gaming. Some of these techniques are the resource reservation protocol (RSVP), queuing, and traffic marking.  
+QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications such as VoIP, video confrencing,and online gaming. Some of these techniques are the resource reservation protocol (RSVP),queuing, and traffic marking.  
 
 #### **a.	Traffic Marking**
 QoS works by identifying the various applications or activities that would benefit from managing a network’s traffic. After identifying these applications, QoS marks the specific traffic that needs managing. Marking the network’s traffic allow routers to create separate virtual queues for each application. There are various ways in which routers mark network traffic. These ways include Class of Service (CoS) and Differentiated Services Code Point (DSCP). 
