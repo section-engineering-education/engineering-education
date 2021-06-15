@@ -286,7 +286,7 @@ nexe -h
 
 #### Compile one javascript file into an executable using nexe
 
-Now, we shall run the following to just convert the application entry point into an executable file:
+Now, Let's run the following to convert the application's entry point into an executable file:
 
 ```bash
 nexe index.js
