@@ -44,7 +44,7 @@ For one to easily follow up with this tutorial, you require a minimum of the fol
 - An IDE. I highly recommend Visual Studio Code which is free and highly customizable. You can download it from [here](https://code.visualstudio.com/download).
 - A stable internet connection.
 
-If you are all set on the above requirements, let us look at some packages in which we can use to accomplish our goal.
+If you are all set on the above requirements, let's look at some packages with which we can accomplish our goal.
 
 ### What are Executable (.exe) files
 
