@@ -15,7 +15,7 @@ images:
     alt:
 ---
 
-### H<sub>2</sub>O Security Implementation
+### Securing Data with H<sub>2</sub>O
 
 ### Introduction
 H<sub>2</sub>O is a library compatible with many coding languages including Python. This library can be used to analyze descriptive and predictive trends.
