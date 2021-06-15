@@ -105,7 +105,7 @@ The folder structure of the application will look as shown below:
 
 ##### images
 
-Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg".
+Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg". You can download it [here](https://www.google.co.ke/search?q=smart+tv+760+x+600&tbm=isch&ved=2ahUKEwjS7LDE_pnxAhUOphQKHW3bA1EQ2-cCegQIABAA&oq=smart+tv+760+x+600&gs_lcp=CgNpbWcQAzoECAAQQzoCCAA6BAgAEBhQh4cNWOe6DWChwQ1oAHAAeACAAeYBiAHjD5IBBTAuNS41mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=2svIYNKXFI7MUu22j4gF&bih=626&biw=1434&safe=active&hl=en-KE).
 
 ##### index.html
 
