@@ -184,3 +184,6 @@ grid on
 
 ### Conclusion
 Matlab helps in the analysis of the response and can be used to obtain a steady-state response as shown before. This helps to attain the optimum performance in a system which is the requirement of a system. This makes Matlab a special tool for the analysis of a system response.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
