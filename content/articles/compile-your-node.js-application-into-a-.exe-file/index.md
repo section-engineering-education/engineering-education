@@ -404,7 +404,7 @@ That is because we did not specify an operating system. Run the file that's suit
 Close it using `Ctrl + C`.
 
 Now let us dive a little deeper and specify the operating system and the node version.
-In this, we use the `--targets` command.
+In this, we use the `--targets` flag to set the target operating system.
 
 Delete the executable files generated in the previous process.
 
