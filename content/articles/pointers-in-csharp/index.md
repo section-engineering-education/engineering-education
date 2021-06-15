@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /pointers-in-c#/
-title: Pointers In C#
+url: /pointers-in-csharp/
+title: Pointers in C#
 description: In this tutorial, we will learn about C# pointers, how to declare them, how to use them with arrays, structures, and a lot more.
 author: kelvin-munene
-date: 2021-06-08T00:00:00-16:00
+date: 2021-06-15T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/pointers-in-c#/hero.jpg
+  - url: /engineering-education/pointers-in-csharp/hero.png
     alt: C# with a computer
 ---
 In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
@@ -55,7 +55,9 @@ public class Program
     }    
 ```
 
-`w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
+`w` is a pointer variable that can hold the position of an `int` sort. The operator `&` is known as a reference operator, and it is used to get a variable address. 
+
+The memory address of the variable `w`, which can be assigned to a pointer variable, is specified by the symbols `&w`.
 
 ### How to run unsafe codes
 Let's learn how to allow the use of unsafe codes in your [VS code](https://code.visualstudio.com/):
@@ -64,12 +66,14 @@ Let's learn how to allow the use of unsafe codes in your [VS code](https://code.
 2. Double-click the Property option in the Solution Explorer to expand it.
 3. Check the "Allow unsafe code" option.
 
-![output](/engineering-education/pointers_in_c#/activating_unsafe_code.png)
+![output](/engineering-education/pointers_in_csharp/activating_unsafe_code.png)
 
 ### Safe and unsafe codes
-**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes.
+**Safe codes** are C# keywords that run under the `Common Language Runtime's supervision (CLR)` while **Unsafe codes** are C# keywords that execute outside the management of the CLR. 
 
- The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
+Unlike C++ and C programming languages, which use safe codes with pointers, the C# programming language only allows the use of unsafe codes.
+
+The unsafe codes may be used as a modifier or to label a group of statements as unsafe. Common language Runtime translates safe codes into software instructions, which are then executed by the computer's CPU.
 
 The example below uses the unsafe codes:
 
@@ -106,7 +110,7 @@ namespace UnsafeCodeApplication
 
 And the output is:
 
-```
+```bash
 60
 30
 1605887284
@@ -117,18 +121,20 @@ And the output is:
 
 There are various methods for executing statements as unmanaged, such as using a Modifier or a Constructor. A collection of statements has been marked as unsafe in the example above. 
 
-We used two variables `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we displayed them.
+We used two variables, `a` and `b` with the values of 60 and 30 respectively, and the pointers contain their addresses. Then we displayed them.
 
 ### Pinning an object 
 Pinning an object in C# entails restricting an object from moving into the [garbage collector](https://www.geeksforgeeks.org/garbage-collection-in-c-sharp-dot-net-framework/). 
 
-Garbage collection is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated.
+Garbage collection (GC) is one of the services provided by the CLR to control an application's memory allocation and release. It allocates memory by allocating an adjacent region of address space for the operation, known as an unmanaged heap, and keeping a pointer to the address where the heap's next object will be allocated.
 
 On the managed heap, reference types are managed. 
 
 After performing a list, the GC releases the memory for the object that is no longer in use to deallocate memory. Each application's roots are set to null or refer to an object on the managed heap. The GC has access to the active root list that the JIT compiler and runtime keep track of.
 
-For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory. For example:
+For the unmanaged resource, we explicitly have to call the disposal method to remove the objects from the memory. 
+
+For example:
 
 ```c#
 using System;
@@ -156,7 +162,7 @@ namespace UnsafeCodeApplication
 
 And the output is:
 
-```
+```bash
 Value of array[0]=5
 Address of the array[0]=-773935792
 Value of array[1]=6
@@ -172,7 +178,7 @@ Address of the array[4]=-773935776
 We used `fixed (int* ptr = array)` to restrict the objects in the array to a fixed memory allocation.
 
 ### Pointers and methods
-In C#, the pointers can be passed as a contention to a strategy as the following:
+In C#, the pointers can be passed as the following:
 
 ```c#
 using System;
@@ -203,12 +209,13 @@ namespace UnsafeCodeApplication
 
 The output is:
 
-```
+```bash
 60
 30
 1748493636
 1748493632
 ```
+
 > The addresses output may differ from machine to machine, it is determined by the values addresses in your computer.
 
 
@@ -219,8 +226,9 @@ Pointer types do not inherit from objects in C#, and there is no way to convert 
 
 C# upholds explicit and implicit pointers changes inside unmanaged settings. In implicit pointers, conversions are from null type to pointer type and also from any pointer type to type void * type.
 
-For explicit pointers, the cast operator (()) is essential. The conversion is from to in this instance:
+For explicit pointers, the cast operator (()) is essential. 
 
+The conversion is in this instance:
 1. The type of pointer to other forms of the pointer.
 2. To other pointer types: byte, sbyte, short, ushort, int, uint, long, ulong.
 3. Pointer type to sbyte, byte, uint, int, long, ulong, short, ushort types.
@@ -237,7 +245,9 @@ int *pj = (int *) px;
 `void *px = pk;` carry out an implicit conversion from pointer type to void * type. `int *pj = (int *) px;` carry out an explicit conversion using casting operator from pointer type to int type.
 
 ### Pointers and arrays
-An array is a combination of data of a similar data type only distinguished by the position they are kept in it. Pointers notations are used to access arrays in the C# program:
+An array is a combination of data of a similar data type only distinguished by the position they are kept in it. 
+
+Pointers notations are used to access arrays in the C# program:
 
 ```c#
 using System;
@@ -262,9 +272,10 @@ namespace UnsafeCodeApplication
 
 }
 ```
+
 And the output is:
 
-```
+```bash
 Value of array[0]=10
 Address of the array[0]=-521514320
 Value of array[1]=20
@@ -277,6 +288,7 @@ Value of array[4]=50
 Address of the array[4]=-521514336
 
 ```
+
 > The addresses output may differ from machine to machine, it is determined by the values addresses in your computer.
 
 The above code contains unmanaged statements. We declared an array of five elements and used `Console.Writeline()` to display the memory address and value data type of the array. 
@@ -284,7 +296,9 @@ The above code contains unmanaged statements. We declared an array of five eleme
 We previously had discussed pinning of objects, where we pinned the array to a fixed memory allocation. The output of the above code will contain every element in the array and its address simultaneously.
 
 ### Pointers and structure
-In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. For example:
+In C#, structures are only made up of value types. Pointers should only be used in systems that have value types as their primary members. 
+
+For example:
 
 ```c#
 using System;
@@ -328,7 +342,7 @@ namespace UnsafeCodeApplication
 
 The output is:
 
-```
+```bash
 Students details 1
 Student ID: 5 Fees: 45000
 Students details 2
@@ -344,8 +358,7 @@ Pointers show the memory address and execute unmanaged codes, as we have discove
 
 Till next time, happy coding!
 
-### Further Reading
-
+### Further reading
 1. [Introduction to C#](https://www.section.io/engineering-education/introduction-to-csharp/)
 2. [Getting Started with Windows Forms Using C#](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/)
 3. [Variables, Data Types and Control Statements in C#](https://www.section.io/engineering-education/variables-data-types-and-control-statements-in-csharp/)
