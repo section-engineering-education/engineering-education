@@ -326,7 +326,7 @@ We can also add additional commands such as the output executable file path usin
 
 > 'target' in `nexe` is used to specify the platform (windows, linux, or macos), the arch or architecture type (x86, x64), and the node version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
 
-- In the second, we can define the resources and others inside the 'package.json' file. I recommend this since your configurations would be saved for later re-run. Since we already declared that our app "main" is "index.js", we shall add only a build script.
+2. We can define the resources inside the 'package.json' file. I recommend this since your configurations would be saved for later re-run. Since we already declared that our app "main" is "index.js", we shall add only a build script.
 Head over to the "package.json" file and under the scripts tag, add a build script as follows:
 
 ```json
