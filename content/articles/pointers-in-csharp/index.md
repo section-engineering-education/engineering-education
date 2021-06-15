@@ -17,9 +17,9 @@ images:
 In C#, data types are categorized into three categories: `pointer types`, `value types`, and `reference types` based on how they store their value in the memory.
 <!--more-->
 ### Introduction
-The memory address of another kind is stored in a pointer-type variable. Since it lacks an individual variable, a reference-type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
+We store the memory address of other kinds in a pointer-type variable. Since it lacks an individual variable, a reference-type contains a pointer to another memory location that holds the data. Examples of reference types are Classes, Objects, Arrays, Indexers, Interfaces, etc.
 
-Data types are explicitly included within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
+We explicitly included data types within the value data form. Integers, characters, and floating-point numbers, as well as the alphabet and numbers, are examples of value data types.
 
 ### Table of contents
 - [Making a pointer style declaration](#making-a-pointer-style-declaration)
