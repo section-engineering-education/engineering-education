@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /pointers-in-csharp/
 title: Pointers in C#
-description: In this tutorial, we will learn about C# pointers, how to declare them, how to use them with arrays, structures, and a lot more.
+description: In this tutorial, we will learn about C# pointers, how to declare them, how to use them with arrays, structures, and a lot more. Pointers are applied in queue and stack data types.
 author: kelvin-munene
 date: 2021-06-15T00:00:00-17:00
 topics: [Languages]
