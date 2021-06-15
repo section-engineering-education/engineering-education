@@ -462,7 +462,7 @@ Let us head over to our `package.json` file and add a "pkg" as shown below:
 }
 ```
 
-You can notice we have also added "bin". This tells `pkg` where the app entry point is. Inside the "pkg" script, we have added "assets" to show which file contains our resources. You can add more by just separating them with a comma.  We have further specified where the outputs will be stored using "outputPath".
+Notice that we have also added "bin". This tells `pkg` where the app entry point is. Inside the "pkg" script, we have added "assets" to show which file contains our resources. You can add more by just separating them with a comma.  We have further specified where the outputs will be stored using "outputPath".
 
 Run `pkg` using the command below to use our configuration in `package.json`:
 
