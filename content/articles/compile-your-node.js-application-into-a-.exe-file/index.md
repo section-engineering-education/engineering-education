@@ -362,7 +362,7 @@ In case of further errors, you can post them in the [nexe issues tab](https://gi
 
 ![pkg](/engineering-education/compile-your-node.js-application-into-a-.exe-file/nexe.png "pkg")
 
-Let us use the project previously created and see the outcome.
+Let's use the project that we previously created and see the outcome.
 
 > You can either delete the contents of the root directory (executable) previously created or create a new one with a different name and repeat the steps we did above to create a new project. This reduces vulnerability errors due to packages clashing with each other.
 
