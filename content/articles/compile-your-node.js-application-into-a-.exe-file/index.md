@@ -54,7 +54,7 @@ Executable files (.exe files): These are files containing a set of encoded instr
 
 ### Pros of executable files
 
-Let us first see why prefer executable files in the first place. Some advantages noted of executable files include:
+Let us see why the users prefer executable files in the first place. Some advantages of the executable files include:
 
 - **Quick no-code execution:** This is because it only requires one to run the file and that's it. No codes are needed to be run on the terminal for it to be deployed.
 - **Prevent unwanted code change:** It prevents unwanted errors generated due to unplanned and accidental modification of source code.
