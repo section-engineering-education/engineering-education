@@ -292,7 +292,7 @@ Now, we shall run the following to just convert the application entry point into
 nexe index.js
 ```
 
-This tells `nexe` that during the build process, it will only look and compile the "index.js" file into an executable file.
+This tells `nexe` that during the build process, it should only look and compile the "index.js" file into an executable file.
 Once done run the following command on the terminal to start the build process:
 
 ```bash
