@@ -312,7 +312,7 @@ You can close it using `Ctrl + C`.
 
 To prove that it is only the entry point is compiled and not the resources found in the root directory such as the ones in the "views" folder, just copy and paste the executable file in a separate folder and run it. It pops up errors since it is unable to access the resources.
 
-#### Compile your project into an executable using nexe
+#### Compile the entire project into an executable using nexe
 
 We can do this in two ways.
 
