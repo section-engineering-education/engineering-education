@@ -492,7 +492,7 @@ In the case of build files or the specific targets, you can also specify them to
 #### File or directory not included Error
 
 In case you have encountered the "was not included" Error in pkg, then this is how to get around it.
-In pkg module, we can not use direct concatenation of relative paths, for instance `res.sendFile(__dirname + '/views/index.html');`. This is because it is not only a **bad programming practice** but also because it will retun an error as shown below:
+In pkg module, we shall not use a direct concatenation of relative paths, for instance `res.sendFile(__dirname + '/views/index.html');`. This is because it is not only a **bad programming practice** but also because it will return an error as shown below:
 
 ```bash
 john@john:~/Tofa/Projects/Convert node project into .exe/Secondtest/express$ ./express
