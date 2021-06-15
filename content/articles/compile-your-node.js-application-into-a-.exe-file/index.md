@@ -13,14 +13,14 @@ In this tutorial, we'll learn how to create executable files for our Node.js app
 - [Packages used](#Packages-used "Packages used")
 - [A simple web app](#A-simple-web-app "A simple web app")
 - [nexe](#nexe "nexe")
-    [nexe installation](#nexe-installation "nexe installation")
-    [Compile one javascript file into an exercutable using nexe](#Compile-one-javascript-file-into-an-exercutable-using-nexe "Compile one javascript file into an exercutable using nexe")
-    [Compile your project into an exercutable using nexe](#Compile-your-project-into-an-exercutable-using-nexe "Compile your project into an exercutable using nexe")
+    - [nexe installation](#nexe-installation "nexe installation")
+    - [Compile one javascript file into an exercutable using nexe](#Compile-one-javascript-file-into-an-exercutable-using-nexe "Compile one javascript file into an exercutable using nexe")
+    - [Compile your project into an exercutable using nexe](#Compile-your-project-into-an-exercutable-using-nexe "Compile your project into an exercutable using nexe")
 - [pkg](#pkg "pkg")
-    [pkg installation](#pkg-installation "pkg installation")
-    [Compile one javascript file into an exercutable using pkg](#Compile-one-javascript-file-into-an-exercutable-using-pkg "Compile one javascript file into an exercutable using pkg")
-    [Compile your project into an exercutable using pkg](#Compile-your-project-into-an-exercutable-using-pkg "Compile your project into an exercutable using pkg")
-    [File or directory not included Error](#File-or-directory-not-included-Error)
+    - [pkg installation](#pkg-installation "pkg installation")
+    - [Compile one javascript file into an exercutable using pkg](#Compile-one-javascript-file-into-an-exercutable-using-pkg "Compile one javascript file into an exercutable using pkg")
+    - [Compile your project into an exercutable using pkg](#Compile-your-project-into-an-exercutable-using-pkg "Compile your project into an exercutable using pkg")
+    - [File or directory not included Error](#File-or-directory-not-included-Error)
 - [Further practice](#Further-practice "Further practice")
 - [References](#References "References")
 
@@ -244,6 +244,8 @@ The code automatically generated will look as shown below:
     }
 }
 ```
+
+You can find the code in [this](https://github.com/RisoriTofa/Convert-a-Node.js-file-into-an-exercutable-file/tree/main) repository.
 
 Open the inbuilt Visual Studio Code Terminal using ``Ctrl + ` `` in PC or ``Control + Shift + ` `` in Mac.
 
