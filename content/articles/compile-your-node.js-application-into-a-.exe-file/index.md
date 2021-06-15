@@ -1,8 +1,8 @@
-During program development, one undergoes several processes of installation, coding, and running an application.
-These processes drastically change during deployment or execution where the users are just interested in the running of the application and not the underlying codes.
-This arises the need to creation of a simple executable file that can run on the current operating system without further package installation process.
+During the development phase, the developer performs several processes of installation and coding, to build and run an application. But, the end-users are just interested in running the application and not the underlying code and processes.
 
-In this tutorial, we will learn how to create executable files for our Node.js application. We shall compile our JavaScript files into executable files.
+This causes the need for a simple executable file that can run on an operating system without requiring the user to perform other steps in order to run the application.
+
+In this tutorial, we'll learn how to create executable files for our Node.js application. We'll compile our JavaScript files into an executable file.
 
 ### Table of Contents
 
