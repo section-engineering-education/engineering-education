@@ -384,7 +384,7 @@ Wait for a few seconds for it to complete the process. On completion, just check
 
 #### Compile one javascript file into an executable using pkg
 
-Run the following command in which we shall call the pkg module and the entry point to our application. In our situation it is `index.js`:
+Run the following command in which we'll call the pkg module and the entry point to our application. In our case, its `index.js`:
 
 ```bash
 pkg index.js
