@@ -4,44 +4,31 @@ An operator is a symbol that instructs the compiler to perform particular mathem
 Any programming language's foundation is made up of these. Subsequently, the C# language's usefulness is deficient without the utilization of operators. Operators enable us to execute various actions on operands. In C#, operators are classified according to their functionality:
 
 1. [Arithmetic operators](#!Arithmetic-operators)
-
 2. [Assignment operators](#Assignment-operators)
-
 3. [Comparison operators](#Comparison-operators)
-
 4. [Bitwise operators](#Bitwise-operators)
-
 5. [Relational operators](#Relational-operators)
-
 6. [Logical operators](#Logical-operators)
-
 7. [Miscellaneous operators](#Miscellaneous-operators)
 
 
 ### Arithmetic operators
-
 The arithmetic operators are `binary ` and `Urinary operators` that solve mathematic operations on the operand. Binary operators operate with two operands while Urinary operators operate with only one operand. 
 
 The following are the Binary operators that fall within this category:
 
 1. **Substruction**: The `-`  operator takes two operands and subtracts them. Consider the case of x-y.
-
 2. **Addition**: The `+` operator takes two operands and adds them together. Consider the expression x+y.
-
 3. **Division**: The `/` The `/` operator splits the first and second operands by two. Consider the example of x/y.
-
 4. **Multiplication**: When two operands are multiplied, the `*` operator is used.. Take into account x*y. 
-
 5. **modula**: The `%` operator returns the residual when the first argument is divided by the second operand.. For example, x percent y.
-
 
 The following are the urinary operators that fall within this category:
 
 1. **Increment**: The `++` operator raises the value of an integer by one. Consider the expression K++.
-
 2. **Decrement**: The `--` operator lowers the value of an integer by one. Consider the expression K--.
 
-The program below shows the use of the Arithmetic operators.
+The program below shows the use of the Arithmetic operators:
 
 ```c#
 using System;
@@ -82,7 +69,7 @@ namespace Arithmetic
 
 The output of all the arithmetic operations program is:
 
-```
+```bash
 Addition Operator: 27
 Subtraction Operator: 15
 Multiplication Operator: 126
@@ -93,32 +80,25 @@ A is 21 and  Urinary is 22
 ```
 
 ### Assignment operators.
-A new value is assigned to a variable, property, event or indexer to the C# programming language. Bitwise logical operations, operations on integral operands, and operations on Boolean operands may all be done with assignment operators.
+With assignment operators, a new value is assigned to a variable, property, event or indexer to the C# programming language.
+
+Bitwise logical operations, operations on integral operands, and operations on Boolean operands may all be done with assignment operators.
 There are eleven types of assignment operators namely:
 
 1. **Add assignment** (`+=`): The `+` and `=` operators are combined in this operator. This operator allocates the results to the left variable after adding the current value to the right variable.
-
 2. **Multiple assignment** (`*=`): The `*` and `=` operators are combined in this operator. After multiplying the variable's current value at left by the value at right, this operator sends the result to the variable at the left.
-
 3. **Division assignment** (`/=`): The `/` and `=` operators are combined in this operator. This operator divides the left-hand variable's current value by the right-hand variable's value, then assigns the result to the left-hand variable.
-
 4. **Simple assignment** (`=`): This operator assigns the right variable value to the left variable.
-
 5. **Subtract assignment** (`-=`): This operator is a mixture of the operators `-` and `=`. This operator subtracts the current value of the left-hand variable from the right-hand variable's value before assigning the result to the left-hand variable.
-
 6. **Modulus assignment** (`%=`): This operator is made up of the operators `%` and `=`. The current value of the right-most variable is multiplied by this operator, then the result is assigned to the leftest variant.
-
 7. **Left shift assignment** (`<<=`): This operator is a mixture of operators `<<` and `=`. The current variable values are moved to the left by that operator first and then the results are assigned to the variable.
-
 8. **Right shift assignment** (`>>=`): This operator is a mixture of the operators `>>` and `=`.After right shifting the current variable value left by the value right, this operator will transfer the result to the variable left.
-
 9. **Bitwise AND assignment** (`&=`): This operator is a mixture of the operators `&` and `=`. The result will be sent by this operator to the left variable after bit by bit AND the current value of the variable to the left.
-
 10. **Bitwise inclusive OR** (`|=`): The operator is a mixture of operators `|` and `=`. Initially, the variable's current value to the left is "Bitwise with OR" and then assigns it to the variable on the right.
+11. **Bitwise exclusive OR** (`^=`): This operator is a mixture of the operators `^` and `=`. The result of the operator will send the variable left to the variaible with the value right after "Bitwise Exclusive ORing."
 
-11. **Bitwise exclusive OR** (`^=`): This operator is a mixture of the operators ``^` and `=`. The result of the operator will send the variable left to the variaible with the value right after "Bitwise Exclusive ORing."
+The program below shows all the assignment operators in use:
 
-The program below shows all the assignment operators in use.
 ```c#
 using System;
 namespace Assignment_operator
@@ -162,7 +142,7 @@ namespace Assignment_operator
 
 The output of the program above is:
 
-```
+```bash
 Add Assignment Operator: 43
 Subtract Assignment Operator: 36
 Multiply Assignment Operator: 180
@@ -178,16 +158,12 @@ Bitwise Inclusive OR Assignment Operator: 15
 There are six bitwise operators in C# that function at the bit level or execute bit-by-bit operations. The bitwise operators are as follows:
 
 1. **Bitwise AND** (`&`): Takes two operands and performs AND on each bit of the two integers. AND results only when both bits are 1.. | (bitwise OR) takes two operands and performs OR on each bit of the two values. OR returns 1 if either of the two bits is 1.
-
 2. **Bitwise OR** (`|`): Takes two operands and performs OR on each bit of the two integers. OR returns 1 if either of the two bits is 1. 
-
 3. **Bitwise XOR** (`^`). Takes two operands and performs an XOR on each bit of the two integers. If the two bits are different, the result of XOR is 1.
-
 4. **Left shift** (`<<`). Takes two integers, shifts the bits of the first operand to the left, and the amount of places to shift is determined by the second operand.
-
 5. **Right (`>>`)**: Takes two integrates, shifts the first operand's bits to the right, and the second operand determines the number of places to shift.
 
-The program below shows all the Bitwise operators in use.
+The program below shows all the Bitwise operators in use:
 
 ```c#
 using System;
@@ -219,7 +195,7 @@ namespace Bitwise_operators
 
 This is the output:
 
-```
+```bash
 Bitwise AND: 1
 Bitwise OR: 11
 Bitwise XOR: 10
@@ -231,21 +207,16 @@ Bitwise Right Shift: 0
 ### Relational operators
 When two values are compared, relational operators are utilized.
 
- The following are the relational operators:
+The following are the relational operators:
 
 1. **Equal To** (`==`): If so, it will come back true. False is returned otherwise. For example, 5==5 is going to come back true.
-
 2. **Not Equal To** (`!=`) The operator determines if the two operands are equal.The output is true if it's wrong. False is returned otherwise. It's the `==` operator's exact boolean complement. 5!=5 will, for example, return false.
-
 3. **Greater Than** (`>`): This operator detects whether the first operand is bigger than the second. It returns true if this is the case.
-
 4. **Less Than** (`<`): If the first operand is smaller than the second, the operator determines. If this is the case, it returns true. Otherwise, false is returned. 65.5, for instance, will return false.
-
 5. ***Greater Than Equal To** (`>=`). This operator detects if the first operand exceeds or equals the second operand If so, the output  output will be true.. Otherwise, false is returned. 5>=5 will, for example, yield true.
-
 6. **Less Than Equal To** (`<=`) The operator detects if the first operand is equal to or below the second operand. If so, the output will be true. Otherwise, false is returned. 5=5 will, for example, also yield true.
 
-The program below shows all the relational operators in use.
+The program below shows all the relational operators in use:
 
 ```c#
 using System;
@@ -277,7 +248,7 @@ namespace Relational_operators
 
 This is the output:
 
-```
+```bash
 Equal to Operator: False
 Greater than Operator: False
 Less than Operator: True
@@ -289,11 +260,11 @@ Not Equal to Operator: True
 ### Conditional operators
 A ternary operator is a simplified form of the if-else expression. The term ternary comes from the fact that it contains three operands.Contingent upon the value of a Boolean articulation, it will return one of two outcomes.
 
- The conditional operator code:
+The conditional operator code:
 
- ```
+```
  condition ? first_expression : second_expression; 
- ```
+```
 
 The syntax explanation:
 
@@ -303,7 +274,7 @@ The syntax explanation:
 
 **Second expression**- If the boolean expression results to false, it is assessed and the outcome is determined.
 
-The program below shows all the conditional operators in use.
+The program below shows all the conditional operators in use:
 
 ```c#
 using System;
@@ -325,7 +296,8 @@ namespace Conditional_operators
 ```
 
 This is the output:
-```
+
+```bash
 final outcome: 7
 final outcome: 6
 ```
@@ -334,12 +306,10 @@ final outcome: 6
 They're used to integrate two or more conditions/constraints or to supplement the evaluation of the original condition. The following is a list of them.
 
 1. **logical OR** (`||`): When one (or both) of the requirements in question are met, the ‘||' operator returns true. Otherwise, false is returned. If one of an o rb is true, for example, x || y returns true (i.e. non-zero). Of course, when both x and y are true, it returns true.
-
 2. **Logical NOT** (`!`): If the condition in question is not met, the ‘!' operator returns true. Otherwise, false is returned.
-
 3. **Logical AND** (`&&`): When both of the criteria in question are met, the ‘&&' operator returns true. Otherwise, false is returned. When both a and b are true, for example, a && b yields true (i.e. non-zero).
 
-The program below shows all the logical operators in use.
+The program below shows all the logical operators in use:
 
 ```c#
 
@@ -365,7 +335,8 @@ namespace Logical_operators
 ```
 
 This is the output:
-```
+
+```bash
 AND Operator: False
 OR Operator: True
 NOT Operator: False
@@ -373,16 +344,12 @@ NOT Operator: False
 
 ### Miscellaneous operators
 1. **sizeof()**: In this operator, the size of a data type is returned.
-
 2. **Typeof()**: In this operator, the type of a class is returned.
-
 3. **&**: In this operator, the address of a variable is returned.
-
 4. **Is**: Determines whether or not an item is of a specific type.
-
 5. **As**: If the cast fails, it is not raised as an exception.
 
-The program below shows the Bitwise operators in use.
+The program below shows the Bitwise operators in use:
 
 ```c#
 using System;
@@ -412,16 +379,22 @@ namespace OperatorsAppl
 ```
 
 This is the output:
-```
+
+```bash
 The size of int is 4
 The size of short is 2
 The size of double is 8
 Value of b is 20
 Value of b is 10
-
 ```
 
 ### Conclusion
+We have learnt about the many types of operators in the C# programming language in this session.
 
-We have learnt about the many types of operators in the C# programming language in this session. We also learnt how to use these operators as well as their symbols. Operators are commonly used to declare conditions in decision-making statements, to employ loops, and to conduct algebraic operations.
+We also learnt how to use these operators as well as their symbols. Operators are commonly used to declare conditions in decision-making statements, to employ loops, and to conduct algebraic operations.
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
 
