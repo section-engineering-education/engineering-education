@@ -18,9 +18,15 @@ images:
 ### H<sub>2</sub>O Security Implementation
 
 ### Introduction
-H<sub>2</sub>O is a library compatible with many coding languages including Python. This library can be used to analyze descriptive and predictive trends. It is similar to other machine learning libraries in Python. The option to include security is a hidden advantage that many Python libraries may not include. Read on to find out how security can be implemented throughout the data analysis cycle when using H<sub>2</sub>O with Python.  
+H<sub>2</sub>O is a library compatible with many coding languages including Python. This library can be used to analyze descriptive and predictive trends.
+<!--more-->
+It is similar to other machine learning libraries in Python. The option to include security is a hidden advantage that many Python libraries may not include. Read on to find out how security can be implemented throughout the data analysis cycle when using H<sub>2</sub>O with Python.  
 
-Security in the data analytical space is important to consider internally and externally. While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access. In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle. Security considers the following: the H<sub>2</sub>O instance, data file, and database.   
+Security in the data analytical space is important to consider internally and externally.
+
+While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access.
+
+In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle. Security considers the following: the H<sub>2</sub>O instance, data file, and database.   
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -40,31 +46,38 @@ Security in the data analytical space is important to consider internally and ex
 8. Internet access to internet browser.
 
 ### Installation
-This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable when individuals may not have a Linux OS. One of several solutions for this compatibility issue is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical pen-testing while Ubuntu LTS is a version generally used among individuals.  
+This section is to emphasize on the fact that Bash is appropriate for this tutorial.
+
+It is understandable when individuals may not have a Linux OS. One of several solutions for this compatibility issue is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical pen-testing while Ubuntu LTS is a version generally used among individuals.  
 
 For any security mechanism to become stable, generation of authentication files is necessary. Refer to the instructions at the [H<sub>2</sub>O documentation](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security) website to generate `keystore` and `truststore` authentication files.  
 
 ### Instance Internal Security
 One noticeable SSL internode security change is when false becomes true as shown below.  
 
-![false](/engineering-education/content/articles/h2o-security-implementation/false.jpg)    
+![Connection without internal security: false](/engineering-education/content/articles/h2o-security-implementation/false.jpg)    
 _Connection without internal security._  
 
 After following Standalone/AWS and Java instructions, a message with a specific URL dedicated to H<sub>2</sub>O appears and can be used for `h2o.init()`.  
 
-![true](/engineering-education/content/articles/h2o-security-implementation/true.jpg)    
+![Connection with internal security: true](/engineering-education/content/articles/h2o-security-implementation/true.jpg)    
 _Connection with internal security._  
 
 Data access is not universal. If a database is used, permissions can also limit who can gain specific data access when logging in and during active state.  
 
 ### Data File Security
-File permission is one of several options to access a data file. Reading, writing, and executing are all default settings that can be implemented. Password protection is also another file protector that can be distributed based on roles. As a reminder, the code below is one of many methods to enforce permissions. The code below specifies group permission for reading.  
+File permission is one of several options to access a data file.
+
+Reading, writing, and executing are all default settings that can be implemented. Password protection is also another file protector that can be distributed based on roles. As a reminder, the code below is one of many methods to enforce permissions.
+
+The code below specifies group permission for reading:
 
 ```python
 import os, sys, stat
 os.chmod(“./filename.csv”,  stat.S_IRGRP)
 ```
-This code below can move filename.csv to an offline folder and can no longer be accessible online at any time. Moving a file to a different online folder location without general access is another option.  
+
+This code below can move filename.csv to an offline folder and can no longer be accessible online at any time. Moving a file to a different online folder location without general access is another option:
 
 ```bash
 mv ./filename.csv ./offline/
@@ -73,11 +86,13 @@ mv ./filename.csv ./offline/
 [Quantitative security measurements](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals) can depend on the dataset value associated with recovery, loss, and technology costs. 
 
 ### Database Security
-While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services. SQL with its many variations can appear to become a well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
+While most experts are aware that 100% of security and prevention techniques are not constantly possible, some simple preventative solutions are available before discontinuing online services.
+
+SQL with its many variations can appear to become a well-known database language. SQL injection can become a cyberattack technique to gain access and control of dataset tables inside databases. A simple solution is to limit user input.  
 
 Before a data file is read inside a H<sub>2</sub>O instance, it is very likely the data file originated from a database.  
 
-For example, the following if-then statement can detect frequently used SQL keywords and combinations. If a database written in Java is connected to H<sub>2</sub>, this code below can detect and refuse basic SQL injection attacks.  
+For example, the following if-then statement can detect frequently used SQL keywords and combinations. If a database written in Java is connected to H<sub>2</sub>, this code below can detect and refuse basic SQL injection attacks:
 
 ```Java
 import static java.lang.System.in;
@@ -105,7 +120,6 @@ public class Check
 }
 ```  
 
-
 This Java application can be used in a real SQL injection scenario. Input with any spacing combination mentioned with `alter`, `drop`, and `insert` can result in an error message. For example, retrieving data with `select`.
 
 **Input**:  
@@ -117,7 +131,9 @@ This Java application can be used in a real SQL injection scenario. Input with a
 It is beneficial to include all SQL-oriented commands to stop each attempt of negative impact. Another helpful tip is to conduct further research on libraries such as evaluating source codes. There is a possibility of libraries with built-in codes incorporating malicious activities such as [memory issues](https://www.edx.org/microbachelors/nyux-cybersecurity-fundamentals).  
 
 ### Conclusion
-Technological cyberattacks can increase as technological complexities allow vulnerabilities. There are a number of mechanisms to secure and protect data. When attacks are successful, it is ideal to keep alternative options available to manage risk and recover from impact. Protecting data is one approach to keeping data safe.  
+Technological cyberattacks can increase as technological complexities allow vulnerabilities.
+
+There are a number of mechanisms to secure and protect data. When attacks are successful, it is ideal to keep alternative options available to manage risk and recover from impact. Protecting data is one approach to keeping data safe.  
 
 ### Takeaways
 - Increasing security can start when the coding program begins.
