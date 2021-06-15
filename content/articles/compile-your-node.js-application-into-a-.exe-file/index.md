@@ -73,7 +73,7 @@ We shall now get a simple node.js application that is running and use it as our 
 
 ### A simple web app
 
-This web app shall be able to run on localhost at port 5000 and shall display images found in the images folder. Create a route directory called "executable" and create files and folders as shown in the folder structure below.
+This web app will run on localhost at port 5000 and will display images found in the images folder. Create a directory called "executable" and create files and folders as shown in the folder structure below.
 Initialize the project with:
 
 ```bash
