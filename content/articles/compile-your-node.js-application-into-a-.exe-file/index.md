@@ -260,7 +260,7 @@ Once done, let's see how each module operates.
 
 ![nexe](/engineering-education/compile-your-node.js-application-into-a-.exe-file/nexe.png "nexe")
 
-Now let us compile our project into an executable file with all needed packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The node packages will be automatically added, so we will only specify other resources needed.
+Let's compile our project into an executable file with all the required packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The node packages will be automatically added, so we'll only specify the other resources that are required.
 
 #### nexe installation
 
