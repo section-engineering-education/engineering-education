@@ -432,7 +432,7 @@ Some of the supported node ranges, platforms, and architectures are as shown in 
 
 #### Compile your project into an executable using pkg
 
-Here, we shall have to tell `pkg` our resources folder. We can do this inside the `package.json` file using scripts and assets configurations.
+Here, we should tell `pkg` our resources folder. We can do this inside the `package.json` file using scripts and assets configurations.
 Let us head over to our `package.json` file and add a "pkg" as shown below:
 
 ```json
