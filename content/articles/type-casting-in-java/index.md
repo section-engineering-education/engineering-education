@@ -6,7 +6,7 @@ url: /type-casting-in-java/
 title: Type Casting in Java
 description: In this article, we will learn about type casting and its types in the Java programming language.
 author: terrypha-wamaitha
-date: 2021-06-15T00:00:00-20:00
+date: 2021-06-15T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -96,7 +96,7 @@ public class Main  {
 
 Output:
 
-```
+```bash
 57.17
 57
 57
