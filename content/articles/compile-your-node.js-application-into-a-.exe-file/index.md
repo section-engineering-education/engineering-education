@@ -278,7 +278,7 @@ sudo npm i nexe -g
 
 > **Note:** Unlike the pkg module, we don't install the package locally but rather globally. If you install it locally, you will face numerous errors. An example of that error is `Command 'nexe' not found`. You can see how to resolve it [here](https://stackoverflow.com/questions/67981535/nexe-module-command-nexe-not-found-error/67981536#67981536).
 
-Once done, run the following to verify its availability:
+Once done, run the following to verify if its installed:
 
 ```bash
 nexe -h
