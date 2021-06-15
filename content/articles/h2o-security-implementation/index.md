@@ -23,21 +23,21 @@ H<sub>2</sub>O is a library compatible with many coding languages including Pyth
 Security in the data analytical space is important to consider internally and externally. While surrounding a network with cybersecurity protection increases stability, data within the coding program appears to remain vulnerable. Cyberthreats and attacks are unpredictable, however, this tutorial shows one of several security precautions to consider prior to starting, during, and after data access. In this tutorial, a module in Python Programming called H<sub>2</sub>O and bash commands are both introduced. Remember, this tutorial is written at `root`. This tutorial uses H<sub>2</sub>O as module in relation to the data analysis cycle and considers security from various stages of data analysis cycle. Security considers the following: the H<sub>2</sub>O instance, data file, and database.   
 
 ### Table of Contents
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Instance Internal Security](#instance-internal-security)
-* [Data File Security](#data-file-security)
-* [Database Security](#database-security)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Instance Internal Security](#instance-internal-security)
+- [Data File Security](#data-file-security)
+- [Database Security](#database-security)
 
 ### Prerequisites
-* Linux computer Operating System (OS) or Linux container with `root` authorization (this tutorial uses [Kali Linux](https://kali.org/).
-* Basic Bash knowledge.
-* Python (preferably 3.3+, tutorial uses 3.9).
-* Prior knowledge on [how to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python), [how to create H<sub>2</sub>O instances](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/starting-h2o.html#from-python), and [how to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security)
-* Bash installations: H<sub>2</sub>O, Java, `keytools`, and a Linux text editor.
-* Python installation of H<sub>2</sub>O.
-* Some Java coding knowledge.
-* Internet access to internet browser.
+1. Linux computer Operating System (OS) or Linux container with `root` authorization (this tutorial uses [Kali Linux](https://kali.org/).
+2. Basic Bash knowledge.
+3. Python (preferably 3.3+, tutorial uses 3.9).
+4. Prior knowledge on [how to install H<sub>2</sub>O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html#install-in-python), [how to create H<sub>2</sub>O instances](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/starting-h2o.html#from-python), and [how to create security files](https://h2o-release.s3.amazonaws.com/h2o/rel-xu/3/docs-website/h2o-docs/security.html?highlight=security)
+5. Bash installations: H<sub>2</sub>O, Java, `keytools`, and a Linux text editor.
+6. Python installation of H<sub>2</sub>O.
+7. Some Java coding knowledge.
+8. Internet access to internet browser.
 
 ### Installation
 This section is to emphasize on the fact that Bash is appropriate for this tutorial. It is understandable when individuals may not have a Linux OS. One of several solutions for this compatibility issue is to complete a successful installation of a container. There are options available such as Ubuntu LTS or Kali Linux. Both options are capable of functioning, however, certain ones are used for specific purposes. Kali Linux is known for ethical pen-testing while Ubuntu LTS is a version generally used among individuals.  
