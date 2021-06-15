@@ -520,7 +520,7 @@ In case of more issues you can read further [here](https://stackoverflow.com/que
 - You can try running the other two files in their respective virtual machines and see the outcome.
 Just install the other two operating systems and configure them. Run the files and test the outcome on web browsers of choice.
 
-> As stated before you can copy it to another machine and the other person won't need to do any package installation process. It will just run them.
+> As stated before you can copy it to another machine and the other person won't need to do any package installation process.
 
 ### Conclusion
 
