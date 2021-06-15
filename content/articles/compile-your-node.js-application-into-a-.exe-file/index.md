@@ -346,7 +346,7 @@ Now run the command below to tell `nexe` to use the specifications in the build 
 npm run build
 ```
 
-then to run the build process we shall use:
+To start the build process, use the following command:
 
 ```bash
 npm --build
