@@ -28,11 +28,11 @@ In this tutorial, we'll learn how to create executable files for our Node.js app
 
 At the end of this tutorial, you would have learned the following:
 
-- What are `.exe` files and what are their importance.
-- Some packages we can use to compile your Node.js application into `.exe` files.
+- What are `.exe` files and their importance.
+- Packages that we can use to compile your Node.js application into `.exe` files.
 - Creating a simple Node.js application.
-- Compiling Node.js files into an executable file for different operating systems.
-- Running the executable file in the current operating system.
+- Compiling Node.js files into an executable file for various operating systems.
+- Running the executable file in an operating system.
 
 ### Pre-requisites
 
