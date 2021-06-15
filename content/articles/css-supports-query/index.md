@@ -6,7 +6,7 @@ url: /css-supports-query/
 title: Using modern CSS features in old browsers using @supports
 description: In this tutorial, we will learn about the various web rendering engines, and we will talk about the supports feature query.
 author: saiharsha-balasubramaniam
-date: 2021-06-11T00:00:00-13:00
+date: 2021-06-15T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images: 
@@ -17,7 +17,6 @@ images:
 A Web Rendering Engine is a component of a web browser that reads HTML documents and converts (or) renders them into a useful visual representation.
 <!--more-->
 According to Wikipedia:
-
 > A browser engine is a core software component of every major web browser. The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
 
 A web rendering engine is also known as a layout engine or a browser engine.
@@ -29,13 +28,13 @@ A web rendering engine is also known as a layout engine or a browser engine.
 
 Since there are a lot of web engines, certain HTML/CSS features are supported only in a certain version of a browser. For example, the CSS `position: sticky` feature is only supported on Firefox version 26 and above. In this article, we will learn how to use modern CSS features in old browsers by using the CSS `@supports` rule.
 
-### Table of contents
+### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [Problems with browser support](#problems-with-browser-support)
+- [Problems with Browser Support](#problems-with-browser-support)
 - [Workaround using @supports](#workaround-using-@supports)
 - [Conclusion](#conclusion)
-- [Further reading](#further-reading)
+- [Further Reading](#further-reading)
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
@@ -47,8 +46,8 @@ To follow along with this tutorial, you should have:
 - We will also look at the `@supports` feature query and use it in an example.
 - We will take the CSS rule `position: sticky` as an example and find a workaround to enable it on an older browser.
 
-### Problems with browser support
-We might encounter certain issues with our website due to the following reasons:
+### Problems with Browser Support
+We may encounter certain issues with our website due to the following reasons:
 - When the browser version does not support that specific feature.
 - When the browser handles it differently than it should, due to a bug.
 - When the browser has partial support for the feature and is not enabled by default.
@@ -59,7 +58,7 @@ When the browser has partial support for the feature, we can enable it by a brow
 
 In this article, we are going to concentrate on how to introduce a fallback using the `@supports` feature query.
 
-To demonstrate what problems may arise when a CSS feature isn't supported by a web engine.
+Let's demonstrate what problems may arise when a CSS feature isn't supported by a web engine.
 
 For example, the table below demonstrates the browser support for the CSS rule `position: sticky`:
 
@@ -124,8 +123,6 @@ Let us start building a basic website to demonstrate the use of `@supports`. Ope
       vel facilisis volutpat est velit egestas. Eget nullam non nisi est sit
       amet. Lacinia quis vel eros donec ac odio tempor orci dapibus.
 
-      <br />
-
       Vulputate sapien nec sagittis aliquam malesuada bibendum. Faucibus purus
       in massa tempor nec feugiat nisl. Venenatis a condimentum vitae sapien
       pellentesque habitant morbi tristique. Sit amet consectetur adipiscing
@@ -136,8 +133,6 @@ Let us start building a basic website to demonstrate the use of `@supports`. Ope
       ullamcorper eget nulla facilisi etiam. Tortor dignissim convallis aenean
       et tortor. Integer enim neque volutpat ac tincidunt vitae. Sem nulla
       pharetra diam sit amet nisl suscipit.
-
-      <br /><br />
 
       Faucibus turpis in eu mi bibendum. Dignissim suspendisse in est ante in
       nibh. Quis imperdiet massa tincidunt nunc pulvinar sapien. Cursus risus at
@@ -155,8 +150,6 @@ Let us start building a basic website to demonstrate the use of `@supports`. Ope
       sagittis purus sit amet. Sed tempus urna et pharetra pharetra massa massa
       ultricies.
 
-      <br /><br />
-
       A scelerisque purus semper eget duis at tellus. Dolor sit amet consectetur
       adipiscing elit. Amet dictum sit amet justo donec. Ut sem viverra aliquet
       eget sit amet tellus cras adipiscing. Eu augue ut lectus arcu bibendum at.
@@ -165,8 +158,6 @@ Let us start building a basic website to demonstrate the use of `@supports`. Ope
       Aliquam sem et tortor consequat id porta nibh venenatis cras. Nunc vel
       risus commodo viverra maecenas. Sed vulputate mi sit amet mauris. Sem
       fringilla ut morbi tincidunt augue interdum velit euismod.
-
-      <br /><br />
 
       Mattis molestie a iaculis at erat. Sapien nec sagittis aliquam malesuada
       bibendum arcu vitae elementum. In fermentum posuere urna nec tincidunt
@@ -187,19 +178,19 @@ Let us start building a basic website to demonstrate the use of `@supports`. Ope
 </html>
 ```
 
-Open this file on a modern browser. Let us use [Chrome version 90](https://www.google.com/intl/en_in/chrome/). You would notice that the hero banner sticks to the top. Try scrolling to the bottom, and you would notice that the hero banner still sticks to the top. Therefore, we can confirm that the `position: sticky` feature works.
+Open this file on a modern browser such as [Chrome version 90](https://www.google.com/intl/en_in/chrome/). You would notice that the hero banner sticks to the top. Try scrolling to the bottom, and you would notice that the hero banner still sticks to the top. Therefore, we can confirm that the `position: sticky` feature works.
 
 ![Position Sticky](/engineering-education/css-supports-query/sticky.jpg)
 
 *Position Sticky on Chrome 90*
 
-Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox, you will notice that the hero banner does not scroll. The `position: sticky` feature does not work.
+Now, download and install [Firefox version 22](https://ftp.mozilla.org/pub/firefox/releases/22.0/). Open `index.html` in Firefox and you will notice that the hero banner does not scroll, thus the `position: sticky` feature does not work.
 
 ![Position Sticky Firefox](/engineering-education/css-supports-query/sticky-firefox.jpg)
 
 *Position Sticky on Firefox 22*
 
-Let us now fix this using `@supports`:
+Let's now fix this using `@supports`:
 
 ```html
 <style>
@@ -237,17 +228,17 @@ Let us now fix this using `@supports`:
 </style>
 ```
 
-If you run it on Firefox 22, you would notice that the hero banner sticks to the top, even when we scroll to the bottom of the page.
+If you run it again on Firefox 22, you would notice that the hero banner sticks to the top, even when we scroll to the bottom of the page.
 
 In the example above, we used the `@supports` feature query and the **not** operator to check for the browsers that do not support the `position: sticky` CSS rule. We specified some alternative CSS rules for older browsers within the `@supports` block so that the CSS doesn't break in older browsers.
 
-There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true. 
+There are also the **and** and **or** operators that can be used to evaluate various support conditions. When the **and** operator is used, the corresponding block properties are applied only when all the expressions are true.
 
 The **or** operator is used when we want the block properties to be applied when one of the expressions is true. For example, we can use the **or** operator with vendor prefixes.
 
-*Note: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than others. For example, the prefix -moz is used with CSS rules specific to Firefox. 
+**Note**: A vendor prefix is a string of characters added before a property name. This is done because browsers implement certain CSS rules differently than others. For example, the prefix -moz is used with CSS rules specific to Firefox.
 
-To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/).*
+To learn more about vendor prefixes, check out [this link](https://bitsofco.de/css-vendor-prefixes/).
 
 ```css
 @supports (transform-style: preserve) or (-moz-transform-style: preserve) or 
