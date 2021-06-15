@@ -36,7 +36,7 @@ QoS works by identifying the various applications or activities that would benef
 
 >**Note:** Class of service usually is accessible within an MPLS (Multi-Protocol Label Switching) provision.
 
-COS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Altering the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
+CoS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Altering the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
 
 ##### Differentiated Service Code Point (DSCP)	 
 
@@ -64,7 +64,7 @@ Hardware queues are characterized as standard or strict priority queues. The sta
 Routers direct any traffic marked with a higher DSCP or IP value into the strict priority queues. Here, traffic marked as high priority is processed faster than other traffic, thus increasing one’s network performance and reducing the chances of routers dropping packets during congestion.
 
 #### Resource Reservation Protocol (RSVP)**
-RSVP is a transport layer protocol that reserves network resources to get varying Quality of Services (QoS) for an application’s data streams. The protocol accomplishes its task by sending out RSVP messages from a source to a receiver and vice versa. RSVP messages are classified into two: path and reservation messages.
+RSVP is a transport layer protocol that reserves network resources to get varying Quality of Service levels for an application’s data streams. The protocol accomplishes its task by sending out RSVP messages from a source to a receiver and vice versa. RSVP messages are classified into two: path and reservation messages.
 
 - **Path messages** are sent from a source to a receiver by storing the path state at each node in the message’s path. The path states direct a receiver to reserve network resources on each node that it passes on the network.
 
@@ -74,10 +74,10 @@ RSVP is a transport layer protocol that reserves network resources to get varyin
 
 1.	It guarantees the optimal performance of applications that need high bandwidth for real-time traffic. Applications such as video conferencing applications, VoIP, streaming applications, and online gaming are some of the special applications that are bandwidth-intensive and highly sensitive to jitters and latency.
 
-2.	QoS helps prevent delays in sensitive applications operating on a network. These applications usually utilize UDP protocol in favor of TCP protocol. The UDP protocol is favored over TCP because packets get transmitted in an ordered stream. 
-Furthermore, the UDP protocol differs from the TCP protocol because the protocol does not retransmit data packets that get corrupted or lost during transmission. The lack of retransmission in UDP applications creates the need for a QoS-supported network that has low instances of jitters and minimum latency, thus reducing delays that can result in choppy audios in an IP call or sketchy videos in a video stream. 
+	QoS helps prevent delays in sensitive applications operating on a network. These applications usually favor UDP protocol over TCP protocol. The UDP protocol is favored over TCP because packets get transmitted in an ordered stream. 
+Furthermore, the UDP protocol differs from the TCP protocol because the protocol does not retransmit data packets that get corrupted or lost during transmission. The lack of retransmission in UDP applications creates the need for a QoS-supported network that has low instances of jitters and minimum latency, thus reducing delays that can result in choppy audios in an IP call or sketchy videos in a video stream.
 
-3.	QoS brings the possibility to plan and manage their network resources. Planning allows a person to prioritize traffic, applications, data flows, users, and network resources, thus ensuring optimal performance. Additionally, planning reduces costs and the need to invest in link expansion.
+QoS makes it possible to plan and manage network resources. Planning allows a person to prioritize traffic, applications, data flows, users, and network resources, thus ensuring optimal performance. Additionally, planning reduces costs and the need to invest in link expansion.
 
 4.	QoS enhances user experience. Since QoS guarantees the optimal performance of critical applications, enterprises that utilize the technology report an increase in employee performance and satisfaction. This results in tasks being completed to the required standards and in due time. 
 
