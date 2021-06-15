@@ -316,7 +316,7 @@ To prove that it is only the entry point is compiled and not the resources found
 
 We can do this in two ways.
 
-- In the first, we can add the resources in the command line using the `--resources` or `-r` as seen below:
+- First, we can add the resources in the command line using the `--resources` or `-r` flag as seen below:
 
 ```bash
 nexe -r "views/**/*"
