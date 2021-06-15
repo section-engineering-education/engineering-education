@@ -255,7 +255,7 @@ Run the application using the following command on the terminal to get "Server a
 node index.js
 ```
 
-Open a browser and in the URL section access the app using `localhost:5000`. This shows it is functioning.
+Open a browser and open the app by visiting `localhost:5000`.
 Once done, let's see how each module operates.
 
 ### nexe
