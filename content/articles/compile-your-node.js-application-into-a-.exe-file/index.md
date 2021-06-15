@@ -397,10 +397,7 @@ Just wait for some time for the process to complete. Head over to the main direc
 - for Linux (index-linux)
 - for mac (index-macos)
 
-That is because we did not specify one O/S.
-Run the file suitable for your O/S.
-If you are using Ubuntu, run `./index-linux` on the terminal.
-It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
+That is because we did not specify an operating system. Run the file that's suitable for your operating system. If you are using Ubuntu, run `./index-linux` on the terminal. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
 
 > **NOTE:** As long as the executable file is running, the application is running.
 
