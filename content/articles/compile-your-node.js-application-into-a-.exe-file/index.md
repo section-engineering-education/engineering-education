@@ -56,9 +56,11 @@ Executable files (.exe files): These are files containing a set of encoded instr
 
 Let us see why the users prefer executable files in the first place. Some advantages of the executable files include:
 
-- **Quick no-code execution:** This is because it only requires one to run the file and that's it. No codes are needed to be run on the terminal for it to be deployed.
+- **Quick no-code execution:** It only requires one click to run the file and that's it. Commands are not required to be run on the terminal to execute the program.
+
 - **Prevent unwanted code change:** It prevents unwanted errors generated due to unplanned and accidental modification of source code.
-- **Supports distribution:** You can run it on any machine. One doesn't need to install any packages or dependencies, just running it. This allows one to run multiple instances of the code on any machine without further requirements.
+
+- **Supports distribution:** You can run it on any machine. The user doesn't have to install any packages or dependencies. This allows one to run multiple instances of the code on any machine without further requirements.
 
 ### Packages used
 
