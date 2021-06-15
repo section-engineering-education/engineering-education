@@ -352,7 +352,7 @@ To start the build process, use the following command:
 npm --build
 ```
 
-You can run the file created. You can also copy it to another different directory without any resources and try running it to verify that the resources were compiled into the executable file.
+You can run the file that's created. You can also copy it to another directory without any resources and try running it to verify that the resources were compiled into the executable file.
 
 In case of further errors, you can post them in the [nexe issues tab](https://github.com/nexe/nexe/issues "nexe issues tab") for help.
 
