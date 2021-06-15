@@ -339,7 +339,7 @@ Head over to the "package.json" file and under the scripts tag, add a build scri
 }
 ```
 
-This shall specify our resources which are locally found during the build time.
+This will specify our resources which are locally found during the build time.
 Now run the command below to tell `nexe` to use the specifications in the build tag:
 
 ```bash
