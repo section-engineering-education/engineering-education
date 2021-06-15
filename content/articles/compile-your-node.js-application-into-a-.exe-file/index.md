@@ -96,7 +96,7 @@ The folder structure of the application will look as shown below:
 │   └── images (folder)
 │       └── tv1.jpg (file)
 │   └── index.html (file)
-│   └── sakura.css (file)
+│   └── style.css (file)
 ├──  index.js (file)
 └──  package.json (file)
 ```
@@ -120,7 +120,7 @@ The HTML markup code is as follows:
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercutable Files</title>
-    <link rel="stylesheet" href="sakura.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -142,7 +142,7 @@ The HTML markup code is as follows:
 </html>
 ```
 
-##### sakura.css
+##### style.css
 
 ```css
 html {
