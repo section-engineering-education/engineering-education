@@ -50,9 +50,7 @@ If you are all set on the above requirements, let's look at some packages with w
 
 Executable files (.exe files): These are files containing a set of encoded instructions which are executed sequentially once the user clicks on the file or runs it.
 
-`.exe` is a Windows extension referring to an executable file.
-Equivalent to the `.exe files` in linux or Unix systems are the files ending with the `.bin`, `.elf` or `[none]` extensions.
-In macOS, they lack extensions.
+`.exe` is a Windows extension referring to an executable file. In Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables. In macOS, they lack extensions.
 
 ### Pros of executable files
 
