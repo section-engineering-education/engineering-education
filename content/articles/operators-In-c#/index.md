@@ -213,7 +213,7 @@ The following are the relational operators:
 2. **Not Equal To** (`!=`) The operator determines if the two operands are equal.The output is true if it's wrong. False is returned otherwise. It's the `==` operator's exact boolean complement. 5!=5 will, for example, return false.
 3. **Greater Than** (`>`): This operator detects whether the first operand is bigger than the second. It returns true if this is the case.
 4. **Less Than** (`<`): If the first operand is smaller than the second, the operator determines. If this is the case, it returns true. Otherwise, false is returned. 65.5, for instance, will return false.
-5. ***Greater Than Equal To** (`>=`). This operator detects if the first operand exceeds or equals the second operand If so, the output  output will be true.. Otherwise, false is returned. 5>=5 will, for example, yield true.
+5. **Greater Than Equal To** (`>=`). This operator detects if the first operand exceeds or equals the second operand If so, the output  output will be true.. Otherwise, false is returned. 5>=5 will, for example, yield true.
 6. **Less Than Equal To** (`<=`) The operator detects if the first operand is equal to or below the second operand. If so, the output will be true. Otherwise, false is returned. 5=5 will, for example, also yield true.
 
 The program below shows all the relational operators in use:
