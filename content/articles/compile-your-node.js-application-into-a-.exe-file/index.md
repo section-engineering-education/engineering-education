@@ -109,7 +109,7 @@ Inside the image folder, download a free 760 × 380 tv image from the web and na
 
 ##### index.html
 
-The code is as follows:
+The HTML markup code is as follows:
 
 ```html
 <!DOCTYPE html>
