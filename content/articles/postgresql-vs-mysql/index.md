@@ -5,7 +5,7 @@ published: true
 url: /postgresql-vs-mysql/
 title: PostgreSQL vs MySQL
 description: This article will highlight the two different technologies used in data storage, MySQL and PostgreSQL. We will explore the various features that define these technologies. We will highlight the difference between the two technologies and finally conclude which is a better solution. 
-author: rabo-james-bature
+<!-- author: To be filled  -->
 date: 2021-06-16T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
