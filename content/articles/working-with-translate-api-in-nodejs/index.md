@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /working-with-translate-api-in-nodejs/
-title: Getting Started with Google translate API
+title: Getting Started with Google Translate API
 description: This article will provide a step-by-step process of developing a text translation application using Google Translate API in a Node.js application.
 author: mercy-meave
-date: 2021-06-16T00:00:00-10:00
+date: 2021-06-16T00:00:00-15:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
