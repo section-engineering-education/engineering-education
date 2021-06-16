@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /concept-of-first-hop-redundancy-protocol/
 title: Concept of First Hop Redundancy Protocol
-description: In this article we will discuss FHRP in detail and how it is used to achieve redundancy in networks. First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime. 
+description: In this article, we will discuss FHRP in detail and how it is used to achieve redundancy in networks. First Hop redundancy Protocol (FHRP) presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime. 
 author: rabo-james-bature
 date: 2021-06-10T00:00:00-18:00
 topics: [Networking]
@@ -16,7 +16,7 @@ images:
 ---
 Organizations use various protocols to prevent a single point failure in their networks. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime.
 <!--more-->
-This article will look at how FHRP is used to achieve redundancy in networks, variety of FHRP, and then configure Hot Standby Redundancy Protocol (HSRP), a Cisco proprietary protocol used in the implementation of FHRP.
+This article will look at how FHRP is used to achieve redundancy in networks, variety of FHRP, and then configure Hot Standby Redundancy Protocol (HSRP), a Cisco proprietary protocol used to implement FHRP.
 
 ### Table of contents
 
@@ -112,7 +112,7 @@ The following steps are used to configure a standby router.
 2.	To configure the HSRP IP address, using the ```standby 2 ip 172.10.1.10``` . This command sets the standby group number to 2, and the virtual address, which will be the default gateway for all devices on this group, is set to '172.10.1.10'.
 This router takes over the forwarding of the packet only when the active router fails.
 ![standby router configuration on a Cisco router](concept-of-first-hop-redundancy-protocol/stanby.jpeg)
-The image above shows the configuration of a standby router
+The image above shows the configuration of a standby router.
 
 To summarize, the reader has learned the following:
 - What a default gateway is
