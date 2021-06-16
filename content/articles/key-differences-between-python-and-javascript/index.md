@@ -10,6 +10,7 @@ date: 2021-06-16T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/key-differences-between-python-and-javascript/hero.png
     alt: Key Differences between Python and JavaScript
 ---
