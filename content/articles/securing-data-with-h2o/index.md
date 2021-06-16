@@ -53,12 +53,12 @@ For any security mechanism to become stable, generation of authentication files 
 ### Instance Internal Security
 One noticeable SSL internode security change is when false becomes true as shown below.  
 
-![Connection without internal security: false](/engineering-education/content/articles/h2o-security-implementation/false.jpg)    
+![Connection without internal security: false](/engineering-education/securing-data-with-h2o/false.jpg)    
 _Connection without internal security._  
 
 After following Standalone/AWS and Java instructions, a message with a specific URL dedicated to H<sub>2</sub>O appears and can be used for `h2o.init()`.  
 
-![Connection with internal security: true](/engineering-education/content/articles/h2o-security-implementation/true.jpg)    
+![Connection with internal security: true](/engineering-education/securing-data-with-h2o/true.jpg)    
 _Connection with internal security._  
 
 Data access is not universal. If a database is used, permissions can also limit who can gain specific data access when logging in and during active state.  
