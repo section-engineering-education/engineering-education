@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-### Prequesties
-
-The readers should know:
-
-- [Network traffic](https://www.fortinet.com/resources/cyberglossary/network-traffic)
-
-- [Layers 3 of the OSI Model](https://www.infoblox.com/glossary/layer-3-of-the-osi-model-network-layer/)
-
-### Understanding Quality of Service (QoS)
-
-Networks have become an important asset in todays world. Users of a network can share files, data and other types of information with oneanother over a network. Thus one can optimize their network to ensure that it performs at its full potential. QoS is an essential set of technologies that allows one to optimize their network so that it can run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
-=======
 ---
 layout: engineering-education
 status: publish
@@ -29,6 +16,19 @@ images:
 ---
 QoS is an essential set of technologies that allows one to optimize their network to run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
 <!--more-->
+
+### Prequesties
+
+The readers should know:
+
+- [Network traffic](https://www.fortinet.com/resources/cyberglossary/network-traffic)
+
+- [Layers 3 of the OSI Model](https://www.infoblox.com/glossary/layer-3-of-the-osi-model-network-layer/)
+
+### Understanding Quality of Service (QoS)
+
+Networks have become an important asset in todays world. Users of a network can share files, data and other types of information with oneanother over a network. Thus one can optimize their network to ensure that it performs at its full potential. QoS is an essential set of technologies that allows one to optimize their network so that it can run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources.
+
 
 ### Understanding Quality of Service (QoS)
 
