@@ -13,10 +13,8 @@ images:
   - url: /engineering-education/working-with-translate-api/hero.png
     alt: Getting Started with Google translate API
 ---
-
-### Introduction
 Google Translate is a multilingual language translation service developed by Google to translate text, words, phrases and, documents from one language to another. Google translates supports over 109 languages across the globe.
-
+<!--more-->
 Google has further developed a language translation API that comes with pre-trained Machine Learning models to use in both mobile and web applications. The API is fast enough to translate given text from one language to another in real-time.
 
 ### Table of contents
@@ -55,14 +53,14 @@ npm init -y
 The `npm init -y` command creates a `package.json` file for our application. The `package.json` will hold the project's metadata that includes development dependencies, executable scripts, application name, and versions.
 
 ### Installing the required dependencies
-Next, we will install the required dependencies. 
+Next, we will install the required dependencies. 
 
 Apart from the `express` backend framework we need to install the `google-translate-api` API dependency for translating text supplied. We also need `body-parser` to parser HTML and `ejs`  as a templating engine. Last, we need `nodemon` to constantly watch our application as we develop.
 
 Run the following command in your terminal to install the dependencies required by the application:
 
 ```bash
-npm install –save express body-parser ejs @vitalets/google-translate-api nodemon, 
+npm install –save express body-parser ejs @vitalets/google-translate-api nodemon, 
 ```
 
 ### Import the dependencies
@@ -81,7 +79,7 @@ const ejs = require('ejs');
 // translate api
 const translate = require('@vitalets/google-translate-api');
 
-//init our application 
+//init our application 
 const app = express()
 ```
 
@@ -107,75 +105,75 @@ We also need a submit button that will submit the request to the route specified
 ```html
 <!-- enter text to translate area -->
 <div class="col-sm-6">
-    <div class="card">
-        <div class="card-header bg-primary">
-            <h5 class="card-title text-light">SOURCE TEXT</h5>
-        </div>
-        <div class="card-body">
-            <form action="/translate" method="POST">
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Enter Source Text</label>
-                    <textarea class="form-control" id="text" name="text" rows="2"></textarea>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="format">Select Language of Voice:</label>
-                    <select class="form-control" name="language" id="">
-                    <option value="af">Afrikaans</option>
-                    <option value="sq">Albanian</option>
-                    <option value="ar">Arabic</option>
-                    <option value="hy">Armenian</option>
-                    <option value="ca">Catalan</option>
-                    <option value="zh">Chinese</option>
-                    <option value="hr">Croatian</option>
-                    <option value="cs">Czech</option>
-                    <option value="da">Danish</option>
-                    <option value="nl">Dutch</option>
-                    <option value="en" selected>English</option>
-                    <option value="en-au">English (Australia)</option>
-                    <option value="en-uk">English (United Kingdom)</option>
-                    <option value="en-us">English (United States)</option>
-                    <option value="eo">Esperanto</option>
-                    <option value="fi">Finnish</option>
-                    <option value="fr">French</option>
-                    <option value="de">German</option>
-                    <option value="el">Greek</option>
-                    <option value="ht">Haitian Creole</option>
-                    <option value="hi">Hindi</option>
-                    <option value="hu">Hungarian</option>
-                    <option value="is">Icelandic</option>
-                    <option value="id">Indonesian</option>
-                    <option value="it">Italian</option>
-                    <option value="ja">Japanese</option>
-                    <option value="ko">Korean</option>
-                    <option value="la">Latin</option>
-                    <option value="lv">Latvian</option>
-                    <option value="mk">Macedonian</option>
-                    <option value="no">Norwegian</option>
-                    <option value="pl">Polish</option>
-                    <option value="pt">Portuguese</option>
-                    <option value="pt-br">Portuguese (Brazil)</option>
-                    <option value="ro">Romanian</option>
-                    <option value="ru">Russian</option>
-                    <option value="sr">Serbian</option>
-                    <option value="sk">Slovak</option>
-                    <option value="es">Spanish</option>
-                    <option value="es-es">Spanish (Spain)</option>
-                    <option value="es-us">Spanish (United States)</option>
-                    <option value="sw">Swahili</option>
-                    <option value="sv">Swedish</option>
-                    <option value="ta">Tamil</option>
-                    <option value="th">Thai</option>
-                    <option value="tr">Turkish</option>
-                    <option value="vi">Vietnamese</option>
-                    <option value="cy">Welsh</option>
-                    </select>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h5 class="card-title text-light">SOURCE TEXT</h5>
+        </div>
+        <div class="card-body">
+            <form action="/translate" method="POST">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Enter Source Text</label>
+                    <textarea class="form-control" id="text" name="text" rows="2"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="format">Select Language of Voice:</label>
+                    <select class="form-control" name="language" id="">
+                    <option value="af">Afrikaans</option>
+                    <option value="sq">Albanian</option>
+                    <option value="ar">Arabic</option>
+                    <option value="hy">Armenian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hr">Croatian</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en" selected>English</option>
+                    <option value="en-au">English (Australia)</option>
+                    <option value="en-uk">English (United Kingdom)</option>
+                    <option value="en-us">English (United States)</option>
+                    <option value="eo">Esperanto</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="el">Greek</option>
+                    <option value="ht">Haitian Creole</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="is">Icelandic</option>
+                    <option value="id">Indonesian</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="la">Latin</option>
+                    <option value="lv">Latvian</option>
+                    <option value="mk">Macedonian</option>
+                    <option value="no">Norwegian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="pt-br">Portuguese (Brazil)</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="es">Spanish</option>
+                    <option value="es-es">Spanish (Spain)</option>
+                    <option value="es-us">Spanish (United States)</option>
+                    <option value="sw">Swahili</option>
+                    <option value="sv">Swedish</option>
+                    <option value="ta">Tamil</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="cy">Welsh</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
 ```
 
@@ -184,17 +182,17 @@ Second, on the user interface, we need a blank space where the translated text w
 ```html
 <!-- Translated text area -->
 <div class="col-sm-6">
-    <div class="card">
-        <div class="card-header bg-success">
-            <h5 class="card-title text-light">TRANSLATED TEXT</h5>
-        </div>
-        <div class="card-body">  
-           
-            <textarea class="form-control text-success" name="translated" id="translated" cols="30" rows="9">
-                <!-- Here is where we will display the translated text --> 
-            </textarea>                  
-        </div>
-    </div>
+    <div class="card">
+        <div class="card-header bg-success">
+            <h5 class="card-title text-light">TRANSLATED TEXT</h5>
+        </div>
+        <div class="card-body">  
+           
+            <textarea class="form-control text-success" name="translated" id="translated" cols="30" rows="9">
+                <!-- Here is where we will display the translated text --> 
+            </textarea>                  
+        </div>
+    </div>
 </div>
 ```
 ![User Interface](/engineering-education/working-with-translate-api-in-nodejs/user-interface.png)
@@ -204,16 +202,14 @@ We will need two routes. The first route will render the index page that holds t
 The first route is a get request, while the second route is a post request.
 
 #### Get webpage Route
-This route gets the `index.ejs` where the form is. 
-
-From the page, a user can enter text to translate and view translation results. 
+This route gets the `index.ejs` where the form is. From the page, a user can enter text to translate and view translation results. 
 
 Add the snippets below in the `index.js` file to handle get route:
 
 ```js
 //index route
 app.get('/', (req, res) =>{
-    res.render('index.ejs');
+    res.render('index.ejs');
 });
 ```
 
@@ -224,81 +220,81 @@ Add the snippets below to handle posted data from the form:
 
 ```js
 // post the form data to post route
-app.post('/translate', (req, res) => { 
-    // get form data from the request body 
+app.post('/translate', (req, res) => { 
+    // get form data from the request body 
     // text entered by the user
-    const text = req.body.text
+    const text = req.body.text
 
     // destination language
-    const language = req.body.language
+    const language = req.body.language
 })
 ```
 
-### Translating the fetched text
-After the form data is posted, the body parser fetches the data in the post route. 
+### Translating the fetched text
+After the form data is posted, the body parser fetches the data in the post route. 
 
-Next, we need to call the `translate` method to translate the given text into the given language.
+Next, we need to call the `translate` method to translate the given text into the given language.
 
-Add the snippets below in the post route to enable the translation:
-
-```js
-// call translate method with the text and language as parameters
-translate(text, {to: language})
-```
-
-### Send back the translated text to the webpage
-After translating the provided text, we need to send the translated text back to the webpage so that the user can see it. 
-
-The line of code below renders the webpage and sends the translation response with it:
+Add the snippets below in the post route to enable the translation:
 
 ```js
-// render the page with translation response as data
-res.render('index.ejs', {translatedText:response.text})
+// call translate method with the text and language as parameters
+translate(text, {to: language})
 ```
-### Displaying the translated text on the user interface
-We need to capture the result of translation sent by the render method from the server. This is easier when we use `ejs` templating engine. Since we capture the result in a text area, we will add the following code in the inner HTML of the textarea where it will display the response:
+
+### Send back the translated text to the webpage
+After translating the provided text, we need to send the translated text back to the webpage so that the user can see it. 
+
+The line of code below renders the webpage and sends the translation response with it:
+
+```js
+// render the page with translation response as data
+res.render('index.ejs', {translatedText:response.text})
+```
+### Displaying the translated text on the user interface
+We need to capture the result of translation sent by the render method from the server. This is easier when we use `ejs` templating engine. Since we capture the result in a text area, we will add the following code in the inner HTML of the textarea where it will display the response:
 
 ```html
-<div class="col-sm-6">
-    <div class="card">
-        <div class="card-header bg-success">
-            <h5 class="card-title text-light">TRANSLATED TEXT</h5>
-        </div>
-        <div class="card-body">  
-            <!-- Notice how we bring in the response data sent as we render the same page by the request -->
-            <textarea class="form-control text-success" name="translated" id="translated" cols="30" rows="9"><%=translatedText%></textarea>                  
-        </div>
-    </div>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-header bg-success">
+            <h5 class="card-title text-light">TRANSLATED TEXT</h5>
+        </div>
+        <div class="card-body">  
+            <!-- Notice how we bring in the response data sent as we render the same page by the request -->
+            <textarea class="form-control text-success" name="translated" id="translated" cols="30" rows="9"><%=translatedText%></textarea>                  
+        </div>
+    </div>
 </div>
 ```
 
-### Running the server
+### Running the server
 Let's test run our application, add the following to the `index.js` file:
 
 ```js
-// Port variable
-const PORT = process.env.PORT || 3000;
+// Port variable
+const PORT = process.env.PORT || 3000;
 
-// listen for connections
-app.listen(PORT, () =>{
-    console.log(`App running on port ${PORT}`)
+// listen for connections
+app.listen(PORT, () =>{
+    console.log(`App running on port ${PORT}`)
 })
 ```
 
 The code above specify the `PORT NUMBER` onto which the application runs and listens for incoming requests. Run the command `nodemon start` in your terminal to start the server.
 
-The application should be live on your browser via localhost on port 3000 and should be able to translate any given accurate text like:
+The application should be live on your browser via localhost on port 3000 and should be able to translate any given accurate text like:
 
-![Select Language](/engineering-education/working-with-translate-api-in-nodejs/choose-language.png)
+![Select Language](/engineering-education/working-with-translate-api-in-nodejs/choose-language.png)
 
-![Translated Text](/engineering-education/working-with-translate-api-in-nodejs/after-translation.png)
+![Translated Text](/engineering-education/working-with-translate-api-in-nodejs/after-translation.png)
 
-### Conclusion and Further Reading
-In this article, we learned how to use Google Translate API to build a text translation application in `Node.js`. You can find the complete code [here](https://github.com/mercymeave/code-space/tree/main/goohle-translate-api). 
+### Conclusion and Further Reading
+In this article, we learned how to use Google Translate API to build a text translation application in `Node.js`. You can find the complete code [here](https://github.com/mercymeave/code-space/tree/main/goohle-translate-api). 
 
-To find more about the topic, you can check the following resources:
-- [Google Translation](https://cloud.google.com/translate)
-- [Translation Package For NodeJS](https://www.npmjs.com/package/@vitalets/google-translate-api)
+To find more about the topic, you can check the following resources:
+- [Google Translation](https://cloud.google.com/translate)
+- [Translation Package For NodeJS](https://www.npmjs.com/package/@vitalets/google-translate-api)
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
