@@ -399,3 +399,6 @@ You can find more about social authentication from the links below:
 - [Social Authentication with Flutter](https://firebase.flutter.dev/docs/auth/social/)
 - [Flutter Facebook Auth](https://pub.dev/packages/flutter_facebook_auth)
 - [Using Google Sign In](https://pub.dev/packages/google_sign_in)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
