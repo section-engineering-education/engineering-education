@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true 
-url: /engineering-education/how-sweet-is-kubernetes/
+url: /how-sweet-is-kubernetes/
 title: How Sweet is Kubernetes?
 description: This article simplifies concepts of Kubernetes. It starts with demystifying the basic concept of micro-service using Fleetman Tracking Application which is built on a simple micro-service architecture, using it further to explain the concepts of Kubernetes.
 author: qoyum-yusuf
