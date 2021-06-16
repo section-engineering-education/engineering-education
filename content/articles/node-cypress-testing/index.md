@@ -169,3 +169,7 @@ Those are just a few tests you can carry out using cypress. There are methods li
 Cypress makes testing easy for developers and ensures you follow a clean TDD approach when creating your applications. You can find the source code for this tutorial on [Github](https://github.conm/LinusMuema/cypress-testing).
 
 Have fun coding!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
