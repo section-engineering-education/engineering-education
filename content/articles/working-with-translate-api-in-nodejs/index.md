@@ -2,24 +2,24 @@
 layout: engineering-education
 status: publish
 published: true
-url: /working-with-translate-api/
+url: /working-with-translate-api-in-nodejs/
 title: Getting Started with Google translate API
-description: This article will provide a step by step processing of developing a text translation application using Google Translate API in a Node.js application.
+description: This article will provide a step-by-step process of developing a text translation application using Google Translate API in a Node.js application.
 author: mercy-meave
 date: 2021-06-16T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/working-with-translate-api/hero.png
-    alt: GGetting Started with Google translate API
+    alt: Getting Started with Google translate API
 ---
 
 ### Introduction
-Google Translate is a multilingual language translation service developed by Google to translate text, words, phrases and, documents from one language to another. According to Wikipedia, Google translates supports over 109 languages across the globe.
+Google Translate is a multilingual language translation service developed by Google to translate text, words, phrases and, documents from one language to another. Google translates supports over 109 languages across the globe.
 
-Google has further developed a language translation API that comes with pre-trained Machine Learning models for use in both mobile and web applications. The API is fast enough to translate given text from one language to another in real-time.
+Google has further developed a language translation API that comes with pre-trained Machine Learning models to use in both mobile and web applications. The API is fast enough to translate given text from one language to another in real-time.
 
-### Table of content
+### Table of contents
 - [Goal](#goal)
 - [Initialize the application](#initialize-the-application)
 - [Installing the required dependencies](#installing-the-required-dependencies)
@@ -39,30 +39,35 @@ Google has further developed a language translation API that comes with pre-trai
 In this article, we will go over a step-by-step development of a text translation application using Google Translate API in `Node.js`. In the end, the reader should be able to fully integrate Google Translate API into a Node.js application.
 
 ### Prerequisites
-- You will need to have [Node.js](https://nodejs.org/en/) installed on your computer.
-- A basic understanding of Node.js, javascript and express.
-- A code editor. I will be using [Visual studio code](https://code.visualstudio.com/download). 
+The reader needs to have:
+- [Node.js](https://nodejs.org/en/) installed on your computer.
+- A basic understanding of Node.js, javascript, and express.
+- A code editor. I will use [Visual studio code](https://code.visualstudio.com/download). 
 - A browser to test the application routes.
 
-### Initialize  the application
+### Initialize the application
 We will initialize the application by running the following command:
+
 ```bash
 npm init -y
 ```
+
 The `npm init -y` command creates a `package.json` file for our application. The `package.json` will hold the project's metadata that includes development dependencies, executable scripts, application name, and versions.
 
 ### Installing the required dependencies
 Next, we will install the required dependencies. 
 
->Apart from the `express` backend framework we need to install the `google-translate-api` API dependency for translating text supplied. We also need `body-parser` to parser HTML and `ejs`  as a templating engine. Lastly, we need `nodemon` to constantly watch our application as we develop.
+Apart from the `express` backend framework we need to install the `google-translate-api` API dependency for translating text supplied. We also need `body-parser` to parser HTML and `ejs`  as a templating engine. Last, we need `nodemon` to constantly watch our application as we develop.
 
-Run the following command in your terminal to install the dependencies required by the application.
+Run the following command in your terminal to install the dependencies required by the application:
 
 ```bash
 npm install –save express body-parser ejs @vitalets/google-translate-api nodemon, 
 ```
+
 ### Import the dependencies
-In the root folder of the application, create a new file named `index.js` and add the snippets below:
+In the root folder of the application, create a new file named `index.js` and add the following:
+
 ```js
 // bring in express
 const express = require('express');
@@ -81,7 +86,8 @@ const app = express()
 ```
 
 ### Application setup
-Here we are going to set up the template engine (I used `ejs`), public folder for `css` and `javascript` files and the `body-parser` middleware. We use`body-parser` to parse HTTP request body.
+Here we are going to set up the template engine (I used `ejs`), public folder for `css` and `javascript` files and the `body-parser` middleware. We use `body-parser` to parse HTTP request body.
+
 ```js
 //setup template engine
 app.set('view-engine', 'html');
@@ -93,9 +99,11 @@ app.use(express.static(__dirname + '/public'));
 //body parser middleware
 app.use(express.urlencoded({extended:true}));
 ```
+
 ### The user Interface
-We need to have a form with two fields. The first field is where the user enters the text to translate, and another field is a select dropdown to choose which language they want the text entered to be translated into.
+We need to have a form with two fields. The first field is where the user enters the text to translate, and another field is a select drop-down to choose which language they want the text entered to be translated into.
 We also need a submit button that will submit the request to the route specified by the form.
+
 ```html
 <!-- enter text to translate area -->
 <div class="col-sm-6">
@@ -171,7 +179,8 @@ We also need a submit button that will submit the request to the route specified
 </div>
 ```
 
-Secondly, on the user interface, we need a blank space where the translated text will appear after the request from the form is processed successfully. Add the code snippets below under the form to build the space for the translated text.
+Second, on the user interface, we need a blank space where the translated text will appear after the request from the form is processed successfully. Add the code snippets below under the form to build the space for the translated text:
+
 ```html
 <!-- Translated text area -->
 <div class="col-sm-6">
@@ -188,16 +197,19 @@ Secondly, on the user interface, we need a blank space where the translated text
     </div>
 </div>
 ```
-![User Interface](/engineering-education/working-with-translate-api/user-interface.png)
+![User Interface](/engineering-education/working-with-translate-api-in-nodejs/user-interface.png)
 
 ### Working on the Application Routes
-We will need two routes. The first route will be used to render the index page that holds the form used to enter the text to translate, while the second route will handle the form data to be processed by the translation API.
-The first route is a get request, while the second route is a post request route.
+We will need two routes. The first route will render the index page that holds the form used to enter the text to translate, while the second route will handle the form data to be processed by the translation API.
+The first route is a get request, while the second route is a post request.
 
 #### Get webpage Route
-This route gets the `index.ejs` where the form is. From the page, a user can enter text to translate and view translation results as well. 
+This route gets the `index.ejs` where the form is. 
 
-Add the snippets below in the `index.js` file to handle get route.
+From the page, a user can enter text to translate and view translation results. 
+
+Add the snippets below in the `index.js` file to handle get route:
+
 ```js
 //index route
 app.get('/', (req, res) =>{
@@ -205,10 +217,11 @@ app.get('/', (req, res) =>{
 });
 ```
 
-#### Post Form Data Route
-This route is responsible for capturing form data from the frontend and bring for processing in the backend. With the help of the body-parser middleware, this route extracts the values posted to it by the form.
+#### Post form data Route
+This route captures form data from the frontend and brings it to the backend for processing. With the help of the body-parser middleware, this route extracts the values posted to it by the form.
 
 Add the snippets below to handle posted data from the form:
+
 ```js
 // post the form data to post route
 app.post('/translate', (req, res) => { 
@@ -221,24 +234,30 @@ app.post('/translate', (req, res) => { 
 })
 ```
 
-### Translating the fetched text
-After the form data is posted, the body-parser fetches the data in the post route. Next, we need to call the `translate` method to translate the given text into the given language.
-Add the snippets below in the post route to enable the translation.
+### Translating the fetched text
+After the form data is posted, the body parser fetches the data in the post route. 
+
+Next, we need to call the `translate` method to translate the given text into the given language.
+
+Add the snippets below in the post route to enable the translation:
+
 ```js
 // call translate method with the text and language as parameters
 translate(text, {to: language})
 ```
 
-### Send back the translated text to the webpage
-After translating the provided text, we need to send the translated text back to the webpage so that the user can see the result of the translation. 
-The line of code below is responsible for rendering the webpage as well as sending the translation response with it.
+### Send back the translated text to the webpage
+After translating the provided text, we need to send the translated text back to the webpage so that the user can see it. 
+
+The line of code below renders the webpage and sends the translation response with it:
+
 ```js
 // render the page with translation response as data
 res.render('index.ejs', {translatedText:response.text})
 ```
+### Displaying the translated text on the user interface
+We need to capture the result of translation sent by the render method from the server. This is easier when we use `ejs` templating engine. Since we capture the result in a text area, we will add the following code in the inner HTML of the textarea where it will display the response:
 
-### Displaying the translated text on the user Interface
-We need to capture the result of translation sent by the render method from the server. This is easier done when we use `ejs` templating engine. Since we capture the result in a text area, we will add the following code in the inner HTML of the textarea where the response is to be displayed.
 ```html
 <div class="col-sm-6">
     <div class="card">
@@ -253,8 +272,8 @@ We need to capture the result of translation sent by the render meth
 </div>
 ```
 
-### Running the server
-To test run the application, add the block of code snippets below in the `index.js` file. The snippets specify the `PORT NUMBER` onto which the application runs and listens for incoming requests. Run the command `nodemon start` in your terminal to start the server.
+### Running the server
+Let's test run our application, add the following to the `index.js` file:
 
 ```js
 // Port variable
@@ -265,17 +284,21 @@ app.listen(PORT, () =>{
     console.log(`App running on port ${PORT}`)
 })
 ```
-The application should be live on your browser via localhost on port 3000 and should able to translate any given accurate text like below:
-![Select Language](/engineering-education/working-with-translate-api/choose-language.png)
-![Translated Text](/engineering-education/working-with-translate-api/after-translation.png)
 
+The code above specify the `PORT NUMBER` onto which the application runs and listens for incoming requests. Run the command `nodemon start` in your terminal to start the server.
 
-### Conclusion and Further Reading
-In this article, we learned how to use Google Translate API to build a text translation application in `Node.js`. You can find the complete code of the implementation [here](https://github.com/mercymeave/code-space/tree/main/goohle-translate-api). 
+The application should be live on your browser via localhost on port 3000 and should be able to translate any given accurate text like:
 
-To find more about the topic, you can check the resources in the following links:
-- Google Translation: https://cloud.google.com/translate
-- Translation Package For NodeJS: https://www.npmjs.com/package/@vitalets/google-translate-api
+![Select Language](/engineering-education/working-with-translate-api-in-nodejs/choose-language.png)
+
+![Translated Text](/engineering-education/working-with-translate-api-in-nodejs/after-translation.png)
+
+### Conclusion and Further Reading
+In this article, we learned how to use Google Translate API to build a text translation application in `Node.js`. You can find the complete code [here](https://github.com/mercymeave/code-space/tree/main/goohle-translate-api). 
+
+To find more about the topic, you can check the following resources:
+- [Google Translation](https://cloud.google.com/translate)
+- [Translation Package For NodeJS](https://www.npmjs.com/package/@vitalets/google-translate-api)
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
