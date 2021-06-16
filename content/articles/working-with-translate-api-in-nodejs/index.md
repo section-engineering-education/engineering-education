@@ -10,7 +10,8 @@ date: 2021-06-16T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/working-with-translate-api/hero.png
+
+  - url: /engineering-education/working-with-translate-api-in-nodejs/hero.png
     alt: Getting Started with Google translate API
 ---
 Google Translate is a multilingual language translation service developed by Google to translate text, words, phrases and, documents from one language to another. Google translates supports over 109 languages across the globe.
