@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-social-auth/
+title: Getting started with Flutter social authentication
+description: This article will explain a step by step process of implementing social authentication in a Flutter application
+author: jerim-kaura
+date: 2021-06-16T00:00:00-09:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/flutter-social-auth/hero.jpg
+   alt: Getting started with Flutter social authentication
+---
+
 ### Introduction
 Social authentication is an authentication technique in which one uses an existing account to log into or create a new account in another application. Besides levying a user on constantly remembering multiple passwords, social authentication ease the registration process and improves security.
 Google provides a platform for integrating social authentication with Firebase. A programmer only needs to generate a SHA1 key and configure it with his/ her machine.
