@@ -260,3 +260,6 @@ In this article, we learned how to use Google Translate API to build
 To find more about the topic, you can check the resources in the following links:
 - Google Translation: https://cloud.google.com/translate
 - Translation Package For NodeJS: https://www.npmjs.com/package/@vitalets/google-translate-api
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
