@@ -2,20 +2,18 @@
 layout: engineering-education
 status: publish
 published: true
-url:
-title:
-description:  
+url: /securing-data-with-h2o/
+title: Securing Data with H2o
+description:  H2o is a library that is used to analyze descriptive and predictive trends in the field of data science. In this article we go over how H2o is uniquely suited to secure data.
 author:
 date:
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/
-    alt:
+  - url: /engineering-education/securing-data-with-h2o/hero.jpg
+    alt: H2o Data Security
 ---
-
-### Securing Data with H<sub>2</sub>O
 
 ### Introduction
 H<sub>2</sub>O is a library compatible with many coding languages including Python. This library can be used to analyze descriptive and predictive trends.
