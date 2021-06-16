@@ -5,7 +5,7 @@ Google has further developed a language translation API that comes with pre-trai
 
 ### Table of content
 - [Goal](#goal)
-- [Initialize  the application](#initialize-the-application)
+- [Initialize the application](#initialize-the-application)
 - [Installing the required dependencies](#installing-the-required-dependencies)
 - [Import the dependencies](#import-the-dependencies)
 - [Application setup](#application-setup)
