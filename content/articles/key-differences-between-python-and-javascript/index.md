@@ -2,29 +2,31 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/key-differences-between-python-and-javascript/
+url: /key-differences-between-python-and-javascript/
 title: Key Differences between Python and JavaScript
 description: This article will highlight some of the differences between Python and JavaScript. These two languages are used by many developers worldwide.
 author: joshua-wainaina
-date: 2021-06-17T00:00:00-13:00
+date: 2021-06-16T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/key-differences-between-python-and-javascript/hero.jpg
+  - url: /engineering-education/key-differences-between-python-and-javascript/hero.png
     alt: Key Differences between Python and JavaScript
 ---
-Python and JavaScript are important languages used in web development. Python can be used for backend development while JavaScript is for both frontend and backend development. This article analyses the key differences between these two languages.
+Python and JavaScript are important languages used in web development. Python can be used for backend development while JavaScript is used for both frontend and backend development. This article will analyze the key differences between these two languages.
 <!--more-->
- ### Real World application of Python and JavaScript.
+### Real world application of Python and JavaScript
 Python can be used in scientific and specialized applications, as well as in web development. However, JavaScript is widely used in web development.
 
-### Syntax, Sentactical and Functional Differences
-Python and JavaScript have different Syntax. This is demonstrated below:
+### Syntax, sentactical and functional differences
+Python and JavaScript have different Syntax. 
 
-####  Code blocks in Python and JavaScript 
+This is demonstrated below:
+
+#### Code blocks in Python and JavaScript 
 In Python, lines of code are put in blocks through indentation.
 
-**Example**
+Example
 ```python
 if  t  > 10:       
      print (t) #code block
@@ -41,8 +43,10 @@ if (t>10)
 }
 ```
 
-### Definition of Variables
-When defining a variable in Python, a variable name is written followed by an equal (=) sign. Then a value is assigned to the variable. i.e:
+### Definition of variables
+When defining a variable in Python, a variable name is written followed by an equal (=) sign. 
+
+Then a value is assigned to the variable. i.e:
 
 ```py
 <variable_name> = value
@@ -56,7 +60,7 @@ var <variable_name>  = value;
 var k=34;
 ```
 
-### Variable Naming Conventions
+### Variable naming conventions
 In Python, the `snake_case` naming style is used. The names should be in `lowercase` and separated by an `underscore`, as shown below.
 
 ```python
@@ -69,8 +73,8 @@ In JavaScript, `lowerCamelCase` is preferred. The variable name starts with a lo
 myFirstName
 ```
 
-### Constants in Python and JavaScript.
-In Python, constants are written in `uppercase` format separated by an underscore. ie. `CONSTANT_NAME`.
+### Constants in Python and JavaScript
+In Python, constants are written in `uppercase` format separated by an underscore. Such as `CONSTANT_NAME`.
 
 For example:
 
@@ -83,31 +87,34 @@ In JavaScript, a keyword `const` is added before the constant name and a semicol
 ```javascript
 const AGE=56;
 ```
+
 ### Data types and values in Python and JavaScript
 
-**Numeric data types**
-In Python, we have three numeric types that will assist us with accomplishing exact estimations for logical purposes. These are: 
+#### Numeric data types
+In Python, we have three numeric types that will assist us with accomplishing exact estimations for logical purposes. 
 
-1. [int] (https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#integers).  
-2. [float] ( https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#floating-point-numbers). 
-3. [complex] (https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#complex-numbers).
+These are: 
+1. [int](https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#integers).  
+2. [float](https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#floating-point-numbers). 
+3. [complex](https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.01-Numeric-Data-Types/#complex-numbers).
 
-In JavaScript, we have two numeric types i.e `Numbers `and `BigInt`. The two whole numbers and casting point numbers are just viewed as numbers. 
+In JavaScript, we have two numeric types, `Numbers `and `BigInt`. The two whole numbers and casting point numbers are just viewed as numbers. 
 
-1. [numbers] (https://www.tutorialsteacher.com/javascript/javascript-number)
-2. [bigint] (https://javascript.info/bigint)
+1. [numbers](https://www.tutorialsteacher.com/javascript/javascript-number)
+2. [bigint](https://javascript.info/bigint)
 
 ### None and Null in Python and JavaScript 
 In Python, when a variable doesn't have an assigned value, it is referred to as `None`. In JavaScript, we use `null` for such variables.
 
-### The Undefined Value
+### The undefined value
 In Python, one cannot declare a variable without an initial value. 
 
-In Javascript, we have a unique worth that is allocated consequently. When a variable is declared without assigning an initial value, it prints out `undefined`, as shown below; 
+In Javascript, we have a unique worth that is allocated consequently. When a variable is declared without assigning an initial value, it prints out `undefined`, as shown below: 
 
 ```JavaScript
 var k; // should print undefined
 ```
+
 ### Primitive data types
 Python has four primitive data types:
 1.  [Integers](https://www.codesansar.com/python-programming/fundamental-or-primitive-data-types.htm#integer).
@@ -132,6 +139,7 @@ In Python, a hashtag (`#`) is used to comment on a single line.
 ```python
 # this is a  single-line comment in python
 ```
+
 In JavaScript, double slashes (`//`) are used to comment on a single line, as shown below.
 
 ```javascript
@@ -147,6 +155,7 @@ These are comments spanning many lines. When writing multiple comments in python
 # comment
 # as used in Python`
 ```
+
 When writing multiple line comments in JavaScript, we use symbols (`/*`) to open and  (`*/`) to close a comment:
 
 ```javascript
@@ -155,6 +164,7 @@ When writing multiple line comments in JavaScript, we use symbols (`/*`) to open
 that span many lines
 */ 
 ```
+
 ### Built-in data structures
 1. Tuples
 Tuples in Python are similar to lists but immutable. They store information that should not be changed.
@@ -168,6 +178,7 @@ Lists are utilized in python to store a progression of qualities in a similar st
 ```py
 number = [3, 4,5]
 ```
+
 An array is the equivalent version of this in JavaScript.
 
 ```javascript
@@ -191,8 +202,8 @@ In JavaScript, a triple equivalent ('===') operator is utilized to check if two 
 5==='5'  //false
 ```
 
-### Logical Operators
-In python, there are three logical operators:  
+### Logical operators
+In Python, there are three logical operators:  
 1. and  
 2. or  
 3. not
@@ -202,7 +213,7 @@ JavaScript also has three logical operators:
 2. ||  -- logical or.
 3. !  --logical not.
 
-### Type Operators
+### Type operators
 To check the object type in Python, we use the (`type()`) function as shown below:
 
 ```python
@@ -214,7 +225,8 @@ To check the type of object in JavaScript we use `type of operator`, as highligh
 ```javascript
 type of instance
 ```
-### Inputs and Outputs
+
+### Inputs and outputs
 `Input` is a function that requests the user for some feedback.
 
 `Output`, on the other hand, is used to print out a specific message.
@@ -227,7 +239,7 @@ Example
 name = input (" Enter your name : ")
 ```
 
-In JavaScript, you can get user's input using a small prompt with `window.prompt(message)` and then assign the result to a variable.
+In JavaScript, you can get the user's input using a small prompt with `window.prompt(message)` and then assign the result to a variable.
 
 ```javascript
 var input =window.prompt ("enter a Number :")
@@ -262,6 +274,7 @@ In Python, indentation is relied upon to indicate the lines of code that belong 
 if condition:
      #code
 ```
+
 Let's look at an example:
 
 ```python
@@ -269,7 +282,7 @@ age = 10
 if age < 18:
     print('kid you are!')
 ```     
-'
+
 In JavaScript, the condition is enclosed in parenthesis and the code enclosed within curly braces:
 
 ```javascript
@@ -279,6 +292,7 @@ if (condition)
         code
     }
 ```
+
 An example of a JavaScript codesnippet would look like:
 
 ```javascript
@@ -325,6 +339,7 @@ else
         else code
     }
 ```
+
 Let's look at an example.
 
 ```javascript
@@ -335,6 +350,7 @@ if (time < 5) {
   task = "Feeding the sheep";
 }
 ```
+
 3. Multiple conditions 
 In Python, `elif` keyword is used when dealing with multiple conditions. After every condition we write a `semicolon``(:)` and the code that belongs to the condition is indented in the next line.
 
@@ -356,6 +372,7 @@ else:
 
     code
 ```
+
 Let's look at an example.
 
 ```python
@@ -370,7 +387,7 @@ else:
     print('You are above middle age !')
 ```
 
- In JavaScript, `else if` keyword is used when dealing with multiple conditions. The conditions are surrounded by parenthesis.
+In JavaScript, the `else if` keyword is used when dealing with multiple conditions. The conditions are surrounded by parenthesis.
 
 ```javascript
 if(condition1)
@@ -397,6 +414,7 @@ else
         //code
     }
 ```
+
 Let's look at an example.
 ```javascript
 var time = new Date().getHours();
@@ -408,6 +426,7 @@ if (time < 5) {
   task = "Watching a movie";
 }
 ```
+
 4. Switch
 Python does not have this type of built-in control structure i.e `switch`
 
@@ -433,6 +452,7 @@ switch(expression)
         code
     }
 ```
+
 Let's look at an example.
 ```js
 switch (new Month().getMonth()) {
@@ -458,16 +478,19 @@ switch (new Month().getMonth()) {
   No such a month;
 }    
 ```
+
 ### Loops
 A loop is a control structure that repeats a series of instructions until a specified condition is reached.
+
 ### For Loops
-We write a `for` loop in Python as shown below.
+We can write a `for` loop in Python as shown below.
 ```python
 for x in range(k):
 
     code
 ```
- The syntax of writing a for loop in JavaScript is as follows.
+
+The syntax when writing a for loop in JavaScript is as follows.
 
 ```javascript
 for(var x = 1; x >n ; x++)
@@ -478,7 +501,7 @@ for(var x = 1; x >n ; x++)
 }
 ```
 
-### While Loop
+### While loop
 It is a pre-test loop in which the condition is evaluated before the loop executes.
 
 In Python, we compose the watchword `while` trailed by the `condition`, and afterward, a colon `(:)`.
@@ -486,6 +509,7 @@ In Python, we compose the watchword `while` trailed by the `condition`, and afte
 ```python 
 while condition: code 
 ```
+
 In JavaScript, we use brackets, as shown below.
 
 ```javascript
@@ -493,8 +517,9 @@ while(condition){
     code
 }
 ```
+
 ### Do-while loops
-This is a post-test loop. The condition is evaluated after the loop executes. In python, we do not have such a control structure `(do-while loop)`
+This is a post-test loop. The condition is evaluated after the loop executes. In Python, we do not have such a control structure `(do-while loop)`
 
 In JavaScript, this loop will always be executed once.
 
@@ -503,6 +528,7 @@ In JavaScript, this loop will always be executed once.
 do { code } while (condition); 
 
 ```
+
 ### Functions 
 A function is a block of code that plays out a specific undertaking. 
 
@@ -522,12 +548,13 @@ function function_name (x1,x2,x3,...)
             code
         }
 ```
-### Object Oriented Programming(OOP)
+
+### Object Oriented Programming (OOP)
 OOP is the development of programs in terms of objects that interact with one another.
 
 Both Python and JavaScript support Object-Oriented programming.
 
-The syntax of defining a class in both Python and JavaScript is almost the same there is a slight difference.
+The syntax of defining a class in both Python and JavaScript is almost the same, there only is a slight difference.
 
 In `Python` a `colon` is written after the keyword class whereas curly` braces` are used in `Javascript`.
 
@@ -537,8 +564,8 @@ class Rectangle:
 
     code
 ```
-JavaScript
 
+JavaScript
 ```javascript
 class Rectangle
 
@@ -547,7 +574,8 @@ class Rectangle
     code
 }
 ```
-### Constructor and Attributes
+
+### Constructor and attributes
 A constructor is a member function of a class that executes automatically whenever an object is created.
 
 In Python, a constructor that instantiates the new example is known as `init` with two driving and the following highlights. 
@@ -575,22 +603,27 @@ class Rectangle
     }
 }
 ```
-`Note`
-In python, we use `self` to refer to an instance of a class.
-i.e
+
+>Note: In python, we use `self` to refer to an instance of a class.
+
+For example:
 ```python 
 
 self.attribute= esteem 
 ```
+
 While in JavaScript we use `this` to allude to an occurrence of a class. 
-i.e 
+Such as: 
 ```javascript
 
 this.attribute=value; 
 
 ```
+
 ### Conclusion
 Although Python and JavaScript have numerous differences, Python is much easier to understand than JavaScript due to its unique syntax.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

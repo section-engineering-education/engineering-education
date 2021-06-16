@@ -1,6 +1,5 @@
 ---
 title: Joshua Wainaina
-type: engineering-education/author
+type: authors
 ---
-Joshua Wainaina is a computer science  student . He is much interested in web development. 
-
+Joshua Wainaina is a computer science student. He is really interested in improving his web development skills.
