@@ -6,7 +6,7 @@ url: /node-curl/
 title: Making cURL Requests in Node.js
 description: In this article, we are going to go through using cURL in Node.js using the `node-libcurl` library. We are going to go through the libraries' introductory functionalities, and in our case, we will look at form submission. This is chosen because it is easier for a beginner to understand.
 author: vincent-ngunzulu
-date: 2021-06-09T00:00:00-07:00
+date: 2021-06-16T00:00:00-07:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
     alt: cURL requests image example
 ---
 
-### Introduction
-
-**cURL(client URL)** is a free tool used to make network requests from the terminal using various protocols available. It's very useful when one wants an application to request without necessarily engaging a user e.g checking and validating the access token for using an API. For backend developers like me, it may come in handy when we want to send form data to test our APIs without designing a user interface for a form. Of course, there is Postman but, with this, you can customize and have more control over it.
+**cURL (client URL)** is a free tool used to make network requests from the terminal using various protocols available. It is very useful when one wants an application to request without necessarily engaging a user e.g checking and validating the access token for using an API. For backend developers like me, it may come in handy when we want to send form data to test our APIs without designing a user interface for a form. Of course, there is Postman but with this, you can customize and have more control over it.
 
 <!--more-->
 
-It supports various protocols such as HTTP, FTP, FILE, etc. Other than the command-line, we can use cURL to display responses gotten from the requests on a webpage. An example of a cURL command is shown below:
+### Introduction
+
+cURL supports various protocols such as HTTP, FTP, FILE, etc. Other than the command-line, we can use cURL to display responses gotten from the requests on a webpage. An example of a cURL command is shown below:
 
 ```bash
 curl -o doc.html <url/doc.html>
@@ -38,7 +38,6 @@ CURL uses the HTTP protocol by default. To switch to another protocol, preface t
 
 ```bash
 curl ftp://section.io
-
 ```
 
 We are now using the FTP protocol.
@@ -48,7 +47,6 @@ In this article, we are going to go through using cURL in Node.js using the `nod
 > One quick note is that `node-libcurl` is used for native code and not used in a browser. You can use the results gotten from respective requests to do some browser rendering.
 
 #### Prerequisites
-
 For a good understanding of this article's contents, one must have:
 
 1. A basic understanding of JavaScript and Node.js
@@ -60,21 +58,19 @@ We first install the library:
 
 ```bash
 npm i node-libcurl --save
-
 ```
 
-or if using yarn:
+or if using Yarn:
 
 ```bash
 yarn add node-libcurl
-
 ```
 
-We are going to use the `Curl()`class provided by the library to perform the form requests.
+We are going to use the `Curl()` class provided by the library to perform the form requests.
 
 To start, create a JavaScript file with your preferred name then write the following snippet in it.
 
-```Javascript
+```JavaScript
 const querystring = require("querystring");
 const { Curl } = require("node-libcurl");
 const terminate = curlTest.close.bind(curlTest);
@@ -97,7 +93,7 @@ curlTest.setOpt(
 ```
 
 Next, we initialize the curl class creating an object called `curlTest`.
-We set various options using the `setOpt()` method. The first option is for passing in the url where the request will be sent to. The second is for the method and the last is for the post parameters.
+We set various options using the `setOpt()` method. The first option is for passing in the url where the request will be sent to. The second is for the method and the last is for the POST parameters.
 
 > We use the https://reqres.in/ because it is an API that accepts all the REST Methods. It is helpful if one wants some test responses for his/her projects. Take some time and visit it. The library currently has support for the POST method.
 
@@ -118,7 +114,7 @@ curlTest.on("error", terminate);
 
 The snippet above is for showing some info about the request. It logs the status code of the response e.g 404, 200, etc, the response, its length, and the total time taken. In case of an error, it closes the request.
 
-```Javascript
+```JavaScript
 curlTest.perform();
 ```
 
@@ -126,7 +122,7 @@ The line above is now used to perform the request hence the name of the method. 
 
 Here is the full code:
 
-```Javascript
+```JavaScript
 const querystring = require("querystring");
 const { Curl } = require("node-libcurl");
 const terminate = curlTest.close.bind(curlTest);
