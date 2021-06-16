@@ -298,4 +298,4 @@ To find more about the topic, you can check the following resources:
 - [Translation Package For NodeJS](https://www.npmjs.com/package/@vitalets/google-translate-api)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
