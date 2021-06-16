@@ -65,7 +65,7 @@ MySQL facilitates an easier transition to a new password in codes by supporting 
 
 Other features of MySQL include support for multi-version concurrency control, multi-threads using Kernel Threads, and huge data capability. The ANSI SQL standard database can handle rows exceeding 50 million.
 
-![ProstreSQL Vs. MySQL](/engineering-education/postgresql-vs-mysql.png)
+![ProstreSQL Vs. MySQL](/engineering-education/postgresql-vs-mysql/postgresql-vs-mysql.png)
 
 ### Conclusion
 
