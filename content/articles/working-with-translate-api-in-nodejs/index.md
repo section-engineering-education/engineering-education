@@ -254,7 +254,7 @@ We need to capture the result of translation sent by the render meth
 ```
 
 ### Running the server
-To test run the application, add the block of code snippets below in the `index.js` file. The snippets specify the `PORT NUMBER` onto which the application runs and listens for incoming requests.Run the command `nodemon start` in your terminal start the server.
+To test run the application, add the block of code snippets below in the `index.js` file. The snippets specify the `PORT NUMBER` onto which the application runs and listens for incoming requests. Run the command `nodemon start` in your terminal to start the server.
 
 ```js
 // Port variable
