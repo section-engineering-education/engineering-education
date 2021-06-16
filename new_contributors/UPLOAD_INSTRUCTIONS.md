@@ -3,12 +3,12 @@
 **Prerequisites:**
 - Github account
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
-- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown. See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet))
+- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown). See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Fork the repository
 In order to upload your prepared .md file to Github, first, click the **Fork** option in the upper right-hand corner (pictured below).
 
-![Fork Image](/images/fork_image.png)
+![Fork Image](/static/images/fork_image.png)
 
 Once you have successfully forked over to your repository:
 - You should notice your username in the upper left-hand corner (top red arrow).
@@ -22,26 +22,31 @@ Students should always keep their fork up to date with section-io/engineering-ed
 ### Clone the forked repository
 Next, you will need to clone the repository to your local computer.
 
-![clone repository](/images/clone-repository.png)
+![clone repository](/static/images/clone-repository.png)
 
 Open the newly cloned repository in your text editor. It should look something like this (shown in Visual Studio Code):
 
-![repository text editor](/images/repository-text-editor.png)
+![repository text editor](/static/images/new-vs-code-shot.JPG)
 
 Note: When working with multiple articles simultaneously, it's best to create and work on separate branches for each article. (Here is a [short video](https://www.youtube.com/watch?v=oPpnCh7InLY&t=577s) on how Github Branches work.)
 
 ### Create article folder structure
-Within the articles folder, create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) Be sure to:
-- Use all lowercase.
-- Use dashes in place of spaces.
-- Do not include any special characters.
-- Try to keep it under 40 characters.
+Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) 
 
-![create article folder](/images/create-article-folder.png)
+Be sure to:
+- **Use all lowercase.**
+- **Use dashes in place of spaces.**
+- **Do not include any special characters.**
+- **Try to keep it under 40 characters.**
+- -**Avoid using periods (.) or commas (,)**
 
-Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. For example:
+![create article folder](/static/images/create-article-folder.png)
+
+Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. 
+
+For example:
 ```
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+![image title](/new-folder-name/image-name.jpg)
 ```
 If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
 
@@ -49,18 +54,18 @@ Any images within the article need to be hosted on our site - place the image in
 
 Your folder should look similar to this:
 
-![folder contents](/images/folder-contents.png)
+![folder contents](/static/images/folder-contents.png)
 
 Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or the Github tools within your text editor.
 
 ### Create pull request
 Open Github. You should see a message indicating your pushed changes with a button to 'Compare & pull request'.
 
-![compare pull request](/images/compare-pull-request.png)
+![compare pull request](/static/images/compare-pull-request.png)
 
 Open a pull request that includes the name of your article and a description of the contents that you are submitting.
 
-![OpenPR_image](/images/openPR_image2_.PNG)
+![OpenPR_image](/static/images/openPR_image2_.PNG)
 
 ***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
 
@@ -87,7 +92,7 @@ If you would like to include a (step-by-step) video to one of your How To Guide 
 
 Upload the [video to YouTube](https://www.wix.com/blog/2019/02/how-to-upload-video-youtube-guide/) (if it isn't already).
 
-![Copy YouTube Embed Code](/images/yt-video-embed.png)
+![Copy YouTube Embed Code](/static/images/yt-video-embed.png)
 
 Take that copied embed code and paste it into your .md (markdown) file where you would like it to be placed. The code should look something like this:
 

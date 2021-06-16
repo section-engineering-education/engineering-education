@@ -1,0 +1,945 @@
+// Blue Version
+
+.hero-blocks.-blue-blocks {
+
+  .hero-blocks-inner {
+    flex-direction: column;
+
+    @include mq($from: 700px ) {
+      flex-direction: row;
+    }
+  }
+
+  .hero-blocks-mobile {
+    display: flex;
+
+    &-left {
+      margin-bottom: 0;
+
+      @include mq($from: 500px) {
+        margin-bottom: 20px;
+      }
+
+      &-large {
+        width: pxem(140);
+        height: pxem(130);
+        background: $fill-blue;
+        margin-bottom: 50px;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(193);
+          height: pxem(140);
+        }
+
+        @include mq($from: 500px) {
+          margin-bottom: 100px;
+        }
+      }
+    }
+
+    &-right {
+
+      &-large {
+        width: pxem(163);
+        height: pxem(115);
+        border-left: pxem(10) solid $text-black;
+        background: $fill-blue;
+        margin-right: -20px;
+        z-index: 9;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(243);
+          height: pxem(193);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(85);
+        height: pxem(85);
+        top: 45%;
+        right: 25%;
+        opacity: 0.5;
+
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-blue,
+          $fill-white 2px,
+          $fill-white 13px,
+          $fill-blue 13px
+        );
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(140);
+          height: pxem(140);
+          top: 40%;
+          right: 20%;
+        }
+      }
+
+      &-small {
+        width: pxem(50);
+        height: pxem(50);
+        background: $fill-light-blue;
+        top: 0;
+        margin-top: -28px;
+        display: block;
+        margin-left: -25px;
+        z-index: 99;
+        transition: all .5s ease;
+      }
+    }
+
+    @include mq($from: 700px ) {
+      display: none;
+    }
+  }
+
+  min-height: pxem(300);
+
+  @include mq($from: 1160px ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-blocks-left {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      margin-left: -180px;
+      margin-top: -20px;
+      display: block;
+      background: $fill-blue;
+      z-index: 9;
+      transition: all 1s ease;
+
+      @include mq($from: 900px ) {
+        margin-left: -180px;
+      }
+
+      @include mq($from: 1130px ) {
+        margin-left: -100px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+        margin-top: -20px;
+      }
+    }
+
+    &-stripes {
+      display: block;
+      width: pxem(167);
+      height: pxem(185);
+      top: 24%;
+      left: 60%;
+      margin-left: -140px;
+      opacity: 0.5;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-blue,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-blue 13px
+      );
+      transition: all 1s ease;
+
+      @include mq($from: 900px ) {
+        margin-left: -120px;
+      }
+
+      @include mq($from: 1130px ) {
+        margin-left: -90px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .hero-blocks-middle {
+    max-width: pxem(820);
+    margin: 0 auto;
+    position: relative;
+
+    h1,
+    p {
+      max-width: pxem(658);
+    }
+  }
+
+  .hero-blocks-right {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-small {
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-light-blue;
+      top: 0;
+      margin-top: pxem(-28);
+      display: block;
+      right: 82%;
+      z-index: 99;
+      transition: all 1s ease;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      border-left: pxem(10) solid $text-black;
+      background: $fill-blue;
+      margin-right: pxem(-90);
+      z-index: 9;
+      transition: all 1s ease;
+
+      @include mq($from: 1100px ) {
+        margin-right: pxem(-50);
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+
+    &-stripes {
+      top: 35%;
+      right: 60%;
+      margin-right: -70px;
+      width: pxem(165);
+      height: pxem(165);
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-blue,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-blue 13px
+      );
+      opacity: 0.5;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Purple Version
+
+.hero-blocks.-purple-blocks {
+
+  .hero-blocks-inner {
+    flex-direction: column;
+
+    @include mq($from: 700px ) {
+      flex-direction: row;
+    }
+  }
+
+  .hero-blocks-mobile {
+    display: flex;
+
+    &-left {
+      margin-bottom: 0;
+
+      @include mq($from: 500px) {
+        margin-bottom: 20px;
+      }
+
+      &-large {
+        width: pxem(140);
+        height: pxem(130);
+        background: $fill-purple;
+        margin-bottom: 50px;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(193);
+          height: pxem(140);
+        }
+
+        @include mq($from: 500px) {
+          margin-bottom: 100px;
+        }
+      }
+    }
+
+    &-right {
+
+      &-large {
+        width: pxem(163);
+        height: pxem(115);
+        border-left: pxem(10) solid $text-black;
+        background: $fill-purple;
+        margin-right: -20px;
+        z-index: 9;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(243);
+          height: pxem(193);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(85);
+        height: pxem(85);
+        top: 45%;
+        right: 25%;
+        opacity: 0.5;
+
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-purple,
+          $fill-white 2px,
+          $fill-white 13px,
+          $fill-purple 13px
+        );
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(140);
+          height: pxem(140);
+          top: 40%;
+          right: 20%;
+        }
+      }
+
+      &-small {
+        width: pxem(50);
+        height: pxem(50);
+        background: $fill-light-purple;
+        top: 0;
+        margin-top: -28px;
+        display: block;
+        margin-left: -25px;
+        z-index: 99;
+        transition: all .5s ease;
+      }
+    }
+
+    @include mq($from: 700px ) {
+      display: none;
+    }
+  }
+
+  min-height: pxem(300);
+
+  @include mq($from: 1160px ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-blocks-left {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      margin-left: -160px;
+      margin-top: -20px;
+      display: block;
+      background: $fill-purple;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -100px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+        margin-top: -20px;
+      }
+    }
+
+    &-stripes {
+      display: block;
+      width: pxem(167);
+      height: pxem(185);
+      top: 24%;
+      left: 60%;
+      margin-left: -130px;
+      opacity: 0.5;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-purple,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-purple 13px
+      );
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -90px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .hero-blocks-middle {
+    max-width: pxem(820);
+    margin: 0 auto;
+    position: relative;
+
+    h1,
+    p {
+      max-width: pxem(658);
+    }
+  }
+
+  .hero-blocks-right {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-small {
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-light-purple;
+      top: 0;
+      margin-top: -28px;
+      display: block;
+      right: 60%;
+      z-index: 99;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        right: 82%;
+      }
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      border-left: pxem(10) solid $text-black;
+      background: $fill-purple;
+      margin-right: -130px;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+
+    &-stripes {
+      top: 35%;
+      right: 60%;
+      margin-right: -110px;
+      width: pxem(165);
+      height: pxem(165);
+      opacity: 0.5;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-purple,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-purple 13px
+      );
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Green Version
+
+.hero-blocks.-green-blocks {
+
+  .hero-blocks-inner {
+    flex-direction: column;
+
+    @include mq($from: 700px ) {
+      flex-direction: row;
+    }
+  }
+
+  .hero-blocks-mobile {
+    display: flex;
+
+    &-left {
+      margin-bottom: 0;
+
+      @include mq($from: 500px) {
+        margin-bottom: 20px;
+      }
+
+      &-large {
+        width: pxem(140);
+        height: pxem(130);
+        background: $fill-green;
+        margin-bottom: 50px;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(193);
+          height: pxem(140);
+        }
+
+        @include mq($from: 500px) {
+          margin-bottom: 100px;
+        }
+      }
+    }
+
+    &-right {
+
+      &-large {
+        width: pxem(163);
+        height: pxem(115);
+        border-left: pxem(10) solid $text-black;
+        background: $fill-green;
+        margin-right: -20px;
+        z-index: 9;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(243);
+          height: pxem(193);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(85);
+        height: pxem(85);
+        top: 45%;
+        right: 25%;
+        opacity: 0.5;
+
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-green,
+          $fill-white 2px,
+          $fill-white 13px,
+          $fill-green 13px
+        );
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(140);
+          height: pxem(140);
+          top: 40%;
+          right: 20%;
+        }
+      }
+
+      &-small {
+        width: pxem(50);
+        height: pxem(50);
+        background: $fill-light-green;
+        top: 0;
+        margin-top: -28px;
+        display: block;
+        margin-left: -25px;
+        z-index: 99;
+        transition: all .5s ease;
+      }
+    }
+
+    @include mq($from: 700px ) {
+      display: none;
+    }
+  }
+
+  min-height: pxem(300);
+
+  @include mq($from: 1160px ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-blocks-left {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      margin-left: -130px;
+      margin-top: -20px;
+      display: block;
+      background: $fill-green;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -100px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+        margin-top: -20px;
+      }
+    }
+
+    &-stripes {
+      display: block;
+      width: pxem(167);
+      height: pxem(185);
+      top: 24%;
+      left: 60%;
+      margin-left: -110px;
+      opacity: 0.5;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-green,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-green 13px
+      );
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -90px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .hero-blocks-right {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-small {
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-light-green;
+      top: 0;
+      margin-top: -28px;
+      display: block;
+      right: 82%;
+      z-index: 99;
+      transition: all .5s ease;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      border-left: pxem(10) solid $text-black;
+      background: $fill-green;
+      margin-right: -90px;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+
+    &-stripes {
+      top: 35%;
+      right: 60%;
+      margin-right: -70px;
+      width: pxem(165);
+      height: pxem(165);
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-green,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-green 13px
+      );
+      opacity: 0.5;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Orange Version
+
+.hero-blocks.-orange-blocks {
+
+  .hero-blocks-inner {
+    flex-direction: column;
+
+    @include mq($from: 700px ) {
+      flex-direction: row;
+    }
+  }
+
+  .hero-blocks-mobile {
+    display: flex;
+
+    &-left {
+      margin-bottom: 0;
+
+      @include mq($from: 500px) {
+        margin-bottom: 20px;
+      }
+
+      &-large {
+        width: pxem(140);
+        height: pxem(130);
+        background: $fill-orange;
+        margin-bottom: 50px;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(193);
+          height: pxem(140);
+        }
+
+        @include mq($from: 500px) {
+          margin-bottom: 100px;
+        }
+      }
+    }
+
+    &-right {
+
+      &-large {
+        width: pxem(163);
+        height: pxem(115);
+        border-left: pxem(10) solid $text-black;
+        background: $fill-orange;
+        margin-right: -20px;
+        z-index: 9;
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(243);
+          height: pxem(193);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(85);
+        height: pxem(85);
+        top: 45%;
+        right: 25%;
+        opacity: 0.5;
+
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-orange,
+          $fill-white 2px,
+          $fill-white 13px,
+          $fill-orange 13px
+        );
+        transition: all .5s ease;
+
+        @include mq($from: 500px, $to: 700px) {
+          width: pxem(140);
+          height: pxem(140);
+          top: 40%;
+          right: 20%;
+        }
+      }
+
+      &-small {
+        width: pxem(50);
+        height: pxem(50);
+        background: $fill-light-orange;
+        top: 0;
+        margin-top: -28px;
+        display: block;
+        margin-left: -25px;
+        z-index: 99;
+        transition: all .5s ease;
+      }
+    }
+
+    @include mq($from: 700px ) {
+      display: none;
+    }
+  }
+
+  min-height: pxem(300);
+
+  @include mq($from: 1160px ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-blocks-left {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      margin-left: -130px;
+      margin-top: -20px;
+      display: block;
+      background: $fill-orange;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -100px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+        margin-top: -20px;
+      }
+    }
+
+    &-stripes {
+      display: block;
+      width: pxem(167);
+      height: pxem(185);
+      top: 24%;
+      left: 60%;
+      margin-left: -110px;
+      opacity: 0.5;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-orange,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-orange 13px
+      );
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-left: -90px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .hero-blocks-middle {
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+
+    h1,
+    p {
+      max-width: pxem(658);
+    }
+
+    @include mq($from: 945px, $to: 1300px ) {
+      width: 740px;
+    }
+
+    @include mq($from: 1300px ) {
+      width: 820px;
+    }
+  }
+
+  .hero-blocks-right {
+
+    @include mq($to: 700px ) {
+      display: none;
+    }
+
+    &-small {
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-light-orange;
+      top: 0;
+      margin-top: -28px;
+      display: block;
+      right: 82%;
+      z-index: 99;
+      transition: all .5s ease;
+    }
+
+    &-large {
+      width: pxem(203);
+      height: pxem(193);
+      border-left: pxem(10) solid $text-black;
+      background: $fill-orange;
+      margin-right: -90px;
+      z-index: 9;
+      transition: all .5s ease;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+
+    &-stripes {
+      top: 35%;
+      right: 60%;
+      margin-right: -70px;
+      width: pxem(165);
+      height: pxem(165);
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-orange,
+        $fill-white 2px,
+        $fill-white 13px,
+        $fill-orange 13px
+      );
+      opacity: 0.5;
+
+      @include mq($from: 1100px ) {
+        margin-right: -50px;
+      }
+
+      @include mq($from: 1300px ) {
+        margin: 0;
+      }
+    }
+  }
+}
