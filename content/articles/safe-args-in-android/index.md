@@ -15,13 +15,12 @@ images:
 ---
 
 ### Introduction
-Data sharing in Android involves passing arguments between fragments in navigation action. This not only enhances communication between the destinations involved but also establishes a continuous flow of the application. In the past few years, Android developers made use of the Android Bundle class which was one of the techniques to share data across activities. This came with a bunch of cons among which is the tedious work the developer had to do, unreliability due to the manual approach, and lack of type safety that could easily crash the application.
+Data sharing in Android involves passing arguments between fragments in navigation action. This not only enhances communication between the destinations involved but also establishes a continuous flow of the application. In the past few years, Android developers made use of the Android Bundle class which was one of the techniques of sharing data across activities. This came with a bunch of cons among which is the tedious work the developer had to do, unreliability due to the manual approach, and lack of type safety that could easily crash the application.
 
 The Navigation components API, (part of [Jetpack](https://developer.android.com/jetpack) libraries) is a MAD(Modern Android Development) approach that solves these problems by introducing `SafeArgs` - a plugin that allows you to pass data in a more efficient, safe, and encapsulated way.
 
 #### Prerequisites
 To follow through this tutorial, you need to be familiar with;
-
 - Basic usage of Android studio.
 - Kotlin programming.
 - Imperative paradigm concepts in Android development.
@@ -52,7 +51,7 @@ Fire up Android Studio and create an Empty Activity project with the following c
 Double-check to make sure that the package name is as shown. Otherwise you'll have to configure your project to make it compatible with the code used in this tutorial.
 
 ### Enable viewBinding
-View binding allows us to access views in the XML file via the respective binding class and the view's id. Open the app-level build.gradle file and paste the following inside the android scope and sync the project.
+View binding allows us to access views in the XML file via the respective binding class and the view's id. Open the app-level `build.gradle` file and paste the following inside the android scope and sync the project.
 
 ```bash
 android {
@@ -227,7 +226,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Set up SafeArgs
-Now we're ready to take a flight with safe args but before then, let's first pack our bags.
+Now we're ready to take a flight with safe args, but before then, let's first pack our bags.
 
 This involves loading the required dependencies and plugins. Add the following classpath in the project-level `build.gradle` file.
 
@@ -274,16 +273,14 @@ The data attached to a navigation operation is referred to as an argument. Argum
 
 <details><summary>The following is a list of supported data types</summary>
 
-Predefined types
-
+Predefined types:
 - Boolean
 - String
 - Integer
 - Float
 - Long
   
-Custom types
-
+Custom types:
 - Custom Parcelable
 - Custom Serializable
 - Custom Enum
@@ -422,4 +419,4 @@ In this tutorial, we've learned how SafeArgs can be used to pass or share data a
 Happy coding!
 
 ---
-Peer Review Contributions by: [](/engineering-education/authors//)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
