@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-translate-api/
+title: Getting Started with Google translate API
+description: This article will provide a step by step processing of developing a text translation application using Google Translate API in a Node.js application.
+author: mercy-meave
+date: 2021-06-16T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/working-with-translate-api/hero.png
+    alt: GGetting Started with Google translate API
+---
+
 ### Introduction
 Google Translate is a multilingual language translation service developed by Google to translate text, words, phrases and, documents from one language to another. According to Wikipedia, Google translates supports over 109 languages across the globe.
 
