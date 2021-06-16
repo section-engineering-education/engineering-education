@@ -1,4 +1,20 @@
-### Creating a Custom Data Transformer using Scikit-Learn
+---
+layout: engineering-education
+status: publish
+published: true
+url: /custom-transformer/
+title: Creating a Custom Data Transformer using Scikit-Learn
+description: In this article we will discuss building custom data transformers using scikit-learn and look at an example to implement the same. Data preprocessing is a crucial part in machine learning. We will implement a scikit-learn pipeline and integrate the transformer into the pipeline and look at its various methods available.  
+author: terrence-aluda
+date: 2021-06-16T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/custom-transformer/hero.jpg
+   alt: First Hop Redundancy Protocol example image
+---
+
 
 ### Introduction
 
@@ -184,3 +200,5 @@ The `ColumnTransformer` is used to transform columns separately and combine the 
 
 We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. I hope you got some insights.
 
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
