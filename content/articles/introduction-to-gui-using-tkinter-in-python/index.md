@@ -141,18 +141,14 @@ il=Entry(screen,font=('Arial',14),textvariable=sc1)
 il.place(x=270,y=90)
 t3=Label(screen,text='Length: ',font=('Arial',14),background ="bisque")
 t3.place(x=145,y=120)
-
 t4=Label(screen,text='Strength:',font=('Arial',14),background ="bisque")
 t4.place(x=145,y=155)
-
 c1=Entry(screen,font=('Arial',14),width=10)
 c1.place(x=230,y=120)
-
 c2=Combobox(screen,font=('Arial',14),width=15)
 c2['values']=('Low Strength','Medium Strength','High Strength')
 c2.current(1)
 c2.place(x=237,y=155)
-
 b=Button(screen,text='Generate',font=('Arial',14),fg='red',background ="white",command=gen)
 b.place(x=230,y=195)
 
@@ -173,6 +169,7 @@ We covered the fundamentals of GUI in this article, as well as how to build a si
 ### Reference
 
 [perlego](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf)
+
 [Python tkinker](https://medium.com/analytics-vidhya/python-tkinter-as-a-java-application-36536176fe83)
 
 
