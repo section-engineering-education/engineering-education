@@ -1,0 +1,7 @@
+test: "test-string"
+
+enged_cta:
+  title: "Want to learn more about the EngEd Program?"
+  copy: "Discover Section's community-generated pool of resources from the next generation of engineers."
+  text: "Learn more"
+  url: "/engineering-education"

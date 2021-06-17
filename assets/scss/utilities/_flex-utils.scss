@@ -1,0 +1,175 @@
+// Classes for flexing items
+// ------------------------------------
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.align {
+
+  &-center {
+    align-items: center;
+  }
+
+  &-baseline {
+    align-items: baseline;
+  }
+
+  &-end {
+    align-items: flex-end;
+  }
+
+  &-start {
+    align-items: flex-start;
+  }
+
+  &-self-center {
+    align-self: center;
+  }
+}
+
+.justify {
+
+  &-space-between {
+    justify-content: space-between;
+  }
+
+  &-around {
+    justify-content: space-around;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-flex-start {
+    justify-content: flex-start;
+  }
+
+  &-flex-end {
+    justify-content: flex-end;
+  }
+}
+
+// Generated Breakpoints
+// ------------------------
+
+// Flex column
+@include generate-breakpoint-prefixes {
+
+  &flex-column {
+    flex-direction: column;
+  }
+}
+
+// Flex row
+@include generate-breakpoint-prefixes {
+
+  &flex-row {
+    flex-direction: row;
+  }
+}
+
+// Align Center
+@include generate-breakpoint-prefixes {
+
+  &align-center {
+    align-items: center;
+  }
+}
+
+// Align Baseline
+@include generate-breakpoint-prefixes {
+
+  &align-baseline {
+    align-items: baseline;
+  }
+}
+
+// Align Flex End
+@include generate-breakpoint-prefixes {
+
+  &align-end {
+    align-items: flex-end;
+  }
+}
+
+// Align Flex Start
+@include generate-breakpoint-prefixes {
+
+  &align-start {
+    align-items: flex-start;
+  }
+}
+
+// Justify Space Between
+@include generate-breakpoint-prefixes {
+
+  &justify-space-between {
+    justify-content: space-between;
+  }
+}
+
+// Justify Space around
+@include generate-breakpoint-prefixes {
+
+  &justify-space-around {
+    justify-content: space-around;
+  }
+}
+
+// Justify Center
+@include generate-breakpoint-prefixes {
+
+  &justify-center {
+    justify-content: center;
+  }
+}
+
+// Justify Flex End
+@include generate-breakpoint-prefixes {
+
+  &justify-end {
+    justify-content: flex-end;
+  }
+}
+
+// Justify Flex Start
+@include generate-breakpoint-prefixes {
+
+  &justify-start {
+    justify-content: flex-start;
+  }
+}
+
+// Flex wrap
+@include generate-breakpoint-prefixes {
+
+  &wrap {
+    flex-wrap: wrap;
+  }
+}
+
+// Flex No wrap
+@include generate-breakpoint-prefixes {
+
+  &no-wrap {
+    flex-wrap: nowrap;
+  }
+}

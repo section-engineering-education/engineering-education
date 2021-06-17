@@ -1,0 +1,21 @@
+<pre style="overflow-x: scroll;">
+. {{ . }}
+
+params: {{ .Params }}
+
+IsNode {{ .IsNode }}
+
+Kind {{ .Kind }}
+
+Type {{ .Type }}
+
+Section {{ .Section }}
+
+GetPage {{ .Site.GetPage "page" "/engineering-education/authors/gregory-manley" }}
+
+CurrentSection {{ .CurrentSection }}
+
+{{ range .Pages }}
+{{ . }}
+{{ end }}
+</pre>
