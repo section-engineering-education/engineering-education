@@ -8,7 +8,6 @@ Programmers can learn how to build a password generator using Tkinter in this tu
 - [Prerequisites](#prerequisites)
 - [What is Tkinter?](#what-is-tkinter?)
 - [What are Widgets?](#what-are-widgets?)
-- [How to build a simple calculator](#how-to-build-a-simple-calculator)
 - [How to build a password generator](#how-to-build-a-password-generator)
 - [Conclusion](#conclusion)
 
