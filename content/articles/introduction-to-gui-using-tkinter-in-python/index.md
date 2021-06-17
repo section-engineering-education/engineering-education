@@ -1,34 +1,34 @@
 
-![heroimage](/engineering-education/introduction-to-gui-using-tkinter-in-python/hero.jpg)
-
 ### Introduction
-
-The term GUI refers to a desktop application that allows programmers to communicate with computers and improves their experience of giving commands (command-line input) to code. They are used in desktop computers, notebook computers, and other electronic devices to perform a variety of tasks.
-
+The term Graphic User interface, as opposed to text-based user interfaces, typed command labels, or text navigation, allows users to interact with electronic devices through the use of graphical icons and audio indicators such as primary notation. GUIs were developed in response to the perceived steep learning curve of command-line interfaces, which require commands to be typed on a computer keyboard.
+In most cases, activities in a GUI are performed by directly manipulating the graphical elements. In addition to computers, GUIs are used in a variety of handheld mobile devices such as MP3 players, portable media players, gaming devices, cellphones, and smaller household, office, and industrial controllers.
 Programmers can learn how to build a basic Graphical User Interface (GUI) and a simple calculator using Tkinter in this tutorial.
 
 ### Table of content
-
-- Prerequisites
-- Tkinter
-- What are Widgets?
-- How to build a simple calculator
-- How to build a password generator
-- Conclusion
+- [Prerequisites](#prerequisites)
+- [What is Tkinter?](#what-is-tkinter?)
+- [What are Widgets?](#what-are-widgets?)
+- [How to build a simple calculator](#how-to-build-a-simple-calculator)
+- [How to build a password generator](#how-to-build-a-password-generator)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
+Download the latest version of [Python](https://www.python.org/downloads/) and install it.
+Also download a python code editor more preferable [PyCharm](https://www.jetbrains.com/pycharm/download/), it is student-oriented, friendly and easy to use.
 
-Download the latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-macosx10.9.pkg) and install it.
-
-Also download a python code editor more preferable [PyCharm](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac), it is student-oriented, friendly and easy to use.
-
-### Tkinter
-
+### What is Tkinter
 Tkinter is a platform that is included with Python. Tkinter has several advantages. Because the code is cross-platform, they can run it on Windows, Mac OS X, and Linux. Tkinter applications appear to be native to the platform on which they are running because visual elements are created using native operating system elements.
+Python must be installed before Tkinter can be installed. When the user installs Python, the user gets Tkinter as well. During the Python installation process.
+However if Tkinter was not  installed when Python was installed, we can do it later with the pip command.
+Tkinter can be installed using the pip command at the terminal.
+Run the following command 
+```python
+Pip install tk
+```
+This program will begin obtaining and installing Tkinter library-related items. After that, you'll see a notification indicating that the installation was successful.
 
 ### What are widgets?
-
-Widgets are the building blocks of graphical user interface programming, and they are used to viewing data or solicit input from the user. Here are a few examples of commonly used widgets.
+Widgets are the building blocks of graphical user interface programming, and they are used to view data or solicit input from the user. Here are a few examples of commonly used widgets.
 
 `Frame`: The Frame widget is a container widget that organizes and borders other widgets.
 
@@ -40,203 +40,45 @@ Widgets are the building blocks of graphical user interface programming, and the
 
 `Text`: A Text entry widget allows you to enter text in multiple lines.
 
-### How to build a simple calculator
-
-```Python
- 
-# import everything from tkinter module
-
-from tkinter import *
- 
-# Declare the expression variable
-
-expression = ""
- 
- 
-def press(num):
-
-# point out the global expression variable
-
-    global expression
- 
-# concatenation of string
-
-    expression = expression + str(num)
- 
-# update the expression by using the set method
-
-    equation.set(expression)
- 
- 
-# def function to evaluate the final expression
-
-def equalpress():
-
-# use  the Try and Except statement
-# to handle zero errors, division errors, etc.
- 
-    try:
- 
-        global expression
- 
-# evaluate function evaluates the expression
-# and str function convert the  result to a string
-
-        total = str(eval(expression))
- 
-        equation.set(total)
- 
-# initialze the expression variable using an empty string
-
-        expression = ""
- 
-    
-    except:
- 
-        equation.set(" error ")
-        expression = ""
- 
- 
-# def function to clear the contents
-
-def clear():
-    global expression
-    expression = ""
-    equation.set("")
- 
- 
-# Driver code
-
-if __name__ == "__main__":
-
-# create a GUI root window
-
-    gui = Tk()
- 
-# set the background colour of GUI window
-
-    gui.configure(background="light green")
- 
-# set the title of GUI window
-
-    gui.title("Simple Calculator")
- 
-# set the configuration of GUI window
-
-    gui.geometry("270x150")
-
-    
-    equation = StringVar()
- 
-# create the text entry box for showing the expression.
-
-    expression_field = Entry(gui, textvariable=equation)
- 
-# grid method is used for placing the widgets at respective positions
-# in table like structure.
-
-    expression_field.grid(columnspan=4, ipadx=70)
- 
-# create the Buttons
-
-    button1 = Button(gui, text=' 1 ', fg='black', bg='red',
-                    command=lambda: press(1), height=1, width=7)
-    button1.grid(row=2, column=0)
- 
-    button2 = Button(gui, text=' 2 ', fg='black', bg='red',
-                    command=lambda: press(2), height=1, width=7)
-    button2.grid(row=2, column=1)
- 
-    button3 = Button(gui, text=' 3 ', fg='black', bg='red',
-                    command=lambda: press(3), height=1, width=7)
-    button3.grid(row=2, column=2)
- 
-    button4 = Button(gui, text=' 4 ', fg='black', bg='red',
-                    command=lambda: press(4), height=1, width=7)
-    button4.grid(row=3, column=0)
- 
-    button5 = Button(gui, text=' 5 ', fg='black', bg='red',
-                    command=lambda: press(5), height=1, width=7)
-    button5.grid(row=3, column=1)
- 
-    button6 = Button(gui, text=' 6 ', fg='black', bg='red',
-                    command=lambda: press(6), height=1, width=7)
-    button6.grid(row=3, column=2)
- 
-    button7 = Button(gui, text=' 7 ', fg='black', bg='red',
-                    command=lambda: press(7), height=1, width=7)
-    button7.grid(row=4, column=0)
- 
-    button8 = Button(gui, text=' 8 ', fg='black', bg='red',
-                    command=lambda: press(8), height=1, width=7)
-    button8.grid(row=4, column=1)
- 
-    button9 = Button(gui, text=' 9 ', fg='black', bg='red',
-                    command=lambda: press(9), height=1, width=7)
-    button9.grid(row=4, column=2)
- 
-    button0 = Button(gui, text=' 0 ', fg='black', bg='red',
-                    command=lambda: press(0), height=1, width=7)
-    button0.grid(row=5, column=0)
- 
-    plus = Button(gui, text=' + ', fg='black', bg='red',
-                command=lambda: press("+"), height=1, width=7)
-    plus.grid(row=2, column=3)
- 
-    minus = Button(gui, text=' - ', fg='black', bg='red',
-                command=lambda: press("-"), height=1, width=7)
-    minus.grid(row=3, column=3)
- 
-    multiply = Button(gui, text=' * ', fg='black', bg='red',
-                    command=lambda: press("*"), height=1, width=7)
-    multiply.grid(row=4, column=3)
- 
-    divide = Button(gui, text=' / ', fg='black', bg='red',
-                    command=lambda: press("/"), height=1, width=7)
-    divide.grid(row=5, column=3)
- 
-    equal = Button(gui, text=' = ', fg='black', bg='red',
-                command=equalpress, height=1, width=7)
-    equal.grid(row=5, column=2)
- 
-    clear = Button(gui, text='Clear', fg='black', bg='red',
-                command=clear, height=1, width=7)
-    clear.grid(row=5, column='1')
- 
-    Decimal= Button(gui, text='.', fg='black', bg='red',
-                    command=lambda: press('.'), height=1, width=7)
-    Decimal.grid(row=6, column=0)
-    
-# Finally start the GUI
-
-    gui.mainloop()
-   ```
-
-Here is an image of the interface on the home screen.
-
-![calculatorimage](/engineering-education/introduction-to-gui-using-tkinter-in-python/calculator.png)
-
 ### how to build a password generator
-A password generator is a program that creates passwords depending on the rules you select in order to build a strong, unpredictable password for your accounts. The Password Generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
+A  password generator is a piece of software that accepts input from a random or pseudo-random number generator and automatically generates  a password for the user.
+A password generator is a program that creates passwords depending on the rules the user select in order to build a strong, unpredictable password for multiple accounts. The Password Generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
+Online hacking is growing more sophisticated, resulting in the loss of passwords and login information on a regular basis. If your passwords fall into the wrong hands, this may be highly inconvenient, and it can even result in the loss of money or sensitive personal information.
+Unfortunately, the majority of stolen passwords are simple and easy to guess. Names, birthdays, hobbies, and favorite pets don't make good passwords, and using them is a recipe for disaster.
+Password generators come very handy in this situation.
+For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
+
+Define the coding work by importing tkinter
+The tkinter.ttk module gives the user access to the Tk widget set and allows the user to import Combobox. 
+A combobox is a graphical user interface component that combines a drop-down box, list box, or allows the user to select input.
 
 ```Python
-
-# define coding work
-
 from tkinter import *
 from tkinter.ttk import Combobox
 import random
+```
 
-# create a root window()
-#create the titele of the project and the background colour
+A root window is created using the Tk class.
+The Tk function assists in the creation of this GUI window and provides numerous options such as setting the title and the geometry of the GUI window.
+The geometry() method is one of the many methods provided by Tkinter.
+We'll be working on the backdrop color of the Tkinter GUI window in this line of code.
 
+```Python
 screen = Tk()
 screen.title("Password Generator")
 screen.geometry('600x400')
 screen.configure(background ="bisque")
+``` 
 
-# define a function for the global varaiable sc1
+The global variable sc1 is defined in the line code below.
+We used the set method on the sc1 in the lines of code below.
+Set the value of sc1 to null. Then assign a null value to the passw variable. 
+The length variable will retain the value of c1, and the value type of c1 will be integer. 
+Now create a lowercase variable that will hold a string value. 
+After that, create an uppercase variable to hold a string value.
+And at the last line of code, we define the mix.
 
+```Python
 def gen():
    global sc1
    sc1.set("")
@@ -245,9 +87,11 @@ def gen():
    lowercase='abcdefghijklmnopqrstuvwxyz'
    uppercase='ABCDEFGHIJKLMNOPQRSTUVWXYZ'+lowercase
    mixs='0123456789'+lowercase+uppercase+'@#$%&*'
+   ```
    
- # define the if function to assign some conditions to the project
+we define the if condition for assigning some condition in our project to monitor the strength of the passwords  generated on the password generator
 
+```Python
    if c2.get()=='Low Strength':
        for i in range(0,length):
            passw=passw+random.choice(lowercase)
@@ -260,23 +104,36 @@ def gen():
        for i in range(0,length):
            passw=passw+random.choice(mixs)
        sc1.set(passw)
+```
 
-# Here we define a Label t1 on the GUI window
-# where t1 is the name of the Label object.
-# Here we write the text on the label and set the font
+Define the sc1 variable
+In order to design the GUI window's section In this project, we'll use a Label, an Entry Box, and a Button.
+On the GUI window, create a Label t1, where t1 is the name of the Label object.
+We type the text on the label and then change the font and background of the label.
+Using x or y coordinate values, assign the location of the t1 Label.
+Create a label t2  and type the text and its background
+Then set its coordinates.
 
+```Python
 sc1=StringVar('')
 t1=Label(screen,text='Automatic Password Generator',font=('Arial',25),fg='red',background ="bisque")
 t1.place(x=60,y=0)
 t2=Label(screen,text='password:',font=('Arial',14),background ="bisque")
 t2.place(x=145,y=90)
+```
 
-# Here define the Entry Box with the object il on the GUI window
-# set the font of il Entry
-# the text variable holds the string value of sc1.
-# assign the place of the il Entry using x or y coordinates values.
+On the GUI window, define the Entry Box with the object il, set the font of il Entry, and let the text variable to store the string value of sc1. 
+Now, use x and y coordinates to assign the location of the il Entry.
+Define the Label t3 once more. Then, using coordinate values, assign it a location.
+Create the t4 Label. Then, using the coordinates values, assign the location. Then, give Entry c1 a name.
+Set the Combobox c2's values to Low Strength, Medium Strength, and High Strength.
+The current function is used to set the c2 value.
+Then, using x or y coordinate values, assign the location of the c2 Combobox.
+Define b as a Button and use the generator command to conduct an action when the Button is clicked. 
+Then we use x and y coordinates to assign the location of the b Button.
+The mainloop() function is an infinite loop that is used to run the program.
 
-
+```Python
 il=Entry(screen,font=('Arial',14),textvariable=sc1)
 il.place(x=270,y=90)
 t3=Label(screen,text='Length: ',font=('Arial',14),background ="bisque")
@@ -288,12 +145,6 @@ t4.place(x=145,y=155)
 c1=Entry(screen,font=('Arial',14),width=10)
 c1.place(x=230,y=120)
 
-# define combobox c2
-# define the values of combobox from high strength, medium strenght to low strenght
-# then define the b Button on the GUI window 
-#  give the gen command on the Button for performing an action  
-# Th assign the place of the b Button using x or y coordinates value
-
 c2=Combobox(screen,font=('Arial',14),width=15)
 c2['values']=('Low Strength','Medium Strength','High Strength')
 c2.current(1)
@@ -302,11 +153,11 @@ c2.place(x=237,y=155)
 b=Button(screen,text='Generate',font=('Arial',14),fg='red',background ="white",command=gen)
 b.place(x=230,y=195)
 
-
 screen.mainloop()
 ```
 
 Here is an image of the password generator interface.
+
 
 ![passwordimage](/engineering-education/introduction-to-gui-using-tkinter-in-python/password.png)
 
