@@ -100,7 +100,7 @@ To view the page, run `npx serve` to render the index file. The command also cop
 
 #### Step 3: Writing tests
 
-In your `cypress/integrations` folder, create a new file named `forms.spec.js`. This is the naming convention followed in testing with cypress.
+In your `cypress/integration` folder, create a new file named `forms.spec.js`. This is the naming convention followed in testing with cypress.
 
 To write tests, we use the `describe` keyword.
 
