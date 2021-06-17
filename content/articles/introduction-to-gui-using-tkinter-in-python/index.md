@@ -1,6 +1,7 @@
 
 ### Introduction
 The term Graphic User interface, as opposed to text-based user interfaces, typed command labels, or text navigation, allows users to interact with electronic devices through the use of graphical icons and audio indicators such as primary notation. GUIs were developed in response to the perceived steep learning curve of command-line interfaces, which require commands to be typed on a computer keyboard.
+
 In most cases, activities in a GUI are performed by directly manipulating the graphical elements. In addition to computers, GUIs are used in a variety of handheld mobile devices such as MP3 players, portable media players, gaming devices, cellphones, and smaller household, office, and industrial controllers.
 Programmers can learn how to build a password generator using Tkinter in this tutorial.
 
@@ -17,6 +18,7 @@ Also download a python code editor more preferable [PyCharm](https://www.jetbrai
 
 ### What is Tkinter
 Tkinter is a platform that is included with Python. Tkinter has several advantages. Because the code is cross-platform, they can run it on Windows, Mac OS X, and Linux. Tkinter applications appear to be native to the platform on which they are running because visual elements are created using native operating system elements.
+
 Python must be installed before Tkinter can be installed. When the user installs Python, the user gets Tkinter as well. During the Python installation process.
 However if Tkinter was not  installed when Python was installed, we can do it later with the pip command.
 Tkinter can be installed using the pip command at the terminal.
@@ -41,8 +43,10 @@ Widgets are the building blocks of graphical user interface programming, and the
 
 ### how to build a password generator
 A  password generator is a piece of software that accepts input from a random or pseudo-random number generator and automatically generates  a password for the user.
+
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong, unpredictable password for multiple accounts. The Password Generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
 Online hacking is growing more sophisticated, resulting in the loss of passwords and login information on a regular basis. If your passwords fall into the wrong hands, this may be highly inconvenient, and it can even result in the loss of money or sensitive personal information.
+
 Unfortunately, the majority of stolen passwords are simple and easy to guess. Names, birthdays, hobbies, and favorite pets don't make good passwords, and using them is a recipe for disaster.
 Password generators come very handy in this situation.
 For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
