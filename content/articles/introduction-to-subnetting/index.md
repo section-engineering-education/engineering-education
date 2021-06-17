@@ -124,7 +124,7 @@ This is the specialized process of connecting different IP networks. Hosts of di
 
   [Image source](https://computernetworkingnotes.com)
 
-IP routing process relies on two types of protocols; Routed protocol and Routing protocol.
+IP routing process relies on two types of protocols; routed protocol and routing protocol.
 
 **Routed Protocol:** This is a network protocol used to send user data between networks. It carries data such as web traffic, flies, messages, etc.
 
@@ -191,3 +191,6 @@ Thank you for reading.
 1. [Bonaventure, O. (2018, September 7). Basic of IP Routing Explained with Example](https://www.computernetworkingnotes.com/ccna-study-guide/basic-of-ip-routing-explained-with-example.html)
 
 2. [Robles, G. (2021, April 14). IT: Explained: IP address](https://www.paessler.com/it-explained/ip-address)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
