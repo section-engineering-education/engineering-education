@@ -11,8 +11,8 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/hero.jpg
-    alt: How Serverless Architecture can Impact the Future of AI and ML Industries Hero Image
+  - url: /engineering-education/comparing-serverless-computing-vs-containers/hero.png
+    alt: Comparing Serverless computing vs Containers Hero Image
 ---
 Applications hosted on traditional virtual machines and servers are less flexible and involve a high overhead cost. Containers and [Serverless computing](https://www.cloudflare.com/learning/serverless/what-is-serverless/) are a solution to these weaknesses. They allow developers to build more flexible applications at low overhead costs.
 <!--more-->
