@@ -8,6 +8,12 @@ In this tutorial, I'll show you how to build RESTful APIs using Node.js Express,
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Node.js application setup](#Node-application-setup)
+- [Express packages setup](#express-packages-setup)
+- [RESTful APIs implementation](#restful-apis-implementation)
+- [Dockerizing the Express application](#dockerizing-the-express-application)
+- [Setup YAML service to deploy Dockerized Node Express application](#setup-yaml-service-to-deploy-dockerized-node-express-application)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Prerequisites
 
