@@ -2,7 +2,7 @@
 ### Introduction
 The term Graphic User interface, as opposed to text-based user interfaces, typed command labels, or text navigation, allows users to interact with electronic devices through the use of graphical icons and audio indicators such as primary notation. GUIs were developed in response to the perceived steep learning curve of command-line interfaces, which require commands to be typed on a computer keyboard.
 In most cases, activities in a GUI are performed by directly manipulating the graphical elements. In addition to computers, GUIs are used in a variety of handheld mobile devices such as MP3 players, portable media players, gaming devices, cellphones, and smaller household, office, and industrial controllers.
-Programmers can learn how to build a basic Graphical User Interface (GUI) and a simple calculator using Tkinter in this tutorial.
+Programmers can learn how to build a password generator using Tkinter in this tutorial.
 
 ### Table of content
 - [Prerequisites](#prerequisites)
