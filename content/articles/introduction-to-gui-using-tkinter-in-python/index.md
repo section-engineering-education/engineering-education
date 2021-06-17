@@ -19,8 +19,8 @@ Also download a python code editor more preferable [PyCharm](https://www.jetbrai
 ### What is Tkinter
 Tkinter is a platform that is included with Python. Tkinter has several advantages. Because the code is cross-platform, they can run it on Windows, Mac OS X, and Linux. Tkinter applications appear to be native to the platform on which they are running because visual elements are created using native operating system elements.
 
-Python must be installed before Tkinter can be installed. When the user installs Python, the user gets Tkinter as well. During the Python installation process.
-However if Tkinter was not  installed when Python was installed, we can do it later with the pip command.
+Python must be installed before Tkinter can be installed. When the user installs Python, the user gets Tkinter as well, during the Python installation process.
+However if Tkinter was not  installed when Python was installed, the user can do it later with the pip command.
 Tkinter can be installed using the pip command at the terminal.
 Run the following command 
 ```python
