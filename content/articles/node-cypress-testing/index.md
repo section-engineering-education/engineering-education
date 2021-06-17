@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/node-cypress-testing/
+title: Working with cypress in Nodejs
+description: This article aims to help readers understand how cypress works and how to write end-to-end tests.
+author: linus-muema
+date: 2021-06-17T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/node-cypress-testing/hero.jpg
+    alt: node cypres stesting
+---
+
 Testing is a vital part of software development. It is the main focus when following the `Test Driven Development` principle. It ensures the behavior of our applications is as what we expect it to be. **End-to-end** testing, or e2e in short, is a testing approach used to check for user interactions with the application. We can use [`cypress`](https://www.cypress.io/) to carry out these e2e tests.
 
 ### Introduction
