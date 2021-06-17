@@ -1,4 +1,4 @@
-The JavaScript ecosystem is huge. One of the Node.js framework that is rising in popularity is Fastify with its ease of use and great developer experience. In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection. Refer to this [Github repository]() to follow along.
+The JavaScript ecosystem is huge. One of the Node.js framework that is rising in popularity is Fastify with its ease of use and great developer experience. In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection. Refer to this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
 
 ### Prerequisites
 
@@ -54,15 +54,15 @@ To briefly dissect the above code:
 
 You need to create a free account to access the fauna dashboard so as to create a new database. Initially, the dashboard screen should look like this:
 
-![new database](./newdatabase1.png)
+![new database](/engineering-education/fastify-fauna-nodejs/newdatabase1.png)
 
 Next, give your database a name. Name the database `FASTIFY-FAUNA`:
 
-![database name](./db-name2.png)
+![database name](/engineering-education/fastify-fauna-nodejs/db-name2.png)
 
 Since we need to access our fauna database from our Node.js application code, we now create a server access key. On your Fauna dashboard, navigate to the security section and create a new key. Make sure to use its role options as Server:
 
-![role server](./role-server3.png)
+![role server](/engineering-education/fastify-fauna-nodejs/role-server3.png)
 
 The key is secret and is what we use to access Fauna from Node.js. 
 >>> Note: the server key should be stored safely as Fauna will not show it again.
@@ -79,7 +79,7 @@ CreateCollection({
 
 When we executing the above query, it should return:
 
-![shell](./shell-create-collection.png)
+![shell](/engineering-education/fastify-fauna-nodejs/shell-create-collection.png)
 
 Next, we need an index. this is a copy of data columns from a table that is mainly designed to enable very efficient search. It will also allow us to ensure unique usernames:
 
@@ -244,7 +244,7 @@ If everything works as we expected, our response body should contain a JSON docu
   }
 }
 ```
-![create user]('./create-user.png)
+![create user](/engineering-education/fastify-fauna-nodejs/create-user.png)
 
 Trying to create the same user twice should return a Fauna error since the `Users_by_username` index does not allow two documents to exist with the same username.
 
@@ -427,11 +427,11 @@ If we try this request on this route, we will get an error response since our us
 
 To configure the authorization using the dashboard, go to the Security section of the dashboard, on the Roles tab, click the New Custom Role. Assign it the name of `User`, add the collection of `Users`, and click on the Read permission to enable it:
 
-![new custom role](./read-privileges.png)
+![new custom role](/engineering-education/fastify-fauna-nodejs/read-privileges.png)
 
 Fauna will need to know who belongs to this role. Go back to the dashboard. Under the Membership tab, select the `Users` collection as a member of this role:
 
-![membership](./Usermembercoll.png)
+![membership](/engineering-education/fastify-fauna-nodejs/Usersmembercoll.png)
 
 
 Any user who logs in with a token based on a document from the `Users` collection has the read permission on any document in that collection. My document ID from the previous user happens to be `301556533148254727`. For your case, check the `ID` of the user by going back to the Collections section of the fauna dashboard and grab it from that document. Before we make this HTTP request, we need to ensure that we add the user's secret (the one that we got after logging in our user) and add it into the custom `fauna-secret` HTTP header:
@@ -463,7 +463,7 @@ Now we need to make a `GET` HTTP request to the endpoint `http://localhost:3000/
 }
 ```
 
-![get user](./get-user.png)
+![get user](/engineering-education/fastify-fauna-nodejs/get-user.png)
 
 ### Deleting a user
 
