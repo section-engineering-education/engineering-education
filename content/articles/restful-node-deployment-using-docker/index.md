@@ -1,7 +1,7 @@
 ### Introduction
 
-Express is a tool for the backend enabling the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
-In this tutorial, I'll show you how to build RESTful APIs using Node.js Express, test them locally using docker-compose. We'll then proceed to deploy this application to the cloud.  
+Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
+In this tutorial, I'll show you how to build RESTful APIs using Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the cloud.  
 
 ### Table of contents
 
