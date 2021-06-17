@@ -5,7 +5,7 @@ published: true
 url: /data-preprocessing-in-r/
 title: Data Preprocessing in R
 description: This artilce provides the reader a detailed guide on how to preprocess a dataset before using it to train models. Data Preprocessing is crucial in machine learning and needs to be performed properly and systematically.
-author: 
+author: stanley-juma
 date: 2021-01-14T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
