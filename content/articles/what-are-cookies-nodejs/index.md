@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/
+url: /what-are-cookies-nodejs/
 title: Understanding Cookies and Implementing them in Node.js
 description: This article will discuss Cookies, as well as show you how they can be implemented in Node.js. NPM dependencies such as cookie-parser and Express allow you to work with these components easily.
 author: catherine-macharia
-date: 2021-06-28T00:00:00-18:00
+date: 2021-06-17T00:00:00-05:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/hero.png
+  - url: /engineering-education/what-are-cookies-nodejs/hero.png
     alt: Using Cookies in Node.js
 ---
 Websites usually store a small amount of data on the browsers. There are three main kinds of browser-based storage: session storage, local storage, and cookie storage. This guide will discuss what a cookie is, how it works and how to use HTTP cookies in a Node.js application.
@@ -21,34 +21,38 @@ Websites usually store a small amount of data on the browsers. There are three m
 - [Node.js installed](https://nodejs.org/en/) on your computer.
 - Basic understanding of[ how to create an HTTP server using Express](/engineering-education/express/).
 
-### What are cookies
+### What are cookies?
 A cookie is usually a tiny text file stored in your web browser. A cookie was initially used to store information about the websites that you visit. But with the advances in technology, a cookie can track your web activities and retrieve your content preferences. I am sure, at some point, you have seen a pop-up screen similar to the one shown below.
 
-![Accept cookies website popup](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/accept-cookies-website-popup.png)
+![Accept cookies website popup](/engineering-education/what-are-cookies-nodejs/accept-cookies-website-popup.png)
 
 This will help the website you have visited to know more about you and customize your future experience.
 
 For example;
 
-- Cookies save you language preferences. This way, when you visit that website in the future, the language you used will be remembered.
+- Cookies save your language preferences. This way, when you visit that website in the future, the language you used will be remembered.
 
-- Probably you have visited an e-commerce website. When you include items into your shopping cart, a cookie will remember your choices. Your shopping list item will still be there whenever you revisit the site. Basically, a cookie is used to remember data from the user.
+- You have most likely visited an e-commerce website. When you include items into your shopping cart, a cookie will remember your choices. Your shopping list item will still be there whenever you revisit the site. Basically, a cookie is used to remember data from the user.
 
 > Therefore, cookies are small strings that contain key-value pairs of information sent from the webserver to the browser to get information about the user. The browser will then save them locally. This way, subsequent requests can be made to the server to immediately update user content on the website depending on the previous requests that a user made to the server. A cookie is HTTP generated; thus, called an HTTP cookie.
 
 ### A brief history of cookies
-The first HTTP cookie was created in [1994 by Lou Montulli](https://en.wikipedia.org/wiki/Lou_Montulli#Career), an employee of [Netscape Communications](https://en.wikipedia.org/wiki/Netscape), the company that created the Netscape browser. Lou was creating an online store for a company that claimed that their servers were getting full from storing each user's shopping cart data. 
+The first HTTP cookie was created in [1994 by Lou Montulli](https://en.wikipedia.org/wiki/Lou_Montulli#Career), an employee of [Netscape Communications](https://en.wikipedia.org/wiki/Netscape), the company that created the Netscape browser. Lou was creating an online store for a company that claimed that their servers were getting full from storing each user's shopping cart data.
 
-Lou, therefore, had to figure out how to store the contents of the shopping cart locally. He came up with an idea to save the shopping cart info on the user's computer to save server space. He borrowed the concept of HTTP cookies from a computing token called the [magic cookie](https://en.wikipedia.org/wiki/Magic_cookie) which was used to identify a user when logging into a system. 
+Lou, therefore, had to figure out how to store the contents of the shopping cart locally. He came up with an idea to save the shopping cart info on the user's computer to save server space. He borrowed the concept of HTTP cookies from a computing token called the [magic cookie](https://en.wikipedia.org/wiki/Magic_cookie) which was used to identify a user when logging into a system.
 
-Lou recreated this concept and implemented it in a web browser. In 1994, the Netscape browser implemented cookies, followed by Internet Explorer in 1995. And that marked the birth of HTTP cookies.
+Lou recreated this concept and implemented it in a web browser. In 1994, the Netscape browser implemented cookies, followed by Internet Explorer in 1995 and that marked the birth of HTTP cookies.
 
-### How cookies works
-When a user visits a cookies-enabled website for the first time, the browser will prompt the user that the web page uses cookies and request the user to accept cookies to be saved on their computer. Typically, when a makes a user request, the server responds by sending back a cookie (among many other things). This cookie is going to be stored in the user's browser. When a user visits the website or sends another request, that request will be sent back together with the cookies. The cookie will have certain information about the user that the server can use to make decisions on any other subsequent requests.
+### How cookies work
+When a user visits a cookie-enabled website for the first time, the browser will prompt the user that the web page uses cookies and request the user to accept cookies to be saved on their computer. Typically, when a makes a user request, the server responds by sending back a cookie (among many other things). 
+
+This cookie is going to be stored in the user's browser. When a user visits the website or sends another request, that request will be sent back together with the cookies. The cookie will have certain information about the user that the server can use to make decisions on any other subsequent requests.
 
 A perfect example is accessing Facebook from a browser. When you want to access your Facebook account, you have to log in with the correct credentials to be granted the proper access. But in this case, it would be tiresome to continuously log in to Facebook every time.
 
-When you first make a login request and the server verifies your credentials, the server will send your Facebook account content. It will also send cookies to your browser. The cookies are then stored on your computer and submitted to the server with every request you make to that website. A cookie will be saved with an identifier that is unique to that user. When you revisit Facebook, the request you make, the saved cookie, and the server will keep track of your login session and remember who you are and thus keep you logged in.
+When you first make a login request and the server verifies your credentials, the server will send your Facebook account content. It will also send cookies to your browser. The cookies are then stored on your computer and submitted to the server with every request you make to that website. A cookie will be saved with an identifier that is unique to that user.
+
+When you revisit Facebook, the request you make, the saved cookie, and the server will keep track of your login session and remember who you are and thus keep you logged in.
 
 The different types of cookies include:
 
@@ -70,13 +74,13 @@ Let's dive in and see how we can implement cookies using Node.js. We will create
 
 Go ahead and create a project directory on your computer. Initialize Node.js using `npm init -y` to generate a `package.json` file to manage Node.js project dependencies.
 
-We will use the following NPM packages.
+We will use the following NPM packages:
 
 - **[Express](/engineering-education/express/)** - this is an opinionated server-side framework for Node.js that helps you create and manage HTTP server REST endpoints.
 
 - **[cookie-parser](https://www.npmjs.com/package/cookie-parser)** - cookie-parser looks at the headers in between the client and the server transactions, reads these headers, parses out the cookies being sent, and saves them in a browser. In other words, cookie-parser will help us create and manage cookies depending on the request a user makes to the server.
 
-Run the following command to install these `NPM` packages
+Run the following command to install these `NPM` packages:
 
 ```bash
 npm install express cookie-parser
@@ -104,14 +108,14 @@ const app = express()
 app.use(cookieParser());
 ```
 
-This will make your application use the cookie parser and Express.
+This will make your application use the cookie parser and Express modules.
 
 #### Step - 3 Set a simple route to start the server
 We use the following code to set up a route for the homepage:
 
 ```js
 //set a simple for homepage route
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.send('welcome to a simple HTTP cookie server');
 });
 ```
@@ -121,12 +125,12 @@ This is the port number that the server should listen to when it is running. Thi
 
 ```js
 //server listening to port 8000
-app.listen(8000, () => console.log('The server is running port 8000...'))
+app.listen(8000, () => console.log('The server is running port 8000...'));
 ```
 
 Now we have a simple server set. Run `node app.js` to test if it is working.
 
-![Running an Express server](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/a-running-server.png)
+![Running an Express server](/engineering-education/what-are-cookies-nodejs/a-running-server.png)
 
 And if you access the localhost on port 8000 (`http://localhost:8000/`), you should get an HTTP response sent by the server. Now we’re ready to start implementing cookies.
 
@@ -151,10 +155,10 @@ Go ahead and run `node app.js` to serve the above endpoint. Open `http://localho
 
 To confirm that the cookie was saved, go to your browser's inspector tool 🡆 select the application tab 🡆 cookies 🡆 select your domain URL.
 
-![Saving a cookie in the browser](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/cookie-saved.png)
+![Saving a cookie in the browser](/engineering-education/what-are-cookies-nodejs/cookie-saved.png)
 
 #### Step 2 - Using the req.cookies method to check the saved cookies
-If the server sends this cookie to the browser, this means we can iterate the incoming requests through `req.cookies` and check the existence of a saved cookie. You can log this cookie to the console or send the cookie request as a response to the browser. Let's, do that.
+If the server sends this cookie to the browser, this means we can iterate the incoming requests through `req.cookies` and check the existence of a saved cookie. You can log this cookie to the console or send the cookie request as a response to the browser. Let's do that.
 
 ```js
 // get the cookie incoming request
@@ -165,20 +169,20 @@ app.get('/getcookie', (req, res) => {
 });
 ```
 
-Again run the server using `node app.js` to expose the above route (`http://localhost:8000/getcookie`). And you can see the response on the browser.
+Again run the server using `node app.js` to expose the above route (`http://localhost:8000/getcookie`) and you can see the response on the browser.
 
-![A saved cookie](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/saved-cookie.png)
+![A saved cookie](/engineering-education/what-are-cookies-nodejs/saved-cookie.png)
 
 As well as on your console logs.
 
-![Cookie saved in the console](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/cookie-saved-console-log.png)
+![Cookie saved in the console](/engineering-education/what-are-cookies-nodejs/cookie-saved-console-log.png)
 
 #### Step 3 - Secure cookies
 One precaution that you should always take when setting cookies is security. In the above example, the cookie can be deemed insecure.
 
 For example, you can access this cookie on a browser console using JavaScript (`document.cookie`). This means that this cookie is exposed and can be exploited through cross-site scripting.
 
-You can see the Cookie when you open the browser inspector tool and execute the following in the console.
+You can see the cookie when you open the browser inspector tool and execute the following in the console.
 
 ```js
 document.cookie
@@ -186,7 +190,7 @@ document.cookie
 
 The saved cookie values can be seen through the browser console.
 
-![Browser console](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/browser-console.png)
+![Browser console](/engineering-education/what-are-cookies-nodejs/browser-console.png)
 
 As a precaution, you should always try to make your cookies inaccessible on the client-side using JavaScript.
 
@@ -196,11 +200,11 @@ We can add several attributes to make this cookie more secure.
 - A `secure` attribute ensures that the browser will reject cookies unless the connection happens over HTTPS.
 - `sameSite` attribute improves cookie security and avoids privacy leaks.
 
-By default, `sameSite` was initially set to `none` (`sameSite = None`). This allowed third parties to track users across sites. Currently, it is set to `Lax` (`sameSite = Lax`). Meaning a cookie is only set when the domain in the URL of the browser matches the domain of the cookie, thus eliminating third party's domains. `sameSite` can also be set to `Strict` (`sameSite = Strict`). This will restrict cross-site sharing even between different domains that the same publisher owns.
+By default, `sameSite` was initially set to `none` (`sameSite = None`). This allowed third parties to track users across sites. Currently, it is set to `Lax` (`sameSite = Lax`) meaning a cookie is only set when the domain in the URL of the browser matches the domain of the cookie, thus eliminating third party's domains. `sameSite` can also be set to `Strict` (`sameSite = Strict`). This will restrict cross-site sharing even between different domains that the same publisher owns.
 
 - You can also add the maximum time you want a cookie to be available on the user browser. When the set time elapses, the cookie will be automatically deleted from the browser.
 
-Check [this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) guide to learn more attributes and how you can use them in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) and [Node.js](https://www.npmjs.com/package/set-cookie-parser).
+Read [this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) guide to learn more attributes and how you can use them in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) and [Node.js](https://www.npmjs.com/package/set-cookie-parser).
 
 ```js
 //a get route for adding a cookie
@@ -221,11 +225,11 @@ In this case, we are accessing the server on localhost, which uses a non-HTTPS s
 
 If you run the server again (`node app.js`) and navigate to `http://localhost:8000/setcookie` on the browser, you can see that the values of the cookie have been updated with security values.
 
-![Cookies updated security values](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/cookies-updated-security-values.png)
+![Cookies updated security values](/engineering-education/what-are-cookies-nodejs/cookies-updated-security-values.png)
 
 Furthermore, you cannot access the cookie using JavaScript, i.e., `document.cookie`.
 
-![Cookie not accessed with JavaScript](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/cookie-not-accessed-with-javascript.png)
+![Cookie not accessed with JavaScript](/engineering-education/what-are-cookies-nodejs/cookie-not-accessed-with-javascript.png)
 
 #### Step 4 - Deleting a cookie
 Typically, cookies can be deleted from the browser depending on the request that a user makes. For example, if cookies are used for login purposes, when a user decides to log out, the request should be accompanied by a delete command.
@@ -243,7 +247,7 @@ app.get('/deletecookie', (req, res) => {
 
 Open `http://localhost:8000/deletecookie`, and you will see that the saved cookie has been deleted.
 
-![A saved cookie deleted](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/cookie-deleted.png)
+![A saved cookie deleted](/engineering-education/what-are-cookies-nodejs/cookie-deleted.png)
 
 ### A use case: How to authenticate a user with cookies
 
@@ -268,7 +272,7 @@ Create a new project folder and initialize the `Node.js` project with `npm init 
 
 #### Step:2 Setting the project dependencies
 
-This project will use the following pm packages.
+This project will use the following NPM packages.
 
 - **[Cookie-parser](https://www.npmjs.com/package/cookie-parser)** - For parsing cookies from the response object to the request object.
 - **[Express](/engineering-education/express/)** - Web framework for Node.js
@@ -294,7 +298,7 @@ Since we are using `nodemon` to watch the server files, go ahead and change the 
 This will help us start the server with `npm run dev`, and `nodemon` will watch our file. It will restart the server whenever you make, and save changes.
 
 #### Step 3 - Setting up the server
-In this step, we will set up our `express` server. The comments included inside the different lines on the code will help you figure out if you get stuck.
+In this step, we will set up our `express` server. The comments included inside the different lines on the code will help you figure things out if you get stuck.
 
 ```js
 // src/index.js
@@ -481,7 +485,7 @@ The server will render the following EJS views.
 </html>
 ```
 
-Add some CSS to style the above views.
+Next, add some CSS to style the above views.
 
 ```css
 /* src/public/styles.css */
@@ -526,7 +530,7 @@ form input[type="submit"] {
 
 To start the server, run `npm run dev`.
 
-![A login server running](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/login-server-running.png)
+![A login server running](/engineering-education/what-are-cookies-nodejs/login-server-running.png)
 
 #### Step 6 - Testing the application
 
@@ -534,11 +538,11 @@ Let's now test the application and see if everything is working.
 
 - Open `http://localhost:4000/` in a browser, and you will be served this `home page`.
 
-![A Home page](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/home-page.png)
+![A Home page](/engineering-education/what-are-cookies-nodejs/home-page.png)
 
 - Clicking the `login` link on the `home page` will redirect you to this `login page`.
 
-![A login page](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/login-page.png)
+![A login page](/engineering-education/what-are-cookies-nodejs/login-page.png)
 
 - We then need to enter the `username` and `password`. Since this is a simple demonstration, we have not used a database to save the login credentials. We have defined them in the `index.js` file:
 
@@ -552,11 +556,11 @@ Let's now test the application and see if everything is working.
 
 Use `Bob` as the username and `123456` as the password. If the credentials are correct, you will be served with this welcome page.
 
-![A welcome page](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/welcome-page.png)
+![A welcome page](/engineering-education/what-are-cookies-nodejs/welcome-page.png)
 
 We are using cookies here, so when `Bob` logs in successfully, a cookie with Bob's `username` will be saved on his browser. Go to your browser inspector tool 🡆 application 🡆cookies 🡆 select your domain `http://localhost:4000/`.
 
-![Bob login cookie](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/bob-login-cookie.png)
+![Bob login cookie](/engineering-education/what-are-cookies-nodejs/bob-login-cookie.png)
 
 Now that this cookie is saved, Bob will not have to provide login credentials again when he revisits the site. Go ahead and try if this works when you access the home route (`http://localhost:4000/`).
 
@@ -564,7 +568,7 @@ When Bob chooses to `log out` the server will send a response to clear the saved
 
 Try to log out and see what happens.
 
-![Logout clear cookies](/engineering-education/what-are-cookies-how-cookies-work-how-to-use-cookies-in-nodejs/logout-clear-cookies.png)
+![Logout clear cookies](/engineering-education/what-are-cookies-nodejs/logout-clear-cookies.png)
 
 The saved cookie will be cleared, and thus Bob will need to log in again when he wants to access the pages of this domain.
 
@@ -572,7 +576,7 @@ The saved cookie will be cleared, and thus Bob will need to log in again when he
 As a developer, you might wonder how cookies are helpful and why developers need to use them. Here are a few use cases that explain the importance of collecting and saving user preferences, as well as other useful information in a cookie.
 
 #### Session cookie
-It tracks the sessions a user has interacted with within a website. Any kind of information that the server needs to remember about you is included in [session management](/session-management-in-nodejs-using-expressjs-and-express-session/). For example, in shopping websites, every cookie is unique to a specific user. As discussed, an e-commerce website can use cookies to store your shopping cart's contents.
+It tracks the sessions a user has interacted with within a website. Any kind of information that the server needs to remember about you is included in [session management](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/). For example, in shopping websites, every cookie is unique to a specific user. As discussed, an e-commerce website can use cookies to store your shopping cart's contents.
 
 In online games, cookies may be used to store your scores.
 
@@ -583,11 +587,13 @@ This saves user preferences such as themes, languages, and different website set
 Cookies can track any user behavior on a website. This includes the pages you access, the links you click, and how long you interact with a web page. This tracking is mostly done by third parties to analyze a website. Since a cookie is specific to one user, it can be used to determine how many unique users visit a website.
 
 ### Conclusion
-Note that Cookies are not intended for transmitting sensitive data. As a developer, you must ensure that the response you send to a client does not contain sensitive information such as passwords. A cookie is saved on a browser and can, therefore, be manipulated if it falls in the wrong hands. 
+Note that cookies are not intended for transmitting sensitive data. As a developer, you must ensure that the response you send to a client does not contain sensitive information such as passwords. A cookie is saved on a browser and can, therefore, be manipulated if it falls in the wrong hands.
 
-There are [Cookies regulations](https://www.cookielaw.org/the-cookie-law/) that make sure cookies are not used in the wrong way. These guidelines also restrict the type of data that a cookie can get from a user to avoid compromising user privacy.
+There are [cookie regulations](https://www.cookielaw.org/the-cookie-law/) that make sure cookies are not used in the wrong way. These guidelines also restrict the type of data that a cookie can get from a user to avoid compromising user privacy.
 
 According to [GDPR](https://gdpr.eu/cookies/), internet identifiers such as cookies are considered personal data, and organizations can only exploit them with the client's permission. This the reason why cookie opt-in prompts are so common when you visit a website.
+
+I hope this guide helps you to understand what cookies are and how to use them in a Node.js web application in the correct way. Happy coding.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
