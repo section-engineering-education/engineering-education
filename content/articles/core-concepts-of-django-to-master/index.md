@@ -3,7 +3,7 @@ Name: ARAFAT OLAWUMI OLAYIWOLA
 I am Software and Associate Cloud Engineer who is passionate about the over-whelming technologies out there. I develop a scalable and user friendly applications that run on all platforms and responsive. I love Django like my girlfriend. Undergraduate of Computer Engineering here in Nigeria.
 
 <!-- My Picture -->
-![Arafat Olayiwola](/core-concepts-of-django-for-mastering/Arafat Olayiwola)
+![Arafat Olayiwola](/core-concepts-of-django-for-mastering/Arafat-Olayiwola.jpg)
 
 ![django-img](/core-concepts-of-django-for-mastering/django-img.png)
 
