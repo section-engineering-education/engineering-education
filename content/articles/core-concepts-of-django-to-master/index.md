@@ -5,7 +5,7 @@ I am Software and Associate Cloud Engineer who is passionate about the over-whel
 <!-- My Picture -->
 ![Arafat Olayiwola](/core-concepts-of-django-for-mastering/Arafat-Olayiwola.jpg)
 
-![django-img](/core-concepts-of-django-for-mastering/django-img.png)
+![django-img](/core-concepts-of-django-for-mastering/django-image.png)
 
 <!-- INTRODUCTION -->
 Are you  a beginner or an intermediate of Django? Join me to explore more on this superb and sweet framework used to setup web apps by connecting to server. You don't want to miss this!!
