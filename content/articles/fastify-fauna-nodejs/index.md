@@ -1,4 +1,4 @@
-The JavaScript ecosystem is huge. One of the Node.js framework that is rising in popularity is Fastify with its ease of use and great developer experience. In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection. Refer to this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
+Choosing the right JavaScript tech stack in the massive ecosystem is challenging. One of the Node.js web server framework that is rising in popularity these days is Fastify due to its ease of use and great developer experience. In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection. Refer to this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
 
 ### Prerequisites
 
@@ -517,4 +517,5 @@ module.exports = {
 
 Our endpoint uses the `Delete` function from the `faunadb.query` object to match the `userId` passed as a parameter. Making `DELETE` request to `http://localhost:3000/users/301556533148254727` endpoint responds with the deleted document. If we try to use a secret for a deleted user, we will get back a 401 error indicating that the request is unauthorized.
 
-I hope this tutorial was of use and happy coding!
+### Conclusion
+The simplicity of the FaunaDB cloud database offers greate experience without sacrificing scalability and simplicity. It is a complete serverless, fast, and ACID-compliant database that will scale infinitly on the cloud without much hassle from the developer. Fastify on the other hand offers a high performance and ludicrous speed in Node.js web servers. It's rich ecosystem of plugins ensures we do not reinvent the wheel. Worrying about being developer friendly? Well, just like Express, Fastify is simple and elegant with great logging system. What else can we ask for? I hope you give it a try in your next Node.js project.
