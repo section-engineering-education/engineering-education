@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
 status: publish
-published:true 
-url: /engineering-education/introduction-to-wlan-frequency-bands/
-title: Introduction to WLAN Frequency bands
+published: true 
+url: /introduction-to-wlan-frequency-bands/
+title: Introduction to WLAN Frequency Bands
 description: This article will explain and distinguish between the two WLAN frequency bands 2.4GHz and 5GHz. It will define the WLAN standards supported by each of the frequency bands and further state the channels within the frequency bands.
 author: ruth-mare
-date: 2021-05-01T00:00:00-08:00
+date: 2021-06-17T00:00:00-18:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/introduction-to-wlan-frequency-bands/hero.jpg
     alt: WLAN frequency bands cover image 
 ---
-
-WLAN frequency bands are frequency ranges within which radio waves can be implemented to enable wireless communication. These frequency bands are implemented and given the various tasks suited for each and the countries that support each.
+WLAN frequency bands are frequency ranges within which we can implement radio waves to enable wireless communication. These frequency bands are implemented and given the various tasks suited for each and for the countries that support each.
 <!--more-->
-The different WLAN frequency bands are also supported by different and, in some cases, similar WLAN standards.
+The different WLAN frequency bands are also supported by different and in some cases, similar WLAN standards.
 
 ### Overview
 This article will cover:
@@ -54,12 +53,14 @@ Higher frequency electromagnetic waves transmit more power and provide stronger 
 - ***IEEE 802.11ax-2018/19(IEEE 802.11ax)*** - This is a standard on both the 2.4GHz and 5GHz frequency bands that supports transmission speeds of up to 9.6Gbps.
 
 ### 5GHz frequency band
-The 5GHz frequency band provides richer spectrum resources and contains non-overlapping channels. 5GHz transmission ranges from 5.15GHz to 5.35GHz and 5.725GHz to 5.85GHz. The available channels on the 5GHz band vary depending on countries and regions; for example, there are 13 available non-overlapping channels in china.
+The 5GHz frequency band provides richer spectrum resources and contains non-overlapping channels. 5GHz transmission ranges from 5.15GHz to 5.35GHz and 5.725GHz to 5.85GHz. The available channels on the 5GHz band vary depending on countries and regions; for example, there are 13 available non-overlapping channels in China.
+
 The 5GHz frequency band has channels numbered 36 to 165 channels. This frequency band is supported within the following standards: 802.11a, 802.11n, 802.11ax, 802.11 ac wave 1, and 802.11ac wave 2.
 
 ### 2.4GHz frequency band
-The 2.4GHz frequency band is divided into 14 overlapping channels, each having a frequency bandwidth of 20MHz except in 802.11b, which has a frequency bandwidth of 22MHz. This frequency band ranges from 2.4GHz to 2.4835GHz and neighboring channels overlap. However, commonly, channels 1,5,9 and 13 are non-overlapping channels.
-This frequency band is supported within the following standards: 802.11, 802.11b, 802.11g, 802.11n, and 802.11ax.
+The 2.4GHz frequency band is divided into 14 overlapping channels, each having a frequency bandwidth of 20MHz except in 802.11b, which has a frequency bandwidth of 22MHz. This frequency band ranges from 2.4GHz to 2.4835GHz and neighboring channels overlap. 
+
+However, commonly, channels 1,5,9 and 13 are non-overlapping channels. This frequency band is supported within the following standards: 802.11, 802.11b, 802.11g, 802.11n, and 802.11ax.
 
 ### Overlapping and non-overlapping channels
 Given that radio waves are ubiquitous, random use of spectrum resources will cause endless interference problems. Therefore, in addition to defining the available frequency bands, wireless communication protocols must also divide precisely the frequency ranges. Every frequency range is a channel.
@@ -69,13 +70,15 @@ Overlapping channels are channels that interfere with each other during transmis
 
 #### Non-overlapping channels
 Non-overlapping channels, on the other hand, do not interfere with each other. Traditionally, only channels 1, 6, and 11 are non-overlapping channels on the `2.4GHz` frequency band. When incompatibility is not considered, channels 1, 5, 9, and 13 are non-overlapping channels, given that the standard `802.11b` has a bandwidth of 22MHz and has faded out of WLANs.
+
 Distributed among channels, in most countries, the non-overlapping channels on `2.4GHz` follow the respective standards: Channels 1, 6, 11, and 14 for the standard `802.11b` and channels 1, 5, 9, and 13 for the standard `802.11g/n.`
-In addition, adjacent channels, such as channels 36 and 40 on the 5GHz frequency band, do not overlap.
 
 In addition, adjacent channels, such as channels 36 and 40 on the `5GHz` frequency band, do not overlap.
 
 ### To wrap up
 The two WLAN frequency bands support different transmission rates given the standard under which they are implemented. This eventually determines the effectiveness of the two frequency bands in different tasks suited for and the devices implemented by a user.
+
+Happy learning!
 
 ### Relevant resources
 - [WLAN Frequency Bands & Channels](https://www.cablefree.net/wirelesstechnology/wireless-lan/wlan-frequency-bands-channels/#:~:text=WLAN%20Frequency%20Bands%3A%20The%20802.11,into%20a%20multitude%20of%20channels.)
