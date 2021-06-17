@@ -92,7 +92,7 @@ Firebase is used as our database and to provide the Authentication API as well.
 7. Copy the App_id and Secret then, paste to the fields we left empty on the Facebook sign-in method.
 8. Copy the `OAuth redirect URI` we need to set up our app with Facebook.
 
-![OAuth redirect URI](/engineering-education/flutter-social-authentication/app_secret.png)
+![OAuth redirect URI](/engineering-education/flutter-social-authentication/auth-redirect-url.png)
 
 ### Setting up Facebook Auth
 1. In the Facebook console, head over to the dashboard.
