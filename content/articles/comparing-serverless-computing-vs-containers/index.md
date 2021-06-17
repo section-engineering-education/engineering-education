@@ -28,12 +28,20 @@ In the recent past, applications used to be deployed over big servers. The respo
 - Apply the relevant security updates to the server.
 - Manage the scaling up of their server as usage scales up and manage to scale it down when they did not have many usages.
 
-Serverless computing came as a solution to such problems. This computing technology provides users with an execution model, where a cloud provider executes a code by dynamically allocating resources. [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/), and [AWS](https://aws.amazon.com/) are examples of such cloud providers. This way, you only pay for the number of resources you used to run the application code. As a result, you cut costs that you would have otherwise incurred when using traditional servers. The overall computing experience is 'serverless' because the cost of managing server resources is less.
+Serverless computing came as a solution to such problems. This computing technology provides users with an execution model, where a cloud provider executes a code by dynamically allocating resources. 
+
+[Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/), and [AWS](https://aws.amazon.com/) are examples of such cloud providers. This way, you only pay for the number of resources you used to run the application code. 
+
+As a result, you cut costs that you would have otherwise incurred when using traditional servers. The overall computing experience is 'serverless' because the cost of managing server resources is less.
 
 ### Why we need containers
-If you are planning to move software from one computing environment to another, your biggest concern is probably whether the software will run correctly after all this is done. Containerization comes in to solve this problem. With containerization, different teams can work on different parts of the application independently. This allows faster software development as well as testing for possible errors.
+If you are planning to move software from one computing environment to another, your biggest concern is probably whether the software will run correctly after all this is done.
 
-Organizations are creating more agile work environments to ensure more productivity in their workforce. [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/), for example, brings software developers and IT operators together to provide continuous delivery and shorten the system development life-cycle. Such teams need containers to solve application conflicts that may arise because of differences between these two environments.
+Containerization comes in to solve this problem. With containerization, different teams can work on different parts of the application independently. This allows faster software development as well as testing for possible errors.
+
+Organizations are creating more agile work environments to ensure more productivity in their workforce. [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/), for example, brings software developers and IT operators together to provide continuous delivery and shorten the system development life-cycle. 
+
+Such teams need containers to solve application conflicts that may arise because of differences between these two environments.
 
 Containers are enablers of microservices applications. The lightweight nature of containers means they take up less space and are easy to boot up.
 
