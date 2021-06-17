@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /using-machine-learning-to-translate-brain-signals-to-text/hero.jpg
+  - url: /engineering-education/using-machine-learning-to-translate-brain-signals-to-text/hero.jpg
     alt: brain signals example image
 ---
 Developing brain-computer interfaces (BCI) that can decode and translate brain signals will depend on us being able to decode more of these signals in a way that is useful for people such as those with paralysis.
