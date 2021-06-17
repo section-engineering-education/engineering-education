@@ -1,5 +1,21 @@
-Applications hosted on traditional virtual machines and servers are less flexible and involve a high overhead cost. Containers and [Serverless computing](https://www.cloudflare.com/learning/serverless/what-is-serverless/) are a solution to these weaknesses. They allow developers to build more flexible applications at low overhead costs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /comparing-serverless-computing-vs-containers/
+title:  Comparing Serverless computing vs Containers
+description: In this article, we will cover the differences and similarities between serverless and containers.
+author: jayden-kiprotich
+date: 2021-06-17T00:00:00-15:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-serverless-architecture-can-impact-the-future-of-ai-and-ml-industries/hero.jpg
+    alt: How Serverless Architecture can Impact the Future of AI and ML Industries Hero Image
+---
+Applications hosted on traditional virtual machines and servers are less flexible and involve a high overhead cost. Containers and [Serverless computing](https://www.cloudflare.com/learning/serverless/what-is-serverless/) are a solution to these weaknesses. They allow developers to build more flexible applications at low overhead costs.
+<!--more-->
 A developer may choose a container or serverless architecture depending on the needs of the application. The features of these two architectures overlap in some aspects, but they are not interchangeable technologies.
 
 Each of these works better in specific environments, as we will discuss later in this article. We will also have a look at the key differences between serverless computing and containers.
@@ -61,8 +77,11 @@ A combination of the two models is a game-changer in the cloud computing arena. 
 ### Conclusion
 Organizations are no longer thinking of serverless and containers as two competing technologies. Instead, they have realized that containers and serverless can work together by complementing each other's weaknesses. As such, they are appreciating the need to use these two architectures together.
 
-### Further readings
+### Further reading
 
 [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
 
 [Containers vs. VMs vs. Serverless at the Edge](/blog/containers-vm-serverless-edge-computing/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
