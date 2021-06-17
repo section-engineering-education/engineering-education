@@ -52,7 +52,7 @@ def get_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
       if not os.path.isdir(our_path):
             os.makedirs(our_path)
       zipfile_path = os.path.join(our_path, "housing.tgz")
-      urllib.request.urlretrieve(our_path, zipfile_path)
+      urllib.request.urlretrieve(our_data_url, zipfile_path)
       our_zip_file = tarfile.open(zipfile_path)
       our_zip_file.extractall(path=our_path)
       our_zip_file.close()
@@ -88,7 +88,7 @@ our_dataset.head()
 ```
 
 ```python
-housing.info()
+our_dataset.info()
 ```
 
 #### Cleaning the data
@@ -157,7 +157,7 @@ class CustomTransformer(BaseEstimator, TransformerMixin):
             return np.c_[X, rooms_per_household, population_per_household]
 
 attrib_adder = CustomTransformer()
-our_extra_attributes = attrib_adder.transform(our_dataset.values            
+our_extra_attributes = attrib_adder.transform(our_dataset.values)            
 
 ```
 
@@ -190,11 +190,11 @@ our_full_pipeline = ColumnTransformer([
         ("text", OrdinalEncoder(), text_attribs),
     ])
 
-our_dataset_prepared = full_pipeline.fit_transform(housing)
+our_dataset_prepared = full_pipeline.fit_transform(our_dataset)
 
 ```
 
-The `ColumnTransformer` is used to transform columns separately and combine the features produced by each transformer to form a single feature space.
+The `ColumnTransformer` is used to transform columns separately and combine the features produced by each transformer to form a single feature space. The code can be run on Google Colab [here](https://colab.research.google.com/drive/1DVIh0LhGOU0rwVU2bbZw_VmjiXWV-daM#scrollTo=L21KliQUUqVB).
 
 ### Conclusion
 
