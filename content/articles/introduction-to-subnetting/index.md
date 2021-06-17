@@ -21,8 +21,8 @@ In this article, we will get to understand important terms of the Network.
 - IPV4 Structure
 - IP Classes
 - Public vs Private IP
-- Classless Inter-Domain Routing (CIDR)
-- Broadcast Network ID 
+- Routing
+- Subnet Mask
 
 ### Prerequisites
 One simply requires basic network knowledge of the internet. 
@@ -116,16 +116,6 @@ Private IP addresses are limited. They cannot receive traffic from the internet.
 
         3. 192.168.0.0 - 192.168.255.255.
 
-    
-### Subnet Mask
-
-This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnets;    
-        For Network = 2<sup>n</sup> where n = number of desired bits. 
-        For Hosts = 2<sup>n+2</sup>
-        Example  to calculate subnets and hosts:
-To calculate subnets, networks, host ranges you will use a calculator.
-Try the IPSubnet Mask Calculator for IPV4 [here](https://www.site24x7.com/tools/ipv4-subnetcalculator.html). 
-
 ### Routing
 
 This is the specialized process of connecting different IP networks. Hosts of different networks cannot communicate with each other until routed. 
@@ -171,9 +161,14 @@ Routing is then split into 3 categories:
 | Dynamic      | * It is easier to configure | * It is less secure compared to static and default routing. |
 | Dynamic      | * It is effective in selecting the best route to a destination network. | * It is more expensive in terms of bandwidth and CPU. |
 
-**Classless Inter-Domain Routing (CIDR):** CIDR is based off on the idea of subnet masks. It makes it possible to create supernets adding to subnets. CIDR helps extend the number of available addresses. The CIDR stores as a suffix in the IP address like so; 201.105.34.7/24 (/24) is the CIDR suffix in this address.
+### Subnet Mask
 
-**Broadcast Network:** The last ID of a subnet range used to communicate to the host bits within that network. 255.255.255.255 (Broadcast IP).
+This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Here is the formula to calculate subnets;    
+        For Network = 2<sup>n</sup> where n = number of desired bits. 
+        For Hosts = 2<sup>n+2</sup>
+        Example  to calculate subnets and hosts:
+To calculate subnets, networks, host ranges you will use a calculator.
+Try the IPSubnet Mask Calculator for IPV4 [here](https://www.site24x7.com/tools/ipv4-subnetcalculator.html). 
 
 ### Benefits of Subnetting
 
