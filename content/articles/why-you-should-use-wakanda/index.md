@@ -1,9 +1,24 @@
-### Introduction
-[Wakanda](https://wakanda.github.io/) is an open-source platform which allows the user to easily and quickly create applications that can be utilized as mobile applications and web application using JavaScript. Wakanda is supported on Microsoft windows, cloud-ready on back-end and Linux. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-you-should-use-wakanda/
+title: Why you Should use Wakanda JavaScript
+description: Wakanda is an open-source platform which allows the user to easily and quickly create applications. Here is why you should consider using it.
+author: ann-michubu
+date: 2021--19T00:00:00-09:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/why-you-should-use-wakanda/hero.png
+    alt: Wakanda Wakanda.js
+---
+[Wakanda](https://wakanda.github.io/) is an open-source platform which allows the user to easily and quickly create applications that can be utilized as mobile applications and web application using JavaScript. Wakanda is supported on Microsoft windows, Linux and cloud-ready on the back-end.
+<!--more-->
 Let's look at some cool features of the Wakanda JavaScript framework.
 
-### Features of Wakanda JavaScript Framework 
+### Features of Wakanda JavaScript framework 
 There are some very nice features which make Wakanda JavaScript stand out in this modern day. 
 
 #### The Wakanda database
@@ -29,7 +44,7 @@ The Wakanda studio helps to develop and test apps locally together with troubles
 
 Wakanda's main objective is to give a quick and easy way in project scaffolding. Scaffolding is programming method which aims at creating database-backed software applications. The philosophy behind Wakanda studio which simplifies developers lives who have decided to work with Wakanda JavaScript stack, is called RAD (Rapid Application Development).
 
-Do you love React? React is a front-end JavaScript library which can be used for creating user interfaces for single-page web applications. You can change the scaffolding of your project to adapt to your desire. 
+Do you like React? React is a front-end JavaScript library which can be used for creating user interfaces for single-page web applications. You can change the scaffolding of your project to adapt to your desire. 
 
 Wakanda identifies and acknowledges the three critical parts in all applications. These crucial parts are all used in the initial scaffolding. They include the backend, the web applications and the mobile application. Wakanda Studio has a code editor emanating from extension updatable, an application prototype, deploy solutions, code mirror and git integration. This studio gives the user the whole view of the application.
 
@@ -46,7 +61,7 @@ Here are some reasons why you should use Wakanda JavaScript.
 - Wakanda JavaScript framework is uniquely built. It brings together various applications which the developer needs for building, deploying, and prototyping in a single environment.
 - In Wakanda, cross-platform mobile and web applications can be built quickly.
 - Wakanda is an open-source platform. It is  progressive in nature to allow developers to make all the possible choices. This means developers can take control when need be, write their code or use the available existing tools and components.
-- Its compatibility with all technologies make Wakanda.js stand out in the market. It can integrated with databases and frameworks of all kinds. Wakanda components can be stocked by developers or rather modify them. 
+- Its compatibility with all technologies make Wakanda.js stand out in the market. It can integrated with databases and frameworks of all kinds. Wakanda components can be stocked or rather modified by developers.
 
 ### Conclusion
 To sum up, Wakanda JavaScript framework is recommendable to developers due to it's excellent and user-friendly features. The Wakanda framework also supports cross-platform applications. This means that you can use this framework to craft beautiful applications for mobile and web platforms.  
@@ -56,6 +71,8 @@ Why don't you head to [Wakanda Framework](https://wakanda.github.io/) and try it
 Happy Coding!
 
 ### Further Reading
-- [Wakanda JavaScript website](https://wakanda.github.io/)
-- [Wakanda: new javascript app development framework](http://blog.jonathanargentiero.com/wakanda-new-javascript-app-development-framework/)
+- [The Wakanda JavaScript website](https://wakanda.github.io/)
+- [Wakanda: The new JavaScript app development framework](http://blog.jonathanargentiero.com/wakanda-new-javascript-app-development-framework/)
 
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
