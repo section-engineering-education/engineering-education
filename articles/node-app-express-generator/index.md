@@ -7,7 +7,7 @@ title: Creating Node Application Using Express Generator
 description: This tutorial explains how to use Node.js Express generator tool to create a new express application.
 author: owino-wendy
 date: 2021-06-18T00:00:00-14:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -35,14 +35,14 @@ By the end of this tutorial, you should be in a position to generate complete No
 
 ### Prerequisites
 
-- [Node](node.org) installed in your local machine
-- Basics of Node.js template engines, in this application we use `pug`.
+- [Node](node.org) installed in your local machine.
+- Basic knowledge of Node.js templating engines, in this application we use `pug` templating engine.
 
 ### Generating Express application
 
 In this section, we look at the Express generator package, how it's installed and used to generate folder structure.  
 
-Let's start by installing the Express generator via the node package manager(npm).  
+Let's start by creating an express application using Express generator.  
 
 ```bash
 npx express-generator --view=pug expressExample
@@ -91,11 +91,11 @@ create : expressExample/
 The above output gives you an overview of your project folder structure while the immediate instruction is for us to install dependencies for this application and run the execution.
 
 ```bash
-cd expressExample
+$ cd expressExample
 ```
 
 ```bash
-npm install
+$ npm install
 ```
 
 This will install your node application dependencies for a few seconds, depending on your internet speed.  
@@ -103,7 +103,7 @@ This will install your node application dependencies for a few seconds, dependin
 On completion, in your Mac or Linux system, run the following command to start your application:  
 
 ```bash
-DEBUG=expressexample:* npm start
+$ DEBUG=expressexample:* npm start
 ```
 
 Output:
@@ -130,7 +130,7 @@ While could also run it on the Windows PowerShell as follows:
 PS> $env:DEBUG='expressexample:*'; npm start
 ```
 
-Now open the browser and enter the following URL:
+Now open the browser and navigate to the following URL:
 
 ```http
 http://localhost:3000
