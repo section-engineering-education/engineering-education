@@ -1,0 +1,145 @@
+<footer class="section-footer fill-bg">
+  <div class="section-container xs-pt-50">
+    {{ if (or (and (isset .Params "newsfooter") .Params.newsFooter) (eq .Type "blog")) }}
+      <div class="section-footer-top flex">
+        <div class="section-footer-top-inner section-form-footer-inner prl-5 flex">
+          <div class="section-footer-top-inner-item relative">
+            <h3 class="title-4 xs-mr-30 lh-1">Subscribe to Our Newsletter</h3>
+            <div class="section-form section-form-footer">
+              <div class="section-form-inner">
+              <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                  <form action="https://section.us19.list-manage.com/subscribe/post?u=a52bc1065d452c0b915716c32&amp;id=9ac38a3a06" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                      <div class="mc-field-group">
+                        <input type="email" value="" aria-label="Input your email" name="EMAIL" placeholder="Enter your email..." class="required email" id="mce-EMAIL">
+                      </div>
+                      <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a52bc1065d452c0b915716c32_f6d5f20409" tabindex="-1" value=""></div>
+                      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                  </form>
+                </div>
+                <!--End mc_embed_signup-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ else }}
+      <div class="section-footer-top flex">
+          <div class="section-footer-top-inner prl-5 flex">
+            <div class="section-footer-top-inner-item flex relative">
+              <h3 class="title-4 xs-mr-30 lh-1">Join our Slack community</h3>
+              <a href="https://sectionio-community.slack.com/" target="_blank" class="section-footer-top-inner-item-slack fill-white flex justify-center text-14 align-center decoration-none text-link" title="(new window)"><span class="section-footer-top-inner-item-slack-icon">Add to&nbsp;<span class="text-14-medium text-link">Slack</span></span></a>
+              <div class="section-footer-top-inner-item-svg absolute">
+                <svg width="160" height="99" aria-label="Slack logo" xmlns="http://www.w3.org/2000/svg">
+                  <g fill-rule="nonzero" fill="none">
+                    <g fill="#E01E5A">
+                      <path d="M34.268 100.787c0 9.197-7.433 16.63-16.63 16.63s-16.63-7.433-16.63-16.63c0-9.196 7.433-16.63 16.63-16.63h16.63v16.63zM42.583 100.787c0-9.196 7.433-16.63 16.63-16.63 9.196 0 16.63 7.434 16.63 16.63v41.575c0 9.197-7.434 16.63-16.63 16.63-9.197 0-16.63-7.433-16.63-16.63v-41.575z"/>
+                    </g>
+                    <g fill="#36C5F0">
+                      <path d="M59.213 34.016c-9.197 0-16.63-7.433-16.63-16.63S50.016.756 59.213.756c9.196 0 16.63 7.433 16.63 16.63v16.63h-16.63zM59.213 42.457c9.196 0 16.63 7.433 16.63 16.63 0 9.196-7.434 16.63-16.63 16.63H17.512c-9.197 0-16.63-7.434-16.63-16.63 0-9.197 7.433-16.63 16.63-16.63h41.7z"/>
+                    </g>
+                    <g fill="#2EB67D">
+                      <path d="M125.858 59.087c0-9.197 7.433-16.63 16.63-16.63s16.63 7.433 16.63 16.63c0 9.196-7.433 16.63-16.63 16.63h-16.63v-16.63zM117.543 59.087c0 9.196-7.433 16.63-16.63 16.63-9.196 0-16.63-7.434-16.63-16.63V17.386c0-9.197 7.434-16.63 16.63-16.63 9.197 0 16.63 7.433 16.63 16.63v41.7z"/>
+                    </g>
+                    <path d="M100.913 117.417c-9.196 0-16.63-7.433-16.63-16.63 0-9.196 7.434-16.63 16.63-16.63h41.701c9.197 0 16.63 7.434 16.63 16.63 0 9.197-7.433 16.63-16.63 16.63h-41.7z" fill="#ECB22E"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+    {{ end }}
+
+    <div class="section-footer-inner flex flex-wrap prl-5">
+      <div class="section-footer-inner-col">
+        <h4 class="title-6 text-link xs-mb-20">Company</h4>
+        <ul class="list-unstyled">
+          <li class="xs-mb-20"><a href="/about" class="text-16 link-footer decoration-none">About</a></li>
+          <li class="xs-mb-20"><a href="/about/careers" class="text-16 link-footer decoration-none">Careers</a></li>
+          <li class="xs-mb-20"><a href="/legal-stuff" class="text-16 link-footer decoration-none">Legals</a></li>
+        </ul>
+      </div>
+
+      <div class="section-footer-inner-col">
+        <h4 class="title-6 text-link xs-mb-20">Resources</h4>
+        <ul class="list-unstyled">
+          <li class="xs-mb-20"><a href="/blog" class="text-16 link-footer decoration-none">Blog</a></li>
+          <li class="xs-mb-20"><a href="/blog/tag/case-study" class="text-16 link-footer decoration-none">Case Studies</a></li>
+          <li class="xs-mb-20"><a href="/edge-compute-content-resources" class="text-16 link-footer decoration-none">Content Library</a></li>
+          <li class="xs-mb-20"><a href="/solution-briefs" class="text-16 link-footer decoration-none">Solution Briefs</a></li>
+          <li class="xs-mb-20"><a href="/solutions-partners" class="text-16 link-footer decoration-none">Partners</a></li>
+          <li class="xs-mb-20"><a href="/changelog" class="text-16 link-footer decoration-none">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div class="section-footer-inner-col">
+        <h4 class="title-6 text-link xs-mb-20">Support</h4>
+        <ul class="list-unstyled">
+          <li class="xs-mb-20"><a href="/docs/" class="text-16 link-footer decoration-none">Docs</a></li>
+          <li class="xs-mb-20"><a href="https://sectionio-community.slack.com/" class="text-16 link-footer decoration-none" title="(opens new window)">Community Slack</a></li>
+          <li class="xs-mb-20"><a href="https://support.section.io/hc/en-us" class="text-16 link-footer decoration-none">Help & Support</a></li>
+          <li class="xs-mb-20"><a href="https://status.section.io/" class="text-16 link-footer decoration-none">Platform Status</a></li>
+          <li class="xs-mb-20"><a href="/pricing" class="text-16 link-footer decoration-none">Pricing</a></li>
+
+        </ul>
+      </div>
+      <div class="section-footer-inner-col">
+        <a class="button button-nav button-white button-outline" href="/contact-us">Contact Us</a>
+        <div class="section-footer-inner-col-social list-flex xs-mt-30">
+          <a class="section-footer-inner-col-social-twitter" href="https://twitter.com/sectionio" Title="Section on Twitter"></a>
+          <a class="section-footer-inner-col-social-linkedin" href="https://www.linkedin.com/company/section_io/" Title="Section on LinkedIn"></a>
+          <a class="section-footer-inner-col-social-github" href="https://github.com/section-io/" Title="Section on Github"></a>
+          <a class="section-footer-inner-col-social-slack" href="https://sectionio-community.slack.com/" Title="Section on Slack"></a>
+        </div>
+      </div>
+    </div>
+    <div class="section-footer-bottom prl-5 xs-pt-50">
+      <div class="section-footer-bottom-inner">
+        <p class="text-16 text-light-gray">Section supports many open source projects including:</p>
+        <ul class="section-footer-bottom-inner-logos list-flex align-center xs-mt-20 xs-pb-30">
+          <li class="section-footer-bottom-logo1 xs-mr-20"><a href="https://varnish-cache.org/"><img class="lozad" data-src="/images/footer-logo1.png" alt="varnish cache logo"></a></li>
+          <li class="section-footer-bottom-logo2 xs-mr-20"><a href="https://www.cncf.io/"><img class="lozad" data-src="/images/footer-logo2.png" alt="cloud native computing foundation logo"></a></li>
+          <li class="section-footer-bottom-logo3 xs-mr-20"><a href="https://www.linuxfoundation.org/"><img class="lozad" data-src="/images/footer-logo3.png" alt="the linux foundation logo"></a></li>
+          <li class="section-footer-bottom-logo3 xs-mr-20"><a href="https://www.lfedge.org/"><img class="lozad" data-src="/images/footer-logo4.png" alt="lf edge logo"></a></li>
+        </ul>
+
+        <div class="section-footer-bottom-inner-wrap xs-pt-30 xs-pb-30 flex">
+          <div class="section-footer-bottom-inner-wrap-left">
+            <ul class="list-flex align-center">
+              <li class="xs-mr-30"><a href="/" Title="Section Home Page">
+                <svg width="100" height="34" aria-label="Section Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path id="footera" d="M0 33.436h100V.05H0z"/>
+                </defs>
+                <g fill="none" fill-rule="evenodd" opacity=".6">
+                  <path d="M13.815.1L0 5.148V28.44l13.815 5.048V.1zM2.462 27.071V6.516l8.595-2.67v2.8L5.318 8.199V25.36l5.739 1.563v2.82L2.462 27.07zm5.103-3.47V9.965l3.492-.747V24.35l-3.492-.75zM19.702 4.306L15.177 5.53v2.807l1.755-.376v17.65l-1.755-.376v2.81l4.545 1.237z" fill="#000"/>
+                  <g transform="translate(0 .051)">
+                    <path d="M34.143 15.266c-2.69-.391-3.21-1.021-3.21-2.28 0-1.195.91-2.042 2.668-2.042 1.755 0 2.684.68 2.98 2.263l2.536-.691c-.547-2.477-2.47-3.744-5.516-3.744-3.232 0-5.402 1.911-5.402 4.452 0 2.91 1.757 4.04 5.467 4.54 2.517.412 3.233.955 3.233 2.388 0 1.433-1.215 2.39-2.93 2.39-2.624 0-3.253-1.304-3.448-2.868h-.009l-2.674.729c.448 2.545 2.262 4.31 6.132 4.31 3.428 0 5.706-2.107 5.706-4.8 0-3.105-1.888-4.148-5.533-4.647M43.365 17.633c.26-1.76 1.323-2.823 2.907-2.823 1.627 0 2.625.868 2.755 2.823h-5.662zm2.907-4.735c-3.232 0-5.64 2.346-5.64 5.864v.174c0 3.583 2.408 5.777 5.748 5.777 2.907 0 4.839-1.303 5.207-3.692H49.05c-.195 1.107-1.02 1.738-2.604 1.738-1.952 0-3.037-1.217-3.123-3.367h8.309v-.76c0-4.061-2.539-5.734-5.359-5.734zM58.617 22.693c-1.931 0-3.146-1.303-3.146-3.779v-.174c0-2.345 1.28-3.735 3.081-3.735 1.388 0 2.386.63 2.603 2.15h2.539c-.304-3.127-2.67-4.257-5.186-4.257-3.167 0-5.727 2.28-5.727 5.886v.174c0 3.627 2.473 5.755 5.727 5.755 3.081 0 5.056-1.846 5.25-4.452H61.35c-.151 1.607-1.345 2.432-2.733 2.432M67.912 21.086v-5.972h2.495v-1.977h-2.495v-3.65l-2.625.714v11.124c0 2.15 1.171 3.366 3.428 3.366.803 0 1.366-.13 1.778-.282v-2.085c-.368.152-.759.217-1.28.217-.824 0-1.301-.456-1.301-1.455" fill="#000"/>
+                    <mask id="footerb" fill="#fff">
+                      <use xlink:href="#footera"/>
+                    </mask>
+                    <path fill="#000" mask="url(#footerb)" d="M72.49 24.496h2.625V13.137H72.49zM85.637 18.892c0 2.324-1.172 3.78-3.124 3.78-1.996 0-3.146-1.456-3.146-3.78v-.173c0-2.346 1.194-3.757 3.146-3.757s3.124 1.433 3.124 3.778v.152zm-3.124-5.994c-3.341 0-5.836 2.346-5.836 5.864v.174c0 3.453 2.474 5.777 5.814 5.777 3.341 0 5.836-2.302 5.836-5.842v-.174c0-3.475-2.495-5.799-5.814-5.799zM96.117 12.898c-1.866 0-3.124.934-3.667 2.042v-1.803h-2.625v11.359h2.625v-6.69c0-1.802 1.193-2.714 2.669-2.714 1.562 0 2.256.782 2.256 2.498v6.906H100V17.35c0-3.128-1.606-4.453-3.883-4.453M72.49 11.58h2.625V8.952H72.49z"/>
+                  </g>
+                </g>
+              </svg>
+              </a></li>
+              <li class="text-13 text-light-gray section-footer-bottom-inner-wrap-left-copy">© 2020 Section</li>
+            </ul>
+          </div>
+          <div class="section-footer-bottom-inner-wrap-right flex align-center">
+            <ul class="list-flex section-footer-bottom-inner-wrap-right-list">
+              <li><a href="/legal-stuff/privacy-policy" class="text-13 link-footer decoration-none">Privacy Policy</a></li>
+              <li><a href="/legal-stuff/terms-and-conditions" class="text-13 link-footer decoration-none">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
