@@ -1,7 +1,8 @@
 ### Introduction
 
 Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
-In this tutorial, I'll show you how to build RESTful APIs using Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the cloud.  
+
+In this tutorial, I'll show you how to build RESTful APIs using the Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the cloud.  
 
 ### Table of contents
 
@@ -19,10 +20,10 @@ In this tutorial, I'll show you how to build RESTful APIs using Node.js Express 
 
 To follow along with this tutorial, you need the following:
 
-- Node.js downloaded and installed in your local development environment.
+- [Node.js](https://node.org) downloaded and installed in your local development environment.
 - Basic knowledge in Node.js' Express framework.
 - RESTful APIs design.
-- [Docker](#https://hub.docker.com)
+- Basic knowledge in [Docker](#https://hub.docker.com)
 
 ### Objectives
 
@@ -113,7 +114,7 @@ module.exports = mongoose.model('Student', StudentSchema);
 
 ```
 
-In the above model, we set up the details we will be getting via our API.
+In the above model, we set up the student details we will be getting via our API.
 
 ### RESTful APIs implementation
 
@@ -181,35 +182,48 @@ Now that we've defined our core application API logics, let's proceed to our mai
 Let's proceed and define the contents of the `Dockerfile` to direct docker on how to build a container image of our Express application.  
 
 ```dockerfile
-FROM node: latest
-
+# the base image from which the app is built upon
+FROM node: latest 
+# Runs the mkdire command to create /usr/src/app inside docker container
 RUN mkdir -p /usr/src/app  
+# Sets the work directory to /usr/src/app 
 WORKDIR /usr/src/app  
+# Copies the contents of the current directory into the working directory inside the # docker container
 COPY . /usr/src/app
-
+# Exposes port 8000 outside the docker container
 EXPOSE 8000  
+# Runs the npm install command to install dependencies
 RUN npm install  
+# Provides the command required to run the application
 CMD ["npm", "start"]  
 
 ```
+
 
 This `Dockerfile` uses npm to install modules in our RESTful application.  
 Let's now proceed and set up the docker-compose configuration file that we'll use to launch the Node Express application (including the MongoDB instance).
 
 ```yml
 -------------------------
+# Service name
 student:  
+# build in the current directory
   build: .
+  # command to run the app
   command: npm start
+  # Maps port 8000 inside docker container to port 8000 outside docker container
   ports:
   - "8000:8000"
+  # linking the student to mongodb container
   links:
   - mongodb
-  
+  # env variables
   environment:
     - NODE_ENV=production
     - MONGODB_ADDRESS=mongodb
+# mongodb service
 mongodb:  
+  # pulling mongodb image
   image: mongo
 
 ```
@@ -251,6 +265,6 @@ In this tutorial, we've covered the key concepts of Node.js Express application 
 
 ### Further reading
 
-- [Docker Installation](#https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
-- [docker hub](#https://hub.docker.com)
-- [More on dockerizing application](#https://blog.cloud66.com/deploying-rest-apis-to-docker-using-ruby-and-sinatra/)
+- [Docker Installation](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+- [docker hub](https://hub.docker.com)
+- [More on dockerizing application](https://blog.cloud66.com/deploying-rest-apis-to-docker-using-ruby-and-sinatra/)
