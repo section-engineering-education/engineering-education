@@ -6,8 +6,8 @@ url: /introduction-to-vitejs/
 title: Introduction to ViteJS 2.0
 description: This article will provide a detailed introduction on what Vite.js is and how it's superior over other frameworks. It also provides the reader a detailed guide on how to set it up.
 author: abdulazeez-saidu
-date: 2021-06-07T00:00:00-11:00
-topics: []
+date: 2021-06-18T00:00:00-13:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,13 +15,12 @@ images:
     alt:  Introduction to ViteJS 2.0 Hero Image
 ---
 
-Vite.js (a French word for "fast" or “quick”, pronounced /vit/) developed by the creator of Vue.js, Evan You. Vite.js 2.0 is a front-end build tool or framework for designing a rich, elegant and sleek User Interface, it is referred to as the next-generation framework for front-end tooling.
+Vite.js (a French word for “fast” or “quick”, pronounced /vit/) developed by the creator of Vue.js, Evan You. Vite.js 2.0 is a front-end build tool or framework for designing a rich, elegant and sleek User Interface, it is referred to as the next-generation framework for front-end tooling.
 <!--more-->
 
 In this tutorial, we are going to install Vite 2.0 with all the dependencies and explore its advantages over other frameworks.
 
 ### Prerequisites
-
 It is assumed that the reader possesses the following:
 
 - Basic understanding of JavaScript or TypeScript
@@ -31,7 +30,6 @@ It is assumed that the reader possesses the following:
 - Preferred text editor (Recommended: [VS Code](https://code.visualstudio.com))
 
 ### Why Vite.js?
-
 Before we install Vite.js, let's have a look at the following advantages of Vite.js over other frameworks.
 
 - **Instant server-side rendering:** Contrary to other frameworks, Vite starts the server instantly, taking the dependencies that don't often change and rebuild them using esbuild (an extremely fast javascript bundler).
@@ -50,20 +48,17 @@ Before we install Vite.js, let's have a look at the following advantages of Vite
 
 - **Faster dependency pre-building:** When talking about other bundlers like webpack, parcel, or Rollup, the rebuilding process occurs on every save, which may cause a delay in bundling.
 
-- **Browser Support:** The default build targets browsers that support both native ESM via script tags and native ESM dynamic import. Legacy browsers can be supported via the official @vitejs/plugin-legacy - see the Building for Production section for more details.
+- **Browser Support:** The default build targets browsers that support both native ESM via script tags and native ESM dynamic import. Legacy browsers can be supported via the official `@vitejs/plugin-legacy` - see the Building for Production section for more details.
 
 Among other advantages of Vite is its experimental support for **React**, **Vanilla**, **Preact**, **Vue**, and **Svelte**.
 
 ### Installing Vite.js
-
 In this tutorial, we are going to install Vite using npm and yarn.
 
 ### Steps
-
 Open your terminal, navigate into the folder you want to install Vite.js, and run the following commands:
 
 #### Installing using npm
-
 ```bash
 npm init @vitejs/app
 ```
@@ -95,7 +90,6 @@ npm run build
 ```
 
 #### Installing using yarn
-
 ```bash
 yarn create @vitejs/app
 ```
@@ -127,7 +121,6 @@ yarn run build
 ```
 
 ### Scaffolding Vite.js project
-
 Vite.js also supports template scaffolding for other frameworks like:
 
 - Vue
@@ -141,7 +134,7 @@ All you have to do is to specify the project name and the desired template.
 
 **Example:**
 
-To scaffold Vite plus react, just run the following commands:
+To scaffold Vite plus React, just run the following commands:
 
 ```bash
 npm init @vitejs/app project-name --template react
@@ -153,7 +146,7 @@ npm init @vitejs/app project-name --template react
 yarn create @vitejs/app project-name --template react
 ```
 
-#### Adding CSSPreprocessor
+#### Adding a CSS Preprocessor
 To add CSS preprocessors into your project, run the following commands:
 
 - [SASS](https://sass-lang.com/):
@@ -161,7 +154,7 @@ To add CSS preprocessors into your project, run the following commands:
   ```bash
   npm install -D sass
   ```
- 
+
 - [LESS](https://lesscss.org/):
 
   ```bash
@@ -169,13 +162,12 @@ To add CSS preprocessors into your project, run the following commands:
   ```
   
 - [Stylus](https://stylus-lang.com/):
- 
+
   ```bash
   npm install -D stylus
   ```
 
 ### Project Folder Structure
-
 Now, let's have a look at some files in our project folder:
 
 ![project structure](/introduction-to-vitejs/folder-structure.png)
@@ -184,11 +176,11 @@ Looking at the project folder we have:
 
 - **node_modules:** This folder contains all the packages that the external modules depend upon.
 
-- **src:** This folder contains the root components such as `App.js` and `main.js` for bootstrapping your app.
+- **src:** This folder contains the root components such as `app.js` and `main.js` for bootstrapping your app.
 
 - **index.html:** This file serves as the source code and part of the module graph. This file also serves as the entry point of your app.
 
-  ```HTML
+  ```html
   <!DOCTYPE html>
   <html lang="en">
 
@@ -209,7 +201,7 @@ Looking at the project folder we have:
 
 - **package.json:** This file contains the scripts, dependencies, etc of the project.
 
-- **vite.config.js:** 
+- **vite.config.js:**
 
   This file contains project configuration files, setting a base URL, plugins, where to output build files, and also contains proxies to a back-end service.
 
@@ -223,12 +215,13 @@ Looking at the project folder we have:
 
 ### Conclusion
 
-So far so good. We have seen:
+In this tutorial, we have learned:
 
 - How to install Vite.js on our machine.
-- Its advantages.
+- Its advantages over other front-end frameworks.
 - How to add CSS preprocessors to the project.
-- Folder structure of a Vite.js project.
+- How to create the folder structure of a Vite.js project.
+- How to use Vite.js to template scaffold other front-end frameworks.
 
 Vite is cool, easy to install, and supports scaffolding with other front-end frameworks. It comes in handy when looking for a framework that offers a minified scripts and styles.
 
