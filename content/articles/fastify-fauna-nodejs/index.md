@@ -576,3 +576,6 @@ Worrying about being developer friendly?
 Well, just like Express, Fastify is simple and elegant with great logging system. What else can we ask for?
 
 I hope you give it a try in your next Node.js project.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
