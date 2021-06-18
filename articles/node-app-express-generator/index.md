@@ -120,6 +120,7 @@ http://localhost:3000
 ```
 
 Output:
+![express applicaiton example](/engineering-education/node-app-express-generator/home.png)
 
 Our final project folder structure:  
 
