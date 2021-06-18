@@ -1,7 +1,21 @@
-### PID controllers in Matlab
-### Introduction
-A controller is a system's response modifiers. These systems may be such as a robot control or even a plant. In an open-loop scenario, the system's control system is acted upon by the input to generate output signals. Mostly in this open loop scenario, the required performance is not met, because the system is not smart enough.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/pid-controllers-using-matlab/
+title: PID controllers using Matlab
+description: This article will give readers a guide on what PID controllers are, how to use them, and understand the functionalities of a controller.
+author: paul-juma
+date: 2021-06-18T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/pid-controllers-using-matlab/hero.jpg
+    alt: PID in Matlab example image
+---
+A controller is a system's response modifiers. These systems may be such as a robot control or even a plant. In an open-loop scenario, the system's control system is acted upon by the input to generate output signals. Mostly in this open loop scenario, the required performance is not met, because the system is not smart enough.
+<!--more-->
 Since in all plants, a certain output is required, control feedback is added into the open-loop systems. This is to sense the output of the plant then feeds it back to the system to make necessary adjustments.
 
 In feedback systems, there is a reference signal which is desired value or ultimate goal. The main aim of a controller is to move the error to zero and this means that all the requirements are met. An error is a difference between the current measured value and the expected output.
