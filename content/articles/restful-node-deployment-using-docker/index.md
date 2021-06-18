@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /restful-node-deployment-using-docker/
+title: How to deploy express application to Docker
+description: This tutorial explains how to create REST APIs using express and deploy to Docker using Docker compose.
+author: jared-phelix
+date: 2021-06-18T00:00:00-14:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/restful-node-deployment-using-docker/hero.jpg
+    alt:  How to deploy express application to Docker
+---
+
+
 ### Introduction
 
 Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
