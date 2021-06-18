@@ -14,7 +14,7 @@ images:
     alt: CRUD operations image example
 ---
 
-Programmers who have ever worked with the database are likely to have worked with CRUD Operations. These operations are very important when a developer wants to learn any web framework. 
+Programmers who have ever worked with the database are likely to have worked with CRUD operations. These operations are very important when a developer wants to learn any web framework. 
 <!--more-->
 In this article, we will learn how to carry out CRUD operations using the [YII 2 framework](https://www.yiiframework.com/).
 
