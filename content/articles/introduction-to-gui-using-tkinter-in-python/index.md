@@ -10,7 +10,7 @@ In this tutorial, we will learn how to build a password generator GUI using Tkin
 - [What is Tkinter?](#what-is-tkinter?)
 - [Prerequisites](#prerequisites)
 - [What are Widgets?](#what-are-widgets?)
-- [What is a password generator](#what-is-a-password-generator)
+- [What is a password generator?](#what-is-a-password-generator?)
 - [Conclusion](#conclusion)
 
 ### What is Tkinter?
@@ -40,7 +40,7 @@ Widgets are the building blocks of graphical user interface programming, and the
 - `Entry`: The entry widget displays a single-line text field for accepting user input.
 - `Text`: A text entry widget allows you to enter multiline text.
 
-### what is a password generator app using Tkinter
+### what is a password generator?
 A  password generator is a software that accepts input from a random or pseudo-random string or number generator and uses it to generate a password for the user.
 
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong and unpredictable password for multiple accounts. The password generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
