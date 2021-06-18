@@ -182,7 +182,7 @@ Fill in the blank spaces as shown below and click save:
 
 From the acronym CRUD, we have seen the function of the letter `C` which is CREATE. After clicking save, we will work with the function of the letter `R` which is READ. 
 
-Here, you will open a page with all of the records you have created. You should have only one record since we only have a single record. It should look like the following:
+Here, you will open a page with all the records you have created. You should have only one record since we only have a single record. It should look like the following:
 
 ![read](/engineering-education/crud-operations-with-yii2-framework-using-gii/read.png)
 
@@ -198,7 +198,7 @@ Let us move on to the letter `U` which represents update. As we had said earlier
 
 Save your update and navigate to the database to see the changes.
 
-Let's delete the record two which have the Primary Key "2". Since you are working on record "1", navigate to your URL and change the id from `id = 1` to `id = 2`, refresh your browser.
+Let's delete record two which has the Primary Key "2". Since you are working on record "1", navigate to your URL and change the id from `id = 1` to `id = 2`, refresh your browser.
 
 Click the `Delete` button. Then click `Ok` on the confirmation pop-up that will appear on your screen.
 
