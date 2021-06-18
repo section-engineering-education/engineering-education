@@ -51,7 +51,7 @@ Unfortunately, the majority of stolen passwords are simple and easy to guess. Na
 
 For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
 
-### Let us see how we can build a password generator.
+#### Let us see how we can build a password generator.
 Create a new file `passgen.py` on your [PyCharm](https://www.jetbrains.com/pycharm/download/) or any python-oriented code editor.
 
 Let's start by importing Tkinter.
