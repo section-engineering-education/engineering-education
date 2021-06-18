@@ -38,13 +38,13 @@ The reader should:
 ### Goal
 At the end of this tutorial, the reader should understand how to use and implement Lottie animations in Android applications. 
 
-#### Step one: Create a new Android Studio Project.
+#### Step one: Create a new Android Studio Project
 In this step, we will create a new Android project. Open Android Studio and select Create New Project - > Empty Activity and click Next. Fill in the required fields and click finish.
 
 #### Step two: Choosing an animation file to use on your app
 Head over to Lottie's [website](www.lottiefiles.com) and choose the animations of your choice. Most of the animations are free, while others one has to pay to use them.  Download the .json file. In our project, let us create a res/raw folder. Save the .json animations on there. On your android project, create a `res/raw` folder. Right-click on res folder, select New-> Resource package, and name it `raw`. Save the .json animations on that folder.
 
-#### Step three: Adding Lottie dependencies to the project.
+#### Step three: Adding Lottie dependencies to the project
 In the `build. gradle` (project level), add the Lottie Animation library. Make sure you check out the latest library version and sync the changes.
 ```gradle
 //Lottie Animation
@@ -52,7 +52,7 @@ implementation 'com.airbnb.android:lottie:3.4.0'
 ```
 We shall also use other non-related libraries for this project which can be found [here](https://github.com/carolinemusyoka/LottieAnimation).
 
-#### Step four: Designing the project's layout.
+#### Step four: Designing the project's layout
 In this step, we will design our application's layout. The layout will only have three basic elements;
 - A Textview which contains a heading.
 - Buttons which will be used for navigation.
@@ -181,7 +181,6 @@ You shall use;
 
 ### Errors experienced.
 When using a class that holds the animation files like this:
-
 ```kotlin
 enum class OnboardingPage(
 @StringRes val titleResource: Int,
@@ -202,7 +201,9 @@ If you add the `@SuppressLint` annotation, the project will not run. The error d
 
 ### Output
 Let us run the app.
+
 ![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
+
 You can check out the project on Github through [this](https://github.com/carolinemusyoka/LottieAnimation) link. In case of any clarification or any problem, do not hesitate to raise an issue in the same repository. You can download the app [bundle](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true).
 
 ### References
@@ -211,4 +212,7 @@ You can check out the project on Github through [this](https://github.com/caroli
 
 ### Conclusion
 Lottie Animations can be used all around the app, from splash screens, onboarding screens, empty state layouts, bottom navigations, and many other ways. Be sure to try out ways to incorporate it into your app. 
+
 Happy coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
