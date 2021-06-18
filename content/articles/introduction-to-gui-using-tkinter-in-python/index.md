@@ -10,7 +10,7 @@ In this tutorial, we will learn how to build a password generator GUI using Tkin
 - [What is Tkinter?](#what-is-tkinter?)
 - [Prerequisites](#prerequisites)
 - [What are Widgets?](#what-are-widgets?)
-- [How to build a password generator](#how-to-build-a-password-generator)
+- [What is a password generator](#what-is-a-password-generator)
 - [Conclusion](#conclusion)
 
 ### What is Tkinter?
@@ -29,7 +29,7 @@ This command will install the Tkinter library and it's related libraries.
 ### Prerequisites
 If you don't have Python already installed, download the [latest version of Python](https://www.python.org/downloads/) and install it.
 
-You can download a python-oriented code editor, most preferably [PyCharm](https://www.jetbrains.com/pycharm/download/) since it is student-oriented, friendly and easy to use.
+You can download a python-oriented code editor, most preferably [PyCharm](https://www.jetbrains.com/pycharm/download/) and install it.
 
 ### What are widgets?
 Widgets are the building blocks of graphical user interface programming, and they are used to view data or solicit input from the user. Here are a few examples of commonly used widgets.
@@ -40,7 +40,7 @@ Widgets are the building blocks of graphical user interface programming, and the
 - `Entry`: The entry widget displays a single-line text field for accepting user input.
 - `Text`: A text entry widget allows you to enter multiline text.
 
-### How to build a password generator app using Tkinter
+### what is a password generator app using Tkinter
 A  password generator is a software that accepts input from a random or pseudo-random string or number generator and uses it to generate a password for the user.
 
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong and unpredictable password for multiple accounts. The password generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
@@ -51,7 +51,8 @@ Unfortunately, the majority of stolen passwords are simple and easy to guess. Na
 
 For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
 
-Let us see how we can build a password generator.
+### Let us see how we can build a password generator.
+Create a new file `passgen.py` on your [PyCharm](https://www.jetbrains.com/pycharm/download/) or any python-oriented code editor.
 
 Let's start by importing Tkinter.
 
@@ -70,7 +71,7 @@ screen.geometry('600x400')
 screen.configure(background ="bisque")
 ``` 
 
-A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We'll be working on the backdrop color of the Tkinter GUI window in this line of code.
+A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We will change the background color using the `screen.configure()` method.
 
 ```Python
 def gen():
@@ -83,7 +84,7 @@ def gen():
    mixs='0123456789'+lowercase+uppercase+'@#$%&*'
 ```
 
-The global variable `sc1` is defined in the line code `global sc1`. We used the `.set()` method to set the value of `sc1` to null. We also assign a null value to the `passw` variable. The `length` variable will retain the value of `c1`, and the value type of `c1` will be integer. We then create a lowercase variable that holds a string value. After that, we create the `uppercase` variable to hold a string value. And at the last line of code, we define the `mixs`.
+The global variable `sc1` is defined in the line code `global sc1`. We used the `.set()` method to set the value of `sc1` to an empty string. We also assign a empty string value to the `passw` variable. The `length` variable will retain the value of `c1` which will determine the total number of values(alphabets,numbers and symbols) required to form any password as selected by the user. We then create a `lowercase` variable that holds a string value of all the alphabets in lowercase. After that, we create the `uppercase` variable to hold a string value of all the alphabets in uppercase. And at the last line of code, we define the `mixs` this holds the values for all integer values, alphabets in both uppercase and lowercase as well and signs and symbols that will be required in creating a high-strength password.
 
 Add the following code.
 
@@ -102,7 +103,8 @@ elif c2.get()=='High Strength':
     sc1.set(passw)
 ```
 
-We define the `if` condition to monitor the strength of the passwords generated using the password generator.
+We define the `if` condition to monitor the strength of the passwords generated.
+`if` the user decides the length of the password and then clicks on `Low Strength` the password generator generates a random password in lowercase `elif` the user decides to click on `Moderate Srength` the password generator generates a random password in both lowercase and uppercase there by decreasing the chance of an intruder's ability to predict the password `elif` if the user decides to click on `High Strength` the password generator generates a random password that is a `mixs` containing uppercase, lowercase and special alphabetical signs and symbols, this gives an intruder little or no chance in predicting the password
   
 Add the following code.
 
