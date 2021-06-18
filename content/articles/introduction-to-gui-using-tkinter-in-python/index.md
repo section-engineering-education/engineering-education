@@ -41,7 +41,6 @@ Widgets are the building blocks of graphical user interface programming, and the
 - `Text`: A text entry widget allows you to enter multiline text.
 
 ### How to build a password generator app using Tkinter
-<xselect a different heading>
 A  password generator is a software that accepts input from a random or pseudo-random string or number generator and uses it to generate a password for the user.
 
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong and unpredictable password for multiple accounts. The password generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
@@ -53,10 +52,8 @@ Unfortunately, the majority of stolen passwords are simple and easy to guess. Na
 For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
 
 Let us see how we can build a password generator.
-<seperate these 2 sections>
 
 Let's start by importing Tkinter.
-<provide instructions on where to put the code. eg. create a new file passgen.py and put the code below>
 
 ```Python
 from tkinter import *
@@ -73,7 +70,7 @@ screen.geometry('600x400')
 screen.configure(background ="bisque")
 ``` 
 
-A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We'll be working on the backdrop color of the Tkinter GUI window in this line of code. <which line>
+A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We'll be working on the backdrop color of the Tkinter GUI window in this line of code.
 
 ```Python
 def gen():
@@ -86,7 +83,7 @@ def gen():
    mixs='0123456789'+lowercase+uppercase+'@#$%&*'
 ```
 
-The global variable `sc1` is defined in the line code `global sc1`. We used the `.set()` method to set the value of `sc1` to null. <there is a difference between null and empty> We also assign a null value to the `passw` variable. The `length` variable will retain the value of `c1`, and the value type of `c1` will be integer. We then create a lowercase variable that holds a string value. After that, we create the `uppercase` variable to hold a string value. And at the last line of code, we define the `mixs`. <tell us what these variables mean in the code>.
+The global variable `sc1` is defined in the line code `global sc1`. We used the `.set()` method to set the value of `sc1` to null. We also assign a null value to the `passw` variable. The `length` variable will retain the value of `c1`, and the value type of `c1` will be integer. We then create a lowercase variable that holds a string value. After that, we create the `uppercase` variable to hold a string value. And at the last line of code, we define the `mixs`.
 
 Add the following code.
 
@@ -105,8 +102,8 @@ elif c2.get()=='High Strength':
     sc1.set(passw)
 ```
 
-We define the `if` condition to monitor the strength of the passwords generated using the password generator. <explain the rules used to check for the strengths>
-
+We define the `if` condition to monitor the strength of the passwords generated using the password generator.
+  
 Add the following code.
 
 ```Python
@@ -117,7 +114,7 @@ t2=Label(screen,text='password:',font=('Arial',14),background ="bisque")
 t2.place(x=145,y=90)
 ```
 
-We have defined the `sc1` variable. <what does it handle/represent?> In order to design the GUI window's section In this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1`, where `t1` is the name of the label object. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
+We have defined the `sc1` variable. In order to design the GUI window's section In this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1`, where `t1` is the name of the label object. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
 
 We have also created a label `t2`, it's placeholder text and its background. We have also set its coordinates.
 
