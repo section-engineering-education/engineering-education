@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/
-title: Linux Containers vs Docker: What is the Difference and Why Docker is Better
+title: Linux Containers vs Docker - What is the Difference and Why Docker is Better
 description: This articles goes over the differnces between Linux containers and Docker and explains why Docker is better than Linux containers.
 author: julius-gikonyo
-date: 2021-01-14T00:00:00-11:00
+date: 2021-06-18T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/hero.jpg
-    alt: Linux Containers vs Docker: What is the Difference and Why Docker is Better Image
+    alt: Linux Containers vs Docker - What is the Difference and Why Docker is Better Hero Image
 ---
 
 Containers have gained traction in enterprise IT for the past few years, and most developers seem to be very interested in this technology. Many are using them to develop and deploy applications to the public. Containers are useful for many reasons. They isolate applications and operating systems from the rest of the system, thus bringing speed and flexibility. They are portable and easy to clone and move to other operating systems. Thus, containers can be more or less of a virtualized software environment that the application or operating system runs on a host computer.
