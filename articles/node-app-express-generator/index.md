@@ -53,10 +53,6 @@ In the above command, we instruct the express-generator to generate an applicati
 
 Output:
 
-The above error is just a warning that `jade` will not be supported in the future, otherwise enter `y` to proceed.
-
-Output:
-
 ```bash
 create : expressExample/
    create : expressExample/public/
