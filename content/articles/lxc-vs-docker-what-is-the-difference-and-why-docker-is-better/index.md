@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/hero.jpg
     alt: Linux Containers vs Docker: What is the Difference and Why Docker is Better Image
 ---
+
 Containers have gained traction in enterprise IT for the past few years, and most developers seem to be very interested in this technology. Many are using them to develop and deploy applications to the public. Containers are useful for many reasons. They isolate applications and operating systems from the rest of the system, thus bringing speed and flexibility. They are portable and easy to clone and move to other operating systems. Thus, containers can be more or less of a virtualized software environment that the application or operating system runs on a host computer.
 <!--more-->
 
@@ -115,7 +116,7 @@ Docker engine has embedded configuration management commands that let you start/
 
 If popularity would be the only factor to be considered when choosing between these two containerization solutions, Docker would easily defeat LXC. Docker was launched in 2013. In its early stages, Docker used LXC but has subsequently modified its codebase to create a completely new container architecture.
 
-Many IT titans, including Netflix, Twitter, Google, and other web-scale organizations, have embraced Docker's application containerization strategy for its scalability benefits. Docker's popularity is booming, [according to ZDNet]((https://www.zdnet.com/article/what-is-Docker-and-why-is-it-so-darn-popular/), with over 3.5 million container-based applications and billions of container orchestration distributed using Docker.
+Many IT titans, including Netflix, Twitter, Google, and other web-scale organizations, have embraced Docker's application containerization strategy for its scalability benefits. Docker's popularity is booming, [according to ZDNet](https://www.zdnet.com/article/what-is-Docker-and-why-is-it-so-darn-popular/), with over 3.5 million container-based applications and billions of container orchestration distributed using Docker.
 
 One of the reasons for Docker's popularity is the approach it used to concur with its target market. Containers were designed to go beyond the LXC Operating system and into the more detailed realm of an application that fits many organizations and enterprises.
 
