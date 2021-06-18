@@ -6,7 +6,7 @@ url: /dockerized-php-apache-and-mysql-container-development-environment/
 title: PHP Websites using Docker Containers with PHP Apache and MySQL
 description: This article explains about how to setup docker containers using Apache and MySQL. We will also learn to build a PHP website and run them.
 author: joseph-chege
-date: 2021-06-03T00:00:00-10:00
+date: 2021-06-18T00:00:00-10:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
