@@ -14,7 +14,7 @@ In this tutorial, we will see how to use Matlab to create a PID controller and t
 
 ### Prerequisites
 1. [Matlab](https://www.mathworks.com/downloads/) installed.
-2. A proper understanding of [Matlab](https://www.section.io/  engineering-education/getting-started-with-matlab/) language.
+2. A proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
 
 We first clear the variables and the command window. You then set up the transfer function variables.
 
