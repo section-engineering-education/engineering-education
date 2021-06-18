@@ -37,7 +37,6 @@ In this tutorial, I'll show you how to build RESTful APIs using the Node.js Expr
 ### Prerequisites
 
 To follow along with this tutorial, you need the following:
-
 - [Node.js](https://node.org) downloaded and installed in your local development environment.
 - Basic knowledge in Node.js' Express framework.
 - RESTful APIs design.
