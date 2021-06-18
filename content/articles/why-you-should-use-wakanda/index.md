@@ -1,6 +1,5 @@
 ### Introduction
-[Wakanda](https://wakanda.github.io/) is an open-source platform which allows the user to easily and quickly create applications that can be utilized as mobile applications and web application using JavaScript. This definition is sweet enough to catch interest but is obvious that developers don’t fall for this line.
-
+[Wakanda](https://wakanda.github.io/) is an open-source platform which allows the user to easily and quickly create applications that can be utilized as mobile applications and web application using JavaScript. let us look at some cool features of wakanda JavaScript framework framework
 Wakanda is supported on Microsoft windows, cloud-ready on back-end and Linux. 
 
 ### Features of Wakanda JavaScript Framework 
@@ -27,7 +26,7 @@ Authentication is a process which enables the app in verifying the users who are
 #### The Wakanda studio
 The Wakanda studio helps to develop and test apps locally together with troubleshooting your environment. In this era where everyone is craving for a code editor, Wakanda has taken a different turn in coming up with an IDE. 
 
-Wakanda's main objective is to give a quick and easy way in project scaffolding.Scaffolding is programming method which aims at creating  database-backed software applications. Many software frameworks are lacking code editors where programmers may need to write down specifications which guides on how the application database is operated.The philosophy behind Wakanda studio which simplifies developers lives who have decided to work with Wakanda JavaScript stack, is called RAD (Rapid Application Development).
+Wakanda's main objective is to give a quick and easy way in project scaffolding.Scaffolding is programming method which aims at creating  database-backed software applications. The philosophy behind Wakanda studio which simplifies developers lives who have decided to work with Wakanda JavaScript stack, is called RAD (Rapid Application Development).
 
 Do you love React? React is a front-end JavaScript library which can be used for creating user interfaces for single-page web applications. You can change the scaffolding of your project to adapt to your desire. Wakanda identifies and acknowledges the three critical parts in all applications.
 
