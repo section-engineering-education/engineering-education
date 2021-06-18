@@ -55,7 +55,7 @@ The Node.js `crypto` module provides cryptographic operations to help you secure
 
 As stated earlier, `crypto` is a built-in library in Node.js. Thus it doesn't require installation and configuration before using it in your Node.js applications. The `crypto` module handles an algorithm that performs encryption and decryption of data.
 
-The `crypto` module allows you to hash plain texts prior to storing them in a database. Hashed data can not be decrypted with a specific key, like encrypted data. Instead, an HMAC is responsible for a Hash-based Message Authentication Code, which hashes keys and values to create a final hash.
+The `crypto` module authorize you to hash plain texts prior to storing data in a database. Hashed data can not be decrypted with a specific key, like encrypted data. Instead, an HMAC is responsible for a Hash-based Message Authentication Code, which hashes keys and values to create a final hash.
 
 You may want to encrypt and decrypt data for transmission purposes. This is where `cipher` and `decipher` functions come in. You encrypt data with a `cipher` and decrypt it with a `decipher`. Also, you may want to encrypt data before storing it in the database.
 
