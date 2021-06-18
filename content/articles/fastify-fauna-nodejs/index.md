@@ -1,5 +1,21 @@
-Choosing the right JavaScript tech stack in the massive ecosystem is challenging. One of the Node.js web server framework that is rising in popularity these days is Fastify due to its ease of use and great developer experience.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/fastify-fauna-nodejs
+title: Getting Started With Fastify Node.js framework and Faunadb
+description: In this article, we use Node.js, Fastify, and FaunaDB to learn about basic CRUD operations, creating routes, and creating collections.
+author: mary-njeri
+date: 2021-06-18T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/fastify-fauna-nodejs/hero.jpg
+    alt: faunadb example image
+---
+Choosing the right JavaScript tech stack in the massive ecosystem is challenging. One of the Node.js web server framework that is rising in popularity these days is Fastify due to its ease of use and great developer experience.
+<!--more-->
 In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection.
 
 Refer to this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
