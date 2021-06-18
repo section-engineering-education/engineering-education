@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
-title: How to Setup and run PHP Websites using Docker Containers with PHP Apache and MySQL
+url: /dockerized-php-apache-and-mysql-container-development-environment/
+title: PHP Websites using Docker Containers with PHP Apache and MySQL
 description: This article explains about how to setup docker containers using Apache and MySQL. We will also learn to build a PHP website and run them.
 author: joseph-chege
 date: 2021-06-03T00:00:00-10:00
@@ -13,18 +13,17 @@ images:
   - url: /engineering-education/dockerized-php-apache-and-mysql-container-development-environment/hero.png
     alt: PHP Docker containers image
 ---
-[Container technology](/engineering-education/history-of-container-technology) is growing day by day. It's a technology that makes application development much easier and faster. It has a clean architecture that ensures application services utilize resources sustainably by dividing an application into smaller services called images. This allows you to set up each service independently without affecting how the other services run.
+[Container technology](/engineering-education/history-of-container-technology) is growing every day. It's a technology that makes application development much easier and faster. It has a clean architecture that ensures application services utilize resources sustainably by dividing an application into smaller services called images. This allows you to set up each service independently without affecting how the other services run.
 <!--more-->
 In this case, [Docker](/engineering-education/docker-concepts/) provides a [docker-compose](https://docs.docker.com/compose/) file that allows you to set all your application environments and run a few commands to fully set up your application in a more elegant and faster approach.
 
 Let's take the case of running a PHP application. You would have to install all environments that you need to run PHP scripts. You need an apache server installed in your server/system and probably a MySQL database. Then set up each environment in a way that will allow you to run your PHP-driven website.
 
-With Docker, things are much more manageable. Docker allows you to set and your application with each service running as a microservice. This way, you set a single YML file that will isolate all the services that your application needs to run. The file set up the PHP Apache server and MySQL database for you. All you need is to specify the parameters that you need your application to run on.
+With Docker, things are much more manageable. Docker allows you to set your application with each service running as a microservice. This way, you set a single YML file that will isolate all the services that your application needs to run. The file sets up the PHP Apache server and MySQL database for you. All you need is to specify the parameters that you need your application to run on.
 
-The main advantage of this is that Containers provides a scalable environment to run your application services. It ensures that the practices of continuous integration and continuous delivery (CI/CD) pipelines are enhanced across the team. So you only need to share run this YML file with every team member. This will set all the necessary environments across the team regardless of the operating system they are running on. Thus team members synchronize their work without breaking the code.
+The main advantage that Containers provides, is a scalable environment to run your application services. It ensures that the practices of continuous integration and continuous delivery (CI/CD) pipelines are enhanced across the team. So you only need to share this YML file with every team member. This will set all the necessary environments across the team regardless of the operating system they are running on. Thus team members can synchronize their work without breaking the code.
 
-This guide will show you how we can use Docker development environment to
-
+This guide will show you how we can use Docker development environment to:
 - Setup and run a local PHP Apache server instance.
 - Serve a dynamic PHP-driven website.
 - Setup a MySQL database to run SQL scripts, fetch records, and print them in a PHP-driven website.
@@ -53,7 +52,7 @@ This will log the results almost similar to this command line logs.
 
 ![Testing Docker version](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/docker-version.png)
 
-If you are a beginner at Docker, you might come across this Docker engine error while running the above command.
+If you are a beginner at Docker, you might come across this Docker engine error while running the command above.
 
 ![Docker error](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/docker-error.png)
 
@@ -61,7 +60,7 @@ To solve this, head over to your Docker desktop engine, troubleshooting and rese
 
 ![Solve Docker error](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/solve-docker-error.png)
 
-Run the `docker version` command, and it should now work fine. And if the problem persists, search and find the necessary ways to set your Docker engine right.
+Run the `docker version` command, and it should now work fine. And if the problem persists, search and find the necessary ways to set your Docker engine correctly.
 
 We are starting from scratch; make sure you have no containers and images running in your Docker engine. Run `docker container ls` to check any available container. To remove a Docker container, run `docker container rm <container's name>`. And make sure no container is running.
 
@@ -70,7 +69,9 @@ We are starting from scratch; make sure you have no containers and images runnin
 ### Laying down docker-compose YML file
 Docker-compose allows you to set the parameters of the necessary images that you want to run in your application. In our case, we will use [Docker hub official images](https://hub.docker.com/search?image_filter=official&type=image) such as [PHP Apache](https://hub.docker.com/_/php), and [MySQL](https://hub.docker.com/_/mysql). We will write their parameters in a `.yml` file. A `.yaml` will work as well.
 
-Go ahead and create a project folder and create a `.yml` file inside that folder. For example, `docker-compose.yml`.
+Go ahead and create a project folder and create a `.yml` file inside that folder. 
+
+For example, `docker-compose.yml`.
 
 To set a docker-compose, you need first to select the [Docker version](https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix) you want to use, the services you want to provide, and the containers you want to run.
 
@@ -84,25 +85,31 @@ services:
 ### Setup and run a local PHP Apache server instance
 To set up a PHP Apache container, you need to specify the following environments,
 
-- The container name - this is just a random name that you would like to name your PHP container. For example `container_name: php-apache`.
+- The container name - this is just a random name that you would like to name your PHP container. 
+
+For example `container_name: php-apache`.
 
 - The container image - this the [official PHP image](https://hub.docker.com/_/php), the version of PHP Apache you want to use. In this case, we are pulling `image: php:8.0-apache` from the Docker hub.
   
-- The volume - this will set up your present working `src` directory for your code/source files. If you were to run a PHP script, that file would have to be in that directory. I.e.
+- The volume - this will set up your present working `src` directory for your code/source files. If you were to run a PHP script, that file would have to be in that directory. 
+
+Such as:
 
 ```yml
 volumes:
   - ./php/src:/var/www/html/
 ```
 
-- The port numbers. Defines the ports where the script will run from. it will set up an Apache server port mapping to the port on your local computer. For example
+- The port numbers. This defines the ports where the script will run from. It will set up an Apache server port mapping to the port on your local computer. 
+
+For example:
 
 ```yml
 ports:
   - 8000:80
 ```
 
-This basically means that we are setting up an Apache server to expose port 80. Port 8000 reaches out to the PHP scrips and executes them in a browser from within Docker containers.
+This means that we are setting up an Apache server to expose port 80. Port 8000 reaches out to the PHP scripts and executes them in a browser from within Docker containers.
 
 This is how you `docker-compose.yml` should look like.
 
@@ -118,22 +125,24 @@ services:
       - 8000:80
 ```
 
-Let's test it out. Go ahead and run `docker-compose up`. That's going to pull all the information, download the Apache server, build the image and run the container.
+Let's test it out. Go ahead and run `docker-compose up`. That's going to pull all the information, download the Apache server, build the image, and run the container.
 
 ![Docker-compose up](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/docker-compose-up.png)
 
-And if you open the Docker desktop engine, the container should be up and running.
+If you open the Docker desktop engine, the container should be up and running.
 
 ![Docker engine container running](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/docker-engine-container-running.png)
 
-To ensure the container is well set to execute the PHP scripts, open your defined local host post in the browser,i.e., `http://localhost:8000/`.
+To ensure the container is set to execute the PHP scripts, open your defined local host post in the browser,i.e., `http://localhost:8000/`.
 
 ![Apache server running](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/apache-server-running.png)
 
 This shows the container is set to run some PHP-driven code.
 
 ### Serve a dynamic PHP-driven website
-Let's now execute some PHP code and get the output in the browser. You will be executing the scrips from the directory that you defined in the volumes of your docker-compose. In this case we are using `./php/src`.
+Let's now execute some PHP code and get the output in the browser. You will be executing the scripts from the directory that you defined in the volumes of your docker-compose. 
+
+In this case we are using `./php/src`.
 
 Head on to your project directory ➙ `./php/src`, create an `index.php` file and start writing your PHP scripts.
 
@@ -151,12 +160,12 @@ Refresh on your browser (`http://localhost:8000/`), and the results of this simp
 
 ![Dockerized php website](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/dockerized-php-website.png)
 
-And congratulations! You now have a containerize PHP website.
+Congratulations! You now have a containerized PHP website.
 
 ### Setup a MySQL database container
-Probably you would want to set up a database to interact with your website. We will create another service to provide MySQL support inside the PHP container.
+You would probably want to set up a database to interact with your website. We will create another service to provide MySQL support inside the PHP container.
 
-Let's add the MySQL service into the `docker-compose.yml` file. To setup MySQL, we need to customize some environment, such as
+Let's add the MySQL service into the `docker-compose.yml` file. To setup MySQL, we need to customize some environment, such as:
 
 - Password authentication. To use and access a MySQL server, you need to set authentication environments that will allow you to access the defined MySQL server and its services, such as a database. We will use `MYSQL_USER: MYSQL_USER` and `MYSQL_PASSWORD: MYSQL_PASSWORD` to connect to MySQL and access the `MYSQL_DATABASE: MYSQL_DATABASE`.
 - A restart policy set to `restart: always`. This restarts the service whenever any defined configuration changes.
@@ -252,12 +261,14 @@ Save the file and refresh your `http://localhost:8000/` web address.
 
 ![MySQL connected successfully](/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/mysql-connected-successfully.png)
 
-And boom. There you have it. The PHP Apache and MySQL environments are now set, and you can start developing your PHP-driven application and communicate with the MySQL server.
+Boom. There you have it. The PHP Apache and MySQL environments are now set, and you can start developing your PHP-driven application and communicate with the MySQL server.
 
 ### Setting PHPMyAdmin
-The MySQL connection is now okay. Let's see how we can fetch some data from a MySQL database and display them on a web page using PHP scripts.
+The MySQL connection is now okay. Let's see how we can fetch some data from a MySQL database and display it on a web page using PHP scripts.
 
-Suppose your application interacts with a database; you would probably want an interface to interact with your data. We will add PHPMyAdmin services to provide us with an interface to interact with the MySQL database. Let's add a PHPMyAdmin service as shown below.
+Suppose your application interacts with a database; you would probably want an interface to interact with your data. We will add PHPMyAdmin services to provide us with an interface to interact with the MySQL database. 
+
+Let's add a PHPMyAdmin service as shown below.
 
 ```yml
 phpmyadmin:
@@ -281,7 +292,7 @@ To login to the Phpmyadmin panel, use username as `root` and password as `MYSQL_
 
 You can now see the database we defined is already set as `MYSQL_DATABASE`, and you can start interacting with Phpmyadmin.
 
-### Fetch records and print them on a PHP-driven website.
+### Fetch records and print them on a PHP-driven website
 Create a database table and fill in some records. Select the database and execute the following query.
 
 ```sql
@@ -347,7 +358,11 @@ We have only used the Read operation to demonstrate this. Go ahead and try other
 ### Conclusion
 I hope this tutorial helped you set up a PHP and MySQL development environment using Docker containers.
 
-Docker is awe-inspiring container technology with a tone of mesmerizing benefits. If you haven't started learning Docker yet, check out this [tutorial](/engineering-education/getting-started-with-docker/) and learn how to get started with Docker. Also, check out the below tutorials and more about Docker and containers.
+Docker is awe-inspiring container technology with a tone of mesmerizing benefits. If you haven't started learning Docker yet, check out this [tutorial](/engineering-education/getting-started-with-docker/) and learn how to get started with Docker. 
+
+Feel free to check out the below tutorials and more about Docker and containers.
+
+Happy coding!
 
 - [Understanding Docker Concepts](/engineering-education/docker-concepts/)
 - [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
