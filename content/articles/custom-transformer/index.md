@@ -122,7 +122,7 @@ The result produced is an array, so we convert it to a DataFrame.
 
 We cannot handle text and numerical attributes similarly. For example, we cannot compute the median of text.
 
-We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly. It assignes numbers to the corresponding text attributes e.g 1 for NEAR and 2 for FAR.
+We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly. It assigns numbers to the corresponding text attributes e.g 1 for NEAR and 2 for FAR.
 
 ```python
 from sklearn.preprocessing import OrdinalEncoder
@@ -147,7 +147,7 @@ For our transformer to work smoothly with Scikit-Learn, we should have three met
 2. `transform()`
 3. `fit_transform`
 
-> We include the three methods because Scikit-Learn is based on duck-typing. A class is also used because that makes it easier to include all the methods in.
+> We include the three methods because Scikit-Learn is based on duck-typing. A class is also used because that makes it easier to include all the methods.
 
 The last one is gotten automatically by using the `TransformerMixin` as a base class. The `BaseEstimator` lets us get the `set_params()` and `get_params()` methods that are helpful in hyperparameter tuning.
 
