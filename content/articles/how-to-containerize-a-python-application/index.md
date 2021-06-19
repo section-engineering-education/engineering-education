@@ -78,6 +78,9 @@ docker
 Before we go further, let's develop our `Flask` application.
  
 ### Step 2 - Building our Flask App
+Flask is a lightweight python framework used in building web applications with lightweight codebase.
+We will create a flask web application that displays 'Flask Dockerized' on the browser when we run the web application.
+
 Create a new directory called `flask` and then navigate into it using the following command.
 
 ```
@@ -102,6 +105,18 @@ if __name__ == '__main__':
 ```
 
 That's our flask app that returns 'Flask Dockerized’ when we run it.
+
+let’s have an overview of the code whats in our **flask application**:
+
+* from flask import Flask - Firstly we imported the flask class.
+* app = Flask(__name__) - We then make a flask instance.
+* @app.route('/') - We now tell Flask the URL the will call our function.
+* def hello_world() - This returns 'Flask Dockerized', which is displayed in our browser.
+* if __name__ == '__main__': - onces this statement is true the app.run(debug=True, host='0.0.0.0') function will be executed.
+* app.run(debug=True, host='0.0.0.0') - this starts the server on your local machine.
+
+
+
  
 ### Step 3 - Create our Requirements file
 next we create a **requirements.txt** file.
