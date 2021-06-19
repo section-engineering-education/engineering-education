@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /custom-transformer/
 title: Creating a Custom Data Transformer using Scikit-Learn
-description: In this article we will discuss building custom data transformers using scikit-learn and look at an example to implement the same. Data preprocessing is a crucial part in machine learning. We will implement a scikit-learn pipeline and integrate the transformer into the pipeline and look at its various methods available.  
+description: In this article we will discuss building custom data transformers using Scikit-Learn and look at an example to implement the same. Data preprocessing is a crucial part in machine learning. We will implement a Scikit-Learn pipeline and integrate the transformer into the pipeline and look at its various methods available.  
 author: terrence-aluda
 date: 2021-06-16T00:00:00-18:00
 topics: [Machine Learning]
@@ -18,7 +18,7 @@ images:
 
 ### Introduction
 
-In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit learn enable quick experimentation to achieve quality results with a minimal amount of time spent on implementing data pipelines involving preprocessing, machine learning algorithms, evaluation and inference. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
+In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit-Learn enable quick experimentation to achieve quality results with a minimal amount of time spent on implementing data pipelines involving preprocessing, machine learning algorithms, evaluation and inference. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
 
 In this article, we will look at how to do that.
 
