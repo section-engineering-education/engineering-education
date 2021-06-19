@@ -22,7 +22,7 @@ In machine learning, a data transformer is used to make a dataset fit for the tr
 
 In this article, we will look at how to do that.
 
-### Prerequisites
+### Prerequisites.
 
 1. A good understanding of the Python language.
 2. Familiarity with the Numpy and Pandas library.
