@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /comparing-serverless-computing-vs-containers/
-title:  Comparing Serverless computing vs Containers
+title: Comparing Serverless computing vs Containers
 description: In this article, we will cover the differences and similarities between serverless and containers.
 author: jayden-kiprotich
 date: 2021-06-17T00:00:00-15:00
@@ -75,7 +75,7 @@ Containers are always running, meaning that they continue to live even after the
 #### Latency and start-up time
 Serverless provides a decreased start-up time and latency compared to containers. With serverless, apps are not running on a server, allowing you to run the code from anywhere. This also allows developers to use servers that are close to the users. Such an arrangement means that requests no longer travel to severs far away, thus reducing latency.
 
-#### When to use serverless and when to use containers
+### When to use serverless and when to use containers
 Containers are suitable for enterprise applications requiring thorough debugging, scaling, and testing in different environments. Also, containers are the best bet when you need to migrate [legacy services](https://en.wikipedia.org/wiki/Legacy_system#) or looking for flexibility.
 
 Serverless handles simpler tasks with high computing power well. If you are looking for automatic scaling, a high speed of development, and a significantly reduced runtime, then serverless is the way to go.
