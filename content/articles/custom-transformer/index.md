@@ -18,7 +18,7 @@ images:
 
 ### Introduction
 
-In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit-Learn is a Python library containing methods that help us achieve our machine learning process faster. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
+In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit learn enable quick experimentation to achieve quality results with a minimal amount of time spent on implementing data pipelines involving preprocessing, machine learning algorithms, evaluation and inference. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
 
 In this article, we will look at how to do that.
 
@@ -51,7 +51,9 @@ OUR_DATA_URL = OUR_ROOT_URL + OUR_PATH + "/housing.tgz"
 def get_data(our_data_url=OUR_DATA_URL, our_path=OUR_PATH):
       if not os.path.isdir(our_path):
             os.makedirs(our_path)
+      #setting the zip file path      
       zipfile_path = os.path.join(our_path, "housing.tgz")
+      #getting the file from the url and extracting it
       urllib.request.urlretrieve(our_data_url, zipfile_path)
       our_zip_file = tarfile.open(zipfile_path)
       our_zip_file.extractall(path=our_path)
@@ -73,7 +75,9 @@ We then have this code for loading the CSV file.
 import pandas as pd
 
 def load_our_data(our_path=OUR_PATH):
+    #setting the csv file path
     our_file_path = os.path.join(our_path, "housing.csv")
+    #reading it using Pandas
     return pd.read_csv(our_file_path)
 
 our_dataset = load_our_data()
@@ -93,16 +97,19 @@ our_dataset.info()
 
 #### Cleaning the data
 
-The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that.
+The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that. We set the `strategy` to `"median"` so that it calculates the median value for each column's empty data.
 
 ```python 
 from sklearn.impute import SimpleImputer
-
+'''setting the `strategy` to `"median"` so that it calculates the median value for each column's empty data'''
 imputer = SimpleImputer(strategy="median")
-
+#removing the ocean_proximity attribute for it is textual
 our_dataset_num = our_dataset.drop("ocean_proximity", axis=1)
+#estimation using the fit method
 imputer.fit(our_dataset_num)
+#transforming using the learnedparameters
 X = imputer.transform(our_dataset_num)
+#setting the transformed dataset to a DataFrame
 our_dataset_numeric = pd.DataFrame(X, columns=our_dataset_num.columns)
 
 ```
@@ -115,23 +122,36 @@ The result produced is an array, so we convert it to a DataFrame.
 
 We cannot handle text and numerical attributes similarly. For example, we cannot compute the median of text.
 
-We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly.
+We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly. It assignes numbers to the corresponding text attributes e.g 1 for NEAR and 2 for FAR.
 
 ```python
 from sklearn.preprocessing import OrdinalEncoder
-
+#selecting the textual attribute
 our_text_cats = our_dataset[['ocean_proximity']]
 our_encoder = OrdinalEncoder()
+#transforming it
 our_encoded_dataset = our_encoder.fit_transform(our_text_cats)
 
 ```
 
-### Our transformer
+### Our Data Transformer
 
 This is where we will create the custom transformer. We will be adding these three attributes:
 - Rooms per household
 - Population per household
 - Bedrooms per household
+
+For our transformer to work smoothly with Scikit-Learn, we should have three methods:
+
+1. `fit()`
+2. `transform()`
+3. `fit_transform`
+
+> We include the three methods because Scikit-Learn is based on duck-typing. A class is also used because that makes it easier to include all the methods in.
+
+The last one is gotten automatically by using the `TransformerMixin` as a base class. The `BaseEstimator` lets us get the `set_params()` and `get_params()` methods that are helpful in hyperparameter tuning.
+
+We get the three extra attributes in the `transform()` method by dividing appropriate attributes. An example would be the following: To get the rooms per household, we divide the number of rooms by the number of households.
 
 ```python
 
@@ -141,13 +161,16 @@ from sklearn.base import BaseEstimator, TransformerMixin
 rooms,  bedrooms, population, household = 3,4,5,6
 
 class CustomTransformer(BaseEstimator, TransformerMixin):
+    #the constructor
+    '''setting the add_bedrooms_per_room to True helps us check if the hyperparameter is useful'''
     def __init__(self, add_bedrooms_per_room = True):
         self.add_bedrooms_per_room = add_bedrooms_per_room
-        
+    #estimator method
     def fit(self, X, y = None):
         return self
-    
+    #transfprmation
     def transform(self, X, y = None):
+        #getting the three extra attributes by dividing appropriate attributes
         rooms_per_household = X[:, rooms] / X[:, household]
         population_per_household = X[:, population] / X[:, household]
         if self.add_bedrooms_per_room:
@@ -161,35 +184,27 @@ our_extra_attributes = attrib_adder.transform(our_dataset.values)
 
 ```
 
-For our transformer to work smoothly with Scikit-Learn, we should have three methods:
-
-1. `fit()`
-2. `transform()`
-3. `fit_transform`
-
-The last one is gotten automatically by using the `TransformerMixin` as a base class. The `BaseEstimator` lets us get the `set_params()` and `get_params()` methods that are helpful in hyperparameter tuning.
-
-We get the three extra attributes in the `transform()` method by dividing appropriate attributes. An example would be the following: To get the rooms per household, we divide the number of rooms by the number of households.
-
 #### Our pipeline
 We implement them in a pipeline for the data transformation steps to be executed in the correct order.
 
 ```python
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-
+#the numeric attributes transformation pipeline
 numeric_pipeline = Pipeline([
         ('imputer', SimpleImputer(strategy="median")),
         ('attribs_adder', CustomTransformer()),
     ])
 numeric_attribs = list(our_dataset_numeric)
+#the textual transformation pipeline
 text_attribs = ["ocean_proximity"]
-
+#setting the order of the two pipelines
 our_full_pipeline = ColumnTransformer([
         ("numeric", numeric_pipeline, numeric_attribs),
         ("text", OrdinalEncoder(), text_attribs),
     ])
-
+'''Finally, scaling the data and learning the scaled parameters from the pipeline
+'''
 our_dataset_prepared = full_pipeline.fit_transform(our_dataset)
 
 ```
