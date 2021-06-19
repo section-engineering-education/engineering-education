@@ -15,14 +15,14 @@ images:
     alt: C++ Function Pointer Image Example
 ---
 ### Introduction 
-Pointers are used to point to data. Like normal data pointers, we have `function pointers` that point to `functions`. Function pointers store the address of a function. In greater detail, they store the starting address or entry point of the block of memory containing all the instructions in a function. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve.
+To point to data, pointers are used. Like normal data pointers, we have `function pointers` that point to `functions`. The address of a function is stored in a function pointer. They store the starting address or entry point of the memory block comprising all the instructions of a function in greater detail. We use function pointers for several tasks. One example is to prevent code redundancy, which is what most programmers seek to achieve.
 <!--more-->
-For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will introduce the you to the working and examples of the function pointer along with code examples.
+For example, if you're writing a `sort()` function, you may want to give the function's caller the option of sorting data in ascending or descending order. Some programmers may need to sort in ascending or descending order, while others may prefer something between. Function pointers allow the programmer to choose how to sort the data. Callbacks, event-driven programs, and so on are all applications of function pointers. This article will explain how the function pointer works and give you several examples, as well as code samples.
 
 ### Prerequisites
 To follow through this article, the reader should:
 - Have [Codeblocks IDE](https://www.codeblocks.org/downloads/) installed.
-- Have a basic knowledge of the C++ language.
+- Have a basic understanding of the C++ language.
 - Have a basic knowledge of C++ functions.
 
 ### The Basic syntax of function pointers
@@ -30,72 +30,33 @@ To follow through this article, the reader should:
 void (*fun_ptr)(int);
        fun_ptr = &fun;
 ```
-We think of function pointers like normal C++ functions. Where `void` is the return type of the function. `*fun_ptr` is a pointer to a function taking one argument of the type `int`. It's as if we are declaring a function called `*fun_ptr` which takes `int` and returns `void`. The key to writing the declaration for a function pointer is that we are writing out the declaration of a function, but with `*fun_name` where you would place `func_name`. The declaration of the function pointer is preceded by the pointer symbol `*`. The function pointer can take more than one argument, thus it can point to any function which takes two `integer` arguments and return `void`.
+We think of function pointers like normal C++ functions. Where void is the function's return type. `*fun_ptr` is a pointer to a function that takes one `int` argument. It's as if we are declaring a function called `*fun_ptr` which takes `int` and returns `void`. The key to writing the declaration for a function pointer is to think of it as a function declaration, but with `*fun_name` instead of `func_name`. The pointer symbol `*` precedes the declaration of the function pointer. Because the function pointer can accept many parameters, it can point to any function that accepts two `integer` arguments and returns `void`.
 
 ### Address of a function
-To get the address of a function, we are required to mention the name of the function. We do not need to call the function. Consider example below:
+To get the address of a function, we must first state the function's name. There is no need for us to call the function. Consider the example below:
 
 ```c++
 #include <iostream>  
 using namespace std;  
 int main()  
 {  
-  std::cout << "Address of a main() function is : " <<&main<< std::endl;  
+  std::cout << "The address of function main(): " <<&main<< std::endl;  
   return 0;  
 }  
 ```
 
-In the program above, we're displaying the address of our main() function. We only listed the name of the function, no brackets, and no parameters to print the address of the main() function. As a result, the address of a function is the name of the function without any brackets or parameters.
+In the program above, we're displaying the address of our main() function. We only listed the name of the function, no brackets, and no parameters to print the address of the main() function. As a result, a function's address is simply its name without any brackets or parameters.
 
-### Interesting facts about function pointers
-- A function pointer, unlike other pointers, points to code rather than data. A function pointer usually stores the start of executable code.
+### Facts on function pointers that you should know
+- Unlike other pointers, a function pointer points to code rather than data. The start of executable code is commonly stored in a function pointer.
 - We don't use function pointers to allocate or de-allocate memory as we do with normal pointers.
 - The name of a function may also be used to find the address of that function as we had seen in the program above. 
-- An array of function pointers can be used in the same way that regular pointers are used. The program in our fifth point will demonstrate this for easier understanding.
-- Function pointers can be used in place of a switch case. We can take a look at the example below to understand this better:
-
-```c++
-#include <stdio.h>
-void add(int m, int n)
-{
-	printf("Addition = %d\n", m+n);
-}
-void subtract(int m, int n)
-{
-	printf("Subtraction = %d\n", m-n);
-}
-void multiply(int m, int n)
-{
-	printf("Multiplication = %d\n", m*n);
-}
-
-int main()
-{
-	// fun_ptr_arr is an array of the function pointers
-	void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};
-	unsigned int ch, m = 35, n = 10;
-
-	printf("Enter Choice: 0 to add, 1 to minus and 2 "
-			"to multiply\n");
-	scanf("%d", &ch);
-
-	if (ch > 2) return 0;
-
-	(*fun_ptr_arr[ch])(m, n);
-
-	return 0;
-}
-```
-Go ahead and run the code [here](https://replit.com/@Dawe7/switch-case#main.cpp)
-Output:
-```bash
-Enter Choice: 0 to add, 1 to minus and 2 to multiply
-```
-In the program above, the user is asked to choose between 0, 1, and 2 to perform different operations thus emulating a switch case. 
--  Like normal data pointers, a function pointer can be passed as an argument and can also be returned from a function.
+- Regular pointers can be used with an array of function pointers in the same manner that regular pointers can.
+- In place of a switch case, function pointers can be utilized.
+-  A function pointer, like a data pointer, can be supplied as an argument and returned from a function.
 
 ### Calling a function indirectly
-We can use the name of a function to call the function with the aid of a function pointer. The syntax for calling the function through the function pointer is the same as for calling the function normally.
+With the use of a function pointer, we may use the name of a function to call it. The syntax for calling the function via the function pointer is the same as for calling it directly.
 
 Let's take a look at some code examples:
 
@@ -109,10 +70,11 @@ int add(int x , int y)
 }  
 int main()  
 {  
- int (*funcptr)(int,int);  // function pointer declaration  
- funcptr=add; // function pointer is pointing to the add function  
- int sum=funcptr(7,10);  
- std::cout << "The sum=" <<sum<< std::endl;  
+ int (*funcptr)(int,int);  // Declaration of function pointer
+ funcpointr=add; // In this case we are pointing to the add function  
+
+ int sum=funcpointr(7,10);  
+ std::cout << "Sum=" <<sum<< std::endl;  
   return 0;  
 }  
 ```
@@ -152,7 +114,7 @@ Daniel
 Daniel
 Name: Daniel
 ```
-We define the function `printname()` in the preceding program, which takes a `char` pointer as an argument. The function pointer is declared as `void (*ptr)(char*)`. We are setting the address of the `printname()` function to ptr with the expression `ptr=printname`. We can now use the `ptr` statement to call the `printname()` methods. We get the output above after entering the name as `Daniel`.
+We define the function `printname()` in the preceding program, which takes a `char` pointer as an argument. We declared our function pointer as `void (*ptr)(char*)`. We are setting the address of the `printname()` function to ptr with the expression `ptr=printname`. We can now use the `ptr` statement to call the `printname()` methods. We get the output above after entering the name as `Daniel`.
 
 ### Passing function pointers as arguments
 We can pass function pointer's as arguments in our programs as shown below:
@@ -178,10 +140,10 @@ Output:
 ```bash
  function 1 is called
 ```
-In the program above, the function pointer is passed as an argument to the `function2()` function. The address of `function1()` is provided to the func2() function by the `main()` method. The `function2()` function is indirectly invoking the `function1()` function in this manner.
+In the program above, we have passed a function pointer as an argument to the `function2()` function. The address of `function1()` is provided to the func2() function by the `main()` method. The `function2()` function is indirectly invoking the `function1()` function in this manner.
 
 ### Conclusion
-This article has gone through function pointers. We have seen the importance of function pointers through where they are used and how they make our programs easier to develop and maintain. I hope you found this article easy to read, intuitive, and applicable in your day-to-day work.
+In this article we have gone through function pointers. We have seen the importance of function pointers through where they are used and how they make our programs easier to develop and maintain. I hope you found this article easy to read, intuitive, and applicable in your day-to-day work.
 
 Happy Coding!
 
