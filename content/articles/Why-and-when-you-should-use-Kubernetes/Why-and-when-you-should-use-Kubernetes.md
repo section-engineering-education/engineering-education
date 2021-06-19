@@ -10,13 +10,14 @@ One can run multiple containers on a single virtual machine just as in virtual m
 
 1) For VM, You will manage the operating system. For Container, No management of operating system
 2) For VM, it appears to be an instance of an operating system. For Container, it is lightweight. Meaning they are         designed to be created, scaled out and stopped dynamically
-3) For Vm, it is static i.e. as application demand increases, one creates and deploys the virtual machine. For Container, it is more dynamic. They allow one to respond to change in demand. With a container, one can easily and quickly restart it in case of any kind of failure. E.g. Hardware Failure
+3) For Vm, it is static i.e. as application demand increases, one creates and deploys the virtual machine. For Container, it is more dynamic. They allow one to respond to change in demand. With a container, one can easily and quickly restart it in case of any kind of failure. E.g. Hardware Failure.
 
 
 
 # WHY AND WHEN SHOULD WE USE KUBERNETES? 
 
 Containers are really a great development tool since it offers a good way to bundle and run your application. When you want to ensure that you have a quick and easy way of moving to production, then containers are great. In a production environment containers need to be managed to minimize downtimes. An example would be, if one of the containers is down, another one needs to be started. This can easily be achieved using Kubernetes. It will automatically do this process on our behalf.
+
 Below are other reasons as to why one should use Kubernetes.
 
 That said, we should use Kubernetes when we want  to :-
