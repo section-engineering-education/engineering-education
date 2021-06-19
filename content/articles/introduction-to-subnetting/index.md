@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /introduction-to-subnetting/
 title: Introduction to Internet Protocol and Subnetting
-description: Subnetting is a partition process of splitting a single-page network into two or more strands. This process enhances the efficiency of the computer network. This article will cover subnetting, internet protocol and the terminologies behind computer networking.
+description: Subnetting is a partition process of splitting a single-page network into two or more strands. This process enhances the efficiency of the computer network. This article will cover subnetting, internet protocol, and the terminologies behind computer networking.
 author: anyebe-blessing-ene
 date: 2021-05-20T00:00:00-10:30
 topics: [Networking]
@@ -17,11 +17,11 @@ In this article, we will get to understand important terms of the Network.
 <!--more-->
 
 ### Table of Contents
-- Internet Protocol (IP) Address
+- Internet Protocol (IP)
 - IPV4 Structure
 - IP Classes
 - Public vs Private IP
-- Routing
+- IP Routing
 - Subnet Mask
 
 ### Prerequisites
@@ -33,7 +33,7 @@ Let’s dive right in by defining a couple of terms.
 
 A **protocol** is a set of standards and rules that define the language that devices can use to communicate. There are several existing protocols used in networking such as TCP, UDP, IP and, ICMP. In this article, we will only discuss the IP.
 
-### Internet Protocol (IP) Address
+### Internet Protocol (IP)
 
 An IP is a distinctive identifier. It is the foundational protocol that allows the internet to work. It is situated in the internet layer of the TCP/IP model. They are 32- bit numbers. An example is Google’s IPV4 IP in the format of 216.58.216.164.
 
@@ -182,9 +182,7 @@ Try the IPSubnet Mask Calculator for IPV4 [here](https://www.site24x7.com/tools/
 
 ### Conclusion
 
-The internet today is an integral part of our lives. As such it is important that we are familiar with the core aspects of the network of things. Subnetting has made it effective to control network congestion. In essence, improving the speed and performance of networks.  
-
-Thank you for reading.
+The internet today is an integral part of our lives. As such it is important that we are familiar with the core aspects of the network of things. Through this article, we have covered internet protocol, routing, and introduced subnetting. Thank you for reading!
 
 ### References
 
