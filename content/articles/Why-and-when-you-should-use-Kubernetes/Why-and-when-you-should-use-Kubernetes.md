@@ -1,6 +1,6 @@
 **WHAT IS A CONTAINER**
 
-Before we look into when to use Kubernetes, let's understand what a container is, since modern applications are increasingly being built using containers, which are a virtualization environment and Kubernates is a software that is used to deploy and manage these containers.  Containers are environments that have been virtualized just like virtual machines. 
+Let us first begin by understanding what containers are. Why so? This is because modern applications are increasingly being built using containers, which are a virtualization environment. Kubernates is a software that is used to deploy and manage these containers.  Containers are environments that have been virtualized just like virtual machines. 
 
 # Similarities Between a Virtual Machine and a A container 
 
