@@ -2,46 +2,44 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/uploading-files-using-formidable-nodejs/
-title: Uploading Files Using Formidable in a Node.js Application
-description: In this article, we will see how to use Formidab;e to handle multipart/form-data using Node.js, Express and MongoDB.
+url: /uploading-files-using-formidable-nodejs/
+title: Uploading Files using Formidable in a Node.js Application
+description: In this article, we will see how to use Formidable to handle multipart/form-data using Node.js, Express, and MongoDB.
 author: sarthak-duggal
-date: 2021-01-18T00:00:00-17:00
+date: 2021-06-20T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/uploading-files-using-formidable-nodejs/hero.jpg
+
+  - url: /engineering-education/uploading-files-using-formidable-nodejs/hero.png
     alt: Node.js Application Formidable example image
 ---
-
-Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before we submit it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. If we don't specify it, form-data gets encoded with the default type.
+Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before we submit it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. 
+<!--more-->
+If we don't specify it, form-data gets encoded with the default type.
 
 ### Introduction
-
-This is usually the case when we are dealing with text-only data like name, email, password, etc.
-But if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data". We need this value when we are using forms that have a file upload control.
+This is usually the case when we are dealing with text-only data like name, email, password, etc. But if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data". We need this value when we are using forms that have a file upload control.
 
 In this article, we will learn how we can upload files using node.js, express, and formidable. Formidable is a Node.js module for parsing form data, especially file uploads.
 
 ### Prerequisites
-
-1. Good understanding of Node.JS and NPM.
+1. Good understanding of Node.js and NPM.
 2. MongoDB must be installed in your device and you need to have a basic understanding of the database.
 3. Good understanding of the command line or integrated terminal in code editors.
 
-### Goals of the tutorial
-
-1. How to design an API endpoint for posting multipart form data.
-2. How to use Formidable to handle the file uploads.
-3. How to manage and store those files on the server side.
-4. How to view those files on the Frontend.
+### Goals of this tutorial
+- How to design an API endpoint for posting multipart form data.
+- How to use Formidable to handle the file uploads.
+- How to manage and store those files on the server side.
+- How to view those files on the Frontend.
 
 However, since half of these topics are already covered in my previous article, therefore I will refer to that article wherever it will be needed.
 
 ### Project setup
+For project setup, you can refer to my [previous article](/engineering-education/uploading-files-using-multer-nodejs/). You have to follow every step until I give the introduction to Multer. 
 
-For Project setup, you can refer to my [previous article](https://www.section.io/engineering-education/uploading-files-using-multer-nodejs/). You have to follow every step until I give the introduction to Multer. The steps basically involved the following:
-
+The steps basically involved the following:
 1. Folder Structure
 2. Setting up MongoDB with Mongoose and
 3. Rendering the HTML file.
@@ -50,8 +48,8 @@ Also, for reference. Your app.js file and folder structure should look like this
 
 ![app.js](/upload-files-using-formidable-nodejs/appjs.png)
 
-**Folder Structure:-**
-
+**Folder Structure:**
+```bash
 ├───model (folder) <br/>
 │ └───fileSchema.js (file) <br/>
 ├───node_modules (folder) <br/>
@@ -64,12 +62,14 @@ Also, for reference. Your app.js file and folder structure should look like this
 ├───package-lock.json (file) <br/>
 ├───package.json (file) <br/>
 ├───server.js (file) <br/>
+```
 
 ### Formidable
-
 As mentioned previously, `formidable` is a Node.js module for parsing form data, especially file uploads.
 
-Let’s start by installing formidable. Write this command in your terminal:
+Let’s start by installing formidable. 
+
+Write this command in your terminal:
 
 ```bash
 npm install formidable
@@ -93,8 +93,9 @@ app.post("/api/uploadFile", (req, res) => {
 ```
 
 ### Let’s start using formidable
+The package works by creating an instance of the form data that is coming from the client-side. It will be an object instance with some default key-value pairs that we can change following our requirements. 
 
-The package works by creating an instance of the form data that is coming from the client-side. It will be an object instance with some default key-value pairs that we can change following our requirements. Let's have a look at it.
+Let's have a look at it.
 
 Add this piece of code in the above API callback function:
 
@@ -154,7 +155,7 @@ const uploadFolder = path.join(__dirname, "public", "files");
 
 Now, our `uploadFolder` variable points to the folder under the `public` directory which is present at the root level of our project.
 
-Finally, let's change the configuration by altering few properties in the form instance:
+Now let's change the configuration by altering few properties in the form instance:
 
 ```javascript
 // Basic Configuration
@@ -223,14 +224,13 @@ form.parse(req, async (err, fields, files) => {
 ```
 
 #### .parse(request, callback)
-
 The "parse" function parses an incoming Node.js request containing form data. If a callback is provided, all fields and files are collected and passed to the callback.
 
 We aim to parse and store these files according to our own needs, thus we need to take a look at them before we work on them. Hence, we have two log statements to take a look at the data we get in the callback function.
 
-Also, we will take care of any errors that may arise at the very first step. This is because we do not want to parse any files with some potential errors. To do this, we are checking if there are any errors. If we do, we can send the response with a status code of 400, depicting a bad request.
+Also, we will take care of any errors that may arise at the very first step. This is because we do not want to parse any files with some potential errors. We do this by checking if there are any errors. If we do encounter any, we can send the response with a status code of 400, depicting a bad request.
 
-If you will this code by submitting a file, you will see the log of parsed form data in the console. Note that a new file will already have been created in your files folder under public. But, that file will not be readable since there is no extension for the file yet.
+If you see this code by submitting a file, you will see the log of parsed form data in the console. Note that a new file will already have been created in your files folder under public. But, that file will not be readable since there is no extension for the file yet.
 
 Your logged data should look something like this.
 
@@ -272,7 +272,7 @@ Your logged data should look something like this.
 
 The `fields` object is empty and we do not want it. In the files object, we can see the name of the input tag (`myFile`) as we referred to in our HTML. We even have access to the name of the file with the original extension. All this information will help us save and manage our files more precisely.
 
-Before moving ahead, we have to look at a special case. Since the user can upload multiple files at once, the incoming parsed data will be an array of objects. So, we have to check each time if we are getting multiple files or single before working on it further.
+Before moving ahead, we have to look at a special case. Since the user can upload multiple files at once, the incoming parsed data will be an array of objects. So, we have to check each time if we are getting multiple files or single file before working on it further.
 
 Data with multiple files looks something similar to this.
 
@@ -285,8 +285,7 @@ Data with multiple files looks something similar to this.
 }
 ```
 
-**Next steps:-**
-
+#### Next steps:
 1. We will handle single files and multiple files separately.
 2. In both scenarios, we will check if the file is valid by creating a separate function.
 3. If the file isn't valid, then we will throw an error. If it is, we will rename it and store the file name in our database.
@@ -366,23 +365,25 @@ After that, we can store the name of the file in our MongoDB cloud database that
 
 Try completing the else block for multiple files on your own! Here is the whole upload function for reference purposes.
 
-![app.js](/upload-files-using-formidable-nodejs/appjs2.png)
+![app.js](/engineering-education/uploading-files-using-formidable-nodejs/appjs2.png)
 
 With this, if you will try to upload a file or image with a valid extension. It will be saved in your files directory with the name definition that we defined. Also, the file name gets stored in your cloud database so that you can access it on our front end.
 
-#### View these files on frontend.
-
+#### View these files on frontend
 To learn how we can view these files, you can again refer to my [previous article](/engineering-education/uploading-files-using-multer-nodejs/).
 
 ### Formidable vs Multer
-
 My preceding article was about Multer and this article is about Formidable. Both are npm packages yet one serves as a module and one as middleware.
 
-I found `formidable` simpler to work with due to the fact configuring `multer` is lot more complicated . But, there are some use instances where you will have to work with multer. For instance, if you choose to resize images before saving them on your server, then multer provides something known as a `Buffer storage` that can help you.
+I found `formidable` simpler to work with due to the fact configuring `multer` is lot more complicated. But, there are some use instances where you will have to work with Multer. 
+
+For instance, if you choose to resize images before saving them on your server, then multer provides something known as a `Buffer storage` that can help you.
 
 So, it largely depends on your use case and what you find easier to use.
 
 To learn about this comparison in extra depth, you can refer to [this article](https://bytearcher.com/articles/formidable-vs-busboy-vs-multer-vs-multiparty/).
+
+Happy coding!
 
 ---
 
