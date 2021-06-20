@@ -3,7 +3,7 @@
 Docker is a virtualization platform that is designed to create, run and deploy applications through the use of containers. We shall use docker to deploy a simple machine learning app built using Streamlit.
 
 In this tutorial, we will first create a simple machine learning model, save it into a pickle file to be loaded into our platform, and finally create its interface using Streamlit.
-Finally after creating the streamlit app we shall use docker to deploy it.
+Finally, after creating the Streamlit app, we shall use docker to deploy it.
 ### Table of Content
 - [Prerequisites](#prerequisites)
 - [Lets Start](#getting-started)
