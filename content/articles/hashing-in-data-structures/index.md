@@ -7,22 +7,20 @@ title: Hashing in Data Structures
 description: In this article, we will explore how the hash function converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 author: anubhav-bansal
 date: 2021-06-20T00:00:00-16:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /hashing-in-data-structure/hero.jpg 
-    alt: hero image example image
+  - url: /engineering-education/hashing-in-data-structures/hero.jpg 
+    alt: data structures hashing image
 ---
-### Hashing in Data Structure
+Hashing is the process of converting an input of any length into a fixed size string or a number using an algorithm. In hashing, the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
+<!--more-->
 
-Hashing is the process of converting an input of any length into a fixed size string or a number using an algorithm.
-
-In hashing, the idea is to use a hash function that converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
-
+### Hashing in Data Structures
 We generate a hash for the input using the hash function and then store the element using the generated hash as the key in the hash table.
 
-![HashTable](./HashIntro.PNG)
+![HashTable](/engineering-education/hashing-in-data-structures/hash-intro.png)
 
 **Hash Table**: The hash table is a collection of key-value pairs. It is used when the searching or insertion of an element is required to be fast.
 
@@ -42,38 +40,35 @@ A collision cannot be completely avoided but can be minimized using a 'good' has
 
 The chances of hash collision are less if the table size is a prime number.
 
-#### How to choose Hash Function:
-
+#### How to choose a Hash Function
 - An efficient hash function should be built such that the index value of the added item is distributed equally across the table.
 - An effective collision resolution technique should be created to generate an alternate index for a key whose hash index corresponds to a previously inserted position in a hash table.
 - We must select a hash algorithm that is fast to calculate.
 
-#### Characteristics of a good Hash Function :
-
+#### Characteristics of a good Hash Function
 - **Uniform Distribution**: For distribution throughout the constructed table.
 - **Fast**: The generation of hash should be very fast, and should not produce any considerable overhead.
 
-#### Collision Hashing Techniques:
-
+#### Collision Hashing Techniques
 1. **Open Hashing (Separate Chaining)**: It is the most commonly used collision hashing technique implemented using Lined List. When any two or more elements collide at the same location, these elements are chained into a single-linked list called a chain. In this, we chain all the elements in a linked list that hash to the same slot.
 
-Let's consider an example of a simple hash function	
-   
+Let's consider an example of a simple hash function.
+
    `h(key) = key%table size`
 
    In a hash table with the size 7
-   
+
    h(27) = 27%7 = 6
-   
+
    h(130) = 130%7 = 4
 
-   ![Example](./hashMap_1.PNG)
+   ![Hash Map Example](/engineering-education/hashing-in-data-structures/hash-map.png)
 
-   If we insert a new element (18, "Saleema" ), that would also go to the 4th index.
-   
+   If we insert a new element (18, "Saleema"), that would also go to the 4th index.
+
    h(18) = 18%7 = 4
 
-   ![Example](./hashMap_2.PNG);
+   ![Hash Map Example](/engineering-education/hashing-in-data-structures/hash-map2.png);
 
    For separate chaining, the worst-case scenario is when all of the keys will get the same hash value and will be inserted in the same linked list. We can avoid this by using a good hash function.
 
@@ -84,14 +79,14 @@ Let's consider an example of a simple hash function
       `rehash(key) = (n+1)%tablesize`
 
    2. **Quadratic Probing**: We go to the 1st, 4th, 9th ... bucket and check if they are vacant or not.
-   
-      `rehash(key) = (n+ k<sup>2</sup> ) % tablesize
+
+      `rehash(key) = (n+ k<sup>2</sup> ) % tablesize`
 
 3. **Double Hashing**: Here we subject the generated key from the hash function to a second hash function.
 
-   ` h2(key) != 0 and h2 != h1`
+   `h2(key) != 0 and h2 != h1`
 
-**Load Factor**: This is a measurement of how full a hash table may become before its capacity is increased. 
+**Load Factor**: This is a measurement of how full a hash table may become before its capacity is increased.
 
 The hash table's load factor, T, is defined as:
 
@@ -286,7 +281,6 @@ int main(){
     cout<<x->name<<" "<<x->value;
 
 }
-
 ```
 
 The complete execution of the above code can be found [here](https://replit.com/@Anubhavb11/HashMap#main.cpp).
@@ -295,7 +289,7 @@ The complete execution of the above code can be found [here](https://replit.com/
 
 #### Output
 
-![output](./Capture.PNG)
+![Data Hashing Output](/engineering-education/hashing-in-data-structures/output.png)
 
 * In the output, you can see we have inserted different key-value pairs into the custom hash table build by us. Try to experiment with these values and you will find collisions also and rehashing too if there are many collisions.
 
