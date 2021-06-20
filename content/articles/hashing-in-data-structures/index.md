@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /hashing-in-data-structure/
-title: Hashing in data structure
+url: /hashing-in-data-structures/
+title: Hashing in Data Structures
 description: In this article, we will explore how the hash function converts a given key to a smaller number and uses the small number as an index in a table called a hash table.
 author: anubhav-bansal
-date: 2021-06-04T00:00:00-16:00
+date: 2021-06-20T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
