@@ -20,7 +20,7 @@ Hashing is the process of converting an input of any length into a fixed size st
 ### Hashing in Data Structures
 We generate a hash for the input using the hash function and then store the element using the generated hash as the key in the hash table.
 
-![HashTable](/engineering-education/hashing-in-data-structures/hash-intro.png)
+![Hash Table](/engineering-education/hashing-in-data-structures/hash-intro.png)
 
 **Hash Table**: The hash table is a collection of key-value pairs. It is used when the searching or insertion of an element is required to be fast.
 
