@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: beginner's-guide-to-lottie-animations-in-android-using-kotlin
+url: /beginner's-guide-to-lottie-animations-in-android-using-kotlin/
 title: Beginner's guide to Lottie animations in Android using Kotlin 
 description: This article explains how to use Lottie which is an open-source animation library in Android applications using Kotlin. Lottie is beautiful and helps you achieve a clean UI, therefore achieving a good user experience.
 author: carol-musyoka
