@@ -16,19 +16,19 @@ One can run many containers on a single virtual machine. This is like virtual ma
 
 # WHY AND WHEN SHOULD WE USE KUBERNETES? 
 
-Containers are a great development tool. It offers a good way to bundle and run your application. When you want to ensure that you have a quick and easy way of moving to production, then containers are great. In a production environment containers need to be managed to minimize downtimes. An example would be, if one of the containers is down, another one needs to be started promptly. This can easily be achieved using Kubernetes. It will automatically do this process on our behalf. 
+Containers are a great development tool. It offers a good way to bundle and run your application. When you want to ensure that you have a quick and easy way of moving to production, then containers are great. In a production environment containers need to be managed to cut downtimes. An example would be, if one of the containers is down, another one needs to be started promptly. This can be achieved using Kubernetes. It will automatically do this process on our behalf. 
 
-Below are other reasons as to why one should use Kubernetes.
+Below are other reasons on why one should use Kubernetes.
 
 
-1) When one wants to manage contenerised applications at scale. 
-2) When an application needs to be updated. Kubernetes can stagger the update appointment to minimize downtime. If the update has a problem, kubernetes can roll back to a previous version. 
+1) When one wants to manage containerized applications at scale. 
+2) When an application needs to be updated. Kubernetes can stagger the update appointment to cut downtime. If the update has a problem, kubernetes can roll back to a previous version. 
 3) Useful when a need to manage container storage and network arises. Kubernetes persistent volumes can be used to present data storage to one or more containers. This configuration allows containers to read and write application data and persist this data across many port instances.
-4) Kubernates has network plugins that provide capabilities such as exposing pods to the internet, load balancing traffic across multiple replicas of the pods and helps in network isolation. 
+4) Kubernates has network plugins that provide capabilities such as exposing pods to the internet, load balancing traffic across many replicas of the pods and helps in network isolation. 
 5) Kubernetes has an API that can be extended. If an organization wants to extend some functionalities outside the once provided, this is achievable.
 
 
 # When you shouldn’t use it
-1) When one is developing a monolithic application. The application developed is dependent on each other from the input/output operation to the processing and rendering of the data. With containers, your application will be divided into separate independent components. 
+1) When one is developing a monolithic application. The components of the application developed are dependent on each other. This is from the input/output operation to the processing and rendering of the data. With containers, your application will be divided into separate independent components. 
 2) When you don't have the time it requires to learn how to use kubernetes because it has a steep learning curve.
 
