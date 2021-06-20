@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /beginner's-guide-to-lottie-animations-in-android-using-kotlin/
+url: /beginners-guide-to-lottie-animations-in-android-using-kotlin/
 title: Beginner's guide to Lottie animations in Android using Kotlin 
 description: This article explains how to use Lottie which is an open-source animation library in Android applications using Kotlin. Lottie is beautiful and helps you achieve a clean UI, therefore achieving a good user experience.
 author: carol-musyoka
@@ -10,7 +10,8 @@ date: 2021-06-20T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/hero.png
+
+  - url: /engineering-education/beginners-guide-to-lottie-animations-in-android-using-kotlin/hero.png
     alt: Beginner's guide to Lottie animations in Android using Kotlin 
 ---
 Designing animations can be tedious and technical for most developers. **Lottie** is an open-source animation library developed by *Airbnb*. It renders Adobe After Effects with BodyMovin. 
@@ -206,7 +207,7 @@ If you add the `@SuppressLint` annotation, the project will not run. The error d
 ### Output
 Let us run the app.
 
-![App gif](/engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
+![App gif](/engineering-education/beginners-guide-to-lottie-animations-in-android-using-kotlin/app.gif)
 
 You can check out the project on [GitHub](https://github.com/carolinemusyoka/LottieAnimation). In case of any clarification or any problem, do not hesitate to raise an issue in the same repository. [Click here](https://github.com/carolinemusyoka/LottieAnimation/blob/master/app/app-debug.aab?raw=true) to download the app bundle.
 ### References
