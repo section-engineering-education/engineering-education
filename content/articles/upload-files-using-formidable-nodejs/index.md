@@ -6,7 +6,7 @@ url: /uploading-files-using-formidable-nodejs/
 title: Uploading Files using Formidable in a Node.js Application
 description: In this article, we will see how to use Formidable to handle multipart/form-data using Node.js, Express, and MongoDB.
 author: sarthak-duggal
-date: 2021-06-20T00:00:00-12:00
+date: 2021-06-20T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
