@@ -10,7 +10,7 @@ date: 2021-06-20T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/hero.jpg
+  - url: /engineering-education/beginner's-guide-to-lottie-animations-in-android-using-kotlin/hero.png
     alt: Beginner's guide to Lottie animations in Android using Kotlin 
 ---
 Designing animations can be tedious and technical for most developers. **Lottie** is an open-source animation library developed by *Airbnb*. It renders Adobe After Effects with BodyMovin. 
