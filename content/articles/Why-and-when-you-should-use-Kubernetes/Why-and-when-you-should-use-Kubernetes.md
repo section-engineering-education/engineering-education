@@ -4,13 +4,13 @@ Let us first begin by understanding what containers are. Why so?  Modern applica
 
 # Similarities Between a Virtual Machine and a A container 
 
-One can run many containers on a single virtual machine. This is like virtual machine. One can run many virtual machines on a single physical host. Docker is an example of a contatiner. It is one of the most popular containers used.  
+One can run many containers on a single virtual machine. This is like virtual machine. One can run many virtual machines on a single physical host. Docker is an example of a container. It is one of the most popular containers used.  
 
 # Difference Between Virtual Machine and Container.
 
-1) For VM, You will manage the operating system. For Container,there is no management of operating system. 
+1) For VM, You will manage the operating system. For Container, there is no management of operating system. 
 2) For VM, it is an instance of an operating system. For Container, it is lightweight. Meaning it is designed to be created, scaled out and stopped dynamically. 
-3) For Vm, it is static i.e. as application demand increases, one creates and deploys the virtual machine. For Container, it is more dynamic. They allow one to respond to change in demand. With a container, one can easily and quickly restart it in case of any kind of failure. E.g. Hardware Failure
+3) For VM, it is static i.e. as application demand increases, one creates and deploys the virtual machine. For Container, it is more dynamic. They allow one to respond to change in demand. With a container, one can easily and quickly restart it in case of any kind of failure. E.g. Hardware Failure
 
 
 
