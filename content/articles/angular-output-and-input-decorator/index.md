@@ -131,7 +131,7 @@ ng serve
 
 Output:
 
-[Input decorator output](/engineering-education/my-article/input.png)
+![Input decorator output](/engineering-education/angular-output-and-input-decorator/input.png)
 
 ### How does an Angular @Output work?
 
