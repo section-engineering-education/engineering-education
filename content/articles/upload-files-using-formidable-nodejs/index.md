@@ -46,7 +46,7 @@ The steps basically involved the following:
 
 Also, for reference. Your app.js file and folder structure should look like this.
 
-![app.js](/upload-files-using-formidable-nodejs/appjs.png)
+![app.js](/engineering-education/uploading-files-using-formidable-nodejs/appjs.png)
 
 **Folder Structure:**
 ```bash
