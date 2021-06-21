@@ -1,3 +1,7 @@
+title: Working with Images in a Spring Boot Backend (Kotlin)
+
+description: A beginner's guide on how to save and transfer images via a Spring Boot backend. This tutorial goes through saving images to a database, transferring them via REST, and configuring CORS.
+
 ###Introduction
 
 Image files are a pretty important part of the web. Imagine a world without profile pictures, posts on social media, or most importantly, cat gifs. Being able to dynamically save and place images is a pretty big deal yet something a lot of us take for granted.
