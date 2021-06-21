@@ -74,24 +74,12 @@ There are two versions of the internet protocol. The second version is known as 
 
 Classes are how you can identify network addresses on the internet. The network class an IP address fits into is ascertained by the binary numbers. IP classes are in 5 parts ranging from class A - E. Class A-C are the major used classes.
 
-<<<<<<< HEAD
- ![Ip-Classes](/introduction-to-internet-protocol-and-subnetting/classes-ip.jpg)
+ ![Ip-Classes](/introduction-to-subnetting/classes-ip.jpeg)
  (Robles, 2021)
  
 
 
 **Note:** 127 is not included in the range as it's considered a loopback address. Any packet sent to this address loops back, there are over 16 million possible addresses here. Used to set up many server applications on the host, while they all listen to the same port number. Hence they resulted in calling it *localhost*. 
-=======
-|class | Range  | Parts of the class | Network IDs | Host IDs | Start address | End address | Leading bits | Size of network number bit field |
-| ---- | ------ | ------------------ | ----------- | -------- | ------------- | ----------- | ------------ | ------------------- |
-| A | 1-126 | N|H|H|H | 128 | 16,777,216 | 0.0.0.0 | 127.255.255.255 | 0 | 8 |
-| B | 128-191 | N|N|H|H | 16,384 | 65,536 | 128.0.0.0 | 191.255.255.255 | 10 | 16|
-| C | 192-223 | N|N|N|H | 2,097,152 | 256 | 192.0.0.0 | 223.255.255.255 | 110 | 24 |
-| D | 224-239 | Not defined | Not defined | Not defined | 224.0.0.0 | 239.255.255.255 | 1110 | Not defined |
-| E | 240-255 | Not defined | Not defined | Not defined | 240.0.0.0 | 255.255.255.255 | 1111 | Not defined |
-
-**Note:** 127 is not included in the range as it's considered a loopback address. Any packet sent to this address loops back, there are over 16 million possible addresses here. It is used to set up many server applications on the host, while they all listen to the same port number. Hence they resulted in calling it *localhost*. 
->>>>>>> 2b254977e9e081d94f2bb427632c197e961ecc82
 
 #### According to the parts of the Class
 
@@ -140,7 +128,12 @@ IP routing process relies on two types of protocols; routed protocol and routing
 **Routing Protocol**: A routed protocol finds paths (routes) for the IP and the routed protocol. Routing protocols run on Routers, Firewalls, Network servers with Network Operating Systems.
 
 Routing Protocols and the relating Routed Protocol (Bonaventure, 2018)
-![types-of-routing](/introduction-to-internet-protocol-and-subnetting/routing-protocol.jpg)
+| Routing Protocol  | Routed Protocol  |
+| ----------------- | ---------------- |
+| RIP, IGRP, OSPF, EIGRP | IP |
+| RIP, NLSP, EIGRP | IPX |
+| RMTP, AURP, EIGRP | Appletalk |
+
 
 To read more on these two protocols, follow this [link](https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-the-difference-between-routing-protocols-and-routed-protocols.php).
 
@@ -158,13 +151,7 @@ Routing is then split into 3 categories:
 
 #### Advantages and disadvantages of each type of routing
 
-|Type of Routing | Advantages | Disadvantages |
-|--------------- |------------|---------------|
-| Static        | * It has no bandwidth usage between the routers. | * It becomes daunting to handle the chore. Handles this manually. |
-| Static       | * Provides security, only the administrator is allowed to have control over the routing network. | * Lots of topography is needed|
-| Default      | * They establish routes that will never go down | * They require a great deal of CPU power |
-| Dynamic      | * It is easier to configure | * It is less secure compared to static and default routing. |
-| Dynamic      | * It is effective in selecting the best route to a destination network. | * It is more expensive in terms of bandwidth and CPU. |
+![Types-of-routing](/introduction-to-subnetting/types-of-routing.jpeg)
 
 ### Subnet Mask
 
