@@ -5,7 +5,7 @@ published: true
 url: /how-to-handle-navigation-in-flutter/
 title: How to Handle Navigation in Flutter
 description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
-author: nathaniel-dauda-wobin
+author: 
 date: 2021-06-01T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
@@ -14,22 +14,16 @@ images:
   - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
     alt: Handling Navigation in Flutter
 ---
-One of the core concepts in all mobile applications is navigation. It allows a user to move between different pages or activities. Navigation increases an app's functionality. It enables developers to include numerous features on different screens.
+[Docker](https://www.docker.com/) is among the most popular containerization technologies. When it comes to containers, it has swiftly become an arbitrary standard. Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container. This process is known as containerization.
 <!--more-->
- 
-### What is Docker
-[Docker](https://www.docker.com/) is among the most popular containerization technologies. When it comes to containers, it has swiftly become an arbitrary standard.
- 
-Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container. This process is known as containerization.
- 
-### Why containerizing an app is important
+ ### Why containerizing an app is important
 Containerizing an app allows it to execute in the same way regardless of the workspace or computer that it is deployed on.
  
 A small difference in the version of an external library can change the functionality of your application, thus, causing it to behave differently.
  
 The beauty of Docker is that if you containerize your application and transfer the image to your colleague's computer, you can be sure that the application will have the same performance on both devices. This is because the container includes all the application's dependencies.
  
-### Images and Containers
+### Images and containers
 Docker files, which are read-only templates, are used to create containers. Therefore, images and containers are inextricably linked, and both are required to run the Docker software platform. For more information on Docker images, visit this [page](stackify.com/docker-image-vs-container-everything-you-need-to-know/amp/).
  
 ### Goal
@@ -77,7 +71,7 @@ docker
 
 Before we go further, let's develop our `Flask` application.
  
-### Step 2 - Building our Flask App
+### Step 2 - Building our Flask app
 Flask is a lightweight Python framework used in building web applications with a lightweight codebase.
 We will create a flask web application that displays 'Flask Dockerized' on the browser when we run the web application.
 
@@ -105,9 +99,9 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 ```
 
-That's our flask app that returns 'Flask Dockerized’ when we run it.
+That's our Flask app that displays a 'Flask Dockerized’ message when we run it.
 
-let’s have an overview of the code whats in our **flask application**:
+Let's have an overview of the code whats in our `Flask application`:
 
 * from flask import Flask - Firstly we imported the flask class.
 * app = Flask(__name__) - We then make a flask instance.
@@ -116,10 +110,7 @@ let’s have an overview of the code whats in our **flask application**:
 * if __name__ == '__main__': - onces this statement is true the app.run(debug=True, host='0.0.0.0') function will be executed.
 * app.run(debug=True, host='0.0.0.0') - this starts the server on your local machine.
 
-
-
- 
-### Step 3 - Create our Requirements file
+### Step 3 - Create our requirements file
 next we create a **requirements.txt** file.
 The requirements.txt file contains the dependencies or packages required to run our applications
 To create **requirements.txt** file, we'll use the instruction in the line below.
@@ -173,19 +164,18 @@ let’s have an overview of whats in our **Dockerfile**:
 * CMD ["app.py"] - Means command and specifies the program that will be executed when the container begins.
 
  
-ENTRYPOINT is similar to the CMD instruction in that it allows you to define the application which will run once the container starts.
+`ENTRYPOINT` is similar to the CMD instruction in that it allows you to define the application which will run once the container starts.
 
-Whatever you specify on the CMD instruction, in our case **app.py** will get appended to the ENTRYPOINT instruction, which is **python**.
+Whatever you specify on the CMD instruction, in our case `app.py` will get appended to the ENTRYPOINT instruction, which is `python`.
  
 So the command that will run when the container starts will be: 
  
-```
+```bash
 docker run python app.py
- 
 ```
 That is the difference between CMD instruction and ENTRYPOINT instruction.
  
-The last step is to build our **docker-compose.yml** file.
+The last step is to build our `docker-compose.yml` file.
  
 ### Step 5 - Docker Compose
 Docker compose is a powerful technique for developing and running  Docker applications having multiple containers. You configure your application's services with docker compose using a YAML file.
@@ -229,7 +219,7 @@ Every **docker-compose.yml** file must start with the version you are intending 
  
 Now let's get to the command line or terminal. We will create and test our application.
  
-### Step 5 - Building and Testing
+### Step 5 - Building and testing
  Run the command below in the same folder that contains **docker-compose.yml**: 
 :
 ```
@@ -247,7 +237,7 @@ Flask Dockerized!
 ```
 To end or stop the docker service, hit **Ctrl + c**.
  
-### Step 6 - Docker Compose Commands
+### Step 6 - Docker Compose commands
  
 **docker-compose** does have a lot of commands and parameters that can be seen by executing:
 ```
@@ -258,7 +248,6 @@ Run the following to list any running images:
 docker-compose images
 ```
 
- 
 **docker-compose ps** will list any running containers:
 ```
 docker-compose ps
@@ -268,7 +257,7 @@ To stop our services enter:
 ```
 docker-compose stop
 ```
-### Step 10 - Making Changes
+### Step 10 - Making changes
 If you make any changes to the application, you'll need to rebuild the images using the following command:
 ```
 docker-compose up --build
