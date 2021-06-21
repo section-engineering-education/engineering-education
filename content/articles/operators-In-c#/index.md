@@ -13,7 +13,7 @@ Any programming language's foundation is made up of these. Subsequently, the C# 
 
 
 ### Arithmetic operators
-The arithmetic operators are `binary ` and `Urinary operators` that solve mathematic operations on the operand. Binary operators operate with two operands while Urinary operators operate with only one operand. 
+The arithmetic operators are `binary ` and `Unary operators` that solve mathematical operations on the operand. Binary operators operate with two operands while Urinary operators operate with only one operand. 
 
 The following are the Binary operators that fall within this category:
 
@@ -23,7 +23,7 @@ The following are the Binary operators that fall within this category:
 4. **Multiplication**: When two operands are multiplied, the `*` operator is used.. Take into account x*y. 
 5. **modula**: The `%` operator returns the residual when the first argument is divided by the second operand.. For example, x percent y.
 
-The following are the urinary operators that fall within this category:
+The following are the unary operators that fall within this category:
 
 1. **Increment**: The `++` operator raises the value of an integer by one. Consider the expression K++.
 2. **Decrement**: The `--` operator lowers the value of an integer by one. Consider the expression K--.
