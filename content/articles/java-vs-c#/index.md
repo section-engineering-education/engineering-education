@@ -2,13 +2,14 @@
 Java and C# are both Object-Oriented languages used for developing Web applications, Networking applications, Database applications, Mobile applications, Video games, Service applications and so much more.
 
 In this article, we shall look at:
+
 - History of Java and C#
 - Characteristics of Java and C#
 - The basic and main differences between Java and C# interms of:
-1. Syntax
-2. Installation
-3. Cross-platform 
-4. Application
+    1. Syntax
+    2. Installation
+    3. Cross-platform
+    4. Application
 
 ### History of Java
 Java is an object-oriented programming language for developing a desktop application and web application. It needs Java Runtime Environment (JRE) to run on a machine. In Java, developers can use the principle of write once, run anywhere. Java was invented in 1995 and it requires Java Development Kit to run on a machine.
@@ -49,7 +50,8 @@ Lets now dive into the differences between Java and C#:
     }  
 } 
  ```
-In Java,We use *(asterisk) to import all content in a [package](https://www.javatpoint.com/package). If we don't use *, we will have to import a class in the package individually.
+ 
+In Java,We use `*`(asterisk) to import all content in a [package](https://www.javatpoint.com/package). If we don't use `*`, we will have to import a class in the package individually.
 
  ### C#
 ```cs
@@ -66,6 +68,7 @@ namespace HelloWorld
     }
 }
 ```
+
 The `using` [directive](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive) enables us to use types from a namespace without having to specify how they should be used in that namespace.
 
 In C# language, to output a text, we use `Console.WriteLine()` while in Java, we use `System.out.println()`.
@@ -73,28 +76,28 @@ In C# language, to output a text, we use `Console.WriteLine()` while in Java, we
 ### Installation comparision
 This is another consideration that every programmer should look at i.e the requirement of each language to run on a machine. Let's look at what each language requires for it to run on a machine.
 
-#### Java
+### Java
 Java requires JDK(Java Development Kit) to run it on a machine and executes on JRE (Java Runtime Environment). Java source code is converted into bytecode which is then compiled into machine code for it to run on a machine.
 
-#### C#
+### C#
 C# utilize the .NET Framework to run on a machine and executes on CLR (Common Language Runtime). C# source code is interpreted into bytecode which is then compiled into machine code by the CLR. 
 
 ### Cross-platform 
 In this heading, we should ask ourselves, which of these languages is easily compatible with other platforms?. Let's answer the question.
 
-#### Java
+### Java
 Java's byte code makes it extremely cross-platform i.e when a Java program is compiled, it can run on all platforms. This proves the principle of "write once, run everywhere".
 
-#### C#
+### C#
 C# should improve on this feature when compared to Java. It does not run on all platforms.
 
 ### Application
 In this part, we shall look at where each of these languages can be used.
 
-#### Java
+### Java
 Java is efficient and good in building [highly concurrent applications](https://www.quora.com/What-are-some-examples-of-highly-concurrent-systems), web-based Applications, [Distributed Applications](https://techvidvan.com/tutorials/applications-of-java/) and so much more.
 
-#### C#
+### C#
 C# is efficient and widely used for Mobile development, Game development, and developing Desktop applications.
 
 ### Conclusion
