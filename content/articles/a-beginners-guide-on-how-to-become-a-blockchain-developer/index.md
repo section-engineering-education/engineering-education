@@ -82,7 +82,7 @@ This blockchain technology is built on the Haskell programming language commonly
 
 #### Note
 
-Unless you have a really good reason, then you should use the Ethereum blockchain as it has the biggest developer community for building blockchain-based applications. As a developer, you wouldn't want to get stuck and not have a community to be able to ask questions.
+Unless you really have to use a different blockchain for development, I recommend that you use the Ethereum blockchain. It has the biggest developer community for building blockchain-based applications. As a developer, you definitely wouldn't want to get stuck and not have a community for support.
 
 ### Libraries and frameworks for blockchain development
 
