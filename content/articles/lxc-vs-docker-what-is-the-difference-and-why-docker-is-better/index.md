@@ -34,7 +34,7 @@ All the hardware resources (RAM, CPU, HDD/SSD) attached to these guest virtual m
 
 You create an instance of an emulator that can interact with the hardware just like an ordinary computer. The image below depicts this concept.
 
-![Virtual machine architecture](/engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/virtual-machine-VM-architecture.jpeg)
+![Virtual machine architecture](/engineering-education/lxc-vs-docker-what-is-the-difference-and-why-docker-is-better/virtual-machine-vm-architecture.jpeg)
 
 [Image source](https://www.docker.com/resources/what-container)
 
