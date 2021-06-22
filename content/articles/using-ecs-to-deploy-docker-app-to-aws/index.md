@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/using-ecs-to-deploy-docker-app-to-aws/hero.jpg
     alt: AWS Docker image example
 ---
-Elastic Container Service (ECS) is a cloud computing services provided by Amazon Web Services (AWS) to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run.
+[Elastic Container Service (ECS)](https://searchaws.techtarget.com/definition/Amazon-EC2-Container-Service) is a cloud computing services provided by Amazon Web Services (AWS) to manage containers and allow developers to run applications in the Cloud without having to configure an environment for the code to run.
 <!--more-->
 ECS was developed by Amazon in response to the rise of containerization. ECS enable developers to easily use Docker containers for a wide range of activities from hosting to running complex micro services that require many containers.
 
@@ -279,6 +279,7 @@ Please check out the links below for further understanding of Docker, AWS and El
 - [Docker](https://docs.docker.com/get-docker/)
 - [Amazon Web Services](https://aws.amazon.com/what-is-aws/)
 - [Amazon Elastic Container Service](https://docs.aws.amazon.com/ecs/index.html)
+- [EC2 Container Service](https://searchaws.techtarget.com/definition/Amazon-EC2-Container-Service)
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
