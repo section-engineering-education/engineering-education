@@ -29,6 +29,10 @@ For an introduction to blockchain technology, please read this [article](https:/
 
 Let's get started!
 
+### Prerequisite
+
+Before reading this article, you need to be familiar with the blockchain technology and its fundamentals. Feel free to read this [article](https://www.section.io/engineering-education/blockchain-as-a-revolution-in-healthcare/) to get you started.
+
 ### Table of contents
 
 1. [Who is a blockchain developer?](#who-is-a-blockchain-developer)
@@ -61,7 +65,7 @@ Web developers build web applications on top of web browsers. But, they don't bu
 
 1. Bitcoin blockchain
 
-This is the distributed ledger powering the Bitcoin cryptocurrency. This blockchain uses [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof_of_work) as its consensus mechanism. Recently, this consensus mechanism has been a bone of contention as PoW uses a lot of energy. 
+This is the distributed ledger powering the Bitcoin cryptocurrency. This blockchain uses [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof_of_work) as its consensus mechanism. Recently, this consensus mechanism has been a bone of contention as PoW uses a lot of energy. You can read more about it [here](https://www.cnet.com/personal-finance/heres-how-much-energy-it-really-takes-to-mine-bitcoin-and-why-people-are-concerned/). 
 
 The bitcoin blockchain doesn't have any other usage other than powering the cryptocurrency, Bitcoin. 
 
@@ -114,7 +118,7 @@ It is a library developers can use for Ethereum blockchain development. It enabl
 
 1. Solidity
 
-This is the programming language that is used for creating Ethereum smart contracts.
+This is the programming language that is used for creating Ethereum smart contracts. You can read more about Solidity [here](https://docs.soliditylang.org/en/v0.8.6/).
 
 2. Javascript
 
@@ -179,3 +183,7 @@ These are a few use cases for blockchain technology. It can also be used to secu
 ### Wrapping Up
 
 In this article, I have explained how you can become a blockchain developer and take advantage of this lucrative field. It is wrong to assume that since you may have no prior coding experience, this niche is not for you. As with any skill, blockchain development is mastered over time. This guide gives a starting point. However, it is your responsibility to continuously learn, try and practice. As they say, practice makes perfect.
+
+### References
+
+[Blockchain For Beginners: The Complete Step BY Step Guide To Understanding Blockchain Technology](https://www.amazon.com/Blockchain-Beginners-Complete-Understanding-Technology/dp/1548766887)
