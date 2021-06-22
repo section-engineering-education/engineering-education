@@ -6,7 +6,7 @@ url: /files-and-exceptions-in-python/
 title: Files and Exceptions in Python
 description: This tutorial will teach us how to work with files and exceptions in Python. We will look at how perform read, write, and append data to a file, and we'll see how to handle errors using exceptions. 
 author: duncan-ndegwa
-date: 2021-06-22T00:00:00-10:20
+date: 2021-06-22T00:00:00-14:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
