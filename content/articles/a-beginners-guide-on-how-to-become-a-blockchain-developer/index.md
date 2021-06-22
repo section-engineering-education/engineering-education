@@ -49,7 +49,7 @@ These developers typically write code using C++, Go, and Haskell.
 
 2. Blockchain software developers
 
-These developers are mainly responsible for designing and building the front-end of Dapps. Basically, the web and mobile interfaces that users interact with. Most blockchain developers fall under this category.
+These developers are mainly responsible for designing and building the front-end of Dapps. The web and mobile interfaces that users interact with. Most blockchain developers fall under this category.
 
 They mainly write code using Solidity and Javascript programming languages.
 
