@@ -3,28 +3,28 @@ layout: engineering-education
 status: publish
 published: true
 url: /different-ways-to-create-objects-in-java/
-title: How to create Objects in Java
-description: This article will show you the different ways of creating objects in Java. They include using the new keyword, newInstance(), as well as Object Serialization and Deserialization.
+title: How to Create Objects in Java
+description: This article will show you the different ways of creating objects in Java. They include using the new keyword, newInstance(), as well as Object Serialization, and Deserialization.
 author: moses-mwangi
-date: 2021-06-20T00:00:00-18:00
-topics: []
+date: 2021-06-22T00:00:00-18:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/different-ways-to-create-objects-in-java/hero.jpg
     alt: Different Ways of Creating Objects in Java
 ---
-Java is an object-oriented programming language for developing desktop, mobile, and web applications. In Java, everything revolves around the object. A Java class can, therefore, be regarded as an object template.
+Java is an object-oriented programming language used when developing desktop, mobile, and web applications. In Java, everything revolves around the object. A Java class can, therefore, be regarded as an object template.
 <!--more-->
-In Java, Objects are created in various ways:
+In Java, we can create Objects in various ways:
 
-1. [Using a new keyword](https://www.javatpoint.com/new-keyword-in-java#:~:text=The%20Java%20new%20keyword%20is,to%20create%20the%20array%20object.)
-2. [Using `newInstance`() method of the Class class](https://www.javatpoint.com/new-instance()-method)
-3. [ Using newInstance() method of the Constructor class](https://www.javainterviewpoint.com/java-constructor-newinstance-method-example/)
-4. [ Using Object Serialization and Deserialization](https://www.studytonight.com/java/serialization-and-deserialization.php)
-5. [Using the clone() method](https://www.geeksforgeeks.org/clone-method-in-java-2/)
+- [Using a new keyword](https://www.javatpoint.com/new-keyword-in-java#:~:text=The%20Java%20new%20keyword%20is,to%20create%20the%20array%20object.)
+- [Using the `newInstance`() method of the Class class](https://www.javatpoint.com/new-instance()-method)
+- [Using the newInstance() method of the Constructor class](https://www.javainterviewpoint.com/java-constructor-newinstance-method-example/)
+- [Using Object Serialization and Deserialization](https://www.studytonight.com/java/serialization-and-deserialization.php)
+- [Using the clone() method](https://www.geeksforgeeks.org/clone-method-in-java-2/)
 
-### 1. Using a new keyword
+### Using a new keyword
 This is the most common and basic way of creating an object in Java. In this method, we can call constructors with parameters or with no arguments. The `new` keyword allows us to create a new object.
 
 **Syntax**
@@ -35,7 +35,7 @@ class_name object_name = new class_name();
 
 **Example**
 
-In this example, we shall create an object using the `new` keyword.
+In this example, we will create an object using the `new` keyword.
 
 ```java
 public class Main{ 
@@ -47,14 +47,16 @@ public class Main{
     } 
 }
 ```
-### 2. Using the newInstance() Method of the Class
-In this method, a no-argument constructor is called by the `newInstance()` function to create an object. The `newInstance()` method is regarded as a reflective way to create an object since it belongs to the `java.lang.reflect.Constructor` class. The `Class.forName()` is used to load the [class](https://www.javainterviewpoint.com/use-of-class-forname-in-java/) dynamically.
+### Using the newInstance() method of the Class
+In this method, a no-argument constructor is called by the `newInstance()` function to create an object. The `newInstance()` method is regarded as a reflective way to create an object since it belongs to the `java.lang.reflect.Constructor` class. 
 
- The `newInstance()` method uses the following syntax:
+The `Class.forName()` is used to load the [class](https://www.javainterviewpoint.com/use-of-class-forname-in-java/) dynamically.
 
- ```java
+The `newInstance()` method uses the following syntax:
+
+```java
  public T newInstance() throws InstantiationException,IllegalAcccessException  
- ```
+```
 
 - If the method or class is not accessible, it returns the `IllegalAccessException`. 
 - If the Class represents a primitive data type, an interface, an abstract, an array class, or if the class does not have a no-arg constructor, it returns an `InstantiationException` message.
@@ -81,8 +83,8 @@ public class Main
     } 
 }
 ```
-### 3. Using the newInstance() Method of the Constructor Class
-This method also uses the `newInstance()` function which is provided by the constructor and used for creating an object. This time the constructor is parameterized.
+### Using the newInstance() method of the Constructor Class
+This method also uses the `newInstance()` function which is provided by the constructor and used when creating an object. This time the constructor is parameterized.
 
 **Syntax**
 
@@ -91,7 +93,6 @@ public T newInstance(Objects...initargs)
 ```
 
 The following exceptions are returned by the `newInstance()` method:
-
 - Incase the constructor cannot be accessed, the method throws **IllegalAccessException**.
 - If the number in the formal and actual parameters differ, it throws **IllegalArgumentException**.
 - If an exception is thrown by the constructor, it throws **InvocationTargetException**.
@@ -117,22 +118,25 @@ String str="Hello World";
     }  
 }  
 ```
-### 4. Using Object Serialization and Deserialization
-A new separate object is created when we serialize and then deserialize an object. To create an object, this method does not need any constructor. We shall use the [Serializable interface in java](https://www.softwaretestinghelp.com/marker-interfaces-java/) for serializing and deserializing new objects.
 
-#### Object Serialization
-Serialization involves converting an object state into a [byte stream](https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html). We use the `writeObject()` method to serialize an Object
+### Using object serialization and deserialization
+A new separate object is created when we serialize and then deserialize an object. To create an object, this method does not need any constructor. 
 
-**Syntax for serializing an object**
+We shall use the [Serializable interface in Java](https://www.softwaretestinghelp.com/marker-interfaces-java/) for serializing and deserializing new objects.
+
+#### Object serialization
+Serialization involves converting an object state into a [byte stream](https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html). We use the `writeObject()` method to serialize an Object.
+
+**Syntax when serializing an object**
 
 ```java
 public final void writeObject(Object obj) throws IOException  
 ```
 
-#### Object Deserialization
-Deserialization is the process of using the byte stream to recreate an object in Java. We shall use the `readObject()` method for deserializing an object.
+#### Object deserialization
+Deserialization is the process of using the byte stream to recreate an object in Java. We shall use the `readObject()` method to deserialize an object.
 
-**Syntax for deserializing an object**
+**Syntax when deserializing an object**
 
 ```java
 public final Object readObject() throws IOException  
@@ -140,7 +144,7 @@ public final Object readObject() throws IOException
 
 **Example**
 
-In this example, we are using the Serialization and deserialization method to create an object.
+In this example, we are using the serialization and deserialization method to create an object.
 
 ```java
 import java.io.*;
@@ -197,12 +201,13 @@ class Example1 {
     }
 } 
 ```
-### 5. Using the clone() Method
-Whenever the `clone()` method is called, it creates a new object and then gets all the content in the old object copied to it. 
+### Using the clone() method
+Whenever the `clone()` method is called, it creates a new object, and then gets all the content in the old object copied to it. 
 
 > A constructor does not get invoked when we use the `clone()` method to create an object. We implement the `Cloneable` class to use the` clone()` method, as shown below.
 
 **Syntax**
+
 ```java
 object.clone()
 ```
@@ -240,9 +245,11 @@ class Student implements Cloneable{
     }
 }  
 ```
+
 ### Conclusion
 In this article, we have looked at the different ways to create objects in Java. We can now easily create Objects in Java without using the `new` Keyword method.
 
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
