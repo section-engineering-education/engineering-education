@@ -6,7 +6,7 @@ url: /files-and-exceptions-in-python/
 title: Files and Exceptions in Python
 description: This tutorial will teach us how to work with files and exceptions in Python. We will look at how perform read, write, and append data to a file, and we'll see how to handle errors using exceptions. 
 author: duncan-ndegwa
-date: 2021-06-12T00:00:00-00:20
+date: 2021-06-22T00:00:00-10:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Files are identified locations on a disk where associated data is stored. Workin
 In this tutorial, we'll learn about file operations in Python. These operations include reading, writing, and appending to a file. We will also learn about handling the `ZeroDivisionError` and `FileNotFoundError` exception.
 
 ### Prerequisites
-Have some basic knowledge of Python language.
+Have some basic knowledge of the Python coding language.
 
 ### Reading from a file
 When working with data from a text file, you must first read it into memory. To read a file, you must have a file that exists.
@@ -28,7 +28,7 @@ Let's create a text file containing a list of years from `2020` to `2022` using 
 
 The `years.txt` file should have the following text:
 
-```
+```bash
 2022
 2021
 2020
@@ -58,7 +58,7 @@ We get the following results after we run the above code:
 2020
 ```
 
-### Working with a file contents
+### Working with the contents of a file
 Now, you have learned how to read a file into memory, let's try doing something with that data.
 
 Let's create a single line holding all the digits in the `years.txt` file without white spaces in it as shown below:
@@ -83,7 +83,7 @@ One of the simplest ways to save data, is to write to a file. The output will st
 
 When writing text to a file, we use the `open()` function with two arguments - the first argument is the filename, while the second argument is the mode in which you want to open the file.
 
-There are 4 modes in which you can open a file:
+There are four modes in which you can open a file:
 1. Read mode ('r')
 2. Write mode ('w')
 3. Append mode ('a')
@@ -101,7 +101,7 @@ with open('student.txt', 'w') as file_object:
 
 The above code doesn't print the output on the terminal, but when you open the `student.txt` file, you will see one line:
 
-```
+```bash
 My name is Felix.
 ```
 
@@ -120,7 +120,7 @@ with open('student.txt', 'a') as file_object: #’a’ argument to open the file
 
 The new `student.txt` file looks like this:
 
-```
+```bash
 My name is Felix.
 I am 6 years old
 I love playing games
@@ -129,7 +129,7 @@ I love playing games
 ### Exceptions
 Exceptions are unique objects that Python uses to control errors that occur when a program is running. Exceptions errors arise when correct syntactically Python programs produce an error.
 
-Python creates an exception object whenever these mistakes occur. When we write codes that deal with the exception, our programs will continue running, even if an error is thrown. If we don't, our programs will stop executing and show a trace-back, which is very hard for a user to understand.
+Python creates an exception object whenever these mistakes occur. When we write code that deals with the exception, our programs will continue running, even if an error is thrown. If we don't, our programs will stop executing and show a trace-back, which is very hard for a user to understand.
 
 Python uses the *try-except-finally* block to control exceptions. A try-except block informs Python how to act when an exception emerges. Our programs will continue to execute even if things go wrong.
 
@@ -149,11 +149,11 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-Since Python cannot divide a number by zero, it reports an error in the trace-back as *ZeroDivisionError*, which is an exception object. This kind of object responds to a scenario where Python ca'’t do what we asked it to.
+Since Python cannot divide a number by zero, it reports an error in the trace-back as *ZeroDivisionError*, which is an exception object. This kind of object responds to a scenario where Python can't do what we asked it to.
 
-If you think of an error might occur, use the *try-except* block to control the exception that may be raised.
+If you think an error might occur, use the *try-except* block to control the exception that may be raised.
 
-To handle the `ZeroDivisionError` exception use a try-except block like this:
+To handle the `ZeroDivisionError` exception, use a try-except block like this:
 
 ```python
 try:
