@@ -178,4 +178,4 @@ These are a few use cases for blockchain technology. It can also be used to secu
 
 ### Wrapping Up
 
-In this article, I have explained how you can become a blockchain developer and take advantage of this incredibly scarce and lucrative field. It is wrong to assume that just because you have no prior coding experience, that this is not for you. Blockchain development is a skill you master over time. Just follow this guide and continuously try and practice. With blockchain development, practice makes perfect.
+In this article, I have explained how you can become a blockchain developer and take advantage of this lucrative field. It is wrong to assume that since you may have no prior coding experience, this niche is not for you. As with any skill, blockchain development is mastered over time. This guide gives a starting point. However, it is your responsibility to continuously learn, try and practice. As they say, practice makes perfect.
