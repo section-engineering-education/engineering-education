@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /network-management-with-cdp-lldp/
-title: Networking Management Using CDP and LLDP Protocols.
-description: The objective of this article is to help one understand what is network management, protocols involved and how to configure the protocols using a packet tracer or any other network simulator tool.
+title: Networking Management Using CDP and LLDP Protocols
+description: The objective of this article is to help the reader understand what is network management, the protocols involved, and how to configure the protocols using a packet tracer or any other network simulator tool.
 author: atonya-dennis
-date: 2021-06-07T00:00:00-09:00
+date: 2021-06-22T00:00:00-17:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ One of the basic steps in network management and troubleshooting is to ensure th
 <!--more-->
 This article will cover how one can use the *Layer 2 discovery protocols **CDP** and **LLDP*** to gather information about neighboring devices on the network and use the information for troubleshooting, managing, and documenting the network.
 
-It will also equip the reader with the knowledge of how to configure the protocols on the network devices and build a network configuration to understand how the protocols work.
+It will also equip the reader with the knowledge on how to configure the protocols on the network devices and build a network configuration to understand how the protocols work.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -35,7 +35,7 @@ It will also equip the reader with the knowledge of how to configure the protoco
 ### Prerequisites
 The reader must put the following into consideration:
 - The reader should be conversant with the basic networking concepts.
-- Good understanding of how to configure networks and their components using any of the network simulation tools.
+- Have a good understanding of how to configure networks and their components using any of the network simulation tools.
 - For this article, it is best for the reader to know how to work with the Cisco packet tracer network simulator tool.
 
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
@@ -43,29 +43,29 @@ To download and install the Cisco packet tracer on a desktop or laptop, visit [t
 ### What is Network Management?
 `Network Management` refers to controlling, managing, and maintaining networks by allowing the network devices to communicate with each other with no failures. It allows for troubleshooting and performance enhancements through traffic monitoring, intrusion detection, and interface failure detection.
 
-To manage the networks, we use the  ***Cisco Discovery Protocol (CDP)*** , and ***Link Layer Discovery Protocol (LLDP)*** which gather information about the neighboring devices useful for network design decisions, troubleshooting, and network documentation.
+To manage the networks, we use the ***Cisco Discovery Protocol (CDP)*** , and ***Link Layer Discovery Protocol (LLDP)*** which gather information about the neighboring devices useful for network design decisions, troubleshooting, and network documentation.
 
 ### Layer 2 Discovery protocols
 They are protocols operating at layer 2 (Data Link Layer) of the OSI model which discover and share information about the neighboring connected devices on the network topology used for network management.
 
 They do not use IP address but used to share layer 3 routing information such as the hostname, and device type.
 
-The neighbor device information displayed include:
-- Device identifier (ID) - is the name of the neighboring network device.
-- Port identifier (ID) - is the name of the local or the interface port.
-- Capability List - shows whether the neighbor device is a router, switch, or server.
+The neighbor device information displayed may include:
+- Device identifier (ID) - which is the name of the neighboring network device.
+- Port identifier (ID) - this is the name of the local or the interface port.
+- Capability List - shows whether the neighboring device is a router, switch, or server.
 - Platform - the hardware platform for the network device.
 - Hold time - is the time it takes for a neighbor device to receive the message containing the neighbor device information.
 
 #### Cisco Discovery Protocol (CDP)
-Cisco Discovery Protocol (CDP) is a Cisco-based protocol enabled on the Cisco devices by default to help network administrators gather and discover information about the local and remote devices attached to the network.
+Cisco Discovery Protocol (CDP) is a Cisco-based protocol enabled on Cisco devices by default to help network administrators gather and discover information about the local and remote devices attached to the network.
 
 Using this protocol, one can collect information about neighboring devices useful for network management and troubleshooting.
 
-CDP works only on Cisco devices and provides information only about the directly linked devices. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
+CDP works only on Cisco devices and provides information about the directly linked devices only. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
 
 #### Link Layer Discovery Protocol (LLDP)
-Link Layer Discovery Protocol (LLDP) functions like the CDP protocol, but it is an industry-standard protocol, not limited to Cisco devices only but works in multi-vendor environments.
+Link Layer Discovery Protocol (LLDP) functions like the CDP protocol, but it is an industry-standard protocol, not only limited to Cisco devices but works in multi-vendor environments.
 
 Usually, it is disabled on Cisco devices so we must manually configure it as we will see. LLDP sends the LLDP messages containing neighbor information after every 30 seconds and has a hold time of 120 seconds.
 
@@ -74,12 +74,12 @@ Usually, it is disabled on Cisco devices so we must manually configure it as we 
 ### CDP and LLDP Network verification and configurations
 We will learn how to configure the two discovery protocols for network management on network devices.
 
-Consider the network below with two routers connected, two switches each connected to 2 PCs. We have already assigned the devices the IP address as shown:
+Consider the network below with two routers connected, two switches, each connected to 2 PCs. We have already assigned the devices the IP address as shown:
 
 ![CDP-LLDP Network Configuration](/engineering-education/network-management-with-cdp-lldp/network.jpg)
 
 #### CDP configuration
-For CDP, it's configured on Cisco devices only by default. To verify this and display its information `show cdp` command used in the privileged exec mode.
+For CDP, it's configured on Cisco devices only by default. To verify this and display its information, the `show cdp` command is used in the privileged exec mode.
 
 ```bash
 R1>enable
@@ -115,7 +115,7 @@ Global CDP information:
 
 ```
 
-To display the neighbors' information, for instance, neighbors of R1, we use the  ***show cdp neighbor*** command
+To display the neighbors' information, for instance, neighbors of R1, we use the  ***show cdp neighbor*** command.
 
 ```bash
 R1>enable
@@ -128,9 +128,9 @@ R2           Gig 0/0          172            R       C2900       Gig 0/1
 R1#
 ```
 
-From the information, it's clear that `S1` and `R2` are connected to `R1` as seen from the network setup. The interfaces, hold time, capabilities, port ID, the platform are displayed.
+From the information, it's clear that `S1` and `R2` are connected to `R1` as seen from the network setup. The interfaces, hold time, capabilities, port ID, and the platform are displayed.
 
-For more details about the neighboring devices, such as the IP address of the devices, `show cdp neighbor detail` command shown.
+For more details about the neighboring devices, such as the IP address of the devices, the `show cdp neighbor detail` command is shown.
 
 ```bash
 R1#show cdp neighbor detail
@@ -188,9 +188,9 @@ S2                  Gig0/0         120        B               Fa0/1
 Total entries displayed: 2
 ```
 
-From the above information, it's clear that `R1` and `S2` are directly connected to `R2` as seen from the network setup.The interfaces, hold time, capabilities, port ID, the platform are displayed.
+From the above information, it's clear that `R1` and `S2` are directly connected to `R2` as seen from the network setup. The interfaces, hold time, capabilities, port ID, and the platform are displayed.
 
-For more details about the neighboring devices, such as the IP address of the devices, `show lldp neighbor detail` command is used.
+For more details about the neighboring devices, such as the IP address of the devices, the `show lldp neighbor detail` command is used.
 
 > NOTE: When configuring LLDP, one has to configure it on every device for it to discover and gather information about the neighboring devices. For CDP it's already configured by default so there is no need of configuring it unless it is disabled.
 
@@ -202,7 +202,7 @@ This information is crucial in analyzing the network topology, troubleshooting f
 To summarize:
 - We learned what Network Management is.
 - We explored different Layer 2 protocols used in network management.
-- We configured a network, verified and configured the CDP and LLDP protocol.
+- We configured a network, verified, and configured the CDP and LLDP protocol.
 - We learned how the information gathered by the protocols can be used in network management.
 
 One can find more information about network management [here](https://contenthub.netacad.com/ensa/10.0.1).
