@@ -146,7 +146,7 @@ Today, there exist over 5,000 cryptocurrencies. This is according to [CoinMarket
 
 People tend to think that cryptocurrencies are the only blockchain's use case. This is not the case. But, it is the biggest use case for blockchain. 
 
-As a blockchain developer, you can build and launch one of your cryptocurrencies. But there is a catch. With the high number of cryptocurrencies out there, it is advisable to build and launch a coin that tries to solve real-world problems. Otherwise, it'll just exist and not be adopted by anyone. 
+As a blockchain developer, you can build and launch a token. You may even go all the way and build your own cryptocurrency. But there is a catch. With the high number of cryptocurrencies and tokens out there, it is advisable to develop a token (or cryptocurrency if feasible) that tries to solve real-world problems. Otherwise, it'll be hard to gain traction or survive in the long term.
 A good example is Cardano with their [Cardano Africa](https://africa.cardano.org/) project. They aim to use Ada (name of Cardano's cryptocurrency), to try and solve some of the financial problems currently experience in less developed countries such as accessibility to loans. This is a luxury enjoyed by many people in developed worlds. 
 
 As a blockchain developer, you need to think along those lines.
