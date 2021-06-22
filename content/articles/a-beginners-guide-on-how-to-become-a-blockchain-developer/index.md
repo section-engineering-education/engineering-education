@@ -69,7 +69,7 @@ The bitcoin blockchain doesn't have any other usage other than powering the cryp
 
 The Ethereum blockchain is a decentralized and open-source smart contracts platform. The smart contract functionality that enables Dapps to be built on it has made it the most actively used blockchain platform. It currently uses PoW as its consensus mechanism but aiming to replace it with [Proof-of-Stake (PoS)](https://en.wikipedia.org/wiki/Proof_of_stake) due to the high energy consumption of PoW. 
 
-It is also the blockchain technology that powers the popular cryptocurrency, ether (ETH).
+It is also the blockchain technology that powers the popular cryptocurrency, Ether (ETH).
 
 Learn more about it [here](https://ethereum.org/en/).
 
