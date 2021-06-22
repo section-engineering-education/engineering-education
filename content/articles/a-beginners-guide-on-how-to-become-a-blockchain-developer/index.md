@@ -19,9 +19,9 @@ If you're reading this article, I'm sure you're wondering whether blockchain dev
 
 If you're reading this article, I'm sure you're wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
 
-Well, ultimately, I felt the same way some few years back.
+I felt the same way some few years back.
 
-While I've been introduced to technology at a young age, I didn't understand the way of thinking that came with software development. I struggled to learn at first. But in hindsight, what it took was continuous perseverance and eventually, it just clicked. This is the same case with blockchain development. It might seem like a big deal but once you get the hang of the concepts which I'll be mentioning in this article, things will click. 
+While I was introduced to technology at a young age, I felt overwhelmed by the process to become a software developer. I struggled to learn at first. But in hindsight, what it took was continuous perseverance and eventually, it paid off. This is the same case with blockchain development. It might seem daunting but once you get the hang of the concepts which I'll mention in this article, you will have some clarity. 
 
 In this article, I'm going to guide you on a proper way to get started with blockchain development even if you don't have any prior coding experience. 
 
