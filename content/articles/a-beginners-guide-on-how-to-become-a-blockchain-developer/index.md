@@ -130,7 +130,7 @@ This is the programming language used by core blockchain developers in building 
 
 #### Note
 
-Solidity is still currently the most popular programming language of choice for many developers. This is due to its large developer community. Unless you have a specific use case or you're a blockchain core developer, please stick to Solidity.
+Solidity is still currently the most popular programming language of choice for many developers. This is due to its large developer community. Unless you have a specific use case or you're a blockchain core developer, I suggest you stick with Solidity.
 
 ### Use cases for blockchain
 
