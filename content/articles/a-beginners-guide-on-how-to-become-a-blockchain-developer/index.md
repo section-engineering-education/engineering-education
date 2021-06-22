@@ -159,7 +159,7 @@ As a blockchain developer and a techie in general, you should be ambitious enoug
 
 2. Supply Chain
 
-The supply chain system involves tracking the movement of goods that end up turning into end products. Big companies such as Walmart use it to increase supply chain transparency.
+The supply chain system involves tracking the movement of goods or services from a source to an end-user. Big companies such as Walmart use it to increase supply chain transparency.
 
 Using blockchain technology helps ensure that distributors across the supply chain are honest and transparent.
 
