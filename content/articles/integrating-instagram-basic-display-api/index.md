@@ -231,7 +231,7 @@ After getting the authorization code, we can now get the short-lived access toke
 
 To get the short-lived access token, we will follow the following steps:
 
-- Introduce `Apollo server` to our app. To do this, we will edit our `app.js` as follows:
+- Introduce `Apollo server` to our app. To do this, we will edit our `src/index.js` as follows:
 
   - Require it as a package at the top:
 
