@@ -149,6 +149,10 @@ People tend to think that cryptocurrencies are the only blockchain's use case. T
 As a blockchain developer, you can build and launch a token. You may even go all the way and build your own cryptocurrency. But there is a catch. With the high number of cryptocurrencies and tokens out there, it is advisable to develop a token (or cryptocurrency if feasible) that tries to solve real-world problems. Otherwise, it'll be hard to gain traction or survive in the long term.
 A good example is Cardano with their [Cardano Africa](https://africa.cardano.org/) project. They aim to use Ada (name of Cardano's cryptocurrency), to try and solve some of the financial problems currently experience in less developed countries such as accessibility to loans. This is a luxury enjoyed by many people in developed worlds. 
 
+It is also important to note that it is challenging to create a cryptocurrency. This is due to the vast amount of resources needed and distrust from potential users due to the reputation of ICOs.
+
+Lastly, as a developer, it is key to understand the difference between a token and a coin when it comes to cryptocurrencies. Feel free to read this [blog post](https://blog.liquid.com/coin-vs-token) to understand the difference.
+
 As a blockchain developer, you need to think along those lines.
 
 #### Decentralized Finance (DeFi)
