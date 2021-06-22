@@ -134,9 +134,9 @@ export default class ForumsController {
     }
 
     // Reading a Single Forum by ID
-    public async update({ auth, request, params}: HttpContextContract){
+    public async update({request, params}: HttpContextContract){
         try {
-            const ticket = await Cache.remember('forum_id_' + params.id, 60, async function () {
+            const forum = await Cache.remember('forum_id_' + params.id, 60, async function () {
             // This code is only executed if there was a MISS
             return await Forum.find(params.id);
             })
@@ -149,9 +149,10 @@ export default class ForumsController {
                     await forum.preload('posts')
                     return forum
                 }
-            } catch (error) {
-                console.log(error)
             }
+           
+        } catch (error) {
+                console.log(error)
         }
     }
 }
@@ -174,10 +175,10 @@ public async update({ request, params }: HttpContextContract) {
         return await Forum.find(params.id)
     })
 
-    if (forum && await ticket.save()) {
+    if (forum && await forum.save()) {
 
         // If updates successfully in database, then updates the Cache Server.
-        await Cache.update('forum_id_' + params.id, ticket, 60)
+        await Cache.update('forum_id_' + params.id, forum, 60)
 
         forum.title = request.input('title');
         forum.description = request.input('description');
@@ -190,7 +191,7 @@ public async update({ request, params }: HttpContextContract) {
     }
 }
 
-public async store({ auth, request, response}: HttpContextContract)
+public async store({ auth, request}: HttpContextContract)
 {
     const user = await auth.authenticate();
     const forum = new Forum();
@@ -198,8 +199,8 @@ public async store({ auth, request, response}: HttpContextContract)
     forum.description = request.input('description');
     await user.related('forums').save(forum)
 
-    // Stores a new Ticket to Cache
-    await Cache.set('ticket_id_' + ticket.id, ticket, 60)
+    // Stores a new forum to Cache
+    await Cache.set('forum_id_' + forum.id, forum, 60)
     return forum
 }
 ```
@@ -211,7 +212,7 @@ Now that we have implemented our caching system in our project, let's run some t
 
 We will compare both the previous API without caching and with caching to see the difference in seconds.
 
-First, we have the result of the performance without implementing our cache system. However, the result is pretty fast, though, comparing the payload, which is minimal, about two ticket collections.
+First, we have the result of the performance without implementing our cache system. However, the result is pretty fast, though, comparing the payload, which is minimal, about two forum collections.
 
 So we have a **643ms response time** on our API request.
 
