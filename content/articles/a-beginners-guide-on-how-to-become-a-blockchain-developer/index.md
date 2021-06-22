@@ -153,7 +153,7 @@ Currently, the adoption of DeFi is trending in the blockchain world. DeFi aims t
 
 Taking a look at the 1-year chart on [DeFi Pulse](https://defipulse.com/), you will notice how the adoption of DeFi has skyrocketed over the last few months.
 
-Currently, most of the DeFi runs on the Ethereum blockchain. Popular DeFi project in the market today include [Maker](https://makerdao.com/en/), [Aave](https://aave.com/), [Compound](https://compound.finance/), [Polygon](https://polygon.technology/) and [Uniswap](https://uniswap.org/). Maker, Aave, and Compound are used as lending platforms, Polygon as a payment platform, and Uniswap for decentralized exchange (DEX).
+Currently, most of the DeFi runs on the Ethereum blockchain. Popular DeFi projects in the market today include [Maker](https://makerdao.com/en/), [Aave](https://aave.com/), [Compound](https://compound.finance/), [Polygon](https://polygon.technology/) and [Uniswap](https://uniswap.org/). Maker, Aave, and Compound are used as lending platforms, Polygon as a payment platform, and Uniswap for decentralized exchange (DEX).
 
 As a blockchain developer, you can build platforms such as these.
 
