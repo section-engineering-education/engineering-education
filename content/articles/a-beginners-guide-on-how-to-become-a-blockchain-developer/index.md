@@ -155,7 +155,7 @@ Taking a look at the 1-year chart on [DeFi Pulse](https://defipulse.com/), you w
 
 Currently, most of the DeFi runs on the Ethereum blockchain. Popular DeFi projects in the market today include [Maker](https://makerdao.com/en/), [Aave](https://aave.com/), [Compound](https://compound.finance/), [Polygon](https://polygon.technology/) and [Uniswap](https://uniswap.org/). Maker, Aave, and Compound are used as lending platforms, Polygon as a payment platform, and Uniswap for decentralized exchange (DEX).
 
-As a blockchain developer, you can build platforms such as these.
+As a blockchain developer and a techie in general, you should be ambitious enough to build such platforms.
 
 2. Supply Chain
 
