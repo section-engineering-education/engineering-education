@@ -1,7 +1,7 @@
-### Introduction
+###  Introduction
 A string is a sequence of Unicode characters. Unicode is a standard for providing unique code for every character, so that characters are distinguishable from one another. Strings as a data type have wide use in programming. Just like any other programming language, strings in python are used to represent text but could also include spaces, special characters as well as numbers.
 
-### Initializing strings in python
+###  Initializing strings in python
 In python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
 - Using single Quotes
 ```py 
@@ -45,7 +45,7 @@ My name is Jane Doe,
     I like traveling so much
 ```
 
-### Accessing Characters of Strings
+###  Accessing Characters of Strings
 Strings are arrays of characters and therefore, just as arrays we can access the individual characters of a string. We can do this by specifying the position of the string using square brackets and the index.
 
 - First character
@@ -82,7 +82,7 @@ print('string[1:8] = ', string[1:8])
 string[1:8] =  ello th
 ```
 
-### Common Methods in Python Strings
+###  Common Methods in Python Strings
 - `lower()`. This method is used to convert an alphabetical string to lower case. If the string includes characters and numbers, they are ignored.
 ```py
 # original text
@@ -182,10 +182,10 @@ print(y)
 Hello people, this people are a nice people
 ```
 
-### Python String Operations
+###  Python String Operations
 Python has a wide range of operations to perform on strings. This makes strings in python have a wide application than strings in any other programming languages.
 
-#### String Iteration
+####  String Iteration
 We can iterate through a given string using for loop. We can iterate to find the length of a string, count the occurrence of a given character or check whether a given letter is found in a string. To demonstrate this, we can loop through a string and print every character of that string.
 ```py
 # Iterating through a string
@@ -215,7 +215,7 @@ d
 The letter o occurs 7 times
 ```
 
-#### Concatenation
+#### Concatenation
 String concatenation involves joining one string with another string. We can join two strings using the plus `+` operator.
 ```py
 # concatenating Strings using the plus operator
@@ -235,7 +235,7 @@ print(string3)  
 sectionengineering
 ```
 
-#### Character Membership
+#### Character Membership
 This is a test done on a given string to determine if some character or sequence of characters exists in the string. If the character or sequence of character exists, the method returns true else false.
 When testing for the existence of a character of a substring in a string, we use the keyword `in`.
 ```py
@@ -258,10 +258,10 @@ print(y)
 True
 False
 ```
-### Formatting strings
+### Formatting strings
 Formatting involves writing strings with other variables. There are three main methods of string formatting. We will discuss the three methods in a beginner-friendly way as below.
 
-#### Using the `%` operator
+#### Using the `%` operator
 If you have ever used `printf` in C language then this will be easier to understand. Just like in c, we use `%` to format the string by replacing what is in the variable with the operator as shown below.
 ```py
 # Using % operator 
@@ -272,7 +272,7 @@ print('My name is %s' %name)
 My name is Dianne Sandra
 ```
 
-#### Using the `str.format` method
+#### Using the `str.format` method
 This approach was introduced in Python 3.0 to enable programmers to handle complex string operations efficiently. It is a method inbuilt with the python strings class and can be accessed without any additional libraries. It provides string manipulation by substituting values and variables in strings.
 
 You could also do substitution by variable names then specifying the name in its respective position. This comes in very helpful especially if you want to substitute more than one string.
@@ -288,7 +288,7 @@ print ('{name} is {age} years old and she is a {occupation}'
 Section Engineering Education is a good platform.
 Dianne is 19 years old and she is a programmer
 ```
-#### Using `f-strings`
+#### Using `f-strings`
 Introduced in python 3.6, F-Strings allow embedding python expressions into python strings. It has the name f-string because the string constants into which other expressions are embedded are prefixed by the letter `f`. Take a look at the example below.
 ```py
 # emebeding variables into string constants using f-string
@@ -304,7 +304,7 @@ Hello  world
 ```
 Generally, the f-string combines the initial string with the expressions to form the final string which is then presented for printing.
 
-### Conclusion
+### Conclusion
 In this article, we learned about strings in python. We dug into how to initialize strings in python, operations that we can perform on the strings, the inbuilt methods of the python string class as well as the various methods of string formatting. This article will give the reader a head start to python strings when followed closely.
 
 You can find the code snippets [here](https://github.com/diannesandra/python-strings).
