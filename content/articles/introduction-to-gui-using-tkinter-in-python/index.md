@@ -1,9 +1,9 @@
 ### Introduction
-A graphical user interface (GUI), as opposed to text-based user interfaces, typed command labels, or text navigation, allows users to interact with electronic devices through the use of graphic icons and audio indicators such as primary notations. GUIs were developed in response to the perceived steep learning curve of command-line interfaces, which require commands to be typed on a computer keyboard.
+A graphical user interface (GUI) allows users to interact with electronic devices using electronic symbols, as opposed to text-based user links, typed commands, or text exploration. They design GUIs in response to command-line networks, apparent steep learning curve, which requires command input via a computer keyboard.
 
-In most cases, activities in a GUI are performed by directly manipulating the graphical elements. In addition to computers, GUIs are used in a variety of handheld mobile devices such as MP3 players, portable media players, gaming devices, cellphones, and smaller household, office, and industrial controllers.
+In most cases, activities in a GUI are performed by directly manipulating the graphical elements.GUIs are utilized in a range of mobile gadgets, including MP3 players, gaming devices, and portable family, workplace, and industrial controllers, in addition to computers.
 
-In this tutorial, we will learn how to build a password generator GUI using Tkinter.
+In this tutorial, we will gain an understanding of how to build a password generator GUI using Tkinter.
 
 ### Table of content
 
@@ -14,9 +14,9 @@ In this tutorial, we will learn how to build a password generator GUI using Tkin
 - [Conclusion](#conclusion)
 
 ### What is Tkinter?
-Tkinter is a GUI library that is installed together with Python. Tkinter has several advantages. Because the code is cross-platform, apps built with it can run on Windows, Mac OS X, and Linux. Tkinter applications appear to be native to the platform on which they are running. This is because the visual elements are created using native operating system elements.
+Tkinter is a GUI library that is installed together with Python. Tkinter has several advantages. Because the code is cross-platform, apps built with it can run on Windows, Mac OS X, and Linux. Tkinter applications appear to be indigenous to the programme on which they run. Because the visual components are built with native system applications, this is the case.
 
-Python must be installed before Tkinter can be used. When you install Python, you get Tkinter as well. However, if Tkinter was not installed when Python was installed, you can do it later using the pip command.
+Python must be installed before Tkinter can be used. When you install Python, you get Tkinter as well. However, if after installing Python  and Tkinter was not installed, you can use the `pip` command to install it afterwards.
 
 Tkinter can be installed using the pip command on a terminal, by running the command below.
 
@@ -27,16 +27,16 @@ pip install tk
 This command will install the Tkinter library and it's related libraries.
 
 ### Prerequisites
-If you don't have Python already installed, download the [latest version of Python](https://www.python.org/downloads/) and install it.
+If you don't have Python installed, download the [latest version of Python](https://www.python.org/downloads/) and install it.
 
 You can download a python-oriented code editor, most preferably [PyCharm](https://www.jetbrains.com/pycharm/download/) and install it.
 
 ### What are widgets?
-Widgets are the building blocks of graphical user interface programming, and they are used to view data or solicit input from the user. Here are a few examples of commonly used widgets.
+Widgets are the building blocks of graphical user interface programming, and they are used to view data or solicit input from the user. See some examples of commonly used widgets below.
 
 - `Frame`: The frame widget is a container that organizes and borders other widgets.
 - `Label`: The label widget is used to display text on the screen.
-- `Button`: The button widget can contain text and can perform an action when clicked.
+- `Button`: The button widget can contain text and when a button is clicked it executes an action.
 - `Entry`: The entry widget displays a single-line text field for accepting user input.
 - `Text`: A text entry widget allows you to enter multiline text.
 
@@ -45,13 +45,11 @@ A  password generator is a software that accepts input from a random or pseudo-r
 
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong and unpredictable password for multiple accounts. The password generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
 
-Online hacking is growing more common these days, resulting to passwords and login information being compromised on a regular basis. If your passwords fall into the wrong hands, it can be highly inconvenient, and can even result to the loss of money or sensitive personal information.
+Online hacking is growing more common these days, resulting to passwords and login information being compromised on a regular basis. If your passwords fall into the wrong hands, it can be highly problematic, and can even result to the loss of money or delicate personal information. Unfortunately, the majority of stolen passwords are uncomplicated and easy to guess. Names, birthdays, hobbies, and favorite pets don't make good passwords, and using them is a recipe for calamity. Password generators are very useful in this circumstances.
 
-Unfortunately, the majority of stolen passwords are simple and easy to guess. Names, birthdays, hobbies, and favorite pets don't make good passwords, and using them is a recipe for disaster. Password generators come very handy in this situation.
+For personal or official use, the best password generators makes it simple to generate complicated passwords that are tough to predict or breach.
 
-For personal or corporate usage, the best password generators make it simple to create strong passwords that are difficult to guess or crack.
-
-#### Let us see how we can build a password generator.
+#### Let us see how we can construct a password generator.
 Create a new file `passgen.py` on your [PyCharm](https://www.jetbrains.com/pycharm/download/) or any python-oriented code editor.
 
 Let's start by importing Tkinter.
@@ -62,7 +60,7 @@ from tkinter.ttk import Combobox
 import random
 ```
 
-The `tkinter.ttk` module gives the user access to the Tkinter widget set and allows the user to import `Combobox`. A combobox is a graphical user interface component that combines a drop-down box, list box, or allows the user to select input.
+The `tkinter.ttk` module gives the user access to the Tkinter widget set and allows the user to import `Combobox`. A combobox is a graphical user interface element that merges a drop-down box, list box, and allows the user to select input.
 
 ```Python
 screen = Tk()
@@ -116,7 +114,7 @@ t2=Label(screen,text='password:',font=('Arial',14),background ="bisque")
 t2.place(x=145,y=90)
 ```
 
-We have defined the `sc1` variable. In order to design the GUI window's section In this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1`, where `t1` is the name of the label object. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
+We have defined the `sc1` variable. In order to design the GUI window's section In this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1` and it is the title of the label item. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
 
 We have also created a label `t2`, it's placeholder text and its background. We have also set its coordinates.
 
@@ -141,7 +139,7 @@ b.place(x=230,y=195)
 screen.mainloop()
 ```
 
-On the GUI window, we have defined the entry box with the object `il`. We have set the font of `il` and set the text variable to store the string value of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location. 
+On the GUI window, we have defined the entry box with the object `il`. We have calibrate the font of `il` and put the text variable to store the string worth of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location. 
 
 We then created the `t4` label. Using coordinates values, we assigned the location. We also gave entry `c1` a name. Set the `Combobox` c2's values to "Low Strength", "Medium Strength", and "High Strength". The `current()` function is used to set the value of `c2`. 
 
