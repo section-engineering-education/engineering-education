@@ -1,4 +1,23 @@
-I'm sure many of you are sitting out there wondering whether blockchain development is for you. This might be because you might be having no prior coding experience, you're not a technologically savvy person, or you just have no idea how you are going to be a developer.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-beginners-guide-on-how-to-become-a-blockchain-developer/
+title: A beginners guide on how to become a blockchain developer
+description: In this article, we will explore how to become a blockchain developer without prior coding experience. 
+author: wilkister-mumbi
+date: 2021-06-22T00:00:00-18:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /a-beginners-guide-on-how-to-become-a-blockchain-developer/hero.jpg
+    alt: Blockchain example image
+---
+If you're reading this article, I'm sure you're wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
+<!--more-->
+
+If you're reading this article, I'm sure you're wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
 
 Well, ultimately, I felt the same way some few years back.
 
