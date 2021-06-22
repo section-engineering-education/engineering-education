@@ -23,7 +23,7 @@ I felt the same way some few years back.
 
 While I was introduced to technology at a young age, I felt overwhelmed by the process to become a software developer. I struggled to learn at first. But in hindsight, what it took was continuous perseverance and eventually, it paid off. This is the same case with blockchain development. It might seem daunting but once you get the hang of the concepts which I'll mention in this article, you will have some clarity. 
 
-In this article, I'm going to guide you on a proper way to get started with blockchain development even if you don't have any prior coding experience. 
+In this article, I'm going to guide you on how to get started with blockchain development even if you lack prior coding experience.
 
 For an introduction to blockchain technology, please read this [article](https://www.section.io/engineering-education/building-a-simple-cryptocurrency-blockchain/). 
 
