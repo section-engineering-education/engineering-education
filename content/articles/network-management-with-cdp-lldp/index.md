@@ -21,19 +21,20 @@ This article will cover how one can use the *Layer 2 discovery protocols **CDP**
 It will also equip the reader with the knowledge of how to configure the protocols on the network devices and build a network configuration to understand how the protocols work.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What is Network Management?](#what-is-network-management)
 - [Layer 2 Discovery protocols](#layer-2-discovery-protocols)
   - [Cisco Discovery Protocol (CDP)](#cisco-discovery-protocol-cdp)
   - [Link Layer Discovery Protocol (LLDP)](#link-layer-discovery-protocol-lldp)
-- [CDP and LLDP Network Verification and Configurations](#cdp-and-lldp-network-verification-and-configurations)
+- [CDP and LLDP Network verification and configurations](#cdp-and-lldp-network-verification-and-configurations)
   - [CDP configuration](#cdp-configuration)
   - [LLDP configuration](#lldp-configuration)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
 The reader must put the following into consideration:
-- The reader should have a good understanding of basic networking concepts.
+- The reader should be conversant with the basic networking concepts.
 - Good understanding of how to configure networks and their components using any of the network simulation tools.
 - For this article, it is best for the reader to know how to work with the Cisco packet tracer network simulator tool.
 
@@ -42,7 +43,7 @@ To download and install the Cisco packet tracer on a desktop or laptop, visit [t
 ### What is Network Management?
 `Network Management` refers to controlling, managing, and maintaining networks by allowing the network devices to communicate with each other with no failures. It allows for troubleshooting and performance enhancements through traffic monitoring, intrusion detection, and interface failure detection.
 
-To manage the networks, we use the Layer 2 discovery protocols, ***Cisco Discovery Protocol (CDP)*** , and ***Link Layer Discovery Protocol (LLDP)*** which gather information about the neighboring devices useful for network design decisions, troubleshooting, and network documentation.
+To manage the networks, we use the  ***Cisco Discovery Protocol (CDP)*** , and ***Link Layer Discovery Protocol (LLDP)*** which gather information about the neighboring devices useful for network design decisions, troubleshooting, and network documentation.
 
 ### Layer 2 Discovery protocols
 They are protocols operating at layer 2 (Data Link Layer) of the OSI model which discover and share information about the neighboring connected devices on the network topology used for network management.
@@ -50,18 +51,18 @@ They are protocols operating at layer 2 (Data Link Layer) of the OSI model which
 They do not use IP address but used to share layer 3 routing information such as the hostname, and device type.
 
 The neighbor device information displayed include:
-- Device identifier (ID) - is the hostname of the neighbor device.
-- Port identifier (ID) - is the name of the local port or the interface port.
+- Device identifier (ID) - is the name of the neighboring network device.
+- Port identifier (ID) - is the name of the local or the interface port.
 - Capability List - shows whether the neighbor device is a router, switch, or server.
 - Platform - the hardware platform for the network device.
 - Hold time - is the time it takes for a neighbor device to receive the message containing the neighbor device information.
-  
+
 #### Cisco Discovery Protocol (CDP)
-Cisco Discovery Protocol (CDP) is a Cisco-based proprietary protocol enabled on the Cisco devices by default to help network administrators collect information about both locally attached and remote devices.
+Cisco Discovery Protocol (CDP) is a Cisco-based protocol enabled on the Cisco devices by default to help network administrators gather and discover information about the local and remote devices attached to the network.
 
-Using this protocol, one can gather hardware and protocol information about neighboring devices useful for troubleshooting and network management.
+Using this protocol, one can collect information about neighboring devices useful for network management and troubleshooting.
 
-CDP works only on Cisco devices and only provides information about connected devices. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
+CDP works only on Cisco devices and provides information only about the directly linked devices. The protocol sends the CDP messages containing the neighbor information after every 60 seconds and has a hold time of 180 seconds by default.
 
 #### Link Layer Discovery Protocol (LLDP)
 Link Layer Discovery Protocol (LLDP) functions like the CDP protocol, but it is an industry-standard protocol, not limited to Cisco devices only but works in multi-vendor environments.
