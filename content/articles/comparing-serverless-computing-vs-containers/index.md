@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/comparing-serverless-computing-vs-containers/hero.png
     alt: Comparing Serverless computing vs Containers Hero Image
 ---
-Applications hosted on traditional virtual machines and servers are less flexible and involve a higher overhead cost. Containers and [Serverless computing](https://www.cloudflare.com/learning/serverless/what-is-serverless/) solves these weaknesses. They allow developers to build more flexible applications at low overhead costs.
+Applications hosted on traditional virtual machines and servers are less flexible and involve a higher overhead cost. Containers and [Serverless computing](https://www.section.io/modules/custom-edge-workload/) solves these weaknesses. They allow developers to build more flexible applications at low overhead costs.
 <!--more-->
 A developer may choose a container or serverless architecture depending on the needs of the application. The features of these two architectures overlap in some aspects, but they are not interchangeable technologies.
 
@@ -93,6 +93,7 @@ Happy learning!
 - [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
 
 - [Containers vs. VMs vs. Serverless at the Edge](/blog/containers-vm-serverless-edge-computing/)
+- [Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/)
 
 ---
 Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
