@@ -1,13 +1,13 @@
 ### Introduction
-Each variable has a data type when defined in C++ to help the user understand what type of variable it is. Since we were using the default Storage classes, we didn't identify any storage classes yet. When defining a variable, the compiler assigns a storage class by default.  In C++, storage classes are used to describe the characteristics of a variable and functions. It specifies the scope, lifetime and visibility of variables and functions. These characteristics enable us to track the presence of a variable over the course of a program's execution. In this article, we will look at various storage classes along with code examples that show how they work.
+Each variable has a data type when defined in C++ to help the user understand what type of variable it is. Since we were using the default Storage classes, we didn't identify any storage classes yet. When defining a variable, the compiler assigns a storage class by default. We use storage classes in C++ to express the variables and methods characteristics. It also specifies the [scope, lifetime, and visibility of variables and functions](https://www.opensourceforu.com/2011/10/joy-of-programming-scope-lifetime-and-visibility-in-c). These characteristics enable us to track the presence of a variable over the course of a program's execution. This article will look at various storage classes and code examples that show how they work.
 
 ### Prerequisites
 To follow through this article, the reader should have:
-- A [Codeblocks IDE]() installed.
-- An understanding of the C++.
+- A [Codeblocks IDE](https://www.codeblocks.org/downloads/) installed.
+- An understanding of the C++ language.
 
 ### What is lifetime and visibility?
-The term "lifetime" refers to the length of time a variable is active, while "visibility" refers to which parts of code a variable can access depending on the visibility level set. 
+The length of time a variable is active is referred to as its lifetime. Visibility refers to which parts of code a variable can access depending on the visibility level set.
 
 ### Types of Storage class
 In the C++ programming language, there are usually five types of storage classes:
@@ -30,9 +30,9 @@ We can break down the code as shown below:
 Let's take a look at how they're all explained with simple examples:
 
 1. **Automatic**
-It is the default storage class for all local variables. These local variables are declared inside a function or block. The auto keyword is rarely used in writing program’s. Auto variables can only be accessed within the function or block where they were declared, and they can't be accessed outside of that function or block. They can also be accessed within nested blocks, parent block/function in which the auto variable was declared. To access auto variables outside their scope we use a pointer variable. 
+It is the default storage class for all local variables. These [local variables are declared inside a function or block](https://www.tutorialspoint.com/cprogramming/c_scope_rules.html). When writing programs, the auto keyword is hardly used. Auto variables can only be accessed [within the function or block where they were declared](https://simple2code.com/cplusplus-tutorial/cpp-storage-classes-with-examples). They can't be accessed outside of that function or block. We can also access them within nested blocks, as well as the parent block where the declaration of the auto variable is. A pointer variable is used to [access auto variables outside their scope](https://www.edureka.co/blog/cpp-storage-classes).
 
-We are required to point to the same memory location where the variables are occupying. Its lifespan is the same as the function's lifetime. When a function's execution is complete, the variable is destroyed. When they are declared, they are given a garbage value by default.
+We are required to point to the same region in memory where the variables are stored. Its lifespan is the same as the function's lifetime. When a function's execution is complete, the variable is destroyed. By default, they are given a garbage value whenever declared.
 
 Syntax:
 ```c++
@@ -42,7 +42,7 @@ or
 ```
 auto datatype var_name1 [= value];
 ```
-Example to demonstrate Auto storage class
+Example to show Auto storage class
 ```c++
 #include <iostream>
 using namespace std;
@@ -86,15 +86,15 @@ A
 ```
 
 2. **Register**
-We use the register storage class to declare register variables. The register variable has the same functionality as the auto variable, except that the compiler attempts to store these variables in the microprocessor's register if one is available. If no free registers are available, these are stored solely in memory. This makes operations on register variables much faster than that of other variables stored in memory during runtime. 
+To declare register variables, we use the register storage class. The register variable functions similarly to the auto variable, with the exception that [the compiler tries to store these variables in the microprocessor's register if one is available](https://mu.ac.in/wp-content/uploads/2021/01/Imperative-Programming-1.pdf). If no free registers are available, these are stored solely in memory. This makes operations on register variables much faster than that of other variables stored in memory during runtime. 
 
-To increase the program's run-time, a few variables that need to be accessed regularly in a program are usually declared within the register storage class. Pointers cannot be used to find the address of a register variable. The variable's maximum size is equal to the register's maximum size. We cannot use the ‘&’ operator because it does not have a memory location.
+A few variables that need to be accessed regularly in a program are usually declared within the register storage class. This is to increase the program's run-time.  A register variable's address cannot be found via pointers. The variable's largest size is equal to the register's largest size. We cannot use the ‘&’ operator because there is no memory location for it.
 
 Syntax:
 ```c++
 register datatype var_name1 [= value];
 ```
-Example to demonstrate Register storage class:
+Example to show Register storage class:
 ```c++
 #include <iostream>
 using namespace std;
@@ -102,21 +102,21 @@ using namespace std;
 void registerStorageClass()
 {
 
-  cout << "Demonstration of register storage class\n";
+	cout << "Demonstration of register storage class\n";
 
-  // declaration of a register variable
-  register char b = 'G';
+	// declaration of a register variable
+	register char c = 'G';
 
-  //displaying the register variable
-  cout << "Value of 'b'"
-    << " declared as register: " << b;
+	//Lets dispkay the register variable
+	cout << "Value of 'c' which is"
+		<< " declared as register: " << c;
 }
 int main()
 {
 
-  // To demonstrate register Storage Class
-  registerStorageClass();
-  return 0;
+	// Demonstrating the Storage Class
+	registerStorageClass();
+	return 0;
 }
 ```
 Go ahead and run the code [here](https://replit.com/@Dawe7/Register-storage-class).
@@ -124,18 +124,17 @@ Go ahead and run the code [here](https://replit.com/@Dawe7/Register-storage-clas
 Output:
 ```bash
 Demonstration of register storage class
-Value of b declared as register: G
+Value of c which is declared as register: G
 ```
 3. **Static**
-This storage class is used to declare static variables. The static variables preserve their value even when they are out of their scope. They are initialized once and exist till the program is terminated. The memory for the static variable is allocated only once, and no new memory is allocated because they are not re-declared. 
+Static variables are declared using this storage class. Static variables keep their [value even when they are outside of their scope](https://www.edureka.co/blog/cpp-storage-classes). They are initialized once and exist till the program is terminated. The memory for the static variable is only allocated once, and no more memory is allocated because it is not re-declared.
 
-Anywhere in the code, we can access global static variables. The compiler assigns the value 0 to them by default. When we use static on a class data member in C++, we cause only one copy of that member to be shared by all objects of its class.
-
+Anywhere in the code, we can access global static variables. The compiler assigns the value 0 to them by default. In C++, when we use static on a class data member, only one [copy of that member is shared by all objects in that class](https://www.programmersought.com/article/1402752485).
 Syntax:
 ```c++
 static datatype var_name1 [= value];
 ```
-Example to demonstrate Static storage class:
+Example to show Static storage class:
 ```c++
 #include <iostream>
 using namespace std;
@@ -144,57 +143,58 @@ using namespace std;
 // memory is retained during execution
 int staticFun()
 {
-  cout << "For static variables: ";
-  static int count = 0;
-  count++;
-  return count;
+	cout << "Static variables: ";
+	static int count = 0;
+	count++;
+	return count;
 }
 
-// Function containing non-static variables
-// memory is destroyed
+// Function that contains non-static variables
+// Destroying memory
 int nonStaticFun()
 {
-  cout << "For Non-Static variables: ";
+	cout << "Non-Static variables: ";
 
-  int count = 0;
-  count++;
-  return count;
+	int count = 0;
+	count++;
+	return count;
 }
 
 int main()
 {
 
-  // Calling the static variables parts
-  cout << staticFun() << "\n";
-  cout << staticFun() << "\n";
-  ;
+	// Printing the static variables parts
+	cout << staticFun() << "\n";
+	cout << staticFun() << "\n";
+	;
 
-  // Calling the non-static variables parts
+	// Printing the non-static variables parts
 
-  cout << nonStaticFun() << "\n";
-  ;
-  cout << nonStaticFun() << "\n";
-  ;
-  return 0;
+	cout << nonStaticFun() << "\n";
+	;
+	cout << nonStaticFun() << "\n";
+	;
+	return 0;
 }
+
 ```
 Go ahead and run the code [here](https://replit.com/@Dawe7/Static-storage-class#main.cpp).
 Output:
 ```bash
-For static variables: 1
-For static variables: 2
-For Non-Static variables: 1
-For Non-Static variables: 1
+static variables: 1
+static variables: 2
+Non-Static variables: 1
+Non-Static variables: 1
 ```
 4. **External**
-We require this storage class when we want the variables to be shared across multiple files. Extern variables have a global scope and are visible outside the file in which we have declared them. It is also visible to all programs and is used if two or more files are sharing the same variable or function. 
-The extern variables have the same lifetime as the program in which they were declared. A regular global variable may also be rendered extern by using the ‘extern' keyword before its declaration or description in any function or block.
-When you use ‘extern,' the variable cannot be initialized because all it does is point the variable name to a previously specified storage location.
+When we want the variables to be shared across several files, we need this storage class. Extern variables have a global scope and can be seen outside of the file where they were declared. All programs can see it, and it's utilized when the same variable or function is shared by two or more files  
+The lifetime of the extern variables is the same as the [lifetime of the program in which they were declared](https://progforperf.github.io/Expert_C_Programming.pdf). A regular global variable may also be rendered extern [by using the ‘extern' keyword before its declaration or description in any function or block](https://mu.ac.in/wp-content/uploads/2021/01/Imperative-Programming-1.pdf).
+The variable cannot be initialized when you use 'extern,' because all it does is [point the variable name to a previously determined storage address](https://www.edureka.co/blog/cpp-storage-classes).
 Syntax:
 ```c++
 extern datatype var_name1;
 ```
-Example to demonstrate Static storage class:
+Example to show Static storage class:
 ```c++
 #include <iostream>
 using namespace std;
@@ -206,54 +206,53 @@ int m;
 void externStorageClass()
 {
 
-  cout << "Demonstration of extern class\n";
+	cout << "Demonstrating extern class\n";
 
-  // Telling the compiler that the variable
-  // m is an extern variable. It has been
-  // defined elsewhere (above the main
-  // function)
-  extern int m;
+	// We tell compiler that variable
+	// m is an extern variable. It's been defined somewhere else (above the main function)
+	extern int m;
 
-  // displaying the extern variables
-  cout << "Value of 'm' "
-    << "declared, as extern: " << m << "\n";
+	// printing the extern variables
+	cout << "Value of 'm'which is "
+		<< "declared as extern: " << m << "\n";
 
-  // value of 'm' modified
-  m = 5;
+	// value of 'm' modified
+	m = 5;
 
-  // displaying the modified values of
-  // extern variables
-  cout
-    << "Modified value of 'm'"
-    << " declared as extern: \n"
-    << m;
+	// printing the modified values of
+	// extern variables
+	cout
+		<< "Modified value of 'm'"
+		<< " declared as extern: \n"
+		<< m;
 }
 
 int main()
 {
 
-  // Demonstration of extern Storage Class
-  externStorageClass();
+	// Demonstration of extern Storage Class
+	externStorageClass();
 
-  return 0;
+	return 0;
 }
+
 
 ```
 Go ahead and run the code [here](https://replit.com/@Dawe7/Extern-storage-class#main.cpp).
 Output:
 ```bash
 Demonstration of extern class
-Value of ‘m’ declared as extern: 0
+Value of ‘m’ which is declared as extern: 0
 Modified value of ‘m’ declared as extern: 5
 ```
 5. **Mutable**
-Only class objects have the mutable specifier, which enables a member of an object to override a const member function. That is, a const member function can modify a mutable member. Even if you don't want the function to update other members of the class/struct, you can need to change one or more data members of the class/struct using the const function. The mutable keyword makes this task simple to complete.
+Only class objects have the mutable specifier, which enables a member of an object to override a const member function. That is, a const member function can change a mutable member. Even if you don't want the function to update other members of the class/struct, you can need to change one or more data members. This is done using the const function. The mutable keyword makes this task simple to complete.
 
 Syntax:
 ```c++
-
+mutable datatype var_name1 [= value];
 ```
-Example to demonstrate Static storage class:
+Example to show Static storage class:
 ```c++
 #include <iostream>
 using std::cout;
@@ -295,7 +294,7 @@ Output:
 50
 ```
 ### Conclusion
-You should now understand what different storage classes in C++ are and how to implement them after going through the above C++ programs. I hope you find this blog to be useful and insightful.
+In this article, we discuss the different methods that we can put in place storage class's in C++ programs as well as what they are and their roles. With that, you should create programs that use storage classes to express the attributes of variables and methods. I yearn that you find this article intuitive and useful in your future programs.
 
 Happy coding!
 
