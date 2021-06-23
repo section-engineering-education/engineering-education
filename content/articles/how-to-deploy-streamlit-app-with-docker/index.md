@@ -19,7 +19,7 @@ Finally, after creating the Streamlit app, we shall use docker to deploy it.
 
 ### Lets Start 
 Lets Start by building a simple machine learning prediction model.
-We will build a simple machine learning model to predict the gender of a person based on the inputted by the user.
+We will build a simple machine learning model to predict the gender of a person based on the user's input.
 ### Dataset
 We will use a dataset of names commonly used by people.
 The format of our data used is as shown:
