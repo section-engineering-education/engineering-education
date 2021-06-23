@@ -23,16 +23,19 @@ Boosting has quickly risen to be one of the most sought-after techniques to impr
 2. [Pre-Requisites](#pre-requisites)
 3. [Bagging vs Boosting](#bagging-vs-boosting)
 4. [Data Preprocessing](#data-preprocessing)
-4. [AdaBoost](#adaboost)
-5. [AdaBoost Implementation in Python](#adaboost-implementation-in-python)
-6. [XGBoost](#xgboost)
-7. [XGBoost Implementation in Python](xgboost-implementation-in-python)
-8. [Additional Resources](#additional-resources)
+5. [AdaBoost](#adaboost)
+6. [AdaBoost Implementation in Python](#adaboost-implementation-in-python)
+7. [XGBoost](#xgboost)
+8. [XGBoost Implementation in Python](#xgboost-implementation-in-python)
+9. [Conclusion](#conclusion)
+10. [Additional Resources](#additional-resources)
 
 ### Introduction
-The first-ever boosting algorithm called AdaBoost (Adaptive Boosting) was introduced to the world by Freund and Schapire. [Statisticians](https://web.stanford.edu/~hastie/Papers/buehlmann.pdf) have come forward, laying proofs and theorems as to how this gradient descent algorithm in function space, based on statistical estimations and numerical optimizations has proven to be very competitive in terms of prediction accuracy.
+The first-ever boosting algorithm called AdaBoost (Adaptive Boosting) was introduced to the world by Freund and Schapire. [Statisticians](https://web.stanford.edu/~hastie/Papers/buehlmann.pdf) have come forward, laying proofs and theorems as to how this ensemble method works well in improving prediction results. 
 
-AdaBoost was described as a "stagewise, additive modeling", where "additive" didn't mean a model fit added by covariates, but meant a linear combination of estimators. An ensemble technique almost always confused with bagging, boosting can be considered as extensively regularizing a model through model iterations. 
+ [Ensemble methods](https://www.section.io/engineering-education/ensemble-learning/) are techniques that use multiple models and combine them into one for enhanced results. The term "models" could refer to any model - regression, support vector machines, and kNNs, and the model whose performance has to be improved is called the base model. Although the technique "boosting" uses decision trees to improve the model's accuracy, it can be applied to any base model.
+
+However, it has been observed that boosting a decision tree based model provides better results than boosting other models. One possible explanation could be the structural similarities of the base model (decision tree) and the boosting algorithm.
 
 The article is split into two parts for the convenience of the reader. This part focuses on refreshing the reader about boosting and explains two boosting algorithms in-depth - Adaptive Boosting (AdaBoost) and eXtreme Gradient Boosting (XGBoost). The second part of the article will focus on explaining two more popular boosting techniques - Light Gradient Boosting Method (LightGBM) and Category Boosting (CatBoost).
 
@@ -40,7 +43,7 @@ The article is split into two parts for the convenience of the reader. This part
 The reader is expected to have a beginner-to-intermediate level understanding of machine learning and [machine learning models](https://www.geeksforgeeks.org/machine-learning/) with a higher focus on [decision trees](https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052). The reader is encouraged to go through the following resources for a better understanding of this article:
 
 1. [Supervised Learning Algorithms by Lalithnarayan C](https://www.section.io/engineering-education/supervised-learning-algorithms/)
-2. [Understanding Loss Functions in Machine Learning](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/)
+2. [Understanding Loss Functions in Machine Learning by Prashanth Saravanan](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/)
 3. [Introduction to Random Forest in Machine Learning by Onesmus Mbaabu](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/)
 
 For running the code, the user is expected to have the following libraries: NumPy, Pandas, Sklearn, and XGBoost. The reader can install the mentioned libraries in their Windows-operated machine using the following command in the Command Prompt:
@@ -61,11 +64,7 @@ import xgboost
 ```
 
 ### Bagging vs Boosting
-As mentioned, boosting is confused with [bagging](https://en.wikipedia.org/wiki/Bootstrap_aggregating). Those are two different terms, although both are ensemble methods. Let us try to understand what ensembling is, and move on to breaking down the differences between bagging and boosting.
-
-[Ensemble methods](https://www.section.io/engineering-education/ensemble-learning/) are techniques that use multiple models and combine them into one for enhanced results. The term "models" could refer to any model - regression, support vector machines, and kNNs, and the model whose performance has to be improved is called the base model. Although the technique "boosting" uses decision trees to improve the model's accuracy, it can be applied to any base model.
-
-However, it has been observed that boosting a decision tree based model provides better results than boosting other models. One possible explanation could be the structural similarities of the base model (decision tree) and the boosting algorithm.
+As mentioned, boosting is confused with [bagging](https://en.wikipedia.org/wiki/Bootstrap_aggregating). Those are two different terms, although both are ensemble methods.
 
 Bagging and boosting both use an arbitrary `N` number of learners by generating additional data while training. These `N` learners are used to create `M` new training sets by sampling random sets from the original set. The idea behind bagging is to combine the results of the `M` models that are generated from the sampled sets. The models run in parallel and are independent of each other, and the final results are obtained from combining the results of all the models. 
 
@@ -98,7 +97,7 @@ Now, let's import the dataset using the `read_csv()` method in Pandas and analyz
 ```py
 df = pd.read_csv("mushrooms.csv")
 for col in df.columns:
-    print('Number of unique values in',col,'is',len(df[col].unique()))
+    print('Number of unique values in', col, 'is', len(df[col].unique()))
 ```
 **Output**
 
@@ -131,10 +130,18 @@ Number of unique values in habitat is 7
 As you can see `Number of unique values in veil-type is 1`, the feature `veil-type` has only one distinct value in it and hence, can be dropped.
 
 ```py
-df = df.drop("veil-type",axis=1)
+df = df.drop("veil-type", axis=1)
 ```
 
-Since machine learning models prefer numerical data, let us convert the dataset to numbers by encoding it.
+Let's take a look at the data to see how it looks like.
+
+```py
+df.head(6)
+```
+
+![Data Head](/engineering-education/boosting-algorithms-part-1/datahead.png)
+
+Since machine learning models prefer numerical data, let us convert the dataset to numbers by encoding it. `LabelEncoder()` is a method in the Scikit-Learn package that converts labels to numbers. THe reader is encouraged to go through [this](https://www.analyticsvidhya.com/blog/2020/03/one-hot-encoding-vs-label-encoding-using-scikit-learn/) resource to understand why data has to be encoded.
 
 ```py
 label_encoder = LabelEncoder()
@@ -145,33 +152,37 @@ for column in df.columns:
 Splitting the dataset into a target matrix `Y` and a feature matrix `X`,
 
 ```py
-X = df.drop('class',axis=1)
+X = df.loc[:, df.columns != 'class']
 Y = df['class']
 ```
 
-The dataset must be split into two - training data and testing data. Let us go ahead and split the data, 70% of it for training and 30% for testing and standardize the values.
+The dataset must be split into two - training data and testing data. Let us go ahead and split the data, 70% of it for training and 30% for testing and standardize the values. To understand why numerical data has to be standardized, the reader is requested to go through [this](https://www.section.io/engineering-education/introduction-to-scikit-learn-in-python/) article.
 
 ```py
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=100)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.3, random_state = 100)
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
 ### AdaBoost
-[AdaBoost](http://rob.schapire.net/papers/explaining-adaboost.pdf), short for Adaptive Boosting, was one of the first boosting methods that saw success in improving the performance of models. AdaBoost works on improving the areas where the base learner fails. A base learner is the first iteration of the model. Being a weak learner, it combines the predictions from short tress (one-level trees) called decision stumps. 
+[AdaBoost](http://rob.schapire.net/papers/explaining-adaboost.pdf), short for Adaptive Boosting, was one of the first boosting methods that saw success in improving the performance of models. AdaBoost works on improving the areas where the base learner fails. A base learner is the first iteration of the model. Being a weak learner, it combines the predictions from short tress (one-level trees) called decision stumps. AdaBoost was described as a "stagewise, additive modeling", where "additive" didn't mean a model fit added by covariates, but meant a linear combination of estimators. 
 
 ![Stumps](/engineering-education/boosting-algorithms-part-1/decisionstumps.png)
 
 *Source: [Edureka](https://www.edureka.co/blog/boosting-machine-learning/)*
 
-These decision stump algorithms are used to identify weak learners. Starting with one decision tree, the misclassified examples are penalized by increasing their weight (the weight is boosted), and another decision tree is built from the new and modified training data, which contain the weighted samples. New weak learners are added to the model sequentially to learn and identify tougher patterns. The data after every iteration is never the same and the possible misclassifications are pointed out for the algorithm to identify and learn from. The weights of the misclassifications are increased so that the next iteration can pick them up. The process is repeated for the specified number of iterations. The algorithm makes predictions based on the weak learner's majority vote coupled with their respective accuracies. AdaBoost is resistant to overfitting as the number of iterations increase and are most effective when it works on a binary classification problem. AdaBoost includes an extra condition where a model is required to have an error of less than 50% to maintain it, otherwise, the iterations are repeated until a better learner is generated.
+These decision stump algorithms are used to identify weak learners. Starting with one decision tree, the misclassified examples are penalized by increasing their weight (the weight is boosted), and another decision tree is built from the new and modified training data, which contain the weighted samples. New weak learners are added to the model sequentially to learn and identify tougher patterns. 
+
+The data after every iteration is never the same and the possible misclassifications are pointed out for the algorithm to identify and learn from. The weights of the misclassifications are increased so that the next iteration can pick them up. The process is repeated for the specified number of iterations. The algorithm makes predictions based on the weak learner's majority vote coupled with their respective accuracies. 
+
+AdaBoost is resistant to overfitting as the number of iterations increase and are most effective when it works on a binary classification problem. AdaBoost includes an extra condition where a model is required to have an error of less than 50% to maintain it, otherwise, the iterations are repeated until a better learner is generated.
 
 ![Adaboost](/engineering-education/boosting-algorithms-part-1/adaboost.png)
 
 *Source: [Towards Data Science](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)*
 
-AdaBoost for Regression works on the same principle, with the only difference being the predictions are made using the weighted average of the decision tree, with the weight being the accuracy of the learner against the training data. AdaBoost includes randomization in the construction of the models, so each time a piece of code is run, a slightly different model is generated. Stochastic learning algorithms produce different results every time the code is run, therefore, it is good practice to evaluate the performance of such algorithms by running the code a few times and taking the average of the results obtained.
+AdaBoost for Regression works on the same principle, with the only difference being the predictions are made using the weighted average of the decision tree, with the weight being the accuracy of the learner against the training data. AdaBoost includes randomization in the construction of the models, so each time a piece of code is run, a slightly different model is generated. [Stochastic](https://machinelearningmastery.com/stochastic-in-machine-learning/) learning algorithms produce different results every time the code is run, therefore, it is good practice to evaluate the performance of such algorithms by running the code a few times and taking the average of the results obtained.
 
 ### AdaBoost Implementation in Python
 The `sklearn` library in Python has an `AdaBoostClassifier` method which is used to classify the features as poisonous or edible. The method has the following parameters:
@@ -185,8 +196,8 @@ The `sklearn` library in Python has an `AdaBoostClassifier` method which is used
 Let us invoke an instance of the `AdaBoostClassifier` and fit it with the training data.
 
 ```py
-adaboost = AdaBoostClassifier(n_estimators=50,learning_rate=0.2).fit(X_train,Y_train)
-score = adaboost.score(X_test,Y_test)
+adaboost = AdaBoostClassifier(n_estimators = 50, learning_rate = 0.2).fit(X_train, Y_train)
+score = adaboost.score(X_test, Y_test)
 ```
 **Output**
 
@@ -201,13 +212,19 @@ Ever since the world was introduced to the XGBoost algorithm through this [paper
 
 *Source: [Machine Learning Mastery](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)*
 
-Breaking the process of boosting down from a mathematical standpoint, boosting is used to help find the minima of the 'n' features mapped in 'n' dimensional space, and most algorithms use gradient descent to find the minima. However, XGBoost uses a technique called the [Newton-Raphson method](https://en.wikipedia.org/wiki/Newton%27s_method), which provides a more direct route to the minima. Newton's Method uses the second derivative of the function which provides curvature information. This helps in the [faster minimization of functions](https://math.stackexchange.com/questions/1013195/why-is-newtons-method-faster-than-gradient-descent) when compared to [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent), which uses the first derivative. In XGBoost, the decision trees that have nodes with weights that are generated with less evidence are shrunk heavily. This clever method of eliminating nodes that aren't significant is reflected in the speed of the algorithm and its memory consumption.
+Breaking the process of boosting down from a mathematical standpoint, boosting is used to help find the minima of the 'n' features mapped in 'n' dimensional space, and most algorithms use gradient descent to find the minima. However, XGBoost uses a technique called the [Newton-Raphson method](https://en.wikipedia.org/wiki/Newton%27s_method), which provides a more direct route to the minima. Newton's Method uses the second derivative of the function which provides curvature information. This helps in the [faster minimization of functions](https://math.stackexchange.com/questions/1013195/why-is-newtons-method-faster-than-gradient-descent) when compared to [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent), which uses the first derivative. 
+
+In XGBoost, the decision trees that have nodes with weights that are generated with less evidence are shrunk heavily. This clever method of eliminating nodes that aren't significant is reflected in the speed of the algorithm and its memory consumption.
 
 ![Performance](/engineering-education/boosting-algorithms-part-1/performance.png)
 
 *Source: [Datascience.la](http://datascience.la/benchmarking-random-forest-implementations/)*
 
-XGBoost also comes with an extra randomization parameter, which reduces the correlation between the trees. Less correlation between classifier trees translates to better performance of the ensemble of classifiers. XGBoost solves the problem of overfitting by correcting complex models with [regularization](https://www.section.io/engineering-education/regularization-to-prevent-overfitting/). Regularized Gradient Boosting is also available in XGBoost with both L1 and L2 regularization. For enhancing the processing performance, the algorithm uses multiple cores in the CPU. Multiple decision trees are generated in parallel by the algorithm by utilizing all the cores in your CPU. The system is designed as block-like structures, which enables the layout of the data to be reused in subsequent iterations instead of computing it all over again. This is used to find split points in the tree where the data points have equal weights, which makes it difficult to handle. The algorithm uses a distributed weighted quantile sketch algorithm to handle weighted data. The XGBoost library for Python is written in C++ and is available for C++, Python, R, Julia, Java, Hadoop and cloud-based platforms like AWS and Azure.
+XGBoost also comes with an extra randomization parameter, which reduces the correlation between the trees. Less correlation between classifier trees translates to better performance of the ensemble of classifiers. XGBoost solves the problem of overfitting by correcting complex models with [regularization](https://www.section.io/engineering-education/regularization-to-prevent-overfitting/). Regularized Gradient Boosting is also available in XGBoost with both L1 and L2 regularization. 
+
+For enhancing the processing performance, the algorithm uses multiple cores in the CPU. Multiple decision trees are generated in parallel by the algorithm by utilizing all the cores in your CPU. The system is designed as block-like structures, which enables the layout of the data to be reused in subsequent iterations instead of computing it all over again. This is used to find split points in the tree where the data points have equal weights, which makes it difficult to handle. The algorithm uses a distributed [weighted quantile sketch algorithm](https://towardsdatascience.com/why-xgboost-is-so-effective-3a193951e289) to handle weighted data. 
+
+The XGBoost library for Python is written in C++ and is available for C++, Python, R, Julia, Java, Hadoop and cloud-based platforms like AWS and Azure.
 
 ### XGBoost Implementation in Python
 Unlike AdaBoost, XGBoost has a separate library for itself, which hopefully was installed at the beginning. Before importing the library and creating an instance of the `XGBClassifier`, let us take a look at some of the parameters required for invoking the `XGBClassifier` method.
@@ -228,7 +245,7 @@ Unlike AdaBoost, XGBoost has a separate library for itself, which hopefully was 
 
 ```py
 from xgboost import XGBClassifier
-xgboost = XGBClassifier(n_estimators=1000, learning_rate=0.05).fit(X_train, Y_train, early_stopping_rounds=5, eval_set=[(X_test, Y_test)],verbose=False)
+xgboost = XGBClassifier(n_estimators = 1000, learning_rate = 0.05).fit(X_train, Y_train, early_stopping_rounds = 5, eval_set = [(X_test, Y_test)],verbose = False)
 score_xgb = xgboost.score(X_test,Y_test)
 ```
 And the final result is
