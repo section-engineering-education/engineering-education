@@ -90,7 +90,7 @@ import train_test_split from sklearn.model_selection
 
 ```
 ### Features and labels
-After getting our feature and labels to be used by the model for training, we can split our data sets into two sets:
+After identifying our features and labels to be used in training the model, we can split our data sets into two:
 1. Train set
 This will be 75% of the data.
 2. Test Set
