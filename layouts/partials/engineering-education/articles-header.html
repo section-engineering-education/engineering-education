@@ -49,7 +49,7 @@
   <section >
     <div class="author-carousel">
       <div class="author-carousel-inner flex">
-        {{ range where .Site.Pages "Params.type" "authors" | shuffle }}
+        {{ range first 25 (where .Site.Pages "Params.type" "authors" | shuffle) }}
         <a class="author-carousel-item link-basic" href="{{ .Permalink }}">
           <div class="author-carousel-item-wrap fill-white flex cta-shadow flex-column">
             {{ range .Pages }}
@@ -75,12 +75,17 @@
       <div id="educationSearch"></div>
     </div>
   </div>
+
   <section class="enged-listing-categories flex align-start xs-pb-40 sm-pb-60 md-pb-80">
     <div class="section-container enged-listing-categories-container">
       <p class="xs-pb-10 text-18-medium text-testimonial">Topics</p>
       <ul class="list-unstyled list-flex flex-wrap data-filter-group">
         {{ $currentPage := . }}
+        {{ if hugo.Environment | eq "development" }}
+        <li class="xs-pr-20"><a href="/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        {{ else }}
         <li class="xs-pr-20"><a href="/engineering-education/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        {{ end }}
         {{ $baseurl := .Site.BaseURL }}
 
         {{ range .Site.Taxonomies.topics }}

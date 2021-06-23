@@ -7,7 +7,7 @@ title: Differences between Artificial Intelligence, Machine Learning, and Deep L
 description: This article explores Artificial Intelligence, Machine Learning and Deep Learning to better understand use cases in each.
 author: willies-ogola
 date: 2020-10-16T00:00:00-14:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
