@@ -67,7 +67,7 @@ We need to ensure that there are no missing values in our dataset. This provides
 df.isnull().isnull().sum()
 ```
 ### Checking for number of male and female
-Here we look for the total number of male and  female in our dataset.
+Here, we look for the total number of male and female in our dataset.
 ```python
 df[df.sex == 'F'].size
 df[df.sex == 'M'].size
