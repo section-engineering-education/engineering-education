@@ -1,23 +1,22 @@
-During application development, providing specific authorization flows should be easy for the users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords.
-Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+In an application, providing specific authorization flows will easy for the users to authenticate themselves with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
 
 ### Prerequisites
 
 To follow along with this tutorial, you'll need:
 
-1. A basic knowlegde of Vue.js.
+1. A basic knowledge of Vue.js.
 2. Node.js 10.x or newer, excluding 13 and 15. These versions are not tested with Quasar.
 3. NPM 5.10 or newer / Yarn 1.2 or newer.
 
 ### Setting up Quasar Vuejs app
 
-Before we setup the app, first check whether Quasar CLI is globally installed on your computer. Using the terminal run:
+Before we set up the app, let's check whether Quasar CLI is globally installed on your computer. Using the terminal run:
 
 ```bash
 quasar -v
 ```
 
-If you get a `command not found`, run the following command to install it:
+If you get a command not found error, run the following command to install it:
 
 ```bash
 npm install -g @quasar/cli
@@ -54,7 +53,7 @@ Using the arrow keys select the first CSS preprocessor:
 Select `Auto-import-in-use Quasar Components` and hit Enter.
 
 ```bash
-? Pick a Quasar components & directives import strategy
+? Pick Quasar components & directives import strategy
 ❯ * Auto-import in-use Quasar components & directives
     - also treeshakes Quasar; minimum bundle size
   * Import everything from Quasar
@@ -85,11 +84,11 @@ $ cd quasar-firebase-googleauth
 $ quasar dev
 ```
 
-After serving the app, the URL: http://localhost:8080/#/ opens in your browser to view the app. You'll see Quasar logo and the name "Quasar" at the center of the page.
+After serving the app, the URL: http://localhost:8080/#/ opens in your browser to view the app. You'll see the Quasar logo and the name "Quasar" at the center of the page.
 
 Open the created `quasar-firebase-googleauth` folder in your editor.
 
-Navigate to `quasar.conf.js` file and change the `vueRouterMode` from `hash` to `history`. This will remove the hash `/#/` from our app URL.
+Navigate to the `quasar.conf.js` file and change the `vueRouterMode` from `hash` to `history`. This will remove the hash `/#/` from our app URL.
 
 ### Creating our app components
 
@@ -139,11 +138,11 @@ Now, navigate to `router` folder, open `routes.js` and edit the routes to match 
 
 ```JavaScript
 children: [
-     path: '/',
-     component: () => import('layouts/MainLayout.vue'),
-      { path: '', component: () => import('pages/Auth.vue') },
-      { path: '/home', component: () => import('pages/Home.vue'), meta: { requiresAuth:true } }
-    ]
+ path: '/',
+ component: () => import('layouts/MainLayout.vue'),
+  { path: '', component: () => import('pages/Auth.vue') },
+  { path: '/home', component: () => import('pages/Home.vue'), meta: { requiresAuth:true } }
+]
 ```
 
 According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users. This will be well demonstrated after adding firebase to our application.
@@ -239,7 +238,7 @@ The methods `google()` will handle the firebase google authorization while the `
 
 ### Creating Forgot Password Component
 
-In this next stage, we're going to create the `ForgotPassword` component, in the `components` folder create `ForgotPassword.vue` file and paste the following code in it.
+In this next stage, we're going to create the `ForgotPassword` component, in the `components` folder create the `ForgotPassword.vue` file and paste the following code in it.
 
 ```HTML
 <template>
@@ -352,13 +351,14 @@ export default {
 
 To add firebase to our app, ensure the following is done correctly:
 
-1. Visit [firebase console](https://console.firebase.google.com/u/0/)
-2. Click `Add Project` to create a firebase project to connect to our app. Name it `quasar-google-auth` and click `Continue`
+1. Visit [firebase console](https://console.firebase.google.com/u/0/).
+2. Click `Add Project` to create a firebase project to connect to our app. Name it `quasar-google-auth` and click `Continue`.
 3. Disable Google Analytics for this project and click `Continue` to create our project.
-4. After the project is ready click `Continue`. It will take you to the project overview. Click the `web` icon, register an app name and name it `quasar-firebase-googleauth` and click `Register App`
+4. After the project is ready click `Continue`. It will take you to the project overview. Click the `web` icon, register an app name and name it `quasar-firebase-googleauth`, and click `Register App`.
 5. You'll be taken to `Step 2 - Add Firebase SDK` and copy the whole script.
 
 We're going to install firebase and create a boot file to initialize firebase before our app runs.
+
 Go back to our project, open the terminal, and run the below commands:
 
 ```bash
@@ -366,13 +366,13 @@ yarn add firebase
 quasar new boot firebase
 ```
 
-Navigate to `quasar.conf.js` file, search for `boot` it should be an empty array. Add `firebase.js` boot file in it as indicated below.
+Navigate to `quasar.conf.js` file and search for `boot`. It should be an empty array. Add the `firebase.js` boot file in it as indicated below.
 
 ```JavaScript
 boot: ['firebase'],
 ```
 
-Navigate to the `boot` folder, open `firebase.js` file. 
+Navigate to the `boot` folder and open the `firebase.js` file. 
 
 Paste the script you copied from the previous step for the firebase SDK. `firebase.js` file structure should resemble the one below.
 
@@ -438,7 +438,7 @@ const firebaseConfig = {
 
 ### Activate SignIn Methods
 
-We need to activate signin methods provided by firebase, we'll activate the `google` and `Email/Password` providers. Go back to the firebase console where we copied the firebase SDK script. click `Continue to console`, it will take you to the project overview.
+We need to activate sign-in methods provided by firebase, we'll activate the `google` and `Email/Password` providers. Go back to the firebase console where we copied the firebase SDK script. Click `Continue to console`, it will take you to the project overview.
 
 On the left sidebar click `Authentication`, then click `Set up sign-in method`. The image below displays the location of the sign-in providers.
 
@@ -450,11 +450,11 @@ For Email/Password click the first toggle button, don't enable the `passwordless
 
 ![Enable Email/Password Provider](/engineering-education/quasar-google-auth-with-firebase/emailpasswordprovider.png)
 
-As for the Google provider make sure to fill in your `Project support email ` preferably your email address.
+As for Google, the provider makes sure to fill in your `Project support email ` preferably your email address.
 
 ![Enable Google Provider](/engineering-education/quasar-google-auth-with-firebase/googleprovider.png)
 
-Once done, we can get started adding functionalities on our view.
+Once done, we can get started adding functionalities to our view.
 
 ### Adding sign-in with google provider functionality
 
@@ -464,7 +464,7 @@ Navigate to `AuthComponent.vue` file. Let's import firebase. As indicated below:
 import firebase from "firebase";
 ```
 
-In the `google()` method, we create a provider variable, containing the `GoogleAuthProvider` that's used to signin the user with google. Edit the `google()` method to resemble the code below.
+In the `google()` method, we create a provider variable, containing the `GoogleAuthProvider` that's used to sign in the user with google. Edit the `google()` method to resemble the code below.
 
 ```JavaScript
 google () {
@@ -479,19 +479,19 @@ google () {
 },
 ```
 
-This should be able to sign you in when you click the `Google` signin button.
+This should be able to sign you in when you click the `Google` sign-in button.
 
-Before clicking the button, navigate to `quasar.conf.js` file, search for `plugins` this should be an empty array. Add notify plugin, this will provide notification when authentication is done. The plugin should be added as a string. As indicated below:
+Before clicking the button, navigate to the `quasar.conf.js` file, search for `plugins` this should be an empty array. Add notify plugin, this will provide notification when authentication is done. The plugin should be added as a string. As indicated below:
 
 ```JavaScript   
 plugins: [ 'Notify' ]
 ```
 
-After adding the plugin, let's complete the other provider (Email/Password), which comes in handy, when a user does not want to sigin-in with google.
+After adding the plugin, let's complete the other provider (Email/Password), which comes in handy when a user does not want to sign in with Google.
 
 ### Adding the Email/Password provider functionality
 
-Open `AuthComponent.vue` file, in the `createUser()` method, this method will be used to create a new user to the database, paste the following code for the method.
+Open the` AuthComponent.vue` file, in the `createUser()` method, this method will be used to create a new user to the database, paste the following code for the method.
 
 ```JavaScript
 createUser(email, password) {
@@ -505,7 +505,7 @@ createUser(email, password) {
 },
 ```
 
-When a user is created it redirects the user to the home page, with `Sign In Success` notification at the bottom of the page.
+When a user is created it redirects the user to the home page, with a `Sign In Success` notification at the bottom of the page.
 
 Next, we're going to create a `signInExistingUser()` method, this signs in already registered users. Paste the following code for the method.
 
@@ -520,18 +520,19 @@ signInExistingUser (email, password) {
 },
 ```
 
-By now, you can sign-in with google or with email/password. If successful, you are redirected to the home page, containing a welcome message and a logout button.
+By now, you can sign in with Google or with your email/password. If successful, you are redirected to the home page, containing a welcome message and a logout button.
 
-If you're working locally, and have encountered a problem signing in, go to firebase console in the project, click `Authentication`, then `Sign-in method`, below `Sign-in providers`, you'll see `Authorized domains`. Click `Add domain` and add `localhost`. You can add custom domains when your app is hosted.
+If you're working locally, and have encountered a problem signing in, go to the firebase console in the project, click `Authentication`, then `Sign-in method`, below `Sign-in providers`, you'll see `Authorized domains`. Click `Add domain` and add `localhost`. You can add custom domains when your app is hosted.
 
 ![Customize Domain](/engineering-education/quasar-google-auth-with-firebase/domain.png)
 
-Next we're going to add the logout functionality once a user is signed in, they should be able to logout of the app.
+Next, we're going to add the logout functionality once a user is signed in, they should be able to log out of the app.
 
 ### Adding the Logout Functionality
 
-At this stage if you've done everything correctly, you're able to sign-in and get redirected to the home page, where you'll see a logout button.
-To add the logout function, navigate to `Pages` folder, open `Home.vue` file, at the beginning of the `<script>` tag `import firebase from "firebase"` just like in `AuthComponent.vue` file
+At this stage, if you've done everything correctly, you're able to sign in and get redirected to the home page, where you'll see a logout button.
+
+To add the logout function, navigate to the `Pages` folder, open `Home.vue` file, at the beginning of the `<script>` tag `import firebase from "firebase"` just like in the `AuthComponent.vue` file
 
 In the method `logout` replace its code to resemble the code below:
 
@@ -545,12 +546,14 @@ logout() {
   .catch(error =>  console.log('error',error))
 }  
 ```
+
 This method redirects the user to the auth route and notifies them they've been signed out.
 
 ### Adding the Forgot Password Functionality
 
-Incase a user forgets their passwords, they should be able to reset to a new one and interact with our app. Let's take care of that.
-Navigate to the `ForgotPassword.vue` file, it has a method `resetPassword` which we added sometime earlier. This method will help us send an email for password resetting.
+In case a user forgets their passwords, they should be able to reset to a new one and interact with our app. Let's take care of that.
+
+Navigate to the `ForgotPassword.vue` file, it has a method `reset password which we added sometime earlier. This method will help us send an email for password resetting.
 
 Below is the following code for the method:
 
@@ -569,7 +572,7 @@ If a user enters their email and it exists in the database, an email is sent to 
 
 ### Access User Information 
 
-When a user is logged in, we can access information about them and display with a welcome home message. Navigate to the `Home.vue` file. Let's make some few changes.
+When a user is logged in, we can access information about them and display it with a welcome home message. Navigate to the `Home.vue` file. Let's make a few changes.
 
 At the `<template>` tag edit the welcome message to resemble this below:
 
@@ -577,7 +580,7 @@ At the `<template>` tag edit the welcome message to resemble this below:
 Welcome Home {{ user }} {{ email }}
 ```  
 
-In the `<script>` tag add two data properties to hold the user's name and email that has signed-in successfully. Edit the data function, to resemble below.
+In the `<script>` tag add two data properties to hold the user's name and email that has signed in successfully. Edit the data function, to resemble below.
 
 ```JavaScript
 data () {
@@ -605,13 +608,13 @@ created() {
 methods: {...}
 ```
 
-When a user signs-in either with google or email/password, it will display the welcome message alongside their name and email, or with their email if the username is null.
+When a user signs in either with google or email/password, it will display the welcome message alongside their name and email, or with their email if the username is null.
 
 ### Final component touches
 
 Navigate to the `layouts` folder, open `MainLayout.vue`, delete the following to remove the left side drawer:
 
-1. The whole drawer tag indicated as below.
+1. The whole drawer tag is indicated as below.
 
   ```HTML
   <q-drawer>
@@ -625,7 +628,7 @@ Navigate to the `layouts` folder, open `MainLayout.vue`, delete the following to
   import EssentialLink from 'components/EssentialLink.vue
   ```
    
-3. The `components` object in the `script` tag indicated as below.
+3. The `components` object in the `script` tag is indicated as below.
 
   ```JavaScript
   components: { EssentialLink },
@@ -636,9 +639,11 @@ Navigate to the `layouts` folder, open `MainLayout.vue`, delete the following to
 Firebase implementation of google authentication with standards such as the OAuth 2.0 has proven to be one of the best solutions to providing authentication for applications.
 
 Be it a large or a small scale application, letting a 3rd party application handle your users' sensitive information is reliable, shortens application development time and the 
-most important, it enables integration of other social media authentications such as Facebook, Twitter and Github.
+most important, it enables the integration of other social media authentications such as Facebook, Twitter, and Github.
 
-This makes new users sign-in to your applications with ease. 
-Resulting to more users accessing services your application offers.
+This makes new users sign in to your applications with ease. 
+Resulting in more users accessing services your application offers.
  
-I have provided [link to the repo](https://github.com/EspiraMarvin/quasar-firebase-googleauth-app)  and  [link to the demo app](https://quasar-firebase-googleauth-app.vercel.app/). That is it.​Happy Coding!
+I have provided [link to the repo](https://github.com/EspiraMarvin/quasar-firebase-googleauth-app)  and  [link to the demo app](https://quasar-firebase-googleauth-app.vercel.app/). 
+
+Happy Coding!
