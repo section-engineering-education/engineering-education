@@ -179,7 +179,7 @@ def predict_gender(data):
   result = gender_clf.predict(vect)
   return result
 ```
-6. Adding styling for the app
+Styling the app
 
 We will use material UI for styles and icons for our app.
 ```python
