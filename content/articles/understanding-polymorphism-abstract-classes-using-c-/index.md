@@ -7,29 +7,23 @@ According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamen
 With polymorphism, you can define a single abstract class and reshape it in different ways to suit your methods & ideas. 
 
 ### Table of contents
-
 - Understand the concept of polymorphism.
 - Understand abstract classes.
 - Multiple examples of polymorphism.
-
+- 
 ### Prerequisites
 To follow this article along - the reader will need the following:
-
 - A basic understanding of C# programming language.
 - A basic understanding of Inheritance in C# programming language.
-
 if you're new to Inheritance, you should check this tutorial that would help you understand the concept of it [here](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/).
 
 ### Abstract classes
 Abstract classes are too generic to be instantiated, and they are used as base classes.
 Abstract class definitions are not complete, derived classes must be defined as the missing pieces, and they could contain abstract methods or abstract properties.
-
 The following example will explain how we can define an abstract class in order to make a Payroll System Using Polymorphism.
 
 ### Employee class
-
 This is an abstract generic class that will be used later on for the other inherited classes.
-
 First, we will define the Constructor, `set()` & `get()` methods of the class.
 ```c#
 public abstract class Employee
@@ -60,7 +54,6 @@ public abstract class Employee
       }
 ```
 the following piece of code will define the `ToString()` & `Earnings()` methods to use later.
-
 ```c#
  // return a string of the Employee information
       public override string ToString()
@@ -73,9 +66,7 @@ the following piece of code will define the `ToString()` & `Earnings()` methods 
     }
 ```
 ### Boss class
-
 This class will use the previous class and use its properties & methods for the definition of a boss payroll.
-
 ```c#
    public class Boss : Employee
     {
@@ -111,12 +102,8 @@ The following piece of code will override the `ToString()` & `Earnings()` method
       }
 ```
 ### Commission worker class
-
 This class will use the main abstract class and use its properties & methods for the definition of a Commission worker payroll.
-
-
 The following piece of code will define the Constructor of the class, set & get for the `WeeklySalary`, `commissionValue` & the `quantityValue`.
-
 ```c#
  public class CommissionWorker : Employee
     {
@@ -168,15 +155,9 @@ the following piece of code will override the `ToString()` & `Earnings()` method
       {return "CommissionWorker: " + base.ToString();} 
    } // end of class 
 ```
-
 ### PieceWorker class
-
-
 This class will use the main abstract class and use its properties & methods for the definition of a PieceWorker payroll.
-
-
 The following piece of code will define the Constructor of the class, set & get for the  `wagePerPiece` & `quantity`.
-
 ```c#
  public class PieceWorker : Employee 
     {
@@ -207,7 +188,6 @@ The following piece of code will define the Constructor of the class, set & get 
                quantity = value;}}
 ```
 the following piece of code will override the `ToString()` & `Earnings()` methods to store the output.
-
 ```c#
   // Earnings of PieceWorker
         public override decimal Earnings()
@@ -219,9 +199,7 @@ the following piece of code will override the `ToString()` & `Earnings()` method
    }
 ```
 ### Polymorphism testing
-
 In main, we will create objects of each employee class we have and output the information of each object to test out each one of them.
-
 ```c#
 static void Main(string[] args)
         {
@@ -257,7 +235,6 @@ This piece of code will return a string of each employee class.
         }} 
 ```
 ### Polymorphism output
-
 ```c#
 Boss: Khaled Sans earned $800.00
 Boss: Khaled Sans earned $800.00
@@ -268,6 +245,11 @@ CommissionWorker: Susan Jons earned $540.00
 PieceWorker: samir Muan earned $420.00
 PieceWorker: samir Muan earned $420.00
 ```
-
 ### Conclusion
 In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Dont forget to testout the code to fully understand how it works.
+
+### Further reading
+1. https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/.
+2. https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/.
+3. https://www.section.io/engineering-education/getting-started-with-game-development-windows-forms/.
+
