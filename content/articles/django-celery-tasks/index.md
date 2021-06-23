@@ -9,7 +9,7 @@ In this tutorial, we will learn how to use Celery in a Django application to per
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Workers](#workers)
-- [Message Queue](#message-queue)
+- [Celery Message Queue](#celery-message-queue)
 - [Celery](#celery)
 - [Project Setup](#project-setup)
   - [Adding Celery configuration to Django application](#adding-celery-configuration-to-django-application)
@@ -30,8 +30,8 @@ In this tutorial, we will learn how to use Celery in a Django application to per
 The background-based task-servers are called `workers`. In an application with one of a few web servers, we can have several workers that perform the heavy computations in the background and send back the response to the application through webhooks or callbacks.
 
 
-### Message Queue
-A queue is a data structure that works on the first-in, first-out principle. We assign work to the workers through a message queue. The worker process the tasks in the order in which they were queued.
+### Celery Message Queue
+A queue is a data structure that works on the first-in, first-out principle. We assign work to the workers through a message queue. The tasks are processed by the worker in the order in which they were queued.
 
 > The queue ensures that each worker processes a single task at a time and only a single worker processes a particular task.
 
@@ -65,7 +65,7 @@ Functions of Celery
    $ pip install celery
    ```
 #### Adding Celery configuration to Django application
-1. Create a new file named `celery.py` in the project folder where `settings.py` file exists.
+1. In the project folder where `settings.py` file exists, create a new python file named `celery.py`.
 2. Add the code snippet below to the file created above.
    ```python
     from __future__ import absolute_import, unicode_literals
@@ -92,10 +92,12 @@ from .celery import app as celery_app
 __all__ = ['celery_app']
 ```
 The above code snippet imports Celery every time our application starts.
+
 #### Creating a Celery task
 Let's create a Django app from where we will set up the Celery task.
 
-1. Execute the command below to create a Django app named `task`.
+1. To create a new Django app, execute the command below. In the comand, `task` is the name of our app.
+   
    ```bash
    $ python manage.py startapp task
    ```
@@ -128,8 +130,9 @@ def name_of_your_function(optional_param):
     pass  # do some long running task
 ```
 #### Creating the HTML files.
-Create a directory named `templates` in the root project directory.
+Create a folder named `templates` in the projects root directory.
 In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
+
 1. In the `task` directory created above, create a file named `base.html` and add the code snippets below into it.
    
    ```html
