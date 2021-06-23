@@ -74,7 +74,7 @@ df[df.sex == 'M'].size
 df_names = df
 ```
 ### Replacing the data F and M with 0 and 1
-This is done so that provide a binary output of either 0 or 1, 0 to reprsent female, 1 to represent male.
+This is done so as to provide a binary output of either 0 or 1, 0 to represent female, 1 to represent male.
 ```python
 df_names.sex.replace({'F':0,'M':1},inplace=True)
 Xfeatures =df_names['name']
