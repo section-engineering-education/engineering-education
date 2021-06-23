@@ -1,0 +1,1 @@
+Amos is a Comptuter science undergraduate student. He is interested in Artificial Intelligence and Machinne Learning.
