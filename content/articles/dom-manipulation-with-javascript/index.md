@@ -65,6 +65,13 @@ Open a new file in an empty folder, name it `index.html` and add the above HTML 
 
 ![home_page_screenshot](/engineering-education/dom-manipulation-with-javascript/home-page-screenshot.png)
 
+### Understanding the DOM
+To Understand the DOM, let's draw the structure for our HTML page.
+
+![dom_example](/engineering-education/dom-manipulation-with-javascript/dom-example.png)
+
+This structure is not a complete capture of our HTML page, but it shows a detailed example of the DOM. As our web page got completely loaded, the browser created this type of structure for the page. With JavaScript, we can easily modify the DOM, change styles, add HTML attributes and so on. We will be taking a look at them in the following sections.
+
 ### Adding Element to the DOM
 It would be awesome if we could add additional task through our form and insert them inside our HTML list element. This is possible through JavaScript. 
 
