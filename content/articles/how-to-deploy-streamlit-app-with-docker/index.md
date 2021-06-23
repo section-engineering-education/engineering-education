@@ -123,7 +123,7 @@ def predict(a):
 ```
 
 ### saving the model into a pickle file
-We shall save our model using Joblib, by converting our model into a byte stream which will be saved into a pickle file named 'naivemodel.pkl'
+We shall save our model using Joblib. We shall accomplish this by converting our model into a byte stream which will be saved into a pickle file named 'naivemodel.pkl'.
 ```python
 import joblib from sklearn.externals
 naiveBayesModel = open("model/naivemodel.pkl","wb")
