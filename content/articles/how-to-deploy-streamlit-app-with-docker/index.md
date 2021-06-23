@@ -135,7 +135,7 @@ naiveBayesModel.close()
 Streamlit is a framework that is used by different machine learning engineers and data scientists to build UIs and powerful machine app from the trained model.
 These apps can be used for visualization by providing and interactive interfaces to be used by the user.
 
-They provide an easy way to build charts, tables, and different figures according to your application needs, they also utilize the models that have been saved or picked into the app to make a prediction.
+They provide an easy way to build charts, tables, and different figures to meet your application's needs. They also utilize the models that have been saved or picked into the app to make a prediction.
 
 ### How to install streamlit
 Use the following command:
