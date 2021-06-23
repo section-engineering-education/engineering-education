@@ -1,5 +1,21 @@
-Logging is a critical part of the application development process. It lets you know what happened to your application when things go wrong. But logging in today's world of containerized apps is not the same as logging in traditional applications. Effective logging of containerized apps such as Docker involves logging the application, the host OS, and the Docker service.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /top-5-docker-logging-practices/
+title: Top 5 Docker logging practices
+description: In this article, we will learn about the Docker logging approaches, Docker logging challenges, and finally the pros and cons for the different logging methods.
+author: bashiir-isla
+date: 2021-06-23T00:00:00-13:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/top-5-docker-logging-practices/hero.png
+    alt: Docker logging Hero Image
+---
+Logging is a critical part of the application development process. It lets you know what happened to your application when things go wrong. But logging in today's world of containerized apps is not the same as logging in traditional applications. Effective logging of containerized apps such as Docker involves logging the application, the host OS, and the Docker service.
+<!--more-->
 A clever application of various logging approaches and techniques will see your Dockerized apps logged effectively. In this article, we will explain what Docker logging is, highlight the challenges facing Docker logging, and have a look at the top five Docker logging practices.
 
 ### What is Docker logging?
@@ -97,3 +113,6 @@ There are many approaches to logging your Docker. Each of them has its strengths
 [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
 
 [Top 7 Docker Monitoring Tools](/engineering-education/top-7-docker-container-monitoring-tools/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
