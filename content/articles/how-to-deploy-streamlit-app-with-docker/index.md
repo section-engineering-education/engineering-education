@@ -166,7 +166,7 @@ from PIL import Image
 ```
 4. Unplicking the model.
 This will help to load our model so that it can be used for gender prediction.
-Here the byte stream from the 'naivemodel.pkl' file is converted into an object hierachy so that it can now be used by the streamlit app.
+Here, the byte stream from the 'naivemodel.pkl' file is converted into an object hierachy so that it can be used by the streamlit app.
 ```python
 gender_nv_model = open("models/naivemodel.pkl","rb")
 gender_clf = joblib.load(gender_nv_model)
