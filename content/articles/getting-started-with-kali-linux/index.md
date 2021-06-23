@@ -6,7 +6,7 @@ url: /getting-started-with-kali-linux/
 title: Getting Started with Kali Linux
 description: In this article, we will learn about Kali Linux. It is a penetration-testing platform that provides a variety of security auditing tools used by security specialists and hackers in day-to-day encounters.
 author: meshack-kimosop
-date: 2021-06-23T00:00:00-12:30
+date: 2021-06-23T00:00:00-13:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
