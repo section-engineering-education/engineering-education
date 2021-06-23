@@ -62,7 +62,7 @@ df.dtypes
 ```
 
 ### Checking for missing Values
-Ensuring that there are no missing value in our dataset, this provides a well structed data that will optimize on training of our model.
+We need to ensure that there are no missing values in our dataset. This provides a well structed data that will optimize on training of our model.
 ```python
 df.isnull().isnull().sum()
 ```
