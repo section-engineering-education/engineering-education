@@ -32,7 +32,7 @@ We need the following packages
 2. [Pandas](https://pandas.pydata.org/)
 3. [Numpy](https://numpy.org/)
 
-The following command is used to install the above package.
+The following command is used to install the above packages.
 
 ```bash
 pip install sklearn
