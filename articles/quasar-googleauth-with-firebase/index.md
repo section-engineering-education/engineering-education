@@ -28,15 +28,6 @@ If you are using yarn, run:
 yarn global add @quasar/cli
 ```
 
-To create a new Quasar app, run the command below:
-
-```
-If you are using yarn, run:
-```bash
-yarn global add @quasar/cli
-```
-
-
 ### Create a quasar-firebase-app with Quasar
 
 To create a new Quasar app, run the command below:
