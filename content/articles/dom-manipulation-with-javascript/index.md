@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/dom-manipulation-with-javascript/hero.jpg
     alt: JavaScript example image
 ---
-The Document Object Model (DOM) is a tree-like structure showing a hierarchical relationship between different HTML elements. The DOM can also be referred to as a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
+The Document Object Model (DOM) is a tree-like structure showing a hierarchical relationship between different HTML elements. According to `w3.org`, the DOM can be referred to as a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
 <!--more-->
 
 For instance, we can have a `<ul>` tag which in this context could be the parent tag and inside have multiple `<li>` tags which serve as the children. The body tag could also serve as the grandparent and so on and so forth. 
@@ -173,6 +173,9 @@ Try deleting some tasks.
 Glad you reached the end of this tutorial. In this tutorial, we saw how to manipulate the DOM using JavaScript. We created a to-do list application in the process, with the ability to add a task and delete a task. With these tools, we brought our webpage to life by making it more interactive.
 
 Happy coding!
+
+### References
+- [w3.org](https://www.w3.org/TR/WD-DOM/introduction.html)
 
 ---
 Peer Review Contributions by: 
