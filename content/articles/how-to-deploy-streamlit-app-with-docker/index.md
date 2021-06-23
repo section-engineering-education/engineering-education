@@ -206,7 +206,7 @@ Your File structure should be as shown:
 
 ```
 ### Designing the user interface
-This is where we use streamlit different tools and code syntaxt to design a nice UI
+This is where we use different tools from streamlit to design a nice UI
 
 ```python
 def main():
