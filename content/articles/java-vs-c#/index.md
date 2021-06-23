@@ -12,7 +12,7 @@ In this article, we shall look at:
     4. Application
 
 ### History of Java
-Java is an object-oriented programming language for developing a desktop application and web application. It needs Java Runtime Environment (JRE) to run on a machine. In Java, developers can use the principle of write once, run anywhere. Java was invented in 1995 and it requires Java Development Kit to run on a machine.
+Java is an object-oriented programming language for developing a desktop application and web application. It needs Java Runtime Environment(JRE) to run on a machine. In Java, developers can use the principle of write once, run anywhere. Java was invented in 1995 and it requires Java Development Kit(JDK) to run on a machine.
 
 ### History of C#
 C# is a modern Object-Oriented Programming language which is used for developing softwares of many computer systems due to its portability. C# was invented in 2002. Programs written in C# utilize the .NET Framework to run on a machine.
@@ -20,13 +20,10 @@ C# is a modern Object-Oriented Programming language which is used for developing
 ### Characteristics of Java
 1. It is Simple - Java is simple compared to other languages.
 2. It Is Object-Oriented - Java is an Object-Oriented Programming language, everything revolves around the object.
-3. It is Interpreted - To execute Java programs, you'll require an interpreter. The programs
-are compiled into [bytecode](https://techterms.com/definition/bytecode) which is the Java Virtual Machine code. The bytecode is platform-independent, meaning it can run on any machine with a Java interpreter(part
-of Java Virtual Machine)(JVM).
-4. It is Robust - This means that the Java language is reliable. No programming language assures
-complete dependability. Java compilers can identify any errors that would appear during execution in other languages, thus it emphasizes early error checking.
-5. It is Secure - Thias is because Java programs run inside a sandbox which is a virtual machine.
-6. It is Portable - Java does not need to be recompiled to run on any platform. This is because Java is architecture-neutral, making it to be portable.
+3. It is Interpreted - To execute Java programs, you'll require an interpreter. The programs are compiled into [bytecode](https://techterms.com/definition/bytecode) which is the Java Virtual Machine(JVM) code. The bytecode is platform-independent, meaning it can run on any machine with a Java interpreter(part of the JVM).
+4. It is Robust -Robust means reliable and no programming language can assure reliability. Java puts a lot of emphasis on early checking for possible errors, as Java compilers can detect many problems that would first show up during execution time in other languages.
+5. It is Secure - This is because Java programs run inside a sandbox which is a virtual machine.
+6. It is Portable - Java is architecture-neutral. Meaning, it does not need to be recompiled to run on any platform, making it portable.
 
 ### Characteristics of C#
 1. Simple - C# language is rich in sets of library functions, data types and provides a structured approach that helps to break problems into parts.
@@ -74,16 +71,18 @@ The `using` [directive](https://docs.microsoft.com/en-us/dotnet/csharp/language-
 In C# language, to output a text, we use `Console.WriteLine()` while in Java, we use `System.out.println()`.
 
 ### Installation comparision
-This is another consideration that every programmer should look at i.e the requirement of each language to run on a machine. Let's look at what each language requires for it to run on a machine.
+This is another consideration that every programmer should look at i.e the requirement of each language to run on a machine. Let's look at what each language requires for it to run on a machine. 
 
 ### Java
-Java requires JDK(Java Development Kit) to run it on a machine and executes on JRE (Java Runtime Environment). Java source code is converted into bytecode which is then compiled into machine code for it to run on a machine.
+Java requires JDK(Java Development Kit) to run it on a machine and executes on JRE (Java Runtime Environment). Java source code is converted into bytecode which is then compiled into machine code for it to run on a machine. To install Java on a machine, look at [this](https://www.liquidweb.com/kb/how-to-install-java-on-ubuntu-windows-and-macos/) article.
 
 ### C#
-C# utilize the .NET Framework to run on a machine and executes on CLR (Common Language Runtime). C# source code is interpreted into bytecode which is then compiled into machine code by the CLR. 
+C# utilize the .NET Framework to run on a machine and executes on CLR (Common Language Runtime). C# source code is interpreted into bytecode which is then compiled into machine code by the CLR. For C# istallation, look at [this](https://www.section.io/engineering-education/introduction-to-csharp/) article
 
 ### Cross-platform 
 In this heading, we should ask ourselves, which of these languages is easily compatible with other platforms?. Let's answer the question.
+Cross-platform is the ability of a software to be used on different types of platforms or with different software packages.
+
 
 ### Java
 Java's byte code makes it extremely cross-platform i.e when a Java program is compiled, it can run on all platforms. This proves the principle of "write once, run everywhere".
@@ -95,10 +94,10 @@ C# should improve on this feature when compared to Java. It does not run on all 
 In this part, we shall look at where each of these languages can be used.
 
 ### Java
-Java is efficient and good in building [highly concurrent applications](https://www.quora.com/What-are-some-examples-of-highly-concurrent-systems), web-based Applications, [Distributed Applications](https://techvidvan.com/tutorials/applications-of-java/) and so much more.
+Java is efficient and good in building [highly concurrent applications](https://www.quora.com/What-are-some-examples-of-highly-concurrent-systems) because it works with several threads to achieve parallel processing. Concurrency helps to perform certain task faster as these tasks can be divided into subtasks and these subtasks can be executed in parallel. Java is also good in web-based Applications, [Distributed Applications](https://techvidvan.com/tutorials/applications-of-java/).
 
 ### C#
-C# is efficient and widely used for Mobile development, Game development, and developing Desktop applications.
+C# is efficient and widely used for Mobile development, Game development, and developing Desktop applications. Most of the games today are programmed using Unity game engine which is supported by C# language.
 
 ### Conclusion
 From the comparison above, it is evident that one Language may work on one project but may not work on another different project. Thus, when choosing between Java and C#, it is important to consider the needs and requirements of the two languages.
