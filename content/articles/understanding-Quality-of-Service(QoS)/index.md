@@ -19,28 +19,31 @@ QoS is an essential set of technologies that allows one to optimize their networ
 
 ### Prequesties
 
-You should know:
+Before reading any further, I recommend that you should have some understanding on:
 
 -[Network traffic](https://www.fortinet.com/resources/cyberglossary/network-traffic)
 
 -[IP-packets](https://networklessons.com/quality-of-service/ip-precedence-dscp-values)
 
--[layers of the OSI model focus on layer 2 and 3](https://www.networkworld.com/article/3239677/the-osi-model-explained-and-how-to-easily-remember-its-7-layers.html)
+-[Layers of the OSI model focus on layer 2 and 3](https://www.networkworld.com/article/3239677/the-osi-model-explained-and-how-to-easily-remember-its-7-layers.html)
 
 -[UDP and TCP protocols](https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html)
 
 -[IP precedence and type of service fields](https://networklessons.com/quality-of-service/ip-precedence-dscp-values)
 
 ### Definition of terms
->- Buffers- is a physical storage area that temporarily holds data as it’s transferred from one location to another.
 
->- Jitters- it is the delay inconsistency between packets that differs overtime when a signal wanes. 
+Below are some of the terms you shall encounter through this article:
 
->- Latency- is the time it takes for a packet to be sent from its source to its destination. 
+>- Buffers- these are physical storage areas that temporarily hold data as it’s transferred from one location to another.
 
->- Bit rate- it is the number of bits sent over a network per second.
+>- Jitters- this refers to the delay inconsistency between packets that differs over time when a signal wanes. 
 
->- packet rate is the number of packets being sent per second.
+>- Latency- latency is the time it takes for a packet to be sent from its source to its destination. 
+
+>- Bit rate- the number of bits sent over a network per second.
+
+>- Packet rate- the number of packets being sent per second.
 
 >- An ingress queue- it holds packets till a router’s CPU pushes the data to a suitable interface. 
 
@@ -48,7 +51,7 @@ You should know:
 
 ### Understanding Quality of Service (QoS)
 
-Networks have become an important asset in today’s world. Networks allow their users to share files, data and other types of information. Thus, you can optimize your network to ensure that it performs at its full potential. QoS is an essential set of technologies that allows a user to optimize their network so that it can run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources. In this article we will explore what is Quality of Service and its importance to a network.
+Networks have become an important asset in today’s world. Networks allow their users to share files, data, and other types of information. Thus, you can optimize your network to ensure that it performs at its full potential. QoS is an essential set of technologies that allows a user to optimize their network so that it can run at its full potential. The importance of having a peak-performing network is it ensures that intensive applications run efficiently due to the availability of adequate network resources. In this article, we will explore what is Quality of Service and its importance to a network.
 
 ### What Is QoS 
 
@@ -58,31 +61,31 @@ Networks have become an important asset in today’s world. Networks allow their
 
 QoS utilizes a set of various techniques to guarantee the optimal performance of critical applications such as VoIP, video conferencing, and online gaming. Some of these techniques are the resource reservation protocol (RSVP), queuing, and traffic marking.  
 
-#### a.Traffic Marking
+#### Traffic Marking
 
 QoS works by identifying the various applications or activities that would benefit from managing a network’s traffic. After identifying these applications, QoS marks the specific traffic that needs managing. Marking the network’s traffic allow routers to create separate virtual queues for each application. There are various ways in which routers mark network traffic. These ways include Class of Service (CoS) and Differentiated Services Code Point (DSCP). 
 
-#### Class of Service (CoS)
+##### Class of Service (CoS)
 
 Class of service is a 3-bit field found in an Ethernet frame header when one uses the 802.1q networking standard that supports virtual local area networks (VLAN) on an 802.3 Ethernet network.
 
-COS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Adjusting the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
+CoS marks a network’s traffic at layer two by altering the class of service bits found in frame headers. Adjusting the class of service bits allows QoS to know what traffic to manipulate and how to manipulate the traffic. Thus, bandwidth-intensive applications will fall first in the queue as routers will reserve the network’s bandwidth for these applications.
 
-#### Differentiated Service Code Point (DSCP)  
+##### Differentiated Service Code Point (DSCP)  
 
 **DSCP** is a section in an IP packet that assigns varying levels of services to a network’s traffic. Giving varying levels of service is achieved through tagging a DSCP code to each packet on the network and matching it with the equivalent level of service. DSCP marks packets in the layer three packet header.
 
-#### b. Queuing
+#### Queuing
 
 Queuing is the process of making policies that provide special treatment to various data streams over others. The process is made possible by utilizing special high-performance memory buffers found in switches and routers called queues. 
 
-#### What is a Queue
+##### What is a Queue
 
 A **Queue** is a high-performance buffer in a router or a switch that holds traffic until it can be processed or serialized. Routers and switches have two types of hardware queues, ingress (inbound) and egress (outbound) queues.
 
 Hardware queues are characterized as standard or strict priority queues. The standard queues treat all traffic as equal. In these queues, no traffic receives special treatment. On the contrary, the strict priority queues are dedicated to high priority traffic; thus, QoS-enabled interfaces utilize this type of queue to process high priority packets.
 
-#### How High Priority Traffic is Processed
+##### How High Priority Traffic is Processed
 
 When routers receive traffic, any packets marked with a higher DSCP or IP value than others are directed into the strict priority queues. Here, traffic marked as high priority is processed faster than other traffic, thus increasing your network’s performance and reducing the chances of routers dropping packets during congestion.
 
@@ -93,7 +96,7 @@ RSVP is a transport layer protocol that reserves network resources to get varyin
 
 - **Reservation messages** are sent from a receiver to a sender along the route of the path message. These messages identify the resources required by a data stream.
 
-#### Importance of QoS
+### Importance of QoS
 
 1.  It guarantees the optimal performance of applications that need high bandwidth for real-time traffic. Applications such as video conferencing applications, VoIP, streaming applications, and online gaming are some of the particular applications that are bandwidth-intensive and highly sensitive to jitters and latency.
 
@@ -106,15 +109,13 @@ Furthermore, the UDP protocol differs from the TCP protocol because the protocol
 
 ### Conclusion
  
-In this article, we learned what Quality of service (QoS) is, how QoS utilizes techniques such as traffic marking, queuing, and the resource reservation protocol to guarantee the optimal performance of critical applications on a network. Additionally, we learned the importance of having QoS enabled on a network. I consider QoS as an ensential technology that should be inbuilt into any router or switch that will be produced in  the coming future. I found learning about the technology interesting and facinating. I hope you gained some insight on how you can speed up your network without the need of upgrading your network's bandwidth.
+In this article, we learned what Quality of service (QoS) is, how QoS utilizes techniques such as traffic marking, queuing, and the resource reservation protocol to guarantee the optimal performance of critical applications on a network. Additionally, we learned the importance of having QoS enabled on a network. I consider QoS as an essential technology that should be inbuilt into any router or switch that will be produced in the future. I found learning about these technologies to be fascinating. I hope you gained some insight on how you can speed up your network without the need of upgrading your network's bandwidth.
 
-Until next time,happy reading!
+Until next time, happy reading!
 
 ### Further reading
-- [Learn more about network layers.](https://www.geeksforgeeks.org/layers-of-osi-model/)
+1. [Learn more about network layers.](https://www.geeksforgeeks.org/layers-of-osi-model/)
 
-- [Learn more about data packets.](https://www.techrepublic.com/article/exploring-the-anatomy-of-a-data-packet/) 
+2. [Learn more about data packets.](https://www.techrepublic.com/article/exploring-the-anatomy-of-a-data-packet/) 
 
-- [Learn more about jitters and latency](https://www.itprc.com/jitter-vs-latency/)
-
-
+3. [Learn more about jitters and latency](https://www.itprc.com/jitter-vs-latency/)
