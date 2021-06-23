@@ -101,7 +101,7 @@ y = df_names.sex
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 ```
 ### Creating the naive bayes classifier model.
-We import Naive Bayes Classifier algorothm from the scikit-learn package, the model will now be used to fit and train our model.
+We import Naive Bayes Classifier algorithm from the scikit-learn package. The model will be used to fit and train our model.
 ```python
 import MultinomialNB from sklearn.naive_bayes
 clf = MultinomialNB()
