@@ -246,7 +246,7 @@ In the above code we are using streamlit to design how our user interface will l
 - Styling our app by adding the app's background color, text color and the general structure of our app.
 - Adding a text input area where a user can key in a name to be predicted as either male or female.
 - Addding a button that a user can use to submit the input.
-So will set our app with the different styles:
+We set the following styles on our app:
   Backgrond-color: blue
   Text color: grey,
   Padding: 10px,
