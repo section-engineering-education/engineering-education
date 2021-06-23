@@ -6,7 +6,7 @@ url: /data-encryption-and-decryption-in-node-js-using-crypto/
 title: Data Encryption and Decryption in NodeJS using Crypto 
 description: This article provides a detailed guide on how to use the crypto module to implement encryption and decryption in a Node.js application.
 author: judy-nduati
-date: 2021-06-23T00:00:00-11:00
+date: 2021-06-23T00:00:00-09:50
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
