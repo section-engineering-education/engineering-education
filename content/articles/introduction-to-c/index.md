@@ -38,6 +38,7 @@ C is a practical programming language. In the 1970's "C" was developed by Dennis
 
 - Why this language named C?
   - Before "C" there is a language called "B" and Some of the Options are derived from "B"
+  - B developed at Bell Labs circa 1969 and it was developed by Ken Thompson and Dennis Ritchie and it is used to implement the system software
 - What is the purpose of the C language?
   - Early "C" is only used to design and implement the system software. But later some features were add to "C" then it is used to develop portable application software too.
 
@@ -74,7 +75,7 @@ main()
 
 - Functions in C
   - `C` program contains one or more functions.
-  - A group of `C` statements and that statements executed together is known as Function 
+  - A group of `C` statements and that are executed together is known as Function 
   - `main()` is the most important function and is a part of every `C` program
 
 ### Installing C in our System
@@ -91,6 +92,7 @@ main()
     `$ Sudo apt-get install build-essential`
 
 - In Mac
+
   - Open a Terminal window. Enter the command `clang --version`
   - If you want to install or update the Clang compilers, enter the command command `xcode-select --install`
   - You will get a pop up select `INSTALL` and ` Agree`
@@ -118,7 +120,6 @@ main()
 
   - select `Execute > Run`. By doing this step the program will start execute and run in a new console
   
-
 - In Linux
 
   - Open a Text Editor and Enter the Code and save. And Make sure you save the source file (the file which you written the code)by changing the file type as `C` with the extension of `(*.c)`.
@@ -132,11 +133,14 @@ main()
     `./sampleProgram` to run your code
 
 - In Mac
-- Open a Text Editor and Enter the Code and save. And Make sure you save the source file (the file which you written the code)by changing file type as `C` with the extension of `(*.c)`.
+
+  - Open a Text Editor and Enter the Code and save. And Make sure you save the source file (the file which you written the code)by changing file type as `C` with the extension of `(*.c)`.
   - Open Terminal and Navigate where you saved your file.
   - Enter the command `clang sampleProgram.c -o sampleProgram`
   - Above command will save the output file as `sampleProgram`
+  
   #### To Run the code
+  
   - In the terminal simply enter the command
     `./sampleProgram` to run your code
 
@@ -173,6 +177,7 @@ main()
 _Note: Every statement in the main function must end with `;`_
 
 ### Files used in C program
+
   - Every C program has four kinds of files associated with it
 
     - Source File
@@ -194,6 +199,8 @@ _Note: Every statement in the main function must end with `;`_
   - And To Design and implement end-user applications.
   - C language includes low-level memory access.
   - C language is a set of keywords with a clean structure.
+  - C language is used as Basing Building block for many other programming languages
+  - C provides dynamic memory allocation 
   
 ### Conclusion
 
