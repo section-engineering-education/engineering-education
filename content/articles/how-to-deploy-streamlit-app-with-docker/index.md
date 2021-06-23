@@ -270,7 +270,7 @@ Our userinterface will be as shown below.
 
 ### Dockerizing the streamlit app
 1. Lets create a docker file
- In the working root directory lets create a file and lets name it 'Dockerfile' without any extensions.
+ In the working root directory, let's create a file named 'Dockerfile' without any extensions.
 
 Your File structure should be as shown.
 ```bash
