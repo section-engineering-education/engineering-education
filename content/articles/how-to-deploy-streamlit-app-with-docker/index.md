@@ -146,7 +146,7 @@ pip install streamlit
 
 ### Lets build the streamlit app
 1. Create a new Python file named app.py.
-2. Then we add our pickled model into a created folder called 'model'.
+2. Then add our pickled model into a created folder called 'model'.
 
 Our Folder structure should look like this.
 
