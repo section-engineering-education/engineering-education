@@ -1,6 +1,20 @@
-### Integrating Instagram basic display API on a Node.js GraphQL API
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/integrating-instagram-basic-display-api/
+title: Integrating Instagram Basic Display API on a Node.js GraphQL API
+description: In this article, we will learn how to integrate the Instagram basic display API on a Node.js GraphQL API.
+author: kennedy-mwangi
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/integrating-instagram-basic-display-api/hero.jpg
+    alt: Instagram basic display api
+---
 Instagram is a photo and video-sharing social networking service launched in 2010. It is currently one of the most used social media applications with more than one billion users.
-
+<!--more-->
 As of October 2019, Facebook, the parent organization of Instagram, released the Instagram basic display API. The API allows users to get profile information, media (photos and videos) of their Instagram accounts. The restriction is that you cannot access the data of another Instagram user.
 
 ### Goals
@@ -755,3 +769,6 @@ In the finalized code, which can be accessed from this [Github repository](https
 be sure to check it out.
 
 Happy hacking!!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
