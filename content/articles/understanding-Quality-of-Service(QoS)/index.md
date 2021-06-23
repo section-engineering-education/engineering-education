@@ -119,3 +119,6 @@ Until next time, happy reading!
 2. [Learn more about data packets.](https://www.techrepublic.com/article/exploring-the-anatomy-of-a-data-packet/) 
 
 3. [Learn more about jitters and latency](https://www.itprc.com/jitter-vs-latency/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
