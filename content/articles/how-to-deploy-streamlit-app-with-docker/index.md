@@ -381,7 +381,7 @@ It also start our streamlit app in the following urls:
 
 2. External URL: https://193.106.63.249:8501
 
-Therefore the streamlit app is now deployed with docker.
+With that, the Streamlit app is now deployed with docker.
 ### Conclusion
 In this tutorial, we have learned how to create a simple machine learning model, how to create a steamlit app using the model and finally being able to use docker to run the app.
 
