@@ -6,7 +6,7 @@ author: "@Taiwrash"
 
 ## Filter Machine
 
-![Sample Page](/page.gif)
+![Sample Page](page.gif)
 
 This is the [Live Demo](https://filter-machine.taiwrash.repl.co) of the app and [Full Code](https://repl.it/@Taiwrash/filter-machine).
 
@@ -342,13 +342,13 @@ input.addEventListener("keyup", filterFunction);
 ```
 
 A `keyup` event listerner was set on the input which respond when user release hand from the keyboard and function created in line 3 was called.
-![Demo](/congrat.gif)
+![Demo](congrat.gif)
 
 ## We Are Done as Simple as That
 
 Below is what we just built, isn't amazing?
 
-![Demo](/page.gif)
+![Demo](page.gif)
 
 ## What next?
 
