@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /php-superglobals/
 title: Understanding PHP Superglobals
-description: This article will discuss the different PHP suberglobal variables that exists, as well as show you how to implement them. Some of the popular variables include $_GET, $_POST, and $_REQUEST.
+description: This article will discuss the different PHP suberglobal variables that exists, as well as show you how to implement them. 
 author: mackrine-awino
-date: 2021-06-30T00:00:00-18:00
+date: 2021-06-24T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
