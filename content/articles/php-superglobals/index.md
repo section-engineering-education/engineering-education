@@ -332,7 +332,6 @@ A cookie can also be deleted using the `setcookie()` function only with a past e
 
 - $_FILE['file']['error']- The file upload's associated error code.
 
-
 ### Conclusion
 Superglobal variables are the core of the PHP language. These variables are required in PHP programming to make highly functional programs. You can, therefore, use this information to craft quality applications.
 
