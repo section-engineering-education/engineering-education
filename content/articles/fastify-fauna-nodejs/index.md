@@ -14,17 +14,22 @@ images:
   - url: /engineering-education/fastify-fauna-nodejs/hero.jpg
     alt: faunadb example image
 ---
+
 Choosing the right JavaScript tech stack in the massive ecosystem is challenging. One of the Node.js web server framework that is rising in popularity these days is Fastify due to its ease of use and great developer experience.
 <!--more-->
 In this tutorial, we will use Fauna to create a `User` collection containing our users' documents, protect the routes, read and delete the user document in the collection.
 
-Refer to this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
+Feel free to check complete application in this [Github repository](https://github.com/marienjus/fastify-faunadb) to follow along.
 
 ### Prerequisites
 1. A basic understanding of JavaScript [programming language](https://www.w3schools.com/js/) is essential.
-2. Have any recent version of Node.js runtime installed on your system. I recommend downloading the [LTS version](https://nodejs.org/en/). This will also add NPM which will manage your dependencies.
+
+2. Have any recent version of [Node.js](https://nodejs.org/en/) runtime installed on your system.
+
 3. Have a text editor like [VS Code](https://code.visualstudio.com/download) installed.
+
 4. You need an API Client such as [Postman](https://www.postman.com/downloads/). In my case, I will be using [Thunder Client](https://www.thunderclient.io) which is available as a VSCode extension.
+
 5. FaunaDB is a cloud database. Therefore, you will need at least a basic free tier [account](https://fauna.com/).
 
 ### Project setup
@@ -38,35 +43,36 @@ Next, we will need to install our application `npm` dependencies which include:
 
 - `faunadb`: FaunaDB client is a Node.js database driver that interacts with the Fauna cloud multi-model database.
 
-- `dotenv`: API keys are sensitive data in any application and therefore should not be hardcoded or pushed to any Github repository. This is the package that will inject any environment variables we use in the `.env` file into our Node.js application server.
+- `dotenv`: API keys are sensitive data in any application and therefore should not be hardcoded or pushed to any Github repository. A `dotenv` is a module that injects environment variables from a `.env` file into our Node.js application.
 
 To install these packages using npm, run the command:
 
 `npm install fastify faunadb dotenv`
 
-Next, create an entry file `index.js` in the project folder and add the initial code to start our server:
+Next, create an entry file `index.js` in the root folder and add the following code to initiate our server:
 
 ```js
-const fastify = require('fastify')({ logger: true });
+const app = require('fastify')({ logger: true })
 
-async function startServer () {
+const startServer = async ()=> {
   try {
-    await fastify.listen(3000);
-    fastify.log.info(`Listening on ${fastify.server.address().port}`);
-  } catch (err) {
-    fastify.log.error(err)
-    process.exit(1);
-  }
-};
 
-startServer();
+    await app.listen(3000)
+    app.log.info(`Listening on ${fastify.server.address().port}`)
+  } catch (err) {
+    app.log.error(err)
+    process.exit(1)
+  }
+}
+
+startServer()
 ```
 
 To briefly dissect the above code:
 
-- We import the fastify module using `const fastify = require('fastify')({ logger: true })`. The logger is an optional parameter that ensures that we get logs on our application in the console.
+- We import the fastify module to create the `app` object as `const app = require('fastify')({ logger: true })`. The `logger` is being passed as an optional parameter to ensure that we get logs on our application in the console.
 
-- Before listening requests on `port 3000`, fastify expects an asynchronous function (`async function start()`) that will resolve or reject in case our server fails to start.
+- Before listening requests on `port 3000`, fastify expects an asynchronous function (`async function startServer()`) that will resolve or reject in case our server fails to start.
 
 Later on, we will use the command `node index.js` to start our server and check if everything is okay.
 
@@ -92,11 +98,9 @@ The key is secret and is what we use to access Fauna from Node.js.
 
 > Note: The server key should be stored safely, as Fauna will not show it again.
 
-From here, we are now ready to execute our database queries. We will create our first collection and index.
+From here, we are now ready to execute our database queries. Using the shell in our dashboard, we need to create our fauna database collection and index.
 
-In this project, we're going to use the available shell right from our dashboard:
-
-We need a database collection that will store the documents for users. To create the `Users` collection, run this query in the shell:
+A collection stores the documents for users. To create the `Users` collection, open the shell and run the query :
 
 ```sh
 CreateCollection({
@@ -109,7 +113,7 @@ When we executing the above query, it should return:
 ![shell](/engineering-education/fastify-fauna-nodejs/shell-create-collection.png)
 *Create new collection in DB*
 
-Next, we need an index. This is a copy of data columns from a table that is mainly designed to enable very efficient search. It will also allow us to ensure unique usernames:
+Next, we need a database index. This is a copy of data columns from a table that is mainly designed to enable very efficient search and unique entries.
 
 ```sh
 CreateIndex({
@@ -120,11 +124,11 @@ CreateIndex({
 })
 ```
 
-Let's now go back to our project and create a `.env` file inside the project folder with this format:
+Our server key needs to be stored in a `.env` file. Create it and add your server secret:
 
-`FAUNA_SERVER_SECRET=fnAEL1cTZWACBe86wLa_EgUk6JAz8IebvKlQAK-u`
+`FAUNA_SECRET=fnAEL1cTZWACBe86wLa_EgUk6JAz8IebvKlQAK-u`
 
-You should use the secret you obtained when creating a server key as I will be deleting this.
+You should use the secret you obtained from the dashboard as I will be deleting this.
 
 Any environment variable that in our `.env` file will be accessed using `process.env` in our code. To prevent the `.env` file containing our sensitive server information from being pushed to a Github repository, create a `.gitignore` and add as shown below:
 
@@ -134,21 +138,22 @@ node_modules
 ```
 
 ### Creating our custom error class
-Before we can start working on our server routes endpoints, we will first handle any error that may be received from Fauna.
+Before we can start working on our server routes endpoints, we need to handle any expected error that may be received from Fauna.
 
-Therefore, create a custom `FaunaError` class that will be integrated into Fastify's error handling flow control.
+To achieve this, we will use a custom `FaunaError` class that integrates into the Fastify's error handling lifecycle.
 
 Add folder and a file as `errors/FaunaError.js` and paste the following code:
 
 ```js
 class FaunaError extends Error {
-  constructor (error) {
+  constructor (err) {
     super()
 
-    const errors = error.requestResult.responseContent.errors
+    const errors = err.requestResult.responseContent.errors
 
     this.code = errors[0].code
     this.message = errors[0].description
+
     this.statusCode = 500
 
     if (this.code === 'instance not unique'){
@@ -182,7 +187,7 @@ This class checks the HTTP status and description returned from the Fauna error 
 Let us now create our first Fastify REST route that makes a `POST` request to create new users:
 
 ```js
-fastify.post('/users', require('./routes/create-user.js'))
+app.post('/users', require('./routes/create-user.js'))
 ```
 
 Now, create a `routes` folder and inside it, add `routes/create-user.js` file. Paste the code:
@@ -195,7 +200,6 @@ const FaunaError = require('../errors/FaunaError.js')
 const {Create, Collection} = faunadb.query
 
 module.exports = {
-  // Validation schema for the Fastify route
   schema: {
     body: {
       type: 'object',
@@ -204,22 +208,22 @@ module.exports = {
         username: {type: 'string'},
         password: {
           type: 'string',
-          minLength: 10
+          minLength: 8
         }
       }
     }
   },
   async handler (request, reply) {
 
-    const {username, password} = request.body
+    const {request} = body
+
+    const {username, password} = request
 
     const client = new faunadb.Client({
-      secret: process.env.FAUNA_SERVER_SECRET
+      secret: process.env.FAUNA_SECRET
     })
 
     try {
-
-      // Create a new user document with credentials
       const result = await client.query(
         Create(
           Collection('Users'),
@@ -230,7 +234,6 @@ module.exports = {
         )
       );
 
-      // Return the created document
       reply.send(result)
 
     } catch (error) {
@@ -240,15 +243,15 @@ module.exports = {
 }
 ```
 
-This is a public route, therefore, we are using our server secret to make sure that we can execute the queries. When our users are logged in, we will be using their generated secret to execute queries.
+This is a public route and therefore, our server secret will be used to execute the queries. Once our users are authenticated, we will be using their generated secret to run queries.
 
 The authorization rules will only permit users to perform actions that have been allowed at a certain endpoint. More on this later.
 
 Fauna uses an HTTP engine that is different from other database clients, we will need to instantiate a new client on every request to the database. It runs on the cloud and therefore each database query is simply an HTTP request.
 
-If an error is returned from the database, we will need to catch it and throw a new instance of the FaunaError class which will then be logged into the console. Fastify should take care of the rest, since logging is enabled.
+If an error is returned from the database, we need to catch it, instanciate the FaunaError class before logging it into the console. Fastify should take care of the rest, since logging is enabled.
 
-To test our routes during development, an HTTP client is useful. I will be using Thunder client which is available as a VS Code extension. It's quite similar to Postman else, use whatever you are most comfortable with (eg: cURL, Insomnia, etc).
+To test our routes during development, an HTTP client is useful. My preferred tool is Thunder client which is available as a VS Code extension.
 
 Let us make a POST request to `http://localhost:3000/users` with the body as a JSON object. Do not forget to add the `Content-Type` header:
 
@@ -259,7 +262,7 @@ Let us make a POST request to `http://localhost:3000/users` with the body as a J
 }
 ```
 
-If everything works as we expected, our response body should contain a JSON document representation that has been created in the `Users` collection:
+If everything works as we expected, our response body should contain a JSON document representation that has been created in our `Users` collection:
 
 ```JSON
 {
@@ -290,17 +293,18 @@ If everything works as we expected, our response body should contain a JSON docu
 
 Trying to create the same user twice should return a Fauna error since the `Users_by_username` index does not allow two documents to exist with the same username.
 
-### Handling user authentication
+### Adding user authentication
+
 Before making further requests, let's create an endpoint with Fastify that will authenticate our users.
 
 Add this code to the `index.js` file:
 
 ```js
-fastify.post('/login', require('./routes/login.js'))
+app.post('/login', require('./routes/login.js'))
 ```
 
-This is a `/login` `POST` HTTP endpoint from the routes folder that will be used for authenticating users. Also, create the file `routes/login.js` with this code:
-
+This is a `/login` `POST` HTTP endpoint from the routes folder that will be used for authenticating users. For this route, create a `login.js` file inside our `routes` directory and add the code:
+ 
 ```js
 const faunadb = require('faunadb')
 const FaunaError = require('../errors/FaunaError.js')
@@ -320,24 +324,23 @@ module.exports = {
   },
   async handler (request, reply) {
 
-    const {username, password} = request.body
+    const {request} = body
+
+    const {username, password} = request
 
     const client = new faunadb.Client({
-      secret: process.env.FAUNA_SERVER_SECRET
+      secret: process.env.FAUNA_SECRET
     });
 
     try {
 
-      // Authenticate with Fauna
       const result = await client.query(
         Login(
-          Match(Index('Users_by_username'), username),
+          Match(Index('Users_by_username'), username), // match by username and password
           {password}
           )
         )
 
-      // If the authentication was successful
-      // return the secret to the client
       reply.send({
         secret: result.secret
       })
@@ -349,7 +352,7 @@ module.exports = {
 }
 ```
 
-We are using the `Users_by_username` index with the `Login()` function that is destructured from the `faunadb.query` object instance. The `FAUNA_SERVER_SECRET` is passed to the client instance before authentication.
+Here, we use the index `Users_by_username` with the declarative `Login()` function that is destructured from the `faunadb.query` object instance. The `FAUNA_SECRET` then needs to passed to the client instance before authentication.
 
 Once the username and password from the request body match, the user authentication should be completed successfully. This will return a server secret to make a future request for that user.
 
@@ -374,38 +377,34 @@ The client is required to store the generated secret and use it for further requ
 
 > This is a simple basic form of authentication. In your production applications, you should decide which authentication strategy works better for your use case. Always use HTTPS to interact with servers and third-party APIs.
 
-### Retrieve a user document
-Let's now create an endpoint to be that reads a single user.
+### Retrieving user documents
 
-Unlike our previous routes, we will make this a private route. The recommended way to use private routes in Fastify is using a hook. They act as custom bits of code that will be executed at certain points in the request/response lifecycle.
+Unlike our previous routes, we will make this a endpoint a private route. The recommended way to use private routes in Fastify is using hooks. They act as custom bits of code that will be executed at certain points in the request/response lifecycle.
 
 A hook is registered using the `.addHook` method which helps us interact and listen to events within Fastify's lifecycle.
 
-Check the [Fastify docs](https://www.fastify.io/docs/latest/Hooks/) for more info on how to use them.
+Refer to the [Fastify docs](https://www.fastify.io/docs/latest/Hooks/) for more infomation on hoooks.
 
-Our hook will first check if the `fauna-secret` header is present on all routes that we mark as private. A decorator is created by `fastify.decorateRequest` and lets Fastify know that our request object will be a subject modification.
+Our hook will first check if the `fauna-secret` header is present on all routes that we mark as private. A decorator is created by `.decorateRequest()` method which lets Fastify know that our request object will be a subject to modifications.
 
 The code to achieve this should be in the `index.js` file:
 
 ```js
-fastify.addHook('onRequest', async (request, reply) => {
+app.addHook('onRequest', async (request, reply) => {
 
-  // If the route is not private we ignore this hook
-  if (!reply.context.config.isPrivate) return
+  if (!reply.context.config.isPrivateRoute) return
 
   const faunaSecret = request.headers['fauna-secret']
 
-  // If there is no header
   if (!faunaSecret) {
     reply.status(401).send()
     return
   }
 
-  // Add the secret to the request object
   request.faunaSecret = faunaSecret
 })
 
-fastify.decorateRequest('faunaSecret', '')
+app.decorateRequest('faunaSecret', '')
 ```
 
 If we happen use an invalid secret, Fauna should return an error response.
@@ -413,7 +412,7 @@ If we happen use an invalid secret, Fauna should return an error response.
 Add this to the `index.js` file before making a `GET` request:
 
 ```js
-fastify.get('/users/:userId', require('./routes/get-user.js'))
+app.get('/users/:userId', require('./routes/get-user.js'))
 ```
 
 Also create the `routes/get-user.js` file with the code:
@@ -426,7 +425,7 @@ const {Get, Ref, Collection} = faunadb.query
 
 module.exports = {
   config: {
-    isPrivate: true
+    isPrivateRoute: true
   },
   schema: {
     params: {
@@ -434,7 +433,7 @@ module.exports = {
       required: ['userId'],
       properties: {
         userId: {
-          type: 'string',
+          type: 'string', // use type and pattern
           pattern: "[0-9]+"
         }
       }
@@ -450,7 +449,6 @@ module.exports = {
 
     try {
 
-        // Get the user document
         const result = await client.query(
             Get(
                 Ref(
@@ -460,7 +458,6 @@ module.exports = {
             )
         )
 
-        // Return the document
         reply.send(result)
 
     } catch (error) {
@@ -471,23 +468,24 @@ module.exports = {
 ```
 
 A brief code walkthrough:
+
 - We import our fauna client and `FaunaError` class in our `get-user.js` file.
 
 - We import the `Get`, `Ref`, and `Collection` methods from the `fauna.query` object for making queries to the Fauna database.
 
-- We add the `isPrivate` property in the config section of our `GET` route to indicate that this route private for our hook.
+- In the config part of our route, we added property `isPrivateRoute` which indicates that the route is private for our custom hook.
 
 - Also, the user secret provided is used to communicate with Fauna.
 
-If we try this request on this route, we will get an error response since our user does not have permission to read the `Users` collection. A quick fix is to modify this like a new custom role in Fauna.
+If we try this request on this route, fauna responds with an erroe since our user currently has no permissions to read the collection `Users`. A quick fix is to modify this like a new custom role in Fauna.
 
 ### Set up authorization in Faunadb
-To configure the authorization using the dashboard, go to the `Security` section of the dashboard, on the `Roles` tab, click the `New Custom Role`. Assign it the name of `User`, add the collection of `Users`, and click on the Read permission to enable it:
+To add authorization from the dashboard, go to the `Security` section of the dashboard under the `Roles` tab and click on the `New Custom Role` to enable it. Assign a name of `User`, add the collection of `Users`, and click on the Read permission to enable it:
 
 ![new custom role](/engineering-education/fastify-fauna-nodejs/read-privileges.png)
 *Creating new custom roles*
 
-Fauna will need to know who belongs to this role. Go back to the dashboard. Under the `Membership` tab, select the `Users` collection as a member of this role:
+Fauna will need to know who belongs to the added role. Add it in the dashboard under the `Membership` tab and make sure the `Users` option collection is selected as the member of this role:
 
 ![membership](/engineering-education/fastify-fauna-nodejs/Usersmembercoll.png)
 *Create new membership collection*
@@ -533,10 +531,10 @@ To make a delete request, first, we will need to add the permission that allows 
 On the dashboard, go back to the `Security` section and modify the `Roles` on the `Users` collection to permit deletion requests. Save the modifications and add the `DELETE` HTTP route to our `index.js` file:
 
 ```js
-fastify.delete('/users/:userId', require('./routes/delete-user.js'));
+app.delete('/users/:userId', require('./routes/delete-user.js'));
 ```
 
-Finally create the `routes/delete-user.js` file and paste the code:
+Finally create the `delete-user.js` file inside the routes folder and paste the code:
 
 ```js
 const faunadb = require('faunadb')
@@ -546,7 +544,7 @@ const {Delete, Ref, Collection} = faunadb.query
 
 module.exports = {
   config: {
-    isPrivate: true
+    isPrivateRoute: true
   },
   async handler (request, reply) {
 
@@ -557,9 +555,7 @@ module.exports = {
     })
 
     try {
-
-      // Delete the user document
-      const resultDelete = await client.query(
+      const deleteResult = await client.query(
         Delete(
           Ref(
             Collection('Users'),
@@ -568,8 +564,7 @@ module.exports = {
         )
       )
 
-      // Return the deleted document
-      reply.send(resultDelete)
+      reply.send(deleteResult)
 
     } catch (error) {
       throw new FaunaError(error)
