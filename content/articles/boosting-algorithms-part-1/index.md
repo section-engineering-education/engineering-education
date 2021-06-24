@@ -1,18 +1,18 @@
 ---
 layout: engineering-education
-status:
-published:
-url:
+status: publish
+published: true
+url: /boosting-algorithms-part-1/
 title: Boosting Algorithms (Part 1)
 description: Boosting is an ensemble method and is a statistical technique that is used to enhance the performance of a machine learning model by converting weak learners to strong learners.
 author: prashanth-saravanan
-date:
+date: 2021-06-24T00:00:00-22:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/boosting-algorithms-part-1/hero.jpg
-    alt: Boosting Algorithms
+  - url: /engineering-education/boosting-algorithms-part-1/hero.png
+    alt: Boosting Algorithms image
 ---
 This article is aimed at refreshing the reader of their knowledge of boosting algorithms, how different they are from the existing performance-enhancing algorithms, and discusses the existing boosting models.
 <!--more-->
