@@ -71,13 +71,13 @@ As mentioned, boosting is confused with [bagging](https://en.wikipedia.org/wiki/
 
 Bagging and boosting both use an arbitrary `N` number of learners by generating additional data while training. These `N` learners are used to create `M` new training sets by sampling random sets from the original set. The idea behind bagging is to combine the results of the `M` models that are generated from the sampled sets. The models run in parallel and are independent of each other, and the final results are obtained from combining the results of all the models.
 
-![Bagging](/engineering-education/boosting-algorithms-part-1/bagging.png)
+![Bagging](/engineering-education/boosting-algorithms-part-1/bagging.PNG)
 
 *Source: [Towards Data Science](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)*
 
 Whereas in boosting, the `M` models are trained sequentially, with the models carrying forth the performance of the previous model in an attempt to correct the errors of the previous model. The performance of the models is analyzed by taking the weighted mean of the performances of the individual model, with weights being assigned by their performance.
 
-![Boosting](/engineering-education/boosting-algorithms-part-1/boosting.png)
+![Boosting](/engineering-education/boosting-algorithms-part-1/boosting.PNG)
 
 *Source: [Towards Data Science](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)*
 
@@ -143,7 +143,7 @@ Let's take a look at the data to see how it looks like.
 df.head(6)
 ```
 
-![Data Head](/engineering-education/boosting-algorithms-part-1/datahead.png)
+![Data Head](/engineering-education/boosting-algorithms-part-1/datahead.PNG)
 
 Since machine learning models prefer numerical data, let us convert the dataset to numbers by encoding it. `LabelEncoder()` is a method in the Scikit-Learn package that converts labels to numbers. The reader is encouraged to go through [this](https://www.analyticsvidhya.com/blog/2020/03/one-hot-encoding-vs-label-encoding-using-scikit-learn/) resource to understand why data has to be encoded.
 
@@ -174,7 +174,7 @@ X_test = scaler.transform(X_test)
 
 Being a weak learner, it combines the predictions from short tress (one-level trees) called decision stumps. AdaBoost was described as a "stagewise, additive modeling", where "additive" didn't mean a model fit added by covariates, but meant a linear combination of estimators.
 
-![Stumps](/engineering-education/boosting-algorithms-part-1/decisionstumps.png)
+![Stumps](/engineering-education/boosting-algorithms-part-1/decisionstumps.PNG)
 
 *Source: [Edureka](https://www.edureka.co/blog/boosting-machine-learning/)*
 
@@ -184,7 +184,7 @@ The data after every iteration is never the same and the possible misclassificat
 
 AdaBoost is resistant to overfitting as the number of iterations increase and are most effective when it works on a binary classification problem. AdaBoost includes an extra condition where a model is required to have an error of less than 50% to maintain it, otherwise, the iterations are repeated until a better learner is generated.
 
-![Adaboost](/engineering-education/boosting-algorithms-part-1/adaboost.png)
+![Adaboost](/engineering-education/boosting-algorithms-part-1/adaboost.PNG)
 
 *Source: [Towards Data Science](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)*
 
@@ -217,7 +217,7 @@ score = adaboost.score(X_test, Y_test)
 ### XGBoost
 Ever since the world was introduced to the XGBoost algorithm through this [paper](https://arxiv.org/pdf/1603.02754.pdf), [XGBoost](https://xgboost.ai/) has been considered the Mona Lisa of boosting algorithms, for the advantages it provides over its peers is undisputed. Widely considered as one of the most important boosting methods, the algorithm has found its way to CERN, where statistical physicists have considered it to be the best approach to classify signals from the Large Hadron Collider. What makes it the most sought-after technique by Kagglers to win data science competitions?
 
-![Quotes](/engineering-education/boosting-algorithms-part-1/quotes.png)
+![Quotes](/engineering-education/boosting-algorithms-part-1/quotes.PNG)
 
 *Source: [Machine Learning Mastery](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)*
 
@@ -225,7 +225,7 @@ Breaking the process of boosting down from a mathematical standpoint, boosting i
 
 In XGBoost, the decision trees that have nodes with weights that are generated with less evidence are shrunk heavily. This clever method of eliminating nodes that aren't significant is reflected in the speed of the algorithm and its memory consumption.
 
-![Performance](/engineering-education/boosting-algorithms-part-1/performance.png)
+![Performance](/engineering-education/boosting-algorithms-part-1/performance.PNG)
 
 *Source: [Datascience.la](http://datascience.la/benchmarking-random-forest-implementations/)*
 
