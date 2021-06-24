@@ -7,7 +7,7 @@ title: Understanding PHP Superglobals
 description: This article will discuss the different PHP suberglobal variables that exists, as well as show you how to implement them. 
 author: mackrine-awino
 date: 2021-06-24T00:00:00-14:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/php-superglobals/hero.jpg
@@ -37,8 +37,7 @@ To understand the contents of this article, the reader should have the following
 - A beginner's understanding of PHP.
 
 ### Introduction to PHP superglobals
-
-Superglobals were introduced in PHP 4.1.0 and have been an important part of PHP since then. There exist about `9` superglobal variables in PHP. They are sometimes referred to as `automatic globals`. They are as stated below:
+Superglobals were introduced in PHP 4.1.0 and have been an important part of PHP ever since. There are about nine superglobal variables in PHP which are sometimes referred to as `automatic globals`. They are as stated below:
 
 1. $GLOBALS
 2. $_SERVER
@@ -56,9 +55,9 @@ Let's discuss these superglobals in the following sections.
 
 $GLOBALS is a PHP variable that is used in accessing other global variables within a PHP script. All the PHP global variables are kept in an array known as `$GLOBALS[index]`. The `index` holds the `variable name`.
 
-Below is an example of the superglobal `$GLOBAL` variable in use:)
+Below is an example of the superglobal `$GLOBAL` variable in use :)
 
-```html
+```php
    <!doctype html>
    <html>
    <head>
@@ -97,7 +96,7 @@ In the above example, the variable `$c` is accessible both inside and outside th
 
 Below is a sample code showing how the elements above can be used:
 
-``` html
+```php
    <!doctype html>
    <html>
    <head>
@@ -120,7 +119,7 @@ Below is a sample code showing how the elements above can be used:
 
 The output of the above code would include:
 
-- A Filename.
+- A filename.
 - Name of the host server.
 - Header of the host current request.
 - Path of the current script.
@@ -131,7 +130,7 @@ The HTML form is structured in a way that `$_GET` is used as a [method](https://
 
 Here is an example of how the `$_GET` variable is implemented in a HTML form:
 
-``` html
+```php
    <!doctype html>
    <html>
    <head>
@@ -180,10 +179,9 @@ An example is shown below:
       </body>
      </html>
 ```
-    
 
 #### Why is the POST variable preferred over GET?
-Although `POST` and `GET` methods do the same function, `POST` is preferred because of the following reasons:
+Although `POST` and `GET` methods implement the same functionality, `POST` is preferred because of the following reasons:
 
 1. The POST method does not have a limit to the data size that can be sent.
 2. The POST method can send both [ASCII](https://en.wikipedia.org/wiki/ASCII) and [Binary](https://en.wikipedia.org/wiki/Binary_number) data.
@@ -191,12 +189,11 @@ Although `POST` and `GET` methods do the same function, `POST` is preferred beca
 4. The POST method uses an `HTTP header` to send data. This promotes data security.
 
 5. ### $_REQUEST
-The `$_REQUEST` variable is a PHP superglobal that is used to collect data after submitting a form. It contains the contents of `$_GET`, `$_POST` and even `$_COOKIE` by default.
-Data from various fields can be collected by PHP using the `$_REQUEST` variable.
+The `$_REQUEST` variable is a PHP superglobal that is used to collect data after submitting a form. It contains the contents of `$_GET`, `$_POST` and even `$_COOKIE` by default. Data from various fields can be collected by PHP using the `$_REQUEST` variable.
 
 The example below shows how to use the `$_REQUEST` variable:
 
-```html
+```php
 <!doctype html>
 <html>
     <head>
@@ -252,7 +249,7 @@ session_destroy()
 
 The example below demonstrates the use of `$_SESSION`:
 
-```html
+```php
 <? php
     session_start();
 ?>
@@ -282,11 +279,12 @@ A cookie is a small file that is stored in a user's computer by the server. It i
 ```php
    setcookie(cookie_name,cookie_value, expiry, path, domain,secure,httponly)
 ```
+
 The syntax has many parameters. However, only the `name` parameter is required.
 
 After its creation, the cookie can be retrieved using the superglobal `$_COOKIE` variable. The code below shows how to create and retrieve a cookie:
 
-``` php
+```php
   <?php
 
     $cookie_name = "uname";
