@@ -6,8 +6,8 @@ url: /integrating-firestore-in-android-kotlin/
 title: Integrating Cloud Firestore Database in Android using Kotlin
 description: With the advancement in technology, the need for cloud-based applications is briskly increasing. This tutorial goes through how to create a Cloud Firestore database and perform Create and Read operations in an Android app.
 author: noni-diana
-date: 2021-06-13T00:00:00-00:00
-topics: [Android]
+date: 2021-06-23T00:00:00-00:00
+topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/integrating-firestore-in-android-kotlin/hero.png
@@ -19,7 +19,7 @@ Firestore is a cloud-hosted NoSQL database that can be integrated into various p
 Modern apps are expected to run smoothly and offer the best possible user experience and that's exactly what Firestore brings us. In this article, we'll learn how Firestore can be used in an Android app using the Kotlin programming language.
 
 ### Tutorial Prerequisites
-To follow through with this article, you'll need have a basic experience in:
+To follow through this article, you'll need to have a basic experience in:
 
 - Using Kotlin.
 - General usage of [Android Studio](https://developer.android.com/studio)
@@ -108,7 +108,7 @@ Don't forget to add internet permission in the `Manifest file`.
 ```
 Sync and wait for the gradle build to complete.
 
-Now we've successfully connected Firebase project to our Android app. Open Firebase console and you should see something similar to this. Notice the project has a little Android icon at the bottom indicating that it has been connected to Android platform.
+We've successfully connected Firebase project to our Android app. Open Firebase console and you should see something similar to this. Notice the project has a little Android icon at the bottom indicating that it has been connected to Android platform.
 
 ![Firebase projects](/engineering-education/integrating-firestore-in-android-kotlin/my-firebase-projects.png)
 
@@ -145,7 +145,7 @@ service cloud.firestore {
   }
 }
 ```
-Unlike the test rule, this `only` allows [authenticated users](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/) to access the database. For a general-level production app, this is the rule to go with.
+Unlike the test rule, this `only` allows [authenticated users](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/) to access the database. For a general-level production app, this is the rule to go to.
 
 To learn more about Firebase rules, be sure to check out [Firebase Docs](https://firebase.google.com/docs/rules/basics).
 
@@ -225,7 +225,7 @@ class MainActivity : AppCompatActivity() {
         // we'll call functions here
     }
 ```
-Here we've made use of viewBinding to inflate UI accordingly. We've also declared a global constant variable that will be used as a tag in our log messages.
+Here, we've made use of viewBinding to inflate UI accordingly. We've also declared a global constant variable that will be used as a tag in our log messages.
 
 ### Database operations demo (using test rules)
 Operations in a database include Create, Read, Update, and Delete also known as CRUD operations.
@@ -264,7 +264,7 @@ private fun uploadData() {
             }
     }
 ```
-Call this fuction in the `onCreate()` method
+Call this function in the `onCreate()` method
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     ...
