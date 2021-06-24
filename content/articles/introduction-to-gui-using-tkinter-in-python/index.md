@@ -1,12 +1,11 @@
 ### Introduction
-A graphical user interface (GUI) allows users to interact with electronic devices using electronic symbols, as opposed to text-based user links, typed commands, or text exploration. They design GUIs in response to command-line networks, apparent steep learning curve, which requires command input via a computer keyboard.
+A graphical user interface (GUI) allows users to interact with electronic devices using electronic symbols, as opposed to text-based user links, typed commands, or text exploration. GUIs were designed in response to command-line networks, apparent steep learning curve, which requires command input via a computer keyboard.
 
-In most cases, activities in a GUI are performed by directly manipulating the graphical elements.GUIs are utilized in a range of mobile gadgets, including MP3 players, gaming devices, and portable family, workplace, and industrial controllers, in addition to computers.
+In most cases, activities in a GUI are performed by directly manipulating the graphical elements. GUIs are utilized in a range of mobile gadgets, including MP3 players, gaming devices, workplace, and industrial controllers, in addition to computers.
 
 In this tutorial, we will gain an understanding of how to build a password generator GUI using Tkinter.
 
 ### Table of content
-
 - [What is Tkinter?](#what-is-tkinter?)
 - [Prerequisites](#prerequisites)
 - [What are Widgets?](#what-are-widgets?)
@@ -16,7 +15,7 @@ In this tutorial, we will gain an understanding of how to build a password gener
 ### What is Tkinter?
 Tkinter is a GUI library that is installed together with Python. Tkinter has several advantages. Because the code is cross-platform, apps built with it can run on Windows, Mac OS X, and Linux. Tkinter applications appear to be indigenous to the programme on which they run. Because the visual components are built with native system applications, this is the case.
 
-Python must be installed before Tkinter can be used. When you install Python, you get Tkinter as well. However, if after installing Python  and Tkinter was not installed, you can use the `pip` command to install it afterwards.
+Python must be installed before Tkinter can be used. When you install Python, you get Tkinter as well. However, if after installing Python Tkinter was not installed, you can use the `pip` command to install it afterwards.
 
 Tkinter can be installed using the pip command on a terminal, by running the command below.
 
@@ -29,7 +28,7 @@ This command will install the Tkinter library and it's related libraries.
 ### Prerequisites
 If you don't have Python installed, download the [latest version of Python](https://www.python.org/downloads/) and install it.
 
-You can download a python-oriented code editor, most preferably [PyCharm](https://www.jetbrains.com/pycharm/download/) and install it.
+You can download a Python-oriented code editor, most preferably [PyCharm](https://www.jetbrains.com/pycharm/download/) and install it.
 
 ### What are widgets?
 Widgets are the building blocks of graphical user interface programming, and they are used to view data or solicit input from the user. See some examples of commonly used widgets below.
@@ -50,11 +49,11 @@ Online hacking is growing more common these days, resulting to passwords and log
 For personal or official use, the best password generators makes it simple to generate complicated passwords that are tough to predict or breach.
 
 #### Let us see how we can construct a password generator.
-Create a new file `passgen.py` on your [PyCharm](https://www.jetbrains.com/pycharm/download/) or any python-oriented code editor.
+Create a new file `passgen.py` where we will write our code in PyCharm or any python-oriented code editor.
 
 Let's start by importing Tkinter.
 
-```Python
+```python
 from tkinter import *
 from tkinter.ttk import Combobox
 import random
@@ -67,11 +66,11 @@ screen = Tk()
 screen.title("Password Generator")
 screen.geometry('600x400')
 screen.configure(background ="bisque")
-``` 
+```
 
 A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We will change the background color using the `screen.configure()` method.
 
-```Python
+```python
 def gen():
    global sc1
    sc1.set("")
@@ -86,7 +85,7 @@ The global variable `sc1` is defined in the line code `global sc1`. We used the 
 
 Add the following code.
 
-```Python
+```python
 if c2.get()=='Low Strength':
     for i in range(0,length):
         passw=passw+random.choice(lowercase)
@@ -101,12 +100,11 @@ elif c2.get()=='High Strength':
     sc1.set(passw)
 ```
 
-We define the `if` condition to monitor the strength of the passwords generated.
-`if` the user decides the length of the password and then clicks on `Low Strength` the password generator generates a random password in lowercase `elif` the user decides to click on `Moderate Srength` the password generator generates a random password in both lowercase and uppercase there by decreasing the chance of an intruder's ability to predict the password `elif` if the user decides to click on `High Strength` the password generator generates a random password that is a `mixs` containing uppercase, lowercase and special alphabetical signs and symbols, this gives an intruder little or no chance in predicting the password
+We define the `if` condition to monitor the strength of the passwords generated. If the user decides the length of the password and then clicks on `Low Strength`, the password generator generates a random password in lowercase. If the user decides to click on `Moderate Srength`, the password generator generates a random password in both lowercase and uppercase. This decreases the chances of an intruder predicting the password. If the user clicks on `High Strength`, the password generator generates a random password that is a `mixs` containing uppercase, lowercase and special alphabetical signs and symbols. This gives an intruder little or no chance in predicting the password.
   
 Add the following code.
 
-```Python
+```python
 sc1=StringVar('')
 t1=Label(screen,text='Automatic Password Generator',font=('Arial',25),fg='red',background ="bisque")
 t1.place(x=60,y=0)
@@ -114,7 +112,7 @@ t2=Label(screen,text='password:',font=('Arial',14),background ="bisque")
 t2.place(x=145,y=90)
 ```
 
-We have defined the `sc1` variable. In order to design the GUI window's section In this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1` and it is the title of the label item. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
+We have defined the `sc1` variable. In order to design the GUI window's section in this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1` which is the title of the label item. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
 
 We have also created a label `t2`, it's placeholder text and its background. We have also set its coordinates.
 
@@ -139,11 +137,11 @@ b.place(x=230,y=195)
 screen.mainloop()
 ```
 
-On the GUI window, we have defined the entry box with the object `il`. We have calibrate the font of `il` and put the text variable to store the string worth of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location. 
+On the GUI window, we have defined the entry box with the object `il`. We have calibrate the font of `il` and put the text variable to store the string worth of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location.
 
 We then created the `t4` label. Using coordinates values, we assigned the location. We also gave entry `c1` a name. Set the `Combobox` c2's values to "Low Strength", "Medium Strength", and "High Strength". The `current()` function is used to set the value of `c2`. 
 
-Then, using x and y coordinate values, we assigned the location of the `c2` `Combobox`. We then define `b` as a button and use the generator command to conduct an action when the button is clicked.
+Then, using x and y coordinate values, we assigned the location of the `c2` `Combobox`. We define `b` as a button and use the generator command to conduct an action when the button is clicked.
 
 Then, we use x and y coordinates to assign the location of the button `b`. The `mainloop()` function is an infinite loop that is used to run the program.
 
@@ -154,9 +152,9 @@ Here is an image of the password generator interface.
 Congratulations on finishing this tutorial.
 
 ### Conclusion
-
 We covered some fundamentals of Tkinter GUI in this tutorial, as well as how to build a password generator application in Python using Tkinter.
 
+Happy Coding!
 ### References
 - [Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf)
 - [Python Tkinter as a Java application](https://medium.com/analytics-vidhya/python-tkinter-as-a-java-application-36536176fe83)
