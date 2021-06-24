@@ -280,3 +280,6 @@ Happy coding.
 4. [Science Direct](https://www.sciencedirect.com/topics/computer-science/boosting-algorithms)
 5. [Kaggle](https://www.kaggle.com/general/70690)
 6. [Towards Data Science](https://towardsdatascience.com/boosting-algorithms-explained-d38f56ef3f30)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
