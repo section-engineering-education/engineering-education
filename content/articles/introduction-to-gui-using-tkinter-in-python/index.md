@@ -151,7 +151,7 @@ Here is an image of the password generator interface.
 
 Congratulations on finishing this tutorial.
 
-you can get the code on [github](https://github.com/majiezra/password_analyser)
+you can get the code on [github](https://github.com/majiezra/password_analyser/blob/main/pass.py)
 
 ### Conclusion
 We covered some fundamentals of Tkinter GUI in this tutorial, as well as how to build a password generator application in Python using Tkinter.
