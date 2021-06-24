@@ -2,24 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-handle-navigation-in-flutter/
-title: How to Handle Navigation in Flutter
-description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
-author: 
-date: 2021-06-01T00:00:00-18:00
+url: /how-to-containerize-a-python-application/
+title: How to Containerize a Python Application
+description: This article will guide you on how to build a simple Flask application and containerize it using Docker Compose.
+author: emmanuel-alege
+date: 2021-06-26T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
-    alt: Handling Navigation in Flutter
+  - url: /engineering-education/how-to-containerize-a-python-application/hero.jpg
+    alt: How to Containerize a Python Application
 ---
-[Docker](https://www.docker.com/) is among the most popular containerization technologies. When it comes to containers, it has swiftly become an arbitrary standard. Docker is a technology that allows you to package an application together with all of its dependencies into a single, compact, and isolated container. This process is known as containerization.
+[Docker](https://www.docker.com/) is among the most popular containerization technologies. It allows you to package an application together with all of its dependencies into a single, compact, and isolated container. This process is known as containerization.
 <!--more-->
- ### Why containerizing an app is important
-Containerizing an app allows it to execute in the same way regardless of the workspace or computer that it is deployed on.
- 
-A small difference in the version of an external library can change the functionality of your application, thus, causing it to behave differently.
+### Why containerizing an app is important
+A small difference in the version of an external library can change the functionality of your application, thus, causing it to behave differently. Therefore, containerizing an app allows it to execute in the same way regardless of the workspace or computer that it is deployed on.
  
 The beauty of Docker is that if you containerize your application and transfer the image to your colleague's computer, you can be sure that the application will have the same performance on both devices. This is because the container includes all the application's dependencies.
  
@@ -27,19 +25,19 @@ The beauty of Docker is that if you containerize your application and transfer t
 Docker files, which are read-only templates, are used to create containers. Therefore, images and containers are inextricably linked, and both are required to run the Docker software platform. For more information on Docker images, visit this [page](stackify.com/docker-image-vs-container-everything-you-need-to-know/amp/).
  
 ### Goal
-In this article, you will learn how to build a simple python application using Flask and Docker compose. Docker Compose helps to manage containers and other related services.
+In this article, you will learn how to build a simple Python application using Flask and Docker Compose. Docker Compose helps to manage containers and other related services.
  
 ### Prerequisites 
 - Basic understanding of Python and Flask.
 - Basic understanding of the command line.
 - A code editor(IDE) such as VS Code or Pycharm.
  
-Install Docker, Docker Compose via the links below:
+Install Docker and Docker Compose via the links below:
 - [Docker](www.docker.com) 
-- [Docker compose](https://docs.docker.com/compose/)
+- [Docker Compose](https://docs.docker.com/compose/)
  
 ### Step 1 - Application structure 
-Our application will look like this at the end
+Our application will look like this at the end:
  
 ```
     |---- docker-compose.yml
@@ -50,13 +48,13 @@ Our application will look like this at the end
     
 Using our command line, we'll make a new folder for our application named `docker`.
  
-Go to your command prompt and input the line below. You can use the command line that comes with VS code after its installation.
+Go to your command prompt and input the line below. You can use the integrated command line in your IDE.
  
 ```bash
 mkdir docker && cd docker
 ```
 
-Next, we will create our `Docker compose` file in the `docker` directory. In a moment, we'll create our application's services using the `Docker Compose` file.
+Next, we will create our `Docker Compose` file in the `docker` directory that we created above.
 
 ```bash
 touch docker-compose.yml
@@ -72,74 +70,67 @@ docker
 Before we go further, let's develop our `Flask` application.
  
 ### Step 2 - Building our Flask app
-Flask is a lightweight Python framework used in building web applications with a lightweight codebase.
-We will create a flask web application that displays 'Flask Dockerized' on the browser when we run the web application.
+Flask is a lightweight Python framework used for building web applications. In this tutorial, we will create a Flask web application that displays a 'Flask Dockerized' message on the browser.
 
-Create a new repository called `flask` and run the command below to open it.
+Create a new folder called `flask` and run the command below to open it.
 
 ```
 cd flask
 ```
 
-Within the flask directory, create a new directory and call it `app`. Inside this directory or folder, create your `app.py` file, this is where we will write the code for our flask application.
+Within the `flask` directory, create a new folder and call it `app`. Inside the `app` directory, create an `app.py` file. We will write the code for our Flask application in this file.
 .
 
-The Flask application will look as shown below.
+Here is the code for our simple Flask application.
  
 **app.py**
-```
-from flask import Flask
-app = Flask(__name__)
+
+```py
+from flask import Flask # importing the flask class
+app = Flask(__name__) # creating an instance of the Flask class
  
-@app.route('/')
-def hello_world():
+@app.route('/') # The primary url for our application
+def hello_world(): # This method returns 'Flask Dockerized', which is displayed in our browser.
     return 'Flask Dockerized'
  
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0') # This statement starts the server on your local machine.
 ```
 
-That's our Flask app that displays a 'Flask Dockerized’ message when we run it.
+### Step 3 - Outlining key requirements
+In this step, we need to create a `requirements.txt` file. It contains the dependencies or packages required to run our application.
 
-Let's have an overview of the code whats in our `Flask application`:
+To create this file, we'll use the command below.
 
-* from flask import Flask - Firstly we imported the flask class.
-* app = Flask(__name__) - We then make a flask instance.
-* @app.route('/') - We now tell Flask the URL the will call our function.
-* def hello_world() - This returns 'Flask Dockerized', which is displayed in our browser.
-* if __name__ == '__main__': - onces this statement is true the app.run(debug=True, host='0.0.0.0') function will be executed.
-* app.run(debug=True, host='0.0.0.0') - this starts the server on your local machine.
-
-### Step 3 - Create our requirements file
-next we create a **requirements.txt** file.
-The requirements.txt file contains the dependencies or packages required to run our applications
-To create **requirements.txt** file, we'll use the instruction in the line below.
-
-```
+```bash
 pip freeze > requirements.txt
 ```
-Open the requirements.txt file and you should see this
-```
-click==8.0.1
-colorama==0.4.4
-Flask==2.0.1
-itsdangerous==2.0.1
-Jinja2==3.0.1
-MarkupSafe==2.0.1
-Werkzeug==2.0.1
+
+When you open the `requirements.txt` file, you should see the following lines:
 
 ```
-### Step 4 - Create Dockerfile
- 
-Dockerfile is used to create an image for our application, this image can now run on any host or environment with **Docker** installed on it and it is guaranteed to run the same way in any environment. The web application can be deployed everywhere using an image. 
-For each image built a Dockerfile is created, in our application, we will only be building one image, which is for our flask application.
- 
+  click==8.0.1
+  colorama==0.4.4
+  Flask==2.0.1
+  itsdangerous==2.0.1
+  Jinja2==3.0.1
+  MarkupSafe==2.0.1
+  Werkzeug==2.0.1
 ```
+
+### Step 4 - Creating a Dockerfile
+A Dockerfile is used to create an image for our application. This image will run on any host or environment with `Docker` installed. Our web application can, therefore, be deployed everywhere using an image. 
+
+> Note that a Dockerfile is generated for every image. In this tutorial, we will only be building one image for our Flask application.
+ 
+```bash
 touch Dockerfile
 ```
-In the Dockerfile created we include the following instructions and arguments.
+
+We need to include the following instructions and arguments in the generated Dockerfile.
  
 **Dockerfile** 
+
 ```
 FROM python:3.8
  
@@ -151,49 +142,42 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ``` 
-A `dockerfile` is a text file that is created in a style that `Docker` recognizes. It is in an instruction and argument format with instructions on the left in uppercase and arguments on the right in lowercase.
+The above `Dockerfile` contains the commands needed to assemble our image. 
  
-let’s have an overview of whats in our **Dockerfile**:
-* FROM python:3.8 - All Dockerfile must start with a FROM instruction with an argument that has another image, the FROM instruction pulls the python:3.8 image.
-* WORKDIR /app - It is similar to **cd command**. It sets our working directory as /app, which is will be at the root of our container. It runs any instruction that follows it in the Dockerfile such as **COPY**, **RUN**, **ADD**, **CMD**, or **ENTRYPOINT**. 
-* COPY  . /app - This copies files from the local system unto the docker image. it copies it from the current folder denoted with . to the  /app directory inside the docker image.
-* RUN pip install -r requirements.txt - Install all dependencies or packages in our **requirements.txt** file.
-* ENTRYPOINT ["python"] - Gives a command that will be run when the image is run as a container.
+let’s have an overview of whats in our `Dockerfile`:
 
- 
-* CMD ["app.py"] - Means command and specifies the program that will be executed when the container begins.
+- `FROM python:3.8` - A Dockerfile must start with a `FROM` instruction with an argument that has another image. The `FROM` instruction pulls the python:3.8 image.
 
- 
-`ENTRYPOINT` is similar to the CMD instruction in that it allows you to define the application which will run once the container starts.
+- `WORKDIR /app` - It is similar to `cd command`. It sets our working directory as `/app`. This will be the root of our container. It runs any instruction that follows it in the Dockerfile such as `COPY`, `RUN`, `ADD`, `CMD`, or `ENTRYPOINT`. 
 
-Whatever you specify on the CMD instruction, in our case `app.py` will get appended to the ENTRYPOINT instruction, which is `python`.
+- `COPY  . /app` - This command copies files from the local system onto the Docker image. In our case, it will copy files from the current folder denoted with `.` to the  `/app` directory.
+
+- `RUN pip install -r requirements.txt` - This command installs all dependencies or packages defined in our `requirements.txt` file.
+
+- `ENTRYPOINT ["python"]` - This command is executed when the image is run as a container.
+
+- `CMD ["app.py"]` - This command specifies the program or file that will be executed when the container initializes.
  
-So the command that will run when the container starts will be: 
+`ENTRYPOINT` is similar to the CMD instruction in that it allows you to define the application that will run once the container starts. Whatever you include in the `CMD`, in our case `app.py` will get appended to the `ENTRYPOINT` instruction, which is `python`.
+ 
+Here is the command that is executed when the container is launched:
  
 ```bash
 docker run python app.py
 ```
-That is the difference between CMD instruction and ENTRYPOINT instruction.
- 
+
 The last step is to build our `docker-compose.yml` file.
  
 ### Step 5 - Docker Compose
-Docker compose is a powerful technique for developing and running  Docker applications having multiple containers. You configure your application's services with docker compose using a YAML file.
+Docker Compose is a powerful technique for developing and running multi-container Docker applications. You can configure your application's services with Docker Compose using a `YAML` file.
  
-If you need to set up complex application running multiple services, a better way to do it is to use docker compose.
- 
-With docker-compose, we can create a configuration file in YAML format called docker-compose.yml and put together the different services and the options specific to running them in YAML file
- 
-Then we can simply run a docker compose up command like the one below to bring out the entire application stack.
- 
-It is easier to implement, run and maintain as all changes are always stored in the docker compose configuration file.
-```
+Docker Compose is the best way to set up a complex application running multiple services. All we need is to create a `docker-compose.yaml` file and specify the required services. We can then run a Docker Compose command to build the application stack using the code below. To can visit this [link](https://docs.docker.com/compose/) to learn more about Docker Compose.
+
+```bash
 docker compose up
 ```
- 
-We're only going to talk about some of its basics in this guide, but you can read more about it [here](https://docs.docker.com/compose/) to get a better understanding of how it works, its features, options, and versions.
- 
-Open the docker-compose.yml file created and add the following:
+
+Open the `docker-compose.yml` file we created and then add the following services:
  
 **docker-compose.yml**
 ```
@@ -207,64 +191,46 @@ services:
       - 5000:5000  
       
 ```
-Let's quickly have an overview of what we have above.
+Let's quickly have an overview of the above commands.
  
-Every **docker-compose.yml** file must start with the version you are intending to use except when using version 1.You must specify the version at the top of the file, in this case, **version:3.7** then followed by the application services we want to build using **services:** and put all services underneath it, in our case it's our flask application with **helloworld**.
- 
- Then let’s have an overview of other options in our **docker-compose** file
-* build: ./ - This specifies the location of the directory which contains the dockerfile with instruction to build a docker image. It's in the root folder in our case.
-* ports: This will enable us to access our application on the browser.  
- 
- 
- 
-Now let's get to the command line or terminal. We will create and test our application.
+- Each `docker-compose.yml` file must start with the `version` that you are intending to use except when using `version 1`. The version must be specified at the top of the file, in this case, `version: "3.7"`. We also need to outline the application's services in the `services section`, as shown above.
+
+- The `build: ./` option specifies the location of the directory which contains the Dockerfile. In our case, the file is in the root folder.
+
+- The `ports` option enables us to access our application on the browser via the defined ports (5000:5000).  
  
 ### Step 5 - Building and testing
  Run the command below in the same folder that contains **docker-compose.yml**: 
-:
-```
+
+```bash
 docker-compose up
 ```
-The command below also does the same job as the one above:
-```
+The above command displays the output  of each container. This can also be achieved using the following command:
+
+```bash
 docker-compose up --build
 ```
-You'll observe that we did not provide the command with the name of a file. To build, compose would check for a **docker-compose.yml** file inside the current working folder.
+There is no need to specify a file name when using the above commands. Docker Compose would check for a **docker-compose.yml** file inside the current working folder.
  
-In your web browser enter http://localhost:5000/ to view how your flask web application works. You would see in your browser:
-```
-Flask Dockerized!
-```
-To end or stop the docker service, hit **Ctrl + c**.
+You can navigate to `http://localhost:5000/` to access your Flask web application. A `Flask Dockerized` message should be displayed in your browser:
+
+On Windows, use `Ctrl + c` to stop the Docker service.
  
 ### Step 6 - Docker Compose commands
- 
-**docker-compose** does have a lot of commands and parameters that can be seen by executing:
-```
+You can view all Docker Compose commands and parameters by executing the command below:
+
+```bash
 docker-compose
 ```
-Run the following to list any running images:
-```
-docker-compose images
-```
+To list any running images, use the `docker-compose images` command:
 
-**docker-compose ps** will list any running containers:
-```
-docker-compose ps
-```
- 
-To stop our services enter:
-```
-docker-compose stop
-```
-### Step 10 - Making changes
-If you make any changes to the application, you'll need to rebuild the images using the following command:
-```
-docker-compose up --build
-```
- 
-Once your application is running fine on the development server, you can test it locally by building the services with Docker Compose.
- 
+`docker-compose ps` command will list any running containers. We can stop all services using `docker-compose stop`.
+
+If you make any changes to the application, you'll need to rebuild the images using the `docker-compose up --build` command.
+
 ### Conclusion
-This guide served as an introduction to building a simple flask application and using dockerfile and docker compose to build our image and hence containerizing our application.
+This guide served as an introduction to building a simple Flask application and containerizing it using a Dockerfile and Docker Compose. You can, therefore, use this knowledge to build and containerize more powerful applications.
  
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
