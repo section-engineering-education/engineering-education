@@ -10,7 +10,6 @@ date: 2021-06-24T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/php-superglobals/hero.jpg
     alt: Understanding PHP Superglobals
 ---
