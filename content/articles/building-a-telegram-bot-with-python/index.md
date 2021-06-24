@@ -12,6 +12,7 @@ A little understanding of Python would help the reader to follow along better.
 ### Table of contents
 1. [Setting up bot profile](#setting-up-bot-profile)
 2. [Coding the bot](#coding-the-bot)
+3. [Conclusion](#conclusion)
 
 
 ### Setting up bot profile
@@ -38,7 +39,7 @@ Now, we copy our access token and save it somewhere. Remember to properly secure
 ### Coding the bot
 We start by creating a new directory, and navigate into it.
 
-Next, we create a virtual environment
+Next, we create a virtual environment.
 
 A virtual environment allows you to create different spaces on your computer, with different set of libraries and versions.
 
@@ -140,72 +141,11 @@ Now let's test the bot
 
 It works!
 
-### Deploying the bot
+### Conclusion
+To conclude, we have learned about building telegram bots.
 
-At this point, the bot only works on our computer. If we want other people to make use of our bot, we need to move it to the internet.
+There is still a lot you can achieve with a telegram bot, like connecting your bot to an API
 
-We'll be deploying our bot to [PythonAnywhere platform](https://pythonanywhere.com).
+That's all!
 
-[PythonAnywhere](https://pythonanywhere.com) is an online hosting platform built using python. It provides bash and python consoles that can be accessed directly from your we browser.
-
-In order to deploy our bot, we need a requirements.txt file that contains all that contains all the python dependencies that it uses.
-
-```text
-APScheduler==3.6.3
-cachetools==4.2.2
-certifi==2021.5.30
-python-telegram-bot==13.6
-pytz==2021.1
-six==1.16.0
-tornado==6.1
-tzlocal==2.1
-```
-Next, we need to create an account on [PythonAnywhere](https://pythonanywhere.com). A free account is fine for this tutorial.
-
-Now, we need to create a bash console. On the dashboard, under "Consoles" section, click on the "$bash button" to open a bash session
-
-![Dashboard](/engineering-education/building-a-telegram-bot-with-python/dashboard.png)
-
-This will spin up a bash shell on your browser
-
-![Bash](/engineering-education/building-a-telegram-bot-with-python/terminal.png)
-
-Next, we have to copy our files to this platform. The bash console provides access to two text editors `nano` and `vi`. For the sake of this tutorial we'll be making use of `nano`
-
-Now, we are going to copy and paste the content of "bot.py" file and "requirements.txt" file, but first we need to create another bot.py from the PythonAnywhere bash console using the following command:
-
-```bash
-$ nano bot.py
-```
-Now copy the content in our former "bot.py" and paste in the text editor. to exit the text editor, press `ctrl+x` and answer "Yes" when asked if you want to save the changes.
-
-Now let's repeat the same process with the requirements.txt file:
-
-```bash
-$ nano requirements.txt
-```
-
-Now that we are done creating the files, we need to create and activate a virtual environment using the following command:
-
-```bash
-$ python -m venv venv
-$ source env/bin/activate
-```
-
-The bash prompt should now have a (venv) prefix, which indicates that the virtual environment is activated. The next step is for us to install the Python dependencies referenced in the requirements.txt file using the following command:
-
-```bash
-$ pip install -r requirements.txt
-```
-
-With the application files and Python configuration in place, we need to tell PythonAnywhere to allocate a web application. Click on the menu in the top-right corner of your bash console window and select “Dashboard”.
-
-From the Dashboard, select “Web” in the navigation bar and click on “Add a new web app”.
-
-We will now enter a step-by-step guided configuration tool. In the first step, you will be given the public URL under which your web application will be hosted. If we have a paid PythonAnywhere account, we can select a custom domain name, but on free accounts the domain is going to have the format <your-username>.pythonanywhere.com.
-
-Click the “Next” button to continue to the next step.
-
-![Dashboard](/engineering-education/building-a-telegram-bot-with-python/domain.png)
-
-Next, we'll be prompted to select a python web framework. We'll be using the "manual configuration" option
+Happy Coding!
