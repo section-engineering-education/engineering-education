@@ -19,25 +19,16 @@ This article is aimed at refreshing the reader of their knowledge of boosting al
 Boosting has quickly risen to be one of the most sought-after techniques to improve the performance of models in machine learning. There has been an exponential rise in the usage of boosting algorithms in the world of Kaggle. One can hardly pick a model at the top 20 of any competition that hasn't used a boosting algorithm.
 
 ### Table of Contents
-1. [Introduction](#introduction)
-2. [Pre-Requisites](#pre-requisites)
+1. [Pre-Requisites](#pre-requisites)
+2. [Introduction](#introduction)
 3. [Bagging vs Boosting](#bagging-vs-boosting)
 4. [Data Preprocessing](#data-preprocessing)
 5. [AdaBoost](#adaboost)
 6. [AdaBoost Implementation in Python](#adaboost-implementation-in-python)
 7. [XGBoost](#xgboost)
 8. [XGBoost Implementation in Python](#xgboost-implementation-in-python)
-9. [Conclusion](#conclusion)
+9.  [Conclusion](#conclusion)
 10. [Additional Resources](#additional-resources)
-
-### Introduction
-The first-ever boosting algorithm called AdaBoost (Adaptive Boosting) was introduced to the world by Freund and Schapire. [Statisticians](https://web.stanford.edu/~hastie/Papers/buehlmann.pdf) have come forward, laying proofs and theorems as to how this ensemble method works well in improving prediction results. 
-
- [Ensemble methods](https://www.section.io/engineering-education/ensemble-learning/) are techniques that use multiple models and combine them into one for enhanced results. The term "models" could refer to any model - regression, support vector machines, and kNNs, and the model whose performance has to be improved is called the base model. Although the technique "boosting" uses decision trees to improve the model's accuracy, it can be applied to any base model.
-
-However, it has been observed that boosting a decision tree based model provides better results than boosting other models. One possible explanation could be the structural similarities of the base model (decision tree) and the boosting algorithm.
-
-The article is split into two parts for the convenience of the reader. This part focuses on refreshing the reader about boosting and explains two boosting algorithms in-depth - Adaptive Boosting (AdaBoost) and eXtreme Gradient Boosting (XGBoost). The second part of the article will focus on explaining two more popular boosting techniques - Light Gradient Boosting Method (LightGBM) and Category Boosting (CatBoost).
 
 ### Pre-Requisites
 The reader is expected to have a beginner-to-intermediate level understanding of machine learning and [machine learning models](https://www.geeksforgeeks.org/machine-learning/) with a higher focus on [decision trees](https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052). The reader is encouraged to go through the following resources for a better understanding of this article:
@@ -45,6 +36,15 @@ The reader is expected to have a beginner-to-intermediate level understanding of
 1. [Supervised Learning Algorithms by Lalithnarayan C](https://www.section.io/engineering-education/supervised-learning-algorithms/)
 2. [Understanding Loss Functions in Machine Learning by Prashanth Saravanan](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/)
 3. [Introduction to Random Forest in Machine Learning by Onesmus Mbaabu](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/)
+
+### Introduction
+The first-ever boosting algorithm called AdaBoost (Adaptive Boosting) was introduced to the world by Freund and Schapire. [Statisticians](https://web.stanford.edu/~hastie/Papers/buehlmann.pdf) have come forward, laying proofs and theorems as to how this ensemble method works well in improving prediction results. 
+
+[Ensemble methods](https://www.section.io/engineering-education/ensemble-learning/) are techniques that use multiple models and combine them into one for enhanced results. The term "models" could refer to any model - regression, support vector machines, and kNNs, and the model whose performance has to be improved is called the base model. Although the technique "boosting" uses decision trees to improve the model's accuracy, it can be applied to any base model.
+
+However, it has been observed that boosting a decision tree based model provides better results than boosting other models. One possible explanation could be the structural similarities of the base model (decision tree) and the boosting algorithm.
+
+The article is split into two parts for the convenience of the reader. This part focuses on refreshing the reader about boosting and explains two boosting algorithms in-depth - Adaptive Boosting (AdaBoost) and eXtreme Gradient Boosting (XGBoost). The second part of the article will focus on explaining two more popular boosting techniques - Light Gradient Boosting Method (LightGBM) and Category Boosting (CatBoost).
 
 For running the code, the user is expected to have the following libraries: NumPy, Pandas, Sklearn, and XGBoost. The reader can install the mentioned libraries in their Windows-operated machine using the following command in the Command Prompt:
 
@@ -54,6 +54,7 @@ pip install pandas
 pip install scikit-learn
 pip install xgboost
 ```
+
 To test if the libraries are imported, let us import the libraries in Python.
 
 ```py
@@ -66,7 +67,7 @@ import xgboost
 ### Bagging vs Boosting
 As mentioned, boosting is confused with [bagging](https://en.wikipedia.org/wiki/Bootstrap_aggregating). Those are two different terms, although both are ensemble methods.
 
-Bagging and boosting both use an arbitrary `N` number of learners by generating additional data while training. These `N` learners are used to create `M` new training sets by sampling random sets from the original set. The idea behind bagging is to combine the results of the `M` models that are generated from the sampled sets. The models run in parallel and are independent of each other, and the final results are obtained from combining the results of all the models. 
+Bagging and boosting both use an arbitrary `N` number of learners by generating additional data while training. These `N` learners are used to create `M` new training sets by sampling random sets from the original set. The idea behind bagging is to combine the results of the `M` models that are generated from the sampled sets. The models run in parallel and are independent of each other, and the final results are obtained from combining the results of all the models.
 
 ![Bagging](/engineering-education/boosting-algorithms-part-1/bagging.png)
 
@@ -78,7 +79,7 @@ Whereas in boosting, the `M` models are trained sequentially, with the models ca
 
 *Source: [Towards Data Science](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)*
 
-### Data Preprocessing
+### Data preprocessing
 The article uses the [UCI Machine Learning Mushroom Dataset](https://www.kaggle.com/uciml/mushroom-classification) to implement the AdaBoost and XGBoost algorithms. For the set of features in the dataset, the task is to identify whether the type of mushroom is poisonous or edible. The reader is encouraged to download the dataset and follow along with the code blocks in the article for better understanding.
 
 First, let's import the required libraries.
@@ -99,6 +100,7 @@ df = pd.read_csv("mushrooms.csv")
 for col in df.columns:
     print('Number of unique values in', col, 'is', len(df[col].unique()))
 ```
+
 **Output**
 
 ```bash
@@ -199,6 +201,7 @@ Let us invoke an instance of the `AdaBoostClassifier` and fit it with the traini
 adaboost = AdaBoostClassifier(n_estimators = 50, learning_rate = 0.2).fit(X_train, Y_train)
 score = adaboost.score(X_test, Y_test)
 ```
+
 **Output**
 
 ```bash
@@ -248,7 +251,8 @@ from xgboost import XGBClassifier
 xgboost = XGBClassifier(n_estimators = 1000, learning_rate = 0.05).fit(X_train, Y_train, early_stopping_rounds = 5, eval_set = [(X_test, Y_test)],verbose = False)
 score_xgb = xgboost.score(X_test,Y_test)
 ```
-And the final result is
+
+And the final result would be
 
 ```bash
 0.9950779327317474
