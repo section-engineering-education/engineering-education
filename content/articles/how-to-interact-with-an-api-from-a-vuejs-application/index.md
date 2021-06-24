@@ -5,7 +5,7 @@ published: true
 url: /how-to-interact-with-an-api-from-a-vuejs-application/
 title: How to Interact With an API from a Vue.js Application
 description: This tutorial will provide the readers a detialed guide on how to interact with an API from a Vue.js application using Fetch and Axios.
-author: edidiong-etuk
+author: edidi-etok
 date: 2021-06-19T00:00:00-11:00
 topics: [API]
 excerpt_separator: <!--more-->
