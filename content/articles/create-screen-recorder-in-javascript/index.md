@@ -3,7 +3,7 @@ title: How to Create A Screen Recorder in Vanilla JavaScript
 description: Learn how to record your screen and save the recorder screen as a video file using JavaScript.
 
 ### Introduction
-The Screen Capture API is used to capture the screen or a part of the screen as a Media Strem. From the recorded Media Stream we can create a video file.
+The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream. From the recorded Media Stream we can create a video file.
 
 ### Prerequisites
 
@@ -100,7 +100,7 @@ This will be triggered by calling the top method on the MediaRecorder interface.
 
 Steps to create a recorder
  * Create a Media Recorder object with the stream returned by the `recordScreen` method
- * Add an event listener for datavailable event and store the received data
+ * Add an event listener for dataavailable event and store the received data
  * Add an event listener for stop event and call save method from there with the stored data
  * Start recording by calling the `start` method. We can pass the time interval to the `start` method,  for triggering the dataavailable event. If we call `start(100)` then for every 100 milliseconds the dataavailable event is triggered.
 
@@ -147,9 +147,9 @@ function saveFile(recordedChunks){
 }
 ```
 
-Now we have created the required function let's add an event listener to the two buttons.
+Now we have created the required functions. Let's add an event listener to the two buttons.
 * On pressing the start recording button we need to  
-  *  Record Screen
+  * Record Screen
   * Create Media Recorder
 *  On pressing the stop recording button we need to
     * Stop Recording
