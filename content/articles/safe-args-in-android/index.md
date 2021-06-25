@@ -3,32 +3,35 @@ layout: engineering-education
 status: publish
 published: true
 url: /safe-args-in-android/
-title: Sharing data using SafeArgs in Android-Kotlin
+title: Sharing Data using SafeArgs in Android-Kotlin
 description: This article will guide the reader on how to share predefined and custom data types in arguments across destinations in an Android app using SafeArgs.
 author: eric-gacoki
-date: 2021-06-06T00:00:00-06:00
-topics: [Android]
+date: 2021-06-25T00:00:00-09:00
+topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/safe-args-in-android/hero.png
-    alt: SafeArgs in Android.
+    alt: SafeArgs in Android example image
 ---
-
+Data sharing in Android involves passing arguments between fragments in navigation action. This not only enhances communication between the destinations involved but also establishes a continuous flow of the application.
+<!--more-->
 ### Introduction
-Data sharing in Android involves passing arguments between fragments in navigation action. This not only enhances communication between the destinations involved but also establishes a continuous flow of the application. In the past few years, Android developers made use of the Android Bundle class which was one of the techniques of sharing data across activities. This came with a bunch of cons among which is the tedious work the developer had to do, unreliability due to the manual approach, and lack of type safety that could easily crash the application.
+In the past few years, Android developers have made use of the Android Bundle class which was one of the techniques of sharing data across activities. 
 
-The Navigation components API, (part of [Jetpack](https://developer.android.com/jetpack) libraries) is a MAD(Modern Android Development) approach that solves these problems by introducing `SafeArgs` - a plugin that allows you to pass data in a more efficient, safe, and encapsulated way.
+This came with a bunch of cons among which is the tedious work the developer had to do, the unreliability due to the manual approach, and lack of type safety that could easily crash the application.
+
+The Navigation components API, (part of [Jetpack](https://developer.android.com/jetpack) libraries) is a MAD (Modern Android Development) approach that solves these problems by introducing `SafeArgs` - a plugin that allows you to pass data in a more efficient, safe, and encapsulated way.
 
 #### Prerequisites
-To follow through this tutorial, you need to be familiar with;
-- Basic usage of Android studio.
-- Kotlin programming.
+To follow through this tutorial, you need to be familiar with:
+- Basic usage of [Android studio](/engineering-education/search/?q=Android%20studio).
+- [Kotlin programming](/engineering-education/search/?q=Kotlin).
 - Imperative paradigm concepts in Android development.
 - View binding and/or data binding.
 
 #### Table of contents
-<details><summary markdown="span">In this tutorial, we're going to;</summary>
-
+In this tutorial, we're going to:
 - [Create an Android project](#create-an-android-project)
 - [Enable viewBinding](#enable-viewbinding)
 - [Create two Fragments](#create-two-fragments)
@@ -41,7 +44,6 @@ To follow through this tutorial, you need to be familiar with;
 - [Create custom data object](#creating-a-custom-object-argument)
 - [Receive parcel at the destination](#receive-the-parcel-in-fragmentbkt)
 - [Conclude](#conclusion)
-</details>
 
 ### Create an Android project
 Fire up Android Studio and create an Empty Activity project with the following configurations.
@@ -62,10 +64,13 @@ android {
     }
 }
 ```
+
 You can learn more about view binding [here](https://developer.android.com/topic/libraries/view-binding).
 
 ### Create two Fragments
-Moving on, we need at least two fragments that we'll use to pass arguments across when navigating. Right-click on the project's main package directory and create two empty fragments namely `FragmentA` and `FragmentB`. Let's nickname them A and B to keep things simple. The two should have their corresponding XML files namely `fragment_a.xml` and `fragment_b.xml` respectively.
+Moving on, we need at least two fragments that we'll use to pass arguments across when navigating. Right-click on the project's main package directory and create two empty fragments namely `FragmentA` and `FragmentB`. 
+
+Let's nickname them A and B to keep things simple. The two should have their corresponding XML files namely `fragment_a.xml` and `fragment_b.xml` respectively.
 
 #### Starter code setup
 The following is the initial code that we'll build on.
@@ -88,6 +93,7 @@ class FragmentA: Fragment() {
     }
 }
 ```
+
 Here, we've inflated the fragment using view binding.
 
 #### ii). fragment_a.xml
@@ -105,6 +111,7 @@ Here, we've inflated the fragment using view binding.
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.9" />
 ```
+
 This serves as the UI for FragmentA. The above code creates a button that will later be used to trigger a navigation action when clicked.
 
 #### iii). FragmentB.kt
@@ -125,6 +132,7 @@ class FragmentB : Fragment() {
     }
 }
 ```
+
 This serves a similar purpose as that of FragmentA.
 
 #### iv). fragment_b.mxl
@@ -140,10 +148,13 @@ This serves a similar purpose as that of FragmentA.
     app:layout_constraintTop_toTopOf="parent"
     tools:text="Argument text" />
 ```
+
 The above textView will be used to display data after a successful arrival discussed in the latter part of the tutorial 😎.
 
-### Creating the Navigation Graph
-A navigation graph popularly known as nav-graph controls and visualizes how we maneuver between the fragments. To create a nav-graph, switch to Resource Management on the left side panel and select `navigation`. Click the `+` button and create a new graph named `my_nav`. This will prompt you to automatically add the respective dependencies.
+### Creating the navigation graph
+A navigation graph popularly known as nav-graph controls and visualizes how we maneuver between the fragments. To create a nav-graph, switch to Resource Management on the left side panel and select `navigation`. 
+
+Click the `+` button and create a new graph named `my_nav`. This will prompt you to automatically add the respective dependencies.
 
 ![Accept dependencies](/engineering-education/safe-args-in-android/accept-dependencies.png)
 
@@ -239,6 +250,7 @@ dependencies {
     classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
 }
 ```
+
 In your module-level `build.gradle` file, add the following plugin.
 
 ```gradle
@@ -249,7 +261,8 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 ```
-Check if you have Java-8 support enabled as most Gradle plugins(including safe-args) require JDK 8.
+
+Check if you have Java-8 support enabled as most Gradle plugins (including safe-args) require JDK 8.
 
 ```bash
 android {
@@ -271,7 +284,7 @@ It is recommended to fully rebuild and clean your project after syncing to make 
 #### What argument types does SafeArgs support?
 The data attached to a navigation operation is referred to as an argument. Arguments can take different types but not all types are supported by SafeArgs.
 
-<details><summary>The following is a list of supported data types</summary>
+The following is a list of supported data types.
 
 Predefined types:
 - Boolean
@@ -285,14 +298,13 @@ Custom types:
 - Custom Serializable
 - Custom Enum
 - Resource Reference
-</details>
 
 ### How can you define an argument?
 To add an argument to a nav-action, select the destination fragment in the navigation graph preview and click `+` on the attributes panel. A dialog will pop up as shown below.
 
 ![Add integer argument](/engineering-education/safe-args-in-android/add-int-argument.png)
 
-This can be used to define attributes such as `name`, `type`, `nullability`, and the `default value` where applicable. In the above example, we've created ***myAge*** which is an ***Integer*** whose default value is ***1***.
+This can be used to define attributes such as `name`, `type`, `nullability`, and the `default value` where applicable. In the example above, we've created ***myAge*** which is an ***Integer*** whose default value is ***1***.
 
 By clicking `Add`, the following tag is auto-added.
 
@@ -304,8 +316,8 @@ By clicking `Add`, the following tag is auto-added.
     android:defaultValue="1" />
 ```
 
-### Passing values to the argument.
-Think of a scenario where you need to order a pizza to be delivered to you. You'll have to place an order before delivery. Similarly, when we want to pass data from `A` to `B`, `B` must first need it, that is, there must be an argument in `B` and a path connecting `A` to `B`. This path is the navigation action that we've already created. 
+### Passing values to the argument
+Think of a scenario where you need to order a pizza to be delivered to you. You'll have to place an order before delivery. Similarly, when we want to pass data from `A` to `B`, `B` must first need the data, that is, there must be an argument in `B` and a path connecting `A` to `B`. This path is the navigation action that we've already created. 
 
 Moving on, declare an action variable and assign `19` to it for example. Remember the value must align with the type of the argument. In this case, we can only pass integers, otherwise, a type mismatch exception will be thrown. 
 
@@ -321,8 +333,9 @@ binding?.btnShareData?.setOnClickListener {
 ```
 
 ### Receive the argument at the destination
-Now, our pizza delivery is in progress. We need to prepare to receive it upon arrival. Head to `FragmentB.kt` and update the code to;
+Now, our pizza delivery is in progress. We need to prepare to receive it upon arrival. 
 
+Head to `FragmentB.kt` and update the code to:
 ```Kotlin
 class FragmentB : Fragment() {
     private var binding: FragmentBBinding? = null
@@ -343,12 +356,15 @@ class FragmentB : Fragment() {
     }
 }
 ```
+
 Here we've declared a variable `args` that takes the argument(s) associated with FragmentB. We've also set the value of the textView to the value contained in `args`.
 
 Similarly, we can share other data types as well.
 
-### Sharing custom Arguments
-Other than predefined data types, SafeArgs allows us to pass objects of our desired type. To demonstrate this, we're going to pass a person object using a custom Parcelable argument. This way we can share different data types under the hood of one type. Add the following plugin to add `Parcelize` to your project.
+### Sharing custom arguments
+Other than predefined data types, SafeArgs allows us to pass objects of our desired type. To demonstrate this, we're going to pass a person object using a custom Parcelable argument. 
+
+This way we can share different data types under the hood of one type. Add the following plugin to add `Parcelize` to your project.
 
 ```bash
 plugins {
@@ -358,7 +374,7 @@ plugins {
 }
 ```
 
- This plugin provides a Parcelable implementation generator that automatically generates parcels for classes annotated with `@Parcelize` annotation. Such classes must extend `Parcelable` which is an Android specific interface where we serialize objects ourselves.
+This plugin provides a Parcelable implementation generator that automatically generates parcels for classes annotated with `@Parcelize` annotation. Such classes must extend `Parcelable` which is an Android specific interface where we serialize objects ourselves.
 
 Create a data class `Person` that implements the above information.
 
@@ -372,7 +388,8 @@ data class Person(
     val age: Int
 ): Parcelable
 ```
-An object of the above class will have two attributes, name and age.
+
+An object of the class above will have two attributes, name and age.
 
 #### Creating a custom object Argument
 A parcelable argument is created the same way as predefined types only that we select the Parcelable class as its type.
@@ -414,7 +431,9 @@ return binding.apply {
 ```
 
 ### Conclusion 
-In this tutorial, we've learned how SafeArgs can be used to pass or share data across destinations. Note that it is not recommended to pass large amounts of data since argument size is limited in Android. In such a case, I'd recommend you to use a [ViewModel](https://developer.android.com/reference/androidx/lifecycle/ViewModel) as discussed in [this blog](https://developer.android.com/topic/libraries/architecture/viewmodel#sharing). The source code for this project can be found [on my GitHub](https://github.com/Ericgacoki/safe-args).
+In this tutorial, we've learned how SafeArgs can be used to pass or share data across destinations. Note that it is not recommended to pass large amounts of data since argument size is limited in Android. 
+
+In such a case, I'd recommend you to use a [ViewModel](https://developer.android.com/reference/androidx/lifecycle/ViewModel) as discussed in [this blog](https://developer.android.com/topic/libraries/architecture/viewmodel#sharing). The source code for this project can be found [on my GitHub](https://github.com/Ericgacoki/safe-args).
 
 Happy coding!
 
