@@ -22,13 +22,13 @@ Before reading this article, you should have an understanding of:
 
 When you're done getting a hang of these concepts, you can come back here to read this article. It’d be worth it, I promise!
 
-Overview of what we’re building
+### Overview of what we’re building
 
 The whole idea behind this article is so you can create layouts that are responsive at different device breakpoints while obtaining data from a remote API that'd be on the web page.
 
 We'd complete this task by making use of [JSONPlaceholder’s](http://jsonplaceholder.typicode.com/users) dummy users API, which would be used to populate the user interface of the app.
 
-What is Material UI
+### What is Material UI
 
 Material UI is a React-based CSS utility framework that enables developers to be able to create aesthetic user interfaces. Its functions are quite like that of Bootstrap but in a more advanced way. Since it is a React-based CSS framework, it employs a paradigm of CSS components that can be imported anywhere in a React application. It has various use cases, ranging from layouts, styling inputs, navigation, etc. You can [read more](https://material-ui.com/components/) about the components in their docs. We’d have to make use of the Grid component in this article since it is the only one that tallies with what we’re trying to build.
 
@@ -265,7 +265,7 @@ export default function Home() {
 
 ### Conclusion
 
-I intentioanlly ommited the styles of this app for brevity’s sake, if you really want to see how this app looks like in real time, you check it out [here](https://profilez.netlify.app) and inspect the responsiveness accross the different breakpoints. Here the link to the [repository](https://github.com/Caleb335/profiles)https://github.com/Caleb335/profiles­ on GitHub if you want to inspect it.
+I intentionally ommited the styles of this app for brevity’s sake, if you really want to see how this app looks like in real time, you check it out [here](https://profilez.netlify.app) and inspect the responsiveness accross the different breakpoints. Here the link to the [repository](https://github.com/Caleb335/profiles)https://github.com/Caleb335/profiles­ on GitHub if you want to inspect it.
 
 If you want to understand how to create responsive layouts without making use of a framework, kindly check this [article](https://www.freecodecamp.org/news/media-queries-width-ranges/) that explains media queries in CSS.
 
