@@ -144,7 +144,7 @@ It works!
 ### Conclusion
 To conclude, we have learned about building telegram bots.
 
-There is still a lot you can achieve with a telegram bot, like connecting your bot to an API
+There is still a lot you can achieve with a telegram bot, like connecting your bot to an API, and hosting on a platform like Heeroku.
 
 That's all!
 
