@@ -9,7 +9,6 @@ author: geoffrey-mwangi
 date: 2021-06-25T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
-
 images:
   - url: /engineering-education/c-sharp-enums/hero.jpg
     alt: Enums in C# example image
