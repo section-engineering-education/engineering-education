@@ -174,4 +174,7 @@ In this article, I have explained how you can become a blockchain developer and 
 Good luck!
 
 ### References
-[Blockchain For Beginners: The Complete Step BY Step Guide To Understanding Blockchain Technology](https://www.amazon.com/Blockchain-Beginners-Complete-Understanding-Technology/dp/1548766887)
+[Blockchain For Beginners: The Complete Step By Step Guide To Understanding Blockchain Technology](https://www.amazon.com/Blockchain-Beginners-Complete-Understanding-Technology/dp/1548766887)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
