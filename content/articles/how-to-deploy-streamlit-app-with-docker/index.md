@@ -1,7 +1,20 @@
-### Deploying a simple streamlit app using docker from scratch
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-deploy-streamlit-app-with-docker/
+title: Deploying a simple streamlit app using docker
+description: This article takes the reader through creating and deploying a streamlit application using docker. Docker is a virtualization platform that is designed to create, run, and deploy applications through the use of containers.
+author: bravin-wasike
+date: 2021-06-25T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-deploy-streamlit-app-with-docker/hero.png
+    alt: Docker image example
+---
 Docker is a virtualization platform that is designed to create, run, and deploy applications through the use of containers. We shall use docker to deploy a simple machine learning app built using Streamlit.
-
+<!--more-->
 In this tutorial, we will first create a simple machine learning model, save it into a pickle file to be loaded into our platform, and create its interface using Streamlit.
 After creating the Streamlit app, we shall use docker to deploy it.
 
@@ -456,3 +469,6 @@ By using these steps, we can now comfortably deploy our streamlit app using dock
 2. [Docker Documentation](https://www.docker.com/)
 3. [Tensorflow Documentation](tensorflow.org/guide/keras/save_and_serialize)
 4. [Scikit-learn Documentation](https://scikit-learn.org/)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
