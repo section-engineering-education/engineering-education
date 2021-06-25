@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/c-sharp-enums
+url: /c-sharp-enums/
 title: Enums in C#
 description: In the C# language, `enum` (also called enumeration) is a user-defined value type used to represent a list of named integer constants.
 author: geoffrey-mwangi
