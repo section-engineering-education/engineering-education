@@ -309,4 +309,4 @@ That's it! You can now implement Firestore cloud database in your Android app. T
 Happy Coding!
 
 ---
-Peer Review Contributions by: [](/engineering-education/authors//)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
