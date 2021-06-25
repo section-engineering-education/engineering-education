@@ -76,7 +76,7 @@ Docker containers use Docker container images to containerize an application. Fo
 
 To set up this single Hadoop cluster using Docker, ensure that Docker is installed on your computer. Run the following commands to make sure Docker is ready to set up to run docker-compose.
 
-- To check docker run;
+- To check Docker, run;
 
 ```bash
 docker --version
@@ -112,7 +112,7 @@ Additionally, ensure that you have git installed on your computer.
 
 ### How to set up a single Hadoop cluster using docker-compose
 
-Start by cloning this `docker-Hadoop repository from Github as follows;
+Start by cloning this docker-Hadoop repository from Github as follows;
 
 ```bash
 git clone https://github.com/big-data-europe/docker-hadoop.git
@@ -124,7 +124,7 @@ The sample repository above has a Hadoop `docker-compose.yml` set and ready to b
 docker-compose up -d
 ```
 
-The `docker-compose up` will check the containers set in the `docker-compose.yml`, download them and run them within the docker engine. The `-d` flag will set the container to run in a detachable model, i.e., in the background. After everything is done, you can check the running Hadoop containers using the following command;
+The `docker-compose up` will check the containers set in the `docker-compose.yml`, download them and run them within the Docker engine. The `-d` flag will set the container to run in a detachable model, i.e., in the background. After everything is done, you can check the running Hadoop containers using the following command;
 
 ```bash
 docker ps
@@ -165,7 +165,7 @@ The aim of containerizing Hadoop using Docker is to be able to run and test your
 - Copy the `jar` file to the container. For this instance, we will use the `namenode` container to run a test job; feel free to use any you want.
 
 ```bash
-docker cp Hadoop-MapReduce-examples-2.7.1-sources.jar namenode:/tmp/
+docker cp hadoop-mapreduce-examples-2.7.1-sources.jar namenode:/tmp/
 ```
 
 - Create a simple file, i.e a `.txt` file.
@@ -240,17 +240,17 @@ docker-compose down
 
 ### Set up the Hadoop cluster using Docker
 
-From the above example, we have executed the Hadoop cluster using the docker-compose. Alternatively, you can use Docker, run the Hadoop images directly on your docker engine, and set up a Hadoop cluster.
+From the above example, we have executed the Hadoop cluster using the docker-compose. Alternatively, you can use Docker, run the Hadoop images directly on your Docker engine, and set up a Hadoop cluster.
 
 To begin, run the following command to get a Hadoop Docker image from the Docker hub libraries;
 
 ```bash
-sudo docker pull sequenceiq/Hadoop-docker:2.7.1
+sudo docker pull sequenceiq/hadoop-docker:2.7.1
 ```
 
 This will download Hadoop and set it inside the installed Docker engine on your computer. You can check whether the Hadoop Docker image was downloaded successfully by running;
 
-This will download the Hadoop image with its YARN properties such as the node manager resource manager and history server and install it in your computer's Docker engine. Run the below command to see if the Hadoop Docker image was successfully downloaded.
+This will download the Hadoop image with its YARN properties such as the node manager, resource manager and history server and install it in your computer's Docker engine. Run the below command to see if the Hadoop Docker image was successfully downloaded.
 
 ```bash
 docker images
