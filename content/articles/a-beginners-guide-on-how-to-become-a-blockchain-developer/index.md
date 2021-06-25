@@ -40,7 +40,6 @@ Before reading this article, you need to be familiar with the blockchain technol
 5. [Use cases for blockchain](#use-cases-for-blockchain)
 
 ### Who is a blockchain developer?
-
 There are two types of blockchain developers:
 
 **1. Core blockchain developers**
@@ -60,7 +59,6 @@ Let's use an example to explain the distinction between blockchain core develope
 Web developers build web applications on top of web browsers. But, they don't build web browsers. The "Mozillas" of this world build the web browsers (main engine). Similarly, core blockchain developers build the "browser" (main blockchain network) while blockchain software developers build apps on top of the blockchain.
 
 ### Which blockchain should I use?
-
 **1. Bitcoin blockchain**
 
 This is the distributed ledger powering the Bitcoin cryptocurrency. This blockchain uses [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof_of_work) as its consensus mechanism. Recently, this consensus mechanism has been a bone of contention as PoW uses a lot of energy. You can read more about it [here](https://www.cnet.com/personal-finance/heres-how-much-energy-it-really-takes-to-mine-bitcoin-and-why-people-are-concerned/). 
