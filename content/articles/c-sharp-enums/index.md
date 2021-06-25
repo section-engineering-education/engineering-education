@@ -6,22 +6,19 @@ url: /engineering-education/c-sharp-enums
 title: Enums in C#
 description: In the C# language, `enum` (also called enumeration) is a user-defined value type used to represent a list of named integer constants.
 author: geoffrey-mwangi
-date: 2021-05-22T00:00:00-10:00
-topics: []
+date: 2021-06-25T00:00:00-12:00
+topics: [Languages]
 excerpt_separator: <!--more-->
+
 images:
   - url: /engineering-education/c-sharp-enums/hero.jpg
     alt: Enums in C# example image
 ---
-
-### Enums and Constants
-
-Sometimes, a developer can find this confusing because `enums` and `constants` tend to do the same work. Is there any major difference between them? When should we use enums instead of constants and vice versa?
-
+Developers can sometimes find the difference between `enums` and `constants` confusing since they work in a similar way. Is there any major difference between them? When should we use enums instead of constants and vice versa?
+<!--more-->
 A constant is a variable of any data type that won't change the value throughout the program while enums are user-defined value of a specific data type that can be changed.
 
 ### Enums in C#
-
 In the C# language, `enum` (also called enumeration) is a user-defined value type used to represent a list of named integer constants. It is created using the `enum` keyword inside a class, structure, or namespace. It improves a program's readability, maintainability and reduces complexity.
 
 The basic syntax of declaring an `enum` is:
@@ -32,7 +29,7 @@ enum enum_name {
 };
 ```
 
-**enum_name** is the name you want to give to your enum list. We use a comma(,) to separate the items in the enumeration list.
+**enum_name** is the name you want to give to your enum list. We use a comma (,) to separate the items in the enumeration list.
 
 For instance, January, February, March, May, and June are months of the year. Therefore, this becomes an enumeration with the name year and January, February, March, May, and June as its elements.
 
@@ -50,7 +47,6 @@ enum year
 ```
 
 ### Enum Values
-
 If we do not assign values to the `enum` items, the items are assigned an integer value by the compiler by default starting from 0. The first item will be assigned 0 and increment by one each time we add an item.
 
 ```cs
@@ -67,7 +63,6 @@ enum year
 ```
 
 ### Assigning our values
-
 We can change the values of the enum item. If we change a value to one of the months e.g March to 10. Then the compiler will assign the others sequentially i.e it will increment by one from 10:
 
 ```cs
@@ -84,7 +79,6 @@ enum year
 ```
 
 ### Access an Enum
-
 We access an `enum` item using the **dot** syntax:
 
 ```cs
@@ -108,7 +102,6 @@ Console.WriteLine(WeekDays.June); // June
 ```
 
 ### Convert an enum to an Integer
-
 We need to [explicitly convert](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions) an item in the `enum` to get an integer value.
 
 **Example**
@@ -163,7 +156,6 @@ The value of June in year enum is 5
 From the above program, we have not specified a value to the items, the compiler assigns January 0 and starts to increment by one, gives February 1, and so on.
 
 ### Convert an enum to a String
-
 We use the `ToString()` method to convert an enum to a string.
 
 **Example**
@@ -177,8 +169,7 @@ Console.WriteLine(year.February.ToString());
 Console.WriteLine(year.March.ToString());
 ```
 
-### Interesting facts and rules about the initialization of enum.
-
+### Interesting facts and rules about the initialization of enum
 1. We can assign one value to two `enum` names.
 
 **Example**
@@ -196,7 +187,6 @@ enum color
 3. We can only assign integral values to the enum names. We should not assign strings as values.
 
 ### Conclusion
-
 In this article, we have looked at what enums are and how to apply them in our programs. We have seen that constants are used for declaring a single value while in enums therefore, we can represent a list of items in one enum. We can now easily use enums to represent a list of named integer constants.
 
 ---
