@@ -69,7 +69,7 @@ class Contact(models.Model):
 ```
 The application looks as follows with just a  little of styling...
 
-![Contact App](/engineering-education/django-custom-template-tags-and-filters/image1png)
+![Contact App](/engineering-education/django-custom-template-tags-and-filters/image1.png)
 
 Now let's create two simple filters that capitalizes all strings in a given name, 
 capitalizes the first character of a word and  also sets a color.
@@ -170,7 +170,9 @@ Change the html to this:
 {% endblock content %}
 ```
 The resulting template would look as follows:
+
 ![Contact App](/engineering-education/django-custom-template-tags-and-filters/image3.png)
+
 Likewise, you can create your own simple tags and use them how you deem fit.
 ### Inclusion Tags. 
 This tag displays data by rendering another template and is useful when working with data that is common in several pages.
@@ -212,7 +214,9 @@ Then make the contact.html look like this:
 
 ```
 The resulting template will now look as follows:
+
 ![Contact App](/engineering-education/django-custom-template-tags-and-filters/image4.png)
+
 Notice that by adding `show_users` tag, we now have a user added below the contacts.
 
 You have now successfully created your custom template tags and filters.You should now be able to create new ones and apply anywhere you want in your Django application.I also recommend having a thorough look at django documentation and have a clear understanding of how they work.
