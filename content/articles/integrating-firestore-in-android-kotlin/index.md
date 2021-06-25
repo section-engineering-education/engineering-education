@@ -27,21 +27,21 @@ To follow through this article, you'll need to have a basic experience in:
 - Managing a Google account.
 
 ### Table of contents
-- Introduction to Cloud Firestore.
-- Creating a Firebase project.
-- Creating an Android project.
-- Connect the two projects using the Firebase console.
-- Upload and Read data.
-- Conclusion.
+- [Introduction to Cloud Firestore.](#how-firestore-stores-data)
+- [Creating a Firebase project](#create-a-firebase-project)
+- [Creating an Android project](#create-an-android-project)
+- [Connect the two projects using the Firebase console](#connect-the-two-projects)
+- [Create a Firestore Cloud database](#create-cloud-firestore-database)
+- [Upload and Read data](#database-operations)
+- [Conclusion](#conclusion)
 
 ### How Firestore stores data
 Unlike other popular databases, Firestore stores data in a [NoSQL format](https://youtu.be/v_hR4K4auoQ), that is, data is stored in JSON objects within nodes. These nodes are referred to as documents. A document can not exist on its own. There must be a parent container that holds at least one document. This container is referred to as a collection. As the database grows, a tree-like structure is formed with the related documents and collections connected to a common collection with the aid of their respective `IDs`. Firestore is unique in that it supports creation of collections inside documents. These buried collections are known as sub-collections.
 
 For instance, to create a `users` database, we'll create a collection called `users` and add documents with `unique` IDs each holding the user's attributes. 
-These attributes can be of the following data types.
+These attributes can be of the following data types:
 
-### Datatypes that Firestore supports
-Firestore supports a variety of data types: Boolean, Number, String, Geo point, Binary blob, Cloud Firestore references, Arrays, Map values, and Timestamp
+Boolean, Number, String, Geo point, Binary blob, Cloud Firestore references, Arrays, Map values, and Timestamp
 
 ### Create a Firebase project
 Cloud Firestore is among the products that Firebase offers. We, therefore, need to create a Firebase project in which we'll create the database. Go to the [Official Firebase website](https://firebase.google.com/) and log in using your Google account.
@@ -227,7 +227,9 @@ class MainActivity : AppCompatActivity() {
 ```
 Here, we've made use of viewBinding to inflate UI accordingly. We've also declared a global constant variable that will be used as a tag in our log messages.
 
-### Database operations demo (using test rules)
+### Database operations
+(using test rules)
+
 Operations in a database include Create, Read, Update, and Delete also known as CRUD operations.
 
 #### Create database instance
