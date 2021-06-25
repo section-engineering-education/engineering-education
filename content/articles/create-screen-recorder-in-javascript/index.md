@@ -63,9 +63,9 @@ In the JavaScript file, we will have 3 methods
 2. `createMediaStream` -- This will create a MediaStream object from the screen stream.
 3. `saveRecording` -- This will save the file to our computer.
 
-Let's create the `recordScreen` method. On calling `getDisplayMedia` method in `navigator.mediaDevices` object will prompt the user to select and give permission to record the screen or part of the screen (browser tab). If the user has multiple screens all screens are displayed.
-
 #### Record Screen
+
+On calling `getDisplayMedia` method in `navigator.mediaDevices` object will prompt the user to select and give permission to record the screen or part of the screen (browser tab). If the user has multiple screens all screens are displayed.
 
 For `getDisplayMedia`  method we need to pass an object([constraints](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia#parameters)) as argument  with two property `audio` and `video` . If we set the value of `audio` to true then the audio is included in the stream.  In our case, we need both audio and video.
 
@@ -80,7 +80,9 @@ async function recordScreen() {
 
 #### Create MediaRecorder
 
-The `getDisplayMedia` will return a stream data. From that, we need to create a `MediaRecorder`. The`MediaRecorder` interface contains the following methods
+The `getDisplayMedia` will return a stream data. From that, we need to create a `MediaRecorder`.
+
+ The`MediaRecorder` interface contains the following methods
 
 |Method   	  | Functionality                		 |
 |-------------|--------------------------------------|
@@ -117,7 +119,7 @@ function createRecorder (stream) {
   };
 
   mediaRecorder.onstop = function () {
-     // saveFile(recordedChunks); // will be created below
+     saveFile(recordedChunks); // will be created below
      recordedChunks = [];
   };
   mediaRecorder.start(200); // For every 200ms the stream data will be stored in a separate chunk.
@@ -187,7 +189,7 @@ You can also check out the final code in this [GitHub Repository](https://github
 - We create an HTML file with 2 buttons for start and stop recording
 - We recorded the screen using  `navigator.mediaDevices.getDisplayMedia` this will return the screen as a stream
 - From the stream, we created a MediaRecorder to record the stream
-- Created a method to save the recorded data
+- Created save method to save the recorded data
 - Added listener to the buttons
 - On pressing the start button we  will
   - Start recording Screen  
