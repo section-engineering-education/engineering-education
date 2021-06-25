@@ -21,10 +21,10 @@ Modern apps are expected to run smoothly and offer the best possible user experi
 ### Tutorial Prerequisites
 To follow through this article, you'll need to have a basic experience in:
 
-- Using Kotlin.
+- Using [Kotlin](https://kotlinlang.org/)
 - General usage of [Android Studio](https://developer.android.com/studio)
-- View binding or data binding
-- Managing a Google account.
+- View [binding or data binding](https://developer.android.com/topic/libraries/data-binding)
+- [Managing a Google account](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp)
 
 ### Table of contents
 - [Introduction to Cloud Firestore.](#how-firestore-stores-data)
