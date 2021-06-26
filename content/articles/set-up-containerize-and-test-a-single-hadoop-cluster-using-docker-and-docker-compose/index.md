@@ -1,16 +1,22 @@
 This tutorial will show you how to use Docker to set up a single Hadoop cluster. But first, let's go over the basics of the Docker and Hadoop cluster.
 
-### What is a Hadoop cluster?
+### What is Hadoop?
 
-The Hadoop framework helps process and analyze [Big Data](/engineering-education/roles-data-science/). Hadoop framework stores and processes vast amounts of any data efficiently using a cluster of computer hardware. We can classify Hadoop clusters as a subset of computer clusters. It's made to hold and analyze large amounts of unstructured and structured data. Parallel processing, load balancing, and fault tolerance are all common uses for clustering.
+The Hadoop framework helps process and analyze [Big Data](/engineering-education/roles-data-science/). Hadoop framework stores and processes vast amounts of any data efficiently using a cluster of computer hardware.
+
+#### What is a Hadoop cluster?
+
+We can classify Hadoop clusters as a subset of computer clusters. It's made to hold and analyze large amounts of unstructured and structured data. Parallel processing, load balancing, and fault tolerance are all common uses for clustering.
 
 A Hadoop cluster functions similarly to a computer cluster. A computer cluster is a collection of linked computers that operate as a single system. More power can be added to the cluster relatively easily this way. You simply add a new computer to the network.
+
+The Hadoop ecosystem comprises three main components that are designed to specifically work on big data.
 
 ![hadoop-ecosystem](/engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/hadoop-ecosystem.jpg)
 
 [Image Source: Data Flair](https://data-flair.training/blogs/hadoop-ecosystem-components/)
 
-The Hadoop ecosystem comprises three main components that are designed to specifically work on big data this are;
+This components are;
 
 - Hadoop distributed file system (HDFS)
 
@@ -74,7 +80,7 @@ Docker containers use Docker container images to containerize an application. Fo
 
 ### Set up Docker and docker-compose
 
-To set up this single Hadoop cluster using Docker, ensure that Docker is installed on your computer. Run the following commands to make sure Docker is ready to set up to run docker-compose.
+To set up this single Hadoop cluster using Docker, ensure that [Docker](https://www.docker.com/products/docker-desktop) is installed on your computer. Run the following commands to make sure Docker is ready to set up to run docker-compose.
 
 - To check Docker, run;
 
@@ -108,7 +114,7 @@ If you have a running container, it will be logged and listed in the command out
 
 ![docker-ps-response](/engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/docker-ps-response.png)
 
-Additionally, ensure that you have git installed on your computer.
+Additionally, ensure that you have [git](https://git-scm.com/downloads) installed on your computer.
 
 ### How to set up a single Hadoop cluster using docker-compose
 
