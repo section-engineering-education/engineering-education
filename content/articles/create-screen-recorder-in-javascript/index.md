@@ -100,9 +100,11 @@ The `getDisplayMedia` will return a stream data. From that, we need to create a 
 The important events available in `MediaRecorder` are
 
 **dataavailable**:
+
 This event is fired when the MediaRecorder delivers media data to your application for its use. We can collect the data from here and store it.
 
-**stop**
+**stop**:
+
 This will be triggered by calling the top method on the MediaRecorder interface.
 
 Steps to create a recorder
