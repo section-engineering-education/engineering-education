@@ -8,7 +8,8 @@ aliases:
 type: articles
 
 images:
-  - url: /engineering-education/create-screen-recorder-in-javascript/hero.png
+  - url: /engineering-education/create-screen-recorder-in-javascript/hero.jpg
+  
     alt: Screen Recorder in JavaScript
 
 
