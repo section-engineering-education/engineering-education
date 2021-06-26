@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /node-cypress-testing/
-title: Working with cypress in Nodejs
+title: Working with cypress in Node.js
 description: This article aims to help readers understand how cypress works and how to write end-to-end tests.
 author: linus-muema
-date: 2021-06-26T00:00:00-13:00
+date: 2021-06-26T00:00:00-11:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,18 +14,18 @@ images:
   - url: /engineering-education/node-cypress-testing/hero.jpg
     alt: node cypress testing hero image
 ---
-Testing is a vital part of software development. It is the main focus when following the `Test Driven Development` principle. It ensures the behavior of our applications is as what we expect it to be. **End-to-end** testing, or e2e in short, is a testing approach used to check for user interactions with the application. We can use [`cypress`](https://www.cypress.io/) to carry out these e2e tests.
+Testing is a vital part of software development. It is the main focus when following the `Test-Driven Development` principle. It ensures the behavior of our applications is as what we expect it to be. **End-to-end** testing, or e2e in short, is a testing approach used to check for user interactions with the application. We can use [`cypress`](https://www.cypress.io/) to carry out these e2e tests.
 
 ### Introduction
 Cypress is an end-to-end testing framework that helps developers test their web applications easily and provides an interface for them to easily analyze their test progress and results.
 This article aims to help readers understand how cypress works and how to write end-to-end tests.
 
 In order for you to follow through the tutorial, you will need:
-1. A basic understanding of NodeJs and have it [installed](https://nodejs.org/en/download/) on your machine.
+1. A basic understanding of Node.js and have it [installed](https://nodejs.org/en/download/) on your machine.
 2. Knowledge in Javascript language and HTML.
 3. A basic understanding of testing.
 
-With that let's get started.
+With that, let's get started.
 
 ### Step 1: The setup
 Create a new folder and give it any name of your choice. I will name mine `cypress-testing`. Navigate to the directory in your terminal and run the following to initialize an empty node project:
