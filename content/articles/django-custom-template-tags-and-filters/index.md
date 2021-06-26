@@ -219,4 +219,7 @@ The resulting template will now look as follows:
 
 Notice that by adding `show_users` tag, we now have a user added below the contacts.
 
+### Conclusion.
 You have now successfully created your custom template tags and filters.You should now be able to create new ones and apply anywhere you want in your Django application.I also recommend having a thorough look at django documentation and have a clear understanding of how they work.
+
+You will find the django documentation [here](https://docs.djangoproject.com/en/3.2/)
