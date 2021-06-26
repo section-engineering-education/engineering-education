@@ -1,5 +1,7 @@
 title: Section Engineering Education
+
 description: Resources created by engineers for engineers
+
 aliases:
   - '/create-screen-recoder/'
   - '/javascript-screen-recorde/'
@@ -64,11 +66,11 @@ On the `index.html` page there will be
 In the JavaScript file, we will have 3 methods
 1. `recordScreen` -- This will start recording the user's screens.
 2. `createMediaStream` -- This will create a MediaStream object from the screen stream.
-3. `saveRecording` -- This will save the file to our computer.
+3. `saveRecording` -- This will save the recorded stream as a file to our computer.
 
 #### Record Screen
 
-On calling `getDisplayMedia` method in `navigator.mediaDevices` object will prompt the user to select and give permission to record the screen or part of the screen (browser tab). If the user has multiple screens all screens are displayed.
+On calling `getDisplayMedia` method in `navigator.mediaDevices` object will prompt the user to select and give permission to record the screen or part of the screen (browser tab). If the user has multiple screens then all the screens are displayed.
 
 For `getDisplayMedia`  method we need to pass an object([constraints](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia#parameters)) as argument  with two property `audio` and `video` . If we set the value of `audio` to true then the audio is included in the stream.  In our case, we need both audio and video.
 
