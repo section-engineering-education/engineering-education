@@ -69,7 +69,7 @@ Create a new file `passgen.py` where we will write our code in PyCharm or any py
 Let's start by importing Tkinter.
 
 ```python
-from tkinter import *
+from tkinter import Button, Entry, Label, StringVar, Tk
 from tkinter.ttk import Combobox
 import random
 ```
