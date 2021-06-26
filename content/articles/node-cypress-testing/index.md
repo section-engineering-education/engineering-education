@@ -120,8 +120,7 @@ describe("Forms test", () => {
   // tests go here
 });
 ```
-
-_Fun fact: the same keyword is used in the `mocha` testing framework._
+*Fun fact: the same keyword is used in the `mocha` testing framework.*
 
 All the tests involving our forms will go in here. It receives the name of the collection/suite of the tests and a callback that holds all the actual tests. To test a single action, we use the `it` keyword. 
 
@@ -139,11 +138,11 @@ it("can get to the form", () => {
 
 Run the `test` command we created a while ago. The binary should appear with a list of all the integrations test in your application. In our case, we should have only one test displayed.
 
-![cypress-binary](/node-cypress-testing/cypress-binary.png)
+![cypress-binary](/engineering-education/node-cypress-testing/cypress-binary.png)
 
 Click the `Run (n) integration spec` button. This will open a new tab in your default browser and run the test. The result should be similar to the one below.
 
-![test-result](/node-cypress-testing/test-result.png)
+![test-result](/engineering-education/node-cypress-testing/test-result.png)
 
 Awesome stuff right? 😎
 
