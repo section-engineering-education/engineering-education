@@ -4,8 +4,13 @@ description: Resources created by engineers for engineers
 
 aliases:
   - '/create-screen-recoder/'
-  - '/javascript-screen-recorde/'
+  - '/javascript-screen-recorder/'
 type: articles
+
+images:
+  - url: /engineering-education/create-screen-recorder-in-javascript/hero.png
+    alt: Screen Recorder in JavaScript
+
 
 ### Introduction
 The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream. From the recorded Media Stream we can create a video file.
