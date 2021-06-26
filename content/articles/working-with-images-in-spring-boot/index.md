@@ -2,32 +2,28 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-images-in-spring-boot
+url: /working-with-images-in-spring-boot/
 title: Working with Images in a Spring Boot Backend (Kotlin)
 description: A beginner's guide on how to save and transfer images via a Spring Boot backend. This tutorial goes through saving images to a database, transferring them via REST, and configuring CORS.
 author: john-amiscaray
-date: 2020-12-06T00:00:00-11:00
+date: 2021-06-26T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-eductaion/working-with-images-in-spring-boot
+  - url: /engineering-education/working-with-images-in-spring-boot/hero.png
     alt: Working with Images in Springboot example image
 ---
-
-### Introduction
-
 Image files are a pretty important part of the web. Imagine a world without profile pictures, posts on social media, or most importantly, cat gifs. Being able to dynamically save and place images is a pretty big deal yet something a lot of us take for granted.
-
+<!--more-->
+### Introduction
 Spring Boot makes it easy to save images and transfer them via REST endpoints. In this guide, we will go over how to do this in Kotlin. By the end of this tutorial, you will be able to do so on your own and understand the theory behind this.
 
 ### Prerequisites
+For this guide, it would be best to start with some of the fundamentals of Spring Boot. This includes [creating simple REST APIs](https://spring.io/guides/gs/rest-service/), [Spring Data](https://www.section.io/engineering-education/introduction-spring-data/), and common design patterns. I’m also trying something different using Kotlin as example code for this guide. It will help to have a basic understanding of Kotlin but you should still be able to follow along as a pure Java developer.
 
-For this guide, it would be best to start with some of the fundamentals of Spring Boot. This includes [creating simple REST APIs](https://spring.io/guides/gs/rest-service/), [Spring Data](https://www.section.io/engineering-education/introduction-spring-data/), and common design patterns. As well, I’m trying something different and coding for this guide in Kotlin. It should help to have an understanding of the language but you should still be able to follow along as a pure Java developer.
-
-Client-side, you should know basic Javascript, the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), and [arrow functions](https://www.w3schools.com/js/js_arrow_function.asp). Of course, the fetch API also makes use of [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) but you could be fine not knowing much about them. Additionally, you should understand the typical flow between web clients and servers through HTTP.
+Client-side, you should know basic JavaScript, the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), and [arrow functions](https://www.w3schools.com/js/js_arrow_function.asp). Of course, the fetch API also makes use of [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) but you will be fine if you don't know much about them. Additionally, you should understand the typical flow between web clients and servers through HTTP.
 
 ### Setting up our project
-
 To start our project, we of course begin from the [Spring Initializer](https://start.spring.io/). For my project, I selected Java 11 although I don’t believe that the Java version should matter here. I set the language to Kotlin, the dependency manager to Maven, and the packaging to _jar_. Then of course you need to configure your package name, [group and artifact ids](https://www.baeldung.com/maven#introduction-3), the name and description of your project.
 
 From there, we select the _spring-boot-starter-web_ and _spring-boot-starter-data-jpa_ dependencies. Along with this, you will need the dependency for your database of choice. We won’t go over configuring your database in the `application.properties` file to allow you to use whatever database you want. Just make sure you have set the following properties in your `application.properties` file and that they match with your database:
@@ -39,10 +35,9 @@ From there, we select the _spring-boot-starter-web_ and _spring-boot-starter-dat
 
 In our case, however, we will be using a SQL database. Using a no-SQL database would change things here since we are making use of the hibernate annotations for SQL databases. In case you don’t know, hibernate is included in Spring Data and allows you to generate database tables from classes.
 
-For the client, we will be using vanilla Javascript. The same concepts should also apply if you want to use a framework.
+For the client, we will be using vanilla JavaScript. The same concepts should also apply if you want to use a framework.
 
 ### Step 1: Creating a database entity
-
 First, let’s create an entity that will store images. As an example, we will be creating a dummy `User` entity that will have a profile picture property. For this guide, we will just save a sample user into the table and update that user’s profile picture.The code for the entity should look like this:
 
 ```kotlin
@@ -78,7 +73,6 @@ interface UserRepo : JpaRepository<User, Long>
 ```
 
 ### Step 2: Creating a service and REST endpoints
-
 Now, let’s create a simple service to retrieve and update a user’s profile picture:
 
 ```kotlin
@@ -158,10 +152,9 @@ Here, we retrieve the user based on their id within the URL like last time. If t
 Finally, we set the content-disposition header to tell the client that our response is an attachment. We also specify in that header the name of the attachment which in this case is the current time.
 
 ### Step 3: Creating a Client
-
 Now let’s start creating a client to test this Spring Boot application out. Begin by creating a simple HTML page where a user can select an image to save:
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,9 +171,9 @@ Now let’s start creating a client to test this Spring Boot application out. Be
 
 Note, we have an image tag on the page which we will later use to display the image from our backend. This is why it doesn’t have an `src` attribute; it will be added dynamically within our `main.js` file.
 
-Let’s have a look at what we will do in the `main.js` file to retrieve and save an image. Inside the Javascript file, we will create an event listener for when the file input’s value changes. This will send a POST request to the server with the image so we can save it. When the response comes back with the image URL, we will display the image on our image element:
+Let’s have a look at what we will do in the `main.js` file to retrieve and save an image. Inside the JavaScript file, we will create an event listener for when the file input’s value changes. This will send a POST request to the server with the image so we can save it. When the response comes back with the image URL, we will display the image on our image element:
 
-```Javascript
+```JavaScript
 document.getElementById('image-to-save').addEventListener('change', saveImage);
 
 function saveImage(e){
