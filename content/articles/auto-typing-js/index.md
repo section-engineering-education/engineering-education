@@ -14,7 +14,7 @@ In this article, we will look at how to implement it in JavaScript and jQuery.
 
 We are going to create an auto-typing script that shows varying talking speeds between two people in a Question and answer session as shown below:
 
-![Gif](demo.gif)
+![Gif](/engineering-education/auto-typing/demo.gif)
 
 We will look at the javascript code first before building the whole file. Let's jump into it.
 
