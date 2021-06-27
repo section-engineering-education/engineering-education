@@ -74,54 +74,35 @@ Below are examples of web application:
 3. ``Easy to update``- Business keeps on expanding as time passes by. Therefore a web app should be simple to update.
 4. `Cross-platform`- A web app should be able to run on most if not all operating systems using different browsers.
 
-#### What is the importance of a web Application
+#### Importance of a Web Application
 
-1. `Security`- All organizations should know about security dangers with their applications. Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of security. 
-
- 2.  ``Easy to use`` – End users can access them from any device at any time. 
+1. `Security`: Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of protection.
+ 2. `Easy to use`: End users can access them from any device at any time. 
 
 3.  Data access is simple because they are used on both mobile and desktop computers. 
 
 ### Distinctions between a website and a web application
 
 #### 1. The user's interaction
-
-There is no functionality on the website. The end-user only view the visual content but cannot interact with it. 
-
-On the other hand, the web app allows the end-user to interact one on one by giving out details to enable him to log in or filling out a form.
-
+There is no functionality on the website. The end-user only views the visual content but cannot interact with it.
+On the other hand, a web app allows the end-user to interact one-on-one with the content on the application.
 #### 2. Reasons for creation
-
- The website is mostly meant for the universe. This means that information can be accessed by anyone publicly.
-
-Unlike a website, the web app is meant for interaction with the end-users. This means that the end-user must provide some details to use a web app. Without the required details, data might not be available.
-
+A website is mostly meant for the universe, which means information can be accessed by anyone publicly.
+Unlike a website, the web app is meant for interaction with a particular end-users, which means that the end-user must provide some details to use a web app. Without the required information, data might not be available.
 #### 3. Code Deployment
-
-On the website, small changes do not require a full re-accumulation and deployment. You need to refresh/update the HTML code and all that will be updated. 
-
+On a website, small changes do not require full re-accumulation and deployment. You need to refresh/update the HTML code.
 Code deployment in the web app is quite different. Here, you need to re-compile and re-deploy the app after making any change.
-
 #### 4. Authentication
-
 On a website, end-users authentication is not mandatory. The user may give some details at wish if they are willing to get any updates from the website.
-
- On the other hand, Web applications need validation as they offer a lot more extensive extent of alternatives and usefulness than a website. To access your account you must provide details like username and password that verify ownership.
-
+On the other hand, Web applications need validation as they offer more extensive alternatives and usefulness than a website. To access your account, a user must provide details like username and password that verify ownership.
 #### 5. Development
-
-Developing a website is not complicated. With the knowledge of `HTML`, `CSS` and maybe `JavaScript` you can develop a full working website. Sometimes it only requires a single frontend developer to do the task.
-
-Furthermore, you can just use a template to develop a website. This means that even a young developer can easily develop a simple working website.
-
-For a web app, development is quite different from that of a website, here, you need the knowledge of both frontend and backend to develop a working web app. For the backend part, there is a variety of technology to be used. Either ``Python``, `PHP`, `Ruby` etc. Choosing the backend technology depends on the developer. The web application is working for a whole development team.  
-
+Developing a website is not complicated. With the knowledge of HTML, CSS, and maybe JavaScript, you can create a working website. Sometimes it only requires a single frontend developer to do the task.
+Furthermore, you can use a template to develop a website. 
+For a web app, development is quite different from that of a website. Here, you need the knowledge of both frontend and backend to develop a working web app. For the backend part, there is a variety of technologies to be used. Either Python, PHP, Ruby, etc. Choosing the backend technology depends on the developer. 
 #### 6. Task and Complexity
 
 While a website shows the collected information and data on a particular page, a web app is quite complicated and functions higher compared to the website.
 
 ### Conclusion
-
-Unlike developing a website that is a bit simple and less complicated, a web application needs more knowledge and experience for it to be created.
-
-From the above discussion, I believe now that you can tell the difference between website and web app and what you interact with on daily basis.
+Unlike developing a website that is a bit simple and less complicated, creating a web application needs more knowledge and experience.
+From the above discussion, I believe that you can tell the difference between website and web app and what you interact with daily.
