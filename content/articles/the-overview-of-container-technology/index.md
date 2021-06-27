@@ -1,7 +1,21 @@
-Container technology is growing at a tremendous rate. Several decades ago, only a single application was deployed on a single operating system (OS). If you wanted to deploy many applications, you required more servers or operating systems.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /the-overview-of-container-technology/
+title: Overview of Container Technology
+description: This article aims to discuss container technology. It will go through the basics of containers and how do they are different from virtual machines.
+author: julie-ruguru
+date: 2021-06-27T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Around a decade ago, virtualization technology was introduced. It used hypervisor software that could split up the server to host more than one OS. Servers got the option of hosting more than one application but still had only one application per operating system. Go through this [article](https://www.section.io/engineering-education/history-of-container-technology/) to explore the history of container technology.
-
+  - url: /engineering-education/the-overview-of-container-technology/hero.jpg
+    alt: Container Technology image example
+---
+Container technology is growing at a tremendous rate. Several decades ago, only a single application was deployed on a single operating system (OS). If you wanted to deploy many applications, you required more servers or operating systems. Around a decade ago, virtualization technology was introduced. It used hypervisor software that could split up the server to host more than one OS. Servers got the option of hosting more than one application but still had only one application per operating system. Go through this [article](https://www.section.io/engineering-education/history-of-container-technology/) to explore the history of container technology.
+<!--more-->
 This article aims to discuss container technology. It will go through the basics of containers and how do they are different from virtual machines.
 
 ### Table of contents
@@ -96,3 +110,6 @@ To summarize:
 - You have also understood what containers are, how they are classified, and their pro and cons.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
