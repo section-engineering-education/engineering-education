@@ -19,7 +19,9 @@ images:
 #### Introduction
 
 
-Now, more than ever, businesses need to optimize the use of digital systems to store and manage their data. The move is an integral part of ensuring risks stemming from poor data management are minimized or eradicated. Such risks may include access to inaccurate data, data loss, unauthorized access, and revenue loss. An entity can get into trouble with the law over how it handles its data in rare scenarios. Some laws govern the use of personal data that organizations must comply with, such as the [General Data Protection Regulation](https://gdpr-info.eu/) (GDPR) that is set to become the most influential data protection legislation worldwide. It is  crucial therefore, to employ efficient and more reliable data management systems to facilitate smooth business operations within an organization. Such systems include [PostgreSQL](https://www.postgresql.org/) and [MySQL](https://www.mysql.com/).
+Now, more than ever, businesses need to optimize the use of digital systems to store and manage their data. The move is an integral part of ensuring risks stemming from poor data management are minimized or eradicated. Such risks may include access to inaccurate data, data loss, unauthorized access, and revenue loss.
+
+ An entity can get into trouble with the law over how it handles its data in rare scenarios. Some laws govern the use of personal data that organizations must comply with, such as the [General Data Protection Regulation](https://gdpr-info.eu/) (GDPR) that is set to become the most influential data protection legislation worldwide. It is  crucial therefore, to employ efficient and more reliable data management systems to facilitate smooth business operations within an organization. Such systems include [PostgreSQL](https://www.postgresql.org/) and [MySQL](https://www.mysql.com/).
 
 Both PostgreSQL and MySQL are free and open-source data management systems. They allow modification of source codes to accommodate the specifications and preferences of the user.
 
