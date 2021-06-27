@@ -69,14 +69,10 @@ Below are examples of web application:
 - [Wikipedia](https://www.wikipedia.org/)
 
 #### Characteristics of A web Application
-
-1. ``Accessibility``- A good web app is available and usable by a maximum number of people. The web application should be accessible to people with disabilities.
-
-2. ``Storage system`` -Should have a good database for storing designers' and end-users information.
-
-3. ``Easily expanded``- Business keeps on expanding as time passes by. It is simple to update a web app as only servers are to be upgraded.
-
-4. `Cross-platform`- Web app can run in any Operating system using different browsers
+1. `Accessibility`: A good web app should available and usable by as many people as possible.
+2. `Storage system` -A web app should have a good and reliable database for storing the developers' and end-users information.
+3. ``Easy to update``- Business keeps on expanding as time passes by. Therefore a web app should be simple to update.
+4. `Cross-platform`- A web app should be able to run on most if not all operating systems using different browsers.
 
 #### What is the importance of a web Application
 
