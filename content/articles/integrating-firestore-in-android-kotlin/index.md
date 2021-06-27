@@ -18,7 +18,7 @@ images:
 Firestore is a cloud-hosted NoSQL database that can be integrated into various platforms(iOS, Android, and web apps) via the respective SDK(s). It's a reliable database in that it offers flexible data storage structures, expressive querying, offline caching support, improved identity and access management(IAM), and synchronized real-time updates.
 Modern apps are expected to run smoothly and offer the best possible user experience and that's exactly what Firestore brings us. In this article, we'll learn how Firestore can be used in an Android app using the Kotlin programming language.
 
-### Tutorial Prerequisites
+### Prerequisites
 To follow through this article, you'll need to have a basic experience in:
 
 - Using [Kotlin](https://kotlinlang.org/)
