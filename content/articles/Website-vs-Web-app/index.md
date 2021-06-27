@@ -22,7 +22,7 @@ Some developers argue that the terms `website` and `web application` are similar
 I was once among those who argued that the two terms mean the same, but after research, I found out that these are two different things. 
 In this article, I will highlight some of the main differences that have helped me understand the differences between websites and web applications.
 
-In this tutorial we will look at:
+In this tutorial, we will look at:
 1. [Website](#website)
 2. [Web application](#web-application)
 3. [Distinctions between a website and a web application](#distinctions-between-a-website-and-a-web-application)
@@ -41,24 +41,16 @@ Website is of different types. Some of them are:
 
 4. Portfolio website
 
-#### Characteristics of A website
-
-A good web designer can Judge a site according to its appearance. One of the characteristics that will determine the success of a website is its appearance. Let's have a look at some additional website attributes.
- 1. ``User friendly``- A website can be operated by almost everybody for it is easy to use and navigate.
-
-2. ``Attractive and easy for all targeted users`` - This fixture helps in attracting all users and gives them a reason for not choosing another website to visit.
-
+#### Characteristics of a Website
+A good website developer can examine a site according to its features. One of the characteristics that will determine the success of a website is its appearance. Let's have a look at some additional website attributes.
+1. `User friendly`: A website should be easy to operate.
+2. `Attractive and accessible for all targeted users`:This helps attract users to opt for a particular website against another. 
 3. ``Purpose``- What is the objective of the website's appearance? A good website should provide a purpose and that purpose should be clear to the user within a short period. A user should not take much of his/her time trying to understand the reason for the appearance of a site.
-
    The unclear purpose may lead to a website not giving back good results.
- 
-4. ``High speed of loading``- Web designers should consider this fixture as not all end-users are patient. In this world of time, there is no doubt that time is a very important resource and nobody would like his/her time to go to waste. Therefore if a website loads slowly, end-users likely to look for a different website with a high speed.
+4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, always choose a host that loads fast.
+5. `Secure`- A good website should provide security for both end-users and the website developers.
 
-    There numerous elements that factor into the loading speed of a website, yet everything starts with the hosting quality. Always choose a host that loads first and keep end-users happy.
-
-5. ``Secure``- A good website provides security for both end-users and designers 
-
-#### What is the importance of a website
+#### Importance of a website
 
 1. ``It provides self-service customer support in Business``- If your website support Q&A post, then you can provide a forum where user can have questions about your goods among themselves. Other users can provide answers to the questions.
 
