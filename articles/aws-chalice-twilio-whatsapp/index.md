@@ -1,14 +1,14 @@
 # Sending WhatsApp Messages with Serverless Python Applications using AWS Chalice
 
-## Introduction:
+### Introduction:
 
 Serverless computing enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities and worries of a developer. AWS Chalice is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the Amazon API Gateway and AWS Lambda.
 
 WhatsApp is a free messaging platform used by over 2 billion people across the world. WhatsApp Messaging API allows developers to build applications for WhatsApp users.
 
-In this article, we set up a Chalice application with the DynamoDB database. We will also integrate Twilio WhatsApp messaging, and send messages from our application.
+In this article, we set up a Chalice application with the DynamoDB database. We will also integrate Twilio WhatsApp messaging and send messages from our application.
 
-## Prerequisites
+### Prerequisites
 
 - Python 3.6 or a later version
 - venv or virtualenv
@@ -19,9 +19,9 @@ In this article, we set up a Chalice application with the DynamoDB database. We 
 
 You may download and install Python [here](https://www.python.org/). [Sign up](https://portal.aws.amazon.com/billing/signup) for a free AWS account if you don't have one yet. You may follow the [instructions for configuring AWS credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html). You can also create a Twilio account [here](https://www.twilio.com/try-twilio).
 
-## Setting up Dependencies
+### Setting up dependencies
 
-### Configure the Twilio Sandbox for WhatsApp:
+#### Configure the Twilio Sandbox for WhatsApp:
 
 WhatsApp will approve your account before it can send messages in production. But, Twilio provides the WhatsApp sandbox for building and testing applications. The sandbox is available in the [WhatsApp section of the Twilio console](https://www.twilio.com/console/sms/whatsapp/learn).
 
@@ -33,7 +33,7 @@ You should get a message like this in WhatsApp on your smartphone:
 
 You will also see a `Message Received` response on your dashboard like this:
 
-![Message received notifcation on dashboard](/aws-chalice-twilio-whatsapp/message-received.png)
+![Message received notification on the dashboard](/aws-chalice-twilio-whatsapp/message-received.png)
 
 Let's create a virtual environment for your project in a new folder.
 
@@ -80,11 +80,11 @@ The files generated above are:
 
 Now, we're good to go and can put in place the database settings for the application.
 
-## Setting up the Database
+### Setting up the database
 
-### Database Configuration
+#### Database configuration
 
-We will start the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev` but you can change it to any name as you so wish:
+We will start the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev,` but you can change it to any name as you so wish:
 
 ```json
 {
@@ -101,7 +101,7 @@ We will start the configuration by modifying the `config.json` file inside the `
 
 In the above code, `api_gateway_stage` is the URL prefix for our application. `autogen_policy` tells Chalice to create an IAM policy for us with the application code. You can read more about `api_gateway_stage` and `autogen_policy` [here](https://aws.github.io/chalice/topics/configfile.html).
 
-We will use the DynamoDB database for our application. It is a NoSQL database system that couples with AWS Chalice applications and it is very easy to set up.
+We will use the DynamoDB database for our application. It is a NoSQL database system that couples with AWS Chalice applications, and it is very easy to set up.
 
 Now, we will set up the policy for writing and reading from the database. Let's go to the `.chalice` folder and create a `policy-dev.json` file there. Add the following code inside the `policy-dev.json` file:
 
@@ -136,9 +136,9 @@ Now, we will set up the policy for writing and reading from the database. Let's 
 
 In the JSON file above, we allowed our user to make log groups and log events. We also defined actions for reading, adding, updating, scanning, deleting, and query operations in the DynamoDB database. Furthermore, we specified the name of the table in the database as `demo-table`.
 
-### Database Deployment
+#### Database Deployment
 
-AWS provides us with CloudFormation. It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. We will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
+AWS provides us with CloudFormation. It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
 
 So, let's create a file inside the `.chalice` folder called `dynamodb_cf_template.yaml`. Add the following lines to the new file.
 
@@ -170,7 +170,7 @@ Outputs:
     Description: Name of the newly created DynamoDB table
 ```
 
-In the above file, we indicated the key attributes of our DynamoDB table i.e the `id` and the `name` of the message recipients. The `KeyShema` consists of the primary key. The [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) contains more information on attribute definition in DynamoDB tables.
+In the above file, we indicated the key attributes of our DynamoDB table, i.e., the `id` and the `name` of the message recipients. The `KeyShema` consists of the primary key. The [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) contains more information on attribute definition in DynamoDB tables.
 
 Next, let's navigate to the `.chalice` folder and create the database with the command below.
 
@@ -192,11 +192,11 @@ We should get an output like this:
 Serving on http://127.0.0.1:8000
 ```
 
-## Sending WhatsApp Messages
+### Sending WhatsApp Messages
 
-We will take personal details from our users, and store the details in our database. Then, we will send welcome greetings to each of the users based on the details that they supplied.
+We will take personal details from our users and store the details in our database. Then, we will send welcome greetings to each of the users based on the details they supplied.
 
-### Accept User Details:
+#### Accept User Details:
 
 We need to accept some details from our users. They are the names and dates of birth. Change the `app.py` file thus:
 
@@ -228,11 +228,11 @@ def add_recipient():
         return {'message': str(e)}
 ```
 
-In the above code, we made necessary imports and we defined our database in the `get_app_db()` method. We then created a method called `add_recipient()` with a `POST` route named `/recipient`. This method accepts user data which are the name of the user, the year, month, and date of birth. These details are then saved into the database. The application will return a `201` response after saving the details. Otherwise, it will return an error.
+In the above code, we made necessary imports, and we defined our database in the `get_app_db()` method. We then created a method called `add_recipient()` with a `POST` route named `/recipient`. This method accepts user data: the user's name, year, month, and date of birth. These details are then saved into the database. The application will return a `201` response after saving the details. Otherwise, it will return an error.
 
-### Send WhatsApp Message with Twilio:
+#### Send WhatsApp Message with Twilio:
 
-Now, we will use the Twilio client to send messages. Obtain your account SID and auth token from your Twilio dashboard. Set them as environment variables for your project. You can learn how to secure your credentials with environment variables [here](https://www.twilio.com/docs/usage/secure-credentials).
+Now, we will use the Twilio client to send messages. First, obtain your account SID and auth token from your Twilio dashboard. Set them as environment variables for your project. You can learn how to secure your credentials with environment variables [here](https://www.twilio.com/docs/usage/secure-credentials).
 
 Now, we will change the `app.py` file like the following:
 
@@ -322,7 +322,7 @@ def add_recipient():
 
 ```
 
-## Deploy to AWS
+### Deploy to AWS
 
 We will use the `chalice deploy` command to deploy to AWS:
 
@@ -368,7 +368,7 @@ Then, your recipient will receive the WhatsApp message sent:
 
 ![Screenshot of the WhatsApp message sent](/aws-chalice-twilio-whatsapp/sent-message)
 
-## Conclusion
+### Conclusion
 
 In this tutorial, we have been able to create a Chalice application with an API. We used Twilio WhatsApp API to send messages. We also tested the API with Postman.
 
