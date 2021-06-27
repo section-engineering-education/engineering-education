@@ -15,24 +15,16 @@ images:
     alt: difference between a Web Page and a Web Applicationexample image
 ---
 
-### Difference Between a Web Page and a Web Application
-
 ### Introduction
+It is difficult for most people to distinguish between a website and a web application. They enter the URL and get the expected outcomes, making them unaware of the backend processes.
+These products are created for the consumer by developers. Therefore, a developer must be able to tell the difference between the two. 
+Some developers argue that the terms `website` and `web application` are similar, while others say they are not. Who is wrong, and who is correct?😕
+I was once among those who argued that the two terms mean the same, but after research, I found out that these are two different things. 
+In this article, I will highlight some of the main differences that have helped me understand the differences between websites and web applications.
 
-It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcomes.
-
-Getting the results of what they are searching for is what matters to the end-user. How they get the results is not their business.
-
-These products are created for the consumer by developers. Therefore, the developer must be able to tell the difference between the two. Some developers argue that the terms website and web application are similar, while others argue that they are not. Between the two types of developers who is wrong and who is correct?😕
-
-I was once among those who argued that the two terms mean the same, but after research, I found out that these are two different things. In this article, I'll try to highlight some of the main differences that have helped me understand the differences between websites and web applications.
-
-### In this tutorial we will look at:
-
+In this tutorial we will look at:
 1. [Website](#website)
-
 2. [Web application](#web-application)
-
 3. [Distinctions between a website and a web application](#distinctions-between-a-website-and-a-web-application)
 
 ### Website
