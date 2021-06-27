@@ -56,9 +56,7 @@ A good website developer can examine a site according to its features. One of th
 
    This can make things a lot quicker for your clients and make your client service office more effective.
 
-2. ``Website shows Professionalism``- Imagine you are dealing with a supplier whom you want to buy goods from, and this supplier doesn't have a website. I am very sure you would not have a second thought looking for another supplier with a website. This gives an impression that that supplier or company is not well managed.
-
-   Why would an end-user purchase from a supplier or company without a website? Most end-users have a bad opinion of suppliers without a website and they consider them as unprofessional.
+2. `Professionalism` : Studies show that most people opt to deal with businesses with websites compared to those that lack one. 
 
 3. ``It gives opportunities abroad``- If you have a website, you create an opportunity for everyone worldwide to find you. If you're selling your product online, you end up having more market compared to a business person selling locally. This will in turn increase the profit. 
 
