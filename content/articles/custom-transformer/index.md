@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /custom-transformer/
 title: Creating a Custom Data Transformer using Scikit-Learn
-description: In this article we will discuss building custom data transformers using Scikit-Learn and look at an example to implement the same. Data preprocessing is a crucial part in machine learning. We will implement a Scikit-Learn pipeline and integrate the transformer into the pipeline and look at its various methods available.  
+description: In this article, we will discuss building custom data transformers using Scikit-Learn and look at an example to implement the same. Data preprocessing is a crucial part of machine learning. We will implement a Scikit-Learn pipeline, integrate the transformer into the pipeline, and look at its various available methods.  
 author: terrence-aluda
 date: 2021-06-16T00:00:00-18:00
 topics: [Machine Learning]
@@ -18,7 +18,7 @@ images:
 
 ### Introduction
 
-In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit-Learn enable quick experimentation to achieve quality results with a minimal amount of time spent on implementing data pipelines involving preprocessing, machine learning algorithms, evaluation and inference. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
+In machine learning, a data transformer is used to make a dataset fit for the training process. Scikit-Learn enables quick experimentation to achieve quality results with minimal time spent on implementing data pipelines involving preprocessing, machine learning algorithms, evaluation, and inference. Scikit-Learn provides built-in methods for data preparation before the data is fed into a training model. However, as a data scientist, you may need to perform more custom cleanup processes or adding more attributes that may improve your model's performance. To do that, you will need to create a custom transformer for your data.
 
 In this article, we will look at how to do that.
 
@@ -97,7 +97,7 @@ our_dataset.info()
 
 #### Cleaning the data
 
-The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that. We set the `strategy` to `"median"` so that it calculates the median value for each column's empty data.
+The cleaning operation we will do here is filling empty numeric attributes with their median values. We will use the `SimpleImputer`, an estimator, to do that. But, first, we set the `strategy` to `"median"`to calculate the median value for each column's empty data.
 
 ```python 
 from sklearn.impute import SimpleImputer
@@ -120,9 +120,9 @@ The result produced is an array, so we convert it to a DataFrame.
 
 #### Handling text and categorical attributes
 
-We cannot handle text and numerical attributes similarly. For example, we cannot compute the median of text.
+We cannot handle text and numerical attributes similarly. So, for example, we cannot compute the median of text.
 
-We will use a transformer for this called the `OrdinalEncoder`. `OrdinalEncoder` is chosen because it is more pipeline friendly. It assigns numbers to the corresponding text attributes e.g 1 for NEAR and 2 for FAR.
+We will use a transformer for this called the `OrdinalEncoder.` `OrdinalEncoder` is chosen because it is more pipeline friendly. Moreover, it assigns numbers to the corresponding text attributes, e.g., 1 for NEAR and 2 for FAR.
 
 ```python
 from sklearn.preprocessing import OrdinalEncoder
@@ -213,7 +213,7 @@ The `ColumnTransformer` is used to transform columns separately and combine the 
 
 ### Conclusion
 
-We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. I hope you got some insights.
+We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. So I hope you got some insights.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
