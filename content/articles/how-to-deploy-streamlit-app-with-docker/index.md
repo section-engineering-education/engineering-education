@@ -30,7 +30,7 @@ We will use a dataset of names commonly used by people.
 The format of our data used is as shown:
 
 ![A Snip of the data ](/engineering-education/how-to-deploy-streamlit-app-with-docker/data.png)
-![Csv File ](/engineering-education/how-to-deploy-streamlit-app-with-docker/dataset.csv)
+![CSV File ](https://drive.google.com/file/d/1ztQkET6U8EgtGWiprJFoXLICNP3cl34i/view?usp=sharing)
 
 ### installation of the required packages
 
