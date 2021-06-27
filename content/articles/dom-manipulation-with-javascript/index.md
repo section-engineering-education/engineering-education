@@ -72,7 +72,7 @@ To Understand the DOM, let's draw the structure for our HTML page.
 
 This structure is not a complete capture of our HTML page, but it shows a detailed example of the DOM. As our web page got completely loaded, the browser created this type of structure for the page. With JavaScript, we can easily modify the DOM, change styles, add HTML attributes and so on. We will be taking a look at them in the following sections.
 
-> Want to learn more about the DOM? Check out the [Understanding Document Object Model](https://www.section.io/engineering-education/document-object-model/) article.
+> Want to learn more about the DOM? Check out [Understanding Document Object Model](https://www.section.io/engineering-education/document-object-model/) article.
 
 ### Adding Element to the DOM
 It would be awesome if we could add additional task through our form and insert them inside our HTML list element. This is possible through JavaScript. 
