@@ -1,8 +1,8 @@
-During the development phase, the developer performs several processes of installation and coding, to build and run an application. But, the end-users are just interested in running the application and not the underlying code and processes.
+During the development phase, the developer performs several processes of installation and coding to build and run an application. But, the end-users are just interested in running the application and not the underlying code and processes.
 
-This causes the need for a simple executable file that can run on an operating system without requiring the user to perform other steps in order to run the application.
+This causes the need for a simple executable file that can run on any operating system without requiring the user to perform other steps to run the application.
 
-In this tutorial, we'll learn how to create executable files for our Node.js application. We'll compile our JavaScript files into an executable file.
+In this tutorial, we'll learn how to create executable files for our Node.js application. Then, we'll compile our JavaScript files into an executable file.
 
 ### Table of Contents
 
@@ -15,11 +15,11 @@ In this tutorial, we'll learn how to create executable files for our Node.js app
 - [nexe](#nexe "nexe")
     - [nexe installation](#nexe-installation "nexe installation")
     - [Compile one javascript file into an exercutable using nexe](#Compile-one-javascript-file-into-an-exercutable-using-nexe "Compile one javascript file into an exercutable using nexe")
-    - [Compile your project into an exercutable using nexe](#Compile-your-project-into-an-exercutable-using-nexe "Compile your project into an exercutable using nexe")
+    - [Compile your project into an executable using nexe](#Compile-your-project-into-an-exercutable-using-nexe "Compile your project into an exercutable using nexe")
 - [pkg](#pkg "pkg")
     - [pkg installation](#pkg-installation "pkg installation")
-    - [Compile one javascript file into an exercutable using pkg](#Compile-one-javascript-file-into-an-exercutable-using-pkg "Compile one javascript file into an exercutable using pkg")
-    - [Compile your project into an exercutable using pkg](#Compile-your-project-into-an-exercutable-using-pkg "Compile your project into an exercutable using pkg")
+    - [Compile one javascript file into an executable using pkg](#Compile-one-javascript-file-into-an-exercutable-using-pkg "Compile one javascript file into an exercutable using pkg")
+    - [Compile your project into an executable using pkg](#Compile-your-project-into-an-exercutable-using-pkg "Compile your project into an exercutable using pkg")
     - [File or directory not included Error](#File-or-directory-not-included-Error)
 - [Further practice](#Further-practice "Further practice")
 - [References](#References "References")
@@ -36,7 +36,7 @@ At the end of this tutorial, you would have learned the following:
 
 ### Pre-requisites
 
-For one to easily follow up with this tutorial, you require a minimum of the following requirements:
+For one to quickly follow up with this tutorial, you require a minimum of the following requirements:
 
 - Basic web development skills.
 - Some javascript coding skills.
@@ -44,11 +44,11 @@ For one to easily follow up with this tutorial, you require a minimum of the fol
 - An IDE. I highly recommend Visual Studio Code which is free and highly customizable. You can download it from [here](https://code.visualstudio.com/download).
 - A stable internet connection.
 
-If you are all set on the above requirements, let's look at some packages with which we can accomplish our goal.
+If you are all set on the above requirements, let's look at some packages to accomplish our goal.
 
 ### What are Executable (.exe) files
 
-Executable files (.exe files): These are files containing a set of encoded instructions which are executed sequentially once the user clicks on the file or runs it.
+Executable files (.exe files): These are files containing a set of encoded instructions, which are executed sequentially once the user clicks on the file or runs it.
 
 `.exe` is a Windows extension referring to an executable file. In Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables. In macOS, they lack extensions.
 
@@ -56,11 +56,11 @@ Executable files (.exe files): These are files containing a set of encoded instr
 
 Let us see why the users prefer executable files in the first place. Some advantages of the executable files include:
 
-- **Quick no-code execution:** It only requires one click to run the file and that's it. Commands are not required to be run on the terminal to execute the program.
+- **Quick no-code execution:** It only requires one click to run the file, and that's it. Commands are not required to be run on the terminal to execute the program.
 
 - **Prevent unwanted code change:** It prevents unwanted errors generated due to unplanned and accidental modification of source code.
 
-- **Supports distribution:** You can run it on any machine. The user doesn't have to install any packages or dependencies. This allows one to run multiple instances of the code on any machine without further requirements.
+- **Supports distribution:** Being hardware agnostic, the user doesn't have to install any packages or dependencies. This allows one to run multiple instances of the code on any machine without further requirements.
 
 ### Packages used
 
@@ -73,7 +73,7 @@ We shall now get a simple node.js application that is running and use it as our 
 
 ### A simple web app
 
-This web app will run on localhost at port 5000 and will display images found in the images folder. Create a directory called "executable" and create files and folders as shown in the folder structure below.
+This web app will run on localhost at port 5000 and display images found in the images folder. First, create a directory called "executable" and create files and folders as shown in the folder structure below.
 Initialize the project with:
 
 ```bash
@@ -105,7 +105,7 @@ The folder structure of the application will look as shown below:
 
 ##### images
 
-Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg". You can download it [here](https://www.google.co.ke/search?q=smart+tv+760+x+600&tbm=isch&ved=2ahUKEwjS7LDE_pnxAhUOphQKHW3bA1EQ2-cCegQIABAA&oq=smart+tv+760+x+600&gs_lcp=CgNpbWcQAzoECAAQQzoCCAA6BAgAEBhQh4cNWOe6DWChwQ1oAHAAeACAAeYBiAHjD5IBBTAuNS41mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=2svIYNKXFI7MUu22j4gF&bih=626&biw=1434&safe=active&hl=en-KE).
+Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg". For example, you can download it [here](https://www.google.co.ke/search?q=smart+tv+760+x+600&tbm=isch&ved=2ahUKEwjS7LDE_pnxAhUOphQKHW3bA1EQ2-cCegQIABAA&oq=smart+tv+760+x+600&gs_lcp=CgNpbWcQAzoECAAQQzoCCAA6BAgAEBhQh4cNWOe6DWChwQ1oAHAAeACAAeYBiAHjD5IBBTAuNS41mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=2svIYNKXFI7MUu22j4gF&bih=626&biw=1434&safe=active&hl=en-KE).
 
 ##### index.html
 
@@ -256,13 +256,13 @@ node index.js
 ```
 
 Open a browser and open the app by visiting `localhost:5000`.
-Once done, let's use the packages to convert it the application into an executable file.
+Once done, let's use the packages to convert the application into an executable file.
 
 ### nexe
 
 ![nexe](/engineering-education/compile-your-node.js-application-into-a-.exe-file/nexe.png "nexe")
 
-Let's compile our project into an executable file with all the required packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The node packages will be automatically added, so we'll only specify the other resources that are required.
+Let's compile our project into an executable file with all the required packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The node packages will be automatically added, so we'll only specify the other required resources.
 
 #### nexe installation
 
@@ -280,7 +280,7 @@ sudo npm i nexe -g
 
 > **Note:** Unlike the pkg module, we don't install the package locally but rather globally. If you install it locally, you will face numerous errors. An example of that error is `Command 'nexe' not found`. You can see how to resolve it [here](https://stackoverflow.com/questions/67981535/nexe-module-command-nexe-not-found-error/67981536#67981536).
 
-Once done, run the following to verify if its installed:
+Once done, run the following to verify if it is installed:
 
 ```bash
 nexe -h
@@ -294,14 +294,14 @@ Now, Let's run the following to convert the application's entry point into an ex
 nexe index.js
 ```
 
-This tells `nexe` that during the build process, it should only look and compile the "index.js" file into an executable file.
-Once done run the following command on the terminal to start the build process:
+This tells `nexe` that it should only look and compile the "index.js" file into an executable file during the build process.
+Once done, run the following command on the terminal to start the build process:
 
 ```bash
 nexe --build
 ```
 
-I'll create a new executable file with the same name as our root directory's name "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system.
+I'll create a new executable file with the same name as our root directory's name, "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system.
 
 Run the generated executable using the command below on Ubuntu:
 
@@ -309,10 +309,10 @@ Run the generated executable using the command below on Ubuntu:
 ./executable
 ```
 
-It automatically logs out "Server at 5000" meaning that it is running. Access the application in the preferred browser at `localhost:5000`.
+It automatically logs out "Server at 5000," meaning that it is running. Access the application in the preferred browser at `localhost:5000`.
 You can close it using `Ctrl + C`.
 
-To prove that only the entry point is compiled and not the resources found in the root directory such as the ones in the "views" folder, just copy and paste the executable file in a separate folder and run it. It pops up errors since the application will be unable to access the resources.
+To prove that only the entry point is compiled and not the resources found in the root directory, such as those in the "views" folder, copy and paste the executable file in a separate folder and run it. It pops up errors since the application will be unable to access the resources.
 
 #### Compile the entire project into an executable using nexe
 
@@ -326,10 +326,10 @@ nexe -r "views/**/*"
 
 We can also add additional commands such as the output executable file path using `--output` or `-o`, target using `--target` or `-t`, name of the executable file using `--name` or `-n`, build from source using `--build` or `-b` e.t.c.
 
-> 'target' in `nexe` is used to specify the platform (windows, linux, or macos), the arch or architecture type (x86, x64), and the node version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
+> 'target' in `nexe` is used to specify the platform (Windows, Linux, or macOS), the arch or architecture type (x86, x64), and the node version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
 
-2. We can define the resources inside the 'package.json' file. I recommend this since your configurations would be saved for later re-run. Since we already declared that our app "main" is "index.js", we shall add only a build script.
-Head over to the "package.json" file and under the scripts tag, add a build script as follows:
+2. We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
+Head over to the "package.json" file, and under the scripts tag, add a build script as follows:
 
 ```json
 {
@@ -356,7 +356,7 @@ npm --build
 
 You can run the file that's created. You can also copy it to another directory without any resources and try running it to verify that the resources were compiled into the executable file.
 
-In case of further errors, you can post them in the [nexe issues tab](https://github.com/nexe/nexe/issues) for help.
+In case of other errors, you can post them in the [nexe issues tab](https://github.com/nexe/nexe/issues) for help.
 
 ****
 
@@ -382,11 +382,11 @@ or for global installation use:
 npm i pkg -g
 ```
 
-Wait for a few seconds for it to complete the process. On completion, just check and close any instance in which the code is running in the background.
+Please wait for a few seconds for it to complete the process. Then, on completion, check and close any instance in which the code runs in the background.
 
 #### Compile one javascript file into an executable using pkg
 
-Run the following command in which we'll call the pkg module and the entry point to our application. In our case, its `index.js`:
+Please run the following command in which we'll call the pkg module and the entry point to our application. In our case, its `index.js`:
 
 ```bash
 pkg index.js
@@ -399,7 +399,7 @@ Just wait for some time for the process to complete. Head over to the main direc
 - for Linux (index-linux)
 - for mac (index-macos)
 
-That is because we did not specify an operating system. Run the file that's suitable for your operating system. If you are using Ubuntu, run `./index-linux` on the terminal. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
+That is because we did not specify an operating system. Run the file that's suitable for your operating system. For example, if you are using Ubuntu, run `./index-linux` on the terminal. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
 
 > **NOTE:** As long as the executable file is running, the application is running.
 
@@ -431,7 +431,7 @@ Some of the supported node ranges, platforms, and architectures are as shown in 
 
 #### Compile your project into an executable using pkg
 
-Here, we should tell `pkg` our resources folder. We can do this inside the `package.json` file using scripts and assets configurations.
+Here, we should tell `pkg` our resources folder. Again, we can do this inside the `package.json` file using scripts and assets configurations.
 Let us head over to our `package.json` file and add a "pkg" as shown below:
 
 ```json
@@ -508,18 +508,18 @@ at /snapshot/express/index.js:21:9
 at Layer.handle [as handle_request] (/snapshot/express/node_modules/express/lib/router/layer.js:95:5)
 ```
 
-This is because `pkg` won't recognize the pattern hence unable to properly compile the project resources and their paths.
+This is because `pkg` won't recognize the pattern, hence unable to compile the project resources and paths correctly.
 
 Instead of using `__dirname`, replace it with either `path.join` or `getDir()` in which you have required *path* at the beginning of the file using `const path = require('path');`. `process.cwd()` is always used for files which will not be available during build time but would be required for execution.
-In case of more issues you can read further [here](https://stackoverflow.com/questions/67966111/node-js-vercel-pkg-express-return-0-error-and-fastify-errors-error-file-or-f/67966112#67966112 "Stack-Overflow vercel/pkg express and fastify errors"). You can raise up newer issues [here](https://github.com/vercel/pkg/issues "vercel/pkg issues tab").
+In case of more issues, you can read further [here](https://stackoverflow.com/questions/67966111/node-js-vercel-pkg-express-return-0-error-and-fastify-errors-error-file-or-f/67966112#67966112 "Stack-Overflow vercel/pkg express and fastify errors"). You can raise up newer issues [here](https://github.com/vercel/pkg/issues "vercel/pkg issues tab").
 
 ### Further practice
 
 - Check out additional functions at [nexe/nexe](https://github.com/nexe/nexe "Github.com nexe/nexe") and [vercel/pkg](https://github.com/vercel/pkg "Github.com vercel/pkg") and try them out.
 - You can try running the other two files in their respective virtual machines and see the outcome.
-Just install the other two operating systems and configure them. Run the files and test the outcome on web browsers of choice.
+Just install the other two operating systems and configure them. Then, run the files and test the outcome on web browsers of choice.
 
-> As stated before you can copy it to another machine and the other person won't need to do any package installation process.
+> As stated before, you can copy it to another machine, and the other person won't need to do any package installation process.
 
 ### Conclusion
 
