@@ -1,6 +1,6 @@
 Container technology is growing at a tremendous rate. Several decades ago, only a single application was deployed on a single operating system (OS). If you wanted to deploy many applications, you required more servers or operating systems.
 
-Around a decade ago, virtualization technology was introduced. It used hypervisor software that could split up the server to host more than one OS. However, the server got the option of hosting more than one application. But still, it had only one application per operating system. To explore the history of container technology, [go through this article](https://www.section.io/engineering-education/history-of-container-technology/).
+Around a decade ago, virtualization technology was introduced. It used hypervisor software that could split up the server to host more than one OS. Servers got the option of hosting more than one application but still had only one application per operating system. Go through this [article](https://www.section.io/engineering-education/history-of-container-technology/) to explore the history of container technology.
 
 This article aims to discuss container technology. It will go through the basics of containers and how do they are different from virtual machines.
 
@@ -32,7 +32,7 @@ Container technology makes it easy and more appropriate to design, develop and d
 
 Enterprises and major cloud computing platforms, including Google Cloud, Amazon Web Services (AWS), and Microsoft Azure, have embraced container technology. This is because container technology allows enterprises to put applications in containers and run on a single operating system. Also, they offer [container as a service (CaaS)](https://www.section.io/engineering-education/getting-started-with-container-as-a-service/) products too.
 
-That increases the efficiency of the servers and makes apps deployment faster. Think of having multiple containers on one OS, and not just that but many operating systems on your server
+That increases the efficiency of the servers and makes apps' deployment faster. Think of having multiple containers on one OS, and not just that but many operating systems on your server.
 
 Moving applications from one computing environment to another can be a problem. This may be due to differences in computer systems, hardware, and software. Containers are the solution to this problem. They enable the applications to run seamlessly and reliably.
 
@@ -43,7 +43,7 @@ In simpler terms, containers allow software or applications to run consistently 
 ### Difference between containers and virtual machines
 Virtualization is the technology of running a virtual instance of a computer system like hardware, software, storage devices, and computer network resources on the cloud. Also, a virtual machine is an isolated computing environment that allows developers to use an OS via a computer system.
 
-Containerization and virtualization are two different ways to deploy applications and microservices in a computing environment.
+Containerization and virtualization are two different ways to deploy applications and micro-services in a computing environment.
 
 Virtual machines (VMs) include the entire operating system along with the application. Also, the hypervisor is needed to run along with the applications to control the VM.
 
@@ -94,3 +94,5 @@ Container technology has gained great popularity due to its operational efficien
 To summarize: 
 - You have learned what container technology entails.
 - You have also understood what containers are, how they are classified, and their pro and cons.
+
+Happy coding!
