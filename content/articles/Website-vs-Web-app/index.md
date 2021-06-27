@@ -61,17 +61,11 @@ A good website developer can examine a site according to its features. One of th
 3. ``It gives opportunities abroad``- If you have a website, you create an opportunity for everyone worldwide to find you. If you're selling your product online, you end up having more market compared to a business person selling locally. This will in turn increase the profit. 
 
 ### Web application
-
-A web application is a program component that can be accessed via a browser and is linked to a database. A web application contains both functional and interactive elements.
-
-Unlike websites, web apps are hard to create(because they are very customized) and require an experienced team.
-
+A web application is a program that can be accessed via a browser and is linked to a database. A web application contains both functional and interactive elements.
+Unlike websites, web apps are more complex to create (because they are very customized) and require an experienced team.
 Below are examples of web application:
-
 - [Twitter](https://twitter.com/?lang=en)
-
-- [G-mail](https://mail.google.com/)
-
+- [Gmail](https://mail.google.com/)
 - [Wikipedia](https://www.wikipedia.org/)
 
 #### Characteristics of A web Application
