@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /compile-your-node.js-application-into-a-.exe-file/
+title: Compiling a Node.js Application into .exe File
+description: In this article, we will discuss the various types of applications that one can create with Node.js and how to convert it into a .exe file. We will also cover the reasons for converting an application into a .exe file and finally understand the technial details involved with the same. The packages used to obtain the .exe file are nexe and pkg.
+author: chris-mutua
+date: 2021-06-28T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/compile-your-node.js-application-into-a-.exe-file/hero.jpg
+   alt: Node.js to .exe example image
+---
+
 During the development phase, the developer performs several processes of installation and coding to build and run an application. But, the end-users are just interested in running the application and not the underlying code and processes.
 
 This causes the need for a simple executable file that can run on any operating system without requiring the user to perform other steps to run the application.
@@ -535,3 +552,5 @@ Some references used for this tutorial are:
 - [express and fastify pkg module errors](https://stackoverflow.com/questions/67966111/node-js-vercel-pkg-express-return-0-error-and-fastify-errors-error-file-or-f/67966112#67966112 "express and fastify pkg module errors").
 - [Stack Overflow command 'nexe' not found Error](https://stackoverflow.com/questions/67981535/nexe-module-command-nexe-not-found-error/67981536#67981536 "Stack Overflow command 'nexe' not found Error").
 - [Stack-Overflow vercel/pkg express and fastify errors](https://stackoverflow.com/questions/67966111/node-js-vercel-pkg-express-return-0-error-and-fastify-errors-error-file-or-f/67966112#67966112 "Stack-Overflow vercel/pkg express and fastify errors").
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
