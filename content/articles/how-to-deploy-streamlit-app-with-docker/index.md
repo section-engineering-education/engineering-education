@@ -1,9 +1,25 @@
-### Deploying a simple streamlit app using docker from scratch
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-deploy-streamlit-app-with-docker/
+title: Deploying a simple streamlit app using docker
+description: This article takes the reader through creating and deploying a streamlit application using docker. Docker is a virtualization platform that is designed to create, run, and deploy applications through the use of containers.
+author: bravin-wasike
+date: 2021-06-25T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-deploy-streamlit-app-with-docker/hero.png
+    alt: Docker image example
+---
 
-Docker is a virtualization platform that is designed to create, run and deploy applications through the use of containers. We shall use docker to deploy a simple machine learning app built using Streamlit.
+Docker is a virtualization platform that is designed to create, run, and deploy applications through the use of containers. We shall use docker to deploy a simple machine learning app built using Streamlit.
 
-In this tutorial, we will first create a simple machine learning model, save it into a pickle file to be loaded into our platform, and finally create its interface using Streamlit.
-Finally, after creating the Streamlit app, we shall use docker to deploy it.
+<!--more-->
+
+In this tutorial, we will first create a simple machine learning model, save it into a pickle file to be loaded into our platform, and create its interface using Streamlit.
+After creating the Streamlit app, we shall use docker to deploy it.
 
 ### Table of Content
 
@@ -21,7 +37,7 @@ Finally, after creating the Streamlit app, we shall use docker to deploy it.
 
 ### Building a simple machine learning model
 
-Lets Start by building a simple machine learning prediction model.
+Let's Start by building a simple machine learning prediction model.
 We will build a simple machine learning model to predict the gender of a person based on the user's input.
 
 ### Dataset
@@ -73,7 +89,7 @@ df.dtypes
 
 ### Checking for missing Values
 
-We need to ensure that there are no missing values in our dataset. This provides a well structed data that will optimize on training of our model.
+We need to ensure that there are no missing values in our dataset. This provides well structured data that will optimize on training of our model.
 
 ```python
 df.isnull().isnull().sum()
@@ -114,7 +130,7 @@ import train_test_split from sklearn.model_selection
 
 ### Features and labels
 
-After identifying our features and labels to be used in training the model, we can split our data sets into two:
+After identifying our features and labels to be used in training the model, we can split our data set into two:
 
 1. Train set
    This will be 75% of the data.
@@ -140,7 +156,7 @@ clf.score(X_test,y_test)
 
 ### Making Predictions
 
-We will use a function named predict that will be used to predict the gender of a person based on the name entered.
+We will use a function named predict that will be used to predict the gender of a person based on the name provided.
 
 ```python
 def predict(a):
@@ -165,7 +181,7 @@ naiveBayesModel.close()
 
 ### Introduction to streamlit
 
-Streamlit is a framework that is used by different machine learning engineers and data scientists to build UIs and powerful machine app from the trained model.
+Streamlit is a framework that is used by different machine learning engineers and data scientists to build UIs and powerful machine apps from a trained model.
 These apps can be used for visualization by providing interactive interfaces for the user.
 
 They provide an easy way to build charts, tables, and different figures to meet your application's needs. They also utilize the models that have been saved or picked into the app to make a prediction.
@@ -179,10 +195,10 @@ pip install streamlit
 
 ```
 
-### Lets build the streamlit app
+### Let's build the streamlit app
 
-1. Create a new Python file named app.py.
-2. Then add our pickled model into a created folder called 'model'.
+1. Create a new Python file named `app.py`.
+2. Add our pickled model into a created folder called 'model'.
 
 Our Folder structure should look like this.
 
@@ -193,7 +209,7 @@ Our Folder structure should look like this.
 
 ```
 
-3. Importing our packages.
+3. Import required packages.
 
 ```python
 import streamlit as st
@@ -203,9 +219,9 @@ import time
 from PIL import Image
 ```
 
-4. Unplicking the model.
+4. Unplick the model.
    This will help to load our model so that it can be used for gender prediction.
-   Here, the byte stream from the 'naivemodel.pkl' file is converted into an object hierachy so that it can be used by the streamlit app.
+   Here, the byte stream from the 'naivemodel.pkl' file is converted into an object hierarchy so that it can be used by the streamlit app.
 
 ```python
 gender_nv_model = open("models/naivemodel.pkl","rb")
@@ -222,7 +238,7 @@ def predict_gender(data):
   return result
 ```
 
-Styling the app
+Styling the app:
 
 We will use material UI for styles and icons for our app.
 
@@ -255,7 +271,7 @@ Your File structure should be as shown:
 
 ### Designing the user interface
 
-This is where we use different tools from streamlit to design a nice UI
+This is where we use different tools from streamlit to design a nice UI.
 
 ```python
 def main():
@@ -295,9 +311,9 @@ The code is explained as shown below:
 - Adding the apps title.
 - Styling our app by adding the app's background color, text color and the general structure of our app.
 - Adding a text input area where a user can key in a name to be predicted as either male or female.
-- Addding a button that a user can use to submit the input.
+- Adding a button that a user can use to submit the input.
   We set the following styles on our app:
-  Backgrond-color: blue
+  Background-color: blue
   Text color: grey,
   Padding: 10px,
   App Title: Gender Classifier App
@@ -308,7 +324,7 @@ We then run our app using this command.
 streamlit run app.py
 ```
 
-Our userinterface is as shown below.
+Our user interface is as shown below.
 
 1. A prediction where the output is male.
 
@@ -320,7 +336,7 @@ Our userinterface is as shown below.
 
 ### Dockerizing the streamlit app
 
-1. Lets create a docker file
+1. Let's create a docker file
    In the working root directory, let's create a file named 'Dockerfile' without any extensions.
 
 Your File structure should be as shown.
@@ -358,7 +374,7 @@ COPY requirements.txt ./requirements.txt
 
 Copying from the source to the destination.
 
-- Install all that is the requirments.txt file
+- Install all that is in the `requirments.txt` file
 
 ```docker
 RUN pip install -r requiremts.txt
@@ -399,7 +415,7 @@ Also you can use the following command to specify the file.
 docker build -t streamlitapp:latest .f Dockerfile
 ```
 
-The Output will be a shown below
+The Output will be as shown below
 
 ```bash
 Sending building context to the Docker daemon  34.90kb
@@ -430,7 +446,7 @@ Successfully built 65dv092efstfu
 Successfully tagged streamlitapp:latest
 ```
 
-- To view all of you images use the following command.
+- Use the following command to view all your images.
 
 ```docker
 docker image ls
@@ -456,7 +472,7 @@ Result:
 gv092e0ff6btdte593a7dad8e50ef01f7t3e89fy41816624gdted7fu1h1bid1o
 ```
 
-It also start our streamlit app in the following urls:
+It also starts our streamlit app in the following urls:
 
 1. Network URL: http://172.17.0.2.8501
 
@@ -469,9 +485,9 @@ With that, the Streamlit app is now deployed with docker.
 In this tutorial, we have learned how to create a simple machine learning model, how to create a steamlit app using the model and finally being able to use docker to run the app.
 We first begin by building a gender classification model using machine learning.
 After building the model we now design a user interface, we use streamlit which is a good library that is used by most developers when building machine learning apps within a short time.
-Streamlit design a user interface that the end-user can use to make a prediction of gender based on the name the user has inputted.
-After we have made sure that our streamlit app is fully functional and can make predictions, we can now finally use docker to deploy by creating a docker image, which we will then create a docker container, and finally run our app.
-By using these steps we can now be able to deploy our streamlit app using docker.
+Streamlit designs a user interface that the end-user can use to make a prediction of gender based on the name the user has provided.
+After we have made sure that our streamlit app is fully functional, we can now finally deploy to docker by creating a docker image, which we will then use to create a docker container, and finally run our app.
+By using these steps, we can now comfortably deploy our streamlit app using docker.
 
 ### References
 
@@ -479,3 +495,7 @@ By using these steps we can now be able to deploy our streamlit app using docker
 2. [Docker Documentation](https://www.docker.com/)
 3. [Tensorflow Documentation](tensorflow.org/guide/keras/save_and_serialize)
 4. [Scikit-learn Documentation](https://scikit-learn.org/)
+
+---
+
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
