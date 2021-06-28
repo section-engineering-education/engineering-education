@@ -21,7 +21,7 @@
 |  Sophia Raji | [EngEd Author Page](https://www.section.io/engineering-education/authors/sophia-raji/) | [GitHub Profile](https://github.com/sudosoph) | - example 1 - example 2 - example 3|
 |  Srishilesh P S | [EngEd Author Page](https://www.section.io/engineering-education/authors/srishilesh-p-s/) | [GitHub Profile](https://github.com/srishilesh) | - Machine Learning - Deep Learning - Blockchain - Data Science - Databases - DevOps - Full stack development - Programming Languages (Python, Java, C, JavaScript, Solidity) |
 |  Mike Barasa | [EngEd Author Page](https://www.section.io/engineering-education/authors/michael-barasa/) | [GitHub Profile](https://github.com/WanjaMIKE) | - Kotlin - JavaScript - PHP - Java - Dart - Flutter/React/Node/Vue/Laravel|
-|  Willies Ogola | [EngEd Author Page](https://www.section.io/engineering-education/authors/willies-ogola/) | [GitHub Profile](https://github.com/Bayler) | - example 1 - example 2 - example 3|
+|  Willies Ogola | [EngEd Author Page](https://www.section.io/engineering-education/authors/willies-ogola/) | [GitHub Profile](https://github.com/Bayler) | - Artificial Intelligence - Machine Learning - Blockchain - Telecommunication & Networking - Internet of Things - Programming Languages (Python, C, JavaScript)|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
