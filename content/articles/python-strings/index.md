@@ -3,7 +3,7 @@ A string is a sequence of Unicode characters. Unicode is a standard 
 
 ###  Initializing strings in python
 In python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
-- Using single Quotes
+####  Using single Quotes
 ```py 
 # defining strings using single quotes
 string = 'Hello there'
@@ -13,7 +13,7 @@ print(string)
 Hello there
 ```
 
-- Using Double Quotes
+####  Using Double Quotes
 ```py
 # defining strings using double quotes
 string2 = "Double Quote String"
@@ -23,7 +23,7 @@ print(string2)
 Double Quote String
 ```
 
-- Using Triple Quotes
+####  Using Triple Quotes
 ```py
 # defining strings using tripple quotes
 string3 = '''Tripple Quote String'''
@@ -33,7 +33,7 @@ print(string3)
 Tripple Quote String
 ```
 
-- Tripple quotes can also be used to specify multi-line strings.
+####  Tripple quotes can also be used to specify multi-line strings.
 ```py
 # Multi-line strings
 string4 = '''My name is Jane Doe,
@@ -48,7 +48,7 @@ My name is Jane Doe,
 ###  Accessing Characters of Strings
 Strings are arrays of characters and therefore, just as arrays we can access the individual characters of a string. We can do this by specifying the position of the string using square brackets and the index.
 
-- First character
+####  First character
 ```py
 # printing the first character of the string
 string = 'Hello there'
@@ -58,7 +58,7 @@ print(string[0])
 H
 ```
 
-- Last Character
+####  Last Character
 Since python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same to get the last element of a string.
 ```py
 # printring the  last index
@@ -69,7 +69,7 @@ print(string[-1])
 e
 ```
 
-- Printing a range of characters
+####  Printing a range of characters
 If we wanted to print a range of characters say from a given index to another, we use `slicing`. In slicing, we specify the starting index and the ending index separated by a semi-colon `:`. The string printed out is that which occurs in that range.
 ```py
 #slicing 1st to 8th character
