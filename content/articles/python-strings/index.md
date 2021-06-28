@@ -182,6 +182,29 @@ print(y)
 Hello people, this people are a nice people
 ```
 
+- `strip()`. This method removes any character that either trails or leads a string. By default, the `split()` removes spaces like below:
+```py
+string = "     hello world     "
+
+x = string.strip()
+
+print(x)
+```
+```bash
+Hello world
+```
+The function can as well take the caharcter to remove as parameter the eliminates them from the string as belwo:
+```py
+string = "//////Hello world,,,,,"
+
+x = string.strip("/,")
+
+print(x)
+```
+```bash
+Hello world
+```
+
 ###  Python String Operations
 Python has a wide range of operations to perform on strings. This makes strings in python have a wide application than strings in any other programming languages.
 
