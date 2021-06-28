@@ -43,11 +43,11 @@ Examples of websites include:
 
 #### Characteristics of a Website
 A good website developer can examine a site according to its features. One of the characteristics that will determine the success of a website is its appearance. Let's have a look at some additional website attributes.
-1. `User friendly`: A website should be easy to operate.
+1. `User friendly`:The use and navigation of a website should be easy. Do users find the information they want, without struggling, when they visit your website? Can you save from a page to another and go back easily with your website?
 2. `Attractive and accessible for all targeted users`:This helps attract users to opt for a particular website against another. 
 3. ``Reliable``-A good website should be accessed by an end user anytime and anywhere. It should work for 24 hours a day and it should be trustworthy. It should also deriver notifications in good time to keep the user updated.
 4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, always choose a host that loads fast.
-5. `Secure`- A good website should provide security for both end-users and the website developers.
+5. `Digitalized`- You want to ensure that your website uses the latest technological trends. You do not want to construct a website not supporting the needs of today.
 
 #### Importance of a website
 
@@ -75,7 +75,7 @@ Below are examples of web application:
 #### Importance of a Web Application
 
 1. `Security`: Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of protection.
- 2. `Easy to use`: End users can access them from any device at any time. 
+2. `Easy to use`: End users can access them from any device at any time. 
 
 3.  Data access is simple because they are used on both mobile and desktop computers. 
 
