@@ -2,27 +2,24 @@
 layout: engineering-education
 status: publish
 published: true
-url: /node-app-express-generator/
-title: Creating Node Application Using Express Generator 
-description: This tutorial explains how to use Node.js Express generator tool to create a new express application.
+url: /nodejs-app-express-generator/
+title: Creating Node.js Application Using Express Generator 
+description: This tutorial explains how to use Node.js Express generator tool to create a new express application. The Node.js Express generator tool is a package used to simplify development time while developing Node.js web applications.
 author: owino-wendy
-date: 2021-06-18T00:00:00-14:00
+date: 2021-06-28T00:00:00-17:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-app-express-generator/hero.jpg
+  - url: /engineering-education/nodejs-app-express-generator/hero.jpg
     alt: Creating Node Application Using Express Generator
 ---
-
+In this tutorial, we'll be discussing the concepts of the Node.js Express generator tool. It's a package that you can use to simplify your development time while developing your Node.js web applications.  
+<!--more-->
 ### Introduction
-
-In this tutorial, I'll be discussing the concepts of the Node.js Express generator tool. It's a package that you can use to simplify your development time while developing your Node.js web applications.  
-
 As the name suggests, an Express generator is a tool that we'll be using to generate our application, that otherwise, we would've created manually.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Objectives](#objectives)
@@ -30,17 +27,14 @@ As the name suggests, an Express generator is a tool that we'll be using to gene
 - [Generating Express application](#generating-express-application)
 
 ### Objectives
-
-By the end of this tutorial, you should be in a position to generate complete Node application folders.  
+By the end of this tutorial, you should be in a position to generate complete Node.js application folders.  
 
 ### Prerequisites
-
-- [Node](node.org) installed in your local machine.
+- [Node.js](https://nodejs.org/en/) installed in your local machine.
 - Basic knowledge of Node.js templating engines, in this application we use `pug` templating engine.
 
 ### Generating Express application
-
-In this section, we look at the Express generator package, how it's installed and used to generate folder structure.  
+In this section, we will look at the Express generator package, how it's installed and used to generate folder structure.  
 
 Let's start by creating an express application using Express generator.  
 
@@ -49,7 +43,9 @@ npx express-generator --view=pug expressExample
 
 ```
 
-In the above command, we instruct the express-generator to generate an application called `expressExample`. We then specify the view that we need our application to use, in our case we select `pug`. There are many other view template engines that you could find [here](https://expressjs.com/en/guide/using-template-engines.html)
+In the above command, we instructed the express-generator to generate an application called `expressExample`. We then specify the view that we need our application to use, in our case we select `pug`. 
+
+There are many other view template engines that you could find [here](https://expressjs.com/en/guide/using-template-engines.html)
 
 Output:
 
@@ -84,7 +80,7 @@ create : expressExample/
 
 ```
 
-The above output gives you an overview of your project folder structure while the immediate instruction is for us to install dependencies for this application and run the execution.
+The output above gives you an overview of your project folder structure while the immediate instruction is for us to install dependencies for this application and run the execution.
 
 ```bash
 $ cd expressExample
@@ -94,7 +90,7 @@ $ cd expressExample
 $ npm install
 ```
 
-This will install your node application dependencies for a few seconds, depending on your internet speed.  
+This will install your node.js application dependencies for a few seconds, depending on your internet speed.  
 
 On completion, in your Mac or Linux system, run the following command to start your application:  
 
@@ -110,16 +106,15 @@ Output:
 
   expressexample:server Listening on port 3000 +0ms
 
-
 ```
 
-In case you're using windows based operating system, run the following command to start your application.
+In case you're using a Windows based operating system, run the following command to start your application.
 
 ```bash
 > set DEBUG=expressexample:* & npm start
 ```
 
-While could also run it on the Windows PowerShell as follows:  
+You could also run it on the Windows PowerShell as follows:  
 
 ```powershell
 
@@ -133,11 +128,12 @@ http://localhost:3000
 ```
 
 Output:
-![express applicaiton example](/engineering-education/node-app-express-generator/home.png)
+
+![express applicaiton example](/engineering-education/nodejs-app-express-generator/home.png)
 
 Our final project folder structure:  
 
-```
+```bash
 expressExample
 ├── app.js
 ├── bin
@@ -233,11 +229,10 @@ module.exports = app;
 
 ```
 
-You notice that you just modify the routes and any other feature on the Express generated application as a normal node initialised app.
+You'll notice that you just modified the routes and any other feature on the Express generated application as a normal Node.js initialised app.
 
 ### Conclusion
-
-In this tutorial, we've discussed how to generate an Node-express application using the express generator. We generated a project structure and started our application on the server and displayed an ouput. We've also seen how we can modify this applicaiton to suit our needs.
+In this tutorial, we've discussed how to generate an Node.js-express application using the express generator. We generated a project structure and started our application on the server and displayed an ouput. We've also seen how we can modify this applicaiton to suit our needs.
 
 Happy coding!
 
