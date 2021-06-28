@@ -6,7 +6,7 @@ url: /how-to-deploy-streamlit-app-with-docker/
 title: Deploying a simple streamlit app using docker
 description: This article takes the reader through creating and deploying a streamlit application using docker. Docker is a virtualization platform that is designed to create, run, and deploy applications through the use of containers.
 author: bravin-wasike
-date: 2021-06-25T00:00:00-10:00
+date: 2021-06-28T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
