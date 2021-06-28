@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-jetpack-compose-in-android/
+title: Getting Started With Jetpack Compose 
+description: This article will walk you through the fundamental concepts that you need to get started with the new and quick development paradigm Jetpack Compose. Jetpack Compose is a contemporary toolkit for Android that makes UI development easier.
+author: maurine-muthoki
+date: 2021-06-28T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-jetpack-compose-in-android/hero.png
+    alt: Jetpack Compose example image
+---
 ### Introduction to Jetpack Compose
 Android’s imperative UI design paradigm is over 11 years old at the time of writing this article😱. Over this time, a lot of issues have been raised concerning its overall performance. Android developers wished that the old view system and `XML` layouts were no longer an issue.
-
+<!--more-->
 Jetpack Compose is a contemporary toolkit for Android that makes UI development easier. It's totally declarative, which means you can describe your user interface by invoking a set of composables.
 
 This article will walk you through the fundamental concepts that you need to get started with this new and quick development paradigm.
@@ -338,3 +354,6 @@ In this article, we've covered the core concepts of the declarative paradigm in 
 You can get the source code used in this tutorial [on my Github](https://github.com/MaurineM/jetpack-compose-article).
 
 Happy Composing!😊
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
