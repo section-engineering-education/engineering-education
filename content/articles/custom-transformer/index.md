@@ -6,7 +6,7 @@ url: /custom-transformer/
 title: Creating a Custom Data Transformer using Scikit-Learn
 description: In this article, we will learn how to build the custom data transformers using Scikit-Learn and look at an example to implement the same.   
 author: terrence-aluda
-date: 2021-06-28T00:00:00-05:00
+date: 2021-06-28T00:00:00-01:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
