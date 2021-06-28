@@ -14,79 +14,83 @@ images:
     alt: Handling RecyclerView Clicks the Right Way in Kotlin.
 ---
 
-
-# Handling RecyclerView Clicks the Right Way
-Many developers tend to handle clicks on a `RecyclerView` the wrong way. There are some ways that we can do this, but for this tutorial we will focus on the most appropriate way.
+Many developers tend to handle clicks on a `RecyclerView` the wrong way. In this tutorial we will focus on the most appropriate way to handle clicks on a `RecyclerView`
 
 ## Prerequisites
+
+In order to follow along with this tutorial comfortably, the reader should:
+
 - Know how to create a project in `Android Studio`
-- Some good understanding of `Kotlin` (This will be the primary language that we will use)
-- Worked with the basic `RecyclerView` to display data from an API (We will be fetching data from a REST API)
-- Retrofit
-- Some understanding of Jetpack libraries like `ViewModel` and `LiveData`
+- Have some good understanding of `Kotlin` (This will be the primary language that we will use)
+- Have worked with the basic `RecyclerView` to display data from an API (We will be fetching data from a REST API)
+- know what Retrofit is and how to use it
+- Have some understanding of Jetpack libraries like `ViewModel` and `LiveData`
 - Be familiar with `ViewBinding`
 
 ## Topics to be covered
-- An Overview of  what a `RecyclerView` is.
+
+- An Overview of what a `RecyclerView` is.
 - `ListAdapter` and `DiffUtil`
 - Handling clicks in a `RecyclerView`
 
 ## Introduction
+
 A `RecyclerView` is a great widget to display a list of data items. The `RecyclerView` class supports the display of a collection of data. It is a modernized version of the ListView and the GridView classes provided by the Android framework. If it is your first time creating a `RecyclerView` you can take a look at this article. [Basics of Android Recyclerviews](https://www.section.io/engineering-education/android-recyclerviews/)
 
 ## What is a ListAdapter?
-According to the official documentation: 
-```A ListAdapter is a RecyclerView.Adapter base class for presenting List data in a RecyclerView, including computing diffs between Lists on a background thread.```
 
-While using a `LiveData<List>`,  a ListAdapter provides an easy way to provide data to the adapter.You can use submitList(POJO) when new lists data is available.
+According to the official documentation:
+`A ListAdapter is a RecyclerView.Adapter base class for presenting List data in a RecyclerView, including computing diffs between Lists on a background thread.`
+
+While using a `LiveData<List>`, a ListAdapter provides an easy way to provide data to the adapter.You can use submitList(POJO) when new lists data is available.
 ListAdapter handles addition and removal of items without the need to redraw the entire view. It also animate those changes.
 
-
 ## What is a DiffUtil?
+
 According to the official documentation:
-```DiffUtil is a utility class that can calculate the difference between two lists and output a list of update operations that converts the first list into the second one. It can be used to calculate updates for a RecyclerView Adapter.```
+`DiffUtil is a utility class that can calculate the difference between two lists and output a list of update operations that converts the first list into the second one. It can be used to calculate updates for a RecyclerView Adapter.`
 
 `DiffUtil` is the class that actually removes the need for calling the `notifyDataSetChanged()` method. We overrride two of its methods `areItemsTheSame(oldItem: Pojo, newItem: Pojo)` and `areContentsTheSame(oldItem: Pojo, newItem: Pojo)`. The first method checks if the two objects are the same (for example based on ids). While the second checks if the data between the two objects is the same.
 `DiffUtil` is the secret ingredient that makes it possible for `ListAdapter` to change the items in the list.
 
-### Enough with talks, lets code
-We'll be fetching Memes from  https://api.imgflip.com/get_memes API and display them in a `RecyclerView` then we'll add click listener to handle clicks on each row.
+### Enough talk, lets code
+
+We'll be fetching Memes from <https://api.imgflip.com/get_memes> API and display them in a `RecyclerView` then we'll add click listener to handle clicks on each row.
 
 ### Step 1: Make sure you have created your project
 
 ![create_project](/handling-recyclerview-clicks-the-right-way/create_project.png)
 
 ### Step 2: Adding necessary dependencies
+
 Add the following dependencies in your app level build.gradle
-  ```gradle
-  //Retrofit and Gson Converter for Networking
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    //Glide for Image Loading
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+```gradle
+//Retrofit and Gson Converter for Networking
+  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    //ViewModels and LiveData
-    def lifecycle_version = "2.3.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-  ```
+  //Glide for Image Loading
+  implementation 'com.github.bumptech.glide:glide:4.12.0'
+  annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+  //ViewModels and LiveData
+  def lifecycle_version = "2.3.1"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+  kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+```
 
 Retrofit will help us in making an API call and GsonConverter will play a role of converting JSON strings to Java objects.
 
 Also enable `ViewBinding` in the app level build.gradle
-    ```gradle
-    buildFeatures{
-            viewBinding true
-    }
-    ```
- 
+`gradle buildFeatures{ viewBinding true } `
+
 `ViewBinding` generates a Java class that replaces the need for findViewById in your code.
 
 ### Step 3: Create layouts for both the recyler row and the recyclerView
-First lets design recycler_row.xml which will have an `ImageView` that will display Meme photo and also a `TextView` to display Meme name.
+
+First, lets design recycler_row.xml which will have an `ImageView` that will display Meme photo and also a `TextView` to display Meme name.
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -112,7 +116,7 @@ First lets design recycler_row.xml which will have an `ImageView` that will disp
  app:layout_constraintStart_toStartOf="parent"
  app:layout_constraintTop_toTopOf="parent"
  tools:srcCompat="@tools:sample/backgrounds/scenic" />
- 
+
  <TextView
  android:id="@+id/memeName"
  android:layout_width="wrap_content"
@@ -180,6 +184,7 @@ For our activity_main.xml we have a `RecyclerView`, a `ProgressBar` and a `TextV
 ```
 
 ### Step 4: In this step we will come up with our model class - Meme.kt
+
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
 
@@ -214,7 +219,8 @@ data class Meme(
 
 ```
 
-In this model class(Meme) what we need interested in is the Meme name (name) and the Meme image(url).
+In this model class(Meme), what we are interested in is the Meme name (name) and the Meme image(url).
+
 ### Step 5: Lets design our ApiService for making the API call
 
 ```kotlin
@@ -244,7 +250,7 @@ object MemesApi {
 }
 ```
 
-### Step 6: Lets create our Adapter class that will do all stuffs on clicks
+### Step 6: Let's create our Adapter class that will do all stuffs on clicks
 
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
@@ -306,6 +312,7 @@ class MemesAdapter(private val onClickListener: OnClickListener) :
 ```
 
 ### Code Explanation
+
 ```kotlin
 class OnClickListener(val clickListener: (meme: Meme) -> Unit) {
     fun onClick(meme: Meme) = clickListener(meme)
@@ -317,10 +324,10 @@ one Meme item as a parameter in its Constructor. This class contains a matching 
 
 ```kotlin
 class MemesAdapter(private val onClickListener: OnClickListener) :
-    ListAdapter<Meme, MemesAdapter.MyViewHolder>(MyDiffUtil) 
+    ListAdapter<Meme, MemesAdapter.MyViewHolder>(MyDiffUtil)
 ```
-Then we have added an onClickListener property on the Constructor of the `MemesAdapter`
 
+Then we have added an onClickListener property on the Constructor of the `MemesAdapter`
 
 ```kotlin
 holder.itemView.setOnClickListener {
@@ -330,8 +337,8 @@ holder.itemView.setOnClickListener {
 
 We finish our work in MemesAdapter by calling our `onClickListener` inside the `itemView's` onClickListener in `onBindViewHolder` with a Meme from the `ViewHolder`
 
-
 ### Step 7: In our ViewModel class
+
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
 
@@ -378,6 +385,7 @@ class MainViewModel : ViewModel() {
 ```
 
 ### Step 8: Lets Work on our MainActivity
+
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
 
@@ -420,26 +428,30 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
- ```kotlin
- adapter = MemesAdapter(MemesAdapter.OnClickListener { photo ->
-            Toast.makeText(applicationContext, "${photo.name}", Toast.LENGTH_SHORT).show()
-  })
- ```
+```kotlin
+adapter = MemesAdapter(MemesAdapter.OnClickListener { photo ->
+           Toast.makeText(applicationContext, "${photo.name}", Toast.LENGTH_SHORT).show()
+ })
+```
 
- In the MemesAdapter instance, we'll add MemesAdapter `OnClickListener` object to the MemesAdapter Constructor which returns a passed in Meme from the Adapter. For now we can try and Toast the name of the clicked Meme. On other scenarios one may need to navigate to other activities or fragments and display details of the clicked item.
+In the MemesAdapter instance, we'll add MemesAdapter `OnClickListener` object to the MemesAdapter Constructor which returns a passed in Meme from the Adapter. For now we can try and Toast the name of the clicked Meme. On other scenarios one may need to navigate to other activities or fragments and display details of the clicked item.
 
 ### Step 9: Some Demo Screens
-Once you done, run the app. Here is what you should expect
+
+Once you done, run the app. Here is what you should expect:
+
 ![recyclerview](/handling-recyclerview-clicks-the-right-way/recyclerview.jpg)
+
 ![recyclerview_clicked](/handling-recyclerview-clicks-the-right-way/recyclerview_clicked.jpg)
 
-
-You can check the entire project on [GitHub]( https://github.com/JoelKanyi/RecyclerViewItemClicksDemo)
+You can check the entire project on [GitHub](https://github.com/JoelKanyi/RecyclerViewItemClicksDemo)
 
 ### Conclusion
+
 That's not all about `Recyclerviews` clicks, keep exploring. Through this article, I hope you have got an idea on how to handle clicks on your `Recyclerviews`.
 
 Keeping skilling up and happy coding!!!
 
 ### Resources
-- [Android Official Documentation]( https://developer.android.com/reference/androidx/recyclerview/widget/ListAdapter)
+
+- [Android Official Documentation](https://developer.android.com/reference/androidx/recyclerview/widget/ListAdapter)
