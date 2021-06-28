@@ -6,6 +6,12 @@ Edge Computing.
 
 With edge computing, the computation happens near the physical location where data is collected. This is in contrast to current practices where computation happens on centralized servers. Due to this, it is easy to create real-time insights.
 
+The figure below depicts the centralized nature of cloud computing:
+
+![Cloud Computing Paradigm](/engineering-education/content/articles/cloud-computing.PNG)
+
+*[Image Source: IEEE](https://ieeexplore.ieee.org/document/7488250/)*
+
 But, before  I explain further what edge computing entails, it is good to understand how we got here. 
 
 ### Brief history
@@ -57,7 +63,9 @@ Edge computing allows computing to be performed in close proximity to where data
 
 Let's take a look at the edge computing paradigm.
 
+![Edge Computing Paradigm](/engineering-education/content/articles/edge-computing.PNG)
 
+*[Image Source: IEEE](https://ieeexplore.ieee.org/document/7488250/)*
 
 At the edge, the following tasks are performed:
 
