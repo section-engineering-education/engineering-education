@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/operators-In-c#/
+title: Operators in C#
+description: In this article, we will go over the various operators in C# and see how they are used to utilize the functionality they offer.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/operators-In-c#/hero.jpg
+    alt: Operators C#
+---
+
 ### Introduction
 An operator is a symbol that instructs the compiler to perform particular mathematical or logical computations.
-
+<!--more-->
 Any programming language's foundation is made up of these. Subsequently, the C# language's usefulness is deficient without the utilization of operators. Operators enable us to execute various actions on operands. In C#, operators are classified according to their functionality:
 
 1. [Arithmetic operators](#!Arithmetic-operators)
@@ -397,4 +413,3 @@ Happy Coding!
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
-
