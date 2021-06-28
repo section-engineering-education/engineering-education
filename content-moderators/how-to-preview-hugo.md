@@ -1,4 +1,7 @@
+### How to preview with Hugo
 This section will go over how to download Hugo then use it to render/preview the [Section Engineering Education](https://github.com/section-engineering-education/engineering-education) repo locally using Hugo stactic site generator.
+
+contributed by Ahmad Mardeni
 
 ### Step 1: Downloading Hugo 
 - Go to [Hugo releases](https://github.com/gohugoio/hugo/releases), scroll down and download the extended zip version for your OS.
