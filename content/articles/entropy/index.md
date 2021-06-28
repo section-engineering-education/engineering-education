@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/entropy/
+title: Entropy and Information Gain to Build Decision Trees in Machine Learning 
+description: A decision tree is a supervised learning algorithm used for both classification and regression problems. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
+author: collins-ayuya
+date: 2021-06-28T00:00:00-16:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/entropy/hero.jpg
+   alt: hero image
+---
+
 A decision tree is a supervised learning algorithm used for both classification and regression problems. Simply put, it takes the form of a tree with branches representing the potential answers to a given question. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
 
 ### Contents
