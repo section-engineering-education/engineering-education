@@ -1,0 +1,4 @@
+What is the essence of using libraries for machine learning? This is a sequel to an earlier article where we implemented algorithms from scratch. We created machine learning models which was quite cumbersome and missed out on a majority of aspects contained in Machine learning.The article can be found [here](/engineering-ed/articles/Introduction-to-machine-learning-using-c++). 
+
+Libraries enable the reuse of code for solving problems. The code could have been implemented by an expert or an enthusiast. This saves one from the problem of having to "reinvent the wheel" each time especially when working or learning under strict deadlines.
+C++ as a programming language has libraries that are useful for machine learning. In this article, we will look at the SHARK and MLPACK libraries and exploit their functionality in machine learning.
