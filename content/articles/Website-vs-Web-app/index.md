@@ -51,13 +51,12 @@ A good website developer can examine a site according to its features. One of th
 
 #### Importance of a website
 
-1. ``It provides self-service customer support in Business``- If your website support Q&A post, then you can provide a forum where user can have questions about your goods among themselves. Other users can provide answers to the questions.
+1. ``Updates to customers``- As your website is available 24/7, updates and notices can be easily published for your customers. This is a way to keep them up-to-date on all you do. When something matters particularly to you, you are more likely to upsell it.
 
-   This can make things a lot quicker for your clients and make your client service office more effective.
+2. `Professionalism` - Studies show that most people opt to deal with businesses with websites compared to those that lack one. 
 
-2. `Professionalism` : Studies show that most people opt to deal with businesses with websites compared to those that lack one. 
-
-3. ``It gives opportunities abroad``- If you have a website, you create an opportunity for everyone worldwide to find you. If you're selling your product online, you end up having more market compared to a business person selling locally. This will in turn increase the profit. 
+3. ``Creates a large market pool``- Your business accessibility is exponentially increasing through a website, as it is accessible from anywhere in the world. Websites therefore help companies to break geographical obstacles and increase sales significantly.
+4. ``Growth Opportunity``- A website may serve as a portfolio of a company or resume. This can prove to be beneficial for companies as the site can act as a reference for potential investors who know what you have achieved already and your plans for the future as a company.
 
 ### Web application
 A web application is a program that can be accessed via a browser and is linked to a database. A web application contains both functional and interactive elements.
