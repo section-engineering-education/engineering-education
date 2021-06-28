@@ -84,9 +84,9 @@ Let us see why the users prefer executable files in the first place. Some advant
 Two of the most commonly used packages used to compile javascript files into executables are:
 
 - [nexe](https://www.npmjs.com/package/nexe "npmjs.com nexe/nexe documentation"): It is a simple command-line utility that compiles your Node.js application into a single executable file. By default, it converts it into a Windows executable. You can quickly jump over to its section by clicking [here](#nexe "nexe").
-- [pkg](https://www.npmjs.com/package/pkg): It is a node package that can convert your node app into several executable files for various operating systems (all at once) or of an individual operating system. You can quickly jump over to its section by clicking [here](#pkg "pkg").
+- [pkg](https://www.npmjs.com/package/pkg): It is a Node.js package that can convert your Node.js app into several executable files for various operating systems (all at once) or of an individual operating system. You can quickly jump over to its section by clicking [here](#pkg "pkg").
 
-We shall now get a simple node.js application that is running and use it as our application.
+We shall now get a simple Node.js application that is running and use it as our application.
 
 ### A simple web app
 
@@ -279,7 +279,7 @@ Once done, let's use the packages to convert the application into an executable 
 
 ![nexe](/engineering-education/compile-your-node.js-application-into-a-.exe-file/nexe.png "nexe")
 
-Let's compile our project into an executable file with all the required packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The node packages will be automatically added, so we'll only specify the other required resources.
+Let's compile our project into an executable file with all the required packages and resources. Apart from the "node_modules", the other resource required that is also found in the root directory is the "views" folder. The Node.js packages will be automatically added, so we'll only specify the other required resources.
 
 #### nexe installation
 
@@ -343,7 +343,7 @@ nexe -r "views/**/*"
 
 We can also add additional commands such as the output executable file path using `--output` or `-o`, target using `--target` or `-t`, name of the executable file using `--name` or `-n`, build from source using `--build` or `-b` e.t.c.
 
-> 'target' in `nexe` is used to specify the platform (Windows, Linux, or macOS), the arch or architecture type (x86, x64), and the node version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
+> 'target' in `nexe` is used to specify the platform (Windows, Linux, or macOS), the arch or architecture type (x86, x64), and the Node.js version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
 
 2. We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
 Head over to the "package.json" file, and under the scripts tag, add a build script as follows:
@@ -422,7 +422,7 @@ That is because we did not specify an operating system. Run the file that's suit
 
 Close it using `Ctrl + C`.
 
-Now let us dive a little deeper and specify the operating system and the node version.
+Now let us dive a little deeper and specify the operating system and the Node.js version.
 In this, we use the `--targets` flag to set the target operating system.
 
 Delete the executable files generated in the previous process.
@@ -433,11 +433,11 @@ Run the following in the Terminal:
 pkg index.js --targets node12-win-x64
 ```
 
-This specifies that the project should be compiled into an executable file that runs on Node version 12 and Windows O/S of a 64-bit architecture.
+This specifies that the project should be compiled into an executable file that runs on Node.js version 12 and Windows O/S of a 64-bit architecture.
 
-Some of the supported node ranges, platforms, and architectures are as shown in the table below:
+Some of the supported Node.js ranges, platforms, and architectures are as shown in the table below:
 
-| Node Versions | Platforms  | Archs  |
+| Node.js Versions | Platforms  | Archs  |
 |---|---|---|
 | node8  | alpine  | x64  |
 | node10  | linux  | arm64  |
@@ -540,7 +540,7 @@ Just install the other two operating systems and configure them. Then, run the f
 
 ### Conclusion
 
-As projects need more testing during the SDLC process, code alterations are problems one does not hope to encounter. In addition, one prefers quick project distribution. We can solve these by compiling them into Node executable files either with or without resources as preferred.
+As projects need more testing during the SDLC process, code alterations are problems one does not hope to encounter. In addition, one prefers quick project distribution. We can solve these by compiling them into Node.js executable files either with or without resources as preferred.
 
 ### References
 
