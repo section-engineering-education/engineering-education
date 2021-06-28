@@ -6,12 +6,12 @@ url: /why-you-should-use-wakanda/
 title: Why you Should use Wakanda JavaScript
 description: In this article, we will learn about Wakanda which is an open-source platform that allows the user to easily and quickly create applications.
 author: ann-michubu
-date: 2021-06-28T00:00:00-04:00
-topics: [Node.js]
+date: 2021-06-28T00:00:00-09:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/why-you-should-use-wakanda/hero.png
+  - url: /engineering-education/why-you-should-use-wakanda/hero.jpg
     alt: Wakanda.js Hero Image
 ---
 [Wakanda](https://wakanda.github.io/) is an open-source platform which allows the user to easily and quickly create applications that can be utilized as mobile applications and web application using JavaScript. Wakanda is supported on Microsoft Windows, Linux, and cloud-ready on the back-end.
@@ -74,10 +74,6 @@ To sum up, the Wakanda JavaScript framework is recommendable to developers due t
 Why don't you head to [Wakanda Framework](https://wakanda.github.io/) and try it?
 
 Happy Coding!
-
-### Further Reading
-- [The Wakanda JavaScript website](https://wakanda.github.io/)
-- [Wakanda: The new JavaScript app development framework](http://blog.jonathanargentiero.com/wakanda-new-javascript-app-development-framework/)
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
