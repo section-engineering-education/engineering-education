@@ -30,7 +30,7 @@ The Hadoop ecosystem comprises three main components that are designed to specif
 
 [Image Source: Data Flair](https://data-flair.training/blogs/hadoop-ecosystem-components/)
 
-This components are;
+These components are;
 
 - Hadoop distributed file system (HDFS)
 
@@ -74,7 +74,7 @@ YARN manages resources within a cluster. A resource manager, a node manager, an 
 
 >Note: Apart from the components listed above, the Hadoop ecosystem includes a slew of other components. Check them [here](https://data-flair.training/blogs/hadoop-ecosystem-components/).
 
-### What is Docker and Docker containers?
+### What are Docker and Docker containers?
 
 A container is a way to package applications with everything they need inside that package, including the dependencies and configuration necessary to run it. In addition, the package is portable like any other artifact and can be easily shared and moved around between the relevant teams.
 
@@ -178,7 +178,7 @@ In your browser tab, type in `<your_ip_address>`:`<container_port>`.
 
 ### Testing the dockerize Hadoop application using the MapReduce Job
 
-The aim of containerizing Hadoop using Docker is to be able to run and test your jobs using Hadoop distributed file system (HDFS). We will use a small sample data to demonstrate how you can achieve this. To test the MapReduce Job, follow the following steps;
+The aim of containerizing Hadoop using Docker is to be able to run and test your jobs using Hadoop distributed file system (HDFS). We will use a small sample of data to demonstrate how you can achieve this. To test the MapReduce Job, follow the following steps;
 
 - Download a sample `jar` file from [here](https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-examples/2.7.1/hadoop-mapreduce-examples-2.7.1-sources.jar)
 
@@ -200,7 +200,7 @@ nano simple-text.txt
 docker cp simple-text.txt namenode:/tmp/
 ```
 
-This will make the file accessible by the container to use it and upload it to HDFS and run a Hadoop MapReduce Job.
+This will make the file accessible by the container to use and upload it to HDFS and run a Hadoop MapReduce Job.
 
 - Navigate to the container and execute it in an interactive way using the following command;
 
@@ -270,7 +270,7 @@ sudo docker pull sequenceiq/hadoop-docker:2.7.1
 
 This will download Hadoop and set it inside the installed Docker engine on your computer. You can check whether the Hadoop Docker image was downloaded successfully by running;
 
-This will download the Hadoop image with its YARN properties such as the node manager, resource manager and history server and install it in your computer's Docker engine. Run the below command to see if the Hadoop Docker image was successfully downloaded.
+This will download the Hadoop image with its YARN properties such as the node manager, resource manager, and history server and install it in your computer's Docker engine. Run the below command to see if the Hadoop Docker image was successfully downloaded.
 
 ```bash
 docker images
