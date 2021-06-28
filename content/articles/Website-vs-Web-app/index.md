@@ -31,7 +31,7 @@ In this tutorial, we will look at:
 
 A website is a collection of interconnected pages that may contain images, audio, or video and are linked by a single domain name.
 
-Website is of different types. Some of them are:
+Examples of websites include:
 
 1. Dating websites
 
@@ -45,8 +45,7 @@ Website is of different types. Some of them are:
 A good website developer can examine a site according to its features. One of the characteristics that will determine the success of a website is its appearance. Let's have a look at some additional website attributes.
 1. `User friendly`: A website should be easy to operate.
 2. `Attractive and accessible for all targeted users`:This helps attract users to opt for a particular website against another. 
-3. ``Purpose``- What is the objective of the website's appearance? A good website should provide a purpose and that purpose should be clear to the user within a short period. A user should not take much of his/her time trying to understand the reason for the appearance of a site.
-   The unclear purpose may lead to a website not giving back good results.
+3. ``Reliable``-A good website should be accessed by an end user anytime and anywhere. It should work for 24 hours a day and it should be trustworthy. It should also deriver notifications in good time to keep the user updated.
 4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, always choose a host that loads fast.
 5. `Secure`- A good website should provide security for both end-users and the website developers.
 
