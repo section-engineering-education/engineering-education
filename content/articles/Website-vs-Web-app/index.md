@@ -45,9 +45,10 @@ Examples of websites include:
 A good website developer can examine a site according to its features. One of the characteristics that will determine the success of a website is its appearance. Let's have a look at some additional website attributes.
 1. `User friendly`:The use and navigation of a website should be easy. Do users find the information they want, without struggling, when they visit your website? Can you save from a page to another and go back easily with your website?
 2. `Attractive and accessible for all targeted users`:This helps attract users to opt for a particular website against another. 
-3. ``Reliable``-A good website should be accessed by an end user anytime and anywhere. It should work for 24 hours a day and it should be trustworthy. It should also deriver notifications in good time to keep the user updated.
+3. ``Reliable``-A good website should be accessed by an end-user anytime and anywhere. It should work for 24 hours a day and it should be trustworthy. It should also deliver notifications in good time to keep the user updated.
 4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, always choose a host that loads fast.
 5. `Digitalized`- You want to ensure that your website uses the latest technological trends. You do not want to construct a website not supporting the needs of today.
+6. `Relevant Content` - The content in the website should be relevant to the users. For example, you cannot post cars on a job board website. When your website is a work board it should be provided with information and tips on how to conduct an interview for instance.
 
 #### Importance of a website
 
@@ -55,7 +56,7 @@ A good website developer can examine a site according to its features. One of th
 
 2. `Professionalism` - Studies show that most people opt to deal with businesses with websites compared to those that lack one. 
 
-3. ``Creates a large market pool``- Your business accessibility is exponentially increasing through a website, as it is accessible from anywhere in the world. Websites therefore help companies to break geographical obstacles and increase sales significantly.
+3. ``Creates a large market pool``- Your business accessibility is exponentially increasing through a website, as it is accessible from anywhere in the world. Websites, therefore, help companies to break geographical obstacles and increase sales significantly.
 4. ``Growth Opportunity``- A website may serve as a portfolio of a company or resume. This can prove to be beneficial for companies as the site can act as a reference for potential investors who know what you have achieved already and your plans for the future as a company.
 
 ### Web application
@@ -76,9 +77,8 @@ Below are examples of web application:
 
 1. `Security`: Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of protection.
 2. `Easy to use`: End users can access them from any device at any time. 
-
-3.  `Efficiency Increase` : You can streamline your business processes through web applications so that you can do more in less time and more accurately. 
-
+3.  `Increase Efficiency`: You can streamline your business processes through web applications so that you can do more in less time and more accurately. 
+4. `Easy to expand`: For instance, businesses keep growing since any changes to be made on the app is build upon the existing application. Updating web apps is easy since only the servers need upgrading.
 ### Distinctions between a website and a web application
 
 #### 1. The user's interaction
