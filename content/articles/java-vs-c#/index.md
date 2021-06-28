@@ -116,5 +116,6 @@ C# is efficient and widely used for Mobile development, Game development, and de
 
 ### Conclusion
 From the comparison above, it is evident that one Language may work on one project but may not work on another different project. Thus, when choosing between Java and C#, it is important to consider the needs and requirements of the two languages.
+
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
