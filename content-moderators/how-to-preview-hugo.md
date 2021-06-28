@@ -10,11 +10,11 @@ This section will go over how to download Hugo then use it to render/preview the
 ### Step 2: Add Hugo to the environment variables
 - Search for "Edit the system environment variables" and open it.
 
-![Environment variables](/static/images/1.PNG)
+![Environment variables](/static/images/first.PNG)
 
 - Click on "environment variables".
 
-![Environment variables](/static/images/2.PNG)
+![Environment variables](/static/images/second.PNG)
 
 - Double-click on *Path* then *New*.
 
