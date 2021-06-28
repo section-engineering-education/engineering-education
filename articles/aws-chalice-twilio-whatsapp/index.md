@@ -1,4 +1,20 @@
-# Sending WhatsApp Messages with Serverless Python Applications using AWS Chalice
+---
+layout: engineering-education
+status: publish
+published: true
+url: /aws-chalice-twilio-whatsapp/
+title: Sending WhatsApp Messages with Serverless Python Applications using AWS Chalice
+description: Serverless computing enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities and worries of a developer. AWS Chalice is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the Amazon API Gateway and AWS Lambda. In this article, we set up a Chalice application with the DynamoDB database. We will also integrate Twilio WhatsApp messaging and send messages from our application.
+author: jekayinoluwa-olabemiwo
+date: 2021-06-28T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/aws-chalice-twilio-whatsapp/hero.jpg
+   alt: AWS Chalice example image
+---
+
 
 ### Introduction:
 
@@ -373,3 +389,6 @@ Then, your recipient will receive the WhatsApp message sent:
 In this tutorial, we have been able to create a Chalice application with an API. We used Twilio WhatsApp API to send messages. We also tested the API with Postman.
 
 Now, you can build more on serverless technology and AWS infrastructure.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
