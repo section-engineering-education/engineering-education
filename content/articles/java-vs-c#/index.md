@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/java-vs-c#/
+title: Java vs C#
+description: In this article we will go over the various distinguishing characteristics of Java and C#.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/java-vs-c#/hero.jpg
+    alt: Java C#
+---
 ### Introduction
 Java and C# are both Object-Oriented languages used for developing Web applications, Networking applications, Database applications, Mobile applications, Video games, Service applications and so much more.
-
+<!--more-->
 In this article, we shall look at:
 
 - History of Java and C#
@@ -101,3 +116,5 @@ C# is efficient and widely used for Mobile development, Game development, and de
 
 ### Conclusion
 From the comparison above, it is evident that one Language may work on one project but may not work on another different project. Thus, when choosing between Java and C#, it is important to consider the needs and requirements of the two languages.
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
