@@ -1,4 +1,18 @@
-This tutorial will show you how to use Docker to set up a single Hadoop cluster. But first, let's go over the basics of the Docker and Hadoop cluster.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/
+title: This tutorial will show you how to use Docker to set up a single Hadoop cluster. But first, it goes over the basics of the Docker and Hadoop cluster.
+author: antony-gitau
+date: 2021-06-28T00:00:00-21:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/hero.png
+    alt: Docker hero image
+---
 
 ### What is Hadoop?
 
