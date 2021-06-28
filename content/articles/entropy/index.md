@@ -219,3 +219,7 @@ Decision trees are one of the simplest machine learning algorithms to not only u
 3. [Information Gain and Mutual Information for Machine Learning](https://machinelearningmastery.com/information-gain-and-mutual-information/)
 
 4. [Entropy and Information Gain in Decision Trees](https://towardsdatascience.com/entropy-and-information-gain-in-decision-trees-c7db67a3a293)
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
