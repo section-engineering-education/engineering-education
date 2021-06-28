@@ -140,7 +140,7 @@ fun RepeatText() {
     Text("Android ".repeat(30), maxLines = 3)
 }
 ```
-This creates a text "Android" and repeats it 30 times. The `maxLines` attribute determines how the maximum number of lines a text can take regardless of repeated times.
+This creates a text "Android" and repeats it 30 times. The `maxLines` attribute determines the maximum number of lines a text can take regardless of repeated times.
 
 ### Button
 This is a composable function that displays a button on the screen. It's unusual to come across an app that doesn't have any buttons!
