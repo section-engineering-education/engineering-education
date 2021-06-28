@@ -193,7 +193,7 @@ print(x)
 ```bash
 Hello world
 ```
-The function can as well take the caharcter to remove as parameter the eliminates them from the string as belwo:
+The function can as well take the caharcter to remove as parameter the eliminates them from the string as below:
 ```py
 string = "//////Hello world,,,,,"
 
