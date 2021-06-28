@@ -77,7 +77,7 @@ Below are examples of web application:
 1. `Security`: Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of protection.
 2. `Easy to use`: End users can access them from any device at any time. 
 
-3.  Data access is simple because they are used on both mobile and desktop computers. 
+3.  `Efficiency Increase` : You can streamline your business processes through web applications so that you can do more in less time and more accurately. 
 
 ### Distinctions between a website and a web application
 
