@@ -199,7 +199,7 @@ our_dataset_prepared = full_pipeline.fit_transform(our_dataset)
 
 ```
 
-The `ColumnTransformer` is used to transform columns separately and combine the features produced by each transformer to form a single feature space. The code can be run on Google Colab [here](https://colab.research.google.com/drive/1DVIh0LhGOU0rwVU2bbZw_VmjiXWV-daM#scrollTo=L21KliQUUqVB).
+The `ColumnTransformer` is used to transform columns separately and combine the features produced by each transformer to form a single feature space. The code can be run on Google Colab [here](https://colab.research.google.com/drive/1DVIh0LhGOU0rwVU2bbZw_VmjiXWV-daM?usp=sharing).
 
 ### Conclusion
 We have seen the various steps for getting the data, transforming it, and then implementing all the steps in a pipeline. So I hope you got some insights.
