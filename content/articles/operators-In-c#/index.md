@@ -35,9 +35,9 @@ The following are the Binary operators that fall within this category:
 
 1. **Substruction**: The `-`  operator takes two operands and subtracts them. Consider the case of x-y.
 2. **Addition**: The `+` operator takes two operands and adds them together. Consider the expression x+y.
-3. **Division**: The `/` The `/` operator splits the first and second operands by two. Consider the example of x/y.
-4. **Multiplication**: When two operands are multiplied, the `*` operator is used.. Take into account x*y. 
-5. **modula**: The `%` operator returns the residual when the first argument is divided by the second operand.. For example, x percent y.
+3. **Division**: The `/` operator divides the first operand by the second operand. Consider the example of x/y.
+4. **Multiplication**: When two operands are multiplied, the `*` operator is used. Take into account x*y.  
+5. **modulus**: The `%` operator returns the remainder when the first operand is divided by the second operand. For example, x % y.
 
 The following are the unary operators that fall within this category:
 
@@ -55,7 +55,7 @@ namespace Arithmetic
         static void Main(string[] args)
         {
 
-            int result, Urinary;
+           int result, unary;
             int a = 21, b = 6;
 
             result = (a + b);
@@ -73,11 +73,11 @@ namespace Arithmetic
             result = (a % b);
             Console.WriteLine("Module Operator: " + result);
 
-            Urinary = a++;
-            Console.WriteLine("A is {0} and Urinary is {1}", a, Urinary);
-
-            Urinary = a--;
-            Console.WriteLine("A is {0} and  Urinary is {1}", a, Urinary);
+            unary= a++;
+            Console.WriteLine("A is {0} and unary is {1}", a, unary);
+            
+            unary= a--;
+            Console.WriteLine("A is {0} and  unary is {1}", a, unary);
         }
     }
 }
@@ -91,8 +91,8 @@ Subtraction Operator: 15
 Multiplication Operator: 126
 Division Operator: 3
 Module Operator: 3
-A is 22 and Urinary is 21
-A is 21 and  Urinary is 22
+A is 22 and unary is 21
+A is 21 and  unary is 22
 ```
 
 ### Assignment operators.
@@ -176,8 +176,8 @@ There are six bitwise operators in C# that function at the bit level or execute 
 1. **Bitwise AND** (`&`): Takes two operands and performs AND on each bit of the two integers. AND results only when both bits are 1.. | (bitwise OR) takes two operands and performs OR on each bit of the two values. OR returns 1 if either of the two bits is 1.
 2. **Bitwise OR** (`|`): Takes two operands and performs OR on each bit of the two integers. OR returns 1 if either of the two bits is 1. 
 3. **Bitwise XOR** (`^`). Takes two operands and performs an XOR on each bit of the two integers. If the two bits are different, the result of XOR is 1.
-4. **Left shift** (`<<`). Takes two integers, shifts the bits of the first operand to the left, and the amount of places to shift is determined by the second operand.
-5. **Right (`>>`)**: Takes two integrates, shifts the first operand's bits to the right, and the second operand determines the number of places to shift.
+4. **Left shift** (`<<`). Takes the binary representation of two integers and shifts the individual bits of the first operand to the left. The amount of places to shift is determined by the second operand.
+5. **Right (`>>`)**: Takes the binary representation of two integers and shifts the first operand's bits to the right. The second operand determines the number of places to shift.
 
 The program below shows all the Bitwise operators in use:
 
@@ -228,7 +228,7 @@ The following are the relational operators:
 1. **Equal To** (`==`): If so, it will come back true. False is returned otherwise. For example, 5==5 is going to come back true.
 2. **Not Equal To** (`!=`) The operator determines if the two operands are equal.The output is true if it's wrong. False is returned otherwise. It's the `==` operator's exact boolean complement. 5!=5 will, for example, return false.
 3. **Greater Than** (`>`): This operator detects whether the first operand is bigger than the second. It returns true if this is the case.
-4. **Less Than** (`<`): If the first operand is smaller than the second, the operator determines. If this is the case, it returns true. Otherwise, false is returned. 65.5, for instance, will return false.
+4. **Less Than** (`<`): If the first operand is smaller than the second, the operator determines. If this is the case, it returns true. Otherwise, false is returned. 65 < 5, for instance, will return false.
 5. **Greater Than Equal To** (`>=`). This operator detects if the first operand exceeds or equals the second operand If so, the output  output will be true.. Otherwise, false is returned. 5>=5 will, for example, yield true.
 6. **Less Than Equal To** (`<=`) The operator detects if the first operand is equal to or below the second operand. If so, the output will be true. Otherwise, false is returned. 5=5 will, for example, also yield true.
 
@@ -321,7 +321,7 @@ final outcome: 6
 ### Logical operators
 They're used to integrate two or more conditions/constraints or to supplement the evaluation of the original condition. The following is a list of them.
 
-1. **logical OR** (`||`): When one (or both) of the requirements in question are met, the ‘||' operator returns true. Otherwise, false is returned. If one of an o rb is true, for example, x || y returns true (i.e. non-zero). Of course, when both x and y are true, it returns true.
+1. **logical OR** (`||`): When one (or both) of the requirements in question are met, the ‘||' operator returns true. Otherwise, false is returned. For example, x || y returns true (i.e. non-zero). Of course, when both x and y are true, it returns true.
 2. **Logical NOT** (`!`): If the condition in question is not met, the ‘!' operator returns true. Otherwise, false is returned.
 3. **Logical AND** (`&&`): When both of the criteria in question are met, the ‘&&' operator returns true. Otherwise, false is returned. When both a and b are true, for example, a && b yields true (i.e. non-zero).
 
@@ -388,7 +388,6 @@ namespace OperatorsAppl
 
             b = (a == 20) ? 10 : 20;
             Console.WriteLine("Value of b is {0}", b);
-            Console.ReadLine();
         }
     }
 }
