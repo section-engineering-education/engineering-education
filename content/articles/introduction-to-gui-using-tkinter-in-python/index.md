@@ -59,7 +59,7 @@ A password generator is a software that accepts input from a random or pseudo-ra
 
 A password generator is a program that creates passwords depending on the rules the user select in order to build a strong and unpredictable password for multiple accounts. The password generator program generates a unique and random password for users, assisting them in creating a strong password with increased security.
 
-Online hacking is growing more common these days, resulting to passwords and login information being compromised on a regular basis. If your passwords fall into the wrong hands, it can be highly problematic, and can even result to the loss of money or delicate personal information. Unfortunately, the majority of stolen passwords are uncomplicated and easy to guess. Names, birthdays, hobbies, and favorite pets don't make good passwords, and using them is a recipe for calamity. Password generators are very useful in this circumstances.
+Online hacking is growing more common these days, resulting to passwords and login information being compromised on a regular basis, loss of money and delicate personal information. Unfortunately, the majority of stolen passwords are uncomplicated and easy to guess. Names, date of birth, name of your spouse or family member, and personal pet names should not be use as passwords, because they are easy to guess. Password generators are very useful in this circumstances.
 
 For personal or official use, the best password generators makes it simple to generate complicated passwords that are tough to predict or breach.
 
@@ -80,7 +80,7 @@ The `tkinter.ttk` module gives the user access to the Tkinter widget set and all
 screen = Tk()
 screen.title("Password Generator")
 screen.geometry('600x400')
-screen.configure(background ="bisque")
+screen.configure(background ="red")
 ```
 
 A root window is created using the `Tk` class. The `Tk()` function assists in the creation of this GUI window, and provides numerous options such as setting the title and the geometry of the GUI window. The `geometry()` method is one of the many methods provided by Tkinter. We will change the background color using the `screen.configure()` method.
@@ -123,38 +123,38 @@ Add the following code below and outside the `gen()` function.
 
 ```python
 sc1=StringVar('')
-t1=Label(screen,text='Automatic Password Generator',font=('Arial',25),fg='red',background ="bisque")
+t1=Label(screen,text='Password Generator',font=('Arial',26),fg='white',background ="red")
 t1.place(x=60,y=0)
-t2=Label(screen,text='password:',font=('Arial',14),background ="bisque")
+t2=Label(screen,text='password:',font=('Arial',16),background ="red")
 t2.place(x=145,y=90)
 ```
 
-We have defined the `sc1` variable. In order to design the GUI window's section in this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1` which is the title of the label item. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
+The variable `sc1` has been defined. In order to design the GUI window's section in this project, we'll use a label, an entry box, and a button. On the GUI window, we have created a label `t1` which is the title of the label item. We type the text on the label. We have also changed the font and background of the label. Then using the x and y coordinate values, we have assigned the location of the `t1` label.
 
 We have also created a label `t2`, it's placeholder text and its background. We have also set its coordinates.
 
 Add the code below.
 
 ```python
-il=Entry(screen,font=('Arial',14),textvariable=sc1)
-il.place(x=270,y=90)
-t3=Label(screen,text='Length: ',font=('Arial',14),background ="bisque")
-t3.place(x=145,y=120)
-t4=Label(screen,text='Strength:',font=('Arial',14),background ="bisque")
+il=Entry(screen,font=('Arial',16),textvariable=sc1)
+il.place(x=280,y=95)
+t3=Label(screen,text='Length: ',font=('Arial',16),background ="red")
+t3.place(x=150,y=130)
+t4=Label(screen,text='Strength:',font=('Arial',16),background ="red")
 t4.place(x=145,y=155)
-c1=Entry(screen,font=('Arial',14),width=10)
+c1=Entry(screen,font=('Arial',16),width=10)
 c1.place(x=230,y=120)
-c2=Combobox(screen,font=('Arial',14),width=15)
+c2=Combobox(screen,font=('Arial',16),width=15)
 c2['values']=('Low Strength','Medium Strength','High Strength')
 c2.current(1)
 c2.place(x=237,y=155)
-b=Button(screen,text='Generate',font=('Arial',14),fg='red',background ="white",command=gen)
+b=Button(screen,text='Generate',font=('Arial',16),fg='red',background ="white",command=gen)
 b.place(x=230,y=195)
 
 screen.mainloop()
 ```
 
-On the GUI window, we have defined the entry box with the object `il`. We have calibrate the font of `il` and put the text variable to store the string worth of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location.
+Using the object `il`, define the entry box. We have calibrate the font of `il` and put the text variable to store the string worth of `sc1`. We have used x and y coordinates to assign the location of the `il` entry. We then defined the label `t3`. Then, using coordinate values, we assigned it a location.
 
 We then created the `t4` label. Using coordinates values, we assigned the location. We also gave entry `c1` a name. Set the `Combobox` c2's values to "Low Strength", "Medium Strength", and "High Strength". The `current()` function is used to set the value of `c2`. 
 
