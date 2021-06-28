@@ -8,7 +8,7 @@ Currently, we are approving ONE topic/PR per student at a time - this was to hel
 
 This means we need to check if the student has more than one TOPIC or PR submitted (we can do this by clicking on the name of the student via GitHub - in the issues section) and it pulls up every topic they’ve submitted. 
 
-![screenshot](/images/approvals.png)
+![screenshot](/static/images/approvals.png)
 
 If they have more than one - check that the older one has not already been published (or has a PR attached to it - if it should - attach the topic to the PR.)
 

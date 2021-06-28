@@ -10,11 +10,11 @@ This section will go over how to download Hugo then use it to render/preview the
 ### Step 2: Add Hugo to the environment variables
 - Search for "Edit the system environment variables" and open it.
 
-![Environment variables](/images/1.PNG)
+![Environment variables](/static/images/1.PNG)
 
 - Click on "environment variables".
 
-![Environment variables](/images/2.PNG)
+![Environment variables](/static/images/2.PNG)
 
 - Double-click on *Path* then *New*.
 
@@ -27,20 +27,20 @@ You can use VS Code (you can use any Text Editor of your choice) and make sure y
 
 Now, after cloning [EngEd](https://github.com/section-engineering-education/engineering-education) repo, you have to download the *GitHub Pull Requests and Issues* extension by going to *extensions* then click on *install*:
 
-![GitHub Pull Requests and issues extension](/images/third.PNG)
+![GitHub Pull Requests and issues extension](/static/images/third.PNG)
 
 Go to GitHub "Under Extensions" and you will find the Pull Requests for our Repo (for the first time, it will ask you to connect your GitHub account, just click *yes*).
 
-![GitHub](/images/fourth.PNG)
+![GitHub](/static/images/fourth.PNG)
 
 Now, search for the PR you are willing to review, double-click on it and click on *checkout*.
 
 After that, click on terminal:
 
-![Terminal](/images/fifth.PNG)
+![Terminal](/static/images/fifth.PNG)
 
 And in the "engineering-education" folder run the command `Hugo server -D`.
 
-![Runing Hugo](/images/sixth.PNG)
+![Runing Hugo](/static/images/sixth.PNG)
 
 Finally, wait until it is finished then go to your browser, enter `http://localhost:1313/` and you will see the rendered Repo locally.
