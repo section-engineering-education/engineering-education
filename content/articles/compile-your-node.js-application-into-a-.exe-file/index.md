@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /compile-your-node.js-application-into-a-.exe-file/
 title: Compiling a Node.js Application into .exe File
-description: In this article, we will discuss the various types of applications that one can create with Node.js and how to convert it into a .exe file. We will also cover the reasons for converting an application into a .exe file and finally understand the technial details involved with the same. The packages used to obtain the .exe file are nexe and pkg.
+description: In this article, we will discuss the various types of applications that one can create with Node.js and how to convert it into a .exe file. We will also cover the reasons for converting an application into a .exe file and finally understand the technical details involved with the same. The packages used to obtain the .exe file are nexe and pkg.
 author: chris-mutua
 date: 2021-06-28T00:00:00-18:00
 topics: []
@@ -67,7 +67,9 @@ If you are all set on the above requirements, let's look at some packages to acc
 
 Executable files (.exe files): These are files containing a set of encoded instructions, which are executed sequentially once the user clicks on the file or runs it.
 
-`.exe` is a Windows extension referring to an executable file. In Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables. In macOS, they lack extensions.
+`.exe` is a Windows extension referring to an executable file. Other operating systems have executable files too but with varying extensions. For example, in Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables while in macOS, they _lack_ extensions.
+
+We shall major on creating Windows executable files but also touch on some other operating systems as we proceed.
 
 ### Pros of executable files
 
@@ -273,7 +275,7 @@ node index.js
 ```
 
 Open a browser and open the app by visiting `localhost:5000`.
-Once done, let's use the packages to convert the application into an executable file.
+Once done, let's use the packages to convert the application into a Windows executable file.
 
 ### nexe
 
@@ -318,18 +320,24 @@ Once done, run the following command on the terminal to start the build process:
 nexe --build
 ```
 
-I'll create a new executable file with the same name as our root directory's name, "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system.
+I'll create a new executable file with the same name as our root directory's name, "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system. In our case, it'll create Windows executable file with the name "executable".
 
-Run the generated executable using the command below on Ubuntu:
+Double-tap on it or right-click and select the run command to start the application.
+It automatically logs out "Server at 5000," meaning that it is running. Access the application in the preferred browser at `localhost:5000`. You can terminate the process by clicking on the close window button.
+
+To prove that only the entry point is compiled and not the resources found in the root directory, such as those in the "views" folder, copy and paste the executable file in a separate folder and run it. It pops up errors since the application will be unable to access the resources.
+
+##### Run on Linux or macOs
+
+- In case you are on Linux, you can run the generated executable using the command below:
 
 ```bash
 ./executable
 ```
 
-It automatically logs out "Server at 5000," meaning that it is running. Access the application in the preferred browser at `localhost:5000`.
 You can close it using `Ctrl + C`.
 
-To prove that only the entry point is compiled and not the resources found in the root directory, such as those in the "views" folder, copy and paste the executable file in a separate folder and run it. It pops up errors since the application will be unable to access the resources.
+- On macOS, just double-tap to open. Close it using the close button.
 
 #### Compile the entire project into an executable using nexe
 
@@ -345,7 +353,7 @@ We can also add additional commands such as the output executable file path usin
 
 > 'target' in `nexe` is used to specify the platform (Windows, Linux, or macOS), the arch or architecture type (x86, x64), and the Node.js version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
 
-2. We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
+- We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
 Head over to the "package.json" file, and under the scripts tag, add a build script as follows:
 
 ```json
@@ -416,11 +424,19 @@ Just wait for some time for the process to complete. Head over to the main direc
 - for Linux (index-linux)
 - for mac (index-macos)
 
-That is because we did not specify an operating system. Run the file that's suitable for your operating system. For example, if you are using Ubuntu, run `./index-linux` on the terminal. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
+That is because we did not specify an operating system. Run the file that's suitable for your operating system. For example, in Windows just double-click on "index-win.exe" icon. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
 
 > **NOTE:** As long as the executable file is running, the application is running.
 
+##### Run on Linux or macOS
+
+If you are using Ubuntu, run `./index-linux` on the terminal. Confirm if it is running on the browser at `localhost:5000`.
+
 Close it using `Ctrl + C`.
+
+Incase you are using macOS, double click on "index-macos" icon and run your compiled application. Close it using the close button.
+
+##### Deeper dive
 
 Now let us dive a little deeper and specify the operating system and the Node.js version.
 In this, we use the `--targets` flag to set the target operating system.
@@ -435,7 +451,7 @@ pkg index.js --targets node12-win-x64
 
 This specifies that the project should be compiled into an executable file that runs on Node.js version 12 and Windows O/S of a 64-bit architecture.
 
-Some of the supported Node.js ranges, platforms, and architectures are as shown in the table below:
+Some of the supported Node.js ranges, platforms and architectures are as shown in the table below:
 
 | Node.js Versions | Platforms  | Archs  |
 |---|---|---|
