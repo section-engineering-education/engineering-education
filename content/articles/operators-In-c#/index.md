@@ -10,7 +10,7 @@ date:
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/operators-In-c#/hero.jpg
+  - url: /engineering-education/operators-In-c#/hero.png
     alt: Operators C#
 ---
 
