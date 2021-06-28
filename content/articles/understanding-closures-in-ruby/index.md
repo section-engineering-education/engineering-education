@@ -1,6 +1,6 @@
 ### Introduction
 
-Closure in computer science is a first-class function with free variables that are bound in the lexical environment. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
+Closure in computer science is a technique for implementing first-class function with free variables bound in the lexical environment. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
 
 ### Prerequisites
 
@@ -14,7 +14,7 @@ To follow along this article, it is helpful to have the following:
 
 - [Closures](#closures)
 - [Rules_of_identifying_a_closure](#rules-of-identifying-a-closure)
-- [Closure_usecases](#closure-usecases)
+- [Closure_use_cases](#closure-use-cases)
 - [Blocks](#blocks)
 - [Relationship_between_blocks_and_closures](#relationship-between-blocks-and-closures)
 - [Procs](#procs)
@@ -24,11 +24,11 @@ To follow along this article, it is helpful to have the following:
 
 In order to get a clear picture of what closures are we need to understand _first-class functions_, _free variables_, and _lexical environment_.
 
-**A first-class function** is simply a function that can be treated as an object and can be passed as a parameter to another function.
+**A first-class function** is a function that can be treated as an object and passed as a parameter to another function.
 
-**Free variable** is a variable that is not declared inside a function but used inside it.
+**Free variable** is a variable that is defined in the parent scope of function but used inside it.
 
-**Lexical scoping** refers to determining a variable's scope based solely on its position within the textual corpus code.
+**Lexical scoping** answers the question _what is the value of this variable at this line_, refered to as _"eyeball scoping"_. The value of _variable x_ is given by the _innermost_ statement that _declares x_.
 
 Try this in your interactive console
 
@@ -52,7 +52,7 @@ So it is safe to define closures as a block of code that can be used later and s
 - Function body should reference some variable
 - Variable should be declared in a parent scope
 
-## Closure usecases
+## Closure use-cases
 
 1. Closures preserve the partial running state of a program, thus can be used to simulate classes.
 1. Closures are used to implement callbacks in Ruby.
@@ -61,13 +61,14 @@ To have a good understanding of our topic, we will take a tour around Ruby block
 
 ## Blocks
 
-Blocks are used to capture pieces of code that can be passed into methods to be executed later, acting as anonymous functions.
+Blocks are used to capture code that can be passed into methods as arguments and executed later.
 
-In Ruby, blocks can be delimited by _curly braces_ or by _do/end_ keyword pair.
+In Ruby, blocks can be delimited by _curly braces_ or by _do/end_ keyword pair, they also act as anonymous functions.
 
-We are going to explore the **yield** keyword and **block_given?()** method, we will also learn what block variables are and their relationship to blocks acting as closures.
+We are going to explore the **yield** keyword and **block_given?()** method, explore block variables and how they relate to blocks acting as closures.
 
-The ability to encapsulate behavior into blocks and pass it into methods is an extremely useful programming technique.
+Encapsulating behaviour into blocks and passing it into methods is a powerful technique in programming.
+
 Yield inside a block simply means _"execute the block"_
 
 ```rb
