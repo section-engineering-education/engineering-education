@@ -6,7 +6,7 @@ url: /nodejs-app-express-generator/
 title: Creating Node.js Application Using Express Generator 
 description: This tutorial explains how to use Node.js Express generator tool to create a new express application. The Node.js Express generator tool is a package used to simplify development time while developing Node.js web applications.
 author: owino-wendy
-date: 2021-06-29T00:00:00-10:00
+date: 2021-06-29T00:00:00-10:35
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
