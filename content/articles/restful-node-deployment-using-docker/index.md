@@ -20,27 +20,34 @@ images:
 
 Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
 
-In this tutorial, I'll show you how to build RESTful APIs using the Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the cloud.  
+In this tutorial, I'll show you how to build RESTful APIs using the Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the kubernetes.  
 
 ### Table of contents
 
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [Node.js application setup](#Node-application-setup)
+- [Node application setup](#node-application-setup)
 - [Express packages setup](#express-packages-setup)
 - [RESTful APIs implementation](#restful-apis-implementation)
 - [Dockerizing the Express application](#dockerizing-the-express-application)
 - [Setup YAML service to deploy Dockerized Node Express application](#setup-yaml-service-to-deploy-dockerized-node-express-application)
+- [Deploying to Kubernetes service](#deploying-to-kubernetes-service)
+- [The deployment dashboard](#the-deployment-dashboard)
+- [Accessing the application](#accessing-the-application)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Prerequisites
 
 To follow along with this tutorial, you need the following:
+
 - [Node.js](https://node.org) downloaded and installed in your local development environment.
 - Basic knowledge in Node.js' Express framework.
 - RESTful APIs design.
-- Basic knowledge in [Docker](#https://hub.docker.com)
+- Basic knowledge in [Docker](https://hub.docker.com)
+- Basic knowledge in [kubernetes]()
 
 ### Objectives
 
@@ -216,7 +223,6 @@ CMD ["npm", "start"]
 
 ```
 
-
 This `Dockerfile` uses npm to install modules in our RESTful application.  
 Let's now proceed and set up the docker-compose configuration file that we'll use to launch the Node Express application (including the MongoDB instance).
 
@@ -274,11 +280,92 @@ databases:
 
 > Note, ensure you change your git URL in the above service.
 
-You can now log in to your favorite cloud vendor to deploy your dockerized application.
+You can now log in to your favorite cloud vendor to deploy your dockerized application.  
+
+
+Now that we have a Docker container image, we need to create a deployment file. In the root directory, create a new file called `deployment.yaml`. This file will deploy the application to the Kubernetes engine. 
+
+Add the following snippets to the file:  
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: rest-test-service
+spec:
+  selector:
+    app: rest-test-app
+  ports:
+  - protocol: "TCP"
+    port: 3000
+    targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-test-app
+spec:
+  selector:
+    matchLabels:
+      app: rest-test-app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: rest-test-app
+    spec:
+      containers:
+      - name: rest-test-app
+        image: rest-test-app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+```
+
+The file has two parts:
+
+1. `Service` - The service acts as the load balancer. A load balancer is used to distribute requests to the various available servers.
+
+2. `Deployment` will act as the intended application. The user request hits the load balancer, then the load balancer distributes the request by creating the number of replicas defined in the `deployment.yaml` file. For example, in our case, we have five replicas for scalability, meaning that we will have 5 instances running at a time.
+
+The benefit of multiple replicas is that if an instance crashes, the other application instances continue running.
+
+The `deployment.yaml` file is connected to the Docker image created earlier, therefore to deploy the application to the Kubernetes cluster, we use the Docker image. The image will automatically create containers for the application when we deploy the application.
+
+### Deploying to Kubernetes service
+
+We have dockerized our RESTful application, and now we need to deploy it to a Kubernetes engine. 
+
+Execute the command below in your terminal:
+
+```bash
+kubectl apply -f deployment.yaml
+```
+
+This command will deploy our service and application instances to the Kubernetes engine. After executing this command, we should be able to see that the `rest-test-service` and the `rest-test-app` are created successfully.
+
+### The deployment dashboard
+
+Minikube and Kubernetes provide a dashboard to visualize the deployment. To see our deployment in that dashboard, execute the command below in your terminal.
+
+```bash
+minikube dashboard
+```
+
+We can see that our rest application was deployed and we can see the number of running instances. If a request is made, the load balancer distributes the number of hits the request had on the instances.
+
+### Accessing the application
+
+We can access the application using the command below:
+
+```bash
+minikube start service: rest-test-service
+```
 
 ### Conclusion
 
-In this tutorial, we've covered the key concepts of Node.js Express application RESTful APIs. We discussed how we can dockerize this application locally using Docker and deploy it to the cloud.
+In this tutorial, we've covered the key concepts of Node.js Express application RESTful APIs. We discussed how we can dockerize this application locally using Docker and deploy it to the kubernetes.
 
 ### Further reading
 
