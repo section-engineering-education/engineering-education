@@ -3,27 +3,23 @@ layout: engineering-education
 status: publish
 published: true
 url: /restful-node-deployment-using-docker/
-title: How to deploy express application to Docker
-description: This tutorial explains how to create REST APIs using express and deploy to Docker using Docker compose.
+title: Deploying RESTful APIs using Node.js, Express 4 to Kubernetes clusters
+description: This tutorial will explain how to create REST APIs using express and deploy to Docker using Docker compose.
 author: jared-phelix
-date: 2021-06-18T00:00:00-14:00
-topics: [Node.js]
+date: 2021-06-29T00:00:00-16:00
+topics: [Node.js, Container, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/restful-node-deployment-using-docker/hero.jpg
-    alt:  How to deploy express application to Docker
+    alt: How to deploy express application to Docker
 ---
-
+In this tutorial, we will go over how to build RESTful APIs using the Node.js Express framework, test them locally using docker-compose. We will then proceed to deploy this application to the [Kubernetes](/engineering-education/introduction-to-kubernetes/).  
 
 ### Introduction
-
-Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs.  
-
-In this tutorial, I'll show you how to build RESTful APIs using the Node.js Express framework, test them locally using docker-compose. We'll then proceed to deploy this application to the kubernetes.  
+Express is a backend development framework built on top of Node.js, it enables the implementation of the client-server architecture. With its flexibility, it allows for the customization of the API endpoints, consequently, fitting our needs. 
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -40,21 +36,17 @@ In this tutorial, I'll show you how to build RESTful APIs using the Node.js Expr
 - [Further reading](#further-reading)
 
 ### Prerequisites
-
 To follow along with this tutorial, you need the following:
-
 - [Node.js](https://node.org) downloaded and installed in your local development environment.
-- Basic knowledge in Node.js' Express framework.
+- Basic knowledge in [Node.js' Express framework](/engineering-education/search/?q=Express).
 - RESTful APIs design.
 - Basic knowledge in [Docker](https://hub.docker.com)
 - Basic knowledge in [kubernetes]()
 
 ### Objectives
-
 By the end of this article, you should be able to create a complete dynamic Express application and deploy it to the cloud using Docker.
 
-### Node application setup
-
+### Node.js application setup
 Let's start by importing required modules and create a running server:  
 
 ```js
@@ -85,7 +77,6 @@ The server started at http://127.0.0.1:8000/
 ```
 
 ### Express packages setup
-
 Add the following contents in your `server.js` script:
 
 ```javascript
@@ -114,7 +105,7 @@ mongoose.connect(config.db[app.settings.env]);
 
 ```
 
-In the above script, we import the Express package. Additionally, we import packages that will aid in running our Express application and setting up a connection to the database.  
+In the script above, we imported the Express package. Additionally, we imported packages that will aid in running our Express application and setting up a connection to the database.  
 
 Now that we have got a connection to the MongoDB database server, let's define the model that we will use to get the list of students from a school database.  
 
@@ -138,10 +129,9 @@ module.exports = mongoose.model('Student', StudentSchema);
 
 ```
 
-In the above model, we set up the student details we will be getting via our API.
+In the model above, we set up the student details we will be getting via our API.
 
 ### RESTful APIs implementation
-
 Now that we've set up our model and server file, in this section, let's implement our RESTful APIs and deploy our application to the cloud.
 
 ```javascript
@@ -198,10 +188,9 @@ console.log('Starting server on port ' + port);
 ```
 
 ### Dockerizing the Express application
+Now that we've defined our core application API logics, let's proceed to our main aim of the tutorial, dockerizing your RESTful Node.js Express application.
 
-Now that we've defined our core application API logics, let's proceed to our main aim of the tutorial, dockerizing your RESTful Node Express application.
-
-> This section assumes you have Docker up and running in your Ubuntu machine.
+> This section assumes you have [Docker](/engineering-education/search/?q=Docker) up and running in your Ubuntu machine.
 
 Let's proceed and define the contents of the `Dockerfile` to direct docker on how to build a container image of our Express application.  
 
@@ -223,8 +212,7 @@ CMD ["npm", "start"]
 
 ```
 
-This `Dockerfile` uses npm to install modules in our RESTful application.  
-Let's now proceed and set up the docker-compose configuration file that we'll use to launch the Node Express application (including the MongoDB instance).
+This `Dockerfile` uses npm to install modules in our RESTful application. Let's now proceed and set up the [docker-compose](/engineering-education/search/?q=Docker%20compose) configuration file that we'll use to launch the Node.js Express application (including the MongoDB instance).
 
 ```yml
 -------------------------
@@ -251,8 +239,7 @@ mongodb:
 
 ```
 
-### Setup YAML service to deploy Dockerized Node Express application
-
+### Setup YAML service to deploy Dockerized Node.js Express application
 Now that we've dockerized our application locally, the next step involves deploying the application to the cloud.  
 
 Let's proceed and set up the service to deploy the app as shown below
@@ -278,10 +265,9 @@ databases:
   - mongodb
 ```
 
-> Note, ensure you change your git URL in the above service.
+> Note, make sure you change your git URL in the above service.
 
 You can now log in to your favorite cloud vendor to deploy your dockerized application.  
-
 
 Now that we have a Docker container image, we need to create a deployment file. In the root directory, create a new file called `deployment.yaml`. This file will deploy the application to the Kubernetes engine. 
 
@@ -334,7 +320,6 @@ The benefit of multiple replicas is that if an instance crashes, the other appli
 The `deployment.yaml` file is connected to the Docker image created earlier, therefore to deploy the application to the Kubernetes cluster, we use the Docker image. The image will automatically create containers for the application when we deploy the application.
 
 ### Deploying to Kubernetes service
-
 We have dockerized our RESTful application, and now we need to deploy it to a Kubernetes engine. 
 
 Execute the command below in your terminal:
@@ -346,7 +331,6 @@ kubectl apply -f deployment.yaml
 This command will deploy our service and application instances to the Kubernetes engine. After executing this command, we should be able to see that the `rest-test-service` and the `rest-test-app` are created successfully.
 
 ### The deployment dashboard
-
 Minikube and Kubernetes provide a dashboard to visualize the deployment. To see our deployment in that dashboard, execute the command below in your terminal.
 
 ```bash
@@ -356,7 +340,6 @@ minikube dashboard
 We can see that our rest application was deployed and we can see the number of running instances. If a request is made, the load balancer distributes the number of hits the request had on the instances.
 
 ### Accessing the application
-
 We can access the application using the command below:
 
 ```bash
@@ -364,11 +347,11 @@ minikube start service: rest-test-service
 ```
 
 ### Conclusion
+In this tutorial, we've covered the key concepts of Node.js Express application RESTful APIs. We discussed how we can dockerize this application locally using Docker and deploy it to the Kubernetes.
 
-In this tutorial, we've covered the key concepts of Node.js Express application RESTful APIs. We discussed how we can dockerize this application locally using Docker and deploy it to the kubernetes.
+Happy coding!
 
-### Further reading
-
+### Further readings
 - [Docker Installation](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 - [docker hub](https://hub.docker.com)
 - [More on dockerizing application](https://blog.cloud66.com/deploying-rest-apis-to-docker-using-ruby-and-sinatra/)
