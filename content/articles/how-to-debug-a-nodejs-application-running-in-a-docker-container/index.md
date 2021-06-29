@@ -19,7 +19,7 @@ We will create a simple to-do list application that allows the users to add and 
 
 The knowledge gained in this tutorial will help the reader be able to debug their applications.
 
-#### Step 1
+#### Step 1: Creating root directory
 Open a new terminal window, browse to the project’s directory, and run the below command:
 
 ```bash
@@ -27,7 +27,7 @@ $ mkdir TodoApp
 $ cd TodoApp
 ```
 
-#### Step 2
+#### Step 2: Initializing the Node.js project
 Initialize the project by executing the below command:
 
 ```bash
@@ -43,14 +43,14 @@ Next, we will build our to-do application using [Express](https://expressjs.com/
 
 Express package makes the development of web applications easier.
 
-#### Step 1
+#### Step 1: Installing project's dependencies
 We will install `express` and a few other prerequisites needed by the application by running the below command:
 
 ```bash
 $ npm install express body-parser cookie-session ejs --save
 ```
 
-#### Step 2
+#### Step 2: Coding the App.js file
 Then we will create a file named `app.js` in the root directory with the code below:
 
 ```javascript
@@ -95,7 +95,7 @@ app.use(session({ secret: process.env.SECRET }))
   .listen(port, () => console.log(`MyTodo app is listening on port ${port}!`))
 ```
 
-#### Step 3
+#### Step 3: Creating the todo.ejs file
 Next will be to create the file named `./views/todo.ejs` and paste the following code in it: 
 
 ```html
@@ -129,11 +129,11 @@ Next will be to create the file named `./views/todo.ejs` and paste the following
 </html>
 ```
 
-#### Step 4
+#### Step 4: Starting the webserver
 Start the webserver by executing the command below:
 
 ```bash
-$ SECRET=bestkeptsecret; node app.js
+$ export SECRET=bestkeptsecret; node app.js
 ```
 
 A success message that the server is running and listening to the specified port will be displayed on the console window.
@@ -153,7 +153,7 @@ Docker works in a way that it creates a [layer](https://dzone.com/articles/docke
 
 For the application's code that often changes, it is recommended to place it towards the end of the file.
 
-#### Step 1
+#### Step 1: Creating a Dockerfile
 We create a file named [Dockerfile](https://thenewstack.io/docker-basics-how-to-use-dockerfiles/) in the project’s root directory with the below lines of code into it:
 
 ```dockerfile
@@ -175,7 +175,7 @@ Let's look closely to the file we have just created.
 - **EXPOSE**: It ensures that a process running in a Docker container is listening to port 3000. It helps forward the ports to the container from the host.
 - **CMD**: It executes the `node app.js` command inside our Docker container after the container has started.
 
-#### Step 2
+#### Step 2: Creating a .dockerignore file
 As we do not want to send large files to the build context and speed up the system, we use the `.dockerignore` file.
 
 It is a text file similar to `.gitignore` which contains the name of the directories and files that should not be added to the build. The file `.dockerignore` will contain the following content:
@@ -185,7 +185,7 @@ node_modules
 npm-debug.log
 ```
 
-#### Step 3
+#### Step 3: Building a Docker image
 Next, we will execute the `docker build` command to build our Docker image:
 
 ```bash
@@ -198,7 +198,7 @@ As discussed earlier, the `docker build` command adds a new layer in every comma
 
 Docker deletes the intermediate containers once the command executes successfully.
 
-#### Step 4
+#### Step 4: Running the Docker container
 With our Docker image in place, we can now run it by executing the `docker run` command and pass it the arguments below:
 
 - `-p` is the port on the host. In our case, we will use port 3001 that will be forwarded to the container port 3000 and separated by `:` 
@@ -212,7 +212,7 @@ The whole command will look like below:
 $docker run -p 3001:3000 -e SECRET=bestkeptsecret -d to-do-app
 ```
 
-#### Step 5
+#### Step 5: Verifying if container is running
 We can verify that our Docker container is running with:
 
 ```bash
@@ -221,9 +221,13 @@ $ docker ps
 
 The output will appear as below:
 
-![docker container](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-container-up.PNG)
+```bash
+C:\Users\lenovo>docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED       STATUS          PORTS                                       NAMES
+9a8a8e6a13ae   a94edd9b09fd   "docker-entrypoint.s…"   2 weeks ago   Up 49 seconds   0.0.0.0:3001->3000/tcp, :::3001->3000/tcp   nostalgic_diffie
+```
 
-#### Step 6
+#### Step 6: Inspecting the Docker logs
 To inspect the logs, execute the `docker logs` command followed by the `id` of the container:
 
 ```bash
@@ -232,16 +236,19 @@ $ docker logs 9a8a8e6a13ae
 
 The output will appear as below:
 
-![docker-container-logs](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-container-logs.PNG)
+```bash
+C:\Users\lenovo>docker logs 9a8a8e6a13ae
+MyTodo app is listening on port 3000!
+```
 
-#### Step 7
+#### Step 7: Testing App on the Web browser
 Now that our application is up and running. We can browse to the link <http://localhost:3001>, and we try to add a new todo. As can be seen below, the application displays an error on the line: `todolist.forEach(function(todo, index)` of the `todo.ejs` file.
 
 ![app-error](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/app-error.PNG)
 
 In the below steps, we will look at how to debug the above error using Visual Studio Code.
 
-#### Step 8
+#### Step 8: Stopping the Docker container
 First, we have to stop the container from running by executing the below command:
 
 ```bash
@@ -251,7 +258,7 @@ $ docker kill 9a8a8e6a13ae
 ### Debugging using Visual Studio Code
 Visual Studio Code comes loaded with debugging tools for the Node.js applications running inside a Docker container. Below are the steps to be followed to enable this feature:
 
-#### Step 1
+#### Step 1: Updating Dockerfile
 Edit the `Dockerfile` by replacing the line below:
 
 ```dockerfile
@@ -266,9 +273,17 @@ CMD ["npm","run", "start-debug"]
 
 Our updated `Dockerfile` will appear as below:
 
-![docker-file-edited](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-file-edited.PNG)
+```dockerfile
+FROM node:14
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD [ "npm", "run" , "start-debug" ]
+```
 
-#### Step 2
+#### Step 2: Editing the package.json file
 We will edit the `package.json` file by adding the line of code below:
 
 ```json
@@ -279,9 +294,29 @@ The above line of code initializes the Node.js process to listen to a debugging 
 
 The updated `package.json` file appears as below: 
 
-![packagejson-updated](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/packagejson-updated.PNG)
+```json
+{
+  "name": "TodoApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start-debug": "node --inspect=0.0.0.0 app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
+```
 
-#### Step 3
+#### Step 3: Building the Docker image
 Note that every time the `Dockerfile` gets updated, we must build the Docker image again:
 
 ```bash
@@ -290,7 +325,7 @@ $ docker build -t to-do-app .
 
 Also, note that Docker will now run the `npm run start-debug` command as we earlier updated.
 
-#### Step 4
+#### Step 4: Running the Docker container
 To debug using Visual Studio Code, we must forward port 9229. It is done by running the below command:
 
 ```bash
@@ -299,12 +334,24 @@ $ docker run -p 3001:3000 -p 9229:9229 -e SECRET=bestkeptsecret22222 -d to-do-ap
 
 The above command will output:
 
-![docker-containerupdated](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-containerupdated.PNG)
+```bash
+C:\Users\lenovo>docker run -p 3001:3000 -p 9229:9229 -e SECRET=bestkeptsecret22222 -d to-do-app
+f2484b712a78084b2df7e07a8b72a8d2736fd81ed75e678459a703b4812385bb
+```
 
-#### Step 5
+#### Step 5: Inspecting the Docker logs
 We can check the logs by running the `docker logs` command and specifying the `id` of the container as shown below:
 
-![docker-container-log-debug](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-container-log-debug.PNG)
+```bash
+C:\Users\lenovo>docker logs f2484b712a78084b2df7e07a8b72a8d2736fd81ed75e678459a703b4812385bb
+
+> TodoApp@1.0.0 start-debug /usr/src/app
+> node --inspect=0.0.0.0 app.js
+
+Debugger listening on ws://0.0.0.0:9229/6a1580dd-ef36-4db3-b7b6-40b3f37f41d1
+For help, see: https://nodejs.org/en/docs/inspector
+MyTodo app is listening on port 3000!
+```
 
 Note that the debugger is now listening to port 9229. Next, we will configure Visual Studio Code to debug our application.
 
@@ -313,7 +360,7 @@ Launch Visual Studio Code and open the project directory as below:
 
 ![project-directory](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/project-directory.PNG)
 
-#### Step 1
+#### Step 1: Configuring Visual Studio Code to debug Node.js App
 The debug configurations in Visual Studio Code are stored in a file known as `launch.json`. To access it, press `Ctrl+Shift+P` and then search for `Debug: Open launch.json` and open it.
 
 Edit the `launch.json` file with the below code snippet:
@@ -342,7 +389,7 @@ Edit the `launch.json` file with the below code snippet:
 
 Since we do not want to go through the code in the `node_modules` directory and inbuilt Node.js core modules, we have used the `skipFiles` attribute.
 
-#### Step 2
+#### Step 2: Placing a breakpoint to debug the code
 Now that we have everything set up, we can start debugging the application. If we can recall earlier, we had an error in the `view/todo.ejs` file, in which the below line of code goes over the `todolist` array.
 
 ```JavaScript
@@ -353,7 +400,7 @@ In the `app.js` file, the `todo.ejs` file gets rendered at this line `res.render
 
 ![breakpoint](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/breakpoint.PNG)
 
-#### Step 3
+#### Step 3: Inserting an expression to check the value of the variable
 Press `Shift+Ctrl+D` to change to the debug view. Then click on the `Debug and Run` button as shown below:
 
 ![debug-run](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/debug-run.PNG)
@@ -362,7 +409,7 @@ To check the value of `the req.session.todolist` variable, we will insert an exp
 
 ![debug-watch](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/debug-watch.PNG)
 
-#### Step 4
+#### Step 4: Testing the App on a Web browser 
 Next, switch to the web browser and refresh the page http://localhost:3001/todo as shown below:
 
 ![waiting for localhost](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/chrome-wait-localhost.PNG)
@@ -375,7 +422,7 @@ Now move back to Visual Studio Code to get the details as shown:
 
 So the `req.session.todolist` variable is `undefined`. Is it possible to fix the bug? The answer is in the following steps.
 
-#### Step 5
+#### Step 5: Fixing the bug
 The `ejb` template goes through the `todolist` array and ought to be placed in the current session. However, we did not initialize the array, so it is undefined. 
 
 To fix the bug we will add the lines of code below to the `.use` function:
@@ -398,30 +445,37 @@ app.use(session({ secret: process.env.SECRET }))
   })
 ```
 
-#### Step 6
+#### Step 6: Stopping the Docker container
 Next will be to retrieve the `id` of our running container by executing the `docker ps` command as below:
 
-![docker-container-id-debug](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-container-id-debug.PNG)
+```bash
+C:\Users\lenovo>docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                                                                  NAMES
+f2484b712a78   to-do-app   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   0.0.0.0:9229->9229/tcp, :::9229->9229/tcp, 0.0.0.0:3001->3000/tcp, :::3001->3000/tcp   jovial_swartz
+```
 
 Stop the container by running the `docker kill` command followed by its `id` as below:
 
-![docker-kill-debug](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/docker-kill-debug.PNG)
+```bash
+C:\Users\lenovo>docker kill f2484b712a78
+f2484b712a78
+```
 
-#### Step 7
+#### Step 7: Re-building the Docker image
 To apply the changes we made earlier, we must re-run the `docker build` command as shown below: 
 
 ```bash
 $ docker build -t to-do-app .
 ```
 
-#### Step 8
+#### Step 8: Re-running the Docker container
 Next, run the container using the below command:
 
 ```bash
 $ docker run -p 3001:3000 -p 9229:9229 -e SECRET=bestkeptsecret22222 -d to-do-app
 ```
 
-#### Step 9
+#### Step 9: Reload the Web browser to confirm if a bug is fixed
 Reload the https://localhost:3001/todo page on the browser and check the results as shown below:
 
 ![todo-app-success](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/todo-app-success.PNG)
