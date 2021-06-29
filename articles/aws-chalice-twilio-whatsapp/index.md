@@ -15,14 +15,13 @@ images:
    alt: AWS Chalice example image
 ---
 
-
 ### Introduction:
 
-Serverless computing enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities and worries of a developer. AWS Chalice is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the Amazon API Gateway and AWS Lambda.
+[Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing) enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities and worries of a developer. [AWS Chalice](https://github.com/aws/chalice) is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and [AWS Lambda](https://aws.amazon.com/lambda/).
 
-WhatsApp is a free messaging platform used by over 2 billion people across the world. WhatsApp Messaging API allows developers to build applications for WhatsApp users.
+[WhatsApp](https://www.whatsapp.com/) is a free messaging platform used by over 2 billion people across the world. [WhatsApp API](https://www.whatsapp.com/business/api/?lang=en) allows developers to build applications for WhatsApp users.
 
-In this article, we set up a Chalice application with the DynamoDB database. We will also integrate Twilio WhatsApp messaging and send messages from our application.
+In this article, we set up a Chalice application with the DynamoDB database. We will also integrate [Twilio WhatsApp messaging](https://www.twilio.com/whatsapp) and send messages from our application.
 
 ### Prerequisites
 
@@ -33,7 +32,16 @@ In this article, we set up a Chalice application with the DynamoDB database. We 
 - Configured AWS credentials
 - Basic Python experience
 
-You may download and install Python [here](https://www.python.org/). [Sign up](https://portal.aws.amazon.com/billing/signup) for a free AWS account if you don't have one yet. You may follow the [instructions for configuring AWS credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html). You can also create a Twilio account [here](https://www.twilio.com/try-twilio).
+You may download and install Python [here](https://www.python.org/).
+Venv is usually shipped with Python 3. But you may install virtualenv with the following command
+
+```bash
+pip install virtualenv
+```
+
+You can learn how to activate and use both Venv and Virtualenv [here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/).
+
+Furthermore, [sign up](https://portal.aws.amazon.com/billing/signup) for a free AWS account if you don't have one yet. You may follow the [instructions for configuring AWS credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html). You can also create a Twilio account [here](https://www.twilio.com/try-twilio).
 
 ### Setting up dependencies
 
@@ -117,7 +125,7 @@ We will start the configuration by modifying the `config.json` file inside the `
 
 In the above code, `api_gateway_stage` is the URL prefix for our application. `autogen_policy` tells Chalice to create an IAM policy for us with the application code. You can read more about `api_gateway_stage` and `autogen_policy` [here](https://aws.github.io/chalice/topics/configfile.html).
 
-We will use the DynamoDB database for our application. It is a NoSQL database system that couples with AWS Chalice applications, and it is very easy to set up.
+We will use the [DynamoDB](https://aws.amazon.com/dynamodb/) database for our application. It is a NoSQL database system that couples with AWS Chalice applications, and it is very easy to set up.
 
 Now, we will set up the policy for writing and reading from the database. Let's go to the `.chalice` folder and create a `policy-dev.json` file there. Add the following code inside the `policy-dev.json` file:
 
@@ -154,7 +162,7 @@ In the JSON file above, we allowed our user to make log groups and log events. W
 
 #### Database Deployment
 
-AWS provides us with CloudFormation. It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
+AWS provides us with [CloudFormation](https://aws.amazon.com/cloudformation/). It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
 
 So, let's create a file inside the `.chalice` folder called `dynamodb_cf_template.yaml`. Add the following lines to the new file.
 
@@ -186,7 +194,7 @@ Outputs:
     Description: Name of the newly created DynamoDB table
 ```
 
-In the above file, we indicated the key attributes of our DynamoDB table, i.e., the `id` and the `name` of the message recipients. The `KeyShema` consists of the primary key. The [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) contains more information on attribute definition in DynamoDB tables.
+In the above file, we indicated the key attributes of our DynamoDB table, i.e., the `id` and the `name` of the message recipients. The `KeySchema` consists of the primary key. The [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) contains more information on attribute definition in DynamoDB tables.
 
 Next, let's navigate to the `.chalice` folder and create the database with the command below.
 
@@ -206,6 +214,12 @@ We should get an output like this:
 
 ```bash
 Serving on http://127.0.0.1:8000
+```
+
+A response like the following will be returned on the port 8000:
+
+```bash
+{hello:world}
 ```
 
 ### Sending WhatsApp Messages
@@ -391,4 +405,5 @@ In this tutorial, we have been able to create a Chalice application with an API.
 Now, you can build more on serverless technology and AWS infrastructure.
 
 ---
+
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
