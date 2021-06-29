@@ -12,6 +12,8 @@ A little understanding of Python would help the reader to follow along better.
 
 Telegram group.
 
+
+
 ### Table of contents
 1. [Setting up bot profile](#setting-up-bot-profile)
 2. [Coding the bot](#coding-the-bot)
