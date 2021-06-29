@@ -191,3 +191,7 @@ In case of any errors, refer to the official documentation [here](https://www.np
 In summary, we have seen what cURL is, how to install and use it in Node.js. It is a very helpful and lightweight tool.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+
