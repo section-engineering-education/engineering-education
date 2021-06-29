@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/deploying-nodejs-web-app/hero.jpeg
     alt: header image nodejs
 ---
-You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/static-site-dynamic-nodejs-web-app/) helpful.*
+You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/) helpful.*
 
 <!--more-->
 ### Deploying Your First Node.js Web App
@@ -65,7 +65,7 @@ If you need to install MongoDB (if you’ve created a MongoDB database), then fo
 
 Finally, type `npm start` to start your web app. Now that your web app is running, in a new browser tab, type the IP Address of your droplet (found in the email that DigitalOcean sent when you created the droplet) followed by a colon and the port your app runs on. For example, `167.172.54.51:8080`.
 
-If you’re using an Express web server (which if you followed my getting started with [Node.js guide](/static-site-dynamic-nodejs-web-app/), you did), you’ll find the port number located in the `app.listen()` line inside the server.js file. For example, `app.listen(8080)` which is a common port used.
+If you’re using an Express web server (which if you followed my getting started with [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/), you did), you’ll find the port number located in the `app.listen()` line inside the server.js file. For example, `app.listen(8080)` which is a common port used.
 
 Congratulations, your first Node.js web app should be displayed in your web browser which is running on your DigitalOcean droplet.
 
@@ -75,7 +75,9 @@ You typed in an IP Address and port number to view your web app but, wouldn't yo
 
 Assuming you’ve already bought a domain, the first step is to add a DNS record so your domain name will resolve to the IP address of your DigitalOcean droplet. A DNS record tells your browser what to do when they load your domain. In this case, it should go to the IP address of your droplet.
 
-If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. See my guide for [Setting Up a Professional Email](/creating-professional-email/) to read a comparison of Office365 and GSuite.
+If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. 
+
+See my guide for [Setting Up a Professional Email](/engineering-education/creating-professional-email/) to read a comparison of Office365 and GSuite.
 
 ![Advanced DNS](/engineering-education/deploying-nodejs-web-app/advanced-dns.png)
 
@@ -180,7 +182,6 @@ To test that there are no errors in the file, type  `sudo nginx -t`  and if ther
 Finally, you should be able to go to yourdomain.com and your web app will be running.
 
 ### Running the App on Boot (Setting up a Process Manager)
-
 You've hooked your domain name up to your droplet and configured Nginx to serve your web app, but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your Node.js web app, log any errors, and start/stop it as needed. We will be using the process manager called PM2.
 
 The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, run `pm2 startup systemd`. It should say to setup the startup script, copy and paste the following command which will be `sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u (username) --hp /home/(username)`. If you're using the default login that DigitalOcean provided, this will be root. Type this into the terminal and press enter. If it says command successfully executed (like below) then it has worked.
@@ -205,4 +206,4 @@ Try restarting your droplet by typing reboot and after a few minutes, go to `you
 
 Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? 
 
-Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/simple-guide-to-using-apis-nodejs).
+Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/engineering-education/simple-guide-to-using-apis-nodejs).
