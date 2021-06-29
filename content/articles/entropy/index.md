@@ -17,15 +17,15 @@ images:
 
 A decision tree is a supervised learning algorithm used for both classification and regression problems. Simply put, it takes the form of a tree with branches representing the potential answers to a given question. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
 
-### Table of contents
+### Contents
 
-1. Entropy theory and formula.
+1. [Entropy theory and formula.](#entropy)
 
-2. Information gain and its calculation.
+2. [Information gain and its calculation.](#information-gain)
 
-3. Steps to use information gain to build a decision tree.
+3. [Steps to use information gain to build a decision tree.](#using-information-gain-to-build-decision-trees)
 
-4. Simple Python example of a decision tree.
+4. [Simple Python example of a decision tree.](#decision-tree-example)
 
 ### Prerequisites
 
