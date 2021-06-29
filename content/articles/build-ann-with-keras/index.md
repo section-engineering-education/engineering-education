@@ -1,4 +1,4 @@
-![Hero Image](/engineering-education/build-ann-with-keras/hero-image.PNG)
+![Hero Image](/engineering-education/build-ann-with-keras/hero.PNG)
 
 In this article, you will learn how to build and train an artificial neural network with Keras. We will create a model to predict customer churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. The GitHub repo for this project is [here](https://github.com/Inyrkz/Customer-Churn).
 
