@@ -41,7 +41,7 @@ You need to link with the following libraries in order to compile.
 
 
 #### IMPLEMENT LINEAR REGRESSION 
-- Initialize the data
+- **Initialize the data**
 
 Include the header files and libraries for linear regression.
 ```c++
@@ -75,7 +75,7 @@ LinearRegression trainer;// trainer for linear regression model
 LinearModel<> model; // linear model
 ```
 
-- Train the model
+- **Train the model**
 
 This is how we now train the model. The trainer has a member called train. The member trains the model and finds parameters for it.
 
@@ -83,7 +83,7 @@ This is how we now train the model. The trainer has a member called train. The m
 trainer.train(model, data)
 ```
 
-- Prediction
+- **Prediction**
 
 Let's output the model parameters
 ```c++
@@ -116,4 +116,122 @@ Loss: 7.83109
 b is kind of far from zero because of the noise in labels. The value of the multiplier is quite close to 2 and is thus similar to the data . Congratulations you have built a linear regression model using the Shark C++ Library.
 
 ### 2. ML PACK LIBRARY
- 
+The mlpack depends on the following libraries which need to be installed into the system.
+
+1. Boost
+2. Armadillo
+3. Ensmallen.
+
+#### INSTALLING MLPACK AND SETUP ENVIRONMENT
+
+Type the following command on your terminal to get all the dependencies installed at once
+
+```
+sudo apt-get install libboost-math-dev libboost-program-options-dev libboost-test-dev libboost-serialization-dev binutils-dev python-pandas python-numpy cython python-setuptools
+```
+After installing all the dependencies on your system, run the following commands line by line to build and install mlpack.
+
+
+- wget
+-  tar -xvzpf mlpack-3.2.2.tar.gz
+-   mkdir mlpack-3.2.2/build && cd mlpack-3.2.2/build
+-   cmake ../
+-   make -j4 # The -j is the number of cores you want to use for a build
+-   sudo make install
+
+#### HOW TO COMPILE
+1. Include the relevant header files e.g lets say for k-means, the header files will be 
+```c++
+#include <mlpack/methods/kmeans/kmeans.hpp>
+#include <armadillo>
+```
+2. Link with the following libraries to compile.
+```
+std=c++11 -larmadillo -lmlpack -lboost_serialization
+```
+#### K-MEANS IMPLEMENTATION
+In order to follow along this part, You need a good intuition of K-means as a machine learning algorithm.
+
+K-means basically grouping similar things into clusters. We group `"n"` observations into `"k"` clusters. The k is predetermined by the analyst.
+
+Practical areas of application include triangulating crime prone areas,customer analysis and analysis of public transportation.
+
+You can read [this](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/) article to get an in-depth understanding of the k-means algorithm.
+
+- **Initializing**
+Include the relevant libraries and header files for implementing k-means. i.e
+```c++
+#include <bits/stdc++.h>
+#include <mlpack/methods/kmeans/kmeans.hpp> 
+#include <armadillo>
+
+using namespace std;
+```
+Now let us set thenumber of clusters,samples,dimension of our program and the number of iterations we desire since k-means is an iterative algorithm.
+```c++
+int c = 2; //number of clusters
+int dim = 2;//dimension of our program
+int samples = 50; 
+int iter = 10;//maximum number of iterations
+```
+
+Next we create the data. This is where we now make use of the Armadillo library. We create a data container that is a map class.
+```c++
+arma::mat data(dim, samples, arma::fill::zeros)
+```
+We have given the mat class  a dimension size of 2 and 50 samples which we've initialized all of them with zeros.
+
+The next step is to assign some random data to the class on which we will run the k-means algorithm.
+We will create 25 points around the position [1,1] which is done by saying that each data point is at position [1,1] and then add noise random noise for each of this point. This is achieved as shown in the code below.
+```c++
+    int i = 0;
+    for(; i < samples / 2; ++i)
+    {
+        data.col(i) = arma::vec({1, 1}) + 0.25*arma::randn<arma::vec>(dim);
+    }
+    for(; i < samples; ++i)
+    {
+        data.col(i) = arma::vec({2, 3}) + 0.25*arma::randn<arma::vec>(dim);
+    }
+```
+And kudos! the data is now ready for training.
+
+- **Training**
+
+We first need to create an arma row type to hold the clusters and then an arma mat type to hold the centroids.
+```c++
+arma::Row<size_t> clusters;
+arma::mat centroids;
+```
+Afterwards, you instantiate the k-means class and specify the number of iterations which is done through the constructor.
+```c++
+ mlpack::kmeans::KMeans<> mlpack_kmeans(max_iter);
+```
+
+In order to do the clustering, you make a call to the member function called cluster of the k-means class. To this member function, we pass the data, number of clusters, centroid's object and the cluster's object. The Cluster function runs the k-means algorithm on this data and initializes the cluster and centroid objects.
+```c++
+mlpack_kmeans.Cluster(data, k, clusters, centroids);
+```
+
+- **Displaying the results**
+We display results using the print function contained in the centroid's object.
+```c++
+centroids.print("Centroids:");
+```
+
+Finally compile the whole code on the terminal using the following command in order to create a k-means object from which we can deduce meaningful conclusions.
+```
+g++ k_means.cpp -o kmeans_test -O3 -std=c++11 -larmadillo -lmlpack -lboost_serialization && ./kmeans_test
+```
+The results are displayed below, and that's it.
+```
+Centroids:
+
+0.9497     1.9625
+
+0.9689     3.0652
+```
+### CONCLUSION
+In conclusion, we learnt the use of c++ libraries to implement machine learning algorithms. The two popular libraries are Shark and ML Pack. Libraries are an easier and faster way to deploy machine learning algorithms for projects.
+
+There is a lot of assistance in the documentantion of each library. Make sure to read the documentation in case you get stuck. You can also inbox me for assistance in case you get stuck.
