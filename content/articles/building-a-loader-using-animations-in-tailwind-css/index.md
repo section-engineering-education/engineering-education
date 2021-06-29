@@ -1,6 +1,22 @@
-## Introduction
-A loader/preloader is what you see on the screen while the rest of the page's content is still loading. Animations play an important role in the design of this component. Not only does it make the loader interactive but also helps give the impression of a faster loading process in your webpage.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-a-loader-using-animations-in-tailwind-css/
+title: Building a Loader Using Animations in Tailwind CSS
+description: This article takes the reader through creating a simple loader using animations in Tailwind CSS. Tailwind provides low level utility classes such us animate-spin that make animation easier.
+author: monica-masae
+date: 2021-06-29T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-loader-using-animations-in-tailwind-css/hero.jpg
+    alt: Loader image example
+---
+### Introduction
+A loader/preloader is what you see on the screen while the rest of the page's content is still loading. Animations play an important role in the design of this component. Not only does it make the loader interactive but also helps give the impression of a faster loading process in your webpage.
+<!--more-->
 While there are external libraries that can be used in building these loaders, we will be using Tailwind CSS to build simple ones in just simple steps and less code!
 
 We will use Tailwind CSS and some custom CSS through this tutorial. Tailwind provides us with low level utility classes like `animate-spin` which we will use to make our loader.
@@ -145,3 +161,6 @@ In this article, we have gone through creating a simple animated loader using Ta
 I hope you find this tutorial helpful!
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
