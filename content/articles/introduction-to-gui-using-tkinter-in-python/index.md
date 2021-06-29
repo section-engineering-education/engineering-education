@@ -6,7 +6,7 @@ url: /introduction-to-gui-in-python-using-tkinter/
 title: Introduction to GUI in Python using Tkinter
 description: In this article, we will look at the basics of the graphical user interfaces programming in Python using Tkinter. We will build a simple password generator application.
 author: majiyebo-ezra-shewuri
-date: 2021-06-29T00:00:00-05:00
+date: 2021-06-29T00:00:00-05:18
 topics: [Languages]
 excerpt_separator: 
 images:
