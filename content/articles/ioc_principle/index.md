@@ -12,24 +12,24 @@ Imagine this: suppose you have a bakery that specializes in making egg rolls. Wh
 Before we look at some code, here are some things you should have in mind:
 
 ### 1. Coupling
-Coupling is a measure of how closely connected software modules are to one another. It is the degree to which changes made to a component force a need for a change in other components or modules. Tight coupling is when a change in component A requires a change in component B. Loose coupling means that components A and B are independent. Thus a change in component A would not affect B.
+Coupling is a measure of how closely bound software modules are to one another. It is the degree to which changes made to a component force a need for a change in other components or modules. Tight coupling is when a change in component A requires a change in component B. Loose coupling means that components A and B are independent. Thus a change in component A would not affect B.
 Loose coupling is often a sign of testable, well-structured, maintainable, and readable software. Tight coupling leads to code fragility and code rigidity. Code fragility is the likelihood that a software will break in many places every single time there is a change. Code rigidity is the degree of difficulty in making changes to the software. 
 
 ### 2. Abstraction
 When you call something abstract, it means that it is incomplete or not clearly defined. Abstraction is a programming approach that hides implementation details. Revealing only the functionality (relevant operations) to the user. It is one of the basic concepts in object-oriented programming.
 
 ### 3. Single Responsibility Principle
-This principle states that every function, class, or module, should have a single reason to change. They must have only one responsibility.
+This principle states that every function, or class, or module, should have a single reason to change. They must have only one responsibility.
 #### Advantages:
 a. It makes the code easy to understand, fix, and maintain.
 b. Classes are less coupled and more resilient to change.
 c. More testable design.
 
 ### 4. Dependency Inversion Principle
-The Dependency Inversion Principle (DIP) enables us to create loosely coupled systems. Making them easy to change and maintain. This principle states that:
-* High-level modules should not depend on low-level modules, both should depend on abstractions.
-* Abstractions should not depend on details. Details should depend on abstractions.
-**High-Level modules** are modules written to solve real problems and use cases. They are more abstract in nature and map to the business domain(business logic). They tell us what the software should do and not how they should do it.
+The Dependency Inversion Principle (DIP) enables us to create loosely coupled systems. Making them easy to change and maintain. DIP states that:
+* High-level modules shouldn't depend on low-level modules. They should rather depend on abstractions.
+* Abstractions shouldn't depend on details. Details should depend on abstractions.
+**High-Level modules** are modules written to solve problems and use cases. They are abstract and map to the business domain(business logic). Their concern is with what the software should do and not how they should do it.
 **Low-Level Modules** are implementation details required to execute the business policies (logic). They are the plumbing or internals of a system, and they tell us how the system(software) should do various tasks. They tend to be very concrete.
 
 ![dependency flow](/engineering-education/ioc_principle/dependecy_inversion_principle_image_1.png)
@@ -44,8 +44,8 @@ This abstraction could be an interface or an abstract class. Now we can head bac
  
 
 
-Inversion of control is a design principle. This means that it only provides design guidelines and not implementation details.
-A design principle is not constricted to any programming language. You can implement it whichever way you please. However, Design patterns recommend a definite implementation. Design patterns are more like a common solution to a common problem within a given context.
+Inversion of control only provides design guidelines and not implementation details.
+A design principle is not constricted to any programming language. You can implement it whichever way you please. However, Design patterns recommend a definite implementation. Design patterns are more like reusable solutions to a problem in a given scenario.
  
 Thus, we can apply IoC in object-oriented programming in many ways. Some of which are:
 * Dependency injection pattern
@@ -54,7 +54,7 @@ Thus, we can apply IoC in object-oriented programming in many ways. Some of whic
 Let's look into dependency injection and strategy design patterns.
  
 ### 1. Dependency Injection (DI)
-Dependency Injection is a design pattern mostly used with the Dependency Inversion Principle. It allows the creation of dependent objects outside of a class and provides those objects to a class.
+Dependency Injection is a design pattern mostly used with the Dependency Inversion Principle. It makes it possible for dependent objects to be created outside of a class. It then provides those objects to the class.
 If we have a class `LoginManager` that depends on an implementation of `UserRepository`.
  
  ```kotlin
@@ -68,7 +68,7 @@ class LoginManager {
 
 We can see that there is a high dependency between `LoginManager` and `UserRepository`. `LoginManager` is directly dependent on the `UserRepository` because `UserRepository` handles its creation. This violates the dependency inversion and Single Responsibility Principle. The result is a tight couple between `LoginManager` and `UserRepository`.
 
-There are a couple of ways we can fix this:
+There are a couple of ways to fix this:
 
 **a. Using public setters:** This is not a recommended approach. This is because it might leave objects in an uninitialized state.
 
