@@ -17,7 +17,7 @@ images:
 
 A decision tree is a supervised learning algorithm used for both classification and regression problems. Simply put, it takes the form of a tree with branches representing the potential answers to a given question. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
 
-### Contents
+### Table of contents
 
 1. Entropy theory and formula.
 
@@ -31,7 +31,7 @@ A decision tree is a supervised learning algorithm used for both classification 
 
 If you are unfamiliar with decision trees, I recommend you read this [article](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/) for an introduction.
 
-For the code example below is what you require:
+For the code example, you'll require:
 
 • [VSCode](https://code.visualstudio.com/) is my code editor for this tutorial. The language we shall use is Python.
 
@@ -39,7 +39,7 @@ For the code example below is what you require:
 
 • [Matplotlib](https://matplotlib.org/stable/tutorials/index.html) comes in handy for the visualization of our tree.
 
-• We use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html
+• We use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
 ### Entropy
 
@@ -83,7 +83,7 @@ We can define information gain as a measure of how much information a feature pr
 
 $$ Gain = E_{parent} - E_{children} $$
 
-Gain represents information gain. $ E_{parent} $ is the entropy of the parent node and E_{children} is the average entropy of the child nodes. Let’s use an example to visualize information gain and its calculation. Suppose we have a dataset with two classes. This dataset has 5 purple and 5 yellow examples. The initial value of entropy will be given by the equation below. Since the dataset is balanced, we expect the answer to be $1$.
+The term Gain represents information gain. $ E_{parent} $ is the entropy of the parent node and E_{children} is the average entropy of the child nodes. Let’s use an example to visualize information gain and its calculation. Suppose we have a dataset with two classes. This dataset has 5 purple and 5 yellow examples. The initial value of entropy will be given by the equation below. Since the dataset is balanced, we expect the answer to be $1$.
 
 $$ E_{initial} = - ((0.5 log_2 0.5) + (0.5 log_2 0.5)) $$
 
@@ -129,7 +129,7 @@ Our goal is to visualize a decision tree through a simple Python example. Let’
 
 For trees of greater complexity, you should expect to come across more parameters. However, since we are building as simple a decision tree as possible, these two parameters are the ones we use.
 
-**max_depth.** Each decision tree has a maximum number of levels permitted. max_depth represents this number.
+**max_depth.** Each decision tree has a maximum number of levels permitted. **max_depth** represents this number.
 
 **min_samples_leaf.** The minimum sample count storable in a leaf node.
 
