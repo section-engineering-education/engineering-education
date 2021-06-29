@@ -6,7 +6,7 @@ url: /nodejs-app-express-generator/
 title: Creating Node.js Application Using Express Generator 
 description: This tutorial explains how to use Node.js Express generator tool to create a new express application. The Node.js Express generator tool is a package used to simplify development time while developing Node.js web applications.
 author: owino-wendy
-date: 2021-06-28T00:00:00-17:00
+date: 2021-06-29T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/nodejs-app-express-generator/hero.jpg
     alt: Creating Node Application Using Express Generator
 ---
-In this tutorial, we'll be discussing the concepts of the Node.js Express generator tool. It's a package that you can use to simplify your development time while developing your Node.js web applications.  
+In this tutorial, we'll be discussing the concepts of the Node.js Express generator tool. The Express-generator package is a utility that provides a command-line tool you can use to scaffold your project - ie create boilerplate folder structure, files and code. 
 <!--more-->
 ### Introduction
-As the name suggests, an Express generator is a tool that we'll be using to generate our application, that otherwise, we would've created manually.
+It's a package that you can use to simplify your development time while developing your Node.js web applications. As the name suggests, an Express generator is a tool that we'll be using to generate our application, that otherwise, we would've created manually.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -232,7 +232,9 @@ module.exports = app;
 You'll notice that you just modified the routes and any other feature on the Express generated application as a normal Node.js initialised app.
 
 ### Conclusion
-In this tutorial, we've discussed how to generate an Node.js-express application using the express generator. We generated a project structure and started our application on the server and displayed an ouput. We've also seen how we can modify this applicaiton to suit our needs.
+In this tutorial, we've discussed how to generate an Node.js-express application using the express generator. We generated a project structure and started our application on the server and displayed an ouput. We've also seen how we can modify this application to suit our needs.
+
+As we saw the express-generator package is a utility that provides a command-line tool you can use to scaffold your project - like creating boilerplate folder structure, files, and code.
 
 Happy coding!
 
