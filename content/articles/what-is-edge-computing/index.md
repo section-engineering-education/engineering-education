@@ -1,4 +1,22 @@
-Recently, there are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /what-is-edge-computing/
+title: What is Edge Computing
+description: In this article we will look at real-time systems, their challenges and compare them to edge computing and its benefits.
+author: sharon-kinyan
+date: 2021-06-29T00:00:00-20:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  -url: /what-is-edge-computing//hero.png
+  alt: edge computing example image
+---
+There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
+<!--more-->
+
+There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
 
 Solution? 
 
@@ -24,7 +42,7 @@ With cloud computing, data storage and computational resources exist in the clou
 
 Yet, with real-time systems, there came about three main challenges. These challenges included bandwidth limitations, latency problems, and privacy issues.   
 
-1. Latency
+**1. Latency**
 
 It is the time delay associated with running a particular process. 
 
@@ -37,7 +55,7 @@ Considering the amount of data being generated, the response time would be too l
 
 Though it works smoothly most of the time, I hope you're seeing how this could turn problematic very fast. 
 
-2. Bandwidth
+**2. Bandwidth**
 
 It is the amount of data that you can send in a certain period. 
 
@@ -45,7 +63,7 @@ For example, if I want to operate the smart assistance feature which involves co
 
 We can see how this could turn problematic especially for people in rural areas who don't have access to good internet.
 
-3. Privacy
+**3. Privacy**
 
 Cloud computing has privacy implications. 
 
@@ -80,22 +98,15 @@ These are tasks that traditionally, have been performed on the cloud.
 
 Let's look at some examples to prove its benefits:
 
-1. By moving from the cloud to the edge, researchers found that the response time on their facial recognition system reduced from 900ms to 169ms. 
+1. By moving from the cloud to the edge, researchers found that the response time on their facial recognition system reduced from 900ms to 169ms. You may read more about it [here](https://www.researchgate.net/publication/301691282_Fog_Computing_Platform_and_Applications). 
 
-Read more about it [here](https://www.researchgate.net/publication/301691282_Fog_Computing_Platform_and_Applications). 
+2. In the task of wearable cognitive assistance, researchers found out that using the edge reduced the energy consumption by 30-40% and response time to between 80 and 200ms. This is pretty significant.You can find more insight about this task [here](https://www.cs.cmu.edu/~satya/docdir/ha-mobisys2014.pdf).
 
-2. In the task of wearable cognitive assistance, researchers found out that using the edge reduced the energy consumption by 30-40% and response time to between 80 and 200ms. This is pretty significant.
-
-Read more about it [here](https://www.cs.cmu.edu/~satya/docdir/ha-mobisys2014.pdf).
-
-3. Edge computing could enable smart cities. With our city's population growing at fast paces, processing the huge amount of data at the edge would be an efficient solution. 
+3. Edge computing could enable smart cities. With our cities' population growing at fast paces, processing the huge amount of data at the edge would be an efficient solution. 
 
 ### Wrapping Up
 
-Edge computing has the potential to address the concerns of latency, data security and privacy, battery life constraint in smaller devices, and bandwidth cost saving. Edge computing is one of the technologies that will play an important role in the world of tomorrow.
-
-Feel free to visit our [Edge Content Library](https://www.section.io/edge-compute-content-resources/) for more resources dedicated to web performance, security, and scalability.
-
+Edge computing has the potential to address the concerns of latency, data security and privacy, battery life constraint in smaller devices, and bandwidth cost saving. Edge computing is one of the technologies that will play an important role in the world of tomorrow. Feel free to visit our [Edge Content Library](https://www.section.io/edge-compute-content-resources/) for more resources dedicated to web performance, security, and scalability.
 
 ### Reference
 
