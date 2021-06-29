@@ -46,7 +46,7 @@ The Hadoop framework subdivides data into multiple smaller chunks and stores eac
 
 [Image Source: Hadoop Apache](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)
 
-Assume you have approximately 4 terabytes of data. HDFS will split the data into multiple data blocks and then store the data in several data nodes in the Hadoop cluster. With each block(node) assigned 128 megabytes as the default size. The amount of time it takes to store this data on the disk is significantly reduced. This way, the total time spent storing this data on a disk will be the same as the time spent storing data in a single block. HDFS will then use the replication method and make copies of each data node to other machines present within the cluster. This makes HDFS fault-tolerant by ensuring that no data is lost even if one of the data nodes fails.
+Assume you have approximately 4 terabytes of data. HDFS will split the data into multiple data blocks and then store the data in several data nodes in the Hadoop cluster. With each block (node) assigned 128 megabytes as the default size. The amount of time it takes to store this data on the disk is significantly reduced. This way, the total time spent storing this data on a disk will be the same as the time spent storing data in a single block. HDFS will then use the replication method and make copies of each data node to other machines present within the cluster. This makes HDFS fault-tolerant by ensuring that no data is lost even if one of the data nodes fails.
 
 - MapReduce
 
@@ -62,7 +62,7 @@ The diagrams below show a Hadoop MapReduce architecture and the flow of a MapRed
 
 [Image Source: Data Flair](https://data-flair.training/blogs/wp-content/uploads/sites/2/2017/09/hadoop-mapreduce-flow.jpg)
 
-Check out this blog and learn more about [Hadoop MapReduce](/engineering-education/understanding-map-reduce-in-hadoop/).
+Check out this blog to learn more about [Hadoop MapReduce](/engineering-education/understanding-map-reduce-in-hadoop/).
 
 - Yet Another Resource Negotiator (YARN)
 
@@ -94,7 +94,7 @@ Docker containers use Docker container images to containerize an application. Fo
 
 ### Set up Docker and docker-compose
 
-To set up this single Hadoop cluster using Docker, ensure that [Docker](https://www.docker.com/products/docker-desktop) is installed on your computer. Run the following commands to make sure Docker is ready to set up to run docker-compose.
+To set up this single Hadoop cluster using Docker, ensure that [Docker](https://www.docker.com/products/docker-desktop) is installed on your computer. Run the following commands to make sure Docker is already set up to run docker-compose.
 
 - To check Docker, run;
 
@@ -188,7 +188,7 @@ The aim of containerizing Hadoop using Docker is to be able to run and test your
 docker cp hadoop-mapreduce-examples-2.7.1-sources.jar namenode:/tmp/
 ```
 
-- Create a simple file, i.e a `.txt` file.
+- Create a simple file, i.e., a `.txt` file.
 
 ```bash
 nano simple-text.txt
@@ -216,7 +216,7 @@ The `/bin/bash` will raise an interactive bash terminal.
 hdfs dfs -mkdir -p /user/root/input
 ```
 
-The added `-p` because we are creating a parent folder with its subsequent children.
+We added `-p` because we are creating a parent folder with its subsequent children.
 
 - Copy the `sample-text.txt` file to the created folder using `hdfs` as follows;
 
@@ -252,7 +252,7 @@ Your command response should be similar to;
 
 ![output-response](/engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/output-response.png)
 
-At this time, you have successfully set up and tested a Hadoop cluster. Since your containers are still running, you can stop them bu running;
+At this time, you have successfully set up and tested a Hadoop cluster. Since your containers are still running, you can stop them by running;
 
 ```bash
 docker-compose down
@@ -288,7 +288,7 @@ docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
 
 ![docker-container-response](/engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/docker-container-response.png)
 
-If the command is executed without any error (probably due to poor network connections), go ahead and check if Hadoop services are up and running by running the `jps` command.
+If the command is executed without any error (probably due to poor network connections), go ahead and check if Hadoop services are up and running. You can do this by running the `jps` command.
 
 ```bash
 jps
