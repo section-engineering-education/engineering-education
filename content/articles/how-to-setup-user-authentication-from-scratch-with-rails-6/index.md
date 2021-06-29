@@ -98,10 +98,11 @@ This will generate several files, we will only focus on..`db/migrate/<timestamp>
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-    t.string :email, null: false
-    t.string :password_digest
+      t.string :email, null: false
+      t.string :password_digest
 
-    t.timestamps
+      t.timestamps
+    end
   end
 end
 ```
