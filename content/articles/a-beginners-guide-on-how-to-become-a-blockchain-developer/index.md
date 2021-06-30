@@ -6,12 +6,12 @@ url: /a-beginners-guide-on-how-to-become-a-blockchain-developer/
 title: A Beginners Guide on How to Become a Blockchain Developer
 description: In this article, we will explore how to become a blockchain developer without prior coding experience. 
 author: wilkister-mumbi
-date: 2021-06-30T00:00:00-01:30
+date: 2021-06-30T00:00:00-02:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /a-beginners-guide-on-how-to-become-a-blockchain-developer/hero.jpg
+  - url: /engineering-education/a-beginners-guide-on-how-to-become-a-blockchain-developer/hero.jpg
     alt: Blockchain Hero Image
 ---
 If you are reading this article, I'm sure you're wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
