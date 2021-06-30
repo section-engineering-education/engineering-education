@@ -60,7 +60,7 @@ It is the amount of data that you can send in a certain period.
 
 For example, if I want to operate the smart assistance feature which involves communicating with the cloud server, it takes time depending on the amount of bandwidth you have to perform that task. A low bandwidth would mean that information would take a longer time than if I have high bandwidth.
 
-We can see how this could turn problematic especially for people in rural areas who don't have access to good internet.
+We can see how this could be an inconvenience, especially for people in rural areas who may not have access to good internet.
 
 **3. Privacy**
 
