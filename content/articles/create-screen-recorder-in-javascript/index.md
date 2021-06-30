@@ -11,7 +11,7 @@ images:
 
 
 ### Introduction
-The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream. From the recorded Media Stream we can create a video file.
+The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream which contains the live screen contents. From the Media Stream, we can create a MediaRecorder.The MediaRecorder is used to record the audio and/or video streams. We will be converting that reordered media into a video blob and convert the blob into a downloadable URL and save it into our computer.
 
 ### Prerequisites
 
