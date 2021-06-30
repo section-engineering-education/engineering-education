@@ -115,6 +115,16 @@ Card.propTypes = {
 };
 ```
 
+PropType valiadtion as the name implies, involves the validation of the type of data that gets passed to a React component as `Props` [Properties]. If the conditions set in the `propType` object are not being met, JavaScript will throw an error.
+
+Say for example, we pass a **"Number"** data-type as the value of the `className` prop, it definitely does not meet the condition, which is (in literal terms): the value(s) that gets assigned to the `className` prop must be a string at all times and it is required. Meaning that, it (the `className` prop) must not be missing in that particukar component.
+
+```js
+Card.propTypes = {
+  className: propTypes.string.isRequired;
+}
+```
+
 The header component renders a simple text displaying the title/name of the app. It gets imported into `layout/index.js` which in turn gets used across the whole application.
 
 ```js
@@ -133,7 +143,7 @@ export default Header;
 
 The Header component is imported into the `Layout` component, thus making it reusable throughout the whole application.
 
-The Layout component is structured in a way that makes it accept only the Header component and the `children` props.
+The Layout component is structured in a way that makes it accept only the Header component and the `children` props. As we've seen previously, the use of the `propTypes` module in react enables us to perform type-checks on the tpe of data that enters into a React component.
 
 The `children` prop that is passed to this component represents the remaining part of the UI (i.e the layout of the card that will populate the webpage through the data obtained from the API). We’d see how that works shortly!
 
@@ -230,6 +240,42 @@ const Container = () => {
 
 export default Container;
 ```
+
+Breaking the component above into smaller chunks...
+
+### App state
+
+```js
+const { profiles, setProfiles } = useState([]);
+```
+
+The snippet above holds/sets the state of the application, or the component in particular. The `useState` React hook is destructured its first property, i.e `profiles` is assigned to an array, so that the data coming from the remote API endpoint can be mapped onto the UI of the application.
+
+### Data request from the API
+
+```js
+const getProfiles = () => {
+  fetch("https://jsonplaceholder.typicode/users")
+    .then((response) => {
+      setProfiles(response.profiles);
+    })
+    .catch((err) => console.log(JSON.stringify(err)));
+};
+```
+
+The function `getProfiles()`, initiates the process of getting data from the API (user data) endpoint with the help of the Browser's Fetch API. You can read more abut it [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+This function is then called inside the `useEffect()` hook of React. The `useEffect()` performs all the lifecycle method of React component at a go. Everytime the browser reloads, the `useEffect` hook is triggered, thereby causing the data to be available everytime that action happens.
+
+```js
+useEffect(() => {
+  getProfiles();
+}, []);
+```
+
+The essence of the array `[]` symbol or data-type inside the `useEffect` is to prevent the continuous loop of fetching the same data from the remote API endpoint. The process of adding that symbol/value is called the "useEffect cleanup". It stops the continous firing of the fetch request inside the `getProfiles()` function.
+
+### Understanding the Markup.
 
 In the component above, you’d notice the `xs`, `sm`, and `lg` props in the `Grid` component. These props are breakpoints of the card component, they are responsible for how it behaves across the different breakpoints.
 
