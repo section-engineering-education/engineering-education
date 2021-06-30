@@ -1,11 +1,8 @@
 title: Section Engineering Education
 
-description: Resources created by engineers for engineers
-
 aliases:
   - '/create-screen-recoder/'
   - '/javascript-screen-recorder/'
-type: articles
 
 images:
   - url: /engineering-education/create-screen-recorder-in-javascript/hero.jpg
@@ -26,17 +23,18 @@ To follow along with this tutorial, you should have:
 
 -   A browser to view the webpage, preferably  [Google Chrome](https://www.google.com/intl/en_in/chrome/).
 
-### Project directory
+### Step one: Creating a new project directory.
 
 Create a new directory for the project and create   `index.html`  and  `recordscreen.js` files.
 
 ```bash
 screen_recorder_project/
 |-index.html
+|-style.css
 |-recordscreen.js
 ```
 
-### HTML Page
+### Step two: Create the UI 
 On the `index.html` page there will be
 * Two buttons one to Start Screen Recording another to Stop Screen Recording.
 * One `div` to display the recording status, the style for the div is also added in the `index.html` file.
@@ -47,17 +45,7 @@ On the `index.html` page there will be
     <head>
         <meta charset="utf-8">
         <title>JavaScript Screen Recorder</title>
-        <style>
-            .status {
-                background: pink;
-                font-size: 30px;
-                padding: 10px;
-                margin : 0;
-                margin-bottom: 30px;
-                line-height: 40px;
-                box-sizing: border-box;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <div class="status">Record your screen by pressing Start Screen Recording </div>
@@ -67,14 +55,28 @@ On the `index.html` page there will be
     </body>
 </html>
 ```
-### The JavaScript file
+
+### Step three: Add Style for Displaying Message 
+On the `style.css` file we will add styles to the div with class `status`, so the message will looks good
+```css
+.status {
+    background: pink;
+    font-size: 30px;
+    padding: 10px;
+    margin : 0;
+    margin-bottom: 30px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+```
+### Step Four: Add Screen Recorder functionionalty in JavaScript
 
 In the JavaScript file, we will have 3 methods
 1. `recordScreen` -- This will start recording the user's screens.
 2. `createMediaStream` -- This will create a MediaStream object from the screen stream.
 3. `saveRecording` -- This will save the recorded stream as a file to our computer.
 
-#### Record Screen
+### Step Five : Record Screen
 
 On calling `getDisplayMedia` method in `navigator.mediaDevices` object will prompt the user to select and give permission to record the screen or part of the screen (browser tab). If the user has multiple screens then all the screens are displayed.
 
@@ -89,11 +91,17 @@ async function recordScreen() {
 }
 ```
 
-#### Create MediaRecorder
+### Step Six: Create MediaRecorder
 
 The `getDisplayMedia` will return a stream data. From that, we need to create a `MediaRecorder`.
 
- The`MediaRecorder` interface contains the following methods
+Steps to create a recorder
+ * Create a Media Recorder object with the stream returned by the `recordScreen` method
+ * Add an event listener for dataavailable event and store the received data
+ * Add an event listener for stop event and call save method from there with the stored data
+ * Start recording by calling the `start` method. We can pass the time interval to the `start` method,  for triggering the dataavailable event. If we call `start(100)` then for every 100 milliseconds the dataavailable event is triggered.
+
+The`MediaRecorder` interface contains the following methods
 
 |Method   	  | Functionality                		 |
 |-------------|--------------------------------------|
@@ -112,12 +120,6 @@ This event is fired when the MediaRecorder delivers media data to your applicati
 **stop**:
 
 This will be triggered by calling the top method on the MediaRecorder interface.
-
-Steps to create a recorder
- * Create a Media Recorder object with the stream returned by the `recordScreen` method
- * Add an event listener for dataavailable event and store the received data
- * Add an event listener for stop event and call save method from there with the stored data
- * Start recording by calling the `start` method. We can pass the time interval to the `start` method,  for triggering the dataavailable event. If we call `start(100)` then for every 100 milliseconds the dataavailable event is triggered.
 
 ```js
 function createRecorder (stream) {
@@ -140,7 +142,7 @@ function createRecorder (stream) {
 }
 ```
 
-#### Save the file
+### Step Seven: Save the file
 
 From the recorded data create a blob and ask the user for the file name and download the file.
 
