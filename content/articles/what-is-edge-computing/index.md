@@ -92,7 +92,7 @@ It offloads part of the workload that would have otherwise be done from the clou
 
 **2. Data storage.** 
 
-Instead of data storage happening on the cloud, data is now stored on edge devices ensuring the privacy of user data.
+Instead of data storage happening on the cloud, data is now stored on edge devices increasing the privacy of user data.
 
 **3. Caching and processing.** 
 
