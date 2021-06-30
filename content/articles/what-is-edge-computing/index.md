@@ -110,7 +110,7 @@ It provides privacy protection to a user. Since data stays with the producer/use
 
 IoT devices produce an impressive amount of data. With the help of the edge operating system (edgeOS), IoT devices can be connected and managed at home. This eliminates the need to subscribe to expensive internet bandwidth to send data to the cloud for processing.
 
-**7. Service deliver.**
+**7. Service delivery.**
 
 It provides service delivery from the cloud to a user in case a user is in need of such services.  
 
