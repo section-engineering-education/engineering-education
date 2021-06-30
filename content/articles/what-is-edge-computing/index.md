@@ -76,7 +76,7 @@ Edge computing solves these problems.
 
 ### Edge Computing
 
-Edge computing allows computing to be performed in close proximity to where data is produced. We can refer to the "edge" as any computing performed between the sources of data i.e, mobile phones and the cloud infrastructure. Though edge devices are interlinked with the cloud, it only communicates with the servers when it has to.
+Edge computing allows computing to be performed in close proximity to where data is produced. We can refer to the "edge" as any computing performed between the sources of data i.e, mobile phones and the cloud infrastructure. Though edge devices are interlinked with the cloud, they only communicate with the servers when they have to.
 
 Let's take a look at the edge computing paradigm.
 
