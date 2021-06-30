@@ -108,7 +108,7 @@ It provides privacy protection to a user. Since data stays with the producer/use
 
 **6. IoT management.**
 
-IoT devices produce an impressive amount of data. With the help of the edge operating system (edgeOS), IoT devices can be connected and managed at home. This eliminates the need to subscribe to expensive internet bandwidth so that data can be sent to the cloud for processing. 
+IoT devices produce an impressive amount of data. With the help of the edge operating system (edgeOS), IoT devices can be connected and managed at home. This eliminates the need to subscribe to expensive internet bandwidth to send data to the cloud for processing.
 
 **7. Service deliver.**
 
