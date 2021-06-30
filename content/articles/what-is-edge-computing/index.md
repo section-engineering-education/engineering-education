@@ -40,7 +40,7 @@ Computing used to be a process that you could solely and most commonly perform o
 
 Then came the cloud computing era which became a game-changer.
 
-With cloud computing, data storage and computational resources exist in the cloud. This data is accessible in real-time from your mobile devices, tablets, smartwatches, and laptops. Cloud computing gave us access to larger storage capacities and computational resources. This enabled us to train machine learning models and store data that wouldn't otherwise fit on our devices. Big technology companies such as Amazon, Microsoft, Google, and IBM are some of the industry players that preyed on this opportunity to make money out of offering these storage spaces and computation resources to businesses and individuals.  
+With cloud computing, data storage and computational resources exist in the cloud. This data is accessible in real-time from your mobile devices, tablets, smartwatches, and laptops. Cloud computing gave us access to larger storage capacities and computational resources. For instance, this enabled us to train machine learning models and store data that wouldn't otherwise be storable on our devices. Big technology companies such as Amazon, Microsoft, Google, and IBM are some of the industry players that identified an opportunity to offer these storage services and computation resources to businesses and individuals.
 
 Yet, with cloud computing, there came about three main challenges. These challenges included bandwidth limitations, latency problems, and privacy issues.   
 
