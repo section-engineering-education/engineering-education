@@ -6,7 +6,7 @@ The C++ programming language provides libraries which can be used  for machine l
 
  ### PREREQUISITES
 - An understanding of machine learning models and algorithms.
-- An good understanding of Object oriented programming in C++.
+- An understanding of object oriented programming concepts.
 - An intuition of machine learning models and algorithms.
 
  ### 1. SHARK LIBRARY
@@ -81,9 +81,9 @@ trainer.train(model, data)
 cout << "intercept: " << model.offset() << endl;
 cout << "matrix: " << model.matrix() << endl;
 ```
-The offset member function of linear models outputs the intercept of the best fit line. We also output a matrix instead of a multiplier since the model does not necessarily have to be linear. It can be generalized. The line of best fit is gotten by minimizing the squared loss. Luckily, the model allows us to display all that information.
+The offset member function of linear models outputs the intercept of the best fit line. We also output a matrix instead of a multiplier since the model does not necessarily have to be linear. It can be generalized.Minimize the squared loss to get the line of best fit The line of best fit. Luckily, the model allows us to display all that information.
 
-Our priority is to initialize a `squared loss` object and then instantiate a data container which we will call `predicted`. The predicted value is computed based on the independent variables fed into the system and then we output the loss which is gotten by passing the dependent values and the predicted value. 
+Our priority is to initialize a `squared loss` followed by instantiating a data container which we will call `predicted`. The predicted value is computed based on the independent variables fed into the system and then we output the loss which is gotten by passing the dependent values and the predicted value. 
 ```c++
 SquaredLoss<> loss; //initializing square loss object
 Data<RealVector> predicted = model(data.independent()); //predicted is calculated based on the independent variables fed into the system.
@@ -147,7 +147,7 @@ int samples = 50; int iter = 10;//maximum number of iterations
 arma::mat data(dim, samples, arma::fill::zeros)
 ```
 We have given the mat class a dimension size of 2 and 50 samples which we've initialized all of them with zeros. The next step is to assign some random data to the class on which we will run the k-means algorithm.
-We will create 25 points around the position [1,1] which is done by saying that each data point is at position [1,1] and then add random noise for each of these points. This is achieved as shown in the code below.
+We will create 25 points around the position [1,1] which is done by saying that each data point is at position [1,1] and then add random noise for each of these points. This is achieved as seen in the code below.
 
 ```c++ 
 int i = 0; for(; i < samples / 2; ++i) { data.col(i) = arma::vec({1, 1}) + 0.25*arma::randn<arma::vec>(dim); } for(; i < samples; ++i) { data.col(i) = arma::vec({2, 3}) + 0.25*arma::randn<arma::vec>(dim); }
