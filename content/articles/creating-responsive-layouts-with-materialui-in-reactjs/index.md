@@ -1,73 +1,71 @@
-Oftentimes, when we build websites or web applications, one of the important aspects of the whole process is to make it responsive, asides from the functionalities.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to ---
+author: 
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Making a web(site/app) responsive is among the quirks of accessibility that it must have so anyone with any type of device can be able to make use of the app or website.
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+One of the crucial aspects when building an application is to make it responsive. This feature allows the website or mobile app to adapt to different screen sizes or devices. This is because an individual can access the website via a mobile phone or computer.
+<!--more-->
+In this article, we will learn how to create layouts that respond to different device widths and breakpoints. We will use [Next.js](https://nextjs.org/) and [Material UI](https://materialui.com) for the design.
 
-Responsiveness has to do with how an application behaves and appears when it is being accessed on different devices.
-
-These devices range from mobile phones with different screen sizes and Personal computers or desktop computers.
-
-It is then, the obligation of a Frontend developer to create or write styles that would conform with the layout of the app to the different screen sizes of devices.
-
-In this article we’d take a look at how to create layouts that are responsive at different device widths and breakpoints using a React framework, called [NextJS](https://nextjs.org/) and [Material UI](https://materialui.com) to make the process of creating such layouts less painful.
-
+### Prerequisites
 Before reading this article, you should have an understanding of:
+- How React works.
+- How data is passed as props in a React component.
+- How to fetch data from a remote API endpoint.
+- How to use media queries in CSS.
 
-- How React works
-
-- How data is being passed as props in a React component
-
-- How to fetch data from a remote API endpoint
-
-- Media queries in CSS
-
-When you're done getting a hang of these concepts, you can come back here to read this article. It’d be worth it, I promise!
-
-### Overview of what we’re building
-
-The whole idea behind this article is so you can create layouts that are responsive at different device breakpoints while obtaining data from a remote API that'd be on the web page.
-
-We'd complete this task by making use of [JSONPlaceholder’s](http://jsonplaceholder.typicode.com/users) dummy users API, which would be used to populate the user interface of the app.
+### Objective
+To create a responsive website using Material UI and Next.js The application will retrieve test data from [JSONPlaceholder](http://jsonplaceholder.typicode.com/users) which is a dummy API.
 
 ### What is Material UI
-
-Material UI is a React-based CSS utility framework that enables developers to be able to create aesthetic user interfaces. Its functions are quite like that of Bootstrap but in a more advanced way. Since it is a React-based CSS framework, it employs a paradigm of CSS components that can be imported anywhere in a React application. It has various use cases, ranging from layouts, styling inputs, navigation, etc. You can [read more](https://material-ui.com/components/) about the components in their docs. We’d have to make use of the Grid component in this article since it is the only one that tallies with what we’re trying to build.
+Material UI is a React-based CSS utility framework that enables developers to create quality user interfaces. Material UI can be compared to Bootstrap but in a more advanced way. Since it is a React-based CSS framework, it features numerous components that can be imported anywhere in a React application. Material UI has various use cases, ranging from layouts, styling inputs, navigation, etc. You can read more about the components in the [official docs](https://material-ui.com/components/). 
 
 ### What is NextJS
-
-NextJS isn’t “the next JavaScript”, as someone thought it was, rather, it is a front-end framework, based on React also, that provides developers with loads of functionalities like SSR: Server Side Rendering and SSG: Static Site Generation, just to mention a few. It saves developers the stress of setting up a react application from scratch. You can visit their [documentation](https://nextjs.org/docs/getting-started) to get a proper understanding of how this tool works
+Next.js is a front-end web framework that is based on React. It provides developers with loads of functionalities including [Server Side Rendering and Static Site Generation](https://www.section.io/engineering-education/client-side-rendering-vs-server-side-rendering-vs-static-site-generation/). Next.js saves developers from the stress of setting up a react application from scratch. You can learn more about Next.js from [here](https://nextjs.org/docs/getting-started).
 
 ### NextJs and Material UI setup
+To make use of Material UI and Next.js, we need to install them as dependencies in our React application.
 
-To be able to make use of Material UI and NextJs, we’d need to install them as dependencies in our React application.
+To install Next.js, use the command below.
 
-To install NextJs, type the command below into your terminal.
+> Note that you need to have [Node](https://nodejs.org/en/) and [NPM](https://www.section.io/engineering-education/beginner-guide-to-npm/) installed on your machine.
 
-Note: for the command below to work, you need to have node and npm installed/downloaded on your machine.
+```bash
+ npm install next react react-dom
+```
 
-```js
+We can then create a Next.js project using the following command.
+
+```bash
 npx create-next-app
-
-yarn create-next-app
-```
-
-When NextJS is installed, you should get yourself familiar with the folder structure.
-
-The `pages` folder, for example, represents the first page that you’d see upon running the command to view it in your browser. You can edit `pages/index.js` to see the hot reloading feature of NextJS.
-The command below starts up a dev server in your browser where you can view it.
-
-```
-npm run dev
 ```
 
 To install Material UI, you can type the command below in your terminal.
 
-```
+```bash
 npm install @material-ui/core
 ```
 
+We can start the dev server using `npm run dev` command.
+
 ### Creating the web-app
 
-Now that we have seen how to install the dependencies needed in the creation of this app. Let’s take a look at how the structure of the app will be:
+Before moving further, we need to familiarize ourself with the project structure.
+
+We will put all of our web pages in the `pages` folder. For instance, the `pages/index.js` will serve as the default home page.
+
+Here is our project structure.
 
 ```
 |--pages
@@ -83,17 +81,9 @@ Now that we have seen how to install the dependencies needed in the creation of 
 |--index.js
 ```
 
-The folder structure above will be a reference for the purpose of this article, so things don’t get mixed up. You can decide not to make use of this style, it’s your choice. Go with whatever feels convenient for you.
+The `Layout` folder in the `components` directory will render the app's navigation bar. The `Card` folder will serve as the [container component](https://www.section.io/engineering-education/container-components-in-react/) that gets mapped with the data retrieved from the remote API.
 
-The `index.js` file is what we’d render inside `pages/index.js` after we’ve deleted the content that was there before.
-
-The `Layout` folder in the components folder will render the navigation bar of the app while the `Card` folder will serve as the [container component](https://www.section.io/engineering-education/container-components-in-react/) that gets mapped with the data gotten from the remote API onto the index page.
-
-Let’s get building. Shall we?
-
-Taking it from the top. We’d take a look at the index file in `pages/index.js`, then we’d move on to creating the Nav and Card components, then the appContainer that wields the total data coming from the API, which gets imported into `pages/index.js`
-
-The card component serves as a reusable component that can be imported anywhere in the app, it makes use of the React `propTypes` module to validate the type of data that gets into the component.
+The card component serves as a reusable component that can be imported on any page in the app. It makes use of the React `propTypes` module to validate the type of data that gets into the component.
 
 ```js
 // Card.js
@@ -264,9 +254,12 @@ export default function Home() {
 ```
 
 ### Conclusion
-
 I intentionally ommited the styles of this app for brevity’s sake, if you really want to see how this app looks like in real time, you check it out [here](https://profilez.netlify.app) and inspect the responsiveness accross the different breakpoints. Here the link to the [repository](https://github.com/Caleb335/profiles)https://github.com/Caleb335/profiles­ on GitHub if you want to inspect it.
 
 If you want to understand how to create responsive layouts without making use of a framework, kindly check this [article](https://www.freecodecamp.org/news/media-queries-width-ranges/) that explains media queries in CSS.
 
 Thank You for reading this article. Kindly share it with your pals, if you’ve been able to grasp the concept of creating responsive layouts with Material UI.
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
