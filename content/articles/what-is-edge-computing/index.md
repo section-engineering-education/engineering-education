@@ -32,7 +32,7 @@ The figure below depicts the centralized nature of cloud computing:
 
 *[Image Source: IEEE](https://ieeexplore.ieee.org/document/7488250/)*
 
-But, before  I explain further what edge computing entails, it is good to understand how we got here. 
+But, before we venture further into edge computing, let's appreciate what preceded edge computing.
 
 ### Brief history
 
