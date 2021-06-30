@@ -36,7 +36,7 @@ But, before we venture further into edge computing, let's appreciate what preced
 
 ### Brief history
 
-Computing used to be a process that you could perform on your desktop computer or laptop. All computations and programs run locally based on the data, information, and processing power the computer had access to at that moment. This type of computing was limiting as these devices could only hold so much data and have access to limited computational resources.
+Computing used to be a process that you could solely and most commonly perform on your desktop computer or laptop. All computations and programs ran locally based on the data, information, and processing power the computer had access to at that moment. However, this type of computing was limiting as these devices could only hold so much data and had access to limited computational resources.
 
 Then came the cloud computing era which became a game-changer.
 
