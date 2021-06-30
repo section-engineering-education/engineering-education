@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/a-beginners-guide-on-how-to-become-a-blockchain-developer/hero.jpg
     alt: Blockchain Hero Image
 ---
-If you are reading this article, I'm sure you're wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
+If you are reading this article, I am sure you are wondering whether blockchain development is for you. This might be because you might be having no prior coding experience or because you might not be quite technologically savvy. Or it might be simply overwhelming to find a starting point.
 <!--more-->
 
 I felt the same way some few years back.
