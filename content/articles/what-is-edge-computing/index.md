@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /what-is-edge-computing/
-title: What is Edge Computing
-description: In this article we will look at real-time systems, their challenges and compare them to edge computing and its benefits.
+title: The Evolution of Computing to Edge Computing
+description: In this article, we will look at real-time systems, their challenges and compare them to edge computing and its benefits.
 author: sharon-kinyan
 date: 2021-06-29T00:00:00-20:30
 topics: []
@@ -16,7 +16,7 @@ images:
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
 <!--more-->
 
-There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processess data as it arrives. 
+There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where a response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processes data as it arrives. 
 
 But, with most current systems, computation is centralized. This isn't ideal for real-time systems as they experience issues relating to latency, bandwidth, and privacy.
 
@@ -115,7 +115,7 @@ IoT devices produce an impressive amount of data. With the help of the edge oper
 
 **7. Service deliver.**
 
-It provides service delivery from the cloud to a user incase a user is in need of such services.  
+It provides service delivery from the cloud to a user in case a user is in need of such services.  
 
 These are tasks that traditionally, have been performed on the cloud. 
 
@@ -125,11 +125,11 @@ Let's look at some examples to prove its benefits:
 
 1. By moving from the cloud to the edge, researchers found that the response time on their facial recognition system reduced from 900ms to 169ms. You may read more about it [here](https://www.researchgate.net/publication/301691282_Fog_Computing_Platform_and_Applications). 
 
-2. In the task of wearable cognitive assistance, researchers found out that using the edge reduced the energy consumption by 30-40% and response time to between 80 and 200ms. This is pretty significant.You can find more insight about this task [here](https://www.cs.cmu.edu/~satya/docdir/ha-mobisys2014.pdf).
+2. In the task of wearable cognitive assistance, researchers found out that using the edge reduced the energy consumption by 30-40% and response time to between 80 and 200ms. This is pretty significant. You can find more insight about this task [here](https://www.cs.cmu.edu/~satya/docdir/ha-mobisys2014.pdf).
 
 3. Edge computing could enable smart cities. With our cities' population growing at fast paces, processing the huge amount of data at the edge would be an efficient solution. 
 
-4. Real-time applications such as augmented reality, online gaming, and connected health are now a fast because of deploying nodes at the edge.
+4. Real-time applications such as augmented reality, online gaming, and connected health are now fast because of deploying nodes at the edge.
 
 ### Wrapping Up
 
