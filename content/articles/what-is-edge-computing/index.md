@@ -50,12 +50,9 @@ It is the time delay associated with running a particular process.
 
 For example, in most of our mobile devices, we have either Apple's Siri or Google's Assistant feature. For these features to work, the device has to record your speech, send it to a cloud server where data compression and processing is performed. On the cloud, sometimes the servers have to talk to other servers to perform different functions on the data before sending the output feedback to your mobile phone. While this process is quick in most cases, it still does take time.
 
-This could be problematic, especially for autonomous vehicles which need the car to make timely decisions depending on what's happening in its surrounding i.e., avoiding a car crash. 
+This could be problematic. Consider a case of autonomous vehicles. These vehicles need to make timely decisions depending on what's happening in their surrounding, for example, avoiding a car crash. 
 
-What if the weather conditions are bad and it takes longer for feedback to return telling the car to turn right avoiding a crash? 
-Considering the amount of data being generated, the response time would be too long and would lead to a crash.
-
-Though it works smoothly most of the time, I hope you're seeing how this could turn problematic very fast. 
+What if the weather conditions are extreme, thus increasing latency, and as a result, it takes longer to get feedback to have the car turn right and avoid a crash? Considering the amount of data being generated, the response time would be too long and would potentially result in a crash.
 
 **2. Bandwidth**
 
