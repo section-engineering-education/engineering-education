@@ -16,7 +16,9 @@ images:
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
 <!--more-->
 
-There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
+There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processess data as it arrives. 
+
+But, with most current systems, computation is centralized. This isn't ideal for real-time systems as they experience issues relating to latency, bandwidth, and privacy.
 
 Solution? 
 
@@ -40,7 +42,7 @@ Then came the cloud computing era which became a game-changer.
 
 With cloud computing, data storage and computational resources exist in the cloud. This data is accessible in real-time from your mobile devices, tablets, smartwatches, and laptops. Cloud computing gave us access to larger storage capacities and computational resources. This enabled us to train machine learning models and store data that wouldn't otherwise fit on our devices. Big technology companies such as Amazon, Microsoft, Google, and IBM are some of the industry players that preyed on this opportunity to make money out of offering these storage spaces and computation resources to businesses and individuals.  
 
-Yet, with real-time systems, there came about three main challenges. These challenges included bandwidth limitations, latency problems, and privacy issues.   
+Yet, with cloud computing, there came about three main challenges. These challenges included bandwidth limitations, latency problems, and privacy issues.   
 
 **1. Latency**
 
@@ -87,10 +89,33 @@ Let's take a look at the edge computing paradigm.
 
 At the edge, the following tasks are performed:
 
-1. Computing offloading. If offloads part of the workload that would have otherwise be done from the cloud.
-2. Data storage. Instead of data storage happening on the cloud, data is now stored on edge devices ensuring the privacy of user data.
-3. Caching and processing. In an autonomous vehicle, data from cameras can now be processed at the edge ensuring shorter response times. 
-4. Handling requests. It distributes requests and deliveries services from the cloud to the user.
+**1. Computing offloading.** 
+
+It offloads part of the workload that would have otherwise be done from the cloud.
+
+**2. Data storage.** 
+
+Instead of data storage happening on the cloud, data is now stored on edge devices ensuring the privacy of user data.
+
+**3. Caching and processing.** 
+
+In an autonomous vehicle, data from cameras can now be processed at the edge ensuring shorter response times. 
+
+**4. Handling requests.** 
+
+It distributes requests and deliveries services from the cloud to the user.
+
+**5. Privacy protection.**
+
+It provides privacy protection to a user. Since data stays with the producer/user and is never sent to the cloud for processing.
+
+**6. IoT management.**
+
+IoT devices produce an impressive amount of data. With the help of the edge operating system (edgeOS), IoT devices can be connected and managed at home. This eliminates the need to subscribe to expensive internet bandwidth so that data can be sent to the cloud for processing. 
+
+**7. Service deliver.**
+
+It provides service delivery from the cloud to a user incase a user is in need of such services.  
 
 These are tasks that traditionally, have been performed on the cloud. 
 
@@ -103,6 +128,8 @@ Let's look at some examples to prove its benefits:
 2. In the task of wearable cognitive assistance, researchers found out that using the edge reduced the energy consumption by 30-40% and response time to between 80 and 200ms. This is pretty significant.You can find more insight about this task [here](https://www.cs.cmu.edu/~satya/docdir/ha-mobisys2014.pdf).
 
 3. Edge computing could enable smart cities. With our cities' population growing at fast paces, processing the huge amount of data at the edge would be an efficient solution. 
+
+4. Real-time applications such as augmented reality, online gaming, and connected health are now a fast because of deploying nodes at the edge.
 
 ### Wrapping Up
 
