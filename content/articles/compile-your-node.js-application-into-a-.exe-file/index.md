@@ -109,7 +109,7 @@ npm i express
 
 The folder structure of the application will look as shown below:
 
-"`bash
+```bash
 ├──  node_modules (folder)
 ├──  views (folder)
 │   └── images (folder)
@@ -120,11 +120,11 @@ The folder structure of the application will look as shown below:
 └──  package.json (file)
 ```
 
-#### views
+#### Views
 
-##### images
+##### Images
 
-Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg". For example, you can download it [here](https://www.google.co.ke/search?q=smart+tv+760+x+600&tbm=isch&ved=2ahUKEwjS7LDE_pnxAhUOphQKHW3bA1EQ2-cCegQIABAA&oq=smart+tv+760+x+600&gs_lcp=CgNpbWcQAzoECAAQQzoCCAA6BAgAEBhQh4cNWOe6DWChwQ1oAHAAeACAAeYBiAHjD5IBBTAuNS41mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=2svIYNKXFI7MUu22j4gF&bih=626&biw=1434&safe=active&hl=en-KE).
+Inside the image folder, download a free 760 × 380 tv image from the web and name it "tv1.jpg". You may download a sample image [here](https://www.google.co.ke/search?q=smart+tv+760+x+600&tbm=isch&ved=2ahUKEwjS7LDE_pnxAhUOphQKHW3bA1EQ2-cCegQIABAA&oq=smart+tv+760+x+600&gs_lcp=CgNpbWcQAzoECAAQQzoCCAA6BAgAEBhQh4cNWOe6DWChwQ1oAHAAeACAAeYBiAHjD5IBBTAuNS41mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=2svIYNKXFI7MUu22j4gF&bih=626&biw=1434&safe=active&hl=en-KE).
 
 ##### index.html
 
@@ -245,7 +245,7 @@ function getDir() {
 
 The code automatically generated will look as shown below:
 
-"`json
+```json
 {
     "name": "executable",
     "version": "1.0.0",
@@ -270,7 +270,7 @@ Open the inbuilt Visual Studio Code Terminal using ``Ctrl + ` `` in PC or ``Cont
 
 Run the application using the following command on the terminal to get "Server at 5000" output using:
 
-"`bash
+```bash
 node index.js
 ```
 
@@ -287,13 +287,13 @@ Let's compile our project into an executable file with all the required packages
 
 Run the following command in the terminal to install `nexe` globally:
 
-"`bash
+```bash
 npm i nexe -g
 ```
 
 If you are using Ubuntu, run:
 
-"`bash
+```bash
 sudo npm i nexe -g
 ```
 
@@ -301,26 +301,26 @@ sudo npm i nexe -g
 
 Once done, run the following to verify if it is installed:
 
-"`bash
+```bash
 nexe -h
 ```
 
 #### Compile one javascript file into an executable using nexe
 
-Now, Let's run the following to convert the application's entry point into an executable file:
+Now, let's run the following to convert the application's entry point into an executable file:
 
-"`bash
+```bash
 nexe index.js
 ```
 
 This tells `nexe` that it should only look and compile the "index.js" file into an executable file during the build process.
 Once done, run the following command on the terminal to start the build process:
 
-"`bash
+```bash
 nexe --build
 ```
 
-I'll create a new executable file with the same name as our root directory's name, "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system. In our case, it'll create Windows executable file with the name "executable".
+We'll create a new executable file with the same name as our root directory's name, "executable". By default, it'll use the system's operating system and architecture type as the target for the application so that you can quickly run it on your system. In our case, it'll create Windows executable file with the name "executable".
 
 Double-tap on it or right-click and select the run command to start the application.
 It automatically logs out "Server at 5000," meaning that it is running. Access the application in the preferred browser at `localhost:5000`. You can terminate the process by clicking on the close window button.
@@ -331,7 +331,7 @@ To prove that only the entry point is compiled and not the resources found in th
 
 - In case you are on Linux, you can run the generated executable using the command below:
 
-"`bash
+```bash
 ./executable
 ```
 
@@ -345,7 +345,7 @@ We can do this in two ways.
 
 - First, we can add the resources in the command line using the `--resources` or `-r` flag as seen below:
 
-"`bash
+```bash
 nexe -r "views/**/*"
 ```
 
@@ -356,7 +356,7 @@ We can also add additional commands such as the output executable file path usin
 - We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
 Head over to the "package.json" file, and under the scripts tag, add a build script as follows:
 
-"`json
+```json
 {
     "scripts": {
         "start": "node index.js",
@@ -369,13 +369,13 @@ Head over to the "package.json" file, and under the scripts tag, add a build scr
 This will specify our resources which are locally found during the build time.
 Now run the command below to tell `nexe` to use the specifications in the build tag:
 
-"`bash
+```bash
 npm run build
 ```
 
 To start the build process, use the following command:
 
-"`bash
+```bash
 npm --build
 ```
 
@@ -397,13 +397,13 @@ Let's use the project that we previously created and see the outcome.
 
 You can start by installing the package using the command below for local installation:
 
-"`bash
+```bash
 npm i pkg
 ```
 
 or for global installation use:
 
-"`bash
+```bash
 npm i pkg -g
 ```
 
@@ -413,7 +413,7 @@ Please wait for a few seconds for it to complete the process. Then, on completio
 
 Please run the following command in which we'll call the pkg module and the entry point to our application. In our case, its `index.js`:
 
-"`bash
+```bash
 pkg index.js
 ```
 
@@ -445,7 +445,7 @@ Delete the executable files generated in the previous process.
 
 Run the following in the Terminal:
 
-"`bash
+```bash
 pkg index.js --targets node12-win-x64
 ```
 
@@ -467,7 +467,7 @@ Some of the supported Node.js ranges, platforms, and architectures are as shown 
 Here, we should tell `pkg` our resources folder. Again, we can do this inside the `package.json` file using scripts and assets configurations.
 Let us head over to our `package.json` file and add a "pkg" as shown below:
 
-"`json
+```json
 {
     "name": "executable",
     "bin": "index.js",
@@ -498,19 +498,19 @@ Notice that we have also added "bin". This tells `pkg` where the app entry point
 
 Run `pkg` using the command below to use our configuration in `package.json`:
 
-"`bash
+```bash
 pkg .
 ```
 
 or
 
-"`bash
+```bash
 pkg package.json
 ```
 
 In the case of build files or the specific targets, you can also specify them to pkg to obtain an output of the format below:
 
-"`json
+```json
 {
     "pkg": {
               "scripts": "build/**/*.js",
