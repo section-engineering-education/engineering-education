@@ -16,21 +16,15 @@ images:
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
 <!--more-->
 
-### Prerequisite
+### Prerequisites
 
-Before reading this article, a reader should be familiar with a variety of computing infrastructures and data storage resources such as [Google cloud](https://cloud.google.com/) and [Amazon Web Services](https://aws.amazon.com/) are they are the de-facto standards in many industries today. 
+Before reading this article, a reader should be familiar with a variety of computing infrastructures and data storage resources such as [Google cloud](https://cloud.google.com/) and [Amazon Web Services](https://aws.amazon.com/) as they are the de-facto standards in many industries today. 
 
 ### Introduction
 
-There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where a response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processes data as it arrives. 
+There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where a response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processes data as it arrives. But, with most current systems, computation is centralized. This isn't ideal for real-time systems as they experience issues relating to latency, bandwidth, and privacy.
 
-But, with most current systems, computation is centralized. This isn't ideal for real-time systems as they experience issues relating to latency, bandwidth, and privacy.
-
-Solution? 
-
-Edge Computing.
-
-With edge computing, the computation happens near the physical location where data is collected. This is in contrast to current practices where computation happens on centralized servers. Due to this, it is easy to create real-time insights.
+Solution? Edge Computing. With edge computing, the computation happens near the physical location where data is collected. This is in contrast to current practices where computation happens on centralized servers. Due to this, it is easy to create real-time insights.
 
 The figure below depicts the centralized nature of cloud computing:
 
@@ -94,7 +88,7 @@ At the edge, the following tasks are performed:
 
 **1. Computing offloading.** 
 
-The edge nodes offloads part of the workload that would have otherwise be done from the cloud.
+This is where the edge nodes offload part of the workload that would have otherwise be done from the cloud.
 
 **2. Data storage.** 
 
@@ -106,7 +100,7 @@ In an autonomous vehicle, data from cameras can now be processed at the edge ens
 
 **4. Handling requests.** 
 
-The edge nodes distribute requests and deliveries services from the cloud to the user.
+The edge nodes distribute requests and deliver services from the cloud to the user.
 
 **5. Privacy protection.**
 
@@ -118,7 +112,7 @@ IoT devices produce an impressive amount of data. With the help of the edge oper
 
 **7. Service delivery.**
 
-The edge nodes provides service delivery from the cloud to a user in case a user is in need of such services.  
+The edge nodes provide service delivery from the cloud to a user in case a user is in need of such services.  
 
 These are tasks that traditionally, have been performed on the cloud. 
 
