@@ -10,11 +10,15 @@ date: 2021-06-29T00:00:00-20:30
 topics: []
 excerpt_separator: <!--more-->
 images:
-  -url: /what-is-edge-computing//hero.png
-  alt: edge computing example image
+  -url: /what-is-edge-computing/hero.png
+  alt: edge computing example image 
 ---
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. 
 <!--more-->
+
+### Prerequisite
+
+Before reading this article, a reader should be familiar with a variety of computing infrastructures and data storage resources such as [Google cloud](https://cloud.google.com/) and [Amazon Web Services](https://aws.amazon.com/) are they are the de-facto standards in many industries today. 
 
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where a response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processes data as it arrives. 
 
@@ -58,7 +62,7 @@ What if the weather conditions are extreme, thus increasing latency, and as a re
 
 It is the amount of data that you can send in a certain period. 
 
-For example, if I want to operate the smart assistance feature which involves communicating with the cloud server, it takes time depending on the amount of bandwidth you have to perform that task. A low bandwidth would mean that information would take a longer time than if I have high bandwidth.
+For example, if I want to operate the Google Assistant feature which involves communicating with the cloud server, it takes time depending on the amount of bandwidth you have to perform that task. A low bandwidth would mean that information would take a longer time than if I have high bandwidth.
 
 We can see how this could be an inconvenience, especially for people in rural areas who may not have access to good internet.
 
@@ -88,7 +92,7 @@ At the edge, the following tasks are performed:
 
 **1. Computing offloading.** 
 
-It offloads part of the workload that would have otherwise be done from the cloud.
+The edge nodes offloads part of the workload that would have otherwise be done from the cloud.
 
 **2. Data storage.** 
 
@@ -100,11 +104,11 @@ In an autonomous vehicle, data from cameras can now be processed at the edge ens
 
 **4. Handling requests.** 
 
-It distributes requests and deliveries services from the cloud to the user.
+The edge nodes distribute requests and deliveries services from the cloud to the user.
 
 **5. Privacy protection.**
 
-It provides privacy protection to a user. Since data stays with the producer/user and is never sent to the cloud for processing.
+The edge nodes provide privacy protection to a user. Since data stays with the producer/user and is never sent to the cloud for processing.
 
 **6. IoT management.**
 
@@ -112,11 +116,11 @@ IoT devices produce an impressive amount of data. With the help of the edge oper
 
 **7. Service delivery.**
 
-It provides service delivery from the cloud to a user in case a user is in need of such services.  
+The edge nodes provides service delivery from the cloud to a user in case a user is in need of such services.  
 
 These are tasks that traditionally, have been performed on the cloud. 
 
-### Benefits of edge computing
+### Use cases for edge computing
 
 Let's look at some examples to prove its benefits:
 
@@ -126,7 +130,7 @@ Let's look at some examples to prove its benefits:
 
 3. Edge computing could enable smart cities. With our cities' population growing at fast paces, processing the huge amount of data at the edge would be an efficient solution. 
 
-4. Real-time applications such as augmented reality, online gaming, and connected health are now fast because of deploying nodes at the edge.
+4. Real-time applications such as augmented reality, online gaming, and connected health are now faster and have shorter response times because of deploying nodes at the edge.
 
 ### Wrapping Up
 
