@@ -14,6 +14,24 @@ images:
     alt: Docker hero image
 ---
 
+### Table of contents
+
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [What is Hadoop?](#what-is-hadoop)
+  - [What is a Hadoop cluster?](#what-is-a-hadoop-cluster)
+- [What are Docker and Docker containers?](#what-are-docker-and-docker-containers)
+- [Set up Docker and docker-compose](#set-up-docker-and-docker-compose)
+- [How to set up a single Hadoop cluster using docker-compose](#how-to-set-up-a-single-hadoop-cluster-using-docker-compose)
+- [Check the running Hadoop containerized environment](#check-the-running-hadoop-containerized-environment)
+- [Testing the dockerize Hadoop application using the MapReduce Job](#testing-the-dockerize-hadoop-application-using-the-mapreduce-job)
+- [Set up the Hadoop cluster using Docker](#set-up-the-hadoop-cluster-using-docker)
+- [Testing the Hadoop cluster](#testing-the-hadoop-cluster)
+
+### Prerequisites
+
+This article assumes that you have some basic and background knowledge of using [containerization technologies](/engineering-education/history-of-container-technology/) such as [using Docker](/engineering-education/docker-concepts/) to [run and manage containers](/engineering-education/running-and-managing-docker/).  It is also essential to understand the role of [Big Data]((/engineering-education/roles-data-science/)) as that is what Hadoop seeks to achieve.
+
 ### What is Hadoop?
 
 The Hadoop framework helps process and analyze [Big Data](/engineering-education/roles-data-science/). Hadoop framework stores and processes vast amounts of any data efficiently using a cluster of computer hardware.
