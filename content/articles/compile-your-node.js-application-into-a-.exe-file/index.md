@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /compile-your-node.js-application-into-a-.exe-file/
 title: Compiling a Node.js Application into .exe File
-description: In this article, we will discuss the various types of applications that one can create with Node.js and how to convert it into a .exe file. We will also cover the reasons for converting an application into a .exe file and finally understand the technical details involved with the same. The packages used to obtain the .exe file are nexe and pkg.
+description: In this article, we will discuss the various types of applications that one can create with Node.js and convert it into a .exe file. We will also cover the reasons for converting an application into a .exe file and finally understand the technical details involved with the same. The packages used to obtain the .exe file are nexe and pkg.
 author: chris-mutua
 date: 2021-06-28T00:00:00-18:00
 topics: []
@@ -67,9 +67,9 @@ If you are all set on the above requirements, let's look at some packages to acc
 
 Executable files (.exe files): These are files containing a set of encoded instructions, which are executed sequentially once the user clicks on the file or runs it.
 
-`.exe` is a Windows extension referring to an executable file. Other operating systems have executable files too but with varying extensions. For example, in Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables while in macOS, they _lack_ extensions.
+`.exe` is a Windows extension referring to an executable file. Other operating systems have executable files too, but with varying extensions. For example, in Linux or Unix-based operating systems, files ending with the `.bin`, `.elf` or `[none]` extensions are executables, while in macOS, they _lack_ extensions.
 
-We shall major on creating Windows executable files but also touch on some other operating systems as we proceed.
+We shall major in creating Windows executable files and touch on some other operating systems as we proceed.
 
 ### Pros of executable files
 
@@ -85,7 +85,7 @@ Let us see why the users prefer executable files in the first place. Some advant
 
 Two of the most commonly used packages used to compile javascript files into executables are:
 
-- [nexe](https://www.npmjs.com/package/nexe "npmjs.com nexe/nexe documentation"): It is a simple command-line utility that compiles your Node.js application into a single executable file. By default, it converts it into a Windows executable. You can quickly jump over to its section by clicking [here](#nexe "nexe").
+- [nexe](https://www.npmjs.com/package/nexe "npmjs.com nexe/nexe documentation" ): It is a simple command-line utility that compiles your Node.js application into a single executable file. By default, it converts it into a Windows executable. You can quickly jump over to its section by clicking [here](#nexe "nexe").
 - [pkg](https://www.npmjs.com/package/pkg): It is a Node.js package that can convert your Node.js app into several executable files for various operating systems (all at once) or of an individual operating system. You can quickly jump over to its section by clicking [here](#pkg "pkg").
 
 We shall now get a simple Node.js application that is running and use it as our application.
@@ -95,13 +95,13 @@ We shall now get a simple Node.js application that is running and use it as our 
 This web app will run on localhost at port 5000 and display images found in the images folder. First, create a directory called "executable" and create files and folders as shown in the folder structure below.
 Initialize the project with:
 
-```bash
+"`bash
 npm init -y
 ```
 
 Install the packages needed for the project using:
 
-```bash
+"`bash
 npm i express
 ```
 
@@ -109,7 +109,7 @@ npm i express
 
 The folder structure of the application will look as shown below:
 
-```bash
+"`bash
 ├──  node_modules (folder)
 ├──  views (folder)
 │   └── images (folder)
@@ -245,7 +245,7 @@ function getDir() {
 
 The code automatically generated will look as shown below:
 
-```json
+"`json
 {
     "name": "executable",
     "version": "1.0.0",
@@ -270,7 +270,7 @@ Open the inbuilt Visual Studio Code Terminal using ``Ctrl + ` `` in PC or ``Cont
 
 Run the application using the following command on the terminal to get "Server at 5000" output using:
 
-```bash
+"`bash
 node index.js
 ```
 
@@ -287,21 +287,21 @@ Let's compile our project into an executable file with all the required packages
 
 Run the following command in the terminal to install `nexe` globally:
 
-```bash
+"`bash
 npm i nexe -g
 ```
 
 If you are using Ubuntu, run:
 
-```bash
+"`bash
 sudo npm i nexe -g
 ```
 
-> **Note:** Unlike the pkg module, we don't install the package locally but rather globally. If you install it locally, you will face numerous errors. An example of that error is `Command 'nexe' not found`. You can see how to resolve it [here](https://stackoverflow.com/questions/67981535/nexe-module-command-nexe-not-found-error/67981536#67981536).
+> **Note:** Unlike the pkg module, we don't install the package locally but rather globally. If you install it locally, you will face numerous errors. An example of that error is `Command' nexe' not found`. You can see how to resolve it [here](https://stackoverflow.com/questions/67981535/nexe-module-command-nexe-not-found-error/67981536#67981536).
 
 Once done, run the following to verify if it is installed:
 
-```bash
+"`bash
 nexe -h
 ```
 
@@ -309,14 +309,14 @@ nexe -h
 
 Now, Let's run the following to convert the application's entry point into an executable file:
 
-```bash
+"`bash
 nexe index.js
 ```
 
 This tells `nexe` that it should only look and compile the "index.js" file into an executable file during the build process.
 Once done, run the following command on the terminal to start the build process:
 
-```bash
+"`bash
 nexe --build
 ```
 
@@ -331,13 +331,13 @@ To prove that only the entry point is compiled and not the resources found in th
 
 - In case you are on Linux, you can run the generated executable using the command below:
 
-```bash
+"`bash
 ./executable
 ```
 
 You can close it using `Ctrl + C`.
 
-- On macOS, just double-tap to open. Close it using the close button.
+- On macOS, just double-tap to open. Then, close it using the close button.
 
 #### Compile the entire project into an executable using nexe
 
@@ -345,18 +345,18 @@ We can do this in two ways.
 
 - First, we can add the resources in the command line using the `--resources` or `-r` flag as seen below:
 
-```bash
+"`bash
 nexe -r "views/**/*"
 ```
 
-We can also add additional commands such as the output executable file path using `--output` or `-o`, target using `--target` or `-t`, name of the executable file using `--name` or `-n`, build from source using `--build` or `-b` e.t.c.
+We can also add additional commands such as the output executable file path using `--output` or `-o', target using `--target` or `-t`, name of the executable file using `--name` or `-n`, build from source using `--build` or `-b` e.t.c.
 
 > 'target' in `nexe` is used to specify the platform (Windows, Linux, or macOS), the arch or architecture type (x86, x64), and the Node.js version (12, 14, 16). You can see more [here](https://github.com/nexe/nexe "nexe Readme").
 
 - We can define the resources inside the 'package.json' file. I recommend this since it saves your configurations for later re-runs. Since we already declared that our app "main" is "index.js", we shall introduce a build script additionally.
 Head over to the "package.json" file, and under the scripts tag, add a build script as follows:
 
-```json
+"`json
 {
     "scripts": {
         "start": "node index.js",
@@ -369,13 +369,13 @@ Head over to the "package.json" file, and under the scripts tag, add a build scr
 This will specify our resources which are locally found during the build time.
 Now run the command below to tell `nexe` to use the specifications in the build tag:
 
-```bash
+"`bash
 npm run build
 ```
 
 To start the build process, use the following command:
 
-```bash
+"`bash
 npm --build
 ```
 
@@ -397,13 +397,13 @@ Let's use the project that we previously created and see the outcome.
 
 You can start by installing the package using the command below for local installation:
 
-```bash
+"`bash
 npm i pkg
 ```
 
 or for global installation use:
 
-```bash
+"`bash
 npm i pkg -g
 ```
 
@@ -413,7 +413,7 @@ Please wait for a few seconds for it to complete the process. Then, on completio
 
 Please run the following command in which we'll call the pkg module and the entry point to our application. In our case, its `index.js`:
 
-```bash
+"`bash
 pkg index.js
 ```
 
@@ -424,17 +424,17 @@ Just wait for some time for the process to complete. Head over to the main direc
 - for Linux (index-linux)
 - for mac (index-macos)
 
-That is because we did not specify an operating system. Run the file that's suitable for your operating system. For example, in Windows just double-click on "index-win.exe" icon. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
+That is because we did not specify an operating system. Run the file that's suitable for your operating system. For example, in Windows, double-click on the "index-win.exe" icon. It will launch the app and display a console that will act as an interactive interface between you and the app. Access the application in the preferred browser at `localhost:5000`. As seen, it works well.
 
 > **NOTE:** As long as the executable file is running, the application is running.
 
 ##### Run on Linux or macOS
 
-If you are using Ubuntu, run `./index-linux` on the terminal. Confirm if it is running on the browser at `localhost:5000`.
+If you are using Ubuntu, run `./index-linux` on the terminal. Then, confirm if it is running on the browser at `localhost:5000`.
 
 Close it using `Ctrl + C`.
 
-Incase you are using macOS, double click on "index-macos" icon and run your compiled application. Close it using the close button.
+If you are using macOS, double click on "index-macos" icon and run your compiled application. Then, close it using the close button.
 
 ##### Deeper dive
 
@@ -445,13 +445,13 @@ Delete the executable files generated in the previous process.
 
 Run the following in the Terminal:
 
-```bash
+"`bash
 pkg index.js --targets node12-win-x64
 ```
 
 This specifies that the project should be compiled into an executable file that runs on Node.js version 12 and Windows O/S of a 64-bit architecture.
 
-Some of the supported Node.js ranges, platforms and architectures are as shown in the table below:
+Some of the supported Node.js ranges, platforms, and architectures are as shown in the table below:
 
 | Node.js Versions | Platforms  | Archs  |
 |---|---|---|
@@ -467,7 +467,7 @@ Some of the supported Node.js ranges, platforms and architectures are as shown i
 Here, we should tell `pkg` our resources folder. Again, we can do this inside the `package.json` file using scripts and assets configurations.
 Let us head over to our `package.json` file and add a "pkg" as shown below:
 
-```json
+"`json
 {
     "name": "executable",
     "bin": "index.js",
@@ -498,19 +498,19 @@ Notice that we have also added "bin". This tells `pkg` where the app entry point
 
 Run `pkg` using the command below to use our configuration in `package.json`:
 
-```bash
+"`bash
 pkg .
 ```
 
 or
 
-```bash
+"`bash
 pkg package.json
 ```
 
 In the case of build files or the specific targets, you can also specify them to pkg to obtain an output of the format below:
 
-```json
+"`json
 {
     "pkg": {
               "scripts": "build/**/*.js",
