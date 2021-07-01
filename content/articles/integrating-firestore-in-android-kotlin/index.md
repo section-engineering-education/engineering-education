@@ -6,25 +6,26 @@ url: /integrating-firestore-in-android-kotlin/
 title: Integrating Cloud Firestore Database in Android using Kotlin
 description: With the advancement in technology, the need for cloud-based applications is briskly increasing. This tutorial goes through how to create a Cloud Firestore database and perform Create and Read operations in an Android app.
 author: noni-diana
-date: 2021-06-23T00:00:00-00:00
-topics: []
+date: 2021-07-01T00:00:00-14:25
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/integrating-firestore-in-android-kotlin/hero.png
     alt: Integrating Firestore in Android-Kotlin.
 ---
+Firestore is a cloud-hosted NoSQL database that can be integrated into various platforms (iOS, Android, and web apps) via the respective SDK(s). 
 
-### Introduction
-Firestore is a cloud-hosted NoSQL database that can be integrated into various platforms(iOS, Android, and web apps) via the respective SDK(s). It's a reliable database in that it offers flexible data storage structures, expressive querying, offline caching support, improved identity and access management(IAM), and synchronized real-time updates.
+It is a reliable database because it offers flexible data storage structures, expressive querying, offline caching support, improved identity and access management (IAM), and synchronized real-time updates.
+
 Modern apps are expected to run smoothly and offer the best possible user experience and that's exactly what Firestore brings us. In this article, we'll learn how Firestore can be used in an Android app using the Kotlin programming language.
 
 ### Prerequisites
 To follow through this article, you'll need to have a basic experience in:
-
-- Using [Kotlin](https://kotlinlang.org/)
-- General usage of [Android Studio](https://developer.android.com/studio)
-- View [binding or data binding](https://developer.android.com/topic/libraries/data-binding)
-- [Managing a Google account](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp)
+- Using [Kotlin](https://kotlinlang.org/).
+- General usage of [Android Studio](https://developer.android.com/studio).
+- View [binding or data binding](https://developer.android.com/topic/libraries/data-binding).
+- [Managing a Google account](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp).
 
 ### Table of contents
 - [Introduction to Cloud Firestore.](#how-firestore-stores-data)
@@ -36,12 +37,14 @@ To follow through this article, you'll need to have a basic experience in:
 - [Conclusion](#conclusion)
 
 ### How Firestore stores data
-Unlike other popular databases, Firestore stores data in a [NoSQL format](https://youtu.be/v_hR4K4auoQ), that is, data is stored in JSON objects within nodes. These nodes are referred to as documents. A document can not exist on its own. There must be a parent container that holds at least one document. This container is referred to as a collection. As the database grows, a tree-like structure is formed with the related documents and collections connected to a common collection with the aid of their respective `IDs`. Firestore is unique in that it supports creation of collections inside documents. These buried collections are known as sub-collections.
+Unlike other popular databases, Firestore stores data in a [NoSQL format](https://youtu.be/v_hR4K4auoQ), that is, data is stored in JSON objects within nodes. These nodes are referred to as documents. A document can not exist on its own. There must be a parent container that holds at least one document. This container is referred to as a collection. 
+
+As the database grows, a tree-like structure is formed with the related documents and collections connected to a common collection with the aid of their respective `IDs`. Firestore is unique in that it supports creation of collections inside documents. These buried collections are known as sub-collections.
 
 For instance, to create a `users` database, we'll create a collection called `users` and add documents with `unique` IDs each holding the user's attributes. 
 These attributes can be of the following data types:
 
-Boolean, Number, String, Geo point, Binary blob, Cloud Firestore references, Arrays, Map values, and Timestamp
+Boolean, Number, String, Geo point, Binary blob, Cloud Firestore references, Arrays, Map values, and Timestamp.
 
 ### Create a Firebase project
 Cloud Firestore is among the products that Firebase offers. We, therefore, need to create a Firebase project in which we'll create the database. Go to the [Official Firebase website](https://firebase.google.com/) and log in using your Google account.
@@ -61,12 +64,12 @@ A configuration file is a `JSON` file usually named `google-services.json` that 
 
 Open Firebase console and tap the project that you want to connect to your App. Just below the project's name is a list of available platforms that you can use. Click the Android logo to proceed.
 
-#### i). Add Application details
+##### 1. Add Application details
 This is the most critical step as it directly takes effect on the configuration file. Copy and paste the package name to avoid typing mistakes. This can be located in the module level `build.gradle` file.
 
 ![Add app details](/engineering-education/integrating-firestore-in-android-kotlin/add-app-details.png)
 
-#### ii). Download config file
+##### 2. Download config file
 After registering the app, click `Download google.services.json` to get your configuration file.
 
 ![Download config file](/engineering-education/integrating-firestore-in-android-kotlin/download-config-file.png)
@@ -76,8 +79,8 @@ Head back to Android Studio and switch to `Project view`. This shows all files a
 ### Load Firebase SDK into our App
 Firebase SDK allows us to access services such as Firebase auth, Realtime database, Firebase ML, Firestore among [others](https://firebase.google.com/products-build).
 
-#### i). Firestore dependencies
-Add the following dependency in the module-level `build.gradle` file.
+##### 1. Firestore dependencies
+Add the following dependency in the module-level `build.gradle` file:
 
 ```bash    
 // BoM and Firestore
@@ -88,21 +91,21 @@ implementation 'com.google.firebase:firebase-firestore-ktx'
 
 This declares Firestore library dependency. BoM (Bill of Materials) is a library that allows us to use Firebase libraries without specifying their versions.
 
-Include this plugin too.
+Include this plugin too:
 ```gradle
 plugins{
     id 'com.google.gms.google-services'
 }
 ```
 
-#### ii). Add classpaths (top level build.gradle file)
+##### 2. Add classpaths (top level build.gradle file)
 ```bash
 dependencies{
     classpath 'com.google.gms:google-services:4.3.8'
 }
 ```
 
-Don't forget to add internet permission in the `Manifest file`.
+Don't forget to add internet permission in the `Manifest file`:
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
@@ -113,14 +116,14 @@ We've successfully connected Firebase project to our Android app. Open Firebase 
 ![Firebase projects](/engineering-education/integrating-firestore-in-android-kotlin/my-firebase-projects.png)
 
 ### Create Cloud Firestore database
-Now that the setup is complete, we can proceed to create a Cloud Firestore database by clicking the respective project >> `Firestore database` on the left panel >> `Create database as shown below.
+Now that the setup is complete, we can proceed to create a Cloud Firestore database by clicking the respective project >> `Firestore database` on the left panel >> `Create database` as shown below.
 
 ![Create databse](/engineering-education/integrating-firestore-in-android-kotlin/create-cloud-database.png)
 
 ### Firestore Data Security
-Firestore uses a variety of rules to control database access. The following are the `two` commonly used rules.
+Firestore uses a variety of rules to control database access. The following are the two commonly used rules.
 
-#### i). Test rule
+#### 1. Test rule
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -134,7 +137,7 @@ service cloud.firestore {
 ```
 This allows all app users to read, write and perform any other data manipulation activity on the database for one month if rules remain unchanged. After this, all users are denied access to the database. Therefore this rule is not recommended for production, but it is preferred for testing purposes.
 
-#### ii). Authentication required
+#### 2. Authentication required
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -186,8 +189,8 @@ To learn more about Firebase rules, be sure to check out [Firebase Docs](https:/
         app:layout_constraintTop_toBottomOf="@+id/btnUploadData" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-This creates two buttons. They'll be used to trigger an `upload` and `read data` task respectively.
-Add the missing strings in the `strings.xml` file.
+This creates two buttons. They'll be used to trigger an `upload` and `read data` tasks respectively.
+Add the missing strings in the `strings.xml` file:
 
 ```xml
 <resources>
@@ -198,7 +201,7 @@ Add the missing strings in the `strings.xml` file.
 
 ### Enable viewBinding
 View binding allows us to access views via the binding class of the `XML layout` they belong to.
-Add the code block below in the module level `gradle` file and sync your project.
+Add the code block below in the module level `gradle` file and sync your project:
 
 ```bash
 android{
@@ -228,12 +231,10 @@ class MainActivity : AppCompatActivity() {
 Here, we've made use of viewBinding to inflate UI accordingly. We've also declared a global constant variable that will be used as a tag in our log messages.
 
 ### Database operations
-(using test rules)
-
-Operations in a database include Create, Read, Update, and Delete also known as CRUD operations.
+Using test rules. Operations in a database include Create, Read, Update, and Delete also known as CRUD operations.
 
 #### Create database instance
-Create a `Kotlin` class named `FirebaseUtils` and paste the code below in it.
+Create a `Kotlin` class named `FirebaseUtils` and paste the code below in it:
 ```kotlin
 class FirebaseUtils {
         val fireStoreDatabase = FirebaseFirestore.getInstance()
@@ -242,8 +243,8 @@ class FirebaseUtils {
 
 This serves as an API that allows us to `add`, `get`, `delete`, and `update` collections and documents in the database.
 
-#### i). Upload data
-An upload action will be initiated when the `upload` button is clicked. Paste the following in the `MainActivity.kt` file.
+##### 1. Upload data
+An upload action will be initiated when the `upload` button is clicked. Paste the following in the `MainActivity.kt` file:
 ```kotlin
 private fun uploadData() {
     binding!!.btnUploadData.setOnClickListener {
@@ -266,7 +267,7 @@ private fun uploadData() {
             }
     }
 ```
-Call this function in the `onCreate()` method
+Call this function in the `onCreate()` method:
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     ...
@@ -282,7 +283,7 @@ To confirm that the database is up and running, open it on the Firebase console 
 
 Multiple numbers of documents are created based on the number of times we upload. These documents belong to the `users` collection and that's why we have only one collection in our database.
 
-#### ii). Read data
+##### 2. Read data
 ```kotlin
 private fun readData{
     binding!!.btnReadData.setOnClickListener {
@@ -304,7 +305,9 @@ Here we've used the `get()` method to retrieve all documents in the `users` coll
 ![Logs](/engineering-education/integrating-firestore-in-android-kotlin/logs.png)
 
 ### Conclusion
-That's it! You can now implement Firestore cloud database in your Android app. This can be advanced further to get input data from the user and upload/retrieve it using [Kotlin coroutines](https://developer.android.com/kotlin/coroutines) for a smooth performance. In the next tutorial, we'll look at data modeling and querying techniques and display the actual data in a Recyclerview. The source code for this project can be found on [this Github repository](https://github.com/nonimdiana/integrating-firestore-in-android)
+That's it! You can now implement Firestore cloud database in your Android app. This can be advanced further to get input data from the user and upload/retrieve it using [Kotlin coroutines](https://developer.android.com/kotlin/coroutines) for a smooth performance. 
+
+In the next tutorial, we'll look at data modeling and querying techniques and display the actual data in a Recyclerview. The source code for this project can be found on [this Github repository](https://github.com/nonimdiana/integrating-firestore-in-android).
 
 Happy Coding!
 
