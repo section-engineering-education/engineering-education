@@ -1,16 +1,35 @@
-[Docker](https://www.docker.com/) is a lightweight virtual machine (VM) that lets you specify virtual computers known as containers. These containers are made up of software images provided by various official software vendors. These containers, unlike traditional VMs, are super light and are not resource-intensive. Multiple containers can usually run in parallel with little impact on the host machine's resources. And that is absolutely what Docker containers are made for. The lightweight Docker containerization philosophy separates each service that your application requires and runs them in isolated environments.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
+author: 
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Docker makes it simple to set up these environments. With a single yml file, you'll be able to build several containers that will all work together within a single network and communicate with each other to create a single functioning application. Containers allow developers to package an application along with all of its necessary components, including dependencies and other libraries and distribute it as a single package.
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+[Docker](https://www.docker.com/) is a platform that enables you to build, manage, and ship applications. These applications are usually installed in specific areas known as containers. Unlike traditional VMs, Docker containers are super light and less resource-intensive. 
+<!--more-->
+### Introduction
+Docker containers allow developers to package an application along with all of its necessary components, including dependencies and other libraries and distribute it as a single package. This enables the software to function the same way on different platforms or operating systems. In this article, we will learn how to containerize an AngularJS application.
 
-On the other hand, [Angular](https://angular.io/) is a single-page app design JavaScript front-end framework and a development platform for building innovative and advanced apps. Similar to React and Vue used to run the application on the client-side. Angular is also often used with back-end APIs to create powerful full-stack applications, such as making HTTP requests to a MERN stack.
+[AngularJS](https://angular.io/) is a JavaScript front-end framework for building innovative and advanced web apps. It uses the same technologies as React.js and Vue.js. AngularJS can also be used to create back-end APIs, as well as full-stack applications
 
-In this guide, we'll set up a simple [docker-compose](https://docs.docker.com/compose/) script to get you up and to run with Docker, docker-compose, and a local Angular environment on your computer featuring Nginx for reverse proxy. No need to install [Angular CLI](https://angular.io/cli) locally. Docker-compose will help us lay down some instructions to get Angular containerized and ready to run some code.
-
-Let's dive in and create a Docker image of an Angular application.
+### Objective
+In this guide, we'll set up a simple [Docker-compose](https://docs.docker.com/compose/) script to containerize our AngularJS application
 
 ### Setting the local environments
+To start with, install Docker on your computer. You can follow this tutorial(https://www.section.io/engineering-education/getting-started-with-docker/) to get started with Docker.
 
-To start with, install Docker on your computer. In this case, I am using windows OS [download and install Docker desktop](https://www.docker.com/products/docker-desktop) on your computer. Next, run `docker version` to confirm if Docker was successfully installed. If this was a success, you would get a log of the Docker version installed.
+In this case, I am using Windows OS [download and install Docker desktop](https://www.docker.com/products/docker-desktop) on your computer. 
+
+Next, run `docker version` to confirm if Docker was successfully installed. If this was a success, you would get a log of the Docker version installed.
 
 ![Install docker version](/engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/docker-version.png)
 
@@ -166,6 +185,7 @@ With the image all set, you can deploy it to Dockerhub or share it with teammate
 
 The concept of Docker virtualization is an incredible technology. It can be used to virtualize almost any sort of application you can think of. Angular is used to customize frontend web designs and appearance. However, you can still use it with backend technologies such as [Node.js](/building-a-nodejs-application-using-docker/), and the fun part is that you can still dockerize it as a whole full-stack application. Check out this fantastic tutorial to more about docker.
 
+### Further reading
 [Getting Started with Docker](/getting-started-with-docker/)
 [Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
 [Building A Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
@@ -175,3 +195,6 @@ The concept of Docker virtualization is an incredible technology. It can be used
 [How to Share Data Between Docker Containers](/sharing-data-between-docker-containers/)
 
 Happy Hacking!!
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
