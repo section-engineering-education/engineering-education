@@ -7,7 +7,7 @@ title: The Evolution of Computing to Edge Computing
 description: In this article, we will look at real-time systems, their challenges and compare them to edge computing and its benefits.
 author: sharon-kinyan
 date: 2021-06-29T00:00:00-20:30
-topics: []
+topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
   -url: /what-is-edge-computing/hero.png
@@ -19,6 +19,8 @@ There are huge amounts of data being collected from our mobile phones, autonomou
 ### Prerequisite
 
 Before reading this article, a reader should be familiar with a variety of computing infrastructures and data storage resources such as [Google cloud](https://cloud.google.com/) and [Amazon Web Services](https://aws.amazon.com/) are they are the de-facto standards in many industries today. 
+
+### Introduction
 
 There are huge amounts of data being collected from our mobile phones, autonomous vehicles, cell towers, and factories. This has led to a growing need for real-time data processing. Real-time systems process data as they are received, where a response is guaranteed in a stipulated timing constraint. A good example is the flight control system which receives information from different sensors. It processes data as it arrives. 
 
