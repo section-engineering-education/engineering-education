@@ -295,7 +295,7 @@ Here we've initialized the adapter with a dummy list. When the update button is 
 ### Test the App
 After running the App, you should see something similar to this;
 
-![App testing image]()
+![App testing image-gif](/engineering-education/improving-app-performance-with-diffutil/app-testing.gif)
 
 Notice that only the new items are updated. This way, the device's resources such as battery and memory are saved. As a result, the users have a quick and seamless experience. 
 
