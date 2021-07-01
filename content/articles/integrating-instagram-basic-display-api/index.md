@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/integrating-instagram-basic-display-api/
+url: /integrating-instagram-basic-display-api/
 title: Integrating Instagram Basic Display API on a Node.js GraphQL API
 description: In this article, we will learn how to integrate the Instagram basic display API on a Node.js GraphQL API.
 author: kennedy-mwangi
-date: 
-topics: []
+date: 2021-07-01T00:00:00-12:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/integrating-instagram-basic-display-api/hero.jpg
@@ -24,7 +24,7 @@ In this article, we will integrate the Instagram basic display API on a Node.js 
 To follow along in this article, it is necessary to have:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-- Working knowledge with [GraphQL](https://graphql.org/).
+- Working knowledge of [GraphQL](https://graphql.org/).
 - Working knowledge of JavaScript.
 
 ### Overview
@@ -60,9 +60,9 @@ To consume the Instagram API, we will need to have created an app. To do that, w
   
   In the form, we will enter the link to yield a `200` status code as follows
   
-  ![urls-insta-display-app](/integrating-instagram-basic-display-api/urls-insta-display-app.png)
+  ![urls-insta-display-app](/engineering-education/integrating-instagram-basic-display-api/urls-insta-display-app.png)
   
-- In the _App Review for Instagram Basic Display_ section, hit _Add to Submission_ for _instagram_graph_user_profile_ and _instagram_graph_user_media_ to be able to access Instagram's user profile and media.
+- In the _App Review for Instagram Basic Display_ section, hit _Add to Submission_ for _instagram_graph_user_profile_and_instagram_graph_user_media_ to be able to access Instagram's user profile and media.
 - Hit the `Save Changes` button below.
 
 ### Adding an Instagram test user
@@ -75,7 +75,7 @@ To use the Instagram basic display API in development, we will have to add a tes
 - Log in to that particular Instagram account you have entered its username.
 - In the _settings_ section, find _Apps and Websites_. In the resulting section, click on the _TESTER INVITES_ tab. Your recently created app should be listed there as follows:
   
-  ![tester-invites](/integrating-instagram-basic-display-api/tester-invites.png)
+  ![tester-invites](/engineering-education/integrating-instagram-basic-display-api/tester-invites.png)
   
   Click on the _Accept_ button.
   
@@ -85,17 +85,18 @@ To use the Instagram basic display API in development, we will have to add a tes
 To set up the project, we will follow the following steps:
 
 - Create a folder _instagram-display-api-graphql_.
-- Open VsCode to that specific folder.
-- Open the VsCode terminal by pressing **ctrl+shift+`**.
+- Open VS Code to that specific folder.
+- Open the VS Code terminal by pressing **ctrl+shift+`**.
 - In the resulting terminal, type in :
   
   ```bash
   npm init --y
   ```
+
   to initialize the application with default settings.
 
 - Structurize the application as follows:
-  ![project_structure](/integrating-instagram-basic-display-api/project-structure.png)
+  ![project_structure](/engineering-education/integrating-instagram-basic-display-api/project-structure.png)
 
 ### Installing the necessary dependencies
 To start, we will install all the dependencies that we will need throughout the application.
@@ -103,7 +104,7 @@ To start, we will install all the dependencies that we will need throughout the 
 The dependencies are as follows:
 
 - **express**: Minimalist web application framework for Node.js.
-- **apollo-server-express**: For providing an [Express Js](https://expressjs.com/) based integration for GraphQL server.
+- **apollo-server-express**: For providing an [Express.js](https://expressjs.com/) based integration for GraphQL server.
 - **axios**: For sending requests and receiving responses from Instagram API.
 - **cors**: For controlling client access.
 - **dotenv**: For accessing the environmental variables from the `.env` file.
@@ -125,9 +126,10 @@ To get an authorization code, we follow the following steps:
 - Start with getting our application's credentials. To do this, go to your dashboard page. On the left sidebar to the bottom, click on _Instagram Basic Display_ and _Basic Display_.
 - In the resulting page, scroll down to find the _Instagram App ID_, and _Instagram App Secret_, copy them and paste them appropriately to the `.env` file in the root of the project. Your `.env` file should be similar to:
   
-  ![credentials](/integrating-instagram-basic-display-api/credentials.png)
+  ![credentials](/engineering-education/integrating-instagram-basic-display-api/credentials.png)
   
 - After setting your credentials, its time we set up the server in the `src/index.js` file by adding the following:
+
   ```javascript
   const express = require("express");
   const cors = require("cors");
@@ -154,17 +156,18 @@ To get an authorization code, we follow the following steps:
   // start server on the PORT.
   app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
   ```
+
   From above, we are:
-    - Requiring the packages we need.
-    - Setting the port for our application to run to.
-    - Initializing express.
-    - Adding some configuration to the express app.
-    - Setting up the route for getting an authorization code.
-    - Starting the server by listening to the specified port.
+  - Requiring the packages we need.
+  - Setting the port for our application to run to.
+  - Initializing express.
+  - Adding some configuration to the express app.
+  - Setting up the route for getting an authorization code.
+  - Starting the server by listening to the specified port.
 
 - Edit the `scripts` section of `package.json` as follows:
   
-  ![scripts-section](/integrating-instagram-basic-display-api/scripts-section.png)
+  ![scripts-section](/engineering-education/integrating-instagram-basic-display-api/scripts-section.png)
   
 - In your recently opened VsCode terminal, run the following command:
   
@@ -176,11 +179,11 @@ To get an authorization code, we follow the following steps:
 
 - From your web browser, open _http:localhost:4000/get-auth-code_. In there, click the link _Connect to Instagram_ to connect to your Instagram account.
 - In the resulting pop-up, click _Allow_, after which you will be redirected to a different page. On this new page, in the URL section, we have a code parameter which is as below:
-  ![url-code](/integrating-instagram-basic-display-api/url-code.png)
+  ![url-code](/engineering-education/integrating-instagram-basic-display-api/url-code.png)
   
   Copy the entire code up to where we have `#`. Don't include the `#`. Paste the code to your `.env` file. Your `.env` file should now be similar to:
   
-  ![new-env](/integrating-instagram-basic-display-api/new-env.png)
+  ![new-env](/engineering-education/integrating-instagram-basic-display-api/new-env.png)
 
 ### Getting the short-lived access token
 After getting the authorization code, we can now get the short-lived access token. It is defined as short-lived because it is only valid for one hour. An access token is usually sent along with every request you make to the API for authentication.
@@ -189,28 +192,37 @@ To get the short-lived access token, we will follow the following steps:
 
 - Introduce `Apollo server` to our app. To do this, we will edit our `src/index.js` as follows:
   - Require it as a package at the top:
+
     ```js
     const { ApolloServer } = require("apollo-server-express");
     ```
+
   - Require the type definitions and the resolvers:
+
     ```js
     const typeDefs = require("./schema");
     const resolvers = require("./resolvers");
     ```
+
   - After the express configurations, we configure `Apollo server` as follows:
+
     ```js
     const server = new ApolloServer({ typeDefs, resolvers });
     server.start().then(() => {
       return server.applyMiddleware({ app });
     });
     ```
+
     The above configuration takes in the _typeDefs_ which is the _schema_ and the _resolvers_. The server is started and then the express instance, _app_ is applied as a middleware.
 - In the `schema/index.js` file, we set up the schema:
   - Start by requiring `gql` from `apollo-server-express`. It will add some highlights to the queries we will write:
+
     ```js
     const { gql } = require("apollo-server-express");
     ```
+
   - We define the schema of the response sent by the API when getting a short lived access token:
+
     ```js
     const AccessTokenResponse = gql`
       type AccessTokenResponse {
@@ -219,8 +231,10 @@ To get the short-lived access token, we will follow the following steps:
       }
     `;
     ```
+
     The response will consist of an `access_token` which is a `String` and a `user_id` which is a `Float`.
   - We then define the overall `Query` for the schema. It will hold all the methods and their respective response schemas:
+
     ```js
     const Query = gql`
       type Query {
@@ -228,15 +242,18 @@ To get the short-lived access token, we will follow the following steps:
       }
     `;
     ```
+
     From above, the method `getShortLivedAccessToken` will return a response with the schema `AccessTokenResponse`.
   - We then export the `Query`, and `AccessTokenResponse`:
+
     ```js
     module.exports = [AccessTokenResponse, Query];
     ```
+
     We are exporting it as an array because, throughout the article, we will define other schemas.
 - After the definition in the schema, we now work out the resolvers. To do this, proceed to `resolvers/Instagram.js`:
   - Start by requiring the necessary packages:
-    
+
       ```js
       const { UserInputError } = require("apollo-server-express");
       const { get } = require("axios").default;
@@ -244,16 +261,20 @@ To get the short-lived access token, we will follow the following steps:
       const { promisify } = require("util");
       require("dotenv").config();
       ```
-   - **UserInputError**: Will be used for sending an error to the user.
-   - **get**: For sending _GET_ request to the Instagram API.
-   - **post**: For sending _POST_ request to Instagram API with `Form Data`.
-   - **promisify**: For turning a callback to a promise-based function.
-   - **dotenv**: For loading environmental variables.
+
+  - **UserInputError**: Will be used for sending an error to the user.
+  - **get**: For sending _GET_ request to the Instagram API.
+  - **post**: For sending _POST_ request to Instagram API with `Form Data`.
+  - **promisify**: For turning a callback to a promise-based function.
+  - **dotenv**: For loading environmental variables.
   - Promisify the `post` function from request:
+
     ```js
     const postAsync = promisify(post);
     ```
+
   - Initialize the function to get the `access token`:
+
     ```js
     async function getShortLivedAccessToken() {
       // sending the request.
@@ -286,21 +307,25 @@ To get the short-lived access token, we will follow the following steps:
       return response;
     }
     ```
-    From above, we are:
+  
+From above, we are:
 
-   - Sending the request to the API.
-   - Getting the response from the API.
-   - Checking the status code of the response to detect an error.
-   - If an error exists, sending the error.
-   - If an error does not exist, sending the response.
+- Sending the request to the API.
+- Getting the response from the API.
+- Checking the status code of the response to detect an error.
+- If an error exists, sending the error.
+- If an error does not exist, sending the response.
 
 - Export the function from the file:
+
   ```js
   module.exports = {
     getShortLivedAccessToken,
   };
   ```
+
 - After declaring the function in the `resolvers/Instagram.js` file, We also need to make it known in the `resolvers/index.js` file. From this file, it's where we will export the general `Query` object we declared in the `schema/index.js` file. Therefore, for all the functions we will declare in the `resolvers/Instagram.js` file, we have to make each of them known here. For now, we will add the following:
+
   ```js
   // get the defined function(s)
   const { getShortLivedAccessToken } = require("./instagram");
@@ -315,13 +340,19 @@ To get the short-lived access token, we will follow the following steps:
   // export the Query object
   module.exports = Query;
   ```
+
 - After adding the **getShortLivedAccessToken** to the `resolvers/index.js`, we are ready to test the functionality. To do so, we will follow the following steps:
-  - Start the development server if not yet started by running:
+
+- Start the development server if not yet started by running:
+
     ```bash
     npm run dev
     ```
+
   - From your browser, visit: `http://localhost:4000/graphql`.
-  - In the space provided on the left side, write the following Query:
+
+  - In the space provided on the left side, write the following query:
+
     ```js
     query GetShortToken{
       getShortLivedAccessToken{
@@ -330,15 +361,18 @@ To get the short-lived access token, we will follow the following steps:
       }
     }
     ```
-    The above query calls the `getShortLivedAccessToken` method and then extracts the `access_token` and `user_id` from the response of the method.
-  - Hit the play button aligned at the center between the left pane and the right pane.
-  - Observe the results. If you get an error of invalid `client secret` and `code` or that your `authorization code` has expired, revisit the [previous step](#getting-the-authorization-code) and restart the server manually by pressing `ctrl + c` to stop it and then `npm run dev` to start it. Else if you got no error, your response on the right side should be similar to:
-      
-    ![short-lived-at-response](/integrating-instagram-basic-display-api/short-lived-at-response.png)
-  
-  - Copy the access token value from the response to your `.env` file. Your `.env` file now should be similar to:
 
-    ![env-with-sat](/integrating-instagram-basic-display-api/env-with-sat.png)
+The above query calls the `getShortLivedAccessToken` method and then extracts the `access_token` and `user_id` from the response of the method.
+
+- Hit the play button aligned at the center between the left pane and the right pane.
+
+- Observe the results. If you get an error of invalid `client secret` and `code` or that your `authorization code` has expired, revisit the [previous step](#getting-the-authorization-code) and restart the server manually by pressing `ctrl + c` to stop it and then `npm run dev` to start it. Else if you got no error, your response on the right side should be similar to:
+
+![short-lived-at-response](/engineering-education/integrating-instagram-basic-display-api/short-lived-at-response.png)
+  
+- Copy the access token value from the response to your `.env` file. Your `.env` file now should be similar to:
+
+![env-with-sat](/engineering-education/integrating-instagram-basic-display-api/env-with-sat.png)
 
 ### Getting the long-lived access token
 Since short-lived access tokens have a limited time-space, it is vital to generate an access token with a longer time-space. They are called **long-lived access tokens**. They are valid for **60 days**.
@@ -346,6 +380,7 @@ Since short-lived access tokens have a limited time-space, it is vital to genera
 To get a long-lived access token, we will follow the following steps:
 
 - In the `schema/index.js`, we add its schema definition as follows:
+
   ```js
   const LongLivedAccessToken = gql`
     type LongLivedAccessToken {
@@ -355,8 +390,10 @@ To get a long-lived access token, we will follow the following steps:
     }
   `;
   ```
+
   The above schema defines that the response of getting a **long-lived access token** will comprise of: an **access token**, a **token type**, and an **expires in** value.
 - Add the method of getting a **long-lived access token** to the query object:
+
   ```js
   const Query = gql`
     type Query {
@@ -365,11 +402,15 @@ To get a long-lived access token, we will follow the following steps:
     }
   `;
   ```
+
 - Add the schema definition to the exported array:
+
   ```js
   module.exports = [AccessTokenResponse, LongLivedAccessToken, Query];
   ```
+
 - After exporting the schema, we proceed to the `resolvers/Instagram.js` and define a function to get the **long-lived access token** from the API:
+
   ```js
   // getting a long lived access token
   async function getLongLivedAccessToken() {
@@ -397,27 +438,32 @@ To get a long-lived access token, we will follow the following steps:
     return response;
   }
   ```
+
   From above, we are:
 
-  - Sending a GET request to the API.
-  - Listening for any error that might occur and returning it.
-  - If no error occurs, we are sending back the response.
+- Sending a GET request to the API.
+- Listening for any error that might occur and returning it.
+- If no error occurs, we are sending back the response.
 - Add the function to the exported object:
+
 ```js
 module.exports = {
   getShortLivedAccessToken,
   getLongLivedAccessToken,
 };
 ```
-- In the `resolvers/index.js` file:
-  - import the function:
+
+- In the `resolvers/index.js` file, import the function:
+
     ```js
     const {
       getShortLivedAccessToken,
       getLongLivedAccessToken,
     } = require("./instagram");
     ```
+
   - Add it to the **Query** object:
+
     ```js
     const Query = {
       Query: {
@@ -426,31 +472,32 @@ module.exports = {
       },
     };
     ```
+
 - After that, we can test the functionality now. To do that:
+- Ensure that your development server is up and running.
+- In your browser, In the same tab we were previously, click the `+` to open another pane.
+- In the resulting pane, on the left side, add the following query:
 
-  - Ensure that your development server is up and running.
-  - In your browser, In the same tab we were previously, click the `+` to open another pane.
-  - In the resulting pane, on the left side, add the following query:
-
-    ```js
+```js
       query GetLongLivedToken {
         getLongLivedAccessToken{
           access_token
           token_type
           expires_in
         }
-      }
-    ```
-    The above query calls the _getLongLivedAccessToken_ method and extracts the _access_token_, _token_type_, _expires_in_.
+     }
+```
 
-  - Click the play button in the middle and observe the results.
-  - If your short-lived access token is expired, go to the [previous step](#getting-short-lived-access-token). Else, your response should be similar to:
+The above query calls the _getLongLivedAccessToken_ method and extracts the _access_token, _token_type_ and _expires_in_.
 
-    ![long-lived-at-response](/integrating-instagram-basic-display-api/long-lived-at-response.png)
+- Click the play button in the middle and observe the results.
+- If your short-lived access token is expired, go to the [previous step](#getting-short-lived-access-token). Else, your response should be similar to:
 
-  - Copy your access token from the response to your `.env` file. Your `.env` file should be similar to:
+![long-lived-at-response](/engineering-education/integrating-instagram-basic-display-api/long-lived-at-response.png)
 
-    ![env-with-llat.png](/integrating-instagram-basic-display-api/env-with-llat.png)
+- Copy your access token from the response to your `.env` file. Your `.env` file should be similar to:
+
+![env-with-llat.png](/engineering-education/integrating-instagram-basic-display-api/env-with-llat.png)
 
 ### Getting user profile data
 On an Instagram account, we can be able to get the profile data of that specific account. The profile data here involves the _account type_, _id_, _media count_, and _username_.
@@ -458,6 +505,7 @@ On an Instagram account, we can be able to get the profile data of that specific
 To implement the above functionality, we will follow the following steps:
 
 - Add its schema definition in `schema/index.js`:
+
   ```js
   const ProfileData = gql`
     type ProfileData {
@@ -468,8 +516,11 @@ To implement the above functionality, we will follow the following steps:
     }
   `;
   ```
-  From above, we are setting our response to contain the _account_type_, _id_, _media_count_, and _username_ since it is what we want to get.
+
+From above, we are setting our response to contain the _account_type_, _id_, _media_count_, and _username_ since it is what we want to get.
+
 - Add the method of getting profile data to the Query object:
+
   ```js
   const Query = gql`
     type Query {
@@ -479,7 +530,9 @@ To implement the above functionality, we will follow the following steps:
     }
   `;
   ```
+
 - Add the schema defined above to the exported array:
+
   ```js
   module.exports = [
     AccessTokenResponse,
@@ -488,7 +541,9 @@ To implement the above functionality, we will follow the following steps:
     Query,
   ];
   ```
+
 - After defining the schema, we set up the function for getting the profile data from the API in the `resolvers/Instagram.js` file as follows:
+
   ```js
   // getting profile data
   async function getProfileData() {
@@ -514,13 +569,15 @@ To implement the above functionality, we will follow the following steps:
     return response;
   }
   ```
-  From above, we are:
 
-  - Sending request to the API.
-  - Listening to any error that occurs. If it does, we return the error.
-  - Else if, no error, we return the data sent.
+From above, we are:
+
+- Sending request to the API.
+- Listening to any error that occurs. If it does, we return the error.
+- Else if, no error, we return the data sent.
 
 - Add the above function to the exported object:
+
   ```js
   module.exports = {
     getShortLivedAccessToken,
@@ -529,53 +586,51 @@ To implement the above functionality, we will follow the following steps:
   };
   ```
 
-- In the `resolvers/index.js`:
+- In the `resolvers/index.js`, import the function:
 
-  - import the function:
+```js
+const {
+    getShortLivedAccessToken,
+    getLongLivedAccessToken,
+    getProfileData,
+  } = require("./instagram");
+```
 
-    ```js
-    const {
-      getShortLivedAccessToken,
-      getLongLivedAccessToken,
-      getProfileData,
-    } = require("./instagram");
-    ```
+- Add the function to the Query object:
 
-  - Add the function to the Query object:
-
-    ```js
-    const Query = {
-      Query: {
-        getShortLivedAccessToken: () => getShortLivedAccessToken(),
-        getLongLivedAccessToken: () => getLongLivedAccessToken(),
-        getProfileData: () => getProfileData(),
-      },
-    };
-    ```
+```js
+const Query = {
+  Query: {
+    getShortLivedAccessToken: () => getShortLivedAccessToken(),
+    getLongLivedAccessToken: () => getLongLivedAccessToken(),
+    getProfileData: () => getProfileData(),
+  },
+};
+```
 
 - Test the functionality:
 
-  - Ensure that the development server is up and running.
-  - In the same browser tab as previously, click the `+` to open a separate pane. On the left side of the pane, add the following query:
+- Ensure that the development server is up and running.
+- In the same browser tab as previously, click the `+` to open a separate pane. On the left side of the pane, add the following query:
 
-    ```js
-    query getProfileData {
-      getProfileData{
-        account_type
-        id
-        media_count
-        username
-      }
-    }
-    ```
+```js
+query getProfileData {
+  getProfileData{
+    account_type
+    id
+    media_count
+    username
+  }
+}
+```
 
-    From above, we are calling the _getProfileData_ function and extracting the _account_type_,_id_,_media_count_,_username_.
+From above, we are calling the _getProfileData_ function and extracting the _account_type_,_id_,_media_count_,_username_.
 
-  - Click the play button in the center, If everything was okay, you should receive a response similar to:
+- Click the play button in the center, If everything was okay, you should receive a response similar to:
 
-    ![profile-data-response](/integrating-instagram-basic-display-api/profile-data-response.png)
+![profile-data-response](/engineering-education/integrating-instagram-basic-display-api/profile-data-response.png)
 
-    In case of an error, revisit the steps.
+In case of an error, revisit the steps.
 
 ### Getting user media data
 Media data is the data that the user has posted in his or her Instagram account. The _media_count_ value from the previous process is the count of the media data that the user has posted.
@@ -584,152 +639,152 @@ The media here can be a photo, a video, or a carousel album. To set up the funct
 
 - Start by setting up the schema for the data we will receive:
 
-  ```js
-  const MediaData = gql`
-    scalar Date
-    type MediaData {
-      caption: String
-      id: String
-      media_type: String
-      media_url: String
-      permalink: String
-      thumbnail_url: String
-      timestamp: Date
-      username: String
-    }
-  `;
+```js
+const MediaData = gql`
+  scalar Date
+  type MediaData {
+    caption: String
+    id: String
+    media_type: String
+    media_url: String
+    permalink: String
+    thumbnail_url: String
+    timestamp: Date
+    username: String
+  }
+`;
   ```
 
-  From above, we are setting that the media data will comprise of _caption_, _id_,_media_type_, _media_url_, _permalink_, _thumbnail_url_, _timestamp_, _username_.
+From above, we are setting that the media data will comprise of _caption_, _id_,_media_type_, _media_url_, _permalink_, _thumbnail_url_, _timestamp_, _username_.
 
 - Add the method of getting a user's media data to the Query object:
 
-  ```js
-  const Query = gql`
-    type Query {
-      getShortLivedAccessToken: AccessTokenResponse
-      getLongLivedAccessToken: LongLivedAccessToken
-      getProfileData: ProfileData
-      getUserMediaData: [MediaData]
-    }
-  `;
-  ```
+```js
+const Query = gql`
+  type Query {
+    getShortLivedAccessToken: AccessTokenResponse
+    getLongLivedAccessToken: LongLivedAccessToken
+    getProfileData: ProfileData
+    getUserMediaData: [MediaData]
+  }
+`;
+```
 
-  From above, we are adding the _getUserMediaData_ method, which will return an array of data with type _MediaData_.
+From above, we are adding the _getUserMediaData_ method, which will return an array of data with type _MediaData_.
 
 - Add the _MediaData_ type to the exported array:
 
-  ```js
-  module.exports = [
-    AccessTokenResponse,
-    LongLivedAccessToken,
-    ProfileData,
-    MediaData,
-    Query,
-  ];
-  ```
+```js
+module.exports = [
+  AccessTokenResponse,
+  LongLivedAccessToken,
+  ProfileData,
+  MediaData,
+  Query,
+];
+```
 
 - In the `resolvers/Instagram.js`, we set up a function for getting media data as follows:
 
-  ```js
-  // getting media data
-  async function getUserMediaData() {
-    let response;
+```js
+// getting media data
+async function getUserMediaData() {
+  let response;
 
-    // sending request to API
-    try {
-      response = await get("https://graph.instagram.com/me/media", {
-        params: {
-          fields:
-            "id,caption,media_url,media_type,permalink,thumbnail_url,timestamp,username",
-          access_token: process.env.LONG_LIVED_AT,
-        },
-        headers: {
-          host: "graph.instagram.com",
-        },
-      });
-    } catch (error) {
-      // Catching an error, and returning it.
-      return new UserInputError(error);
-    }
-
-    // If no error, returning the response.
-    response = response["data"];
-    return response.data;
+  // sending request to API
+  try {
+    response = await get("https://graph.instagram.com/me/media", {
+      params: {
+        fields:
+          "id,caption,media_url,media_type,permalink,thumbnail_url,timestamp,username",
+        access_token: process.env.LONG_LIVED_AT,
+      },
+      headers: {
+        host: "graph.instagram.com",
+      },
+    });
+  } catch (error) {
+    // Catching an error, and returning it.
+    return new UserInputError(error);
   }
-  ```
 
-  From above, we are:
+  // If no error, returning the response.
+  response = response["data"];
+  return response.data;
+}
+```
 
-  - Sending request to the API.
-  - Listening to any error, catching it, and returning it.
-  - If there is no error, returning the response from the API.
+From above, we are:
+
+- Sending request to the API.
+- Listening to any error, catching it, and returning it.
+- If there is no error, returning the response from the API.
 
 - Add the function to the exported object:
 
+```js
+module.exports = {
+  getShortLivedAccessToken,
+  getLongLivedAccessToken,
+  getProfileData,
+  getUserMediaData,
+};
+```
+
+- In the `resolvers/index.js`:
+
+- Import the function:
+
   ```js
-  module.exports = {
+  const {
     getShortLivedAccessToken,
     getLongLivedAccessToken,
     getProfileData,
     getUserMediaData,
+  } = require("./instagram");
+  ```
+
+- Add the function to the Query object:
+
+  ```js
+  const Query = {
+    Query: {
+      getShortLivedAccessToken: () => getShortLivedAccessToken(),
+      getLongLivedAccessToken: () => getLongLivedAccessToken(),
+      getProfileData: () => getProfileData(),
+      getUserMediaData: () => getUserMediaData(),
+    },
   };
   ```
 
-- In the `resolvers/index.js`:
-
-  - Import the function:
-
-    ```js
-    const {
-      getShortLivedAccessToken,
-      getLongLivedAccessToken,
-      getProfileData,
-      getUserMediaData,
-    } = require("./instagram");
-    ```
-
-  - Add the function to the Query object:
-
-    ```js
-    const Query = {
-      Query: {
-        getShortLivedAccessToken: () => getShortLivedAccessToken(),
-        getLongLivedAccessToken: () => getLongLivedAccessToken(),
-        getProfileData: () => getProfileData(),
-        getUserMediaData: () => getUserMediaData(),
-      },
-    };
-    ```
-
 - To test the functionality:
 
-  - Ensure that the development server is up and running.
-  - In your browser, in the previous tab, hit the `+` to open a separate tab. In the new tab, on the left pane, add the following query:
+- Ensure that the development server is up and running.
+- In your browser, in the previous tab, hit the `+` to open a separate tab. In the new tab, on the left pane, add the following query:
 
-    ```js
-    query getMediaData{
-      getUserMediaData{
-        caption
-        id
-        media_type
-        media_url
-        permalink
-        thumbnail_url
-        timestamp
-        username
+  ```js
+  query getMediaData{
+    getUserMediaData{
+      caption
+      id
+      media_type
+      media_url
+      permalink
+      thumbnail_url
+      timestamp
+      username
 
-      }
     }
-    ```
+  }
+  ```
 
-    The following query calls the _getUserMediaData_ function and extracts the _caption_, _id_, _media_type_, _media_url_, _permalink_, _thumbnail_url_, _timestamp_, _username_ from the response.
+The following query calls the _getUserMediaData_ function and extracts the _caption_, _id_, _media_type, _media_url_, permalink_, _thumbnail_url_, timestamp_, username_ from the response.
 
-  - Hit the play button in the center. Observe the response on the right side. If you encounter any error, revisit the steps. Else if you have some media posted to that Instagram account, your response should be similar to:
+- Hit the play button in the center. Observe the response on the right side. If you encounter any error, revisit the steps. Else if you have some media posted to that Instagram account, your response should be similar to:
 
-    ![media-data-response](/integrating-instagram-basic-display-api/media-data-response.png)
+![media-data-response](/engineering-education/integrating-instagram-basic-display-api/media-data-response.png)
 
-    If you don't have some media data posted, your response will be an empty array.
+If you don't have some media data posted, your response will be an empty array.
 
 ### Summary
 
@@ -760,13 +815,13 @@ To gain more insights on the tools and technologies involved in this article, it
 
 With the Instagram basic display API, you can be able to integrate an Instagram account into various applications to provide various automation schemes.
 
-In the finalized code, which can be accessed from this [Github repository](https://github.com/mwangiKibui/consuming-insta-basic-display-api-node-js-graphql), there is added functionality concerning the following use cases:
+In the finalized code, which can be accessed from this [GitHub repository](https://github.com/mwangiKibui/consuming-insta-basic-display-api-node-js-graphql), there is added functionality concerning the following use cases:
 
 - Getting information on a single media.
 - Getting information on an album.
 - Refreshing a long-lived access token.
 
-be sure to check it out.
+Be sure to check it out.
 
 Happy hacking!!
 
