@@ -16,7 +16,6 @@ images:
 
 ### Table of contents
 
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What is Hadoop?](#what-is-hadoop)
   - [What is a Hadoop cluster?](#what-is-a-hadoop-cluster)
