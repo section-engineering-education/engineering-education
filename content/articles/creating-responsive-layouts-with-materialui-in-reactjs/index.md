@@ -6,8 +6,8 @@ url: /creating-responsive-layouts-with-materialui-in-reactjs/
 title: How to Create Responsive Layouts with Material UI and Next.js
 description: This article will show you how to create responsive web pages using Material UI and Next.js. The website will adjust to different screen sizes and devices.
 author: caleb-olojo
-date: 2021-07-01T00:00:00-18:00
-topics: []
+date: 2021-07-01T00:00:00-10:41
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -29,7 +29,9 @@ Before reading this article, you should have an understanding of:
 To create a responsive website using Material UI and Next.js. The application will retrieve test data from [JSONPlaceholder](http://jsonplaceholder.typicode.com/users) which is a dummy API.
 
 ### What is Material UI
-Material UI is a React-based CSS utility framework that enables developers to create quality user interfaces. Material UI can be compared to Bootstrap but in a more advanced way. Since it is a React-based CSS framework, it features numerous components that can be imported anywhere in a React application. Material UI has various use cases, ranging from layouts, styling inputs, navigation, etc. You can read more about the components in the [official docs](https://material-ui.com/components/). 
+Material UI is a React-based CSS utility framework that enables developers to create quality user interfaces. Material UI can be compared to Bootstrap but in a more advanced way. 
+
+Since it is a React-based CSS framework, it features numerous components that can be imported anywhere in a React application. Material UI has various use cases, ranging from layouts, styling inputs, navigation, etc. You can read more about the components in the [official docs](https://material-ui.com/getting-started/supported-components/). 
 
 ### What is Next.js
 Next.js is a front-end web framework based on React. It provides developers with loads of functionalities including [Server Side Rendering and Static Site Generation](https://www.section.io/engineering-education/client-side-rendering-vs-server-side-rendering-vs-static-site-generation/). Next.js saves developers from the stress of setting up a react application from scratch. You can learn more about Next.js from [here](https://nextjs.org/docs/getting-started).
@@ -45,13 +47,13 @@ To install Next.js, use the command below.
  npm install next react react-dom
 ```
 
-We can then create a Next.js project using the following command.
+We can then create a Next.js project using the following command:
 
 ```bash
 npx create-next-app
 ```
 
-To install Material UI, you can type the command below in your terminal.
+To install Material UI, you can type the command below in your terminal:
 
 ```bash
 npm install @material-ui/core
@@ -65,9 +67,8 @@ Before moving further, we need to familiarize ourselves with the project structu
 
 We will put all of our web pages in the `pages` folder. For instance, the `pages/index.js` will serve as the default home page.
 
-Here is our project structure.
-
-```
+Here is our project structure:
+```bash
 |--pages
 |   |--index.js
 |--components
@@ -105,7 +106,7 @@ Card.propTypes = {
 };
 ```
 
-`PropType validation` involves validating the type of data that gets passed to a React component as `Props` [Properties]. If the conditions set in the `propTypes` object are not being met, JavaScript will throw an error. A perfect example is when we pass a number rather than a string as a prop.
+`PropType validation` involves validating the type of data that gets passed to a React component as `Props` (Properties). If the conditions set in the `propTypes` object are not being met, JavaScript will throw an error. A perfect example is when we pass a number rather than a string as a prop.
 
 ```js
 Card.propTypes = {
@@ -115,7 +116,7 @@ Card.propTypes = {
 
 The `header` component renders a simple text displaying the `name` of the app. This component is imported into the `layout/index.js` file. 
 
-Here is the code for the header component.
+Here is the code for the header component:
 
 ```js
 import React from "react";
@@ -134,7 +135,7 @@ In this project, the main `Layout` will only accept the Header component and the
 
 The `children` prop represents the remaining part of the UI. For instance, the card will display the data retrieved from the API.
 
-The code for the `Layout` component is shown below.
+The code for the `Layout` component is shown below:
 
 ```js
 import React from "react";
@@ -259,7 +260,7 @@ useEffect(() => {
 }, []);
 ```
 
-The purpose of the array `[]` inside the `useEffect` hook is to prevent the browser from fetching data from the API continuously. This process is referred to as "useEffect cleanup".In our case, it will prevent the `getProfiles` method from been called multiple times.
+The purpose of the array `[]` inside the `useEffect` hook is to prevent the browser from fetching data from the API continuously. This process is referred to as "useEffect cleanup". In our case, it will prevent the `getProfiles` method from been called multiple times.
 
 #### Understanding the markup.
 
@@ -274,14 +275,13 @@ In the above `Container` component, you will notice the `xs`, `sm`, and `lg` pro
       className={`cont-card`}
   >         
 ```
-
 - On `extra small screens` (xs), the card should occupy the full width of the device. 
 
 - On `small screen sizes` (sm), the cards should occupy half of the screen width. Hence, allowing two cards to be arranged side by side on the webpage. 
 
 - On `large screen sizes` (lg), the cards should occupy a specified part of four columns. This will allow three cards to be stacked side by side.
 
-The `container` Component is then imported into the `Home` page container at `pages/index.js`
+The `container` Component is then imported into the `Home` page container at `pages/index.js`.
 
 ```js
 import Layout from "../src/Layout";
@@ -302,8 +302,8 @@ export default function Home() {
 In this article, we have learned how to create a responsive website using Next.js and Material UI. You can, therefore, use this knowledge to create more quality applications. 
 
 ### Further Reading
-[Media Queries](https://www.freecodecamp.org/news/media-queries-width-ranges/)
-[Basics of responsive web design](https://www.section.io/engineering-education/understanding-the-basics-of-responsive-web-design/)
+- [Media Queries](https://www.freecodecamp.org/news/media-queries-width-ranges/)
+- [Basics of responsive web design](https://www.section.io/engineering-education/understanding-the-basics-of-responsive-web-design/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
