@@ -1,25 +1,10 @@
----
-layout: engineering-education
-status: 
-published: 
-url: /getting-started-with-php-sessions/
-title: Getting started with PHP Sessions
-description: This article will bring the reader to a better understanding of what PHP Sessions are, why they are used and how they can be implemented.
-author: neema-muganga
-date: 
-topics: [Languages]
-excerpt_separator: <!--more-->
-images:
-  - url: /engineering-education/getting-started-with-php-sessions/hero.jpg
-    alt: Screen with written code image
----
-This article will bring the reader to a better understanding of **what** PHP sessions are, **why** they are used and **how** they can be implemented.
-
-
+### Getting started with PHP Sessions
+/engineering-education/getting-started-with-php-sessions/hero.jpg
+   
 ### Introduction
+This article will bring the reader to a better understanding of **what** PHP sessions are, **why** they are used and **how** they can be implemented.
 PHP Sessions provide server side storage of user information by use of session variables and makes this information accessed from several pages throughout a website.
 Sessions uniquely identify users via a Session Identifier which provides connection of that particular user to their stored data on the server. 
-<!--more-->
 Sessions are compared to but are not the same as cookies, because cookies store users' information on their local computer instead.
 
 ### Prerequisites
@@ -79,7 +64,6 @@ Output:
 Output:
 
 Successfully set the session variables.
-
 ```
 
 ### Accessing a created session
@@ -88,6 +72,7 @@ Create an **accessdetails.php** file that will access the previously set session
 We introduce a conditional statement (you may want to follow [this](https://www.w3schools.com/php/php_if_else.asp) link, which talks more on PHP conditional statements) and an **isset()** function to check whether the session variables were really set.
 
 #### Accessing set Session variables
+
 ```php
 
 <?php 
@@ -123,7 +108,6 @@ Output:
 Output:
 
 Hi Neema Muganga, glad to know you enjoy writing too!
-
 ```
 Incase you misspelt the variable sessions in the files, PHP may not recognize the session variables you are referring to and therefore return the else statement.
 
@@ -157,7 +141,6 @@ $_SESSION["name"] = "Liz Muganga";
     ?>
   </body>
 </html>
-
 ```
 
 This will change the name set from Neema Muganga to Liz Muganga and the following output will be seen when you run the code.
@@ -166,7 +149,6 @@ Output:
 
 ```bash
 You changed your name to Liz Muganga!
-
 ```
 
 By now, you definitely have a good understanding of PHP Sessions. If not, please go through the previously covered sections of this article a second time and you will see everything making better sense.
@@ -184,6 +166,7 @@ Incase you want to see how the logout functionality in PHP is implemented, [watc
 2. **session_destroy()**. This function destroys **all** previously set session variables and it does not require passing any parameters to it.
 
 The following code shows how how to destroy a php session.
+
 ```php
 
 <?php
@@ -286,7 +269,6 @@ Output:
 Output:
 
 Successfully set the session variables.
-
 ```
 
 ### Accessing a created session
@@ -295,6 +277,7 @@ Create an **accessdetails.php** file that will access the previously set session
 We introduce a conditional statement (you may want to follow [this](https://www.w3schools.com/php/php_if_else.asp) link, which talks more on PHP conditional statements) and an **isset()** function to check whether the session variables were really set.
 
 #### Accessing set Session variables
+
 ```php
 
 <?php 
@@ -364,7 +347,6 @@ $_SESSION["name"] = "Liz Muganga";
     ?>
   </body>
 </html>
-
 ```
 
 This will change the name set from Neema Muganga to Liz Muganga and the following output will be seen when you run the code.
@@ -373,7 +355,6 @@ Output:
 
 ```bash
 You changed your name to Liz Muganga!
-
 ```
 
 By now, you definitely have a good understanding of PHP Sessions. If not, please go through the previously covered sections of this article a second time and you will see everything making better sense.
@@ -391,6 +372,7 @@ Incase you want to see how logout functionality in PHP is implemented, watch [th
 2. **session_destroy()**. This function destroys **all** previously set session variables and it does not require passing any parameters to it.
 
 The following code shows how how to destroy a php session.
+
 ```php
 
 <?php
