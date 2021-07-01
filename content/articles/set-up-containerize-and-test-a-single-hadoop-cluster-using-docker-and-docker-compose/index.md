@@ -154,7 +154,7 @@ docker ps
 
 ### Check the running Hadoop containerized environment
 
-To visualize the running Hadoop application, you need to first the containers running IP address and test it on the browser using the mapped container port. Run this command to get your IP address.
+To get a visual of a running Hadoop application, you need to get the container IP address. Then test the Hadoop on the browser using the mapped container port. Run this command to get your IP address.
 
 ```bash
 ifconfig
@@ -268,8 +268,6 @@ To begin, run the following command to get a Hadoop Docker image from the Docker
 sudo docker pull sequenceiq/hadoop-docker:2.7.1
 ```
 
-This will download Hadoop and set it inside the installed Docker engine on your computer. You can check whether the Hadoop Docker image was downloaded successfully by running;
-
 This will download the Hadoop image with its YARN properties such as the node manager, resource manager, and history server and install it in your computer's Docker engine. Run the below command to see if the Hadoop Docker image was successfully downloaded.
 
 ```bash
@@ -349,7 +347,6 @@ sudo docker ps -a
 ```
 
 Happy Hacking!!
-
 
 ---
 
