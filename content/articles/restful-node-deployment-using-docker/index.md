@@ -7,7 +7,7 @@ title: Deploying RESTful APIs using Node.js, Express 4 to Kubernetes clusters
 description: This tutorial will explain how to create REST APIs using express and deploy to Docker using Docker compose.
 author: jared-phelix
 date: 2021-06-29T00:00:00-16:00
-topics: [Node.js, Container, API]
+topics: [Node.js, Containers, API]
 excerpt_separator: <!--more-->
 images:
 
