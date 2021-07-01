@@ -6,6 +6,22 @@ This tutorial will go through a simple Django application that allows school adm
 1. [Python](https://www.python.org/) installed on your computer.
 2. Knowledge of [Django](https://www.djangoproject.com/) framework.
 
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
+- [Project Set up](#project-set-up)
+- [Models](#models)
+- [Serializer](#serializer)
+- [View](#view)
+- [API View](#api-view)
+- [URLs](#urls)
+- [Template](#template)
+- [Writing Unit Tests](#writing-unit-tests)
+  - [Testing Views](#testing-views)
+  - [Testing Models](#testing-models)
+  - [Testing API Views](#testing-api-views)
+- [Conclusion](#conclusion)
+
 ### Project Set up
 1. Create a new Django project by executing the command below.
    
@@ -187,6 +203,12 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 ### Writing Unit Tests
+We are going to start by writing tests for our views. In the `testing` application create a new python package named `tests`.
+
+#### Testing Views
+In the `tests` package created above, create a new python file named `tests_views.py`. It is a convention that the test files should begin with the word tests.
+
+Add the code snippet below to the `tests_views.py` file created above.
 ```python
 ### test_views.py
 class StudentListViewTest(TestCase):
@@ -216,6 +238,14 @@ class StudentListViewTest(TestCase):
         self.assertTrue(response.context['is_paginated'] is True)
         self.assertEqual(len(response.context['student_list']), 10)
 ```
+- `setUpTestData(cls)` method is marked ` @classmethod` since its executed first when the class is executed. Within this function, we create student objects that are stored in a temporary test database and used throughout the test class.
+- `test_url_exists` method makes an HTTP request to the provided path and checks the result code if it's successful.
+- `test_url_accessible_by_name` methods construct a URL from the name given and make an HTTP request to the constructed URL then checks the status code of the request.
+- `test_view_uses_correct_template` method checks if the correct template is loaded when the specified path is visited.
+- `test_pagination_is_correct` method tests if the data returned is paginated.
+
+#### Testing Models
+In the `test` package create a new file named `test_models.py` and add the code snippets below.
 
 ```python
 # test_models.py
@@ -234,7 +264,13 @@ class StudentModelTestcase(TestCase):
         self.assertEqual(student.get_absolute_url(), "/students/1")
 
 ```
+In the above test code:-
+- `setUpTestData` method sets up the object that will be used throughout the test class.
+- `test_string_method` method tests the string returned from the `__str__` method of the `Student` model if its valid.
+- `test_get_absolute_url` method tests if the absolute URL returned from the model is valid.
 
+#### Testing API Views
+In the `tests` package, create a new Python file named `tests_api_view.py` and add the code snippets below.
 ```python
 # test_api_view.py
 class StudentSerializerTestCase(APITestCase):
@@ -249,6 +285,10 @@ class StudentSerializerTestCase(APITestCase):
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 ```
+In the above code snippet, we only have one method:-
+- `student_creation_test` to test the student creation endpoint. In the method, we create a payload containing all the data required to create a student and then make a POST request to the `students/create` endpoint with the payload.
+
+> *Note* in the test_api_view we used `APITestCase` from restframework instead of using `TestCase` from django.
 
 
 ### Conclusion
