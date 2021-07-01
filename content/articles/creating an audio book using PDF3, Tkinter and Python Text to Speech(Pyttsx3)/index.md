@@ -19,29 +19,29 @@ We shall look deeper into the other libraries as we continue.
 
 ### What is PyPDF3?
 
-PyPDF3 is Pure-Python library built as a PDF toolkit. It is capable of:
+From PyPDF3's official documentation, it is a Pure-Python library built as a PDF toolkit. It was built to help with the following:
 
 * Extracting document information (title, author, etc.)
-* Splitting documents page by page
-* Merging documents page by page
-* Cropping pages
-* Merging multiple pages into a single page
-* Encrypting and decrypting PDF files
+* Splitting documents page by page.
+* Merging documents page by page.
+* Cropping pages.
+* Merging multiple pages into a single page.
+* Encrypting and decrypting PDF files.
 
-> It is important to note that this library has a problem reading a pdf file that is not page numbered.
+> It is important to note that since this library is built from a file page perspective, it has problems manipulating pdf files that are not page numbered.
 
 ### Application
 
-It can be used as a tool for websites that manage or manipulate PDFs.
+- It can be used as a tool for websites that manage or manipulate PDFs.
 
 ### What is Pyttsx3?
 
-Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
+From the official documentation, Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
 
 ### Application
 
-- Can be applied in desktop and mobile applications and websites to convert text to speech for the visually impaired.
-- Can be used to create an audiobook.
+- It can be applied in desktop and mobile applications and websites to convert text to speech for the visually impaired.
+- It can be used to create an audiobook.
 
 ### Installing Requirements
 
