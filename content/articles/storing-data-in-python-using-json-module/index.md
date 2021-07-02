@@ -61,7 +61,7 @@ Ensure that you read from the same file that you wrote to. Python only requires 
 In the above program, the `json.load()` function to loads the
 information stored in *numbers.json*, and then store it in the variable *numbers*. Then we print the set of numbers:
 
-```
+```bash
 [10, 20, 30, 70, 191, 23]
 ```
 
