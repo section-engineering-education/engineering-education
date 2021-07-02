@@ -105,7 +105,7 @@ Get the complete backend code [here](https://github.com/owinowendy/AngularAndSpr
 
 This part assumes you have gone through the documentation of Bing maps, otherwise, get the full tutorial [here](https://www.bingmapsportal.com/Announcement?redirect=True). This frontend is  designed using the [Angular Material](https://material.angular.io) to display locations and properties as shown below:  
 
-![bing map application screenshot](/engineering-education/bing-maps/forms.png)
+![bing map application screenshot](/engineering-education/angular-spingboot-bing-maps/forms.png)
 
 Let's add the `HTML` content that we'll use to display the Bing map for our site.  
 
@@ -176,4 +176,4 @@ In this tutorial, we have built an Angular 12 project with Spring Boot, and the 
 This tutorial has also included a complete working [codebase](https://github.com/owinowendy/AngularAndSpringWithMaps) for this tutorial which you may clone and follow locally to test its functionality.
 The project is configured to use Gradle which may take time to build as well Kubernetes and docker.  
 
-![Full application Screenshot](/engineering-education/bing-maps/full-app.png)
+![Full application Screenshot](/engineering-education/angular-spingboot-bing-maps/full-app.png)
