@@ -12,12 +12,15 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/statistical-hypothesis-testing-python-implementation/hero.png
- alt: statistic hypothesis testing with python cover image 
+ alt: statistic hypothesis testing with python cover image
+
+hero image is gotten :[via duckduckgo image search](https://automatetheplanet.com) 
+ 
 ---
 Technically, when you mention hypothesis testing, all data-oriented people will immediately think null and alternate but it takes a statistician or someone with strong analytical background to know what lies beyond five is far more than six. 
 <!--more-->
 
-## Understanding Hypothesis Testing
+### Understanding Hypothesis Testing
 
 There are basically two types of hypothesis testing, namely:
 1. Null Hypothesis
@@ -78,7 +81,7 @@ When she's actually miraculously pregnant like Hannah?.
 
 There is someone's life involved here so you have to think it through.
 
-## Confidence of Null Hypothesis (Probability Value)
+### Confidence of Null Hypothesis (Probability Value)
 
 Technically, the only way we can accept or reject our ground truth (null hypothesis) is after determining our *P-value* which is an abbreviation for probability value. It is the only thing that has the decisive power to accept or reject H0.
 
@@ -102,11 +105,11 @@ alpha = 1 - 0.95
 
 which is 0.05.
 
-## Why is 95% confidence level the most accustomed?
+### Why is 95% confidence level the most accustomed?
 
 Since we know that alpha level is the probability of encountering a Type I error(which is rejecting H0 despite being true), would it not make sense to make it as bitsy as possible. Imagine our alpha value being set to 10%, obviously, there is an increasing chance that we will make the mistake of rejecting the null hypothesis, but it must not be too small as well, if we set the alpha value as 1%, it will be too small that our decision will be reeking of bias. Hence, the standard has been 5%.
 
-## Statistical Techniques for Hypothesis Testing
+### Statistical Techniques for Hypothesis Testing
 
 In this tutorial, I will be touching on three methods of carrying out statistical hypothesis testing, namely:
 
@@ -114,7 +117,7 @@ In this tutorial, I will be touching on three methods of carrying out statistica
 2. T-Test
 3. ANOVA Test
 
-## Chi-Square Test
+### Chi-Square Test
 
 This is used to perform testing on two categorical variables in our data population. It is focused on looking for an important relationship between two categorical variables.
 
@@ -146,7 +149,7 @@ The libraries imported are the day-to-day libraries for any data science python 
 
 ##### I will be using the popular iris data set for the tutorial, you can get it almost anywhere but I downloaded this from [kaggle](www.kaggle.com).
 
-#### Load the data into the notebook
+### Load the data into the notebook
 
 
 
@@ -366,7 +369,7 @@ df.isnull().sum()
 
 
 
-   sepal_length    0
+    sepal_length    0
     sepal_width     0
     petal_length    0
     petal_width     0
@@ -378,7 +381,7 @@ df.isnull().sum()
 We can be sure now that there are 3 classes of species and there are no missing values. 
 Let's proceed with the manipulation.
 
-## Let's Start Our Operations
+### Let's Start Our Operations
 
 Let's use petal width to compare species for our Chi-Square Test. 
 
@@ -394,7 +397,7 @@ df.petal_width.describe()
 
 
 
-   count    150.000000
+    count    150.000000
     mean       1.198667
     std        0.763161
     min        0.100000
@@ -636,11 +639,11 @@ else:
 
 
 
-## Conclusion
+### Conclusion
 
 Since the P-value is greater than the alpha value set at 0.05, we will fail to reject the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
 
-## T-Test
+### T-Test
 
 The T-test is utilized when we plan to evaluate the discrepancy between the means of two groups of samples. Unlike Chi-Square Test, the T-test is used on continuous variables.
 
@@ -652,7 +655,7 @@ It has three basic types
 
 3. **Paired t-test:** It is used in checking and comparing the means of different samples from a group.
 
-## Performing a One-Sample T-Test
+### Performing a One-Sample T-Test
 
 
 
@@ -668,7 +671,7 @@ df_.sample(5)
 
 
 
-   101    1.9
+    101    1.9
     92     1.2
     99     1.3
     20     0.2
@@ -687,7 +690,7 @@ stats.ttest_1samp(a=df_, popmean=1.199)
 
 
 
-## Conclusion
+### Conclusion
 
 **H0:** The mean of petal_width is 1.199
 
@@ -701,7 +704,7 @@ This means that the mean of petal_width is most likely 1.199.
  
  The evidence is too strong to be rejected, it is almost accurate. (Obviously, I copied the mean from the summary).
 
-## Performing a Two-Sample T-Test
+### Performing a Two-Sample T-Test
 
 We need to first of all check their variances.
 
@@ -752,7 +755,7 @@ stats.ttest_ind(a=class1, b=class2, equal_var=True)
 
 
 
-## Conclusion
+### Conclusion
 
 Evaluating this:
 
@@ -765,7 +768,7 @@ Our P-value ( p = 3.7974378831185126e-148) is far less than alpha = 0.05,
 This explains that the means of the two samples are different and not equal. Thus, we will reject the Null Hypothesis, there is no evidence sustainable enough to accept it.
 H1 (alternate hypothesis) is however true.
 
-## ANOVA Test
+### ANOVA Test
 
 It is used to check the contrast between three or more samples with one test. Especially when the categorical class has more than two categories.
  
@@ -798,7 +801,7 @@ f_oneway(class1, class2, class3)
 
 
 
-## Conclusion
+### Conclusion
 
 As mentioned earlier:
 
@@ -892,7 +895,7 @@ sm.stats.anova_lm(model, typ=2)
 
 
 
-## Conclusion
+### Conclusion
 
 The P-value of petal width is greater than 0.05, which increases the probability of our null hypothesis being accepted. 
 
@@ -902,7 +905,3 @@ Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we
 
 **Happy coding**
 
----
-hero image is gotten from: 
-https://automatetheplanet.com via duckduckgo image search
----
