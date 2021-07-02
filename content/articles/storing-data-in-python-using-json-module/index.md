@@ -17,7 +17,7 @@ Have some basic knowledge of Python programming language.
 To use `json.dump()` function import the `json` module first.
 
 The `json.dump()` function takes two arguments:
- 1. Piece of information to save
+ 1. Piece of information to save (known as function arguments or the data to be saved)
  2. File object it can use to save the information
 
 Let's develop a quick program to save a set of numbers. To save the set of numbers, we will use the `json.dump()` function.
