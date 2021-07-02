@@ -1,5 +1,5 @@
 ---
-Tittle: Lewis macharia
+Title: Lewis macharia
 Type: authors
 github: https://github.com/neshmacharia
 ---
