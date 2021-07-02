@@ -8,8 +8,8 @@ Have some basic knowledge of Python programming language.
 
 ### Why store data in Python using JSON module?
 
- 1. Enables developers to dump simple Python data structures to a file and afterward load that data the next time the application runs.
- 2. Data can be shared between Python programs using Json.
+ 1. Enables developers to dump simple data structures to a file and afterward load that data the next time the application runs.
+ 2. Data can be shared between Python programs using JSON.
  3. JSON format is platform or language independent. When you store data in JSON format, you can use them easily in other programming languages too.
  4. It's simple to learn and comes in a portable format.
 
@@ -18,9 +18,9 @@ To use `json.dump()` function import the `json` module first.
 
 The `json.dump()` function takes two arguments:
  1. Piece of information to save (known as function arguments or the data to be saved)
- 2. File object it can use to save the information
+ 2. File object that can be used to save the information
 
-Let's develop a quick program to save a set of numbers. To save the set of numbers, we will use the `json.dump()` function.
+Let's develop a quick program to save a set of numbers in a JSON file. To save the set of numbers, we will use the `json.dump()` function:
 
 ```python
 import json
@@ -31,11 +31,11 @@ with open(filename, 'w') as file_object:  #open the file in write mode
  json.dump(numbers, file_object)   # json.dump() function to stores the set of numbers in numbers.json file
 ```
 
-In this program, we store the set of numbers in the file *numbers.json*. The extension `.json` shows that the data inside the file is in *JSON* form.
+In this program, we store the set of numbers in the file `numbers.json`. The extension `.json` shows that the file contains data in JSON format.
 
-We then access the file in `'w'`mode(*write mode*), to make JSON capable of writing data to a file. Finally,the `json.dump()` function keeps the set of numbers in the file *numbers.json*
+We then access the file in `'w'`mode(*write mode*), to make JSON capable of writing data to a file. Finally,the `json.dump()` function stores the set of numbers in the file `numbers.json` file.
 
-This program has no terminal output, but when we open the file *numbers.json* we see the following data:
+This program has no terminal output, but when we open the file `numbers.json` we see the following data:
 
 ```
 [10, 20, 30, 70, 191, 23]
@@ -59,7 +59,7 @@ The `json.load(`) function takes one argument which is the file object.
 Ensure that you read from the same file that you wrote to. Python only requires to read out of that file hence open it in *read mode*.
 
 In the above program, the `json.load()` function to loads the
-information stored in *numbers.json*, and then store it in the variable *numbers*. Then we print the set of numbers:
+information stored in `numbers.json`, and then store it in the variable *numbers*. Then we print the set of numbers:
 
 ```bash
 [10, 20, 30, 70, 191, 23]
@@ -67,9 +67,61 @@ information stored in *numbers.json*, and then store it in the variable *numbers
 
 This is a simple technique for two programs to share data.
 
+### How to Write JSON to a File
+After importing the JSON Python module, you can write JSON onto a file. The `json.dump()` function allows writing JSON to file with no conversion.
+
+**Example:**
+In the code below, we are creating a file named `example.json` and converting a dictionary into a JSON object using the `json.dump()` method.
+
+```python
+import json
+# Initializing dictionary
+dic_exm ={
+"name" : "Simplilearn",
+"roll_no" : 1,
+"cgpa" : 9.68,
+"phone_num" : "1231252123"
+}
+
+with open("example.json", "w") as file_obj:
+    json.dump(dic_exm, file_obj)
+```
+
+This program has no terminal output but when we open the file `example.json` file, we will see the following data:
+
+```
+{"phone_num": "1231252123", "cgpa": 9.68, "name": "Simplilearn", "roll_no": 1}
+```
+
+### How to read JSON file in Python
+We use the `json.load` function to read a JSON file.
+
+Suppose, we have a JSON file named `student.json`, which contains JSON objects.
+```
+{"name": "Felix",   
+"Subjects": ["English", "Political Science"]  
+}  
+```
+
+Let's write a code to read this data stored in `student.json` file using the `json.load` function.
+
+```python
+import json  
+  
+with open(r,'student.json') as file_object:  
+  data = json.load(file_object)  
+print(data)
+```
+
+The `json.load()` function is parsed the JSON file and returns the dictionary named data.
+
+When we run the above code, we get the following output:
+
+ ```
+ {"name": "Felix", "Subjects": ["English", "Political Science"]}
+ ```
 
 ### Saving and reading user-generated data
-
 When dealing with data provided by users, storing data with JSON is helpful since if you don't save your user's data in some way, you'll lose everything when your program terminates.
 
 Consider the following case: we ask the user for their first name when they execute our program for the first time, and then
@@ -89,7 +141,7 @@ with open(filename, 'w') as file_obj:
 
 In this program, we ask for the first name to register the user.
 
-We use `json.dump()` to store the first name in the file *firstname.json*. 
+We use `json.dump()` to store the first name in the file `firstname.json`. 
 
 The user will then see a notification stating that he or she has been registered.
 
@@ -109,58 +161,24 @@ with open(filename,'r') as file_obj:
  print("Welcome back, " + firstname + " Thank you for registering!")
  ```
 
-Here we use the `json.load()` to read the data saved in *firstname.json* into the variable *firstname*. We can finally welcome them back now that we've recovered their first name:
+Here we use the `json.load()` to read the data saved in `firstname.json` into the variable *firstname*. We can finally welcome them back now that we've recovered their first name:
 
 ```
 Welcome , Felix  Thank you for registering!
 ```
 
-Let's combine the above two programs into one file.
-
-When users run this program, if at all possible, we'd like to remember their first name.
-
-We will begin with a try block that tries to recover the first name. In case the *firstname.json* file does not exist, we will use an except block to ask for a first name and store it in the file *firstname.json* for next time:
-
-```python
-import json
-
-# If the user's first name has already been saved, load it..
-# Otherwise, ask for and save the first name.
-filename = 'firstname.json'
-try:
- with open(filename, 'r') as file_obj:
-  firstname = json.load(file_obj)
-except FileNotFoundError:
- firstname = input("Enter your first name? ")
- with open(filename, 'w') as file_obj:
-  json.dump(firstname, file_obj)
- print("Thank you for registering in our community, " + firstname + "!")
-else:
- print("Welcome back, " + firstname + " Thank you for registering!")
-```
-
-We attempt to open the file *firstname.json* using the try block. We read the *firstname* back into memory if this file exists. Then we print a welcome back notification to the user using the else block.
-
-For the first time, the user runs the program, the file *firstname.json* doesn't exist and a FileNotFoundError occurs. Python will execute except block, here we request the user's first name. 
-
-Finally we use the `json.dump()` to store the first name and then print a thanksgiving message.
-
-When you run this program for the first time, the output looks like this :
-
-```
-Enter your first name? Felix
-Thank you for registering in our community, Felix!
-```
-
-If you've run this program at least once, you'll see the following output:
-
-```
-Welcome back, Felix Thank you for registering!
-```
 
 ### Conclusion
 In this article we have learned the following:
  - Reasons for storing data in Python using json module
  - Using json.dump() 
  - Using json.load()
+ - How to Write JSON to a File
+ - How to read JSON file 
  - Saving and reading user-generated data
+
+
+### Further reading
+For more information about files and exceptions in Python, see the links below:
+- [Python JSON module](https://www.askpython.com/python-modules/python-json-module)
+- [The JSON module in Python](https://dyclassroom.com/python/python-json-module)
