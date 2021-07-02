@@ -1,5 +1,5 @@
 
-Most of your programs will require users to enter various sets of data. Whatever your program's aim is, you'll need data structures like lists and dictionaries to store the data users provide. You will always want to save the data that users enter before they close your program. The best way to do this is to use the JSON module to store your data.
+Certain programs might require different types of data to be accepted from the user. Whatever the aim of program is, you'll need data structures like lists and dictionaries to store them. You will always want to save the data that users enter, before they close your program. The best way to do this, is to use the JSON module to store your data.
 
 In this tutorial, we'll look at how to store users' data in Python using the JSON module. We shall also learn how to use the JSON module to save and read user-generated data.
 
