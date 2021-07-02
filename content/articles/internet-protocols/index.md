@@ -48,7 +48,7 @@ IPv6 protocol being more newfangled has improved capabilities as compared to IPV
 Internet protocol version 4, just as its name suggests, was the fourth version of the IP suite developed by the [DARPA](https://www.darpa.mil/work-with-us/technology-demonstrations#:~:text=DARPA%20is%20developing%20technologies%20to,deriving%20insights%20from%20diverse%20datasets.&text=The%20electromagnetic%20spectrum%20functions%20as,and%20voice%20of%20modern%20society.) and released for use in 1982. It is a significant protocol of the standard networking protocols on the internet and all the other packet switching networks. 
 
 #### IP Header
-![IPv4 Communication Protocol](/engineering-education/internet-protocols/version_two.jpeg)
+![IPv4 Communication Protocol](/engineering-education/internet-protocols/version_two.png)
 
 [Image from Wikipedia](https://www.wikipedia.org/)
 
@@ -87,7 +87,7 @@ This involes the use of both Unicast addressing mode and Broadcast addressing mo
 IPv6 was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 had exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case; IPv4 has continued to live on.
 
 #### IP Header
-![IPv6 Communication protocol](/engineering-education/internet-protocols/version_one.jpeg)
+![IPv6 Communication protocol](/engineering-education/internet-protocols/version_one.png)
 
 [Image from Wikipedia](https://www.wikipedia.org/)
 

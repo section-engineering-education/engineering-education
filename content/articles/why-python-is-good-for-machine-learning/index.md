@@ -7,7 +7,7 @@ title: Why Python is Good for Machine Learning
 description: This article helps you understand why Python is good for machine learning. This field is becoming increasingly important in the modern world.
 author: lilian-ogoti
 date: 2021-05-04T00:00:00-13:00
-topics: [Machine Learning, Languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/why-python-is-good-for-machine-learning/hero.jpg
