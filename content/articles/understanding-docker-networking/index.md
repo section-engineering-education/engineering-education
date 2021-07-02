@@ -1,5 +1,21 @@
-Containers are a popular way of deploying applications quickly and reliably. Containers run in a set of servers or a platform. For containers to communicate with each other, it is vital to use docker networking. Docker takes care of all networking aspects so that containers can talk with each other and the Docker host.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
+author: 
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+Containers are a popular way of deploying applications quickly and reliably. Containers run in a set of servers or a platform. For containers to communicate with each other, it is vital to use docker networking. Docker takes care of all networking aspects so that containers can talk with each other and the Docker host.
+<!--more-->
 Docker has a networking model that allows containers to communicate automatically. Also, it enables communication to the same or different hosts and the outside world. This article will give an understanding of how to manage connections between containers.
 
 In the current world, containerization is popular among enterprises. Therefore, good networking skills are needed. As a result, networking is a significant component of container deployment and management. This article will review the networking aspects of Docker.
@@ -87,3 +103,6 @@ Docker networking is essential and valuable. When deploying Docker containers, y
 - Network drivers
 
 That should give an excellent overview of how Docker networking functions in different types of network drivers.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
