@@ -167,13 +167,13 @@ With the image set, you can deploy it to Dockerhub or share it with teammates.
 Docker virtualization is indeed an incredible technology. It can be used to virtualize almost any sort of application. AngularJS is mainly used to develop frontend web designs. However, you can still use it with backend technologies such as [Node.js](https://www.section.io/engineering-education/building-a-nodejs-application-using-docker/). The fun part is that you can still dockerize it as a full-stack application. 
 
 ### Further reading
-- [Getting Started with Docker](/getting-started-with-docker/)
-- [Managing and Running Docker Containers](/running-and-managing-docker/)
-- [Building A Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
-- [Getting Started with MariaDB Using Docker and Node.js](/getting-started-with-mariadb-using-docker-and-nodejs/)
-- [Containerizing WordPress with Docker-Compose](/docker-wordpress-containerizing-wordpress-with-docker-compose/)
-- [How to Deploy Docker Container to a Kubernetes Cluster](/deploy-docker-container-to-kubernetes-cluster/)
-- [How to Share Data Between Docker Containers](/sharing-data-between-docker-containers/)
+- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+- [Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
+- [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+- [Getting Started with MariaDB Using Docker and Node.js](/engineering-education/getting-started-with-mariadb-using-docker-and-nodejs/)
+- [Containerizing WordPress with Docker-Compose](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/)
+- [How to Deploy Docker Container to a Kubernetes Cluster](/engineering-education/deploy-docker-container-to-kubernetes-cluster/)
+- [How to Share Data Between Docker Containers](/engineering-education/sharing-data-between-docker-containers/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
