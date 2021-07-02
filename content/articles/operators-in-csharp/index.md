@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/operators-in-csharp/hero.png
     alt: Operators C# example image
 ---
-An operator is a symbol that instructs the compiler to perform particular mathematical or logical computations. This is what makes up any programming language's foundation. Subsequently, the C# language's usefulness is deficient without the utilization of operators. 
+An operator is a symbol that instructs the compiler to perform particular mathematical or logical computations. This is what makes up any programming languages foundation. Subsequently, the C# language's usefulness is deficient without the utilization of operators. 
 <!--more-->
 ### Introduction
 Operators enable us to execute various actions on operands. In C#, operators are classified according to their functionality:
-1. [Arithmetic operators](#!Arithmetic-operators)
-2. [Assignment operators](#Assignment-operators)
-3. [Comparison operators](#Comparison-operators)
-4. [Bitwise operators](#Bitwise-operators)
-5. [Relational operators](#Relational-operators)
-6. [Logical operators](#Logical-operators)
-7. [Miscellaneous operators](#Miscellaneous-operators)
+1. [Arithmetic operators](#arithmetic-operators)
+2. [Assignment operators](#assignment-operators)
+3. [Comparison operators](#comparison-operators)
+4. [Bitwise operators](#bitwise-operators)
+5. [Relational operators](#relational-operators)
+6. [Logical operators](#logical-operators)
+7. [Miscellaneous operators](#miscellaneous-operators)
 
 ### Arithmetic operators
 The arithmetic operators are `binary ` and `unary operators` that solve mathematical operations on the operand. Binary operators operate with two operands while unary operators operate with only one operand. 
