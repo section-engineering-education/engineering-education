@@ -10,7 +10,7 @@ Have some basic knowledge of Python programming language.
 
  1. Enables developers to dump simple Python data structures to a file and afterward load that data the next time the application runs.
  2. Data can be shared between Python programs using Json.
- 3. When you store data using the JSON format, you can share it even with people working with other programming languages
+ 3. JSON format is platform or language independent. When you store data in JSON format, you can use them easily in other programming languages too.
  4. It's simple to learn and comes in a portable format.
 
 ### Using json.dump() 
