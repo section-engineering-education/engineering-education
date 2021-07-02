@@ -6,26 +6,26 @@ url: /containerizing-an-angular-app-featuring-nginx-web-server-using-docker/
 title: How to Containerize an AngularJS Application Featuring Nginx Using Docker Containers
 description: This article will guide you on how to dockerize an AngularJS application and Nginx web server using Docker compose. This technique allows the app to run the same way on different platforms.
 author: rose-waitherero
-date: 2021-07-02T00:00:00-18:00
-topics: []
+date: 2021-07-02T00:00:00-05:00
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/hero.jpg
+  - url: /engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/hero.png
     alt: Containerizing an AngularJS Application using Docker
 ---
 [Docker](https://www.docker.com/) is a platform that enables you to build, manage, and ship applications. These applications are usually installed in specific areas known as containers. Unlike traditional VMs, Docker containers are super light and less resource-intensive. 
 <!--more-->
 ### Introduction
-Docker containers allow developers to package an application along with all of its necessary components, including dependencies and other libraries, and distribute it as a single package. This enables the software to function the same way on different platforms or operating systems. In this article, we will learn how to containerize an AngularJS application.
+Docker containers allow developers to package an application along with all of its necessary components, including dependencies and other libraries and distribute it as a single package. This enables the software to function the same way on different platforms or operating systems. In this article, we will learn how to containerize an AngularJS application.
 
-[AngularJS](https://angular.io/) is a JavaScript front-end framework for building innovative and advanced web apps. It uses the same technologies like React.js and Vue.js. AngularJS can also be used to create back-end APIs, as well as full-stack applications
+[AngularJS](https://angular.io/) is a JavaScript front-end framework for building innovative and advanced web apps. It uses the same technologies as React.js and Vue.js. AngularJS can also be used to create back-end APIs, as well as full-stack applications.
 
 ### Objective
 In this guide, we'll set up a simple [Docker-compose](https://docs.docker.com/compose/) script to containerize our AngularJS application
 
 ### Setting the local environments
-To start with, install Docker on your computer. You can follow this tutorial(https://www.section.io/engineering-education/getting-started-with-docker/) to get started with Docker.
+To start with, install Docker on your computer. You can follow this [tutorial](https://www.section.io/engineering-education/getting-started-with-docker/) to get started with Docker.
 
 If you are using Windows OS, you can download and install `Docker desktop` from [here](https://www.docker.com/products/docker-desktop). 
 
@@ -57,16 +57,11 @@ At the root of the cloned AngularJS project, create a `Dockerfile`, as shown bel
 ![Angular dockerfile](/engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/dockerfile.png)
 
 Some of the important `Docker` commands that we will use include:
-
 - `FROM` - It creates a build process and pulls the most recent image from DockerHub.
-
-- `RUN`- It executes and adds a new layer to the base image.
-
+- `RUN` - It executes and adds a new layer to the base image.
 - `WORKDIR` - It specifies the preferred working folder in which the configuration files will be stored. If the path cannot be found, the directory will be created.
-
 - `COPY` - This command copies the project's source files from the host's root folder to the container's working directory.
-
-- `EXPOSE`- It specifies a network port to notify Docker that a container will listen on a specific port number at runtime.
+- `EXPOSE` - It specifies a network port to notify Docker that a container will listen on a specific port number at runtime.
 
 Let's write down the Dockerfile instructions.
 
@@ -158,7 +153,7 @@ The dockerized AngularJS application is now up and running. You can access the c
 
 ![Dockerized AngularJS app](/engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/dockerized-angular-app.png)
 
-You can confirm your `Docker build image` by running the following command.
+You can confirm your `Docker build image` by running the following command:
 
 ```bash
 docker images
@@ -173,13 +168,12 @@ Docker virtualization is indeed an incredible technology. It can be used to virt
 
 ### Further reading
 - [Getting Started with Docker](/getting-started-with-docker/)
-- [Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
+- [Managing and Running Docker Containers](/running-and-managing-docker/)
 - [Building A Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
 - [Getting Started with MariaDB Using Docker and Node.js](/getting-started-with-mariadb-using-docker-and-nodejs/)
 - [Containerizing WordPress with Docker-Compose](/docker-wordpress-containerizing-wordpress-with-docker-compose/)
 - [How to Deploy Docker Container to a Kubernetes Cluster](/deploy-docker-container-to-kubernetes-cluster/)
 - [How to Share Data Between Docker Containers](/sharing-data-between-docker-containers/)
-
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
