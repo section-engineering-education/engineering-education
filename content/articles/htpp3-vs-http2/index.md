@@ -83,3 +83,6 @@ Across these HTTP version protocols, the request methods, status codes, and mess
 For HTTP/1.1 and HTTP/2, the TCP is the transport in the architecture. However, HTTP/3 uses QUIC as its network transport layer which implements the userspace congestion control over the User Datagram Protocol (UDP).
 
 HTTP/3 will soon become the standard protocol and the version has already seen a huge roll into browsers. For support and compatibility, check the website [caniuse](https://caniuse.com/http3) for reference.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
