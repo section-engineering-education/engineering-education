@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /htpp3-vs-http2/
+url: /http3-vs-http2/
 title: Comparison between the HTTP/3 and HTTP/2 Protocols
 description: This tutorial will go over the basics of HTTP/1, HTTP/2, and HTTP/3. We will understand how each are different, by understanding its limitations and advantages.
 author: bradley-biketi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/htpp3-vs-http2/hero.jpg
+  - url: /engineering-education/http3-vs-http2/hero.jpg
     alt: Comparison between the HTTP/3 and HTTP/2 Protocols example image
 ---
 HTTP stands for HyperText Transfer Protocol. It has been the de facto way of information transfer on the World Wide Web. While version 1.1 is still the most widely implemented protocol, it has its own limitations. Therefore, newer versions had to be implemented to address this. As of now, the two major releases have been HTTP/2 and HTTP/3 (most recent version).
