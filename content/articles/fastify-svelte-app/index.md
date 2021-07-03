@@ -4,11 +4,11 @@ Fastify is a low-overhead backend web framework that is built on top of the Node
 
 In this Fastify and Svelte tutorial, we will build a CRUD app that fetches blog posts.  We will be:
 
-- Setting up a Fastify Node.js backend API.
+- Setting up a Fastify in a Node.js environment.
 
-- Defining Fastify API routes.
+- Defining the API routes for our Fastify backend.
 
-- Adding schema validation to requests.
+- Adding the requests validation.
 
 - Loading and using Fastify plugins.
 
@@ -386,4 +386,6 @@ To keep things simple, we will use this component to perform all Posts tasks in 
 
 ### Conclusion
 
-Fastify and Svelte are modern JavaScript frameworks built for performance and great developer experience. The Fastify framework is rich in the ecosystem of plugins and hence code reusability. Just like Express, Fastify is simple and elegant with a great logging system. What else can we ask for? I hope you give it a try in your next Node.js project.
+Fastify and Svelte are modern JavaScript frameworks built for performance and great developer experience. The Fastify framework is
+rich in the ecosystem of plugins and hence code reusability. Just like Express, Fastify is simple and elegant with a great logging
+system. What else can we ask for? I hope you give it a try in your next Node.js project.
