@@ -6,7 +6,7 @@ url: /entropy/
 title: Entropy and Information Gain to Build Decision Trees in Machine Learning 
 description: A decision tree is a supervised learning algorithm used for both classification and regression problems. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
 author: collins-ayuya
-date: 2021-06-28T00:00:00-16:00
+date: 2021-07-03T00:00:00-08:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -15,25 +15,25 @@ images:
    alt: hero image
 ---
 
-A decision tree is a supervised learning algorithm used for both classification and regression problems. Simply put, it takes the form of a tree with branches representing the potential answers to a given question. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
+A decision tree is a supervised learning algorithm used for both classification and regression problems. Simply put, it takes the form of a tree with branches representing the potential answers to a given question. There are metrics used to train decision trees. One of them is information gain. In this article, we will learn how information gain is computed, and how it is used to train decision trees.
 
 ### Contents
 
-1. [Entropy theory and formula.](#entropy)
+1. [Entropy theory and formula](#entropy)
 
-2. [Information gain and its calculation.](#information-gain)
+2. [Information gain and its calculation](#information-gain)
 
-3. [Steps to use information gain to build a decision tree.](#using-information-gain-to-build-decision-trees)
+3. [Steps to use information gain to build a decision tree](#using-information-gain-to-build-decision-trees)
 
-4. [Simple Python example of a decision tree.](#decision-tree-example)
+4. [Simple Python example of a decision tree](#decision-tree-example)
 
 ### Prerequisites
 
-If you are unfamiliar with decision trees, I recommend you read this [article](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/) for an introduction.
+If you are unfamiliar with decision trees, I recommend you read this [article](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/) first for an introduction.
 
-For the code example, you'll require:
+To follow along with the code, you'll require:
 
-• [VSCode](https://code.visualstudio.com/) is my code editor for this tutorial. The language we shall use is Python.
+• A code editor such as [VS Code](https://code.visualstudio.com/) which is the code editor I used for this tutorial. The language we shall program in is Python.
 
 • We shall use the [scikit-learn](https://scikit-learn.org/stable/) library.
 
@@ -42,10 +42,9 @@ For the code example, you'll require:
 • We use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
 ### Entropy
-
 Entropy is an information theory metric that measures the impurity or uncertainty in a group of observations. It determines how a decision tree chooses to split data. The image below gives a better description of the purity of a set.
 
-![purity](/entropy/purity.png)
+![purity](/engineering-education/entropy/purity.png)
 
 [Source](https://towardsdatascience.com/what-is-entropy-and-information-gain-how-are-they-used-to-construct-decision-trees-aadf7d0728f0)
 
@@ -79,27 +78,37 @@ This kind of dataset is good for learning.
 
 ### Information Gain
 
-We can define information gain as a measure of how much information a feature provides about a class. Information gain helps to determine the order of attributes in the nodes of a decision tree. The main node is referred to as the parent node, whereas sub-nodes are known as child nodes. We can use information gain to determine how good the splitting of nodes in a decision tree. It can help us determine the quality of splitting, as we shall soon see. The calculation of information gain should help us understand this concept better.
+We can define information gain as a measure of how much information a feature provides about a class. Information gain helps to determine the order of attributes in the nodes of a decision tree.
+
+The main node is referred to as the parent node, whereas sub-nodes are known as child nodes. We can use information gain to determine how good the splitting of nodes in a decision tree.
+
+It can help us determine the quality of splitting, as we shall soon see. The calculation of information gain should help us understand this concept better.
 
 $$ Gain = E_{parent} - E_{children} $$
 
-The term Gain represents information gain. $ E_{parent} $ is the entropy of the parent node and E_{children} is the average entropy of the child nodes. Let’s use an example to visualize information gain and its calculation. Suppose we have a dataset with two classes. This dataset has 5 purple and 5 yellow examples. The initial value of entropy will be given by the equation below. Since the dataset is balanced, we expect the answer to be $1$.
+The term Gain represents information gain. $ E_{parent} $ is the entropy of the parent node and E_{children} is the average entropy of the child nodes. Let’s use an example to visualize information gain and its calculation.
+
+Suppose we have a dataset with two classes. This dataset has 5 purple and 5 yellow examples. The initial value of entropy will be given by the equation below. Since the dataset is balanced, we expect the answer to be $1$.
 
 $$ E_{initial} = - ((0.5 log_2 0.5) + (0.5 log_2 0.5)) $$
 
 $$ = 1 $$
 
-Say we split the dataset into two branches. One branch ends up having four values while the other has six. The left branch has four purples while the right one has five yellows and one purple. We mentioned that when all the observations belong to the same class, the entropy is zero since the dataset is pure. As such, the entropy of the left branch $ E_{left} = 0 $. On the other hand, the right branch has five yellows and one purple. Thus:
+Say we split the dataset into two branches. One branch ends up having four values while the other has six. The left branch has four purples while the right one has five yellows and one purple.
+
+We mentioned that when all the observations belong to the same class, the entropy is zero since the dataset is pure. As such, the entropy of the left branch $ E_{left} = 0 $. On the other hand, the right branch has five yellows and one purple. Thus:
 
 $$ E_{right} = - ( \frac{5}{6} log_2 (\frac{5}{6}) + \frac{1}{6} log_2 (\frac{1}{6}) ) $$
 
-A perfect split would have five examples on each branch. This is clearly not a perfect split, but we can determine how good the split is. We know the entropy of each of the two branches. We weight the entropy of each branch by the number of elements each contains. This helps us calculate the quality of the split. The one on the left has 4, while the other has 6 out of a total of 10. Therefore, the weighting goes as shown below:
+A perfect split would have five examples on each branch. This is clearly not a perfect split, but we can determine how good the split is. We know the entropy of each of the two branches. We weight the entropy of each branch by the number of elements each contains.
+
+This helps us calculate the quality of the split. The one on the left has 4, while the other has 6 out of a total of 10. Therefore, the weighting goes as shown below:
 
 $$ E_{split} = 0.6 *0.65 + 0.4 *0 $$
 
 $$ = 0.39 $$
 
-The entropy before the split, which we referred to as initial entropy $ E_{initial} = 1 $. After splitting, the current value is $ 0.39 $. We can now get our information gain, which is the entropy we “lost” after splitting.
+The entropy before the split, which we referred to as initial entropy $ E_{initial} = 1 $. After splitting, the current value is $ 0.39 $. We can now get our information gain, which is the entropy we "lost" after splitting.
 
 $$ Gain = 1 – 0.39 $$
 
@@ -125,17 +134,13 @@ Since we now understand entropy and information gain, building decision trees be
 
 Our goal is to visualize a decision tree through a simple Python example. Let’s begin!
 
-#### A couple of parameters to note
+> For trees of greater complexity, you should expect to come across more parameters. However, since we are building as simple a decision tree as possible, these two parameters are the ones we use.
 
-For trees of greater complexity, you should expect to come across more parameters. However, since we are building as simple a decision tree as possible, these two parameters are the ones we use.
+>**max_depth.** Each decision tree has a maximum number of levels permitted. **max_depth** represents this number.
 
-**max_depth.** Each decision tree has a maximum number of levels permitted. **max_depth** represents this number.
+>**min_samples_leaf.** The minimum sample count storable in a leaf node.
 
-**min_samples_leaf.** The minimum sample count storable in a leaf node.
-
-#### Steps
-
-1. **import the required libraries.**
+1. **Import the required libraries**
 
 ```python
 from sklearn.datasets import load_iris
@@ -143,7 +148,7 @@ from sklearn import tree
 from matplotlib import pyplot as plt
 ```
 
-2. **Load the Iris dataset.** The [Iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html) is a very versatile dataset. It has three classes of irises, namely Setosa, Versicolour, and Virginica. Each class has fifty samples. The rows of this dataset are the samples. As for the columns, we have Sepal Length, Sepal Width, Petal Length, and Petal Width. We shall come across these features in our code.
+2. **Load the Iris dataset** The [Iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html) is a very versatile dataset. It has three classes of irises, namely Setosa, Versicolour, and Virginica. Each class has fifty samples. The rows of this dataset are the samples. As for the columns, we have Sepal Length, Sepal Width, Petal Length, and Petal Width. We shall come across these features in our code.
 
 ```python
 
@@ -153,7 +158,7 @@ X = iris.data
 y = iris.target
 ```
 
-3. **Build and fit decision tree.** For this specific example, I used the following pair of lines.
+3. **Build and fit decision tree** For this specific example, I used the following pair of lines.
 
 ```python
 clf = tree.DecisionTreeClassifier(criterion='entropy', max_depth=4,min_samples_leaf=4)
@@ -204,11 +209,15 @@ We finally have our decision tree!
 
 ![mytree](/Entropy/mytree.png)
 
-Remember to play around with the values of ` max_depth ` and ` min_samples_leaf ` to see how they change the resulting tree.
+Remember to play around with the values of `max_depth` and `min_samples_leaf` to see how they change the resulting tree.
 
 ### Wrapping Up
 
-Decision trees are one of the simplest machine learning algorithms to not only understand but also implement. We have learned how decision trees split their nodes and how they determine the quality of their splits. We have also mentioned the basic steps to build a decision tree. Furthermore, we have shown this through a few lines of code. I hope this article has given a simple primer on decision trees, entropy, and information gain. Happy reading!
+Decision trees are one of the simplest machine learning algorithms to not only understand but also implement. We have learned how decision trees split their nodes and how they determine the quality of their splits.
+
+We have also mentioned the basic steps to build a decision tree. Furthermore, we have shown this through a few lines of code.
+
+I hope this article has given a simple primer on decision trees, entropy, and information gain. Happy reading!
 
 ### References
 
