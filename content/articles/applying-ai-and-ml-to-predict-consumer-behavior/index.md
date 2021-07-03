@@ -19,11 +19,9 @@ In this article, we will learn and analyze general consumer behavior. We will al
 We will also analyze this using a case study, where we use data science and analytics to uncover valuable insights for deriving better solutions.
 
 ### Prerequisites
-
 As a prerequisite, the reader must have a little understanding of Python, and machine learning.
 
 ### What is Artificial Intelligence?
-
 Artificial Intelligence is the ability of a machine to learn like a human, thus achieving the level of human intelligence and much more.
 
 With advancements in the field of AI, it has led to improvements across several industries like Automation, Supply chain, eCommerce, Manufacturing, and many more.
@@ -33,13 +31,11 @@ Not only that, sub-parts of AI i.e., Data Science and Machine Learning have enab
 AI has played a significant role in eCommerce by planning inventory, logistics, finding trends, patterns, predicting future outcomes based on historical trends, inform fact-based decisions, etc.
 
 ### Understanding consumer behavior
-
 Consumer Behavior, in its broadest sense, is concerned with how consumers select, decide, use and dispose of goods and services. It covers individuals, groups, or organizations of any verticals.
 
 It gives a good idea and insights about consumer’s emotions, attitudes, and preferences which affect buying behavior. Thus, helping marketers to understand the needs of customers, bringing value to the customers, and in return generating revenue for the company.
 
 ### Predicting the consumer behavior
-
 Big companies understand that predicting customer behavior fills the gap in the markets and identifies products that are needed and which could generate bigger revenue.
 
 Consumer behavior prediction can be done by:
@@ -51,7 +47,6 @@ Consumer behavior prediction can be done by:
 Now, let's understand this is done, using a real-time example.
 
 #### Understanding dataset
-
 In this dataset, we have information related to customers like:
 - `CustomerID` - ID of the customer
 - `Gender` - Gender of the customer
@@ -62,11 +57,9 @@ In this dataset, we have information related to customers like:
 You can download the dataset [here](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python).
 
 #### Objective
-
 The objective of this tutorial is to understand the behaviors of your customer based on their purchasing data. This helps the marketing team to understand and plan new strategies accordingly.
 
 #### Importing libraries
-
 For data exploration, it is mandatory to have a few Python libraries installed.
 
 You can download Python using [this](https://www.python.org/downloads/) link.
@@ -87,7 +80,6 @@ import seaborn as sns
 ```
 
 #### View dataset
-
 Before we start, let's have a look at the dataset. To view the dataset, we have to import by reading the CSV file as shown below:
 
 ```python
@@ -100,7 +92,6 @@ df.head()
 
 #### Data visualizations
 ##### Correlation between Age, Income and Spending scores
-
 A better strategy to marketing is to analyze the spending patterns. Here, let's try to analyze and find how age, annual incomes and spending scores of the customers are.
 
 ```python
@@ -121,7 +112,6 @@ plt.show() # displays all the plots
 *Distribution plots of Age, Annual Income, and Spending scores*
 
 ##### Gender analysis
-
 The second most important thing in deciding the strategy is to analyze the spending patterns based on Gender. Here, we find that Females tend to purchase more than Males do.
 
 ```python
@@ -136,7 +126,6 @@ plt.show()
 *Count plot describing the Males' and Females' spending patterns*
 
 #### Customer segmentation
-
 Segmentation helps in dividing a set of large data into groups of smaller observations that are similar in specific ways relevant to marketing.
 
 Each group contains individuals that are similar in-between themselves, and different from individuals from the other groups.
@@ -231,7 +220,6 @@ From the above plot, we can infer many information about the spending patterns:
 More insights about these data could be extracted with deeper data analysis by correlating with all possible parameters that are directly or indirectly related.
 
 ### Conclusion
-
 As we learned from the above simple case-study, we find that AI has played a significant role in almost all the industries. With rise in the trend of data analysis, the customers behavior is being continuously monitored for improving strategies and taking better decisions.
 
 This article acts only as a guide for beginners, to get them started in this field.
@@ -243,7 +231,6 @@ At Section, you can find related topics below:
 - [Roles in Data Science Industry](https://www.section.io/engineering-education/roles-data-science/)
 
 ### References
-
 - [https://clootrack.com](https://clootrack.com/)
 - [https://logicai.io](https://logicai.io/)
 - [https://www.sprintzeal.com](https://www.sprintzeal.com/)
