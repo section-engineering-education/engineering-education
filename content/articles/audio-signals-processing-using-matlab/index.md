@@ -1,11 +1,26 @@
-### AUDIO SIGNAL PROCESSING IN MATLAB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /audio-signals-processing-using-matlab/
+title: Audio Signal Processing in Matlab
+description: In this article, we will discuss the filtering methods for various signals. We will look at the graphic equalizer, echo effect, and flange effect. We will also look at the low pass filter which is used to remove white Gaussian noise from a signal.
+author: queenter-bruce
+date: 2021-07-03T00:00:00-16:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/audio-signals-processing-using-matlab/hero.jpg
+    alt: Audio processing in Matlab image example
+---
 
 ### Introduction
 A signal is a description of the variation of physical quantities over time. Signal processing is the manipulation of signals
 to alter their behaviour or extract information. Matlab provides a tool for creation and manipulation of discrete-time signals.
 This involves reading and analysis of signals. It focuses on altering sounds, methods used in musical representation, and
 telecommunication sectors.
-
+<!--more-->
 In this article, we will discuss the filtering methods for various signals. We will also look at the graphic equalizer, echo effect, and flange effect. We will look at the low pass filter which is used to remove white Gaussian noise from a signal. We will also look at techniques for spectral processing for relevant sound transformation, the practical knowledge which is used for analysis, synthesizing and description of audio signals in the context of music application.
 
 ### Low pass filtering
@@ -196,3 +211,6 @@ To listen to the music with a flange effect, we execute sound(y, Fs) in the comm
 
 ### Conclusion
 Matlab is a good tool for the analysis of an audio signal. It has functions that make it much easier to visualize these signals. Just as discussed, audio signal analysis requires a proper tool to deal with in which Matlab is. Filtering audio signal is an important feature since it can be used to retain lost information. This makes it applicable in a wide range.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
