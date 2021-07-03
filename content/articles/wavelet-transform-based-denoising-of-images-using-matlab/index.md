@@ -210,3 +210,6 @@ Wavelet transform is an important feature for engineers working with images or a
 Wavelet transform is applicable in various fields like image processing, as we have learned here. They can also be applied in the audio signal analysis sector and many others.
 
 Matlab is a very important language that makes understanding wavelets easier. It has numerous in-built features and functions that make this analysis easier.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
