@@ -1,11 +1,11 @@
- 
 As a programmer, many programs that you'll write will solve an end user's problem. You will always want to get some data from the user. This article will teach us how to accept user input and how to use while loops. While loops enable your programs to remain executing when certain conditions remain true.
 
 ### Prerequisites
-Have some basic knowledge of the Python language
+1. Python installed on your computer.
+2. Basic Python knowledge.
 
 ### How the input() function works
-The *input()* function halts your program and waits the user to key in some data. When Python receives the user's input, store it in the variable that you choose to work with.
+The `input()` function halts your program and waits the user to key in some data. When Python receives the user's input, store it in the variable that you choose to work with.
 
 For example, let's create a program that accepts a user's name and prints back the name.
 
@@ -41,7 +41,6 @@ rate=0.056
 interest= amount*rate
 print("Your interest is : ")
 print( interest)
-
 ```
 
 Output:
@@ -67,10 +66,8 @@ The following *while* loop counts from 10 to 15:
 ```python
 count = 10
 while (count <=15):
-
  print ('The count is:', count)
  count = count + 1 #add 1 to count
-
 #output
 #The count is: 10
 #The count is: 11
@@ -118,7 +115,6 @@ while expression:
  if_expression:
  break
  #code for while loop
-
 # code outside of while loop
 ```
 
@@ -131,7 +127,6 @@ while i < 11:
  print(i)
  i = i + 1
 print('Bye')
-
 #output
 #1
 #2
@@ -170,7 +165,6 @@ while polling_active:
  repeat = input("Please refer another person? (yes/ no) ")
  if repeat == 'no':
  polling_active = False
-
 print("\n....Poll Results...")
 for name, response in responses.items():
  print(name + " wishes to climb " + response + ".") # print results of the poll
@@ -185,7 +179,6 @@ Please refer another person? (yes/ no) yes
 Enter your name? John
 Enter the name of the mountain you would like to climb? Turin
 Please refer another person? (yes/ no) no
-
 ....Poll Results...
 Peter wishes to climb Everest.
 John wishes to climb Turin.
