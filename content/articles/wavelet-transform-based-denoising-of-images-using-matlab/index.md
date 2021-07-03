@@ -1,7 +1,21 @@
-### Wavelet-Based Denoising of images using Matlab
-### Introduction
-Wavelet-based denoising is a method of analysis that uses time-frequency to select an appropriate frequency band based on the characteristics of the signal.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /wavelet-transform-based-denoising-of-images-using-matlab/
+title: Wavelet-Based Denoising of images using Matlab
+description: This article will be an introduction to denoising of images using Wavelet transform method. We will explore about Matlab, what signals are, noising and denoising are, and how to denoise a noisy image.
+author: atieno-dorine
+date: 2021-07-03T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/hero.jpg
+    alt: Wavelet Matlab sample Image
+---
+Wavelet-based denoising is a method of analysis that uses time-frequency to select an appropriate frequency band based on the characteristics of the signal.
+<!--more-->
 A signal describes various physical quantities over time. While noise is an unwanted signal which interferes with the signal carrying the original message. This causes a change in the parameters of the signal message. Denoising is the process of removing noise from the signal.
 
 Wavelet analysis can be applied in daily life activities such as feature extraction, face recognition, data analysis and prediction, voice recognition, numerical analysis, and many more.
