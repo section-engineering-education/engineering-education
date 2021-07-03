@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/overview-of-container-technology/hero.jpg
     alt: Container Technology image example
 ---
-Container technology is growing at a tremendous rate. Several decades ago, only a single application was deployed on a single operating system (OS). If you wanted to deploy many applications, you required more servers or operating systems. Around a decade ago, [virtualization](https://en.wikipedia.org/wiki/Virtualization) technology was introduced. 
+Container technology is growing at a tremendous rate. Several decades ago, we could only deploy a single application on a single operating system (OS). If you wanted to deploy many applications, you required more servers or operating systems. Around a decade ago, they introduced [virtualization](https://en.wikipedia.org/wiki/Virtualization) technology.
 <!--more-->
 It used hypervisor software that could split up the server to host more than one OS. Servers got the option of hosting more than one application but still had only one application per operating system.
 
@@ -51,7 +51,7 @@ Container technology makes it easy and more appropriate to design, develop and d
 
 Enterprises and major cloud computing platforms, including Google Cloud, Amazon Web Services (AWS), and Microsoft Azure, have embraced container technology. This is because container technology allows enterprises to put applications in containers and run on a single operating system. 
 
-They offer [container as a service (CaaS)](/engineering-education/getting-started-with-container-as-a-service/) products as well.
+They offer [Container-as-a-Service (CaaS)](/engineering-education/getting-started-with-container-as-a-service/) products as well.
 
 That increases the efficiency of the servers and makes apps' deployment faster. Think of having multiple containers on one OS, and many operating systems on your server.
 
@@ -68,7 +68,7 @@ Containerization and virtualization are two different ways to deploy application
 
 Virtual machines (VMs) include the entire operating system along with the application. Also, the hypervisor is needed to run along with the applications to control the VM.
 
-![Containers vs Virtual Machines](/engineering-education/the-overview-of-container-technology/containers-vs-virtual-machines.jpg)
+![Containers vs Virtual Machines](/engineering-education/overview-of-container-technology/containers-vs-virtual-machines.jpg)
 
 [Image source](https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms)
 
