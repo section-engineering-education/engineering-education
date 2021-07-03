@@ -1,4 +1,18 @@
-# Using Prisma with Postgres and Node.Js
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/api-with-prisma-and-node/
+title: Using Prisma with Postgres and Node.Js
+description: In this article, we will look into how to setup and create a simple Node.js API, using Express as our framework of choice, Postgresql as our database, and Prisma as our ORM.
+author: daniel-katungi
+date: 2021-07-03T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/api-with-prisma-and-node/hero.png
+    alt: Api With Prisma and Node image
+---
 
 Most modern day applications make use of databases mainly to store data. In a lot of modern backend architectures, everything else is modelled around the data and it's manipulation. When using Node.js most developers opt to go for nosql databases as they are known to be easier to use. Examples of such are Mongodb and Firebase.
 
@@ -13,7 +27,7 @@ To comfortably follow along with this article, you will need to have:
 - A good understanding of the Express framework
 - Some working knowledge of postgress
 
-## Setting up the Application
+## Step 1 : Setting up the Application
 
 Create your working directory and name is any name you fancy, I will call mine, `section-prisma`. This is where all the magic will happen. Run `npm init -y` in the directory to initialize a Node.js project.
 
@@ -40,9 +54,9 @@ npx prisma init
 
 This command will create a folder within the root of your project called `prisma`. Within this folder, is a file called `schema.prisma`. This file will contain our configuration for the prisma in this project. The command also creates a `.env` file.
 
-A .env file is typically used to store sensitive values you wouldn't want public like keys, and secret tokens or even encryption secrets, it is best practice to add it in your `.gitignore` file.
+A `.env` file is typically used to store sensitive values you wouldn't want public like keys, and secret tokens or even encryption secrets, it is best practice to add it in your `.gitignore` file.
 
-### Connecting to Postgres
+### Step 2 : Connecting to Postgres
 
 This article already assumes that you have postgress already setup on your machine and will not go through that.
 
@@ -72,7 +86,7 @@ Replace, `your_user` , `your_password` and `db_name` with your correct credentia
 
 With that done, we have our project setup. Let's get coding!
 
-### Data Modelling Using Prisma
+### Step 3 : Data Modelling Using Prisma
 
 When working with a database, you have to define how the data in the database will look like in the database. Modelling is necessary to give a description of the data that the client is providing, and the data the database is expecting.
 
@@ -80,7 +94,7 @@ Prisma comes with it's own `data modelling language` that makes it easier to do 
 
 Prisma is an ORM, so it has to transform the data model into relevant SQL statements and database tables. Therefore, once we are done with our models, we will run `prisma migrate` which will create the relevant tables in the db.
 
-#### Creating our model
+#### Step 4 : Creating our model
 
 Within the `schema.prisma` file, after the datasource and generator block, we can define our model.
 
@@ -125,7 +139,7 @@ Once the command is done, you should see a `migrations` folder in the Prisma fol
 
 You can read more on modelling data in prisma in the [official docs](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model)
 
-### Creating a Rest API
+### Step 5 : Creating a Rest API
 
 We can now query the db while also creating an express API around our data.
 
@@ -142,13 +156,13 @@ In the root of the folder, create a file called `index.js` where all the magic w
 In the file, we create a simple server:
 
 ```js
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
 app.use(express.json());
 
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || "3000";
 
 app.listen(port, () => {
   console.log(`Server Running at ${port} 🚀`);
@@ -196,25 +210,25 @@ app.get('/', async (req, res) => {
 You can try finish up the Update and delete methods on your own to get familiar with the ORM. The final code should looks something like this:
 
 ```javascript
-const { PrismaClient } = require('@prisma/client');
-const express = require('express');
+const { PrismaClient } = require("@prisma/client");
+const express = require("express");
 const prisma = new PrismaClient();
 
 const app = express();
 
 app.use(express.json());
 
-app.post('/job', async (req, res) => {
+app.post("/job", async (req, res) => {
   const job = await prisma.job.create({ data: req.body });
   res.json(job);
 });
 
-app.get('/', async (req, res) => {
+app.get("/", async (req, res) => {
   const job = await prisma.job.findMany();
   res.json(job);
 });
 
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || "3000";
 
 app.listen(port, () => {
   console.log(`Server Running at ${port} 🚀`);
@@ -237,3 +251,7 @@ It is also worth noting that commands like `prisma migrate` are more powerful th
 Prisma does not support postgres alone, it supports multiple SQL databases so feel free to experiment with your favorite DB.
 
 Happy Coding!
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
