@@ -64,17 +64,17 @@ This is an in-built tool found within Matlab and need not be installed.
 
 Primarily, it is used for image denoising. To access it, type `wavelet analyzer` on the command prompt. We get a new window as shown below:
 
-![WaveletAnalyzer tool](/engineering-education/wavelet-transform-based-denoising-of-images/image1.png)
+![WaveletAnalyzer tool](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image1.png)
 *WaveletAnalyzer tool*
 
 After accessing the tool, we locate `Wavelet 2-D`, since the images are to be denoised are 2-D. When you click on this, a new window opens up:
 
-![wavelet 2-D](/engineering-education/wavelet-transform-based-denoising-of-images/image2.png)
+![wavelet 2-D](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image2.png)
 *WaveletAnalyzer work area*
 
 Click `File -> Load -> Image`, to import the image to be denoised. And, choose the noisy image that is to be denoised.
 
-![imported image](/engineering-education/wavelet-transform-based-denoising-of-images/image3.png)
+![imported image](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image3.png)
 *Opening a noisy image in WaveletAnalyzer*
 
 On the top left corner of the window above, choose the wavelet (denoising method) e.g., `bior 2.2` as its co-efficient, and the level of decomposition.
@@ -102,7 +102,7 @@ The whole decomposition described above is Discrete Wavelet Transform (DWT), whi
 
 When the `Analyzer` pushbutton is pressed, our image is denoised. This gives us a window with plots for the wavelet coefficient.
 
-![Plot of wavelet co-efficient](/engineering-education/wavelet-transform-based-denoising-of-images/image4.png)
+![Plot of wavelet co-efficient](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image4.png)
 *Image denoising*
 
 At level ($l_1$), we the image's horizontal, diagonal, and vertical details. This also applies to level 2 ($l_2$).
@@ -111,7 +111,7 @@ On the left side of the window, select the `Threshold` method and the noise stru
 
 Using the scrollbar, we can modify the threshold value, then click the `denoise` pushbutton:
 
-![Denoised image](/engineering-education/wavelet-transform-based-denoising-of-images/image5.png)
+![Denoised image](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image5.png)
 *Denoising*
 
 We get the denoised image as shown above. This is how you use the wavelet analyzer tool to the denoise image.
@@ -214,7 +214,7 @@ The SNR helps us understand the effects of denoising. The former helps us unders
 
 Below is the image obtained after execution of the code:
 
-![Output after denoising](/engineering-education/wavelet-transform-based-denoising-of-images/image6.png)
+![Output after denoising](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image6.png)
 
 For more understanding of this topic, you can check it [here](https://www.mathworks.com/help/wavelet/denoising-and-compression.html?s_tid=CRUX_lftnav)
 
