@@ -1,14 +1,19 @@
-title: Section Engineering Education
-
-aliases:
-  - '/create-screen-recoder/'
-  - '/javascript-screen-recorder/'
-
+@@ -1,43 +1,43 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-screenrecoder-using-javascirpt/
+title: Creating a screen recorder using Javascript.
+description: In this article, we are going to look at the differences between Web page and a Website in backend development. It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcomes.Getting the results of what they are searching for is what matters to the end-user. How they get the results is not their business.
+author: jagathish
+date: 2021-07-024T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/create-screen-recorder-in-javascript/hero.jpg
-  
-    alt: Screen Recorder in JavaScript
-
+  - url: /create-screen-recorder-in-javascript/hero.png
+    alt: Screen Recorder
+---
 
 ### Introduction
 The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream which contains the live screen contents. From the Media Stream, we can create a MediaRecorder.The MediaRecorder is used to record the audio and/or video streams. We will be converting that reordered media into a video blob and convert the blob into a downloadable URL and save it into our computer.
