@@ -5,7 +5,7 @@ status: publish
 published: true
 url: /creating-a-screenrecoder-using-javascirpt/
 title: Creating a screen recorder using Javascript.
-description: In this article, we are going to look at the differences between Web page and a Website in backend development. It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcomes.Getting the results of what they are searching for is what matters to the end-user. How they get the results is not their business.
+description: The Screen Capture API is used to capture the screen or a part of the screen as a Media Stream. From the recorded Media Stream we can create a video file.
 author: jagathish
 date: 2021-07-024T00:00:00-13:00
 topics: [Languages]
