@@ -12,6 +12,10 @@ Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&am
 ### How do GitHub forks work?
 Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is and how to fork a Github repository.
 
+
+### How do I add my author page
+Include a short Author Biography (index.md file) and Headshot image (avatar file). Include these files in the [authors folder](https://github.com/section-engineering-education/engineering-education/tree/master/authors) within the GitHub repo via your forked repo similar to the article files. We want to credit you for your hard work.
+
 ### I have a merge conflict - how do I resolve it?
 Use this every time before contributing a new article to keep it up to date
 git fetch section
@@ -39,6 +43,17 @@ Article payout will be as follows:
 - Articles with (3+) and up rounds of revisions) we will consider closing the PR
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
+
+### What counts as a round of revision?
+Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
+Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
+Instances when the content is too difficult to understand.
+PRs that may lack sufficient unique* value - (any and all comments made by reviewers to draw out more value from the article are great and encouraged but should be limited)
+*by unique we mean content that can NOT simply be found by looking up the official documentation.
+
+Use your EngEd community as a resource - get to know each other and ask for a revision from a fellow contributor before submitting a final draft.
+
+Please do not hesitate to reach out at any time - we’re always happy to help.
 
 ### How does one apply to be a Peer Reviewer?
 For the Content Stewards (Peer Review Program) we typically look for authors who have contributed a few articles (so that they are familiar with the article submission process) and can guide new contributors along the way.
