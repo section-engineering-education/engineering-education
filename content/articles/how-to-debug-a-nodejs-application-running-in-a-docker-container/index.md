@@ -59,9 +59,6 @@ const port = 3000
 
 app.use(session({ secret: process.env.SECRET }))
   .use(function (req, res, next) {
-    if (typeof (req.session.todolist) == 'undefined') {
-      req.session.todolist = []
-  }
     next()
   })
 
@@ -135,7 +132,7 @@ $ export SECRET=bestkeptsecret; node app.js
 A success message that the server is running and listening to the specified port will be displayed on the console window.
 
 ### Creating a Docker image
-Now we have successfully created a Node.js application. 
+Now we have successfully created a Node.js application.
 
 Next, we will create a [Docker image](https://jfrog.com/knowledge-base/a-beginners-guide-to-understanding-and-building-docker-images/) for it.
 
@@ -417,10 +414,10 @@ Now move back to Visual Studio Code to get the details as shown:
 
 ![debug-watch-value](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/debug-watch-value.PNG)
 
-So the `req.session.todolist` variable is `undefined`. Is it possible to fix the bug? 
+So the `req.session.todolist` variable is `undefined`. Is it possible to fix the bug?
 
 #### Step 5: Fixing the bug
-The `ejb` template goes through the `todolist` array and ought to be placed in the current session. However, we did not initialize the array, so it is undefined. 
+The `ejb` template goes through the `todolist` array and ought to be placed in the current session. However, we did not initialize the array, so it is undefined.
 
 To fix the bug we will add the lines of code below to the `.use` function:
 
@@ -461,7 +458,7 @@ f2484b712a78
 ```
 
 #### Step 7: Re-building the Docker image
-To apply the changes we made earlier, we must re-run the `docker build` command as shown below: 
+To apply the changes we made earlier, we must re-run the `docker build` command as shown below:
 
 ```bash
 $ docker build -t to-do-app .
