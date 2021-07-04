@@ -2,107 +2,95 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-handle-navigation-in-flutter/
-title: How to Handle Navigation in Flutter
-description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
-author: 
-date: 2021-06-01T00:00:00-18:00
+url: /understanding-docker-networking/
+title: Understanding Docker Networking
+description: This article will discuss the importance of Docker containers. It also highlights some of the key networking drivers.
+author: pauline-mwangi
+date: 2021-07-05T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
-    alt: Handling Navigation in Flutter
+  - url: /engineering-education/understanding-docker-networking/hero.jpg
+    alt: Understanding Docker Networking
 ---
-Containers are a popular way of deploying applications quickly and reliably. Containers run in a set of servers or a platform. For containers to communicate with each other, it is vital to use docker networking. Docker takes care of all networking aspects so that containers can talk with each other and the Docker host.
+Containers are a popular way of deploying applications on different platforms. In some cases, containers need to communicate with one another. This process can be achieved through [Docker networking](https://docs.docker.com/config/containers/container-networking/).
 <!--more-->
-Docker has a networking model that allows containers to communicate automatically. Also, it enables communication to the same or different hosts and the outside world. This article will give an understanding of how to manage connections between containers.
+Docker has a networking model that allows containers to communicate automatically. Furthermore, it supports communication to the same or different hosts and the outside world. This article will help you understand how to manage connections between Docker containers.
 
-In the current world, containerization is popular among enterprises. Therefore, good networking skills are needed. As a result, networking is a significant component of container deployment and management. This article will review the networking aspects of Docker.
+Networking is a critical aspect of container deployment and management. Therefore, having excellent networking skills can help you become more productive.
 
 ### Table of contents
-[Docker Networking](#docker-networking)
-[Why Docker Networking is Important](#why-docker-networking-is-important)
-[Container Network Models](#container-network-models)
-[Network Drivers](#network-drivers)
+- [Docker networking](#docker-networking)
+- [Why Docker networking is important](#why-docker-networking-is-important)
+- [Container network models](#container-network-models)
+- [Network drivers](#network-drivers)
 
 ### Prerequisites
-A comprehensive understanding of [Docker](https://www.section.io/engineering-education/docker-concepts/) is needed to follow along with this article. Also, go through the [networking overview](https://docs.docker.com/network/) on Docker documentation.
+To follow along with this article, you need a comprehensive understanding of [Docker](https://www.section.io/engineering-education/docker-concepts/). You can learn more about Docker networking from [here](https://docs.docker.com/network/).
 
 ### Docker networking
-Networking involves communication among processes. This communication entails a process updating another process that some event has occurred. In addition, communication entails transferring and exchanging data from one process to another.
+Docker networking initiates communication between Docker containers and the external world through the [host machine](https://docs.docker.com/network/host/). This is achieved through the use of a container network model (CNM). The model outlines the required steps to provide networking for containers using drivers.
 
-Networking in Docker is no different. Docker networking initiate communication between Docker containers and the external world through the [host machine](https://docs.docker.com/network/host/). Docker utilizes a container network model (CNM) for networking. This blueprint regulates the steps needed to provide networking for containers using drivers.
+Docker relies on several [drivers](https://www.docker.com/blog/understanding-docker-networking-drivers-use-cases/) for networking. They include bridge, overlay, and Macvlan network drivers. 
 
-Docker has various [network drivers](https://www.docker.com/blog/understanding-docker-networking-drivers-use-cases/) that enable container networking. 
+The criteria for choosing a network depends on the purpose and function of your container. A huge advantage of the Docker network is that it isolates containers from the internet. This, therefore, serves as an extra layer of security. Network isolation also ensures that everything is executed the right way.
 
-Depending on how you want your container to function, you can select your Docker network. So you can connect a docker container to a specific network. The Docker network provides complete isolation to the Docker containers. So you can run different containers in distinct networks. The purpose of doing isolations is to have proper networking and executions.
+The Docker networking design focuses on two major areas; portability and extensibility. The portability aspect aims at allowing applications to behave the same way in different environments.
 
-The Docker Networking design philosophy is around two key areas, portability and extensibility. The portability aspect is applications behave the same way in different environments.
-
-With extensibility, Docker provides a tremendous amount of functionality and technology. Also, they add the capability with the help of APIs and their plugin infrastructure, which you extend and include extra functionality.
+Docker also provides a tremendous amount of functionality and technology through extensibility. For instance, APIs and other resources can be connected to containers through networking.
 
 ### Why Docker networking is important
-In the world of Docker, network administrators can configure multiple networks and add containers to one or more of these networks. However, it is important to note that containers communicate on the same network or in different networks. Therefore, strong networking skills are required while configuring a container.
+Docker allows network administrators to configure multiple networks and add containers to one or more of these networks. 
 
-Let us go through this scenario to understand why Docker networking is essential. You have an application that works well in your system and with no issues. But the same application does not work on another person's system. Now, what could be the issue? Because the application is working on one machine but not on the other.
+One issue that Docker seeks to resolve is incompatibility. For instance, you have an application that works well on your computer but fails to display the same performance on another person's system. In such cases, the application's performance is affected by the different hardware and software properties. This issue can be resolved quickly through Docker networking. 
 
-The application does not work on another system because there is a difference in the computer systems. Also, it may be because of differences in hardware and software. The differences are possible in two different machines. The ideal solution to this problem is Docker networking.
-
-Docker networking enables containers to talk to other containers, and once applied, it should run applications across different systems. With Docker networking, the application works fine and can work on any system. Docker networking is a crucial concept when different containers run in various networks. So it resolves most problems. You can have multiple containers running in the same network or particular networks.
+Docker networking helps to reduce the amount of workload on a system. Therefore, the extra processing power can be used to perform other operations.
 
 ### Container network models (CNM)
-CNM is a [libnetwork](https://github.com/moby/libnetwork). Libnetwork is a remote network driver for connecting containers. The objective is to provide a CNM that enables programmers to provide the abstraction of network libraries.
+CNM can be regarded as a [libnetwork](https://github.com/moby/libnetwork). 'Libnetwork' is basically a remote network driver for connecting containers. Its objective is to provide a CNM that enables programmers to provide the abstraction of network libraries.
 
-Docker and the Docker community drive it. CNM introduces interoperation between networks. It conceptualizes the steps needed to administer networking for containers. 
+The libnetwork is managed by Docker in collaboration with its intensive community. CNM introduces interoperation between networks. It conceptualizes the steps needed to provide networking for containers. 
 
-CNM needs a distributed key-value store like a console to reserve the network configurations. It has configurations for [IPAM plugins](https://www.cni.dev/plugins/current/ipam/static/) and network plugins. IPAM plugin APIs are used to add or remove address ports and assign or reassign IP addresses.
+CNM needs a distributed key-value store like a console to reserve the network configurations. It supports both [IPAM plugins](https://www.cni.dev/plugins/current/ipam/static/) and [network plugins](https://docs.docker.com/engine/extend/plugins_network/). IPAM plugin APIs are used to add or remove address ports, as well as assign or reassign IP addresses.
 
-The network plugins are used to create or delete networks and add or remove containers from the network. The CNM comprise of the following objects:
-- Network - a set of endpoints that can talk directly with each other
-- Network controllers - gives entry into the libnetwork
-- Network drivers - provides the actual implementation that makes the network work 
-- End Point - provides the connectivity for applications in a container network 
-- Sandbox - represents container network configuration.
+Network plugins are used to create or delete networks. They can also help to add or remove containers from the network. The CNM includes the following objects:
+
+- Network - A set of endpoints that can talk directly with one another.
+- Network controller - It grants entry into the libnetwork.
+- Network drivers - It provides the actual implementation that makes the network work.
+- End Point - It provides the connectivity for applications in a container network. 
+- Sandbox - It represents container network configuration.
 
 ### Network drivers
-Docker does a substantial job regarding connecting containers amidst each other and with the host. Pluggable network drivers power this functionality. Seamless network integration is a critical factor for container portability. Applications run inside containers or non-containerized systems on the network.
+Docker uses network plugins to connect containers with the host. This Seamless network integration is a critical factor for container portability. Applications can run inside containers or non-containerized systems on the network.
 
-Docker implements a pluggable network system to provide maximum flexibility. As a result, plugins do the most work to enhance networking in Docker. Plugins are the network drivers. They execute the definite networking functionality.
-
-The network drivers consist of the bridge, overlay, macvlan, host, and none networks.
+Docker implements a pluggable network system to provide maximum flexibility. As a result, plugins do the most work to enhance Docker networking. Examples of drivers include bridge, overlay, macvlan, host, and none networks.
 
 #### Bridge networking
-When you create a Docker network to enable communication between containers, a bridge network `bridge` is created by default. Also,  all newly started containers connect to it by default. Thus, bridge networks enable communication for containers on the same Docker host.
+A bridge network `bridge` is created by default whenever you create a Docker container. Bridge network drivers support communication for containers on the same Docker host.
 
-The bridge network creates an IP address on the host machine, so each container is assigned. The containers access each other using this IP. Suppose it is needed to access the containers from the outside world. Then port forwarding of these containers is performed to map the port onto the docker host.
+The bridge network creates and assigns containers with an IP address on the host machine. The containers can then communicate with each other using this IP address. 
 
 #### Overlay networking
-Overlay networking is for containers on different networks or hosts. For example, if you want to run Docker on distributed networks, an overlay network is the right choice. This is because it enables containers on different hosts to communicate directly with one another. 
+Overlay network drivers focus on containers on different networks or hosts. For example, if you want to run Docker on distributed networks, an overlay network is the right choice. This is because it enables containers on different hosts to communicate directly with one another. [Docker Swarm](https://docs.docker.com/engine/swarm/) is responsible for the creation of an overlay network. 
 
-The overlay driver creates a private network to Docker nodes in the Docker swarm cluster. Docker Swarm enables the creation of a new overlay network. 
-
-Docker swarm makes an internal private network to span every node in the swarm cluster. Then attach containers to this driver using the network option and get containers to communicate with each other.
+Docker swarm makes an internal private network to span every node in the swarm cluster. It then attaches containers to this driver using the network option and thus allow containers to communicate with each other.
 
 #### Macvlan networking
-Macvlan driver simplifies the communication processes between containers. The network allocates a MAC address to the docker containers. Therefore, the Macvlan driver is relevant when connecting the container directly to a physical network rather than a Docker host.
+Macvlan driver simplifies the communication process by allocating a MAC address to Docker containers. Therefore, the Macvlan driver is relevant when connecting the container directly to a physical network rather than a Docker host.
 
 #### Host networking
-It is a public network. The host network uses the host's IP address and TCP port to interact with the service running in the Docker container. Suppose you want to connect to a container and use an IP address accessible from the outside world. Then host network driver gets into the picture.
+The host network uses the host's IP address and TCP port to interact with the service running in the Docker container. In other words, host networking allows you to connect containers to the internet.
 
-The host network driver effectively disables the network isolation linking the Docker host and the containers. This means that a user cannot run many containers on one host using the host driver. This is because the IP address is assigned only once and not many times. Unlike the bridge driver, where each container is set its IP address. The host network IP address does not change. Thus there are some restrictions.
+The host network driver effectively disables the network isolation thus, connecting the Docker host and the containers. This means that the host driver does not support multiple containers on one instance. This is because the IP address is only assigned once. Unlike the bridge driver where each container has its IP address, the host network IP address does not change.
 
 #### None networking
- In a none network, Docker containers have no access to external networks nor communication with other containers. Total isolation and private containers are done when using this network driver. The None driver is used when you want to disable the networking functionality for a specific container.
+In a None network, Docker containers have no access to external networks nor communication with other containers. This network driver puts these containers in total isolation. Therefore, the None driver is used when you want to disable the networking functionality for a specific container.
 
 ### Conclusion
-Docker networking is essential and valuable. When deploying Docker containers, you need to link them to the same network. This article has covered Docker networking. To summarize, you have learned:
-- Docker networking
-- Why it is important
-- Container network model
-- Network drivers
+Docker networking is indeed essential and valuable. When deploying Docker containers, you need to link them to the same network. This article has covered the basics Docker networking. You can, therefore, use this knowledge to manage containers more effectively. 
 
-That should give an excellent overview of how Docker networking functions in different types of network drivers.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
