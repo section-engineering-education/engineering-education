@@ -8,7 +8,7 @@ Java is an Object-Oriented Programming Language. G.U.I stands for Graphical User
 
 In this tutorial, we will learn how to design a simple user login page. At the end of this tutorial, the reader will be able to design the user login page below.
 
-![Login page](/how-to-create-a-user-login-page-using-java-gui/loginPage.png)
+![Login page](/how-to-create-a-user-login-page-using-javagui/loginPage.png)
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ In this tutorial, we will learn how to design a simple user login page. At the e
 Open eclipse, click on File, select New, then select Class, name your class by Java naming convention.
 If done properly you will have a window like this with the given class name, in this tutorial we name our class Java_GUI.
 
-![java gui](/how-to-create-a-user-login-page-using-java-gui/java_gUI.png)
+![java gui](/how-to-create-a-user-login-page-using-javagui/java_gUI.png)
 **NOTE:** We will import `javax.swing.*;`,`import java.awt.event.*;` this will cover the rest of our java swing extension classes and event package.
 
 #### Variables
