@@ -1,15 +1,15 @@
 
-Certain programs might require different types of data to be accepted by the user. Whatever the aim of the program is, you'll need data structures like lists and dictionaries to store them. You will always want to save the data that users enter, before they close your program. The simplest way to do this is to use the JSON module to store your data.
+Certain programs might require different types of data to be accepted by the user. Whatever the aim of the program is, you'll need data structures like lists and dictionaries to store them. You will always want to save the data that users enter before they close your program. The simplest way to do this is to use the JSON module to store your data.
 
 In this tutorial, we'll look at how to store data in Python using the JSON module. We shall also learn how to use the `json.dump()` and `json.dumps()` methods, `json.load()` and `json.loads()` methods, and their differences. Finally, we shall look at how to serialize and deserialize JSON to Object in Python.
 
 ### Prerequisites
 Have some basic knowledge of Python programming language.
 
-### Why store data in Python using JSON module?
-1. Enables developers to dump simple data structures to a file and load when needed.
+### Why store data in Python using the JSON module?
+1. Enables developers to dump simple data structures into a file and load them when needed.
 2. Data can be shared between Python programs using JSON.
-3. JSON format is platform or language-independent. When you store data in JSON format, you can use them easily in other programming languages too.
+3. The JSON format is platform or language-independent. When you store data in JSON format, you can use them easily in other programming languages too.
 4. It's simple to learn and comes in a portable format.
 
 ### Using json.dump() 
@@ -23,7 +23,7 @@ json.dump(data, file)
 
 The `json.dump()` function takes in two arguments:
 1. Data that needs to be written to a JSON file. 
-2. File object that can be used to save the data.
+2. A file object that can be used to save the data.
 
 Let's develop a quick program to save a set of numbers in a JSON file. To save the set of numbers, we will use the `json.dump()` function:
 
@@ -38,7 +38,7 @@ with open(filename, 'w') as file_object:  #open the file in write mode
 
 In this program, we store the set of numbers in `numbers.json`. The extension `.json` shows that the file contains data in JSON format.
 
-We then access the file in `'w'` mode (*write mode*), to make enable data to be written into a JSON file. Finally,the `json.dump()` function stores the set of numbers in the file `numbers.json` file.
+We then access the file in `'w'` mode (*write mode*), to make enable data to be written into a JSON file. Finally, the `json.dump()` function stores the set of numbers in the file `numbers.json` file.
 
 This program has no terminal output, but when we open the file `numbers.json` we see the following data:
 
@@ -71,7 +71,7 @@ print(dict_1)   # {'Name' : 'Felix','Occupation' : 'Doctor'}
 
 ### Difference between json.dumps() and json.dump()
 1. The `dump()` method takes two parameters (data and file), while the `dumps()` method takes only one parameter (data).
-2. The `dump()` method is combined with file operations unlike the `dumps()` method.
+2. The `dump()` method is combined with file operations, unlike the `dumps()` method.
 
 ### Using json.load()
 We use the `json.load` function to read a JSON file.
@@ -139,7 +139,7 @@ Here, the string `dict_1` is parsed using `json.loads()` method which returns a 
 ### Serializing JSON data in Python
 Serialization is the process of converting a native data type to the JSON format.
 
-The `JSON`  module converts a Python dictionary object into JSON object. The `json.dump()` and the `json.dumps()` methods are used to serialize Python data to JSON format.
+The `JSON`  module converts a Python dictionary object into a JSON object. The `json.dump()` and the `json.dumps()` methods are used to serialize Python data to JSON format.
 
 Let's take a look at an example using the `json.dump()` method:
 
@@ -231,7 +231,7 @@ print(h)  # prints a python dictionary
 
 ### Conclusion
 In this article we have learned the following:
-- Reasons for storing data in Python using json module
+- Reasons for storing data in Python using the JSON module
 - Using `json.dump()`, `json.dumps()` and their difference
 - Using `json.load()`, `json.loads()` and their difference
 - Serializing and deserializing JSON data in Python
