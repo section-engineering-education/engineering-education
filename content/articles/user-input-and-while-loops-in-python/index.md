@@ -1,11 +1,38 @@
-As a programmer, many programs that you'll write will solve an end user's problem. You will always want to get some data from the user. This article will teach us how to accept user input and how to use while loops. While loops enable your programs to remain executing when certain conditions remain true.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /user-input-and-while-loops-in-python/
+title: Getting Started with loops and standard inputs in Python
+description: This article explains the use of input() function, while loops and how to apply them in a Python application.
+author: bonface-muriithi
+date: 2021-07-04T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /user-input-and-while-loops-in-python/hero.jpg
+    alt: Getting Started with loops and standard inputs in Python
+---
+
+As a programmer, many programs that you'll write will solve an end user's problem. You will always want to get some data from the user. This article will explain how to handle user input and how to use while loops.
 
 ### Prerequisites
-1. Python installed on your computer.
+1. [Python](https://www.python.org/) installed on your computer.
 2. Basic Python knowledge.
 
+### Objectives
+In this article we will go through:
+
+- How the `input()` function works
+- Using `int()` to accept numerical input
+- Introduction to `while` loops
+- Using the `while` loop with the `else` statement
+- Exiting the `while` loop using break
+- Removing all instances of specific values from a list using a `while` loop
+- Filling a dictionary with user input using a `while` loop
+
 ### How the input() function works
-The `input()` function halts the execution of a program and waits for the user to key in some data. When Python receives the user's input, store it in the variable that you choose to work with.
+The `input()` function halts the execution of a program and waits for the user to key in some data. When Python receives the user's input, it stores the input in the variable that you choose to work with.
 
 For example, let's create a program that accepts a user's name and prints back the name.
 
@@ -17,10 +44,10 @@ print(name)
 #John
 ```
 
-The `input()` function takes in one argument, that is, the instruction you want the user to see. In this example, Python executes the first line and requests the user to enter his name. The program will halt and wait for the user to enter his name and continue after he presses **ENTER**. The name of the user is then loaded in the variable `name`, then `print(name)` displays the user's name back.
+The `input()` function takes in one argument, that is, the instruction you want the user to see. In this example, Python executes the first line and requests the user to input his/her name. The program execution will halt and wait for the user to input his/her name and continue after pressing `ENTER` key on the keyboard. The name of the user is then loaded in the variable `name`, then `print(name)` displays the user's name back.
 
 ### Using int() to accept numerical input
-Any text the user input using the `input()` function Python interprets it as a string. If your work is to print the input, the `input()` function works very well. But if you use the input as a number, an error arises. Consider the example below:
+Any text the user input using the `input()` function, is interpreted as a string. If you only need to print out the input then using the `input()` function is sufficient. Using the input directly as a numerical value throws an exception. Consider the example below:
 
 ```python
 amount = input("Please enter your amount? ")
@@ -30,9 +57,9 @@ print("Your interest is : ")
 print(interest)
 ```
 
-This example gives an error because Python interprets the input `amount` as a string. Python can't multiply a string and a float ie rate.
+The example above throws an error because Python interprets the input `amount` as a string. Python can't multiply a string and float.
 
-To solve this problem we use the `int()` function which informs Python to use the input as a numeric value. The `int()` function converts the string form of a number to numerical form, shown below:
+To solve the above problem we use the `int()` function which informs Python to use the input as a numeric value. The `int()` function converts the string to integer, shown below:
 
 ```python
 amount = input("Please enter your amount? ")
@@ -50,10 +77,10 @@ Your interest is :
 504.0
 ```
 
-When we input 9000 in this example,, Python interprets it as a string. The amount is then converted to an integer using the `int()` function. Now Python calculates the value of the interest.
+When we input 9000 in the above example, Python interprets it as a string. The amount is then converted to an integer using the `int()` function. Now Python calculates the value of the interest.
 
 ### Introducing while loops
-In python, a `while` loop executes provided certain condition remains true.
+In python, a `while` loop executes a given block of code provided that certain condition remains true.
 
 Syntax:
 ```python
@@ -150,7 +177,7 @@ print(employees) #['Mary', 'Paul', 'Yusuf']
 ```
 
 ### Filling a dictionary with user input using a while loop
-We use the `while` loop to prompt the users to enter as much input as we need. Let's create a program that accepts the username and the name of the mountain that each user likes to climb. Since we want to connect each response with a particular user, we will store data ie user input in a dictionary.
+We use the `while` loop to prompt the users to enter as much input as we need. Let's create a program that accepts the username and the name of the mountain that each user likes to climb. Since we want to connect each response with a particular user, we will store data in a dictionary.
 
 ```python
 responses = {} # define an empty dictionary
@@ -185,14 +212,9 @@ John wishes to climb Turin.
 ```
 
 ### Conclusion
-In this article we have gone through:
-
-- How the `input()` function works
-- Using `int()` to accept numerical input
-- Introduction to `while` loops
-- Using the `while` loop with the `else` statement
-- Exiting the `while` loop using break
-- Removing all instances of specific values from a list using a `while` loop
-- Filling a dictionary with user input using a `while` loop
+Now that you have learned how to use the `input()` function and `while` loops, try implementing them in your python programs.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
