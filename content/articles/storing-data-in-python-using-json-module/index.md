@@ -1,7 +1,7 @@
 
 Certain programs might require different types of data to be accepted from the user. Whatever the aim of the program is, you'll need data structures like lists and dictionaries to store them. You will always want to save the data that users enter before they close your program. The simplest way to do this is to use the JSON module to store your data.
 
-In this tutorial, we'll look at how to store users' data in Python using the JSON module. We shall also learn how to use the JSON module to save and read user-generated data.
+In this tutorial, we'll look at how to store data in Python using the JSON module. We shall also learn how to use the `json.dump()` and `json.dumps()` methods, `json.load()` and `json.loads()` methods, and their differences. Finally, we shall look at how to serialize and deserialize JSON to Object in Python.
 
 ### Prerequisites
 Have some basic knowledge of Python programming language.
@@ -14,11 +14,18 @@ Have some basic knowledge of Python programming language.
  4. It's simple to learn and comes in a portable format.
 
 ### Using json.dump() 
-To use `json.dump()` function import the `json` module first.
+To use `json.dump()` function import the `json` module first. The `json.dump()`function is used for writing to a JSON file.
+
+**Syntax:**
+
+```python
+json.dump(data, file)
+```
 
 The `json.dump()` function takes two arguments:
- 1. Piece of information to save (known as function arguments or the data to be saved)
- 2. File object that can be used to save the information
+ 1. Data that needs to be written to a JSON file. 
+ 2. File object that can be used to save the data
+
 
 Let's develop a quick program to save a set of numbers in a JSON file. To save the set of numbers, we will use the `json.dump()` function:
 
@@ -37,65 +44,51 @@ We then access the file in `'w'` mode (*write mode*), to make JSON capable of wr
 
 This program has no terminal output, but when we open the file `numbers.json` we see the following data:
 
-```
+```bash
 [10, 20, 30, 70, 191, 23]
 ```
 
-### Using json.load()
-Let's construct a program that reads the set of numbers back into memory using `json.load()` function, considering the previous example:
+### Using json.dumps()
+The `json.dumps()` method is used for converting a Python object into a JSON string.
+
+**Syntax:**
+
+```python
+json.dumps(data)
+```
+
+The `json.dumps()` function takes one parameter which is the data to be converted into JSON string.
+
+Let's have a look at the example below:
 
 ```python
 import json
-
-filename = 'numbers.json'  #make sure is the same file you wrote to  
-with open(filename,'r') as file_object:  #open in read mode
- numbers = json.load(file_object)#use json.load to load data and store it in the variable numbers
-
-print(numbers)     #print the set of numbers
+data = {
+    'Name' : 'Felix',
+    'Occupation' : 'Doctor'
+}
+dict_1 = json.dumps(data)
+print(dict_1)   # {'Name' : 'Felix','Occupation' : 'Doctor'}
 ```
+
+### Difference between json.dumps and json.dump
+1. The `dump()` method takes two parameters while the `dumps()` method takes only one parameter.
+
+2. The `dump()` method is combined with file operations unlike the `dumps()` method.
+
+### Using json.load()
+We use the `json.load` function to read a JSON file.
 
 The `json.load()` function takes one argument which is the file object. 
 
-Ensure that you read from the same file that you wrote to. Python only requires to read out of that file hence open it in *read mode*.
-
-In the above program, the `json.load()` function loads the information stored in `numbers.json`, and then stores it in the variable *numbers*. Then we print the set of numbers:
-
-```bash
-[10, 20, 30, 70, 191, 23]
-```
-
-This is a simple technique for two programs to share data.
-
-### How to Write JSON to a File
-After importing the JSON Python module, you can write JSON onto a file. The `json.dump()` function allows writing JSON to file with no conversion.
-
-**Example:**
-In the code below, we are creating a file named `example.json` and converting a dictionary into a JSON object using the `json.dump()` method.
+**Syntax:**
 
 ```python
-import json
-# Initializing dictionary
-dic_exm ={
-"name" : "Simplilearn",
-"roll_no" : 1,
-"cgpa" : 9.68,
-"phone_num" : "1231252123"
-}
-
-with open("example.json", "w") as file_obj:
-    json.dump(dic_exm, file_obj)
+json.load(file_object)
 ```
-
-This program has no terminal output but when we open the file `example.json` file, we will see the following data:
-
-```bash
-{"phone_num": "1231252123", "cgpa": 9.68, "name": "Simplilearn", "roll_no": 1}
-```
-
-### How to read JSON file in Python
-We use the `json.load` function to read a JSON file.
 
 Suppose, we have a JSON file named `student.json`, which contains JSON objects.
+
 ```bash
 {"name": "Felix",   
 "Subjects": ["English", "Political Science"]  
@@ -109,71 +102,140 @@ import json
   
 with open(r,'student.json') as file_object:  
   data = json.load(file_object)  
-print(data)
+print(data)   # {"name": "Felix", "Subjects": ["English", "Political Science"]}
 ```
 
 The `json.load()` function is parsed the JSON file and returns the dictionary named `data`.
 
-When we run the above code, we get the following output:
+
+### Using json.loads()
+We use the `json.loads()` method to parse a JSON string and return a Python object such as a dictionary. The `json.loads()` method takes the file contents as a string. 
+
+**Syntax:**
+
+```python
+json.loads(json_string)
+```
+
+**Example:**
+```python
+import json
+  
+# JSON string:
+dict_1 = {
+    "Name": "Felix Maina",
+    "Contact Number": 0712345678,
+    "Email": "fely@gmail.com",
+    }
+  
+# parse dict_1:
+y = json.loads(dict_1)
+# the result is a Python dictionary:
+print(y)   #{ "Name": "Felix Maina", "Contact Number": 0712345678,"Email": "fely@gmail.com", }
+```
+
+Here, the string `dict_1` is parsed using `json.loads()` method which returns a dictionary named `y`.
+
+>Note:The main  difference between `json.loads()` and `json.load()` is that `json.loads()` used to read strings while `json.load()` is used to read files.
+
+### Serializing JSON data in Python
+Serialization is the process of converting a native data type to the JSON format. The `JSON`  module converts a Python dictionary object into JSON object. The `json.dump()` and the `json.dumps()` methods are used to serialize Python data to JSON format.
+
+Let's take a look at an example using the `json.dump()` method:
+
+```python
+import json
+# Data to be written
+details = {
+        "name": "Felix Maina",
+        "years": 21,
+        "school": "Makerere"
+}
+# Serializing json and  Writing json file
+with open( "details.json" , "w" ) as file_object:
+    json.dump( details , file_object )  # {"name": "Felix Maina", "years": 21, "school": "Makerere"}
+```
+
+Here converting a python dictionary and writing it into a JSON file named `details.json`.
+
+The `json.dumps()` method converts a Python object into a JSON string as illustrated below:
+
+```python
+import json
+# Data to be written
+details = {
+        "name": "Felix Maina",
+        "years": 21,
+        "school": "Makerere"
+}
+# Serializing json
+json_string = json.dumps( details )
+print( json_string )  #{"name": "Felix Maina", "years": 21, "school": "Makerere"}
+```
+
+### Deserialize JSON to Object in Python
+Deserialization is the process of converting JSON data into a native data type. Deserialization converts JSON data into a dictionary in Python.
+
+We use the `json.loads()` method to deserialize JSON data to a Python object. The `json.load()` method is also used to  deserialize a JSON formatted file to a Python object.
+
+**Example**: Deserialization using the `loads()`# importing the module
+
+
+```python
+# importing the module
+import json
+  
+# creating the JSON data as a string
+data = '{"Name" : "Felix", "status" : "married"}'
+print("data before deserailizing")
+print(data) #json string
+   
+# deserailizing the data
+h = json.loads(data)
+print("data after deserailizing")
+print(h) #python dictionary
+```
+
+**Output**:
 
 ```bash
- {"name": "Felix", "Subjects": ["English", "Political Science"]}
+data before deserailizing
+{"Name" : "Felix", "status" : "married"}
+data after deserailizing
+{'status': 'married', 'Name': 'Felix'}
 ```
 
-### Saving and reading user-generated data
-When dealing with data provided by users, storing data with JSON is helpful since if you don't save your user's data in some way, you'll lose everything when your program terminates.
+Let create a file and name it `cars.json`. This file should have the following data:
 
-Consider the following case: we ask the user to register using their first name when they execute our program, and then remember their first name and print a welcome back message.
+```bash
+ {
+        "name": "Suzuki",
+        "year": 2001,
+        "model": "GDF10"
+}
+```
 
-First, let's save their first name:
-
+Now let's deserialize this file using the `load()` function:
 ```python
 import json
-
-firstname = input("Enter your first name to register? ")
-filename = 'firstname.json'
-with open(filename, 'w') as file_obj:
-     json.dump(firstname, file_obj)
-     print("Thank you for registering in our community " + firstname + "!")
-```
-
-In this program, we ask for the first name to register the user.
-
-We use `json.dump()` to store the first name in the file `firstname.json`. 
-
-The user will then see a notification stating that he or she has been registered.
-
-```
-Enter your first name to register? Felix
-Thank you for registering in our community Felix!
-```
-
-Let's now create a new program that welcomes a user whose first name has been registered.
-
-```python
-import json
-
-filename = 'firstname.json'
-with open(filename,'r') as file_obj:
- firstname = json.load(file_obj)
- print("Welcome back, " + firstname + " Thank you for registering!")
- ```
-
-Here we use the `json.load()` to read the data saved in `firstname.json` into the variable *firstname*. We can finally welcome them back now that we've recovered their first name:
-
-```
-Welcome back, Felix  Thank you for registering!
+# opening the JSON file 
+data = open('cars.json','r') 
+print("Datatype before deserailization : ")
+print(data) #prints the contents of the file
+     
+# deserailizing the data
+h = json.load(data) 
+print("Datatype after deserailization : ")
+print(h)  #prints a python dictionary
 ```
 
 
 ### Conclusion
 In this article we have learned the following:
  - Reasons for storing data in Python using json module
- - Using json.dump() 
- - Using json.load()
- - How to Write JSON to a File
- - How to read JSON file 
- - Saving and reading user-generated data
+ - Using json.dump(), json.dumps() and their difference
+ - Using json.load(), json.loads() and their difference
+ - Serializing and deserializing JSON data in Python
 
 
 ### Further reading
