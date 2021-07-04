@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /storing-data-in-python-using-json-module/
+title: Storing Data in Python Using the JSON Module
+description: In this article, we will understand how JSON module has helped in storing data in Python. We will explore different methods like dump(), dumps(), load(), loads(), and their differences.
+author: felix-maina
+date: 2021-07-04T00:00:00-17:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/storing-data-in-python-using-json-module/hero.jpg
+    alt: Python JSON module image
+---
 Certain programs might require different types of data to be accepted by the user. Whatever the aim of the program is, you'll need data structures like lists and dictionaries to store them. You will always want to save the data that users enter before they close your program. The simplest way to do this is to use the JSON module to store your data.
-
+<!--more-->
 In this tutorial, we'll look at how to store data in Python using the JSON module. We shall also learn how to use the `json.dump()` and `json.dumps()` methods, `json.load()` and `json.loads()` methods, and their differences. Finally, we shall look at how to serialize and deserialize JSON to Object in Python.
 
 ### Prerequisites
