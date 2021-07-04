@@ -11,7 +11,9 @@ In this article, we are going to learn how to implement a cache in a Spring Boot
   - [Service layer](#service-layer)
   - [Controller layer](#controller-layer)
   - [Configuaration layer](#configuaration-layer)
-- [Testing](#testing)
+  - [Adding data into the Cache](#adding-data-into-the-cache)
+  - [Updating data in the cache](#updating-data-in-the-cache)
+  - [Deleting data from the cache](#deleting-data-from-the-cache)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -86,6 +88,10 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
 In the code snippet above, we create a `TodoRepository ` interface that extends the `JpaRepository` interface that has all the methods required to perform basic CRUD database operations.
 
 #### Service layer
+1. Create a new package named `service` in the root project directory.
+2. In the `service` package created above, create a new Java interface named `TodoService.java`.
+3. Add the code snippet below in the `TodoService` interface created above.
+   
 ```java
 public interface TodoService {
     List<Todo> getAllTodos();
@@ -100,25 +106,24 @@ public interface TodoService {
 }
 ```
 
+In the `service` package, create a new Java file named `TodoServiceIml.java` and add the code snippet below.
+
 ```java
 @Service
 @AllArgsConstructor
 public class TodoServiceImpl implements TodoService {
     private final TodoRepository todoRepository;
 
-   // @Cacheable(cacheNames = "todos")
     @Override
     public List<Todo> getAllTodos() {
         return todoRepository.findAll();
     }
 
-   // @Cacheable(cacheNames = "todo", key = "#id")
     @Override
     public Todo getTodoById(Long id) {
         return todoRepository.getById(id);
     }
 
-   // @CachePut(value = "todos", key = "#todo.id")
     @Override
     public Todo updateTodo(Todo todo, Long id) {
         Todo newTodo = Todo
@@ -136,7 +141,6 @@ public class TodoServiceImpl implements TodoService {
         todoRepository.save(todo);
     }
 
-    //@CacheEvict(value = "todo", key = "#id")
     @Override
     public void deletedTodo(Long id) {
         todoRepository.deleteById(id);
@@ -146,6 +150,10 @@ public class TodoServiceImpl implements TodoService {
 ```
 
 #### Controller layer
+1. Create a new package named `controllers` in the root project package.
+2. In the `controllers` package, create a new file named `TodoController.java`.
+3. Add the code snippet below to `TodoController.java` file created above.
+    
 ```java
 @RestController
 @RequestMapping("/api/todos")
@@ -182,15 +190,29 @@ public class TodoController {
 }
 
 ```
+Run the application to confirm that everything is working as expected.
+
+Now that we have a fully functional CRUD REST API application, we are going to continue to add cache support in our application.
 
 #### Configuaration layer
+To add cache support to our application, we need to create a configuration class from where we can enable caching.
+
+1. In the root project package, create a new package named `config`.
+2. In the `config` package created above, create a new Java file named `CacheConfig.java`.
+3. Add the code snippet below to the `CacheConfig.java` file.
+   
 ```java
 @EnableCaching
 @Configuration
 public class CacheConfig {
 }
 ```
+- `@EnableCaching` annotation enables the Spring Boot caching abstraction layer in our application.
+- `@Configuration` annotation marks the `CacheConfig` class as a Spring configuration class.
 
+> Ehcache cache provider requires an independent configuration to function correctly.
+
+In the resources folder, create a new XML file named `ehcache.xml` and add the code snippet below.
 ```xml
 <config
         xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
@@ -213,12 +235,71 @@ public class CacheConfig {
     </cache-template>
 </config>
 ```
+- In the above code snippet, we set the time taken for the cache contents to be updated and the amount of memory to be used by the cache.
+  
+We need to inform our application of the path to Ehcache configuration file. In the `application.properties` file in the resources directory, add the code snippet below.
 
 ```yaml
 spring.cache.jcache.config=classpath:ehcache.xml
 
 ```
-### Testing
+
+#### Adding data into the Cache
+In the `TodoServiceImpl.java` file, update the `getAllTodos()` method with the code snippet below.
+
+```java
+    @Cacheable(cacheNames = "todos")
+    @Override
+    public List<Todo> getAllTodos() {
+        return todoRepository.findAll();
+    }
+```
+The above method returns a list of `todos` but it is annotated with ` @Cacheable(cacheNames = "todos")` annotation that grabs the data returned from this method and stores them in the cache with a key `todos`.
+
+> Data in the cache is stored in a key-value pattern. The key is the name stored in the cacheName variable while the value is the data that is returned by the method annotated with @Cacheable annotation.
+
+To add a single item into the cache, we need to add the `id` that will be used to retrieve the item and updated the item in the cache.
+
+Update the `getTodoById()` method with the code snippet below.
+```java
+    @Cacheable(cacheNames = "todo", key = "#id")
+    @Override
+    public Todo getTodoById(Long id) {
+        return todoRepository.getById(id);
+    }
+```
+
+#### Updating data in the cache
+In the `TodoServiceImpl.java` file, update the `updateTodo()` method with the code snippet below.
+```java
+
+    @CachePut(value = "todos", key = "#todo.id")
+    @Override
+    public Todo updateTodo(Todo todo, Long id) {
+        Todo newTodo = Todo
+                .builder()
+                .id(id)
+                .description(todo.getDescription())
+                .title(todo.getTitle())
+                .build();
+        todoRepository.save(newTodo);
+        return newTodo;
+    }
+```
+To update data in the cache, we use the ` @CachePut` annotation and provide the key of the item to update.
+
+#### Deleting data from the cache
+In the `TodoServiceImpl.java` file, update the `deleteTodo()` with the code snippet below.
+```java
+    @CacheEvict(value = "todo", key = "#id")
+    @Override
+    public void deletedTodo(Long id) {
+        todoRepository.deleteById(id);
+    }
+```
+To delete data from the cache, we use the `@CacheEvict` annotation passing in the key of the specific item to delete.
+
+> To delete all items from the cache, we set the attribute `allEntries` to true.
 
 ### Conclusion
-Now that you have learned how to add caching to a Spring Boot application, implement caching in your applications to reduce unnecessary database queries. You can download the full source code (here)[].
+Now that you have learned how to add caching to a Spring Boot application, implement caching in your applications to reduce unnecessary database queries. You can download the full source code (here)[https://replit.com/@elizabeth962/springbootcache#].
