@@ -1,8 +1,7 @@
 ### Transaction management in database
 ### Introduction
-A Transaction is a unit of work performed against a database. They are units of work accomplished in a logical order, whether manually by the end-user or automatically by an application.
+A transaction is a logical unit of work performed on a database. They are logically ordered units of work completed by the end-user or an application. A transaction is made up of one or more database modifications. Creating, updating, or deleting a record from a table, for example. To preserve data integrity and address database issues, it's critical to keep track of these transactions. We can bundle SQL queries together and run them as a single transaction
 
-A transaction will comprise one or more changes to the database. For example, creating, updating, or deleting a record from a table. It is important to control these transactions to ensure the integrity of data and handle database errors. We can group  SQL queries and execute them together as part of a single transaction.
 
 ### Prerequisities
 Before learning this tutorial you need to have basics in SQL(structured query language) and understand how to create a database which we will be working from and performing our transactions against.
@@ -10,9 +9,9 @@ Before learning this tutorial you need to have basics in SQL(structured query la
 ### Transaction states 
 There are various database transaction states as follows.
 1. Active state- this is the state in which a transaction execution process begins. Operations such as read or write are performed on the database.
-2. Partially committed- a transaction is partially committed after the end of a transaction.
-3. Committed stage- After a transaction execution is completed successfully the transaction is in committed state. All the changes made against the database are recorded permanently.
-4. Failed state- A transaction is in the failed state if the transaction is aborted when in active state or in an instance when one of the checks fails.
+2. Partially committed- means that a transaction is only partially committed once it has been completed.
+3. Committed stage- After a transaction execution is completed successfully the transaction is in committed state.All changes made to the database are permanently documented.
+4. Failed state- If a transaction is aborted while in the active state, or if one of the checks fails, the transaction is in the failed state.
 5. Terminated state- This state happens once the transaction leaving the system cannot be restarted once again.
 
 ### Transaction properties 
@@ -20,25 +19,25 @@ There are four main properties of a transaction represented in the acronym ACID 
 
 1. Atomicity- A transaction cannot be subdivided and can only be executed as a whole and is treated as an atomic unit. It is either all the operations are carried out or none are performed.
 2. Consistency- After any transaction is carried out in a database it should remain consistent. No transaction should affect the data residing in the database adversely.
-3. Isolation- In the case of many transactions that need to be executed in a database simultaneously, then each transaction will be executed as if it was a single transaction. Therefore the execution of a single transaction should not affect the execution of other transactions.
+3. Isolation- When several transactions need to be conducted in a database at the same time, each transaction is treated as if it were a single transaction. As a result, the completion of a single transaction should have no bearing on the completion of additional transactions.
 4. Durability- From durable, all changes made must be permanent such that once the transaction is committed the effects of the transaction cannot be reversed. In case of system failure or unexpected shutdown and changes made by a complete transaction are not written to the disk, during restart the changes should be remembered and restored.
 
 ### Transactional control commands
-The transactional commands are used with the Data Manipulation Language (DML) commands such as INSERT, UPDATE, and DELETE. These commands cannot be used with the Data Definition Language because they are automatically committed to the database. Below are the transaction commands;
+The Data Manipulation Language (DML) instructions are utilized with the transactional commands such as INSERT, UPDATE, and DELETE. These commands cannot be used with the Data Definition Language because they are automatically committed to the database. Below are the transaction commands; 
 
 1. COMMIT- Saves the changes done against the database.
-2. ROLLBACK- Restores the changes done.
-3. SAVEPOINT- creates a point within the transactions in which to ROLLBACK.
+2. ROLLBACK- Redoes the changes done before being commited to the database.
+3. SAVEPOINT-saves a point in a transaction on which to carry out a rollback.
 4. SET TRANSACTION- Gives a name to a transaction.
 
 ### COMMIT command
-The COMMIT command is used to save changes invoked to a database by a transaction. The COMMIT command saves all transactions in the database from the last COMMIT or ROLLBACK commands.
-The COMMIT command syntax;
+The COMMIT command saves changes made to a database as part of a transaction. The COMMIT command preserves all database transactions since the previous COMMIT or ROLLBACK command.
+The syntax of the COMMIT command; 
 
 ```SQL
 COMMIT
 ```
-An example would delete the records from the table that have fees=40000 and commit the changes in the database.
+We can delete the records from the table that have fees=40000 and commit the changes in the database.
 
 ```SQL
 DELETE FROM STUDENTS
@@ -48,7 +47,7 @@ COMMIT;
 This command will delete the row from the table which has fees equal to 40000 and save the changes to the database.
 
 ### ROLLBACK command
-The ROLLBACK command is used to restore back the changes or undo the transactions made to the database but have not been saved or committed to the database.
+The ROLLBACK command can only undo transactions from the last ROLLBACK or COMMIT command executed.
 The ROLLBACK command can only be used to undo transactions from the last ROLLBACK or COMMIT command issued.
 The ROLLBACK command syntax is as follows;
 
@@ -68,14 +67,14 @@ The delete operation would not change the records of the database therefore the 
 
 ### SAVEPOINT command
 This command rolls back a transaction to a point in the database without having to roll back the entire transaction.
-The SAVEPOINT command syntax is as follows;
+The SAVEPOINT command syntax;
 
 ```SQL
 SAVEPOINT SAVEPOINT_NAME;
 ```
 
-Unlike the ROLLBACK command that undoes a group of transactions, the SAVEPOINT command serves only in the creation of a SAVEPOINT among all the transaction statements.
-The following is a syntax for rolling back to a SAVEPOINT;
+Unlike the ROLLBACK command, which reverses a set of transactions, the SAVEPOINT command just creates a SAVEPOINT among all transaction statements.
+Rolling back to a SAVEPOINT;
 
 ```SQL
 ROLLBACK TO SAVEPOINT_NAME;
@@ -111,7 +110,7 @@ The RELEASE SAVEPOINT command syntax;
 RELEASE SAVEPOINT savepoint_name;
 ```
 
-Upon releasing a savepoint command the ROLLBACK command cannot undo or restore the transactions since the last SAVEPOINT.
+The ROLLBACK command cannot reverse transactions because the last SAVEPOINT command has been released.
 
 ### SET TRANSACTION command 
 This command is used to initiate a database transaction. It specifies the characteristics of the transaction following. It specifies a transaction to either be read-only or read-write.
