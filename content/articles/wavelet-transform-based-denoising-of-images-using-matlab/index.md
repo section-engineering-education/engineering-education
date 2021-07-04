@@ -6,13 +6,13 @@ url: /wavelet-transform-based-denoising-of-images-using-matlab/
 title: Wavelet-Based Denoising of images using Matlab
 description: This article will be an introduction to denoising of images using Wavelet transform method. We will explore about Matlab, what signals are, noising and denoising are, and how to denoise a noisy image.
 author: atieno-dorine
-date: 2021-07-03T00:00:00-20:00
-topics: []
+date: 2021-07-04T00:00:00-07:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/hero.jpg
-    alt: Wavelet Matlab sample Image
+    alt: Wavelet Matlab Sample Image
 ---
 Wavelet-based denoising is a method of analysis that uses time-frequency to select an appropriate frequency band based on the characteristics of the signal.
 <!--more-->
@@ -24,9 +24,9 @@ Getting rid of the image noise that contaminates during a signal transfer, is ve
 
 In this article, we will discuss one such method called Wavelet-based denoising of images, which is one of the most efficient methods.
 
-### Prerequisite
+### Prerequisites
 1. [Matlab](https://www.mathworks.com/downloads/) installed.
-2. A proper understanding of [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
+2. A proper understanding of the [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) language.
 
 ### Introduction
 During transmission of signals over a distance, there are chances for it to get contaminated with noise. The objective here is to remove the noise from the image signals using the wavelet technique.
@@ -38,6 +38,7 @@ The signal acquires the noise through the additive method and the general form o
 where `f'(x,y)` is the noise-contaminated signal, `f(x,y)` is the original signal, and `n(x,y)` is the noise signal.
 
 The basic assumption of a noise signal `n(x,y)`, for the proposed scheme, are:
+
 - Noise is additive
 - Noise is a random signal (white gaussian with zero mean value)
 - Noise has a high frequency.
@@ -103,6 +104,7 @@ The whole decomposition described above is Discrete Wavelet Transform (DWT), whi
 When the `Analyzer` pushbutton is pressed, our image is denoised. This gives us a window with plots for the wavelet coefficient.
 
 ![Plot of wavelet co-efficient](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image4.png)
+
 *Image denoising*
 
 At level ($l_1$), we the image's horizontal, diagonal, and vertical details. This also applies to level 2 ($l_2$).
@@ -126,6 +128,7 @@ imgden = wdencmp('gbl_or_Ivd', img, 'wname', N, THR, SORH, KEEPAPP)
 ```
 
 where
+
 - `img`: is the noisy image that we input.
 - `imgden`: is the denoised output image.
 - `gbl_or_ivd`: either use `gbl` for single threshold or `Ivd` for level-dependent threshold (either use `gbl` or `Ivd`).
@@ -152,7 +155,7 @@ The default values are found automatically using `ddencmp`. The function syntax 
 
 We pass the input noisy image (img), defined denoising method, and wavelet (WV). Executing this function we get the values for these constants.
 
-### Example code to show the use of `wdencmp` and `ddencmp`
+### Example code to show the use of wdencmp and ddencmp
 We first load the original image from the PC.
 
 ```Matlab
@@ -216,7 +219,7 @@ Below is the image obtained after execution of the code:
 
 ![Output after denoising](/engineering-education/wavelet-transform-based-denoising-of-images-using-matlab/image6.png)
 
-For more understanding of this topic, you can check it [here](https://www.mathworks.com/help/wavelet/denoising-and-compression.html?s_tid=CRUX_lftnav)
+For further reading on this topic, check out the Mathworks documentation [here](https://www.mathworks.com/help/wavelet/denoising-and-compression.html?s_tid=CRUX_lftnav).
 
 ### Conclusion
 Wavelet transform is an important feature for engineers working with images or audio. This is because it helps in the analysis of signals and decomposes the signal for further analysis.
