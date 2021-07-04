@@ -20,7 +20,7 @@ Cache reduces the number of database reads resulting in reduced cost of operatio
 		
 
 		### Prerequisites
-		1. [JDK]() installed on your computer.
+		1. [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) installed on your computer.
 		2. Knowledge of Spring Boot.
 		
 
