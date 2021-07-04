@@ -233,3 +233,5 @@ Rollback command applies to the operations that happened after the savepoint SP2
 
 ### Conclusion
 With that now, you are able to carry out transactions in the database and work with your database and also how to gain access to your data in case of an unintentional delete. You can also try some more examples with your own database to enhance better understanding.
+
+Happy coding!
