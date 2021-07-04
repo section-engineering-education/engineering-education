@@ -21,7 +21,7 @@ In this tutorial, we will learn how to design a simple user login page. At the e
 Open eclipse, click on File, select New, then select Class, name your class by Java naming convention.
 If done properly you will have a window like this with the given class name, in this tutorial we name our class Java_GUI.
 
-![java gui](/how-to-create-a-user-login-page-using-javagui/java_gUI.png)
+![java gui](/how-to-create-a-user-login-page-using-javagui/folder structure.png)
 **NOTE:** We will import `javax.swing.*;`,`import java.awt.event.*;` this will cover the rest of our java swing extension classes and event package.
 
 #### Variables
