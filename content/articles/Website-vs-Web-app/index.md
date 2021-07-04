@@ -37,7 +37,7 @@ A good website developer can examine a site according to its features. One of th
 1. `User friendly`: The use, interaction, and navigation of a website should be straightforward.
 2. `Attractive and accessible for all targeted users`: This helps attract users to opt for a particular website against another. 
 3. ``Reliable``: A good website should be accessed by an end-user anytime and anywhere. It should work twenty-four hours a day, and it should be trustworthy. It should also deliver notifications in good time to keep the user updated.
-4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high load speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, a developer should always choose a host that loads fast.Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high load speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, a developer should always choose a host that loads fast.
+4. `High speed of loading`: Web developers should consider this feature as not all end-users are patient. Therefore if a website loads slowly, a user will most likely look for a different website with a high load speed. There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, a developer should always choose a host that loads fast. Web developers should consider this feature as not all end-users are patient. Thus, a user will most likely look for a different website with a high load speed if a website loads slowly.  There numerous elements that contribute to the loading speed of a website. The most crucial being the hosting quality. Therefore, a developer should always choose a host that loads fast.
 6. `Digitalized`: A developer should ensure that a website uses the latest technological trends.
 7. `Relevant Content`: The content in the website should be relevant to the users. For example, you cannot post cars on a job board website. 
 
@@ -64,8 +64,8 @@ Below are examples of web applications:
 
 1. `Security`: Web applications ensure sites and programs are secure since they are designed with more privacy and a high level of protection.
 2.  `Increase Efficiency`: Business processes are streamlined through web applications to do more in less time and more accurately.
-3.  `Support to Customers` : Web apps offer customer support options. They can be the first contact line between potential clients and the company. Applications are developed to provide customer support at all times and help drive customer loyalty.
-4.  `Ease of living` :  Web Application brings ease to most daily activities such as communication, internet banking, travelling  eating(Where you can order prepared food via a website) etc.
+3.  `Support to Customers` : Web apps offer various customer support services. Also, they act as a first contact line between potential clients and the company. 
+4.  `Ease of living` :  Web Apps have simplified day to day activities such as communication, internet banking, traveling, etc.
 
 ### Distinctions between a website and a web application
 
@@ -87,7 +87,7 @@ While a website shows the collected information and data on a particular page, a
 
 ### Conclusion
 Unlike developing a website that is a bit simple and less complicated, creating a web application needs more knowledge and experience.
-From the above discussion, I believe that you can tell the difference between website and web app and what you interact with daily.
+From the above discussion, you can tell the difference between website and web app and what you interact with daily.
 
 Happy Learning!
 ---
