@@ -240,3 +240,6 @@ In this article we have learned the following:
 For more information about the JSON module in Python, see the links below:
 - [Python JSON module](https://www.askpython.com/python-modules/python-json-module)
 - [Introduction to JSON module in Python](https://dyclassroom.com/python/python-json-module)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
