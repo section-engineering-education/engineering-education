@@ -147,9 +147,9 @@ urlpatterns = [
 
 ### 3. Django MODEL VIEW TEMPLATE SYSTEM
 
-MVT as you know, is an acronym for MODEL VIEW TEMPLATE. Django as a web framework uses this architecture for its operation while other servers side language or framework use MODEL VIEW CONTROLLER, MVC. Let's understand each keyword!
+Model View Template (MVT), is an acronym for MODEL VIEW TEMPLATE. Django as a web framework uses this architecture for its operation while other servers side language or framework use MODEL VIEW CONTROLLER, MVC. Let's understand each keyword!
 
-MODEl is going to act as the interface of your data. It is responsible for maintaining data and it is the logical data structure behind the entire application that is represented by a database (generally relational databases such as SQL). This is configured in models.py file inside apps in django project folder.
+*MODEL* is going to act as the interface of your data. It is responsible for maintaining data and it is the logical data structure behind the entire application that is represented by a database (generally relational databases such as SQL). This is configured in models.py file inside apps in django project folder.
 
 In the `models.py`, we will create our `MyModel` class with these Python class:
 
