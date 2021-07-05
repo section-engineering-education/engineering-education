@@ -8,7 +8,7 @@ description: This article describes the basics of shell scripting, terminologies
 author: Dennis-Kariuki
 date: 2020-07-05T00:00:00-18:00
 topics: []
-excerpt_separator:<!--more-->
+excerpt_separator: <!--more-->
 images:
         url: /engineering-education/Introduction-to-Linux-Shell-and-Shell-Scripting/hero.png
         alt: Linux shell and shell scripting example image
@@ -180,3 +180,5 @@ $  ./"your file name"
 ### Conclusion
 
 In the article, we have learned the basics of shell scripting, understood the terminologies used in shell scripting, the advantages, and disadvantages of shell scripting, and done an example of Bash shell scripting. I urge the reader to use the knowledge learned above to create and learn more script to understand more about scripting.
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
