@@ -1,4 +1,23 @@
-You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are interacting with the shell. In this article, I will describe the Linux shells and shell scripting. However, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Introduction-to-Linux-Shell-and-Shell-Scripting/
+title: Introduction to Linux Shell and Shell Scripting
+description: This article describes the basics of shell scripting, terminologies used in shell scripting, the advantages, and disadvantages of shell scripting.
+author: Dennis-Kariuki
+date: 2020-07-05T00:00:00-18:00
+topics: []
+excerpt_separator:<!--more-->
+images:
+        url: /engineering-education/Introduction-to-Linux-Shell-and-Shell-Scripting/hero.png
+        alt: Linux shell and shell scripting example image
+        
+---
+You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are interacting with the shell. 
+<!--more-->
+
+In this article, I will describe the Linux shells and shell scripting. However, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
 
 ### Prerequisites
 
