@@ -1,8 +1,8 @@
-### Introduction
 You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are speaking with shell. In this article, I will describe Linux shells and shell scripting; however, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
 
-Table of content:
-- [What is kernel](#what-is-kernel)
+### Table of contents
+
+- [What is the kernel](#what-is-the-kernel)
 - [What is Shell](#what-is-shell)
 - [Shell Scripting](#shell-scripting)
 - [Why do we need shell scripts](#why-do-we-need-shell-scripts)
@@ -10,32 +10,36 @@ Table of content:
 
 ### What is the kernel
 
-The `kernel` is computer software that is at the heart of a computer's operating system, controlling everything in it. It is in charge of the Linux system's following resources:
+The `kernel` is computer software that is at the heart of a computer's operating system, controlling everything in it. It is in charge of the following Linux system's resources:
 
 - File administration. 
 - Management of processes.
 - Management of I/O.
 - Device management, memory management, and so forth. 
+
 Linus Torvalds is sometimes misidentified as the creator of the Linux operating system, but he is only responsible for the creation of the Linux kernel. 
 
 Kernel + GNU system utilities and libraries + additional management scripts + installation scripts Equals complete Linux system.
 
 ### What is Shell
+
 A `shell` is a unique user program that allows users to interact with operating system functions. Shell accepts user-readable commands and converts them to kernel-friendly. It is an interpreter for commands that can read and run commands on keyboards or files. When a user logs in or launches a terminal, the shell is launched.
 
 Shells can be divided into two categories: 
-1. Command-Line Shell
+1. Command-Line shell
 2. Graphical shell
 
-#### Command-Line Shell
-Shell access is possible through a shell interface shell. A certain tool called 'Terminal' is used to key in human-readable commands like `cat` and `LS` in Linux/macOS or 'command prompt' in Windows, which subsequently carries out tasks. The user is then shown the result on the terminal. This is how an Ubuntu  terminal looks:
+#### Command-Line shell
+
+Shell access is possible through a shell interface shell. A certain tool called 'Terminal' is used to key in human-readable commands like `cat` and `ls` in Linux/macOS or 'command prompt' in Windows, which subsequently carries out tasks. The user is then shown the result on the terminal. This is how an Ubuntu  terminal looks like:
 
 ![output](/engineering-education/Introduction-to-Linux-Shell-and-Shell-Scripting/ubuntu_terminal.png)
 
 The `ls` command is used with the `-l` option in the screenshot above. For a long listing, the files are displayed in the current working directory. Working with the command line shell can be challenging for beginners since there are so many commands to remember. It is extremely powerful because it allows users to save commands in a file and then execute them all at once. Any repetitious task can be easily automated this way. Batch records in Windows and Shell Scripts in Linux/macOS frameworks are normal names for these documents.
 
-#### Graphical Shells
-Graphical shells allow the use of a `GUI` program for open, close, move and resize windows, as well as to switch focus between window sizes. Window Operating systems or Ubuntu Operating systems are notable examples of operating systems that provide a graphical user interface (GUI) for interacting with programs. For each activity, the user does not need to enter a command. A typical Ubuntu user interface is shown below:
+#### Graphical shell
+
+The Graphical shell allow the use of a `GUI` program for open, close, move and resize windows, as well as to switch focus between window sizes. Window Operating systems or Ubuntu Operating systems are notable examples of operating systems that provide a graphical user interface (GUI) for interacting with programs. For each activity, the user does not need to enter a command. A typical Ubuntu user interface is shown below:
 
 For Linux systems, there are various shells available, such as: 
 
@@ -63,7 +67,8 @@ The following pieces make up a shell script:
 - If...then...else, case and shell loops = control flow.
 
 ### Why do we need shell scripts? 
- Shell scripts come in handy for a number of reasons:
+
+Shell scripts come in handy for a number of reasons:
 
 1. To avoid repetitive work and the use of automation.
 2. Shell scripting is used by system administrators to do routine backups.
@@ -71,21 +76,25 @@ The following pieces make up a shell script:
 4. Incorporating additional features into the shell.
 
 #### Advantages of shell scripts
+
 1. The programmer does not need to move to a different syntax because the command and syntax are identical to those typed directly on the command line.
 2. Shell scripts are much faster to write than Java scripts.
 3. Getting started quickly.
 4. Debugging in real-time.
 
 #### Disadvantages of shell scripts
+
 1. Prone to costly blunders, a single blunder can change the directive, perhaps causing harm. 
 2. Execution time is slow. 
 3. Design defects in the syntax or implementation of the language.
 4. Unlike other scripting languages, it is not well suited for large and sophisticated tasks and only provides a limited data structure.
 
 ### Easy demo of Bash Shell scripting
+
 In this demo, we will do a bash script of incrementing a variable three times with an increment operator.
 
-#### procedure
+#### Procedure
+
 1. Open the terminal, move to the desktop directory, and run the following command to create a file and name it as `firstscript.sh`:
 
 ```
@@ -135,4 +144,5 @@ $  ./"your file name"
 
 
 ### Conclusion
+
 In the article, we have learned the basics of shell scripting, understood the terminologies used in shell scripting, advantages and disadvantages of shell scripting and done an example of Bash shell scripting. I urge the reader to use the knowledge learnt above to create and learn more script to understand more about scripting.
