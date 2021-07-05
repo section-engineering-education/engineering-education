@@ -161,7 +161,8 @@ export class MusicDetailsComponent implements OnInit {
 ```
 
 ```html
-<label>Add a Musician: <input></label><button type="button">Add to parent's  musician list</button>
+<label>Add a Musician: <input #newArtist ></label><button type="button" (click)="addNewArtist(newArtist.value)">Add to parent's  musician list</button>
+
 
 ```
 
