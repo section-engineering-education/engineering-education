@@ -3,23 +3,27 @@ layout: engineering-education
 status: publish
 published: true
 url: /difference-between-a-webpage-and-a-web-appication/
-title: The difference between a Web Page and a Web Application.
-description: In this article, we are going to look at the differences between Web page and a Website in backend development. It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcomes.Getting the results of what they are searching for is what matters to the end-user. How they get the results is not their business.
+title: The Difference between a Webpage and a Web Application
+description: In this article, we are going to look at the differences between a webpage and a website in back-end development. It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcome. Getting the results of what they are searching for is what matters to the end-user. How they get the results is not their business.
 author: erastus-muriithi
-date: 2021-06-21T00:00:00-13:00
+date: 2021-07-05T00:00:00-04:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Difference-Between-a-Web-Page-and-a-Web-Appication/hero.png
-    alt: difference between a Web Page and a Web Applicationexample image
+  - url: /engineering-education/website-vs-web-app/hero.png
+    alt: difference between a Webpage and a Web Application example image
 ---
 
 ### Introduction
-It is difficult for most people to distinguish between a website and a web application. They enter the URL and get the expected outcomes, making them unaware of the backend processes.
-These products are created for the consumer by developers. Therefore, a developer must be able to tell the difference between the two. Some developers argue that the terms `website` and `web application` are similar, while others say they are not. Who is wrong, and who is correct?😕 I was once among those who argued that the two terms mean the same, but after research, I found out that these are two different things. 
+It is difficult for most people to distinguish between a website and a web application. They enter the URL and get the expected outcome, making them unaware of the backend processes.
+These products are created for the consumer by developers. 
+
+Therefore, a developer must be able to tell the difference between the two. Some developers argue that the terms `website` and `web application` are similar, while others say they are not. Who is wrong, and who is correct?😕 I was once among those who argued that the two terms mean the same, but after research, I found out that these are two different things.
+
 This article will highlight some of the main differences that have helped me understand the differences between websites and web applications.
 In this tutorial, we will look at:
+
 1. [Website](#website)
 2. [Web application](#web-application)
 3. [Distinctions between a website and a web application](#distinctions-between-a-website-and-a-web-application)
