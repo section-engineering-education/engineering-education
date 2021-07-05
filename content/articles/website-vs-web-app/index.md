@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /difference-between-a-webpage-and-a-web-appication/
+url: /website-vs-web-app/
 title: The Difference between a Webpage and a Web Application
 description: In this article, we are going to look at the differences between a webpage and a website in back-end development. It is difficult for a user to distinguish between a website and a web application. They enter the URL and get the expected outcome. Getting the results of what they are searching for is what matters to the end-user. Therefore, a developer must be able to tell the difference between the two.
 author: erastus-muriithi
