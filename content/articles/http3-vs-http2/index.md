@@ -7,7 +7,7 @@ title: Comparison between the HTTP/3 and HTTP/2 Protocols
 description: This tutorial will go over the basics of HTTP/1, HTTP/2, and HTTP/3. We will go over how each are different, by understanding their limitations and advantages.
 author: bradley-biketi
 date: 2021-07-05T00:00:00-15:00
-topics: []
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
