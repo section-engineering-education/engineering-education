@@ -2,15 +2,15 @@
 layout: engineering-education
 status: publish
 published: true
-url:
+url: /engineering-education/core-concepts-of-django-to-master/hero.png
 title: Core concepts to master when using Django
 description: In this article we will cover a number of concepts to be mastered whether you are just starting out learning the framework or have some experience with it.
-author:
+author: arafat-olayiwola
 date: 2021-06-26T00:00:00-11:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/core-concepts-of-django-to-master/hero.jpg
+  - url: /engineering-education/core-concepts-of-django-to-master/hero.png
     alt: Core concepts to master when using Django
 ---
 
@@ -35,7 +35,7 @@ By the end of this article, readers would have knowledge about the following top
 5. Django Authentication System
 6. Relational Database System As Used In Django
 
-![django-img](/core-concepts-of-django-for-mastering/django-image.png)
+![hero](/core-concepts-of-django-for-mastering/hero.png)
 
 ### 1. DJANGO PROJECTS STRUCTURE
 
@@ -287,6 +287,8 @@ Django as a framework makes web development backend simple and easy to use. With
 Thank you for making it to this end, see you soon in next article.
 
 ![Django Official Docs](/https://docs.djangoproject.com/en/3.2/intro/)
+
+![Follow Me Here](/https://github.com/Horlawhumy-dev)
 
 Happy Learning!
 
