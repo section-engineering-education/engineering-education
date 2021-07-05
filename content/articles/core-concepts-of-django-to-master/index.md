@@ -1,4 +1,16 @@
-# Key Take Aways
+# Introduction
+
+Django is a free, open source web framework written in the Python programming language. A web framework is software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
+
+Django uses a python package called pip and this come in handy with Python installed. This is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
+
+Surprised?? Yes, companies mentioned used Django as their backend side.
+
+Django web framework allows developers out there to connect the server side by actually making ties with the user interface of applications through the use of its concepts.
+
+In this article we will cover a number of concepts to be mastered whether you are just starting out learning the framework or have some experience with it.
+
+## Key Take Aways
 
 By the end of this article, readers would have knowledge about the following topics:
 
@@ -10,18 +22,6 @@ By the end of this article, readers would have knowledge about the following top
 6. Relational Database System As Used In Django
 
 ![django-img](/core-concepts-of-django-for-mastering/django-image.png)
-
-## Introduction
-
-Django is a free, open source web framework written in the Python programming language. A web framework is software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
-
-Django uses a python package called pip and this come in handy with Python installed. This is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
-
-Surprised?? Yes, companies mentioned used Django as their backend side.
-
-This web framework allows developers out there to connect the server side by actually making ties with user interface of aplications through the use of its concepts.
-
-Below is the bulletin of concepts to be mastered whether you are just starting out learning the framework or you have been into it for a while.
 
 ### 1. DJANGO PROJECTS STRUCTURE
 
@@ -41,14 +41,14 @@ Python 3.8.5
 Run `mkdir ~/django-project` to create our working directory, and navigate into the working folder.
 
 ```console
-$ mkdir ~/django-project
-$ cd django-project
+  mkdir ~/django-project
+  cd django-project
 ```
 
 1. To create a virtual environment for our project run the command below:
 
    ```bash
-   $ virtualenv venv
+    virtualenv venv
    ```
 
    `venv` in the command `virtualenv venv` is the name of our virtual environment.
@@ -63,19 +63,19 @@ $ cd django-project
 2. To activate the virtual environment for the project run the command below, if you are on window OS use this:
 
    ```bash
-   $ source venv/Scripts/activate
+    source venv/Scripts/activate
    ```
 
    But if on Mac/Linux OS use
 
    ```bash
-   $ venv/bin/activate
+    venv/bin/activate
    ```
 
 3. To install Django in our virtual environment run the command below:
 
    ```bash
-   $ pip install django
+     pip install django
    ```
 
    Running the command will result in something similar to the code block below
@@ -97,7 +97,7 @@ $ cd django-project
    Let's create our django project now by running the command `django-admin startproject django-project`
 
    ```bash
-   $ django-admin startproject django-project
+     django-admin startproject django-project
    ```
 
 After successfully creating the project we change our working directory to our project folder and run the Django development server.
@@ -122,7 +122,7 @@ Quit the server with CONTROL-C.
 When we visit `http://127.0.0.1:8000/` in web browser, we should see the default Django welcome page. To restart the server, always run the command below.
 
 ```bash
-$ python manage.py runserver
+  python manage.py runserver
 ```
 
 ### 2. URL Routing In Django
@@ -149,7 +149,7 @@ urlpatterns = [
 
 Model View Template (MVT), is an acronym for MODEL VIEW TEMPLATE. Django as a web framework uses this architecture for its operation while other servers side language or framework use MODEL VIEW CONTROLLER, MVC. Let's understand each keyword!
 
-*MODEL* is going to act as the interface of your data. It is responsible for maintaining data and it is the logical data structure behind the entire application that is represented by a database (generally relational databases such as SQL). This is configured in models.py file inside apps in django project folder.
+_MODEL_ is going to act as the interface of your data. It is responsible for maintaining data and it is the logical data structure behind the entire application that is represented by a database (generally relational databases such as SQL). This is configured in models.py file inside apps in django project folder.
 
 In the `models.py`, we will create our `MyModel` class with these Python class:
 
@@ -204,7 +204,7 @@ To access your Admin Interface, you need to initiate the database with our djang
 Then create a super user account that will access the admin and answer all questions about the credentials needed for the account
 
 ```bash
-   $ python manage.py createsuperuser
+    python manage.py createsuperuser
 ```
 
 Having done that, head on to the browser and paste the url and then login to the account `http://127.0.0.1:8000/admin`
@@ -255,13 +255,13 @@ We will first run the command `python manage.py makemigrations` to create SQL qu
 To make migrations run:
 
 ```bash
-$ python manage.py makemigrations
+ python manage.py makemigrations
 ```
 
 To apply the migrations run:
 
 ```bash
-$ python manage.py migrate
+ python manage.py migrate
 ```
 
 Then you can go ahead and confirm the table with rows and columns created for your project in the workbench.
@@ -275,3 +275,7 @@ Thank you for making it to this end, see you soon in next article.
 ![Django Official Docs](/https://docs.djangoproject.com/en/3.2/intro/)
 
 Happy Learning!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
