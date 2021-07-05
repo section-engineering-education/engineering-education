@@ -1,12 +1,12 @@
-You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are speaking with shell. In this article, I will describe Linux shells and shell scripting; however, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
+You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are interacting with the shell. In this article, I will describe the Linux shells and shell scripting. However, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
 
 ### Prerequisites
-You will need the following items to follow along with this tutorial:
-- A code editor e.g. [Visual Studio Code](https://code.visualstudio.com/download).
-- A computer running any Linux Operating system.
-> In this article i have used Ubuntu version 20.04 operating system.
-- Some knowledge on using Linux Operating Systems.
 
+You will need the following items to follow along with this tutorial:
+- A code editor e.g., [Visual Studio Code](https://code.visualstudio.com/download).
+- A computer running any Linux Operating system.
+> In this article, I have used the Ubuntu version 20.04 operating system.
+- Some knowledge on using Linux Operating Systems.
 
 ### Table of contents
 
@@ -27,7 +27,12 @@ The `kernel` is computer software that is at the heart of a computer's operating
 
 Linus Torvalds is sometimes misidentified as the creator of the Linux operating system, but he is only responsible for the creation of the Linux kernel. 
 
-Kernel + GNU system utilities and libraries + additional management scripts + installation scripts Equals complete Linux system.
+A complete Linux kernel consists of:
+
+- The Kernel
+- The GNU system utilities and libraries 
+- Additional management scripts 
+- Installation scripts
 
 ### What is Shell
 
@@ -47,7 +52,7 @@ The `ls` command is used with the `-l` option in the screenshot above. For a lon
 
 #### Graphical shell
 
-The Graphical shell allow the use of a `GUI` program for open, close, move and resize windows, as well as to switch focus between window sizes. Window Operating systems or Ubuntu Operating systems are notable examples of operating systems that provide a graphical user interface (GUI) for interacting with programs. For each activity, the user does not need to enter a command. A typical Ubuntu user interface is shown below:
+Graphical shells allow the use of a `GUI` program for open, close, move and resize windows, as well as to switch focus between window sizes. Window Operating systems or Ubuntu Operating systems are notable examples of operating systems that provide a graphical user interface (GUI) for interacting with programs. For each activity, the user does not need to enter a command. A typical Ubuntu user interface is shown below:
 
 ![output](/engineering-education/Introduction-to-Linux-Shell-and-Shell-Scripting/ubuntu_GUI.png)
 
@@ -67,18 +72,18 @@ Shells are usually interactive, so they accept and execute user commands. Howeve
 
 We can write and execute these commands in the shell to avoid this repetitive work because the shell can take the commands from the files as the input. **Shell Scripts** or **Shell Programs** are the names given to these files. The MS-DOS batch file is similar to the shell scripts. There is an extension to `.sh` in each shell script such as `myscript.sh`.
 
-Shell scripts have the same syntax as other programming languages. If you know any programming language such as Python, C/C++, or others, it will be pretty simple to start.
+Shell scripts have the same syntax as other programming languages. If you are familiar with any programming language such as Python, C/C++, or others, it will be pretty simple to start.
 
 The following pieces make up a shell script:
 
-- if, else, break = Shell Keywords
-- cd, ls, echo, PWD, and touch = shell commands.
+- Shell keywords such as `if, else, and break`.
+- Shell commands such as `cd, ls, echo, PWD, and touch`.
 - Functions
-- If...then...else, case and shell loops = control flow.
+- Control flow such as `If...then...else, case and shell loops`.
 
 ### Why do we need shell scripts? 
 
-Shell scripts come in handy for a number of reasons:
+Shell scripts come in handy for several reasons:
 
 1. To avoid repetitive work and the use of automation.
 2. Shell scripting is used by system administrators to do routine backups.
@@ -115,7 +120,7 @@ $  touch "name of the file"
 
 From the command above, the read and write permissions are enabled and no executable permission of the file is enabled. 
 
-3. To enable the executable permissions to run the command below:
+3. To enable the executable permissions, run the command below:
 
 ```
 $  chmod +x "name of the file"
@@ -142,7 +147,7 @@ VAR=$((VAR+=1))
 echo "$VAR"
 ```
 
-5. Run the below command to open the file you created.
+5. Run the command below to open the file you created.
 
 ```
 $  ./"your file name"
@@ -155,4 +160,4 @@ $  ./"your file name"
 
 ### Conclusion
 
-In the article, we have learned the basics of shell scripting, understood the terminologies used in shell scripting, advantages and disadvantages of shell scripting and done an example of Bash shell scripting. I urge the reader to use the knowledge learnt above to create and learn more script to understand more about scripting.
+In the article, we have learned the basics of shell scripting, understood the terminologies used in shell scripting, the advantages, and disadvantages of shell scripting, and done an example of Bash shell scripting. I urge the reader to use the knowledge learned above to create and learn more script to understand more about scripting.
