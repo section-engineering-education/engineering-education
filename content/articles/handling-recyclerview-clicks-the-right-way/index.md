@@ -29,7 +29,7 @@ To follow along with this tutorial, the reader should:
 
 ## Topics Covered
 
-- An Overview of what a `RecyclerView` is.
+- An Overview of what a `RecyclerView` is.  
 - `ListAdapter` and `DiffUtil`
 - Handling clicks in a `RecyclerView`
 
