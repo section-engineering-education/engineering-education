@@ -258,4 +258,4 @@ If you run the command `npm run doc`, you will see the module `functions` docume
 ![modules](/enginnering-edication/jsdocs-documentation/functions-module.png)
 
 ### Conclusion
-In this tutorial, we learned how to use JSDocs to document JavaScript code. We took a look into documenting basic data types, arrays, objects, functions parameters, and classes. This tutorial gives the topic a beginner-friendly approach with easy-to-understand snippets to enable the reader to get the maximum from the concept. You can find the code for the snippets in this file link. Be sure to follow along for more.
+In this tutorial, we learned how to use JSDocs to document JavaScript code. We took a look into documenting basic data types, arrays, objects, functions parameters, and classes. This tutorial gives the topic a beginner-friendly approach with easy-to-understand snippets to enable the reader to get the maximum from the concept. You can find the code for the snippets in [this](https://replit.com/@PhinaKersly/JSDOCS?v=1) file link. Be sure to follow along for more.
