@@ -125,7 +125,6 @@ In the above example, we pass the value of the `musicianName` using the parent `
 Serve the application by running the following command:  
 
 ```bash
-cd output-decorator
 ng serve
 ```
 
@@ -147,7 +146,7 @@ Edit the previous child component as shown below:
 export class MusicDetailsComponent implements OnInit {
 
   @Input() musicianName: string | undefined;
-  @Output() newMusician = new EventEmitter<string>();
+  @Output() newMusicianEvent = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
@@ -157,7 +156,7 @@ export class MusicDetailsComponent implements OnInit {
    * @param value
    */
   addNewArtist(val: string) {
-    this.newMusician.emit(val);
+    this.newMusicianEvent.emit(val);
   }
 ```
 
@@ -170,12 +169,13 @@ In the above children component, we create an event to add new artists to our al
 
 In the template, we provide users with input to add artists.  
 
-In the parent componet, add the following:  
+In the parent component, add the following:  
 
 ```html
-<app-music-details [musicianName]="name" (addNewArtist)="addArtists($event)"></app-music-details>
-<ul *ngFor="let musician of musicians">{{musician}}</ul>
-
+<app-music-details [musicianName]="name" (newMusicianEvent)="addArtists($event)"></app-music-details>
+<ul>
+  <li *ngFor="let musician of musicians">{{musician}}</li>
+</ul>
 ```
 
 ```javascript
@@ -187,6 +187,11 @@ export class AppComponent {
     this.musicians.push(newMusician);
   }
 ```
+**Initial Output**
+![Initial Application](/engineering-education/angular-output-and-input-decorator/original-output.png)
+
+**Output on Adding new artist**
+![Initial Application](/engineering-education/angular-output-and-input-decorator/added-artist.png)
 
 In this parent component, we define a method to add new artists while in the template we have an event handler that picks new musicians then loops the list to display.
 
