@@ -1,14 +1,13 @@
 ---
 layout: engineering-education
-status:
-published:
+status: publish
+published: true
 url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
-title: Understanding facial recognition using local binary pattern histogram (LBPH) algorithm
-description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition.
-Finally, this article will site some the best application areas of LBPH.
+title: Understanding Facial Recognition Using Local Binary Pattern Histogram (LBPH) Algorithm
+description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition. Finally, this article will site some the best application areas of LBPH.
 author: ruth-mare
-date: 2021-07-04T08:00:00-18:00
-topics: []
+date: 2021-07-06T08:00:00-18:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -27,7 +26,7 @@ This article will cover:
 - [The stages of face recognition using LBPH](#the-stages-of-face-recognition-using-lbph)
 - [LBPH Application Areas](#lbph-application-areas)
 
-### An introduction to Facial recognition
+### An Introduction to Facial Recognition
 Facial recognition is the ability to identify faces in an image, and then link them to a particular person. The LBPH is a recognition algorithm, which can recognize human faces. 
 
 Face recognition can be achieved with the help of a learning concept of training and then testing the model with a given set of images. 
