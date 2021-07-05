@@ -1,5 +1,13 @@
 You interact with shell indirectly if you use any major operating system. At the point when you utilize a terminal on Ubuntu, Linux Mint, or some other Linux dissemination, you are speaking with shell. In this article, I will describe Linux shells and shell scripting; however, before we can comprehend shell scripting, we must first learn the following terms: **Kernel**, **Shell**, **Terminal**.
 
+### Prerequisites
+You will need the following items to follow along with this tutorial:
+- A code editor e.g. [Visual Studio Code](https://code.visualstudio.com/download).
+- A computer running any Linux Operating system.
+> In this article i have used Ubuntu version 20.04 operating system.
+- Some knowledge on using Linux Operating Systems.
+
+
 ### Table of contents
 
 - [What is the kernel](#what-is-the-kernel)
@@ -40,6 +48,8 @@ The `ls` command is used with the `-l` option in the screenshot above. For a lon
 #### Graphical shell
 
 The Graphical shell allow the use of a `GUI` program for open, close, move and resize windows, as well as to switch focus between window sizes. Window Operating systems or Ubuntu Operating systems are notable examples of operating systems that provide a graphical user interface (GUI) for interacting with programs. For each activity, the user does not need to enter a command. A typical Ubuntu user interface is shown below:
+
+![output](/engineering-education/Introduction-to-Linux-Shell-and-Shell-Scripting/ubuntu_GUI.png)
 
 For Linux systems, there are various shells available, such as: 
 
