@@ -123,10 +123,49 @@ $ python bot.py
 
 Hurray, it works!
 
+Let's make our bot more interesting by connecting to an Api that feeds us with random programming quotes.
+
+We'll be using [this](http://quotes.stormconsultancy.co.uk) Api, and the `/random` endpoint to get random quotes.
+
+Next, wee need to add the following lines of code at the top of our file
+
+```python
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import json
+
+```
+
+Now, let's create a function that sends random quotes, by adding the following lines of code:
+
+```python
+
+telegram_bot_token = "TOKEN"
+
+updater = Updater(token=telegram_bot_token, use_context=True)
+dispatcher = updater.dispatcher
+
+
+def random(update, context):
+    #fetch data from the api
+    response = requests.get('http://quotes.stormconsultancy.co.uk/random.json')
+    data = response.json()
+    #send message
+    context.bot.send_message(chat_id=update.effective_chat.id, text=data['quote']) 
+
+#linking the /random command with the function random() 
+quotes_handler = CommandHandler('random', random)
+dispatcher.add_handler(quotes_handler)
+
+```
+
+Now lets run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
+
+![random quotes](/engineering-education/building-a-telegram-bot-with-python/random.png)
+
 ### Conclusion
 To conclude, we have learned about building telegram bots for groups.
 
-There is still a lot you can achieve with a telegram bot, like connecting your bot to an API and hosting on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
+There is still a lot you can achieve with a telegram bot, like connecting your bot to other API's and hosting on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
 
 You can also check the [Telegram bot](https://core.telegram.org/bots/api) documentation for more info on creating bots.
 
