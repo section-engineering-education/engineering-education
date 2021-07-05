@@ -1,4 +1,18 @@
-# Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url:
+title: Core concepts to master when using Django
+description: In this article we will cover a number of concepts to be mastered whether you are just starting out learning the framework or have some experience with it.
+author:
+date: 2021-06-26T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/core-concepts-of-django-to-master/hero.jpg
+    alt: Core concepts to master when using Django
+---
 
 Django is a free, open source web framework written in the Python programming language. A web framework is software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
 
