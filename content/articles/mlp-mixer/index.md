@@ -18,7 +18,6 @@ Convolutional Neural Networks (CNNs) have been used over the years to solve prob
 <!--more-->
 
 ### Contents
-
 1. [Prerequisites](#prerequisites)
 2. [Introduction](#introduction)
 3. [Brief overview of MLP](#brief-overview-of-mlp)
@@ -28,11 +27,9 @@ Convolutional Neural Networks (CNNs) have been used over the years to solve prob
 7. [References](#references)
 
 ### Prerequisites
-
 Before reading this article, I recommend that you first have a read on my two previous articles. The [Vision Transformer](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/) and the [Basics of Convolution Neural Networks](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/) articles. This article builds upon concepts introduced in those articles. 
 
 ### Introduction
-
 Convolutional Neural Networks (CNNs) have been used over the years to solve problems in computer vision. But, over the last year, we've seen transformers with self-attention modules replacing CNNs. A good example is the Vision Transformer. 
 
 Can we do away with both CNNs and attention mechanisms to only using Multi-Layer Perceptrons (MLPs) to solve computer vision problems in machine learning?
@@ -44,7 +41,6 @@ Well. This [paper](https://arxiv.org/abs/2105.01601) by Google shows that neithe
 This article will explain how they achieve this. But before I explain the model, let's first understand the working of an MLP.  
 
 ### Brief overview of MLP
-
 MLPs have been around since the 1980s. They have been used as classifier algorithms and to solve simple regression problems. They have found applications in image recognition, machine translation, and speech recognition.
 
 MLPs borrow their main concept from the human brain. The general architecture of an MLP consists of three layers:
@@ -71,7 +67,6 @@ But, with a few tweaks to the original MLP architecture, the research team at Go
 Let's now take a look at the MLP architecture.
 
 ### The MLP-Mixer architecture
-
 ![MLP-Mixer Architecture](/engineering-education/mlp-mixer-architecture.PNG)
 
 *[Image Source: GitHub](https://github.com/google-research/vision_transformer#installation)*
@@ -83,13 +78,11 @@ The MLP-Mixer architecture consists of three main components:
 3. A classification head.
 
 #### Per-patch linear embedding
-
 In this layer, input images with dimensions (H, W) are divided into a sequence of S, non-overlapping image patches. Each patch is of dimension (P, P). So, to get the number of patches required for each image, you divide the dimension of the input image by that of each patch. Thus, S = (HW/P^2). 
 
 These patches are linearly projected through a projection layer. This projection layer is simply an FC layer with an output dimension of C. This results in a 2D input table named X on the paper which is used on the mixer layers.
 
 #### The Mixer layers
-
 The mixer layer contains two types of MLP layers. It is important to note that the idea of these two layers is borrowed from CNN.
 
 1. Channel-mixing MLP
@@ -105,13 +98,11 @@ The outputs of the channel-mixing and token-mixing MLP is the same dimension as 
 As shown in the diagram above, each MLP block contains two fully connected (FC) layers and a non-linearity function known as Gaussian error linear unit (GeLU).
 
 #### The classification head
-
 This is the last layer in the MLP-Mixer architecture.
 
 It consists of a standard classification head, a global average pooling layer, and a linear classifier. 
 
 #### Extra
-
 1. Additionally, other standard components included in this architecture include dropout, skip-connections, and the Layer Norm applied on the channels.
 
 2. They used GeLU instead of the popular ReLU activation function. GELU's use is also evident in GPT-3, BERT, and most other newer Transformers.
@@ -121,7 +112,6 @@ It consists of a standard classification head, a global average pooling layer, a
 All these components combined are what make up the MLP-Mixer architecture.
 
 ### Experiment and results
-
 For the experiment, they first perform pre-training on two public datasets. The [ImageNet-21K](https://arxiv.org/abs/2104.10972) and ILSVRC2021. They use the Adam optimizer with a batch size of 4096.
 
 They perform data augmentation techniques on the input images such as RandAugment. They use dropout, stochastic depth, and mixup which have become common practices when training such large networks.
@@ -136,11 +126,9 @@ Results from their experiment show that the accuracy increases with the model si
 Though these results are not extraordinary compared to current models, it is amazing to see how this simple architecture competes with advanced architecture.
 
 ### Wrapping up
-
 It is remarkable to see how a simple MLP-based model can compete with state-of-the-art models. Attention-based and CNNs in our case. Though some of the ideas behind the novel MLP-Mixer model are borrowed from works of literature on CNNs and Transformers, it is still interesting research. It would be amazing to see if this design could work to solve problems in other domains such as Natural Language Processing.
 
 ### References
-
 1. [Perceptron Algorithm - A Hands On Introduction](https://www.section.io/engineering-education/perceptron-algorithm/)
 2. [MLP-Mixer: An all-MLP Architecture for Vision](https://arxiv.org/abs/2105.01601)
 3. [Vision Transformer (ViT) - Using Transformers for Image Recognition](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/)
