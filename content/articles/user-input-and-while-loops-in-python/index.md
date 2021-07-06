@@ -6,7 +6,7 @@ url: /user-input-and-while-loops-in-python/
 title: Getting Started with Loops and Standard Inputs in Python
 description: This article explains the use of input() function, while loops and how to apply them in a Python application.
 author: bonface-muriithi
-date: 2021-07-04T00:00:00-10:00
+date: 2021-07-06T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
