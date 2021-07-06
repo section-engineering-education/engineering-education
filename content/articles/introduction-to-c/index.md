@@ -1,99 +1,49 @@
----
-layout: engineering-education
-status: draft
-published: false
-url: /introduction-to-c/
-title: Introduction to C programming
-description: It covers the history of C, its purpose, where it is used, and how to install and files used in the C and First C program.
+
 author: chandramouli-dasari
-date: 2021-06-03T00:00:00-08:10
-topics: [Languages]
-excerpt_separator: <!--more-->
-images:
-  - url: /engineering-education/introduction-to-c/hero.png
-    alt: Clang image example
----
-
-![Clang image example](/engineering-education/introduction-to-c/hero.png)
-
 
 
 ### Introduction
+C is among the most popular programming languages. It is also regarded as a practical and basic programming language. C is commonly used as a reference for other languages in computer science. This article will help you understand various aspects relating to C programming. 
 
-C is the one of most popular languages. C is a practical and basic programming language. This "C" is used as a reference for other languages in computer science courses. And as per competitive programming, it is also the most preferable language. When they starting programming or shifting from another programming language then "C" looks like bit difficult 
-but this series will explain everything from ground level to high level
+C is a practical programming language. It was developed by Dennis Ritchie in the 1970s and adopted by the UNIX operating system at Bell Laboratories. C is commonly used to develop desktop and console applications on platforms such as Windows.
 
-### Table of contents
+### Structure of a C program
+A `C` program includes preprocessor commands, a global declaration, as well as one or more functions.
 
-- History of C Program
-- Structure of C program
-- Installing C in our System
-- Writing the First C program
-- Files used in C program
-- Uses Of C programming
+```c
+/*preprocessor directives*/
 
-### History of C Program
+/*Global declarations*/
 
-C is a practical programming language. In the 1970's "C" was developed by Dennis Ritchie and used by the UNIX operating system at Bell Laboratories.
-
-- Why this language named C?
-  - Before "C" there is a language called "B" and Some of the Options are derived from "B"
-  - B developed at Bell Labs circa 1969 and it was developed by Ken Thompson and Dennis Ritchie and it is used to implement the system software
-- What is the purpose of the C language?
-  - Early "C" is only used to design and implement the system software. But later some features were add to "C" then it is used to develop portable application software too.
-
-
-### Structure of C program
-
-`C` program is structured of preprocessor commands, a global declaration section, and one or more functions
-
-```
-preprocessor directives
-
-Global declarations
-main()
-{
- Local declarations
- Statements
+main(){
+ /*Local declarations*/
+ /*Statements*/
  }
- Function 1()
-{
- Local declarations
- Statements
+
+ Function 1(){
+  /*Local declarations*/
+  /*Statements*/
  }
- Function N()
-{
- Local declarations
- Statements
+ Function N(){
+  /*Local declarations*/
+  /*Statements*/
  }
 ```
 
-- preprocessor directives
+- preprocessor directives - These are lines included in the code of programs preceded by a hash sign `#`. One of the commonly used preprocessor commands is `include` which tells the compiler to execute the program.
 
-  - Preprocessor directives are lines included in the code of programs preceded by a hash sign `#`
-  - One of the most important and commonly used preprocessor commands is `include` which tells the compiler to execute the program
-
-- Functions in C
-  - `C` program contains one or more functions.
-  - A group of `C` statements and that are executed together is known as Function 
-  - `main()` is the most important function and is a part of every `C` program
-
+- Functions - A `C` program contains one or more functions. A function is basically a group of statements that are executed together. `main()` is the most important function in every `C` program.
+s
 ### Installing C in our System
+On Windows, download [Dev-C++](https://sourceforge.net/projects/orwelldevcpp/) from your favourite browser. Then, open the folder where you downloaded the application and install it.
 
-- In Windows
+On Linux, open a Terminal window and enter the command below to install build-essential packages:
 
-  - Download [Dev-C++](https://sourceforge.net/projects/orwelldevcpp/) from your favourite browser
-  - Open the folder where you downloaded
-  - And Install as Normal Application
+```bash
+    $ Sudo apt-get install build-essential
+```
 
-- In Linux
-
-  - Open a Terminal window. Enter the command this command to install build-essential packages
-    `$ Sudo apt-get install build-essential`
-
-- In Mac
-
-  - Open a Terminal window. Enter the command `clang --version`
+On Mac, open a terminal and enter the `clang --version` command.
   - If you want to install or update the Clang compilers, enter the command command `xcode-select --install`
   - You will get a pop up select `INSTALL` and ` Agree`
 
