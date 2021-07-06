@@ -1,5 +1,5 @@
 ### Introduction 
-With `GitLab Runner`, you may use a variety of executors to implement continuous integration(CI)/continuous delivery(CD). Shell and Docker, on the other hand, are more widely used, and we may easily configure a repository with these runners. These runners can be chosen based on your needs and available resources. This article's code is written in a bash and focuses on Java Linux application Shell and Docker executors. A bash script can be used to build and test the application.
+With `GitLab Runner`, you may use a variety of executors to implement continuous integration(CI)/continuous delivery(CD). Shell and Docker, on the other hand, are more widely used, and we may easily configure a repository with these runners. These runners can be selected based on your requirements and available resources. This article's code is written in a bash and focuses on Java Linux application Shell and Docker executors. A bash script can be used to build and test the application.
 
 Table of content:
 
@@ -11,7 +11,7 @@ Table of content:
 ### Understanding shell and docker executors
 
 **Shell Executor** is a basic executor that helps you build a solution locally on the PC where GitLab Runner is installed. Because GitLab Runner is installed on a Linux machine, the essential software must also be installed on the same machine.
-**Docker executor** is a strong tool that comes with a lot of software and may be accessed through an image. The benefit of using this executor is that we won't have to manually install any software because everything will be handled by Docker. Docker does this by obtaining the required image from Docker Hub. The negative side of this is that, for security reasons, this communication is restricted in some organizations. If this is the case, Shell Executor is the best solution.
+**Docker executor** is a strong tool that comes with a lot of software and may be accessed through an image. The benefit of using this executor is that we won't have to manually install any software because everything will be handled by Docker. Docker does this by obtaining the required image from Docker Hub. The negative side of this is that, for security reasons, this communication is restricted in some organizations. Shell Executor is the most ideal choice if so.
 
 ### Java implementation on the Shell Executor
 
@@ -19,7 +19,7 @@ Table of content:
 These are the essential programs that must be installed on a Linux computer. It can, however, be adjusted depending on the compilation script, and you may need to obtain additional software if necessary.
 The following are the software requirements:
 
-1. **Git**- The first criterion is to commit the modifications to GitLab. It's a version control tool that tracks the changes to a set of files over time.
+1. **Git**- The first criterion is to commit the modifications to GitLab. It's a version management system that keeps track of how a group of files has changed over time.
 
 2. **Apache Ant**- This is a tool that assists in the creation of processes as well as the generation of the project's jar file. It provides additional project information, which should be included in the jar. 
 
@@ -43,19 +43,19 @@ File
  
  #### Setting up GitLab Runner
  Follow the instructions below to download and configure GitLab Runner.
- 1. 1. On a Linux machine, install GitLab Runner using the following command.
+ 1. Install GitLab Runner on a Linux computer with the command below.
 
  ```
  sudo chmod +x /usr/local/bin/gitlab-runner
  ```
 
- 2. Use the following command to permit it to run:
+ 2. To allow it to execute, use the following command:
 
  ```
  sudo chmod +x /usr/local/bin/gitlab-runner
  ```
 
- 3. Use the following command to create a GitLab CI:
+ 3. To build a GitLab CI, use the following command:
 
  ```
  sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
@@ -67,7 +67,7 @@ File
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 ```
 
-5. Use the following command to start GitLab Runner:
+5. To launch GitLab Runner, use the following command:
 
 ```
 sudo GitLab-runner start
@@ -88,22 +88,22 @@ sudo gitlab-runner register
 8. When using GitLab Runner to register a repository, you must answer the following questions.
 
 - Enter the following URL for your GitLab instance: Each organization's format will be different, but it will be something like `http://gitlab.example.com`
-- path: Go to your GitLab account. Select the repository that you want to register with `runner → Settings → CI/CD → Expand Runner`.
+- path: Go to your GitLab account and sign in. Expand Runner and choose the repository you wish to register with runner Settings CI/CD.
 - For this runner, enter the `gitlab-ci token`: It will be a one-of-a-kind token for each project that will be required upon registration and may be found here.
 - Enter this runner's GitLab-ci description: Put the name of the runner (any name), which will help you recall who is running.
-- Fill in the following gitlab-ci tags for this runner: If you want to start GitLab runner when a specific tag is accessible in the yml file, it's optional.
-- Here comes the executor: There will be a list of executors to choose from, and type shell (as GitLab Runner will run our system)
+- For this runner, fill up the following gitlab-ci tags: It's optional to launch GitLab runner when a certain tag in the yml file is available.
+- Here comes the executor: You will be given a list of executors to pick from, and then type shell (as GitLab Runner will run our system)
 
-9. Start the GitLab Runner using the following command after you've successfully registered.
+9. After you've successfully registered, run the GitLab Runner using the following command.
 
 ```
 sudo GitLab-runner start
 ```
 
 
-To ensure that GitLab Runner has registered the repository and that the runner has begun. Go to GitLab Account → Select repository which you want to register with runner → Settings → CI/CD → Expand Runner. There will be a green colored circle accessible, with Runners active for this project displaying a message.
+To ensure that GitLab Runner has registered the repository and that the runner has begun. Go to GitLab Account → Select repository which you want to register with runner → Settings → CI/CD → Expand Runner. A green colored circle will be available, with active Runners for this project showing a message.
 
-> If the circle is gray, the runner has not yet begun and must restart.
+> The runner has not yet started and must restart if the circle is gray.
 
 #### Linux GitLab Runner Commands
 1. **Sudo GitLab-runner register** GitLab Runner must be used to register the project.
@@ -122,7 +122,8 @@ To ensure that GitLab Runner has registered the repository and that the runner h
 14. **Sudo GitLab-runner exec shell** To see a complete list of she's options, go here.
 
 #### gitlab-ci.yml_shell Executor: 
-On shell executor mode, the contents of.gitlab-ci.yml are shown below. Change it as necessary, based on the requirements.
+On shell executor mode, the contents of.gitlab-ci.yml are shown below. Change it as needed, according to the requirements.
+
 ```
 stages:
  - build
@@ -148,7 +149,7 @@ execute:
   ```
 
 ### Java implementation on the Docker Executor
-There will be no need to manually install any software because everything will be pulled from the docker container. You can, however, install the essential software by entering the name in a yml file and exporting the path. Go to GitLab Runner Set-Up (above) and select docker instead of the shell to execute GitLab runner in docker executor mode.
+There will be no need to manually install any software because everything will be pulled from the docker container. You can, however, install the essential software by entering the name in a yml file and exporting the path. To start GitLab runner in docker executor mode, go to GitLab Runner Set-Up (above) and pick docker instead of the shell.
 
 #### .gitlab-ci.yml_ Docker Executor
 On docker executor mode, the contents of `.gitlab-ci.yml` are listed below. Change it, if necessary.
