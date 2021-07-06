@@ -1,4 +1,22 @@
-﻿### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-and-how-microservice-messaging-works-in-kubernetes/
+title: Why and How Microservice messaging works in Kubernetes?
+description: Struggling with connecting and maintaining your microservices in Kubernetes? As the number of microservices grows, the difficulty and complexity of maintaining the distributed fleet of services grow exponentially. Messaging can provide a clean solution to this issue, but legacy message queues come with their own set of problems.
+This article will share the benefits of messaging in Kubernetes, briefly look at KubeMQ, which attempts to address some of the traditional problems with messaging in Kubernetes.
+author: martha-ngugi
+date: 2021-07-06T00:00:00-04:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/why-and-how-microservice-messaging-works-in-kubernetes/hero.png
+    alt: Why and How Microservice messaging works in Kubernetes Hero image
+---
+
+### Introduction
 Connecting and maintaining the growing number of [microservices](https://microservices.io/) in [Kubernetes](https://kubernetes.io/) can be a struggle and challenging. It is evident that as the number of microservices increases, the more difficult and complex it is to maintain them.
 
 Messaging offers an excellent solution to the above issue, but [message queues](https://www.ibm.com/cloud/learn/message-queues) come with some problems.
@@ -19,9 +37,7 @@ If we increase the number of services to five, the number of potential connectio
 ![five services](/engineering-education/why-and-how-microservice-messaging-works-in-kubernetes/service-five.PNG)
 
 In general, if we denote services with the letter `n` then the number of potential connections can be determined as `n(n-1)/2`.
-
-As it can be seen, it would not be viable for organizations with a large number of services.
-
+It would not be viable for organizations with a large number of services.
 However, through the use of messaging queue, the connections can be centralized. Considering the number of connections will be the same as the number of services, this will result in a solution that can scale linearly, as shown below:
 
 ![three services](/engineering-education/why-and-how-microservice-messaging-works-in-kubernetes/many-services.PNG)
