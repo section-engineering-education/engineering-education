@@ -10,14 +10,15 @@ date: 2021-06-29T00:00:00-10:30
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/building-a-loader-using-animations-in-tailwind-css/hero.jpg
     alt: Loader image example
 ---
-### Introduction
-A loader/preloader is what you see on the screen while the rest of the page's content is still loading. Animations play an important role in the design of this component. Not only does it make the loader interactive but also helps give the impression of a faster loading process in your webpage.
+
+A loader/preloader is what you see on the screen while the rest of the page's content is still loading. Animations play an important role in the design of this component. Not only does it make the loader interactive but also gives the impression of a faster loading process in your webpage.
+
 <!--more-->
-While there are external libraries that can be used in building these loaders, we will be using Tailwind CSS to build simple ones in just simple steps and less code!
+
+While there are external libraries that can be used to build these loaders, we will be using Tailwind CSS to build simple ones in just simple steps and less code!
 
 We will use Tailwind CSS and some custom CSS through this tutorial. Tailwind provides us with low level utility classes like `animate-spin` which we will use to make our loader.
 
@@ -26,27 +27,28 @@ The loader will look like this when complete:
 ![loader](loader.gif)
 
 ### Prerequisites
+
 1. Basic knowledge of HTML and CSS.
 2. Basic knowledge of Tailwind CSS.
 
 ### Adding Tailwind Into your project
+
 I will assume that you already have the latest version of Tailwind installed. If you are not familiar with how Tailwind CSS works, I suggest you go through this [article](/engineering-education/introduction-to-tailwind-css/) to get up to speed.
 
 Lets get started!
 
-### Our HTML
 Add the following boiler plate and make sure to link Tailwind CSS.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Loader</title>
-		<link rel="stylesheet" href="./public/css/tailwind.css" />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader</title>
+    <link rel="stylesheet" href="./public/css/tailwind.css" />
+  </head>
 </html>
 ```
 
@@ -66,7 +68,7 @@ Now, let us add a `div` (parent) that will wrap around the circles for the loade
 
 ```html
 <div
-	class="bg-white flex space-x-2 p-5 rounded-full justify-center items-center"
+  class="bg-white flex space-x-2 p-5 rounded-full justify-center items-center"
 ></div>
 ```
 
@@ -99,6 +101,7 @@ The space in between the three dots is achieved by adding the class `space-x-2` 
 And of course, the dots have the same width and height of 14px and a padding of 8px.
 
 ### Adding animations
+
 Its animation time!
 
 For the animation part, we will use `animate-bounce` class from Tailwind CSS and a few custom CSS properties.
@@ -119,13 +122,13 @@ Let's give each circle a class name according to its color for faster reference.
 
 ```html
 <div
-	class="bg-blue-600 p-2  w-4 h-4 rounded-full animate-bounce blue-circle"
+  class="bg-blue-600 p-2  w-4 h-4 rounded-full animate-bounce blue-circle"
 ></div>
 <div
-	class="bg-green-600 p-2 w-4 h-4 rounded-full animate-bounce green-circle"
+  class="bg-green-600 p-2 w-4 h-4 rounded-full animate-bounce green-circle"
 ></div>
 <div
-	class="bg-red-600 p-2  w-4 h-4 rounded-full animate-bounce red-circle"
+  class="bg-red-600 p-2  w-4 h-4 rounded-full animate-bounce red-circle"
 ></div>
 ```
 
@@ -156,6 +159,7 @@ Here's our very simple loader in just a few, simple steps!
 ![Animated Loader](video.gif)
 
 ## Conclusion
+
 In this article, we have gone through creating a simple animated loader using Tailwind CSS and some custom CSS. Animations and loaders are important for user experience. A webpage visitor is likely to visit the page more often if there are animations in most of the components.
 
 I hope you find this tutorial helpful!
@@ -163,4 +167,5 @@ I hope you find this tutorial helpful!
 Happy coding!
 
 ---
+
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
