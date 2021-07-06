@@ -24,7 +24,7 @@ We will use Tailwind CSS and some custom CSS through this tutorial. Tailwind pro
 
 The loader will look like this when complete:
 
-![loader](loader.gif)
+![loader](/engineering-education/building-a-loader-using-animations-in-tailwind-css/loader.gif)
 
 ### Prerequisites
 
@@ -80,7 +80,7 @@ The code above has created a component that will contain three, small, colored d
 
 This gives us the following result:
 
-![Step 1 Result](img1.png)
+![Step 1 Result](/engineering-education/building-a-loader-using-animations-in-tailwind-css/img1.png)
 
 Now let's add something inside the 'boring' circle above. As mentioned earlier, we are going to add three `div`s which will create three dots.
 
@@ -92,7 +92,7 @@ Now let's add something inside the 'boring' circle above. As mentioned earlier, 
 
 Our loader will now look like this:
 
-![Result](img2.png)
+![Result](/engineering-education/building-a-loader-using-animations-in-tailwind-css/img2.png)
 
 In the above snippet, the dots are coloured blue, green, and red respectively.
 
@@ -156,7 +156,7 @@ The above code has added time for which each circle would wait before it bounces
 
 Here's our very simple loader in just a few, simple steps!
 
-![Animated Loader](video.gif)
+![Animated Loader](/engineering-education/building-a-loader-using-animations-in-tailwind-css/loader.gif)
 
 ## Conclusion
 
