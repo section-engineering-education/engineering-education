@@ -78,7 +78,7 @@ The MLP-Mixer architecture consists of three main components:
 3. A classification head.
 
 #### Per-patch linear embedding
-In this layer, input images with dimensions (H, W) are divided into a sequence of S, non-overlapping image patches. Each patch is of dimension (P, P). So, to get the number of patches required for each image, you divide the dimension of the input image by that of each patch. Thus, S = (HW/P^2). 
+In this layer, input images with dimensions (H, W) are divided into a sequence of S, non-overlapping image patches. Each patch is of dimension (P, P). So, to get the number of patches required for each image, you divide the dimension of the input image by that of each patch. Thus, S = (HW/P<sup>2</sup>). 
 
 These patches are linearly projected through a projection layer. This projection layer is simply an FC layer with an output dimension of C. This results in a 2D input table named X on the paper which is used on the mixer layers.
 
