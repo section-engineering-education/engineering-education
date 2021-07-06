@@ -80,18 +80,20 @@ The MLP-Mixer architecture consists of three main components:
 #### Per-patch linear embedding
 In this layer, input images with dimensions (H, W) are divided into a sequence of S, non-overlapping image patches. Each patch is of dimension (P, P). So, to get the number of patches required for each image, you divide the dimension of the input image by that of each patch. Thus, S = (HW/P<sup>2</sup>). 
 
-These patches are linearly projected through a projection layer. This projection layer is simply a fully connected layer with an output dimension of C. This results in a 2D input table named X on the paper which is used on the mixer layers.
+These patches are linearly projected through a projection layer. This projection layer is simply a fully connected layer with an output dimension of C. This results in a 2D input table with image patches (tokens) named X on the paper which is used on the mixer layers.
 
 #### The Mixer layers
 The mixer layer contains two types of MLP layers. It is important to note that the idea of these two layers is borrowed from CNN.
 
 1. Channel-mixing MLP
 
-- This MLP layer allows for the "mixing" of the per-location features.
+- This MLP allows for the communication between different channels. It operates on each location independently and take individual rows of the table as inputs. It only focuses on a single patch in the image then process the channels.
 
 2. Token-mixing MLP
 
-- This MLP layer allows for "mixing" spatial information.
+- This MLP allows for the communication between different spatial locations (tokens) in an image. Remember the tokens are the image patches. It operates on each channel independently and takes individual columns of the table as inputs.
+
+These two MLP layers are alternated by reshaping and transposing the layers. This enables the interaction of both input dimensions.
 
 The outputs of the channel-mixing and token-mixing MLP is the same dimension as the input. For example, an input of (8X4) will result in an output of (8X4).
 
@@ -105,7 +107,7 @@ It consists of a standard classification head, a global average pooling layer, a
 #### Extra
 1. Additionally, other standard components included in this architecture include dropout, skip-connections, and the Layer Norm applied on the channels.
 
-2. They used GeLU instead of the popular ReLU activation function. GELU's use is also evident in GPT-3, BERT, and most other newer Transformers.
+2. They used GeLU instead of the popular ReLU activation function. GELU's use is also evident in GPT-3, BERT, and most other newer Transformers. GeLU combines the best properties from ReLU, [dropout](https://www.kaggle.com/pavansanagapati/what-is-dropout-regularization-find-out), and [zoneout](https://arxiv.org/pdf/1606.01305.pdf) making it ideal for tasks in Computer Vision, Natural Language Processing, and Automatic speech recognition. You can learn more about it in this research [paper](https://arxiv.org/pdf/1606.08415v3.pdf).
 
 3. Unlike in the Vision Transformer model, positional embedding is not used in this architecture. This is because token-mixing MLPs are very sensitive to the order of the input tokens.
 
