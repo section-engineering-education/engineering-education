@@ -1,8 +1,21 @@
-### Introduction
-Debugging an application involves detecting and removing existing errors also known as bugs in a code which can cause it to work unexpectedly or even crash.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-debug-a-nodejs-application-running-in-a-docker-container/
+title: How to debug a Node.js Application running in a Docker Container
+description: In this tutorial, we will learn how to debug a Node.js application running inside a Docker container. We will use a to-do Node.js app to show how VS Code can be used as a debugging tool.
+author: verah-ombui
+date: 2021-05-26T00:00:00-14:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-Debugging allows the developers to find and resolve bugs or defects in the application to prevent incorrect and unwanted operations.
-
+ - url: /engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/hero.jpg
+   alt: Debug Docker Node.js VS Code example image
+---
+Debugging an application involves detecting and removing existing errors also known as bugs in a code which can cause it to work unexpectedly or even crash. Debugging allows the developers to find and resolve bugs or defects in the application to prevent incorrect and unwanted operations.
+<!--more-->
 In this tutorial, we will build a Node.js application with a bug in it, run it in a Docker container and use Visual Studio Code debugging tools for Node.js to debug it. The tutorial can be used by developers as a reference when building their applications.
 
 ### Prerequisites
@@ -35,7 +48,7 @@ The above command will generate a file named [package.json](https://nodejs.org/e
 ![packagejson](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/packagejson.PNG)
 
 ### Creating the to-do application
-Next, we will build our to-do application using [Express](https://expressjs.com/): a fast, popular and lightweight Node.js web framework.
+Next, we will build our to-do application using [Express.js](https://expressjs.com/): a fast, popular and lightweight Node.js web framework.
 
 Express makes the development of web applications easier.
 
@@ -249,7 +262,7 @@ $ docker kill 9a8a8e6a13ae
 ```
 
 ### Debugging using Visual Studio Code
-Visual Studio Code comes loaded with debugging tools for the Node.js applications running inside a Docker container. Below are the steps to be followed to enable this feature:
+Visual Studio Code comes loaded with debugging tools for the Node.js applications running inside a Docker container. Below are the steps to be followed to use them:
 
 #### Step 1: Updating the Dockerfile
 Edit the `Dockerfile` by replacing the line below:
@@ -477,10 +490,13 @@ Reload the <https://localhost:3001/todo> page on the browser and check the resul
 ![todo-app-success](/engineering-education/how-to-debug-a-nodejs-application-running-in-a-docker-container/todo-app-success.PNG)
 
 ### Wrapping Up
-We have successfully written a to-do list Node.js application, executed it in a Docker container and utilized Visual Studio Code debugging tools to fix the issue.
+We have successfully written a to-do list Node.js application, executed it in a Docker container and utilized Visual Studio Code debugging tools to identify and fix the issue.
 
 The tutorial can be helpful to the developers who want to build their Node.js application in a Docker container and use the Visual Studio code debugging tools to debug their code.
 
 The code snippets and files used in this tutorial can be found in [this GitHub Repo](https://github.com/verah-tech/TodoApp).
 
-Happy Coding!
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
