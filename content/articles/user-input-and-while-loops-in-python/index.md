@@ -3,18 +3,19 @@ layout: engineering-education
 status: publish
 published: true
 url: /user-input-and-while-loops-in-python/
-title: Getting Started with loops and standard inputs in Python
+title: Getting Started with Loops and Standard Inputs in Python
 description: This article explains the use of input() function, while loops and how to apply them in a Python application.
 author: bonface-muriithi
 date: 2021-07-04T00:00:00-10:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /user-input-and-while-loops-in-python/hero.jpg
-    alt: Getting Started with loops and standard inputs in Python
+  - url: /engineering-education/user-input-and-while-loops-in-python/hero.png
+    alt: Getting Started with Loops and Standard Inputs in Python
 ---
 
 As a programmer, many programs that you'll write will solve an end user's problem. You will always want to get some data from the user. This article will explain how to handle user input and how to use while loops.
+<!--more-->
 
 ### Prerequisites
 1. [Python](https://www.python.org/) installed on your computer.
@@ -71,7 +72,8 @@ print( interest)
 ```
 
 Output:
-```
+
+```bash
 Please enter your amount? 9000
 Your interest is : 
 504.0
@@ -83,6 +85,7 @@ When we input 9000 in the above example, Python interprets it as a string. The a
 In python, a `while` loop executes a given block of code provided that certain condition remains true.
 
 Syntax:
+
 ```python
 while expression:
  statement(s)
@@ -123,7 +126,8 @@ else:
 The above program prints a number less or equal to 15, otherwise the `else` block executes.
 
 Results:
-```
+
+```bash
 The count is: 11
 The count is: 12
 The count is: 13
@@ -136,6 +140,7 @@ The count is: 15
 Use the `break` statement to exit a `while` loop without executing any remaining code in the loop. With the `break` statement you can control which lines of your program will execute or not.
 
 Syntax:
+
 ```python
 while expression:
  #code for while loop
@@ -146,6 +151,7 @@ while expression:
 ```
 
 Example:
+
 ```python
 i = 1
 while i < 11:
@@ -199,7 +205,7 @@ for name, response in responses.items():
 
 When you execute this program and enter some responses, the output should look like this:
 
-```
+```bash
 Enter your name? Peter
 Enter the name of the mountain you would like to climb? Everest
 Please refer another person? (yes/ no) yes
@@ -212,7 +218,7 @@ John wishes to climb Turin.
 ```
 
 ### Conclusion
-Now that you have learned how to use the `input()` function and `while` loops, try implementing them in your python programs.
+Now that you have learned how to use the `input()` function and `while` loops, try implementing them in your Python programs.
 
 Happy coding!
 
