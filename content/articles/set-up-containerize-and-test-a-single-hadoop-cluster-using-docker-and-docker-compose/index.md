@@ -5,7 +5,7 @@ published: true
 url: /set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/
 title: This tutorial will show you how to use Docker to set up a single Hadoop cluster. But first, it goes over the basics of the Docker and Hadoop cluster.
 author: antony-gitau
-date: 2021-06-28T00:00:00-21:00
+date: 2021-07-06T00:00:00-21:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -29,11 +29,11 @@ images:
 
 ### Prerequisites
 
-This article assumes that you have some basic and background knowledge of using [containerization technologies](/engineering-education/history-of-container-technology/) such as [using Docker](/engineering-education/docker-concepts/) to [run and manage containers](/engineering-education/running-and-managing-docker/).  It is also essential to understand the role of [Big Data]((/engineering-education/roles-data-science/)) as that is what Hadoop seeks to achieve.
+This article assumes that you have some basic and background knowledge of using [containerization technologies](/engineering-education/history-of-container-technology/) such as using [Docker](/engineering-education/docker-concepts/) to [run and manage containers](/engineering-education/running-and-managing-docker/).  It is also essential to understand the role of [big data]((/engineering-education/roles-data-science/)) as that is what Hadoop seeks to achieve.
 
 ### What is Hadoop?
 
-The Hadoop framework helps process and analyze [Big Data](/engineering-education/roles-data-science/). Hadoop framework stores and processes vast amounts of any data efficiently using a cluster of computer hardware.
+The Hadoop framework helps process and analyze [big data](/engineering-education/roles-data-science/). Hadoop framework stores and processes vast amounts of any data efficiently using a cluster of computer hardware.
 
 #### What is a Hadoop cluster?
 
@@ -47,7 +47,7 @@ The Hadoop ecosystem comprises three main components that are designed to specif
 
 [Image Source: Data Flair](https://data-flair.training/blogs/hadoop-ecosystem-components/)
 
-These components are;
+These components are:
 
 - Hadoop distributed file system (HDFS)
 
