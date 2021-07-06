@@ -6,7 +6,7 @@ url: /Introduction-to-Linux-Shell-and-Shell-Scripting/
 title: Introduction to Linux Shell and Shell Scripting
 description: This article describes the basics of shell scripting, terminologies used in shell scripting, the advantages, and disadvantages of shell scripting.
 author: Dennis-Kariuki
-date: 2020-07-05T00:00:00-18:00
+date: 2020-07-06T00:00:00-21:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -77,11 +77,11 @@ Graphical shells allow the use of a `GUI` program for open, close, move and resi
 
 For Linux systems, there are various shells available, such as: 
 
-1. BASH **Bourne Again SHell**: In Linux systems, it is the most extensively used shell. It is the default login shell on Linux and macOS computers. The system is also Windows-compatible.
+1. **Bourne Again SHell (BASH)**: In Linux systems, it is the most extensively used shell. It is the default login shell on Linux and macOS computers. The system is also Windows-compatible.
 
-2. CSH **C SHell**: The C shell is very much like the C programming language's syntax and use.
+2. **C SHell (CSH)**: The C shell is very much like the C programming language's syntax and use.
 
-3. KSH **Korn SHell**: The Korn Shell also served as the foundation for the POSIX Shell standard requirements, among other things. 
+3. **Korn SHell (KSH)**: The Korn shell also served as the foundation for the POSIX Shell standard requirements, among other things. 
 
 Each shell accomplishes the same task, but it recognizes various commands and has distinct built-in functionalities.
 
@@ -180,5 +180,7 @@ $  ./"your file name"
 ### Conclusion
 
 In the article, we have learned the basics of shell scripting, understood the terminologies used in shell scripting, the advantages, and disadvantages of shell scripting, and done an example of Bash shell scripting. I urge the reader to use the knowledge learned above to create and learn more script to understand more about scripting.
+
+---
 
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
