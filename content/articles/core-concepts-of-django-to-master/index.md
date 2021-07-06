@@ -14,19 +14,19 @@ images:
     alt: Core concepts to master when using Django
 ---
 
-Django is a free, open source web framework written in the Python programming language. A web framework is software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
+Django is a free, open source web framework written in the Python programming language. A web framework is a software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
 
-Django uses a python package called pip and this come in handy with Python installed. This is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
+Django uses a python package called pip and this come in handy with Python installed. Pip is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
 
-Surprised?? Yes, companies mentioned used Django as their backend side.
+Surprised?? Yes, companies have mentioned using Django for their backend operations.
 
-Django web framework allows developers out there to connect the server side by actually making ties with the user interface of applications through the use of its concepts.
+Django web framework allows developers to connect the server side by actually making ties with the user interface of applications through the use of its concepts.
 
 In this article we will cover a number of concepts to be mastered whether you are just starting out learning the framework or have some experience with it.
 
 ## Key Take Aways
 
-By the end of this article, readers would have knowledge about the following topics:
+By the end of this article, readers will have knowledge about the following topics:
 
 1. Django Projects Structure
 2. How url routing works in Django
@@ -41,7 +41,7 @@ By the end of this article, readers would have knowledge about the following top
 
 We will start by creating our project's work directory and a virtual environment for our project. The virtual environment makes it possible to run our project and its dependencies in an isolated environment. What does this `virtualenv` even mean?
 
-Virtual Enviroment is just a file/folder that contains all the Django dependencies installed from Python pip command which are neccessary. All these dependecies are to be shipped out together with the project when it is time to deploy to real world by freezing them into a file called 'requirements.txt'.
+Virtual Enviroment is just a file/folder that contains all the Django dependencies installed from Python pip command which are neccessary. All these dependecies are to be shipped out together with the project when it is time to deploy to real world by freezing them into a file called `requirements.txt`.
 
 To set up the django project, an example is as follows:
 
@@ -74,13 +74,13 @@ Run `mkdir ~/django-project` to create our working directory, and navigate into 
    virtualenv 20.0.35 from /home/user/.local/lib/python3.9/site-packages/virtualenv/__init__.py
    ```
 
-2. To activate the virtual environment for the project run the command below, if you are on window OS use this:
+2. To activate the virtual environment for the project, run the command below, if you are on window OS use this:
 
    ```bash
     source venv/Scripts/activate
    ```
 
-   But if on Mac/Linux OS use
+   But if on Mac/Linux OS use:
 
    ```bash
     venv/bin/activate
@@ -145,7 +145,7 @@ Modern web apps can often communicate with the server and have more direct acces
 
 URLs or Uniform Resource Locators in full, are a prominent feature in every single web browser and have several main functions from the users point of view. Where the server renders HTML one page at a time, the URL is the fundamental entry point for the user to access the application via HTTP.
 
-In Django apps, there are urls file with an extension of `.py`. This is where url routes live in with features like path, views, name, and urlpattern.
+In Django apps, there are url files with an extension of `.py`. This is where url routes live in with features like path, views, name, and urlpattern.
 
 A valid example of router in django apps in `urls.py` is below
 
@@ -159,7 +159,7 @@ urlpatterns = [
 ]
 ```
 
-### 3. Django MODEL VIEW TEMPLATE SYSTEM
+### 3. Django MODEL VIEW TEMPLATE SYSTEM (MVT)
 
 Model View Template (MVT), is an acronym for MODEL VIEW TEMPLATE. Django as a web framework uses this architecture for its operation while other servers side language or framework use MODEL VIEW CONTROLLER, MVC. Let's understand each keyword!
 
@@ -180,9 +180,9 @@ class MyModel(models.Model):
       return self.title
 ```
 
-View is the user interface codes that return what you see in your browser when you render a website uri. this is nothing but a Python function or class views that render the template by returning some data from the model after the logic behind it.
+View is the user interface code that returns what you see in your browser when you render a website uri. This is nothing but a Python function or class views that render the template by returning some data from the model after the logic behind it.
 
-The main purpose of views generally is to accept data coming from models and sends or maps it with template HTML file rendered. Django uses it render method which takes in three param i.e request, template_to_load and context_dictionary.
+The main purpose of views generally is to accept data coming from models and sends or maps it with template HTML file rendered. Django uses its render method which takes in three param i.e request, template_to_load and context_dictionary.
 
 This looks like this below in django apps `views.py`
 
@@ -197,7 +197,7 @@ def myView(request):
 
 Template consists of static parts of the desired HTML output as well as some special syntax describing how dynamic content will be inserted. Majorly, this represent what will render to page for user as interface.
 
-This is most cases your HTMl boiler plate that will be shown to users whenver they come to the rendered uri.
+This is most cases your HTML boiler plate that will be shown to users whenver they come to the rendered uri.
 
 ### 3. DJANGO ADMIN INTERFACE
 
