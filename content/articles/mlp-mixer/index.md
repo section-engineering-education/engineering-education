@@ -114,9 +114,9 @@ All these components combined are what make up the MLP-Mixer architecture.
 ### Experiment and results
 For the experiment, they first perform pre-training on two public datasets. The [ImageNet-21K](https://arxiv.org/abs/2104.10972) and ILSVRC2021. They use the Adam optimizer with a batch size of 4096.
 
-They perform data augmentation techniques on the input images such as RandAugment. They use dropout, stochastic depth, and mixup which have become common practices when training such large networks.
+They performed data augmentation techniques on the input images such as RandAugment. They used dropout, stochastic depth, and mixup which have become common practices when training such large networks.
 
-When fine-tuning the model, they use a batch size of 512 together with the SDG optimizer instead of the Adam optimizer.
+When fine-tuning the model, they used a batch size of 512 together with the SDG optimizer instead of the Adam optimizer.
 
 They experimented with model sizes; small, base, large, and huge. This is achieved by playing around with the number of parameters in the model.
 
