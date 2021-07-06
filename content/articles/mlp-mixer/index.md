@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mlp-mixer/
+title: A Pure MLP Architecture for Computer Vision
+description: In this article, we will explore how pure MLP architectures are able to compete with state-of-the-art models on image classification benchmarks.
+author: willies-ogola
+date: 2021-07-06T00:00:00-16:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /mlp-mixer/hero.png
+    alt: MLP example image
+---
+Convolutional Neural Networks (CNNs) have been used over the years to solve problems in computer vision. But, over the last year, we've seen transformers with self-attention modules replacing CNNs. A good example is the Vision Transformer.
+<!--more-->
+
 ### Contents
 
 1. [Prerequisites](#prerequisites)
