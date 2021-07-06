@@ -38,9 +38,9 @@ This guide will discuss some essential concepts of Kafka and docker and finally 
 
 To follow along with this article, it is crucial to have the following;
 
-- Prior experience working with docker.
-- Docker and docker-compose installed on your computer.
-- Ensure you have git bash installed on your computer.
+- Prior experience [working with docker](/engineering-education/getting-started-with-docker/).
+- [Docker and docker-compose](https://www.docker.com/products/docker-desktop) installed on your computer.
+- Ensure you have [git bash](https://gitforwindows.org/) installed on your computer.
 
 You can check the above installations by running the following commands respectively;
 
