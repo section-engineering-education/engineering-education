@@ -14,7 +14,7 @@ images:
     alt: Core concepts to master when using Django
 ---
 
-Django is a free, open source web framework written in the Python programming language. A web framework is a software that abstracts away many of the common challenges related to building a website, such as connecting to a database, handling security, user accounts and much more.
+In out today's discussion, I would be introducing you to this great Python backend framework known DJANGO. In web applications world, there are different server side languages and frameworks of which Django happens to be one. To be cleared enough, Django is just a framework built on top a well known programming language called Python few years back. Join me in this journey of my favorite web framework. Yes, you reader!
 
 Django uses a python package called pip and this come in handy with Python installed. Pip is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
 
@@ -39,51 +39,69 @@ By the end of this article, readers will have knowledge about the following topi
 
 ### 1. DJANGO PROJECTS STRUCTURE
 
-We will start by creating our project's work directory and a virtual environment for our project. The virtual environment makes it possible to run our project and its dependencies in an isolated environment. What does this `virtualenv` even mean?
+We will start by creating our project's work directory and a virtual environment for our project as required by Django.
 
 Virtual Enviroment is just a file/folder that contains all the Django dependencies installed from Python pip command which are neccessary. All these dependecies are to be shipped out together with the project when it is time to deploy to real world by freezing them into a file called `requirements.txt`.
 
-To set up the django project, an example is as follows:
+To compile all installed dependencies into the `requirements.txt` file, run command below:
 
-We need to verify if Python is installed and configured correctly on our system, Open the terminal and type in the command `python3 --version` on Linux/Mac or `python --version` if you are on Windows.
+```bash
+$ pip freeze > requirements.txt
+```
+Assuming you are to install all dependencies inside already made `requirements.txt` file, run command below:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Now to set up the django project itself, please continue reading the article.
+
+We firstly need to check if Python is installed properly. Use bash or terminal and type command as below but in my own case, I have got `Python 3.9.6`.
 
 ```bash
 $ python --version
-Python 3.8.5
+Python 3.9.6
+```
+Or in a shorter command 
+
+```bash
+$ python -v
+Python 3.9.6
 ```
 
-Run `mkdir ~/django-project` to create our working directory, and navigate into the working folder.
+Navigate into the directory folder you would like to have your Django project and run this.
 
 ```console
-  mkdir ~/django-project
-  cd django-project
+  mkdir mydjangoproject
+  cd mydjangoproject
 ```
+Now you are inside the `mydjangoproject` folder.
 
-1. To create a virtual environment for our project run the command below:
+Yaay! you are doing well buddy. Let's explore more.
 
-   ```bash
-    virtualenv venv
-   ```
-
-   `venv` in the command `virtualenv venv` is the name of our virtual environment.
-
-   To verify virtualenv installation execute the command `virtualenv --version` on the terminal.
+1. Inside the current directory, create the virtual enviroment folder as talked above. You remember? Good.
 
    ```bash
-   $ virtualenv --version
-   virtualenv 20.0.35 from /home/user/.local/lib/python3.9/site-packages/virtualenv/__init__.py
+   $ virtualenv myenv
    ```
 
-2. To activate the virtual environment for the project, run the command below, if you are on window OS use this:
+   Verify this by typing `virtualenv --version`.
 
    ```bash
-    source venv/Scripts/activate
+   $ virtualenv -v
+      virtualenv 21.0.40
    ```
 
+2. To activate the `myenv` for the project, run this.
+
+   ```bash
+    source myenv/Scripts/activate 
+   ```
+   
    But if on Mac/Linux OS use:
 
    ```bash
-    venv/bin/activate
+   $ myenv/bin/activate
    ```
 
 3. To install Django in our virtual environment run the command below:
@@ -92,27 +110,20 @@ Run `mkdir ~/django-project` to create our working directory, and navigate into 
      pip install django
    ```
 
-   Running the command will result in something similar to the code block below
+   You can verify this installation by freezing the `requirements.txt` file.
 
    ```bash
-   $ pip install django
-   Collecting django
-   Using cached Django-3.1.3-py3-none-any.whl (7.8 MB)
-   Collecting asgiref<4,>=3.2.10
-    Downloading asgiref-3.3.1-py3-none-any.whl (19 kB)
-   Collecting pytz
-     Using cached pytz-2020.4-py2.py3-none-any.whl (509 kB)
-   Collecting sqlparse>=0.2.2
-    Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)
-   Installing collected packages: asgiref, pytz, sqlparse, django
-   Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
+   $ pip freeze > requirements.txt
    ```
-
-   Let's create our django project now by running the command `django-admin startproject django-project`
+   Now open this current directory in your favorite code editor. The `requirements.txt` will be there and you can check it to see the version of django installed for you.
+   
+   Let's create our django project now by running the command `django-admin startproject dj-project`
 
    ```bash
-     django-admin startproject django-project
+     django-admin startproject dj-project .
    ```
+   
+   Adding dots in the command is optional. What this does is that your `dj-project` will be created inside the current working directory.
 
 After successfully creating the project we change our working directory to our project folder and run the Django development server.
 
