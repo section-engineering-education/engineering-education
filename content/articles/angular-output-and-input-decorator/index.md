@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-output-and-input-decorator/
+title: Angular Output and Input Decorators
+description: In this article, we will learn how to create links between child and parent componenets using the input and output decorators in Angular.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/angular-output-and-input-decorator/hero.jpg
+    alt: Angular input output decorator
+---
+
 ### Table of contents
 - [Table of contents](#table-of-content)
 - [Prerequisites](#prerequisites)
@@ -16,7 +32,7 @@
 ### Objectives
 By the end of this tutorial, you should be able to create a link between the parent and child Angular components. As we will discuss shortly, you will be able to 'talk' to other components, bypassing the default behavior of Angular of single directional data flow.  
 
-### What's Angular @Output decorator
+### What are Angular's @Output and @Input decorators
 By default, Angular supports data flow in one direction. This limits interactions between the parent and child components to share data. Luckily, Angular has a solution to this problem, the use of @Output and @Input.  
 
 Let's use and example to understand this concept:
@@ -34,7 +50,7 @@ Now, these two decorators have distinct functions:
 1. @Ouput - A decorator that lets the child component communicate with the parent component.  
 2. @Input - A decorator that allows the parent to communicate with the child component.
 
-### Exploring Child component
+### Exploring child components
 In this section, we're exploring how to create a link between the parent and the child component. Let's get started by following the instructions below:  
 
 1: Create a new component `musicDetailsComponent` by running the following command:
@@ -127,7 +143,7 @@ ng serve
 
 ![Input decorator output](/engineering-education/angular-output-and-input-decorator/input.png)
 
-### How does an Angular @Output work?
+### How does Angular's @Output work?
 In the previous section, we explored the usage of the child component and how to use the `@Input` decorator. In this section, we look at the `@Output` decorator, which is the reverse of the `@Input` decorator.
 
 This decorator allows for the sharing of data from the child component. It invokes an event that in turn notifies the parent component.  
@@ -182,10 +198,10 @@ export class AppComponent {
     this.musicians.push(newMusician);
   }
 ```
-#### Initial Output
+#### Initial output
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/original-output.png)
 
-#### Output on Adding new artist
+#### Output on adding a new artist
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/added-artist.png)
 
 In this parent component, we define a method to add new artists while in the template we have an event handler that picks new musicians then loops the list to display.
@@ -196,3 +212,6 @@ In this tutorial, we've seen how we can use the `@Input()` and the `@Output()` d
 For more examples, visit my [github](https://github.com/odiwuoramos/angular-output) for complete code.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
