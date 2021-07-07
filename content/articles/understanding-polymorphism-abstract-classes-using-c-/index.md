@@ -12,7 +12,7 @@ According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamen
 
 To follow this article along, you'll need the following:
 
-- A basic understanding of C# programming language.
+- A basic understanding of the C# programming language.
 - A basic understanding of Inheritance in C# programming language.
 
 If you're new to Inheritance, you should check this tutorial that would help you understand the concept of it [here](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/).
@@ -21,7 +21,7 @@ If you're new to Inheritance, you should check this tutorial that would help you
 
 Abstract classes are too generic to be instantiated and are used as base classes. The definitions for abstract classes are not complete. The derived classes must be defined as the missing pieces and should contain abstract methods or abstract properties.
 
-The following example will explain how we can define an abstract class in order to make a Payroll System Using Polymorphism.
+The following example will explain how we can define an abstract class to make a Payroll System Using Polymorphism.
 
 ### Employee class
 
@@ -275,7 +275,7 @@ PieceWorker: samir Muan earned $420.00
 PieceWorker: samir Muan earned $420.00
 ```
 ### Conclusion
-In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Dont forget to testout the code to fully understand how it works.
+In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Don't forget to test out the code to fully understand how it works.
 
 ### Further reading
 1. https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/.
