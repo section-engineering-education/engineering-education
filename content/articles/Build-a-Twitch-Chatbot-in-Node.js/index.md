@@ -439,4 +439,4 @@ Chatbots are crucial to our lives. Though they have numerous advantages, they al
 - [Streamyard](https://streamyard.com/)
 - [Streaming tools](https://dashboard.twitch.tv/u/justusmbuvi/broadcast)
 - [Twitch Chat bot documentation](https://dev.twitch.tv/docs/irc)
-- [git guardian](https://www.gitguardian.com)
+- [Git Guardian](https://www.gitguardian.com)
