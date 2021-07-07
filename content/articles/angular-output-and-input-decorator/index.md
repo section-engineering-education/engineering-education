@@ -13,7 +13,8 @@ images:
   - url: /engineering-education/angular-output-and-input-decorator/hero.jpg
     alt: Angular input output decorator
 ---
-
+By the end of this tutorial, you should be able to create a link between the parent and child Angular components. As we will discuss shortly, you will be able to 'talk' to other components, bypassing the default behavior of Angular of single directional data flow. 
+<!--more-->
 ### Table of contents
 - [Table of contents](#table-of-content)
 - [Prerequisites](#prerequisites)
@@ -27,10 +28,7 @@ images:
 - Basics of [Angular](https://angular.io/docs) framework. This includes the data binding concept using the `ngModel` directive.  
 - You should be well knowledgeable on the Angular components. How these components are created and interact with each other to build a full Angular application.
 
-> To follow along with examples, ensure you've got a working application or follow [this](https://angular.io/docs) link to install a new application.
-
-### Objectives
-By the end of this tutorial, you should be able to create a link between the parent and child Angular components. As we will discuss shortly, you will be able to 'talk' to other components, bypassing the default behavior of Angular of single directional data flow.  
+> To follow along with examples, ensure you've got a working application or follow [this](https://angular.io/docs) link to install a new application. 
 
 ### What are Angular's @Output and @Input decorators
 By default, Angular supports data flow in one direction. This limits interactions between the parent and child components to share data. Luckily, Angular has a solution to this problem, the use of @Output and @Input.  
