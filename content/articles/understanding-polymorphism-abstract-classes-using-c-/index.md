@@ -127,144 +127,183 @@ This class will use the main abstract class and use its properties & methods for
 
 ```C#
 public class CommissionWorker : Employee
+{
+   private decimal salary;     
+   private decimal commission; 
+   private int quantity;       
+
+    // constructor of CommissionWorker class
+    public CommissionWorker(string firstNameValue, string lastNameValue, decimal salaryValue, decimal commissionValue, int quantityValue) : base(firstNameValue, lastNameValue)
   {
-     private decimal salary;     
-     private decimal commission; 
-     private int quantity;       
+    WeeklySalary = salaryValue;
+    Commission = commissionValue;
+    Quantity = quantityValue;
+  }
 
-      // constructor of CommissionWorker class
-      public CommissionWorker(string firstNameValue,
-       string lastNameValue, decimal salaryValue,
-       decimal commissionValue, int quantityValue)
-       : base(firstNameValue, lastNameValue)
-    {WeeklySalary = salaryValue;
-     Commission = commissionValue;
-     Quantity = quantityValue;}
-
-    // set & get for WeeklySalary
-    public decimal WeeklySalary
-    {get
-       {return salary;}
-        set
-     {// ensure non-negative salary value
-          if (value > 0 )
-             salary = value;}}
-        // set & get for Commission
-    public decimal Commission
-    {get
-     {return commission;}
-         set
-     {// ensure non-negative commission value
-          if (value > 0 )
-           commission = value;}}
-        // set & get for Quantity
-    public int Quantity
-    {get
-       {return quantity;}
-         set
-       {// ensure non-negative quantity value
-           if (value > 0 )
-           quantity = value;}}
+  // set & get for WeeklySalary
+  public decimal WeeklySalary
+  {
+    get
+    {
+      return salary;
+    }
+    set
+    {
+      // ensure non-negative salary value
+      if (value > 0 )
+         salary = value;
+    }
+   }
+  // set & get for Commission
+  public decimal Commission
+  {
+    get
+    {
+      return commission;
+    }
+    set
+    {
+      // ensure non-negative commission value
+      if (value > 0 )
+       commission = value;
+       }
+    }
+  // set & get for Quantity
+  public int Quantity
+  {
+    get
+    {
+      return quantity;
+    }
+    set
+    {
+      // ensure non-negative quantity value
+      if (value > 0 )
+      quantity = value;
+    }
+  }
 ```
 
 The following piece of code will override the `ToString()` & `Earnings()` methods from the main class to store the output.
 
-```c#
-      // CommissionWorker's earnings
-      public override decimal Earnings()
-      { return WeeklySalary + Commission* Quantity;}  
-      // return a string of CommissionWorker information
-      public override string ToString()
-      {return "CommissionWorker: " + base.ToString();} 
-   } // end of class 
+```C#
+    // CommissionWorker's earnings
+    public override decimal Earnings()
+    { 
+      return WeeklySalary + Commission* Quantity;
+    }  
+    // return a string of CommissionWorker information
+    public override string ToString()
+    {
+      return "CommissionWorker: " + base.ToString();
+    } 
+ } // end of class 
 ```
 ### PieceWorker class
 
 This class will use the main abstract class and use its properties & methods for the definition of a PieceWorker payroll. The following piece of code will define the Constructor of the class, set & get for the `wagePerPiece` & `quantity`.
-```c#
- public class PieceWorker : Employee 
-    {
-       private decimal wagePerPiece; 
-       private int quantity;         
+```C#
+public class PieceWorker : Employee 
+{
+   private decimal wagePerPiece; 
+   private int quantity;         
 
-        // constructor of PieceWorker class
-        public PieceWorker(string firstNameValue,
-         string lastNameValue, decimal wagePerPieceValue,
-         int quantityValue)
-         : base(firstNameValue, lastNameValue)
-      {WagePerPiece = wagePerPieceValue;
-         Quantity = quantityValue;}
-   
-      // Set & Get for WagePerPiece
-      public decimal WagePerPiece
-      {get
-         {return wagePerPiece;}  
-       set
-         {if (value > 0 )
-               wagePerPiece = value;}}
-        // Set & Get for Quantity
-        public int Quantity
-      {get
-         {return quantity;}  
-       set
-         {if (value > 0 )
-               quantity = value;}}
+    // constructor of PieceWorker class
+    public PieceWorker(string firstNameValue, string lastNameValue, decimal wagePerPieceValue, int quantityValue) : base(firstNameValue, lastNameValue)
+    {
+      WagePerPiece = wagePerPieceValue;
+      Quantity = quantityValue;
+    }
+
+    // Set & Get for WagePerPiece
+    public decimal WagePerPiece
+    {
+      get
+      {
+        return wagePerPiece;
+      }  
+      set
+      {
+        if (value > 0 )
+        wagePerPiece = value;
+      }
+    }
+    // Set & Get for Quantity
+    public int Quantity
+    {
+      get
+      {
+        return quantity;
+      }  
+      set
+      {
+        if (value > 0 )
+        quantity = value;
+      }
+    }
 ```
 
 The following piece of code will override the `ToString()` & `Earnings()` methods to store the output.
 ```C#
   // Earnings of PieceWorker
-        public override decimal Earnings()
-      {return Quantity* WagePerPiece;}
-   
-      // return string representation of PieceWorker
-      public override string ToString()
-      {return "PieceWorker: " + base.ToString();}
-   }
+  public override decimal Earnings()
+  {
+    return Quantity* WagePerPiece;
+  }
+
+  // return string representation of PieceWorker
+  public override string ToString()
+  {
+    return "PieceWorker: " + base.ToString();
+  }
+}
 ```
 
 ### Polymorphism testing
 
 In main, we will create objects of each employee class we have and output the information of each object to test out each one of them.
 
-```c#
+```C#
 static void Main(string[] args)
-        {
-            Boss boss = new Boss("Khaled", "Sans", 800);
-            
-            CommissionWorker commissionWorker =
-            new CommissionWorker("Susan", "Jons", 300, 2, 120);
+{
+    Boss boss = new Boss("Khaled", "Sans", 800);
 
-            PieceWorker pieceWorker = new PieceWorker("Samir", "Muan",
-               Convert.ToDecimal(2.8), 150);
-            Employee employee = boss;
+    CommissionWorker commissionWorker =
+    new CommissionWorker("Susan", "Jons", 300, 2, 120);
 
-            string output = GetString(employee) + boss + " earned " +
-            boss.Earnings().ToString("C") + "\n\n";
+    PieceWorker pieceWorker = new PieceWorker("Samir", "Muan",
+       Convert.ToDecimal(2.8), 150);
+    Employee employee = boss;
 
-            employee = commissionWorker;
-            output += GetString(employee) + commissionWorker +
-            " earned "+commissionWorker.Earnings().ToString("C") + "\n\n";
+    string output = GetString(employee) + boss + " earned " +
+    boss.Earnings().ToString("C") + "\n\n";
 
-            employee = pieceWorker;
-            output += GetString(employee) + pieceWorker +
-            " earned " + pieceWorker.Earnings().ToString("C") +"\n\n";
+    employee = commissionWorker;
+    output += GetString(employee) + commissionWorker +
+    " earned "+commissionWorker.Earnings().ToString("C") + "\n\n";
 
-            Console.WriteLine(output,"Polymorphism in use");} 
+    employee = pieceWorker;
+    output += GetString(employee) + pieceWorker +
+    " earned " + pieceWorker.Earnings().ToString("C") +"\n\n";
+
+    Console.WriteLine(output,"Polymorphism in use");
+} 
 ```
 
 This piece of code will return a string of each employee class.
 
-```c#
- // Employee informations 
-    public static string GetString(Employee worker)
-    {
-        return worker.ToString() + " earned " +
-           worker.Earnings().ToString("C") + "\n";
-    }} 
+```C#
+// Employee informations 
+public static string GetString(Employee worker)
+{
+    return worker.ToString() + " earned " +
+       worker.Earnings().ToString("C") + "\n";
+}} 
 ```
+
 ### Polymorphism output
-```c#
+
+```C#
 Boss: Khaled Sans earned $800.00
 Boss: Khaled Sans earned $800.00
 
