@@ -146,7 +146,12 @@ In the previous section, we explored the usage of the child component and how to
 
 This decorator allows for the sharing of data from the child component. It invokes an event that in turn notifies the parent component.  
 
-> It's important to note that the `@Output` decorator uses `EventEmitter` to accomplish its task.  
+> It's important to note that the `@Output` decorator uses `EventEmitter` from the `angular/core` to accomplish its task. We import it as shown below:
+
+```ts
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+
+```
 
 Edit the previous child component as shown below:
 
