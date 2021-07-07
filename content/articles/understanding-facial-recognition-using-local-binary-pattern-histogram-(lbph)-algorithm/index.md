@@ -245,8 +245,10 @@ The face recognition algorithm generally operates in one of two modes:
 <<<<<<< HEAD
 ### The stages of face recognition using LBPH
 For face recognition, the LBPH algorithm follows some steps. These steps can be carried out in two stages, as follows:
+
 #### The learning of the algorithm
 The first step is the learning of the algorithm. It makes use of a data-set of images of the people to be included in the recognition process. Each image is given a unique ID as either a number or the name of a person so that the algorithm can use this information to identify the image and export the output. The pictures of the same person are always placed under the same ID.
+
 #### Computational steps
 1.	**The application of the LBP operation:** is the first step of the computational steps. Here, an intermediate image has been created to better represent the original image through a [sliding window](https://www.techopedia.com/definition/869/sliding-window) concept, taking into account two parameters: the `neighbor` and the `radius`. New values are created in the form of binary by comparing the 8 `neighbor` values to the threshold value. For each `neighbor` value greater than the threshold value, the value is set to 1 and 0 for every `neighbor` value less than the threshold value. This forms a matrix of binary numbers excluding the threshold. A central value of the matrix is created by the conversion of the binary number to a decimal value which corresponds to the pixels of the original image. For a better representation of the characteristics of the original image.
 
