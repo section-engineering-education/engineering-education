@@ -1,11 +1,9 @@
-#### Getting started with Django Celery Asynchronous task
-When working with data-intensive applications, long-running tasks slows down the application and the website load time.
-
-In such an application, we can improve the application load time but offloading some work off the application server to a message broker server.
+When working with data-intensive applications, long-running tasks slows down the application and the website load time. In such an application, we can improve the application load time by offloading some work from the application server to a message broker server.
 
 In this tutorial, we will learn how to use Celery in a Django application to perform long-running background tasks.
 
 ### Table of Contents
+
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Workers](#workers)
@@ -23,50 +21,62 @@ In this tutorial, we will learn how to use Celery in a Django application to per
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+
 1. [Python](https://www.python.org/) installed in your computer.
-2. Knowledge of [Python](https://www.tutorialspoint.com/python/index.htm) and [Django](https://www.djangoproject.com/).
+2. A good understanding of [Python](https://www.tutorialspoint.com/python/index.htm) and [Django](https://www.djangoproject.com/).
    
 ### Workers
-The background-based task-servers are called `workers`. In an application with one of a few web servers, we can have several workers that perform the heavy computations in the background and send back the response to the application through webhooks or callbacks.
 
+The background-based task servers are called `workers`. In an application with web servers, we can have several workers that perform the heavy computations in the background and send back the response to the application through webhooks or callbacks.
 
 ### Celery Message Queue
-A queue is a data structure that works on the first-in, first-out principle. We assign work to the workers through a message queue. The tasks are processed by the worker in the order in which they were queued.
+
+A queue is a data structure that works based on the first-in, first-out principle. We assign work to the workers through a message queue. The tasks are processed by the worker in the order in which they were queued.
 
 > The queue ensures that each worker processes a single task at a time and only a single worker processes a particular task.
 
 ### Celery
 Celery makes it easier to implement the task queues for many workers in a Django application.
 
-Functions of Celery
+Functions of Celery:
+
 1. Define tasks as python functions.
 2. Listen to a message broker for new tasks.
 3. Assign the tasks to workers.
 4. Monitor the workers and tasks.
 
 ### Project Setup
+
 1. Create a Django application by executing the command below.
+   
    ```bash
-   $ django-admin startproject celerytask
+   django-admin startproject celerytask
    ```
 2. Migrate the database models by executing the command below.
+   
    ```bash
-   $ cd celerytask
-   $ python manage.py migrate
+   cd celerytask
+   python manage.py migrate
    ```
-3. Start the Django web server by executing the command below.
+3. Execute the command below to add celery to our application.
+    
+    ```bash
+    pip install celery
+    ```
+4. Start the Django web server by executing the command below.
+   
    ```bash
-   $ python manage.py runserver
+   python manage.py runserver
    ```
-4. Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
+5. Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
 
-5. Execute the command below to add celery to our application.
-   ```bash
-   $ pip install celery
-   ```
+
 #### Adding Celery configuration to Django application
+
 1. In the project folder where `settings.py` file exists, create a new python file named `celery.py`.
+
 2. Add the code snippet below to the file created above.
+   
    ```python
     from __future__ import absolute_import, unicode_literals
     import os
@@ -80,9 +90,8 @@ Functions of Celery
     # Looks up for task module in Django applications and loads them
     app.autodiscover_tasks()
    ```
-The above configuration creates a Celery application using the Django settings.
-`app.autodiscover_tasks()` tries to discover a file named `task.py` in all of our Django applications.
-
+   
+The above configuration creates a Celery application using the Django settings. `app.autodiscover_tasks()` tries to discover a file named `task.py` in all of our Django applications.
 
 In the `__init__.py` file within the package where `settings.py` file is located, add the code snippet below.
 
@@ -91,18 +100,23 @@ from .celery import app as celery_app
 
 __all__ = ['celery_app']
 ```
+
 The above code snippet imports Celery every time our application starts.
 
 #### Creating a Celery task
+
 Let's create a Django app from where we will set up the Celery task.
 
-1. To create a new Django app, execute the command below. In the comand, `task` is the name of our app.
+1. To create a new Django app, execute the command below. In the command, `task` is the name of our app.
    
    ```bash
    $ python manage.py startapp task
    ```
+   
 2. Create a python file named `task.py` in the `task` that we have just created.
+
 3. Add the Code snippet below into the `task.py` created above.
+   
    ```python
    import string
    from django.contrib.auth.models import User
@@ -118,10 +132,12 @@ Let's create a Django app from where we will set up the Celery task.
          password = get_random_string(50)
          User.objects.create_user(username=username, email=email, password=password)
       return '{} random users created with success!'.format (total)
+   
    ``` 
    The above function creates random user accounts.
 
 The method signature of a Celery task is as shown below.
+
 ```python
 from celery import shared_task
 
@@ -129,11 +145,12 @@ from celery import shared_task
 def name_of_your_function(optional_param):
     pass  # do some long running task
 ```
-#### Creating the HTML files.
-Create a folder named `templates` in the projects root directory.
-In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
 
-1. In the `task` directory created above, create a file named `base.html` and add the code snippets below into it.
+#### Creating the HTML files
+
+Create a folder named `templates` in the projects root directory. In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
+
+1. In the `task` directory created above, create a file named `base.html` and add the code snippets below into it. The below code snippet is the base template that other template files will extend from.
    
    ```html
    <!DOCTYPE html>
@@ -167,9 +184,8 @@ In the `templates` directory created above, create another directory within it n
    </body>
    </html>
    ```
-   - The code snippet above is the base template that other template files will extend from.
-
-2. In the `task` directory, create a file named `user_list.html` and add the code snippets below.
+   
+2. In the `task` directory, create a file named `user_list.html` and add the code snippets below. The below code snippet will display the list of generated random users.
    
    ```html
    {% extends 'task/base.html' %}
@@ -186,9 +202,8 @@ In the `templates` directory created above, create another directory within it n
     </ul>
    {% endblock %}
    ```
-   - The code snippet above will display the list of generated random users.
   
-3. In the `task` directory create a file named `generate_random_user.html` and add the code snippets below.
+3. In the `task` directory create a file named `generate_random_user.html` and add the code snippets below. The below code snippet contains an input field where we will specify the number of random users to generate.
    
    ```html
    {% extends 'task/base.html' %}
@@ -202,12 +217,13 @@ In the `templates` directory created above, create another directory within it n
         </table>
         <button type="submit">Submit</button>
     </form>
-   {% endblock %
+   {% endblock %}
    ```
-   - The code snippet above contains an input field where we will specify the number of random users to generate.
 
 #### Form
-In the `task`, create a python file named `random_user_form.py` and add the code snippet below.
+
+In the `task`, create a python file named `random_user_form.py` and add the code snippet below:
+
 ```python
 from django import forms
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -219,9 +235,12 @@ class GenerateRandomUserForm(forms.Form):
             MaxValueValidator(500)
         ]
     )
-``` 
+```
+
 ### View
-Add the code snippet below into the `views.py` file in the `task`.
+
+Add the code snippet below into the `views.py` file in the `task`:
+
 ```python
 from django.shortcuts import redirect
 
@@ -244,9 +263,11 @@ class GenerateRandomUserView(FormView):
         messages.success(self.request, 'We are generating your random users! Wait a moment and refresh this page.')
         return redirect('users_list')
 ```
-In the code snippet above, you notice that we did not call the `create_random_user_accounts` method instead we called `create_random_user_accounts.delay(total)`. This instructs Celery to perform the task in a background process.
+
+In the above code snippet, notice that we did not call the `create_random_user_accounts` method instead we called `create_random_user_accounts.delay(total)`. This instructs Celery to perform the task in a background process.
 
 #### URLs
+
 Update the `urls.py` with the code snippet below.
 
 ```python
@@ -265,22 +286,29 @@ urlpatterns = [
 ```
 
 #### Starting the Celery worker process
+
 Execute the command below to start a Celery worker process.
+ 
 ```bash
 $ celery -A celerytask worker -l info
 ```
+
 ### Testing
+
 1. Run Django migrations to create the tables in the database by executing the command below.
-```bash
-$ python manage.py migrate
-```
+
+  ```bash
+  $ python manage.py migrate
+  ```
 
 2. Start the Django web server by executing the command below.
-```bash
-$ python manage.py runserver
-```
+
+  ```bash
+  $ python manage.py runserver
+  ```
 
 3. Start the Celery worker by executing the command below.
+   
    ```bash
    $ celery -A celerytask worker -l info
    ```
