@@ -2,12 +2,13 @@
 
 In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
 
-### Prerequisite
+### Prerequisites
 -	Basics of [Artificial Neural Network](https://towardsdatascience.com/neural-networks-basics-29cc093b82be)
 -	[Google Colab](https://colab.research.google.com/) or Jupyter Notebook
 -	Churn modeling dataset from [Kaggle](https://www.kaggle.com/adammaus/predicting-churn-for-bank-customers)
 
 ### Outline
+
 -	Import Libraries
 -	Data Pre-processing
 -	Build and Visualize Model
@@ -49,6 +50,7 @@ dataset.head()
 ![first 5 rows of dataset](/engineering-education/build-ann-with-keras/dataset.PNG)
 
 ### Data Pre-processing
+
 Not all the features are helpful. We do not need the row number, customer id, and customer names. These features will not help us predict if the customer will churn. Hence, we can get rid of them. We can now separate the features and the label.
 
 ```python
@@ -116,7 +118,8 @@ ann.add(tf.keras.layers.Dense(units=8, activation='relu'))
 ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
 ```
 
-We have created our model; let us visualize it. 
+We have created our model, let us visualize it.
+
 ```python
 from tensorflow.keras.utils import plot_model
 plot_model(ann,
