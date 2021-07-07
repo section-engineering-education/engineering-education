@@ -306,7 +306,7 @@ This piece of code will return a string of each employee class.
 
 ### Polymorphism output
 
-```C#
+```bash
 Boss: Khaled Sans earned $800.00
 Boss: Khaled Sans earned $800.00
 
@@ -316,8 +316,9 @@ CommissionWorker: Susan Jons earned $540.00
 PieceWorker: samir Muan earned $420.00
 PieceWorker: samir Muan earned $420.00
 ```
+
 ### Conclusion
-In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Don't forget to test out the code to fully understand how it works.
+In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Don't forget to test out and go through the code to completely understand how it works.
 
 ### Further reading
 1. https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/.
