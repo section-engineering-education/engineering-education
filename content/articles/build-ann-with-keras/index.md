@@ -1,6 +1,6 @@
 ![Hero Image](/engineering-education/build-ann-with-keras/hero.PNG)
 
-In this article, you will learn how to build and train an artificial neural network with Keras. We will create a model to predict customer churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. The GitHub repo for this project is [here](https://github.com/Inyrkz/Customer-Churn).
+In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
 
 ### Prerequisite
 -	Basics of [Artificial Neural Network](https://towardsdatascience.com/neural-networks-basics-29cc093b82be)
@@ -15,21 +15,20 @@ In this article, you will learn how to build and train an artificial neural netw
 -	Make Predictions on New Customer
 
 ### Import Libraries
-Most of the libraries we will be using have been pre-installed on Google Colab. We can import them.
+Most of the libraries we will be using have been pre-installed on Google Colab. We import them.
 ```python
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 ```
 
-Let us check the version of TensorFlow we are using.
 ```python
 print(tf.__version__)
 ```
 
 ![Tensorflow Version](/engineering-education/build-ann-with-keras/tf-version.PNG)
 
-Let us load our dataset. If you are using Google Colab, you need to upload your dataset before loading it. You can do that by clicking on the folder icon on the left panel.
+Let us load our dataset. If you are running the codes with Google Colab, then upload the dataset first. Click on the folder icon on the left panel.
 ![click on folder icon](/engineering-education/build-ann-with-keras/upload-dataset.PNG)
 
 Then click on the upload icon.
@@ -84,15 +83,15 @@ print(X)
 ```
 ![one hot encode the geography column](/engineering-education/build-ann-with-keras/onehot-encoding.PNG)
 
-Next, we split our dataset into the training set and the test set. We train our model with the training set and evaluate it with the test set.
+Next, we split our dataset into the training set and the test set.
 
 ```python
-# splitting the dataset into training set and test set
+# split the dataset into train and test set
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 ```
 
-The last thing we do is feature scaling. It is vital in deep learning. It helps to reduce training time.
+Finally, we do feature scaling. It is vital in deep learning. It helps to reduce training time.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -104,7 +103,7 @@ print(X_train)
 ![feature scaling](/engineering-education/build-ann-with-keras/feature-scaling.PNG)
 
 ### Build and Visualize Artificial Neural Network
-We build our neural network with the `Sequential()` class. We first create the input layer with 12 nodes. Twelve is the number of rows in our training set. We then add the hidden layers. To keep things simple, we use two hidden layers. The first hidden layer has 12 nodes, while the second has 8 nodes. We use the relu activation function in the hidden layers. Finally, we add the output layer. Since this is a binary classification problem, we use one node at the output layer. We also use the sigmoid activation function at the output layer. It will give us the probability of a customer churning.
+We build our neural network with the `Sequential()` class. We first create the input layer with 12 nodes. Twelve is the number of rows in our training set. We then add the hidden layers. To keep things simple, we use two hidden layers. The initial hidden layer has 12 nodes, while the next layer has 8 nodes. In the hidden layers, we use the relu activation function. Finally, we add the output layer. We use a single node at the output layer since we have only two categories. We also use the sigmoid activation function at the output layer. It will give us the probability of a customer churning.
 
 ```python
 # Initializing the ANN
@@ -132,7 +131,7 @@ We can also use the [NN-SVG](https://alexlenail.me/NN-SVG/) tool to visualize ou
 ![ANN Visualization using NN-SVG](/engineering-education/build-ann-with-keras/NN-SVG-architecture.PNG)
 
 ### Train the ANN
-We compile our model with the Adam optimizer and use the binary cross-entropy loss. We then fit the model to the training set and train for 100 epochs. Increasing the number of epochs will help your model train better.
+We compile the model with the Adam optimizer. We use the binary cross-entropy loss. We train the model for 100 epochs. Increasing the number of epochs will help your model train better.
 
 ```python
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
@@ -146,15 +145,15 @@ Now that our model training is complete, we can make predictions on a single cus
 
 | Record      | Details     |
 | :---        |    :----:   |
-| Geography   | Spain       |
+| Country   | Spain       |
 | Credit Score| 600         |
 | Gender      | Male        |
-| Age         | 40 years old|
+| Age         | 40 years  |
 | Tenure      | 3 years     |
-| Balance     | $60000      |
-| Number of Products | 2    |
-| Credit Card| Yes          |
-| Active Member| Yes        |
+| Balance remaining  | $60000      |
+| Number of Products owned | 2    |
+| Own a Credit Card? | Yes          |
+| Is an Active Member? | Yes        |
 | Estimated Salary | $50000 |
 
 ```python
@@ -164,14 +163,14 @@ print(ann.predict(sc.transform([[0, 0, 1, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]]
 
 Remember, after one-hot encoding, the geography `Spain` is represented as `0, 0, 1`. It will be in the first three columns of our matrix of features.
 
-We can add a threshold of 0.5. If the predicted probability is above 0.5, then the customer will leave the bank. In extreme situations, we can increase the threshold. That is if we want our model to predict True only if it is very confident.
+We can add a threshold of 0.5. The customer will leave the bank if the predicted probability is above 0.5. In extreme situations, we can increase the threshold. That is if we want our model to predict True only if it is very confident.
 
 ```python
 print(ann.predict(sc.transform([[0, 0, 1, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])) > 0.5)
 ```
 ![Prediction for New Customer](/engineering-education/build-ann-with-keras/prediction-with-threshold.PNG)
 
-This is great news for the bank! This customer will not churn. Let us evaluate our model using the test set.
+This is great news for the bank! This customer will not churn. Let us assess our model using the test set.
 
 ```python
 y_pred = ann.predict(X_test)
@@ -190,4 +189,4 @@ print(accuracy_score(y_test, y_pred))
 ![Confusion Matrix & Accuracy Score](/engineering-education/build-ann-with-keras/confusion-matrix-and-accuracy-score.PNG)
 
 ### Conclusion
-In this guide, we learned how to build, visualize and train an ANN using Keras. We trained a model to predict customers that will churn from a bank. We got an accuracy of 86%. Now you can create an artificial neural network with Keras and train on any dataset. There is no specific architecture to use. You can experiment with different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
+In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. We got an accuracy of 86%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
