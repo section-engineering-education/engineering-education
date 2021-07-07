@@ -1,32 +1,26 @@
->>>> Table of contents
+Twitch,  is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is. It not only supports other services but also contents from a broad spectrum. For instance there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others. Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/) and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/) of the company.
 
-Build a Twitch Chatbot in Node.js
-
-## Content
-
-Twitch, to newcomers, is an online streaming platform that allows streamers and audiences to lively interact with each other. It begun as a small game streaming platform for gamers but soon got a leap ahead. It now not only supports other services but also contents from a broad spectrum. For instance cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others. Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/) and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/).
-
-Due to the growth of the service, the need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots which interact with the service. The bots created by these genius developers range from chatting bots, viewers engagement bots, monitoring and statistical bots, polling bots among many others. Some of these top Twitch bots can be found [here](https://www.fairlyoddstreamers.com/resources/bots). Even though so many bots have been created or modified, still there is a need for personalized bots depending on the issue you as a developer or streamer want to handle.
+Due to the growth of the services, the need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots which interact with the services. The bots created by these genius developers range from chatting bots, viewers engagement bots, monitoring and statistical bots, polling bots, chat and content moderation bots among many others. Some of these top Twitch bots can be found in [this](https://www.fairlyoddstreamers.com/resources/bots) link. Even though so many bots have been created or modified, still there is a need for personalized bots depending on the issue you as a developer or streamer want to solve.
 
 In this tutorial, we will learn about the Twitch API and how to create a simple chatting bot in Node.js to interact with it.
 
 ### Key takeaways
 
-At the end of the tutorial, you will learn:
+At the end of the tutorial, you will have learnt:
 
 - What is the Twitch API
 - Key components, basics, and how to interact with the API in Node.js
-- How to build a Twitch chatbot
+- How to build a simple Twitch chatbot
 - How to run a Twitch chatbot in Node.js
 
 ### Pre-requisites
 
-Some of the basics needed for the tutorial include:
+Some of the basics needed for the tutorial include the following:
 
 - Web development basics
-- Little interactions with Twitch website. This helps you know how Twitch works and the interface you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/).
-- An IDE installed on your machine. My recommendation is Visual Studio Code. You can get it [here](https://code.visualstudio.com/).
-- Node environment installed on your machine. You can get it [here](https://nodejs.org/en/).
+- Little interactions with Twitch website. This helps you know how Twitch works, some of its services and the interface you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/) website.
+- An IDE installed on your machine. My recommendation is the [Visual Studio Code](https://code.visualstudio.com/) IDE.
+- Node environment installed and configured on your machine. You can get it [here](https://nodejs.org/en/).
 - A stable internet connection.
 
 ### Table of Contents
