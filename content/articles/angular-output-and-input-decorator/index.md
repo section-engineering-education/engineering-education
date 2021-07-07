@@ -1,6 +1,5 @@
-### Table of content
-
-- [Table of content](#table-of-content)
+### Table of contents
+- [Table of contents](#table-of-content)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [What's Angular @Output decorator](#whats-angular-output-decorator)
@@ -9,18 +8,15 @@
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 - Basics of [Angular](https://angular.io/docs) framework. This includes the data binding concept using the `ngModel` directive.  
 - You should be well knowledgeable on the Angular components. How these components are created and interact with each other to build a full Angular application.
 
 > To follow along with examples, ensure you've got a working application or follow [this](https://angular.io/docs) link to install a new application.
 
 ### Objectives
-
 By the end of this tutorial, you should be able to create a link between the parent and child Angular components. As we will discuss shortly, you will be able to 'talk' to other components, bypassing the default behavior of Angular of single directional data flow.  
 
 ### What's Angular @Output decorator
-
 By default, Angular supports data flow in one direction. This limits interactions between the parent and child components to share data. Luckily, Angular has a solution to this problem, the use of @Output and @Input.  
 
 Let's use and example to understand this concept:
@@ -39,7 +35,6 @@ Now, these two decorators have distinct functions:
 2. @Input - A decorator that allows the parent to communicate with the child component.
 
 ### Exploring Child component
-
 In this section, we're exploring how to create a link between the parent and the child component. Let's get started by following the instructions below:  
 
 1: Create a new component `musicDetailsComponent` by running the following command:
@@ -48,7 +43,7 @@ In this section, we're exploring how to create a link between the parent and the
 ng g component music-details
 ```
 
-Output:
+#### Output
 
 ```bash
 CREATE src/app/music-details/music-details.component.css (0 bytes)
@@ -128,12 +123,11 @@ Serve the application by running the following command:
 ng serve
 ```
 
-Output:
+#### Output
 
 ![Input decorator output](/engineering-education/angular-output-and-input-decorator/input.png)
 
 ### How does an Angular @Output work?
-
 In the previous section, we explored the usage of the child component and how to use the `@Input` decorator. In this section, we look at the `@Output` decorator, which is the reverse of the `@Input` decorator.
 
 This decorator allows for the sharing of data from the child component. It invokes an event that in turn notifies the parent component.  
@@ -188,10 +182,10 @@ export class AppComponent {
     this.musicians.push(newMusician);
   }
 ```
-**Initial Output**
+#### Initial Output
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/original-output.png)
 
-**Output on Adding new artist**
+#### Output on Adding new artist
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/added-artist.png)
 
 In this parent component, we define a method to add new artists while in the template we have an event handler that picks new musicians then loops the list to display.
