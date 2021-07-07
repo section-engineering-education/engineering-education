@@ -14,11 +14,11 @@ images:
     alt: Core concepts to master when using Django
 ---
 
-In out today's discussion, I would be introducing you to this great Python backend framework known DJANGO. In web applications world, there are different server side languages and frameworks of which Django happens to be one. To be cleared enough, Django is just a framework built on top a well known programming language called Python few years back. Join me in this journey of my favorite web framework. Yes, you reader!
+In out today's discussion, I would be introducing you to this great Python backend framework known DJANGO. In web applications development world, there are different server side languages and frameworks of which Django happens to be one. To be cleared enough, Django is just a framework built on top a well known programming language called Python few years back. Join me in this journey of my favorite web framework to explore more. Yes, you reader!!
 
-Django uses a python package called pip and this come in handy with Python installed. Pip is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
+Django uses a python package called pip and this come in handy with Python installed. Django is used to configure the server side of web applications as used by Shopify, Google, Pinterest, Instagram etc.
 
-Surprised?? Yes, companies have mentioned using Django for their backend operations.
+Surprised!! Yes, companies mentioned used Django for their backend operations.
 
 Django web framework allows developers to connect the server side by actually making ties with the user interface of applications through the use of its concepts.
 
@@ -26,7 +26,7 @@ In this article we will cover a number of concepts to be mastered whether you ar
 
 ## Key Take Aways
 
-By the end of this article, readers will have knowledge about the following topics:
+By the end of this article, readers would have knowledge about the following topics:
 
 1. Django Projects Structure
 2. How url routing works in Django
@@ -48,26 +48,26 @@ To compile all installed dependencies into the `requirements.txt` file, run comm
 ```bash
 $ pip freeze > requirements.txt
 ```
-Assuming you are to install all dependencies inside already made `requirements.txt` file, run command below:
+But assuming you are to install all dependencies inside already made `requirements.txt` file, then run command 
 
 ```bash
 $ pip install -r requirements.txt
 ```
-
 Now to set up the django project itself, please continue reading the article.
 
-We firstly need to check if Python is installed properly. Use bash or terminal and type command as below but in my own case, I have got `Python 3.9.6`.
+We firstly need to check if Python is installed properly. Use bash or terminal and type command as follows. 
+
+I have installed `Python 3.9.6` on my machine. Yours might be different, no qualms at all. 
 
 ```bash
 $ python --version
 Python 3.9.6
 ```
-Or in a shorter command 
+It is advisable to install `Python3` anyways. If you have no Python installed, then head on to official website and download latest according to your OS.
 
-```bash
-$ python -v
-Python 3.9.6
-```
+![Python Official ](/https://python.org)
+
+You are on track, keep up reading...
 
 Navigate into the directory folder you would like to have your Django project and run this.
 
@@ -79,7 +79,7 @@ Now you are inside the `mydjangoproject` folder.
 
 Yaay! you are doing well buddy. Let's explore more.
 
-1. Inside the current directory, create the virtual enviroment folder as talked above. You remember? Good.
+1. Inside the current directory, create the virtual enviroment folder as described above. You remember? Good.
 
    ```bash
    $ virtualenv myenv
@@ -88,17 +88,17 @@ Yaay! you are doing well buddy. Let's explore more.
    Verify this by typing `virtualenv --version`.
 
    ```bash
-   $ virtualenv -v
-      virtualenv 21.0.40
+   $ virtualenv --version
+   virtualenv 21.0.40
    ```
 
-2. To activate the `myenv` for the project, run this.
+2. To activate the `myenv` for the project, run this if you are window user.
 
    ```bash
     source myenv/Scripts/activate 
    ```
    
-   But if on Mac/Linux OS use:
+   But if you are on Mac/Linux OS use:
 
    ```bash
    $ myenv/bin/activate
@@ -109,50 +109,31 @@ Yaay! you are doing well buddy. Let's explore more.
    ```bash
      pip install django
    ```
-
    You can verify this installation by freezing the `requirements.txt` file.
 
    ```bash
    $ pip freeze > requirements.txt
    ```
-   Now open this current directory in your favorite code editor. The `requirements.txt` will be there and you can check it to see the version of django installed for you.
+   Now open this current directory in your favorite code editor. The `requirements.txt` will be there and you can check to see the version of django installed for you. Great!!
    
    Let's create our django project now by running the command `django-admin startproject dj-project`
 
    ```bash
-     django-admin startproject dj-project .
+   $ django-admin startproject dj-project .
    ```
    
-   Adding dots in the command is optional. What this does is that your `dj-project` will be created inside the current working directory.
+Adding dots in the command is optional. What this does is that your `dj-project` will be created inside the current working directory.
 
-After successfully creating the project we change our working directory to our project folder and run the Django development server.
+Having succesfully created the `dj-project`, now run command below and open the `http://127.0.0.1:8000/` brought to you  in the browser.
 
 ```bash
-$ cd django-project
 $ python manage.py runserver
-
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-
-You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
-Run `python manage.py migrate` to apply them.
-November 17, 2020 - 10:14:01
-Django version 3.1.3, using settings 'django_todo.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
 ```
-
-When we visit `http://127.0.0.1:8000/` in web browser, we should see the default Django welcome page. To restart the server, always run the command below.
-
-```bash
-  python manage.py runserver
-```
+Typing this in bash `python manage.py runserver`, always start django default server for your project and it must be left running while working on. To quit the server, simply press CTRL+C. 
 
 ### 2. URL Routing In Django
 
-Modern web apps can often communicate with the server and have more direct access to the request that's being sent and the response that you get back. Generally speaking, web application routing is the process of using URLs to drive the user interface (UI).
+Generally speaking,the routing mapped the url that user type with the exact match in views. This talks to the server from the client browser back and forth.
 
 URLs or Uniform Resource Locators in full, are a prominent feature in every single web browser and have several main functions from the users point of view. Where the server renders HTML one page at a time, the URL is the fundamental entry point for the user to access the application via HTTP.
 
@@ -162,7 +143,7 @@ A valid example of router in django apps in `urls.py` is below
 
 ```python
 from django.urls import path
-from todo import views
+from . import views
 
 urlpatterns = [
    path('', views.index, name='index'),
@@ -191,11 +172,13 @@ class MyModel(models.Model):
       return self.title
 ```
 
-View is the user interface code that returns what you see in your browser when you render a website uri. This is nothing but a Python function or class views that render the template by returning some data from the model after the logic behind it.
+What the private method `__str__` does is that it helps to return whatever the title is as the representational name for our model in admin.
+
+_VIEW_ is the user interface code that returns what you see in your browser when you render a website uri. This is nothing but a Python function or class views that render the template by returning some data from the model after the logic behind it.
 
 The main purpose of views generally is to accept data coming from models and sends or maps it with template HTML file rendered. Django uses its render method which takes in three param i.e request, template_to_load and context_dictionary.
 
-This looks like this below in django apps `views.py`
+This looks like this below in django apps `views.py`. This is an example of functional view in Django.
 
 ```python
 from django.shortcuts import render
@@ -203,10 +186,18 @@ from django.shortcuts import render
 def myView(request):
    context = {}
    return render(request, index.html, context)
-
 ```
+While this is class based views in Django as well.
 
-Template consists of static parts of the desired HTML output as well as some special syntax describing how dynamic content will be inserted. Majorly, this represent what will render to page for user as interface.
+```python
+from django.views imoport TemplateView
+
+class MyViewClass(TemplateView):
+   template_name = 'index.html'
+```
+Note that class based views do not require `return`.
+
+_TEMPLATE_ consists of static parts of the desired HTML output as well as some special syntax describing how dynamic content will be inserted. Majorly, this represent what will render to page for user as interface from the views.
 
 This is most cases your HTML boiler plate that will be shown to users whenver they come to the rendered uri.
 
@@ -229,10 +220,10 @@ To access your Admin Interface, you need to initiate the database with our djang
 Then create a super user account that will access the admin and answer all questions about the credentials needed for the account
 
 ```bash
-    python manage.py createsuperuser
+$ python manage.py createsuperuser
 ```
 
-Having done that, head on to the browser and paste the url and then login to the account `http://127.0.0.1:8000/admin`
+Having done that, head on to the browser and paste the url, then login to the account `http://127.0.0.1:8000/admin` to view the admin prepared for your project. Don't you fall for Django by now?? You should because of all the stuffs configured for you as a developer, of which all other frameworks do not.
 
 ### 4. DJANGO USER AUTHENTICATION SYSTEM
 
@@ -246,7 +237,7 @@ The authentication system is very flexible, and you can build up your URLs, form
 
 This includes a URL mapper, views and forms, but it does not include the templates, we have to create our own. If you're using function-based views, the easiest way to restrict access to your functions is to apply the login_required decorator to your view function.
 
-See to the official documentations here ![Django Official Docs](/https://docs.djangoproject.com/en/3.2/django-authentication/)
+See to the official documentations here for more [Django Official Docs](/https://docs.djangoproject.com/en/3.2/django-authentication/)
 
 ### 5. RELATIONAL DATABASE MANAGEMENT SYSTEM
 
