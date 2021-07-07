@@ -1,12 +1,12 @@
-Twitch,  is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is. It not only supports other services but also contents from a broad spectrum. For instance there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others. Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/) and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/) of the company.
+Twitch,  is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is. It not only supports other services but also contents from a broad spectrum. For instance, there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others. Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/) and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/) of the company.
 
-Due to the growth of the services, the need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots which interact with the services. The bots created by these genius developers range from chatting bots, viewers engagement bots, monitoring and statistical bots, polling bots, chat and content moderation bots among many others. Some of these top Twitch bots can be found in [this](https://www.fairlyoddstreamers.com/resources/bots) link. Even though so many bots have been created or modified, still there is a need for personalized bots depending on the issue you as a developer or streamer want to solve.
+Due to the growth of the services, the need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots which interact with the services. The bots created by these genius developers range from chatting bots, viewers engagement bots, monitoring, and statistical bots, polling bots, chat and content moderation bots among many others. Some of these top Twitch bots can be found in [this](https://www.fairlyoddstreamers.com/resources/bots) link. Even though so many bots have been created or modified, still there is a need for personalized bots depending on the issue you as a developer or streamer want to solve.
 
 In this tutorial, we will learn about the Twitch API and how to create a simple chatting bot in Node.js to interact with it.
 
 ### Key takeaways
 
-At the end of the tutorial, you will have learnt:
+At the end of the tutorial, you will have learned:
 
 - What is the Twitch API
 - Key components, basics, and how to interact with the API in Node.js
@@ -18,7 +18,7 @@ At the end of the tutorial, you will have learnt:
 Some of the basics needed for the tutorial include the following:
 
 - Web development basics
-- Little interactions with Twitch website. This helps you know how Twitch works, some of its services and the interface you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/) website.
+- Little interactions with Twitch website. This helps you know how Twitch works, some of its services, and the interface you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/) website.
 - An IDE installed on your machine. My recommendation is the [Visual Studio Code](https://code.visualstudio.com/) IDE.
 - Node environment installed and configured on your machine. You can get it [here](https://nodejs.org/en/).
 - A stable internet connection.
@@ -59,7 +59,7 @@ The services of chatbots have been integrated into many different places. Two su
 - Can handle multiple clients at ease once deployed compared to the number of clients a human can handle
 - Since they are taught some main functionalities, inputs, and outputs, they provide quick repetitive answers without getting bored or tiresome
 - Provide answers to Frequently Asked Questions (FAQs) consistently to all customers. This prevents any discrimination.
-- Cheap to run
+- It is cheap to run
 - Easy to deploy
 - Can always be online hence prevented offtime and downtime to users.
 
@@ -315,7 +315,7 @@ const client = new tmi.Client({
     },
 
     // Lack of the identity tags makes the bot anonymous and able to fetch messages from the channel
-    // for reading, supervison, spying or viewing purposes only
+    // for reading, supervision, spying, or viewing purposes only
     identity: {
         username: `${process.env.TWITCH_USERNAME}`,
         password: `oauth:${process.env.TWITCH_OAUTH}`
@@ -424,11 +424,11 @@ It will look like this:
 
 - Try to make the chatbot using other languages and frame which might suit your need.
 - Launch your chatbot in remote Node.js servers at [Sectio.io](Sectio.io) as shown here in [Sectio.io Node.js docs](https://www.section.io/docs/tutorials/launching-a-nodejs-app/)
-- Intergrate a local or an online database to store your chats for later viewin and display them on a webpage.
+- Integrate a local or an online database to store your chats for later viewing and display them on a webpage.
 
 ### Conclusions
 
-Chatbots are important to our lives. Though they have a large number of advantages, they also have some disadvantages. They continue to surprise us with new inventions and features which mimic and even surpass human intelligence. We hope they would increase beyond human intelligence.
+Chatbots are crucial to our lives. Though they have numerous advantages, they also have some disadvantages. They continue to surprise us with new inventions and features which mimic and even surpass human intelligence. We hope they would increase beyond human intelligence.
 
 ### References
 
