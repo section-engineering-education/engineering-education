@@ -184,7 +184,7 @@ details = {
         "years": 21,
         "school": "Makerere"
 }
-# Serializing json
+# Serializing JSON
 json_string = json.dumps( details )
 print( json_string )  #{"name": "Felix Maina", "years": 21, "school": "Makerere"}
 ```
