@@ -21,7 +21,6 @@ Spring Batch does not include an in-built scheduling framework. It can be used w
 In this tutorial, we will be developing a Spring Boot application that reads data from a CSV file and stores it in an SQL database (H2 database).
 
 ### Table of Contents
-
 - [Prerequisites](#prerequisites)
 - [Application setup](#application-setup)
 - [Data layer](#data-layer)
