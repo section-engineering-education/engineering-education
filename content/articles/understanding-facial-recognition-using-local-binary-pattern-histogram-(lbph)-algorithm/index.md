@@ -50,10 +50,14 @@ In this article, we are going to look at how the LBPH algorithm detects faces.
 ### Overview
 This article will cover:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
 =======
 - [An introduction to Facial recognition](#an-introduction-to-facial-recognition)
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+- [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
+>>>>>>> c44b87a2f (revert)
 - [Working of the LBPH algorithm](#working-of-the-lbph-algorithm)
 - [Two modes of operation of face recognition](#two-modes-of-operation-of-face-recognition)
 - [The stages of face recognition using LBPH](#the-stages-of-face-recognition-using-lbph)
