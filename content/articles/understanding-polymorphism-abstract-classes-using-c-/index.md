@@ -264,41 +264,44 @@ The following piece of code will override the `ToString()` & `Earnings()` method
 In main, we will create objects of each employee class we have and output the information of each object to test out each one of them.
 
 ```C#
-static void Main(string[] args)
+public class Program
 {
-    Boss boss = new Boss("Khaled", "Sans", 800);
+  public static void Main(string[] args)
+  {
+      Boss boss = new Boss("Khaled", "Sans", 800);
 
-    CommissionWorker commissionWorker =
-    new CommissionWorker("Susan", "Jons", 300, 2, 120);
+      CommissionWorker commissionWorker =
+      new CommissionWorker("Susan", "Jons", 300, 2, 120);
 
-    PieceWorker pieceWorker = new PieceWorker("Samir", "Muan",
-       Convert.ToDecimal(2.8), 150);
-    Employee employee = boss;
+      PieceWorker pieceWorker = new PieceWorker("Samir", "Muan",
+         Convert.ToDecimal(2.8), 150);
+      Employee employee = boss;
 
-    string output = GetString(employee) + boss + " earned " +
-    boss.Earnings().ToString("C") + "\n\n";
+      string output = GetString(employee) + boss + " earned " +
+      boss.Earnings().ToString("C") + "\n\n";
 
-    employee = commissionWorker;
-    output += GetString(employee) + commissionWorker +
-    " earned "+commissionWorker.Earnings().ToString("C") + "\n\n";
+      employee = commissionWorker;
+      output += GetString(employee) + commissionWorker +
+      " earned "+commissionWorker.Earnings().ToString("C") + "\n\n";
 
-    employee = pieceWorker;
-    output += GetString(employee) + pieceWorker +
-    " earned " + pieceWorker.Earnings().ToString("C") +"\n\n";
+      employee = pieceWorker;
+      output += GetString(employee) + pieceWorker +
+      " earned " + pieceWorker.Earnings().ToString("C") +"\n\n";
 
-    Console.WriteLine(output,"Polymorphism in use");
-} 
+      Console.WriteLine(output,"Polymorphism in use");
+  } 
 ```
 
 This piece of code will return a string of each employee class.
 
 ```C#
-// Employee informations 
-public static string GetString(Employee worker)
-{
+  // Employee informations 
+  public static string GetString(Employee worker)
+  {
     return worker.ToString() + " earned " +
        worker.Earnings().ToString("C") + "\n";
-}} 
+  }
+} 
 ```
 
 ### Polymorphism output
