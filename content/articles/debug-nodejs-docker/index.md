@@ -5,7 +5,7 @@ published: true
 url: /debug-nodejs-docker/
 title: Debugging a Node.js app running in Docker using Nodemon and the Docker extension
 description: This article is about debugging a Node.js app running in a Docker container using Nodemon and the Docker extension. We will need to add a debug script in your package.json to enable debugging in our Node.js app.
-author: geoffrey-mungai
+author: verah-ombui
 date: 2021-07-07T00:00:00-11:00
 topics: [Containers, Node.js]
 excerpt_separator: <!--more-->
