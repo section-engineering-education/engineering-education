@@ -92,10 +92,10 @@ In a None network, Docker containers have no access to external networks nor com
 Docker networking is indeed essential and valuable. When deploying Docker containers, you need to link them to the same network. This article has covered the basics of Docker networking. You can, therefore, use this knowledge to manage containers more effectively. 
 
 #### Further reading
-- [Deploying a Simple Streamlit app using Docker](/using-ecs-to-deploy-docker-app-to-aws/)
-- [Top 5 Docker Logging Practices](/top-5-docker-logging-practices/)
-- [How to Containerize a Python Application](/how-to-containerize-a-python-application/)
-- [Using ECS to deploy a docker app to AWS](/using-ecs-to-deploy-docker-app-to-aws/)
+- [Deploying a Simple Streamlit app using Docker](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/)
+- [Top 5 Docker Logging Practices](/engineering-education/top-5-docker-logging-practices/)
+- [How to Containerize a Python Application](/engineering-education/how-to-containerize-a-python-application/)
+- [Using ECS to deploy a docker app to AWS](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
