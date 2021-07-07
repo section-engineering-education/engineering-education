@@ -262,3 +262,6 @@ After sending the `GET` request, we can see from the application logs the batch 
 		
 ### Conclusion
 Now that you have learned how to execute batch processes in a Spring Boot application, configure the application we have developed in this tutorial to use Spring Boot Scheduler to Schedule jobs to run at a given time automatically rather than sending an HTTP call to start a job. You can download the complete source code [here](https://replit.com/@okeloviolet/SpringBatchProcessing#).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
