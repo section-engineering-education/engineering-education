@@ -27,7 +27,7 @@ In this tutorial, the use of PyCharm Integrated Development Environment is recom
 
 However, if you have a different preference in terms of IDE, then you should consider installing a virtual environment and installing Flask.
 
-I intend to not float the introductory section of this article with guides on how to install a Flask web application and setting up your work environment. If you have no fundamental knowledge on setting up your work environment to develop a basic Flask application, then read my introductory article on the Flask framework [here](https://www.section.io/engineering-education/complete-guide-on-installing-flask-for-beginners/).
+To keep the introductory section of this article concise, I won't cover how to set up a Flask web application. However, if you have no prior knowledge of setting up a Flask web application, read my article on the Flask framework [here](https://www.section.io/engineering-education/complete-guide-on-installing-flask-for-beginners/).
 
 ### Examining a Basic Flask Application Structure
 Before we delve into the structuring of a large scale Flask application, let’s first understand how a basic Flask application is structured. 
