@@ -1,32 +1,32 @@
 ---
 layout: engineering-education
 status: draft
-published: false
+published: true
 url: /dom-manipulation-with-javascript/
-title: DOM manipulation with JavaScript
-description: This tutorial provides the reader with a detailed guide on manipulating the Document Object Model with JavaScript.
+title: DOM Manipulation with JavaScript
+description: This tutorial will provide the reader with a detailed guide on manipulating the Document Object Model with JavaScript.
 author: samuel-torimiro
-date: 2021-06-21T00:00:00-10:00
-topics: [JavaScript]
+date: 2021-07-07T00:00:00-17:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/dom-manipulation-with-javascript/hero.jpg
     alt: JavaScript example image
 ---
-
-The Document Object Model (DOM) is a tree-like structure showing a hierarchical relationship between different HTML elements. According to `w3.org`, the DOM can be referred to as a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
-
+The Document Object Model (DOM) is a tree-like structure showing a hierarchical relationship between different HTML elements. The DOM can be referred to as a programming API for HTML and XML documents according to `w3.org`. It defines the logical structure of documents and the way a document is accessed and manipulated.
+<!--more-->
 For instance, we can have a `<ul>` tag which in this context could be the parent tag and inside have multiple `<li>` tags which serve as the children. The body tag could also serve as the grandparent and so on and so forth.
 
-With JavaScript, we can easily manipulate the DOM to bring our web pages to life. This tutorial is focused on adding an element to the DOM, removing element from the DOM with JavaScript. By the end of this tutorial, you will be equipped with the tools needed to interact with the DOM using JavaScript.
+With JavaScript, we can easily manipulate the DOM to bring our web pages to life. This tutorial will focus on adding an element to the DOM, removing element from the DOM with JavaScript. 
+
+By the end of this tutorial, you will be equipped with the tools needed to interact with the DOM using JavaScript.
 
 ### Prerequisites
-
 To follow along with this tutorial, a basic understanding of HTML and JavaScript is required.
 
-### Step 1 — Todo List Front-Page
-
-In this section we would be building a minimalistic to-do list front page, so we can visualize what we will be explaining in future sections.
+### Step 1 — Todo list front-page
+In this section we will be building a minimalistic to-do list front page, so we can visualize what we will be explaining in future sections.
 
 ```html
 <!DOCTYPE html>
@@ -67,23 +67,25 @@ In this section we would be building a minimalistic to-do list front page, so we
 </html>
 ```
 
-Open a new file in an empty folder, name it `index.html` and add the above HTML code. Save it, and open it using your favourite browser. You should see the following:
+Open a new file in an empty folder, name it `index.html` and add the HTML code above. Save it, and open it using your favourite browser.
+
+You should see the following:
 
 ![home_page_screenshot](/engineering-education/dom-manipulation-with-javascript/home-page-screenshot.png)
 
 ### Step 2 — Understanding the DOM
-
 To Understand the DOM, let's draw the structure for our HTML page.
 
 ![dom_example](/engineering-education/dom-manipulation-with-javascript/dom-example.png)
 
-This structure is not a complete capture of our HTML page, but it shows a detailed example of the DOM. As our web page got completely loaded, the browser created this type of structure for the page. With JavaScript, we can easily modify the DOM, change styles, add HTML attributes and so on. We will be taking a look at them in the following sections.
+This structure is not a complete capture of our HTML page, but it shows a detailed example of the DOM. As our web page is not completely loaded, the browser created this type of structure for the page. 
+
+With JavaScript, we can easily modify the DOM, change styles, add HTML attributes and so on. We will be taking a look at them in the following sections.
 
 > Want to learn more about the DOM? Check out [Understanding Document Object Model](https://www.section.io/engineering-education/document-object-model/) article.
 
-### Step 3 — Adding Element to the DOM
-
-It would be awesome if we could add additional task through our form and insert them inside our HTML list element. This is possible through JavaScript.
+### Step 3 — Adding an element to the DOM
+It would be awesome if we could add additional tasks through our form and insert them inside our HTML list element. This is how we would do just that in JavaScript.
 
 ```html
 <script>
@@ -125,22 +127,21 @@ It would be awesome if we could add additional task through our form and insert 
 
 Add the following code to your HTML page before the closing of the body tag.
 
-What's happening here?
+#### What's happening here?
+- We added an event listener that listens to a click event on the submit button
+- If the button was clicked, we tgen created a new `li` tag
+- We also created a new text node from the user's input
+- Finally, we appended the `li` (child) to the `ul` (parent)
 
-1. we added an event listener that listens to a click event on the submit button
-2. if the button was clicked, we tgen created a new `li` tag
-3. we also created a new text node from the user's input
-4. finally, we appended the `li` (child) to the `ul` (parent)
-
-**How does it work?**
-
+#### How does it work?
 To insert a new element into the DOM, we need two things. First, the parent node in this context will be our `ul` tag and then the children node(s), which in this context will be the `li` tags. We can only append a child to the parent node by calling the `appendChild` function on the parent node.
 
 Try adding some tasks.
 
 ### Step 4 — Removing Element from the DOM
+It would be nice if we could delete a task that we have completed. 
 
-It would be nice if we could delete a task that we have completed. Let's add that:
+Let us add that:
 
 ```html
 <script>
@@ -160,26 +161,25 @@ It would be nice if we could delete a task that we have completed. Let's add tha
 
 Add the following code to your HTML page before the closing of the body tag.
 
-**What's happening here?**
-
+#### What's happening here?
 1. we added an event listener that listens to a click event on every task
 2. we then checked using an if statement if the task was clicked upon
 3. finally, we delete the task that was clicked upon after warning the user for confirmation
 
-**How does it work?**
-
+#### How does it work?
 To remove a new element from the DOM, we need two things. First, the parent node in this context will be our `ul` tag and then the children node(s) in this context will be the `li` tags. We can only delete children from the parent node by calling the `removeChild` function and passing the child as an argument.
 
 Try deleting some tasks.
 
 ### Conclusion
+Glad you've reached the end of this tutorial. In this tutorial, we saw how to manipulate the DOM using JavaScript. We created a to-do list application in the process, with the ability to add a task and delete a task. 
 
-Glad you reached the end of this tutorial. In this tutorial, we saw how to manipulate the DOM using JavaScript. We created a to-do list application in the process, with the ability to add a task and delete a task. With these tools, we brought our webpage to life by making it more interactive.
+With these tools, we brought our webpage to life by making it more interactive.
 
 Happy coding!
 
 ### References
-
+- [Understanding Document Object Model (DOM)](/engineering-education/document-object-model/)
 - [w3.org](https://www.w3.org/TR/WD-DOM/introduction.html)
 
 ---
