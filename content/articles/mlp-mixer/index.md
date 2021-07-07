@@ -135,3 +135,6 @@ It is remarkable to see how a simple MLP-based model can compete with state-of-t
 2. [MLP-Mixer: An all-MLP Architecture for Vision](https://arxiv.org/abs/2105.01601)
 3. [Vision Transformer (ViT) - Using Transformers for Image Recognition](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/)
 4. [Basics of Convolution Neural Networks](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
