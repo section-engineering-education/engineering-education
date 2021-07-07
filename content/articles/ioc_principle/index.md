@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /engineering-education/inversion_of_control_principle/
+title: Inversion of control principle
+description: Inversion of Control(IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. Coupling measures how closely connected software modules are to each other, while control refers to any other additional responsibility a class has apart from its primary responsibility. Remember the S in SOLID principles of object-oriented design? Let me help you: Singularity of Purpose—that is the objective of IoC. Loose coupling in software engineering is often a sign of testable, well-structured, maintainable, and readable software.
+author: love-otudor
+date: 2021-07-16T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/inversion_of_control_principle/hero.jpeg
+    alt: Inversion of control principle cover image 
+---
+
 Inversion of Control(IoC) is a software design principle. It helps to reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its main responsibility. IoC passes the control of an object’s creation, the flow of an application, etc. to a container or framework.
 
 IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and lifecycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
