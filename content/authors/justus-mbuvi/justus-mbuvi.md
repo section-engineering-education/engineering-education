@@ -1,0 +1,1 @@
+Justus Mbuvi is a Fullstack developer, machine learning engineer, and technical writer. He builds scalable web, mobile applications, and also artificial intelligence projects. He also enjoys contributing to open-source projects. Loves Developer conferences and meetings!
