@@ -2,25 +2,25 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-batch-processing/
-title: Getting Started with Spring Boot batch processing
+url: /spring-boot-batch-processing/
+title: Getting Started with Spring Boot Batch Processing
 description: This article will go over a step-by-step tutorial on how to add batch processing to a Spring Boot application and schedule tasks in a Spring Boot application.
 author: okelo-violet
-date: 2021-07-07T00:00:00-12:22
+date: 2021-07-07T00:00:00-14:30
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/spring-boot-batch-processing/hero.jpg
     alt: Getting Started with Spring Boot batch processing
 ---
-
 Spring Batch is a lightweight, open-source framework created to develop scalable batch processing applications. Batch processing is mostly used by applications that process a large quantity of data at a given time. For example, payroll systems use batch processing to send out payments to employees at a given time of the month.
 <!--more-->
 Spring Batch does not include an in-built scheduling framework. It can be used with `Quartz` or `Control-M` scheduling frameworks to process data at a scheduled time.
 
 In this tutorial, we will be developing a Spring Boot application that reads data from a CSV file and stores it in an SQL database (H2 database).
 
-### Table of Contents
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Application setup](#application-setup)
 - [Data layer](#data-layer)
@@ -73,7 +73,7 @@ public class Customer {
 }
 ```
 
-The above class has an `id` field for the primary key in the database, `lastName` and `firstName` fields that we will be getting from the [data.csv](https://replit.com/@okeloviolet/SpringBatchProcessing#SpringBatch/src/main/resources/data.csv) file.
+The class above has an `id` field for the primary key in the database, `lastName` and `firstName` fields that we will be getting from the [data.csv](https://replit.com/@okeloviolet/SpringBatchProcessing#SpringBatch/src/main/resources/data.csv) file.
 
 ### Repository layer
 - Create a new package named `repositories` in the root project package.
@@ -107,7 +107,9 @@ public class CustomerProcessor implements ItemProcessor<Customer, Customer> {
 }
 ```
 
-The above class transforms data from one form to another. The `ItemProcessor<I, O>` takes in the input data (`I`), transforms it, then returns the result as the output data (`O`). In our case, we have declared the `Customer` entity as both the input and output, meaning our data form is maintained.
+The class above transforms data from one form to another. The `ItemProcessor<I, O>` takes in the input data (`I`), transforms it, then returns the result as the output data (`O`). 
+
+In our case, we have declared the `Customer` entity as both the input and output, meaning our data form is maintained.
 
 ### Configuration layer
 - Create a new package named `config` in the root project package. This package will contain all of our configurations.
@@ -238,7 +240,7 @@ public class JobCompletionListener extends JobExecutionListenerSupport {
 }
 ```
 
-### Application Configuration
+### Application configuration
 In the resource directory, add the code below in the `application.properties` file.
 
 ```yml
@@ -257,10 +259,12 @@ After sending the `GET` request, we can see that the batch process running from 
 
 ![Batch process running](/engineering-education/spring-boot-batch/batch-cmd.png)
 
-## Conclusion
+### Conclusion
 Now that you have learned how to execute batch processes, configure the application we have developed to use Spring Boot Scheduler to schedule jobs that run at a given time automatically rather than sending an HTTP call to start a job.
 
 You can download the complete source code [here](https://replit.com/@okeloviolet/SpringBatchProcessing#).
+
+Happy coding!
 
 ---
 
