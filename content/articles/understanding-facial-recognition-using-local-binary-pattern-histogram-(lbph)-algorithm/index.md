@@ -7,6 +7,7 @@ published: true
 url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
 title: Understanding Facial Recognition Using Local Binary Pattern Histogram (LBPH) Algorithm
 description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition. Finally, this article will cite some of the best application areas of LBPH.
+<<<<<<< HEAD
 author: ruth-mare
 date: 2021-07-06T08:00:00-18:00
 topics: [Machine Learning]
@@ -20,6 +21,8 @@ published: true
 url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
 title: Understanding Facial Recognition Using Local Binary Pattern Histogram (LBPH) Algorithm
 description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition. Finally, this article will site some the best application areas of LBPH.
+=======
+>>>>>>> 243bda7d5 (grammar)
 author: ruth-mare
 <<<<<<< HEAD
 date: 2021-07-04T08:00:00-18:00
@@ -89,8 +92,12 @@ The precision and accuracy of the algorithm are verified by using a test set of 
 
 ### Working of the LBPH algorithm
 The LBPH algorithm typically makes use of 4 parameters: 
+<<<<<<< HEAD
 - ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and it usually takes a value of 1. 
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+- ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and usually takes a value of 1. 
+>>>>>>> 243bda7d5 (grammar)
 - ***Neighbors:*** The number of data points within a circular local binary pattern. Usually, the value of 8.
 - ***Grid X:*** The number of cells in the horizontal plane, is usually a value of 8.
 - ***Grid Y:*** The number of cells in the vertical plane, is usually a value of 8.
@@ -111,7 +118,7 @@ A data set is created by taking images with a camera or taking images that are s
 
 Using a circular neighborhood concept, which takes non-integer pixel points around the selected area. The number of appearances of LBP codes in the image is put together to form a histogram. The classification is then carried out through the calculation of the basic similarities of the histograms under comparison. 
 
-This histogram contains a description of an individual at three different levels: at a pixel-level, labels are combined in a small area to create a regional level, the regional histograms on combination build a general description of the person. 
+This histogram contains a description of an individual at three different levels: at a pixel-level, labels are combined in a small area to create a regional level, the regional histograms in combination build a general description of the person. 
 
 ### Two modes of operation of face recognition 
 The face recognition algorithm generally operates in one of two modes: 
