@@ -2,6 +2,9 @@
 layout: engineering-education
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c212638da (deleted pr)
 status: publish
 published: true
 url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
@@ -14,6 +17,7 @@ topics: [Machine Learning]
 =======
 status:
 published:
+<<<<<<< HEAD
 =======
 status: publish
 published: true
@@ -32,6 +36,16 @@ topics: []
 date: 2021-07-06T08:00:00-18:00
 topics: [Machine Learning]
 >>>>>>> 1ae71faf7 (Front matter update)
+=======
+url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
+title: Understanding facial recognition using local binary pattern histogram (LBPH) algorithm
+description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition.
+Finally, this article will site some the best application areas of LBPH.
+author: ruth-mare
+date: 2021-07-04T08:00:00-18:00
+topics: []
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 excerpt_separator: <!--more-->
 images:
 
@@ -43,12 +57,17 @@ The Local Binary Pattern Histogram (LBPH) algorithm is a face recognition algori
 
 The reader should familiarize himself/herself with mathematical matrices and the concept of sliding window to help understand this article better.
 =======
+<<<<<<< HEAD
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 <!--more-->
 In this article, we are going to look at how the LBPH algorithm detects faces.
 
 ### Overview
 This article will cover:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
@@ -58,6 +77,12 @@ This article will cover:
 =======
 - [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
 >>>>>>> c44b87a2f (revert)
+=======
+- [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
+=======
+- [An introduction to Facial recognition](#an-introduction-to-facial-recognition)
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 - [Working of the LBPH algorithm](#working-of-the-lbph-algorithm)
 - [Two modes of operation of face recognition](#two-modes-of-operation-of-face-recognition)
 - [The stages of face recognition using LBPH](#the-stages-of-face-recognition-using-lbph)
@@ -65,6 +90,9 @@ This article will cover:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c212638da (deleted pr)
 ### An Introduction to Facial Recognition
 Facial recognition is the ability to identify faces in an image, and then link them to a particular person. The LBPH is a recognition algorithm, which can recognize human faces.
 
@@ -82,9 +110,12 @@ The LBPH algorithm typically makes use of 4 parameters:
 - ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and usually takes a value of 1.
 =======
 ### An introduction to Facial recognition
+<<<<<<< HEAD
 =======
 ### An Introduction to Facial Recognition
 >>>>>>> 1ae71faf7 (Front matter update)
+=======
+>>>>>>> c212638da (deleted pr)
 Facial recognition is the ability to identify faces in an image, and then link them to a particular person. The LBPH is a recognition algorithm, which can recognize human faces. 
 
 Face recognition can be achieved with the help of a learning concept of training and then testing the model with a given set of images. 
@@ -97,11 +128,16 @@ The precision and accuracy of the algorithm are verified by using a test set of 
 ### Working of the LBPH algorithm
 The LBPH algorithm typically makes use of 4 parameters: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and it usually takes a value of 1. 
 >>>>>>> 849b8d10f (this fixes #2640)
 =======
 - ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and usually takes a value of 1. 
 >>>>>>> 243bda7d5 (grammar)
+=======
+- ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and it usually takes a value of 1. 
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 - ***Neighbors:*** The number of data points within a circular local binary pattern. Usually, the value of 8.
 - ***Grid X:*** The number of cells in the horizontal plane, is usually a value of 8.
 - ***Grid Y:*** The number of cells in the vertical plane, is usually a value of 8.
@@ -122,11 +158,19 @@ A data set is created by taking images with a camera or taking images that are s
 
 Using a circular neighborhood concept, which takes non-integer pixel points around the selected area. The number of appearances of LBP codes in the image is put together to form a histogram. The classification is then carried out through the calculation of the basic similarities of the histograms under comparison. 
 
+<<<<<<< HEAD
 This histogram contains a description of an individual at three different levels: at a pixel-level, labels are combined in a small area to create a regional level, the regional histograms in combination build a general description of the person. 
 
 ### Two modes of operation of face recognition 
 The face recognition algorithm generally operates in one of two modes: 
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+This histogram contains a description of an individual at three different levels: at a pixel-level, labels are combined in a small area to create a regional level, the regional histograms on combination build a general description of the person. 
+
+### Two modes of operation of face recognition 
+The face recognition algorithm generally operates in one of two modes: 
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 
 1.	*Authentication of a facial image:* This mode does facial recognition by a 1x1 comparison. The comparison is done between an input image and a specific image within the database. In many cases, this is the face that requires authentication at the time of this mode of facial recognition.
 
@@ -162,7 +206,11 @@ The first step is the learning of the algorithm. It makes use of a data-set of i
 2.	**To Extract Histograms:** The image obtained in step is divided into multiple grids, with the help of the Grid parameters `X` and `Y`. This image is in grayscale, each of the histograms of each of the grids is to represent the intensity of the occurrences of each pixel. Each histogram is then combined to create a new histogram that represents the attributes of the original image.
 
 3.	**Accurate face recognition:** Each one made a histogram for an image in the training data set. Two histograms are compared to output the image with the closest histogram matches to an input image. This output is the ID or name of the image. This algorithm also returns a **`confidence`**' measurement which is the calculated distance. The correctness of the algorithm in recognizing the image is estimated automatically by the `confidence` and the threshold. The correctness is indicated by a confidence value that is lower than the defined threshold. 
+<<<<<<< HEAD
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 For each new image, this process is repeated to the face for recognition.
 
 ### LBPH Application Areas
@@ -176,7 +224,11 @@ Face recognition by the LBPH algorithm can be used in the following areas:
 - *Texture analysis:* applicable in research and in applications, which has led to a significant progress analysis. 
 - *Biometrics:* used in biometrics, such as palm-print recognition, fingerprint recognition, iris recognition, gait recognition, the order of placement of recognition, and in the face of an age rating. 
 - *Computer vision:* used in computer vision such as motion analysis. 
+<<<<<<< HEAD
 >>>>>>> 849b8d10f (this fixes #2640)
+=======
+>>>>>>> d3a7b4871 (this fixes #2640)
+>>>>>>> c212638da (deleted pr)
 
 
 ### To wrap up
