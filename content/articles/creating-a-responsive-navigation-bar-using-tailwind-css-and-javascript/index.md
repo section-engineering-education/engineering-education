@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/
+title: Creating a Responsive Navigation bar Using Tailwind CSS and Javascript 
+description: In this tutorial, we are going to create a responsive navigation bar with Tailwind CSS and JavaScript. The navigation bar will transform into a hamburger menu on small screen devices. We will use JavaScript to create the toggle functionality for the hamburger menu.
+author: ian-masae
+date: 2021-07-08T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/hero.jpg
+    alt: Navigation Bar Image Example
+---
 ### Introduction
 What is a navigation bar? A navigation bar is a tool located at the top most position of a webpage. It is used by website visitors to steer through different sections of the website. A navigation bar comes in handy when a webpage is long. It helps the user to easily navigate to specific sections of the webpage. A navigation bar should, therefore, be simple and easy to use.
-
+<!--more-->
 In Tailwind CSS framework, you can easily style up your website by adding styles directly into your HTML file through the use of various Tailwind CSS classes. This has made it much easier to create both mobile friendly and desktop friendly designs. The layouts of the webpage transform according to the size of the screen in which the website is being viewed on. This kind of website is said to be responsive.
 
 In this tutorial, we are going to create a responsive navigation bar with Tailwind CSS and JavaScript. The navigation bar will transform into a hamburger menu on small screen devices. We will use JavaScript to create the toggle functionality for the hamburger menu.
@@ -409,3 +424,6 @@ c) On small screens
 In this article, we have gone through creating our own responsive navigation bar using Tailwind CSS. We have also learnt how to create the toggle functionality for our navbar using JavaScript. A navigation bar is an example of the many things you can create using Tailwind CSS classes. A navigation bar is an important tool for user navigation experience.
 
 I hope you will find this tutorial helpful!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
