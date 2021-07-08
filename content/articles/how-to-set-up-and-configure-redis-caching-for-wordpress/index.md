@@ -1,6 +1,6 @@
-[WordPress](https://wordpress.org/) is an Open Source Content Management System (CMS). It actually allows you to manage content without learning how to code any web scripting language. You can simply add texts, images, and videos, build your own website or blog and publish it on the Internet. WordPress is run with PHP code and a MySQL database. When building a WordPress-powered website, you will probably use themes and plugins to customize content features and appearance and add more components to enhance your website iteratively and third-party extensions, such as SEO and analytics. The dependencies of these themes and plugins are stored in a MySQL database that you use to host the content of your page.
+[WordPress](https://wordpress.org/) is an Open Source Content Management System (CMS). It allows you to manage content without learning how to code any web scripting language. You can simply add texts, images, and videos, build your website or blog and publish it on the Internet. WordPress is run with PHP code and a MySQL database. When building a WordPress-powered website, you will probably use themes and plugins to customize content features and appearance and add more components to enhance your website iteratively and third-party extensions, such as SEO and analytics. The dependencies of these themes and plugins are stored in a MySQL database that you use to host the content of your page.
 
-On the other end, [Redis](https://redis.io/) is an open-source in-memory data structure store that can be used as a caching system. It is a memory caching software that runs as a service in the background. Allows you to cache and store data in memory for high-performance data retrieval and storage. As a result, the strategy will enhance the server response time as well as the website speed.
+On the other end, [Redis](https://redis.io/) is an open-source in-memory data structure store that can be used as a caching system. It is a memory caching software that runs as a service in the background. Allowing you to cache and store data in memory for high-performance data retrieval and storage. As a result, the strategy will enhance the server response time as well as the website speed.
 
 This guide will teach you how to set up and configure Redis object cache for your WordPress website or blog. But first, let's see how the two works and why we should use them together.
 
@@ -8,43 +8,41 @@ This guide will teach you how to set up and configure Redis object cache for you
 
 They are the foundational cores that are required for WordPress to work. These are
 
-WordPress core files and directories.
-
-There are also two essential folders in the WordPress core.
+WordPress core files and directories. There are also two essential folders in the WordPress core.
 
 - The wp-admin - directory consists of WordPress admin pages that allow you to update and manage your website easily. In addition, it gives you access to the WordPress admin dashboard. These admin tasks include adding and editing posts and pages, managing users, uploading media files, deleting content, managing themes, and plugins, etc.
 
 - The wp-content - mainly consists of themes and plugin files. It also includes any media and data that upload to your page.
 
-Two of the most important core WordPress files include
+Two of the most important core WordPress files include;
 
-- The wpconfig.php - this file controls all the basic settings and configuration details of your WordPress website. it contains the necessary information to make your WordPress website operate, including MySQL database connection settings, WordPress salts and keys, database table prefix, WordPress Language, and ABSPATH.
+- The wpconfig.php - this file controls all the basic settings and configuration details of your WordPress website. It includes MySQL database connection settings, WordPress salts and keys, database table prefix, WordPress Language, and ABSPATH, as well as other information required to run your WordPress website.
 
-- The functions.php- this file is one of the most important operating files of WordPress. WordPress themes also have a functions PHP file, and that's the file you need to edit, not the core file contained in the base directory of your website.
+- The functions.php - this file is one of the most important operating files of WordPress. WordPress themes also have a functions PHP file, and that's the file you need to edit, not the core file contained in the base directory of your website.
 
-WordPress is built on top of a MySQL database. When you first install WordPress, you need to set up this one database on your website host. Every time you add new content to your website, it will be stored correctly in this database. So whenever a user accesses this website, a request is sent to the MySQL database server, and then the request is served back to the user from the same server to serve that user with the right content. These operations can be time, and resource-consuming if you have a large backend WordPress panel such as a robust eCommerce engine.
+WordPress is built on top of a MySQL database. When you first install WordPress, you need to set up this one database on your website host. Then, every time you add new content to your website, it will be stored correctly in this database. So whenever a user accesses this website, a request is sent to the MySQL database server, and then the request is served back to the user from the same server to serve that user with the right content. These operations can be time, and resource-consuming if you have a large backend WordPress panel such as a robust eCommerce engine.
 
 ### How Redis works
 
 Assume you have a web application running on a server using a database like MySQL. That web application needs to retrieve some records from this database. Such queries take some time to return the requested records. And if the query is expensive, a user waiting for that data for more than one minute can lead to a bad user experience.
 
-However, Redis is made to make such processing faster and efficient. With it, it is possible to store data processed by a MySQL database query inside of a Redis cache instance and make the retrieval of that data occur directly from memory (RAM) from a server that's running the Redis service. This way, the application will not go all the way back to the database. Instead, the web server can check with Redis if it has the data it wants. So when another call is made and requires the same query transaction, instead of hitting the MySQL server again, the Redis object will serve the request from the object cache. When you're running a large-scale fleet of hundreds of web servers, One Redis cache can even pool the requests and answers for all those webservers so that they don't have to individually go all the way to the database each time.
+However, Redis is made to make such processing faster and efficient. With it, it's possible to store data processed by a MySQL database query inside of a Redis cache instance, allowing data to be retrieved directly from the server's memory. This way, the application will not go all the way back to the database. Instead, the web server can check with Redis if it has the data it wants. So when another call is made and requires the same query transaction, instead of hitting the MySQL server again, the Redis object will serve the request from the object cache. When you're running a large-scale fleet of hundreds of web servers, one Redis cache can even pool the requests and answers for all those webservers so that they don't have to individually go all the way to the database each time.
 
 ### Why set up Redis with WordPress
 
-The benefit of enabling Redis Cache to your WordPress Core installation is to deliver the content to the client faster. WordPress does many MySQL query lookups, and it is very slow when you get lots of traffic. In such a use case, Redis cache plays a vital role and can be able to accomplish that use case. Redis will be a memory-based key-value pair database where it stores all the key-value data in the memory. Therefore, it is a fast caching solution for server-side such a WordPress.
+The benefit of enabling Redis Cache to your WordPress Core installation is to deliver the content to the client faster. WordPress does many MySQL query lookups, and it is very slow when you get lots of traffic. In such a case, Redis cache plays a vital role and can be able to accomplish that use case. Redis will be a memory-based key-value pair database where it stores all the key-value data in the memory. Therefore, it is a fast caching solution for server-side such a WordPress.
 
-We will set up a Redis object cache that will optimize WordPress database usage. Redis object can be used to store the cache of request outputs for a particular query sent to the MySQL server. When other users have accessed the same post or same article, instead of hitting the MySQL server, it will serve the request from the object cache. Thus eliminate the frequent WordPress MySQL database calls by caching the complex queries, and serve cached output for similar next request. This will eliminate the one round trip of going back to the MySQL server and enhance the server response time and site speed.
+We will set up a Redis object cache that will optimize WordPress database usage. Redis object can be used to store the cache of request outputs for a particular query sent to the MySQL server. When other users have accessed the same post or same article, it will serve the request from the object cache instead of hitting the MySQL server. Thus eliminate the frequent WordPress MySQL database calls by caching the complex queries, and serve cached output for similar next request. This will eliminate the one round trip of going back to the MySQL server and enhance the server response time and site speed.
 
 ### Peliquesites
 
-To follow along with this guide, you need a running WordPress website on a remote server. We need a running website to optimize. After all, we can optimize a site running locally on your computer. WordPress is server-side rendered. Thus, you need to host WordPress to a remote server if you need to configure a Redis cache and optimize server response time and the site speed. Check these tutorials and see how you can host one to [Cpanel](https://www.youtube.com/watch?v=0Zp9kGiYeDw), [Cloudways](https://www.youtube.com/watch?v=vVvEkeT2wOQ), [DigitalOcean clouds](youtube.com/watch?v=Owa2VKk9ghQ), or any remote hosting service of your choice. Basic knowledge of [using WordPress](https://www.wpbeginner.com/guides/) will be essential.
+To follow along with this guide, you need a running WordPress website on a remote server. After all, we can't optimize a site running locally on your computer. WordPress is server-side rendered. Thus, you need to host WordPress to a remote server if you need to configure a Redis cache and optimize server response time and the site speed. Check these tutorials and see how you can host one to [Cpanel](https://www.youtube.com/watch?v=0Zp9kGiYeDw), [Cloudways](https://www.youtube.com/watch?v=vVvEkeT2wOQ), [DigitalOcean clouds](youtube.com/watch?v=Owa2VKk9ghQ), or any remote hosting service of your choice. Basic knowledge of [using WordPress](https://www.wpbeginner.com/guides/) will be essential.
 
 ### Installing WordPress with AWS EC2 server
 
 In this tutorial, I have set WordPress using AWS. Here are quick steps on how to set up one. First, make sure you have an [AWS account](https://aws.amazon.com/). A free tie account will work for this example.
 
-- Head over to AWS console, navigate [EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) and launch instance. Then on the AWS marketplace, search for WordPress. Again this setup is Free tier eligible. So go ahead and select WordPress packaged by Bitnami that this is running an apache server.
+- Head over to AWS console, navigate [EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) and launch instance. Then on the AWS marketplace, search for WordPress. Again this setup is free tier eligible. So go ahead and select WordPress packaged by Bitnami that this is running an apache server.
 
 ![aws-marketplace](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/aws-marketplace.png)
 
@@ -68,19 +66,19 @@ In this tutorial, I have set WordPress using AWS. Here are quick steps on how to
 
 Next, you need to download PuTTY. PuTTY is an open-source SSH and telnet client for the Windows platform. [Download PuTTY](https://www.putty.org/) it and install it on your computer.
 
-Once PuTTY is installed, search for PuTTYgen on your computer and launch it. Here we need to covert the key pair we previously created to a public-private key file. On PuTTYgen, load the key, click generate and save a private key.
+Once PuTTY is installed, search for PuTTYgen on your computer and launch it. Here we need to convert the key pair we previously created to a public-private key file. Then, on PuTTYgen, load the key, click generate and save a private key.
 
 ![ppk](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/ppk.png)
 
-Open PuTTY and enter the server hostname/domain name. So navigate to session and enter your IP address on a domain name (if you have set one).
+Open PuTTY and enter the server hostname/domain name. So navigate to the session and enter your IP address or a domain name (if you have set one).
 
 ![putty-ip-address-session](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/putty-ip-address-session.png)
 
-navigate to connections SSH Auth and load the SSH key that you have just saved above and click open to connect
+Navigate to Connections 🡪 SSH 🡪 Auth and load the SSH key that you have just saved above and click open to connect
 
 ![load-ppk](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/load-ppk.png)
 
-- Once a terminal is launched, enter bitnami as login. Bitnami is the default user name set when installing WordPress. If you have modified your username, just enter that in the terminal. We have an interactive terminal that we can use to add libraries and extensions to the WordPress server.
+Once a terminal is launched, enter bitnami as login. Bitnami is the default username set when installing WordPress. If you have modified your username, just enter that in the terminal. We have an interactive terminal that we can use to add libraries and extensions to the WordPress server.
 
 ![login-terminal](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/login-terminal.png)
 
@@ -102,27 +100,27 @@ sudo systemctl status redis
 
 ![sudo-systemctl-status-redis](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/sudo-systemctl-status-redis.png)
 
-And Redis is well set inside our server. If you run `redis-cli` and the `keys *`, you can see we have no Redis cache keys registered yet.
+And Redis is well set inside our server. However, if you run `redis-cli` and the `keys *`, you can see we have no Redis cache keys registered yet.
 
 ![redis-empty-key-list](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/redis-empty-key-list.png)
 
-Now we need to head to WordPress and add a Redis plugin to set up everything together. So you will just enter your IP address or the domain and wp-admin as shown below.
+Now we need to head to WordPress wp-admin and add a Redis plugin to set up everything together. So you will just enter your IP address or the domain and wp-admin as shown below.
 
 ```bash
 your-ip-address/wp-admin
 ```
 
-To access the wp-admin login details, head over to your running instance on AWS, right-click Monitor and troubleshoot Get system log, and you will get your default Bitnami WordPress login details to access wp-admin. And you have accessed the admin Dashboard.
+To access the wp-admin login details, head over to your running instance on AWS, right-click 🡪 Monitor and troubleshoot 🡪 Get system log. You will get your default Bitnami WordPress login details to access wp-admin. And you have accessed the admin Dashboard.
 
 ![wp-login-details](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/wp-login-details.png)
 
 ### Adding Redis to WordPress
 
-Before setting Redis, I want you to go ahead and install and active a Query Monitor plugin.
+Before setting Redis, I want you to go ahead and install and activate a Query Monitor plugin.
 
 ![query-monitor](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/query-monitor.png)
 
-Query Monitor enables debugging of database queries, PHP errors, hooks and actions, block editor blocks, enqueued scripts and stylesheets, HTTP API calls, and more. In addition, it helps to show aggregate database queries grouped by a plugin.
+[Query Monitor](https://wordpress.org/plugins/query-monitor/) enables debugging of database queries, PHP errors, hooks and actions, block editor blocks, enqueued scripts and stylesheets, HTTP API calls, and more. In addition, it helps to show aggregate database queries grouped by a plugin.
 
 Go to the home page of your website and click the Query Monitor menu.
 
@@ -149,7 +147,7 @@ This will set Redis using the default settings.
 
 ### Verify if Redis working
 
-If you go your website and access a blog, let’s say the default hello world WordPress blog, the results of this request will be saved to Redis.
+If you go to your website and access a blog, let’s say the default hello world WordPress blog, the results of this request will be saved to Redis.
 
 Go to the terminal and access Redis CLI using `redis-cli` and the `keys *`. And now you can see Redis has registered some new wp keys.
 
@@ -157,7 +155,7 @@ Go to the terminal and access Redis CLI using `redis-cli` and the `keys *`. And 
 
 That is it. Redis is ready to do some caching for your WordPress.
 
-Now refresh the page that you loaded Query Monitor.
+Now refresh the home page that you loaded Query Monitor.
 
 ![query-monitor-dashboard](/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/query-monitor-dashboard2.png)
 
@@ -166,8 +164,6 @@ And you can see the page is now loading with only 3 Database Queries taking
 
 ### Conclusion
 
-If you are running an extensive website such as woo-commerce, this will play a big part in making your website faster. In addition, this will cache database-intensive tasks make the site more resilient. Even when you have many users placing orders are they are pulling information from the cache.
-
-You will use fewer resources and have a faster backend experience.
+If you are running an extensive website such as woo-commerce, this will play a big part in making your website faster. In addition, this will cache database-intensive tasks make the site more resilient. Even when you have many users placing orders, they are pulling information from the cache. You will use fewer resources and have a faster backend experience.
 
 Redis only caches database queries and objects. This means you can still continue using other cache plugins such as [Cache Enabler](https://wordpress.org/plugins/wp-cloudflare-page-cache/) and [WP Cloudflare](https://wordpress.org/plugins/wp-cloudflare-page-cache/) to cache your pages and make your website even more faster.
