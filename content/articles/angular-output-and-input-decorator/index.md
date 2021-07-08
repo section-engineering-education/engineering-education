@@ -4,21 +4,20 @@ status: publish
 published: true
 url: /angular-output-and-input-decorator/
 title: Angular Output and Input Decorators
-description: In this article, we will learn how to create links between child and parent componenets using the input and output decorators in Angular.
-author: 
-date: 
-topics: []
+description: In this article, we will learn how to create links between child and parent components using the input and output decorators in Angular.
+author: odiwuor-amos
+date: 2021-07-08T00:00:00-07:41
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/angular-output-and-input-decorator/hero.jpg
+
+  - url: /engineering-education/angular-output-and-input-decorator/hero.png
     alt: Angular input output decorator
 ---
 By the end of this tutorial, you should be able to create a link between the parent and child Angular components. As we will discuss shortly, you will be able to 'talk' to other components, bypassing the default behavior of Angular of single directional data flow. 
 <!--more-->
 ### Table of contents
-- [Table of contents](#table-of-content)
 - [Prerequisites](#prerequisites)
-- [Objectives](#objectives)
 - [What's Angular @Output decorator](#whats-angular-output-decorator)
 - [Exploring Child component](#exploring-child-component)
 - [How does an Angular @Output work?](#how-does-an-angular-output-work)
@@ -33,7 +32,7 @@ By the end of this tutorial, you should be able to create a link between the par
 ### What are Angular's @Output and @Input decorators
 By default, Angular supports data flow in one direction. This limits interactions between the parent and child components to share data. Luckily, Angular has a solution to this problem, the use of @Output and @Input.  
 
-Let's use and example to understand this concept:
+Let's use an example to understand this concept:
 
 ```HTML
 <angular-parent-component>
@@ -44,9 +43,8 @@ Let's use and example to understand this concept:
 In the above example, we've both the parent (which acts as the child component context) and child component.  For these two components to communicate to each other, we need both the @Ouput and @Input decorators provided by Angular.
 
 Now, these two decorators have distinct functions:  
-
-1. @Ouput - A decorator that lets the child component communicate with the parent component.  
-2. @Input - A decorator that allows the parent to communicate with the child component.
+1. @Ouput - A decorator that lets the child component communicates with the parent component.  
+2. @Input - A decorator that allows the parent to communicates with the child component.
 
 ### Exploring child components
 In this section, we're exploring how to create a link between the parent and the child component. Let's get started by following the instructions below:  
@@ -58,7 +56,6 @@ ng g component music-details
 ```
 
 #### Output
-
 ```bash
 CREATE src/app/music-details/music-details.component.css (0 bytes)
 CREATE src/app/music-details/music-details.component.html (28 bytes)
@@ -92,7 +89,7 @@ export class MusicDetailsComponent implements OnInit {
 
 As shown above, the `@Input` decorator is applied to the `musicianName` property, consequently decorating it. This implies that the value of the `musicianName` will be derived from the parent component.  
 
-3: Display the `musicianName` in the template
+3: Display the `musicianName` in the template:
 
 ```html
 <p>
@@ -101,7 +98,7 @@ As shown above, the `@Input` decorator is applied to the `musicianName` property
 
 ```
 
-4: Using parent component
+4: Using parent component.
 Now that we've defined our `musicianName` property in the child component, let's see how we can pass it a value from the parent component.  
 
 In the `app.component.html` which is our parent component, add the following:
@@ -111,7 +108,7 @@ In the `app.component.html` which is our parent component, add the following:
 <app-music-details></app-music-details>
 ```
 
-5: Assign musician a name in the parent component's `app.component.ts`
+5: Assign musician a name in the parent component's `app.component.ts`:
 
 ```javascript
 -------------------------------
@@ -175,8 +172,6 @@ export class MusicDetailsComponent implements OnInit {
 
 ```html
 <label>Add a Musician: <input #newArtist ></label><button type="button" (click)="addNewArtist(newArtist.value)">Add to parent's  musician list</button>
-
-
 ```
 
 In the above children component, we create an event to add new artists to our already existing list in the parent component.  
@@ -202,9 +197,11 @@ export class AppComponent {
   }
 ```
 #### Initial output
+
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/original-output.png)
 
 #### Output on adding a new artist
+
 ![Initial Application](/engineering-education/angular-output-and-input-decorator/added-artist.png)
 
 In this parent component, we define a method to add new artists while in the template we have an event handler that picks new musicians then loops the list to display.
@@ -212,7 +209,7 @@ In this parent component, we define a method to add new artists while in the tem
 ### Conclusion
 In this tutorial, we've seen how we can use the `@Input()` and the `@Output()` decorators. We've worked with examples to see how we can share data between the child and the parent components. We also worked with the `EventEmitter` class to create events for the main component from the child component.  
 
-For more examples, visit my [github](https://github.com/odiwuoramos/angular-output) for complete code.
+For more examples, visit my [GitHub](https://github.com/odiwuoramos/angular-output) for complete code.
 
 Happy coding!
 
