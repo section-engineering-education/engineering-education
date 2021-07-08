@@ -7,6 +7,7 @@ For you  to follow along its important that:
 2. You have python and django installed.
 3. An suitable IDE such as Pycharm, VS Code etc.
 ### Takeaways.
+By the end of this tutorial, you will be able to:
 1. Understand  use of custom template tags and filters and how they work.
 2. Create your own customized template tags and filters to suit your needs.
 ### Getting started.
