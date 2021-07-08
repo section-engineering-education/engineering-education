@@ -6,17 +6,17 @@ url: /creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/
 title: Creating a Responsive Navigation bar Using Tailwind CSS and Javascript 
 description: In this tutorial, we are going to create a responsive navigation bar with Tailwind CSS and JavaScript. The navigation bar will transform into a hamburger menu on small screen devices. We will use JavaScript to create the toggle functionality for the hamburger menu.
 author: ian-masae
-date: 2021-07-08T00:00:00-10:30
-topics: []
+date: 2021-07-08T00:00:00-08:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/hero.jpg
     alt: Navigation Bar Image Example
 ---
-### Introduction
 What is a navigation bar? A navigation bar is a tool located at the top most position of a webpage. It is used by website visitors to steer through different sections of the website. A navigation bar comes in handy when a webpage is long. It helps the user to easily navigate to specific sections of the webpage. A navigation bar should, therefore, be simple and easy to use.
 <!--more-->
-In Tailwind CSS framework, you can easily style up your website by adding styles directly into your HTML file through the use of various Tailwind CSS classes. This has made it much easier to create both mobile friendly and desktop friendly designs. The layouts of the webpage transform according to the size of the screen in which the website is being viewed on. This kind of website is said to be responsive.
+### Introduction
+In the Tailwind CSS framework, you can easily style up your website by adding styles directly into your HTML file through the use of various Tailwind CSS classes. This has made it much easier to create both mobile friendly and desktop friendly designs. The layout of the webpage transforms according to the size of the screen in which the website is being viewed on. This kind of website is said to be responsive.
 
 In this tutorial, we are going to create a responsive navigation bar with Tailwind CSS and JavaScript. The navigation bar will transform into a hamburger menu on small screen devices. We will use JavaScript to create the toggle functionality for the hamburger menu.
 
@@ -26,7 +26,7 @@ In this tutorial, we are going to create a responsive navigation bar with Tailwi
 3. Knowledge of JavaScript functions
 
 ### Adding Tailwind CSS to your project
-Visit this [article](/engineering-education/introduction-to-tailwind-css/) for complete installation process of Tailwind CSS framework.
+Visit this [article](/engineering-education/introduction-to-tailwind-css/) for complete installation process of the Tailwind CSS framework.
 
 After installation of Tailwind CSS, we will link our Tailwind stylesheet using the link tag as shown:
 
@@ -52,12 +52,12 @@ Next, in the `<body>` tag, we add a `<nav>` tag and classes as shown:
 
 ```html
 <body>
-	<!--Navbar goes here-->
+	<!-- Navbar goes here -->
 	<nav class="bg-white shadow-lg">
 		<div class="max-w-6xl mx-auto px-4">
 			<div class="flex justify-between">
 				<div class="flex space-x-7">
-					<!--Website Logo-->
+					<!-- Website Logo -->
 					<div>
 						<a href="#" class="flex items-center py-4 px-2">
 							<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2" />
@@ -66,7 +66,7 @@ Next, in the `<body>` tag, we add a `<nav>` tag and classes as shown:
 							>
 						</a>
 					</div>
-					<!--Primary Navbar items-->
+					<!-- Primary Navbar items -->
 					<div class="hidden md:flex items-center space-x-1">
 						<a
 							href=""
@@ -135,7 +135,7 @@ For this tutorial, I have used a basic image file as a logo and modified its hei
 
 ```html
 <div>
-	<!--Website Logo-->
+	<!-- Website Logo -->
 	<a href="#" class="flex items-center py-4 px-2">
 		<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2" />
 		<span class="font-semibold text-gray-500 text-lg">Navigation</span>
@@ -168,7 +168,7 @@ We have added the following classes to the `<span>` tag :
 This section contains the menu items that will be used by the website visitor to navigate through the page. Here is our code :
 
 ```html
-<!--Primary Navbar items-->
+<!-- Primary Navbar items -->
 <div class="hidden md:flex items-center space-x-1">
 	<a
 		href=""
@@ -208,7 +208,7 @@ We have used the following classes to the `<a>` tags :
 This section shows the sign up and login buttons.
 
 ```html
-<!--Secondary Navbar items-->
+<!-- Secondary Navbar items -->
 <div class="hidden md:flex items-center space-x-3 ">
 	<a
 		href=""
@@ -234,7 +234,7 @@ The navigation bar will transform into a hamburger menu on small screen devices,
 Here is our code:
 
 ```html
-<!--Mobile menu button-->
+<!-- Mobile menu button -->
 <div class="md:hidden flex items-center">
 	<button class="outline-none mobile-menu-button">
 		<svg
@@ -267,7 +267,7 @@ We have named our hamburger menu button as `mobile-menu-button` so that we may b
 We will have to create new menu items that will appear when the mobile menu button is clicked. Here is our code:
 
 ```html
-<!--mobile menu-->
+<!-- Mobile menu -->
 <div class="hidden mobile-menu">
 	<ul class="">
 		<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
@@ -339,19 +339,19 @@ This is the full code:
 		<link rel="stylesheet" href="./css/tailwind.css">
 	</head>
 	<body>
-		<!--Navbar goes here-->
+		<!-- Navbar goes here -->
 		<nav class="bg-white shadow-lg">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between">
 					<div class="flex space-x-7">
 						<div>
-							<!--Website Logo-->
+							<!-- Website Logo -->
 							<a href="#" class="flex items-center py-4 px-2">
 								<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">
 								<span class="font-semibold text-gray-500 text-lg">Navigation</span>
 							</a>
 						</div>
-						<!--Primary Navbar items-->
+						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
 							<a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
 							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</a>
@@ -359,12 +359,12 @@ This is the full code:
 							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
 						</div>
 					</div>
-					<!--Secondary Navbar items-->
+					<!-- Secondary Navbar items -->
 					<div class="hidden md:flex items-center space-x-3 ">
 						<a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
 						<a href="" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a>
 					</div>
-					<!--Mobile menu button-->
+					<!-- Mobile menu button -->
 					<div class="md:hidden flex items-center">
 						<button class="outline-none mobile-menu-button">
 						<svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
@@ -382,7 +382,7 @@ This is the full code:
 					</div>
 				</div>
 			</div>
-			<!--mobile menu-->
+			<!-- mobile menu -->
 			<div class="hidden mobile-menu">
 				<ul class="">
 					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
@@ -403,22 +403,21 @@ This is the full code:
 		<h1 class="text-green-500 text-2xl md:text-3xl lg:text-4xl font-bold p-4">Tailwind Navigation Toolbar</h1>
 	</body>
 </html>
-
 ```
 
 The navigation bar will look like this when viewed on different screen sizes:
 
 a) On large screens
 
-![Large Screen View](/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-desktop-view.png)
+![Large Screen View](/engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-desktop-view.png)
 
 b) On medium screens
 
-![Medium Screen View](/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-medium-view.png)
+![Medium Screen View](/engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-medium-view.png)
 
 c) On small screens
 
-![Small Screen View](/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-mobile-view.png)
+![Small Screen View](/engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/img-mobile-view.png)
 
 ### Conclusion
 In this article, we have gone through creating our own responsive navigation bar using Tailwind CSS. We have also learnt how to create the toggle functionality for our navbar using JavaScript. A navigation bar is an example of the many things you can create using Tailwind CSS classes. A navigation bar is an important tool for user navigation experience.
