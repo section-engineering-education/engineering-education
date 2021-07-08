@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /entropy/
+url: /entropy-information-gain-machine-learning/
 title: Entropy and Information Gain to Build Decision Trees in Machine Learning 
 description: A decision tree is a supervised learning algorithm used for both classification and regression problems. There are metrics used to train decision trees. One of them is information gain. In this article, we get to understand how information gain is computed, and how it is used to train decision trees.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/entropy/hero.jpg
+ - url: /engineering-education/entropy-information-gain-machine-learning/hero.jpg
    alt: hero image
 ---
 
@@ -28,7 +28,6 @@ A decision tree is a supervised learning algorithm used for both classification 
 4. [Simple Python example of a decision tree](#decision-tree-example)
 
 ### Prerequisites
-
 If you are unfamiliar with decision trees, I recommend you read this [article](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/) first for an introduction.
 
 To follow along with the code, you'll require:
@@ -44,7 +43,7 @@ To follow along with the code, you'll require:
 ### Entropy
 Entropy is an information theory metric that measures the impurity or uncertainty in a group of observations. It determines how a decision tree chooses to split data. The image below gives a better description of the purity of a set.
 
-![purity](/engineering-education/entropy/purity.png)
+![purity](/engineering-education/entropy-information-gain-machine-learning/purity.png)
 
 [Source](https://towardsdatascience.com/what-is-entropy-and-information-gain-how-are-they-used-to-construct-decision-trees-aadf7d0728f0)
 
@@ -77,7 +76,6 @@ $$ = 1 $$
 This kind of dataset is good for learning.
 
 ### Information Gain
-
 We can define information gain as a measure of how much information a feature provides about a class. Information gain helps to determine the order of attributes in the nodes of a decision tree.
 
 The main node is referred to as the parent node, whereas sub-nodes are known as child nodes. We can use information gain to determine how good the splitting of nodes in a decision tree.
@@ -117,12 +115,11 @@ $$ = 0.61 $$
 The more the entropy removed, the greater the information gain. The higher the information gain, the better the split.
 
 ### Using Information Gain to Build Decision Trees
-
 Since we now understand entropy and information gain, building decision trees becomes a simple process. Let’s list them:
 
 1. An attribute with the highest information gain from a set should be selected as the parent (root) node. From the image below, it is attribute A.
 
-![tree](/entropy/tree.png)
+![tree](/engineering-education/entropy-information-gain-machine-learning/tree.png)
 
 [Source](https://towardsdatascience.com/what-is-entropy-and-information-gain-how-are-they-used-to-construct-decision-trees-aadf7d0728f0)
 
@@ -130,8 +127,7 @@ Since we now understand entropy and information gain, building decision trees be
 
 3. Repeat iteratively until you finish constructing the whole tree.
 
-### Decision Tree Example
-
+### Decision tree example
 Our goal is to visualize a decision tree through a simple Python example. Let’s begin!
 
 > For trees of greater complexity, you should expect to come across more parameters. However, since we are building as simple a decision tree as possible, these two parameters are the ones we use.
@@ -178,7 +174,6 @@ plt.show()
 Something worth noting here is that the value of ` figsize ` changes the size of the plotted outcome. Once more, I encourage you to tinker with this to your liking.
 
 #### All the code
-
 You may also find and experiment with all the code [here](https://replit.com/@collinsa1/FewIllustriousTransversal).
 
 ```python
@@ -204,15 +199,13 @@ plt.show()
 ```
 
 #### Results
-
 We finally have our decision tree!
 
-![mytree](/Entropy/mytree.png)
+![mytree](/engineering-education/entropy-information-gain-machine-learning/mytree.png)
 
 Remember to play around with the values of `max_depth` and `min_samples_leaf` to see how they change the resulting tree.
 
-### Wrapping Up
-
+### Wrapping up
 Decision trees are one of the simplest machine learning algorithms to not only understand but also implement. We have learned how decision trees split their nodes and how they determine the quality of their splits.
 
 We have also mentioned the basic steps to build a decision tree. Furthermore, we have shown this through a few lines of code.
@@ -220,7 +213,6 @@ We have also mentioned the basic steps to build a decision tree. Furthermore, we
 I hope this article has given a simple primer on decision trees, entropy, and information gain. Happy reading!
 
 ### References
-
 1. [What is Entropy and Information Gain?](https://towardsdatascience.com/what-is-entropy-and-information-gain-how-are-they-used-to-construct-decision-trees-aadf7d0728f0)
 
 2. [A Simple Explanation of Information Gain and Entropy](https://victorzhou.com/blog/information-gain/)
