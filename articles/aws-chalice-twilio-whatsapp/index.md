@@ -17,7 +17,7 @@ images:
 
 ### Introduction:
 
-[Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing) enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities and worries of a developer. [AWS Chalice](https://github.com/aws/chalice) is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and [AWS Lambda](https://aws.amazon.com/lambda/).
+[Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing) enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities of a developer. [AWS Chalice](https://github.com/aws/chalice) is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and [AWS Lambda](https://aws.amazon.com/lambda/).
 
 [WhatsApp](https://www.whatsapp.com/) is a free messaging platform used by over 2 billion people across the world. [WhatsApp API](https://www.whatsapp.com/business/api/?lang=en) allows developers to build applications for WhatsApp users.
 
@@ -47,9 +47,9 @@ Furthermore, [sign up](https://portal.aws.amazon.com/billing/signup) for a free 
 
 #### Configure the Twilio Sandbox for WhatsApp:
 
-WhatsApp will approve your account before it can send messages in production. But, Twilio provides the WhatsApp sandbox for building and testing applications. The sandbox is available in the [WhatsApp section of the Twilio console](https://www.twilio.com/console/sms/whatsapp/learn).
+WhatsApp will approve your account before the application can send messages in production. But, Twilio provides the WhatsApp sandbox for building and testing applications. The sandbox is available in the [WhatsApp section of the Twilio console](https://www.twilio.com/console/sms/whatsapp/learn).
 
-Go to the sandbox [acticvation page](https://www.twilio.com/console/sms/whatsapp/learn). Twilio will provide a two-word join code and a WhatsApp number. Use WhatsApp on your smartphone to send the join code to the Twilio number on your dashboard. That way, you will activate the Twilio WhatsApp sandbox.
+Go to the sandbox [activation page](https://www.twilio.com/console/sms/whatsapp/learn). Twilio will provide a two-word join code and a WhatsApp number. Use WhatsApp on your smartphone to send the join code to the Twilio number on your dashboard. That way, you will activate the Twilio WhatsApp sandbox.
 
 You should get a message like this in WhatsApp on your smartphone:
 
@@ -108,7 +108,7 @@ Now, we're good to go and can put in place the database settings for the applica
 
 #### Database configuration
 
-We will start the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev,` but you can change it to any name as you so wish:
+We will start with the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev,` but you can change it to any name as you so wish:
 
 ```json
 {
@@ -162,7 +162,9 @@ In the JSON file above, we allowed our user to make log groups and log events. W
 
 #### Database Deployment
 
-AWS provides us with [CloudFormation](https://aws.amazon.com/cloudformation/). It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
+AWS provides us with [CloudFormation](https://aws.amazon.com/cloudformation/). It is a tool for defining the resources needed in a project hosted on AWS infrastructure. We will define the resources in a JSON/YAML template. So, CloudFormation will utilize the template to set up a stack with the dependencies and the resources. 
+
+First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
 
 So, let's create a file inside the `.chalice` folder called `dynamodb_cf_template.yaml`. Add the following lines to the new file.
 
