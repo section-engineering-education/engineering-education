@@ -22,7 +22,7 @@ In this article, we are going to look at how the LBPH algorithm detects faces.
 
 ### Overview
 This article will cover:
-- [An introduction to Facial recognition](#an-introduction-to-facial-recognition)
+- [An Introduction to Facial Recognition](#an-introduction-to-facial-recognition)
 - [Working of the LBPH algorithm](#working-of-the-lbph-algorithm)
 - [Two modes of operation of face recognition](#two-modes-of-operation-of-face-recognition)
 - [The stages of face recognition using LBPH](#the-stages-of-face-recognition-using-lbph)
