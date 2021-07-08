@@ -1,4 +1,6 @@
-According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism), **Polymorphism** is often referred to as the third pillar of object-oriented programming after encapsulation and inheritance. *Polymorphism* is a Greek word that means "many-shaped". At run time, objects of a derived class may be treated as objects of a base class in places such as method parameters and collections or arrays. When this polymorphism occurs, the object's declared type is no longer identical to its run-time type.
+### Introduction
+
+According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism) **Polymorphism** is one of the main concepts in object-oriented programming, after encapsulation and inheritance. *Polymorphism* is a Greek word that means "many-shaped". In any program, objects of a derived class can be used as objects of a base class using functions parameters and collections or arrays.
 
 **Polymorphism** is a very helpful concept when it comes to a single abstract idea used in different ways and shapes. With polymorphism, you can define a single abstract class and reshape it in different ways to suit your methods & ideas. 
 
@@ -19,78 +21,79 @@ If you're new to Inheritance, you should check this tutorial that would help you
 
 ### Abstract classes
 
-Abstract classes are too generic to be instantiated and are used as base classes. The definitions for abstract classes are not complete. The derived classes must be defined as the missing pieces and should contain abstract methods or abstract properties.
+Abstract classes are very simple and generic, and they are always used as base classes. Abstract classes have no meaning on their own, derived classes must be defined to complete the meaning, and they could contain abstract methods or abstract properties.
+
+Basically, *abstract* classes will never be used if not inherited, because they have no meaning on their own, and their variables & methods are useless if not overridden by another inherited classes.
 
 The following example will explain how we can define an abstract class to make a Payroll System Using Polymorphism.
 
-### Employee class
+### Worker class
 
-Employee an abstract generic class that will be used later on for the other inherited classes. First, we will define the Constructor, `set()` & `get()` methods of the class.
+Worker an abstract generic class that will be used later on for the other inherited classes. First, we will define the Constructor, `set()` & `get()` methods of the class.
 
 ```C#
-public abstract class Employee
+public abstract class Worker
 {
-  private string firstname;
-  private string lastname;
+  private string FSname;
+  private string LSname;
 
   // constructor of class
-  public Employee(string firstnamevalue, string lastnamevalue)
+  public Worker(string FSnameval, string LSnameval)
   {
-    firstname = firstnamevalue;
-    lastname = lastnamevalue;
+      FSname = FSnameval;
+      LSname = LSnameval;
   }
-  // Set & Get for FirstName
-  public string FirstName
+  // Set & Get for FSname
+  public string Fsname
   {
       get
       {
-        return firstname;
+        return Fsname;
       }
       set
       {
-        firstname = value;
+        Fsname = value;
       }
   }
-  // Setter & Getter for LastName
-  public string Lastname
+  // Set & Get for LSname
+  public string Lsname
   {
      get
      {
-      return lastname;
+      return Lsname;
      }
      set
      {
-      lastname = value;
+      Lsname = value;
      }
   }
-  // return a string of the Employee information
+  // return a string of the Worker information
   public override string ToString()
   {
-     return FirstName + " " + Lastname;
+     return FSname + " " + LSname;
   }
   
-  // calculating the earnings of an employee. This is an abstract property that must be defined by the inherited classes.
-  public abstract decimal Earnings();
-  // End of class 
+  // calculating the income of a worker. This is an abstract property that must be defined by the inherited classes.
+  public abstract decimal Income();  
 }
 ```
 
-### Boss class
+### Chief class
 
-This class will use the previous class and use its properties & methods for the definition of a boss payroll.
+This class will use the previous class and use its properties & methods for the definition of a chief payroll.
 
 ```c#
-public class Boss : Employee
+public class Chief : Worker
 {
   private decimal salary; 
 
-  // constructor of Boss class
-  public Boss(string firstNameValue, string lastNameValue, decimal salaryValue) : base(firstNameValue, lastNameValue)
+  // constructor of Chief class
+  public Chief(string FSname, string LSname, decimal salary) : base(FSname, LSname)
   {
-     WeeklySalary = salaryValue;
+      Weeklyincome = salary;
   }
-  // Get & Set for the WeeklySalary
-  public decimal WeeklySalary
+  // Get & Set for the Weeklyincome
+  public decimal Weeklyincome
   {
      get
      {
@@ -105,43 +108,43 @@ public class Boss : Employee
   }
 ```
 
-The following piece of code will override the `ToString()` & `Earnings()` methods.
+The following piece of code will override the `ToString()` & `Income()` methods.
 
 ```c#
-  // override Employee method to calculate Boss's earnings
-  public override decimal Earnings()
+  // override worker method to calculate the Income
+  public override decimal Income()
   {
-    return WeeklySalary;
+    return Weeklyincome;
   }
 
-  // return a string of the Boss information
+  // return a string of the Chief information
   public override string ToString()
   {
-  return "Boss: " + base.ToString();
+  return "Chief: " + base.ToString();
   }
 }
 ```
-### Commission worker class
+### Commissionemp class
 
-This class will use the main abstract class and use its properties & methods for the definition of a Commission worker payroll. The following piece of code will define the Constructor of the class, set & get for the `WeeklySalary`, `commissionValue` & the `quantityValue`.
+This class will use the main abstract class and use its properties & methods for the definition of a Commission payroll. The following piece of code will define the Constructor of the class, set & get for the `Salary`, `commission` & `amount`.
 
 ```C#
-public class CommissionWorker : Employee
+public class Commissionemp : Worker
 {
-   private decimal salary;     
-   private decimal commission; 
-   private int quantity;       
+   private decimal salary;
+   private decimal commission;
+   private int amount;
 
-    // constructor of CommissionWorker class
-    public CommissionWorker(string firstNameValue, string lastNameValue, decimal salaryValue, decimal commissionValue, int quantityValue) : base(firstNameValue, lastNameValue)
+    // constructor of Commissionemp class
+    public Commissionemp(string FSname, string LSname, decimal salary, decimal commission, int amount) : base(FSname,LSname)
   {
-    WeeklySalary = salaryValue;
-    Commission = commissionValue;
-    Quantity = quantityValue;
+      Weeklyincome = salary;
+      Commission = commission;
+      Amount = amount;
   }
 
-  // set & get for WeeklySalary
-  public decimal WeeklySalary
+  // set & get for Weeklyincome
+  public decimal Weeklyincome
   {
     get
     {
@@ -149,7 +152,7 @@ public class CommissionWorker : Employee
     }
     set
     {
-      // ensure non-negative salary value
+      // positive value
       if (value > 0 )
          salary = value;
     }
@@ -163,143 +166,143 @@ public class CommissionWorker : Employee
     }
     set
     {
-      // ensure non-negative commission value
+      // positive value
       if (value > 0 )
        commission = value;
        }
     }
-  // set & get for Quantity
-  public int Quantity
+  // set & get for amount
+  public int Amount
   {
     get
     {
-      return quantity;
+      return amount;
     }
     set
     {
-      // ensure non-negative quantity value
+      // positive value
       if (value > 0 )
-      quantity = value;
+      amount = value;
     }
   }
 ```
 
-The following piece of code will override the `ToString()` & `Earnings()` methods from the main class to store the output.
+The following piece of code will override the `ToString()` & `Income()` methods from the main class to store the output.
 
 ```C#
-    // CommissionWorker's earnings
-    public override decimal Earnings()
-    { 
-      return WeeklySalary + Commission* Quantity;
-    }  
-    // return a string of CommissionWorker information
+    // Commissionemp's income.
+    public override decimal Income()
+    {
+        return Weeklyincome + Commission * Amount;
+    }
+    // return a string of Commissionemp information
     public override string ToString()
     {
-      return "CommissionWorker: " + base.ToString();
+      return "Commissionemp: " + base.ToString();
     } 
- } // end of class 
+ } 
 ```
-### PieceWorker class
+### Piece_emp class
 
-This class will use the main abstract class and use its properties & methods for the definition of a PieceWorker payroll. The following piece of code will define the Constructor of the class, set & get for the `wagePerPiece` & `quantity`.
+This class will use the main abstract class and use its properties & methods for the definition of a Piece employee payroll. The following piece of code will define the Constructor of the class, set & get for the `Paymentforpiece` & `amount`.
 ```C#
-public class PieceWorker : Employee 
+public class Piece_emp : Worker 
 {
-   private decimal wagePerPiece; 
-   private int quantity;         
+   private decimal Paymentforpiece; 
+   private int amount;         
 
-    // constructor of PieceWorker class
-    public PieceWorker(string firstNameValue, string lastNameValue, decimal wagePerPieceValue, int quantityValue) : base(firstNameValue, lastNameValue)
+    // constructor of Piece_emp class
+    public Piece_emp(string FSname, string LSname, decimal PaymentforP, int amount) : base(FSname,LSname)
     {
-      WagePerPiece = wagePerPieceValue;
-      Quantity = quantityValue;
+       Paymentforpiece = PaymentforP;
+       Amount = amount;
     }
 
-    // Set & Get for WagePerPiece
-    public decimal WagePerPiece
+    // Set & Get for Paymentforpiece
+    public decimal PaymentforP
     {
       get
       {
-        return wagePerPiece;
+        return Paymentforpiece;
       }  
       set
       {
         if (value > 0 )
-        wagePerPiece = value;
+        Paymentforpiece = value;
       }
     }
-    // Set & Get for Quantity
-    public int Quantity
+    // Set & Get for Amount
+    public int Amount
     {
       get
       {
-        return quantity;
+        return amount;
       }  
       set
       {
         if (value > 0 )
-        quantity = value;
+        amount = value;
       }
     }
 ```
 
-The following piece of code will override the `ToString()` & `Earnings()` methods to store the output.
+The following piece of code will override the `ToString()` & `Income()` methods to store the output.
 ```C#
-  // Earnings of PieceWorker
-  public override decimal Earnings()
+  //Income of Piece_employee
+  public override decimal Income()
   {
-    return Quantity* WagePerPiece;
+    return Amount * Paymentforpiece;
   }
 
-  // return string representation of PieceWorker
+  // return string of Piece_emp information
   public override string ToString()
   {
-    return "PieceWorker: " + base.ToString();
+    return "Piece_emp: " + base.ToString();
   }
 }
 ```
 
 ### Polymorphism testing
 
-In main, we will create objects of each employee class we have and output the information of each object to test out each one of them.
+In main, we will create objects of each worker class we have and output the information of each object to test out each one of them.
 
 ```C#
 public class Program
 {
   public static void Main(string[] args)
   {
-      Boss boss = new Boss("Khaled", "Sans", 800);
+      Chief chief = new Chief("Khaled", "Sans", 800);
 
-      CommissionWorker commissionWorker =
-      new CommissionWorker("Susan", "Jons", 300, 2, 120);
+      Commissionemp Commemp =
+      new Commissionemp("Susan", "Jons", 300, 2, 120);
 
-      PieceWorker pieceWorker = new PieceWorker("Samir", "Muan",
+      Piece_emp piece_emp = new Piece_emp("Samir", "Muan",
          Convert.ToDecimal(2.8), 150);
-      Employee employee = boss;
+      Worker Worker = chief;
 
-      string output = GetString(employee) + boss + " earned " +
-      boss.Earnings().ToString("C") + "\n\n";
+      string output = GetString(Worker) + chief + " earned " +
+      chief.Income().ToString("C") + "\n\n";
 
-      employee = commissionWorker;
-      output += GetString(employee) + commissionWorker +
-      " earned "+commissionWorker.Earnings().ToString("C") + "\n\n";
+      Worker = Commemp;
+      output += GetString(Worker) + Commemp +
+      " earned "+Commemp.Income().ToString("C") + "\n\n";
 
-      employee = pieceWorker;
-      output += GetString(employee) + pieceWorker +
-      " earned " + pieceWorker.Earnings().ToString("C") +"\n\n";
+      Worker = piece_emp;
+      output += GetString(Worker) + piece_emp +
+      " earned " + piece_emp.Income().ToString("C") +"\n\n";
 
       Console.WriteLine(output,"Polymorphism in use");
   } 
 ```
 
-This piece of code will return a string of each employee class.
+This piece of code will return a string of each worker class.
 
 ```C#
-  // Employee informations 
-  public static string GetString(Employee worker)
+  // Worker informations 
+  public static string GetString(Worker worker)
   {
     return worker.ToString() + " earned " +
-       worker.Earnings().ToString("C") + "\n";
+       worker.Income().ToString("C") + "\n";
   }
 } 
 ```
