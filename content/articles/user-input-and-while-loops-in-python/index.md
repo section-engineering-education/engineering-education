@@ -10,10 +10,10 @@ date: 2021-07-06T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/user-input-and-while-loops-in-python/hero.png
     alt: Getting Started with Loops and Standard Inputs in Python
 ---
-
 As a programmer, many programs that you'll write will solve an end user's problem. You will always want to get some data from the user. This article will explain how to handle user input and how to use while loops.
 <!--more-->
 
@@ -223,4 +223,4 @@ Now that you have learned how to use the `input()` function and `while` loops, t
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
