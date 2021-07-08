@@ -1,6 +1,6 @@
 ### Introduction
 
-In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), a cloud edge server NoSQL database. We'll discuss how to setup the 3-node cluster to scale our applications using docker compose.
+In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), a cloud edge server NoSQL database. We'll discuss how to set up the 3-node cluster to scale our applications using docker-compose.
 
 ### Table of contents
 
@@ -11,6 +11,7 @@ In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), 
 - [What's couchbase?](#whats-couchbase)
 - [Creating nodes for couchbase](#creating-nodes-for-couchbase)
 - [Configuring couchbase cluster](#configuring-couchbase-cluster)
+- [Rebalancing couchbase clusters](#rebalancing-couchbase-clusters)
 
 ### Prerequisites
 
@@ -18,13 +19,13 @@ In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), 
 
 ### Objectives
 
-This tutorial introduces you to the concepts of couchbase, creating node clusters and that in turn helps you elastically scale your application.
+This tutorial introduces you to the concepts of couchbase, creating node clusters, and that in turn helps you elastically scale your application.
 
 ### What's couchbase?
 
-Couchbase is a server. It's a NoSQL cloud document oriented database.
+Couchbase is a server. It's a NoSQL cloud document-oriented database.
 Indeed, this database is a merge of the [CouchDB](https://couchdb.apache.org) and [Membase](https://blog.couchbase.com/what-exactly-membase/) databases.  
-It resides in server clusters that has multiple machines that has a number of daemon processes. These processes provides data access from client libraries as well as management functions.
+It resides in server clusters that have multiple machines that have several daemon processes. These processes provide data access from client libraries as well as management functions.
 
 > For more details about couchbase, click [here](https://dzone.com/articles/couchbase-architecture-deep).  
 
@@ -57,7 +58,7 @@ couchbase3:
     - 11210:11210
 ```
 
-As we initially discussed, we're building a 3-node couchbase cluster hence the 3 services definition of the `couchbases 1 to 3 above`.
+As we initially discussed, we're building a 3-node couchbase cluster hence the 3 services definition of the `couch bases 1 to 3 above`.
 
 Now run the following on the terminal:  
 
@@ -145,3 +146,31 @@ couchbase2_1  | and logs available in /opt/couchbase/var/lib/couchbase/logs
 ```
 
 ### Configuring couchbase cluster
+
+In the previous section, we exposed ports to use while setting up the clusters.Now browse to [http://localhost:8091](http://localhost:8091).
+
+Output:
+![Home Page](/engineering-education/couchbase-cluster-docker/home.png)
+
+Default cluster view:
+
+![default view](/engineering-education/couchbase-cluster-docker/default.png)
+
+Setup your couchbase account and add the clusters we added above as shown below:
+
+![settings](/engineering-education/couchbase-cluster-docker/setting.png)
+
+### Rebalancing couchbase clusters
+
+To distribute data evenly, we need to balance our clusters.  
+To achieve this functionality, browse to the servers tab, or you may as well click on the `pending balance` tab to go to the unbalanced clusters.
+
+![rebalance](/engineering-education/couchbase-cluster-docker/rebalance.png)
+
+### Conclusion
+
+In this tutorial, we've been discussing the couchbase clusters. We used the docker-compose to create services for our application. We then created 3 node couchbase clusters and accessed them on the web portal on our local server.
+
+Hopefully, you build on this to scale up your applications.
+
+Happy Coding!
