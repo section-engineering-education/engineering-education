@@ -13,9 +13,9 @@ Docker and Visual Studio Code must be installed on your computer in order to fol
 
 Here are some tutorials to help you with your Docker installation.
 
-1. [Getting Started with Docker On Linux](/engineerifng-education/getting-started-with-docker/).
-2. [Installing Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/).
-3. [Installing Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/).
+1. [Getting started with Docker on Linux](/engineering-education/getting-started-with-docker/).
+2. [Installing Docker desktop on Mac](https://docs.docker.com/docker-for-mac/install/).
+3. [Installing Docker desktop on Windows](https://docs.docker.com/docker-for-windows/install/).
 
 ### Hello Docker
 Confirm that you have a Docker installation on your machine by checking the Docker version.
@@ -23,7 +23,7 @@ Confirm that you have a Docker installation on your machine by checking the Dock
 Open a terminal and run the command below.
 
 ```bash
-$ docker version
+$ docker --version
 ```
 
 To verify that your installation is working correctly, run the `hello-world` Docker image.
@@ -37,7 +37,7 @@ If the above command executes without errors, feel free to proceed to the next s
 ### The Docker extension
 A Docker extension for VS Code is used to provide support for Docker. To install the Docker extension, search and install it from the extensions pane.
 
-![Docker Extension In VS Code](docker-extension.png)
+![Docker Extension In VS Code](/engineering-education/working-with-docker-in-vscode/docker-extension.png)
 
 Let's build a simple Node.js server to demonstrate how we can use VS Code to work with Docker containers and images.
 
@@ -102,12 +102,12 @@ Manually writing Docker and docker-compose files can be difficult and can take a
 
 Open the Command Palette by pressing ⇧⌘P on Mac or `Control+Shift+P` on other machines. To create a `Dockerfile`, a `docker-compose.yml`, and a `docker-compose.debug.yml` for this project, run the Docker: Add Docker files to Workspace command. Select `Node.js` for the application platform and fill in the required details.
 
-![Add files to workspace](docker-add-files.png)
+![Add files to workspace](/engineering-education/working-with-docker-in-vscode/docker-add-files.png)
 
 ### A look at the Dockerfile
 VS Code creates the Dockerfile by obtaining the newest Node.js container from the Docker hub.
 
-The generated Dockerfile will look something similar to the one below.
+The generated Dockerfile will look similar to the one below.
 
 ```dockerfile
 FROM node:12.18-alpine
@@ -153,7 +153,7 @@ By switching to the Docker extension pane, you can easily manage your existing c
 ### Common Docker commands
 You can use most of the required commands needed to work with your Docker images, containers from the Command Palette. You can find all the Docker commands by typing `Docker: `.
 
-![Common Docker commands](docker-commands.png)
+![Common Docker commands](/engineering-education/working-with-docker-in-vscode/docker-commands.png)
 
 ### Conclusion
 By using the VS Code Docker extension, you can be able to do most of the Docker tasks like generating Docker files and building images with a single click. 
