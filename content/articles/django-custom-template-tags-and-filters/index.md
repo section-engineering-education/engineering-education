@@ -1,54 +1,53 @@
 
 ### Introduction.
-We are going to cover how to create Django custom template tags and filters.Django template language comes with built-in template tags such as `{% if %}` and filters such as `safe`.You may however find that  you require a functionality not included in django.You create them using python and avail them using the `load ` tag.Let’s get started! 
+We are going to cover how to create Django custom template tags and filters.Django template language comes with built-in template tags such as `{% if %}` and filters such as `safe`.You may however find that  you require a functionality not included in Django.You create them using Python and avail them using the `load ` tag.Let’s get started! 
 ###  Prerequisites.
 For you  to follow along its important that:
-1. You are able to create a simple django application
-2. You have python and django installed.
+1. You are able to create a simple Django application
+2. You have Python and Django installed.
 3. An suitable IDE such as Pycharm, VS Code etc.
 ### Takeaways.
 By the end of this tutorial, you will be able to:
 1. Understand  use of custom template tags and filters and how they work.
 2. Create your own customized template tags and filters to suit your needs.
 ### Getting started.
-Your custom tags and filters must be within a django app. If you wish that your tags and filters be used across your entire project, you may create an app just to accomplish that.
+Your custom tags and filters must be within a Django app. If you wish that your tags and filters be used across your entire project, you may create an app just to accomplish that.
 
-Create an app called Contacts and add it in your INSTALLED_APPS.Inside your app , create a directory called templatetags in the same level as views,  models etc.
-Make the templatetags directory a package in python by creating an `__init__.py` file.Create another file custom_tags.py or any other name that will hold your custom tags
+- Create an app called Contacts and add it in your INSTALLED_APPS.Inside your app , create a directory called templatetags in the same level as views,  models etc.
+- Make the templatetags directory a package in Python by creating an `__init__.py` file.Create another file custom_tags.py or any other name that will hold your custom tags
 and filters.
+
 Your app structure will now look something similar to this:
-```python
-    ├── contact
+```Python
+.Contact
+├── contact
 │   ├── admin.py
 │   ├── apps.py
 │   
 │   ├── migrations
-│   │   ├── 0001_initial.py
-│   │   ├── 0002_alter_contact_date.py
-│   │   ├── __init__.py
+│   │   └──  __init__.py
 │   │  
 │   │       
 │   ├── models.py
 │   
 │   ├── templatetags
-│   │   ├── custom_tags.py
+│   │  └──  custom_tags.py
 │   │
 │   ├── tests.py
 │   ├── url.py
 │   └── views.py
 ├── Contact
 │   ├── asgi.py
-
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 ├── db.sqlite3
-├── manage.py
+└──  manage.py
 
 ```
 You can create as many modules as you can inside the templatetags folder. You should, however, note that using `{% load %}` tag will work for a particular module name, not the app name. 
-```python
-from django import template
+```Python
+from Django import template
 register = template.Library()
 ```
 
@@ -61,8 +60,8 @@ To load the tags and filters, we will do the following in our template:
 Filters are usually written either as `{{value|filter}}` or `{{value|filter:'arg'}}` . This means that the filter will or will not take a argument when acting on a value.
 
 Consider a simple Contacts list application showing a contact and when they were created.The model.py looks as follows:
-```python
-from django.db import models
+```Python
+from Django.db import models
 
 class Contact(models.Model):
     name = models.CharField(max_length=50)
@@ -70,16 +69,16 @@ class Contact(models.Model):
 ```
 The application looks as follows with just a  little of styling...
 
-![Contact App](/engineering-education/django-custom-template-tags-and-filters/image1.png)
+![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image1.png)
 
 Now let's create two simple filters that capitalizes all strings in a given name, 
 capitalizes the first character of a word and  also sets a color.
-We use `@register` to register our filter with django and give it a name.Our function takes name as value.
+We use `@register` to register our filter with Django and give it a name.Our function takes name as value.
 To use our filter we use the line `{% load custom_tags %}` in our template
 
 template_tags/custom_tags.py
-```python
-from django import template
+```Python
+from Django import template
 
 register = template.Library()
 
@@ -115,7 +114,7 @@ contact.html
 ```
 The resulting view will look as follows
 
-![Contact App](/engineering-education/django-custom-template-tags-and-filters/image2.png)
+![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image2.png)
 
 The `upper ` function capitalizes the contact name while the `get_color ` filter sets a new color to the div.
 Likewise, you can create your own custom filters to cater for whatever needs you may have for your templates.
@@ -129,8 +128,8 @@ We are going to implement them in our `custom_tags.py` file.
 ### Simple Tags.
 These tags take any number of arguments and return a result after some processing.The simple tag takes a function that takes one or more arguments, wraps it in a render function and registers it with the template system.
 We are going to do two examples on the simple tags.Our first simple tag will count the number of contacts we have.The second function gets the current in d/m/y format.The code in custom_tags.py is as follows:
-```python
-from django import template
+```Python
+from Django import template
 import datetime
 from contact.models import Contact
 
@@ -171,7 +170,7 @@ Change the html to this:
 ```
 The resulting template would look as follows:
 
-![Contact App](/engineering-education/django-custom-template-tags-and-filters/image3.png)
+![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image3.png)
 
 Likewise, you can create your own simple tags and use them how you deem fit.
 ### Inclusion Tags. 
@@ -180,8 +179,8 @@ This tag works by rendering another template and is essential when working with 
 Let’s create a simple inclusion that counts the number of users.
 We would need to create a `users.html` file that will be rendered by the inclusion tag.
 In your `custom_tags.py` file, edit and append the following:
-```python
-from django.contrib.auth.models import User
+```Python
+from Django.contrib.auth.models import User
 @register.inclusion_tag('users.html')
 def show_users():
       obj = User.objects.values_list('username', flat=True)
@@ -215,11 +214,11 @@ Then make the contact.html look like this:
 ```
 The resulting template will now look as follows:
 
-![Contact App](/engineering-education/django-custom-template-tags-and-filters/image4.png)
+![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image4.png)
 
 Notice that by adding `show_users` tag, we now have a user added below the contacts.
 
 ### Conclusion.
-You have now successfully created your custom template tags and filters.You should now be able to create new template tags and filters and apply anywhere you want in your Django application.I also recommend having a thorough look at django documentation and have a clear understanding of how they work.
+You have now successfully created your custom template tags and filters.You should now be able to create new template tags and filters and apply anywhere you want in your Django application.I also recommend having a thorough look at Django documentation and have a clear understanding of how they work.
 
-You will find the django documentation [here](https://docs.djangoproject.com/en/3.2/)
+You will find the Django documentation [here](https://docs.djangoproject.com/en/3.2/)
