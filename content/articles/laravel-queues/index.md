@@ -1,51 +1,45 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /laravel-queues/
+title: How to Implement Queues in Laravel 8
+description: This article will show you how to implement queues in your Laravel application. Laravel queues allow you to respond to web requests quickly.
+author: bhanji-brilliant
+date: 2021-07-11T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-
-Speeding up the response time of applications could be very hard, for example, a big company like [section](section.io), would want to send Edge As A Service new features/updates to millions of their clients all over the world. In case these emails are sent at once, it could slow down the system performance.  
-
-The answer to this problem is the use of queues. Therefore, in this tutorial, I'll be taking the Laravel queue concepts, how you may use them to improve your application performance.  
-
-### Table of content
-
-- [Introduction](#introduction)
-- [Table of content](#table-of-content)
-- [Prerequisites](#prerequisites)
-- [Objectives](#objectives)
-- [What's is Laravel queue](#whats-is-laravel-queue)
-- [Configuring Laravel queues](#configuring-laravel-queues)
-- [Setting up emails to use Laravel queues](#setting-up-emails-to-use-laravel-queues)
-- [Testing emails](#testing-emails)
-- [Conclusion](#conclusion)
+  - url: /engineering-education/laravel-queues/hero.jpg
+    alt: Implementing Queues in Laravel 8
+---
+In some cases, companies experience numerous challenges when managing their services. For example, firms may need to send emails to millions of users or perform database backups. All of these operations require massive computing power.
+<!--more-->
+Running all of these services at once could affect the performance of the application. As a result, users may become frustrated due to the long delays. Laravel seeks to resolve this issue through the use of queues. 
 
 ### Prerequisites
-
-- Laravel 8 installed in your local development environment
-- Basics of Laravel, especially [Mail](https://laravel.com/docs/8.x/mail) configurations
-- Idea on Laravel [jobs](https://laravel.com/docs/8.x/scheduling) would an added advantage to learn this concept as quickly as possible.
+To follow along, you need to have installed Laravel 8 on your computer. Some knowledge of PHP and Laravel is also crucial. The key Laravel components that will be used in this project are [Mail](https://laravel.com/docs/8.x/mail) and [Jobs](https://laravel.com/docs/8.x/scheduling).
 
 ### Objectives
+By the end of this tutorial, you should be able to enhance your application's performance by delaying the running of certain services.  
 
-By the end of this Laravel queue tutorial, you should be in a position to speed up your application performance by delaying the running of some time-consuming programs.  
+### What is Laravel queue
+A queue involves placing things in order. For instance, a queue management system can be used to serve customers on a first-come-first-serve basis. This is no different from the Laravel queue. It serves the same job by ensuring that programs or services are executed in a certain order.
 
-### What's is Laravel queue
+For example, you have an application that requires users to sign up and then send them a One-Time-Password (OTP) or even a welcome email. Though this is a great implementation, it may slow down the application's performance. Laravel queues can help salvage this situation. 
 
-A queue is placing things in order, for instance in a bank, the queue management system is used to serve customers in a first come first serve manner. This is no different from the Laravel queue, it serves the same job, where programs are executed in a certain order.
-
-Let's say, for example, you have an application that requires users to sign up and send them a Time Password (OTP) or even a welcome email. Of course, this is a great implementation, but it will slow down the application performance.  This is where the Laravel queue is coming in.  
-
-In the section, let's look at how we can configure our application to use Laravel queues to improve the performances of our systems.
+Let's get started.
 
 ### Configuring Laravel queues
+Laravel provides several [drivers](https://laravel.com/docs/8.x/queues#driver-prerequisites) that we can use to configure our queues. In this tutorial, we will use the `database driver`.
 
-Laravel provides several [drivers](https://laravel.com/docs/8.x/queues#driver-prerequisites) that we use to configure our queues, in this tutorial we use the database driver.
-
-For your better understanding of queues, we will select sending email queues to implement using Laravel queues.
+In this project, we will focus on sending emails using Laravel queues.
 
 Start by running the following command:
 
 ```bash
 php artisan queue:table
-
 ```
 
 Output:
@@ -54,18 +48,16 @@ Output:
 Migration created successfully!
 ```
 
-This command sets up our application to use the database driver to implement queues. It also sets our migration file and creating a `jobs` table.  
+The above command sets up our application to use the `database driver` to implement queues. It also creates our `migration` file and a `jobs` table.  
+
+Here is our `Migration` file:
 
 ```php
-
-........................................................
-class CreateJobsTable extends Migration
-{
+class CreateJobsTable extends Migration{
 
     // this method will create a database called jobs with its respective columns
-    public function up()
-    {
-        Schema::create('jobs', function (Blueprint $table) {
+    public function up(){
+        Schema::create('jobs', function (Blueprint $table) { //we define our database columns here
             $table->bigIncrements('id');
             $table->string('queue')->index();
             $table->longText('payload');
@@ -77,27 +69,26 @@ class CreateJobsTable extends Migration
     }
 
     // this method is used to check if the table already exists
-    public function down()
-    {
+    public function down(){
         Schema::dropIfExists('jobs');
     }
 }
 
 ```
 
-We also need to tell Laravel that it'll be using the database driver by adding updating `.env` file as follows:  
+We also need to notify Laravel that we will be using the database driver by updating the `.env` file as follows:  
 
 ```bash
 QUEUE_CONNECTION=database
 ```
 
-With our jobs table ready, we can now run the migrations as shown below:  
+With our `jobs` table ready, we can now run the `migrations` as shown below:  
 
 ```bash
 php artisan migrate
 ```
 
-> Before running the above command, ensure your `.env` file has updated database credentials otherwise an error will be t
+> Before running the above `migration` command, ensure that your `.env` file has correct database credentials to avoid errors.
 
 Output:
 
@@ -106,12 +97,10 @@ Migration table created successfully.
 --------
 Migrating: 2021_06_22_123248_create_jobs_table
 Migrated:  2021_06_22_123248_create_jobs_table (117.97ms)
-
 ```
 
 ### Setting up emails to use Laravel queues
-
-In this section, we use the mailable to set up our emails. Start by running:  
+In this section, we will use the `mailable` class to set up our emails. Let's start by running the following command:  
 
 ```bash
 php artisan make: mail TestHelloEmail
@@ -123,112 +112,92 @@ Output:
 Mail created successfully.
 ```
 
-The above command creates a `Mail`  directory inside the `./app/Mail` with the `TestHelloEmail.php` file.  
+The above command creates a `TestHelloMail.php` file inside the `./app/Mail` directory.  
+
+Here are the contents of the `TestHelloMail.php` file:
 
 ```php
 <?php
 
----------------
-
-class TestHelloEmail extends Mailable
-{
+class TestHelloEmail extends Mailable{
     use Queueable, SerializesModels;
 
-    public function __construct()
-    {
+    public function __construct(){
         //
     }
 
-    public function build()
-    {
-        return $this->view('view.name');
+    public function build(){
+        return $this->view('view.name'); // returns a view to the user
     }
 }
 
 ```
 
-Since we have set up our mail class, head over to the `resources/views folder and add `mail/testEmails.blade.php`.
+Since we have created our `mailable` class, navigate to the `resources/views` folder and create a new directory called `mail`. Inside this folder, create a new file and name it `testEmails.blade.php`.
+
+Include the following html line in the `testEmails.blade.php` file.
 
 ```php
-<p> My mailing queues testing</p>
-
+    <p> My mailing queues testing</p>
 ```
 
-Now update the `TestHelloEmail.php` file as shown below:
+Now, let's update the `TestHelloEmail.php` file, as shown below:
 
 ```php
----------------
- public function build()
-    {
+ public function build(){
         return $this->view('view.mail.testEmails');
-    }
+ }
 
 ```
 
-Let's now proceed to create jobs to manage our emails:  
+The next step is to create `jobs` to manage our emails. We use the following command:  
 
 ```bash
-php artisan make:job TestSendEmail
+  php artisan make:job TestSendEmail
 ```
 
 Output:
 
 ```bash
-Job created successfully.
-
+ Job created successfully.
 ```
 
-The above command creates `./app/Jobs/TestSendEmail.php` file. Update its contents as follows:
+The above command will create a `testSendEmail.php` file inside the `app/jobs/` folder. Let's update its contents as follows:
 
 ```php
-<?php
+use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
----------------
+class TestSendEmail implements ShouldQueue{
 
-class TestSendEmail implements ShouldQueue
-{
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-
-    public function __construct()
-    {
+    public function __construct(){
         //
     }
 
-    public function handle()
-    {
+    public function handle(){
          $email = new TestHelloEmail();
         Mail::to('johndoe@tests.com')->send($email);
     }
 }
-
 ```
 
-In the above jobs file, we import the `Mail` facade and the `TestHelloEmail.php`.
-That's all we need to test our Laravel queue.
+In the above `testSendEmail.php` file, we import the `Mail` facade and the `TestHelloEmail.php` class to implement the Laravel queue.
 
 ### Testing emails
-
-Add a controller to handle our logics:  
+In this step, we need to add a `controller` to handle our logic. To do so, we use the following command:  
 
 ```bash
- php artisan make:controller TestQueueEmails
-
+php artisan make:controller TestQueueEmails
 ```
 
 Output:
 
 ```bash
 Controller created successfully.
-
 ```
 
-Now head over to this new controller and edit it as follows:
+Open the generated controller and edit it as follows:
 
 ```php
-<?php
-------------------
-
 class TestQueueEmails extends Controller
 {
     /**
@@ -243,22 +212,22 @@ class TestQueueEmails extends Controller
 
 ```
 
-Then add the following in your routes file:
+Then add the following in your `routes` file:
 
 ```php
 Route::get('sending-queue-emails', [TestQueueEmails::class,'sendTestEmails']);
 ```
 
-On visiting the `http://localhost:8000/sending-queue-emails`, you will notice jobs are added in the `jobs` table.  
+When you navigate to `http://localhost:8000/sending-queue-emails`, you will notice jobs are added in the `jobs` table.  
 
-Now on dispatching the jobs, let's process the queue by running the following command:
+When we want to dispatch the jobs, we use the following command:
 
 ```bash
 php artisan queue: work
 ```
 
 ### Conclusion
+In this tutorial, we have discussed the process of implementing Laravel queues using a simple email sender. Laravel queues can help developers to improve user satisfaction by running complex services only when the application is not in use. You can, therefore, use this knowledge to create more powerful applications.
 
- In this tutorial, I've tried to walk you through the process of implementing Laravel queues using a simple email sender. It's very simple to implement, even though it looks confusing at first. Hope it helps you make your application quite faster!
-
- Happy coding!
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
