@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-debug-a-nodejs-application-running-in-a-docker-container/
-title: Debuggin a Node.js Application running in a Docker Container
+title: Debugging a Node.js Application running in a Docker Container
 description: In this tutorial, we will learn how to debug a Node.js application running inside a Docker container. We will use a to-do Node.js app to show how VS Code can be used as a debugging tool.
 author: verah-ombui
 date: 2021-07-08T00:00:00-13:00
