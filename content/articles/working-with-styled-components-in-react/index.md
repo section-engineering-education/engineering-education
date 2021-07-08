@@ -459,3 +459,6 @@ In this tutorial, we explored React briefly,  what styled-component is, and its 
 - [CSS](https://www.w3schools.com/css/)
 
 Happy styling!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
