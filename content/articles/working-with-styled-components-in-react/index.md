@@ -16,7 +16,7 @@ images:
 ---
 
 ### Prerequisites
-Be sure to have the following requirements installed and running if you'll like to follow the coding part.
+Be sure to have the following requirements installed and running to follow the coding part.
 
 1. Command Line Interface running on administrative privileges.
 
@@ -29,11 +29,11 @@ Be sure to have the following requirements installed and running if you'll like 
 5. [Node.js](https://www.nodejs.org). You can download the latest version.
 
 
-If you have worked with React in developing web applications, you will agree with me that adding style to your Components is super cool when using styled-components feature. In any case you have not used React or styled-components, do not worry because this article is for you.
+If you have worked with React in developing web applications, you will agree with me that adding style to your Components is super cool when using the styled-components feature. In any case, you have not used React or styled-components, do not worry because this article is for you.
 
-In this tutorial, you will learn an overview of React and what styled-components is and why use it. In the end, we will build a simple web page in React and add styles to it using styled-components.
+In this tutorial, you will learn an overview of React and what styled-components are, and why use it. In the end, we will build a simple web page in React and add styles to it using styled-components.
 
-Lets get it started!
+Let's get it started!
 
 ### Table of content
 This article will cover:
@@ -49,43 +49,43 @@ React is a JavaScript library built and maintained by Facebook. React is purely 
 When faced with the need to build elegant and responsive user interfaces/UI components, React is the go-to tool.
 React is preferred by Front End developers because it is Component-Based. 
 
-React as a front-end library, integrates well with backend development libraries such as Node.js, Django, Java and Ruby.
-React is fast, simple and scalable because data changes in your applications can be rendered without requiring to reload your application.
+React as a frontend library integrates well with backend development libraries such as Node.js, Django, Java, and Ruby.
+React is fast, simple, and scalable because data changes in your applications can be rendered without requiring you to reload your application.
 
-Each part of your application in React, is built separately and reusably as a [Component](https://www.w3schools.com/react/react_components.asp) with the component-based feature.The components are then composed together to form complex user interfaces. Components give developers the liberty to split their UIs unto indipendent and reusable sections so as to engage each section in isolation.
+Each part of your application in React is built separately and reusably as a [Component](https://www.w3schools.com/react/react_components.asp) with the component-based feature. The components are then composed together to form complex user interfaces. In addition, components allow developers to split their UIs into independent and reusable sections to engage each section in isolation.
 
-Components in React can be written as Functions or Classes, all which accept defined inputs as [props](https://reactjs.org/docs/components-and-props.html) to determine what is rendered on the browsers.
+Components in React can be written as Functions or Classes, all of which accept defined inputs as [props](https://reactjs.org/docs/components-and-props.html) to determine what is rendered on the browsers.
 
-Basically, Buttons, Forms, Content areas, Navs, and Dialog sections are few of Frontend parts that can be defined in components.
+Buttons, Forms, Content areas, Navs, and Dialog sections are a few of the frontend parts defined in components.
 
-Now that we've seen what React and a Component is, lets have a look into styled-components. 
+Now that we've seen what React and a Component is, let's have a look into styled-components. 
 
-### What is Styled-components
+### What are Styled-components
 
 Styled-components is a library built for React and React Native developers. It allows you to use component-level styles in your applications. 
 Styled-components leverage a mixture of JavaScript and CSS using a technique called CSS-in-JS.
 
-Styled-components is based on tagged template literals, meaning actual CSS code is written between backticks when styling your components. This gives developers the flexibility of reusing their CSS code from one project to another.   
-With styled-components, there is no need of mapping your created components to external CSS styles.
+Styled-components are based on tagged template literals, meaning actual CSS code is written between backticks when styling your components. This gives developers the flexibility of reusing their CSS code from one project to another.   
+With styled-components, there is no need to map your created components to external CSS styles.
 
 
 ### Advantages of using Styled-components
 Below are some benefits of using styled-components:
 
-*•	Eliminates class name bugs*: styled-components provides unique class names for your styles, thus eliminating the problems with class names duplications, misspellings and overlaps.
+*•	Eliminates class name bugs*: styled-components provide unique class names for your styles, thus eliminating the problems with class names duplications, misspellings, and overlaps.
 
-*•	Easier management of CSS*: With every bit of styling tied to a specific component, it easier to know which CSS is applied. This makes it easy to delete unused component styles.
+*•	Easier management of CSS*: With every bit of styling tied to a specific component, it is easier to know which CSS is applied. This makes it easy to delete unused component styles.
 
-*•	Simple and dynamic styling*: Through props and global themes supported in styled-components, styling is simple without having to manually manage dozens of classes.
+*•	Simple and dynamic styling*: Through props and global themes supported in styled-components, styling is simple without manually managing dozens of classes.
 
-*• Reproducible styles*: When you style with styled-components, you can import your styles into other project areas no matter how big or small your code base is.
+*• Reproducible styles*: When you style with styled-components, you can import your styles into other project areas no matter how big or small your codebase is.
 
 
-### Creating and styling a simple web-page using styled-components
+### Creating and styling a simple web page using styled-components
 
-In this section we will create a clone for the [disney+](https://www.disneyplus.com/) landing page and add CSS to its components using the styled-components.
+This section will create a clone for the [disney+](https://www.disneyplus.com/) landing page and add CSS to its components using the styled-components.
 
-First we need to create an app in React that will contain our landing page.
+First, we need to create an app in React that will contain our landing page.
 
 Within a folder of your choice, open the [Command prompt](https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu) and type the following command:
 
@@ -93,16 +93,16 @@ Within a folder of your choice, open the [Command prompt](https://www.thewindows
 npx create-react-app disney-landing-page 
 ``` 
 This will initialize and create our react app named disney-landing-page by loading and installing all the React dependencies required for our app.
-Once all the dependencies are installed, a development environment for our React application  wil be ready.
+Once all the dependencies are installed, a development environment for our React application will be ready.
 
-To get into our project folder use the command below in the command prompt or the terminal of your code editor:
+To get into our project folder, use the command below in the command prompt or the terminal of your code editor:
 
 ```bash
 cd disney-landing-page
 
 ```
 #### Installing styled-components
-Next we install the styled-components and the react-router-dom libraries into our project through the commands below:
+Next, we install the styled-components and the react-router-dom libraries into our project through the commands below:
 
 ```bash
 yarn add styled-components
@@ -112,7 +112,7 @@ yarn add styled-components
 yarn add react-router-dom
 ```
 #### Starting the development server
-To start the development server for the app, run either of the two commands on your terminal depending on which package manager you are using. 
+To start the development server for the app, run either of the two commands on your terminal, depending on which package manager you are using. 
 
 ```JavaScript
 yarn start
@@ -137,9 +137,9 @@ First, we need to create a folder to store our components. Within the *src* fold
 
 ![Components folder](/engineering-education/working-with-styled-components/component.png)
 
-In your newly created components folder, create  two files and name one *Landing.js* and the other *Header.js*. Within these two files is where we will create our components and style them as we will see shortly.
+In your newly created components folder, create two files and name one *Landing.js* and the other *Header.js*. Within these two files, we will create our components and style them, as we will see shortly.
 
-Before we start working with the CSS-in-JS(styled-components), open the *Landing.js* file and and the following code to create our first component: 
+Before we start working with the CSS-in-JS(styled-components), open the *Landing.js* file and the following code to create our first component: 
 
 We create the Landing component with the code below:
 
@@ -176,12 +176,12 @@ export default Header;
 
 #### Routing a Component into the main App
 
-To get things started, lets open *App.js*  which will be the base of our application, and replace all the content in it with the code below to create an App function that will load our styled-components and render them as the landing page.
+To get things started, let's open *App.js*  which will be the base of our application, and replace all the content in it with the code below to create an App function that will load our styled-components and render them as the landing page.
 
 ```JavaScript
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";//The Router, Switch and Route will help us move between our created component and the main App.js.
-import Landing from "./components/Landing" //This is to import the component created in the Landing.js file.
-import Header from "./components/Header"  // This is to import the component created in the Header.js file
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";//The Router, Switch, and Route will help us move between our created component and the main App.js.
+Import Landing from "./components/Landing" //This is to import the component created in the Landing.js file.
+Import Header from "./components/Header"  // This is to import the component created in the Header.js file
 import './App.css';//Load a set of predefined CSS that will define how HTML elements in the landing page behave.
  
 function App() {   //main app
@@ -235,14 +235,14 @@ export default App;
 ```
 ![App.js final](/engineering-education/working-with-styled-components/App.js.png)
 
-**Onto some styling now**
+### Onto some styling now
 
 Be sure to create an images folder inside the public folder of the application.
-Within the folder, you should have the landing page background image, disney+ icon image, logo-one and logo-two.
+You should have the landing page background image, disney+ icon image, logo-one, and logo-two within the folder.
 You can obtain the images and the icon from [seeklogo](https://seeklogo.com/free-vector-logos/disney?page=4).
 
 
-Lets add some cool features onto our created components- (Landing and Header), and style them using the styled-components depending on what content they hold.
+Let's add some cool features onto our created components- (Landing and Header) and style them using the styled-components depending on what content they hold.
 
 Add the following code between the *Content tags* in the Landing component.
 
@@ -260,18 +260,18 @@ Add the following code between the *Content tags* in the Landing component.
          
 ```
 
-Next, add the code below bewteen the *Nav tags* in the Header component.
+Next, add the code below between the *Nav tags* in the Header component.
 
 ```JavaScript
         <Logo>
              <img src="/images/logo.svg" alt= "Disney+"/>
         </Logo> 
 ```
-*Bravo if reached upto this point!*
+*Bravo if you reached up to this point!*
 
 To style the Container, Content area, Paragraph, Button, and Images in our Landing component, write the following CSS-in-JS immediately after *export default Landing* line.
 
-*Styling the Container*
+#### Styling the Container
 
 ```JavaScript
 {/*Container is declared in JavaScript and styled.section is assigned to it*/}
@@ -286,7 +286,7 @@ height: 100vh;
 `;
 ```
 
-*Styling the Content Area*
+#### Styling the Content Area
 
 ```JavaScript
 {/*Content is declared in JavaScript and styled.div is assigned to it*/}
@@ -307,7 +307,7 @@ const Content = styled.div`
 
 `;
 ```
-*Styling the back-ground image*
+#### Styling the background image
 
 ```JavaScript
 {/*BgImage is declared in JavaScript and styled.div is assigned to it*/}
@@ -326,7 +326,7 @@ right: 0;
 z-index: -1
 `;
 ```
-*Styling the Call to Action(CTA) area*
+#### Styling the Call to Action(CTA) area
 
 ```JavaScript
 {/*The CTA will hold both the two logos and the description. It is styled as a div*/}
@@ -344,7 +344,8 @@ text-align: center;
 
 `;
 ```
-*Styling LogoOne *
+#### Styling LogoOne 
+
 ```JavaScript
 {/*LogOne styled as an image to render the img tag*/}
 {/*CSS is to define height, width, margin*/}
@@ -358,7 +359,8 @@ width: 100%;
  
  `;
 ```
-*Styling the Signup Button*
+#### Styling the Signup Button
+
 ```JavaScript
 {/*SignUp is styled to wrap around a text and appear as button.It is styled as anchor tag*/}
 {/*CSS is to used define how it should appear*/}
@@ -380,7 +382,8 @@ border-radius: 4px;
 `;
 ```
 
-*Styling the Description*
+#### Styling the Description
+
 ```JavaScript
 {/*holder for a paragraph of text to be styled as p tag. This will render a styled paragraph*/}
 const Description = styled.p`
@@ -392,7 +395,8 @@ letter-spacing: 1.5;
 
 `;
 ```
-*Styling LogoTwo *
+#### Styling LogoTwo 
+
 ```JavaScript
 {/*It is styled as an image to render the img tag*/}
 {/*CSS is to define height, width, margin*/}
@@ -407,7 +411,8 @@ width: 100%;
 ```
 To style the Nav and Logo in our Header component, add the following code immediately after the *export default Header* in the Header.js file.
 
-*Styling the Nav*
+#### Styling the Nav
+
 ```JavaScript
 {/*Styling with  .nav to render the Nav tag*/} 
 const Nav = styled.nav`
@@ -441,11 +446,11 @@ img{
 }
 `;
 ```
-The final page when loaded on your browser should appear as shown below:
+The final page, when loaded on your browser, should appear as shown below:
 ![Styled](/engineering-education/working-with-styled-components/Landing page.png)
 
 ### Summary
-In this tutorial, we learnt React briefly,  what styled-component is and its advantages.Finally, we created a simple landing page and styled it using styled-components, a React library. 
+In this tutorial, we explored React briefly,  what styled-component is, and its advantages. Finally, we created a simple landing page and styled it using styled-components, a React library. 
 
 
 ### Additional Resources
