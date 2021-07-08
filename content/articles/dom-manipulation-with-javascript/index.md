@@ -71,7 +71,7 @@ Open a new file in an empty folder, name it `index.html` and add the HTML code a
 
 You should see the following:
 
-![home_page_screenshot](/engineering-education/dom-manipulation-with-javascript/home-page-screenshot.png)
+![home_page_screenshot](/engineering-education/dom-manipulation-with-javascript/home-page-screenshot.jpg)
 
 ### Step 2 — Understanding the DOM
 To Understand the DOM, let's draw the structure for our HTML page.
