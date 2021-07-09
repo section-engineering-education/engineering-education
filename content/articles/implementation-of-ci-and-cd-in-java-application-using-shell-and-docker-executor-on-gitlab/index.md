@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementation-of-ci-and-cd-in-java-application-using-shell-and-docker-executor-on-gitlab/
+title: Implementation of CI and CD in Java Application Using Shell and Docker Executor on Gitlab
+description: This article takes the reader through implementing CI/CD using shell, docker and gitlab. The article uses code written in bash and focuses on Java Linux application, Shell and Docker executors.
+author: james-bundi
+date: 2020-07-09T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementation-of-ci-and-cd-in-java-application-using-shell-and-docker-executor-on-gitlab/hero.png
+    alt: example ci/cd image
+---
 ### Introduction
-With `GitLab Runner`, you may use a variety of executors to implement continuous integration(CI)/continuous delivery(CD). Shell and Docker, on the other hand, are more widely used, and we may easily configure a repository with these runners. These runners can be selected based on your requirements and available resources. This article's code is written in bash and focuses on Java Linux application Shell and Docker executors. A bash script can be used to build and test the application.
+With `GitLab Runner`, you may use a variety of executors to implement continuous integration(CI)/continuous delivery(CD). Shell and Docker, on the other hand, are more widely used, and we may easily configure a repository with these runners. These runners can be selected based on your requirements and available resources.
+<!--more-->
+This article's code is written in bash and focuses on Java Linux application, Shell and Docker executors. A bash script can be used to build and test the application.
 
 Table of content:
 
@@ -186,3 +204,6 @@ execute:
 In the tutorial above, we have learned path configuration, GitLab runners, and the commands used. With this knowledge, we can freely implement continuous integration/continuous delivery in java applications using docker and shell executors.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
