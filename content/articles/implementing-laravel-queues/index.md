@@ -6,7 +6,7 @@ url: /implementing-laravel-queues/
 title: How to Implement Queues in Laravel 8
 description: This article will show the reader how to implement queues in your Laravel 8 application. Laravel queues allow you to respond to web requests quickly.
 author: bhanji-brilliant
-date: 2021-07-09T00:00:00-09:30
+date: 2021-07-09T00:00:00-10:30
 topics: []
 excerpt_separator: <!--more-->
 images:
