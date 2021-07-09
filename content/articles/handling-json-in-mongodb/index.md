@@ -5,7 +5,7 @@ JavaScript Object Notation (JSON) is a data exchange format solely based on Java
 
 JSON can store various data types like strings, arrays, objects, and Binary JSON (BSON). What makes it easy to access data is the ability of various tools to export and import JSON documents between systems. JSON makes use of key-value pair notation presumed to be the basic units of data.
 
-### Table of Contents
+### Table of content
 - [Goal](#goal)
 - [Prerequisites](#prerequisites)
 - [Structuring JSON data for use in MongoDB Database](#structuring-json-data-for-use-in-mongodb-database)
