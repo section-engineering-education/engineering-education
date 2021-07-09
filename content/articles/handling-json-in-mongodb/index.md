@@ -122,7 +122,7 @@ db.students.find()
 ```
 
 ### Save JSON data to MongoDB Database
-Now that we have imported a JSON file into MongoDB, we will add two records to the database then export the data in the MongoDB database to a new JSON file.
+Now that we have imported a JSON file into MongoDB, we will add two records to the database then export the data to a new JSON file.
 Use the command below to add records to the database:
 ```shell
 db.students.insert({"student_number":5, "name":"Last student added", "age":22, "Course":"Engineering"})
