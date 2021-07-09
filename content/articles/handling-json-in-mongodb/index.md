@@ -94,7 +94,6 @@ First, we need to have our JSON file which we will import to the MongoDB databas
 ]
 ```
 
-
 ### Import JSON to MongoDB
 Next, you need to create a database to hold the JSON object that you will import. Execute the command below to create the database and import the JSON file as a `student` collection.
 ```shell
