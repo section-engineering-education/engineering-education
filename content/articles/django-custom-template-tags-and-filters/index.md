@@ -1,5 +1,5 @@
 ### Introduction
-In this tutorial, wea are going to look at how to create custom template tags and filters in Django.
+In this tutorial, we are going to look at how to create custom template tags and filters in Django.
 
 Django template language comes with built-in template tags such as `{% if %}` and filters such as `safe`. You may however find that you require a functionality not included in Django by default. In this case, you create them using Python and avail them using the `load ` tag.
 
@@ -16,7 +16,7 @@ By the end of this tutorial, you will be able to:
 1. Understand the use of custom template tags and filters and how they work.
 2. Create your own customized template tags and filters to suit your needs.
 
-### Getting started.
+### Getting Started.
 Your custom tags and filters must be within a Django app. If you want your tags and filters to be used across your entire project, you may create an app just to accomplish that.
 
 1. Create an app called `Contacts` and add it in your `INSTALLED_APPS`. Inside your app , create a directory called `templatetags` in the same level as the views, models etc.
@@ -53,6 +53,7 @@ Your app structure will now look something similar to this:
 
 You can create as many modules as you can inside the `templatetags` folder. You should, however, note that using the `{% load %}` tag will only work for a particular module name, not the app name.
 
+For us to be able to load our custom template tags and filters, we need to create an instance of Library instance in order to register them in the Django Template.We will add the following lines of code to do that.
 ```python
 from Django import template
 register = template.Library()
@@ -69,7 +70,7 @@ Filters are usually written either as `{{value|filter}}` or `{{value|filter:'arg
 
 Consider a simple contacts list application showing a contact and when they were created.
 
-The model.py looks as follows:
+The `models.py` looks as follows:
 
 ```Python
 from Django.db import models
@@ -81,7 +82,7 @@ class Contact(models.Model):
 
 The application looks as follows with just a little of styling...
 
-![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image1.png)
+![Initial Contacts Page](/engineering-education/Django-custom-template-tags-and-filters/initial_contacts_page.png)
 
 Now let's create two simple filters that capitalize all strings in a given name, the first character of a word and also sets a color.
 
@@ -92,18 +93,21 @@ To use our filter we use the line `{% load custom_tags %}` in our templates.
 template_tags/custom_tags.py
 
 ```python
+#We create the register instance by initialising it with the Library instance from the earlier step.
 from Django import template
 
 register = template.Library()
 
+#We create an upper function that capitalizes word passed to it.We then register the filter using a suitable name
 @register.filter(name='upper')
 def upper(value):
   return value.upper()
-
+  
+#We create an upper function that capitalizes the first letter of the word passed to it.We then register the filter using a suitable name
 @register.filter(name='modify_name')
 def modify_name(value):
     return value.title()
-
+#We create an upper function that sets returns a red color.We then register the filter using a suitable name
 @register.filter(name='get_color')
 def color(value):
     if value:
@@ -112,7 +116,8 @@ def color(value):
 
 contact.html
 
-```html
+```jinja
+ <!-- Loading the custom_tags file to avail our tags and filters -->
 {% load custom_tags %}
 
 
@@ -120,6 +125,7 @@ contact.html
 
 {% for contact in contacts %}
 <div class="flex-box-container">
+  <!-- We now use the get_color and upper filters to change color and capitalize the contact name respectively -->
     <div style="background-color: {{contact.name|get_color}};"><p >{{contact.name|upper}}</p></div>
     <div><b>Created:</b> {{ contact.date }}</div>
 </div>
@@ -130,15 +136,15 @@ contact.html
 
 The resulting view will look as shown below:
 
-![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image2.png)
+![Contact page with the filters](/engineering-education/Django-custom-template-tags-and-filters/contact_page_with_filters.png)
 
 The `upper ` filter capitalizes the contact name while the `get_color ` filter sets a new color to the div.
 
 Likewise, you can create your own custom filters to cater for whatever needs you may have for your templates.
 
-You should consider the names supplied to your views. They should match those used with `@register.filter()`. For instance, using `color` instead of `get_color` would result to an error. You may also have to consider the auto-escaping behaviour of Django with the filter. You may look up on Django documentation to learn more.
+You should consider the names supplied to your views. They should match those used with `@register.filter()`. For instance, using `color` instead of `get_color` would result to an error. You may also have to consider the auto-escaping behaviour of Django with the filter. You may look up on[Django documentation](https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/) to learn more.
 
-### Writing custom template tags
+### Writing Custom Template Tags
 Template tags are more advanced than filters. They are powerful in that they can process any data and made available to any template regardless of view being executed. Django provides two commonly used helper functions to create tags.
 
 1. Simple tags
@@ -151,30 +157,38 @@ These tags take any number of arguments and return a result after some processin
 
 We are going to do two examples on the simple tags. Our first simple tag will count the number of contacts we have. The second function will get the current date in `d/m/y` format.
 
-The code in custom_tags.py is as follows:
+The code in `custom_tags.py` is as follows:
 
 ```python
-from Django import template
 import datetime
-from contact.models import Contact
+#We create the register instance by initialising it with the Library instance from the earlier step.
+from Django import template
 
 register = template.Library()
 
-
+#We create an upper function that capitalizes word passed to it.We then register the filter using a suitable name
 @register.filter(name='upper')
 def upper(value):
   return value.upper()
+  
+#We create an upper function that capitalizes the first letter of the word passed to it.We then register the filter using a suitable name
 @register.filter(name='modify_name')
 def modify_name(value):
     return value.title()
+#We create an upper function that sets returns a red color.We then register the filter using a suitable name
 @register.filter(name='get_color')
 def color(value):
     if value:
         return "#FF0000"
-    
+ 
+
+
+#We create a my_contacts function that sets returns the number of contacts we have.We then register the filter using a suitable name
 @register.simple_tag(name='my_contacts')
 def my_contacts():
     return Contact.objects.all().count()
+
+#We create a current_date function that sets returns the current date.We then register the filter using a suitable name
 @register.simple_tag(name='current_date')
 def current_date(format):
     return datetime.datetime.now().strftime(format)
@@ -182,13 +196,21 @@ def current_date(format):
 
 Change the html to this:
 
-```html
+```jinja
+
+ <!-- Loading the custom_tags file to avail our tags and filters -->
 {% load custom_tags %}
+
+
 {% block content %}
+<!-- Using the my_contacts simple tag -->
 <h3>You have {% my_contacts %} contacts</h3>
+
 {% for contact in contacts %}
 <div class="flex-box-container">
-    <div style='background-color: {{contact.name|get_color}};'><p >{{contact.name|upper}}</p></div>
+  <!--We now use the get_color and upper filters to change color and capitalize the contact name respectively -->
+    <div style="background-color: {{contact.name|get_color}};"><p >{{contact.name|upper}}</p></div>
+    <!-- Using the current_date simple tag -->
     <div><b>Created:</b>  {% current_date "%d/%m/%Y" %} </div>
 </div>
 {% endfor %}
@@ -198,7 +220,7 @@ Change the html to this:
 
 The resulting template would look as shown below:
 
-![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image3.png)
+![Contact page with the filters and simple tags](/engineering-education/Django-custom-template-tags-and-filters/contact_page_with_simple_tags.png)
 
 Likewise, you can create your own simple tags and use them how you deem fit.
 
@@ -211,6 +233,7 @@ Create a `users.html` file that will be rendered by the inclusion tag. In your `
 
 ```python
 from Django.contrib.auth.models import User
+#we create show_users inclusion tag that will return all users and register it using and indicate its going to render a users.html view.
 @register.inclusion_tag('users.html')
 def show_users():
       obj = User.objects.values_list('username', flat=True)
@@ -218,7 +241,7 @@ def show_users():
 ```
 
 The template file `users.html` will look as shown below:
-```html
+```jinja
 <ul>
 {% for user in users %}
     <li> {{ user }} </li>
@@ -226,21 +249,26 @@ The template file `users.html` will look as shown below:
 </ul>
 ```
 
-Then make contact.html look like this:
+Then make `contact.html` look like this:
 
-```html
-{% comment %} users.html {% endcomment %}
+```jinja
+ <!-- Loading the custom_tags file to avail our tags and filters -->
 {% load custom_tags %}
 
 
 {% block content %}
+<-- Using the my_contacts simple tag -->
 <h3>You have {% my_contacts %} contacts</h3>
+
 {% for contact in contacts %}
 <div class="flex-box-container">
-    <div style='background-color: {{contact.name|get_color}};'><p >{{contact.name|upper}}</p></div>
+  <!--We now use the get_color and upper filters to change color and capitalize the contact name respectively-->
+    <div style="background-color: {{contact.name|get_color}};"><p >{{contact.name|upper}}</p></div>
+    <!-- Using the current_date simple tag -->
     <div><b>Created:</b>  {% current_date "%d/%m/%Y" %} </div>
 </div>
 {% endfor %}
+<!--using the show_users inclusion tag -->
 {% show_users %}
 {% endblock content %}
 
@@ -248,11 +276,11 @@ Then make contact.html look like this:
 
 The resulting template will now look as shown below:
 
-![Contact App](/engineering-education/Django-custom-template-tags-and-filters/image4.png)
+![Contact page with filters and the tags](/engineering-education/Django-custom-template-tags-and-filters/contact_page_with_inclusion_tags.png)
 
 Notice that by adding `show_users` tag, we now have a user added below the contacts.
 
 ### Conclusion
 You have now successfully created your custom template tags and filters.You should now be able to create new template tags and filters and apply them anywhere they are needed in your Django application.
 
-I also recommend look through the Django documentation to have a clear understanding of how tags and filters work.
+I also recommend look through the [Django documentation](https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/)  to have a clear understanding of how tags and filters work.
