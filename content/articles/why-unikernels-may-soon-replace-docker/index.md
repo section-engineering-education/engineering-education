@@ -6,13 +6,13 @@ url: /why-unikernels-may-soon-replace-docker/
 title: Why Unikernels May Soon Replace Docker
 description: This article will cover how containers are facing competition from unikernels. It will provide an overview of unikernels and explain the specific reasons why they may replace containers.  
 author: lilian-ogoti
-date: 2021-06-30T00:00:00-16:00
-topics: []
+date: 2021-07-09T00:00:00-09:35
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/why-unikernels-may-soon-replace-docker/hero.jpg
-    alt:  unikernels example image
+    alt: unikernels example image
 ---
 As cloud-based technology grows, a new competitor to containerization has emerged. As a result, [unikernels](http://unikernel.org/) seems a great candidate to replace the container-based infrastructure. The fact remains that containers have positively evolved the cloud technology world, but they are not yet what [DevOps](https://azure.microsoft.com/en-us/overview/what-is-devops/#culture) requires.  
 <!--more-->
@@ -22,9 +22,9 @@ This article provides an overview of unikernels and explains why they may soon r
 Unikernels are a new software infrastructure paradigm concerned to realize the DevOps dreams. They provide specialized, single-address space machine images.
 
 A unikernel consists of the following components:
-- System libraries
-- Language runtime
-- Necessary applications
+- System libraries.
+- Language runtime.
+- Necessary applications.
 
 These components are built together to form one bootable [Virtual Machine](https://www.vmware.com/topics/glossary/content/virtual-machine) (VM) image that can execute on a [hypervisor](https://www.vmware.com/topics/glossary/content/hypervisor).
 
@@ -63,7 +63,7 @@ The developer is not concerned about [ssh](https://searchsecurity.techtarget.com
 #### Unikernels avoid the complexity of Kubernetes
 Containers and their application, [Kubernetes](https://kubernetes.io/), have many problems, which is why they may not be around forever. 
 
-Containers have a possibility of losing the organization's databases. However, it is unlikely to happen with unikernels since one can pause, stop, restart and even live migrate databases with ease. Also there is no need to use third-party software to do any of the above tasks since they are regarded as plain Virtual Machines.
+Containers have a possibility of losing the organization's databases. However, it is unlikely to happen with unikernels since one can pause, stop, restart and even live migrate databases with ease. Also, there is no need to use third-party software to do any of the above tasks since they are regarded as plain Virtual Machines.
 
 Kubernetes face serious performance issues, and for this reason, most organizations are considering de-containerization.
 
@@ -80,7 +80,7 @@ A hypervisor sets up the Virtual Machine before it is loaded and makes [para-vir
 
 ### Conclusion
 
-Containers will fade at the end. This is because the technological paradigms constantly shift as the industry grows. 
+In my opinion, Containers will fade at the end. This is because the technological paradigms constantly shift as the industry grows. 
 
 Unikernels can be the next generation of cloud infrastructure because of their size, security, and performance. These features have led them to megatrends like microservices and serverless technology while combating data breaches, crypto-jacking, and other problems.
 
