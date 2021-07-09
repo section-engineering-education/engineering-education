@@ -45,7 +45,7 @@ Let us structure the table above in JSON format bearing in mind that JSON is for
 #### Modelling Embedded Data
 Let us visit SQL for a moment, in this case of data, some data fields require multiple values that cannot be easy to display if modeled in a single column for example `post category`. In SQL, we would solve this problem by creating a relational table.
 
-With MongoDB, this problem can easily be handled by embedded data using JSON as it supports embedded files, so it can embed related data and lists in the same document instead of creating a new table like below:
+With MongoDB, this problem can easily be solved by embedding data using JSON as it supports embedded files. It can embed related data and lists in the same document instead of creating a new table as shown below.
 ```json
 {
     "post category": ["Programming", "Coding", "States"]
