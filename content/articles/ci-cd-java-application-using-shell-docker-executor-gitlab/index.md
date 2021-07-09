@@ -6,7 +6,7 @@ url: /ci-cd-java-application-using-shell-docker-executor-gitlab/
 title: CI and CD in Java Application using Shell and Docker Executor on Gitlab
 description: This article takes the reader through implementing CI/CD using shell, docker and gitlab. The article uses code written in bash and focuses on Java Linux application, Shell and Docker executors.
 author: james-bundi
-date: 2020-07-09T00:00:00-11:00
+date: 2021-07-09T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
