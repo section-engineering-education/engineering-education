@@ -2,31 +2,31 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementation-of-ci-and-cd-in-java-application-using-shell-and-docker-executor-on-gitlab/
-title: Implementation of CI and CD in Java Application Using Shell and Docker Executor on Gitlab
+url: /ci-cd-java-application-using-shell-docker-executor-gitlab/
+title: CI and CD in Java Application using Shell and Docker Executor on Gitlab
 description: This article takes the reader through implementing CI/CD using shell, docker and gitlab. The article uses code written in bash and focuses on Java Linux application, Shell and Docker executors.
 author: james-bundi
-date: 2020-07-09T00:00:00-10:00
+date: 2020-07-09T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementation-of-ci-and-cd-in-java-application-using-shell-and-docker-executor-on-gitlab/hero.png
+  - url: /engineering-education/ci-cd-java-application-using-shell-docker-executor-gitlab/hero.png
     alt: example ci/cd image
 ---
-### Introduction
 With `GitLab Runner`, you may use a variety of executors to implement continuous integration(CI)/continuous delivery(CD). Shell and Docker, on the other hand, are more widely used, and we may easily configure a repository with these runners. These runners can be selected based on your requirements and available resources.
 <!--more-->
+### Introduction
 This article's code is written in bash and focuses on Java Linux application, Shell and Docker executors. A bash script can be used to build and test the application.
 
-Table of content:
-
+### Table of contents
 - [Understanding shell and docker executors](#understanding-shell-and-docker-executors)
 - [Java implementation on the Shell Executor](#java-implementation-on-the-shell-executor)
 - [Java implementation on the Docker Executor](#java-implementation-on-the-docker-executor)
 
 ### Understanding shell and docker executors
 **Shell Executor** is a basic executor that helps you build a solution locally on a PC that has GitLab Runner installed. Because GitLab Runner is installed on a Linux machine, the essential software must also be installed on the same.
+
 **Docker executor** is a strong tool that comes with a lot of software and may be accessed through an image. The benefit of using this executor is that we won't have to manually install any software because everything will be handled by Docker. Docker does this by obtaining the required image from Docker Hub. The negative side of this is that, for security reasons, this communication is restricted in some organizations. Shell Executor is the most ideal choice if so.
 
 ### Java implementation on the Shell Executor
