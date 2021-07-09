@@ -22,9 +22,9 @@ JSON can store various data types like strings, arrays, objects, and Binary JSON
 The aim of this article is to provide a clear understanding of how to handle JSON data in MongoDB. By the end of the article, the reader is expected to be able to structure, import-export, and save JSON data in MongoDB.
 
 ### Prerequisites
-- General knowledge of working with MongoDB
-- An basic understanding of JavaScript Object Notation
-- MongoDB installed on your computer
+- General knowledge of working with MongoDB.
+- An basic understanding of JavaScript Object Notation (JSON).
+- MongoDB installed on your machine.
 
 ### Structuring JSON data for use in MongoDB Database
 Let us say you want to store data for a blog page in MongoDB. First, you will need to have an idea of what your data will look like and how different fields will relate to each other. For instance, let us say these are the records you what to capture:
