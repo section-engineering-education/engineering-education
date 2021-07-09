@@ -144,7 +144,7 @@ db.students.find()
 ```
 
 ### Export JSON to MongoDB Database
-Now let us export the new file to JSON using the command:
+Now let us export the new file to JSON using the following command:
 ```shell
 mongoexport --db studentinfo --collection student --out d:\out.json --pretty
 ```
