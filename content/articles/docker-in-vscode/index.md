@@ -1,5 +1,21 @@
-Microservices and containers are the two major new software development trends nowadays.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-docker-in-vscode/
+title: Working with Docker in VS Code
+description: In this article, we will look at how we can intergrate and work with Docker containers and images in VS Code. We will use dockerize a simple Express.js server to show how we can work with Docker in VS Code.
+author: magdaline-kariuki
+date: 2021-07-09T00:00:00-05:18
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/working-with-docker-in-vscode/hero.png
+   alt: Docker VS Code Example Image
+---
+Microservices and containers are the two major new software development trends nowadays.
+<!--more-->
 A microservice is an architectural approach in which a system is divided into discrete services, each with a single, narrowly defined feature that is accessible to the rest of the system as well as external parties such as web and mobile apps via an API.
 
 A container is an excellent method to bundle your program, its dependencies, and settings into a single, portable image file.
@@ -138,7 +154,7 @@ To run the created image, open a terminal on the same directory and run the comm
 $ docker run -d -p 3000:3000 dockerserver
 ```
 
-The command above tells the Docker to run the container in detached mode. This way, you can re-use the terminal.The container operates on port 3000 and is locally mapped onto port 3000.
+The command above tells the Docker to run the container in detached mode. This way, you can re-use the terminal. The container operates on port 3000 and is locally mapped onto port 3000.
 
 You can access your now running web server by 'curling' <http://localhost:3000>.
 
@@ -162,3 +178,6 @@ By using the VS Code Docker extension, you can be able to do most of the Docker 
 - [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
 - [Docker Security - Best Practices to Secure a Docker Container](/engineering-education/best-practices-to-secure-a-docker-container/)
 - [Top 7 Docker Monitoring Tools](/engineering-education/top-7-docker-container-monitoring-tools/)
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
