@@ -1,8 +1,9 @@
-Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. Chatbots are used in many scenarios, ranging from menial tasks to more complex operations. Personal assistant chatbots can help in basic tasks and also serve as reminders. The most common use case of chatbots is social media platforms, as most people use them regularly.
-
+Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech [wikipedia](https://en.wikipedia.org/wiki/Chatbot). Chatbots can be utilized for things like: reminders, booking of appointments, and also on social media platforms.
+ 
 In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using python.
 
-[Telegram](https://www.telegram.org/) is a free and open-source, cross-platform, cloud-based instant messaging (IM) software. The service also provides end-to-end encrypted video calling, VoIP(voice over IP), file sharing, and several other features. 
+[Telegram](https://www.telegram.org/) is a free and open-source, cross-platform, cloud-based instant messaging (IM) software [wikepedia](https://en.wikipedia.org/wiki/Telegram_(software)). It provides video calling and file sharing amongst other features.
+ 
 
 
 ### Prerequisites
@@ -55,8 +56,6 @@ Now, create a virtual environment `env` by running the command below:
 ```bash
 $ python -m venv env
 ```
-
-Here, we tell Python to create the virtual environment in a folder named `env` in the current directory.
 
 On creation, activate the virtual environment using the following command:
 
