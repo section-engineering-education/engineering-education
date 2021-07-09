@@ -152,7 +152,7 @@ Template tags are more advanced than filters. They are powerful in that they can
 
 We are going to implement them in our `custom_tags.py` file.
 
-### Simple tags
+### Simple Tags
 These tags take any number of arguments and return a result after some processing. The simple tag is a function that takes one or more arguments, wraps it in a render function and registers it with the template system.
 
 We are going to do two examples on the simple tags. Our first simple tag will count the number of contacts we have. The second function will get the current date in `d/m/y` format.
