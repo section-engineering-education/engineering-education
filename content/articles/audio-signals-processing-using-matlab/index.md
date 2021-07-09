@@ -6,7 +6,7 @@ url: /audio-signals-processing-using-matlab/
 title: Audio Signal Processing in Matlab
 description: In this article, we will discuss the filtering methods for various signals. We will look at the graphic equalizer, echo effect, and flange effect. We will also look at the low pass filter which is used to remove white Gaussian noise from a signal.
 author: queenter-bruce
-date: 2021-07-09T00:00:00-05:30
+date: 2021-07-09T00:00:00-02:39
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
