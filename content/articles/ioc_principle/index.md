@@ -15,6 +15,21 @@ images:
     alt: Inversion of control principle cover image 
 ---
 
+
+
+In this article, you are going to learn the basics of inversion of control in Kotlin. Why it is important in great software design and how it is connected to dependency injection and the strategy pattern. You would get to see just how IoC makes your code less complex, flexible, and easily testable.
+
+### Prerequisites
+* Before we begin, you should have:
+* Basic knowledge of programming with Kotlin.
+* A Laptop
+* An  IDE. I will be using IntelliJ
+* Good spirits!
+
+
+Inversion of control makes its possible for a consumer of an object in a software to have more control. It gives it more flexibility and freedom to choose from other options.
+
+### Introduction
 Inversion of Control(IoC) is a software design principle. It helps to reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its main responsibility. IoC passes the control of an object’s creation, the flow of an application, etc. to a container or framework.
 
 IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and lifecycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
@@ -30,10 +45,17 @@ Before we look at some code, here are some things you should have in mind:
 
 ### 1. Coupling
 Coupling is a measure of how closely bound software modules are to one another. It is the degree to which changes made to a component force a need for a change in other components or modules. Tight coupling is when a change in component A requires a change in component B. Loose coupling means that components A and B are independent. Thus a change in component A would not affect B.
-Loose coupling is often a sign of testable, well-structured, maintainable, and readable software. Tight coupling leads to code fragility and code rigidity. Code fragility is the likelihood that a software will break in many places every single time there is a change. Code rigidity is the degree of difficulty in making changes to the software. 
+Loose coupling is often a sign of testable, well-structured, maintainable, and readable software. Tight coupling leads to code fragility and code rigidity. Code fragility is the likelihood that a software will break in many places every single time there is a change. Code rigidity is the degree of difficulty in making changes to the software.
+### Advantages of Loose Coupling:
+a. A loose coupled software can be easily evoled. This is because it encourages many changes, without breaking the existing code.
+b. Loose coupling enhances software agility. This is because it promotes iteration. You can quickly add a new feature or functionality.
+c. Loose coupling reduces technical debt.
 
 ### 2. Abstraction
 When you call something abstract, it means that it is incomplete or not clearly defined. Abstraction is a programming approach that hides implementation details. Revealing only the functionality (relevant operations) to the user. It is one of the basic concepts in object-oriented programming.
+### Advantages
+a. It simplifies programming complexity.
+b. It promotes the grouping of related classes and objects.
 
 ### 3. Single Responsibility Principle
 This principle states that every function, or class, or module, should have a single reason to change. They must have only one responsibility.
@@ -243,7 +265,9 @@ class CashmereLaundryBot: LaundryBot{
 
 See how the strategy pattern has made it easy to change the behavior of this class? Nice!
  
- 
+### Wrapping Up! 
+Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is particularly useful when developing reusable libraries, it is not appropraite in all use cases. It is important to know when to take advantage of the flexibility and freedom inversion of control brings, and when not to.
+
 It's been a long article, but I sure hope this helped you as much as it did me.
 Thank you!
  
