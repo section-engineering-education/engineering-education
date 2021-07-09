@@ -1,5 +1,5 @@
 ### Introduction
-MongoDB is a high-performance, document-oriented NoSQL database which came to light in the mid-2000s.Unlike SQL-based databases, MongoDB uses documents (records) and collections (tables) to store non-relational data. MongoDB database has grown in its use because of its scalability and ease of use.
+MongoDB is a high-performance, document-oriented NoSQL database which came to light in the mid-2000s. Unlike SQL-based databases, MongoDB uses documents (records) and collections (tables) to store non-relational data. MongoDB has grown in its use due to the scalability and its ease of use.
 
 JavaScript Object Notation (JSON) is a data exchange format solely based on JavaScript. JSON objects can easily get transferred from one system to another due to their compatibility with the majority of systems. JSON is simple and easy to use besides being independent of any language. For these reasons, JSON has a wide range of applications in programming and data representation.
 
