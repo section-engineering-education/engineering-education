@@ -112,7 +112,7 @@ Now to verify the import, run the command below to view the imported data:
 db.students.find().pretty()
 ```
 
-This command should fetch all objects that were in the JSON file that was imported as below:
+This command should fetch all objects from the JSON file that was imported as below:
 ```shell
 db.students.find()
 { "_id" : ObjectId("60db758c4a433597bcae61c0"), "student_number" : 1, "name" : "John Doe", "age" : 17, "Course" : "Computer Science" }
