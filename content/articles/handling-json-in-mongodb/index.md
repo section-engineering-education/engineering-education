@@ -35,7 +35,7 @@ Let us say we want to store data for a blog page in MongoDB. First, we'll need t
 | 3       | Post three | REST API tutorial | APIs, Data transfer, JavaScript | Jim Doe     | 08, 06, 2021 |
 
 #### Getting into JSON
-Let us structure the table above in JSON format bearing in mind that JSON is formatted as name or key-pair values. The field names and values are separated by a colon, the filename-value pairs are separated by commas. and a set of records are enclosed in curly brackets. For instance
+Let us structure the table above in JSON format bearing in mind that JSON is formatted as name or key-pair values. The field names and values are separated by a colon, the filename-value pairs are separated by commas, and a set of records are enclosed in curly brackets. For instance:
 ```json
 {
     "post id": 1, "post title": " post one"
