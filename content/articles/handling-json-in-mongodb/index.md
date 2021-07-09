@@ -198,7 +198,7 @@ Now if you navigate to your D drive, you should find your exported JSON file nam
 ### Conclusion
 In this article, we learned how to handle JSON data in the MongoDB database and the various operations that can be performed on JSON using MongoDB. Among the operations are structuring data for use in MongoDB, importing and exporting data from JSON to MongoDB, and vice versa.
 
-You can find the link for the JSON files [here.](https://github.com/salvador02/jsonfile)
+You can find the JSON files [here.](https://github.com/salvador02/jsonfile)
 
 ### Further Reading
 Now that you have an understanding of how to use JSON in MongoDB, you should be sure to check out these links to find out more on the topic:
