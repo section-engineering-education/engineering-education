@@ -200,7 +200,7 @@ In this article, we've learned how to handle JSON data in MongoDB and the variou
 You can find the JSON files [here.](https://github.com/salvador02/jsonfile)
 
 ### Further Reading
-Now that you have an understanding of how to use JSON in MongoDB, you should be sure to check out these links to find out more on the topic:
-- JSON and BSON: https://www.mongodb.com/json-and-bson
-- Mongoexport: https://docs.mongodb.com/manual/reference/program/mongoexport/
-- Mongoimport: https://docs.mongodb.com/manual/reference/program/mongoimport/
+Now that you have an understanding of how to use JSON in MongoDB, you can check out these links to find out more on this topic:
+- [JSON and BSON](https://www.mongodb.com/json-and-bson)
+- [Mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/)
+- [Mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/)
