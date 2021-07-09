@@ -196,7 +196,6 @@ Now if you navigate to your D drive, you should find your exported JSON file nam
 
 ### Conclusion
 In this article, we've learned how to handle JSON data in MongoDB and the various operations that can be performed on JSON using MongoDB. Among the operations are structuring data, importing and exporting data from JSON to MongoDB, and vice versa.
-
 You can find the JSON files [here.](https://github.com/salvador02/jsonfile)
 
 ### Further Reading
