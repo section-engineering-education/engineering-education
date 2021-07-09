@@ -63,7 +63,7 @@ For the case of post dates, each date has values for day, month, and year, below
 We just structured our JSON data for use in MongoDB. Let us get to the next step.
 
 ### Creating the JSON file
-First, we need to have our JSON file which we will import to the MongoDB database. So we will create a new folder called `project`. In the folder, create a new file and call it `file.json` then paste the snippets below into that file.
+First, we need to have our JSON file which we will import to the MongoDB database. So we will create a new folder called `project`. In the folder, create a new file and name it `file.json` then paste the code in the snippets below into that file.
 
 ```json
 [
