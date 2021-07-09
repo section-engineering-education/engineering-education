@@ -19,8 +19,7 @@ JSON can store various data types like strings, arrays, objects, and Binary JSON
 - [Further Reading](#further-reading)
 
 ### Goal
-The sole aim of this article is to provide a clear understanding of how to handle JSON data in the MongoDB database. By the end of the article, the reader is supposed to have known how to structure JSON data to use in MongoDB database, import-export, and save JSON data to a MongoDB database.
-Reading this article to the end should give the user a head start to using the MongoDB database with JSON efficiently for data handling, export, and import.
+The aim of this article is to provide a clear understanding of how to handle JSON data in MongoDB. By the end of the article, the reader is expected to be able to structure, import-export, and save JSON data in MongoDB.
 
 ### Prerequisites
 - General knowledge of working with MongoDB
