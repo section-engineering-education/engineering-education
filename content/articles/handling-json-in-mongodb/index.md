@@ -27,7 +27,7 @@ The aim of this article is to provide a clear understanding of how to handle JSO
 - MongoDB installed on your machine.
 
 ### Structuring JSON data for use in MongoDB Database
-Let us say you want to store data for a blog page in MongoDB. First, you will need to have an idea of what your data will look like and how different fields will relate to each other. For instance, let us say these are the records you what to capture:
+Let us say we want to store data for a blog page in MongoDB. First, we'll need to have an idea of what the data will look like and how different fields will relate to each other. For instance, let's say this is the record we want to capture:
 | post ID | post title | post body         | post category                   | post author | post date    |
 |---------|------------|-------------------|---------------------------------|-------------|--------------|
 | 1       | Post one   | An awesome post 1 | Programming, Coding, States     | John Doe    | 24, 08, 2020 |
