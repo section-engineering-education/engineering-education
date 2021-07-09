@@ -3,7 +3,7 @@ MongoDB is a high-performance, document-oriented NoSQL database which came to li
 
 JavaScript Object Notation (JSON) is a data exchange format solely based on JavaScript. JSON objects can easily get transferred from one system to another due to their compatibility with the majority of systems. JSON is simple and easy to use besides being independent of any language. For these reasons, JSON has a wide range of applications in programming and data representation.
 
-JSON can store various data types like strings, arrays, objects, and Binary JSON (BSON). What makes access to these data easy is the ability of various tools to export and import JSON documents to and from other systems using the various available tools as JSON makes use of key-value pair notation presumed to be the basic units of data.
+JSON can store various data types like strings, arrays, objects, and Binary JSON (BSON). What makes it easy to access data is the ability of various tools to export and import JSON documents between systems. JSON makes use of key-value pair notation presumed to be the basic units of data.
 
 ### Table of Contents
 - [Goal](#goal)
