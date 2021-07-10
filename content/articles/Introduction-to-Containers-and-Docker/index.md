@@ -1,19 +1,21 @@
 ### Introduction
+
 To comprehend what `Docker` is and why it is used, it is necessary to first comprehend what `containers` are and what problems they solve. Containers are completely isolated environments built on top of an existing operating system to provide a `virtual barrier` between the app running inside and the rest of the world. Docker, on the other hand, is a piece of software that allows us to manage the lifetime of these containers.
 
-Table of content:
+### Table of content
  
-- [Container terminlogies](#container-terminlogie)
+- [Container terminologies](#container-terminologies)
 
-- [Introduction to docker/docker engine](#introduction-to-docker/-docker-motor) 
+- [Introduction to docker/docker engine](#introduction-to-docker-/-docker-engine) 
  
 - [Reasons why we use dockers](#reasons-why-we-use-dockers)
 
-- [Docker Windows framework prerequisites and installations](docker-Windows-framework-necessities-and-establishments) 
+- [Docker Windows framework necessities and establishments](docker-windows-framework-necessities-and-establishments) 
 
 - [Conclusion](#conclusion) 
 
-### Container terminlogies
+### Container terminologies
+
 1. **Container**: A container is a Container Image that is installed during runtime. It's constructed on top of the Base machine. 
 2. **Container image**: A container image is a self-contained piece of software that contains all of the code, tools, and resources needed to execute.
 3. **Docker file**: It is a book record that contains directions for building a Docker picture.
@@ -80,4 +82,5 @@ For Docker work area application to run as planned, your PC ought to have the ac
 4. After completion of the installation process, click Finish and launch the Docker Desktop application.
 
 ### Conclusion
-We learned about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business these days in this article. I urge threader to dig deeper into docker to be a better person in software development.
+
+We learned about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business these days in this article. I urge the reader to dig deeper into docker to be a better person in software development.
