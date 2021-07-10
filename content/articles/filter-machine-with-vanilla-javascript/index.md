@@ -3,35 +3,29 @@ name: "Filter Machine with Javascript"
 description: "This is an app that can show participants how to implement and build a filter search bar in their applications using pure javascript"
 author: "@Taiwrash"
 ---
+In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla javascript.
 
-### Filter machine
+### Introduction
+By the end of the article, we should have an application that has a functional search bar as illustrated below:
 ![Sample Page](/filter-machine-with-vanilla-javascript/page.gif)
 
 This is the [Live Demo](https://filter-machine.taiwrash.repl.co) of the app and [Full Code](https://repl.it/@Taiwrash/filter-machine).
 
 ### Prerequisites
-- Good internet access
-- Basic knowledge of:
-  - HTML
-  - CSS
-  - Javascript
+Working knowledge of:
+- HTML
+- CSS
+- Javascript
 
-### What we are building
-In this workshop we will be building a filter bar which respond to user search in real time using vanilla javascript.
+This Project was develop on the [repl website](https://repl.it/) using `html/css/js` stack. Feel free to use it to follow along with the article.
 
-### The app features
-- Seacrh Area
-- List of Item to be Filtered (in this case a box containing letter of English Alphabets)
+Our code will be split into three distinct files:
+1. `HTML file (index.html)`: This contains all our html code
+2. `CSS file (style.css)`: This contains all our css code
+3. `SCRIPT file (script.js)`: This contains all the Javascript code
 
-### Where to write all the code?
-This Project was develop through the [repl website](https://repl.it/) chosing the `html/css/js` as language. It is easy to use, kindly sign up if you don't have an account. Our code in this workshop will be structured in three different file.
-
-1. `HTML file (index.html)`: This contain all our html code
-2. `CSS file (style.css)`: This contain all our css code
-3. `SCRIPT file (script.js)`: This will contain all the javascript code
-
-### HTML code
-Below are the simple and easy to understand html code that we will be using. It consist of default `html boilerplate` in which our `css file` and `javascript file` was linked. See full HTML code down
+### HTML
+The HTML code below consist of the default `html boilerplate` to which our `css` and `Javascript` files are linked.
 
 ```html
 <!DOCTYPE html>
@@ -98,22 +92,15 @@ Below are the simple and easy to understand html code that we will be using. It 
 </html>
 ```
 
-It's seems to be long, Right? It is so because there are repetition of `card` <div>. And it is very important to unnderstand a code before copy-paste it. Follow my explanation below.
+The above code contains:
+- The `HEAD` tag which houses the `title` and `CSS` file link. The `title` displays on our browser indicating the title of the page. The CSS link points directly to our CSS file and helps pass the set of rules in the CSS file to be applied to the HTML content.
+- The `main` tag. This contains the main content of our HTML page. Inside the main area we have the `header` tag which contains the header of our application.
+- The `h2` tag to describe our Application with the form that contain our search bar.
+- The `divs` with class attributes of `card` that are duplicated for every letter.
+- The `script` link that points to our Javscript code included just before the closing `</body>` tag.
 
-### Contents of the HTML file
-- It contain the `HEAD` tag which house the `title` and `css` file link. `title` display on our browser indicating the title of the page. The css link is pointing directly to our css file and it help pass the set of rule in the css file and apply it to the html content. Look like magic, right? It is not but it is interesting.
-
-- The `main area` tag: This is where all what is display to the users appears. inside the main area we have a header which represent the top part of our application
-
-- Follow by the `h2` tag to describe our Application with the form that contain our search bar. All in the `header tag`.
-
-- Lastly, we have the <divs> with class attributes of `card` and was duplicated for every letters.
-
-- A script link pointing to our javscript was included in just before the close </body> tag.
-
-### Contents of the CSS file
-- Clearing Default Style
-
+### CSS
+First, we clear the default `margin`, `padding` and `box-sizing` styling:
 ```css
 * {
   margin: 0;
@@ -122,10 +109,9 @@ It's seems to be long, Right? It is so because there are repetition of `card` <d
 }
 ```
 
-This is done to remove the default margin and padding of every element and to set the box-sizing to border-box, which controls the behavioural activities of every elements on the page. This prevents the default addition of margins and paddings to the width and height.
+We do this to prevent the default addition of margins and paddings to the width and height of elements; and to set the box-sizing to border-box, which controls the behavioural activities of every element on the page.
 
-- Styling Main Content area
-
+We then style the main content area:
 ```css
 main {
   width: 100vw;
@@ -135,10 +121,9 @@ main {
 }
 ```
 
-The width was set to the view width of the viewing device. It is display flex (Flex is a new feature in css that encourage and improve responsiveness of every web pages) [RWD] you can read more at CSS Flex on the official css website.
+We set the width to the view width of the viewing device. We then use Flexbox to achieve a responsive layout.
 
-- Styling the header
-
+We then style the header:
 ```css
 header {
   width: 100%;
@@ -154,10 +139,9 @@ header {
 }
 ```
 
-It is simple, abi? We set the width and height. We give the background color. The background is powerful to detect what we pass in whether it is an image or color or any other background property, it interpreted it. In this case interpreted it to be a color. If you wish you can also use image or anyother pattern or even `background-color` property, it will do the same thing.
+We set the width and height. We set the background color using the `background` property; the `background` property can take multiple options eg. an image, color etc. If you wish, you can use an image, any other pattern or even the `background-color` property, it will do the same thing.
 
-- Let's decorate the input i.e search bar
-
+We then decorate the search bar's input element:
 ```css
 input {
   width: 70%;
@@ -171,10 +155,9 @@ input {
 }
 ```
 
-Width was to the 70% of the header width, you can do the maths ): margin push it away from the `(<h2>)` tag on top. The little round corner was through the help of border-radius property
+We set the width to 70% of the header width. We add a margin to push it away from the `(<h2>)` tag above it. We add the rounded corner using the `border-radius` property.
 
-- Styling the cards
-
+We then style the cards:
 ```css
 .card {
   width: 200px;
@@ -191,10 +174,9 @@ Width was to the 70% of the header width, you can do the maths ): margin push it
 }
 ```
 
-This is the circle you see on the app which contain the English letters. `border-radius:50%` will turn a square to circle. Amazing, right? Other property was set and follow the same pattern as before.
+These are the circular cards containg the English letters. We set `border-radius: 50%` which makes the cards circular. The other properties follow the same pattern as before.
 
-- Error card style
-
+We then style the error card:
 ```css
 .card:last-child {
   font-size: 30px;
@@ -203,11 +185,12 @@ This is the circle you see on the app which contain the English letters. `border
 }
 ```
 
-The `:last-child` is a `CSS` pseudo class selector which help select last element of a particular child of an html elements. This card display when nothing match our search. Implementation will be done the javascript code.
+The `:last-child` is a `CSS` pseudo class selector which helps select the last child element contained within a parent element. We will display this card when nothing matches our user's search. The implementation will be done in the javascript code.
 
-### Responsive Web design(RWD) Style
-Developing web based app which is accessible through mobile and tablet is important as mobile devices are everywhere. There are many ways of doing this but we will be implementing one of them which is `media query`. See implementation below
+### Making the CSS responsive
+Developing a web based app that is accessible through mobile and tablet is important as mobile devices are everywhere. 
 
+There are many ways of doing this; we will be implementing responsiveness using a `media query`:
 ```css
 @media screen and (min-width: 768px) {
   header {
@@ -223,7 +206,9 @@ Developing web based app which is accessible through mobile and tablet is import
 }
 ```
 
-We only control the important part. The header will automatically increase in height at the point where the user screen is greater than `768px` and the search bar height was increased. Another important property of the css was also implemented using the flex property and the `flex-direction` was set to `column` to make the flex items (every contents) on header to display vertically.
+We will only control the important sections of our application. The header will automatically increase in height at the point where the user's screen is greater than `768px` and the search bar height was increases too. 
+
+Another important property is the flex property `flex-direction` which we set to `column` to make the flex items contained in the header to be displayed vertically.
 
 ### The app's Javascript Code 
 ```js
