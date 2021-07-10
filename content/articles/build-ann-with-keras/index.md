@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-ann-with-keras/
+title: Building an Artificial Neural Network with Keras
+description: In this article, you will learn how to build and train an Artificial Neural Network with Keras.
+author: iniabasi-affiah
+date: 2021-07-10T00:00:00-15:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/build-ann-with-keras/hero.png
+    alt: Build an ANN with Keras example image
+---  
+
 ![Hero Image](/engineering-education/build-ann-with-keras/hero.PNG)
 
 In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
