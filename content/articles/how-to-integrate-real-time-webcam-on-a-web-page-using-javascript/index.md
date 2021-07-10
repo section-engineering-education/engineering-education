@@ -196,6 +196,8 @@ Congratulations! We should successfully run our application, start and stop the 
 
 ![success](/engineering-education/how-to-integrate-real-time-webcam-on-a-web-page-using-javascript/result.png)
 
+You can [click here](https://github.com/Olanetsoft/webcam-with-javascript-demo) to check the complete code on GitHub.
+
 ### Conclusion
 
 In this tutorial, we learned about How to integrate WebCam using Javascript on a web page.
