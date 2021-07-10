@@ -102,3 +102,4 @@ Happy learning!
 - [Face Detection using Viola-Jones Algorithm in Matlab](https://www.section.io/engineering-education/face-detection-matlab/)
 
 ---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
