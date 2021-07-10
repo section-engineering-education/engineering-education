@@ -210,3 +210,7 @@ print(accuracy_score(y_test, y_pred))
 
 ### Conclusion
 In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. We got an accuracy of 86%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
