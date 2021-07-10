@@ -20,17 +20,17 @@ images:
 In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can keep them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
 
 ### Prerequisites
--	Basics of [Artificial Neural Network](https://towardsdatascience.com/neural-networks-basics-29cc093b82be)
--	[Google Colab](https://colab.research.google.com/) or Jupyter Notebook
+-	Basics of [Artificial Neural Network](https://www.section.io/engineering-education/introduction-to-neural-networks/)
+-	[Google Colab](https://colab.research.google.com/)
 -	Churn modeling dataset from [Kaggle](https://www.kaggle.com/adammaus/predicting-churn-for-bank-customers)
 
 ### Outline
 
--	Import Libraries
--	Data Pre-processing
--	Build and Visualize Model
--	Train Model
--	Make Predictions on New Customer
+-	[Import Libraries](#import-libraries)
+-	[Data Pre-processing](#data-pre-processing)
+-	[Build and Visualize Model](#build-and-visualize-model)
+-	[Train Model](#train-model)
+-	[Make Predictions on New Customer](#make-predictions-on-new-customer)
 
 ### Import Libraries
 Most of the libraries we will be using have been pre-installed on Google Colab. We import them.
