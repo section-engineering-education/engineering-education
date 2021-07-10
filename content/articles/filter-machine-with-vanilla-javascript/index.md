@@ -4,39 +4,33 @@ description: "This is an app that can show participants how to implement and bui
 author: "@Taiwrash"
 ---
 
-## Filter Machine
-
+### Filter machine
 ![Sample Page](/filter-machine-with-vanilla-javascript/page.gif)
 
 This is the [Live Demo](https://filter-machine.taiwrash.repl.co) of the app and [Full Code](https://repl.it/@Taiwrash/filter-machine).
 
-## Prerequisites
-
+### Prerequisites
 - Good internet access
 - Basic knowledge of:
   - HTML
   - CSS
   - Javascript
 
-## What we are Building
-
+### What we are building
 In this workshop we will be building a filter bar which respond to user search in real time using vanilla javascript.
 
-### The App features
-
+### The app features
 - Seacrh Area
 - List of Item to be Filtered (in this case a box containing letter of English Alphabets)
 
-## Where to write all the code?
-
+### Where to write all the code?
 This Project was develop through the [repl website](https://repl.it/) chosing the `html/css/js` as language. It is easy to use, kindly sign up if you don't have an account. Our code in this workshop will be structured in three different file.
 
 1. `HTML file (index.html)`: This contain all our html code
 2. `CSS file (style.css)`: This contain all our css code
 3. `SCRIPT file (script.js)`: This will contain all the javascript code
 
-## HTML Code
-
+### HTML code
 Below are the simple and easy to understand html code that we will be using. It consist of default `html boilerplate` in which our `css file` and `javascript file` was linked. See full HTML code down
 
 ```html
@@ -106,8 +100,7 @@ Below are the simple and easy to understand html code that we will be using. It 
 
 It's seems to be long, Right? It is so because there are repetition of `card` <div>. And it is very important to unnderstand a code before copy-paste it. Follow my explanation below.
 
-## Content of the HTML file
-
+### Contents of the HTML file
 - It contain the `HEAD` tag which house the `title` and `css` file link. `title` display on our browser indicating the title of the page. The css link is pointing directly to our css file and it help pass the set of rule in the css file and apply it to the html content. Look like magic, right? It is not but it is interesting.
 
 - The `main area` tag: This is where all what is display to the users appears. inside the main area we have a header which represent the top part of our application
@@ -118,8 +111,7 @@ It's seems to be long, Right? It is so because there are repetition of `card` <d
 
 - A script link pointing to our javscript was included in just before the close </body> tag.
 
-## Content of the CSS file
-
+### Contents of the CSS file
 - Clearing Default Style
 
 ```css
@@ -213,8 +205,7 @@ This is the circle you see on the app which contain the English letters. `border
 
 The `:last-child` is a `CSS` pseudo class selector which help select last element of a particular child of an html elements. This card display when nothing match our search. Implementation will be done the javascript code.
 
-## RWD (Responsive Web Design) Style
-
+### Responsive Web design(RWD) Style
 Developing web based app which is accessible through mobile and tablet is important as mobile devices are everywhere. There are many ways of doing this but we will be implementing one of them which is `media query`. See implementation below
 
 ```css
@@ -234,10 +225,7 @@ Developing web based app which is accessible through mobile and tablet is import
 
 We only control the important part. The header will automatically increase in height at the point where the user screen is greater than `768px` and the search bar height was increased. Another important property of the css was also implemented using the flex property and the `flex-direction` was set to `column` to make the flex items (every contents) on header to display vertically.
 
-### That is all for CSS and HTML.
-
-## Javascript Code Explained below
-
+### The app's Javascript Code 
 ```js
 const input = document.querySelector("input");
 const notFound = document.getElementById("not-found");
@@ -344,13 +332,10 @@ input.addEventListener("keyup", filterFunction);
 A `keyup` event listerner was set on the input which respond when user release hand from the keyboard and function created in line 3 was called.
 ![Demo](/filter-machine-with-vanilla-javascript/congrat.gif)
 
-## We Are Done as Simple as That
-
+### Conclusion
 Below is what we just built, isn't amazing?
 
 ![Demo](/filter-machine-with-vanilla-javascript/page.gif)
-
-## What next?
 
 What you just built can be implemented in various real life projects and can be improve/ Suggestions on some improvement can be seen below.
 
@@ -360,8 +345,7 @@ What you just built can be implemented in various real life projects and can be 
 
 3.  Creativity is the limit of this app as it can be implemented on any application that need filter as its elements.
 
-## See Other Implementations Below
-
+### Further applications 
 1.  [worldcovid19app-app](https://taiwrash.github.io/worldcovid19cases)
 
 2.  [tech-resumie-app](https://tech-resumie.herokuapp.com)
