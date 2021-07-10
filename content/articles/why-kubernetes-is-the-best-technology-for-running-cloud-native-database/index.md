@@ -1,11 +1,13 @@
-﻿### Introduction
-For a long time, every organization’s dream is to migrate its workload to the cloud. However, the statistics from most IT organizations still show that there is still much work to be done.
+﻿For a long time, every organization’s dream is to migrate its workload to the cloud. However, the statistics from most IT organizations still show that there is still much work to be done.
 
 Although databases in the cloud have been around for a long time, the challenges with persisting and moving the cloud data have led to slow cloud adoption.
 
 For this reason, the demand for data infrastructure that takes full advantage of cloud computing has been on the rise.
 
-A [cloud-native database](https://www.networkcomputing.com/cloud-infrastructure/what-are-cloud-native-databases-and-why-should-you-use-them) has to be scalable, flexible, resilient, observable, and supports automation. A good example will be the [K8ssandra project](https://k8ssandra.io/get-started/), which bundles [Apache Cassandra](https://cassandra.apache.org/) and its supporting tools into production-ready Kubernetes deployment.
+### An overview of cloud native databases
+A [cloud-native database](https://www.networkcomputing.com/cloud-infrastructure/what-are-cloud-native-databases-and-why-should-you-use-them) is a service built, deployed and delivered to the client through a cloud platform. This cloud nativity makes the database unique compared to other databases types. It is implemented by installing the database software on top of a cloud infrastructure.
+
+It has to be scalable, flexible, resilient, observable, and supports automation. A good example will be the [K8ssandra project](https://k8ssandra.io/get-started/), which bundles [Apache Cassandra](https://cassandra.apache.org/) and its supporting tools into production-ready Kubernetes deployment.
 
 A simple confusion arises if it is a must that any database running on Kubernetes be considered cloud-native. [Kubernetes](https://kubernetes.io/) was initially developed for [stateless workloads](https://dzone.com/articles/kubernetes-and-running-stateful-workloads), but with recent developments such as persistent volumes and stateful sets, it is now possible to run [stateful workloads](https://dzone.com/articles/kubernetes-and-running-stateful-workloads).
 
@@ -14,6 +16,8 @@ The longtime DevOps practitioners who were at first skeptical about running data
 For the databases to be more cloud-native as they should be, there is a great need to embrace what Kubernetes brings to the table.
 
 A truly cloud-native approach has to be followed, meaning adopting vital elements of the Kubernetes design paradigm. For example, a database that can work effectively on Kubernetes can be considered cloud-native.
+
+Lets look at the design principles of Kubernetes to understand why it is the best technology for running cloud native databases.
 
 ### Kubernetes Design Principles
 #### Principle 1: Leverage Computing, Networking, and Storage
@@ -48,14 +52,14 @@ The K8ssandra project provides metrics collection by using [Kube-Prometheus-Stac
 #### Principle 4: Making the configuration secure
 Networking in Kubernetes should be ensured to be secure all the time; ports have to be precisely exposed to be accessed externally to a pod. It sets an important criterion when deploying the database on how every control plane and data plane interface is exposed, also the interfaces that should be exposed through the Kubernetes service.
 
-In Kassandra, for every `CassandraDataCenter` resource, the `CQL` access should be exposed as a service. The APIs for metrics and management is accessed by the `cass-operator` and the [Prometheus Service Monitor](https://medium.com/kubernetes-tutorials/simple-management-of-prometheus-monitoring-pipeline-with-the-prometheus-operator-b445da0e0d1a) in every Cassandra node.
+In K8ssandra, for every `CassandraDataCenter` resource, the `CQL` access should be exposed as a service. The APIs for metrics and management are accessed by the `cass-operator` and the [Prometheus Service Monitor](https://medium.com/kubernetes-tutorials/simple-management-of-prometheus-monitoring-pipeline-with-the-prometheus-operator-b445da0e0d1a) in every Cassandra node.
 
 Kubernetes comes with features that allow sharing of encryption keys and the configuration of administrative accounts. For example, most K8ssandra deployments prefer changing Cassandra's default admin account details with a new admin username and password.
 
 #### Principle 5: Preferring declarative configuration
 With the declarative approach in Kubernetes, the desired state of resources and controllers are specified. It assists in the manipulation of the underlying infrastructure to achieve the specified state.
 
-The `cass-operator` specifies the required number of nodes in a given cluster and helps manage the details of adding new nodes for scaling up and choosing which nodes to remove to scale down.
+The `cass-operator` specifies the required number of nodes in a given cluster. It also helps to manage the details of adding new nodes for scaling up and choosing which nodes to remove to scale down.
 
 The next phase of operators ought to set the rules for stored data size, the number of transactions per second, or even both.
 
@@ -66,4 +70,4 @@ It is clear enough that Kubernetes provides the best practices for cloud-native 
 
 Solutions for integrating Kubernetes clusters are still in the development phase, but in the future, it will be easy to manage multi-datacenter Cassandra clusters in Kubernetes.
 
-Cassandra community is constantly working to make more extensions for management and metrics to be part of the core Apache project so that Cassandra will be more cloud-native to everyone and an out-of-the-box solution.
+Cassandra community is constantly working to make more extensions for management and metrics to be part of the core Apache project. This will make Cassandra be more cloud-native to everyone and become an out-of-the-box solution.
