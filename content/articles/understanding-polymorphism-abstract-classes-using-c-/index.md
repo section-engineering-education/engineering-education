@@ -1,5 +1,3 @@
-### Introduction
-
 According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism) **Polymorphism** is one of the main concepts in object-oriented programming, after encapsulation and inheritance. *Polymorphism* is a Greek word that means "many-shaped". In any program, objects of a derived class can be used as objects of a base class using functions parameters and collections or arrays.
 
 **Polymorphism** is a very helpful concept when it comes to a single abstract idea used in different ways and shapes. With polymorphism, you can define a single abstract class and reshape it in different ways to suit your methods & ideas. 
@@ -23,7 +21,7 @@ If you're new to Inheritance, you should check this tutorial that would help you
 
 Abstract classes are very simple and generic, and they are always used as base classes. Abstract classes have no meaning on their own, derived classes must be defined to complete the meaning, and they could contain abstract methods or abstract properties.
 
-Basically, *abstract* classes will never be used if not inherited, because they have no meaning on their own, and their variables & methods are useless if not overridden by another inherited classes.
+Basically, *abstract* classes will never be used if not inherited, because they have no meaning on their own, and their variables & methods are useless if not overridden by other inherited classes.
 
 The following example will explain how we can define an abstract class to make a Payroll System Using Polymorphism.
 
