@@ -72,15 +72,21 @@ The first step is the learning of the algorithm. It makes use of a data-set of i
 The following image illustrates the above conversions:
 [Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/lph_operation.png)
 
+<<<<<<< HEAD
 [Image source](https://i.stack.imgur.com/ZU3aC.png)
 
+=======
+>>>>>>> 29329c66910a2adf559b7120dd71cd818283de3d
 2.	**To Extract Histograms:** The image obtained in step is divided into multiple grids, with the help of the Grid parameters `X` and `Y`. This image is in grayscale, each of the histograms of each of the grids is to represent the intensity of the occurrences of each pixel. Each histogram is then combined to create a new histogram that represents the attributes of the original image.
 
 The following image illustrates the above exactraction:
 [Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/extracting_histograms.jpg)
 
+<<<<<<< HEAD
 [Image](https://www.semanticscholar.org/paper/Face-Recognition-based-Attendance-System-using-Haar-Chinimilli-A./cd4429cac9a4d9c99796f990974dd9a9ff88f1f8/figure/4)
 
+=======
+>>>>>>> 29329c66910a2adf559b7120dd71cd818283de3d
 3.	**Accurate face recognition:** Each one made a histogram for an image in the training data set. Two histograms are compared to output the image with the closest histogram matches to an input image. This output is the ID or name of the image. This algorithm also returns a **`confidence`**' measurement which is the calculated distance. The correctness of the algorithm in recognizing the image is estimated automatically by the `confidence` and the threshold. The correctness is indicated by a confidence value that is lower than the defined threshold.
 **NOTE:** A higher `confidence` value means that the histograms are far apart hereby affecting the correctness of the recognition. A smaller `confidence` value however, indicates that the histograms are closely packed together, hence likely accurate.
 
