@@ -6,7 +6,7 @@ url: /pure-mlp-architecture-for-computer-vision/
 title: A Pure MLP Architecture for Computer Vision
 description: In this article, we will explore how pure MLP architectures are able to compete with state-of-the-art models on image classification benchmarks.
 author: willies-ogola
-date: 2021-07-11T00:00:00-05:00
+date: 2021-07-11T00:00:00-07:05
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,37 +14,31 @@ images:
   - url: /pure-mlp-architecture-for-computer-vision/hero.png
     alt: MLP example image
 ---
-Convolutional Neural Networks (CNNs) have been used over the years to solve problems in computer vision. But, over the last year, we've seen transformers with self-attention modules replacing CNNs. A good example is the Vision Transformer.
-<!--more-->
-
-### Contents
-1. [Prerequisites](#prerequisites)
-2. [Introduction](#introduction)
-3. [Brief overview of MLP](#brief-overview-of-mlp)
-4. [The MLP-Mixer architecture](#the-mlp-mixer-architecture)
-5. [Experiment and results](#experiment-and-results)
-6. [Wrapping Up](#wrapping-up)
-7. [References](#references)
-
-### Prerequisites
-Before reading this article, I recommend that you first have a read on my two previous articles. The [Vision Transformer](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/) and the [Basics of Convolution Neural Networks](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/) articles. This article builds upon concepts introduced in those articles. 
-
-### Introduction
 Convolutional Neural Networks (CNNs) have been used over the years to solve problems in computer vision. But, over the last year, we've seen transformers with self-attention modules replacing CNNs. A good example is the Vision Transformer. 
-
+<!--more-->
 Can we do away with both CNNs and attention mechanisms to only using Multi-Layer Perceptrons (MLPs) to solve computer vision problems in machine learning?
 
 No CNNs, no self-attention mechanisms, only MLPs?
 
 Well. This [paper](https://arxiv.org/abs/2105.01601) by Google shows that neither CNNs nor self-attention modules are necessary to solve computer vision tasks. As this article will show, it's impressive to see that this pure MLP architecture attains competitive scores compared to state-of-the-art models on image classification benchmarks.
 
-This article will explain how they achieve this. But before I explain the model, let's first understand the working of an MLP.  
+This article will explain how they achieve this. But before I explain the model, let's first understand the working of an MLP.
+
+### Table of contents
+1. [Prerequisites](#prerequisites)
+2. [Brief overview of MLP](#brief-overview-of-mlp)
+3. [The MLP-Mixer architecture](#the-mlp-mixer-architecture)
+4. [Experiment and results](#experiment-and-results)
+5. [Wrapping Up](#wrapping-up)
+6. [References](#references)
+
+### Prerequisites
+Before reading this article, I recommend that you read my two previous articles. The [Vision Transformer](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/) and the [Basics of Convolution Neural Networks](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/) articles. This article builds upon concepts introduced in those articles.   
 
 ### Brief overview of MLP
 MLPs have been around since the 1980s. They have been used as classifier algorithms and to solve simple regression problems. They have found applications in image recognition, machine translation, and speech recognition.
 
 MLPs borrow their main concept from the human brain. The general architecture of an MLP consists of three layers:
-
 1. The input layer 
 2. The hidden layer 
 3. The output layer. 
@@ -72,7 +66,6 @@ Let's now take a look at the MLP architecture.
 *[Image Source: GitHub](https://github.com/google-research/vision_transformer#installation)*
 
 The MLP-Mixer architecture consists of three main components:
-
 1. Per-patch linear embedding.
 2. Mixer layers.
 3. A classification head.
@@ -85,11 +78,11 @@ These patches are linearly projected through a projection layer. This projection
 #### The Mixer layers
 The mixer layer contains two types of MLP layers. It is important to note that the idea of these two layers is borrowed from CNN.
 
-1. Channel-mixing MLP
+##### 1. Channel-mixing MLP
 
 - This MLP allows for communication between different channels. It operates on each location independently and takes individual rows of the table as inputs. It only focuses on a single patch in the image then processes the channels.
 
-2. Token-mixing MLP
+##### 2. Token-mixing MLP
 
 - This MLP allows for the communication between different spatial locations (tokens) in an image. Remember the tokens are the image patches. It operates on each channel independently and takes individual columns of the table as inputs.
 
