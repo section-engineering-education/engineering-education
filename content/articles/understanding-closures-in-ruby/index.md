@@ -1,6 +1,6 @@
 ### Introduction
 
-Closure in computer science is a technique for implementing first-class function with free variables bound in the lexical environment. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
+Closure in computer science is a piece of code that carries its creation context around with it. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
 
 ### Prerequisites
 
@@ -26,13 +26,14 @@ In order to get a clear picture of what closures are we need to understand _firs
 
 **A first-class function** is a function that can be treated as an object and passed as a parameter to another function.
 
-**Free variable** is a variable that is defined in the parent scope of function but used inside it.
+**Free variable** is a variable that is not declared in a function parent scope but can be accessed in the function.
 
-**Lexical scoping** answers the question _what is the value of this variable at this line_, refered to as _"eyeball scoping"_. The value of _variable x_ is given by the _innermost_ statement that _declares x_.
+**Lexical scoping** Scope refers to the visibility of variables, lexical scope also _"eyeball_scoping"_ is the ability to identify a variable in a piece of code by reading through the code.
 
 Try this in your interactive console
 
 ```rb
+
 parent_scope = "I'm available everywhere"
 
 3.times do
@@ -54,20 +55,20 @@ So it is safe to define closures as a block of code that can be used later and s
 
 ## Closure use-cases
 
-1. Closures preserve the partial running state of a program, thus can be used to simulate classes.
-1. Closures are used to implement callbacks in Ruby.
+1. Closures can be used to simulate classes in Ruby.
+2. Closures are used to implement callbacks in Ruby.
 
 To have a good understanding of our topic, we will take a tour around Ruby blocks and callable objects.
 
 ## Blocks
 
-Blocks are used to capture code that can be passed into methods as arguments and executed later.
+Blocks are used to capture code that can be passed as method arguments and executed later.
 
 In Ruby, blocks can be delimited by _curly braces_ or by _do/end_ keyword pair, they also act as anonymous functions.
 
 We are going to explore the **yield** keyword and **block_given?()** method, explore block variables and how they relate to blocks acting as closures.
 
-Encapsulating behaviour into blocks and passing it into methods is a powerful technique in programming.
+Encapsulating behavior into blocks and passing it into methods is a powerful technique in programming.
 
 Yield inside a block simply means _"execute the block"_
 
@@ -93,32 +94,39 @@ do_it
 
 ```
 
-## Relationship between blocks and closures
+## Relationship between closures and blocks
 
-Blocks act's as **anonymous functions** in ruby, it carries around the execution context in which it was defined and carry around a bunch of code to be called only when yielded.
+Blocks act's as **anonymous functions** in ruby, it carries around the execution context in which it was declared.
 
-Blocks local variables are a way to ensure that the variables within a block don't override another outer variable of the same name, circumventing the variable capturing behavior of a closure.
-
-```rb
-x = "outside x"
-
-1.times { x = "modified from the outside block" }
-```
-
-In the code above the outer x is modified by the block, the block closes over the outer x and has no reference to it. This can be avoided with:
+Block contains local variables this eliminates variable collusion in case one gives a variable in the global scope same name as that in the block scope.
 
 ```rb
-x = "outside x"
+x = "Global variable"
 
-1.times { |;x| x = "modified from the outside block" }
+1.times { x = "Block variable... conflicts and is modified" }
 
 ```
 
-Blocks have access to variables that already exist. However, block parameters behave differently from non-parameter variables.
+```rb
+puts x #Block variable... conflicts and is modified
+```
 
-If you have a variable of a given name in scope and also use the same name as one of your block parameters, then the two variables are not the same as each other.
+When you run the snippet above you will get a different output as the one expected this because we have defined a variable in the global scope with the same name as that in the block scope.
 
-Blocks serve as the body of anonymous function objects and those objects preserve the local variables that are in scope at the time of their creation.
+There is a simple trick one can use to avoid this behaviour, provide a block parameter in the decalred block.
+
+```rb
+x = "Global variable"
+
+1.times { |;x| x = "Block parameter prevents variable overiding" }
+
+```
+
+```rb
+puts x #Global variable
+```
+
+This clearly illustrates that you can define a variable with the same name in the parent scope of the block and another in it's local scope and they will be differentiated.
 
 ## Procs
 
@@ -134,7 +142,7 @@ You can call Procs in four different ways
 - Threeequals
 - Lambdas
 
-You create a Proc object by instantiating the `Proc` class, including a code block:
+A proc object is created upon instantiation of the `Proc` class, providing it with a code block:
 
 ```rb
 pr = Proc.new { puts "Inside a Proc's block" }
@@ -144,7 +152,7 @@ When you call the proc `pr.call`, the code block becomes the body of the proc an
 
 Procs have a lot of similarities with lambdas and lamdas are procs. However, a proc is not a lambda.
 
-Invoking lambdas is identical to invoking Procs, with the exception of the lambda keyword.
+You can create a lambda same way as you create a proc object but this time you get to use the lambda keyword.
 
 ```rb
 lambda { |x, y| x + y }.call(x, y)
@@ -161,12 +169,12 @@ Ruby offers an alternative way of calling lambdas, stabby lambdas
 
 #### Arity
 
-Lambdas unlike procs expect an exact number of arguments to be passed. For Procs unassigned arguments are given nil and extra arguments are silently ignored.
+Lambdas unlike procs expect an exact number of arguments to be passed.
 
 ```rb
-l = lambda { |x, y| puts "x: #{x}, y: #{y}" }
+l = lambda { |a, b| puts "x: #{a}, y: #{b}" }
 
-p = proc { |x, y| puts "x: #{x}, y: #{y}" }
+p = proc { |a, b| puts "x: #{a}, y: #{b}" }
 
 ```
 
@@ -185,7 +193,9 @@ p.call("Ruby")
 
 ```
 
-Proc does not throw an exception, let's try the same trick with lambdas
+Proc does not throw an exception, procs have no restrictions on argument.
+
+Let's try the same trick with lambdas
 
 ```rb
 l.call(4)
@@ -196,14 +206,15 @@ Unlike Proc lambda is unhappy with the trick. This also happens when we get to s
 
 #### Return semantic
 
-Proc returns from the context it was created. it is advised to use lambdas because the return semantics of lambdas resemble the normal behavior of methods.
+Proc always return from it's creation context, thus not a recommended choice.
+Lambda is preffered over procs since it has the same bahavioral pattern as normal methods.
 
 ```rb
 class ReturnSemantic
-  def method_that_calls_proc_or_lambda(procy)
-    puts "Calling #{proc_or_lambda(procy)}"
-    procy.call
-    puts "#{proc_or_lambda(procy)} gets called"
+  def method_that_calls_proc_or_lambda(callable_object)
+    puts "Calling #{proc_or_lambda(callable_object)}"
+    callable_object.call
+    puts "#{proc_or_lambda(callable_object)} gets called"
   end
 
   def proc_or_lambda(proc_like_thing)
@@ -212,16 +223,16 @@ class ReturnSemantic
 end
 ```
 
-`method_that_calls_proc_or_lambda()` takes a proc or lambda, prints out a message then invokes the proc or lambda. Depending on how the proc or lambda returns the final puts() statement will execute.
+`method_that_calls_proc_or_lambda()` is a method responsible of passing a callable object as an argument, it invokes the callable object expecting return values.The values retuned from the method call will differentiate if the callable object is a proc or a lambda.
 
-`proc_or_lambda()` is a tiny helper function that tells us if `proc_like_thing()` is a lambda of proc.
+`proc_or_lambda()` is also a method that uses a ternary operator to identify if the argument passed in is a proc or a lambda.
 
 ```rb
 c = ReturnSemantic.new
 c.method_that_calls_proc_or_lambda lambda { return }
 ```
 
-With a lambda, the second puts() statement is executed
+When one provide a lambda as a parameter, the method will return the last execution of the puts statement.
 
 Let's try it with a Proc.
 
@@ -230,7 +241,7 @@ c = ReturnSemantic.new
 c.method_that_calls_proc_or_lambda proc { return }
 ```
 
-Returns a `LocalJumpError`, implying that a Proc always returns from the context it was created. In our case, Proc was created in the _main context_ which means returning from the main context which is the top-most level of our program and it's impossible.
+Returns a `LocalJumpError`.
 
 ### Conclusion
 
