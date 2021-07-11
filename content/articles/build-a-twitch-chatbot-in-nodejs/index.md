@@ -54,7 +54,7 @@ Some of the basics needed for the tutorial include the following:
 ### What is a chatbot
 Let's start with this interesting question.
 
-![Chatbot](/engineering-education/Build-a-Twitch-Chatbot-in-Node.js/chatbot.png)
+![Chatbot](/engineering-education/build-a-twitch-chatbot-in-nodejs/chatbot.png)
 
 A `Chat-Bot` is an application with the capability to conduct online chat via text messages, speech, or even videos. It can have preset conversations input and their expected outputs or can use AI to create new depending on the matters. Most are not autonomous hence a human being is always close in case of any issues in which it won't understand.
 
@@ -100,7 +100,7 @@ Make sure your status is set to `Online` to avoid being seen as inactive by your
 
 Now, click on `Channel` as shown in the image below:
 
-![Channel](/engineering-education/Build-a-Twitch-Chatbot-in-Node.js/channel.png)
+![Channel](/engineering-education/build-a-twitch-chatbot-in-nodejs/channel.png)
 
 On the channel tab, you will be able to see if your channel is _Live_ and the content it is broadcasting or _Offline_. You can also customize your channel depending on your preferences.
 
@@ -119,7 +119,7 @@ Just visit it and we shall do the following:
 - Click on 'Go live' to start the online stream to your viewers.
 - On another tab, open up Twitch and access your account. Navigate over to the channel tab and see what you are streaming to your viewers from there. You can see the chats and also explore additional features.
 
-![streamyard](/engineering-education/Build-a-Twitch-Chatbot-in-Node.js/streamyard.png)
+![streamyard](/engineering-education/build-a-twitch-chatbot-in-nodejs/streamyard.png)
 
 ### Obtain Bot OAuth key
 There are two ways in which our bot could access a channel. These are:
@@ -415,7 +415,7 @@ john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
 
 It will look like this:
 
-![Live demo](/engineering-education/Build-a-Twitch-Chatbot-in-Node.js/live-demo.png)
+![Live demo](/engineering-education/build-a-twitch-chatbot-in-nodejs/live-demo.png)
 
 ### Further Practice
 - Try to make the chatbot using other languages and frame which might suit your need.
