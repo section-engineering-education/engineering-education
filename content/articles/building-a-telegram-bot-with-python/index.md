@@ -1,5 +1,21 @@
-Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. [Chatbots](https://en.wikipedia.org/wiki/Chatbot) can be utilized for things like reminders, booking of appointments, and also on social media platforms.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-a-telegram-bot-with-python/
+title: Building a simple Telegram bot using Python
+description: This article will be an introduction to building telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
+author: shuaib-oseni
+date: 2021-07-11T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-telegram-bot-with-python/hero.png
+    alt: Telegram bot Image
+---
+Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. [Chatbots](https://en.wikipedia.org/wiki/Chatbot) can be utilized for things like reminders, booking of appointments, and also on social media platforms.
+<!--more-->
 In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using python.
 
 [Telegram](https://www.telegram.org/) is a [free and open-source](https://en.wikipedia.org/wiki/Telegram_(software)), cross-platform, cloud-based instant messaging (IM) software. It provides video calling and file-sharing amongst other features.
