@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /pure-mlp-architecture-for-computer-vision/hero.png
+  - url: /engineering-education/pure-mlp-architecture-for-computer-vision/hero.png
     alt: MLP example image
 ---
 Convolutional Neural Networks (CNNs) have been used over the years to solve problems in computer vision. But, over the last year, we've seen transformers with self-attention modules replacing CNNs. A good example is the Vision Transformer. 
