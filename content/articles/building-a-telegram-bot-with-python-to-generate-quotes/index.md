@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-telegram-bot-with-python/
+url: /engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/
 title: Building a Telegram bot using Python to generate random quotes
 description: This article will be an introduction to building telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
 author: shuaib-oseni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-telegram-bot-with-python/hero.png
+  - url: /engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/hero.png
     alt: Telegram bot Image
 ---
 Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. [Chatbots](https://en.wikipedia.org/wiki/Chatbot) can be utilized for things like reminders, booking of appointments, and also on social media platforms.
@@ -35,24 +35,24 @@ Click on the search icon in Telegram, then, type `@botfather` in the search bar.
 
 BotFather is the official bot created by Telegram to facilitate bot creation.
 
-![BotFather](/engineering-education/building-a-telegram-bot-with-python/bot-father.png)
+![BotFather](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/bot-father.png)
 *Creating Bot father in Telegram*
 
 Now, click on the start button to start a conversation. You should get the following interface:
 
-![start conversation](/engineering-education/building-a-telegram-bot-with-python/start-bot-father.png)
+![start conversation](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/start-bot-father.png)
 *Starting conversation with Bot father*
 
 Type `/start` to get started.
 
 Next, we create the bot by running `/newbot` command.
 
-![create](/engineering-education/building-a-telegram-bot-with-python/create.png)
+![create](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/create.png)
 *Create new bot*
 
 Next, we type in our preferred name and username for the bot.
 
-![BothFather](/engineering-education/building-a-telegram-bot-with-python/botname.png)
+![BothFather](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/botname.png)
 *Choosing bot name*
 
 Now, we copy our access token and save it somewhere. Remember to properly secure the access token, as it serves as your bot password.
@@ -80,7 +80,7 @@ source env/bin/activate
 
 Next, we need to create a Telegram group and add our bot as a member.
 
-![Add bot to group](/engineering-education/building-a-telegram-bot-with-python/add.png)
+![Add bot to group](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/add.png)
 *Add members to Bot*
 
 Next, we need to get the Chat ID, we can do this by sending this command as a message on the Telegram group:
@@ -99,7 +99,7 @@ BOT_TOKEN = the token we copied earlier
 
 This returns a JSON response, something like a python dictionary that contains our chat id.
 
-![json](/engineering-education/building-a-telegram-bot-with-python/json.png)
+![json](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/json.png)
 *JSON containing Chat ID*
 
 Now, we create a new python file named `bot.py` and add the following lines of code in it:
@@ -137,7 +137,7 @@ Now, let's test our bot by running our python file in the terminal:
 python bot.py
 ```
 
-![programming quotes](/engineering-education/building-a-telegram-bot-with-python/message.png)
+![programming quotes](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/message.png)
 *Printing a quote every 20 seconds*
 
 Hurray, it works!
@@ -175,7 +175,7 @@ dispatcher.add_handler(quotes_handler)
 
 Now, let's run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
 
-![random quotes](/engineering-education/building-a-telegram-bot-with-python/random.png)
+![random quotes](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/random.png)
 *Bot fetching random quote using an API*
 
 ### Conclusion
