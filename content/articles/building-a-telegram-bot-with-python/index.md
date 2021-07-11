@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/building-a-telegram-bot-with-python/
-title: Building a simple Telegram bot using Python
+title: Building a Telegram bot using Python to generate random quotes
 description: This article will be an introduction to building telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
 author: shuaib-oseni
 date: 2021-07-11T00:00:00-20:00
