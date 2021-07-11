@@ -16,7 +16,7 @@ In this tutorial, we will start by building a simple machine learning model, whi
 1. You must have a good understanding of Python
 2. You must have a good working knowledge of machine learning models
 3. You must have docker installed in your machine.
-4. You must have Kubernetes
+4. You must have Kubernetes installed in your machine.
 
 ### Building the machine learning model
 
@@ -28,8 +28,8 @@ This is a simple model that will be used to explain the key concepts used in mac
 The dataset used will contains common names of people and their nationalities.
 Our data used is as shown.
 
-![A Snip of the data](/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/snip.png)
-[CSV File of data](https://drive.google.com/file/d/1ztQkET6U8EgtGWiprJFoXLICNP3cl34i/view?usp=sharing)
+![A Snip of the data](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/snip.png)
+[CSV File of data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
 
 ### Installation of the python packages
 
@@ -118,7 +118,7 @@ df.groupby('nationality')['names'].size().plot(kind='bar',figsize=(20,15))
 
 Our bar graph is as shown:
 
-![Bar Graph](/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-kubernates-cluster/bar-graph.png)
+![Bar Graph](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-kubernates-cluster/bar-graph.png)
 
 ### Checking our features
 
@@ -276,9 +276,9 @@ if __name__ == '__main__':
   uvicorn.run(app,host="127.0.0.1",port=8000)
 ```
 
-![A Snip of our first route](/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/first-route.png)
+![A Snip of our first route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/first-route.png)
 
-![Interactive API docs](/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/main-doc.png)
+![Interactive API docs](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/main-doc.png)
 
 The above routes are used to show how to make a simple index route using the FastAPI.
 Now we shall add more routes for our machine learning model.
@@ -322,11 +322,11 @@ if __name__ == '__main__':
 Our output is as shown:
 
 Interactive API docs: http://127.0.0.1:8000/docs
-![All Routes](/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/all-routes.png)
+![All Routes](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/all-routes.png)
 
 The route to be used to make a prediction:
 
-![Prediction route](/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/making-predictions.png)
+![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/making-predictions.png)
 
 We have finally served our machine learning model as API using the FastAPI.
 
@@ -427,6 +427,7 @@ docker image ls
 - Output:
 
 ```bash
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 fastapi-test-app             new                2de6fstf5uv09      3 minutes ago       1.34GB
 testing                      latest             d661f1t3e0b         2 weeks ago          994MB
 ```
@@ -532,8 +533,8 @@ minikube dashboard
 ```
 
 Our dashboard will be as shown:
-![Dashboard Overview](/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/kubernetes-dashboard.png)
-![Running Clusters](/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/ui-dashboard.png)
+![Dashboard Overview](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/kubernetes-dashboard.png)
+![Running Clusters](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/ui-dashboard.png)
 
 ### Accessing our application
 
@@ -551,3 +552,12 @@ In this tutorial, we have learned how to create a machine learning model. We hav
 We have also learned about the FastAPI, which is an efficient library for making WebAPIs, the FastAPI has helped us to serve our machine learning model as an API.
 We then containerized our fast API application using docker, we finally deployed the application to the Kubernetes cluster.
 By using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster.
+
+### References
+
+- [Scikit-learn Documentation](https://scikit-learn.org/)
+- [Pandas Documentation](https://pandas.pydata.org/)
+- [NumPy Documentation](https://numpy.org/)
+- [Docker Documentation](https://www.docker.com/)
+- [Kubernetes Documentation](https://kubernetes.io/)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
