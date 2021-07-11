@@ -2,26 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/
-title: Building a Telegram bot using Python to generate random quotes
-description: This article will be an introduction to building telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
+url: /building-a-telegram-bot-with-python-to-generate-quotes/
+title: Building a Telegram Bot using Python to Generate Random Quotes
+description: This article will be an introduction to building Telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
 author: shuaib-oseni
-date: 2021-07-11T00:00:00-20:00
-topics: []
+date: 2021-07-11T00:00:00-09:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/hero.png
-    alt: Telegram bot Image
+    alt: Telegran Bot image
 ---
 Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. [Chatbots](https://en.wikipedia.org/wiki/Chatbot) can be utilized for things like reminders, booking of appointments, and also on social media platforms.
 <!--more-->
-In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using python.
+In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using Python.
 
 [Telegram](https://www.telegram.org/) is a [free and open-source](https://en.wikipedia.org/wiki/Telegram_(software)), cross-platform, cloud-based instant messaging (IM) software. It provides video calling and file-sharing amongst other features.
 
 ### Prerequisites
-To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine. And, a little understanding of Python would help the reader to follow along better.
+To follow along with this tutorial, you'll need [Python 3](https://www.python.org/downloads/) installed on your machine and, a little understanding of Python would help the reader to follow along better.
 
 ### Table of contents
 1. [Setting up bot profile](#setting-up-bot-profile)
@@ -131,7 +131,7 @@ Before testing the bot, we need to install the requests module using the followi
 pip install requests
 ```
 
-Now, let's test our bot by running our python file in the terminal:
+Now, let's test our bot by running our Python file in the terminal:
 
 ```bash
 python bot.py
@@ -173,19 +173,19 @@ quotes_handler = CommandHandler('random', random)
 dispatcher.add_handler(quotes_handler)
 ```
 
-Now, let's run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
+Now, let's run the file and enter `/random` in our Telegram group. Our bot should respond with a random quote.
 
 ![random quotes](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/random.png)
 *Bot fetching random quote using an API*
 
 ### Conclusion
-To conclude, we have learned about building telegram bots for groups.
+To conclude, we have learned about building Telegram bots for groups.
 
-There is still a lot you can achieve with a telegram bot, like connecting your bot to other APIs and hosting them on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
+There is still a lot you can achieve with a Telegram bot, like connecting your bot to other APIs and hosting them on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
 
 You can also check the [Telegram bot](https://core.telegram.org/bots/api) documentation for more info on creating bots.
 
-Here are some API's you could integrate with your telegram bot:
+Here are some API's you could integrate with your Telegram bot:
 
 1. [Random dog images](https://random.dog)
 2. [Open weather map](https://rapidapi.com/community/api/open-weather-map)
