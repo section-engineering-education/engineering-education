@@ -1,6 +1,21 @@
-### Structuring Large Applications in Flask with Blueprints and Application Factory
-There are various techniques adopted by software developers to structure a Flask application. However, when building a small or medium-scale app, the structure of such application might not be of immense importance, especially if using the package structure technique.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/structuring-large-applications-with-blueprints-and-application-factory-in-flask/
+title: Structuring Large Applications in Flask with Blueprints and Application Factory
+description: In this article, we will understand how to work with structure large applications in Flask. We will also learn to create individual components like Blueprints, and Application factories.
+author: adetu-ridwan
+date: 2021-07-11T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/structuring-large-applications-with-blueprints-and-application-factory-in-flask/hero.jpg
+    alt: Structuring Large Applications in Flask with Blueprints and Application Factory example image
+---
+There are various techniques adopted by software developers to structure a Flask application. However, when building a small or medium-scale app, the structure of such application might not be of immense importance, especially if using the package structure technique.
+<!--more-->
 In building large applications, the use of package structure in structuring your application will result in a tactless codebase which inevitably results in issues such as circular imports.
 
 To avoid the obstacles resulting in structuring a large application poorly, there are two main techniques used in structuring applications with Flask, which are: Blueprints and Application Factory.
