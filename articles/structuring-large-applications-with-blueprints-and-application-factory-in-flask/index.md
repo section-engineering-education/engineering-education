@@ -322,3 +322,6 @@ This article covers all facets of structuring large applications and providing a
 The GitHub link [here](https://github.com/corpsgeek/social-app-structure) consists of a social network flask application structured by me. The goal isn’t for you to run the application, but for you to glean the structure and how the process described in this article knots to the structure of the codebase.
 
 Your goal is to examine how the code connect and create a personal note of yours of how you best understand it, then structure a large application for your personal development.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
