@@ -6,34 +6,30 @@ url: /aws-chalice-twilio-whatsapp/
 title: Sending WhatsApp Messages with Serverless Python Applications using AWS Chalice
 description: In this article, we set up a Chalice application with the DynamoDB database. We will also integrate Twilio WhatsApp messaging and send messages from our application.
 author: jekayinoluwa-olabemiwo
-date: 2021-06-28T00:00:00-18:00
-topics: []
+date: 2021-07-12T00:00:00-12:06
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/aws-chalice-twilio-whatsapp/hero.jpg
+ - url: /engineering-education/aws-chalice-twilio-whatsapp/hero.jpg
    alt: AWS Chalice example image
 ---
-
-### Introduction:
-
 [Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing) enables developers to build software and applications without dealing with servers. It abstracts server management from the responsibilities of a developer. [AWS Chalice](https://github.com/aws/chalice) is a light and fast serverless framework built by AWS. It is a Python-based framework. It leverages the [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and [AWS Lambda](https://aws.amazon.com/lambda/).
-
+<!--more-->
 [WhatsApp](https://www.whatsapp.com/) is a free messaging platform used by over 2 billion people across the world. [WhatsApp API](https://www.whatsapp.com/business/api/?lang=en) allows developers to build applications for WhatsApp users.
 
 In this article, we set up a Chalice application with the DynamoDB database. We will also integrate [Twilio WhatsApp messaging](https://www.twilio.com/whatsapp) and send messages from our application.
 
 ### Prerequisites
-
-- Python 3.6 or a later version
+To follow along with this article you should have:
+- [Python](https://www.python.org/) 3.6 or a later version
 - venv or virtualenv
 - AWS account
 - Twilio account
 - Configured AWS credentials
 - Basic Python experience
 
-You may download and install Python [here](https://www.python.org/).
-Venv is usually shipped with Python 3. But you may install virtualenv with the following command
+> Venv is usually shipped with Python 3. But you may install virtualenv with the following command:
 
 ```bash
 pip install virtualenv
@@ -53,13 +49,13 @@ Go to the sandbox [activation page](https://www.twilio.com/console/sms/whatsapp/
 
 You should get a message like this in WhatsApp on your smartphone:
 
-![WhatsApp sandbox activation](/aws-chalice-twilio-whatsapp/sandbox-activate-message.jpg)
+![WhatsApp sandbox activation](/engineering-education/aws-chalice-twilio-whatsapp/sandbox-activate-message.jpg)
 
 You will also see a `Message Received` response on your dashboard like this:
 
-![Message received notification on the dashboard](/aws-chalice-twilio-whatsapp/message-received.png)
+![Message received notification on the dashboard](/engineering-education/aws-chalice-twilio-whatsapp/message-received.png)
 
-Let's create a virtual environment for your project in a new folder.
+Let's create a virtual environment for your project in a new folder:
 
 ```bash
 mkdir chalice-twilio-project
@@ -78,7 +74,7 @@ Let's install the Chalice package, the AWS CLI client, Boto3—the AWS Python SD
 pip install chalice awscli boto3 twilio
 ```
 
-Now, we can use the `new-project` keyword with the `chalice` command to create a new project called `welcome-app`.
+Now, we can use the `new-project` keyword with the `chalice` command to create a new project called `welcome-app`:
 
 ```bash
 chalice new-project welcome-app
@@ -97,10 +93,10 @@ welcome-app
 
 The files generated above are:
 
-- `app.py`: holds the logic of the application
-- `.chalice`: contains the settings and database configuration
-- `.gitignore`: a list of files that Git will ignore
-- `requirements.txt`: contains the application dependencies
+- `app.py`: holds the logic of the application.
+- `.chalice`: contains the settings and database configuration.
+- `.gitignore`: a list of files that Git will ignore.
+- `requirements.txt`: contains the application dependencies.
 
 Now, we're good to go and can put in place the database settings for the application.
 
@@ -108,7 +104,7 @@ Now, we're good to go and can put in place the database settings for the applica
 
 #### Database configuration
 
-We will start with the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev,` but you can change it to any name as you so wish:
+We will start with the configuration by modifying the `config.json` file inside the `.chalice` folder. We will create a deployment stage called `dev`. By default, Chalice calls it `dev,` but you can change it to any name as you wish:
 
 ```json
 {
@@ -166,7 +162,7 @@ AWS provides us with [CloudFormation](https://aws.amazon.com/cloudformation/). I
 
 First, we will create a template with our database prescription. Then, CloudFormation can set up a DynamoDB database with the template.
 
-So, let's create a file inside the `.chalice` folder called `dynamodb_cf_template.yaml`. Add the following lines to the new file.
+So, let's create a file inside the `.chalice` folder called `dynamodb_cf_template.yaml`. Add the following lines to the new file:
 
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
@@ -218,7 +214,7 @@ We should get an output like this:
 Serving on http://127.0.0.1:8000
 ```
 
-A response like the following will be returned on the port 8000:
+A response like the following will be returned on port 8000:
 
 ```bash
 {hello:world}
@@ -228,7 +224,7 @@ A response like the following will be returned on the port 8000:
 
 We will take personal details from our users and store the details in our database. Then, we will send welcome greetings to each of the users based on the details they supplied.
 
-#### Accept User Details:
+#### Accept User Details
 
 We need to accept some details from our users. They are the names and dates of birth. Change the `app.py` file thus:
 
@@ -260,24 +256,23 @@ def add_recipient():
         return {'message': str(e)}
 ```
 
-In the above code, we made necessary imports, and we defined our database in the `get_app_db()` method. We then created a method called `add_recipient()` with a `POST` route named `/recipient`. This method accepts user data: the user's name, year, month, and date of birth. These details are then saved into the database. The application will return a `201` response after saving the details. Otherwise, it will return an error.
+In the above code, we made necessary imports, and we defined our database in the `get_app_db()` method. We then created a method called `add_recipient()` with a `POST` route named `/recipient`. 
 
-#### Send WhatsApp Message with Twilio:
+This method accepts user data: the user's name, year, month, and date of birth. These details are then saved into the database. The application will return a `201` response after saving the details. Otherwise, it will return an error.
+
+#### Send WhatsApp Message with Twilio
 
 Now, we will use the Twilio client to send messages. First, obtain your account SID and auth token from your Twilio dashboard. Set them as environment variables for your project. You can learn how to secure your credentials with environment variables [here](https://www.twilio.com/docs/usage/secure-credentials).
 
 Now, we will change the `app.py` file like the following:
 
 ```python
-...
 import os
 from twilio.rest import Client
 
-...
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
-
 
 @app.route('/recipient', methods=['POST'])
 def add_recipient():
@@ -299,8 +294,6 @@ def add_recipient():
         return {'message': 'ok', 'status': 201, 'id': data['id'], 'name': data['name'], 'phone_number': data['phone_number']}
     except Exception as e:
         return {'message': str(e)}
-
-...
 ```
 
 In the above code, we made necessary imports and defined the Twilio credentials in the `app.py` file. Then, we used the Twilio client to create a message and send it to the recipient's number.
@@ -350,8 +343,6 @@ def add_recipient():
         return {'message': 'ok', 'status': 201, 'id': data['id'], 'name': data['name'], 'phone_number': data['phone_number']}
     except Exception as e:
         return {'message': str(e)}
-
-
 ```
 
 ### Deploy to AWS
@@ -382,9 +373,9 @@ Let's try the `/recipient` API endpoint on Postman. The endpoint URL will be lik
 https://vvyngxvyag.execute-api.us-west-2.amazonaws.com/api/recipient
 ```
 
-We can specify the `body` of the request in JSON format as thus:
+We can specify the `body` of the request in JSON format as the following:
 
-```
+```Json
 {
     "id": "1",
     "name": "Oyewole Hajarah",
@@ -394,11 +385,11 @@ We can specify the `body` of the request in JSON format as thus:
 
 We should get a response as shown in the image below.
 
-![Postman response](/aws-chalice-twilio-whatsapp/postman-example)
+![Postman response](/engineering-education/aws-chalice-twilio-whatsapp/postman-example.JPG)
 
 Then, your recipient will receive the WhatsApp message sent:
 
-![Screenshot of the WhatsApp message sent](/aws-chalice-twilio-whatsapp/sent-message)
+![Screenshot of the WhatsApp message sent](/engineering-education/aws-chalice-twilio-whatsapp/sent-message.jpg)
 
 ### Conclusion
 
@@ -407,5 +398,4 @@ In this tutorial, we have been able to create a Chalice application with an API.
 Now, you can build more on serverless technology and AWS infrastructure.
 
 ---
-
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
