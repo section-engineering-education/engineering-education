@@ -1,5 +1,21 @@
-Twitch, is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-a-twitch-chatbot-in-nodejs/
+title: Build a Twitch Chatbot in Node.js
+description: In this article, we will understand how to create and work with Node.js to build a Twitch chatbot.
+author: justus-mbuvi
+date: 2021-07-12T00:00:00-22:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/build-a-twitch-chatbot-in-nodejs/hero.jpg
+    alt: Twitch chatbot image
+---
+Twitch, is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is.
+<!--more-->
 It not only supports other services but also contents from a broad spectrum. For instance, there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others.
 
 Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/), and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/) of the company.
