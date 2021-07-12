@@ -299,7 +299,7 @@ function fire(){
 
 #### Conclusion
 
-This tutorial talked about creating an auto-typing feature using JabvaScfript and jQuery. We dissected the JavaScript code and looked at how it works. Hope you got some insights that you'll apply in your next project.
+This tutorial talked about creating an auto-typing feature using JavaScript and jQuery. We dissected the JavaScript code and looked at how it works. Hope you got some insights that you'll apply in your next project.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
