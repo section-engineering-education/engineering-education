@@ -433,7 +433,7 @@ npm run start
 
 or
 
-```nodejs
+```bash
 node app.js
 ```
 
