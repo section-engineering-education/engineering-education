@@ -480,8 +480,7 @@ binding.error.setOnClickListener {
 An error image is used to indicate that something went wrong when resolving the request.
 
 ### Conclusion
-Congratulations! you can now comfortably use `Coil` to process images in Android. You can use this knowledge to build more powerful applications. The source code for this tutorial can be found [on this Github repository](https://github.com/nanimdiana/image-processing-with-coil).
-
+Congratulations! you can now comfortably use `Coil` to process images in Android. You can use this knowledge to build more powerful applications. The source code for this tutorial can be found [on this Github repository](https://github.com/nonimdiana/image-processing-with-coil).
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
