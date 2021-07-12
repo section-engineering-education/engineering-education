@@ -1,8 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-how-kubernetes-networking-works/
+title: Understanding How Kubernetes Networking Works
+description: In this article, we will go through the basics of Kubernetes networking. The article will provide an overview of how networking works in Kubernetes.   
+author: bridget-mwikali
+date: 2021-07-12T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-how-kubernetes-networking-work/hero.jpg
+    alt: kubernetes networking example image
+---
 Communication within a Kubernetes cluster partly depends on Kubernetes networking. Kubernetes networking enables the configuration of communication with the k8s network. It also manages many operations, including exposing containers to the internet and handling internal container communication.
 
-The Kubernetes cluster is made up of various pods and nodes. Understanding how Kubernetes networking enables the communication between these components is critical.
-
-This article introduces the reader to Kubernetes networking and explains how networking works in Kubernetes. It also discusses various networking types in Kubernetes.
+The Kubernetes cluster is made up of various pods and nodes. Understanding how Kubernetes networking enhances communication between these components is critical.
+<!--more-->
+This article introduces readers to Kubernetes networking and explains how networking works in Kubernetes. It also discusses various networking types in Kubernetes.
 
 ### What is Kubernetes networking?
 Networking is a critical aspect of Kubernetes. It is an enabler of communication between Kubernetes components. Kubernetes networking also allows these components to communicate with other applications.
@@ -71,9 +87,14 @@ Kubernetes services handle the abstraction layer. These services assign a single
 ### Conclusion
 Understanding how Kubernetes networking works is an excellent start for Kubernetes users. This article has helped you learn the concepts of Kubernetes networking. It has explained the four different networking methods that components in a Kubernetes platform, such as nodes, applications, containers, and pods, communicate through.
 
-### Further reading 
+Happy learning.
+
+### Resources 
 [How Sweet is Kubernetes?](https://www.section.io/engineering-education/how-sweet-is-kubernetes/)
 
 [Getting Started with Kubernetes](https://www.section.io/engineering-education/introduction-to-kubernetes/)
 
 [How Kubernetes Pods Work](https://www.section.io/engineering-education/how-kubernetes-pods-work/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
