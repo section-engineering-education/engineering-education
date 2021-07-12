@@ -70,7 +70,7 @@ function autoType(elementClass, typingSpeed, timeout) {
       ourClass.css("opacity", 1);
       //clearing out the text temporarily
       ourClass.text("");
-      //The IIFE where the characters are displayed after computing the typing speed
+      //The IIFE where the characters are displayed after computing the typing speed in a for-loop
       for (var i = 0; i < amntOfChars; i++) {
         (function (i, char) {
           setTimeout(function () {
