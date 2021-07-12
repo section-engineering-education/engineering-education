@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-polymorphism-using-abstract-classes-in-c/
+title: Understanding Polymorphism using Abstract Classes in C
+description: This articles helps the reader to understand the concept of polymorphism by using abstract classes in the C programming language.
+author: mohamed-alghadban
+date: 2021-07-12T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-polymorphism-using-abstract-classes-in-c/hero.jpg
+    alt: Understanding Polymorphism using Abstract Classes in C Hero Image
+---
 According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism) **Polymorphism** is one of the main concepts in object-oriented programming, after encapsulation and inheritance. *Polymorphism* is a Greek word that means "many-shaped". In any program, objects of a derived class can be used as objects of a base class using functions parameters and collections or arrays.
+<!--more-->
 
 **Polymorphism** is a very helpful concept when it comes to a single abstract idea used in different ways and shapes. With polymorphism, you can define a single abstract class and reshape it in different ways to suit your methods & ideas. 
 
