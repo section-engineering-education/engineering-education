@@ -323,3 +323,7 @@ I've tried to take you through each process of implementing a `POST` and `GET` m
 Full tutorial code can be found [here](https://github.com/jumamiller/laravel-passport) on the Github repository.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
