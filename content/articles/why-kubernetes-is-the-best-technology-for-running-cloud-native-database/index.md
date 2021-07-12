@@ -1,8 +1,24 @@
-﻿For a long time, every organization’s dream is to migrate its workload to the cloud. However, the statistics from most IT organizations still show that there is still much work to be done.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-kubernetes-is-the-best-technology-for-running-cloud-native-database/
+title: Why Kubernetes is the Best Technology for Running Cloud Native Database
+description: This article will cover the basics of cloud native databases and explain why kubernetes is the best technology for running them. It will provide an overview of principles that make Kubernetes a superb technology.
+author: ephraim-gathoni
+date: 2021-07-12T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Although databases in the cloud have been around for a long time, the challenges with persisting and moving the cloud data have led to slow cloud adoption.
+  - url: /engineering-education/why-kubernetes-is-the-best-technology-for-running-cloud-native-database/hero.jpg
+    alt:  kubernetes example image
+---
+For a long time, every organization’s dream is to migrate its workload to the cloud. However, the statistics from most IT organizations still show that there is still much work to be done.
 
-For this reason, the demand for data infrastructure that takes full advantage of cloud computing has been on the rise.
+Although databases in the cloud have been around for a long time, the challenges with persisting and moving the cloud data have led to slow cloud adoption. For this reason, the demand for data infrastructure that takes full advantage of cloud computing has been on the rise.
+<!--more-->
+This article takes you through an overview of cloud native databases and explains why kubernetes is the best technology for running them. 
 
 ### An overview of cloud native databases
 A [cloud-native database](https://www.networkcomputing.com/cloud-infrastructure/what-are-cloud-native-databases-and-why-should-you-use-them) is a service built, deployed and delivered to the client through a cloud platform. This cloud nativity makes the database unique compared to other databases types. It is implemented by installing the database software on top of a cloud infrastructure.
@@ -70,4 +86,7 @@ It is clear enough that Kubernetes provides the best practices for cloud-native 
 
 Solutions for integrating Kubernetes clusters are still in the development phase, but in the future, it will be easy to manage multi-datacenter Cassandra clusters in Kubernetes.
 
-Cassandra community is constantly working to make more extensions for management and metrics to be part of the core Apache project. This will make Cassandra be more cloud-native to everyone and become an out-of-the-box solution.
+Cassandra community is constantly working to make more extensions for management and metrics to be part of the core Apache project. This will make Cassandra more cloud-native to everyone and become an out-of-the-box solution.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
