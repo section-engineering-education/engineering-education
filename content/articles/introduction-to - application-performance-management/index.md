@@ -55,9 +55,9 @@ Artificial Intelligence for IT Operations (AIOps) applies to platforms that anal
 
 -   Through Digital Experience Monitoring (DEM), APM enhances user's experience and promotes professionalism in the IT industry.
 
--   It sets standards for faster, efficient, and high-quality software release by developers.
+-   It sets standards for faster, efficient, and high-quality software releases by developers.
 
--   Businesswise, it reduces operational costs by eliminating manual monitoring of application performance. This, plus increased efficiency of computer programs, boosts revenue production and results in higher profits for a company.
+- Business-wise, it reduces operational costs by eliminating manual monitoring of application performance. This, plus increased efficiency of computer programs, boosts revenue production and results in higher profits for a company.
 
 ### Challenges faced by APM
 Current data management systems are built sophisticated enough to offer more than just computer resource utilization reports. For example, they can single out individual transactions from a pool of highly distributed data systems and monitor them. However, this sophistication is limited by high data rates. This is because, for ulterior analysis, data demands extended periods of storage time. This results in large data that tends to overload APM tools. This limitation is addressed with modern key-value data stores developed to accommodate large data while allowing viewing of up-to-date computer infrastructure.
