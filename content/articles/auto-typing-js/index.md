@@ -22,6 +22,8 @@ Auto typing can be used to make eye-catching adverts or auto-complete text when 
 - A basic understanding of JavaScript.
 - An understanding of HTML and CSS is also an added advantage.
 
+> We will use Bootstrap for styling.
+
 ### Goal
 In this article, we will implement the auto typing feature using JavaScript and [jQuery](https://jquery.com/).
 
