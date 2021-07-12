@@ -1,5 +1,5 @@
 ### Introduction
-Many executors are available with the GitLab Runner to implement `Continuous integration` and `Continuous delivery (CI/CD). However, Shell and Docker are more common and we can simply create a repository with these programs. These runners can be selected according to the requirements and resources available. This article focuses mainly on the C/C++ Linux application's Shell and Docker executors and code is written to the Bash script. A Bash script can be used to construct and test the application.
+With the GitLab Runner, you can implement continuous integration and continuous delivery (CI/CD) using a variety of executors. However, Shell and Docker are more widely used, and we can easily set up a repository using these programs. These runners can be selected according to the requirements and resources available. This article focuses mainly on the C/C++ Linux application's Shell and Docker executors and code is written to the Bash script. A Bash script can be used to construct and test the application.
 
 Table of content:
 
@@ -11,7 +11,7 @@ Table of content:
 ### What are docker and shell executors
 **Shell Executor**: A very basic executor that enables you to create the solution locally on the computer which installs GitLab Runner.  Installed on the Linux Machine is the GitLab Runner, therefore you have to install the needed software on the same machine.
 
-**Docker Executor**: A strong, image-accessible tool with a lot of applications. As we do not need to install the software manually, we take care of everything using a docker and download the required image from the docker hub. The negative is that, for security reasons, this communication is restricted in some organizations. If so, then Shell Executor is the best alternative.
+**Docker Executor**: A strong, image-accessible tool with a lot of applications. As we do not need to install the software manually, we take care of everything using a docker and download the required image from the docker hub. The negative is that, for security reasons, this communication is restricted in some organizations. If this is the case, Shell Executor is the best option.
 
 ### Implementation of C and C++ on Shell Executor 
 #### Requirements
@@ -34,37 +34,37 @@ On the machine, execute the command below.
 
 #### GitLab Runner Set Up
 Follow the steps below to download the GitLab Runner and set it up.
-1. Use the following command to download GitLab Runner on the Linux Machine
+1. To install GitLab Runner on a Linux machine, run the following command.
 
 ```
 sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
 ```
 
-2. Provide it with the following command to execute.
+2. To run it, give it the following command.
 
 ```
 sudo chmod +x /usr/local/bin/gitlab-runner
 ```
 
-3. Use the following command to create a GitLab CI
+3. To create a GitLab CI, run the following command.
 
 ```
 sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
 ```
 
-4. Use this command to install and run as a service
+4. Install and run as a service with this command.
 
 ```
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 ``` 
 
-5. Run GitLab with the command below
+5. Use the command below to start GitLab.
 
 ```
 sudo GitLab-runner start
 ```
 
-6. Before registering your repository, stop GitLab Runner
+6. Stop GitLab Runner before registering your repository.
 
 ```
 sudo GitLab-runner stop
@@ -79,7 +79,7 @@ sudo GitLab-runner register
 8. The following questions must be answered when you register a repository with GitLab Runner.
 - `Enter your GitLab URL`: Each company is different, but the format is something like http://gitlab.example.com. 
 - `Path`: 'Path' is a term that refers to a Login to your GitLab account. Expand Runner and choose the repository you wish to register with the runner in Settings CI/CD.
-- `Enter this runner's GitLab-ci token`: It will be a special token of every project, and you can find it when you register. Path: Go to GitLab Account → Select repository which you want to register with runner → Settings → CI/CD → Expand Runner
+- `Enter this runner's GitLab-ci token`: It will be a special token of every project, and you can find it when you register. Path: Log in to your GitLab account → Choose the repository you'd want to register with runner → Settings → CI/CD → Expand Runner
 - `Enter the description of the GitLab-ci for this rider`: Put the name of the runner, which will help you remember the runner.
 - `Set the tags for this rider with GitLab-ci`: It is optional if a particular tag is available in the YML file to launch the runner of GitLab.
 - `Enter the runner`: You will be given a list of executors and shell types to choose from (as GitLab Runner will run our system)
@@ -89,7 +89,8 @@ sudo GitLab-runner register
 ```
 sudo GitLab-runner start
 ```
-10. To verify the registration of the repository of GitLab Runner and start the runner. Select a repository to register with Runner in GitLab Account / Alternative settings / "CI/CD" / Expand Runner. A green color circle will be there, and the message will be shown by the project's runners. Note that if the circle is grievous, the runner has not yet begun.
+
+10. To verify the registration of the repository of GitLab Runner and start the runner. In GitLab Account / Alternative settings / "CI/CD" / Expand Runner, select a repository to register with Runner. A green color circle will be there, and the message will be shown by the project's runners. Note that if the circle is grievous, the runner has not yet begun.
 
 ### Linux GitLab Runner Commands
 To familiarize yourself, follow some other GitLab Runner commands.
@@ -98,15 +99,13 @@ To familiarize yourself, follow some other GitLab Runner commands.
 3. `Sudo GitLab-runner restart`: The GitLab Runner service is stopped and then restarted using this command.
 4. `Sudo GitLab-runner uninstall`: This command disables the GitLab Runner as a service and uninstalls it.
 5. `Sudo GitLab-runner exec`: Run this command to get a list of available executors.
-
-
-6. Stop the runner with Sudo GitLab-runner stop.
+6. `Sudo GitLab-runner stop` will stop the runner. Stop the runner with Sudo GitLab-runner stop.
 7. `Sudo GitLab-runner unregisters` -Url `http://gitlab.example.com/` –token t0k3n: A URL and a token can be used to uninstall Runner.
-8. `Sudo GitLab-runner unregister –all runners: All Runners must be unregistered to do so.
+8. `Sudo GitLab-runner unregister –all runners`: To do so, all runners must be unregistered.
 9. `Sudo GitLab-runner –help`: By running the command, you can see a recent list of commands.
 10. `Sudo GitLab-runner runs –help`: The environment variable's name is displayed.
 11. `Sudo GitLab-runner status`: To find out how GitLab-runner is doing.
-12. `Sudo GitLab-runner unregister –name test-runner`: Unregister a project's Runner and replace test-runner with your runner name, which you can find in the config.toml file (where your GitLab-runner is located). 
+12. Unregister a project's Runner using `sudo GitLab-runner unregister –name test-runner, replacing test-runner with your runner name from the config.toml file (where your GitLab-runner is located). 
 13. `Sudo GitLab-runner –debug`: To run a command in debug mode, follow these steps.
 14. `Sudo GitLab-runner exec shell`: To get a list of all the shell executor's options, type.
 
