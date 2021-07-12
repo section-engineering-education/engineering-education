@@ -22,6 +22,7 @@ We will be using [spring initializr]() to bootstrap our application.
    
 #### Application Data layer
 1. In the root project package, create a new Java file named `Student.java`.
+2. In the `Student.java` file created above add the code snippet below.
 
 ```java
 @NoArgsConstructor
@@ -38,14 +39,18 @@ public class Student {
     private String course;
 }
 ```
+- In the code snippet above we create a `Student` entity that represents a table in the database.
 
 ### Application repository layer
+In the root project package, create a new Java file named `StudentRepository.java` and add the code snippets below.
 ```java
 public interface StudentRepository extends JpaRepository<Student, Long> {
 }
 ```
 
 ### Application controller layer
+Create a Java file named `StudentController.java` in the root project package and add the code snippet below.
+
 ```java
 @RestController
 @RequestMapping("/api/students")
@@ -149,6 +154,9 @@ spec:
           ports:
             - containerPort: 8080
 ```
+The code snippet above has two parts separated by `---`:-
+1. `Service` - a service exposes our application outside the Kubernetes cluster. It acts as the load balancer that distributes requests made to our application to various instances of the application running in the cluster.
+2. `Deployment` - a deployment is a blueprint that is used to create instances of our application in the cluster.
 
 ### Conclusion
 Now that you have learned how to deploy a Spring Boot application to a Kubernetes cluster. Deploy a Spring Boot application cluster and provision it with a database. You can download the complete source code [here]().
