@@ -142,7 +142,7 @@ The `upper ` filter capitalizes the contact name while the `get_color ` filter s
 
 Likewise, you can create your own custom filters to cater for whatever needs you may have for your templates.
 
-You should consider the names supplied to your views. They should match those used with `@register.filter()`. For instance, using `color` instead of `get_color` would result to an error. You may also have to consider the auto-escaping behaviour of Django with the filter. You may look up on[Django documentation](https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/) to learn more.
+You should consider the names supplied to your views. They should match those used with `@register.filter()`. For instance, using `color` instead of `get_color` would result to an error. You may also have to consider the auto-escaping behaviour of Django with the filter. You may look up on the [Django documentation](https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/) to learn more.
 
 ### Writing Custom Template Tags
 Template tags are more advanced than filters. They are powerful in that they can process any data and made available to any template regardless of view being executed. Django provides two commonly used helper functions to create tags.
