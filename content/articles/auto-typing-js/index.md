@@ -1,40 +1,46 @@
-#### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-navigation-in-flutter/
+title: How to Handle Navigation in Flutter
+description: This article will show you how to navigate between different pages in Flutter. We will be building a simple app that uses an organized Navigation Named route.
+author: 
+date: 2021-06-01T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Auto-typing enhances the look of a site and improves the user experience. One may want to animate his/her text content for the users to see when they visit the page.
-It can be used to make eye-catching adverts for attracting customers or auto-completing text when a user is typing. Autoyping may also be used to illustrate the talking speeds of people in a dialogue kind of conversation. It falls under animations which help retain attention, simplify complex information, and boosts retention.  It is indeed a useful feature to use in a frontend project.
+  - url: /engineering-education/how-to-handle-navigation-in-flutter/hero.jpg
+    alt: Handling Navigation in Flutter
+---
+In some cases, a developer may want to animate text content for users to see when they visit the web page. This can be achieved through auto-typing. This feature helps to enhance the look of a site and improves the overall user experience.
+<!--more-->
+Auto typing can be used to make eye-catching adverts or auto-complete text when a user is typing. It can be regarded as an animation and helps to retain attention, as well as simplify complex information. This is indeed a useful feature to implement in a frontend web project.
 
-In this article, we will look at how to implement it in JavaScript and jQuery.
+### Prerequisites
+- A basic understanding of JavaScript.
+- An understanding of HTML and CSS is also an added advantage.
 
-#### Prerequisites
+### Goal
+In this article, we will implement the auto typing feature using JavaScript and [jQuery](https://jquery.com/).
 
-- A basic understanding of JavaScript
-- An understanding of using HTML and CSS will be an added advantage
+### Getting started
+We will use jQuery and [Immediately Invoked Function Expressions](https://www.javascripttutorial.net/javascript-immediately-invoked-function-expression-iife/) because they can be implemented quickly.
 
-#### Getting started
+The general syntax of an IIFE is shown below:
 
-We are going to create an auto-typing script that shows varying talking speeds between two people in a Question and answer session as shown below:
-
-![Gif](/engineering-education/auto-typing/demo.gif)
-
-We will look at the javascript code first before building the whole file. Let's jump into it.
-
-#### Javascript
-
-We will use jQuery and Immediately invoked function expressions(IIFEs) because of their fast implementations with less code.
-
-The general syntax of an IIFE is:
-
-```javascript
+```js
 (function () {
   statements;
+
 })();
 
 ```
-In the first part, the Grouping Operator, () used prevents variables within the IIFE from being accessed and also affecting the global scope. Here is where you set your parameters and write your logic.
 
-In the last part, the IIFE () is created where the JavaScript engine will directly interpret the function. Here is where you will pass arguments for the parameters.
+In the above example, the grouping operator prevents variables within the IIFE from being accessed from the global scope. 
 
-> You can learn more about IIFEs from Mozilla Developer Network(MDN) docs found [here](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). 
+> You can learn more about IIFEs from official documentation found [here](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). 
 
 ```javascript
 function autoType(elementClass, typingSpeed, timeout) {
@@ -268,3 +274,6 @@ function fire(){
 #### Conclusion
 
 This tutorial talked about creating an auto-typing feature using JabvaScfript and jQuery. We dissected the JavaScript code and looked at how it works. Hope you got some insights that you'll apply in your next project.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
