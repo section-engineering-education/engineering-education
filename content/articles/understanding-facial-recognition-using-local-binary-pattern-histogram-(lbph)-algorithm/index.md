@@ -39,7 +39,6 @@ Training rules are used to ensure the output decisions criteria and training alg
 
 The precision and accuracy of the algorithm are verified by using a test set of images.
 
-
 ### Working of the LBPH algorithm
 The LBPH algorithm typically makes use of 4 parameters:
 - ***Radius:*** The distance of the circular local binary pattern from the center pixel to its circumference and usually takes a value of 1.
@@ -95,17 +94,16 @@ Face recognition by the LBPH algorithm can be used in the following areas:
 - *Biometrics:* used in biometrics, such as palm-print recognition, fingerprint recognition, iris recognition, gait recognition, the order of placement of recognition, and in the face of an age rating.
 - *Computer vision:* used in computer vision such as motion analysis. LPH enables computer systems to be able to understand information on images and make meaning of this information.
 
-
 ### To wrap up
 Various alterations and changes of LBP have been proposed, such as the dominant local-binary patterns, which make use of the most common types of LBP to improve the recognition accuracy, correctness, that is, to determine the suitability of the LBPH, and to fill in some of the shortcomings of the LBP.
 
 Happy learning!
 
 ### Relevant resources
-- [A real-time face recognition system based on the improved LBPH algorithm](https://ieeexplore.ieee.org/abstract/document/8124508)
-- [Face Recognition: Understanding LBPH Algorithm](https://towardsdatascience.com/face-recognition-how-lbph-works-90ec258c3d6b)
-- [Local Binary Patterns](http://www.scholarpedia.org/article/Local_Binary_Patterns)
-- [Face Detection using Viola-Jones Algorithm in Matlab](https://www.section.io/engineering-education/face-detection-matlab/)
+1. [A real-time face recognition system based on the improved LBPH algorithm](https://ieeexplore.ieee.org/abstract/document/8124508)
+2. [Face Recognition: Understanding LBPH Algorithm](https://towardsdatascience.com/face-recognition-how-lbph-works-90ec258c3d6b)
+3. [Local Binary Patterns](http://www.scholarpedia.org/article/Local_Binary_Patterns)
+4. [Face Detection using Viola-Jones Algorithm in Matlab](https://www.section.io/engineering-education/face-detection-matlab/)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
