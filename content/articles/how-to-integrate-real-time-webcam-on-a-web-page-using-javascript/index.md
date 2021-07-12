@@ -4,17 +4,17 @@ We'll learn how to include a webcam into a webpage using Vanilla JavaScript in a
 
 ### What is a WebCam
 
-A [webcam](https://en.wikipedia.org/wiki/Webcam) is a video camera that sends or streams an image or video to or through a computer network, such as the Internet, in real-time. Small cameras that sit on a desk, attach to a user's monitor, or are incorporated into the hardware are known as webcams. Webcams can be utilized during a video chat session between two or more persons, with live audio and video chats.
+A [webcam](https://en.wikipedia.org/wiki/Webcam) is a type of video camera that sends or transfers a picture or video progressively in real time to or through a computer network such as the Internet. Webcams can be utilized during a video meeting between at least two people with live sound and video talks.
 
 ### What is Javascript
 
 JavaScript is a scripting or programming language that allows you to add advanced functionality to your web pages.
 
-### Building the application
+### Developing the application
 
-To get started, we'll need to set up our project.
+To begin, we should first set up our project.
 
-Open Visual Studio Code by navigating to a directory of your choice on your machine and opening it on the terminal. 
+Please type the command below to launch Visual Studio Code from the terminal.
 
 Then execute:
 
@@ -22,7 +22,7 @@ Then execute:
 code.
 ```
 
-> **Note**: `code .` won't work if you don't have Visual Studio Code installed on your system.
+> **Note**: If you don't have Visual Studio Code installed, you won't be able to use `code .`
 
 #### Step 1 - Create a directory
 
@@ -48,7 +48,7 @@ cd webcam-with-javascript-demo
 
 #### Step 2 - Create files
 
-We need to create the `script.js` and `index.html` files using the commands below.
+Using the commands below, we'll create the `script.js` and `index.html` files.
 
 ```bash
 touch index.html script.js
@@ -196,7 +196,7 @@ Congratulations! We should successfully run our application, start and stop the 
 
 ![success](/engineering-education/how-to-integrate-real-time-webcam-on-a-web-page-using-javascript/result.png)
 
-You can [click here](https://github.com/Olanetsoft/webcam-with-javascript-demo) to check the complete code on GitHub.
+Kindly [click here](https://github.com/Olanetsoft/webcam-with-javascript-demo) to check the complete code on GitHub.
 
 ### Conclusion
 
