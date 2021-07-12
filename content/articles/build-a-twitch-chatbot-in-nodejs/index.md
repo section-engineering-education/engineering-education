@@ -4,47 +4,46 @@ status: publish
 published: true
 url: /build-a-twitch-chatbot-in-nodejs/
 title: Build a Twitch Chatbot in Node.js
-description: In this article, we will understand how to create and work with Node.js to build a Twitch chatbot.
+description: This article will help the reader understand how to create and work with Node.js to build a Twitch chatbot.
 author: justus-mbuvi
-date: 2021-07-12T00:00:00-22:00
-topics: []
+date: 2021-07-12T00:00:00-16:00
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/build-a-twitch-chatbot-in-nodejs/hero.jpg
-    alt: Twitch chatbot image
+    alt: Twitch chatbot Node.js image
 ---
-Twitch, is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon got a leap ahead to what it currently is.
+Twitch, is an online streaming platform that allows streamers and audiences to lively interact with each other. What begun as a small game streaming platform for gamers, soon saw a surge in popularity and is leaps ahead what it once was.
 <!--more-->
-It not only supports other services but also contents from a broad spectrum. For instance, there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others.
+It not only supports other services but also has contents from a broad spectrum. For instance, there are cooking shows, live talk shows, daily lifestreaming, live chatting, and interactions among others.
 
 Streamers earn from monthly subscriptions or donations from fans depending on the content and as long as the content is within the [terms of service](https://www.twitch.tv/p/en/legal/terms-of-service/), [community guidelines](https://www.twitch.tv/p/en/legal/community-guidelines/), and [terms of sale](https://www.twitch.tv/p/en/legal/terms-of-sale/) of the company.
 
-Due to the growth of the services, the need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots that interact with the services.
+Due to the growth of the services, the greater need of interacting with the Twitch API to create more personalized services or functions arose. This led to the development and deployment of bots that interact with the services.
 
 The bots created by these genius developers range from chatting bots, viewers engagement bots, monitoring, and statistical bots, polling bots, chat and content moderation bots among many others.
 
 Some of these top Twitch bots can be found in [this](https://www.fairlyoddstreamers.com/resources/bots) link.
 
-Even though so many bots have been created or modified, still there is a need for personalized bots depending on the issue you want to solve.
+Even though so many different bots have been created or modified, there is still a need for personalized bots depending on the issue you want to solve.
 
-In this tutorial, we will learn about the Twitch API and how to create a simple chatting bot in Node.js to interact with it.
+In this tutorial, we will learn about the Twitch API and how to create a simple chat bot in Node.js to interact with it.
 
 ### Key takeaways
 At the end of the tutorial, you will have learned:
 
-- What is Twitch API
-- Key components, basics, and how to interact with the API in Node.js
-- How to build a simple Twitch chatbot
-- How to run a Twitch chatbot in Node.js
+- What is the Twitch API.
+- Key components, basics, and how to interact with the API in Node.js.
+- How to build a simple Twitch chatbot.
+- How to run a Twitch chatbot in Node.js.
 
 ### Prerequisites
-Some of the basics needed for the tutorial include the following:
-
-- Web development basics
-- Little interactions with Twitch website. This helps you know how Twitch works, some of its services, and the interface you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/) website.
+Some of the basics needed to follow along with the tutorial include the following:
+- Web development basics.
+- Little interactions with the Twitch website. This helps to know how Twitch works, some of its services, and the interface that you would be dealing with. If you are new, you can check it out at [https://www.twitch.tv/](https://www.twitch.tv/) website.
 - An IDE installed on your machine. My recommendation is the [Visual Studio Code](https://code.visualstudio.com/) IDE.
-- Node environment installed and configured on your machine. You can get it [here](https://nodejs.org/en/).
+- Node.js environment installed and configured on your machine. You can get it [here](https://nodejs.org/en/).
 - A stable internet connection.
 
 ### Table of contents
@@ -72,42 +71,42 @@ Let's start with this interesting question.
 
 ![Chatbot](/engineering-education/build-a-twitch-chatbot-in-nodejs/chatbot.png)
 
-A `Chat-Bot` is an application with the capability to conduct online chat via text messages, speech, or even videos. It can have preset conversations input and their expected outputs or can use AI to create new depending on the matters. Most are not autonomous hence a human being is always close in case of any issues in which it won't understand.
+A `Chat-Bot` is an application with the capability to conduct online chat via text messages, speech, or even videos. It can have preset conversations inputted and their expected outputted. They can also use AI to create new conversation depending on the context. Most are not autonomous therefore a human being is always closeby in case of any issues in which it doesn't understand.
 
-Even though these chatbots have not become fully autonomous, improvements are made each day to push them near to perfection. So, who knows, if they would be used in more places as "Customer service" than humans?!
+Even though these chatbots have not become fully autonomous, improvements are made each day to push them near to perfection. 
 
-The services of chatbots have been integrated into many different places. Two such places are in the gaming and streaming services. These have made the sites interactive hence higher audiences.
+The services of chatbots have been integrated into many different places. Two such places are in the gaming and streaming services. These have made the sites interactive and have seen higher audiences.
 
 ### Advantages of chatbots
-- Can handle multiple clients at ease once deployed compared to the number of clients a human can handle
-- Since they are taught some main functionalities, inputs, and outputs, they provide quick repetitive answers without getting bored or tiresome
+- Can handle multiple clients with ease once deployed, compared to the number of clients a human can handle.
+- Since they are taught some main functionalities, inputs, and outputs, they provide quick repetitive answers without getting bored or tired.
 - Provide answers to Frequently Asked Questions (FAQs) consistently to all customers. This prevents any discrimination.
-- It is cheap to run
-- Easy to deploy
-- Can always be online hence prevented offtime and downtime to users.
+- It is cheap to run.
+- Easy to deploy.
+- They can always be online, which prevents offtime and downtime to users.
 
-Since they can be run continuously on servers, e.g. Node.js servers like those at [Section.io](https://www.section.io). These servers run 24/7, hence any time one goes online in a live stream, it will always be found online. This promotes the availability of the program.
+Since they can be run continuously on servers, e.g. Node.js servers like those at [Section.io](https://www.section.io/modules/nodejs-edge-hosting/). These servers can run 24/7, and any time a user goes online on a live stream, it can always be found online. This promotes higher availability of the program.
 
 ### Disadvantages of chatbots
-Though they have some interesting and quite reasonable features, they also have another face of the coin. These include:
+Though they have some interesting and quite reasonable features, they also have another face to the coin. 
 
-- Chatbots need a lot of maintenance due to the addition of more features for them to have a competitive advantage. They also need to coup with unanswered questions from customers.
+These include:
+- Chatbots need a lot of maintenance due to the continuous addition of more features for them to have a competitive advantage. They also need to be able coup with unanswered questions from customers.
 - They cannot recognize the client's emotions such as relief or anger. This prevents them from fully capturing the user feedback after the service or before. Their reliance on feedback forms makes them limited.
-- The need for a human to supervise or be there has to be a backup, which is expensive.
+- The need for a human to supervise or be as a backup, which can be expensive.
 - System failures may result in crucial services being limited.
 
-### What is Twitch API?
-This is the API used to access the TWITCH systems and develop new integrations. It is free of charge. You can access it using Script tags or as a module in Node.
+### What is the Twitch API?
+This is the API used to access the TWITCH systems and develop new integrations. It is free of charge. You can access it using Script tags or as a module in Node.js.
 
 In Node.js, we use the [tmi.js](https://github.com/tmijs/tmi.js) library.
 
-To accomplish our goal, we shall do the following steps:
-
+To accomplish our goal, we will do the following:
 - Create a Twitch account and set up a Twitch channel.
-- Create a demo stream
+- Create a demo stream.
 - Obtain Bot OAuth key. This will be used to allow the bot to access our channel.
-- Create a simple Twitch chatting bot and connect it to our stream
-- Test our bot
+- Create a simple Twitch chat bot and connect it to our stream.
+- Test our bot.
 
 ### Create and set up a Twitch account and channel
 Visit [www.twitch.tv] to create a new user account. You can finish setting up additional details such as Bio, Profile picture, and Profile Banner in the Settings.
@@ -117,17 +116,17 @@ Make sure your status is set to `Online` to avoid being seen as inactive by your
 Now, click on `Channel` as shown in the image below:
 
 ![Channel](/engineering-education/build-a-twitch-chatbot-in-nodejs/channel.png)
+
 *Twitch Channel*
 
-On the channel tab, you will be able to see if your channel is _Live_ or _Offline_. You can also customize your channel depending on your preferences.
+On the channel tab, you will be able to see if your channel is *Live* or *Offline*. You can also customize your channel depending on your preferences.
 
-### Create a demo stream
+### Creating a demo stream
 There are many stream hosting services out there for Twitch and many other streaming platforms. In Twitch, for you to stream, you will require one. I recommend using [Streamyard](https://streamyard.com/).
 
 > [Streamyard](https://streamyard.com/) is an online streaming service that allows you to stream your content to one or multiple platforms at once. You don't need any installation since it is a website. It offers both **free** services (for small streams) and **paid** services (for large streams). It is simple to use with no much help needed.
 
-Just visit it and we shall do the following:
-
+Just visit it and we will do the following:
 - Create a new account and log in.
 - Add a destination to your stream. You can add more than one destination. Here, we add Twitch.
 - Verify the account you want to stream to.
@@ -137,12 +136,13 @@ Just visit it and we shall do the following:
 - On another tab, open up Twitch and access your account. Navigate over to the channel tab and see what you are streaming to your viewers. You can see the chats and also explore additional features.
 
 ![streamyard](/engineering-education/build-a-twitch-chatbot-in-nodejs/streamyard.png)
+
 *Streamyard for streaming*
 
 ### Obtain bot OAuth key
 There are two ways in which our bot could access a channel:
 
-- ***Anonymously:*** Here, the identity (username and password) is not required or specified. It is advantageous in some cases where one will not be tracked. It limits one only to view, but no reply or participate in the chats.
+- ***Anonymously:*** Here, the identity (username and password) are not required or specified. It is advantageous in some cases where one will not be tracked. It limits one only to view, but no reply or participate in the chats.
 - ***OAuth token authorization:*** Here, the bot identity is required. It allows the bot to actively monitor and participate in the chats.
 
 We shall handle both of these cases. Let's obtain an OAuth token that we shall use later on in our project.
@@ -153,7 +153,7 @@ You can obtain one from [https://twitchapps.com/tmi/](https://twitchapps.com/tmi
 Create a root directory and name it 'Twitch-Chatbot'.
 
 #### Folder structure
-The overall file structure is as  shown below:
+The overall file structure is as shown below:
 
 ```bash
 .
@@ -185,9 +185,9 @@ Create a file and name it `.env`. Now, we shall store our environment variables 
 
 > **Note:** If you want to upload your code to GitHub, please remember to include it in the `.gitignore` file to prevent it from being uploaded and cause a security breach. I prefer you use [git secrets](https://git-secret.io/) in the repository. Make sure you also enable [git guardian](https://www.gitguardian.com/) in your repository.
 
-The file would look like this:
+The file should look like this:
 
-```Bash
+```bash
 TWITCH_USERNAME= Name_of_the_chatbot
 TWITCH_OAUTH= The_key_gotten_from-the _website
 TWITCH_CHANNEL= Your_Chanell_Name
@@ -234,7 +234,7 @@ The `package.json` will contain the data shown below:
 #### app.js
 Open up our application entry point. And, now we will do the following:
 
-- Require necessary node modules. We shall also configure _tmi.js_ channel connection, reconnection and security options as shown below:
+- Require necessary node modules. We shall also configure *tmi.js* channel connection, reconnection and security options as shown below:
 
 ```javascript
 // Require necessary node modules
@@ -289,9 +289,9 @@ or
 node app.js
 ```
 
-> The bot can join the channel stream - online or offline. This enables one to deploy it whenver needed. You are also able to quickly shut it down in case of errors emerging.
+> The bot can join the channel stream - online or offline. This enables one to deploy it whenver needed. You are also able to quickly shut it down in case of any emerging errors.
 
-The output shall look like this to show a successful connection to the channel:
+The output should look like this to show a successful connection to the channel:
 
 ```bash
 john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
@@ -312,8 +312,9 @@ As you can see, we can't interact with this live Twitch chat but only fetch the 
 Now we shall add our identity and output options.
 
 - Delete the `console.log(message);` line.
-- Inside the brackets, we shall add _selective statements_ to acquire our desired user input hence return an output accordingly. We fetch the user input using `message` and the output is returned to the chats using `client.say();` where we obtain the username using `tags`.
-- We are also able to add another _selective statement_ that will check the first input - upvote, cheer, or any other. If it finds the first two, it returns a result. Otherwise, it remains silent.
+- Inside the brackets, we shall add *selective statements* to acquire our desired user input and return an output accordingly.
+- We fetch the user input using `message` and the output is returned to the chats using `client.say();` where we obtained the username using `tags`.
+- We are also able to add another *selective statement* that will check the first input - upvote, cheer, or any other. If it finds the first two, it returns a result. Otherwise, it remains silent.
 
 The code is as shown below:
 
@@ -452,7 +453,9 @@ or
 node app.js
 ```
 
-Now, it will give outputs as you configure it. An example is shown as below:
+Now, it will give outputs as you configure it. 
+
+An example is shown below:
 
 ```bash
 john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
@@ -468,15 +471,16 @@ john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
 It will look like this:
 
 ![Live demo](/engineering-education/build-a-twitch-chatbot-in-nodejs/live-demo.png)
+
 *Live demo*
 
-### Further Practice
+### Further practice
 - Try to make the chatbot using other languages and frame which might suit your need.
-- Launch your chatbot in remote Node.js servers at [Section.io](www.section.io) as shown here in [Section.io Node.js docs](https://www.section.io/docs/tutorials/launching-a-nodejs-app/)
+- Launch your chatbot in remote Node.js servers over on [Section.io](www.section.io) as shown here in [Section.io Node.js docs](https://www.section.io/docs/tutorials/launching-a-nodejs-app/).
 - Integrate a local or an online database to store your chats for later viewing and display them on a webpage.
 
 ### Conclusion
-Chatbots are crucial to our lives. Though they have numerous advantages, they also have some disadvantages. They continue to surprise us with new inventions and features which mimic and even surpass human intelligence. We hope they would increase beyond human intelligence.
+Chatbots are crucial to our lives. Though they have numerous advantages, they also have some disadvantages. They continue to surprise us with new inventions and features which mimic and even surpass human intelligence. We hope they will increase beyond human intelligence someday.
 
 Happy coding!
 
