@@ -167,13 +167,15 @@ IoC Containers are mostly used in an application for objects like:
 It would be best not to create instances of entities, data transfer, or value objects in containers. You can always create new instances of them when needed, which is okay from an architectural point of view.
 
 #### 2. Strategy design pattern
-Strategy Pattern is a behaviour design pattern. It makes it possible to change the behavior of a class or its algorithm at run time.
-Assuming we have an interface called `LaundryBot`. The `LaundryBot` will have methods for washing, drying, and folding. Different fabric types will use this interface. An example is the CashmereLaundryBot and SilkLaundryBot used for laundering cashmere and silk.
+A strategy pattern is a behavioral design pattern. It makes it possible to change the behavior of a class or its algorithm at run time. 
 
-We should have in mind that:
-a. All items supplied to the laundry can either be hand-washed or machine-washed.
-b. All items supplied to the laundry can either be sun-dried or dried using a dryer.
-c. All items are being folded in the same way. This means that fold will be a default method in the `LaundryBot` interface.
+Assuming we have an interface called `LaundryBot`, it will have methods for washing, drying, and folding. Different fabric types will use this interface. 
+An example is the `CashmereLaundryBot` and `SilkLaundryBot` used for laundering cashmere and silk.
+
+We should have in mind that: 
+- All items supplied to the laundry can either be hand-washed or machine-washed. 
+- All items supplied to the laundry can either be sun-dried or dried using a dryer.
+- All items are being folded in the same way, which means that fold will be a default method in the `LaundryBot` interface.
 
 ```kotlin
 interface LaundryBot{
@@ -185,9 +187,11 @@ interface LaundryBot{
 }
 ```
 
-We said an item can either be hand or machine washed and can either be sun-dried or dried using a dryer (machine dried). This means that any `laundryBot` class would have either of these methods. So if we have a DenimLaundryBot, and a CottonLaundryBot. They would both have the same piece of code for their wash and dry implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. How do we take care of this code duplication? Now, this is where the strategy pattern comes in.
-The Strategy pattern encapsulates a set of algorithms that are interchangeable at runtime. How do we implement this in `LaundryBot`?
-To do this, we would remove the wash() and dry() methods from the `LaundryBot` interface. We would then make them interfaces called `Wash` and `Dry`. These interfaces would have methods wash() and dry() respectively.
+We said an item could either be hand or machine washed and either sun-dried or dried using a dryer (machine dried), meaning that any `LaundryBot` class would have either of these methods, so if we have a `DenimLaundryBot`, and a `CottonLaundryBot`. They would both have the same piece of code for their Wash and dry implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. 
+
+How do we take care of this code duplication? 
+
+Now, this is where the strategy pattern comes in. The Strategy pattern encapsulates a set of algorithms that are interchangeable at runtime. How do we implement this in `LaundryBot`? To do this, we would remove the `Wash()` and `dry()` methods from the `LaundryBot` interface. We would then make them interfaces called Wash and Dry. These interfaces would have methods `Wash()` and `dry()` respectively.
 
 ```kotlin
 interface Wash{
@@ -197,36 +201,31 @@ interface Dry{
    fun dry()
 }
 ```
-
-Next, we provide concrete implementations of these interfaces. This way, we can encapsulate the different behaviors for each case of wash and dry. To do this, create classes called `MachineWash` and `HandWash` that inherit from `Wash`. In the same way, `MachineDry` and `SunDry` will inherit from `Dry`.
+Next, we provide concrete implementations of these interfaces. This way, we can encapsulate the different behaviors for each case of Wash and dry. To do this, create classes called `MachineWash` and `HandWash` that inherit from `Wash`. In the same way, `MachineDry` and `SunDry` will inherit from Dry.4
  
 ```kotlin
 object MachineWash: Wash{
    override fun wash() {
        //Perform Machine Wash
    }
- 
 }
  
 object HandWash: Wash{
    override fun wash() {
        //Perform Hand Wash
    }
- 
 }
  
 object SunDry: Dry{
    override fun dry() {
        //Perform Sun Dry
    }
- 
 }
  
 object MachineDry: Dry{
    override fun dry() {
        //Perform Machine Dry
-   }
- 
+   } 
 }
 ```
 
@@ -235,10 +234,8 @@ We have successfully created a family of algorithms for wash and dry.
 ![dependency flow](/engineering-education/ioc_principle/dry_algorithm_family.png)
 
 ![dependency flow](/engineering-education/ioc_principle/wash_algorithm_family.png)
-
  
-We have created strategies, now it's time for us to see how it works.
-Remember we removed the wash() and dry() methods from the `LaundryBot` interface. This time, rather than having methods of wash() and dry(), we would create fields of type `Wash` and `Dry`.
+We have created strategies; now, it's time for us to see how it works. Remember, we removed the `Wash()` and `dry()` methods from the `LaundryBot` interface. This time, rather than having `Wash()` and `dry()`, we would create fields of type Wash and Dry.
 
 ```kotlin
 interface LaundryBot {
@@ -249,10 +246,7 @@ interface LaundryBot {
    }
 }
 ```
-
-This way, any class that inherits from `LaundryBot` can choose the particular behavior it wants from the algorithm family.
-Let's see how this works:
-Say we want to create a `CashmereLaundryBot`. What behaviors of `Wash` and `Dry` do we choose from? It is advised to wash cashmere by hand to avoid tears and snags, thus we would use the `HandWash` behavior. For drying, cashmere isn't suitable for `MachineDry`. This is because the heat could shrink or damage its follicles. The `Dry` behavior to use for a cashmere then is the `SunDry`. Let’s see how this looks like in code:
+This way, any class inherits from `LaundryBot` can choose the particular behavior it wants from the algorithm family. Let's see how this works. Say we want to create a `CashmereLaundryBot`. What behaviors of Wash and Dry do we choose? It is advised to wash cashmere by hand to avoid tears and snags; thus, we would use the HandWash behavior. For drying, cashmere isn't suitable for MachineDry because the heat could shrink or damage its follicles. The Dry behavior to use for a cashmere then is the SunDry. Let's see how this looks like in code:
 
 ```kotlin
 class CashmereLaundryBot: LaundryBot{
@@ -264,10 +258,9 @@ class CashmereLaundryBot: LaundryBot{
 
 See how the strategy pattern has made it easy to change the behavior of this class? Nice!
  
-### Wrapping Up! 
-Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is particularly useful when developing reusable libraries, it is not appropraite in all use cases. It is important to know when to take advantage of the flexibility and freedom inversion of control brings, and when not to.
+Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is beneficial when developing reusable libraries, it is not appropriate in all use cases. It is essential to know when to take advantage of the flexibility and freedom inversion of control and when not to.
+It's been a long article, but I sure hope this will help you as much as it helped me. 
 
-It's been a long article, but I sure hope this helped you as much as it did me.
-Thank you!
+Happy Learning!
  
  
