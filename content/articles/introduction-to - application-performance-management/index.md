@@ -40,9 +40,15 @@ An example of a computational resource metric used to measure performance is sto
 
 Digital Experience Monitoring (DEM) focuses on the relationship between users and applications. The data it collects and analyses are based on how users get affected by the application in use. It detects and helps solve problems that affect user experience directly. Examples of such problems include long application response time and user unfriendliness.
 
+Many companies have realized that the only way to be competitive and stand out from the crowd in the current industry is by delivering a user experience that is top notch. Its not only providing customers with an excellent experience when they call customer service representative; but also ensuring ease-of-use of any application or software that a client accesses.
+
 On the other hand, Application Discovery, Tracing, and Diagnostics (ADTD) address the technical logistics of an application. This includes the runtime architecture. It manages applications by monitoring both hardware and software resources that form the digital environment to execute an application.
 
+It is more of a discovery, tracing and diagnostic tool. It helps with discovery and dependency mapping capabilities, monitoring key metrics and a deep analysis of transactions in order to discover errors. However, its advisable to evaluate the capabilities of ADTD before purchasing it.
+
 Artificial Intelligence for IT Operations (AIOps) applies to platforms that analyze and learn machine language to enhance the performance of applications. It improves performance continuously by integrating and deploying core IT functions to suit different and more sophisticated tasks.
+
+Although this will not be a requirement for every business, it is very useful for some organizations. A major component of the AIOPS is the application of analytic component of process monitoring which comprises of; alerting features, root cause analysis and performance anomalies. Gartner and other leading analyst believe that AI (Artificial Intelligence) is an essential component for any APM tool. It ensures future-proofed service for the coming age of intelligence. There is a good chance of us seeing growing reliance on AIOPS going forward as more applications continue to be infused with intelligent features.
 
 ### Significance of APM
 -  It helps to foretell and handle application performance setbacks before it impacts businesses and its clients. This is important in achieving overall performance targets for a business.
