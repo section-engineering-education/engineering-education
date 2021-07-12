@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /laravel-passport/
+title: Getting Started with Laravel passport authentication
+description: This tutorial will go through Laravel passport authentication and how to secure APIs in a Laravel application using OAuth2.
+author: miller-juma
+date: 2021-07-12T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/laravel-passport/hero.png
+   alt:  Getting Started with Laravel passport authentication
+---
+
 ### Introduction
 
 Most systems nowadays require authentications to access resources. For example, user login or API resource access.
