@@ -45,19 +45,30 @@ In the above example, the grouping operator prevents variables within the IIFE f
 We will use the code in one file. So we will go through the code first starting with the JavaScript code.
 
 ```javascript
+//The function for autotyping
 function autoType(elementClass, typingSpeed, timeout) {
+//The target class where the auto-typing will be invoked
     var ourClass = $(elementClass);
+    //setting the CSS styling for the target class
     ourClass.css({
       "position": "relative",
       "display": "inline-block"
     });
+    //looking for `text-js` containing the text that will be typed out
     ourClass = ourClass.find(".text-js");
+    //remove any trailing spaces
     var text = ourClass.text().trim().split('');
+    //storing the length of text
     var amntOfChars = text.length;
+    //variable to store the text to display
     var newString = "";
+    
     setTimeout(function () {
+    //changing the text visibilty to visible
       ourClass.css("opacity", 1);
+      //clearing out the text temporarily
       ourClass.text("");
+      //The IIFE where the characters are displayed after computing the typing speed
       for (var i = 0; i < amntOfChars; i++) {
         (function (i, char) {
           setTimeout(function () {
@@ -70,6 +81,7 @@ function autoType(elementClass, typingSpeed, timeout) {
   }
 
 function fire(){
+//calling the functions with respective arguments
     autoType(".type-js", 85, 1000);
     autoType(".type-js-ii", 200, 2500);  
     autoType(".type-js-iii", 85, 5800);  
@@ -83,7 +95,7 @@ The code consists of a function `autoType()` and an IIFE inside the function.
 `autoType()` contains three parameters:
 1. `elementClass` - the target class where the auto-typing will be invoked
 2. `typingSpeed` - This is the speed of typing the text out
-3. `timeout` - the timeout period for waiting =before the `autoTyping()` function is fired.
+3. `timeout` - the timeout period for waiting before the `autoTyping()` function is fired.
 
 We then have a variable `ourClass` for storing the target class. The next line is where we set the display style of the class.
 
@@ -236,21 +248,30 @@ Here is the full code. Create a file called *autotyping.html* at your preferred 
 </body>
 
 <script>
+//The function for autotyping
 function autoType(elementClass, typingSpeed, timeout) {
-
+//The target class where the auto-typing will be invoked
     var ourClass = $(elementClass);
+    //setting the CSS styling for the target class
     ourClass.css({
       "position": "relative",
       "display": "inline-block"
     });
+    //looking for `text-js` containing the text that will be typed out
     ourClass = ourClass.find(".text-js");
+    //remove any trailing spaces
     var text = ourClass.text().trim().split('');
+    //storing the length of text
     var amntOfChars = text.length;
+    //variable to store the text to display
     var newString = "";
-
+    
     setTimeout(function () {
+    //changing the text visibilty to visible
       ourClass.css("opacity", 1);
+      //clearing out the text temporarily
       ourClass.text("");
+      //The IIFE where the characters are displayed after computing the typing speed
       for (var i = 0; i < amntOfChars; i++) {
         (function (i, char) {
           setTimeout(function () {
@@ -263,6 +284,7 @@ function autoType(elementClass, typingSpeed, timeout) {
   }
 
 function fire(){
+//calling the functions with respective arguments
     autoType(".type-js", 85, 1000);
     autoType(".type-js-ii", 200, 2500);  
     autoType(".type-js-iii", 85, 5800);  
