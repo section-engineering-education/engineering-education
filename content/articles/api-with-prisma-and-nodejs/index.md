@@ -2,37 +2,36 @@
 layout: engineering-education
 status: publish
 published: true
-url: /api-with-prisma-and-node/
-title: Using Prisma with Postgres and Node.Js
+url: /api-with-prisma-and-nodejs/
+title: Using Prisma with Postgres and Node.js
 description: In this article, we will be looking at how to setup and create a simple Node.js API, using Express as our framework of choice, Postgresql as our database, and Prisma as our ORM.
 author: daniel-katungi
-date: 2021-07-11T00:00:00-14:03
-topics: [Node.js]
+date: 2021-07-12T00:00:00-14:30
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/api-with-prisma-and-node/hero.png
-    alt: Api With Prisma and Node image
+  - url: /engineering-education/api-with-prisma-and-nodejs/hero.png
+    alt: API With Prisma and Node.js image
 ---
-
-Most modern day applications make use of databases mainly to store data. In many modern backend architectures, everything else is modelled around the data and its manipulation.
+Most modern day applications make use of databases mainly to store data. In many modern backend architectures, we model everything else around the data and its manipulation.
 <!--more-->
-When using Node.js most developers opt to go for NoSql databases as they are known to be easier to use. Examples of such are Mongodb and Firebase.
+When using Node.js most developers opt to go for NoSql databases as they are known to be easier to use. Examples of such are [Mongodb](/engineering-education/search/?q=Mongodb) and [Firebase](/engineering-education/search/?q=Firebase).
 
-Working with SQL databases in Node.js often requires ORM(Object Relational Mapping) libraries to abstract the untidy database operations so the developer only has to worry about the logic.
+Working with SQL databases in Node.js often requires ORM (Object Relational Mapping) libraries to abstract the untidy database operations so the developer only has to worry about the logic.
 
-In this article, we will be looking at how to setup and create a simple Node.js API, using Express as our framework of choice, Postgresql as our database, and Prisma as our ORM.
+In this article, we will look at how to setup and create a simple Node.js API, using Express as our framework of choice, Postgresql as our database, and Prisma as our ORM.
 
 ### Prerequisites
-To comfortably follow along with this article, you will need to have:
-- Node.js installed on your machine
-- Postgresql installed on your machine
-- A good understanding of the Express framework
-- Some working knowledge of postgress
+To comfortably follow this article along, you will need to have:
+- Node.js installed on your machine.
+- Postgresql installed on your machine.
+- A good understanding of the Express framework.
+- A working knowledge of postgress.
 
-### Step 1 : Setting up the Application
-Create your working directory and give it any name you fancy. I will call mine `section-prisma`. This is where all the magic will happen.
+### Step 1: Setting up the Application
+Create your working directory and give it any name you'd like. I will call mine `section-prisma`. This is where all the magic will happen.
 
-Run `npm init -y` in the directory to initialize a Node.js project
+Run `npm init -y` in the directory to initialize a Node.js project.
 
 ```console
  mkdir section-prisma
@@ -42,13 +41,17 @@ Run `npm init -y` in the directory to initialize a Node.js project
  npm init -y
 ```
 
-With that done, we can now install Prisma. To do so, we use npm or yarn.
+With that done, we can now install Prisma. 
+
+To do so, we use npm or yarn.
 
 ```console
 npm install prisma
 ```
 
-The next step is to initialize prisma into the project. In the terminal, we run:
+The next step is to initialize prisma into the project. 
+
+In the terminal, we run:
 
 ```console
 npx prisma init
@@ -60,8 +63,8 @@ Within this folder is a file called `schema.prisma`. This file will contain our 
 
 A `.env` file is typically used to store sensitive values you wouldn't want public like keys and secret tokens or even encryption secrets. It is best practice to add it in your `.gitignore` file.
 
-### Step 2 : Connecting to Postgres
-This article already assumes that you have postgress already setup on your machine and will not go through that.
+### Step 2: Connecting to Postgres
+This article already assumes that you have postgress already setup on your machine and we will not go through that.
 
 Prisma supports a lot of databases, and postgress is just one of them. In the event that you want to use another database like sqlite, you can change the value of the database provider in the datasource option in the `schema.prisma` file.
 
@@ -78,7 +81,9 @@ generator client {
 }
 ```
 
-Now in the .env file, we add our Database URL. For postgress, it usually looks like this:
+Now in the .env file, we will add our Database URL. 
+
+For postgress, it usually looks like this:
 
 ```bash
 DATABASE_URL="postgresql://your-user:your-password@localhost:5432/db-name?schema=public"
@@ -86,19 +91,21 @@ DATABASE_URL="postgresql://your-user:your-password@localhost:5432/db-name?schema
 
 Replace, `your_user`, `your_password` and `db_name` with your correct credentials.
 
-With that done, we have our project setup. Let's get coding!
+With that done, we have our project setup. 
 
-### Step 3 : Data Modelling Using Prisma
-When working with a database, you have to define how the data in the database will look like in the database. Modelling is necessary to give a description of the data that the client is providing, and the data the database is expecting.
+Let's get coding!
 
-Prisma comes with it's own `data modelling language` that makes it easier to perform data modelling.
+### Step 3: Data modeling using Prisma
+When working with a database, you have to define how the data in the database will look like. Modeling is necessary to give a description of the data that the client is providing, and the data the database is expecting.
+
+Prisma comes with it's own `data modeling language` that makes it easier to perform data modeling.
 
 Prisma is an ORM, so it has to transform the data model into relevant SQL statements and database tables. Therefore, once we are done with our models, we will run `prisma migrate` which will create the relevant tables in the db.
 
-#### Step 4 : Creating our model
+#### Step 4: Creating our model
 Within the `schema.prisma` file, after the datasource and generator block, we can define our model.
 
-_TIP_ : If you are using VSCode for this tutorial, you can install the prisma extention [here](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) to give you autocomplete and formatting for the prisma modelling language.
+*TIP: If you are using VSCode for this tutorial, you can install the prisma extention [here](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) to help you autocomplete and format the prisma modeling language.*
 
 To define a model, we use the keyword `model` then specify the name of the model. This entire model will be treated as a table by the database.
 
@@ -121,37 +128,41 @@ model Job {
 }
 ```
 
-We defined `title`, `location` and `salary` fields which all are of String type. We also have an `id` so that each Job can be unique.
+We defined `title`, `location` and `salary` fields which all are of the String type. We also have an `id` so that each Job can be unique.
 
 In prisma, we can define `attributes` like `@id` which denotes that this field will be treated as an id, and `@default()` which sets the default value for the field.
 
-Some attributes take arguments just like the way `default` took the `autoincrement()` argument.
+Some attributes take arguments similar to the way `default` took the `autoincrement()` argument.
 
-And just like that, you built your first Prisma model. We should now sync it with our db by running:
+And just like that, you've built your first Prisma model. 
 
-```console
+We should now sync it with our db by running:
+
+```bash
 npx prisma migrate dev
 ```
 
-The command will prompt you to enter a name for the migration , so you should be very intentional with the data you provide.
+The command will prompt you to enter a name for the migration, so you should be very intentional with the data you provide.
 
 Once the command is done, you should see a `migrations` folder in the Prisma folder containing the migration we just made to the db.
 
-You can read more on modelling data in prisma in the [official docs](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model)
+You can read more on modeling data in prisma in the [official docs](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model)
 
-### Step 5 : Creating a Rest API
+### Step 5: Creating a Rest API
 We can now query the db while creating an express API around our data.
 
-#### Create an Express Server
-First step, let's create our server using express. To install express run:
+#### Creating an Express Server
+First step, let's create our server using express. 
 
-```console
+To install express run:
+
+```bash
  npm i express
 ```
 
-In the root of the folder, create a file called `index.js` where all the magic will happen.
+In the root of the folder, create a file called `index.js`, that is where all the magic will happen.
 
-In the file, we create a simple server:
+In the file, we will create a simple server:
 
 ```js
 const express = require("express");
@@ -167,7 +178,7 @@ app.listen(port, () => {
 });
 ```
 
-One of the key features that Prisma ships with is Querying and query relations.
+One of the key features that Prisma ships with is querying and query relations.
 
 It provides some query options that help you perfom CRUD operations and other operations. We will use a few in our example. To read more about them, you can check the [docs](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries)
 
@@ -235,21 +246,23 @@ app.listen(port, () => {
 });
 ```
 
-And with that, you just created a simple, functioning API using Node.js (Express), Postgres and PRISMA. 🙌
+With that, you just created a simple, functioning API using Node.js (Express), Postgres and PRISMA. 🙌
 
-## Conclusion
-Prisma is a very powerful ORM. It offers a lot of features out the box, but the key feature is ease of use in comparison to other ORMs in place.
+### Conclusion
+Prisma is a very powerful ORM. It offers a lot of features out the box, but the key feature is the ease of use in comparison to other ORMs in place.
 
 In this article we covered:
-- The basics of Prisma
-- How to setup Prisma and connect to Postgres
-- How to create an API to query the DB
+- The basics of Prisma.
+- How to setup Prisma and connect to Postgres.
+- How to create an API to query the DB.
 
-It's also worth noting that commands like `prisma migrate` are more powerful than demonstrated in the article and are worth giving a good look into. You can read more about that [here](https://www.prisma.io/docs/concepts/components/prisma-migrate)
+It's also worth noting that commands like `prisma migrate` are more powerful than demonstrated in the article and are worth giving a good look into. 
 
-Prisma does not support postgres alone. It supports multiple SQL databases so feel free to experiment with your favorite DB.
+You can read more about that [here](https://www.prisma.io/docs/concepts/components/prisma-migrate)
 
-Happy Coding!
+Prisma does not support Postgres alone. It supports multiple SQL databases so feel free to experiment with your favorite DB.
+
+Happy coding!
 
 ---
 
