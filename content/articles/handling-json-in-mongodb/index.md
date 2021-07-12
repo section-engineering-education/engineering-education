@@ -96,23 +96,23 @@ First, we need to have our JSON file which we will import to the MongoDB databas
 
 ### Import JSON to MongoDB
 Next, you need to create a database to hold the JSON object that you will import. Execute the command below to create the database and import the JSON file as a `student` collection.
-```shell
+```bash
 mongoimport --jsonArray --db studentinfo --collection students --file path-to-your-file\filename.json
 ```
 
 If your import was a success, you should get the message below in the terminal
-```shell
+```bash
 2021-06-29T22:35:18.454+0300    connected to: mongodb://localhost/
 2021-06-29T22:35:18.500+0300    4 document(s) imported successfully. 0 document(s) failed to import.
 ```
 
 Now to verify the import, run the command below to view the imported data:
-```shell
+```bash
 db.students.find().pretty()
 ```
 
 This command should fetch all objects from the JSON file that was imported as below:
-```shell
+```json
 db.students.find()
 { "_id" : ObjectId("60db758c4a433597bcae61c0"), "student_number" : 1, "name" : "John Doe", "age" : 17, "Course" : "Computer Science" }
 { "_id" : ObjectId("60db758c4a433597bcae61c1"), "student_number" : 4, "name" : "John Dohn", "age" : 37, "Course" : "Political Science" }
@@ -123,17 +123,17 @@ db.students.find()
 ### Save JSON data to MongoDB Database
 Now that we have imported a JSON file into MongoDB, we will add two records to the database then export the data to a new JSON file.
 Use the command below to add records to the database:
-```shell
+```bash
 db.students.insert({"student_number":5, "name":"Last student added", "age":22, "Course":"Engineering"})
 ```
 
 You should get the response below in the terminal:
-```shell
+```bash
 WriteResult({ "nInserted" : 1 })
 ```
 
 Now if we run the command, we find an extra record in the database:
-```shell
+```json
 db.students.find()
 { "_id" : ObjectId("60db758c4a433597bcae61c0"), "student_number" : 1, "name" : "John Doe", "age" : 17, "Course" : "Computer Science" }
 { "_id" : ObjectId("60db758c4a433597bcae61c1"), "student_number" : 4, "name" : "John Dohn", "age" : 37, "Course" : "Political Science" }
