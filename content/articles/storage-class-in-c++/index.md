@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/storage-class-in-c++/
+title: Storage Classes in C++
+description: This article takes the reader through various storage classes in C++, what they are, their roles and importance. Storage classes are mainly used to express the variables' and methods' characteristics.
+author: dawe-daniel
+date: 2021-07-12T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/storage-class-in-c++/hero.jpg
+    alt: C++ Storage Classes Image Example
+---
 ### Introduction
 Each variable in C++ has a data type. When defining a variable, the compiler assigns a storage class by default. We use storage classes in C++ to express the variables' and methods' characteristics. It also specifies the [scope, lifetime, and visibility of variables and functions](https://www.opensourceforu.com/2011/10/joy-of-programming-scope-lifetime-and-visibility-in-c). These characteristics enable us to track the presence of a variable over the course of a program's execution. This article will look at various storage classes and code examples that show how they work.
-
+<!--more-->
 ### Prerequisites
 To follow through this article, the reader should have:
 
@@ -340,3 +356,6 @@ Output:
 In this article, we discuss the different methods that we can use as storage class's in C++ programs as well as what they are and their roles. With that, you should be able to create programs that use storage classes to express the attributes of variables and methods. I hope you find this article intuitive and useful in your future programs.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
