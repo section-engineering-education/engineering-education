@@ -69,8 +69,6 @@ Some of the basics needed to follow along with the tutorial include the followin
 ### What is a chatbot
 Let's start with this interesting question.
 
-![Chatbot](/engineering-education/build-a-twitch-chatbot-in-nodejs/chatbot.png)
-
 A `Chat-Bot` is an application with the capability to conduct online chat via text messages, speech, or even videos. It can have preset conversations inputted and their expected outputted. They can also use AI to create new conversation depending on the context. Most are not autonomous therefore a human being is always closeby in case of any issues in which it doesn't understand.
 
 Even though these chatbots have not become fully autonomous, improvements are made each day to push them near to perfection. 
