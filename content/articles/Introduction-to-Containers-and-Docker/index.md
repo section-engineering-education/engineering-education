@@ -64,7 +64,7 @@ Docker is an OS-level virtualization programming stage that assists clients with
 
 For Dockers work area application to run as planned, your PC ought to meet the following requirements: 
 
-1. A Windows 10 64-bit OS. Also, the `Virtualization and Containers` Windows feature should be activated.
+1. A Windows 10 64-bit OS. Also, the `Virtualization and Containers` Windows feature should be enabled.
 
 2. A minimum of 4GB system RAM is recommended. 
 
@@ -74,7 +74,7 @@ For Dockers work area application to run as planned, your PC ought to meet the f
 
 1. Download the docker work area for windows executable record. To download the official file, [click here](https://docs.docker.com/docker-for-windows/install).
 
-2. Double click on the `Docker Desktop Installer.exe` to start the installation. After you have started the installation, you may be prompted to `Enable Hyper-V Windows Feature`. Please ensure that you do so.
+2. Double click on the `Docker Desktop Installer.exe` to start the installation. After you have started the installation, you may be prompted to enable the `Hyper-V and Containers Windows` feature. Please ensure that you do so.
 
 3. Accept the Terms and Agreement to allow the installation cycle to finish.
 
