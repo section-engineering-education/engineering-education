@@ -3,7 +3,6 @@ Weather forecasting is very necessary for our daily lives. It helps us to prepar
 
 ### Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Get the API Key](#get-the-api-key)
