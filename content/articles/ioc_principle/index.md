@@ -98,47 +98,41 @@ Thus, we can apply IoC in object-oriented programming in many ways. Some of whic
 
 Let's look into dependency injection and strategy design patterns.
  
-### 1. Dependency Injection (DI)
-Dependency Injection is a design pattern mostly used with the Dependency Inversion Principle. It makes it possible for dependent objects to be created outside of a class. It then provides those objects to the class.
-If we have a class `LoginManager` that depends on an implementation of `UserRepository`.
+#### 1. Dependency Injection (DI)
+Dependency Injection(DI) is a design pattern primarily used with the Dependency Inversion Principle. It makes it possible for dependent objects to be created outside of a class. It then provides those objects to the class. 
+
+For example, we have a class `LoginManager` that depends on the implementation of `UserRepository`.
  
  ```kotlin
-
 class LoginManager {
-
     val userRepository: UserRepository = UserRepositoryImpl()
- 
 }
 ```
 
-We can see that there is a high dependency between `LoginManager` and `UserRepository`. `LoginManager` is directly dependent on the `UserRepository` because `UserRepository` handles its creation. This violates the dependency inversion and Single Responsibility Principle. The result is a tight couple between `LoginManager` and `UserRepository`.
+We can see that there is a high dependency between `LoginManager` and `UserRepository.` `LoginManager` is directly dependent on the `UserRepository` because `UserRepository` handles its creation. This violates the Dependency Inversion and Single Responsibility Principle. The result is a tight couple between `LoginManager` and `UserRepository.`
 
 There are a couple of ways to fix this:
-
-**a. Using public setters:** This is not a recommended approach. This is because it might leave objects in an uninitialized state.
+- **Using public setters:** This is not recommended because it might leave objects in an uninitialized state.
 
 ```kotlin
 class LoginManager {
     lateinit var userRepository: UserRepository
-  
 }
 
 fun main(args: Array) {
-
     val loginManager = LoginManager()
     loginManager.userRepository = UserRepositoryImpl()
-
 }
 ```
 
-
-**b. Declare all the dependencies in the component's constructor.** This would look like this:
+- **Declare all the dependencies in the component's constructor:** This would look like this:
 
 ```kotlin
 class LoginManager (val userRepository: UserRepository){
 
 	//Do something...
 }
+
 fun main(args: Array) {
 
 // In the caller function, create an instance of UserRepository
@@ -146,34 +140,33 @@ fun main(args: Array) {
 
 // use the UserRepository instance to construct an instance of LoginManager
     val loginManager = LoginManager(userRepository)
-
 }
 ```
 
+`LoginManager` now has a constructor that accepts `UserRepository` abstraction as a parameter. `LoginManager` can now use `UserRepository` whichever way it pleases because `UserRepository` is now a field in the `LoginManager` class. `LoginManager` is no longer responsible for creating its dependencies. It is now the caller's job in this case—the main function. The main function provides the required dependency, which is `UserRepositoryImpl.` This way, we can have different implementations of `LoginManager` and quickly test it in other contexts.
 
-`LoginManager` now has a constructor that accepts `UserRepository` abstraction as a parameter. `LoginManager` can now make use of `UserRepository` whichever way it pleases. This is because `UserRepository` is now a field in the `LoginManager` class.
-`LoginManager` is no longer responsible for creating its own dependencies. It is now the caller’s job in this case—the main function. The main function provides the required dependency which is `UserRepositoryImpl`. This way, we can have different implementations of `LoginManager` and easily test it in different contexts.
-
-Let’s look at a more complex scenario:
+Let's look at a more complex scenario:
 
 ![dependency flow](/engineering-education/ioc_principle/dependency_injection.png)
 
-We can see that Class A and B have no dependencies. Class C is dependent on Class A. Class D is dependent on Class B and Class E is dependent on both Class C and D. 
-If we want to call a method on or create an instance of class E, we would have to create all its required dependencies. We would need to create concrete instances of Classes A, B, C, and D in a particular order. Firstly, we would create instances of Class A and Class B. This is because they have no dependencies. Next, we would create instances of classes C and D. This is because we have instances of their respective dependencies A and B. Finally, we can create an instance of Class E.
-Whew! Right? This is a simple example with just 5 classes. Imagine what would happen with real-life projects. There could be hundreds of classes that have to be instantiated every single time. That would be a whopping load of redundant work. Dependency injection is a great technique needed for achieving loosely coupled classes. But we can see here that doing it manually is not such a good idea.
+We can see that Class A and B have no dependencies. Class C is dependent on Class A. Class D is dependent on Class B, and Class E is dependent on both Class C and D. If we want to call a method on or create an instance of class E, we would have to create all its required dependencies. We need to create concrete instances of Classes A, B, C, and D in a particular order. 
 
-Also, if you want to consider the lifecycle of these objects. Supposing you want Class C to be a singleton, and create D on every request. Handling this manually would involve a lot of logic and redundant codes. This is where manual dependency injection comes in. With manual DI, you can create your own dependencies container class. This container will house your application’s dependencies. The IoC or DI Container now controls the creation and lifecycle of the objects. This way, you don't have to create instances of these objects every single time you need them anymore. 
-Dagger and hilt can automate this process and generate the necessary code for you.
+Firstly, we would create instances of Class A and Class B because they have no dependencies. Next, we would create instances of classes C and D because we have instances of their respective dependencies A and B. Finally, we can create an instance of Class E. 
+
+Whew! Right? This is a simple example with just five classes. Imagine what would happen with real-life projects. There could be hundreds of classes that have to be instantiated every single time. That would be a whopping load of redundant work. Dependency injection is a great technique needed for achieving loosely coupled classes. But we can see here that manually doing dependency injection is not such a good idea.
+
+Also, if you want to consider the lifecycle of these objects, supposing you want Class C to be a singleton and create D on every request. Handling this request manually would involve a lot of logic and redundant codes. This is where manual dependency injection comes in. With manual DI, you can create your own dependencies container class. This container will house your application's dependencies.
+
+The IoC or DI Container now controls the creation and lifecycle of the objects. This way, you don't have to create instances of these objects every single time you need them anymore. Dagger and hilt can automate this process and generate the necessary code for you.
 
 IoC Containers are mostly used in an application for objects like:
-* Services,
-* Data Access, or
-* Controllers.
+- Services.
+- Data Access.
+- Controllers.
 
- You mustn't create instances of entities, data transfer, or value objects in containers. You can always create new instances of them when needed. This is okay from an architectural point of view.
+It would be best not to create instances of entities, data transfer, or value objects in containers. You can always create new instances of them when needed, which is okay from an architectural point of view.
 
-
-### 2. Strategy design pattern
+#### 2. Strategy design pattern
 Strategy Pattern is a behaviour design pattern. It makes it possible to change the behavior of a class or its algorithm at run time.
 Assuming we have an interface called `LaundryBot`. The `LaundryBot` will have methods for washing, drying, and folding. Different fabric types will use this interface. An example is the CashmereLaundryBot and SilkLaundryBot used for laundering cashmere and silk.
 
