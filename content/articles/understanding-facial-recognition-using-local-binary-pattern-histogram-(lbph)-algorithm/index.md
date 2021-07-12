@@ -6,7 +6,7 @@ url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbp
 title: Understanding Facial Recognition Using Local Binary Pattern Histogram (LBPH) Algorithm
 description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition. Finally, this article will cite some of the best application areas of LBPH.
 author: ruth-mare
-date: 2021-07-06T08:00:00-18:00
+date: 2021-07-12T08:00:00-15:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ The Local Binary Pattern Histogram (LBPH) algorithm is a face recognition algori
 
 The reader should familiarize himself/herself with mathematical matrices and the concept of sliding window to help understand this article better.
 <!--more-->
-In this article, we are going to look at how the LBPH algorithm detects faces.
+In this article, we are going to look at how the LBPH algorithm recognises faces.
 
 ### Overview
 This article will cover:
@@ -70,13 +70,17 @@ The first step is the learning of the algorithm. It makes use of a data-set of i
 1.	**The application of the LBP operation:** is the first step of the computational steps. Here, an intermediate image has been created to better represent the original image through a [sliding window](https://www.techopedia.com/definition/869/sliding-window) concept, taking into account two parameters: the `neighbor` and the `radius`. New values are created in the form of binary by comparing the 8 `neighbor` values to the threshold value. For each `neighbor` value greater than the threshold value, the value is set to 1 and 0 for every `neighbor` value less than the threshold value. This forms a matrix of binary numbers excluding the threshold. A central value of the matrix is created by the conversion of the binary number to a decimal value which corresponds to the pixels of the original image. For a better representation of the characteristics of the original image.
 
 The following image illustrates the above conversions:
+
 [Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/lph_operation.png)
+
 [Image source](https://i.stack.imgur.com/ZU3aC.png)
 
 2.	**To Extract Histograms:** The image obtained in step is divided into multiple grids, with the help of the Grid parameters `X` and `Y`. This image is in grayscale, each of the histograms of each of the grids is to represent the intensity of the occurrences of each pixel. Each histogram is then combined to create a new histogram that represents the attributes of the original image.
 
 The following image illustrates the above exactraction:
+
 [Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/extracting_histograms.jpg)
+
 [Image source](https://www.semanticscholar.org/paper/Face-Recognition-based-Attendance-System-using-Haar-Chinimilli-A./cd4429cac9a4d9c99796f990974dd9a9ff88f1f8/figure/4)
 
 3.	**Accurate face recognition:** Each one made a histogram for an image in the training data set. Two histograms are compared to output the image with the closest histogram matches to an input image. This output is the ID or name of the image. This algorithm also returns a **`confidence`**' measurement which is the calculated distance. The correctness of the algorithm in recognizing the image is estimated automatically by the `confidence` and the threshold. The correctness is indicated by a confidence value that is lower than the defined threshold.
