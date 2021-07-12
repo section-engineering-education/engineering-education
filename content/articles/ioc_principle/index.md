@@ -15,26 +15,24 @@ images:
     alt: Inversion of control principle cover image 
 ---
 
-
-
-In this article, you are going to learn the basics of inversion of control in Kotlin. Why it is important in great software design and how it is connected to dependency injection and the strategy pattern. You would get to see just how IoC makes your code less complex, flexible, and easily testable.
+This article will explain the basics of inversion of control(IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable.
 
 ### Prerequisites
-* Before we begin, you should have:
-* Basic knowledge of programming with Kotlin.
-* A Laptop
-* An  IDE. I will be using IntelliJ
-* Good spirits!
-
-
-Inversion of control makes its possible for a consumer of an object in a software to have more control. It gives it more flexibility and freedom to choose from other options.
+Before we begin, it is advisable to have:
+- Basic knowledge of Kotlin programming language.
+- An IDE installed. Preferably [IntelliJ](https://www.jetbrains.com/idea/).
+- Good spirits!
 
 ### Introduction
-Inversion of Control(IoC) is a software design principle. It helps to reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its main responsibility. IoC passes the control of an object’s creation, the flow of an application, etc. to a container or framework.
+Inversion of Control (IoC) is a software design principle that helps reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its primary responsibility. 
+IoC controls an object's creation and the flow of an application to a container or framework.
 
 IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and lifecycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
 
-Imagine this: suppose you have a bakery that specializes in making egg rolls. What is an egg roll without an egg? Right. So eggs are essential in the making of egg rolls. Why egg rolls you may ask? Well, you could call it plain nepotism. So how do we get a bakery that obeys the IoC principle? Well, rather than having a poultry farm and involving yourself with all the poultry-related tasks, you order the eggs and get them delivered to you. This time, you don't have to worry about the chicks and the eggs being healthy, or if you are using the right feed, and all. With this new design, you can focus on making egg rolls, which results in a more effective baking process. This is the big idea behind IoC: separating concerns.
+Imagine this: suppose you have a bakery that specializes in making egg rolls. What is an egg roll without an egg? So eggs are essential in the making of egg rolls. Why egg rolls, you may ask? Well, you could call it plain nepotism. So how do we get a bakery that obeys the IoC principle? Well, rather than having a poultry farm and involving yourself with all the poultry-related tasks, you order the eggs and get them delivered to you. This time, you don't have to worry about the chicks and the eggs being healthy or using the suitable animal feed. With this new design, you can focus on making egg rolls, which results in a more effective baking process. 
+
+This is the big idea behind IoC: separating concerns.
+Inversion of control makes it possible for a consumer to have more control over the software. It gives it more flexibility and freedom to choose from other options.
 
 ### Here are some of the benefits of using IoC:
 * Easy to switch between different implementations of a particular class at runtime.
