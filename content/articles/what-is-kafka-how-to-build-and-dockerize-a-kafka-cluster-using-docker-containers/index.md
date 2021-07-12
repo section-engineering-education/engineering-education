@@ -1,5 +1,3 @@
-### What is Kafka
-
 [Kafka](https://kafka.apache.org/) is an open-source, event-distributed streaming platform. It enables developers to collect, store and process data to build real-time event-driven applications at scale. It allows developers to build applications that continuously produce and consume streams of data records, making the application a high-performance data pipeline.
 
 ### How does a Kafka application work?
@@ -163,3 +161,9 @@ At this point, you have a working Kafka cluster with its Zookeeper. To stop the 
 ```bash
 docker-compose down
 ```
+
+### Conclusion
+
+As you move messages from point A to point B, the Kafka broker is useful for data replication. Kafka is built on a high-performance architecture that ensures low latency, scalability, and throughput. Event streaming and processing systems rely on Kafka as their backbone. This ensures system health by providing unified real-time data feeds.
+
+Some of the everyday use cases of Kafka include daily news feeds, such as the New York Times. It stores and distributes real-time news to its readers using Apache Kafka streams. Messaging applications, LinkedIn, for example, is estimated to process five trillion messages per day. Kafka is used by Netflix for both real-time monitoring and event processing. Kafka is used by Cloudflare for log processing and analytics pipelines. They can now collect hundreds of billions of events from various servers. Uber, Adidas, PayPal, Cisco, and Pinterest, to name a few, are among the companies that use Kafka.
