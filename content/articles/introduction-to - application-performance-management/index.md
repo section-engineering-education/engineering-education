@@ -73,10 +73,10 @@ WordPress businesses prefer [New Relic](https://newrelic.com/ ), which charges $
 In conclusion, there are hundreds of Application Performance Management (APM) tools to choose from despite the technical and cost differences. Regardless of one's preference, there will always be something for everyone.
 
 ### References
-https://www.itcentralstation.com/categories/application-performance-management-apm
+1. [Application Performance Management](https://www.itcentralstation.com/categories/application-performance-management-apm)
 
-https://www.trustradius.com/application-performance-management
+2. [Application Performance Management (APM) Software](https://www.trustradius.com/application-performance-management)
 
-https://www.blazemeter.com/blog/apm-tools-comparison-which-one-should-you-choose
+3. [APM Tools Comparison: Which One Should You Choose?](https://www.blazemeter.com/blog/apm-tools-comparison-which-one-should-you-choose)
 
-https://www.bmc.com/blogs/what-is-aiops/#:~:text=AIOps%20is%20short%20for%20artificial,and%20machine%20learning%20(ML).&text=AIOps%20then%20implements%20a%20comprehensive,against%20the%20combined%20IT%20data.
+4. [What Is AIOps? A Beginner’s Guide](https://www.bmc.com/blogs/what-is-aiops/#:~:text=AIOps%20is%20short%20for%20artificial,and%20machine%20learning%20(ML).&text=AIOps%20then%20implements%20a%20comprehensive,against%20the%20combined%20IT%20data.)
