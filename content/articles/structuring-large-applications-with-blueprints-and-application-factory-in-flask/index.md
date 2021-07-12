@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/structuring-large-applications-with-blueprints-and-application-factory-in-flask/
+url: /structuring-large-applications-with-blueprints-and-application-factory-in-flask/
 title: Structuring Large Applications in Flask with Blueprints and Application Factory
 description: In this article, we will understand how to work with structure large applications in Flask. We will also learn to create individual components like Blueprints, and Application factories.
 author: adetu-ridwan
-date: 2021-07-11T00:00:00-19:00
+date: 2021-07-12T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -22,11 +22,12 @@ To avoid the obstacles resulting in structuring a large application poorly, ther
 
 ### Prerequisites
 The prerequisites for this article includes an understanding of the following concepts:
-- Intermediate usage and implementation of a Flask web app.
-- Understanding of Object-Oriented Programming concepts with Python.
-- Understanding of Flask views and templates.
-- Intermediate knowledge with the use of terminals.
-- Intermediate understanding of databases.
+
+- Intermediate usage and implementation of a Flask web app
+- Understanding of Object-Oriented Programming concepts with Python
+- Understanding of Flask views and templates
+- Intermediate knowledge with the use of terminals
+- Intermediate understanding of databases
 
 ### Table of Contents
 - [Work Environment Setup](#work-environment-setup)
@@ -203,7 +204,7 @@ class ProductionConfig(Config):
    SQLALCHEMY_TRACK_MODIFICATIONS = False
 ```
 
-The above code encapsulates the basic template for configuration files, as the developer, it is at your discretion to decide what goes under each config(production, development, and testing). Let’s proceed to the environmental variables.
+The above code encapsulates the basic template for configuration files, as the developer, it is at your discretion to decide what goes under each config (production, development, and testing). Let’s proceed to the environmental variables.
 
 #### Environmental file code sample
 The environmental variable file is stored in the base directory of our web application. However, to work with environmental variables, we have to install the *python-dotenv* extension via pip.
@@ -235,6 +236,7 @@ We’ve successfully been able to dissect the pieces that would come together to
 We now understand the components of structuring a large Flask application. Now, let’s place the pieces together to know how we can structure one.
 
 The process of structuring a large flask application is quite straightforward. All we require are the following:
+
 - The config file
 - The .env file
 - The features/components of our application
@@ -254,9 +256,10 @@ For example, in a social network web application, we have the user authenticatio
 In our auth package, we can add the *views* and *forms* file for this specific feature. It is best practice to use the feature name as a prefix to files within the package. E.g the `views.py` for auth will be saved as `auth_views.py` this way it eases recognition.
 
 In the `__init__.py` file in the auth package, here are the things we need to do:
+
 - Import Blueprint from flask
 - Initialize an object of a blueprint and pass in the blueprint name for this specific component which in our case is ‘auth’
-- Underneath the object initialization, we import all other components of this package/feature here such as `auth_forms`, `auth_views` e.t.c.
+- Underneath the object initialization, we import all other components of this package/feature here such as `auth_forms`, `auth_views` etc.
 
 A complete implementation of this is as follows:
 
@@ -274,11 +277,12 @@ After creating components of our application and setting up blueprints, we have 
 In our app folder where we have the `__init__.py` file for the application itself, we import all extensions and modules required for our application to function. We also create instances of our extensions installed.
 
 Next, we create an application factory function commonly named `create_app()`. The `create_app()` function takes a config argument from our `config.py` file. The following outlines the process on the block of code that goes into the application factory function:
+
 - Create an app variable and initialize Flask
-- Load the application configuration as an object from the 	`config.py` passed into the function
+- Load the application configuration as an object from the `config.py` passed into the function
 - Initialize extension instances created outside our application factory function
 - Register the blueprints
-- Return the app variable.
+- Return the app variable
 
 The implementation of this logic is as follows:
 
@@ -311,6 +315,7 @@ def create_app(config=DevelopmentConfig):
 The run file is where we have the code instructions to run our flask application.
 
 Here, we do the following:
+
 - Import the application factory from the app
 - Import the application config classes
 - Create an instance of the application and pass it to the app variable name
