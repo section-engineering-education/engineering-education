@@ -35,59 +35,67 @@ This is the big idea behind IoC: separating concerns.
 Inversion of control makes it possible for a consumer to have more control over the software. It gives it more flexibility and freedom to choose from other options.
 
 ### Here are some of the benefits of using IoC:
-* Easy to switch between different implementations of a particular class at runtime.
-* It increases the modularity of the program.
-* It manages an object’s lifecycle and configuration. Some objects can be singletons, while we can create others per request.
+- Easy to switch between different implementations of a particular class at runtime.
+- It increases the modularity of the program.
+- It manages an object’s lifecycle and configuration. Some objects can be singletons, while we can create others per request.
 
 Before we look at some code, here are some things you should have in mind:
 
-### 1. Coupling
-Coupling is a measure of how closely bound software modules are to one another. It is the degree to which changes made to a component force a need for a change in other components or modules. Tight coupling is when a change in component A requires a change in component B. Loose coupling means that components A and B are independent. Thus a change in component A would not affect B.
-Loose coupling is often a sign of testable, well-structured, maintainable, and readable software. Tight coupling leads to code fragility and code rigidity. Code fragility is the likelihood that a software will break in many places every single time there is a change. Code rigidity is the degree of difficulty in making changes to the software.
-### Advantages of Loose Coupling:
-a. A loose coupled software can be easily evoled. This is because it encourages many changes, without breaking the existing code.
-b. Loose coupling enhances software agility. This is because it promotes iteration. You can quickly add a new feature or functionality.
-c. Loose coupling reduces technical debt.
+#### 1. Coupling
+Coupling is a measure of how closely bound software modules are to one another. It is the degree to which changes made to a component force a need for a change in other components or modules. 
 
-### 2. Abstraction
-When you call something abstract, it means that it is incomplete or not clearly defined. Abstraction is a programming approach that hides implementation details. Revealing only the functionality (relevant operations) to the user. It is one of the basic concepts in object-oriented programming.
-### Advantages
-a. It simplifies programming complexity.
-b. It promotes the grouping of related classes and objects.
+Tight coupling is when a change in component A requires a change in component B. Loose coupling means that components A and B are independent. Thus a change in component A would not affect B. Loose coupling is often a sign of testable, well-structured, maintainable, and readable software. Tight coupling leads to code fragility and code rigidity.
 
-### 3. Single Responsibility Principle
-This principle states that every function, or class, or module, should have a single reason to change. They must have only one responsibility.
+**Code fragility** is the likelihood that software will break in many places every time there is a change. 
+
+**Code rigidity** is the degree of difficulty in making changes to the software.
+
+#### Advantages of Loose Coupling:
+- Developers can quickly evolve loose coupled software. This is because it encourages many changes without breaking the existing code.
+- Loose coupling enhances software agility. This is because it promotes iteration, meaning one can quickly add a new feature or functionality.
+- Loose coupling reduces technical debt.
+
+#### 2. Abstraction
+When you call something abstract, it means that it is incomplete or not clearly defined. Abstraction is a programming approach that hides implementation details, revealing only the functionality (relevant operations) to the user. It is one of the basic concepts in object-oriented programming.
+
+#### Advantages
+- It simplifies programming complexity.
+- It promotes the grouping of related classes and objects.
+
+#### 3. Single Responsibility Principle
+This principle states that every function, class, or module should have a single reason to change. They must have only one responsibility.
+
 #### Advantages:
-a. It makes the code easy to understand, fix, and maintain.
-b. Classes are less coupled and more resilient to change.
-c. More testable design.
+- It makes the code easy to understand, fix, and maintain.
+- Classes are less coupled and more resilient to change.
+- More testable design.
 
-### 4. Dependency Inversion Principle
-The Dependency Inversion Principle (DIP) enables us to create loosely coupled systems. Making them easy to change and maintain. DIP states that:
-* High-level modules shouldn't depend on low-level modules. They should rather depend on abstractions.
-* Abstractions shouldn't depend on details. Details should depend on abstractions.
-**High-Level modules** are modules written to solve problems and use cases. They are abstract and map to the business domain(business logic). Their concern is with what the software should do and not how they should do it.
+#### 4. Dependency Inversion Principle
+The Dependency Inversion Principle (DIP) enables us to create loosely coupled systems. Making them easy to change and maintain. 
+
+DIP states that:
+- High-level modules shouldn't depend on low-level modules. They should instead rely on abstractions.
+- Abstractions shouldn't depend on details, but details should depend on abstractions.
+ 
+**High-Level modules** are modules written to solve problems and use cases. They are abstract and a map to the business domain(business logic). Their concern is with what the software should do and not how they should do it. 
+
 **Low-Level Modules** are implementation details required to execute the business policies (logic). They are the plumbing or internals of a system, and they tell us how the system(software) should do various tasks. They tend to be very concrete.
 
 ![dependency flow](/engineering-education/ioc_principle/dependecy_inversion_principle_image_1.png)
 
-For Class A to work, it depends on two low-level modules: Class B and Class C.
-This doesn't follow the dependency inversion principle. This is because Class A, which is a high-level module, depends on Class B and C, which are low-level modules.
-To make this code obey the DI principle, extract the interface for the low-level modules. This would give us something that looks like this:
+For Class A to work, it depends on two low-level modules: Class B and Class C. This doesn't follow the dependency inversion principle because Class A, which is a high-level module, depends on Class B and C, which are low-level modules. To make this code obey the DIP principle, extract the interface for the low-level modules. Extracting the interface will give us something that looks like this:
 
  ![dependency flow](/engineering-education/ioc_principle/dependecy_inversion_principle_image_2.png)
 
 This abstraction could be an interface or an abstract class. Now we can head back to the main focus—Inversion of Control.
- 
 
+Inversion of control only provides design guidelines and not implementation details. A design principle is not constricted to any programming language. You can implement it whichever way you please. However, design patterns recommend an actual implementation. Design patterns are more like reusable solutions to a problem in a given scenario.
 
-Inversion of control only provides design guidelines and not implementation details.
-A design principle is not constricted to any programming language. You can implement it whichever way you please. However, Design patterns recommend a definite implementation. Design patterns are more like reusable solutions to a problem in a given scenario.
- 
 Thus, we can apply IoC in object-oriented programming in many ways. Some of which are:
-* Dependency injection pattern
-* Strategy design pattern
-* The service locator pattern, and many others.
+- Dependency injection pattern
+- Strategy design pattern
+- The service locator pattern, and many others.
+
 Let's look into dependency injection and strategy design patterns.
  
 ### 1. Dependency Injection (DI)
