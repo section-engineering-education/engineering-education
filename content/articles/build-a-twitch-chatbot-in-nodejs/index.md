@@ -22,7 +22,7 @@ At the end of the tutorial, you will have learned:
 - How to build a simple Twitch chatbot
 - How to run a Twitch chatbot in Node.js
 
-### Pre-requisites
+### Prerequisites
 Some of the basics needed for the tutorial include the following:
 
 - Web development basics
@@ -48,7 +48,7 @@ Some of the basics needed for the tutorial include the following:
 - [Make the bot responsive](#make-the-bot-responsive)
 - [Run it](#run-it)
 - [Further Practice](#further-practice)
-- [Conclusions](#conclusions)
+- [Conclusion](#conclusion)
 - [References](#references)
 
 ### What is a chatbot
@@ -101,8 +101,9 @@ Make sure your status is set to `Online` to avoid being seen as inactive by your
 Now, click on `Channel` as shown in the image below:
 
 ![Channel](/engineering-education/build-a-twitch-chatbot-in-nodejs/channel.png)
+*Twitch Channel*
 
-On the channel tab, you will be able to see if your channel is _Live_ and the content it is broadcasting or _Offline_. You can also customize your channel depending on your preferences.
+On the channel tab, you will be able to see if your channel is _Live_ or _Offline_. You can also customize your channel depending on your preferences.
 
 ### Create a demo stream
 There are many stream hosting services out there for Twitch and many other streaming platforms. In Twitch, for you to stream, you will require one. I recommend using [Streamyard](https://streamyard.com/).
@@ -111,23 +112,24 @@ There are many stream hosting services out there for Twitch and many other strea
 
 Just visit it and we shall do the following:
 
-- Create a new account and log in
-- Add a destination to your stream. You can add more than one destination. We shall add Twitch.
+- Create a new account and log in.
+- Add a destination to your stream. You can add more than one destination. Here, we add Twitch.
 - Verify the account you want to stream to.
-- Click on 'Create a broadcast' and select the destination of broadcast and input the broadcast name.
-- Input your name to be displayed. Choose whether you will use your microphone or camera during the stream or not. Now click on 'Enter Studio'. Select yourself as part of the stream.
-- Click on 'Go live' to start the online stream to your viewers.
-- On another tab, open up Twitch and access your account. Navigate over to the channel tab and see what you are streaming to your viewers from there. You can see the chats and also explore additional features.
+- Click on 'Create a broadcast', Select the destination of broadcast, and input the broadcast name.
+- Input your name to be displayed. Choose whether you will use your microphone or camera during the stream. Now, click on 'Enter Studio'. Select yourself as part of the stream.
+- Click on 'Go live' to start the online stream.
+- On another tab, open up Twitch and access your account. Navigate over to the channel tab and see what you are streaming to your viewers. You can see the chats and also explore additional features.
 
 ![streamyard](/engineering-education/build-a-twitch-chatbot-in-nodejs/streamyard.png)
+*Streamyard for streaming*
 
-### Obtain Bot OAuth key
-There are two ways in which our bot could access a channel. These are:
+### Obtain bot OAuth key
+There are two ways in which our bot could access a channel:
 
-- ***Anonymously:*** Here, the identity (username and password) is not required or specified. It is advantageous in some cases where one does not want to be known to be tracking or watching the chats. It limits one in that you can only view but not reply or participate in any chats.
+- ***Anonymously:*** Here, the identity (username and password) is not required or specified. It is advantageous in some cases where one will not be tracked. It limits one only to view, but no reply or participate in the chats.
 - ***OAuth token authorization:*** Here, the bot identity is required. It allows the bot to actively monitor and participate in the chats.
 
-We shall handle both of these cases. Let's obtain an OAuth token which we shall use later on in our project.
+We shall handle both of these cases. Let's obtain an OAuth token that we shall use later on in our project.
 
 You can obtain one from [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/) which I think is an easy way. You can also obtain it from [https://twitchtokengenerator.com/](https://twitchtokengenerator.com/). Make sure that this key is safe for **security reasons**.
 
@@ -139,34 +141,35 @@ The overall file structure is as  shown below:
 
 ```bash
 .
-├── Twitch-Chatbot (Root Directory)
-    ├── node_modules (Directory)
-    ├── .env (File)
-    ├── app.js (File)
-    └── package.json (File)
+├── Twitch-Chatbot
+    ├── node_modules
+    ├── .env
+    ├── app.js
+    └── package.json
 ```
 
-In it, we shall create a file named 'app.js' which shall be our application entry point. Open the folder using Visual Studio Code and open the integrated terminal.
+Here, we shall create a file named `app.js` which shall be our application entry point. Open the folder using Visual Studio Code and open the integrated terminal.
+
 Initialize the project in the terminal using:
 
 ```bash
 npm init -y
 ```
 
-we shall install the required dependencies which are ***tmi.js*** and ***dotenv*** using:
+We shall install the required dependencies - `tmi.js` and `dotenv` using:
 
 ```bash
 npm i dotenv tmi.js
 ```
 
-> ***tmi.js*** will be used to access Twitch while ***dotenv*** will be used to store our credentials safely from the main application entry point.
+> `tmi.js` will be used to access Twitch, while `dotenv` will be used to store our credentials safely from the main application entry point.
 
 #### .env file
-Create a file and name it ".env". In it, we shall store our environment variables such as the username, OAuth, and channel.
+Create a file and name it `.env`. Now, we shall store our environment variables such as the username, OAuth, and channel.
 
 > **Note:** If you want to upload your code to GitHub, please remember to include it in the `.gitignore` file to prevent it from being uploaded and cause a security breach. I prefer you use [git secrets](https://git-secret.io/) in the repository. Make sure you also enable [git guardian](https://www.gitguardian.com/) in your repository.
 
-It shall therefore look like this:
+The file would look like this:
 
 ```Bash
 TWITCH_USERNAME= Name_of_the_chatbot
@@ -177,7 +180,7 @@ TWITCH_CHANNEL= Your_Chanell_Name
 Copy and paste to the appropriate sections and save them.
 
 #### package.json file
-It shall resemble the one shown below:
+The `package.json` will contain the data shown below:
 
 ```json
 {
@@ -213,9 +216,9 @@ It shall resemble the one shown below:
 ```
 
 #### app.js
-Open up our application entry point. In it we shall do the following:
+Open up our application entry point. And, now we will do the following:
 
-- Require necessary node modules. We shall also configure _tmi.js_ channel and connection reconnection and security options. This is well shown below:
+- Require necessary node modules. We shall also configure _tmi.js_ channel connection, reconnection and security options as shown below:
 
 ```javascript
 // Require necessary node modules
@@ -237,7 +240,6 @@ const client = new tmi.Client({
 // for reading, supervision, spying, or viewing purposes only
     channels: [`${process.env.TWITCH_CHANNEL}`]
 });
-
 ```
 
 - Establish the connection and display any arising errors.
@@ -255,7 +257,6 @@ client.on('message', (channel, tags, message, self) => {
 // This logs out all the messages sent on the channel on the terminal
     console.log(message);
 
-
 });
 ```
 
@@ -272,7 +273,7 @@ or
 node app.js
 ```
 
-> The bot can join the channel stream whether online or offline. This enables one to deploy it at whatever time they see it fit. You are also able to quickly shut it down in case of errors emerging.
+> The bot can join the channel stream - online or offline. This enables one to deploy it whenver needed. You are also able to quickly shut it down in case of errors emerging.
 
 The output shall look like this to show a successful connection to the channel:
 
@@ -285,16 +286,20 @@ john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
 [03:30] info: Joined #justusmbuvi
 ```
 
-Head over to the browser and start a live stream using Streamyard while monitoring it on another tab on your Twitch channel. You can invite others to your channel to make the session interactive as possible. You can also just chat on your own in case you are testing it out.
+Head over to the browser and start a live stream using Streamyard, while monitoring it on another tab on your Twitch channel. You can invite others to your channel, to make the session as interactive as possible. You can also just chat on your own in case you are testing it out.
+
 Send a message in the Chat tab and you will see it being logged out on your terminal. This proves a success.
 
-As you can see, we cant interact with this live Twitch chat but only fetch the conversations.
+As you can see, we can't interact with this live Twitch chat but only fetch the conversations.
 
 ### Make the bot responsive
 Now we shall add our identity and output options.
 
-- Delete the `console.log(message);` line. Inside the brackets, we shall add _selective statements_ to acquire our desired user input hence return an output accordingly. We fetch the user input using `message`
-and the output is returned to the chats using `client.say();` where we obtain the username using `tags`. We are also able to add another _selective statement_ that will check the first input, whether upvote, cheer, or any other. If it finds the first two, it returns a result. Otherwise, it remains silent. This is shown below:
+- Delete the `console.log(message);` line.
+- Inside the brackets, we shall add _selective statements_ to acquire our desired user input hence return an output accordingly. We fetch the user input using `message` and the output is returned to the chats using `client.say();` where we obtain the username using `tags`.
+- We are also able to add another _selective statement_ that will check the first input - upvote, cheer, or any other. If it finds the first two, it returns a result. Otherwise, it remains silent.
+
+The code is as shown below:
 
 ```javascript
 // Require necessary node modules
@@ -350,30 +355,25 @@ client.on('message', (channel, tags, message, self) => {
             `);
             break;
             
-            
             // In case the message in lowercase is equal to the string '!website', send the sender of that message your personal website
         case '!website':
             client.say(channel, `@${tags.username}, my website is www.section.io!`);
             break;
-            
             
             // In case the message in lowercase is equal to the string 'greetings', send the sender of that message 'Hello @Username, what's up?!'
         case 'greetings':
             client.say(channel, `Hello @${tags.username}, what's up?!`);
             break;
             
-            
             // In case the message in lowercase is equal to the string 'hi', send the sender of that message 'Username, hola'
         case 'hi':
             client.say(channel, `${tags.username}, hola!`);
             break;
             
-            
             // In case the message in lowercase is equal to the string '!name', send the sender of that message the name of the chatbot
         case '!name':
             client.say(channel, `Hello @${tags.username}, my name is ChatBot! Type "help" to continue...`);
             break;
-            
             
             // In case the message in lowercase is equal to the string 'help', send the sender of that message all the available help and commands
         case 'help':
@@ -396,7 +396,6 @@ client.on('message', (channel, tags, message, self) => {
             // these are used to  like certain users' messages or celebrate them due to an achievement
             
         default:
-
             // We shall convert the message into a string in which we shall check for its first word
             // and use the others for output
             let mymessage = message.toString();
@@ -422,7 +421,7 @@ client.on('message', (channel, tags, message, self) => {
 });
 ```
 
-You can find the code in [this](https://github.com/justusmbuvi/Twitch-Chatbot-in-Node.js) repository. Just fork or clone it and contribute as necessary.
+You can find the full code in [this](https://github.com/justusmbuvi/Twitch-Chatbot-in-Node.js) repository. Just fork or clone it and contribute as necessary.
 
 ### Run it
 Run the code using:
@@ -437,7 +436,7 @@ or
 node app.js
 ```
 
-Now it will give outputs as you configure it. An example is shown below:
+Now, it will give outputs as you configure it. An example is shown as below:
 
 ```bash
 john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
@@ -453,14 +452,17 @@ john@john:~/Tofa/Projects/Twitch/Twitch-Chatbot-in-Node.js$ node app.js
 It will look like this:
 
 ![Live demo](/engineering-education/build-a-twitch-chatbot-in-nodejs/live-demo.png)
+*Live demo*
 
 ### Further Practice
 - Try to make the chatbot using other languages and frame which might suit your need.
-- Launch your chatbot in remote Node.js servers at [Sectio.io](Sectio.io) as shown here in [Sectio.io Node.js docs](https://www.section.io/docs/tutorials/launching-a-nodejs-app/)
+- Launch your chatbot in remote Node.js servers at [Section.io](www.section.io) as shown here in [Section.io Node.js docs](https://www.section.io/docs/tutorials/launching-a-nodejs-app/)
 - Integrate a local or an online database to store your chats for later viewing and display them on a webpage.
 
-### Conclusions
+### Conclusion
 Chatbots are crucial to our lives. Though they have numerous advantages, they also have some disadvantages. They continue to surprise us with new inventions and features which mimic and even surpass human intelligence. We hope they would increase beyond human intelligence.
+
+Happy coding!
 
 ### References
 - [Top Twitch bots](https://www.fairlyoddstreamers.com/resources/bots).
@@ -471,3 +473,4 @@ Chatbots are crucial to our lives. Though they have numerous advantages, they al
 - [Streaming tools](https://dashboard.twitch.tv/u/justusmbuvi/broadcast)
 - [Twitch Chat bot documentation](https://dev.twitch.tv/docs/irc)
 - [Git Guardian](https://www.gitguardian.com)
+- 
