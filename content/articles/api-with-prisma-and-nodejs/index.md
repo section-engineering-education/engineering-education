@@ -33,7 +33,7 @@ Create your working directory and give it any name you'd like. I will call mine 
 
 Run `npm init -y` in the directory to initialize a Node.js project.
 
-```console
+```bash
  mkdir section-prisma
 
  cd section-prisma
@@ -45,7 +45,7 @@ With that done, we can now install Prisma.
 
 To do so, we use npm or yarn.
 
-```console
+```bash
 npm install prisma
 ```
 
@@ -53,7 +53,7 @@ The next step is to initialize prisma into the project.
 
 In the terminal, we run:
 
-```console
+```bash
 npx prisma init
 ```
 
