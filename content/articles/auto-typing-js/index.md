@@ -42,6 +42,8 @@ In the above example, the grouping operator prevents variables within the IIFE f
 
 > You can learn more about IIFEs from official documentation found [here](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). 
 
+We will use the code in one file. So we will go through the code first starting with the JavaScript code.
+
 ```javascript
 function autoType(elementClass, typingSpeed, timeout) {
     var ourClass = $(elementClass);
@@ -83,7 +85,7 @@ The code consists of a function `autoType()` and an IIFE inside the function.
 2. `typingSpeed` - This is the speed of typing the text out
 3. `timeout` - the timeout period for waiting =before the `autoTyping()` function is fired.
 
-WE then have a variable `ourClass` for storing the target class. The next line is where we set the display style of the class.
+We then have a variable `ourClass` for storing the target class. The next line is where we set the display style of the class.
 
 Next, we look for `text-js`. This is a class found in our target class. It contains the text that will be typed out. Thereafter, we remove any trailing spaces.
 
@@ -174,7 +176,7 @@ Here are a few Bootstrap codes that are used:
 8. `mt-x` - sets margin-top in respect to **x**.
 
 #### The full code
-Here is the full code.
+Here is the full code. Create a file called *autotyping.html* at your preferred destination and paste the following code in there. After that run the file in your browser.
 
 ```html
 <!doctype html>
