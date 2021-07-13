@@ -6,8 +6,8 @@ url: /understanding-polymorphism-using-abstract-classes-in-c/
 title: Understanding Polymorphism using Abstract Classes in C
 description: This articles helps the reader to understand the concept of polymorphism by using abstract classes in the C programming language.
 author: mohamed-alghadban
-date: 2021-07-13T00:00:00-11:00
-topics: []
+date: 2021-07-13T00:00:00-07:34
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
