@@ -49,7 +49,7 @@ pip install sklearn
 
 ### Loading our EDA packages
 
-These packages are used for Exploratory data analysis in order to summarise the main characteristics of our data for easy visualization.
+These packages are used for Exploratory data analysis to summarise the main characteristics of our data for easy visualization.
 
 ```python
 import pandas as pd
@@ -129,7 +129,7 @@ ylabels= df['nationality']
 
 ### Vectorizing our features
 
-We will use count vectorizer to transform our dataset
+We will use a count vectorizer to transform our dataset
 
 ```python
 vec = CountVectorizer()
@@ -160,7 +160,7 @@ nb.fit(x_train,y_train)
 
 ### Checking the accuracy of our model
 
-We have to check the accuracy score of our model in order to know how well we trained our model.
+We have to check the accuracy score of our model to know how well we trained our model.
 
 ```python
 nb.score(x_test,y_test)
@@ -182,7 +182,7 @@ nb.predict(vector1)
 ### Saving our model using joblib
 
 We will use joblib to save our model into a pickle file.
-Picking our model makes it easier to use our model in the future without repeating the training process again.
+Picking our model makes it easier to use our model in the future without repeating the training process.
 A pickle file is a byte stream of our model, by importing joblib from sklearn
 
 ```python
@@ -199,7 +199,7 @@ We will name our pickle file 'naive_bayes.pkl'.
 
 ### Introduction to the FastAPI
 
-[FastApi](https://fastapi.tiangolo.com/) is a new python-based web framework that is used to create Web APIs. FastAPi is really fast when serving the application, this enhances the app's performance.
+[FastApi](https://fastapi.tiangolo.com/) is a new python-based web framework that is used to create Web APIs. FastAPi is fast when serving the application, this enhances the app's performance.
 It is used with Python 3.6+.
 Fast API is very powerful since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
 
@@ -276,7 +276,7 @@ if __name__ == '__main__':
   uvicorn.run(app,host="127.0.0.1",port=8000)
 ```
 
-![A Snip of our first route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/first-route.png)
+![A Snip of our first route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/first-route.png)
 
 ![Interactive API docs](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/main-doc.png)
 
@@ -332,7 +332,7 @@ We have finally served our machine learning model as API using the FastAPI.
 
 ### Dockerizing the FastAPI application
 
-In order to create a docker container, we have to use the following steps.
+To create a docker container, we have to use the following steps.
 
 1. Create a docker file.
    In your working directory create a DockerFile.
@@ -504,13 +504,13 @@ spec:
 
 The file has two sections:
 
-1. Service - Acts as the load balancer. A load balancer is used to distribute different sets of tasks to the various available servers in the network in order to maximize the usage of the available resources.
+1. Service - Acts as the load balancer. A load balancer is used to distribute different sets of tasks to the various available servers in the network to maximize the usage of the available resources.
 
 2. Deployment- This is the intended application that we want to deploy to the Kubernetes engine. The user will then send a request to the load balancer in the service, then the load balancer distributes the request by creating the number of replicas that were defined in the deployment.yaml file. Here, are using five replicas for scalability, hence there will be 5 instances of the application running at a time.
 
 When we have various replicas it creates redundancy so that if one instance fails, the others will continue running.
 
-The deployment.yaml file is connected to the Docker image created earlier, In the deployment.yaml file we specify the image name that was created earlier.
+The deployment. yaml file is connected to the Docker image created earlier, In the deployment. yaml file we specify the image name that was created earlier.
 
 ### Deployment of our application to Kubernetes cluster
 
