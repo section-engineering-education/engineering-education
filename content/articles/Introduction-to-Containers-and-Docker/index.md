@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Introduction-to-Containers-and-Docker/
+title: Introduction to Containers and Docker
+description: In this article, you will learn about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business industry.
+author: evans-chaun
+date: 2021-07-13T00:00:00-21:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/Introduction-to-Containers-and-Docker/hero.png
+    alt: Introduction to Containers and Docker example image
+---  
+
 To grasp what `Docker` is and why it is employed, you must first realize what `containers` are and what problems they solve. Containers are entirely isolated environments constructed on top of an existing operating system to create a `virtual barrier` between the app running inside and the outside world. Docker, on the other hand, is a piece of software that allows us to manage the lifetime of these containers.
 
 ### Prerequisites
@@ -90,7 +107,7 @@ You have successfully launched a Docker Desktop application!
 
 ### Conclusion
 
-In this article, we learned about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business. I urge the reader to dig deeper into docker to be better skilled in software development.
+In this article, we learned about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business industry. I urge the reader to dig deeper into docker to be better skilled in software development.
 
 ### Further reading
 
