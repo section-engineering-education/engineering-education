@@ -1,28 +1,55 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /vue-js-vs-react-js/
+title: Comparison between Vue.js and React.js
+description: This article briefly introduces 
+author: 
+date: 2021-07-13T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/vue-js-vs-react-js/hero.jpg
+    alt: vlan trunking and encapsulation
+---
+Vue.js and React.js help front-end developers build applications running on the client-side through a web browser. [Evan You](https://www.linkedin.com/in/evanyou), an ex-Google employee, created the Vue.js framework. It is currently under his maintenance in collaboration with other active core team members.
+<!--more-->
 ### Introduction
-Vue.js and React.js help front-end developers build applications running on the client-side through a web browser. [Evan You](https://www.linkedin.com/in/evanyou), an ex-Google employee, created the Vue.js framework. It is currently under his maintenance in collaboration with other active core team members. Directives represent the essential Vue.js features that offer easy operations than their counterparts by allowing developers functionality extension through HTML attributes competitors. 
+Evan created Vue.js to extract the best parts that suited the lightweight framework. Both Vue.js and React.js share familiar patterns but are not entirely identical. Vue.js has a constant growth hence it is often considered by front-end developers in app development. Vue.js steadily grew in popularity and increased in its competitiveness though released after React.js. Vue.js relies on community contributions and crowdfunding. 
 
-Evan created Vue.js to extract the best parts that suited the lightweight framework. Both Vue.js and React.js share familiar patterns but not entirely identical. Vue.js has a constant growth hence considered by front-end developers in app development. Vue.js steadily grew in popularity and increased in its competitiveness though released after React.js. Vue.js relies on community contributions and crowdfunding. Alibaba represents some big companies that use Vue.js. 
+On the other hand, React.js refers to a JavaScript library responsible for fast and interactive user interface used when building web and mobile applications. [John Walke](https://en.wikipedia.org/wiki/React_(JavaScript_library)), a software engineer at Facebook, created React.js. 
 
-On the other hand, React.js refers to a JavaScript library responsible for fast and interactive user interface building for the web and mobile applications. [John Walke](https://en.wikipedia.org/wiki/React_(JavaScript_library)), a software engineer at Facebook, created React.js. This framework is currently maintained by Facebook, individual developers, as well as other companies. Some of the companies that use React.js include PayPal and Netflix. Creating React.js applications requires additional libraries for routing since it concerns state management and rendering that state to document objectives. 
+This framework is currently maintained by Facebook, individual developers, as well as other companies. Some of the companies that use React.js include PayPal and Netflix. Creating React.js applications requires additional libraries for routing since it concerns state management and rendering those states to document objectives. 
 
 ### Vue.js and React.js similarities
 - Both Vue.js and React.js provide an excellent user interface as the user interface described when the device requiring interface understands JavaScript's. 
 - Vue.js and React.js Utilize Virtual development object movement (DOM) that allows front-end performance improvement. 
 - There exist numerous extensive development tools for more productive coding for both Vue.js and React.js 
+
 ### Differences between Vue.js and React.js 
 - Vue.js represents a JavaScript Modelview –ViewModel framework that requires a template-based methodology for web-based application development, whereas React.js represents a JavaScript library that utilizes the JSX approach for web-based application development.
 - Vue.js framework develops only web-based applications, whereas both web-based applications and mobile applications development occur in React.js.
 - Alibaba represents one of the companies that back Vue.js, whereas Facebook company supports React.js.
-- 	Vue.js bundles the code through the compiler, combining modules into a bundle that transpires the code to ECMAScript syntax. Thus, the vue.js code bundling the writing of web application future proof by developers without the past downsides.React.js code bundling, on the other hand, creates an optimized production for react.js application running npm run build.React.js code bundling involves the use of tools like webpack and Rollup where the bundle can be included load an entire app at once on a webpage.
+- 	Vue.js bundles the code through the compiler, combining modules into a bundle that transpires the code to ECMAScript syntax. 
+
+Thus, the Vue.js code bundling the writing of web application future proof by developers without the past downsides.React.js code bundling, on the other hand, creates an optimized production for react.js application running npm run build.React.js code bundling involves the use of tools like webpack and Rollup where the bundle can be included load an entire app at once on a webpage.
 - The structure of projects in vue.js entails multiword component naming unless dealing with root applications.Vue.js structure requires each component to exist on its file with pascal case kebab-case single file components filenames. However, the structure of projects of React .js lacks opinions of putting files into folders hence has common popular approaches that require considerations. Some of such approaches include features or routes grouping and file type grouping, among others.
-- Vue.js syntax of components encourages the use of regular HTML for templating that involves an approach that leverages custom attributes standardized HTML elements, An example; of such a vue.js template is shown below.
+- Vue.js syntax of components encourages the use of regular HTML for templating that involves an approach that leverages custom attributes standardized HTML elements, 
+
+An example of such a Vue.js template is shown below:
+```bash
 <ul>
 <template v-for="item in items">
 <li>{{ item.msg }}</li>
 <li class="divider"></li>
 </template>
 <
-React.js, recommends writing template codes for a while through JSX while at first glance, the react .js appears more verbose. An example of such syntax components of react.js is as shown below.
+```
+
+React.js, recommends writing template codes for a while through JSX while at first glance, the React.js appears more verbose. An example of such syntax components of react.js is as shown below:
+```bash
 <ul className="pasta-list">
 {
 Object.keys(this.state.pastadishes).map(key =>
@@ -30,12 +57,14 @@ Object.keys(this.state.pastadishes).map(key =>
 )
 }
 </ul>
-Application state is a key concept in the react.js state of management. Therefore the framework dedicates large-scale management of state objects like Redux. On the other hand, vue.js elaborates to developers the solutions to the state of management suit small scale applications but not scalable for larger application
+```
 
+Application state is a key concept in the React.js state of management. Therefore the framework dedicates large-scale management of state objects like Redux. 
 
+On the other hand, Vue.js explains to developers that their solutions to the state of management suit small scale applications well but may not be scalable for larger applications.
 
 ### Advantages of Vue.js as the front-end development framework
-- Vue.js promotes easy understanding and application development.Vue.js is easy to understand hence the popularity of the framework. The framework's simple structure also enhances its addition to the web project by the user.
+- Vue.js promotes easier application development. Vue.js is easier to understand hence the popularity of the framework.
 - Vue.js is known for its flexibility. The perfect balance in Vue enhances quick and straight writing of the code that enhances complex application development due to access to a wide range of various environments.
 - Vue.js framework has well-detailed documentation. The well-detailed documentation simplifies it for developers to write and execute first applications since the e developers only require basic knowledge for webpage or app development.
 - As a modern technology, Vue.js is uniquely positioned; hence the developers build applications on their competitor's weaknesses.
@@ -65,8 +94,11 @@ Application state is a key concept in the react.js state of management. Therefor
 - Slow documentation. The rapid development of React.js results in sparse documentation for the latest updates and changes are covering. Moreover, as an open-source framework, React.js enables developers to create their documents. Hence, inadequate resources that offer little help often result from the capabilities of every developer to create the resources.
 
 ### Conclusion
-The above discussion shows that Vue.js is at par with React.js in terms of performance. However, the overall performance depends on the size of the application and optimization. Furthermore, the type of project determines framework selection since both technologies can be used to develop an interactive user interface. In terms of experience, React.js popularity is higher than that of Vue.js. This means that React developers are more accessible to find than Vue.js developers. I hope this article helps you to choose the right front-end platform when developing your application.
+The above discussion shows that Vue.js is at par with React.js in terms of performance. However, the overall performance depends on the size of the application and optimization. Furthermore, the type of project determines framework selection since both technologies can be used to develop an interactive user interface. 
 
+In terms of experience, React.js popularity is higher than that of Vue.js. This means that React developers are more accessible to find than Vue.js developers. I hope this article helps you to choose the right front-end platform when developing your application.
+
+Happy learning!
 
 
 
