@@ -1,17 +1,28 @@
-### Introduction
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-closures-in-ruby/
+title: Understanding Closures in Ruby
+description: This article will ...
+author: 
+date: 2021-07-24T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/understanding-closures-in-ruby/hero.jpg
+    alt: Understanding Closures in Ruby
+---
 Closure in computer science is a piece of code that carries its creation context around with it. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
+<!--more-->
 
 ### Prerequisites
-
 To follow along this article, it is helpful to have the following:
-
 - [Ruby](https://www.ruby-lang.org/en/)
 - Basic knowledge of Ruby programming.
 - How to use the interactive ruby console.
 
 ### Overview
-
 - [Closures](#closures)
 - [Rules_of_identifying_a_closure](#rules-of-identifying-a-closure)
 - [Closure_use_cases](#closure-use-cases)
@@ -21,8 +32,7 @@ To follow along this article, it is helpful to have the following:
 - [The_difference_between_a_lambda_and_a_proc](#the-difference-between-a-lambda-and-a-proc)
 
 ### Closures
-
-In order to get a clear picture of what closures are we need to understand _first-class functions_, _free variables_, and _lexical environment_.
+In order to get a clear picture of what closures are, we need to understand _first-class functions_, _free variables_, and _lexical environment_.
 
 **A first-class function** is a function that can be treated as an object and passed as a parameter to another function.
 
@@ -33,14 +43,12 @@ In order to get a clear picture of what closures are we need to understand _firs
 Try this in your interactive console
 
 ```rb
-
 parent_scope = "I'm available everywhere"
 
 3.times do
   inner_scope = "Only accessed in the scope above: -"
   puts "#{inner_scope} #{parent_scope}}"
 end
-
 ```
 
 The code above demonstrates lexical scoping, `inner_scope` can only be visible from the block it's defined. Try accessing it outside the block and ruby will throw an exception.
@@ -48,20 +56,17 @@ The code above demonstrates lexical scoping, `inner_scope` can only be visible f
 So it is safe to define closures as a block of code that can be used later and stores variables in an environment in which it was created.
 
 ### Rules of identifying a closure
-
 - It needs to be a function
 - Function body should reference some variable
 - Variable should be declared in a parent scope
 
-## Closure use-cases
-
+### Closure use-cases
 1. Closures can be used to simulate classes in Ruby.
 2. Closures are used to implement callbacks in Ruby.
 
 To have a good understanding of our topic, we will take a tour around Ruby blocks and callable objects.
 
-## Blocks
-
+### Blocks
 Blocks are used to capture code that can be passed as method arguments and executed later.
 
 In Ruby, blocks can be delimited by _curly braces_ or by _do/end_ keyword pair, they also act as anonymous functions.
@@ -94,7 +99,7 @@ do_it
 
 ```
 
-## Relationship between closures and blocks
+### Relationship between closures and blocks
 
 Blocks act's as **anonymous functions** in ruby, it carries around the execution context in which it was declared.
 
@@ -128,8 +133,7 @@ puts x #Global variable
 
 This clearly illustrates that you can define a variable with the same name in the parent scope of the block and another in it's local scope and they will be differentiated.
 
-## Procs
-
+### Procs
 In our definition above we mentioned the concept of first-class functions, this is made possible in Ruby by the use of Procs.
 
 Let's take a look at what Procs are:
@@ -244,14 +248,12 @@ c.method_that_calls_proc_or_lambda proc { return }
 Returns a `LocalJumpError`.
 
 ### Conclusion
-
 Closures are powerful in the hands of a developer, one can write functional code in Ruby and also be able to write your own lazy enumarables. For further exploration in the topic I would highly recommend the [Mastering_Ruby_Closures](http://media.pragprog.com/titles/btrubyclo/intro.pdf) book.
 
 ### References
-
 - [Mastering_Ruby_Closures](http://media.pragprog.com/titles/btrubyclo/intro.pdf)
 - [The_Well_Grounded_Rubyist](https://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617295213)
 
-You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
 
-Happy coding!!
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
