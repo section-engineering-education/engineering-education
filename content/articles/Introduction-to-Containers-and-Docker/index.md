@@ -23,35 +23,34 @@ To follow along with this article smoothly you need to:
 1. **Container**: A container is a separate operating system environment in which one or more programs can run, generally with only the resources required for the application to perform properly. 
 2. **Container image**: A container image is a self-contained piece of software that contains all of the code, tools, and resources needed to execute.
 3. **Docker file**: It is a book record that contains directions for building a Docker picture.
-4. **Docker Hub**: It is a cloud-based registry that allows you to download Docker images created by other communities.
+4. **Docker Hub**: It is a cloud-based registry that lets you download images from other communities from Docker.
 5. **Repository**: A Docker repository is a collection of Docker images that all have the same name but differ in tags or versions.
 6. **Registry**: It is a Docker image repository. Docker clients connect to registries to download or upload images they've produced using the pull and push commands. There are both public and private registers.
-7. **Docker Engine**: Docker Engine, is a piece of software that allows us to manage the lifecycle of containers, describe how they will be set up, what applications/software/services they will run within them, their networking and storage needs, and if necessary, how to quickly destroy and restart them.
+7. **Docker Engine**: Docker Engine, is a software component that lets you manage the container's life cycle, describes how you set up it, what apps, software and services you use within it, how you can quickly destroy and restart your containers.
 8. **Docker Compose**: is a program that allows you to create and execute multi-container Docker applications. You set up your application's services using Compose using a YAML file. Then you build and start all of the services from your setup with a single command.
-9. **Orchestration and cluster management**: Orchestration is a tool that monitors and manages the system. In huge compartment arrangements, tooling is crucial for screen and oversee pictures, containers, and hosts through a Command-line interface (CLI) or a Graphical user interface(GUI). 
+9. **Orchestration and cluster management**: Orchestration is a system monitoring and management tool. In huge compartment arrangements, tooling is crucial for screen and oversee pictures, containers, and hosts through a Command-line interface (CLI) or a Graphical user interface(GUI). 
 10. **Volumes**: For storing data created by and utilized by Docker containers, volumes are the ideal method. Unlike bind mounts, which are dependent on the directory structure and operating system of the host computer, Docker manages volumes entirely.
 ### Introduction to docker/docker-engine 
 `Docker`, also known as `Docker Engine`, is a piece of software that allows us to manage the lifecycle of containers, describing how they will be set up, what applications/software/services will run within them, their networking and storage requirements, and, if necessary, how to quickly destroy and restart them.
 
-Docker runs processes within containers using `Docker images`. A Docker image is a file that a Docker container uses to execute programs. Docker images, like a template, serve as a collection of instructions for constructing a Docker container. When utilizing Docker, Docker images also serve as a starting point. In `virtual machine` (VM) settings, an image is similar to a snapshot.
+Docker runs processes within containers using `Docker images`. A Docker image is a file that is used by a Docker container to run programs. Docker images, like a template, serve as a collection of instructions for constructing a Docker container. When utilizing Docker, Docker images also serve as a starting point. In `virtual machine` (VM) settings, an image is similar to a snapshot.
 
-> Because containerization is a Linux OS feature, docker can only be installed on Linux operating systems such as Ubuntu, Fedora, Redhat, and so on. You'll need to construct a Linux virtual machine if you want to utilize Docker on a Windows operating system. The Docker Windows Application automatically builds a virtual machine and runs the Docker engine on top of it. 
+> Because containerization is a Linux OS feature, docker can only be installed on Linux operating systems such as Ubuntu, Fedora, Redhat, and so on. You'll need to construct a Linux virtual machine if you want to utilize Docker on a Windows operating system. The Docker Windows application creates a virtual machine automatically and executes the Docker engine. 
 
-Docker, or Docker Engine, is made up of three components in a client-server architecture:
+For a client-server architecture, Docker or Docker Engine is made up of three elements: 
+1. Process of a server daemon (docker). 
 
-1. A server's daemon process (docker) 
-
-2. An API for communicating with the Docker daemon process from applications. 
+2. An API to communicate from applications with the Docker daemon.
 
 3. A Docker command-line interface (CLI) for running Docker commands, it allows us to perform various tasks on the docker daemon process.
- 
-The API is used by the command-line interface to connect with the Docker daemon process. Docker objects such as containers, images, networks, and volumes are created and managed by the docker daemon.
+
+The API is connected to the Docker daemon process via the command-line interface. The dacker daemon creates and manages docker objects, such as containers, pictures, networks and volumes.
 
 ### Reasons why we use dockers
 
-Recently, Docker has grown highly popular in the software industry. It lets developers and system admins construct and operate applications in containers, thanks to the growing need for microservices and DevOps. Some of the elements that contribute to Docker's popularity are as follows:
+Recently, Docker has grown highly popular in the software industry. It lets developers and system admins construct and operate applications in containers, thanks to the growing need for microservices and DevOps. Certain elements contributing to the popularity of Docker are: 
 
-1. **It's Multipurpose**: Within a docker container, you may run a simple hello world program, a web server like Apache HTTP Server or Nginx, any heavy-weight application, or even an operating system. Although Docker does not advise running an operating system within a container, it is still possible to do so.
+1. **Multifunctionality**: A docker container allows you to run any heavy-weight application, or even an operating system, using a simple worldwide hello, a web server like Apache HTTP Server and Nginx. Although Docker does not advise running an operating system within a container, it is still possible to do so.
 
 2. **Containers in Docker are freely linked.**: A container is a self-contained entity with its resource quota, networking configuration, and other features that make it easier for system administrators to replace or update one container without impacting the others.
 
@@ -79,11 +78,11 @@ For Dockers work area application to run as planned, your PC ought to meet the f
 
 1. Download the Docker Desktop for Windows executable record. To download the official file, [click here](https://docs.docker.com/docker-for-windows/install).
 
-2. Double click on the `Docker Desktop Installer.exe` to start the installation. After you have started the installation, you may be prompted to enable the `Hyper-V and Containers Windows` feature. Please ensure that you do so.
+2. Double click on the `Docker Desktop Installer.exe` to start the installation. You might be asked to enable the Hyper-V and Windows Containers feature after installation has started. Please ensure that you do so.
 
 3. Accept the Terms and Agreement to allow the installation cycle to finish.
 
-4. When the installation is finished, click Finish to open the Docker Desktop program.
+4. After the install, you can open the Docker Desktop program by clicking Finish.
 
 You have successfully launched a Docker Desktop application!
 
