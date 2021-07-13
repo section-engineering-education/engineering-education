@@ -6,12 +6,12 @@ url: /understanding-polymorphism-using-abstract-classes-in-c/
 title: Understanding Polymorphism using Abstract Classes in C
 description: This articles helps the reader to understand the concept of polymorphism by using abstract classes in the C programming language.
 author: mohamed-alghadban
-date: 2021-07-12T00:00:00-11:00
+date: 2021-07-13T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-polymorphism-using-abstract-classes-in-c/hero.jpg
+  - url: /engineering-education/understanding-polymorphism-using-abstract-classes-in-c/hero.png
     alt: Understanding Polymorphism using Abstract Classes in C Hero Image
 ---
 According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism) **Polymorphism** is one of the main concepts in object-oriented programming, after encapsulation and inheritance. *Polymorphism* is a Greek word that means "many-shaped". In any program, objects of a derived class can be used as objects of a base class using functions parameters and collections or arrays.
@@ -27,12 +27,12 @@ According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamen
 
 ### Prerequisites
 
-To follow this article along, you'll need the following:
+To follow along with this article, you'll need the following:
 
 - A basic understanding of the C# programming language.
 - A basic understanding of Inheritance in C# programming language.
 
-If you're new to Inheritance, you should check this tutorial that would help you understand the concept of it [here](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/).
+If you're new to Inheritance, you should check [this tutorial](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/) that would help you understand the concept.
 
 ### Abstract classes
 
@@ -40,11 +40,11 @@ Abstract classes are very simple and generic, and they are always used as base c
 
 Basically, *abstract* classes will never be used if not inherited, because they have no meaning on their own, and their variables & methods are useless if not overridden by other inherited classes.
 
-The following example will explain how we can define an abstract class to make a Payroll System Using Polymorphism.
+The following example will explain how we can define an abstract class to make a payroll system using Polymorphism.
 
-### Worker class
+#### Worker class
 
-Worker an abstract generic class that will be used later on for the other inherited classes. First, we will define the Constructor, `set()` & `get()` methods of the class.
+Worker is an abstract generic class that will be used later on for the other inherited classes. First, we will define the Constructor, `set()` and `get()` methods of the class.
 
 ```C#
 public abstract class Worker
@@ -93,9 +93,9 @@ public abstract class Worker
 }
 ```
 
-### Chief class
+#### Chief class
 
-This class will use the previous class and use its properties & methods for the definition of a chief payroll.
+This class will use the previous class and its properties & methods for the definition of a chief payroll.
 
 ```c#
 public class Chief : Worker
@@ -123,7 +123,7 @@ public class Chief : Worker
   }
 ```
 
-The following piece of code will override the `ToString()` & `Income()` methods.
+The following code will override the `ToString()` & `Income()` methods:
 
 ```c#
   // override worker method to calculate the Income
@@ -139,9 +139,9 @@ The following piece of code will override the `ToString()` & `Income()` methods.
   }
 }
 ```
-### Commissionemp class
+#### Commissionemp class
 
-This class will use the main abstract class and use its properties & methods for the definition of a Commission payroll. The following piece of code will define the Constructor of the class, set & get for the `Salary`, `commission` & `amount`.
+This class will use the main abstract class and its properties & methods for the definition of a Commission payroll. The following code will define the Constructor of the class, set & get for the `Salary`, `commission`, and `amount`:
 
 ```C#
 public class Commissionemp : Worker
@@ -202,7 +202,7 @@ public class Commissionemp : Worker
   }
 ```
 
-The following piece of code will override the `ToString()` & `Income()` methods from the main class to store the output.
+The following code will override the `ToString()` and `Income()` methods from the main class to store the output:
 
 ```C#
     // Commissionemp's income.
@@ -217,9 +217,9 @@ The following piece of code will override the `ToString()` & `Income()` methods 
     } 
  } 
 ```
-### Piece_emp class
+#### Piece_emp class
 
-This class will use the main abstract class and use its properties & methods for the definition of a Piece employee payroll. The following piece of code will define the Constructor of the class, set & get for the `Paymentforpiece` & `amount`.
+This class will use the main abstract class and its properties & methods for the definition of a Piece employee payroll. The following code will define the Constructor of the class, set & get for the `Paymentforpiece` and `amount`:
 ```C#
 public class Piece_emp : Worker 
 {
@@ -261,7 +261,7 @@ public class Piece_emp : Worker
     }
 ```
 
-The following piece of code will override the `ToString()` & `Income()` methods to store the output.
+The following code will override the `ToString()` and `Income()` methods to store the output:
 ```C#
   //Income of Piece_employee
   public override decimal Income()
@@ -310,7 +310,7 @@ public class Program
   } 
 ```
 
-This piece of code will return a string of each worker class.
+Now we will return a string of each worker class:
 
 ```C#
   // Worker informations 
@@ -322,7 +322,7 @@ This piece of code will return a string of each worker class.
 } 
 ```
 
-### Polymorphism output
+#### Polymorphism output
 
 ```bash
 Boss: Khaled Sans earned $800.00
@@ -336,12 +336,14 @@ PieceWorker: samir Muan earned $420.00
 ```
 
 ### Conclusion
-In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples & classes, we have also learned how to use an abstract class to define other inherited classes from it. Don't forget to test out and go through the code to completely understand how it works.
+In this tutorial, we have learned about polymorphism and how useful it is when defining a generic abstract idea with different examples and classes, we have also learned how to use an abstract class to define other inherited classes from it. 
+
+Don't forget to test out and go through the code to completely understand how it works.
 
 ### Further reading
-1. https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/.
-2. https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/.
-3. https://www.section.io/engineering-education/getting-started-with-game-development-windows-forms/.
+- [Getting Started with Inheritance using C#](https://www.section.io/engineering-education/getting-started-with-inheritance-using-c/)
+- [Getting Started with Windows Forms Using C#](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/)
+- [Getting Started with Game Development using Windows Forms](https://www.section.io/engineering-education/getting-started-with-game-development-windows-forms/)
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
