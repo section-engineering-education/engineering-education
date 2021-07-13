@@ -1,6 +1,4 @@
-### How to Make a Discord Bot using Python
-
-**Note: This tutorial is an extract from Code with Repl.it: Python programs for beginners, a book and series of tutorials for those who want to learn Python programming by doing it.**
+**Note: This tutorial is an extract from Code with Repl.it: Python programs for beginners, a book, and series of tutorials for those who want to learn Python programming by doing it.**
 
 We'll construct a Discord Chatbot with Repl.it and Python in this tutorial. If you're reading this guide, you've undoubtedly heard of Discord and possibly already have an account. If not then with the help of this tutorial you will be able to join the bot to a Discord server and reply to messages delivered by other users.
 
@@ -31,28 +29,28 @@ Things we will employ in the process of learning to make Discord bot with python
 
 We will begin with understanding about Discord is and why it’s valuable.
 
-### ABOUT DISCORD
-If you're unfamiliar with Discord, it's a VoIP and chat programme that's meant to take the role of Skype for gamers and educational use. It helps the society to communicate better.
+### About discord
+If you're unfamiliar with Discord, it's a VoIP and chat programe that's meant to take the role of Skype for gamers and educational use. It helps society to communicate better.
  
  
- Discord is used by players, educational institutions, broadcasters, and developers to talk about games, answer queries, communicate while playing and studying, and even more. There's even a gaming store with critical reviews and a streaming service. For gaming communities, it's almost a one-stop store.
+ Discord is used by players, educational institutions, broadcasters, and developers to talk about games, answer queries, communicate while playing and studying, and even more. There's even a gaming store with critical reviews and streaming services. For gaming communities, it's almost a one-stop store.
 
 
 
-### ABOUT BOT
+### About bot
 Discord is becoming extremely prevalent. As a result, for a community to survive and develop, automatic procedures such as banning unsuitable members and responding to user requests are critical.
 
-Bot users are automated programmes that appear and behave like people and respond to events and orders on Discord automatically. Users of Discord bots (or just bots) have virtually limitless options.
+Bot users are automated programes that appear and behave like people and respond to events and orders on Discord automatically. Users of Discord bots (or just bots) have virtually limitless options.
 
-Let's assume you're in charge of a new Discord guild and a new member joins for the first time. If you're feeling very enthusiastic, you may personally contact out to that individual and welcome them to your community. You may also inform them about your channels or request that they introduce themselves.
+Let's assume you're in charge of a new Discord guild and a new member joins for the first time. If you're feeling very enthusiastic, you may personally contact out that individual and welcome them to your community. You may also inform them about your channels or request that they introduce themselves.
 
-When individual feels welcomed and likes the conversations in your guild, therefore they invite their friends.
+When an individual feels welcomed and likes the conversations in your guild, therefore they invite their friends.
 
 The guild's membership expands to the point that it's no longer practical to individually reach around to each new member, but you always want to send them something that will acknowledge their arrival.
 
 It's possible to automatically respond to a new member entering your guild using a bot. You may even manage how it interacts with each new user by customizing its behavior based on circumstances.
 
-This is fantastic, but it's only a example of how a bot may be beneficial. Once you learn how to build bots, there are a number of ways to get creative with them.
+This is fantastic, but it's only an example of how a bot may be beneficial. Once you learn how to build bots, there are a number of ways to get creative with them.
 
 **Note: Even though Discord permits you to develop bots for vocal communication, this tutorial will focus on the texting side of the platform.**
 
@@ -61,17 +59,17 @@ When building a bot, there are two important stages to follow:
 2. Create code that executes your bot's actions and makes use of Discord's APIs.
 In the following part, you'll discover how to use Discord's Developer Portal to create a Discord bot.
 
-### OVERVIEW AND REQUIREMENTS
-We'll be performing all of our coding and hosting our bot using the Repl.it web IDE, so there won't be any other software to setup in your system. You'll need to establish a Discord account for this guide (You may skip this, if you already have one). The next section contains instructions on how to achieve this.
+###  Overview and requirements
+We'll be performing all of our codings and hosting our bot using the Repl.it web IDE, so there won't be any other software to set up in your system. You'll need to establish a Discord account for this guide (You may skip this if you already have one). The next section contains instructions on how to achieve this.
 
 We'll go through the following points in this tutorial:
 * In your Discord account, build an application and a bot user.
-*  will be creating server on Discord 
+*  will be creating a server on Discord. 
 *  Joining the Discord server with our bot.
   
 Let's start with the administrative tasks, and then we'll move on to the exciting part: programming our bot.
 
-### CREATING A DISCORD BOT ACCOUNT ON THE DISCORD
+### Creating a discord bot account on the discord
 
 We need to create a Discord Bot account before we can use the Python library and the Discord API.
 
@@ -124,7 +122,7 @@ Navigate to the "Bot" tab on the left-hand side panel, as this section is about 
 
 A bot user is someone who listens to and automatically replies to specific events and orders on Discord, as discussed in the preceding parts.
 
-To see your code in action on Discord, you'll require to build a bot user. For that Select "Add Bot" button.
+To see your code in action on Discord, you'll require to build a bot user. For that Select the "Add Bot" button.
 
 ![bot](./img5.png)
 
@@ -158,7 +156,7 @@ You'll be able to view the users on the right side and the channels on the left 
 
 further, the final stage is to register the bot with the new guild at Discord.
 
-### CERATE A DISCORD BOT USING DISCORD.PY LIBRARY
+### Create a discord bot using discord.py library
 
 The bot's programming will be written in Python using the discord.py package. discord.py is a Discord API wrapper that makes creating a Discord bot in Python much easier.
 
@@ -222,13 +220,13 @@ Let's have a look at how each line of the code in your Discord bot code does.
 
 1. The discord.py library is imported in the first line.
    
-2. The os library is imported in the second line, however it is just needed to obtain the TOKEN variable from the.env file. You don't need this line if you don't use a.env file.
+2. The os library is imported in the second line, however, it is just needed to obtain the TOKEN variable from the.env file. You don't need this line if you don't use a.env file.
    
 3. After that, we construct a Client instance. This is the Discord connection.
    
-4. To register an event, use the @client.event() decorator. Because this is an asynchronous library, everything is handled through callbacks. A callback is a function that is invoked when another event occurs. When the bot is ready to be utilized, the on ready() event is invoked in this code. The on_message() event is then triggered when the bot gets a message.
+4. To register an event, use the @client.event() decorator. Because this is an asynchronous library, everything is handled through callbacks. A callback is a function that is invoked when another event occurs. When the bot is ready to be utilized, the on_ready() event is invoked in this code. The on_message() event is then triggered when the bot gets a message.
    
-5. When a message is received, the on_message() event is triggered, but we don't want that to do anything when the message is from us. If the Message.author and Client.user are the same, the code just returns.
+5. When a message is received, the on_message() event is triggered, but we don't want that to do anything when the message is from us. If the Message.author and Client.user is the same, the code just returns.
    
 6. Next, we look to see if the Message.content contains the string '$hello'. If this is the case, the bot will respond with a 'Hello!' to the channel in which it was utilized.
    
@@ -252,7 +250,7 @@ On other systems:
 
 Now type "$hello" into your Discord room. "Hello!" should be the response from your bot.
 
-### CONCLUSION
+### Conclusion
 
 We all can conclude that from the above tutorial, You learned:
 
@@ -262,6 +260,6 @@ We all can conclude that from the above tutorial, You learned:
 
 * Discord Connections: How to Make Them
 
-* How to deal with unexpected situation
+* How to deal with the unexpected situation
 
 * What are the different Discord APIs and how can I use them?
