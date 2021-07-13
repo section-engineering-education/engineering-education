@@ -114,3 +114,7 @@ In this article, we learned about containers, containerization, docker or docker
 1. [Introduction to Containers and Docker](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/)
 2. [A Beginner-Friendly Introduction to Containers, VMs and Docker](https://www.freecodecamp.org/news/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b/)
 3. [Introduction to Docker and Containers](https://www.oreilly.com/attend/introduction-to-docker-and-containers/0636920359579/0636920056161/)
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
