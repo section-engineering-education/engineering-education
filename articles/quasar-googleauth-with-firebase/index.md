@@ -79,7 +79,7 @@ name: "Home",
 }
 ```
 
-Now, navigate to `router` folder, open `routes.js` and edit the default routes to match their individual components as below.
+Now, navigate to `router` folder, open `routes.js` and edit the default route properties to match individual components as below.
 
 We're going to create the components as our next step.
 
