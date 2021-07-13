@@ -13,77 +13,79 @@ images:
 
   - url: /engineering-education/statistical-hypothesis-testing-python-implementation/hero.png
  alt: statistic hypothesis testing with python cover image
-
-hero image is gotten :[via duckduckgo image search](https://automatetheplanet.com) 
  
 ---
-Technically, when you mention hypothesis testing, all data-oriented people will immediately think null and alternate but it takes a statistician or someone with strong analytical background to know what lies beyond five is far more than six. 
+Hypothesis is the act of making observations and generating probing questions from the observations made in an attempt to come to a conclusion. Hypothesis testing is the test of assumptions on a population sample. It involves checking out whether a hypothesis should be accepted or not. In the world of work, hypothesis testing has been of great importance in making worthy decisions off mere observations. Billions of data are being generated on a daily basis around the globe and this has made the relevance of hypothesis testing a stronghold in making business decisions.
 <!--more-->
 
 ### Understanding Hypothesis Testing
 
-There are basically two types of hypothesis testing, namely:
+There are two types of hypothesis testing, namely:
 1. Null Hypothesis
 2. Alternate Hypothesis
 
-Taking it to the fundamentals, we can say, **null hypothesis** is our ground truth or our initial assumption, while **alternate hypothesis** is like someone going against what we believe in, an assumption that counters our initial assumption.
+**Null hypothesis** is the initial assumption about an event (also referred to as ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption"
 
-Obviously, what we've known as fact, we already have a certain level of confidence in it, a lot of us hate it when people try to go against our beliefs. Hypothesis testing can be applied in real life to scenarios as well.
+In a scenario whereby a septuagenarian woman has a swollen stomach or baby bump, our initial assumption is going to be that 
+**"She is pregnant"**.
+
+while our alternate hypothesis will be
+**"She is not pregnant"**.
 
 The null hypothesis is a statement believed to be true unless we can prove otherwise beyond a reasonable doubt.
 
-In trying to assess two mutually exclusive facts on a certain sample of data. We will refer to H0 as our null hypothesis and H1 as our alternate hypothesis, H0 is our ground truth, or let's call it prior assumption while H1 is the fact ready to counter it.
+In trying to assess two [mutually exclusive](https://www.mathsisfun.com/data/probability-events-mutually-exclusive.html) facts on a certain sample of data. We will refer to H0 as our null hypothesis and H1 as our alternate hypothesis, there seem to be too many alternate names for H0(ground truth, initial assumption, prior assumption, e.t.c) whereas H1 is vaguely described.
 
-To carry out hypothesis testing, our first step is to make that vague assumption (or initial assumption as vague sounds too biased), H0. As normal humans will do, always want to be right, we will now collect all data samples available to prove our hypothesis.
+To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis.
 
-We will gather all the shreds of evidence and analyze the data. We will now make a decision whether to accept the H0 or reject it. 
+Collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. 
+While doing that, there is a likelihood for four events to happen.
 
-However, in the process of doing that, there is a likelihood for four events to happen.
-
-1. Our ground truth is not true, we will accept our (H1) alternate hypothesis and hence reject our (H0) null hypothesis.
+1. The ground truth is not true, accept the H1 (alternate hypothesis) and hence reject H0 (null hypothesis).
 
 This is impressive as there is no *error*.
 
-2. Our ground truth(H0) is true, so we accept our null hypothesis(H0).
+2. The ground truth(H0) is true, accept the null hypothesis(H0).
 
 This is also very good as there is no *error*.
 
-3. We reject our ground truth but eventually it is true. (H0) Null hypothesis is true but we reject it.
+3. We reject the ground truth but eventually it is true. (H0) Null hypothesis is true but we reject it.
 
 It looks very bad as it points to an error called *Type 1 Error*. 
 
-4. We do not reject our ground despite the fact that it is not true, i.e, (H0) Null hypothesis is not true, but we did not reject it.
+4. We do not reject the ground despite the fact that it is not true, i.e, (H0) Null hypothesis is not true, but we did not reject it.
 
 it looks bad as it points to an error called *Type 2 Error*.
 
-Did you notice?
-I called the type 1 error 'very bad'  but the type 2 error 'bad', why?
+The most dangerous of the two types of error depends on the problem we are trying to solve, the analyst has to decide whether type 1 error is more harmful or type two error is more harmful in their project approach.
 
-Normally, this is not right, it actually depends on the problem you're facing and trying to solve, you have to decide for yourself whether type 1 error is more harmful or type two error is more harmful in your project approach.
-
-In a scenario whereby a septuagenarian woman has a swollen stomach or baby bump, our ground truth is going to be that 
-**"She has fibroid"** 
+Using the previously mentioned example above, a scenario whereby a septuagenarian woman has a swollen stomach or baby bump, our ground truth is going to be that 
+**"She is pregnant"** 
 
 while our alternate hypothesis will be
-**"She doesn't have fibroid"**
+**"She is not pregnant"**
 
 ```
-H0 = "She has fibroid"
-H1 = "She has no fibroid" (Maybe she's pregnant)
+H0 = "She is pregnant"
+H1 = "She is not pregnant" (Maybe she has fibroid)
 ```
 
-In this case, after carrying out hypothesis testing on her condition, will it be safe to make the mistake of saying or assuming
-**"She has no fibroid",** 
+In this case, after carrying out hypothesis testing on her condition, will it be safe to make the mistake of assuming
+**"She is pregnant",** 
 when she actually has fibroid? 
 or will it be costlier to make the assumption of  
-**"She has fibroid",**
-When she's actually miraculously pregnant like Hannah?.
+**"She is not pregnant",**
+When she's actually pregnant.
 
-There is someone's life involved here so you have to think it through.
+There is someone's life involved here so care must be taken before making assumptions. 
+In this case, encountering type 1 error is assuming she's not pregnant when she actually is, i.e. the null hypothesis is true but we reject it. The consequence might be getting her to abort it which might be threatening to her life.
+If a type two error is encountered, which is assuming she's pregnant when she is truly not, the null hypothesis is wrong but we insist on not rejecting it. The consequence might probably be leaving the bump-like pregnancy to grow, and it turns out to be an acute fibroid.
+
+Considering the two cases, the consequence of type 2 error seems to be more dangerous than type 1 error because abortion might be carried out successfully but an overgrown fibroid will kill.
 
 ### Confidence of Null Hypothesis (Probability Value)
 
-Technically, the only way we can accept or reject our ground truth (null hypothesis) is after determining our *P-value* which is an abbreviation for probability value. It is the only thing that has the decisive power to accept or reject H0.
+Technically, the only way we can accept or reject our ground truth (null hypothesis) is after determining our [*P-value*](https://www.scribbr.com/statistics/p-value/) which is an abbreviation for probability value. It is the only thing that has the decisive power to accept or reject H0. P-value explains the likelihood of the gathered fact or data to occur under the condition of the null hypothesis.
 
 ***The smaller our P-values is the more delicate it is to accept our null hypothesis.***
 
@@ -96,13 +98,10 @@ Our alpha value is the probability of making a wrong decision when the ground tr
 ```
 alpha = 1 - confidence level
 ```
-
 if the confidence level from what we've seen in our data is 95%, then 
-
 ```
 alpha = 1 - 0.95
 ```
-
 which is 0.05.
 
 ### Why is 95% confidence level the most accustomed?
@@ -120,15 +119,51 @@ In this tutorial, I will be touching on three methods of carrying out statistica
 ### Chi-Square Test
 
 This is used to perform testing on two categorical variables in our data population. It is focused on looking for an important relationship between two categorical variables.
-
+For example, comparing the aftereffect of malaria drug A, malaria drug B, and malaria drug C.
+Chi-square is a tool for checking how divergent the observed frequency is from the expected frequency.
 With Chi-Square, we accept the null hypothesis when variable A and variable B are not dependent, i.e. there is no relationship between them.
 We reject the null hypothesis(or accept the alternate hypothesis) when variable A depends on variable B, i.e. there is a relationship between them.
 
+A very good illustration of the mathematics involved with the chi-square test is:
 
+A mathematics teacher conducted a test for a class of 20 students. He expected 5 to score good marks, 7 to score average marks while 8 to fail. Eventually, when the result came out, 5 failed, 6 were ln the average while 9 scored good marks. Mathematically, to carry out chi-square test for this class.
 
+|  | Good  |  Average  | Fail | Total |
+|----|--------|:----------|--------------|--------|
+| Observed| 9 | 6 | 5 | 20 |
+| Expected| 5 | 7 | 8 | 20 |
+
+Let:
+observed good = A,
+expected good = a,
+observed average = B,
+expected average = b,
+observed fail = C,
+expected fail = c.
+```
+Chi-square = Σ[(observed value - expected value)² / expected value]
+```
+```
+A-a = 4
+B-b = -1
+C-c = -3
+```
+```
+# find the square of our values
+/A-a/² = 16
+/B-b/² = 1
+/C-c/² = 9
+```
+```
+Good = (16/5) = 3.2
+Average = (1/7) = 0.143
+Fail = (9/8) = 1.125
+
+chi-square = 3.2 + 0.143 + 1.125
+chi-square = 4.468
+```
+To get a full grab of how to calculate it mathematically to carry out hypothesis testing, follow this [article](https://www.yourarticlelibrary.com/project-reports/chi-square-test/chi-square-test-meaning-applications-and-uses-statistics/92394). However, since the tutorial is focused on python implementation, I will try to show the easier way to get things done on time.
 ### Load our dependencies.
-
-
 
 ```python
 import pandas as pd
@@ -147,236 +182,27 @@ warnings.filterwarnings( "ignore" )
 
 The libraries imported are the day-to-day libraries for any data science python implementation work, except the f_oneway for the ANOVA and chi2_contigency for Chi-square.
 
-##### I will be using the popular iris data set for the tutorial, you can get it almost anywhere but I downloaded this from [kaggle](www.kaggle.com).
+*I will be using the popular iris data set for the tutorial, you can get it almost anywhere but I downloaded this from [Kaggle](https://www.kaggle.com/vikrishnan/iris-dataset).*
 
 ### Load the data into the notebook
-
-
-
 ```python
 df = pd.read_csv("/content/drive/MyDrive/IRIS.csv")
 ```
-
-
-
 ```python
 df.head()
 ```
-
-
-
-<div>
-<style scoped>
- .dataframe tbody tr th:only-of-type {
- vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
+![df.head.png](df.head.png)
 On checking the first five, it seems all the species of flower are setosa, but the iris dataset has 2 more samples apart from that, to be sure, let's run df.sample() to visualize samples randomly.
-
-
-
 ```python
 df.sample(10)
 ```
-
-
-
-<div>
-<style scoped>
- .dataframe tbody tr th:only-of-type {
- vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>16</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.3</td>
-      <td>0.4</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.5</td>
-      <td>1.8</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>5.9</td>
-      <td>3.2</td>
-      <td>4.8</td>
-      <td>1.8</td>
-      <td>Iris-versicolor</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>5.8</td>
-      <td>2.7</td>
-      <td>5.1</td>
-      <td>1.9</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>4.9</td>
-      <td>1.5</td>
-      <td>Iris-versicolor</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>7.3</td>
-      <td>2.9</td>
-      <td>6.3</td>
-      <td>1.8</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>4.4</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>6.0</td>
-      <td>2.2</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>Iris-versicolor</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>5.4</td>
-      <td>3.4</td>
-      <td>1.7</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+![sampleten](df.sample.png)
 
 Always check for missing values to avoid future complications.
-
-
-
 ```python
 df.isnull().sum()
 ```
-
-
-
-    sepal_length    0
-    sepal_width     0
-    petal_length    0
-    petal_width     0
-    species         0
-    dtype: int64
-
-
+![isnull](df.isnull.png)
 
 We can be sure now that there are 3 classes of species and there are no missing values. 
 Let's proceed with the manipulation.
@@ -387,33 +213,24 @@ Let's use petal width to compare species for our Chi-Square Test.
 
 The first step is to check the summary of petal_width 
 
-secondly, use the information derived to convert it to a categorical variable.
-
-
-
+Secondly, use the information derived to convert it to a categorical variable.
 ```python
 df.petal_width.describe()
 ```
+![petalwidthdescribe](petalwidthdescribe.png)
 
+Since, the operation we are going to be performing are mathematical operations and they don't work with letters or words except numbers. The Chi-square test helps in determining if there is a notable difference between the observed and normal frequencies in one or more categories, the values of petal_width must be changed into categories of zeros and ones using the 50% percentile which is the second quartile as the yardstick. There are clear [differences](https://byjus.com/maths/difference-between-percentage-and-percentile/) between percentage and percentile. As percentage is just a fraction of a hundred, the percentile is more concerned with ranks, it can be termed as the percentage of values that fall below a certain value mark. It is rather used to find the position of a value in a given set of values. For example, if a girl has the 50th percentile on an examination of 200, we can say that by scoring 200 marks, she has higher marks than 50% of the remaining class.
 
+### How to calculate percentile.
+There are two conditions that must be satisfied.
+1. Data must be arranged in ascending order.
+2. if the index is not an integer, it must be rounded up.
+```
+np.percentile(df.petal_width, 50)
+```
+![percentile](percentile.png)
 
-    count    150.000000
-    mean       1.198667
-    std        0.763161
-    min        0.100000
-    25%        0.300000
-    50%        1.300000
-    75%        1.800000
-    max        2.500000
-    Name: petal_width, dtype: float64
-
-
-
-Let us break up the value of petal_width into zeros and ones using the median as the yardstick.
-
-The 50% quartile.
-
-
+ A quartile is another term-related percentile, it can be called a specified percentile, we have 1st quartile as 25% percentile, second quartile as 50%, and 3rd as 75% percentile. You can as well read this [article](https://datascienceupskill.com/statistics/percentiles-and-quartiles) to get a better grip.  
 
 ```python
 def petal_cat(df):
@@ -426,10 +243,7 @@ def petal_cat(df):
 
 df['petal_width_new'] = df.apply(petal_cat, axis=1)  
 ```
-
-Let's transform our "species" column too into 0,1 and 2.
-
-
+The non-machine-friendly format for our *species* class has to be transformed to 0,1 and 2, which is a machine-readable format for the testing to be carried out. Therefore, with [label-encoding](https://www.section.io/engineering-education/introduction-to-scikit-learn-in-python/), a numeric value will be assigned to each of the categories in the class. To learn more about label encoding, [click](https://www.section.io/engineering-education/data-preprocessing-in-r/).
 
 ```python
 def species_cat(df):
@@ -442,183 +256,34 @@ def species_cat(df):
 
 df["species"] = df.apply(species_cat, axis=1)
 ```
-
-
-
 ```python
 df.sample(5)
 ```
-
-
-
-<div>
-<style scoped>
- .dataframe tbody tr th:only-of-type {
- vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-      <th>petal_width_new</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>88</th>
-      <td>5.6</td>
-      <td>3.0</td>
-      <td>4.1</td>
-      <td>1.3</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>4.9</td>
-      <td>2.4</td>
-      <td>3.3</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>5.2</td>
-      <td>2.7</td>
-      <td>3.9</td>
-      <td>1.4</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>5.7</td>
-      <td>2.8</td>
-      <td>4.5</td>
-      <td>1.3</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>6.5</td>
-      <td>2.8</td>
-      <td>4.6</td>
-      <td>1.5</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
+![dfsample5](dfsample5.png)
 ```python
 df_new = df.drop(columns=["sepal_width", "sepal_length", "petal_length", "petal_width"])
 ```
-
-
-
 ```python
 df_new.head()
 ```
+![newhead](df_new.png)
 
-
-
-<div>
-<style scoped>
- .dataframe tbody tr th:only-of-type {
- vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>species</th>
-      <th>petal_width_new</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-Let's make use of chic2_contigency provided for us in scipy.stats library.
+Let's make use of `chic2_contigency` provided for us in `scipy.stats` library.
 
 It has been added to our dependencies earlier in the notebook.
-
-
-
 ```python
 stat, p, dof, expected= chi2_contingency(df_new)
 
 print(dof)
 ```
-
-    149
-
-
-
+![dof](DOF.png)
 We can comfortably get 3 outputs in test statistics, degree of freedom, p-value, and expected values.
 
-The amount of features or variables that we have access to varying is the degree of freedom.
+[Test statistic](https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/chi-square-tests) is a characterized feature of significance in the Chi-square test that helps in determining how uncommon the result might be provided that null hypothesis is assumed to be true.
+
+The number of features or variables that we have access to varying is the degree of freedom. Follow the link for more information on [degree of freedom](https://byjus.com/maths/chi-square-test/).
 
 Hence, we set our probability of confidence to 95% as explained earlier in the tutorial.
-
-
-
 ```python
 prob = 0.95
 
@@ -632,16 +297,9 @@ if p <= alpha:
 else: 
  print('Accept the Null Hypothesis (fail to reject H0)')
 ```
+![alphsig](alphasiglevel.png)
 
-    alpha/significance level=0.050
-    P-value =0.10
-    Accept the Null Hypothesis (fail to reject H0)
-
-
-
-### Conclusion
-
-Since the P-value is greater than the alpha value set at 0.05, we will fail to reject the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
+The P-value is greater than the alpha value set at 0.05, we will fail to reject the null hypothesis(we accept the null hypothesis). This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
 
 ### T-Test
 
@@ -650,52 +308,66 @@ The T-test is utilized when we plan to evaluate the discrepancy between the mean
 It has three basic types
 
 1. **One sample t-test:** It checks whether the population has a different mean from the sample.
+The mathematical formula is:
+```
+t-test = a-BX∕N
+```
+Where;
+
+a = the observed mean group.
+
+B = the assumed population means.
+
+X = the standard deviation of the data group.
+
+N = the number of observations in the group.
 
 2. **Two-sample t-test:** It checks and compares the means of two groups that are not dependent on each other and compare with the population's means to see if there is a huge difference.
+The mathematical expression is:
+```
+t-test = Ma – (Mb*v*Na)+vNb
+```
+Ma = Data sample A's mean
+
+Mb = Data sample B's mean
+
+Na = Size of sample A
+
+Nb = Size of sample B
+
+v = Variance
 
 3. **Paired t-test:** It is used in checking and comparing the means of different samples from a group.
+Mathematically, it can be resolved with:
+```
+t-test = D - (m*xd)∕N
+```
+D = The difference between paired observations' sample mean.
+
+m = assumed mean difference.
+
+xd = standard deviation.
+
+N = the number of observations in the group.
 
 ### Performing a One-Sample T-Test
-
-
-
 ```python
 df_ = df.petal_width
 ```
-
-
-
 ```python
 df_.sample(5)
 ```
-
-
-
-    101    1.9
-    92     1.2
-    99     1.3
-    20     0.2
-    43     0.6
-    Name: petal_width, dtype: float64
-
-
-
+![df_sample](df_sample5.png)
 ```python
 stats.ttest_1samp(a=df_, popmean=1.199)
 ```
-
-
-
-   Ttest_1sampResult(statistic=-0.0053494404016899925, pvalue=0.9957389399651244)
-
-
-
-### Conclusion
+![onesampttest](onsamplettest.png)
 
 **H0:** The mean of petal_width is 1.199
 
 **H1:** The mean of petal_width is not 1.199
 
+Analyzing one-sample t-test, it finds out if the hypothesized mean is the same or different from the group's mean. From the example above, we've selected the petal_width as the population sample to perform the test on. 
 From the test, since the P-value beats the alpha level set at 0.05,
 
 we fail to reject the null hypothesis because we don't have enough evidence to prove otherwise, moreover, if you check, the P-value is very close to 1.0,
@@ -709,53 +381,26 @@ This means that the mean of petal_width is most likely 1.199.
 We need to first of all check their variances.
 
 The ratio of the higher to the lower variance must be less than 4:1 before we can assume the two samples have the same variance.
-
-
-
 ```python
 class1 = df.petal_width
 class2 = df.sepal_length
 ```
-
 find variance for each group
-
-
-
 ```python
 print(np.var(class1), np.var(class2))
 ```
-
-    0.5785315555555559 0.6811222222222222
-
-
-
+![var](variancetwosamplettest.png)
 ```python
 ratio_check = 0.6811222222222222 / 0.5785315555555559
 
 ratio_check
 ```
-
-
-
-   1.1773294225379805
-
-
-
+![ratiocheck](ratiocheck.png)
 Obviously, the ratio is less than 4:1, thus the variances are assumed to be equal.
-
-
-
 ```python
 stats.ttest_ind(a=class1, b=class2, equal_var=True)
 ```
-
-
-
-   Ttest_indResult(statistic=-50.51520141387464, pvalue=3.7974378831185126e-148)
-
-
-
-### Conclusion
+![twosample](twosamplettest.png)
 
 Evaluating this:
 
@@ -765,13 +410,21 @@ Evaluating this:
 
 Our P-value ( p = 3.7974378831185126e-148) is far less than alpha = 0.05, 
 
-This explains that the means of the two samples are different and not equal. Thus, we will reject the Null Hypothesis, there is no evidence sustainable enough to accept it.
+Checking of the variance is only making sure that two populations are probably spread out or normally distributed, this will help prevent bias. Hence, the null hypothesis will be assuming that since the two groups are normally distributed, they likely should have the same mean. However, interpreting any form of t-test largely depends on the p-value, the result above explains that the means of the two samples(petal_width and sepal_length) are different. Thus, we will reject the Null Hypothesis which says the mean of the two samples are the same because their variances are assumed to be equal, there is no evidence sustainable enough to prove the two populations have the same mean.
 H1 (alternate hypothesis) is however true.
+
+This allows us to figure out questions like: 
+"Is there a significant or random by the chance difference in the average time spent on mathematics exam from that of English exam?."
 
 ### ANOVA Test
 
+ANOVA is a word coined from `analysis of variance`. It is a statistical concept that shows the differences between the means of more than two independent classes, using variance analysis on samples from those classes.
+
 It is used to check the contrast between three or more samples with one test. Especially when the categorical class has more than two categories.
- 
+
+Why ANOVA? With ANOVA you get to discover obvious differences between the means of your independent features and on getting a clearer picture of the differences, you can get to understand how each of them connects to your dependent variable and what are the influencing factors for the relationship. 
+
+A typical example is, assuming there is an increase in sales for a particular product, and they've tried several advertisement channels so it is difficult to say which one yielded the sales increment the most. They did online posters, billboards, TV ads, mouth-to-mouth, and sponsorship. By carrying out an ANOVA test on the several advertisement channels, they will be able to understand better which one works best out of all channels(independent variables) through the connection it has with the increase in sales which is the dependent variable. It can be very useful in the marketing department of every organization.
 
 During ANOVA testing, the hypothesis is:
 
@@ -780,32 +433,17 @@ During ANOVA testing, the hypothesis is:
 **H1:** When one or more samples are very much different.
 
 ## One Way ANOVA Test
-
-
-
 ```python
 class1 = df.petal_width
 class2 = df.sepal_length
 class3 = df.petal_length
 ```
-
-
-
 ```python
 f_oneway(class1, class2, class3)
 ```
+![1wayanova](onewayanova.png)
 
-
-
-   F_onewayResult(statistic=555.8702565323317, pvalue=5.738282463819433e-122)
-
-
-
-### Conclusion
-
-As mentioned earlier:
-
-In ANOVA testing, the hypothesis is:
+As mentioned earlier, in ANOVA testing, the hypothesis is:
 
 **H0:** When all samples' means are the same.
 
@@ -818,84 +456,16 @@ This means that the sample means are very much different. Hence, our H1 (alterna
 ## Two Way ANOVA Test
 
 This is called for when we are dealing with three or more variables, trying to compare their means with each other.
-
-
-
 ```python
 petal = df.petal_width
 sepal = df.sepal_length
 species = df.species
 ```
-
-
-
 ```python
 model = ols('species ~ C(petal) + C(sepal) + C(petal):C(sepal)', data=df).fit()
 sm.stats.anova_lm(model, typ=2)
 ```
-
-
-
-<div>
-<style scoped>
- .dataframe tbody tr th:only-of-type {
- vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sum_sq</th>
-      <th>df</th>
-      <th>F</th>
-      <th>PR(&gt;F)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>C(petal)</th>
-      <td>-3.366075e-09</td>
-      <td>21.0</td>
-      <td>-2.959187e-09</td>
-      <td>1.000000e+00</td>
-    </tr>
-    <tr>
-      <th>C(sepal)</th>
-      <td>3.871868e+00</td>
-      <td>34.0</td>
-      <td>2.102372e+00</td>
-      <td>9.847289e-02</td>
-    </tr>
-    <tr>
-      <th>C(petal):C(sepal)</th>
-      <td>5.940146e+02</td>
-      <td>714.0</td>
-      <td>1.535914e+01</td>
-      <td>3.716614e-16</td>
-    </tr>
-    <tr>
-      <th>Residual</th>
-      <td>2.166667e+00</td>
-      <td>40.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-### Conclusion
+![twowayanova](twowayanova.png)
 
 The P-value of petal width is greater than 0.05, which increases the probability of our null hypothesis being accepted. 
 
@@ -905,3 +475,14 @@ Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we
 
 **Happy coding**
 
+### Extra Resources
+1. [Hypothesis Testing in Data Science](https://www.section.io/engineering-education/hypothesis-testing-data-science/)
+2. [Chi Square Test](https://byjus.com/maths/chi-square-test/)
+3. [Understanding ANOVA test](https://www.qualtrics.com/experience-management/research/anova/)
+4. [ANOVA Test: Definition, Types, Examples](https://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/anova/)
+5. [Understanding t-Tests: t-values and t-distributions](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions)
+6. [MAKING SENSE OF THE TWO-SAMPLE T-TEST](https://www.isixsigma.com/tools-templates/hypothesis-testing/making-sense-two-sample-t-test/)
+7. [Understanding Hypothesis Tests: Significance Levels (Alpha) and P values in Statistics](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics)
+8. [Chi-squared test application](http://www.openanesthesia.org/chi-squared_test_application/)
+9. [Chi-square mathematics for statistics students](https://www.yourarticlelibrary.com/project-reports/chi-square-test/chi-square-test-meaning-applications-and-uses-statistics/92394).
+10. [What are mutually exclusive events](https://www.mathsisfun.com/data/probability-events-mutually-exclusive.html)
