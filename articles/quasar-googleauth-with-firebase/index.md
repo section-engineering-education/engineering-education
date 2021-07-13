@@ -30,65 +30,10 @@ yarn global add @quasar/cli
 
 ### Create a quasar-firebase-app with Quasar
 
-To create a new Quasar app, run the command below:
+Creating a quasar app is a simple step. You're going to do it on your own.
 
-```bash
-quasar create quasar-firebase-app
-```
-
-`quasar-firebase-app` is the name of your project.
-
-
-Hit Enter to accept the default project details or edit them to your liking.
-
-Using the arrow keys select the first CSS preprocessor:
-
-```bash
-❯ Sass with SCSS syntax (recommended)
-  Sass with indented syntax (recommended)
-  Stylus (deprecated)
-  None (the others will still be available)
-```
-
-Select `Auto-import-in-use Quasar Components` and hit Enter.
-
-```bash
-? Pick Quasar components & directives import strategy
-❯ * Auto-import in-use Quasar components & directives
-    - also treeshakes Quasar; minimum bundle size
-  * Import everything from Quasar
-    - not treeshaking Quasar; biggest bundle size    
-```
-
-Then press the spacebar to unselect the ESLint feature, we won't be needing it here. Hit Enter.
-
-```bash
-❯ (*) ESLint (recommended)
-```
-<!-- 
-Then hit the enter to select the ESLint feature. Hit enter again to select the first preset (Prettier)
-```bash
-❯ Prettier (https://github.com/prettier/prettier) 
-``` -->
-
-Finally, using the arrow keys select yarn. This is what we will use during development, you can use npm if you like.
-
-```bash
-❯ Yes, use Yarn (recommended)
-```
-
-Navigate to the created `quasar-firebase-googleauth` and serve the app by running the commands:
-
-```bash
-$ cd quasar-firebase-googleauth
-$ quasar dev
-```
-
-After serving the app, the URL: http://localhost:8080/#/ opens in your browser to view the app. You'll see the Quasar logo and the name "Quasar" at the center of the page.
-
-Open the created `quasar-firebase-googleauth` folder in your editor.
-
-Navigate to the `quasar.conf.js` file and change the `vueRouterMode` from `hash` to `history`. This will remove the hash `/#/` from our app URL.
+Visit this link [getting-started-with-quasar-framework](https://www.section.io/engineering-education/getting-started-with-quasar-framework/)
+and follow the installation process. When done, come back here to continue.
 
 ### Creating our app components
 
@@ -134,18 +79,22 @@ name: "Home",
 }
 ```
 
-Now, navigate to `router` folder, open `routes.js` and edit the routes to match their individual components as below:
+Now, navigate to `router` folder, open `routes.js` and edit the default routes to match their individual components as below.
+
+We're going to create the components as our next step.
 
 ```JavaScript
 children: [
  path: '/',
  component: () => import('layouts/MainLayout.vue'),
-  { path: '', component: () => import('pages/Auth.vue') },
+  { path: '/', component: () => import('pages/Auth.vue') },
   { path: '/home', component: () => import('pages/Home.vue'), meta: { requiresAuth:true } }
 ]
 ```
 
-According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users. This will be well demonstrated after adding firebase to our application.
+According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users. 
+
+This will be well demonstrated after adding firebase to our application. 
 
 ### Signup/ Signin component
 
@@ -194,7 +143,7 @@ We're going to create a signin/signup component. Navigate to `components` folder
 This is a tab that displays AuthComponent for signing in and signing up. For the `<script>` tag paste the code below:
 
 ```JavaScript
-import ForgotPassword from "components/ForgotPassword";
+import ForgotPassword from "./ForgotPassword.vue";
 export default {
   name: "AuthComponent",
   props: ['tab'],
@@ -374,18 +323,18 @@ boot: ['firebase'],
 
 Navigate to the `boot` folder and open the `firebase.js` file. 
 
-Paste the script you copied from the previous step for the firebase SDK. `firebase.js` file structure should resemble the one below.
+Paste the script you copied from the previous step for the firebase SDK. Replace the code in `firebase.js` file to resemble the one below.
 
 ```JavaScript
 import firebase from "firebase";
 
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "xxxxxxxxxxx",
+    authDomain: "xxxxxxxxxx",
+    projectId: "xxxxxxxxxx",
+    storageBucket: "xxxxxxxx",
+    messagingSenderId: "xxxxxxxxx",
+    appId: "xxxxxxx"
   };
   firebase.initializeApp(firebaseConfig);
 
@@ -396,7 +345,9 @@ export default firebase
 
 We're going to disable access to routes that require authorization when a user needs to access them. This is quite easy. Navigate to the `routes` folder, open the `index.js` file.
 
-Add `import firebase from "firebase"` at the top of the file just like we did in the `firebase.js` boot file. When done, add the following code just above the line `return Router`:
+mport Firebase at the top of the file just like we did in the `firebase.js` boot file.
+
+When done, add the following code just above the line `return Router`:
 
 ```JavaScript
   Router.beforeEach(async (to, from, next) => {
@@ -415,12 +366,12 @@ We'll have to use the `onAuthStateChanged` callback somehow. We have to add a me
 
 ```JavaScript
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "xxxxxxxxxxx",
+    authDomain: "xxxxxxxxxx",
+    projectId: "xxxxxxxxxx",
+    storageBucket: "xxxxxxxx",
+    messagingSenderId: "xxxxxxxxx",
+    appId: "xxxxxxx"
   };
   firebase.initializeApp(firebaseConfig);
 
