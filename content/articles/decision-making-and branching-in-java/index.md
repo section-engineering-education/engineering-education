@@ -19,10 +19,10 @@ Java statements are executed in a sequential manner, that is, the order in which
 Branching occurs when a program breaks or does not obey the sequential order and instead jumps to another part of the code. In conditional branching, the computer usually follows certain predefined conditions.
 
 ### Prerequisites
-To follow along, you need to have some basic knowledge of Java. Furthermore, you must be familiar with IDEs such as [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
+To follow along, you need to have some basic knowledge of Java. Furthermore, you must be in a position to work with IDEs like [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
 
-### Decision-making using the if statement 
-The `if` statement is an example of a decision-making statement in controlled execution. It is also a dual-track decision statement and is used in combination with an expression. 
+### Decision-making using if statement 
+An example of a decision-making statement under controlled supervision is the `if` statement. It is also a dual-track decision statement and is used in combination with an expression. 
 
 When using the `if` statement, program execution depends on whether the results are true or false.
 
@@ -50,7 +50,7 @@ system.out.println(marks)
 The program checks if the `category` type is `mathematics`. If this is `true` then additional bonus_marks are added to the student's score. 
 
 ### The if-else statement
-The `if-else` condition can be regarded as an extension of the `if` statement. 
+The `if-else` condition can be regarded to as an advancement in the `if` statement since the `if-else` statement has only few upgrades from the `if` statement. 
 
 Here is how the `if-else` syntax looks:
 
@@ -63,7 +63,7 @@ if(test expression){
 statement-x
 ```
 
-If the test expression is `true`, the true-statement-block is executed if not then the false-code-block is executed. In other words, one condition must be executed.
+If the test expression is `true`, the true-statement-block is executed if not then the false-code-block is executed. This is to say that, one condition must be executed.
 
 Consider this `if-else` example:
 
@@ -79,21 +79,21 @@ If the `gender` is `male` then the `boy=boy+1` statement is executed. The `else`
 
 If the `gender` was `female`, the statement `boy=boy+1` would be skipped and the `else` part for `girl=girl+1` is executed.
 
-The following program uses an `if-else` statement to check if a given number is odd or even:
+The following program uses an `if-else` statement to check if an entered number is an odd number or an even number:
 
 ```Java
 import java.util.Scanner;
 
 public class EvenOddnumbers {
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
 
         Scanner reader = new Scanner(System.in);
 
         System.out.print("Enter any number: ");
         int num = reader.nextInt(); // getting user input using the scanner class
 
-        if(num % 2 == 0){ //checks if number is divisible by 2 and has no remainder
+        if(num % 2 == 0){ //checks if number is divisible by 2 and has no remainder through modulo function
             System.out.println(num + " Number is even"); // Output when number is even
         }else{
             System.out.println(num + " Number is odd"); // Output when number is odd
@@ -101,8 +101,9 @@ public class EvenOddnumbers {
     }
 }
 ```
+
 ### Nested if-else statement
-A nested `if-else` statement is used when a series of decisions are involved.
+A nested `if-else` statement is used when a number of decisions have to be involved.
 
 Here is the structure of a nested `if-else` statement:
 
@@ -120,7 +121,7 @@ if(test condition a){
 statement-x;
 ```
 
-If the `test condition a` is `false` then `statement-3` is executed. 
+If the `test condition a` is `false` then execution of `statement-3` will take place. 
 
 On the other hand, if `test condition a` is `true`, the program proceeds to `test condition b` and executes the predefined conditions.
 
@@ -154,29 +155,37 @@ public class Largest {
 The above program will display the largest number which is `50`.
 
 ### The else-if ladder
-The else-if ladder is used when [multipath](https://www.oreilly.com/library/view/programming-techniques-through/9788131705087/10_chap05.html) decisions are involved.
+The else-if ladder follows when [multipath](https://www.oreilly.com/library/view/programming-techniques-through/9788131705087/10_chap05.html) decisions are to be used.
 
 Here is the syntax of an `else if` statement:
 
 ```Java
-if(condition a){
-  statement-1;
-}else if(condition b){
-  statement-2;
-}else if(condition c){
-  statement-3;
-}else if(condition v){
+if(condition m)
+{
+  statement-a;
+  }
+  else if(condition n)
+  {
+  statement-b;
+  }
+  else if(condition o)
+  {
+  statement-c;
+  }
+  else if(condition p)
+  {
   statement-n;
-}else{
+  }
+  else
+  {
   default-statement;
 }
-
 statement-x;
 ```
 
-The conditions are evaluated from the top to the bottom and execution happens when the `true` condition is found.  
+The conditions are evaluated from the first condition to the last condition in a logic order and when a true condition is found execution happens.
 
-The final `else` statement containing the `default-statement` is executed when all conditions are false.
+The final `else` statement containing the `default-statement` is executed when no conditions have been executed.
 
 Let's use the `else-if` statements to create a simple program to grade students.
 
@@ -199,9 +208,9 @@ public class Main {
 ```
 
 ### The switch statement
-The `switch` statement is used to compare a variable to a list of possible values. 
+The `switch` statement compares a variable to a list of the possible values. 
 
-A block of statements associated with that case is executed when a match is detected.
+When a match is detected the block of statements associated to that case is executed
 
 The general structure of a `switch` statement is as follows:
 
@@ -209,19 +218,19 @@ The general structure of a `switch` statement is as follows:
 switch (expression)
 {
     case value-1:
-    block-1
+      block-statement 1;
     break;
     case value-2:
-    block-2
+      block-statement 2;
     break;
     default:
-    default block
+      default block statement;
     break;
 }
 statement-x;
 ```
 
-The `case` labels (value-1, value-2) are constant expressions and should always be unique.
+The `case` labels are constant expressions and should always be unique.
 
 In a `switch` statement, the `case labels` are separated by a full colon (:).
 
@@ -239,25 +248,25 @@ public class Main {
       case 1: //if day is 1
         System.out.println("Monday");
         break;
-      case 2:
+      case 2://if day is 2
         System.out.println("Tuesday");
         break;
-      case 3:
+      case 3://if day is 3
         System.out.println("Wednesday");
         break;
-      case 4:
+      case 4://if day is 4
         System.out.println("Thursday");
         break;
-      case 5:
+      case 5://if day is 5
         System.out.println("Friday");
         break;
-      case 6:
+      case 6://if day is 6
         System.out.println("Saturday");
         break;
-      case 7:
+      case 7://if day is 7
         System.out.println("Sunday");
         break;
-        default:
+        default://if the number is not in case labels
         System.out.println("enter valid day");
         break;
     }
