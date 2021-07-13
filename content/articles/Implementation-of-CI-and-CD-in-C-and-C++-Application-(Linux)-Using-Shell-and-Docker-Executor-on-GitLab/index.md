@@ -33,7 +33,7 @@ On the machine, execute the command below.
 3. **GREP**: export GREP=/usr/bin/grep
 
 #### GitLab Runner Set Up
-Follow the steps below to download the GitLab Runner and set it up.
+Follow the following steps to download and configure the GitLab Runner.
 1. To install GitLab Runner on a Linux machine, run the following command.
 
 ```
@@ -58,7 +58,7 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 ``` 
 
-5. Use the command below to start GitLab.
+5. To start GitLab, use the command below.
 
 ```
 sudo GitLab-runner start
@@ -97,17 +97,17 @@ To familiarize yourself, follow some other GitLab Runner commands.
 1. `Sudo GitLab-runner register`: Using GitLab Runner, create a project.
 2. `Sudo GitLab-runner start`: Begin the runner.
 3. `Sudo GitLab-runner restart`: The GitLab Runner service is stopped and then restarted using this command.
-4. `Sudo GitLab-runner uninstall`: This command disables the GitLab Runner as a service and uninstalls it.
-5. `Sudo GitLab-runner exec`: Run this command to get a list of available executors.
+4. `Sudo GitLab-runner uninstall`: This command deactivates and uninstalls GitLab Runner as a service.
+5. `Sudo GitLab-runner exec`: Run this command to obtain a list of executors available.
 6. `Sudo GitLab-runner stop` will stop the runner. Stop the runner with Sudo GitLab-runner stop.
 7. `Sudo GitLab-runner unregisters` -Url `http://gitlab.example.com/` –token t0k3n: A URL and a token can be used to uninstall Runner.
-8. `Sudo GitLab-runner unregister –all runners`: To do so, all runners must be unregistered.
+8. `Sudo GitLab-runner unregister –all runners`: All runners must be unaccompanied to do so.
 9. `Sudo GitLab-runner –help`: By running the command, you can see a recent list of commands.
 10. `Sudo GitLab-runner runs –help`: The environment variable's name is displayed.
 11. `Sudo GitLab-runner status`: To find out how GitLab-runner is doing.
-12. Unregister a project's Runner using `sudo GitLab-runner unregister –name test-runner, replacing test-runner with your runner name from the config.toml file (where your GitLab-runner is located). 
-13. `Sudo GitLab-runner –debug`: To run a command in debug mode, follow these steps.
-14. `Sudo GitLab-runner exec shell`: To get a list of all the shell executor's options, type.
+12. Unregister a project's Runner with `sudo GitLab-runner unregister –name test-runner`, where test-runner is the name of your runner from the config.toml file (where your GitLab-runner is located).
+13. `Sudo GitLab-runner –debug`: Follow these steps to execute a command in debug mode.
+14. `Sudo GitLab-runner exec shell`: Type a list of all the options for the shell executor.
 
 #### .gitlab-ci.yml_ shell Executor:
 On shell executor mode, the contents of.gitlab-ci.yml are shown below. Change it, though, if necessary.
