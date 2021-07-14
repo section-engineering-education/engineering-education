@@ -4,15 +4,15 @@ Libraries enable the reuse of code for solving problems. Nowadays solutions to c
 
 The C++ programming language provides libraries that can be used for machine learning. In this article, we will look at the **SHARK** and **MLPACK** libraries and exploit their functionality in machine learning.
 
- ### PREREQUISITES
+ ### Prerequisites
 - An understanding of machine learning models and algorithms.
 - An understanding of object oriented programming concepts.
 - An intuition of machine learning models and algorithms.
 
- ### 1. SHARK LIBRARY
+ ### 1. Shark library
 Shark is a very fast module-based library that supports supervised learning algorithms like clustering, linear regression, neural networks, and k-means.
 
- #### INSTALLING SHARK AND SET UP ENVIRONMENT
+ #### Installing Shark and set up environment
 I will be doing this for the Linux-based operating system. For windows users, you can install the windows subsystem for Linux whereby you will be able to run the Linux operating system as a windows program. It is outlined in this [link](https://ubuntu.com/tutorials/ubuntu-on-windows). It has many of the same features you will find using the terminal on Ubuntu. The  dependencies of the shark library are Boost and Cmake. Type the following command on your terminal to install all the dependencies.
 
  ``` sudo apt-get install cmake cmake-curses-gui libatlas-base-dev libboost-all-dev ``` 
@@ -25,7 +25,7 @@ I will be doing this for the Linux-based operating system. For windows users, yo
 5. ```cmake ..```
 6. ```make``` 
 
-#### HOW TO COMPILE PROGRAMS
+#### How to compile programs.
  To be able to compile programs with shark, you need to include the header files needed for your use case in machine learning. Let's say for linear regression, you would need to include the following extra header files.
 ```C++
 #include <shark/ObjectiveFunction/Loss/Squaredloss.h>
@@ -35,7 +35,7 @@ You need to link with the following libraries in order to compile.
 ```
 -std=c++11 -lboost_serialization-lshark-lcblas
 ``` 
-#### IMPLEMENT LINEAR REGRESSION
+#### Implement linear regression
  - **Initialize the data**
  
   Include the header files and libraries for linear regression.
@@ -99,13 +99,13 @@ b : [1](-0.749091) A :[1,1]((2.00731)) Loss: 7.83109
 ```
 b is kind of far from zero because of the noise in labels. The multiplier's value is quite close to 2 and is thus similar to the data . Congratulations you have built a linear regression model using the Shark C++ Library.
 
- ### 2. ML PACK LIBRARY
+ ### 2. ML Pack library
 The mlpack has libraries on which it depends and they must be installed  into the system. The libraries are:
 1. Boost
 2. Armadillo
 3. Ensmallen. 
 
-#### INSTALLING MLPACK AND SETUP ENVIRONMENT 
+#### Installing ML Pack and setup environment
 Type the following command on your terminal to get all the dependencies installed at once
  ```
 sudo apt-get install libboost-math-dev libboost-program-options-dev libboost-test-dev libboost-serialization-dev binutils-dev python-pandas python-numpy cython python-setuptools
@@ -117,7 +117,7 @@ After installing all the dependencies on your system, run the following commands
 - make -j4 
 - sudo make install
 
- #### HOW TO COMPILE
+ #### How to compile
 1. Include the relevant header files e.g lets say for k-means, the header files will be
 
  ```c++
@@ -128,7 +128,7 @@ After installing all the dependencies on your system, run the following commands
 ```
 std=c++11 -larmadillo -lmlpack -lboost_serialization
 ```
-#### K-MEANS IMPLEMENTATION
+#### K-means implementation
 To follow along with this part, You need a good intuition of K-means as a machine learning algorithm. K-means grouping similar things into clusters. We group `"n"` observations into `"k"` clusters. The k is predetermined by the analyst. Practical areas of application include triangulating crime-prone areas, customer analysis, and analysis of public transportation. You can read [this](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/) article to get an in-depth understanding of the k-means algorithm.
  - **Initializing**
 
@@ -187,5 +187,5 @@ The results are displayed below, and that's it.
 ```
 Centroids: 0.9497 1.9625 0.9689 3.0652
 ```
-### CONCLUSION
+### Conclusion
 In conclusion, we learned the use of c++ libraries to implement machine learning algorithms. The two popular libraries are Shark and ML Pack. Libraries are an easier and faster way to deploy machine learning algorithms for projects. There is a lot of assistance in the documentation of each library. In case you get stuck you can also read the documentation for detailed assistance. You can also inbox me for assistance in case you get stuck.
