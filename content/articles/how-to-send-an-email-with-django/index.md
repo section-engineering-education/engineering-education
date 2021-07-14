@@ -122,6 +122,8 @@ def sendMail(request):
             cd = form.cleaned_data
             subject = cd['subject']
             message = cd['message']
+
+            # Send the mail
             send_mail(subject, message,
                       settings.DEFAULT_FROM_EMAIL, [cd['to']])
             sent = True
@@ -141,8 +143,10 @@ def sendMail(request):
 #### What's happening here?
 
 1. we created a function called `sendMail`.
-2. we then if the form was submitted, if it was, we validate user input and return `True`
+2. we then if the form was submitted, if it was, we validate user input, send the mail and then return `True`
 3. finally, if the form was not submitted we return an empty form.
+
+Also not the `send_email` function. It takes three required arguments. **The subject**, followed by **the message**, **the sender** and finally the **list of recipients**.
 
 Next, create a new `templates` folder in your mailer application and inside a file called `index.html`, and add the following code:
 
