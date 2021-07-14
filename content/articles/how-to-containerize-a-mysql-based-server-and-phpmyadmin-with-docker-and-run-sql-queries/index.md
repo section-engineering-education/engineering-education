@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/
+title: How to Use Modular Patterns in Node.js
+description: This article will go through the basics of containerizing MySQL server using Docker. We will also learn how to dockerize in PHPMyAdmin to use MySQL. 
+author: edwin-wachira
+date: 2021-07-14T00:00:00-21:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/hero.png
+    alt: Containerize mysql server and phpmyadmin example
+---
 MySQL is an open-source Relational Database Management System (RDBMS) with a large user base. You can use several RDBMS to run SQL queries, such as MySQL, PostgreSQL, SQLite, SimpleDB, and Elasticsearch.
 
 At times, it becomes hectic to set up an SQL server on your local computer. For example, let's say you are working on a Windows environment and running a MySQL database server. In this case, you have download the software like WAMP, MySQL workbench, and XAMPP to run SQL commands, access your databases and records.
