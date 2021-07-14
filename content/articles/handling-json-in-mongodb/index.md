@@ -1,5 +1,22 @@
-### Introduction
-MongoDB is a high-performance, document-oriented NoSQL database which came to light in the mid-2000s. Unlike SQL-based databases, MongoDB uses documents (records) and collections (tables) to store non-relational data. MongoDB has grown in its use due to the scalability and its ease of use.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /handling-json-in-mongodb/
+title: Handling JSON in MongoDB
+description: In this article, we will learn how to structure, import, export, and save JSON data in MongoDB.
+author: simon-salva
+date: 2021-07-13T00:00:00-00:20
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/handling-json-in-mongodb/hero.png
+    alt: Handling JSON in MongoDB image
+---
+
+MongoDB is a high-performance, document-oriented NoSQL database which came to light in the mid-2000s. Unlike SQL-based databases, MongoDB uses documents (records) and collections (tables) to store non-relational data.
+<!--more-->
+MongoDB has grown in its use due to the scalability and its ease of use.
 
 JavaScript Object Notation (JSON) is a data exchange format solely based on JavaScript. JSON objects can easily get transferred from one system to another due to their compatibility with the majority of systems. JSON is simple and easy to use besides being independent of any language. For these reasons, JSON has a wide range of applications in programming and data representation.
 
