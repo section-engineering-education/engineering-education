@@ -129,7 +129,7 @@ After installing all the dependencies on your system, run the following commands
 std=c++11 -larmadillo -lmlpack -lboost_serialization
 ```
 #### K-MEANS IMPLEMENTATION
-In order to follow along with this part, You need a good intuition of K-means as a machine learning algorithm. K-means basically grouping similar things into clusters. We group `"n"` observations into `"k"` clusters. The k is predetermined by the analyst. Practical areas of application include triangulating crime-prone areas, customer analysis, and analysis of public transportation. You can read [this](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/) article to get an in-depth understanding of the k-means algorithm.
+To follow along with this part, You need a good intuition of K-means as a machine learning algorithm. K-means grouping similar things into clusters. We group `"n"` observations into `"k"` clusters. The k is predetermined by the analyst. Practical areas of application include triangulating crime-prone areas, customer analysis, and analysis of public transportation. You can read [this](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/) article to get an in-depth understanding of the k-means algorithm.
  - **Initializing**
 
 Include the relevant libraries and header files for implementing k-means. i.e
