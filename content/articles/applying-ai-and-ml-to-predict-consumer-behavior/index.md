@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /applying-ai-and-ml-to-predict-consumer-behavior/
-title: Applying AI and Machine Learning to predict Consumer Behavior
+title: Applying AI and Machine Learning to Predict Consumer Behavior
 description: In this article, we will understand how AI has helped in predicting the consumer behavior, to improve the strategies for increasing the revenue of a company.
 author: skay-ai
-date: 2021-07-03T00:00:00-22:00
+date: 2021-07-14T00:00:00-10:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -48,6 +48,7 @@ Now, let's understand this is done, using a real-time example.
 
 #### Understanding dataset
 In this dataset, we have information related to customers like:
+
 - `CustomerID` - ID of the customer
 - `Gender` - Gender of the customer
 - `Age` - Age of the customer
@@ -65,6 +66,7 @@ For data exploration, it is mandatory to have a few Python libraries installed.
 You can download Python using [this](https://www.python.org/downloads/) link.
 
 The libraries to download are:
+
 - [NumPy](https://pypi.org/project/numpy/)
 - [Pandas](https://pypi.org/project/pandas/)
 - [Matplotlib](https://pypi.org/project/matplotlib/)
@@ -87,7 +89,7 @@ df = pd.read_csv(r'../input/Mall_Customers.csv')
 df.head()
 ```
 
-![First 5 rows of the dataset](/engineering-education/applying-ai-and-ml-to-predict-consumer-behavior/Dataset.PNG)
+![First 5 rows of the dataset](/engineering-education/applying-ai-and-ml-to-predict-consumer-behavior/dataset.png)
 *First 5 rows of the dataset*
 
 #### Data visualizations
@@ -213,6 +215,7 @@ plt.show()
 *KMeans with 4 clusters*
 
 From the above plot, we can infer many information about the spending patterns:
+
 - The average spending score irrespective of age would be around `20`
 - In the topmost cluster, Customers below age `40` has the highest spending scores. The cluster is less sparse.
 - Above age `40`, the spending score remains consistently within the range of `30 - 60`.
@@ -225,6 +228,7 @@ As we learned from the above simple case-study, we find that AI has played a sig
 This article acts only as a guide for beginners, to get them started in this field.
 
 At Section, you can find related topics below:
+
 - [Why Python is essential for Data Analysts?](https://www.section.io/engineering-education/why-python-is-essential-for-data-analysis/)
 - [Introduction to Data analysis using Pandas](https://www.section.io/engineering-education/data-analytics-using-pandas/)
 - [10 Powerful Business Intelligence Tools for Data Analysts](https://www.section.io/engineering-education/ten-powerful-bi-tools-for-data-analysts/)
