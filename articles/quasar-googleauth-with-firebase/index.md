@@ -92,7 +92,9 @@ children: [
 ]
 ```
 
-According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users. 
+According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users.
+
+The `requiresAuth` meta property is set to `true`, which is responsible for guarding routes.
 
 This will be well demonstrated after adding firebase to our application. 
 
