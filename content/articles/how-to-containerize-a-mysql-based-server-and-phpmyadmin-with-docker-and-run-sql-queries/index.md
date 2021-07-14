@@ -16,21 +16,21 @@ images:
 ---
 MySQL is an open-source Relational Database Management System (RDBMS) with a large user base. You can use several RDBMS to run SQL queries, such as MySQL, PostgreSQL, SQLite, SimpleDB, and Elasticsearch.
 
-At times, it becomes hectic to set up an SQL server on your local computer. For example, let's say you are working on a Windows environment and running a MySQL database server. In this case, you have download the software like WAMP, MySQL workbench, and XAMPP to run SQL commands, access your databases and records.
+At times, it becomes hectic to set up an SQL server on your local computer. For example, let's say you are working on a Windows environment and running a MySQL database server. In this case, you have to download software like WAMP, MySQL workbench, and XAMPP to run SQL commands, access your databases and records.
 
-While installing these softwares in your local system, there are chances of failure, like error due to dependencies and libraries to support these programs. This makes it hard, especially for a beginner.
+While installing this software in your local system, there are chances of failure, like errors due to dependencies and libraries to support these programs. This makes it hard, especially for a beginner.
 
-Let's say, you install MySQL server to run SQL queries. Even then, it can be hard to specify which version of MySQL is required. Based on the requirement, you will have to download that specific version and reinstall it on your computer.
+Let's say, you install a MySQL server to run SQL queries. Even then, it can be hard to specify which version of MySQL is required. Based on the requirement, you will have to download that specific version and reinstall it on your computer.
 
 With [docker](/engineering-education/getting-started-with-docker/), things get a little easier.
 
-This time you need not install all dependencies to set up a MySQL server. Docker helps you to containerize these dependencies, so that you can run them as containers.
+This time you need not install all dependencies to set up a MySQL server. Docker helps you to containerize these dependencies so that you can run them as containers.
 
-Docker will execute certain instructions for containerizing applications, set up specific environment, and deliver fully [packaged and containerized application](/engineering-education/running-and-managing-docker/) along with its dependencies and libraries. Here, we can specify the version of the MySQL server to be installed.
+Docker will execute certain instructions for containerizing applications, set up a specific environment, and deliver fully [packaged and containerized applications](/engineering-education/running-and-managing-docker/) along with their dependencies and libraries. Here, we can specify the version of the MySQL server to be installed.
 
 With Docker, you don't need to install and configure the MYSQL environment to access databases and records. Instead, it provides you with images (official software) that you use to run applications within your docker containers, such as PHPMyAdmin, Adminer, and Sequel Pro (for Mac OS).
 
-When you need to execute SQL queries, you will only need set up a docker `yml` file, run a few commands, and docker will set everything ready for you. Thus, as a beginner, you can run and use SQL queries in a containerized environment.
+When you need to execute SQL queries, you will only need to set up a docker `yml` file, run a few commands, and docker will set everything ready for you. Thus, as a beginner, you can run and use SQL queries in a containerized environment.
 
 You can learn more about the concepts of Docker [here](/engineering-education/docker-concepts/).
 
@@ -39,7 +39,7 @@ In this tutorial, we will learn to dockerize (create a docker image (a virtualiz
 Whenever you are dockerizing an application, you first need to write a `docker-compose` file and specify the instances you want to containerize to form your stack. So, let's understand how to containerize MYSQL, PHPMyAdmin, or Adminer stack and run SQL-based queries for local-based databases.
 
 ### Prerequisites
-As a prerequisite, you'll have to download [Docker](https://www.docker.com/products/docker-desktop) for depending the OS you use.
+As a prerequisite, you'll have to download [Docker](https://www.docker.com/products/docker-desktop) depending on the OS you use.
 
 Once you install it, make sure you run `docker` in your command line. If you have no errors, then you're good to go.
 
@@ -52,11 +52,11 @@ docker pull mysql:latest
 
 `docker pull` will inform the Docker hub that you want to download this specified image to your local docker engine.
 
-You can have a look at [MYSQL image](https://hub.docker.com/_/mysql) in Docker hub.
+You can have a look at the [MYSQL image](https://hub.docker.com/_/mysql) in the Docker hub.
 
 MySQL servers have different versions of the release, and each version is different and not compatible with the previous versions. So, you need to specify the version of MYSQL to be downloaded.
 
-The best practice would be to download the latest stable MYSQL server version. That's why we are adding a `latest` flag to `docker pull mysql`. If you wish to download a specific version, then you have to specify it something like `docker pull mysql:8`.
+The best practice would be to download the latest stable MYSQL server version. That's why we are adding the `latest` flag to `docker pull mysql`. If you wish to download a specific version, then you have to specify something like `docker pull mysql:8`.
 
 ![Docker pull MySQL latest](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/docker-pull-mysql-latest.png)
 
@@ -65,11 +65,11 @@ You can then run `docker images` to see a list of docker images you have pulled 
 ![Docker images](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/docker-images.png)
 
 ### Create an MYSQL image container to run the MySQL server
-Now, having the MySQL docker image ready, we can now create a container that will run this image.
+Having the MySQL docker image ready, we can now create a container that will run this image.
 
 To do so, we will follow these instructions:
 - `docker run` - this will automatically run a created docker container.
-- `--name mysql_db` - the flag `--name` will instruct docker to create a container named `mysql_db`.
+- `--name mysql_db` - the flag `--name` will instruct Docker to create a container named `mysql_db`.
 - `-d` - this optional flag stands for the detouch mode. When included, the MySQL database will run in the background as a docker demon.
 - `-p 3306:3306` - this port number will map the MySQL server to its default port which is `3306`.
 - `-e MYSQL_ROOT_PASSWORD = mypassword` - the flag `e` stands for environment variables. In this case, we need a root password to access the MySQL server. We will assign the root password as an environment variable.
@@ -88,7 +88,7 @@ Now, we are going to execute the MySQL server demons directly from this containe
 
 We will follow the below instructions:
 - `docker exec` - will execute a docker command and point it directly to a specified docker container.
-- `-it` -  `i` stand for interactive and `t` for terminal.
+- `-it` -  `i` stand for interactive and `t` for the terminal.
 - `mysql_db` - specifies the name of the container you want to execute.
 - `/bin/bash` - this specifies the shell you want to use. You can even use the `cmd` or the `PowerShell`.
 
@@ -102,7 +102,7 @@ docker exec -it mysql_db /bin/bash
 
 ![A bash shell](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/bash-shell.png)
 
-We can now connect to the MySQL server and start the interaction using SQL command. We can use the password from the environment variable to access the server.
+We can now connect to the MySQL server and start the interaction using the SQL command. We can use the password from the environment variable to access the server.
 
 To log in to the server, we will need a username and a password. In this case, the username should be the default `root` and the password should be `mypassword` as shown:
 
@@ -160,7 +160,7 @@ SELECT * FROM users;
 
 It's straightforward to execute these SQL queries from a dockerized MySQL server environment.
 
-In all of the above examples, we use a terminal to run these queries. This can be a little hard for the beginners. Now, we will learn to set a PHPMyAdmin, to help you interact with the server and execute queries off the command line.
+In all of the above examples, we use a terminal to run these queries. This can be a little hard for beginners. Now, we will learn to set a PHPMyAdmin, to help you interact with the server and execute queries without using a command line.
 
 ### Using PHPMyAdmin
 #### Method 1: Connect MySQL and PHPMyAdmin containers
@@ -181,17 +181,17 @@ To do so, we will follow the below instructions:
 - `-d` - this optional flag stands for the detouch mode. When included, the MySQL database will run in the background as a docker demon.
 - `-p 8068:80` - This port number will map the PHPMyAdmin and be able to access it over the browser.
 - `--link mysql_db:db` - this will link the `phpmyadmin` container to the `mysql_db`.
-- `phpmyadmin` -specifies the image that we want to include in this container. This image must be downloaded/pulled and made available in local docker.
+- `phpmyadmin` -specifies the image that we want to include in this container. This image must be downloaded/pulled and made available in a local docker.
 
 ```bash
 docker run --name phpmyadmin --link mysql_db:db -p 8068:80 -d phpmyadmin
 ```
 
-Now, you can open the browser and access the PHPMyAdmin using `http://localhost:8068/`. This loads up the PHPMyAdmin page. You can login with the username as `root` and password as `mypassword`. Just as we defined when creating a `mysql_db` container.
+Now, you can open the browser and access the PHPMyAdmin using `http://localhost:8068/`. This loads up the PHPMyAdmin page. You can log in with the username as `root` and password as `mypassword`. Just as we defined when creating a `mysql_db` container.
 
 ![A linked docker MySQL server and phpmyadmin](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/a-linked-docker-mysql-server-and-phpmyadmin.png)
 
-#### Method 2: Spin MySQL and phpmyadmin using docker-compose
+#### Method 2: Spin MySQL and PHPMyAdmin using docker-compose
 To do so, we will set a `docker-compose.yml`, set the MySQL server and PHPMyAdmin, and run both in a single container.
 
 Let's go ahead and create a sample folder. You can use your preferred text editor, for example, [Visual Studio Code](https://code.visualstudio.com/).
@@ -241,13 +241,13 @@ On your terminal run, `docker compose up -d`.
 
 This will download any additional libraries set in the `docker-compose.yml` file and the spin-up MySQL server with PHPMyAdmin. The flag `-d` will run this stack in detouch mode, i.e., in the background.
 
-Now, you can access your MySQL server using PHPMyAdmin by executing the localhost port `8080` on your browser, i.e., `http://localhost:8080/`. You can login using the same credentials, as mentioned earlier.
+Now, you can access your MySQL server using PHPMyAdmin by executing the localhost port `8080` on your browser, i.e., `http://localhost:8080/`. You can log in using the same credentials, as mentioned earlier.
 
 ![A localhost dockerized phpmyadmin](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/a-localhost-dockerized-phpmyadmin.png)
 
 And, there you go, you are ready to execute SQL queries more interactively.
 
-As an alternative to PHPMyAdmin, [Adminer](https://hub.docker.com/_/adminer) can also be used. The best thing with Adminer is that, it is easily compatible with a variety of relational databases such as MySQL, SimpleDB, SQLite, PostgreSQL, and Elasticsearch.
+As an alternative to PHPMyAdmin, [Adminer](https://hub.docker.com/_/adminer) can also be used. The best thing with Adminer is that it is easily compatible with a variety of relational databases such as MySQL, SimpleDB, SQLite, PostgreSQL, and Elasticsearch.
 
 So, you could replace the following PHPMyAdmin service with the Adminer service.
 
@@ -270,9 +270,9 @@ Provide username as `root` and password as `secret`, same as PHPMyAdmin.
 ![A localhost dockerized adminer](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/a-localhost-dockerized-adminer.png)
 
 ### Conclusion
-we learnt a very simple way to install and run a relational database. This method for other relational databases such as PostgreSQL. In this case, you pull a [PostgreSQL image](https://hub.docker.com/_/postgres) and spin it together with the [pgadmin4 image](https://hub.docker.com/r/dpage/pgadmin4), and you will be able to run it as well in a container.
+we learned a very simple way to install and run a relational database. This method for other relational databases such as PostgreSQL. In this case, you pull a [PostgreSQL image](https://hub.docker.com/_/postgres) and spin it together with the [pgadmin4 image](https://hub.docker.com/r/dpage/pgadmin4), and you will be able to run it as well in a container.
 
-In this article, we have understood how to containerize and run MySQL server using Docker. Using Docker, we have simplified the whole process of installation, configuration, and running the database.
+In this article, we have understood how to containerize and run MySQL servers using Docker. Using Docker, we have simplified the whole process of installation, configuration, and running the database.
 
 To understand better, try them out by yourself.
 
