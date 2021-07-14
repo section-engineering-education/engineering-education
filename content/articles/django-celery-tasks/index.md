@@ -110,7 +110,7 @@ Let's create a Django app from where we will set up the Celery task.
 1. To create a new Django app, execute the command below. In the command, `task` is the name of our app.
    
    ```bash
-   $ python manage.py startapp task
+   python manage.py startapp task
    ```
    
 2. Create a python file named `task.py` in the `task` that we have just created.
@@ -290,7 +290,7 @@ urlpatterns = [
 Execute the command below to start a Celery worker process.
  
 ```bash
-$ celery -A celerytask worker -l info
+celery -A celerytask worker -l info
 ```
 
 ### Testing
@@ -298,19 +298,19 @@ $ celery -A celerytask worker -l info
 1. Run Django migrations to create the tables in the database by executing the command below.
 
   ```bash
-  $ python manage.py migrate
+  python manage.py migrate
   ```
 
 2. Start the Django web server by executing the command below.
 
   ```bash
-  $ python manage.py runserver
+  python manage.py runserver
   ```
 
 3. Start the Celery worker by executing the command below.
    
    ```bash
-   $ celery -A celerytask worker -l info
+   celery -A celerytask worker -l info
    ```
 
    ![Celery running](/engineering-education/django-celery-tasks/celery.png)
