@@ -6,7 +6,7 @@ url: /decision-making-and-branching-in-java/
 title: Understanding Decision making and Branching in Java
 description: This article will guide you on the basics of decision making and branching in Java. Conditional statements allow the program to execute different lines of code.
 author: george-wamama
-date: 2021-07-14T00:00:00-05:00
+date: 2021-07-14T00:00:00-06:16
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
