@@ -1,4 +1,4 @@
-In an application, providing specific authorization flows will easy for the users to authenticate themselves with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+In an application, providing specific authorization flows should be easy for users to authenticate themselves with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
 
 ### Prerequisites
 
@@ -32,8 +32,9 @@ yarn global add @quasar/cli
 
 Creating a quasar app is a simple step. You're going to do it on your own.
 
-Visit this link [getting-started-with-quasar-framework](https://www.section.io/engineering-education/getting-started-with-quasar-framework/)
-and follow the installation process. When done, come back here to continue.
+Visit this link [getting-started-with-quasar-framework](https://www.section.io/engineering-education/getting-started-with-quasar-framework/).
+
+Follow the setup and installation process. When done, come back here to continue.
 
 ### Creating our app components
 
@@ -81,7 +82,7 @@ name: "Home",
 
 Now, navigate to `router` folder, open `routes.js` and edit the default route properties to match individual components as below.
 
-We're going to create the components as our next step.
+We're going to create the components in our next steps.
 
 ```JavaScript
 children: [
