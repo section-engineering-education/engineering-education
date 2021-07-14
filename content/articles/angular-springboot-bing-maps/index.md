@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-springboot-bing-maps/
+title: Integrating Bing Maps in a Spring Boot Application Using Angular
+description: More than often, we find ourselves in a position to integrate maps in our applications. This tutorial will show you how to integrate `Bing Maps` with Angular, Spring Boot, and relational databases.
+author: owino-wendy
+date: 2021-07-14T00:00:00-10:35
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/angular-springboot-bing-maps/hero.jpg
+    alt: Bing Maps Image Example
+---
 ### Introduction
 More than often, we find ourselves in a position to integrate maps in our applications. This tutorial will show you how to integrate `Bing Maps` with Angular, Spring Boot, and relational databases.
-
+<!--more-->
 Users will then be able to play around with the map to show different site properties at different times.
 
 ### Table of contents
@@ -89,7 +105,7 @@ Get the complete backend code [here](https://github.com/owinowendy/AngularAndSpr
 ### Setting up the frontend for Bing map
 This part assumes you have gone through the documentation of Bing maps, otherwise, get the full tutorial [here](https://www.bingmapsportal.com/Announcement?redirect=True). This frontend is designed using the [Angular Material](https://material.angular.io) to display locations and properties as shown below:
 
-![bing map application screenshot](/engineering-education/angular-spingboot-bing-maps/forms.png)
+![bing map application screenshot](/engineering-education/angular-springboot-bing-maps/forms.png)
 
 Let's add the `HTML` content that we will use to display the Bing map for our site.
 
@@ -175,6 +191,9 @@ This tutorial has also included a complete working [codebase](https://github.com
 
 The project is configured to use Gradle which may take time to build as well Kubernetes and docker.
 
-![Full application Screenshot](/engineering-education/angular-spingboot-bing-maps/full-app.png)
+![Full application Screenshot](/engineering-education/angular-springboot-bing-maps/full-app.png)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
