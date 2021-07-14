@@ -69,7 +69,7 @@ LinearModel<> model; // linear model
 ``` 
 - **Train the model**
 
- This is how we now train the model. The trainer has a member called train. The member trains the model and finds parameters for it.
+This is how we now train the model. The trainer has a member called a train. The member trains the model and finds parameters for it.
   ```c++
 trainer.train(model, data)
 ```
