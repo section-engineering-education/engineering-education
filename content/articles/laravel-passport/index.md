@@ -3,26 +3,23 @@ layout: engineering-education
 status: publish
 published: true
 url: /laravel-passport/
-title: Getting Started with Laravel passport authentication
+title: Getting Started with Laravel Passport Authentication
 description: This tutorial will go through Laravel passport authentication and how to secure APIs in a Laravel application using OAuth2.
 author: miller-juma
-date: 2021-07-12T00:00:00-16:00
-topics: []
+date: 2021-07-14T00:00:00-09:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/laravel-passport/hero.png
-   alt:  Getting Started with Laravel passport authentication
+   alt: Getting Started with Laravel passport authentication
 ---
-
-### Introduction
-
-Most systems nowadays require authentications to access resources. For example, user login or API resource access.
-
-In this tutorial, we'll discuss the Laravel Passport package to authenticate your application APIs. The task includes the creation and validation of tokens.
+Most systems nowadays require authentications to access resources. For example, user login or API resource access. In this tutorial, we will discuss the Laravel Passport package to authenticate your application APIs. The task includes the creation and validation of tokens.
+<!--more-->
+### Objectives
+By the end of this tutorial, you should be able to create your Laravel application APIs and secure them using the Laravel passport package.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -36,20 +33,15 @@ In this tutorial, we'll discuss the Laravel Passport package to authenticate you
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
+To follow this article along, the reader should have the following:
 - Laravel 8 application installed in your development environment. Basic knowledge in Laravel is required to follow this post along.
 - Postman application to test our application
 - RESTful APIs. You should be familiar with `GET`, `PUT`, `POST`, `CREATE`, `DELETE` operations.
 
-### Objectives
-
-By the end of this tutorial, you should be able to create your Laravel application APIs and secure them using the Laravel passport package.
-
-### Installing `passport` package
-
+### Installing the 'passport' package
 To install this package to your running application, run the following commands:  
 
-> It's important to note that this is not an introduction to Laravel tutorial, visit [Laravel beginner article](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) to learn more about Laravel installation.
+> It's important to note that this is not an introduction to Laravel tutorial, for that you can refer to this [Laravel beginner article](/engineering-education/laravel-beginners-guide-blogpost/) to learn more about Laravel installation.
 
 ```bash
 cd api-authentication-app
@@ -71,9 +63,7 @@ Output:
 ```
 
 ### Preparing passport
-
-`Passport` comes with the database setup to store its access tokens and 0Auth2 client activities.
-We should therefore run our migrations as follows to create tables:  
+`Passport` comes with the database setup to store its access tokens and 0Auth2 client activities. We should therefore run our migrations as follows to create tables:  
 
 ```bash
 php artisan migrate
@@ -101,7 +91,7 @@ Migrated:  2016_06_01_000005_create_oauth_personal_access_clients_table (85.12ms
 
 ```
 
-Now that we've our `passport` authentication tables, we need to set up `encryption keys` that we'll use in the application to generate secure `access tokens`.  
+Now that we jave our `passport` authentication tables, we need to set up `encryption keys` that we'll use in the application to generate secure `access tokens`.  
 
 ```bash
 php artisan passport:install
@@ -125,7 +115,6 @@ Client secret: 43x92qhcW4Itxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ### Setting up models to use passport / Passport configurations
-
 > We're performing these configurations on the `User` model to help us access user tokens. We'll therefore have the ability to authenticate them.  
 
 We'll therefore add the `Laravel\Passport\HasApiTokens` trait to our Laravel generated User Model(`App/Models/User`).  
@@ -187,7 +176,7 @@ class AuthServiceProvider extends ServiceProvider
 
 ```
 
-Now that we've got a way to register tokens routes, let's now update the `config/auth.php` as follows:
+Now that we've got a way to register tokens routes, let's update the `config/auth.php` as follows:
 
 ```php
 <?php
@@ -219,7 +208,6 @@ return [
 ```
 
 ### Add authentication controller
-
 Now that we're all set with `passport` configurations, let's create an authentication controller.  
 
 ```bash
@@ -287,7 +275,6 @@ class passportAuthController extends Controller
 > Remember to read the above controller comments to understand the code.  
 
 ### Add application authentication routes
-
 With the controller ready to handle `Requests`, let's add the routes to finish up the application setup.  
 
 ```php
@@ -302,7 +289,6 @@ Route::middleware('auth:api')->group(function(){
 ```
 
 ### Testing our passport application
-
 Serve your application by running the following command:
 
 ```bash
@@ -313,11 +299,12 @@ php artisan serve
 Now, use [postman](https://www.postman.com) or any other tool to test your application.
 
 Login Output:
+
 ![token](/engineering-education/laravel-passport/token.png)
 
 ### Conclusion
+In this tutorial, we discussed Laravel passport package. We have seen how we can configure this package in a Laravel application to generate API access tokens.
 
-In this tutorial, we have discussed Laravel passport package. We have seen how we can configure this package in a Laravel application to generate API access tokens.
 I've tried to take you through each process of implementing a `POST` and `GET` methods i.e. user authentication example, you can now build on this to design secure applications using Laravel passport.
 
 Full tutorial code can be found [here](https://github.com/jumamiller/laravel-passport) on the Github repository.
