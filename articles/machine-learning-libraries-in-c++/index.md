@@ -81,7 +81,7 @@ trainer.train(model, data)
 cout << "intercept: " << model.offset() << endl;
 cout << "matrix: " << model.matrix() << endl;
 ```
-The offset member function of linear models outputs the intercept of the best fit line. We also output a matrix instead of a multiplier since the model does not necessarily have to be linear. It can be generalized.Minimize the squared loss to get the line of best fit The line of best fit. Luckily, the model allows us to display all that information.
+The offset member function of linear models outputs the intercept of the best fit line. We also output a matrix instead of a multiplier since the model does not necessarily have to be linear. It can be generalized. Minimize the squared loss to get the line of best fit. Luckily, the model allows us to display all that information.
 
 Our priority is to initialize a `squared loss` followed by instantiating a data container which we will call `predicted`. The predicted value is computed based on the independent variables fed into the system and then we output the loss which is gotten by passing the dependent values and the predicted value. 
 ```c++
