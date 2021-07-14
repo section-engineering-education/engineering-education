@@ -11,7 +11,7 @@ topics: [Languages , Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/machine-learning-libraries-in-cplusplus/hero.jpg
+  - url: /engineering-education/machine-learning-libraries-in-cplusplus/hero.png
     alt: Machine learning using c++ image example
 ---
 This is a follow up to an earlier article where we learned to implement algorithms from scratch and highlighted the reasons why we should use C++ for [machine learning](/engineering-education/topic/machine-learning/). 
