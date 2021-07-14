@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /decision-making-and branching-in-java/
-title: Understanding Decision-making and Branching in Java
-description: This article will guide you on the basics of decision-making and branching in Java. Conditional statements allow the program to execute different lines of code.
+url: /decision-making-and-branching-in-java/
+title: Understanding Decision making and Branching in Java
+description: This article will guide you on the basics of decision making and branching in Java. Conditional statements allow the program to execute different lines of code.
 author: george-wamama
-date: 2021-06-01T00:00:00-18:00
-topics: []
+date: 2021-07-14T00:00:00-05:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -50,7 +50,7 @@ system.out.println(marks)
 The program checks if the `category` type is `mathematics`. If this is `true` then additional bonus_marks are added to the student's score. 
 
 ### The if-else statement
-The `if-else` condition can be regarded to as an advancement in the `if` statement since the `if-else` statement has only few upgrades from the `if` statement. 
+The `if-else` condition can be regarded as an advancement in the `if` statement since the `if-else` statement has only a few upgrades from the `if` statement. 
 
 Here is how the `if-else` syntax looks:
 
@@ -63,7 +63,7 @@ if(test expression){
 statement-x
 ```
 
-If the test expression is `true`, the true-statement-block is executed if not then the false-code-block is executed. This is to say that, one condition must be executed.
+If the test expression is `true`, the true-statement-block is executed. If not then the false-code-block is executed. This is to say that, one condition must be executed.
 
 Consider this `if-else` example:
 
@@ -183,7 +183,7 @@ if(condition m)
 statement-x;
 ```
 
-The conditions are evaluated from the first condition to the last condition in a logic order and when a true condition is found execution happens.
+The conditions are evaluated from the first condition to the last condition in a logical order and when a true condition is found execution happens.
 
 The final `else` statement containing the `default-statement` is executed when no conditions have been executed.
 
@@ -210,7 +210,7 @@ public class Main {
 ### The switch statement
 The `switch` statement compares a variable to a list of the possible values. 
 
-When a match is detected the block of statements associated to that case is executed
+When a match has detected the block of statements associated with that case is executed
 
 The general structure of a `switch` statement is as follows:
 
