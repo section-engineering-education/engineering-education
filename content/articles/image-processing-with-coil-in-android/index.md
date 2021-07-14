@@ -12,13 +12,15 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/image-processing-with-coil-in-android/hero.png
-    alt: Image processing with Coil in Android Example Image
+    alt: Image processing with Coil in Android
 ---
-One of the essential skills that an Android developer needs is knowing how to correctly work with images, especially from a remote source. This is because many applications consume some types of images.
+One of the essential skills that an Android developer need is knowing how to correctly work with images, especially from a remote source. This is because many applications consume some types of images.
 <!--more-->
 Image processing can be done in different ways based on the feature you want to implement in your app. In most cases, you might need to perform not only loading but also memory and disk caching, down-sampling the image in memory, re-using Bitmaps, and automatically pausing/canceling requests.
 
-In this tutorial, we will learn how to perform the above-mentioned tasks and many more using a fast, lightweight, and easy-to-use library called `Coil`. This library is made using [Kotlin](https://developer.android.com/kotlin/first) and has embedded coroutine support which makes it suitable for modern Android development.
+In this tutorial, we will learn how to perform the above-mentioned tasks and many more using a fast, lightweight, and easy-to-use library called `Coil`. 
+
+`Coil` is made using [Kotlin](https://developer.android.com/kotlin/first) and has embedded coroutine support which makes it suitable for modern Android development.
 
 ### Prerequisites
 Before getting started with this tutorial, make sure that you're conversant with:
@@ -31,9 +33,9 @@ Before getting started with this tutorial, make sure that you're conversant with
 ### Getting started
 Let's start by creating an Android project that we will use for this tutorial.
 
-To include Coil in our app, we need either of the following artifacts that are already published on `mavenCentral()`;
+To include Coil in our app, we need either of the following dependencies that are already published on `mavenCentral()`:
 
-> Note that at the time of writing this article, the `Coil` library was in `version 1.2.2`
+> Note that at the time of writing this article, the `Coil` library was in `version 1.2.2`.
 
 ```bash
 implementation("io.coil-kt:coil:1.2.2")
@@ -44,11 +46,13 @@ This is the default dependency that comes with `ImageView` extension functions a
 ```bash
 implementation("io.coil-kt:coil-base:1.2.2")
 ```
+
 This is the base artifact that is mostly depended on by other dependencies. Unlike `io.coil-kt:coil`, this doesn't include `ImageView` extension functions and `Coil` singleton.
 
 ```bash
 implementation("io.coil-kt:coil-gif:1.2.2")
 ```
+
 Includes `GIF` decoders that allow you to display `GIF` images in your app. `Animated WEBP` requires `Android 9.0+` whereas `animated HEIF` images need `Android 11.0+`.
 
 ```bash
@@ -59,18 +63,20 @@ The above dependency supports the decoding of SVGs.
 ```bash
 implementation("io.coil-kt:coil-video:1.2.2")
 ```
+
 The `io.coil-kt:coil-video:1.2.2` plugin provides video frames for video codecs that are supported in Android. A codec is software that decodes and encodes digital data streams. 
 
 The choice of the right artifact is based on your app requirements. Fortunately, more than one dependency can be used in the same project.
 
-With that said, add the following into the module level `build.gradle` file as we'll only work with plain images.
+With that said, add the following into the module-level `build.gradle` file as we'll only work with plain images.
 
 ```gradle
 dependencies{
     implementation("io.coil-kt:coil:1.2.2")
 }
 ```
-Note that `Coil` depends on `Java-8`. To enable this, include the following in the same `build.gradle` file.
+
+Note that `Coil` depends on `Java-8`. To enable this, include the following in the same `build.gradle` file:
 
 ```gradle
 android {
@@ -81,7 +87,7 @@ android {
 }
 ```
 
-Lastly, Coil needs internet permission since we will fetch remote images. Add the following line in the `Manifest` file.
+Lastly, Coil needs internet permission since we will fetch remote images. Add the following line in the `Manifest` file:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -217,14 +223,14 @@ imageView.load("https://example.images/example.png")
 ```
 
 #### Drawable resource
-Loads images from within the project files.
+It loads images from within the project files.
 
 ```kotlin
 imageView.load(R.drawable.image)
 ```
 
 #### File resource
-Makes use of a given image from the host device.
+The file resource makes use of a given image from the host device.
 
 ```kotlin
 imageView.load(File("/path/to/image"))
@@ -233,7 +239,7 @@ imageView.load(File("/path/to/image"))
 ### Enabling view binding
 `viewBinding` allows us to access UI views in a more simplified way. It makes use of binding classes generated by the `viewBinding` library. 
 
-To enable `viewBinding`, add the following code in the module level `gradle.build` file and sync:
+To enable `viewBinding`, add the following code in the module-level `gradle.build` file and sync:
 
 ```gradle
 android{
@@ -260,7 +266,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-Here, we have inflated the UI using viewBinding.
+In the code above, we have inflated the UI using viewBinding.
 
 ### Loading an image to the target
 In this step, we will load an image onto a target (ImageView) from a url. Since this will include several operations, it's a good idea to separate the sample links from the main code.
@@ -288,7 +294,7 @@ The `randomLink()` function above returns a randomly selected link whenever we c
 
 Let's manage the state in our application.
 
-Open `MainActivity.kt` file and add the following code just below `onCreate()` method.
+Open `MainActivity.kt` file and add the following code just below the `onCreate()` method.
 
 ```kotlin 
 private fun updateState(newState: String){
@@ -353,10 +359,10 @@ binding.blur.setOnClickListener {
 }
 ```
 
-The higher the blur radius, the blurrier the image. Blurring can be helpful when we don't want users to see some images. For instance, when the service requires premium access only.
+The higher the blur radius, the blurrier the image. Blurring can be helpful when we don't want users to see some images or content. For instance, when the service requires premium access only.
 
 #### Circle crop
-Forms a circular-shaped image within the available dimensions.
+The circle crop forms a circular-shaped image within the available dimensions.
 
 ```kotlin
 binding.circle.setOnClickListener {
@@ -372,7 +378,7 @@ binding.circle.setOnClickListener {
 ```
 
 #### Grayscale
-This refers to a decolorized image format. All colors are turned to either black or white.
+Grayscale refers to a decolorized image format. All colors are turned to either black or white.
 
 ```kotlin
 binding.grayScale.setOnClickListener {
@@ -419,7 +425,7 @@ binding.crop.setOnClickListener {
 }
 ```
 
-#### vii). Combined Transformations
+#### Combined Transformations
 In some cases, you may want to apply more than just one transformation on the same image at the same time. This can be achieved as shown below:
 
 ```kotlin
@@ -480,7 +486,7 @@ binding.error.setOnClickListener {
 An error image is used to indicate that something went wrong when resolving the request.
 
 ### Conclusion
-Congratulations! you can now comfortably use `Coil` to process images in Android. You can use this knowledge to build more powerful applications. The source code for this tutorial can be found [on this Github repository](https://github.com/nonimdiana/image-processing-with-coil).
+Congratulations on completing this tutorial. You can now comfortably use `Coil` to process images in Android. You can, therefore, use this knowledge to build more powerful applications. The source code for this tutorial can be found [on this Github repository](https://github.com/nonimdiana/image-processing-with-coil).
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
