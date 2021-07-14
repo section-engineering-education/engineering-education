@@ -176,7 +176,7 @@ We display results using the print function contained in the centroid's object.
 ```c++
 centroids.print("Centroids:");
 ```
- Finally, compile the whole code on the terminal using the following command in order to create a k-means object from which we can deduce meaningful conclusions.
+Finally, compile the whole code on the terminal using the following command to create a k-means object from which we can deduce meaningful conclusions.
 
 ```
 
