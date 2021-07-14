@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-simple-nestjs-microservice-application-using-redis-as-the-transporter/
+title: Building a Simple Nest.js Microservice Application Using Redis as the Transporter
+description: This tutorial will help the readers to build a microservice application using Nest.js with Redis as the transporter.
+author: joseph-chege
+date: 2021-01-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-simple-nestjs-microservice-application-using-redis-as-the-transporter/hero.jpg
+    alt: Building a Simple Nest.js Microservice Application Using Redis as the Transporter Image
+---
 Nest.js is a JavaScript framework for building efficient and scalable hybrid static and server-side applications. Nest.js is built on top of React to abstract rendering complexity thus giving you the flexibility to build scalable React applications. This hybrid enables your React apps to have additional functionality, such as server-side rendering. 
+<!--more-->
 
 The Nest.js framework will allow you to build a react app which can render the content in advance on the server-side. Traditionally with React, you can only render on the client-side. Nest.js gives you the flexibility to choose which rendering strategy fits your application as you grow and scale your application from a few pages to thousands. With server-side rendering, pages are rendered during the build-up phase. The content is served ahead of time to the user or search engine bots. This way, they'll receive the fully rendered HTML. After receiving the server-rendered page, client-side rendering takes over and works just like a traditional React app. 
 
