@@ -166,7 +166,7 @@ Afterward, you instantiate the k-means class and specify the number of iteration
 ```c++
  mlpack::kmeans::KMeans<> mlpack_kmeans(max_iter);
 ``` 
-In order to do the clustering, you make a call to the member function called cluster of the k-means class. To this member function, we pass the data, number of clusters, centroid's object, and the cluster's object. The Cluster function runs the k-means algorithm on this data and initializes the cluster and centroid objects.
+To do the clustering, you make a call to the member function called cluster of the k-means class. To this member function, we pass the data, a number of clusters, centroid's object, and the cluster's object. The Cluster function runs the k-means algorithm on this data and initializes the cluster and centroid objects.
 ```c++
 mlpack_kmeans.Cluster(data, k, clusters, centroids);
 ``` 
