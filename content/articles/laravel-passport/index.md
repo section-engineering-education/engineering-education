@@ -126,7 +126,7 @@ Client secret: 43x92qhcW4Itxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### Setting up models to use passport / Passport configurations
 
-> We're performing these configurations on the User model to help us access user tokens. We'll therefore have the ability to authenticate them.  
+> We're performing these configurations on the `User` model to help us access user tokens. We'll therefore have the ability to authenticate them.  
 
 We'll therefore add the `Laravel\Passport\HasApiTokens` trait to our Laravel generated User Model(`App/Models/User`).  
 
@@ -317,8 +317,8 @@ Login Output:
 
 ### Conclusion
 
-In this tutorial, we have discussed Laravel passport. We have seen how we can configure this package in a Laravel application to generate API access tokens.
-I've tried to take you through each process of implementing a `POST` and `GET` methods i'e user authentication example, you can now build on this to design secure applications.
+In this tutorial, we have discussed Laravel passport package. We have seen how we can configure this package in a Laravel application to generate API access tokens.
+I've tried to take you through each process of implementing a `POST` and `GET` methods i.e. user authentication example, you can now build on this to design secure applications using Laravel passport.
 
 Full tutorial code can be found [here](https://github.com/jumamiller/laravel-passport) on the Github repository.
 
