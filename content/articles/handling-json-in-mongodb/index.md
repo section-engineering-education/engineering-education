@@ -29,7 +29,7 @@ JSON can store various data types like strings, arrays, objects, and Binary JSON
     - Getting into JSON
     - Modelling Embedded Data
 - [Creating the JSON file](#creating-the-json-file)
-- [Import JSON data to MongoDB Database](#import-json-data-to-mongodb-database)
+- [Import JSON data to MongoDB Database](#import-json-to-mongodb)
 - [Save JSON data to MongoDB Database](#save-json-data-to-mongodb-database)
 - [Export JSON to MongoDB Database](#export-json-to-mongodb-database)
 - [Conclusion](#conclusion)
@@ -160,12 +160,12 @@ db.students.find()
 
 ### Export JSON to MongoDB Database
 Now let us export the new file to JSON using the following command:
-```shell
+```bash
 mongoexport --db studentinfo --collection student --out d:\out.json --pretty
 ```
 
 You should have the response below in your terminal:
-```shell
+```bash
 2021-06-29T23:02:50.046+0300    connected to: mongodb://localhost/
 2021-06-29T23:02:50.071+0300    exported 4 records
 ```
