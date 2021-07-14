@@ -22,7 +22,7 @@ While installing this software in your local system, there are chances of failur
 
 Let's say, you install a MySQL server to run SQL queries. Even then, it can be hard to specify which version of MySQL is required. Based on the requirement, you will have to download that specific version and reinstall it on your computer.
 
-With [docker](/getting-started-with-docker/), things get a little easier.
+With [docker](/engineering-education/getting-started-with-docker/), things get a little easier.
 
 This time you need not install all dependencies to set up a MySQL server. Docker helps you to containerize these dependencies so you can run them as containers.
 
@@ -62,7 +62,7 @@ The best practice would be to download the latest stable MYSQL server version. T
 
 You can then run `docker images` to see a list of docker images you have pulled from the docker hub. And right there, we can see MySQL image is now available to our locally installed docker.
 
-![Docker images](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/docker-images.png)
+![Docker images](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/docker-images.png)
 
 ### Create a MYSQL image container
 Having the MySQL docker image ready, we can now create a container that will run this image.
@@ -82,7 +82,7 @@ docker run --name mysql_db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mypassword mys
 
 When you execute the command above, a container will be created along with a container ID. And if you run `docker ps`, you can see the created container assigned to name `mysql_db`.
 
-![mysql db container](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/mysqldb-container.png)
+![mysql db container](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/mysqldb-container.png)
 
 ### Running the MySQL server from the container
 Now, we are going to execute the MySQL server demons directly from the container we have created.
@@ -102,7 +102,7 @@ The summarized single command would be:
 docker exec -it mysql_db /bin/bash
 ```
 
-![A bash shell](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/bash-shell.png)
+![A bash shell](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/bash-shell.png)
 
 We can now connect to the MySQL server and start the interaction using the SQL command. We can use the password from the environment variable to access the server.
 
@@ -118,7 +118,7 @@ mysql -uroot -pmypassword
 
 You can see we logged on to the MySQL server and ready to run SQL commands.
 
-![Docker MySQL server](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/mysql-server.png)
+![Docker MySQL server](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/mysql-server.png)
 
 Let's execute a create database example here:
 
@@ -126,7 +126,7 @@ Let's execute a create database example here:
 CREATE DATABASE my_test_db;
 ```
 
-![Docker create mysql database](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/create-database.png)
+![Docker create mysql database](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/create-database.png)
 
 There you go! You can see `Query Ok` and the affected rows indicating the query has executed correctly. You can view the list of the available databases using:
 
@@ -134,7 +134,7 @@ There you go! You can see `Query Ok` and the affected rows indicating the query 
 SHOW databases;
 ```
 
-![Docker show databases](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/docker-show-databases.png)
+![Docker show databases](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/docker-show-databases.png)
 
 As you can see, we have the `my_test_db` database created.
 
@@ -158,7 +158,7 @@ INSERT INTO users ( id, name ) VALUES ( null, 'Alexa' );
 SELECT * FROM users;
 ```
 
-![MySQL server docker queries](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/mysql-server-docker-queries.png)
+![MySQL server docker queries](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/mysql-server-docker-queries.png)
 
 To execute these SQL queries from a dockerized MySQL server environment is straightforward .
 
@@ -196,7 +196,7 @@ Now, you can open the browser and access the PHPMyAdmin using `http://localhost:
 
 You can log in with the username as `root` and password as `mypassword`. Just as we defined when creating a `mysql_db` container.
 
-![A linked docker MySQL server and phpmyadmin](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/a-linked-docker-mysql-server-and-phpmyadmin.png)
+![A linked docker MySQL server and phpmyadmin](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/a-linked-docker-mysql-server-and-phpmyadmin.png)
 
 #### Method 2: Spin MySQL and PHPMyAdmin using docker-compose
 To do so, we will set a `docker-compose.yml`, set the MySQL server and PHPMyAdmin, and run both in a single container.
@@ -252,7 +252,7 @@ This will download any additional libraries set in the `docker-compose.yml` file
 
 Now, you can access your MySQL server using PHPMyAdmin by executing the localhost port `8080` on your browser, i.e., `http://localhost:8080/`. You can log in using the same credentials, as mentioned earlier.
 
-![A localhost dockerized phpmyadmin](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/a-localhost-dockerized-phpmyadmin.png)
+![A localhost dockerized phpmyadmin](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/a-localhost-dockerized-phpmyadmin.png)
 
 And, there you go, you are ready to execute SQL queries more interactively.
 
@@ -272,11 +272,11 @@ adminer:
     ADMINER_DEFAULT_SERVER: mysql_db
 ```
 
-![Adminer](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/adminer.png)
+![Adminer](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/adminer.png)
 
 Provide username as `root` and password as `secret`, same as PHPMyAdmin.
 
-![A localhost dockerized adminer](/engineering-education/how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker/a-localhost-dockerized-adminer.png)
+![A localhost dockerized adminer](/engineering-education/containerizing-mysql-server-phpmyadmin-with-docker/a-localhost-dockerized-adminer.png)
 
 ### Conclusion
 We learned a simple way to install and run a relational database. 
