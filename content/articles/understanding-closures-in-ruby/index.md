@@ -4,8 +4,8 @@ status: publish
 published: true
 url: /understanding-closures-in-ruby/
 title: Understanding Closures in Ruby
-description: This article will ...
-author: 
+description: This article will guide you in understanding closures in Ruby. These components are quite important when writing highly functional code.
+author: njunu-simon
 date: 2021-07-24T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -13,34 +13,32 @@ images:
   - url: /engineering-education/understanding-closures-in-ruby/hero.jpg
     alt: Understanding Closures in Ruby
 ---
-Closure in computer science is a piece of code that carries its creation context around with it. This is a sensitive topic to all developers and mostly those who are adapting the functional paradigm.
+A closure in computer science is a piece of code that carries its creation context around with it. In Ruby, closures include code blocks or methods that have variables linked to the scope environment. This is a sensitive topic to all developers, especially those who are adapting to the functional paradigm.
 <!--more-->
-
 ### Prerequisites
-To follow along this article, it is helpful to have the following:
-- [Ruby](https://www.ruby-lang.org/en/)
-- Basic knowledge of Ruby programming.
-- How to use the interactive ruby console.
+To follow along with this tutorial, it is vital to have the following:
+- [Ruby](https://www.ruby-lang.org/en/) installed on your computer.
+- A basic understanding of Ruby programming.
+- Some knowledge in using the interactive Ruby console.
 
 ### Overview
 - [Closures](#closures)
-- [Rules_of_identifying_a_closure](#rules-of-identifying-a-closure)
-- [Closure_use_cases](#closure-use-cases)
+- [Closure use cases](#closure-use-cases)
 - [Blocks](#blocks)
-- [Relationship_between_blocks_and_closures](#relationship-between-blocks-and-closures)
+- [Relationship between blocks and closures](#relationship-between-blocks-and-closures)
 - [Procs](#procs)
-- [The_difference_between_a_lambda_and_a_proc](#the-difference-between-a-lambda-and-a-proc)
+- [The difference between a lambda and a proc](#the-difference-between-a-lambda-and-a-proc)
 
 ### Closures
-In order to get a clear picture of what closures are, we need to understand _first-class functions_, _free variables_, and _lexical environment_.
+To get a clear picture of what closures are, we need to understand `first-class functions`, `free variables`, and `lexical environment`.
 
-**A first-class function** is a function that can be treated as an object and passed as a parameter to another function.
+`A first-class function` is a method that can be treated as an `object` and passed as a `parameter` to another function.
 
-**Free variable** is a variable that is not declared in a function parent scope but can be accessed in the function.
+`A free variable` is not declared in the function parent scope but can still be accessed inside the function.
 
-**Lexical scoping** Scope refers to the visibility of variables, lexical scope also _"eyeball_scoping"_ is the ability to identify a variable in a piece of code by reading through the code.
+`Lexical scoping` refers to the visibility of variables. `Lexical scope` also known as `eyeball_scoping` is the ability to identify a variable in a program by reading through the code.
 
-Try this in your interactive console
+Try this in your interactive console:
 
 ```rb
 parent_scope = "I'm available everywhere"
@@ -51,31 +49,31 @@ parent_scope = "I'm available everywhere"
 end
 ```
 
-The code above demonstrates lexical scoping, `inner_scope` can only be visible from the block it's defined. Try accessing it outside the block and ruby will throw an exception.
+The code above demonstrates `lexical scoping`. The `inner_scope` is only visible from the block where it's defined. When you try to access it outside the block, Ruby will throw an exception.
 
-So it is safe to define closures as a block of code that can be used later and stores variables in an environment in which it was created.
+Therefore, we can define `closures` as a block of code that can be used later and stores variables in an environment in which it was created.
 
-### Rules of identifying a closure
-- It needs to be a function
-- Function body should reference some variable
-- Variable should be declared in a parent scope
+We use the following rules when identifying a closure:
+- It needs to be a function.
+- The function body should reference some variable.
+- The variable should be declared in a parent scope.
 
 ### Closure use-cases
 1. Closures can be used to simulate classes in Ruby.
-2. Closures are used to implement callbacks in Ruby.
+2. Closures also help to implement callbacks in Ruby.
 
-To have a good understanding of our topic, we will take a tour around Ruby blocks and callable objects.
+To have a good understanding of our topic, Let's look at Ruby blocks and callable objects.
 
-### Blocks
-Blocks are used to capture code that can be passed as method arguments and executed later.
+### Ruby Blocks
+`Blocks` are used to capture code that can accept arguments and be executed later.
 
-In Ruby, blocks can be delimited by _curly braces_ or by _do/end_ keyword pair, they also act as anonymous functions.
+In Ruby, `blocks` can be delimited by `curly braces` or by the `do/end` keyword pair. They can also act as anonymous functions.
 
-We are going to explore the **yield** keyword and **block_given?()** method, explore block variables and how they relate to blocks acting as closures.
+Let's explore the `yield` keyword and `block_given?()` method. It is important to understand how these two concepts relate to closures.
 
-Encapsulating behavior into blocks and passing it into methods is a powerful technique in programming.
+Encapsulating behavior into blocks and passing it into methods is a powerful programming technique.
 
-Yield inside a block simply means _"execute the block"_
+`yield` when defined inside a `block` simply means `execute the block`.
 
 ```rb
 def do_it
@@ -86,9 +84,9 @@ do_it { puts "I'm doing it" }
 
 ```
 
-Try calling `do_it` without a block, the console will inform you that the method was not given a block to execute.
+When you try to call the `do_it` method without a block, the console will show an error.
 
-We can capture the exception by introducing the **block_given?()** method, the block will not throw an exception but rather provide _nil_ if block is not found.
+We can capture the `exception` using the `block_given?()` method. In this case, the function will only be executed when a block is provided.
 
 ```rb
 def do_it
@@ -100,10 +98,9 @@ do_it
 ```
 
 ### Relationship between closures and blocks
+In Ruby, `blocks` act as anonymous functions. 
 
-Blocks act's as **anonymous functions** in ruby, it carries around the execution context in which it was declared.
-
-Block contains local variables this eliminates variable collusion in case one gives a variable in the global scope same name as that in the block scope.
+Blocks contain local variables that eliminate variable collusion. This happens when one gives a global variable the same name as that in the block scope.
 
 ```rb
 x = "Global variable"
@@ -116,54 +113,42 @@ x = "Global variable"
 puts x #Block variable... conflicts and is modified
 ```
 
-When you run the snippet above you will get a different output as the one expected this because we have defined a variable in the global scope with the same name as that in the block scope.
+When you run the snippet above, you will get an unexpected output. This because we have assigned a variable in the `global scope` with the same name as that in the `block scope`.
 
-There is a simple trick one can use to avoid this behaviour, provide a block parameter in the decalred block.
+We can provide a parameter in the declared block to avoid this issue, as shown below:
 
 ```rb
 x = "Global variable"
 
 1.times { |;x| x = "Block parameter prevents variable overiding" }
 
-```
-
-```rb
 puts x #Global variable
 ```
 
-This clearly illustrates that you can define a variable with the same name in the parent scope of the block and another in it's local scope and they will be differentiated.
-
 ### Procs
-In our definition above we mentioned the concept of first-class functions, this is made possible in Ruby by the use of Procs.
+In the introduction, we discussed first-class functions. These methods are usually supported by `procs`.
 
-Let's take a look at what Procs are:
+Procs are simply callable objects. A block that you can create, store and pass around as method arguments. It is also executed just like a method.
 
-Procs are callable objects, a block that you can create, store and pass around as method arguments and executed with a call method.
-You can call Procs in four different ways
+Procs can be accessed using `Proc#call(args)`, `(args)()`, and `lambdas`.
 
-- Proc#call(args)
-- .(args)()
-- Threeequals
-- Lambdas
-
-A proc object is created upon instantiation of the `Proc` class, providing it with a code block:
+A Proc object is created upon instantiation of the `Proc` class:
 
 ```rb
 pr = Proc.new { puts "Inside a Proc's block" }
 ```
 
-When you call the proc `pr.call`, the code block becomes the body of the proc and the block is executed.
+When you call the above `proc` using `pr.call`, the code block becomes the body of the `proc` and is, therefore, executed.
 
-Procs have a lot of similarities with lambdas and lamdas are procs. However, a proc is not a lambda.
+Procs have a lot of similarities with lambdas. However, note that a proc is not necessarily a lambda.
 
-You can create a lambda same way as you create a proc object but this time you get to use the lambda keyword.
+We create a lambda function using the `lambda` keyword, as shown below:
 
 ```rb
 lambda { |x, y| x + y }.call(x, y)
-
 ```
 
-Ruby offers an alternative way of calling lambdas, stabby lambdas
+In Ruby, lambdas can also be defined as [stabby lambdas](https://dev.to/keithrbennett/why-i-prefer-stabby-lambda-notation-5gcj). This is illustrated below:
 
 ```rb
 ->(x, y) { x + y }.call(x, y)
@@ -172,46 +157,26 @@ Ruby offers an alternative way of calling lambdas, stabby lambdas
 ### The difference between a lambda and a proc
 
 #### Arity
-
-Lambdas unlike procs expect an exact number of arguments to be passed.
+Lambdas, unlike procs, expect an exact number of arguments to be passed:
 
 ```rb
-l = lambda { |a, b| puts "x: #{a}, y: #{b}" }
+l = lambda { |a, b| puts "x: #{a}, y: #{b}" } # number of args
 
 p = proc { |a, b| puts "x: #{a}, y: #{b}" }
 
-```
-
-Invoke the objects.
-
-```rb
-l.call("Ruby", "closures")
+l.call("Ruby", "closures") #invoking object
 
 p.call("Ruby", "closures")
 ```
 
-What happens when we supply one argument to Proc
+When we supply one argument to the `proc`, it will not throw an exception since there are no restrictions on the parameters.
 
-```rb
-p.call("Ruby")
-
-```
-
-Proc does not throw an exception, procs have no restrictions on argument.
-
-Let's try the same trick with lambdas
-
-```rb
-l.call(4)
-
-```
-
-Unlike Proc lambda is unhappy with the trick. This also happens when we get to supply extra arguments
+Unlike procs, lambdas will throw an exception when arguments are not inserted correctly.
 
 #### Return semantic
+Procs always return from their creation context which may be problematic.
 
-Proc always return from it's creation context, thus not a recommended choice.
-Lambda is preffered over procs since it has the same bahavioral pattern as normal methods.
+Lambdas are preffered over procs since they have the same bahavioral pattern as normal methods. This is demonstrated below:
 
 ```rb
 class ReturnSemantic
@@ -227,33 +192,29 @@ class ReturnSemantic
 end
 ```
 
-`method_that_calls_proc_or_lambda()` is a method responsible of passing a callable object as an argument, it invokes the callable object expecting return values.The values retuned from the method call will differentiate if the callable object is a proc or a lambda.
+In the example above, `method_that_calls_proc_or_lambda()` is responsible for passing a callable object as an argument. It invokes the callable object thus, expects return values. The results returned from this method will differ if the callable object is a proc or a lambda.
 
-`proc_or_lambda()` is also a method that uses a ternary operator to identify if the argument passed in is a proc or a lambda.
+`proc_or_lambda()` uses a [ternary operator](https://www.rubyguides.com/2019/10/ruby-ternary-operator/) to identify if the argument passed in is a proc or a lambda.
 
 ```rb
 c = ReturnSemantic.new
 c.method_that_calls_proc_or_lambda lambda { return }
 ```
 
-When one provide a lambda as a parameter, the method will return the last execution of the puts statement.
+When one provides a lambda as a parameter, the method will return the last execution of the `puts` statement.
 
-Let's try it with a Proc.
+When try it with a proc, it returns a `LocalJumpError`, as shown below:
 
 ```rb
 c = ReturnSemantic.new
 c.method_that_calls_proc_or_lambda proc { return }
 ```
 
-Returns a `LocalJumpError`.
-
 ### Conclusion
-Closures are powerful in the hands of a developer, one can write functional code in Ruby and also be able to write your own lazy enumarables. For further exploration in the topic I would highly recommend the [Mastering_Ruby_Closures](http://media.pragprog.com/titles/btrubyclo/intro.pdf) book.
+Closures are indeed powerful in the hands of a developer. One can write functional and readable code in Ruby using these components. You can read more about closures in Ruby from [here](https://gist.github.com/rsliter/4196841).
 
-### References
-- [Mastering_Ruby_Closures](http://media.pragprog.com/titles/btrubyclo/intro.pdf)
-- [The_Well_Grounded_Rubyist](https://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617295213)
-
+### Further reading
+- [Mastering Ruby Closures](http://media.pragprog.com/titles/btrubyclo/intro.pdf)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
