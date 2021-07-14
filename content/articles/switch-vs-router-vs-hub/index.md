@@ -96,7 +96,7 @@ Let's look at their differences on the OSI model.
 
 ### Layer of each component in the OSI model
 
-The Open Systems Interconnection Model [OSI Model](https://www.imperva.com/learn/application-security/osi-model/) is a 7 layer model that is used to describe in a pictorial way how computer systems communicate. Switch, Router, and Hub each operate on a different layer.
+The [Open Systems Interconnection Model](https://www.imperva.com/learn/application-security/osi-model/)(OSI Model) is a 7 layer model that is used to describe in a pictorial way how computer systems communicate. A switch, router, and hub each operate on a different layer.
 
 #### Switch
 
