@@ -242,6 +242,10 @@ class GenerateRandomUserForm(forms.Form):
 Add the code snippet below into the `views.py` file in the `task`:
 
 ```python
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.views.generic import ListView
+from django.views.generic.edit import FormView
 from django.shortcuts import redirect
 
 from .form import GenerateRandomUserForm
