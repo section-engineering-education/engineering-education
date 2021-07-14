@@ -220,3 +220,9 @@ Now that you have an understanding of how to use JSON in MongoDB, you can check 
 - [JSON and BSON](https://www.mongodb.com/json-and-bson)
 - [Mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/)
 - [Mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/)
+
+Happy coding!
+
+---
+
+Peer Review Contributions by: [Eric gacoki](/engineering-education/authors/eric-gacoki/)
