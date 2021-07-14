@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /machine-learning-libraries-in-cplusplus/
 title: Machine Learning Libraries in C++
-description: This article takes the reader through the **SHARK** and **MLPACK** libraries and exploit their functionality in machine learning.
+description: This article takes the reader through the SHARK and MLPACK libraries and exploit their functionality in machine learning.
 author: eugiene-kanillar
 date: 2021-07-14T00:00:00-12:30
 topics: [Languages , Machine Learning]
@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/machine-learning-libraries-in-cplusplus/hero.png
     alt: Machine learning using c++ image example
 ---
-This is a follow up to an earlier article where we learned to implement algorithms from scratch and highlighted the reasons why we should use C++ for [machine learning](/engineering-education/topic/machine-learning/). 
+We learned to implement algorithms from scratch and highlighted the reasons why we should use C++ for [machine learning](/engineering-education/topic/machine-learning/). In this article we will be following that up with how to implement them with machine learning algorithms.
 <!--more-->
-We created machine learning models in C++ which were not only cumbersome but missed out on a majority of aspects contained in Machine learning. The article can be found [here](/engineering-ed/an-introduction-to-machine-learning-using-c++/).
+We created machine learning models in C++ which were not only cumbersome but missed out on a majority of aspects contained in Machine learning. 
+
+That article can be found [here](/engineering-ed/an-introduction-to-machine-learning-using-c++/).
 
 Libraries enable the reuse of code for solving problems. Nowadays solutions to common problems come in form of libraries and packages which have been thoroughly tested and optimized. 
 
@@ -77,7 +79,7 @@ Include the header files and libraries for linear regression.
 
 Now we need a data set. I have included two .csv files. The independent.csv file includes the x values and the dependent.csv file includes the y values. This is what should look like. 
 
-![demo](/engineering-education/machine-learning-libraries-in-cplusplus//dataset.png). 
+![demo](/engineering-education/machine-learning-libraries-in-cplusplus//dataset.PNG). 
 
 The two .csv files can be found on my GitHub [repo](https://github.com/KanizoRGB/Machine-learning-libraries.git). Next, create a container to hold the data from the csv files.
 
