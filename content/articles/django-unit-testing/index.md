@@ -331,7 +331,6 @@ Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
 ../home/quinter/PycharmProjects/djangoTest/venv/lib/python3.8/site-packages/django/views/generic/list.py:86: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'testing.models.Student'> QuerySet.
   return self.paginator_class(
-....
 ----------------------------------------------------------------------
 Ran 6 tests in 0.044s
 
