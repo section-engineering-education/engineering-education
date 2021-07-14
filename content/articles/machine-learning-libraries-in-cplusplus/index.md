@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/machine-learning-libraries-in-cplusplus/
+url: /machine-learning-libraries-in-cplusplus/
 title: Machine Learning Libraries in C++
 description: This article takes the reader through the **SHARK** and **MLPACK** libraries and exploit their functionality in machine learning.
 author: eugiene-kanillar
