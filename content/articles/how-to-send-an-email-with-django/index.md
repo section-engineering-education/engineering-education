@@ -26,7 +26,7 @@ Prior knowledge of Django is also required.
 
 Open your terminal or command prompt, and type the following commands:
 
-```py
+```bash
 mkdir mail && cd mail
 pipenv install django
 pipenv shell
@@ -34,7 +34,7 @@ pipenv shell
 
 We created a new virtual environment using the pipenv command, you can install pipenv if you don't have it already installed using `pip install pipenv`. Next, create a new Python project and application.
 
-```py
+```bash
 django-admin startproject send_mail .
 python manage.py startapp mailer
 python manage.py runserver
