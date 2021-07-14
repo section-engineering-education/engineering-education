@@ -183,3 +183,7 @@ Hub transmits data from one device to another in form of binary bits.
 
 ### Conclusion
 In this article, we have looked at what is a hub, switch and router. We have also looked at the fuctionalities and application of each device as used in networking. Hope the article has been of help to you both personally and academically.
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
