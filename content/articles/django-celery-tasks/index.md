@@ -222,7 +222,7 @@ Create a folder named `templates` in the projects root directory. In the `templa
 
 #### Form
 
-In the `task`, create a python file named `random_user_form.py` and add the code snippet below:
+In the `task`, create a python file named `form.py` and add the code snippet below:
 
 ```python
 from django import forms
@@ -318,6 +318,8 @@ celery -A celerytask worker -l info
    ```
 
    ![Celery running](/engineering-education/django-celery-tasks/celery.png)
+   
+   > **Note** celerytask is the name of the project.
 
 4. Open your browser and navigate to [http://localhost:8000/generate](http://localhost:8000/generate/) and input the number of users to generate.
    
