@@ -134,3 +134,6 @@ In your browser, go to `http://localhost:3000`. The content of the page should b
 And that it is all you have a Nest.js microservice application that uses Redis as a transporter.
 
 Happy coding!!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
