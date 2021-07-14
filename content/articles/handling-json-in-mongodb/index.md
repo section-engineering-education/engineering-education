@@ -9,8 +9,8 @@ JSON can store various data types like strings, arrays, objects, and Binary JSON
 - [Goal](#goal)
 - [Prerequisites](#prerequisites)
 - [Structuring JSON data for use in MongoDB Database](#structuring-json-data-for-use-in-mongodb-database)
-    - [Getting into JSON](#gettting-into-json)
-    - [Modelling Embedded Data](#modelling-embeded-data)
+    - Getting into JSON
+    - Modelling Embedded Data
 - [Creating the JSON file](#creating-the-json-file)
 - [Import JSON data to MongoDB Database](#import-json-data-to-mongodb-database)
 - [Save JSON data to MongoDB Database](#save-json-data-to-mongodb-database)
