@@ -199,9 +199,7 @@ blogRoutes.forEach((route, index) => {
 })
 ```
 
-Now it’s time to verify if this works. Start the Fastify server on the terminal using `node index.js`. If you visit the browser on `http://localhost:3000/blogs/`, you will get all the blogs from the demo data in JSON object format.
-
-![image] attached
+Now it’s time to verify if this works. Start the Fastify server on the terminal using `node index.js`. If you visit the browser on `http://localhost:3000/blogs/`, should get all the blogs from the demo data in JSON object format.
 
 Our Fastify Node.js backend is complete and now we will head over to Svelte in the next steps.
 
