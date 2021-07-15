@@ -435,7 +435,7 @@ Next, we need to understand how `fetchPosts` retrieves our posts. Data fetching 
 
 ![] attached
 
-Deleting a post by ID
+### Deleting a post by ID
 
 
 ### Conclusion
