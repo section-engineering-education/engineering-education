@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/inversion_of_control_principle/hero.jpeg
+  - url: /engineering-education/inversion_of_control_principle/hero.png
     alt: Inversion of control principle cover image 
 ---
 
