@@ -1,4 +1,4 @@
-Fastify is a low-overhead backend web framework that is built on top of the Node.js runtime. Its popularity and attention rising to its lightweight design and the plugin ecosystem it comes with. In Fastify the idea is that everything is a plugin. This allows us to quickly encapsulate the functionality in our project as a plugin which can then be distributed and used in other projects. 
+Fastify is a low-overhead backend web framework that is built on top of the Node.js runtime. Its popularity and attention rising to its lightweight design and the plugin ecosystem it comes with. In Fastify the idea is that everything is a plugin. This allows us to quickly encapsulate the functionality in our project as a plugin which can then be distributed and used in other projects. The application we are building can be found on [this](https://github.com/KayveTech/fastify-svelte-app) github repository.
 
 ### Goal
 
