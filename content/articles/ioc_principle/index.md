@@ -2,40 +2,40 @@
 layout: engineering-education
 status: publish
 published: true 
-url: /engineering-education/inversion_of_control_principle/
-title: Inversion of control principle
-description: Inversion of Control(IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. This article will explain the basics of inversion of control(IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable. 
+url: /inversion_of_control_principle/
+title: Inversion of Control Principle using Kotlin
+description: Inversion of Control (IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. This article will explain the basics of inversion of control (IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable. 
 author: love-otudor
-date: 2021-07-16T00:00:00-11:00
+date: 2021-07-15T00:00:00-05:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/inversion_of_control_principle/hero.png
-    alt: Inversion of control principle cover image 
+    alt: Inversion of Control Principle Hero Image 
 ---
-
-### Prerequisites
-Before we begin, it is advisable to have:
-- Basic knowledge of Kotlin programming language.
-- An IDE installed. Preferably [IntelliJ](https://www.jetbrains.com/idea/).
-- Good spirits!
-
-### Introduction
 Inversion of Control (IoC) is a software design principle that helps reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its primary responsibility. 
-
+<!--more-->
+### Introduction
 IoC controls an object's creation and the flow of an application to a container or framework.
-IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and lifecycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
+IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and life-cycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
 
-Imagine this: suppose you have a bakery that specializes in making egg rolls. What is an egg roll without an egg? So eggs are essential in the making of egg rolls. Why egg rolls, you may ask? Well, you could call it plain nepotism. So how do we get a bakery that obeys the IoC principle? Well, rather than having a poultry farm and involving yourself with all the poultry-related tasks, you order the eggs and get them delivered to you. This time, you don't have to worry about the chicks and the eggs being healthy or using the suitable animal feed. With this new design, you can focus on making egg rolls, which results in a more effective baking process. 
+Imagine this, suppose you have a bakery that specializes in making egg rolls. What is an egg roll without an egg? So eggs are essential in the making of egg rolls. Why egg rolls, you may ask? Well, you could call it plain nepotism. 
+
+So how do we get a bakery that obeys the IoC principle? Well, rather than having a poultry farm and involving yourself with all the poultry-related tasks, you order the eggs and get them delivered to you. This time, you don't have to worry about the chicks and the eggs being healthy or using suitable animal feed. With this new design, you can focus on making egg rolls, which results in a more effective baking process. 
 
 This is the big idea behind IoC: separating concerns.
 Inversion of control makes it possible for a consumer to have more control over the software. It gives it more flexibility and freedom to choose from other options.
 
-### Here are some of the benefits of using IoC:
+### Prerequisites
+Before we begin, you should have:
+- Basic knowledge of Kotlin programming language.
+- An IDE installed. Preferably [IntelliJ](https://www.jetbrains.com/idea/).
+
+### Some benefits of using IoC
 - It is easy to switch between different implementations of a particular class at runtime.
 - It increases the modularity of the program.
-- It manages an object’s lifecycle and configuration. Some objects can be singletons, while we can create others per request.
+- It manages an object’s life-cycle and configuration. Some objects can be singletons, while we can create others per request.
 
 Before we look at some code, here are some things you should have in mind:
 
@@ -48,7 +48,7 @@ Tight coupling is when a change in component A requires a change in component B.
 
 **Code rigidity** is the degree of difficulty in making changes to the software.
 
-#### Advantages of Loose Coupling:
+#### Advantages of Loose Coupling
 - Developers can quickly evolve loose coupled software because it encourages many changes without breaking the existing code.
 - Loose coupling enhances software agility because it promotes iteration, meaning one can quickly add a new feature or functionality.
 - Loose coupling reduces technical debt.
@@ -63,7 +63,7 @@ When you call something abstract, it means that it is incomplete or not clearly 
 #### 3. Single Responsibility Principle
 This principle states that every function, class, or module should have a single reason to change and have only one responsibility.
 
-#### Advantages:
+#### Advantages
 - It makes the code easy to understand, fix, and maintain.
 - Classes are less coupled and more resilient to change.
 - More testable design.
@@ -79,19 +79,21 @@ DIP states that:
 
 **Low-Level Modules** are implementation details required to execute the business policies (logic). They are the plumbing or internals of a system, and they tell us how the system(software) should do various tasks. They tend to be very concrete.
 
-![dependency flow](/engineering-education/ioc_principle/dependecy_inversion_principle_image_1.png)
+![dependency flow](/engineering-education/inversion_of_control_principle/dependecy_inversion_principle_image_1.png)
 
-For Class A to work, it depends on two low-level modules: Class B and Class C. This doesn't follow the dependency inversion principle because Class A, which is a high-level module, depends on Class B and C, which are low-level modules. To make this code obey the DIP principle, extract the interface for the low-level modules. Extracting the interface will give us something that looks like this:
+For Class A to work, it depends on two low-level modules: Class B and Class C. This doesn't follow the dependency inversion principle because Class A, which is a high-level module, depends on Class B and C, which are low-level modules. 
 
- ![dependency flow](/engineering-education/ioc_principle/dependecy_inversion_principle_image_2.png)
+To make this code obey the DIP principle, extract the interface for the low-level modules. Extracting the interface will give us something that looks like this:
+
+ ![dependency flow](/engineering-education/inversion_of_control_principle/dependecy_inversion_principle_image_2.png)
 
 This abstraction could be an interface or an abstract class. Now we can head back to the main focus—Inversion of Control.
 
 Inversion of control only provides design guidelines and not implementation details. A design principle is not constricted to any programming language. You can implement it whichever way you please. However, design patterns recommend an actual implementation. Design patterns are more like reusable solutions to a problem in a given scenario.
 
 Thus, we can apply IoC in object-oriented programming in many ways. Some of which are:
-- Dependency injection pattern
-- Strategy design pattern
+- Dependency injection pattern.
+- Strategy design pattern.
 - The service locator pattern, and many others.
 
 Let's look into dependency injection and strategy design patterns.
@@ -128,7 +130,7 @@ fun main(args: Array) {
 ```kotlin
 class LoginManager (val userRepository: UserRepository){
 
-	//Do something...
+    //Do something...
 }
 
 fun main(args: Array) {
@@ -141,11 +143,13 @@ fun main(args: Array) {
 }
 ```
 
-`LoginManager` now has a constructor that accepts `UserRepository` abstraction as a parameter. `LoginManager` can now use `UserRepository` whichever way it pleases because `UserRepository` is now a field in the `LoginManager` class. `LoginManager` is no longer responsible for creating its dependencies. It is now the caller's job in this case—the main function. The main function provides the required dependency, which is `UserRepositoryImpl.` This way, we can have different implementations of `LoginManager` and quickly test it in other contexts.
+`LoginManager` now has a constructor that accepts `UserRepository` abstraction as a parameter. `LoginManager` can now use `UserRepository` whichever way it pleases because `UserRepository` is now a field in the `LoginManager` class. 
+
+`LoginManager` is no longer responsible for creating its dependencies. It is now the caller's job in this case—the main function. The main function provides the required dependency, which is `UserRepositoryImpl.` This way, we can have different implementations of `LoginManager` and quickly test it in other contexts.
 
 Let's look at a more complex scenario:
 
-![dependency flow](/engineering-education/ioc_principle/dependency_injection.png)
+![dependency flow](/engineering-education/inversion_of_control_principle/dependency_injection.png)
 
 We can see that Class A and B have no dependencies. Class C is dependent on Class A. Class D is dependent on Class B, and Class E is dependent on both Class C and D. If we want to call a method on or create an instance of class E, we would have to create all its required dependencies. We need to create concrete instances of Classes A, B, C, and D in a particular order. 
 
@@ -185,7 +189,7 @@ interface LaundryBot{
 }
 ```
 
-We said an item could either be hand or machine washed and either sun-dried or dried using a dryer (machine dried), meaning that any `LaundryBot` class would have either of these methods hence if we have a `DenimLaundryBot`, and a `CottonLaundryBot`. They would both have the same piece of code for their Wash and dry implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. 
+We said an item could either be hand or machine washed and either sun-dried or dried using a dryer (machine dried), meaning that any `LaundryBot` class would have either of these methods hence if we have a `DenimLaundryBot`, and a `CottonLaundryBot` they would both have the same piece of code for their `wash` and `dry` implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. 
 
 How do we take care of this code duplication? 
 
@@ -199,7 +203,7 @@ interface Dry{
    fun dry()
 }
 ```
-Next, we provide concrete implementations of these interfaces. This way, we can encapsulate the different behaviors for each case of Wash and dry. To do this, create classes called `MachineWash` and `HandWash` that inherit from `Wash`. In the same way, `MachineDry` and `SunDry` will inherit from Dry.4
+Next, we provide concrete implementations of these interfaces. This way, we can encapsulate the different behaviors for each case of wash and dry. To do this, create classes called `MachineWash` and `HandWash` that inherit from `wash`. In the same way, `MachineDry` and `SunDry` will inherit from Dry.
  
 ```kotlin
 object MachineWash: Wash{
@@ -229,9 +233,9 @@ object MachineDry: Dry{
 
 We have successfully created a family of algorithms for wash and dry.
  
-![dependency flow](/engineering-education/ioc_principle/dry_algorithm_family.png)
+![dependency flow](/engineering-education/inversion_of_control_principle/dry_algorithm_family.png)
 
-![dependency flow](/engineering-education/ioc_principle/wash_algorithm_family.png)
+![dependency flow](/engineering-education/inversion_of_control_principle/wash_algorithm_family.png)
  
 We have created strategies; now, it's time for us to see how it works. Remember, we removed the `Wash()` and `dry()` methods from the `LaundryBot` interface. This time, rather than having `Wash()` and `dry()`, we would create fields of type Wash and Dry.
 
@@ -244,7 +248,9 @@ interface LaundryBot {
    }
 }
 ```
-This way, any class inherits from `LaundryBot` can choose the particular behavior it wants from the algorithm family. Let's see how this works. Say we want to create a `CashmereLaundryBot`. What behaviors of Wash and Dry do we choose? It is advised to wash cashmere by hand to avoid tears and snags; thus, we would use the HandWash behavior. For drying, cashmere isn't suitable for MachineDry because the heat could shrink or damage its follicles. The Dry behavior to use for a cashmere then is the SunDry. Let's see how this looks like in code:
+This way, any class inherits from `LaundryBot` can choose the particular behavior it wants from the algorithm family. Let's see how this works. Say we want to create a `CashmereLaundryBot`. What behaviors of Wash and Dry do we choose? It is advised to wash cashmere by hand to avoid tears and snags; thus, we would use the HandWash behavior. 
+
+For drying, cashmere isn't suitable for MachineDry because the heat could shrink or damage its follicles. The Dry behavior to use for a cashmere then is the SunDry. Let's see how this looks like in code:
 
 ```kotlin
 class CashmereLaundryBot: LaundryBot{
@@ -256,7 +262,10 @@ class CashmereLaundryBot: LaundryBot{
 
 See how the strategy pattern has made it easy to change the behavior of this class? Nice!
  
-Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is beneficial when developing reusable libraries, it is not appropriate in all use cases. It is essential to know when to take advantage of the flexibility and freedom inversion of control and when not to.
+### Conclusion
+Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is beneficial when developing reusable libraries, it is not appropriate in all use cases. 
+
+It is essential to know when to take advantage of the flexibility and freedom inversion of control and when not to.
 It's been a long article, but I sure hope this will help you as much as it helped me. 
 
 Happy learning!
