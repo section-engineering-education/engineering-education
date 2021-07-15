@@ -50,7 +50,7 @@ Then you might turn to Federated Learning instead.
 
 Unlike DP, Federated Learning (FL) does not focus on changing the data itself, instead, it focuses on training an algorithm across multiple separate datasets without sharing the information between the datasets themselves. 
 
-In this type of learning, each person's data must remain on their own device. You build the main model of the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained is transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
+In this type of learning, each person's data must remain on their device. You build the main model of the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained is transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
 
 At this point, you have used FL to create a global model without it having seen the data that your model was trained on. You have also built different models that are user-specific. This improves individual performance compared to the global model itself.
 
@@ -60,7 +60,7 @@ More broadly, FL is useful when you have distributed data sources that you eithe
 
 Yet, the training speed of FL tends to be slower due to the limited bandwidth and low computing power available in users' mobile devices. It is also difficult to inspect data without having full access to it. This brings about problems during the data preprocessing stages.
 
-So, could blockchain technology help us solve these problems and ensure the privacy is preserved in our machine learning systems?
+So, could blockchain technology help us solve these problems and ensure privacy is preserved in our machine learning systems?
 
 Let's find out!
 
@@ -80,11 +80,11 @@ In Machine Learning, we can use this system to train models in a decentralized b
 
 #### Distributed machine learning
 
-[LearningChain](https://ieeexplore.ieee.org/document/8622598) is a blockchain-based machine learning framework that allows us to perform distributed machine learning without a central arbiter. In this framework, a blockchain is initialized with several distributed devices including the data source, the computing nodes that will update the model or any other users that are involved in the development of the model. From here, we can perform an encrypted version of Federated Learning where the computers hosting the data will take the current global version of the model, train it on that local data and encrypt the resulting weights of that model. It then sends these results back out to all the compute nodes in the network.
+[LearningChain](https://ieeexplore.ieee.org/document/8622598) is a blockchain-based machine learning framework that allows us to perform distributed machine learning without a central arbiter. In this framework, a blockchain is initialized with several distributed devices including the data source, the computing nodes that will update the model, or any other users that are involved in the development of the model. From here, we can perform an encrypted version of Federated Learning where the computers hosting the data will take the current global version of the model, train it on that local data and encrypt the resulting weights of that model. It then sends these results back out to all the compute nodes in the network.
 
 The computing nodes then compete to add the next block to the blockchain by solving a complex math puzzle. The winning node collects all the gradients to update that global model which is stored in the next block along with all the training information which needs to be appended to the chain.
 
-In this framework, all the identities of the data sources are anonymized and all the weights of the model are encrypted using differential privacy. So, both the identity of the users and their data is private. Additionally, before the next block is added to the chain by the computing node, that node will first go through and make sure that the encrypted identities of the data sources and the gradients match with the historical record on the blockchain. If they don't match, then they would not be included in the update.     
+In this framework, all the identities of the data sources are anonymized and all the weights of the model are encrypted using differential privacy. So, both the identity of the users and their data are private. Additionally, before the next block is added to the chain by the computing node, that node will first go through and make sure that the encrypted identities of the data sources and the gradients match with the historical record on the blockchain. If they don't match, then they would not be included in the update.     
 
 #### Data Privacy
 
