@@ -172,7 +172,7 @@ To load our saved model, type in the following code:
 
 With a few lines of code, our transformation pipeline and model have successfully Loaded!
 
-Please find the full code [here](https://colab.research.google.com/drive/1wnKtM8zIfdpJlJlwZE1TYqeocuH3F8W1?authuser=5#scrollTo=LA-ELV-QP_Gf).
+Please find the full code [here](https://colab.research.google.com/drive/1wnKtM8zIfdpJlJlwZE1TYqeocuH3F8W1?usp=sharing).
 
 ### Wrapping Up
 
