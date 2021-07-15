@@ -1,4 +1,19 @@
-### Arrays in Java
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /engineering-education/arrays-in-java/
+title: Arrays in Java
+description: A collection of related data elements with a common name is referred to as an array. This article will explain the basics and how to use arrays in Java.
+author: catherine-mugo
+date: 2021-07-15T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/arrays-in-java/hero.png
+    alt: Arrays in Java cover image 
+---
 
 ### Introduction 
 A collection of related data elements with a common name is referred to as an array. We can define an array as marks to represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. Arrays can be defined by any variable type.
