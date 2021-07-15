@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true 
-url: /inversion_of_control_principle/
+url: /inversion-of-control-principle/
 title: Inversion of Control Principle using Kotlin
 description: Inversion of Control (IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. This article will explain the basics of inversion of control (IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable. 
 author: love-otudor
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/inversion_of_control_principle/hero.png
+  - url: /engineering-education/inversion-of-control-principle/hero.png
     alt: Inversion of Control Principle Hero Image 
 ---
 Inversion of Control (IoC) is a software design principle that helps reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its primary responsibility. 
@@ -79,13 +79,13 @@ DIP states that:
 
 **Low-Level Modules** are implementation details required to execute the business policies (logic). They are the plumbing or internals of a system, and they tell us how the system(software) should do various tasks. They tend to be very concrete.
 
-![dependency flow](/engineering-education/inversion_of_control_principle/dependecy_inversion_principle_image_1.png)
+![dependency flow](/engineering-education/inversion-of-control-principle/dependecy_inversion_principle_image_1.png)
 
 For Class A to work, it depends on two low-level modules: Class B and Class C. This doesn't follow the dependency inversion principle because Class A, which is a high-level module, depends on Class B and C, which are low-level modules. 
 
 To make this code obey the DIP principle, extract the interface for the low-level modules. Extracting the interface will give us something that looks like this:
 
- ![dependency flow](/engineering-education/inversion_of_control_principle/dependecy_inversion_principle_image_2.png)
+ ![dependency flow](/engineering-education/inversion-of-control-principle/dependecy_inversion_principle_image_2.png)
 
 This abstraction could be an interface or an abstract class. Now we can head back to the main focus—Inversion of Control.
 
@@ -149,7 +149,7 @@ fun main(args: Array) {
 
 Let's look at a more complex scenario:
 
-![dependency flow](/engineering-education/inversion_of_control_principle/dependency_injection.png)
+![dependency flow](/engineering-education/inversion-of-control-principle/dependency_injection.png)
 
 We can see that Class A and B have no dependencies. Class C is dependent on Class A. Class D is dependent on Class B, and Class E is dependent on both Class C and D. If we want to call a method on or create an instance of class E, we would have to create all its required dependencies. We need to create concrete instances of Classes A, B, C, and D in a particular order. 
 
@@ -233,9 +233,9 @@ object MachineDry: Dry{
 
 We have successfully created a family of algorithms for wash and dry.
  
-![dependency flow](/engineering-education/inversion_of_control_principle/dry_algorithm_family.png)
+![dependency flow](/engineering-education/inversion-of-control-principle/dry_algorithm_family.png)
 
-![dependency flow](/engineering-education/inversion_of_control_principle/wash_algorithm_family.png)
+![dependency flow](/engineering-education/inversion-of-control-principle/wash_algorithm_family.png)
  
 We have created strategies; now, it's time for us to see how it works. Remember, we removed the `Wash()` and `dry()` methods from the `LaundryBot` interface. This time, rather than having `Wash()` and `dry()`, we would create fields of type Wash and Dry.
 
