@@ -12,6 +12,7 @@ In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), 
 - [Creating nodes for couchbase](#creating-nodes-for-couchbase)
 - [Configuring couchbase cluster](#configuring-couchbase-cluster)
 - [Rebalancing couchbase clusters](#rebalancing-couchbase-clusters)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 
@@ -19,7 +20,7 @@ In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), 
 
 ### Objectives
 
-This tutorial introduces you to the concepts of couchbase, creating node clusters, and that in turn helps you elastically scale your application.
+This tutorial introduces you to the concepts of couchbase, creating node clusters, and that in turn helps to elastically scale your application.
 
 ### What's couchbase?
 
@@ -30,6 +31,15 @@ It resides in server clusters that have multiple machines that have several daem
 > For more details about couchbase, click [here](https://dzone.com/articles/couchbase-architecture-deep).  
 
 ### Creating nodes for couchbase
+
+In this section, we're building the couchbase server nodes, that will host a single instance of the couchbase server. This process entails 4 steps as discussed below:  
+
+1. ***Installed*** - where the server is installed, but not running.
+2. ***Started*** - In this step, the node server has been started. At this point, you can perform various operations on the console.
+3. ***Initialized*** - After installation, we have an option to initialize our servers.
+4. ***Provisioned*** - You have an access to the server as an admin.
+
+Let's now proceed and define our docker compose file contents as follows:  
 
 ```yaml
 # creating couchbase docker compose files
@@ -169,7 +179,7 @@ To achieve this functionality, browse to the servers tab, or you may as well cli
 
 ### Conclusion
 
-In this tutorial, we've been discussing the couchbase clusters. We used the docker-compose to create services for our application. We then created 3 node couchbase clusters and accessed them on the web portal on our local server.
+In this tutorial, we've been discussing the couchbase clusters. We used the docker-compose to create services for our application. We then created 3-node couchbase clusters and accessed them on the web portal on our local server.
 
 Hopefully, you build on this to scale up your applications.
 
