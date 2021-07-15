@@ -1,6 +1,25 @@
-Machine Learning algorithms have thrived in the era of big data. But to use that data safely and effectively, we have to take privacy into account when developing Machine Learning systems. This is especially the case when it comes to using sensitive data such as protected health records. There have been previous attempts to solve this problem using Federated Learning and Differential Privacy but it turns out that these systems have a flaw that Blockchain technology might help us solve.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /can-blockchain-improve-machine-learning-privacy/
+title: Can blockchain improve machine learning privacy?
+description: In this article, we will explore whether blockchanin technology can improve machine learning privacy. 
+author: wilkister-mumbi
+date: 2021-07-15T00:00:00-18:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Prerequisite
+  - url: /can-blockchain-improve-machine-learning-privacy/hero.png
+    alt: ML Privacy image
+---
+Machine Learning algorithms have thrived in the era of big data. But to use data safely and effectively, we have to take privacy into account when developing Machine Learning systems.
+<!--more-->
+
+Machine Learning algorithms have thrived in the era of big data. But to use data safely and effectively, we have to take privacy into account when developing Machine Learning systems. This is especially the case when it comes to using sensitive data such as protected health records. There have been previous attempts to solve this problem using Federated Learning and Differential Privacy but it turns out that these systems have a flaw that Blockchain technology might help us solve.
+
+### Prerequisites
 
 Before reading this article, have a read on these two articles on [Differential Privacy](https://www.section.io/engineering-education/understanding-differential-privacy/) and [Federated Learning](https://www.section.io/engineering-education/secured-deeplearning-in-remote-devices/) to get an in-depth understanding of these methods which try to ensure privacy in our data and AI models. 
 
