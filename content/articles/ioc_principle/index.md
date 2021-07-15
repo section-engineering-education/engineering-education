@@ -4,7 +4,7 @@ status: publish
 published: true 
 url: /engineering-education/inversion_of_control_principle/
 title: Inversion of control principle
-description: Inversion of Control(IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. Coupling measures how closely connected software modules are to each other, while control refers to any other additional responsibility a class has apart from its primary responsibility. Remember the S in SOLID principles of object-oriented design? Let me help you: Singularity of Purpose—that is the objective of IoC. Loose coupling in software engineering is often a sign of testable, well-structured, maintainable, and readable software.
+description: Inversion of Control(IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. This article will explain the basics of inversion of control(IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable. 
 author: love-otudor
 date: 2021-07-16T00:00:00-11:00
 topics: [Languages]
@@ -15,8 +15,6 @@ images:
     alt: Inversion of control principle cover image 
 ---
 
-This article will explain the basics of inversion of control(IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable.
-
 ### Prerequisites
 Before we begin, it is advisable to have:
 - Basic knowledge of Kotlin programming language.
@@ -25,8 +23,8 @@ Before we begin, it is advisable to have:
 
 ### Introduction
 Inversion of Control (IoC) is a software design principle that helps reverse control in object-oriented programming. Control here is any extra responsibility a class has besides its primary responsibility. 
-IoC controls an object's creation and the flow of an application to a container or framework.
 
+IoC controls an object's creation and the flow of an application to a container or framework.
 IoC inverts the control of creating and managing objects from the programmer to a container. This container manages the creation and lifecycle of objects in the application. IoC helps us create large systems by eradicating the responsibility of creating objects.
 
 Imagine this: suppose you have a bakery that specializes in making egg rolls. What is an egg roll without an egg? So eggs are essential in the making of egg rolls. Why egg rolls, you may ask? Well, you could call it plain nepotism. So how do we get a bakery that obeys the IoC principle? Well, rather than having a poultry farm and involving yourself with all the poultry-related tasks, you order the eggs and get them delivered to you. This time, you don't have to worry about the chicks and the eggs being healthy or using the suitable animal feed. With this new design, you can focus on making egg rolls, which results in a more effective baking process. 
@@ -35,7 +33,7 @@ This is the big idea behind IoC: separating concerns.
 Inversion of control makes it possible for a consumer to have more control over the software. It gives it more flexibility and freedom to choose from other options.
 
 ### Here are some of the benefits of using IoC:
-- Easy to switch between different implementations of a particular class at runtime.
+- It is easy to switch between different implementations of a particular class at runtime.
 - It increases the modularity of the program.
 - It manages an object’s lifecycle and configuration. Some objects can be singletons, while we can create others per request.
 
@@ -51,8 +49,8 @@ Tight coupling is when a change in component A requires a change in component B.
 **Code rigidity** is the degree of difficulty in making changes to the software.
 
 #### Advantages of Loose Coupling:
-- Developers can quickly evolve loose coupled software. This is because it encourages many changes without breaking the existing code.
-- Loose coupling enhances software agility. This is because it promotes iteration, meaning one can quickly add a new feature or functionality.
+- Developers can quickly evolve loose coupled software because it encourages many changes without breaking the existing code.
+- Loose coupling enhances software agility because it promotes iteration, meaning one can quickly add a new feature or functionality.
 - Loose coupling reduces technical debt.
 
 #### 2. Abstraction
@@ -63,7 +61,7 @@ When you call something abstract, it means that it is incomplete or not clearly 
 - It promotes the grouping of related classes and objects.
 
 #### 3. Single Responsibility Principle
-This principle states that every function, class, or module should have a single reason to change. They must have only one responsibility.
+This principle states that every function, class, or module should have a single reason to change and have only one responsibility.
 
 #### Advantages:
 - It makes the code easy to understand, fix, and maintain.
@@ -159,7 +157,7 @@ Also, if you want to consider the lifecycle of these objects, supposing you want
 
 The IoC or DI Container now controls the creation and lifecycle of the objects. This way, you don't have to create instances of these objects every single time you need them anymore. Dagger and hilt can automate this process and generate the necessary code for you.
 
-IoC Containers are mostly used in an application for objects like:
+IoC Containers are primarily used in an application for objects like:
 - Services.
 - Data Access.
 - Controllers.
@@ -187,7 +185,7 @@ interface LaundryBot{
 }
 ```
 
-We said an item could either be hand or machine washed and either sun-dried or dried using a dryer (machine dried), meaning that any `LaundryBot` class would have either of these methods, so if we have a `DenimLaundryBot`, and a `CottonLaundryBot`. They would both have the same piece of code for their Wash and dry implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. 
+We said an item could either be hand or machine washed and either sun-dried or dried using a dryer (machine dried), meaning that any `LaundryBot` class would have either of these methods hence if we have a `DenimLaundryBot`, and a `CottonLaundryBot`. They would both have the same piece of code for their Wash and dry implementations of `LaundryBot`. This is because both denim and cotton will be machine washed and machine dried. 
 
 How do we take care of this code duplication? 
 
@@ -261,6 +259,7 @@ See how the strategy pattern has made it easy to change the behavior of this cla
 Inversion of control is a practical approach to improving code modularity, reducing code duplication, and simplifying testing. Although it is beneficial when developing reusable libraries, it is not appropriate in all use cases. It is essential to know when to take advantage of the flexibility and freedom inversion of control and when not to.
 It's been a long article, but I sure hope this will help you as much as it helped me. 
 
-Happy Learning!
- 
- 
+Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/) 
