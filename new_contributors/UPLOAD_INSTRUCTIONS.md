@@ -38,7 +38,7 @@ Be sure to:
 - **Use dashes in place of spaces.**
 - **Do not include any special characters.**
 - **Try to keep it under 40 characters.**
-- -**Avoid using periods (.) or commas (,)**
+- -**Avoid using periods (.) or commas (,) or (_ ) underscores**
 
 ![create article folder](/static/images/create-article-folder.png)
 
