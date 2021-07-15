@@ -79,7 +79,7 @@ Include the header files and libraries for linear regression.
 
 Now we need a data set. I have included two .csv files. The independent.csv file includes the x values and the dependent.csv file includes the y values. This is what should look like. 
 
-![demo](/engineering-education/machine-learning-libraries-in-cplusplus//dataset.PNG). 
+![demo](/engineering-education/machine-learning-libraries-in-cplusplus/dataset.PNG). 
 
 The two .csv files can be found on my GitHub [repo](https://github.com/KanizoRGB/Machine-learning-libraries.git). Next, create a container to hold the data from the csv files.
 
