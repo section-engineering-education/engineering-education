@@ -6,7 +6,7 @@ url: /inversion_of_control_principle/
 title: Inversion of Control Principle using Kotlin
 description: Inversion of Control (IoC) is a software design principle used in object-oriented programming to reverse control and achieve loose coupling of classes. This article will explain the basics of inversion of control (IoC) in Kotlin, why it is essential in excellent software design, and its connection to dependency injection and the strategy pattern. You will get to see just how IoC makes your code less complex, flexible, and easily testable. 
 author: love-otudor
-date: 2021-07-15T00:00:00-05:00
+date: 2021-07-15T00:00:00-03:13
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
