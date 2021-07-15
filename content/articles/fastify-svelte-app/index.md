@@ -426,25 +426,6 @@ Next, copy and paste the following code in your `Posts.svelte` component file:
         </div>
     </div>
 </section>
-
-<style>
-    .underline{
-        text-decoration: underline;
-        color: rgb(44, 128, 255);
-    }
-    section{
-        display: flex;
-    }
-
-    .card-text{
-        display: flex;
-        align-items: center;
-    }
-    .card-text span{
-        margin-left: 50px;
-    }
-
-</style>
 ```
 
 Let's briefly understand the above `Posts.svelte` code:
