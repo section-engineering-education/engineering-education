@@ -6,7 +6,7 @@ url: /switch-vs-router-vs-hub/
 title: Differences between a Hub, a Switch, and a Router
 description: In this article, we are going to discuss the differences between a switch, a router, and a hub. In addition, we will discuss their functionalities in a network.
 author: jedidah-mwangi
-date: 2021-07-14T00:00:00-21:00
+date: 2021-07-16T00:00:00-12:15
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: Differences between a Hub, Switch, and Router example image
 ---  
 
-In networking, the terms `Switches`, `Hubs`, and `Routers` are sometimes used interchangeably which is wrong.
+In networking, the terms `switches`, `hubs`, and `routers` are sometimes used interchangeably which is wrong.
 <!--more--> 
 Despite them being similar, there are differences in how they handle data. These three components may be integrated into a single device making it hard for a student to distinguish between them.
 
