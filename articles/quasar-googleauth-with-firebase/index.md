@@ -329,7 +329,8 @@ Navigate to the `boot` folder and open the `firebase.js` file.
 Paste the script you copied from the previous step for the firebase SDK. Replace the code in `firebase.js` file to resemble the one below.
 
 ```JavaScript
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "xxxxxxxxxxx",
@@ -339,7 +340,11 @@ const firebaseConfig = {
     messagingSenderId: "xxxxxxxxx",
     appId: "xxxxxxx"
   };
+ 
+ // if firebase isn't already initialized, initialize using the above credentials
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+}  
 
 export default firebase
 ```
