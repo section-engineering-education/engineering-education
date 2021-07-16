@@ -395,6 +395,26 @@ The above Html webpage should look like this:
 
 ### Deleting a post by ID
 
+To delete a post, we will make a `DELETE` request using fetch API to our backend. The logic is to filter the `ID` and return the remaining posts except the filtered one. Let's create the function that handles this:
+
+```js
+    const deletePost = async (id)=>{
+       const response =  await fetch(`http://localhost:3000/api/blogs/${id}`, {
+            method: 'DELETE'
+        })
+
+        const msg = await response.json()
+        console.log(msg)
+        // .then(res => console.log(res)).catch(err=>console.log(err))
+    }
+```   
+
+We need to bind this to our delete button in the HTML template.
+
+```html
+<span><button class="btn btn-danger" on:click={deletePost}>Delete</button></span>
+```
+
 The source code for this tutorial can be found on [this](https://github.com/KayveTech/fastify-svelte-app) GitHub repository.
 
 ### Conclusion
