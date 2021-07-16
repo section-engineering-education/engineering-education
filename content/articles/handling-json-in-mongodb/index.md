@@ -6,7 +6,7 @@ url: /handling-json-in-mongodb/
 title: Handling JSON in MongoDB
 description: In this article we will learn how to structure, import, export, and save JSON data in MongoDB. JavaScript Object Notation (JSON) is a data exchange format solely based on JavaScript.
 author: simon-salva
-date: 2021-07-16T00:00:00-12:30
+date: 2021-07-16T00:00:00-16:30
 topics: []
 excerpt_separator: <!--more-->
 images:
