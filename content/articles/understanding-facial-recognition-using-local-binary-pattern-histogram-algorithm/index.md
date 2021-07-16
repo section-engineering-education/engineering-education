@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/
+url: /understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/
 title: Understanding Facial Recognition Using Local Binary Pattern Histogram (LBPH) Algorithm
 description: This article will explain what LBPH algorithm is, its applications and how is it applied in facial recognition. It will further detail the process of facial recognition using LBPH and gauge its efficiency in performing facial recognition. Finally, this article will cite some of the best application areas of LBPH.
 author: ruth-mare
-date: 2021-07-16T08:00:00--7:00
+date: 2021-07-16T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/hero.jpg
+  - url: /engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/hero.jpg
     alt: lbph facial recognition cover image 
 ---
 The Local Binary Pattern Histogram (LBPH) algorithm is a face recognition algorithm based on a local binary operator, designed to recognize both the side and front face of a human. However, the recognition rate of the LBPH algorithm is limited, if the conditions, such as in the expression diversification, disorientation, and a change in the lighting performance manifest.
@@ -76,7 +76,7 @@ The first step is the learning of the algorithm. It makes use of a data-set of i
 
 The following image illustrates the above conversions:
 
-[Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/lph_operation.png)
+[Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/lph_operation.png)
 
 [Image source](https://i.stack.imgur.com/ZU3aC.png)
 
@@ -84,7 +84,7 @@ The following image illustrates the above conversions:
 
 The following image illustrates the above exactraction:
 
-[Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-(lbph)-algorithm/extracting_histograms.jpg)
+[Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/extracting_histograms.jpg)
 
 [Image source](https://www.semanticscholar.org/paper/Face-Recognition-based-Attendance-System-using-Haar-Chinimilli-A./cd4429cac9a4d9c99796f990974dd9a9ff88f1f8/figure/4)
 
