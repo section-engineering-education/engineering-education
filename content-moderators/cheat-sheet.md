@@ -9,6 +9,18 @@ Below are some copy and paste responses we have useful from time to time: Feel f
 
 "Thank you for the topic suggestion @**{author username}**, however this is a bit outside of our preferred topic areas. We're more interested in original, practitioner-focused content that takes a deeper dive into programming-centric concepts. Please feel free to suggest an alternate topic to explore." 🚀
 
+### Closing a PR
+Thank you for your response and we thank you for submitting your topic.
+After some careful consideration it struck us that this topic may be a bit over saturated throughout other blog sites and official documentations as previously mentioned on your topic form by our content moderator.
+
+We typically refrain from publishing content that is covered widely on the net or other blogs. As we're more interested in original, practitioner-focused content that takes a deeper dive into programming-centric concepts.
+
+We believe this is the best way for students to build a great portfolio (for potential employers) is by building what does not exist and what can provide the most value.
+
+You are more than welcome to pursue another more in depth topic - or continue working on this one by flushing it out a bit more (i.e. making it more in depth - "such as covering the video and audio APIs like this article and/or providing more detail about how the APIs work or some suggestions to readers as to how they could extend the web app shown (i.e. what extra functionality they could implement).")
+
+We will be closing the PR simply to make room in the queue - but we can gladly reopen it anytime once the article is publish ready
+
 #### Closing Due to Multiple Queued Articles
 
 "To help avoid a backlog queue (and longer review times) we are currently only accepting ONE article TOPIC/PR approved at a time 👍. We can re-open this topic - once the 1st one has been merged/published."
