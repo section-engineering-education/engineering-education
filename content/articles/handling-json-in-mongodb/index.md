@@ -126,7 +126,7 @@ If your import was a success, you should get the message below in the terminal
 Now to verify the import, run the command below to view the imported data:
 ```bash
 db.students.find()
-
+```
 This command should fetch all objects from the JSON file that was imported as below:
 ```json
 db.students.find()
