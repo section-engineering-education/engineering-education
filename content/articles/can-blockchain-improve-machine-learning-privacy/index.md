@@ -20,7 +20,7 @@ Machine Learning algorithms have thrived in the era of big data. But to use data
 Machine Learning algorithms have thrived in the era of big data. But to use data safely and effectively, we have to take privacy into account when developing Machine Learning systems. This is especially the case when it comes to using sensitive data such as protected health records. There have been previous attempts to solve this problem using Federated Learning and Differential Privacy but it turns out that these systems have a flaw that Blockchain technology might help us solve.
 
 ### Prerequisites
-Before reading this article, have a read on these two articles on [Differential Privacy](https://www.section.io/engineering-education/understanding-differential-privacy/) and [Federated Learning](https://www.section.io/engineering-education/secured-deeplearning-in-remote-devices/) to get an in-depth understanding of these methods which try to ensure privacy in our data and AI models. 
+Before reading this article, have a read on these two articles on [Differential Privacy](https://www.section.io/engineering-education/understanding-differential-privacy/) and [Federated Learning](https://www.section.io/engineering-education/secured-deeplearning-in-remote-devices/) to get an in-depth understanding of these methods. 
 
 ### Outline
 1. [Differential Privacy](#differential-privacy)
