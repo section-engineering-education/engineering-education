@@ -133,7 +133,7 @@ generateButtons();
  
  
 Here's what the game looks like at this point:
-![hangman 1](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/hangman 1.jpg)
+![the-game-buttons](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/the-game-buttons.jpg)
  
 We will update the wrong guesses, i.e., setting the maximum number of wrong guesses a player can get per game. You can do that using the code below:
  
@@ -165,7 +165,7 @@ guessedWord();
 ```
  
 Here's how it looks like at this point:
-![hangman 2](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/hangman 2.jpg)
+![the-game-image](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/the-game-image.jpg)
  
 Now let’s actually guess the letters.
 
