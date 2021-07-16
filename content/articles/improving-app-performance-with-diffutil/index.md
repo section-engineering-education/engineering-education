@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /improving-app-performance-with-diffutil/
+title: Improving app Performance With DiffUtil
+description: This article takes the reader through improving an android app's performance by implementing DiffUtil. DiffUtil is a utility class that computes the variation between two sets of data and returns a list of update operations that change the old list to the new one.
+author: maurine-muthoki
+date: 2021-07-16T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/improving-app-performance-with-diffutil/hero.png
+    alt: DiffUtil example image
+---
 ### Introduction
 The performance of a mobile application is one of the most important aspects in determining the user's experience. Performance refers to the app's capability to load and refresh data on various events. Most of the time, when you want to update data in a RecyclerView, you probably use `notifyOnDataSetChanged()` or `notifyOnItemPositionChanged()` methods. While these methods work pretty fine with small amount of data, it becomes hectic for your app to update and fully reload huge amounts of data.
-
+<!--more-->
 This easily leads to ANR (App Not Responding) exception that annoys your application's users. An annoyed user will always give negative feedback!
 
 With the use of `DiffUtil`, we can easily handle changes in a dataset and instantly reflect them on a RecyclerView.
@@ -313,3 +329,6 @@ For further reading, release notes, or advanced implementation of DiffUtil, plea
 The source code for this tutorial can be found [here](https://github.com/MaurineM/DiffUtil-in-android).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
