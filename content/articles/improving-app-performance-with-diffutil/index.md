@@ -1,44 +1,41 @@
+### Introduction
+The performance of a mobile application is one of the most important aspects in determining the user's experience. Performance refers to the app's capability to load and refresh data on various events. Most of the time, when you want to update data in a RecyclerView, you probably use `notifyOnDataSetChanged()` or `notifyOnItemPositionChanged()` methods. While these methods work pretty fine with small amount of data, it becomes hectic for your app to update and fully reload huge amounts of data.
+
+This easily leads to ANR (App Not Responding) exception that annoys your application's users. An annoyed user will always give negative feedback!
+
+With the use of `DiffUtil`, we can easily handle changes in a dataset and instantly reflect them on a RecyclerView.
+
+DiffUtil is a utility class that computes the variation between two sets of data and returns a list of update operations that change the old list to the new one. It uses the [Eugene W. Myers'](https://www.nathaniel.ai/myers-diff/) algorithm to figure out how many updates are essential to convert one data set to the other.
+
+Since Myers' technique does not handle objects that have been moved, DiffUtil does a second attempt on the output to identify elements that have been relocated. This saves time and the device's resources while providing a better experience for the user.
+
 ### Table of content
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Build an Android project](#build-an-android-project)
-- [Enable viewBinding](#enable-viewbinding)
-- [Set up a RecyclerView](#set-up-recyclerview)
+- [Building an Android project](#building-an-android-project)
+- [Enabling viewBinding](#enabling-viewbinding)
+- [Setting up a RecyclerView](#setting-up-recyclerview)
 - [Model Application data](#data-model-for-the-app)
-- [Create DiffUtil Callback class](#create-diffutil-callback-class)
+- [Creating DiffUtil Callback class](#creating-diffutil-callback-class)
 - [Understanding the DiffUtil callbacks](#understanding-the-diffutil-callbacks)
-- [Attach DiffUtil to an Adapter](#attach-diffutil-to-an-adapter)
+- [Attaching DiffUtil to an Adapter](#attaching-diffutil-to-an-adapter)
+- [Utilizing the Adapter](#utilizing-the-adapter)
 - [Testing and debugging the app](#test-the-app)
 - [Conclusion](#conclusion)
 
-### Introduction
-The performance of a mobile application is one of the most important aspects in determining the user experience. Performance refers to the app's capability to load and refresh data on various events.
-
-Most of the time, when you want to update data in a RecyclerView, you probably use `notifyOnDataSetChanged()` or `notifyOnItemPositionChanged()` methods. While these work pretty fine with a small amount of data, it becomes hectic for your app to update and fully reload huge amounts of data.
-
-This easily leads to ANR (App Not Responding) exception that annoys your application users. An annoyed user will always give negative feedback!
-
-#### How can we solve this problem?
-With the use of `DiffUtil`, we can easily handle changes in a dataset and instantly reflect them on a RecyclerView.
-
-DiffUtil is a utility class that computes the variation between two sets of data and returns a list of update operations that changes the old list to the new one. It uses the [Eugene W. Myers'](https://www.nathaniel.ai/myers-diff/) algorithm to figure out how many updates are essential to convert one data set to the other.
-
-Since Myers' technique does not handle objects that have been moved, DiffUtil does a second attempt on the output to identify elements that have been relocated, saving time and the device's resources while providing a better experience for the user. 
-
 ### Prerequisites
 This article assumes that you have prior knowledge on:
-
 1. Creating Android apps using [Android Studio](https://developer.android.com/studio).
 2. Basics of [Kotlin programming language](https://kotlinlang.org/).
 3. Working with the imperative paradigm in Android - using `XML` and view groups such as [Constraint Layout](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout).
 4. ViewBinding and/or [DataBinding](https://developer.android.com/topic/libraries/data-binding).
 5. The basics of an [Android Recyclerview](https://developer.android.com/jetpack/androidx/releases/recyclerview).
 
-### Build an Android project
-Open Android Studio and create a project of your choice. Make sure that you select an API version not less than 16 to make your app compatible with DiffUtil.
+### Building an Android project
+Open Android Studio and create a project with a template of your choice. Make sure that you select an API version not less than 16 so as to make your app compatible with DiffUtil.
 
-### Enable viewBinding
-viewBinding allows us to access views and viewGroups in `XML` layout files using their respective binding classes.
+### Enabling viewBinding
+ViewBinding allows us to access views and viewGroups from `XML` layout files using their respective binding classes.
 
 ```bash
 // in the build.gradle file (module level)
@@ -49,7 +46,7 @@ android{
 }
 ```
 
-### Set up RecyclerView
+### Setting up RecyclerView
 At this point, we're going to create a RecyclerView and set it up with its core components.
 
 #### User Interface
@@ -86,7 +83,8 @@ Open your `XML` layout file and paste the following code.
         app:layout_constraintVertical_bias="0.96" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-This includes a button that, when clicked, will perform an update operation on the Recyclerview. 
+
+This includes a button that, when clicked, will perform an update operation on the Recyclerview.
 
 #### Row item
 This is the unit building block that determines the data representation format in a Recyclerview. It also takes effect on data models in the app for compatibility and necessity purposes.
@@ -141,7 +139,8 @@ This is the unit building block that determines the data representation format i
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-Here we've created a student item card that holds two textViews.
+
+Here, we've created a student item card that holds two textViews.
 
 ### Data model for the App
 A dataset defines the type of data objects that the adapter works with. Create a Koltin data class named `Student` and paste the following.
@@ -152,8 +151,9 @@ data class Student(
     val name: String
 )
 ```
+
 #### Recyclerview Adapter
-An adapter does the hard task of connecting the dataset with a Recyclerview. Create a Kotlin class named `StudentAdapter` and paste the following.
+An adapter does the hard task of connecting the dataset to a Recyclerview. Create a Kotlin class named `StudentAdapter` and paste the following.
 
 ```kotlin
 class StudentAdapter : RecyclerView.Adapter<StudentAdapter.CardViewHolder>() {
@@ -177,12 +177,13 @@ class StudentAdapter : RecyclerView.Adapter<StudentAdapter.CardViewHolder>() {
     }
 }
 ```
+
 We'll later use this adapter to implement DiffUtil callbacks.
 
-### Create DiffUtil Callback class
+### Creating DiffUtil Callback class
 Now, proceed to create a Kotlin class named `MyDiffUtil` and paste the following.
 
-```koltin
+```kotlin
 class MyDiffUtil(
     private val oldList: List<Student>,
     private val newList: List<Student>
@@ -214,26 +215,30 @@ class MyDiffUtil(
 ```kotlin
 override fun getOldListSize(): Int { }
 ```
+
 Returns the size of the old list passed in the constructor of the class.
 
 ```kotlin
 override fun getNewListSize(): Int { }
 ```
+
 Returns the size of the new or updated list passed in the constructor.
 
 ```kotlin
 override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean { }
 ```
-This returns a Boolean value on checking if items at corresponding positions are the same or not. 
+
+This returns a Boolean value on checking if items at corresponding positions are the same or not.
 
 ```kotlin
 override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean { }
 ```
+
 Checks if the content of items at corresponding positions is the same.
 
->**NOTE:** Both oldList and newList should hold elements of the same type.
+> **NOTE:** Both oldList and newList should hold elements of the same type.
 
-### Attach DiffUtil to an Adapter
+### Attaching DiffUtil to an Adapter
 Navigate to `StudentAdapter.kt` file and create a public function that we'll use to dispatch updates to the adapter.
 
 ```kotlin
@@ -246,7 +251,7 @@ fun setData(newList: List<Student>) {
 }
 ```
 
-### Utilize the Adapter
+### Utilizing the Adapter
 Now, the adapter is ready to be used. Attach it to the Recyclerview as shown.
 
 ```kotlin
@@ -288,16 +293,17 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 Here we've initialized the adapter with a dummy list. When the update button is clicked, the RecyclerView is updated with a new dummy list.
 
->**TIP:** When working on a production project, you should get data from a database, preferably [room database](https://developer.android.com/jetpack/androidx/releases/room) or [a remote database](https://firebase.google.com/docs/firestore).
+> **TIP:** When working on a production project, you should get data from a database, preferably [room database](https://developer.android.com/jetpack/androidx/releases/room) or [a remote database](https://firebase.google.com/docs/firestore).
 
 ### Test the App
 After running the App, you should see something similar to this;
 
 ![App testing image-gif](/engineering-education/improving-app-performance-with-diffutil/app-testing.gif)
 
-Notice that only the new items are updated. This way, the device's resources such as battery and memory are saved. As a result, the users have a quick and seamless experience. 
+Notice that only the new items are updated. This way, the device's resources such as battery and memory are saved. As a result, the users have a quick and seamless experience.
 
 ### Conclusion
 That's it! Congratulations!, you can now boost your app performance using DiffUtil.
