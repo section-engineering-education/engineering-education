@@ -42,7 +42,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 ```
-**Explain what the code below does and why it is necessary**
+Let us confirm the version of Tensorflow we are using. Keras runs on top of Tensorflow 2.
 
 ```python
 print(tf.__version__)
@@ -64,7 +64,7 @@ Go to the directory where the dataset is, in your local computer, and select it.
 
 ![Uploaded dataset](/engineering-education/build-ann-with-keras/uploaded-dataset.PNG)
 
-**Explain here what the code below does**
+We load our dataset and display the first five records in the dataset.
 
 ```python
 dataset = pd.read_csv('/content/Churn_Modelling.csv')
@@ -91,7 +91,11 @@ Here are the features and labels obtained after separation:
 
 ![dataset label](/engineering-education/build-ann-with-keras/labels.PNG)
 
-You notice that there are some categorical variables in our dataset. They are in the geography and gender columns. We have to encode these variables. Since there are two unique variables in the gender column, we label-encode it. Then, we one-hot encode the geography column.
+You notice that there are some categorical variables in our dataset. They are in the geography and gender columns. We have to encode these variables. Since there are two unique variables in the `Gender` column, we label-encode it. Then, we one-hot encode the `Geography` column.
+
+One-Hot encoding creates new columns in the dataset. The number of new columns created depends on the number of unique values in the column to be one-hot encoded. These new columns replace the geography column. For instance, `1.0, 0.0, 0.0` represents a customer from `France`.
+
+Label encoding the `gender` column replaces the texts with numbers. `0` represents `Female`, while `1` represents `Male`.
 
 ```python
 # label encode the gender column
@@ -100,7 +104,7 @@ le = LabelEncoder()
 X[:, 2] = le.fit_transform(X[:, 2])
 print(X)
 ```
-This are the results obtained after label-encoding:
+This is the result obtained after label-encoding:
 
 ![label encode the gender column](/engineering-education/build-ann-with-keras/label-encoding.PNG)
 
@@ -112,7 +116,7 @@ ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remaind
 X = np.array(ct.fit_transform(X))
 print(X)
 ```
-These are the results obtained after one-hot encoding:
+This is the result obtained after one-hot encoding:
 
 ![one hot encode the geography column](/engineering-education/build-ann-with-keras/onehot-encoding.PNG)
 
@@ -207,7 +211,7 @@ print(ann.predict(sc.transform([[0, 0, 1, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]]
 ```
 ![Predicted Probability of New Customer](/engineering-education/build-ann-with-keras/predicted-probability.PNG)
 
-Remember that after one-hot encoding, the geographical location, `Spain` is represented as `0, 0, 1`. It will be in the first three columns of our matrix of features.
+Remember that after one-hot encoding, `0, 0, 1` represents the geographical location, `Spain`. It will be in the first three columns of our matrix of features.
 
 We can add a threshold of 0.5. The customer will leave the bank if the predicted probability is above 0.5. In extreme situations, we can increase the threshold. That is if we want our model to predict `True` only if it is very confident.
 
@@ -225,9 +229,7 @@ pd.DataFrame(list(zip(y_test, y_pred)), columns=['Actual', 'Predicted'])
 ```
 ![Actual Values vs Predicted Values](/engineering-education/build-ann-with-keras/actual-vs-predicted-values.PNG)
 
-**Comment on these results obtained**
-
-Now we can check the accuracy score and build a confusion matrix. 
+It looks like our model got most of the predictions right. But, it made a mistake for the second customer in our test set. We can check the accuracy score, and build a confusion matrix. 
 
 ```python
 from sklearn.metrics import confusion_matrix, accuracy_score
@@ -236,11 +238,13 @@ print(accuracy_score(y_test, y_pred))
 ```
 ![Confusion Matrix & Accuracy Score](/engineering-education/build-ann-with-keras/confusion-matrix-and-accuracy-score.PNG)
 
-**Comment on these scores obtained**
+The accuracy score is 85.9%. Out of 2000 cases, our model predicted 1718 cases correctly.
+The confusion matrix shows the number of True Positives, False Positives, False Negatives, and True Negatives.
+Our model inaptly predicted that 193 customers churn (False Positives), and 89 customers did not churn (False Negatives). But it correctly predicted that 1506 customers churn (True Positives), and 212 customers did not churn (True Negatives). 
 
 ### Conclusion
 
-In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. We got an accuracy of 86%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
+In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. We got an accuracy of 85.9%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
 
 ---
 
