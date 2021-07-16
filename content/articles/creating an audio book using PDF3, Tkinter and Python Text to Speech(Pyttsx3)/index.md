@@ -4,7 +4,7 @@ The wise men say that no matter how busy you are, you should find time to read a
 
 In this tutorial, we shall learn how to create a free audio book from a pdf file using python.
 
-### 	Introduction
+### Introduction
 
 In order to build our own audiobook converter, we shall use the following Python libraries: `Pyttsx3`, `PyPDF3` and `tkinter`. The latter(`tkinter`) will be used to create a dialog window through which we shall use to select our desired pdf files.
 We shall look deeper into the other libraries as we continue. 
@@ -16,10 +16,11 @@ We shall look deeper into the other libraries as we continue.
 3. Python text to speech library version3
 4. Python PDF version 3
 5. Understanding of [Tkinter](https://docs.python.org/3/library/tk.html)
+6. Have Windows 8 and above Operating system installed into your machine.
 
 ### What is PyPDF3?
 
-From PyPDF3's official documentation, it is a Pure-Python library built as a PDF toolkit. It was built to help with the following:
+From [PyPDF3's official documentation](https://pythonhosted.org/PyPDF2/), it is a Pure-Python library built as a PDF toolkit. It was built to help with the following:
 
 * Extracting document information (title, author, etc.)
 * Splitting documents page by page.
@@ -36,7 +37,7 @@ From PyPDF3's official documentation, it is a Pure-Python library built as a PDF
 
 ### What is Pyttsx3?
 
-From the official documentation, Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
+From the [Pyttsx3 official documentation](https://pyttsx3.readthedocs.io/en/latest/), Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
 
 ### Application
 
@@ -79,7 +80,7 @@ After this, we are ready to write our code as you will see below.
 # We first import the libraries we just installed
 
 import pyttsx3
-import PYPDF3
+import PyPDF3
 from tkinter import Tk  # comes pre-installed with Python
 
 from tkinter.filedialog import askopenfilename 
@@ -90,7 +91,7 @@ Tk().withdraw() # prevents the root window from appearing
 file = askopenfilename()
 
 # Read the name of the pdf file from the user
-pdfreader = PyPDF3.pdfFileReader(file)
+pdfreader = PyPDF3.PdfFileReader(file)
 
 # Read the number of pages in the pdf file
 pages = pdfreader.numPages
@@ -115,7 +116,9 @@ After running the code above, you'll see the a dialog window pop up.
 
 Select the pdf file of your choice and enjoy your book as your machine reads it to you.
 
->  **Note:** Not all pdf files will be read through and recorded. Try using the numbered pages pdf files for greater results.
+Have a preview for the results on my [replit account](https://replit.com/join/xsaeqptwdi-frederico23) 
+
+> **Note:** Not all pdf files will be read through and recorded. Try using the unnumbered pages pdf files for better results.
 
 ### Conclusion
 
