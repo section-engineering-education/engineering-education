@@ -7,7 +7,7 @@ title: Can blockchain improve machine learning privacy?
 description: In this article, we will explore whether blockchanin technology can improve machine learning privacy. 
 author: wilkister-mumbi
 date: 2021-07-15T00:00:00-18:30
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -46,7 +46,7 @@ Then you might turn to Federated Learning instead.
 ### Federated Learning
 Unlike DP, Federated Learning (FL) does not focus on changing the data itself, instead, it focuses on training an algorithm across multiple separate datasets without sharing the information between the datasets themselves. 
 
-In this type of learning, each person's data must remain on their device. You build the main model of the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained is transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
+In this type of learning, each person's data must remain on their device. You build the main model of the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained models are transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
 
 At this point, you have used FL to create a global model without it having seen the data that your model was trained on. You have also built different models that are user-specific. This improves individual performance compared to the global model itself.
 
