@@ -1,4 +1,4 @@
-### FACE RECOGNITION USING PRINCIPAL COMPONENT ANALYSIS(PCA)
+### FACE RECOGNITION USING COMPONENT ANALYSIS(PCA)
 ### Introduction
 Principal Component Analysis (PCA) is an unsupervised, non-parametric statistical technique primarily used for dimensionality reduction in machine learning. PCA is a way of reducing the dimensions of a large dataset by transforming the large dataset into a smaller dataset but ensuring that the smaller dataset contains more information than the large dataset. By reducing the dataset, we are increasing reducing the accuracy but PCA works on the principle of trading little accuracy fr simplicity. This is because smaller data are easier to explore and visualize making the analysis of data easier and faster for machine learning algorithms.
 Eigenvectors and eigenvalues are the linear algebra concept that is used to compute from the covariance matrix to determine the principal component of the data. Face recognition is the process of identifying an individual using their face. Matlab has numerous built-in functions that help calculate the principal components. In this article, we will see how we can use it to recognize the face.
@@ -20,95 +20,119 @@ We create two folders for training(training DB) and testing(testing DB). All ima
 ### Matlab program for training
 We first input the number of images for training which is 300 and enter the dominant eigenvalues to keep which is 50. The dominant eigenvalues to keep is the new dimensions of the images after passing through the PCA space.
 ```Matlab
-
+n = input('enter the no. of images for training');
+L = input('enter the number of dominant eigen values to keep');
 ```
 We then specify the dimensions. As we said earlier, we will reduce the dimensions to half, that is, 90 x 100 then initialize this data matrix which will be the product of image dimensions and the number of training images which is 300 x 900. This is done as follows;
 ```Matlab
-
+M = 100;   N = 90;      % Required image dimensions
+X = zeros(n, (m*n));   % Initialization of data matrix
+T = zeros(n,L);         %initializing transformed data set(T) in pca space(300*50)
 ```
 We then use the loop to read all the images in the training folder and convert them to grayscale images since the images are coloured. Resize the images and then reshape them into a one-dimensional vector. This is done by the for loop as shown.
 ```Matlab
-
+for count = 1:n
+I = imread(sprintf('%d.jpg', count));       %Reading images
+if size(I, 3)> 1          %This loop checks for only the colored images and convert them to gray scale
+I = rgb2gray(I);
+end
+I = imresize(I,[1,M*N]);           %reshaping images to 1-D vectors.
+end
 ```
 We then copy the database for further use.
 ```Matlab
-
+Xb = X;             %Copy database for further use
 ```
 We then find the mean for all the images and use for loop to subtract the mean from every 10 images. This subtraction is just for shifting the original image from the old x,y coordinate system to the new u,v axis system. U,v system is a system similar to the x,y system. The difference is the change in the naming. U is the x-axis and the v is the y-axis in this case.
 ```Matlab
-
+m = mean(X);    % mean of all images
+for i = 1:n 
+X(i,:) = X(i,:)-m;      %Subtracting mean from each 1-D image
+end
 ```
-We then find the covariance matrix. a matrix is used to describe the relationship between different dimensions. In a more easy-to-understand way, the covariance matrix is to define the relationship in the entire dimensions as the relationships between every two random variables. 
+We then find the covariance matrix. a matrix is used to describe the relationship between different dimensions. In a more easy-to-understand way, the covariance matrix is to define the relationship in the entire dimensions as the relationships between every two ranuik,,dom variables. 
 ```Matlab
-
+Q = (X'*X)/(n-1);        %Finding covariance matrix
 ```
 We then find the eigenvalues and eigenvectors of the covariance matrix(Q) using the `eig` command.
 ```Matlab
-
+[Evecam, Evalm] = eig(Q);  %Getting eigen values and eigen vectors of COV matrix[Q];
 ```
-The eigenvector will be stored in `evacm` and eigenvalues on the `evalm`. We then extract the eigenvalues using the `diag` function and all these values stored in `eval`
+The eigenvector will be stored in `evacam` and eigenvalues on the `evalm`. We then extract the eigenvalues using the `diag` function and all these values stored in `eval`
 ```Matlab
-
+Eval = diag(Evalm); %Extracting all eigen values 
 ```
 The extracted eigenvalues are then sorted to get the largest `eval` values. The sorted eval values are stored in `evalSorted` and the corresponding index in the `index`. This done by;
 ```Matlab
-
+[Evalsorted, Index] = sort(Eval, 'descend');  %sorting Eigen values
 ```
-We then reshuffle the eigenvectors `evacm`. This is to change the eigenvectors into a column vector and arranged them in descending order. After reshuffling, we compute the eigenvectors to have a reduced eigenvector. This means that in the sorted eigenvector, we consider the first `L` vectors(`L` was 50) as shown in the code below.
+We then reshuffle the eigenvectors `evacam`. This is to change the eigenvectors into a column vector and arranged them in descending order. After reshuffling, we compute the eigenvectors to have a reduced eigenvector. This means that in the sorted eigenvector, we consider the first `L` vectors(`L` was 50) as shown in the code below.
 ```Matlab
-
+Evecsorted = Evecam(:, Index);
+Ppca = Evecsorted(:, 1:L);        %Reduced transformation matrix [Ppca]
 ```
 We then use the for loop to project each image to the PCA space. Each image from the spatial domain and the mean is subtracted then multiplied by the transformation matrix(ppca) and storing back to the matrix T, which is the transformed reduced matrix. This means that each image is projected to the PCA space and reduced to the size 1 x L which is 1 x 50. So the huge 1 x 9000 is reduced to 1 x 50. The code is as shown.
 ```Matlab
-
+for i = 1:n
+    T(i,:) = (Xb(i,:)-m)*Ppca;    %projecting each image to pca space
+end
 ```
-When we run the whole code, in the command window, there is a command asking the user to input the number of images for training(300) and then the dominant eigenvalues(50). After inputting all these values, the training begins. This training can be seen at the lowest left part of Matlab's window as it is indicated busy. This means Matlab is doing something which is training.
+When we run the whole code, in the command window, there is a command asking the user to input the number of images for training(300) and then the dominant eigenvalues(50). After inputting all these values, the training begins. This training can be seen at the lowest left part of Matlab's window on the left side as it is indicated busy as shown in the image. This means Matlab is doing something which is training.
 
-image 1
+![This shows that matlab is busy](image2.png)
 From the training, we will select some variables and store them for use in testing. This will help to avoid re-running the training program again and again. This is done as follows.
-- In the workspace, select all the variables and then deselect variables `m`, `M`, `n`, `N` and ``ppca`.
+- In the workspace, select all the variables and then deselect variables `m`, `M`, `n`, `N` and `ppca`.
 - Delete all other variables and then click on the save workspace to save these data in the trainDB folder as pcadb.
 
 ### Matlab's code for testing
 Before testing, we will load the variables that we saved from the training.
 ```Matlab
-
+%first load required variables in workspace for testing
+clc;
+load pcadb;       %loading pcadb.mat file 
 ```
 We then select our test image from the database and read it using the `imread` function.
 ```Matlab
-
+[filename, pathname] = uigetfile('*.*', 'Select the Input image');
+filewithpath = strcat(pathname, filename);
+img = imread(filewithpath);
 ```
 We then make a copy of the image, converting it into grayscale, resizing and reshaping the images.
 ```Matlab
-
+imgo = img;
+img = rgb2gray(img);
+img = imresize(img,[1,M*N]);
 ```
 We then project the query image(input image) to PCA space. This means we subtract the mean image `m` from `img` and multiplying this result with transformation matrix `ppca`, `imgpca` is the PCA projected image;
 ```Matlab
-
+imgpca = (double(img)-m)*Ppca;     %projecting query image to PCA space
 ```
 We then initialize the difference array and use the `for` loop to find the distance difference.
 ```Matlab
+distarray = zeros(n,1);    %Initialize difference array
 
+for i = 1:n
+distarray(i) = sum(abs(T(i,:)-imgpca));  %Finding L1 distance
+end
 ```
 From the distance found above, we compute the minimum distance. Minimum distance means the maximum matching. The corresponding index is stored in the `indx` and the resulting image on the `result`. With the same name, we are searching the current directory to find the image.
 ```Matlab
-
+[result, indx] = min(distarray);    %Getting best match
+resulting = imread(sprintf('%d.jpg', indx));   %Getting best matched image
 ```
 This `result` is the output image. We then plot the images.
 ```Matlab
-
+%plotting images
+subplot(121)
+imshow(imgo);
+title('Query Face');
+subplot(122)
+imshow(resultimg);
+title('Recognized Face');
 ```
-When we run this program, we are asked to choose our image from the database. We should choose the image from the testDb and select any image.
+When we run this program, we are asked to choose our image from the database. We should choose the image from the testDB and select any image. After selecting the image, it is recognised as shown.
 
-image 2
-
-We can try to deform the image faces to see the robustness of the program. You can use any software such as paint to make a change on the faces.
-
-image 3(deformed image)
-
-When we use the above image as our input and then run the program, a matching image is still recognised. This shows the efficiency of the program.
+![identified image](image1.png)
 
 ### Conclusion
 Matlab provides a toolbox for easy recognition of the different faces. This is possible by the use of various machine learning algorithms. This makes it a suitable tool for this purpose. Apart from this, Matlab has numerously inbuilt functions that make all the activities easy to carry out. The training and testing process is easily done using the in-built functions.
-
-
