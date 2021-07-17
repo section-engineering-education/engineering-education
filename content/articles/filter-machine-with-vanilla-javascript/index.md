@@ -93,7 +93,7 @@ The HTML code below consist of the default `html boilerplate` to which our `css`
 ```
 
 The above code contains:
-- The `HEAD` tag which houses the `title` and `CSS` file link. The `title` displays on our browser indicating the title of the page. The CSS link points directly to our CSS file and helps pass the set of rules in the CSS file to be applied to the HTML content.
+- The `head` tag which houses the `title` and `CSS` file link. The `title` displays on our browser indicating the title of the page. The CSS link points directly to our CSS file and helps pass the set of rules in the CSS file to be applied to the HTML content.
 - The `main` tag. This contains the main content of our HTML page. Inside the main area we have the `header` tag which contains the header of our application.
 - The `h2` tag to describe our Application with the form that contain our search bar.
 - The `divs` with class attributes of `card` that are duplicated for every letter.
