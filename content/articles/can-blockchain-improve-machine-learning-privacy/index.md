@@ -35,7 +35,7 @@ When it comes to protecting a users' privacy when developing machine learning al
 Let's start with Differential Privacy.
 
 ### Differential Privacy
-Differential Privacy (DP) allows companies to collect information from users without compromising the privacy of the individual. It is a potential approach that medical centers and hospitals can use to share information about their patient data without sharing the patient we are tracking in the process.
+Differential Privacy (DP) allows companies to collect information from users without compromising the privacy of the individual. It is a potential approach that medical centers and hospitals can use to share information about their patient data without sharing the patient they are tracking in the process.
 
 But, DL only works if you have a dataset that's large enough to be able to make the data private while still being able to pull the useful information from it. If your dataset is too small, you may make the data private at the expense of making it unusable. It is only accurate when used on large data sources but tends to provide inaccurate data when used on small datasets. Alternatively, you can be able to recover the patterns that you're interested in sharing at the expense of making it easy to identify the patient that you're sampling from.
 
