@@ -6,6 +6,21 @@ In this tutorial, you will learn how to create a 3D World in React using Three.j
 
 If you are new to 3D objects and environments, just check out this simple article on [How to insert 3D objects into a webpage using html and css](https://www.section.io/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/) written by *Chris Mutua*.
 
+### Table of Contents
+
+- [Initialise new react project](#initialise-new-react-project)
+- [Folder Structure](#folder-structure)
+- [Install dependencies](#install-dependencies)
+  - [package.json (File)](#packagejson-file)
+- [public folder](#public-folder)
+- [src folder](#src-folder)
+  - [App.js (File)](#appjs-file)
+- [Run the app](#run-the-app)
+  - [Add spherical objects](#add-spherical-objects)
+  - [Deeper dive](#deeper-dive)
+- [Conclusion](#conclusion)
+- [References](#references)
+
 ### Initialise new react project
 
 Create a project file in the place you want your project named 'React-3d-environment' and navigate into it. This we shall achieve using the following command on the terminal:
@@ -29,7 +44,7 @@ Now open the app in the VSCode IDE installed on the machine by running the follo
 If it does not launch, you can open it manually and open the folder in it.
 You can also find additional help [here](https://stackoverflow.com/questions/29971053/how-to-open-visual-studio-code-from-the-command-line-on-osx).
 
-#### Folder Structure
+### Folder Structure
 
 There are so many files inside our app directory that we might not need for our project. The generated app folder structure is as shown below:
 
@@ -85,7 +100,7 @@ Do the installation by running the command below:
  npm i @react-three/cannon @react-three/drei nice-color-palettes react-three-fiber three
 ```
 
-#### package.json
+#### package.json (File)
 
 Our '**package.json**' file contents shall look as follows:
 
@@ -137,13 +152,11 @@ Our '**package.json**' file contents shall look as follows:
 
 ### public folder
 
-Now, in the public folder, we shall fetch the 'carbon_normal.jpg' from the following [link](https://raw.githubusercontent.com/franciskaguongo/React-threejs-environment-example/main/public/carbon_normal.jpg). Just download it and copy-paste it there.
-
->>>>>>> Add link
+Now, in the public folder, we shall fetch the '**carbon_normal.jpg**' from the following [link](https://raw.githubusercontent.com/franciskaguongo/React-threejs-environment-example/main/public/carbon_normal.jpg). Just download it and copy-paste it there.
 
 It looks as shown below:
 
->>>>>>>> Image
+![carbon_normal.jpg](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/carbon_normal.jpg)
 
 Or if you are using the *Chrome browser* or any other browser, just right-click on the image above and select the 'Save image' option. Save it as 'carbon_normal.jpg' in the 'public' folder.
 
@@ -151,7 +164,7 @@ Or if you are using the *Chrome browser* or any other browser, just right-click 
 
 In the src folder, there are three main files: 'App.js', 'index.js', and 'styles.css'. Let's look at them individually:
 
-#### App.js file
+#### App.js (File)
 
 In the '**App.js**' we shall do the following:
 
@@ -284,7 +297,7 @@ Access the application on a web browser at `localhost:3000`.
 
 The outcome shall be as shown below:
 
->>>>>>> Image
+![first run](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/first-run.png)
 
 You can click on the boxes, and you will see them being thrown away each time. You can add the intensity of the throw by modifying the values in the `api.applyImpulse` section.
 For example, you can try:
@@ -292,6 +305,8 @@ For example, you can try:
 ```javascript
 api.applyImpulse([0, 5, -10], [1, 1, 1])
 ```
+
+![impulse effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse.gif)
 
 Change the effect on the boxes to make the boxes hover or fly upwards like a drone by changing the `onClick` trigger action to:
 
@@ -302,7 +317,7 @@ Change the effect on the boxes to make the boxes hover or fly upwards like a dro
           }
 ```
 
->>>>>>>>>>>>>>>>gif
+![velocity effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/velocity-effect.gif)
 
 > **Bonus/ Fun activity**: How Quick are you on clicks?
 > Are you able to quickly click on all three boxes and maintain them in the air all at the same time? How long can you keep two? **Remember**, you Lose if one touches the bottom plane!
@@ -324,6 +339,8 @@ Try to add another effect by combining the two effects above into one using 'and
 
 Now let's add other objects which are spheres to the scene. We shall first start with adding functions since we had already imported them into our project.
 The functions will be as shown below:
+
+![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse-and-velocity-effects.gif)
 
 ```javascript
 // This  is used to create spherical objects in the app
@@ -377,7 +394,7 @@ We shall specify the number of objects, in our case we shall use ten (10). The c
 
 > **NOTE:** You can use as many spherical objects as you want. Just remember, the more objects you add the more memory will be used hence the webpage may take longer to load or render and even slow performance.
 
->>>>>>>>>>>>gif
+![spheres](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/spheres.gif)
 
 > Fun activity hint: You can add more power to the cubes as stated before to effectively hit the spheres.
 
