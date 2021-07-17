@@ -6,7 +6,7 @@ url: /build-ann-with-keras/
 title: Building an Artificial Neural Network with Keras
 description: In this article, you will learn how to build and train an Artificial Neural Network with Keras.
 author: iniabasi-affiah
-date: 2021-07-13T00:00:00-15:30
+date: 2021-07-17T00:00:00-15:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -28,12 +28,12 @@ In this article, you will learn how to build and train an artificial neural netw
 ### Outline
 
 -	[Import Libraries](#import-libraries)
--	[Data Pre-processing](#data-pre-processing)
--	[Build and Visualize Model](#build-and-visualize-model)
--	[Train Model](#train-model)
--	[Make Predictions on New Customer](#make-predictions-on-new-customer)
+-	[Data preprocessing](#data-preprocessing)
+-	[Build and visualize the Artificial Neural Network](#build-and-visualize-the-artificial-neural-network)
+-	[Training the ANN](#training-the-ann)
+-	[Evaluating the model](#evaluating-the-model)
 
-### Import Libraries
+### Import libraries
 
 Most of the libraries we will be using have been pre-installed on Google Colab. So, we import them into our code.
 
@@ -42,7 +42,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 ```
-Let us confirm the version of Tensorflow we are using. Keras runs on top of Tensorflow 2.
+Let us confirm the version of Tensorflow we are using. No need to import Keras as it runs on top of Tensorflow 2.
 
 ```python
 print(tf.__version__)
@@ -75,7 +75,7 @@ dataset.head()
 
 Let's now pre-process our data.
 
-### Data Pre-processing
+### Data preprocessing
 
 Not all the features in our dataset are helpful. We do not need the row number, customer id, and customer names. These features will not help us predict if the customer will churn. Hence, we can get rid of them. We use the code below to separate the features and the label.
 
@@ -93,9 +93,9 @@ Here are the features and labels obtained after separation:
 
 You notice that there are some categorical variables in our dataset. They are in the geography and gender columns. We have to encode these variables. Since there are two unique variables in the `Gender` column, we label-encode it. Then, we one-hot encode the `Geography` column.
 
-One-Hot encoding creates new columns in the dataset. The number of new columns created depends on the number of unique values in the column to be one-hot encoded. These new columns replace the geography column. For instance, `1.0, 0.0, 0.0` represents a customer from `France`.
+One-Hot Encoding creates new columns in the dataset. The number of new columns created depends on the number of unique values in the column to be one-hot encoded. These new columns replace the geography column. For instance, `1.0, 0.0, 0.0` represents a customer from `France`.
 
-Label encoding the `gender` column replaces the texts with numbers. `0` represents `Female`, while `1` represents `Male`.
+Label Encoding the `gender` column replaces the texts with numbers. `0` represents `Female`, while `1` represents `Male`.
 
 ```python
 # label encode the gender column
@@ -128,7 +128,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 ```
 
-Finally, we perform feature scaling. It is vital in deep learning. It helps to reduce training time.
+Finally, we perform feature scaling. It is vital in deep learning as it helps to reduce the training time.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -143,7 +143,7 @@ These are the results obtained after feature-scaling:
 
 Now that that's done, let's build and visualize our ANN.
 
-### Build and Visualize Artificial Neural Network
+### Build and visualize the Artificial Neural Network
 
 We build our neural network with the `Sequential()` class. We first create the input layer with 12 nodes. Twelve is the number of rows in our training set. We then add the hidden layers. To keep things simple, we use two hidden layers. The initial hidden layer has 12 nodes, while the next layer has 8 nodes. In the hidden layers, we use the relu activation function. Finally, we add the output layer. We use a single node at the output layer since we have only two categories. We also use the sigmoid activation function at the output layer. It will give us the probability of a customer churning.
 
@@ -189,7 +189,7 @@ ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
 
 ![Last 11 epoch of training](/engineering-education/build-ann-with-keras/last-eleven-epochs-of-training.PNG)
 
-### Evaluate the Model
+### Evaluating the model
 
 Now that our model training is complete, we can make predictions on a single customer. Let us find out if a customer with the details below will churn.
 
