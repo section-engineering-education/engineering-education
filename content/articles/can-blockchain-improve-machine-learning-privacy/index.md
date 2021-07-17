@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /can-blockchain-improve-machine-learning-privacy/
-title: Can blockchain improve machine learning privacy?
-description: In this article, we will explore whether blockchanin technology can improve machine learning privacy. 
+title: The Case for Blockchain for Machine Learning
+description: In this article, we will explore whether blockchain technology can improve machine learning privacy. 
 author: wilkister-mumbi
 date: 2021-07-15T00:00:00-18:30
 topics: [Machine Learning]
@@ -39,14 +39,12 @@ Differential Privacy (DP) allows companies to collect information from users wit
 
 But, DL only works if you have a dataset that's large enough to be able to make the data private while still being able to pull the useful information from it. If your dataset is too small, you may make the data private at the expense of making it unusable. It is only accurate when used on large data sources but tends to provide inaccurate data when used on small datasets. Alternatively, you can be able to recover the patterns that you're interested in sharing at the expense of making it easy to identify the patient that you're sampling from.
 
-But what if you don't want to deal with protecting the data itself? 
-
-Then you might turn to Federated Learning instead.
+But what if you don't want to deal with protecting the data itself? Then you might turn to Federated Learning instead.
 
 ### Federated Learning
 Unlike DP, Federated Learning (FL) does not focus on changing the data itself, instead, it focuses on training an algorithm across multiple separate datasets without sharing the information between the datasets themselves. 
 
-In this type of learning, each person's data must remain on their device. You build the main model of the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained models are transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
+In this type of learning, each person's data must remain on their device. You build the main model on the cloud and send it to each person's phone. The model is trained on their device and a copy of all the trained models are transmitted back to the cloud to be compiled into one large model. Depending on your goals, you may send copies of the global model back to each user's device to incorporate it into their personalized models for better generalization.
 
 At this point, you have used FL to create a global model without it having seen the data that your model was trained on. You have also built different models that are user-specific. This improves individual performance compared to the global model itself.
 
