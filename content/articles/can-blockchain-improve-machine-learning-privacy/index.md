@@ -65,7 +65,7 @@ Let's find out!
 
 *[Image Source: IEEE](DOI:10.1109/ACCESS.2019.2961372)*
 
-A Blockchain is a list of records or blocks that are linked together by a cryptographic hash. Each block contains the hash value of the information stored in the block before it. These blocks are distributed across many computers in a network so that everyone has access to the current state of the blockchain. This is one of the perks of blockchain as there's no central arbiter on the entire system. So, no one fault point that can bring the entire system down. 
+A Blockchain is a list of records or blocks that are linked together by a cryptographic hash. Each block contains the hash value of the information stored in the block before it. These blocks are distributed across many computers in a network so that everyone has access to the current state of the blockchain. This is one of the perks of blockchain as there's no central arbiter on the entire system. As such, there is no single point of failure.
 
 If someone tries to alter a block, it changes the hash value associated with that block. Thus, changing the hash value of every block that comes after it. This means that that block no longer agrees with every other device that's on the network. So, it's clear that a block has been tampered with within the network.
 
