@@ -210,7 +210,7 @@ We will only control the important sections of our application. The header will 
 
 Another important property is the flex property `flex-direction` which we set to `column` to make the flex items contained in the header to be displayed vertically.
 
-### The app's Javascript Code 
+### Javascript code
 ```js
 const input = document.querySelector("input");
 const notFound = document.getElementById("not-found");
@@ -236,7 +236,7 @@ const filterFunction = () => {
 input.addEventListener("keyup", filterFunction);
 ```
 
-**Above is all the code. I will be explaning every steps below.**
+Above is all the required Javascript code. In the following steps, I will be explaning what the code does.
 
 - Line 1
 
@@ -244,7 +244,7 @@ input.addEventListener("keyup", filterFunction);
 const input = document.querySelector("input");
 ```
 
-A variable called `input` was created. I just choose what I like, you can call it anything. This variable hold the content of the search bar we created with our HTML. `querySelector` return a list of every HTML element with the tag input. Here, we only have one. And the user input can be gotten using the javascript `.value` method
+We create a variable called `input`. This variable holds the content of the search bar we created in our HTML. The  `querySelector` method returns a list of every HTML element with the tag input. Here, we only have one. Later on the user input can be obtained by using Javascript's `.value` method on the `input` variable.
 
 - Line 3 - 4
 
@@ -252,13 +252,13 @@ A variable called `input` was created. I just choose what I like, you can call i
     const filterFunction = () => {
 ```
 
-A new funtion was created us ES6(ECMAScript 2015) format known as arrow function. Inside the function we created another variable that hold every `card` <div>. This function will contain all the logic to filter evrything on the page as we wish.
+We create a new arrow function, `filterFunction` using ES6(ECMAScript 2015) syntax. Inside the function, we create another variable that holds every `card` div. The `filterFunction` function will contain all the logic to filter evrything on the page as we wish.
 
 ```js
 const cards = document.querySelectorAll(".card");
 ```
 
-Using `querySelector` as explained before. Every elements with the class attribute of card will be returned as an array
+We use `querySelector` as explained before; every element with the class attribute of `card` will be returned as an item in an array.
 
 - Line 5
 
@@ -266,7 +266,7 @@ Using `querySelector` as explained before. Every elements with the class attribu
   cards.forEach((item) => {
 ```
 
-The array returned was looped through using the `forEach` method of javascript which return each card as an item as indicated in the code.
+We then loop through the array returned using the `forEach` method.
 
 - Line 6
 
@@ -274,7 +274,7 @@ The array returned was looped through using the `forEach` method of javascript w
 let whatToSearch = item.querySelector("p");
 ```
 
-Inside every card, there is a <p> tag. Which is the paragraph element that hold the letters. line 5 create a variable to hold each <p> tag using `querySelector` on the item return by `forEach` method.
+Inside every card, there is a `<p>` tag that hold the letters. line 5 creates a variable to hold each `<p>` tag using `querySelector` on the item returned by the `forEach` method.
 
 - Line 7 - 8
 
@@ -282,7 +282,7 @@ Inside every card, there is a <p> tag. Which is the paragraph element that hold 
  if (whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >-1)
 ```
 
-An `if statement` to check a condition if certain things is true, `whatToSearch.innerHTML` return the letter inside the `whatToSearch` variable which is the letter in the <p> tag `toUpperCase()` convert it to capital letter. `indexOf` search for a parameter passed which is the capital letter of the `input.value` (this return what the user type into the search bar), check line of code above for clarifications. if it is greater than `-1` it means the search value match but if not greater than `-1`it is not in the list.
+We then use an `if` statement to check if our search input matches the any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` convert it into a capital letter. We then use `indexOf` to check if the users input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
 
 - Line 9
 
@@ -290,7 +290,7 @@ An `if statement` to check a condition if certain things is true, `whatToSearch.
 item.style.display = "";
 ```
 
-This set a CSS property of display on the item to default display property or the property in the CSS file.
+This sets a CSS property of display on the item to default display property or the property in the CSS file.
 
 - Line 10
 
@@ -298,7 +298,7 @@ This set a CSS property of display on the item to default display property or th
 item.style.display = "none";
 ```
 
-If the type caracter does not match. it should display none that is nothing should be shown.
+If the type character does not match, it should set `display` to `none`, that is, nothing should be shown.
 
 - Line 12 -13
 
@@ -306,7 +306,7 @@ If the type caracter does not match. it should display none that is nothing shou
 notFound.style.display = "flex";
 ```
 
-A variable was created to hold the last div using the `getElementById` method on `line 2`. This return element with the `ID` passed in. The css display property was set to flex as it was set to none in the css file.
+We create a variable to hold the last div using the `getElementById` method on `line 2`. This returns the element with the `ID` passed in. The css display property was set to flex as it was set to none in the css file.
 
 - Last Line
 
@@ -314,7 +314,7 @@ A variable was created to hold the last div using the `getElementById` method on
 input.addEventListener("keyup", filterFunction);
 ```
 
-A `keyup` event listerner was set on the input which respond when user release hand from the keyboard and function created in line 3 was called.
+We set a `keyup` event listerner on the input which responds when a user releases their hand from the keyboard and the function created in line 3 is called.
 ![Demo](/filter-machine-with-vanilla-javascript/congrat.gif)
 
 ### Conclusion
