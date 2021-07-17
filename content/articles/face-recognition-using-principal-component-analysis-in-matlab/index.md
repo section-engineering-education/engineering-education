@@ -79,7 +79,7 @@ end
 ```
 When we run the whole code, in the command window, there is a command asking the user to input the number of images for training(300) and then the dominant eigenvalues(50). After inputting all these values, the training begins. This training can be seen at the lowest left part of Matlab's window on the left side as it is indicated busy as shown in the image. This means Matlab is doing something which is training.
 
-![This shows that matlab is busy](image2.png)
+![This shows that matlab is busy](engineering-education/face-recognition-using-principal-component-analysis(pca)/image2.png)
 From the training, we will select some variables and store them for use in testing. This will help to avoid re-running the training program again and again. This is done as follows.
 - In the workspace, select all the variables and then deselect variables `m`, `M`, `n`, `N` and `ppca`.
 - Delete all other variables and then click on the save workspace to save these data in the trainDB folder as pcadb.
@@ -132,7 +132,7 @@ title('Recognized Face');
 ```
 When we run this program, we are asked to choose our image from the database. We should choose the image from the testDB and select any image. After selecting the image, it is recognised as shown.
 
-![identified image](image1.png)
+![identified image](engineering-education/face-recognition-using-principal-component-analysis(pca)/image1.png)
 
 ### Conclusion
-Matlab provides a toolbox for easy recognition of the different faces. This is possible by the use of various machine learning algorithms. This makes it a suitable tool for this purpose. Apart from this, Matlab has numerously inbuilt functions that make all the activities easy to carry out. The training and testing process is easily done using the in-built functions.
+Matlab provides a toolbox for easy recognition of the different faces. This is possible by the use of various machine learning algorithms. This makes it a suitable tool for this purpose. Apart from this, Matlab has numerously in-built functions that make all the activities easy to carry out. The training and testing process is easily done using the in-built functions and the various algorithms. 
