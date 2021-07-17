@@ -50,7 +50,7 @@ In this type of learning, each person's data must remain on their device. You bu
 
 At this point, you have used FL to create a global model without it having seen the data that your model was trained on. You have also built different models that are user-specific. This improves individual performance compared to the global model itself.
 
-If you have an iPhone, you're already reaping the benefits of Federated Learning. Earlier complaints about Apple's Siri and Amazon's Alexa were that they weren't able to distinguish the voice of the owner of the phone and that of everyone else. Anybody would go to your phone and trigger Siri and Alexa using the default trigger words. Apple fixed this problem by using FL to locally train Siri on your phone so that it can recognize the way that you speak distinguishing it from other people. Simultaneously, improving their global model with the general characteristics of how you talk.
+If you have an iPhone, you're already reaping the benefits of Federated Learning. Earlier complaints about Apple's Siri and Amazon's Alexa were that they weren't able to distinguish the voice of the owner of the phone and that of everyone else. Anybody could go to your phone and trigger Siri and Alexa using the default trigger words. Apple fixed this problem by using FL to locally train Siri on your phone so that it can recognize the way that you speak distinguishing it from other people. This would simultaneously improve their global model with the general characteristics of how you talk.
 
 More broadly, FL is useful when you have distributed data sources that you either need or want to keep separate for whichever reason.
 
