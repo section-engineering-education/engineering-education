@@ -4,7 +4,7 @@ status: publish
 published: true 
 url: /statistical-hypothesis-testing-python-implementation/
 title: Statistical Hypothesis Testing With Python Implementation
-description: This tutorial is a comprehensive explanation and implementation of statistical hypothesis testing methods such as t-test, chi-squared test & ANOVA in python, It is well known that most of the implementation of these techniques are always in R, and most Data Scientists and Analysts who use python always shy away from it.
+description: This tutorial is a comprehensive explanation and implementation of statistical hypothesis testing methods such as "t-test", "chi-squared test" & "ANOVA" in python.
 author: qoyum-olatunde-yusuf
 date: 2021-06-16T00:00:00-11:00
 topics: [Statistical Analysis, Hypothesis Testing, Data Science, Python ]
@@ -17,28 +17,33 @@ images:
 ---
 Hypothesis is the act of making observations and generating probing questions from the observations made in an attempt to come to a conclusion. Hypothesis testing is the test of assumptions on a population sample. It involves checking out whether a hypothesis should be accepted or not. In the world of work, hypothesis testing has been of great importance in making worthy decisions off mere observations. Billions of data are being generated on a daily basis around the globe and this has made the relevance of hypothesis testing a stronghold in making business decisions.
 <!--more-->
+### Table of Contents
+*1.0. Understanding hypothesis testing.*
+
+*2.0. Confidence of Null Hypothesis (Probability Value)*
+
+*3.0. Statistical Techniques for Hypothesis Testing*
+
+  - *Chi-Square Test*
+  - *T-Test*
+  - *ANOVA Test*
 
 ### Understanding Hypothesis Testing
 
-There are two types of hypothesis testing, namely:
-1. Null Hypothesis
-2. Alternate Hypothesis
+There are two types of hypothesis testing, namely, null hypothesis and alternate hypothesis.
 
-**Null hypothesis** is the initial assumption about an event (also referred to as ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption"
+**Null hypothesis** is the initial assumption about an event (also referred to as ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption".
 
-In a scenario whereby a septuagenarian woman has a swollen stomach or baby bump, our initial assumption is going to be that 
+In a scenario whereby a seventy years old woman has her belly looking like she is carrying a baby and knowing fully well that there is a small chance for such an old lady to be pregnant, our initial assumption is going to be that 
 **"She is pregnant"**.
-
 while our alternate hypothesis will be
 **"She is not pregnant"**.
 
 The null hypothesis is a statement believed to be true unless we can prove otherwise beyond a reasonable doubt.
 
-In trying to assess two [mutually exclusive](https://www.mathsisfun.com/data/probability-events-mutually-exclusive.html) facts on a certain sample of data. We will refer to H0 as our null hypothesis and H1 as our alternate hypothesis, there seem to be too many alternate names for H0(ground truth, initial assumption, prior assumption, e.t.c) whereas H1 is vaguely described.
+In trying to make a valid conclusion between two assumptions on a certain sample of data. We will refer to H0 as our null hypothesis and H1 as our alternate hypothesis, there seem to be too many alternate names for H0(ground truth, initial assumption, prior assumption, e.t.c) whereas H1 is vaguely described.
 
-To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis.
-
-Collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. 
+To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis, collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. 
 While doing that, there is a likelihood for four events to happen.
 
 1. The ground truth is not true, accept the H1 (alternate hypothesis) and hence reject H0 (null hypothesis).
@@ -104,8 +109,7 @@ alpha = 1 - 0.95
 ```
 which is 0.05.
 
-### Why is 95% confidence level the most accustomed?
-
+Why is 95% confidence level the most accustomed?
 Since we know that alpha level is the probability of encountering a Type I error(which is rejecting H0 despite being true), would it not make sense to make it as bitsy as possible. Imagine our alpha value being set to 10%, obviously, there is an increasing chance that we will make the mistake of rejecting the null hypothesis, but it must not be too small as well, if we set the alpha value as 1%, it will be too small that our decision will be reeking of bias. Hence, the standard has been 5%.
 
 ### Statistical Techniques for Hypothesis Testing
@@ -472,6 +476,13 @@ The P-value of petal width is greater than 0.05, which increases the probability
 The P-value of sepal length is less than 0.05, which increases the probability of our null hypothesis being rejected.
 
 Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we reject the null hypothesis because it is obvious one or more samples are very much different in their means. That is to say, the average of all data samples is not equal.
+
+### Conclusion
+At the end of this tutorial, readers should be able to:
+1. explain the fundamental concept of statistical hypothesis testing.
+2. make null and alternate hypothesis.
+3. perform python implementations of t-test, chi-square and ANOVA test.
+Additional resources are added below to better solidify the knowledge gained from this tutorial.
 
 **Happy coding**
 
