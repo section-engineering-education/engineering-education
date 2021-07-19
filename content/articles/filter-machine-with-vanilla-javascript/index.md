@@ -28,7 +28,7 @@ Working knowledge of:
 - CSS
 - Javascript
 
-This Project was developed on the [repl website](https://repl.it/) using `html/css/js` stack. Feel free to use it to follow along with the article.
+This project was developed on the [repl website](https://repl.it/) using the `html/css/js` stack. Feel free to use it to follow along with the article.
 
 Our code will be split into three distinct files:
 1. `HTML file (index.html)`: This contains all our html code
@@ -36,7 +36,7 @@ Our code will be split into three distinct files:
 3. `SCRIPT file (script.js)`: This contains all the Javascript code
 
 ### HTML
-The HTML code below consist of the default `html boilerplate` to which our `css` and `Javascript` files are linked.
+The HTML code below consists of the default `html boilerplate` to which our `css` and `Javascript` files are linked.
 
 ```html
 <!DOCTYPE html>
@@ -104,11 +104,14 @@ The HTML code below consist of the default `html boilerplate` to which our `css`
 ```
 
 The above code contains:
-- The `head` tag which houses the `title` and `CSS` file link. The `title` displays on our browser indicating the title of the page. The CSS link points directly to our CSS file and helps pass the set of rules in the CSS file to be applied to the HTML content.
-- The `main` tag. This contains the main content of our HTML page. Inside the main area we have the `header` tag which contains the header of our application.
-- The `h2` tag to describe our Application with the form that contain our search bar.
+- The `head` tag that houses the `title` and `CSS` file links.
+- The `title` that displays on our browser indicating the title of the page.
+- The CSS link that points directly to our CSS file and helps pass the set of rules in the CSS file that are to be applied to the HTML content.
+- The `main` tag that contains the main content of our HTML page.
+- The `header` tag that contains the header of our application.
+- The `h2` tag that describes our Application with the form that contains our search bar.
 - The `divs` with class attributes of `card` that are duplicated for every letter.
-- The `script` link that points to our Javscript code included just before the closing `</body>` tag.
+- The `script` link that points to our Javascript code included just before the closing `</body>` tag.
 
 ### CSS
 First, we clear the default `margin`, `padding` and `box-sizing` styling:
@@ -120,7 +123,7 @@ First, we clear the default `margin`, `padding` and `box-sizing` styling:
 }
 ```
 
-We do this to prevent the default addition of margins and paddings to the width and height of elements; and to set the box-sizing to border-box, which controls the behavioural activities of every element on the page.
+We do this to prevent the default addition of margins and paddings to the width and height of elements; and to set the box-sizing to border-box, which controls the behavioral activities of every element on the page in relation to the box model.
 
 We then style the main content area:
 ```css
@@ -150,7 +153,7 @@ header {
 }
 ```
 
-We set the width and height. We set the background color using the `background` property; the `background` property can take multiple options eg. an image, color etc. If you wish, you can use an image, any other pattern or even the `background-color` property, it will do the same thing.
+We set the width and height. We set the background color using the `background` property; the `background` property can take multiple options eg. an image, color, etc. If you wish to, you can use an image, any other pattern, or even the `background-color` property, which will do the same thing.
 
 We then decorate the search bar's input element:
 ```css
@@ -185,7 +188,7 @@ We then style the cards:
 }
 ```
 
-These are the circular cards containg the English letters. We set `border-radius: 50%` which makes the cards circular. The other properties follow the same pattern as before.
+These are the circular cards containing the English letters. We set `border-radius: 50%` which makes the cards circular. The other properties follow the same pattern as before.
 
 We then style the error card:
 ```css
@@ -196,10 +199,10 @@ We then style the error card:
 }
 ```
 
-The `:last-child` is a `CSS` pseudo class selector which helps select the last child element contained within a parent element. We will display this card when nothing matches our user's search. The implementation will be done in the javascript code.
+The `:last-child` is a `CSS` pseudo-class selector which helps select the last child element contained within a parent element. We will display this card when nothing matches our user's search. The implementation will be done in the javascript code.
 
 ### Making the CSS responsive
-Developing a web based app that is accessible through mobile and tablet is important as mobile devices are everywhere. 
+Developing a web-based app that is accessible through mobile and tablet is important as mobile devices are everywhere. 
 
 There are many ways of doing this; we will be implementing responsiveness using a `media query`:
 ```css
@@ -217,7 +220,7 @@ There are many ways of doing this; we will be implementing responsiveness using 
 }
 ```
 
-We will only control the important sections of our application. The header will automatically increase in height at the point where the user's screen is greater than `768px` and the search bar height was increases too. 
+We will only control the important sections of our application. The header will automatically increase in height at the point where the user's screen is greater than `768px` and the search bar height was increased too. 
 
 Another important property is the flex property `flex-direction` which we set to `column` to make the flex items contained in the header to be displayed vertically.
 
@@ -247,7 +250,7 @@ const filterFunction = () => {
 input.addEventListener("keyup", filterFunction);
 ```
 
-Above is all the required Javascript code. In the following steps, I will be explaning what the code does.
+Above is all the required Javascript code. In the following steps, I will be explaining what the code does.
 
 - Line 1
 
@@ -255,7 +258,7 @@ Above is all the required Javascript code. In the following steps, I will be exp
 const input = document.querySelector("input");
 ```
 
-We create a variable called `input`. This variable holds the content of the search bar we created in our HTML. The  `querySelector` method returns a list of every HTML element with the tag input. Here, we only have one. Later on the user input can be obtained by using Javascript's `.value` method on the `input` variable.
+We create a variable called `input`. This variable holds the content of the search bar we created in our HTML. The  `querySelector` method returns a list of every HTML element with the tag input. Here, we only have one. Later on, the user input can be obtained by using Javascript's `.value` method on the `input` variable.
 
 - Line 3 - 4
 
@@ -263,7 +266,7 @@ We create a variable called `input`. This variable holds the content of the sear
     const filterFunction = () => {
 ```
 
-We create a new arrow function, `filterFunction` using ES6(ECMAScript 2015) syntax. Inside the function, we create another variable that holds every `card` div. The `filterFunction` function will contain all the logic to filter evrything on the page as we wish.
+We create a new arrow function, `filterFunction` using ES6(ECMAScript 2015) syntax. Inside the function, we create another variable that holds every `card` div. The `filterFunction` function will contain all the logic to filter everything on the page as we wish.
 
 ```js
 const cards = document.querySelectorAll(".card");
@@ -285,7 +288,7 @@ We then loop through the array returned using the `forEach` method.
 let whatToSearch = item.querySelector("p");
 ```
 
-Inside every card, there is a `<p>` tag that hold the letters. line 5 creates a variable to hold each `<p>` tag using `querySelector` on the item returned by the `forEach` method.
+Inside every card, there is a `<p>` tag that holds the letters. line 5 creates a variable to hold each `<p>` tag using `querySelector` on the item returned by the `forEach` method.
 
 - Line 7 - 8
 
@@ -293,7 +296,7 @@ Inside every card, there is a `<p>` tag that hold the letters. line 5 creates a 
  if (whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >-1)
 ```
 
-We then use an `if` statement to check if our search input matches the any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` convert it into a capital letter. We then use `indexOf` to check if the users input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
+We then use an `if` statement to check if our search input matches any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` convert it into a capital letter. We then use `indexOf` to check if the user's input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
 
 - Line 9
 
@@ -317,7 +320,7 @@ If the type character does not match, it should set `display` to `none`, that is
 notFound.style.display = "flex";
 ```
 
-We create a variable to hold the last div using the `getElementById` method on `line 2`. This returns the element with the `ID` passed in. The css display property was set to flex as it was set to none in the css file.
+We create a variable to hold the last div using the `getElementById` method on `line 2`. This returns the element with the `ID` passed in. The CSS display property was set to flex as it was set to none in the CSS file.
 
 - Last Line
 
@@ -325,7 +328,7 @@ We create a variable to hold the last div using the `getElementById` method on `
 input.addEventListener("keyup", filterFunction);
 ```
 
-We set a `keyup` event listerner on the input which responds when a user releases their hand from the keyboard and the function created in line 3 is called.
+We set a `keyup` event listener on the input which responds when a user releases their hand from the keyboard and the function created in line 3 is called.
 ![Demo](/filter-machine-with-vanilla-javascript/congrat.gif)
 
 ### Conclusion
@@ -333,13 +336,13 @@ Below is what we just built, isn't amazing?
 
 ![Demo](/filter-machine-with-vanilla-javascript/page.gif)
 
-What you just built can be implemented in various real life projects and can be improve/ Suggestions on some improvement can be seen below.
+What you just built can be implemented in various real-life projects and can be improve/ Suggestions on some improvement can be seen below.
 
-1.  The Search bar can be modified by adding more styles to be more outstanding and give better look
+1.  The Search bar can be modified by adding more styles to be more outstanding and give a better look
 
-2.  On a shopping cart application, user need to filter out the products to get their choices. This app can be integrated to give access
+2.  On a shopping cart application, users need to filter out the products to get their choices. This app can be integrated to give access
 
-3.  Creativity is the limit of this app as it can be implemented on any application that need filter as its elements.
+3.  Creativity is the limit of this app as it can be implemented on any application that needs a filter as its elements.
 
 ### Further applications 
 1.  [worldcovid19app-app](https://taiwrash.github.io/worldcovid19cases)
