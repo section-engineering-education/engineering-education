@@ -20,7 +20,7 @@ Hypothesis is the act of making observations and generating probing questions fr
 ### Table of Contents
 *1.0. Prerequisites.*
 
-*2.0. Goals of the Tutorial.*
+*2.0. Goals of the tutorial.*
 
 *3.0. Understanding hypothesis testing.*
 
