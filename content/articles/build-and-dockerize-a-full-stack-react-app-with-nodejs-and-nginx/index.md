@@ -180,8 +180,6 @@ We now have a React template, but we don't need all the files here. So you can g
     └───src
             App.css
             App.js
-            App.test.js
-            index.css
             index.js
 ```
 
