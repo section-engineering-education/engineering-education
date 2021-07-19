@@ -18,22 +18,41 @@ images:
 Hypothesis is the act of making observations and generating probing questions from the observations made in an attempt to come to a conclusion. Hypothesis testing is the test of assumptions on a population sample. It involves checking out whether a hypothesis should be accepted or not. In the world of work, hypothesis testing has been of great importance in making worthy decisions off mere observations. Billions of data are being generated on a daily basis around the globe and this has made the relevance of hypothesis testing a stronghold in making business decisions.
 <!--more-->
 ### Table of Contents
-*1.0. Understanding hypothesis testing.*
+*1.0. Prerequisites.*
 
-*2.0. Confidence of null hypothesis (Probability Value)*
+*2.0. Goals of the Tutorial.*
 
-*3.0. Statistical techniques for hypothesis testing*
+*3.0. Understanding hypothesis testing.*
+
+*4.0. Confidence of null hypothesis (Probability Value)*
+
+*5.0. Statistical techniques for hypothesis testing*
 
   - *Chi-Square Test*
   - *T-Test*
   - *ANOVA Test*
 
-*4.0. Conclusion*
+*6.0. Conclusion*
 
-*5.0. Extra Resources*
+*7.0. Extra Resources*
+
+### Prerequisites
+The reader of this tutorial should try meet the following criteria:
+- must have basic knowledge of python programming.
+- must have an idea or the knowledge of basic exploratory data analysis and how pandas and numpy work.
+- must have basic knowledge of statistics.
+- must be one of a data science enthusiast, newbie or professional.
+
+### Goals of the Tutorial
+At the end of this tutorial, readers should be able to 
+- understand clearly the concept of statistical hypothesis testing.
+- perform the implementation of t-test, chi-squared test & ANOVA with python and a new dataset.
+- differentiate clearly the trade-off between type 1 and type 2 error of null hypothesis.
+- explain the confidence of the null hypothesis.
+- play with basic pandas function for exploratory data analysis.
+- figure out the best case-study for "t-test", "chi-squared test" and "ANOVA test".
 
 ### Understanding Hypothesis Testing
-
 There are two types of hypothesis testing, namely, null hypothesis and alternate hypothesis.
 
 **Null hypothesis** is the initial assumption about an event (also referred to as the ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption".
