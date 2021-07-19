@@ -81,7 +81,7 @@ This is also very good as there is no *error*.
 
 It looks very bad as it points to an error called *Type 1 Error*. 
 
-4. We do not reject the ground despite the fact that it is not true, i.e, (H0) Null hypothesis is not true, but we did not reject it.
+4. We do not reject the ground truth despite the fact that it is not true, i.e, (H0) Null hypothesis is not true, but we did not reject it.
 
 it looks bad as it points to an error called *Type 2 Error*.
 
@@ -302,6 +302,7 @@ stat, p, dof, expected= chi2_contingency(df_new)
 print(dof)
 ```
 ![dof](DOF.png)
+
 We can comfortably get 3 outputs in test statistics, degree of freedom, p-value, and expected values.
 
 [Test statistic](https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/chi-square-tests) is a characterized feature of significance in the Chi-square test that helps in determining how uncommon the result might be provided that null hypothesis is assumed to be true.
@@ -499,10 +500,8 @@ The P-value of sepal length is less than 0.05, which increases the probability o
 Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we reject the null hypothesis because it is obvious one or more samples are very much different in their means. That is to say, the average of all data samples is not equal.
 
 ### Conclusion
-At the end of this tutorial, readers should be able to:
-1. explain the fundamental concept of statistical hypothesis testing.
-2. make null and alternate hypothesis.
-3. perform python implementations of t-test, chi-square and ANOVA test.
+At the end of this tutorial, I believe the readers should have more than a grasp of the concept of statistical hypothesis testing and how to implement it with python programming. To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis, collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. However, errors of type 1 and type 2 have been explained using an assumed pregnant woman as an example, which is something almost everyone can relate with. When we reject the ground truth but eventually it is true, we encounter the *Type 1 Error* error. On the flip side, when we do not reject the ground truth despite the fact that it is not true, we encounter the *Type 2 Error* error.
+
 Additional resources are added below to better solidify the knowledge gained from this tutorial.
 
 **Happy coding**
