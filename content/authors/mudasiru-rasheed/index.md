@@ -3,4 +3,4 @@ title: Mudasiru Rasheed
 type: authors
 github: https://github.com/Taiwrash
 ---
-Rasheed is Mobile Web Specialist, He specialised in building web apps with JavaScript and its frameworks. Rasheed as a community lover write to educate and help other members of the community. I had serve as open source project maintainer and also a contributor.
+Rasheed is a Mobile-Web developer specialised in building web apps with JavaScript and its frameworks. As a community lover, Rasheed writes to educate and help fellow community members. Rasheed has also served as an open source project maintainer and contributor.
