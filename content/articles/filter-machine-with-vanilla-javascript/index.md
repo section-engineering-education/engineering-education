@@ -1,10 +1,21 @@
 ---
-name: "Filter Machine with Javascript"
-description: "This is an app that can show participants how to implement and build a filter search bar in their applications using pure javascript"
-author: "@Taiwrash"
----
-In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla javascript.
+layout: engineering-education
+status: publish
+published: true
+url: /filter-machine-with-vanilla-javascript
+title: Filter machine with vanilla Javascript
+description: In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla Javascript.
+author: mudasiru-rasheed
+date: 2021-07-19T00:00:00-07:41
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/filter-machine-with-vanilla-javascript/hero.png
+    alt: Filter machine with vanilla Javascript
+---
+In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla Javascript.
+<!--more-->
 ### Introduction
 By the end of the article, we should have an application that has a functional search bar as illustrated below:
 ![Sample Page](/filter-machine-with-vanilla-javascript/page.gif)
@@ -17,7 +28,7 @@ Working knowledge of:
 - CSS
 - Javascript
 
-This Project was develop on the [repl website](https://repl.it/) using `html/css/js` stack. Feel free to use it to follow along with the article.
+This Project was developed on the [repl website](https://repl.it/) using `html/css/js` stack. Feel free to use it to follow along with the article.
 
 Our code will be split into three distinct files:
 1. `HTML file (index.html)`: This contains all our html code
@@ -336,3 +347,6 @@ What you just built can be implemented in various real life projects and can be 
 2.  [tech-resumie-app](https://tech-resumie.herokuapp.com)
 
 3.  [Country-list-app-with-filter-enabled](https://lookup-a-country.netlify.app)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
