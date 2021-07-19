@@ -20,28 +20,32 @@ Hypothesis is the act of making observations and generating probing questions fr
 ### Table of Contents
 *1.0. Understanding hypothesis testing.*
 
-*2.0. Confidence of Null Hypothesis (Probability Value)*
+*2.0. Confidence of null hypothesis (Probability Value)*
 
-*3.0. Statistical Techniques for Hypothesis Testing*
+*3.0. Statistical techniques for hypothesis testing*
 
   - *Chi-Square Test*
   - *T-Test*
   - *ANOVA Test*
 
+*4.0. Conclusion*
+
+*5.0. Extra Resources*
+
 ### Understanding Hypothesis Testing
 
 There are two types of hypothesis testing, namely, null hypothesis and alternate hypothesis.
 
-**Null hypothesis** is the initial assumption about an event (also referred to as ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption".
+**Null hypothesis** is the initial assumption about an event (also referred to as the ground truth), whereas alternate hypothesis is an assumption that counters the initial assumption".
 
-In a scenario whereby a seventy years old woman has her belly looking like she is carrying a baby and knowing fully well that there is a small chance for such an old lady to be pregnant, our initial assumption is going to be that 
+In a scenario whereby a seventy years old woman has her belly looking like she is carrying a baby, and knowing fully well that there is a small chance for such an old lady to be pregnant, our initial assumption is going to be that 
 **"She is pregnant"**.
 while our alternate hypothesis will be
 **"She is not pregnant"**.
 
 The null hypothesis is a statement believed to be true unless we can prove otherwise beyond a reasonable doubt.
 
-In trying to make a valid conclusion between two assumptions on a certain sample of data. We will refer to H0 as our null hypothesis and H1 as our alternate hypothesis, there seem to be too many alternate names for H0(ground truth, initial assumption, prior assumption, e.t.c) whereas H1 is vaguely described.
+In trying to make a valid conclusion between two assumptions on a certain sample of data. We will refer to the first assumption (H0) as our null hypothesis and the counter assumption (H1) as our alternate hypothesis, there seem to be many alternative names for H0 (ground truth, initial assumption, prior assumption, e.t.c) whereas H1 is popularly known as alternate hypothesis.
 
 To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis, collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. 
 While doing that, there is a likelihood for four events to happen.
@@ -64,7 +68,7 @@ it looks bad as it points to an error called *Type 2 Error*.
 
 The most dangerous of the two types of error depends on the problem we are trying to solve, the analyst has to decide whether type 1 error is more harmful or type two error is more harmful in their project approach.
 
-Using the previously mentioned example above, a scenario whereby a septuagenarian woman has a swollen stomach or baby bump, our ground truth is going to be that 
+Using the previously mentioned example above, a scenario whereby a seventy years old woman has a swollen stomach like she is pregnant, our ground truth is going to be that 
 **"She is pregnant"** 
 
 while our alternate hypothesis will be
@@ -82,7 +86,7 @@ or will it be costlier to make the assumption of
 **"She is not pregnant",**
 When she's actually pregnant.
 
-There is someone's life involved here so care must be taken before making assumptions. 
+There is someone's life involved here, therefore care must be taken before making assumptions. 
 In this case, encountering type 1 error is assuming she's not pregnant when she actually is, i.e. the null hypothesis is true but we reject it. The consequence might be getting her to abort it which might be threatening to her life.
 If a type two error is encountered, which is assuming she's pregnant when she is truly not, the null hypothesis is wrong but we insist on not rejecting it. The consequence might probably be leaving the bump-like pregnancy to grow, and it turns out to be an acute fibroid.
 
@@ -120,7 +124,7 @@ In this tutorial, I will be touching on three methods of carrying out statistica
 2. T-Test
 3. ANOVA Test
 
-### Chi-Square Test
+#### Chi-Square Test
 
 This is used to perform testing on two categorical variables in our data population. It is focused on looking for an important relationship between two categorical variables.
 For example, comparing the aftereffect of malaria drug A, malaria drug B, and malaria drug C.
@@ -167,7 +171,7 @@ chi-square = 3.2 + 0.143 + 1.125
 chi-square = 4.468
 ```
 To get a full grab of how to calculate it mathematically to carry out hypothesis testing, follow this [article](https://www.yourarticlelibrary.com/project-reports/chi-square-test/chi-square-test-meaning-applications-and-uses-statistics/92394). However, since the tutorial is focused on python implementation, I will try to show the easier way to get things done on time.
-### Load our dependencies.
+#### Load our dependencies.
 
 ```python
 import pandas as pd
@@ -188,7 +192,7 @@ The libraries imported are the day-to-day libraries for any data science python 
 
 *I will be using the popular iris data set for the tutorial, you can get it almost anywhere but I downloaded this from [Kaggle](https://www.kaggle.com/vikrishnan/iris-dataset).*
 
-### Load the data into the notebook
+#### Load the data into the notebook
 ```python
 df = pd.read_csv("/content/drive/MyDrive/IRIS.csv")
 ```
@@ -211,8 +215,6 @@ df.isnull().sum()
 We can be sure now that there are 3 classes of species and there are no missing values. 
 Let's proceed with the manipulation.
 
-### Let's Start Our Operations
-
 Let's use petal width to compare species for our Chi-Square Test. 
 
 The first step is to check the summary of petal_width 
@@ -225,7 +227,7 @@ df.petal_width.describe()
 
 Since, the operation we are going to be performing are mathematical operations and they don't work with letters or words except numbers. The Chi-square test helps in determining if there is a notable difference between the observed and normal frequencies in one or more categories, the values of petal_width must be changed into categories of zeros and ones using the 50% percentile which is the second quartile as the yardstick. There are clear [differences](https://byjus.com/maths/difference-between-percentage-and-percentile/) between percentage and percentile. As percentage is just a fraction of a hundred, the percentile is more concerned with ranks, it can be termed as the percentage of values that fall below a certain value mark. It is rather used to find the position of a value in a given set of values. For example, if a girl has the 50th percentile on an examination of 200, we can say that by scoring 200 marks, she has higher marks than 50% of the remaining class.
 
-### How to calculate percentile.
+#### How to calculate percentile.
 There are two conditions that must be satisfied.
 1. Data must be arranged in ascending order.
 2. if the index is not an integer, it must be rounded up.
@@ -305,7 +307,7 @@ else:
 
 The P-value is greater than the alpha value set at 0.05, we will fail to reject the null hypothesis(we accept the null hypothesis). This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
 
-### T-Test
+#### T-Test
 
 The T-test is utilized when we plan to evaluate the discrepancy between the means of two groups of samples. Unlike Chi-Square Test, the T-test is used on continuous variables.
 
@@ -354,7 +356,7 @@ xd = standard deviation.
 
 N = the number of observations in the group.
 
-### Performing a One-Sample T-Test
+#### Performing a One-Sample T-Test
 ```python
 df_ = df.petal_width
 ```
@@ -380,7 +382,7 @@ This means that the mean of petal_width is most likely 1.199.
  
  The evidence is too strong to be rejected, it is almost accurate. (Obviously, I copied the mean from the summary).
 
-### Performing a Two-Sample T-Test
+#### Performing a Two-Sample T-Test
 
 We need to first of all check their variances.
 
@@ -420,7 +422,7 @@ H1 (alternate hypothesis) is however true.
 This allows us to figure out questions like: 
 "Is there a significant or random by the chance difference in the average time spent on mathematics exam from that of English exam?."
 
-### ANOVA Test
+#### ANOVA Test
 
 ANOVA is a word coined from `analysis of variance`. It is a statistical concept that shows the differences between the means of more than two independent classes, using variance analysis on samples from those classes.
 
@@ -436,7 +438,7 @@ During ANOVA testing, the hypothesis is:
 
 **H1:** When one or more samples are very much different.
 
-## One Way ANOVA Test
+#### One Way ANOVA Test
 ```python
 class1 = df.petal_width
 class2 = df.sepal_length
@@ -457,7 +459,7 @@ Since our P-value (5.738282463819433e-122) is far less than alpha = 0.05, theref
 
 This means that the sample means are very much different. Hence, our H1 (alternate hypothesis) is thus true.
 
-## Two Way ANOVA Test
+#### Two Way ANOVA Test
 
 This is called for when we are dealing with three or more variables, trying to compare their means with each other.
 ```python
