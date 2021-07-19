@@ -5,6 +5,7 @@ Machine learning is encountered in daily basis for example, in the medical indus
 
 ### Prerequisite
 - [Matlab](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- [Data](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing) for analysis
 - Proper understanding of [matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Challenges of machine learning
@@ -46,40 +47,56 @@ This technique is for the continuous response. For example is if you are trying 
 Here, you first import data, preprocess the data. This may include creating some visualization and identifying variables of interest. In the next step, you select your model and train it on the data and measure its accuracy. Once you have selected the best model, you can use it to predict the new input data set.
 
 ### Example
-In this example, we have data(link) from a marketing industry conducted by a bank. They collected information about the customer as shown in the dataset. The goal here is to predict if customers will subscribe to the bank term. In this case, we have a .csv file. Matlab has tools that help to read information from various file formats, for example, import
-[image1](show import)
+In this example, we have data from a marketing industry conducted by a bank. They collected information about the customer as shown in the dataset. The goal here is to predict if customers will subscribe to the bank term. In this case, we have a .csv file. Matlab has tools that help to read information from various file formats, for example, import
 Matlab can generate a script with codes that can be used to automate all the steps of the analysis. This is done by;
 - Click on the import selection at the top of the window.
-- [image2](position of the importation button)
+- ![importing the data into matlab](machine2.png)
 - Click the generate script to generate the script.
 - [image3]( imported script )
 Matlab also provides tools that help you visualize your data. This is done by; 
 - On the top of the window, click on the plots.
 - Select the columns or sections of your data that you would like to visualize.
 - Select the type of the plot.
-  [image 4](Types of plots)
-  [image 5](resulting plots)
+![Types of plots](machine3.png)
+![resulting plots from the chosen data](machine4.png)
 According to the workflow, we first input the data. This is done by;
 ```Matlab
 bank = importBankData('bank-full.csv')
 ``` 
 We then pre-process the data by first visualizing it.
 ```matlab
-gscatter(bank, age, bankbalance, banking)
+gscatter(bank.age, bank.balance, bank.y)
 ```
 In the next step, we will break up the data into a train and test set. Here we will use techniques such as partition to break the data into training and test set.
 ```Matlab
+%% prepare the data: Response amd predictions
+% Response
+Y = bank.y;
+
+% predictor matrix
+X = bank(:,1:end-1);
+
+% Cross validation
+cv = cvpartition(height(bank), 'holdout', 0.40);
+
+% Training set
+Xtrain = X(training(cv),:);
+Ytrain = Y(training(cv),:);
+% Test set
+Xtest = X(test(cv),:);
+Ytest = Y(test(cv),:);
 
 ```
-When we run the response section, we see that 90% of the people chose not to buy the item and 10% bought. After having this data, we gonna use Matlab's apps to build a model. We will use the neuro networks app. We have neural net clustering, neural net fitting, neural net fitting, neural network pattern recognition and neural net time series. Here we will use the pattern recognition app. 
+When we run the response section, we see that 90% of the people chose not to buy the item and 10% bought. After having this data, we going to use Matlab's apps to build a model. We will use the neuro networks app. We have neural net clustering, neural net fitting, neural net fitting, neural network pattern recognition and neural net time series. Here we will use the pattern recognition app.
+![pattern recognition app](machine5.png) 
 - Select your inputs and outputs here.
-  [image 6]
+![enter inputs and outputs here](machine6.png)
 You can change the algorithm or use the default e.t.c
 - Click on the training.
-  [image 7]
+![training process](machine7.png)
 As the training is ongoing, we can visualize the progress.
-  [image 8]
-When you are not satisfied with the results, you can re-train the network but in case satisfied, you can display your results. This is the saving of your work. This can be either through Matlab's function, Matlab's matrix only function, Simulink diagrams or neural network diagram. We can generate a code to see how Matlab set all options we have seen above. We can look at more details of this on Matlab's documentation [here](). This is done by right-clicking in any part of the generated code and then select the `help on selection`. The documentation gives a deeper description and more details about training algorithms.
+![visualization of the training](machine8.png)
+When you are not satisfied with the results, you can re-train the network but in case satisfied, you can display your results. This is the saving of your work. This can be either through Matlab's function, Matlab's matrix only function, Simulink diagrams or neural network diagram. We can generate a code to see how Matlab set all options we have seen above. We can look at more details of this on Matlab's documentation [here](https://www.mathworks.com/help/stats/machine-learning-in-matlab.html). This is done by right-clicking in any part of the generated code and then select the `help on selection`. The documentation gives a deeper description and more details about training algorithms.
 
 ### Conclusion
 Machine learning forms the basis of the worlds technology. Machine learning is applied in very many applications in our sorrounding. This makes it an important thing for an engineer or a programmer to have some knowledge about it. It basically works towards making work easier in every sector. The algorithms that are used for the various machine learning are complex and also difficult to choose when doing a data analysis.
