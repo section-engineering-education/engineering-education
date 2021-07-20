@@ -6,7 +6,7 @@ url: /build-ann-with-keras/
 title: Building an Artificial Neural Network with Keras
 description: In this article, you will learn how to build and train an Artificial Neural Network with Keras.
 author: iniabasi-affiah
-date: 2021-07-17T00:00:00-15:30
+date: 2021-07-20T00:00:00-05:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -15,17 +15,17 @@ images:
     alt: Build an ANN with Keras example image
 ---  
 
-![Hero Image](/engineering-education/build-ann-with-keras/hero.PNG)
+In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. 
 
-In this article, you will learn how to build and train an artificial neural network with Keras. We will make a model that will tell us if a customer will churn. That can be very useful in businesses. If you know the customers that will churn, you can provide these customers with better offers. So you can retain them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
+If you know the customers that will churn, you can provide these customers with better offers. So you can retain them. We will use machine learning to determine customers that are likely to churn. We have a sample dataset from a bank. We will predict the customers that will stop banking with this bank. Here is the GitHub [repo](https://github.com/Inyrkz/Customer-Churn) for this project.
 
 ### Prerequisites
+To follow along with this tutorial, you need to have:
+-	Basics of [Artificial Neural Network](https://www.section.io/engineering-education/introduction-to-neural-networks/).
+-	[Google Colab](https://colab.research.google.com/).
+-	Download the Churn modeling dataset from [Kaggle](https://www.kaggle.com/adammaus/predicting-churn-for-bank-customers).
 
--	Basics of [Artificial Neural Network](https://www.section.io/engineering-education/introduction-to-neural-networks/)
--	[Google Colab](https://colab.research.google.com/)
--	Download the Churn modeling dataset from [Kaggle](https://www.kaggle.com/adammaus/predicting-churn-for-bank-customers)
-
-### Outline
+### Table of contents
 
 -	[Import Libraries](#import-libraries)
 -	[Data preprocessing](#data-preprocessing)
@@ -35,7 +35,7 @@ In this article, you will learn how to build and train an artificial neural netw
 
 ### Import libraries
 
-Most of the libraries we will be using have been pre-installed on Google Colab. So, we import them into our code.
+Most of the libraries we will be using have been pre-installed on Google Colab. So, we import them into our code:
 
 ```python
 import numpy as np
@@ -48,7 +48,10 @@ Let us confirm the version of Tensorflow we are using. No need to import Keras a
 print(tf.__version__)
 ```
 
-![Tensorflow Version](/engineering-education/build-ann-with-keras/tf-version.PNG)
+#### Output
+```bash
+'2.5.0'
+```
 
 Let us load our dataset. If you are running the codes with Google Colab, then upload the dataset first. Click on the folder icon on the left panel.
 
@@ -64,7 +67,7 @@ Go to the directory where the dataset is, in your local computer, and select it.
 
 ![Uploaded dataset](/engineering-education/build-ann-with-keras/uploaded-dataset.PNG)
 
-We load our dataset and display the first five records in the dataset.
+Let's load our dataset and display the first five records:
 
 ```python
 dataset = pd.read_csv('/content/Churn_Modelling.csv')
@@ -72,8 +75,6 @@ dataset.head()
 ```
 
 ![first 5 rows of dataset](/engineering-education/build-ann-with-keras/dataset.PNG)
-
-Let's now pre-process our data.
 
 ### Data preprocessing
 
@@ -145,7 +146,11 @@ Now that that's done, let's build and visualize our ANN.
 
 ### Build and visualize the Artificial Neural Network
 
-We build our neural network with the `Sequential()` class. We first create the input layer with 12 nodes. Twelve is the number of rows in our training set. We then add the hidden layers. To keep things simple, we use two hidden layers. The initial hidden layer has 12 nodes, while the next layer has 8 nodes. In the hidden layers, we use the relu activation function. Finally, we add the output layer. We use a single node at the output layer since we have only two categories. We also use the sigmoid activation function at the output layer. It will give us the probability of a customer churning.
+We build our neural network with the `Sequential()` class. We first create the input layer with 12 nodes. Twelve is the number of rows in our training set. We then add the hidden layers. 
+
+To keep things simple, we use two hidden layers. The initial hidden layer has 12 nodes, while the next layer has 8 nodes. In the hidden layers, we use the [relu activation function](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). 
+
+Finally, we add the output layer. We use a single node at the output layer since we have only two categories. We also use the [sigmoid activation function](https://en.wikipedia.org/wiki/Sigmoid_function) at the output layer. It will give us the probability of a customer churning.
 
 ```python
 # Initializing the ANN
@@ -158,7 +163,7 @@ ann.add(tf.keras.layers.Dense(units=8, activation='relu'))
 ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
 ```
 
-Now that we have created our model, let use the code below to visualize it:
+Now that we have created our model, let's use the code below to visualize it:
 
 ```python
 from tensorflow.keras.utils import plot_model
@@ -168,9 +173,12 @@ plot_model(ann,
            show_layer_names=True,
           )
 ```
+
+#### Output
+
 ![Artificial Neural Network Plot](/engineering-education/build-ann-with-keras/plot-model.PNG)
 
-We can also use the [NN-SVG](https://alexlenail.me/NN-SVG/) tool to visualize our model.
+We can also use the [NN-SVG](https://alexlenail.me/NN-SVG/) tool to visualize our model:
 
 ![ANN Visualization using NN-SVG](/engineering-education/build-ann-with-keras/NN-SVG-architecture.PNG)
 
@@ -178,9 +186,9 @@ We can also use the [NN-SVG](https://alexlenail.me/NN-SVG/) tool to visualize ou
 
 In training the ANN, we perform a couple of tasks:
 
-- We compile the model with the Adam optimizer.
-- We use the binary cross-entropy loss. 
-- We train the model for 100 epochs. Note that increasing the number of epochs will help your model train better.
+- We compile the model with the [Adam optimizer](https://keras.io/api/optimizers/adam/).
+- We use the binary [cross-entropy loss](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html). 
+- We train the model for 100 epochs.
 
 ```python
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
@@ -191,7 +199,7 @@ ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
 
 ### Evaluating the model
 
-Now that our model training is complete, we can make predictions on a single customer. Let us find out if a customer with the details below will churn.
+Now that our model training is completed, we can make predictions on a single customer. Let us find out if a customer with the details below will churn:
 
 | Record      | Details     |
 | :---        |    :----:   |
@@ -209,7 +217,11 @@ Now that our model training is complete, we can make predictions on a single cus
 ```python
 print(ann.predict(sc.transform([[0, 0, 1, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])))
 ```
-![Predicted Probability of New Customer](/engineering-education/build-ann-with-keras/predicted-probability.PNG)
+
+#### Output
+```bash
+[[0.04270527]]
+```
 
 Remember that after one-hot encoding, `0, 0, 1` represents the geographical location, `Spain`. It will be in the first three columns of our matrix of features.
 
@@ -218,15 +230,20 @@ We can add a threshold of 0.5. The customer will leave the bank if the predicted
 ```python
 print(ann.predict(sc.transform([[0, 0, 1, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])) > 0.5)
 ```
-![Prediction for New Customer](/engineering-education/build-ann-with-keras/prediction-with-threshold.PNG)
 
-This is great news for the bank! This customer will not churn. Let us assess our model using the test set.
+#### Output
+```bash
+[[False]]
+```
+
+This is great news for the bank! This customer will not churn. Let us assess our model using the test set:
 
 ```python
 y_pred = ann.predict(X_test)
 y_pred = (y_pred > 0.5)
 pd.DataFrame(list(zip(y_test, y_pred)), columns=['Actual', 'Predicted'])
 ```
+
 ![Actual Values vs Predicted Values](/engineering-education/build-ann-with-keras/actual-vs-predicted-values.PNG)
 
 It looks like our model got most of the predictions right. But, it made a mistake for the second customer in our test set. We can check the accuracy score, and build a confusion matrix. 
@@ -236,16 +253,24 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 print(confusion_matrix(y_test, y_pred))
 print(accuracy_score(y_test, y_pred))
 ```
-![Confusion Matrix & Accuracy Score](/engineering-education/build-ann-with-keras/confusion-matrix-and-accuracy-score.PNG)
+
+#### Output
+```bash
+[[1506  89]
+ [193  212]]
+0.859
+```
 
 The accuracy score is 85.9%. Out of 2000 cases, our model predicted 1718 cases correctly.
 The confusion matrix shows the number of True Positives, False Positives, False Negatives, and True Negatives.
+
 Our model inaptly predicted that 193 customers churn (False Positives), and 89 customers did not churn (False Negatives). But it correctly predicted that 1506 customers churn (True Positives), and 212 customers did not churn (True Negatives). 
 
 ### Conclusion
 
-In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. We got an accuracy of 85.9%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
+In this guide, we learned how to build, visualize and train an ANN using Keras. We made a model that shows the customers that will leave a bank. 
+
+We got an accuracy of 85.9%. Now you can make an artificial neural network and train on any dataset. There is no definite architecture to use. You can study different architectures. The goal is to see which one gives you a better result.  You can start by using the architectures in deep learning research papers.
 
 ---
-
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
