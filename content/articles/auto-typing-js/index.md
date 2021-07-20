@@ -6,7 +6,7 @@ url: /auto-typing-js/
 title: How to Create an Auto-typing Feature in JavaScript
 description: This article will guide you on how to create an auto-typing feature using JavaScript and HTML. This feature can help in attracting users to particular content.
 author: sandra-moringa
-date: 2021-07-20T00:00:00-10:11
+date: 2021-07-20T00:00:00-11:31
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
