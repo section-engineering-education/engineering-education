@@ -6,7 +6,7 @@ url: /working-with-docker-in-vscode/
 title: Working with Docker in VS Code
 description: In this article, we will look at how we can intergrate and work with Docker containers and images in VS Code. We will use dockerize a simple Express.js server to show how we can work with Docker in VS Code.
 author: magdaline-kariuki
-date: 2021-07-09T00:00:00-05:18
+date: 2021-07-20T00:00:00-02:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,9 @@ images:
    alt: Docker VS Code Example Image
 ---
 Microservices and containers are the two major new software development trends nowadays.
-<!--more-->
-A microservice is an architectural approach in which a system is divided into discrete services, each with a single, narrowly defined feature that is accessible to the rest of the system as well as external parties such as web and mobile apps via an API.
 
+A microservice is an architectural approach in which a system is divided into discrete services, each with a single, narrowly defined feature that is accessible to the rest of the system as well as external parties such as web and mobile apps via an API.
+<!--more-->
 A container is an excellent method to bundle your program, its dependencies, and settings into a single, portable image file.
 
 A container image is a small, discrete executable bundle of software that contains everything required to run it, including code, environment, tools, system libraries, and preferences. A container is an architecture that groups code and requirements together at the app layer.
@@ -38,7 +38,7 @@ Confirm that you have a Docker installation on your machine by checking the Dock
 
 Open a terminal and run the command below.
 
-```bash
+```docker
 $ docker --version
 ```
 
@@ -48,7 +48,7 @@ To verify that your installation is working correctly, run the `hello-world` Doc
 $ docker run hello-world
 ```
 
-If the above command executes without errors, feel free to proceed to the next step, your installation is okay.
+If the above command executes without errors, then you can proceed to the next step because everything has installed correctly.
 
 ### The Docker extension
 A Docker extension for VS Code is used to provide support for Docker. To install the Docker extension, search and install it from the extensions pane.
@@ -89,23 +89,23 @@ $ code .
 Then paste the code below inside `index.js`.
 
 ```javascript
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!');
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`);
 })
 ```
 
 ### Manually writing the Dockerfile
 As we said earlier, to build Docker images, you need a `Dockerfile`.
 
-Because VS Code understands Dockerfiles' format as well as the relevant set of instructions, creating these files should be simple. 
+Because VS Code understands Dockerfiles' format as well as the relevant set of instructions, creating these files should be simple.
 
 Make a new file called `Dockerfile` in your working directory.
 
@@ -137,6 +137,7 @@ CMD ["node", "index.js"]
 ```
 
 The configuration above tells Docker to:
+
 - Use the `node:12.18-alpine` image from the Docker Hub.
 - Set the environment variable `NODE_ENV` to `production`.
 - Make port 3000 accessible from outside the container.
@@ -164,10 +165,10 @@ $ curl http://127.0.0.1:3000
 
 The command above should print a simple "Hello World!".
 
-By switching to the Docker extension pane, you can easily manage your existing containers, [container registries](https://code.visualstudio.com/docs/containers/quickstart-container-registries) and images. 
+By switching to the Docker extension pane, you can easily manage your existing containers, [container registries](https://code.visualstudio.com/docs/containers/quickstart-container-registries) and images.
 
 ### Common Docker commands
-You can use most of the required commands needed to work with your Docker images, containers from the Command Palette. You can find all the Docker commands by typing `Docker: `.
+You can use most of the required commands needed to work with your Docker images, containers from the Command Palette. You can find all the Docker commands by typing `Docker :`.
 
 ![Common Docker commands](/engineering-education/working-with-docker-in-vscode/docker-commands.png)
 
