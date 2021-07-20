@@ -1,79 +1,153 @@
+### Graphs in Data structure ( Using C++)
+
 #### Introduction
-Graphs are mathematical structures that represent the pairwise relationship between objects. A graph is a flow structure that represents the relationships between various objects. It can be visualized by using the following two basic components:<sub>de</sub>
+Graphs are mathematical structures that reflect the pairwise relationship between things. A graph is a type of flow structure that displays the interactions of several objects. It may be represented by utilizing the two fundamental components shown below:
 
-* **Adjacency Matrix** 
-An adjacency matrix is a V*V binary matrix A. Element A<sup>i,j</sup> is 1 if there is an edge#### Introduction
-Graphs are mathematical structures that represent a pairwise relationship between objects. A graph is a flow structure that represents the relationships between various objects. It can be visualized by using the following two basic components:
-* **Nodes**: These are the most important components in any graph. Nodes are entities whose relationships are expressed using edges. If a graph comprises 2 nodes A and B and an undirected edge between them, then it expresses a bi-directional relationship between the nodes and the edge.
+* **Nodes**: These are the most crucial elements of every graph. Edges are used to represent node connections. A graph with two nodes A and B connected by an undirected edge expresses a bi-directional relationship between the nodes and the edge.
 
-* **Edges**: Edges are the components that are used to represent the relationships between various nodes in a graph. An edge between two nodes express one way or two-way relationship between the nodes
+* **Edges**: Edges are part of a graph showing the connections between nodes. An edge between two nodes expresses the nodes' one-way or two-way connection.
 
-#### Some real-life application
+#### An application in real life 
 
-* **Google Maps**: To find the route based on the shortest route/time.
-* **Social Networks**: Connecting with friends on social media where each user is a vertex, and when users connect they create an edge.
-* **Web Search**: google, to search for webpages, where pages on the internet are linked to each other by hyperlinks, each page is a vertex and the link between two pages is an edge.
-* **Recommendation System**: On eCommerce websites, relationship graphs are used to show recommendations.
+* **Google Maps**: link your journey from the start to the end
+* **Social Networks**: Friends with each other are connected using an edge where each user represents a vertex.
+* **Recommendation System**: relationship data between users recommendation is use graph for connection.
 
 #### Type of Graphs :
-* **Undirected**: An undirected graph is a graph in which all the edges are bi-directional example i.e the edges do not point in any specific direction
+* **Undirected**: All edges in an undirected graph are bidirectional and do not point in any particular direction.
 
-* **Directed**: A directed graph is a graph in which all the edges are uni-directional i.e the edges point in a single direction.
+![graph](./graph_1.png)
 
-* **Weighted**: weighted graph, each edges assigned a weight or cost. Consider a graph of 4 nodes as in the diagram below. As you can see each edge has a weight/cost assigned to it. If you want to go from vertex 1 to vertex 3, you can take one of the following 3 paths: 
-    * 1->2->3
-    * 1->3
-    * 1->4->3
+* **Directed**: In a directed graph all of the edges are uni-directional they point to a single direction.
 
-Therefore the total cost of each path will be as follows:
+![graph](./graph__2.JPG)
 
-The total cost of  1->2->3 will be (1+2) i.e 3 units 
+* **Weighted**: Weighted graph, with each edge, allocated a weight or cost. Consider a network with four nodes, shown in the picture. As you can see, each edge has a weight/cost associated with it. If you wish to get from vertex 1 to vertex 3, you can choose one of three routes:
+    * 1->3->2
+    * 3->1
+    * 1->3->4
+  
+As a result, the total cost of each path is as follows:
 
-The total cost of 1-> 3 will be 1 unit
+The total cost of 1->3->2 is (1+2), or three units.
 
-The total cost of 1->4->3 will be (3+2) i.e 5 units
+The total cost of 1->3 is one unit.
 
-* **Cyclic**: A graph is cyclic if the graph comprises a path that starts from a vertex and ends at the same vertex. that path is called a cycle. An acyclic graph is a graph that has no cycle.
+The total cost of 1->3->4 is (3+2), or 5 units.
 
-{IMG}}}}}}}}}}}}
+![graph](./graph_3.JPG)
 
-cycle present in the above graph (0->1->2).
-A tree is an undirected graph in which any vertices are connected by only one path. A tree is an acyclic graph and has N-1 edges where N is the number of vertices. Each node in a graph may have one or multiple parent nodes. However, in a tree, each node (except the root node) comprises exactly one parent node.
+* **Cyclic**: A graph is cyclic if it has a path that starts and ends at the same vertex. This is referred to as a cycle. An acyclic graph does not have a cycle.
 
-**Note**: A root node has no parent.
+![graph](./graph_4.jpg)
 
-A tree cannot contain any cycles or self-loops, however, the same does not apply to graphs.
+The diagram below depicts a cycle (0->1->2).
+A tree is a graph that has just one path connecting any two vertices. An acyclic network with N-1 edges, where N is the number of vertices, is referred to as a tree. Every node in a graph may have one or more parents. In a tree as each node has precisely one parent node.
 
-{{{IMG}}}}}}}}}}
+A tree cannot have any loops or cycles, whereas graphs may.
+
+![graph](./graph_5.jpg)
 
 ### Graph Representation 
-You can represent a graph in many ways. The two most common ways of representing a graph are as follows:
+A graph can be represented in several ways. The following are the two most frequent ways of expressing a graph:
 
 * **Adjacency Matrix** 
-An adjacency matrix is a V*V binary matrix A. Element A<sub>i,j</sub> is 1 if there is an edge from vertex i to vertex j else A<sub>i,j</sub> is 0.
+A V*V binary matrix is an adjacency matrix. If there is an edge from vertex i to vertex j, element A<sub>i,j</sub> is 1, otherwise A<sub>i,j</sub> is 0.
 
-  **Note**: A binary matrix is a matrix in which the cells can have only one of two possible values - either 0 or 1.
+  **Note**: A binary matrix is one in which the cells can only have one of two potential values: 0 or 1.
 
-The adjacency matrix can also be modified for the weighted graph in which instead of storing 0 or 1 in A<sub>i,j</sub> the weight or cost of the age will be stored.
+The adjacency matrix for the weighted graph can also be modified, such that instead of storing 0 or 1, the weight or cost of the edge is recorded in A<sub>i,j</sub>.
 
-In an undirected graph, if A<sub>i,j</sub> = 1, then A<sub>i,j</sub> =1.
+If A<sub>i,j</sub> is 1 in undirected graph then A<sub>i,j</sub> will also be 1.
 
-In a directed graph, if A<sub>i,j</sub> = 1, then may or may not be 1.
+If A<sub>i,j</sub> is 1 in  directed graph, then may or may not be 1.
 
-The adjacency matrix provides constant-time access (O(1)) to determine if there is an edge between two nodes. Space complexity of the adjacency matrix is O(V<sup>2</sup>).
+The adjacency matrix offers constant-time access (O(1)) to detect if two nodes have an edge. The adjacency matrix has a space complexity of O(V)<sup>2</sup>.
 
 * **Adjacency List**
-The other way to represent a graph is by using an adjacency list. An adjacency list is an array A of separate lists. Each element of the array A<sub>i</sub> is a list, which contains all the vertices that are adjacent to vertex i.
+An adjacency list is another way to represent a graph. An adjacency list is a collection of distinct lists in an array A. Each element of the array A<sub>i</sub> is a list containing all of the vertices next to vertex i.
 
-For a weighted graph, the weight or cost of the edge is stored along with the vertex in the list using pairs. In an undirected graph, if vertex j is in list A<sub>i</sub> the vertex i will be in list A<sub>j</sub>.
+In the case of a weighted graph, the weight or cost of the edge is stored in the list alongside the vertex using pairs. If vertex j is in list A<sub>i</sub>, vertex i will be in list A<sub>j</sub> in an undirected graph.
 
-The space complexity of the adjacency list is O(V +E) because in the adjacency list information is stored only for those edges that exist in the graph. In a lot of cases, where a matrix is sparse using an adjacency matrix may not be very useful. This is because using an adjacency matrix will take up a lot of space where most of the elements will be 0, anyway. In such cases, using an adjacency list is better.
-
-{IMG}}}}}}}}}}}}}}}}}123
-
+The space complexity of the adjacency list is O(V + E), since information in the adjacency list is only stored for edges that exist in the graph.
 Representation of an undirected graph,
-* An undirected graph G having 5 vertices and seven edges
-* An adjacency-list representation of G
+
+* G is an undirected graph with 5 vertices and 7 edges.
+  
+  ![graph](./graph_6.jpg)
+
+* Adjacency-list representation of G
+  
+  ![graphList](./graph_7.jpg)
+
 * The adjacency-matrix representation of G
+  
+  ![graphMartrix](./graph_8.jpg)
 
 **Code for Adjacency list representation of graph** : 
+
+``` C++
+#include <iostream>
+#include<list>
+using namespace std;
+
+class graph{
+public:
+    list<int> *adjlist;
+    int n;
+    graph(int v){
+        adjlist=new list<int> [v];
+        n=v;
+    }
+
+    void addedge(int u,int v,bool bi){
+        adjlist[u].push_back(v);
+        if(bi){
+            adjlist[v].push_back(u);
+        }
+    }
+
+    void print(){
+        for(int i=0;i<n;i++){
+            cout<<i<<"-->";
+            for(auto it:adjlist[i]){
+                cout<<it<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+
+
+};
+
+int main() {
+    graph g(5);
+    g.addedge(1,2,true);
+    g.addedge(4,2,true);
+    g.addedge(1,3,true);
+    g.addedge(4,3,true);
+    g.addedge(1,4,true);
+
+    g.print();
+}
+
+```
+
+The complete execution of the above code can be found [here](https://replit.com/@AnubhavBansal1/Gaphs#main.cpp).
+
+#### Output
+
+![output](./output.jpg)
+
+* In the output you can see the implementation of graphs in adjacency list view.
+
+#### Conclusion
+
+By learning graphs from basics you will get to think more analytically while solving data structures questions. It would be great if you practice some of the graphs questions after understanding the foundation of graphs 
+
+[Leet Code Problem 1](https://leetcode.com/problems/find-center-of-star-graph/)
+
+[Leet Code Problem 2](https://leetcode.com/problems/find-the-town-judge/)
+
+Happy Coding!
