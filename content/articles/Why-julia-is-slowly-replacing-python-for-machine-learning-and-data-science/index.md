@@ -7,7 +7,7 @@ title: Why Julia is Slowly Replacing Python in Machine Learning and Data Science
 description: This article will go over the reasons why Julia is slowly replacing Python within Machine Learning and Data Science
 author: eric-kahuha
 date: 2020-10-26T00:00:00-15:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
