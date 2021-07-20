@@ -1,9 +1,11 @@
 ###  Introduction
+A string is a sequence of Unicode characters. Unicode is a standard for providing unique code for every character, so that characters are distinguishable from one another. 
 
-<--- add introduction --->
+Strings as a data type have wide use in programming. Just like any other programming language, strings in python are used to represent text but could also include spaces, special characters as well as numbers.
 
 ###  Initializing strings in python
 In python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
+
 ####  Using single Quotes
 ```py 
 # defining strings using single quotes
@@ -62,7 +64,7 @@ H
 ####  Last Character
 Since python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same to get the last element of a string.
 ```py
-# printring the  last index
+# printing the  last index
 string = 'Hello there'
 print(string[-1])
 ```
@@ -124,6 +126,7 @@ print(len(string))
 ```
 
 - `split()`.  This method separates the individual characters of a string into a list. By default, the list values are separated by white spaces. You can however specify the separator as you wish using either a comma, hash-tag, or any other separator. The separator means that the string will be split at every occurrence on the separator. For instance, the code snippet below will split the string at every occurrence on a question marker `?`.
+
 ```py
 # initial string
 string = 'Hello?world?this?is?my?test?for?the?game'
@@ -154,6 +157,7 @@ Hello world this is my test for the game
 ```
 
 - `find()`. This method is used to determine if a character or a value exists in a given string. It returns the first occurrence of the value. If the value being looked for in the string is not found, the method returns -1.  For instance, if we want to find the occurrence of the word `world` in the string `hello world`, we can use the find method as below. The method returns 6 which is the occurrence of the string `world`.
+
 ```py 
 # string
 string = 'Hello world'
@@ -163,11 +167,15 @@ y = string.find('world')
 
 print(y)
 ```
+
 ```bash
 6
 ```
+
 - `replace()`. This method replaces a phrase in a string with another phrase. The method takes 3 parameters; the string to be replaced, what to replace it with and the number of times to do the replacement.
+
 > If the number of times the replacement is to be done is not stated, the method replaces all the occurrences of the phrase.
+
 ```py
 # string
 string = 'Hello world, this world are a nice world'
@@ -193,7 +201,9 @@ print(x)
 ```bash
 Hello world
 ```
+
 The function can as well take the caharcter to remove as parameter the eliminates them from the string as below:
+
 ```py
 string = "//////Hello world,,,,,"
 
@@ -223,6 +233,7 @@ for letter in string:
         count+=1
 print('The letter o occurs ' +str(count)+ ' times')   
 ```
+
 ```bash
 H
 e
@@ -235,7 +246,7 @@ o
 r
 l
 d
-The letter o occurs 7 times
+The letter `o` occurs 7 times
 ```
 
 #### Concatenation
@@ -299,6 +310,7 @@ My name is Dianne Sandra
 This approach was introduced in Python 3.0 to enable programmers to handle complex string operations efficiently. It is a method inbuilt with the python strings class and can be accessed without any additional libraries. It provides string manipulation by substituting values and variables in strings.
 
 You could also do substitution by variable names then specifying the name in its respective position. This comes in very helpful especially if you want to substitute more than one string.
+
 ```py
 # using format option 
 print ("{} is a good platform.".format("Section Engineering Education"))
@@ -307,12 +319,13 @@ print ("{} is a good platform.".format("Section Engineering Education"))
 print ('{name} is {age} years old and she is a {occupation}'
 .format(name = 'Dianne', age = 19, occupation = 'programmer'))
 ```
+
 ```bash
 Section Engineering Education is a good platform.
 Dianne is 19 years old and she is a programmer
 ```
 #### Using f-strings
-Introduced in python 3.6, F-Strings allow embedding python expressions into python strings. It has the name f-string because the string constants into which other expressions are embedded are prefixed by the letter `f`. Take a look at the example below.
+Introduced in Python 3.6, F-Strings allow embedding Python expressions into Python strings. It has the name f-string because the string constants into which other expressions are embedded are prefixed by the letter `f`. Take a look at the example below.
 ```py
 # emebeding variables into string constants using f-string
 string1 = 'Hello'
@@ -328,8 +341,8 @@ Hello  world
 Generally, the f-string combines the initial string with the expressions to form the final string which is then presented for printing.
 
 ### Conclusion
-In this article, we learned about strings in python. we dug into how to initialize strings in python, operations that we can perform on the strings, the inbuilt methods of the python string class as well as the various methods of string formatting. This article will give the reader a head start to python strings when followed closely.
+In this article, we learned about strings in Python. we dug into how to initialize strings in Python, operations that we can perform on the strings, the inbuilt methods of the Python string class as well as the various methods of string formatting. This article will give the reader a head start to Python strings when followed closely.
 
-You can find the code snippets [here](https://github.com/diannesandra/python-strings).
+You can download the code snippets from [here](https://github.com/diannesandra/python-strings).
 
 
