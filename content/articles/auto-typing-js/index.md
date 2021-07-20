@@ -26,7 +26,7 @@ To follow along with this tutorial, you need to have:
 ### Goal
 In this article, we will implement the auto typing feature using JavaScript and [jQuery](https://jquery.com/), as shown in the video below.
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/4vUHOCINzHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://youtu.be/6NtN8K5cp50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Getting started
 We will use jQuery and [Immediately Invoked Function Expressions](https://www.javascripttutorial.net/javascript-immediately-invoked-function-expression-iife/) due to their simplicity.
