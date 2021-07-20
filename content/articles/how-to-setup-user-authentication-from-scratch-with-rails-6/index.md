@@ -111,6 +111,7 @@ This will generate several files, we will only focus on `app/models/users.rb` an
       t.timestamps
     end
   end
+end  
 ```
 
 We are adding model level validation to our `email` field, and `password_digest` is used to create password fields in rails. Encryption of passwords is done using the [bcyrpt_gem](https://rubygems.org/gems/bcrypt).
