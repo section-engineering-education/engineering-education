@@ -6,7 +6,7 @@ url: /Introduction-to-Containers-and-Docker/
 title: Introduction to Containers and Docker
 description: In this article, you will learn about containers, containerization, docker or docker-engine, docker client-server architecture, and why Docker is so popular in the software business industry.
 author: evans-chaun
-date: 2021-07-13T00:00:00-21:00
+date: 2021-07-20T00:00:00-21:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -24,7 +24,7 @@ To follow along with this article smoothly, you need to have:
 - A computer running any operating system.
 - Some knowledge of apps that run from the command-line interface.
 
-### Table of content
+### Table of contents
  
 - [Container terminologies](#container-terminologies)
 
@@ -53,7 +53,7 @@ To follow along with this article smoothly, you need to have:
 
 `Docker`, also known as `Docker Engine`, is a piece of software that allows us to manage the lifecycle of containers, describing how they will be set up, what applications/software/services will run within them, their networking and storage requirements, and, if necessary, how to quickly destroy and restart them.
 
-Docker runs processes within containers using `Docker images`. A Docker image is a file that is used by a Docker container to run programs. Docker images, like a template, serve as a collection of instructions for constructing a Docker container. When utilizing Docker, Docker images also serve as a starting point. In `virtual machine` (VM) settings, an image is similar to a snapshot.
+Docker runs processes within containers using `Docker images`. A Docker image is a file that is used by a Docker container to run programs. Docker images, like a template, serve as a collection of instructions for constructing a Docker container. When utilizing Docker, Docker images also serve as a starting point. In `Virtual Machine` (VM) settings, an image is similar to a snapshot.
 
 > Because containerization is a Linux OS feature, docker can only be installed on Linux operating systems such as Ubuntu, Fedora, Redhat, and so on. You'll need to construct a Linux virtual machine if you want to utilize Docker on a Windows operating system. The Docker Windows application creates a virtual machine automatically and executes the Docker engine. 
 
