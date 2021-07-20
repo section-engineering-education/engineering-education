@@ -23,3 +23,8 @@ We should NOT expect that every TOPIC we approve will be published.
 Anything in the Hardware department is a hard NO - we are more software centric - and any technologies that are Section adjacent are always a good topic. 
 
 We are looking for content that solves pain points for developers in the real world today - something that has not been hash over and over again - but something that developers are looking for (and forward) to dive into.
+
+
+### Topic Approval Frequency
+Our goal should be similar to our PR (touch point) goal which is to keep the queue (in this case meaning the topic forms waiting for approval) down to 48hrs.
+A student should hear back from us within 48hrs - we are working to improve that.
