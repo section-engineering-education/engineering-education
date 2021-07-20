@@ -173,7 +173,7 @@ You can use most of the required commands needed to work with your Docker images
 ![Common Docker commands](/engineering-education/working-with-docker-in-vscode/docker-commands.png)
 
 ### Conclusion
-By using the VS Code Docker extension, you can be able to do most of the Docker tasks like generating Docker files and building images with a single click. 
+By using the VS Code Docker extension, you can be able to do most of the Docker tasks like generating Docker files and building images with a single click.
 
 ### Further reading
 - [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
