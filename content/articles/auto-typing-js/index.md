@@ -4,21 +4,22 @@ status: publish
 published: true
 url: /auto-typing-js/
 title: How to Create an Auto-typing Feature in JavaScript
-description: This article will guide you on how to create an auto typing feature using JavaScript and html. This feature can help in attracting users to particular content.
+description: This article will guide you on how to create an auto-typing feature using JavaScript and HTML. This feature can help in attracting users to particular content.
 author: sandra-moringa
-date: 2021-07-24T00:00:00-18:00
-topics: []
+date: 2021-07-20T00:00:00-10:11
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/auto-typing-js/hero.jpg
-    alt: Auto-typing in JavaScript
+    alt: Auto-typing in JavaScript Hero Image
 ---
 In some cases, a developer may want to animate text content for users to see when they visit the web page. This can be achieved through auto-typing. This feature helps to enhance the look of a site and improves the overall user experience.
 <!--more-->
-Auto typing can be used to make eye-catching adverts or auto-complete text when a user is typing. It can be regarded as an animation and helps to retain attention, as well as simplify complex information. This is indeed a useful feature to implement in a frontend web project.
+Auto typing can be used to make eye-catching adverts or auto-complete text when a user is typing. It can be regarded as animation and helps to retain attention, as well as simplify complex information. This is indeed a useful feature to implement in a frontend web project.
 
 ### Prerequisites
+To follow along with this tutorial, you need to have:
 - A basic understanding of JavaScript.
 - An understanding of HTML and Bootstrap.
 
@@ -37,12 +38,11 @@ The general syntax of an IIFE is shown below:
   statements;
 
 })();
-
 ```
 
 In the above example, the grouping operator prevents variables within the IIFE from being accessed from the global scope. 
 
-You can learn more about IIFEs from official documentation found [here](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). 
+You can learn more about IIFEs from the official documentation [here](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). 
 
 > Note that we will put all of our code in a single file.
 
@@ -52,10 +52,10 @@ Create a new folder on your computer and give it any name. In this directory, ge
 We need to add the following JavaScript code in the `index.html` file. I have explained the code snippets using inline comments:
 
 ```js
-//The function for autotyping
+//The function for auto-typing
 function autoType(elementClass, typingSpeed, timeout) {
 //The target class where the auto-typing will be invoked
-    var ourClass = $(elementClass);
+    var ourClass = $(auto-typing);
     //setting the CSS styling for the target class
     ourClass.css({
       "position": "relative",
@@ -71,7 +71,7 @@ function autoType(elementClass, typingSpeed, timeout) {
     var newString = "";
     
     setTimeout(function () {
-    //changing the text visibilty to visible
+    //changing the text visibility to visible
       ourClass.css("opacity", 1);
       //clearing out the text temporarily
       ourClass.text("");
@@ -100,9 +100,9 @@ function fire(){
 Let's understand further what the above JavaScript code entails:
 
 The `autoType()` function requires three parameters:
-`elementClass` - The target class where the auto-typing will be invoked.
-`typingSpeed` - This is the typing speed.
-`timeout` - The waiting period before the `autoTyping()` function is fired.
+- `elementClass` - The target class where the auto-typing will be invoked.
+- `typingSpeed` - This is the typing speed.
+- `timeout` - The waiting period before the `autoTyping()` function is fired.
 
 `ourClass` variable stores the target class, as demonstrated below:
 
@@ -143,7 +143,7 @@ The `newString` is concatenated with the `text character` at the provided `index
 
 ```js
  setTimeout(function () {
-    //changing the text visibilty to visible
+    //changing the text visibility to visible
       ourClass.css("opacity", 1);
       //clearing out the text temporarily
       ourClass.text("");
@@ -173,7 +173,7 @@ function fire(){
 ```
 
 ### The HTML and CSS part
-We wil use the following HTML code:
+We will use the following HTML code:
 
 ```html
 <!doctype html>
@@ -250,12 +250,12 @@ In the `<head>` section, we set the `text color` to `black`, `font` to `Lucida s
 In the `<body>` tag, we call the `fire()` function when it loads. 
 
 ```js
-  <body onload="fire()" style="background-color: white">
+<body onload="fire()" style="background-color: white">
 ```
 
-`Bootstrap 5` is used for styling. It's documentation can be found [here](https://getbootstrap.com/docs/5.0/getting-started/introduction/). 
+`Bootstrap 5` is used for styling. The documentation can be found [here](https://getbootstrap.com/docs/5.0/getting-started/introduction/). 
 
-In the above code, we have imported `Bootstrap` using the code below:
+In the code above, we have imported `Bootstrap` using the code below:
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -329,7 +329,7 @@ After completing the above steps, we can save our file and then view it in the b
 </body>
 
 <script>
-//The function for autotyping
+//The function for auto-typing
 function autoType(elementClass, typingSpeed, timeout) {
 //The target class where the auto-typing will be invoked
     var ourClass = $(elementClass);
@@ -377,7 +377,9 @@ function fire(){
 ```
 
 ### Conclusion
-This tutorial has shown you how to create an auto typing feature using JavaScript and jQuery. We have analyzed the JavaScript code and determined at how it works. I hope you gained some insights that you'll apply in your next project.
+This tutorial has shown you how to create an auto typing feature using JavaScript and jQuery. We have analyzed the JavaScript code and determined how it works. I hope you gained some insights that you'll apply in your next project.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
