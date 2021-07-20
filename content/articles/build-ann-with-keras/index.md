@@ -6,7 +6,7 @@ url: /build-ann-with-keras/
 title: Building an Artificial Neural Network with Keras
 description: In this article, you will learn how to build and train an Artificial Neural Network with Keras.
 author: iniabasi-affiah
-date: 2021-07-20T00:00:00-05:30
+date: 2021-07-20T00:00:00-11:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
