@@ -202,7 +202,7 @@ We will use the following HTML code:
               <div class="col-md-5" style="text-align: left">
                 <h3 class="mb-4 title" style="color: red">Q & A&nbsp;</h3>
                 <div class="type-js"><div class="text-js">
-                  Is this End-Ed?
+                  Is this Eng-Ed?
                 </div>
                 </div>
                 <br>
@@ -297,7 +297,7 @@ After completing the above steps, we can save our file and then view it in the b
               <div class="col-md-5" style="text-align: left">
                 <h3 class="mb-4 title" style="color: red">Q & A&nbsp;</h3>
                 <div class="type-js"><div class="text-js">
-                  Is this End-Ed?
+                  Is this Eng-Ed?
                 </div>
                 </div>
                 <br>
