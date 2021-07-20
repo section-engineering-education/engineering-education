@@ -1,31 +1,46 @@
-### Introduction
-PHP Sessions provide server side storage of user information by use of session variables and makes this information accessed from several pages throughout a website.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-sessions-in-php/
+title: Getting Started with PHP Sessions
+description: This article will show you how to create, read, update, and destroy sessions. These components allow one to store temporary user data on the server.
+author: neema-muganga
+date: 2021-07-29T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Sessions uniquely identify users via a Session Identifier which provides connection of that particular user to their stored data on the server. Sessions are compared to but are not the same as cookies, because cookies store users' information on their local computer instead.
+  - url: /engineering-education/getting-started-with-sessions-in-php/hero.jpg
+    alt: Getting Started with PHP Sessions
+---
+PHP sessions allow web applications to store user information on the server. As a result, the data can be accessed from several pages throughout a website.
+<!--more-->
+Sessions rely on an `identifier` to identify different users. It is, therefore, easy to retrieve data about a particular user.
+
+> Unlike sessions, cookies store users' information on their local computer.
 
 ### Prerequisites
-One needs to have the following before proceeding with the article.
-1. Be familiar with PHP basic concepts.
-2. Install a text editor that you prefer. Code in this article was written and run using VisualStudio code that can be downloaded [here](https://code.visualstudio.com/download) (if you already don't have it).
-2. Either [xampp](https://www.apachefriends.org/download.html) or [wampp](https://sourceforge.net/projects/wampserver/) local server installed, for PHP to run.
+To follow along, you need:
+- A basic understanding of PHP basic concepts.
+- A text editor installed. In this article, we will use [visual studio code](https://code.visualstudio.com/download).
+- [xampp](https://www.apachefriends.org/download.html) or [wampp](https://sourceforge.net/projects/wampserver/) installed. These two applications allow us to run PHP locally.
 
-### What a PHP Session is
-A PHP Session is in simple terms, a data storage for user's data that can be rendered across several pages of an application or website. A unique Session identifier or ID is used to identify the particular user the information references to.
+### Understanding PHP sessions
+A PHP session stores user's data that can be rendered across several pages of an application or website. 
 
-Therefore, where a session ID is missing, it implies no session has been created yet. Hence, PHP is prompted to initiate one. 
+A unique session identifier or `ID` is used to identify a specific user. Therefore, when a `session ID` is null, it implies no session has been created yet. Hence, PHP is prompted to initiate one. 
 
-We will learn how to start sessions and create session variables shortly.
+In this tutorial, we will learn how to start sessions and initialize variables shortly. We will make use of session variables (`$_SESSION`). This is a PHP superglobal. You can read more about PHP superglobals from [here](https://www.section.io/engineering-education/php-superglobals/).
 
-We make use of Session variables that is written as **$_SESSION** (which is a PHP superglobal. Go [here](https://www.w3schools.com/php/php_superglobals.asp) and [Understanding PHP superglobals](https://www.section.io/engineering-education/php-superglobals/) to find out more about superglobals to store one particular user's information.
+### How to start a session
+We need to store user data in `session variables` before they can be accessed across multiple web pages. Therefore, our first step is to start a `session` by invoking a PHP function called `session_start()`.
 
-### How to Start a session
-Remember a user's information needs to be stored in session variables before they can be accessed across multiple pages? So, before you even use this variable, you will be required to start a session by invoking a PHP function called session_start().
+The `session_start()` function creates a `new session`, or restarts an existing one then generates a unique session ID for the user. This is mainly done through a GET or POST request. You can learn more about these request methods from [here](https://www.w3schools.com/php/php_forms.asp). 
 
-This function creates a new session, or restarts an existing one then generates for the user a unique session ID, through a GET or POST request. These two requests are extensively covered [here](https://www.w3schools.com/php/php_forms.asp). 
+> It is always important to place the `session_start()` function immediately after the `<?php` tag at the beginning of your script. This ensures that all the required functionalities are accessible.
 
->NOTE: It is always important to place the **session_start()** function immediately after the ***<?php*** tag that comes before the HTML tags and at the beginning of your script else its functionality will not be implemented.
-
-Create a **details.php** file and write the following code.
+Let's create a `details.php` file and then include the following code.
 
 ```php
 <?php 
@@ -47,52 +62,49 @@ Create a **details.php** file and write the following code.
 </html>
 ```
 
-You will expect the following output.
+You should have the following output.
 
 ```bash
 Successfully set the session variables.
 ```
 
 ### Accessing a created session
-Now that we already have our sessions in the preceding section set, we may want to access them just to be sure the sessions were set successfully.
+Now that we already have our sessions in the preceding section, let's retrieve them to ensure that they were set successfully.
 
-Create an **accessdetails.php** file that will access the previously set session variables.
-We introduce a conditional statement (you may want to follow [this](https://www.w3schools.com/php/php_if_else.asp) link, which talks more on PHP conditional statements) and an **isset()** function to check whether the session variables were really set.
+Create an **accessdetails.php** file. We will use this file to access the previously set session variables.
+
+We will need to use a conditional statement to access the required session variables. We will also require an `isset()` function to check whether the `session variables` were set.
 
 ```php
-
 <?php 
-
-  //Note that we call the session_start() function here also before proceeding 
+  //Note that we need to call the session_start() function here before proceeding 
   session_start();
 ?>
 <!DOCTYPE html>
 <html>
   <body>
 
-    <?php
-    
+    <?php 
       //conditional statement with isset() function to check if session is set
       if(isset($_SESSION["name"]) && isset($_SESSION["hobby"])){
-	echo "Hi ".$_SESSION["name"]. ", glad to know you enjoy ".$_SESSION["hobby"]. " too!"; 
+           echo "Hi ".$_SESSION["name"]. ", glad to know you enjoy ".$_SESSION["hobby"]. " too!"; 
       }
-
       //if session variables do not exist, this will run instead
       else{
-	echo "Sorry.. no such session variables set!";
+        echo "Sorry.. no such session variables set!";
       }
     ?>
   </body>
 </html>
 ```
 
-Since our sessions were set in the **details.php** file already, we expect it to run and give the following output.
+Since our sessions were set in the `details.php` file, we should have the following output.
 
 ```bash
 Hi Neema Muganga, glad to know you enjoy writing too!
 ```
-
-Incase you misspelt the variable sessions in the files, PHP may not recognize the session variables you are referring to and therefore return the else statement.
+  
+In case you misspelled the `session variables`, PHP may not recognize the data you are referring to and, therefore, return the `else` statement.
 
 Output:
 
@@ -100,17 +112,17 @@ Output:
 Sorry.. no such session variables set!
 ```
 
->NOTE: Ensure you place a semicolon at the end of a PHP statement to avoid syntax errors that prevent your code from running.
+> Ensure you place a semicolon at the end of a PHP statement to avoid syntax errors that prevent your code from running.
 
 ### How to update a set session.
-Incase you want to change a session variable to a different value instead of the existing one, follow the example below.
-Replace the new session data in this case; **name**, in the details.php file.
+In some cases, we may want to change a session variable to a different value.
+
+In this step, we will replace the preset `name` variable in the `details.php` file, as shown below:
 
 ```php
 <?php
 //starting session
 session_start();
-
 //updating the session variable name value
 $_SESSION["name"] = "Liz Muganga";
 ?>
@@ -125,27 +137,29 @@ $_SESSION["name"] = "Liz Muganga";
 </html>
 ```
 
-This will change the name set from Neema Muganga to Liz Muganga and the following output will be seen when you run the code.
+The above code will change your name and then display it in the browser.
 
 Output:
 
 ```bash
-You changed your name to Liz Muganga!
+  You changed your name to Liz Muganga!
 ```
 
 ### Destroying a session.
-The whole point of using sessions was to store user's data and make it accessible throughout several pages of the application. 
+The whole point of using `sessions` was to store user's data and make it accessible throughout the web application. 
 
-In other words, the server is able to know who is accessing the application at that particular point in time, by referencing the unique Session Identifier used, when creating the session variable.
+Therefore, the server can determine who is accessing the application using the unique session identifier.
 
-Closing the browser or even logging out of the system at some point, loggs us out and redirects us back to the login page mostly.This is as a result of the session variable being destroyed.
+The session will be destroyed when one logs out or closes the browser window.
 
 #### Functions we may use when destroying a session.
-1. The **unset()** function. This function destroys one particular session variable by passing in the session variable we want to destroy. We will soon see how.
+We can also use the following data to destroy the stored session variables:
 
-2. **session_destroy()**. This function destroys **all** previously set session variables and it does not require passing any parameters to it.
+`unset()` - This function destroys `one` particular session variable. It requires the target variable as a parameter. 
 
-The following code shows how how to destroy a php session.
+`session_destroy()` - This function destroys `all` previously set session variables. It does not require any parameters.
+
+The following code shows how to destroy a PHP session:
 
 ```php
 
@@ -170,14 +184,10 @@ The following code shows how how to destroy a php session.
 </html>
 ```
 
-That was fun!. 
-Now, I hope you have an idea of how the **logout** functionality is implemented in applications. 
-The specific user data is wiped off the session variable if the **unset()** function is used, and ultimately every other user data stored is destroyed from the session variables, when the **session_destroy()** function is called. 
+From this analysis, I hope you have an idea of how the  `logout` functionality is implemented in many applications. 
 
 ### Conclusion
-Sessions to a beginner may sound hard of a concept to grasp, it is only normal to feel that way. This article therefore, is meant to simplify this concept and take you through a step by step learning process until you eventually get a hung of it which by now I believe you have. If not yet, you could always go over it another time until you are sure you got it well.
-
-Below you can find links to other sources you may want to look at to make your understanding even better.
+Sessions are indeed a crucial part of a web application. This article has shown you how to create, update, retrieve, and delete sessions. You can, therefore, use this knowledge to craft other powerful applications.
 
 #### Further reading
 - [w3schools PHP Sessions](https://www.w3schools.com/php/php_sessions.asp).
@@ -186,3 +196,6 @@ Below you can find links to other sources you may want to look at to make your u
 
 Happy coding!
 
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
