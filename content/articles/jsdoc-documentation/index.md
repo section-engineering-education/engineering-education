@@ -1,23 +1,27 @@
 ### Introduction
-Suppose you write a block of code for a software today or a couple of functions to achieve a given functionality. At the moment of writing the code, everything is clear in your mind, and you can understand what every piece and every line does in your code. However, months later you may look at your code and wonder if you're the one who exactly wrote the code, especially if the code is not documented. Code documentation resolves the issues of forgetting what the code is about and giving easy time to other developers to understand how to use and maintain the software you wrote.
+Suppose you write a block of code for a software today, or a couple of functions to achieve a given functionality. At the moment of writing the code, everything is clear in your mind, and you can understand what every piece and every line does in your code. However, months later, you may look at your code and wonder if you were the one who wrote the code, especially if the code is not documented. Code documentation resolves the issues of forgetting what the code is about and makes it easy for other developers to understand how to use and maintain the software you wrote.
 
 ### Why you need JSDocs
-As we all know that writing code documentation is very tedious, we need something to cut time.  The main idea behind JSDocs is to generate documentation for functions, classes, and methods. 
-The benefits of using JSDocs for your code are how easy it is to export to HTML and besides, it integrates well with editors like VS Code which has an extension for it, and IDE's. 
+As we all know, writing code documentation can be very tedious. Therefore, we need something to cut time. The main idea behind JSDocs is to generate documentation for functions, classes, and methods.
+
+The benefit of using JSDocs for your code is how easy it is to export to HTML. Moreover, it integrates well with IDE's and code editors such as VS Code which has an extension for it.
 
 ### Goal
-By the end of this tutorial, the reader should have learned how to initialize it in a JavaScript program and use it in a real-life programming scenario. We will write code snippets and document our code with JSDocs to demonstrate the concept.
+By the end of this tutorial, the reader should have learned how to initialize JSDocs in a JavaScript program and use it in a real-life programming scenario. We will write code snippets that are documented using JSDocs to demonstrate the concept.
 
 ### Insight
-If you take a look at the function below, it is easy to tell what the function does, as it speaks by itself. From the function name to its parameters, we can tell that this function calculates the area of a rectangle, taking the length and the width as the parameters.
-```js
-function calculateArea(length, width, area){
-    area = length * width;
-    return area;
+If you take a look at the function below, it is easy to tell what the function does as it speaks for itself. From the function name to its parameters, we can tell that this function calculates the area of a rectangle by taking the length and width as parameters.
+
+```Javascript
+function calculateArea(length, width, area) {
+	area = length * width;
+	return area;
 }
 ```
+
 If we change the function and parameter names, this function could mean something else. It turns out that we could use the JSDocs documentation API to help us describe the function better than it speaks for itself. With the help of JSDocs, you add a line of comment starting with an asterisk `*` before the function name to document it:
-```js
+
+```Javascript
 /**
 * function to  calculate the area of a rectangle
 */
@@ -29,50 +33,59 @@ function calculateArea(length, width, area){
 
 ### JSDocs Annotations
 Writing the function name alone is not enough. With JSDocs annotation, we can make things much interesting by documenting parameters as well. For each parameter, we take note of its type name and the description of what it does in the code. The syntax for a function parameter is shown below.
-```js
+
+```Javascript
 /**
-*
-* @param {parameter type} parameter name - parameter description
-*
-*/
+ *
+ * @param {parameter type} parameter name - parameter description
+ *
+ */
 ```
+
 - Type: Parameter type may be a string, integer, array, floating-point, etc.
 - Name: Every parameter must have a name for referencing it in the code and when the function is called.
 - Description: An explanation of what the parameter is about.
 
 ### Project Setup
 We have a glimpse of how to use JSDocs documentation API. To understand more, create a folder and name it `project`. Head over to your terminal and run the following commands.
+
 ```bash
 npm init -y
 npm i- dev jsdocs
 ```
-To use JSDocs, we need a config file. So in the root folder of the application, create a file named `jsodc.json` and paste the following snippets.
-```json
+
+To use JSDocs, we need a config file. So in the root folder of the application, create a file named `jsodc.json` and paste the following snippet.
+
+```Javascript
 {
-  "source": {
-      "include": ["source"],
-      "includePattern": ".js$",
-      "excludePattern": "(node_modules/|docs)"
-    },
-    "plugins": ["plugins/markdown"],
-    "templates": {
-      "cleverLinks": true,
-      "monospaceLinks": true
-    },
-    "opts": {
-      "recurse": true,
-      "destination": "./documentation/"
-    }
+	"source": {
+		"include": ["source"],
+		"includePattern": ".js$",
+		"excludePattern": "(node_modules/|docs)"
+	},
+	"plugins": ["plugins/markdown"],
+	"templates": {
+		"cleverLinks": true,
+		"monospaceLinks": true
+	},
+	"opts": {
+		"recurse": true,
+		"destination": "./documentation/"
+	}
 }
 ```
-In the root folder, create a folder `source` and in the folder, add a new file called `index.js`. Here is where we are going to write the code for which documentation is to be generated. 
+
+In the root folder, create a new folder named `source` and in the folder, add a new file named `index.js`. Here is where we are going to write the code for which its documentation is to be generated.
 
 ### Creating the Kickoff Script
 At the snippets below in the Script Object in the `package.json` file:
-```json
+
+```Javascript
 "doc": "jsdoc -c jsdoc.json"
 ```
-Now run the command `npm run doc`  after which you'll see a folder `documentation in your root folder. At this time, your folder structure should be as shown below:
+
+Now run the command `npm run doc` after which you'll see a folder `documentation` in your root folder. At this time, your folder structure should be as shown below:
+
 ```
 |-- jsdocs.json
 |-- package-lock.json
@@ -85,23 +98,28 @@ Now run the command `npm run doc`  after which you'll see a folder `documentatio
 |-- source
     |-- index.js
 ```
-If you open your `index.html` file in the `documentation folder, you should be able to see the auto generated page where your documentation will go as below.
+
+If you open your `index.html` file in the `documentation` folder, you should see the auto generated page where your documentation will go as below.
+
 ![documentation page](/enginnering-edication/jsdocs-documentation/initial-page.png)
 
 ### Documenting data types
-JavaScript has various data types, including strings, numbers, arrays, and objects. The snippets below show to document each of them using JSDocs.
+JavaScript has various data types, including strings, numbers, arrays, and objects. The snippet below shows how to document each of them using JSDocs.
 
 - Strings
-```js
+
+```Javascript
 /**
  * Documentaion for a string
  * Article Name
  * @type {string}
  */
 
-const articleName = "Javascript Documentation"
+const articleName = "Javascript Documentation";
 ```
+
 - Number
+
 ```js
 /**
  * Documentaion for a Number
@@ -109,53 +127,57 @@ const articleName = "Javascript Documentation"
  * @type {number}
  */
 
- const articleNumber = 24
+const articleNumber = 24;
 ```
 
 - Array
-```js
- /**
+
+```Javascript
+/**
  * Documentaion for an array
  * Array
  * @type {Array<number>}
  */
 
-  const stars = [1,2,3,4,5]
+const stars = [1, 2, 3, 4, 5];
 ```
 
 - Object
-```js
+
+```Javascript
 /**
  * Documentaion for an Object
  * Object
  * @type {{id: number, name: string, class: string}}
  */
 
-  var student = {
-      id: 23,
-      name: "Jane Doe",
-      class: "Beginner"
-  }
+var student = {
+	id: 23,
+	name: "Jane Doe",
+	class: "Beginner",
+};
 ```
 
 ### Documenting functions.
 Now that we know how to create JSDocs annotations for functions, we can document functions by borrowing the same knowledge. We describe what a function does, the parameters it takes, and what it returns.
-```js
+
+```Javascript
 /**
-* function to  calculate the area of a rectangle
-* @param {number} length - The length of the rectangle
-* @param {number} width - The width of the rectangle
-* @returns {number} - The area of the rectangle
-*/
-function calculateArea(length, width, area){
-    area = length * width;
-    return area;
+ * function to  calculate the area of a rectangle
+ * @param {number} length - The length of the rectangle
+ * @param {number} width - The width of the rectangle
+ * @returns {number} - The area of the rectangle
+ */
+function calculateArea(length, width, area) {
+	area = length * width;
+	return area;
 }
 ```
+
 ### Creating Custom Types
 Let us say we want to create a custom data type called `programming language`. We will define the custom type using the `typedef` keyword to specify the language object and the object name.
-```js
 
+```Javascript
 /**
  * Custom data type defining a programming language
  * @typedef {Object} ProgrammingLanguage
@@ -170,75 +192,77 @@ Let us say we want to create a custom data type called `programming language`. W
  */
 
 const programmingLanguage = {
-    id: 100,
-    name: "Javascript",
-    software: "Websites",
-    year: 1999
-}
+	id: 100,
+	name: "Javascript",
+	software: "Websites",
+	year: 1999,
+};
 ```
 
 ### Working with Classes
-Now let's look at how we document JavaScript classes using JS docs. A JavaScript class, usually has a class name, data members, and methods that can be performed on it. The snippet below explicitly explains how to work with classes in JS docs.
-```js
+Now let's look at how we document JavaScript classes using JSDocs. A JavaScript class usually has a class name, data members, and methods that can be performed on it. The snippet below explains how to work with classes in JSDocs.
+
+```Javascript
 /**
  * Class to create a user object
  */
-class User{
-    /**
-     * @param {Object} userInfo  Information about a user
-     */
-    constructor(userInfo){
-        /**
-         * @property {string} name - User name
-         */
-        this.name = userInfo.name
+class User {
+	/**
+	 * @param {Object} userInfo  Information about a user
+	 */
+	constructor(userInfo) {
+		/**
+		 * @property {string} name - User name
+		 */
+		this.name = userInfo.name;
 
-        /**
-         * @property {string} password - User's password
-         */
-        this.password = userInfo.password
+		/**
+		 * @property {string} password - User's password
+		 */
+		this.password = userInfo.password;
 
-        /**
-         * @property {string} email - User's email address
-         */
-        this.email = userInfo.email
+		/**
+		 * @property {string} email - User's email address
+		 */
+		this.email = userInfo.email;
 
-        /**
-         * @property {number} age - User's age
-         */
-        this.age = userInfo.age
-    }
+		/**
+		 * @property {number} age - User's age
+		 */
+		this.age = userInfo.age;
+	}
 
-    /**
-     * @property {Function} sayHello - Greet the group stating user's name
-     * @returns void
-     */
-    sayHello(){
-        console.log(`Hello section my name is ${this.name}`)
-    }
+	/**
+	 * @property {Function} sayHello - Greet the group stating user's name
+	 * @returns void
+	 */
+	sayHello() {
+		console.log(`Hello section my name is ${this.name}`);
+	}
 }
 ```
+
 ![Classes](/enginnering-edication/jsdocs-documentation/class-members.png)
 ![Classes](/enginnering-edication/jsdocs-documentation/class-methods.png)
 
 ### Looking into Modules
-Maybe you're wondering how to work around having different documents and files in the same project. Well, here is where we will work that out. You can bring modules in your documentation by importing them into the main `index.js` file in the `source` folder, from where the JSDocs will read it. For instance, we can create a module called `functions`, write our functions in it, and documented it.
+Maybe you're wondering how to work around having different documents and files in the same project. Well, here is where we will work that out. You can bring modules in your documentation by importing them into the main `index.js` file in the `source` folder. For instance, we can create a module called `functions`, write our functions in it, and documented it.
 
-Create a file named `functions.js` in the `source` folder, then, add the snippets below into it.
-```js
+Create a file named `functions.js` in the `source` folder and add the snippet below.
+
+```Javascript
 /**
  * functions module
  * @module functions
  */
 
-
 /**
-* function to  calculate the area of a rectangle
-* @param {number} length - The length of the rectangle
-* @param {number} width - The width of the rectangle
-* @returns {number} - The area of the rectangle
-*/
-exports.area = (length, width) =>length * width
+ * function to  calculate the area of a rectangle
+ * @param {number} length - The length of the rectangle
+ * @param {number} width - The width of the rectangle
+ * @returns {number} - The area of the rectangle
+ */
+exports.area = (length, width) => length * width;
 
 /**
  * Add two numbers
@@ -246,16 +270,20 @@ exports.area = (length, width) =>length * width
  * @param {number} number2 - Second number
  * @returns {number} - Sum of number1 and number2
  */
- exports.add = (number1, number2) => number1 + number2;
+exports.add = (number1, number2) => number1 + number2;
+```
 
+Bring the `functions` module into `index.js` by adding the following line at the top of the file.
+
+```Javascript
+const { add, area } = require("./functions");
 ```
-Bring the `funtions` module into `index.js` by adding the following line at the top of the `index.js` file.
-```js
-const { add, area } = require('./functions')
-```
+
 If you run the command `npm run doc`, you will see the module `functions` documented as below:
 
 ![modules](/enginnering-edication/jsdocs-documentation/functions-module.png)
 
 ### Conclusion
-In this tutorial, we learned how to use JSDocs to document JavaScript code. We took a look into documenting basic data types, arrays, objects, functions parameters, and classes. This tutorial gives the topic a beginner-friendly approach with easy-to-understand snippets to enable the reader to get the maximum from the concept. You can find the code for the snippets in [this](https://replit.com/@PhinaKersly/JSDOCS?v=1) file link. Be sure to follow along for more.
+In this tutorial, we learned how to use JSDocs to document JavaScript code. We took a look into documenting basic data types, arrays, objects, function parameters, and classes. This tutorial gives the topic a beginner-friendly approach with easy-to-understand snippets to enable you to get the maximum knowledge of the concept. You can find the code for the snippets in this [file](https://replit.com/@PhinaKersly/JSDOCS?v=1). Be sure to follow along for more.
+
+Happy coding!
