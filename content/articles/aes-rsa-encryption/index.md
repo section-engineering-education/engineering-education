@@ -14,7 +14,7 @@ Encryption is a way of enciphering data especially when it's on transit to preve
 For a reader to understand this article, they should have the following prior knowledge:
 
 - A basic understanding of the concept of data encryption and the need for encryption in data communication.
-- A beginner's understanding of data cryptography.
+- A beginner's understanding of data [cryptography](https://www.section.io/engineering-education/cryptography-in-computer-networking/).
 
 ### What is an encryption algorithm?
 
@@ -35,15 +35,16 @@ The functionality of the AES algorithm might seem complex but in a real sense, i
 - **AES-128**
 
 As we already know, the encryption and decryption processes are done using a key.
-This block cipher uses a key that is 128 bits long for encryption and decryption of a message.
+This block cipher uses a key that is 128 bits long for encryption and decryption of a message and is the least secure of the three blocks available. Even though AES-128 has never been cracked, its resistance to brute-force attacks is worrying. Despite the security issues seen in AES-128, It is very fast and comes with alot of efficiency in data encryption.
 
 - **AES-192**
 
-The AES-192 uses a key that is 192 bits long for the encryption and decryption of messages.
+The AES-192 uses a key that is 192 bits long for the encryption and decryption of messages. It is more resistant to brute-force attacks as compared to AES-128 because it has a longer key hence more secure. Despite this, AES-192 is not commonly used, people tend to lean towards AES-256.
 
 - **AES-256**
 
 The AES-256 uses a key that is 256 bits long for the encryption and decryption of messages.
+This block is more secure as compared to the AES-128 and AES-192 because of the long length of the encryption key.The longer the encryption key, the more difficult the algorithm is to crack. AES-256 is therefore very resistant to brute-force attacks as compared to the two previous blocks.
 
 AES being an asymmetric block cipher, means that the key used in encryption and decryption is a kept secret and is only made known to the sender and the recipient of the message. The key used for encrypting the message is usually the same key used to decrypt the message on the receiving end.
 
@@ -55,7 +56,7 @@ Below is a simple diagrammatic representation flow of how AES encrypts data:
 
 This illustrates that either of the 3 encryption keys is used to encrypt the message. The encryption process occurs in the "cipher" and an encrypted message is produced in the "ciphertext".
 
-The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key.
+The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key. Below are the step by step explanations for data encryption using AES algorithm:
 
 ### Step 1: Generation of round keys
 
@@ -135,6 +136,6 @@ The receiver can decrypt the message using the expression G = c^d  mod n accordi
 
 ### Conclusion
 
-Encryption is key in matters of information security, and it is vital to learn the different algorithms used in data encryption other than AES and RSA to broaden your horizons as a person in the computing world where cybercrime is increasing by the hour.
+Encryption is key in matters of information security. It is therefore vital to learn the different algorithms used in data encryption other than AES and RSA. This would help broaden your horizons as far as data security is concerned.
 
 Blissful reading!
