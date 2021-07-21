@@ -20,8 +20,8 @@ We will be building a flask app that will enable users to upload files to a serv
 ### Python Virtual Environment
 A virtual environment is an isolated environment for python projects, this is a module created by python called venv, it gives a developer a unique environment that enables the installation of all packages that are unique to a particular project, the virtual environment doesn’t change the default python version or default packages installed in a system, instead, it gives you freedom from the interference of other packages installed in the system, this makes it easy to run any python project in any computer irrespective of python version or packages installed in the system.
 ### How To Create a Virtual Environment  
-The process of creating a virtual environment differs base on the operating system in this guide we will look at the process in the context of a windows operating system. You can check the procedure online if you are using a different operating system.
-To start open PowerShell and make a directory using the command 
+The process of creating a virtual environment differs base on the operating system in this guide we will look at the process in the context of a windows operating system. follow link to see how its done on a [Mac](https://programwithus.com/learn/python/pip-virtualenv-mac) and on a [Ubuntu](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b).
+To start on a windows device open PowerShell and make a directory using the command 
 ```python   
 mkdir
 ```
