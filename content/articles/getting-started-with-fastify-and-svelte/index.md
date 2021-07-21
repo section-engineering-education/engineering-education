@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/fastify-svelte-app/
+url: /engineering-education/getting-started-with-fastify-and-svelte/
 title: Getting Started with Fastify and Svelte
 description: This article will help us understand how to build a CRUD application using Fastify and Svelte.
 author: kevin-kimani
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/fastify-svelte-app/hero.jpg
+  - url: /engineering-education/getting-started-with-fastify-and-svelte/hero.jpg
     alt: Getting started with Fastify and Svelte
 ---
 [Fastify](https://www.fastify.io/) is a low-overhead backend web framework that is built on top of the Node.js runtime. Its popularity and attention are rising due to its lightweight design and the [plugin ecosystem](https://www.fastify.io/ecosystem/) it comes with.
@@ -415,7 +415,7 @@ Svelte uses a superset of HTML that has:
 
 The above Html webpage should look like this:
 
-![compelete.png](/engineering-education/fastify-svelte-app/complete.png)
+![compelete.png](/engineering-education/getting-started-with-fastify-and-svelte/complete.png)
 
 ### Deleting a post by ID
 To delete a post, we will make a `DELETE` request using fetch API to our backend. The logic is to filter the `ID` and return the remaining posts except the filtered one.
