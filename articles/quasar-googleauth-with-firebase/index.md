@@ -38,7 +38,7 @@ Follow the setup and installation process. When done, come back here to continue
 
 ### Creating our app components
 
-Navigate to the `src` folder, open `Index.vue`, delete the image tag that looks like below:
+Navigate to the `src` folder, open `pages/Index.vue`, delete the image tag that looks like below:
 
 ```HTML
 <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
