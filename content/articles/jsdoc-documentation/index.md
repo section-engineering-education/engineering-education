@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /jsdoc-documentation/
+title: Documenting JavaScript Code With JSDocs
+description: By the end of this tutorial, the reader should have learned how to initialize JSDocs in a JavaScript program and use it in a real-life programming scenario. We will write code snippets that are documented using JSDocs to demonstrate the concept.
+author: phina-kersly
+date: 2021-07-21T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/jsdoc-documentation/hero.png
+    alt: JSDocs documentation image example
+---
 ### Introduction
 Suppose you write a block of code for a software today, or a couple of functions to achieve a given functionality. At the moment of writing the code, everything is clear in your mind, and you can understand what every piece and every line does in your code. However, months later, you may look at your code and wonder if you were the one who wrote the code, especially if the code is not documented. Code documentation resolves the issues of forgetting what the code is about and makes it easy for other developers to understand how to use and maintain the software you wrote.
-
+<!--more-->
 ### Why you need JSDocs
 As we all know, writing code documentation can be very tedious. Therefore, we need something to cut time. The main idea behind JSDocs is to generate documentation for functions, classes, and methods.
 
@@ -288,3 +304,6 @@ If you run the command `npm run doc`, you will see the module `functions` docume
 In this tutorial, we learned how to use JSDocs to document JavaScript code. We took a look into documenting basic data types, arrays, objects, function parameters, and classes. This tutorial gives the topic a beginner-friendly approach with easy-to-understand snippets to enable you to get the maximum knowledge of the concept. You can find the code for the snippets in this [file](https://replit.com/@PhinaKersly/JSDOCS?v=1). Be sure to follow along for more.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
