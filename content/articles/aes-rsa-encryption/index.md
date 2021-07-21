@@ -4,7 +4,7 @@ Encryption is a way of enciphering data especially when it's on transit to preve
 1. [Prerequisites](#prerequisites)
 2. [What is an encryption algorithm?](#what-is-an-encryption-algorithm)
 3. [Getting started with AES encryption algorithm](#getting-started-with-aes-encryption-algorithm)
-4. [Functionality of AES algorithm](#functionality-of-aes-algorithm)
+4. [Functionality of the AES algorithm](#functionality-of-the-aes-algorithm)
 5. [Getting started with RSA encryption algorithm](#getting-started-with-rsa-encryption-algorithm)
 6. [RSA algorithm functionality](#rsa-algorithm-functionality)
 7. [Conclusion](#conclusion)
@@ -20,15 +20,15 @@ For a reader to understand this article, they should have the following prior kn
 
 An encryption algorithm is a set of rules used to transform data into ciphertext using an encryption key. This will make the data appear to be completely different from the initial data and will seem random. The cipher will then be transmitted safely to a recipient who will then go ahead and recover the initial data through a process called decryption using a decryption key.
 
-AES and RSA are an example of these algorithms that are used in data encryption in data communication. AES is an acronym that stands for Advanced Encryption Standard while RSA stands for Rivest, Shamir, Adleman.
+AES and RSA are an example of the algorithms in data communication that are used for data encryption. AES is an acronym that stands for **Advanced Encryption Standard** while RSA stands for **Rivest, Shamir, Adleman**.
 
 ### Getting started with AES encryption algorithm
 
-It was initially referred to as Rijndael and is a Symmetric [block cipher](https://en.wikipedia.org/wiki/Block_cipher) algorithm. AES was specifically developed for encrypting electronic data back in the United States by the [NIST](https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology). Ever since the AES has been used worldwide in encrypting confidential data.
+AES was initially referred to as Rijndael which is a Symmetric [block cipher](https://en.wikipedia.org/wiki/Block_cipher) algorithm. It was specifically developed for encrypting electronic data back in the United States by the [National Institute of Standards and Technology](https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology). Ever since, the AES has been used worldwide in encrypting confidential data.
 
-AES was developed as a replacement for [DES](https://searchsecurity.techtarget.com/definition/Data-Encryption-Standard) after it started showing vulnerabilities to Brute-force attackers.
+AES was developed as a replacement for the [Data Encryption Standard](https://searchsecurity.techtarget.com/definition/Data-Encryption-Standard) after it started showing vulnerabilities to Brute-force attackers.
 
-### Functionality of AES algorithm
+### Functionality of the AES algorithm
 
 The functionality of the AES algorithm might seem complex but in a real sense, it is really simple to understand. The first step is knowing that AES has 3 Block ciphers, namely:
 
@@ -36,6 +36,7 @@ The functionality of the AES algorithm might seem complex but in a real sense, i
 
 As we already know, the encryption and decryption processes are done using a key.
 This block cipher uses a key that is 128 bits long for encryption and decryption of a message.
+
 - **AES-192**
 
 The AES-192 uses a key that is 192 bits long for the encryption and decryption of messages.
@@ -44,9 +45,9 @@ The AES-192 uses a key that is 192 bits long for the encryption and decryption o
 
 The AES-256 uses a key that is 256 bits long for the encryption and decryption of messages.
 
-AES being asymmetric block cipher, means that the key used in encryption and decryption is a kept secret and is only made known to the sender and the recipient of the message. The key used for encrypting the message is usually the same key used to decrypt the message on the receiving end.
+AES being an asymmetric block cipher, means that the key used in encryption and decryption is a kept secret and is only made known to the sender and the recipient of the message. The key used for encrypting the message is usually the same key used to decrypt the message on the receiving end.
 
-When encrypting using AES, a person can either use AES-128, AES-192, or even the AES-256. During this encryption, some steps are followed to encrypt a message and the and these steps are done in rounds. Each round is made up of several steps of Substitution, transposition, and mixing of the message into ciphertext and also has a key called a [round key](https://www.quora.com/What-is-the-round-key-in-an-AES-algorithm).
+When encrypting using AES, a person can either use AES-128, AES-192, or even the AES-256. During this encryption, some steps are followed to encrypt a message and these steps are done in rounds. Each round is made up of several steps of substitution, transposition, and mixing of the message into ciphertext and also has a key called a [round key](https://www.quora.com/What-is-the-round-key-in-an-AES-algorithm).
 
 Below is a simple diagrammatic representation flow of how AES encrypts data:
 
@@ -84,11 +85,12 @@ The entire process is then repeated several times with each repeat being called 
 
 ### Getting started with RSA encryption algorithm
 
-RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA  uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
+RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
 
 This algorithm is based on the fact that finding factors of [composite numbers](https://en.wikipedia.org/wiki/Composite_number) is a difficult task.
 
 Below is a simple diagrammatic representation flow of how RSA encrypts data:
+
 ![RSA structure](](/engineering-education/aes-rsa-encryption/RSA.png)
 
 ### RSA algorithm functionality
@@ -97,10 +99,10 @@ Below is the step by step instructions of how to achieve encryption using the RS
 
  ### Step 1: Generation of the encryption and decryption keys
 
- To generate the keys,
+ To generate the keys:
  - Pick any two large prime numbers and keep them secret.
 
-     Example lets pick  prime numbers x and y
+     Example lets pick the prime numbers x and y
 - Evaluate 
               
      z = xy where z is the modulus of the two keys being generated
@@ -111,7 +113,7 @@ Below is the step by step instructions of how to achieve encryption using the RS
 
 - Pick any integer e in which 1 < e <  φ(z) and e is the public key exponent
 
-- Evaluate  k  and keep it as the private key exponent as follows:
+- Evaluate k and keep it as the private key exponent as follows:
 
     ke is [congruent](https://en.wikipedia.org/wiki/Modular_arithmetic) 1 in mod φ(z) 
 
@@ -135,4 +137,4 @@ The receiver can decrypt the message using the expression G = c^d  mod n accordi
 
 Encryption is key in matters of information security, and it is vital to learn the different algorithms used in data encryption other than AES and RSA to broaden your horizons as a person in the computing world where cybercrime is increasing by the hour.
 
- Blissful reading!
+Blissful reading!
