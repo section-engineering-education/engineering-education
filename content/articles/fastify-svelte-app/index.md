@@ -233,11 +233,9 @@ Our Svelte folder has an `src` folder, which is the folder that will contain all
 
 The two files inside it include:
 
-1. `App.svelte` - This is the main Svelte component. It has our tags such as `script` and `style`
+1. `App.svelte` - This is the main Svelte component. It contains tags such as `script` and `style`
 
-2. `main.js` - This file is the entry point for the app. It creates a new instance `App.svelte`. The attribute `target: document.body` indicates that we will render our app inside the HTML body.
-
-Initially, it renders the props of the `props: { name: 'world' }`:
+2. `main.js` - This file is the entry point for the app. It creates a new instance `App.svelte`.
 
 ```js
 import App from './App.svelte'
@@ -252,7 +250,11 @@ const app = new App({
 export default app
 ```
 
-You will see a `rollup.config.js`, which is the configuration file for the rollup packager bundler. In the `rollup.config.js` file you can see that `main.js` is specified as input. `main.js` is called by the application, which in turn calls `App.svelte`. (If you want to nitpick: `main.js` is included within `bundle.js` at runtime. `bundle.js` gets called by `public.html`).
+The attribute `target: document.body` indicates that we will render our app inside the HTML body. Initially, it renders the props of the `props: { name: 'world' }`.
+
+You will see a `rollup.config.js`, which is the configuration file for the rollup packager bundler.
+
+In the `rollup.config.js` file, you can see that `main.js` is specified as input. `main.js` is called by the application, which in turn calls `App.svelte`. (If you want to nitpick: `main.js` is included within `bundle.js` at runtime. `bundle.js` gets called by `public.html`).
 
 Since this is the boilerplate code, let's start editing and building the component that will connect to our Fastify backend in the next steps.
 
@@ -273,9 +275,15 @@ The tasks of our Svelte component include:
 
 Head over to your `Posts.svelte` component file and implement the following steps:
 
-Our `Posts.svelte` file has `<script>`, `<section>` container for our markup, and `<style>` blocks. In between the `<scipt>` tag,  we write the JavaScript code to add the dynamic functionality. 
+Our `Posts.svelte` file has `<script>`, `<section>` container, and `<style>` blocks. In between the `<script>` tags,  we write the JavaScript code to add the dynamic functionality.
 
-To begin, we create a `newPostData` object and export it. It will hold the text of the new todo with a title attribute. The backend determines the `ID` by incrementing it each time we add a new post. To insert a new post, we create a function `createPost()` that sends a POST request to our backend in JSON format. To achieve this, we use the value from the `<input>` HTML element and bind it to the `newPostData`. Svelte enriches our HTML markup so that we can use programming logic such as conditionals and loops. If we click the Add button, the `createPost` method is invoked to create a new post and our backend handles the rest.
+To begin, we create a `newPostData` object and export it. This object will hold the text of the new `todo` with a `title` attribute.
+
+The backend determines the `ID` by incrementing it each time we add a new post. To insert a new post, we create a function `createPost()` that sends a `POST` request to our backend in JSON format.
+
+To achieve this, we use the value from the `<input>` HTML element and bind it to the `newPostData`.
+
+Svelte enriches our HTML markup, so that we can use programming logic such as conditionals and loops. If we click the `Add` button, the `createPost` method is invoked to create a new post and our backend handles the rest.
 
 ```js
 <script>
@@ -300,7 +308,11 @@ To begin, we create a `newPostData` object and export it. It will hold the text 
     }
  ```
 
-Next, we need to understand how `fetchPosts` retrieves our posts. Data fetching is an asynchronous task. Our function and markup use the async-await syntax to achieve this. The fetch API makes a network request and populates which returns our posts. On our markup, we check if the `fetchPosts` method has retrieved the data before rendering it on the UI. Error handling is implemented on the catch block.
+Next, we need to understand how `fetchPosts` that retrieves all our posts.
+
+Data fetching is an asynchronous task. Our function and markup use the `async-await` syntax to achieve this.
+
+The fetch API makes a network request and populates which returns the posts. On the markup, we check if the `fetchPosts` method has retrieved the data before rendering it on the UI. (Error handling is implemented on the catch block)
 
 ```js
     const fetchPosts = (async () => {
@@ -391,7 +403,9 @@ The above Html webpage should look like this:
 ![compelete.png](/engineering-education/fastify-svelte-crud/complete.png)
 
 ### Deleting a post by ID
-To delete a post, we will make a `DELETE` request using fetch API to our backend. The logic is to filter the `ID` and return the remaining posts except the filtered one. Let's create the function that handles this:
+To delete a post, we will make a `DELETE` request using fetch API to our backend. The logic is to filter the `ID` and return the remaining posts except the filtered one.
+
+Let's create the function that handles this:
 
 ```js
     const deletePost = async (id)=>{
@@ -410,6 +424,8 @@ We need to bind this to our delete button in the HTML template.
 ```html
 <span><button class="btn btn-danger" on:click={deletePost}>Delete</button></span>
 ```
+
+Thus, we have built a CRUD application for Creating, Reading, Updating and Deleting blog posts using Fastify and Svelte.
 
 The source code for this tutorial can be found on [this](https://github.com/KayveTech/fastify-svelte-app) GitHub repository.
 
