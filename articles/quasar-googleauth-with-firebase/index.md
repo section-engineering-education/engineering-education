@@ -353,7 +353,11 @@ export default firebase
 
 We're going to disable access to routes that require authorization when a user needs to access them. This is quite easy. Navigate to the `routes` folder, open the `index.js` file.
 
-mport Firebase at the top of the file just like we did in the `firebase.js` boot file.
+Import Firebase at the top of the file just like we did in the `firebase.js` boot file.
+
+```JavaScript
+import firebase from "firebase"
+```
 
 When done, add the following code just above the line `return Router`:
 
@@ -374,23 +378,24 @@ We'll have to use the `onAuthStateChanged` callback somehow. We have to add a me
 
 ```JavaScript
 const firebaseConfig = {
-    apiKey: "xxxxxxxxxxx",
-    authDomain: "xxxxxxxxxx",
-    projectId: "xxxxxxxxxx",
-    storageBucket: "xxxxxxxx",
-    messagingSenderId: "xxxxxxxxx",
-    appId: "xxxxxxx"
-  };
-  firebase.initializeApp(firebaseConfig);
+  apiKey: "xxxxxxxxxxx",
+  authDomain: "xxxxxxxxxx",
+  projectId: "xxxxxxxxxx",
+  storageBucket: "xxxxxxxx",
+  messagingSenderId: "xxxxxxxxx",
+  appId: "xxxxxxx"
+};
+  
+firebase.initializeApp(firebaseConfig);
 
-  firebase.getCurrentUser = () => {
-    return new Promise((resolve, reject) => {
-      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-        unsubscribe();
-        resolve(user);
-      }, reject);
-    })
-  };
+firebase.getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      unsubscribe();
+      resolve(user);
+    }, reject);
+  })
+};
 ```  
 
 `firebase.getCurrentUser` will return a Promise which resolves currentUser as soon as it is set. `onAuthStateChanged` will trigger the callback immediately with either null or the user object if signed in. Then we unsubscribe to not listen for further changes.
