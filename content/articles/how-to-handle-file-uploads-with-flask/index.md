@@ -1,14 +1,14 @@
 
 ### Introduction
-Flask is a lightweight or micro web framework built with python that helps in creating web applications. It provides useful tools and features that make building web applications easier. Flask is extensible and doesn’t force a particular structure or require complicated boilerplate code before getting started. it gives developers flexibility.
-One important feature in web applications is the ability to let users upload files. These files could be pictures, pdf, audio CSV, etc. in this article we will look at how to set up a basic flask app that will allow users to upload files.
+Flask is a lightweight or micro web framework built with Python that helps in creating web applications. It provides useful tools and features that make building web applications easier. Flask is extensible and doesn’t force a particular structure or require complicated boilerplate code before getting started. It gives developers flexibility.
+One important feature in web applications is the ability to let users upload files. These files could be pictures, PDF, audio CSV, etc. In this article we will look at how to set up a basic flask app that will allow users to upload files.
 
 ### Prerequisites
-Going through this guide it is assumed that the reader has a basic knowledge of python programming, HTML, and must have a fundamental knowledge of flask, even though this guide will be beginner-friendly.
+Going through this guide it is assumed that the reader has a basic knowledge of Python programming language, HTML, and must have a fundamental knowledge of flask; even though this guide will be beginner-friendly.
 In this guide, we will be using python 3, and VS Code text editor you can download [vscode](https://code.visualstudio.com/download) and [python](https://www.python.org/downloads/)
 
 ### Goal
-We will be building a flask app that will enable users to upload files to a server, at the end of this guide it is expected that the reader will be familiar with;
+We will be building a flask app that will enable users to upload files to a server. At the end of this guide, it is expected that the reader will be familiar with:
 
 - Creating and setting up a flask app 
 
@@ -17,10 +17,10 @@ We will be building a flask app that will enable users to upload files to a serv
 - Enabling file uploads
 
 ### Python Virtual Environment
-A virtual environment is an isolated environment for python projects, this is a module created by python called venv, it gives a developer a unique environment that enables the installation of all packages that are unique to a particular project, the virtual environment doesn’t change the default python version or default packages installed in a system, instead, it gives you freedom from the interference of other packages installed in the system, this makes it easy to run any python project in any computer irrespective of python version or packages installed in the system.
+A virtual environment is an isolated environment for python projects. there is a module created by python called venv which gives a developer a unique environment that enables the installation of all packages that are unique to a particular project. The virtual environment doesn’t change the default Python version or default packages installed in a system, instead, it gives you freedom from the interference of other packages installed in the system This makes it easy to run any Python project in any computer irrespective of python version or packages installed in the system.
 ### How To Create a Virtual Environment  
-The process of creating a virtual environment differs base on the operating system in this guide we will look at the process in the context of a windows operating system. follow link to see how its done on a [Mac](https://programwithus.com/learn/python/pip-virtualenv-mac) and on a [Ubuntu](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b).
-To start on a windows device open PowerShell and make a directory using the command 
+The process of creating a virtual environment differs based on the operating system. In this guide, we will look at the process in the context of a windows operating system. follow link to see how its done on a [Mac](https://programwithus.com/learn/python/pip-virtualenv-mac) and on a [Ubuntu](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b).
+To start, on a windows device open PowerShell and make a directory using the command below: 
 ```python   
 mkdir
 ```
