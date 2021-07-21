@@ -11,7 +11,7 @@ To demonstrate sockets further, we shall use the Client/Server architecture. Cli
 ### Table of contents:
 - [Definition of a Socket](#definition-of-a-socket)
 - [Programming on the Server-side ](#programming-on-the-server-side)
-- [Programming on the Client-side](#programming-on-client-side)
+- [Programming on the Client-side](#programming-on-the-client-side)
 - [How to Run Programs in a Variety of Applications](#how-to-run-programs-in-a-variety-of-applications)
 - [Conclusion](#conclusion)
 
@@ -19,10 +19,10 @@ To demonstrate sockets further, we shall use the Client/Server architecture. Cli
 
 A Socket is a communication **endpoint** that serves as a link between two machines on a network. It has a socket number, which the TCP/IP layer can use to identify the application that receives the data. Additionally, a port number and an IP address are what make up an endpoint.
 
-#### What is a TCP?
+#### What is TCP?
 Transmission Control Protocol (TCP) - This is one of the most important protocols of the Internet Protocols suite. It is a widely used protocol for data transmission in a network that operates in Client/Server point-to-point mode.
 
-Two categories of Sockets:
+#### Two categories of Sockets:
 
 1. A server socket awaits a request from a client.
 2. Client socket - utilized for sending and receiving requests from clients.
@@ -32,7 +32,7 @@ The client has to know two things about the server:
 1. Server's IP address 
 2. Port number
 
->The ports 0-1024 are for administrative use only (e.g.21 for FTP,23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+>The ports 0-1024 are for administrative use only (e.g.21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
 
 When we make a socket connection in the Java programming language, we go through the following steps:
 
@@ -182,7 +182,7 @@ Closing connection
 #### Establish a Socket Connection
 There are two ways to get a Socket instance:
 
-1. Server receives the accept method as a return value.
+1. The server receives it as a return value of the accept method.
 2. You can use the following code to create a Socket:
 
 ```java
