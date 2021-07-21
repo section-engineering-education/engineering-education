@@ -24,7 +24,7 @@ AES and RSA are an example of the algorithms in data communication that are used
 
 ### Getting started with AES encryption algorithm
 
-AES was initially referred to as Rijndael which is a Symmetric [block cipher](https://en.wikipedia.org/wiki/Block_cipher) algorithm. It was specifically developed for encrypting electronic data back in the United States by the [National Institute of Standards and Technology](https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology). Ever since, the AES has been used worldwide in encrypting confidential data.
+AES was initially referred to as Rijndael which is a Symmetric [block cipher](https://en.wikipedia.org/wiki/Block_cipher) algorithm. It was specifically developed for encrypting electronic data back in the United States by the [National Institute of Standards and Technology](https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology). Ever since the AES has been used worldwide in encrypting confidential data.
 
 AES was developed as a replacement for the [Data Encryption Standard](https://searchsecurity.techtarget.com/definition/Data-Encryption-Standard) after it started showing vulnerabilities to Brute-force attackers.
 
@@ -35,7 +35,7 @@ The functionality of the AES algorithm might seem complex but in a real sense, i
 - **AES-128**
 
 As we already know, the encryption and decryption processes are done using a key.
-This block cipher uses a key that is 128 bits long for encryption and decryption of a message and is the least secure of the three blocks available. Even though AES-128 has never been cracked, its resistance to brute-force attacks is worrying. Despite the security issues seen in AES-128, It is very fast and comes with alot of efficiency in data encryption.
+This block cipher uses a key that is 128 bits long for encryption and decryption of a message and is the least secure of the three blocks available. Even though AES-128 has never been hacked, its resistance to brute-force attacks is worrying. Despite the security issues seen in AES-128, It is very fast and comes with a lot of efficiency in data encryption.
 
 - **AES-192**
 
@@ -44,7 +44,7 @@ The AES-192 uses a key that is 192 bits long for the encryption and decryption o
 - **AES-256**
 
 The AES-256 uses a key that is 256 bits long for the encryption and decryption of messages.
-This block is more secure as compared to the AES-128 and AES-192 because of the long length of the encryption key.The longer the encryption key, the more difficult the algorithm is to crack. AES-256 is therefore very resistant to brute-force attacks as compared to the two previous blocks.
+This block is more secure as compared to the AES-128 and AES-192 because of the long length of the encryption key. The longer the encryption key, the more difficult the algorithm is to hack. AES-256 is therefore very resistant to brute-force attacks as compared to the two previous blocks.
 
 AES being an asymmetric block cipher, means that the key used in encryption and decryption is a kept secret and is only made known to the sender and the recipient of the message. The key used for encrypting the message is usually the same key used to decrypt the message on the receiving end.
 
@@ -56,7 +56,9 @@ Below is a simple diagrammatic representation flow of how AES encrypts data:
 
 This illustrates that either of the 3 encryption keys is used to encrypt the message. The encryption process occurs in the "cipher" and an encrypted message is produced in the "ciphertext".
 
-The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key. Below are the step by step explanations for data encryption using AES algorithm:
+The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key. 
+
+Below is the step by step explanations for data encryption using the AES algorithm:
 
 ### Step 1: Generation of round keys
 
