@@ -6,6 +6,27 @@ By default, all files generated within a container are saved on a writable conta
 
 This blog will teach you how to share data between a Docker containerized application and the host computer.
 
+### Table of contents
+
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Setting up Docker](#setting-up-docker)
+- [Using bind mounts](#using-bind-mounts)
+  - [Step 1: Let's make a directory where we will mount with the container](#step-1-lets-make-a-directory-where-we-will-mount-with-the-container)
+  - [Step 2: Build and run the container using the Nginx image](#step-2-build-and-run-the-container-using-the-nginx-image)
+  - [Step 3: Get your IP address](#step-3-get-your-ip-address)
+  - [Step 4: Testing](#step-4-testing)
+- [Using volume mounting](#using-volume-mounting)
+  - [Step 1: Create a volume](#step-1-create-a-volume)
+  - [Step 2: Container mapping](#step-2-container-mapping)
+  - [Step 3: Get the IP Address of your host computer](#step-3-get-the-ip-address-of-your-host-computer)
+  - [Step 4: Testing](#step-4-testing-1)
+- [Conclusion](#conclusion)
+
+### Prerequisites
+
+This guide is about Docker. Prior knowledge on how to use Docker to run applications will be essential. This [Getting Started with Docker](/engineering-education/getting-started-with-docker/) article will help you learn more about Docker.
+
 ### Setting up Docker
 
 - First, ensure that you have downloaded and installed Docker on your computer. Check that by running:
