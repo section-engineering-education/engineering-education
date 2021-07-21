@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /aes-rsa-encryption/
+title: Understanding AES and RSA encryption algorithms
+description: This article covers two encryption algorithms, the AES and RSA. It explains their functionalities and how to get started using them. T 
+author: mackrine-awino
+date: 2021-07-21T00:00:00-19:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/aes-rsa-encryption/hero.jpg
+    alt: Understanding AES and RSA encryption algorithms
+---
+
 Encryption is a way of enciphering data especially when it's on transit to prevent unauthorized personnel from gaining access to it. Encryption is always done with the intent of allowing only the intended recipient of a piece of data to have access to the data. Maintaining the integrity, confidentiality, and availability of data and information is key in data communication and this is where data encryption comes in handy.
 
 ### Table of contents
