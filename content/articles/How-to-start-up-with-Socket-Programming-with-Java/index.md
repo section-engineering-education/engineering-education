@@ -4,19 +4,22 @@ This article is about Sockets. It will give you a glimpse of how clients and ser
 
 Socket programming is a means of communicating data between two computers across a network. Connections can be made using either a **connection-oriented protocol** or a **connectionless protocol**. TCP/IP, a connection-oriented protocol, will be used in our case.
 
-Before exchanging data, two computers must establish a link in connection-oriented protocols. In contrast, you don't require every packet to arrive at its intended destination for connectionless. It is made feasible via UDP (User Datagram Protocol). To demonstrate sockets further, we shall use the Client\Server architecture. Client and server communicate by writing to and reading from the socket connection. The machines must have each other's network information to make this connection.
+Before exchanging data, two computers must establish a link in connection-oriented protocols. In contrast, you don't require every packet to arrive at its intended destination for connectionless. It is made feasible via UDP (User Datagram Protocol).
 
-Table of contents:
-- [Definition-of-a-Socket](#definition-of-a-socket)
-- [Programming-on-the-Server-side ](#programming-on-the-server-side)
-- [Programming-on-the-Client-side](#programming-on-client-side)
-- [How-to-Run-Programs-in-a-Variety-of-Applications](#how-to-run-programs-in-a-variety-of-applications)
+To demonstrate sockets further, we shall use the Client/Server architecture. Client and server communicate by writing to and reading from the socket connection. The machines must have each other's network information to make this connection.
+
+### Table of contents:
+- [Definition of a Socket](#definition-of-a-socket)
+- [Programming on the Server-side ](#programming-on-the-server-side)
+- [Programming on the Client-side](#programming-on-client-side)
+- [How to Run Programs in a Variety of Applications](#how-to-run-programs-in-a-variety-of-applications)
 - [Conclusion](#conclusion)
 
 ### Definition of a Socket
 
 A Socket is a communication **endpoint** that serves as a link between two machines on a network. It has a socket number, which the TCP/IP layer can use to identify the application that receives the data. Additionally, a port number and an IP address are what make up an endpoint.
 
+#### What is a TCP?
 Transmission Control Protocol (TCP) - This is one of the most important protocols of the Internet Protocols suite. It is a widely used protocol for data transmission in a network that operates in Client/Server point-to-point mode.
 
 Two categories of Sockets:
@@ -26,10 +29,10 @@ Two categories of Sockets:
 
 The client has to know two things about the server:
 
-1.Server's IP address 
-2.Port number
+1. Server's IP address 
+2. Port number
 
->The ports 0-1024 are for administrative use only (e,g 21 for FTP,23 for Telnet,25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+>The ports 0-1024 are for administrative use only (e.g. 21 for FTP,23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
 
 When we make a socket connection in the Java programming language, we go through the following steps:
 
@@ -43,7 +46,7 @@ When we make a socket connection in the Java programming language, we go through
 
 - The server's accept() method returns a reference to a new server socket connected to the client's socket.
  
-The client and server can then communicate using **I/O streams** If the connection is successful. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
+The client and server can then communicate using **I/O streams** if the connection is successful. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
 A stream is a collection of sequenced data, in case you didn't know. 
 
 There are two types of streams:
@@ -59,14 +62,17 @@ In this situation, the client and server will simultaneously broadcast messages 
 A `server` socket is a subclass of the ServerSocket that uses the constructor below:
 
 ```java
-serversocket = new ServerSocket (int port)
+serversocket = new ServerSocket(int port)
 ```
 Port: the port number on which the server will listen for the client's requests.
 
-The ServerSocket object stays idle, waiting for network requests. Our client will attempt to connect to port 5000, which we have specified.
+>The ServerSocket object stays idle, waiting for network requests. Our client will attempt to connect to port 5000, which we have specified.
 
-**Note** Make sure the ports are the same other than that, the connection will fail.
+**Note** :
+Make sure the ports are the same other than that, the connection will fail.
+
 There will be two while loops in use:
+
 **First Loop** - This ensures that the server is indeed running.
 **Second Loop** - Ensures that the server interacts with the client after connection until the client disconnects.
 
@@ -108,12 +114,11 @@ while (true)
 #### Methods used in ServerSocket
 - `public InputStream getInputStream()` - returns an InputStream object that receives data.
 - `public OutputStream getOutputStream()`- returns an OutputStream for sending data.
-- `public Socket accept()` - Waits for client connection( the program won't continue until the client is connected). When you connect, you'll get a socket object that you may use to communicate with the client. 
+- `public Socket accept()` - Waits for client connection (the program won't continue until the client is connected). When you connect, you'll get a socket object that you may use to communicate with the client. 
 - `void close ()` - closes the server socket i.e stops waiting for requests from clients.
 
 #### Full Server-Side Application
 ```java
- 
 package com. company; 
  
 import java.io.*;  
@@ -173,10 +178,11 @@ Client: BYE
 Closing connection
 ```
 ### Programming on the Client-side
+
 #### Establish a Socket Connection
 There are two ways to get a Socket instance:
 
-1.Server receives the accept method as a return value.
+1. Server receives the accept method as a return value.
 2. You can use the following code to create a Socket:
 
 ```java
@@ -184,6 +190,7 @@ socket = new Socket("localhost", 5000);
 ```
 Localhost is a domain name that redirects you to your computer, similar to google.com. It resolves to 127.0.0.1 as the IP address.
 A port number is also included in the second argument.
+
 We generate I/O streams using the socket object, just as we did before:
 
 ```java
@@ -200,9 +207,9 @@ Scanner scanner = new Scanner(System.in);
 #### Methods used in Client Socket
 - `public InputStream getInputStream()` - returns an InputStream object for receiving data. Our Server will keep on receiving messages until client sends "BYE".
 - `public OutputStream getOutputStream()`- returns an OutputStream for sending data.
-- `BufferReader()` - Wraps inputStreamReader to improve efficiency
-- `BufferWriter()` - Wraps outputStreamReader to improve efficiency
-- `BufferedWriter.flush()` - Flushes the streams...The flush method is invoked when the buffer is complete.
+- `BufferReader()` - Wraps inputStreamReader to improve efficiency.
+- `BufferWriter()` - Wraps outputStreamReader to improve efficiency.
+- `BufferedWriter.flush()` - Flushes the streams. The flush method is invoked when the buffer is complete.
 - `void close()`- closes all streams and the socket.
   
 #### Full Client-Side Application
@@ -271,13 +278,13 @@ BYE
 Server:  Message Received
 ```
 ### How to Run Programs in a Variety of Applications
-#### Using Intellij or another integrated development environment
+#### Using Intellij or another integrated development environment:
 - compile the two programs.
 - **Run** the server program first, then the client application.
 - Type messages in the client window, which will be received and shown by the server window at the same time.
 - To exit, type **BYE**.
 
-#### If you're using Command Prompt/Terminal 
+#### If you're using Command Prompt/Terminal:
 - Launch the server program as the java server, depending on how you saved it.
 - Run the client program on a terminal.
 - Then, in the client window, type messages.
@@ -290,7 +297,7 @@ Server:  Message Received
 BYE
 Server:  Message Received
 ```
-4.The server receives and simultaneously shows:
+4. The server receives and simultaneously shows:
 ```
 Connected
 Client: Hey there 
@@ -298,8 +305,7 @@ Client: I am doing this for the first time
 Client: BYE
 Closing connection
 ```
- Note of importance
-
+>Note of importance:
 If the port is already in use, the port number may result in an error. To solve the issue, change the port number to a value that isn't commercially licensed.
 
 ### Conclusion 
