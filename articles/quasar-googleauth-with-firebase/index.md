@@ -1,4 +1,4 @@
-In an application, providing specific authorization flows will easy for the users to authenticate themselves with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+In an application, providing specific authorization flow will ease authentication of users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
 
 ### Prerequisites
 
@@ -84,12 +84,25 @@ Now, navigate to `router` folder, open `routes.js` and edit the default route pr
 We're going to create the components as our next step.
 
 ```JavaScript
-children: [
- path: '/',
- component: () => import('layouts/MainLayout.vue'),
-  { path: '/', component: () => import('pages/Auth.vue') },
-  { path: '/home', component: () => import('pages/Home.vue'), meta: { requiresAuth:true } }
+const routes = [
+    {
+        path: '/',
+        component: () => import('layouts/MainLayout.vue'),
+        children: [
+            { path: '/', component: () => import('pages/Auth.vue') },
+            { path: '/home', component: () => import('pages/Home.vue'), meta: {requiresAuth: true} }
+        ]
+    },
+
+
+    // Always leave this as last one,
+    // but you can also remove it
+    {
+        path: '*',
+        component: () => import('pages/Error404.vue')
+    }
 ]
+export default routes
 ```
 
 According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users.
@@ -347,7 +360,7 @@ export default firebase
 
 We're going to disable access to routes that require authorization when a user needs to access them. This is quite easy. Navigate to the `routes` folder, open the `index.js` file.
 
-mport Firebase at the top of the file just like we did in the `firebase.js` boot file.
+Import Firebase at the top of the file just like we did in the `firebase.js` boot file.
 
 When done, add the following code just above the line `return Router`:
 
