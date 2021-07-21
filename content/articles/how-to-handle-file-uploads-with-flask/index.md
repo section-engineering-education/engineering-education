@@ -1,4 +1,3 @@
-# How to handle file upload with flask
 
 ### Introduction
 Flask is a lightweight or micro web framework built with python that helps in creating web applications. It provides useful tools and features that make building web applications easier. Flask is extensible and doesn’t force a particular structure or require complicated boilerplate code before getting started. it gives developers flexibility.
