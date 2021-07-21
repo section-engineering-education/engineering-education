@@ -264,7 +264,7 @@ app = FastAPI()
 
 ### Creating our routes
 
-We will create a simple route that will run localhost port 8000
+We will create a simple route that will run localhost port 8000.
 
 ```python
 @app.get('/')
