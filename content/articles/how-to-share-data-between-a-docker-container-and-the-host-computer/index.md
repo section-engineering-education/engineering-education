@@ -1,8 +1,14 @@
 One reason Docker is superb is the ability to containerize an application without installing additional dependencies on your local computer. Nevertheless, Docker runs on a virtualization architecture. This creates an isolated environment for running your application away from the host machine. Docker engine takes the role of assigning resources from the host to the virtualized isolated application. Once such application is containerized, the application virtualized data are isolated from the host. This means when you virtualize an application, all its data will be hosted within the dockerize containers. In this case, the host and the application are running on different infrastructures.
 
-At times you may want your virtually containerized application to share data and files directly from the host computer. This blog will teach you how to share data between a Docker containerized application and the host computer. We will also go over how to copy files of an existing application and containerize them within the virtual Docker containers.
+At times you may want your virtually containerized application to share data and files directly from the host computer.
 
-- First, ensure that Docker is installed on your computer. Check that by running:
+By default, all files generated within a container are saved on a writable container layer. Once the container is no longer running, the data does not persist. The container's writable layer is closely connected to the host computer on which the container is executing. Therefore, the data cannot be readily transferred to another location. Docker provides two ways for containers to save files on the host system so that the files are persistent even after the container is shut down. These are Docker VOLUMES and BIND MOUNTS.
+
+This blog will teach you how to share data between a Docker containerized application and the host computer.
+
+### Setting up Docker
+
+- First, ensure that you have downloaded and installed Docker on your computer. Check that by running:
 
 ```bash
 docker --version
@@ -18,13 +24,15 @@ You can check if the image was downloaded using the command `docker image ls`, a
 
 ![nginx-docker-image](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/nginx-docker-image.png)
 
-This shows that Nginx with the latest tag has been successfully downloaded from the Docker hub. With it, we can use it to create a Docker container that will be used to run this image.
+This shows that Nginx with the latest tag has been successfully downloaded from the Docker hub. Therefore, we can use it to build a Docker container that will be used to execute this image.
 
 ### Using bind mounts
 
-By default, Docker runs applications as stateless. It sends a writable layer to give an application write access, but whatever you've written there is gone as soon as you stop the container. This means writable layer access is not always reliable. Therefore, Docker uses different methods such as bind mount, volumes, and in-memory options to temporarily manage the application file system.
+By default, Docker runs applications as stateless. It sends a writable layer to allow an app write access, but everything you write there is deleted as soon as the container is stopped. This means writable layer access is not always reliable. Therefore, Docker uses different methods such as bind mount, volumes, and in-memory options to temporarily manage the application file system.
 
-Bind mount works by mounting a file or a directory that resides on the host computer inside of the container. This is an effective mechanism that allows you to access files from the host computer inside of your container. Once the container stops, the data remains because it lives on the host. And since this data lives on the host computer, you need to know the exact path on the host that you want to mount in the container. This will work well on your development since you won't be required to rebuild the image to access the new source code. You make changes to your source, and it reflects immediately.
+Bind mount works by exposing a file or directory on the host computer system within the container. This is a powerful technique for accessing files on the host machine from within your container. Because the data is stored on the host, it is not lost when the container is terminated. Because this data is stored on the host computer, you must know the correct path on the host that you wish to mount in the container.
+
+This will benefit your development because you will not have to rebuild the image in order to access the new source code. You make modifications to your source, and the changes are immediately reflected on the mounted container.
 
 To use bind mount, we will follow the following steps:
 
@@ -66,7 +74,7 @@ To get your IP address, type in the command below:
 ifconfig
 ```
 
-You can get your port number from the container we have created in the previous process by checking under the column `PORTS` or just running the command `run docker container ls`. This will get the port number assigned to the container we are using. Proceed to your browser and key in the following url in your tab: `http://<your_ip_address>:<your_port>`. Since we do not have any HTML file in the directory, your content should be similar to:
+You can get your port number from the container we have created in the previous process by checking under the column `PORTS` or just running the command `run docker container ls`. This will get the port number assigned to the container we are using. Proceed to your browser and key in the following URL in your tab: `http://<your_ip_address>:<your_port>`. Since we do not have any HTML file in the directory, your content should be similar to:
 
 ![bind-mount-default](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/bind-mount-default.png)
 
@@ -122,7 +130,7 @@ Now let's update the file. First, go to the directory this file is located using
 cd /tmp/nginx/html
 ```
 
-Now edit the file using your code editor and then save it. Refresh the browser tab, and you should be able to see the changes you have applied. You now have explored how to share files from the host computer to a Docker container using the bind mount.
+Now, using your code editor, modify the file and save it. If you refresh the browser tab, you should be able to visualize the modifications you made. You now have explored how to share files from the host computer to a Docker container using the bind mount.
 
 ### Using volume mounting
 
@@ -160,7 +168,7 @@ Now run this command to execute the above parameters:
 docker run -t -d -P --name nginxcont1 -v simplevol:/usr/share/nginx/html nginx:latest
 ```
 
-The container is set, and should be running. To check the status of the container run the command:
+The container is set and should be running. To check the status of the container, run the command:
 
 ```bash
 docker container ls
@@ -176,7 +184,7 @@ Get the IP Address of your host computer by running the ipconfig command:
 ifconfig
 ```
 
-Your IP Address will be on the `inet` parameter. For our case it's 172.19.0.1. You will find it in your response as below:
+Your IP Address will be on the `inet` parameter. For our case, it's 172.19.0.1. You will find it in your response as below:
 
 ![ip-address](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/ip-address.png)
 
@@ -233,7 +241,7 @@ Push the edited file from your computer to the Docker container by running the c
 docker cp index.html nginxcont1:/usr/share/nginx/html
 ```
 
-If you refresh the previously opened tab, the content should have updated to reflect the changes you have added.
+If you refresh the previously opened tab, the content should have been updated to reflect the added changes.
 
 ![updated-nginx-page](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/updated-nginx-page.png)
 
@@ -254,3 +262,24 @@ docker run -t -d -P --name nginxcont2 -v simplevol:/usr/share/nginx/html nginx:l
 - With your IP address and the port of the newly created container, access it from the browser. You will see that the content is the updated one. This is because we have mounted it to a volume.
 
 You have now learned about volume mounting and its data persistence.
+
+As a side note, volumes are also when you are running your dockerized application using docker-compose. When you write a docker-compose file, you can specify the volumes, and the volumes paths will be created automatically when building up the application container. Here is an example of a docker-compose.yml file that can be used to dockerize a Mongo database.
+
+```yml
+version: '3.8'
+services:
+ mongo:
+   image: mongo:4.2.8
+   ports:
+     - 27017:27017
+   volumes:
+     - mongodb:/data/db
+```
+
+In the above example, the database container runs on a host. The container has a virtual file system where the data is usually stored with no persistence. If we were to stop and restart the container, the data in this virtual file system is gone, and it starts from a fresh state. But since we have added `volumes` in this docker-compose file, changes that the application is making in the database will be saved.
+
+A directory from the host file system is mounted into a folder within Docker's virtual file system. When the container publishes to its file system, it is instantaneously duplicated and written to the host file system directory, and vice versa. When a container restarts its own virtual file system, it gets the data automatically from the host because the data is still there every time you restart the container.
+
+### Conclusion
+
+We have covered how you can share data between your Docker containers and the host computer. The processes are straightforward and easy to implement. In case you are using Docker volumes, you can use the same approach and use data volumes to share data between different containers running in the Docker environment. Check this blog to learn [how to share data between Docker containers](/engineering-education/sharing-data-between-docker-containers/).
