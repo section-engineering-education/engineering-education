@@ -52,7 +52,7 @@ When encrypting using AES, a person can either use AES-128, AES-192, or even the
 
 Below is a simple diagrammatic representation flow of how AES encrypts data:
 
-![AES algorithm flow ](/engineering-education/aes-rsa-encryption/AES_flow.png)
+![AES algorithm flow ](/engineering-education/aes-rsa-encryption/AES_flow.png).
 
 This illustrates that either of the 3 encryption keys is used to encrypt the message. The encryption process occurs in the "cipher" and an encrypted message is produced in the "ciphertext".
 
@@ -63,26 +63,26 @@ Below is the step by step explanations for data encryption using the AES algorit
 ### Step 1: Generation of round keys
 
 This occurs through a process called key expansion where the original secret key is used to derive round keys by use of Rijndael’s key schedule algorithm.
-![round key generation](](/engineering-education/aes-rsa-encryption/round.png)
+![round key generation](](/engineering-education/aes-rsa-encryption/round.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-AddRoundKey.svg)
 
 ### Step 2: Mixing of the message into ciphertext
 
-This involves the combining of each round key that had been generated above with the plain message being encrypted. This is done using the Additive [XOR algorithm](https://en.wikipedia.org/wiki/XOR_cipher).
+This involves the combining of each round key that had been generated above with the plain message being encrypted. This is done using the Additive [XOR algorithm](https://en.wikipedia.org/wiki/XOR_cipher)
 
 ### Step 3: Substituting the data gotten from step 2
 
 This involves substituting the resultant data from step 2 in a substituting table
-![substitution](](/engineering-education/aes-rsa-encryption/sub.png)
+![substitution](](/engineering-education/aes-rsa-encryption/sub.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-SubBytes.svg)
 
 ### Sep 4: Shifting of rows
 
 Shift all the bytes in the substitution table to the right
-![shift rows](](/engineering-education/aes-rsa-encryption/shift.png)
+![shift rows](](/engineering-education/aes-rsa-encryption/shift.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-ShiftRows.svg)
 
 ### Step 5: Mixing
 
 An algorithm is used to mix the contents of each column.
-![mixing columns](](/engineering-education/aes-rsa-encryption/mixcolumn.png)
+![mixing columns](](/engineering-education/aes-rsa-encryption/mixcolumn.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-MixColumns.svg)
 
 The entire process is then repeated several times with each repeat being called a round and encrypted with the round keys we generated in step 1.
 
