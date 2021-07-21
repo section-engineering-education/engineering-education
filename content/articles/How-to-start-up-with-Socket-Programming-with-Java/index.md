@@ -32,7 +32,7 @@ The client has to know two things about the server:
 1. Server's IP address 
 2. Port number
 
->The ports 0-1024 are for administrative use only (e.g. 21 for FTP,23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+>The ports 0-1024 are for administrative use only (e.g.21 for FTP,23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
 
 When we make a socket connection in the Java programming language, we go through the following steps:
 
@@ -46,7 +46,7 @@ When we make a socket connection in the Java programming language, we go through
 
 - The server's accept() method returns a reference to a new server socket connected to the client's socket.
  
-The client and server can then communicate using **I/O streams** if the connection is successful. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
+If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
 A stream is a collection of sequenced data, in case you didn't know. 
 
 There are two types of streams:
@@ -189,7 +189,7 @@ There are two ways to get a Socket instance:
 socket = new Socket("localhost", 5000);
 ```
 Localhost is a domain name that redirects you to your computer, similar to google.com. It resolves to 127.0.0.1 as the IP address.
-A port number is also included in the second argument.
+A port number is in the second argument.
 
 We generate I/O streams using the socket object, just as we did before:
 
@@ -207,8 +207,8 @@ Scanner scanner = new Scanner(System.in);
 #### Methods used in Client Socket
 - `public InputStream getInputStream()` - returns an InputStream object for receiving data. Our Server will keep on receiving messages until client sends "BYE".
 - `public OutputStream getOutputStream()`- returns an OutputStream for sending data.
-- `BufferReader()` - Wraps inputStreamReader to improve efficiency.
-- `BufferWriter()` - Wraps outputStreamReader to improve efficiency.
+- `BufferReader()` - Wraps inputStreamReader to improve efficiency
+- `BufferWriter()` - Wraps outputStreamReader to improve efficiency
 - `BufferedWriter.flush()` - Flushes the streams. The flush method is invoked when the buffer is complete.
 - `void close()`- closes all streams and the socket.
   
