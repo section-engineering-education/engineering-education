@@ -1,49 +1,45 @@
 
-[Fastify](https://www.fastify.io/) is a low-overhead backend web framework that is built on top of the Node.js runtime. Its popularity and attention are rising due to its lightweight design and the [plugin ecosystem](https://www.fastify.io/ecosystem/) it comes with. In Fastify the idea is that everything is a plugin that allows developers to extend its functionalities. This allows us to quickly encapsulate the functionality in our project as a plugin which can then be distributed and used in other projects. On the client-side, we will use Svelte which is quite different from other modern client-side JavaScript frameworks such as React. [Svelte](https://svelte.dev/) is a compiler that shifts your work into a compile step rather than using a Virtual DOM. This happens when you build your app by converting the components into highly efficient code.
+[Fastify](https://www.fastify.io/) is a low-overhead backend web framework that is built on top of the Node.js runtime. Its popularity and attention are rising due to its lightweight design and the [plugin ecosystem](https://www.fastify.io/ecosystem/) it comes with.
+
+In Fastify, the idea is that everything is a plugin that allows developers to extend its functionalities. This allows us to quickly encapsulate the functionality in our project as a plugin which can then be distributed and used in other projects.
+
+On the client-side, we will use Svelte which is quite different from other modern client-side JavaScript frameworks such as React.
+
+[Svelte](https://svelte.dev/) is a compiler that shifts your work into a compile step rather than using a Virtual DOM. This happens when you build your app by converting the components into highly efficient code.
 
 ### Goal
+In this Fastify and Svelte tutorial, we will build a CRUD app that fetches blog posts.
 
-In this Fastify and Svelte tutorial, we will build a CRUD app that fetches blog posts.  We will be:
-
+We will be:
 - Setting up a Fastify in a Node.js environment.
-
 - Defining the API routes for our Fastify backend.
-
 - Adding the validation of the request.
-
 - Loading and using Fastify plugins.
-
 - Setting up a Svelte frontend application using `degit`.
-
 - Data fetching and building components in Svelte.
 
 ### Prerequisites
-
-1. Basics of programming with the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming and comfortability of the [Node.js](https://nodejs.org/en/) environment.
-
+1. Basics of programming with the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) and [Node.js](https://nodejs.org/en/) environment.
 2. Have [Node.js](https://nodejs.org/en/) JavaScript runtime installed on your development system.
-
 3. An IDE or code editor such as [VS Code](https://code.visualstudio.com/download).
-
 4. A basic understanding of [REST APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) will be helpful.
-
 5. A web browser such as [Google Chrome]((https://www.google.com/chrome/)) on your development machine.
 
-### Setting Up The Backend with Node.js and Fastify
+### Setting up the backend with Node.js and Fastify
+To start the project, create a folder and name it `fastify-svelte-app`. Inside this folder, we will create another folder for our Svelte client and name it `svelte-client`.
 
-To start the project, create a folder and name it `fastify-svelte-app`. Inside this folder, we will create another folder for our svelte client and name it `svelte-client`. Our backend code will be at the root of the main `fastify-svelte-app` folder. This is the folder we will start for now. Open the terminal and run the command `npm init -y` to initialize the npm with default configurations while creating a `package.json` file to manages our dependencies.
+Our backend code will be at the root of the main `fastify-svelte-app` folder. This is the folder we will start for now.
+
+Open the terminal and run the command `npm init -y` to initialize the `npm` with default configurations while creating a `package.json` file to manages our dependencies.
 
 Before initializing the Node.js server, we want to add the `fastify` and `fastify-cors` as a dependency to our project:
 
 `npm i fastify fastify-cors --save`
 
 ### Setting up Fastify
-
 We set up the Fastify server inside the `index.js` file. First, load the Fastify application object, instantiate it and enable logs to the console.
 
-
 ```js
-
 // Require the framework and instantiate it
 const app = require('fastify')({logger: true})
 
@@ -54,7 +50,9 @@ app.register(require('fastify-cors'), {
   })
 ```
 
-To consume the API, our server needs a method that we can use to enable Cross-Origin Resource Sharing (CORS) in our server. This is a mechanism that restricts the request of resources on a web server depending on the domain of the HTTP request. When using the cors middleware, we can allow or limit some routes. In our case, we will allow requests for all the routes.
+To consume the API, our server needs a method that we can use to enable Cross-Origin Resource Sharing (CORS) in our server.
+
+CORS is a mechanism that restricts the request of resources on a web server depending on the domain of the HTTP request. When using the CORS middleware, we can allow or limit some routes. In our case, we will allow requests for all the routes.
 
 ```js
 //Parse Content-Type
@@ -83,24 +81,25 @@ app.listen(3000, (err, address)=>{
 })
 ```
 
-The `app.listen()` method in the above code allows us to listen on port `3000` so that our application can allow the incoming requests.
+The `app.listen()` method in the above code allows us to listen on port `3000`, so that our application can allow the incoming requests.
 
 ### Adding controllers
+For separation of concern, we will create a `controller` folder in the root folder of the project. Inside the `controller` folder, we define the `posts.js` file.
 
-For separation of concern, we will create a controller folder in the root folder of the project. Inside the controller folder, we define the `posts.js` file. In an MVC architecture, a controller is responsible for controlling how the client interacts with an MVC application. It controls logic flow to determine what response to send back when the server receives a request. The file will contain some API demo data as an array of objects. Each is a single post with an ID and title field.
-Moreover, we then define all the handlers for the routes in this file. The handler takes request and response as its parameters.
+In an MVC architecture, a controller is responsible for controlling how the client interacts with an MVC application. It controls logic flow to determine what response to send back when the server receives a request.
 
-In the `posts.js` file, add the code:
+The file will contain some API demo data as an array of objects. Each is a single post with an ID and title field. Moreover, we then define all the handlers for the routes in this file. The handler takes request and response as its parameters.
 
 Let's define our post data as an array of objects. The object has the property of ID and `title`.
 
+In the `posts.js` file, add the following code:
+
 ```js
 // Demo data
-
 let posts = [
     {
         id: 1,
-        title: 'This is an experiment
+        title: 'This is an experiment'
     },
     {
         id: 2,
@@ -114,11 +113,11 @@ let posts = [
 ```
 
 The route handler methods include adding posts, fetching all posts, and deleting posts respectively. When adding posts, we access the body of the request via `req.body`.
+
 Lastly, we need to export the handlers as modules to be used in our routes.
 
 ```js
 // Handlers
-
 const addPost = async (req, res) => {
     const id = posts.length + 1 // adding new post will generate a new ID
     const newPost = {
@@ -153,9 +152,10 @@ module.exports = {
 
 In the next step, we will add the handlers to the Fastify route object.
 
-### Creating Routes
+### Creating routes
+Using Fastify, we can define route objects as an API endpoint. We then bind all the previously defined handlers to the different routes.
 
-Using Fastify, we can define route objects as an. We then bind all the previously defined handlers to the different routes. Here is the code to achieve this:
+Here is the code to achieve this:
 
 ```js
 const blogController = require('../controller/blogs')
@@ -184,16 +184,17 @@ Now let's test if our server is working or not. Open the terminal again and type
 ```bash
 node server.js
 ```
-In the console, you should see an output of the server port that our application is running (port 5000).
+
+In the console, you should see an output of the server port that our application is running (`port 5000`).
 
 Now that we have all routes defined we need to have them registered for in our Fastify application object.
 
-### Register Fastify Routes
+### Register Fastify routes
+In this step, we’ll register Fastify routes to the app object.
 
-In this step, we’ll register Fastify routes to the app object. First, we load all the blog routes. Next, we loop over all the routes to register them one by one:
+First, we load all the blog routes. Next, we loop over all the routes to register them one by one:
 
 ```js
-
 // Register the routes to handle posts
 const blogRoutes = require('./routes/blogs')
 blogRoutes.forEach((route, index) => {
@@ -201,13 +202,14 @@ blogRoutes.forEach((route, index) => {
 })
 ```
 
-Now it’s time to verify if this works. Start the Fastify server on the terminal using `node index.js`. If you visit the browser on `http://localhost:3000/blogs/`, should get all the blogs from the demo data in JSON object format.
+Now, it’s time to verify if this works.
+
+Start the Fastify server on the terminal using `node index.js`. If you visit the browser on `http://localhost:3000/blogs/`, should get all the blogs from the demo data in JSON object format.
 
 Our Fastify Node.js backend is complete and now we will head over to Svelte in the next steps.
 
 ### Adding the frontend with Svelte
-
-Before scaffold a new Svelte application, create a new Svelte project, we need to use `degit` Svelte CLI.
+Before scaffolding a new Svelte application, create a new Svelte project, we need to use `degit` Svelte CLI.
 
 ```bash
 npx degit sveltejs/template svelte-app
@@ -227,11 +229,15 @@ Open the application folder in your IDE and start the application using [Rollup]
 npm run dev
 ```
 
-Our Svelte folder has an `src` folder, which is the folder that will contain all our code. The two files inside it include:
+Our Svelte folder has an `src` folder, which is the folder that will contain all our code.
+
+The two files inside it include:
 
 1. `App.svelte` - This is the main Svelte component. It has our tags such as `script` and `style`
 
-2. `main.js` - This file is the entry point for the app. It creates a new instance` App.svelte`. The attribute `target: document.body` indicates that we will render our app inside the HTML body. Initially, it renders the props of the `props: { name: 'world' }`: 
+2. `main.js` - This file is the entry point for the app. It creates a new instance `App.svelte`. The attribute `target: document.body` indicates that we will render our app inside the HTML body.
+
+Initially, it renders the props of the `props: { name: 'world' }`:
 
 ```js
 import App from './App.svelte'
@@ -246,34 +252,28 @@ const app = new App({
 export default app
 ```
 
-You will see a `rollup.config.js`, which is the configuration file for the rollup packager bundler. In the `rollup.config.js` file you can see that main.js is specified as input. main.js is called by the application, which in turn calls `App.svelte`. (if you want to nitpick: main.js is incl. within bundle.js at runtime. bundle.js gets called by public.html).
+You will see a `rollup.config.js`, which is the configuration file for the rollup packager bundler. In the `rollup.config.js` file you can see that `main.js` is specified as input. `main.js` is called by the application, which in turn calls `App.svelte`. (If you want to nitpick: `main.js` is included within `bundle.js` at runtime. `bundle.js` gets called by `public.html`).
 
-Since this is the boilerplate code, let's start editing and build the component that will connect to our Fastify backend in the next steps.
-
+Since this is the boilerplate code, let's start editing and building the component that will connect to our Fastify backend in the next steps.
 
 ### Create a `Blog.svelte` Component
-
-To keep things simple, we will use this component to perform all Posts tasks in our app. Since I'm using bootstrap for styling, head over and add the bootstrap CDN in the `public` directory:
+To keep things simple, we will use this component to perform all post tasks in our app. Since I'm using bootstrap for styling, head over and add the bootstrap CDN in the `public` directory:
 
 ```HTML
-    <link rel="stylesheet" 
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-          crossorigin="anonymous">
+<link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+        crossorigin="anonymous">
 ```
 
 The tasks of our Svelte component include:
 - Fetching posts from the Node.js server within the `<script>` block.
-
 - A function to insert new posts which will be held temporarily on the server.
-
 - A function to delete a single post by ID.
 
 Head over to your `Posts.svelte` component file and implement the following steps:
 
-
 Our `Posts.svelte` file has `<script>`, `<section>` container for our markup, and `<style>` blocks. In between the `<scipt>` tag,  we write the JavaScript code to add the dynamic functionality. 
-
 
 To begin, we create a `newPostData` object and export it. It will hold the text of the new todo with a title attribute. The backend determines the `ID` by incrementing it each time we add a new post. To insert a new post, we create a function `createPost()` that sends a POST request to our backend in JSON format. To achieve this, we use the value from the `<input>` HTML element and bind it to the `newPostData`. Svelte enriches our HTML markup so that we can use programming logic such as conditionals and loops. If we click the Add button, the `createPost` method is invoked to create a new post and our backend handles the rest.
 
@@ -298,7 +298,7 @@ To begin, we create a `newPostData` object and export it. It will hold the text 
        .then(result=>console.log(result))
        .catch(err=>console.error(err))
     }
- ```   
+ ```
 
 Next, we need to understand how `fetchPosts` retrieves our posts. Data fetching is an asynchronous task. Our function and markup use the async-await syntax to achieve this. The fetch API makes a network request and populates which returns our posts. On our markup, we check if the `fetchPosts` method has retrieved the data before rendering it on the UI. Error handling is implemented on the catch block.
 
@@ -316,12 +316,9 @@ Next, we need to understand how `fetchPosts` retrieves our posts. Data fetching 
 ```
 
 Svelte uses a superset of HTML that has:
-- A <section> tag with a <div> element as the container.
-
+- A `<section>` tag with a <div> element as the container.
 - A form to create new posts
-
 - A label and a text box for entering new tasks.
-
 - An ordered list, which holds a list item for each task and a button to delete the task.
 
 ```html
@@ -394,7 +391,6 @@ The above Html webpage should look like this:
 ![compelete.png](/engineering-education/fastify-svelte-crud/complete.png)
 
 ### Deleting a post by ID
-
 To delete a post, we will make a `DELETE` request using fetch API to our backend. The logic is to filter the `ID` and return the remaining posts except the filtered one. Let's create the function that handles this:
 
 ```js
@@ -407,7 +403,7 @@ To delete a post, we will make a `DELETE` request using fetch API to our backend
         console.log(msg)
         // .then(res => console.log(res)).catch(err=>console.log(err))
     }
-```   
+```
 
 We need to bind this to our delete button in the HTML template.
 
@@ -418,12 +414,13 @@ We need to bind this to our delete button in the HTML template.
 The source code for this tutorial can be found on [this](https://github.com/KayveTech/fastify-svelte-app) GitHub repository.
 
 ### Conclusion
-Fastify and Svelte are modern JavaScript frameworks built for performance and great developer experience. The Fastify framework is
-rich in the ecosystem of plugins and hence code reusability. Just like Express, Fastify is simple and elegant with a great logging
-system. What else can we ask for? I hope you give it a try in your next Node.js project.
+Fastify and Svelte are modern JavaScript frameworks built for performance and great developer experience. The Fastify framework is rich in the ecosystem of plugins and hence code reusability. Just like Express, Fastify is simple and elegant with a great logging system.
+
+What else can we ask for?
+
+I hope you give it a try in your next Node.js project.
 
 ### Further reading
-
-- https://codesource.io/build-a-rest-service-with-fastify/
-- https://www.fastify.io/
-- https://svelte.dev/
+- [Build a REST service with Fastify](https://codesource.io/build-a-rest-service-with-fastify/)
+- [Fastify](https://www.fastify.io/)
+- [Svelte](https://svelte.dev/)
