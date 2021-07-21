@@ -338,7 +338,7 @@ boot: ['firebase'],
 
 Navigate to the `boot` folder and open the `firebase.js` file. 
 
-Paste the script you copied from the previous step for the firebase SDK. Replace the code in `firebase.js` file to resemble the one below.
+Replace the existing code in `firebase.js` file to resemble the one below, then paste the firebase SDK script you copied from the previous step.
 
 ```JavaScript
 import firebase from "firebase";
