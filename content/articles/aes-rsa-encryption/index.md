@@ -1,7 +1,6 @@
-### Understanding AES and RSA encryption algorithms
-
 Encryption is a way of enciphering data especially when it's on transit to prevent unauthorized personnel from gaining access to it. Encryption is always done with the intent of allowing only the intended recipient of a piece of data to have access to the data. Maintaining the integrity, confidentiality, and availability of data and information is key in data communication and this is where data encryption comes in handy.
-### Table of content
+
+### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [What is an encryption algorithm?](#what-is-an-encryption-algorithm)
 3. [Getting started with AES encryption algorithm](#getting-started-with-aes-encryption-algorithm)
@@ -10,7 +9,6 @@ Encryption is a way of enciphering data especially when it's on transit to preve
 6. [RSA algorithm functionality](#rsa-algorithm-functionality)
 7. [Conclusion](#conclusion)
 
-
 ### Prerequisites
 
 For a reader to understand this article, they should have the following prior knowledge:
@@ -18,7 +16,7 @@ For a reader to understand this article, they should have the following prior kn
 - A basic understanding of the concept of data encryption and the need for encryption in data communication.
 - A beginner's understanding of data cryptography.
 
-### What is an encryption Algorithm?
+### What is an encryption algorithm?
 
 An encryption algorithm is a set of rules used to transform data into ciphertext using an encryption key. This will make the data appear to be completely different from the initial data and will seem random. The cipher will then be transmitted safely to a recipient who will then go ahead and recover the initial data through a process called decryption using a decryption key.
 
@@ -34,15 +32,15 @@ AES was developed as a replacement for [DES](https://searchsecurity.techtarget.c
 
 The functionality of the AES algorithm might seem complex but in a real sense, it is really simple to understand. The first step is knowing that AES has 3 Block ciphers, namely:
 
-- AES-128
+- **AES-128**
 
 As we already know, the encryption and decryption processes are done using a key.
 This block cipher uses a key that is 128 bits long for encryption and decryption of a message.
-- AES-192
+- **AES-192**
 
 The AES-192 uses a key that is 192 bits long for the encryption and decryption of messages.
 
-- AES-256
+- **AES-256**
 
 The AES-256 uses a key that is 256 bits long for the encryption and decryption of messages.
 
@@ -50,7 +48,7 @@ AES being asymmetric block cipher, means that the key used in encryption and dec
 
 When encrypting using AES, a person can either use AES-128, AES-192, or even the AES-256. During this encryption, some steps are followed to encrypt a message and the and these steps are done in rounds. Each round is made up of several steps of Substitution, transposition, and mixing of the message into ciphertext and also has a key called a [round key](https://www.quora.com/What-is-the-round-key-in-an-AES-algorithm).
 
-Below is a simple diagrammatic representation flow of how AES encrypts data
+Below is a simple diagrammatic representation flow of how AES encrypts data:
 
 ![AES algorithm flow ](/engineering-education/aes-rsa-encryption/AES_flow.png)
 
@@ -62,6 +60,7 @@ The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192
 
 This occurs through a process called key expansion where the original secret key is used to derive round keys by use of Rijndael’s key schedule algorithm.
 ![round key generation](](/engineering-education/aes-rsa-encryption/round.png)
+
 ### Step 2: Mixing of the message into ciphertext
 
 This involves the combining of each round key that had been generated above with the plain message being encrypted. This is done using the Additive [XOR algorithm](https://en.wikipedia.org/wiki/XOR_cipher).
@@ -70,11 +69,13 @@ This involves the combining of each round key that had been generated above with
 
 This involves substituting the resultant data from step 2 in a substituting table
 ![substitution](](/engineering-education/aes-rsa-encryption/sub.png)
+
 ### Sep 4: Shifting of rows
 
 Shift all the bytes in the substitution table to the right
 ![shift rows](](/engineering-education/aes-rsa-encryption/shift.png)
-### Step 5: MIxing
+
+### Step 5: Mixing
 
 An algorithm is used to mix the contents of each column.
 ![mixing columns](](/engineering-education/aes-rsa-encryption/mixcolumn.png)
@@ -82,7 +83,8 @@ An algorithm is used to mix the contents of each column.
 The entire process is then repeated several times with each repeat being called a round and encrypted with the round keys we generated in step 1.
 
 ### Getting started with RSA encryption algorithm
- RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA  uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
+
+RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA  uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
 
 This algorithm is based on the fact that finding factors of [composite numbers](https://en.wikipedia.org/wiki/Composite_number) is a difficult task.
 
@@ -122,6 +124,7 @@ The public key is made of the modulus z and the exponent e while the private key
 The public key is made available to everyone but the private key should only be accessed by the recipient of the message.
 
 ### Step 2: Encrypting the message using the generated encryption key
+
  - Send the public key (z,w) generated above to the person who wants to send a message and remain with the private key.
  - The message sender turns the message into a number "G". The number G should be smaller than "z". This is done using an agreed-upon protocol commonly referred to as [Padding scheme](https://simple.wikipedia.org/wiki/RSA_algorithm#Padding_schemes)
  - The sender then computes the ciphertext of the message using the expression, c = G^e  mod z where 'c' represents the ciphertext.
@@ -130,6 +133,6 @@ The receiver can decrypt the message using the expression G = c^d  mod n accordi
 
 ### Conclusion
 
- In conclusion, Encryption is key in matters of information security, and it is vital to learn the different algorithms used in data encryption other than AES and RSA to broaden your horizons as a person in the computing world where cybercrime is increasing by the hour.
+Encryption is key in matters of information security, and it is vital to learn the different algorithms used in data encryption other than AES and RSA to broaden your horizons as a person in the computing world where cybercrime is increasing by the hour.
 
  Blissful reading!
