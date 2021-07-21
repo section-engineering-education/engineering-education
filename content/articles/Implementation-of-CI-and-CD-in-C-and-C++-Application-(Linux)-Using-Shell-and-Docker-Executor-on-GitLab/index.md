@@ -26,7 +26,7 @@ Table of content:
 - [C/C++ implementation on Docker Executor](#C/C++-implementation-on-docker-executor)
 
 ### What are docker and shell executors
-**Shell Executor**: A very basic executor that enables you to create the solution locally on the computer which installs GitLab Runner.  Installed on the Linux Machine is the GitLab Runner, therefore you have to install the needed software on the same machine.
+**Shell Executor**: A basic executor that enables you to create the solution locally on the computer which installs GitLab Runner.  Installed on the Linux Machine is the GitLab Runner, therefore you have to install the needed software on the same machine.
 
 **Docker Executor**: A strong, image-accessible tool with a lot of applications. As we do not need to install the software manually, we take care of everything using a docker and download the required image from the docker hub. The negative is that, for security reasons, this communication is restricted in some organizations. If this is the case, Shell Executor is the best option.
 
