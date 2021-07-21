@@ -6,6 +6,7 @@ One important feature in web applications is the ability to let users upload fil
 
 ### Prerequisites
 Going through this guide it is assumed that the reader has a basic knowledge of python programming, HTML, and must have a fundamental knowledge of flask, even though this guide will be beginner-friendly.
+In this guide, we will be using python 3, and VS Code text editor you can download [vscode](https://code.visualstudio.com/download) and [python](https://www.python.org/downloads/)
 
 ### Goal
 We will be building a flask app that will enable users to upload files to a server, at the end of this guide it is expected that the reader will be familiar with;
@@ -15,9 +16,6 @@ We will be building a flask app that will enable users to upload files to a serv
 - Activating a virtual environment 
 
 - Enabling file uploads
-
-### Reguirement
-In this guide, we will be using python 3, and VS Code text editor you can download [vscode](https://code.visualstudio.com/download) and [python](https://www.python.org/downloads/)
 
 ### Python Virtual Environment
 A virtual environment is an isolated environment for python projects, this is a module created by python called venv, it gives a developer a unique environment that enables the installation of all packages that are unique to a particular project, the virtual environment doesn’t change the default python version or default packages installed in a system, instead, it gives you freedom from the interference of other packages installed in the system, this makes it easy to run any python project in any computer irrespective of python version or packages installed in the system.
