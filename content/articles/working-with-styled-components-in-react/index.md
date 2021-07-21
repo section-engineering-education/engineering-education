@@ -188,7 +188,8 @@ export default Header;
 
 To get things started, let's open `App.js`  which is the base of our application. We replace all the content in it with the code below to create an App function that will load our styled-components and render them as the landing page.
 
-After building components/pages in your web application, you may need to expose and let your users navigate through them. To achieve this, you need a dedicated router. [React Router](https://www.freecodecamp.org/news/react-router-cheatsheet/) is a suite of navigational packages/components such as react-router-dom. 
+After building components/pages in your web application, you may need to expose and let your users navigate through them. To achieve this, you need a dedicated router. [React router](https://medium.com/@marcellamaki/a-brief-overview-of-react-router-and-client-side-routing-70eb420e8cde) is a standard library for dynamic routing of components/page views in simple ReactJs applications like single page web applications.
+[React Router](https://reactrouter.com/web/guides/quick-start) keeps UIs and URLs synchronized giving users seamless navigation in web applications.
 
 To route components into the main App, you will import some features from the `react-router-dom`, a React-router package that we installed earlier.
 
@@ -254,9 +255,9 @@ export default App;
 
 Be sure to create an images folder inside the public folder of the application.
 
-You should have the landing page background image, disney+ icon image, logo-one, and logo-two within the folder.
+You should have the landing page background image(BgImage), disney+ icon image, logoOne, and logoTwo within the folder.
 
-You can obtain the images and the icon from [seeklogo](https://seeklogo.com/free-vector-logos/disney?page=4).
+You can obtain the images and the icon from [drive](https://drive.google.com/drive/u/0/folders/1Jl336qas6ikZHpeb1u78F4qVphQDCf-1).
 
 
 Let's add some cool features onto our created components- (`Landing` and `Header`) and style them using the `styled-components` depending on what content they hold.
