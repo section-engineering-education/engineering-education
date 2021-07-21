@@ -218,3 +218,6 @@ test_job:
 ```
 ### Conclusion
 From the article above, we have learned about the implementation of Continous Delivery and Continuous Integration in the C/C++ application using shell and docker executor. I would urge the reader to try using all the GitLab runner commands listed in the article to understand more.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
