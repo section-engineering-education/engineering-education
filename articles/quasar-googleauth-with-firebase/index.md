@@ -1,4 +1,4 @@
-In an application, providing specific authorization flows will easy for the users to authenticate themselves with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+In an application, providing specific authorization flow will ease authentication of users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
 
 ### Prerequisites
 
@@ -104,6 +104,7 @@ const routes = [
 ]
 
 export default routes
+
 ```
 
 According to the routes above, the `/` path is allowed for everyone, but the `/home` is only for signed-in users.
