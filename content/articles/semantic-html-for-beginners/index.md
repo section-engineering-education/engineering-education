@@ -1,17 +1,17 @@
 ---
 layout: engineering-education
-status: unpublish
-published: false
+status: publish
+published: true
 url: /semantic-html-for-beginners/
-title: Semantic HTML for Beginners
-description: This tutorial provides the reader with a detailed explanation and example on semantic vs non-semantic HTML for beginner developers.
+title: Getting started with Semantic HTML
+description: The new HTML5 version comes with some added features. One of these features that we will be learning about is semantic HTML. In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML, and many more.
 author: tella-joshua
-date: 2021-02-03T00:00:00-16:00
-topics: [HTML]
+date: 2021-07-21T00:00:00-16:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
     - url: /engineering-education/semantic-html-for-beginners/hero.jpg
-      alt: Semantic HTML for Beginners
+      alt: Semantic HTML for Beginners Hero image
 ---
 
 In the new version of HTML, we have HTML5 which comes with some added features. One of these features that we will be learning about is semantic HTML.
