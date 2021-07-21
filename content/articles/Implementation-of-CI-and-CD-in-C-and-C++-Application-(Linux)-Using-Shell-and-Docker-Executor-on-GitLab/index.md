@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Implementation-of-CI-and-CD-in-C-and-C++-Application-(Linux)-Using-Shell-and-Docker-Executor-on-GitLab/
+title: Implementation of CI/CD in C/C++ Application(Linux) Using Shell and Docker Executor on GitLab
+description: In this tutorial, we will learn how to implement a CI/CD pipeline with Gitlab and Docker executor
+author: kelvin-munene
+date: 2021-07-21T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /Implementation-of-CI-and-CD-in-C-and-C++-Application-(Linux)-Using-Shell-and-Docker-Executor-on-GitLab/pointers-in-csharp/hero.png
+    alt: Implementation of CI/CD in C/C++ Application(Linux) Using Shell and Docker Executor on GitLab
+---
+
 ### Introduction
 With the GitLab Runner, you can implement continuous integration and continuous delivery (CI/CD) using a variety of executors. However, Shell and Docker are more widely used, and we can easily set up a repository using these programs. These runners can be selected according to the requirements and resources available. This article focuses mainly on the C/C++ Linux application's Shell and Docker executors and code is written to the Bash script. A Bash script can be used to construct and test the application.
 
