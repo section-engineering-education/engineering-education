@@ -19,9 +19,9 @@ Encryption is a way of enciphering data especially when it's on transit to preve
 ### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [What is an encryption algorithm?](#what-is-an-encryption-algorithm)
-3. [Getting started with AES encryption algorithm](#getting-started-with-aes-encryption-algorithm)
+3. [Getting started with the AES encryption algorithm](#getting-started-with-the-aes-encryption-algorithm)
 4. [Functionality of the AES algorithm](#functionality-of-the-aes-algorithm)
-5. [Getting started with RSA encryption algorithm](#getting-started-with-rsa-encryption-algorithm)
+5. [Getting started with the RSA encryption algorithm](#getting-started-with-the-rsa-encryption-algorithm)
 6. [RSA algorithm functionality](#rsa-algorithm-functionality)
 7. [Conclusion](#conclusion)
 
@@ -38,7 +38,7 @@ An encryption algorithm is a set of rules used to transform data into ciphertext
 
 AES and RSA are an example of the algorithms in data communication that are used for data encryption. AES is an acronym that stands for **Advanced Encryption Standard** while RSA stands for **Rivest, Shamir, Adleman**.
 
-### Getting started with AES encryption algorithm
+### Getting started with the AES encryption algorithm
 
 AES was initially referred to as Rijndael which is a Symmetric [block cipher](https://en.wikipedia.org/wiki/Block_cipher) algorithm. It was specifically developed for encrypting electronic data back in the United States by the [National Institute of Standards and Technology](https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology). Ever since the AES has been used worldwide in encrypting confidential data.
 
@@ -79,30 +79,42 @@ Below is the step by step explanations for data encryption using the AES algorit
 ### Step 1: Generation of round keys
 
 This occurs through a process called key expansion where the original secret key is used to derive round keys by use of Rijndael’s key schedule algorithm.
-![round key generation](/engineering-education/aes-rsa-encryption/round.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-AddRoundKey.svg)
+
+![round key generation](/engineering-education/aes-rsa-encryption/round.png)
+
+*[Image Source: Wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-AddRoundKey.svg)*
 
 ### Step 2: Mixing of the message into ciphertext
 
-This involves the combining of each round key that had been generated above with the plain message being encrypted. This is done using the Additive [XOR algorithm](https://en.wikipedia.org/wiki/XOR_cipher)
+This involves the combining of each round key that had been generated above with the plain message being encrypted. This is done using the Additive [XOR algorithm](https://en.wikipedia.org/wiki/XOR_cipher).
 
 ### Step 3: Substituting the data gotten from step 2
 
-This involves substituting the resultant data from step 2 in a substituting table
-![substitution](/engineering-education/aes-rsa-encryption/sub.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-SubBytes.svg)
+This involves substituting the resultant data from step 2 in a substituting table.
+
+![substitution](/engineering-education/aes-rsa-encryption/sub.png)
+
+*[Image Source: Wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-SubBytes.svg)*
 
 ### Sep 4: Shifting of rows
 
-Shift all the bytes in the substitution table to the right
-![shift rows](/engineering-education/aes-rsa-encryption/shift.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-ShiftRows.svg)
+Shift all the bytes in the substitution table to the right.
+
+![shift rows](/engineering-education/aes-rsa-encryption/shift.png)
+
+*[Image Source: Wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-ShiftRows.svg)*
 
 ### Step 5: Mixing
 
 An algorithm is used to mix the contents of each column.
-![mixing columns](/engineering-education/aes-rsa-encryption/mixcolumn.png)[wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-MixColumns.svg)
+
+![mixing columns](/engineering-education/aes-rsa-encryption/mixcolumn.png)
+
+*[Image Source: Wikipedia](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#/media/File:AES-MixColumns.svg)*
 
 The entire process is then repeated several times with each repeat being called a round and encrypted with the round keys we generated in step 1.
 
-### Getting started with RSA encryption algorithm
+### Getting started with the RSA encryption algorithm
 
 RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
 
@@ -110,7 +122,7 @@ This algorithm is based on the fact that finding factors of [composite numbers](
 
 Below is a simple diagrammatic representation flow of how RSA encrypts data:
 
-![RSA structure](](/engineering-education/aes-rsa-encryption/RSA.png)
+![RSA structure](/engineering-education/aes-rsa-encryption/RSA.png)
 
 ### RSA algorithm functionality
 
