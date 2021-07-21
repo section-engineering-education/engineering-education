@@ -157,3 +157,7 @@ The receiver can decrypt the message using the expression G = c^d  mod n accordi
 Encryption is key in matters of information security. It is therefore vital to learn the different algorithms used in data encryption other than AES and RSA. This would help broaden your horizons as far as data security is concerned.
 
 Blissful reading!
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
