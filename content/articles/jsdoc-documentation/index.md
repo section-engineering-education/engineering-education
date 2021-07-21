@@ -54,7 +54,7 @@ npm init -y
 npm i- dev jsdocs
 ```
 
-To use JSDocs, we need a config file. So in the root folder of the application, create a file named `jsodc.json` and paste the following snippet.
+We need a config file to use JSDocs. So, in the root folder of the application, create a file named `jsodc.json` and paste the following snippet.
 
 ```Javascript
 {
@@ -78,7 +78,7 @@ To use JSDocs, we need a config file. So in the root folder of the application, 
 In the root folder, create a new folder named `source` and in the folder, add a new file named `index.js`. Here is where we are going to write the code for which its documentation is to be generated.
 
 ### Creating the Kickoff Script
-At the snippets below in the Script Object in the `package.json` file:
+Add the snippets below in the Script Object in the `package.json` file:
 
 ```Javascript
 "doc": "jsdoc -c jsdoc.json"
@@ -99,7 +99,7 @@ Now run the command `npm run doc` after which you'll see a folder `documentation
     |-- index.js
 ```
 
-If you open your `index.html` file in the `documentation` folder, you should see the auto generated page where your documentation will go as below.
+If you open your `index.html` file in the `documentation` folder, you should see the auto generated page where your documentation will go.
 
 ![documentation page](/enginnering-edication/jsdocs-documentation/initial-page.png)
 
@@ -158,7 +158,7 @@ var student = {
 };
 ```
 
-### Documenting functions.
+### Documenting functions
 Now that we know how to create JSDocs annotations for functions, we can document functions by borrowing the same knowledge. We describe what a function does, the parameters it takes, and what it returns.
 
 ```Javascript
@@ -243,6 +243,7 @@ class User {
 ```
 
 ![Classes](/enginnering-edication/jsdocs-documentation/class-members.png)
+
 ![Classes](/enginnering-edication/jsdocs-documentation/class-methods.png)
 
 ### Looking into Modules
