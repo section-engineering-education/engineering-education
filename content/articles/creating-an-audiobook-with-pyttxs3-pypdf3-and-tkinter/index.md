@@ -180,3 +180,7 @@ You can explore more with [Python text to speech](https://pypi.org/project/pytts
 It's time those stacked up books got on your "*to read list*" got exhausted with your own made audio book converter.
 
 Good luck!
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
