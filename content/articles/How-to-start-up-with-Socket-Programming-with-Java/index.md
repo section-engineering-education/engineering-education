@@ -288,7 +288,8 @@ Server:  Message Received
 - Launch the server program as the java server, depending on how you saved it.
 - Run the client program on a terminal.
 - Then, in the client window, type messages.
-Example 
+
+Example:
 ```
 Hey there 
 Server:  Message Received
