@@ -43,7 +43,7 @@ Now that we've Minikube running, let's connect it to the dashboard.
 minikube dashboard
 ```
 
-![Dashboard-Screenshot](/engineerng-education/spring-cloud/dashboard.png)
+![Dashboard screenshot](/engineering-education/spring-cloud-k8/dashboard.png)
 
 ### Kubernetes service discovery interface
 As we had discussed earlier, this project will cover the K8 `ServiceDiscovery` interface implementation. We need to note that microservices have multiple pods running a single service.
