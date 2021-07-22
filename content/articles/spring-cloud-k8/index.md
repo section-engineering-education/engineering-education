@@ -27,10 +27,9 @@ In this tutorial, we'll build a simple agency application that provide services 
 - How to use Spring Cloud K8 Ribbon for load balancing.
 - Concepts of ConfigMaps using Spring Cloud K8-Config.
 
-### Project setup
-In this section, we install the [minikube](https://minikube.sigs.k8s.io/docs/start/) locally on our development machine, in this tutorial, we'll be using the `Virtualbox VM driver`. [section.io](https://www.section.io/engineering-education/introduction-to-kubernetes/) has a pool of content on Kubernetes that will get you started. Feel free to browse or search for K8 related topics on the link above.
-
-Now, let's start by running a single-node Kubernetes cluster as follows:  
+### Setting up the project
+In this section, we'll install [Minikube](https://minikube.sigs.k8s.io/docs/start/) locally on our development machine using the `VirtualBox VM driver`. [Section.io](https://www.section.io/engineering-education/introduction-to-kubernetes/) has a pool of content on Kubernetes that will get you started. Feel free to browse or search for K8 related topics on the given link.
+Let's start by running a single-node Kubernetes cluster as follows: 
 
 ```bash
 minikube start --vm-driver=virtualbox
