@@ -46,11 +46,11 @@ minikube dashboard
 ![Dashboard screenshot](/engineering-education/spring-cloud-k8/dashboard.png)
 
 ### Kubernetes service discovery interface
-As we had discussed earlier, this project will cover the K8 `ServiceDiscovery` interface implementation. We need to note that microservices have multiple pods running a single service.
+As discussed earlier, this project will cover the K8 `ServiceDiscovery` interface implementation. It is important to note that micro-services have multiple pods running a single service.
 
-Now if we have a Spring Boot application running in a pod within the same Kubernetes cluster, we could easily fetch the endpoints exposed by Kubernetes (service as a collection).
+If we have a Spring Boot application running in a pod within the same Kubernetes cluster, we can easily fetch the endpoints exposed by Kubernetes (service as a collection).
 
-Now that we've got a basic understanding of how important this service, let's proceed and set it up in our application.  
+Let's proceed and set up this service in our application.
 
 ```xml
 <dependency>
