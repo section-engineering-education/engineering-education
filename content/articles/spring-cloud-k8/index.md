@@ -174,7 +174,7 @@ spring.data.mongodb.password=${MONGO_PASSWORD}
 Now that we have understood how this application works, clone the [complete code](https://replit.com/@odiwuoramos/spring-cloud) and test it locally on your machine or play around with the code on the hosting platform.
 
 ### Deployment
-To deploy our application, we setup the bash script as shown below with comments for each command:  
+To deploy our application, we setup a `bash script` as explained below:  
 
 ```bash
 
