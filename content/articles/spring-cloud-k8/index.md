@@ -150,7 +150,7 @@ spec:
                 key: password
 ```
 
-This deployment configuration file creates a `mongo: latest image. It then sets both of its username and password we created previously with a default`admin database.
+This deployment configuration file creates a `mongo: latest image`. It also sets the username and password that we created earlier with a default admin database.
 
 ### Setting up MongoDB on the Agency Service
 Let's start by updating the properties to add the database credentials as shown below:
