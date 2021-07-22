@@ -16,7 +16,11 @@ To grasp what this article entails. It is crucial to have a good understanding o
 
 SSH is designed to offer secure encryption, verification, and communication between computers. It provides a safe way of executing commands and configuring services remotely. The SSH technology is often performed using the client-server model. So you can securely log in remotely from one system to another and transmit files.
 
-Setting up SSH, you use a pair of keys, a public key and a private key. A public key is stored on the SSH server, and a private key is stored on your SSH client. So basically, SSH uses [asymmetric encryption](https://sectigostore.com/blog/what-is-asymmetric-encryption-how-does-it-work/#:~:text=Asymmetric%20encryption%20is%20a%20type,corresponding%20private%20key%20decrypts%20it.&text=The%20public%20key%20is%20open,and%20encrypt%20data%20with%20it.). 
+[A client-server model](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) is a distributed system architecture on a computer network that splits into two sections. Computers that request a service or a request (client) and computers that serve clients with a response (Server). The client-server model is a way for computers to communicate via a computer network or the internet.
+
+Setting up SSH, you use a pair of keys, a public key, and a private key. A public key is stored on the SSH server, and a private key is stored on your SSH client. So basically, SSH uses [asymmetric encryption](https://sectigostore.com/blog/what-is-asymmetric-encryption-how-does-it-work/#:~:text=Asymmetric%20encryption%20is%20a%20type,corresponding%20private%20key%20decrypts%20it.&text=The%20public%20key%20is%20open,and%20encrypt%20data%20with%20it.). 
+
+Asymmetric encryption uses two distinct keys to encrypt and decrypt data. A public key encrypts data, and a private key decrypts it. The most common and secure way of data encryption and decryption is using an RSA algorithm. This algorithm generates a public and a private key that are logically linked to each other.
 
 To establish a connection between your computer(SSH client ) and the webserver (SSH server). The SSH server encrypts a message using the public key and sends it to the client. The client decrypts the message with a private key and sends it back to the SSH server. A connection is then established once the verification is complete.
 
@@ -63,7 +67,7 @@ The following files list is presented.
 ![Generating a files list](/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/ls-ssh.jpg)
 
 #### Adding a new SSH key to your GitHub account
-Now that we have the SSH keys, let us link them with the Github account.
+Now that we have the SSH keys let us link them with the Github account.
 To obtain the SSH key execute this command:
 
 `cat id_rsa_personal.pub`
@@ -73,6 +77,7 @@ To obtain the SSH key execute this command:
 Copy the SSH key and then sign in to your GitHub account. Follow the steps below to add an SSH key to your GitHub account.
 1. On your GitHub, navigate to Settings
 2. Choose SSH and GPG keys
+Gnu Privacy Guard (GPG) is an encryption technique that allows secure information sharing among parties.
 3. Hit on button New SSH Key, give a significant title, and paste the key
 4. Finally, click the Add Key button
 
@@ -110,7 +115,7 @@ Host github.com-organization github account
 
 ![Adding a config file](/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/config.jpg)
 
-In the code above, we have two different values. One is the work repository, and another for the user's repository. The values enable you to add and update the SSH config of the GitHub repositories.
+In the code above, we have two different values. One is the work repository and another for the user's repository. The values enable you to add and update the SSH config of the GitHub repositories.
 
 ### Cloning the Repositories
 Finally, we have to clone repositories. While cloning, make sure that you use the hostnames that we used during SSH configuration. To clone the repositories, execute the below clone command.
@@ -125,5 +130,11 @@ Cloning your company's projects, you will use this command.
 
 ### Conclusion
 That's all there is for this article. I hope it will be helpful. Also, I hope it helps you understand how to use multiple SSH keys for multiple GitHub accounts.
+
+To summarize:
++ The reader has learned what SSH Keys are and how they work.
++ The reader has learned how to manage multiple SSH keys on multiple GitHub accounts.
++ The reader has learned how to create and update an SSH config file
++ Finally the reader has learned how to clone repositories
 
 Happy learning!
