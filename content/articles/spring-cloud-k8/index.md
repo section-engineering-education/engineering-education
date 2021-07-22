@@ -18,7 +18,7 @@ In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build 
 - You should be familiar with setting up application cluster nodes.
 
 ### Objectives
-This tutorial will teach you everything you need to know about Spring Boot microservices, how to integrate them with Kubernetes, and deploy it on Minikube.  
+This tutorial will teach you everything you need to know about Spring Boot micro-services, how to integrate them with Kubernetes, and deploy them on Minikube.  
 
 ### Getting started
  In this tutorial, we'll be building a simple agency application to provide services to clients. These clients are provided with a way to query the agency services from time to time. This project will help us understand a few basic concepts such as:
