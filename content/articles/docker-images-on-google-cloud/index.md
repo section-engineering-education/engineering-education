@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /docker-images-on-google-cloud/
+title: How to deploy and run Docker containers on Google cloud
+description: This tutorial will go through the creation and deployment of Docker containers to Google cloud.
+author: dolores-merceline
+date: 2021-07-22T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/docker-images-on-google-cloud/hero.png
+   alt: How to deploy and run Docker containers on Google cloud
+---
+
 ### Introduction
 If you're using docker, and you push docker images to hub.docker.com, by default, the docker images are pushed into a public repository. This means that everyone can access your docker images. However, we need to ensure that our docker images are very secure so that only applications exiting in a given project have the access to the docker images. Google provides a solution to this using Google Cloud, where you can store private docker images.
 
