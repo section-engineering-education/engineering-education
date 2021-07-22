@@ -157,3 +157,7 @@ If we go to the Google Container Registry Page, we will find a list of our conta
 
 ### Conclusion
 In this tutorial, we learned how to deploy docker images to Google Container Registry. Created a simple flask application, dockerized it, and deployed it to GCR. We also learned how to use Google Cloud Shell during the process. Now go ahead and try doing it with your application.
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
