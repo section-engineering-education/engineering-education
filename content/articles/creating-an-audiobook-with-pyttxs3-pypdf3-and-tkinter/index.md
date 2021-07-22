@@ -27,23 +27,25 @@ We shall look deeper into the other libraries as we continue.
 
 ### Prequisites  
 
-1. Have knowledge of Python
+Tounderstand this article, a reader needs to have:
 
-2. Have Python 3 installed in your computer.
+1. Knowledge of Python.
 
-3. Python text to speech library version3
+2. Python 3 installed in the computer.
 
-4. Python PDF version 3
+3. Python text to speech library version 3.
 
-5. Understanding of [Tkinter](https://docs.python.org/3/library/tk.html)
+4. Python PDF version 3.
 
-6. Have Windows 8 and above Operating system installed into your machine.
+5. An understanding of [Tkinter](https://docs.python.org/3/library/tk.html).
+
+6. Windows 8 and above operating system installed in the machine.
 
 ### What is PyPDF3?  
 
-From [PyPDF3's official documentation](https://pythonhosted.org/PyPDF2/), it is a Pure-Python library built as a PDF toolkit. It was built to help with the following:
+From PyPDF3's [official documentation](https://pythonhosted.org/PyPDF2/), it is a pure-python library built as a PDF toolkit. It was built to help with the following:
 
-* Extracting document information (title, author, etc.)
+* Extracting document information (title, author, etc.).
 
 * Splitting documents page by page.
 
@@ -63,7 +65,7 @@ From [PyPDF3's official documentation](https://pythonhosted.org/PyPDF2/), it is 
 
 ### What is Pyttsx3?
 
-From the [Pyttsx3 official documentation](https://pyttsx3.readthedocs.io/en/latest/), Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
+From the Pyttsx3 [official documentation](https://pyttsx3.readthedocs.io/en/latest/), Python Text to Speech version 3 (`pyttsx3`) is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
 
 ### Application
 
@@ -71,9 +73,9 @@ From the [Pyttsx3 official documentation](https://pyttsx3.readthedocs.io/en/late
 
 - It can be used to create an audiobook.
 
-### Installing Requirements
+### Installation requirements
 
-We'll install the required packages for this tutorial in a virtual environment. A virtual environment helps with our project management. For more information, [look into.](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/)
+We'll install the required packages for this tutorial in a virtual environment. A virtual environment helps with our project management. For more information on virtual environments, look into this [article](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/).
 
 We will use `pipenv` to create our virtual environment.
 
@@ -121,7 +123,7 @@ import pyttsx3
 
 import PyPDF3
 
-from tkinter import Tk # comes pre-installed with Python
+from tkinter import Tk # tkinter comes pre-installed with Python
 
 from tkinter.filedialog import askopenfilename
 
@@ -163,21 +165,21 @@ audio.runAndWait()
 
 ### Results
 
-After running the code above, you'll see the a dialog window pop up.
+After running the code above, you'll see a dialog window pop up:
 
 ![Dialog Window](/images/dialog.png)
 
 Select the pdf file of your choice and enjoy your book as your machine reads it to you.
 
-Have a preview for the results on my [replit account](https://replit.com/join/xsaeqptwdi-frederico23)
+Have a preview for the results on my [replit](https://replit.com/join/xsaeqptwdi-frederico23).
 
 > **Note:** Not all pdf files will be read through and recorded. Try using the unnumbered pages pdf files for better results.
 
 ### Conclusion
 
-You can explore more with [Python text to speech](https://pypi.org/project/pyttsx3/) library to be able to change voice, change the rate of speech, and the volume of speech. For more information on PyPDF3 library, you can read the [documentation](https://pypi.org/project/PyPDF3/).
+You can explore more with [Python text to speech](https://pypi.org/project/pyttsx3/) library to be able to change voice, change the rate of speech, and the volume of speech. For more information on PyPDF3 library, you can read this [documentation](https://pypi.org/project/PyPDF3/).
 
-It's time those stacked up books got on your "*to read list*" got exhausted with your own made audio book converter.
+It's time those stacked up books that you got on your "*to read list*" got exhausted with your own made audio book converter.
 
 Good luck!
 
