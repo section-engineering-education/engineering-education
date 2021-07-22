@@ -32,7 +32,7 @@ Transmission Control Protocol (TCP) - This is one of the most important protocol
 1. Its server's IP address 
 2. Its port number
 
->The ports 0-1024 are for administrative use only (e.g.  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+>The ports 0-1024 are for administrative use only (e.g.,  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
 
 #### When we make a socket connection in the Java programming language, we go through the following steps:
 
@@ -69,7 +69,7 @@ Port: the port number on which the server will listen for the client's requests.
 >The ServerSocket object stays idle, waiting for network requests. Our client will attempt to connect to port 5000, which we have specified.
 
 **Note** :
-Make sure the ports are the same other than that, the connection will fail.
+Make sure the ports are the same otherwise, the connection will fail.
 
 There will be two while loops in use:
 
@@ -202,7 +202,7 @@ Client-side, we need to use a Scanner object to get input from the user from the
 ```java
 Scanner scanner = new Scanner(System.in);
 ```
-`System. in` specifies that we are getting the keyboard input.
+`System.in` specifies that we are getting the keyboard input.
 
 #### Methods used in Client Socket
 - `public InputStream getInputStream()` - returns an InputStream object for receiving data. Our Server will keep on receiving messages until client sends "BYE".
@@ -298,6 +298,7 @@ BYE
 Server:  Message Received
 ```
 4. The server receives and simultaneously shows:
+
 ```
 Connected
 Client: Hey there 
