@@ -1,7 +1,7 @@
 ###  Introduction
 A string is a sequence of Unicode characters. Unicode is a standard for providing unique code for every character, so that characters are distinguishable from one another. 
 
-Strings as a data type have wide use in programming. Just like any other programming language, strings in python are used to represent text but could also include spaces, special characters as well as numbers.
+Strings have a wide use in programming. Strings in Python are used to represent text but could also include spaces, special characters as well as numbers.
 
 ###  Initializing strings in python
 In python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
