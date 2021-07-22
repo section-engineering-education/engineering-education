@@ -59,9 +59,9 @@ Let's proceed and set up this service in our application.
 </dependency>
 ```
 
-In the above XML file, we've defined the dependencies for the [spring-cloud-starter-kubernetes](https://search.maven.org/search?q=g:org.springframework.cloud%20a:spring-cloud-starter-kubernetes) on the client app to enable service discovery.
+In the `XML` file above, we've defined the dependencies for the [Spring Cloud starter Kubernetes](https://search.maven.org/search?q=g:org.springframework.cloud%20a:spring-cloud-starter-kubernetes) on the client app so as to enable service discovery.
 
-Now let's add the `@EnableDiscoveryClient` and inject the `ClientController` in our controller using the `@Autowired` as shown below:
+Now, let's add the `@EnableDiscoveryClient` annotation and inject the `ClientController` in our controller using `@Autowired` as shown below:
 
 ```java
 @SpringBootApplication
