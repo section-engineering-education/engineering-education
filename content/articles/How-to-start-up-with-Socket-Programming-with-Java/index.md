@@ -46,7 +46,7 @@ Transmission Control Protocol (TCP) - This is one of the most important protocol
 
 - The server's `accept()` method returns a reference to a new server socket connected to the client's socket.
  
->If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
+If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
 A stream is a collection of sequenced data, in case you didn't know. 
 
 #### There are two types of streams:
@@ -115,7 +115,7 @@ while (true)
 - `public InputStream getInputStream()` - returns an InputStream object that receives data.
 - `public OutputStream getOutputStream()`- returns an OutputStream for sending data.
 - `public Socket accept()` - Waits for client connection (the program won't continue until the client is connected). When you connect, you'll get a socket object that you may use to communicate with the client. 
-- `void close()` - closes the server socket i.e stops waiting for requests from clients.
+- `void close()` - closes the server socket i.e. stops waiting for requests from clients.
 
 #### Full Server-Side Application
 ```java
@@ -288,12 +288,11 @@ Server:  Message Received
 - Launch the server program as the java server, depending on how you saved it.
 - Run the client program on a terminal.
 - Then, in the client window, type messages.
-
-Example:
+Example 
 ```
 Hey there 
 Server:  Message Received
-am doing this for the first time
+I am doing this for the first time
 Server:  Message Received
 BYE
 Server:  Message Received
