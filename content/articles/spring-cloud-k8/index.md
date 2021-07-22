@@ -110,7 +110,7 @@ Output:
 secret/db-secret created
 ```
 
-Now proceed and add the following configurations in our deployment `YAML` file.  
+Proceed to add the following configurations in our deployment `YAML` file.   
 
 ```yml
 # api version definition
