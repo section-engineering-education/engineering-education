@@ -3,8 +3,8 @@ A string is a sequence of Unicode characters. Unicode is a standard for providin
 
 Strings have a wide use in programming. Strings in Python are used to represent text but could also include spaces, special characters as well as numbers.
 
-###  Initializing strings in python
-In python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
+###  Initializing strings in Python
+In Python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
 
 ####  Using single Quotes
 ```py 
@@ -62,7 +62,7 @@ H
 ```
 
 ####  Last Character
-Since python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same to get the last element of a string.
+Since Python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same to get the last element of a string.
 ```py
 # printing the  last index
 string = 'Hello there'
@@ -216,7 +216,7 @@ Hello world
 ```
 
 ###  Python String Operations
-Python has a wide range of operations to perform on strings. This makes strings in python have a wide application than strings in any other programming languages.
+Python has a wide range of operations to perform on strings. This makes strings in Python have a wide application than strings in any other programming languages.
 
 ####  String Iteration
 We can iterate through a given string using for loop. We can iterate to find the length of a string, count the occurrence of a given character or check whether a given letter is found in a string. To demonstrate this, we can loop through a string and print every character of that string.
@@ -307,7 +307,7 @@ My name is Dianne Sandra
 ```
 
 #### Using the `str.format` method
-This approach was introduced in Python 3.0 to enable programmers to handle complex string operations efficiently. It is a method inbuilt with the python strings class and can be accessed without any additional libraries. It provides string manipulation by substituting values and variables in strings.
+This approach was introduced in Python 3.0 to enable programmers to handle complex string operations efficiently. It is a method inbuilt with the Python strings class and can be accessed without any additional libraries. It provides string manipulation by substituting values and variables in strings.
 
 You could also do substitution by variable names then specifying the name in its respective position. This comes in very helpful especially if you want to substitute more than one string.
 
