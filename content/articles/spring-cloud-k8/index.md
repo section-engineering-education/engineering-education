@@ -81,7 +81,7 @@ public class ClientController {
 ```
 
 ### Creating MongoDB service
-In this section, we define our MongoDB service and a configuration file for deployment. But first, we need to define both the Secret username and password to use for deployments.
+In this section, we'll define our MongoDB service and a deployment configuration file. First, we need to define the secret username and password for the deployment.
 
 ```yml
 # application version 1
