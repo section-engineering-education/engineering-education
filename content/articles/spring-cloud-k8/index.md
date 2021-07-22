@@ -215,7 +215,6 @@ kubectl get pods
 ```
 
 ### Conclusion
-In this tutorial, we've seen how we can set up a Spring Cloud Kubernetes project.
-We've seen how we can use both tools to set up a microservice platform application with each providing its best `power`.
+In this tutorial, we've seen how we can set up a Spring Cloud project and use Spring Boot and Kubernetes to integrate a micro-service platform application with each providing great performance.
 
-The full source code is available [here](https://replit.com/@odiwuoramos/spring-cloud#kubernetes-guide/client-service/client-config.yaml)
+The full source code can be found [here](https://replit.com/@odiwuoramos/spring-cloud#kubernetes-guide/client-service/client-config.yaml).
