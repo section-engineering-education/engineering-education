@@ -16,12 +16,15 @@ images:
 ---
 
 ### Introduction 
-A collection of related data elements with a common name is referred to as an array. We can define an array as marks to represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. Arrays can be defined by any variable type.
+A collection of related data elements with a common name is referred to as an array. We can use an array represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. Arrays can be defined by any variable type.
 marks[10]
-The complete set of values is the array while the individual value is an element. An array is like an ordered list of variables that has a uniform mechanism of naming, the name of the array does not change but the variable can change.
+The complete set of values is the array, while the individual value is an element. An array is like an ordered list of variables that has a uniform mechanism of naming, the name of the array does not change but the variable can change. Arrays can be used to keep to keep track of a list of ordered items or things. The advantage of using arrays is that it is easy to access any element in the array using the index numbers and also storing many elements at a time is made possible through arrays.
 
 ### Prerequisite
-Before learning this tutorial you need to have a basic understanding of java especially on how to run and compile java programs.
+Before learning this tutorial:
+1. You need to have a basic understanding of java.
+2. You should be able to run and compile java programs.
+3. You should have installed and be able to work with IDEs like [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
 ### Creating an array
 Before being used, arrays are constructed and declared just like any other variable in the computer memory. The process of making  array is of three steps:
 1. Declaring the array
@@ -34,8 +37,8 @@ type arrayname[ ]; or
 type [ ] arrayname;
 example:
 ```Java
-float mean[ ];
-int[ ] marks;
+float mean[ ];     //type arrayname[]
+int[ ] marks;      //type[] arrayname
 ```
 
 ### Creation of an array
@@ -213,6 +216,49 @@ Sorted array in descending order: [120, 84, 76, 75, 65, 45, 34]
 Sorted Array in ascending order: [34, 45, 65, 75, 76, 84, 120]
 
 To sort the array in descending order you use the reverseorder() method imported from the collection, therefore the reverse order has to involve the collection method.
+
+By the use of multidimensional array we can create a multiplication tabe of 10 by 10 that is 10 rows and 10 columns
+
+```Java
+public class Main {
+  
+   public static void main(String[] args)
+   {
+      int[][]   multiplicationtable= new int[10][10];   //array name is multiplicationtable
+      int row = 1, column = 1;
+       for(int a = 0; a < multiplicationtable.length; a++)
+      {
+         for(int b = 0; b < multiplicationtable[a].length; b++)
+         {
+            multiplicationtable[a][b] = row * column;
+            column = column + 1;
+         }
+         row = row + 1;
+         column = 1;
+      }
+      for(int a = 0; a < multiplicationtable.length; a++)
+      {
+         for(int b = 0; b < multiplicationtable[a].length; b++)
+         {
+            System.out.print(" " + multiplicationtable[a][b] + "\t| ");
+         }
+         System.out.print("\n");
+      }
+   }
+}
+```
+
+Output:
+ 1	|  2	|  3	|  4	|  5	|  6	|  7	|  8	|  9	|  10	| 
+ 2	|  4	|  6	|  8	|  10	|  12	|  14	|  16	|  18	|  20	| 
+ 3	|  6	|  9	|  12	|  15	|  18	|  21	|  24	|  27	|  30	| 
+ 4	|  8	|  12	|  16	|  20	|  24	|  28	|  32	|  36	|  40	| 
+ 5	|  10	|  15	|  20	|  25	|  30	|  35	|  40	|  45	|  50	| 
+ 6	|  12	|  18	|  24	|  30	|  36	|  42	|  48	|  54	|  60	| 
+ 7	|  14	|  21	|  28	|  35	|  42	|  49	|  56	|  63	|  70	| 
+ 8	|  16	|  24	|  32	|  40	|  48	|  56	|  64	|  72	|  80	| 
+ 9	|  18	|  27	|  36	|  45	|  54	|  63	|  72	|  81	|  90	| 
+ 10	|  20	|  30	|  40	|  50	|  60	|  70	|  80	|  90	|  100	| 
 
 ### conclusion
 We have been able to go through and understand arrays. We have also seen how to approach arrays through for loop. The sorting of arrays can be of great help to arrange data and sort out data in either ascending or descending orders.
