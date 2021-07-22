@@ -2,17 +2,15 @@
 In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot.
 
 ### Table of contents
-- [Tutorial overview](#tutorial-overview)
-- [Table of contents](#table-of-contents)
-- [Prerequisites](#prerequisites)
-- [Objectives](#objectives)
-- [Getting started](#getting-started)
-- [Project setup](#project-setup)
-- [Kubernetes service discovery interface](#kubernetes-service-discovery-interface)
-- [Creating MongoDB service](#creating-mongodb-service)
-- [Setting up MongoDB on the Agency Service](#setting-up-mongodb-on-the-agency-service)
-- [Deployment](#deployment)
-- [Conclusion](#conclusion)
+  - [Prerequisites](#prerequisites)
+  - [Objectives](#objectives)
+  - [Getting started](#getting-started)
+  - [Setting up the project](#setting-up-the-project)
+  - [Kubernetes service discovery interface](#kubernetes-service-discovery-interface)
+  - [Creating MongoDB service](#creating-mongodb-service)
+  - [Setting up MongoDB on the Agency Service](#setting-up-mongodb-on-the-agency-service)
+  - [Deployment](#deployment)
+  - [Conclusion](#conclusion)
 
 ### Prerequisites
 - You should have [minikube](https://minikube.sigs.k8s.io/docs/start/) locally installed on your machine.
