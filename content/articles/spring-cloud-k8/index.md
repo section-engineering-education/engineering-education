@@ -1,5 +1,5 @@
 ### Tutorial overview
-In this tutorial, I'll show you how to use Kubernetes and Spring cloud to build your microservice application. It'll be an interesting project that will walk you through the whole process of integrating Kubernetes with Spring Boot applications.
+In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot.
 
 ### Table of contents
 - [Tutorial overview](#tutorial-overview)
