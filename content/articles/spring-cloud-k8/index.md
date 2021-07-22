@@ -97,7 +97,7 @@ data:
 
 ```
 
-Upon defining the configuration above, ensure you run the following command to add it to the Kubernetes cluster.
+Upon defining the configuration above, run the following command to add it to the Kubernetes cluster.
 
 ```bash
 kubectl apply -f secret.yaml
