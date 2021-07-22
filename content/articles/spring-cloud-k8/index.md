@@ -1,9 +1,7 @@
 ### Tutorial overview
-
 In this tutorial, I'll show you how to use Kubernetes and Spring cloud to build your microservice application. It'll be an interesting project that will walk you through the whole process of integrating Kubernetes with Spring Boot applications.
 
 ### Table of contents
-
 - [Tutorial overview](#tutorial-overview)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -17,25 +15,21 @@ In this tutorial, I'll show you how to use Kubernetes and Spring cloud to build 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 - You should have [minikube](https://minikube.sigs.k8s.io/docs/start/) locally installed on your machine.
 - Understanding RESTful APIs.
 - You should be familiar with setting application cluster nodes.
 
 ### Objectives
-
 This tutorial will teach you everything you need to know about Spring Boot microservices, how to integrate them with Kubernetes, and deploy it on Minikube.  
 
 ### Getting started
-
  In this tutorial, we'll be building a simple agency application to provide services to clients. These clients are provided with a way to query the agency services from time to time. This project will help us understand a few basic concepts such as:
 
 - Discovering services using the Spring Cloud K8
 - How to use Spring Cloud K8 Ribbon for load balancing
-- Concepts of `config maps using Spring cloud K8 Config
+- Concepts of `config maps using Spring cloud K8 Config`
 
 ### Project setup
-
 In this section, we install the [minikube](https://minikube.sigs.k8s.io/docs/start/) locally on our development machine, in this tutorial, we'll be using the `Virtualbox VM driver`. [section.io](https://www.section.io/engineering-education/introduction-to-kubernetes/) has a pool of content on Kubernetes that will get you started. Feel free to browse or search for K8 related topics on the link above.
 
 Now, let's start by running a single-node Kubernetes cluster as follows:  
@@ -55,7 +49,6 @@ minikube dashboard
 ![Dashboard-Screenshot](/engineerng-education/spring-cloud/dashboard.png)
 
 ### Kubernetes service discovery interface
-
 As we had discussed earlier, this project will cover the K8 `ServiceDiscovery` interface implementation. We need to note that microservices have multiple pods running a single service.
 
 Now if we have a Spring Boot application running in a pod within the same Kubernetes cluster, we could easily fetch the endpoints exposed by Kubernetes (service as a collection).
@@ -91,7 +84,6 @@ public class ClientController {
 ```
 
 ### Creating MongoDB service
-
 In this section, we define our MongoDB service and a configuration file for deployment. But first, we need to define both the Secret username and password to use for deployments.
 
 ```yml
@@ -160,10 +152,9 @@ spec:
                 key: password
 ```
 
-This deployment configuration file creates a `mongo: latest image. It then sets both of its username and password we created previously with a default`admin` database.
+This deployment configuration file creates a `mongo: latest image. It then sets both of its username and password we created previously with a default`admin database.
 
 ### Setting up MongoDB on the Agency Service
-
 Let's start by updating the properties to add the database credentials as shown below:
 
 ```properties
@@ -185,7 +176,6 @@ spring.data.mongodb.password=${MONGO_PASSWORD}
 Now that we have got a complete setup of how this application works, clone the complete code on <https://replit.com/@odiwuoramos/spring-cloud> and test the application on your local machine or as well play with the code on the hosting platform.
 
 ### Deployment
-
 To deploy our application, we setup the bash script as shown below with comments for each command:  
 
 ```bash
@@ -227,7 +217,6 @@ kubectl get pods
 ```
 
 ### Conclusion
-
 In this tutorial, we've seen how we can set up a Spring Cloud Kubernetes project.
 We've seen how we can use both tools to set up a microservice platform application with each providing its best `power`.
 
