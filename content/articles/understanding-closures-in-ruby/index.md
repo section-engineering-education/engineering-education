@@ -6,7 +6,7 @@ url: /understanding-closures-in-ruby/
 title: Understanding Closures in Ruby
 description: This article will guide you in understanding closures in Ruby. These components are quite important when writing highly functional code.
 author: njunu-simon
-date: 2021-07-22T00:00:00-04:00
+date: 2021-07-22T00:00:00-14:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
