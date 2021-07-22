@@ -27,14 +27,14 @@ Transmission Control Protocol (TCP) - This is one of the most important protocol
 1. A server socket awaits a request from a client.
 2. Client socket - utilized for sending and receiving requests from clients.
 
-The client has to know two things about the server:
+#### The client has to know two things about the server:
 
-1. Server's IP address 
-2. Port number
+1. Its server's IP address 
+2. Its port number
 
->The ports 0-1024 are for administrative use only (e.g.21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+>The ports 0-1024 are for administrative use only (e.g.  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
 
-When we make a socket connection in the Java programming language, we go through the following steps:
+#### When we make a socket connection in the Java programming language, we go through the following steps:
 
 - The Server constructs a `ServerSocket` object to specify the port number on which our conversation will occur. Exception handling methods are in use whenever an I/O error occurs. **Throws** an **I/OException** or a **try** **catch** block is used.
 
@@ -44,18 +44,18 @@ When we make a socket connection in the Java programming language, we go through
 
 - The `Socket` class constructor will attempt to connect the client to the server and port number provided. The client now has a socket object that can connect to the server if communication occurs.
 
-- The server's accept() method returns a reference to a new server socket connected to the client's socket.
+- The server's `accept()` method returns a reference to a new server socket connected to the client's socket.
  
-If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
+>If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
 A stream is a collection of sequenced data, in case you didn't know. 
 
-There are two types of streams:
-1. Character stream (usually used with text files)
-2. Byte stream (usually used with images)
+#### There are two types of streams:
+1. A character stream (usually used with text files).
+2. A byte stream (usually used with images).
 
-Character stream is in human-readable language while byte stream is in machine language, a language understandable by the CPU.
+A character stream is in human-readable language while a byte stream is in machine language, a language understandable by the CPU.
 
-In this situation, the client and server will simultaneously broadcast messages to each other's streams. Because TCP is a two-way communication protocol, this is conceivable.
+>In this situation, the client and server will simultaneously broadcast messages to each other's streams. Because TCP is a two-way communication protocol, this is conceivable.
 
 #### Programming on the Server-side
 
@@ -115,7 +115,7 @@ while (true)
 - `public InputStream getInputStream()` - returns an InputStream object that receives data.
 - `public OutputStream getOutputStream()`- returns an OutputStream for sending data.
 - `public Socket accept()` - Waits for client connection (the program won't continue until the client is connected). When you connect, you'll get a socket object that you may use to communicate with the client. 
-- `void close ()` - closes the server socket i.e stops waiting for requests from clients.
+- `void close()` - closes the server socket i.e stops waiting for requests from clients.
 
 #### Full Server-Side Application
 ```java
@@ -272,7 +272,7 @@ A sample output of this code:
 ```
 Hey there 
 Server:  Message Received
-am doing this for the first time
+I am doing this for the first time
 Server:  Message Received
 BYE
 Server:  Message Received
