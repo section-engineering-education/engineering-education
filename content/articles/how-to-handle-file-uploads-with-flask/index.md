@@ -11,11 +11,8 @@ In this guide, we will be using python 3, and VS Code text editor you can downlo
 We will be building a flask app that will enable users to upload files to a server. At the end of this guide, it is expected that the reader will be familiar with:
 
 - Creating a virtual environment 
-
 - Activating a virtual environment
-
 - Setting up a flask app  
-
 - Enabling file uploads
 
 ### Python Virtual Environment
@@ -26,7 +23,7 @@ To start, on a windows device open PowerShell and make a directory using the com
 ```python   
 mkdir
 ```
-Get into the new directory using the `cd directory-name then install the virtual environment using the command:
+Get into the new directory using the `cd directory-name` then install the virtual environment using the command:
 ```
 pip install virtualenv
 ```
@@ -70,7 +67,7 @@ def index():
 if __name__==('__main__'):
     app.run(debug=True)
 ```
-from the code above we are importing flask from the flask library we installed.
+From the code above we are importing flask from the flask library we installed.
 
 The `@app.route` is doing the routing for us.
 
@@ -84,7 +81,7 @@ Note that `app.py` is the name of my app yours can be different. If everything g
 
 ![App running](/engineering-education/how-to-handle-file-upload-in-flask/image1.PNG)
 
-To upload files, we will use the WTforms and the flask-uploads libraries. To work with these libraries we need to install them. Do that with the command below:
+To upload files, we will use the `WTforms` and the `flask-uploads` libraries. To work with these libraries we need to install them. Do that with the command below:
 ```
 pip install flask_wtf, WTForms
 ```
@@ -153,9 +150,7 @@ def index():
 if __name__==('__main__'):
     app.run(debug=True)
 ```
-the Secret_key can be anything you want.
-
-let's update our code to the one below.
+the `secret_key` can be anything you want. Let's update our code to the one below:
 ```python
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
@@ -241,7 +236,7 @@ After uploading file, the file name will be return as seen in the image below:
 ![File Uploaded](/engineering-education/how-to-handle-file-upload-in-flask/image5.PNG)
 
 # Conclusion
-Now we can upload images. To upload other types of files all we will do is to import them through flask upload, configure their destination path, and specify their file extension. learn more about flask-uploads by clicking the link in the further reading section. link to project Github [Repo](https://pythonhosted.org/Flask-Uploads/)
+Now we can upload images. To upload other types of files all we will do is to import them through flask upload, configure their destination path, and specify their file extension. Learn more about flask-uploads by clicking the link in the further reading section. Link to project Github [Repo](https://pythonhosted.org/Flask-Uploads/)
 
 # Further Reading
 
