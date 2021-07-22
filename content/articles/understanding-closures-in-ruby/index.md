@@ -6,12 +6,13 @@ url: /understanding-closures-in-ruby/
 title: Understanding Closures in Ruby
 description: This article will guide you in understanding closures in Ruby. These components are quite important when writing highly functional code.
 author: njunu-simon
-date: 2021-07-24T00:00:00-14:00
+date: 2021-07-22T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/understanding-closures-in-ruby/hero.jpg
-    alt: Understanding Closures in Ruby
+    alt: Understanding Closures in Ruby Hero Image
 ---
 A closure in computer science is a piece of code that carries its creation context around with it. In Ruby, closures include code blocks or methods that have variables linked to the scope environment. This is a sensitive topic to all developers, especially those who are adapting to the functional paradigm.
 <!--more-->
@@ -24,7 +25,7 @@ To follow along with this tutorial, it is vital to have the following:
 ### Overview
 - [Closures](#closures)
 - [Closure use cases](#closure-use-cases)
-- [Blocks](#blocks)
+- [Blocks](#ruby-blocks)
 - [Relationship between blocks and closures](#relationship-between-blocks-and-closures)
 - [Procs](#procs)
 - [The difference between a lambda and a proc](#the-difference-between-a-lambda-and-a-proc)
@@ -58,9 +59,9 @@ We use the following rules when identifying a closure:
 - The function body should reference some variable.
 - The variable should be declared in a parent scope.
 
-### Closure use-cases
-1. Closures can be used to simulate classes in Ruby.
-2. Closures also help to implement callbacks in Ruby.
+### Closure use cases
+- Closures can be used to simulate classes in Ruby.
+- Closures also help to implement callbacks in Ruby.
 
 To have a good understanding of our topic, Let's look at Ruby blocks and callable objects.
 
@@ -81,7 +82,6 @@ def do_it
 end
 
 do_it { puts "I'm doing it" }
-
 ```
 
 When you try to call the `do_it` method without a block, the console will show an error.
@@ -94,7 +94,6 @@ def do_it
 end
 
 do_it
-
 ```
 
 ### Relationship between closures and blocks
@@ -106,21 +105,20 @@ Blocks contain local variables that eliminate variable collusion. This happens w
 x = "Global variable"
 
 1.times { x = "Block variable... conflicts and is modified" }
-
 ```
 
 ```rb
 puts x #Block variable... conflicts and is modified
 ```
 
-When you run the snippet above, you will get an unexpected output. This because we have assigned a variable in the `global scope` with the same name as that in the `block scope`.
+When you run the snippet above, you will get an unexpected output. This is because we have assigned a variable in the `global scope` with the same name as that in the `block scope`.
 
 We can provide a parameter in the declared block to avoid this issue, as shown below:
 
 ```rb
 x = "Global variable"
 
-1.times { |;x| x = "Block parameter prevents variable overiding" }
+1.times { |;x| x = "Block parameter prevents variable overriding" }
 
 puts x #Global variable
 ```
@@ -176,7 +174,7 @@ Unlike procs, lambdas will throw an exception when arguments are not inserted co
 #### Return semantic
 Procs always return from their creation context which may be problematic.
 
-Lambdas are preffered over procs since they have the same bahavioral pattern as normal methods. This is demonstrated below:
+Lambdas are preferred over procs since they have the same behavioral pattern as normal methods. This is demonstrated below:
 
 ```rb
 class ReturnSemantic
