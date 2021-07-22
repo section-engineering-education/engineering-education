@@ -150,10 +150,10 @@ gcloud run deploy --image gcr.io/project-id/flask-app
 You should see the container deployed as below:
 ![Deployed Docker Image](/engineering-education/docker-images-on-google-cloud/deployed.png)
 
-Click the deployment  service URL link to see your app running!
+Click the deployment service URL link to see your app running!
 
-If we go to the Google Container Registry Page, we will find a list of our containers and their visibility set as private. This shows that out docker images are only accessible to applications created within the Google console project. Now we are sure that our images have access control.
+If we go to the Google Container Registry Page, we will find a list of our containers and their visibility set as private. This shows that our docker images are only accessible to applications created within the Google console project. Now we are sure that our images have access control.
 ![Private Images](/engineering-education/docker-images-on-google-cloud/private.png)
 
 ### Conclusion
-In this tutorial, we learned how to deploy docker images to Google Container Registry. Created a simple flask application, dockerized it, and deployed it to GCR. We also learned how to use Google Cloud Shell during the process. Now go ahead and try doing it with your own application.
+In this tutorial, we learned how to deploy docker images to Google Container Registry. Created a simple flask application, dockerized it, and deployed it to GCR. We also learned how to use Google Cloud Shell during the process. Now go ahead and try doing it with your application.
