@@ -1,4 +1,19 @@
-﻿### Creating an audio book using PYPDF3 and Pyttsx3 (Python Text to Speech)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-an-audiobook-with-pyttxs3-pypdf3-and-tkinter/
+title: Creating an audiobook with Pyttxs3, PyPDF3 and Tkinter
+description: This tutorial demonstrates how to create a free audiobook from a pdf file with pyttxs3, pypdf3, and tinker.
+author: adhinga-fredrick
+date: 2021-07-22T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-an-audiobook-with-pyttxs3-pypdf3-and-tkinter/hero.jpg
+    alt: audiobook example image
+---  
 
 The wise men say that no matter how busy you are, you should find time to read a good book to avoid self inflicted ignorance. As a developer, we know the reality of this statement, but time is never enough for a software developer. This is why we run for the audio books which we all know does not come at a free price.
 
