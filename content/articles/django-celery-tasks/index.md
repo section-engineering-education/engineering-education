@@ -52,7 +52,15 @@ Functions of Celery:
    ```bash
    django-admin startproject celerytask
    ```
-2. Migrate the database models by executing the command below.
+2. Create a virtual environment where the packages will be installed be executing the command below.
+   ```bash
+   virtualenv venv
+   ```
+3. Activate the virtual environment by executing the command below.
+   ```bash
+   source venv/bin/activate
+   ```
+5. Migrate the database models by executing the command below.
    
    ```bash
    cd celerytask
