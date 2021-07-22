@@ -13,9 +13,9 @@ In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build 
   - [Conclusion](#conclusion)
 
 ### Prerequisites
-- You should have [minikube](https://minikube.sigs.k8s.io/docs/start/) locally installed on your machine.
+- You should have [Minikube](https://minikube.sigs.k8s.io/docs/start/) locally installed on your machine.
 - Understanding RESTful APIs.
-- You should be familiar with setting application cluster nodes.
+- You should be familiar with setting up application cluster nodes.
 
 ### Objectives
 This tutorial will teach you everything you need to know about Spring Boot microservices, how to integrate them with Kubernetes, and deploy it on Minikube.  
