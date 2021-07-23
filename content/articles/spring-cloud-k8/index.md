@@ -17,7 +17,7 @@ images:
 
 In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot. Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
 <!--more-->
-With the assistance of the Spring Cloud Framework, we can easily create cloud-based allocation.
+With the assistance of the Spring Cloud Framework, we can easily create the cloud-based allocation.
 
 ### Table of contents
   - [Prerequisites](#prerequisites)
@@ -39,7 +39,7 @@ With the assistance of the Spring Cloud Framework, we can easily create cloud-ba
 This tutorial will teach you everything you need to know about Spring Boot micro-services, how to integrate them with Kubernetes, and deploy them on Minikube.  
 
 ### Getting started
-In this tutorial, we'll build a simple agency application that provide services to clients. These clients are provided with a way to query the agency services from time to time. This project will help us understand a few basic concepts such as:
+In this tutorial, we'll build a simple agency application that provides services to clients. These clients are provided with a way to query the agency services from time to time. This project will help us understand a few basic concepts such as:
 
 - Discovering services using the Spring Cloud K8.
 - How to use Spring Cloud K8 Ribbon for load balancing.
@@ -77,7 +77,7 @@ Let's proceed and set up this service in our application.
 </dependency>
 ```
 
-In the `XML` file above, we've defined the dependencies for the [Spring Cloud starter Kubernetes](https://search.maven.org/search?q=g:org.springframework.cloud%20a:spring-cloud-starter-kubernetes) on the client app so as to enable service discovery.
+In the `XML` file above, we've defined the dependencies for the [Spring Cloud starter Kubernetes](https://search.maven.org/search?q=g:org.springframework.cloud%20a:spring-cloud-starter-kubernetes) on the client app to enable service discovery.
 
 Now, let's add the `@EnableDiscoveryClient` annotation and inject the `ClientController` in our controller using `@Autowired` as shown below:
 
@@ -135,7 +135,7 @@ apiVersion: extensions/v1beta1
 # we're deploying this application
 kind: Deployment
 metadata:
-# creating mongodb service
+# creating MongoDB service
   name: mongo
 spec:
 # with a single replica
@@ -145,21 +145,21 @@ spec:
       labels:
         service: mongo
       name: mongodb-service
+      # we're describing the object here in details
     spec:
       containers:
       - args:
-        - mongod
-        - --smallfiles
+        ...
         image: mongo:latest
         name: mongo
         env:
-          - name: MONGO_INITDB_ROOT_USERNAME
+          - name: MONGO_ROOT_USERNAME
             valueFrom:
             # these are secret values(username) we defined in the previous section
               secretKeyRef:
                 name: db-secret
                 key: username
-          - name: MONGO_INITDB_ROOT_PASSWORD
+          - name: MONGO_ROOT_PASSWORD
             valueFrom:
               secretKeyRef:
               # this password is retrieved from the previous section
@@ -190,28 +190,25 @@ spring.data.mongodb.password=${MONGO_PASSWORD}
 
 Now that we have understood how this application works, clone the [complete code](https://replit.com/@odiwuoramos/spring-cloud) and test it locally on your machine or play around with the code on the hosting platform.
 
-### Deployment
-To deploy our application, we setup a `bash script` as explained below:  
+### Deploying Spring Cloud application
+In this section, we explore the spring cloud application deployment. Therefore, we set up our application in the script file as shown below. Each command has a comment that guides you on what it does.   
 
 ```bash
 
-# first step involves building the repository
-mvn clean install
-
-# Set the docker environment for the application
-eval $(minikube docker-env)
-
-### these commands build the docker images on minikube
+..........
+# these commands build the docker images on minikube
+# cd into the service
 cd travel-agency-service
+# running the docker build
 docker build -t travel-agency-service .
 cd ../client-service
 docker build -t client-service .
 cd ..
 
-# sets up the secret and mongodb services
+# removing the services
 kubectl delete -f travel-agency-service/secret.yaml
 kubectl delete -f travel-agency-service/mongo-deployment.yaml
-
+# sets up the secret and mongodb services in the .yaml file
 kubectl create -f travel-agency-service/secret.yaml
 kubectl create -f travel-agency-service/mongo-deployment.yaml
 
@@ -219,13 +216,7 @@ kubectl create -f travel-agency-service/mongo-deployment.yaml
 kubectl delete -f travel-agency-service/travel-agency-deployment.yaml
 kubectl create -f travel-agency-service/travel-agency-deployment.yaml
 
-# setting up the client-service
-kubectl delete configmap client-service
-kubectl delete -f client-service/client-service-deployment.yaml
-
-kubectl create -f client-service/client-config.yaml
-kubectl create -f client-service/client-service-deployment.yaml
-
+............
 # run checks on pods to check if they are indeed running
 kubectl get pods
 
