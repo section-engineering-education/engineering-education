@@ -6,7 +6,7 @@ url: /creating-an-audiobook-with-pyttxs3-pypdf3-and-tkinter/
 title: Creating an audiobook with Pyttxs3, PyPDF3 and Tkinter
 description: This tutorial demonstrates how to create a free audiobook from a pdf file with pyttxs3, pypdf3, and tinker.
 author: adhinga-fredrick
-date: 2021-07-23T00:00:00-05:00
+date: 2021-07-23T00:00:00-05:56
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
