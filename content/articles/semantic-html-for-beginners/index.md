@@ -27,6 +27,10 @@ In this tutorial, you will learn why you should use semantic HTML in your next p
 -   [HTML layout without semantics](#html-layout-without-semantics)
 -   [HTML layout with semantics](#html-layout-with-semantics)
 
+### Prerequisites
+
+An understanding of HTML is needed as well as a modern web browser.
+
 ### Introduction
 
 A beginner learning about web development do not have the basic idea of semantic elements or might not see the reasons to use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become important in recent times. In the next section, we would learn about semantic HTML and the reasons why you should use it.
@@ -370,7 +374,7 @@ The example below is about showcasing a simple layout with semantic HTML. It sho
 </html>
 ```
 
-What you should know:
+**What you should know:**
 
 1. Semantic HTML is just about given meaningful names to your HTML structure.
 1. The semantic tag names cannot be edited.
@@ -379,7 +383,7 @@ For instance:
 
 `<header>` will always be `<header>`
 
-What's happen here?
+**What's happen here?**
 
 1. we used up to five semantic tags to drive the importance of using semantics.
 1. the `header` tag is for the name of the project or website.
