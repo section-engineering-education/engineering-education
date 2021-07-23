@@ -39,27 +39,32 @@ Exception handling` is the mechanism used to deal with Java run-time errors. An 
 - Errors are caused by the environment in which the application runs, while exceptions are caused by the application.
 
 ### Exception hierarchy 
-All exceptions and errors types are [subclasses of the class throwable which is the base class of hierarchy](https://rkhindi.blogspot.com/2018/09/exceptions-in-java.html). Here One branch is headed by exception, which is a class that is used for exceptional situations that the user program can handle. For example, NullpointErexception and RuntimeException. Other branch errors are used by the Java runtime system to indicate the errors that has to do with the run-time environment (JRE) itself. Examples are virtual machine error or stack overflow error.
+All exceptions and errors types are [subclasses of the class throwable, which is the base class of the hierarchy](https://rkhindi.blogspot.com/2018/09/exceptions-in-java.html).
 
-So how is exception handled by the Java virtual machine. If an exception occurs inside a method, the method generates an object called the exception object and passes it to the run-time framework. This exception object contains the [name and description of the exception and also the current of the program where exception has occurred](https://www.jillmarzion.com/2021/03/09/47ndyqpi). It also creates the exception object and sends it to the runtime system for handling (throwing an exception). Using try catch finally methods these exceptions can be handled. So this is how the JVM handles exceptions internally.
+Here, one branch is headed by exception, which is a class used for exceptional situations that the user program can handle. For example, `NullpointErexception` and `RuntimeException`. The Java run-time system uses other branch errors to indicate the errors that have to do with the run-time environment (JRE) itself. Examples are virtual machine errors or stack overflow errors.
+
+So how does the Java virtual machine handle an exception?
+
+If an exception occurs inside a method, the method generates an object called the exception object and passes it to the run-time framework. This exception object contains the [name and description of the exception and the current of the program where the exception has occurred](https://www.jillmarzion.com/2021/03/09/47ndyqpi). It also creates the exception object and sends it to the run-time system for handling (throwing an exception). Using `try-catch` finally methods these exceptions. 
+
+This is how the JVM handles exceptions internally.
 
 ### Types of Exceptions 
-There are of two types:
+There are two types:
 - Checked
 - Unchecked
 
-Checked exceptions
-These are exceptions that happen at compile time and are checked by the compiler during this time.
+##### Checked exceptions
+These are exceptions that happen at compile time and are checked by the compiler.
 
-Unchecked exceptions
+##### Unchecked exceptions
 These are exceptions that occur during execution. They are built-in exceptions in Java.
 
 ### Exception handling keywords/methods
-As we have already said, exceptions give a way to shift the control of one program from a part to another. The three keywords upon which exception java handles exceptions are:
+As we have already said, exceptions give a way to shift one program's control from one part to another. The three keywords upon which exception java handles exceptions are:
 
-- `try` - It is used to specify where to enclose the code. It has to be accompanied by either catch or finally therefore we cannot use it on its own.
-
-- `catch` - This used to handle the exception that occurs. It has to come before the `try` block therefore we cannot use it on its own. The syntax is shown below:
+- `try` - It specifies where to enclose the code. It has to be accompanied by either `catch` or `finally`. Therefore, we cannot use it on its own.
+- `catch` - This handles the exception that occurs. It has to come before the `try` block; therefore, we cannot use it on its own. The syntax is shown below:
 
 ```java
 try{
@@ -69,7 +74,7 @@ catch(Exception e){
 	}
 ```
 
-- `finally` - This block is used to execute the important code of our program. It is executed if either the exception is handled or not. The syntax is shown below:
+- `finally` - This block is used to execute the necessary code of our program. It is executed if either the exception is handled or not. The syntax is shown below:
 
 ```java
 try{
@@ -83,13 +88,12 @@ finally{
 }
 ```
 
-- `throw` - It is used to throw an exception.
+- `throw` - It throws an exception.
+- `throws` - It declares exceptions.
 
-- `throws` - It is used to declare exceptions.
+Let us take a look at the example below to understand the content better:
 
-Let’s take a look the example below to understand the content better:
-
-Example 1: Exception handling using try-catch block
+#### Example one: Exception handling using try-catch block
 ```java
 class Main {
 public static void main(String[] args) {
@@ -102,8 +106,8 @@ System.out.println("Program in try block");
 }
 catch (ArithmeticException e) {
 System.out.println("ArithmeticException => " + e.getMessage());
-}
-}
+    }
+  }
 }
 ```
 Go ahead and run the code [here](https://replit.com/@Dawe7/Exception-handling-using-try-catch-block#Main.java).
@@ -113,8 +117,12 @@ Output:
 ```bash
 ArithmeticException=> / by zero
 ```
-In the program above, the code generates an exception. We want to divide the number 8 by 0. In order for it to handle the exception we have placed the code `5/0` inside the `try` block. When an exception occurs, every other program which is inside the `try` block is skipped. Afterwards the `catch` block catches the exception and the code inside it is executed.The `catch` block is skipped if any of the statements in the `try` block throw an `exception`.
-Example 2 : Exception Handling using finally block
+
+In the program above, the code generates an exception. We want to divide the number 8 by 0. 
+
+To handle the exception, we have placed the code `5/0` inside the `try` block. When an exception occurs, every other program which is inside the `try` block is skipped. Afterward, the `catch` block catches the exception, and the code inside it is executed. The `catch` block is skipped if any of the statements in the try block throw an exception. 
+
+#### Example two : Exception Handling using finally block
 ```java
 class Main {
 public static void main(String[] args) {
