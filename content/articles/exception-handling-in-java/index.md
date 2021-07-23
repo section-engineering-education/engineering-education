@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /exception_handling_in_java/
+title: Exception handling in Java
+description: Errors can occur at any time in programs but what matters is how we handle them and rectify them to maintain the normal flow of our application. Java being the most major object-oriented programming language provides a powerful mechanism to handle these errors and exceptions. This article will go through the fundamentals and various methods of java exception handling.
+author: dawe-daniel
+date: 2021-07-23T00:00:00-03:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/exception-handling-in-java/hero.jpg
+    alt: Exception Handling in Java Hero Image 
+---
+
 ### Introduction 
 Errors can occur at anytime in programs but what matters is the way we handle them and rectify them to maintain the normal flow of our application. Java being the most prominent object-oriented programming language provides a [powerful mechanism to handle these errors and exceptions that occur](https://www.edureka.co/blog/java-exception-handling). `Exception handling` in Java is one of the most powerful tools for dealing with run-time errors like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. This article will go through the fundamentals and various methods of java exception handling.
 
