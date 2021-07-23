@@ -409,5 +409,5 @@ This tutorial is really helpful for someone who wants to learn TuriCreate so tha
 
 ### References
 
-- [TuriCreate Documentation](https://apple.github.io/turicreate/docs/api/index.html)
+- [Turi Create Documentation](https://apple.github.io/turicreate/docs/api/index.html)
 - [Logistic Regression Algorithm](https://en.wikipedia.org/wiki/Logistic_regression)
