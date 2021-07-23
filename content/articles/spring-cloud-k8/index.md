@@ -235,3 +235,8 @@ kubectl get pods
 In this tutorial, we've seen how we can set up a Spring Cloud project and use Spring Boot and Kubernetes to integrate a micro-service platform application with each providing great performance.
 
 The full source code can be found [here](https://replit.com/@odiwuoramos/spring-cloud#kubernetes-guide/client-service/client-config.yaml).
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Eric gacoki](/engineering-education/authors/eric-gacoki/)
