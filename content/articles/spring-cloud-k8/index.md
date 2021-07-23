@@ -1,5 +1,23 @@
-### Tutorial overview
-In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-cloud-k8/
+title: Guide to Spring Cloud Kubernetes (K8s)
+description: This tutorial will walk you through the process of creating a Spring Cloud Kubernetes application.  Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
+author: odiwuor-amos
+date: 2021-07-23T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-cloud-k8/hero.png
+    alt: Spring Cloud K8 image
+---
+
+In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot. Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
+<!--more-->
+With the assistance of the Spring Cloud Framework, we can easily create cloud-based allocation.
 
 ### Table of contents
   - [Prerequisites](#prerequisites)
