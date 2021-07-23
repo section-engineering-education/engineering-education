@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /quasar-googleauth-with-firebase/
+title: Google Authentication using Firebase in a Quasar Vue.js Application
+description: This tutorial will help the readers to set up Google authentication using Firebase in a Quasar Vue.js application. 
+author: espira-marvin
+date: 2021-07-24T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/quasar-googleauth-with-firebase/hero.jpg
+    alt: Google Authentication using Firebase in a Quasar Vue.js Application Hero Image
+---
 In an application, providing a specific authorization flow will ease the authentication of users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+<!--more-->
 
 ### Prerequisites
 
