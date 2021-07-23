@@ -107,7 +107,7 @@ def index():
 if __name__==('__main__'):
     app.run(debug=True)
 ```
-From the code above, we start by importing `FlaskForm` from `flask_wtf` and `FileField` from `wtforms`. Next, we created a class for our form as `Myform` image is the file field our image files will be saved to. We call our Form class in our `index function`. We changed our `render` to `render template`. This is also a flask library used for rendering HTML templates. From the code we rendered `index.html`. Now let us create the HTML template we are rendering. Update the code to the one below to do that. 
+From the code above, we start by importing `FlaskForm` from `flask_wtf` and `FileField` from `wtforms`. Next, we created a class for our form as `Myform` image is the file field our image files will be saved to. We call our Form class in our `index function`. We changed our `render` to `render template`. This is also a flask library used for rendering HTML templates. From the code we rendered `index.html`. When we use render_template in Flask we create a folder called templates where we store the HTML files. Now let us create the HTML template we are rendering, inside our templates folder. Update the html file with the code below: 
 ```python
 !doctype html>
 <html>
@@ -236,7 +236,7 @@ After uploading file, the file name will be return as seen in the image below:
 ![File Uploaded](/engineering-education/how-to-handle-file-upload-in-flask/image5.PNG)
 
 # Conclusion
-Now we can upload images. To upload other types of files all we will do is to import them through flask upload, configure their destination path, and specify their file extension. Learn more about flask-uploads by clicking the link in the further reading section. Link to project Github [Repo](https://pythonhosted.org/Flask-Uploads/)
+Now we can upload images. To upload other types of files all we will do is to import them through flask upload, configure their destination path, and specify their file extension. Learn more about flask-uploads by clicking the link in the further reading section. Link to project Github [Repo](https://github.com/wobin1/how-to-handle-file-upload-in-flask)
 
 # Further Reading
 
