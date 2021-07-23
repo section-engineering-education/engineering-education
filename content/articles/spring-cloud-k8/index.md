@@ -72,7 +72,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 }
-//we then se it in our client controller class
+// we then set it in our client controller class
 @RestController
 public class ClientController {
     @Autowired
