@@ -587,3 +587,6 @@ Resulting in more users accessing services your application offers.
 I have provided [link to the repo](https://github.com/EspiraMarvin/quasar-firebase-googleauth-app)  and  [link to the demo app](https://quasar-firebase-googleauth-app.vercel.app/). 
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
