@@ -98,3 +98,10 @@ Python offers several libraries for visualizations and plotting. [Plotly](https:
 ### Conclusion
 
 Both Python and R have their respective strengths that help you complete your data science projects. The decision on which of the two languages to choose depends on your statistical analysis or deployment needs.
+
+### Further reading 
+[Data Preprocessing in R](/engineering-education/data-preprocessing-in-r/)
+
+[Advanced Programming Concepts in R](/engineering-education/advanced-r-concepts/)
+
+[Why Python is Good for Machine Learning](/engineering-education/why-python-is-good-for-machine-learning/)
