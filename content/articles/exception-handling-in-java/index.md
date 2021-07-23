@@ -16,21 +16,27 @@ images:
 ---
 
 ### Introduction 
-Errors can occur at anytime in programs but what matters is the way we handle them and rectify them to maintain the normal flow of our application. Java being the most prominent object-oriented programming language provides a [powerful mechanism to handle these errors and exceptions that occur](https://www.edureka.co/blog/java-exception-handling). `Exception handling` in Java is one of the most powerful tools for dealing with run-time errors like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. This article will go through the fundamentals and various methods of java exception handling.
+Errors can occur at any time in programs but what matters is how we handle them and rectify them to maintain the normal flow of our application. Java being the most major object-oriented programming language provides a [powerful mechanism to handle these errors and exceptions](https://www.edureka.co/blog/java-exception-handling). 
+
+**Exception handling** in Java is one of the most powerful tools for dealing with run-time errors like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. 
+
+This article will go through the fundamentals and various methods of java exception handling.
 
 ### Prerequisites
 To follow through this article, the reader should:
-- Have intelliJ intergrated development environment (IDE).
-- Have knowledge in Java development.
+- Have [IntelliJ](https://www.jetbrains.com/idea/) integrated development environment (IDE).
+- Have basic knowledge in using Java programming language for development.
 
-### What is Exception handling ?
-An Exception is a [problem that occurs during the execution of a program](https://everythingwhat.com/what-are-the-two-exception-classes-in-hierarchy-of-java-exception-class) . This can occur due to several reaasons, for example if a user has entered an [invalid data or a file which needs to be opened cannot be found](https://www.sololearn.com/Discuss/160333/what-is-exception). In such instances this leads to a system failure therefore handling it is vital. Exception handling is the mechanism used to deal with Java runtime errors.
+### What is Exception handling?
+An Exception is a [problem that occurs during the execution of a program](https://everythingwhat.com/what-are-the-two-exception-classes-in-hierarchy-of-java-exception-class). `
+
+Exception handling` is the mechanism used to deal with Java run-time errors. An exception occurs for several reasons: if a user has entered [invalid data or a file which needs to be opened cannot be found](https://www.sololearn.com/Discuss/160333/what-is-exception). In such instances, this leads to a system failure; therefore, handling it is vital. 
 
 ### Comparison between errors and exceptions
-- Errors are impossible when it comes to recovery but exceptions can be recovered by handling them.
-- Errors are of type unchecked while exceptions can be either of checked or unchecked type.
-- Errors occur at run-time while exceptions can occur during the compilation process or during the execution process.
-- Errors are caused by the environment on which the application is running while exceptions are caused by the applications itself.
+- Errors are impossible when it comes to recovery, but exceptions are recoverable by handling them.
+- Errors are of unchecked type, while exceptions can be either checked or unchecked type.
+- Errors occur at run-time, while exceptions can occur during the compilation process or the execution process.
+- Errors are caused by the environment in which the application runs, while exceptions are caused by the application.
 
 ### Exception hierarchy 
 All exceptions and errors types are [subclasses of the class throwable which is the base class of hierarchy](https://rkhindi.blogspot.com/2018/09/exceptions-in-java.html). Here One branch is headed by exception, which is a class that is used for exceptional situations that the user program can handle. For example, NullpointErexception and RuntimeException. Other branch errors are used by the Java runtime system to indicate the errors that has to do with the run-time environment (JRE) itself. Examples are virtual machine error or stack overflow error.
