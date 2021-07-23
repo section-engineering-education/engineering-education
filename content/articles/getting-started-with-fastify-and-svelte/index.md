@@ -6,7 +6,7 @@ url: /getting-started-with-fastify-and-svelte/
 title: Getting Started with Fastify and Svelte
 description: This article will help us understand how to build a CRUD application using Fastify and Svelte.
 author: kevin-kimani
-date: 2021-07-21T00:00:00-14:00
+date: 2021-07-22T00:00:00-23:00
 topics: []
 excerpt_separator: <!--more-->
 images:
