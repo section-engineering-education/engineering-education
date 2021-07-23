@@ -92,8 +92,8 @@ metadata:
   name: db-secret
 data:
 # specifiy the password and username
-  username: test==
-  password: test=
+  username: johndoe
+  password: mypassword
 
 ```
 
