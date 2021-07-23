@@ -1,4 +1,4 @@
-In an application, providing specific authorization flow will ease authentication of users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
+In an application, providing a specific authorization flow will ease the authentication of users with guaranteed security. Open Authorization (OAuth) provides such a standard without having to deal with users' sensitive data such as their passwords. Firebase implements OAth 2.0 with google auth provider in the most coherent way.
 
 ### Prerequisites
 
@@ -79,7 +79,7 @@ name: "Home",
 }
 ```
 
-Now, navigate to `router` folder, open `routes.js` and edit the default route properties to match individual components as below.
+Now, navigate to the `router` folder, open `routes.js`, and edit the default route properties to match individual components as below.
 
 We're going to create the components as our next step.
 
@@ -95,7 +95,7 @@ const routes = [
     },
 
 
-    // Always leave this as last one,
+    // Always leave this as the last one,
     // but you can also remove it
     {
         path: '*',
@@ -330,7 +330,7 @@ yarn add firebase
 quasar new boot firebase
 ```
 
-Navigate to `quasar.conf.js` file and search for `boot`. It should be an empty array. Add the `firebase.js` boot file in it as indicated below.
+Navigate to the `quasar.conf.js` file and search for `boot`. It should be an empty array. Add the `firebase.js` boot file in it as indicated below.
 
 ```JavaScript
 boot: ['firebase'],
@@ -338,7 +338,7 @@ boot: ['firebase'],
 
 Navigate to the `boot` folder and open the `firebase.js` file. 
 
-Replace the existing code in `firebase.js` file to resemble the one below, then paste the firebase SDK script you copied from the previous step.
+Replace the existing code in the `firebase.js` file to resemble the one below, then paste the firebase SDK script you copied from the previous step.
 
 ```JavaScript
 import firebase from "firebase";
@@ -576,31 +576,7 @@ methods: {...}
 
 When a user signs in either with google or email/password, it will display the welcome message alongside their name and email, or with their email if the username is null.
 
-### Final component touches
-
-Navigate to the `layouts` folder, open `MainLayout.vue`, delete the following to remove the left side drawer:
-
-1. The whole drawer tag is indicated as below.
-
-  ```HTML
-  <q-drawer>
-  ....
-  </q-drawer>
-  ```
-  
-2. The `EssentialLink.vue` file import just below the opening `<script>` tag. Indicated as below.
-
-  ```JavaScript
-  import EssentialLink from 'components/EssentialLink.vue
-  ```
-   
-3. The `components` object in the `script` tag is indicated as below.
-
-  ```JavaScript
-  components: { EssentialLink },
-  ```
-
- ### Conclusion
+### Conclusion
 
 Firebase implementation of google authentication with standards such as the OAuth 2.0 has proven to be one of the best solutions to providing authentication for applications.
 
