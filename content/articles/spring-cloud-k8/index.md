@@ -177,10 +177,10 @@ To deploy our application, we setup a `bash script` as explained below:
 
 ```bash
 
-### first step involves building the repository
+# first step involves building the repository
 mvn clean install
 
-### Set the docker environment for the application
+# Set the docker environment for the application
 eval $(minikube docker-env)
 
 ### these commands build the docker images on minikube
@@ -190,18 +190,18 @@ cd ../client-service
 docker build -t client-service .
 cd ..
 
-### sets up the secret and mongodb services
+# sets up the secret and mongodb services
 kubectl delete -f travel-agency-service/secret.yaml
 kubectl delete -f travel-agency-service/mongo-deployment.yaml
 
 kubectl create -f travel-agency-service/secret.yaml
 kubectl create -f travel-agency-service/mongo-deployment.yaml
 
-### setting up the travel-agency-service
+# setting up the travel-agency-service
 kubectl delete -f travel-agency-service/travel-agency-deployment.yaml
 kubectl create -f travel-agency-service/travel-agency-deployment.yaml
 
-### setting up the client-service
+# setting up the client-service
 kubectl delete configmap client-service
 kubectl delete -f client-service/client-service-deployment.yaml
 
