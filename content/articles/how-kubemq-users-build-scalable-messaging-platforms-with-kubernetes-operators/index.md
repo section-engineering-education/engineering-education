@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-kubemq-users-build-scalable-messaging-platforms-with-kubernetes-operators/hero.jpg
-    alt: kubernetes operators example Image
+    alt: Kubernetes Operators example Image
 ---
 The adoption of [Kubernetes](https://kubernetes.io/) has multiplied over the past years. According to surveys, it clearly shows that most organizations are adopting Kubernetes in their production environments.
 
@@ -22,7 +22,7 @@ Kubernetes comes with an important feature called [operators](https://kubernetes
 <!--more-->
 This article concentrates on the use of operators and their functions in Kubernetes. It will also expound on how the [KubeMQ](https://kubemq.io/) utilizes features that operators offer to build complex yet scalable messaging solutions with minimal code and overhead.
 
-### Overview of Kubernetes Operators
+### Overview of Kubernetes operators
 Operators are application extensions that connect into Kubernetes APIs and the control plane to build and manage a [Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) (CR). The Custom Resource defines the preferred state of the application. The control plane component checks the custom resource to establish whether the application is running according to expectations.
 
 For instance, an operator can deploy and scale a [pod](https://kubernetes.io/docs/concepts/workloads/pods/), back up and restore the database, manage the network services and ingresses, or even manage a persistent data store.
@@ -54,7 +54,7 @@ KubeMQ comes with the following upsides:
 - It saves operational costs for the organizations.
 - It supports a variety of extensions to connect with microservices.
 
-### Reasons why KubeMQ uses Operators to build messaging platforms
+### Reasons why KubeMQ uses operators to build messaging platforms
 #### CASE 1: KubeMQ and operators
 For KubeMQ to operate at a native Kubernetes level, it is first deployed as an operator. One advantage of using KubeMQ is that it works well when small clusters are bundled together rather than having one massive cluster.
 
@@ -73,7 +73,7 @@ First, the state can verify that the required capacity and configurations are in
 
 For instance, a business can leverage the above KubeMQ feature to run its messaging platform over edge computing systems alongside cloud deployments. It will ensure that better performance and reliability are guaranteed and allows the client to grow the business with new services without interruptions or downtime. The business will need to set up new clusters and configure them as per its needs. The fact that the KubeMQ operator verifies the Custom Resource definition avoids deploying clusters with faulty configurations.
 
-### Benefits of Operators
+### Benefits of operators
 The following are the main benefits of operators:
 - They utilize Kubernetes-native systems and APIs.
 - An operator’s Custom Resource definition allows configuration management and validation during the deployment time.
@@ -81,7 +81,7 @@ The following are the main benefits of operators:
 - Operators are well understood; hence organizations need no additional training for operational success.
 
 ### Conclusion
-KubeMQ uses the operator model to ensure users can build complex yet scalable messaging platforms with less coding and overhead. It also creates great business value to organizations. It allows them to address any business problems quickly and effectively with little resources while managing and maintaining their messaging infrastructure.
+KubeMQ uses the operator model to enable users build complex yet scalable messaging platforms with less coding and overhead. It also creates great business value to organizations. It allows them to address any business problems quickly and effectively with little resources while managing and maintaining their messaging infrastructure.
 
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
