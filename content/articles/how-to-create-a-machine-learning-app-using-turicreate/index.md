@@ -1,4 +1,4 @@
-Turi Create is an open-source python library developed by Apple, it is used for creating core machine learning models for both supervised and unsupervised learning. The models are used for classification, object detection, style transfers, regression, and recommender system by simplifying the development of custom machine learning models.
+Turi Create is an open-source python library developed by Apple, used for creating core machine learning models for both supervised and unsupervised learning. The models are used for classification, object detection, style transfers, regression, and recommender system by simplifying the development of custom machine learning models.
 Turi Create is easy-to-use since it focuses on tasks instead of algorithms and has ready-to-deploy tools this is why is used as an alternative for [scikit-learn](https://scikit-learn.org/) in building machine learning models.
 
 In this tutorial, we will get started with Turi Create to show us how to read CSV files, create data frames using SFrames, data manipulation and finally be able to create a machine learning model using this package.
@@ -41,7 +41,8 @@ The supported algorithms are as follows:
 
 - clustering algorithms.
 
-1. K-Means
+1. K-Means Clustering
+2. Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
 
 To get started we need to first install Turi Create into our machine using the following command:
 
