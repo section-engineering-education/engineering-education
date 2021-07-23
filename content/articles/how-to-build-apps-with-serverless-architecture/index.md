@@ -25,7 +25,7 @@ With the serverless approach, a company does not need to worry about its applica
 
 To better understand serverless architecture, we will look at two main types of serverless computing.
 
-### Types of Serverless Computing Technologies
+### Types of serverless computing technologies
 #### Backend as a service (BaaS)
 The platform allows the developers to deal with the frontend of an application without worrying about the backend since a third party already handles it.
 
@@ -45,7 +45,7 @@ The notable difference between the use of on-premise infrastructure and serverle
 
 Serverless architecture promises a great future for mobile application development. It ensures application development is at low cost, takes less time to market, and is easy to scale.
 
-### Advantages of erverless architecture for application development
+### Advantages of serverless architecture for application development
 Companies using the [monolithic approach](https://medium.com/koderlabs/introduction-to-monolithic-architecture-and-microservices-architecture) in their application development back in the day are now switching to serverless to decentralize their functionality.
 
 The major reason is its efficiency and lower subscription costs. The other advantages developers get with going the serverless way are as follows:
@@ -61,7 +61,7 @@ A serverless application consists of a combination of functions built to work to
 - **Template specification**: Specifies the application's syntax, events, permissions, and settings. Developers can opt to use a ready-made template and customize it to fit the application's purpose and functionality. Examples are [Google Cloud](https://cloud.google.com/serverless) and [SAM by AWS](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification.html).
 - **The command line**: With customized command-line tools, the developers can execute the commands in the CLI to debug code, call functions, modify the template files, create and sort packages.
 
-### Examples of Serverless Applications
+### Examples of serverless applications
 Below are some of the examples of companies that utilized FaaS in their serverless application development:
 
 #### Royal Dutch Shell
@@ -82,7 +82,7 @@ The communication company decided to switch its platform to AWS Lambda for web a
 The change to serverless application development was not easy. Apart from coding, the organization had to do data migration, documentation, and API integration.
 
 ### Conclusion
-Moving the serverless way is beneficial to established organizations and new businesses. It significantly reduces costs, improves on quality, shortens time to market, and spotlights on advancement.
+Moving the serverless way is beneficial to established organizations and new businesses. It significantly reduces costs, improves the quality of services, and shortens the time to market.
 
 Organizations will also benefit from the pool of ready-to-use development tools, API integration automation extensions, and on-demand scaling. Any company that wants to get ahead with serverless technology should hire the right serverless development team and enjoy the technology's success.
 
