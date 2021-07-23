@@ -18,7 +18,7 @@ Kubernetes is a powerful container management tool. It automates the deployment 
 <!--more-->
 Before a business decides to use Kubernetes, the question of why or when Kubernetes should be used is important. This article will address this issue and explain when organizations should not use this technology. 
 
-### Key takeaways:
+### Key takeaways
 
 By the end of this article, readers should be able to:
 
@@ -30,12 +30,12 @@ By the end of this article, readers should be able to:
 
 4. Understand when you should not use Kubernetes
 
-### Overview of containers And container orchestration
+### Overview of containers and container orchestration
 A new technology called Cloud Natives has been adopted by many organizations as a deployment approach for the software they build. Container technology is the key enabler to this Cloud Natives approach. Containers are a solution to the problem of how to get the software to run reliably when moved from one computing environment to another. An Example will be moving an application from a test environment to a production environment or moving an application from a physical machine to a VM or a public cloud. With this containerized approach, you will be always sure that your application will work right regardless.
 
 Containers are usually made up of components that include runtime, system libraries, system tools, system settings, and code. All these components are usually bundled into a lightweight executable package. Many containers can be deployed on a single OS and share the same Operating system kernel.
 
-With the ability to have many containers being deployed in a single environment, organizations need orchestration tools to help them in such deployments. This is where Kubernetes comes in. Kubernetes, also known as K8s. Is an open-source system for automating deployment, scaling, and management of containerized applications[(https://kubernetes.io/)]
+With the ability to have many containers being deployed in a single environment, organizations need orchestration tools to help them in such deployments. This is where Kubernetes comes in. Kubernetes, also known as K8s. Is an open-source system for automating deployment, scaling, and management of containerized applications.
 
 ### Why an organization should use Kubernetes
 #### Kubernetes is unlikely to become obsolete
@@ -51,7 +51,7 @@ Scalability is the ability of a system or network to grow and manage increased d
 Some applications need larger computing resources. Kubernetes will be the best solution for you cost-wise. Kubernetes will help you from paying for resources that you do not need. Or resources that you do not use. This is possible because of its auto-scaling capability as discussed above.
 
 ### When an organization should use Kubernetes
-#### When an organization wants to move to the cloud-native approach to develop And deploy applications
+#### When an organization wants to move to the cloud-native approach to develop and deploy applications
 As an organization, you may currently be thinking of moving to the cloud in the cloud soon. At the moment, building for the cloud may not be an option the organization prefers. Working on-premise could be the best solution. In such a scenario, building on top of containers and Kubernetes is best. It is a way to prepare the organization to move to the cloud soon. Take note that the movement from on-premise to the cloud may not be a seamless migration. But, it will be way better. As compared to building on virtual machines. and moving to a cloud Infrastructure as a Service.
 
 #### When the organization needs to scale
