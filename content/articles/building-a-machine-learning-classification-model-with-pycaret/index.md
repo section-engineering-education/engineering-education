@@ -68,7 +68,7 @@ There are three main dependencies that we are going to import: PyCaret, Pandas, 
 
 1. PyCaret
 
-PyCaret will be our main dependency. It allows us to leverage the ml pipeline to build our models.
+PyCaret will be our main dependency. It allows us to leverage the ML pipeline to build our models.
 
 2. Pandas
 
