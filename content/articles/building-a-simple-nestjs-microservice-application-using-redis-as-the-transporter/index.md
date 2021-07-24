@@ -51,7 +51,7 @@ Now that we have Nest.js CLI ready, we can go ahead to build and create a Nest.j
 nest new nest-ms
 ```
 
-We need to turn our newly created project into a monorepo. A monorepo refers to a single repository hosting different microservices. Change directory to nest-ms. To generate the monorepo in the app, we run the following command inside the new_app folder.
+We need to turn our newly created project into a monorepo. A monorepo refers to a single repository hosting different microservices. Change directory to `nest-ms`. To generate the monorepo in the app, we run the following command inside the `nest-ms` folder.
 
 ```bash
 nest generate app new_app
@@ -130,7 +130,13 @@ From above, we are setting up the client with a Proxy Factory of `redis` as the 
 
 ### Step 5: Testing
 
-Everything is now set and we can start the server by running the following commands from the project's root directory.
+Everything is now set. Start Redis server by running this command.
+
+```bash
+sudo systemctl start redis
+```
+
+We can start the application by running the following commands from the project's root directory.
 
 ```bash
 npm start
