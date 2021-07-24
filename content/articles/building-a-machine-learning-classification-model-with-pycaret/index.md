@@ -76,7 +76,7 @@ We are using pandas to load our CSV data into the data frame. We use this librar
 
 3. Shap
 
-Shap helps us with interpreting machine learning model results.
+Shap helps us interpret machine learning model results.
 
 Let's now install these dependencies. 
 
@@ -121,7 +121,7 @@ Alternatively, there exists a built-in PyCaret's data repository. Using the `get
 ![Loading the Default of Credit Card Clients Dataset](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/loaded-dataset.PNG)
 
 ### Training and evaluating our ML classification model
-To train and evaluate our ML model, we need to use the `setup()` function. The function creates our ML transformation pipeline and initializes the environment in PyCaret. PyCarets rules state that it must be the first function to be called before executing any other function. The setup() function takes in two parameters; data, and target. An extra parameter can be added called `categorical_features` and `numeric_features` if you want PyCaret to infer data types in your dataset i.e., infer features with numerical data types into categorical types used in classification. But, we won't use that extra parameter today. I'll introduce it in a follow-up article.
+To train and evaluate our ML model, we need to use the `setup()` function. The function creates our ML transformation pipeline and initializes the environment in PyCaret. PyCaret's rules state that it must be the first function to be called before executing any other function. The `setup()` function takes in two parameters; data, and target. An extra parameter can be added called `categorical_features` and `numeric_features` if you want PyCaret to infer data types in your dataset i.e., infer features with numerical data types into categorical types used in classification. But, we won't use that extra parameter today. I'll introduce it in a follow-up article.
 
 ```python
     exp_name = setup(data = credit_dataset, target='default', session_id=5041)
@@ -129,7 +129,7 @@ To train and evaluate our ML model, we need to use the `setup()` function. The f
 
 ![Training and evaluating our ML classification model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/setup-function-results.PNG)
 
-As shown above, running the code generates information concerning the pre-processing pipeline which is constructed when setup() is executed. For example, we have 14 `numeric features` and 9 `categorical features` in our data. In our experiment, we've also used the `session_id = 5041` parameter. It's not a must to use it. We've set ours for later reproducibility. Otherwise, leaving it out will prompt a random number to be generated.
+As shown above, running the code generates information concerning the pre-processing pipeline which is constructed when `setup()` is executed. For example, we have 14 `numeric features` and 9 `categorical features` in our data. In our experiment, we've also used the `session_id = 5041` parameter. It's not a must to use it. We've set ours for later reproducibility. Otherwise, leaving it out will prompt a random number to be generated.
 
 With our experiment set up, all that's left to do now is to go on and train the model.
 
@@ -138,7 +138,7 @@ With our experiment set up, all that's left to do now is to go on and train the 
 ```
 ![Best performing model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/best-model.PNG)
 
-The code above is going to train our model. To train it, we run the compare_models() function. This function trains all models in the model library and scores them using the commonly used classification metrics: Accuracy, AUC, Recall, Precision, F1, Kappa. The results obtained show a list of the best-performing models at a particular point in time. In our case, the Ridge Classifier is our best-performing model. The list contains different learning algorithms. But, we are only interested in the learning algorithm that is the best performing. We drop the rest.
+The code above is going to train our model. To train it, we run the `compare_models()` function. This function trains all models in the model library and scores them using the commonly used classification metrics: Accuracy, AUC, Recall, Precision, F1, Kappa. The results obtained show a list of the best-performing models at a particular point in time. In our case, the Ridge Classifier is our best-performing model. The list contains different learning algorithms. But, we are only interested in the learning algorithm that is the best performing. We drop the rest.
 
 ### Testing our model
 ```python
