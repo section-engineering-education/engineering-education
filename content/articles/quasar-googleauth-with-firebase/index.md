@@ -109,7 +109,7 @@ const routes = [
           { path: '/home', component: () => import('src/pages/Home.vue'), meta: {requiresAuth: true} }
       ]
   },
-  // Always leave this as last one,
+  // Always leave this as the last one,
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
@@ -416,7 +416,7 @@ const firebaseConfig = {
 
 `firebase.getCurrentUser` will return a Promise which resolves currentUser as soon as it is set. `onAuthStateChanged` will trigger the callback immediately with either null or the user object if signed in. Then we unsubscribe to not listen for further changes.
 
-### Activate SignIn Methods
+### Activate SignIn methods
 
 We need to activate sign-in methods provided by firebase, we'll activate the `google` and `Email/Password` providers. Go back to the firebase console where we copied the firebase SDK script. Click `Continue to console`, it will take you to the project overview.
 
@@ -426,7 +426,7 @@ On the left sidebar click `Authentication`, then click `Set up sign-in method`. 
 
 Click on `Email/Password` and `Google` providers to activate them, as default they're disabled as seen in the above image.
 
-For Email/Password click the first toggle button, don't enable the `passwordless sigin-in` option.
+For Email/Password click the first toggle button, don't enable the `passwordless sign-in` option.
 
 ![Enable Email/Password Provider](/engineering-education/quasar-googleauth-with-firebase/emailpasswordprovider.png)
 
@@ -487,7 +487,7 @@ createUser(email, password) {
 
 When a user is created it redirects the user to the home page, with a `Sign In Success` notification at the bottom of the page.
 
-Next, we're going to create a `signInExistingUser()` method, this signs in already registered users. Paste the following code for the method:
+Next, we're going to create a `signInExistingUser()` method, this sign in already registered users. Paste the following code for the method:
 
 ```JavaScript
 signInExistingUser (email, password) {
