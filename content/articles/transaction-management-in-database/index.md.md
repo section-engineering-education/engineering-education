@@ -62,7 +62,6 @@ COMMIT;
 This command will delete the row from the table which has fees equal to 40000 and save the changes to the database.
 
 ### ROLLBACK command
-The ROLLBACK command can only undo transactions from the last ROLLBACK or COMMIT command executed.
 The ROLLBACK command can only be used to undo transactions from the last ROLLBACK or COMMIT command issued.
 The ROLLBACK command syntax is as follows;
 
