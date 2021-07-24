@@ -6,7 +6,7 @@ Caching of frequently used data in application is a very popular technique to in
 
 We have a lot of technologies available to set up a cache in a Spring Boot application. Each of these technologies, like Hazelcast, Ehcache or Redis, for example, has its own API. Hazelcast, Redis and Ehcache provides a key-data store where cached data is stored. They are known as cache providers sinces they provide storage for cached data.
 
-In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider.
+In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider.We are going to build a `Todo` REST APIs then add cache capabalities to the REST endpoints.
 		
 
 ### Table of contents
