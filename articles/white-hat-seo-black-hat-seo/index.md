@@ -69,3 +69,6 @@ The key thing to remember about SEO is that it must be integrated into the site 
 ### Additional Resources
 [SEO Techniques: White Hat vs Black Hat](https://www.weidert.com/blog/white-hat-seo-black-hat-seo)
 [Introduction to Black Hat SEO](https://blog.hubspot.com/marketing/black-hat-seo)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
