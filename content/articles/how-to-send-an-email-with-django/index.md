@@ -114,22 +114,27 @@ from django.conf import settings
 
 
 def sendMail(request):
-
-    sent = False
-
+    
+    # create a variable to keep track of the form
+    messageSent = False
+    
+    # check if form has been submitted
     if request.method == 'POST':
-        # check if form was submitted
+        
         form = EmailForm(request.POST)
+        
+        # check if data from the form is clean
         if form.is_valid():
-            # check if form data is clean
             cd = form.cleaned_data
             subject = cd['subject']
             message = cd['message']
 
-            # Send the mail
+            # send the email to the recipent
             send_mail(subject, message,
                       settings.DEFAULT_FROM_EMAIL, [cd['to']])
-            sent = True
+                      
+            # set the variable initially created to True
+            messageSent = True
 
     else:
         form = EmailForm()
@@ -137,7 +142,7 @@ def sendMail(request):
     return render(request, 'index.html', {
 
         'form': form,
-        'sent': sent,
+        'messageSent': messageSent,
 
     })
 
@@ -145,8 +150,8 @@ def sendMail(request):
 
 #### What's happening here?
 1. We created a function called `sendMail`.
-2. We then if the form was submitted, if it was, we validate user input, send the mail and then return `True`
-3. Finally, if the form was not submitted we return an empty form.
+2. We then checked if the form was submitted, if it was, we validate user input, send the mail and then return `True`
+3. Finally, if the form was not submitted we return an empty form or if the form has some errors we send the errors back for the form input to be corrected
 
 Also take note of the `send_email()` function. It takes three required arguments. **The subject**, followed by **the message**, **the sender** and finally the **list of recipients**.
 
@@ -168,7 +173,7 @@ Next, create a new `templates` folder in your mailer application and inside a fi
     <title>Send Email</title>
   </head>
   <body>
-    {% if sent %}
+    {% if messageSent %}
     <div class="container">
       <h3><strong>Email successfully sent</strong></h3>
       <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
@@ -197,7 +202,7 @@ Next, create a new `templates` folder in your mailer application and inside a fi
 ```
 
 #### What's happening here?
-1. We are checking if the variable sent is `True`. If it is, we show a success message.
+1. We are checking if the variable messageSent is `True`. If it is, we show a success message.
 2. If it isn't true, we show an empty form for users to fill out.
 
 In this section, we quickly set up our project. In the following section, we will turn our attention to actual sending emails with Google Gmail SMTP provider.
