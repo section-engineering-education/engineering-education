@@ -4,6 +4,8 @@ Caching is a mechanism to enhance the performance of a system. It is a temporary
 ### Why do we need Caching?
 Caching of frequently used data in application is a very popular technique to increase performance of application. With caching, we store such frequently accessed data in memory to avoid hitting the costly backends every time when user requests the data. Data access from memory is always faster in comparison to fetching from storage like database, file system or other service calls.
 
+We have a lot of technologies available to set up a cache in a Spring Boot application. Each of these technologies, like Hazelcast, Ehcache or Redis, for example, has its own API. Hazelcast, Redis and Ehcache provides a key-data store where cached data is stored. They are known as cache providers sinces they provide storage for cached data.
+
 In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider.
 		
 
