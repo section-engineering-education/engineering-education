@@ -1,4 +1,19 @@
-### Transaction management in database
+---
+layout: engineering-education
+status: publish
+published: true
+url: /transaction-management-in database/
+title: Transaction management in database
+description: 
+author: paul-mwangi
+date: 2021-07-08T00:00:00-07:41
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/transaction-management-in database/hero.jpg
+    alt: Transaction management in database
+---
 ### Introduction
 A transaction is a logical unit of work performed on a database. They are logically ordered units of work completed by the end-user or an application. A transaction is made up of one or more database modifications. Creating, updating, or deleting a record from a table, for example. To preserve data integrity and address database issues, it's critical to keep track of these transactions. We can bundle SQL queries together and run them as a single transaction
 
@@ -234,3 +249,6 @@ Rollback command applies to the operations that happened after the savepoint SP2
 With that now, you are able to carry out transactions in the database and work with your database and also how to gain access to your data in case of an unintentional delete. You can also try some more examples with your own database to enhance better understanding.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
