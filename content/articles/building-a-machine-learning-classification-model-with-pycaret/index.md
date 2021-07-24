@@ -1,7 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-machine-learning-classification-model-with-pycaret/
+title: Building a Machine Learning Classification Model with PyCaret
+description: In this article we will learn how to build a machine learning classification model using PyCaret.
+author: sharon-kinyan
+date: 2021-07-24T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /building-a-machine-learning-classification-model-with-pycaret/hero.png
+    alt: pycaaret model example image 
+---
+PyCaret is a machine learning (ML) library that is written in Python. It allows developers to train and deploy ML models. When compared with other open-source ML libraries such as scikit-learn, it is a good alternative low-code library that can be used to perform complex machine learning tasks with only a few lines of code.
+<!--more-->
+
 PyCaret is a machine learning (ML) library that is written in Python. It allows developers to train and deploy ML models. When compared with other open-source ML libraries such as scikit-learn, it is a good alternative low-code library that can be used to perform complex machine learning tasks with only a few lines of code. We will be using PyCaret with the [Default of Credit Card Clients Dataset](https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset) dataset from Kaggle to predict whether a customer will default on payment or not. This prediction will be based on several features which we'll see in this tutorial.
 
 ### Prerequisites
-
 A reader needs to:
 
 1. Use [Jupyter Notebook](https://jupyter.org/) or [Google Colab](https://research.google.com). In my tutorial, I used Google Colab.
@@ -10,7 +28,6 @@ A reader needs to:
 3. Install the latest version of PyCaret. Currently, PyCaret 2.3 is the latest version. Its release notes are available [here](https://github.com/pycaret/pycaret/releases).
 
 ### Outline
-
 1. [What is PyCaret?](#what-is-pycaret)
 2. [Why use PyCaret?](#why-use-pycaret)
 3. [Functionalities of PyCaret](#functionalities-of-pycaret)
@@ -24,12 +41,10 @@ A reader needs to:
 9. [Wrapping Up](#wrapping-up)
 
 ### What is PyCaret?
-
 PyCaret is a machine learning library that is written in Python. It allows developers to train and deploy ML models in an easy and fast way.  
 PyCaret has really good documentation that explains more about PyCarets features on their [website](https://pycaret.org/). The documentation contains a lot more information on how to get started using it. In our tutorial, we are only using it for classification. But, you can also use this library to perform clustering, regression, anomaly detection, and natural language processing tasks.
 
 ### Why use PyCaret?
-
 1. It is an open-source library. It is available to anyone interested in using it.
 2. It is built using Python. Most developers are familiar with this programming language. 
 3. It is fast. Within only a few minutes, developers can deploy complex models.
@@ -39,7 +54,6 @@ PyCaret has really good documentation that explains more about PyCarets features
 7. It is ideal for both students and experienced developers.  
 
 ### Functionalities of PyCaret 
-
 1. Data preparation.
 2. Model training.
 3. Hyperparameter tuning.
@@ -50,7 +64,6 @@ PyCaret has really good documentation that explains more about PyCarets features
 Let's now get started with PyCaret. The first step involves installing and importing dependencies. 
 
 ### Getting started
-
 There are three main dependencies that we are going to import: PyCaret, Pandas, and Shap.
 
 1. PyCaret
@@ -68,7 +81,6 @@ Shap helps us with interpreting machine learning model results.
 Let's now install these dependencies. 
 
 #### Installing dependencies
-
 Installing dependencies is relatively straightforward using the `pip install` command. Since you're using Google Colab, the `pip` command should automatically have been installed. Just type in the following code:   
 
 ```python
@@ -78,7 +90,6 @@ Installing dependencies is relatively straightforward using the `pip install` co
 If you're installing these dependencies using your local jupyter notebook, no need to put the exclamation `!` before the `pip` command.
 
 #### Importing dependencies
-
 Let's now import these dependencies into our Google Colab:
 
 ```python
@@ -87,7 +98,6 @@ Let's now import these dependencies into our Google Colab:
 ```
 
 ### Loading custom dataset from Kaggle using Pandas
-
 Let's go ahead and download the [Default of Credit Card Clients Dataset](https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset) dataset from Kaggle. Grab the downloaded dataset from the Downloads folder on your computer and copy it into the Google Colab folder that you're working on.
 
 We can then load this dataset in our Colab using the pandas library:
@@ -111,7 +121,6 @@ Alternatively, there exists a built-in PyCaret's data repository. Using the `get
 ![Loading the Default of Credit Card Clients Dataset](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/loaded-dataset.PNG)
 
 ### Training and evaluating our ML classification model
-
 To train and evaluate our ML model, we need to use the `setup()` function. The function creates our ML transformation pipeline and initializes the environment in PyCaret. PyCarets rules state that it must be the first function to be called before executing any other function. The setup() function takes in two parameters; data, and target. An extra parameter can be added called `categorical_features` and `numeric_features` if you want PyCaret to infer data types in your dataset i.e., infer features with numerical data types into categorical types used in classification. But, we won't use that extra parameter today. I'll introduce it in a follow-up article.
 
 ```python
@@ -132,7 +141,6 @@ With our experiment set up, all that's left to do now is to go on and train the 
 The code above is going to train our model. To train it, we run the compare_models() function. This function trains all models in the model library and scores them using the commonly used classification metrics: Accuracy, AUC, Recall, Precision, F1, Kappa. The results obtained show a list of the best-performing models at a particular point in time. In our case, the Ridge Classifier is our best performing-model. The list contains different learning algorithms. But, we are only interested in the learning algorithm that is the best performing. We drop the rest.
 
 ### Testing our model
-
 ```python
     predict_model(best_model)
 ```
@@ -141,7 +149,6 @@ The code above is going to train our model. To train it, we run the compare_mode
 The accuracy recorded after testing our model is `0.8159`. There isn't much difference with the accuracy recorded earlier of `0.8228`. This could be due to overfitting or other factors that may need investigation.
 
 ### Prediction on our dataset
-
 To perform prediction on our `credit_dataset` dataset, type in the following code:
 
 ```python
@@ -153,7 +160,6 @@ To perform prediction on our `credit_dataset` dataset, type in the following cod
 Please note that the `Label` column has now been added at the end of our dataset. This `Label` column denotes our prediction. The value `1` predicting true (customer will default) while a `0` predicts false (customer won't default). We use the `head()` and `tail()` functions to perform predictions on the first 5 and last 5 rows respectively. You can play around with it. To perform prediction on all the rows, remove the `prediction.tail()` code.
 
 ### Saving our model
-
 The last thing that we have to do is go ahead and save this model. We save our model using the following code:
 
 ```python
@@ -163,7 +169,6 @@ The last thing that we have to do is go ahead and save this model. We save our m
 ![Saved model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/saved-model-results.PNG)
 
 ### Loading our saved model
-
 To load our saved model, type in the following code:
 
 ```python
@@ -175,13 +180,11 @@ With a few lines of code, our transformation pipeline and model have successfull
 Please find the full code [here](https://colab.research.google.com/drive/1wnKtM8zIfdpJlJlwZE1TYqeocuH3F8W1?usp=sharing).
 
 ### Wrapping Up
-
 That, in a nutshell, is how to get started with PyCaret. PyCaret is a very strong competitor to [scikit-learn](https://scikit-learn.org/stable/), and I do not doubt that it will become one of the most used libraries such as the likes of TensorFlow and pandas. Feel free to try and build your ML classification model using your custom dataset. 
 
 That wraps it up! Happy coding!
 
 ### Further Reading
-
 1. [PyCaret](https://pycaret.org/)
 2. [Default of Credit Card Clients Dataset](https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset)
 3. [Google Colab](https://research.google.com)
