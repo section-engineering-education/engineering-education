@@ -25,7 +25,7 @@ In this article, we will learn how to implement a cache in a Spring Boot REST ap
 		
 ### Prerequisites
 1. [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) installed on your computer.
-2. Knowledge of Spring Boot.
+2. Knowledge of [Spring Boot](https://spring.io/projects/spring-boot).
 		
 
 ### Project setup
@@ -178,28 +178,28 @@ public class TodoServiceImpl implements TodoService {
 @AllArgsConstructor
 public class TodoController {
     private final TodoService todoService;
-
+    //API endpoint returning a list of Todos
     @GetMapping({"", "/"})
     public ResponseEntity<List<Todo>> getAllTodos() {
         return new ResponseEntity<>(todoService.getAllTodos(), HttpStatus.OK);
     }
-
+    //API endpoint returning a todo with the specied Id
     @GetMapping("/{id}")
     public ResponseEntity<Todo> getTodoById(@PathVariable Long id) {
         return new ResponseEntity<>(todoService.getTodoById(id), HttpStatus.OK);
     }
-
+    //API endpoint that creates a todo in the database with the request body
     @PostMapping("")
     public ResponseEntity<String> createTodo(Todo todo) {
         todoService.createTodo(todo);
         return new ResponseEntity<>("Todo Created successfully", HttpStatus.CREATED);
     }
-
+    //API endpoint that allows for updating a Todo with a specified Id
     @PutMapping("{id}")
     public ResponseEntity<Todo> updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
         return new ResponseEntity<>(todoService.updateTodo(todo, id), HttpStatus.OK);
     }
-
+    //API endpoint that allows users to delete Todo wit specified Id
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTodoById(@PathVariable Long id) {
         todoService.deletedTodo(id);
@@ -297,7 +297,9 @@ public Todo getTodoById(Long id) {
   return todoRepository.getById(id);
 }
 ```
-		
+- `@Cacheable(cacheNames = "todo", key = "#id")` gets a `todo` with the provided `id` from the cache.		
+
+> **Note** we pass the `id` as the key since cache stores data in the form of key-pair. When we pass the `id` of the `todo`, we are expecting a `todo` data associated with that key.
 
 #### Updating data in the cache
 In the `TodoServiceImpl.java` file, update the `updateTodo()` method with the code snippet below.
