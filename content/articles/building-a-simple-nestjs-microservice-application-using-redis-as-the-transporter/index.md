@@ -29,11 +29,11 @@ Microservice is an architectural design that allows you to create small modules/
 
 To follow along with this guide, the following prerequisites will be essential;
 
-- We are going to buddle Nest.js CLI using a Node.js package. Ensure you have Node.js installed so that you can have NPM on your computer. You can download the Node.js installer here.
+- We are going to buddle Nest.js CLI using a [Node.js](https://nodejs.org/en/) package. Ensure you have Node.js installed so that you can have NPM on your computer. You can download the Node.js installer here.
 
-- Nest.js is bunddled and backed by Typescript. So a basic knowledge of Typescript is requried.
+- Nest.js is bunddled and backed by Typescript. So a basic knowledge of [Typescript](https://www.typescriptlang.org/) is requried.
 
-- To implement a microservice architecture, we are going to use Redis as the transporter. Make sure Redis is installed on your computer.
+- To implement a microservice architecture, we are going to use [Redis](https://redis.io/) as the transporter. Make sure Redis is installed on your computer.
 
 To build a Nest.js microservice, follow the below steps:
 
@@ -51,7 +51,7 @@ Now that we have Nest.js CLI ready, we can go ahead to build and create a Nest.j
 nest new nest-ms
 ```
 
-We need to turn our newly created project into a monorepo. A monorepo refers to a single repository hosting different microservices. To generate the monorepo in the app, we run the following command.
+We need to turn our newly created project into a monorepo. A monorepo refers to a single repository hosting different microservices. Change directory to nest-ms. To generate the monorepo in the app, we run the following command inside the new_app folder.
 
 ```bash
 nest generate app new_app
