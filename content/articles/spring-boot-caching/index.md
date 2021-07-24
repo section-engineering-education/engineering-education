@@ -1,12 +1,12 @@
 ### What is Caching?
-Caching is a mechanism to enhance the performance of a system. It is a temporary memory that lies between the application and the persistent database. Cache memory stores recently used data items in order to reduce the number of database hits as much as possible.
+Caching is a mechanism to enhance the performance of a system. It is a temporary memory that lies between the application and the persistent database. Cache memory stores recently used data items to reduce the number of database hits as much as possible.
 
 ### Why do we need Caching?
-Caching of frequently used data in application is a very popular technique to increase performance of application. With caching, we store such frequently accessed data in memory to avoid hitting the costly backends every time when user requests the data. Data access from memory is always faster in comparison to fetching from storage like database, file system or other service calls.
+Caching of frequently used data in the application is a very popular technique to increase the performance of the application. With caching, we store such frequently accessed data in memory to avoid hitting the costly backends whenever a user requests the data. Data access from memory is always faster in comparison to fetching from storage like database, file system, or other service calls.
 
-We have a lot of technologies available to set up a cache in a Spring Boot application. Each of these technologies, like Hazelcast, Ehcache or Redis, for example, has its own API. Hazelcast, Redis and Ehcache provides a key-data store where cached data is stored. They are known as cache providers sinces they provide storage for cached data.
+We have a lot of technologies available to set up a cache in a Spring Boot application. Each of these technologies, like Hazelcast, Ehcache, or Redis, for example, has its API. Hazelcast, Redis, and Ehcache provide a key-data store where cached data is stored. They are known as cache providers since they provide storage for cached data.
 
-In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider.We are going to build a `Todo` REST APIs then add cache capabalities to the REST endpoints.
+In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider. We are going to build a `Todo` REST APIs then add cache capabilities to the REST endpoints.
 		
 
 ### Table of contents
@@ -107,6 +107,7 @@ In the code snippet above, we create a `TodoRepository ` interface that extends 
 		
 
 ```java
+Interface that will be implemented to provide database operations
 public interface TodoService {
     List<Todo> getAllTodos();
 
@@ -130,17 +131,17 @@ In the `service` package, create a new Java file named `TodoServiceIml.java` and
 @AllArgsConstructor
 public class TodoServiceImpl implements TodoService {
     private final TodoRepository todoRepository;
-
+    //Gets a list of todos from the database
     @Override
     public List<Todo> getAllTodos() {
         return todoRepository.findAll();
     }
-
+    //Gets a todo with the specified Id from the database
     @Override
     public Todo getTodoById(Long id) {
         return todoRepository.getById(id);
     }
-
+    //Updates todo with the specified Id
     @Override
     public Todo updateTodo(Todo todo, Long id) {
         Todo newTodo = Todo
@@ -152,12 +153,12 @@ public class TodoServiceImpl implements TodoService {
         todoRepository.save(newTodo);
         return newTodo;
     }
-
+    //Creates a new todo in the database
     @Override
     public void createTodo(Todo todo) {
         todoRepository.save(todo);
     }
-
+    //Deletes a todo with the specified Id in the database
     @Override
     public void deletedTodo(Long id) {
         todoRepository.deleteById(id);
@@ -304,7 +305,7 @@ public Todo getTodoById(Long id) {
 #### Updating data in the cache
 In the `TodoServiceImpl.java` file, update the `updateTodo()` method with the code snippet below.
 ```java
-		
+//Updates a todo with the specified Id in the cache and in the database. `#todo.id` gets the Id property from the `todo` passed to the `updateTodo` function. 
 @CachePut(value = "todos", key = "#todo.id")
 @Override
 public Todo updateTodo(Todo todo, Long id) {
@@ -334,6 +335,12 @@ To delete data from the cache, we use the `@CacheEvict` annotation passing in th
 		
 
 > To delete all items from the cache, we set the attribute `allEntries` to true.
+
+Caching reduces the number of read and write operations on the database. In the case where a managed database is used i.e. Google cloud SQL, billing is based on the read and write operations on the database. With the reduced read and write operations, the cost of using the managed database is reduced.
 		
 ### Conclusion
-Now that you have learned how to add caching to a Spring Boot application implement caching in your applications to reduce unnecessary database queries. You can download the complete source code (here)[https://replit.com/@elizabeth962/springbootcache#].
+Now that you have learned how to add caching to a Spring Boot application implement caching in your applications to reduce unnecessary database queries. You can download the complete source code (here)[https://replit.com/@elizabeth962/springbootcache#]. 
+
+To learn more about Ehcache, read the documentation [here](https://www.ehcache.org).
+
+Happy coding!
