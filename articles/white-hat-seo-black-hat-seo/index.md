@@ -1,13 +1,26 @@
-### What are White-Hat and Black-Hat SEO Techniques?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /white-hat-seo-black-hat-seo/
+title: What are White-Hat and Black-Hat SEO Techniques?
+description: This article will explore white-hat and black-hat SEO techniques.
+author: kanishkvardhan-a-n
+date: 2021-07-24T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/white-hat-seo-black-hat-seo/hero.jpg)
-Photo by [Stephen Phillips - Hostreviews.co.uk](https://unsplash.com/@hostreviews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/seo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+  - url: white-hat-seo-black-hat-seo/hero.jpg
+    alt: seo example image
+---
+Search Engine Optimization(SEO) is a kind of Internet advertising method in which the websites are optimized to enhance the quality and quantity of their search engine traffic. It is beneficial due to the fact that a website will get hold of extra traffic from a search engine by getting ranked better at the Search Engine Result Page(SERP).
+<!--more-->
 
 ##### Introduction
 [Search Engine Optimization(SEO)](https://en.wikipedia.org/wiki/Search_engine_optimization) is a kind of Internet advertising method in which the websites are optimized to enhance the quality and quantity of their search engine traffic. It is beneficial due to the fact that a website will get hold of extra traffic from a search engine by getting ranked better at the Search Engine Result Page(SERP). It means it&#39;ll ensure that search engines such as Google, Firefox optimize search results and provide the best and helpful results to users which will be relevant to their search query. This article will explain what SEO is, why it is useful, and discuss two types of SEO techniques, namely: White-Hat and Black-Hat.
 
 ##### What is SEO?
-
 SEO is a type of Internet marketing technique that involves learning how search engines operate. It is powered by computer-programmed algorithms that comprehend search engine behavior, such as what users look for, what they like, and what they want to see. These are computed, and they ensure that these results reach their intended audience.
 
 When a user searches a query in the search engine, it presents two types of search results in the SERP
