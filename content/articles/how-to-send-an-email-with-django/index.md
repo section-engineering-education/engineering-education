@@ -217,8 +217,8 @@ To use your Google Gmail account to send an email, you will need to enable acces
 
 ![Google Less Secure Homepage](/engineering-education/how-to-send email-with-django/google-less-secure.jpg)
 
-### Sending emails with Django
-To send emails with Django, you have to update and add some additional settings to your project with your Google Gmail account details
+### Sending emails with Google Gmail SMTP provider
+To complete the process of actually sending emails using Google Gmail SMTP provider, you have to update and add some additional settings to your project with your Google Gmail account details!
 
 ```python
 DEFAULT_FROM_EMAIL = '<paste your gmail account>'
@@ -231,15 +231,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ```
 
-#### What's happening here?
-The settings above are required to send emails from Django.
-1. Update your default email account with your original Gmail account.
-2. We updated the email backend to use SMTP and not console.
-3. We also stated our email host to use Gmail SMTP.
-4. And finally, we set the host user to your Gmail account and password to your password.
-
-Note that some of the details should be kept hidden.
-
+Note that some of the details should be kept hidden. This can be achieved by setting environment variables for details including but not limited to **EMAIL_HOST_PASSWORD**
 Try sending out some emails.
 
 ![homepage](/engineering-education/how-to-send email-with-django/homepage.jpg)
