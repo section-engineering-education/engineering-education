@@ -38,7 +38,7 @@ A reader needs to:
 6. [Training and evaluating our ML classification model](#training-and-evaluating-our-ml-classification-model)
 7. [Testing our model](#testing-our-model)
 8. [Saving our model](#saving-our-model)
-9. [Wrapping Up](#wrapping-up)
+9. [Wrapping up](#wrapping-up)
 
 ### What is PyCaret?
 PyCaret is a machine learning library that is written in Python. It allows developers to train and deploy ML models in an easy and fast way.  
@@ -138,7 +138,7 @@ With our experiment set up, all that's left to do now is to go on and train the 
 ```
 ![Best performing model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/best-model.PNG)
 
-The code above is going to train our model. To train it, we run the compare_models() function. This function trains all models in the model library and scores them using the commonly used classification metrics: Accuracy, AUC, Recall, Precision, F1, Kappa. The results obtained show a list of the best-performing models at a particular point in time. In our case, the Ridge Classifier is our best performing-model. The list contains different learning algorithms. But, we are only interested in the learning algorithm that is the best performing. We drop the rest.
+The code above is going to train our model. To train it, we run the compare_models() function. This function trains all models in the model library and scores them using the commonly used classification metrics: Accuracy, AUC, Recall, Precision, F1, Kappa. The results obtained show a list of the best-performing models at a particular point in time. In our case, the Ridge Classifier is our best-performing model. The list contains different learning algorithms. But, we are only interested in the learning algorithm that is the best performing. We drop the rest.
 
 ### Testing our model
 ```python
@@ -179,7 +179,7 @@ With a few lines of code, our transformation pipeline and model have successfull
 
 Please find the full code [here](https://colab.research.google.com/drive/1wnKtM8zIfdpJlJlwZE1TYqeocuH3F8W1?usp=sharing).
 
-### Wrapping Up
+### Wrapping up
 That, in a nutshell, is how to get started with PyCaret. PyCaret is a very strong competitor to [scikit-learn](https://scikit-learn.org/stable/), and I do not doubt that it will become one of the most used libraries such as the likes of TensorFlow and pandas. Feel free to try and build your ML classification model using your custom dataset. 
 
 That wraps it up! Happy coding!
