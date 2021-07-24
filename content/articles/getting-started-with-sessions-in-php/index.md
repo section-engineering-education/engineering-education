@@ -6,8 +6,8 @@ url: /getting-started-with-sessions-in-php/
 title: Getting Started with PHP Sessions
 description: This article will show you how to create, read, update, and destroy sessions. These components allow one to store temporary user data on the server.
 author: neema-muganga
-date: 2021-07-29T00:00:00-10:30
-topics: []
+date: 2021-07-24T00:00:00-07:41
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -40,7 +40,7 @@ The `session_start()` function creates a `new session`, or restarts an existing 
 
 > It is always important to place the `session_start()` function immediately after the `<?php` tag at the beginning of your script. This ensures that all the required functionalities are accessible.
 
-Let's create a `details.php` file and then include the following code.
+Let's create a `details.php` file and then include the following code:
 
 ```php
 <?php 
@@ -62,7 +62,7 @@ Let's create a `details.php` file and then include the following code.
 </html>
 ```
 
-You should have the following output.
+You should have the following output:
 
 ```bash
 Successfully set the session variables.
@@ -98,7 +98,7 @@ We will need to use a conditional statement to access the required session varia
 </html>
 ```
 
-Since our sessions were set in the `details.php` file, we should have the following output.
+Since our sessions were set in the `details.php` file, we should have the following output:
 
 ```bash
 Hi Neema Muganga, glad to know you enjoy writing too!
@@ -114,7 +114,7 @@ Sorry.. no such session variables set!
 
 > Ensure you place a semicolon at the end of a PHP statement to avoid syntax errors that prevent your code from running.
 
-### How to update a set session.
+### How to update a set session
 In some cases, we may want to change a session variable to a different value.
 
 In this step, we will replace the preset `name` variable in the `details.php` file, as shown below:
@@ -142,7 +142,7 @@ The above code will change your name and then display it in the browser.
 Output:
 
 ```bash
-  You changed your name to Liz Muganga!
+You changed your name to Liz Muganga!
 ```
 
 ### Destroying a session.
@@ -155,14 +155,13 @@ The session will be destroyed when one logs out or closes the browser window.
 #### Functions we may use when destroying a session.
 We can also use the following data to destroy the stored session variables:
 
-`unset()` - This function destroys `one` particular session variable. It requires the target variable as a parameter. 
+- `unset()` - This function destroys `one` particular session variable. It requires the target variable as a parameter. 
 
-`session_destroy()` - This function destroys `all` previously set session variables. It does not require any parameters.
+- `session_destroy()` - This function destroys `all` previously set session variables. It does not require any parameters.
 
 The following code shows how to destroy a PHP session:
 
 ```php
-
 <?php
 
   //starts the session
@@ -190,12 +189,11 @@ From this analysis, I hope you have an idea of how the  `logout` functionality i
 Sessions are indeed a crucial part of a web application. This article has shown you how to create, update, retrieve, and delete sessions. You can, therefore, use this knowledge to craft other powerful applications.
 
 #### Further reading
-- [w3schools PHP Sessions](https://www.w3schools.com/php/php_sessions.asp).
-- [Tutorial Republic](https://www.tutorialrepublic.com/php-tutorial/php-sessions.php).
-- [Basic usage of PHP sessions from PHP Manual](https://www.php.net/manual/en/session.examples.basic.php).
+- [w3schools PHP Sessions](https://www.w3schools.com/php/php_sessions.asp)
+- [Tutorial Republic](https://www.tutorialrepublic.com/php-tutorial/php-sessions.php)
+- [Basic usage of PHP sessions from PHP Manual](https://www.php.net/manual/en/session.examples.basic.php)
 
 Happy coding!
-
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
