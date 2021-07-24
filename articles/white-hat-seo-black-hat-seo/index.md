@@ -23,7 +23,7 @@ Search Engine Optimization(SEO) is a kind of Internet advertising method in whic
 ### What is SEO?
 SEO is a type of Internet marketing technique that involves learning how search engines operate. It is powered by computer-programmed algorithms that comprehend search engine behavior, such as what users look for, what they like, and what they want to see. These are computed, and they ensure that these results reach their intended audience.
 
-When a user searches a query in the search engine, it presents two types of search results in the SERP
+When a user searches a query in the search engine, it presents two types of search results in the SERP:
 
 - Organic results
 - Inorganic results
