@@ -3,15 +3,15 @@ layout: engineering-education
 status: publish
 published: true
 url: /dhcp-server-router-configuration/
-title: Understanding DHCP-SERVER Router Configuration.
-description: The objective of this article is to help one understand how we can configure a router to act as a DHCP server.
+title: Understanding DHCP-Server Router Configuration.
+description: This article will show how we can configure a router to act as a DHCP server.
 author: samuel-otieno
-date: 2021-07-13T00:00:00-09:00
+date: 2021-07-24T00:00:00-18:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/dhcp-server-router-configuration/hero.jpg
+  - url: /dhcp-server-router-configuration/hero.jpg
     alt: Cisco Router DHCP example image
 ---
 Network administrators have automated configuring and assigning IP addresses to the network devices by using the DHCP servers and their protocols. The dedicated servers are scalable and easy to manage but are costly for an organization to have one at every point in a network. In such situations, we can configure routers on the network to provide the DHCP services without the need of having to buy the servers.
