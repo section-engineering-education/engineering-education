@@ -189,3 +189,6 @@ That wraps it up! Happy coding!
 2. [Default of Credit Card Clients Dataset](https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset)
 3. [Google Colab](https://research.google.com)
 4. [Jupyter Notebook](https://jupyter.org/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
