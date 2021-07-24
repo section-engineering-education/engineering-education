@@ -1,5 +1,8 @@
-Cache reduces the number of database reads resulting in reduced cost of operation and improved application speed. Spring Boot provides an abstraction layer for cache implementation. 
-		
+### What is Caching?
+Caching is a mechanism to enhance the performance of a system. It is a temporary memory that lies between the application and the persistent database. Cache memory stores recently used data items in order to reduce the number of database hits as much as possible.
+
+### Why do we need Caching?
+Caching of frequently used data in application is a very popular technique to increase performance of application. With caching, we store such frequently accessed data in memory to avoid hitting the costly backends every time when user requests the data. Data access from memory is always faster in comparison to fetching from storage like database, file system or other service calls.
 
 In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider.
 		
