@@ -39,7 +39,7 @@ The reader must put the following into consideration:
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
 ### Terminologies.
-- `DHCP Server` is a network server used for leasing IPv4 addresses dynamically to hosts on extensive networks, reducing the burden on the network staff and virtually eliminating entry errors.It relies on the Dynamic Host Configuration Protocol (DHCP) to respond to broadcast queries from the DHCP clients.
+- `DHCP Server` is a network server used for leasing IPv4 addresses dynamically to hosts on extensive networks, reducing the burden on the network staff and virtually eliminating entry errors. It relies on the Dynamic Host Configuration Protocol (DHCP) to respond to broadcast queries from the DHCP clients.
 - `DHCP Clients`-These are the hosts/devices on the network that get the IP Addresses from the server through the DHCP protocol.
 - `Excluded IP Addresses`-these are addressing specifically reserved to the key hosts like the default gateways, DNS-server. Excluding some of the IP addresses prevents the situation where the DHCP clients are assigned an IP address that is already in use by the other key hosts on the network, preventing IP address duplication.
 - `DHCP POOL`-DHCP pools act as a built-in server on the network subnets in which they assign the clients the addresses. The pools can support up to 2048 addresses.
@@ -99,7 +99,7 @@ GigabitEthernet0/1     193.168.2.1     YES manual up                    up
 Vlan1                  unassigned      YES unset  administratively down down
 
 ```
-#### Step 2. Create a dhcp server pool.
+#### Step 2. Create a DHCP server pool.
 Use of `ip dhcp pool` command followed by the pool name creates two pools POOL-A on router R1 and POOL-2 on router R2. This includes configuring the network addresses, default gateway, and the IP address of the DNS server.
 ```bash
 Enter configuration commands, one per line.  End with CNTL/Z.
@@ -183,7 +183,7 @@ After the configuration, we'll try again to assign each client an IP address by 
 We can also try to test the communication between two clients on the same subnet using the `ping` command. Our network, PC5 can communicate with PC4 using the assigned IP addresses as shown.
 ![Ping Network Configuration](/engineering-education/dhcp-server-router-configuration/ping-dhcp.jpg)
 
->**NOTE: From the IP addresses assigned it is evident that the dhcp server assigned addresses from .11 excluding the ip addresses from .1 to .10 and .50 which were among the excluded addresses.**
+>**NOTE: From the IP addresses assigned it is evident that the DHCP server assigned addresses from .11 excluding the IP addresses from .1 to .10 and .50 which were among the excluded addresses.**
 
 ### Conclusion
 As we have seen, network routers can save the organization the cost of buying dedicated servers by providing the DHCP server functionality when configured properly. This information is crucial and will equip the learner with the knowledge of how to configure the routers to eliminate the burden of statically assigning IP addresses.
@@ -196,7 +196,7 @@ To summarize:
 - We learned how to enable and disable the DHCP server on the network.
 
 
-One can find more information about  dhcp-router configuration [here](https://contenthub.netacad.com/srwe/7.2.1).
+One can find more information about  DHCP-router configuration [here](https://contenthub.netacad.com/srwe/7.2.1).
 
 Happy coding.
 
