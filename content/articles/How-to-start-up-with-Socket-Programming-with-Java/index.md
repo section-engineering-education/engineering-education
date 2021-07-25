@@ -295,9 +295,9 @@ Server:  Message Received
 - Make a new folder named project(it's your package name).
 - Put the Server.java and Client.java into the project folder.
 - Open the CMD and cd (change directory) to the root path.
--  Run javac project\Server.java.
--  Run java project.Server.
-- Run the client program using the same process as the Server program.
+- Execute javac project\Server.java.
+- Execute java project.Server.
+- Then run the client program using the same process as the Server program.
 - Then, in the client window, type messages.
 
 Example:
