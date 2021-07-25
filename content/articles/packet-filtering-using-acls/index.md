@@ -151,7 +151,9 @@ R1(config)#interface g0/0/1
 R1(config-if)#ip access-group LAN2-FILTER out
 R1(config-if)#exit
 ```
->NOTE:  After creating and configuring the ACLs you can use the `show access-lists` or `show run | section ip access-list` commands in the priviledge exec mode to verify your configurations. To remove an ACLs use the `no access-list` command followed by the name or number of the access list. For instance *no access-list 10* to remove ACL 10.
+>NOTE:  After creating and configuring the ACLs you can use the `show access-lists` or `show run | section ip access-list` commands in the priviledge exec mode to verify your configurations. 
+
+>To remove an ACLs use the `no access-list` command followed by the name or number of the access list. For instance `no access-list 10` to remove ACL 10.
 
 ### Conclusion
 As we have seen, Access Control Lists play a crucial role in traffic flow control and the network's security at large. This makes the network less vulnerable to unwanted and dangerous traffic.
