@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-send-email-in-django/hero.jpg
     alt: Django Email Google Gmail Example Image
 ---
-In most web applications that are customer-driven, there may be a need to send an email. Sending an email with Django is quite simple. In the first part of this tutorial, we will quickly set up a new Django project from scratch with some URLs, views and templates. Then, we will take a look at configuring the Google SMTP service provider and finally how to use the `send_mail()` function Django provides, to enable us to send emails.
+In most customer-driven web applications, there may be a need to send an email. Sending an email with Django is quite simple. In the first part of this tutorial, we will quickly set up a new Django project from scratch with some URLs, views and templates. Then, we will take a look at configuring the Google SMTP service provider and finally how to use the `send_mail()` function Django provides, to enable us to send emails.
 <!--more-->
 ### Prerequisites
 To follow along with this tutorial, you will need a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
