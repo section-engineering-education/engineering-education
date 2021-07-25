@@ -18,14 +18,13 @@ Networks tend to be more vulnerable due to the incoming and outgoing unwanted an
 <!--more-->
 This article will cover how the Access Control Lists (ACLs) can be used to control traffic flow by filtering all the incoming and outgoing packets, various types of control lists and how they can be used to configure the ACLs on the router interface.
 ### Table of contents
-- [Table of contents](#table-of-contents)
-- [Prerequisites](#prerequisites)
-- [Terms and Terminologies](#terms-and-terminologies)
-- [Access Control List Operations.](#access-control-list-operations)
-  - [Types of Access Control Lists.](#types-of-access-control-lists)
-  - [Access Control Lists Tasks.](#access-control-lists-tasks)
-- [Access Control List Configuration.](#access-control-list-configuration)
-- [Conclusion](#conclusion)
+- [Prerequisites](#prerequisites).
+- [Terminologies](#terminologies).
+- [Access Control List Operations](#access-control-list-operations).
+  - Types of Access Control Lists
+  - Access Control Lists Tasks
+- [Configuring Access Control Lists](#access-control-list-configuration).
+- [Conclusion](#conclusion).
 
 ### Prerequisites
 The reader should consider the following:
