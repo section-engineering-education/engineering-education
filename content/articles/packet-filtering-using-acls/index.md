@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/packet-filtering-using-acls/hero.jpg
     alt: Access Control List example image
 ---
-Networks tend to be more vulnerable due to the incoming and outgoing unwanted and dangerous traffic. To improve this, a security mechanism is needed to control the flow of traffic and provide secure remote administrative access by restricting,permitting, and denying unnecessary traffic.
+Networks tend to be more vulnerable due to the incoming and outgoing unwanted and dangerous traffic. A security mechanism is needed to control the flow of traffic and provide secure remote administrative access by restricting, permitting, and denying unnecessary traffic.
 <!--more-->
 This article will cover how the Access Control Lists (ACLs) can be used to control traffic flow by filtering all the incoming and outgoing packets, various types of control lists and how they can be used to configure the ACLs on the router interface.
 ### Table of contents
