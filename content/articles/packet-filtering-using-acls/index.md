@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /packet-filtering-using-acls/
-title: Packet Filtering Using Access Control Lists.
-description: The objective of this article is to help one understand the concept of Access Control Lists in traffic flow control  and how routers can use the Acess Control Lists in filtering all the inbound and oubound traffic.
+title: Packet Filtering Using Access Control Lists
+description: The objective of this tutorial is to help you understand the concept of Access Control Lists in traffic flow control and how routers can use it in filtering all the inbound and outbound traffic.
 author: atonya-dennis
 date: 2021-07-20T00:00:00-09:00
 topics: [Networking]
