@@ -117,7 +117,7 @@ Standard IP access list 10
     10 permit 192.168.10.10
 R1(config)#
 ```
-Lets consider the  Local Area Network below:
+Let's consider the Local Area Network below:
 ![CDP-LLDP Network Configuration](/engineering-education/packet-filtering-using-acls/acl.jpg)
 
 We will create one numbered ACL, ACL 20 that denies host 192.168.10.10 but permits all other hosts on network 192.168.10.0/24.
@@ -128,7 +128,7 @@ R1(config)#access-list 20 deny host 192.168.10.10
 R1(config)#access-list 20 permit 192.168.10.0 0.0.0.255
 ```
 Since ACL 20 only apply to traffic from LAN 1, the ACL can be applied to the incoming traffic to the G0/0/0 R1's interface.
-Enter interface g0/0/0 mode, apply ACL 20 inbound and return to global configuration mode.
+Enter interface G0/0/0 mode, apply ACL 20 inbound and return to global configuration mode.
 ```bash
 R1(config)#interface g0/0/0
 R1(config-if)#ip access-group 20 in
@@ -147,7 +147,7 @@ R1(config-std-nacl)#deny any
 R1(config-std-nacl)#exit
 ```
 The LAN2-FILTER will be applied to the outgoing traffic to LAN 2.
-Enter interface g0/0/1 mode, apply ACL LAN2-FILTER outbound and return to global configuration mode.
+Enter interface G0/0/1 mode, apply ACL LAN2-FILTER outbound and return to global configuration mode.
 ```bash
 R1(config)#interface g0/0/1
 R1(config-if)#ip access-group LAN2-FILTER out
@@ -167,6 +167,7 @@ To summarize, we have:
 
 One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.0.1).
 
-Happy coding.
+Happy coding!
 
 ---
+Peer Review Contributions by: [Eric gacoki](/engineering-education/authors/eric-gacoki/)
