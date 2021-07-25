@@ -103,7 +103,6 @@ R1(config)# ip access-list standard PERMIT-ACCESS
 R1(config-std-nacl)# remark ACE permits host 192.168.10.10
 R1(config-std-nacl)# permit host 192.168.10.10
 R1(config-std-nacl)#
-
 ```
 For the numbered ACL, we use;
 `Router(config)# access-list access-list-number {deny | permit | remark text} source [source-wildcard] [log]`
@@ -138,7 +137,6 @@ We will then create a named standard ACL that permits host 192.168.10.10 but den
 Start by creating a named standard ACL named LAN2-FILTER
 ```bash
 R1(config)#ip access-list standard LAN2-FILTER
-
 ```
 Create an ACE that permits host 192.168.10.10, and deny all other hosts using the `any` keyword.
 ```bash
@@ -165,7 +163,7 @@ To summarize, we have:
 - Configured a network, created and configured the standard named and numbered ACLs.
 - Learned how the configured ACLs can be used to permit or deny traffic.
 
-One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.0.1).
+One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.1.1).
 
 Happy coding!
 
