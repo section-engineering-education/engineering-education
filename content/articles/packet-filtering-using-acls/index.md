@@ -21,7 +21,7 @@ This article will cover how the Access Control Lists (ACLs) can be used to contr
 - [Prerequisites](#prerequisites).
 - [Terminologies](#terminologies).
 - [Access Control List Operations](#access-control-list-operations).
-  - Types of Access Control Lists
+  - Access Control Lists Types
   - Access Control Lists Tasks
 - [Configuring Access Control Lists](#access-control-list-configuration).
 - [Conclusion](#conclusion).
@@ -30,31 +30,31 @@ This article will cover how the Access Control Lists (ACLs) can be used to contr
 To follow through this tutorial, the reader should:
 - Have a good understanding of how to configure networks and their components using any network simulation tool.
 - Have prior understanding of the basic networking concepts.
-- Know how to work with the Cisco packet tracer.
+- Learn how to operate the Cisco packet tracer.
 
-Visit [this site](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html) to download and install the Cisco packet tracer on your machine.
+Go to this [page](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html) to download and install the Cisco packet tracer on your PC.
 
 ### Terminologies
 - **Access Control List (ACLs)** refers to a set of rules that allow/permit or deny any traffic flow through the routers. It works at layer 3 to provide security by filtering and controlling the flow of traffic from one router to another.
 
 By default, the ACLs are not configured on the routers, so the network user has to configure on each of the router's interfaces.
 - **Access Control Entries (ACEs)** refers to a collection of rules used to permit or deny traffic. When creating ACLs the order of these rules must be considered.
-- **Ingress** refers to the traffic flowing into the router.
+- The traffic flowing into the router is referred to as **ingress**.
 - **Egress** refers to the traffic flowing out of the router.
 - **Packet filtering** refers to the controlled access to networks by analyzing the ingress and egress packets flowing through the networks by either forwarding them or discarding them depending on the given criteria. It occurs both at layers 3 and 4 of the `OSI model`.
 
 ### Access Control List Operations.
 Once a particular ACL is configured on an interface, it follows an operational procedure to filter the traffic flowing into the router.
 
-- The source IP address is first extracted from the packet header by the router.
+- The router extracts the source IP address from the packet header first.
 
-- The router starts at the top of the ACLs and compares the address to each Access Control Entries (ACE) sequentially.
+- Starting at the top of the ACLs, the router compares the address against each Access Control Entries (ACE) in order.
 
 - If a match is found, the router carries out the instructions either permitting or blocking the packet. The other control entries are not analyzed.
 
 - If a match is not found in the control entries, the packet is discarded since there is always an implicit deny control entry applied automatically to all Access Control Lists.
-#### Types of Access Control Lists.
-Access Control Lists can be of two types, the numbered and the named ACLs.
+#### Access Control Lists Types.
+There are two types of Access Control Lists: numbered and named ACLs.
 - **Numbered** refers to those ACLs specified using a number.
 
 - **Named** these are the ACLs configured using names.
@@ -153,7 +153,7 @@ R1(config)#interface g0/0/1
 R1(config-if)#ip access-group LAN2-FILTER out
 R1(config-if)#exit
 ```
->NOTE:  After creating and configuring the ACLs you can use the `show access-lists` or `show run | section ip access-list` commands in the priviledge exec mode to verify your configurations. 
+>NOTE:  After creating and configuring the ACLs you can use the `show access-lists` or `show run | section ip access-list` commands in the priviledge exec mode to verify your configurations.
 
 >To remove an ACLs use the `no access-list` command followed by the name or number of the access list. For instance `no access-list 10` to remove ACL 10.
 
