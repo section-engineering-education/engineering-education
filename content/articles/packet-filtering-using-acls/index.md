@@ -106,7 +106,8 @@ R1(config-std-nacl)# permit host 192.168.10.10
 R1(config-std-nacl)#
 
 ```
-For the numbered one we use command: `Router(config)# access-list access-list-number {deny | permit | remark text} source [source-wildcard] [log]`
+For the numbered ACL, we use;
+`Router(config)# access-list access-list-number {deny | permit | remark text} source [source-wildcard] [log]`
 
 For instance, we have created ACL 10 which permits a particular host to the internet.
 ```bash
@@ -127,7 +128,7 @@ Start by configuring the ACL 20 ACE that denies the 192.168.10.10 host using the
 R1(config)#access-list 20 deny host 192.168.10.10
 R1(config)#access-list 20 permit 192.168.10.0 0.0.0.255
 ```
-Since ACL 20 only apply to traffic from LAN 1, the ACL would be applied to the incoming traffic to the G0/0/0 R1 interface.
+Since ACL 20 only apply to traffic from LAN 1, the ACL can be applied to the incoming traffic to the G0/0/0 R1's interface.
 Enter interface g0/0/0 mode, apply ACL 20 inbound and return to global configuration mode.
 ```bash
 R1(config)#interface g0/0/0
