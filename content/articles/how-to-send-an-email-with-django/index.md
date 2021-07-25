@@ -1,23 +1,23 @@
 ---
 layout: engineering-education
-status: unpublish
-published: false
-url: /how-to-send-an-email-with-django/
-title: How to send an email with Django
-description: This tutorial is focused on teaching you how to send an email with Django using the Google SMTP service provider.
+status: publish
+published: true
+url: /how-to-send-email-in-django/
+title: How to Send Emails in Django
+description: This tutorial will guide the reader on how to send emails in Django. We will quickly set up a new Django project, to demonstrate how to send emails.
 author: samuel-torimiro
-date:
+date: 2021-07-26T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-send-an-email-with-django/hero.jpg
-    alt: Gmail example image
+
+  - url: /engineering-education/how-to-send-email-in-django/hero.jpg
+    alt: Django Email Google Gmail Example Image
 ---
-
 In most web applications that are customer-driven, there may be a need to send an email. Sending an email with Django is quite simple. In the first part of this tutorial, we will quickly set up a new Django project from scratch with some URLs, views and templates. Then, we will take a look at configuring the Google SMTP service provider and finally how to use the `send_mail()` function Django provides, to enable us to send emails.
-
+<!--more-->
 ### Prerequisites
-To follow along with this tutorial, you will need a Google account. If you don't have one follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
+To follow along with this tutorial, you will need a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
 
 Prior knowledge of Django is also required.
 
@@ -39,16 +39,16 @@ Next, create a new Python project and application.
 ```bash
 django-admin startproject send_mail .
 
-python manage.py migrate
-
 python manage.py startapp mailer
+
+python manage.py migrate
 
 python manage.py runserver
 ```
 
-Next, navigate to <http://127.0.0.1:8000/> with your browser, you should see the default Django homepage.
+Next, navigate to <http://127.0.0.1:8000/> using your browser. You should see the default Django homepage.
 
-![Django homepage](/engineering-education/how-to-send email-with-django/django-homepage.jpg)
+![Django homepage](/engineering-education/how-to-send-email-in-django/django-homepage.jpg)
 
 Next, add the new application to your `settings.py` file.
 
@@ -101,7 +101,7 @@ class EmailForm(forms.Form):
 
 #### What's happening here?
 1. We created a form class that inherits from the `Form` base class.
-2. We then created two attributes (recipient, message) that we want to be displayed in our form.
+2. We then created two attributes (recipient and message) that we want to be displayed in our form.
 3. Based on the attributes configuration, Django will determine how to generate the HTML for these fields and how to validate the fields.
 
 Next, let's update the `views.py` of your mailer application to look like this:
@@ -202,7 +202,7 @@ Next, create a new `templates` folder in your mailer application and inside a fi
 
 #### What's happening here?
 1. We are checking if the variable `messageSent` is `True`. If it is, we show a success message.
-2. If it isn't true, we show an empty form for the users to fill out.
+2. If not, we display an empty form for the users to fill out.
 
 We have now successfully set up our project. In the following section, we will turn our attention to actual sending emails with Google Gmail SMTP provider.
 
@@ -214,44 +214,45 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'test@test.com'
 ```
 
-Try submitting the form. The email will be printed out to your console. This is a good way of testing your application.
+Open the app and try submitting the form. The email will be printed out to your console. This is a good way of testing your application.
 
 ### Configuring Google Gmail SMTP provider.
 To use your Google Gmail account to send an email, you will need to enable access for less secure applications, using [this link](https://myaccount.google.com/lesssecureapps).
 
-![Google Less Secure Homepage](/engineering-education/how-to-send email-with-django/google-less-secure.jpg)
+![Google Less Secure Homepage](/engineering-education/how-to-send-email-in-django/google-less-secure.jpg)
 
-Note that, Google accounts with 2-step Verification turned on don't work with secure apps. Instead, you use App passwords. You can generate an App password using [this link](https://myaccount.google.com/u/1/apppasswords).
+Note that, Google accounts with 2-step Verification turned on don't work with secure apps. Instead, you use app passwords. You can generate an app password using [this link](https://myaccount.google.com/u/1/apppasswords).
 
 ### Sending emails with Google Gmail SMTP provider
 To complete the process of actually sending emails using Google Gmail SMTP provider, you have to update and add some additional settings to your project with your Google Gmail account details!
 
 ```python
-DEFAULT_FROM_EMAIL = '<paste your gmail account>'
+DEFAULT_FROM_EMAIL = '<paste your gmail account here>'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '<paste your gmail account'>'
-EMAIL_HOST_PASSWORD = '<paste the key or password app here>'
+EMAIL_HOST_USER = '<paste your gmail account here>'
+EMAIL_HOST_PASSWORD = '<paste Google password or app password here>'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ```
 
 Note that some of the details like the account and password should be kept hidden. This can be achieved by setting them as environment variables. A very good third-party application to achieve this is [django-environ](https://django-environ.readthedocs.io/en/latest/#django-environ)
 
-Try sending out some emails.
+At this point, we are ready to send the emails. Open the app and try sending out some emails.
 
-![homepage](/engineering-education/how-to-send-email-with-django/homepage.jpg)
+![homepage](/engineering-education/how-to-send-email-in-django/homepage.jpg)
 
-![success page](/engineering-education/how-to-send-email-with-django/success-page.jpg)
+![success page](/engineering-education/how-to-send-email-in-django/success-page.jpg)
 
 ### Conclusion
-Glad you've reached the end of this tutorial. In this tutorial, we briefly set up a new Django project, that we used to send an email using a free service (Google Gmail SMTP) provider.
+Glad that you've reached the end of this tutorial. 
+
+In this tutorial, we briefly set up a new Django project, that we used to send an email using a free service (Google Gmail SMTP) provider.
 
 Why not add this functionality to your next Django project.
 
 Happy coding!
 
 ---
-
-Peer Review Contributions by:
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
