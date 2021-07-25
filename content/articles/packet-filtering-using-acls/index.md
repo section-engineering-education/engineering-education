@@ -167,7 +167,6 @@ To summarize:
 
 One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.0.1).
 
-
 Happy coding.
 
 ---
