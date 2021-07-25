@@ -101,6 +101,35 @@ public class EvenOddnumbers {
     }
 }
 ```
+Using an `if-else` statement we can check if the current year is a leap year or not.
+
+```Java
+import java.util.*;
+public class GregorianCalendarDemo {
+
+   public static void main(String args[]) {
+      String months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
+         "Oct", "Nov", "Dec"};
+      
+      int year;
+      
+      GregorianCalendar gcalendar = new GregorianCalendar();
+      
+      System.out.print("Date: ");
+      System.out.print(months[gcalendar.get(Calendar.MONTH)]);
+      System.out.print(" " + gcalendar.get(Calendar.DATE) + " ");
+      System.out.println(year = gcalendar.get(Calendar.YEAR));
+      
+      if(gcalendar.isLeapYear(year)) {
+         System.out.println("The current year is a leap year");
+      }else {
+         System.out.println("The current year is not a leap year");
+      }
+   }
+}
+```
+
+The output of the above program will display the current date in the order of MM/DD/YY and tests if the year is leap or not.
 
 ### Nested if-else statement
 A nested `if-else` statement is used when a number of decisions have to be involved.
