@@ -120,7 +120,9 @@ R1(config)#
 Lets consider the  Local Area Network below:
 ![CDP-LLDP Network Configuration](/engineering-education/packet-filtering-using-acls/acl.jpg)
 
-We will create one numbered ACL, ACL 20 that denies host 192.168.10.10 but permits all other hosts on network 192.168.10.0/24. Start by configuring the ACL 20 ACE that denies the 192.168.10.10 host using the `host` keyword, then create the ACL that permits all other hosts.
+We will create one numbered ACL, ACL 20 that denies host 192.168.10.10 but permits all other hosts on network 192.168.10.0/24.
+
+Start by configuring the ACL 20 ACE that denies the 192.168.10.10 host using the `host` keyword, then create the ACL that permits all other hosts.
 ```bash
 R1(config)#access-list 20 deny host 192.168.10.10
 R1(config)#access-list 20 permit 192.168.10.0 0.0.0.255
