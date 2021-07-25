@@ -7,7 +7,7 @@ title: How Does Cryptocurrency Mining Work?
 description: This article will talk about what cryptocurrency mining is and how it works. Mining can be thought of as the “processor” for transactions on the blockchain.
 author: gregory-manley
 date: 2020-11-19T00:00:00-13:00
-topics: []
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
