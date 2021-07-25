@@ -17,11 +17,13 @@ images:
 In most web applications that are customer-driven, there may be a need to send an email. Sending an email with Django is quite simple. In the first part of this tutorial, we will quickly set up a new Django project from scratch with some URLs, views and templates. Then, we will take a look at configuring the Google SMTP service provider and finally how to use the `send_mail()` function Django provides, to enable us to send emails.
 
 ### Prerequisites
+
 To follow along with this tutorial, you will need a Google account. If you don't have one follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
 
 Prior knowledge of Django is also required.
 
 ### Project Setup and Overview
+
 Open your terminal or command prompt, and run the following commands:
 
 ```bash
@@ -32,12 +34,14 @@ pipenv install django
 pipenv shell
 ```
 
-We created a new virtual environment using the `pipenv` command, you can install Pipenv if you don't have it already installed using `pip install pipenv`. 
+We created a new virtual environment using the `pipenv` command, you can install Pipenv if you don't have it already installed using `pip install pipenv`.
 
 Next, create a new Python project and application.
 
 ```bash
 django-admin startproject send_mail .
+
+python manage.py migrate
 
 python manage.py startapp mailer
 
@@ -100,6 +104,7 @@ class EmailForm(forms.Form):
 ```
 
 #### What's happening here?
+
 1. We created a form class that inherits from the `Form` base class.
 2. We then created several attributes (name, email, to, message) that we want to be displayed in our form.
 3. Based on the attributes configuration, Django will determine how to generate the HTML for these fields and how to validate the fields.
@@ -114,25 +119,25 @@ from django.conf import settings
 
 
 def sendMail(request):
-    
+
     # create a variable to keep track of the form
     messageSent = False
-    
+
     # check if form has been submitted
     if request.method == 'POST':
-        
+
         form = EmailForm(request.POST)
-        
+
         # check if data from the form is clean
         if form.is_valid():
             cd = form.cleaned_data
-            subject = cd['subject']
+            subject = "Sending an email with Django"
             message = cd['message']
 
             # send the email to the recipent
             send_mail(subject, message,
                       settings.DEFAULT_FROM_EMAIL, [cd['to']])
-                      
+
             # set the variable initially created to True
             messageSent = True
 
@@ -148,6 +153,7 @@ def sendMail(request):
 ```
 
 #### What's happening here?
+
 1. We created a function called `sendMail`.
 2. We then checked if the form was submitted, if it was, we validate user input, send the mail and then return `True`
 3. Finally, if the form was not submitted we return an empty form or if the form has some errors we send the errors back for the form input to be corrected
@@ -183,7 +189,6 @@ Next, create a new `templates` folder in your mailer application and inside a fi
 
       <form method="post">
         {% csrf_token %} {{ form.as_p }}
-
         <br />
         <div class="text-center">
           <input
@@ -201,12 +206,13 @@ Next, create a new `templates` folder in your mailer application and inside a fi
 ```
 
 #### What's happening here?
+
 1. We are checking if the variable `messageSent` is `True`. If it is, we show a success message.
 2. If it isn't true, we show an empty form for the users to fill out.
 
-We havenow successfully set up our project. In the following section, we will turn our attention to actual sending emails with Google Gmail SMTP provider.
+We have now successfully set up our project. In the following section, we will turn our attention to actual sending emails with Google Gmail SMTP provider.
 
-To test that all works well, update your `settings.py` file and add this configurations:
+To test that all works well, update your `settings.py` file and add these configurations:
 
 ```python
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -217,11 +223,15 @@ DEFAULT_FROM_EMAIL = 'test@test.com'
 Try submitting the form. The email will be printed out to your console. This is a good way of testing your application.
 
 ### Configuring Google Gmail SMTP provider.
+
 To use your Google Gmail account to send an email, you will need to enable access for less secure applications, using [this link](https://myaccount.google.com/lesssecureapps).
 
 ![Google Less Secure Homepage](/engineering-education/how-to-send email-with-django/google-less-secure.jpg)
 
+Note that, Google accounts with 2-step Verification turned on don't work with secure apps. Instead, you use App passwords. You can generate an App password using [this link](https://myaccount.google.com/u/1/apppasswords).
+
 ### Sending emails with Google Gmail SMTP provider
+
 To complete the process of actually sending emails using Google Gmail SMTP provider, you have to update and add some additional settings to your project with your Google Gmail account details!
 
 ```python
@@ -235,7 +245,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ```
 
-Note that some of the details like the account and password should be kept hidden. This can be achieved by setting them as environment variables. 
+Note that some of the details like the account and password should be kept hidden. This can be achieved by setting them as environment variables. A very good third-party application to achieve this is [django-environ](https://django-environ.readthedocs.io/en/latest/#django-environ)
 
 Try sending out some emails.
 
@@ -244,6 +254,7 @@ Try sending out some emails.
 ![success page](/engineering-education/how-to-send-email-with-django/success-page.jpg)
 
 ### Conclusion
+
 Glad you've reached the end of this tutorial. In this tutorial, we briefly set up a new Django project, that we used to send an email using a free service (Google Gmail SMTP) provider.
 
 Why not add this functionality to your next Django project.
@@ -251,4 +262,5 @@ Why not add this functionality to your next Django project.
 Happy coding!
 
 ---
-Peer Review Contributions by: 
+
+Peer Review Contributions by:
