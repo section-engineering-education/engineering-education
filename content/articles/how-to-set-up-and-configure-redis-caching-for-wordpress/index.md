@@ -1,4 +1,23 @@
-[WordPress](https://wordpress.org/) is an Open Source Content Management System (CMS). It allows you to manage content without learning how to code any web scripting language. You can simply add texts, images, and videos, build your website or blog and publish it on the Internet. WordPress is run with PHP code and a MySQL database. When building a WordPress-powered website, you will probably use themes and plugins to customize content features and appearance and add more components to enhance your website iteratively and third-party extensions, such as SEO and analytics. The dependencies of these themes and plugins are stored in a MySQL database that you use to host the content of your page.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-set-up-and-configure-redis-caching-for-wordpress/
+title: How to set up and Configure Redis Caching for WordPress
+description: This guide will teach you how to set up and configure Redis object cache for your WordPress website or blog. Redis is an open-source in-memory data structure store that can be used as a caching system.
+author: catherine-macharia
+date: 2021-07-24T00:00:00-05:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/hero.png
+    alt: Redis Image Example
+---
+
+[WordPress](https://wordpress.org/) is an Open Source Content Management System (CMS). It allows you to manage content without learning how to code any web scripting language. You can build your website or blog and publish it on the Internet by simply adding texts, images, and videos. WordPress is run with PHP and a MySQL database. 
+<!--more-->
+When building a WordPress-powered website, you will probably use themes and plugins to customize content features and appearance. You can also add more components to enhance your website iteratively and third-party extensions, such as SEO and analytics. The dependencies of these themes and plugins are stored in a MySQL database that you use to host the content of your page.
 
 On the other end, [Redis](https://redis.io/) is an open-source in-memory data structure store that can be used as a caching system. It is a memory caching software that runs as a service in the background. Allowing you to cache and store data in memory for high-performance data retrieval and storage. As a result, the strategy will enhance the server response time as well as the website speed.
 
