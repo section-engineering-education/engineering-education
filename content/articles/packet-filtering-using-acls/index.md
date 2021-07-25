@@ -163,7 +163,7 @@ To summarize, we have:
 - Configured a network, created and configured the standard named and numbered ACLs.
 - Learned how the configured ACLs can be used to permit or deny traffic.
 
-One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.1.1).
+One can find more information about network management [here](https://www.certificationkits.com/cisco-certification/ccna-articles/cisco-ccna-access-lists/cisco-ccna-packet-filtering-a-acls/).
 
 Happy coding!
 
