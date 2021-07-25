@@ -27,10 +27,10 @@ To follow this tutorial comfortably, we need to meet the following conditions.
 
 ### Mounting our drive to Google Colab
 
-In this article, we shall carry out our data preprocessing activities on Google Colad. Therefore, we need to ensure our Google Drive is accessible by the Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
+In this article, we shall carry out our data preprocessing activities on Google Colab. Therefore, we need to ensure our Google Drive is accessible by the Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
 
 Since we've successfully downloaded our data, let's now upload it to google drive through [google.drive.com](https://drive.google.com/drive/u/0/my-drive).
-
+The above process saves the data into the root google drive directory.
 Now our data is uploaded to Google Drive.
 
 To be able to use this data, we need to give Google Colab access to the drive. To enhance this, in Google Colab, let's type and run the code below.
