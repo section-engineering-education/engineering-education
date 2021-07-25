@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/decision-making-and branching-in-java/hero.jpg
+  - url: /engineering-education/decision-making-and-branching-in-java/hero.jpg
     alt: Decision-making and Branching in Java
 ---
 Java statements are executed in a sequential manner, that is, the order in which they are arranged. However, there are scenarios where this sequence must be altered to meet specific requirements. In such cases, a decision is made to tell the computer which statements to execute. 
@@ -277,6 +277,17 @@ public class Main {
 
 The output of the above program will be `enter valid day` because 8 is not within the defined case labels.
 
+### Differences between the if-else statements and switch statments
+1. The `swith` statement has many cases to test of which all can be incorrect prompting the system to display the default statement while 
+the `if-else` satement has only two statements to be executed of which one is true to the expression and the other is false to the expression and does not have a default statement.
+2. The `switch` statements have a variety of statements based on the case labels and tops up with a default statement while an `if-else` statement has two statements for the expression given.
+3. The `switch` statement has a default statement to be executed if there is no match in the case labels while an `if-else` statement does not have the default statement instead the execution is wthin range of the two statements.
+4. In the `switch` statements the values depends on the choice of the user and a case is executed based on the match of the value and the case label while the value in an `if-else` statement is based on the conditions set for the if or else block.
+5. The execution in `switch` statements is controlled by  a break in the system while execution of the `if-else` statement is controlled by the condition that is true to the expression.
+
+### Simmilarities of the if-else statement and switch statement
+1. The execution of this statements ends when  a true match is found for the `switch` statement when a match is found between the case labels and for `if-else` statement when a true match of conditions is found.
+2. They are used to control the flow of a program.
 ### Conclusion
 Decision-making statements are very helpful especially in situations where a certain condition has to be met. They are also helpful when we want to sort data from the user. You can, therefore, use this knowledge to craft more powerful applications.
 
