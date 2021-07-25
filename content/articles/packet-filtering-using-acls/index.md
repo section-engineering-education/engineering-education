@@ -155,14 +155,11 @@ R1(config-if)#exit
 
 ### Conclusion
 As we have seen, Access Control Lists play a crucial role in traffic flow control and the network's security at large. This makes the network less vulnerable to unwanted and dangerous traffic.
-To summarize:
-- We learned what Access Control Lists are, their operations, how to create and configure them.
-
-- We explored different types of ACLs used in packet filtering.
-
-- We configured a network, created and configured the standard ACLs both named and numbered.
-
-- We learned how the configured ACLs can be used to permit or deny traffic.
+To summarize, we have:
+- Learned what Access Control Lists are, their operations, and how to create and configure them.
+- Explored different types of ACLs used in packet filtering.
+- Configured a network, created and configured the standard named and numbered ACLs.
+- Learned how the configured ACLs can be used to permit or deny traffic.
 
 One can find more information about network management [here](https://contenthub.netacad.com/ensa/5.0.1).
 
