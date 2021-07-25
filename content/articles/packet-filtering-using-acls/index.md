@@ -34,12 +34,14 @@ The reader should consider the following:
 
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
-### Terms and Terminologies
-- **Access Control List (ACLs)** refers to a set of rules which allow/permit or deny any traffic moving through the routers. It works at layer 3 to provide security by filtering and controlling the flow of traffic from one router to another. By default the ACLs are not configured on the routers, so the network user has to configure on each of the router's interfaces.
-- **Access Control Entries (ACEs)** refer to the collection of the rules used to permit or deny traffic. When creating ACLs the order of these rules must be considered.
-- **Ingress** refers to the traffic that is flowing into the router.
-- **Egress** refers to traffic flowing out of the router.
-- **Packet filtering** refers to the controlled access to networks by analyzing the ingress and egress packets flowing through the networks by either forwarding them or discarding them depending on the given criteria. It occurs both at layers 3 and 4 of the OSI model.
+### Terminologies
+- **Access Control List (ACLs)** refers to a set of rules that allow/permit or deny any traffic flow through the routers. It works at layer 3 to provide security by filtering and controlling the flow of traffic from one router to another.
+
+By default, the ACLs are not configured on the routers, so the network user has to configure on each of the router's interfaces.
+- **Access Control Entries (ACEs)** refers to a collection of rules used to permit or deny traffic. When creating ACLs the order of these rules must be considered.
+- **Ingress** refers to the traffic flowing into the router.
+- **Egress** refers to the traffic flowing out of the router.
+- **Packet filtering** refers to the controlled access to networks by analyzing the ingress and egress packets flowing through the networks by either forwarding them or discarding them depending on the given criteria. It occurs both at layers 3 and 4 of the `OSI model`.
 
 ### Access Control List Operations.
 Once a particular Access Control List is configured on an interface it follows an operational procedure to filter the traffic flowing into the router.
