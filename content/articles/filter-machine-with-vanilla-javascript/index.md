@@ -9,7 +9,7 @@ author: mudasiru-rasheed
 date: 2021-07-19T00:00:00-07:41
 topics: [Languages]
 excerpt_separator: <!--more-->
-images: ![hero](/filter-machine-with-vanilla-javascript/hero.png)
+images:
 
   - url: /engineering-education/filter-machine-with-vanilla-javascript/hero.png
     alt: Filter machine with vanilla Javascript
