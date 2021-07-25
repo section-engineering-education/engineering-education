@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /image-processing-with-coil-in-android/
-title: Image processing with Coil in Android
+title: Image Processing with Coil in Android
 description: This tutorial will guide you on how to process images in Android using a fast, lightweight, and powerful open-source library known as Coil.
 author: noni-diana
-date: 2021-07-27T00:00:00-22:00
+date: 2021-07-25T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/image-processing-with-coil-in-android/hero.png
     alt: Image processing with Coil in Android
 ---
-One of the essential skills that an Android developer need is knowing how to correctly work with images, especially from a remote source. This is because many applications consume some types of images.
+One of the essential skills that an Android developer must know is how to correctly work with images, especially from a remote source. This is because many applications in some way or another use images.
 <!--more-->
-Image processing can be done in different ways based on the feature you want to implement in your app. In most cases, you might need to perform not only loading but also memory and disk caching, down-sampling the image in memory, re-using Bitmaps, and automatically pausing/canceling requests.
+Image processing can be done in many different ways depending on the features you want to implement. In most cases, you might need to perform not only loading but also memory and disk caching, down-sampling the image in memory, re-using Bitmaps, and automatically pausing/canceling requests.
 
-In this tutorial, we will learn how to perform the above-mentioned tasks and many more using a fast, lightweight, and easy-to-use library called `Coil`. 
+In this tutorial, we will learn how to perform the above-mentioned tasks and many more using a fast, lightweight, and easy-to-use library called `Coil`.
 
 `Coil` is made using [Kotlin](https://developer.android.com/kotlin/first) and has embedded coroutine support which makes it suitable for modern Android development.
 
@@ -26,16 +26,16 @@ In this tutorial, we will learn how to perform the above-mentioned tasks and man
 Before getting started with this tutorial, make sure that you're conversant with:
 
 - Using [Kotlin in Android development](https://kotlinlang.org/).
-- Constraint layout's Flow helper widget.
-- View binding and/or [data binding](https://developer.android.com/topic/libraries/data-binding).
-- Basics of [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines).
+- Constraint layout's Flow helper widget
+- View binding and/or [data binding](https://developer.android.com/topic/libraries/data-binding)
+- Basics of [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
 
 ### Getting started
 Let's start by creating an Android project that we will use for this tutorial.
 
 To include Coil in our app, we need either of the following dependencies that are already published on `mavenCentral()`:
 
-> Note that at the time of writing this article, the `Coil` library was in `version 1.2.2`.
+> Note that at the time of writing this article, the `Coil` library used was `version 1.2.2`.
 
 ```bash
 implementation("io.coil-kt:coil:1.2.2")
@@ -58,13 +58,14 @@ Includes `GIF` decoders that allow you to display `GIF` images in your app. `Ani
 ```bash
 implementation("io.coil-kt:coil-svg:1.2.2")
 ```
+
 The above dependency supports the decoding of SVGs.
 
 ```bash
 implementation("io.coil-kt:coil-video:1.2.2")
 ```
 
-The `io.coil-kt:coil-video:1.2.2` plugin provides video frames for video codecs that are supported in Android. A codec is software that decodes and encodes digital data streams. 
+The `io.coil-kt:coil-video:1.2.2` plugin provides video frames for video codecs that are supported in Android. A codec is software that decodes and encodes digital data streams.
 
 The choice of the right artifact is based on your app requirements. Fortunately, more than one dependency can be used in the same project.
 
@@ -96,7 +97,7 @@ Lastly, Coil needs internet permission since we will fetch remote images. Add th
 We can now sync the project.
 
 ### Building the user interface
-In this project, we'll use a single `ImageView` and several `Buttons`. Each button will represent a function to modify the loaded image. 
+In this project, we'll use a single `ImageView` and several `Buttons`. Each button will represent a function to modify the loaded image.
 
 In your `activity_main.xml` file, add the code below:
 
@@ -207,6 +208,7 @@ A [Flow](https://developer.android.com/reference/androidx/constraintlayout/helpe
 The code above adds buttons in a horizontally-packed, vertically spread, chained flow. In between the `imageview` and the `flow` is a `TextView` that indicates the current state of the image.
 
 See the preview below:
+
 ![Design preview](/engineering-education/image-processing-with-coil-in-android/design-preview.png)
 
 ### Images sources
@@ -237,7 +239,7 @@ imageView.load(File("/path/to/image"))
 ```
 
 ### Enabling view binding
-`viewBinding` allows us to access UI views in a more simplified way. It makes use of binding classes generated by the `viewBinding` library. 
+`viewBinding` allows us to access UI views in a more simplified way. It makes use of binding classes generated by the `viewBinding` library.
 
 To enable `viewBinding`, add the following code in the module-level `gradle.build` file and sync:
 
@@ -248,6 +250,7 @@ android{
     }
 }
 ```
+
 Now, we are good to go!
 
 ### Image processing functionalities
@@ -266,10 +269,11 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 In the code above, we have inflated the UI using viewBinding.
 
 ### Loading an image to the target
-In this step, we will load an image onto a target (ImageView) from a url. Since this will include several operations, it's a good idea to separate the sample links from the main code.
+In this step, we will load an image onto a target (ImageView) from a URL. Since this will include several operations, it's a good idea to separate the sample links from the main code.
 
 Therefore, create a Kotlin class named `ImageLink` and add the code below in it:
 
@@ -290,17 +294,20 @@ class ImageLinks {
     }
 }
 ```
+
 The `randomLink()` function above returns a randomly selected link whenever we call it. This ensures that we don't use the same image in every process.
 
 Let's manage the state in our application.
 
 Open `MainActivity.kt` file and add the following code just below the `onCreate()` method.
 
-```kotlin 
+```kotlin
+
 private fun updateState(newState: String){
     binding.stateText.text = "State: $newState"
 }
 ```
+
 The function above sets the new state to help us identify the latest action performed on the image.
 
 ### Transitions
@@ -322,6 +329,7 @@ binding.crossFade.setOnClickListener {
     updateState("cross fade")
 }
 ```
+
 Crossfade duration is determined by the time (in microseconds) passed in the `crossfade()` function.
 
 ### Transformations
@@ -394,7 +402,7 @@ binding.grayScale.setOnClickListener {
 ```
 
 #### Placeholder
-As the name suggests, `placeholders` are images that are pre-set to appear on an `ImageView` before the actual image is set. 
+As the name suggests, `placeholders` are images that are pre-set to appear on an `ImageView` before the actual image is set.
 
 When a request is completed, the placeholder is instantly replaced with the intended image. For this reason, it might not be visually detected especially when an image request is done pretty fast.
 
@@ -442,6 +450,7 @@ binding.combined.setOnClickListener {
     updateState("Combined State")
 }
 ```
+
 Notice the use of commas to separate transformations.
 
 ### Cancelling Requests
@@ -452,6 +461,7 @@ imageView.load(link){
         ...
     }.dispose()
 ```
+
 This frees resources associated with the request by canceling any work in progress. This method is [idempotent](https://en.wikipedia.org/wiki/Idempotence) meaning that multiple applications do not affect the result of the first app.
 
 ### Memory Caching
@@ -460,9 +470,9 @@ Caching makes it possible to display remote images even when the internet connec
 Coil makes use of `OkHttp` which is an `HTTP client` that supports the `SPDY` protocol. Refer to this [official documentation](https://square.github.io/okhttp/4.x/okhttp/okhttp3/-cache/) for further reading.
 
 ### Exception handling
-Keeping track of a request is important as it helps in handling errors encountered during the process. 
+Keeping track of a request is important as it helps in handling errors encountered during the process.
 
-Coil uses a `listener()` function that accepts two lambdas, `onSuccess` and `onError`, as demonstrated below: 
+Coil uses a `listener()` function that accepts two lambdas, `onSuccess` and `onError`, as demonstrated below:
 
 ```kotlin
 // handle error button click
@@ -483,10 +493,13 @@ binding.error.setOnClickListener {
     }
 }
 ```
+
 An error image is used to indicate that something went wrong when resolving the request.
 
 ### Conclusion
-Congratulations on completing this tutorial. You can now comfortably use `Coil` to process images in Android. You can, therefore, use this knowledge to build more powerful applications. The source code for this tutorial can be found [on this Github repository](https://github.com/nonimdiana/image-processing-with-coil).
+Congratulations on completing this tutorial. You can now comfortably use `Coil` to process images in Android. You can, therefore, use this knowledge to build more powerful applications. 
+
+The source code for this tutorial can be found [on this Github repository](https://github.com/nonimdiana/image-processing-with-coil).
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
