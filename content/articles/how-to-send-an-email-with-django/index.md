@@ -95,9 +95,7 @@ Next, create a new file in your `mailer` directory called `forms.py` and add the
 from django import forms
 
 class EmailForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    email = forms.EmailField()
-    to = forms.EmailField()
+    recipient = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
 ```
 
@@ -133,7 +131,7 @@ def sendMail(request):
 
             # send the email to the recipent
             send_mail(subject, message,
-                      settings.DEFAULT_FROM_EMAIL, [cd['to']])
+                      settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
 
             # set the variable initially created to True
             messageSent = True
