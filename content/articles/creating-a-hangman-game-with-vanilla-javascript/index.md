@@ -1,18 +1,32 @@
-### Creating a Hangman game with Vanilla JavaScript
-The Hangman game is a word-guessing game where one player picks a secret word, and the other player tries to guess it. In this article, I will take you through building a simple Hangman game with vanilla JavaScript, and more importantly, how I made it accessible to players who navigate with their keyboards, without using any frameworks.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-hangman-game-with-vanilla-js/
+title: How to create a Hangman game with Vanilla JS
+description: This article will guide you on how to build a simple Hangman game using vanilla JavaScript. This project is suitable for beginners since it allows you to gain crucial skills and knowledge.
+author: doro-onome
+date: 2021-07-25T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/creating-a-hangman-game-with-vanilla-js/hero.jpg
+    alt: Game Hangman JavaScript JS Vanilla Example Image
+---
+The Hangman game is a word-guessing game where one player picks a secret word, and the other player tries to guess it. In this article, I will take you through building a simple Hangman game using vanilla JavaScript and more importantly, how I made it accessible to players who navigate with their keyboards, without using any frameworks.
+<!--more-->
 ### Prerequisites
 1. A good code editor. Visual Studio Code can do the job.
-1. Some knowledge of HTML, Bootstrap, and JavaScript.
+1. Some knowledge of HTML, Bootstrap CSS, and JavaScript.
 
 ### Designing the game
-The first thing you have to do is to create two files on your code editor and name them `index.html` for your HTML code and a `script.js` for your JavaScript code. I mostly used Bootstrap CDN for styling this game. You can add the Bootstrap CDN by adding the code below inside the `<head></head>` of your HTML file.
+The first thing you have to do is to create two files in your code editor and name them `index.html` for your HTML code and a `script.js` for your JavaScript code. I mostly used Bootstrap CDN for styling this game. You can add the Bootstrap CDN by adding the code below inside the `<head></head>` tags of your HTML file.
 
 ```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 ```
 
-Below is the entire HTML code. The images used in this project can be found in my [Github repo](https://github.com/Nomzy-kush/Hangman-Game).
+Below is the entire HTML code. The images used in this project can be found in my [Github repo](https://github.com/Nomzy-kush/Hangman-Game/tree/main/images).
 
 ```html
 <!DOCTYPE html>
@@ -45,8 +59,7 @@ Below is the entire HTML code. The images used in this project can be found in m
 ```
 
 ### The Actual JavaScript
-
-In your JavaScript file, you need to create an array containing all the words to be guessed inside the game. I used social media as my niche of words. You can use any one of your choices. Here's how it looks on your code.
+In your JavaScript file, you need to create an array containing all the words to be guessed inside the game. I used social media as my niche words. You can use any one of your choices. Here's how it looks on your code.
 
 ```javascript
 var socialMedia = [
@@ -86,6 +99,7 @@ let guessed = [];
 The `answer` id contains the correct word to be guessed. The `maxWrong` id contains the maximum number of times you can guess wrong. The `mistakes` id contains the number of times you have guessed wrong so far, while the `guessed` id contains the letters you will guess.
 
 ### The game functions
+
 #### The randomWord() function
 This function will help to randomly pick any of the words you placed in your social media array, which now makes the game more interesting as you do not know what word you are guessing next. Here is how the code looks like:
 
@@ -132,7 +146,7 @@ generateButtons();
 ```
 
 Here's what the game looks like at this point:
-![the-game-buttons](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/the-game-buttons.jpg)
+![the-game-buttons](/engineering-education/creating-a-hangman-game-with-vanilla-js/the-game-buttons.jpg)
 
 We will update the wrong guesses, that is, setting the maximum number of wrong guesses a player can get per game. You can do that using the code below:
 
@@ -167,16 +181,16 @@ guessedWord();
 
 Here's how it looks like at this point:
 
-![the-game-image](/engineering-education/creating-a-hangman-game-with-vanilla-javascript/the-game-image.jpg)
+![the-game-image](/engineering-education/creating-a-hangman-game-with-vanilla-js/the-game-image.jpg)
 
 Now let’s actually guess the letters.
 
 ### The handleGuess() function
 First, we are going to pass down a `chosenLetter`. The `handleGuess()` function handles the letters to be guessed and determines if the answer is true or false.
 
-In the function, if the chosen letter does not exist, we go ahead and push `chosenLetter` into the array but if it does exist, do nothing.  Next, you run an `if` statement: `if (answer.indexOf(chosenLetter) >= 0)`. Meaning that if it exists, then run the `guessed()` functionto update the letters.
+In the function, if the chosen letter does not exist, we go ahead and push `chosenLetter` into the array but if it does exist, do nothing.  Next, you run an `if` statement: `if (answer.indexOf(chosenLetter) >= 0)`. Meaning that if it exists, then run the `guessed()` function to update the letters.
 
-Now we have to start incrementing the number of wrong guesses if the player gets it wrong.  We can do that by using the `else if` statement inside this function and passing in the `answer.indexOf(chosenLetter) === -1`. This way the mistakes will be added by one.
+Now we have to start incrementing the number of wrong guesses if the player gets it wrong. We can do that by using the `else if` statement inside this function and passing in the `answer.indexOf(chosenLetter) === -1`. This way the mistakes will be added by one.
 
 Here’s how the code will look like:
 
@@ -191,13 +205,13 @@ function handleGuess(chosenLetter) {
     mistakes++;
     updateMistakes();
     checkIfGameLost();
-   updateHangmanPicture();
+    updateHangmanPicture();
   }
 }
 ```
 
 ### The updateMistakes() function
-You also have to run the `updateMistakes()` function so that it actually updates the number since we are not using any framework like ReactJS or the rest of them.  Here’s how it would look like in the code:
+You also have to run the `updateMistakes()` function so that it actually updates the number since we are not using any framework like ReactJS or the rest of them. Here’s how it would look like in the code:
 
 ```javascript
 function updateMistakes() {
@@ -251,7 +265,7 @@ function reset() {
 ```
 
 ### The updateHangmanPicture() function
-First, we are going to run the `updateHangmanPicture();` in the `elseif` statement of the `handleGuess()` function so that the image updates every time the player gets a letter wrong. Then we create the updateHangmanPicture() function using the code below:
+First, we are going to run the `updateHangmanPicture();` in the `elseif` statement of the `handleGuess()` function so that the image updates every time the player gets a letter wrong. Then we create the `updateHangmanPicture()` function using the code below:
 
 ```javascript
 function updateHangmanPicture() {
@@ -259,7 +273,7 @@ function updateHangmanPicture() {
 }
 ```
 
-In the code above, we set the images to update each time the player gets an answer wrong continually. I named all six images (0-6).jpg, and we have a maximum number of 6 mistakes to be made. This now conveniently helps us set the pictures to update every time the player gets a letter wrong.
+In the code above, we set the images to update each time the player gets an answer wrong continuously. I named all six images (0-6).jpg, and we have a maximum number of 6 mistakes to be made. This now conveniently helps us set the pictures to update every time the player gets a letter wrong.
 
 Lastly, we need to make the game accessible to players that wish to navigate with their keyboard. Firstly, you need to define the alphabet keys on your keyboard using the code below:
 
@@ -280,7 +294,7 @@ document.onkeypress = function (e) {
 };
 ```
 
-The code above translates to: “in the event of a key being pressed, handle it as a guess in the game.”
+The code above translates to: “in the event of a key being pressed, handle it as a guess in the game.
 
 Below is a video of the game in action with both the mouse and keyboard in use:
 
@@ -294,3 +308,6 @@ With that, you have a fully interactive Hangman game. You can also add other fea
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/Hangman-Game).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
