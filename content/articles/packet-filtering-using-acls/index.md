@@ -27,12 +27,12 @@ This article will cover how the Access Control Lists (ACLs) can be used to contr
 - [Conclusion](#conclusion).
 
 ### Prerequisites
-The reader should consider the following:
-- Good understanding of how to configure networks and their components using any of the network simulation tools.
-- The reader should have a good understanding of the basic networking concepts.
-- This article is best for the reader to know how to work with the Cisco packet tracer network simulator tool.
+To follow through this tutorial, the reader should:
+- Have a good understanding of how to configure networks and their components using any network simulation tool.
+- Have prior understanding of the basic networking concepts.
+- Know how to work with the Cisco packet tracer.
 
-To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
+Visit [this site](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html) to download and install the Cisco packet tracer on your machine.
 
 ### Terminologies
 - **Access Control List (ACLs)** refers to a set of rules that allow/permit or deny any traffic flow through the routers. It works at layer 3 to provide security by filtering and controlling the flow of traffic from one router to another.
@@ -44,31 +44,31 @@ By default, the ACLs are not configured on the routers, so the network user has 
 - **Packet filtering** refers to the controlled access to networks by analyzing the ingress and egress packets flowing through the networks by either forwarding them or discarding them depending on the given criteria. It occurs both at layers 3 and 4 of the `OSI model`.
 
 ### Access Control List Operations.
-Once a particular Access Control List is configured on an interface it follows an operational procedure to filter the traffic flowing into the router.
+Once a particular ACL is configured on an interface, it follows an operational procedure to filter the traffic flowing into the router.
 
 - The source IP address is first extracted from the packet header by the router.
 
 - The router starts at the top of the ACLs and compares the address to each Access Control Entries (ACE) sequentially.
 
-- If any match is found the router carries out the instructions either allowing/permitting or denying/blocking the packet. The other control entries are not analyzed.
+- If a match is found, the router carries out the instructions either permitting or blocking the packet. The other control entries are not analyzed.
 
-- If a match is not found in the control entries, the packet is discarded since there is always an implicit deny control entry automatically applied to all Access Control Lists.
+- If a match is not found in the control entries, the packet is discarded since there is always an implicit deny control entry applied automatically to all Access Control Lists.
 #### Types of Access Control Lists.
-Access Control Lists can be of two types the numbered and the named ACLs.
+Access Control Lists can be of two types, the numbered and the named ACLs.
 - **Numbered** refers to those ACLs specified using a number.
 
 - **Named** these are the ACLs configured using names.
 
 Both the named and numbered ACLs are divided into two categories:
 
-- Standard ACLs- this type filters traffic based on only the source IP address.
-They range from 1-99, they are implemented closest to the destination and blocks all the services like FTP, HTTP, Telnet.
+- Standard ACLs - this type filters traffic based only on the source IP address.
+They range from 1-99 and are implemented closest to the destination to block all the services like FTP, HTTP, Telnet.
 
-- Extended ACLs- packet filtering is done based on source IP, destination IP, protocol types, and port numbers.
-They range from 100-199, implemented closest to the source and a selected number of services are blocked as specified by the network administrator.
+- Extended ACLs - packet filtering is done based on the source IP, destination IP, protocol types, and port numbers.
 
-Command **access-list?** is used to show the available ACLs that can be configured on the router interface.
+They range from 100-199 and are implemented closest to the source to block a selected number of services specified by the network administrator.
 
+A command **access list** is used to show the available ACLs that can be configured on the router interface.
 
 ```bash
 R1(config)# access-list ?
@@ -85,22 +85,19 @@ Router(config)# access-list
 ```
 
 #### Access Control Lists Tasks.
-Routers use Access Control Lists to perform various tasks:
+Routers use ACLs to perform the following tasks:
 
-- Increase network performance by limiting the network traffic
-
-- Prioritization of certain network traffic
-
-- A level of network security access
-
-- Traffic flow control
-
+- Increase network performance by limiting the network traffic.
+- Prioritizing certain network traffic.
+- Defining network security access rules.
+- Traffic flow control.
 
 ### Access Control List Configuration.
-We will learn how to create and configure standard IPv4 ACLs and how they filter the traffic.
+Moving on, we will learn how to create and configure standard `IPv4` ACLs and how they filter the traffic.
 To create a named standard ACL, we use the following global configuration command;
+
 `Router(config)# ip access-list standard access-list-name`
-For instance, we have created an access list called PERMIT-ACCESS of the standard type.
+For instance, we have an access list called PERMIT-ACCESS of a standard type.
 ```bash
 R1(config)# ip access-list standard PERMIT-ACCESS
 R1(config-std-nacl)# remark ACE permits host 192.168.10.10
