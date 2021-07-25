@@ -133,7 +133,7 @@ R1(config-if)#ip access-group 20 in
 R1(config-if)#exit
 ```
 We will then create a named standard ACL that permits host 192.168.10.10 but denies all other hosts on network 192.168.20.0/24.
-Start by creating a named standard ACL called LAN2-FILTER
+Start by creating a named standard ACL named LAN2-FILTER
 ```bash
 R1(config)#ip access-list standard LAN2-FILTER
 
