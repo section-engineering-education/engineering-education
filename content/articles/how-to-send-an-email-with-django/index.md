@@ -101,7 +101,7 @@ class EmailForm(forms.Form):
 
 #### What's happening here?
 1. We created a form class that inherits from the `Form` base class.
-2. We then created several attributes (name, email, to, message) that we want to be displayed in our form.
+2. We then created two attributes (recipient, message) that we want to be displayed in our form.
 3. Based on the attributes configuration, Django will determine how to generate the HTML for these fields and how to validate the fields.
 
 Next, let's update the `views.py` of your mailer application to look like this:
