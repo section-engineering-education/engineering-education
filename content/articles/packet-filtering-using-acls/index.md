@@ -16,7 +16,7 @@ images:
 ---
 Networks tend to be more vulnerable due to the incoming and outgoing unwanted and dangerous traffic. To improve this, a security mechanism is needed to control the flow of traffic and provide secure remote administrative access by restricting,permitting, and denying unnecessary traffic.
 <!--more-->
-This article will cover how one can use the Access Control Lists in traffic flow control by filtering all the incoming and outgoing packets. Various types of control lists and how one can configure the ACLs on the router interface.
+This article will cover how the Access Control Lists (ACLs) can be used to control traffic flow by filtering all the incoming and outgoing packets, various types of control lists and how they can be used to configure the ACLs on the router interface.
 ### Table of contents
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
