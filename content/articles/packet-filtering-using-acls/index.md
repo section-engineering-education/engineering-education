@@ -138,7 +138,7 @@ Start by creating a named standard ACL called LAN2-FILTER
 R1(config)#ip access-list standard LAN2-FILTER
 
 ```
-Create an ACE that permits host 192.168.10.10 using the `host` keyword, and deny all other hosts using `any` keyword.
+Create an ACE that permits host 192.168.10.10, and deny all other hosts using the `any` keyword.
 ```bash
 R1(config-std-nacl)#permit host 192.168.10.10
 R1(config-std-nacl)#deny any
