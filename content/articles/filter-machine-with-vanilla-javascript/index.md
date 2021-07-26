@@ -296,7 +296,7 @@ Inside every card, there is a `<p>` tag that holds the letters. line 5 creates a
  if (whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >-1)
 ```
 
-We then use an `if` statement to check if our search input matches any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` convert it into a capital letter. We then use `indexOf` to check if the user's input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
+We then use an `if` statement to check if our search input matches any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` to convert it into a capital letter. We then use `indexOf` to check if the user's input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
 
 - Line 9
 
@@ -304,7 +304,7 @@ We then use an `if` statement to check if our search input matches any text in t
 item.style.display = "";
 ```
 
-This sets a CSS property of display on the item to default display property or the property in the CSS file.
+This sets a CSS property of `display` on the item to default the `display` property or the property in the CSS file.
 
 - Line 10
 
@@ -320,7 +320,7 @@ If the type character does not match, it should set `display` to `none`, that is
 notFound.style.display = "flex";
 ```
 
-We create a variable to hold the last div using the `getElementById` method on `line 2`. This returns the element with the `ID` passed in. The CSS display property was set to flex as it was set to none in the CSS file.
+We create a variable to hold the last div using the `getElementById` method on `line 2`. This returns the element with the `ID` passed in. The CSS `display` property was set to flex as it was set to none in the CSS file.
 
 - Last Line
 
@@ -338,7 +338,7 @@ Below is what we just built, isn't amazing?
 
 What you just built can be implemented in various real-life projects and can be improve/ Suggestions on some improvement can be seen below.
 
-1.  The Search bar can be modified by adding more styles to be more outstanding and give a better look
+1.  The search bar can be modified by adding more styles to be more outstanding and give a better look
 
 2.  On a shopping cart application, users need to filter out the products to get their choices. This app can be integrated to give access
 
