@@ -67,7 +67,7 @@ On the other hand, class components are written as ES6 classes that extend the b
 
 Buttons, Forms, Content areas, Navs, and Dialog sections are a few of the frontend parts that can be defined as components.
 
-Now that we've seen what React and a Component is let's have a look into `styled-components`. 
+Now that we've seen what React and a Component is, let's look into `styled-components`. 
 
 ### What are Styled-components
 
@@ -186,12 +186,12 @@ export default Header;
 
 #### Routing a Component into the main App
 
-To get things started, let's open `App.js`  which is the base of our application. We replace all the content in it with the code below to create an App function that will load our styled-components and render them as the landing page.
+To get things started, let's open `App.js`  which is the base of our application. Then, we replace all the content in it with the code below to create an App function that will load our styled-components and render them as the landing page.
 
 After building components/pages in your web application, you may need to expose and let your users navigate through them. To achieve this, you need a dedicated router. [React router](https://medium.com/@marcellamaki/a-brief-overview-of-react-router-and-client-side-routing-70eb420e8cde) is a standard library for dynamic routing of components/page views in simple ReactJs applications like single page web applications.
 [React Router](https://reactrouter.com/web/guides/quick-start) keeps UIs and URLs synchronized giving users seamless navigation in web applications.
 
-To route components into the main App, you will import some features from the `react-router-dom`, a React-router package that we installed earlier.
+To route components into the main App, you will import features from the `react-router-dom`, a React-router package that we installed earlier.
 
 ```JavaScript
 Import {BrowserRouter as Router, Switch, Route} from "react-router-dom";//The Router, Switch, and Route will help us move between our created component and the main App.js.
@@ -394,7 +394,7 @@ width: 100%;
 ```
 #### Styling the Signup Button
 
-To create a button with the `hover` effect and display a `background-colour` on hover, we will use the [hover selector](https://www.pluralsight.com/guides/create-a-hover-button-in-a-react-app).
+We will use the [hover selector](https://www.pluralsight.com/guides/create-a-hover-button-in-a-react-app) to create a button with the `hover` effect and display a `background-colour` on hover.
 
 ```JavaScript
 {/*SignUp is styled to wrap around a text and appear as button.It is styled as anchor tag*/}
@@ -491,7 +491,7 @@ The final page, when loaded on your browser, should appear as shown below.
 
 ### Summary
 
-In this tutorial, we explored the library styled-component and its advantages. The simple design and easy integration of styling within React codebase makes the development process more efficient. We conclude with a simple landing page styled using styled-components. 
+In this tutorial, we explored the library styled-component and its advantages. The simple design and easy integration of styling within React codebase make the development process more efficient. We conclude with a simple landing page styled using styled-components. 
 
 
 ### Additional Resources
