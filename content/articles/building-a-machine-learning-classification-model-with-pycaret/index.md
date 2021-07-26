@@ -146,7 +146,7 @@ The code above is going to train our model. To train it, we run the `compare_mod
 ```
 ![Predicting the best model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/predict-model-best.PNG)
 
-The accuracy recorded after testing our model is `0.8159`. There isn't much difference with the accuracy recorded earlier of `0.8228`. This could be due to overfitting or other factors that may need investigation.
+The accuracy recorded after testing our model is `0.8159`. There isn't much difference with the accuracy recorded earlier of `0.8228`. This could be due to overfitting or other factors that may need investigation. By employing techniques such as as [early stopping](https://en.wikipedia.org/wiki/Early_stopping) and [dropout](https://en.wikipedia.org/wiki/Dilution_(neural_networks)) will help us prevent our model from overfitting and would reduce significantly the difference between training and validation accuracy. 
 
 ### Prediction on our dataset
 To perform prediction on our `credit_dataset` dataset, type in the following code:
