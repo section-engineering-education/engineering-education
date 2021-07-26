@@ -257,7 +257,7 @@ Be sure to create an images folder inside the public folder of the application.
 
 You should have the landing page background image(BgImage), disney+ icon image, logoOne, and logoTwo within the folder.
 
-You can obtain the images and the icon from [drive](https://drive.google.com/drive/u/0/folders/1Jl336qas6ikZHpeb1u78F4qVphQDCf-1).
+You can obtain the images and the icon from [Google Drive](https://drive.google.com/drive/u/0/folders/1Jl336qas6ikZHpeb1u78F4qVphQDCf-1).
 
 
 Let's add some cool features onto our created components- (`Landing` and `Header`) and style them using the `styled-components` depending on what content they hold.
