@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-file-uploads-with-flask/
+title: How to Handle File Uploads with Flask
+description: In this tutorial, we will be building a flask app that will enable users to upload files to a server.
+author: nathaniel-dauda-wobin
+date: 2021-07-26T00:00:00-12:59
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-handle-file-uploads-with-flask/hero.jpg
+    alt: How to Handle File Uploads with Flask Hero Image
+---
 
 ### Introduction
 Flask is a lightweight or micro web framework built with Python that helps in creating web applications. It provides useful tools and features that make building web applications easier. Flask is extensible and doesn’t force a particular structure or require complicated boilerplate code before getting started. It gives developers flexibility.
@@ -246,4 +262,5 @@ Now we can upload images. To upload other types of files all we will do is to im
 
 - [flask Documentation for file uploads](https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/)
 
-
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
