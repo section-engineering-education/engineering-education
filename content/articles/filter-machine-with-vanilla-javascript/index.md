@@ -4,36 +4,37 @@ status: publish
 published: true
 url: /filter-machine-with-vanilla-javascript
 title: Filter machine with vanilla Javascript
-description: In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla Javascript.
+description: In this article, we will be building a search bar that filters and responds to your search input in real-time using vanilla Javascript.
 author: mudasiru-rasheed
-date: 2021-07-19T00:00:00-07:41
+date: 2021-07-26T00:00:00-06:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/filter-machine-with-vanilla-javascript/hero.png
-    alt: Filter machine with vanilla Javascript
+    alt: Filter machine with vanilla Javascript Hero Image
 ---
-In this article, we will be building a search bar that filters and responds to a user's search input in real-time using vanilla Javascript.
+In this article, we will be building a search bar that filters and responds to your search input in real-time using vanilla Javascript.
 <!--more-->
-### Introduction
+### Goal
 By the end of the article, we should have an application that has a functional search bar as illustrated below:
-![Sample Page](/filter-machine-with-vanilla-javascript/page.gif)
 
-This is the [Live Demo](https://filter-machine.taiwrash.repl.co) of the app and [Full Code](https://repl.it/@Taiwrash/filter-machine).
+![Sample Page](/engineering-education/filter-machine-with-vanilla-javascript/page.gif)
+
+This is the [live demo](https://filter-machine.taiwrash.repl.co) of the app and the [full code](https://repl.it/@Taiwrash/filter-machine).
 
 ### Prerequisites
-Working knowledge of:
-- HTML
-- CSS
-- Javascript
+To follow along with this tutorial, you should know:
+- HTML.
+- CSS.
+- Javascript.
 
 This project was developed on the [repl website](https://repl.it/) using the `html/css/js` stack. Feel free to use it to follow along with the article.
 
 Our code will be split into three distinct files:
-1. `HTML file (index.html)`: This contains all our html code
-2. `CSS file (style.css)`: This contains all our css code
-3. `SCRIPT file (script.js)`: This contains all the Javascript code
+1. `HTML file (index.html)`: This contains all our HTML code.
+2. `CSS file (style.css)`: This contains all our CSS code.
+3. `SCRIPT file (script.js)`: This contains all the Javascript code.
 
 ### HTML
 The HTML code below consists of the default `html boilerplate` to which our `css` and `Javascript` files are linked.
@@ -103,13 +104,13 @@ The HTML code below consists of the default `html boilerplate` to which our `css
 </html>
 ```
 
-The above code contains:
-- The `head` tag that houses the `title` and `CSS` file links.
+The code above contains:
+- The `head` tag houses the `title` and `CSS` file links.
 - The `title` that displays on our browser indicating the title of the page.
 - The CSS link that points directly to our CSS file and helps pass the set of rules in the CSS file that are to be applied to the HTML content.
-- The `main` tag that contains the main content of our HTML page.
-- The `header` tag that contains the header of our application.
-- The `h2` tag that describes our Application with the form that contains our search bar.
+- The `main` tag contains the main content of our HTML page.
+- The `header` tag contains the header of our application.
+- The `h2` tag describes our Application with the form that contains our search bar.
 - The `divs` with class attributes of `card` that are duplicated for every letter.
 - The `script` link that points to our Javascript code included just before the closing `</body>` tag.
 
@@ -153,9 +154,9 @@ header {
 }
 ```
 
-We set the width and height. We set the background color using the `background` property; the `background` property can take multiple options eg. an image, color, etc. If you wish to, you can use an image, any other pattern, or even the `background-color` property, which will do the same thing.
+We set the width and height, and the background color using the `background` property; the `background` property can take multiple options eg. an image, color, etc. If you wish to, you can use an image, any other pattern, or even the `background-color` property, which will do the same thing.
 
-We then decorate the search bar's input element:
+Now, let us decorate the search bar's input element:
 ```css
 input {
   width: 70%;
@@ -171,7 +172,7 @@ input {
 
 We set the width to 70% of the header width. We add a margin to push it away from the `(<h2>)` tag above it. We add the rounded corner using the `border-radius` property.
 
-We then style the cards:
+Then, let's style the cards:
 ```css
 .card {
   width: 200px;
@@ -258,15 +259,17 @@ Above is all the required Javascript code. In the following steps, I will be exp
 const input = document.querySelector("input");
 ```
 
-We create a variable called `input`. This variable holds the content of the search bar we created in our HTML. The  `querySelector` method returns a list of every HTML element with the tag input. Here, we only have one. Later on, the user input can be obtained by using Javascript's `.value` method on the `input` variable.
+We create a variable called `input`. This variable holds the content of the search bar we created in our HTML. The  `querySelector` method returns a list of every HTML element with the tag input. Here, we only have one. 
+
+Later on, the user input can be obtained by using Javascript's `.value` method on the `input` variable.
 
 - Line 3 - 4
 
 ```js
-    const filterFunction = () => {
+const filterFunction = () => {
 ```
 
-We create a new arrow function, `filterFunction` using ES6(ECMAScript 2015) syntax. Inside the function, we create another variable that holds every `card` div. The `filterFunction` function will contain all the logic to filter everything on the page as we wish.
+We create a new arrow function, `filterFunction` using ES6 (ECMAScript 2015) syntax. Inside the function, we create another variable that holds every `card` div. The `filterFunction` function will contain all the logic to filter everything on the page as we wish.
 
 ```js
 const cards = document.querySelectorAll(".card");
@@ -277,7 +280,7 @@ We use `querySelector` as explained before; every element with the class attribu
 - Line 5
 
 ```js
-  cards.forEach((item) => {
+cards.forEach((item) => {
 ```
 
 We then loop through the array returned using the `forEach` method.
@@ -293,10 +296,14 @@ Inside every card, there is a `<p>` tag that holds the letters. line 5 creates a
 - Line 7 - 8
 
 ```js
- if (whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >-1)
+if (whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >-1)
 ```
 
-We then use an `if` statement to check if our search input matches any text in the div's we are searching through. `whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. We use `toUpperCase()` to convert it into a capital letter. We then use `indexOf` to check if the user's input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
+We then use an `if` statement to check if our search input matches any text in the div's we are searching through. 
+
+`whatToSearch.innerHTML` returns the letter inside the `whatToSearch` variable, which is the letter in the `<p>` tag. 
+
+We use `toUpperCase()` to convert it into a capital letter. We then use `indexOf` to check if the user's input value is found within the `whatToSearch` values. If the return value is greater than `-1` it means the search value matched with something, if not greater than `-1` the search value is not in the list.
 
 - Line 9
 
@@ -329,27 +336,21 @@ input.addEventListener("keyup", filterFunction);
 ```
 
 We set a `keyup` event listener on the input which responds when a user releases their hand from the keyboard and the function created in line 3 is called.
-![Demo](/filter-machine-with-vanilla-javascript/congrat.gif)
-
 ### Conclusion
 Below is what we just built, isn't amazing?
 
-![Demo](/filter-machine-with-vanilla-javascript/page.gif)
+![Demo](/engineering-education/filter-machine-with-vanilla-javascript/page.gif)
 
-What you just built can be implemented in various real-life projects and can be improve/ Suggestions on some improvement can be seen below.
+What you just built can be implemented in various real-life projects and can be improved by:
 
-1.  The search bar can be modified by adding more styles to be more outstanding and give a better look
+1.  The search bar can be modified by adding more styles to be more outstanding and give a better look.
+2.  On a shopping cart application, users need to filter out the products to get their choices. This app can be integrated to give access.
+3.  Creativity is the limit of this app as it can be implemented on any application that needs a filter to its elements.
 
-2.  On a shopping cart application, users need to filter out the products to get their choices. This app can be integrated to give access
-
-3.  Creativity is the limit of this app as it can be implemented on any application that needs a filter as its elements.
-
-### Further applications 
-1.  [worldcovid19app-app](https://taiwrash.github.io/worldcovid19cases)
-
-2.  [tech-resumie-app](https://tech-resumie.herokuapp.com)
-
-3.  [Country-list-app-with-filter-enabled](https://lookup-a-country.netlify.app)
+### Further reading
+- [Creating a Responsive Navigation bar Using Tailwind CSS and Javascript](https://www.section.io/engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/)
+- [Documenting JavaScript Code With JSDocs](https://www.section.io/engineering-education/jsdoc-documentation/)
+- [DOM Manipulation with JavaScript](https://www.section.io/engineering-education/dom-manipulation-with-javascript/)
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
