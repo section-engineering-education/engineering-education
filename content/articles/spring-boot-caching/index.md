@@ -1,5 +1,21 @@
-Caching is a mechanism to enhance the performance of a system. It is a temporary memory that lies between the application and the persistent database. Cache memory stores recently used data items, to reduce the number of database hits as much as possible.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-caching/
+title: Getting started with Spring Boot Caching
+description: This tutorial will go over the basics of Spring Boot Caching, what is Caching, why it is needed, and how to implement them.
+author: elizabeth-akinyi
+date: 2021-07-26T00:00:00-21:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/spring-boot-caching/hero.jpg
+    alt: Getting Started with Spring Boot Caching Example Image
+---
+Caching is a mechanism to enhance the performance of a system. It is a temporary memory that lies between the application and the persistent database. Cache memory stores recently used data items, to reduce the number of database hits as much as possible.
+<!--more-->
 Caching of frequently used data in the application is a very popular technique to increase the performance of the application. With caching, we store such frequently accessed data in memory to avoid hitting the backend whenever a user requests the data.
 
 Data access from memory is always faster in comparison to fetching from storage like database, file system, or other service calls.
