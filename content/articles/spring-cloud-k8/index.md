@@ -4,17 +4,16 @@ status: publish
 published: true
 url: /spring-cloud-k8/
 title: Guide to Spring Cloud Kubernetes (K8s)
-description: This tutorial will walk you through the process of creating a Spring Cloud Kubernetes application.  Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
+description: This tutorial will walk the reader through the process of creating a Spring Cloud Kubernetes application. Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
 author: odiwuor-amos
-date: 2021-07-23T00:00:00-10:00
-topics: []
+date: 2021-07-26T00:00:00-11:30
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/spring-cloud-k8/hero.png
     alt: Spring Cloud K8 image
 ---
-
 In this tutorial, we will learn how to use Kubernetes and Spring Cloud to build a micro-service application and integrate it with Spring Boot. Spring Cloud is a Spring module that offers RAD (Rapid Application Development) functionality to the Spring framework.
 <!--more-->
 With the assistance of the Spring Cloud Framework, we can easily create the cloud-based allocation.
@@ -39,23 +38,25 @@ With the assistance of the Spring Cloud Framework, we can easily create the clou
 This tutorial will teach you everything you need to know about Spring Boot micro-services, how to integrate them with Kubernetes, and deploy them on Minikube.  
 
 ### Getting started
-In this tutorial, we'll build a simple agency application that provides services to clients. These clients are provided with a way to query the agency services from time to time. This project will help us understand a few basic concepts such as:
+In this tutorial, we'll build a simple agency application that provides services to clients. These clients are provided with a way to query the agency services from time to time. 
 
+This project will help us understand a few basic concepts such as:
 - Discovering services using the Spring Cloud K8.
 - How to use Spring Cloud K8 Ribbon for load balancing.
 - Concepts of ConfigMaps using Spring Cloud K8-Config.
 
 ### Setting up the project
-In this section, we'll install [Minikube](https://minikube.sigs.k8s.io/docs/start/) locally on our development machine using the `VirtualBox VM driver`. [Section.io](https://www.section.io/engineering-education/introduction-to-kubernetes/) has a pool of content on Kubernetes that will get you started. Feel free to browse or search for K8 related topics on the given link.
+In this section, we'll install [Minikube](https://minikube.sigs.k8s.io/docs/start/) locally on our development machine using the `VirtualBox VM driver`. [Section](/engineering-education/introduction-to-kubernetes/) has a pool of content on Kubernetes that will help get you started. Feel free to browse or search for K8 related topics on the given link.
+
 Let's start by running a single-node Kubernetes cluster as follows: 
 
 ```bash
 minikube start --vm-driver=virtualbox
 ```
 
-What this command does is quite simple, it creates for us a virtual machine, in this case, VirtualBox running a minikube cluster.  
+What this command does is it creates a virtual machine, in our case, VirtualBox is running a minikube cluster.  
 
-Now that we've Minikube running, let's connect it to the dashboard.  
+Now that we have the Minikube running, let's connect it to the dashboard.  
 
 ```bash
 minikube dashboard
@@ -98,7 +99,7 @@ public class ClientController {
 }
 ```
 
-### Creating MongoDB service
+### Creating the MongoDB service
 In this section, we'll define our MongoDB service and a deployment configuration file. First, we need to define the secret username and password for the deployment.
 
 ```yml
@@ -169,10 +170,10 @@ spec:
 
 This deployment configuration file creates a `mongo: latest image`. It also sets the username and password that we created earlier with a default admin database.
 
-### Setting up MongoDB on the Agency Service
+### Setting up MongoDB on the agency service
 Let's start by updating the properties to add the database credentials as shown below:
 
-```properties
+```bash
 # we're updating this properties file with the db-secret that created previously
 spring.cloud.kubernetes.reload.enabled=true
 # setting the secret name
@@ -188,10 +189,10 @@ spring.data.mongodb.username=${MONGO_USERNAME}
 spring.data.mongodb.password=${MONGO_PASSWORD}
 ```
 
-Now that we have understood how this application works, clone the [complete code](https://replit.com/@odiwuoramos/spring-cloud) and test it locally on your machine or play around with the code on the hosting platform.
+Now that we better understand how this application works, we can clone the [complete code](https://replit.com/@odiwuoramos/spring-cloud) and test it locally on our machine or play around with the code on the hosting platform.
 
 ### Deploying Spring Cloud application
-In this section, we explore the spring cloud application deployment. Therefore, we set up our application in the script file as shown below. Each command has a comment that guides you on what it does.   
+In this section, we will explore the Spring Cloud application deployment. Therefore, we set up our application in the script file as shown below. Each command has a comment that guides you on what it does.   
 
 ```bash
 
