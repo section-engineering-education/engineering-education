@@ -129,7 +129,7 @@ To train and evaluate our ML model, we need to use the `setup()` function. The f
 
 ![Training and evaluating our ML classification model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/setup-function-results.PNG)
 
-As shown above, running the code generates information concerning the pre-processing pipeline which is constructed when `setup()` is executed. For example, we have 14 `numeric features` and 9 `categorical features` in our data. In our experiment, we've also used the `session_id = 5041` parameter. It's not a must to use it. We've set ours for later reproducibility. Otherwise, leaving it out will prompt a random number to be generated.
+As shown above, running the code generates information concerning the pre-processing pipeline which is constructed when `setup()` is executed. For example, we have 14 `numeric features` and 9 `categorical features` in our data. In our experiment, we've also used the `session_id = 5041` parameter. We've set ours to attain reproducibility. Using it is not compulsory, but excluding it will prompt a random number to be generated.
 
 With our experiment set up, all that's left to do now is to go on and train the model.
 
