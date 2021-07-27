@@ -106,11 +106,11 @@ When you've completed each of these components, you'll need to register your bot
 
 You may begin by entering [Discord's User Portal](https://discord.com/login?redirect_to=%2Fdevelopers%2Fapplications)
 
-1.	**Creating an Account** - 
+1.	#### Creating an account - 
 
 The initial webpage you'll see is a landing page in which you can either log in by filling in details or with QR Code if you're using an account or make a new one:
 
-![login](./img1.png)
+![login](/engineering-education/how-to-make-a-discord-bot-using-python/img1.png)
 
 Click the Register beneath the login button if you need to establish a new account and fill up your account details.
 
@@ -118,7 +118,7 @@ Click the Register beneath the login button if you need to establish a new accou
 
 When you're done, you'll be taken to the User Portal home page, on which you can start building your application.
 
-2.	**Forming an application**
+2.	#### Forming an application
 
 By establishing authentication tokens, defining privileges, and so forth, an application facilitates communication with Discord's APIs.
 
@@ -126,21 +126,21 @@ To develop a new application, Proceed towards the application's page.
 
 Select **New Application** Button.
 
-![NewApp](./img2.png)
+![NewApp](/engineering-education/how-to-make-a-discord-bot-using-python/img2.png)
 
 Assign a name to the application and then select "Create."
 
-![createApplication](./img3.png)
+![createApplication](/engineering-education/how-to-make-a-discord-bot-using-python/img3.png)
 
 Congratulations! You created a Discord account. You may view details about the application on the screen:
 
-![loggedIn](./img4.png)
+![loggedIn](/engineering-education/how-to-make-a-discord-bot-using-python/img4.png)
 
 Remember that every software that communicates with Discord APIs, not only bots, requires a Discord application. Thus, Bot-related APIs make up a small portion of Discord's overall interface.
 
 Navigate to the "Bot" tab on the left-hand side panel, as this section is about how to build a Discord bot.
 
-3.	**Forming a Bot**
+3.	#### Forming a bot
 
 A bot user listens to and automatically replies to specific events and orders on Discord, as discussed in the preceding parts.
 
@@ -150,7 +150,7 @@ To see your code in action on Discord, you'll require to build a bot user. For t
 
 You'll notice the new bot user in the portal after you confirm by clicking "Yes, do it!".
 
-![bot2](./img6.png)
+![bot2](/engineering-education/how-to-make-a-discord-bot-using-python/img6.png)
 
 It's important to realize that the bot user will preserve the name of your application by default. 
 
@@ -158,7 +158,7 @@ Now that the bot is finally ready to go, where will it go?
 
  If a bot user isn't communicating with other users, it's useless. So you'll then create a guild for your bot so that it may communicate with other people.
 
-4.**Forming a Guild (a Server)**
+4. #### Forming a guild (a server)
 
 A guild (as it's referred to in Discord's user interface) is a collection of routes where members may communicate.
 
@@ -168,13 +168,13 @@ Now, go to your Discord home (link) page and establish a guild:
 
 You may see and connect with friends, direct messages, and guilds through this home page. To Add a Server, click the "+" button from the left side panel of the web page:
 
-![AddFriend](./img7.png)
+![AddFriend](/engineering-education/how-to-make-a-discord-bot-using-python/img7.png)
 
 On the upcoming screen, select "Create a server" and give the server a name. Then, you can interact with yourself or request some people to communicate with you after the server is up and running. We'll be inviting our bot to communicate with us soon. 
 
 You'll be able to view the users on the right side and the channels on the left panel when you've done building your guild:
 
-![screen](./img8.png)
+![screen](/engineering-education/how-to-make-a-discord-bot-using-python/img8.png)
 
 Further, the final stage is to register the bot with the new guild at Discord.
 
@@ -183,7 +183,7 @@ Further, the final stage is to register the bot with the new guild at Discord.
 The bot's programming will be written in Python using the discord.py package. discord.py is a Discord API wrapper that makes creating a Discord bot in Python much more effortless.
 
 
-#### **Installing** `discord.py`  and creating a Repl
+#### Installing `discord.py`  and creating a Repl
 
 Any coding editor may be used to create the bot on your PC. However, we'll utilize Repl.it in this tutorial as it makes things easier for anybody to follow along. Repl.it is a web-based IDE.
 
@@ -205,7 +205,7 @@ The structure of events is central to `discord.py`. An event is anything to whic
 
 Let's build a bot that responds to a given phrase. This simple bot code is derived from the discord.py manual, as is the [documentation](https://discordpy.readthedocs.io/en/latest/quickstart.html#a-minimal-bot). Later on, we'll add more functionality to the bot.
 
-This code should be added to main.py. (You may rename the file to whatever you like, don't call it discord.py.)
+This code should be added to main.py. (You may rename the file to whatever you like, don't call it discord.py since discord.py is a library we installed before, and naming the folder the same as the library may cause confusion. )
 ```python
 import discord
 import os
@@ -286,6 +286,8 @@ We conclude from the above tutorial that you have learned the following:
 - How to deal with the unexpected situation
 
 - What are the different Discord APIs, and how can I use them?
+
+-For the reference of the code, you may refer to this [link](https://replit.com/@harshitabansal1/DISCORD-BOT#main.py)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
