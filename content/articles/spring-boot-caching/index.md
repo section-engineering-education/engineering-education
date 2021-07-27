@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /spring-boot-caching/
 title: Getting started with Spring Boot Caching
-description: This tutorial will go over the basics of Spring Boot Caching, what is Caching, why it is needed, and how to implement them.
+description: This tutorial will go over the basics of Spring Boot Caching, what Caching is, why it's needed, and how to implement it.
 author: elizabeth-akinyi
-date: 2021-07-26T00:00:00-21:00
+date: 2021-07-27T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/spring-boot-caching/hero.jpg
     alt: Getting Started with Spring Boot Caching Example Image
 ---
-Caching is a mechanism to enhance the performance of a system. It acts as a temporary memory that between the application and the persistent database. Cache memory stores only the recently used data items that helps to reduce the number of database hits as much as possible.
+Caching is a mechanism used to enhance the performance of a system. It acts as a temporary memory that between the application and the persistent database.
 <!--more-->
-Caching of frequently used data in the application is a very popular technique to increase the performance of the application by avoiding the backend hits whenever a user requests the data.
+Cache memory stores only the recently used data items. This helps to reduce the number of database hits as much as possible.
 
-Data access from in-memory is always faster than fetching from external storage like database, file system, or other service calls.
+Data access from in-memory is always faster than fetching from an external storages like databases, file systems, or other service calls.
 
-We can set up a cache in a Spring Boot application using any of these technologies like Hazelcast, Ehcache, or Redis. They are cache providers, since they provide a key-data to store the cached data.
+We can set up a cache in a Spring Boot application using technologies like Hazelcast, Ehcache, or Redis. They are cache providers, since they provide a key-data to store the cached data.
 
 In this article, we will learn how to implement a cache in a Spring Boot REST application using Ehcache as the cache provider. We are going to build a `Todo` REST APIs then add cache capabilities to the REST endpoints.
 
@@ -32,10 +32,9 @@ In this article, we will learn how to implement a cache in a Spring Boot REST ap
 - [Service layer](#service-layer)
 - [Controller layer](#controller-layer)
 - [Configuration layer](#configuration-layer)
-- [CRUD operations in cache](#crud-operations-in-cache)
-  - [Adding data into the Cache](#adding-data-into-the-cache)
-  - [Updating data in the cache](#updating-data-in-the-cache)
-  - [Deleting data from the cache](#deleting-data-from-the-cache)
+- [Adding data into the Cache](#adding-data-into-the-cache)
+- [Updating data in the cache](#updating-data-in-the-cache)
+- [Deleting data from the cache](#deleting-data-from-the-cache)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -47,13 +46,13 @@ We are going to use [Spring Initializr](https://start.spring.io/) to bootstrap o
 
 1. Visit [Spring Initializr](https://start.spring.io/), and enter the project name as `SpringBootCaching`.
 2. Add `Spring Web`, `H2 database`, `Spring data JPA`, and `Lombok` as project dependencies.
-3. Click on `Generate Project` button to download the project boilerplate code as a `zip` file.
+3. Click on the `Generate Project` button to download the project boilerplate code as a `zip` file.
 4. Extract the `zip` file and open the uncompressed files in your favorite IDE.
 5. In the `pom.xml` file in the dependencies section, add a few more dependencies as shown below:
 
 ```xml
 <dependencies>
-    <dependency
+    <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-cache</artifactId>
     </dependency>
@@ -70,11 +69,11 @@ We are going to use [Spring Initializr](https://start.spring.io/) to bootstrap o
 </dependencies>
 ```
 
-The above dependencies add `spring-boot-starter-cache`, an abstraction layer implemented by Spring for cache manipulation and `Ehcache` is the cache provider that we would be using in our application.
+The above dependencies add `spring-boot-starter-cache`, an abstraction layer implemented by Spring for cache manipulation and `Ehcache` as the cache provider that we will use in our application.
 
 ### Domain layer
 1. Create a package named `domain` in the root folder.
-2. Create a Java file named `Todo.java` and add the code snippet as shown below:
+2. Create a Java file named `Todo.java` and add the code below:
 
 ```java
 @Entity // Makes this class to be a JPA entity
@@ -102,7 +101,7 @@ In the above code snippet, we create a `Todo` model that will hold an instance o
 
 ### Repository layer
 1. Create a new package named `repository` in the root project package.
-2. Create a new Java interface named `TodoRepository` in the `repository` package created above. And, add the code snippet below:
+2. Create a new Java interface named `TodoRepository` in the `repository` package created above. Add the code snippet below:
 
 ```java
 public interface TodoRepository extends JpaRepository<Todo, Long> {
@@ -128,7 +127,7 @@ public interface TodoService {
 }
 ```
 
-In the `service` package, create a new Java file named `TodoServiceIml.java` and add the code snippet below:
+In the `service` package, create a new Java file named `TodoServiceImpl.java` and add the code snippet below:
 
 ```java
 @Service
@@ -174,7 +173,7 @@ public class TodoServiceImpl implements TodoService {
 1. Create a new package named `controllers` in the root project package.
 2. In the `controllers` package, create a new file named `TodoController.java`.
 
-Add the below code snippet to `TodoController.java` file:
+Add the code snippet below in the `TodoController.java` file:
 
 ```java
 @RestController
@@ -217,7 +216,7 @@ Run the application to confirm that everything is working as expected.
 ### Configuration layer
 Now that we have a fully functional CRUD REST API application, we are going to learn how to add cache support in our application.
 
-To add cache support to our application, we need to create a configuration class to enable caching.
+First, we need to create a configuration class to enable caching.
 
 1. In the root project package, create a new package named `config`.
 2. In the `config` package created above, create a new Java file named `CacheConfig.java`.
@@ -283,7 +282,7 @@ public List<Todo> getAllTodos() {
 }
 ```
 
-The above method returns a list of `todos`. Here, it is annotated with ` @Cacheable(cacheNames = "todos")` annotation. That grabs the data returned from this method and stores them in a cache with key `todos`.
+The above method returns a list of `todos`. Here, it is annotated with ` @Cacheable(cacheNames = "todos")` annotation. This grabs the data returned from this method and stores them in a cache with key `todos`.
 
 > Data in the cache is stored in a key-value pattern. The key is the name stored in the cacheName variable while the value is the data that is returned by the method annotated with @Cacheable annotation.
 
@@ -340,9 +339,11 @@ To delete data from the cache, we use the `@CacheEvict` annotation by passing th
 > To delete all items from the cache, we set the attribute `allEntries` to true.
 
 ### Conclusion
-Based on what we have learned, caching reduces the number of reads and writes operations on the database. In the case where a paid cloud database is used like Google Cloud SQL, the billing will be based on the read and write operations on the database. With the reduced number of read and write operations, the cost of using the managed database can be reduced.
+Based on what we have learned, caching reduces the number of reads and writes operations on the database. In the case where a paid cloud database is used like Google Cloud SQL, the billing will be based on the read and write operations on the database. 
 
-Now that you have learned how to add caching to a Spring Boot application, implement caching in your applications to reduce unnecessary database queries. You can download the complete source code [here](https://replit.com/@elizabeth962/springbootcache#).
+With reduced number of read and write operations, the cost of using the managed database can be reduced.
+
+Now that you have learned how to add caching to a Spring Boot application, implement caching in other applications. You can download the complete source code [here](https://replit.com/@elizabeth962/springbootcache#).
 
 To learn more about Ehcache, read the documentation [here](https://www.ehcache.org).
 
