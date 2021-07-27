@@ -38,7 +38,7 @@ Kafka is referred to as a distributed application. Kafka will be referred to as 
 
 Unlike the traditional HTTP networks, a Kafka cluster is fault-tolerant. The system will still operate whenever one component fails. Furthermore, Kafka can replicate data across several brokers. When a producer produces a message, Kafka will use a replication factor to publish these messages across different Kafka brokers.
 
-In each broker, messages are stored as a topic. Topics can be divided into partitions, and the message goes into a partition. We can tell Kafka to store copies of that message on separate brokers in different partitions. This way, when a broker dies, messages are not lost. 
+In each broker, messages are stored as a topic. Topics can be divided into partitions, and the message goes into a partition. We can tell Kafka to store copies of that message on separate brokers in different partitions. This way, when a broker dies, messages are not lost.
 
 In addition, an interested consumer can subscribe to these topics and start receiving messages in order with an index number assigned to each message. Furthermore, if the consumer fails or crashes, it can use the index number to retry and continue where it left off.
 
@@ -182,7 +182,7 @@ docker-compose down
 ### Conclusion
 As you move messages from point A to point B, the Kafka broker is useful for data replication. Kafka is built on a high-performance architecture that ensures low latency, scalability, and throughput. Event streaming and processing systems rely on Kafka as their backbone. This ensures system health by providing unified real-time data feeds.
 
-Some of the everyday use cases of Kafka include daily news feeds, such as the New York Times. It stores and distributes real-time news to its readers using Apache Kafka streams. Messaging applications, LinkedIn, for example, is estimated to process five trillion messages per day. 
+Some of the everyday use cases of Kafka include daily news feeds, such as the New York Times. It stores and distributes real-time news to its readers using Apache Kafka streams. Messaging applications, LinkedIn, for example, is estimated to process five trillion messages per day.
 
 Kafka is used by Netflix for both real-time monitoring and event processing. Kafka is used by Cloudflare for log processing and analytics pipelines. They can now collect hundreds of billions of events from various servers. Uber, Adidas, PayPal, Cisco, and Pinterest, to name a few, are among the companies that use Kafka.
 
