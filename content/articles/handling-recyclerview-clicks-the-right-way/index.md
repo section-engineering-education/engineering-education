@@ -29,7 +29,7 @@ To follow along with this tutorial, the reader should:
 
 ## Topics Covered
 
-- An Overview of what a `RecyclerView` is.  
+- An Overview of what a `RecyclerView` is.
 - `ListAdapter` and `DiffUtil`
 - Handling clicks in a `RecyclerView`
 
@@ -63,9 +63,9 @@ In this step, we will create a new project, , you can refer to the image below f
 
 ### Step 2: Adding Dependencies
 
-After creating the project, we will add the some dependencies to our app-level build Gradle
+After creating the project, we will add some dependencies to our app-level build Gradle
 
-Retrofit will help us in making an API call.
+Retrofit will help us in making an API calls to the URL.
 GsonConverter will play the role of converting JSON strings to Java objects.
 
 ```gradle
@@ -84,15 +84,16 @@ GsonConverter will play the role of converting JSON strings to Java objects.
   kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 ```
 
-Also enable `ViewBinding` in the app level build.gradle `gradle buildFeatures{ viewBinding true } `
+Make sure to also enable `ViewBinding` in the app level build.gradle `gradle buildFeatures{ viewBinding true } `
 
 `ViewBinding` generates a Java class that replaces findViewById in your code.
 
 ### Step 3: XML Layouts
-In this step, we will create layouts for both the recycler row and the main layout
 
-First, we'll design recycler row which will have an `ImageView` that will display Meme photo and also a `TextView` to display Meme name.
-Secondly, we will design for the main activity. It will have a `RecyclerView`, a `ProgressBar`, and a `TextView` that will set display an error when our API call fails.
+In this step, we will create layouts for both the recycler row and the main layout.
+
+First, we'll design the recycler row which will have an `ImageView` that will display the meme photo and also a `TextView` to display the meme name.
+Next, we will design the main activity. It will have a `RecyclerView`, a `ProgressBar`, and a `TextView` that will display an error when our API call fails.
 
 #### Recycler Row Layout
 
@@ -188,7 +189,8 @@ Secondly, we will design for the main activity. It will have a `RecyclerView`, a
 ```
 
 ### Step 4: Model Class
-In this step, we will come up with our model class on which we are only interested with the Meme name (name) and the Meme image (url).For now we'll ignore the rest of the attributes.
+
+In this step, we will come up with our model class where we are only interested with the Meme name (`name`) and the Meme image (`url`).For now we'll ignore the rest of the attributes.
 
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
@@ -224,9 +226,9 @@ data class Meme(
 
 ```
 
-
 ### Step 5: Api Service Class
-In this step, we will design our ApiService to make the API call with Retrofit. Our base URL will be https://api.imgflip.com/ and the endpoint will be ```get_memes```
+
+In this step, we will design our ApiService to make the API call with Retrofit. Our base URL will be `https://api.imgflip.com/` and the endpoint will be `get_memes`
 
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
@@ -257,10 +259,9 @@ object MemesApi {
 
 ### Step 6: RecyclerView Adapter Class
 
-Here, we will create our Adapter class that will do all the clicks operations
+In this step, we will create our Adapter class that will do all the clicks operations.
 
-
-First we create a class called `OnClickListener` that takes in a lambda with one Meme item as a parameter in its Constructor. This class contains a matching function called `onClick`. It will set to the lambda's parameter. All this creates a sort of named lambda
+First, we create a class called `OnClickListener` that takes in a lambda with one Meme item as a parameter in its Constructor. This class contains a matching function called `onClick`. It will set to the lambda's parameter. All this creates a sort of named lambda
 
 ```kotlin
 class OnClickListener(val clickListener: (meme: Meme) -> Unit) {
@@ -275,7 +276,6 @@ class MemesAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Meme, MemesAdapter.MyViewHolder>(MyDiffUtil)
 ```
 
-
 Finally on this class, we'll finish by calling our `onClickListener` inside `onBindViewHolder`
 
 ```kotlin
@@ -283,7 +283,6 @@ holder.itemView.setOnClickListener {
             onClickListener.onClick(meme)
 }
 ```
-
 
 #### Here is the whole class implementation
 
@@ -347,7 +346,8 @@ class MemesAdapter(private val onClickListener: OnClickListener) :
 ```
 
 ### Step 7: ViewModel Class
-This class will contain codes that will survive configuration changes i.e screen rotation. Particulary, it has function that will do the network call to the API.
+
+Next, we will create a ViewModel class which will contain codes that will survive configuration changes i.e screen rotation. Particulary, it has a function that will perform the network call to the API.
 
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
@@ -461,7 +461,7 @@ Check out the entire project on [GitHub](https://github.com/JoelKanyi/RecyclerVi
 
 That's not all about `Recyclerviews` clicks, keep exploring. Through this article, I hope you have got an idea of how to handle clicks on your `Recyclerviews`.
 
-Keep skilling up and happy coding!!!
+Keep upskilling and happy coding!!!
 
 ### Resources
 
