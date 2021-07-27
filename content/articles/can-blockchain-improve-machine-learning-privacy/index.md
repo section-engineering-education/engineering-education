@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /can-blockchain-improve-machine-learning-privacy/hero.png
+  - url: /engineering-education/can-blockchain-improve-machine-learning-privacy/hero.png
     alt: ML Privacy image
 ---
 Machine Learning algorithms have thrived in the era of big data. But to use data safely and effectively, we have to take privacy into account when developing Machine Learning systems.
