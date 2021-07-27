@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url:
+title:
+description: In this tutorial, we will learn how to build a beautiful weather app using OpenWeatherMap API.
+author:
+date:
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/hero.jpg
+    alt: Weather-api
+---
+
 Have you ever wanted to create a fully functional weather website in Node.js? Do you need an application that can show you weather forecasts instantly in clicks? If you are one of them, you are in the right place.
 Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. In this tutorial, we will learn how to build a beautiful weather app using OpenWeatherMap API.
 
@@ -51,7 +67,7 @@ Visit [https://openweathermap.org/](https://openweathermap.org/ "https://openwea
 Click on your account name link found on the top right side of the navigation bar. On the drop-down menu, select 'My API keys'. You can generate one with a new name or use the default one provided.
 **Make sure that it is not seen by anyone for security reasons**. Also, don't save it directly in your application.
 
-> In case of any invalid '*Invalid API key*' error, you can create a new key and save it for use. One that has never been used before.
+> In case of any invalid '_Invalid API key_' error, you can create a new key and save it for use. One that has never been used before.
 
 ### Setup the project
 
@@ -61,9 +77,9 @@ Create a new directory, which will be our root directory named 'Weather' and in 
 npm init -y
 ```
 
-This quickly accepts all the default options in the Terminal dialogue. It creates a new configuration file called 'package.json' in the root directory.
+This command accepts all the default options in the Terminal dialogue. It creates a new configuration file called `package.json` in the root directory.
 
-Create a new folder named 'views' and in it, a file named 'index.ejs'. This will allow us to view the results using the 'ejs' view engine. Create another folder in the root directory named 'public' and in it another folder called 'css'. Create files in the root directory named '.env' and 'server.js' respectively. The project structure will be as shown below.
+Next, create a new folder named 'views' and in it, a file named 'index.ejs'. This will allow us to view the results using the 'ejs' view engine. Create another folder in the root directory named 'public' and in it another folder called `css`. Create files in the root directory named `.env` and `server.js` respectively. The project structure will be as shown below.
 
 #### Folder Structure
 
@@ -80,11 +96,11 @@ Create a new folder named 'views' and in it, a file named 'index.ejs'. This will
 └── server.js (File)
 ```
 
-We shall now modify our files as follow:
+We shall now modify our files as follows:
 
 #### Install dependencies
 
-The following are our required dependencies:
+The following are the dependencies we will need for the project:
 
 - **express:** This shall help us in routings.
 - **dotenv:** This will help us to hide our API secret key.
@@ -103,14 +119,16 @@ npm i express dotenv body-parser request ejs
 Open the file and in it add a start script as follows:
 
 ```json
+...
         "scripts": {
             "start": "node server.js",
             "test": "echo \"Error: no test specified\" && exit 1"
-        
+
         },
+...
 ```
 
-Our code shall look as follows:
+Our complete `package.json` should look like this:
 
 ```json
 {
@@ -223,19 +241,19 @@ Our code shall look as follows:
 We shall do the following in our code:
 
 - Require node_modules
-These are the ones which we had installed in our application as shown below:
+  These are the ones which we had installed in our application as shown below:
 
 ```javascript
 // Require node_modules
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const request = require('request');
+const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
 const app = express();
 
 // Configure dotenv package
 
-require('dotenv').config();
+require("dotenv").config();
 ```
 
 - Set up our API KEY, express app, and body-parser configurations, and our javascript template view engine
@@ -248,19 +266,18 @@ const apiKey = `${process.env.API_KEY}`;
 // Setup our express app and body-parser configurations
 // Setup our javascript template view engine
 // we shall serve our static pages from the public directory, it will act as our root directory
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 ```
 
 - Setup our default display on launch
 
 ```javascript
 // Setup our default display on launch
-app.get('/', function(req, res) {
-
-    // It shall not fetch and display any data in the index page
-    res.render('index', { weather: null, error: null });
+app.get("/", function (req, res) {
+  // It shall not fetch and display any data in the index page
+  res.render("index", { weather: null, error: null });
 });
 ```
 
@@ -269,121 +286,159 @@ app.get('/', function(req, res) {
 
 ```javascript
 // On a post request, the app shall data from OpenWeatherMap using the given arguments
-app.post('/', function(req, res) {
+app.post("/", function (req, res) {
+  // Get city name passed in the form
+  let city = req.body.city;
 
-    // Get city name passed in the form
-    let city = req.body.city;
+  // Use that city name to fetch data
+  // Use the API_KEY in the '.env' file
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-    // Use that city name to fetch data
-    // Use the API_KEY in the '.env' file
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  // Request for data using the URL
+  request(url, function (err, response, body) {
+    // On return, check the json data fetched
+    if (err) {
+      res.render("index", { weather: null, error: "Error, please try again" });
+    } else {
+      let weather = JSON.parse(body);
 
-    // Request for data using the URL
-    request(url, function(err, response, body) {
+      // We shall output it in the console just to make sure that the data being displayed is what we want
+      console.log(weather);
 
-        // On return, check the json data fetched
-        if (err) {
-            res.render('index', { weather: null, error: 'Error, please try again' });
-        } else {
-            let weather = JSON.parse(body);
+      if (weather.main == undefined) {
+        res.render("index", {
+          weather: null,
+          error: "Error, please try again",
+        });
+      } else {
+        // we shall use the data got to set up our output
+        let place = `${weather.name}, ${weather.sys.country}`,
+          /* We shall calculate the current timezone using the data fetched*/
+          weatherTimezone = `${new Date(
+            weather.dt * 1000 - weather.timezone * 1000
+          )}`;
+        let weatherTemp = `${weather.main.temp}`,
+          weatherPressure = `${weather.main.pressure}`,
+          /* We shall fetch the weather icon and its size using the icon data*/
+          weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
+          weatherDescription = `${weather.weather[0].description}`,
+          humidity = `${weather.main.humidity}`,
+          clouds = `${weather.clouds.all}`,
+          visibility = `${weather.visibility}`,
+          main = `${weather.weather[0].main}`,
+          weatherFahrenheit;
+        weatherFahrenheit = (weatherTemp * 9) / 5 + 32;
 
-            // We shall output it in the console just to make sure that the data being displayed is what we want
-            console.log(weather);
+        // We shall also round off the value of the degrees fahrenheit calculated into two decimal places
+        function roundToTwo(num) {
+          return +(Math.round(num + "e+2") + "e-2");
+        }
+        weatherFahrenheit = roundToTwo(weatherFahrenheit);
 
-            if (weather.main == undefined) {
-                res.render('index', { weather: null, error: 'Error, please try again' });
+        // We shall now render the data to our page (index.ejs) before displaying it out
+        res.render("index", {
+          weather: weather,
+          place: place,
+          temp: weatherTemp,
+          pressure: weatherPressure,
+          icon: weatherIcon,
+          description: weatherDescription,
+          timezone: weatherTimezone,
+          humidity: humidity,
+          fahrenheit: weatherFahrenheit,
+          clouds: clouds,
+          visibility: visibility,
+          main: main,
+          error: null,
+        });
+        // On a post request, the app shall data from OpenWeatherMap using the given arguments
+        app.post("/", function (req, res) {
+          // Get city name passed in the form
+          let city = req.body.city;
+
+          // Use that city name to fetch data
+          // Use the API_KEY in the '.env' file
+          let url = `http://api.openwea and displaythermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+          // Request for data using the URL
+          request(url, function (err, response, body) {
+            // On return, check the json data fetched
+            if (err) {
+              res.render("index", {
+                weather: null,
+                error: "Error, please try again",
+              });
             } else {
+              let weather = JSON.parse(body);
+
+              // We shall output it in the console just to make sure that the data being displayed is what we want
+              console.log(weather);
+
+              if (weather.main == undefined) {
+                res.render("index", {
+                  weather: null,
+                  error: "Error, please try again",
+                });
+              } else {
                 // we shall use the data got to set up our output
                 let place = `${weather.name}, ${weather.sys.country}`,
-                    /* We shall calculate the current timezone using the data fetched*/
-                    weatherTimezone = `${new Date(weather.dt * 1000 - (weather.timezone * 1000))}`;
+                  /* We shall calculate the current timezone using the data fetched*/
+                  weatherTimezone = `${new Date(
+                    weather.dt * 1000 - weather.timezone * 1000
+                  )}`;
                 let weatherTemp = `${weather.main.temp}`,
-                    weatherPressure = `${weather.main.pressure}`,
-                    /* We shall fetch the weather icon and its size using the icon data*/
-                    weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
-                    weatherDescription = `${weather.weather[0].description}`,
-                    humidity = `${weather.main.humidity}`,
-                    clouds = `${weather.clouds.all}`,
-                    visibility = `${weather.visibility}`,
-                    main = `${weather.weather[0].main}`,
-                    weatherFahrenheit;
-                weatherFahrenheit = ((weatherTemp * 9 / 5) + 32);
+                  weatherPressure = `${weather.main.pressure}`,
+                  /* We shall fetch the weather icon and its size using the icon data*/
+                  weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
+                  weatherDescription = `${weather.weather[0].description}`,
+                  humidity = `${weather.main.humidity}`,
+                  clouds = `${weather.clouds.all}`,
+                  visibility = `${weather.visibility}`,
+                  main = `${weather.weather[0].main}`,
+                  weatherFahrenheit;
+                weatherFahrenheit = (weatherTemp * 9) / 5 + 32;
 
                 // We shall also round off the value of the degrees fahrenheit calculated into two decimal places
                 function roundToTwo(num) {
-                    return +(Math.round(num + "e+2") + "e-2");
+                  return +(Math.round(num + "e+2") + "e-2");
                 }
                 weatherFahrenheit = roundToTwo(weatherFahrenheit);
 
                 // We shall now render the data to our page (index.ejs) before displaying it out
-                res.render('index', { weather: weather, place: place, temp: weatherTemp, pressure: weatherPressure, icon: weatherIcon, description: weatherDescription, timezone: weatherTimezone, humidity: humidity, fahrenheit: weatherFahrenheit, clouds: clouds, visibility: visibility, main: main, error: null });
-     // On a post request, the app shall data from OpenWeatherMap using the given arguments
-app.post('/', function(req, res) {
-
-    // Get city name passed in the form
-    let city = req.body.city;
-
-    // Use that city name to fetch data
-    // Use the API_KEY in the '.env' file
-    let url = `http://api.openwea and displaythermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-    // Request for data using the URL
-    request(url, function(err, response, body) {
-
-        // On return, check the json data fetched
-        if (err) {
-            res.render('index', { weather: null, error: 'Error, please try again' });
-        } else {
-            let weather = JSON.parse(body);
-
-            // We shall output it in the console just to make sure that the data being displayed is what we want
-            console.log(weather);
-
-            if (weather.main == undefined) {
-                res.render('index', { weather: null, error: 'Error, please try again' });
-            } else {
-                // we shall use the data got to set up our output
-                let place = `${weather.name}, ${weather.sys.country}`,
-                    /* We shall calculate the current timezone using the data fetched*/
-                    weatherTimezone = `${new Date(weather.dt * 1000 - (weather.timezone * 1000))}`;
-                let weatherTemp = `${weather.main.temp}`,
-                    weatherPressure = `${weather.main.pressure}`,
-                    /* We shall fetch the weather icon and its size using the icon data*/
-                    weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
-                    weatherDescription = `${weather.weather[0].description}`,
-                    humidity = `${weather.main.humidity}`,
-                    clouds = `${weather.clouds.all}`,
-                    visibility = `${weather.visibility}`,
-                    main = `${weather.weather[0].main}`,
-                    weatherFahrenheit;
-                weatherFahrenheit = ((weatherTemp * 9 / 5) + 32);
-
-                // We shall also round off the value of the degrees fahrenheit calculated into two decimal places
-                function roundToTwo(num) {
-                    return +(Math.round(num + "e+2") + "e-2");
-                }
-                weatherFahrenheit = roundToTwo(weatherFahrenheit);
-
-                // We shall now render the data to our page (index.ejs) before displaying it out
-                res.render('index', { weather: weather, place: place, temp: weatherTemp, pressure: weatherPressure, icon: weatherIcon, description: weatherDescription, timezone: weatherTimezone, humidity: humidity, fahrenheit: weatherFahrenheit, clouds: clouds, visibility: visibility, main: main, error: null });
+                res.render("index", {
+                  weather: weather,
+                  place: place,
+                  temp: weatherTemp,
+                  pressure: weatherPressure,
+                  icon: weatherIcon,
+                  description: weatherDescription,
+                  timezone: weatherTimezone,
+                  humidity: humidity,
+                  fahrenheit: weatherFahrenheit,
+                  clouds: clouds,
+                  visibility: visibility,
+                  main: main,
+                  error: null,
+                });
+              }
             }
-        }
-    });
-});       }
-        }
-    });
+          });
+        });
+      }
+    }
+  });
 });
 ```
 
 > **Note:** You can fetch and display much data as you will need in your project as needed in the json received.
 
 - Set up our port configurations
-  We shall utilize port 5000 for our project which can be accessed on `localhost:5000`.
+  We shall utilize port 5000 for our project which can be accessed on `http://localhost:5000`.
 
 ```javascript
 // We shall set up our port configurations
-app.listen(5000, function() {
-    console.log('Weather app listening on port 5000!');
+app.listen(5000, function () {
+  console.log("Weather app listening on port 5000!");
 });
 ```
 
@@ -400,37 +455,58 @@ This is what we shall be doing in the 'index.ejs' file:
 - Create a new bootstrap boilerplate. Link the 'css' file that shall be found inside the 'css' folder. In it we shall also change the site's title to 'Weather' and add a favicon to it from a url as shown in the code below:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Weather</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
     <!-- Use some of the bootstrap CSS and google fonts to quicken the process -->
     <!-- We shall also add a favicon -->
-    <link rel="shortcut icon" href="https://img.icons8.com/office/16/000000/sunset--v2.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/office/16/000000/sunset--v2.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-    
-
-
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</body>
-
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
 ```
 
@@ -532,87 +608,85 @@ This shall be our css fomart:
 
 ```css
 body {
-    width: auto;
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
+  width: auto;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
 }
-
 
 /* This will format the whole fieldset content*/
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
-
 
 /* This will format the whole fieldset content*/
 
 fieldset {
-    display: block;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-before: 0em;
-    -webkit-padding-start: 0em;
-    -webkit-padding-end: 0em;
-    -webkit-padding-after: 0em;
-    border: 0px;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    min-width: -webkit-min-content;
-    padding: 30px;
+  display: block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0em;
+  -webkit-padding-start: 0em;
+  -webkit-padding-end: 0em;
+  -webkit-padding-after: 0em;
+  border: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  min-width: -webkit-min-content;
+  padding: 30px;
 }
 
 .ghost-input,
 p {
-    display: block;
-    font-weight: 300;
-    width: 100%;
-    font-size: 25px;
-    border: 0px;
-    outline: none;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #4b545f;
-    background: #fff;
-    font-family: Open Sans, Verdana;
-    padding: 10px 15px;
-    margin: 30px 0px;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  display: block;
+  font-weight: 300;
+  width: 100%;
+  font-size: 25px;
+  border: 0px;
+  outline: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #4b545f;
+  background: #fff;
+  font-family: Open Sans, Verdana;
+  padding: 10px 15px;
+  margin: 30px 0px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .ghost-input:focus {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .ghost-button {
-    background-color: transparent;
-    border: 2px solid #ddd;
-    padding: 10px 30px;
-    width: 100%;
-    min-width: 350px;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  background-color: transparent;
+  border: 2px solid #ddd;
+  padding: 10px 30px;
+  width: 100%;
+  min-width: 350px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .ghost-button:hover {
-    border: 2px solid #515151;
+  border: 2px solid #515151;
 }
 
 p {
-    color: #E64A19;
+  color: #e64a19;
 }
 ```
 
@@ -669,5 +743,5 @@ You can access more data from the OpenWeatherMap site. This can be useful to cus
 
 ### References
 
-- [Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by *Quinter Awuor
+- [Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by \*Quinter Awuor
 - [OpenWeatherMap website](https://openweathermap.org/).
