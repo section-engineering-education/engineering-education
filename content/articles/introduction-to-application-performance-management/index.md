@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-application-performance-management/hero.jpg
+  - url: /engineering-education/introduction-to-application-performance-management/hero.jpg
     alt: APM example image
 ---
 Application performance management (APM) ensures maximum application output is achieved with minimum inconveniences. It collects the application's data, analyses it to identify potential problems, and measures its performance.
