@@ -25,7 +25,7 @@ It will also equip the reader how one can configure the router to able to depict
 - [Terminologies.](#terminologies)
 - [Steps in Configuring Cisco IOS DHCPv4 Server.](#steps-in-configuring-cisco-ios-dhcpv4-server)
   - [Step 1. Router Configurations.](#step-1-router-configurations)
-  - [Step 2. Create a dhcp server pool.](#step-2-create-a-dhcp-server-pool)
+  - [Step 2. Create a DHCP server pool.](#step-2-create-a-dhcp-server-pool)
   - [Step 3. Exclude IP addresses.](#step-3-exclude-ip-addresses)
 - [DHCP Server Verification.](#dhcp-server-verification)
 - [DHCP Server Router Testing](#dhcp-server-router-testing)
@@ -198,6 +198,6 @@ To summarize:
 - We configured a network, verified and configured the routers to perform the DHCP server functions.
 - We learned how to enable and disable the DHCP server on the network.
 
-One can find more information about  DHCP-router configuration [here](https://contenthub.netacad.com/srwe/7.2.1).
+One can find more information about  DHCP-router configuration [here](https://www.cisco.com/en/US/docs/ios/12_4t/ip_addr/configuration/guide/htdhcpsv.html).
 
 Happy coding.
