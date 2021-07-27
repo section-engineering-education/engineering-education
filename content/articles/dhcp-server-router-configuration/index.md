@@ -18,6 +18,7 @@ Network administrators have automated configuring and assigning IP addresses to 
 <!--more-->
 This article will cover how one can use the routers on the network to act as DHCP servers in assigning and managing the IP addresses to various DHCP clients.
 It will also equip the reader how one can configure the router to able to depict the functionalities of a DHCP server.
+
 ### Table of contents
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -47,6 +48,7 @@ To download and install the Cisco packet tracer on a desktop or laptop, visit [t
 
 ### Steps in Configuring Cisco IOS DHCPv4 Server.
 Consider the local network connection below.
+
 ![LAN Configuration](/engineering-education/dhcp-server-router-configuration/dhcp-server-connection.jpg)
 
 #### Step 1. Router Configurations.
@@ -181,6 +183,7 @@ After the configuration, we'll try again to assign each client an IP address by 
 ![Success DHCP Configuration](/engineering-education/dhcp-server-router-configuration/success-dhcp.jpg)
 
 We can also try to test the communication between two clients on the same subnet using the `ping` command. Our network, PC5 can communicate with PC4 using the assigned IP addresses as shown.
+
 ![Ping Network Configuration](/engineering-education/dhcp-server-router-configuration/ping-dhcp.jpg)
 
 >**NOTE: From the IP addresses assigned it is evident that the DHCP server assigned addresses from .11 excluding the IP addresses from .1 to .10 and .50 which were among the excluded addresses.**
