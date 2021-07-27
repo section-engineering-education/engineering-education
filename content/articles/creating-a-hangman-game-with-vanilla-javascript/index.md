@@ -4,23 +4,28 @@ status: publish
 published: true
 url: /creating-a-hangman-game-with-vanilla-js/
 title: How to create a Hangman game with Vanilla JS
-description: This article will guide you on how to build a simple Hangman game using vanilla JavaScript. This project is suitable for beginners since it allows you to gain crucial skills and knowledge.
+description: This article will guide you on how to build a simple Hangman game using vanilla JavaScript. This project is suitable for beginners.
 author: doro-onome
-date: 2021-07-25T00:00:00-10:00
+date: 2021-07-27T00:00:00-00:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/creating-a-hangman-game-with-vanilla-js/hero.jpg
     alt: Game Hangman JavaScript JS Vanilla Example Image
 ---
-The Hangman game is a word-guessing game where one player picks a secret word, and the other player tries to guess it. In this article, I will take you through building a simple Hangman game using vanilla JavaScript and more importantly, how I made it accessible to players who navigate with their keyboards, without using any frameworks.
+
+The Hangman game is a word-guessing game where one player picks a secret word, and the other player tries to guess it.
 <!--more-->
+In this article, I will take you through building a simple Hangman game using vanilla JavaScript and more importantly, how to make it accessible to players who navigate with their keyboards, without using any frameworks.
+
 ### Prerequisites
 1. A good code editor. Visual Studio Code can do the job.
 1. Some knowledge of HTML, Bootstrap CSS, and JavaScript.
 
 ### Designing the game
-The first thing you have to do is to create two files in your code editor and name them `index.html` for your HTML code and a `script.js` for your JavaScript code. I mostly used Bootstrap CDN for styling this game. You can add the Bootstrap CDN by adding the code below inside the `<head></head>` tags of your HTML file.
+The first thing you have to do is to create two files in your code editor. Name them `index.html` for your HTML code and a `script.js` for your JavaScript code.
+
+We will use Bootstrap CDN for styling this game. You can add the Bootstrap CDN by adding the code below inside the `head` tags of your HTML file.
 
 ```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -58,8 +63,10 @@ Below is the entire HTML code. The images used in this project can be found in m
 </html>
 ```
 
-### The Actual JavaScript
-In your JavaScript file, you need to create an array containing all the words to be guessed inside the game. I used social media as my niche words. You can use any one of your choices. Here's how it looks on your code.
+### JavaScript
+In your JavaScript file, you need to create an array containing all the words to be guessed inside the game. I used social media as my niche keywords. You can use any one of your choices. 
+
+Here's how the code should look like.
 
 ```javascript
 var socialMedia = [
@@ -115,10 +122,12 @@ Then you call the function by using the code below:
 randomWord();
 ```
 
-### The generateButtons() function
+#### The generateButtons() function
 If you notice, there are alphabet buttons in our HTML. Without them, how are we supposed to guess the words?
 
-Well, this function helps us generate those buttons. This is a better method of creating these buttons rather than creating 26 different button tags in the HTML file. It is a good representation of "don’t-repeat-yourself" coding technique. Here's the code:
+This function helps us generate those buttons. This is a good way of creating these buttons rather than creating 26 different button tags in the HTML file. It is a good representation of "don’t-repeat-yourself" coding technique. 
+
+Here's the code:
 
 ```javascript
 function generateButtons() {
@@ -137,7 +146,11 @@ function generateButtons() {
 }
 ```
 
-In the code above, we defined all 26 letter buttons while styling them with Bootstrap. "letter" in the code represents each of the looped items in the array of alphabets that we just created in the variable. You then connect it to your HTML using the `document.getElementById('keyboard').innerHTML = buttonsHTML`. Remember, we defined the `keyboard` id in the HTML. Also, `.join('')` was added to eliminate the commas between the alphabet buttons.
+In the code above, we defined all 26 letter buttons while styling them with Bootstrap. "letter" in the code represents each of the looped items in the array of alphabets that we created. 
+
+You then connect it to your HTML using the `document.getElementById('keyboard').innerHTML = buttonsHTML`. 
+
+Remember, we defined the `keyboard` id in the HTML. Also, `.join('')` was added to eliminate the commas between the alphabet buttons.
 
 Then you call the above function with the code below:
 
@@ -154,14 +167,16 @@ We will update the wrong guesses, that is, setting the maximum number of wrong g
 document.getElementById('maxWrong').innerHTML = maxWrong;
 ```
 
-### The guessedWord() function
+#### The guessedWord() function
 This function takes care of the word to be guessed. First, you have to define the `wordStatus` and render it `null` by default. Here is the code:
 
 ```javascript
 let wordStatus = null;
 ```
 
-This function helps to set each letter of the word to be guessed as underscores(' _ ') till they are guessed correctly. You then connect it to the HTML tag containing the `wordSpotlight` id.
+This function helps to set each letter of the word to be guessed as underscores(' _ ') util they are guessed correctly. 
+
+You then connect it to the HTML tag containing the `wordSpotlight` id.
 
 Here's how the code will look like:
 
@@ -185,10 +200,10 @@ Here's how it looks like at this point:
 
 Now let’s actually guess the letters.
 
-### The handleGuess() function
+#### The handleGuess() function
 First, we are going to pass down a `chosenLetter`. The `handleGuess()` function handles the letters to be guessed and determines if the answer is true or false.
 
-In the function, if the chosen letter does not exist, we go ahead and push `chosenLetter` into the array but if it does exist, do nothing.  Next, you run an `if` statement: `if (answer.indexOf(chosenLetter) >= 0)`. Meaning that if it exists, then run the `guessed()` function to update the letters.
+In the function, if the chosen letter does not exist, we go ahead and push `chosenLetter` into the array but if it exists, do nothing.  Next, you run an `if` statement: `if (answer.indexOf(chosenLetter) >= 0)`. Meaning that if it exists, then run the `guessed()` function to update the letters.
 
 Now we have to start incrementing the number of wrong guesses if the player gets it wrong. We can do that by using the `else if` statement inside this function and passing in the `answer.indexOf(chosenLetter) === -1`. This way the mistakes will be added by one.
 
@@ -210,8 +225,8 @@ function handleGuess(chosenLetter) {
 }
 ```
 
-### The updateMistakes() function
-You also have to run the `updateMistakes()` function so that it actually updates the number since we are not using any framework like ReactJS or the rest of them. Here’s how it would look like in the code:
+#### The updateMistakes() function
+You also have to run the `updateMistakes()` function so that it actually updates the number since we are not using any framework like ReactJS. Here’s how it would look like in the code:
 
 ```javascript
 function updateMistakes() {
@@ -221,10 +236,12 @@ function updateMistakes() {
 
 Now, the number of wrong guesses will always keep updating by +1.
 
-The next thing to do now is to check for wins and losses so that the player does not just keep playing endlessly. To do that you run a `checkifGameWon()` in the `if` statement of the `handleGuess()` function and a `checkIfGameLost()` in the corresponding `else if` statement.
+The next thing to do is to check for wins and losses so that the player does not keep playing endlessly. To do that, you run `checkifGameWon()` in the `if` statement of the `handleGuess()` function and `checkIfGameLost()` in the corresponding `else if` statement.
 
-### The checkIfGameWon() function
-We are going to start by creating an if statement for: if `wordStatus` is equal to the answer, then print out “You won!!!”. Here is the code:
+#### The checkIfGameWon() function
+We will start by creating an if statement to check if `wordStatus` is equal to the answer, then print out “You won!!!”. 
+
+Here is the code:
 
 ```javascript
 function checkIfGameWon() {
@@ -234,7 +251,7 @@ function checkIfGameWon() {
 }
 ```
 
-### The checkIfGameLost() function
+#### The checkIfGameLost() function
 Here’s the code to check if the player lost.
 
 ```javascript
@@ -248,7 +265,7 @@ function checkIfGameLost() {
 
 In the code above, we set the game to print out “You lost!!!” when the player has reached the maximum number of wrong guesses. We also set the game to print out the correct answer too.
 
-### The reset() function
+#### The reset() function
 In this function, we are going to set everything back to default.  Here is how it looks like:
 
 ```javascript
@@ -264,8 +281,8 @@ function reset() {
 }
 ```
 
-### The updateHangmanPicture() function
-First, we are going to run the `updateHangmanPicture();` in the `elseif` statement of the `handleGuess()` function so that the image updates every time the player gets a letter wrong. Then we create the `updateHangmanPicture()` function using the code below:
+#### The updateHangmanPicture() function
+First, we are going to call the `updateHangmanPicture()` in the `else if` statement of the `handleGuess()` function so that the image updates every time the player gets a letter wrong.
 
 ```javascript
 function updateHangmanPicture() {
@@ -273,15 +290,21 @@ function updateHangmanPicture() {
 }
 ```
 
-In the code above, we set the images to update each time the player gets an answer wrong continuously. I named all six images (0-6).jpg, and we have a maximum number of 6 mistakes to be made. This now conveniently helps us set the pictures to update every time the player gets a letter wrong.
+In the code above, we set the images to update each time the player gets an answer wrong continuously. I named all six images (0-6).jpg, and we have a maximum number of 6 mistakes to be made. 
 
-Lastly, we need to make the game accessible to players that wish to navigate with their keyboard. Firstly, you need to define the alphabet keys on your keyboard using the code below:
+This conveniently helps us set the pictures to update every time the player gets a letter wrong.
+
+Lastly, we need to make the game accessible to players who wish to navigate with their keyboard. 
+
+First, you need to define the alphabet keys on your keyboard using the code below:
 
 ```javascript
 let alphabets=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 ```
 
-Next, you need to create a function that will link these keys on your keyboard to the game and make them appear as valid guesses as they are clicked by using `document.onkeypress`. Here is the code:
+Next up, you need to create a function that will link these keys on your keyboard to the game and make them appear as valid guesses as they are clicked by using `document.onkeypress`. 
+
+Here is the code:
 
 ```javascript
 document.onkeypress = function (e) {
