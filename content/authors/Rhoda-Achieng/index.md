@@ -1,0 +1,1 @@
+Rhoda Achieng is an engineering student at JKUAT. She is a software developer who has been actively engaging in software development projects. She also loves playing volley ball and chatting with other developers in her free time.
