@@ -14,7 +14,7 @@ images:
  alt: Handling RecyclerView Clicks the Right Way in Kotlin.
 ---
 
-Many developers tend to handle clicks on a `RecyclerView` the wrong way. In this tutorial, we will focus on the most appropriate way to handle clicks on a `RecyclerView`
+Many developers tend to handle clicks on a `RecyclerView` the wrong way. In this tutorial, we will focus on the most appropriate way to handle clicks on a `RecyclerView`.
 
 ## Prerequisites
 
@@ -63,9 +63,9 @@ In this step, we will create a new project, , you can refer to the image below f
 
 ### Step 2: Adding Dependencies
 
-After creating the project, we will add some dependencies to our app-level build Gradle
+After creating the project, we will add some dependencies to our app-level build Gradle.
 
-Retrofit will help us in making an API calls to the URL.
+Retrofit will help us make network calls to the API.
 GsonConverter will play the role of converting JSON strings to Java objects.
 
 ```gradle
@@ -259,7 +259,7 @@ object MemesApi {
 
 ### Step 6: RecyclerView Adapter Class
 
-In this step, we will create our Adapter class that will do all the clicks operations.
+In this step, we will create our Adapter class that will do all the click operations.
 
 First, we create a class called `OnClickListener` that takes in a lambda with one Meme item as a parameter in its Constructor. This class contains a matching function called `onClick`. It will set to the lambda's parameter. All this creates a sort of named lambda
 
@@ -269,14 +269,14 @@ class OnClickListener(val clickListener: (meme: Meme) -> Unit) {
 }
 ```
 
-Then we added an onClickListener property on the Constructor of the `MemesAdapter`
+Then we added an `onClickListener` property on the Constructor of the `MemesAdapter`
 
 ```kotlin
 class MemesAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Meme, MemesAdapter.MyViewHolder>(MyDiffUtil)
 ```
 
-Finally on this class, we'll finish by calling our `onClickListener` inside `onBindViewHolder`
+Finally in this class, we'll finish by calling our `onClickListener` inside `onBindViewHolder`
 
 ```kotlin
 holder.itemView.setOnClickListener {
@@ -347,7 +347,7 @@ class MemesAdapter(private val onClickListener: OnClickListener) :
 
 ### Step 7: ViewModel Class
 
-Next, we will create a ViewModel class which will contain codes that will survive configuration changes i.e screen rotation. Particulary, it has a function that will perform the network call to the API.
+Next, we will create a ViewModel class which will contain codes that will survive configuration changes i.e screen rotation. Particulary, it has a function that will perform the network request to the API.
 
 ```kotlin
 package com.kanyideveloper.recyclerviewitemclicksdemo
