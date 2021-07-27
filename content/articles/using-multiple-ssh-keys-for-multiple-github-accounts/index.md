@@ -1,5 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-multiple-ssh-keys-for-multiple-github-accounts/
+title: Using Multiple SSH Keys for Multiple GitHub Accounts
+description: In this article, we will understand how to create and work with SSH keys for using multiple GitHub accounts
+author: wangui-leah
+date: 2021-07-27T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/hero.jpg
+    alt: Multiple SSH and GitHub accounts image
+---
 For most developers, there is a need to run multiple GitHub accounts on one computer. For instance, You can have an Organization's GitHub account and another for your personal projects at home.
-  
+<!--more-->
 In this article, you will learn how to [use multiple SSH keys for different GitHub accounts](https://gist.github.com/jexchan/2351996). While working with two different GitHub accounts, you must set them up using an SSH key.
 
 ### Table of contents
