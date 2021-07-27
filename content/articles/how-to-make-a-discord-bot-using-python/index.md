@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /how-to-make-a-discord-bot-using-python/
 title: How to Make a Discord Bot Using Python
-description: In this article we will understand the utility of Discord bots and develop a Discord Bot from scratch using the discord.py library. 
+description: In this article, we will understand the utility of Discord bots and develop a Discord Bot from scratch using the discord.py library. 
 author: harshita-bansal
-date: 2021-07-20T00:00:00-18:00
+date: 2021-07-27T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -19,41 +19,41 @@ images:
 
 We'll construct a Discord Chatbot with Repl.it and Python in this tutorial. If you're reading this guide, you've undoubtedly heard of Discord and possibly already have an account. If not, then with the help of this tutorial, you will join the bot to a Discord server and reply to messages delivered by other users.
 
-If you know Python and have used Discord or a comparable service like Skype or Telegram previously, you'll think it's easier to stay along. We won't go through the fundamentals of Python, but we will go over each line of code in great detail, so if you've done any programming before, you should be ready to comprehend along.
+If you know Python and have used Discord or a comparable service like Skype or Telegram previously, you'll think it's easier to stay talong. We won't go through the fundamentals of Python, but we will go over each line of code in great detail, so if you've done any programming before, you should be ready to comprehend along.
 
 Things we will employ in the process of learning to make Discord bot with Python are as following
 1.	Various tools,
 2.	Discord APIs 
 3.	Python libraries, and 
-4.	a cloud computing platform called Repl.it.
+4.	Cloud computing platform called Repl.it.
 
 #### Table of Contents
 
-1. Introduction
-    1. About Discord 
-    2. About Bot
-2.  Overview and Requirement
-3. Creating a Discord Bot Account on the Discord  
-    1.  Forming an Account
-    2. Forming an Application
-    3. Forming a Bot
-    4. Forming a Guild (a Server)
-4. Creating a discord bot using the `discord.py` library
-    1. Installing discord.py and create a Repl
-    2. Setting up Discord event for your Bot 
-    3. How to run a bot
+- [Introduction to Discord](#introduction-to-discord)
+- [What are bots?](#what-are-bots)
+- [Overview and requirements](#overview-and-requirements)
+- [Creating a discord bot account on the Discord](#creating-a-discord-bot-account-on-the-discord)
+  - [Creating an account -](#creating-an-account--)
+  - [Forming an application](#forming-an-application)
+  - [Forming a bot](#forming-a-bot)
+  - [Forming a guild (a server)](#forming-a-guild-a-server)
+- [Create a discord bot using discord.py library](#create-a-discord-bot-using-discordpy-library)
+  - [Installing `discord.py`  and creating a Repl](#installing-discordpy--and-creating-a-repl)
+  - [Setting up Discord event for your bot](#setting-up-discord-event-for-your-bot)
+  - [How to Run the Bot](#how-to-run-the-bot)
+- [Conclusion](#conclusion)
 
 
 We will begin with understanding about Discord is and why it's valuable.
 
-### About Discord
-If you're unfamiliar with Discord, it's a Voice over Internet Protocol (VoIP) and chat program that's meant to take the role of Skype for gamers and educational use. It helps the society communicate better.
+### Introduction to Discord
+If you're unfamiliar with Discord, it's a Voice over Internet Protocol (VoIP) and chat program that's meant to take the role of Skype for gamers and educational use. It helps society communicate better.
  
  
 Discord is used by players, educational institutions, broadcasters, and developers to talk about games, answer queries, communicate while playing and studying, and even more. There's even a gaming store with critical reviews and streaming services. For gaming communities, it's almost a one-stop store.
 
 
-### About bot
+### What are bots?
 
 Discord is becoming extremely prevalent. As a result, for a community to survive and develop, automatic procedures such as banning unsuitable members and responding to user requests are critical.
 
@@ -106,7 +106,7 @@ When you've completed each of these components, you'll need to register your bot
 
 You may begin by entering [Discord's User Portal](https://discord.com/login?redirect_to=%2Fdevelopers%2Fapplications)
 
-1.	#### Creating an account - 
+#### Creating an account - 
 
 The initial webpage you'll see is a landing page in which you can either log in by filling in details or with QR Code if you're using an account or make a new one:
 
@@ -118,7 +118,7 @@ Click the Register beneath the login button if you need to establish a new accou
 
 When you're done, you'll be taken to the User Portal home page, on which you can start building your application.
 
-2.	#### Forming an application
+#### Forming an application
 
 By establishing authentication tokens, defining privileges, and so forth, an application facilitates communication with Discord's APIs.
 
@@ -140,7 +140,7 @@ Remember that every software that communicates with Discord APIs, not only bots,
 
 Navigate to the "Bot" tab on the left-hand side panel, as this section is about how to build a Discord bot.
 
-3.	#### Forming a bot
+#### Forming a bot
 
 A bot user listens to and automatically replies to specific events and orders on Discord, as discussed in the preceding parts.
 
@@ -158,7 +158,7 @@ Now that the bot is finally ready to go, where will it go?
 
  If a bot user isn't communicating with other users, it's useless. So you'll then create a guild for your bot so that it may communicate with other people.
 
-4. #### Forming a guild (a server)
+#### Forming a guild (a server)
 
 A guild (as it's referred to in Discord's user interface) is a collection of routes where members may communicate.
 
@@ -227,7 +227,7 @@ async def on_message(message):
 client.run(os.getenv('TOKEN'))
 ```
 
-You copied a token when you created your bot user on Discord. Now we'll make a `.env` file to hold the token. You don't need the `.env` file if you're executing your code locally. Simply substitute the token for `os.getenv('TOKEN')`.
+You copied a token when you created your bot user on Discord. Now we'll make a `.env` file to hold the token. You don't need the `.env` file if you're executing your code locally. Substitute the token for `os.getenv('TOKEN')`.
 
 Environment variables are declared in `.env` files. Most of the files you create on Repl.it are available to everyone, but `.env` files are exclusively visible to you. Therefore, the contents of the `.env` file will not be visible to other individuals viewing a public repl.
 
