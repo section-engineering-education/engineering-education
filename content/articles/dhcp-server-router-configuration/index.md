@@ -35,7 +35,7 @@ It will also equip the reader how one can configure the router to able to depict
 The reader must put the following into consideration:
 - The reader should know basic networking concepts.
 - Good understanding of how to configure networks using any of the network simulation tools.
-- This article is best for the reader to know how to work with the Cisco packet tracer network simulator tool.
+This article suits a reader who wants to know how to work with the Cisco packet tracer network simulator tool.
 
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
