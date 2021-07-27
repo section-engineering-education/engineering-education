@@ -6,7 +6,7 @@ url: /what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/
 title: What is Kafka? How to Build and Dockerize a Kafka Cluster
 description: In this article, we will be introduced to Kafka. We will be using Kafka to build a Kafka cluster and Docker to Dockerize the Kafka cluster.
 author: faith-musyoka
-date: 2021-07-15T00:00:00-05:18
+date: 2021-07-27T00:00:00-04:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -21,7 +21,7 @@ Let's say a company has a source and a target system with an aim to exchange dat
 
 This means there are more interaction environments that the company needs to configure, such as choosing network protocols and data formats to determine data shapes and data evolutions.
 
-If a company has 10 such source systems and 15 target systems, the company needs to have at least 150 well-established connections to enable data interactions between these systems. Thus, each time you integrated a source system with a target system, you will have an increased load of connections that the application needs to make.
+If a company has ten such source systems and fifteen target systems, the company needs to have at least 150 well-established connections to enable data interactions between these systems. Thus, each time you integrated a source system with a target system, you will have an increased load of connections that the application needs to make.
 
 Let's take a case of traditional HTTP networks protocol where a client sends a message to a server. Due to a load of connections, this means the server has a high possibility of being slow to respond to the client. In this case, the client is coupled with the server. If the server is slow, we get low latency. If the server dies, the request fails and has to be retried. This is where Kafka comes to the rescue.
 
@@ -36,7 +36,11 @@ And often, a Kafka server is referred to as a broker. It acts as a system where 
 ### Why we need Kafka
 Kafka is referred to as a distributed application. Kafka will be referred to as a Kafka cluster in the production environment due to it being a distributed platform. A Kafka cluster comprises more than one Kafka broker. This way, data is distributed across several networks of different brokers.
 
-Unlike the traditional HTTP networks, a Kafka cluster is fault-tolerant. The system will still operate whenever one component fails. Furthermore, Kafka can replicate data across several brokers. When a producer produces a message, Kafka will use a replication factor to publish these messages across different Kafka brokers. In each broker, messages are stored as a topic. Topics can be divided into partitions, and the message goes into a partition. We can tell Kafka to store copies of that message on separate brokers in different partitions. This way, when a broker dies, messages are not lost. In addition, an interested consumer can subscribe to these topics and start receiving messages in order with an index number assigned to each message. Furthermore, if the consumer fails or crashes, it can use the index number to retry and continue where it left off.
+Unlike the traditional HTTP networks, a Kafka cluster is fault-tolerant. The system will still operate whenever one component fails. Furthermore, Kafka can replicate data across several brokers. When a producer produces a message, Kafka will use a replication factor to publish these messages across different Kafka brokers.
+
+In each broker, messages are stored as a topic. Topics can be divided into partitions, and the message goes into a partition. We can tell Kafka to store copies of that message on separate brokers in different partitions. This way, when a broker dies, messages are not lost. 
+
+In addition, an interested consumer can subscribe to these topics and start receiving messages in order with an index number assigned to each message. Furthermore, if the consumer fails or crashes, it can use the index number to retry and continue where it left off.
 
 ![apache-kafka-partitions](/engineering-education/what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/apache-kafka-partitions.png)
 
@@ -48,8 +52,11 @@ This guide will discuss some essential concepts of Kafka and Docker and finally 
 
 #### Prerequisites
 To follow along with this article, it is crucial to have the following:
-- Prior experience [working with Docker](/engineering-education/getting-started-with-docker/).
+
+- Prior experience [working with Docker](/engineering-education/getting-started-with-docker/)
+
 - [Docker and docker-compose](https://www.docker.com/products/docker-desktop) installed on your computer.
+
 - Ensure you have [git bash](https://gitforwindows.org/) installed on your computer.
 
 You can check the above installations by running the following commands respectively:
@@ -57,7 +64,9 @@ You can check the above installations by running the following commands respecti
 ```bash
 docker --version
 ```
+
 And:
+
 ```bash
 docker-compose --version
 ```
@@ -66,6 +75,7 @@ In case one of them yields an error, be sure to install it before proceeding.
 
 ### Goal
 In this tutorial, we will:
+
 - Set up a Kafka cluster using `docker-compose`.
 - Create a topic inside the Kafka cluster.
 - View all created topics inside the Kafka cluster.
@@ -92,10 +102,11 @@ services:
 ```
 
 From the above script, we are:
+
 - Defining the version we want to use for `docker-compose`.
 - Defining the two services we want to run. That is Zookeeper and Kafka.
-    - Kafka - To create the Kafka instance.
-    - Zookeeper - Kafka depends on it to provide various levels of management such as metadata storage, leader election, health check, etc.
+  - Kafka - To create the Kafka instance.
+  - Zookeeper - Kafka depends on it to provide various levels of management such as metadata storage, leader election, health check, etc.
 
 ![kafka broker](/engineering-education/what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/kafka-broker.png)
 
@@ -171,7 +182,9 @@ docker-compose down
 ### Conclusion
 As you move messages from point A to point B, the Kafka broker is useful for data replication. Kafka is built on a high-performance architecture that ensures low latency, scalability, and throughput. Event streaming and processing systems rely on Kafka as their backbone. This ensures system health by providing unified real-time data feeds.
 
-Some of the everyday use cases of Kafka include daily news feeds, such as the New York Times. It stores and distributes real-time news to its readers using Apache Kafka streams. Messaging applications, LinkedIn, for example, is estimated to process five trillion messages per day. Kafka is used by Netflix for both real-time monitoring and event processing. Kafka is used by Cloudflare for log processing and analytics pipelines. They can now collect hundreds of billions of events from various servers. Uber, Adidas, PayPal, Cisco, and Pinterest, to name a few, are among the companies that use Kafka.
+Some of the everyday use cases of Kafka include daily news feeds, such as the New York Times. It stores and distributes real-time news to its readers using Apache Kafka streams. Messaging applications, LinkedIn, for example, is estimated to process five trillion messages per day. 
+
+Kafka is used by Netflix for both real-time monitoring and event processing. Kafka is used by Cloudflare for log processing and analytics pipelines. They can now collect hundreds of billions of events from various servers. Uber, Adidas, PayPal, Cisco, and Pinterest, to name a few, are among the companies that use Kafka.
 
 Happy coding!
 
