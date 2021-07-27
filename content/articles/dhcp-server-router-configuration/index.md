@@ -198,10 +198,6 @@ To summarize:
 - We configured a network, verified and configured the routers to perform the DHCP server functions.
 - We learned how to enable and disable the DHCP server on the network.
 
-
 One can find more information about  DHCP-router configuration [here](https://contenthub.netacad.com/srwe/7.2.1).
 
 Happy coding.
-
----
-
