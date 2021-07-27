@@ -12,11 +12,16 @@ In this tutorial, we will learn how to use Celery in a Django application to per
 - [Project Setup](#project-setup)
   - [Adding Celery configuration to Django application](#adding-celery-configuration-to-django-application)
   - [Creating a Celery task](#creating-a-celery-task)
-  - [Creating the HTML files.](#creating-the-html-files)
+  - [Creating the HTML files](#creating-the-html-files)
   - [Form](#form)
 - [View](#view)
   - [URLs](#urls)
-  - [Starting the Celery worker process](#starting-the-celery-worker-process)
+- [Setting up base templates directory](#setting-up-base-templates-directory)
+- [Containerization](#containerization)
+  - [Creating the Dockerfile](#creating-the-dockerfile)
+  - [Create a Docker compose deployment file](#create-a-docker-compose-deployment-file)
+  - [Building the image](#building-the-image)
+  - [Deploying with Docker compose](#deploying-with-docker-compose)
 - [Testing](#testing)
 - [Conclusion](#conclusion)
 
@@ -46,37 +51,44 @@ Functions of Celery:
 4. Monitor the workers and tasks.
 
 ### Project Setup
-
-1. Create a Django application by executing the command below.
+1. Create a working directory by executing the command below.
+   ```bash
+   mkdir project
+   ```
+2. Change the working directory to the `project` directory created above by executing the command below.
+   ```bash
+   cd project
+   ```
+3. Create a Django application by executing the command below.
    
    ```bash
    django-admin startproject celerytask
    ```
-2. Create a virtual environment where the packages will be installed be executing the command below.
+4. Create a virtual environment where the packages will be installed by executing the command below.
    ```bash
    virtualenv venv
    ```
-3. Activate the virtual environment by executing the command below.
+5. Activate the virtual environment by executing the command below.
    ```bash
    source venv/bin/activate
    ```
-5. Migrate the database models by executing the command below.
+6. Migrate the database models by executing the command below.
    
    ```bash
    cd celerytask
    python manage.py migrate
    ```
-3. Execute the command below to add celery to our application.
+7. Execute the command below to add celery to our application.
     
     ```bash
     pip install celery
     ```
-4. Start the Django web server by executing the command below.
+8. Start the Django web server by executing the command below.
    
    ```bash
    python manage.py runserver
    ```
-5. Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
+9.  Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
 
 
 #### Adding Celery configuration to Django application
@@ -95,7 +107,7 @@ Functions of Celery:
     app = Celery('celery_task')
     app.config_from_object('django.conf:settings', namespace='CELERY')
 
-    # Looks up for task module in Django applications and loads them
+    # Looks up for task modules in Django applications and loads them
     app.autodiscover_tasks()
    ```
    
@@ -156,7 +168,7 @@ def name_of_your_function(optional_param):
 
 #### Creating the HTML files
 
-Create a folder named `templates` in the projects root directory. In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
+Create a folder named `templates` in the project's root directory. In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
 
 1. In the `task` directory created above, create a file named `base.html` and add the code snippets below into it. The below code snippet is the base template that other template files will extend from.
    
@@ -296,48 +308,137 @@ urlpatterns = [
 
 ]
 ```
+### Setting up base templates directory
+In the `settings.py` file, update the `TEMPLATES` section with the code snippet below.
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'], # We are adding in the directory where our templates will be stored.
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
-#### Starting the Celery worker process
+``` 
+### Containerization
+#### Creating the Dockerfile
+In the root project directory, create a file named `Dockerfile` and add the code snippet below.
+```Dockerfile
+# pull the official base image
+FROM python:3.9.5-alpine
 
-Execute the command below to start a Celery worker process.
+# set work directory
+WORKDIR /usr/src/app
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r requirements.txt
+
+# copy project
+COPY . /usr/src/app/
+
+RUN python manage.py migrate
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+The code snippet above contains directives that will be used to create the Docker image. For more information on how to create Django Docker images, visit [creating Django Docker images](https://www.section.io/engineering-education/django-docker/).
+
+#### Create a Docker compose deployment file
+In the working directory `project`, create a file named `docker-compose.yml` and add the code snippet below.
+```yml
+version: '3.3'
+
+services:
+  web:
+    build: ./celerytask #path to the root project folder
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./celerytask:/usr/src/app/
+    ports:
+      - 8000:8000 # sets the port that maps to internal port in docker container
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=dbaa1_i7%*3r9-=z-+_mz4r-!qeed@(-a_r(g@k8jo8y3r27%m
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  celery:
+    build: ./celerytask
+    command: celery worker --app=core --loglevel=info --logfile=logs/celery.log # Command used to start the Celery worker in the Docker container
+    volumes:
+      - ./celerytask:/usr/src/app
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=dbaa1_i7%*3r9-=z-+_mz4r-!qeed@(-a_r(g@k8jo8y3r27%m
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
+      # depends on show that celery worker service requires the web service and the redis service to run
+    depends_on: 
+      - web
+      - redis
+
+  redis:
+    image: redis:6-alpine
+```
+
+In the above `docker-compose.yml` file, we are having 3 services:
+  - `web` - is the service that runs our application code.
+  - `celery`- is the service that runs the Celery worker.
+  - `redis` - is the service that runs the Redis server. Redis is a key-pair datastore that will be used to store the queued events.
+
+#### Building the image
+In the root project directory, execute the command below to create an image.
+```bash
+docker build -t celerytask .
+```
+- `-t` adds a tag `celerytask` to the image that will be created.
+- `.` at the end of the command indicates that Dockerfile is in the current directory from where the command is being executed.
+
+To verify that the image has been created successfully, execute the command below:
+
+```bash
+karen@karen:~$ docker image ls
+REPOSITORY                                                 TAG                 IMAGE ID       CREATED              SIZE
+celerytask                                                 latest              a9803f267258   About a minute ago   172MB
+
+```
+#### Deploying with Docker compose
+
+Execute the command below to create and start the services we declared in the `docker-compose.yml` file.
  
 ```bash
-celery -A celerytask worker -l info
+docker-compose up -d --build
 ```
 
 ### Testing
-
-1. Run Django migrations to create the tables in the database by executing the command below.
-
-  ```bash
-  python manage.py migrate
-  ```
-
-2. Start the Django web server by executing the command below.
-
-  ```bash
-  python manage.py runserver
-  ```
-
-3. Start the Celery worker by executing the command below.
-   
-   ```bash
-   celery -A celerytask worker -l info
-   ```
-
-   ![Celery running](/engineering-education/django-celery-tasks/celery.png)
-   
-   > **Note** celerytask is the name of the project.
-
-4. Open your browser and navigate to [http://localhost:8000/generate](http://localhost:8000/generate/) and input the number of users to generate.
+1. Open your browser and navigate to [http://localhost:8000/generate](http://localhost:8000/generate/) and input the number of users to generate.
    
    ![Celery generate user](/engineering-education/django-celery-tasks/celery-generate.png)
 
-5. On clicking generate users, Celery schedules a background task that generates random user accounts in the background as shown below.
+2. On clicking generate users, Celery schedules a background task that generates random user accounts in the background as shown below.
    
    ![Celery task scheduled](/engineering-education/django-celery-tasks/celery-success.png)
 
-6. On refreshing the `users` page after few seconds, we see a list of randomly generated users as shown below.
+3. On refreshing the `users` page after few seconds, we see a list of randomly generated users as shown below.
    
    ![Celery random users](/engineering-education/django-celery-tasks/celery-users.png)
 
