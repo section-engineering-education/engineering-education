@@ -38,7 +38,7 @@ This will create a huge one-dimensional vector of size `1 x 36000` pixels which 
 For testing, we take 10 images from the remaining individuals. Since we have 30 remaining individuals, we are going to have 300 images for testing. We then create a folder containing the images that will be used for training and those that will be used for testing.
 
 ### Matlab programs
-We create two folders for training (trainDB) and testing (testDB). All images in the trainDB should be named as `1.jpg`, `2.jpg`, `3.jpg` ... `800.jpg`. Use a software such as IrfanView, format factory, or any other to rename the images. No need to rename those that are for testing.
+We need to create two folders for training (trainDB) and testing (testDB). All images in the trainDB should be named as `1.jpg`, `2.jpg`, `3.jpg` ... `800.jpg`. Use a software such as IrfanView, format factory, or any other to rename the images. No need to rename those that are for testing.
 
 > Note that Matlab's script files for training and testing should be saved in the trainDB folder and set the path of the trainDB as Matlab's current directory for running the program.
 
