@@ -176,6 +176,7 @@ DELETE FROM STUDENTS WHERE ID= 3;
 ```
 
 Executing the savepoint command we have the results as:
+
 Output:
 |ID | NAME   | REG NO  | COURSE     | FEES  |
 |-- | :-----:| :------:| :---------:| -----:|
