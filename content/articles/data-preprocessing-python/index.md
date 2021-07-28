@@ -21,23 +21,24 @@ In this article, we will learn all the steps that are involved in the data prepr
 ### Prerequisites
 
 To follow this tutorial comfortably, we need to meet the following conditions.
-1. Prior knowledge in python programming.
-2. Connected to the internet.
-2. Access to Google Colab [Here](https://colab.research.google.com/notebooks/intro.ipynb).
+1. Prior knowledge in Python programming.
+2. An active internet connection.
+2. Access to [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb).
 
-### Mounting our drive to Google Colab
+### Mounting our Drive to Google Colab
 
-In this article, we shall carry out our data preprocessing activities on Google Colab. Therefore, we need to ensure our Google Drive is accessible by the Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
+In this article, we shall carry out our data preprocessing experiments on Google Colab. Therefore, we need to ensure our Google Drive is accessible by the Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
 
-Since we've successfully downloaded our data, let's now upload it to google drive through [google.drive.com](https://drive.google.com/drive/u/0/my-drive).
-Now our data is uploaded to Google Drive and saved into the root google drive directory.
+Since we've successfully downloaded our data, let's now upload it to Google Drive through [google.drive.com](https://drive.google.com/drive/u/0/my-drive).
+Now our data is uploaded to Google Drive. It is saved in the root directory.
 
-To be able to use this data, we need to give Google Colab access to the drive. To enhance this, in Google Colab, let's type and run the code below.
+To use this data, we need to give Google Colab access to Google Drive. Let's type and run the code below in Google Colab.
 
 ```python
 from google.colab import drive
 drive.mount("/content/drive/")
 ```
+
 Upon executing our code, it will lead us to a Google Authentication stage similar to the figure below.
 
 ![Google_Authentication](/engineering-education/data-preprocessing-python/URL.png)
@@ -46,11 +47,10 @@ We click on the URL link on your Google Colab interface and proceed to allow per
 
 ![Verification_code](/engineering-education/data-preprocessing-python/Cpo.png)
 
-We then copy and paste this code in the authorization code box on Colab interface and click **Ctrl + Enter**. This shows that our drive is mounted.
+We then copy and paste this code in the authorization code box on the Colab interface and click **Ctrl + Enter**. This shows that our drive is mounted.
 
 Now that our drive it's successfully mounted in Google Colab, we proceed and import the libraries we shall require to work with along our journey.
 To import these libraries, let's type and run the code below.
-
 
 ### Step 1: Importing the Libraries
 
@@ -104,9 +104,9 @@ print(y) # viewing an array of the dependent variable.
 Our data is imported successfully in the form of an array of features x and a dependent variable y.
 
 ### Step 3: Taking care of the missing data
-Missing data is a common problem that is mainly faced with the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data can be missing in a dataset. For instance, the data collected through a survey, missing data can occur due to the failure of some participants responding to some questions. This may be due to, they do not know the correct response or maybe they are unwilling to answer. It can also be missing due to the error made during the data entry process. 
+Missing data is a common problem that is mainly faced with the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data can be missing in a dataset. For instance, the data collected through a survey, missing data can occur due to the failure of some participants responding to some questions. This may be due to not knowing the correct response, or maybe they are unwilling to answer. It can also be missing due to the error made during the data entry process. 
 
-Most machine learning models require data with a value for features in each observation. In such models, missing data can lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As result, we may end up drawing a wrong conclusion about the data. Therefore, we can conclude missing data it's harmful to our machine learning models and thus requires appropriate handling.
+Most machine learning models require data with a value for features in each observation. In such models, missing data can lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As a result, we may end up drawing a wrong conclusion about the data. Therefore, we can conclude missing data it's harmful to our machine learning models and thus requires appropriate handling.
 
 There are several techniques we use to handle the missing data. They include:
 
@@ -116,16 +116,16 @@ There are several techniques we use to handle the missing data. They include:
 
 2. **Mean Imputation:**
   Under this technique, the missing value is replaced with the average of the variable in which it occurs. The advantage of this technique is that it preserves the mean and the sample size. However, this technique has some serious disadvantages.
-  Mean imputation underestimates the standard error and it does not preserve the correlation among variables. The relationship among variables is an important aspect of analysis as the general objective of the study is to understand it better. Mean imputation is thus not an appropriate solution for missing data unless the data is Missing Completely at Random( missing data is completely unrelated to both the missing data as well as observed values in the dataset).
+  Mean imputation underestimates the standard error, and it does not preserve the correlation among variables. The relationship among variables is an important aspect of analysis as the general objective of the study is to understand it better. Mean imputation is thus not an appropriate solution for missing data unless the data is Missing Completely at Random( missing data is completely unrelated to both the missing data as well as observed values in the dataset).
 
 3. **Hot Deck Imputation:**
- In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. This technique ensures that the imputing value is only selected from the possible interval where the true value could probably fall and it is randomly selected rather than being determined which is an important aspect for an accurate standard error.
+ In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. This technique ensures that the imputing value is only selected from the possible interval where the true value could probably fall, and it is randomly selected rather than being determined, which is an important aspect for an accurate standard error.
 
 4. **Cold Deck Imputation**
   In this technique, we replace the missing data using a value chosen from other variables with similar observation values. The difference between this technique and the Hot Deck imputation is that the selecting process of the imputing value is not randomized.
 
 5. **Regression Imputation**
-  Regression imputation involves fitting a regression model on a feature with missing data and predictions of this regression model are used to replace the missing values in this feature. This technique preserves the relationships between features and this grants it a big advantage over the simple imputation techniques such as mean and mode imputation.
+  Regression imputation involves fitting a regression model on a feature with missing data, and predictions of this regression model are used to replace the missing values in this feature. This technique preserves the relationships between features, and this grants it a big advantage over simple imputation techniques such as mean and mode imputation.
 
     Regression imputation is of two categories:
 
@@ -133,9 +133,9 @@ There are several techniques we use to handle the missing data. They include:
     Deterministic regression imputation imputes the missing data with the exact value predicted from the regression model. This technique doesn't consider the random variation around the regression line. Since the imputed values are very precise, the correlation between the features and the dependent variables is overestimated.
 
     2. Stochastic regression imputation
-    In stochastic regression imputation, a random variation(error term) is added to the predicted value and therefore, can reproduce the correlation of X and Y more appropriately.
+    In stochastic regression imputation, a random variation(error term) is added to the predicted value and, therefore, can reproduce the correlation of X and Y more appropriately.
 
-Now that we know the techniques we can use to take care of the missing values let's handle this problem in our dataset. We notice that our features set (x), has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we can implement our machine learning models on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
+Now that we know the techniques we can use to take care of the missing values, let's handle this problem in our dataset. We notice that our features set (x) has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we can implement our machine learning models on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
 
 The code below will solve this problem present in our dataset.
 
@@ -144,7 +144,7 @@ The code below will solve this problem present in our dataset.
 from sklearn.impute import SimpleImputer
 # To replace the missing value we create below object of SimpleImputer class
 imputa = SimpleImputer(missing_values = np.nan, strategy = 'mean')
-''' Using the fit method, we apply the imputa object on the matrix of our feature x.
+''' Using the fit method, we apply the `imputa` object on the matrix of our feature x.
 The `fit()` method identifies the missing values and computes the mean of such feature a missing value is present.
 '''
 imputa.fit(x[:, 1:3])
@@ -309,11 +309,11 @@ print(x_test)
 [[0.0 1.0 0.0 -1.0 -1.0]
  [1.0 0.0 0.0 1.0 1.0]]
 ```
-We notice that in the  `x_train` and `x_test` we only scaled `Age` and `Salary` columns and not on the dummy variable because scaling the dummy variable may interfere with its intended interpretation even though they fall within the required range.
+We notice that in the  `x_train` and `x_test` we only scaled the `Age` and `Salary` columns and not on the dummy variable because scaling the dummy variable may interfere with its intended interpretation even though they fall within the required range.
 
 ### Conclusion
 
-To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. The data at this point is free from irregularities and the models can make analytical sense of the dataset. I hope you found this helpful. Happy learning.
+To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. The data at this point is free from irregularities, and the models can make analytical sense of the dataset. I hope you found this helpful. Happy learning.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
