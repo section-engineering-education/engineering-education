@@ -160,6 +160,7 @@ Run the command below in the terminal.
 ```bash
 $ useradd -r James
 ```
+![Adding User](/engineering-education/password-cracking-with-john-the-ripper/user_add.png)
 
 We have created a user account named `James`.
 
