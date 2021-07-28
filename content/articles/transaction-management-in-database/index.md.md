@@ -19,7 +19,7 @@ A transaction is a logical unit of work performed on a database. They are logica
 
 
 ### Prerequisities
-Before learning this tutorial you need to have basics in SQL(structured query language) and understand how to create a database which we will be working from and performing our transactions against.
+To follow through with this tutorial you need to know basic SQL(structured query language) and understand how to create a database.
 
 ### Transaction states 
 There are various database transaction states as follows.
