@@ -158,7 +158,7 @@ Moving on, we will learn how to crack another user account's password using John
 First, let's create another user account that we are going to crack its password.
 Run the command below in the terminal.
 ```bash
-$ useradd -r James
+$ sudo useradd -r James
 ```
 ![Adding User](/engineering-education/password-cracking-with-john-the-ripper/user_add.png)
 
@@ -166,7 +166,7 @@ We have created a user account named `James`.
 
 Now, let's set the password for the account.
 ```bash
-$ passwd James
+$ sudo passwd James
 ```
 
 Run the command below to crack James' password.
