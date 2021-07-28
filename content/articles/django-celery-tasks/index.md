@@ -404,6 +404,7 @@ In the above `docker-compose.yml` file, we are having 3 services:
   - `web` - is the service that runs our application code.
   - `celery`- is the service that runs the Celery worker.
   - `redis` - is the service that runs the Redis server. Redis is a key-pair datastore that will be used to store the queued events.
+For more information and a getting started guide on Docker compose, visit [Docker compose guide](https://www.section.io/engineering-education/set-up-containerize-and-test-a-single-hadoop-cluster-using-docker-and-docker-compose/)
 
 #### Building the image
 In the root project directory, execute the command below to create an image.
