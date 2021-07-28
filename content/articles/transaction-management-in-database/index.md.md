@@ -139,6 +139,7 @@ Output:
 |5  | ROBERT |P62/491|Nursing|43700|
 |6  | HELLEN |V20/470|Education|22000|
 |7  | JOAN   |P62/801|Nursing|18000|
+
 The delete operation would not change the records of the database therefore the results would be the same and the database remains unchanged.
 
 ### SAVEPOINT command
