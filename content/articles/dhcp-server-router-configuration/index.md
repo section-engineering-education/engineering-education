@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /dhcp-server-router-configuration/
-title: Understanding DHCP-Server Router Configuration.
+title: Understanding DHCP-Server Router Configuration
 description: This article will show how we can configure a router to act as a DHCP server.
 author: samuel-otieno
 date: 2021-07-24T00:00:00-18:00
@@ -201,3 +201,6 @@ To summarize:
 One can find more information about  DHCP-router configuration [here](https://www.cisco.com/en/US/docs/ios/12_4t/ip_addr/configuration/guide/htdhcpsv.html).
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
