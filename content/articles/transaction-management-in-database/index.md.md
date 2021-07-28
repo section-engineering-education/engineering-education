@@ -41,7 +41,7 @@ There are four main properties of a transaction represented in the acronym ACID 
 We need to create a database with a table in which to execute our transaction commands.
 Here is the program to create a table;
 ```SQL
-CREATE DATABASE MEGA COLLEGE;
+CREATE DATABASE Megacollege;
 CREATE TABLE STUDENTS(Id integer PRIMARY KEY, Name text, Regno varchar, Course text, Fees integer);
 
 
@@ -52,6 +52,7 @@ INSERT INTO STUDENTS VALUES(4,'Jane', 'A19/520', 'IT', 41200);
 INSERT INTO STUDENTS VALUES(5,'Robert','P62/491', 'Nursing',43700);
 INSERT INTO STUDENTS VALUES(6,'Hellen', 'V20/470', 'Education', 22000);
 INSERT INTO STUDENTS VALUES(7,'Joan','P62/801', 'Nursing',18000);
+BEGIN TRANSACTION;
 COMMIT;
 
 
@@ -83,11 +84,13 @@ The COMMIT command saves changes made to a database as part of a transaction. Th
 The syntax of the COMMIT command; 
 
 ```SQL
+BEGIN TRANSACTION;
 COMMIT
 ```
 We can delete the records from the table that have fees=40000 and commit the changes in the database.
 
 ```SQL
+BEGIN TRANSACTION;
 DELETE FROM STUDENTS
 WHERE FEES = 40000;
 COMMIT;
@@ -112,12 +115,14 @@ The ROLLBACK command can only be used to undo transactions from the last ROLLBAC
 The ROLLBACK command syntax is as follows;
 
 ```SQL
+BEGIN TRANSACTION;
 ROLLBACK;
 ```
 
 Consider deleting a record from the table where fees =40000 and ROLLBACK the changes;
 
 ```SQL
+BEGIN TRANSACTION;
 DELETE FROM STUDENTS
 WHERE FEES = 40000;
 ROLLBACK;
@@ -141,6 +146,7 @@ This command rolls back a transaction to a point in the database without having 
 The SAVEPOINT command syntax;
 
 ```SQL
+BEGIN TRANSACTION;
 SAVEPOINT SAVEPOINT_NAME;
 ```
 
@@ -148,12 +154,14 @@ Unlike the ROLLBACK command, which reverses a set of transactions, the SAVEPOINT
 Rolling back to a SAVEPOINT;
 
 ```SQL
+BEGIN TRANSACTION;
 ROLLBACK TO SAVEPOINT_NAME;
 ```
 
 We can delete three records from the STUDENTS table. We create a SAVEPOINT before each delete, this enables us to ROLLBACK to any SAVEPOINT any time to get back to the original state of the record.
 
 ```SQL
+BEGIN TRANSACTION;
 SAVEPOINT SP1;
 
 DELETE FROM STUDENTS WHERE ID = 1;
@@ -179,6 +187,7 @@ Output:
 We have deleted from the table where id 1,2 and 3 exist but with savepoints SP1, SP2 and  SP3 respectively. We can now rollback to any point using the savepoints.
 
 ```SQL
+BEGIN TRANSACTION;
 ROLLBACK TO SP2;
 ```
 Output:
@@ -198,6 +207,7 @@ This command is used to delete a SAVEPOINT created
 The RELEASE SAVEPOINT command syntax;
 
 ```SQL
+BEGIN TRANSACTION;
 RELEASE SAVEPOINT savepoint_name;
 ```
 
@@ -208,6 +218,7 @@ This command is used to initiate a database transaction. It specifies the charac
 The SET TRANSACTION syntax;
 
 ```SQL
+BEGIN TRANSACTION;
 SET TRANSACTION [READ WRITE | READ ONLY];
 ```
 
