@@ -6,12 +6,12 @@ url: /understanding-how-kubernetes-networking-works/
 title: Understanding How Kubernetes Networking Works
 description: In this article, we will go through the basics of Kubernetes networking. The article will provide an overview of how networking works in Kubernetes.   
 author: bridget-mwikali
-date: 2021-07-12T00:00:00-07:00
-topics: []
+date: 2021-07-28T00:00:00-05:00
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-how-kubernetes-networking-work/hero.jpg
+  - url: /engineering-education/understanding-how-kubernetes-networking-works/hero.jpg
     alt: kubernetes networking example image
 ---
 Communication within a Kubernetes cluster partly depends on Kubernetes networking. Kubernetes networking enables the configuration of communication with the k8s network. It also manages many operations, including exposing containers to the internet and handling internal container communication.
@@ -43,7 +43,9 @@ Internet connectivity is critical when using Kubernetes for either internal or e
 Ingress and egress techniques help to set up external access. These two policies are set up with either [blacklisting or whitelisting](https://consoltech.com/blog/blacklisting-vs-whitelisting/) to control traffic in and out of a network.
 
 #### Egress
-This process routes traffic from the node to an external connection. An internet gateway is a must-have for this process to succeed. This gateway is attached to a virtual private cloud (VPC). Virtual private clouds are secure, isolated private cloud computing environments hosted within public clouds. Using network address translation ([NAT](https://www.geeksforgeeks.org/network-address-translation-nat/#)), the internet gateway maps IPs between the users and the machine hosting the node. Since the gateway does not map individual pods on the node, Kubernetes relies on [clusterIP and iptables](https://kubernetes.io/docs/concepts/services-networking/service/) to complete the communication process.
+This process routes traffic from the node to an external connection. An internet gateway is a must-have for this process to succeed. This gateway is attached to a virtual private cloud (VPC). Virtual private clouds are secure, isolated private cloud computing environments hosted within public clouds.
+
+Using network address translation ([NAT](https://www.geeksforgeeks.org/network-address-translation-nat)), the internet gateway maps IPs between the users and the machine hosting the node. Since the gateway does not map individual pods on the node, Kubernetes relies on [clusterIP and iptables](https://kubernetes.io/docs/concepts/services-networking/service/) to complete the communication process.
 
 #### Ingress
 Communication is a two-way process. It is through the ingress process that external clients communicate to Kubernetes services. It allows some connections and blocks some from communication to Kubernetes services depending on a set of defined rules.
@@ -62,7 +64,9 @@ Containers in a pod use standard inter-process communications like [POSIX shared
 IPC namespaces contain unique POSIX message queue filesystems and System V IPC identifiers. Only members of a namespace have access to objects created by the parent IPC namespace. Processes in other IPC namespaces are blocked from accessing such objects.
 
 #### Shared volumes in a Kubernetes pod
-Containers in a given pod can share or access data stored in Kubernetes volumes using a shared directory on the host. Data stored in these volumes is not lost even when containers restart. Kubernetes volumes and pods have the same lifetime. The volume exists and holds data as long as the associated pod exists, which means that the shared volume ceases to exist when that pod is destroyed. Not even an identical replacement of that pod can save this situation; the volume must be recreated from scratch.
+Containers in a given pod can share or access data stored in Kubernetes volumes using a shared directory on the host. Data stored in these volumes is not lost even when containers restart.
+
+Kubernetes volumes and pods have the same lifetime. The volume exists and holds data as long as the associated pod exists, which means that the shared volume ceases to exist when that pod is destroyed. Not even an identical replacement of that pod can save this situation; the volume must be recreated from scratch.
 
 ### Pod-to-pod networking
 Pods in Kubernetes are allocated a unique IP address which they use to communicate with each other. However, communication between pods is not complete without nodes. Thus, understanding the interaction between nodes will give us a clear outlook of how pod-to-pod communication happens.
@@ -72,7 +76,9 @@ Nodes located in different pods communicate through this method. Let us take thi
 
 If you want to transfer a packet from pod 'A' to pod 'D', in Linux networking, for instance, this is what happens.
 
-The packet leaves pod 'A' network and goes into the root network through veth0. This packet has to pass through the [Linux bridge](https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#) to help it find its destination. The node has no goal within its pod, so it is sent back to interface eth0. It then leaves the first node for the routing table. The objective of the [routing table](https://searchnetworking.techtarget.com/definition/routing-table) is to route the packet to the required node. This node is located in pod 'D'. Before reaching the bridge, the packet first passes through node 2, and is directed to its intended destination.
+The packet leaves pod 'A' network and goes into the root network through veth0. This packet has to pass through the [Linux bridge](https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#) to help it find its destination. The node has no goal within its pod, so it is sent back to interface eth0. It then leaves the first node for the routing table.
+
+The objective of the [routing table](https://searchnetworking.techtarget.com/definition/routing-table) is to route the packet to the required node. This node is located in pod 'D'. Before reaching the bridge, the packet first passes through node 2, and is directed to its intended destination.
 
 #### Intra-node communication
 Nodes contained in the same pod communicate through intra-node communication. Intra-node communication can be explained in the same way as inter-node communication. But in this case, the packet travels from pod 'A' at eth0 and goes to the root network through veth0. It then goes to the designated IP passing through the bridge.
@@ -89,7 +95,7 @@ Understanding how Kubernetes networking works is an excellent start for Kubernet
 
 Happy learning.
 
-### Resources 
+### Resources
 [How Sweet is Kubernetes?](https://www.section.io/engineering-education/how-sweet-is-kubernetes/)
 
 [Getting Started with Kubernetes](https://www.section.io/engineering-education/introduction-to-kubernetes/)
