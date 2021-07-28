@@ -19,6 +19,7 @@ Before you begin any hack or password cracking for that instance, you should hav
 
    * A machine installed with [Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/)
    * John the Ripper installed.
+   * [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on you PC.
    
 
 ### Installing John the Ripper
@@ -29,12 +30,12 @@ There are various ways of installing Kali Linux to your machine but we will look
 
 Open the terminal by holding the **ctrl+alt+T** simultaneously and run the command below.
 create a directory to store all our files.
-```
+```bash
     $ mkdir src
 ```
 Navigate to the directory and clone John the Ripper repositories as shown below.
 
-```
+```bash
     $ cd src
 ```
 
@@ -45,36 +46,36 @@ Navigate to the directory and clone John the Ripper repositories as shown below.
 ![Cloning the John Repositories](/engineering-education/password-cracking-with-john-the-ripper/clone.png)
 
 We will get a directory John and we will make it active by navigating to it.
-```
+```bash
     $ cd john
 ```
 Let's now navigate to a directory known as `src` where we will set the sources for the compilation and we do so by running the command as shown.
-```
+```bash
     $ cd src
 ```
-```
+```bash
     $ ./configure
 ```
 ![Configuring files in src](/engineering-education/password-cracking-with-john-the-ripper/configure.png)
 
 Now run the `make` command. This might take some time depending on the machine you have and the resources allocated to your Kali Linux machine.
-```
+```bash
     $ make
 ```
 Now lastly run the `make install` command to install John the Ripper.
-```
+```bash
     $ make install
 ```
 ![Make Install](/engineering-education/password-cracking-with-john-the-ripper/make_install.png)
 
 To confirm if the installation was successful, run the command shown below.
-```
+```bash
     $ cd ..
 ```
-```
+```bash
     $ cd run
 ```
-```
+```bash
     $ ./john
 ```
 ![Confirm Installation](/engineering-education/password-cracking-with-john-the-ripper/run.png)
@@ -86,7 +87,7 @@ To confirm if the installation was successful, run the command shown below.
 
 Open your terminal and run the command below:
 
-```
+```bash
     $ sudo apt install john
 ```
 ![Installing John the Ripper](/engineering-education/password-cracking-with-john-the-ripper/installing.png)
@@ -110,18 +111,18 @@ First, we will need to access the hash of the password we are going to crack.
 Be keen to note the name of your zip file since you will need to state it with the rest of the command.
 
 To access the password hash, navigate to the location of your zip password-protected file and run the command below on the terminal:
-```
+```bash
     $ zip2john Test.zip
 ```
 
 You can export the output to a text document to save the password hash since we are going to use it later.
 Save the output as shown below:
-```
+```bash
     $ zip2john Test.zip > hash.txt 
 ```
 
 To begin the attack on your zip file, run the command as shown;
-```
+```bash
     $ john --format=zip hash.txt
 ```
 
@@ -137,19 +138,19 @@ You can also crack another account's password on your Kali Linux using John the 
 
 First, let us create another account that we are going to crack its password.
 Run the command below on the terminal to create another user.
-```
+```bash
     $ useradd -r James
 ```
 
 We have created an account and named it James.
 
 Let's now set the password for the account.
-```
+```bash
     $ passwd James
 ```
 
 Now run the command below to crack the password of the account name James.
-```
+```bash
     $ john /etc/shadow
 ```
 
