@@ -14,32 +14,32 @@ images:
   - url: /engineering-education/building-a-simple-nestjs-microservice-application-using-redis-as-the-transporter/hero.jpg
     alt: Building a Simple Nest.js Microservice Application Using Redis as the Transporter Image
 ---
-Nest.js is a JavaScript framework for building efficient and scalable hybrid static and server-side applications. Nest.js is built on top of React to abstract rendering complexity thus giving you the flexibility to build scalable React applications. This hybrid enables your React apps to have additional functionality, such as server-side rendering. 
+Nest.js is a JavaScript framework for building efficient and scalable hybrid static and server-side applications. Nest.js is built on top of React to abstract rendering complexity, thus giving you the flexibility to build scalable React applications. In addition, this hybrid enables your React apps to have additional functionality, such as server-side rendering.
 <!--more-->
 
-The Nest.js framework will allow you to build a react app which can render the content in advance on the server-side. Traditionally with React, you can only render on the client-side. Nest.js gives you the flexibility to choose which rendering strategy fits your application as you grow and scale your application from a few pages to thousands. With server-side rendering, pages are rendered during the build-up phase. The content is served ahead of time to the user or search engine bots. This way, they'll receive the fully rendered HTML. After receiving the server-rendered page, client-side rendering takes over and works just like a traditional React app. 
+The Nest.js framework will allow you to build a react app that can render the content in advance on the server-side. Traditionally with React, you can only render on the client-side. Nest.js gives you the flexibility to choose which rendering strategy fits your application as you grow and scale your application from a few pages to thousands. With server-side rendering, pages are rendered during the build-up phase. Then, the content is served ahead of time to the user or search engine bots. This way, they'll receive the fully rendered HTML. After receiving the server-rendered page, client-side rendering takes over and works just like a traditional React app.
 
-This tutorial will teach you how to create a Nest.js Microservice application with Redis.
+This tutorial will show you how to build a Nest.js Microservice application that uses Redis as a message transporter.
 
 ### An Overview of a microservice
 
-Microservice is an architectural design that allows you to create small modules/components of an application that can scale on demand. Each component is packaged independently and can communicate with each other via APIs. Nest.js comes with built-in support for microservice architecture and multiple transport layers. These transport layers are in charge of transferring messages between microservice instances. We can use Redis as a transport layer protocol for end-to-end connectivity to allow flow control and segmentation between different microservices. As a result, every microservice can connect to different channels, and every channel can have various microservices connected to it. Let’s now build a Nest.js microservice application using Redis as the transporter.
+Microservice is an architectural design that allows you to create small modules/components of an application that can scale on demand. Each component is packaged independently and can communicate and interact with each other through APIs. Nest.js comes with built-in support for microservice architecture and multiple transport layers. These transport layers are in charge of transferring messages between microservice instances. We can use Redis as a transport layer protocol for end-to-end connectivity to allow flow control and segmentation between different microservices. As a result, every microservice can connect to different channels, and every channel can have various microservices connected to it. Let’s now build a Nest.js microservice application using Redis as the transporter.
 
 ### Prerequisites
 
 To follow along with this guide, the following prerequisites will be essential;
 
-- We are going to buddle Nest.js CLI using a [Node.js](https://nodejs.org/en/) package. Ensure you have Node.js installed so that you can have NPM on your computer. You can download the Node.js installer here.
+- We are going to buddle Nest.js CLI using a [Node.js](https://nodejs.org/en/) package. First, ensure you have Node.js installed so that you can have NPM on your computer. The Node.js installer can be downloaded [here](https://nodejs.org/en/).
 
-- Nest.js is bunddled and backed by Typescript. So a basic knowledge of [Typescript](https://www.typescriptlang.org/) is requried.
+- Nest.js is bundled and backed by Typescript. So a basic knowledge of [Typescript](https://www.typescriptlang.org/) is required.
 
-- To implement a microservice architecture, we are going to use [Redis](https://redis.io/) as the transporter. Make sure Redis is installed on your computer.
+- To implement a microservice architecture, we are going to use [Redis](https://redis.io/) as the transporter. So make sure Redis is installed on your computer.
 
 To build a Nest.js microservice, follow the below steps:
 
 ### Step 1: Setting the application environments
 
-We will begin by installing the Nest.js CLI using the Node.js package manager. The Nest CLI is a command-line GUI framework that guides you in setting up, developing, and maintaining your Nest.js apps. It helps with many tasks, such as scaffolding a project, serving it in development mode, building and bundling the application for production distribution. The following command will help us install it globally and ready to interact with Nest.js
+We will begin by installing the Nest.js CLI using the Node.js package manager. The Nest CLI is a command-line GUI framework that aids you in configuring, creating, and maintaining your Nest.js applications. This aids with a number of activities, including scaffolding a Nest.js project, serving it in a development context, and creating and packaging the application for production distribution. The following command will help us install it globally and ready to interact with Nest.js
 
 ```bash
 npm i -g @nestjs/cli
@@ -75,7 +75,7 @@ npm install @nestjs/microservices redis
 
 We will add the configuration for the transporter as follows:
 
-First, navigate to the `new_app` that you generated with the `nest generate app`. Then go to `apps/new-app/src/main.ts` and replace the `main.ts` with the following lines of code.
+First, navigate to the `new_app` that you generated with the `nest generate app`. Then go to `apps/new-app/src/main.ts` and replace the `main.ts` with these lines of code, as shown below.
 
 ```js
 import { NestFactory } from '@nestjs/core';
@@ -128,15 +128,15 @@ export class AppService {
 
 From above, we are setting up the client with a Proxy Factory of `redis` as the transporter.
 
-### Step 5: Testing
+### Step 5: Running and Testing
 
-Everything is now set. Start Redis server by running this command.
+Everything is now in order and well set. Use this command to initiate the Redis server.
 
 ```bash
 sudo systemctl start redis
 ```
 
-We can start the application by running the following commands from the project's root directory.
+Starting the application is as simple as executing the following commands from the project's root directory
 
 ```bash
 npm start
