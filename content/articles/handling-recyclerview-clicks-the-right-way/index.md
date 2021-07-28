@@ -6,7 +6,7 @@ url: /handling-recyclerview-clicks-the-right-way/
 title: Handling RecyclerView Clicks the Right Way using Kotlin
 description: When displaying a list of data with a RecyclerView. A need may arise to add click listeners to items in the RecyclerView. In this tutorial, we'll cover RecyclerView clicks.
 author: joel-kanyi
-date: 2021-07-28T00:00:00-00:00
+date: 2021-07-28T00:00:00-08:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
