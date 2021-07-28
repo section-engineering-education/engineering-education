@@ -18,7 +18,7 @@ images:
 A transaction is a logical unit of work performed on a database. They are logically ordered units of work completed by the end-user or an application. A transaction is made up of one or more database modifications. Creating, updating, or deleting a record from a table, for example. To preserve data integrity and address database issues, it's critical to keep track of these transactions. We can bundle SQL queries together and run them as a single transaction
 
 
-### Prerequisities
+### Prerequisites
 To follow through with this tutorial you need to know basic SQL(structured query language) and understand how to create a database.
 
 ### Transaction states 
