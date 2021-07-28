@@ -1,5 +1,7 @@
-# Understanding and working with JavaScript cookies
+### Introduction
+A cookie is a short text file that stores a little bit of data on a user's computer (about 4KB). They typically keep track of information such as a user's preference for a website, prompting the user to improve the web page the next time they visit. Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others. Using JavaScript, cookies can be created, retrieved, and modified directly, but the process is simple. The cookie can be up to 4 KB with name and value and the length of the cookie can be restricted. All cookie data is transferred to the server in the application immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
 
+Table of content:
 - [introduction](#introduction)
 - [Types of cookies](#types-of-cookies)
 - [Create cookie with javascript](#creating-a-cookie-with-javascript)
@@ -8,18 +10,14 @@
 - [deleting a cookie](#deleting-a-cookie)
 - [Conclusion](#conclusion)
 
-## Introduction
-
-A cookie is a short text file that stores a little bit of data on a user's computer (about 4KB). They typically keep track of information such as a user's preference for a website, prompting the user to improve the web page the next time they visit. Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others. Using JavaScript, cookies can be created, retrieved, and modified directly, but the process is simple. The cookie can be up to 4 KB with name and value and the length of the cookie can be restricted. All cookie data is transferred to the server in the application immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
-
-## Various types of cookies
+### Various types of cookies
  There are three types of cookies.
 
 - **First Party Cookies** - These are cookies that are created by your website and can only be read by your website.
 - **Third party cookies** - produced by third-party advertising on your website. These cookies can only be read on any site that displays the same ad using the advertising code.
 - **session cookies** - are saved on your browser. They lasts when the browser is on.
 
-## Creating a cookie with JavaScript
+### Creating a cookie with JavaScript
 
 You can make a cookie from the property `document.cookie` In JavaScript, you can use this property to set up, read, and delete cookies.
 Additionally, any cookies linked with the document are represented by this position.
@@ -80,7 +78,7 @@ document.cookie =
   "Username = ExcellentDesign; path = /; domain = sample.com; secure";
 ```
 
-## Reading a Cookie
+### Reading a Cookie
 
 Because the `document.cookie` item provides a string comprising the semicolon and the space separated by all cookies (e.g., name = value pair, e.g., firstName = excellent; lastName = design), a cookie is more difficult to comprehend. There are no properties defined for the cookie in this thread, such as expires, domain, path, and others. To locate each cookie in a list, partition the cookie into individual name = value pairs and search for a specific name using the `split()` method.
 
@@ -120,10 +118,7 @@ function checkCookie() {
 - **checkCookie()** - using the above getCookie() function, this function will check whether the firstName cookie is set or not, and if it is, it will display a greeting message; if it is not, it will prompt the user to enter their first name and store it in the cookie using the setCookie() function.
 - **getCookie()** - will read the cookie.
 
-## updating a cookie
-
-To change a cookie, make a new one with the same name and path as the old one. Making a new cookie with the same name but a different path than the old one will result in the creation of a new cookie.
-
+### Updating a cookie
 Example:
 
 ```javascript
@@ -134,7 +129,7 @@ document.cookie =
   "firstName=beautifulDesign; path=/; max-age=" + 365 * 24 * 60 * 60;
 ```
 
-## Deleting a Cookie
+### Deleting a Cookie
 
 To erase a cookie, simply give it a new name, an empty or random value, and a max-age value of 0. You'll need to include the cookie's path and domain property when deleting it if you specified them.
 
@@ -150,13 +145,11 @@ To delete a cookie using the expires property, just change the value (i.e. the e
 document.cookie = "firstName=; path=/; expires=Thu, 01 feb 1990 00:00:00 GMT";
 ```
 
-## conclusion
+### Conclusion
 
 Some services will not function properly if cookies are disabled, and some pages will not load properly.
 Some cookies might not necessitate agreement.
 
 For a website to function properly, cookies technicians are required.
 
-As a result, it does not necessitate the user's consent to use the site, but simply the user's consent to use the site.
-
-communication.
+As a conclusion, the user's permission to use the site isn't really required; rather, the user's permission to use the site information is needed.
