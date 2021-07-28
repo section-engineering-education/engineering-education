@@ -33,7 +33,7 @@ In this exercise, we use the `face94` database for recognition. Click [here](htt
 ### Database preparation for training and testing
 For training, a total of 30 individuals are selected and 10 images per person are considered. Therefore, a total of 300 images are taken for training. First, images of size `MxN` are re-shaped to the one-dimensional vector of size `1xMN`. The size of the images in the database is `180 x 200` pixels.
 
-This will create a huge one-dimensional vector of size `1 x 36000` pixels which creates a memory allocation problem in Matlab while computing covariance matrix. Therefore, the size of each image is reduced to half i.e `90 x 100` pixels.
+This will create a huge one-dimensional vector of size `1 x 36000` pixels which creates a memory allocation problem in Matlab while computing covariance matrix. Therefore, the size of each image will be reduced by half i.e `90 x 100` pixels.
 
 For testing, we take 10 images from the remaining individuals. Since we have 30 remaining individuals, we are going to have 300 images for testing. We then create a folder containing the images that will be used for training and those that will be used for testing.
 
