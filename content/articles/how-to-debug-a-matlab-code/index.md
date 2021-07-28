@@ -30,7 +30,7 @@ the error. Let's have an example of such errors and how Matlab raises the flag.
 fprintf(today is my birthday)
 ```
 When we run this code, Matlab raises a flag to show the availability of an error and the execution stops. This is how it appears.
-![matlab error flag](debug1.png)
+![matlab error flag](content/articles/how-to-debug-matlab-code/debug1.png)
 
 Here, probably the programmer forgot to add some symbols to the code. Thus the execution of the code stops and the flag is raised as shown.
 Another syntax error may occur due to the misspelling of a variable. For example, you define a variable but misspell it when using it for example;
@@ -41,7 +41,7 @@ newtemp = tem + 3
 ```
 When the code above is executed, we get the below results.
 
-![matlab error flag](debug2.png)
+![matlab error flag](content/articles/how-to-debug-matlab-code/debug2.png)
 
 Generally, there are many causes of syntax errors in Matlab. As you continue learning Matlab, You will learn the various syntax errors and know 
 how to spot and correct the various errors. 
@@ -62,7 +62,7 @@ end
 ```
 Here we are expecting our program to display the odd number but the output is not as we expected. The results are as shown below;
 
-![matlab logical error](debug3.png)
+![matlab logical error](content/articles/how-to-debug-matlab-code/debug3.png)
 
 ### 3. Runtime error
 These are errors that occur during the execution of a program. They can either occur on the software or the hardware and this cause a malfunction 
@@ -77,21 +77,21 @@ Matlab have some great debugging tools that help you to find the various mistake
 A breakpoint is something that pauses code execution at the location. For example, if you want Matlab to pause before executing a certain line of code, 
 you will place breakpoints there. This is done by clicking on dashes next to the number line in a Matlab script or function.
 
-![Breakpoint](debug4.png)
+![Breakpoint](content/articles/how-to-debug-matlab-code/debug4.png)
 
 If in case of any modification in the script or function with a breakpoint, the breakpoints turn to grey until the changes are saved. This means 
 that the breakpoints are not active. Once the changes are saved, they change to red. This means that they are active. If we run the code above, we have,
 
-![breakpoint](debug5.png)
+![breakpoint](content/articles/how-to-debug-matlab-code/debug5.png)
 
 The letter K shows that the program is being controlled by a debugger and it is stopped. The green arrow next to the breakpoint shows that the 
 execution stopped there since there is a breakpoint there. To be clear, the execution stopped before executing this line.
 
-![Stopped at breakpoint](debug6.png) 
+![Stopped at breakpoint](content/articles/how-to-debug-matlab-code/debug6.png) 
 The various debugging components that you can use to debug your code are located at the top of the Matlab window. To get all these components, 
 click on the dropdown button of the breakpoint shown in the image above. When you click that, you get the options as shown below.
 
-![Various debugging tools](debug7.png)
+![Various debugging tools](content/articles/how-to-debug-matlab-code/debug7.png)
 
 Now we will discuss the various actions of each. We will not discuss the clear all, set/clear, enable/disable and set conditions since they are 
 explained in the window.
@@ -112,10 +112,10 @@ x = randi(n,m);
 fprintf('The last element is %d\n', x(n,m))
 ```
 When we run this function, we have an error as shown below;
-![sample error](debug8.png)
+![sample error](content/articles/how-to-debug-matlab-code/debug8.png)
 
 We will place a breakpoint in the third line and rerun the program. We get the result as shown;
-![Sample debugging steps](debug9.png)
+![Sample debugging steps](content/articles/how-to-debug-matlab-code/debug9.png)
 
 Now from our error message, we saw the Matlab demanding more arguments, so we will input arguments to our function right in front of the `k` in the
 command window. For this case, we will add the code below in front of the `k`.
@@ -123,20 +123,20 @@ command window. For this case, we will add the code below in front of the `k`.
 rand_int(3,2)
 ```
 After making this correction, we click on the `step` to see its effect.
-![Sample debugging steps](debug10.png)
+![Sample debugging steps](content/articles/how-to-debug-matlab-code/debug10.png)
 
 If we look at Matlab's workspace, we have something interesting. let's have a look.
 
-![sampling debugging](debug11.png)
+![sampling debugging](content/articles/how-to-debug-matlab-code/debug11.png)
 If we look at the workspace, the variables have been assigned a value, but the matrix that we get is a 2x2 matrix which is not what we expect. We can 
 type `whos` in the command window to see more details about our variables.
-![sample debugging](debug12.png) 
+![sample debugging](content/articles/how-to-debug-matlab-code/debug12.png) 
 Remember the `K>>` act just as normal command window, you can do anything, plot, assign any variable a value we wish e.t.c. The only difference is 
 that the window now belongs to the active function and in our case `rand_int`.
 We might want to know the values of our variables, but the important part is to use the `size` function to check the dimension of the array stored 
 in variable `x` which shows clearly that it is a 2x2 matrix.
 
-![sample debugging](debug13.png)
+![sample debugging](content/articles/how-to-debug-matlab-code/debug13.png)
 
 At this point, you can now locate your source of error and make a necessary update. Once this is done, we can clear all the breakpoints using `clear all` 
 and then `quit debugging`. For more complicated errors, you can click on the `step` to move through the code line by line.
