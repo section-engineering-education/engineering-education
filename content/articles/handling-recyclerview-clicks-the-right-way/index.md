@@ -56,7 +56,7 @@ We'll be fetching memes from <https://api.imgflip.com/get_memes> API. Then displ
 
 In this step, we will create a new project, you can refer to the image below for guidance.
 
-![create_project](/handling-recyclerview-clicks-the-right-way/create_project.png)
+![create_project](/engineering-education/handling-recyclerview-clicks-the-right-way/create_project.png)
 
 #### Step 2: Adding dependencies
 
@@ -450,9 +450,9 @@ adapter = MemesAdapter(MemesAdapter.OnClickListener { photo ->
 
 Once done, run the app. Here is what you should expect:
 
-![recyclerview](/handling-recyclerview-clicks-the-right-way/recyclerview.jpg)
+![recyclerview](/engineering-education/handling-recyclerview-clicks-the-right-way/recyclerview.jpg)
 
-![recyclerview_clicked](/handling-recyclerview-clicks-the-right-way/recyclerview_clicked.jpg)
+![recyclerview_clicked](/engineering-education/handling-recyclerview-clicks-the-right-way/recyclerview_clicked.jpg)
 
 Check out the entire project on [GitHub](https://github.com/JoelKanyi/RecyclerViewItemClicksDemo).
 
