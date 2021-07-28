@@ -1,15 +1,29 @@
-### Introduction
-Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /password-cracking-with-john-the-ripper/
+title: Password cracking with John the Ripper
+description: This tutorial will walk the reader through the process of using John the Ripper to crack passwords with Kali Linux. John the Ripper is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
+author: koros-wkd
+date: 2021-07-28T00:00:00-17:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
-But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loophole found in the system. This form of hacking is commonly known as `penetration testing`.
+  - url: /engineering-education/password-cracking-with-john-the-ripper/hero.jpg
+    alt: Password cracking with John the Ripper image
+---
+
+Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
+<!--more-->
+But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`.
 
 ### Table of contents
 - [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
-
 - [How to install John the Ripper](#how-to-install-john-the-ripper)
 - [How John the Ripper cracks passwords](#how-john-the-ripper-cracks-passwords)
-
 - [Example cases of cracking passwords](#example-cases-of-cracking-passwords)
 - [Conclusion](#conclusion)
 
@@ -166,3 +180,6 @@ In this tutorial, we have learned the following:
  - Installing John the Ripper in a Kali Linux machine.
  - Password cracking of a zip/rar password-protected file.
  - Creating and cracking a secondary user account's password on a Kali Linux machine.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
