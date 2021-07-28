@@ -2,21 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /transaction-management-in database/
+url: /transaction-management-in-database/
 title: Transaction management in database
-description: 
+description: In this article we go over how to use database transactions to group SQL queries.
 author: paul-mwangi
 date: 2021-07-08T00:00:00-07:41
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/transaction-management-in database/hero.jpg
+  - url: /engineering-education/transaction-management-in-database/hero.jpg
     alt: Transaction management in database
 ---
 ### Introduction
 A transaction is a logical unit of work performed on a database. They are logically ordered units of work completed by the end-user or an application. A transaction is made up of one or more database modifications. Creating, updating, or deleting a record from a table, for example. To preserve data integrity and address database issues, it's critical to keep track of these transactions. We can bundle SQL queries together and run them as a single transaction
-
+<!--more-->
 
 ### Prerequisites
 To follow through with this tutorial you need to know basic SQL(structured query language) and understand how to create a database.
