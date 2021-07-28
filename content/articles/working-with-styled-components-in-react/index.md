@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published:
+published: true
 url: /working-with-styled-components-in-react/
 title: Working with Styled-components in React
 description: In this tutorial, you will learn an overview of React and what styled-components are, and why it is a good choice for styling web pages.
