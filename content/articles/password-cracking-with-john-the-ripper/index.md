@@ -1,164 +1,168 @@
-### Password Cracking with John the Ripper
-
-#### What is Hacking?
-Most people often misunderstand the term `hacking`.
-From your perspective, you may think that hacking is an act where some guy is in the basement trying to gain access to the NASA servers. Well yes, you may be partially right.
-
-But also, `hacking` is trying to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loophole found in the system. This form of hacking is commonly known as `Penetration testing`.
-
 ### Introduction
-In our tutorial, we are going to learn how to spot weak passwords in a system. For our case, we are going to use a very powerful tool known as `John the Ripper`, widely used by hackers and security specialists in Kali Linux. 
+Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
+
+But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loophole found in the system. This form of hacking is commonly known as `penetration testing`.
+
+### Table of contents
+- [Objectives](#objectives)
+- [Prerequisites](#prerequisites)
+
+- [How to install John the Ripper](#how-to-install-john-the-ripper)
+- [How John the Ripper cracks passwords](#how-john-the-ripper-cracks-passwords)
+
+- [Example cases of cracking passwords](#example-cases-of-cracking-passwords)
+- [Conclusion](#conclusion)
+
+### objectives
+In this tutorial, we are going to learn how to spot weak passwords in a system. We will use a very powerful security tool known as `John the Ripper`, widely used by security specialists with the Kali Linux operating system.
 
 `John the Ripper` is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
-It cracks passwords by performing a dictionary attack on the target machine by comparing the password hash with its password hash database.
+It cracks passwords by performing a dictionary attack on the target machine and comparing the password hash with its password hash database.
 
-> **Disclaimer:** This tutorial is meant for educational purposes only and any action that is directly or indirectly related to any content in this article is your sole responsibility.
+> **Disclaimer:** This tutorial is intended solely for academic purposes, and any action taken in response to any of the materials in this guide is entirely your responsibility.
 
 ### Prerequisites
-Before you begin any hack or password cracking for that instance, you should have the following with you;
+Before you begin any hack or password cracking, you should have the following with you:
 
-   * A machine installed with [Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/)
-   * John the Ripper installed.
-   * [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on you PC.
-   
+- [Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) and John the ripper installed on your machine.
+- [Git](https://git-scm.com/downloads) installed on your system. 
 
-### Installing John the Ripper
-John the Ripper is usually pre-installed in Kali Linux but if not in your case, You can follow through the steps below to successfully install John the Ripper in your Kali Linux Machine.
-If you are struggling with Kali Linux, I suggest you go through the [Getting Started with Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) article.
+### How to install John the Ripper
+John the Ripper is usually pre-installed in Kali Linux but if you don't have it yet, you can follow the steps below to install it in a Linux based machine.
 
-There are various ways of installing Kali Linux to your machine but we will look at some of the basic ways:
+If you are facing any challenges with Kali Linux, I suggest you go through [getting started with Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) article.
 
-Open the terminal by holding the **ctrl+alt+T** simultaneously and run the command below.
-create a directory to store all our files.
-```bash
-    $ mkdir src
-```
-Navigate to the directory and clone John the Ripper repositories as shown below.
+There are numerous ways of installing John the Ripper on your machine but we will look at some of the basic ones:
+
+#### 1. Installing from the source
+Open the terminal by simultaneously holding **Ctrl+Alt+T** and run the command below.
 
 ```bash
-    $ cd src
+$ mkdir src
+```
+This creates a directory where we'll store all our files.
+
+Navigate to the `src` directory and clone John the Ripper repository as shown below.
+
+```bash
+$ cd src
+```
+```bash
+$ git clone https://github.com/openwall/john.git
 ```
 
-```
-    $ git clone https://github.com/openwall/john.git
-```
+![Cloning John the Ripper repository](/engineering-education/password-cracking-with-john-the-ripper/clone.png)
 
-![Cloning the John Repositories](/engineering-education/password-cracking-with-john-the-ripper/clone.png)
+This creates a directory named `John`. To make it active, we need to run the command below.
 
-We will get a directory John and we will make it active by navigating to it.
 ```bash
-    $ cd john
+$ cd john
 ```
-Let's now navigate to a directory known as `src` where we will set the sources for the compilation and we do so by running the command as shown.
+Navigate to the `src` directory where we'll set and configure the compilation sources.
 ```bash
-    $ cd src
+$ cd src
 ```
 ```bash
-    $ ./configure
+$ ./configure
 ```
-![Configuring files in src](/engineering-education/password-cracking-with-john-the-ripper/configure.png)
+![Configuring files in src directory](/engineering-education/password-cracking-with-john-the-ripper/configure.png)
 
-Now run the `make` command. This might take some time depending on the machine you have and the resources allocated to your Kali Linux machine.
-```bash
-    $ make
-```
-Now lastly run the `make install` command to install John the Ripper.
-```bash
-    $ make install
-```
-![Make Install](/engineering-education/password-cracking-with-john-the-ripper/make_install.png)
+Run the `make` command to compile source code into executable programs and libraries. This might take some time depending on your machine and the resources allocated to it.
 
-To confirm if the installation was successful, run the command shown below.
 ```bash
-    $ cd ..
+$ make
+```
+Lastly run the `make install` command to install John the Ripper.
+
+```bash
+$ make install
+```
+![Run make install command](/engineering-education/password-cracking-with-john-the-ripper/make_install.png)
+
+Run the commands below to see if the installation was successful.
+```bash
+$ cd ..
 ```
 ```bash
-    $ cd run
+$ cd run
 ```
 ```bash
-    $ ./john
+$ ./john
 ```
 ![Confirm Installation](/engineering-education/password-cracking-with-john-the-ripper/run.png)
 
- 
-
-
-**You can also install John the Ripper by running the command below:**
-
-Open your terminal and run the command below:
+#### 2. Installing from the package
+You can also install John the Ripper by running the command below:
 
 ```bash
-    $ sudo apt install john
+$ sudo apt install john
 ```
-![Installing John the Ripper](/engineering-education/password-cracking-with-john-the-ripper/installing.png)
 
-The command will run and successfully install John the Ripper.
+![Install from package](/engineering-education/password-cracking-with-john-the-ripper/installing.png)
 
-### How John the Ripper will be cracking the Passwords
-During the cracking process, John the Ripper is going to create a rainbow table approach where it will take words from a dictionary. It will then compile the variations of that dictionary and compare the hashed password to what you have in your password file and see if there is a match.
+### How John the Ripper cracks passwords
+During the cracking process, John the Ripper uses a rainbow table approach where it takes words from an in-built dictionary that comes with it.
 
+It then compiles the variations of that dictionary and compares the hashed password to what is in the password file trying to find a match. This is repeated until a match is found.
 
-### Cracking the Passwords 
+### Example cases of cracking passwords
+You will need to run different commands depending on the type of the target you are exploiting.
+Let's look at some instances we might come across when cracking passwords using John the Ripper.
 
-In password cracking, you will need to run different commands depending on the type of target you are exploiting.
-Let's see some instances we might come across when cracking passwords using John the Ripper.
+#### 1. Cracking a `zip/rar` password-protected file
 
-   1. **Cracking a zip/rar password-protected file**
-
-Cracking a password of a zip or rar file is the same process. Since this is the case, we will use the zip file to illustrate the point.
+Cracking a `zip` or `rar` file password is done using the same approach.
 
 First, we will need to access the hash of the password we are going to crack.
-Be keen to note the name of your zip file since you will need to state it with the rest of the command.
+Note the name of your zip file as you will be required to state it in the rest of the commands.
 
-To access the password hash, navigate to the location of your zip password-protected file and run the command below on the terminal:
+To access the password hash, navigate to the location of your zip password-protected file and run the command below in the terminal:
 ```bash
-    $ zip2john Test.zip
+$ zip2john Test.zip
 ```
 
 You can export the output to a text document to save the password hash since we are going to use it later.
-Save the output as shown below:
 ```bash
-    $ zip2john Test.zip > hash.txt 
+$ zip2john Test.zip > hash.txt 
 ```
 
-To begin the attack on your zip file, run the command as shown;
+To begin the attack on your zip file, run the command below:
 ```bash
-    $ john --format=zip hash.txt
+$ john --format=zip hash.txt
 ```
 
-In the command above, we have stated the file format and then specified the target file.
+In the command above, we have specified the format of the target file.
 
-The password cracking process will now begin. This is where the strength of the password comes in. The stronger the password, the more time it will take to perform an attack.
+The password cracking process is initiated. This is where the strength of the password comes in. The stronger the password, the more the time taken to perform an attack.
 
-After a successful attack, the `password` will be displayed on your terminal.
+After a successful attack, the password will be displayed on the terminal.
 
-   2. **Cracking a user account password in Kali Linux**
+#### 2. Cracking a user account password in Kali Linux
 
-You can also crack another account's password on your Kali Linux using John the Ripper. We will now learn how to do so:
+Moving on, we will learn how to crack another user account's password using John the Ripper.
 
-First, let us create another account that we are going to crack its password.
-Run the command below on the terminal to create another user.
+First, let's create another user account that we are going to crack its password.
+Run the command below in the terminal.
 ```bash
-    $ useradd -r James
+$ useradd -r James
 ```
 
-We have created an account and named it James.
+We have created a user account named `James`.
 
-Let's now set the password for the account.
+Now, let's set the password for the account.
 ```bash
-    $ passwd James
+$ passwd James
 ```
 
-Now run the command below to crack the password of the account name James.
+Run the command below to crack James' password.
 ```bash
-    $ john /etc/shadow
+$ john /etc/shadow
 ```
 
-John the Ripper will first identify the hash method and will display it to you. It will then decode the password hash into a raw password and then display the password.
+John the Ripper will first identify the hash method and display it on the terminal. It then decodes the password hash into a raw password and displays it as well.
 
-### Summary
-From this article, we have learned the following:
-
-   - Installing John the Ripper into your Kali Linux machine.
-   - Password cracking a zip/rar file
-   - Cracking a user account on your Kali Linux machine
+### Conclusion
+In this tutorial, we have learned the following:
+ - Installing John the Ripper in a Kali Linux machine.
+ - Password cracking of a zip/rar password-protected file.
+ - Creating and cracking a secondary user account's password on a Kali Linux machine.
