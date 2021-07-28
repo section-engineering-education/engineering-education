@@ -75,8 +75,8 @@ Below is the output of the program.
 The Data Manipulation Language (DML) instructions are utilized with transactional commands such as INSERT, UPDATE, and DELETE. These commands cannot be used with the Data Definition Language because they are automatically committed to the database. Below are the transaction commands; 
 
 1. COMMIT- Saves the changes done against the database.
-2. ROLLBACK- Redoes the changes done before being commited to the database.
-3. SAVEPOINT-saves a point in a transaction on which to carry out a rollback.
+2. ROLLBACK- Redoes the changes done before being committed to the database.
+3. SAVEPOINT- saves a point in a transaction on which to carry out a rollback.
 4. SET TRANSACTION- Gives a name to a transaction.
 
 ### COMMIT command
