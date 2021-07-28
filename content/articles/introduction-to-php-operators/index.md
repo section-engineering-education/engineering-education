@@ -19,14 +19,50 @@ An operator is a symbol that performs operations on operands. In [PHP (Hypertext
 
 ### Prerequisites
 To follow along with this tutorial, you need to have:
-- `xampp` downloaded on your machine. You can download the latest version [here](https://www.apachefriends.org/download.html).
+- `Xampp` downloaded on your machine. I will guide you on how to download.
 - A basic knowledge of PHP.
 - A text editor like [Visual Studio](https://code.visualstudio.com/download).
 
 > I will use Linux in this tutorial, but you are free to use Windows as well.
+### Table of contents
+- [Installing Xampp](#installing-xampp)
+- [Differences between an Operator and an Operand](#differences-between-an-operator-and-an-operand)
+- [Creating a PHP file in Xampp](#creating-a-php-file-in-xampp)
+- [Arithmetic Operators](#arithmetic-operators)
+- [Comparison Operators](#comparison-operators)
+- [String Operators](#string-operators)
+- [Assignment Operators](#assignment-operators)
+### Installing Xampp
+To execute PHP operators programs, you need to access a web server in which the PHP programs will be running. Therefore you need to either download LAMP, MAMP, or XAMPP depending on the Operating System that you are using. In my case, I am using `Ubuntu Linux`. We will download Xampp. 
 
-To run any PHP file, you must first start `Xampp`. This is done using the command below:
+We will download the latest version of Xampp [here](https://www.apachefriends.org/download.html).
 
+After successfully downloading Xampp, navigate to where it was downloaded and open in terminal to install the package. In my case, it was downloaded in the `downloads` folder.
+
+You need to first make the package executable using the chmod command before installing. To do that, execute the command below in the terminal.
+```bash
+$  sudo chmod 755 xampp-linux-x64-8.0.8-1-installer.run
+```
+You will not see any output after executing the command above. To verify that we have executed the permission, run the command below:
+```bash
+$ ls -l xampp-linux-x64-8.0.8-1-installer.run
+
+-rwxr-xr-x 1 sarah sarah 159498085 Ado 28 23:22 xampp-linux-x64-8.0.8-1-installer.run
+```
+Now run the installer by executing the command below:
+```bash
+$ sudo ./xampp-linux-x64-8.0.8-1-installer.run
+```
+You should have something similar to the image below:
+
+![xampp installer](/engineering-education/introduction-to-php-operators/image1.png)
+Continue clicking `Next` until you are done with the installation progress.
+![xampp setup](/engineering-education/introduction-to-php-operators/image2.png)
+
+Once the installation is finished, move to the `Manage Servers tab` and click `Start All` to start all the services. You can change their status by selecting Start or Stop.
+![xampp servers](/engineering-education/introduction-to-php-operators/image3.png)
+
+Alternatively, you can start the services by using the command below:
 ```bash
 $ sudo /opt/lampp/lampp start
 ​
@@ -35,15 +71,12 @@ XAMPP: Starting Apache...ok.
 XAMPP: Starting MySQL...ok.
 XAMPP: Starting ProFTPD...ok.
 ```
+Let's now verify that the installation was successful. Open your browser at http://localhost/dashboard. You should see something like this.
+![dashboard](/engineering-education/introduction-to-php-operators/image4.png)
 
-### Table of contents
-- [Differences between an Operator and an Operand](#differences-between-an-operator-and-an-operand)
-- [Creating a PHP file in Xampp](#creating-a-php-file-in-xampp)
-- [Arithmetic Operators](#arithmetic-operators)
-- [Comparison Operators](#comparison-operators)
-- [String Operators](#string-operators)
-- [Assignment Operators](#assignment-operators)
+Congrats! You have successfully prepared the environment for your PHP Operators programs. 
 
+A folder `/opt/lampp/htdocs` has been created after installing Xampp. This is where we will create our PHP files.
 ### Differences between an Operator and an Operand
 To understand the difference, let us look at the example below:
 ```PHP
@@ -55,7 +88,7 @@ In the example above, `+` is the `operator` while `10` and `20` are `Operands`. 
 
 ### Creating a PHP file in Xampp
 Now that we know what an operator and an operand are, let us start working with them. To do that, we have to create a `PHP file` in xampp. 
-After downloading xampp, you will find that a folder called `/opt/lampp/htdocs`  is created. Open the folder by executing the command below:
+Open `/opt/lampp/htdocs` folder by executing the command below:
 ```bash
 $ cd /opt/lampp/htdocs
 ```
