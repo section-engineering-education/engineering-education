@@ -189,7 +189,6 @@ Output:
 We have deleted from the table where id 1,2 and 3 exist but with savepoints SP1, SP2 and  SP3 respectively. We can now rollback to any point using the savepoints.
 
 ```SQL
-BEGIN TRANSACTION;
 ROLLBACK TO SP2;
 ```
 Output:
