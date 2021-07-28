@@ -1,22 +1,3 @@
----
-layout: engineering-education
-status: 
-published: 
-url: /broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/
-title: Broadcasting a private FM radio using Raspberry Pi
-description: This article will explain how one can create a private FM radio with the use of a Raspberry Pi and internet connection. The private FM radio broadcast can reach a radius of around fifty meters.
-author: ruphus-muita
-date: 2021-07-19T00:00:00-18:00
-topics: [Networking]
-excerpt_separator: <!--more-->
-images:
-
-  - url: /engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/hero.jpg
-    alt: Raspberry Pi Image 
----
-Raspberry Pi, is based on an ARM cortex designed to carry out various functions. It is a computer that works with low power and is also a single board. This mini-computer is based on an ARMv7 processor and can therefore run ARM/Linux distributions. This aspect or particular characteristic makes it very valuable in understanding the Internet of Things.
-<!--more-->
-
 ### Overview
 This article will cover:
 - [Introduction](#introduction)
