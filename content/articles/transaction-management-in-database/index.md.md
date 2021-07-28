@@ -25,7 +25,7 @@ To follow through with this tutorial you need to know basic SQL(structured query
 There are various database transaction states as follows.
 1. Active state- this is the state in which a transaction execution process begins. Operations such as read or write are performed on the database.
 2. Partially committed- means that a transaction is only partially committed once it has been completed.
-3. Committed stage- After a transaction execution is completed successfully the transaction is in committed state.All changes made to the database are permanently documented.
+3. Committed stage- After a transaction execution is completed successfully the transaction is in a committed state. All changes made to the database are permanently documented.
 4. Failed state- If a transaction is aborted while in the active state, or if one of the checks fails, the transaction is in the failed state.
 5. Terminated state- This state happens once the transaction leaving the system cannot be restarted once again.
 
