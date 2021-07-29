@@ -417,9 +417,9 @@ echo "$x4";
 ### Conclusion
 In this article, we have looked at:
 1. How to downlaod Xampp and run it.
-1. Definition of an operator and an operand.
-2. How to create a PHP file in Xampp.
-3. Different Operators.
+2. Definition of an operator and an operand.
+3. How to create a PHP file in Xampp.
+4. Different Operators.
 
 Variables and functions are both used with operators to perform various operations.
 
