@@ -3,9 +3,9 @@
 #### Introduction
 Graphs are mathematical structures that reflect the pairwise relationship between things. A graph is a type of flow structure that displays the interactions of several objects. It may be represented by utilizing the two fundamental components shown below:
 
-* **Nodes**: These are the most crucial elements of every graph. Edges are used to represent node connections. A graph with two nodes A and B connected by an undirected edge expresses a bi-directional relationship between the nodes and the edge.
+* **Nodes**: These are the most crucial elements of every graph. Edges are used to represent node connections. A graph that have two nodes connected to each other using an undirected edge shows a bi-directional connection between those two nodes.
 
-* **Edges**: Edges are part of a graph showing the connections between nodes. An edge between two nodes expresses the nodes' one-way or two-way connection.
+* **Edges**: Edges are part of a graph showing the connections between nodes. An edge represent the connection between two nodes.
 
 #### An application in real life 
 
@@ -22,27 +22,27 @@ Graphs are mathematical structures that reflect the pairwise relationship betwee
 
 ![graph](./graph__2.JPG)
 
-* **Weighted**: Weighted graph, with each edge, allocated a weight or cost. Consider a network with four nodes, shown in the picture. As you can see, each edge has a weight/cost associated with it. If you wish to get from vertex 1 to vertex 3, you can choose one of three routes:
-    * 1->3->2
-    * 3->1
-    * 1->3->4
+* **Weighted**: Weighted graph, with each edge, allocated a weight or cost. Consider a network with four nodes, shown in the picture. Every edge of a graph have some weight with it, if you wish to get from vertex 2 to vertex 1, you can choose one of three routes:
+    * 2->3->1
+    * 2->1
+    * 2->3->4->1
   
 As a result, the total cost of each path is as follows:
 
-The total cost of 1->3->2 is (1+2), or three units.
+The total cost of 2->3->1 is (2+1), or three units.
 
-The total cost of 1->3 is one unit.
+The total cost of getting from 2->1 is one unit.
 
-The total cost of 1->3->4 is (3+2), or 5 units.
+The total cost of 2->3->4->1 is (2+2+3), or seven units.
 
 ![graph](./graph_3.JPG)
 
-* **Cyclic**: A graph is cyclic if it has a path that starts and ends at the same vertex. This is referred to as a cycle. An acyclic graph does not have a cycle.
+* **Cyclic**: If a graph contains a path that starts and finishes at the same vertex, it is said to be cyclic. This is referred to as a cycle. An acyclic graph does not have a cycle.
 
 ![graph](./graph_4.jpg)
 
 The diagram below depicts a cycle (0->1->2).
-A tree is a graph that has just one path connecting any two vertices. An acyclic network with N-1 edges, where N is the number of vertices, is referred to as a tree. Every node in a graph may have one or more parents. In a tree as each node has precisely one parent node.
+A tree is a graph that has just one path connecting any two vertices. Every node in a graph may have one or more parents. In a tree as each node has precisely one parent node.
 
 A tree cannot have any loops or cycles, whereas graphs may.
 
@@ -52,11 +52,11 @@ A tree cannot have any loops or cycles, whereas graphs may.
 A graph can be represented in several ways. The following are the two most frequent ways of expressing a graph:
 
 * **Adjacency Matrix** 
-A V*V binary matrix is an adjacency matrix. If there is an edge from vertex i to vertex j, element A<sub>i,j</sub> is 1, otherwise A<sub>i,j</sub> is 0.
+A V*V binary matrix is an adjacency matrix.There is an edge that is connecting vertex i and vertex j, element A<sub>i,j</sub> is 1, otherwise A<sub>i,j</sub> is 0.
 
-  **Note**: A binary matrix is one in which the cells can only have one of two potential values: 0 or 1.
+  **Note**:A binary matrix has cells that can only have one of two possible values: 0 or 1.
 
-The adjacency matrix for the weighted graph can also be modified, such that instead of storing 0 or 1, the weight or cost of the edge is recorded in A<sub>i,j</sub>.
+We can store the cost of the edge at A<sub>i,j</sub> in the adjacency matrix of a weighted graph rather than storing 0 or 1.
 
 If A<sub>i,j</sub> is 1 in undirected graph then A<sub>i,j</sub> will also be 1.
 
@@ -65,11 +65,11 @@ If A<sub>i,j</sub> is 1 in  directed graph, then may or may not be 1.
 The adjacency matrix offers constant-time access (O(1)) to detect if two nodes have an edge. The adjacency matrix has a space complexity of O(V)<sup>2</sup>.
 
 * **Adjacency List**
-An adjacency list is another way to represent a graph. An adjacency list is a collection of distinct lists in an array A. Each element of the array A<sub>i</sub> is a list containing all of the vertices next to vertex i.
+It is a most common way of representing a graph when we implement it in our code. An adjacency list is a collection of distinct lists in an array A. Every node of a graph A<sub>i</sub> is a list which hold all the values of the vertices next to vertex i.
 
-In the case of a weighted graph, the weight or cost of the edge is stored in the list alongside the vertex using pairs. If vertex j is in list A<sub>i</sub>, vertex i will be in list A<sub>j</sub> in an undirected graph.
+If we have a weighted graph we store the cost with the vertex using pairs you will get better understanding when we implement it in our code. If vertex j is in list A<sub>i</sub>, vertex i will be in list A<sub>j</sub> in an undirected graph.
 
-The space complexity of the adjacency list is O(V + E), since information in the adjacency list is only stored for edges that exist in the graph.
+Due to the fact that information in the adjacency list is only stored for edges that exist in the graph, its space complexity is O(V + E).
 Representation of an undirected graph,
 
 * G is an undirected graph with 5 vertices and 7 edges.
