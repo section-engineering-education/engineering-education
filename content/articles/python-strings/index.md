@@ -1,40 +1,65 @@
-###  Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /python-strings/
+title: Understanding Strings in Python
+description: This tutorial will guide you on how to initialize, format, and concatenate strings in Python. It also discusses some of the major methods you can use when dealing with Python strings.
+author: dianne-sandra
+date: 2021-07-30T00:00:00-06:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/python-strings/hero.png
+    alt: Understanding Strings in Python
+---
 A string is a sequence of Unicode characters. This standard provides a unique code for every character to make them distinguishable. In Python, strings are used to represent text and can include spaces, special characters, and numbers.
+<!--more-->
+### Initializing strings in Python
+We create strings by enclosing characters using single or double quotes. Triple quotes can also be used.
 
-###  Initializing strings in Python
-In Python, we create strings by enclosing characters using single or double-quotes. Triple quotes could be used as well.
+#### Using single quotes
+We define strings using single quotes, as shown below:
 
-####  Using single quotes
-```py 
-# defining strings using single quotes
-string = 'Hello there'
+```py
+string = 'Hello there' #single quotes
 print(string)
 ```
+Output:
+
 ```bash
 Hello there
 ```
 
-####  Using Double Quotes
+#### Using double quotes
+We define strings using double quotes as follows:
+
 ```py
-# defining strings using double quotes
-string2 = "Double Quote String"
+string2 = "Double Quote String" #double quotes
 print(string2)
 ```
+
+Here is the output:
+
 ```bash
 Double Quote String
 ```
 
 ####  Using Triple Quotes
+
 ```py
-# defining strings using tripple quotes
-string3 = '''Tripple Quote String'''
+string3 = '''Tripple Quote String''' # defining strings using tripple quotes
 print(string3)
 ```
+
+Output:
+
 ```bash
 Tripple Quote String
 ```
 
-Note that tripple quotes can also be used to specify multi-line strings, as shown below:
+Note that triple quotes can also be used to specify multi-line strings, as shown below:
 
 ```py
 # Multi-line strings
@@ -43,54 +68,60 @@ string4 = '''My name is Jane Doe,
 
 print(string4)
 ```
+
 ```bash
 My name is Jane Doe,
     I like traveling so much
 ```
 
-###  Accessing characters in a string
-Strings can be regarded as arrays of characters. This means that we can access individual characters by specifying their position using square brackets and index.
-
-The following example shows how to access the first character:
+### Accessing characters in a string
+Strings can be regarded as arrays of characters. This means that we can access individual characters by specifying their index in square brackets, as shown below:
 
 ```py
 # printing the first character of the string
 string = 'Hello there'
 print(string[0])
 ```
+
 ```bash
 H
 ```
 
-Since Python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same approach to retrieve the last character.
+Since Python allows negative indexing whereby the last element can be accessed by index `-1`, the second last element by index `-2`, and so on, we can use the same approach to retrieve the last character, as demonstrated below:
 
 ```py
 # printing the last index
 string = 'Hello there'
 print(string[-1])
 ```
+Output:
+
 ```bash
 e
 ```
 
-####  Printing a range of characters
-To print a range of characters say from a given index to another, we use `slicing`. In this technique, we specify the starting index and the ending index separated by a colon `:`. 
+### Printing a range of characters
+We use `slicing` To print a range of characters from a given index to another. In this technique, we specify the `starting index` and the `ending index` separated by a colon `:`. 
 
-The string printed out is that which occurs in that range.
+In the following example, the string that will be printed out is between index 1 and 8.
 
 ```py
 #slicing 1st to 8th character
 string = 'hello there'
 
-# Print the string between index 0 to 8
+# Print the string between index 1 to 8
 print('string[1:8] = ', string[1:8])
 ```
+
+Output:
+
 ```bash
 string[1:8] =  ello th
 ```
 
-###  Common Methods in Python Strings
-- `lower()`. This method is used to convert an alphabetical string to lower case. If the string includes characters and numbers, they are ignored.
+### Common methods in Python strings
+`lower()` - This method is used to convert an alphabetical string to lower case. Any characters and numbers in the string are ignored.
+
 ```py
 # original text
 string = 'THIS IS TEXT IN UPPERCASE'
@@ -98,11 +129,14 @@ string = 'THIS IS TEXT IN UPPERCASE'
 # print transformed string
 print(string.lower())
 ```
+Here is the output:
+
 ```bash
 this is text in uppercase
 ```
 
-- `upper()`. This does the opposite of the `lower()` method. It transforms a given text into uppercase ignoring special characters, numbers, and symbols.
+`upper()` - This method transforms a given text into uppercase and ignores special characters, numbers, and symbols.
+
 ```py
 # initial string 
 string = 'this text is in lowercase'
@@ -113,23 +147,28 @@ new_string = string.upper()
 # print transformed string
 print(new_string)
 ```
+Output:
+
 ```bash
 THIS TEXT IS IN LOWERCASE
 ```
 
-- `len()`. This method returns the length of a given input string.
+`len()` - This method returns the length of a given input string, as shown below:
+
 ```py
-# The string
 string = 'programming is fun'
 
 # getting the length of the string
 print(len(string))
 ```
+
 ```bash
-18
+Output: 18
 ```
 
-- `split()`.  This method separates the individual characters of a string into a list. By default, the list values are separated by white spaces. You can however specify the separator as you wish using either a comma, hash-tag, or any other separator. The separator means that the string will be split at every occurrence on the separator. For instance, the code snippet below will split the string at every occurrence on a question marker `?`.
+`split()` - This method separates individual characters of a string into a list. By default, the list values are separated by white spaces. However, you can also use a comma, hash-tag, or any other character.
+
+In the example below, we will split the string using a `?` character:
 
 ```py
 # initial string
@@ -141,26 +180,34 @@ new_string = string.split("?")
 # printing the new string
 print(new_string)
 ```
+Here is the output:
+
 ```bash
 ['Hello', 'world', 'this', 'is', 'my', 'test', 'for', 'the', 'game']
 ```
 
-- `join()`. This method combines all elements of a list specified by a separator into a single string. The method takes an iterable object as a parameter. An iterable object is one in which an individual element can be returned at a time.
-```py
-# iterable object
-object = ['Hello', 'world', 'this', 'is', 'my', 'test', 'for', 'the', 'game']
+`join()` - This method combines all elements of a list specified by a separator into a single string. This function requires an iterable object as a parameter. An iterable object is one in which an individual element can be returned at a time.
 
-# specify the separator
+```py
+# iterable object 
+object = ['Hello', 'world', 'this', 'is', 'my', 'test', 'for', 'the', 'game'] #list
+
+# specifying the separator
 separator = ' '
 
 # Join where the comma occurs
 print(separator.join(object))
 ```
+
+Output:
+
 ```bash
 Hello world this is my test for the game
 ```
 
-- `find()`. This method is used to determine if a character or a value exists in a given string. It returns the first occurrence of the value. If the value being looked for in the string is not found, the method returns -1.  For instance, if we want to find the occurrence of the word `world` in the string `hello world`, we can use the find method as below. The method returns 6 which is the occurrence of the string `world`.
+`find()` - This method is used to determine if a character or a value exists in a given string. It returns the first occurrence of the value. If the word or character is not found, the `find` method returns -1.  
+
+For instance, if we want to find the occurrence of the word `world` in the string `hello world`, we can use the `find` method, as shown below. 
 
 ```py 
 # string
@@ -171,12 +218,15 @@ y = string.find('world')
 
 print(y)
 ```
+Output:
 
 ```bash
 6
 ```
 
-- `replace()`. This method replaces a phrase in a string with another phrase. The method takes 3 parameters; the string to be replaced, what to replace it with and the number of times to do the replacement.
+In the above code, the function returns `6` which is the index of the string `world`.
+
+`replace()` - This method replaces a phrase in a string with another phrase. The method takes 3 parameters; the string to be replaced, what to replace it with, and the number of times to do the replacement.
 
 > If the number of times the replacement is to be done is not stated, the method replaces all the occurrences of the phrase.
 
@@ -191,39 +241,50 @@ y = string.replace('world', 'people')
 print(y)
 
 ```
+Output:
+
 ```bash
 Hello people, this people are a nice people
 ```
 
-- `strip()`. This method removes any character that either trails or leads a string. By default, the `split()` removes spaces like below:
+`strip()` - This method removes any character that either trails or leads a string. By default, the `split()` function removes spaces, as illustrated below:
+
 ```py
-string = "     hello world     "
+string = "     hello world     " #string with extra spaces
 x = string.strip()
 
 print(x)
+
 ```
+Output:
+
 ```bash
 Hello world
 ```
 
-The function can as well take the caharcter to remove as parameter the eliminates them from the string as below:
+A specific character can also be passed to the `strip` method as a parameter:
 
 ```py
 string = "//////Hello world,,,,,"
 
-x = string.strip("/,")
+x = string.strip("/,") # removes ///
 
 print(x)
 ```
+Output:
+
 ```bash
 Hello world
 ```
 
-###  Python String Operations
-Python has a wide range of operations to perform on strings. This makes strings in Python have a wide application than strings in any other programming languages.
+###  Python string operations
+This section discusses some of the operations that can be performed on strings using Python.
 
-####  String Iteration
-We can iterate through a given string using for loop. We can iterate to find the length of a string, count the occurrence of a given character or check whether a given letter is found in a string. To demonstrate this, we can loop through a string and print every character of that string.
+####  String iteration
+We can iterate through a given string using a `for` loop. We can iterate to determine the string's length, count the occurrence of a given character, or check whether the presence of a particular letter or character. 
+
+To demonstrate this, let's loop through a string and print every character of that string:
+
 ```py
 # Iterating through a string
 for letter in 'Hello World':
@@ -238,6 +299,8 @@ for letter in string:
 print('The letter o occurs ' +str(count)+ ' times')   
 ```
 
+Output:
+
 ```bash
 H
 e
@@ -250,11 +313,13 @@ o
 r
 l
 d
+
 The letter `o` occurs 7 times
 ```
 
 #### Concatenation
-String concatenation involves joining one string with another string. We can join two strings using the plus `+` operator.
+String concatenation involves joining one string with another string. We perform this operation using the `+` operator.
+
 ```py
 # concatenating Strings using the plus operator
 # string 1
@@ -269,13 +334,18 @@ string3 = string1 + string2
 #printing the output
 print(string3)  
 ```
+
+Output:
+
 ```bash
 sectionengineering
 ```
 
-#### Character Membership
-This is a test done on a given string to determine if some character or sequence of characters exists in the string. If the character or sequence of character exists, the method returns true else false.
-When testing for the existence of a character of a substring in a string, we use the keyword `in`.
+#### Character membership
+This is a test done on a given string to determine if some characters exist in the string. If the characters are found, the method returns `true`.
+
+We usually use the keyword `in` to check for character membership:
+
 ```py
 # input string 
 inputString = 'Hello World'
@@ -292,15 +362,18 @@ y = stringToCheck2 in inputString
 print(x)
 print(y)
 ```
+Here is the output:
+
 ```bash
 True
 False
 ```
 ### Formatting strings
-Formatting involves writing strings with other variables. There are three main methods of string formatting. We will discuss the three methods in a beginner-friendly way as below.
+In this section, we will discuss three main methods of [string formatting](https://www.learnpython.org/en/String_Formatting).
 
 #### Using the `%` operator
-If you have ever used `printf` in C language then this will be easier to understand. Just like in c, we use `%` to format the string by replacing what is in the variable with the operator as shown below.
+We use `%` to format the string by replacing what is in the variable with the operator, as shown below:
+
 ```py
 # Using % operator 
 name = 'Dianne Sandra
@@ -311,9 +384,11 @@ My name is Dianne Sandra
 ```
 
 #### Using the `str.format` method
-This approach was introduced in Python 3.0 to enable programmers to handle complex string operations efficiently. It is a method inbuilt with the Python strings class and can be accessed without any additional libraries. It provides string manipulation by substituting values and variables in strings.
+This approach was introduced in `Python 3.0` to enable programmers to handle complex string operations more efficiently. 
 
-You could also do substitution by variable names then specifying the name in its respective position. This comes in very helpful especially if you want to substitute more than one string.
+`str.format` is an inbuilt method and does not require additional libraries. It supports string manipulation by substituting certain values and variables. 
+
+This function is demonstrated below:
 
 ```py
 # using format option 
@@ -323,15 +398,21 @@ print ("{} is a good platform.".format("Section Engineering Education"))
 print ('{name} is {age} years old and she is a {occupation}'
 .format(name = 'Dianne', age = 19, occupation = 'programmer'))
 ```
+Output:
 
 ```bash
 Section Engineering Education is a good platform.
 Dianne is 19 years old and she is a programmer
 ```
 #### Using f-strings
-Introduced in Python 3.6, F-Strings allow embedding Python expressions into Python strings. It has the name f-string because the string constants into which other expressions are embedded are prefixed by the letter `f`. Take a look at the example below.
+Introduced in `Python 3.6`, f-Strings allow embedding expressions into strings. 
+
+It has the name `f-string` because the constants into which other expressions are embedded are prefixed by the letter `f`. 
+
+Take a look at the following example:
+
 ```py
-# emebeding variables into string constants using f-string
+# embbeding variables into string constants using f-string
 string1 = 'Hello'
 string2 = 'world'
 
@@ -340,13 +421,14 @@ print(f'{string1}  {string2}')
 ```
 
 ```bash
-Hello  world
+Output: Hello  world
 ```
-Generally, the f-string combines the initial string with the expressions to form the final string which is then presented for printing.
 
 ### Conclusion
-In this article, we learned about strings in Python. we dug into how to initialize strings in Python, operations that we can perform on the strings, the inbuilt methods of the Python string class as well as the various methods of string formatting. This article will give the reader a head start to Python strings when followed closely.
+In this article, we learned about strings in Python. we discussed how to initialize strings, operations that we can perform on the strings, inbuilt methods, and string formatting. You can, therefore, use this knowledge to craft powerful applications
 
 You can download the code snippets from [here](https://github.com/diannesandra/python-strings).
 
 
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
