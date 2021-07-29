@@ -49,15 +49,15 @@ You need to install Node.js version 14.15.1 or higher. Visit [Node.js](https://n
  
 To check  Node.js is installation and the version installed. Open your terminal and type in the command below:
  
-```
+```node
  
-node --version
+ node --version
  
 ```
  
 To verify the installation and version of NPM type in the command below in your terminal.
  
-```
+```node
  
 npm --version
  
@@ -69,7 +69,7 @@ Create a new directory, The directory will contain all your installed dependenci
  
 Navigate to your command line and type in the line below. You can use the integrated terminal in your code editor.
  
-```
+```node
  
 mkdir astro-app
  
@@ -77,7 +77,7 @@ mkdir astro-app
  
 Next, navigate to the directory using the command below
  
-```
+```node
  
 cd astro-app
  
@@ -85,7 +85,7 @@ cd astro-app
  
 In your terminal type in the below to initialize your Astro project:
  
-```
+```node
  
 npm init astro
  
@@ -103,7 +103,7 @@ Astro will then copy some project files to start our project.
  
 Before we go further. Type in the command below in the terminal. This command installs the required packages(dependencies):
  
-```
+```node
  
 npm install
  
@@ -163,7 +163,7 @@ The ones we are more interested in are:
  
 The framework we will be using is React. To make Astro support React run the command below. It installs React renderer and React.
  
-```
+```node
  
 npm install @astrojs/renderer-react react react-dom -D
  
@@ -171,7 +171,7 @@ npm install @astrojs/renderer-react react react-dom -D
  
 After the installation of React renderer and React. Navigate to **astro.config.mjs** add the code below to the configuration object.
  
-```
+```js
  
 export default {
  
@@ -216,7 +216,7 @@ Navigate to the component folder in the main project folder. Create a **Tour.jsx
  
 Inside the **Tour.jsx** file you created add the following:
  
-```
+```js
  
 import React from 'React';
  
@@ -314,7 +314,7 @@ Navigate into **Tour.astro** file, at the top you will see three dashes above an
  
 Copy the code below inside **Tour.astro** file:
  
-```
+```js
  
 ---
  
@@ -326,7 +326,7 @@ const url = 'https://course-api.com/React-tours-project'
  
 const tours = await fetch(url).then(response => response.json())
  
----
+---js
  
 <article>
  
@@ -370,7 +370,7 @@ You should see the image below in your developer tools:
  
 You will see that Astro does not ship **Tour.jsx** component into the browser. Astro loads our React component as a static HTML. Now in **Tour.astro**, type these codes below the **tours** variable:
  
-```
+```js
  
 const tours = await fetch(url).then(response => response.json()) // tours variable
  
@@ -402,7 +402,7 @@ to make our web pages interactive. Astro provides you with five(5) different com
  
 In your **Tour.Jsx**, inside the **\<p>** tag change it from **{page.info}** to the code below:
  
-```
+```jsx
  
 <p>
  
@@ -424,7 +424,7 @@ Now go to your browser and click on the **button** element. You will see that no
  
 To see that the button tag function, we update the **Tours.jsx** component imported inside the **Tour.astro** with one of the component attributes as shown below:
  
-```
+```js
  
 <Tours:load tours={tours}>
  
