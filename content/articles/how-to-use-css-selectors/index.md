@@ -1,6 +1,23 @@
-In [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), one of the most important concepts is the `CSS selectors`. They let you style specific [HTML](https://html.com/) elements on your website differently.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-css-selectors/
+title: How to use CSS Seletors to style a Web page
+description: This article takes the reader through the process of styling a Web page using CSS selectors. A CSS selector a set of elements and words that instruct the browser on which HTML elements to use when applying CSS property values.
+author: beatrice-muriithi
+date: 2021-07-29T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-If you want to create amazing elements, then you need to understand CSS selectors and what you can do with them. Before moving on to advanced CSS selectors, the reader should first learn the basic CSS selectors.
+  - url: /engineering-education/how-to-use-css-selectors/hero.png
+    alt: How to use CSS selectors image
+---
+
+In [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), one of the most important concepts is the `CSS selectors`. They let you style specific [HTML](https://html.com/) elements on your website differently.
+<!--more-->
+If you want to create amazing elements, then you need to understand CSS selectors and what you can do with them. Before moving on to advanced CSS selectors, you should first learn the basic CSS selectors.
 
 By the end of this tutorial, you will be able to use CSS selectors to create incredible elements.
 
@@ -237,9 +254,9 @@ Let's look at the example below:
 ```
 ```css
 <style>
-ul,ol{
-    font: large;
-}
+  ul,ol{
+      font: large;
+  }
 </style>
 ```
 The code above selects all `ol` elements in the `ul` elements.
@@ -359,3 +376,6 @@ For further reading, please visit the links below:
 - [CSS Selectors official docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
 Happy coding! 💪
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
