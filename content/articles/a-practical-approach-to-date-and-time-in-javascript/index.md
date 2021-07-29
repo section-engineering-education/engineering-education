@@ -1,0 +1,209 @@
+﻿
+Dates and time being such a crucial part of our day-to-day lives, knowing how to work with them is important. Javascript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in js that can help us make use of the `Date` object.
+
+### Prerequisites
+To follow through this tutorial smoothly we will need :
+ 1. Fundamental knowledge in JavaScript and HTML
+ 2. A text editor of your choice
+ 3. A browser
+ 
+ ### 1.Getting the day of the week from a date.
+ In JavaScript, the inbuilt method `new Date()` is used to get the current date by default. There is also the `getDay()` that is used for checking the day of the week. It returns the results as an integer ranging between `0 - 6` whereby 0 is Sunday and the rest of the days follow respectively up to 6 for Saturday. We will use the two methods above combined with a Switch statement to get the day today from today's date.
+ ````HTML
+ <!DOCTYPE  html>
+<html  lang="en">
+<head>
+<title>Document</title>
+</head>
+
+<body>
+<script>
+
+var  d = new  Date();
+var  today = "";
+
+switch(d.getDay()){
+	case  0:
+		today = "Sunday"
+		break;
+
+	case  1:
+		today = "Monday"
+		break;
+
+	case  2:
+		today = "Tuesday"
+		break;
+
+	case  3:
+		today = "Wednesday"
+		break;
+
+	case  4:
+		today = "Thursday"
+		break;
+
+	case  5:
+		today = "Friday"
+		break;
+
+	case  6:
+		today = "Saturday"
+		break;
+
+	}
+
+	document.writeln("Today is " + today)
+
+</script>
+</body>
+</html>
+````
+
+### 2. Calculating the number of days between two dates
+In this task we start by initialising the two dates to be used. Then we subtract the time difference between them which will be in milliseconds and finnaly convert the time into days.
+````HTML
+<!DOCTYPE  html>
+<html  lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+<script>
+
+var  Today = new  Date("7/29/2021");
+var  Target = new  Date("11/21/2050");
+
+// Tym diff
+var  Diff_in_tym = Target.getTime() - Today.getTime();
+// No of days btwn
+var  Diff_in_days = Diff_in_tym / (1000 * 3600 * 24);
+
+document.writeln(Diff_in_days);
+
+</script>
+</body>
+</html>
+```` 
+In case we want to use the current day like today, we would be required to do some changes in terms of the formating  `Today's` formating.
+
+````HTML
+<!DOCTYPE  html>
+<html  lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+
+<script>
+var  Today = new  Date();
+var  Target = new  Date("11/21/2050");
+
+var  dd = String(Today.getDate()).padStart(2, '0'); // padString() is used to pad strings in js
+var  mm = String(Today.getMonth()+1).padStart(2, '0') // until it reaches the provided length
+var  yyy= Today.getFullYear();
+Today = new  Date(mm + '/' + dd + '/' + yyy);
+
+// Tym diff
+var  Diff_in_tym = Target.getTime() - Today.getTime();
+// No of days btwn
+var  Diff_in_days = Diff_in_tym / (1000 * 3600 * 24);
+
+document.writeln(Diff_in_days);
+
+</script>
+</body>
+</html>
+````
+
+> **NB:** if the target date happens to be less than the current date, the results will be negative instead. At the time of writing this, `Target ` is still a future date.
+
+### 3. Calculating the number of workdays between two dates (excluding weekends)
+In this task, we will iterate from one date to another counting the number of weekends until we get to the given date. Also, get then the number of days between the two dates. Then we will subtract the number of weekends from the number of days between the two dates.
+````HTML
+ <!DOCTYPE  html>
+<html  lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+<script>
+
+var  weekends =0;
+var  workdays = 0;
+
+var  Today = new  Date();
+var  Target = new  Date("11/21/2050");
+  
+var  dd = String(Today.getDate()).padStart(2, '0'); // padString() is used to pad strings in js
+var  mm = String(Today.getMonth()+1).padStart(2, '0') // until it reaches the provided length
+var  yyy= Today.getFullYear();
+Today = new  Date(mm + '/' + dd + '/' + yyy);
+
+// Tym diff
+var  Diff_in_tym = Target.getTime() - Today.getTime();
+// No of days btwn
+var  Diff_in_days = Diff_in_tym / (1000 * 3600 * 24);
+
+// Iterate through dates
+for (var  d = new  Date(); d<= Target; d.setDate(d.getDate()+ 1)){
+	if(d.getDay() == 0 || d.getDay() == 6) // 0 for sunday & 6 for saturday
+
+	weekends = weekends + 1;
+}
+workdays = Diff_in_days - weekends;
+
+document.writeln(workdays);
+
+</script>
+</body>
+</html>
+````
+
+### 4. Building a simple countdown timer
+In this task we will use the `setInterval()` method to repeat our time update function at every given interval, in this case, it shall be one second.
+This method will continue calling our function until we close the window or the clearInterval method is called, in this case we shall call it when the Countdown Timer gets to zero. We will also use the `floor()` method to return rounded up numbers for the days, hours, minutes and seconds after we get the difference in time.
+````HTML
+<!DOCTYPE  html>
+<html  lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+
+<p  id="countdown_Timer">
+</p>
+<script>
+	// updating our timer per second
+	
+	var  time = setInterval(function(){
+	// current time
+	var  now = new  Date().getTime();
+	// The final date's time
+	var  target_Date = new  Date("11/21/2050").getTime();
+	
+	// get the time difference
+	var  Diff_in_tym = target_Date - now;
+	
+	// breaking down the remaining time into days, hours, minutes & seconds
+	var  days = Math.floor(Diff_in_tym / (1000 * 3600 * 24));
+	var  hrs = Math.floor((Diff_in_tym % (1000 * 3600 * 24)) / (1000 * 3600));
+	var  min = Math.floor((Diff_in_tym % (1000 * 3600 )) / (1000 * 60));
+	var  sec = Math.floor((Diff_in_tym % (1000 * 60)) / 1000);
+
+	// Displaying the timer
+	document.getElementById("countdown_Timer").innerHTML = days + " Days " + hrs + " Hrs " + min + " min " + sec + " sec ";
+
+	if(Diff_in_tym < 0 ){
+		clearInterval(time);
+		document.getElementById("countdown_Timer").innerHTML = "Time Out";
+	}
+	}, 1000);
+</script>
+</body>
+</html>
+````
+
+### Conclusion 
+ You can go ahead and try the above tasks on your own now or even customize them to suit your liking, little practice wouldn't hurt. If you also chose to copy a snippet and save it with a `.html` extension and open it with a browser, it should work just fine. Have fun coding!
+
