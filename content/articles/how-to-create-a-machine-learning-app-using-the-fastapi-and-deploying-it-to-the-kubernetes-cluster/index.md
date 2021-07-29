@@ -551,7 +551,7 @@ Therefore we have deployed our Containerised FastAPI application to the Kubernet
 In this tutorial, we have learned how to create a machine learning model. We have followed all the steps from data pre-processing to finally being able to train and build our model.
 We have also learned about the FastAPI, which is an efficient library for making WebAPIs, the FastAPI has helped us to serve our machine learning model as an API.
 We then containerized our fast API application using docker, we finally deployed the application to the Kubernetes cluster.
-By using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster.
+By using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster
 
 ### References
 
