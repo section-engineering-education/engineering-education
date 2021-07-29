@@ -6,7 +6,7 @@ url: /using-multiple-ssh-keys-for-multiple-github-accounts/
 title: Using Multiple SSH Keys for Multiple GitHub Accounts
 description: In this article, we will understand how to create and work with SSH keys for using multiple GitHub accounts
 author: wangui-leah
-date: 2021-07-27T00:00:00-00:00
+date: 2021-07-29T00:00:00-03:15
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -98,6 +98,7 @@ To obtain the SSH key execute this command:
 Copy the SSH key and then sign in to your GitHub account.
 
 Follow the steps below to add an SSH key to your GitHub account:
+
 1. On your GitHub, navigate to `Settings`
 2. Choose `SSH and GPG keys` - Gnu Privacy Guard (GPG) is an encryption technique that allows secure information sharing among parties.
 3. Hit on button `New SSH Key`, give a significant `Title` and paste the `Key`.
@@ -162,6 +163,7 @@ Here, `your-github-account` will be the account username, and `company-project-r
 To conclude, we have learned how to access multiple GitHub accounts using multiple SSH keys, at the same time.
 
 To summarize:
+
 - The reader has learned what SSH Keys are and how they work.
 - The reader has learned how to manage multiple SSH keys on multiple GitHub accounts.
 - The reader has learned how to create and update an SSH config file
