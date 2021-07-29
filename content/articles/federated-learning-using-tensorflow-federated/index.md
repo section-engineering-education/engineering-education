@@ -1,5 +1,6 @@
-Federated learning is a privacy-preserving technology for training and evaluating machine learning models across a fleet of devices (e.g. Android phones), orchestrated by a central server, without sensitive training data leaving any user's device. On the other hand, TensorFlow Federated is an open-source framework for machine learning used in implementing federated learning.
-In this article, we will learn how TensorFlow Federated can enable researchers and pioneers to simulate federated learning on their own datasets.
+To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. Instead of sending our data to the cloud, we send the models on the cloud to our devices. These models are then trained locally on our devices. Essentially, data never leaves our devices. Once we have trained this models on our devices, we send the model updates to the server rather than sending our data to the server. The server aggregates the model updates from each of the devices and updates the global model on the cloud. This is Federated Learning.
+On the other hand, TensorFlow Federated is an open-source framework by Google that is used by developers in implementing Federated Learning.
+In this article, we will learn how TensorFlow Federated can be utilized by researchers and machine learning developers to implement federated learning on our own datasets.
 
 ### Prerequisites
 
@@ -20,7 +21,7 @@ To understand the contents of this article, you need to be familiar with:
 
 ### Introducing TensorFlow Federated (TFF)
 
-TensorFlow Federated is an open-source framework for Federated learning perfomed on decentralized data. It is a new project by the team at Google and has been rapidly evolving over the recent years. TFF has two main features:
+As mentioned earlier, TFF is an open-source framework for Federated learning performed on decentralized data. It is a new project by the team at Google and has been rapidly evolving over the recent years. TFF has two main features:
 
 1. TFF is architecture-agnostic. 
 
@@ -29,6 +30,10 @@ This means that it is able to compile all code into an abstract representation. 
 2. TFF saves effort
 
 It is designed to mitigate pain points that we developers face when developing our own federated learning systems. Some of these pain points include interleaving the different types of logic, the global vs local perspective on communication, and tension between the order of construction vs. execution.
+
+3. TFF has many extensions.
+
+Differential privacy, compression and quantization are some of the few extensions available in TFF.
 
 #### TensorFlow federated layers
 
