@@ -156,7 +156,8 @@ Now, in the public folder, we shall fetch the '**carbon_normal.jpg**' from the f
 
 It looks as shown below:
 
-![carbon_normal.jpg](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/carbon_normal.jpg)
+*Image: carbon_normal Textuture*
+![carbon_normal.jpg](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/carbon_normal.jpg "carbon_normal Textuture")
 
 Or if you are using the *Chrome browser* or any other browser, just right-click on the image above and select the 'Save image' option. Save it as 'carbon_normal.jpg' in the 'public' folder.
 
@@ -297,7 +298,8 @@ Access the application on a web browser at `localhost:3000`.
 
 The outcome shall be as shown below:
 
-![first run](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/first-run.png)
+*Screenshot: First run*
+![first run](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/first-run.png "first run")
 
 You can click on the boxes, and you will see them being thrown away each time. You can add the intensity of the throw by modifying the values in the `api.applyImpulse` section.
 For example, you can try:
@@ -306,7 +308,8 @@ For example, you can try:
 api.applyImpulse([0, 5, -10], [1, 1, 1])
 ```
 
-![impulse effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse.gif)
+*ScreenCapture: Impulse Effect*
+![impulse effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse.gif "Impulse Effect")
 
 Change the effect on the boxes to make the boxes hover or fly upwards like a drone by changing the `onClick` trigger action to:
 
@@ -317,7 +320,8 @@ Change the effect on the boxes to make the boxes hover or fly upwards like a dro
           }
 ```
 
-![velocity effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/velocity-effect.gif)
+*ScreenCapture: Velocity Effect*
+![velocity effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/velocity-effect.gif "Velocity Effect")
 
 > **Bonus/ Fun activity**: How Quick are you on clicks?
 > Are you able to quickly click on all three boxes and maintain them in the air all at the same time? How long can you keep two? **Remember**, you Lose if one touches the bottom plane!
@@ -340,7 +344,8 @@ Try to add another effect by combining the two effects above into one using 'and
 Now let's add other objects which are spheres to the scene. We shall first start with adding functions since we had already imported them into our project.
 The functions will be as shown below:
 
-![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse-and-velocity-effects.gif)
+*ScreenCapture: Impulse and Velocity Effect*
+![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse-and-velocity-effects.gif "Impulse and Velocity Effect")
 
 ```javascript
 // This  is used to create spherical objects in the app
@@ -394,7 +399,8 @@ We shall specify the number of objects, in our case we shall use ten (10). The c
 
 > **NOTE:** You can use as many spherical objects as you want. Just remember, the more objects you add the more memory will be used hence the webpage may take longer to load or render and even slow performance.
 
-![spheres](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/spheres.gif)
+*ScreenCapture: Spheres*
+![spheres](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/spheres.gif "Spheres")
 
 > Fun activity hint: You can add more power to the cubes as stated before to effectively hit the spheres.
 
@@ -412,6 +418,8 @@ You can find objects such as *cylinders*, *particles*, *Trimesh*, *springs* and 
 You can also find out how to navigate in the environment using '[Orbitcontrols](https://threejs.org/docs/#examples/en/controls/OrbitControls)'.
 
 You can be more creative with any upcoming ideas, there are no limitations to 3D modeling.
+
+***Note:** The images provided were either directly captured from the screen during program running or from an authorized repository. Photos are provided by Francis Kaguongo.*
 
 ### Conclusion
 
