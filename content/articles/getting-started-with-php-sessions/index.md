@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /getting-started-with-sessions-in-php/
+url: /getting-started-with-php-sessions/
 title: Getting Started with PHP Sessions
 description: This article will show you how to create, read, update, and destroy sessions. These components allow one to store temporary user data on the server.
 author: neema-muganga
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-sessions-in-php/hero.jpg
+  - url: /engineering-education/getting-started-with-php-sessions/hero.jpg
     alt: Getting Started with PHP Sessions
 ---
 PHP sessions allow web applications to store user information on the server. As a result, the data can be accessed from several pages throughout a website.
@@ -186,8 +186,11 @@ The following code shows how to destroy a PHP session:
 From this analysis, I hope you have an idea of how the  `logout` functionality is implemented in many applications. 
 
 ### Creating an application that implements sessions
-What makes learning even more fun is being able to put to practice the concepts grasped into a real-time application. Therefore, we will create one using HTML, which you should be familiar with, Bootstrap CDN link which you could get from the Bootstrap official page [here](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for basic styling and the sessions concepts we have just learnt. Let's begin!
-Create a file and name it file1.php then write the following code in it.
+Let's put in practice what we have learned in the above section.
+
+We will create a simple web application that uses PHP sessions. We will utilize [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) styling to save time.
+
+The first step is to create a file and name it `file1.php`. In this file, add the following code: 
 
 ```php
 
@@ -214,41 +217,44 @@ $_SESSION['email'] = 'john@gmail.com';
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
-<body>
-    <header>
-        <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
-            <div class="container ">
-                <img src="" alt="Blogs logo">
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navmenu">
-                    <ul class="navbar-nav ms-auto" >
-                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Log in</a></li>
-                    </ul>
-                </div>   
-            </div>
-        </nav>
-    </header>
+  <body>
+        <header>
+            <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
+                <div class="container ">
+                    <img src="" alt="Blogs logo">
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navmenu">
+                        <ul class="navbar-nav ms-auto" >
+                            <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Log in</a></li>
+                        </ul>
+                    </div>   
+                </div>
+            </nav>
+        </header>
 
-    <div class="container d-flex justify-content-center mt-5">
-	<!-- clicked button will direct us to file1.php that accesses the declared session variables -->
-        <a href= file2.php><button>Click me </button></a>
-    </div>
+        <div class="container d-flex justify-content-center mt-5">
+        <!-- clicked button will direct us to file2.php that accesses the declared session variables -->
+            <a href= file2.php><button>Click me </button></a>
+        </div>
 
-
+  </body>
+</html>
 
 ```
-This code will give you an output as in the image below.
-![first page output](/engineering-education/getting-started-with-sessions-in-php/image1.PNG)
-In the code above, we created a session and attached it to values for name and email. Note that we have not accessed the session variables yet but we have linked the button to another file which we will implement soon and from here, will be accessing the session variables.
 
+When you navigate to your browser, the web page should look, as shown below:
 
-Now create a file2.php and write the following code.
+![first page output](/engineering-education/getting-started-with-php-sessions/image1.png)
+
+In the above code, we created an app that stores session variables (name and email). We will retrieve this data when we navigate to the second web page.
+
+For the second page, create a file and name it `file2.php`. Then add the following code:
 
 ```php
 
@@ -271,43 +277,49 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
-<body>
-    <header>
-        <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
-            <div class="container ">
-                <a href="index.php"><img src="" alt="Blogs logo"></a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navmenu">
-                    <ul class="navbar-nav ms-auto" >
-                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
-                        <li class="nav-item"><a href="file3.php" class="nav-link">Log out</a></li>
-                    </ul>
-                </div>   
-            </div>
-        </nav>
-    </header>
+  <body>
+      <header>
+          <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
+              <div class="container ">
+                  <a href="index.php"><img src="" alt="Blogs logo"></a>
+                  
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navmenu">
+                      <ul class="navbar-nav ms-auto" >
+                          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
+                          <li class="nav-item"><a href="file3.php" class="nav-link">Log out</a></li>
+                      </ul>
+                  </div>   
+              </div>
+          </nav>
+      </header>
 
-    <!-- Access the set variables in file1.php and echoing them in the statement -->
-    <div class="container d-flex justify-content-center mt-5">
-    <h5> Hey There <?php echo $_SESSION['name']?> we confirm that <?php echo $_SESSION['email']?> is your email address!</h5><br>
-    </div>
-    
-	
+      <!-- Access the set variables in file1.php and echoing them in the statement -->
+      <div class="container d-flex justify-content-center mt-5">
+      <h5> Hey There <?php echo $_SESSION['name']?> we confirm that <?php echo $_SESSION['email']?> is your email address!</h5><br>
+      </div>
    
   </body>
 </html>
 ```
-You should have an output like below.
-![Accessed variables](/engineering-education/getting-started-with-sessions-in-php/image2.PNG)
-Notice that clicking the button in file1.php (in the first image) directs us to a different page and you should see that the contents of the nav bar also changed as seen in the image below. 
-![navbar changes](/engineering-education/getting-started-with-sessions-in-php/image3.PNG)
-This page accesses the Variables set in file1.php and outputs them in the statement. When we covered destroying sessions above, we mentioned that in a practical example, closing the browser or logging out of an application will destroy a created session. Let's see this practically.
-The session destroying code for this will be written in a file named file3.php as below.
+
+When you view the app in your browser, you should have the following output:
+
+![Accessed variables](/engineering-education/getting-started-with-php-sessions/image2.png)
+
+As stated, when you click the button in `file1.php`, you will be redirected to a different page, as demonstrated below: 
+
+![navbar changes](/engineering-education/getting-started-with-php-sessions/image3.png)
+
+This page retrieves the `variables` set in `file1.php` and displays them on the browser. 
+
+We can destroy our sessions by closing the browser or logging out of an application. 
+
+We can also delete sessions programmatically using `session_destroy()` function, as demonstrated below:
 
 ```php
 <?php
@@ -328,13 +340,9 @@ if(isset($_SESSION["name"]) && isset($_SESSION["email"])){
 
 ```
 
-The logout button in file2.php was linked to file3.php that contains code to destroy the sessions and redirects the user to the first page rendered by file1.php code.
+Clicking on the logout button will invoke the `session_destroy()` method. This is shown in the image below:
 
-Click the Log out link in the navbar to see this practically.
-![logout functionality](/engineering-education/getting-started-with-sessions-in-php/image4.PNG)
-
-Now you understand how the logout functionality in applications works. 
-Notice that the sessions variables can only be accessesed when the button in file1.php is clicked and from the redirected page in file2.php. And from this page you could signout to destroy the sessions. There you have it then. This was a simple practical example of using sessions and I hope everything is even clearer as at now. 
+![logout functionality](/engineering-education/getting-started-with-php-sessions/image4.png)
 
 ### Conclusion
 Sessions are indeed a crucial part of a web application. This article has shown you how to create, update, retrieve, and delete sessions. You can, therefore, use this knowledge to craft other powerful applications.
