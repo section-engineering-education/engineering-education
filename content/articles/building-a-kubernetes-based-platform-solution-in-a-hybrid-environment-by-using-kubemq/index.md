@@ -18,12 +18,12 @@ images:
 ### Introduction
 Lately, it is easier to work across clouds and edges through the Kubernetes native confederation or even third-party control planes. It assists in the management of discrete clusters from the same dashboard.
 
-However, the primary purpose of Kubernetes is to deploy applications. It means that Kubernetes does not know the location, topologies, or even architectural distribution of clusters. It also offers scalability and assists in integrating clouds to the edge. However, it is restricted to the application it is built-in and deployed at.
+However, the primary purpose of Kubernetes is to deploy applications. It means that Kubernetes does not know the location, topologies, or even architectural distribution of clusters. It also offers scalability and assists in integrating clouds to the edge. However, it is restricted to the application that it is built-in and deployed at.
 
-The developer needs to know the details mentioned above, introducing way much complexity and overhead into the development lifecycle. To solve the issue, developers use a messaging platform abstraction layer. [KubeMQ](https://kubemq.io/) is one of the solutions to the issues. as explained further in this article.
+The developer needs to know the details mentioned above, introducing way much complexity and overhead into the development lifecycle. To solve the issue, developers use a messaging platform abstraction layer. [KubeMQ](https://kubemq.io/) is one of the solutions to the issues. As explained further in this article.
 
 ### KubeMQ
-It is a messaging platform that is also Kubernetes native and built for integrating clusters and nodes across different locations. KubeMQ utilizes operators to make the deployment more straight-forward and uses trusted technologies. 
+It is a messaging platform that is also Kubernetes native and built for integrating clusters and nodes across different locations. KubeMQ utilizes operators to make the deployment more straight-forward. It also uses trusted technologies. 
 
 KubeMQ uses [Bridges](https://kubemq.io/kubemq-bridges/) to integrate different Kubernetes environments. These environments include federations, span clouds, edges, and discrete clusters.
 
@@ -53,13 +53,13 @@ Edge computing nodes have resource constraints, resulting in different resource 
 
 For instance, modern security cameras may benefit from better-connected topologies. AI-driven functionality is integrated into the camera hardware and assists in classifying different types of activities under surveillance, such as if a pet or human is near the camera frame.
 
-However, the actual video storage and transcoding video into different formats can never happen on the same device since it needs computing resources. The solution is to build a stream-based architecture where the edge node is moved closer to the client, hence improved user experience.
+However, the actual video storage and transcoding into different formats can never happen on the same device since it needs computing resources. The solution is to build a stream-based architecture where the edge node is moved closer to the client. This improves user experience.
 
 [KubeEdge](https://kubeedge.io/en/) is a Cloud Native Computing Foundation ([CNCF](https://www.cncf.io/)) project whose purpose is to deploy containerized systems in the cloud and at the edge. It also involves integrating IoT devices to support the [MQTT](https://mqtt.org/) protocol.
 
 KubeMQ was built to operate in an edge environment. Both on the KubeEdge deployment within the cloud and the edge nodes. It requires few resources; hence it can execute [Edge-specific Kubernetes distributions](https://docs.kubemq.io/#kubernetes-ready), such as [K3s](https://k3s.io/) and [MicroK8s](https://microk8s.io/). This enables KubeMQ to form a bridge between edge nodes and other powerful computer nodes executing in a cloud. Hence messages can be pushed upstream as required.
 
-KubeMQ also enables a [source to process MQTT messages](https://docs.kubemq.io/configuration/connectors/kubemq-sources/messaging/mqtt) directly from the broker, giving IoT devices the ability to engage in a more extensive microservices-based architecture with little effort. It enables the users to develop systems that can collect and sort information from many hardware devices and develop real-time capabilities at the edge.
+KubeMQ also enables a [source to process MQTT messages](https://docs.kubemq.io/configuration/connectors/kubemq-sources/messaging/mqtt) directly from the broker. This gives IoT devices the ability to engage in a more extensive micro-services-based architecture with little effort. It enables users to develop systems that can collect and sort information from many hardware devices and develop real-time capabilities at the edge.
 
 KubeMQ can assist in creating and managing systems operating at the edge environments. It also ensures that projects cannot stop when addressing deployments that are resource-constrained.
 
@@ -72,7 +72,7 @@ Additionally, some organizations are releasing devices where computing resources
 
 A messaging platform designed to utilize the underlying Kubernetes platform is key to the successful deployment and operational model in hybrid environments. 
 
-KubeMQ bridges enable the creation of microservice-based architecture that spans on-premise, clouds, and edge devices to create message-driven systems which are highly scalable and can be relied on, hence success is guaranteed.
+KubeMQ bridges enable the creation of micro-service-based architecture that spans on-premise, clouds, and edge devices to create message-driven systems which are highly scalable and can be relied on, hence success is guaranteed.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
