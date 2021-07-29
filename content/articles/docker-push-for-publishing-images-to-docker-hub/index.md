@@ -150,3 +150,7 @@ In this article,  we get our hands on getting to know more about Docker Hub, bui
 We then pushed those respective Docker images to our Docker Hub repository and the non-Docker Hub. For more on getting to understand the incidentals of Docker Hub, check out their official [documentation](https://docs.docker.com/docker-hub/).
 
 Happy Coding!
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
