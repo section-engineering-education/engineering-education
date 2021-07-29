@@ -185,6 +185,157 @@ The following code shows how to destroy a PHP session:
 
 From this analysis, I hope you have an idea of how the  `logout` functionality is implemented in many applications. 
 
+### Creating an application that implements sessions
+What makes learning even more fun is being able to put to practice the concepts grasped into a real-time application. Therefore, we will create one using HTML, which you should be familiar with, Bootstrap CDN link which you could get from the Bootstrap official page [here](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for basic styling and the sessions concepts we have just learnt. Let's begin!
+Create a file and name it file1.php then write the following code in it.
+
+```php
+
+<?php
+//Starting the Session
+session_start();
+
+//Accessing session variables
+$_SESSION['name'] = 'John Doe';
+$_SESSION['email'] = 'john@gmail.com';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Project</title>
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:ital">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
+            <div class="container ">
+                <img src="" alt="Blogs logo">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto" >
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Log in</a></li>
+                    </ul>
+                </div>   
+            </div>
+        </nav>
+    </header>
+
+    <div class="container d-flex justify-content-center mt-5">
+	<!-- clicked button will direct us to file1.php that accesses the declared session variables -->
+        <a href= file2.php><button>Click me </button></a>
+    </div>
+
+
+
+```
+This code will give you an output as in the image below.
+![first page output](/engineering-education/getting-started-with-sessions-in-php/image1.PNG)
+In the code above, we created a session and attached it to values for name and email. Note that we have not accessed the session variables yet but we have linked the button to another file which we will implement soon and from here, will be accessing the session variables.
+
+
+Now create a file2.php and write the following code.
+
+```php
+
+<?php
+//start session
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Project</title>
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:ital">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar-top" class="navbar navbar-expand-lg bg-warning navbar-light py-2">
+            <div class="container ">
+                <a href="index.php"><img src="" alt="Blogs logo"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto" >
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Find Blogs</a></li>
+                        <li class="nav-item"><a href="file3.php" class="nav-link">Log out</a></li>
+                    </ul>
+                </div>   
+            </div>
+        </nav>
+    </header>
+
+    <!-- Access the set variables in file1.php and echoing them in the statement -->
+    <div class="container d-flex justify-content-center mt-5">
+    <h5> Hey There <?php echo $_SESSION['name']?> we confirm that <?php echo $_SESSION['email']?> is your email address!</h5><br>
+    </div>
+    
+	
+   
+  </body>
+</html>
+```
+You should have an output like below.
+![Accessed variables](/engineering-education/getting-started-with-sessions-in-php/image2.PNG)
+Notice that clicking the button in file1.php (in the first image) directs us to a different page and you should see that the contents of the nav bar also changed as seen in the image below. 
+![navbar changes](/engineering-education/getting-started-with-sessions-in-php/image3.PNG)
+This page accesses the Variables set in file1.php and outputs them in the statement. When we covered destroying sessions above, we mentioned that in a practical example, closing the browser or logging out of an application will destroy a created session. Let's see this practically.
+The session destroying code for this will be written in a file named file3.php as below.
+
+```php
+<?php
+session_start();
+
+//Checks if sessions exist
+if(isset($_SESSION["name"]) && isset($_SESSION["email"])){
+
+    //destroys the sessions
+    session_destroy();
+
+    //redirects the user to file1.php
+    echo "<script> location.href='file1.php'</script>";
+}
+
+
+?>
+
+```
+
+The logout button in file2.php was linked to file3.php that contains code to destroy the sessions and redirects the user to the first page rendered by file1.php code.
+
+Click the Log out link in the navbar to see this practically.
+![logout functionality](/engineering-education/getting-started-with-sessions-in-php/image4.PNG)
+
+Now you understand how the logout functionality in applications works. 
+Notice that the sessions variables can only be accessesed when the button in file1.php is clicked and from the redirected page in file2.php. And from this page you could signout to destroy the sessions. There you have it then. This was a simple practical example of using sessions and I hope everything is even clearer as at now. 
+
 ### Conclusion
 Sessions are indeed a crucial part of a web application. This article has shown you how to create, update, retrieve, and delete sessions. You can, therefore, use this knowledge to craft other powerful applications.
 
