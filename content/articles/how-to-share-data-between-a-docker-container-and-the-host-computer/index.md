@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-share-data-between-a-docker-container-and-the-host-computer/
+title: How to share data between a docker container and the host computer
+description: This tutorial will teach you how to share data between a Docker containerized application and the host computer. 
+author: joakim-gakure
+date: 2021-07-29T00:00:00-21:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/hero.jpg
+    alt: docker container and the host computer example image
+---
+
 One reason Docker is superb is the ability to containerize an application without installing additional dependencies on your local computer. Nevertheless, Docker runs on a virtualization architecture. This creates an isolated environment for running your application away from the host machine. Docker engine takes the role of assigning resources from the host to the virtualized isolated application. Once such application is containerized, the application virtualized data are isolated from the host. This means when you virtualize an application, all its data will be hosted within the dockerize containers. In this case, the host and the application are running on different infrastructures.
 
 At times you may want your virtually containerized application to share data and files directly from the host computer.
