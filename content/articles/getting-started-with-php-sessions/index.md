@@ -6,7 +6,7 @@ url: /getting-started-with-php-sessions/
 title: Getting Started with PHP Sessions
 description: This article will show you how to create, read, update, and destroy sessions. These components allow one to store temporary user data on the server.
 author: neema-muganga
-date: 2021-07-24T00:00:00-07:41
+date: 2021-07-29T00:00:00-08:52
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -193,7 +193,6 @@ We will create a simple web application that uses PHP sessions. We will utilize 
 The first step is to create a file and name it `file1.php`. In this file, add the following code: 
 
 ```php
-
 <?php
 //Starting the Session
 session_start();
@@ -245,7 +244,6 @@ $_SESSION['email'] = 'john@gmail.com';
 
   </body>
 </html>
-
 ```
 
 When you navigate to your browser, the web page should look, as shown below:
@@ -257,7 +255,6 @@ In the above code, we created an app that stores session variables (name and ema
 For the second page, create a file and name it `file2.php`. Then add the following code:
 
 ```php
-
 <?php
 //start session
 session_start();
@@ -335,9 +332,7 @@ if(isset($_SESSION["name"]) && isset($_SESSION["email"])){
     echo "<script> location.href='file1.php'</script>";
 }
 
-
 ?>
-
 ```
 
 Clicking on the logout button will invoke the `session_destroy()` method. This is shown in the image below:
