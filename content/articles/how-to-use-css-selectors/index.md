@@ -328,23 +328,23 @@ When the user hovers over the link, its color changes to hot-pink. `Visited` and
 
 Example of a CSS Pseudo-elements:
 ```html
-   <html>
-       <body>
-           <p>The first letter has a yellow color. I.e `T`. The first line has color red.</p>
-       </body>
-   </html>
+ <html>
+     <body>
+         <p>The first character has a yellow color. I.e `T`. The first line has color red.</p>
+     </body>
+ </html>
 ```
 
 Let's style the above HTML code.
 ```css
 <style>
-p::first-letter {
-  color: yellowgreen;
-  font-size: large;
-}
-p::first-line {
-  color: red;
-}
+  p::first-letter {
+    color: yellowgreen;
+    font-size: large;
+  }
+  p::first-line {
+    color: red;
+  }
 </style>
 ```
 The first letter, I.e `T` will have a `yellow-green` color, and its font size will be `large`.
