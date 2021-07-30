@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /polynomial-regression/
 title: Getting Started with Polynomial Regression in R
-description: This article will introduce you to polynomial regression in R. This model can help you make accurate predictions.
+description: This article will introduce the reader to polynomial regression in R. This model will help the reader make accurate predictions.
 author: lawrence-mbici
-date: 2021-08-05T00:00:00-06:00
+date: 2021-07-30T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/polynomial-regression/hero.jpg
     alt: Getting Started with Polynomial Regression in R
 ---
-Polynomial regression is used when there is a non-linear relationship between dependent and independent variables.
+Polynomial regression is used when there is a non-linear relationship between dependent and independent variables. Examples of cases where [polynomial regression](https://towardsdatascience.com/introduction-to-linear-regression-and-polynomial-regression-f8adc96f31cb) can be used include modeling population growth, the spread of diseases, and epidemics.
 <!--more-->
-Examples of cases where [polynomial regression](https://towardsdatascience.com/introduction-to-linear-regression-and-polynomial-regression-f8adc96f31cb) can be used include modeling population growth, the spread of diseases, and epidemics. Such trends are usually regarded as [non-linear](https://sciencing.com/non-linear-relationship-10003107.html). 
+Such trends are usually regarded as [non-linear](https://sciencing.com/non-linear-relationship-10003107.html). 
 
 The general form of a polynomial regression model is:
 
@@ -29,10 +29,10 @@ y = β<sub>0</sub> + β<sub>1</sub>X + β<sub>2</sub>X<sup>2 </sup> + ε
 Now that we know what Polynomial Regression is, let's use this concept to create a prediction model.
 
 ### Prerequisites
-A General understanding of [R](https://www.r-project.org/) and the Linear Regression Model.
+A general understanding of [R](https://www.r-project.org/) and the Linear Regression Model will be helpful for the reader to follow along.
 
 ### Step 1 - Data preprocessing
-The dataset used in this article can be found [here](https://drive.google.com/file/d/1RToZTGkD8XI0OhacwretKIItStYBqqNn/view?usp=sharing) 
+The dataset used in this article can be found [here](https://drive.google.com/file/d/1RToZTGkD8XI0OhacwretKIItStYBqqNn/view?usp=sharing). 
 
 The first step we need to do is to import the dataset, as shown below:
 
@@ -40,11 +40,11 @@ The first step we need to do is to import the dataset, as shown below:
 dataset = read.csv('salaries.csv')  
 ```
 
-This is how our dataset looks like:
+This is how our dataset should look like:
 
 ![Dataset output](/engineering-education/polynomial-regression/dataset.png)
 
-In the above dataset, we do not need `column 1` since it only contains the names of each entry. 
+In the dataset above, we do not need `column 1` since it only contains the names of each entry. 
 
 To remove `column 1` from our dataset, we simply run the following code:
 
@@ -52,7 +52,7 @@ To remove `column 1` from our dataset, we simply run the following code:
 dataset= dataset[2:3]
 ```
 
-Our dataset now looks like this:
+Our dataset should now look like this:
 
 ![Newdataset output](/engineering-education/polynomial-regression/newdataset.png)
 
@@ -65,11 +65,11 @@ ggplot() +
              colour = 'red')
 ```
 
-Our scatter plot looks as shown below:
+Our scatter plot should look as shown below:
 
 ![Plot of Salary against levels](/engineering-education/polynomial-regression/Salaryplot.png)
 
-From the above analysis, it's clear that `salary` and `level` variables have a non-linear relationship. Therefore, a polynomial regression model is suitable.
+From the analysis above, it's clear that `salary` and `level` variables have a non-linear relationship. Therefore, a polynomial regression model is suitable.
 
 The second step in data preprocessing usually involves splitting the data into the `training set` and the `dataset`. In our case, we will not carry out this step since we are using a simple dataset.
 
@@ -85,7 +85,8 @@ dataset$Level2 = dataset$Level^2
 dataset$Level3 = dataset$Level^3
 dataset$Level4 = dataset$Level^4
 ```
-Our new dataset looks like this:
+
+Our new dataset will look like this:
 
 ![Newdataset added levels](/engineering-education/polynomial-regression/newdatasetlevels.png)
 
@@ -103,7 +104,7 @@ summary(poly_reg)
 
 ![polynomial regression summary results](/engineering-education/polynomial-regression/summary.png)
 
-From the above results, the model is quite good due to its 99.53% accuracy.
+From the results above, the model is quite good due to its 99.53% accuracy.
 
 ### Step 3 - Visualizing of the model
 We use the [ggplot2](https://ggplot2.tidyverse.org/) library to visualize our model, as demonstrated below:
@@ -124,16 +125,17 @@ ggplot() +
   xlab('Level') +
   ylab('Salary')
 ```
+
 Below are the results obtained from this analysis:
 
 ![visualization of the polynomial regression](/engineering-education/polynomial-regression/visualpoly.png)
 
-From the above graph, we can see that the model is nearly perfect. It fits the data points appropriately. Therefore, we can use the model to make other predictions.
+From the graph above, we can see that the model is nearly perfect. It fits the data points appropriately. Therefore, we can use the model to make other predictions.
 
 ### Step 4 - Making predictions using the polynomial regression model
 Now that we have developed the model, it's time to make some predictions. 
 
-Assuming that you would like to predict the `salary` of an employee whose `level` is `7.5`. To do so, we use the `predict()` function, as highlighted below.
+Assuming that you would like to predict the `salary` of an employee whose `level` is `7.5`. To do this, we use the `predict()` function, as highlighted below.
 
 ```r
 # Predicting a new result with the polynomial regression
@@ -189,6 +191,7 @@ Generally, the more degrees the polynomial regression model has, the more accura
 ### Conclusion
 From this article, you have learned how to analyze data using polynomial regression models in R. You can use this knowledge to build accurate models to predict disease occurrence, epidemics, and population growth.
 
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa)
