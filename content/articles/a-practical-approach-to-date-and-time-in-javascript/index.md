@@ -205,4 +205,4 @@ This method will continue calling our function until we close the window or the 
 ````
 
 ### Conclusion 
- You can go ahead and try the above tasks on your own now or even customize them to suit your liking, little practice wouldn't hurt. If you also chose to copy a snippet and save it with a `.html` extension and open it with a browser, it should work just fine. Have fun coding!
+ You can go ahead and try the above tasks on your own now or even customize them to suit your liking, a little practice wouldn't hurt. If you also chose to copy a snippet and save it with a `.html` extension and open it with a browser, it should work just fine. Have fun coding!
