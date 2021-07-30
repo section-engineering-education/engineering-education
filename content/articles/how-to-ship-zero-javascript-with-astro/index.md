@@ -49,7 +49,7 @@ You need to install Node.js version 14.15.1 or higher. Visit [Node.js](https://n
  
 To check  Node.js is installation and the version installed. Open your terminal and type in the command below:
  
-```node
+```bash
  
  node --version
  
@@ -57,7 +57,7 @@ To check  Node.js is installation and the version installed. Open your terminal 
  
 To verify the installation and version of NPM type in the command below in your terminal.
  
-```node
+```bash
  
 npm --version
  
@@ -69,7 +69,7 @@ Create a new directory, The directory will contain all your installed dependenci
  
 Navigate to your command line and type in the line below. You can use the integrated terminal in your code editor.
  
-```node
+```bash
  
 mkdir astro-app
  
@@ -77,7 +77,7 @@ mkdir astro-app
  
 Next, navigate to the directory using the command below
  
-```node
+```bash
  
 cd astro-app
  
@@ -85,7 +85,7 @@ cd astro-app
  
 In your terminal type in the below to initialize your Astro project:
  
-```node
+```bash
  
 npm init astro
  
@@ -103,7 +103,7 @@ Astro will then copy some project files to start our project.
  
 Before we go further. Type in the command below in the terminal. This command installs the required packages(dependencies):
  
-```node
+```bash
  
 npm install
  
@@ -163,7 +163,7 @@ The ones we are more interested in are:
  
 The framework we will be using is React. To make Astro support React run the command below. It installs React renderer and React.
  
-```node
+```bash
  
 npm install @astrojs/renderer-react react react-dom -D
  
@@ -188,7 +188,7 @@ A renderer does the following:
  
 Start the development server with the command below:
  
-```
+```bash
  
 npm start
  
