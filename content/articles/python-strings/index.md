@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /python-strings/
 title: Understanding Strings in Python
-description: This tutorial will guide you on how to initialize, format, and concatenate strings in Python. It also discusses some of the major methods you can use when dealing with Python strings.
+description: This tutorial will guide the reader on how to initialize, format, and concatenate strings in Python. It will also discuss some of the major methods you can use when dealing with Python strings.
 author: dianne-sandra
-date: 2021-07-30T00:00:00-06:00
+date: 2021-07-30T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -46,7 +46,7 @@ Here is the output:
 Double Quote String
 ```
 
-####  Using Triple Quotes
+####  Using triple quotes
 
 ```py
 string3 = '''Tripple Quote String''' # defining strings using tripple quotes
@@ -59,7 +59,7 @@ Output:
 Tripple Quote String
 ```
 
-Note that triple quotes can also be used to specify multi-line strings, as shown below:
+>Note that triple quotes can also be used to specify multi-line strings, as shown below:
 
 ```py
 # Multi-line strings
@@ -129,6 +129,7 @@ string = 'THIS IS TEXT IN UPPERCASE'
 # print transformed string
 print(string.lower())
 ```
+
 Here is the output:
 
 ```bash
@@ -180,6 +181,7 @@ new_string = string.split("?")
 # printing the new string
 print(new_string)
 ```
+
 Here is the output:
 
 ```bash
@@ -218,17 +220,18 @@ y = string.find('world')
 
 print(y)
 ```
+
 Output:
 
 ```bash
 6
 ```
 
-In the above code, the function returns `6` which is the index of the string `world`.
+In the code above, the function returns `6` which is the index of the string `world`.
 
 `replace()` - This method replaces a phrase in a string with another phrase. The method takes 3 parameters; the string to be replaced, what to replace it with, and the number of times to do the replacement.
 
-> If the number of times the replacement is to be done is not stated, the method replaces all the occurrences of the phrase.
+> If we do not state the number of times the replacement is to be done, the method replaces all the occurrences of the phrase.
 
 ```py
 # string
@@ -244,7 +247,7 @@ print(y)
 Output:
 
 ```bash
-Hello people, this people are a nice people
+Hello people, these people are very nice people
 ```
 
 `strip()` - This method removes any character that either trails or leads a string. By default, the `split()` function removes spaces, as illustrated below:
@@ -281,7 +284,7 @@ Hello world
 This section discusses some of the operations that can be performed on strings using Python.
 
 ####  String iteration
-We can iterate through a given string using a `for` loop. We can iterate to determine the string's length, count the occurrence of a given character, or check whether the presence of a particular letter or character. 
+We can iterate through a given string using a `for` loop. We can iterate to determine the string's length, count the occurrence of a given character, or check the presence of a particular letter or character. 
 
 To demonstrate this, let's loop through a string and print every character of that string:
 
@@ -362,6 +365,7 @@ y = stringToCheck2 in inputString
 print(x)
 print(y)
 ```
+
 Here is the output:
 
 ```bash
@@ -371,7 +375,7 @@ False
 ### Formatting strings
 In this section, we will discuss three main methods of [string formatting](https://www.learnpython.org/en/String_Formatting).
 
-#### Using the `%` operator
+#### Using the '%' operator
 We use `%` to format the string by replacing what is in the variable with the operator, as shown below:
 
 ```py
@@ -379,11 +383,12 @@ We use `%` to format the string by replacing what is in the variable with the op
 name = 'Dianne Sandra
 print('My name is %s' %name)
 ```
+
 ```bash
 My name is Dianne Sandra
 ```
 
-#### Using the `str.format` method
+#### Using the 'str.format' method
 This approach was introduced in `Python 3.0` to enable programmers to handle complex string operations more efficiently. 
 
 `str.format` is an inbuilt method and does not require additional libraries. It supports string manipulation by substituting certain values and variables. 
@@ -398,16 +403,18 @@ print ("{} is a good platform.".format("Section Engineering Education"))
 print ('{name} is {age} years old and she is a {occupation}'
 .format(name = 'Dianne', age = 19, occupation = 'programmer'))
 ```
+
 Output:
 
 ```bash
 Section Engineering Education is a good platform.
 Dianne is 19 years old and she is a programmer
 ```
+
 #### Using f-strings
 Introduced in `Python 3.6`, f-Strings allow embedding expressions into strings. 
 
-It has the name `f-string` because the constants into which other expressions are embedded are prefixed by the letter `f`. 
+It has the name `f-string` due to the constants into which other expressions are embedded, which are prefixed by the letter `f`. 
 
 Take a look at the following example:
 
@@ -425,10 +432,11 @@ Output: Hello  world
 ```
 
 ### Conclusion
-In this article, we learned about strings in Python. we discussed how to initialize strings, operations that we can perform on the strings, inbuilt methods, and string formatting. You can, therefore, use this knowledge to craft powerful applications
+In this article, we have learned about strings in Python. We discussed how to initialize strings, we learned operations that we can perform on the strings, some inbuilt methods, and string formatting. You can know use this knowledge to craft powerful applications
 
 You can download the code snippets from [here](https://github.com/diannesandra/python-strings).
 
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
