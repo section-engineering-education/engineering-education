@@ -1,64 +1,84 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /image-processing-with-coil-in-android/
+title: Image Processing with Coil in Android
+description: This tutorial will guide you on how to process images in Android using a fast, lightweight, and powerful open-source library known as Coil.
+author: noni-diana
+date: 2021-07-25T00:00:00-06:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/image-processing-with-coil-in-android/hero.png
+    alt: Image processing with Coil in Android
+---
+One of the essential skills that an Android developer must know is how to correctly work with images, especially from a remote source. This is because many applications in some way or another use images.
+<!--more-->
+
+
+
+
+
 This article is about Sockets. It will give you a glimpse of how clients and servers communicate over the internet.
 
 ### Introduction
-
-Socket programming is a means of communicating data between two computers across a network. Connections can be made using either a **connection-oriented protocol** or a **connectionless protocol**. TCP/IP, a connection-oriented protocol, will be used in our case.
+Socket programming is a means of communicating data between two computers across a network. Connections can be made using either a **connection-oriented protocol** or a **connectionless protocol**. In our case, we will use TCP/IP which is a connection-oriented protocol.
 
 Before exchanging data, two computers must establish a link that is for connection-oriented protocols. UDP (User Datagram Protocol) is the only option for connectionless protocol.
 
-To demonstrate sockets further, we shall use the Client/Server architecture. Client and server communicate by writing to and reading from the socket connection. The machines must have each other's network information to make this connection.
+To demonstrate sockets further, we shall use the Client/Server architecture. Client and server communicate by writing to and reading from the socket connection.
 
 ### Table of contents:
 - [Definition of a Socket](#definition-of-a-socket)
 - [Programming on the Server-side ](#programming-on-the-server-side)
 - [Programming on the Client-side](#programming-on-the-client-side)
-- [How to Run Programs in a Variety of Applications](#how-to-run-programs-in-a-variety-of-applications)
+- [How to Run Programs in a variety of applications](#how-to-run-programs-in-a-variety-of-applications)
 - [Conclusion](#conclusion)
 
-### Definition of a Socket
-
-A Socket is a communication **endpoint** that serves as a link between two machines on a network. It has a port number, which the TCP/IP layer can use to identify the application that receives the data. Additionally, a port number and an IP address are what make up an endpoint.
+### Definition of a socket
+A socket is a communication **endpoint** that serves as a link between two machines on a network. It has a `port number`, which the TCP/IP layer can use to identify the application that receives the data. An endpoint usually includes a `port number` and an `IP address`.
 
 #### What is TCP?
-Transmission Control Protocol (TCP) - This is one of the most important protocols of the Internet Protocols suite. It is a widely used protocol for data transmission in a network that operates in Client/Server point-to-point mode.
+Transmission Control Protocol (TCP) is a widely used protocol for data transmission on a network that supports client/server end points.
 
 #### Two categories of Sockets:
-
-1. A server socket - awaits a request from a client.
-2. A client socket - establishes communication between client and server.
+1. A server socket - It awaits a request from a client.
+2. A client socket - It establishes communication between client and server.
 
 #### The client has to know two things about the server:
+1. The server's IP address 
+2. The port number
 
-1. Its server's IP address 
-2. Its port number
+> Ports between 0 and 1023 are mainly used for administrative purpose (e.g.,  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number `5000`.
 
->The ports 0-1023 are for administrative use only (e.g.,  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number 5000.
+#### Creating a socket connection 
+In Java, we create a socket connection using the following steps:
 
-#### When we make a socket connection in the Java programming language, we go through the following steps:
+The Server constructs a `ServerSocket` object to specify the port number on which our conversation will occur. Exception handling methods are in use whenever an I/O error occurs. 
 
-- The Server constructs a `ServerSocket` object to specify the port number on which our conversation will occur. Exception handling methods are in use whenever an I/O error occurs. **Throws** an **I/OException** or a **try** **catch** block is used.
+The `accept()` method is called by the server to validate an incoming request to the socket.
 
-- The `accept()` method is called by the server. This method is used to accept an incoming request to the socket.
+A client then creates a `Socket` object by specifying the `server name` and the `port number`.
 
-- A client creates a `Socket` object, giving the server name and the connecting port number as the server awaits.
+The `Socket` class constructor attempts to connect the client to the server using the provided port number.
 
-- The `Socket` class constructor will attempt to connect the client to the server and port number provided. The client now has a socket object that can connect to the server if communication occurs.
+If the connection is successful, the client and server can then communicate using `I/O streams`. The client and server socket classes are responsible for the **I/O streams**. 
 
-If the connection is successful, the client and server can then communicate using **I/O streams**. The client and server socket classes provide the **I/O streams**. The client's OutputStream communicates with the server's InputStream, and the server's OutputStream communicates with the client's InputStream.
+The client's `OutputStream` communicates with the server's `InputStream`, and the server's `OutputStream` communicates with the client's `InputStream`. 
 
-A stream is a collection of sequenced data, in case you didn't know. 
-
-#### There are two types of streams:
+#### Types of streams:
+A stream is basically a collection of sequenced data. The two major types of streams are:
 1. A character stream (usually used with text files).
-2. A byte stream (usually used with images).
+2. A byte stream (used with images).
 
-A character stream is in human-readable language while a byte stream is in machine language, a language understandable by the CPU.
+A character stream is in human-readable language while a byte stream is in machine language.
 
->In this situation, the client and server will simultaneously broadcast messages to each other's streams. Because TCP is a two-way communication protocol, this is conceivable.
+> In this situation, the client and server will simultaneously broadcast messages to each other's streams because TCP is a two-way communication protocol.
 
-#### Programming on the Server-side
-
-A server socket is an object of the ServerSocket that uses the constructor below:
+#### Programming on the server-side
+A `server socket` is an object of the `ServerSocket` that uses the constructor below:
 
 ```java
 serversocket = new ServerSocket(int port)
@@ -324,3 +344,7 @@ If the port is already in use, the port number may result in an error. To solve 
 ### Conclusion 
 In this tutorial, we learned about sockets and the TCP/IP protocol. We covered the fundamentals of socket programming and how they relate to the Java programming language. We've also gotten a clear picture of the data flow and client/server interaction.
 I strongly advise the reader to apply what they've learned so far to writing networking programs in the Java programming language.
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
