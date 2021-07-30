@@ -295,8 +295,7 @@ When it comes to C# abstraction, it is the polar opposite of encapsulation. It i
 - The user sees only significant information which helps to improve the safety of a program or application.
 
 ### Conclusion
-I hope this article will help the reader to understand what it entails in data abstraction in C# regarding it as identifying only the properties of an item that are required while ignoring the rest.
-In this article, the reader will manage to understand the different types of abstraction, abstract classes and methods with relevant examples and also the relationship between abstraction and data encapsulation.
+In this tutorial, we have learned what is data abstraction, the abstract classes, abstract methods, and finally advantages and disadvantages of abstraction in the C# programming language. We also learned how to use these abstract classes and methods as well as their rules while applying them. Abstraction in C# helps the programmer to distinguish which items/components will be visible and which will be hidden from the Desktop application user.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
