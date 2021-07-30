@@ -61,7 +61,7 @@ switch(d.getDay()){
 ````
 
 ### 2. Calculating the number of days between two dates
-In this task we start by initialising the two dates to be used. Then we subtract the time difference between them which will be in milliseconds and finnaly convert the time into days.
+In this task, we start by initializing the two dates to be used. Next, we subtract the time difference between the two dates which will be in milliseconds, and finally, we convert the milliseconds into days.
 ````HTML
 <!DOCTYPE  html>
 <html  lang="en">
