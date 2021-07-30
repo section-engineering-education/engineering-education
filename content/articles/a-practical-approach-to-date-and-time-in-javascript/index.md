@@ -119,7 +119,7 @@ document.writeln(Diff_in_days);
 > **NB:** if the target date happens to be less than the current date, the results will be negative. At the time of writing this, `Target ` is still a future date.
 
 ### 3. Calculating the number of workdays between two dates (excluding weekends)
-In this task, we will iterate from one date to another counting the number of weekends until we get to the given date. Also, get then the number of days between the two dates. Then we will subtract the number of weekends from the number of days between the two dates.
+In this task, we will iterate from one date to another, counting the number of weekends until we get to the given date. Also, get then the number of days between the two dates. Then we will subtract the number of weekends from the number of days between the two dates.
 ````HTML
  <!DOCTYPE  html>
 <html  lang="en">
