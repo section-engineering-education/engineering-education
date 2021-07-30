@@ -14,26 +14,27 @@ images:
     alt: Broadcasting a private FM radio station using a Raspberry Pi example image
 ---
 
-Raspberry Pi, is based on the ARM cortex designed to carry out various functions. It is a single-board computer that works with low power. This mini-computer is based on an ARMv7 processor and can therefore run ARM/Linux distributions. This aspect or particular characteristic makes it very valuable in understanding the  Internet of Things (IoT).
+Raspberry Pi is based on the [ARM Cortex](https://en.wikipedia.org/wiki/ARM_Cortex-M) technology, designed to carry out various functions on energy efficient devices. It is a single-board computer that works with low power. This mini-computer is based on an ARMv7 processor and can therefore run ARM/Linux distributions. This aspect or particular characteristic makes it very valuable in understanding the  Internet of Things (IoT).
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [How the private FM broadcast will work](#how-the-private-fm-broadcast-will-work)
 - [Setting up the Raspberry Pi](#setting-up-the-raspberry-pi)
-- [Conversion of Raspberry Pi to private FM transmitter](#conversion-of-raspberry-pi-to-private-fm-transmitter)
+- [Conversion of Raspberry Pi to a private FM transmitter](#conversion-of-raspberry-pi-to-a-private-fm-transmitter)
 - [Conclusion](#conclusion)
 - [Relevant resources](#relevant-resources)
 
 ### Prerequisites
-In this guide, it is assumed that the reader has a Raspberry Pi that has a running operating system. We will assume that it's running Raspberry Pi OS. It should also have an active connection to the internet. Additionally, you must have access to your Pi, through whichever means you prefer. It could be through a terminal or by a virtual server such as VNC. This guide will use a Putty program to run commands on our Pi. This guide is also based on [**Rasbian Jessie installed on Raspberry Pi 3**](https://howchoo.com/pi/how-to-install-raspbian-jessie-on-the-raspberry-pi). 
+In this guide, it is assumed that the reader has a Raspberry Pi that's running the Raspberry Pi OS. It should also have an active connection to the internet. Additionally, you must have access to your Pi, through whichever means you prefer. It could be through a terminal or by a virtual server such as VNC. This guide will use a Putty program to run commands on our Pi. This guide is also based on [**Raspbian Jessie installed on Raspberry Pi 3**](https://howchoo.com/pi/how-to-install-raspbian-jessie-on-the-raspberry-pi). 
 
-![Raspberry Pi Operating system](/engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/os.jpg)
+![Raspberry Pi OS](/engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/os.jpg)
 
 ### Introduction
-Setting up a private radio station is easy using a Raspberry Pi. This process should take thirty to sixty minutes to complete. By the end of this hour, you should be able to broadcast within a radius of around fifty meters. However, this is also facilitated by the use of a good antenna. 
 
-*![Image Source: Circuit Digest](https://circuitdigest.com/sites/default/files/inlineimages/u/Raspberry-Pi-FM-Radio-Transmitter-hardware.jpg)*
+Setting up a private radio station is easy using a Raspberry Pi. This process should take thirty to sixty minutes to complete. By the time you finish this tutorial, you should be able to broadcast your FM radio station within a radius of around fifty meters. However, this is also facilitated by the use of a good antenna. 
+
+*[Image Source: Circuit Digest](https://circuitdigest.com/sites/default/files/inlineimages/u/Raspberry-Pi-FM-Radio-Transmitter-hardware.jpg)*
 
 Materials required for this tutorial include:
 
@@ -43,11 +44,11 @@ Materials required for this tutorial include:
 
 ### How the private FM broadcast will work
 
-To reduce electromagnetic interference, all microprocessors are fitted with a synchronous digital system. Using a spread-spectrum clock signal or what is referred to as SSCS in short form, suppression of electromagnetic interference is achieved. This signal has a frequency of between 1MHz and 250MHz. Therefore, the FM band which is between 88Mhz and 108Mhz falls within this range. With the help of a program that modulates the frequency, the Pi will be tweaked to operate as a radio transmitter. This signal will then be produced via the GPIO pin four of the Pi. A short wire of around twenty centimeters can be attached to act as an antenna.
+To reduce electromagnetic interference, all microprocessors are fitted with a synchronous digital system. Using a spread-spectrum clock signal or what is referred to as SSCS in short form, suppression of electromagnetic interference is achieved. This signal has a frequency of between 1MHz and 250MHz. Therefore, the FM band which is between 88Mhz and 108Mhz, falls within this range. With the help of a program that modulates the frequency, the Pi will be tweaked to operate as a radio transmitter. This signal will then be produced via the GPIO pin four of the Pi. A short wire of around twenty centimeters can be attached to act as an antenna.
 
 ### Setting up the Raspberry Pi
 
-Since Raspberry Pi already has a running operating system, boot it and also connect the output HDMI to a monitor. Also, connect a keyboard and mouse. On accessing the desktop, search for the network option which will enable connection to the router (internet). 
+Since Raspberry Pi already has a running operating system, boot it and connect the output HDMI to a monitor. Also, connect a keyboard and mouse. On accessing the desktop, search for the network option which will enable connection to the router (internet). 
 
 ![Raspberry Configuration](/engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/configuration.jpg)
 
@@ -55,7 +56,9 @@ Next, move on to the pi configuration through the menu and enable SSH communicat
 
 ![SSH](/engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/SSH_enabled.jpg)
 
-Once this is enabled, we can now access the Raspberry using Putty as long the personal computer and the Pi are connected to the same network. Open Putty on the personal computer and key in the IP address of the Raspberry Pi to connect via SSH. A session will then appear and ask for login credentials. The credentials to be used here are:  
+Once this is enabled, we can now access the Raspberry using Putty as long the personal computer and the Pi are connected to the same network. Open Putty on the personal computer and key in the IP address of the Raspberry Pi to connect via SSH. A session will then appear and ask for login credentials. 
+
+The login credentials to be used here are:  
 
 Username: **pi** 
 
@@ -72,7 +75,7 @@ Putty interface after successful login to the Raspberry Pi 3:
 ![Raspberry Login](/engineering-education/broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/puttylogin.jpg)
 
 
-### Conversion of Raspberry Pi to Private FM transmitter
+### Conversion of Raspberry Pi to a private FM transmitter
 
 *Step One:*
 
@@ -86,7 +89,7 @@ cd Private_Radio
 
 *Step Two:*
 
-This stage involves cloning the code from GitHub. In order to achieve this, we use the git clone commands as shown below:
+This stage involves cloning the code from GitHub. To achieve this, we use the git clone commands as shown below:
 
 ```JSON
 sudo git clone https://github.com/AshrafAkon/fm_transmitter.git
@@ -95,7 +98,7 @@ sudo git clone https://github.com/AshrafAkon/fm_transmitter.git
 
 *Step Three:*
 
-The code is written in C. This, therefore, calls for the use of compilers. In this guide, we will use a program known as gcc and g++. Compiling is necessary because it converts the code into an executable code that can run on the raspberry pi. The compiler to be used is known as *make*. The following commands will be used to download the compilers.
+The code is written in C. This, therefore, calls for the use of compilers. In this guide, we will use a program known as gcc and g++. Compiling is necessary because it converts the code into an executable code that can run on raspberry pi. The compiler to be used is known as *make*. The following commands will be used to download the compilers.
 
 ```JSON
 sudo apt-get install gcc g++ make
@@ -115,7 +118,7 @@ sudo make
 
 *Step Five:*
 
-This is where you launch the program. To do this, we are required to specify the broadcast frequency to be used and an audio file to play. While cloning the program, there is an audio file known as `star_wars.wav` which is downloaded by default. We will use this audio file and a frequency of 103MHz (you can choose any frequency with the FM band) to see if the program works correctly. The command for launching the program is:
+This is where you launch the program. To do this, we are required to specify the broadcast frequency to be used and an audio file to play. While cloning the program, there is an audio file known as `star_wars.wav` which is downloaded by default. We will use this audio file and a frequency of 103MHz (you can choose any frequency as long as it is within the FM band) to see if the program works correctly. The command for launching the program is:
 
 ```JSON
 sudo ./fm_transmitter -f 103  -r star_wars.wav
@@ -127,16 +130,16 @@ It is important to note that the syntax for the above command is:
 ```JSON
 sudo ./fm_transmitter [-f frequency] [-r] filename
 ```
-To test your transmission, tune any FM radio to 103MHz frequency. This should allow you to hear the sound playing. The Starwars theme song can be replaced using any other desired music or a voice recording. 
+To test your transmission, tune any FM radio to a 103MHz frequency. This should allow you to hear the sound playing. The Starwars theme song can be replaced using any other desired music or a voice recording. 
 
-In order to broadcast live from your newly developed private radio station, the raspberry needs to be connected to a microphone and the `arecord` command shown below can be used to transmit the broadcast. 
+To broadcast live from your newly developed private radio station, the raspberry needs to be connected to a microphone and the `arecord` command shown below can be used to transmit the broadcast as shown below: 
 
 ```JSON
 arecord -D hw:1,0 -c1 -d 0 -r 22050 -f S16_LE | sudo ./fm_transmitter -f 103 -
 ```
 
 ### Conclusion
-With that setup, it is possible to create a simple private FM radio that can be used for small regions such as schools or homesteads. It is however important to note that certain frequencies cannot be used without permision in some countries. It is therefore important to conduct adequate research on which frequencies can be used without violating the law.
+With that setup, it is possible to create a simple private FM radio that can be used for small regions such as schools or homesteads. It is however important to note that certain frequencies cannot be used without permission in some countries. It is therefore important to conduct adequate research on which frequencies can be used without violating the law.
 
 ### Relevant resources
 - [PI-RATE RADIO: HOW TO MAKE YOUR OWN FM STATION FOR LESS THAN $35](https://www.theverge.com/2019/11/26/20981630/raspberry-pi-pirate-radio-fm-station-35-dollars-diy)
