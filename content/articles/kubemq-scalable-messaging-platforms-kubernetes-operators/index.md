@@ -68,7 +68,7 @@ Deploying KubeMQ as an operator also keeps overhead to a minimum. For instance, 
 
 It will also allow the institution to reassign its operational overhead to other tasks instead of monitoring and maintaining the messaging infrastructure. At the same time, the institution can utilize the KubeMQ operator to scale its infrastructure based on the load. This can happen in the scenarios such as when the market closes, or demand decreases, meaning that the clusters can also be scaled down.
 
-### CASE 2: Cross/Hybrid cloud and operators
+#### CASE 2: Cross/Hybrid cloud and operators
 The KubeMQ operator assists in tracking the state. This is the main reason why KubeMQ is preferred for reliable cross/hybrid cloud deployments.
 
 First, the state can verify that the required capacity and configurations are in place for each cluster. Comparing the required state in the Custom Resource against the existing state in Kubernetes enables the operator to ensure that errors are detected and addressed on time, capacity is added as per requirements, and the various bridges, sources, and targets are configured as needed.
