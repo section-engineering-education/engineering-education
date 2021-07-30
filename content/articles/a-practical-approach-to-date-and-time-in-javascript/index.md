@@ -1,5 +1,5 @@
 ﻿
-Dates and time being such a crucial part of our day-to-day lives, knowing how to work with them is important. Javascript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in js that can help us make use of the `Date` object.
+Dates and time are crucial parts of our day-to-day lives. Knowing how to work with them is important.JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
 
 ### Prerequisites
 To follow through this tutorial smoothly we will need :
@@ -206,4 +206,3 @@ This method will continue calling our function until we close the window or the 
 
 ### Conclusion 
  You can go ahead and try the above tasks on your own now or even customize them to suit your liking, little practice wouldn't hurt. If you also chose to copy a snippet and save it with a `.html` extension and open it with a browser, it should work just fine. Have fun coding!
-
