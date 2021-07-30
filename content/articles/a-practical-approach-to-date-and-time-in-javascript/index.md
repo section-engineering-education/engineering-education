@@ -7,7 +7,7 @@ To follow through this tutorial smoothly, we will need :
  2. A text editor of your choice
  3. A browser
  
- ### 1.Getting the day of the week from a date.
+ ### 1. Getting the day of the week from a date.
  In JavaScript, the inbuilt method `new Date()` is used to get the current date by default. There is also the `getDay()` that is used for checking the day of the week. It returns the results as an integer ranging between `0 - 6` whereby 0 is Sunday and the rest of the days follow respectively up to 6 for Saturday. We will use the two methods above combined with a Switch statement to get the day today from today's date.
  ````HTML
  <!DOCTYPE  html>
