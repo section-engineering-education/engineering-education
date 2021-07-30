@@ -7,7 +7,7 @@ title: Understanding Strings in Python
 description: This tutorial will guide the reader on how to initialize, format, and concatenate strings in Python. It will also discuss some of the major methods you can use when dealing with Python strings.
 author: dianne-sandra
 date: 2021-07-30T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
