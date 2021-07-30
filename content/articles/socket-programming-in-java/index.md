@@ -76,8 +76,8 @@ Port: The port number on which the server will listen for the client's requests.
 
 We will use two `while` loops:
 
-**First Loop** - This ensures that the server is indeed running.
-**Second Loop** - It ensures that the server interacts with the client after connection until the client disconnects.
+- **First Loop** - This ensures that the server is indeed running.
+- **Second Loop** - It ensures that the server interacts with the client after connection until the client disconnects.
 
 ```java
 while (true){ //ensures server is running  
