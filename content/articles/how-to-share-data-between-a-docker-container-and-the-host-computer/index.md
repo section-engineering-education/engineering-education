@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-share-data-between-a-docker-container-and-the-host-computer/
-title: How to share data between a docker container and the host computer
+title: How to Share Data between a Docker Container and the Host Computer
 description: This tutorial will teach you how to share data between a Docker containerized application and the host computer. 
 author: joakim-gakure
-date: 2021-07-30T00:00:00-15:00
+date: 2021-07-30T00:00:00-07:14
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,20 @@ images:
     alt: docker container and the host computer example image
 ---
 
-One reason Docker is superb is due to its ability to containerize an application without installing additional dependencies on your local computer. Nevertheless, Docker runs on a virtualization architecture. This creates an isolated environment for running your application away from the host machine. Docker engine takes the role of assigning resources from the host to the virtualized isolated application. Once such application is containerized, the application virtualized data are isolated from the host. This means when you virtualize an application, all its data will be hosted within the dockerize containers. In this case, the host and the application are running on different infrastructures.
+One reason Docker is superb is due to its ability to containerize an application without installing additional dependencies on your local computer. Nevertheless, Docker runs on a virtualization architecture. This creates an isolated environment for running your application away from the host machine. 
+
+Docker engine takes the role of assigning resources from the host to the virtualized isolated application. Once such application is containerized, the application virtualized data are isolated from the host. This means when you virtualize an application, all its data will be hosted within the dockerize containers. In this case, the host and the application are running on different infrastructures.
 
 At times you may want your virtually containerized application to share data and files directly from the host computer.
 
-By default, all files generated within a container are saved on a writable container layer. Once the container is no longer running, the data does not persist. The container's writable layer is closely connected to the host computer on which the container is executing. Therefore, the data cannot be readily transferred to another location. Docker provides two ways for containers to save files on the host system so that the files are persistent even after the container is shut down. These are Docker **volumes** and **bind mounts.**
+By default, all files generated within a container are saved on a writable container layer. Once the container is no longer running, the data does not persist. The container's writable layer is closely connected to the host computer on which the container is executing. Therefore, the data cannot be readily transferred to another location. 
+
+Docker provides two ways for containers to save files on the host system so that the files are persistent even after the container is shut down. These are Docker **volumes** and **bind mounts.**
 
 This blog will teach you how to share data between a Docker containerized application and the host computer.
 
 ### Table of contents
 
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Setting up Docker](#setting-up-docker)
 - [Using bind mounts](#using-bind-mounts)
@@ -67,7 +70,9 @@ This shows that Nginx with the latest tag has been successfully downloaded from 
 
 By default, Docker runs applications as stateless. It sends a writable layer to allow an app write access, but everything you write there is deleted as soon as the container is stopped. This means writable layer access is not always reliable. Therefore, Docker uses different methods such as bind mount, volumes, and in-memory options to temporarily manage the application file system.
 
-Bind mount works by exposing a file or directory on the host computer system within the container. This is a powerful technique for accessing files on the host machine from within your container. Because the data is stored on the host, it is not lost when the container is terminated. Because this data is stored on the host computer, you must know the correct path on the host that you wish to mount in the container.
+Bind mount works by exposing a file or directory on the host computer system within the container. This is a powerful technique for accessing files on the host machine from within your container.
+
+Because the data is stored on the host, it is not lost when the container is terminated. Because this data is stored on the host computer, you must know the correct path on the host that you wish to mount in the container.
 
 This will benefit your development because you will not have to rebuild the image to access the new source code. You make modifications to your source, and the changes are immediately reflected on the mounted container.
 
@@ -111,7 +116,9 @@ To get your IP address, type in the command below:
 ifconfig
 ```
 
-You can get your port number from the container we have created in the previous process by checking under the column `PORTS` or just running the command `run docker container ls`. This will get the port number assigned to the container we are using. Proceed to your browser and key in the following URL in your tab: `http://<your_ip_address>:<your_port>`. Since we do not have any HTML file in the directory, your content should be similar to:
+You can get your port number from the container we have created in the previous process by checking under the column `PORTS` or just running the command `run docker container ls`. This will get the port number assigned to the container we are using.
+
+Proceed to your browser and key in the following URL in your tab: `http://<your_ip_address>:<your_port>`. Since we do not have any HTML file in the directory, your content should be similar to:
 
 ![bind-mount-default](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/bind-mount-default.png)
 
@@ -227,7 +234,9 @@ Your IP Address will be on the `inet` parameter. For our case, it's 172.19.0.1. 
 
 - Get the port number where the container is mapped on from the previous step of checking container status in the `PORTS` column.
 
-- With the IP address and the port number, you can now head over to your browser, open a tab, and key in the following: `http://<your_ip_address>:<your_port>`. Your page should resemble the following:
+- With the IP address and the port number, you can now head over to your browser, open a tab, and key in the following: `http://<your_ip_address>:<your_port>`.
+
+Your page should resemble the following:
 
 ![default-nginx-page](/engineering-education/how-to-share-data-between-a-docker-container-and-the-host-computer/default-nginx-page.png)
 
@@ -300,7 +309,9 @@ docker run -t -d -P --name nginxcont2 -v simplevol:/usr/share/nginx/html nginx:l
 
 You have now learned about volume mounting and its data persistence.
 
-As a side note, volumes are also used when you are running your dockerized application using docker-compose. When you write a docker-compose file, you can specify the volumes, and the volumes paths will be created automatically when building up the application container. Here is an example of a docker-compose.yml file that can be used to dockerize a Mongo database.
+As a side note, volumes are also used when you are running your dockerized application using docker-compose. When you write a docker-compose file, you can specify the volumes, and the volumes paths will be created automatically when building up the application container.
+
+Here is an example of a docker-compose.yml file that can be used to dockerize a Mongo database:
 
 ```yml
 version: '3.8'
@@ -313,14 +324,19 @@ services:
      - mongodb:/data/db
 ```
 
-In the above example, the database container runs on a host. The container has a virtual file system where the data is usually stored with no persistence. If we were to stop and restart the container, the data in this virtual file system will be gone, and it starts from a fresh state. But since we have added `volumes` in this docker-compose file, changes that the application is making in the database will be saved.
+In the above example, the database container runs on a host. The container has a virtual file system where the data is usually stored with no persistence.
 
-A directory from the host file system is mounted into a folder within Docker's virtual file system. When the container publishes to its file system, it is instantaneously duplicated and written to the host file system directory, and vice versa. When a container restarts its virtual file system, it gets the data automatically from the host because the data is still there every time you restart the container.
+If we were to stop and restart the container, the data in this virtual file system will be gone, and it starts from a fresh state. But since we have added `volumes` in this docker-compose file, changes that the application is making in the database will be saved.
+
+A directory from the host file system is mounted into a folder within Docker's virtual file system. When the container publishes to its file system, it is instantaneously duplicated and written to the host file system directory, and vice versa.
+
+When a container restarts its virtual file system, it gets the data automatically from the host because the data is still there every time you restart the container.
 
 ### Conclusion
 
-We have covered how you can share data between your Docker containers and the host computer. The processes are straightforward to implement. In case you are using Docker volumes, you can use the same approach and use data volumes to share data between different containers running in the Docker environment. Check this blog to learn [how to share data between Docker containers](/engineering-education/sharing-data-between-docker-containers/).
+We have covered how you can share data between your Docker containers and the host computer. The processes are straightforward to implement.
+
+In case you are using Docker volumes, you can use the same approach and use data volumes to share data between different containers running in the Docker environment. Check this blog to learn [how to share data between Docker containers](/engineering-education/sharing-data-between-docker-containers/).
 
 ---
-
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
