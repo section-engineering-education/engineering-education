@@ -142,3 +142,6 @@ With that setup, it is possible to create a simple private FM radio that can be 
 - [PI-RATE RADIO: HOW TO MAKE YOUR OWN FM STATION FOR LESS THAN $35](https://www.theverge.com/2019/11/26/20981630/raspberry-pi-pirate-radio-fm-station-35-dollars-diy)
 - [How to turn a Raspberry Pi into an FM radio transmitter](https://www.networkworld.com/article/2999977/how-to-turn-a-raspberry-pi-into-an-fm-radio-transmitter.html)
 - [Broadcast Your Own FM Radio Station, with a Raspberry Pi](https://www.makeuseof.com/tag/broadcast-fm-radio-station-raspberry-pi/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
