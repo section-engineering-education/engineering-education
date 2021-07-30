@@ -45,6 +45,16 @@ Asymmetric encryption uses two distinct keys to encrypt and decrypt data. A publ
 
 To establish a connection between your computer (SSH client) and the webserver (SSH server), the SSH server encrypts a message using the public key and sends it to the client. Then, the client decrypts the message with a private key and sends it back to the SSH server. A connection is then established once the verification is complete.
 
+### Why should you use SSH keys with Git and Github?
+When working with a GitHub account, you identify yourself to GitHub using your username and password. On the other hand, the SSH key is an alternate way of identifying your GitHub account.
+
+As stated earlier, SSH keys come in pairs of public and private keys. A public key is shared with GitHub services, and a private key is stored on your computer. If the keys match, you are granted access. The cryptography behind SSH keys ensures that no one can decrypt your private key from the public one.
+
+### The Difference between adding 2FA on your GitHub Account VS Using SSH Key
+[Two-factor authentication (2FA)](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) is a security technique used when logging into applications. With 2FA, you use a username and password to log in and provide another form of authentication.
+
+Adding a 2FA on your GitHub account enables GitHub to generate an authentication code any time a user attempts to log in. On the other hand, SSH key grants access to any user using it to log into the server. Thus, it offers both client and server authentication. This is through public and private keys.
+
 ### How to manage SSH keys on GitHub accounts
 #### Generating the SSH keys
 Before generating SSH keys, make sure you have two different GitHub accounts. Your account and your company's GitHub account.
