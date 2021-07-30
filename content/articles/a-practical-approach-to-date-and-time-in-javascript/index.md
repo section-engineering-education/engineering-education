@@ -85,7 +85,7 @@ document.writeln(Diff_in_days);
 </body>
 </html>
 ```` 
-In case we want to use the current day like today, we would be required to do some changes in terms of the formating  `Today's` formating.
+In case we want to use the current day like today, we would be required to do some changes in terms of  `Today's` formatting.
 
 ````HTML
 <!DOCTYPE  html>
