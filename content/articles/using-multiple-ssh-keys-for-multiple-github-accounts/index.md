@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /using-multiple-ssh-keys-for-multiple-github-accounts/
 title: Using Multiple SSH Keys for Multiple GitHub Accounts
-description: In this article, we will understand how to create and work with SSH keys for using multiple GitHub accounts
+description: In this article, we will go over how to create and work with SSH keys to use multiple GitHub accounts. We will also learn how to create and update an SSH config file.
 author: wangui-leah
-date: 2021-07-29T00:00:00-03:15
+date: 2021-07-30T00:00:00-14:15
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/hero.jpg
     alt: Multiple SSH and GitHub accounts image
 ---
-For most developers, there is a need to run multiple GitHub accounts on one computer. For instance, you can run an Organization's GitHub account and another for your personal projects in the same computer.
+For most developers, there may be a need to run multiple GitHub accounts on one computer. For instance, you can run an Organization's GitHub account and another one for your personal projects all on the same computer.
 <!--more-->
 In this article, you will learn how to [use multiple SSH keys for different GitHub accounts](https://gist.github.com/jexchan/2351996). While working with two different GitHub accounts, you must set them up using an SSH key.
 
@@ -49,7 +49,7 @@ To establish a connection between your computer (SSH client) and the webserver (
 #### Generating the SSH keys
 Before generating SSH keys, make sure you have two different GitHub accounts. Your account and your company's GitHub account.
 
-You can use your command prompt or Git bash to run the commands. Navigate to the directory and run the below command for each GitHub account:
+You can use your command prompt or Git bash to run the commands. Navigate to the directory and run the command below for each GitHub account:
 
 ```bash
 # navigating to the ssh directory, run the following command.
@@ -60,7 +60,9 @@ ssh-keygen -t rsa -C "your_name@email.com"
 ssh-keygen -t rsa -C "your_name@organization_email.com"
 ```
 
-The key generator will prompt you for a file name. Enter a unique name like:
+The key generator will prompt you for a file name. 
+
+Enter a unique name like:
 
 ```bash
 id_rsa_personal
@@ -71,7 +73,7 @@ id_rsa_work
 
 ![Generating SSH key for my company's account](/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/work.jpg)
 
-Now that you have created two distinct keys that are listed below:
+Now that you have created two distinct keys which are listed below:
 
 ```bash
 id_rsa_personal
@@ -80,7 +82,9 @@ id_rsa_work
 
 After generating the keys, use the following command to check if all keys were created:
 
-`ls ~/.ssh`
+```bash
+ls ~/.ssh
+```
 
 The following files list is presented:
 
@@ -99,19 +103,21 @@ Copy the SSH key and then sign in to your GitHub account.
 
 Follow the steps below to add an SSH key to your GitHub account:
 
-1. On your GitHub, navigate to `Settings`
+1. On your GitHub, navigate to `Settings`.
 2. Choose `SSH and GPG keys` - Gnu Privacy Guard (GPG) is an encryption technique that allows secure information sharing among parties.
-3. Hit on button `New SSH Key`, give a significant `Title` and paste the `Key`.
-4. Finally, click the `Add SSH key` button
+3. Hit on the `New SSH Key` button, give it a significant `Title` and paste the `Key`.
+4. Finally, click the `Add SSH key` button.
 
 ![Adding SSH key to your Github account](/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/add-sshkey.jpg)
 
 ### Creating and updating the SSH config file
-Finally, let us bring it all together in a config file. There are two GitHub accounts - the personal and work accounts. The personal account is the local account, and work is the global account.
+Next, let us bring it all together in a config file. There are two GitHub accounts - the personal and work accounts. The personal account is the local account, and work is the global account.
 
 The SSH config file is accessed by running this command:
 
-`~/.ssh/config`
+```bash
+~/.ssh/config
+```
 
 If it exists, you can edit it, or else it can be created using this command:
 
@@ -138,38 +144,41 @@ Host github.com-organization github account
 
 ![Adding a config file](/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/config.jpg)
 
-In the code above, we have two different values. One is the work repository and another for the user's repository. The values enable you to add and update the SSH config of the GitHub repositories.
+In the above code, we have two different values. One is the work repository and another for the user's repository. The values enable you to add and update the SSH config of the GitHub repositories.
 
-### Cloning the Repositories
-Finally, we have to clone repositories. While cloning, make sure that you use the hostnames that we used during SSH configuration.
+### Cloning the repositories
+Next, we have to clone repositories. While cloning, make sure that you use the hostnames that we used during SSH configuration.
 
-To clone the repositories, execute the below clone commands:
+To clone the repositories, execute the clone commands below:
 
 #### Cloning personal repository
-For cloning your private project, you use this command:
+To clone your private project, we can use this command:
 
-`git clone git@github.com:your-github-account/private-project-repo.git`
+```bash
+git clone git@github.com:your-github-account/private-project-repo.git
+```
 
 Here, `your-github-account` will be the account username, and `private-project-repo` will be the name of the personal project's repository.
 
 #### Cloning work repository
-For cloning your company's project, you will use this command:
+When cloning your company's project, we will use this command:
 
-`git clone git@github.myorganization.com:org-account/company-project-repo.git`
+```bash
+git clone git@github.myorganization.com:org-account/company-project-repo.git
+```
 
 Here, `your-github-account` will be the account username, and `company-project-repo` will be the name of the company project's repository.
 
 ### Conclusion
-To conclude, we have learned how to access multiple GitHub accounts using multiple SSH keys, at the same time.
+To conclude, we learned how to access multiple GitHub accounts using multiple SSH keys, at the same time.
 
 To summarize:
-
 - The reader has learned what SSH Keys are and how they work.
 - The reader has learned how to manage multiple SSH keys on multiple GitHub accounts.
-- The reader has learned how to create and update an SSH config file
-- Finally, the reader has learned how to clone repositories
+- The reader has learned how to create and update an SSH config file.
+- Finally, the reader has learned how to clone repositories.
 
-Happy learning!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
