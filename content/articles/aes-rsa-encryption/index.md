@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /aes-rsa-encryption/
 title: Understanding AES and RSA encryption algorithms
-description: This article covers two encryption algorithms, the AES and RSA. It explains their functionalities and how to get started using them. T 
+description: This article covers two encryption algorithms, the AES and RSA. It explains their functionalities and how to get started using them.
 author: mackrine-awino
-date: 2021-07-21T00:00:00-19:00
+date: 2021-07-30T00:00:00-02:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
     alt: Understanding AES and RSA encryption algorithms
 ---
 
-Encryption is a way of enciphering data especially when it's on transit to prevent unauthorized personnel from gaining access to it. Encryption is always done with the intent of allowing only the intended recipient of a piece of data to have access to the data. Maintaining the integrity, confidentiality, and availability of data and information is key in data communication and this is where data encryption comes in handy.
+Encryption is a way of enciphering data especially when it's in transit to prevent unauthorized personnel from gaining access to it. Encryption is always done with the intent of allowing only the intended recipient of a piece of data to have access to the data. Maintaining the integrity, confidentiality, and availability of data and information is key in data communication and this is where data encryption comes in handy.
 
 ### Table of contents
 1. [Prerequisites](#prerequisites)
@@ -30,6 +30,7 @@ Encryption is a way of enciphering data especially when it's on transit to preve
 For a reader to understand this article, they should have the following prior knowledge:
 
 - A basic understanding of the concept of data encryption and the need for encryption in data communication.
+
 - A beginner's understanding of data [cryptography](https://www.section.io/engineering-education/cryptography-in-computer-networking/).
 
 ### What is an encryption algorithm?
@@ -68,11 +69,11 @@ When encrypting using AES, a person can either use AES-128, AES-192, or even the
 
 Below is a simple diagrammatic representation flow of how AES encrypts data:
 
-![AES algorithm flow ](/engineering-education/aes-rsa-encryption/AES_flow.png).
+![AES algorithm flow.](/engineering-education/aes-rsa-encryption/aes-flow.png)
 
 This illustrates that either of the 3 encryption keys is used to encrypt the message. The encryption process occurs in the "cipher" and an encrypted message is produced in the "ciphertext".
 
-The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key. 
+The encryption process has 10 rounds for a 128-bit long key, 12 rounds for a 192-bit long key, and 14 rounds for a 256-bit long key.
 
 Below is the step by step explanations for data encryption using the AES algorithm:
 
@@ -116,7 +117,9 @@ The entire process is then repeated several times with each repeat being called 
 
 ### Getting started with the RSA encryption algorithm
 
-RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption. RSA uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
+RSA was named after its first describers Rivest, Shamir, and Adleman. Rivest–Shamir–Adleman is an asymmetric encryption algorithm used by modern computers in data encryption and decryption.
+
+RSA uses two keys that are the public key that is used for encryption and the private key used for data decryption hence is an asymmetric algorithm. The encryption key is always made public hence is accessed by anyone while the decryption key is kept private.
 
 This algorithm is based on the fact that finding factors of [composite numbers](https://en.wikipedia.org/wiki/Composite_number) is a difficult task.
 
@@ -128,14 +131,16 @@ Below is a simple diagrammatic representation flow of how RSA encrypts data:
 
 Below is the step by step instructions of how to achieve encryption using the RSA algorithm:
 
- ### Step 1: Generation of the encryption and decryption keys
+### Step 1: Generation of the encryption and decryption keys
 
  To generate the keys:
- - Pick any two large prime numbers and keep them secret.
 
-     Example lets pick the prime numbers x and y
-- Evaluate 
-              
+- Pick any two large prime numbers and keep them secret.
+
+     For example, let's pick the prime numbers x and y
+
+- Evaluate
+
      z = xy where z is the modulus of the two keys being generated
 
 - Evaluate the [totient](https://simple.wikipedia.org/wiki/Euler%27s_totient_function)
@@ -146,21 +151,20 @@ Below is the step by step instructions of how to achieve encryption using the RS
 
 - Evaluate k and keep it as the private key exponent as follows:
 
-    ke is [congruent](https://en.wikipedia.org/wiki/Modular_arithmetic) 1 in mod φ(z) 
+     ke is [congruent](https://en.wikipedia.org/wiki/Modular_arithmetic) 1 in mod φ(z)
 
-   ke ≡ 1 (mod φ(z))
-
-
-
+     ke ≡ 1 (mod φ(z))
 
 The public key is made of the modulus z and the exponent e while the private key is made of x and y and the private exponent k.
 The public key is made available to everyone but the private key should only be accessed by the recipient of the message.
 
 ### Step 2: Encrypting the message using the generated encryption key
 
- - Send the public key (z,w) generated above to the person who wants to send a message and remain with the private key.
- - The message sender turns the message into a number "G". The number G should be smaller than "z". This is done using an agreed-upon protocol commonly referred to as [Padding scheme](https://simple.wikipedia.org/wiki/RSA_algorithm#Padding_schemes)
- - The sender then computes the ciphertext of the message using the expression, c = G^e  mod z where 'c' represents the ciphertext.
+- Send the public key (z,w) generated above to the person who wants to send a message and remain with the private key.
+
+- The message sender turns the message into a number "G". The number G should be smaller than "z". This is done using an agreed-upon protocol commonly referred to as [Padding scheme](https://simple.wikipedia.org/wiki/RSA_algorithm#Padding_schemes)
+
+- The sender then computes the ciphertext of the message using the expression, c = G^e  mod z where 'c' represents the ciphertext.
 
 The receiver can decrypt the message using the expression G = c^d  mod n according to the [chinese remainder theorem](https://simple.wikipedia.org/wiki/Chinese_remainder_theorem).
 
