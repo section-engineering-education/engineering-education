@@ -27,7 +27,7 @@ To follow this tutorial comfortably, we need to meet the following conditions.
 
 ### Mounting our Drive to Google Colab
 
-In this article, we shall carry out our data preprocessing experiments on Google Colab. Therefore, we need to ensure our Google Drive is accessible by the Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
+In this article, we shall carry out our data preprocessing experiments on Google Colab. Therefore, we need to ensure our Google Drive is accessible from Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
 
 Since we've successfully downloaded our data, let's now upload it to Google Drive through [google.drive.com](https://drive.google.com/drive/u/0/my-drive).
 Now our data is uploaded to Google Drive. It is saved in the root directory.
@@ -43,7 +43,7 @@ Upon executing our code, it will lead us to a Google Authentication stage simila
 
 ![Google_Authentication](/engineering-education/data-preprocessing-python/URL.png)
 
-We click on the URL link on your Google Colab interface and proceed to allow permissions until we reach the verification code stage, i.e.
+We click on the URL link on the Google Colab interface and proceed to allow permissions until we reach the verification code stage, i.e.
 
 ![Verification_code](/engineering-education/data-preprocessing-python/Cpo.png)
 
@@ -104,28 +104,28 @@ print(y) # viewing an array of the dependent variable.
 Our data is imported successfully in the form of an array of features x and a dependent variable y.
 
 ### Step 3: Taking care of the missing data
-Missing data is a common problem that is mainly faced with the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data can be missing in a dataset. For instance, the data collected through a survey, missing data can occur due to the failure of some participants responding to some questions. This may be due to not knowing the correct response, or maybe they are unwilling to answer. It can also be missing due to the error made during the data entry process. 
+Missing data is a common problem that faces the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data can be missing in a dataset. For instance, the data collected through a survey may have missing data due to participants' failure to respond to some questions, not knowing the correct response, or being unwilling to answer. It can also be missing due to the error made during the data entry process. 
 
-Most machine learning models require data with a value for features in each observation. In such models, missing data can lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As a result, we may end up drawing a wrong conclusion about the data. Therefore, we can conclude missing data it's harmful to our machine learning models and thus requires appropriate handling.
+Most machine learning models require data with a value for all features in each observation. In such models, missing data can lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As a result, we may end up drawing a wrong conclusion about the data. Therefore, we can conclude that missing data is harmful to machine learning models and thus requires appropriate handling.
 
 There are several techniques we use to handle the missing data. They include:
 
-1. **Deleting the observation reporting the missing value(s):**
- This technique works well with big datasets with few missing values. For instance, deleting a row from a dataset with hundreds of observations cannot affect the information quality of the dataset. However, this technique is not suitable for the dataset reporting many missing values. Deleting many rows from a dataset can lead to the loss of information.
-  To ensure no risk of losing crucial information, we need to make use of more appropriate techniques. The next technique involves the imputation of the missing data. Imputation simply means replacing the missing data with an estimated value.
+1. **Deleting the observation with the missing value(s):**
+ This technique works well on big datasets with few missing values. For instance, deleting a row from a dataset with hundreds of observations cannot affect the information quality of the dataset. However, this technique is not suitable for a dataset reporting many missing values. Deleting many rows from a dataset can lead to the loss of information.
+  To ensure no risk of losing crucial information, we need to make use of more appropriate techniques. The next technique involves the imputation of the missing data. Imputation means replacing the missing data with an estimated value.
 
 2. **Mean Imputation:**
-  Under this technique, the missing value is replaced with the average of the variable in which it occurs. The advantage of this technique is that it preserves the mean and the sample size. However, this technique has some serious disadvantages.
-  Mean imputation underestimates the standard error, and it does not preserve the correlation among variables. The relationship among variables is an important aspect of analysis as the general objective of the study is to understand it better. Mean imputation is thus not an appropriate solution for missing data unless the data is Missing Completely at Random( missing data is completely unrelated to both the missing data as well as observed values in the dataset).
+  Under this technique, we replace the missing value with the average of the variable in which it occurs. The advantage of this technique is that it preserves the mean and the sample size. However, this technique has some serious disadvantages.
+  Mean imputation underestimates the standard error, and it does not preserve the correlation among variables. The relationship among variables is an essential aspect of analysis as the study's general objective is to understand it better. Mean imputation is thus not an appropriate solution for missing data unless the data is Missing Completely at Random( missing data is completely unrelated to both the missing data and observed values in the dataset).
 
 3. **Hot Deck Imputation:**
- In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. This technique ensures that the imputing value is only selected from the possible interval where the true value could probably fall, and it is randomly selected rather than being determined, which is an important aspect for an accurate standard error.
+ In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. This technique ensures that the imputing value is only selected from the possible interval where the true value could probably fall, and is randomly selected rather than being determined, which is an essential aspect for a correct standard error.
 
 4. **Cold Deck Imputation**
-  In this technique, we replace the missing data using a value chosen from other variables with similar observation values. The difference between this technique and the Hot Deck imputation is that the selecting process of the imputing value is not randomized.
+  We replace the missing data using a value chosen from other variables with similar observation values in this technique. The difference between this technique and the Hot Deck imputation is that the selecting process of the imputing value is not randomized.
 
 5. **Regression Imputation**
-  Regression imputation involves fitting a regression model on a feature with missing data, and predictions of this regression model are used to replace the missing values in this feature. This technique preserves the relationships between features, and this grants it a big advantage over simple imputation techniques such as mean and mode imputation.
+  Regression imputation involves fitting a regression model on a feature with missing data and then using this regression model's predictions to replace the missing values in this feature. This technique preserves the relationships between features, and this grants it a significant advantage over simple imputation techniques such as mean and mode imputation.
 
     Regression imputation is of two categories:
 
@@ -133,9 +133,9 @@ There are several techniques we use to handle the missing data. They include:
     Deterministic regression imputation imputes the missing data with the exact value predicted from the regression model. This technique doesn't consider the random variation around the regression line. Since the imputed values are very precise, the correlation between the features and the dependent variables is overestimated.
 
     2. Stochastic regression imputation
-    In stochastic regression imputation, a random variation(error term) is added to the predicted value and, therefore, can reproduce the correlation of X and Y more appropriately.
+    In stochastic regression imputation, we add a random variation(error term) to the predicted value and, therefore, can reproduce the correlation of X and Y more appropriately.
 
-Now that we know the techniques we can use to take care of the missing values, let's handle this problem in our dataset. We notice that our features set (x) has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we can implement our machine learning models on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
+Now that we know the techniques we can use to take care of the missing values, let's handle this problem in our dataset. We notice that our features set (x) has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we can implement our machine learning model on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
 
 The code below will solve this problem present in our dataset.
 
@@ -170,17 +170,17 @@ print(x)
  ['France' 37.0 67000.0]]
 ```
 
-The missing value on the `Age` column is replaced with the mean of the same column, i.e., 38.77777777777778. Similarly, the missing value on the `Salary` column is replaced with the mean of such a column, i.e., 63777.77777777778.
+The missing values on the `Age` and `Salary` columns are replaced with their respective column means, i.e., 38.77777777777778 and 63777.77777777778, respectively.
 
 ### Step 4: Encoding categorical data
 
 In encoding, we transform text data into numeric data. Encoding Categorical data, therefore, involves changing data that fall into categories into numeric data. 
 
-The `Country` and the `Purchased` columns of our dataset contain data that fall into categories. Since machine learning models are based on the mathematical equation, which takes only numerical inputs, it will be difficult for them to compute the correlation between the feature and the dependent variables. To ensure this does not happen, we need to convert the string entries in the dataset into numbers.
+The `Country` and the `Purchased` columns of our dataset contain data that fall into categories. Since machine learning models are based on a mathematical equation, which can only take numerical inputs, it will be challenging to compute the correlation between the feature and the dependent variables. To ensure this does not happen, we need to convert the string entries in the dataset into numbers.
 
-  In the case of our dataset, we shall encode France into 0, Spain into 1, and Germany into 2. However, our future machine learning model can interpret that the numerical order between 0 for France, 1 for Spain, and 2 for Germany do matter, which is not the case. To ensure this misinterpretation does not occur, we make use of one-hot encoding.
+  For our dataset, we shall encode France into 0, Spain into 1, and Germany into 2. However, our future machine learning model can interpret that the numerical order between 0 for France, 1 for Spain, and 2 for Germany do matter, which is not the case. To ensure this misinterpretation does not occur, we make use of one-hot encoding.
 
-  One-hot encoding converts ours categorical `Country` column into three columns and creates a unique binary vector for each country such that there is no numerical order between the country categories.
+  One-hot encoding converts our categorical `Country` column into three columns and creates a unique binary vector for each country such that there is no numerical order between the country categories.
 
 Let's see how One-hot encoding enables us to achieves this by executing the code below.
 
@@ -275,7 +275,7 @@ Our dataset is successfully split. Our features set was divided into eight obser
 
 ### Step 6: Feature scaling
 
-In most cases, we shall work with datasets whose features are not on the same scale. Some features often have huge values, and others have small values. If we implement our machine learning model on such datasets, features with huge values will dominate ones with small values, and the machine learning model will treat ones with small values as if they don't exist. Their influence on the data will therefore not be accounted for. To ensure this is not the case, we need to scale our features on the same range, i.e., within the interval of -3 and 3
+In most cases, we shall work with datasets whose features are not on the same scale. Some features often have huge values, and others have small values. Suppose we implement our machine learning model on such datasets. In that case, features with huge values will dominate ones with small values, and the machine learning model will treat ones with small values as if they don't exist(their influence on the data will not be accounted for). To ensure this is not the case, we need to scale our features on the same range, i.e., within the interval of -3 and 3
 
 Therefore, we shall only scale the `Age`  and `Salary` columns of our `x_train` and `x_test` into this interval. The code below enables us to achieve this.
 
@@ -313,7 +313,7 @@ We notice that in the  `x_train` and `x_test` we only scaled the `Age` and `Sala
 
 ### Conclusion
 
-To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. The data at this point is free from irregularities, and the models can make analytical sense of the dataset. I hope you found this helpful. Happy learning.
+To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. At this point, our data is free from irregularities, and the models can make analytical sense of the dataset. I hope you found this helpful. Happy learning.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
