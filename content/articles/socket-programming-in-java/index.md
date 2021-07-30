@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /socket-programming-in-java/
 title: Understanding Socket Programming in Java
-description: This tutorial will introduce you to the basics of socket programming in Java. You will understand how clients and servers communicate over the internet.
+description: This tutorial will introduce the reader to the basics of socket programming in Java. They will understand how clients and servers communicate over the internet.
 author: apondi-ashley
-date: 2021-08-05T00:00:00-06:00
+date: 2021-07-30T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -37,9 +37,9 @@ The client has to know two things about the server:
 > Ports between 0 and 1023 are mainly used for administrative purpose (e.g.,  21 for FTP, 23 for Telnet, 25 for email, and 80 for HTTP). In our program, we'll be using port number `5000`.
 
 ### Creating a socket connection 
-In Java, we create a socket connection using the following steps:
+In Java, we create a socket connection by doing the following steps:
 
-The Server constructs a `ServerSocket` object to specify the port number on which our conversation will occur. Exception handling methods are in use whenever an I/O error occurs. 
+The server constructs a `ServerSocket` object to specify the port number on which our conversation will occur. Exception handling methods are in use whenever an I/O error occurs. 
 
 The `accept()` method is called by the server to validate an incoming request to the socket.
 
@@ -51,7 +51,9 @@ If the connection is successful, the client and server can then communicate usin
 
 The client's `OutputStream` communicates with the server's `InputStream`, and the server's `OutputStream` communicates with the client's `InputStream`. 
 
-A stream is basically a collection of sequenced data. The two major types of streams are:
+A stream is basically a collection of sequenced data. 
+
+The two major types of streams are:
 1. A character stream (usually used with text files).
 2. A byte stream (used with images).
 
@@ -59,13 +61,14 @@ A character stream is in human-readable language while a byte stream is in machi
 
 > In this situation, the client and server will simultaneously broadcast messages to each other's streams because TCP is a two-way communication protocol.
 
-## Programming the server-side application
+### Programming the server-side application
 A `serversocket` is an object of the `ServerSocket` that uses the constructor below:
 
 ```java
 serversocket = new ServerSocket(int port)
 ```
-Port: the port number on which the server will listen for the client's requests.
+
+Port: The port number on which the server will listen for the client's requests.
 
 >The ServerSocket object stays idle, waiting for network requests. Our client will attempt to connect to port `5000`.
 
@@ -110,7 +113,7 @@ while (true){ //ensures server is running
 }
 ```
 
-We used the following methods for the above server-side program:
+We used the following methods for the server-side program above:
 
 - `public InputStream getInputStream()` - It returns an `InputStream` object that receives data.
 - `public OutputStream getOutputStream()`- It returns an `OutputStream` object for sending data.
@@ -174,6 +177,7 @@ public class Server {
     }  
 }
 ```
+
 A sample output of this code is:
 
 ```bash
@@ -194,7 +198,7 @@ There are two ways to access a `Socket` instance:
 socket = new Socket("localhost", 5000);
 ```
 
-In the above code, a `localhost` is a domain name that redirects you to your computer. It resolves to `127.0.0.1` as the `IP` address. A port number is in the second argument.
+In the code above, a `localhost` is a domain name that redirects you to your computer. It resolves to `127.0.0.1` as the `IP` address. A port number is in the second argument.
 
 We generate `I/O` streams using the socket object, as shown below:
 
@@ -288,7 +292,7 @@ Server:  Message Received
 - Type messages in the client window, which will be received and shown by the server window at the same time.
 - To exit, type **BYE**.
 
-#### Using Command Prompt/Terminal
+#### Using command prompt/terminal
 - Make a new folder named `project` (it's your package name).
 - Put the `Server.java` and `Client.java` into the `project` folder.
 - Open the `command prompt` and navigate to the `root` path.
@@ -310,8 +314,11 @@ Server:  Message Received
 > If the port is already in use, the application may result in an error. To solve this issue, change the port number to a unique value.
 
 ### Conclusion 
-In this tutorial, we learned about sockets and the TCP/IP protocol. We specifically covered the fundamentals of socket programming in Java. Furthermore, we discussed how data flow and client/server interactions work. You can, therefore, use this knowledge to build other highly productive applications.
+In this tutorial, we learned about sockets and the TCP/IP protocol. We specifically covered the fundamentals of socket programming in Java. 
 
+Furthermore, we discussed how data flow and client/server interactions work. You can, therefore, use this knowledge to build other highly productive applications.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
