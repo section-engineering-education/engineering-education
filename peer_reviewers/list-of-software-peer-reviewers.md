@@ -22,6 +22,7 @@
 |  Srishilesh P S | [EngEd Author Page](https://www.section.io/engineering-education/authors/srishilesh-p-s/) | [GitHub Profile](https://github.com/srishilesh) | - Machine Learning - Deep Learning - Blockchain - Data Science - Databases - DevOps - Full stack development - Programming Languages (Python, Java, C, JavaScript, Solidity) |
 |  Mike Barasa | [EngEd Author Page](https://www.section.io/engineering-education/authors/michael-barasa/) | [GitHub Profile](https://github.com/WanjaMIKE) | - Kotlin - JavaScript - PHP - Java - Dart - Flutter/React/Node/Vue/Laravel|
 |  Willies Ogola | [EngEd Author Page](https://www.section.io/engineering-education/authors/willies-ogola/) | [GitHub Profile](https://github.com/Bayler) | - Artificial Intelligence - Machine Learning - Blockchain - Telecommunication & Networking - Internet of Things - Programming Languages (Python, C, JavaScript)|
+|  Dawe Daniel | [EngEd Author Page](https://www.section.io/engineering-education/authors/dawe-daniel/) | [GitHub Profile](https://github.com/Dawe-7) | - Android development (Java) - Programming Languages (C++, C) - Networking  - CCNA|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
