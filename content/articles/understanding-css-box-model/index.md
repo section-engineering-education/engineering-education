@@ -27,10 +27,11 @@ As we had said earlier, we may change the appearance of the HTML components of t
 The content comprises of data in the form of text, images, or other forms of media. The `width` and `height` attributes change the box's dimensions. While this is a straightforward definition, it should be emphasized that “content” can also refer to empty space.
 For example, using an empty `div` tag to add extra unique designs to a webpage can be great.
 
-### Padding
-Padding is the gap between the content's outside edge and its border. The padding property may be used to resize this box. Padding-left, padding-bottom, and other edge-specific attributes aid in obtaining custom spacing. 
+#### Padding
+Padding is the gap between the content's outside edge and its border. The padding property may be used to resize the box. Padding-left, padding-bottom, and other edge-specific attributes aid in obtaining custom spacing. 
 
-**NOTE**: You can use one value to represent the padding across the box, for example, `padding: 35px;` or you can give each side of the box a value, for example, `padding-left:25px;`.
+>**NOTE**: You can use one value to represent the padding across the box, for example, `padding: 35px;` or you can give each side of the box a value, for example, `padding-left:25px;`.
+
 
 Let's look at an example of padding in CSS:
 
