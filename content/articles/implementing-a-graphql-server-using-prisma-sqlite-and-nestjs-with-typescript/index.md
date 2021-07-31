@@ -17,7 +17,6 @@ Being statically typed with typescript, it allows you to do various JavaScript t
 Nest.js, like other backend frameworks, is designed to deliver an Angular-like experience. As a result, when you create a new Nest.js application, you will be launched into an environment that resembles a normal front-end Angular application. The major distinction is that what you end up creating will be your backend services. You'll set up a server, link it to databases, and do all of the typical tasks associated with a back-end-based application.
 
 ### Goal
-
 The guide will focus on getting a simple server project up and running. We will use technologies such as Prisma, Nest.js, GraphQL, and SQLite as the project database. We will create a simple posts GraphQL API with all CRUD operations supported.
 
 ### Prerequisites
