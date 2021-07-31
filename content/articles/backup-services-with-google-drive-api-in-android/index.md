@@ -1,6 +1,22 @@
-### Introduction
-Almost every Android app needs some form of cloud storage to save user's data. **Google Drive** is one of the cloud-based storage solutions. It works similarly to other cloud storage services in that it is used to augment storage capacity for important files that the user would want to recover in case they get lost.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /backup-services-with-google-drive-api-in-android/
+title: Backup Services with Google Drive API in Android
+description: This tutorial takes the reader through the process of saving and retrieving data from Google Drive using the Google Drive API in Android. Google drive is a cloud storage service that allows users to store, share, and access files from their Google account.
+author: maurine-muthoki
+date: 2021-07-31T00:00:00-14:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/backup-services-with-google-drive-api-in-android/hero.png
+    alt: Backup Services with Google Drive API in Android image
+---
+
+Almost every Android app needs some form of cloud storage to save user's data. **Google Drive** is one of the cloud-based storage solutions. It works similarly to other cloud storage services in that it is used to augment storage capacity for important files that the user would want to recover in case they get lost.
+<!--more-->
 Google Drive synchronizes all documents, images, and other types of files across all of a user's devices, including mobile phones, tablets, and computers.
 
 ### Prerequisites
@@ -175,3 +191,6 @@ For further reading, you can refer to the following links:
 - [Google Drive API Reference](https://developers.google.com/drive/v3/reference/).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
