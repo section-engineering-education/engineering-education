@@ -76,7 +76,7 @@ The first step is the learning of the algorithm. It makes use of a data-set of i
 
 The following image illustrates the above conversions:
 
-[Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/lph_operation.png)
+![Performing LBP operation on an image](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/lph_operation.png)
 
 [Image source](https://i.stack.imgur.com/ZU3aC.png)
 
@@ -84,7 +84,7 @@ The following image illustrates the above conversions:
 
 The following image illustrates the above exactraction:
 
-[Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/extracting_histograms.jpg)
+![Histrograms' Extraction illustration](/engineering-education/understanding-facial-recognition-using-local-binary-pattern-histogram-algorithm/extracting_histograms.jpg)
 
 [Image source](https://www.semanticscholar.org/paper/Face-Recognition-based-Attendance-System-using-Haar-Chinimilli-A./cd4429cac9a4d9c99796f990974dd9a9ff88f1f8/figure/4)
 
