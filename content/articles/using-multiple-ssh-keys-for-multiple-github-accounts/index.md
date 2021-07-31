@@ -6,7 +6,7 @@ url: /using-multiple-ssh-keys-for-multiple-github-accounts/
 title: Using Multiple SSH Keys for Multiple GitHub Accounts
 description: In this article, we will go over how to create and work with SSH keys to use multiple GitHub accounts. We will also learn how to create and update an SSH config file.
 author: wangui-leah
-date: 2021-07-30T00:00:00-14:15
+date: 2021-07-31T00:00:00-14:15
 topics: []
 excerpt_separator: <!--more-->
 images:
