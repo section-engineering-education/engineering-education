@@ -1,28 +1,31 @@
-The box-model is a fundamental concept in CSS and HTML. Because everything in CSS is made up of boxes, it's critical to understand how the CSS box model works. However, many web developers still don't understand how the box model works. So, in this tutorial, we'll look at the basics of the box-model's logic and why it's known as the box model. In addition, I will provide a better understanding of the box-model behavior.
+The box-model is a fundamental concept in CSS and HTML. Since everything in CSS is made up of boxes, it's critical to understand how the CSS box model works. Many web developers still don't understand how the box model works. So, in this tutorial, we'll look at the basics of the CSS box-model and why it's known as the box model. In addition, I will provide a better understanding of the box-model behavior.
 
 ### Table of contents
 1. [What is a box-model](#what-is-a-box-model)
-2. [Controlling the Box-model](#controlling-the-box-model)
-3. [Styling the Box](#styling-the-box)
+2. [Controlling the box-model](#controlling-the-box-model)
+3. [Styling the box](#styling-the-box)
 4. [Basic types of boxes](#basic-types-of-boxes)
-5. [Understanding the Sizing of Boxes](#understanding-the-sizing-of-boxes)
-6. [Width and Height Calculations](#width-and-height-calculations)
+5. [Understanding the sizing of boxes](#understanding-the-sizing-of-boxes)
+6. [Width and height calculations](#width-and-height-calculations)
 
 ### What is a box-model?
-One or more rectangular boxes make up every element that can be shown on a web page. The CSS box model explains how rectangular boxes are displayed on a web page. These boxes can have a variety of features and interact with one another in various ways, but they all contain a content area as well as optional **padding**, **border**, and **margin** areas used for changing the appearance.
+One or more rectangular boxes make up every element that can be shown on a web page. The CSS box model explains how rectangular boxes are displayed on a web page.
 
-### Controlling the Box-model
-Let's start with the Box-model's layout, which is depicted in the accompanying image below. 
+These boxes can have a variety of features and interact with one another in various ways, but they all contain a content area as well as optional **padding**, **border**, and **margin** areas used for changing the appearance.
+
+### Controlling the box-model
+Let's start with the box-model's layout, which is depicted in the accompanying image below. 
 
 ![css-box-model](/engineering-education/understanding-css-box-model/css-box-model.png)
 
 [image source](https://www.dummies.com/)
 
-### Styling the Box
+### Styling the box
 As we had said earlier, we may change the appearance of the HTML components of the box by adjusting the content, padding, border, and margin. Let's look at each of them.
 
 ### Content
-This comprises data in the form of text, images, or other forms of media. The width and height attributes change the box's dimensions. While this is a straightforward definition, it should be emphasized that “content” can also refer to empty space. For example, using an empty div to add extra unique designs to a web design can be a great way to go.
+The content comprises of data in the form of text, images, or other forms of media. The `width` and `height` attributes change the box's dimensions. While this is a straightforward definition, it should be emphasized that “content” can also refer to empty space.
+For example, using an empty `div` tag to add extra unique designs to a webpage can be great.
 
 ### Padding
 Padding is the gap between the content's outside edge and its border. The padding property may be used to resize this box. Padding-left, padding-bottom, and other edge-specific attributes aid in obtaining custom spacing. 
@@ -37,7 +40,7 @@ p {
     border-color: red;
   }
 ```
-Because there is no padding set for this **p**, you will get the result displayed as below.
+Since there is no padding set for this **p** tag, you will get the result displayed as below.
 
 ![padding](/engineering-education/understanding-css-box-model/padding.png)
 
@@ -56,7 +59,9 @@ These are the changes that you will observe.
 The additional padding between the paragraph content and the border has altered significantly, as can be seen.
 
 ### Border
-The border of an element is defined by the distance between the padding's outer edge and the margin's inner edge. Its width is set to 0 by default. The border property is used to specify the boundary of an element. Individual edges can be customized as well. 
+The border of an element is defined by the distance between the padding's outer edge and the margin's inner edge. Its width is set to 0 by default.
+
+The border property is used to specify the boundary of an element. Individual edges can be customized as well. 
 
 The following are the three fundamental properties for creating borders:
 - `border-style` - Typically, one of the following keywords is used: `solid`, `dashed`, or `dotted`.
@@ -73,7 +78,11 @@ border-color: red green blue brown;
 ![border](/engineering-education/understanding-css-box-model/border.png)
 
 ### Margin
-Margin is the portion on the outside of the CSS Box Model. In simple words, Margin is the distance between an element's box and the boxes of its surrounding elements. This is similar to the page margin, which is the distance between a page's boundary and its content. It is translucent in color and has padding-like features, although it clears space outside the element's boundary. Individual edges, like padding, can be set to have a specific margin. For example, `margin-top: 15px;`.
+Margin is the portion on the outside of the CSS Box Model. In simple words, Margin is the distance between an element's box and the boxes of its surrounding elements.
+
+This is similar to the page margin, which is the distance between a page's boundary and its content. It is translucent in color and has padding-like features, although it clears space outside the element's boundary.
+
+Individual edges, like padding, can be set to have a specific margin. For example, `margin-top: 15px;`.
 
 ### Example
 Let's look at an example of how to apply margin:
@@ -95,6 +104,8 @@ p {
 }
 </style>
 ```
+You can try out the code [here](https://replit.com/)
+
 The above code shows us how to apply spaces between the two boxes. It separates the two boxes with 15px.
 
 ### Basic types of boxes
@@ -103,12 +114,12 @@ The above code shows us how to apply spaces between the two boxes. It separates 
 
 These are the two main types of boxes. Let's look at each of them.
 
-### Block boxes
+#### Block boxes
 By default, block boxes take up the entirety of the container's width.
 
 The `<div>` HTML element is the most popular and used HTML element for a block box.
 
-### Inline Boxes
+#### Inline Boxes
 By default, inline boxes take up the space required by the wrapped content. The `<span>` HTML element is the most often used inline box element.
 
 ```html
@@ -120,15 +131,14 @@ This is the pictorial presentation of the two types:
 
 ![div-span](/engineering-education/understanding-css-box-model/div-span.png)
 
-### Understanding the Sizing of Boxes
+### Understanding the sizing of boxes
 Beginners usually make the mistake of assuming that padding, margins, and borders are included in an element's height and width. This is wrong.
 
-The height and width attributes let you customize the height and width of a web element's content area. Other components on the web page are not taken into account.
+The `height` and `width` attributes let you customize the height and width of a web element's content area. Other components on the web page are not taken into account.
 
-When we write the HTML block width element, `width: auto;` the value is equal to the width of the row by default.
-However, we may assign HTML components a particular width value, such as `width: 200px;`.
+When we write the HTML block width element, `width: auto;` the value is equal to the width of the row by default. However, we may assign HTML components a particular width value, such as `width: 200px;`.
 
-### Width and Height Calculations
+### Width and height calculations
 We'll need to do a quick calculation to see how much space our entire box takes up. Let's look at an example (Let's use the values that we had supplied in the margin code above):
 - height: 150px;
 - width: 150px;
@@ -143,4 +153,4 @@ We use the following formula to calculate the width:
 To calculate the height, we use the height's pixels plus the top and bottom of the padding, border, and margin.
 
 ### Conclusion
-In this article, we have looked at the box model and we have seen that it determines the appearance of a box's content, padding, border, and margin.
+In this article, we have looked at the box model and, we have seen that it determines the appearance of a box's content, padding, border, and margin.
