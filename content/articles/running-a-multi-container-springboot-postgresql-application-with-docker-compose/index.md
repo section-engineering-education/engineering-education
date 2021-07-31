@@ -1,12 +1,3 @@
----
-title: Running a multi-container (Spring Boot and PostgreSQL) Application with Docker Compose
-
-author: divine-odazie
-
-description: This article will show you how to run a multi-container (Spring Boot and PostgreSQL) application with Docker Compose. You learn how to define a docker-compose.yml file
-
----
-
 Container technology has streamlined how you build, test and deploy software from your local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
 
 Docker Compose is a tool used in defining and running multi-container Docker applications. You use Docker Compose to replace the run commands repeatedly run on each container in a multi-container application. Using Docker Compose, you can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
@@ -23,9 +14,7 @@ In this tutorial, you’ll learn how Docker Compose makes it easier to configure
 - A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice
 - Postman - download it [here](https://www.postman.com/downloads/)
 
-
-
-### Set a Spring Boot project
+### Setting up a Spring Boot project
 
 To start, clone this Spring Boot project: https://github.com/Kikiodazie/BlogAPI from Github. The Spring Boot project is a blog REST API you will use to Create and Retrieve blog posts in the PostgreSQL database you’re going to create.
 
@@ -208,7 +197,7 @@ You can now start and stop all services using `docker-compose up` and `docker-co
 
 ### Conclusion
 
-In this tutorial, you’ve learned how to define a Docker Compose `docker-compose.yml` file and use it to run multi-container (Spring Boot and PostgreSQL) application and tested the application. 
+In this tutorial, you’ve learned how to define a Docker Compose `docker-compose.yml` file and use it to run multi-container (Spring Boot and PostgreSQL) applications and tested the application. 
 
 You can use Docker Compose in all environments: production, testing, staging, development, and CI workflows to better your software development processes.
 
