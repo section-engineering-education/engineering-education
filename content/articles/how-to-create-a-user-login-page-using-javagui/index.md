@@ -59,22 +59,14 @@ In the example above, we declared **button** as the variable name. **JButton** a
 #### JPanel
 JPanel class covers the entire space or a window that we can attach any other components and visualise it to the user including other panels.
 
-
-
-
 #### JFrame
 A Frame is a top-level window with a title and a border. The size of the frame includes any area designated for the border. Frame encapsulates window. It contains a title bar, menu bar, borders, and resizing corners.
-
-
 
 #### JLabels
 A display area for a short text string or an image, or both. A label provides a keyboard alternative as a convenience for a nearby component.
 
 #### JTextfield
 JTextField is a lightweight component that allows the editing of a single line of text, note that password textfields does not show the original characters.
-
-#### Password Label
-
 
 #### Password Textfield
 
