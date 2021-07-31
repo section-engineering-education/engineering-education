@@ -20,11 +20,17 @@ https://api.github.com/search/repositories?q=language:python&sort=stars
 ```
 
 Let’s examine the parts of the call:
+
 1.`https://api.github.com/` - directs the request to the part of GitHub’s website that responds to API calls.
+
 2.`search/repositories` - tells the API to conduct a search through all repositories on GitHub.
+
 3.`?` - signals that we’re about to pass an argument. 
+
 4.`q=`- q stands for query, and the equal sign lets us begin working with APIs specifying a query `(q=)`. 
-5.`language:python` - we indicate that we want information only on repositories that have Python as the primary language. 
+
+5.`language:python` - we indicate that we want information only on repositories that have Python as the primary language.
+
 6.`&sort=stars` - sorts the projects by the number of stars they’ve been given.
 
 The following snippet shows the first few lines of the response:
@@ -89,10 +95,10 @@ import requests
 url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
 j = requests.get(url)
 print("Status code:", j.status_code)
-# Store API response in a variable.
+# In a variable, save the API response.
 response_dict = j.json()
 print("Total repositories:", response_dict['total_count'])
-# Explore information about the repositories.
+# Learn more about the repositories.
 repo_dicts = response_dict['items']
 print("Repositories found:", len(repo_dicts))
 # Examine the first repository.
@@ -140,7 +146,7 @@ print("Status code:", j.status_code)
 response_dict = j.json()
 print("Total repositories:", response_dict['total_count'])
 
-# Explore information about the repositories.
+# Find out more about the repositories.
 repo_dicts = response_dict['items']
 print("Repositories returned:", len(repo_dicts))
 # Examine the first repository.
