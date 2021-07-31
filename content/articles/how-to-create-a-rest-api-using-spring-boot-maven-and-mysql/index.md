@@ -135,10 +135,10 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDial
 spring.jpa.hibernate.ddl-auto = update
 ```
 
-- spring.datasource.url:  Springboot uses the URL along with the credentials(in this case are the MySQL port(3306, the database name(employee_db)) to establish a database connection to our MySQL database.
-- spring.datasource.username & spring.datasource.password properties are the MySQL database username and password. Please use the correct username and password of the MySQL server installed on your computer.
+- ``spring.datasource.url``:  Springboot uses the URL along with the credentials(in this case are the MySQL port(3306, the database name(employee_db)) to establish a database connection to our MySQL database.
+- ``spring.datasource.username`` & ``spring.datasource.password`` properties are the MySQL database username and password. Please use the correct username and password of the MySQL server installed on your computer.
 - I configure the port of our Spring Boot application to run on 8081. The default Spring boot port is 8080. I just showed you that you can configure the port to run on any port of your choice.
-- Springboot.jpa.properties.hibernate.dialect: The SQL dialect makes Hibernate generate better SQL for the chosen database.
+- ``Springboot.jpa.properties.hibernate.dialect``: The SQL dialect makes Hibernate generate better SQL for the chosen database.
 
 - We have set out DDL(Data definition language) to update. The update operation for example will attempt to add new columns, constraints, etc but will never remove a column or constraint that may have existed previously but no longer does as part of the object model from a prior run. Other values include ``create-drop`` drops objects on the schema leaving an empty database anytime you rerun your application. It is suitable when you are running a test.
 
@@ -304,10 +304,10 @@ public class Employee {
 }
 
  ```
-- **@Entity** annotation tells Spring that the Employee class which is simply a POJO(Plain Old Java Object) should be persisted on the database.
-- **@Id** annotation makes the id field the primary key of the employee table when it is persisted on the database.
-- We have used the **@GeneratedValue** annotation to specify the primary key generation strategy. The value “auto” instructs the database to automatically generate a value for the field. Therefore the Id will be generated automatically.
-- **@Enumerated** annotation converts our enum into a String.
+- ``@Entity`` annotation tells Spring that the Employee class which is simply a POJO(Plain Old Java Object) should be persisted on the database.
+- ``@Id`` annotation makes the id field the primary key of the employee table when it is persisted on the database.
+- We have used the ``@GeneratedValue`` annotation to specify the primary key generation strategy. The value ``auto`` instructs the database to automatically generate a value for the field. Therefore the Id will be generated automatically.
+- ``@Enumerated`` annotation converts our enum into a String.
 - Next, we created a no-argument constructor, setters, and getters for our field, and override the toString,  equals, and hashCode methods.
 
 
@@ -418,8 +418,8 @@ public class EmployeeRequest {
 }
 
 ```
-- **@NotBlank and @NotNull:** These two annotation checks and validate the fields where they are mapped to ensure the values are not blank and null respectively.
-- **@Email:** It validates that the annotated field is a valid email address.
+- ``@NotBlank`` and ``@NotNull``: These two annotation checks and validate the fields where they are mapped to ensure the values are not blank and null respectively.
+- ``@Email``: It validates that the annotated field is a valid email address.
 - Next, we created setters and getters for the class's instance variables.
 
 
@@ -465,7 +465,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 
 ```
-- **@Repository** makes the interface a bean. It is treated identically to the **@Component** annotation, therefore it is a specialization of the ``@Component`` annotation. Beans are simply Java classes that spring knows.
+- ``@Repository`` makes the interface a bean. It is treated identically to the ``@Component`` annotation, therefore it is a specialization of the ``@Component`` annotation. Beans are simply Java classes that spring knows.
 - By extending the JpaRepository interface we inherit the “save”, “findAll”, “findById” etc methods.
 
 ### The Employee Service
@@ -491,7 +491,7 @@ public interface EmployeeService {
 }
 
 ```
-- **@Component** annotation is a shorthand for the ``@Bean`` annotation. It registers the EmployeeService interface as a bean in the application context and makes it accessible during classpath scanning. 
+- ``@Component`` annotation is a shorthand for the ``@Bean`` annotation. It registers the EmployeeService interface as a bean in the application context and makes it accessible during classpath scanning. 
 - We created five methods that allow us to create, update, get and delete employees.
 
 
@@ -568,9 +568,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 ```
 
 - **@Service** is specifically a collection of library methods that manage one aspect of an application business logic. It is a specialized form of ``@Component``. With the ``@Service`` annotation, the class is registered in the application context and accessible during classpath scanning.
-- **The @autowired** annotation is used to perform field dependency injection. It automatically injects the ``EmployeeRespository interface`` which is the dependent bean into the EmployeeServiceImpl class so we can use it. This is possible because *EmployeeRepository* is annotated with the ***@Repository*** annotation making it a bean.
+- The ``@autowired`` annotation is used to perform field dependency injection. It automatically injects the ``EmployeeRespository interface`` which is the dependent bean into the EmployeeServiceImpl class so we can use it. This is possible because ``EmployeeRepository`` is annotated with the ``@Repository`` annotation making it a bean.
 - The EmployeeServiceImpl class implemented the EmployeeService interface by overriding the method and implementing them.
-- The class throws an exception(*ResourceNotFoundException*- This is the custom exception class we created that extends ``RunTimeException``) where the Id supplied to get a single employee does not exist on the database.
+- The class throws an exception(``ResourceNotFoundException``- This is the custom exception class we created that extends ``RunTimeException``) where the Id supplied to get a single employee does not exist on the database.
 
 ### The Controller
 
@@ -627,15 +627,15 @@ public class EmployeeController {
 }
 
 ```
-- **@RestController:** This annotation marks the EmployeeController as an HTTP request handler and allows Spring to recognize it as a RESTful service.
-- **@RequestMapping("/employee")** annotation sets the base path to the resource endpoints in the controller as /employee.
+- ``@RestController``: This annotation marks the EmployeeController as an HTTP request handler and allows Spring to recognize it as a RESTful service.
+- ``@RequestMapping("/employee")`` annotation sets the base path to the resource endpoints in the controller as /employee.
 - Next, we autowired the EmployeeService into our controller to use the methods declared implemented in it. This is dependency injection.
-- **@GetMapping** is a shortcut for **@RequestMapping(method = RequestMethod.GET)**, and is used to map HTTP GET requests to the mapped controller methods. We used it to return all the employees and a single employee.
-- **@PathVariable** annotation shows that a method parameter should be bound to a URI template variable.
-- **@PostMapping** is a shorthand for @RequestMapping where the method is equal to POST. It is used to map HTTP POST request to the mapped controller methods.
-- **@RequestBody:** This annotation takes care of binding the web request body to the method parameter with the help of the registered HttpMessageConverters. So when you make a POST request to the “/employee/add” URL with a Post JSON body, the HttpMessageConverters converts the JSON request body into a Post object and passes it to the addEmployee method.
-- **@PutMapping** is a shorthand for @RequestMapping where the method is equal to PUT. It is used to map HTTP PUT request to the mapped controller methods.
-- **@DeleteMapping:** Using this annotation makes the Mapped controller method to be ready for a delete operation. is a shortcut for **@RequestMapping(method = RequestMethod.DELETE)**.
+- ``@GetMapping`` is a shortcut for ``@RequestMapping(method = RequestMethod.GET)``, and is used to map HTTP GET requests to the mapped controller methods. We used it to return all the employees and a single employee.
+- ``@PathVariable`` annotation shows that a method parameter should be bound to a URI template variable.
+- ``@PostMapping`` is a shorthand for @RequestMapping where the method is equal to POST. It is used to map HTTP POST request to the mapped controller methods.
+- ``@RequestBody``: This annotation takes care of binding the web request body to the method parameter with the help of the registered HttpMessageConverters. So when you make a POST request to the “/employee/add” URL with a Post JSON body, the HttpMessageConverters converts the JSON request body into a Post object and passes it to the addEmployee method.
+- ``@PutMapping`` is a shorthand for @RequestMapping where the method is equal to PUT. It is used to map HTTP PUT request to the mapped controller methods.
+- ``@DeleteMapping``: Using this annotation makes the Mapped controller method to be ready for a delete operation. is a shortcut for ``@RequestMapping(method = RequestMethod.DELETE)``.
 
 ### Testing The Application with POSTMAN**
 Now let's test our APIs with POSTMAN.
@@ -673,7 +673,7 @@ Make a PUT request to localhost:8081/employee/update/3 specifying the ID of the 
 
 
 #### Deleting An Employee**
-Make a DELETE request to localhost:8081/employee/delete/3 adding to the end of the URL the ID of the todo to delete, in our case the ID is 3. We got a 200 OK showing a successful delete operation.
+Make a DELETE request to ``localhost:8081/employee/delete/3`` adding to the end of the URL the ID of the todo to delete, in our case the ID is 3. We got a 200 OK showing a successful delete operation.
 
   ![deleteEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/delete-Employee.png)
 
@@ -718,7 +718,7 @@ public class EmployeeController {
 ```
 
 - We added the @ApiResponse annotation from swagger at the class level. As simple as this our APIs are fully documented.
-- Go to http://localhost:8081/swagger-ui/ to access the documentation and test that our APIs are still working properly.
+- Go to ``http://localhost:8081/swagger-ui/`` to access the documentation and test that our APIs are still working properly.
 - Use the Swagger API documentation at http://localhost:8081/swagger-ui/  to add an employee, get, update and delete an employee.
 
   ![Swagger-ui-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/swagger-ui.png)
