@@ -11,8 +11,12 @@ The guide will focus on getting a simple server project up and running. We will 
 To continue with this article, it is important to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed.
-- [TypeScript](https://www.typescriptlang.org/download) set up in visual studio code or your favourite text editor.
-- Prior knowledge working with TypeScript.
+- [Typescript](https://www.typescriptlang.org/download) set up in visual studio code or your favorite text editor.
+- Prior knowledge working with Typescript.
+
+### Setting up Typescript
+
+To start setting up Typescript, first ensure Node.js is already installed. Then run `npm install -g typescript` inside your command line. Finally, you can check if Typescript is installed by running the `tsc --version` command.
 
 ### Installing Nest.js CLI
 
@@ -32,11 +36,11 @@ nest new nest-graphql-prisma-api
 
 The above command will help us in scaffolding the project. The command will generate a typescript-starter project and prompt you for the project's details such as name, description, version number, which defaults to 0.0.0, and author (probably your name). Upon completing this procedure, you will have a fully configured Nest.js application, including all dependencies installed in the node modules directory.
 
-While executing the above command, you may still select the package manager you want to use, that's either yarn or npm. For example, I want to use npm. So I will add npm as a parameter, as shown below.
+While executing the above command, you may still select the package manager you want to use, that's either yarn or npm.
 
-```bash
-nest new nest-graphql-prisma-api --use-npm
-```
+![nest-app-scaffolding](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/nest-app-scaffolding.png)
+
+Once the installation process is completed, a `nest-graphql-prisma-api` folder with all Nest.js dependencies will be created inside the path you executed the above command.
 
 ### Installing Prisma CLI
 
@@ -51,6 +55,8 @@ Then you can run the following command, and Prisma will be installed globally as
 ```bash
 npm i -g prisma
 ```
+
+This will download the Prisma CLI and Prisam engine for the operating system you are in.
 
 #### Defining Our Prisma Data Model
 
@@ -69,7 +75,7 @@ The above command will create;
 By default, `.env` file is configured for PostgreSQL database. So to use SQLite, edit it as follows;
 
 ```js
-DATABASE_URL = 'file:./dev.db';
+DATABASE_URL="file:./dev.db"
 ```
 
 Also, edit the _prisma/schema.prisma_ file as follows;
@@ -110,6 +116,8 @@ prisma migrate dev --name init
 ```
 
 From the above command, we are running our first migration in development mode, giving it the name `init`. If you want to use a name with more than one word, make sure you separate the words with an underscore or hyphen. The command will also check if we have the Prisma client installed. If we don't, it will install it automatically.
+
+![sqlite-db-migrations](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/sqlite-db-migrations.png)
 
 ### Setting, Installing GraphQL packages and adding GraphQL
 
@@ -182,7 +190,7 @@ From the above code block, types will be generated from all _.graphql_ files and
 tsc src/generate-typings.ts
 ```
 
-This command will create a _generate-typings.js_ file. Execute the file using node from the terminal:
+This command will create a transpiled Typescript _generate-typings.js_ file. Execute the file using node from the terminal:
 
 ```bash
 node src/generate-typings.js
@@ -342,63 +350,9 @@ From above, we are simply adding the _PostResolvers_ and _PostService_ as provid
 Edit the _src/app.module.ts_ file as follows:
 
 ```ts
-import { PostService } from './posts.service';
-import { Post, NewPost, UpdatePost } from 'src/graphql';
-
-@Resolver('Post')
-export class PostResolvers {
-  constructor(private readonly postService: PostService) {}
-import { PostService } from './posts.service';
-import { Post, NewPost, UpdatePost } from 'src/graphql';
-
-@Resolver('Post')
-export class PostResolvers {
-  constructor(private readonly postService: PostService) {}
-
-  @Query('posts')
-  async posts() {
-    return this.postService.posts();
-  }
-
-  @Query('post')
-  async post(@Args('id') args: string) {
-    return this.postService.post(args);
-  }
-
-  @Mutation('createPost')
-  async create(@Args('input') args: NewPost) {
-    return this.postService.createPost(args);
-  }
-
-  @Mutation('updatePost')
-  async update(@Args('input') args: UpdatePost) {
-    return this.postService.updatePost(args);
-  }
-
-  @Mutation('deletePost')
-  async delete(@Args('id') args: string) {
-    return this.postService.deletePost(args);
-  }
-}
-  async post(@Args('id') args: string) {
-    return this.postService.post(args);
-  }
-
-  @Mutation('createPost')
-  async create(@Args('input') args: NewPost) {
-    return this.postService.createPost(args);
-  }
-
-  @Mutation('updatePost')
-  async update(@Args('input') args: UpdatePost) {
-    return this.postService.updatePost(args);
-  }
-
-  @Mutation('deletePost')
-  async delete(@Args('id') args: string) {
-    return this.postService.deletePost(args);
-  }
-}dule';
+import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
+import { PostModule } from './posts/posts.module';
 
 @Module({
   imports: [
@@ -407,7 +361,8 @@ export class PostResolvers {
       typePaths: ['./**/*.graphql'],
     }),
   ],
-})PrismaService
+})
+export class AppModule {}
 ```
 
 From above, we are exposing the _GraphQLModule_ and _PostModule_ in the module's imports array. In addition, we are also specifying the _typePaths_ for the _GraphQLModule_.
@@ -419,6 +374,8 @@ At this point, we are ready to run our application. From the terminal of your te
 ```bash
 npm run start:dev
 ```
+
+![start-nestjs-dev-application](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/start-nestjs-dev-application.png)
 
 The following command will start your project in development mode. In case you encounter errors, make sure you revisit the steps before proceeding further.
 
@@ -447,7 +404,7 @@ mutation generatePost{
 }
 ```
 
-Hit the play button at the center and observe the results on the right side. Your response should be similar to:
+Hit the play button at the centre and observe the results on the right side.
 
 ![creating-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/creating-a-post.png)
 
@@ -467,7 +424,7 @@ query GetPosts{
 }
 ```
 
-Hit the play button at the center and observe the results on the right side. Your response should be similar to:
+Hit the play button at the centre and observe the results on the right side.
 
 ![fetching-posts](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/fetching-posts.png)
 
@@ -477,7 +434,7 @@ Open a separate tab on the playground and enter the following on the left pane:
 
 ```js
 query GetPost{
-    post(id:<your_id>){
+    post(id:1){
       id
       title
       content
@@ -486,7 +443,7 @@ query GetPost{
 }
 ```
 
-Enter the id of the post you want to get in the id param and then hit the play button at the center. Observe the results on the right side. Your response should be similar to:
+Enter the id of the post you want to get in the id param and then hit the play button at the centre. Observe the results on the right side.
 
 ![fetching-single-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/fetching-single-post.png)
 
@@ -497,7 +454,7 @@ Open a separate tab on the playground and enter the following on the left pane:
 ```js
 mutation updatePost{
     updatePost(input:{
-      id:<your_id>,
+      id:1,
       published:true
     }){
       id
@@ -508,9 +465,7 @@ mutation updatePost{
 }
 ```
 
-Feel free to enter the id of the post you want to update. For example, in the above mutation, we are just updating the published field. You can also update the title and content field in the same way. Hit the play button at the center and observe the results on the right pane.
-
-Your response should be similar to:
+Feel free to enter the id of the post you want to update. For example, in the above mutation, we are just updating the published field. You can also edit the title and content field in the same way. Hit the play button at the centre and observe the results on the right pane.
 
 ![updating-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/updating-a-post.png)
 
@@ -520,7 +475,7 @@ Open a separate tab on the playground and enter the following on the left pane:
 
 ```js
 mutation deletePost{
-    deletePost(id:<your_id>){
+    deletePost(id:1){
       id
       title
       content
@@ -529,7 +484,7 @@ mutation deletePost{
 }
 ```
 
-Feel free to enter the id of the post you want to delete on the id param. Hit the play button at the center and observe the results on the right side. Your response should be similar to:
+Feel free to enter the id of the post you want to delete on the id param. Then, hit the play button at the centre and observe the results on the right side.
 
 ![deleting-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/deleting-a-post.png)
 
@@ -545,6 +500,6 @@ To gain more insight knowledge concerning Prisma, Nest JS, and GraphQL, check ou
 
 - [GraphQL docs](https://graphql.org/)
 
-You can also find the finalized code here.
+You can also find the finalized code on [GitHub](https://github.com/JuliusGikonyoNyambura/nest-graphql-prisma-api).
 
 Happy coding!!!
