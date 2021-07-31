@@ -9,7 +9,7 @@ If you are new to 3D objects and environments, just check out this simple articl
 ### Table of Contents
 
 - [Pre-requisites](#pre-requisites)
-- [Initialise new react project](#initialise-new-react-project)
+- [Initialise a new react project](#initialise-a-new-react-project)
 - [Folder Structure](#folder-structure)
 - [Install dependencies](#install-dependencies)
   - [package.json (File)](#packagejson-file)
@@ -30,7 +30,7 @@ To follow up with this guide well, you need to have the following:
 - React basics.
 - Stable internet connection.
 
-### Initialise new react project
+### Initialise a new react project
 
 Create a project folder named 'React-3d-environment' and navigate into it. This we shall achieve using the following command on the terminal:
 
