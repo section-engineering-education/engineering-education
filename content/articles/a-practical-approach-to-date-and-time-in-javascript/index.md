@@ -162,7 +162,9 @@ document.writeln(workdays);
 
 ### 4. Building a simple countdown timer
 In this task we will use the `setInterval()` method to repeat our time update function at every given interval, in this case, it shall be one second.
-This method will continue calling our function until we close the window or the `clearInterval()` method is called, in this case, we shall call it when the Countdown Timer gets to zero. We will also use the `floor()` method to return rounded-up numbers for the days, hours, minutes, and seconds after we get the difference in time.
+This method will continue calling our function until we close the window or the `clearInterval()` method is called, in this case, we shall call it when the countdown timer gets to zero. 
+
+We will also use the `floor()` method to return rounded-up numbers for the days, hours, minutes, and seconds after we get the difference in time.
 ````HTML
 <!DOCTYPE  html>
 <html  lang="en">
