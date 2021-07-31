@@ -106,7 +106,7 @@ model Post {
 }
 ```
 
-This will configure the SQLite database and construct the `Post` model. The generator client is always configured for you no need to edit that.
+This will configure the SQLite database and construct the `Post` model. The generator client has always configured for you no need to edit that.
 
 ### Create the first migration
 The benefit of setting this SQL scheme programmatically is to skip a couple of keystrokes by going over to an RDMS, create a database, tables and adding all the necessary fields.
