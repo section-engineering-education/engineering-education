@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /backup-services-with-google-drive-api-in-android/
 title: Backup Services with Google Drive API in Android
-description: This tutorial takes the reader through the process of saving and retrieving data from Google Drive using the Google Drive API in Android. Google drive is a cloud storage service that allows users to store, share, and access files from their Google account.
+description: This tutorial takes the reader through the process of saving and retrieving data from Google Drive using the Google Drive API in Android. Google Drive is a cloud-based service that allows users to save, share, and view files using their Google account. 
 author: maurine-muthoki
 date: 2021-07-31T00:00:00-14:30
 topics: []
@@ -96,7 +96,7 @@ Now that we have a `Drive` instance, we can access the user's Google Drive conte
 2. **spaces** — A list of storage locations where data is stored. Google Drive stores all materials in one of these three distinct categories: drive, appDataFolder, and pictures. We'll use drive in this context.
 3. **fields** — The data requested for each file, such as the id and name.
 
-The following code sample demonstrates how we can access all files on the `drive` space.
+The following code example shows how to access all files on the `drive` space.
 
 ```kotlin
 private fun accessDriveFiles() {
