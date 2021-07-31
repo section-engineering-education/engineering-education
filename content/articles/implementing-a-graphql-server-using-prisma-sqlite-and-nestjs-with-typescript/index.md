@@ -1,3 +1,4 @@
+---
 title: Implementing a GraphQL server using Prisma, SQLite, and Nest.js with Typescript
 description: The guide will focus on getting a simple server project up and running. We will use technologies such as Prisma, Nest.js, GraphQL, and SQLite as the project database. We will create a simple posts GraphQL API with all CRUD operations supported.
 author: julius-gikonyo
@@ -9,7 +10,6 @@ images:
   - url: /engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/hero.png
     alt: Implementing a GraphQL server using Prisma, SQLite, and Nest.js with Typescript Hero Image
 ---
-
 Nest.js is built on Node.js and Express, which is arguably the most popular way to build servers with JavaScript. Nest.js is a typescript-based JavaScript framework for developing and scaling backend microservices.
 <!--more-->
 Being statically typed with typescript, it allows you to do various JavaScript tasks as an escape hatch. This guarantees that your code is more solid. Furthermore, it makes the code easier to navigate through your code because everything is strongly typed and more scalable for large applications. This provides an out-of-the-box application architecture that enables developers and teams to construct highly testable, scalable, loosely connected, and easily maintainable applications.
@@ -128,7 +128,6 @@ From the above command, we are running our first migration in development mode, 
 ![sqlite-db-migrations](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/sqlite-db-migrations.png)
 
 ### Setting, Installing GraphQL packages and adding GraphQL
-
 - `@nestjs/graphql`: For providing interaction between GraphQL and Nest.js.
 - `graphql-tools`: For providing an interactive GraphQL playground.
 - `graphql`: For support with native GraphQL setup.
@@ -349,7 +348,6 @@ export class PostModule {}
 From above, we are simply adding the _PostResolvers_ and _PostService_ as providers.
 
 ### Adding post Mutations
-
 Edit the _src/app.module.ts_ file as follows:
 
 ```ts
@@ -496,7 +494,7 @@ To gain more insight knowledge concerning Prisma, Nest JS, and GraphQL, check ou
 
 You can also find the finalized code on [GitHub](https://github.com/JuliusGikonyoNyambura/nest-graphql-prisma-api).
 
-Happy coding!!!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
