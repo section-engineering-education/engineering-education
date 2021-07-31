@@ -21,7 +21,6 @@ The guide will focus on getting a simple server project up and running. We will 
 
 ### Prerequisites
 To continue with this article, it is important to have the following:
-
 - [Node.js](https://nodejs.org/en/) installed.
 - [Typescript](https://www.typescriptlang.org/download) set up in visual studio code or your favorite text editor.
 - Prior knowledge working with Typescript.
@@ -126,7 +125,7 @@ From the above command, we are running our first migration in development mode, 
 
 ![sqlite-db-migrations](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/sqlite-db-migrations.png)
 
-### Setting, Installing GraphQL packages and adding GraphQL
+### Setting, Installing GraphQL packages, and adding GraphQL
 - `@nestjs/graphql`: For providing interaction between GraphQL and Nest.js.
 - `graphql-tools`: For providing an interactive GraphQL playground.
 - `graphql`: For support with native GraphQL setup.
@@ -329,8 +328,8 @@ export class PostResolvers {
 
 The above file exposes all our queries and mutations.
 
-### Connecting Prisma service, post service and post resolvers with providers
-For our resolvers and services to be accessed, we need to encapsulate them in a module as providers. We therefore create a _posts.module.ts_ file inside the _src/posts_ folder and add the following:
+### Connecting Prisma service, post service, and post resolvers with providers
+For our resolvers and services to be accessed, we need to encapsulate them in a module as providers. We thus create a _posts.module.ts_ file inside the _src/posts_ folder and add the following:
 
 ```ts
 import { Module } from '@nestjs/common';
@@ -401,7 +400,7 @@ mutation generatePost{
 }
 ```
 
-Hit the play button at the centre and observe the results on the right side.
+Hit the play button at the center and observe the results on the right side.
 
 ![creating-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/creating-a-post.png)
 
@@ -420,7 +419,7 @@ query GetPosts{
 }
 ```
 
-Hit the play button at the centre and observe the results on the right side.
+Hit the play button at the center and observe the results on the right side.
 
 ![fetching-posts](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/fetching-posts.png)
 
@@ -438,7 +437,7 @@ query GetPost{
 }
 ```
 
-Enter the id of the post you want to get in the id param and then hit the play button at the centre. Observe the results on the right side.
+Enter the id of the post you want to get in the id parameter and then hit the play button at the center. Observe the results on the right side.
 
 ![fetching-single-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/fetching-single-post.png)
 
@@ -459,7 +458,7 @@ mutation updatePost{
 }
 ```
 
-Feel free to enter the id of the post you want to update. For example, in the above mutation, we are just updating the published field. You can also edit the title and content field in the same way. Hit the play button at the centre and observe the results on the right pane.
+Feel free to enter the id of the post you want to update. For example, in the above mutation, we are just updating the published field. You can also edit the title and content field in the same way. Hit the play button at the center and observe the results on the right pane.
 
 ![updating-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/updating-a-post.png)
 
@@ -477,7 +476,7 @@ mutation deletePost{
 }
 ```
 
-Feel free to enter the id of the post you want to delete on the id param. Then, hit the play button at the centre and observe the results on the right side.
+Feel free to enter the id of the post you want to delete on the id parameter. Then, hit the play button at the center and observe the results on the right side.
 
 ![deleting-a-post](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/deleting-a-post.png)
 
