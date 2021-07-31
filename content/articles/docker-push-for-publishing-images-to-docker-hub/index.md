@@ -6,7 +6,7 @@ url: /docker-push-for-publishing-images-to-docker-hub/
 title: Docker Push for Publishing Images to Docker Hub
 description: This article guides the reader on how to create a Dockerfile, create an account in Docker Hub,and how to push Docker images to a registry.
 author: oruko-pius
-date: 2021-07-30T00:00:00-17:00
+date: 2021-07-31T00:00:00-06:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
