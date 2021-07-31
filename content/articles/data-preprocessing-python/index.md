@@ -4,8 +4,8 @@ status: publish
 published: true
 url: /data-preprocessing-python/
 title: Getting started with data preprocessing in Python
-description: 
-date: 2021-07-10T00:00:00-18:00
+description: In this article, we cover all the steps involved in the data preprocessing phase. We take a look at an untidy dataset and walk through code to tidy the dataset.
+date: 2021-07-31T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,8 +15,7 @@ images:
 ---
 
 
-Data preprocessing is the first machine learning step in which we transform raw data into a suitable format that makes it easy to implement accurate machine learning models.
-In this article, we will learn all the steps that are involved in the data preprocessing phase. 
+Data preprocessing is the first machine learning step in which we transform raw data obtained from various sources into a usable format to implement accurate machine learning models. In this article, we cover all the steps involved in the data preprocessing phase. 
 
 ### Prerequisites
 
@@ -30,16 +29,16 @@ To follow this tutorial comfortably, we need to meet the following conditions.
 In this article, we shall carry out our data preprocessing experiments on Google Colab. Therefore, we need to ensure our Google Drive is accessible from Google Colab. To ensure this, first, let's download our data to our computer from [here](https://github.com/Madrinmarison/data).
 
 Since we've successfully downloaded our data, let's now upload it to Google Drive through [google.drive.com](https://drive.google.com/drive/u/0/my-drive).
-Now our data is uploaded to Google Drive. It is saved in the root directory.
+Our data is uploaded to Google Drive. It is saved in the root directory.
 
-To use this data, we need to give Google Colab access to Google Drive. Let's type and run the code below in Google Colab.
+To use this data, we need to give Google Colab access to Google Drive. So let's type and run the code below in Google Colab.
 
 ```python
 from google.colab import drive
 drive.mount("/content/drive/")
 ```
 
-Upon executing our code, it will lead us to a Google Authentication stage similar to the figure below.
+Upon executing our code, it leads us to a Google Authentication stage similar to the figure below.
 
 ![Google_Authentication](/engineering-education/data-preprocessing-python/URL.png)
 
@@ -47,9 +46,8 @@ We click on the URL link on the Google Colab interface and proceed to allow perm
 
 ![Verification_code](/engineering-education/data-preprocessing-python/Cpo.png)
 
-We then copy and paste this code in the authorization code box on the Colab interface and click **Ctrl + Enter**. This shows that our drive is mounted.
+We copy and paste the obtained authorization code in the box available on the Colab interface and click **Ctrl + Enter**. After this step, one may access files in Drive. Next, let's proceed with importing the required libraries.
 
-Now that our drive it's successfully mounted in Google Colab, we proceed and import the libraries we shall require to work with along our journey.
 To import these libraries, let's type and run the code below.
 
 ### Step 1: Importing the Libraries
@@ -59,7 +57,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 ```
-Next, we proceed and import the dataset.
 
 ### Step 2: Import the dataset
 
@@ -74,7 +71,7 @@ x = Dataset.iloc[:, :-1].values
 y = Dataset.iloc[:, -1].values
 ```
 
-Above, we specified two variables, x for the features and y for the dependent variable. The features set, as declared in the code `Dataset.iloc[:, :-1]` will consist of all rows and columns of our dataset except the last column. Similarly, the dependent variable y will consist of all rows but only the last column as declared in the code `Dataset.iloc[:, -1].values`
+Above, we specified two variables, `x` for the features and `y` for the dependent variable. The features set, as declared in the code `Dataset.iloc[:, :-1]` consists of all rows and columns of our dataset except the last column. Similarly, the dependent variable `y` consists of all rows but only the last column as declared in the code `Dataset.iloc[:, -1].values`
 
 Let's have a look at our data by executing the code.
 
@@ -101,43 +98,45 @@ print(y) # viewing an array of the dependent variable.
 ['No ' 'Yes' 'No ' 'No ' 'Yes' 'Yes' 'No ' 'Yes' 'No ' 'Yes']
 ```
 
-Our data is imported successfully in the form of an array of features x and a dependent variable y.
+Our data is imported successfully in the form of an array of features x and a dependent variable `y`.
 
 ### Step 3: Taking care of the missing data
-Missing data is a common problem that faces the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data can be missing in a dataset. For instance, the data collected through a survey may have missing data due to participants' failure to respond to some questions, not knowing the correct response, or being unwilling to answer. It can also be missing due to the error made during the data entry process. 
+Missing data is a common problem that faces the data collected through a survey. This problem occurs when a dataset has no value for a feature in an observation. There are many reasons why data might be missing in a dataset. For instance, data collected through a survey may have missing data due to participants' failure to respond to some questions, not knowing the correct response, or being unwilling to answer. It may also be missing due to the error made during the data entry process. 
 
-Most machine learning models require data with a value for all features in each observation. In such models, missing data can lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As a result, we may end up drawing a wrong conclusion about the data. Therefore, we can conclude that missing data is harmful to machine learning models and thus requires appropriate handling.
+Most machine learning models require data with a value for all features in each observation. In such models, missing data may lead to bias in the estimation of the parameters and also compromise the accuracy of the machine learning models. As a result, we may end up drawing wrong conclusions about data. Therefore, missing data is harmful to machine learning models and requires appropriate handling.
 
 There are several techniques we use to handle the missing data. They include:
 
-1. **Deleting the observation with the missing value(s):**
- This technique works well on big datasets with few missing values. For instance, deleting a row from a dataset with hundreds of observations cannot affect the information quality of the dataset. However, this technique is not suitable for a dataset reporting many missing values. Deleting many rows from a dataset can lead to the loss of information.
-  To ensure no risk of losing crucial information, we need to make use of more appropriate techniques. The next technique involves the imputation of the missing data. Imputation means replacing the missing data with an estimated value.
+#### Deleting the observation with the missing value(s)
+ This technique works well on big datasets with few missing values. For instance, deleting a row from a dataset with hundreds of observations cannot affect the information quality of the dataset. However, this technique is not suitable for a dataset reporting many missing values. Deleting many rows from a dataset leads to the loss of information.
+ 
+  To ensure no risk of losing crucial information, we need to make use of more appropriate techniques. The following technique involves the imputation of the missing data. Imputation means replacing the missing data with an estimated value.
 
-2. **Mean Imputation:**
+#### Mean Imputation
   Under this technique, we replace the missing value with the average of the variable in which it occurs. The advantage of this technique is that it preserves the mean and the sample size. However, this technique has some serious disadvantages.
+  
   Mean imputation underestimates the standard error, and it does not preserve the correlation among variables. The relationship among variables is an essential aspect of analysis as the study's general objective is to understand it better. Mean imputation is thus not an appropriate solution for missing data unless the data is Missing Completely at Random( missing data is completely unrelated to both the missing data and observed values in the dataset).
 
-3. **Hot Deck Imputation:**
- In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. This technique ensures that the imputing value is only selected from the possible interval where the true value could probably fall, and is randomly selected rather than being determined, which is an essential aspect for a correct standard error.
+#### Hot Deck Imputation
+ In this technique, we replace the missing value of the observation with a randomly selected value from all the observations in the sample that has similar values on other variables. Thus, this technique ensures that the imputing value is only selected from the possible interval where the actual value could probably fall, and is randomly selected rather than being determined, which is an essential aspect for a correct standard error.
 
-4. **Cold Deck Imputation**
+#### Cold Deck Imputation
   We replace the missing data using a value chosen from other variables with similar observation values in this technique. The difference between this technique and the Hot Deck imputation is that the selecting process of the imputing value is not randomized.
 
-5. **Regression Imputation**
+#### Regression Imputation
   Regression imputation involves fitting a regression model on a feature with missing data and then using this regression model's predictions to replace the missing values in this feature. This technique preserves the relationships between features, and this grants it a significant advantage over simple imputation techniques such as mean and mode imputation.
 
-    Regression imputation is of two categories:
+Regression imputation is of two categories:
 
-    1. Deterministic regression imputation.
-    Deterministic regression imputation imputes the missing data with the exact value predicted from the regression model. This technique doesn't consider the random variation around the regression line. Since the imputed values are very precise, the correlation between the features and the dependent variables is overestimated.
+##### Deterministic regression imputation.
+Deterministic regression imputation imputes the missing data with the exact value predicted from the regression model. This technique doesn't consider the random variation around the regression line. Since the imputed values are exact, the correlation between the features and the dependent variables is overestimated.
 
-    2. Stochastic regression imputation
-    In stochastic regression imputation, we add a random variation(error term) to the predicted value and, therefore, can reproduce the correlation of X and Y more appropriately.
+##### Stochastic regression imputation
+In stochastic regression imputation, we add a random variation (error term) to the predicted value, therefore, reproducing the correlation of `X` and `Y` more appropriately.
 
-Now that we know the techniques we can use to take care of the missing values, let's handle this problem in our dataset. We notice that our features set (x) has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we can implement our machine learning model on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
+Now that we know the techniques to take care of the missing values, let's handle this problem in our dataset. We notice that our features set (`x`) has `nan` values in the `Age` and `Salary` columns. We need to deal with this problem before we implement a machine learning model on our data. Since our dataset is small, we cannot eliminate a row reporting the missing value(s). Therefore, in our case, we shall make use of the mean imputation technique.
 
-The code below will solve this problem present in our dataset.
+The code below solves this problem present in our dataset.
 
 ```Python
 # Importing the class called SimpleImputer from impute model in sklearn
@@ -151,9 +150,10 @@ imputa.fit(x[:, 1:3])
 # Repalcing the missing value using transform method
 x[:, 1:3] = imputa.transform(x[:, 1:3])
 
-
 ```
+
 Upon executing the code, we obtain a matrix of features with the missing values replaced.
+
 ```python
 print(x)
 ```
@@ -170,17 +170,17 @@ print(x)
  ['France' 37.0 67000.0]]
 ```
 
-The missing values on the `Age` and `Salary` columns are replaced with their respective column means, i.e., 38.77777777777778 and 63777.77777777778, respectively.
+The missing values on the `Age` and `Salary` columns are replaced with their respective column means, i.e., `38.77777777777778` and `63777.77777777778`, respectively.
 
 ### Step 4: Encoding categorical data
 
-In encoding, we transform text data into numeric data. Encoding Categorical data, therefore, involves changing data that fall into categories into numeric data. 
+During encoding, we transform text data into numeric data. Encoding Categorical data involves changing data that fall into categories to numeric data. 
 
-The `Country` and the `Purchased` columns of our dataset contain data that fall into categories. Since machine learning models are based on a mathematical equation, which can only take numerical inputs, it will be challenging to compute the correlation between the feature and the dependent variables. To ensure this does not happen, we need to convert the string entries in the dataset into numbers.
+The `Country` and the `Purchased` columns of our dataset contain data that fall into categories. Since machine learning models are based on a mathematical equation, which takes only numerical inputs, it is challenging to compute the correlation between the feature and the dependent variables. To ensure this does not happen, we need to convert the string entries in the dataset into numbers.
 
-  For our dataset, we shall encode France into 0, Spain into 1, and Germany into 2. However, our future machine learning model can interpret that the numerical order between 0 for France, 1 for Spain, and 2 for Germany do matter, which is not the case. To ensure this misinterpretation does not occur, we make use of one-hot encoding.
+  For our dataset, we shall encode France into 0, Spain into 1, and Germany into 2. However, our future machine learning model interprets the numerical order between 0 for France, 1 for Spain, and 2 for Germany do matter, which is not the case. To ensure this misinterpretation does not occur, we make use of one-hot encoding.
 
-  One-hot encoding converts our categorical `Country` column into three columns and creates a unique binary vector for each country such that there is no numerical order between the country categories.
+  One-hot encoding converts our categorical `Country` column into three columns. It creates a unique binary vector for each country such that there is no numerical order between the country categories.
 
 Let's see how One-hot encoding enables us to achieves this by executing the code below.
 
@@ -231,9 +231,8 @@ Our dependent variable is encoded successfully into 0's and 1's.
 ### Step 5: Splitting the dataset into the training and test set
 
 In machine learning, we split the dataset into a training set and test set. The training set is the fraction of a dataset that we use to implement the model. On the other hand,  the test set is the fraction of the dataset that we use to evaluate the performance our the model. The test set is assumed to be unknown during the process of the model implementation.
-We need to split our dataset into four subsets, i.e., x_train, x_test, y_train, and y_test. 
 
-Here is how we acheive this:
+We need to split our dataset into four subsets, i.e., x_train, x_test, y_train, and y_test. Let's look at the code to achieve this:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -271,11 +270,11 @@ print(y_test)
 ```bash
 [0 1]
 ```
-Our dataset is successfully split. Our features set was divided into eight observations for the `x_train` and 2 for the `x_test`, which corresponds( since we set our seed, random = 1) to the same splitting of the dependent variable y. We need to note that the selection is made randomly, and it's possible at any single execution to obtain different subsets other than the above output.
+Our dataset is successfully split. Our features set was divided into eight observations for the `x_train` and 2 for the `x_test`, which corresponds (since we set our seed, random = 1) to the same splitting of the dependent variable y. We need to note that the selection is made randomly, and it's possible at any single execution to obtain different subsets other than the above output.
 
 ### Step 6: Feature scaling
 
-In most cases, we shall work with datasets whose features are not on the same scale. Some features often have huge values, and others have small values. Suppose we implement our machine learning model on such datasets. In that case, features with huge values will dominate ones with small values, and the machine learning model will treat ones with small values as if they don't exist(their influence on the data will not be accounted for). To ensure this is not the case, we need to scale our features on the same range, i.e., within the interval of -3 and 3
+In most cases, we shall work with datasets whose features are not on the same scale. Some features often have tremendous values, and others have small values. Suppose we implement our machine learning model on such datasets. In that case, features with tremendous values dominate those with small values, and the machine learning model treats those with small values as if they don't exist (their influence on the data is not be accounted for). To ensure this is not the case, we need to scale our features on the same range, i.e., within the interval of -3 and 3
 
 Therefore, we shall only scale the `Age`  and `Salary` columns of our `x_train` and `x_test` into this interval. The code below enables us to achieve this.
 
@@ -287,6 +286,7 @@ x_train[:, 3:] = sc.fit_transform(x_train[:, 3:])
 x_test[:, 3:] = sc.fit_transform(x_test[:, 3:])
 ```
 Printing the code we obtain:
+
 ```Python
 print(x_train)
 ```
@@ -309,11 +309,11 @@ print(x_test)
 [[0.0 1.0 0.0 -1.0 -1.0]
  [1.0 0.0 0.0 1.0 1.0]]
 ```
-We notice that in the  `x_train` and `x_test` we only scaled the `Age` and `Salary` columns and not on the dummy variable because scaling the dummy variable may interfere with its intended interpretation even though they fall within the required range.
+Notice that in the  `x_train` and `x_test`, we only scaled the `Age` and `Salary` columns and not the dummy variables. This is because scaling the dummy variables may interfere with their intended interpretation even though they fall within the required range.
 
 ### Conclusion
 
-To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. At this point, our data is free from irregularities, and the models can make analytical sense of the dataset. I hope you found this helpful. Happy learning.
+To this point, we have prepared our data wholly, and it is now ready to be fed into various machine learning models. At this point, our data is free from irregularities, and the models make analytical sense of the dataset. I hope you found this helpful. Happy learning.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
