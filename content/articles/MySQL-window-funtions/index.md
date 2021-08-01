@@ -21,12 +21,11 @@ A reader should have prior knowledge of the following to understand this article
 ### Introduction
 
 There are 3 types of window functions as stated below:
-1. Aggregate window functions
-- SUM( ), MAX( ), MIN( ), COUNT( )
-2. Value window function
--  LEAD( ), FIRST_VALUE( ), LAG( ), LAST_VALUE( )
-3. Ranking window functions
-- RANK(), DENSE_RANK(), ROW_NUMBER()
+1. Aggregate window functions- Are used with the OVER clause during database querying. Below are some instances of  Aggregate window functions used in MySQL.
+- SUM( )-It manipulates a table row and returns the total after adding the values in the row or column as stipulated.
+- MAX( )- It manipulates a row or column and returns the largest value as stipulated. Other Aggregate window functions are MIN() and COUNT() each responsible for returning the smallest value and the number of values in a row or column respectively.
+3. Value window function- Are used to generate queries that manipulate rows of data and returns values for each row. Some examples of Value window function are the LEAD and LAG functions which are discussed below. Other examples are the FIRST_VALUE( ) and the LAST_VALUE( ) functions also used in the examples below.
+4. Ranking window functions- Some instances of this function are the ROW_NUMBER(), the DENSE_RANK(), and finally the RANK() which are discussed in detail in the examples below.
 
 The value window functions and the ranking window functions are collectively called the Built-in window function.
 
@@ -45,9 +44,7 @@ This function is used to compute a value in group rows. They mainly achieve comp
            LEAD(sales_value) OVER(PARTITION BY cloth_type ORDER BY week)
            AS next_week_value
            FROM cloth_type;
-
-
-The LEAD( ) function returns the sales_value in the next row.
+This function will give out the value of the clothes sold in the "sales_value" column.
 
 2. RANK( )
 
@@ -55,8 +52,8 @@ This function is mainly used in report creation. It computes the ranks for each 
 
 
            SELECT
-           RANK () OVER(ORDER BY ranking_score) AS rank_number,
-           name, ranking_score
+           RANK () OVER(ORDER BY score) AS number-ranked,
+           name, score
            FROM sales:
 
 
@@ -72,20 +69,20 @@ This clause is similar to the RANK() function only that it doesn't allow gaps as
 
 
          SELECT
-         DENSE_RANK( ) OVER(ORDER BY ranking_score DESC) AS dense_rank_number,
-         name, ranking_score
+         DENSE_RANK( ) OVER(ORDER BY score DESC) AS dense_number_ranked,
+         name, score
          FROM sales:
 
 
 
 5. ROW NUMBER( )
 
-This function assigns consecutive numbers to each row in a specific order. The rows are first ordered In ascending order after which the consecutive numbers are assigned. Rows with the same values are not assigned a common number. This means ties are ignored.
+Row Numbers are assigned to rows in their order of appearance. The rows are first ordered In ascending order after which the consecutive numbers are assigned. Rows with the same values are not assigned a common number. This means ties are not concidered while giving the row numbers.
 
 
       SELECT
-      ROW_NUMBER() OVER(ORDER BY ranking_score) AS row_number,
-      name, ranking_score
+      ROW_NUMBER() OVER(ORDER BY score) AS number,
+      name, score
        FROM sales;
 
 
@@ -105,7 +102,7 @@ The concerns are discussed below and some suggestive avoidance mechanisms have a
 ### Pitfalls of MySQL window Functions
 
 ### 1. MySQL Window functions cannot be used in some clauses
-MySQL window functions can not be used in WHERE GROUP BY and HAVING but can only be used in SELECT and ORDER BY. This is due to the difference in the logical order of operations in a query and syntax. Below is the order in which the operations are processed in SQL:
+MySQL window functions can not be used in the first five clauses in the list below but can only be used in SELECT and ORDER BY. This is due to the difference in the logical order of operations in a query and syntax. Below is the order in which the operations are processed in SQL:
 
 1. FROM
 2. WHERE
@@ -143,7 +140,7 @@ Columns are selected from the student table using the WITH query and row number 
 
 ### 2. A window frame with an implicit RANGE option is gotten when calculating running totals.
 
-This occurs during the calculation of running totals when a user specifies the window order clause but does not specify the window frame units such as then ROWS or RANGES and its related window frame extents. This will result in a logical bug as well as some performance difficulties.
+This occurs during the calculation of running totals when a user specifies the window order clause but does not specify the window frame units such as then ROWS or RANGES and its related window frame extents. This will logically results in a  bug as well as problems with database perfomance.
 Example 1 below has the ROWS window frame unit specified.
 
       SELECT  book_id, borrowing_id, value,
@@ -240,7 +237,7 @@ Although these window frame units are not supported by MySQL, some of them are s
 
 ### How to avoid
 
-Therefore to avoid the errors and thrown due to the lack of MySQL support we should be keen to use only window frame units that are supported by MySQL. This is the only way to prevent these errors.
+Therefore to avoid the errors and thrown due to the lack of MySQL support we should be keen to use only window frame units that are supported by MySQL. This is the only way these errors can be countered.
 
 ### Conclusion
 
