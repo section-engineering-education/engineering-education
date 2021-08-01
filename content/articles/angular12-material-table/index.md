@@ -308,3 +308,5 @@ Output:
 In this tutorial, we've discussed Angular Material. We've seen how we can use this Angular feature to create paging in an application. We've also seen how to make requests to APIs and use that data in our application.   
 
 I hope this article builds a strong foundation for you to begin using the Angular Material table, then proceed to sort and the rest. 
+
+Project link https://replit.com/@benardogure/Angular-Material-Paging. It has included `src` directory of the Angular 12. 
