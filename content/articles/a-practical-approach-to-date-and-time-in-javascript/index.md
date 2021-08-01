@@ -208,6 +208,13 @@ We will also use the `floor()` method to return rounded-up numbers for the days,
 ````
 
 ### Conclusion 
+In this tutorial you have learned the following: 
+ - How to check what day it is from a date
+ - How to calculate the number of days between two dates
+ - Calculating the number of workdays between two dates
+ - Iterating through dates
+ - Building a simple Countdown Timer
+
  You can go ahead and try the above tasks on your own now or even customize them. Can copy the snippets and paste them into a file you name with a `.html` extension.
   
 Run the code by opening the file in a browser. If you are using vscode, install a live server extension to make the task easier. Have fun coding!
