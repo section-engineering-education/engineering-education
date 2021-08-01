@@ -10,7 +10,6 @@ A MySQL window function is a function that manipulates values from one or more r
 3. [Examples of MySQL window functions](#examples-of-mysql-window-functions)
 4. [Advantages of MySQL window functions over Aggregate functions](#advantages-of-mysql-window-functions-over-aggregate-functions)
 5. [Pitfalls of MySQL window Functions](#pitfalls-of-mysql-window-functions)
-
 6. [Conclusion](#conclusion)
 
 ### Prerequisites
