@@ -24,7 +24,7 @@ A reader should have prior knowledge of the following to understand this article
 There are 3 types of window functions as stated below:
 1. Aggregate window functions
 - SUM( ), MAX( ), MIN( ), COUNT( )
-2. Value window funtion
+2. Value window function
 -  LEAD( ), FIRST_VALUE( ), LAG( ), LAST_VALUE( )
 3. Ranking window functions
 - RANK(), DENSE_RANK(), ROW_NUMBER()
@@ -98,7 +98,7 @@ This clause describes how to partition and order table rows. This clause is incl
 
 ### Advantages of MySQL window functions over Aggregate functions
 
-1. Unlike aggregate functions, MySQL window functions retain row identities and adds aggregate values to each row.
+1. Unlike aggregate functions, MySQL window functions retain row identities and add aggregate values to each row.
 
 Although MySQL window functions are showing great promise in the database manipulation, some concerns have been registered hence proving that the functions are not perfect as is everything else.
 The concerns are discussed below and some suggestive avoidance mechanisms have also been touched on for each concern. 
@@ -185,7 +185,7 @@ This can however be averted in the following ways.
 
 ### 3. An implicit frame is defined for the FIRST_VALUE  and the  LAST_VALUE
 
-The FIRST_VALUE  and the  LAST_VALUE are window functions belonging to the offset clause and they usually return expressions from the first and last row in the frame. Although most first-timers usually believe that these functions operate on the whole window, the FIRST_VALUE  and the  LAST_VALUE only support a frame and this should be made clear. These being functions that support a frame, specification of window order plane and the associated extent is necessary to avoid getting the RANGE UNBOUNDED PRECEDING.
+The [FIRST_VALUE](https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions057.htm)  and the  [LAST_VALUE](https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-last_value-function/) are window functions belonging to the offset clause and they usually return expressions from the first and last row in the frame. Although most first-timers usually believe that these functions operate on the whole window, the FIRST_VALUE  and the  LAST_VALUE only support a frame and this should be made clear. These being functions that support a frame, specification of window order plane and the associated extent is necessary to avoid getting the RANGE UNBOUNDED PRECEDING.
 
 Example 1 below shows a sample code showing the 
 FIRST_VALUE  and the  LAST_VALUE in use
@@ -211,7 +211,7 @@ This can however be avoided by just putting the following into place:
 
 ### 4. MySQL Window functions cannot be used to update or delete  statements
 
- According to SQL standards, window functions are not to be used for the deletion or updating of a statement in a row. This is mainly because the DELETE and UPDATE  clauses aren't compatible with the SELECT and ORDER. The UPDATE statement uses SET hence SELECT cannot be in the same query level as it.
+ According to MySQL standards, window functions are not to be used for the deletion or updating of a statement in a row. This is mainly because the [DELETE](https://mariadb.com/kb/en/drop-function-udf/) and [UPDATE](https://www.w3schools.com/sql/sql_update.asp)  clauses aren't compatible with the SELECT and ORDER. The UPDATE statement uses SET hence SELECT cannot be in the same query level as it.
 ### How to solve
 This can however be made possible by:
 -  Using the DELETE and UPDATE functions as sub-queries of the main query as shown below
