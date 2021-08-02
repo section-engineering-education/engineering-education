@@ -1,6 +1,6 @@
 ### how to create a user login page using java GUI
 
-Graphical User Interfaces were introduced in reaction to the perceived steep learning curve of command-line interfaces (CLIs). In this article, we will learn how to build a simple GUI using Java.
+Graphical User Interfaces were introduced in reaction to the perceived steep learning curve of Command-Line Interfaces (CLIs). In this article, we will learn how to build a simple GUI using Java.
 
 Java provides a rich set of libraries to create GUIs in a platform-independent way. GUIs offer a visual display of components. Components such as labels, text fields, buttons, checkbox, jpanel, jframe on the screen.
 
