@@ -20,7 +20,7 @@ This tutorial will build a very handy React full-stack application and then dock
 
 ### Setup project basics
 
-This involves two major setups a client and back-end API services. The application involves multi-stage building. You utilize several FROM statements in your Dockerfile for multi-stage builds. Then write a docker-compose.yml file to execute all the Dockerfiles with the proper instructions to set a fully dockerized application. To start with, create a project directory to work on. We will start by creating a Node.js back-end API with Express to expose a REST API and communicate with the MySQL database.
+This involves two major setups a client and back-end API services. The application involves multi-stage building. You utilize several FROM statements in your Dockerfile for multi-stage builds. Then write a `docker-compose.yml` file to execute all the Dockerfiles with the proper instructions to set a fully dockerized application. To start with, create a project directory to work on. We will start by creating a Node.js back-end API with Express to expose a REST API and communicate with the MySQL database.
 
 ### Build the back-end Node.js application
 
