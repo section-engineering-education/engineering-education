@@ -15,13 +15,9 @@ images:
     alt: How to create Couchbase cluster using Docker compose
 ---
 
-### Introduction		
-In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), a cloud edge server NoSQL database. Then, we'll discuss how to set up the 3-node cluster to scale our applications using docker-compose.
-		
-
+In this tutorial, we will walk through [Couchbase](https://www.couchbase.com), a cloud edge server NoSQL database. Then we shall discuss how to set up the 3-node cluster to scale our applications using docker-compose.
+<!--more-->
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [What's couchbase?](#whats-couchbase)
@@ -29,32 +25,30 @@ In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), 
 - [Configuring couchbase cluster](#configuring-couchbase-cluster)
 - [Rebalancing couchbase clusters](#rebalancing-couchbase-clusters)
 - [Conclusion](#conclusion)
-		
+
 ### Prerequisites
-- Make sure you have already installed both Docker Engine and Docker Compose
-		
+Make sure you already have both Docker Engine and Docker Compose installed
+
 ### Objectives
-This tutorial introduces you to the concepts of couchbase, creating node clusters, which helps to scale your application elastically.
-		
+This tutorial introduces you to the concepts of couchbase and creating node clusters. It helps you scale your applications elastically.
 
 ### What's couchbase?
 Couchbase is a server. It's a NoSQL cloud document-oriented database.
-Indeed, this database is a merge of the [CouchDB](https://couchdb.apache.org) and [Membase](https://blog.couchbase.com/what-exactly-membase/) databases. 
-It resides in server clusters that have multiple machines that have several daemon processes. These processes provide data access from client libraries as well as management functions.
-		
+This database is a merge of the [CouchDB](https://couchdb.apache.org) and [Membase](https://blog.couchbase.com/what-exactly-membase/) databases. 
+
+It resides in server clusters that have multiple machines with several daemon processes. These processes provide data access from client libraries as well as management functions.
 
 > For more details about couchbase, click [here](https://dzone.com/articles/couchbase-architecture-deep). 
-		
+
 ### Creating nodes for couchbase
-In this section, we're building the couchbase server nodes that will host a single instance of the couchbase server. This process entails four steps as discussed below: 
+In this section, we're building the couchbase server nodes that will host a single instance of the couchbase server. This process entails the following steps: 
 
 1. **Installed** - where the server is installed but not running.
 2. **Started** - In this step, the node server has been started. At this point, you can perform various operations on the console.
 3. **Initialized** - After installation, we have an option to initialize our servers.
 4. **Provisioned** - You have access to the server as an admin.
-		
 
-Let's now proceed and define our docker compose file contents as follows: 
+Let's proceed to define our docker compose file contents: 
 		
 ```yaml
 # creating couchbase docker compose files
@@ -82,21 +76,17 @@ couchbase3:
     - 8093:8093 
     - 11210:11210
 ```
-		
 
 As we initially discussed, we're building a 3-node couchbase cluster hence the three services definition of the `couch bases 1 to 3 above`.
 		
 Now run the following on the terminal: 
-		
 
 ```bash
 # cd to project directory root and run the following command
  docker-compose up -d
 ```
-		
 
 Output:
-		
 
 ```bash
 Pulling couchbase1 (couchbase/server:)...
@@ -115,7 +105,6 @@ de18b9aa36b2: Downloading [==================> ] 2.123MB/5.647MBnload complete
 1.966kB/1.966kB
 e5fe9996db61: Waiting
 1a4a55520189: Waiting
-		
 ```
 Upon completion, check the status of your clusters by running the following command: 
 		
@@ -125,26 +114,21 @@ docker ps
 ```	
 
 Output:
-		
 
 ```bash
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
 75690285abdf couchbase/server "/entrypoint.sh couc…" 24 minutes ago Up 24 minutes 8091-8096/tcp, 11207/tcp, 11210-11211/tcp, 18091-18096/tcp couchbase_couchbase2_1
 47f963ff40f7 couchbase/server "/entrypoint.sh couc…" 24 minutes ago Up 24 minutes 8094-8096/tcp, 0.0.0.0:8091-8093->8091-8093/tcp, :::8091-8093->8091-8093/tcp, 11207/tcp, 11211/tcp, 0.0.0.0:11210->11210/tcp, :::11210->11210/tcp, 18091-18096/tcp couchbase_couchbase3_1
 6b38e3626f96 couchbase/server "/entrypoint.sh couc…" 24 minutes ago Up 24 minutes 8091-8096/tcp, 11207/tcp, 11210-11211/tcp, 18091-18096/tcp couchbase_couchbase1_1
-		
 ```
-		
 
 You may as well run the following command to check the status. 
 		
 ```bash
 docker-compose ps
 ```
-		
 
 Output:
-		
 
 ```bash
  Name Command State Ports 
@@ -157,19 +141,14 @@ couchbase_couchbase3_1 /entrypoint.sh couchbase-s ... Up 11207/tcp, 0.0.0.0:1121
 0.0.0.0:8091->8091/tcp,:::8091->8091/tcp, 0.0.0.0:8092->8092/tcp,:::8092->8092/tcp, 0.0.0.0:8093->8093/tcp,:::8093->8093/tcp, 8094/tcp, 
 8095/tcp, 8096/tcp 
 ```
-		
 
-Now run the following commands to check your nodes logs:
-		
+Now run the following commands to check your nodes' logs:
 
 ```bash
 docker-compose logs
-		
 ```
-		
 
 Output:
-		
 
 ```bash
 # our nodes logs
@@ -179,34 +158,38 @@ couchbase1_1 | and logs available in /opt/couchbase/var/lib/couchbase/logs
 couchbase3_1 | Starting Couchbase Server -- Web UI available at http://<ip>:8091
 couchbase3_1 | and logs available in /opt/couchbase/var/lib/couchbase/logs
 couchbase2_1 | Starting Couchbase Server -- Web UI available at http://<ip>:8091
-couchbase2_1 | and logs available in /opt/couchbase/var/lib/couchbase/logs
-		
+couchbase2_1 | and logs available in /opt/couchbase/var/lib/couchbase/logs		
 ```
-		
+
 ### Configuring couchbase cluster
-In the previous section, we exposed ports to use while setting up the clusters.Now browse to [http://localhost:8091](http://localhost:8091).
-		
+In the previous section, we exposed ports to use while setting up the clusters.
+
+Open [http://localhost:8091](http://localhost:8091) in your browser.
+
 Output:
+
 ![Home Page](/engineering-education/couchbase-cluster-docker/home.png)
-		
+
 Default cluster view:
-		
+
 ![default view](/engineering-education/couchbase-cluster-docker/default.png)
 		
 Setup your couchbase account and add the clusters we added above as shown below:
-		
-![settings](/engineering-education/couchbase-cluster-docker/setting.png)
+
+![settings](/engineering-education/couchbase-cluster-docker/settings.png)
 		
 ### Rebalancing couchbase clusters
 To distribute data evenly, we need to balance our clusters. 
-To achieve this functionality, browse to the servers tab, or you may as well click on the `pending balance` tab to go to the unbalanced clusters.
+
+To achieve this, browse to the servers tab or click on the `pending balance` tab to go to the unbalanced clusters.
 
 ![rebalance](/engineering-education/couchbase-cluster-docker/rebalance.png)
-		
 
 ### Conclusion	
-In this tutorial, we've been discussing the couchbase clusters. First, we used the docker-compose to create services for our application. We then created 3-node couchbase clusters and accessed them on the web portal on our local server.
-				
+In this tutorial, we've discussed the couchbase clusters. 
+
+First, we used docker-compose to create services for our application. We then created 3-node couchbase clusters and accessed them via the web portal on our local server.
+
 Happy Coding!
 
 ---
