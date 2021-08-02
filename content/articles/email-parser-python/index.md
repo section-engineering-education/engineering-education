@@ -4,7 +4,9 @@ Perhaps you are a machine learning engineer trying to build an email spam classi
 
 #### Prerequisites
 
-The following are the pre-requisites for this article
+The following are the prerequisites for this article:
+- An understanding of Python.
+- Jupyter notebook installed or access to Google Colab.
 An understanding of Python.
 Jupyter notebook installed or access to Google Colab.
 
