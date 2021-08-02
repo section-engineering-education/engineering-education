@@ -87,7 +87,7 @@ Let's now install these dependencies.
 Installing dependencies is relatively straightforward using the `pip install` command. Since you're using Google Colab, the `pip` command should automatically have been installed. Just type in the following code:
 
 ```python
-    !pip install pycaret pandas shap 
+pip install pycaret pandas shap 
 ```
 
 If you're installing these dependencies using your local jupyter notebook, no need to put the exclamation `!` before the `pip` command.
@@ -96,8 +96,8 @@ If you're installing these dependencies using your local jupyter notebook, no ne
 Let's now import these dependencies into our Google Colab:
 
 ```python
-    import pandas as pd
-    from pycaret.classification import *
+import pandas as pd
+from pycaret.classification import *
 ```
 
 ### Loading custom dataset from Kaggle using Pandas
@@ -106,20 +106,20 @@ Let's go ahead and download the [Default of Credit Card Clients Dataset](https:/
 We can then load this dataset in our Colab using the pandas library:
 
 ```python
-    df = pd.read_csv(UCI_Credit_Card.csv)
+df = pd.read_csv(UCI_Credit_Card.csv)
 ```
 
 To view it, let's type in the following:
 
 ```python
-    df.head()
+df.head()
 ```
 
 Alternatively, there exists a built-in PyCaret's data repository. Using the `get_data()` function, you can directly load the data into your Colab. But, this option requires you to have an internet connection.  
 
 ```python
-    from pycaret.datasets import get_data
-    credit_dataset = get_data('credit')
+from pycaret.datasets import get_data
+credit_dataset = get_data('credit')
 ```
 
 ![Loading the Default of Credit Card Clients Dataset](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/loaded-dataset.png
@@ -130,7 +130,7 @@ To train and evaluate our ML model, we need to use the `setup()` function. The f
 The `setup()` function takes in two parameters; data, and target. An extra parameter can be added called `categorical_features` and `numeric_features` if you want PyCaret to infer data types in your dataset i.e., infer features with numerical data types into categorical types used in classification. But, we won't use that extra parameter today. I'll introduce it in a follow-up article.
 
 ```python
-    exp_name = setup(data = credit_dataset, target='default', session_id=5041)
+exp_name = setup(data = credit_dataset, target='default', session_id=5041)
 ```
 
 ![Training and evaluating our ML classification model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/setup-function-results.png)
@@ -142,7 +142,7 @@ In our experiment, we've also used the `session_id = 5041` parameter. We've set 
 With our experiment set up, all that's left to do now is to go on and train the model.
 
 ```python
-    best_model = compare_models()
+best_model = compare_models()
 ```
 ![Best performing model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/best-model.png)
 
@@ -152,7 +152,7 @@ In our case, the Ridge Classifier is our best-performing model. The list contain
 
 ### Testing our model
 ```python
-    predict_model(best_model)
+predict_model(best_model)
 ```
 ![Predicting the best model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/predict-model-best.png)
 
@@ -164,8 +164,8 @@ By employing techniques such as as [early stopping](https://en.wikipedia.org/wik
 To perform prediction on our `credit_dataset` dataset, type in the following code:
 
 ```python
-    prediction = predict_model(best_model, data = credit_dataset)
-    prediction.tail()
+prediction = predict_model(best_model, data = credit_dataset)
+prediction.tail()
 ```
 
 ![Prediction on the dataset](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/prediction-dataset.png)
@@ -176,7 +176,7 @@ Please note that the `Label` column has now been added at the end of our dataset
 The last thing that we have to do is go ahead and save this model. We save our model using the following code:
 
 ```python
-    save_model(best_model, model_name='ridge-model')
+save_model(best_model, model_name='ridge-model')
 ```
 
 ![Saved model](/engineering-education/building-a-machine-learning-classification-model-with-pycaret/saved-model-results.png)
@@ -185,7 +185,7 @@ The last thing that we have to do is go ahead and save this model. We save our m
 To load our saved model, type in the following code:
 
 ```python
-    model = load_model('ridge-model')
+model = load_model('ridge-model')
 ```
 
 With a few lines of code, our transformation pipeline and model have successfully Loaded!
@@ -197,7 +197,7 @@ That, in a nutshell, is how to get started with PyCaret. PyCaret is a very stron
 
 That wraps it up! Happy coding!
 
-### Further Reading
+### Further reading
 1. [PyCaret](https://pycaret.org/)
 2. [Default of Credit Card Clients Dataset](https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset)
 3. [Google Colab](https://research.google.com)
