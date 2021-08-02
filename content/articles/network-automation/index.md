@@ -2,6 +2,10 @@
 
 During the industrial age, automation was used to reduce and potentially eliminate the need for human intervention in industries, thus making the process self-driven. 
 
+In the current era, configuration management tools are used to automate the configuration of network devices such as routers, switches, firewalls, and servers. Automation reduces the time taken to set up networks, especially in large organizations.
+
+In this article, we  will look at network automation and some automation tools in use.
+
  In the current era, configuration management tools are used to automate the configuration of network devices such as routers, switches, firewalls, and servers. Automation reduces the time taken to set up networks, especially in large organizations.
 
 In this article, we  will look at network automation and some automation tools in use.
