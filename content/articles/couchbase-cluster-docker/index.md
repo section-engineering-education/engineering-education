@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /couchbase-cluster-docker/
+title: Creating Couchbase cluster using Docker compose
+description: This tutorial will explain how to create Couchbase database cluster and deploy to Docker compose
+author: jared-phelix
+date: 2021-08-01T00:00:00-16:00
+topics: [Container]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/couchbase-cluster-docker/hero.jpg
+    alt: How to create Couchbase cluster using Docker compose
+---
+
 ### Introduction		
 In this tutorial, I'll walk you through [Couchbase](https://www.couchbase.com), a cloud edge server NoSQL database. Then, we'll discuss how to set up the 3-node cluster to scale our applications using docker-compose.
 		
