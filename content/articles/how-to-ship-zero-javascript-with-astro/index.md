@@ -312,7 +312,7 @@ Copy the code below inside **Tour.astro** file:
  
 import { Markdown } from 'astro/components';
  
-import  Tours  from '../components/Tours.jsx';
+import  Tours  from './Tours.jsx';
  
 const url = 'https://course-api.com/React-tours-project'
  
@@ -336,7 +336,7 @@ Let's have an overview of what is in **Tour.astro** file:
  
 * **Import { Markdown } from astro/components**:  This imports a ** markdown component**, which enables us to write markdown inside the file. This is an integrated feature of Astro.
  
-* **import  Tours  from '../components/Tours.jsx**: This imports the Tour component written in the previous step. This enables us to pass down the data we fetched as a prop to our **Tours** component.
+* **import  Tours  from './Tours.jsx**: This imports the Tour component written in the previous step. This enables us to pass down the data we fetched as a prop to our **Tours** component.
  
 * **const url = 'https://course-api.com/React-tours-project'**: This specifies the application programming interface(API) where we will fetch our data.
  
