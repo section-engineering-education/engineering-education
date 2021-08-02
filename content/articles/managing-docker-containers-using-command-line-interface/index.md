@@ -1,7 +1,7 @@
 ### Introdution
 With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker too, it will not delete unneeded items like containers, images, volumes, or networks. Some of the most effective techniques to manage Docker Containers directly from the Command Line Interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands that will make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
 
-Table of contents:
+### Table of contents
 - [Using Interactive Shell to Run a Docker Container](#using-interactive-shell-to-run-a-docker-container)
 - [Remove all the Dangling Volumes](#remove-all-the-dangling-volumes)
 - [Removing Docker Containers and Images](#removing-docker-containers-and-images)
@@ -12,28 +12,28 @@ Table of contents:
 ### Using Interactive Shell to Run a Docker Container
 An interactive shell reads and writes to a user's terminal in most cases. Interactive behavior is enabled when the bash command is used without any non-option arguments, unless the option is a text to read from or the shell is started to read from standard input, in which case positional parameters can be provided.
 
-Assume you have used the following command to get an Ubuntu image from Docker Hub.
+Assume you have used the following command to get an Ubuntu image from Docker Hub:
 
 ```bash
 sudo docker pull ubuntu
 ```
 
-Now you want to use an interactive shell to execute the Ubuntu container. To change or install packages, you will use bash on the Ubuntu OS after obtaining a Docker Ubuntu Image from the official `Docker registry`. The Docker registry is a platform that hosts images. You may do so by using the `-I flag` to execute the Docker Container in interactive mode.
+Now you want to use an interactive shell to execute the Ubuntu container. To change or install packages, you will use bash on the Ubuntu OS after obtaining a Docker Ubuntu Image from the official `Docker registry`. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
 
-To accomplish this, use the following command.
+To accomplish this, use the following command:
 
 ```bash
 sudo docker run -it ubuntu
 ```
 
 ### Remove all the Dangling Volumes
-Docker Volumes may be mounted with Docker Containers to share files and directories among many Docker Containers. When you delete Docker Containers, the Docker Volumes linked with them remain. Docker Volumes are exactly what they sound like. A list of all Dangling Docker Volumes may be obtained with the following command.
+Docker Volumes may be mounted with Docker Containers to share files and directories among many Docker Containers. When you delete Docker Containers, the Docker Volumes linked with them remain. Docker Volumes are exactly what they sound like. A list of all Dangling Docker Volumes may be obtained with the following command:
 
 ```bash
 sudo docker volume ls -f dangling=true
 ```
 
-> While deleting Docker Volumes, you may use the -v flag to avoid leaving behind Dangling Volumes.
+> While deleting Docker Volumes, you may use the `-v` flag to avoid leaving behind Dangling Volumes.
 
 ```bash
 sudo docker rm -v <name-of-the-container>
@@ -41,7 +41,7 @@ sudo docker rm -v <name-of-the-container>
 
 To list the Docker Containers that are now executing, use the following sequence of instructions. Stop the specific Container and Remove it with the -v flag to prevent leaving Dangling Volumes behind.
 
-> Run the commands one at a time.
+> Run the following commands one at a time.
 
 ```bash
 sudo docker container ls
@@ -59,7 +59,7 @@ sudo docker rm <name-of-the-container>
 ```
 
 The first command lists all of your system's Containers. The Container's state may be found in the Status column. Stopping the Container before removing it is required if it has not been exited. You must know the Container ID of the containers you want to delete before you may delete them.
-Remove all the Containers linked with a Docker Image before removing it using the command below.
+Remove all the Containers linked with a Docker Image before removing it using the command below:
 
 ```bash
 sudo docker rmi <The-ID-of-the-image>
@@ -86,4 +86,4 @@ sudo docker container <name-of-the-container>
 ```
 
 ### Conclusion
-In this article, we learned ways of managing Docker containers using Command Line Interface, by Running a Docker Container in Interactive Shell, removing all the Dangling Volumes, removing Docker containers and images, inspecting docker containers, and finally by using Aliases. I would urge the reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded Docker containers, images, and volumes
+In this article, we learned ways of managing Docker containers using the command line interface. We accomplished this by running a Docker Container in Interactive Shell, removing all the Dangling Volumes, removing Docker containers and images, inspecting docker containers, and finally by using Aliases. I would urge the reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded Docker containers, images, and volumes
