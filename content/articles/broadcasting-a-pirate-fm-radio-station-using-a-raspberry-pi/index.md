@@ -6,7 +6,7 @@ url: /broadcasting-a-pirate-fm-radio-station-using-a-raspberry-pi/
 title: Broadcasting a private FM radio station using a Raspberry Pi 
 description: This article aims to create a simple private FM radio that can be used to broadcast an FM radio station for small regions such as schools or homesteads.
 author: ruphus-muita
-date: 2021-08-02T00:00:00-05:00
+date: 2021-08-02T00:00:00-10:51
 topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
