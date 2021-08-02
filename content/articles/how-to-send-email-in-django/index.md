@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-send-an-email-with-django/
+url: /how-to-send-email-in-django/
 title: How to Send Emails in Django
 description: This tutorial will guide the reader on how to send emails in Django. We will quickly set up a new Django project to demonstrate how to send emails.
 author: samuel-torimiro
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-send-an-email-with-django/hero.jpg
+  - url: /engineering-education/how-to-send-email-in-django/hero.jpg
     alt: Django Email Google Gmail Example Image
 ---
 
@@ -59,7 +59,7 @@ python manage.py runserver
 
 Navigate to <http://127.0.0.1:8000/> using your browser. You should see the default Django homepage.
 
-![Django homepage](/engineering-education/how-to-send-an-email-with-django/django-homepage.jpg)
+![Django homepage](/engineering-education/how-to-send-email-in-django/django-homepage.jpg)
 
 Add the new application to your `settings.py` file.
 
@@ -228,7 +228,7 @@ Open the app and try submitting the form. The email should be printed out in you
 ### Configuring Google Gmail SMTP provider.
 To use your Google Gmail account to send an email, you will need to enable access for less secure applications using [this link](https://myaccount.google.com/lesssecureapps).
 
-![Google Less Secure Homepage](/engineering-education/how-to-send-an-email-with-django/google-less-secure.jpg)
+![Google Less Secure Homepage](/engineering-education/how-to-send-email-in-django/google-less-secure.jpg)
 
 Note that Google accounts with the 2-step Verification turned on don't work with secure apps. Instead, you use app passwords. You can generate an app password using [this link](https://myaccount.google.com/u/1/apppasswords).
 
@@ -250,9 +250,9 @@ Note that some of the details like the account and password should be kept hidde
 
 At this point, we are ready to send the emails. Open the app and try sending out some emails.
 
-![homepage](/engineering-education/how-to-send-an-email-with-django/homepage.jpg)
+![homepage](/engineering-education/how-to-send-email-in-django/homepage.jpg)
 
-![success page](/engineering-education/how-to-send-an-email-with-django/success-page.jpg)
+![success page](/engineering-education/how-to-send-email-in-django/success-page.jpg)
 
 ### Conclusion
 In this tutorial, we briefly set up a new Django project that we used to send an email using a free service (Google Gmail SMTP) provider.
