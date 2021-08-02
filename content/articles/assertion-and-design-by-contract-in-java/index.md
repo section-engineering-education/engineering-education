@@ -1,16 +1,33 @@
-### Assertion and design by contract in Java
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /assertion-and-design-by-contract-in-java/
+title: Assertion and design by contract in Java
+description: In this article, we go over how to use database transactions to group SQL queries.
+author: paul-mwangi
+date: 2021-08-02T00:00:00-12:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/assertion-and-design-by-contract-in-java/hero.jpg
+    alt: Assertion and design by contract in Java
+---
 The technique of design by contract specifies the interaction between various components of an application. This concept was first discovered and introduced in the Eiffel programming language. 
-For interaction between various components to be achieved, a contract based on the components of the application to communicate with each other is defined by the concept. Assertions are used in the Design by contract technique  to check if the requirements specified in the defined contract are met by the application. They are used to test n the assumptions made by the programmer.
+ <!--more-->
+For interaction between various components to be achieved, a contract based on the components of the application to communicate with each other is defined by the concept. Assertions are used in the Design by contract technique to check if the requirements specified in the defined contract are met by the application. They are used to test the assumptions made by the programmer.
 
-
-### prerequisite
+### prerequisites
 Before learning this tutorial you need to have learned or be learning Java therefore have basics in Java programming.
+
 ### Design by contract
 This technique allows a programmer to provide a detailed specification to create software based on the user requirements. Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given. The types of assertions are:
+
 1. Precondition: The specified conditions must be satisfied by the application before calling an external component.
 2. Postcondition: The specified condition must be satisfied by the application after an external condition has been executed.
 3. Invariant: The specified condition must be satisfied by the application.
+
 To understand the techniques of assertions we will consider the operations of a stack. A stack should not be empty when extracting an element from the stack this condition is therefore checked before extracting an element from the stack. This condition is called a precondition. Pushing an element into the stack we need to check whether the element is correctly added to the specified index, this condition is referred to as postcondition. An invariant condition is when a stacks number of element should not exceed its carrying capacity or be equals to zero that is empty.
 
 ### Implementing Assertion
@@ -21,13 +38,14 @@ The assert statement can be implemented in two ways.
 ```Java
 assert Expression 1;
 ```
-The expression is a boolean, if it happens thatthe boolean report is false The assertion error is thrown without informatio about bugs that happened in the program.
+The expression is a boolean, if it happens thatthe boolean report is false The assertion error is thrown without information about bugs that happened in the program.
 
 ```Java
 assert Expression 1; Expression 2;
 ```
 
 The first expression is boolean and the second is the value passed to the Exception of the AssertError. We can use the assert statement as:
+
 ```Java
 public void division()
 {
@@ -89,7 +107,7 @@ java -da Myfile.java
 3. Java -eaTestClass Main. This command line enables the only assertion in one class -'TestClass' in the main program.
 4. Java -ea...Main. This command is used to enable assertions for the working class in the main directory
 
-### Assertions Rules
+### Assertion Rules
 Since assertion is used to check on the validation of assumptions made by the programmer at the time of execution then some rules govern the use of assertions.
 1. Checking the method arguments passed.
 2. Using the assertion in the default case of the switch statement.
@@ -124,3 +142,6 @@ public class division
 
 ### Conclusion 
 In this article, we have looked at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program.
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
