@@ -213,7 +213,7 @@ In this tutorial you have learned the following:
  - How to calculate the number of days between two dates
  - Calculating the number of workdays between two dates
  - Iterating through dates
- - Building a simple Countdown Timer
+ - Building a simple countdown timer
 
  You can go ahead and try the above tasks on your own now or even customize them. Can copy the snippets and paste them into a file you name with a `.html` extension.
   
