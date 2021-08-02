@@ -52,7 +52,9 @@ def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_P
             email_tar_file.extractall(path=spams_path)
             email_tar_file.close()
 ```
- We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If it is not there, we create a new one using the `makedirs()` method. We create two paths for normal and spam emails.
+ We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
+ 
+ Two paths for normal and spam emails are needed for storing the emils, so we create them.
  
  We then create the file directory if it is not present and retrieve it using the `urlretrieve()` method.
  Once done, we open the tar files and extract them.
