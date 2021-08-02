@@ -26,7 +26,7 @@ In the new version of HTML, we have HTML5 which comes with some added features. 
 
 A beginner learning about web development does not have the basic idea of semantic elements or might not see why to use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become necessary in recent times.
 
-In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML and many more.
+In this article, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML and many more.
 
 ### Prerequisites
 Before we get started, it is advisable to have:
@@ -34,37 +34,24 @@ Before we get started, it is advisable to have:
 - A modern web browser.
 - An IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
-#### Understanding Semantic HTML
+### Understanding Semantic HTML
+HTML semantic elements are those elements that have essential meaning and convey that meaning to both the browser and the developer. Through the semantic element, one can tell or describe what they want on a web page.
 
-The idea of using semantic elements is to indicate what they actually are rather than how it is on the browser which is referred to as HTML elements. Semantic elements explain the meaning to both the programmer and the browser, through the semantic element you can be able to tell or describe what you want on your web page.
+Semantic elements help structure the code we create, making it readable and easier to maintain. Finally, it also helps us to think about the structure of our data in web design.
 
-HTML semantic elements are those elements that have essential meaning and convey that meaning to both the browser and the developer. The semantic element help structure the code we create, making it readable and easier to maintain. Finally, it also helps us to think about the structure of our data in web design.
+Some examples of semantic HTML tags are:
+`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>` etc.
 
-Next, let's take a look at some semantic HTML tags:
+### HTML layout without semantics
+Before we look at the HTML layout with semantics, let us build a simple layout without using semantic HTML.
 
-`header`
-`nav`
-`main`
-`article`
-`section`
-`aside`
-`footer`
-
-In the next section, we will be using these HTML tags and explain them in detail while building a simple layout with them.
-
-#### HTML layout without semantics
-
-Before we take a look at the HTML layout with semantics, let's take a step back and build a simple layout without using semantic HTML.
-
-The CSS can be ignored, it's just for aesthetic purposes.
+**Note: The CSS can be ignored, it's just for aesthetic purposes.**
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Semantic HTML</title>
-
     <style>
         * {
             margin: 0px;
@@ -120,17 +107,12 @@ The CSS can be ignored, it's just for aesthetic purposes.
             background-color: brown;
             padding: 20px;
         }
-
-
     </style>
-
 </head>
 <body>
-
     <div class="header">
         <h1>Welcome to Saxophone Shop</h1>
     </div>
-
     <div class="nav">
         <ul>
             <li>Home</li>
@@ -138,7 +120,7 @@ The CSS can be ignored, it's just for aesthetic purposes.
             <li>Contact Us</li>
         </ul>
     </div>
-
+  
     <div class="main">
         <div class="section">
             <div class="article">
@@ -171,7 +153,6 @@ The CSS can be ignored, it's just for aesthetic purposes.
                          quasi vero, nam esse magnam. Dolores iusto debitis nostrum magnam.
                 </p>
             </div>
-
         </div>
 
         <div class="aside">
@@ -199,11 +180,8 @@ The CSS can be ignored, it's just for aesthetic purposes.
 
         </div>
     </div>
-
-
 </div>
-
-
+  
     <div class="footer">
         &copy; <b>2021 Saxophone Shop</b>
     </div>
@@ -216,10 +194,11 @@ This our basic layout structure:
 
 ![Simple HTML Layout](/engineering-education/semantic-html-for-beginners/html-layout.jpg)
 
-From the above code, one of the major problems of not using semantic HTML is the `naming convention`. This issue becomes paramount when it is not a single developer working on the code and also when the code start to become larger. From the example, we had to come up with my own naming style, there was no set of structures to follow. Handling this piece of code to other developers especially new ones joining the team can quickly become confusing for them to understand. Enter semantic HTML which we will be taking a look at in the following section.
+One of the major problems of not using semantic HTML is the `naming convention` from the above code. This issue becomes paramount when it is not a single developer working on the code and when the code becomes larger. 
 
-#### HTML layout with semantics
+From the example, we had to come up with an individual naming style. There was no set of structures to follow. Handling this code for developers, especially new ones joining the team, can quickly become confusing and difficult to understand. 
 
+### HTML layout with semantics
 The example below is about showcasing a simple layout with semantic HTML. It should be noted that semantic HTML is a feature of HTML5 so declaring `doctype html` should be a given.
 
 ```html
