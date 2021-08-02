@@ -1,12 +1,8 @@
-
 ### Introduction
-
-In this tutorial, I'll show you how to create Angular material tables, populate this table with some data. We'll then proceed and apply several functionalities to this table such as paging, filtering, and sorting.  
+In this tutorial, I'll show you how to create Angular material tables and populate this table with some data. We'll then proceed and apply several functionalities to this table such as paging, filtering, and sorting.  
 
 ### Table of contents
 
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [ObjectivesAngular 12 Material Table With Pagination, Filtering, Sorting](#objectivesangular-12-material-table-with-pagination-filtering-sorting)
 - [Getting started with Angular Material](#getting-started-with-angular-material)
@@ -14,19 +10,16 @@ In this tutorial, I'll show you how to create Angular material tables, populate 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+To follow along with this tutorial, you are required to have the following:
 
-To follow this tutorial along, you should have:
-
-- Basic knowledge of Angular, in this tutorial we'll be using Angular 12.
-- Some background knowledge using Angular Material will help you get started quickly.
+- Basic knowledge of Angular. In this tutorial we'll be using Angular 12.
+- Knowledge on using Angular Material. It will help you get started quickly.
 - A complete Angular project installed on your machine.
 
-### ObjectivesAngular 12 Material Table With Pagination, Filtering, Sorting
-
-This tutorial will teach you everything you need to use Angular materials tables. We'll build a complete project implementing the Angular Material data table with multiple functionalities.
+### Objectives
+This tutorial will teach you everything you need to use Angular Material tables. We'll build a complete project for implementing the Angular Material data table with multiple functionalities.
 
 ### Getting started with Angular Material
-
 In this section, I'll show you how to set up your Angular project to start using Angular Material.
 
 In your project root, open the terminal and run the following commands:
@@ -43,7 +36,6 @@ This command will prompt for a `yes`/`no` question as shown below:
 ✔ Found compatible package version: @angular/material@12.1.3.
 ..................
 Would you like to proceed? (Y/n) 
-
 ```
 
 Enter `y` to proceed with the Angular Material installation. This will install all packages required for Material.
@@ -73,40 +65,37 @@ import { MatInputModule,
     ]
 })
 export class AppMaterialModule {}
-
 ```
 
-In the above module, we're importing the Material modules from `@angular/material`. we then export all these modules since we'll be using them in our main module as shown below.  
+In the above module, we're importing the Material modules from `@angular/material`. We then export all these modules since we'll be using them in our main module as shown below.
 
 ```js
-..........................
+// ..........................
 import { AppMaterialModule } from "./app.material-module";
 
 @NgModule({
   declarations: [
-    ....
+    // ....
   ],
   imports: [
-    .........
+    // .........
     AppMaterialModule,
 
   ],
-  ...
+  // ...
 })
 export class AppModule { }
-
 ```
 
 We've updated our `app.module.ts` as shown above by importing the `AppMaterialModule` module to expose the Material modules we had imported.
 
-### Using Material Table to display data
-
-In this section, I'll show you how to create the Material table for students. The table will consist of basic student details such as names and registrations. Let's start by creating these details interface.
+### Using Material table to display data
+In this section, I'll show you how to create the Material table for `students`. The table will consist of basic student details such as `names` and `registrations`. Let's start by creating the details interface.
 
 Run the following commands on your project root:
 
 ```bash
- ng g i student
+ng g i student
 ```
 
 This will create an interface in the `app/student.ts` file, proceed and edit it as follows:
@@ -120,7 +109,6 @@ export interface Student {
   yearOfStudy: bigint;
   registrationNumber:string;
 }
-
 ```
 
 Now, proceed and create an `assets/students.json` file and define the student details that we will use in our RESTful APIs to represent in a table.
@@ -141,35 +129,33 @@ Now, proceed and create an `assets/students.json` file and define the student de
     "course": "Bsc Computer Science",
     "yearOfStudy": 4
   }]
-
 ```
 
- Create  `services/apiService.ts` service file and add the following:
+Create  `services/apiService.ts` service file and add the following:
 
- First, begin by defining the `baseURL` in the environment to make your code look organized and for reusability purposes.
+First, begin by defining the `baseURL` in the environment to make your code look organized and for reusability purposes.
 
- ```typescript
- ...
+```typescript
+// ...
 
 export const environment = {
-  ...
+  // ...
   baseURL:'assets/',
 };
-...
+// ...
+```
 
- ```
+Then update the service as shown below:
 
- then update the service as shown below:
-
- ```typescript
-...
+```typescript
+// ...
 //import student intreface
 import {Student} from "../student";
 //import this to make http requests
 import {HttpClient} from "@angular/common/http";
 //we've defined our base url here in the env
 import {environment} from "../../environments/environment";
-....
+// ....
 //class apiService
 export class ApiService {
 
@@ -182,7 +168,7 @@ export class ApiService {
     return this.httpClient.get<Student[]>(`${environment.baseURL}student.json`);
   }
 }
- ```
+```
 
 Now that we've got the logic to get data from our API, let's now proceed and add this to the controller, but first, let's update our `app.module.ts` file as follows:  
 
@@ -248,8 +234,8 @@ export class AppComponent implements OnInit{
 At this point, you can now test your application by logging your API response observable output as shown below:
 
 1. Serve your application by running `ng serve --port 3000`.
-2. Go to your browser and open the new tab and enter `localhost:3000`
-3. CTRL+SHIFT+I to go to the logs
+2. Go to your browser and open the new tab and enter `localhost:3000`.
+3. `Ctrl + Shift + I` to go to the logs.
 
 You will see the following output if you followed the correct steps above:  
 
@@ -295,18 +281,17 @@ Now let's update our `app.component.html` as shown below to display our data.
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
 ```
 
 Output:
 
 [output](/engineering-education/angular12-material-table/output.png)
 
-
 ### Conclusion
+In this tutorial, we've discussed Angular Material. We've seen how we can use this Angular feature to create paging in an application. We've also seen how to make requests to APIs and use that data in our application.
 
-In this tutorial, we've discussed Angular Material. We've seen how we can use this Angular feature to create paging in an application. We've also seen how to make requests to APIs and use that data in our application.   
+I hope this article builds a strong foundation for you to begin using the Angular Material table. From there, you can then proceed to sorting and other features. 
 
-I hope this article builds a strong foundation for you to begin using the Angular Material table, then proceed to sort and the rest. 
+You can find the code in this tutorial on [this Repl](https://replit.com/@benardogure/Angular-Material-Paging). The Angular 12 `src` directory is included in the Repl. 
 
-Project link https://replit.com/@benardogure/Angular-Material-Paging. It has included `src` directory of the Angular 12. 
+Happy coding!
