@@ -28,7 +28,7 @@ Node.js will help us to process all tractions and communication that we need to 
 
 #### Step1: Project structure
 
-Inside your project directory, go ahead and create a new folder and name it a server. Will write our backed login inside this directory. So once created cd to this folder and initialize a Node.js application with `npm init -y`. Once executed, a `package.json` file will be created to add any dependencies that we need our application to use.
+Inside your project directory, go ahead and create a new folder and name it a `server`. Will write our backed login inside this directory. So once created `cd` to this folder and initialize a Node.js application with `npm init -y`. Once executed, a `package.json` file will be created to add any dependencies that we need our application to use.
 
 #### Step2: Project dependencies
 
