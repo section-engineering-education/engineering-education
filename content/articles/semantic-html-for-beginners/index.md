@@ -14,12 +14,6 @@ images:
       alt: Semantic HTML for Beginners Hero image
 ---
 
-In the new version of HTML, we have HTML5 which comes with some added features. One of these features that we will be learning about is semantic HTML.
-
-<!--more-->
-
-In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML and many more.
-
 ### Table of contents
 
 -   [Introduction](#introduction)
@@ -27,13 +21,18 @@ In this tutorial, you will learn why you should use semantic HTML in your next p
 -   [HTML layout without semantics](#html-layout-without-semantics)
 -   [HTML layout with semantics](#html-layout-with-semantics)
 
-### Prerequisites
-
-An understanding of HTML is needed as well as a modern web browser.
-
 ### Introduction
+In the new version of HTML, we have HTML5 which comes with some added features. One of these features that we will be learning about is semantic HTML.
 
-A beginner learning about web development do not have the basic idea of semantic elements or might not see the reasons to use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become important in recent times. In the next section, we would learn about semantic HTML and the reasons why you should use it.
+A beginner learning about web development does not have the basic idea of semantic elements or might not see why to use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become necessary in recent times.
+
+In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML and many more.
+
+### Prerequisites
+Before we get started, it is advisable to have:
+- Basic knowledge and understanding of HTML.
+- A modern web browser.
+- An IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
 #### Understanding Semantic HTML
 
