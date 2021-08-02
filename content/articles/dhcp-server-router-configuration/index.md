@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dhcp-server-router-configuration/hero.jpg
+  - url: /engineering-education/dhcp-server-router-configuration/hero.jpg
     alt: Cisco Router DHCP example image
 ---
 Network administrators have automated configuring and assigning IP addresses to the network devices by using the DHCP servers and their protocols. The dedicated servers are scalable and easy to manage but are costly for an organization to have one at every point in a network. In such situations, we can configure routers on the network to provide the DHCP services without the need of having to buy the servers.
