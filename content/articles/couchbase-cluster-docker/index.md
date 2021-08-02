@@ -11,7 +11,7 @@ topics: [Container]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/couchbase-cluster-docker/hero.jpg
+  - url: /engineering-education/couchbase-cluster-docker/hero.png
     alt: How to create Couchbase cluster using Docker compose
 ---
 
@@ -208,3 +208,6 @@ To achieve this functionality, browse to the servers tab, or you may as well cli
 In this tutorial, we've been discussing the couchbase clusters. First, we used the docker-compose to create services for our application. We then created 3-node couchbase clusters and accessed them on the web portal on our local server.
 				
 Happy Coding!
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
