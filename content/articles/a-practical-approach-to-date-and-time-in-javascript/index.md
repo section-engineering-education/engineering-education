@@ -1,5 +1,5 @@
 ﻿
-Dates and time are crucial parts of our day-to-day lives. Knowing how to work with them is important. JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
+Date and time are crucial parts of our day-to-day lives. Knowing how to work with them is important. JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
 
 ### Prerequisites
 To follow through this tutorial smoothly, we will need :
