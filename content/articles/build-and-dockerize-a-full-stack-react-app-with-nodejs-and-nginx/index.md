@@ -686,7 +686,6 @@ We have created a front-end application using React and a back-end API using Nod
 
 The code for this project can be found on [GitHub](https://github.com/mosesreigns/Build-and-Dockerize-a-Full-stack-React-app-with-Node.js-MySQL-and-Nginx-for-reverse-proxy).
 
-https://github.com/mosesreigns/Build-and-Dockerize-a-Full-stack-React-app-with-Node.js-MySQL-and-Nginx-for-reverse-proxy
 I hope you find this tutorial informative and helpful.
 
 ### Further reading
