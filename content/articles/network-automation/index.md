@@ -17,21 +17,19 @@ At the end of this article, it is expected that the reader should learn:
 This article gives an overview of network automation and automation tools. To follow along, the reader is expected to have a basic understanding of networking. 
 
 ### Table of contents 
-- [What is automation?](#what_is_automation?)
-- [Application Programming_Interface (API)](#application_programming_interface (API))
-- [Types of Web Service APIs](#types_of_Web_Service_apis)
-- [Extensible Markup Language Remote Procedure Call XML-RPC)](#extensible_markup_manguage_remote-procedure_call_(XML-RPC))
-- [Simple Object Access Protocol (SOAP)](#simple_object_access_protocol_(SOAP))
-- [JavaScript Object Notation Remote Procedure Call (JSON-RPC)](#javascript_object-notation_remote_procedure_call_(JSON-RPC))
-- [Representational State Transfer (REST)](#representational_state_transfer_(REST))
-- [Network management tool](#network_management_tool)
-- [ Network management tools](#network_management_tools)
+- [What is automation?](#what-is-automation?)
+- [Application Programming Interface (API)](#application-programming-interface-api)
+- [Types of Web Service APIs](#types-of-web-service-apis)
+- [ Extensible Markup Language Remote Procedure Call (XML-RPC)](#extensible-markup-language-remote-procedure-call-xml-rpc)
+- [Simple Object Access Protocol (SOAP)](#simple-object-access-protocol-soap)
+- [JavaScript Object Notation Remote Procedure Call (JSON-RPC)](#javascript-object-notation-remote-procedure-call-json-rpc)
+- [Representational State Transfer (REST)](#representational-state-transfer-rest)
+- [ Network management tools](#network-management-tools)
 - [Ansible](#ansible)
 - [Saltstack](#saltstack)
-- [Puppet](#ppuet)
+- [Puppet](#puppet)
 - [Chef](#chef)
-- [Conclusion](#conclusion)
-- [Further reading](#further_reading)
+- [Further reading](#further-reading)
 
 ### What is automation?
 Automation can be seen as the mechanism or process in which a system is configured to operate with minimal or no human intervention. This process has cut across different fields, from the manufacturing industry to health, and security. In networking, automation is the process in which networking devices such as routers, switches, firewalls, and servers are configured with less or no human intervention. 
