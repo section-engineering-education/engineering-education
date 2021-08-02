@@ -2,7 +2,7 @@
 
 Perhaps you are a machine learning engineer trying to build an email spam classifier, and you want to get some way of pre-processing the emails, or you are trying to look for some correlations between some emails, you will in one way or another have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
 
-#### Prerequisites
+### Prerequisites
 
 The following are the prerequisites for this article:
 - An understanding of Python.
@@ -14,13 +14,11 @@ Jupyter notebook installed or access to Google Colab.
 
 A Colab notebook with the codes is found [here](https://colab.research.google.com/drive/1nDz58G4cDukqukOlPRVST-jKBK0AyMwa?usp=sharing).
 
-#### Getting started
+### Getting started
 
 We will parse emails from the SpamAssassin website then look at their structure and contents. The site contains spam and normal emails. We will try and look at their structures using the metrics highlighted. 
 
-First, create a notebook called **email_parser.ipynb** or your preferred name.
-
-Then, create a cell and add the packages we need.
+In a new cell, we will import the packages we need then we will ad the code for getting the emails from the SpamAssassin website.
 
 ```python
 import os
@@ -30,10 +28,7 @@ import email
 import email.policy
 from collections import Counter
 import urlextract
-```
-After that, create another cell and paste this code for getting the emails from the SpamAssassin website.
 
-```python
 #the root url
 EMAILS_URL_ROOT = "http://spamassassin.apache.org/old/publiccorpus/"
 #the emails url
@@ -58,8 +53,9 @@ def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_P
             email_tar_file.close()
 ```
  We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If it is not there, we create a new one using the `makedirs()` method. We create two paths for normal and spam emails.
+ 
  We then create the file directory if it is not present and retrieve it using the `urlretrieve()` method.
- After that, we open the tar files and extract them.
+ Once done, we open the tar files and extract them.
 
  In the next cell, we call the `fetch_emails()` method.
 
