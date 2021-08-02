@@ -6,7 +6,7 @@ url: /how-to-send-email-in-django/
 title: How to Send Emails in Django
 description: This tutorial will guide the reader on how to send emails in Django. We will quickly set up a new Django project, to demonstrate how to send emails.
 author: samuel-torimiro
-date: 2021-07-26T00:00:00-17:00
+date: 2021-08-02T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
