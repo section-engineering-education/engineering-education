@@ -73,6 +73,9 @@ This is an architectural design developed for web services to share data. It is 
 REST APIs use [HTTP method](https://www.restapitutorial.com/lessons/httpmethods.html) POST, GET, PUT, PATCH, and DELETE to exchange  data. 
 All APIs built using the REST architectural design are referred to as RESTful APIs and they conform to the following guidelines: 
 - Server-client: The server contains the resources while the client requests permission to use such resources from the server.
+- Stateless: It is stateless because client information is not stored on the server, rather it is stored in the client. 
+- Cacheable: The client can cache and streamline data for improved performance. 
+- Uniform interface: RESTful APIs use a uniform interface to share information between the server and the client in a standard form.
 Stateless: It is stateless because client information is not stored on the server, rather it is stored in the client. 
 - Cacheable: The client can cache and streamline data for improved performance. 
 - Uniform interface: RESTful APIs use a uniform interface to share information between the server and the client in a standard form.
