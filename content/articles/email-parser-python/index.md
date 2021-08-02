@@ -1,14 +1,14 @@
 ### Parsing emails in Python
 
-Perhaps you are a machine learning engineer trying to build an email spam classifier, and you want to get some way of pre-processing the emails, or you are trying to look for some correlations between some emails, you will in one way or another have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
+Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or might be trying to look for  correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
 
 ### Prerequisites
 
 The following are the prerequisites for this article:
 - An understanding of Python.
 - Jupyter notebook installed or access to Google Colab.
-An understanding of Python.
-Jupyter notebook installed or access to Google Colab.
+- An understanding of Python.
+- Jupyter notebook installed or access to Google Colab.
 
 > We will use Jupyter notebooks in this article. You may use regular Python files for the code executions.
 
@@ -16,9 +16,9 @@ A Colab notebook with the codes is found [here](https://colab.research.google.co
 
 ### Getting started
 
-We will parse emails from the SpamAssassin website then look at their structure and contents. The site contains spam and normal emails. We will try and look at their structures using the metrics highlighted. 
+We will parse emails from the _SpamAssassin_ website, and then look at their structure and contents. The site contains spam and normal emails. We will try and look at their structures using the metrics highlighted. 
 
-In a new cell, we will import the packages we need then we will ad the code for getting the emails from the SpamAssassin website.
+We will import the packages we need in a new cell then add the code for getting the emails from the _SpamAssassin_ website.
 
 ```python
 import os
@@ -52,20 +52,19 @@ def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_P
             email_tar_file.extractall(path=spams_path)
             email_tar_file.close()
 ```
-We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
+We set the paths and the URLs as constants. Then, in the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
  
- Two paths for normal and spam emails are needed for storing the emils, so we create them.
+We create two paths needed for normal and spam emails to store the emails.
  
- We then create the file directory if it is not present and retrieve it using the `urlretrieve()` method.
- Once done, we open the tar files and extract them.
+Once done, we create the file directory if it is not present and retrieve it using the `urlretrieve()` method. Finally, we open the tar files and extract them.
 
- In the next cell, we call the `fetch_emails()` method.
+In the next cell, we call the `fetch_emails()` method.
 
  ```python
 fetch_emails()
  ```
 
-We add a new cell where we will begin parsing the emails.
+Let's begin with parsing the emails in a new cell.
 
 ```python
 #creating directories for the extracted emails
@@ -88,8 +87,10 @@ normal_emails = [load_emails(is_spam=False, filename=name) for name in normal_fi
 spam_emails = [load_emails(is_spam=True, filename=name) for name in spam_filenames]
 ```
 
-Here, we create a directory for the spam and normal emails and sort them.
+We create a directory each for the spam and normal emails and sort them.
+
 In the `load_emails()`, we open the appropriate directories as readable and in binary format, then we parse them using the `BytesParser` class.
+
 The `BytesParser` class contains an argument in the constructor called `policy`. It has the policy as default. Using `default` lets us parse the email using the `\n` line breaks.
 
 We then call the `load_emails()` method to load the emails.
@@ -122,6 +123,7 @@ def get_structures(email):
         ]))
     else:
         return email.get_content_type()
+        
 #function for counting the types
 def type_counter(emails):
     our_count = Counter()
@@ -133,7 +135,7 @@ def type_counter(emails):
 
 In this code, we have two methods, `get_structures()` and `type_counter()`.
 
-For the `get_structures()`, we check for the structure. If it is a normal text email, we return `text/plain,` but if it's a multipart type of email, we return multipart, all the parts it contains. Note also that recursion is used if there are many email structures in the sub-emails of that email.
+In the `get_structures()` function, we check the structure. If it is a normal text email, we return `text/plain,` but if it's a multipart type of email, we return multipart, all the parts it contains. Note also that recursion is used if there are many email structures in the sub-emails of that email.
 For any other email structure we display it by return the emails content type(`get_content_type()`).
 
 For the `type_counter()` method, we check how many email structure types are gotten in the spam and normal emails, e.g. `'text/plain', 2409`. So we first initiate a counter then count them for every similar structure.
@@ -161,9 +163,9 @@ for header, value in spam_emails[0].items():
     print(header,":",value)
 ```
 
-### Summary
+### Conclusion
 
-In this article, we looked at getting the emails, setting the paths and extracting them, and parsing them.
+In this article, we looked at getting the emails, setting the paths, extracting them, and parsing them.
 
 ### Further reading
 
