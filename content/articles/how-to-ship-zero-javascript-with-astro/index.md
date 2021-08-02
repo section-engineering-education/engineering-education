@@ -139,22 +139,14 @@ The ones we are more interested in are:
  
 ```
  
-├── src/
- 
-│   ├── components/
- 
-|   |       |── Tours.astro
- 
-│   ├── layouts/
- 
-│   └── pages/
- 
-│       └── index.astro
- 
 ├── public/
- 
-├── astro.config.mjs
- 
+│   ├── robots.txt
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   └── Tour.astro
+│   └── pages/
+│       └── index.astro
 └── package.json
  
 ```
@@ -194,7 +186,7 @@ npm start
  
 ```
  
-When you start the project for the first time. Astro, along with Snowpack will prepare your dependencies. It will then start the development server on http://localhost:300/.
+When you start the project for the first time. Astro, along with [Snowpack](https://www.snowpack.dev/) will prepare your dependencies. It will then start the development server on http://localhost:300/.
  
 You can navigate to http://localhost:300/ to access your Astro project. This will show some helpful information and a welcome message like the image below:
  
@@ -214,11 +206,11 @@ For this article, we will be using a functional component.
  
 Navigate to the component folder in the main project folder. Create a **Tour.jsx** file in the component folder.
  
-Inside the **Tour.jsx** file you created add the following:
+Inside the **Tours.jsx** file you created add the following:
  
 ```js
  
-import React from 'React';
+import React from 'react';
  
 const Tours = ({ tours }) => {
  
@@ -346,7 +338,7 @@ Let's have an overview of what is in **Tour.astro** file:
  
 * **import  Tours  from '../components/Tours.jsx**: This imports the Tour component written in the previous step. This enables us to pass down the data we fetched as a prop to our **Tours** component.
  
-* **const url = https://course-api.com/React-tours-project**: This specifies the application programming interface(API) where we will fetch our data.
+* **const url = 'https://course-api.com/React-tours-project'**: This specifies the application programming interface(API) where we will fetch our data.
  
 * **const tours = await fetch(url).then(response => response.json())**: This is a built in Javascript function that fetches our data.
  
@@ -443,6 +435,8 @@ You can test your application by following the steps below:
 You should see your web application displayed in your browser.
  
 Navigate to the network part of the developer tool as said before. Refresh the browser.  You will see that javascript, particularly React loads after the webpage finished loading. This shows how powerful Astro is when it comes to web performance.
+
+You can check the source code using this [link](https://github.com/codeInn001/Astro-Review)
  
 ### Conclusion
  
@@ -451,6 +445,8 @@ This article is an introduction to using Astro to build fast and scalable React 
 You can now use this knowledge to build a more dynamic and powerful web application. You can use any of your favorite Javascript frameworks.
  
 Also, you can go ahead and have fun with other component attributes provided by Astro.
+
+Astro is still in beta and can change without warning.
  
 Have fun coding.
  
