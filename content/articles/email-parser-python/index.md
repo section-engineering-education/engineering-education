@@ -52,7 +52,7 @@ def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_P
             email_tar_file.extractall(path=spams_path)
             email_tar_file.close()
 ```
- We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
+We set the paths and the url in the constants. In the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
  
  Two paths for normal and spam emails are needed for storing the emils, so we create them.
  
@@ -102,7 +102,7 @@ print(normal_emails[42].get_content().strip())
 
 #### Viewing the structures of the emails
 
-IN this part, we will look at how to get the structure of the emails and further look at the common types of structures for spam and normal emails.
+In this part, we will look at how to get the structure of the emails and further look at the common types of structures for spam and normal emails.
 
 Paste this in the next cell.
 
@@ -131,7 +131,7 @@ def type_counter(emails):
     return our_count
 ```
 
-IN this code, we have two methods, `get_structures()` and `type_counter()`.
+In this code, we have two methods, `get_structures()` and `type_counter()`.
 
 For the `get_structures()`, we check for the structure. If it is a normal text email, we return `text/plain,` but if it's a multipart type of email, we return multipart, all the parts it contains. Note also that recursion is used if there are many email structures in the sub-emails of that email.
 For any other email structure we display it by return the emails content type(`get_content_type()`).
@@ -144,7 +144,7 @@ We can display one for normal emails using this code:
 print(structures_counter(normal_emails))
 ```
 
-WE check the most common using the `most_common()` method.
+We check the most common using the `most_common()` method.
 
 ```python
 print(structures_counter(spam_emails).most_common())
