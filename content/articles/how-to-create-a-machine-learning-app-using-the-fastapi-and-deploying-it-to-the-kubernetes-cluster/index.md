@@ -28,17 +28,9 @@ This is a simple model that will be used to explain the key concepts used in mac
 The dataset used will contains common names of people and their nationalities.
 Our data used is as shown.
 
-<<<<<<< HEAD
-![A Snip of the data](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/snip.png)
-<<<<<<< HEAD
-
-# =======
-
 ![A Snip of the data](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/snip.png)
 
-> > > > > > > 26e6da310 (edits)
-> > > > > > > eb3899dd0 (new)
-> > > > > > > [CSV File of data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
+[CSV File of data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
 
 ### Installation of the python packages
 
@@ -127,12 +119,12 @@ df.groupby('nationality')['names'].size().plot(kind='bar',figsize=(20,15))
 
 Our bar graph is as shown:
 
-<<<<<<< HEAD
-![Bar Graph](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/bar-graph.png)
-=======
 ![Bar Graph](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-kubernates-cluster/bar-graph.png)
+<<<<<<< HEAD
 
-> > > > > > > 26e6da310 (edits)
+> > > > > > > # 26e6da310 (edits)
+> > > > > > >
+> > > > > > > 9a89ff10e (change)
 
 ### Checking our features
 
@@ -290,9 +282,9 @@ if __name__ == '__main__':
   uvicorn.run(app,host="127.0.0.1",port=8000)
 ```
 
-![Interactive API docs](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/main-doc.png)
-
 ![A Snip of our first route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/first-route.png)
+
+![Interactive API docs](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/main-doc.png)
 
 The above routes are used to show how to make a simple index route using the FastAPI.
 Now we shall add more routes for our machine learning model.
@@ -341,13 +333,7 @@ Interactive API docs: http://127.0.0.1:8000/docs
 
 The route to be used to make a prediction:
 
-# ![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/making-predictions.png)
-
-![All Routes](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/all-routes.png)
-
-The route to be used to make a prediction:
-
-![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/making-predictions.png)
+![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/making-predictions.png)
 
 We have finally served our machine learning model as API using the FastAPI.
 
@@ -554,7 +540,6 @@ minikube dashboard
 ```
 
 Our dashboard will be as shown:
-
 ![Dashboard Overview](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/kubernetes-dashboard.png)
 ![Running Clusters](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernetes-cluster/ui-dashboard.png)
 
