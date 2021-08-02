@@ -1,0 +1,1 @@
+Francisca is an undergraduate student and a determined Front-end web developer. Beside coding, she is also am e-commerce student and a passionate hockey player.
