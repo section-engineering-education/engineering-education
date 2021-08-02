@@ -6,7 +6,7 @@ url: /couchbase-cluster-docker/
 title: Creating Couchbase cluster using Docker compose
 description: This tutorial will explain how to create Couchbase database cluster and deploy to Docker compose
 author: jared-phelix
-date: 2021-08-01T00:00:00-16:00
+date: 2021-08-03T00:00:00-03:00
 topics: [Container]
 excerpt_separator: <!--more-->
 images:
