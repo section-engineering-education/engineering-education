@@ -92,7 +92,8 @@ ec756bf45a97: Waiting
 b216da4530f7: Waiting
 ec756bf45a97: Downloading [> ] 4.294MB/467.3MB
 46635a5df01b: Waiting
-25fa05cd42bd: Downloading [====> ]de18b9aa36b2: Downloading [==================> ] 2.123MB/5.647MBnload complete
+25fa05cd42bd: Downloading [====> ]
+de18b9aa36b2: Downloading [==================> ] 2.123MB/5.647MBnload complete
 19ca04716876: Download complete
 1.966kB/1.966kB
 e5fe9996db61: Waiting
