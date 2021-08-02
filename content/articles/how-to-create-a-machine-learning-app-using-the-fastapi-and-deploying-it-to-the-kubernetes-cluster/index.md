@@ -29,7 +29,6 @@ The dataset used will contains common names of people and their nationalities.
 Our data used is as shown.
 
 ![A Snip of the data](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/snip.png)
-
 [CSV File of data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
 
 ### Installation of the python packages
@@ -120,11 +119,6 @@ df.groupby('nationality')['names'].size().plot(kind='bar',figsize=(20,15))
 Our bar graph is as shown:
 
 ![Bar Graph](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-kubernates-cluster/bar-graph.png)
-<<<<<<< HEAD
-
-> > > > > > > # 26e6da310 (edits)
-> > > > > > >
-> > > > > > > 9a89ff10e (change)
 
 ### Checking our features
 
@@ -329,11 +323,11 @@ Our output is as shown:
 
 Interactive API docs: http://127.0.0.1:8000/docs
 
-![All Routes](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/all-routes.png)
+![All Routes](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-Kubernetes-cluster/all-routes.png)
 
 The route to be used to make a prediction:
 
-![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/making-predictions.png)
+![Prediction route](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/making-predictions.png)
 
 We have finally served our machine learning model as API using the FastAPI.
 
