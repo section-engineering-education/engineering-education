@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /building-nest-js-application-using-redis/
 title: Building a Simple Nest.js Application using Redis
-description: This tutorial will help readers to build a microservice application using Nest.js with Redis as the transporter.
+description: This tutorial will help readers build a microservice application using Nest.js with Redis as the transporter.
 author: joseph-chege
-date: 2021-07-05T00:00:00-11:00
+date: 2021-08-02T00:00:00-13:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-nest-js-application-using-redis/hero.jpg
     alt: Building a Nest.js Application Using Redis
 ---
-Nest.js is a JavaScript framework for building efficient, scalable, and static server-side applications. Nest.js is built on top of React for better rendering and abstraction. This enables you to build powerful React applications. 
+Nest.js is a JavaScript framework used for building efficient, scalable, and static server-side applications. Nest.js is built on top of React for better rendering and abstraction. This enables you to build powerful React applications. 
 <!--more-->
 Nest.js allows you to build React applications that support server-side rendering. Traditionally with React, you can only render on the client-side which impacts SEO negatively.
 
@@ -24,7 +24,7 @@ With server-side rendering, pages are rendered during the build-up phase. The co
 This tutorial will show you how to build a Nest.js microservice application that uses Redis as a message transporter.
 
 ### An overview of a microservice
-Microservice is an architectural design that allows one to create small modules/components of an application that can scale on demand. Each component is packaged independently and can communicate and interact with each other through APIs. 
+A microservice is an architectural design that allows one to create small modules/components of an application that can scale on demand. Each component is packaged independently and can communicate and interact with each other through APIs. 
 
 Nest.js comes with in-built support for microservice architecture and multiple transport layers. These transport layers are in charge of transferring messages between microservice instances. 
 
