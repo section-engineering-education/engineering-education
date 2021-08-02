@@ -16,12 +16,12 @@ Being statically typed with Typescript, it allows you to do various JavaScript t
 
 Nest.js, like other backend frameworks, is designed to deliver an Angular-like experience. As a result, when you create a new Nest.js application, you will be launched into an environment that resembles a normal front-end Angular application. The major distinction is that what you end up creating will be your backend services. You'll set up a server, link it to databases, and do all the typical tasks associated with a back-end-based application.
 
-### A quick glance at GraphQL
+### A glance at GraphQL
 [GraphQL](https://graphql.org/) is a query language for accessing and modifying data in APIs (interconnected data sources). It is compatible with a variety of server-side languages, including Next.js. GraphQL allows you to query your data and receive the results you need.
 
-You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query. So basically, it is used to load data from the server to the client application. It allows you to obtain data from the API into your application considerably more efficiently than traditional methods and services such as [SOAP](https://en.wikipedia.org/wiki/SOAP) and [REST](/engineering-education/rest-api/).
+You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query. Thus, it is used to load data from the server to the client application. It allows you to get data from the API into your application more efficiently than traditional methods and services such as [SOAP](https://en.wikipedia.org/wiki/SOAP) and [REST](/engineering-education/rest-api/).
 
-For example, if you're using REST to access two resources, you'll need two different endpoints to request data from each resource. This also means that when a request is received, the API responds with the whole data payload of that entity. GraphQL allows you to access numerous resources with a single request.
+For example, if you're using REST to access two resources, you'll need two different endpoints to request data from each resource. This also means that when a request is received, the API responds with the whole data payload of that entity. GraphQL allows you to access many resources with a single request.
 
 GraphQL has a type system that allows you to define a schema for your data. For example, a graph made up of nodes and edges can be used to represent the data in your application. The nodes represent objects. The edges represent the relationship between these objects. These reflect the data and the relationships between the data in your application.
 
@@ -31,13 +31,13 @@ Here is an example.
 
 ![graphql-example](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/graphql-example.png)
 
-In this case, the client is requesting the first names of all users. Therefore, as you can see in the answer, we only obtain the users' first names and no redundant data.
+In this case, the client is requesting the first names of all users. Thus, as you can see in the answer, we only get the users' first names and no redundant data.
 
-### A quick glance at Prisma
+### A glance at Prisma
 
-[Prisma](https://www.prisma.io/) has a good modeling language for creating your database and a robust GraphQL ORM (object-relational mapping) for working with databases in JavaScript. Furthermore, it makes developing GraphQL APIs with a database easy. Working with GraphQL allows developers to efficiently fetch data in their apps, while Prisma simplifies the process of connecting up data sources.
+[Prisma](https://www.prisma.io/) has a good modeling language for creating your database. It also has a robust GraphQL ORM (object-relational mapping) for working with databases in JavaScript. Furthermore, it makes developing GraphQL APIs with a database easy. Working with GraphQL allows developers to fetch data in their apps, while Prisma simplifies the process of connecting up data sources.
 
-Prisma has the advantage of being database agnostic. It works with both relational (SQL) and non-relational (NoSQL) databases, including MySQL, PostgreSQL, and MongoDB. That implies we can quickly select a database or swap between databases without changing any code (maybe about six lines you want to set up to connect to the particular database).
+Prisma has the advantage of being database agnostic. It works with both relational (SQL) and non-relational (NoSQL) databases, including MySQL, PostgreSQL, and MongoDB. This implies that we can quickly select a database or swap between databases. Without changing any code (maybe about six lines you want to set up to connect to the particular database).
 
 Prisma wraps your database and exposes it as a GraphQL API. As a result, it provides a GraphQL API that can be used to read and write from the actual database, irrespective of whether we're using SQL or NoSQL.
 
@@ -134,7 +134,7 @@ model Post {
 This will configure the SQLite database and construct the `Post` model. The generator client has always configured for you no need to edit that.
 
 ### Create the first migration
-The benefit of setting this SQL scheme programmatically is to skip a couple of keystrokes.  By going over to an Relational Database Management Systems (RDMS), create a database, tables, and adding all the necessary fields.
+The benefit of setting this SQL scheme programmatically is to skip a couple of keystrokes.  By going over to a Relational Database Management Systems (RDMS), create a database, tables, and adding all the necessary fields.
 
 This helps you move your project from the development to the production environment or between other developers. Your actual schema setup lives in code. This becomes easier to transfer that schema from one person to another or from your developer machine to the production machine. Without having to go to a database manager.
 
@@ -150,7 +150,7 @@ From the above command, we are running our first migration in development mode, 
 
 ![sqlite-db-migrations](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/sqlite-db-migrations.png)
 
-### Setting, Installing GraphQL packages, and adding GraphQL
+### Setting, Installing GraphQL packages and adding GraphQL
 - `@nestjs/graphql`: For providing interaction between GraphQL and Nest.js.
 - `graphql-tools`: For providing an interactive GraphQL playground.
 - `graphql`: For support with native GraphQL setup.
@@ -353,7 +353,7 @@ export class PostResolvers {
 
 The above file exposes all our queries and mutations.
 
-### Connecting Prisma service, post service, and post resolvers with providers
+### Connecting Prisma service, post-service, and post resolvers with providers
 For our resolvers and services to be accessed, we need to encapsulate them in a module as providers. We thus create a _posts.module.ts_ file inside the _src/posts_ folder and add the following:
 
 ```ts
