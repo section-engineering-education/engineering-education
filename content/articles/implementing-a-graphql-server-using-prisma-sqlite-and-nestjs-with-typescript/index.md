@@ -10,16 +10,16 @@ images:
   - url: /engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/hero.png
     alt: Implementing a GraphQL server using Prisma, SQLite, and Nest.js with Typescript Hero Image
 ---
-Nest.js is built on Node.js and Express, which is arguably the most popular way to build servers with JavaScript. Nest.js is a typescript-based JavaScript framework for developing and scaling backend microservices.
+[Nest.js](https://nestjs.com/) is built on Node.js and Express, which is arguably the most popular way to build servers with JavaScript. Nest.js is a typescript-based JavaScript framework for developing and scaling backend microservices.
 <!--more-->
 Being statically typed with Typescript, it allows you to do various JavaScript tasks as an escape hatch. This guarantees that your code is more solid. Furthermore, it makes the code easier to navigate through. This is because everything is strongly typed and more scalable for large applications. This provides an out-of-the-box application architecture that enables developers and teams to construct highly testable, scalable, loosely connected, and easily maintainable applications.
 
 Nest.js, like other backend frameworks, is designed to deliver an Angular-like experience. As a result, when you create a new Nest.js application, you will be launched into an environment that resembles a normal front-end Angular application. The major distinction is that what you end up creating will be your backend services. You'll set up a server, link it to databases, and do all the typical tasks associated with a back-end-based application.
 
 ### A quick glance at GraphQL
-GraphQL is a query language for accessing and modifying data in APIs (interconnected data sources). It is compatible with a variety of server-side languages, including Next.js. GraphQL allows you to query your data and receive the results you need.
+[GraphQL](https://graphql.org/) is a query language for accessing and modifying data in APIs (interconnected data sources). It is compatible with a variety of server-side languages, including Next.js. GraphQL allows you to query your data and receive the results you need.
 
-You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query. So basically, it is used to load data from the server to the client application. It allows you to obtain data from the API into your application considerably more efficiently than traditional methods and services such as SOAP and REST.
+You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query. So basically, it is used to load data from the server to the client application. It allows you to obtain data from the API into your application considerably more efficiently than traditional methods and services such as [SOAP](https://en.wikipedia.org/wiki/SOAP) and [REST](/engineering-education/rest-api/).
 
 For example, if you're using REST to access two resources, you'll need two different endpoints to request data from each resource. This also means that when a request is received, the API responds with the whole data payload of that entity. GraphQL allows you to access numerous resources with a single request.
 
@@ -35,7 +35,7 @@ In this case, the client is requesting the first names of all users. Therefore, 
 
 ### A quick glance at Prisma
 
-Prisma has a good modeling language for creating your database and a robust GraphQL ORM (object-relational mapping) for working with databases in JavaScript. Furthermore, it makes developing GraphQL APIs with a database easy. Working with GraphQL allows developers to efficiently fetch data in their apps, while Prisma simplifies the process of connecting up data sources.
+[Prisma](https://www.prisma.io/) has a good modeling language for creating your database and a robust GraphQL ORM (object-relational mapping) for working with databases in JavaScript. Furthermore, it makes developing GraphQL APIs with a database easy. Working with GraphQL allows developers to efficiently fetch data in their apps, while Prisma simplifies the process of connecting up data sources.
 
 Prisma has the advantage of being database agnostic. It works with both relational (SQL) and non-relational (NoSQL) databases, including MySQL, PostgreSQL, and MongoDB. That implies we can quickly select a database or swap between databases without changing any code (maybe about six lines you want to set up to connect to the particular database).
 
