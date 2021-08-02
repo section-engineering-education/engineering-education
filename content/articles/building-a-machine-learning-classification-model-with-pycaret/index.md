@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-machine-learning-classification-model-with-pycaret/hero.png
+  - url: /engineering-education/building-a-machine-learning-classification-model-with-pycaret/hero.png
     alt: PyCaret model example image 
 ---
 PyCaret is a machine learning (ML) library that is written in Python. It allows developers to train and deploy ML models. When compared with other open-source ML libraries such as scikit-learn, it is a good alternative low-code library that can be used to perform complex machine learning tasks with only a few lines of code.
