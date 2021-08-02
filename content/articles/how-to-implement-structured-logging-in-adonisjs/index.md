@@ -1,50 +1,46 @@
-## How to implement Structured Logging in Adonisjs
-
-Logs are among essential tools for application developers during the debugging process and for analysts monitoring applications in the production environment.
+## How to implement Structured Logging in Adonis.js
+Logs are among the essential tools for application developers during the debugging process and for analysts monitoring applications in the production environment.
 
 Typical logs are textual formats that are easily readable by humans but very difficult for machines to read and process.
 
 Assuming you want to use automated processing to investigate log files, or you want to use algorithms to categorize, index, and search through log files based on specific parameters, typical logs will not work as expected.
 
-That is where Structured Logging becomes useful:
+That is where structured logging becomes useful. Structured logging is a way to record the information in a way that is easy for machines to process.
 
-This article will show the best practice in implementing Structured Logging in Adonisjs, discussing in detail the best ways involved in implementing a scalable Logging System in your RESTFUL API. We will build a real-world app to demonstrate how to debug easily with an excellent Structured Log in AdonisJS.
+This article will show the best practice in implementing structured logging in Adonis.js 5, discussing in detail, the best ways involved in implementing a scalable logging system in your RESTFUL API. 
+
+We will build a real-world app to demonstrate how to debug easily with excellent structured logs in Adonis.js.
 
 ### Prerequisites
+Before proceeding, you are required to have the following:
+1. An understanding of TypeScript and Node.js.
+2. An [understanding of Adonis.js](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
+3. Knowldege of building [APIs with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 
-You should know of these before proceeding with this content.
-
-1. Basic understanding of TypeScript and Node.js
-2. Basic [understanding of Adonis.js](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
-3. Building [APIs with AdonisJS](/engineering-education/build-a-restful-api-with-adonisjs/)
-
-### Goals of the Tutorial
-
-I will be showing you the best practice in handling Structured Logging in Adonisjs, and we will build a real-world Forum app to demonstrate how to boost maintainability in AdonisJS.
+### Goal of the tutorial
+I will be showing you the best practice in handling structured logging in Adonis.js. We will build a real-world Forum app to demonstrate how to boost maintainability in Adonis.js.
 
 In this tutorial, you will learn:
 
-- How to build a high-maintainable app with Adonisjs.
-- Implementing a Structured Logging in AdonisJS Restful API.
-- How to choose what to Log and how to Log it.
-- Learn about the concept of Structured Logging and how to maintain a large App with it.
-- Learn best practices in building large-scale Web apps with AdonisJS.
+- How to build a highly-maintainable app with Adonis.js.
+- How to implement structured logging in Adonis.js Restful API.
+- How to choose what to log and how to log it.
+- About the concept of structured logging and how to maintain a large app with it.
+- The best practices in building large-scale web apps with Adonis.js.
 
-### Scaffolding AdonisJS Project
+### Scaffolding an Adonis.js project
+Getting started with Adonis.js is easy because of its good documentation. To learn more about the latest Adonis.js 5, reading through [Adonis.js 5 ultimate guide](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide) and [building a RESTFUL API with Adonis 5](/engineering-education/build-a-restful-api-with-adonisjs/) to get up to speed.
 
-Getting started with Adonis 5 is easy because of its well-documented documentation. To learn more about the latest AdonisJS 5, reading through [Adonis.js 5 ultimate guide](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide) and [building a RESTFUL API with Adonis 5](/engineering-education/build-a-restful-api-with-adonisjs/) to get up to speed.
-
-To install AdonisJS 5, run the command below:
+To install Adonis.js 5, run the command below:
 
 ```bash
 npm init adonis-ts-app@latest forum-api
 ```
 
-The command creates a new Adonis 5 project, properly configured and ready to be used. We will continue with the Forum API developed with the article on [How to Implement Caching using Adonis.js 5](/engineering-education/how-to-implement-caching-in-adonisjs-5/). You can [clone the repository](https://github.com/Kaperskyguru/adonisjs-forum-api) for an easy setup.
+The command creates a new Adonis.js 5 project, properly configured and ready to be used. We will continue with the Forum API developed with the article on: [How to Implement Caching using Adonis.js 5 tutorial](/engineering-education/how-to-implement-caching-in-adonisjs-5/). You can [clone the repository](https://github.com/Kaperskyguru/adonisjs-forum-api) for an easy setup.
 
-### Setting up Adonis Logger
-
-AdonisJS ships with an [inbuilt logger](https://docs.adonisjs.com/guides/logger) developed on top of one of the fastest logging libraries in Node.js called [Pino](https://github.com/pinojs/pino).
+### Setting up Adonis.js Logger
+Adonis.js ships with an [inbuilt logger](https://docs.adonisjs.com/guides/logger) developed on top of one of the fastest logging libraries in Node.js called [Pino](https://github.com/pinojs/pino).
 
 Log messages can cause a throttling effect on the application due to the overtime addition of log messages. Such an effect includes reduced requests per second.
 
@@ -59,13 +55,13 @@ Logger.info("A info message");
 Logger.warn("A warning");
 ```
 
-### Handling Logging in Adonis 5
+### Handling Logging in Adonis.js 5
 
-You should have cloned the Forum API Project and correctly test and configure it to work correctly.
+At this point, you should have cloned the Forum API project and correctly test and configure it to work correctly.
 
-We will be using AdonisJS default Logger for all the log operations. Let’s look at how to configure the logger.
+We will be using Adonis.js default Logger for all the log operations. Let’s look at how to configure the logger.
 
-Firstly, open `config/app.ts`, and change the value of `generateRequestId` to `true` , allowing Adonis to generate a unique Request ID to identify each request coming to the AdonisJS server.
+Firstly, open `config/app.ts`, and change the value of `generateRequestId` to `true` , allowing Adonis.js to generate a unique request ID to identify each request coming to the Adonis.js server.
 
 ```js
 //...
@@ -192,7 +188,7 @@ export default class ForumsController {
 }
 ```
 
-In the code above, we have added structured Logging to the controller. The controller logs general information, but specific message and the IDs of when it happens.
+In the code above, we have added structured logging to the controller. The controller logs general information, but specific message and the IDs of when it happens.
 
 Next, open `AuthController.ts` in the same directory and paste in the following code.
 
@@ -254,10 +250,12 @@ Now that we have logged every activity on our Forum API. Let’s test to see the
 
 ![Preview Logging](/engineering-education/how-to-implement-structured-logging-in-adonisjs/preview_loging.png)
 
-If you noticed, the logs are more structured with useful details such as `request_id`, `user` and `user_id` to specifically identify which User made the request and which Forum was retrieved.
+If you noticed, the logs are more structured with useful details such as `request_id`, `user` and `user_id` to specifically identify which user made the request and which Forum was retrieved.
 
 ### Conclusion
-
 Structured logging is a lot more beneficial if done right. Internal teams can use logs to identify errors and trace where and who caused a particular error. Structured logging can also be analyzed by different log monitoring services such as LogRocket or Santry.
 
-In this tutorial, you have learned how to implement structured logging and improve the information we receive if something goes wrong with your Adonis projects.
+In this tutorial, you have learned how to implement structured logging and improve the information we receive if something goes wrong with your Adonis.js projects.
+
+
+Happy coding!
