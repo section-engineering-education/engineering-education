@@ -199,15 +199,16 @@ One of the major problems of not using semantic HTML is the `naming convention` 
 From the example, we had to come up with an individual naming style. There was no set of structures to follow. Handling this code for developers, especially new ones joining the team, can quickly become confusing and difficult to understand. 
 
 ### HTML layout with semantics
-The example below is about showcasing a simple layout with semantic HTML. It should be noted that semantic HTML is a feature of HTML5 so declaring `doctype html` should be a given.
+The example below is about showcasing a simple layout with semantic HTML.
+
+It should be noted that semantic HTML is a feature of HTML5 so declaring `doctype html` should be a given.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Semantic HTML</title>
-
+  
     <style>
         * {
             margin: 0px;
@@ -361,22 +362,19 @@ For instance:
 
 `<header>` will always be `<header>`
 
-**What's happen here?**
-
-1. we used up to five semantic tags to drive the importance of using semantics.
-1. the `header` tag is for the name of the project or website.
-1. the `nav` tag will guide the new developer to know that the nav stands for navigation (where all the useful links reside).
-1. we have the middle area which is called the `main` tag in HTML5.
-1. we have the `footer` tag showcasing the closing section of the web page.
-1. in the `main` area we can have a lot of things inside. Semantic HTML comes baked with its special tag some of them include `section`, `article`, and `aside` tags.
-1. the `section` area showcase different sections of our web page. Multiple sections can be created. the `section` can be in the `header`, `footer`.
-1. the `aside` area showcase the area of our web page not too relevant. It can also serve as the sidebar.
+#### What's happen here?
+- We used up to five semantic tags to drive the importance of using semantics.
+- The `header` tag is for the name of the project or website.
+- The `nav` tag will guide the new developer to know that the nav stands for navigation (where all the valuable links reside).
+- We have the middle area, which is called the `main` tag in HTML5.
+- We have the `footer` tag showcasing the closing section of the web page.
+- The `section` area showcases different sections of our web page. 
+- The `aside` area showcases the area of our web page not too relevant. It can also serve as the sidebar.
 
 Finally, these are the basic semantic HTML5 tags, which can make our HTML more readable and easier to understand. However, it does not affect the view of the web page.
 
 ### Conclusion
-
-I am glad that you have reached the end of this tutorial, I encourage you to use the concepts you have been introduced within your next project.
+To wrap up, we have learned about semantic elements in HTML. I encourage you to use the concepts you have been introduced within your next project.
 
 Happy coding!
 
