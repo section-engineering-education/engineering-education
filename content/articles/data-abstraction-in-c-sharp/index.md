@@ -6,7 +6,7 @@ url: /data-abstraction-in-c-sharp/
 title: Data Abstraction in C#
 description: This article takes the reader through understanding data abstraction in C#. Data abstraction is the process of identifying properties of an item that are required while ignoring the rest.
 author: dickson-gitau
-date: 2021-07-31T00:00:00-03:00
+date: 2021-08-02T00:00:00-03:14
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,9 @@ images:
 ---
 The feature of data abstraction is that only the most important details are displayed to the user. The user is not shown the units that are trivial or non-essential.
 <!--more-->
-It is the process of identifying the properties of an item that are required while ignoring the rest. An item's characteristics and behaviours distinguish it from other items of the same type.
+It is the process of identifying the properties of an item that are required while ignoring the rest. An item's characteristics and behaviors distinguish it from other items of the same type.
 
-Characteristics and behaviours also help in categorizing and grouping items. An object's properties and actions distinguish it from other objects.
+Characteristics and behaviors also help in categorizing and grouping items. An object's properties and actions distinguish it from other objects.
 
 ### Table of contents
 - [Types of abstraction](#types-of-abstraction)
@@ -61,7 +61,7 @@ There is no body in a given abstract method and it is just specified in the abst
 
 This class can be derived from another class, which can then override the same abstract method. To offer functionality to the abstract functions, it is required to create/derive a subclass from the abstract class.
 
-Abstract methods are frequently stated where two or more subclasses are anticipated to fulfil the same task differently. Because subclasses are frequently needed to implement an interface, the abstract superclass may provide multiple interface methods while leaving it to the subclasses to implement their variations of the abstract methods.
+Abstract methods are frequently stated where two or more subclasses are anticipated to fulfill the same task differently. Because subclasses are frequently needed to implement an interface, the abstract superclass may provide multiple interface methods while leaving it to the subclasses to implement their variations of the abstract methods.
 
 The rules for abstract methods and abstract classes in C# are as follows:
 1. If a method isn't abstract, extern, or partial, it should be designated abstract using the abstract modifier; otherwise, a compile-time error will occur. The method must declare a body because it is not abstract, extern, or partial.
@@ -128,9 +128,9 @@ namespace AbstractDemo
 }
 ```
 
-Solutions:
+#### Solutions
 
-Declare the class abstract as shown below:
+- Declare the class abstract as shown below:
 
 ```c#
 public abstract class Sample : Demo
@@ -142,7 +142,7 @@ public abstract class Sample : Demo
 }
 ```
 
-Override all abstract methods as shown below:
+- Override all abstract methods as shown below:
 
 ```c#
 public class Sample : Demo
@@ -226,9 +226,9 @@ Abstract methods in c# have the following characteristics:
 ### Use of abstract classes and abstract methods
 In some cases, we want to build a superclass that declares the structure of abstraction without providing a complete implementation of all methods. That is, there are instances when we wish to design a superclass that just defines a generalized form that all its subclasses will share, leaving each subclass to fill in the specifics.
 
-Consider the traditional `shape` example; which can be found in a computer-aided design system or a gaming simulation. The base type is `shape`, and each form has its colour, size, and other characteristics.
+Consider the traditional `shape` example; which can be found in a computer-aided design system or a gaming simulation. The base type is `shape`, and each form has its color, size, and other characteristics.
 
-Specific shapes such as circles, squares, triangles, and so on are derived (inherited) from this, each of which may have extra properties and behaviours. Certain shapes, for example, can be flipped. Certain behaviours may differ, such as when calculating the area of a square.
+Specific shapes such as circles, squares, triangles, and so on are derived (inherited) from this, each of which may have extra properties and behaviors. Certain shapes, for example, can be flipped. Certain behaviors may differ, such as when calculating the area of a square.
 
 The code below shows the use of abstract classes and abstract methods:
 
@@ -238,12 +238,10 @@ using System;
 namespace abstraction
 {
 
-
     abstract class Shape
     {
         public abstract int perimeter();
     }
-
 
     class Square : Shape
     {
@@ -260,7 +258,6 @@ namespace abstraction
             return (side + side)*2;
         }
     }
-
 
     class abstraction
     {
