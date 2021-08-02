@@ -11,6 +11,8 @@ React is one of the common and famous front web frameworks. Nevertheless, in mos
 
 This tutorial will build a very handy React full-stack application and then dockerize and run the application environments in Docker containers. We will dockerize this full-stack React application with Node.js as the back-end service, MySQL as the application database, and NginX for reverse proxy. Nginx will be used for two objectives. We'll utilize it as a router in front of our front-end and Node.js express servers, as well as an HTTP server, to deliver our built React front-end code.
 
+We will build a simple book review application that uses React as the front-end and Node.js to spin up a server that will help us process all requests to either add, update, or delete book reviews from a database.
+
 ### Prerequisites
 
 - Have [Node.js](https://nodejs.org/en/download/) and [Docker](https://www.docker.com/products/docker-desktop) installed on your computer.
@@ -295,7 +297,7 @@ Note how the endpoint is written here with the `/api`. This is because, in the N
 
 In this case, we will be creating Node.js as an `api` service in the same container that will run this React application. When Axios requests `/api/get`, the Nginx server will redirect it to the endpoint `/get` on the back-end server.
 
-Normally, you assign `http://localhost:3001/get/` instead of `/api/get` when you run the application directly from the base metals. But in this case, that won't work as the application is running as a virtual instance where Node.js is dockerized. For that reason, the Node.js (server) will run as a container instance as API on the docker-compose.yml. We will implement this logic later.
+Normally, you assign `http://localhost:3001/get/` instead of `/api/get` when you run the application directly from the base metals. But in this case, that won't work as the application is running as a virtual instance where Node.js is dockerized. For that reason, the Node.js (server) will run as a container instance as API on the `docker-compose.yml`. We will implement this logic later.
 
 #### Step7: Rendering the React component
 
@@ -469,6 +471,18 @@ Here will are exposing port 3001 (the port that is running the Node.js server ap
 
 ### Setting the Nginx server
 
+Before diving into what the Nginx server does, let's look at a proxy and a reverse proxy.
+
+A proxy server is a server that retrieves data from the Internet on behalf of a user, such as a web page. It acts as a bridge between two entities (the client and the server) and provides a service (requests and responses). The proxy server will operate as a go-between, retrieving that web page for you. So now, when you go to a website, the proxy server receives the request from your computer, and the proxy server directly retrieves the web page on your behalf and sends it to your computer. There are two primary proxy servers.
+
+- Forward proxy server - handles the request to the server from different clients.
+
+- A [reverse proxy](/engineering-education/what-are-reverse-proxies/) server functions in the opposite way that a forward proxy server works. In a forward proxy server, a client connects to the server, but in reverse proxy, the server connects to the client. A forward proxy is thus for clients, while a reverse proxy is for servers. In this case, the reverse proxy server makes requests from one or more destination servers on behalf of the client.
+
+A reverse proxy server can be run on a Nginx instance. It enables you to have data on the public end in front of an internal server that you don't want the public to have direct access to.
+
+In this application, we will access both the client and the server using the Nginx proxy. Also, when using Nginx, changes made to the application will reflect immediately since the whole application is being served on a reverse proxy architecture.
+
 Navigate to the project root directory and create an Nginx folder. Here we will write the Nginx server proxy configurations to power up both the client and server API together. Inside the Nginx folder, create a `default.conf` file. We will the following into it.
 
 ```bash
@@ -505,7 +519,7 @@ Here we are;
 
 - Adding the two apps upstreams, the client and the server API, and adding the ports assigned to each app. An upstream module is used to define a group of servers that the proxy pass can reference.
 - Creating our main config, which is the Nginx server listening to port 80.
-- Adding the location `/`. `/` will redirect to the client-server. Note that we are setting `proxy_pass` as `http://client`. The client is the name of the service that we will configure in our docker-compass.yml file to power up the client React application.
+- Adding the location `/`. `/` will redirect to the client-server. Note that we are setting `proxy_pass` as `http://client`. The client is the name of the service that we will configure in our `docker-compose.yml` file to power up the client React application.
 - Adding the location `/sockjs-node`. for the client to make the web sockets connection and connect to the server, we should define the `sockjs-node` path here.
 - Adding the location `/api`. Remember we added this to the Axios requests URLs. This will redirect to the Node.js back-end. `api/anything` should redirect to the parameter `/$1`, which is any section of our Node.js routes such as `/get`.
 
@@ -520,7 +534,7 @@ COPY ./default.conf /etc/nginx/conf.d/default.conf
 
 ### Setting up the docker-compose.yml
 
-Now we have all the configurations for the client, and the server API hooked to the Nginx server and ready to spin up everything together with the docker-compose.yml, including our database. At the root of your project, create a docker-compose.yml file.
+Now we have all the configurations for the client, and the server API hooked to the Nginx server and ready to spin up everything together with the `docker-compose.yml`, including our database. At the root of your project, create a `docker-compose.yml` file.
 
 ```yml
 version: '3.8'
@@ -646,7 +660,7 @@ At this point, your project should at least have these files and folders.
 
 ### Run and test the fully containerized application instance
 
-All is now ready. On your project root directory, execute the following command to run the docker-compose.yml file.
+All is now ready. On your project root directory, execute the following command to run the `docker-compose.yml` file.
 
 ```bash
 docker-compose up --build
@@ -670,4 +684,18 @@ To start interacting with the application, open `http://localhost:3050/` on a br
 
 We have created a front-end application using React and a back-end API using Node.js. Docker has helped us o created a virtual instance that allows the two to communicate interactively with the back-end database.
 
+The code for this project can be found on [GitHub](https://github.com/mosesreigns/Build-and-Dockerize-a-Full-stack-React-app-with-Node.js-MySQL-and-Nginx-for-reverse-proxy).
+
+https://github.com/mosesreigns/Build-and-Dockerize-a-Full-stack-React-app-with-Node.js-MySQL-and-Nginx-for-reverse-proxy
 I hope you find this tutorial informative and helpful.
+
+### Further reading
+
+[Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+[Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
+[Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+[How to Containerize an AngularJS Application Featuring Nginx Using Docker Containers](/engineering-education/containerizing-an-angular-app-featuring-nginx-web-server-using-docker/)
+[Docker images on Google cloud](/engineering-education/docker-images-on-google-cloud/)
+[Docker Push for Publishing Images to Docker Hub](/engineering-education/docker-push-for-publishing-images-to-docker-hub/)
+[How to Deploy Docker Container to a Kubernetes Cluster](/engineering-education/deploy-docker-container-to-kubernetes-cluster/)
+[Using ECS to deploy a docker app to AWS](/engineering-education/using-ecs-to-deploy-docker-app-to-aws/)
