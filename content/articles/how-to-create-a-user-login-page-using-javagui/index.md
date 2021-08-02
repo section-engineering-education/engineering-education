@@ -1,7 +1,21 @@
-### how to create a user login page using java GUI
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-user-login-page-using-javagui/
+title: How to create a user login page using Java GUI
+description: In this article, we will understand what GUIs are, Java's GUI libraries and its components. We will also learn to build a simple login page using Java GUI.
+author: abdulazeez-saidu
+date: 2021-08-02T00:00:00-21:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-a-user-login-page-using-javagui/hero.jpg
+    alt: Java GUI image
+---
 Graphical User Interfaces were introduced in reaction to the perceived steep learning curve of Command-Line Interfaces (CLIs). In this article, we will learn how to build a simple GUI using Java.
-
+<!--more-->
 Java provides a rich set of libraries to create GUIs in a platform-independent way. GUIs offer a visual display of components. Components such as labels, text fields, buttons, checkbox, JPanel, JFrame on the screen.
 
 Java's original GUI library was called Abstract Window Toolkit (AWT). Later, it was replaced by Swing in Java SE 1.2. Since then, Swing has remained the primary Java GUI technology.
@@ -12,7 +26,7 @@ Java's original GUI library was called Abstract Window Toolkit (AWT). Later, it 
 
 ### Goal
 In this tutorial, we will learn how to design a simple user login page like this:
-![Login page](/engineering-education/how-to-create-a-user-login-page-using-java-gui/loginPage.png)
+![Login page](/engineering-education/how-to-create-a-user-login-page-using-javagui/loginPage.png)
 
 ### Prerequisites
 1. Basic understanding of Java and GUIs.
@@ -29,7 +43,7 @@ To create a project in Eclipse:
 
 Once you have set up, your workspace should look like this:
 
-![java gui](/engineering-education/how-to-create-a-user-login-page-using-java-gui/structure.png)
+![java gui](/engineering-education/how-to-create-a-user-login-page-using-javagui/structure.png)
 
 To familiarize yourself with Eclipse, it is recommended to read [this](http://people.cs.uchicago.edu/~kaharris/10200/tutorials/eclipse/Step_02.html) article.
 
