@@ -63,11 +63,11 @@ The servlet high-level architectural diagram is shown below. Let's have a look a
 A web container is a server-side application that manages and handles all requests that come in via servlets, JSP pages, or perhaps any other file system.
 
 ### Extensions on the server
-As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages require a `container` or Web server to enable dynamic Web page functionality. Independent Web server vendors offer various proprietary solutions in the form of `APIs` to satisfy this requirement.
+As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages need a `container` or Web server to enable dynamic Web page functionality. Independent Web server vendors offer various proprietary solutions in the form of `APIs` to meet this need.
 With the help of these APIs, we can develop Web-based apps. As part of the Java Platform Enterprise Edition, which defines standards for creating dynamic Web applications in Java, Java Servlet is one of the component APIs.
 > It's vital to understand the necessity for something before learning about it; after all, this isn't the only technology for producing dynamic Web sites. 
 
-There are other Web server extensions that are linked to Servlet technology, such as `CGI scripts` and `Hypertext Preprocessor` (PHP). Java Servlets, on the other hand, are more acceptable since they overcome CGI's constraints, such as slow performance and limited scalability.
+There are other Web server extensions that are linked to Servlet technology. Such as `CGI scripts` and `Hypertext Preprocessor` (PHP). Java Servlets, on the other hand, are more acceptable since they overcome CGI's constraints, such as slow performance and limited scalability.
 
 ### Common Gateway Interface
 `Common Gateway Interface` is an independent application that can process user requests and creating dynamic content. It is built in any of the computer languages such as C or C++.
@@ -94,7 +94,7 @@ The most important feature of a servlet is that it is unaffected by server confi
 #### Disadvantages
 1. Creating a servlet is a time-consuming process.
 2. Because exceptions are not thread-safe, they must be addressed while creating a servlet.
-3. To program a servlet, developers may require additional expertise.
+3. To program a servlet, developers may need more expertise.
 
 ### The Servlet Container
 `The Servlet container`, often known as the Servlet engine, is a group of nodes that provide the source code for Java Servlet elements.
