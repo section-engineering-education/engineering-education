@@ -137,7 +137,7 @@ Output:
  str]
 ```
 
-Our dataset is made up of strings and integers.
+The first column of our dataset an integer and the remaining columns are strings as shown in our output.
 
 ### Plot the Class distribution
 
@@ -177,9 +177,12 @@ Output:
  'class']
 ```
 
-Our target will be the class column.
+The column titled 'class' is our target variable.
 
 ### Getting Features
+
+Features are independent variables that will act as user inputs. The user will be able to feed this inputs into the system for the system to make predictions.
+All the 'feature_names' shown below is what the model will use to make predictions and a user must input them.
 
 ```python
 feature_names = ['Age',
@@ -211,7 +214,7 @@ Before we begin, we need to split our dataset into a training set and a testing 
 train_data,test_data = df.random_split(0.75)
 ```
 
-- Shape of the original data.
+#### Shape of the original data
 
 ```python
 df.shape()
@@ -223,7 +226,7 @@ Output:
 (520, 17)
 ```
 
-- Shape of our training set.
+#### Shape of our training set
 
 ```python
 train_data.shape
@@ -240,6 +243,8 @@ After splitting our data into a training and a testing set, we can begin buildin
 ### Modelling Algorithm
 
 TuriCreate supports different classification algorithms, in our case, we will use the [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
+We use logistic regression since our model has a binary output. Our output can be either be positive or a negative, to show if a person is at risk of getting diabetes or not.
+Logistic regression is also better suited for our problem since this algorithm tends to give higher accuracy and is less inclined to over-fitting.
 
 - To use the logistic regression algorithm use the foloowing command:
 
@@ -275,9 +280,12 @@ Starting Newton Method
 SUCCESS: Optimal solution found.
 ```
 
-TuriCreate will be able to use both the training accuracy and Validation accuracy through the iteration. Here we iterate 7 times, and the Training accuracy and Validation accuracy after 7 iterations will be 0.965517 0.842105, respectively.
+TuriCreate iterates through the dataset several times to get the 'Training Accuracy' and 'Validation Accuracy' after each iteration. Here we iterate 7 times, and the Training accuracy and Validation accuracy after 7 iterations will be 0.969716 and 0.843725, respectively.
 
 ### Getting the model summary
+
+After training our model, we can now check the model summary. Model summary shows us all the available classes and feature classes.
+Model summary gives us a deeper understanding of our model that enables us to gauge if our model will work well when making predictions.
 
 ```python
 logistic_model.summary()
@@ -330,7 +338,7 @@ Age                            : -0.0729
 
 ### Model Evaluation
 
-This is assessing our model to find out how well it learned. We do this by using the test_data
+This is assessing our model to find out how well it learned. We do this by using the 'test_data'.
 
 ```python
 metrics = logistic_model.evaluate(test_data)
@@ -348,11 +356,23 @@ metrics['accuracy']
 
 ### Making Predictions
 
-- Rule of making a prediction
-  To make predictions, you must submit an SFrame as input.
+#### Rule of making a prediction
 
-- Sample SFrame
-  Run the following command to create a sample SFrame.
+To make predictions, you must submit an SFrame as input.
+SFrame means scalable data frame, its column-mutable dataframe object that can scale to big data and columns can be added and subtracted with ease SFrame.
+It also enables our model read the users input easily.
+The following data formats are supported when constructing an SFrame.
+
+1. CSV file (comma separated value).
+2. SFrame directory archive (A directory where an sframe was saved previously).
+3. General text file.
+4. A Python dictionary.
+5. Pandas DataFrame.
+6. JSON
+
+#### Sample SFrame
+
+Run the following command to create a sample SFrame.
 
 ```python
 sf = {'Age': 41,
@@ -374,15 +394,16 @@ sf = {'Age': 41,
  'weakness': 'Yes'}
 ```
 
-- Read from the created SFrame
+#### Read from the created SFrame
 
 ```python
 prediction1 = tc.SFrame({'data':[sf.values()]})
 ```
 
-- Make prediction
-  The following command will be used to make a prediction using the above SFrame as input:
-  The output will be either positive or negative to show if a person may be at risk or not.
+#### Make prediction
+
+The following command will be used to make a prediction using the above SFrame as input:
+The output will be either positive or negative to show if a person may be at risk or not.
 
 ```python
 logistic_model.predict(prediction1)
@@ -404,8 +425,11 @@ logistic_model.save('diabetes_prediction.model')
 
 ### Conclusion
 
-In this tutorial, we have learned how to create a machine learning model using Turi Create. We started by creating SFrames to load our dataset. We then did data manipulation for us to know the structure of the data we are working with. Finally, after properly understanding our data, we started to build a machine learning model to predict if a person is at risk of getting diabetes.
-This tutorial is beneficial for someone who wants to learn TuriCreate so that they can be able to create machine learning models and efficiently.
+In this tutorial, we have learned how to create a machine learning model using Turi Create. We started by creating SFrames to load our dataset. We then did data manipulation for us to know the structure of the data we are working with.
+
+Finally, after properly understanding our data, we build a machine learning model to predict if a person is at risk of getting diabetes.
+
+This tutorial is beneficial for someone who wants to learn TuriCreate so that they can be able to create machine learning models more efficiently.
 
 ### References
 
