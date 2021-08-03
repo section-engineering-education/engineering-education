@@ -115,13 +115,14 @@ The allocated size in the array is stored in a variable named **length.** The le
 ```Java
 int asize = a.length;
 ```
-The instance variable length is set by default to the size of the array created in situations where the size of the array is not set. Once an array is created its length can not be changed but only through creating a new array by changing the set size of the array.
+The instance variable length is set by default to the size of the array created in situations where the size of the array is not set. Once an array is created, its length can not be changed but only through creating a new array by changing the set size of the array.
 
 ### One and two-dimensional array
-The one-dimensional array is also referred to as the single dimensional array and it only uses one subscript []. The first element will be assigned to the 0th index and the last will be stored in the (length-1)index.
-A single-dimensional array will only have one subscript of any datatype. The values of the array must be of the same datatype as initialized failure to which a compile-time error is displayed during storage.
-Here is an example of a single-dimensional array;
+The one-dimensional array is also referred to as the single-dimensional array, and it only uses one subscript []. 
 
+The first element will is assigned to the 0th index, and the last will be stored in the (length-1)index. A single-dimensional array will only have one subscript of any datatype. The array's values must be of the same datatype as initialized failure to which a compile-time error is displayed during storage. 
+
+Here is an example of a single-dimensional array;
 ```Java
  import java.util.*;
  public class OneDimensionalArray {
@@ -131,11 +132,11 @@ Here is an example of a single-dimensional array;
    }
  }
  ```
-
-The output of the above code is; [51, 27, 73, 94, 55, 60, 78, 48, 49, 19].
-The two-dimensional array uses more than one subscript of which they represent the rows and the columns. This enables us to store values in a table, the first subscript represents the number of rows while the second subscript represents the number of columns.
-Creating a two-dimensional array;
-
+ The output of the above code is; `[51, 27, 73, 94, 55, 60, 78, 48, 49, 19]`. 
+ 
+ The two-dimensional array uses more than one subscript, which represents the rows and the columns. This enables us to store values in a table. The first subscript represents the number of rows, while the second subscript represents the number of columns. 
+ 
+ Creating a two-dimensional array;
 ```Java
 public class MultiDimensionalArray{
 
@@ -145,16 +146,16 @@ public class MultiDimensionalArray{
         marks[0][0]=20;
         marks[0][1]=90;
         marks[0][2]=56;
-       marks[0][3]=34;
+        marks[0][3]=34;
         
         marks[1][0]=47;
-       marks[1][1]=78;
+        marks[1][1]=78;
         marks[1][2]=12;
         marks[1][3]=34;
         
-       marks[2][0]=74;
-       marks[2][1]=98;
-       marks[2][2]=32;
+        marks[2][0]=74;
+        marks[2][1]=98;
+        marks[2][2]=32;
         marks[2][3]=25;
         
         System.out.println(marks[0][0] +"" +marks[0][1] +"" + marks[0][2] +"" +marks[0][3] +"");
@@ -164,11 +165,9 @@ public class MultiDimensionalArray{
 }
 
 ```
-
 A table with 12 integer values is created. Each element in the multidimensional array should be of the same base type as declared.
 
 Finding the length of a multidimensional array;
-
 ```Java
 import java.util.*;
 public class MultidimensionalArray {
@@ -188,17 +187,16 @@ public class MultidimensionalArray {
     }
 }
 ```
-
 the output of this program will be;
 
 Length of row 1: 3
 Length of row 2: 4
 Length of row 3: 1
 
-The length of a row in the array is equivalent to the total value in the row.
+The size of a row in the array is equivalent to the total value in the row.
 
 ### Sorting arrays
-The sort method in the array is used to rearrange the elements in an array in either a descending or ascending order
+The `sort` method in arrays is used to rearrange elements in an array in either a descending or ascending order.
 
 ```Java
 import java.util.Arrays;
@@ -219,18 +217,20 @@ import java.util.Collections;
  }
  ```
 
-After sorting the array the output is as follows;
+After sorting the array, the output is as follows;
 Output:
 
-Array before sorting: [34, 65, 75, 84, 76, 45, 120]
+Array before sorting: `[34, 65, 75, 84, 76, 45, 120]`
 
-Sorted array in descending order: [120, 84, 76, 75, 65, 45, 34]
+Sorted array in descending order: `[120, 84, 76, 75, 65, 45, 34]`
 
-Sorted Array in ascending order: [34, 45, 65, 75, 76, 84, 120]
+Sorted Array in ascending order: `[34, 45, 65, 75, 76, 84, 120]`
 
-To sort the array in descending order you use the reverseorder() method imported from the collection, therefore the reverse order has to involve the collection method.
+To sort the array in descending order, you use the `reverseorder()` method imported from the collection. 
 
-By the use of multidimensional array we can create a multiplication tabe of 10 by 10 that is 10 rows and 10 columns
+**Note:The reverse order has to involve the collection method.**
+
+By the use of a multidimensional array, we can create a multiplication table of ten by ten(that is, ten rows and ten columns).
 
 ```Java
 public class Main {
@@ -273,5 +273,5 @@ Output:
  9	|  18	|  27	|  36	|  45	|  54	|  63	|  72	|  81	|  90	| 
  10	|  20	|  30	|  40	|  50	|  60	|  70	|  80	|  90	|  100	| 
 
-### conclusion
-We have been able to go through and understand arrays. We have also seen how to approach arrays through for loop. The sorting of arrays can be of great help to arrange data and sort out data in either ascending or descending orders.
+### To wrap up
+We have been able to go through and understand arrays. We have also seen different ways how to approach arrays. The sorting of arrays can help arrange data and sort out data in either ascending or descending orders.
