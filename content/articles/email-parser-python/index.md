@@ -92,7 +92,7 @@ In the `load_emails()`, we open the appropriate directories as readable and in b
 
 We then call the `load_emails()` method to load the emails.
 
-In the next cell, we can have a look at a sample of a ham email. 
+In a new cell, we can have a look at a sample of a ham email. 
 
 ```python
 print(ham_emails[42].get_content().strip())
