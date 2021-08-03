@@ -52,18 +52,19 @@ The servlet high-level architectural diagram is shown below. Let's have a look a
 
 2. **Web server**: A web server's major purpose is to process the requests and replies that a user sends over time and to keep track of how a web user may access the files that are housed on the server. The server in question is a piece of software that controls access to a network's centralized resource or service. Webservers are divided into two categories:
 
-- Web server that is static
-- Web server that is constantly updated
+- A web server that is static
+- A web server that is constantly updated
 
 3. **Web container**: Another common component in servlet design is the web container, which is responsible for interacting with the servlets. A web container has two primary functions:
 
 - Servlet lifecycle management
-- mapping of URLs
+- Mapping of URLs
 
 A web container is a server-side application that manages and handles all requests that come in via servlets, JSP pages, or perhaps any other file system.
 
 ### Extensions on the server
 As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages need a `container` or Web server to enable dynamic Web page functionality. Independent Web server vendors offer various proprietary solutions in the form of `APIs` to meet this need.
+
 With the help of these APIs, we can develop Web-based apps. As part of the Java Platform Enterprise Edition, which defines standards for creating dynamic Web applications in Java, Java Servlet is one of the component APIs.
 > It's vital to understand the necessity for something before learning about it; after all, this isn't the only technology for producing dynamic Web sites. 
 
@@ -78,7 +79,7 @@ When a client requests dynamic Web pages using a CGI program, the Web server car
 - The process then launches a new one to handle the client's request.
 - Invokes the CGI application and delivers the request information to the server inside the context of the current process.
 - The answer from the CGI application is collected.
-- HTTP response produced and delivered to client once the process has been ended.
+- HTTP response produced and delivered to the client once the process has ended.
 
 As a result, the CGI server must establish and delete processes for each request. It's simple to see how this technique works for a small number of clients, but as the number of customers grows, the strain on the server grows, and the time it takes to process requests grows as well.
 
