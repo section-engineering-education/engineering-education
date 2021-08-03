@@ -1,4 +1,4 @@
-In this tutorial, we will understand what it means to build software from the source and further proceed with building Tensorflow 2.5. from source.
+In this tutorial, we will understand what it means to build software from the source and further proceed with building Tensorflow 2.5.0 from source.
 
 - [Introduction](#introduction)
 - [What does it mean to build software from source?](#what-does-it-mean-to-build-software-from-source)
@@ -28,7 +28,7 @@ Executables or packages are made available through GitHub, BitBucket or made ava
 - How do we generate executable files or packages?
 - How do we make the coding process OS agnostic?
 
-I am sure you have many more questions, which I encourage you to write down immediately. So let us answer the above listed questions. 
+I am sure you have many more questions, which I encourage you to write down immediately. So let us answer the above-listed questions. 
 
 The first principles suggest that we write OS-agnostic code and somehow magically get code optimized for various OS distributions. The magic lies in the process called compiling. First, the source code is compiled so that the OS can understand the source code. 
 
@@ -40,7 +40,7 @@ In Linux, we use the commands `make` and `cmake` to build from source. These com
 
 #### Improved control over installation
 
-Consider the example of TensorFlow. If we want to introduce some optimizations related to the way convolution operation is handled, how would we change the behaviour of the library? We begin by optimizing the convolution operation implemented in the library. Once done, we can build the package from the source code to make use of the newly introduced optimizations.
+Consider the example of TensorFlow. If we want to introduce some optimizations related to the way convolution operation is handled, how would we change the behavior of the library? We begin by optimizing the convolution operation implemented in the library. Once done, we can build the package from the source code to make use of the newly introduced optimizations.
 
 
 #### Introducing custom features 
@@ -58,7 +58,7 @@ The task of building TensorFlow 2.5.0 from source in Windows is a tedious one. T
 
 When given a prompt to download Ubuntu WSL from the Windows Store, choose Ubuntu 18.04 as the OS release.
 
-On the other hand, if you are using a Ubuntu system, then you can skip the above steps:
+On the other hand, if you are using the Ubuntu system, then you can skip the above steps:
 
 Let us initially install `curl`, which will be used to download `bazelisk.`
 
@@ -88,7 +88,7 @@ $ bazel version
 Bazelisk version: v1.10.0
 Build label: 1.10.0
 ```
-Once we have reached this stage, we move to the official guide on TensorFlow documentation. In the docs, there is a list of compatible versions of Bazel and TensorFlow versions. 
+Once we have reached this stage, we move to the official guide on the TensorFlow documentation. In the docs, there is a list of compatible versions of Bazel and TensorFlow versions. 
 
 ![](/engineering-education/build-tensorflow-from-source/tensorflow-bazel-compatibility.png)
 
@@ -120,7 +120,7 @@ Once downloaded and untarred, we discard the .tar.gz file and cd into the direct
 $ rm v2.5.0.tar.gz
 $ cd tensorflow-2.5.0
 ```
-We know that for TF 2.5.0, we need Bazel version 3.7.2. Let us set the parameter `TF._MAX_BAZEL_VERSION` in the `configure.py` file to `3.7.2`. Let us verify the same using the following command.
+We know that for TF 2.5.0, we need Bazel version 3.7.2. Let us set the parameter `TF._MAX_BAZEL_VERSION` in the `configure.py` file to `3.7.2`. Let us verify the same using the following command:
 
 ```bash
 $ grep -r _TF_MAX_BAZEL_VERSION .
@@ -151,7 +151,7 @@ Couple of things to note here.
 - For the other parameters while running `configure.py` file, accept the defaults for CPU only version. You may press enter to accept the defaults. 
 
 
-In the future however, use Bazelisk to build the package suited to your needs.
+In the future, however, use Bazelisk to build the package suited to your needs.
 
 ```bash
 $ bazel build //tensorflow/tools/pip_package:build_pip_package
