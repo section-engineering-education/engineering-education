@@ -22,14 +22,14 @@ Servlets are web server-based applications. Other technologies used to produce d
 A Java servlet is a Java program that runs on a Java-enabled web server or application server. They are used to receive a request from a web server, process it, generate a reply, and then transmit the reply back to the webserver.
 
 ### Table of content:
-- [Properties and execution Java servlets](#properties-and-execution-java-servlets)
+- [Properties and execution of Java servlets](#properties-and-execution-java-servlets)
 - [The Servlet Architecture](#the-servlet-architecture)
 - [Extensions on the server](#extensions-on-the-server)
 - [Common Gateway Interface](#common-gateway-interface)
 - [Advantages and Disadvantages of Java Servlet](#advantages-and-disadvantages-of-java-servlet)
 - [The Servlet Container](#the-servlet-container)
 
-### Properties and execution Java servlets
+### Properties and execution of Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
 
 In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment and, if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is due to the fact that the servlet container processes numerous requests in various threads. As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
