@@ -17,7 +17,7 @@ images:
 --- 
 A `Servlet` is often the software that improves a server's capabilities. The Servlet is usually written in Java and can process web requests. 
 <!--more-->
-Servlets are web server-based applications. Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these Servlets in these situations. Nowadays, we are all familiar with the need of developing `dynamic web pages`, or those that may modify the information of the site based on the time or produce material based on the client's request. If you enjoy writing in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java, and that method is known as Java Servlet. But before we get to the core of our discussion, it is important to understand why server-side extensions are necessary.
+Servlets are web server-based applications. Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these Servlets in these situations. Nowadays, we are all familiar with the need for developing dynamic web pages, or those that may change the information of the site based on the time or produce material based on the client's request. If you enjoy writing in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java. That method is known as Java Servlet. But before we get to the core of our discussion, it is important to understand why server-side extensions are necessary.
 
 A Java servlet is a Java program that runs on a Java-enabled web server or application server. They are used to receive a request from a web server, process it, generate a reply, and then transmit the reply back to the webserver.
 
@@ -32,7 +32,7 @@ A Java servlet is a Java program that runs on a Java-enabled web server or appli
 ### Properties and execution of Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
 
-In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment and, if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is due to the fact that the servlet container processes numerous requests in various threads. As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
+In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment. Also if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is due to the fact that the servlet container processes many requests in various threads. As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
 
 The execution of the java servlets involves several steps:
 
@@ -55,12 +55,12 @@ The servlet high-level architectural diagram is shown below. Let's have a look a
 - A web server that is static
 - A web server that is constantly updated
 
-3. **Web container**: Another common component in servlet design is the web container, which is responsible for interacting with the servlets. A web container has two primary functions:
+3. **Web container**: Another common component in servlet design is the web container, which is handles interacting with the servlets. A web container has two primary functions:
 
 - Servlet lifecycle management
 - Mapping of URLs
 
-A web container is a server-side application that manages and handles all requests that come in via servlets, JSP pages, or perhaps any other file system.
+A web container is a server-side application that manages and handles all requests that come in via servlets, JSP pages, or any other file system.
 
 ### Extensions on the server
 As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages need a `container` or Web server to enable dynamic Web page functionality. Independent Web server vendors offer various proprietary solutions in the form of `APIs` to meet this need.
@@ -71,7 +71,7 @@ With the help of these APIs, we can develop Web-based apps. As part of the Java 
 There are other Web server extensions that are linked to Servlet technology. Such as `CGI scripts` and `Hypertext Preprocessor` (PHP). Java Servlets, on the other hand, are more acceptable since they overcome CGI's constraints, such as slow performance and limited scalability.
 
 ### Common Gateway Interface
-`Common Gateway Interface` is an independent application that can process user requests and creating dynamic content. It is built in any of the computer languages such as C or C++.
+`Common Gateway Interface` is an independent application that can process user requests and create dynamic content. It is built in any of the computer languages such as C or C++.
 
 When a client requests dynamic Web pages using a CGI program, the Web server carries out the following activities:
 
@@ -104,7 +104,7 @@ In basic terms, it's a system that handles Web client requests by managing Java 
 
 The Servlet container provides the following services:
 
-1. **Network Services**: This method loads a Servlet class. A local file system, a remote file system, or other network services may be used to load data. The network services that the request and response are sent over are provided by the Servlet container.
+1. **Network Services**: This method loads a Servlet class. A local file system, a remote file system, or other network services may be used to load data. The network services the request and responses are sent over provided by the Servlet container.
 2. **Decode and Encode MIME-based messages**: Provides decoding and encoding services for MIME-based messages.
 3. **Manage Servlet container**: A Servlet's lifecycle is managed by this class.
 4. **Resource management**: Static and dynamic resources, including HTML files, Servlets, and JSP pages, are managed via resource management.
@@ -159,7 +159,7 @@ out.println("Result is"+k);
 }
 ```
 
-The final step is to add mappings to the web.xml file after producing the Java class file. Let's have a look at how we can do that.
+The final step is to add mappings to the `web.xml` file after producing the Java class file. Let's have a look at how we can do that.
 Your web content's WEB-INF folder will contain the web.xml file. Go to Deployment Descriptor and choose Generate Deployment Descriptor Stub if it is not already present. Mappings must be added to the web.xml file once it has been created. Let's have a look at how mapping works using the following example:
 
 ```html
