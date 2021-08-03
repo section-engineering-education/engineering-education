@@ -1,6 +1,6 @@
-Container technology has streamlined how you build, test and deploy software from your local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
+Container technology has streamlined how we build, test and deploy software from our local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
 
-Docker Compose is a tool used in defining and running multi-container Docker applications. You use Docker Compose to replace the run commands repeatedly run on each container in a multi-container application. Using Docker Compose, you can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
+Docker Compose is a tool used in defining and running multi-container Docker applications. We use Docker Compose to replace the `run` commands that is repeatedly run on each container in a multi-container application. Using Docker Compose, we can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
 
 ### Goal
 
@@ -8,10 +8,9 @@ In this tutorial, you’ll learn how Docker Compose makes it easier to configure
 
 ### Prerequisites
 
-
 - Basic knowledge of Spring Boot, Git, and the terminal.
 - Basic understanding of Docker and Docker Compose installed - see guide [here](https://docs.docker.com/compose/install/).
-- A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice
+- A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice.
 - Postman - download it [here](https://www.postman.com/downloads/)
 
 ### Setting up a Spring Boot project
@@ -30,7 +29,7 @@ The blog API has just the following endpoints:
 After cloning, in the project directory, go to the `application.properties` file in `src/main/resources/application.properties` directory to configure the API data source.
 
 
-![BlogAPI project directory structure showing application.properties file.](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/directory-structure.png)
+![BlogAPI project directory structure showing application.properties file](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/directory-structure.png)
 
 
 In the `application.properties` file add:
@@ -95,9 +94,9 @@ The above Dockerfile tells Docker to build the specified JAR in the target direc
 
 You can run the Spring Boot project Docker image using `docker run`, which will start a Docker container from the image. But remember, you want to use Docker Compose to start up all the project services (containers).
 
-To learn more about dockerizing Spring Boot projects, check out this article, [How to Create Spring Boot Docker Images](https://www.section.io/engineering-education/spring-docker/).
+To learn more about dockerizing Spring Boot projects, check out this [article](https://www.section.io/engineering-education/spring-docker/), on how to create spring boot docker images.
 
-Now that you've dockerized the Spring Boot project, you will next define a Docker Compose `docker-compose.yml` file. This file will have a configuration to create a PostgreSQL database in a Docker container and connect it to the container of the Spring Boot project to run as a multi-container application.
+Now that you've dockerized the Spring Boot project, you will need to define a Docker Compose `docker-compose.yml` file. This file will have a configuration to create a PostgreSQL database in a Docker container and connect it to the container of the Spring Boot project to run as a multi-container application.
 
 ### Define the Docker Compose `docker-compose.yml` file
 
@@ -164,9 +163,9 @@ To test all you have been putting together, open up the terminal, navigate to th
     $ docker-compose up -d
 ```
 
-The above command starts up the Spring Boot project - API and PostgreSQL containers (services). The additional `-d` tells Docker to run the in detached mode.
+The above command starts up the Spring Boot project - API and PostgreSQL containers (services). The additional `-d` tells Docker to run in detached mode.
 
-You can now test the API endpoints, open up Postman and send a POST request to `http://localhost:8080/posts`  endpoint using similar JSON data below:
+You can now test the API endpoints. Open up Postman and send a POST request to `http://localhost:8080/posts`  endpoint using similar JSON data below:
 
 ```json
     {
@@ -181,7 +180,7 @@ The above request creates a blog post with a unique ID:
 ![POST request Test](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/post-request.png)
 
 
-To see the post you just created, send a GET request to the same endpoint. See all the blog posts you’ve created:
+To view the post you just created, send a GET request to the same endpoint. View all the blog posts you’ve created:
 
 
 ![GET request Test](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/get-request.png)
@@ -202,7 +201,6 @@ In this tutorial, you’ve learned how to define a Docker Compose `docker-compos
 You can use Docker Compose in all environments: production, testing, staging, development, and CI workflows to better your software development processes.
 
 ### Reference
-
 
 - [Simplify All the Things with Docker Compose](https://youtu.be/QeQ2MH5f_BE)
 - [An open-source docker-compose.yml file used in a Spring Boot project](https://github.com/Kikiodazie/Multi-User-TodoList-Api/blob/master/docker-compose.yml)
