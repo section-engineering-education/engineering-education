@@ -38,12 +38,14 @@ Below are some of the examples of MySQL window functions that are commonly used 
 
 This function is used to compute a value in group rows. They mainly achieve comparisons between rows and columns.
 
-
+```sql
            SELECT
            cloth_type, week, sales_value,
            LEAD(sales_value) OVER(PARTITION BY cloth_type ORDER BY week)
            AS next_week_value
            FROM cloth_type;
+   ```        
+           
            
 This function will give out the value of the clothes sold in the "sales_value" column.
 
@@ -51,12 +53,12 @@ This function will give out the value of the clothes sold in the "sales_value" c
 
 This function is mainly used in report creation. It computes the ranks for each row in a specified order. Ranks are usually numbers starting from 1. In a case where multiple rows sharing the same value, the rows are assigned the same rank. This causes skipping of numbers in the next row hence the values returned by the RANK( ) function are not usually consecutive numbers.
 
-
+```sql
            SELECT
            RANK () OVER(ORDER BY score) AS number-ranked,
            name, score
            FROM sales:
-
+```
 
 This outputs a list of sales items ranked according to ranking_score.
 
@@ -68,22 +70,22 @@ LAG( ) function is almost similar to the LEAD( ) function hence the both compute
 
 This clause is similar to the RANK() function only that it doesn't allow gaps as in the RANK() function.
 
-
+```sql
          SELECT
          DENSE_RANK( ) OVER(ORDER BY score DESC) AS dense_number_ranked,
          name, score
          FROM sales:
-
+```
 5. ROW NUMBER( )
 
 Row Numbers are assigned to rows in their order of appearance. The rows are first ordered In ascending order after which the consecutive numbers are assigned. Rows with the same values are not assigned a common number. This means ties are not concidered while giving the row numbers.
 
-
+```sql
       SELECT
       ROW_NUMBER() OVER(ORDER BY score) AS number,
       name, score
       FROM sales;
-
+```
 This outputs a list of sales arranged in ascending order using the 'ranking score'. Each item is given a ranking number starting from 1.
 
  OVER( )
@@ -101,7 +103,7 @@ The concerns are discussed below and some suggestive avoidance mechanisms have a
 
 ### 1. MySQL Window functions cannot be used in some clauses
 MySQL window functions can not be used in the first five clauses in the list below but can only be used in SELECT and ORDER BY. This is due to the difference in the logical order of operations in a query and syntax. Below is the order in which the operations are processed in SQL:
-
+```sql
 1. FROM
 2. WHERE
 3. GROUP BY
@@ -114,6 +116,7 @@ MySQL window functions can not be used in the first five clauses in the list bel
 10. ORDER BY
 11. OFFSET
 12. FETCH
+```
 
  From the above list, we gather that the clauses WHERE, GROUP BY and HAVING are processed before the window functions in the list hence at the time of their processing, window functions will still be unprocessed hence no references can be made to them whatsoever.
 Hence we realize that window functions are not accessible to the above-mentioned clauses and can not be used with them.
@@ -123,7 +126,7 @@ Hence we realize that window functions are not accessible to the above-mentioned
 Despite this challenge, there is a workaround that can enable us to use window functions in the above-mentioned clauses;
 This can be achieved by the use of A WITH QUERY EXPRESSION or a sub-query as illustrated in the example below.
 
-
+```sql
           WITH student_marks AS
           (
           SELECT student_id, student_name, marks,
@@ -133,7 +136,7 @@ This can be achieved by the use of A WITH QUERY EXPRESSION or a sub-query as ill
           )
           SELECT student_id, student_name, marks
           FROM student_marks WHERE rn = 1;
-
+```
 ### Explanation
 Columns are selected from the student table using the WITH query and row number values processed for every row.  This is done in the sub-query. The row number referred to as the "rn"  is used for row filtering in the main query.
 
@@ -141,33 +144,33 @@ Columns are selected from the student table using the WITH query and row number 
 
 This occurs during the calculation of running totals when a user specifies the window order clause but does not specify the window frame units such as then ROWS or RANGES and its related window frame extents. This will logically results in a  bug as well as problems with database perfomance.
 Example 1 below has the ROWS window frame unit specified.
-
+```sql
       SELECT  book_id, borrowing_id, value,
       SUM ( value) OVER (PARTITION BY book_id
       ORDER BY borrowing_id  ROWS UNBOUNDED PRECEDING ) 
       AS total
       FROM dbo.Booking;
-
+```
 Example 2 below has a RANGE window frame unit 
 specified.
 
 
-
+```sql
      SELECT  book_id, borrowing_id, value,
      SUM ( value) OVER (PARTITION BY book_id
      ORDER BY borrowing_id
      RANGE UNBOUNDED PRECEDING ) AS total
      FROM dbo.Booking;
-
+```
 Example 3 below no window frame unit is specified.
 
-
+```sql
      SELECT  book_id, borrowing_id, value,
      SUM ( value) OVER (PARTITION BY book_id
      ORDER BY borrowing_id
      ROWS UNBOUNDED PRECEDING ) AS total
      FROM dbo.Booking;
-
+```
 
 Hence example three in example three you will get the RANGE UNBOUNDED PRECEDING by default as dictated by the SQL standard. 
 ### How to avoid
@@ -182,7 +185,7 @@ The [FIRST_VALUE](https://docs.oracle.com/cd/B19306_01/server.102/b14200/functio
 
 Example 1 below shows a sample code showing the 
 FIRST_VALUE  and the  LAST_VALUE in use
-
+```sql
         SELECT buyer_id, date_of_order, order_id, order_value,
         FIRST_VALUE(order_value) OVER (PARTITION BY buyer_id 
         ORDER BY date_of_order, order_id) AS firstorder_value,
@@ -190,7 +193,7 @@ FIRST_VALUE  and the  LAST_VALUE in use
         ORDER BY date_of_order, order_id) AS laststorder_value, 
         FROM Sales.order_value
         ORDER BY buyer_id, date_of_order, order_id;
-`
+```
 
 For the FIRST_VALUE function, the expected results will be achieved however for the LAST_VALUE function, the value from the current row will be returned on top of a no disk penalty. With such results, a first-timer may think that the server is corrupted with bugs. This is however not the case because the results at hand are a result of the SQL standards default settings.
 
@@ -208,7 +211,7 @@ This can however be avoided by just putting the following into place:
 ### How to solve
 This can however be made possible by:
 -  Using the DELETE and UPDATE functions as sub-queries of the main query as shown below
-
+```sql
         WITH student_marks AS
         (
         SELECT [ marks],  LAG( [ marks]) OVER (ORDER BY [student_id]) AS marks_lag         
@@ -216,7 +219,7 @@ This can however be made possible by:
         )
         UPDATE  student_marks
         SET [marks] = marks_lag
-
+```
 
 With this, the UPDATE function used in the sub-query the update is made possible and the same is true for the DELETE function
 
@@ -224,15 +227,17 @@ With this, the UPDATE function used in the sub-query the update is made possible
 ### 5. Some window function constructs are recognized by the parser even though they are not supported
 
 Some windows frame units like the GROUPS frame are parsed during query processing only to begin throwing error messages later on. Below are the rest of the window frame units that are parsed but are not supported by MySQL
+```sql
 1. IGNORE NULLS
 2. FROM LAST
 3. EXCLUDE
-
+```
 Although these window frame units are not supported by MySQL, some of them are supported and they are stated below:
+```sql
 1. ROWS AND RANGE
 2. RESPECT NULL
 3. FROM FIRST
-
+```
 ### How to avoid
 
 Therefore to avoid the errors and thrown due to the lack of MySQL support we should be keen to use only window frame units that are supported by MySQL. This is the only way these errors can be countered.
