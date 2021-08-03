@@ -6,12 +6,12 @@ url: /data-preprocessing-python/
 title: Getting Started with Data Preprocessing in Python
 description: In this article, we cover all the steps involved in the data preprocessing phase. We take a look at an untidy dataset and walk through code to tidy the dataset.
 author: daniel-mwanthi
-date: 2021-08-01T00:00:00-09:29
+date: 2021-08-03T00:00:00-04:07
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/data-preprocessing-python/hero.jpg
+ - url: /engineering-education/data-preprocessing-python/hero.png
    alt: Data preprocessing example image
 ---
 Data preprocessing is the first machine learning step in which we transform raw data obtained from various sources into a usable format to implement accurate machine learning models. In this article, we cover all the steps involved in the data preprocessing phase. 
