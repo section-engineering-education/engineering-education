@@ -6,7 +6,7 @@ url: /running-a-multi-container-springboot-postgresql-application-with-docker-co
 title: Running a Multi-container (Spring Boot and PostgreSQL) Application with Docker Compose
 description: In this tutorial, you’ll learn how Docker Compose makes it easier to configure and run multiple Docker containers (Spring Boot and PostgreSQL) in a local environment.
 author: divine-odazie
-date: 2021-08-03T00:00:00-07:00
+date: 2021-08-03T00:00:00-07:45
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
