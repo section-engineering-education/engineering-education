@@ -16,25 +16,35 @@ images:
 ---
 
 ### Introduction 
-A collection of related data elements with a common name is referred to as an array. We can use an array represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. Arrays can be defined by any variable type.
-marks[10]
-The complete set of values is the array, while the individual value is an element. An array is like an ordered list of variables that has a uniform mechanism of naming, the name of the array does not change but the variable can change. Arrays can be used to keep to keep track of a list of ordered items or things. The advantage of using arrays is that it is easy to access any element in the array using the index numbers and also storing many elements at a time is made possible through arrays.
+A collection of related data elements with a common name is referred to as an array.
+
+We can use an array to represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. 
+
+Any variable type can define arrays. The complete set of values is an **array**, while the individual value is an **element**. An array is like an ordered list of variables with a uniform mechanism of naming. 
+
+The name of an array does not change, but the variable can change. Arrays can be used to keep track of a list of ordered items or things. The advantage of using arrays is that it is easy to access any element in the array using the index numbers and storing many elements simultaneously through arrays.
 
 ### Prerequisite
 Before learning this tutorial:
-1. You need to have a basic understanding of java.
-2. You should be able to run and compile java programs.
-3. You should have installed and be able to work with IDEs like [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
+- It would be best if you had a basic understanding of java.
+- You should be able to run and compile java programs.
+- You should have installed IDEs like [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html) and be able to work with them.
+ 
 ### Creating an array
-Before being used, arrays are constructed and declared just like any other variable in the computer memory. The process of making  array is of three steps:
-1. Declaring the array
-2. Creating a memory location
-3. Adding values into the memory location
+Before being used, arrays are constructed and declared just like any other variable in the computer memory. The process of making an array is of three steps:
+- Declaring the array
+- Creating a memory location
+- Adding values into the memory location
 
 ### Declaration of arrays
 The declaration of arrays in Java happens or can be done in two forms:
-type arrayname[ ]; or
+
+type arrayname[ ];
+
+or
+
 type [ ] arrayname;
+
 example:
 ```Java
 float mean[ ];     //type arrayname[]
@@ -43,16 +53,20 @@ int[ ] marks;      //type[] arrayname
 
 ### Creation of an array
 After declaring an array it needs to be created in the memory.
+
 ```Java
 arrayname= new type[size];
 ```
 example
+
 ```Java
 number= new int[5];
 mean= new float[7];
 ```
 The above line creates memory locations for the array number and mean and assigns them as int and float.
+
 The length of an array is the number of indexed variables that is the number given in square brackets after the array type. The index variables can be of any type and be of the same base type in a single array.
+
 An array can also be declared and created at the same time that is;
 
 ```Java
@@ -60,8 +74,9 @@ float mean[ ]=new float[7];
 ```
 
 ### Initialization of arrays
-The final stage now is adding or assigning values to the array created this is the process of initialization this is done using array subscripts and assigning the values.
-The subscript must be within the created memory locations they cannot exceed. The initialization process starts from zero as the first subscript and ends at (n-1) where n  is the memory allocated for that array.
+The final stage now is adding or assigning values to the array created. This is the process of Initialization. 
+
+Initialization is done using array subscripts and setting the values. The subscript must be within the created memory locations they cannot exceed. The initialization process starts from zero as the first subscript and ends at (n-1), where `n` is the memory allocated for that array.
 
 ```Java
 arrayname[subscript]= value;
@@ -77,27 +92,25 @@ mean[4] =15;
 mean[5] =16;
 mean[6] =04;
 ```
-We can also initialize arrays in the same way as to how ordinary variables are declared that is;
+We can also initialize arrays in the same way as to how ordinary variables are declared, that is;
 
 ```Java
 type arrayname[ ]= {list of values};
 ```
-The array initializer consist a list of values that are separated by commas and enclosed by curly brackets. The array's size isn't really specified. The compiler will allocate enough memory for all elements stated on the list;
+The array initializer consists of a list of separated values by commas and enclosed by curly brackets. The array's size isn't specified. The compiler will allocate enough memory for all elements stated on the list;
 
 ```Java
 float mean [ ]= {45, 64, 78, 92, 15, 16, 04};
 ```
-
 We can also use the for loop for array initialization.
 
 ```Java
 for(x=0; x<10; x++)
 average[x]= (float)x;
 ```
-
 The loop will initialize the array average to the values 0 to 9.
 
-The allocated size in the array is stored in a variable named length. The length of an array say a is obtained using a.length
+The allocated size in the array is stored in a variable named **length.** The length of an array, say `a`, is obtained using `a.length`.
 
 ```Java
 int asize = a.length;
