@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-kubernetes/
+title: How to deploy a Spring Boot application to Kubernetes cluster
+description: This tutorial will go over the basics of Kubernetes and explain a step by step process of deploying a Spring Boot application to a Kubernetes cluster
+author: flavian-adhiambo
+date: 2021-08-03T00:00:00-10:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-boot-kubernetes/hero.png
+    alt: How to deploy a Spring Boot application to Kubernetes cluster
+---
+
+
 Containerization is bundling together the application source code and the dependencies required to run the application. Kubernetes is a container orchestration tool that makes it possible to run several instances of an application across a distributed system of servers. Kubernetes simplifies the processing of scaling applications in the cloud. This article explains how to build a Spring Boot Docker container and deploy it to a Kubernetes cluster.
 
 
