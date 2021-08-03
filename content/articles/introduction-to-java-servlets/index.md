@@ -21,6 +21,17 @@ Servlets are web server-based applications. Other technologies used to produce d
 
 A Java servlet is a Java program that runs on a Java-enabled web server or application server. They are used to receive a request from a web server, process it, generate a reply, and then transmit the reply back to the webserver.
 
+#### Prerequisites
+You will need the following to follow along with this article:
+
+- [Java JDK, version 1.7 (Java 2 Platform)](https://codenotfound.com/java-download-install-jdk-7-windows.html) installed on your computer.
+
+- An open source Java Editor known as Eclipse.
+
+>If you want to view part of your work in action, you'll need a Web browser that supports 128-bit encryption.
+
+- Some solid basic knowledge of Java is required.
+
 ### Table of content:
 - [Properties and execution of Java servlets](#properties-and-execution-java-servlets)
 - [The Servlet Architecture](#the-servlet-architecture)
