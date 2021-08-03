@@ -1,8 +1,8 @@
 ### The five common pitfalls of MySQL window functions and how to avoid them
 
 A MySQL window function is a function that manipulates values from one or more rows to give value returns for every row using basal queries. Window functions usually have an OVER clause, hence any function that lacks the clause is not a window function. The OVER clause has the following potentials:
-- It defines a grouping of rows using the PARTITION BY clause
-- It orders rows within their respective groups using the ORDER BY clause
+- It defines a grouping of rows using the PARTITION BY clause.
+- It orders rows within their respective groups using the ORDER BY clause.
 
 ### Table of contents
 1. [Prerequisites](#prerequisites)
@@ -44,6 +44,7 @@ This function is used to compute a value in group rows. They mainly achieve comp
            LEAD(sales_value) OVER(PARTITION BY cloth_type ORDER BY week)
            AS next_week_value
            FROM cloth_type;
+           
 This function will give out the value of the clothes sold in the "sales_value" column.
 
 2. RANK( )
@@ -73,8 +74,6 @@ This clause is similar to the RANK() function only that it doesn't allow gaps as
          name, score
          FROM sales:
 
-
-
 5. ROW NUMBER( )
 
 Row Numbers are assigned to rows in their order of appearance. The rows are first ordered In ascending order after which the consecutive numbers are assigned. Rows with the same values are not assigned a common number. This means ties are not concidered while giving the row numbers.
@@ -84,7 +83,6 @@ Row Numbers are assigned to rows in their order of appearance. The rows are firs
       ROW_NUMBER() OVER(ORDER BY score) AS number,
       name, score
       FROM sales;
-
 
 This outputs a list of sales arranged in ascending order using the 'ranking score'. Each item is given a ranking number starting from 1.
 
@@ -150,7 +148,6 @@ Example 1 below has the ROWS window frame unit specified.
       AS total
       FROM dbo.Booking;
 
-
 Example 2 below has a RANGE window frame unit 
 specified.
 
@@ -161,7 +158,6 @@ specified.
      ORDER BY borrowing_id
      RANGE UNBOUNDED PRECEDING ) AS total
      FROM dbo.Booking;
-
 
 Example 3 below no window frame unit is specified.
 
