@@ -1,5 +1,22 @@
-Container technology has streamlined how we build, test and deploy software from our local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /running-a-multi-container-springboot-postgresql-application-with-docker-compose/
+title: Running a Multi-container (Spring Boot and PostgreSQL) Application with Docker Compose
+description: In this tutorial, you’ll learn how Docker Compose makes it easier to configure and run multiple Docker containers (Spring Boot and PostgreSQL) in a local environment.
+author: divine-odazie
+date: 2021-08-03T00:00:00-15:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/running-a-multi-container-springboot-postgresql-application-with-docker-compose/hero.jpg
+    alt: Running a Multi-container Application with Docker Compose example image
+---
+
+Container technology has streamlined how we build, test and deploy software from our local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
+<!--more-->
 Docker Compose is a tool used in defining and running multi-container Docker applications. We use Docker Compose to replace the `run` commands that is repeatedly run on each container in a multi-container application. Using Docker Compose, we can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
 
 ### Goal
