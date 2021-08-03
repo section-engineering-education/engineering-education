@@ -15,9 +15,9 @@ images:
     alt: Running a Multi-container Application with Docker Compose example image
 ---
 
-Container technology has streamlined how we build, test and deploy software from our local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as you build multi-container applications. 
+Container technology has streamlined how we build, test and deploy software from our local environment to on-premise data centers and the cloud. With the benefit of building applications with container technology, manually starting and stopping each container becomes tedious as we build multi-container applications. 
 <!--more-->
-Docker Compose is a tool used in defining and running multi-container Docker applications. We use Docker Compose to replace the `run` commands that is repeatedly run on each container in a multi-container application. Using Docker Compose, we can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
+Docker Compose is a tool used in defining and running multi-container Docker applications. We use Docker Compose to replace the `run` commands that are repeatedly run on each container in a multi-container application. Using Docker Compose, we can simplify the running of multi-container applications to as little as two commands; `docker-compose up` and `docker-compose down`.
 
 ### Goal
 
@@ -28,13 +28,13 @@ In this tutorial, you’ll learn how Docker Compose makes it easier to configure
 - Basic knowledge of Spring Boot, Git, and the terminal.
 - Basic understanding of Docker and Docker Compose installed - see guide [here](https://docs.docker.com/compose/install/).
 - A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice.
-- Postman - Postman is an API client used by developers to create, test, document and share APIs. Download it [here](https://www.postman.com/downloads/)
+- Postman - Postman is an API client used by developers to create, test, document, and share APIs. Download it [here](https://www.postman.com/downloads/)
 
 ### Setting up a Spring Boot project
 
 To start, clone this Spring Boot project: https://github.com/Kikiodazie/BlogAPI from Github. The Spring Boot project is a blog REST API you will use to Create and Retrieve blog posts in the PostgreSQL database you’re going to create.
 
-If you are not familiar with how to clone a Github repository, [click here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for detailed instructions.
+If you are not familiar with how to clone a Github repository, click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for detailed instructions.
 
 The blog API has just the following endpoints:
 
@@ -57,7 +57,7 @@ In the `application.properties` file add:
 
 The above configuration tells Spring Boot that the data source will be of PostgreSQL using PostgreSQL’s specific driver.
 
-Typically when setting up a Spring Boot project that connects to a data source, we use configurations similar to the one below in the project's `application.properties` file:
+Typically, when setting up a Spring Boot project that connects to a data source, we use configurations similar to the one shown below in the project's `application.properties` file:
 
 ```bash
     spring.datasource.platform=postgres
@@ -82,7 +82,7 @@ Navigate to the project dependency declaration  (`pom.xml`) file, in the `build 
     </build>
 ```
 
-To generate the JAR run:
+To generate the JAR file run:
 
 ```bash
     $ mvn install -DskipTests
@@ -90,7 +90,7 @@ To generate the JAR run:
 
 The addition of `-DskipTests` tells maven to skip testing the application state because the project is yet to connect to the specified data source. If you run just `$ mvn install`, there will be a build failure caused by the PostgreSQL driver.
 
-You can find the JAR in the `target/` directory of the project.
+You can find the JAR file in the `target/` directory of the project.
 
 Now create a Dockerfile in your project directory to build a Docker image that you will run as a container. In the Dockerfile, add:
 
@@ -101,7 +101,7 @@ Now create a Dockerfile in your project directory to build a Docker image that y
     EXPOSE 8080
 ```
  
-The above Dockerfile tells Docker to build the specified JAR in the target directory off `openjdk:11` base image and `EXPOSE` port `8080`.
+The above Dockerfile tells Docker to build the specified JAR file in the target directory off `openjdk:11` base image and `EXPOSE` port `8080`.
  
  You can now build the Docker image. In the project directory, run:
 
