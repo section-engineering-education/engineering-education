@@ -139,7 +139,7 @@ First, I will create the index.html file.
 </body> 
 </html>
 ```
-The software above generates a form on which the user may input the numbers for the subtraction operation. You will not be able to subtract two integers without the Java class file. So let's make a class file now.
+The software above generates a form on which the user may input numbers for the subtraction operation. You will not be able to subtract two integers without the Java class file. So let's make a class file now.
 
 ```java
 package edureka;
