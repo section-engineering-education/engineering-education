@@ -6,7 +6,7 @@ url: /engineering-education/arrays-in-java/
 title: Arrays in Java
 description: A collection of related data elements with a common name is referred to as an array. This article will explain the basics and how to use arrays in Java.
 author: catherine-mugo
-date: 2021-07-15T00:00:00-11:00
+date: 2021-08-03T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 
 ### Introduction 
-A collection of related data elements with a common name is referred to as an array.
+A collection of related data elements with a familiar name is referred to as an Array.
 
 We can use an array to represent a set of the total marks of a group of students. A particular value that is index number or the subscript is assigned to the array name and stored in square brackets [] after the array name and declares variables in an array. 
 
@@ -24,19 +24,19 @@ Any variable type can define arrays. The complete set of values is an **array**,
 
 The name of an array does not change, but the variable can change. Arrays can be used to keep track of a list of ordered items or things. The advantage of using arrays is that it is easy to access any element in the array using the index numbers and storing many elements simultaneously through arrays.
 
-### Prerequisite
+### Prerequisites
 Before learning this tutorial:
 - It would be best if you had a basic understanding of java.
 - You should be able to run and compile java programs.
 - You should have installed IDEs like [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html) and be able to work with them.
  
-### Creating an array
+#### Creating an array
 Before being used, arrays are constructed and declared just like any other variable in the computer memory. The process of making an array is of three steps:
 - Declaring the array
 - Creating a memory location
 - Adding values into the memory location
 
-### Declaration of arrays
+#### Declaration of arrays
 The declaration of arrays in Java happens or can be done in two forms:
 
 type arrayname[ ];
@@ -46,26 +46,29 @@ or
 type [ ] arrayname;
 
 example:
+
 ```Java
 float mean[ ];     //type arrayname[]
 int[ ] marks;      //type[] arrayname
 ```
 
-### Creation of an array
+#### Creation of an array
 After declaring an array it needs to be created in the memory.
 
 ```Java
 arrayname= new type[size];
 ```
+
 example
 
 ```Java
 number= new int[5];
 mean= new float[7];
 ```
+
 The above line creates memory locations for the array number and mean and assigns them as int and float.
 
-The length of an array is the number of indexed variables that is the number given in square brackets after the array type. The index variables can be of any type and be of the same base type in a single array.
+The length of an array is the number of indexed variables that is the number given in square brackets after the array type. The index variables can be of any kind and be of the same base type in a single array.
 
 An array can also be declared and created at the same time that is;
 
@@ -73,7 +76,7 @@ An array can also be declared and created at the same time that is;
 float mean[ ]=new float[7];
 ```
 
-### Initialization of arrays
+#### Initialization of arrays
 The final stage now is adding or assigning values to the array created. This is the process of Initialization. 
 
 Initialization is done using array subscripts and setting the values. The subscript must be within the created memory locations they cannot exceed. The initialization process starts from zero as the first subscript and ends at (n-1), where `n` is the memory allocated for that array.
@@ -81,6 +84,7 @@ Initialization is done using array subscripts and setting the values. The subscr
 ```Java
 arrayname[subscript]= value;
 ```
+
 example
 
 ```Java
@@ -97,11 +101,13 @@ We can also initialize arrays in the same way as to how ordinary variables are d
 ```Java
 type arrayname[ ]= {list of values};
 ```
+
 The array initializer consists of a list of separated values by commas and enclosed by curly brackets. The array's size isn't specified. The compiler will allocate enough memory for all elements stated on the list;
 
 ```Java
 float mean [ ]= {45, 64, 78, 92, 15, 16, 04};
 ```
+
 We can also use the for loop for array initialization.
 
 ```Java
@@ -115,14 +121,16 @@ The allocated size in the array is stored in a variable named **length.** The le
 ```Java
 int asize = a.length;
 ```
+
 The instance variable length is set by default to the size of the array created in situations where the size of the array is not set. Once an array is created, its length can not be changed but only through creating a new array by changing the set size of the array.
 
-### One and two-dimensional array
+#### One and two-dimensional array
 The one-dimensional array is also referred to as the single-dimensional array, and it only uses one subscript []. 
 
 The first element will is assigned to the 0th index, and the last will be stored in the (length-1)index. A single-dimensional array will only have one subscript of any datatype. The array's values must be of the same datatype as initialized failure to which a compile-time error is displayed during storage. 
 
 Here is an example of a single-dimensional array;
+
 ```Java
  import java.util.*;
  public class OneDimensionalArray {
@@ -132,11 +140,13 @@ Here is an example of a single-dimensional array;
    }
  }
  ```
- The output of the above code is; `[51, 27, 73, 94, 55, 60, 78, 48, 49, 19]`. 
  
- The two-dimensional array uses more than one subscript, which represents the rows and the columns. This enables us to store values in a table. The first subscript represents the number of rows, while the second subscript represents the number of columns. 
+The output of the above code is; `[51, 27, 73, 94, 55, 60, 78, 48, 49, 19]`. 
  
- Creating a two-dimensional array;
+The two-dimensional array uses more than one subscript, which represents the rows and the columns. The two-dimensional array enables us to store values in a table. The first subscript represents the number of rows, while the second subscript represents the number of columns. 
+ 
+Creating a two-dimensional array;
+ 
 ```Java
 public class MultiDimensionalArray{
 
@@ -165,9 +175,11 @@ public class MultiDimensionalArray{
 }
 
 ```
+
 A table with 12 integer values is created. Each element in the multidimensional array should be of the same base type as declared.
 
 Finding the length of a multidimensional array;
+
 ```Java
 import java.util.*;
 public class MultidimensionalArray {
@@ -187,6 +199,7 @@ public class MultidimensionalArray {
     }
 }
 ```
+
 the output of this program will be;
 
 Length of row 1: 3
@@ -195,8 +208,8 @@ Length of row 3: 1
 
 The size of a row in the array is equivalent to the total value in the row.
 
-### Sorting arrays
-The `sort` method in arrays is used to rearrange elements in an array in either a descending or ascending order.
+#### Sorting arrays
+The `sort` method in arrays is used to rearrange elements in an array in descending or ascending order.
 
 ```Java
 import java.util.Arrays;
@@ -228,9 +241,9 @@ Sorted Array in ascending order: `[34, 45, 65, 75, 76, 84, 120]`
 
 To sort the array in descending order, you use the `reverseorder()` method imported from the collection. 
 
-**Note:The reverse order has to involve the collection method.**
+**Note: The reverse order has to involve the collection method.**
 
-By the use of a multidimensional array, we can create a multiplication table of ten by ten(that is, ten rows and ten columns).
+Using a multidimensional array, we can create a multiplication table of ten by ten(that is, ten rows and ten columns).
 
 ```Java
 public class Main {
@@ -262,16 +275,22 @@ public class Main {
 ```
 
 Output:
- 1	|  2	|  3	|  4	|  5	|  6	|  7	|  8	|  9	|  10	| 
- 2	|  4	|  6	|  8	|  10	|  12	|  14	|  16	|  18	|  20	| 
- 3	|  6	|  9	|  12	|  15	|  18	|  21	|  24	|  27	|  30	| 
- 4	|  8	|  12	|  16	|  20	|  24	|  28	|  32	|  36	|  40	| 
- 5	|  10	|  15	|  20	|  25	|  30	|  35	|  40	|  45	|  50	| 
- 6	|  12	|  18	|  24	|  30	|  36	|  42	|  48	|  54	|  60	| 
- 7	|  14	|  21	|  28	|  35	|  42	|  49	|  56	|  63	|  70	| 
- 8	|  16	|  24	|  32	|  40	|  48	|  56	|  64	|  72	|  80	| 
- 9	|  18	|  27	|  36	|  45	|  54	|  63	|  72	|  81	|  90	| 
- 10	|  20	|  30	|  40	|  50	|  60	|  70	|  80	|  90	|  100	| 
+
+ |1	|  2	|  3	|  4	|  5	|  6	|  7	|  8	|  9	|  10	| 
+ |2	|  4	|  6	|  8	|  10	|  12	|  14	|  16	|  18	|  20	| 
+ |3	|  6	|  9	|  12	|  15	|  18	|  21	|  24	|  27	|  30	| 
+ |4	|  8	|  12	|  16	|  20	|  24	|  28	|  32	|  36	|  40	| 
+ |5	|  10	|  15	|  20	|  25	|  30	|  35	|  40	|  45	|  50	| 
+ |6	|  12	|  18	|  24	|  30	|  36	|  42	|  48	|  54	|  60	| 
+ |7	|  14	|  21	|  28	|  35	|  42	|  49	|  56	|  63	|  70	| 
+ |8	|  16	|  24	|  32	|  40	|  48	|  56	|  64	|  72	|  80	| 
+ |9	|  18	|  27	|  36	|  45	|  54	|  63	|  72	|  81	|  90	| 
+ |10	|  20	|  30	|  40	|  50	|  60	|  70	|  80	|  90	|  100| 
 
 ### To wrap up
 We have been able to go through and understand arrays. We have also seen different ways how to approach arrays. The sorting of arrays can help arrange data and sort out data in either ascending or descending orders.
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
