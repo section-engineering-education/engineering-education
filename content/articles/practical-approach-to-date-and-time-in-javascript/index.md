@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/practical-approach-to-date-and-time-in-javascript/hero.png
-   alt: PostgreSQL vs MySQL Hero Image
+   alt: Date and Time in JavaScript Image
 ---
 JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
 <!--more-->
