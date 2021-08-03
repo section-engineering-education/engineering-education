@@ -1,8 +1,8 @@
 ### Introduction
 
-In this tutorial, we'll look at the Laravel sanctum package, discuss how we can use it to authenticate Single Page Applications (SPA), or even token-based APIs. We'll create a simple Laravel project, issue users with API tokens, and authenticate SPA using the Laravel inbuilt session.
+In this tutorial, we'll look at the Laravel sanctum package, discuss how we can use it to authenticate Single Page Applications (SPA) or even token-based APIs. We'll create a simple Laravel project, issue users with API tokens, and authenticate SPA using the Laravel inbuilt session.
 
-We'll also have a look at its advantages over Laravel passport, discuss the reasons why you would choose it (sanctum) over Passport.
+We'll also look at its advantages over Laravel passport and discuss why you would choose it (sanctum) over Passport.
 
 ### Table of contents
 
@@ -237,6 +237,6 @@ class AuthenticationController extends Controller
 
 ```
 
-In the above controller, we have got a very simple logic. `createAccount()` creates new validated users. It then generates tokens if registered successfully. `sign in()` authenticates the users and generates `access tokens` on successful login while `signout()` removes user session.
+We have a simple logic in the above Controller. `createAccount()` creates new validated users. It then generates tokens if registered successfully. `sign in()` authenticates the users and generates `access tokens` on successful login while `signout()` removes user session.
 
 Now test your application on Postman.
