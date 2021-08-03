@@ -29,7 +29,7 @@ You can only set one cookie at a time using this property.
 Take a look at the example below.
 
 ```javascript
-document.cookie = "codeName = fabuluosDesigns";
+document.cookie = "UserName = fabuluosDesigns";
 ```
 
 You must use an in-built javascript function called `encodeURIComponent()` if you wish to use special characters when creating cookies. 
@@ -39,7 +39,7 @@ Before saving the cookie, this function encodes special characters like as white
 Take a look at the example below.
 
 ```javascript
-document.cookie = "codeName=" + encodeURIComponent("fabulous designs");
+document.cookie = "UserName=" + encodeURIComponent("fabulous designs");
 ```
 
 Similarly, you must utilize the appropriate function: `decodeURIcomponent()` to read the cookie value when you want to read the cookies.
@@ -106,22 +106,21 @@ function getCookie(name) {
 }
 
 function checkCookie() {
-    var firstName = getCookie("firstName");
+    var UserName = getCookie("UserName");
     if(firstName != "") {
-        alert("Welcome again, " + firstName);
+        alert("Welcome again, " + UserName);
     } else {
         firstName = prompt("Please enter your first name:");
         if(firstName != "" && firstName != null) {
-            function
-            setCookie("firstName", firstName, 30);
+            setCookie("UserName", UserName, 30);
         }
     }
 }
 ```
 In the above code, we created three functions: `setCookie()`, `getCookie()`, and `checkCookie()`.
 - **setCookie()** - Creates a cookie with an optional `max-age` attribute.
-- **checkCookie()** - Using `getCookie()`, this function will check whether the `firstName` cookie is set or not, and if it is, it will display a greeting message; if it is not, it will prompt the user to enter their first name and store it in the cookie using `setCookie()`.
-- **getCookie()** - Reads the cookie.
+- - **getCookie()** - With this function, a cookie is read.
+- **checkCookie()** - Using `getCookie()`, this function will check whether the `UserName` cookie is set or not, and if it is, it will display a greeting message; if it is not, it will prompt the user to enter their user name and store it in the cookie using `setCookie()`.
 
 ### Updating a cookie
 A cookie can be updated by setting new values to the cookie attributes. 
@@ -130,25 +129,27 @@ Take a look at the example below. We update the `max-age` attribute of the `firs
 
 ```javascript
 document.cookie =
-  "firstName=fabulousDesign; path=/; max-age=" + 30 * 24 * 60 * 60;
+  "UserName=fabulousDesign; path=/; max-age=" + 30 * 24 * 60 * 60;
 
 document.cookie =
-  "firstName=beautifulDesign; path=/; max-age=" + 365 * 24 * 60 * 60;
+  "UserName=beautifulDesign; path=/; max-age=" + 365 * 24 * 60 * 60;
 ```
 
 ### Deleting a cookie
-To erase a cookie, simply give it a new name, an empty or random value, and a max-age value of 0. You'll need to include the cookie's path and domain property when deleting it if you specified them.
+To delete a cookie, simply rename it using the same `name`, specifying an empty or arbitrary value, and set its max-age attribute to 0. 
 
 ```javascript
-document.cookie = "firstName=; max-age=0";
-
-document.cookie = "firstName=; path=/; domain=example.com; max-age=0";
+document.cookie = "UserName=; max-age=0";
+```
+You'll need to include the cookie's path and domain property when deleting it if you had specified them.
+```javascript
+document.cookie = "UserName=; path=/; domain=example.com; max-age=0";
 ```
 
 To delete a cookie using the expires property, just change the value (i.e. the expiration date) to a past date, as shown below.
 
 ```javascript
-document.cookie = "firstName=; path=/; expires=Thu, 01 feb 1990 00:00:00 GMT";
+document.cookie = "UserName=; path=/; expires=Thu, 01 feb 1990 00:00:00 GMT";
 ```
 
 ### Conclusion
