@@ -107,11 +107,11 @@ function getCookie(name) {
 
 function checkCookie() {
     var UserName = getCookie("UserName");
-    if(firstName != "") {
+    if(UserName != "") {
         alert("Welcome again, " + UserName);
     } else {
-        firstName = prompt("Please enter your first name:");
-        if(firstName != "" && firstName != null) {
+        firstName = prompt("Please enter your UserName:");
+        if(UserName != "" && UserName != null) {
             setCookie("UserName", UserName, 30);
         }
     }
@@ -125,7 +125,7 @@ In the above code, we created three functions: `setCookie()`, `getCookie()`, and
 ### Updating a cookie
 A cookie can be updated by setting new values to the cookie attributes. 
 
-Take a look at the example below. We update the `max-age` attribute of the `firstName` cookie from 30 days to 365 years.
+Take a look at the example below. We update the `max-age` attribute of the `UserName` cookie from 30 days to 365 years.
 
 ```javascript
 document.cookie =
@@ -136,7 +136,7 @@ document.cookie =
 ```
 
 ### Deleting a cookie
-To delete a cookie, simply rename it using the same `name`, specifying an empty or arbitrary value, and set its max-age attribute to 0. 
+To delete a cookie, simply rename it using the same `name`, specifying an empty or arbitrary value, and set its `max-age` attribute to 0. 
 
 ```javascript
 document.cookie = "UserName=; max-age=0";
