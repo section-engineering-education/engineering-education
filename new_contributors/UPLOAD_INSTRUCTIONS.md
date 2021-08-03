@@ -58,6 +58,18 @@ Your folder should look similar to this:
 
 Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or the Github tools within your text editor.
 
+### Create author bio folder structure
+Within the authors folder (inside the content folder), create a new folder using the intended author name. (Reference existing folders' naming conventions.)
+
+Be sure to:
+- **Use all lowercase.**
+- **Use dashes in place of spaces.**
+- **Do not include any special characters.**
+- **Try to keep it under 40 characters.**
+- -**Avoid using periods (.) or commas (,) or (_ ) underscores**
+
+Within that a folder, upload your prepared .md file containing a short author description using the filename `index.md`. Upload any corresponding headshot image of the author using the file name `avatar`(jpg or png format). Please try to keep this image as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)).
+
 ### Create pull request
 Open Github. You should see a message indicating your pushed changes with a button to 'Compare & pull request'.
 
