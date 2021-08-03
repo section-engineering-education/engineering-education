@@ -7,7 +7,7 @@ title: Minimizing Data Leakage in Machine Learning
 description: This article will go over the challenge of data leakage in machine learning and how to address it in an attempt to minimize it.
 author: collins-ayuya
 date: 2021-01-13T00:00:00-13:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 

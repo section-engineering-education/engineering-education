@@ -8,6 +8,7 @@
 **If you have not already please go over our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for more tips and tricks on how to improve our overall technical writing.**
 
 #### Preliminary Checks - Formatting and Structure 
+- [ ] Is the article you are submitting an in-depth and unique article? Does it go beyond what is in the official docs and what is covered in other blog sites. See these articles as [examples](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md).
 - [ ] Does your article follow any of the suggested structure formats? - **see [example formats](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)**
 - [ ] Is your article properly formatted in Markdown? - **see [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)**
 - [ ] Have you used the correct folder and file structure? - **see [Contribution Guidelines](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/CONTRIBUTING.md)**
