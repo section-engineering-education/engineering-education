@@ -16,9 +16,9 @@ images:
 ---
 
 ### Introduction 
-Errors can occur at any time in programs but what matters is how we handle them and rectify them to maintain the normal flow of our application. Java being the most major object-oriented programming language provides a [powerful mechanism to handle these errors and exceptions](https://www.edureka.co/blog/java-exception-handling). 
+Errors can occur at any time in our programs. What matters is how we handle them and rectify them to maintain the normal flow of our application. Because Java is one of the most used object-oriented programming languages, it has a robust way of dealing with errors and exceptions.
 
-**Exception handling** in Java is one of the most powerful tools for dealing with run-time errors like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. 
+**Exception handling** in Java is among the most effective methods for resolving run-time errors. These errors are like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. 
 
 This article will go through the fundamentals and various methods of java exception handling.
 
@@ -28,24 +28,24 @@ To follow through this article, the reader should:
 - Have basic knowledge in using Java programming language for development.
 
 ### What is Exception handling?
-An Exception is a [problem that occurs during the execution of a program](https://everythingwhat.com/what-are-the-two-exception-classes-in-hierarchy-of-java-exception-class). `
+An exception is an issue that arises while a program is being executed.
 
-Exception handling` is the mechanism used to deal with Java run-time errors. An exception occurs for several reasons: if a user has entered [invalid data or a file which needs to be opened cannot be found](https://www.sololearn.com/Discuss/160333/what-is-exception). In such instances, this leads to a system failure; therefore, handling it is vital. 
+`Exception handling` is the mechanism used to deal with Java run-time errors. An exception occurs for several reasons: if a user has[entered invalid data or a file that needs to be opened cannot be found](http://what-when-how.com/Tutorial/topic-1244cri0/Java-in-60-Minutes-a-Day-360.html). In such instances, this leads to a system failure; thus, handling it is vital. 
 
 ### Comparison between errors and exceptions
 - Errors are impossible when it comes to recovery, but exceptions are recoverable by handling them.
-- Errors are of unchecked type, while exceptions can be either checked or unchecked type.
+- Exceptions will be either checked or unchecked, whereas errors are unchecked.
 - Errors occur at run-time, while exceptions can occur during the compilation process or the execution process.
-- Errors are caused by the environment in which the application runs, while exceptions are caused by the application.
+- Exceptions are triggered by the program, while errors are created by the environment in which it executes.
 
 ### Exception hierarchy 
 All exceptions and errors types are [subclasses of the class throwable, which is the base class of the hierarchy](https://rkhindi.blogspot.com/2018/09/exceptions-in-java.html).
 
-Here, one branch is headed by exception, which is a class used for exceptional situations that the user program can handle. For example, `NullpointErexception` and `RuntimeException`. The Java run-time system uses other branch errors to indicate the errors that have to do with the run-time environment (JRE) itself. Examples are virtual machine errors or stack overflow errors.
+Here, one branch is headed by exception, which is a class used for exceptional situations that the user program can handle. For example, `NullpointErexception` and `RuntimeException`. The Java run-time system uses [other branch errors to indicate the errors that have to do with the run-time environment itself](https://edureka1.rssing.com/chan-41921600/all_p26.html). Examples are virtual machine errors or stack overflow errors.
 
-So how does the Java virtual machine handle an exception?
+Now, how does an exception get handled by the Java virtual machine?
 
-If an exception occurs inside a method, the method generates an object called the exception object and passes it to the run-time framework. This exception object contains the [name and description of the exception and the current of the program where the exception has occurred](https://www.jillmarzion.com/2021/03/09/47ndyqpi). It also creates the exception object and sends it to the run-time system for handling (throwing an exception). Using `try-catch` finally methods these exceptions. 
+When a method throws an exception, the method creates an object called the exception object. This object provides to the run-time framework. The name and description of the exception, as well as the current of the program where the exception occurred, are all stored in this exception object. Also, it creates and delivers the exception object to the run-time system for exception handling (throwing an exception). Using `try-catch` finally methods these exceptions. 
 
 This is how the JVM handles exceptions internally.
 
@@ -58,19 +58,19 @@ There are two types:
 These are exceptions that happen at compile time and are checked by the compiler.
 
 ##### Unchecked exceptions
-These are exceptions that occur during execution. They are built-in exceptions in Java.
+These are exceptions that occur throughout the execution process. They are built-in exceptions in Java.
 
 ### Exception handling keywords/methods
-As we have already said, exceptions give a way to shift one program's control from one part to another. The three keywords upon which exception java handles exceptions are:
+As we have already said, exceptions give ways to shift one program's control from one part to another. The three keywords upon which exception java handles exceptions are:
 
-- `try` - It specifies where to enclose the code. It has to be accompanied by either `catch` or `finally`. Therefore, we cannot use it on its own.
-- `catch` - This handles the exception that occurs. It has to come before the `try` block; therefore, we cannot use it on its own. The syntax is shown below:
+- `try` - It specifies where to enclose the code. It has to be accompanied by either `catch` or `finally`. Thus, we cannot use it on its own.
+- `catch` - This handles the exception that occurs. It has to come before the `try` block; thus, we cannot use it on its own. The syntax is shown below:
 
 ```java
 try{
-	// Code that may raise exception}
-catch(Exception e){
-	// Rest of the program}
+	// Code that could throw an exception}
+catch(Exception x){
+	// The rest of the code}
 	}
 ```
 
@@ -80,7 +80,7 @@ catch(Exception e){
 try{
 	//program
 }
-catch(Exception e){
+catch(Exception x){
 	// catch block code
 }
 finally{
@@ -91,21 +91,22 @@ finally{
 - `throw` - It throws an exception.
 - `throws` - It declares exceptions.
 
-Let us take a look at the example below to understand the content better:
+Let us glance at an example to understand the content better:
 
-#### Example one: Exception handling using try-catch block
+#### Example 1: Exception handling using try-catch block
+
 ```java
 class Main {
 public static void main(String[] args) {
 
 try {
 
-// code that generate exception
+// code that generates exception
 int divideByZero = 8 / 0;
-System.out.println("Program in try block");
+System.out.println("Program in the block try");
 }
-catch (ArithmeticException e) {
-System.out.println("ArithmeticException => " + e.getMessage());
+catch (ArithmeticException x) {
+System.out.println("ArithmeticException => " + x.getMessage());
     }
   }
 }
@@ -120,14 +121,14 @@ ArithmeticException=> / by zero
 
 In the program above, the code generates an exception. We want to divide the number 8 by 0. 
 
-To handle the exception, we have placed the code `5/0` inside the `try` block. When an exception occurs, every other program which is inside the `try` block is skipped. Afterward, the `catch` block catches the exception, and the code inside it is executed. The `catch` block is skipped if any of the statements in the try block throw an exception. 
+We've put the code 5/0 inside the `try` block for exception handling. Every other program inside the `try` block is skipped whenever an exception arises. Afterward, the `catch` block catches the exception, and the code inside it is executed. The `catch` block is skipped when any of the [statements throw an exception in the `try` block](https://slideplayer.com/slide/5000898). 
 
-#### Example two : Exception Handling using finally block
+#### Example 2: Exception Handling using finally block
 ```java
 class Main {
 public static void main(String[] args) {
 try {
-// code that generates exception
+// code that throws an exception
 int divideByZero = 8 / 0;
 }
 
@@ -149,11 +150,13 @@ ArithmeticException= / by zero
 It is the finally block
 ```
 
-In the program above, we are dividing the number 8 by 0 inside the `try` block. The code generates an `ArithmeticException`. The catch block catches the exception. The finally block is then executed.
+In the program above, we are dividing the number 8 by 0 inside the `try` block. The code throws an `ArithmeticException`. The catch block catches the exception. The finally block is then executed.
 
 **Note:** Using the finally block is a good habit to form. It's because it's capable of containing vital cleanup codes. Such as, code that could be skipped by the return, continue, or split commands when closing a file or link
-Example 3 : Exception Handling using throw keyword
-When an exception is thrown, the program flow shifts from the try to the catch blocks.
+
+### Example 3: Exception Handling using throw keyword
+When an exception is thrown, the program flow shifts from the `try` to the `catch` blocks.
+
 ```java
 class Main {
 public static void divideByZero() {
@@ -177,19 +180,19 @@ Exception in thread “main” java.lang.ArithmeticException: Trying to divide b
 		at Main.main(Main.java:9)
 ```
 
-In the program above, we are throwing the `ArithmeticException` using the `throw` keyword. 
+Using the `throw` keyword, we can see how the program above throws the `ArithmeticException`.
 
-Example 3 : Exception Handling using throws keyword
-The throws keyword is often used to announce the types of exceptions that might occur within the method. It's used in the declaration of the method.
+### Example 4: Exception Handling using throws keyword
+The `throws` keyword is used to declare the different types of exceptions that could arise within a function. It is used in the declaration of the method.
 
 ```java
 import java.io.*;
 
 class Main {
-// declaring the type of exception
+// specifying the exception's type
 public static void findFile() throws IOException {
 
-// code that may generate IOException
+// code that throws IOException
 File newFile = new File("test.txt");
 FileInputStream stream = new FileInputStream(newFile);
 }
@@ -209,12 +212,12 @@ Go ahead and run the code [here](https://replit.com/@Dawe7/EXception-handling-us
 Output:
 
 ```bash
-java.io.FileNotFoundException: test.txt (The system cannot find the file specified)
+java.io.FileNotFoundException: test.txt (The system is unable to locate the given file.)
 ```
 
-In the program above, when we run it, the file `test.txt` does not exist. As a result, a FileNotFoundException is thrown by FileInputStream, which extends the IOException class. When using the findFile() method, an IOException can be thrown. The main() method invokes this method, which handles any exceptions that are thrown. If a method does not manage exceptions, the throws clause must specify the types of exceptions that can occur.
+In the program above, when we run it, the file `test.txt` does not exist. As a result, a FileNotFoundException is thrown by `FileInputStream`, which extends the `IOException` class. When using the `findFile()` method, an `IOException` can be thrown. The `main()` method invokes this method, which handles any exceptions that are thrown. If a method does not manage exceptions, the throws clause must specify the type of exceptions that can occur.
 
 ### Conclusion
-In this article we have gone through exception handling in java. What we have just discussed is the extent to which a programmer will need to know and what standard college classes teach when it comes to exception handling. I hope you find this article useful in your future programs.
+This article has gone through exception handling in java along with a few examples. What we have just discussed is the extent to which a programmer will need to know and what standard college classes teach. Knowing how to handle exceptions is an important skill that a developer should have. I wish you find this article useful in your future programs.
 
 Happy coding!
