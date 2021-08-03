@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-create-a-user-login-page-using-javagui/
-title: How to create a user login page using Java GUI
+url: /how-to-create-a-user-login-page-using-java-gui/
+title: How to create a User Login Page using Java GUI
 description: In this article, we will understand what GUIs are, Java's GUI libraries and its components. We will also learn to build a simple login page using Java GUI.
 author: abdulazeez-saidu
-date: 2021-08-02T00:00:00-21:00
+date: 2021-08-03T00:00:00-06:45
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-create-a-user-login-page-using-javagui/hero.jpg
+  - url: /engineering-education/how-to-create-a-user-login-page-using-java-gui/hero.jpg
     alt: Java GUI image
 ---
 Graphical User Interfaces were introduced in reaction to the perceived steep learning curve of Command-Line Interfaces (CLIs). In this article, we will learn how to build a simple GUI using Java.
@@ -26,7 +26,7 @@ Java's original GUI library was called Abstract Window Toolkit (AWT). Later, it 
 
 ### Goal
 In this tutorial, we will learn how to design a simple user login page like this:
-![Login page](/engineering-education/how-to-create-a-user-login-page-using-javagui/loginPage.png)
+![Login page](/engineering-education/how-to-create-a-user-login-page-using-java-gui/login-page.png)
 
 ### Prerequisites
 1. Basic understanding of Java and GUIs.
@@ -35,6 +35,7 @@ In this tutorial, we will learn how to design a simple user login page like this
 
 ### Setup procedure
 To create a project in Eclipse:
+
 - Open Eclipse IDE
 - Click on `File`
 - Select `New`
@@ -43,15 +44,16 @@ To create a project in Eclipse:
 
 Once you have set up, your workspace should look like this:
 
-![java gui](/engineering-education/how-to-create-a-user-login-page-using-javagui/structure.png)
+![java gui](/engineering-education/how-to-create-a-user-login-page-using-java-gui/structure.png)
 
-To familiarize yourself with Eclipse, it is recommended to read [this](http://people.cs.uchicago.edu/~kaharris/10200/tutorials/eclipse/Step_02.html) article.
+To familiarize yourself with Eclipse, it is recommended to read [this](https://people.cs.uchicago.edu/~kaharris/10200/tutorials/eclipse/Step_02) article.
 
 ### Core concepts
 #### Variables
 Variables are containers that hold valid values of any data type.
 
 There are three types of variables in Java:
+
 - Local Variables: declared inside a method class and can only be accessed by the method.
 - Instance Variables: declared within a class, outside of a method, and can be accessed by an object of a class.
 - Static Variables: declared using a static keyword within a class, outside of a method, and can be accessed by different objects of a class.
@@ -59,6 +61,7 @@ There are three types of variables in Java:
 Variables also hold GUI components like labels, checkboxes,  text fields, frames, panels, and buttons.
 
 Example:
+
 ```java
 // declaring a button variable
 button = new JButton("Login");
@@ -70,7 +73,7 @@ In the example above, we declared a **button** as the variable name, **JButton**
 JPanel class covers the entire space or a window where we attach the component to visualize it along with other panels.
 
 #### JFrame
-A Frame is a top-level window with a title and a border. The size of the frame includes any area designated for the border. 
+A Frame is a top-level window with a title and a border. The size of the frame includes any area designated for the border.
 
 Frame encapsulates a window. It contains a title bar, menu bar, borders, and resizing corners.
 
@@ -194,6 +197,7 @@ button.setBackground(Color.BLACK);
 button.addActionListener((ActionListener) new Java_GUI());
 panel.add(button);
 ```
+
 Line 5: This will invoke an action on a button click.
 
 #### Authentication
@@ -224,7 +228,7 @@ We also learned how to create an authentication method that displays a message d
 
 Happy coding.
 
-To learn more about this topic, it is recommended to read [this](http://docs.oracle.com/javase/tutorial/uiswing/index.html) documentation.
+To learn more about this topic, it is recommended to read [this](http://docs.oracle.com/javase/tutorial/uiswing) documentation.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
