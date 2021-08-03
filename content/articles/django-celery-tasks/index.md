@@ -458,3 +458,6 @@ docker-compose up -d --build
 
 ### Conclusion
 Now that you have learned how to integrate Celery into a Django application and perform periodic tasks, create a Django application that runs a backup script to backup itself every 1 hour. You can download the full source code [here](https://replit.com/@njerikaren/DjangoCelery#).
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
