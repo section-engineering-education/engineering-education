@@ -194,6 +194,7 @@ I will be using the popular iris data set for the tutorial, you can get it almos
 Load the data into the notebook
 ```python
 df = pd.read_csv("/content/drive/MyDrive/IRIS.csv")
+df.columns =['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 ```
 ```python
 df.head()
@@ -216,6 +217,12 @@ petal_length    0
 petal_width     0
 species         0
 dtype: int64
+```
+```python
+(df["species"].unique())
+```
+```bash
+array(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'], dtype=object)
 ```
 We can be sure now that there are 3 classes of species and there are no missing values.
 Let's proceed with the data manipulation.
@@ -249,8 +256,8 @@ It is rather used to find the position of a value in a given set of values. For 
 There are two conditions that must be satisfied while calculating percentile.
 1. Data must be arranged in ascending order.
 2. if the index is not an integer, it must be rounded up.
-```
-np.percentile(df.petal_width, 50)
+```python
+print(np.percentile(df.petal_width, 50))
 ```
 ```bash
 1.3
@@ -390,7 +397,14 @@ df_ = df.petal_width
 ```python
 df_.sample(5)
 ```
-![df_sample](/engineering-education/statistical-hypothesis-testing-python-implementation/df_sample5.PNG)
+```bash
+103    1.8
+131    2.0
+114    2.4
+35     0.2
+38     0.2
+Name: petal_width, dtype: float64
+```
 ```python
 stats.ttest_1samp(a=df_, popmean=1.199)
 ```
@@ -414,7 +428,7 @@ The ratio of the higher to the lower variance must be less than 4:1 before we ca
 class1 = df.petal_width
 class2 = df.sepal_length
 ```
-find variance for each group.
+Find variance for each group.
  
 ```python
 print(np.var(class1), np.var(class2))
@@ -423,9 +437,9 @@ print(np.var(class1), np.var(class2))
 0.5785315555555559 0.6811222222222222
 ```
 ```python
-ratio_check = 0.6811222222222222 / 0.5785315555555559
+ratio_check = np.var(class2)/np.var(class1)
  
-ratio_check
+print(ratio_check)
 ```
 ```bash
 1.1773294225379805
@@ -495,7 +509,7 @@ sepal = df.sepal_length
 species = df.species
  
 model = ols('species ~ C(petal) + C(sepal) + C(petal):C(sepal)', data=df).fit()
-sm.stats.anova_lm(model, typ=2)
+print(sm.stats.anova_lm(model, typ=2))
 ```
 ![twowayanova](/engineering-education/statistical-hypothesis-testing-python-implementation/twowayanova.PNG)
  
