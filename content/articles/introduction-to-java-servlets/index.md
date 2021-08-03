@@ -23,11 +23,11 @@ A Java servlet is a Java program that runs on a Java-enabled web server or appli
 
 ### Table of content:
 - [Properties and execution Java servlets](#properties-and-execution-java-servlets)
-- [The Servlet Architecture](the-servlet-architecture)
+- [The Servlet Architecture](#the-servlet-architecture)
 - [Extensions on the server](#extensions-on-the-server)
 - [Common Gateway Interface](#common-gateway-interface)
 - [Advantages and Disadvantages of Java Servlet](#advantages-and-disadvantages-of-java-servlet)
-- [The Servlet Container](the-servlet-container)
+- [The Servlet Container](#the-servlet-container)
 
 ### Properties and execution Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
