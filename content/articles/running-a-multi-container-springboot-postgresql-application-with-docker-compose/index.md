@@ -46,7 +46,7 @@ The blog API has just the following endpoints:
 
 After cloning, in the project directory, go to the `application.properties` file in the `src/main/resources/` directory to configure the API data source.
 
-![BlogAPI project directory structure showing application.properties file](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/directory-structure.png)
+![BlogAPI project directory structure showing application.properties file](/engineering-education/running-a-multi-container-springboot-postgresql-application-with-docker-compose/directory-structure.png)
 
 
 In the `application.properties` file add:
@@ -189,7 +189,7 @@ You can now test the API endpoints. Open up Postman and send a POST request to `
 
 The above request creates a blog post with a unique ID:
 
-![POST request Test](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/post-request.png)
+![POST request Test](/engineering-education/running-a-multi-container-springboot-postgresql-application-with-docker-compose/post-request.png)
 
 To view the post you just created, send a GET request to the same endpoint. View all the blog posts you’ve created:
 
