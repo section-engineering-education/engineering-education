@@ -246,7 +246,7 @@ TuriCreate supports different classification algorithms, in our case, we will us
 We use logistic regression since our model has a binary output. Our output can be either be positive or a negative, to show if a person is at risk of getting diabetes or not.
 Logistic regression is also better suited for our problem since this algorithm tends to give higher accuracy and is less inclined to over-fitting.
 
-- To use the logistic regression algorithm use the foloowing command:
+- To use the logistic regression algorithm use the following command:
 
 ```python
 logistic_model = tc.logistic_classifier.create(train_data,target='class',features=feature_names)
