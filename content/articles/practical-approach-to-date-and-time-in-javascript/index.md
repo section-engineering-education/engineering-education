@@ -1,16 +1,36 @@
-﻿
-Date and time are crucial parts of our day-to-day lives. Knowing how to work with them is important. JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /practical-approach-to-date-and-time-in-javascript/
+title: Practical Approach to Date and Time in JavaScript
+description: This article will highlight some inbuilt methods in JavaScript that can help us make use of the `Date` object. The reader will learn how to calculate the number of days between two dates, iterate through dates, and how to build a simple countdown timer.
+author: samuel-mwangi
+date: 2021-08-03T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/practical-approach-to-date-and-time-in-javascript/hero.png
+   alt: PostgreSQL vs MySQL Hero Image
+---
+JavaScript has an inbuilt `Date` object that can be used for various applications. There are also some inbuilt methods in JavaScript that can help us make use of the `Date` object.
+<!--more-->
+Date and time are crucial parts of our day-to-day lives. Knowing how to work with them is very important when developing applications or software.
 
 ### Prerequisites
-To follow through this tutorial smoothly, we will need :
- 1. Fundamental knowledge in JavaScript and HTML
- 2. A text editor of your choice
- 3. A browser
+To follow this tutorial smoothly, we will need:
+- Fundamental knowledge in JavaScript and HTML
+- A text editor of your choice
+- A browser
  
- ### 1. Getting the day of the week from a date.
- In JavaScript, the inbuilt method `new Date()` is used to get the current date by default. There is also the `getDay()` that is used for checking the day of the week. It returns the results as an integer ranging between `0 - 6` whereby 0 is Sunday and the rest of the days follow respectively up to 6 for Saturday. 
- We will use the two methods above combined with a `switch statement` to get the day today from today's date.
- ````HTML
+### 1. Getting the day of the week from a date
+In JavaScript, the inbuilt method `new Date()` is used to get the current date by default. There is also the `getDay()` that is used for checking the day of the week. 
+
+It returns the results as an integer ranging between `0 - 6` whereby 0 is Sunday and the rest of the days follow respectively up to 6 for Saturday. 
+
+We will use the two methods above combined with a `switch statement` to get the day from today's date.
+```HTML
  <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -59,11 +79,12 @@ switch(d.getDay()){
 </script>
 </body>
 </html>
-````
+```
 
 ### 2. Calculating the number of days between two dates
-In this task, we start by initializing the two dates to be used. Next, we subtract the time difference between the two dates which will be in milliseconds, and finally, we convert the milliseconds into days.
-````HTML
+In this task, we'll start by initializing the two dates to be used. Next, we subtract the time difference between the two dates which will be in milliseconds, and finally, we convert the milliseconds into days.
+
+```HTML
 <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -85,10 +106,11 @@ document.writeln(Diff_in_days);
 </script>
 </body>
 </html>
-```` 
-In case we want to use the current day like today, we would be required to do some changes in terms of  `Today's` formatting.
+```
 
-````HTML
+In case we want to use the current day like today, we would be required to do some changes in terms of `Today's` formatting.
+
+```HTML
 <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -115,13 +137,14 @@ document.writeln(Diff_in_days);
 </script>
 </body>
 </html>
-````
+```
 
-> **NB:** if the target date happens to be less than the current date, the results will be negative. At the time of writing this, `Target ` is still a future date.
+> **Note:** If the target date happens to be less than the current date, the results will be negative. At the time of writing this, `Target ` is still a future date.
 
 ### 3. Calculating the number of workdays between two dates (excluding weekends)
 In this task, we will iterate from one date to another, counting the number of weekends until we get to the given date. Next, we will get the number of days between the two dates and then subtract the number of weekends from the number of days between the two dates.
-````HTML
+
+```HTML
  <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -159,14 +182,16 @@ document.writeln(workdays);
 </script>
 </body>
 </html>
-````
+```
 
 ### 4. Building a simple countdown timer
 In this task we will use the `setInterval()` method to repeat our time update function at every given interval, in this case, it shall be one second.
+
 This method will continue calling our function until we close the window or the `clearInterval()` method is called, in this case, we shall call it when the countdown timer gets to zero. 
 
 We will also use the `floor()` method to return rounded-up numbers for the days, hours, minutes, and seconds after we get the difference in time.
-````HTML
+
+```HTML
 <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -205,16 +230,21 @@ We will also use the `floor()` method to return rounded-up numbers for the days,
 </script>
 </body>
 </html>
-````
+```
 
 ### Conclusion 
 In this tutorial you have learned the following: 
- - How to check what day it is from a date
- - How to calculate the number of days between two dates
- - Calculating the number of workdays between two dates
- - Iterating through dates
- - Building a simple countdown timer
+- How to check what day it is from a date.
+- How to calculate the number of days between two dates.
+- Calculating the number of workdays between two dates.
+- Iterating through dates.
+- How to build a simple countdown timer.
 
- You can go ahead and try the above tasks on your own now or even customize them. You can copy the snippets and paste them into a file you name with a `.html` extension.
+You can go ahead and try the tasks above on your own now or even customize them. You can copy the snippets and paste them into a file you name with a `.html` extension.
   
-Run the code by opening the file in a browser. If you are using vscode, install a live server extension to make the task easier. Have fun coding!
+Run the code by opening the file in a browser. If you are using VScode, install a live server extension to make the task easier.
+
+Have fun coding!
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
