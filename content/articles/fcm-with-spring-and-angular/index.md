@@ -21,9 +21,10 @@ In this guide, we will be learning how to send notifications to an Angular appli
 
 ### Prerequisites
 
-For this guide, you will need basic knowledge of Angular and Spring Boot since that will be our tech stack. For our backend, we will be using Kotlin as our JVM language. Yet, this guide should still be easy to follow as a Java developer. Additionally, you won’t need to know any complex Spring Boot concepts since they are not needed here. You will only need to know Spring MVC and the basic design patterns (i.e. [beans](https://www.baeldung.com/spring-bean), and [stereotype annotations](https://medium.com/javarevisited/spring-stereotype-annotations-1469ca0c3ad2)). Although there may be some small Spring Boot concepts here a beginner may not know. In which case, I’ll give an explanation along the way.
-
-On the front-end, you will more or less just need some basic angular knowledge to follow along. This includes using the CLI, the HTTP client, and basic templating. When it comes to Firebase, I won’t be expecting you to have any prior knowledge of how to use it. We will be going through all you need to know to use it for this situation. 
+- Basic Angular knowledge including the CLI, HTTP client, and basic templating.
+- Basic Spring Boot concepts. This includes Spring MVC and the basic design patterns (i.e. [beans](https://www.baeldung.com/spring-bean), and [stereotype annotations](https://medium.com/javarevisited/spring-stereotype-annotations-1469ca0c3ad2)).
+- Ideally, some Kotlin experience since we will be using that language. This is not required as all the concepts should be understandable by a pure Java developer.
+- Preferably, the [builder design pattern](https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/) since we will heavily use it in the backend.
 
 ### Understanding the high-level architecture of our project
 
@@ -31,7 +32,7 @@ On the front-end, you will more or less just need some basic angular knowledge t
 
 To start, it is important to understand at a high level how this project will work. When the user first opens the application, we request permission to send notifications. If they grant permission, then Firebase will send a token to identify their device. Then, the client sends the token to our Spring Boot app so we can use it to send notifications to that user. Whenever our backend wants to send a notification, it will give details about the desired notification to Firebase. From there, the Firebase backend will send the notification to the correct device. 
 
-#### What will happen on the client-side?
+#### What will happen on the client side?
 
 Client-side, we will either show the message within the app or as a notification popup. The former when our application is opened and the latter when our application is closed. Although you may be asking: **how can we show the notification when our application is inactive?** We would do this with the help of a **service worker**.
 
@@ -39,7 +40,7 @@ Client-side, we will either show the message within the app or as a notification
 
 A service worker is a special script that runs on a separate thread from your application. It allows you to intercept requests, cache data for offline use, and in our case, send notifications. Since a service worker is separate from our app, we can use it to send notifications while the app is inactive. Although, when our app is active, we will let our angular project handle the message by displaying it on the page.
 
-#### What will happen on the server-side?
+#### What will happen on the server side?
 
 Server-side, our Spring Boot app will use an SDK from Firebase called **the admin SDK**. This SDK allows our application to interact with Firebase so we can ask it to send notifications for us. When we initialize Firebase in the Firebase console, they will give us a special JSON file. We will use this JSON file to authorize our Spring Boot app to send notifications.
 
@@ -55,7 +56,7 @@ Additionally, we also have the option to send a direct notification. Here, we sp
 
 To illustrate how this entire project will work, here is a handy flow chart I made to picture it. Hopefully, this will clear up any confusion you may have had about the architecture:
 
-![a flow chart to illustrate the architecture](flow-chart.png)
+![a flow chart to illustrate the architecture](/engineering-education/fcm-with-spring-and-angular/flow-chart.png)
 
 ### Setting up our backend
 
@@ -65,9 +66,13 @@ As always, we start by generating a Spring Boot project from the [Spring initial
 
 #### Setting up Firebase
 
-First, go to the [Firebase website](https://Firebase.google.com/). Then, make sure you log in to your Google account and then click **go to console** on the upper right corner. From there, you should see a list of all your Firebase projects with a button that says: **add project**. Click that button to create a new Firebase project so we can connect to Firebase. From there, it will guide you to create the project which should be very straightforward.
-
-Once Firebase finishes creating your project, it should bring you to the project overview. From there, click the gear icon on the left next to the **project overview** button, then select **project settings**. Then, select **service accounts** in the upper area below the **project settings** heading. Below, there should be a button that says: **generate new private key**. This will generate the JSON file I mentioned earlier to authorize our backend. Finally, we need to add a property to our `application.properties` file with the file path to the private key:
+1. Go to the [Firebase website](https://Firebase.google.com/) having logged in with your Google account.
+2. Click **go to console** on the upper right corner. 
+3. Select **add project** to create a new Firebase project so we can connect to Firebase. From there, it will guide you to create the project which should be very straightforward.
+4. Press the gear icon on the left next to the **project overview** button, then select **project settings**.
+5. Click **service accounts** in the upper area below the **project settings** heading.
+6. Below, generate a new private key. This private key is the JSON file I mentioned earlier to authorize our backend.
+7. Add a property to the `application.properties` file with the file path to the private key:
 
 ```properties
 app.firebase-config-file=firebase-config/your-file-name-goes-here.json
@@ -136,7 +141,8 @@ data class TopicNotification(val topic: String, override val title: String,
 data class DirectNotification(val target: String, override val title: String,
                               override val message: String): AppNotification(title, message)
 ```
-Using these classes, we can create two functions in our service to send direct and topic notifications respectively:
+
+Using these classes, we can create a function in our service to send direct notifications:
 
 ```kotlin
 package me.john.amiscaray.services
@@ -147,16 +153,16 @@ import me.john.amiscaray.dtos.SubscriptionRequest
 import me.john.amiscaray.dtos.DirectNotification
 import me.john.amiscaray.dtos.TopicNotification
 
-
 @Service
 class FCMService {
-
    fun sendNotificationToTarget(notification: DirectNotification){
-
        val message = Message.builder()
+                // Set the configuration for our web notification
                .setWebpushConfig(
+                       // Create and pass a WebpushConfig object setting the notification
                        WebpushConfig.builder()
                                .setNotification(
+                                       // Create and pass a web notification object with the specified title, body, and icon URL 
                                        WebpushNotification.builder()
                                                .setTitle(notification.title)
                                                .setBody(notification.message)
@@ -164,35 +170,37 @@ class FCMService {
                                                .build()
                                ).build()
                )
+                // Specify the user to send it to in the form of their token  
                .setToken(notification.target)
                .build()
        FirebaseMessaging.getInstance().sendAsync(message)
-
-   }
-
-   fun sendNotificationToTopic(notification: TopicNotification){
-
-       val message = Message.builder()
-               .setWebpushConfig(
-                       WebpushConfig.builder()
-                               .setNotification(
-                                       WebpushNotification.builder()
-                                               .setTitle(notification.title)
-                                               .setBody(notification.message)
-                                               .setIcon("https://assets.mapquestapi.com/icon/v2/incident@2x.png")
-                                               .build()
-                               ).build()
-               ).setTopic(notification.topic)
-               .build()
-
-       FirebaseMessaging.getInstance().sendAsync(message)
-
    }
 }
 ```
-As you can see, creating the notifications are pretty straightforward if you know the [builder design pattern](https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/). Since our platform is the web, we pass a `WebpushConfig` object to the builder. That object contains the notification data to send. Note that Firebase also gives you the option to set a configuration for Android or IOS devices in a similar way.
 
-Finally, after setting the notification data, we set the topic or token to specify who the message is for. From there, we call the `sendAsync` method to send the message.
+As you can see, creating the notifications is pretty straightforward if you know the builder design pattern. Since our platform is the web, we pass a `WebpushConfig` object to the builder. Finally, after setting the notification data, we set the token to specify who the message is for. From there, we call the `sendAsync` method to send the message. 
+
+Likewise, to send a topic notification, we create a similar function in our service. The only difference is we specify a topic instead of a token:
+
+```kotlin
+// Same code as above, the only difference is we call setTopic instead of setToken with the appropriate topic
+fun sendNotificationToTopic(notification: TopicNotification){
+    val message = Message.builder()
+            .setWebpushConfig(
+                    WebpushConfig.builder()
+                            .setNotification(
+                                    WebpushNotification.builder()
+                                            .setTitle(notification.title)
+                                            .setBody(notification.message)
+                                            .setIcon("https://assets.mapquestapi.com/icon/v2/incident@2x.png")
+                                            .build()
+                            ).build()
+            ).setTopic(notification.topic)
+            .build()
+
+    FirebaseMessaging.getInstance().sendAsync(message)
+}
+```
 
 To finish this service, let’s create a function to subscribe a user to a specified topic. Before that, let’s create a model object to represent a subscription request:
 
@@ -229,29 +237,20 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class NotificationController(private val fcm: FCMService) {
-
    @PostMapping("/notification")
    fun sendTargetedNotification(@RequestBody notification: DirectNotification){
-
        fcm.sendNotificationToTarget(notification)
-
    }
-
 
    @PostMapping("/topic/notification")
    fun sendNotificationToTopic(@RequestBody notification: TopicNotification){
-
        fcm.sendNotificationToTopic(notification)
-
    }
 
    @PostMapping("/topic/subscription")
    fun subscribeToTopic(@RequestBody subscription: SubscriptionRequest){
-
        fcm.subscribeToTopic(subscription)
-
    }
-
 }
 ```
 
@@ -281,7 +280,7 @@ ng add @angular/fire
 
 Next, go to the project settings of your Firebase console. Below, you should see a code snippet with a Javascript object like so:
 
-![firebase config object](firebase-config.png)
+![firebase config object](/engineering-education/fcm-with-spring-and-angular/firebase-config.png)
 
 You will need to copy this to your environment files:
 
@@ -410,7 +409,7 @@ export class AppComponent implements OnInit{
 
 ```
 
-First, we subscribe to an observable which represents a token request to Firebase. The first time a user executes this, it will ask them for permission to send notifications. The first function we pass to the `subscribe` method is for when the user accepts permission and Firebase gives us a token. Meanwhile, the second function is for if they deny permission or some other error occurs. Within the first function, we send a post request to our server at `http://localhost:8080/notification`. That post request has a request body representing a `DirectNotification` object. Recall in our backend that we created a class called `DirectNotification`. This class maps to the object we are sending here. We also send a post request to `http://localhost:8080/topic/subscription`. This request represents us subscribing to messages with a topic of **weather**. The request body maps to a `SubscriptionRequest` class defined in our backend. 
+First, we subscribe to an observable which represents a token request to Firebase. The first time a user executes this, it will ask them for permission to send notifications. The first function we pass to the `subscribe` method is for when the user accepts permission and Firebase gives us a token. Meanwhile, the second function is for if they deny permission or some other error occurs. Within the first function, we send a post request to our server at `http://localhost:8080/notification`. That post request has a request body representing a `DirectNotification` object. Recall in our backend that we created a class called `DirectNotification`. This class maps to the object we are sending here. We also send a post request to `http://localhost:8080/topic/subscription`. This request represents us subscribing to messages with the topic of **weather**. The request body maps to a `SubscriptionRequest` class defined in our backend. 
 
 ### Subscribing to Receive notifications
 
@@ -489,12 +488,12 @@ Firebase.initializeApp({
 
 const messaging = Firebase.messaging();
 ```
-First, we need to import Firebase and Firebase messaging into the service worker file. You may be wondering why we use this weird ` importScripts` function to do this.  Service workers and other types of workers work differently than a normal javascript file. This is why they must use the `importScripts` function to import anything. Don’t worry about why this is the case, we don’t need to understand that. Anyways, with that installed, we call the `initializeApp` method passing the object we copied into the environment files. Then, all we need to do is create an object called *messaging* using the `messaging` method. This should handle all the magic of displaying notifications for us!
+First, we need to import Firebase and Firebase messaging into the service worker file. You may be wondering why we use this weird `importScripts` function to do this.  Service workers and other types of workers work differently than a normal javascript file. This is why they must use the `importScripts` function to import anything. Don’t worry about why this is the case, we don’t need to understand that. Anyways, with that installed, we call the `initializeApp` method passing the object we copied into the environment files. Then, all we need to do is create an object called *messaging* using the `messaging` method. This should handle all the magic of displaying notifications for us!
 
 With that created, try sending a post request to our server to send a notification while the app is inactive. In case you don’t know, you can do so using a tool like [Postman](https://www.postman.com/). You should see something like this on the corner of your monitor:
 
-![a sample notification](notification.png)
+![a sample notification](/engineering-education/fcm-with-spring-and-angular/notification.png)
 
 ### Conclusion
 
-In this guide, we went through the process of sending notifications in a full-stack Spring Boot and Angular project. In the backend, we set up a REST API to tell Firebase what notifications to send and where. In the frontend, we learned how to subscribe to receive notifications even when the app is closed. To best use this guide, try making your own full-stack project that uses these concepts. If you need help or a reference to what we did here, I created a [Github repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote. Happy coding!
+In this guide, we went through the process of sending notifications in a full-stack Spring Boot and Angular project. In the backend, we set up a REST API to tell Firebase what notifications to send and where. In the front end, we learned how to subscribe to receive notifications even when the app is closed. To best use this guide, try making your own full-stack project that uses these concepts. If you need help or a reference to what we did here, I created a [Github repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote. Happy coding!
