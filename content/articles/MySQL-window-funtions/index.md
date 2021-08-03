@@ -83,7 +83,7 @@ Row Numbers are assigned to rows in their order of appearance. The rows are firs
       SELECT
       ROW_NUMBER() OVER(ORDER BY score) AS number,
       name, score
-       FROM sales;
+      FROM sales;
 
 
 This outputs a list of sales arranged in ascending order using the 'ranking score'. Each item is given a ranking number starting from 1.
@@ -126,12 +126,13 @@ Despite this challenge, there is a workaround that can enable us to use window f
 This can be achieved by the use of A WITH QUERY EXPRESSION or a sub-query as illustrated in the example below.
 
 
-          WITH student_marks AS(
+          WITH student_marks AS
+          (
           SELECT student_id, student_name, marks,
           row_number( ) over (PARTITION BY  student _id ORDER BY marks DESC ) 
           AS rn           
           FROM student
-           )
+          )
           SELECT student_id, student_name, marks
           FROM student_marks WHERE rn = 1;
 
@@ -157,8 +158,8 @@ specified.
 
      SELECT  book_id, borrowing_id, value,
      SUM ( value) OVER (PARTITION BY book_id
-                                          ORDER BY borrowing_id
-                                          RANGE UNBOUNDED PRECEDING ) AS total
+     ORDER BY borrowing_id
+     RANGE UNBOUNDED PRECEDING ) AS total
      FROM dbo.Booking;
 
 
@@ -167,8 +168,8 @@ Example 3 below no window frame unit is specified.
 
      SELECT  book_id, borrowing_id, value,
      SUM ( value) OVER (PARTITION BY book_id
-                                          ORDER BY borrowing_id
-                                          ROWS UNBOUNDED PRECEDING ) AS total
+     ORDER BY borrowing_id
+     ROWS UNBOUNDED PRECEDING ) AS total
      FROM dbo.Booking;
 
 
@@ -188,9 +189,9 @@ FIRST_VALUE  and the  LAST_VALUE in use
 
         SELECT buyer_id, date_of_order, order_id, order_value,
         FIRST_VALUE(order_value) OVER (PARTITION BY buyer_id 
-                                                               ORDER BY date_of_order, order_id) AS           firstorder_value,
+        ORDER BY date_of_order, order_id) AS firstorder_value,
         LAST_VALUE(order_value) OVER (PARTITION BY buyer_id 
-                                                               ORDER BY date_of_order, order_id) AS laststorder_value, 
+        ORDER BY date_of_order, order_id) AS laststorder_value, 
         FROM Sales.order_value
         ORDER BY buyer_id, date_of_order, order_id;
 `
@@ -212,7 +213,8 @@ This can however be avoided by just putting the following into place:
 This can however be made possible by:
 -  Using the DELETE and UPDATE functions as sub-queries of the main query as shown below
 
-        WITH student_marks AS(
+        WITH student_marks AS
+        (
         SELECT [ marks],  LAG( [ marks]) OVER (ORDER BY [student_id]) AS marks_lag         
         FROM student
         )
