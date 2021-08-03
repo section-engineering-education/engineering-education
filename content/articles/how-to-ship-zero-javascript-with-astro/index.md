@@ -204,7 +204,7 @@ There are two types of React components:
  
 For this article, we will be using a functional component.
  
-Navigate to the component folder in the main project folder. Create a **Tour.jsx** file in the component folder.
+Navigate to the component folder in the main project folder. Create a **Tours.jsx** file in the component folder.
  
 Inside the **Tours.jsx** file you created add the following:
  
@@ -314,7 +314,7 @@ import { Markdown } from 'astro/components';
  
 import  Tours  from './Tours.jsx';
  
-const url = 'https://course-api.com/React-tours-project'
+const url = `https://course-api.com/React-tours-project`
  
 const tours = await fetch(url).then(response => response.json())
  
@@ -338,7 +338,7 @@ Let's have an overview of what is in **Tour.astro** file:
  
 * **import  Tours  from './Tours.jsx**: This imports the Tour component written in the previous step. This enables us to pass down the data we fetched as a prop to our **Tours** component.
  
-* **const url = 'https://course-api.com/React-tours-project'**: This specifies the application programming interface(API) where we will fetch our data.
+* **const url = `https://course-api.com/React-tours-project`**: This specifies the application programming interface(API) where we will fetch our data.
  
 * **const tours = await fetch(url).then(response => response.json())**: This is a built in Javascript function that fetches our data.
  
@@ -360,7 +360,7 @@ You should see the image below in your developer tools:
  
 ![network-no-js](/engineering-education/how-to-ship-zero-javascript-with-astro/network-no-js.png)
  
-You will see that Astro does not ship **Tour.jsx** component into the browser. Astro loads our React component as a static HTML. Now in **Tour.astro**, type these codes below the **tours** variable:
+You will see that Astro does not ship **Tours.jsx** component into the browser. Astro loads our React component as a static HTML. Now in **Tour.astro**, type these codes below the **tours** variable:
  
 ```js
  
@@ -392,7 +392,7 @@ to make our web pages interactive. Astro provides you with five(5) different com
  
 * media=1234;QUERY: Hydrate component when media query is matched (e.g \<Mycomponent:media=1234;QUERY>). Useful for components that should only display on mobile or desktop screens.
  
-In your **Tour.Jsx**, inside the **\<p>** tag change it from **{page.info}** to the code below:
+In your **Tours.Jsx**, inside the **\<p>** tag change it from **{page.info}** to the code below:
  
 ```jsx
  
