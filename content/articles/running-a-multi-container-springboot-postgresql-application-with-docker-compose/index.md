@@ -193,7 +193,7 @@ The above request creates a blog post with a unique ID:
 
 To view the post you just created, send a GET request to the same endpoint. View all the blog posts you’ve created:
 
-![GET request Test](/running-a-multi-container-springboot-postgresql-application-with-docker-compose/get-request.png)
+![GET request Test](/engineering-education/running-a-multi-container-springboot-postgresql-application-with-docker-compose/get-request.png)
 
 To stop all the services in the terminal, run:
 
