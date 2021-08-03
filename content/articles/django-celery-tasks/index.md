@@ -1,4 +1,4 @@
-When working with data-intensive applications, long-running tasks slows down the application and the website load time. In such an application, we can improve the application load time by offloading some work from the application server to a message broker server.
+When working with data-intensive applications, long-running tasks slows down the application and the website load time. We can improve the application load time by offloading some work from the application server to a message broker server in such an application.
 
 In this tutorial, we will learn how to use Celery in a Django application to perform long-running background tasks.
 
@@ -29,16 +29,17 @@ In this tutorial, we will learn how to use Celery in a Django application to per
 
 1. [Python](https://www.python.org/) installed in your computer.
 2. A good understanding of [Python](https://www.tutorialspoint.com/python/index.htm) and [Django](https://www.djangoproject.com/).
+3. [Docker](https://www.section.io/engineering-education/getting-started-with-docker/) installed on your computer.
    
 ### Workers
 
-The background-based task servers are called `workers`. In an application with web servers, we can have several workers that perform the heavy computations in the background and send back the response to the application through webhooks or callbacks.
+The background-based task servers are called `workers`. In an application with web servers, we can have several workers perform the heavy computations in the background and send back the response to the application through webhooks or callbacks.
 
 ### Celery Message Queue
 
-A queue is a data structure that works based on the first-in, first-out principle. We assign work to the workers through a message queue. The tasks are processed by the worker in the order in which they were queued.
+A queue is a data structure that works based on the first-in, first-out principle. We assign work to the workers through a message queue. The worker processes the tasks in the order in which the message broker queued them.
 
-> The queue ensures that each worker processes a single task at a time and only a single worker processes a particular task.
+> The queue ensures that each worker processes a single task at a time, and only a single worker processes a particular task.
 
 ### Celery
 Celery makes it easier to implement the task queues for many workers in a Django application.
@@ -72,23 +73,27 @@ Functions of Celery:
    ```bash
    source venv/bin/activate
    ```
-6. Migrate the database models by executing the command below.
+6. Install Django into the virtual environment we have created above by executing the command below.
+   ```bash
+   pip install django
+   ```
+7. Migrate the database models by executing the command below.
    
    ```bash
    cd celerytask
    python manage.py migrate
    ```
-7. Execute the command below to add celery to our application.
+8. Execute the command below to add celery to our application.
     
     ```bash
     pip install celery
     ```
-8. Start the Django web server by executing the command below.
+9. Start the Django web server by executing the command below.
    
    ```bash
    python manage.py runserver
    ```
-9.  Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
+10.  Navigate to [http://localhost:8000/](http://localhost:8000/) to confirm that the application is up and running.
 
 
 #### Adding Celery configuration to Django application
@@ -133,7 +138,7 @@ Let's create a Django app from where we will set up the Celery task.
    python manage.py startapp task
    ```
    
-2. Create a python file named `task.py` in the `task` that we have just created.
+2. Create a python file named `task.py` in the `task` directory that we have just created.
 
 3. Add the Code snippet below into the `task.py` created above.
    
@@ -170,7 +175,7 @@ def name_of_your_function(optional_param):
 
 Create a folder named `templates` in the project's root directory. In the `templates` directory created above, create another directory within it named `task` as it will hold the HTML files for our Django `task`.
 
-1. In the `task` directory created above, create a file named `base.html` and add the code snippets below into it. The below code snippet is the base template that other template files will extend from.
+1. In the `task`, directory created above, create a file named `base.html` and add the code snippets below into it. The below code snippet is the base template that other template files will extend from.
    
    ```html
    <!DOCTYPE html>
@@ -242,7 +247,7 @@ Create a folder named `templates` in the project's root directory. In the `templ
 
 #### Form
 
-In the `task`, create a python file named `form.py` and add the code snippet below:
+In the `task` directory (not the one in the templates directory), create a python file named `form.py` and add the code snippet below:
 
 ```python
 from django import forms
@@ -328,9 +333,15 @@ TEMPLATES = [
 ]
 
 ``` 
+- Execute the command below to create a `requirements.txt` file that we will use when building the Docker image.
+  ```bash
+  pip freeze > requirements.txt
+  ```
+  - `requirements.txt` file contains all the packages required by our application.
+
 ### Containerization
 #### Creating the Dockerfile
-In the root project directory, create a file named `Dockerfile` and add the code snippet below.
+In the root project directory,`project/celerytask`, create a file named `Dockerfile` and add the code snippet below.
 ```Dockerfile
 # pull the official base image
 FROM python:3.9.5-alpine
@@ -356,7 +367,7 @@ EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 ```
-The code snippet above contains directives that will be used to create the Docker image. For more information on how to create Django Docker images, visit [creating Django Docker images](https://www.section.io/engineering-education/django-docker/).
+The code snippet above contains directives that will be used to create the Docker image. For more information on creating Django Docker images, visit [creating Django Docker images](https://www.section.io/engineering-education/django-docker/).
 
 #### Create a Docker compose deployment file
 In the working directory `project`, create a file named `docker-compose.yml` and add the code snippet below.
