@@ -11,7 +11,7 @@ In this tutorial, you’ll learn how Docker Compose makes it easier to configure
 - Basic knowledge of Spring Boot, Git, and the terminal.
 - Basic understanding of Docker and Docker Compose installed - see guide [here](https://docs.docker.com/compose/install/).
 - A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice.
-- Postman - In this tutorial, we will use Postman to test the multi-container application. Download it [here](https://www.postman.com/downloads/)
+- Postman - Postman is an API client used by developers to create, test, document and share APIs. Download it [here](https://www.postman.com/downloads/)
 
 ### Setting up a Spring Boot project
 
