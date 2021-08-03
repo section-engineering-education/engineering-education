@@ -119,7 +119,7 @@ The three methods to be discussed are:
 2. T-Test
 3. ANOVA Test
  
-### Chi-square test - Python implementation.
+#### Chi-Square Test
  
 Chi-square test is used to perform testing on two categorical variables in our data population. It is focused on looking for an important relationship between two categorical variables.
 For example, comparing the aftereffects of malaria drug A, malaria drug B, and malaria drug C.
@@ -169,6 +169,8 @@ chi-square = 3.2 + 0.143 + 1.125
 chi-square = 4.468
 ```
 For huge datasets, mathematical calculations cannot be done by hand. The implementation of the chi-square test in Python is discussed in the next section.
+
+### Chi-square test - Python implementation.
  
 ```python
 import pandas as pd
