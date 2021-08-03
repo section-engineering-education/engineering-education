@@ -6,8 +6,8 @@ url: /introduction-to-java-swing/
 title: Introduction to Java Swing
 description: This article takes the reader through creating desktop using Java Swing. Java Swing is used to create window-based applications which makes it suitable for developing lightweight desktop applications.
 author: ayoma-joseph
-date: 2021-08-02T00:00:00-06:00
-topics: []
+date: 2021-08-03T00:00:00-06:53
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -34,13 +34,14 @@ To follow through this article, you will need to have:
 - Basic knowledge of Java programming language
 
 ### Differences between Java Swing and Java AWT
-Both Java Swing and Java Abstract Window Toolkit (AWT) are used to design graphical user interfaces using Java. 
+Both Java Swing and Java Abstract Window Toolkit (AWT) are used to design graphical user interfaces using Java.
 
 However, they have differences that would make one suitable over the other; depending on what one wants to achieve.
 
 Some of the differences are:
+
 - Java AWT has a set of functions and procedures that create applications that can access features or information of the Operating system, other applications, or even services. Java AWT is an Application Programming Interface (API) that develops Java graphical user interfaces. On the other hand, Java Swing is formed from Java Foundation Classes, making it suitable for creating independent applications.
-- Java AWT components are heavy since they interact with the Operating system. On the other hand, Java Swing's components are lightweight and powerful, hence has more functionality compared to Java AWT.
+- Java AWT components are heavy since they interact with the Operating System. On the other hand, Java Swing's components are lightweight and powerful, hence has more functionality compared to Java AWT.
 - Applications done in Java Swing are faster and more efficient compared to those done in Java AWT. Swing has less execution time compared to AWT.
 - Java AWT is an API framework which makes it platform-dependent since its components depend on the platform. On the other hand, Swing components do not depend on the platform. Hence Swing is platform-independent.
 
@@ -145,7 +146,7 @@ NetBeans is an IDE for developing applications using different languages. Java p
 
 NetBeans is the best IDE for building desktop applications using swing since it provides a user-friendly interface for designing and coding the UI. It has inbuilt libraries for swing which auto-populate code.
 
-The inbuilt libraries in NetBeans provide a palette section in the IDE when creating a swing application. This makes it easier to drag and drop and components when designing an application.
+The in=built libraries in NetBeans provide a palette section in the IDE when creating a swing application. This makes it easier to drag and drop and components when designing an application.
 
 Let's make a sample Swing application that shows the above components. It is a simple application that collects customer personal information.
 
@@ -157,7 +158,7 @@ Let's make a sample Swing application that shows the above components. It is a s
 
 ![NetBeans project](/engineering-education/introduction-to-java-swing/netbeans-project.png)
 
-3. Leave the project location as default and name the project as _sectionSampleSwingGUI_. If you need to create the main Class, tick `create mainclass` checkbox and check on ` Use dedicated Folder for Storing Libraries` checkbox to create a dedicated folder for libraries. In our case, we will check both checkboxes. Click finish and wait for the project to set up.
+3. Leave the project location as default and name the project as _sectionSampleSwingGUI_. If you need to create the main Class, tick `create mainclass` checkbox and check on `Use dedicated Folder for Storing Libraries` checkbox to create a dedicated folder for libraries. In our case, we will check both checkboxes. Click finish and wait for the project to set up.
 
 ![NetBeans add project](/engineering-education/introduction-to-java-swing/netbeans-add.png)
 
