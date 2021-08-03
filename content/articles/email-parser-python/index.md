@@ -1,6 +1,6 @@
 ### Parsing emails in Python
 
-Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or might be trying to look for  correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
+Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or might be trying to look for correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
 
 ### Prerequisites
 
@@ -16,7 +16,7 @@ A Colab notebook with the codes is found [here](https://colab.research.google.co
 
 ### Getting started
 
-We will parse emails from the _SpamAssassin_ website, and then look at their structure and contents. The site contains spam and normal emails. We will try and look at their structures using the metrics highlighted. 
+We will parse emails from the _SpamAssassin_ website in which, we will look at their structure and contents. The site contains spam and ham emails. We will try and look at their structures using the metrics highlighted. 
 
 We will import the packages we need in a new cell then add the code for getting the emails from the _SpamAssassin_ website.
 
@@ -27,22 +27,21 @@ import urllib.request
 import email
 import email.policy
 from collections import Counter
-import urlextract
 
 #the root url
 EMAILS_URL_ROOT = "http://spamassassin.apache.org/old/publiccorpus/"
 #the emails url
-NORMALS_URL = EMAILS_URL_ROOT + "20030228_easy_ham.tar.bz2"
+HAM_URL = EMAILS_URL_ROOT + "20030228_easy_ham.tar.bz2"
 SPAMS_URL = EMAILS_URL_ROOT + "20030228_spam.tar.bz2"
 #datasets path
 SPAM_PATH = os.path.join("datasets", "spam")
 
 #method for fetching the emails from the url
-def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_PATH):
+def fetch_emails(HAM_URL=HAM_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_PATH):
   #creating a directory
     if not os.path.isdir(spams_path):
         os.makedirs(spams_path)
-        for filename, url in (("ham.tar.bz2", NORMALS_URL),("spam.tar.bz2", SPAMS_URL)):
+        for filename, url in (("ham.tar.bz2", HAM_URL),("spam.tar.bz2", SPAMS_URL)):
             path = os.path.join(spams_path, filename)
             #checking if there is a file
             if not os.path.isfile(path):
@@ -54,7 +53,7 @@ def fetch_emails(NORMALS_URL=NORMALS_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_P
 ```
 We set the paths and the URLs as constants. Then, in the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
  
-We create two paths needed for normal and spam emails to store the emails.
+We create two paths needed for ham and spam emails to store the emails.
  
 Once done, we create the file directory if it is not present and retrieve it using the `urlretrieve()` method. Finally, we open the tar files and extract them.
 
@@ -67,45 +66,43 @@ fetch_emails()
 Let's begin with parsing the emails in a new cell.
 
 ```python
-#creating directories for the extracted emails
-NORMALS_DIR = os.path.join(SPAM_PATH, "normal_emails")
-SPAMS_DIR = os.path.join(SPAM_PATH, "spam_emails")
+#creating drectories for the extracted emails
+HAM_DIR = os.path.join(SPAM_PATH, "easy_ham")
+SPAMS_DIR = os.path.join(SPAM_PATH, "spam")
 
 # sorted filenames for the emails
-normal_filenames = [name for name in sorted(os.listdir(NORMALS_DIR))]
+ham_filenames = [name for name in sorted(os.listdir(HAM_DIR))]
 spam_filenames = [name for name in sorted(os.listdir(SPAMS_DIR))]
 #load the emails
 def load_emails(is_spam, filename, spams_path=SPAM_PATH):
   #if the argument is true for spam, load from the spam_emails directory and vice versa
-    directory = "spam_emails" if is_spam else "normal_emails"
+    directory = "spam" if is_spam else "easy_ham"
     #open as readable and in binary
     with open(os.path.join(spams_path, directory, filename), "rb") as f:
       #parse using the defaul line break(\n)
         return email.parser.BytesParser(policy=email.policy.default).parse(f)
 #load
-normal_emails = [load_emails(is_spam=False, filename=name) for name in normal_filenames]
+ham_emails = [load_emails(is_spam=False, filename=name) for name in ham_filenames]
 spam_emails = [load_emails(is_spam=True, filename=name) for name in spam_filenames]
 ```
 
-We create a directory each for the spam and normal emails and sort them.
+We create a directory each for the spam and ham emails and sort them.
 
-In the `load_emails()`, we open the appropriate directories as readable and in binary format, then we parse them using the `BytesParser` class.
-
-The `BytesParser` class contains an argument in the constructor called `policy`. It has the policy as default. Using `default` lets us parse the email using the `\n` line breaks.
+In the `load_emails()`, we open the appropriate directories as readable and in binary format. Thereafter, we parse them using the `BytesParser` class. The `BytesParser` class contains an argument in the constructor called `policy`. It has the policy as `default`. Using `default` lets us parse the email using the `\n` line breaks.
 
 We then call the `load_emails()` method to load the emails.
 
-We can look at a sample of a normal email in the next cell.
+In the next cell, we can have a look at a sample of a ham email. 
 
 ```python
-print(normal_emails[42].get_content().strip())
+print(ham_emails[42].get_content().strip())
 ```
 
 #### Viewing the structures of the emails
 
-In this part, we will look at how to get the structure of the emails and further look at the common types of structures for spam and normal emails.
+In this part, we will look at how to get the structure of the emails and the common types of structures for spam and ham emails.
 
-Paste this in the next cell.
+Paste this code in the next cell.
 
 ```python
 '''Getting the most common email structures'''
@@ -113,7 +110,7 @@ def get_structures(email):
   #if its plain text return text/plain
     if isinstance(email, str):
         return email
-    email_payload = email.get_email_payload()
+    email_payload = email.get_payload()
     #if the payload is a list then its probably a multipart
     #return a multipart thereafter
     if isinstance(email_payload, list):
@@ -123,7 +120,6 @@ def get_structures(email):
         ]))
     else:
         return email.get_content_type()
-        
 #function for counting the types
 def type_counter(emails):
     our_count = Counter()
@@ -135,37 +131,63 @@ def type_counter(emails):
 
 In this code, we have two methods, `get_structures()` and `type_counter()`.
 
-In the `get_structures()` function, we check the structure. If it is a normal text email, we return `text/plain,` but if it's a multipart type of email, we return multipart, all the parts it contains. Note also that recursion is used if there are many email structures in the sub-emails of that email.
-For any other email structure we display it by return the emails content type(`get_content_type()`).
+In the `get_structures()` function, we check the structure. If it is a ham text email, we return `text/plain,` but if it's a multipart type of email, we return `multipart` and all the parts it contains. Recursion is used if there are many email structures in the sub-emails of that multipart email.
 
-For the `type_counter()` method, we check how many email structure types are gotten in the spam and normal emails, e.g. `'text/plain', 2409`. So we first initiate a counter then count them for every similar structure.
+> A multipart email is an email that contains multiple parts. For example, it can contain both a *text/plain* part and a *HTML* part. To check other parts contained in the email, we have to repetitively check that until the email is completely parsed. A great method to do that is by the use of recursion.
 
-We can display one for normal emails using this code:
+Any other email structure apart from the two, **text/plain** and **multipart**, is displayed by returning the email's content type(`get_content_type()`).
+
+The `type_counter()` method check how many email structure types are present in the spam and ham emails, e.g. `'text/plain', 2409`. So, we first initiate a counter then count them for every similar structure.
+
+This code displays one for ham emails:
 
 ```python
-print(structures_counter(normal_emails))
+print(structures_counter(ham_emails))
 ```
 
-We check the most common using the `most_common()` method.
+We check the most common structures using the `most_common()` method.
 
 ```python
 print(structures_counter(spam_emails).most_common())
 ```
- We should see the output as shown below:
+We should see the output as shown below:
 
 ```bash
 [('text/plain', 2409), ('multipart(text/plain, application/pgp-signature)', 66), ('multipart(text/plain, text/html)', 8), ('multipart(text/plain, text/plain)', 4), ('multipart(text/plain)', 3), ('multipart(text/plain, application/octet-stream)', 2), ('multipart(text/plain, text/enriched)', 1), ('multipart(text/plain, application/ms-tnef, text/plain)', 1), ('multipart(multipart(text/plain, text/plain, text/plain), application/pgp-signature)', 1), ('multipart(text/plain, video/mng)', 1), ('multipart(text/plain, multipart(text/plain))', 1), ('multipart(text/plain, application/x-pkcs7-signature)', 1), ('multipart(text/plain, multipart(text/plain, text/plain), text/rfc822-headers)', 1), ('multipart(text/plain, multipart(text/plain, text/plain), multipart(multipart(text/plain, application/x-pkcs7-signature)))', 1), ('multipart(text/plain, application/x-java-applet)', 1)]
 ```
+
+The output basically shows the types, followed by their respective counts e.g there are 2409 *text/plain* emails in ham emails.
+
 We then view the headers and their values using:
 
 ```python
 for header, value in spam_emails[0].items():
     print(header,":",value)
 ```
+Headers in emails are parts such as the Subject, Date etc. The sample output is here:
+
+```bash
+Return-Path : <12a1mailbot1@web.de>
+Delivered-To : zzzz@localhost.spamassassin.taint.org
+Received : from localhost (localhost [127.0.0.1])   by phobos.labs.spamassassin.taint.org (Postfix) with ESMTP id 136B943C32    for <zzzz@localhost>; Thu, 22 Aug 2002 08:17:21 -0400 (EDT)
+Received : from mail.webnote.net [193.120.211.219]  by localhost with POP3 (fetchmail-5.9.0)    for zzzz@localhost (single-drop); Thu, 22 Aug 2002 13:17:21 +0100 (IST)
+Received : from dd_it7 ([210.97.77.167])    by webnote.net (8.9.3/8.9.3) with ESMTP id NAA04623 for <zzzz@spamassassin.taint.org>; Thu, 22 Aug 2002 13:09:41 +0100
+From : 12a1mailbot1@web.de
+Received : from r-smtp.korea.com - 203.122.2.197 by dd_it7  with Microsoft SMTPSVC(5.5.1775.675.6);  Sat, 24 Aug 2002 09:42:10 +0900
+To : dcek1a1@netsgo.com
+Subject : Life Insurance - Why Pay More?
+Date : Wed, 21 Aug 2002 20:31:57 -1600
+MIME-Version : 1.0
+Message-ID : <0103c1042001882DD_IT7@dd_it7>
+Content-Type : text/html; charset="iso-8859-1"
+Content-Transfer-Encoding : quoted-printable
+```
 
 ### Conclusion
 
-In this article, we looked at getting the emails, setting the paths, extracting them, and parsing them.
+We looked at parsing of emails using python. This was done by first getting the emails from the _SpamAssassin_ website and storing them in our working directories. Next, we looked at how we get the structures of emails and further checked the common structures found in the emails.
+
+The main module involved in the parsing is the `email` module.
 
 ### Further reading
 
