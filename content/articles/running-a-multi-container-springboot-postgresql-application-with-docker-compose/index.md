@@ -4,14 +4,14 @@ Docker Compose is a tool used in defining and running multi-container Docker app
 
 ### Goal
 
-In this tutorial, you’ll learn how Docker Compose makes it easier to configure and run multiple Docker containers in a local environment. For demo purposes, this tutorial will use a Spring Boot and a PostgreSQL container.
+In this tutorial, you’ll learn how Docker Compose makes it easier to configure and run multiple Docker containers in a local environment. For demo purposes, this tutorial will use a [Spring Boot](https://spring.io/projects/spring-boot) and [PostgreSQL](https://www.postgresql.org/) container.
 
 ### Prerequisites
 
 - Basic knowledge of Spring Boot, Git, and the terminal.
 - Basic understanding of Docker and Docker Compose installed - see guide [here](https://docs.docker.com/compose/install/).
 - A Java IDE - In this tutorial, we will use [IntelliJ Idea](https://www.jetbrains.com/idea/), but you can use any IDE of your choice.
-- Postman - download it [here](https://www.postman.com/downloads/)
+- Postman - In this tutorial, we will use Postman to test the multi-container application. Download it [here](https://www.postman.com/downloads/)
 
 ### Setting up a Spring Boot project
 
@@ -40,7 +40,7 @@ In the `application.properties` file add:
 
 The above configuration tells Spring Boot that the data source will be of PostgreSQL using PostgreSQL’s specific driver.
 
-Normally when setting up a spring boot project to connect to a data source, we use similar to in the `application.properties` file:
+Typically when setting up a Spring Boot project that connects to a data source, we use configurations similar to the one below in the project's `application.properties` file:
 
 ```bash
     spring.datasource.platform=postgres
