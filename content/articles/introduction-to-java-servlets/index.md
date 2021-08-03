@@ -92,7 +92,7 @@ When a client requests dynamic Web pages using a CGI program, the Web server car
 - The answer from the CGI application is collected.
 - HTTP response produced and delivered to the client once the process has ended.
 
-As a result, the CGI server must establish and delete processes for each request. It's simple to see how this technique works for a small number of clients, but as the number of customers grows, the strain on the server grows, and the time it takes to process requests grows as well.
+As a result, the CGI server must establish and delete processes for each request. As the number of clients increases, so does the load on the server, and the time it takes to process requests.
 
 ### Advantages and Disadvantages of Java Servlet
 #### Advantages
