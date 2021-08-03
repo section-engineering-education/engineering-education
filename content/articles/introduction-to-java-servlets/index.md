@@ -1,17 +1,33 @@
-### Introduction 
-A `Servlet` is often software that improves a server's capabilities. The Servlet is usually written in Java and can process web requests. Servlets are web server-based applications. Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these Servlets in these situations.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-java-servlets/
+title: Introduction to Java servlets
+description: This article introduces the foundations of Servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally advantages and disadvantages.
+author: Dennis-Kariuki
+date: 2021-08-04T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Nowadays, we are all familiar with the need of developing `dynamic web pages`, or those that may modify the information of the site based on the time or produce material based on the client's request. If you enjoy writing in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java, and that method is known as Java Servlet. But before we get to the core of our discussion, it is important to understand why server-side extensions are necessary.
+  - url: /engineering-education/introduction-to-java-servlets/hero.png
+    alt: Introduction to Java servlets Hero image
+
+--- 
+A `Servlet` is often the software that improves a server's capabilities. The Servlet is usually written in Java and can process web requests. 
+<!--more-->
+Servlets are web server-based applications. Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these Servlets in these situations. Nowadays, we are all familiar with the need of developing `dynamic web pages`, or those that may modify the information of the site based on the time or produce material based on the client's request. If you enjoy writing in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java, and that method is known as Java Servlet. But before we get to the core of our discussion, it is important to understand why server-side extensions are necessary.
+
 A Java servlet is a Java program that runs on a Java-enabled web server or application server. They are used to receive a request from a web server, process it, generate a reply, and then transmit the reply back to the webserver.
 
-Table of content:
+### Table of content:
 - [Properties and execution Java servlets](#properties-and-execution-java-servlets)
 - [The Servlet Architecture](the-servlet-architecture)
 - [Extensions on the server](#extensions-on-the-server)
 - [Common Gateway Interface](#common-gateway-interface)
 - [Advantages and Disadvantages of Java Servlet](#advantages-and-disadvantages-of-java-servlet)
 - [The Servlet Container](the-servlet-container)
-
 
 ### Properties and execution Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
@@ -24,12 +40,11 @@ The execution of the java servlets involves several steps:
 - The client browser receives the answer from the web server and shows it on the screen.
 - The request is sent to the appropriate servlet by the webserver.
 - The request is processed by the servlet, which then provides an output response.
-- Clients make requests to the webserver, which then processes them and returns the results to the client.
+- Clients make requests to the web server, which then processes them and returns the results to the client.
 - The request is received by the webserver.
 
 ### The Servlet Architecture
 The servlet high-level architectural diagram is shown below. Let's have a look at how each component contributes to the operation of a servlet in more detail.
-
 
 ![architecture_of_java_servlets](/engineering-education/introduction-to-java-servlets/architecture_of_java_servlets.png)
 
@@ -68,7 +83,7 @@ When a client requests dynamic Web pages using a CGI program, the Web server car
 As a result, the CGI server must establish and delete processes for each request. It's simple to see how this technique works for a small number of clients, but as the number of customers grows, the strain on the server grows, and the time it takes to process requests grows as well.
 
 ### Advantages and Disadvantages of Java Servlet
-### Advantages
+#### Advantages
 1. Servlets can be kept in memory until they are manually destroyed, allowing them to handle many requests over time. 
 2. Furthermore, once a database connection has been established, it may be used to execute many database queries in the same database session.
 3. Servlets inherit Java's portability feature and are thus interoperable with almost any web server.
@@ -101,7 +116,7 @@ In creating a java servlet the following steps are involved:
 - Build a Servlet.
 - Create a Servlet and compile it.
 - Inside the web.xml file, insert mappings.
-- Launch the web server and make the project available.
+- Launch the webserver and make the project available.
 - Obtain the servlet
 
 To execute a servlet program, we will need to install and set up the `Apache Tomcat Server`. Apache Tomcat is included with Eclipse for `Java EE`. You may begin working on your application once the server has been set up. One thing to keep in mind is that each servlet application requires three files: an `index.html file`, a `Java class file`, and a `web.xml file`. The first step is to establish a Dynamic Web Project, after which you may proceed.
@@ -168,3 +183,8 @@ After that, you may start the server and run the application to receive the requ
 
 ### Conclusion
 In this article, we introduced the foundations of Servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally advantages and disadvantages. Also, we learned how to create a java servlet and learned what a common gateway interface was before the introduction of servlets.
+
+---
+
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
+
