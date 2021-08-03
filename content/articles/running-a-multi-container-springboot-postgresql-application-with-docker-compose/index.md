@@ -222,3 +222,6 @@ You can use Docker Compose in all environments: production, testing, staging, de
 - [Simplify All the Things with Docker Compose](https://youtu.be/QeQ2MH5f_BE)
 - [An open-source docker-compose.yml file used in a Spring Boot project](https://github.com/Kikiodazie/Multi-User-TodoList-Api/blob/master/docker-compose.yml)
 - [Deep into Docker Compose](https://youtu.be/HUpIoF_conA)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
