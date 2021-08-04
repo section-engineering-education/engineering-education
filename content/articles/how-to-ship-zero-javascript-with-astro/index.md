@@ -119,8 +119,6 @@ We have different folders such as:
  
 * components
  
-* layouts
- 
 * pages
  
 * public
