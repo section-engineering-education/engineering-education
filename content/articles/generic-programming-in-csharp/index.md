@@ -2,33 +2,33 @@
 layout: engineering-education
 status: publish
 published: true
-url: /generic-programming-in-c#/
-title: generic-programming-in-c#Generic Programming in C#
+url: /generic-programming-in-csharp/
+title: Generic Programming in C#
 description: This tutorial will guide you on how to deal with generic collections in C#. Some of the generic collections that will be discussed include lists, dictionaries, and hashsets.
 author: elijah-ndungu
-date: 2021-08-05T00:00:00-06:00
+date: 2021-08-04T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/generic-programming-in-c#/hero.jpg
-    alt: generic-programming-in-c#
+  - url: /engineering-education/generic-programming-in-csharp/hero.jpg
+    alt: generic programming in csharp example image
 ---
 Collections in C# are classes that hold together groups of objects. The .NET libraries provide useful system-defined classes that provide various collections and functionalities.
 <!--more-->
 ### Goal
-In this article, we will discuss generic collections which include lists, dictionaries, and hashsets.
+In this article, we will discuss generic collections, which include lists, dictionaries, and hashsets.
 
 ### Introduction
-In any modern system, data handling is one of the major and vital goals. Developers deal with data in a variety of ways.
+In any modern system, data handling is one of the major goals. Developers deal with data in a variety of ways.
 
 Some systems go for a generic approach which includes the use of lists, dictionaries, and hashset. Other languages prefer non-generic collections which are arrays, arraylists, and bit arrays.
 
 Non-generic programming represents an ordered collection of an object that can be indexed individually.
 
-> Note that generic programming is strongly typed while non- generic programming is not. This means that generic programming enforces strict rules on handling different data types.
+> Note that generic programming is strongly typed while non-generic programming is not. This means that generic programming enforces strict rules on handling different data types.
 
-Today, software systems handle large amounts of data. This is more useful than storing individual entries. However, it is much difficult to process all this data. C# introduced generic collections to help solve this problem. 
+Today, software systems handle large amounts of data. This is more useful than storing individual entries. However, it is much more difficult to process all this data. C# introduced generic collections to help solve this problem. 
 
 `Generic classes` give users the ability to define `classes` and `methods` with the placeholder.
 
@@ -207,7 +207,6 @@ public class MyDictinary {
 In this tutorial, we have learned generic collections in C#, as well as their advantages. Some of the discussed collections are lists, dictionaries, and hashsets. 
 
 You can, therefore, use this knowledge to build powerful C# applications.
-
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
