@@ -338,7 +338,7 @@ Let's have an overview of what is in **Tour.astro** file:
  
 * **import  Tours  from './Tours.jsx**: This imports the Tour component written in the previous step. This enables us to pass down the data we fetched as a prop to our **Tours** component.
  
-* **const url = `https://course-api.com/React-tours-project`**: This specifies the application programming interface(API) where we will fetch our data.
+* **const url = ``` `https://course-api.com/React-tours-project` ```**: This specifies the application programming interface(API) where we will fetch our data.
  
 * **const tours = await fetch(url).then(response => response.json())**: This is a built in Javascript function that fetches our data.
  
