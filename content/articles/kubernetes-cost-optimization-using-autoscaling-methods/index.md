@@ -18,42 +18,40 @@ images:
 ### Introduction
 Kubernetes is a popular container orchestrator. Its major strengths include its capacity to manage and respond to dynamic environments. Kubernetes deploys, manages, and automatically scales container resources in multiple ways.
 
-The modern cloud is developed in a way that you pay only for the resources you consume. Thus, Kubernetes ability to perform proper autoscaling of resources is key to optimizing Kubernetes' costs.
+The modern cloud is developed in a way that you pay only for the resources you consume. Thus, Kubernetes' ability to perform proper autoscaling of resources is key to optimizing Kubernetes' costs.
 
-Kubernetes supports multiple autoscaler and autoscaling approaches. In this article, we dig deeper into different methods for controlling the scaling of clusters and pods in Kubernetes. We also discuss how to use Kubernetes autoscaling mechanisms to drive Kubernetes cloud costs down.
+Kubernetes supports multiple autoscaling approaches. This article will dig deeper into different methods for controlling the scaling of clusters and pods in Kubernetes. Also, discuss how to use Kubernetes autoscaling mechanisms to drive Kubernetes cloud costs down.
 
 ### Kubernetes autoscaling methods
-
-Autoscaling is very critical to Kubernetes resource management. Kubernetes scales up and down to help you request for additional resources and hand them back when they are not on demand.
+Autoscaling is very critical to Kubernetes resource management. Kubernetes scales up and down to help you request additional resources and hand them back when they are not on demand.
 
 We can understand this more by introducing the concept of dynamic resource management. This concept promotes optimal resource utilization by ensuring that virtual resources consume physical resources on demand. This way, the host accommodates more virtual resources than it could otherwise.
 
 The concept of dynamic resource management enables the automation, scaling, and management of the state of pods, applications, clusters, and entire deployments.
 
 There are several solutions for controlling scaling in Kubernetes. In this post, we will discuss two broad Kubernetes scaling aspects. These are:
-
 - Scaling clusters
 - Scaling pods
 
-### Scaling clusters
-
-Managing scale in Kubernetes involves the use of Cluster Autoscaler (CA). Pod autoscaling only operates within the limits of infrastructure resources provided by the cluster. This is a huge disadvantage. Cluster autoscaler solves this issue in two ways:
-
+#### Scaling clusters
+Managing scale in Kubernetes involves the use of Cluster Autoscaler (CA). Pod autoscaling only operates within the limits of infrastructure resources provided by the cluster. This is a significant disadvantage. Cluster autoscaler solves this issue in two ways:
 - It requests additional nodes from cloud providers to add to the cluster.
 - It deallocates nodes from the cluster on an as-needed basis.
 
-Cluster Autoscaler works by altering the number of nodes in a cluster. Because the autoscaler controller functions at the infrastructure level, it must be permitted to delete or add infrastructures. Thus, you need to employ best practices such as the [principle of least privilege](https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance#) when working with this cluster scaling methodology. Also known as the principle of least authority or minimum privilege, this concept states that any process, user, or program should be given the least access rights required to perform its function.
+Cluster Autoscaler works by altering the number of nodes in a cluster. Because the autoscaler controller functions at the infrastructure level, it must be permitted to delete or add infrastructures. 
 
-### How CA optimizes Kubernetes costs
+Thus, you need to employ best practices such as the [principle of least privilege](https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance#) when working with this cluster scaling methodology. Also known as the principle of least authority or minimum privilege.
 
-If the available resources fall short of computing demand, the pods get stuck into a pending state. Pods in this state require more resources before they continue operating. This triggers Kubernetes to request additional nodes and add the pending pods to any available new nodes. CA monitors those pods in a pending state. It also detects nodes that are no longer in use and scales down those resources.
+This concept states that any process, user, or program should be given minor access rights required to perform its functio
 
-Cluster autoscaler has expanders functionality that allows you to select the node group to which you want new nodes to be added. PodDisruptionBudgets ([PDB](https://kubernetes.io/docs/tasks/run-application/configure-pdb/)) enable you to define your cluster operating budget and configure how pods are removed or added to manage resource utilization.
+#### How CA optimizes Kubernetes costs
+If the available resources fall short of computing demand, the pods get stuck into a pending state. Pods in this state require more resources before they continue operating. Requiring these resources triggers Kubernetes to request additional nodes and add the pending pods to any new nodes. CA monitors those pods in a pending state. It also detects nodes that are no longer in use and scales down those resources.
 
-Managing the costs of running Kubernetes clusters on cloud platforms generally involves a dynamical scaling of the number of nodes to balance with the present cluster utilization. When designing any workload, ensure that it scales to meet the current demand.
+Cluster autoscaler has expanders functionality that selects the node group you want new nodes to be added. PodDisruptionBudgets ([PDB](https://kubernetes.io/docs/tasks/run-application/configure-pdb/)) enable you to define your cluster operating budget and configure how pods are removed or added to manage resource utilization.
 
-### Scaling pods
+Managing the costs of running Kubernetes clusters on cloud platforms generally involves a dynamical scaling of the number of nodes to balance the present cluster utilization. When designing any workload, ensure that it scales to meet the current demand.
 
+#### Scaling pods
 Scaling pods is a straightforward way of scaling deployments. Often, you may what to create additional resources for a specific pod instance. Also, may you want to spread a workload to a single application across multiple container instances by creating further instances to a pod. Scaling pods comes in to help in such situations.
 
 Pods are scaled within the limits of currently available resources. Assuming that you have a node with 16GM of spare RAM that is not in use now, you can schedule another pod onto that node. The loading or pressure on a cluster running a collection of pods may exceed limits. When this happens, you scale up the entire cluster as we have described in the first section.
