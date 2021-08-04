@@ -1,10 +1,11 @@
 ### Introduction
 To `Dual boot` a machine is to install two operating systems on the same machine. You can choose which operating system to work with during the booting process. 
 
-But why install one OS beside another. For that case, let's take a look at why you might want to install Kali linux beside Windows.
-- Kali Linux is primarily developed for Security purposes. This limits Kali Linux's support for some IDEs or applications. For an instance as a developer, you might not comfortably use Android studio on Kali Linux compared to windows.
-- Windows on the other hand cannot be used for security research since it does not have major security tools used in research purposes. This limits Windows' potential use for research.
-- To solve the two problems, you might want to install both Kali Linux and Windows on the same machine. To do so without loosing any of your data, carefully follow the procedure on this tutorial.
+### Reasons for installing Kali Linux alongside Windows:
+- Kali Linux is primarily developed for Security purposes. This limits Kali Linux's support for some integrated development environments and applications. For instance, as a developer, you might not comfortably use Android Studio on Kali Linux compared to windows.
+- Windows on the other hand can not be used for security research since it does not have major security tools used for research purposes. This limits its potential to be used in security researches and management.
+
+To solve these two problems, you need to install both Kali Linux and Windows on the same machine. To do so without losing any of your data, carefully follow the procedure given below.
 
 In this tutorial, we will learn how to set up `Kali Linux` onto a machine already installed with Windows. This process allows you to safely keep your data initially on Windows.
 > **Note:** This process is similar to any other Linux-based operating system.
@@ -23,9 +24,9 @@ Navigate to the [Kali Linux official site](https://kali.org/get-kali/#kali-bare-
 
 #### Creating a bootable pen drive
 We will first download software used to make a pen drive bootable.
-We'll use `Rufus` in this context. But why **Rufus?**
+We'll use `Rufus` in this context. But, why **Rufus?**
 
-**Rufus** is a Superfast, Lightweight and error-free software. It also supports multiple platforms such as Kali Linux or Windows operating system.
+Rufus is a superfast, lightweight, and error-free software. It also supports multiple platforms such as Kali Linux and Windows operating systems.
 You can download [Rufus here](http://rufus.ie/en_US/).
 
 Open Rufus and insert the pen drive onto your machine. 
@@ -69,7 +70,7 @@ If in case you decided to connect to a WiFi network or internet connection. Wait
 
 Moving on, create a primary user for Kali Linux.
 
-- Set the `Host name` and `Domain name` as you wish - This is an optional step. The **Host name** is normally the name allocated to the device when it is connected to a network, on the other hand the **Domain name** is the physical address of the device. The easily recognized part of the IP address.
+- Set the `Host name` and `Domain name` as you wish - This is an optional step. The **hostname** is the name allocated to the device when connected to a network, on the other hand, the **domain name** is the physical address of the device. It is the easily recognized part of the IP address.
 - Enter your `username` and hit the continue button.
 - Enter and confirm the `password` entry.
 
@@ -107,15 +108,14 @@ Click `Finish partitioning and write changes to disk` then hit the continue butt
 On the **write changes to disk** option, select `Yes` and wait for the installer set-up to `install the base system`.
 
 ### Software selection
-Here you have to choose a desktop environment. A **desktop environment** is a collection of software that run on top of the operating system and makes up the `Graphical User Interface`. Take the desktop environment as the general outlook of your Kali Linux. 
+Here you have to choose a desktop environment. A **desktop environment** is a collection of software that runs on top of the operating system and makes up the `Graphical User Interface`. Take the desktop environment as the general outlook of your Kali Linux. 
 
-Lets discuss three major desktop environments:
+### Three major desktop environments
+- `Xfce` - This is the default and commonly used desktop environment. It is fast, lightweight, and appealing to users.
+- `KDE` - This desktop environment provides basic functions and applications to perform basic daily tasks. It has tools that allow collaborative work hence known as a central development hub.
+- `GNOME` - This desktop environment provides simplicity and ease of use for Kali Linux. It was developed with the intent to make Kali Linux user-friendly for non-programmers.
 
-- `xfce` - This is the default and commonly used desktop environment. It is fast, lightweight and appealing to the users eye.
-- `KDE` - This desktop environment provides basic funtions and applications to perform daily tasks. It has tools that allow collaborative work hence known as a central development hub.
-- `GNOME` - This desktop environment provides simplicity and ease use for the Kali Linux. It was developed with an intent to make Kali Linux user friendly for non-programmers.
-
-In my case, I'll' choose the `Xfce (Kali default desktop environment)`.
+In this case, we'll choose the `Xfce` environment.
 
 Lastly, click continue without altering the other changes. Wait for the installation process to complete. This might take a while.
 
@@ -132,7 +132,7 @@ Enter your login credentials, that is, your `username` and `password` to proceed
 
 Upon successful login, you will be able to access Kali Linux home screen on your machine. If it is your first time using Kali Linux, you can go through [this article](https://www.section.io/engineering-education/getting-started-with-kali-linux/) for more information.
 
-### Summary
+### Conclusion
 In this article, we have learned:
 
 1. The process of creating a bootable pen drive.
