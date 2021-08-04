@@ -1,5 +1,21 @@
-Run Length Encoding is a lossless data compression algorithm. It compresses data by reducing repetitive, and consecutive data called **runs**. It does so by storing the number of these runs followed by the data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /run-length-encoding-algorithm-in-python/
+title: Run Length Encoding (RLE) Compression Algorithm in Python
+description: This article will be an overview on understanding what compression is, different types of compression, and a brief intro to RLE algorithm and its implementation.
+author: terrence-aluda
+date: 2021-08-04T00:00:00-23:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/run-length-encoding-algorithm-in-python/hero.jpg
+    alt: RLE Algo image
+---
+Run Length Encoding is a lossless data compression algorithm. It compresses data by reducing repetitive, and consecutive data called **runs**. It does so by storing the number of these runs followed by the data.
+<!--more-->
 In this article, we will learn more about Compression algorithms, dive deep into implementing RLE algorithm, and understand its performance.
 
 ### Table of contents
