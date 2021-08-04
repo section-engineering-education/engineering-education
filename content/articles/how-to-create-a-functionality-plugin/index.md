@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-functionality-plugin/
+title: How to Create a Functionality Plugin
+description: This article will walk you through WordPress plugins. WordPress plugins are crucial while designing any WordPress website. Plugins determine how your website functions by adding extra functionality to it.
+author: esther-waithera
+date: 2021-08-04T00:00:00-13:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/content/how-to-create-a-functionality-plugin/hero.jpg
+    alt: Functionality plugin example image
+---
 WordPress plugins are crucial while designing any WordPress website. Plugins determine how your website functions by adding extra functionality to it.
+<!--more-->
+Some functionalities are either too basic or too customized for there to be a plugin for it. Therefore it can sometimes be challenging to find a plugin that meets your needs.
 
 Some functionalities are either too basic or too customized for there to be a plugin for it. Therefore it can sometimes be challenging to find a plugin that meets your needs.
 
