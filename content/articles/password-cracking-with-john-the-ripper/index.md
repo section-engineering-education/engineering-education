@@ -14,20 +14,41 @@ images:
       alt: Password cracking with John the Ripper image
 ---
 
-Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
-
-<!--more-->
-
-But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`.
-
 ### Table of contents
-
+-   [Introduction](#introduction)
 -   [Objectives](#objectives)
 -   [Prerequisites](#prerequisites)
 -   [How to install John the Ripper](#how-to-install-john-the-ripper)
 -   [How John the Ripper cracks passwords](#how-john-the-ripper-cracks-passwords)
 -   [Example cases of cracking passwords](#example-cases-of-cracking-passwords)
 -   [Conclusion](#conclusion)
+
+### Introduction
+
+Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
+
+<!--more-->
+
+But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`, also known as **Pen Test**.
+
+**Didn't understand the definition,** Don't worry, I'll explain it to you in detail.
+
+**Penetration testing** is an attempt to identify the level of a security system by trying to gain access into the system through identified vulnerabilities with permission from authorized personnel. On the other hand, trying to bypass the system's security without permission is considered illegal and hence known as `Red Hat hacking`.
+
+**Types of Penetration testing**
+
+Pen testing can be practiced in different ways. Let's take a look at some common ways a system's vulnerability can be exploited.
+- `External Pen Test`- This is a type of attack where a pen tester uses your publicly available information to try to gain access to your system. Vulnerabilities exploited can grant access to the Pen Tester to remotely gain access to private data. Loopholes like this are identified and sealed before unwanted parties gain access.
+- `Internal Pen Test`- This is a type of Pen testing where the attacker tries to gain access to a system by physically accessing the internal resources, implanting a malicious drive or the attacker takes the role of an ill-intended employee and grants remote access of private data.
+- `Social Engineering`- It is said that the weakest link in any security system is the human being. The pen tester can try to extract useful information from an employee by asking questions or deceiving the employee. This type of penetration testing is known as social engineering.
+
+Having known what Penetration testing is, let us see what **Password Cracking** is:
+
+First, let's understand how passwords are stored on your PC or any server. When you enter a password into an account, the password is not saved in a raw format. The `hashing algorithm` converts the raw password into a series of characters that cannot be decoded in a small amount of time. Trying to decode the hashed password might consume a lot of time or resources. That is where `John the Ripper` comes in. John the Ripper happens to have a bunch of passwords in both raw and hashed format. This bunch of passwords stored together is known as a `password dictionary`. 
+
+Now to crack the password, **John the Ripper** will identify all potential passwords in a hashed format. It will then match the hashed passwords with the initial hashed password and try to find a match. If John the Ripper finds a match for the password hashes, it will then display the password raw form as the cracked password. The process of matching the password hashes to locate a match is known as a `dictionary attack`.
+
+ Having known how the password cracking process takes place, let us take a look at how John the Ripper takes commands to execute the process.
 
 ### Objectives
 
