@@ -80,9 +80,8 @@ document.cookie =
 ```
 
 ### Reading a cookie
-Because the `document.cookie` item provides a string comprising the semicolon and the space separated by all cookies (that is, `name = value` pair, for example, `firstName = excellent; lastName = design;`), a cookie is difficult to comprehend. 
-
-There are no properties such as expires, domain, path, and others defined for the cookie in this thread. To locate each cookie in a list, partition the cookie into individual `name = value` pairs and search for a specific name using the `split()` method.
+The `document.cookie` attribute simply returns a string containing a semicolon and a space separated list of all cookies (i.e. name=value pairs, for example, firstName=Fabulous; lastName=Designs;). This string does not include any of the cookie's characteristics, such as expires, path, domain, and so on.
+To obtain an individual cookie from this list, use the `split()` method to break it down into individual `name=value` pairs, then search for the name you want, as shown in the Example below:
 
 ```javascript
 function setCookie(name, value, daysToLive) {
