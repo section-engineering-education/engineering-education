@@ -6,8 +6,13 @@ We'll also look at its advantages over Laravel passport and discuss why you woul
 
 ### Table of contents
 
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
+- [Project setup](#project-setup)
+- [Route authentications](#route-authentications)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 
@@ -240,3 +245,7 @@ class AuthenticationController extends Controller
 We have a simple logic in the above Controller. `createAccount()` creates new validated users. It then generates tokens if registered successfully. `sign in()` authenticates the users and generates `access tokens` on successful login while `signout()` removes user session.
 
 Now test your application on Postman.
+
+### Conclusion
+
+In this tutorial, we looked at what Laravel Sanctum is and what it does. Also, we looked at how it is different from Laravel Passport and when to use it. Finally, we covered how to use Laravel Sanctum to give access to users by creating tokens that can be used to authenticate and give access to users to consume Laravel APIs.
