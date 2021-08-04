@@ -160,3 +160,6 @@ Happy coding.
 ### Further reading
 - [Transform coding](https://en.wikipedia.org/wiki/Transform_coding).
 - [Predictive coding](https://web.stanford.edu/class/ee398a/handouts/lectures/06-Prediction.pdf).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
