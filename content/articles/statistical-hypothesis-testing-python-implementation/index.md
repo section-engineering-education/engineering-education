@@ -262,6 +262,7 @@ print(np.percentile(df.petal_width, 50))
 ```bash
 1.3
 ```
+
 A quartile is another term related to percentile, it is a specified percentile, we have 1st quartile as 25% percentile, second quartile as 50%, and 3rd as 75% percentile. You can as well read this [article](https://datascienceupskill.com/statistics/percentiles-and-quartiles) to get a better grip. 
  
 ```python
