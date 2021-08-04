@@ -15,8 +15,9 @@ To understand the contents of this article, you need to be familiar with:
     -[TensorFlow federated layers](#tensorflow-federated-layers)
     -[Ways to get involved](#ways-to-get-involved)
 2. [The code behind TensorFlow Federated (TFF)](the-code-behind-tensorflow-federated-TFF)
-3. [Wrapping up](#wrapping-up)
-4. [Additional resources](#additional-resources)
+3. [Implementing Federated Learning for Image classification using Tensorflow Federated](#implementing-federated-learning-for-image-classification-using-tensorflow-federated)
+4. [Wrapping up](#wrapping-up)
+5. [Additional resources](#additional-resources)
 
 ### Introducing TensorFlow Federated (TFF)
 
@@ -155,9 +156,17 @@ TFF provides two builder functions:
 
 - `tff.learning.build_federated_evaluation` generates the federated computations for federated evaluation.
 
+To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1wOCsCDi3X_vnC8f0TWG-wXCdfqmkvPa4?authuser=1). Please check it out.
+
 ### Wrapping up
 
 That was a simple introduction to TensorFlow Federated and the FC API. The code I've shown above is open-source and is available on Github. You can access it using this [link](https://github.com/tensorflow/federated). There are many ways to get involved as mentioned in the tutorial such as being system devs, ML devs, and ML researchers. You can check out this cool online [comic book](http://federated.withgoogle.com/) from [GoogleAI](https://ai.google/) that will help you learn Federated Learning easily using illustrated graphic art. 
+
+Remember, with Federated Learning, we can learn from everyone, without learning about anyone.
+
+![Graphic art for Federated learning](/engineering-education/federated-learning-using-tensorflow-federated/federated-learning.png)
+
+*[Image Source: Federated Learning](https://federated.withgoogle.com/)*
 
 Make sure to try out the code yourself as it'll help you grasp TFF concepts faster!
 
