@@ -245,6 +245,6 @@ Therefore to avoid the errors and thrown due to the lack of MySQL support we sho
 
 ### Conclusion
 
-Despite the several pitfalls that we have seen associated with window functions, they still play an important role in executing MySQL queries and various solutions are even being given out in an attempt to solve the above-discussed problems. This, therefore, shows how critical window functions are to the MySQL queries.
+Despite the several pitfalls that we have seen associated with window functions, they still play an important role in executing MySQL queries and various solutions are even being given out in an attempt to solve the above-discussed problems. This therefore shows how critical window functions are to the MySQL queries.
 
 Blissful reading!
