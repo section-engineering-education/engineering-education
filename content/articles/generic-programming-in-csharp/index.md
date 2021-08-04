@@ -7,7 +7,7 @@ title: Generic Programming in C#
 description: This tutorial will guide you on how to deal with generic collections in C#. Some of the generic collections that will be discussed include lists, dictionaries, and hashsets.
 author: elijah-ndungu
 date: 2021-08-04T00:00:00-14:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
