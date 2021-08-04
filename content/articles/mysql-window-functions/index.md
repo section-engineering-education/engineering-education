@@ -22,10 +22,10 @@ A reader should have prior knowledge of the following to understand this article
 
 There are 3 types of window functions as stated below:
 1. Aggregate window functions- Are used with the OVER clause during database querying. Below are some instances of  Aggregate window functions used in MySQL.
-- SUM( )-It manipulates a table row and returns the total after adding the values in the row or column as stipulated.
-- MAX( )- It manipulates a row or column and returns the largest value as stipulated. Other Aggregate window functions are MIN() and COUNT() each responsible for returning the smallest value and the number of values in a row or column respectively.
-3. Value window function- Are used to generate queries that manipulate rows of data and returns values for each row. Some examples of Value window function are the LEAD and LAG functions which are discussed below. Other examples are the FIRST_VALUE( ) and the LAST_VALUE( ) functions also used in the examples below.
-4. Ranking window functions- Some instances of this function are the ROW_NUMBER(), the DENSE_RANK(), and finally the RANK() which are discussed in detail in the examples below.
+- `SUM( )`-It manipulates a table row and returns the total after adding the values in the row or column as stipulated.
+- `MAX( )`- It manipulates a row or column and returns the largest value as stipulated. Other Aggregate window functions are `MIN()` and `COUNT()` each responsible for returning the smallest value and the number of values in a row or column respectively.
+3. Value window function- Are used to generate queries that manipulate rows of data and returns values for each row. Some examples of Value window function are the LEAD and LAG functions which are discussed below. Other examples are the `FIRST_VALUE( )` and the `LAST_VALUE( )` functions also used in the examples below.
+4. Ranking window functions- Some instances of this function are the `ROW_NUMBER()`, the `DENSE_RANK()`, and finally the `RANK()` which are discussed in detail in the examples below.
 
 The value window functions and the ranking window functions are collectively called the Built-in window function.
 
@@ -51,7 +51,7 @@ This function will give out the value of the clothes sold in the "sales_value" c
 
 2. RANK( )
 
-This function is mainly used in report creation. It computes the ranks for each row in a specified order. Ranks are usually numbers starting from 1. In a case where multiple rows sharing the same value, the rows are assigned the same rank. This causes skipping of numbers in the next row hence the values returned by the RANK( ) function are not usually consecutive numbers.
+This function is mainly used in report creation. It computes the ranks for each row in a specified order. Ranks are usually numbers starting from 1. In a case where multiple rows sharing the same value, the rows are assigned the same rank. This causes skipping of numbers in the next row hence the values returned by the `RANK( )` function are not usually consecutive numbers.
 
 ```sql
 
@@ -64,12 +64,12 @@ FROM sales:
 This outputs a list of sales items ranked according to ranking_score.
 
 3. LAG( )
-
-LAG( ) function is almost similar to the LEAD( ) function hence the both compute row differences. As LEAD( ) returns value for subsequent row, LAG( ) returns the values of the previous row.
+`
+`LAG( )` function is almost similar to the LEAD( ) function hence the both compute row differences. As `LEAD( `) returns value for subsequent row, `LAG( )` returns the values of the previous row.
 
 4. DENSE-RANK( )
 
-This clause is similar to the RANK() function only that it doesn't allow gaps as in the RANK() function.
+This clause is similar to the `RANK()` function only that it doesn't allow gaps as in the `RANK()` function.
 
 ```sql
 SELECT
@@ -196,22 +196,22 @@ FROM Sales.order_value
 ORDER BY buyer_id, date_of_order, order_id;
 ```
 
-For the FIRST_VALUE function, the expected results will be achieved however for the LAST_VALUE function, the value from the current row will be returned on top of a no disk penalty. With such results, a first-timer may think that the server is corrupted with bugs. This is however not the case because the results at hand are a result of the SQL standards default settings.
+For the `FIRST_VALUE()`, the expected results will be achieved however for the `LAST_VALUE()`, the value from the current row will be returned on top of a no disk penalty. With such results, a first-timer may think that the server is corrupted with bugs. This is however not the case because the results at hand are a result of the SQL standards default settings.
 
 ### How to avoid
 
 This can however be avoided by just putting the following into place:
 
 -  Always be explicit with the specifications in window frame cases to avoid default settings as per the SQL standards.
--  To avoid a no disk penalty with FIRST_VALUE function, use the  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW  frame to get the values of the first row.
-- To avoid a no disk penalty with LAST_VALUE function, use the  ROWS BETWEEN  CURRENT ROW AND UNBOUNDED PRECEDING  frame to get the values of the last row.
+-  To avoid a no disk penalty with `FIRST_VALUE()`, use the  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW  frame to get the values of the first row.
+- To avoid a no disk penalty with `LAST_VALUE()`, use the  ROWS BETWEEN  CURRENT ROW AND UNBOUNDED PRECEDING  frame to get the values of the last row.
 
 ### 4. MySQL Window functions cannot be used to update or delete  statements
 
  According to MySQL standards, window functions are not to be used for the deletion or updating of a statement in a row. This is mainly because the [DELETE](https://mariadb.com/kb/en/drop-function-udf/) and [UPDATE](https://www.w3schools.com/sql/sql_update.asp)  clauses aren't compatible with the SELECT and ORDER. The UPDATE statement uses SET hence SELECT cannot be in the same query level as it.
 ### How to solve
 This can however be made possible by:
--  Using the DELETE and UPDATE functions as sub-queries of the main query as shown below
+-  Using the `DELETE()` and `UPDATE()` as sub-queries of the main query as shown below
 ```sql
  WITH student_marks AS
  (
