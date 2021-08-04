@@ -18,7 +18,6 @@ WordPress plugins are crucial while designing any WordPress website. Plugins det
 <!--more-->
 Some functionalities are either too basic or too customized for there to be a plugin for it. Therefore it can sometimes be challenging to find a plugin that meets your needs.
 
-Some functionalities are either too basic or too customized for there to be a plugin for it. Therefore it can sometimes be challenging to find a plugin that meets your needs.
 
 This article will walk you through WordPress plugins and how to create one.
 ### Table of contents
