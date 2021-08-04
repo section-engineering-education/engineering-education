@@ -155,8 +155,7 @@ document.cookie = "UserName=; path=/; expires=Thu, 01 feb 1990 00:00:00 GMT";
 
 ### Conclusion
 Some services will not function properly if cookies are disabled, and some pages will not load properly. Some cookies might not necessitate agreement.
-
-For a website to function properly, cookies technicians are required.
+Cookies are necessary for a website to work properly.
 
 In conclusion, the user's permission to use the site isn't required; rather, the user's permission to use the site information is needed.
 
