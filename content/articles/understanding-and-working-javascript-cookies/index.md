@@ -12,17 +12,15 @@ Using JavaScript, cookies can be created, retrieved, and modified directly, and 
 - [Conclusion](#conclusion)
 
 ### Various types of cookies
-There are three types of cookies.
-
-- **First Party Cookies** - These are cookies that are created by your website and can only be read by your website.
-- **Third party cookies** - These cookies are produced by third-party advertising on your website. These cookies can only be read on any site that displays the same ad using the advertising code.
-- **Session cookies** - These cookies are saved on your browser. They are destroyed when the browser is closed.
+There are three types of cookies:
+1. **First Party Cookies** - These are cookies that are created by your website and can only be read by your website.
+2. **Third-party cookies** - These cookies are produced by third-party advertising on your website. These cookies can only be read on any site that displays the same ad using the advertising code.
+3. **Session cookies** - These cookies are saved on your browser. They are destroyed when the browser is closed.
 
 ### Creating a cookie
-You can make a cookie from the `document.cookie` property. In JavaScript, you can use this property to set up, read, and delete cookies.
+You can make a cookie using the `document.cookie` property. In JavaScript, you can use this property to set up, read, and delete cookies.
 
-Additionally, any cookies linked with the document are represented by this position.
-Set this property to `name=value` string to store a new cookie.
+Additionally, any cookies linked with the document are represented by this property. We create a cookie in the form of `name=value` using the `document.cookie` property.
 
 You can only set one cookie at a time using this property.
 
@@ -32,9 +30,9 @@ Take a look at the example below.
 document.cookie = "UserName = fabuluosDesigns";
 ```
 
-You must use an in-built javascript function called `encodeURIComponent()` if you wish to use special characters when creating cookies. 
+You must use an in-built javascript function called `encodeURIComponent()` to use special characters when creating cookies. 
 
-Before saving the cookie, this function encodes special characters like as white spaces, semicolons, and others.
+Before saving the cookie, this function encodes special characters like white spaces, semicolons, and others.
 
 Take a look at the example below.
 
@@ -44,9 +42,9 @@ document.cookie = "UserName=" + encodeURIComponent("fabulous designs");
 
 Similarly, you must utilize the appropriate function: `decodeURIcomponent()` to read the cookie value when you want to read the cookies.
 
-The cookie's lifespan is limited to the duration of the current browser session, thus, it will be removed whenever the user quits the browser.
+The cookie's lifespan is limited to the duration of the current browser session, thus, it will be removed when the user quits the browser.
 
-If you need to see cookies beyond the current browser session, use the `age-appropriate` attribute to specify their lifetime (in seconds).The setting `max-age` sets the amount of time a cookie can be stored before it is removed in your system.
+If you need to see cookies beyond the current browser session, use the `age-appropriate` attribute to specify their lifetime (in seconds).The setting `max-age` sets the amount of time a cookie can be stored before it is removed from your system.
 
 Take a look at the example below. This cookie has a 30-day expiration date.
 
@@ -62,19 +60,19 @@ Take a look at the example below.
 document.cookie = "Username = stunningDesign; expires =Fri, 31 jan 2022 23:59:59 GMT";
 ```
 
-On all web pages, or in any subdirectory of that directory, a cookie is always available. If you specify the `path`, the cookie will be available on all web sites in that subdirectory as well. For instance, if the path is set to `/`, the cookie will be available across the whole website, regardless of the page it was created on.
+On all web pages, or in any subdirectory of that directory, a cookie is always available. If you specify the `path`, the cookie will be available to all pages in that subdirectory as well. For instance, if the path is set to `/`, the cookie will be available across the whole website, regardless of the page it was created on.
 
 ```javascript
 document.cookie = "Username = ExcellentDesign; Path = /";
 ```
 
-If you want a cookie to work across many subdomains, use the `domain` attribute. Only the pages in the domain in which the cookie was set are accessible.
+If you want a cookie to work across many subdomains, use the `domain` attribute. The cookie will only be accessible the pages from the domain in which the cookie was set.
 
 ```javascript
 document.cookie = "Username = ExcellentDesign; path = /; domain = sample.com";
 ```
 
-Additionally, if the `secure` property is set, the cookie will only be delivered over secure (i.e. encrypted) connections, such as HTTPS.
+Additionally, if the `secure` property is set, the cookie will only be delivered over secure (encrypted) connections, such as HTTPS.
 
 ```javascript
 document.cookie =
@@ -82,9 +80,9 @@ document.cookie =
 ```
 
 ### Reading a cookie
-Because the `document.cookie` item provides a string comprising the semicolon and the space separated by all cookies (ie., `name = value pair`, e.g., `firstName = excellent; lastName = design;`), a cookie is more difficult to comprehend. 
+Because the `document.cookie` item provides a string comprising the semicolon and the space separated by all cookies (that is, `name = value` pair, for example, `firstName = excellent; lastName = design;`), a cookie is difficult to comprehend. 
 
-There are no properties defined for the cookie in this thread, such as expires, domain, path, and others. To locate each cookie in a list, partition the cookie into individual `name = value pairs` and search for a specific name using the `split()` method.
+There are no properties such as expires, domain, path, and others defined for the cookie in this thread. To locate each cookie in a list, partition the cookie into individual `name = value` pairs and search for a specific name using the `split()` method.
 
 ```javascript
 function setCookie(name, value, daysToLive) {
@@ -117,10 +115,11 @@ function checkCookie() {
     }
 }
 ```
+
 In the above code, we created three functions: `setCookie()`, `getCookie()`, and `checkCookie()`.
 - **setCookie()** - Creates a cookie with an optional `max-age` attribute.
-- - **getCookie()** - With this function, a cookie is read.
-- **checkCookie()** - Using `getCookie()`, this function will check whether the `UserName` cookie is set or not, and if it is, it will display a greeting message; if it is not, it will prompt the user to enter their user name and store it in the cookie using `setCookie()`.
+- **getCookie()** - This function, reads the value of a cookie.
+- **checkCookie()** - Using `getCookie()`, this function checks whether the `UserName` is set or not. If set, it will display a greeting message. If it isn't set, it will prompt the user to enter their user name and store it in the cookie using `setCookie()`.
 
 ### Updating a cookie
 A cookie can be updated by setting new values to the cookie attributes. 
@@ -136,12 +135,14 @@ document.cookie =
 ```
 
 ### Deleting a cookie
-To delete a cookie, simply rename it using the same `name`, specifying an empty or arbitrary value, and set its `max-age` attribute to 0. 
+To delete a cookie, simply rename it using the same `name`, specify an empty or arbitrary value, or set its `max-age` attribute to 0. 
 
 ```javascript
 document.cookie = "UserName=; max-age=0";
 ```
+
 You'll need to include the cookie's path and domain property when deleting it if you had specified them.
+
 ```javascript
 document.cookie = "UserName=; path=/; domain=example.com; max-age=0";
 ```
@@ -157,6 +158,6 @@ Some services will not function properly if cookies are disabled, and some pages
 
 For a website to function properly, cookies technicians are required.
 
-As a conclusion, the user's permission to use the site isn't really required; rather, the user's permission to use the site information is needed.
+In conclusion, the user's permission to use the site isn't required; rather, the user's permission to use the site information is needed.
 
 Happy coding!
