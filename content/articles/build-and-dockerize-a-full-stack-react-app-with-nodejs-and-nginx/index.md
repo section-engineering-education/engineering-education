@@ -1,5 +1,21 @@
-ReactJS is one of the common and famous front-end web frameworks. Nevertheless, in most situations, a web application will require back-end services to process different transactions.But, ReactJS as a front-end framework is not complete without a back-end service to make up a complete full-stack application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
+title: Build and Dockerize a Full-stack React app with Node.js, MySQL and Nginx
+description: In this article, we will build a full-stack web application using React, Node.js, MySQL, and Nginx. We will also dockerize each application, and deploy them. 
+author: moses-m
+date: 2021-08-04T00:00:00-21:00
+topics: [Containers, Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/hero.png
+    alt: React Node MYSQL Nginx Docker Image
+---
+ReactJS is one of the common and famous front-end web frameworks. Nevertheless, in most situations, a web application will require back-end services to process different transactions.But, ReactJS as a front-end framework is not complete without a back-end service to make up a complete full-stack application.
+<!--more-->
 On the other hand, Docker is the perfect containerizing technology to set up all the environments you need to set up this full-stack application. This is because Docker uses an abstract concept built on top of a low-level operating system platform that enables you to execute one or even more containerized activities or services within one or more virtualized instances.
 
 Thus, Docker will help you deploy a full-stack React application with the back-end environments such as Node.js and Django.
