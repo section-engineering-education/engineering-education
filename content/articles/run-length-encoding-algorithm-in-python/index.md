@@ -93,15 +93,15 @@ Next, we have to write a function for decoding the encoded messages. Create a ne
 ```python
 def decode(our_message):
     decoded_message = ""
-    i=0
-    j=0
-    #splitting the encoded message into respective counts
-    while (i <= len(our_message)-1):
+    i = 0
+    j = 0
+    # splitting the encoded message into respective counts
+    while (i <= len(our_message) - 1):
         run_count = int(our_message[i])
         run_word = our_message[i + 1]
-        #displaying the character multiple times specified by the count
+        # displaying the character multiple times specified by the count
         for j in range(run_count):
-            #concatenated with the decoded message
+            # concatenated with the decoded message
             decoded_message = decoded_message+run_word
             j = j + 1
         i = i + 2
@@ -118,13 +118,15 @@ Finally, we write the method for displaying what we have written. Again, open a 
 
 ```python
 def display():
-    #the original string
+    # the original string
     our_message = "AuuBBBCCCCCCcccccCCCCCCCCCA"
-    #pass in the original string
+    # pass in the original string
     encoded_message=encode_message(our_message)
-    #pass in the decoded string
+    # pass in the decoded string
     decoded_message=decode_message(encoded_message)
-        print("Original string: ["+our_message+"]\nEncoded string: ["+encoded_message+"]\nDecoded string: ["+decoded_message+"]\n")
+    print("Original string: [" + our_message + "]")
+    print("Encoded string: [" + encoded_message +"]")
+    print("Decoded string: [" + decoded_message +"]")
 ```
 
 The function, `display()`, has the string to be encoded and decoded.
