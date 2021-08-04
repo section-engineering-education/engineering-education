@@ -154,3 +154,6 @@ Coding WP plugins help you to gain a more profound knowledge of how WordPress wo
 
 ### Conclusion
 Congratulations! You developed a WordPress plugin. This tutorial gives you steps to follow while creating a WP functionality plugin. We created a plugin that displays a fixed link inside the website's footer and showing up on every page. Following and putting this tutorial into practice enables you to build plugins, thus expanding your WordPress website's functionality.
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
