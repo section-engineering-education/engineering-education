@@ -6,57 +6,67 @@ url: /password-cracking-with-john-the-ripper/
 title: Password Cracking with John the Ripper
 description: This tutorial will walk the reader through the process of using John the Ripper to crack passwords with Kali Linux. John the Ripper is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
 author: koros-wkd
-date: 2021-08-02T00:00:00-09:00
+date: 2021-08-04T00:00:00-16:45
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
+
     - url: /engineering-education/password-cracking-with-john-the-ripper/hero.jpg
       alt: Password cracking with John the Ripper image
 ---
-
-### Table of contents
--   [Introduction](#introduction)
--   [Objectives](#objectives)
--   [Prerequisites](#prerequisites)
--   [How to install John the Ripper](#how-to-install-john-the-ripper)
--   [How John the Ripper cracks passwords](#how-john-the-ripper-cracks-passwords)
--   [Example cases of cracking passwords](#example-cases-of-cracking-passwords)
--   [Conclusion](#conclusion)
-
-### Introduction
 
 Most people often misunderstand the term `hacking`. From your perspective, you might think that hacking is the act of trying to gain access to certain network servers. Well, you might be right.
 
 <!--more-->
 
-But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`, also known as **Pen Test**.
+But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`, also known as **pen test**.
 
-**Didn't understand the definition,** Don't worry, I'll explain it to you in detail.
+### Table of contents
 
-**Penetration testing** is an attempt to identify the level of a security system by trying to gain access into the system through identified vulnerabilities with permission from authorized personnel. On the other hand, trying to bypass the system's security without permission is considered illegal and hence known as `Red Hat hacking`.
+- [What is Penetration Testing?](#what-is-penetration-testing)
+- [Types of penetration testing](#types-of-penetration-testing)
+- [Objectives](#objectives)
+- [Prerequisites](#prerequisites)
+- [How to install John the Ripper](#how-to-install-john-the-ripper)
+- [How John the Ripper cracks passwords](#how-john-the-ripper-cracks-passwords)
+- [Example cases of cracking passwords](#example-cases-of-cracking-passwords)
+- [Conclusion](#conclusion)
 
-**Types of Penetration testing**
+### What is Penetration testing?
 
-Pen testing can be practiced in different ways. Let's take a look at some common ways a system's vulnerability can be exploited.
-- `External Pen Test`- This is a type of attack where a pen tester uses your publicly available information to try to gain access to your system. Vulnerabilities exploited can grant access to the Pen Tester to remotely gain access to private data. Loopholes like this are identified and sealed before unwanted parties gain access.
-- `Internal Pen Test`- This is a type of Pen testing where the attacker tries to gain access to a system by physically accessing the internal resources, implanting a malicious drive or the attacker takes the role of an ill-intended employee and grants remote access of private data.
+This is an attempt to identify the level of a security system by trying to gain access into the system through identified vulnerabilities with permission from authorized personnel. On the other hand, trying to bypass the system's security without permission is considered illegal and hence known as `Red Hat hacking`.
+
+### Types of Penetration testing
+
+Penetration testing can be practiced in different ways.
+
+Let's take a look at some common ways a system's vulnerability can be exploited.
+
+- `External Pen test` - This is a type of attack where a pen tester uses publicly available information to try to gain access into a system. Vulnerabilities exploited can grant access to the Pentester to remotely gain access to private data. Loopholes like these are identified and sealed before unwanted parties gain access.
+
+- `Internal Pen Test`- This is a type of Pen testing where the attacker tries to gain access to a system by physically accessing the internal resources, implanting a malicious drive, or taking the role of an ill-intended employee that grants remote access to private data.
+
 - `Social Engineering`- It is said that the weakest link in any security system is the human being. The pen tester can try to extract useful information from an employee by asking questions or deceiving the employee. This type of penetration testing is known as social engineering.
 
-Having known what Penetration testing is, let us see what **Password Cracking** is:
+Having known what Penetration testing is, let's see what **password cracking** is:
 
-First, let's understand how passwords are stored on your PC or any server. When you enter a password into an account, the password is not saved in a raw format. The `hashing algorithm` converts the raw password into a series of characters that cannot be decoded in a small amount of time. Trying to decode the hashed password might consume a lot of time or resources. That is where `John the Ripper` comes in. John the Ripper happens to have a bunch of passwords in both raw and hashed format. This bunch of passwords stored together is known as a `password dictionary`. 
+First, let's understand how passwords are stored on your PC or any server.
 
-Now to crack the password, **John the Ripper** will identify all potential passwords in a hashed format. It will then match the hashed passwords with the initial hashed password and try to find a match. If John the Ripper finds a match for the password hashes, it will then display the password raw form as the cracked password. The process of matching the password hashes to locate a match is known as a `dictionary attack`.
+When you enter a password into an account, the password is not saved in a raw format. The `hashing algorithm` converts the raw password into a series of characters (hash) that would take a lot of time and resources to decode.
 
- Having known how the password cracking process takes place, let us take a look at how John the Ripper takes commands to execute the process.
+This is where `John the Ripper` comes in. `John the Ripper` is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
+
+It has a bunch of passwords in both raw and hashed format. This bunch of passwords stored together is known as a `password dictionary`.
+
+Now to crack the password, **John the Ripper** will identify all potential passwords in a hashed format. It will then match the hashed passwords with the initial hashed password and try to find a match.
+
+If a match is found in the password hash, John the Ripper then displays the password in raw form as the cracked password. The process of matching the password hashes to locate a match is known as a `dictionary attack`.
+
+Having known how the password cracking process takes place, let's take a look at how John the Ripper executes commands in the crackig process.
 
 ### Objectives
 
-In this tutorial, we are going to learn how to spot weak passwords in a system. We will use a very powerful security tool known as `John the Ripper`, widely used by security specialists with the Kali Linux operating system.
-
-`John the Ripper` is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
-
-It cracks passwords by performing a dictionary attack on the target machine and comparing the password hash with its password hash database.
+In this tutorial, we are going to learn how to spot weak passwords in a system. We will use `John the Ripper`, widely used by security specialists with the `Kali Linux` operating system.
 
 > **Disclaimer:** This tutorial is intended solely for academic purposes, and any action taken in response to any of the materials in this guide is entirely your own responsibility.
 
@@ -64,12 +74,12 @@ It cracks passwords by performing a dictionary attack on the target machine and 
 
 Before you begin any hack or password cracking, you should have the following with you:
 
--   [Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) and John the ripper installed on your machine.
--   [Git](https://git-scm.com/downloads) installed on your system.
+- [Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) and John the ripper installed on your machine.
+- [Git](https://git-scm.com/downloads) installed on your system.
 
 ### How to install John the Ripper
 
-John the Ripper is usually pre-installed in Kali Linux but if you don't have it yet, you can follow the steps below to install it in a Linux based machine.
+John the Ripper is usually pre-installed in Kali Linux but if you don't have it yet, you can follow the steps below to install it on a Linux-based machine.
 
 If you are facing any challenges with Kali Linux, I suggest you go through [getting started with Kali Linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/) article.
 
@@ -121,7 +131,7 @@ Run the `make` command to compile source code into executable programs and libra
 make
 ```
 
-Lastly run the `make install` command to install John the Ripper.
+Lastly, run the `make install` command to install John the Ripper.
 
 ```bash
 make install
@@ -163,7 +173,7 @@ It then compiles the variations of that dictionary and compares the hashed passw
 
 ### Example cases of cracking passwords
 
-You will need to run different commands depending on the type of the target you are exploiting.
+You will need to run different commands depending on the type of target you are exploiting.
 
 Let's look at some instances we might come across when cracking passwords using John the Ripper.
 
@@ -200,7 +210,7 @@ After a successful attack, the password will be displayed on the terminal.
 
 #### 2. Cracking a user account password in Kali Linux
 
-Moving on, we will learn how to crack another user account's password using John the Ripper.
+Moving on, we will learn how to crack another user's account password using John the Ripper.
 
 First, let's create another user account that we are going to crack its password.
 Run the command below in the terminal.
