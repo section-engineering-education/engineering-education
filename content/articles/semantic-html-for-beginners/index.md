@@ -4,30 +4,28 @@ status: publish
 published: true
 url: /semantic-html-for-beginners/
 title: Getting started with Semantic HTML
-description: The new HTML5 version comes with some added features. One of these features that we will be learning about is semantic HTML. In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML, and many more.
+description: The new HTML5 version comes with new feature like semantic HTML. In this tutorial, you will learn why you should use semantic HTML in your next project, the cons of not using semantic HTML, and much more.
 author: tella-joshua
-date: 2021-08-03T00:00:00-16:00
+date: 2021-08-04T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
     - url: /engineering-education/semantic-html-for-beginners/hero.jpg
       alt: Semantic HTML for Beginners Hero image
 ---
 
-### Table of contents
-
--   [Introduction](#introduction)
--   [Understanding Semantic HTML](#understanding-semantic-html)
--   [HTML layout without semantics](#html-layout-without-semantics)
--   [HTML layout with semantics](#html-layout-with-semantics)
-
-### Introduction
-The new version of HTML (HTML5) comes with some added features. One of these features that we will be learning about is semantic HTML.
-
-A beginner learning about web development does not have the basic idea of semantic elements or might not see why to use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become necessary in recent times.
+The new version of HTML (HTML5) comes with some added features. One of these features is semantic HTML.
+<!--more-->
+A beginner learning about web development does not have the basic idea of semantic elements or might not see why they should use semantic HTML when structuring their web pages. It suffices to say that using semantic HTML has become necessary in recent times.
 
 This article will cover why you should use semantic HTML in your next project, the cons of not using semantic HTML, and many more.
 
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Understanding Semantic HTML](#understanding-semantic-html)
+- [HTML layout without semantics](#html-layout-without-semantics)
+- [HTML layout with semantics](#html-layout-with-semantics)
 ### Prerequisites
 Before we get started, it is advisable to have:
 - Basic knowledge and understanding of HTML.
@@ -37,7 +35,7 @@ Before we get started, it is advisable to have:
 ### Understanding Semantic HTML
 HTML semantic elements are those elements that have essential meaning and convey that meaning to both the browser and the developer. Through the semantic element, one can tell or describe what they want on a web page.
 
-Semantic elements help structure the code we create, making it readable and easier to maintain. Finally, it also helps us to think about the structure of our data in web design.
+Semantic elements help structure the code we create, making it readable and easier to maintain. They also helps us think about the structure of our data in web design.
 
 Some examples of semantic HTML tags are:
 `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>` etc.
@@ -194,7 +192,7 @@ This our basic layout structure:
 
 ![Simple HTML Layout](/engineering-education/semantic-html-for-beginners/html-layout.jpg)
 
-One of the major problems of not using semantic HTML is the `naming convention` from the above code. This issue becomes paramount when it is not a single developer working on the code and when the code becomes larger. 
+One of the major problems of not using semantic HTML is the `naming convention` from the above code. This issue becomes paramount when it's not a single developer working on the code and when the code becomes larger. 
 
 From the example, we had to come up with an individual naming style. There was no set of structures to follow. Handling this code for developers, especially new ones joining the team, can quickly become confusing and difficult to understand. 
 
@@ -374,7 +372,7 @@ For instance:
 Finally, these are the basic semantic HTML5 tags, making our HTML more readable and easier to understand. However, it does not affect the view of the web page.
 
 ### Conclusion
-To wrap up, we have learned about semantic elements in HTML. I encourage you to use the concepts you have been introduced within your next project.
+To wrap up, we have learned about semantic elements in HTML. I encourage you to use the concepts you have learned within your next project.
 
 Happy coding!
 
