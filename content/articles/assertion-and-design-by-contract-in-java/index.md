@@ -22,23 +22,29 @@ For interaction between various components to be achieved, a contract based on t
 Before learning this tutorial you need to have learned or be learning Java therefore have basics in Java programming.
 
 ### Design by contract
-This technique allows a programmer to provide a detailed specification to create software based on the user requirements. Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given. The types of assertions are:
+This technique allows a programmer to provide a detailed specification to create software based on the user requirements.
+Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given.
+The types of assertions are:
 
 1. Precondition: The specified conditions must be satisfied by the application before calling an external component.
 2. Postcondition: The specified condition must be satisfied by the application after an external condition has been executed.
 3. Invariant: The specified condition must be satisfied by the application.
 
-To understand the techniques of assertions we will consider the operations of a stack. A stack should not be empty when extracting an element from the stack this condition is therefore checked before extracting an element from the stack. This condition is called a precondition. Pushing an element into the stack we need to check whether the element is correctly added to the specified index, this condition is referred to as postcondition. An invariant condition is when a stacks number of element should not exceed its carrying capacity or be equals to zero that is empty.
+To understand the techniques of assertions we will consider the operations of a stack.
+A stack should not be empty when extracting an element from the stack this condition is therefore checked before extracting an element from the stack. This condition is called a precondition.
+Pushing an element into the stack we need to check whether the element is correctly added to the specified index, this condition is referred to as postcondition.
+An invariant condition is when a stacks number of element should not exceed its carrying capacity or be equals to zero that is empty.
 
 ### Implementing Assertion
-An assertion is a statement with a boolean expression assumed by the programmer to be true and therefore execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors. An assertionError exception is thrown once the expression is false and contains details of the bug that is the line number and file in which the errors are in the program.
+An assertion is a statement with a boolean expression assumed by the programmer to be true, and therefore execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors.
+An AssertionError exception is thrown once the expression is false and contains details of the bug that is the line number and file in which the errors are in the program.
 To implement assertions in Java we use the assert statement. 
 The assert statement can be implemented in two ways.
 
 ```Java
 assert Expression 1;
 ```
-The expression is a boolean, if it happens thatthe boolean report is false The assertion error is thrown without information about bugs that happened in the program.
+The expression is a boolean, if it happens that the boolean report is false The assertion error is thrown without information about bugs that happened in the program.
 
 ```Java
 assert Expression 1; Expression 2;
@@ -141,7 +147,7 @@ public class division
 3. Assertion is used to check on something that shouldn't happen while an exception is supposed to check on something that can or may happen.
 
 ### Conclusion 
-In this article, we have looked at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program.
+In this article, we have looked at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program. You need to understand as a programmer how to apply and use assertions to ensure correct flow of your programs.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
