@@ -6,7 +6,7 @@ url: /password-cracking-with-john-the-ripper/
 title: Password Cracking with John the Ripper
 description: This tutorial will walk the reader through the process of using John the Ripper to crack passwords with Kali Linux. John the Ripper is a free, open-source password cracking and recovery security auditing tool available for most operating systems.
 author: koros-wkd
-date: 2021-08-04T00:00:00-16:45
+date: 2021-08-04T00:00:00-08:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Most people often misunderstand the term `hacking`. From your perspective, you m
 
 <!--more-->
 
-But, `hacking` is an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`, also known as **pen test**.
+But, `hacking` is also an attempt to explore methods of breaching a defense mechanism and exploiting a weakness of a system to prevent unauthorized parties into the system by sealing the loopholes found in the system. This form of hacking is commonly known as `penetration testing`, also known as **pen test**.
 
 ### Table of contents
 
@@ -42,7 +42,7 @@ Penetration testing can be practiced in different ways.
 
 Let's take a look at some common ways a system's vulnerability can be exploited.
 
-- `External Pen test` - This is a type of attack where a pen tester uses publicly available information to try to gain access into a system. Vulnerabilities exploited can grant access to the Pentester to remotely gain access to private data. Loopholes like these are identified and sealed before unwanted parties gain access.
+- `External Pen Test` - This is a type of attack where a pen tester uses publicly available information to try to gain access into a system. Vulnerabilities exploited can grant access to the Pentester to remotely gain access to private data. Loopholes like these are identified and sealed before unwanted parties gain access.
 
 - `Internal Pen Test`- This is a type of Pen testing where the attacker tries to gain access to a system by physically accessing the internal resources, implanting a malicious drive, or taking the role of an ill-intended employee that grants remote access to private data.
 
