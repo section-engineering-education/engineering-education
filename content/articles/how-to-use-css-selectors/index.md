@@ -6,10 +6,11 @@ url: /how-to-use-css-selectors/
 title: How to use CSS Selectors
 description: This article takes the reader through the process of styling a Web page using CSS selectors. A CSS selector is a set of elements and other terms that tell the browser which HTML elements to apply CSS property values to.
 author: beatrice-muriithi
-date: 2021-08-03T00:00:00-16:00
+date: 2021-08-04T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/how-to-use-css-selectors/hero.png
     alt: How to use CSS selectors hero image
 ---
@@ -17,7 +18,7 @@ One of the most important concepts in [CSS](https://developer.mozilla.org/en-US/
 <!--more-->
 If you want to create amazing elements, then you need to understand CSS selectors and what you can do with them. 
 
-You first have learn the basic CSS selectors before moving on to advanced ones.
+You first have to learn the basic CSS selectors before moving on to advanced ones.
 
 By the end of this tutorial, you will be able to use CSS selectors to create incredible elements.
 
@@ -68,16 +69,16 @@ See the example below:
 </html>
 ```
 
-In the above example, we have selected and applied styles to all elements of types `h6` and `p`.
+In the example above, we have selected and applied styles to all elements of types `h6` and `p`.
 
-Code becomes clean and simple when you apply styles by selecting a single element to represent all other similar elements.
+The code becomes clean and simple when you apply styles by selecting a single element to represent all other similar elements.
 
 #### CSS id selector
 The id selector applies to HTML elements that match the id of the selector.
 
 Each element has a unique id. Therefore, styles applied to selected elements differ from one element to another.
 
-The syntax for id selector is:
+The syntax for the id selector is:
 
 ```css
 #id-name {
@@ -104,12 +105,12 @@ Let's look at the example below:
 </html>
 ```
 
-In the code above, we have selected two different HTML elements and applied different styles to them. I.e. the id `#contacts` has different background color from that of id `#about`.
+In the code above, we have selected two different HTML elements and applied different styles to them. Such as the id `#contacts` has different background color from that of id `#about`.
 
 #### CSS class selector
 CSS class selector applies styles to all HTML elements with the same class name.
 
-The `.` character followed by the `class-name` is used to select elements with a specific class. I.e. `.class-name`.
+The `.` character followed by the `class-name` is used to select elements with a specific class. Such as the `.class-name`.
 
 This selector is very useful in styling multiple elements that require the same style.
 
@@ -151,14 +152,16 @@ Below is an example to illustrate a universal selector.
 </html>
 ```
 
-The above code zeroes out the `padding` and `margin` by `10px` and `20px` respectively.
+The code above zeroes out the `padding` and `margin` by `10px` and `20px` respectively.
 
 ### How are CSS selectors grouped?🤔
 We sometimes want to group different elements to apply similar styles to them. This saves time and makes your code clean and easy for other developers to understand.
 
 However, this can be a challenge if you don't know how to go about it.
 
-In this section, we will look at how to group CSS selectors. The code snippet below will be our reference:
+In this section, we will look at how to group CSS selectors. 
+
+The code snippet below will be our reference:
 
 ```html
 <html>
@@ -187,7 +190,7 @@ In this section, we will look at how to group CSS selectors. The code snippet be
 </html>
 ```
 
-In the snippet above, we have given three different elements, `p`, `h5`, and `h6` the same style. This is repetition and time wastage 😒.
+In the snippet above, we have given three different elements, `p`, `h5`, and `h6` the same style. This is repetitive and a bad use of time and resources 😒.
 
 To avoid this, we can group the selectors using (`,`) character to separate elements as shown below:
 
@@ -208,7 +211,7 @@ To avoid this, we can group the selectors using (`,`) character to separate elem
 </html>
 ```
 
-In the snippet above, We have composed the styles for different elements once because they have the same definitions. Isn't that great?
+In the snippet above, we have composed the styles for different elements once because they have the same definitions.
 
 We can also add different definitions on each element despite grouping them together.
 
@@ -254,7 +257,9 @@ Let's look at some of the advanced CSS selectors.
 #### Combination selectors
 Combination is a term used to describe the relationship between selectors. Combination selectors amalgamate two CSS selectors.
 
-There are **four types** of CSS combination selectors. These are:
+There are **four types** of CSS combination selectors. 
+
+These are:
 1. Descendant selectors
 2. Child selectors
 3. Adjacent sibling selectors
@@ -301,7 +306,7 @@ The code above selects all `ol` elements in the `ul` elements.
 #### Child combination selectors
 A child combination selector appears in the middle of two selectors. It only selects direct child elements of the specified element.
 
-We use `>` character to denote a child selector.
+We use the `>` character to denote a child selector.
 
 Let's look at the example below:
 
@@ -324,7 +329,7 @@ div > h1 {
 }
 ```
 
-In the snippet above, the element (`div`) will only find `p` element, not `h1`. This is because the `h1` tag is not a direct child of the `div` tag.
+In the snippet above, the element (`div`) will only find the `p` element, not the `h1`. This is because the `h1` tag is not a direct child of the `div` tag.
 
 #### Adjacent sibling selectors
 Adjacent sibling selectors select one element that immediately follows another.
@@ -354,18 +359,20 @@ title ~ h1 {
 }
 ```
 
-In the above example, all `h1` elements that are siblings of the `title` element will be selected and styled with a blue color.
+In the example above, all `h1` elements that are siblings of the `title` element will be selected and styled with a blue color.
 
 #### Pseudo-selectors
 Pseudo-selectors are divided into **two** categories:
 
-1. [Pseudo class-selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) - They are used to define the states of an element. 
+1. [Pseudo class-selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes):
+They are used to define the states of an element. 
 
 For example, they can be used to:
 - Style an element when a user hovers over it.
 - Differently style visited and unvisited links.
 
-2. [CSS Pseudo-elements](https://peterlunch.com/css-pseudo-elements/) - Styles a specific part of an element.
+2. [CSS Pseudo-elements](https://peterlunch.com/css-pseudo-elements/):
+Styles a specific part of an element.
 
 They can be used to:
 - Style the first letter or line of an element.
@@ -418,7 +425,7 @@ Let's style the above HTML code:
 </style>
 ```
 
-The first letter, I.e. `T` will have a `yellow-green` color, and its font size will be `large`.
+The first letter, i.e. `T` will have a `yellow-green` color, and its font size will be `large`.
 
 The first line in the above sentence will have a red color.
 
