@@ -6,7 +6,7 @@ url: /spring-boot-kubernetes/
 title: How to deploy a Spring Boot application to Kubernetes cluster
 description: This tutorial will go over the basics of Kubernetes and explain a step by step process of deploying a Spring Boot application to a Kubernetes cluster
 author: flavian-adhiambo
-date: 2021-08-03T00:00:00-10:00
+date: 2021-08-05T00:00:00-05:41
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -15,20 +15,18 @@ images:
     alt: How to deploy a Spring Boot application to Kubernetes cluster
 ---
 
-
 Containerization is bundling together the application source code and the dependencies required to run the application. Kubernetes is a container orchestration tool that makes it possible to run several instances of an application across a distributed system of servers. As a result, Kubernetes simplifies the processing of scaling applications in the cloud. This article explains how to build a Spring Boot Docker container and deploy it to a Kubernetes cluster.
 
 
 ### Prerequisites
-1. [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
-2. [Docker](https://www.section.io/engineering-education/getting-started-with-docker/) installed on your computer.
-3. [Minikube](https://kubernetes.io/docs/tasks/tools/) installed on your computer.
+- [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
+- [Docker](https://www.section.io/engineering-education/getting-started-with-docker/) installed on your computer.
+- [Minikube](https://kubernetes.io/docs/tasks/tools/) installed on your computer.
 
 ### Objective
-By the end of this tutorial:- 
+By the end of this tutorial: 
 1. You should know various directives used in Dockerfile and how to create a Dockerfile.
 2. You should be capable of creating Kubernetes deployment and service files.
-
 
 ### Application setup
 We will be using [spring initializr](https://start.spring.io/) to bootstrap our application.
@@ -43,8 +41,8 @@ We will be using [spring initializr](https://start.spring.io/) to bootstrap our 
 2. In the `Student.java` file created above, add the code snippet below.
 
 ```java
-@NoArgsConstructor //adds a constructor with no arguiments 
-@AllArgsConstructor // adds a constructor with all arguiments
+@NoArgsConstructor //adds a constructor with no arguments 
+@AllArgsConstructor // adds a constructor with all arguments
 @Getter // adds getter methods for all fields
 @Setter // adds setter methods for all fields
 @Entity // adds JPA annotations / marks this class as an entity
@@ -57,9 +55,9 @@ public class Student {
     private String course;
 }
 ```
-- In the code snippet above, we create a `Student` entity representing a table in the database.
+In the code snippet above, we create a `Student` entity representing a table in the database.
 
-### Application repository layer
+#### Application repository layer
 In the root project package, create a new Java file named `StudentRepository.java` and add the code snippets below.
 ```java
 // Repo class that contains all the methods to interact with the database
@@ -67,7 +65,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 }
 ```
 
-### Application controller layer
+#### Application controller layer
 Create a Java file named `StudentController.java` in the root project package and add the code snippet below.
 
 ```java
@@ -106,7 +104,7 @@ public class StudentController {
 ```
 
 ### Creating Dockerfile
-A Dockefile is a blueprint that describes how Docker will create the image. The directives on the Dockerfile are executed in the order in which they are written.
+A Dockerfile is a blueprint that describes how Docker will create the image. The directives on the Dockerfile are executed in the order in which they are written.
 
 Create a file named `Dockerfile` in the root project directory and add the code snippets below.
 
@@ -121,24 +119,24 @@ ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
 - `FROM adoptopenjdk/openjdk11:jdk-11.0.2.9-slim` directive adds `JDK 11` as our base image from where the application will run.
 - `WORKDIR /opt` directive sets the directory `/opt` inside the image as the working directory.
 - `ENV PORT 8080` directive creates an environment variable named `PORT` with the value `8080`.
-- `EXPOSE 8080`directive exposes port 8080 in the image.
+- `EXPOSE 8080` directive exposes port 8080 in the image.
 - `COPY target/*.jar /opt/app.jar` directory copies the jar file in the `target` folder (when using Maven) or `build` folder (when using Gradle) into the working directory in a file named `app.jar` in the image.
 - `ENTRYPOINT exec java $JAVA_OPTS -jar app.jar` directive executes the jar file and starts the Spring Boot application.
 
 #### Building the Docker image
-Now that we have created the Dockerfile, we can proceed to create an image from the Dockefile.
+Now that we have created the Dockerfile, we can proceed to create an image from the Dockerfile.
 
 > Ensure that Docker is running before executing the command below.
 
 To build the Docker image, execute the command below.
 ```bash
-$ docker build -t spring-boot-test .
+docker build -t spring-boot-test .
 ```
 - The command above creates a Docker image named `spring-boot-test`.
 - `.` indicates that Dockerfile is in the current directory.
 
 ### Creating Kubernetes deployment file
-In the root project directory, create a new file named `deployement.yaml` and add the code snippet below.
+In the root project directory, create a new file named `deployment.yaml` and add the code snippet below.
 ```yaml
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
@@ -174,7 +172,7 @@ spec:
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
 ```
-The code snippet above has two parts separated by `---`:-
+The code snippet above has two parts separated by `---`:
 1. `Service` - a service exposes our application outside the Kubernetes cluster. It acts as the load balancer that distributes requests made to our application to various instances of the application running in the cluster.
 2. `Deployment` - a deployment is a blueprint that is used to create instances of our application in the cluster.
 
@@ -182,13 +180,13 @@ The code snippet above has two parts separated by `---`:-
 Now that we have created the Kubernetes deployment file, we can deploy it to the cluster.
 Execute the command below to deploy the application to the cluster.
 ```bash
-$ kubectl apply -f deployment.yaml
+kubectl apply -f deployment.yaml
 ```
-> **Note** Ensure that minikube is running before executing the command above. Start minikube by executing the command `minikube start`.
+> **Note**: ensure that minikube is running before executing the command above. Start minikube by executing the command `minikube start`.
 
 We can check on the Kubernetes dashboard that the deployment is running with no errors. Start the Kubernetes dashboard by executing the command `minikube enable dashboard`.
 
-![Kubernetes dashboard](/engineering-education/spring-boot-kubernetes/kubernetes-dashboard.png)]
+![Kubernetes dashboard](/engineering-education/spring-boot-kubernetes/kubernetes-dashboard.png)
 
 Our application is now running successfully in the Kubernetes cluster, but we can't access it from outside the cluster. To access our application from outside the cluster, we need to expose the service.
 
@@ -221,7 +219,7 @@ We can now access our application from the URL [http://192.168.49.2:8080](http:/
 
 
 ### Conclusion
-Now that you have learned how to deploy a Spring Boot application to a Kubernetes cluster. Deploy a Spring Boot application cluster and provision it with a database. You can download the complete source code [here](https://replit.com/@flavianadhiambo/springbootkubernetes).
+Now that you have learned how to deploy a Spring Boot application to a Kubernetes cluster. Deploy a Spring Boot application cluster and provide it with a database. You can download the complete source code [here](https://replit.com/@flavianadhiambo/springbootkubernetes).
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
