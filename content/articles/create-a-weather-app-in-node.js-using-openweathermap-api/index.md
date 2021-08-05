@@ -5,7 +5,7 @@ published: true
 url:
 title:
 description: In this tutorial, we will learn how to build a beautiful weather app using OpenWeatherMap API.
-author:
+author: Roy Kibet
 date:
 topics: []
 excerpt_separator: <!--more-->
@@ -40,13 +40,13 @@ In this tutorial, we will learn how to build a beautiful weather app using OpenW
 
 ### Key takeaways
 
-At the tip of the tutorial, you would have known:
+At the end of the tutorial, you will have learned:
 
-- What is OpenWeatherMap API
+- What OpenWeatherMap API is
 - How to work with OpenWeatherMap API to access data from the website
-- Building a beautiful weather website using HTML, CSS, and JavaScript
-- Integrating the API to the system
-- Running the web Application
+- How to build a beautiful weather website using HTML, CSS, and JavaScript
+- Integrate the API to the system
+- How to run the web Application
 
 ### Pre-requisites
 
@@ -54,7 +54,7 @@ Some basics needed for easy follow-up on this tutorial include:
 
 - Basics in the web development process
 - Basics on Node.js. If you don't have Node.js installed on your machine, you can download it from [here](https://nodejs.org/en/).
-- An IDE is installed on the computer. I strongly recommend to those who don't have one, to download and install [Visual Studio Code](https://code.visualstudio.com/).
+- An IDE/text-editor is installed on the computer. I strongly recommend to those who don't have one, to download and install [Visual Studio Code](https://code.visualstudio.com/).
 - A good and stable internet connection.
 
 If you have all of the above, let's get into the steps to be followed to make a working project.
@@ -80,9 +80,9 @@ Create a new directory, which will be our root directory named 'Weather' and in 
 npm init -y
 ```
 
-This command accepts all the default options in the Terminal dialogue. It creates a new configuration file called `package.json` in the root directory.
+This command accepts all the default options in the terminal dialogue. It creates a new configuration file called `package.json` in the root directory.
 
-Next, create a new folder named 'views' and in it, a file named 'index.ejs'. This will allow us to view the results using the 'ejs' view engine. Create another folder in the root directory named 'public' and in it another folder called `css`. Create files in the root directory named `.env` and `server.js` respectively. The project structure will be as shown below.
+Next, create a new folder named 'views' and in it, a file named `index.ejs`. This will allow us to view the results using the 'ejs' view engine. Create another folder in the root directory named `public` and in it another folder called `css`. Create files in the root directory named `.env` and `server.js` respectively. The project structure will be as shown below.
 
 #### Folder Structure
 
@@ -105,8 +105,8 @@ We shall now modify our files as follows:
 
 The following are the dependencies we will need for the project:
 
-- **express:** This shall help us in routings.
-- **dotenv:** This will help us to hide our API secret key.
+- **express:** This will help us in creating the server and serving our API.
+- **dotenv:** This will help us to access hidden keys in the `.env` file.
 - **body-parser:** This is a Node.js body parsing middleware. It will allow us to parse incoming request bodies in a middleware before our handlers. These are available under the `req.body` property.
 - **request:** This will help to make http calls.
 - **ejs:** This will help in the conversion of our templates into an html static page that can be viewed in our browser.
@@ -119,7 +119,7 @@ npm i express dotenv body-parser request ejs
 
 #### Check application configurations
 
-Let's see our application configurations found inside 'package.json' file.
+Let' tweak our application configurations found inside `package.json` file.
 Open the file and in it add a start script as follows:
 
 ```json
@@ -127,7 +127,6 @@ Open the file and in it add a start script as follows:
         "scripts": {
             "start": "node server.js",
             "test": "echo \"Error: no test specified\" && exit 1"
-
         },
 ...
 ```
@@ -141,31 +140,31 @@ Our complete `package.json` should look like this:
   "description": "",
   "main": "server.js",
   "scripts": {
-      "start": "node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-     "body-parser": "^1.17.2",
-     "dotenv": "^10.0.0",
-     "express": "^4.15.3",
-     "request": "^2.81.0"
-    }
+    "body-parser": "^1.17.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
 }
 ```
 
 #### Application entry point
 
-Head over to 'server.js' file which is our application's main entry point.
+Head over to `server.js` file which is our application's main entry point.
 We shall do the following in our code:
 
-- Require application dependencies
-These are the ones which we had installed in our application as shown below:
+- Importing application dependencies
+  These are the ones which we had installed in our application as shown below:
 
 ```javascript
-// Require application dependencies#
+// Require application dependencies
 // These are express, body-parser and request
 
 const express = require("express");
@@ -291,7 +290,7 @@ app.post('/', function(req, res) {
 });
 ```
 
-> **Note:** You can fetch and display much data as you will need in your project as needed in the json received.
+> **Note:** You can fetch and display as much data as you will need in your project as needed in the json received.
 
 - Set up our port configurations
   We shall utilize port 5000 for our project which can be accessed on `http://localhost:5000`.
@@ -308,9 +307,9 @@ You can just copy the code and paste it into your file.
 #### Setup our views
 
 Let's now set up our dynamic web pages in the application. Remember, we are using **EJS** as our template engine.
-Inside the 'index.ejs' file found in the 'views' folder, we shall create a webpage template that shall be converted into a static webpage during display once the values are fetched. To learn more on template engines, visit '[Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog")' blog.
+Inside the 'index.ejs' file found in the `views` folder, we shall create a webpage template that shall be converted into a static webpage during display once the values are fetched. To learn more on template engines, visit '[Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog")' blog.
 
-> **Note:** When this shall render the static pages, they shall be served from the 'public' folder, it acts as the root directory. This is because of this line of code, `app.use(express.static('public'));` in the 'server.js' file. Therefore, it shall obtain its assets from the 'public' folder. This will include the 'css' or even image files.
+> **Note:** When this shall render the static pages, they shall be served from the `public` folder, it acts as the root directory. This is because of this line of code, `app.use(express.static('public'));` in the `server.js` file. Therefore, it shall obtain its assets from the 'public' folder. This will include the 'css' or even image files.
 
 This is what we shall be doing in the 'index.ejs' file:
 
@@ -584,7 +583,7 @@ node server.js
 
 Access the app in the browser at `localhost:5000`. Enter the city name of your choice and click on the 'Get Weather' button.
 
-It will fetch the weather data and return results in the web browser and the console.
+It will fetch the weather data and the return results in the web browser and the console.
 
 The results will look like this:
 
@@ -611,3 +610,4 @@ You can access more data from the OpenWeatherMap site. This can be useful to cus
 
 - [Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by \*Quinter Awuor
 - [OpenWeatherMap website](https://openweathermap.org/).
+
