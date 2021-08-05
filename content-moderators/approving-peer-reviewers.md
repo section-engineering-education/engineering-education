@@ -1,6 +1,6 @@
 ### Peer Reviewer Approval Guidelines/Criteria
 #### Approval Guidance
-When looking to add new peer reviewers to the team, we are looking veterans in the EngEd progam. 
+When looking to add new peer reviewers to the team, we are looking for veterans contributors of the EngEd progam. 
 
 A lot of our students may speak English as a second language - which is perfectly fine - but our audience (the readers of our articles) are in USA - and the articles need to be polished enough to publish.
 
