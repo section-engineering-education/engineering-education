@@ -32,9 +32,9 @@ In this article, we will go over how to set up a relational database server on A
 
 3. In the new page, select Create Security Groups.
 
-![aws create security goup](/engineering-education/configuring-a-relational-database-server-on-aws/yp7kmuqrgmfdivlnupop.png)
+![aws create security group](/engineering-education/configuring-a-relational-database-server-on-aws/yp7kmuqrgmfdivlnupop.png)
 
-4. After doing that, we enter the details of the new security group we are creating.
+4. After doing that, we enter the detials of the new security group we are creating.
 
 ![aws enter security group detials](/engineering-education/configuring-a-relational-database-server-on-aws/2a7sjkc7ytwleipuquvj.png)
 
