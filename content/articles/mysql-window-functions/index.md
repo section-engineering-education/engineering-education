@@ -65,7 +65,7 @@ This outputs a list of sales items ranked according to ranking_score.
 
 3. LAG( )
 `
-`LAG( )` function is almost similar to the LEAD( ) function hence the both compute row differences. As `LEAD( `) returns value for subsequent row, `LAG( )` returns the values of the previous row.
+`LAG( )` function is almost similar to the LEAD( ) function hence the both compute row differences. As `LEAD( )` returns value for subsequent row, `LAG( )` returns the values of the previous row.
 
 4. DENSE-RANK( )
 
@@ -248,3 +248,5 @@ Therefore to avoid the errors and thrown due to the lack of MySQL support we sho
 Despite the several pitfalls that we have seen associated with window functions, they still play an important role in executing MySQL queries and various solutions are even being given out in an attempt to solve the above-discussed problems. This therefore shows how critical window functions are to the MySQL queries.
 
 Blissful reading!
+---
+Peer Review Contributions by: [Atonya Dennis](/engineering-education/authors/atonya-dennis/)
