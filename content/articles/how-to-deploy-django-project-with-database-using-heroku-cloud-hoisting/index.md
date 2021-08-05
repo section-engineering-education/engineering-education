@@ -471,7 +471,126 @@ Django as backend framework requires some few dependencies for it to be live and
 
 ```bash
 $ pip install gunicorn
+    Collecting gunicorn
+    Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
+    Requirement already satisfied: setuptools>=3.0 in c:\users\user\desktop\myproject\env\lib\site-packages (from gunicorn) (57.0.0)
+    Installing collected packages: gunicorn
+    Successfully installed gunicorn-20.1.0
+```
+Now create a `ProcFile` with no extension in the root directory.
 
-### Heroku Account Set-Up
+```bash
+$ ls
+    account  manage.py  requirements.txt  studentprofile  students  templates
+$ touch ProcFile
+$ ls
+    account  manage.py  ProcFile  requirements.txt  studentprofile  students  templates
+```
 
+Inside the `ProcFile` add this. What this done is to allow HTTP traffic and to tell Heroku that this is a web dyno. 
+```
+    web: gunicorn studentprofile.wsgi --log-file -
+```
+2. whitenoise
+    Heroku serves your staticfiles for your project automatically through this dependency. So we have to install it and add its middleware to `settings.py`.
+
+```bash
+$ pip install whitenoise
+    Collecting whitenoise
+    Downloading whitenoise-5.3.0-py2.py3-none-any.whl (19 kB)
+    Installing collected packages: whitenoise
+    Successfully installed whitenoise-5.3.0
+```
+
+Add this to `settings.py` for Django to serve it. Just below the `SecurityMiddleware` like this.
+```
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ]
+```
+
+3. runtime.txt
+    This file tells Heroku what type and version of programming language is the project built on. So let us add that to the root level.
+
+Note: `python-3.8.6` might not be your version, do change that to your own.
+
+```bash
+$ touch runtime.txt
+    account  manage.py  ProcFile  requirements.txt  runtime.txt  studentprofile  students  templates
+$ echo python-3.8.6 > runtime.txt
+```
+
+4. dj-database-url
+    Since we are using a custom database, then we need a way to talk to the Heroku database for the project. And the dependency that does that for us `dj-database-url` which we have to install and add it to the `settings.py`.
+
+```bash
+$ pip install dj-database-url
+    Collecting dj-database-url
+    Using cached dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
+    Installing collected packages: dj-database-url
+    Successfully installed dj-database-url-0.5.0
+```
+Then add this to your `settings.py`
+```
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+```
+
+Now we need to add all our dependencies recently installed to `requirements.txt` file.
+
+```bash
+$ pip freeze > requirements.txt
+````
+So far if you open your `requirement.txt` file, these must be present.
+
+```
+    asgiref==3.4.1
+    dj-database-url==0.5.0
+    Django==3.2.6
+    gunicorn==20.1.0
+    psycopg2==2.9.1
+    pytz==2021.1
+    sqlparse==0.4.1
+    whitenoise==5.3.0
+```
+I commend your effort. Well-done!!
+
+As a good developer, all secret keys generated for every project is inside `settings.py` and this must be always hided. So we will need to make `.env` file and store our keys there. For this reason,  a couple of files and installations shall be done.
+
+```bash
+$ ls
+    account  manage.py  ProcFile  requirements.txt  runtime.txt  studentprofile  students  templates
+$ touch .env
+$ touch .gitignore
+$ pip install python-dotenv
+    Collecting python-dotenv
+    Using cached python_dotenv-0.19.0-py2.py3-none-any.whl (17 kB)
+    Installing collected packages: python-dotenv
+    Successfully installed python-dotenv-0.19.0
+$ pip freeze > requirements.txt
+```
+Inside the `.env` file add this below. And that ??? means the secret keys inside your `settings.py` for the project and then save the file.
+
+```
+    SECRET_KEY = ???
+
+    export YOUR_SECRET_KEY = ${SECRET_KEY}
+```
+
+Now go into the `settings.py` and connect the `.env` file with the project by adding this below.
+
+```
+    from dotenv import load_dotenv
+    load_dotenv()
+
+    SECRET_KEY = os.getenv("YOUR_SECRET_KEY")
+```
 The very next thing on the list is to set
