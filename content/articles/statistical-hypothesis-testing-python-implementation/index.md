@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /statistical-hypothesis-testing-python-implementation/
 title: Statistical Hypothesis Testing With Python Implementation
-description: This tutorial is a comprehensive explanation and implementation of statistical hypothesis testing methods such as T-Test, Chi-square test & ANOVA in Python.
+description: This tutorial is a comprehensive explanation and implementation of statistical hypothesis testing methods in Python.
 author: qoyum-olatunde-yusuf
 date: 2021-06-16T00:00:00-11:00
 topics: [Statistical Analysis, Hypothesis Testing, Data Science, Python ]
@@ -14,11 +14,13 @@ images:
  - url: /engineering-education/statistical-hypothesis-testing-python-implementation/hero.PNG
 alt: statistic hypothesis testing with python cover image
 ---
-Hypothesis is the act of making observations and generating probing questions from the observations made in an attempt to come to a conclusion. Hypothesis testing is the test of assumptions on a population sample. It involves checking out whether a hypothesis should be accepted or not. In the business world and in real life, hypothesis testing has been of great importance in making worthy decisions off mere observations. Billions of data are being generated on a daily basis around the globe and this has made the relevance of hypothesis testing a stronghold in making business decisions.
+Hypothesis testing is the analysis of assumptions on a population sample. In other words, it involves checking whether a hypothesis should be accepted or not. 
 <!--more-->
+Hypothesis testing has improved decision-making in different sectors including business. Today, organizations rely on hypothesis testing due to the huge amount of data generated across the globe.
+
 ### Table of Contents
 1. [Prerequisites](#prerequisites)
-2. [Goal of the tutorial](#goal-of-the-tutorial)
+2. [Goal](#goal-of-the-tutorial)
 3. [Understanding hypothesis testing](#understanding-hypothesis-testing)
 4. [Confidence of null hypothesis](#confidence-of-null-hypothesis)
 5. [Statistical techniques for hypothesis testing](#statistical-techniques-for-hypothesis-testing)
@@ -29,129 +31,136 @@ Hypothesis is the act of making observations and generating probing questions fr
 10. [Additional resources](#additional-resources)
  
 ### Prerequisites
-The reader of this tutorial should have basic knowledge of python programming, must have an idea of the concept of exploratory data analysis and how pandas and numpy work, must have an elementary understanding of statistics, and must be a data science enthusiast.
+To follow along, readers should have some basic knowledge of Python programming. They should also understand how to perform data analysis using [pandas](https://pandas.pydata.org/) and [numpy](https://numpy.org/).
  
-### Goal of the Tutorial
-At the end of this tutorial, readers should be able to
-- understand clearly the concept of statistical hypothesis testing.
-- perform the implementation of t-test, chi-squared test & ANOVA with python and a new dataset.
-- differentiate clearly the trade-off between type 1 and type 2 error of null hypothesis.
-- explain the confidence of the null hypothesis.
-- play with basic pandas functions for exploratory data analysis.
-- figure out the best case-study for "t-test", "chi-squared test" and "ANOVA test".
+### Goal
+At the end of this tutorial, readers should be able to:
+- Understand statistical hypothesis testing.
+- Perform T-test, Chi-squared test & ANOVA using Python and a new dataset.
+- Differentiate between type 1 and type 2 null hypothesis errors.
+- Explain the confidence of the null hypothesis.
+- Use pandas functions for data analysis.
+- Identify the best areas to apply T-test, Chi-squared test, and ANOVA test.
  
-### Understanding Hypothesis Testing
-There are two types of hypothesis testing, namely, null hypothesis and alternate hypothesis.
+### Understanding hypothesis testing
+The two types of hypothesis testing are `null hypothesis` and `alternate hypothesis`.
  
-[**Null hypothesis**](https://en.wikipedia.org/wiki/Null_Hypothesis:_The_Journal_of_Unlikely_Science) is the initial assumption about an event (also referred to as the ground truth), whereas [**alternate hypothesis**](https://en.wikipedia.org/wiki/Alternative_hypothesis) is an assumption that counters the initial assumption.
+[Null hypothesis](https://en.wikipedia.org/wiki/Null_Hypothesis:_The_Journal_of_Unlikely_Science) is the initial assumption about an event (also referred to as the ground truth). 
+
+On the other hand, [alternate hypothesis](https://en.wikipedia.org/wiki/Alternative_hypothesis) is an assumption that counters the initial assumption.
  
-Consider a situation where a seventy-year-old woman has a visible bump in her belly. The medical opinion is that the bump could be a fibroid. In this case, our initial conclusion (or our null hypothesis) is that -
+Consider a situation where a seventy-year old woman has a visible bump in her belly. Medical officers may assume that the bump is a fibroid. 
+
+In this case, our initial conclusion (or our null hypothesis) is that `she has fibroid` while our alternate hypothesis will be `she does not have fibroid`.
  
-**"She has fibroid"**.
-while our alternate hypothesis will be
-**"She does not have fibroid"**.
- 
-In trying to make a valid conclusion between two assumptions on a certain sample of data, we will refer to the null hypothesis (or our initial assumption) as H0 hypothesis and the alternate hypothesis (or the counter assumption) as H1 hypothesis.
- 
-To carry out hypothesis testing, the first step is to form and label the null hypothesis as H0 and the alternate hypothesis as H1. The next step is to collect all data samples available to support the null hypothesis, collect data pertaining to the hypothesis and analyze it to make a decision if H0 can be accepted or rejected.
-While doing that, there is a likelihood for four events to happen:
+To carry out hypothesis testing,, we will refer to the null hypothesis (initial assumption) as `H0` hypothesis and the alternate hypothesis (counter assumption) as `H1` hypothesis.
+
+The next step is to collect the available data samples to support the null hypothesis.
+
+We should collect data pertaining to the hypothesis and analyze it to decide if `H0` can be accepted or rejected.
+
+While doing that, there is a likelihood of the following events happening:
  
 1. The ground truth (H0) is true, so H0 is accepted
 2. The ground truth (H0) is not true, so H0 is rejected and H1 is accepted
  
-- These two cases are the desired possibilities as either our null hypothesis was right and adopted or our null hypothesis was wrong and rejected.
+The above two cases are the desired possibilities. It's either our null hypothesis was right and adopted or our null hypothesis was wrong and rejected.
  
-However, the remaining two possibilities, which are
+The remaining possibilities are outlined below:
  
 3. Null hypothesis (H0) is true but we reject it.
 4. Null hypothesis (H0) is not true, but we did not reject it.
  
-These cases are not desirable as we have either failed to recognize the right hypothesis or we have chosen the wrong one.
+These cases are not desirable since we have not recognized the right hypothesis.
  
-Rejecting the null hypothesis although it is true is referred to as a [**type-1 error**](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) whereas failing to reject the null hypothesis even though it is wrong is referred to as a [**type-2 error**](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414).
-The severity of type-1 and type-2 errors depend on the task at hand, so it is the analyst's decision to judge which error would negatively impact the outcome.
-Consider the example of the seventy-year-old woman with a bump. In such a situation,
-Null Hypothesis (H0): **She has fibroid**
-Alternate Hypothesis (H1):  **She does not have fibroid**
- 
-In this case, will it be safe to make the mistake of assuming she does not have fibroid when she actually has fibroid (type-1 error) or will it be costlier to make the assumption that she has fibroid when she doesn't actually have it (type-2 error)?
- 
-There is someone's life involved here, therefore care must be taken before making assumptions.
- 
-In this case, encountering type 1 error is assuming she does not have fibroid when she actually is, i.e. the null hypothesis is true but we reject it.
- 
-If a type two error is encountered, which is assuming she's pregnant when she is truly not, the null hypothesis is wrong but we insist on not rejecting it. The consequence might probably be leaving the bump-like pregnancy to grow, and it turns out to be an acute fibroid.
- 
-Considering these two situations, it would be safe to conclude that the consequences of making a type-1-error is much more grave than making a type-2-error. While trying to solidify the assumption, it is mandatory to employ the service of a p-value, which is basically used to determine whether to accept or reject our null hypothesis.
+[Type-1 error](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) occurs when we reject the null hypothesis even though it was true.
 
-### Confidence of Null Hypothesis
+[Type-2 error](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) involves accepting the null hypothesis even though it was wrong.
+
+The severity of type-1 and type-2 errors depend on the task at hand. Data analysts should, therefore, determine the errors that could impact the outcome negatively.
  
-[P-value](https://www.investopedia.com/terms/p/p-value.asp) explains the likelihood of the gathered fact or data to occur under the condition of the null hypothesis.
-Technically, the only way we can accept or reject our ground truth (null hypothesis) is after determining our [*P-value*](https://www.scribbr.com/statistics/p-value/) which is an abbreviation for probability value. It is the only thing that has the decisive power to accept or reject H0.
+Basing on the above example, its important to be sure due to the huge risks involved. For instance, we can assume that the patient does not have fibroids while in real sense she is affected.
  
-***The smaller our P-value is,the more delicate it is to accept our null hypothesis.***
+Basing on this example, it would be safe to conclude that the consequences of making a type-1 error is much more grave than making a type-2 error. 
+
+When making assumptions, it's crucial to use the `p-value` to determine whether to accept or reject the null hypothesis.
+
+### Confidence of null hypothesis
+A [p-value](https://www.investopedia.com/terms/p/p-value.asp) explains the likelihood of an assumption being true based on the null hypothesis. It is an abbreviation for `probability value`.
+
+Technically, the only way we can accept or reject our null hypothesis is after determining our [p-value](https://www.scribbr.com/statistics/p-value/). 
  
-To calculate our P-value, there should be a certain level of significance to our ground truth or initial assumption, so a smaller P-value is telling us there are more reasons why we should accept our alternative hypothesis.
+**The smaller our p-value is, the more delicate it is to accept our null hypothesis.**
  
-P-value is within the range of 0 and 1, but the threshold value is set at 0.05, the threshold value can also be called *alpha*, alpha level is always set before the experiments in order to avoid bias.
-Alpha is the level we set our p-value at inorder to ascertain whether to accept our null hypothesis or not.
-Our alpha value is the probability of making a wrong decision when the ground truth(H0) is true. It is always calculated as
-```
+To calculate our `p-value`, there should be a certain level of significance to the initial assumption.
+
+A smaller p-value means that there are numerous reasons why we should accept the alternative hypothesis.
+ 
+A p-value is usually within the range of 0 and 1. The threshold value is set at 0.05 before the experiments in order to avoid bias.
+
+The alpha level allows us to ascertain whether to accept or reject the null hypothesis. It refers to the probability of making a wrong decision when the ground truth(H0) is true. 
+
+The alpha level is determined by the following formula:
+
+```py
 alpha = 1 - confidence level
 ```
-If the confidence level from what we've seen in our data is 95%, then
-```
+
+If the confidence level from what we've seen in our data is `95%`, then the alpha will be `0.05`:
+
+```py
 alpha = 1 - 0.95
 ```
-which is 0.05.
+
+It is important to set the alpha level correctly to avoid biased decisions, especially when we reject the null hypothesis. The standard or preferred level is 5%.
  
-Why is the 95% confidence level the most accustomed?
- 
-Since we know that alpha level is the probability of encountering a Type I error(which is rejecting H0 despite being true), would it not make sense to make it as bitsy as possible. Imagine our alpha value being set to 10%, obviously, there is an increasing chance that we will make the mistake of rejecting the null hypothesis, but it must not be too small as well, if we set the alpha value as 1%, it will be too small that our decision will be reeking of bias. Hence, the standard has been 5%.
- 
-While implementing statistical hypothesis testing, there are some methodologies that can be employed. In this tutorial, I will be touching on three methods of carrying out statistical hypothesis testing.
- 
- 
-### Statistical Techniques for Hypothesis Testing
+### Statistical techniques for hypothesis testing
 The three methods to be discussed are:
-1. Chi-Square Test
-2. T-Test
-3. ANOVA Test
+1. Chi-square test
+2. T-test
+3. ANOVA test
  
-#### Chi-Square Test
+#### Chi-square test
+Chi-square test is used to analyze two categorical variables in a data set. It focuses on the relationship between these two categorical variables. For example, comparing the after effects of malaria drug A to those of malaria drug B.
+
+Chi-square is a tool for checking how divergent the observed frequency is from the expected results.
+
+In a Chi-square test, we accept the null hypothesis when variable A and variable B are not dependent or have no relationship between them.
+
+We also use the alternate hypothesis when variable A depends on variable B. 
+
+The formula for calculating Chi-square test is shown below:
  
-Chi-square test is used to perform testing on two categorical variables in our data population. It is focused on looking for an important relationship between two categorical variables.
-For example, comparing the aftereffects of malaria drug A, malaria drug B, and malaria drug C.
-Chi-square is a tool for checking how divergent the observed frequency is from the expected frequency.
-With Chi-Square, we accept the null hypothesis when variable A and variable B are not dependent, i.e. there is no relationship between them.
-We reject the null hypothesis(or accept the alternate hypothesis) when variable A depends on variable B, i.e. there is a relationship between them. The formula for calculating chi-square test is:
- 
-![chi_square_formula](/engineering-education/statistical-hypothesis-testing-python-implementation/chi-square.PNG)
+![chi_square_formula](/engineering-education/statistical-hypothesis-testing-python-implementation/chi-square.png)
 
 Consider the following example:
  
-A mathematics teacher conducted a test for a class of 20 students. He expected 5 to score good marks, 7 to score average marks while 8 to fail. Eventually, when the result came out, 5 failed, 6 were average while 9 scored good marks. Mathematically, carry out chi-square test for this class.
+A mathematics teacher conducted a test for a class of 20 students. He expected 5 to score good marks, 7 to score average marks while 8 to fail. Eventually, when the result came out, 5 failed, 6 were average while 9 scored good marks. 
+
+We can use a Chi-square test to analyze the performance of this class.
  
 |  | Good  |  Average  | Fail | Total |
 |----|--------|:----------|--------------|--------|
 | Observed| 9 | 6 | 5 | 20 |
 | Expected| 5 | 7 | 8 | 20 |
 
-From the table, students fall into three categories ranging from what is expected to what is finally observed, categories are `good`, `average`, and `fail`. Let's denotes our expected and observed values with letters, so that we can relate with it well.
+From the table above, students fall into three categories ranging from what is expected to what is finally recorded. The main categories are `good`, `average`, and `fail`. 
 
-let, 
-- observed good be A,
-- expected good be a,
-- observed average be B,
-- expected average be b,
-- observed fail be C, and
-- expected to fail be c.
+Let's denote the expected and observed values with letters to make it more understandable.
+
+Let the: 
+- Observed good be `A` and the expected good be `a`.
+- Observed average be `B` and the expected average be `b`.
+- Observed fail be `C` and the expected to fail be `c`.
+
+We then find the difference between the expected and observed values, as shown below:
   
 ```
 A-a = 4
 B-b = -1
 C-c = -3
 ```
+
 ```
 /A-a/² = 16
 /B-b/² = 1
@@ -162,14 +171,15 @@ Good = (16/5) = 3.2
 Average = (1/7) = 0.143
 Fail = (9/8) = 1.125
  
-chi-square = 3.2 + 0.143 + 1.125
-chi-square = 4.468
+Chi-square = 3.2 + 0.143 + 1.125
+Chi-square = 4.468
 ```
-For huge datasets, mathematical calculations cannot be done by hand. The implementation of the chi-square test in Python is discussed in the next section.
+For huge datasets, mathematical calculations cannot be done by hand. The implementation of the Chi-square test in Python is discussed in the next section.
 
-### Chi-square test with Python implementation.
+#### Chi-square test with Python implementation.
+We need to import `pandas`, `numpy`, `scipy`and , as demonstrated below:
  
-```python
+```py
 import pandas as pd
 import numpy as np
 import scipy.stats as stats
@@ -184,29 +194,39 @@ import warnings
 warnings.filterwarnings( "ignore" )
 ```
  
-The libraries imported are the most important libraries used for any data science python implementation work, except for the f_oneway used for the implementing one way ANOVA test and chi2_contigency used for the implementation of Chi-square.
+The libraries imported are the most important libraries used for any data analysis project.
+
+`f_oneway` and `chi2_contigency` libraries are used for implementing a one-way `ANOVA` and Chi-square tests respectively.
  
-I will be using the popular iris data set for the tutorial, you can get it almost anywhere but I downloaded this from [Kaggle](https://www.kaggle.com/vikrishnan/iris-dataset).
+In this tutorial, we will be using the popular iris dataset. You can download it from [here](https://www.kaggle.com/vikrishnan/iris-dataset).
  
-Load the data into the notebook
-```python
+The next step is to load the data into the notebook:
+
+```py
 df = pd.read_csv("/content/drive/MyDrive/IRIS.csv")
 df.columns =['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 ```
-```python
+
+```py
 df.head()
 ```
-![df.head.png](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_head.PNG)
-On checking the first five, it seems all the species of flower are setosa, but the iris dataset has 2 more samples apart from that, to be sure, let's run df.sample() to visualize samples randomly.
+
+![dataset head](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_head.png)
+
+let's run df.sample() to visualize samples randomly.
+
 ```python
 df.sample(10)
 ```
-![sampleten](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_sample.PNG)
+
+![sampleten](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_sample.png)
  
-Always check for missing values to avoid future complications.
-```python
+Always check for missing values to avoid errors.
+
+```py
 df.isnull().sum()
 ```
+
 ```bash
 sepal_length    0
 sepal_width     0
@@ -215,23 +235,28 @@ petal_width     0
 species         0
 dtype: int64
 ```
-```python
+
+```py
 print(df["species"].unique())
 ```
+
 ```bash
 array(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'], dtype=object)
 ```
+
 We can be sure now that there are 3 classes of species and there are no missing values.
 Let's proceed with the data manipulation.
  
-Let's use petal width to compare species for our chi-square test.
+Let's use `petal_width` to compare species for our Chi-square test.
  
-The first step is to check the summary of `petal_width`
- 
-Secondly, use the information derived to convert it to a categorical variable.
+The first step is to check the summary of `petal_width`. We then use this information to convert it to a categorical variable.
+
 ```python
 print(df.petal_width.describe())
 ```
+
+Output:
+
 ```bash
 count    150.000000
 mean       1.198667
@@ -243,40 +268,46 @@ min        0.100000
 max        2.500000
 Name: petal_width, dtype: float64
 ```
-Since, the operation we are going to be performing are mathematical operations and they don't work with letters or words except numbers.
- 
-The Chi-square test helps in determining if there is a notable difference between the observed and normal frequencies in one or more categories, the values of petal_width must be changed into categories of zeros and ones using the 50% percentile which is the second quartile as the yardstick.
- 
-There are clear [differences](https://byjus.com/maths/difference-between-percentage-and-percentile/) between percentage and percentile. As percentage is just a fraction of a hundred, the percentile is more concerned with ranks, it can be termed as the percentage of values that fall below a certain value mark.
- 
-It is rather used to find the position of a value in a given set of values. For example, if a girl has the 50th percentile on an examination of 200, we can say that by scoring 200 marks, she has higher marks than 50% of the remaining class.
-There are two conditions that must be satisfied while calculating percentile.
-1. Data must be arranged in ascending order.
-2. if the index is not an integer, it must be rounded up.
-```python
+
+The Chi-square test helps in determining if there is a notable difference between observed and normal frequencies in one or more categories. 
+
+The values of `petal_width` must be changed into categories of zeros and ones using the 50% percentile.
+
+There are two conditions that must be satisfied while calculating percentile:
+1. Firstly, data must be arranged in an ascending order.
+2. Secondly, the index must be rounded up if it is not an integer.
+
+```py
 print(np.percentile(df.petal_width, 50))
 ```
+
+Output:
+
 ```bash
 1.3
 ```
 
-A quartile is another term related to percentile, it is a specified percentile, we have 1st quartile as 25% percentile, second quartile as 50%, and 3rd as 75% percentile. You can as well read this [article](https://datascienceupskill.com/statistics/percentiles-and-quartiles) to get a better grip. 
+A quartile is another term relating to percentile. You can learn more about percentiles and quartiles from [here](https://datascienceupskill.com/statistics/percentiles-and-quartiles). 
  
-```python
+```py
 def petal_cat(df):
- if df['petal_width'] <= 1.3:
-   return 0
- elif df['petal_width'] > 1.3:
-   return 1
- else:
-   return 'indifferent'
+  if df['petal_width'] <= 1.3:
+    return 0
+  elif df['petal_width'] > 1.3:
+    return 1
+  else:
+    return 'indifferent'
  
 df['petal_width_new'] = df.apply(petal_cat, axis=1) 
 ```
-The non-machine-friendly format for our *species* class has to be transformed to 0,1 and 2, which is a machine-readable format for the testing to be carried out. Therefore, with [label-encoding](/engineering-education/content/articles/introduction-to-scikit-learn-in-python/
-), a numeric value will be assigned to each of the categories in the class. To learn more about label encoding, [click](/engineering-education/content/articles/data-preprocessing-in-r/).
+
+The  data format for the `species` class has to be transformed to 0, 1, and 2, which is a machine-readable format to facilitate testing. 
+
+Therefore, with [label-encoding](/engineering-education/introduction-to-scikit-learn-in-python/), a numeric value will be assigned to each of the categories in the class. 
+
+To learn more about label encoding, [click](/engineering-education/data-preprocessing-in-r/).
  
-```python
+```py
 def species_cat(df):
  if df["species"] == "Iris-virginica":
    return 0
@@ -287,35 +318,40 @@ def species_cat(df):
  
 df["species"] = df.apply(species_cat, axis=1)
 ```
-```python
+
+```py
 print(df.sample(5))
 ```
-![dfsample5](/engineering-education/statistical-hypothesis-testing-python-implementation/dfsample5.PNG)
-```python
+
+![dfsample5](/engineering-education/statistical-hypothesis-testing-python-implementation/dfsample5.png)
+
+```py
 df_new = df.drop(columns=["sepal_width", "sepal_length", "petal_length", "petal_width"])
-```
-```python
 print(df_new.head())
 ```
-![newhead](/engineering-education/statistical-hypothesis-testing-python-implementation/df_new.PNG)
+
+![newhead](/engineering-education/statistical-hypothesis-testing-python-implementation/df_new.png)
  
-Let's make use of `chic2_contigency` provided for us in the `scipy.stats` library.
+Let's make use of the `chic2_contigency` library that we had imported into the project.
+
 ```python
-stat, p, dof, expected= chi2_contingency(df_new)
- 
+stat, p, dof, expected= chi2_contingency(df_new) 
 print("The degree of freedom is: ", dof)
 ```
+
+Output:
+
 ```bash
 The degree of freedom is: 149
 ```
-We can comfortably get 3 outputs in test statistics, degree of freedom, p-value, and expected values.
+
+The three outputs in test statistics will include degree of freedom, p-value, and expected values.
  
-[Test statistic](https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/chi-square-tests) is a characterized feature of significance in the Chi-square test that helps in determining how uncommon the result might be provided that null hypothesis is assumed to be true.
+[Test statistic](https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/chi-square-tests) is a characterized feature of significance in the Chi-square test. Its helps in determining how uncommon the result might be provided that null hypothesis is assumed to be true.
  
-The number of features or variables that we have access to varies by the degree of freedom. Follow the link for more information on [degree of freedom](https://byjus.com/maths/chi-square-test/).
- 
-Hence, we set our probability of confidence to 95% as explained earlier in the tutorial.
-```python
+The number of features or variables that we have access to vary depending on the [degree of freedom](https://byjus.com/maths/chi-square-test/). This is why the probability of confidence is set to 95%.
+
+```py
 prob = 0.95
  
 alpha = 1.0 - prob
@@ -328,15 +364,18 @@ if p <= alpha:
 else:
  print('Accept the Null Hypothesis (fail to reject H0)')
 ```
+
+Output:
+
 ```bash
 alpha/significance level=0.050
-P-value =0.10
+P-value = 0.10
 Accept the Null Hypothesis (fail to reject H0)
 ```
-The `p-value` is greater than the `alpha value` set at 0.05, we will fail to reject the null hypothesis and accept the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
+
+In the results above, the `p-value` is greater than the `alpha value` set at 0.05. We will fail to reject the null hypothesis and accept the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
  
 ### T-Test with Python implementation
- 
 The T-test is utilized when we plan to evaluate the discrepancy between the means of two groups of samples. Unlike the Chi-Square Test, the T-test is used on continuous variables.
  
 T-tests has three basic types
@@ -519,8 +558,6 @@ At the end of this tutorial, I believe the readers should have more than a grasp
  
 Additional resources are added below to better solidify the knowledge gained from this tutorial.
  
-**Happy coding**
- 
 ### Additional Resources
 1. [Hypothesis Testing in Data Science](/engineering-education/content/articles/hypothesis-testing-data-science/)
 2. [ANOVA Test: Definition, Types, Examples](https://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/anova/)
@@ -529,6 +566,8 @@ Additional resources are added below to better solidify the knowledge gained fro
 5. [Understanding Hypothesis Tests: Significance Levels (Alpha) and P values in Statistics](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics)
 6. [Chi-squared test application](http://www.openanesthesia.org/chi-squared_test_application/)
 7. [Chi-square mathematics for statistics students](https://www.yourarticlelibrary.com/project-reports/chi-square-test/chi-square-test-meaning-applications-and-uses-statistics/92394).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Prashanth Saravanan](/engineering-education/authors/prashanth-saravanan/)
