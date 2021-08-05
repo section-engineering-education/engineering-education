@@ -14,8 +14,11 @@ images:
     alt: Weather-api
 ---
 
-Have you ever wanted to create a fully functional weather website in Node.js? Do you need an application that can show you weather forecasts instantly in clicks? If you are one of them, you are in the right place.
-Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. In this tutorial, we will learn how to build a beautiful weather app using OpenWeatherMap API.
+Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. Many weather stations are placed around the world fetching real-time weather elements data. These six elements include precipitation, wind, atmospheric pressure, cloudiness, and temperature. With these, we can analyze trends and know the prediction of tomorrow's data hence forecasting weather.
+
+Most of these large chunks of data are processed at base stations using powerful and sophisticated systems. They then share this data, either analyzed over a long time or real-time data through APIs. Among the companies that do this include OpenWeatherMap and Dark Sky.
+
+In this tutorial, we will learn how to build a beautiful weather app using OpenWeatherMap API.
 
 ### Table of Contents
 
@@ -25,13 +28,13 @@ Weather forecasting is very necessary for our daily lives. It helps us to prepar
 - [Setup the project](#setup-the-project)
   - [Folder Structure](#folder-structure)
   - [Install dependencies](#install-dependencies)
-  - [package.json](#packagejson)
-  - [server.js](#serverjs)
-  - [index.ejs](#indexejs)
-  - [style.css](#stylecss)
-  - [.env](#env)
+  - [Check application configurations](#check-application-configurations)
+  - [Application entry point](#application-entry-point)
+  - [Setup our views](#setup-our-views)
+  - [Styling our page](#styling-our-page)
+  - [Application Environment virables](#application-environment-virables)
 - [Run and access the application](#run-and-access-the-application)
-- [Further projectsAPIs](#further-projectsapis)
+- [Further projects APIs](#further-projects-apis)
 - [Conclusion](#conclusion)
 - [References](#references)
 
@@ -114,8 +117,9 @@ We shall install them by using the command below:
 npm i express dotenv body-parser request ejs
 ```
 
-#### package.json
+#### Check application configurations
 
+Let's see our application configurations found inside 'package.json' file.
 Open the file and in it add a start script as follows:
 
 ```json
@@ -144,91 +148,7 @@ Our complete `package.json` should look like this:
   "author": "",
   "license": "ISC",
   "dependencies": {
-     "body-<!-- Main container -->
-    <div class="container">
-
-        <!-- This shall hold the input fields and the output data -->
-        <fieldset>
-            <!-- This form shall be used to fetch our city name -->
-            <form action="/" method="post">
-                <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-                <input type="submit" class="ghost-button" value="Get Weather">
-            </form>
-
-            <!-- Upon fetching of data we shall display it -->
-            <%if( weather !== null){ %>
-                <div class="grid">
-                    <p>
-                        <%= place %>
-                    </p>
-                    <p class="text-muted small">
-                        <%= timezone %>
-                    </p>
-                </div>
-
-                <!-- You can find other data fetched by the app on the console in JSON form and display it as you please -->
-                <div class="card-deck">
-                    <div class="card card-accent-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Summary</div>
-                        <div class="card-body text-dark">Bootstrap CSS
-                            <img src="<%= icon %>" alt="Weather-Icon">
-                            <h5 class="card-title">Temperature</h5>
-                            <p class="card-text">
-                                In Degrees:
-                                <%= temp %>°C/
-                                    <%= fahrenheit %>°F
-                            </p>
-                            <h5 class="card-title">Main</h5>
-                            <p class="card-text">
-                                <%= main %>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card-deck">
-                        <div class="card card-acTomorrowcent-dark mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Description</div>
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Overall Description: </h5>
-                                <p class="card-text">
-                                    <%= description %>
-                                </p>
-                                <h5 class="card-title">Cloud coverage: </h5>
-                                <p class="card-text">
-                                    <%= clouds %>%
-                                </p>
-                                <h5 class="card-title">Visibility: </h5>
-                                <p class="card-text">
-                                    <%= visibility %> meters
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card card-accent-dark mb-3" style="max-width: 18rem;">
-                                <div class="card-header">Other info</div>
-                                <div class="card-body text-dark">
-                                    <h5 class="card-title">Humidity: </h5>
-                                    <p class="card-text">
-                                        <%= humidity %> g.m-3
-                                    </p>
-                                </div>
-                                <div class="card-body text-dark">
-                                    <h5 class="card-title">Pressure: </h5>
-                                    <p class="card-text">
-                                        <%= pressure %> N·m−2
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <% } %>
-
-                            <% if(error !== null){ %>
-                                <p>
-                                    <%= error %>
-                                </p>
-                                <% } %>
-        </fieldset>
-        </div>parser": "^1.17.2",
+     "body-parser": "^1.17.2",
      "dotenv": "^10.0.0",
      "express": "^4.15.3",
      "request": "^2.81.0"
@@ -236,15 +156,17 @@ Our complete `package.json` should look like this:
 }
 ```
 
-#### server.js
+#### Application entry point
 
+Head over to 'server.js' file which is our application's main entry point.
 We shall do the following in our code:
 
-- Require node_modules
-  These are the ones which we had installed in our application as shown below:
+- Require application dependencies
+These are the ones which we had installed in our application as shown below:
 
 ```javascript
-// Require node_modules
+// Require application dependencies#
+// These are express, body-parser and request
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -281,105 +203,43 @@ app.get("/", function (req, res) {
 });
 ```
 
-- Setup post request display
+- Setup post request display. Our fetch will happen on page load at the `/` input.
   Here, we shall use the city passed in the post request and API_KEY in our '.env' file to get the data from the site.
 
 ```javascript
 // On a post request, the app shall data from OpenWeatherMap using the given arguments
-app.post("/", function (req, res) {
-  // Get city name passed in the form
-  let city = req.body.city;
+app.post('/', function(req, res) {
 
-  // Use that city name to fetch data
-  // Use the API_KEY in the '.env' file
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    // Get city name passed in the form
+    let city = req.body.city;
 
-  // Request for data using the URL
-  request(url, function (err, response, body) {
-    // On return, check the json data fetched
-    if (err) {
-      res.render("index", { weather: null, error: "Error, please try again" });
-    } else {
-      let weather = JSON.parse(body);
+    // Use that city name to fetch data
+    // Use the API_KEY in the '.env' file
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+```
 
-      // We shall output it in the console just to make sure that the data being displayed is what we want
-      console.log(weather);
+- Request then the data from the OpenWeatherMap API using the credentials passed in the URL. The data found in the body section shall be stored in local variables then rendered on the webpage. In case of errors, it shall display an error message.
 
-      if (weather.main == undefined) {
-        res.render("index", {
-          weather: null,
-          error: "Error, please try again",
-        });
-      } else {
-        // we shall use the data got to set up our output
-        let place = `${weather.name}, ${weather.sys.country}`,
-          /* We shall calculate the current timezone using the data fetched*/
-          weatherTimezone = `${new Date(
-            weather.dt * 1000 - weather.timezone * 1000
-          )}`;
-        let weatherTemp = `${weather.main.temp}`,
-          weatherPressure = `${weather.main.pressure}`,
-          /* We shall fetch the weather icon and its size using the icon data*/
-          weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
-          weatherDescription = `${weather.weather[0].description}`,
-          humidity = `${weather.main.humidity}`,
-          clouds = `${weather.clouds.all}`,
-          visibility = `${weather.visibility}`,
-          main = `${weather.weather[0].main}`,
-          weatherFahrenheit;
-        weatherFahrenheit = (weatherTemp * 9) / 5 + 32;
+```javascript
+    // Request for data using the URL
+    request(url, function(err, response, body) {
 
-        // We shall also round off the value of the degrees fahrenheit calculated into two decimal places
-        function roundToTwo(num) {
-          return +(Math.round(num + "e+2") + "e-2");
-        }
-        weatherFahrenheit = roundToTwo(weatherFahrenheit);
+        // On return, check the json data fetched
+        if (err) {
+            res.render('index', { weather: null, error: 'Error, please try again' });
+        } else {
+            let weather = JSON.parse(body);
+```
 
-        // We shall now render the data to our page (index.ejs) before displaying it out
-        res.render("index", {
-          weather: weather,
-          place: place,
-          temp: weatherTemp,
-          pressure: weatherPressure,
-          icon: weatherIcon,
-          description: weatherDescription,
-          timezone: weatherTimezone,
-          humidity: humidity,
-          fahrenheit: weatherFahrenheit,
-          clouds: clouds,
-          visibility: visibility,
-          main: main,
-          error: null,
-        });
-        // On a post request, the app shall data from OpenWeatherMap using the given arguments
-        app.post("/", function (req, res) {
-          // Get city name passed in the form
-          let city = req.body.city;
+- We shall check if our weather data returned is undefined. This will indicate errors. If not, we shall proceed to store the content.
 
-          // Use that city name to fetch data
-          // Use the API_KEY in the '.env' file
-          let url = `http://api.openwea and displaythermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+```javascript
+            // We shall output it in the console just to make sure that the data being displayed is what we want
+            console.log(weather);
 
-          // Request for data using the URL
-          request(url, function (err, response, body) {
-            // On return, check the json data fetched
-            if (err) {
-              res.render("index", {
-                weather: null,
-                error: "Error, please try again",
-              });
+            if (weather.main == undefined) {
+                res.render('index', { weather: null, error: 'Error, please try again' });
             } else {
-              let weather = JSON.parse(body);
-
-              // We shall output it in the console just to make sure that the data being displayed is what we want
-              console.log(weather);
-
-              if (weather.main == undefined) {
-                res.render("index", {
-                  weather: null,
-                  error: "Error, please try again",
-                });
-              } else {
                 // we shall use the data got to set up our output
                 let place = `${weather.name}, ${weather.sys.country}`,
                   /* We shall calculate the current timezone using the data fetched*/
@@ -403,7 +263,11 @@ app.post("/", function (req, res) {
                   return +(Math.round(num + "e+2") + "e-2");
                 }
                 weatherFahrenheit = roundToTwo(weatherFahrenheit);
+```
 
+- The stored values shall now be rendered unto the webpage to generate a static webpage which shall be displayed.
+
+```javascript
                 // We shall now render the data to our page (index.ejs) before displaying it out
                 res.render("index", {
                   weather: weather,
@@ -422,11 +286,8 @@ app.post("/", function (req, res) {
                 });
               }
             }
-          });
-        });
-      }
-    }
-  });
+        }
+    });
 });
 ```
 
@@ -444,8 +305,9 @@ app.listen(5000, function () {
 
 You can just copy the code and paste it into your file.
 
-#### index.ejs
+#### Setup our views
 
+Let's now set up our dynamic web pages in the application. Remember, we are using **EJS** as our template engine.
 Inside the 'index.ejs' file found in the 'views' folder, we shall create a webpage template that shall be converted into a static webpage during display once the values are fetched. To learn more on template engines, visit '[Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog")' blog.
 
 > **Note:** When this shall render the static pages, they shall be served from the 'public' folder, it acts as the root directory. This is because of this line of code, `app.use(express.static('public'));` in the 'server.js' file. Therefore, it shall obtain its assets from the 'public' folder. This will include the 'css' or even image files.
@@ -602,9 +464,9 @@ This is what we shall be doing in the 'index.ejs' file:
 
 > **Note:** Scripts are always placed after the main contents on your page. This will allow the page content to fully load before JavaScript files are executed hence preventing errors. This is a good coding practice.
 
-#### style.css
+#### Styling our page
 
-This shall be our css fomart:
+We shall style the static webpage generated and stored in the public folder during code exercution using our '**style.css**' file. This shall be our css fomart:
 
 ```css
 body {
@@ -640,6 +502,9 @@ fieldset {
   padding: 30px;
 }
 
+/* Format the input section */
+
+/* Format the input, paragraph, hover effect, focus and button */
 .ghost-input,
 p {
   display: block;
@@ -690,8 +555,9 @@ p {
 }
 ```
 
-#### .env
+#### Application Environment virables
 
+You shall now enter your application environments constants.
 Inside our '.env' file, we shall place our OpenWeatherMap API kEY obtained. Just add the following to the file and then copy-paste the acquired key after it:
 
 ```bash
@@ -726,7 +592,7 @@ The results will look like this:
 
 You can close the app on the terminal using `Ctrl + C`.
 
-### Further projectsAPIs
+### Further projects APIs
 
 - OpenWeatherMap has more API calls for other types of forecasting which are free. This can be found in this link: [https://openweathermap.org/api](https://openweathermap.org/api "https://openweathermap.org/api"). Some are shown below:
 
