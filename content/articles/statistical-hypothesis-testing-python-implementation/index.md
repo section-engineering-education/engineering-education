@@ -18,15 +18,15 @@ Hypothesis is the act of making observations and generating probing questions fr
 <!--more-->
 ### Table of Contents
 1. [Prerequisites](#prerequisites)
-2. [Goals of the tutorial](#goals-of-the-tutorial)
+2. [Goal of the tutorial](#goal-of-the-tutorial)
 3. [Understanding hypothesis testing](#understanding-hypothesis-testing)
 4. [Confidence of null hypothesis](#confidence-of-null-hypothesis)
 5. [Statistical techniques for hypothesis testing](#statistical-techniques-for-hypothesis-testing)
-6. [Chi-square test - Python implementation](#chi-square-test-python-implementation)
-7. [T-Test - Python implementation](#t-test-python-implementation)
-8. [ANOVA - Python implementation](#anova-python-implementation)
+6. [Chi-square test with Python implementation](#chi-square-test-with-python-implementation)
+7. [T-Test with Python implementation](#t-test-with-python-implementation)
+8. [ANOVA with Python implementation](#anova-with-python-implementation)
 9. [Conclusion](#conclusion)
-10. [Additional resources]((#additional-resources))
+10. [Additional resources](#additional-resources)
  
 ### Prerequisites
 The reader of this tutorial should have basic knowledge of python programming, must have an idea of the concept of exploratory data analysis and how pandas and numpy work, must have an elementary understanding of statistics, and must be a data science enthusiast.
@@ -54,7 +54,7 @@ while our alternate hypothesis will be
 In trying to make a valid conclusion between two assumptions on a certain sample of data, we will refer to the null hypothesis (or our initial assumption) as H0 hypothesis and the alternate hypothesis (or the counter assumption) as H1 hypothesis.
  
 To carry out hypothesis testing, the first step is to form and label the null hypothesis as H0 and the alternate hypothesis as H1. The next step is to collect all data samples available to support the null hypothesis, collect data pertaining to the hypothesis and analyze it to make a decision if H0 can be accepted or rejected.
-`While doing that, there is a likelihood for four events to happen:`
+While doing that, there is a likelihood for four events to happen:
  
 1. The ground truth (H0) is true, so H0 is accepted
 2. The ground truth (H0) is not true, so H0 is rejected and H1 is accepted
@@ -70,8 +70,6 @@ These cases are not desirable as we have either failed to recognize the right hy
  
 Rejecting the null hypothesis although it is true is referred to as a [**type-1 error**](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) whereas failing to reject the null hypothesis even though it is wrong is referred to as a [**type-2 error**](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414).
 The severity of type-1 and type-2 errors depend on the task at hand, so it is the analyst's decision to judge which error would negatively impact the outcome.
- 
- 
 Consider the example of the seventy-year-old woman with a bump. In such a situation,
 Null Hypothesis (H0): **She has fibroid**
 Alternate Hypothesis (H1):  **She does not have fibroid**
@@ -85,7 +83,8 @@ In this case, encountering type 1 error is assuming she does not have fibroid wh
 If a type two error is encountered, which is assuming she's pregnant when she is truly not, the null hypothesis is wrong but we insist on not rejecting it. The consequence might probably be leaving the bump-like pregnancy to grow, and it turns out to be an acute fibroid.
  
 Considering these two situations, it would be safe to conclude that the consequences of making a type-1-error is much more grave than making a type-2-error. While trying to solidify the assumption, it is mandatory to employ the service of a p-value, which is basically used to determine whether to accept or reject our null hypothesis.
-### Confidence of Null Hypothesis (Probability Value)
+
+### Confidence of Null Hypothesis
  
 [P-value](https://www.investopedia.com/terms/p/p-value.asp) explains the likelihood of the gathered fact or data to occur under the condition of the null hypothesis.
 Technically, the only way we can accept or reject our ground truth (null hypothesis) is after determining our [*P-value*](https://www.scribbr.com/statistics/p-value/) which is an abbreviation for probability value. It is the only thing that has the decisive power to accept or reject H0.
@@ -168,7 +167,7 @@ chi-square = 4.468
 ```
 For huge datasets, mathematical calculations cannot be done by hand. The implementation of the chi-square test in Python is discussed in the next section.
 
-### Chi-square test - Python implementation.
+### Chi-square test with Python implementation.
  
 ```python
 import pandas as pd
@@ -336,7 +335,7 @@ Accept the Null Hypothesis (fail to reject H0)
 ```
 The `p-value` is greater than the `alpha value` set at 0.05, we will fail to reject the null hypothesis and accept the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
  
-### T-Test - Python implementation
+### T-Test with Python implementation
  
 The T-test is utilized when we plan to evaluate the discrepancy between the means of two groups of samples. Unlike the Chi-Square Test, the T-test is used on continuous variables.
  
@@ -460,7 +459,7 @@ Checking of the variance is only making sure that two populations are probably s
 However, interpreting any form of t-test largely depends on the p-value, the result above explains that the means of the two samples(petal_width and sepal_length) are different. Thus, we will reject the Null Hypothesis which says the mean of the two samples are the same because their variances are assumed to be equal, there is no evidence sustainable enough to prove the two populations have the same mean.
 H1 (alternate hypothesis) is however true.
  
-### ANOVA - Python implementation
+### ANOVA with Python implementation
  
 ANOVA is a word coined from 'Analysis of Variance', it is a statistical concept that shows the differences between the means of more than two independent classes, using variance analysis on samples from those classes.
 It is used to check the contrast between three or more samples with one test. Especially when the categorical class has more than two categories.
