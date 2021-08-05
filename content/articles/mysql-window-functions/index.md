@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mysql-window-functions/
+title: Five Common Pitfalls of MySQL Window Functions
+description: The aim of this article is to help the reader understand the five common pitfalls of MySQL window functions and how to avoid them.
+author: elphaze-sedah
+date: 2021-08-05T00:00:00-10:13
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mysql-window-functions/hero.png
+    alt: Mysql Image Example
+---
+<!--more-->
 ### The five common pitfalls of MySQL window functions and how to avoid them
 
 A MySQL window function is a function that manipulates values from one or more rows to give value returns for every row using basal queries. Window functions usually have an OVER clause, hence any function that lacks the clause is not a window function. The OVER clause has the following potentials:
