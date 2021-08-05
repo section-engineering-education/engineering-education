@@ -198,3 +198,6 @@ The output should be `2.5.0`.
 ### Conclusion
 
 In this article, we understood the meaning of building software from source, its advantages, and installed TensorFlow from source. I hope you enjoyed reading this article. Happy learning. 
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
