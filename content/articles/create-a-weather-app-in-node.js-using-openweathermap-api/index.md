@@ -611,3 +611,6 @@ You can access more data from the OpenWeatherMap site. This can be useful to cus
 - [Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by \*Quinter Awuor
 - [OpenWeatherMap website](https://openweathermap.org/).
 
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
