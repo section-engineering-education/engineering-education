@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/django-celery-tasks/hero.jpg
+  - url: /engineering-education/django-celery-tasks/hero.png
     alt: Django and Celery example
 ---
 When we are working with data-intensive applications, long-running tasks slow down the application and the website load time. We can improve the application load time by offloading some work from the application server to a message broker server in such an application.
