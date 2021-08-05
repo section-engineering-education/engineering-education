@@ -90,7 +90,9 @@ Build label: 1.10.0
 ```
 Once we have reached this stage, we move to the official guide on the TensorFlow documentation. In the docs, there is a list of compatible versions of Bazel and TensorFlow versions. 
 
-![](/engineering-education/build-tensorflow-from-source/tensorflow-bazel-compatibility.png)
+![tensorflow bazel compatibility version](/engineering-education/build-tensorflow-from-source/tensorflow-bazel-compatibility.png)
+
+*[Image Source](https://www.tensorflow.org/install/source#tested_build_configurations)*
 
 We need to install Bazel 3.7.2 for TensorFlow 2.5.0. Keeping this in mind, we proceed with cloning the TensorFlow repository and running the following [commands](https://www.tensorflow.org/install/source).
 
