@@ -1,5 +1,5 @@
 
-![hero](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/heroku.png)
+![hero](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/django-heroku.png)
 
 
 ### Introduction 
@@ -464,4 +464,14 @@ $ python manage.py runserver
 
 Yes! We made it together. We are done with the project, now let us move on to the next on the list.
 
+Django as backend framework requires some few dependencies for it to be live and accessible over the internet users on Heroku server. Here are the lists of them:
+
+1. gunicorn
+    This `gunicorn` allows the Django project to be accessible via HTTP protocol. And this is will be configured inside a file named `Procfile`. For that let us install `gunicorn`.
+
+```bash
+$ pip install gunicorn
+
 ### Heroku Account Set-Up
+
+The very next thing on the list is to set
