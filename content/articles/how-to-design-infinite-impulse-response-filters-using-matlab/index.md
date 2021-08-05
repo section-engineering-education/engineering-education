@@ -1,4 +1,23 @@
-### HOW TO DESIGN AN INFINITE IMPULSE RESPONSE FILTERS(IIR)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-design-infinite-impulse-response-filters-using-matlab/
+title: How to design Infinite Impulse Response (IIR) Filters using Matlab
+description: This tutorial walks the reader through the concept of Infinite Impulse Response design using Matlab.
+author: atieno-dorine
+date: 2021-08-05T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /how-to-design-infinite-impulse-response-filters-using-matlab/hero.jpg
+    alt: infinite impulse design example image
+---
+To filter is to remove the unwanted properties of a signal. IIR filters with an infinite number of impulses. Here the output y(n) response depends on the present input x(n), previous input x(n-1) as well as the previous output y(n-1).
+<!--more-->
+
+
 ### Introduction
 To filter is to remove the unwanted properties of a signal. IIR filters with an infinite number of impulses. Here the output y(n) response depends on the present input x(n), previous input x(n-1) as well as the previous output y(n-1). The differential equation for the IIR filter can be given by the differential equation $y(n)=b_0x(n)+b_1x(n-1)+---b_mx(n-m)-a_1y(n-1)---a_ny(m-n)$. To see more about this, you can get it [here](https://www.sciencedirect.com/topics/engineering/iir-filters). Since the filter uses the previous outputs, there is feedback from the filter structure. The design of an IIR filter is based on the transfer function($H_s$) that satisfies the requirement of the filter requirement. The transfer function($H_s$) is the ratio of the output response to the input response.
 
@@ -47,7 +66,7 @@ We then determine the filter order and the cut-off frequency of the filter. Filt
 ```
 When we run this code, we will get the filter order `N` and the cut-off frequency `wc` in the command window. 
 
-![the filter order and the cut-off frequency](image_one.png)
+![the filter order and the cut-off frequency](/engineering-education/how-to-design-infinite-impulse-response-filters-using-matlab/image_one.png)
 
 The cut-off `wc` frequency obtained above is then normalized cut-off frequency. The filter order is found from the transfer function, which is the output ratio to the input of a filter. Since we are designing a Butterworth filter, we use `buttord` command and pass `wp`, `ws`, `kp`, and `ks` to do this.
 ```matlab
@@ -59,7 +78,7 @@ The code above is used to obtain the coefficients of the filter. The coefficient
 freqz(den, num, 1000, fs)
 ```
 When we run the program, we have;
-![Filter response](image_two.png)
+![Filter response](/engineering-education/how-to-design-infinite-impulse-response-filters-using-matlab/image_two.png)
 
 If we want to design a Butterworth high pass filter, it is now easy because the codes remain the same. The only thing is to change the `low` that we defined when finding the filter's coefficients to be `high`. So, the code will be;
 ```Matlab
@@ -78,7 +97,7 @@ freqz(b, a, 1000, fs)
 ```
 The filter response will be as shown below;
 
-![Filter response](image_three.png)
+![Filter response](/engineering-education/how-to-design-infinite-impulse-response-filters-using-matlab/image_three.png)
 
 ### Conclusion
 A filter is essential in the field of engineering. They help get rid of the unwanted part of a signal by considering specific prescriptions discussed above. Matlab forms a vital tool in the design of filters and the visualization of their response. Furthermore, it helps improve the performance of a filter since you can respond and compare with the expected response. Such activities are made easier in Matlab by the use of the in-built functions.
