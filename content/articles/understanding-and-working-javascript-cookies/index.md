@@ -1,7 +1,22 @@
-### Introduction
-A cookie is a short text file that stores a little bit of data on a user's computer (about 4KB). They typically keep track of information such as a user's preference for a website, prompting the user to improve the web page the next time they visit. Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-and-working-with-javascript-cookies/
+title: Understanding and Working with JavaScript Cookies
+description: In this article, we will be look at how JavaScript cookies work. We will look at how to create, update and delete cookies.
+author: bernard-mburu
+date: 2021-07-27T00:00:00-04:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Using JavaScript, cookies can be created, retrieved, and modified directly, and the process is simple. The cookie can be up to 4 KB with name and value and the length of the cookie can be restricted. All cookie data is transferred to the application server immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
+ - url: /engineering-education/understanding-and-working-with-javascript-cookies/hero.png
+   alt: Cookies JavaScript Image
+---
+A cookie is a short text file that stores a little bit of data on a user's computer (about 4KB). They typically keep track of information such as a user's preference for a website, prompting the user to improve the web page the next time they visit. Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others.
+<!--more-->
+Using JavaScript, cookies can be created, retrieved, and modified directly, and the process is simple. The name, value and the length of the cookie can be restricted. All cookie data is transferred to the application server immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
 
 ### Table of content
 - [Types of cookies](#various-types-of-cookies)
@@ -40,11 +55,11 @@ Take a look at the example below.
 document.cookie = "UserName=" + encodeURIComponent("fabulous designs");
 ```
 
-Similarly, you must utilize the appropriate function: `decodeURIcomponent()` to read the cookie value when you want to read the cookies.
+Similarly, you must utilize the `decodeURIcomponent()` function to read the cookie value when you want to read the cookies.
 
 The cookie's lifespan is limited to the duration of the current browser session, thus, it will be removed when the user quits the browser.
 
-If you need to see cookies beyond the current browser session, use the `age-appropriate` attribute to specify their lifetime (in seconds).The setting `max-age` sets the amount of time a cookie can be stored before it is removed from your system.
+If you need to use cookies beyond the current browser session, use the age-appropriate attribute to specify their lifetime (in seconds).The setting `max-age` sets the amount of time a cookie can be stored before it is removed from your system.
 
 Take a look at the example below. This cookie has a 30-day expiration date.
 
@@ -52,7 +67,7 @@ Take a look at the example below. This cookie has a 30-day expiration date.
 document.cookie = "Username = coolDesign; max-age =" + 30 * 24 * 60 * 60;
 ```
 
-A valid cookie time can also be specified using the `expires` element. This functionality will not be destroyed in seconds and will take the actual date the cookie expires (in GMT/UTC format).
+A valid cookie time can also be specified using the `expires` element. This cookie will not be destroyed based on duration but will take the actual date the cookie expires (in GMT/UTC format).
 
 Take a look at the example below.
 
@@ -75,13 +90,13 @@ document.cookie = "Username = ExcellentDesign; path = /; domain = sample.com";
 Additionally, if the `secure` property is set, the cookie will only be delivered over secure (encrypted) connections, such as HTTPS.
 
 ```javascript
-document.cookie =
-  "Username = ExcellentDesign; path = /; domain = sample.com; secure";
+document.cookie = "Username = ExcellentDesign; path = /; domain = sample.com; secure";
 ```
 
 ### Reading a cookie
-The `document.cookie` attribute simply returns a string containing a semicolon and a space separated list of all cookies (i.e. name=value pairs, for example, firstName=Fabulous; lastName=Designs;). This string does not include any of the cookie's characteristics, such as expires, path, domain, and so on.
-To obtain an individual cookie from this list, use the `split()` method to break it down into individual `name=value` pairs, then search for the name you want, as shown in the Example below:
+The `document.cookie` attribute simply returns a string containing a semicolon and a space separated list of all cookies (i.e. `name=value` pairs, for example, `firstName=Fabulous; lastName=Designs;`). This string does not include any of the cookie's characteristics, such as expires, path, domain, and so on.
+
+To obtain an individual cookie from this list, use the `split()` method to break it down into individual `name=value` pairs, then search for the name you want, as shown in the example below:
 
 ```javascript
 function setCookie(name, value, daysToLive) {
@@ -91,6 +106,7 @@ function setCookie(name, value, daysToLive) {
         document.cookie = cookie;
     }
 }
+
 function getCookie(name) {
     var cookieArr = document.cookie.split(";");
     for(var i = 0; i < cookieArr.length; i++) {
@@ -126,15 +142,13 @@ A cookie can be updated by setting new values to the cookie attributes.
 Take a look at the example below. We update the `max-age` attribute of the `UserName` cookie from 30 days to 365 years.
 
 ```javascript
-document.cookie =
-  "UserName=fabulousDesign; path=/; max-age=" + 30 * 24 * 60 * 60;
+document.cookie = "UserName=fabulousDesign; path=/; max-age=" + 30 * 24 * 60 * 60;
 
-document.cookie =
-  "UserName=beautifulDesign; path=/; max-age=" + 365 * 24 * 60 * 60;
+document.cookie = "UserName=beautifulDesign; path=/; max-age=" + 365 * 24 * 60 * 60;
 ```
 
 ### Deleting a cookie
-To delete a cookie, simply rename it using the same `name`, specify an empty or arbitrary value, or set its `max-age` attribute to 0. 
+To delete a cookie, simply rename it using the same `name`, specifying an empty value, or setting its `max-age` attribute to 0. 
 
 ```javascript
 document.cookie = "UserName=; max-age=0";
@@ -146,16 +160,18 @@ You'll need to include the cookie's path and domain property when deleting it if
 document.cookie = "UserName=; path=/; domain=example.com; max-age=0";
 ```
 
-To delete a cookie using the expires property, just change the value (i.e. the expiration date) to a past date, as shown below.
+To delete a cookie using the expires property, just change the value (the expiration date) to a past date, as shown below.
 
 ```javascript
 document.cookie = "UserName=; path=/; expires=Thu, 01 feb 1990 00:00:00 GMT";
 ```
 
 ### Conclusion
-Some services will not function properly if cookies are disabled, and some pages will not load properly. Some cookies might not necessitate agreement.
-Cookies are necessary for a website to work properly.
+Some pages and services will not work properly if cookies are disabled. Cookies are necessary for a website to work properly. Although it's neccesary to ask for the user's permission to use cookies, some essential cookies do not require permission to use them.
 
-In conclusion, the user's permission to use the site isn't required; rather, the user's permission to use the site information is needed.
+In conclusion, the user's permission to use the site isn't needed, but the user's permission to use the **site information** is **required**.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
