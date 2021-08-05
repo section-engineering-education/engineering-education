@@ -145,7 +145,11 @@ export const environment = {
 // ...
 ```
 
-Then update the service as shown below:
+Create an `api` service by running the follwoing commad:
+```bash
+ng g s api
+```
+Then update it as follows:   
 
 ```typescript
 // ...
