@@ -128,7 +128,7 @@ With Chi-Square, we accept the null hypothesis when variable A and variable B ar
 We reject the null hypothesis(or accept the alternate hypothesis) when variable A depends on variable B, i.e. there is a relationship between them. The formula for calculating chi-square test is:
  
 ![chi_square_formula](/engineering-education/statistical-hypothesis-testing-python-implementation/chi-square.PNG)
- 
+
 Consider the following example:
  
 A mathematics teacher conducted a test for a class of 20 students. He expected 5 to score good marks, 7 to score average marks while 8 to fail. Eventually, when the result came out, 5 failed, 6 were average while 9 scored good marks. Mathematically, carry out chi-square test for this class.
@@ -137,25 +137,23 @@ A mathematics teacher conducted a test for a class of 20 students. He expected 5
 |----|--------|:----------|--------------|--------|
 | Observed| 9 | 6 | 5 | 20 |
 | Expected| 5 | 7 | 8 | 20 |
- 
-Where
- 
-- observed good is A,
-- expected good is a,
-- observed average is B,
-- expected average is b,
-- observed fail is C, and
-- expected to fail is c.
-```
-Chi-square = Σ[(observed value - expected value)² / expected value]
-```
+
+From the table, students fall into three categories ranging from what is expected to what is finally observed, categories are `good`, `average`, and `fail`. Let's denotes our expected and observed values with letters, so that we can relate with it well.
+
+let, 
+- observed good be A,
+- expected good be a,
+- observed average be B,
+- expected average be b,
+- observed fail be C, and
+- expected to fail be c.
+  
 ```
 A-a = 4
 B-b = -1
 C-c = -3
 ```
 ```
-# find the square of our values
 /A-a/² = 16
 /B-b/² = 1
 /C-c/² = 9
@@ -219,7 +217,7 @@ species         0
 dtype: int64
 ```
 ```python
-(df["species"].unique())
+print(df["species"].unique())
 ```
 ```bash
 array(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'], dtype=object)
@@ -233,7 +231,7 @@ The first step is to check the summary of `petal_width`
  
 Secondly, use the information derived to convert it to a categorical variable.
 ```python
-df.petal_width.describe()
+print(df.petal_width.describe())
 ```
 ```bash
 count    150.000000
@@ -291,14 +289,14 @@ def species_cat(df):
 df["species"] = df.apply(species_cat, axis=1)
 ```
 ```python
-df.sample(5)
+print(df.sample(5))
 ```
 ![dfsample5](/engineering-education/statistical-hypothesis-testing-python-implementation/dfsample5.PNG)
 ```python
 df_new = df.drop(columns=["sepal_width", "sepal_length", "petal_length", "petal_width"])
 ```
 ```python
-df_new.head()
+print(df_new.head())
 ```
 ![newhead](/engineering-education/statistical-hypothesis-testing-python-implementation/df_new.PNG)
  
@@ -306,7 +304,7 @@ Let's make use of `chic2_contigency` provided for us in the `scipy.stats` librar
 ```python
 stat, p, dof, expected= chi2_contingency(df_new)
  
-print(dof)
+print("The degree of freedom is: ", dof)
 ```
 ```bash
 The degree of freedom is: 149
@@ -345,58 +343,55 @@ The T-test is utilized when we plan to evaluate the discrepancy between the mean
 T-tests has three basic types
  
 1. **One sample t-test:** It checks whether the population has a different mean from the sample.
-The mathematical formula is:
+The mathematical expression is:
+
+[one-sample-t-test](/engineering-education/statistical-hypothesis-testing-python-implementation/one-sample-t-test.PNG)
  
-[t-test = a-BX∕N](https://www.datanovia.com/en/lessons/t-test-formula/one-sample-t-test-formula/)
+where,
+the observed mean group is a,
  
-Where
+the assumed population means is B,
  
-the observed mean group is a
+the standard deviation of the data group is X,
  
-the assumed population means is B
- 
-the standard deviation of the data group is X
- 
-the number of observations in the group is V
+the number of observations in the group is N.
  
 2. **Two-sample t-test:** It checks and compares the means of two groups that are not dependent on each other and compares the population's means to see if there is a huge difference.
 The mathematical expression is:
+
+[two-sample-t-test](/engineering-education/statistical-hypothesis-testing-python-implementation/two-sample-t-test.PNG)
+
+where,
+data sample A's mean is Ma,
+
+data sample B's mean is Mb,
  
-[t-test = Ma – (Mb*v*Na)+vNb](https://www.statology.org/two-sample-t-test/)
+the size of sample A is Na,
  
-Where
+the size of sample B is Nb,
  
-Data sample A's mean is Ma.
- 
-Data sample B's mean is Mb.
- 
-The size of sample A is Na.
- 
-The size of sample B is Nb.
- 
-Variance is v.
+variance is v.
  
 3. **Paired t-test:** It is used in checking and comparing the means of different samples from a group.
 Mathematically, it can be resolved with:
  
-[t-test = D - (m*xd)∕N](https://www.datanovia.com/en/lessons/t-test-formula/paired-t-test-formula/)
+[paired-t-test](/engineering-education/statistical-hypothesis-testing-python-implementation/paired-t-test.PNG)
  
-Where
+where,
+the difference between paired observations' sample mean is D,
  
-The difference between paired observations' sample mean is D.
+the assumed mean difference is m,
  
-the assumed mean difference is m.
+standard deviation is xd,
  
-standard deviation is xd.
- 
-The number of observations in the group is N.
+the number of observations in the group is V.
  
 #### Performing a One-Sample T-Test
 ```python
 df_ = df.petal_width
 ```
 ```python
-df_.sample(5)
+print(df_.sample(5))
 ```
 ```bash
 103    1.8
@@ -407,7 +402,7 @@ df_.sample(5)
 Name: petal_width, dtype: float64
 ```
 ```python
-stats.ttest_1samp(a=df_, popmean=1.199)
+print(stats.ttest_1samp(a=df_, popmean=1.199))
 ```
 ```bash
 Ttest_1sampResult(statistic=-0.0053494404016899925, pvalue=0.9957389399651244)
@@ -447,7 +442,7 @@ print(ratio_check)
 ```
 Obviously, the ratio is less than 4:1, thus the variances are assumed to be equal.
 ```python
-stats.ttest_ind(a=class1, b=class2, equal_var=True)
+print(stats.ttest_ind(a=class1, b=class2, equal_var=True))
 ```
 ```bash
 Ttest_indResult(statistic=-50.51520141387464, pvalue=3.7974378831185126e-148)
@@ -491,7 +486,7 @@ class2 = df.sepal_length
 class3 = df.petal_length
 ```
 ```python
-f_oneway(class1, class2, class3)
+print(f_oneway(class1, class2, class3))
 ```
 ```bash
 F_onewayResult(statistic=555.8702565323317, pvalue=5.738282463819433e-122)
