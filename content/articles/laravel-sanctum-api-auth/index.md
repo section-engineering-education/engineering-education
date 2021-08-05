@@ -79,7 +79,7 @@ Publishing complete.
 
 With the sanctum files published, let's now set up our database by editing the `.env` file contents as follows:
 
-```properties
+```bash
 .............................
 DB_CONNECTION = mysql #edit this connection depending on your connection
 DB_HOST = 127.0.0.1 #edit this to meet your requirements
