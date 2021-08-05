@@ -18,7 +18,7 @@ With a test review we ask the potential peer reviewer to go through the list of 
 
 We can add the "test reviewer" label to the PR via GitHub to help us keep track. 
 
-After the test review - we can over the PR with a Final Review and see where the student could improve their reviews. 
+After the test review - we can go over the PR with a Final Review and see where the student could improve their reviews. 
 
 Once we have detrimined that the student is comfortable with the material provided and is ready to do real reviews - we can ping Hector or Molly to get the student set up with the proper GitHub permissions and invited into the proper Slack channel(s).
 
