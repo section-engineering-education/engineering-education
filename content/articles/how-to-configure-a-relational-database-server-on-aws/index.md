@@ -1,16 +1,27 @@
-How to Configure a Relational Database Server on AWS
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-configure-a-relational-database-server-on-aws/
+title: How to Configure a Relational Database Server on AWS
+description: This tutorial will guide you on how to process images in Android using a fast, lightweight, and powerful open-source library known as Coil.
+author: noni-diana
+date: 2021-07-25T00:00:00-06:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-configure-a-relational-database-server-on-aws/hero.png
+    alt: Image processing with Coil in Android
+---
+One of the essential skills that an Android developer must know is how to correctly work with images, especially from a remote source. This is because many applications in some way or another use images.
+<!--more-->
 
 There are a lot of reasons you should use Amazon Web Services (AWS) to host your next project's database. One of them is that AWS offers a variety of options for growing and safeguarding your databases.
 
 However, navigating the AWS configuration settings might prove difficult and the docs aren't always the most user-friendly.
 
 In this article, we will go over how to set up an RDS on AWS. We will also use MySQL Workbench to connect to the RDS.
-
-### Prerequisites
-* AWS account
-* MySQL-Workbench
-* Python
-* mysql-connector-python
 
 ### Setting up a Security Group
 1. Sign in to your AWS account. [https://console.aws.amazon.com/?nc2=h_m_mc](https://console.aws.amazon.com/?nc2%3Dh_m_mc*)
@@ -152,3 +163,5 @@ finally:
 ### Conclusion
 In this tutorial, we have been able to configure a Relational Database Server on Amazon Web Services. We used a MySQL server for this. We also explored how to establish a connection with our RDS via MySQL Workbench and python.
 
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
