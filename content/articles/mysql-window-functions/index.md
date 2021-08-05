@@ -3,20 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /mysql-window-functions/
-title: Five Common Pitfalls of MySQL Window Functions
+title: Five common pitfalls of MySQL Window Functions and how to avoid them
 description: The aim of this article is to help the reader understand the five common pitfalls of MySQL window functions and how to avoid them.
 author: elphaze-sedah
-date: 2021-08-05T00:00:00-10:13
+date: 2021-08-05T00:00:00-10:45
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/mysql-window-functions/hero.png
-    alt: Mysql Image Example
+    alt: Mysql Window functions image
 ---
-<!--more-->
-### The five common pitfalls of MySQL window functions and how to avoid them
 
-A MySQL window function is a function that manipulates values from one or more rows to give value returns for every row using basal queries. Window functions usually have an OVER clause, hence any function that lacks the clause is not a window function. The OVER clause has the following potentials:
+A MySQL window function is a function that manipulates values from one or more rows to give value returns for every row using basal queries. Window functions usually have an OVER clause, hence any function that lacks the clause is not a window function.
+<!--more-->
+The OVER clause has the following potentials:
 - It defines a grouping of rows using the PARTITION BY clause.
 - It orders rows within their respective groups using the ORDER BY clause.
 
@@ -50,7 +50,7 @@ Below are some of the examples of MySQL window functions that are commonly used 
 ### Examples of MySQL window functions
 
 
-1. LEAD( )
+1. LEAD()
 
 This function is used to compute a value in group rows. They mainly achieve comparisons between rows and columns.
 
@@ -264,5 +264,6 @@ Therefore to avoid the errors and thrown due to the lack of MySQL support we sho
 Despite the several pitfalls that we have seen associated with window functions, they still play an important role in executing MySQL queries and various solutions are even being given out in an attempt to solve the above-discussed problems. This therefore shows how critical window functions are to the MySQL queries.
 
 Blissful reading!
+
 ---
 Peer Review Contributions by: [Atonya Dennis](/engineering-education/authors/atonya-dennis/)
