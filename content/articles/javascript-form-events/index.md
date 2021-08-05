@@ -38,7 +38,7 @@ JavaScript events used on a web page can be classified as below.
 This kind of event occurs when a user interacts with our web page using pointing devices such as a mouse or a trackpad. The common mouse events include a `single-click`, `double click`, `mouse up`, and `mouse down`. 
 An example of a mouse event is clicking a button, hovering over an HTML element, or dragging an element over a webpage. 
 
-- MouseClick Events. These kind of events occur when a mouse clicks an element. The code snippets below demonstrate how to use `mouseClick()` event. In your `index.html` file, add the snippets below:
+- MouseClick Events. These kinds of events occur when a mouse clicks an element. The code snippets below demonstrate how to use `mouseClick()` event. In your `index.html` file, add the snippets below:
 
 ```html
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ An example of a mouse event is clicking a button, hovering over an HTML element,
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Javascript Events</title>
+    <title>JavaScript Events</title>
 </head>
 <body>
     <!-- container -->
@@ -117,7 +117,7 @@ button.addEventListener('mouseout', () =>{
 `Mouseup` is exactly the opposite of `mousedown`. It gets fired when you release the mouse button. 
 
 The snippets below demonstrate how `mouseup` and `mousedown` events operate.
-> Remember to comment on the other functions when testing these two mouse events as we are using the same files and elements.
+> Remember to comment on the other functions when testing these two mouse events, as we are using the same files and elements.
 
 
 ```js
@@ -174,6 +174,7 @@ document.addEventListener('keypress', (e) => {
 #### 3. Window events
 A window represents the interface onto which a website script runs. For example, the browser screen on a mobile phone, PC, or MacBook. Several events can be triggered on a browser window. 
 Here are a few examples of window events.
+
 - Onload Window Event. This event is usually fired when a page is just about to finish loading, all assets, and scripts on the website. Most developers use this event to call other functions that are dependent on the elements of the window. So you have to wait until the window loads to call the function.
 
 - Onresize Window Event. This event is called when the size of the browser changes. The browser may be resized by enlarging or reducing the size it covers on the screen.
@@ -199,7 +200,7 @@ form.addEventListener('submit', () =>{
 });
 ```
 
-- Focus Form Event. This usually happens when you focus on a specific element on the form.
+- Focus Form Event. This event usually happens when you focus on a specific element on the form.
 ```js
 **
  * Handling focus event to change the text to upper 
@@ -213,7 +214,7 @@ let btn = document.getElementById('button')
 btn.onfocus = containerFocusFunction;
 
 /**
- * Function to handle the fucus event
+ * Function to handle the focus event
  */
 function containerFocusFunction(){
     document.documentElement.setAttribute("case", "upper")
@@ -221,7 +222,7 @@ function containerFocusFunction(){
 }
 ```
 
-- On Blur Form Event. This even is the opposite of the `onfocus`. It is triggered when you remove focus away from a given element.
+- On Blur Form Event. This event is the opposite of the `onfocus`. It is triggered when you remove focus away from a given element.
 
 ```js
 /**
@@ -281,4 +282,4 @@ text.addEventListener('change', (e) =>{
 ### Conclusion
 Events in JavaScript make browsing very comfortable, besides their usefulness to programmers. Every programmer must have a clear understanding of JavaScript events for more intuitive browsing. 
 
-As discussed above, there are various JavaScript events and how they are all useful in different contexts, varying from mouse, keyboard, form, and window events. Getting familiar with these concepts enables developers to use JavaScript in make event better websites.
+As discussed above, there are various JavaScript events, and how they are all useful in different contexts, varying from mouse, keyboard, form, and window events. Getting familiar with these concepts enables developers to use JavaScript to make event better websites.
