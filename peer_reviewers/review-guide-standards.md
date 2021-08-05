@@ -1,5 +1,5 @@
 ### EngEd Peer Review Guide Standards
-contributed by [Louise Findlay](/engineering-education/authors/louise-findlay/)
+contributed by [Louise Findlay](/engineering-education/content/authors/louise-findlay/)
 
 ### Review Guide Standards:
 For all reviewers:
