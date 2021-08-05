@@ -11,7 +11,7 @@ There are significant components that facilitate RabbitMQ message brokerage betw
 - A producer (publisher) - an application or a service that publishes a message to a RabbitMQ server.
 - Exchange - it acts as a message filter. It receives messages from producers and publishes them in queues using routing rules to send them to a consumer. Take a case of the typical telephone Exchange for call routing. When the messages arrive at the telephone exchange, the Exchange determines the target consumer for a particular message and routes accordingly.
 - Queue - a RabbitMQ buffer that stores published messages.
-Consumer - application or a service that reads messages from the RabbitMQ server queue.
+- Consumer - application or a service that reads messages from the RabbitMQ server queue.
 
 ![rabbitmq-components](/engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/rabbitmq-components.png)
 
@@ -30,9 +30,9 @@ For the four components to effectively communicate with each other, the followin
   - The message header - defines the message header attribute.
   - The message body - the message content being shared.
 
-Depending on the messaging sharing pattern, a message can have properties such as published acknowledged, unacknowledged, redelivered, ready and received.
+Depending on the messaging sharing pattern, a message can have properties such as published, acknowledged, unacknowledged, redelivered, ready and received.
 
-- Routing Key - a RabbitMQ can have many message queues. In this case, each produces message needs to have a virtual address key that the Exchange will use to determine which queue the message should be routed to. This is called the routing key.
+- Routing Key - a RabbitMQ can have many message queues. In this case, each produced message needs to have a virtual address key that the Exchange will use to determine which queue the message should be routed to. This is called the routing key.
 
 - Binding (Binding key) - links the queue to an exchange. Exchange uses binding and routing keys to determine which message belongs to which queue.
 
@@ -40,7 +40,7 @@ Depending on the messaging sharing pattern, a message can have properties such a
 
 [Image source](https://www.javainuse.com/messaging/rabbitmq/exchange)
 
-- Exchange types - There are four messages Exchange type
+- Exchange types - There are four messages Exchange type;
 
 1. Topic - route messages based on patterns in the routing key. For example, distribute data specific to a geographical location depending on another factor such as point of sale.
 
@@ -70,9 +70,7 @@ Depending on the messaging sharing pattern, a message can have properties such a
 
 RabbitMQ is used as a message broker to implement advanced messaging queuing protocol (AMQP). A complete AMQP has three main components a broker, a consumer, and a producer. When exchanging messages between the producers and the consumers, messages are not sent directly to Queues. The first pass through an Exchange (in the broker) that redirects them to their destination Queues.
 
-A producer will produce messages and then publish them in an Exchange. Each message will be sent with a routing key. Now the Exchange ensures this message ends up in the correct queue. For Exchange to ensures the message is the right Queues, it depends on several things, including the Exchange type, which specifies the number of routing rules, routing keys, and header attributes.
-
-think of an Exchange as a mail delivery person ensuring that the message ends up in the
+A producer will produce messages and then publish them in an Exchange. Each message will be sent with a routing key. Now the Exchange ensures this message ends up in the correct queue. For Exchange to ensures the message is the right Queues, it depends on several things, including the Exchange type, which specifies the number of routing rules, routing keys, and header attributes. Think of an Exchange as a mail delivery person ensuring that the message ends up in the right boxes
 
 In this case, he will need the right address to ensure the mail are in the correct hands. In this example, routing rules, routing keys, and header attributes act as addresses for messages. RabbitMQ uses them as the bindings rules for the different Exchange types to determine which message links to which queues depending on the queue binding key. Once a message is in the right queue, a consumer can request the message he wants to consume.
 
@@ -222,3 +220,15 @@ This message goes published and delivered to the `test-queue`. If you head over 
 ![message](/engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/message.png)
 
 This is a straightforward test case. You can go ahead and try using the other Exchanges scenarios.
+
+### Conclusion
+
+We have discussed the basics of RabbitMQ. RabbitMQ [supports programming languages](https://www.rabbitmq.com/devtools.html), and you can use it to develop cross-language messaging applications. It supports popular languages such as [Java](https://www.rabbitmq.com/devtools.html#java-dev), [Javascript](https://www.rabbitmq.com/devtools.html#node-dev), [Python](https://www.rabbitmq.com/devtools.html#python-dev), [PHP](https://www.rabbitmq.com/devtools.html#php-dev), [C and C++](https://www.rabbitmq.com/devtools.html#c-dev), [Golang](https://www.rabbitmq.com/devtools.html#go-dev), and [many more](https://www.rabbitmq.com/devtools.html). Go ahead and try to implement the concept of RabbitMQ using your programming language of choice.
+
+Other messaging queues (brokers) that you can use and learn include [Kafka](/engineering-education/what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/), [Redis](https://www.tomspencer.dev/blog/2016/02/24/building-a-simple-message-queue-with-redis/), [Beanstalk](https://www.artur-rodrigues.com/tech/2015/06/04/beanstalkd-a-simple-and-reliable-message-queue.html), and [IBM MQ](https://www.ibm.com/docs/en/ibm-mq/9.2?topic=mq-introduction).
+
+### Further reading
+
+- [Why You Should use Celery with RabbitMQ](/engineering-education/why-you-should-use-celery-with-rabbitmq/)
+- [What is Kafka? How to Build and Dockerize a Kafka Cluster](/engineering-education/what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/)
+- [Introduction to Kafka](/engineering-education/introduction-to-kafka/)
