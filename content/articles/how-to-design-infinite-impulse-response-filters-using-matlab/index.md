@@ -101,3 +101,6 @@ The filter response will be as shown below;
 
 ### Conclusion
 A filter is essential in the field of engineering. They help get rid of the unwanted part of a signal by considering specific prescriptions discussed above. Matlab forms a vital tool in the design of filters and the visualization of their response. Furthermore, it helps improve the performance of a filter since you can respond and compare with the expected response. Such activities are made easier in Matlab by the use of the in-built functions.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
