@@ -75,7 +75,7 @@ In the Existing VPC security group menu under the Connectivity section, look for
 
 ![aws search vpc](/engineering-education/configuring-a-relational-database-server-on-aws/g7tw7wwvd-x-kwx2xr5u.png)
 
-![aws select vpc secutiry group](/engineering-education/configuring-a-relational-database-server-on-aws/7ibngr6ut-c--igkyezn.png)
+![aws select vpc security group](/engineering-education/configuring-a-relational-database-server-on-aws/7ibngr6ut-c--igkyezn.png)
 
 Select the security group and proceed to the next step.
 
