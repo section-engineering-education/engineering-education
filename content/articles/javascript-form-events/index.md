@@ -4,7 +4,7 @@ A JavaScript event is any operation that occurs when a user interacts with a giv
 It's the JavaScript events that are used to make a website interactive. You are probably scrolling smoothly on this page and make click on a link or two because of the underlying JavaScript events used to build this page. So let's take a look into these events and how to use them.
 
 ### Goal
-In this article, we are going to cover the major types of JavaScript events how to listen to them and pass them to event handlers that specify the tasks performed when a given event is handled.
+In this article, we are going to cover the major types of JavaScript events, how to listen to them, and pass them to event handlers that specify the tasks performed when a given event is handled.
 
 ### Prerequisites
 This article requires the reader to have a basic understanding of HTML and JavaScript. The code snippets are simple and easy to understand for beginners and web experts as well.
