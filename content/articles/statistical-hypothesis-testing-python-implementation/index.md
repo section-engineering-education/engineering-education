@@ -529,3 +529,6 @@ Additional resources are added below to better solidify the knowledge gained fro
 5. [Understanding Hypothesis Tests: Significance Levels (Alpha) and P values in Statistics](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics)
 6. [Chi-squared test application](http://www.openanesthesia.org/chi-squared_test_application/)
 7. [Chi-square mathematics for statistics students](https://www.yourarticlelibrary.com/project-reports/chi-square-test/chi-square-test-meaning-applications-and-uses-statistics/92394).
+
+---
+Peer Review Contributions by: [Prashanth Saravanan](/engineering-education/authors/prashanth-saravanan/)
