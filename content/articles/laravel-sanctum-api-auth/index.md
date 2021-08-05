@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /laravel-sanctum-api-auth/
-title: Laravel API authentication using Sanctum Package
-description: This article will explain a step by step process of building and securing Laravel APIs using sanctum package
+title: Laravel API Authentication using Sanctum Package
+description: This article will explain a step by step process on how to authenticate your user's API calls and Single Page Applications (SPA) using Laravel Sanctum. 
 author: bhanji-brilliant
-date: 2021-08-05T00:00:00-10:30
+date: 2021-08-05T00:00:00-15:30
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 In this tutorial, we will look at the Laravel sanctum package. We will discuss how it can be used to authenticate Single Page Applications (SPA) or even token-based APIs.
 <!--more-->
- We will create a simple Laravel project, issue users with API tokens, and authenticate the application using the Laravel inbuilt session.
+We will create a simple Laravel project, issue users with API tokens, and authenticate the application using the Laravel inbuilt session.
 
 The article will also highlight the advantages of the Sanctum package over Laravel passport.
 
@@ -29,7 +29,7 @@ The article will also highlight the advantages of the Sanctum package over Larav
 
 ### Prerequisites
 - Basic knowledge of Laravel.
-- You need API test tools such as [Postman](https://www.postman.com/) installed.
+- You'll need to have API test tools such as [Postman](https://www.postman.com/) installed.
 
 ### Objective
 By the end of this tutorial, you should be able to authenticate your user's API calls and Single Page Applications (SPA) using Laravel Sanctum.
@@ -62,7 +62,7 @@ Discovered Package: laravel/tinker
 ....................
 ```
 
-Now that we've `sanctum` installed, we need to configure and migrate files by running the following command:
+Now that we've installed `sanctum`, we need to configure and migrate files by running the following command:
 
 ```bash
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
@@ -77,7 +77,7 @@ Publishing complete.
 
 ```
 
-With sanctum files published, let's now set up our database by editing the `.env` file contents as follows:
+With the sanctum files published, let's now set up our database by editing the `.env` file contents as follows:
 
 ```properties
 .............................
@@ -90,7 +90,7 @@ DB_PASSWORD = EnterYourDBPassoword
 ..........................
 ```
 
-Now let's proceed and create our database on `MySQL server` by running the following command in the command line: 
+Now let's proceed and create our database on a `MySQL server` by running the following command in the command line: 
 
 ```bash
 mysql -u root -p
@@ -119,7 +119,7 @@ Output:
 Query OK, 1 row affected (0.06 sec)
 ```
 
-Let's now proceed and migrate our application as shown below:
+Let's now proceed to migrate our application as shown below:
 
 ```bash
 php artisan:migrate
@@ -186,7 +186,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 ```
 
-In the above script, we define four routes. The first is a `POST` request to `register` a new user using the `AuthenticationController.createAccount()` method. 
+In the script above, we define four routes. The first is a `POST` request to `register` a new user using the `AuthenticationController.createAccount()` method. 
 
 We have also defined other routes, to `log in`, view user `profile`, and `logout` users.  
 
@@ -256,7 +256,7 @@ class AuthenticationController extends Controller
 
 ```
 
-We have a simple logic in the above Controller. The `createAccount()` method creates new validated users. It then generates tokens if registered successfully. 
+We have a simple logic in the Controller above. The `createAccount()` method creates new validated users. It then generates tokens if registered successfully. 
 
 The `signin()` function authenticates users and generates `access tokens` on successful login. Finally, the `signout()` method removes the user's session.
 
@@ -269,9 +269,11 @@ Registration output:
 ![registration-details](/engineering-education/laravel-sanctum-api-auth/register.png)
 
 ### Conclusion
-In this tutorial, we looked at what Laravel Sanctum is and what it does. Also, we looked at how it is different from Laravel Passport and when to use it. 
+In this tutorial, we looked at what Laravel Sanctum is and what it does. We also looked at how it is different from Laravel Passport and when to use it. 
 
 Finally, we covered how to use Laravel Sanctum to authenticate and give access to users. You can, therefore, use this knowledge to build powerful APIs.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
