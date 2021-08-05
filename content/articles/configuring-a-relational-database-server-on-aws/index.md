@@ -48,7 +48,7 @@ The source and destination value for the inbound and outbound rule will be set t
 
 6. Save the new security group. 
 
-![aws save secutiry group](/engineering-education/configuring-a-relational-database-server-on-aws/x2lp48ehuwrd3vg8dzds.png)
+![aws save security group](/engineering-education/configuring-a-relational-database-server-on-aws/x2lp48ehuwrd3vg8dzds.png)
 
 ### Setting up a Relational Database Server
 1. On the AWS management console, input RDS in the search bar and select RDS.
