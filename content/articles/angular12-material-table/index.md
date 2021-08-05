@@ -40,7 +40,7 @@ Would you like to proceed? (Y/n)
 
 Enter `y` to proceed with the Angular Material installation. This will install all packages required for Material.
 
-[Material Installation](/engineering-education/angular-material-table/material-output.png)
+![Material Installation](/engineering-education/angular-material-table/material-output.png)
 
 Now that we've successfully installed Material, let's now import material modules into our project.
 
@@ -241,8 +241,8 @@ You will see the following output if you followed the correct steps above:
 
 Output:
 
-[console1](/engineering-education/angular12-material-table/console.png)
-[console2](/engineering-education/angular12-material-table/exapnded-output.png)
+![first console output](/engineering-education/angular12-material-table/console.png)
+![second console output](/engineering-education/angular12-material-table/exapnded-output.png)
 
 Now let's update our `app.component.html` as shown below to display our data.
 
