@@ -1,13 +1,26 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /laravel-sanctum-api-auth/
+title: Getting started with Laravel API authentication using sanctum package
+description: This article will explain a step by step process of building and securing Laravel APIs using sanctum package
+author: bhanji-brilliant
+date: 2021-08-05T00:00:00-10:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/laravel-sanctum-api-auth/hero.jpg
+    alt: Getting started with Laravel API authentication using sanctum package
+---
+
+### Introduction
 In this tutorial, we'll look at the Laravel sanctum package, discuss how we can use it to authenticate Single Page Applications (SPA) or even token-based APIs. We'll create a simple Laravel project, issue users with API tokens, and authenticate SPA using the Laravel inbuilt session.
 
 We'll also look at its advantages over Laravel passport and discuss why you would choose it (sanctum) over Passport.
 
 ### Table of contents
-
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Project setup](#project-setup)
@@ -15,16 +28,13 @@ We'll also look at its advantages over Laravel passport and discuss why you woul
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 - Basic knowledge of Laravel.
 - API test tools installed, such as Postman
 
 ### Objectives
-
 By the end of this tutorial, you should be able to authenticate your user's APIs and Single Page Applications (SPA) using Laravel sanctum.
 
 ### Project setup
-
 Let's set up a Laravel project and install the Sanctum package.  
 
 ```bash
@@ -247,5 +257,4 @@ We have a simple logic in the above Controller. `createAccount()` creates new va
 Now test your application on Postman.
 
 ### Conclusion
-
 In this tutorial, we looked at what Laravel Sanctum is and what it does. Also, we looked at how it is different from Laravel Passport and when to use it. Finally, we covered how to use Laravel Sanctum to give access to users by creating tokens that can be used to authenticate and give access to users to consume Laravel APIs.
