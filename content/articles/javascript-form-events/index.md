@@ -283,3 +283,5 @@ text.addEventListener('change', (e) =>{
 Events in JavaScript make browsing very comfortable, besides their usefulness to programmers. Every programmer must have a clear understanding of JavaScript events for more intuitive browsing. 
 
 As discussed above, there are various JavaScript events, and how they are all useful in different contexts, varying from mouse, keyboard, form, and window events. Getting familiar with these concepts enables developers to use JavaScript to make event better websites.
+
+You can try the code snippets [here](https://replit.com/@bastian-zab/form-events#index.html)
