@@ -16,7 +16,7 @@ We have various types of IIR filters. This type includes;
 
 We will look at the design of the high pass and low pass Butterworth filter.
 
-### How to design lowpass and highpass Butterworth filters using Matlab.
+### How to design low pass and high pass Butterworth filters using Matlab.
 It is also known as a maximally flat filter. It is because it is designed so that the frequency response is as flat as possible in the passband. Passband is the range of frequencies or wavelengths that can pass through a filter. The frequency response of a filter is the transfer function of a given filter. However, one main disadvantage of the Butterworth filter is that it achieves this passband flatness at the expense of a wide transition band as the filter changes from the passband to the stopband. As a result, it has poor phase characteristics as well. A transition band is the range of frequencies that allows transition between the passband and the stopband.
 
 ### Matlab code for Butterworth filter
