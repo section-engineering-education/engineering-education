@@ -186,7 +186,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 ```
 
-In the above script, we define 4 routes. The first one is a POST request to register a new user using the `AuthenticationController.createAccount()` method. We have also defined other routes, to `log in`, view user `profile`, and `logout` the users.  
+In the above script, we define four routes. The first is a POST request to register a new user using the `AuthenticationController.createAccount()` method. We have also defined other routes, to `log in`, view user `profile`, and `logout` the users.  
 
 You may have noticed that we also used the `AuthenticationController` while it had not been created. Let's go ahead and create this controller by running the following command:
 
