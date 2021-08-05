@@ -1,4 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-tensorflow-from-source/
+title: Introductory Guide to Building Tensorflow 2.5.0 from Source
+description: This tutorial explains what it means to build software from source and further proceed with building Tensorflow 2.5.0 from source.
+author: lalithnarayan-c
+date: 2021-08-05T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/build-tensorflow-from-source/hero.jpg
+    alt: Build TensorFlow from source
+---
+
 In this tutorial, we will understand what it means to build software from the source and further proceed with building Tensorflow 2.5.0 from source.
+<!--more-->
+
+### Outline
 
 - [Introduction](#introduction)
 - [What does it mean to build software from source?](#what-does-it-mean-to-build-software-from-source)
