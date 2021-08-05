@@ -258,3 +258,6 @@ Now test your application on Postman.
 
 ### Conclusion
 In this tutorial, we looked at what Laravel Sanctum is and what it does. Also, we looked at how it is different from Laravel Passport and when to use it. Finally, we covered how to use Laravel Sanctum to give access to users by creating tokens that can be used to authenticate and give access to users to consume Laravel APIs.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
