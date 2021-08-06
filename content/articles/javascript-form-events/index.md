@@ -1,6 +1,22 @@
-### Introduction
-A JavaScript event is any operation that occurs when a user interacts with a given web page. These event can be used to provide a user with dynamic interaction with a given website. Through JavaScript events, browsing becomes seamless and enjoyable. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /javascript-form-events/
+title: Getting started with JavaScript events
+description: This tutorial explains the major types of JavaScript events, how to listen to them and pass them to event handlers.
+author: samuel-zabastian
+date: 2021-08-06T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+- url: /engineering-education/javascript-form-events/hero.png
+  alt: Getting started with JavaScript events
+---
+
+A JavaScript event is any operation that occurs when a user interacts with a given web page. These event can be used to provide a user with dynamic interaction with a given website. Through JavaScript events, browsing becomes seamless and enjoyable. 
+<!--more-->
 It's the JavaScript events that are used to make a website interactive. You are probably scrolling smoothly on this page and make click on a link or two because of the underlying JavaScript events used to build this page. So let's take a look into these events and how to use them.
 
 ### Goal
@@ -11,6 +27,7 @@ This article requires the reader to have a basic understanding of HTML and JavaS
 
 ### Project setup
 We, Will, create a new folder called `JavaScript events`. In the folder, create a new file called `index.htm` and another JavaScript file called `main.js`. We will use these two files to demonstrate the concept of JavaScript events. Your folder structure should look like this.
+
 ```bash
 |-- index.html
 |-- main.js
@@ -69,7 +86,6 @@ An example of a mouse event is clicking a button, hovering over an HTML element,
 
 - Mouse Click event is handled by the `onClick` event handler. We will use the event handler to show the user that the button was clicked as below:
 
-
 ```js
 /**
  * Getting the button id
@@ -118,7 +134,6 @@ button.addEventListener('mouseout', () =>{
 
 The snippets below demonstrate how `mouseup` and `mousedown` events operate.
 > Remember to comment on the other functions when testing these two mouse events, as we are using the same files and elements.
-
 
 ```js
 /**
@@ -285,3 +300,6 @@ Events in JavaScript make browsing very comfortable, besides their usefulness to
 As discussed above, there are various JavaScript events, and how they are all useful in different contexts, varying from mouse, keyboard, form, and window events. Getting familiar with these concepts enables developers to use JavaScript to make event better websites.
 
 You can try the code snippets [here](https://replit.com/@bastian-zab/form-events#index.html)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
