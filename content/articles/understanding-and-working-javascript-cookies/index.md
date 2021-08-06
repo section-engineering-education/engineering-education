@@ -6,7 +6,7 @@ url: /understanding-and-working-with-javascript-cookies/
 title: Understanding and Working with JavaScript Cookies
 description: In this article, we'll be looking at how JavaScript cookies work. We will learn how to create, update and delete them.
 author: bernard-mburu
-date: 2021-07-27T00:00:00-04:30
+date: 2021-08-06T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
