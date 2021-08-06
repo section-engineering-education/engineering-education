@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-and-working-with-javascript-cookies/
 title: Understanding and Working with JavaScript Cookies
-description: In this article, we will be look at how JavaScript cookies work. We will look at how to create, update and delete cookies.
+description: In this article, we'll be looking at how JavaScript cookies work. We will learn how to create, update and delete them.
 author: bernard-mburu
 date: 2021-07-27T00:00:00-04:30
 topics: [Languages]
@@ -14,11 +14,16 @@ images:
  - url: /engineering-education/understanding-and-working-with-javascript-cookies/hero.png
    alt: Cookies JavaScript Image
 ---
-A cookie is a short text file that stores a little bit of data on a user's computer (about 4KB). They typically keep track of information such as a user's preference for a website, prompting the user to improve the web page the next time they visit. Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others.
-<!--more-->
-Using JavaScript, cookies can be created, retrieved, and modified directly, and the process is simple. The name, value and the length of the cookie can be restricted. All cookie data is transferred to the application server immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
 
-### Table of content
+A cookie is a short text file that stores some data on a computer (about 4KB). They usually keep track of information such as preferencess for a website, prompting the user to improve the web page the next time they visit.
+<!--more-->
+Cookies are an antiquated method of preventing customers from using third-party writing scripts like PHP, ASP, and others.
+
+Using JavaScript, cookies can be created, retrieved, and modified directly, and the process is simple. The name, value and the length of the cookie can be restricted. 
+
+All cookie data is transferred to the application server immediately when a page is requested from the browser server. Cookies should not be used to store sensitive information such as passwords or credit card numbers, as this information could be accessed by malevolent users.
+
+### Table of contents
 - [Types of cookies](#various-types-of-cookies)
 - [Creating a cookie](#creating-a-cookie)
 - [Reading a cookie](#reading-a-cookie)
@@ -41,7 +46,7 @@ You can only set one cookie at a time using this property.
 
 Take a look at the example below.
 
-```javascript
+```js
 document.cookie = "UserName = fabuluosDesigns";
 ```
 
