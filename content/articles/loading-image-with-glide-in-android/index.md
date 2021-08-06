@@ -587,7 +587,7 @@ binding.imageView.setImageDrawable(resource)
 ``` 
 ### Project Demo
 
-![Demo Project](/loading-image-with-glide-in-android/glide-demo.mp4)
+![Demo Project](/loading-image-with-glide-in-android/glide-demo.gif)
  
 
 ### Conclusion
