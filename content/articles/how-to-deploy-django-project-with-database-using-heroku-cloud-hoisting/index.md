@@ -1,18 +1,14 @@
 
 ![hero](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/django-heroku.png)
 
-
 ### Introduction 
 
-Welcome folks! I am Arafat Olayiwola and in this tutorial I will be walking you through steps of hoisting Django application on Heroku server. Heroku is one of the cloud providers out there that allows developers to hoist their application on their server, together with monitoring and managing the health checks of the server. 
+Welcome folks! I am Arafat Olayiwola, a software developer, technical writer. In this tutorial I will be walking you through steps of deploying Django application on Heroku server using database by building a `studentprofile` application. Heroku is one of the cloud providers out there that allows developers to hoist their application on their server, and helps by monitoring, managing the health checks of the server. 
 
-To deploy Django application on Heroku server, some dependencies are needed to set up and we shall do justice on that in this article.
-You can brush up concepts of Django that require mastering if you are curious to know, though it is not a prequisite for this. 
-
-[Core concepts of Django to master.](/https://section.io/engineering-education/core-concepts-of-django-to-learn/)
+To deploy Django application on Heroku server, some dependencies are needed to set up and we shall do justice to that in this article. Feel free to brush up concepts of Django that require mastering in one of my articles [Core Concepts of Django to master.](/https://section.io/engineering-education/core-concepts-of-django-to-learn/), though it is not a prequisite for this
 
 #### Prequisites
-1. Latest version of Python is required. So head on to `Python docs` and download if you are not having it locally.
+1. Latest version of Python is required. So head on to `Python Docs` and download if you are not having it locally.
 [Python Websites](/https://www.python.org/downloads/)
 
 2. Latest Version of PostgreSQL database is needed. Download here.
@@ -21,21 +17,24 @@ You can brush up concepts of Django that require mastering if you are curious to
 3. Download workbench of postgreSQL here too. 
 [Download Workbench](/https://www.pgadmin.org/download/)
 
+4. Download git bash too. 
+[Git Bash](/https://git-scm.com/download/win)
+
 
 #### Key take aways
-The aim of this article is to familiarise you with steps on how to deploy any django project using database on heroku server by building a student profile app. While the objectives are as follows:
-
 1. How to setup Django project with requirement dependencies.
 2. Developing an application for the article and setting up database.
 2. How to setup account and login with Heroku.
 3. How to push up project to git so that Heroku account created can access it.
 4. How to hoist your project and get domain name with extension of herokuapp.com.
 
+
 ### Setting Up Django Project
+Like I said earlier, we are developing students profile application that would have features like name, email, phone and delete button on each table row. So, Let's get started by setting up our Django project.
 
-Like I said earlier, we are developing students profile application that would have features like name, email, phone and delete button. So, Let's get started by setting up our Django project.
+I will be using bash as CLI. Feel free to use your terminal if you do not have that. We need to set up virtual enviroment as dependency for django project. But before that, navigate to where your project will stay in your local computer.
 
-I will be using bash for as CLI. Feel free to use your terminal if you do not have that. We need to set up virtual enviroment as dependency for django project. But before that, navigate to where your project will stay in your local computer.
+Open your bash CLI and type.
 
 ```bash
 $ cd Desktop
@@ -45,7 +44,8 @@ $ cd myproject
 
 Now our project stays inside Desktop folder and we are inside `myproject` folder.
 
-Let us make virtual enviroment an configure the project.
+Let us make virtual enviroment and make the project.
+
 ```bash 
 $ virtualenv env
     created virtual environment CPython3.8.6.final.0-64 in 11821ms
@@ -61,17 +61,17 @@ $ cd env
 $ source env/Scripts/activate
 $ pip install django
     Collecting django
-  Downloading Django-3.2.6-py3-none-any.whl (7.9 MB)
+    Downloading Django-3.2.6-py3-none-any.whl (7.9 MB)
      |████████████████████████████████| 7.9 MB 123 kB/s
-Collecting sqlparse>=0.2.2
-  Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)
-Collecting asgiref<4,>=3.3.2
-  Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
-Collecting pytz
-  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
-     |████████████████████████████████| 510 kB 731 kB/s
-Installing collected packages: sqlparse, pytz, asgiref, django
-Successfully installed asgiref-3.4.1 django-3.2.6 pytz-2021.1 sqlparse-0.4.1
+    Collecting sqlparse>=0.2.2
+    Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)
+    Collecting asgiref<4,>=3.3.2
+    Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+    Collecting pytz
+    Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+        |████████████████████████████████| 510 kB 731 kB/s
+    Installing collected packages: sqlparse, pytz, asgiref, django
+    Successfully installed asgiref-3.4.1 django-3.2.6 pytz-2021.1 sqlparse-0.4.1
 ```
 
 Django is successfully installed on your local computer. Now let us set up the project.
@@ -79,12 +79,11 @@ Django is successfully installed on your local computer. Now let us set up the p
 ```bash
 $ django-admin startproject studentprofile
 $ cd studentprofile
-$ pip freeze > requirements.txt
+$ pip install -r requirements.txt
 $ code .
 ```
 
-What `code .` does is to open your current directory in any editor you use.
-Every brand new Django project comes with default page. So to reference that, type `python manage.py runserver` in bash and click on the `http://127.0.0.1:8000/` to open in browser.
+What `code .` command does is to open your current directory in any editor you use. Every brand new Django project comes with default page. So to reference that, type `python manage.py runserver` in bash and click on the `http://127.0.0.1:8000/` to open it in browser.
 
 Never close the development server while you are still developing your application.
 
@@ -104,13 +103,13 @@ $ python manage.py runserver
     Quit the server with CTRL-BREAK.
 ```
 
-Congratulations!! Your project is initiated successfully. 
+Congratulations!! Your project is initiated successfully. And you should see an index page below.
 
-### Development Of Project and Setting PostgreSQL database
+![firstpage](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/firstpage.png)
 
-In this project, we need two main apps `students` and `account`. We will serve our application index page from `students` app while `account` app is for form where details can be entered.
+### Developing Project and Setting PostgreSQL database
 
-Let us create the two with this codes.
+In this project, we need two main apps `students` and `account`. We will serve our application index page from `students` app while `account` app is for form where profiles can be entered.
 
 ```bash
 $ python manage.py startapp students
@@ -118,6 +117,7 @@ $ python manage.py startapp account
 ```
 
 We have added the two apps to our project. For Django to recognise them, we need to add both to `INSTALLED_APPS` inside `settings.py`  in the `studentprofile` app like below.
+
 ```
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -131,17 +131,18 @@ We have added the two apps to our project. For Django to recognise them, we need
     ]
 ```
 Now we need to set up our database and we will be considering `postgresql`. 
-But before that Django required  dependecy called `psycopg2` to talk to postgres. So let us insatll it.
+But before that Django required  dependecy called `psycopg2` to talk to postgresql. So let us install it.
 
 ```bash
 $ pip install psycopg2
 $ pip freeze > requirements.txt
 ```
-Note: Always use this command `pip freeze > requirements.txt` whenever you install new dependency. That will add it to our `env` enviroment.
+Note: Always use this command `pip freeze > requirements.txt` whenever you install new dependency. That will help to add all installations to our `env` enviroment.
 
-So go inside the workbench downloaded and create database named `StudentsProfile`. Having done, that we need to conect our project to the database created.
+Now go inside the workbench downloaded and create database named `StudentsProfile`. Having done, that we need to conect our project to the database created.
 
-Now go into `settings.py` and change the `DATABASES` option to something like this.
+Inside `settings.py` change the `DATABASES` option to something like this.
+
 ```
     DATABASES = {
         'default': {
@@ -156,7 +157,7 @@ Now go into `settings.py` and change the `DATABASES` option to something like th
 ```
 Note that `PASSWORD` is encrypted here. That stands for your password provided when installing workbench earlier for your computer.
 
-We can now migrate the default models to the new database connected with.
+Let us migrate the default models to the new database connected with.
 
 ```bash
 $ python manage.py makemigrations
@@ -169,7 +170,7 @@ $ python manage.py migrate
 
 If you open your postgres workbench and navigate to the database created, you will confirm all the django default models migrated. 
 
-Let us set-up our models for the `account` app. Go into the `account` app and open `models.py`. Then write your models like this below.
+Next thing is to set-up our models for the `account` app. Open the `models.py` inside the `account` app and make your model with the students profile features we need.
 
 ```
     from django.db import models
@@ -184,7 +185,7 @@ Let us set-up our models for the `account` app. Go into the `account` app and op
         def __str__(self):
             return self.name
 ```
-Let us `makemigrations` again to generate migration file. Then after that we migrate to the database.
+Now we need to `makemigrations` to generate migration file. After that we migrate the file genrated to the database.
 
 ```bash
 $ python manage.py makemigrations account
@@ -198,7 +199,8 @@ $ python manage.py migrate
     Applying account.0001_initial... OK
 ```
 
-The next thing is to set up our admin backend. Remember every Django project comes in handy with already configured `admin`, so we just utilise that. Open the the `admin.py` inside the `account` app and subscribe the `model`.
+The next thing is to set up our admin backend. Remember every Django project comes in handy with already configured `admin`, so we just make use of that. Open the the `admin.py` inside the `account` app and subscribe the `model`.
+
 ```
     from django.contrib import admin
     from .models import StudentAccount
@@ -206,7 +208,7 @@ The next thing is to set up our admin backend. Remember every Django project com
     admin.site.register(StudentAccount)
 ````
 
-One last thing to do before it can work is to register an account with the admin. Provide a username, email and password that you can remember.
+What we have to do before it can work is to register an an admin account. Provide a username, email and password that you can remember.
 
 ```bash
 $ python manage.py createsuperuser
@@ -221,7 +223,7 @@ $ python manage.py createsuperuser
     Superuser created successfully.
 ```
 
-Great! You have just made an admin backend for your project. Only you as an admin can read, write, modify and delete data there. Now let us `runserver` and access admin configured.
+Great! You have just made an admin backend for your project. Only you as an admin can read, write, modify and delete data inside. Now let us `runserver` and access admin configured.
 
 ```bash
 $ python manage.py runserver
@@ -237,11 +239,13 @@ $ python manage.py runserver
 
 Open `http://127.0.0.1:8000/admin/login/?next=/admin/` and login to the admin. You should see something similar to this image below.
 
-Wow! What is next? Yes, you guessed right. We need to make our form page, so that students details can be added to database from UI.
+![admin](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/admin.png)
+
+Wow! What is next? Yes, you guessed right. We need to make our form page, so that students profiles can be added to database from our UI.
 
 We can make use of the `models` properties as form fields. How right? No worries.
 
-Now add `forms.py` to your `account` app. And then do the logic as below.
+Now create `forms.py` to your `account` app. And then do the logic as below.
 
 ```
     from django import forms
@@ -280,7 +284,7 @@ To reference the form made, we need to send it to the template through the `view
         student.delete()
         return redirect('/')
 ```
-Now let us make `urls` for the routing. Make a `urls.py` inside the `account` app and configure as below.
+Now let us make `urls` for the routing. Create `urls.py` inside the `account` app and configure it as below.
 
 ```
     from django.urls import path
@@ -292,7 +296,10 @@ Now let us make `urls` for the routing. Make a `urls.py` inside the `account` ap
         path('delete/<str:pk>/', views.delete, name="delete")
     ]
 ```
-With these that we have done so far, it is time to the connect to `students` app too. First thing to do here, is to make the routing working. As we have been doing, quickly navigat to the app and add `urls.py` file then make some route like this.
+
+With these that we have done so far, it is time to the connect to `students` app too. First thing to do here, is to make the routing works. As we have been doing, quickly navigate to the app and create `urls.py` file then make some route like this.
+
+This route will serve our index page to clients.
 
 ```
     from django.urls import path
@@ -314,11 +321,11 @@ Having done that, we need to write the views logic inside the `views.py`.
         students = StudentAccount.objects.all()
         return render(request, 'students/index.html',{'students': students})
 ```
+Here we are just sending out all `students` in our database by querying it to the `index.html` template.
 
-We have made it this far!! Great. It is time we make the templates for the project to render interface to users.
-You remember Django uses `Model View Template` architecture and if you are surprised quickly check the link above and read about that.
+We have made it this far!! Great. It is time we make the templates for the project to render interfaces to user. You remember Django uses `Model View Template MVT` architecture and if you are surprised quickly check the link above and read about that.
 
-What we can do is to add `templates` folder into the project that is `studentprofile` folder and ensure that it is at the same level with the other `studentprofile` folder.
+What we can do is to add `templates` folder into the root level with the project that is `studentprofile` folder and ensure that it is at the same level with the other `studentprofile` folder.
 
 If you are confused, kindly open your bash and type commands below.
 
@@ -341,7 +348,7 @@ $ ls
     account/  manage.py*  requirements.txt  studentprofile/  students/  templates/
 ```
 
-Yes! We have made the templates. Now let us connect it to the project by going into the `settings.py` and do this below. Kindly make sure to add `import os` at the topmost of the `settings.py`.
+Yes! We have made the templates. Now let us connect it to the project by going into the `settings.py` and do this below. Kindly ensure to add  comand `import os` at the top level of the `settings.py` in case it is not there.
 
 ```
     import os
@@ -462,12 +469,14 @@ $ python manage.py runserver
     Quit the server with CTRL-BREAK.
 ```
 
-Yes! We made it together. We are 75% done with the project, now let us move on to the next on the list.
+Yes! We made it together. We are 75% done with the project, now let us move on to the next thing on the list.
 
-Django as a backend framework requires some few dependencies for it to be live and accessible over the internet, so that clients can access it. Here are the lists of them:
+![indexpage](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/indexpage.png)
+
+Here are the lists of dependencies required by Heroku for deployment. Now we need to install all of these into our `requirements.txt` file. 
 
 1. gunicorn
-    This `gunicorn` allows the Django project to be accessible via HTTP protocol. And this will be configured inside a file named `Procfile`. For that let us install `gunicorn`.
+    This `gunicorn` allows the Django project to be accessible via HTTP protocol. And this will be configured inside a file named `Procfile`.
 
 ```bash
 $ pip install gunicorn
@@ -477,7 +486,7 @@ $ pip install gunicorn
     Installing collected packages: gunicorn
     Successfully installed gunicorn-20.1.0
 ```
-Now create a `Procfile` with no extension in the root directory.
+Now create a `Procfile` with no extension in the root directory. And make sure it is spelt as it is here in this tutorial.
 
 ```bash
 $ ls
@@ -487,12 +496,14 @@ $ ls
     account  manage.py  Procfile  requirements.txt  studentprofile  students  templates
 ```
 
-Inside the `Procfile` do add this. This is to allow HTTP traffic and tell Heroku that this is a web dyno. 
+Inside the `Procfile` do add this. This is to allow HTTP traffic and tell Heroku that this is a web dyno. Please there should not be any unneccessary space at the back of the last dash symbol, this is because Heroku will never see your `Procfile` if such space is added.
+
 ```
     web: gunicorn studentprofile.wsgi --log-file -
 ```
+
 2. whitenoise
-    Heroku serves your staticfiles for your project automatically through this dependency. So we have to install it and add its middleware to `settings.py`.
+    Heroku serves staticfiles for your project automatically through this dependency. So we have to install it and add its middleware to `settings.py`.
 
 ```bash
 $ pip install whitenoise
@@ -503,6 +514,7 @@ $ pip install whitenoise
 ```
 
 Add this to `settings.py` for Django to serve it. Just below the `SecurityMiddleware` like this.
+
 ```
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
@@ -519,16 +531,20 @@ Add this to `settings.py` for Django to serve it. Just below the `SecurityMiddle
 3. runtime.txt
     This file tells Heroku what type and version of programming language is the project built on. So let us add that to the root level.
 
-Note: `python-3.8.6` might not be your version, do change that to your own.
-
 ```bash
 $ touch runtime.txt
+$ ls
     account  manage.py  ProcFile  requirements.txt  runtime.txt  studentprofile  students  templates
-$ echo python-3.8.6 > runtime.txt
+```
+
+Inside the `runtime.txt` file, write this. In my own case I used `python 3.8.6` for the project, ensure you add yours version.
+
+```
+    python-3.8.6
 ```
 
 4. dj-database-url
-    Since we are using a custom database, then we need a way to talk to the Heroku database for the project. And the dependency that does that for us `dj-database-url` which we have to install and add it to the `settings.py`.
+    Since we are using a custom database, then we need a way to talk to the Heroku database for the project. And the dependency that does that for us is `dj-database-url` which we have to install and add it to the `settings.py`.
 
 ```bash
 $ pip install dj-database-url
@@ -537,7 +553,9 @@ $ pip install dj-database-url
     Installing collected packages: dj-database-url
     Successfully installed dj-database-url-0.5.0
 ```
-Then add this to your `settings.py`
+
+Then add this to your `settings.py` and the `import dj_database_url` should go to the topmost level. while other commands should follow each other and be positioned right below the `settings.py` databases option.
+
 ```
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
@@ -545,7 +563,8 @@ Then add this to your `settings.py`
 ```
 
 5. django-heroku
-    This package configures Django project for Heroku automatically. It has to be installed too into the dependedcies.
+    This package configures Django project for Heroku automatically and it has to be installed too.
+
 ```bash
 $ pip install django_heroku
     Collecting django-heroku
@@ -562,7 +581,9 @@ $ pip install django_heroku
     Successfully installed django-heroku-0.3.1
 ```
 
-Having done that, we need to add this at the bottom of the `settings.py` file and ensure that you save. Note that all `import` keyword must be at the top of the file by convention.
+Having done that, we need to add this at the bottom of the `settings.py` file and please ensure that you save the all file. 
+
+Note that all `import` keyword must be at the top of the file by convention.
 
 ```
     import django_heroku
@@ -591,7 +612,7 @@ So far if you open your `requirement.txt` file, these must be present.
 ```
 I commend your effort. Well-done!!
 
-As a good developer, all secret keys generated for every project is inside `settings.py` and this must be always hiden. So we will need to make `.env` file and store our keys there. For this reason,  a couple of files and installations shall be done.
+As a good developer, all secret keys generated for every project is inside `settings.py` and this must be always hidden. So we will need to make `.env` file and store our keys there. For this reason,  a couple of files creation and installations shall be done too.
 
 ```bash
 $ ls
@@ -621,12 +642,12 @@ Now go into the `settings.py` and connect the `.env` file with the project by ad
     load_dotenv()
 
     SECRET_KEY = os.getenv("YOUR_SECRET_KEY", <your secret key here>)
+    DEBUG = os.getenv("YOUR_DEBUG")
 ```
 
-So navigate to [django gitginore](/https://www.toptal.com/developers/gitignore/api/django) and copy out all the gitgnores then go ahead and paste them into your `.gitignore` file created.
+So navigate to [django gitginore](/https://www.toptal.com/developers/gitignore/api/django) and copy out all the gitgnores and paste them into your `.gitignore` file created.
 
-
-The project is not in track with git yet. We have to initialize it, add all files and then commit them to git locally. Open your terminal or bash and let us do justice to this.
+Before diving to Heroku deployment steps, we need to track the project with github using git. We have to initialize it, add all files and then commit them to git locally. Open your terminal or bash and let us do justice to this.
 
 ```bash
 $ ls 
@@ -688,7 +709,7 @@ $ git commit -m"Initial commit"
     create mode 100644 templates/students/index.html
 ```
 
-Great!! With this we have initialized and commited the whole project to git repository locally on our machine. To track it with git remote using `github`, go to [Github](/https://github.com/) and sign up if you do not have account. But if you do have, then go ahead and make new repository for the project.
+Great!! With this we have initialized and commited the whole project to git repository locally on our machine. To track it with git remote using `Github`, go to [Github](/https://github.com/) and sign up if you do not have account. But if you do, go ahead and make new repository for the project.
 
 We need to connect the project with the remote repository created. So for that let us do some git permutations in the bash or terminal as your choice.
 
@@ -709,22 +730,29 @@ $ git push -U origin master
     Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-On successful `git push` like above, you shoule see soemthing like the image below.
+On successful `git push` like above, you shoule see something like this image below.
+
+![git-repo](/how-to-deploy-django-project-with-database-using-heroku-cloud-hoisting/git-repo.png)
 
 
 ### Heroku Account Set Up
+
+Why Heroku of all server providers? 
+
+Heroku provides a free plan named `hobbydev` for the deployment of applications. Also Heroku Django deployment documentations is well written and understandable enough for developers.
+
 To use Heroku free tier plan, an account must be created first. So follow the steps on [Heroku SignUp](/https://id.heroku.com/login) and sign up.
 
-Now we are set for deployment into Heroku server. Please make sure to follow this steps below very well, because a slight mistake could cause your not to be properly deployed and cannot be accessed. I wish you the best!!
+Now we are set for deployment into Heroku server. Please make sure to follow this steps below very well, because a slight mistake could cause your app not to be properly deployed and cannot be accessed. I wish you the best!!
 
 Open your bash and follow up.
 
 1. heroku login
-    Your editor must be connected to Heroku and log into the account created earlier.
+    Your editor must be connected to Heroku and log into the account created earlier while you are still deploying.
 
 ```bash
 $ heroku login
-     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    »   Warning: heroku update available from 7.47.3 to 7.56.1.
     heroku: Press any key to open up the browser to login or q to exit:
     Opening browser to https://cli-auth.heroku.com/auth/cli/browser/37acdb3e-bea6-4b12-8662-ae0136247969?requestor=SFMyNTY.g2gDbQAAAA4xMDUuMTEyLjI5LjE2Nm4GAJBOQBl7AWIAAVGA.QBKX6P4I0X1XZTdjh5TZwMuKvlpIcm4RfaEzoWPEzLk
     Logging in... done
@@ -744,82 +772,64 @@ $ git push heroku master
     (env) C:\Users\user\Desktop\myproject\studentprofile>git push heroku master
 
     (env) C:\Users\user\Desktop\myproject\studentprofile>git push heroku master
-    Enumerating objects: 41, done.
-    Counting objects: 100% (41/41), done.
-    Delta compression using up to 4 threads
-    Compressing objects: 100% (36/36), done.
-    Writing objects: 100% (41/41), 8.39 KiB | 358.00 KiB/s, done.
-    Total 41 (delta 6), reused 0 (delta 0), pack-reused 0
+     Enumerating objects: 5, done.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
     remote: Compressing source files... done.
     remote: Building source:
     remote:
     remote: -----> Building on the Heroku-20 stack
-    remote: -----> Determining which buildpack to use for this app
+    remote: -----> Using buildpack: heroku/python
     remote: -----> Python app detected
     remote: -----> Using Python version specified in runtime.txt
-    remote:  !     Python has released a security update! Please consider upgrading to python-3.8.11
-    remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
-    remote: -----> Installing python-3.8.6
-    remote: -----> Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+    remote:  !     Python has released a security update! Please consider
+    upgrading to python-3.8.11
+    remote:        Learn More: https://devcenter.heroku.com/articles/pytho
+    n-runtimes
+    remote: -----> No change in requirements detected, installing from cac
+    he
+    remote: -----> Using cached install of python-3.8.6
+    remote: -----> Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36
+    .2
     remote: -----> Installing SQLite3
     remote: -----> Installing requirements with pip
-    remote:        Collecting asgiref==3.4.1
-    remote:          Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
-    remote:        Collecting dj-database-url==0.5.0
-    remote:          Downloading dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
-    remote:        Collecting Django==3.2.6
-    remote:          Downloading Django-3.2.6-py3-none-any.whl (7.9 MB)
-    remote:        Collecting django-heroku==0.3.1
-    remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
-    remote:        Collecting gunicorn==20.1.0
-    remote:          Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
-    remote:        Collecting psycopg2==2.9.1
-    remote:          Downloading psycopg2-2.9.1.tar.gz (379 kB)
-    remote:        Collecting python-dotenv==0.19.0
-    remote:          Downloading python_dotenv-0.19.0-py2.py3-none-any.whl (17 kB)
-    remote:        Collecting pytz==2021.1
-    remote:          Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
-    remote:        Collecting sqlparse==0.4.1
-    remote:          Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
-    remote:        Collecting whitenoise==5.3.0
-    remote:          Downloading whitenoise-5.3.0-py2.py3-none-any.whl (19 kB)
-    remote:        Building wheels for collected packages: psycopg2
-    remote:          Building wheel for psycopg2 (setup.py): started
-    remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
-    remote:          Created wheel for psycopg2: filename=psycopg2-2.9.1-cp38-cp38-linux_x86_64.whl size=579458 sha256=743eec008801f7305c409c0634747a25b5150def2de34f2f44a4bc6707630458
-    remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-b1pkfpw1/wheels/65/eb/f9/74b53754e764a113930b709eb319a3bd5b681889b5ffbf1aab
-    remote:        Successfully built psycopg2
-    remote:        Installing collected packages: asgiref, dj-database-url, sqlparse, pytz, Django, whitenoise, psycopg2, django-heroku, gunicorn, python-dotenv
-    remote:        Successfully installed Django-3.2.6 asgiref-3.4.1 dj-database-url-0.5.0 django-heroku-0.3.1 gunicorn-20.1.0 psycopg2-2.9.1 python-dotenv-0.19.0 pytz-2021.1 sqlparse-0.4.1 whitenoise-5.3.0
-    remote: -----> Skipping Django collectstatic since the env var DISABLE_COLLECTSTATIC is set.
+    remote: -----> Skipping Django collectstatic since the env var DISABLE
+    _COLLECTSTATIC is set.
     remote: -----> Discovering process types
-    remote:        Procfile declares types -> (none)
+    remote:        Procfile declares types -> web
     remote:
     remote: -----> Compressing...
-    remote:        Done: 57.5M
+    remote:        Done: 59.3M
     remote: -----> Launching...
-    remote:        Released v6
-    remote:        https://nameless-wildwood-10532.herokuapp.com/ deployed to Heroku
-    remote:
-    remote:  !
-    remote:  ! ## Warning - The same version of this code has already been built: 4231bed480287e5ae75399a71ae69ddb915f2ed9
-    remote:  !
-    remote:  ! We have detected that you have triggered a build from source code with version 4231bed480287e5ae75399a71ae69ddb915f2ed9
-    remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
-    remote:  !
-    remote:  ! If you are developing on a branch and deploying via git you must run:
-    remote:  !
-    remote:  !     git push heroku <branchname>:main
-    remote:  !
-    remote:  ! This article goes into details on the behavior:
-    remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+    remote:        Released v17
+    remote:        https://nameless-wildwood-10532.herokuapp.com/ deployed
+    to Heroku
     remote:
     remote: Verifying deploy... done.
     To https://git.heroku.com/nameless-wildwood-10532.git
-    * [new branch]      master -> master
+    761f43c..55dfe8c  master -> master
+
+
 ```
 
-Fantastic!! Our app is live on heroku server by now. But inaccessible due to the database configuration that needs to be done. 
+On error with `Procfile` created, your app will never be configured. Here are the potential solutions:
+
+1. Always watch out for any error from the command `git push heroku master` as above.
+
+2. Ensure that you actually confirm the below commands while pushing to Heroku master.
+
+```
+    remote: -----> Discovering process types
+    remote:        Procfile declares types -> web
+```
+If you don't see such or it is saying `remote: Procfile declares types -> <none>`, kindly delete your `Procfile` and re-create it with proper configurations as described above in this tutorial.
+
+Note that this url `https://nameless-wildwood-10532.herokuapp.com/` is your domain for the application. 
+
+Fantastic!! Our app is live on Heroku server by now. But it is inaccessible due to the database configuration that needs to be done. 
+
+So we need to configure the database with the production database to be provided by Heroku. Now follow the commands below.
 
 ```bash
 $ heroku run python manage.py migrate
@@ -868,3 +878,35 @@ $ heroku config:set YOUR_DEBUG="False"
     Setting YOUR_DEBUG and restarting ⬢ nameless-wildwood-10532... done, v10
     YOUR_DEBUG: False
 ```
+
+With this the database is provisioned and ready. Now open `settings.py` and change your `ALLOWED_HOSTS` to something like below. Doing this will allow all hosts to access your application globally.
+
+```
+    ALLOWED_HOSTS = ['*']
+```
+
+Note that every bit of changes must  be pushed to remote repository. So we have to track the changes made with git and push it on to heroku master.
+
+```bash
+$ 
+$ git add .
+$ git commit -m"allowed hosts"
+$ git push
+$ heroku run python manage.py collectstatic
+$ git push heroku master
+$ heroku open
+```
+With the command `heroku open`, your application will open in browser.
+
+Congratulations!!! We have come to the end of the tutorial and by now your application is accessible via internet.
+
+You can access my own deployment of this tutorial on [studentprofileapp](/https://nameless-wildwood-10532.herokuapp.com/).
+
+Your application admin can be accessed on [studentprofileappadmin](/https://nameless-wildwood-10532.herokuapp.com/admin).
+
+
+For more updates and vast reading on this, kindly reference the docs [Getting Started on Heroku with Python](/https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true) and on MDN website too [Django Tutorial Part 11: Deploying Django to production](/https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment).
+
+Do follow me on LinkedIn [Arafat O. Olayiwola](/https://www.linkedin.com/in/arafat-o-olayiwola-b52087191/).
+
+Thanks and Happy coding Folks!!!
