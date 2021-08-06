@@ -23,19 +23,19 @@ Therefore, this article will help you set up a relational database server on AWS
 ### Setting up a Security Group
 The first step is to sign in to your [AWS account](https://console.aws.amazon.com/?nc2%3Dh_m_mc*)
 
-![AWS Sign in Page](/engineering-education/configuring-a-relational-database-server-on-aws/yx83_gcczm2gexkpkvnf.png)
+![AWS Sign in Page](/engineering-education/configuring-a-relational-database-server-on-aws/aws_signin_page.png)
 
 In the `search bar`, type `Security groups`. Then select `Security groups` under `Features`.
 
-![AWS search for security groups](/engineering-education/configuring-a-relational-database-server-on-aws/pg1md67csewa-8yf9vdz.png) 
+![AWS search for security groups](/engineering-education/configuring-a-relational-database-server-on-aws/search_secutiry_group.png) 
 
 In the new page, select `Create Security Groups`, as shown below:
 
-![AWS create security group](/engineering-education/configuring-a-relational-database-server-on-aws/yp7kmuqrgmfdivlnupop.png)
+![AWS create security group](/engineering-education/configuring-a-relational-database-server-on-aws/aws_create_security_group.png)
 
 We now need to enter the details of the new security group we are creating, as demonstrated below:
 
-![AWS security group detaIls](/engineering-education/configuring-a-relational-database-server-on-aws/2a7sjkc7ytwleipuquvj.png)
+![AWS security group detaIls](/engineering-education/configuring-a-relational-database-server-on-aws/aws_security_group_detail.png)
 
 Another critical step is to set the `inbound` and `outbound `rules of the security group. 
 
@@ -45,38 +45,38 @@ The `inbound rules` specify the type of traffic that will be allowed into the se
 
 The `source` and `destination` value for inbound and outbound rules are set to `any` by default. You might want to set it to the IP of your production server so that the database only sends and receives traffic from this server. This makes the database server less vulnerable. 
 
-![AWS set inbound and outbound rules](/engineering-education/configuring-a-relational-database-server-on-aws/7qifp47qibfzscosytmu.png)
+![AWS set inbound and outbound rules](/engineering-education/configuring-a-relational-database-server-on-aws/aws_firewall_rules.png)
 
 Save the `new security group`, as shown below: 
 
-![Saving security group](/engineering-education/configuring-a-relational-database-server-on-aws/x2lp48ehuwrd3vg8dzds.png)
+![Saving security group](/engineering-education/configuring-a-relational-database-server-on-aws/aws_save_secutiry_group.png)
 
 ### Setting up a Relational Database Server
 On the AWS management console, input `RDS` in the `search bar` and select `RDS`.
 
-![Search for rds](/engineering-education/configuring-a-relational-database-server-on-aws/9ukto-b9k3tfjdrv8ey3.png)
+![Search for rds](/engineering-education/configuring-a-relational-database-server-on-aws/aws_search_rds.png)
 
 Under the `Create database` section, select `Create database`.
 
-![Create database](/engineering-education/configuring-a-relational-database-server-on-aws/woxpen43dcloznzlv1rg.png)
+![Create database](/engineering-education/configuring-a-relational-database-server-on-aws/aws_create_database.png)
 
 To set up the `MySQL` database, navigate to the `Engine Options`, select `MySQL`. In the `template` section, choose the `free tier` option.
 
-![Configuration page](/engineering-education/configuring-a-relational-database-server-on-aws/gt0xuhlof8larfnforu8.png)
+![Configuration page](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_configuration_page_1.png)
 
-![Configuration page](/engineering-education/configuring-a-relational-database-server-on-aws/c_miqwf50spnlpaotgmo.png)
+![Configuration page](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_configuration_page_2.png)
 
 Fill out the `fields` in the `Settings` section as follows:
 
-![Settings configuration](/engineering-education/configuring-a-relational-database-server-on-aws/xapdyknvnatvl6x6zs_x.png)
+![Settings configuration](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_configuration_setting.png)
 
 Leave all other default settings on the page and scroll down to the `connectivity` part. We need to specify the `security group` that we created earlier in this section.
 
 In the `Existing VPC` security group menu under the `Connectivity` section, search for the security group and name it as `helloworld-db`. We also need to enable public access.
 
-![Search vpc](/engineering-education/configuring-a-relational-database-server-on-aws/g7tw7wwvd-x-kwx2xr5u.png)
+![Search vpc](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_search_vpc.png)
 
-![Select vpc security group](/engineering-education/configuring-a-relational-database-server-on-aws/7ibngr6ut-c--igkyezn.png)
+![Select vpc security group](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_select_vpc.png)
 
 Select the `security group` and proceed to the next step.
 
@@ -86,32 +86,32 @@ In the `Additional Configuration` section, set the name of the initial database.
 
 Finally, click on the `Create database` button 
 
-![Create database button](/engineering-education/configuring-a-relational-database-server-on-aws/eok26fqxrcha19wihv3j.png)
+![Create database button](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_create_database_button.png)
 
 In the new page, you’ll see an option to view your database credentials. 
 
-![View database credentials](/engineering-education/configuring-a-relational-database-server-on-aws/qwjjgh1so94eyq4iz5he.png)
+![View database credentials](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_create_db_credentials.png)
 
 This will display the credentials you entered when creating the database. You can view other parameters by clicking on the database name. 
 
-![Connecting parameters](/engineering-education/configuring-a-relational-database-server-on-aws/rnwspqsczi1jrjckra_-.png)
+![Connecting parameters](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_connecting_params.png)
 
 ### Connecting the RDS Server to MySQL Workbench
 MySQL workbench is an integrated development environment for the MySQL server. You can download it from [here](https://dev.mysql.com/downloads/workbench/).
 
-![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/w0u3ogkybhjbm7fvtihe.png)
+![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_workbench_1.png)
 
-![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/z0dllyqtzsnq0ykitlkh.png)
+![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_workbench_2.png)
 
-![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/-u_e_1suveiyh8kbdcbz.png)
+![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_workbench_3.png)
 
 If case you did not set a password, you will be prompted to do so. 
 
-![mysql password](/engineering-education/configuring-a-relational-database-server-on-aws/12oqesy3zgigzg4pf91f.png)
+![mysql password](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_workbench_password.png)
 
 We can now execute SQL queries.
 
-![Execute sql query](/engineering-education/configuring-a-relational-database-server-on-aws/-v0ixhizng6bemxiu4eg.png)
+![Execute sql query](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_create_table_query.png)
 
 ### Connecting to the RDS server with Python
 In this section , we will use the MySQL Connector Python module to communicate with the MySQL server. 
@@ -162,6 +162,8 @@ finally:
         connection.close()
         print("MySQL connection is closed")
 ```
+
+To create the database table, we initiated the database connection in the `connection` variable. The keyword arguments passed into the `mysql.connector.connect` method is the credentials we discussed earlier (host, database, user, password). The actual query was created in the `create_table_query`. Also, take note that we have to create a connection cursor in the `cursor` variable. We executed the query in the `result` variable. In case you are wondering why the code is in a `try/except` block, it is good practice to execute database calls in a `try/except` block (if something goes wrong, the whole program won't crash).
 
 ### Conclusion
 In this tutorial, we have configured a Relational Database Server on Amazon Web Services successfully. We also explored how to establish a connection with the RDS using MySQL Workbench and Python.
