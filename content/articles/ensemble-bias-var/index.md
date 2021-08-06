@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/ensemble-bias-var/hero.jpg
     alt:  image example
 ---
-In my previous [article](/ensemble-learning/), we covered ensemble learning and how it improves machine learning. We mentioned that it reduces the errors of bias and variance. These errors can affect the performance of a machine learning model.
+In my previous [article](/engineering-education/ensemble-learning/), we covered ensemble learning and how it improves machine learning. We mentioned that it reduces the errors of bias and variance. These errors can affect the performance of a machine learning model.
 <!--more-->
 It's always preferable to have a low bias and variance. In this article, we will dissect the two errors and the effect of ensemble learning on them.
 
@@ -24,7 +24,7 @@ It's always preferable to have a low bias and variance. In this article, we will
 3. Effect of ensemble methods on bias and variance.
 
 ### Prerequisites
-Aside from the aforementioned [article](/ensemble-learning/) on ensemble methods, I recommend have a basic understanding on the machine learning basics. This [post](/supervised-learning-algorithms/) should help with that.
+Aside from the aforementioned [article](/engineering-education/ensemble-learning/) on ensemble methods, I recommend have a basic understanding on the machine learning basics. This [post](/engineering-education/supervised-learning-algorithms/) should help with that.
 
 ### Prediction errors
 Prediction errors are defined as the collection of bias, variance, and irreducible errors. We can refer to the irreducible error as noise since we cannot reduce it, regardless of the algorithm chosen. The focus of this article is on the errors of bias and variance. The goal is to understand the two errors. We shall explore their relationship with each other and how ensemble methods affect them.
@@ -100,7 +100,7 @@ Bagging performs well on high variance models like decision trees. On lower vari
 Carrying out bagging on models with high bias leads to a drop in accuracy. This is clear when comparing the performance of the model with and without bagging. Without bagging, the accuracy will be higher than when we implement bagging on such a model. I encourage checking out the article mentioned above to understand the experiment and findings in detail.
 
 #### Boosting and bias
-In this [article](/ensemble-learning/), we mentioned that boosting converts a collection of weak learners into strong learners. Boosting is especially useful in models that exhibit underfitting. These models are highly biased and have low variance.
+In this [article](/engineering-education/ensemble-learning/), we mentioned that boosting converts a collection of weak learners into strong learners. Boosting is especially useful in models that exhibit underfitting. These models are highly biased and have low variance.
 
 We get to visualize the bias error from the image depicting underfitting in the [Bias and Variance](#bias-and-variance) section. It shows how poorly a function fits the given data points. To deal with this error, we train a learner and identify where it exhibits bias errors. The observations that are wrongly classified are assigned higher weights. 
 

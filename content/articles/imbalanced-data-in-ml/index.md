@@ -7,7 +7,7 @@ title: Handling Imbalanced Datasets in Machine Learning
 description: This article will be going over techniques used to handle imbalanced dataset in machine learning algorithms.
 author: collins-ayuya
 date: 2020-12-03T00:00:00-12:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
