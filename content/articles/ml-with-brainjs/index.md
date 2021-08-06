@@ -131,7 +131,6 @@ When building the Neural network, we first need to import the `Brain.js` library
  * bring in the brain.js dependency
  */
 const brain = require('brain.js')
-ai
 /**
  * Import the data file
  */
