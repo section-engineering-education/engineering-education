@@ -1,6 +1,22 @@
-### Parsing emails in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /email-parser-python/
+title: Parsing emails in Python
+description: In this article we discuss the code to obtain and classify emails as spam or ham.   
+author: vincent-ngunzulu
+date: 2021-08-06T00:00:00-18:00
+topics: [Language]
+excerpt_separator: <!--more-->
+images:
 
-Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or might be trying to look for correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
+  -url: /engineering-education/email-parser-python/hero.jpg
+   alt: Parsing Email example image
+---
+
+
+Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or looking for correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
 
 ### Prerequisites
 
@@ -16,7 +32,7 @@ A Colab notebook with the codes is found [here](https://colab.research.google.co
 
 ### Getting started
 
-We will parse emails from the _SpamAssassin_ website in which, we will look at their structure and contents. The site contains spam and ham emails. We will try and look at their structures using the metrics highlighted. 
+We will parse emails from the _SpamAssassin_ website to look at their structure and contents. The site contains spam and ham emails. We will try and look at their structures using the metrics highlighted. 
 
 We will import the packages we need in a new cell then add the code for getting the emails from the _SpamAssassin_ website.
 
@@ -88,7 +104,7 @@ spam_emails = [load_emails(is_spam=True, filename=name) for name in spam_filenam
 
 We create a directory each for the spam and ham emails and sort them.
 
-In the `load_emails()`, we open the appropriate directories as readable and in binary format. Thereafter, we parse them using the `BytesParser` class. The `BytesParser` class contains an argument in the constructor called `policy`. It has the policy as `default`. Using `default` lets us parse the email using the `\n` line breaks.
+In the `load_emails()`, we open the appropriate directories as readable in binary format. After that, we parse them using the `BytesParser` class. The `BytesParser` class contains an argument in the constructor called `policy`. It has the policy as `default`. Using `default` lets us parse the email using the `\n` line breaks.
 
 We then call the `load_emails()` method to load the emails.
 
@@ -133,7 +149,7 @@ In this code, we have two methods, `get_structures()` and `type_counter()`.
 
 In the `get_structures()` function, we check the structure. If it is a ham text email, we return `text/plain,` but if it's a multipart type of email, we return `multipart` and all the parts it contains. Recursion is used if there are many email structures in the sub-emails of that multipart email.
 
-> A multipart email is an email that contains multiple parts. For example, it can contain both a *text/plain* part and a *HTML* part. To check other parts contained in the email, we have to repetitively check that until the email is completely parsed. A great method to do that is by the use of recursion.
+> A multipart email is an email that contains multiple parts. For example, it can contain both a *text/plain* part and an *HTML* part. To check other parts of the email, we must check for the same until the email is repeatedly parsed. An excellent method to do that is by the use of recursion.
 
 Any other email structure apart from the two, **text/plain** and **multipart**, is displayed by returning the email's content type(`get_content_type()`).
 
@@ -156,7 +172,7 @@ We should see the output as shown below:
 [('text/plain', 2409), ('multipart(text/plain, application/pgp-signature)', 66), ('multipart(text/plain, text/html)', 8), ('multipart(text/plain, text/plain)', 4), ('multipart(text/plain)', 3), ('multipart(text/plain, application/octet-stream)', 2), ('multipart(text/plain, text/enriched)', 1), ('multipart(text/plain, application/ms-tnef, text/plain)', 1), ('multipart(multipart(text/plain, text/plain, text/plain), application/pgp-signature)', 1), ('multipart(text/plain, video/mng)', 1), ('multipart(text/plain, multipart(text/plain))', 1), ('multipart(text/plain, application/x-pkcs7-signature)', 1), ('multipart(text/plain, multipart(text/plain, text/plain), text/rfc822-headers)', 1), ('multipart(text/plain, multipart(text/plain, text/plain), multipart(multipart(text/plain, application/x-pkcs7-signature)))', 1), ('multipart(text/plain, application/x-java-applet)', 1)]
 ```
 
-The output basically shows the types, followed by their respective counts e.g there are 2409 *text/plain* emails in ham emails.
+The output shows the types, followed by their respective counts, e.g., there are 2409 *text/plain* emails in ham emails.
 
 We then view the headers and their values using:
 
@@ -192,3 +208,6 @@ The main module involved in the parsing is the `email` module.
 ### Further reading
 
 You can get more information about the email.parser module [here](https://docs.python.org/3/library/email.parser.html#module-email.parser).
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
