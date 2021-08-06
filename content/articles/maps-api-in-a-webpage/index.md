@@ -14,13 +14,13 @@ images:
     alt: Maps API in your website
 ---
 
-Google Maps API is web mapping API that allows developers to easily add location maps in a website. The API provides satellite views, streets view, aerial photography and street maps. 
+Google Maps API is a web mapping API that allows developers to easily add location maps in a website. The API provides satellite views, streets view, aerial photography and street maps. 
 <!--more-->
-This API is very useful to locate places in a website like businesses, sportsgrounds, roads and streets. What is more interesting is combining the Directions and Places APIs with the the Google Maps API. 
+This API is very useful to locate places in a website like businesses, sports grounds, roads and streets. What is more interesting is combining the Directions and Places APIs with the Google Maps API. 
 
-The three, when used together, can provide a useful application whereby a user can navigate, find directions and estimate distances on a webpage. These are some of the functions that when embeded in a website could increase the usability of the web application.
+The three, when used together, can provide a useful application whereby a user can navigate, find directions and estimate distances on a webpage. These are some of the functions that when embedded in a website could increase the usability of the web application.
 
-### Table of contents
+### Table of content
 - Goal of the project
 - File and Folder organization
 - Setting up the project API - Key
@@ -30,13 +30,15 @@ The three, when used together, can provide a useful application whereby a user c
 - Conclusion
 - Recommendation
 
-### Project Goal
+### Project goal
 The sole purpose of this project is to enable the reader to understand the core functionalities and applications of various APIs used with Google Maps. 
 
-We will create a webpage that displays a map, give a user two input fields with place autocmplete; a sarting point and a destination, calculate the distance between the two and display the shortest path beetween the two locations. 
+We will create a webpage that displays a map, give a user two input fields with place autocomplete; a starting point and a destination, calculate the distance between them and display the shortest path between the two locations. 
 
 ### Project files and folder organization
-We will create one folder called `resource`. In this folder, we will store our bootstrap file. Next, we will create three files named `index.html`, `style.css` and `app.js`. The `index.html` will containe our frontend components. 
+We will create one folder called `resource`. In this folder, we will store our bootstrap file. 
+
+Next, we will create three files named `index.html`, `style.css` and `app.js`. The `index.html` will contain our frontend components. 
 
 The `style.css` will contain the styling of our webpage while the `app.js` will have driver code for the implementation of the APIs.
 
@@ -52,11 +54,11 @@ We need an API key for each of the modules we are going to use. However, if we c
 7. Under the credentials screen, click `CREATE CREDENTIALS`, then copy the created API key
 
 
-### Webpage Design
+### Webpage design
 In this section, we will create the webpage where our app will display the map.
-We will have a form with two input fields. 
+We will have a form with two input fields.One field will be where one enters the start point, and the second for the desired destination. 
 
-One field will be where one enters the start point and the second for the desired destination. In the `index.html` file, add the snippets below:
+In the `index.html` file, add the snippets below:
 
 ```html
 <form class="form-horizontal">
@@ -85,8 +87,7 @@ With the same function, we will estimate the time to travel the calculated dista
 </div>
 ```
 
-Lastly, we will have the map displayed on the webpage and the functions
-'s below the map.
+Lastly, we will have the map displayed on the webpage and the function's below the map.
 
 ```html
 <div class="container-fluid">
@@ -283,4 +284,4 @@ function calculateDistance(){
 ### Conclusion
 In this article, we learn how to use three different Maps APIs in a single project. We built a webpage, implemented Place autocomplete that fills places in a given map, and used Directions API to draw a direction between two locations on a Map. We also used the API to calculate the distance between two different places and the estimated time to cover the estimated distance.
 
-You can find the code for the project [here](https://github.com/mercymeave/maps)
+You can find the code for the project [here.](https://github.com/mercymeave/maps)
