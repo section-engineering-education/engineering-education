@@ -1,8 +1,8 @@
 ### Introduction
-Everybody knows that machine learning is mathematically intensive. For most beginners trying to get into machine learning, mathematical knowledge is a challenge.However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
+Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge.However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
 
 ### Understanding Neural Networks
-You can think of a neural network like the human brain, with several interconnected nodes grouped into layers. The layers are categorized as input, hidden, and output layers. Data in neural networks move in a single direction from the input towards the output. 
+You can think of a Neural network like the human brain, with several interconnected nodes grouped into layers. The layers are categorized as input, hidden, and output layers. Data in neural networks move in a single direction from the input towards the output. 
 
 This concept allows us to feed a vast amount of labeled data into the neural network and use it to train the network to give us a desirable output given some input. Given the processing time and accuracy of neural networks, they are far much better than human the brain.
 
@@ -19,12 +19,12 @@ Brain.js is a cool concept because most of the documentation found on the intern
 
 > From their official documentation, Brain.js is a GPU accelerated neural network library built with JavaScript for browser and Node.js  applications. Brain.js is easy to understand and simple to use especially for beginners.
 
-### Project Goal
+### Project goal
 The main goal of this article is to provide beginners, especially those who are coming from a web development background, to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
 
 The project will be based on the JavaScript machine learning library called [Brain.js](https://brain.js.org/#/).
 
-### Project Setup
+### Project setup
 Run `npm init -y` to create an empty `package.json` file. Next, execute the command `npm install brain.js` in your terminal to install the Brain.js package. 
 
 In the application's root folder, we will have the `index.js` file, which contains the driver code for the application. Will also have a file that contains the training data for our neural network. The training data will be in the form of JSON, so we will create a `data.json` file. 
@@ -39,7 +39,7 @@ brainjs
     ┗ package.json
 ```
 
-### The Training Overview
+### The training overview
 Our training data will be an array of objects, where each object has a `text` and a `category`. Based on the words on the text, a given phrase can be categorized as `back-end` based or `front-end` based. We will supply this data to the neural network for training. Afterward, we will give it a phrase and let it determine whether the phrase falls into the `front-end` category or the `back-end`. In the `data.js` file, add the snippets below:
 
 ```json
@@ -138,7 +138,7 @@ ai
 const data = require('./data.json')
 ```
 
-### Long Short Term Memory
+### Long Short Term Memory (LSTM)
 If you have worked with machine learning before, you probably are familiar with the term  Long short-term memory(LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
 
 RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way. They remember the previous information and use that information to process the current given input. 
@@ -184,7 +184,7 @@ const output = network.run('navigate the website easily')
 console.log(`Category: ${output}`)
 ```
 
-Output:
+**Output:**
 
 ```bash
 Category: frontend
@@ -204,7 +204,7 @@ const output = network.run('the api did not work maybe the authentication integr
 console.log(`Category: ${output}`)
 ```
 
-Output:
+**Output:**
 
 ```bash
 Category: backend
