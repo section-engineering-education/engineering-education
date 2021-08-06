@@ -1,1 +1,5 @@
-My name is Jamila Laureen, I am an undergraduate student persuing Infomation Technology. I love programming and Designing. At my free time, I like bike riding.
+---
+title: Jamila Laureen
+type: authors
+---
+Jamila Laureen is an undergraduate student pursuing Infomation Technology. She loves programming and Designing. At her free time, she likes bike riding.
