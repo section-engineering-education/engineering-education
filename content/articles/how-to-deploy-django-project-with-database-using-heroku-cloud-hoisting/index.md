@@ -462,12 +462,12 @@ $ python manage.py runserver
     Quit the server with CTRL-BREAK.
 ```
 
-Yes! We made it together. We are done with the project, now let us move on to the next on the list.
+Yes! We made it together. We are 75% done with the project, now let us move on to the next on the list.
 
-Django as backend framework requires some few dependencies for it to be live and accessible over the internet users on Heroku server. Here are the lists of them:
+Django as a backend framework requires some few dependencies for it to be live and accessible over the internet, so that clients can access it. Here are the lists of them:
 
 1. gunicorn
-    This `gunicorn` allows the Django project to be accessible via HTTP protocol. And this is will be configured inside a file named `Procfile`. For that let us install `gunicorn`.
+    This `gunicorn` allows the Django project to be accessible via HTTP protocol. And this will be configured inside a file named `Procfile`. For that let us install `gunicorn`.
 
 ```bash
 $ pip install gunicorn
@@ -477,17 +477,17 @@ $ pip install gunicorn
     Installing collected packages: gunicorn
     Successfully installed gunicorn-20.1.0
 ```
-Now create a `ProcFile` with no extension in the root directory.
+Now create a `Procfile` with no extension in the root directory.
 
 ```bash
 $ ls
     account  manage.py  requirements.txt  studentprofile  students  templates
-$ touch ProcFile
+$ touch Procfile
 $ ls
-    account  manage.py  ProcFile  requirements.txt  studentprofile  students  templates
+    account  manage.py  Procfile  requirements.txt  studentprofile  students  templates
 ```
 
-Inside the `ProcFile` add this. What this done is to allow HTTP traffic and to tell Heroku that this is a web dyno. 
+Inside the `Procfile` do add this. This is to allow HTTP traffic and tell Heroku that this is a web dyno. 
 ```
     web: gunicorn studentprofile.wsgi --log-file -
 ```
@@ -544,6 +544,31 @@ Then add this to your `settings.py`
     DATABASES['default'].update(db_from_env)
 ```
 
+5. django-heroku
+    This package configures Django project for Heroku automatically. It has to be installed too into the dependedcies.
+```bash
+$ pip install django_heroku
+    Collecting django-heroku
+    Using cached django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+    Requirement already satisfied: psycopg2 in c:\users\user\desktop\myproject\env\lib\site-packages (from django-heroku) (2.9.1)
+    Requirement already satisfied: django in c:\users\user\desktop\myproject\env\lib\site-packages (from django-heroku) (3.2.6)
+    Requirement already satisfied: whitenoise in c:\users\user\desktop\myproject\env\lib\site-packages (from django-heroku) (5.3.0)
+    Requirement already satisfied: dj-database-url>=0.5.0 in c:\users\user\desktop\myproject\env\lib\site-packages (from
+    django-heroku) (0.5.0)
+    Requirement already satisfied: sqlparse>=0.2.2 in c:\users\user\desktop\myproject\env\lib\site-packages (from django->django-heroku) (0.4.1)
+    Requirement already satisfied: pytz in c:\users\user\desktop\myproject\env\lib\site-packages (from django->django-heroku) (2021.1)
+    Requirement already satisfied: asgiref<4,>=3.3.2 in c:\users\user\desktop\myproject\env\lib\site-packages (from django->django-heroku) (3.4.1)
+    Installing collected packages: django-heroku
+    Successfully installed django-heroku-0.3.1
+```
+
+Having done that, we need to add this at the bottom of the `settings.py` file and ensure that you save. Note that all `import` keyword must be at the top of the file by convention.
+
+```
+    import django_heroku
+    django_heroku.settings(locals())
+```
+
 Now we need to add all our dependencies recently installed to `requirements.txt` file.
 
 ```bash
@@ -555,15 +580,18 @@ So far if you open your `requirement.txt` file, these must be present.
     asgiref==3.4.1
     dj-database-url==0.5.0
     Django==3.2.6
+    django-heroku==0.3.1
     gunicorn==20.1.0
     psycopg2==2.9.1
+    python-dotenv==0.19.0
     pytz==2021.1
     sqlparse==0.4.1
     whitenoise==5.3.0
+
 ```
 I commend your effort. Well-done!!
 
-As a good developer, all secret keys generated for every project is inside `settings.py` and this must be always hided. So we will need to make `.env` file and store our keys there. For this reason,  a couple of files and installations shall be done.
+As a good developer, all secret keys generated for every project is inside `settings.py` and this must be always hiden. So we will need to make `.env` file and store our keys there. For this reason,  a couple of files and installations shall be done.
 
 ```bash
 $ ls
@@ -577,12 +605,13 @@ $ pip install python-dotenv
     Successfully installed python-dotenv-0.19.0
 $ pip freeze > requirements.txt
 ```
-Inside the `.env` file add this below. And that ??? means the secret keys inside your `settings.py` for the project and then save the file.
+Inside the `.env` file add this below.
 
 ```
-    SECRET_KEY = ???
-
-    export YOUR_SECRET_KEY = ${SECRET_KEY}
+    YOUR_SECRET_KEY = <your secret key here>
+    DEBUG = False
+    export YOUR_DEBUG = ${DEBUG}
+    export SECRET_KEY = ${YOUR_SECRET_KEY}
 ```
 
 Now go into the `settings.py` and connect the `.env` file with the project by adding this below.
@@ -591,6 +620,251 @@ Now go into the `settings.py` and connect the `.env` file with the project by ad
     from dotenv import load_dotenv
     load_dotenv()
 
-    SECRET_KEY = os.getenv("YOUR_SECRET_KEY")
+    SECRET_KEY = os.getenv("YOUR_SECRET_KEY", <your secret key here>)
 ```
-The very next thing on the list is to set
+
+So navigate to [django gitginore](/https://www.toptal.com/developers/gitignore/api/django) and copy out all the gitgnores then go ahead and paste them into your `.gitignore` file created.
+
+
+The project is not in track with git yet. We have to initialize it, add all files and then commit them to git locally. Open your terminal or bash and let us do justice to this.
+
+```bash
+$ ls 
+    account  manage.py  Procfile  requirements.txt  runtime.txt  studentprofile  students  templates
+$ git init
+    Initialized empty Git repository in C:/Users/user/Desktop/myproject/studentprofile/.git/
+$ git status
+    On branch master
+
+    No commits yet
+
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+            .gitignore
+            Procile
+            account/
+            manage.py
+            requirements.txt
+            runtime.txt
+            studentprofile/
+            students/
+            templates/
+
+    nothing added to commit but untracked files present (use "git add" to track)
+$ git add .
+$ git commit -m"Initial commit"
+    [master (root-commit) 79f502a] initial commit
+    31 files changed, 555 insertions(+)
+    create mode 100644 .gitignore
+    create mode 100644 ProcFile
+    create mode 100644 account/__init__.py
+    create mode 100644 account/admin.py
+    create mode 100644 account/apps.py
+    create mode 100644 account/forms.py
+    create mode 100644 account/migrations/0001_initial.py
+    create mode 100644 account/migrations/__init__.py
+    create mode 100644 account/models.py
+    create mode 100644 account/tests.py
+    create mode 100644 account/urls.py
+    create mode 100644 account/views.py
+    create mode 100644 manage.py
+    create mode 100644 requirements.txt
+    create mode 100644 runtime.txt
+    create mode 100644 studentprofile/__init__.py
+    create mode 100644 studentprofile/asgi.py
+    create mode 100644 studentprofile/settings.py
+    create mode 100644 studentprofile/urls.py
+    create mode 100644 studentprofile/wsgi.py
+    create mode 100644 students/__init__.py
+    create mode 100644 students/admin.py
+    create mode 100644 students/apps.py
+    create mode 100644 students/migrations/__init__.py
+    create mode 100644 students/models.py
+    create mode 100644 students/tests.py
+    create mode 100644 students/urls.py
+    create mode 100644 students/views.py
+    create mode 100644 templates/account/form.html
+    create mode 100644 templates/students/base.html
+    create mode 100644 templates/students/index.html
+```
+
+Great!! With this we have initialized and commited the whole project to git repository locally on our machine. To track it with git remote using `github`, go to [Github](/https://github.com/) and sign up if you do not have account. But if you do have, then go ahead and make new repository for the project.
+
+We need to connect the project with the remote repository created. So for that let us do some git permutations in the bash or terminal as your choice.
+
+```bash
+$ ls
+    account  manage.py  Procfile  requirements.txt  runtime.txt  studentprofile  students  templates
+$ git remote add origin YOUR_REPOSITORY_FROM_GITHUB
+$ git push -U origin master
+    Enumerating objects: 36, done.
+    Counting objects: 100% (36/36), done.
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (31/31), done.
+    Writing objects: 100% (36/36), 8.04 KiB | 514.00 KiB/s, done.
+    Total 36 (delta 2), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (2/2), done.
+    To github.com:Horlawhumy-dev/studentprofileapp.git
+    * [new branch]      master -> master
+    Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
+
+On successful `git push` like above, you shoule see soemthing like the image below.
+
+
+### Heroku Account Set Up
+To use Heroku free tier plan, an account must be created first. So follow the steps on [Heroku SignUp](/https://id.heroku.com/login) and sign up.
+
+Now we are set for deployment into Heroku server. Please make sure to follow this steps below very well, because a slight mistake could cause your not to be properly deployed and cannot be accessed. I wish you the best!!
+
+Open your bash and follow up.
+
+1. heroku login
+    Your editor must be connected to Heroku and log into the account created earlier.
+
+```bash
+$ heroku login
+     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    heroku: Press any key to open up the browser to login or q to exit:
+    Opening browser to https://cli-auth.heroku.com/auth/cli/browser/37acdb3e-bea6-4b12-8662-ae0136247969?requestor=SFMyNTY.g2gDbQAAAA4xMDUuMTEyLjI5LjE2Nm4GAJBOQBl7AWIAAVGA.QBKX6P4I0X1XZTdjh5TZwMuKvlpIcm4RfaEzoWPEzLk
+    Logging in... done
+    Logged in as {YOUR_EMAIL}
+$ heroku create
+    »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Creating app... done, ⬢ nameless-wildwood-10532
+    https://nameless-wildwood-10532.herokuapp.com/ | https://git.heroku.com/nameless-wildwood-10532.git
+
+$ heroku config:set DISABLE_COLLECTSTATIC=1 
+
+$ git push heroku master
+     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Setting DISABLE_COLLECTSTATIC and restarting ⬢ nameless-wildwood-10532... done, v3
+    DISABLE_COLLECTSTATIC: 1
+
+    (env) C:\Users\user\Desktop\myproject\studentprofile>git push heroku master
+
+    (env) C:\Users\user\Desktop\myproject\studentprofile>git push heroku master
+    Enumerating objects: 41, done.
+    Counting objects: 100% (41/41), done.
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (36/36), done.
+    Writing objects: 100% (41/41), 8.39 KiB | 358.00 KiB/s, done.
+    Total 41 (delta 6), reused 0 (delta 0), pack-reused 0
+    remote: Compressing source files... done.
+    remote: Building source:
+    remote:
+    remote: -----> Building on the Heroku-20 stack
+    remote: -----> Determining which buildpack to use for this app
+    remote: -----> Python app detected
+    remote: -----> Using Python version specified in runtime.txt
+    remote:  !     Python has released a security update! Please consider upgrading to python-3.8.11
+    remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+    remote: -----> Installing python-3.8.6
+    remote: -----> Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+    remote: -----> Installing SQLite3
+    remote: -----> Installing requirements with pip
+    remote:        Collecting asgiref==3.4.1
+    remote:          Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+    remote:        Collecting dj-database-url==0.5.0
+    remote:          Downloading dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
+    remote:        Collecting Django==3.2.6
+    remote:          Downloading Django-3.2.6-py3-none-any.whl (7.9 MB)
+    remote:        Collecting django-heroku==0.3.1
+    remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+    remote:        Collecting gunicorn==20.1.0
+    remote:          Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+    remote:        Collecting psycopg2==2.9.1
+    remote:          Downloading psycopg2-2.9.1.tar.gz (379 kB)
+    remote:        Collecting python-dotenv==0.19.0
+    remote:          Downloading python_dotenv-0.19.0-py2.py3-none-any.whl (17 kB)
+    remote:        Collecting pytz==2021.1
+    remote:          Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+    remote:        Collecting sqlparse==0.4.1
+    remote:          Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+    remote:        Collecting whitenoise==5.3.0
+    remote:          Downloading whitenoise-5.3.0-py2.py3-none-any.whl (19 kB)
+    remote:        Building wheels for collected packages: psycopg2
+    remote:          Building wheel for psycopg2 (setup.py): started
+    remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+    remote:          Created wheel for psycopg2: filename=psycopg2-2.9.1-cp38-cp38-linux_x86_64.whl size=579458 sha256=743eec008801f7305c409c0634747a25b5150def2de34f2f44a4bc6707630458
+    remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-b1pkfpw1/wheels/65/eb/f9/74b53754e764a113930b709eb319a3bd5b681889b5ffbf1aab
+    remote:        Successfully built psycopg2
+    remote:        Installing collected packages: asgiref, dj-database-url, sqlparse, pytz, Django, whitenoise, psycopg2, django-heroku, gunicorn, python-dotenv
+    remote:        Successfully installed Django-3.2.6 asgiref-3.4.1 dj-database-url-0.5.0 django-heroku-0.3.1 gunicorn-20.1.0 psycopg2-2.9.1 python-dotenv-0.19.0 pytz-2021.1 sqlparse-0.4.1 whitenoise-5.3.0
+    remote: -----> Skipping Django collectstatic since the env var DISABLE_COLLECTSTATIC is set.
+    remote: -----> Discovering process types
+    remote:        Procfile declares types -> (none)
+    remote:
+    remote: -----> Compressing...
+    remote:        Done: 57.5M
+    remote: -----> Launching...
+    remote:        Released v6
+    remote:        https://nameless-wildwood-10532.herokuapp.com/ deployed to Heroku
+    remote:
+    remote:  !
+    remote:  ! ## Warning - The same version of this code has already been built: 4231bed480287e5ae75399a71ae69ddb915f2ed9
+    remote:  !
+    remote:  ! We have detected that you have triggered a build from source code with version 4231bed480287e5ae75399a71ae69ddb915f2ed9
+    remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
+    remote:  !
+    remote:  ! If you are developing on a branch and deploying via git you must run:
+    remote:  !
+    remote:  !     git push heroku <branchname>:main
+    remote:  !
+    remote:  ! This article goes into details on the behavior:
+    remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+    remote:
+    remote: Verifying deploy... done.
+    To https://git.heroku.com/nameless-wildwood-10532.git
+    * [new branch]      master -> master
+```
+
+Fantastic!! Our app is live on heroku server by now. But inaccessible due to the database configuration that needs to be done. 
+
+```bash
+$ heroku run python manage.py migrate
+     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Running python manage.py migrate on ⬢ nameless-wildwood-10532... up, run.3237 (Free)
+    Operations to perform:
+    Apply all migrations: account, admin, auth, contenttypes, sessions
+    Running migrations:
+    Applying account.0001_initial... OK
+    Applying contenttypes.0001_initial... OK
+    Applying auth.0001_initial... OK
+    Applying admin.0001_initial... OK
+    Applying admin.0002_logentry_remove_auto_add... OK
+    Applying admin.0003_logentry_add_action_flag_choices... OK
+    Applying contenttypes.0002_remove_content_type_name... OK
+    Applying auth.0002_alter_permission_name_max_length... OK
+    Applying auth.0003_alter_user_email_max_length... OK
+    Applying auth.0004_alter_user_username_opts... OK
+    Applying auth.0005_alter_user_last_login_null... OK
+    Applying auth.0006_require_contenttypes_0002... OK
+    Applying auth.0007_alter_validators_add_error_messages... OK
+    Applying auth.0008_alter_user_username_max_length... OK
+    Applying auth.0009_alter_user_last_name_max_length... OK
+    Applying auth.0010_alter_group_name_max_length... OK
+    Applying auth.0011_update_proxy_permissions... OK
+    Applying auth.0012_alter_user_first_name_max_length... OK
+    Applying sessions.0001_initial... OK
+$ heroku run ptyhon manage.py createsuperuser
+    »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Running python manage.py createsuperuser on ⬢ nameless-wildwood-10532... up, run.5798 (Free)
+    Username (leave blank to use 'u33910'): <your own username>
+    Email address: <your email>
+    Password:
+    Password (again):
+    The password is too similar to the username.
+    This password is too short. It must contain at least 8 characters.
+    This password is too common.
+    Bypass password validation and create user anyway? [y/N]: y
+    Superuser created successfully.
+$ heroku config:set SECRET_KEY="<your secret key>"
+     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Setting SECRET_KEY and restarting ⬢ nameless-wildwood-10532... done, v9
+    SECRET_KEY: django-insecure-4448=<secret key>
+$ heroku config:set YOUR_DEBUG="False"
+     »   Warning: heroku update available from 7.47.3 to 7.56.1.
+    Setting YOUR_DEBUG and restarting ⬢ nameless-wildwood-10532... done, v10
+    YOUR_DEBUG: False
+```
