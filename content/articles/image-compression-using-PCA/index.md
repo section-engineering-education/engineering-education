@@ -4,7 +4,7 @@
 
 Principal Component Analysis, PCA, is a dimensionality reduction method used to reduce the dimensionality of a dataset by transforming the data to a new basis where the dimensions are non-redundant(low covariance) and have high variance. This tutorial aims to make the reader understand the concept of PCA(Principal Component Analysis) mathematically by providing them one of the use cases of PCA, that is, image compression.
 
-## Table of Contents
+### Table of Contents
 
 - Prerequisites.
 - Introduction
@@ -28,13 +28,13 @@ Principal Component Analysis, PCA, is a dimensionality reduction method used to 
 
 - Conclusion.
 
-## Prerequisites
+### Prerequisites
 
 The reader needs to have basic knowledge of algebra(matrix operations and their properties) and statistics.
 
-## Introduction
+### Introduction
 
-### What is Dimensionality Reduction?
+#### What is Dimensionality Reduction?
 
 <b>Dimensionality</b>: The number of input variables or features for a dataset is referred to as its dimensionality.
 
@@ -51,7 +51,7 @@ To explain the concept of dimensionality reduction, I will take an example, cons
 
 </center>
 
-### Motivation for Dimensionality Reduction
+#### Motivation for Dimensionality Reduction
 
 Now, what if we choose a different basis
 
@@ -64,13 +64,13 @@ Now, what if we choose a different basis
 
 Here I have used <b>u<sub>1</sub></b> and <b>u<sub>2</sub></b> as a basis instead of <b>x</b> and <b>y</b>. We can observe that all the points have a minimal component in the direction of <b>u<sub>2</sub></b>(almost noise). It seems that the same data that was initially in R<sub>2</sub>:(x,y) can now be represented in R<sub>1</sub>:(u<sub>1</sub>) by making more an intelligent choice of basis.
 
-### Why not care about u<sub>2</sub>.
+#### Why not care about u<sub>2</sub>.
 
 Because the variance in the data in this direction is minimal (all data points have almost the same value in the u<sub>2</sub> direction), if we were to build a classifier on top of this data, then u<sub>2</sub> would not contribute to the classifier as the points are not distinguishable along this direction. In this way, we have reduced the dimensionality.
 
 > In general, we are interested in representing the data using fewer dimensions such that the data has higher variance along these dimensions.
 
-### Correlation
+#### Correlation
 
 Data correlation is how one set of data may correspond to another set. If two columns are highly correlated(or have high covariance), then one of the two columns is redundant since it is linearly dependent on the other column. We can normalize the correlation to get the correlation coefficient. The formula for the correlation coefficient is defined as :
 
@@ -81,7 +81,7 @@ Data correlation is how one set of data may correspond to another set. If two co
 
 </center>
 
-### Desideratum
+#### Desideratum
 
 In general, we are interested in representing the data using fewer dimensions such that,
 
@@ -89,21 +89,21 @@ In general, we are interested in representing the data using fewer dimensions su
 - The dimensions are linearly <b>independent</b>(uncorrelated)
 - If we want to reduce dimensions by transforming the data into a new basis, that basis should be <b>orthogonal</b>.
 
-## Principal Component Analysis(PCA)
+### Principal Component Analysis(PCA)
 
 > **Principal Component Analysis (PCA)** is a statistical procedure that uses an orthogonal transformation that converts a set of correlated variables to a set of uncorrelated variables.
 
 To explain the concept of PCA mathematically, I will take an example:
 
-### Orthogonal  Transformation
+#### Orthogonal  Transformation
 
-#### Assumptions 
+##### Assumptions 
 
 Let p<sub>1</sub>, p<sub>2</sub>, p<sub>3</sub>,....,p<sub>n</sub> be a set of n orthonormal vectors. Let p be a square matrix of order n such that p<sub>1</sub>, p<sub>2</sub>, p<sub>3</sub>,....,p<sub>n</sub> are the columns of matrix p.
 
 Let x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>,.....,x<sub>n</sub> &isin; R<sup>n</sup> be n data points and let X be a square matrix such that x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>,.....,x<sub>n</sub>  are the rows of a matrix (Assumption: Data is zero-mean and unit variance), why we have this assumption we will come to this at later part.
 
-#### Transformation
+##### Transformation
 
 Now suppose we want to represent x<sub>i</sub> using the new basis P.
 
@@ -115,7 +115,7 @@ In general, the transformed data x'<sub>i</sub> is given by <b>x'<sub>i</sub>  =
 
 <center><b>X' = XP</b></center> 
 
-### Covariance Matrix ( &sum; )
+#### Covariance Matrix ( &sum; )
 
 If X is a matrix with zero mean, then &sum; = 1/m*(X<sup>T</sup> X) is the covariance matrix. In other words,  &sum;<sub>ij</sub> stores the covariance between columns i and j of X.
 
@@ -145,7 +145,7 @@ covariance matrix of transformed data can be written as:
 
 =<b>P<sup>T</sup> &sum; P</b> 
 
-### What do we want from the covariance matrix of transformed data?
+#### What do we want from the covariance matrix of transformed data?
 
 Ideally we want,
 
@@ -154,13 +154,13 @@ Ideally we want,
 
 ​    in other words, we want <b> P<sup>T</sup> &sum; P = D   </b> (where D is a diagonal matrix)
 
-### Few points to ponder
+#### Few points to ponder
 
 - X<sup>T</sup>X  is symmetrical in nature.
 - It will have distinct non-negative eigenvalues, and thus, linearly independent eigenvectors.                           
 - Eigenvectors of a symmetric matrix are orthogonal, which can be turned into an orthonormal basis.                                        
 
-### Principal Components
+#### Principal Components
 
 Now we know that<b> &sum; </b>is a symmetric matrix, and the eigenvectors of <b>&sum;</b> can be used as a suitable orthonormal basis. From the [Diagonalization of matrix](https://math.okstate.edu/people/binegar/3013-S99/3013-l16.pdf) principle, we can say that to make <b>P<sup>T</sup> &sum; P</b> a diagonal matrix, <b>P</b> will be the matrix of eigenvectors of the matrix <b>&sum;</b>. Now we can perform orthonormal transformation:
 
@@ -168,7 +168,7 @@ Now we know that<b> &sum; </b>is a symmetric matrix, and the eigenvectors of <b
 
 The<b> n</b> orthogonal eigenvectors <b>p<sub>j</sub> </b>are the <b>Principal Components</b>.
 
-### Dimensionality Reduction
+#### Dimensionality Reduction
 
 As discussed already, we want to retain uncorrelated dimensions that have maximum variance. Therefore for dimensionality reduction, we will sort the eigenvectors according to eigenvalues in descending order and keep top <b>k</b> eigenvectors to represent <b>x<sub>i</sub></b>:
 
@@ -176,7 +176,7 @@ As discussed already, we want to retain uncorrelated dimensions that have maximu
 
 Where <b>x'<sub>i</sub></b> is a reconstructed vector with <b>k</b> dimensions, earlier we were using <b>n</b> dimensions to represent it. Hence dimensionality is being reduced.
 
-## Use case: Image Compression
+### Use case: Image Compression
 
 (<i>For illustration, I have used Olivetti dataset, the link for the dataset: </i>https://www.kaggle.com/imrandude/olivetti)
 
@@ -270,7 +270,7 @@ plt.show()
 
 ![eigenfaces](face5.png)
 
-### How  is  the  image compressed?
+#### How  is  the  image compressed?
 
 Initially, the image had 4096 dimensions. Let's reduce the dimension from 4096  to 100
 
@@ -293,7 +293,7 @@ Earlier, to store 400 images, we required a 400 X 4096 matrix. Now we need to st
 
 For our example, the images were gray-scale and had a low resolution; that is why we were able to save only 290 KB. Now suppose images have very high resolution with more than one channel, then this method can be used to save lots of space.
 
-### Reconstructing images using less information
+#### Reconstructing images using less information
 
 ```python
 # Reconstructing the first image
@@ -314,7 +314,7 @@ plt.axis('off')
 
 ![face-1](face1.png)
 
-## Conclusion
+### Conclusion
 
 As we have seen in this tutorial, using the concept of PCA, we have compressed the images and stored the eigenfaces. And to retain the image, we reconstruct it using the stored eigenfaces. But we have to note that there is extra calculation overhead for reconstructing the image (matrix multiplication), and also, there will be some reconstruction error. The greater the number of eigenfaces lesser the reconstruction error.
 
