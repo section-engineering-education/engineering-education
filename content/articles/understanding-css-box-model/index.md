@@ -105,8 +105,6 @@ p {
 }
 </style>
 ```
-You can try out the code [here](https://replit.com/)
-
 The above code shows us how to apply spaces between the two boxes. It separates the two boxes with 15px.
 
 ### Basic types of boxes
@@ -155,3 +153,5 @@ To calculate the height, we use the height's pixels plus the top and bottom of t
 
 ### Conclusion
 In this article, we have looked at the box model and, we have seen that it determines the appearance of a box's content, padding, border, and margin.
+
+You can find the code for implementation  [here](https://replit.com/@Terripha/understanding-the-css-box-model#index.html)
