@@ -8,12 +8,12 @@ With Docker, you can build, test, and deploy applications in the form of portabl
 - [Remove all the dangling volumes](#remove-all-the-dangling-volumes)
 - [Removing docker containers and images](#removing-docker-containers-and-images)
 - [Using aliases](#using-aliases)
-- [Inspecting docker containers](#inspecting-docker-containers)
+- [Examining Docker containers](#examining-docker-containers)
 - [Conclusion](#conclusion)
 
 ### Using interactive shell to run a docker container
 
-An interactive shell reads and writes to a user's terminal in most cases. Interactive behavior is enabled when the bash command is used without any non-option arguments, unless the option is a text to read from or the shell is started to read from standard input, in which case positional parameters can be provided.
+In most circumstances, an `interactive shell` reads and writes to the user's terminal. Interactive behavior is enabled when the bash command is used without any non-option arguments, unless the option is a text to read from or the shell is started to read from standard input, in which case positional parameters can be provided.
 
 Assume you have used the following command to get an Ubuntu image from Docker Hub:
 
@@ -21,7 +21,7 @@ Assume you have used the following command to get an Ubuntu image from Docker Hu
 sudo docker pull ubuntu
 ```
 
-Now you want to use an interactive shell to execute the Ubuntu container. To change or install packages, you will use bash on the Ubuntu OS after obtaining a Docker Ubuntu image from the official `Docker registry`. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
+Now you want to use an interactive shell to execute the Ubuntu container. After downloading a Docker Ubuntu image from the official `Docker registry`, you will utilize bash on the Ubuntu OS to edit or install packages. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
 
 To accomplish this, use the following command:
 
@@ -31,13 +31,12 @@ sudo docker run -it ubuntu
 
 ### Remove all the dangling volumes
 
-Docker Volumes may be mounted with Docker Containers to share files and directories among many Docker Containers. When you delete Docker Containers, the Docker Volumes linked with them remain. Docker Volumes are exactly what they sound like. A list of all dangling docker volumes may be obtained with the following command:
-
+Docker Volumes may be mounted with Docker Containers to share files and directories among many Docker Containers. When you delete Docker Containers, the Docker Volumes linked with them remain. Volumes in Docker are precisely what they sound like. With the following command, you can get a list of all dangling docker volumes:
 ```bash
 sudo docker volume ls -f dangling=true
 ```
 
-> While deleting docker volumes, you may use the `-v` flag to avoid leaving behind dangling volumes.
+> To avoid leaving dangling volumes while deleting docker volumes, use the `-v flag`.
 
 ```bash
 sudo docker rm -v <name-of-the-container>
@@ -45,7 +44,7 @@ sudo docker rm -v <name-of-the-container>
 
 To list the docker containers that are now executing, use the following sequence of instructions. Stop the specific container and remove it with the -v flag to prevent leaving dangling volumes behind.
 
-> Run the following commands one at a time.
+>One by one, run the commands below.
 
 ```bash
 sudo docker container ls
@@ -77,14 +76,14 @@ There are times when we must repeat the same command-line instruction, which is 
 
 We may save time and effort by utilizing an `alias command` to avoid typing or duplicating the same command over and over again. Aliases allow us to execute a command or a group of instructions using a pre-defined `string` that we can tailor to our liking.
 
-Simply create and use aliases in your `/.bashrc` file and mention them to manage utilizing aliases.
+To handle aliases, simply create and use aliases in your `/.bashrc file` and mention them.
 
 ```bash
 alias dockrm='docker rm'
 alias docklist='docker ps -a'
 ```
 
-### Inspecting docker containers 
+### Examining Docker containers 
 
 The Docker inspect command may be used to acquire information about a specific docker container. It provides you with all of the information about the container, including the path, creation date, status, driver, and so on. The container name is required to check the container.
 
@@ -95,4 +94,4 @@ sudo docker container <name-of-the-container>
 
 ### Conclusion
 
-In this article, we learned ways of managing Docker containers using the command line interface. We accomplished this by running a docker container in interactive shell, removing all the dangling volumes, removing docker containers and images, inspecting docker containers, and finally by using aliases. I would urge the reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded docker containers, images, and volumes.
+We learned about using the command line interface to manage Docker containers in this article. We accomplished this by running a docker container in interactive shell, removing all the dangling volumes, removing docker containers and images, inspecting docker containers, and finally by using aliases. I would urge the reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded docker containers, images, and volumes.
