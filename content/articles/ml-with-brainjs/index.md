@@ -25,7 +25,10 @@ The main goal of this article is to provide beginners, especially those who are 
 The project will be based on the JavaScript machine learning library called [Brain.js](https://brain.js.org/#/).
 
 ### Project Setup
-Run `npm init -y` to create an empty `package.json` file. Next, execute the command `npm install brain.js` in your terminal to install the Brain.js package. In the root folder of the application, we will have the `index.js` file, which contains the driver called for application. Will also have a file that contains the training data for our neural network. The training data will be in the form of JSON, so we will create a `data.json` file. The final project structure should look like this:
+Run `npm init -y` to create an empty `package.json` file. Next, execute the command `npm install brain.js` in your terminal to install the Brain.js package. 
+
+In the application's root folder, we will have the `index.js` file, which contains the driver code for the application. Will also have a file that contains the training data for our neural network. The training data will be in the form of JSON, so we will create a `data.json` file. 
+The final project structure should look like this:
 
 ```bash
 brainjs
