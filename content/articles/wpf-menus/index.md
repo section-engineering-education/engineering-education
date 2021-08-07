@@ -1,19 +1,19 @@
-The menu, also referred to as the main menu because only one generally exists in the program, is one of the most common elements of a Windows application. The menu is useful because it provides a lot of options in a little amount of space, and while Microsoft is promoting the Ribbon as a solution for the good old menu and toolbars, they still have a place in any competent developer's toolbox.
+The WPF menu, also referred to as the main menu because only one generally exists in the program, is one of the most common elements of a Windows application. The menu is useful because it provides a lot of options in a little amount of space, and while Microsoft is promoting the Ribbon as a solution for the good old menu and toolbars, they still have a place in any competent developer's toolbox.
 
 The menu is a nice control that comes with WPF for constructing menus. It's quite easy to add things to it; simply add MenuItem components to it, and each MenuItem can have many sub-items, enabling you to construct hierarchical menus similar to those seen in many Windows applications.
 
 ### Prerequisites
-1. [ Visual studio 2019](https://visualstudio.microsoft.com/downloads/)
+1. [Visual studio 2019](https://visualstudio.microsoft.com/downloads/)
 2. Basic knowledge of the WPF
 
-### Table of content
+### Table of contents
 - [Creating a WPF application project](#creating-a-wpf-application-project)
 - [Creating a WPF Menu](#creating-a-wpf-menu)
-- [Setting WPF Menu Control Properties](#setting-wpf-menu-control-properties)
-- [Adding WPF Menu Items](#adding-wpf-menu-items)
-- [Adding Icons and Checkboxes to the MenuItem](#adding-icons-and-checkboxes-to-the-menuitem)
-- [Adding an Event Handler to a MenuItem](#adding-an-event-handler-to-a-menuitem)
-- [Creating a WPF Menu Control at Run-time](#creating-a-wpf-menu-control-at-run-time)
+- [Setting WPF Menu control properties](#setting-wpf-menu-control-properties)
+- [Adding WPF Menu items](#adding-wpf-menu-items)
+- [Adding icons and checkboxes to the MenuItem](#adding-icons-and-checkboxes-to-the-menuitem)
+- [Adding an event handler to a MenuItem](#adding-an-event-handler-to-a-menuitem)
+- [Creating a WPF Menu control at run-time](#creating-a-wpf-menu-control-at-run-time)
 
 ### Creating a WPF application project
 Open your Visual Studio 2019 and search for WPF Application:
@@ -36,7 +36,7 @@ Our menu is located at the centre of the application by defalt but we can positi
 <Menu Name="myMenu" Height="25" Width="250" Margin="5, 5" VerticalAlignment="Top" HorizontalAlignment="left" Background="green">
 </Menu>
 ```
-### Setting WPF Menu Control Properties
+### Setting WPF Menu control properties
 There are three ways to customize the attributes of a menu control. You may utilize the Properties windows, manually set properties in XAML, or use WPF code to set properties at runtime.
 
 Let's look at how to set the properties using the Properties window:
@@ -54,7 +54,7 @@ Let's alter the text property by adding the `FontFamily` and the `FontSize` in t
     </Menu>
 ```
 
-### Adding WPF Menu Items
+### Adding WPF Menu items
 A menu item is simply what we add to our menu as a heading. When you click a MenuItem, it usually opens a sub-menu or prompts a program to execute a command.
 
 ### Syntax
@@ -76,7 +76,7 @@ We shall have an output that looks like this:
 
 ![Menu Items](/engineering-education/wpf-menus/menuItem.png)
 
-Incase we have different categoties of sub-menu items, we use  `<Separator />` element to seperate the two categories:
+Incase we have different categories of sub-menu items, we use  `<Separator/>` element to seperate the two categories:
 
 ```cs
 <Separator/>
@@ -98,7 +98,7 @@ We shall have an output that looks like this:
 
 ![Sub Menu Items](/engineering-education/wpf-menus/SubMenuItems.png)
 
-### Adding Icons and Checkboxes to the MenuItem
+### Adding icons and checkboxes to the MenuItem
 Menu icons are important in identifying menu items easily. It saves time to spot an item and know what it does. Checkboxes, on the other hand, can toggle some features of the menu items on and off.
 
 Let's look at an example of how to add an Icon and checkboxes:
@@ -128,7 +128,7 @@ private void myMenu_Click(object sender, EventArgs e)
 ```
 From the code above, the message is displayed when the user clicks the menu item.
 
-### Creating a WPF Menu Control at Run-time
+### Creating a WPF Menu control at run-time
 In this section, we first create an instance of a class called Menu:
 ```cs
 Menu myMenu = new Menu();
@@ -155,4 +155,4 @@ myMenu.Items.Add(myItem); //it adds the menu Item to the Main Menu
 ```
 
 ### Conclusion
-In this article, we looked at how to construct menus in a WPF application using the Menu and MenuItem controls. We have also looked at how to set the menu properties, adding icons and checkboxes, and adding menu items.
+In this article, we looked at how to construct menus in a WPF application using the `Menu` and `MenuItem` controls. We have also looked at how to set the menu properties, adding icons and checkboxes, and adding menu items.
