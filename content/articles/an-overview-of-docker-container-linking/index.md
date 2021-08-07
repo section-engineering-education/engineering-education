@@ -1,5 +1,21 @@
-Docker consists of a linking system that allows multiple containers to be linked together. This linking system allows connection information to be sent from a source container to a recipient container.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-docker-container-linking/
+title: An Overview of Docker Container Linking
+description: This article will take you through Docker container linking and explain when you should use it. It will also explain how it works and provide some of its advantages and disadvantages.
+author: arthur-muthee
+date: 2021-08-07T00:00:00-13:00
+topics: [containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/an-overview-of-docker-container-linking/hero.png
+    alt: Docker Container Linking Hero Image
+---
+Docker consists of a linking system that allows multiple containers to be linked together. This linking system allows connection information to be sent from a source container to a recipient container.
+<!--more-->
 This article will take readers through Docker container linking. It will provide an overview of how Docker container linking works and explain how communication works across links.
 
 ### Introduction to Docker container linking
@@ -68,3 +84,5 @@ This article has provided the basics of Docker container linking. The following 
 
 Happy learning!
 
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
