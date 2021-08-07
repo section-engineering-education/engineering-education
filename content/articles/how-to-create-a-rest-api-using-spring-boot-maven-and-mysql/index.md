@@ -2,72 +2,94 @@
 
 ![header-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/hero.png)
 
-### Introduction
-One of the benefits of REST APIs is the flexibility and scalability it gives to our application. Because the client and server are independent, the REST protocol separates the data storage and the UI from the server. With this, our application can be scaled quickly primarily due to the separation of concerns(the separation of the frontend from the server), which helps our application to be loosely coupled. This offers flexibility in modifying our code in the future as developers can easily integrate restful API without much-added work.
+One of the benefits of REST APIs is the flexibility and scalability it gives to our application. Since the client and server are independent, the REST protocol separates the data storage from the User Interface in the server.
 
-### Goal of the tutorial
-This article teaches how to create a spring boot restful API that performs CRUD operations by making a database call to a MySQL database using Hibernate(an implementation of JPA(Java Persistence API). The application we will be building in this tutorial is an employee management system that registers employees, read, update and delete an employee's information. You will also learn how to document your APIs using Swagger UI.
+With this, our application can be scaled quickly primarily due to the separation of concerns (the separation of the frontend from the server), which helps our application to be loosely coupled. This also offers flexibility in modifying our code in the future, as developers can easily integrate RESTful API without much-added work.
 
-### Key Takeaways
+### Goal
+This article teaches how to create a Spring Boot RESTful API that performs CRUD operations by making a database call to a MySQL database using Hibernate - an implementation of JPA (Java Persistence API).
 
-- How to create and set up a spring boot application with a tomcat server.
-- MySQL Database Configuration in a Spring Boot project.
+In this tutorial, we will be building an Employee management system that registers employees, read, update and delete an employee's information.
+
+You will also learn how to document your APIs using Swagger UI.
+
+### Key takeaways
+- How to create and set up a Spring Boot application with a tomcat server.
+- MySQL database Configuration in a Spring Boot project.
 - You will learn how to implement Object Relational Mapping using Hibernate.
 - Maven for dependency management.
-- Exception Handling in Java.
-- How to consume a rest API using postman.
+- Exception handling in Java.
+- How to consume a REST API using postman.
 - How to document API using Swagger.
 
 ### Prerequisites
-
 To fully understand this tutorial, you are required to have the following in place:
 - Good understanding of Java.
-- At least fundamental knowledge of the Spring framework and Spring Boot. However I will explain everything in detail, so if you are new to the Spring framework don’t be afraid I will be your friend on this journey.
-- [Java Development Kit(JDK)](https://www.oracle.com/java/technologies/javase-downloads.html) installed or click on the link to install.
-- [Postman](https://www.postman.com/downloads) installed or click on the link to download and install.
-- [Maven](https://maven.apache.org/download.cgi) installed or click on the link to download and install.
-- [IntelliJ](https://www.jetbrains.com/idea/download/) installed or click on the link to install. You can use any other IDEA of choice.
+- A little understanding of the Spring framework and Spring Boot.
+- Java Development Kit (JDK) installed or click on [this](https://www.oracle.com/java/technologies/javase-downloads.html) link to install.
+- Postman API testing tool installed or click on [this]((https://www.postman.com/downloads)) link to download and install.
+- Maven dependency manager installed or click on [this](https://maven.apache.org/download.cgi) link to download and install.
+- IntelliJ code editor installed or click on [this](https://www.jetbrains.com/idea/download/) link to install.
 
 ### Project Initialization and Setup
+There are different ways to set up a new Spring Boot application. We will be using [***Spring Initializer***](https://start.spring.io).
 
-There are different ways to set up a new spring boot application. One is using the [***spring initializer.***](https://start.spring.io).
+#### Method 1: Setup Using IntelliJ
+In this tutorial, we are going to learn how to initialize a Spring Boot project using IntelliJ.
 
-#### Project Initialization and Setup Using IntelliJ
+Intellij has inbuilt extensions to create a Spring Boot project using Spring initializer, which makes it easy to set up a project in no time at all.
 
-In this tutorial, we are going to learn how to initialize a spring boot project using IntelliJ. Intellij has an inbuilt feature to create a spring boot project that uses a Spring initializer which makes it easy to set up a project in no time at all. To get started Run IntelliJ IDEA and click create new project from ``File > New > Project``.
+To get started Run `IntelliJ IDEA` and click to create a new project from `File > New > Project`.
 
-The next step is to select Spring initializer(highlighted with green. If you look at the section highlighted with red you will realize that we are connecting to the spring initializer on the web.
+The next step is to select `Spring initializer` (highlighted with green.
 
 ![IntelliJ-Spring-initializer](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/intellij-spring-initializer.png)
-Enter the Maven project properties of the project and click next
-- Give the project a name. Let's call it "employee_app".
-- Choose the location where you want your project to reside. I’m going to keep mine on the desktop as you can see.
-- For Type of project, Choose  Maven. The language for this project will be java, so were are going to select Java.
-- Let's name the group “com.lekwacious” 
-- Let's call the artifact "employee_app"
-- Select the Java SDK version. The java SDK version installed on my computer is 16.
-- Select your Java version too.
-- We are going to package our project as a jar file. So I have selected jar as the packaging. JAR is an acronym for  Java ARchive. It comes in a ZIP file format and is used for aggregating many files into one. 
 
-Select the Spring Boot version(I have selected 2.5.2) and other required dependencies for your project. The correct Spring Boot Starters will be added based on the selected dependencies added in the ``pom.xml`` file. After selecting these dependencies click the finish button.
+> NOTE: If you look at the the highlighted in Red, you will realize that we are connecting to the Spring initializer on the web.
 
- ![select-dependencies-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/select-dependencies.png)
+Follow the below steps to set it up:
+- Enter the Maven project properties and click `Next`
+- Give the project a name. Let's call it `employee_app`.
+- Choose the location where you want your project to reside.
+- For `Type` of project, Choose `Maven`.
+- The `Language` for this project will be `Java`.
+- Let's name the `Group` as `com.lekwacious`.
+- Let's call the `Artifact` as `employee_app`
+- Select the Java `SDK version` using the dropdown list.
+- Select your `Java version` too.
+- We are going to package our project as a `Jar` file.
+
+JAR is an acronym for Java ARchive. It comes in a ZIP file format and is used for aggregating many files into one. 
+
+Select the Spring Boot version (I've selected 2.5.2) and other required dependencies for your project. The correct Spring Boot starters will be added based on the selected dependencies added in the `pom.xml` file. After selecting these dependencies click the `Finish` button as shown:
+
+![select-dependencies-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/select-dependencies.png)
 
 This project will have three dependencies namely:
-- Spring web: Makes you project a web application. The spring-boot-starter-web dependency transitively pulls in all dependencies related to web development. uses Spring MVC, REST, and Tomcat as a default embedded server.
-- Spring Data JPA: Allow us to persist data in SQL databases using Spring Data and Hibernate which is an implementation of the JPA. JPA stands for Java Persistent API, It's a specification that is part of Java EE(Enterprise Edition) and defines an API for object-relational mappings and for managing persistent objects and relational databases. It is considered a standard approach for Object Relational Mapping. Being that JPA is a specification, it does not perform any operation by itself, as such requires implementation. Hibernate is one of those ORM(Object Relational Mapping) tools that implements JPA. Others include TopLink, MyBatis.
-- MySQL Driver: It is a dependency that connects the MySQL database to a spring boot application.
+- `Spring web`: Makes your project a web application. The `spring-boot-starter-web` dependency transitively pulls in all dependencies related to web development. It uses Spring MVC, REST, and Tomcat as a default embedded server.
+- `Spring Data JPA`: Allow us to persist data in SQL databases using Spring Data and Hibernate, which is an implementation of the JPA.
 
-#### Project Initialization and Setup Using [**Spring Initializer***](https://start.spring.io/)
+JPA is a specification that is part of Java EE(Enterprise Edition) and defines an API for Object-Relational Mappings (ORM) and for managing persistent objects and relational databases. It is considered a standard approach for Object Relational Mapping.
 
-Alternatively, If you are not using IntelliJ you can use the [***Spring Initializer***](https://start.spring.io/) to set up your project. Enter the Maven project properties of the project including the dependencies as we did above and click on the generate button. This will generate a zip file and download it for you. Unzip it and open in your favorite IDEA and sync the dependencies with Maven.
+Being that JPA is a specification, it does not perform any operation by itself. Hibernate is one of those ORM (Object Relational Mapping) tools that implements JPA. Others include TopLink, MyBatis.
 
- ![spring-initializer-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/spring-initializer.png)
+- `MySQL Driver`: It is a dependency that connects the MySQL database to a spring boot application.
 
- ### Maven Dependency Management
-The ``pom.xml`` file houses the dependencies, and Maven plugins in our project.
+#### Method 2: Setup Using [**Spring Initializer**](https://start.spring.io/)
 
-The dependency section simply contains the dependecies we added to the project namely  MySQL Driver, Spring Data JPA and SpringWeb. 
+Alternatively, if you are not using IntelliJ you can use the [***Spring Initializer***](https://start.spring.io/) to set up your project.
+
+Enter the `Maven project` properties including the dependencies as we did above and click on the `Generate` button. This will generate a `zip` file and download it for you. Unzip it and open in your favorite code editor and sync the dependencies with Maven.
+
+![spring-initializer-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/spring-initializer.png)
+
+### Maven Dependency Management
+The `pom.xml` file houses the dependencies, and Maven plugins in our project.
+
+The dependency section simply contains the dependencies we added to the project namely MySQL Driver, Spring Data JPA and SpringWeb.
+
+Here is a sample of `pom.xml` file:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -121,30 +143,38 @@ The dependency section simply contains the dependecies we added to the project n
 </project>
 ```
 
-### Configuring  MySQL, JPA, Hibernate
-In the resources folder within the ``src/main`` folder, open ``application.properties`` file and write the below properties.
+### Configuring MySQL, JPA, and Hibernate
+In the resources folder within the `src/main` folder, open `application.properties` file and write the below properties.
 
 ```properties
-spring.datasource.url= jdbc:mysql://localhost:3306/employee_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
-spring.datasource.username= root
-spring.datasource.password= mypassword
+spring.datasource.url=jdbc:mysql://localhost:3306/employee_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.username=root
+spring.datasource.password=mypassword
 
 server.port=8081
 
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
 ```
 
-- ``spring.datasource.url``:  Springboot uses the URL along with the credentials(in this case are the MySQL port(3306, the database name(employee_db)) to establish a database connection to our MySQL database.
-- ``spring.datasource.username`` & ``spring.datasource.password`` properties are the MySQL database username and password. Please use the correct username and password of the MySQL server installed on your computer.
-- I configure the port of our Spring Boot application to run on 8081. The default Spring boot port is 8080. I just showed you that you can configure the port to run on any port of your choice.
-- ``Springboot.jpa.properties.hibernate.dialect``: The SQL dialect makes Hibernate generate better SQL for the chosen database.
+- `spring.datasource.url`: Springboot uses the URL along with the credentials (Here, the MySQL is configured with port 3306, and the database name as `employee_db`) to establish a database connection to our MySQL database.
+- `spring.datasource.username` & `spring.datasource.password` properties are the MySQL database username and password. (Please use the correct username and password of the MySQL server installed on your computer.)
+- The default Spring boot port is `8080`. I've configured the port of our Spring Boot application to run on `8081`.
+- `Springboot.jpa.properties.hibernate.dialect`: The SQL dialect makes Hibernate generate better SQL for the chosen database.
+- We have set out DDL (Data definition language) to `update`.
 
-- We have set out DDL(Data definition language) to update. The update operation for example will attempt to add new columns, constraints, etc but will never remove a column or constraint that may have existed previously but no longer does as part of the object model from a prior run. Other values include ``create-drop`` drops objects on the schema leaving an empty database anytime you rerun your application. It is suitable when you are running a test.
+For example, the `update` operation will attempt to add new columns, constraints, etc., but will never remove a column or constraint that may have existed previously, but no longer is as part of the object model.
 
+- Other values include `create-drop` drops objects on the schema leaving an empty database anytime you rerun your application. It is suitable when you are running a test.
 
-### The EntryPoint of the Application
-By simply initializing your project, you are application is ready to be run. So simple? Yea, that's the beauty of [spring boot](https://spring.io/projects/spring-boot), it makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run". Locate the ``EmployeeAppApplication.java`` file in the ``src/main/java/com/lekwacious/employee_app`` folder.
+### Entry point of the application
+By simply initializing your project, your application is ready to be run.
+
+So simple? yeah.
+
+That's the beauty of [spring boot](https://spring.io/projects/spring-boot), it makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+Locate the `EmployeeAppApplication.java` file in the `src/main/java/com/lekwacious/employee_app` folder.
 
 ```java
 package com.lekwacious.employee_app;
@@ -162,31 +192,47 @@ public class EmployeeAppApplication {
 }
 ```
 
-Spring boot applications should have an entry point class with the public static void main(String[] args) method, which is annotated with the ``@SpringBootApplication`` annotation and will be used to bootstrap the application. It is the main method which is the entry point of the JVM to run your application.
+Spring boot applications should have an entry point class with the `public static void main(String[] args)` method, which is annotated with the `@SpringBootApplication` annotation and will be used to bootstrap the application.
 
-The ``@SpringBootApplication`` annotation informs the Spring framework, when launched, to scan for Spring components inside this package and register them. It also tells Spring Boot to enable Autoconfiguration, a process where beans are automatically created based on classpath settings, property settings, and other factors. The @SpringBootApplication annotation has composed functionality from three annotations namely ``@EnableAutoConfiguration``, ``@ComponentScan``, and ``@Configuration``. So we can say it is the shortcut for the three annotations.
+When launched, the `@SpringBootApplication` annotation informs the Spring framework to scan for Spring components inside this package and register them.
 
-Now run the application. You can do this by either clicking on the play button on your IDEA or running this command: ``mvn spring-boot:run`` on your command line. Navigate to the root of the project via the command line and execute the command. Boom! Tomcat started on port 8081 which is the port we configured our application to run.
+It also tells Spring Boot to enable `Autoconfiguration`, a process where beans are automatically created based on classpath settings, property settings, and other factors.
 
- ![run-app-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/run-app.png)
+The `@SpringBootApplication` annotation is composed of three other annotations namely `@EnableAutoConfiguration`, `@ComponentScan`, and `@Configuration` that helps in automatic configuration. So, we can call it a shortcut for the three annotations.
 
+Now, run the application. You can do this by either clicking on the play button on your IDEA or running this command: `mvn spring-boot:run` on your command line.
 
- ### Project Structure
+Navigate to the root of the project via the command line and execute the command.
 
-We are going to structure our code into four, so create four packages as follows:
-- **Data:** This subpackage will house our Data access layer, which will include our Domain and repository.
+Boom! Tomcat started on port `8081`.
+
+![run-app-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/run-app.png)
+
+### Project structure
+We are going to structure our code into four packages as follows:
+- **Data:** This subpackage will house our Data access layer, that will include our Domain and repository.
 - **Service:** This is where our business logic will be.
 - **Web:** This package will house our controllers.
-- **Exceptions:** The is where all our custom exceptions will be. Throwing exceptions is very important in building a resilient system.
+- **Exceptions:** The is where all our custom exceptions will be.
 
-This structure will ensure that when a client makes a call to access a resource in the application, such client does not have direct access to our database, rather request is directed to our controller, Our controller calls the right service(the business logic) which then through our repository makes a call to our database. This architecture also ensures the separation of concerns. Below is the project Structure.
+> Throwing exceptions is very important in building a resilient system.
 
- ![project-structure-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/project-structure.png)
+This structure will ensure that the client does not have direct access to our database, rather the request is redirected via controllers.
 
-### Creating The Domain Class
+Controller calls the right service (the business logic) using repository, which in turn makes a call to our database. This architecture also ensures the separation of concerns.
 
-In the data package, create another package called models.
-Inside the ``models`` package, create an ``enum class`` called Department. ``Enum`` is simply a constant in Java. The properties are implicitly final and static. Enums are primarily used to put all the constants that are not going to change eg days of the week. The department enum class should contain the following code:
+Below is the project structure:
+
+![project-structure-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/project-structure.png)
+
+### Creating the domain class
+In the data `package`, create another package called `models`.
+
+Inside the `models` package, create an `enum class` called `Department`.
+
+> `Enum` is used as a constant in Java. The properties are implicitly `final` and `static`. Enums are primarily used to specify all the constants that are not going to be mutated. For example, the days of the week.
+
+The department enum class should contain the following code:
 
 ```java
 package com.lekwacious.employee_app.data.models;
@@ -196,152 +242,156 @@ public enum Department {
     MARKETING,
     ENGINEERING
 }
-
 ```
- Create another class called Employee with the following code:
- ```java
- package com.lekwacious.employee_app.data.models;
+
+Create another class called `Employee` with the following code:
+
+```java
+package com.lekwacious.employee_app.data.models;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String firstName;
-    private String lastname;
-    private String phoneNumber;
-    private String email;
-    private double salary;
-    @Enumerated(EnumType.STRING)
-    private Department department;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer id;
+private String firstName;
+private String lastname;
+private String phoneNumber;
+private String email;
+private double salary;
+@Enumerated(EnumType.STRING)
+private Department department;
 
-    public Employee(){}
+public Employee(){}
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", salary=" + salary +
-                ", department=" + department +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Double.compare(employee.salary, salary) == 0 && Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastname, employee.lastname) && Objects.equals(phoneNumber, employee.phoneNumber) && Objects.equals(email, employee.email) && department == employee.department;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastname, phoneNumber, email, salary, department);
-    }
+public Integer getId() {
+    return id;
 }
 
- ```
-- ``@Entity`` annotation tells Spring that the Employee class which is simply a POJO(Plain Old Java Object) should be persisted on the database.
-- ``@Id`` annotation makes the id field the primary key of the employee table when it is persisted on the database.
-- We have used the ``@GeneratedValue`` annotation to specify the primary key generation strategy. The value ``auto`` instructs the database to automatically generate a value for the field. Therefore the Id will be generated automatically.
-- ``@Enumerated`` annotation converts our enum into a String.
-- Next, we created a no-argument constructor, setters, and getters for our field, and override the toString,  equals, and hashCode methods.
+public void setId(Integer id) {
+    this.id = id;
+}
+
+public String getFirstName() {
+    return firstName;
+}
+
+public void setFirstName(String firstName) {
+    this.firstName = firstName;
+}
+
+public String getLastname() {
+    return lastname;
+}
+
+public void setLastname(String lastname) {
+    this.lastname = lastname;
+}
+
+public String getPhoneNumber() {
+    return phoneNumber;
+}
+
+public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+}
+
+public String getEmail() {
+    return email;
+}
+
+public void setEmail(String email) {
+    this.email = email;
+}
+
+public double getSalary() {
+    return salary;
+}
+
+public void setSalary(double salary) {
+    this.salary = salary;
+}
+
+public Department getDepartment() {
+    return department;
+}
+
+public void setDepartment(Department department) {
+    this.department = department;
+}
+
+@Override
+public String toString() {
+    return "Employee{" +
+            "id=" + id +
+            ", firstName='" + firstName + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", phoneNumber='" + phoneNumber + '\'' +
+            ", email='" + email + '\'' +
+            ", salary=" + salary +
+            ", department=" + department +
+            '}';
+}
+
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Employee employee = (Employee) o;
+    return Double.compare(employee.salary, salary) == 0 && Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastname, employee.lastname) && Objects.equals(phoneNumber, employee.phoneNumber) && Objects.equals(email, employee.email) && department == employee.department;
+}
+
+@Override
+public int hashCode() {
+    return Objects.hash(id, firstName, lastname, phoneNumber, email, salary, department);
+}
+}
+```
+
+- `@Entity` annotation tells Spring that the `Employee` class which is simply a POJO (Plain Old Java Object) which should be persisted on the database.
+- `@Id` annotation makes the `id` field the primary key of the employee table when it is persisted on the database.
+- We have used the `@GeneratedValue` annotation to specify the primary key generation strategy. The value `auto` instructs the database to automatically generate a value for the field. Therefore, the `Id` will be generated automatically.
+- `@Enumerated` annotation converts the enum into a String.
+- Next, we created a no-argument constructor, setters and getters for our field, and override the `toString`, `equals`, and `hashCode` methods.
 
 
-### Adding Additional Maven Dependencies
+### Adding additional Maven dependencies
+In this section, we are going to add additional dependencies to the project.
 
-In this section, we are going to add additional deficiencies to the project. Go to [***Maven Repository***](https://mvnrepository.com/) search for the following dependencies and add them to the dependencies section of the ``pom.xml`` file:
+Go to [***Maven Repository***](https://mvnrepository.com/) and search for the following dependencies and add them to the dependencies section of the `pom.xml` file:
 - **Javax validation:** It is used to validate the fields of an object before persisting to the database.
 - **Io springfox:** A dependency that will allow us to document our APIs.
-- Add the two dependencies below into the dependencies tag of the ``pom.xml``.
+- Add the two dependencies below into the dependencies tag of the `pom.xml`.
 - Sync the newly added dependencies to the application.
 
 ```xml
-
-    <dependencies>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-    </dependencies>
-
+<dependencies>
+    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>3.0.0</version>
+    </dependency>
+</dependencies>
 ```
 
 ### Payloads
+Inside the data package, create a package with the name `payloads`.
 
-Inside the data package, create a package with the name payloads. This package will have two sub-packages “request” and “response” to handle our request payloads and response payloads respectively.
-#### Request Payloads
-Inside the request package create an ``EmployeeRequest class`` with the following code:
+This package will have two sub-packages `request` and `response` to handle our request payloads and response payloads respectively.
+
+#### Request payload
+Inside the request package create an `EmployeeRequest` class with the following code:
+
 ```java
 package com.lekwacious.employee_app.data.payloads.request;
+
 import com.lekwacious.employee_app.data.models.Department;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -416,15 +466,15 @@ public class EmployeeRequest {
         this.department = department;
     }
 }
-
 ```
-- ``@NotBlank`` and ``@NotNull``: These two annotation checks and validate the fields where they are mapped to ensure the values are not blank and null respectively.
-- ``@Email``: It validates that the annotated field is a valid email address.
+
+- `@NotBlank` and `@NotNull`: These two annotation checks and validate the fields where they are mapped to ensure the values are not blank and null respectively.
+- `@Email`: It validates that the annotated field is a valid email address.
 - Next, we created setters and getters for the class's instance variables.
 
-
 #### Response payload
-Inside the response package create an ***MessageReponse class*** with the following code:
+Inside the response package create an `MessageReponse` class with the following code:
+
 ```java
 package com.lekwacious.employee_app.data.payloads.response;
 
@@ -445,12 +495,15 @@ public class MessageResponse {
     }
 }
 ```
-- The above code is simply a POJO with one instance variable, a constructor, a mutator(setters), and an accessor(getters).
 
+- The above code is a simple POJO with one instance variable, a constructor, a mutator(setters), and an accessor(getters).
 
-### The Repository
+### Repository
+Inside the data package, create a sub-package called  `repository`. Then, create an interface called `EmployeeRepository` that extends `JpaRepository`.
 
-Inside the data package, create a sub-package called  ``repository``. Then create an interface called ``EmployeeRepository`` that extends ``JpaRepository``. The JpaRepository is generic so it takes a model class(Type) and the data type of the primary key. Write the following code in the ``EmployeeRepository interface``.
+The `JpaRepository` is generic, so it takes a model class (Type) and the data type of the primary key.
+
+Write the following code in the `EmployeeRepository` interface:
 
 ```java
 package com.lekwacious.employee_app.data.repository;
@@ -462,14 +515,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 }
-
-
 ```
-- ``@Repository`` makes the interface a bean. It is treated identically to the ``@Component`` annotation, therefore it is a specialization of the ``@Component`` annotation. Beans are simply Java classes that spring knows.
-- By extending the JpaRepository interface we inherit the “save”, “findAll”, “findById” etc methods.
 
-### The Employee Service
-Create a service package under the employee_app package. This package is going to house our business logic. To ensure more separation of concerns we are going to divide our service into two,  an interface where the methods of our business logic will be declared and a concrete class that implements the interface. Create an interface with the name ``employeeService`` with the following code:
+- `@Repository` makes the interface a bean. It is treated identically to the `@Component` annotation, therefore it is a specialization of the `@Component` annotation. Beans are simply Java classes that spring knows.
+- By extending the `JpaRepository` interface we inherit the `save`, `findAll`, `findById` methods.
+
+### Employee service
+Create a `service` package under the `employee_app` package.
+
+This package is going to house our business logic. To ensure more separation of concerns, we are going to divide our service into two - an interface where the methods of our business logic will be declared and a concrete class that implements the interface.
+
+Create an interface with the name `employeeService` with the following code:
+
 ```java
 package com.lekwacious.employee_app.service;
 
@@ -489,13 +546,13 @@ public interface EmployeeService {
     Employee getASingleEmployee(Integer employeeId);
     List<Employee> getAllEmployee();
 }
-
 ```
-- ``@Component`` annotation is a shorthand for the ``@Bean`` annotation. It registers the EmployeeService interface as a bean in the application context and makes it accessible during classpath scanning. 
+
+- `@Component` annotation is a shorthand for the `@Bean` annotation. It registers the EmployeeService interface as a bean in the application context and makes it accessible during classpath scanning. 
 - We created five methods that allow us to create, update, get and delete employees.
 
 
-Next, create an **EmployeeServiceImpl class** that implements the **EmployeeService interface**. Write the following code:
+Next, create an `EmployeeServiceImpl` class that implements the `EmployeeService` interface as shown:
 
 ```java
 package com.lekwacious.employee_app.service;
@@ -564,17 +621,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         else throw new ResourceNotFoundException("Employee", "id", employeeId);
     }
 }
-
 ```
 
-- **@Service** is specifically a collection of library methods that manage one aspect of an application business logic. It is a specialized form of ``@Component``. With the ``@Service`` annotation, the class is registered in the application context and accessible during classpath scanning.
-- The ``@autowired`` annotation is used to perform field dependency injection. It automatically injects the ``EmployeeRespository interface`` which is the dependent bean into the EmployeeServiceImpl class so we can use it. This is possible because ``EmployeeRepository`` is annotated with the ``@Repository`` annotation making it a bean.
-- The EmployeeServiceImpl class implemented the EmployeeService interface by overriding the method and implementing them.
-- The class throws an exception(``ResourceNotFoundException``- This is the custom exception class we created that extends ``RunTimeException``) where the Id supplied to get a single employee does not exist on the database.
+- **@Service** is specifically a collection of library methods that manage one aspect of an application business logic. It is a specialized form of `@Component`. With the `@Service` annotation, the class is registered in the application context and accessible during classpath scanning.
+- The `@autowired` annotation is used to perform field dependency injection. It automatically injects the `EmployeeRespository interface` which is the dependent bean into the `EmployeeServiceImpl` class so we can use it. This is possible because `EmployeeRepository` is annotated with the `@Repository` annotation making it a bean.
+- The `EmployeeServiceImpl` class implemented the EmployeeService interface by overriding the method and implementing them.
+- The class throws an exception(`ResourceNotFoundException`- This is the custom exception class we created that extends `RunTimeException`) where the Id supplied to get a single employee does not exist on the database.
 
-### The Controller
+### Controller
+Create a package called `web` under the *employee_app package*. This package is going to house the APIs controller.
 
-Create a package called web under the *employee_app package*. This package is going to house the APIs controller. Create an *EmployeeController class* with the following code:
+Create an *EmployeeController class* with the following code:
+
 ```java
 package com.lekwacious.employee_app.web;
 
@@ -611,79 +669,73 @@ public class EmployeeController {
         MessageResponse newEmployee = employeeService.createEmployee(employee);
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
-
     @PutMapping("/update/{id}")
     public ResponseEntity<MessageResponse> updateEmployee( @PathVariable Integer id, @RequestBody EmployeeRequest employee) {
         MessageResponse updateEmployee = employeeService.updateEmployee(id, employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
-    
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Integer id) {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    
 }
 
 ```
-- ``@RestController``: This annotation marks the EmployeeController as an HTTP request handler and allows Spring to recognize it as a RESTful service.
-- ``@RequestMapping("/employee")`` annotation sets the base path to the resource endpoints in the controller as /employee.
+- `@RestController`: This annotation marks the EmployeeController as an HTTP request handler and allows Spring to recognize it as a RESTful service.
+- `@RequestMapping("/employee")` annotation sets the base path to the resource endpoints in the controller as /employee.
 - Next, we autowired the EmployeeService into our controller to use the methods declared implemented in it. This is dependency injection.
-- ``@GetMapping`` is a shortcut for ``@RequestMapping(method = RequestMethod.GET)``, and is used to map HTTP GET requests to the mapped controller methods. We used it to return all the employees and a single employee.
-- ``@PathVariable`` annotation shows that a method parameter should be bound to a URI template variable.
-- ``@PostMapping`` is a shorthand for @RequestMapping where the method is equal to POST. It is used to map HTTP POST request to the mapped controller methods.
-- ``@RequestBody``: This annotation takes care of binding the web request body to the method parameter with the help of the registered HttpMessageConverters. So when you make a POST request to the “/employee/add” URL with a Post JSON body, the HttpMessageConverters converts the JSON request body into a Post object and passes it to the addEmployee method.
-- ``@PutMapping`` is a shorthand for @RequestMapping where the method is equal to PUT. It is used to map HTTP PUT request to the mapped controller methods.
-- ``@DeleteMapping``: Using this annotation makes the Mapped controller method to be ready for a delete operation. is a shortcut for ``@RequestMapping(method = RequestMethod.DELETE)``.
+- `@GetMapping` is a shortcut for `@RequestMapping(method = RequestMethod.GET)`, and is used to map HTTP GET requests to the mapped controller methods. We used it to return all the employees and a single employee.
+- `@PathVariable` annotation shows that a method parameter should be bound to a URI template variable.
+- `@PostMapping` is a shorthand for @RequestMapping where the method is equal to POST. It is used to map HTTP POST request to the mapped controller methods.
+- `@RequestBody`: This annotation takes care of binding the web request body to the method parameter with the help of the registered HttpMessageConverters. So when you make a POST request to the “/employee/add” URL with a Post JSON body, the HttpMessageConverters converts the JSON request body into a Post object and passes it to the addEmployee method.
+- `@PutMapping` is a shorthand for @RequestMapping where the method is equal to PUT. It is used to map HTTP PUT request to the mapped controller methods.
+- `@DeleteMapping`: Using this annotation makes the Mapped controller method to be ready for a delete operation. is a shortcut for `@RequestMapping(method = RequestMethod.DELETE)`.
 
-### Testing The Application with POSTMAN**
-Now let's test our APIs with POSTMAN.
+### Testing with Postman
+Now, let's test our APIs with Postman.
 
-#### Adding an employee
-Let's rerun the application and then add an employee by making a POST request to localhost:8081/employee/add
+#### Adding an employee record
+Let's re-run the application and then add an employee by making a `POST` request to `localhost:8081/employee/add`
 
- ![addemployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/add-employee.png)
+![addemployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/add-employee.png)
 
+Let’s check our MySQL database to confirm again. Boom! There we go.
 
-Let’s check our MySQL database to confirm again. Boom! There we go  
+![check-MySQL-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/check-mysql.png)
 
- ![check-MySQL-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/check-mysql.png)
+#### Get all employee records
+Make a `GET` request to `localhost:8081/employee/all` to get all the employees. I have added two employees already.
 
- #### Get all Employees
-Make a GET request to localhost:8081/employee/all to get all the employees. I have added two employees already.
+![getEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/get-employee.png)
 
- ![getEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/get-employee.png)
+Boom! It has returned a list of all the employees. We can check MySQL Workbench again.
 
- Boom! It has returned a list of all the employees. We can check MySQL workbench again.
+![check-MySQL-again-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/check-mysql-for-get-employee.png)
 
-  ![check-MySQL-again-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/check-mysql-for-get-employee.png)
+#### Get a single employee record
+Make a `GET` request to `localhost:8081/employee/find/3` specifying the ID of the employee at the end of the URL. In our case, `ID` is `3`.
 
-#### Get A Single Employee
+![getSingeEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/get-singe-employee.png)
 
-Make a GET request to localhost:8081/employee/find/3 specifying the ID of the employee at the end of the URL, in our case ID is 3.
+#### Update an employee record
+Make a `PUT` request to `localhost:8081/employee/update/3` specifying the ID of the employee at the end of the URL. In our case, `ID` is 3. Add the fields to update as a requestBody.
 
-  ![getSingeEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/get-singe-employee.png)
+![updateEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/update-mployee.png)
 
+#### Deleting an employee record
+Make a `DELETE` request to `localhost:8081/employee/delete/3` adding to the end of the URL the ID of the todo to delete. In our case, the `ID` is 3. We got a `200 OK` showing a successful delete operation.
 
-#### Update An Employee record**
-Make a PUT request to localhost:8081/employee/update/3 specifying the ID of the employee at the end of the URL, in our case ID is 3. Add the fields to update as a requestBody.
+![deleteEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/delete-Employee.png)
 
-  ![updateEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/update-mployee.png)
+We got a `200 OK` showing a successful delete operation. If we check the MySQL database we should have only two employees left having deleted one employee. We deleted the employee with ID as 3.
 
-
-#### Deleting An Employee**
-Make a DELETE request to ``localhost:8081/employee/delete/3`` adding to the end of the URL the ID of the todo to delete, in our case the ID is 3. We got a 200 OK showing a successful delete operation.
-
-  ![deleteEmployee-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/delete-Employee.png)
-
-We got a 200 OK showing a successful delete operation. If we check the MySQL database we should have only two employees left having deleted one employee. We deleted the employee with ID ==3.
-
-  ![MySQL-recheck-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/mysql-recheck-for-delete.png)
-
+![MySQL-recheck-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/mysql-recheck-for-delete.png)
 
 ### Documenting The API with Swagger UI
-We already added the ``io.springfox`` dependency to the ``pom.xml``. With this dependency, we will document the APIs so that they will be easy for other developers to use. Add the ``ApiResponses annotation`` below at the class level of your ``EmployeeController class``.
+We already added the `io.springfox` dependency to the `pom.xml`.
+
+With this dependency, we will document the APIs so that they will be easy for other developers to use. Add the `ApiResponses annotation` below at the class level of your `EmployeeController class`.
 
 ```java
 package com.lekwacious.employee_app.web;
@@ -710,20 +762,20 @@ import java.util.Optional;
 }
 )
 public class EmployeeController {
-
-
 }
-
-
 ```
 
-- We added the @ApiResponse annotation from swagger at the class level. As simple as this our APIs are fully documented.
-- Go to ``http://localhost:8081/swagger-ui/`` to access the documentation and test that our APIs are still working properly.
-- Use the Swagger API documentation at http://localhost:8081/swagger-ui/  to add an employee, get, update and delete an employee.
+- We added the `@ApiResponse` annotation from swagger at the class level.
+- Go to `http://localhost:8081/swagger-ui/` to access the documentation and test that our APIs are still working properly.
+- Use the Swagger API documentation at `http://localhost:8081/swagger-ui/` to add an employee, get, update and delete an employee.
 
-  ![Swagger-ui-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/swagger-ui.png)
-
+![Swagger-ui-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/swagger-ui.png)
 
 ### Conclusion
+We have successfully built APIs using Spring Boot, Maven as the dependency management tool, and MySQL to store data.
 
-We have successfully built APIs with Spring Boot, use Maven as the dependency management tool, and use MySQL to store data. You learned how to throw exceptions in your application in other to build a resilient system. You have also learned how to document your API using Swagger. You can clone the project on this [Git Repository](https://github.com/Lekwacious/employee-management-system.git). With this knowledge go ahead and build awesome APIs. In the next tutorial, I will show you how to do Test Driven Development and you learn how to write a unit test.
+You've learned how to throw exceptions in your application in other to build a resilient system. You have also learned how to document your API using Swagger.
+
+You can clone the project on this [Git Repository](https://github.com/Lekwacious/employee-management-system.git).
+
+With this knowledge go ahead and build awesome APIs. In the next tutorial, I will show you how to do Test Driven Development and you learn how to write a unit test.
