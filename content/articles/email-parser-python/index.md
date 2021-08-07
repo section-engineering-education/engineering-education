@@ -6,29 +6,25 @@ url: /email-parser-python/
 title: Parsing emails in Python
 description: In this article we discuss the code to obtain and classify emails as spam or ham.   
 author: vincent-ngunzulu
-date: 2021-08-06T00:00:00-18:00
-topics: [Language]
+date: 2021-08-07T00:00:00-04:35
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/email-parser-python/hero.jpg
+ - url: /engineering-education/email-parser-python/hero.jpg
    alt: Parsing Email example image
 ---
-
-
 Perhaps you are a machine learning engineer trying to build an email spam classifier. You may want to get some way of pre-processing the emails or looking for correlations between random emails. You will, in one way or another, have to parse the emails first. We will look at how to do that using Python. Python has the `email` module containing methods to help us achieve this.
 
 ### Prerequisites
 
-The following are the prerequisites for this article:
-- An understanding of Python.
-- Jupyter notebook installed or access to Google Colab.
+To follow along with this article, the reader should have:
 - An understanding of Python.
 - Jupyter notebook installed or access to Google Colab.
 
 > We will use Jupyter notebooks in this article. You may use regular Python files for the code executions.
 
-A Colab notebook with the codes is found [here](https://colab.research.google.com/drive/1nDz58G4cDukqukOlPRVST-jKBK0AyMwa?usp=sharing).
+A Colab notebook with the code can be found [here](https://colab.research.google.com/drive/1nDz58G4cDukqukOlPRVST-jKBK0AyMwa?usp=sharing).
 
 ### Getting started
 
@@ -67,11 +63,11 @@ def fetch_emails(HAM_URL=HAM_URL, SPAMS_URL=SPAMS_URL, spams_path=SPAM_PATH):
             email_tar_file.extractall(path=spams_path)
             email_tar_file.close()
 ```
-We set the paths and the URLs as constants. Then, in the `fetch_emails()` method, we check if the directory is present using the `isdir()` method of the `os` module. If the directory is not present, we create a new one using the `makedirs()` method.
+We set the paths and the URLs as constants. Then, in the `fetch_emails()` method, we check if the directory exists using the `isdir()` method of the `os` module. If the directory does not exist, we create a new one using the `makedirs()` method.
  
 We create two paths needed for ham and spam emails to store the emails.
  
-Once done, we create the file directory if it is not present and retrieve it using the `urlretrieve()` method. Finally, we open the tar files and extract them.
+Once done, we create the file directory if it does not exist and retrieve it using the `urlretrieve()` method. Finally, we open the tar files and extract them.
 
 In the next cell, we call the `fetch_emails()` method.
 
@@ -153,7 +149,7 @@ In the `get_structures()` function, we check the structure. If it is a ham text 
 
 Any other email structure apart from the two, **text/plain** and **multipart**, is displayed by returning the email's content type(`get_content_type()`).
 
-The `type_counter()` method check how many email structure types are present in the spam and ham emails, e.g. `'text/plain', 2409`. So, we first initiate a counter then count them for every similar structure.
+The `type_counter()` method checks how many email structure types exist in the spam and ham emails, e.g. `'text/plain', 2409`. So, we first initiate a counter then count them for every similar structure.
 
 This code displays one for ham emails:
 
@@ -161,7 +157,7 @@ This code displays one for ham emails:
 print(structures_counter(ham_emails))
 ```
 
-We check the most common structures using the `most_common()` method.
+We check the most common structures using the `most_common()` method:
 
 ```python
 print(structures_counter(spam_emails).most_common())
@@ -180,7 +176,7 @@ We then view the headers and their values using:
 for header, value in spam_emails[0].items():
     print(header,":",value)
 ```
-Headers in emails are parts such as the Subject, Date etc. The sample output is here:
+Headers in emails are parts such as the subject, date, etc. The sample output is here:
 
 ```bash
 Return-Path : <12a1mailbot1@web.de>
