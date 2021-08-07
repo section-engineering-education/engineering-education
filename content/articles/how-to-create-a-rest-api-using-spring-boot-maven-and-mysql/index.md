@@ -730,8 +730,6 @@ Make a `DELETE` request to `localhost:8081/employee/delete/3` adding to the end 
 
 We got a `200 OK` showing a successful delete operation. If we check the MySQL database we should have only two employees left having deleted one employee. We deleted the employee with ID as 3.
 
-![MySQL-recheck-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/mysql-recheck-for-delete.png)
-
 ### Documenting The API with Swagger UI
 We already added the `io.springfox` dependency to the `pom.xml`.
 
