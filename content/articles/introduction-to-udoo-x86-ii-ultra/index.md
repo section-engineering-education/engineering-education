@@ -1,82 +1,106 @@
 ---
 layout: engineering-education
 url: /introduction-to-udoo-x86-ii-ultra/
-title: Introduction to Udoo X86 II Ultra
-description: This article will describe the built in architecture and processing power of Udoo x86 II Ultra. It will seek to highlight and clarify the different capabilities of Udoo X86 II Ultra and why its way far much better than most Session Border Controllers (SBC).
-This article among others important issues is majorly tailored to explain the advanced features that ensures Ultra X86 II ultra is capable of running software applications that are usually run on a PC on a daily basis.
+title: Introduction to Udoo X86 II Ultra session board controller (SBC)
+description: This article describes the built in architecture and processing power of the Udoo x86 II Ultra. It also highlights and clarifies the different capabilities of Udoo X86 II Ultra and why it is better than most session board controllers.
 author: sheldon-aswani
-date: 2021-08-04T00:00:00-16:00
+date: 2021-08-07T00:00:00-19:30
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-udoo-x86-ii-ultra/hero.jpg
-    alt: Introduction to Udoo X86 II Ultra Hero Image
+    alt: Introduction to Udoo X86 II Ultra image
 ---
-Session board controllers are extremely important devices as they enable us to run multiple applications that are usually run on a PC in our day to activities. In this article, we are focusing on Udoo x86 II Ultra capabilities and enhanced features.
+Session board controllers are extremely important devices as they allow us to run multiple applications usually run on a PC. In this article, we will focus on `Udoo x86 II Ultra`'s capabilities and enhanced features.
 <!--more-->
 
 ### Table of contents
-[Prerequisites](#Prerequisites)
-[Introduction to Udoo X86 II Ultra](#introduction-to-udoo-x86-ii-ultra)
-[Pros](#pros)
-[Cons](#cons)
-[Conclusion](#conclusion)
-  
+- [Prerequisites](#prerequisites)
+- [Introduction to Udoo X86 II Ultra](#introduction-to-udoo-x86-ii-ultra)
+- [Pros](#pros)
+- [Cons](#cons)
+- [Conclusion](#conclusion)
+
 ### Prerequisites
-- Basic understanding of Session board controllers
+To follow through this article, you need to have a basic understanding of `session board controllers`
 
 ### Introduction to Udoo X86 II Ultra
-Udoo X86 II Ultra session board controller power is comparable to that of a new typical personal computer in the market today. Udoo X86 II ultra comes embedded on the same platform with an Arduino Leonardo 101 board together with a more powerful X86 maker architecture.
+Udoo X86 II Ultra session board controller's power is comparable to that of a new typical personal computer in the market today. Udoo X86 II Ultra comes embedded on the same platform with an Arduino Leonardo 101 board made with a more powerful X86 maker architecture.
 
-Udoo X86 II Ultra is able to run most of the applications that one could run on day-to-day basis in personal computer world. These applications range from those for professional developments platforms to graphical editors, 3D gaming to video streaming, libraries, sketches and the official Arduino Leonardo IDE, plus all the applications present in the Arduino Leonardo space.
+Udoo X86 II Ultra can run most of the applications that could be run on a PC.
 
-Udoo X86 II Ultra is a genuine computer. Hence, absence of drivers or any related concerns is not a problem anymore. It supports different operating systems including, on windows 10, android and Linux. The embedded Arduino Leonardo 101 board comes with built in with a six-axis accelemetor and a gyroscope. The customizability presented by the Arduino board together with the high power makes this Session Board controller a very resourceful tool for power and casual users.
+These applications include:
+- Professional development platforms
+- Graphical editors
+- 3D gaming software
+- Video streaming
+- Libraries
+- Sketches
+- The official Arduino Leonardo IDE
+- Applications present in the Arduino Leonardo space
 
-Udoo X86 II Ultra session board controller is based on a Quad Core 64-bit personal computer new generation with the intel architecture of X86 processors. With an amount of energy consumption of 5 or 6 watts, the gigantic processor is concentrated in 1n nanometres. The power can also be provided with a VIN pin usually found on the head.
+Udoo X86 II Ultra is a genuine computer. The absence of drivers or any related concern is not a problem. It supports different operating systems including, Windows 10, Android, and Linux.
+
+The embedded Arduino Leonardo 101 board comes with a six-axis accelerometer and a gyroscope built in. The customizability offered by the Arduino board makes this session board controller a very resourceful/powerful tool for casual uses.
+
+Udoo X86 II Ultra is based on the new generation Quad Core 64-bit personal computer with the intel's X86 processor architecture.
+
+With an energy consumption of about 5 to 6 Watts, the gigantic processor is concentrated in nanometers. The power can be provided via the VIN pins usually found on the board's head.
 
 ### Pros
-*Huge RAM*
-Udoo X86 II Ultra is built in with an 8GB RAM. The advanced version has 4GB of RAM while the basic has a 2GB of RAM. Generally, this makes the Udoo X86 II Ultra far much way more than most of the session board controllers on the market.
+Udoo X86 II Ultra session board has the following advantages:
 
-*Efficiency*
-Udoo X86 II Ultra has the ability of running day to day activities of a normal Personal Computer. This is made possible with a 2.56 GHz quad-core intel CPU and a size of 8GB of RAM.
+#### Enormous RAM
+Udoo X86 II Ultra comes with an 8GB built in RAM. The advanced version has 4GB of RAM while the basic one has 2GB of RAM. This makes the Udoo X86 II Ultra more powerful than most of the session board controllers on the market.
 
-*Availability of freely useful guides and community*
+#### Efficiency
+Udoo X86 II Ultra is capable of running software meant for a normal personal computer. This is made possible by a 2.56GHz quad-core intel CPU and an 8GB RAM.
+
+#### Availability of freely useful guides and community
 Through a helpful community even not all guides are available online.
-iv.	Lower energy consumptions
-The Arduino Leonardo 101 board takes less than 11 watts of energy at any given time which makes it very energy efficient.
 
-*Large storage capabilities*
-Udoo X86 II Ultra box comes with a 32GB embedded multimedia card. Moreover, the user might decide to upgrade the storage they see fits them. Though expensive an SSD storage is usually the best option. Additionally, a microSD card might also be used as a storage.
+###	Lower energy consumptions
+The Arduino Leonardo 101 board requires less than 11 Watts of energy which makes it very energy efficient.
 
-*X86-compatible architecture*
-It supports all operating systems that is Linux, windows and android. For Linux or android, the internal storage of 32GB might be used as read only and additional SATA HDD/SSD/eMMC drive as /tmp and /home directories.
-Udoo II X86 Ultra is also used a gaming emulator as it supports almost all retro gaming emulators available for a Personal Computer. It can also emulate new consoles like playstation2.
+#### Large storage capacity
+Udoo X86 II Ultra box comes with a 32GB embedded multimedia card. However, users might decide to upgrade the storage to fit their desire. Though expensive, an SSD card is usually the best option. Additionally, a micro-SD card can also be used as a storage media.
 
-*Decent GPIO support*
-The Udoo x86 Ultra comes with 28 GPIO ports in total which may seem small, but considering the fact that it has an Arduino 101 embedded inside, it’s actually a decent amount. The Arduino board has built-in functionality for what some of the pins would be used (like a six-axis accelerometer and gyroscope) and adds 12 additional GPIO pins. Several key communication protocols are also supported: two IIC, two UART, LPC and SDIO.
+#### X86-compatible architecture
+Udoo X86 II Ultra supports most operating systems including Linux, Windows and Android. For Linux and Android, the internal storage can be used as a read only memory with additional SATA `HDD/SSD/eMMC` drive used as /tmp and /home directories.
 
-*Set-up is easy and straightforward*
-It’s absolutely straightforward to set up. The installation guides for all supported operating systems are provided in written and video form.
+Udoo II X86 Ultra is also used a gaming emulator as it supports most retro gaming emulators available for a PC. It can also emulate new consoles like play-station II.
 
-*Arduino compatible*
+#### Decent GPIO support
+The Udoo x86 Ultra comes with 28 `GPIO` ports in total which may seem few, but considering that it has an Arduino 101 embedded on it, this is a decent number.
+
+The Arduino board has an in built functionality for what some pins can be used for (like a six-axis accelerometer and gyroscope) and it adds 12 additional GPIO pins. Several key communication protocols such as the two IIC, two UART, LPC and SDIO are also supported.
+
+####  Easy and straightforward set up
+It’s absolutely straightforward to set up. The installation guidelines for the supported operating systems are provided in hard-copy and video form.
+
+#### Arduino compatible
 Udoo x86 II Ultra comes with an embedded Arduino 101, with all upgrades enabled (including 6-axis accelerometer, gyroscope and Bluetooth).
-x. Great media streaming potential
-Udoo x86 II Ultra has a moderately higher power that ensures its single-board computer for streaming media with a high-quality. Udoo x86 is able to stream a 30Hz 4k Video on at least three monitors though two mini display ports. It therefore supports a set up for UHD capable media station. It supports a wide variety of applications like Spotify, Netflix, YouTube, Kodi etc. This is made possible since Udoo X86 II Ultra is run on operating systems which support these applications. 
+
+#### Great media streaming potential
+Udoo x86 II Ultra has a moderately high power that makes it a single-board computer for streaming media in a high quality. It is able to stream a 30Hz 4k video on at least three monitors through two mini display ports.
+
+It also supports a set up for UHD capable media station with a wide variety of applications like Spotify, Netflix, YouTube, Kodi etc.
 
 ### Cons
+Udoo X86 II Ultra might not the best choice for the following reasons:
 
-*Expensive*
-Udoo x86 II Ultra is relatively expensive.
+#### Expensive
+Udoo x86 II Ultra is relatively expensive compared to other session board controllers on the market.
 
-*Lack of official documentation*
-Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there is generally not too much project examples or information available from the official website for Udoo x86 II ultra at the moment. Therefore, users have a lot of work to do if they have to have any positive results from their projects.
+#### Lack of official documentation
+Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there is generally not too many project examples or information available on the official website for Udoo x86 II ultra at the moment. Therefore, users have a hard time finding out how to use the board.
 
-*4K only supports 24 FPS*
+#### 4K only supports 24 FPS
 Only supports HDMI 1.4 and DP 1.1a, so 4K is limited to 24 FPS.
 
 ### Conclusion
-Udoo x86 II Ultra is one of the best session board controllers in the market. It has a wide range of capabilities and enhanced features. Udoo x86 II Ultra supports a wide range of operating systems including windows, linux and android.
+Udoo x86 II Ultra is one of the best session board controllers in the market today. It has a wide range of capabilities and enhanced features. Udoo x86 II Ultra supports a wide range of operating systems as well.
 
 ---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
