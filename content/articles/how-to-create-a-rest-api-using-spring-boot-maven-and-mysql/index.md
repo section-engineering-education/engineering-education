@@ -1,9 +1,21 @@
-# **How to create a REST API using Spring Boot, Maven, and MySQL**
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/
+title: How to create a REST API using Spring Boot, Maven, and MySQL
+description: This article will be an introduction to building a CRUD application using Spring Boot, Maven, and MySQL. We will learning to document the REST APIs using Swagger.
+author: eme-lekwa
+date: 2021-08-07T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-![header-image](/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/hero.png)
-
+  - url: /engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/hero.png
+    alt: Spring boot CRUD image
+---
 One of the benefits of REST APIs is the flexibility and scalability it gives to our application. Since the client and server are independent, the REST protocol separates the data storage from the User Interface in the server.
-
+<!--more-->
 With this, our application can be scaled quickly primarily due to the separation of concerns (the separation of the frontend from the server), which helps our application to be loosely coupled. This also offers flexibility in modifying our code in the future, as developers can easily integrate RESTful API without much-added work.
 
 ### Goal
