@@ -1,5 +1,21 @@
-Docker Swarm refers to a container orchestration tool that allows users to manage multiple containers. It is used by developers to create, deploy and manage a cluster of Docker nodes. This tool is resourceful because it allows easy deployment.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-docker-swarm-in-container-orchestration/
+title: Introduction to Docker Swarm in Container Orchestration
+description: This article will provide an overview of Docker Swarm and how it can be used by developers. It will also discuss how Docker Swarm works and the two service modes of this tool.  
+author: margret-munganyinka
+date: 2021-08-07T00:00:00-13:00
+topics: [containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-docker-swarm-in-container-orchestration/hero.png
+    alt: Docker Swarm Hero Image
+---
+Docker Swarm refers to a container orchestration tool that allows users to manage multiple containers. It is used by developers to create, deploy and manage a cluster of Docker nodes. This tool is resourceful because it allows easy deployment.
+<!--more-->
 This article provides the basics of Docker Swarm and explains its key features. It also highlights some of its uses and explains how it works.
 
 ### Introduction to Docker swarm
@@ -73,3 +89,5 @@ This article provided an overview of Docker Swarm in container orchestration. To
 7. We have learned the advantages and disadvantages of Docker Swarm.
 
 Happy learning!
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
