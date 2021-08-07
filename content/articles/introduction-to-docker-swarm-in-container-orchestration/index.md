@@ -7,7 +7,9 @@ Before understanding what Docker Swarm is, it is important to learn the terms *D
 
 Docker Swarm is a tool used for managing container orchestration. It runs on Docker applications and enables users to create a group of Docker nodes and deploy them. 
 
-It can also be termed as a Docker tool used for scheduling and network clustering. Docker Swarms enable you to manage containers when their size increases. 
+It can also be termed as a Docker tool used for scheduling and network clustering. Docker Swarm enables you to manage containers when their size increases. It uses an overlay network to discover services and a built-in load balancer to scale the services up or down. 
+
+In Docker Swarm, the network and volume of docker services can be configured automatically without necessarily configuring them manually. Docker updates the configurations and stop the configuration of service tasks that are out of date. It also creates new service tasks to match the required configuration. 
 
 ### Features of Docker Swarm
 The following are the main features of Docker Swarm:
@@ -28,14 +30,25 @@ Docker Swarms are important to developers, especially in the Docker ecosystem. T
 - To manage multiple container clusters, including their lifecycle and functionality. 
 - To reschedule containers in case of node failure.
 
-### How Docker Swarm Works
+### How Docker Swarm works
 Docker Swarm uses services, tasks, and nodes to manage containers. Let’s gain an overview of these aspects before diving into how they are used in Docker Swarm.
 
 A service is a list of tasks that need to be executed on nodes. Services allow app images to be deployed to the Docker Swarm. They enable users to launch containers. Examples of services include HTTP Servers, DB Servers, and Web Servers. 
 
 A task refers to work that needs to be done. A Swarm node is a singular Docker Engine or an instance of it. It consists of two types of nodes: worker nodes and manager nodes. 
 
-One or more nodes should be deployed before a service can be deployed. A service is created by setting up commands. The manager node consists of an API that connects to the Swarm environment. This enhances container orchestration through the creation of tasks for every service. These tasks are allocated and dispatched to a worker node. The worker node checks for tasks, receives tasks and executes them.
+The main role of a manager node is to allocate tasks to the worker nodes. They also perform managerial tasks required for the effective operation of a swarm. A worker node plays the role of executing the allocated tasks. It requires at least one manager node to function well. 
+
+One or more nodes should be deployed before a service can be deployed. A service is created by setting up commands. The manager node consists of an API that connects to the swarm environment. The API enhances communication between the worker node and the manager node through the HTTP protocol. 
+
+The manager node enhances container orchestration through the creation of tasks for every service. These tasks are allocated and dispatched to a worker node. The worker node checks for tasks, receives tasks and executes them. The status of the tasks is reported to the manager node using the API. If a task fails, the Docker Swarm is not restarted. Instead, the orchestration replaces it with a new task that matches the state of the service.
+
+### Docker Swarm service modes
+When you create a service, you may have to specify the container image that will be used. A container image is a package that consists of executable files. It consists of the libraries, code, binaries, configuration files, and runtime required for running applications. 
+
+There are two main service modes in Docker Swarm: global service and replicated service. 
+- **Global service:** This is a service that runs on every node. Global services monitor containers that run on swarm nodes.
+- **Replicated service:** In this service mode, the tasks are distributed by the manager node to the worker nodes. The worker nodes then execute them. 
 
 ### Advantages and Disadvantages of Docker Swarm
 #### Advantages
@@ -56,6 +69,7 @@ This article provided an overview of Docker Swarm in container orchestration. To
 3. We have learned how developers can use Docker Swarm.
 4. We have gained an overview of services, tasks and nodes.
 5. We have learned how Docker Swarm uses services and nodes to achieve container orchestration.
-6. We have learned the advantages and disadvantages of Docker Swarm.
+6. We have gained an overview of the two types of service modes in Docker Swarm.
+7. We have learned the advantages and disadvantages of Docker Swarm.
 
 Happy learning!
