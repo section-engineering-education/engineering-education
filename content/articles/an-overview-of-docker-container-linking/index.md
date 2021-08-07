@@ -47,6 +47,17 @@ The first one is for the recipient container, which consists of a hostname in th
 
 This information is updated automatically if the source container is restarted. If this is the case, the recipient container will be provided with a reference to the new information of the source container. This enhances the continuity of linked communication. 
 
+### Advantages and disadvantages of Docker container linking
+#### Advantages
+- It provides an effective way of enhancing communication between containers.
+- It supports the sharing of envionmental variables, unlike in Docker networks.
+- After installing Docker, the default `bridge` network is created automatically. 
+- It enhances the isolation of containers that are not linked to a given bridge. Containers that are not connected to the same bridge cannot establish direct communication between them. 
+
+#### Disadvantages
+- With the introduction of the Docker networks feature, container linking may be removed in the future. 
+- The user-defined bridges in the Docker networks feature create better isolation of containers than the default `bridge` networks in container linking.
+
 ### Conclusion
 This article has provided the basics of Docker container linking. The following are the main points we have learned:
 1. Docker container linking allows multiple containers to be linked to each other. 
