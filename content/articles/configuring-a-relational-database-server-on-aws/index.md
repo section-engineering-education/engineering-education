@@ -5,7 +5,7 @@ published: true
 url: /configuring-a-relational-database-server-on-aws/
 title: How to Configure a Relational Database Server on AWS
 description: This tutorial will guide the reader on how to configure a relational database server on Amazon Web Services.
-author: 
+author: oluwatomisin-bamimore
 date: 2021-07-25T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
@@ -16,11 +16,11 @@ images:
 ---
 There are numerous reasons as to why you should use Amazon Web Services to host your database. One of them is that AWS offers a variety of options for scaling and safeguarding your databases.
 <!--more-->
-However, navigating the AWS configurations might prove to be difficult and existing documentation are not always user-friendly.
+However, navigating the AWS configurations might prove to be difficult and existing documentation is not always user-friendly.
 
 Therefore, this article will help you set up a relational database server on AWS. We will use [MySQL Workbench](https://www.mysql.com/products/workbench/) to connect to the RDS.
 
-### Setting up a Security Group
+### Setting up a security group
 The first step is to sign in to your [AWS account](https://console.aws.amazon.com/?nc2%3Dh_m_mc*)
 
 ![AWS Sign in Page](/engineering-education/configuring-a-relational-database-server-on-aws/aws_signin_page.png)
@@ -68,9 +68,9 @@ Fill out the `fields` in the `Settings` section as follows:
 
 ![Settings configuration](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_configuration_setting.png)
 
-Leave all other default settings on the page and scroll down to the `connectivity` part. We need to specify the `security group` that we created earlier in this section.
+Leave the other `default` settings on the page and scroll down to the `connectivity` part. We need to specify the `security group` that we created earlier in this section.
 
-In the `Connectivity` section, search for the `security group` and name it as `helloworld-db`. We also need to enable public access.
+In the `Connectivity` section, search for the `security group` and name it as `helloworld-db`. We should also enable public access.
 
 ![Search vpc](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_search_vpc.png)
 
@@ -86,7 +86,7 @@ Finally, click on the `Create database` button
 
 ![Create database button](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_create_database_button.png)
 
-In the new page, you’ll see an option to view your database credentials. 
+On the new page, you’ll see an option to view your database credentials. 
 
 ![View database credentials](/engineering-education/configuring-a-relational-database-server-on-aws/aws_rds_create_db_credentials.png)
 
@@ -97,7 +97,7 @@ This will display the credentials you entered when creating the database. You ca
 ### Connecting the RDS server to MySQL workbench
 [MySQL workbench](https://dev.mysql.com/downloads/workbench/) is an integrated development environment for the MySQL server. 
 
-We follow the steps below to set up MYSQL server:
+We follow the steps below to set up a MYSQL server:
 
 ![mysql workbench setup](/engineering-education/configuring-a-relational-database-server-on-aws/mysql_workbench_1.png)
 
@@ -163,7 +163,7 @@ finally:
         print("MySQL connection is closed")
 ```
 
-In the code above, we create a database table and initiated a connection using the `connection` variable. 
+In the code above, we created a database table and initiated a connection using the `connection` variable. 
 
 The keyword arguments passed into the `mysql.connector.connect` method are host, database name, user, and password.
 
