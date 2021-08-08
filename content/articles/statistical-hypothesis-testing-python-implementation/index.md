@@ -49,7 +49,7 @@ The two types of hypothesis testing are `null hypothesis` and `alternate hypothe
 
 On the other hand, [alternate hypothesis](https://en.wikipedia.org/wiki/Alternative_hypothesis) is an assumption that counters the initial assumption.
  
-Consider a situation where a seventy-year old woman has a visible bump in her belly. Medical officers may assume that the bump is a fibroid. 
+Consider a situation where a seventy-year old woman has a visible bump in her belly. Medical officers may assume that the bump is fibroid. 
 
 In this case, our initial conclusion (or our null hypothesis) is that `she has fibroid` while our alternate hypothesis will be `she does not have fibroid`.
  
