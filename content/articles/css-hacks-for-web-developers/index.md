@@ -1,19 +1,19 @@
 ### Introduction
-[CSS](https://en.wikipedia.org/wiki/CSS) is still among the top ten coding languages according to [Redmonk](https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/), despite not being as popular as [JavaScript](https://www.javascript.com/).
-CSS is popular among website developers because it is quite robust, relatively straightforward to learn, and ubiquitous across different browsers.
+Despite not being as popular as [JavaScript](https://www.javascript.com/), [CSS](https://en.wikipedia.org/wiki/CSS) is still among the top ten most used technologies according to [Redmonk](https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/).
 
-There are various CSS shortcuts or **hacks**, as there are with any coding language, that help you to write cleaner code, improve design components, and save time.
+CSS is popular among web developers because it is robust, relatively straightforward to learn, and ubiquitous across different browsers.
 
-It's also vital to note that CSS does not require you to be a senior web developer.
+There are various CSS **hacks** that help developers to write cleaner code, improve design components, and save time.
 
-If you’re new to CSS, I would urge you to have a look at this [tutorial](https://www.section.io/engineering-education/getting-started-with-css/) before we proceed. However, if you are familiar with fundamental aspects of CSS, Let's get started with the Important CSS **hacks**.
+If you’re new to CSS, I would urge you to go through this [tutorial](https://www.section.io/engineering-education/getting-started-with-css/) before proceeding. However, if you are familiar with fundamental aspects of CSS, let's get started.
 
-### 1. Hovering effect delays
-In CSS, hovering is the change of the appearance of the component interface when the mouse is placed on it.
+### 1. Hover effect delays
+In CSS, hovering is the action of placing a mouse on a component, without clicking it. A component can be set to change in appearance on hover. You can further style this by adding a transition element to `delay` the hovering effect.
 
-Despite looking neat, the Hovering effect gives the user's eyes a sense of movement, drawing their attention to the element. 
+Despite looking neat, the hovering effect draws the user's attention to the element. 
 
 Below is an example snippet of a hovering effect:
+
 ```html
 <html>
   <body>
@@ -34,6 +34,7 @@ Below is an example snippet of a hovering effect:
         color: black;
         transition: all 0.5s ease; /*An element for delaying the hovering effect. */*
       }
+
       p:hover {
         color: yellow;
         transition: all 2s ease;
@@ -42,49 +43,78 @@ Below is an example snippet of a hovering effect:
   </body>
 </html>
 ```
-In the code snippet above, we have styled elements `h4` and `p` with different hovering effects. `h4` will turn to color black when the mouse is placed on it with a delay of 0.5s while `p` will change to color yellow with a longer delay of 2.0s.
 
- ### 2. How to use CSS to position content in the center
+In the code snippet above, we have styled elements `h4` and `p` with different hovering effects. `h4`'s color will turn to black when the mouse is placed on it with a delay of 0.5 seconds while `p`'s color will change to yellow, but with a longer delay of 2.0 seconds.
+
+### 2. Centering content both vertically and horizontally
 To center content in the screen using CSS, most of the developers have to scratch their heads. According to research, it's not that it's difficult to do that task, it's just that there are many ways of doing it which confuse developers on which to use.
 
-For instance you can use  `position: absolute` to place you content in the center as shown in the snippet below:
-```css
-h4{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
+For instance, you can use the styles snippet below to place you content in the center: 
+```html
+<html>
+  <body>
+    <div style="border: 1px solid; width: 500px; height: 600px;">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo
+        corporis saepe sunt quidem nesciunt asperiores impedit odit! Enim quam
+        voluptatum modi suscipit laboriosam porro fugiat odit molestiae error?
+        Dolores.
+      </p>
+    </div>
+    <style>
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </body>
+</html>
 ```
-In the snippet above, we have placed the content of element `h4` in the center. We have placed it halfway down the container with `top: 50%` and `left: 50%`.
+In the snippet above, we have placed the content of element `p` at the center by styling the `div`. Element `p` is a child element of `div`, therefore `p` will take all the styles given to element `div`.
 
-### 3. Fitting images to the page in CSS.
+### 3. Scaling down images
 Some websites have oversize images which break on developers' site's layout and discourage end-users.
 
-However, using this CSS `hack`, I can guarantee you that your images will always fit on your end-users screen despite the devices they are using.
+However, using this CSS hack, I can guarantee you that your images will always fit on your end-users screen despite the devices they are using.
 
-Let's have a look at the example snippet below:
-```css
-img{
-  width: 500px;
-  height: 500px;
-  object-fit: scale-down;
- }
+To prove this practically, create a folder `hack` in your machine, add an image and rename it to `test.png`(`hack/test.png`), create an `index.html` file in the folder(`hack/index.html`), add the snippet below to the file and open it with your favorite browser.
+```html
+<html>
+  <body>
+    <div>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </div>
+    <style>
+      div {
+        background-image: url('../hack/test.png');
+        background-position: center; 
+        background-size: cover;
+        background-repeat: no-repeat;   /*specifies the  image should not be repeated */
+        width: 700px; /*specifies the widths of the border image */
+        height: 500px;
+      }
+    </style>
+  </body>
+</html>
 ```
-In the snippet above, the `object-fit attribute specifies how an `image should be scaled to fit within its container.
+In the snippet above, you will notice that your image will fit within its container.
 
-### 4. CSS style for visited links
-CSS code can be used to change the appearance of links before and after users click on them. 
+### 4. Styling visited links
+CSS can be used to change the appearance of links before and after a user clicks on them.
 
-The `a: visited` link controls all the links that the visitor has clicked on, the `a: link` controls all links that haven’t been clicked on yet. while the `a: active` link shows a link a moment it is clicked. 
+The `a: visited` property controls all the links that the visitor has clicked on, the `a: link` controls all links that haven’t been clicked on yet. while the `a: active` link shows a link a moment it is clicked.
 
 Styling these links properly is a great benefit to the users. It builds a user-friendly website as users can navigate through the site easily
 
 Different colors are used for different link as shown in the snippet below:
+
 ```css
 /* color red represent unvisited link */
 a:link {
   color: red;
 }
+
 /* color green represent visited link */
 a:visited {
   color: green;
@@ -93,12 +123,14 @@ a:visited {
 a:active {
   color: blue
 ```
-### 5. How to style the first letter in a paragraph
-The initial letter is a CSS technique that selects the first letter of a paragraph and specifies the number of lines it holds. It's usually used by print media and information sites, such as news sites. It's a very important technique as it grabs the reader's attention making them read the first line and finally the entire paragraph.
 
-While this style may appear to have dated, you can still design it to appear modern and profit from the psychological effect it has on your clients.
+### 5. Styling the first letter in a paragraph
+The initial letter is a technique of selecting the first letter of a paragraph and specifying the number of lines it holds. It's usually used by print media and information sites, such as news sites. It's a very important technique as it grabs the reader's attention making them read the first line and finally the entire paragraph.
+
+While this style may appear to be dated, you can still design it to appear modern to the end-users.
 
 Let's have a look at the example snippet below:
+
 ```html
 <html>
   <body>
@@ -115,14 +147,16 @@ Let's have a look at the example snippet below:
   </body>
 </html>
 ```
-### 6. How to Group styling in CSS
+
+### 6. How to group styling in CSS
 Styling different HTML elements one by one is very tiresome and time wastage. This problem faced by developers is easily solved by learning how to consolidate CSS style.
 
 To do this, group different elements under the same `class` attribute and style them using the `.class` selector. This selector will select all elements with a specific class attribute and apply styles to them.
 
-This is an advantage to developers because they don't have to write the same line of code numerous times, they save time and reduce the size of their code. Amazing Stuff🚀
+This is an advantage to developers because they don't have to write the same line of code numerous times, they save time and reduce the size of their code.
 
 Let's have a look at the example snippet below:
+
 ```html
 <html>
   <body>
@@ -143,39 +177,51 @@ Let's have a look at the example snippet below:
   </body>
 </html>
 ```
-### 7. Fixing an element’s position in CSS
-Developers sometimes want to fix some elements in a certain position to make them behave differently, such as resting on top of one another or always remaining in the same location within the browser viewport.
 
-This technique is achieved by the use of `position:absolute` script.
-Let's have a look at the example snippet below:
+### 7. Placing an element’s position using CSS
+Developers sometimes want to fix some elements in a certain position to make them remain in that location within the browser viewport. For instance, a developer may want to add a `back-to-top button` to a website, and the only suitable position is at the `bottom-right` of the website.
+
+The code snippet below illustrate how to add a sticky back-to-top button at the bottom right of the website:
+
 ```html
 <html>
   <body>
-    <div class="sidebar">
-      <div>Menu Item 1</div>
-      <div>Menu Item 2</div>
-      <div>Menu Item 3</div>
-      </div>
-      <style>
-        /* suppose you want to fix your sidebar’s position and size */
-        .sidebar {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          width: 300px;
-          height: 150px;
-          position: static;
-          border: 3px solid #73AD21;
-        }
-      </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <div style="border: 1px solid; width: 410px; height: 230px;">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo
+        corporis saepe sunt quidem nesciunt asperiores impedit odit! Enim quam
+        voluptatum modi suscipit laboriosam porro fugiat odit molestiae error?
+        Dolores.
+        <br />
+        <br />
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo
+        corporis saepe sunt quidem nesciunt asperiores impedit odit! Enim quam
+        voluptatum modi suscipit laboriosam porro fugiat odit molestiae error?
+        Dolores.
+        <br />
+        <br />
+        <a class="arrowup" href=""><i class="fa fa fa-arrow-up"></i></a>
+      </p>
+    </div>
+    <style>
+      i {
+        position: fixed;
+        right: 920px;
+        background-color: blue;
+        font-size: medium;
+      }
+    </style>
   </body>
 </html>
 ```
 ### Conclussion
-In this tutorial, we have covered the most important `hacks` that every CSS Developer needs to know to design the best web app.
-You can implement them in your next project.
+In this tutorial, we have covered some important `hacks` that every developer needs to know to design the best web app.
 
-If you need `Further Reading` refer to the  link below:
+### Further Reading
 - [CSS tricks](https://www.creativebloq.com/features/css-tricks-to-revolutionise-your-layouts)
 
-Happy coding ahead!🥳
+Happy coding!
