@@ -11,7 +11,7 @@ Graphs are mathematical structures that reflect the pairwise relationship betwee
 
 * **Google Maps**: link your journey from the start to the end
 * **Social Networks**: Friends with each other are connected using an edge where each user represents a vertex.
-* **Recommendation System**: relationship data between users recommendations is use graph for connection.
+* **Recommendation System**: relationship data between user's recommendations is use graph for connection.
 
 #### Type of Graphs :
 * **Undirected**: All edges in an undirected graph are bidirectional and do not point in any particular direction.
@@ -60,7 +60,7 @@ We can store the cost of the edge at A<sub>i,j</sub> in the adjacency matrix of 
 
 If A<sub>i,j</sub> is 1 in the undirected graph then A<sub>i,j</sub> will also be 1.
 
-If A<sub>i,j</sub> is 1 in the directed graph, then may or may not be 1.
+If A<sub>i,j</sub> is 1 in the directed graph, then it may or may not be 1.
 
 The adjacency matrix offers constant-time access (O(1)) to detect if two nodes have an edge. Therefore, the adjacency matrix has a space complexity of O(V)<sup>2</sup>.
 
@@ -144,7 +144,7 @@ You can find the complete execution of the above code [here](https://replit.com/
 
 #### Conclusion
 
-By learning graphs from basics, you will get to think more analytically while solving data structures questions. It would be great if you practice some of the graphs questions after understanding the foundation of graphs
+By learning graphs from basics, you will get to think more analytically while solving data structures questions. It would be great if you practice some of the graphs questions after understanding the foundation of graphs.
 
 [Leet Code Problem 1](https://leetcode.com/problems/find-center-of-star-graph/)
 
