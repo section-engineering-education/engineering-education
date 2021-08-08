@@ -1,25 +1,35 @@
 ---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/
 title: Implementing a GraphQL server using Prisma, SQLite, and Nest.js with Typescript
 description: The guide will focus on getting a simple server project up and running. We will use technologies such as Prisma, Nest.js, GraphQL, and SQLite as the project database. We will create a simple posts GraphQL API with all CRUD operations supported.
 author: julius-gikonyo
-date: 2021-07-31T00:00:00-15:00
-topics: []
+date: 2021-08-08T00:00:00-05:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/hero.png
     alt: Implementing a GraphQL server using Prisma, SQLite, and Nest.js with Typescript Hero Image
 ---
-[Nest.js](https://nestjs.com/) is built on Node.js and Express, which is arguably the most popular way to build servers with JavaScript. Nest.js is a typescript-based JavaScript framework for developing and scaling backend microservices.
+[Nest.js](https://nestjs.com/) is built on Node.js and Express, which is arguably the most popular way to build servers with JavaScript. Nest.js is a TypeScript-based JavaScript framework for developing and scaling backend microservices.
 <!--more-->
-Being statically typed with Typescript, it allows you to do various JavaScript tasks as an escape hatch. This guarantees that your code is more solid. Furthermore, it makes the code easier to navigate through. This is because everything is strongly typed and more scalable for large applications. This provides an out-of-the-box application architecture that enables developers and teams to construct highly testable, scalable, loosely connected, and easily maintainable applications.
+Being statically typed with TypeScript, it allows you to do various JavaScript tasks as an escape hatch. This guarantees that your code is more solid.
 
-Nest.js, like other backend frameworks, is designed to deliver an Angular-like experience. As a result, when you create a new Nest.js application, you will be launched into an environment that resembles a normal front-end Angular application. The major distinction is that what you end up creating will be your backend services. You'll set up a server, link it to databases, and do all the typical tasks associated with a back-end-based application.
+Furthermore, it makes the code easier to navigate through. This is because everything is strongly typed and more scalable for large applications. This provides an out-of-the-box application architecture that enables developers and teams to construct highly testable, scalable, loosely connected, and easily maintainable applications.
+
+Nest.js, like other back-end frameworks, is designed to deliver an Angular-like experience. As a result, when you create a new Nest.js application, you will be launched into an environment that resembles a normal front-end Angular application.
+
+The major distinction is that what you end up creating will be your back-end services. You'll set up a server, link it to databases, and do all the typical tasks associated with a back-end based application.
 
 ### A glance at GraphQL
 [GraphQL](https://graphql.org/) is a query language for accessing and modifying data in APIs (interconnected data sources). It is compatible with a variety of server-side languages, including Next.js. GraphQL allows you to query your data and receive the results you need.
 
-You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query. Thus, it is used to load data from the server to the client application. It allows you to get data from the API into your application more efficiently than traditional methods and services such as [SOAP](https://en.wikipedia.org/wiki/SOAP) and [REST](/engineering-education/rest-api/).
+You can query numerous related resources in a single request using GraphQL. To put it another way, you can query across relationships. GraphQL also allows you to query related items and receive a response in the same shape as the query.
+
+Thus, it is used to load data from the server to the client application. It allows you to get data from the API into your application more efficiently than traditional methods and services such as [SOAP](https://en.wikipedia.org/wiki/SOAP) and [REST](/engineering-education/rest-api/).
 
 For example, if you're using REST to access two resources, you'll need two different endpoints to request data from each resource. This also means that when a request is received, the API responds with the whole data payload of that entity. GraphQL allows you to access many resources with a single request.
 
@@ -27,7 +37,7 @@ GraphQL has a type system that allows you to define a schema for your data. For 
 
 The benefit of GraphQL is that it allows clients to ask for exactly what they want. There is nothing more or less. Furthermore, because there is no redundant data, requests and responses are quick.
 
-Here is an example.
+Here is an example:
 
 ![graphql-example](/engineering-education/implementing-a-graphql-server-using-prisma-sqlite-and-nestjs-with-typescript/graphql-example.png)
 
@@ -46,15 +56,18 @@ The guide will focus on getting a simple server project up and running. We will 
 
 ### Prerequisites
 To continue with this article, it is important to have the following:
+
 - [Node.js](https://nodejs.org/en/) installed.
 - [Typescript](https://www.typescriptlang.org/download) set up in visual studio code or your favorite text editor.
-- Prior knowledge working with Typescript.
+- Prior knowledge working with TypeScript.
 
-### Setting up Typescript
-To start setting up Typescript, first ensure Node.js is already installed. Then run `npm install -g typescript` inside your command line. Finally, you can check if Typescript is installed by running the `tsc --version` command.
+### Setting up TypeScript
+To start setting up TypeScript, first ensure Node.js is already installed. Then run `npm install -g typescript` inside your command line. Finally, you can check if Typescript is installed by running the `tsc --version` command.
 
 ### Installing Nest.js CLI
-Nest.js provides a command-line interface (CLI) that enables the creation of projects and files via the command line. One of the primary aims of the [Nest.js framework CLI](https://www.npmjs.com/package/@nestjs/cli) is to provide backend developers with a modular code structure. This aids in the development and maintenance of large-scale business software architectural patterns. Also, it provides dependency injection straight out of the box to promote well-structured programs.
+Nest.js provides a command-line interface (CLI) that enables the creation of projects and files via the command line. One of the primary aims of the [Nest.js framework CLI](https://www.npmjs.com/package/@nestjs/cli) is to provide backend developers with a modular code structure.
+
+This aids in the development and maintenance of large-scale business software architectural patterns. Also, it provides dependency injection straight out of the box to promote well-structured programs.
 
 If you have it installed, `nest` CLI runs the following command to install it globally.
 
@@ -68,7 +81,9 @@ With the CLI set, we can run on time command to initialize a Nest.js project.
 nest new nest-graphql-prisma-api
 ```
 
-The above command will help us in scaffolding the project. The command will generate a typescript-starter project and prompt you for the project's details. Such as name, description, version number, which defaults to 0.0.0, and author (probably your name). Upon completing this procedure, you will have a fully configured Nest.js application. Including all dependencies installed in the node modules directory.
+The above command will help us in scaffolding the project. The command will generate a TypeScript starter project and prompt you for the project's details such as name, description, version number, which defaults to 0.0.0, and author (probably your name).
+
+Upon completing this procedure, you will have a fully configured Nest.js application. Including all dependencies installed in the node modules directory.
 
 While executing the above command, you may still select the package manager you want to use, that's either yarn or npm.
 
@@ -77,7 +92,9 @@ While executing the above command, you may still select the package manager you 
 Once the installation process is completed, a `nest-graphql-prisma-api` folder with all Nest.js dependencies will be created inside the path you executed the above command.
 
 ### Installing Prisma CLI
-The [Prisma CLI](https://www.npmjs.com/package/prisma) allows us to dynamically construct the application models. By initializing new application resources, generating Prisma Client, and analyzing existing database schemas. This way, we can easily define our project schema and connect it to the project database. Prisma CLI will be running inside the newly generated Nest.js application. So ensure you change the directory to the `nest-graphql-prisma-api` folder.
+The [Prisma CLI](https://www.npmjs.com/package/prisma) allows us to dynamically construct the application models. By initializing new application resources, generating Prisma Client, and analyzing existing database schemas. This way, we can easily define our project schema and connect it to the project database.
+
+Prisma CLI will be running inside the newly generated Nest.js application so ensure you change the directory to the `nest-graphql-prisma-api` folder.
 
 ```bash
 cd nest-graphql-prisma-api
@@ -89,7 +106,7 @@ Then you can run the following command, and Prisma will be installed globally as
 npm i -g prisma
 ```
 
-This will download the Prisma CLI and Prisam engine for the operating system you are in.
+This will download the Prisma CLI and Prisma engine for the operating system you are in.
 
 #### Defining Our Prisma Data Model
 Now we can initialize Prisma models for our project.
@@ -138,7 +155,9 @@ The benefit of setting this SQL scheme programmatically is to skip a couple of k
 
 This helps you move your project from the development to the production environment or between other developers. Your actual schema setup lives in code. This becomes easier to transfer that schema from one person to another or from your developer machine to the production machine. Without having to go to a database manager.
 
-Furthermore, if you are setting the schema manually on different machines, you must ensure they match. You don't have some automatic way to make sure that the schemas are set up correctly. If you make a mistake and the database schemas are not entirely the same from your machine to the other machine, you may get some bugs when running the application. With the schema already set, you avoid schema mismatch. That's why database migrations are so helpful.
+Furthermore, if you are setting the schema manually on different machines, you must ensure they match. You don't have some automatic way to make sure that the schemas are set up correctly.
+
+If you make a mistake and the database schemas are not entirely the same from your machine to the other machine, you may get some bugs when running the application. With the schema already set, you avoid schema mismatch. That's why database migrations are so helpful.
 
 To start the Prisma database migration for our development purpose, we will execute the following command;
 
