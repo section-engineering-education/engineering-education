@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-css-box-model/
+title: Understanding CSS Box Model
+description: In this tutorial, you will learn what is a box model, how to control it, style it, and explore the basic types of boxes.
+author: terrypha-wamaitha
+date: 2021-08-08T00:00:00-05:41
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-css-box-model/hero.png
+    alt: Understanding CSS Box Model Example Image
+---
+
 The box-model is a fundamental concept in CSS and HTML. Since everything in CSS is made up of boxes, it's critical to understand how the CSS box model works. 
 
 Many web developers still don't understand how the box model works. So, in this tutorial, we'll look at the basics of the CSS box-model and why it's known as the box model. In addition, I will provide a better understanding of the box-model behavior.
@@ -159,3 +176,6 @@ To calculate the height, we use the height's pixels plus the top and bottom of t
 In this article, we have looked at the box model and, we have seen that it determines the appearance of a box's content, padding, border, and margin.
 
 You can find the code for implementation  [here](https://replit.com/@Terripha/understanding-the-css-box-model#index.html)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
