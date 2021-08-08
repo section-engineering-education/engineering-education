@@ -6,7 +6,7 @@ url: /configuring-a-relational-database-server-on-aws/
 title: How to Configure a Relational Database Server on AWS
 description: This tutorial will guide the reader on how to configure a relational database server on Amazon Web Services.
 author: oluwatomisin-bamimore
-date: 2021-07-25T00:00:00-06:00
+date: 2021-09-08T00:00:00-04:00
 topics: []
 excerpt_separator: <!--more-->
 images:
