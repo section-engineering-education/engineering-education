@@ -1,20 +1,20 @@
-In this tutorial, we are going to learn how to use the Glide library to load images either from the internet (URL) or drawable image file into an `ImageView` in Android.
+In this tutorial, we are going to learn how to use the Glide library to load images either from the internet (URL) or `Drawable` image files into an `ImageView` in Android.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should:
-- Have Android Studio installed
-- Have an understanding of `Kotlin` programming language and `XML`
+- Have [Android Studio](https://developer.android.com/studio) installed.
+- Have an understanding of [Kotlin](https://kotlinlang.org/) programming language and [XML](https://developer.android.com/guide/topics/ui/declaring-layout) layout.
 - Have a basic understanding of image loading in android applications
-- Be familiar with `ViewBinding`
+- Be familiar with [`ViewBinding`](https://developer.android.com/topic/libraries/view-binding)
 
 ### Goal
 By the end of this tutorial, the reader will be able to:
-- Understand what Glide is
-- Add an `ImageView` to an `XML` layout
-- Load images using Glide
+- Understand what [`Glide`](https://bumptech.github.io/glide/) is.
+- Add an [`ImageView`](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout
+- Load images using the `Glide` library.
 
 ### Introduction  
-Loading images in Android applications was hard and developers had to solve this problem by building various visual representation libraries such as Glide, Picasso, Coil image loader, and Fresco. In this article, we will discuss Glide in details.
+Loading images in Android applications was hard and developers had to solve this problem by building various visual representation libraries such as [`Glide`](https://bumptech.github.io/glide/), [`Picasso`](https://square.github.io/picasso/), [`Coil`](https://coil-kt.github.io/coil/getting_started/) image loader, and [`Fresco`](https://frescolib.org/docs/). In this article, we will discuss `Glide` in detail.
 
 ### What is Glide
 According to official documentation, Glide is a fast and efficient image loading library for Android focused on smooth scrolling.
@@ -25,7 +25,7 @@ Glide supports fetching, decoding, and displaying video stills, images, and anim
 
 ### Features of Glide
 Glide has the following features:
-- Image loading - This allow access to images on the internet or from a drawable.
+- Image loading - This allows access to images on the internet or from a drawable.
 - Circle cropping - Displays an image in a circular view.
 - Resizing and scaling - This refers to adjusting the size of an image.
 - Center cropping - This is scaling the whole image by re-sampling it.
@@ -37,10 +37,10 @@ Glide has the following features:
 
 ### Advantages of using Glide
 - Allows full-size disk caching of images.
-- It is faster than other image loading libraries like Picasso.
+- It is faster than other image-loading libraries like Picasso.
 - Offers an efficient multi-threaded network.
 - Offers various editing tools like loading, resizing, and cropping.
-- It enhances smooth scrolling of images.
+- It enhances the smooth scrolling of images.
 - It supports GIF animation.
 
 ### Step 1: Create a new Android Studio Project
@@ -176,7 +176,6 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
 #### Loading an image from URL
 Glide enables the display of images from links (URL) without downloading them.
 Add the following lines of code in the `MainActivity.kt` file:
-
 ```kotlin
 binding.buttonUrl.setOnClickListener {
 Glide.with(this)
@@ -197,7 +196,9 @@ Glide.with(this)
 ### Transformations
 In Glide, transformations take a resource, mutate it, and return the mutated resource. They are also used to crop or apply filters to `Bitmaps`.
 
-### a) Center Crop
+### a) CenterCrop
+It scales the image so that the width of the image matches the given width of the `ImageView` and the height of the image is greater than the given height or vice versa.
+The method then crop the larger dimension of the image to match the given dimension of the `ImageView`.
 Is implemented by using the `centerCrop()` method.
 ``` kotlin
 binding.buttonScale2.setOnClickListener{
@@ -207,7 +208,8 @@ Glide.with(this)
     .into(binding.imageView)
 }
 ```
-### b) Fit Center
+### b) FitCenter
+Scales the image uniformly so that one of the dimensions of the image will be equal to the given dimension of the `ImageView` and the other will be less than the given dimension of the `ImageView`.
 Is implemented by using the `fitCenter()` method.
 ``` kotlin
 binding.buttonScaling1.setOnClickListener {
@@ -217,7 +219,8 @@ Glide.with(this)
     .into(binding.imageView)
 }
 ```
-### c) Circle Crop
+### c) CircleCrop
+Scales the image inside the `ImageView` just like the FitCenter transformation but the resulting image is masked to a circle.
 Is implemented by using the `circleCrop()` method. 
 ``` kotlin
 binding.buttonCircular.setOnClickListener {
@@ -229,9 +232,7 @@ Glide.with(this)
 ```
 ### Placeholders
 Placeholders are Drawable images shown while the request is in progress.
-
 Once the request is completed successfully, the placeholder disappears. If the request fails and an error `Drawable` is not set, the placeholder will continue to be visible.
-
 In the `MainActivity.kt` file, add the following lines of code:
 
 ``` kotlin
@@ -243,7 +244,7 @@ Glide.with(this)
 }
 ```
 ### Errors Images
-Error Drawable images are shown if the requested URl model is null and no fallback `Drawable` is set. Error `Drawable` is also displayed if the requested resource permanently fails to load.
+Error Drawable images are shown if the requested URL model is null and no fallback `Drawable` is set. Error `Drawable` is also displayed if the requested resource permanently fails to load.
 In the `MainActivity.kt` file, add the following lines of code:
 
 ``` kotlin
@@ -277,7 +278,7 @@ Glide.with(this)
     .into(binding.imageView)
 ```
 ### Targets
-In Glide, targets  act as mediators between requests and requestors. Targets are responsible for displaying placeholders, loading resources, and determining the appropriate dimensions for each request.
+In Glide, targets act as mediators between requests and requestors. They are responsible for displaying placeholders, loading resources, and determining the appropriate dimensions for each request.
 
 In the `MainActivity.kt` file add the following lines of code:
 
@@ -285,15 +286,16 @@ In the `MainActivity.kt` file add the following lines of code:
 binding.buttonTarget.setOnClickListener {
 Glide.with(this)
     .asGif()
-    .load(R.drawable.meditation).into(object : SimpleTarget<GifDrawable>(){
-    override fun onResourceReady(
-    resource: GifDrawable,
-    transition: Transition<in GifDrawable>?
-) {
-    resource.start()
-    binding.imageView.setImageDrawable(resource)
-}
-})
+    .load(R.drawable.meditation)
+    .into(object : SimpleTarget<GifDrawable>(){
+        override fun onResourceReady(
+            resource: GifDrawable,
+            transition: Transition<in GifDrawable>?
+        ){
+            resource.start()
+            binding.imageView.setImageDrawable(resource)
+        }
+    })
 }
 ``` 
 ### Project Demo
