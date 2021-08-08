@@ -22,8 +22,7 @@ For interaction between various components to be achieved, a contract based on t
 Before reading this tutorial, you need to have basic knowledge of Java.
 
 ### Design by contract
-This technique allows a programmer to provide a detailed specification to create software based on the user requirements.
-Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given.
+This technique allows a programmer to provide a detailed specification to create software based on the user requirements. Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given.
 The types of assertions are:
 
 1. Precondition: The specified conditions must be satisfied by the application before calling an external component.
