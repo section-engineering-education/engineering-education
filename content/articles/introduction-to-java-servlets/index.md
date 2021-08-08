@@ -33,7 +33,7 @@ You will need the following to follow along with this article:
 - Some solid basic knowledge of Java is required.
 
 ### Table of content:
-- [Properties and execution of Java servlets](#properties-and-execution-java-servlets)
+- [Properties and execution of Java servlets](#properties-and-execution-of-java-servlets)
 - [The Servlet Architecture](#the-servlet-architecture)
 - [Extensions on the server](#extensions-on-the-server)
 - [Common Gateway Interface](#common-gateway-interface)
@@ -43,7 +43,9 @@ You will need the following to follow along with this article:
 ### Properties and execution of Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
 
-In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment. Also if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is due to the fact that the servlet container processes many requests in various threads. As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
+In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment. Also if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is because the servlet container processes many requests in various threads. 
+
+As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
 
 The execution of the java servlets involves several steps:
 
@@ -63,10 +65,10 @@ The servlet high-level architectural diagram is shown below. Let's have a look a
 
 2. **Web server**: A web server's major purpose is to process the requests and replies that a user sends over time and to keep track of how a web user may access the files that are housed on the server. The server in question is a piece of software that controls access to a network's centralized resource or service. Webservers are divided into two categories:
 
-- A web server that is static
+- A static web server
 - A web server that is constantly updated
 
-3. **Web container**: Another common component in servlet design is the web container, which is handles interacting with the servlets. A web container has two primary functions:
+3. **Web container**: Another common component in servlet design is the web container, which handles interaction with the servlets. A web container has two primary functions:
 
 - Servlet lifecycle management
 - Mapping of URLs
@@ -98,8 +100,7 @@ As a result, the CGI server must establish and delete processes for each request
 #### Advantages
 1. Servlets can be kept in memory until they are manually destroyed, allowing them to handle many requests over time. 
 2. Furthermore, once a database connection has been established, it may be used to execute many database queries in the same database session.
-3. Servlets inherit Java's portability feature and are thus interoperable with almost any web server.
-The most important feature of a servlet is that it is unaffected by server configuration and can be used with almost any web server.
+3. Servlets inherit Java's portability feature and are thus interoperable with almost any web server. The most important feature of a servlet is that it is unaffected by server configuration and can be used with almost any web server.
 4. Servlets are also protocol-agnostic, fully supporting FTP, HTTP, SMTP, and other protocols.
 5. Servlets are translated into byte codes before being performed, which speeds up the processing time.
 
@@ -127,7 +128,7 @@ In creating a java servlet the following steps are involved:
 - Build a directory hierarchy/structure.
 - Build a Servlet.
 - Create a Servlet and compile it.
-- Inside the web.xml file, insert mappings.
+- Inside the `web.xml` file, insert mappings.
 - Launch the webserver and make the project available.
 - Obtain the servlet
 
@@ -171,7 +172,7 @@ out.println("Result is"+k);
 ```
 
 The final step is to add mappings to the `web.xml` file after producing the Java class file. Let's have a look at how we can do that.
-Your web content's WEB-INF folder will contain the web.xml file. Go to Deployment Descriptor and choose Generate Deployment Descriptor Stub if it is not already present. Mappings must be added to the web.xml file once it has been created. Let's have a look at how mapping works using the following example:
+Your web content's `WEB-INF` folder will contain the `web.xml` file. Go to Deployment Descriptor and choose Generate Deployment Descriptor Stub if it is not already present. Mappings must be added to the `web.xml` file once it has been created. Let's have a look at how mapping works using the following example:
 
 ```html
 <?xml version="1.0" encoding="UTF-8"?>
