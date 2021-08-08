@@ -41,13 +41,15 @@ Another critical step is to set the `inbound` and `outbound `rules of the securi
 
 `Inbound rules` specify the type of traffic that will be allowed into the server while `outbound rules` determine the traffic that will leave the MYSQL server.
 
-The `source` and `destination` values for inbound and outbound rules are set to `any` by default. You might want to change it to the IP of your production server so that the database only sends and receives traffic from this server. This makes the database server more secure. 
+The `source` and `destination` values for inbound and outbound rules are set to `any` by default. You might want to change it to the IP of your production server so that the database only sends and receives traffic from this server. 
+
+This makes the database server more secure. 
 
 ![AWS set inbound and outbound rules](/engineering-education/configuring-a-relational-database-server-on-aws/aws_firewall_rules.png)
 
 Save the `new security group`, as shown below: 
 
-![Saving security group](/engineering-education/configuring-a-relational-database-server-on-aws/aws_save_secutiry_group.png)
+![Saving security group](/engineering-education/configuring-a-relational-database-server-on-aws/aws_save_security_group.png)
 
 ### Setting up a Relational Database Server
 On the AWS management console, input `RDS` in the `search bar` and select `RDS`.
@@ -122,7 +124,7 @@ We need the following parameters to establish the connection:
 | -----------| ---------------                   |
 | Username | The username you entered while creating the RDS  |
 | Password          | The password you entered while creating the RDS|
-| Hostname  | This can be seen in the Connectivity&Security section   |
+| Hostname  | This can be seen in the Connectivity & Security section   |
 | Database name| The database name you entered in the additional information section|
 
 Next, we should install the `mysql-connector-python` library using the command below:
