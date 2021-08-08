@@ -5,18 +5,18 @@ To follow along with this tutorial, the reader should:
 - Have [Android Studio](https://developer.android.com/studio) installed.
 - Have an understanding of [Kotlin](https://kotlinlang.org/) programming language and [XML](https://developer.android.com/guide/topics/ui/declaring-layout) layout.
 - Have a basic understanding of image loading in android applications
-- Be familiar with [`ViewBinding`](https://developer.android.com/topic/libraries/view-binding)
+- Be familiar with [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
 
 ### Goal
 By the end of this tutorial, the reader will be able to:
-- Understand what [`Glide`](https://bumptech.github.io/glide/) is.
-- Add an [`ImageView`](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout
+- Understand what [Glide](https://bumptech.github.io/glide/) is.
+- Add an [ImageView](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout
 - Load images using the `Glide` library.
 
 ### Introduction  
-Loading images in Android applications was hard and developers had to solve this problem by building various visual representation libraries such as [`Glide`](https://bumptech.github.io/glide/), [`Picasso`](https://square.github.io/picasso/), [`Coil`](https://coil-kt.github.io/coil/getting_started/) image loader, and [`Fresco`](https://frescolib.org/docs/). In this article, we will discuss `Glide` in detail.
+Loading images in Android applications was hard and developers had to solve this problem by building various visual representation libraries such as `Glide`, [Picasso](https://square.github.io/picasso/), [Coil](https://coil-kt.github.io/coil/getting_started/) image loader, and [Fresco](https://frescolib.org/docs/). In this article, we will discuss Glide in detail.
 
-### What is Glide
+### What is Glide?
 According to official documentation, Glide is a fast and efficient image loading library for Android focused on smooth scrolling.
 
 It offers an easy-to-use API (Application Development Interface), a performance and extensible resource decoding pipeline, and automatic resource pooling.
@@ -197,9 +197,10 @@ Glide.with(this)
 In Glide, transformations take a resource, mutate it, and return the mutated resource. They are also used to crop or apply filters to `Bitmaps`.
 
 ### a) CenterCrop
-It scales the image so that the width of the image matches the given width of the `ImageView` and the height of the image is greater than the given height or vice versa.
+It scales the image such that the width of the image matches the given width of the `ImageView` and the height of the image is greater than the given height or vice versa.
+
 The method then crop the larger dimension of the image to match the given dimension of the `ImageView`.
-Is implemented by using the `centerCrop()` method.
+Center crop implemented by using the `centerCrop()` method.
 ``` kotlin
 binding.buttonScale2.setOnClickListener{
 Glide.with(this)
@@ -209,8 +210,9 @@ Glide.with(this)
 }
 ```
 ### b) FitCenter
-Scales the image uniformly so that one of the dimensions of the image will be equal to the given dimension of the `ImageView` and the other will be less than the given dimension of the `ImageView`.
-Is implemented by using the `fitCenter()` method.
+Scales the image uniformly such that one of the dimensions is equal to the given dimension of the `ImageView` and the other is less than the given dimension of the `ImageView`.
+
+It is implemented by using the `fitCenter()` method.
 ``` kotlin
 binding.buttonScaling1.setOnClickListener {
 Glide.with(this)
@@ -220,8 +222,9 @@ Glide.with(this)
 }
 ```
 ### c) CircleCrop
-Scales the image inside the `ImageView` just like the FitCenter transformation but the resulting image is masked to a circle.
-Is implemented by using the `circleCrop()` method. 
+Just like the FitCenter transformation, `circleCrop` scales the image inside the `ImageView` but the resulting image is masked to a circular outline.
+
+It is implemented by using the `circleCrop()` method. 
 ``` kotlin
 binding.buttonCircular.setOnClickListener {
 Glide.with(this)
@@ -232,7 +235,8 @@ Glide.with(this)
 ```
 ### Placeholders
 Placeholders are Drawable images shown while the request is in progress.
-Once the request is completed successfully, the placeholder disappears. If the request fails and an error `Drawable` is not set, the placeholder will continue to be visible.
+Once the request is completed successfully, the placeholder disappears. If the request fails and an error `Drawable` is not set, the placeholder continues to be visible.
+
 In the `MainActivity.kt` file, add the following lines of code:
 
 ``` kotlin
