@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /assertion-and-design-by-contract-in-java/
 title: Assertion and design by contract in Java
-description: In this article, we go over how to use database transactions to group SQL queries.
+description: In this article, we will look at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program. 
 author: paul-mwangi
 date: 2021-08-02T00:00:00-12:30
 topics: []
@@ -19,7 +19,7 @@ The technique of design by contract specifies the interaction between various co
 For interaction between various components to be achieved, a contract based on the components of the application to communicate with each other is defined by the concept. Assertions are used in the Design by contract technique to check if the requirements specified in the defined contract are met by the application. They are used to test the assumptions made by the programmer.
 
 ### prerequisites
-Before learning this tutorial you need to have learned or be learning Java therefore have basics in Java programming.
+Before reading this tutorial, you need to have basic knowledge of Java.
 
 ### Design by contract
 This technique allows a programmer to provide a detailed specification to create software based on the user requirements.
@@ -30,27 +30,25 @@ The types of assertions are:
 2. Postcondition: The specified condition must be satisfied by the application after an external condition has been executed.
 3. Invariant: The specified condition must be satisfied by the application.
 
-To understand the techniques of assertions we will consider the operations of a stack.
-A stack should not be empty when extracting an element from the stack this condition is therefore checked before extracting an element from the stack. This condition is called a precondition.
-Pushing an element into the stack we need to check whether the element is correctly added to the specified index, this condition is referred to as postcondition.
-An invariant condition is when a stacks number of element should not exceed its carrying capacity or be equals to zero that is empty.
+To understand the techniques of assertions we will consider the operations of a stack. A stack should not be empty when extracting an element from the stack. This condition is thus checked before extracting an element from the stack. This condition is called a precondition.
+
+Pushing an element into the stack, we need to check whether the element is correctly added to the specified index. This condition is referred to as postcondition. An invariant condition is when a stack's number of elements should not exceed its carrying capacity or be equals to empty zero.
 
 ### Implementing Assertion
-An assertion is a statement with a boolean expression assumed by the programmer to be true, and therefore execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors.
-An AssertionError exception is thrown once the expression is false and contains details of the bug that is the line number and file in which the errors are in the program.
-To implement assertions in Java we use the assert statement. 
-The assert statement can be implemented in two ways.
+An `assertion` is a statement with a boolean expression assumed by the programmer to be true. Thus, execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors.
+
+An `AssertionError` exception is thrown once the expression is false and contains details of the bug. That is, the line number and file in which the errors are in the program. To implement assertions in Java we use the assert statement. The assert statement can be implemented in two ways.
 
 ```Java
 assert Expression 1;
 ```
-The expression is a boolean, if it happens that the boolean report is false The assertion error is thrown without information about bugs that happened in the program.
+The expression is a boolean, if the boolean report is false The assertion error is thrown without information about bugs that happened in the program.
 
 ```Java
 assert Expression 1; Expression 2;
 ```
 
-The first expression is boolean and the second is the value passed to the Exception of the AssertError. We can use the assert statement as:
+The first expression is boolean and the second is the value passed to the Exception of the `AssertError`. We can use the assert statement as:
 
 ```Java
 public void division()
@@ -68,7 +66,7 @@ public void division()
 }
 ```
 
-If the expression of the assert statement is false an error is thrown specifying that the program has errors this is referred to as assertion failure.
+If the expression of the assert statement is false, an error is thrown specifying that the program has errors. This is referred to as `assertion failure`.
 
 ### Enabling and disabling assertions
 Java provides command line parameters to allow enabling and disabling assertions. Assertions enabling is done using the following parameters:
@@ -80,6 +78,7 @@ or
 ``` 
 
 Enabling assertions from a file Myfile.java we use the command:
+
 ```Java
 java -enableassertions Myfile.java
 ```
@@ -88,7 +87,7 @@ or
 ```Java
 java -ea Myfile.java
 ```
-Disabling assertions  we use the command line parameter:
+Disabling assertions  we use the command-line parameter:
 
 ```Java
 -da
@@ -108,13 +107,14 @@ java -da Myfile.java
 ```
 
 ### Command lines to enable assertions
-1. Java -ea. This command line is enabled in all classes except the system classes.
-2. Java -ea Main. This command line enables assertions for all the main classes.
-3. Java -eaTestClass Main. This command line enables the only assertion in one class -'TestClass' in the main program.
-4. Java -ea...Main. This command is used to enable assertions for the working class in the main directory
+1. `Java -ea`- This command-line is enabled in all classes except the system classes.
+2. `Java -ea Main`- This command-line enables assertions for all the main classes.
+3. `Java -eaTestClass Main`- This command-line enables the only assertion in one class -`TestClass` in the main program.
+4. `Java -ea...Main`- This command is used to enable assertions for the working class in the main directory
 
 ### Assertion Rules
-Since assertion is used to check on the validation of assumptions made by the programmer at the time of execution then some rules govern the use of assertions.
+Since assertion is used to check on the validation of assumptions made by the programmer at the time of execution. Then, some rules govern the use of assertions:
+
 1. Checking the method arguments passed.
 2. Using the assertion in the default case of the switch statement.
 3. Making use of an assertion descriptive.
@@ -147,7 +147,7 @@ public class division
 3. Assertion is used to check on something that shouldn't happen while an exception is supposed to check on something that can or may happen.
 
 ### Conclusion 
-In this article, we have looked at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program. You need to understand as a programmer how to apply and use assertions to ensure correct flow of your programs.
+In this article, we have looked at assertions which are the assumptions you make as a programmer. This assumption should be correct to avoid errors in the functionality of the program. You need to understand as a programmer how to apply and use assertions to the ensure correct flow of your programs.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
