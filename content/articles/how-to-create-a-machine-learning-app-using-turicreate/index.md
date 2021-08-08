@@ -177,12 +177,12 @@ Output:
  'class']
 ```
 
-The column titled 'class' is our target variable.
+The column titled `class` is our target variable.
 
 ### Getting Features
 
 Features are independent variables that will act as user inputs. The user will be able to feed this inputs into the system for the system to make predictions.
-All the 'feature_names' shown below is what the model will use to make predictions and a user must input them.
+All the `feature_names` shown below is what the model will use to make predictions and a user must input them.
 
 ```python
 feature_names = ['Age',
@@ -338,7 +338,7 @@ Age                            : -0.0729
 
 ### Model Evaluation
 
-This is assessing our model to find out how well it learned. We do this by using the 'test_data'.
+This is assessing our model to find out how well it learned. We do this by using the `test_data`.
 
 ```python
 metrics = logistic_model.evaluate(test_data)
