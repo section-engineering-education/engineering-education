@@ -373,7 +373,7 @@ P-value = 0.10
 Accept the Null Hypothesis (fail to reject H0)
 ```
 
-In the results above, the `p-value` is greater than the `alpha value` set at 0.05. We will fail to reject the null hypothesis and accept the null hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
+In the results above, the `p-value` is greater than the `alpha value` set at 0.05. We will accept the null hypothesis and reject the alternate hypothesis. This means the petal width and species of flower are not dependent, i.e. there is no relationship between them.
  
 ### T-Test with Python implementation
 The T-test is utilized when we plan to evaluate the discrepancy between the means of two groups of samples. Unlike the Chi-Square Test, the T-test is used on continuous variables.
@@ -450,7 +450,7 @@ Ttest_1sampResult(statistic=-0.0053494404016899925, pvalue=0.9957389399651244)
 **H1:** The mean of petal_width is not 1.199
  
 Analyzing one-sample t-test, it finds out if the hypothesized mean is the same or different from the group's mean. From the example above, we've selected the petal_width as the population sample to perform the test on.
-From the test, since the P-value beats the alpha level set at 0.05, we fail to reject the null hypothesis because we don't have enough evidence to prove otherwise, moreover, if you check, the P-value is very close to 1.0, this means that the mean of petal_width is most likely 1.199.
+From the test, since the P-value beats the alpha level set at 0.05, we accept the null hypothesis because we don't have enough evidence to prove otherwise, moreover, if you check, the P-value is very close to 1.0, this means that the mean of petal_width is most likely 1.199.
 The evidence is too strong to be rejected, it is almost accurate. (Obviously, I copied the value of mean from the summary).
  
 #### Performing a Two-Sample T-Test
@@ -530,7 +530,7 @@ print(f_oneway(class1, class2, class3))
 F_onewayResult(statistic=555.8702565323317, pvalue=5.738282463819433e-122)
 ```
  
-Since our P-value (5.738282463819433e-122) is far less than alpha = 0.05, therefore, we reject the Null Hypothesis, there is no evidence sustainable enough to accept it.
+Since our P-value (5.738282463819433e-122) is far less than alpha = 0.05, we reject the Null Hypothesis, as there is no evidence sustainable enough to accept it.
  
 This means that the sample means are very much different. Hence, our H1 (alternate hypothesis) is thus true.
  
@@ -551,7 +551,7 @@ The P-value of petal width is greater than 0.05, which increases the probability
  
 The P-value of sepal length is less than 0.05, which increases the probability of our null hypothesis being rejected.
  
-Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we reject the null hypothesis because it is obvious one or more samples are very much different in their means. That is to say, the average of all data samples is not equal.
+Likewise, the P-value of both petal_width and sepal_length is less than 0.05, we reject the null hypothesis because it is obvious one or more samples are very much different in their means. That is the same thing as saying, the average of all data samples is not equal.
  
 ### Conclusion
 At the end of this tutorial, I believe the readers should have more than a grasp of the concept of statistical hypothesis testing and how to implement it with python programming. To carry out hypothesis testing, the first step is to form an initial assumption and label it as H0. The next step would be to collect all data samples available to support our hypothesis, collect all the shreds of evidence and analyze the data, and make a decision whether to accept the H0 or reject it. However, errors of type 1 and type 2 have been explained using an assumed pregnant woman as an example, which is something almost everyone can relate with. When we reject the ground truth but eventually it is true, we encounter the *Type 1* error. On the flip side, when we do not reject the ground truth despite the fact that it is not true, we encounter the *Type 2* error.
