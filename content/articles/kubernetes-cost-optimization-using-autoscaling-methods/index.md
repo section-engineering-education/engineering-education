@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true 
-url: /engineering-education/kubernetes-cost-optimization-using-autoscaling-methods/
+url: /kubernetes-cost-optimization-using-autoscaling-methods/
 title: Kubernetes cost optimization using autoscaling methods
 description: Running more workloads on the same server instance might seem more cost-effective. But tracking which projects or teams generate Kubernetes costs is challenging.
 author: grace-mumbi
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/kubernetes-cost-optimization-using-autoscaling-methods/hero.png
     alt: Kubernetes cost optimization using autoscaling methods cover image 
 ---
-
 ### Introduction
 Kubernetes is a popular container orchestrator. Its major strengths include its capacity to manage and respond to dynamic environments. Kubernetes deploys, manages, and automatically scales container resources in multiple ways.
 
@@ -33,8 +32,8 @@ There are several solutions for controlling scaling in Kubernetes. In this post,
 - Scaling clusters
 - Scaling pods
 
-#### Scaling clusters
-Managing scale in Kubernetes involves the use of Cluster Autoscaler (CA). Pod autoscaling only operates within the limits of infrastructure resources provided by the cluster. This is a significant disadvantage. Cluster autoscaler solves this issue in two ways:
+### Scaling clusters
+Managing scale in Kubernetes involves the use of Cluster Autoscaler (CA). Pod autoscaling only operates within the limits of the cluster's infrastructure resources, which is a significant disadvantage. Pod autoscaling only operates within the limits of infrastructure resources provided by the cluster. This is a significant disadvantage. Cluster autoscaler solves this issue in two ways:
 - It requests additional nodes from cloud providers to add to the cluster.
 - It deallocates nodes from the cluster on an as-needed basis.
 
@@ -42,14 +41,14 @@ Cluster Autoscaler works by altering the number of nodes in a cluster. Because t
 
 Thus, you need to employ best practices such as the [principle of least privilege](https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance#) when working with this cluster scaling methodology. Also known as the principle of least authority or minimum privilege.
 
-This concept states that any process, user, or program should be given minor access rights required to perform its functio
+This concept states that any process, user, or program should have minor access rights required to perform its functions.
 
 #### How CA optimizes Kubernetes costs
 If the available resources fall short of computing demand, the pods get stuck into a pending state. Pods in this state require more resources before they continue operating. Requiring these resources triggers Kubernetes to request additional nodes and add the pending pods to any new nodes. CA monitors those pods in a pending state. It also detects nodes that are no longer in use and scales down those resources.
 
 Cluster autoscaler has expanders functionality that selects the node group you want new nodes to be added. PodDisruptionBudgets ([PDB](https://kubernetes.io/docs/tasks/run-application/configure-pdb/)) enable you to define your cluster operating budget and configure how pods are removed or added to manage resource utilization.
 
-Managing the costs of running Kubernetes clusters on cloud platforms generally involves a dynamical scaling of the number of nodes to balance the present cluster utilization. When designing any workload, ensure that it scales to meet the current demand.
+Managing the costs of running Kubernetes clusters on cloud platforms generally involves a dynamical scaling of nodes to balance the present cluster utilization. When designing any workload, ensure that it scales to meet the current demand.
 
 ### Scaling pods
 Scaling pods is a straightforward way of scaling deployments. Often, you may what to create additional resources for a specific pod instance. Also, may you want to spread a workload to a single application across multiple container instances by creating further instances to a pod. Scaling pods comes in to help in such situations.
@@ -66,18 +65,16 @@ Horizontal scaling allows you to scale up and down the number of pods depending 
 Scaling is based on the target value. You can, for example, create metrics on CPU utilization and work to develop more pods to distribute load if CPU usage is busy.
 
 #### Scaling pods vertically
-Vertical pod autoscaling works by increasing or reducing pod container memory and CPU resource requests to ensure that the allocated cluster resources match actual usage. This is performed using the vertical pod autoscaler (VPA) mechanism. VPA also replaces pods managed by the replication controller. It thus needs access to the Kubernetes metrics server.
+Vertical pod autoscaling works by increasing or reducing pod container memory and CPU resource requests to ensure that the allocated cluster resources match actual usage. Vertical pod autoscaling is performed using the vertical pod autoscaler (VPA) mechanism. VPA also replaces pods managed by the replication controller. It thus needs access to the Kubernetes metrics server.
 
 #### Horizontal vs. vertical autoscaling in Kubernetes
 Horizontal autoscaling is based on rules that start or stop instances assigned to a resource when they reach the upper or lower limits. Vertical autoscaling allows you to set laws affecting the RAM and CPU resources allocated to an existing instance.
 
 ##### Limitations of horizontal autoscaling
-
 - Instances take minutes to load, and this may affect scaling in case of unexpected demand peaks.
-- It would help to build your applications with a scale-out in mind to ensure workload distribution across multiple servers.
+- It would help build your applications with a scale-out in mind to ensure workload distribution across multiple servers.
 
 ##### Limitations of vertical autoscaling
-
 - You keep on paying for resources even when they are not in use at some moments.
 - Network-related limitations bring about connectivity ceilings for underlying physical hosts.
 - You are limited by upper memory and CPU boundaries for a single host.
@@ -91,3 +88,10 @@ Estimates guide you in setting the limits for resource usage by a pod. [VPA reco
 
 ### Conclusion
 With the correct configuration of Kubernetes scaling mechanisms, you are sure to reduce wastage of resources and lower the cost of running your application. Using one or more of the above autoscaling options reduces your overhead in managing Kubernetes resources and promotes efficient use of infrastructure resources.
+
+Happy learning!
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
