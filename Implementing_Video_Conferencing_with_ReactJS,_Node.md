@@ -11,7 +11,7 @@ For better understanding and utilization of this article, the reader is expected
 - Getting started with Graphql and
 - WebRTC
 
-### Fundamentals of Web-Based Video Conferencing
+### Fundamentals of Web-Based Video Conferencing:
 Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full motion and high-definition audio between multiple nodes
 Implementing video conferencing requires basic knowledge of the following concepts
 
@@ -22,7 +22,7 @@ Implementing video conferencing requires basic knowledge of the following concep
 
 #### WebRTC: WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
 
-### Components of Video Conferencing System
+### Components of Video Conferencing System:
 Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following
 
 - A network connection for audio and video data transfer which involves the use of 3G, 4G or 5G broadband
@@ -32,19 +32,19 @@ Web-based video conferencing involves the synergy of the various frameworks and 
 - Software-based coding and decoding technologies (CODEC)
 - Acoustic echo cancellation (AEC) software for audio optimization and real-time communication.
 
-### Requirements for Web Packets Handling
+### Requirements for Web Packets Handling:
 For a network communication to succeed it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
 
-### Implementation and Coding
+### Implementation and Coding:
 The application being a full stack project is divided into two segments, namely
 
 1. The Client-Side and
 2. The Server-Side
 
-### Client-Side Setup - (index.js)
+### Client-Side Setup - (index.js):
 The Client interface is setup using ReactJS which is a lightweight frontend JavaScript library. the various pages and subdivision of the client interface includes the following
 
-#### Step 1. Getting started with a new React app
+#### Step 1. Getting started with a new React app:
 npx
 
     npx create-react-app react-video-conferencing-app
@@ -64,7 +64,7 @@ the above command should get you started with a new react app with all the defau
 
 the above command will change the directory to your new react app and get the development server running.
 
-#### Step 2. Installing the required Client dependencies 
+#### Step 2. Installing the required Client dependencies: 
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
     npm install
@@ -95,7 +95,7 @@ For a successful development of the application a few dependencies must be insta
     "socketio-jwt": "^4.5.0",
     "style-loader": "^0.20.2",
 
-#### Step 3. Setting up the Client Index file
+#### Step 3. Setting up the Client Index file:
 This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.  
 
     import 'webrtc-adapter';
@@ -167,7 +167,7 @@ This file is the main file for integrating the client and the server codes toget
     }
     render();
 
-#### Step 4. Setting up the routes and other pages for the client UI
+#### Step 4. Setting up the routes and other pages for the client UI:
 The application is divided into five (5) pages namely
 
 - Home Page
@@ -207,7 +207,7 @@ And their respective routes are implemented as follows
       ],
     }];
 
-#### Step 5. Setting up the Video components
+#### Step 5. Setting up the Video components:
 The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 It also enables the following operations
 
@@ -602,6 +602,12 @@ https://testing-library.com/docs/react-testing-library/intro/
 
 
 https://www.apollographql.com/docs/react/v2/data/error-handling/
+
+### About the Author:
+Samuel Cletus
+Samuel is an undergraduate student of computer engineering in Nigeria. He is also a full stack web developer and highly skilled in React, Node and Graphql web frameworks. He enjoys writing codes, watching Tv and making friends.
+![mypicture](https://user-images.githubusercontent.com/68573570/128695123-a9e12eb2-3d03-4e09-be93-7bb784010a02.jpg)
+
 
 ### Hero
 ![Hero](https://user-images.githubusercontent.com/68573570/128691361-59d0ea70-00b7-407a-bd9f-f292367ea444.jpg)
