@@ -107,7 +107,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toEndOf="@+id/buttonUrl"
     app:layout_constraintTop_toTopOf="@+id/buttonUrl" />
 <Button
-    android:id="@+id/buttonScaling1"
+    android:id="@+id/buttonFitCenter"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
@@ -115,7 +115,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toStartOf="@+id/buttonUrl"
     app:layout_constraintTop_toBottomOf="@+id/buttonUrl" />
 <Button
-    android:id="@+id/buttonScale2"
+    android:id="@+id/buttonCenterCrop"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
@@ -158,7 +158,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toStartOf="@+id/buttonDrawable"
     app:layout_constraintTop_toBottomOf="@+id/buttonDrawable" />
 <Button
-    android:id="@+id/buttonCircular"
+    android:id="@+id/buttonCircleCrop"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
@@ -331,4 +331,4 @@ Glide.with(this)
 Glide is a powerful image loading library that is easy to use.
 To learn more about [Glide](https://github.com/bumptech/glide) library, you can visit the [official Glide documentation](https://bumptech.github.io/glide/).
 
-You can access the source code used in this tutorial on [GitHub](https://github.com/Collince-Okeyo/Glide).
+The images and source code used in this tutorial can be accessed on [GitHub](https://github.com/Collince-Okeyo/Glide).
