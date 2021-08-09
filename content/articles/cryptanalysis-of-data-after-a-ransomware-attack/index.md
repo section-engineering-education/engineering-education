@@ -16,15 +16,15 @@ images:
   - url: /engineering-education/cryptanalysis-of-data-after-a-ransomware-attack/hero.jpg
     alt: Cryptanalysis cover image 
 ---
-Cryptanalysis is a technique that has been majorly applied to helping find weaknesses in cryptographic algorithms and improve on them to make encryption robust to threats. Cryptanalysis can, however, be used to decipher data encypted by malicous actors to save on the cost of paying the ransom and recover confidential data.
+Cryptanalysis is a technique that has been majorly applied to helping find weaknesses in cryptographic algorithms and improve on them to make encryption robust to threats. Cryptanalysis can, however, be used to decipher data encrypted by malicous actors to save on the cost of paying the ransom and recover confidential data.
 <!--more-->
 The concepts described in this article will help understand this process.
 
 ### Overview
 This article will cover:
 - [Prerequisites](#prerequisites)
-- [What is cryptanalysis?](#what-is-cryptanalysis?)
-- [Tools used in Cryptanalysis](#tools-used-in-Cryptanalysis)
+- [What is cryptanalysis](#what-is-cryptanalysis)
+- [Tools used in Cryptanalysis](#tools-used-in-cryptanalysis)
 - [Methods of encryption](#methods-of-encryption)
 - [Methods of decryption](#methods-of-decryption)
 
@@ -33,7 +33,7 @@ To follow along, you need:
 - A basic understanding of ransomware as a security threat.
 - A basic understanding of [Cryptography in computer networking](https://www.section.io/engineering-education/cryptography-in-computer-networking/)
 
-### What is cryptanalysis?
+### What is cryptanalysis
 Cryptanalysis is the process by which an individual studies cyphertexts (encrypted data), codes, and cryptographic algorithms without prior knowledge of the original text (plaintext), the encryption key, or the encryption algorithm used.
 
 Successful cryptanalysis normally cracks through an encryption algorithm used on some data resulting in exposure of plaintext without the application of the decryption key on the equivalent ciphertext.
@@ -59,6 +59,7 @@ Some of the tools are such as:
 ***CalcChecksum:*** This is a GUI tool used for computing various checksums.
 
 ***Ganzúa:*** This is a tool used for both poly-alphabetic and mono-alphabetic ciphers and can work with close to any set of characters. In both applications, the relative frequencies for each character are calculated and output.
+
 ***Cryptol:*** It is a tool designed for learning in a programming language used for the design and implementation of new ciphers and also, for the verification of existing cryptography algorithms. It allows the supervision of the functioning of algorithms in software programs, written to indicate the algorithms or ciphers.
 
 ### Methods of encryption
@@ -101,7 +102,9 @@ Happy learning!
 
 ### Relevant resources
 -[Cryptography in computer](https://www.section.io/engineering-education/cryptography-in-computer-networking/)
+
 -[Understanding AES and RSA encryption Algoritms](https://www.section.io/engineering-education/aes-rsa-encryption/)
+
 -[Cryptanalysis tools](https://resources.infosecinstitute.com/topic/cryptanalysis-tools/)
 
 ---
