@@ -91,7 +91,7 @@ Udoo X86 II Ultra might not the best choice for the following reasons:
 Udoo x86 II Ultra is relatively expensive compared to other session board controllers on the market.
 
 #### Lack of official documentation
-Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there is generally not too many project examples or information available on the [official website](https://www.udoo.org/docs-x86II)for Udoo x86 II ultra at the moment. Therefore, users have a hard time finding out how to use the board.
+Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there is generally not too many project examples or information available on the [official website](https://www.udoo.org/docs-x86II) for Udoo x86 II ultra at the moment. Therefore, users have a hard time finding out how to use the board.
 
 #### 4K only supports 24 FPS
 Only supports HDMI 1.4 and DP 1.1a, so 4K is limited to 24 FPS.
