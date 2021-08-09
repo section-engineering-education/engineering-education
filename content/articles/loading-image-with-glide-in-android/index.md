@@ -107,7 +107,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toEndOf="@+id/buttonUrl"
     app:layout_constraintTop_toTopOf="@+id/buttonUrl" />
 <Button
-    android:id="@+id/buttonScaling1"
+    android:id="@+id/buttonFitCenter"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
@@ -115,7 +115,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toStartOf="@+id/buttonUrl"
     app:layout_constraintTop_toBottomOf="@+id/buttonUrl" />
 <Button
-    android:id="@+id/buttonScale2"
+    android:id="@+id/buttonCenterCrop"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
@@ -158,7 +158,7 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     app:layout_constraintStart_toStartOf="@+id/buttonDrawable"
     app:layout_constraintTop_toBottomOf="@+id/buttonDrawable" />
 <Button
-    android:id="@+id/buttonCircular"
+    android:id="@+id/buttonCircleCrop"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
@@ -184,6 +184,7 @@ Glide allows the display of images from links (URL) without downloading them.
 Add the following lines of code in the `MainActivity.kt` file:
 
 ```kotlin
+val resizeImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe0O0260hzKyKursZUTtZAxECP0gSVJ2JXwQ&usqp=CAU"
 binding.buttonUrl.setOnClickListener {
 Glide.with(this)
     .load(resizeImage)
@@ -213,7 +214,7 @@ This method then crop the larger dimension of the image to match the given dimen
 Center crop is implemented by using the `centerCrop()` method.
 
 ```kotlin
-binding.buttonScale2.setOnClickListener{
+binding.buttonCenterCrop.setOnClickListener{
 Glide.with(this)
     .load(R.drawable.codingtable)
     .centerCrop()
@@ -227,7 +228,7 @@ Scales the image uniformly such that one of the dimensions is equal to the given
 It is implemented by using the `fitCenter()` method.
 
 ```kotlin
-binding.buttonScaling1.setOnClickListener {
+binding.buttonFitCenter.setOnClickListener {
 Glide.with(this)
     .load(R.drawable.codingtable)
     .fitCenter()
@@ -241,7 +242,8 @@ Just like the FitCenter transformation, `circleCrop` scales the image inside the
 It is implemented by using the `circleCrop()` method.
 
 ```kotlin
-binding.buttonCircular.setOnClickListener {
+private val image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_f-3Npwnj40B6u8O8WmcX8swxRqUS8ncQg&usqp=CAU"
+binding.buttonCircleCrop.setOnClickListener {
 Glide.with(this)
     .load(image)
     .circleCrop()
@@ -255,6 +257,7 @@ Placeholders are Drawable images shown while the request is in progress. Once th
 In the `MainActivity.kt` file, add the following lines of code:
 
 ```kotlin
+private val image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_f-3Npwnj40B6u8O8WmcX8swxRqUS8ncQg&usqp=CAU"
 binding.buttonPlaceholder.setOnClickListener {
 Glide.with(this)
     .load(image)
@@ -285,6 +288,7 @@ Glide checks several layers of cache before starting a new request for an image:
 #### Loading only from the cache
 
 ```kotlin
+private val resizeImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe0O0260hzKyKursZUTtZAxECP0gSVJ2JXwQ&usqp=CAU"
 binding.buttonCache.setOnClickListener {
 Glide.with(this)
     .load(resizeImage)
@@ -296,7 +300,7 @@ Glide.with(this)
 ### Disk Cache Strategies
 ```kotlin
 Glide.with(this)
-    .load(imageUrl)
+    .load(yourImageHere)
     .diskCacheStrategy(DiskCacheStrategy.ALL)
     .into(binding.imageView)
 ```
@@ -331,4 +335,4 @@ Glide.with(this)
 Glide is a powerful image loading library that is easy to use.
 To learn more about [Glide](https://github.com/bumptech/glide) library, you can visit the [official Glide documentation](https://bumptech.github.io/glide/).
 
-You can access the source code used in this tutorial on [GitHub](https://github.com/Collince-Okeyo/Glide).
+You can access the source code and the images used in this tutorial on [GitHub](https://github.com/Collince-Okeyo/Glide).
