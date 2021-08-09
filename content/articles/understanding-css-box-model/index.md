@@ -4,20 +4,19 @@ status: publish
 published: true
 url: /understanding-css-box-model/
 title: Understanding CSS Box Model
-description: In this tutorial, you will learn what is a box model, how to control it, style it, and explore the basic types of boxes.
+description: In this tutorial the reader will learn what is a box model, how to control it, style it, and explore the basic types of boxes.
 author: terrypha-wamaitha
-date: 2021-08-08T00:00:00-05:41
+date: 2021-08-09T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-css-box-model/hero.png
+  - url: /engineering-education/understanding-css-box-model/hero.jpg
     alt: Understanding CSS Box Model Example Image
 ---
-
 The box-model is a fundamental concept in CSS and HTML. Since everything in CSS is made up of boxes, it's critical to understand how the CSS box model works. 
-
-Many web developers still don't understand how the box model works. So, in this tutorial, we'll look at the basics of the CSS box-model and why it's known as the box model. In addition, I will provide a better understanding of the box-model behavior.
+<!--more-->
+In this tutorial, we'll look at the basics of the CSS box-model and why it's known as the box model. In addition, I will provide a better understanding of the box-model behavior.
 
 ### Table of contents
 1. [What is a box-model](#what-is-a-box-model)
@@ -40,7 +39,7 @@ Let's start with the box-model's layout, which is depicted in the accompanying i
 [css box model example](https://www.dummies.com/)
 
 ### Styling the box
-As we had said earlier, we may change the appearance of the HTML components of the box by adjusting the content, padding, border, and margin. Let's look at each of them.
+As we said earlier, we may change the appearance of the HTML components of the box by adjusting the content, padding, border, and margin. Let's look at each of them.
 
 ### Content
 The content consists of data in the form of text, images, or other forms of media. The `width` and `height` attributes change the box's dimensions. While this is a straightforward definition, it should be emphasized that “content” can also refer to empty space.
@@ -51,9 +50,7 @@ Padding is the gap between the content's outside edge and its border. The paddin
 
 >**NOTE**: You can use one value to represent the padding across the box, for example, `padding: 35px;` or you can give each side of the box a value, for example, `padding-left:25px;`.
 
-
 Let's look at an example of padding in CSS:
-
 ```css
 p {
     border-style: solid;
@@ -73,11 +70,12 @@ p {
     border-color: red;
   }
 ```
+
 These are the changes that you will observe.
 
 ![padding2](/engineering-education/understanding-css-box-model/padding2.png)
 
-The additional padding between the paragraph content and the border has altered significantly, as can be seen.
+The additional padding between the paragraph content and the border has been altered significantly, as we can see.
 
 ### Border
 The border of an element is defined by the distance between the padding's outer edge and the margin's inner edge. Its width is set to 0 by default.
@@ -96,14 +94,17 @@ border-width: 5px 10px 15px 20px;
 border-style: solid dashed dotted double; 
 border-color: red green blue brown;
 ```
+
 ![border](/engineering-education/understanding-css-box-model/border.png)
 
 ### Margin
-Margin is the portion on the outside of the CSS Box Model. In simple words, Margin is the distance between an element's box and the boxes of its surrounding elements.
+Margin is the portion on the outside of the CSS Box Model. In simpler words, Margin is the distance between an element's box and the boxes of its surrounding elements.
 
 This is similar to the page margin, which is the distance between a page's boundary and its content. It is translucent and has padding-like features, although it clears space outside the element's boundary.
 
-Individual edges, like padding, can be set to have a specific margin. For example, `margin-top: 15px;`.
+Individual edges, like padding, can be set to have a specific margin. 
+
+For example, `margin-top: 15px;`.
 
 ### Example
 Let's look at an example of how to apply margin:
@@ -125,10 +126,11 @@ p {
 }
 </style>
 ```
-The above code shows us how to apply spaces between the two boxes. It separates the two boxes with 15px.
+
+The code above shows us how to apply spaces between the two boxes. It separates the two boxes with 15px.
 
 ### Basic types of boxes
-1. Block boxes
+1. Block boxes.
 2. Inline boxes.
 
 These are the two main types of boxes. Let's look at each of them.
@@ -158,7 +160,7 @@ The `height` and `width` attributes let you customize the height and width of a 
 When we write the HTML block width element, `width: auto;` the value is equal to the width of the row by default. However, we may assign HTML components a particular width value, such as `width: 200px;`.
 
 ### Width and height calculations
-We'll need to do a quick calculation to see how much space our entire box takes up. Let's look at an example (Let's use the values that we had supplied in the margin code above):
+We'll need to do a quick calculation to see how much space our entire box takes up. Let's look at an example (let's use the values that we had supplied in the margin code above):
 - height: 150px;
 - width: 150px;
 - padding: 20px;
@@ -175,7 +177,9 @@ To calculate the height, we use the height's pixels plus the top and bottom of t
 ### Conclusion
 In this article, we have looked at the box model and, we have seen that it determines the appearance of a box's content, padding, border, and margin.
 
-You can find the code for implementation  [here](https://replit.com/@Terripha/understanding-the-css-box-model#index.html)
+You can find the code for implementation [here](https://replit.com/@Terripha/understanding-the-css-box-model#index.html).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
