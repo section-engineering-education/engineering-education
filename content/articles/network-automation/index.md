@@ -18,7 +18,7 @@ During the industrial age, automation was used to reduce and potentially elimina
 <!--more-->
 In the current era, configuration management tools are used to automate the configuration of network devices such as routers, switches, firewalls, and servers. Automation reduces the time taken to set up networks, especially in large organizations.
 
-In this article, we  will look at network automation and some automation tools in use. We will also look at Application Programming Interfaces (APIs) and various types of web service APIs.
+This article will provide an overview of network automation and some of the automation tools in use. It will also take you through Application Programming Interfaces (APIs) and various types of web service APIs.
 
 ### Goals
 At the end of this article, it is expected that the reader should learn:
@@ -57,8 +57,8 @@ Network automation is achieved using Application Programming Interface (API) to 
 
 APIs are classified into internal, partner, and public APIs.
 - **Internal APIs:** These APIs are used exclusively within an organization. They are restricted to only people working within an organization.
-- **Partner APIs** These are APIs that are designed to allow business partners access to certain business functions related to their business. They grant them access to functions such as online catalog, ordering, and reconciliation.
-- **Public APIs** They are also referred to as external APIs. They are designed primarily for external consumers and can be used with no restrictions. The providers only require users to get free to control the number of APIs’ requests.
+- **Partner APIs:** These are APIs that are designed to allow business partners access to certain business functions related to their business. They grant them access to functions such as online catalog, ordering, and reconciliation.
+- **Public APIs:** They are also referred to as external APIs. They are designed primarily for external consumers and can be used with no restrictions. The providers only require users to get free to control the number of APIs’ requests.
 
 Different users request various information from an API provider. APIs use a **Data format**, a simple way to store and exchange data in a well-structured format for devices and computers to understand. Some of these data formats are:
 - Javascript Objects Notation (JSON)
