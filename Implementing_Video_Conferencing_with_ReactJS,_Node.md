@@ -68,10 +68,10 @@ the above command will change the directory to your new react app and get the de
 #### Step 2. Installing the required Client dependencies: 
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
+    javascript
     npm install
     Or
     yarn add
-    javascript
     "apollo-cache-inmemory": "^1.1.9",
     "apollo-client": "^2.2.5",
     "apollo-client-preset": "^1.0.8",
