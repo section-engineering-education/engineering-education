@@ -3,18 +3,17 @@ layout: engineering-education
 status: publish
 published: true 
 url: /kubernetes-cost-optimization-using-autoscaling-methods/
-title: Kubernetes cost optimization using autoscaling methods
+title: Kubernetes Cost Optimization using Autoscaling Methods
 description: Running more workloads on the same server instance might seem more cost-effective. But tracking which projects or teams generate Kubernetes costs is challenging.
 author: grace-mumbi
-date: 2021-08-04T00:00:00-11:00
+date: 2021-08-08T00:00:00-05:27
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/kubernetes-cost-optimization-using-autoscaling-methods/hero.png
+  - url: /engineering-education/kubernetes-cost-optimization-using-autoscaling-methods/hero.jpg
     alt: Kubernetes cost optimization using autoscaling methods cover image 
 ---
-### Introduction
 Kubernetes is a popular container orchestrator. Its major strengths include its capacity to manage and respond to dynamic environments. Kubernetes deploys, manages, and automatically scales container resources in multiple ways.
 
 The modern cloud is developed in a way that you pay only for the resources you consume. Thus, Kubernetes' ability to perform proper autoscaling of resources is key to optimizing Kubernetes' costs.
@@ -90,8 +89,6 @@ Estimates guide you in setting the limits for resource usage by a pod. [VPA reco
 With the correct configuration of Kubernetes scaling mechanisms, you are sure to reduce wastage of resources and lower the cost of running your application. Using one or more of the above autoscaling options reduces your overhead in managing Kubernetes resources and promotes efficient use of infrastructure resources.
 
 Happy learning!
-
-Happy coding!
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
