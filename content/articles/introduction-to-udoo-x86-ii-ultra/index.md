@@ -9,7 +9,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-udoo-x86-ii-ultra/hero.jpg
+  - url: /engineering-education/introduction-to-udoo-x86-ii-ultra/hero.jpeg
     alt: Introduction to Udoo X86 II Ultra image
 ---
 Session board controllers are extremely important devices as they allow us to run multiple applications usually run on a PC. In this article, we will focus on `Udoo x86 II Ultra`'s capabilities and enhanced features.
