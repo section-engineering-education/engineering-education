@@ -20,7 +20,8 @@ Implementing video conferencing requires basic knowledge of the following concep
 - Nodejs
 - ReactJS
 
-#### WebRTC: WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
+#### WebRTC: 
+WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
 
 ### Components of Video Conferencing System:
 Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following
