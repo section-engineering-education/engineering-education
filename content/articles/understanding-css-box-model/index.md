@@ -36,7 +36,7 @@ Let's start with the box-model's layout, which is depicted in the accompanying i
 
 ![css-box-model](/engineering-education/understanding-css-box-model/css-box-model.png)
 
-[css box model example](https://www.dummies.com/)
+[CSS box model example](https://www.dummies.com/)
 
 ### Styling the box
 As we said earlier, we may change the appearance of the HTML components of the box by adjusting the content, padding, border, and margin. Let's look at each of them.
