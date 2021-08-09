@@ -194,5 +194,7 @@ We were able to convert a real image into a cartoon with the help of libraries i
 
 You can play around with the code to create your desired effect. Besides, you can make use of the plethora of functions in the OpenCV library to create even more wonderful effects.
 
+The google colab notebook I used can be found in this [link](https://colab.research.google.com/drive/19Vgt7YUk5pmgoc9K0_Qy6Cd6yhIL2vGj#scrollTo=-BScmj0vpWbF) for refference
+
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
