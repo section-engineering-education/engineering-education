@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /laravel-8-collections/
 title: Understanding Laravel 8 Collections
-description: This tutorial will guide the reader on how to retrieve and manipulate data using Laravel collections.
+description: This tutorial will guide the reader on how to retrieve and manipulate data using Laravel collections. We will build a simple project to showcase the full power of this component.
 author: odongo-albert
-date: 2021-08-25T00:00:00-06:00
+date: 2021-08-09T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/laravel-8-collections/hero.jpg
     alt: Understanding Laravel 8 Collections
 ---
-The Laravel framework has numerous features that ease development. This article will focus on Laravel collections. We will build a simple project to showcase the full power of this component.  
+The Laravel framework has numerous features that ease development. This article will focus on Laravel collections. We will build a simple project to showcase the full power of this component.
 <!--more-->
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -25,13 +25,13 @@ The Laravel framework has numerous features that ease development. This article 
 - [Finding data](#finding-data)
 
 ### Prerequisites
-To follow along, you need some basic knowledge of Laravel and PHP.
+To follow this article along, you need some basic knowledge of Laravel and PHP.
 
 ### Objectives
 This tutorial will help you understand Laravel collections and how they can be implemented in a web project.
 
 ### Defining Laravel collections
-Laravel collections can be regarded as modified versions of PHP arrays. They are located in the ` Illuminate\Support\Collection` directory and provide a wrapper to work with data arrays.  
+Laravel collections can be regarded as modified versions of PHP arrays. They are located in the `Illuminate\Support\Collection` directory and provide a wrapper to work with data arrays.
 
 We create Laravel collections using the following code snippet:  
 
@@ -92,7 +92,7 @@ In the code above, we declared an array and passed it to the `collect()` helper 
 In the code above, we instantiated the `Illuminate\Support\Collection` class and included our array. The class then converted the array to a collection.
 
 ### Eloquent ORM collections
-ORM (Object Relational Mapping) is a database manipulation technique. Therefore we'll use the `Eloquent ORM` to return these data as a collection.  
+ORM (Object Relational Mapping) is a database manipulation technique. Therefore, we will use the `Eloquent ORM` to return these data as a collection.
 
 Let's create a simple database with dummy data and try to manipulate it using Laravel collections.
 
@@ -142,7 +142,7 @@ public function run()
 .....................................
 ```
 
-In the `database/seeders/DatabaseSeeder` file, add the following:  
+In the `database/seeders/DatabaseSeeder` file, add the following code:  
 
 ```php
 <?php
@@ -172,7 +172,7 @@ Database seeding completed successfully.
 # if you don't get this output, check if you have added the UserSeeder in the DatabaseSeeder call method
 ```
 
-Since we've set up our logic, let's query our database to return all users.
+Since we've set up our logic, let's now query our database to return all users.
 
 ```php
  //get users from db
@@ -181,13 +181,13 @@ public function get_db_users(){
 }
 ```
 
-Output: 
+Output:
 
-![Collections Output](/engineering-education/laravel-collections/collection.png)
+![Collections Output](/engineering-education/laravel-8-collections/collection.png)
 
-In the image above, the `lluminate\Database\Eloquent\Collection {#1210 ▶}` class returns a collection. We can, therefore, use different methods to analyze data.  
+In the image above, the `lluminate\Database\Eloquent\Collection {#1210 ▶}` class returns a collection. We can, therefore, use different methods to analyze the data.  
 
-### Finding data 
+### Finding data
 In this section, we will learn how to find data in a collection. Some of the techniques that we can use are discussed below:
 
 1. The `where()` method
@@ -220,9 +220,9 @@ Result:
 ``` 
 
 2. The `contains()` method
-We use the `contains()` method to check where a given item is available in a collection or not. 
+We use the `contains()` method to check whether a given item is available in a collection or not.
 
-Let's look at the example below:  
+Let's look at the example below:
 
 ```php
 <?php
@@ -250,9 +250,9 @@ True
 In the example above, we checked whether an item exists in the collection and returned a boolean value depending on its availability.   
   
 ### Conclusion
-In this tutorial, we have learned how to use Laravel collections. We set up a database and retrieved data using a collection. 
+In this tutorial, we have learned how to use Laravel collections. We have also learned how to set up a database and retrieved data using a collection.
 
-You can, therefore, use this knowledge to craft quality Laravel applications. 
+You can, therefore, use this knowledge to craft quality Laravel applications.
 
 ### Further reading
 - [Laravel collections](https://laravel.com/docs/8.x/collections)
