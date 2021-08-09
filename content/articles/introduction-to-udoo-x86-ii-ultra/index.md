@@ -58,7 +58,7 @@ Udoo X86 II Ultra comes with an 8GB built in RAM. The advanced version has 4GB o
 Udoo X86 II Ultra is capable of running software meant for a normal personal computer. This is made possible by a 2.56GHz quad-core intel CPU and an 8GB RAM.
 
 #### Availability of freely useful guides and community
-Through a helpful community quite good guides are available online.
+Through a helpful community, quite good guides are available online.
 
 ###	Lower energy consumptions
 The Arduino Leonardo 101 board requires less than 11 Watts of energy which makes it very energy efficient as compared to other session board controllers like Ultra Board Xtreme session board controller that uses upto 15 Watts.
@@ -67,14 +67,14 @@ The Arduino Leonardo 101 board requires less than 11 Watts of energy which makes
 Udoo X86 II Ultra box comes with a 32GB embedded multimedia card. However, users might decide to upgrade the storage to fit their desire. Though expensive, an SSD card is usually the best option. Additionally, a micro-SD card can also be used as a storage media.
 
 #### X86-compatible architecture
-Udoo X86 II Ultra supports most operating systems including Linux, Windows and Android. For Linux and Android, the internal storage can be used as a read only memory with additional SATA(Serial Advanced Technology Attachment) `HDD(Hard Disk Drive)/SSD(Solid-State Drive)/eMMC(Embedded Multi-Media Controller)` drive used as /tmp and /home directories.
+Udoo X86 II Ultra supports most operating systems including Linux, Windows and Android. For Linux and Android, the internal storage can be used as a read only memory with additional `SATA` (Serial Advanced Technology Attachment) `HDD` (Hard Disk Drive)/SSD (Solid-State Drive)/eMMC (Embedded Multi-Media Controller) drive used as /tmp and /home directories.
 
 Udoo II X86 Ultra is also used a gaming emulator as it supports most retro gaming emulators available for a PC. It can also emulate new consoles like play-station II.
 
 #### Decent GPIO support
-The Udoo x86 Ultra comes with 28 `GPIO(general-purpose input/output)` ports in total which may seem few, but considering that it has an Arduino 101 embedded on it, this is a decent number.
+The Udoo x86 Ultra comes with 28 `GPIO` (general-purpose input/output) ports in total which may seem few, but considering that it has an Arduino 101 embedded on it, this is a decent number.
 
-The Arduino board comes built in with different functionalities. For instance, some pins can be used for a six-axis accelemetor and gryroscope. 12 additional GPIO(general-purpose input/output) pins are also available. Several key communication protocols such as the two IIC(Inter Integrated Circuit), two UART(Universal Asynchronous Receiver Transmitter), LPC(Low Pin Count) and SDIO(Secure Digital Input Output) are also supported.
+The Arduino board comes built in with different functionalities. For instance, some pins can be used for a six-axis accelerometer and gyroscope. 12 additional GPIO pins are also available. Several key communication protocols such as the two `IIC` (Inter Integrated Circuit), two `UART` (Universal Asynchronous Receiver Transmitter), `LPC` (Low Pin Count) and `SDIO` (Secure Digital Input Output) are also supported.
 
 ####  Easy and straightforward set up
 It’s absolutely straightforward to set up. The installation guidelines for the supported operating systems are provided in hard-copy and video form.
@@ -91,7 +91,7 @@ Udoo X86 II Ultra might not the best choice for the following reasons:
 Udoo x86 II Ultra is relatively expensive compared to other session board controllers on the market.
 
 #### Lack of official documentation
-Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there is generally not too many project examples or information available on the [official website](https://www.udoo.org/docs-x86II) for Udoo x86 II ultra at the moment. Therefore, users have a hard time finding out how to use the board.
+Apart from the hardware specifications sheet, there is no official documentation publicly available. Also, there are not too many project examples or information available on the [official website](https://www.udoo.org/docs-x86II) for Udoo x86 II ultra at the moment. Therefore, users have a hard time finding out how to use the board.
 
 #### 4K only supports 24 FPS
 Only supports HDMI 1.4 and DP 1.1a, so 4K is limited to 24 FPS.
