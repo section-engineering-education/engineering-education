@@ -1,7 +1,8 @@
 # Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
 **Introduction:**
 Developers around the world have an incredible task of handling client requirements, and video conferencing is one of those requirements developers experience difficulty implementing due to its complexity. The pandemic has opened up opportunities in remote work and “work from home” which comes at the cost of efficient video conferencing and packets handling.
-          ReactJS and webRTC provides an excellent tool for making the implementation of web-based video conferencing seamlessly easy. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
+ReactJS and webRTC provides an excellent tool for making the implementation of web-based video conferencing seamlessly easy. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
+
 **Fundamentals of Web-Based Video Conferencing**
 Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full motion and high-definition audio between multiple nodes
 Implementing video conferencing requires basic knowledge of the following concepts
@@ -12,6 +13,7 @@ Implementing video conferencing requires basic knowledge of the following concep
 - ReactJS
 
 **WebRTC:** WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
+
 **Components of Video Conferencing System**
 Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following
 
@@ -24,6 +26,7 @@ Web-based video conferencing involves the synergy of the various frameworks and 
 
 **Requirements for Web Packets Handling**
 For a network communication to succeed it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
+
 **Implementation and Coding**
 The application being a full stack project is divided into two segments, namely
 
@@ -52,6 +55,7 @@ the above command should get you started with a new react app with all the defau
     npm start
 
 the above command will change the directory to your new react app and get the development server running.
+
 **Step 2. Installing the required Client dependencies**
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
@@ -317,6 +321,7 @@ Yarn
     yarn init
 
 the above command should initialize your server instance, ensure the instructions are followed appropriately.
+
 **Installing the Required Server Dependencies**
 
     npm install
@@ -577,9 +582,11 @@ React testing library is an excellent tool used in application modules and compo
     node build/start
 
 **Conclusion**
-In this article we had an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer
+In this article we had an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
+
 Best Regards and Happy Coding
 Cheers!
+
 **References:**
 Centralized Conferencing (xcon). Left.org. 2014-07-16. Retrieved 2019-07-11
 
@@ -588,3 +595,5 @@ https://testing-library.com/docs/react-testing-library/intro/
 
 https://www.apollographql.com/docs/react/v2/data/error-handling/
 
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
