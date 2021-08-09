@@ -18,7 +18,7 @@ Docker Swarm refers to a container orchestration tool that allows users to manag
 <!--more-->
 This article provides the basics of Docker Swarm and explains its key features. It also highlights some of its uses and explains how it works.
 
-### Introduction to Docker swarm
+### An overview of Docker swarm
 Before understanding what Docker Swarm is, it is important to learn the terms *Docker* and *Swarm*. A *Swarm* is a term used to describe many Docker hosts or systems. *Docker container* is a software that consists of libraries, codes and frameworks for running applications. 
 
 Docker Swarm is a tool used for managing container orchestration. It runs on Docker applications and enables users to create a group of Docker nodes and deploy them. 
@@ -89,5 +89,6 @@ This article provided an overview of Docker Swarm in container orchestration. To
 7. We have learned the advantages and disadvantages of Docker Swarm.
 
 Happy learning!
+
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
