@@ -71,6 +71,7 @@ For a successful development of the application a few dependencies must be insta
     npm install
     Or
     yarn add
+    javascript
     "apollo-cache-inmemory": "^1.1.9",
     "apollo-client": "^2.2.5",
     "apollo-client-preset": "^1.0.8",
@@ -99,6 +100,7 @@ For a successful development of the application a few dependencies must be insta
 #### Step 3. Setting up the Client Index file:
 This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.  
 
+    javascript
     import 'webrtc-adapter';
     import { InMemoryCache } from 'apollo-cache-inmemory';
     import { ApolloClient } from 'apollo-client';
@@ -179,6 +181,7 @@ The application is divided into five (5) pages namely
 
 And their respective routes are implemented as follows
 
+    javascript
     import React from 'react';
     import { Redirect } from 'react-router';
     import {
@@ -219,6 +222,7 @@ It also enables the following operations
 
 The implementation of the video component is illustrated below
 
+    javascript
     import React from 'react';
     import PropTypes from 'prop-types';
     import { connect } from 'react-redux';
@@ -336,7 +340,8 @@ the above command should initialize your server instance, ensure the instruction
     npm install
     Or
     yarn add
-    "bcrypt": "^5.0.0",
+    javascript
+   "bcrypt": "^5.0.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
@@ -360,6 +365,7 @@ the above command should initialize your server instance, ensure the instruction
 ### Setting Up the Server – (index.js)
 The Backend server is setup using Nodejs and Graphql. In order to guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server 
 
+    javascript
     import express from 'express';
     import bodyParser from 'body-parser';
     import morgan from 'morgan';
@@ -391,6 +397,7 @@ The Backend server is setup using Nodejs and Graphql. In order to guarantee opti
 ### Setting-up Graphql server
 In this project, Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers comes with fully equipped mutations for data modification and alteration, query for data fetch and subscription for real-time data instance monitoring.   Below is the setup of the Graphql server.
 
+    javascript
     import graphqlExpress from 'express-graphql';
     import debug from 'debug';
     import { createServer } from 'http';
@@ -456,6 +463,7 @@ In this project, Graphql server is the tool used to interface between the client
 ### Setting Up the Required Mutations, Queries and Subscriptions
 #### Step 1: The first mutation will be to establish connection with the second user for data transfer. Below is the code implementation of the mutation
 
+    javascript
     import { GraphQLObjectType, GraphQLInt, GraphQLBoolean, GraphQLString } from 'graphql';
      
     export default {
@@ -490,6 +498,7 @@ In this project, Graphql server is the tool used to interface between the client
 
 ####Step 2: Now that our mutation is up and running, we need to setup the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup.
 
+    javascript
     import { GraphQLList } from 'graphql';
     import Promise from 'bluebird';
     import moment from 'moment';
@@ -528,6 +537,7 @@ In this project, Graphql server is the tool used to interface between the client
 
 #### Step 3: To enable real-time sockets monitoring, Graphql provides a tool called Subscription. Below is the subscription setup
 
+    javascript
     import { RedisPubSub } from 'graphql-redis-subscriptions';
     import url from 'url';
      
@@ -551,6 +561,7 @@ Applications as we know it has its own fair share of bugs and errors and handlin
 
  To set error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop along side the data returned from the server or cache
 
+    javascript
     const MY_QUERY = gql`
       query WillFail {
         badField
@@ -575,6 +586,7 @@ Applications as we know it has its own fair share of bugs and errors and handlin
 #### Ignoring Errors
 Errors may be ignored during application development. These errors are expected errors that the developer feels unbothered about, to achieve that the following code block should be integrated
 
+    javascript
     onError(({ response, operation }) => {
       if (operation.operationName === "IgnoreErrorsQuery") {
         response.errors = null;
@@ -584,6 +596,7 @@ Errors may be ignored during application development. These errors are expected 
 #### Using React Testing Library
 React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils.** this is implemented using the following command
 
+    javascript
     npm install --save-dev @testing-library/react
     or
     yarn add @testing-library/react
