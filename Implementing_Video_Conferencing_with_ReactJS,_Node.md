@@ -1,7 +1,15 @@
 # Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
-### Introduction:###
+
+### Introduction:
 Developers around the world have an incredible task of handling client requirements, and video conferencing is one of those requirements developers experience difficulty implementing due to its complexity. The pandemic has opened up opportunities in remote work and “work from home” which comes at the cost of efficient video conferencing and packets handling.
 ReactJS and webRTC provides an excellent tool for making the implementation of web-based video conferencing seamlessly easy. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
+
+### Prerequisites:
+For better understanding and utilization of this article, the reader is expected to have basic knowledge of the following
+- Geting started with ReactJS ES6
+- Getting started with Nodejs 
+- Getting started with Graphql and
+- WebRTC
 
 ### Fundamentals of Web-Based Video Conferencing
 Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full motion and high-definition audio between multiple nodes
@@ -14,7 +22,7 @@ Implementing video conferencing requires basic knowledge of the following concep
 
 #### WebRTC: WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
 
-###Components of Video Conferencing System###
+### Components of Video Conferencing System
 Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following
 
 - A network connection for audio and video data transfer which involves the use of 3G, 4G or 5G broadband
@@ -594,6 +602,10 @@ https://testing-library.com/docs/react-testing-library/intro/
 
 
 https://www.apollographql.com/docs/react/v2/data/error-handling/
+
+### Hero
+![Hero](https://user-images.githubusercontent.com/68573570/128691361-59d0ea70-00b7-407a-bd9f-f292367ea444.jpg)
+
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
