@@ -5,15 +5,15 @@ published: true
 url: /create-a-3d-world-in-react-using-three.js-react-three-fiber/
 title: Create a 3D World in React using Threejs & React Three Fiber
 description: In this tutorial we will create a simple CLI application that takes two arguments to understand CLI basics.
-author: 
-date: 2021-08-06T00:00:00-12:00
+author: francis-kaguongo
+date: 2021-08-09T00:00:00-15:30
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/hero.png
+  - url: /engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/hero.jpg
     alt: example image Node.js CLI
 ---
-3D environments have come a long way since their first appearance in computers in the '60s. Its follow-up was 3D modeling, seen in the '70s. The ability to visualize and work with the third dimension has been loved by users and developers, thus increasing in its popularity. This copied real-life object characteristics of length, width, and height.
+3D environments have come a long way since their first appearance in computers in the 1960s. Its follow-up was 3D modeling, seen in the 1970s. The ability to visualize and work with in third dimension has been loved by users and developers, thus increasing in its popularity. This copied real-life object characteristics of length, width, and height.
 <!--more-->
 3D objects are fascinating to behold. Experienced when interacting with computers, whether in games, videos, websites, or even simulations. Unlike 2D objects, more angles, light, shade, and contrast are visible and more appealing. You can read more on 3D objects and how to get them and their importance in [this](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/) article.
 
@@ -178,7 +178,7 @@ Now, in the public folder, we shall fetch the '**carbon_normal.jpg**' from the f
 
 It should look as shown below:
 
-![carbon_normal.jpg](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/carbon_normal.jpg)
+![carbon_normal.jpg](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/carbon_normal.jpg)
 
 *"carbon_normal Textuture" - Texture image provided by Author*
 
@@ -321,7 +321,7 @@ Access the application on a web browser at `localhost:3000`.
 
 The outcome shall be as shown below:
 
-![first run](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/first-run.png)
+![first run](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/first-run.png)
 
 *"first run" - Screenshot by Author*
 
@@ -333,7 +333,7 @@ For example, you can try:
 api.applyImpulse([0, 5, -10], [1, 1, 1])
 ```
 
-![impulse effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse.gif)
+![impulse effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse.gif)
 
 *"Impulse Effect" - Gif by Author*
 
@@ -346,7 +346,7 @@ Change the effect on the boxes to make the boxes hover or fly upwards like a dro
           }
 ```
 
-![velocity effect](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/velocity-effect.gif)
+![velocity effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/velocity-effect.gif)
 *"Velocity Effect" - Gif by Author*
 
 > **Bonus/Fun activity**: How wuick are you on clicks?
@@ -373,7 +373,7 @@ Now let's add other spheres objects to the scene. We shall first start with addi
 
 The functions will be as shown below:
 
-![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/impulse-and-velocity-effects.gif)
+![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse-and-velocity-effects.gif)
 
 *"Impulse and Velocity Effect" - Gif by Author*
 
@@ -432,7 +432,9 @@ The code is as shown below:
 
 > **NOTE:** You can use as many spherical objects as you want. Just remember, the more objects you add the more memory will be used hence the webpage may take longer to load or render and even slow performance.
 
-![spheres](/engineering-education/create-a-3d-world-in-react-using-threejs-and-react-three-fiber/spheres.gif)
+![spheres](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/spheres.gif)
+
+
 *"Spheres" - Gif by Author*
 
 > Fun activity hint: You can add more power to the cubes as stated before to effectively hit the spheres.
@@ -471,7 +473,7 @@ This has turned out to be a major '*Gold-mine*' for programmers who know how to 
 
 
 ### References
-- [How to Insert 3D Objects into a Webpage using HTML and CSS](https://www.section.io/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/).
+- [How to Insert 3D Objects into a Webpage using HTML and CSS](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/).
 - [threejs documentation](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene).
 - [threejs InstancedMesh](https://threejs.org/docs/#api/en/objects/InstancedMesh)
 - [React Three Fibre documentation](https://github.com/pmndrs/react-three-fiber).
