@@ -6,62 +6,62 @@ url: /build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
 title: Build and Dockerize a Full-stack React app with Node.js, MySQL and Nginx
 description: In this article, we will build a full-stack web application using React, Node.js, MySQL, and Nginx. We will also dockerize each application, and deploy them. 
 author: moses-m
-date: 2021-08-04T00:00:00-21:00
-topics: [Containers, Languages]
+date: 2021-08-09T00:00:00-13:30
+topics: [Containers, Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/hero.png
     alt: React Node MYSQL Nginx Docker Image
 ---
-ReactJS is one of the common and famous front-end web frameworks. Nevertheless, in most situations, a web application will require back-end services to process different transactions.But, ReactJS as a front-end framework is not complete without a back-end service to make up a complete full-stack application.
+React.js is a common and famous front-end web frameworks. Yet, in most situations, a web application will require back-end services to process different transactions. React.js as a front-end framework is not complete without a back-end service to make up a complete full-stack application.
 <!--more-->
-On the other hand, Docker is the perfect containerizing technology to set up all the environments you need to set up this full-stack application. This is because Docker uses an abstract concept built on top of a low-level operating system platform that enables you to execute one or even more containerized activities or services within one or more virtualized instances.
+On the other hand, Docker is a perfect containerizing technology used to set up all the environments you need set up for a full-stack application. This is because Docker uses an abstract concept built on top of a low-level operating system platform that enables you to execute one or even more containerized activities or services within one or more virtualized instances.
 
 Thus, Docker will help you deploy a full-stack React application with the back-end environments such as Node.js and Django.
 
 ### Why Dockerize a React application with Docker
-- A React full-stack application has different services, and thus it runs as a multi-container Docker application. Docker will allow you to spin all the services you need, and to run all the containers on a single host.
+- A React full-stack application has different services, and it runs as a multi-container Docker application. Docker will allow you to spin all the services you need, and to run all the containers on a single host.
 - Docker promotes the reusability of components. For example, one instance of Node.js can be used by different containers to run different services.
 - Docker containers allow you to spin up an application stack and run them with a lightweight footprint, reduced overhead, and with a stable performance.
-- Docker allows developers to share Docker images and files across machines. This enhances CI/CD (DevOps). Thus, making the application development and testing faster, with rapid deployment.
+- Docker allows developers to share Docker images and files across machines. This enhances CI/CD (DevOps). Thus, making the application development and testing faster, with a more rapid deployment.
 
 ### Goal
 In this tutorial, we will build a React full-stack application with Node.js as the back-end service, MySQL as the application database, and NginX for reverse proxy. We will also dockerize this full-stack application, and deploy them as a Docker image.
 
-We'll use Nginx as a router in the front-end and Node.js servers, as well as an HTTP server, to deliver the built React front-end code.
+We'll use [Nginx](https://www.section.io/modules/nginx-lua/) as a router in the front-end and Node.js servers, as well as an HTTP server, to deliver the built React front-end code.
 
 We will build a simple book review application that uses React as the front-end and Node.js to spin up a server that will help us process all requests to either add, update, or delete book reviews from a database.
 
 ### Prerequisites
 - Have [Node.js](https://nodejs.org/en/download/) and [Docker](https://www.docker.com/products/docker-desktop) installed on your computer.
 - Prior knowledge on how to use Docker and Docker-compose to run and manage Docker containers.
-- Good understanding of using [ReactJS](https://www.youtube.com/watch?v=w7ejDZ8SWv8).
+- A good understanding of using [ReactJS](https://www.youtube.com/watch?v=w7ejDZ8SWv8).
 - Understand how to [create API services using the Node.js](https://www.youtube.com/watch?v=Oe421EPjeBE) framework.
 
 ### Setup project basics
-This involves two major setup - a client and back-end API services.
+This involves two major setups - a client and back-end API services.
 
-The application involves multi-stage building. You utilize several `FROM` statements in your Dockerfile for multi-stage builds. Then, write a `docker-compose.yml` file to execute all the Dockerfiles with the proper instructions to set a fully dockerized application.
+The application involves multi-stage building. You will need to utilize several `FROM` statements in your Dockerfile for multi-stage builds. Then, write a `docker-compose.yml` file to execute all the Dockerfiles with the proper instructions to set a fully dockerized application.
 
 To start with, create a project directory to work on. We will start by creating a Node.js back-end API with Express to expose a REST API and communicate with the MySQL database.
 
 ### Build the back-end Node.js application
-Node.js will help us to process all tractions and communication that we need to make to the database. In this case, we will use a CRUD use case to implement a simple Node.js Rest API.
+Node.js will help us to process all tractions and communication that we need to make to the database. In this case, we will use a CRUD to implement a simple Node.js Rest API.
 
 #### Step 1: Project structure
 Inside your project directory, go ahead and create a new folder `server`. We will write our back-end login inside this directory.
 
-After you create, `cd` to this folder and initialize a Node.js application using `npm init -y`. On execution, a `package.json` file will be created. Here, we can add any dependencies that we use for the project.
+After you created it, `cd` to this folder and initialize a Node.js application using `npm init -y`. On execution, a `package.json` file will be created. Here, we can add any dependencies that we will use for the project.
 
 #### Step 2: Project dependencies
-We will using the following libraries:
+We will be using the following libraries:
 
 - `CORS` - a technique that permits restricted resources on a web page to be accessed from a different domain (a case that occurs when you are creating an Express API).
 - `Express` - a Node.js framework that enables us to create API endpoints, and to request data from the server. Express will help us write different functions that will help us process different CRUD requests.
-- `Mysql2` - will enable us to write different functions that will help us access MySQL Server and execute SQL queries.
+- `Mysql2` - will allow us to write different functions that will help us access MySQL Server and execute SQL queries.
 
-Run the following command (inside the `server` folder) to install the above packages.
+Run the following command (inside the `server` folder) to install the packages above.
 
 ```bash
 npm install cors express mysql2
@@ -111,7 +111,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-- To retrieve books, we add a route that will process a `Select` MySQL query to retrieve all the books from the database.
+- To retrieve books, we will add a route that will process a `Select` MySQL query to retrieve all the books from the database.
 
 ```js
 //get all of the books in the database
@@ -164,7 +164,7 @@ app.put("/update/:bookId", (req, res) => {
 })
 ```
 
-- And finally, add a port the will expose the API when the server is running. Here, we expose it to port `3001`.
+- And add a port the will expose the API when the server is running. Here, we expose it to port `3001`.
 
 ```js
 app.listen('3001', () => { })
@@ -184,15 +184,16 @@ Now, you can run `npm start` inside the `server` folder. Access the home route (
 ### Build the front-end React application
 Let's now write our application front-end logic to process all the API endpoints that we have defined above.
 
-Go to your project `root` directory to start a new React project. We will be running the below command to create and generate a React application boilerplate.
+Go to your project `root` directory to start a new React project. We will be running the command below to create and generate a React application boilerplate.
 
 ```bash
 npx create-react-app client --use-npm
 ```
+
 Here, `npm` is the package manager.
 
 #### Step 1: The client project structure
-Now, we have a React template, but we don't need all the files here. So, you can go ahead and delete some files inside the `public` and `src` directories. And, this should be your project structure after removing the unused files.
+Now, we have a React template, but we don't need all the files here. So, you can go ahead and delete some files inside the `public` and `src` directories. This should be your project structure after removing the unused files.
 
 ```bash
 └───client
@@ -207,7 +208,6 @@ Now, we have a React template, but we don't need all the files here. So, you can
 
 #### Step 2: Adding project dependencies
 Here, we will add some additional packages:
-
 - Axios - a promise-based HTTP request library that allows us to intercept requests with REST API.
 - Bootstrap and React-bootstrap - they are CSS frameworks that have custom CSS styles for elements such as Buttons, Input text, Cards, etc.
 
@@ -220,7 +220,9 @@ npm install Axios bootstrap react-bootstrap
 #### Step 3: Writing the React front-end logic
 Here, we will write down the code that will help the client React application to communicate with the server Node.js API.
 
-Start by importing the necessary modules. Head over to the `src` directory and write the following code:
+Start by importing the necessary modules. 
+
+Head over to the `src` directory and write the following code:
 
 ```js
 import React, { Component } from 'react';
@@ -230,7 +232,6 @@ import { Button, Container, Card, Row } from 'react-bootstrap'
 ```
 
 Here we are:
-
 - Importing the React Component from the React library
 - Importing the `App.css`. This is where we will later write some CSS to style a React page.
 - Importing Axios so that we can process and handle any incoming requests.
@@ -306,7 +307,7 @@ edit = (id) => {
 }
 ```
 
-> Note: how the endpoint is written here with the `/api`.
+> Note: How the endpoint is written here with the `/api`.
 
 This is because, in the Node.js application, we used `/get`, `/insert`, etc. We add `/api` in the Axios requests because Nginx will redirect `/api` to the requested route (for example, `/get`) into the Node.js application. The Nginx proxy in our container will handle this.
 
@@ -314,7 +315,7 @@ In this case, we will be creating Node.js as an `api` service in the same contai
 
 Normally, you assign `http://localhost:3001/get/` instead of `/api/get`, when you run the application directly from the base metals. But in this case, that won't work, as the application is running as a virtual instance where Node.js is dockerized.
 
-For that reason, the Node.js (server) will run as a container instance as API on the `docker-compose.yml`. We will implement this logic later.
+For that reason, the Node.js (server) will run as a container instance as an API on the `docker-compose.yml`. We will implement this logic later.
 
 #### Step 7: Rendering the React component
 Here, we are adding the necessary input texts and buttons that will handle the necessary states and response data.
@@ -358,7 +359,9 @@ render() {
 ```
 
 #### Step 8: Adding CSS to style App.js
-Now, we will add some CSS styling to layout the forms on. So, go ahead to the `App.css` file and add the following CSS code:
+Now, we will add some CSS styling to layout the forms on. 
+
+So, go ahead to the `App.css` file and add the following CSS code:
 
 ```css
 .App {
@@ -411,19 +414,21 @@ ReactDOM.render(
 ```
 
 #### Step 9: Test
-Inside the client folder, run `npm start` to check if this is working. Then, open `http://localhost:3000/` and a page similar to this show be shown on your web browser.
+Inside the client folder, run `npm start` to check if this is working. Then, open `http://localhost:3000/` and a page similar to this should be shown on your web browser.
 
 ![react-application](/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/react-application.png)
 
 ### Create the Dockerfile environments
-Now, we have the full-stack application ready, we can go ahead and define the Docker environments using Dockerfile.
+Now that we have the full-stack application ready, we can go ahead and define the Docker environments using Dockerfile.
 
 This application will be running on the host machine's base metals. We need to copy the necessary file to Docker and run the necessary commands with the help of a `Dockerfile`.
 
 Let's start by defining the client application Dockfile environments:
 
 #### Client dockerfile
-Navigate to the `client` folder, create a new file and name it `Dockerfile`. We will add the following to this file:
+Navigate to the `client` folder, create a new file and name it `Dockerfile`. 
+
+We will add the following to this file:
 
 ```dockerfile
 FROM node:alpine
@@ -439,7 +444,7 @@ Now, we need to pull the Node.js image to run this application inside a containe
 
 Inside the client image, we have defined the working directory as `/app`. When the image is created, this directory will also be created inside Docker. Then, we will copy the `package-lock.json` and `package.json` from the computer to `/app` on the client's Docker image.
 
-After that, we will copy everything from our client `root` folder to the client container's working directory. Then, execute `npm run start` command to start the React application inside the container.
+After that, we will copy everything from our client `root` folder to the client container's working directory. Then, execute the `npm run start` command to start the React application inside the container.
 
 Let's now test if this Dockerfile is working.
 
@@ -449,13 +454,15 @@ On your terminal change directory to point to the client directory and execute t
 docker build -f Dockerfile -t client .
 ```
 
-The above command will create an image called `client` on Docker. To test it, we will create a container that will help us to run this image. Here is the command to do so:
+The above command will create an image called `client` on Docker. To test it, we will create a container that will help us run this image. 
+
+Here is the command to do so:
 
 ```bash
 docker run -it -p 4001:3000 client
 ```
 
-Here, we will are exposing port `3000` (the port that runs the React application) to port `4001` outside the container—run the above command. And, if now you open `http://localhost:4001` on a browser, you can see that the React app is working inside Docker.
+Here, we are exposing port `3000` (the port that runs the React application) to port `4001` outside the container—run the above command. If you open `http://localhost:4001` on a browser now, you will see that the React app is working inside Docker.
 
 ![dockerized-react-application](/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/dockerized-react-application.png)
 
@@ -472,7 +479,9 @@ CMD ["npm", "run", "start"]
 
 This looks similar to the client Dockerfile, and the same process is being carried out here to create `/app` working directory, copy all the necessary files, and then run the `npm run start` script (as defined in the `package.json`) to start up the server.
 
-We can test the Dockerfile by creating a server image and a container to run the image. To create the server image run:
+We can test the Dockerfile by creating a server image and a container to run the image. 
+
+To create the server image run:
 
 ```bash
 docker build -f Dockerfile -t server .
@@ -484,12 +493,14 @@ To create a container to execute the server image, run:
 docker run -it -p 4002:3001 server
 ```
 
-Here, will are exposing port `3001` (the port that is running the Node.js server application) to port `4002` outside the container—run the above command. And, if now you open `http://localhost:4002/` on a browser, you can see that the Node.js home route is okay and the app is working inside Docker.
+Here, we are exposing port `3001` (the port that is running the Node.js server application) to port `4002` outside the container—run the above command. 
+
+If you now open `http://localhost:4002/` on a browser, you can see that the Node.js home route is okay and the app is working inside Docker.
 
 ![dockerized-nodejs-server](/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/dockerized-nodejs-server.png)
 
 ### Setting up Nginx server
-Before diving into what the Nginx server does, let's look at a proxy and a reverse proxy.
+Before diving into what the Nginx server does, let's look at a proxy and a [reverse proxy](/engineering-education/what-are-reverse-proxies/).
 
 A proxy server is a server that retrieves data from the Internet on behalf of a user, such as a web page. It acts as a bridge between two entities (the client and the server) and provides a service (requests and responses).
 
@@ -507,9 +518,11 @@ A reverse proxy server can be run on a Nginx instance. It enables you to have da
 
 In this application, we will access both the client and the server using the Nginx proxy. Also, when using Nginx, changes made to the application will reflect immediately since the whole application is being served on a reverse proxy architecture.
 
-Navigate to the project `root` directory and create an Nginx folder. Here, we will write the Nginx server proxy configurations to power up both the client and server API together. Inside the Nginx folder, create a `default.conf` file. We will add the following into it:
+Navigate to the project `root` directory and create an Nginx folder. Here, we will write the Nginx server proxy configurations to power up both the client and server API together. Inside the Nginx folder, create a `default.conf` file. 
 
-```conf
+We will add the following into it:
+
+```bash
 upstream client {
   server client:3000;
 }
@@ -546,7 +559,8 @@ Here, we are:
 - Adding the location `/`. `/` will redirect to the client-server.
 > Note that, we are setting `proxy_pass` as `http://client`. The client is the name of the service that we will configure in our `docker-compose.yml` file to power up the client React application.
 - Adding the location `/sockjs-node` for the client to make the web sockets connection and connect to the server. We should define the `sockjs-node` path here.
-- Adding the location `/api`. Remember we added this to the Axios requests URLs. This will redirect to the Node.js back-end. `api/anything` should redirect to the parameter `/$1`, which is any section of our Node.js routes such as `/get`.
+- Adding the location `/api`. Remember we added this to the Axios requests URLs. This will redirect to the Node.js back-end. 
+- `api/anything` should redirect to the parameter `/$1`, which is any section of our Node.js routes such as `/get`.
 
 #### Nginx server dockerfile
 Inside the Nginx folder, add a `Dockerfile` and include the following to pull the Nginx image and execute the `default.conf` file.
@@ -557,7 +571,7 @@ COPY ./default.conf /etc/nginx/conf.d/default.conf
 ```
 
 ### Setting up the docker-compose.yml
-Now, we have all the configurations for the client, and the server API hooked to the Nginx server and ready to spin up everything together with the `docker-compose.yml`, including our database.
+Now, we have all the configurations for the client, the server API hooked to the Nginx server, and we are ready to spin up everything together with the `docker-compose.yml`, including our database.
 
 At the root of your project, create a `docker-compose.yml` file.
 
@@ -634,7 +648,7 @@ Here, we are adding the following services:
 
 - `mysql_db` - this will run the MySQL server. Once the MySQL instance is executed, a database `books` will be created and all the environments that power a MySQL server (we also added them in the Node.js database connection).
 
-Also, note we are executing a `setup.sql` script inside the `mysql_db` volumes. So, the project root directory creates `setup.sql` file and adds this to the SQL script:
+We should note we are executing a `setup.sql` script inside the `mysql_db` volumes. So, the project root directory creates `setup.sql` file and adds this to the SQL script:
 
 ```sql
 CREATE TABLE IF NOT EXISTS `books_reviews` (
@@ -645,7 +659,7 @@ CREATE TABLE IF NOT EXISTS `books_reviews` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 ```
 
-When the `mysql_db` instance has been created, this script will be executed, and a table `books_reviews` automatically created the defined fields.
+When the `mysql_db` instance has been created, this script will be executed, and a table `books_reviews` will automatically create the defined fields.
 
 - `nginx` - to power up the Nginx server. This will be exposed on port `3050`.
 - `api` - this will power up the Node.js server. Note the name of this service is `api`, just as we defined in the Nginx proxy settings.
@@ -686,7 +700,7 @@ At this point, your project should at least have these files and folders.
 ```
 
 ### Run and test the fully containerized application instance
-All is now ready.
+Everything is now ready.
 
 On your project root directory, execute the following command to run the `docker-compose.yml` file.
 
@@ -698,7 +712,7 @@ This will build and run all the containers in Docker.
 
 ![docker-containers-running](/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/docker-container-running.png)
 
-Now, you access the Adminer using route `http://localhost:8000/`.
+Now, you can access the Adminer using route `http://localhost:8000/`.
 
 ![adminer](/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/adminer.png)
 
@@ -717,7 +731,10 @@ The code for this project can be found on [GitHub](https://github.com/mosesreign
 
 I hope you find this tutorial informative and helpful.
 
+Happy coding!
+
 ### Further reading
+- [Deploying Multiple Applications to VMs with NGINX as a Reverse Proxy](/engineering-education/nginx-reverse-proxy/)
 - [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
 - [Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
 - [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
