@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/hero.png
     alt: Spring boot CRUD image
 ---
-One of the benefits of REST APIs is the flexibility and scalability it gives to our application. Since the client and server are independent, the REST protocol separates the data storage from the User Interface in the server.
+One benefit of REST APIs is the flexibility and scalability it gives to our application. Since the client and server are independent, the REST protocol separates the data storage from the User Interface in the server.
 <!--more-->
-With this, our application can be scaled quickly primarily due to the separation of concerns (the separation of the frontend from the server), which helps our application be loosely coupled. This also offers flexibility in modifying our code in the future, as developers can easily integrate RESTful API without much-added work.
+With this, our application can be scaled quickly, primarily due to the separation of concerns (the separation of the frontend from the server), which helps our application be loosely coupled. This also offers flexibility in modifying our code in the future, as developers can easily integrate RESTful API without much-added work.
 
 ### Goal
 This article teaches how to create a Spring Boot RESTful API that performs CRUD operations by making a database call to a MySQL database using Hibernate - an implementation of JPA (Java Persistence API).
