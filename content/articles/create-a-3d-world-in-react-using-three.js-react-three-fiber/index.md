@@ -321,9 +321,9 @@ Access the application on a web browser at `localhost:3000`.
 
 The outcome shall be as shown below:
 
-![first run](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/first-run.png)
+![First run](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/first-run.png)
 
-*"first run" - Screenshot by Author*
+*"First run" - Screenshot by Author*
 
 You can click on the boxes, and you will see them being thrown away each time. You can add the intensity of the throw by modifying the values in the `api.applyImpulse` section in the '**app.js**' file.
 
@@ -333,7 +333,7 @@ For example, you can try:
 api.applyImpulse([0, 5, -10], [1, 1, 1])
 ```
 
-![impulse effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse.gif)
+![Impulse effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse.gif)
 
 *"Impulse Effect" - Gif by Author*
 
@@ -346,7 +346,9 @@ Change the effect on the boxes to make the boxes hover or fly upwards like a dro
           }
 ```
 
-![velocity effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/velocity-effect.gif)
+![Velocity effect](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/velocity-effect.gif)
+
+
 *"Velocity Effect" - Gif by Author*
 
 > **Bonus/Fun activity**: How wuick are you on clicks?
@@ -373,7 +375,7 @@ Now let's add other spheres objects to the scene. We shall first start with addi
 
 The functions will be as shown below:
 
-![impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse-and-velocity-effects.gif)
+![Impulse and velocity effects](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/impulse-and-velocity-effects.gif)
 
 *"Impulse and Velocity Effect" - Gif by Author*
 
@@ -432,7 +434,7 @@ The code is as shown below:
 
 > **NOTE:** You can use as many spherical objects as you want. Just remember, the more objects you add the more memory will be used hence the webpage may take longer to load or render and even slow performance.
 
-![spheres](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/spheres.gif)
+![Spheres](/engineering-education/create-a-3d-world-in-react-using-three.js-react-three-fiber/spheres.gif)
 
 
 *"Spheres" - Gif by Author*
