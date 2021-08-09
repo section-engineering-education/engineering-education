@@ -1,4 +1,21 @@
-In this tutorial, we are going to learn how to use the Glide library to load images either from the internet (URL) or from `Drawable` image files into an `ImageView` in Android.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /loading-image-with-glide-in-android/
+title: Loading Image with Glide in Android
+description: This tutorial takes the reader through the process of loading images with Glide in Android. Glide is a fast and efficient image loading library for Android focused on smooth scrolling and memory efficiency.
+author: collince-okeyo
+date: 2021-08-10T00:00:00-01:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/loading-image-with-glide-in-android/hero.png
+    alt: Loading Image with Glide in Android image
+---
+
+In this tutorial, we will learn how to use the Glide library to load images either from the internet (URL) or from `Drawable` image files into an `ImageView` in Android.
 <!--more-->
 
 ### Prerequisites
@@ -65,8 +82,10 @@ Add internet permissions to your project.
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-### Step 3: Creating XML layouts
+### Step 3: Creating an XML layout
 In this step, we are going to design the XML layout consisting of `Buttons` and and an `ImageView`.
+
+Add the following code in the `activity_main.xml` file.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,17 +139,17 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
     android:text="CenterCrop"
-    app:layout_constraintBottom_toBottomOf="@+id/buttonScaling1"
-    app:layout_constraintStart_toEndOf="@+id/buttonScaling1"
-    app:layout_constraintTop_toTopOf="@+id/buttonScaling1" />
+    app:layout_constraintBottom_toBottomOf="@+id/buttonFitCenter"
+    app:layout_constraintStart_toEndOf="@+id/buttonFitCenter"
+    app:layout_constraintTop_toTopOf="@+id/buttonFitCenter" />
 <Button
     android:id="@+id/buttonDrawable"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
     android:text="Drawable"
-    app:layout_constraintStart_toStartOf="@+id/buttonScaling1"
-    app:layout_constraintTop_toBottomOf="@+id/buttonScaling1" />
+    app:layout_constraintStart_toStartOf="@+id/buttonFitCenter"
+    app:layout_constraintTop_toBottomOf="@+id/buttonFitCenter" />
 <Button
     android:id="@+id/buttonPlaceholder"
     android:layout_width="wrap_content"
@@ -336,3 +355,6 @@ Glide is a powerful image loading library that is easy to use.
 To learn more about [Glide](https://github.com/bumptech/glide) library, you can visit the [official Glide documentation](https://bumptech.github.io/glide/).
 
 You can access the source code and the images used in this tutorial on [GitHub](https://github.com/Collince-Okeyo/Glide).
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
