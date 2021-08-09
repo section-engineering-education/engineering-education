@@ -1,17 +1,17 @@
 ### Checklist
 - See all open pull requests
 
-![pull request](/images/pull_requests.png)
+![pull request](/static/images/pull_requests.png)
 
 - Open an article you want to review.
 
-![conversation](/images/conversation.png)
+![conversation](/static/images/conversation.png)
 
 - Make sure you are under the Conversation tab. Open the settings to the right.
 
 - Assign yourself to the article.
 
-![assign](/images/assign.png)
+![assign](/static/images/assign.png)
 
 - Add any relevant labels to let other reviewers know the status of the article.
 
@@ -29,11 +29,11 @@
 
 	- Tech review: Preliminary revision completed and you are moving to technical fact-checking and testing.
 
-![labels](/images/labels.png)
+![labels](/static/images/labels.png)
 
 - Your article will be sent in for final review once you add the label ready for final review.
 
-![final review](/images/final_review.png)
+![final review](/static/images/final_review.png)
 
 ### In Initial Review
 - Student submits PR in GitHub with proper folder structure (following provided documentation)
@@ -63,5 +63,12 @@
 - (if needed) Ask the student author to make any required revisions within the PR. Once the corrections are submitted, review changes.
 
 - (if needed) if the scope of the article is beyond Peer Reviewer Scope - Ping Manager with details and they will request a Revision (from the Section tech review committee)  in the open PR
+
+- add your PRL (peer reviewer line to the end of the article you reviewed) to get credit and payout. 
+Example: 
+```
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+```
 
 - Ping Manager for a Final Review and for them to Merge the approved PR.

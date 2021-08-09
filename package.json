@@ -1,0 +1,19 @@
+{
+  "name": "engineering-education",
+  "version": "1.0.0",
+  "description": "Engineering Education repo ",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/section-engineering-education/engineering-education.git"
+  },
+  "author": "Section",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/section-engineering-education/engineering-education/issues"
+  },
+  "homepage": "https://github.com/section-engineering-education/engineering-education#readme"
+}
