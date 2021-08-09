@@ -274,6 +274,13 @@ Glide.with(this)
     .into(binding.imageView)
 }
 ```
+### Disk Cache Strategies
+``` kotlin
+Glide.with(this)
+    .load(yourImageHere)
+    .diskCacheStrategy(DiskCacheStrategy.ALL)
+    .into(binding.imageView)
+```
 ### Targets
 In Glide, targets act as mediators between requests and requestors. They are responsible for displaying placeholders, loading resources, and determining the appropriate dimensions for each request.
 
