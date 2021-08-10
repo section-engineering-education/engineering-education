@@ -6,7 +6,7 @@ url: /engineering-education/python-decorators/
 title: Getting started with decorators in Python
 description: This tutorial will be a brief dive into the concept of python decorators. how to use them and their advantages to programmers.
 author: mia-roberts
-date: 2021-08-10T00:00:00-13:30
+date: 2021-08-10T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -17,6 +17,17 @@ images:
 Python decorators are a design pattern that allows the developer to modify the structure of a function without changing the function's code structure. 
 <!--more-->
 This concept is useful when you want to change the behavior of a function, so rather than going in and changing the entire cod, you create a python decorator which will allow you to use a single line of code to change the behavior of all different functions.
+
+### Table of content
+- [Prerequisites](#prerequisites)
+- [Understanding what decorators](#understanding-what-decorators)
+- [Core pillars of decorators](#core-pillars-of-decorators)
+- [Creating Python decorators](#creating-python-decorators)
+- [Passing parameters to decorators](#passing-parameters-to-ecorators)
+- [Debugging Python decorators](#debugging-python-decorators)
+- [Using multiple decorators](#using-multiple-decorators)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Prerequisites
 Appreciating that everything in Python programming comes as an object is a key to understanding this concept. The reader should be well conversant with Python, although the explanations are simple and precise for beginners.
