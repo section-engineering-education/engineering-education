@@ -337,7 +337,7 @@ We will name our pickle file 'naive_bayes.pkl'.
 
 ### Introduction to the FastAPI
 
-Fast API is very powerful in creating Web APIs since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
+Fast API is potent since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
 
 ### Installing the FastApi
 
@@ -355,7 +355,7 @@ Let's install the server.
 pip install uvicorn[standard]
 ```
 
-### Creating and API for our machine learning model using the FastAPI
+### Creating an API for our machine learning model using the FastAPI
 
 1. First, create a new Python file and name it 'main.py.'
 2. Add our pickle file 'naive_bayes.pkl' in a new folder.
