@@ -21,14 +21,14 @@ This API is very useful to locate places in a website like businesses, sports gr
 The three, when used together, can provide a useful application whereby a user can navigate, find directions and estimate distances on a webpage. These are some of the functions that when embedded in a website could increase the usability of the web application.
 
 ### Table of content
-- Goal of the project
-- File and Folder organization
-- Setting up the project API - Key
-- Working on the user interface
-- The JavaScript Driver code
-- Testing the application
-- Conclusion
-- Recommendation
+- [Goal of the project](#project-goal)
+- [File and Folder organization](#project-files-and-folder-organization)
+- [Setting up the project API - Key](#setting-up-the-api-key)
+- [Working on the user interface](#webpage-design)
+- [Bringing the API Key](#bringing-the-api-key)
+- [The JavaScript Driver code](#coding-the-javascript-functions)
+- [Conclusion](#conclusion)
+
 
 ### Project goal
 The sole purpose of this project is to enable the reader to understand the core functionalities and applications of various APIs used with Google Maps. 
@@ -42,7 +42,7 @@ Next, we will create three files named `index.html`, `style.css` and `app.js`. T
 
 The `style.css` will contain the styling of our webpage while the `app.js` will have driver code for the implementation of the APIs.
 
-### Setting up the API-Key
+### Setting up the API Key
 We need an API key for each of the modules we are going to use. However, if we create a single project in Google Console and add the APIs, we can use several APIs using just a single key. 
 
 1. Head over to [Google Console](https://console.cloud.google.com/)
