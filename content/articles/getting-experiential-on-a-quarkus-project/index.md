@@ -1,7 +1,8 @@
 Quarkus is an open-source Java native framework useful for creating and managing Kubernetes native Java stack, microservices, and serverless environments which is optimized for the open JDK and the GraalVM runtime. It is a very effective platform for Kubernetes, cloud, and serverless environments.
+
 In similarity to the Spring Boot framework, Quarkus is a combination of different Java libraries and standards, providing you a consolidation along with improvements on the JVM.
-Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers.
-Quarkus is natively integrated with Java libraries, hence you don't have to learn a new thing.
+
+Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers. Quarkus is natively integrated with Java libraries, hence you don't have to learn a new thing.
 
 ![Quarkus Icon](Quarkus-hero.png "Quarkus Icon")
 _(Quarkus Official icon)_
@@ -9,7 +10,6 @@ _(Quarkus Official icon)_
 In this tutorial, we will get started on Quarkus and see how we can have some hands-on Quarkus projects using different tools and software environments.
 
 ### Table of Contents
-
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Quarkus briefs](#quarkus-briefs)
@@ -32,9 +32,7 @@ In this tutorial, we will get started on Quarkus and see how we can have some ha
 - [References](#references-1)
 
 ### Key takeaways
-
 Coming to the tip of the article, we shall have the following to take with us:
-
 - Comparison between Quarkus and other Java frameworks
 - Quarkus prerequisites
 - Advantages and trade-offs of Quarkus framework
@@ -44,7 +42,6 @@ Coming to the tip of the article, we shall have the following to take with us:
 - Testing Quarkus resources usage using JConsole.
 
 ### Pre-requisites
-
 Some basics required for easy follow-up on this article include:
 
 - A modern IDE that supports Java frameworks installed on your machine. This may either be Visual Studio Code or IntelliJ (Ultimate version) or any other. We shall focus on the two in this article.
@@ -68,7 +65,6 @@ Some features provided by Quarkus include:
 ### Comparison between Quarkus and other Java frameworks
 
 Java is a well-built and supported language. It has many available frameworks for large and small projects. Some include:
-
 - Spring
 - Spring Boot
 - Hibernate
@@ -80,16 +76,19 @@ Java is a well-built and supported language. It has many available frameworks fo
 - Micronaut
 - Microprofile among many more...
 
-Applications are build basing the choices of algorithms, data structures, and frameworks based on the performance and efficiency per requirements.
+Applications are built basing the choices of algorithms, data structures, and frameworks based on the performance and efficiency per requirements.
 
 You shall look at the similarities and differences between Quarkus and other Java frameworks such as Spring Boot, Micronaut, and Microprofile.
 
 When you compare Quarkus and Spring Boot, you will learn the following:
 The similarity is that Quarkus and Spring Boot both use Spring Web dependencies, have similar REST points, and are built using Maven and Gradle into JAR files.
+
 The differences are that Quarkus was built for performance and efficiency, in that it should take the least amount of memory and Boot and response time.
+
 Quarkus is a modern framework while Spring Boot has existed for a long time. This has made Quarkus to be optimized ,hence better performance.
 
 As for Quarkus and Micronaut, they are both modern frameworks build for microservices and serverless applications build for JDK and GraalVM.
+
 The key differences are that Quarkus relies more on Java Enterprises and Eclipse MicroProfile APIs, while Micronaut defines its APIs and is more based on the Spring and Grails frameworks.
 Quarkus also is based on an extension architecture which makes it integrate easily with third-party frameworks, while Micronaut has an Aspect-Oriented Programming (AOP) implementation that doesn't use reflection to define cross-cutting concerns.
 
@@ -120,7 +119,7 @@ You shall look at how to start and create your Quarkus project using:
 #### Quarkus.io project initializer
 
 [Quarkus.io](https://code.quarkus.io/) project initializer, just like the [Spring initializer](https://start.spring.io/) or [Micronaut initializer](https://micronaut.io/launch), is used to quickly create a Quarkus project together with all needed dependencies.
-Just head over to the site. It looks like this:
+Just head over to the site. It looks as shown:
 
 ![code.quarkus.io](code.quarkus.io.png "The main code.quarkus.io page")
 _(Screenshot by Author)_
@@ -446,6 +445,7 @@ Run the tests using the IDE and see if it is a whole successful test.
 
 To add a website template to be automatically displayed when `http://localhost:8080/` (default URL with no endpoints) is accessed, add it and its resources inside the `src/main/resources/META-INF/resources/` folder.
 Head over to [this](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/) link and download the free cakes' template to try it out.
+
 You can find and download other free templates at [https://themewagon.com/themes](https://themewagon.com/themes).
 Once downloaded, extract it and copy and paste all the contents inside the folder to the 'resources' folder mentioned previously.
 The contents include the 'index.html' and all its styling and scripts.
