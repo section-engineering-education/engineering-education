@@ -9,9 +9,9 @@ A little understanding of Django would help the reader to follow along better.
 
 ### Table of contents
 1. [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
-2. [Setting up Twilio](#setting-up-twilio)
-3. [Creating a model](#creating-a-model)
-4. [Configuration](#configuration)
+2. [Creating a model](#creating-a-model)
+3. [Creating a view](#creating-a-view)
+4. [Creating templates](#creating-templates)
 5. [Conclusion](#conclusion)
 
 ### Creating and setting up a new Django project
