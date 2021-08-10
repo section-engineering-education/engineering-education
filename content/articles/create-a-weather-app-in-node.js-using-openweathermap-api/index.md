@@ -2,28 +2,29 @@
 layout: engineering-education
 status: publish
 published: true
-url:
-title:
-description: In this tutorial, you will learn how to build a beautiful weather app using OpenWeatherMap API.
-author: Roy Kibet
-date:
-topics: []
+url: /create-a-weather-app-in-node.js-using-openweathermap-api/
+title: Creating a Weather app in Node.js using the Openweathermap API
+description: In this tutorial, the reader will learn how to build a beautiful weather app using OpenWeatherMap API and Node.js.
+author: roy-kibet
+date: 2021-08-10T00:00:00-16:00
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/hero.jpg
     alt: Weather-api
 ---
+Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. Many weather stations are placed around the world fetching real-time weather elements' data. 
+<!--more-->
+This data includes six elements, such as precipitation, wind, atmospheric pressure, cloudiness, and temperature. With these, you can analyze trends and know the prediction of tomorrow's data or forecast the weather.
 
-Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. Many weather stations are placed around the world fetching real-time weather elements' data. These six elements include precipitation, wind, atmospheric pressure, cloudiness, and temperature. With these, you can analyze trends and know the prediction of tomorrow's data hence forecasting weather.
-
-Most of these large chunks of data are processed at base stations using powerful and sophisticated systems. They then share this data, either analyzed over a long time or real-time data through APIs. Among the companies that do this includes OpenWeatherMap and Dark Sky.
+Most of these large chunks of data are processed at base stations using powerful and sophisticated systems. They then share this data, (either analyzed over a long time or real-time data) through APIs. Companies that do this includes OpenWeatherMap and Dark Sky.
 
 In this tutorial, you will learn how to build a beautiful weather app using OpenWeatherMap API.
 
-### Table of Contents
-
+### Table of contents
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Get the API Key](#get-the-api-key)
 - [Set up the project](#set-up-the-project)
   - [Folder Structure](#folder-structure)
@@ -39,41 +40,36 @@ In this tutorial, you will learn how to build a beautiful weather app using Open
 - [References](#references)
 
 ### Key takeaways
-
 By the end of the tutorial, you will have learned:
+- What the OpenWeatherMap API is.
+- How to work with OpenWeatherMap API.
+- How to build a beautiful weather website using HTML, CSS, and JavaScript.
+- How to integrate the API into the system.
+- How to run the web Application.
 
-- What the OpenWeatherMap API is
-- How to work with OpenWeatherMap API
-- How to build a beautiful weather website using HTML, CSS, and JavaScript
-- How to Integrate the API into the system
-- How to run the web Application
-
-### Pre-requisites
-
-Some basics needed for easy follow-up on this tutorial include:
-
-- Basic knowledge in the web development process
+### Prerequisites
+Some basics needed to follow along with this tutorial include:
+- Some basic knowledge in the web development process.
 - Basics knowledge in Node.js. If you don't have Node.js installed on your machine, you can download it from [here](https://nodejs.org/en/).
-- An IDE/text editor is installed on the computer. I strongly recommend to those who don't have one, to download and install [Visual Studio Code](https://code.visualstudio.com/).
+- An IDE/text editor installed on the computer. I strongly recommend to those who don't have one, to download and install [Visual Studio Code](https://code.visualstudio.com/).
 - A good and stable internet connection.
 
-If you have all the above, let's get into the steps to be followed to make a working project.
+If you have all the above, let's get into the steps for a working project.
 
-### Get the API Key
-
+### Get the API key
 Visit [https://openweathermap.org/](https://openweathermap.org/ "https://openweathermap.org/") and create a new account or sign in if you already have an account.
 
 > OpenWeatherMap: Offers both free and paid services. It all depends on the type and size of data being requested. Furthermore, it also depends on the number of requests per time being made.
 
-![openweathermap login](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/openweathermap_login.png "openweathermap login")
+![openweathermap login](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/openweathermap_login.png)
 
 Click on your account name link found on the top right side of the navigation bar. On the drop-down menu, select 'My API keys'. You can generate one with a new name or use the default one provided.
+
 **Make sure that it is not seen by anyone for security reasons**. Also, don't save it directly in your application.
 
-> In case of any invalid '_Invalid API key_' error, you can create a new key and save it for use. One that has never been used before.
+> In case of any invalid '*Invalid API key*' error, you can create a new key and save it for use. One that has never been used before.
 
 ### Set up the project
-
 Create a new directory, which will be your root directory and name it `Weather`, and in it, you will initialize the Node.js project by using the command below:
 
 ```bash
@@ -82,9 +78,11 @@ npm init -y
 
 This command accepts all the default options in the terminal dialogue. It creates a new configuration file called `package.json` in the root directory.
 
-Next, create a folder named `views` and in it, a file named `index.ejs`. This file will allow us to view the results using the `ejs` view engine. Create another folder in the root directory named `public` and in it another folder called `css`. Create files in the root directory named `.env` and `server.js` respectively. The project structure will be as shown below.
+Next, create a folder named `views` and in it, a file named `index.ejs`. This file will allow us to view the results using the `ejs` view engine. 
 
-#### Folder Structure
+Create another folder in the root directory named `public` and in it another folder called `css`. Create files in the root directory named `.env` and `server.js` respectively. The project structure will be as shown below.
+
+#### Folder structure
 
 ```bash
 .Weather
@@ -99,27 +97,25 @@ Next, create a folder named `views` and in it, a file named `index.ejs`. This fi
 └── server.js (File)
 ```
 
-you will now modify your files as follows:
+You will now modify your files as follows:
 
 #### Install dependencies
-
 The following are the dependencies you will need for the project:
-
-- **express:** This will help us in creating the server and serving your API.
+- **express:** This will help us create the server and serve your API.
 - **dotenv:** This will help us to access hidden keys in the `.env` file.
 - **body-parser:** This is a Node.js body parsing middleware. It will allow us to parse incoming request bodies in a middleware before your handlers. These are available under the `req.body` property.
-- **request:** This will help to make http calls.
-- **ejs:** This will help in the conversion of your templates into a html static page that can be viewed in your browser.
+- **request:** This will help make http calls.
+- **ejs:** This will help in the conversion of your templates into a HTML static page that can be viewed in your browser.
 
-you will install them by running the following command in your terminal:
+You will install them by running the following command in your terminal:
 
 ```bash
 npm i express dotenv body-parser request ejs
 ```
 
 #### Check application configurations
-
 Let' tweak your application configurations found inside the `package.json` file.
+
 Open the file and in it add a start script as follows:
 
 ```json
@@ -131,7 +127,7 @@ Open the file and in it add a start script as follows:
 ...
 ```
 
-your complete `package.json` should look like this:
+Your complete `package.json` should look like this:
 
 ```json
 {
@@ -156,13 +152,13 @@ your complete `package.json` should look like this:
 ```
 
 #### Application entry point
-
 Head over to the `server.js` file which is your application's main entry point.
-you will do the following in your code:
+
+You will need to do the following in your code:
 
 - Importing application dependencies
 
-  These are the dependencies which you had installed in your application. To use them, you import them using the `require` keyword, as shown below:
+These are the dependencies which you had installed in your application. To use them, you can import them using the `require` keyword, as shown below:
 
 ```javascript
 // Require application dependencies
@@ -178,7 +174,7 @@ const app = express();
 require("dotenv").config();
 ```
 
-- Set up your API KEY, express app, and body-parser configurations, and your javascript template view engine
+- Set up your API KEY, express app, and body-parser configurations, and your JavaScript template view engine.
 
 ```javascript
 // Set up your OpenWeatherMap API_KEY
@@ -204,7 +200,8 @@ app.get("/", function (req, res) {
 ```
 
 - Next, setup the post request display. This is the page that shows when you make a post request to the API with the data you want. Your fetch will happen on page load at the `/` endpoint.
-  Here, you shall use the city passed in the post request and API_KEY in your `.env` file to get the data from the API.
+
+Here, you shall use the city passed in the post request and API_KEY in your `.env` file to get the data from the API.
 
 ```javascript
 // On a post request, the app shall data from OpenWeatherMap using the given arguments
@@ -218,7 +215,9 @@ app.post('/', function(req, res) {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 ```
 
-- Next, we will request the data from the OpenWeatherMap API using the credentials passed in the URL. The data found in the body section will be stored in local variables then rendered on the webpage. In case of errors, it will display an error message as shown bellow:
+- Next, we will request the data from the OpenWeatherMap API using the credentials passed in the URL. The data found in the body section will be stored in local variables then rendered on the webpage. 
+
+In case of errors, it will display an error message as shown bellow:
 
 ```javascript
     // Request for data using the URL
@@ -231,7 +230,7 @@ app.post('/', function(req, res) {
             let weather = JSON.parse(body);
 ```
 
-- Next, you shall check if your weather data returned is undefined. This will indicate errors. If not, you will proceed to store the content.
+- Next, you will check if your weather data returned is undefined. This will indicate errors. If not, you will proceed to store the content.
 
 ```javascript
             // you shall output it in the console just to make sure that the data being displayed is what you want
@@ -265,7 +264,7 @@ app.post('/', function(req, res) {
                 weatherFahrenheit = roundToTwo(weatherFahrenheit);
 ```
 
-- Finally, the stored values will now be rendered unto the webpage to generate a static webpage which will be displayed to the user.
+- Next, the stored values will now be rendered onto the webpage to generate a static webpage which will be displayed to the user.
 
 ```javascript
                 // you shall now render the data to your page (index.ejs) before displaying it out
@@ -291,7 +290,7 @@ app.post('/', function(req, res) {
 });
 ```
 
-> **Note:** You can fetch and display as much data as you will need. This is in the JSON received.
+> **Note:** You can fetch and display as much data as need. This is in the JSON received.
 
 - Set up your server port configurations and start the server.
 
@@ -307,15 +306,16 @@ app.listen(5000, function () {
 You can just copy the code and paste it into your file.
 
 #### Setup your views
-
 Let's now set up your dynamic web pages in the application. Remember, you are using **EJS** as your template engine.
-Inside the `index.ejs` file found in the `views` folder, you shall create a webpage template that shall be converted into a static webpage during display, once the values are fetched. To learn more on template engines, visit '[Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog")' blog.
+Inside the `index.ejs` file found in the `views` folder, you will create a webpage template that shall be converted into a static webpage during display, once the values are fetched. 
 
-> **Note:** When this shall render the static pages, they will be served from the `public` folder, it acts as the root directory. This is because of this line of code, `app.use(express.static('public'));` in the `server.js` file. Therefore, it will obtain its assets from the 'public' folder. This will include the 'css' or even image files.
+To learn more on template engines, visit '[Getting Started with EJS Templating Engine](/engineering-education/nodejs-ejs/)' blog.
+
+> **Note:** When this renders the static pages, they will be served from the `public` folder, it will act as the root directory. This is because of this line of code, `app.use(express.static('public'));` in the `server.js` file. Therefore, it will obtain its assets from the 'public' folder. This will include the 'css' or even image files.
 
 This is what you will be doing in the `index.ejs` file:
 
-- Create a new bootstrap boilerplate in your `index.ejs`. Link the `css` file that shall be found inside the 'css' folder. In it, you will also change the site's title to `Weather` and add a favicon to it from a URL as shown in the code below:
+- Create a new bootstrap boilerplate in your `index.ejs`. Link the `css` file that will be found inside the 'css' folder. In it, you will also change the site's title to `Weather` and add a favicon to it from a URL as shown in the code below:
 
 ```html
 <!DOCTYPE html>
@@ -466,8 +466,9 @@ This is what you will be doing in the `index.ejs` file:
 > **Note:** Scripts are always placed after the main contents on your page. This will allow the page content to fully load before JavaScript files are executed, hence preventing errors. This is good coding practice.
 
 #### Styling your page
+You shall style the static webpage generated and stored in the public folder during code execution using your '**style.css**' file. 
 
-you shall style the static webpage generated and stored in the public folder during code execution using your '**style.css**' file. This will be your css format:
+This will be your CSS format:
 
 ```css
 body {
@@ -556,10 +557,10 @@ p {
 }
 ```
 
-#### Application Environment variables
+#### Application environment variables
+You will now enter your application environments constants. Inside your `.env` file, you will place your OpenWeatherMap API KEY. 
 
-You shall now enter your application environments constants.
-Inside your `.env` file, you will place your OpenWeatherMap API kEY obtained. Just add the following to the file and then copy-paste the acquired key after it:
+Just add the following to the file and then copy-paste the acquired key after it:
 
 ```bash
 API_KEY=
@@ -570,14 +571,15 @@ Save the file.
 You can find the code in the repository found [here](https://github.com/blacklihgt/Openweathermap-Node.js). Feel free to download and modify it to your needs.
 
 ### Run and access the application
+To run the application, you will utilize the 'start' script added earlier on in the 'package.json' file. 
 
-To run the application, you will utilize the 'start' script added earlier on in the 'package.json' file. This you can do by running the following code in the inbuilt terminal:
+This can be done by running the following code in the inbuilt terminal:
 
 ```bash
 npm run start
 ```
 
-you can also start the application using:
+You can also start the application using:
 
 ```bash
 node server.js
@@ -589,28 +591,29 @@ It will fetch the weather data and the return results in the web browser and the
 
 The results will look like this:
 
-![Final Image](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/finalImage.png "Final Image")
+![Final Image](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/finalImage.png)
 
 You can close the app on the terminal using `Ctrl + C`.
 
 ### Additional project APIs
+- OpenWeatherMap has more API calls for other types of forecasting which are free. This can be found in this link: [https://openweathermap.org/api](https://openweathermap.org/api). 
 
-- OpenWeatherMap has more API calls for other types of forecasting which are free. This can be found in this link: [https://openweathermap.org/api](https://openweathermap.org/api "https://openweathermap.org/api"). Some are shown below:
+Some are shown below:
 
-![OpenWeatherMap Other Urls](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/other_api_urls.png "OpenWeatherMap Other URLs")
+![OpenWeatherMap Other Urls](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/other_api_urls.png)
 
 You can try fetching the data and displaying it in the console or the browser.
 
 - Try to fetch and use the geolocation to fetch weather data of a user based on their location.
-- Try and add a weather map found in this link: [https://openweathermap.org/api](https://openweathermap.org/api "https://openweathermap.org/api") in your website.
+- Try and add a weather map found in this link: [https://openweathermap.org/api](https://openweathermap.org/api) in your website.
 
 ### Conclusion
-
 You can access more data from the OpenWeatherMap site. This can be useful to customize your app data as required. This also includes live weather maps which can be embedded in web pages. In weather forecasting, the more data, the better.
 
-### References
+Happy coding!
 
-- [Getting Started with EJS Templating Engine](https://www.section.io/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by \*Quinter Awuor
+### References
+- [Getting Started with EJS Templating Engine](/engineering-education/nodejs-ejs/ "Getting Started with EJS Templating Engine Section.io Blog") blog written by Quinter Awuor
 - [OpenWeatherMap website](https://openweathermap.org/).
 
 ---
