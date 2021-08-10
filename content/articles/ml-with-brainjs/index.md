@@ -255,3 +255,6 @@ You can find the code snippets for the application in [this](https://github.com/
 
 ### Further Reading
 Brain.js may not be the only machine learning library made in and for JavaScript as there exist others like [TensorFlow](https://www.tensorflow.org/) and [MLjs](https://ml5js.org/), but it is one of the easiest to learn in my opinion. I would highly recommend you go through these articles to have more understanding of Machine Learning.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
