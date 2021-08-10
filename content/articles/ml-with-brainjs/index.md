@@ -1,5 +1,5 @@
 ### Introduction
-Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge.However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
+Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge. However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
 
 ### Table of content
 - [Understanding Neural Networks](#understanding-neural-networks)
@@ -34,7 +34,7 @@ Brain.js is a cool concept because most of the documentation found on the intern
 > From their official documentation, Brain.js is a GPU accelerated neural network library built with JavaScript for browser and Node.js  applications. Brain.js is easy to understand and simple to use especially for beginners.
 
 ### Project goal
-The main goal of this article is to provide beginners, especially those who are coming from a web development background, to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
+The main goal of this article is to provide beginners; especially those who are coming from a web development background,a path to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
 
 The project will be based on the JavaScript machine learning library called [Brain.js](https://brain.js.org/#/).
 
