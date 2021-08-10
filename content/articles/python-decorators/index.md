@@ -23,7 +23,7 @@ This concept is useful when you want to change the behavior of a function, so ra
 - [Understanding what decorators](#understanding-what-decorators)
 - [Core pillars of decorators](#core-pillars-of-decorators)
 - [Creating Python decorators](#creating-python-decorators)
-- [Passing parameters to decorators](#passing-parameters-to-ecorators)
+- [Passing parameters to decorators](#passing-parameters-to-decorators)
 - [Debugging Python decorators](#debugging-python-decorators)
 - [Using multiple decorators](#using-multiple-decorators)
 - [Conclusion](#conclusion)
