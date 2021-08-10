@@ -254,7 +254,9 @@ I am the umbrella function
 ```
 
 ### Using multiple decorators
-Python allows the use of multiple decorators together. This process involves decorating a single function more than once with the same or different decorators. To use several decorators, we place the decorators just above the desired function. Python automatically does the chaining of the decorators. 
+Python allows the use of multiple decorators together. This process involves decorating a single function more than once with the same or different decorators.
+
+  To use several decorators, we place the decorators just above the desired function. Python automatically does the chaining of the decorators. 
 
 ```py
 def umbrella_function(function):
