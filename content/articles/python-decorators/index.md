@@ -204,7 +204,9 @@ So, Mia is 18 years old, and she is a programmer
 ```
 
 ### Debugging Python decorators
-As observed, decorators wrap functions. The original function and its parameter are all masked by the wrapper. This issue poses a challenge on debugging and calls for the need to solve this challenge. Python provides a `functools.wraps()` decorator that copies the metadata from the undecorated function to the decorated wrapper function. Let's see how to do this.
+As observed, decorators wrap functions. The original function and its parameter are all masked by the wrapper. This issue poses a challenge on debugging and calls for the need to solve this challenge. 
+
+However, Python provides a `functools.wraps()` decorator that copies the metadata from the undecorated function to the decorated wrapper function. Let's see how to do this.
 
 If we try to print out the metadata of the umbrella function without the `functools.wraps()`, the name of the wrapper is returned instead of the umbrella.
 ```py
