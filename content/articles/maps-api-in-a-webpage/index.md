@@ -100,7 +100,7 @@ Lastly, we will have the map displayed on the webpage and the function's below t
 </div>
 ```
 
-### Bring the API Key
+### Bringing the API Key
 We need to bring the API key we generated from Google Cloud Console to enable our project to access Google Maps and other map services. 
 
 Paste the copied `API Key` into a script tag just below the closing body tag as below:
@@ -149,7 +149,7 @@ var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 ![Map on webpage](/engineering-education/maps-api-in-a-webpage/project.jpg)
 
 
-### The directions service
+### Using the directions service
 The direction service is responsible for giving the direction from one point to another on the map.
 
 First, we need to call the service from Google using the snippets below:
@@ -202,7 +202,7 @@ google.maps.event.removeListener(autocomplete1);
 google.maps.event.removeListener(autocomplete2);
 ```
 
-### Calculation of distance
+### Calculation of distance between cities
 Now we can display a map on our webpage, render the direction from the origin to destination. Next, we need to calculate the distance from the origin to the destination and estimate the time to drive that distance. 
 
 We will begin by requesting with our `origin`, `destination`, and the traveling mode, which in our case is `DRIVNG`.
@@ -282,6 +282,8 @@ function calculateDistance(){
 ![Finding Directions on Map](/engineering-education/maps-api-in-a-webpage/direction.jpg)
 
 ### Conclusion
-In this article, we learn how to use three different Maps APIs in a single project. We built a webpage, implemented Place autocomplete that fills places in a given map, and used Directions API to draw a direction between two locations on a Map. We also used the API to calculate the distance between two different places and the estimated time to cover the estimated distance.
+In this article, we learn how to use three different Maps APIs in a single project. We built a webpage, implemented Place autocomplete that fills places in a given map, and used Directions API to draw a direction between two locations on a Map. 
+
+We also used the API to calculate the distance between two different places and the estimated time to cover the estimated distance.
 
 You can find the code for the project [here.](https://github.com/mercymeave/maps)
