@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /create-a-weather-app-in-node.js-using-openweathermap-api/
+url: /create-a-weather-app-in-nodejs-using-openweathermap-api/
 title: Creating a Weather app in Node.js using the Openweathermap API
 description: In this tutorial, the reader will learn how to build a beautiful weather app using OpenWeatherMap API and Node.js.
 author: roy-kibet
@@ -11,7 +11,7 @@ topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/hero.jpg
+  - url: /engineering-education/create-a-weather-app-in-nodejs-using-openweathermap-api/hero.jpg
     alt: Weather-api
 ---
 Weather forecasting is very necessary for our daily lives. It helps us to prepare and make plans depending on the expectations. Many weather stations are placed around the world fetching real-time weather elements' data. 
@@ -61,7 +61,7 @@ Visit [https://openweathermap.org/](https://openweathermap.org/ "https://openwea
 
 > OpenWeatherMap: Offers both free and paid services. It all depends on the type and size of data being requested. Furthermore, it also depends on the number of requests per time being made.
 
-![openweathermap login](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/openweathermap_login.png)
+![openweathermap login](/engineering-education/create-a-weather-app-in-nodejs-using-openweathermap-api/openweathermap_login.png)
 
 Click on your account name link found on the top right side of the navigation bar. On the drop-down menu, select 'My API keys'. You can generate one with a new name or use the default one provided.
 
@@ -600,7 +600,7 @@ You can close the app on the terminal using `Ctrl + C`.
 
 Some are shown below:
 
-![OpenWeatherMap Other Urls](/engineering-education/create-a-weather-app-in-node.js-using-openweathermap-api/other_api_urls.png)
+![OpenWeatherMap Other Urls](/engineering-education/create-a-weather-app-in-nodejs-using-openweathermap-api/other_api_urls.png)
 
 You can try fetching the data and displaying it in the console or the browser.
 
