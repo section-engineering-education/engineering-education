@@ -1,7 +1,8 @@
 Turi Create is an open-source python library developed by Apple, used to create core machine learning models for supervised and unsupervised learning. The models are used for classification, object detection, style transfers, regression, and recommender system by simplifying the development of custom machine learning models.
+
 Turi Create is easy-to-use since it focuses on tasks instead of algorithms and has ready-to-deploy tools. This is why it is used as an alternative for [scikit-learn](https://scikit-learn.org/) in building machine learning models.
 
-In this tutorial, we will get started with Turi Create to show us how to read CSV files, create data frames using SFrames, data manipulation and finally be able to create a machine learning model using this package.
+In this tutorial, we will get started with Turi Create to show us how to read CSV files, create data frames using SFrames, data manipulation, and finally create a machine learning model using this package.
 We will build a machine model following various steps from data manipulation, training, and testing our model. Finally, we will use our model to make predictions.
 
 ### Table of contents
@@ -52,7 +53,7 @@ pip install turicreate
 
 ### Data Manipulation
 
-In this tutorial, we will build a machine learning model that will be used for diabetes risk prediction.
+In this tutorial, we will build a machine learning model used for diabetes risk prediction.
 The dataset to be used will be from the [UCI Machine learning Repository](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.)
 
 The dataset contains the signs and symptoms of a newly diabetic person. This will help in training and building our model. In the end, we will use this model to make predictions.
@@ -137,11 +138,11 @@ Output:
  str]
 ```
 
-The first column of our dataset an integer and the remaining columns are strings as shown in our output.
+The first column of our dataset is an integer, and the remaining columns are strings, as shown in our output.
 
 ### Plot the Class distribution
 
-This will be used to give us a greater insight into the nature of our classes in the form of a plotted graph:
+We will use this to give us a greater insight into the nature of our classes in the form of a plotted graph:
 
 ```python
 df['class'].show()
@@ -149,7 +150,7 @@ df['class'].show()
 
 ### Getting Targets and features
 
-We first need to get all of our columns to pick what we want to use as our features and targets.
+We first need to get all of our columns to pick what we use as our features and targets.
 
 ```python
 df.column_names()
@@ -181,8 +182,8 @@ The column titled `class` is our target variable.
 
 ### Getting Features
 
-Features are independent variables that will act as user inputs. The user will be able to feed this inputs into the system for the system to make predictions.
-All the `feature_names` shown below is what the model will use to make predictions and a user must input them.
+Features are independent variables that will act as user inputs. The user will be able to feed these inputs into the system for the system to make predictions.
+All the `feature_names` shown below are what the model will use to make predictions, and a user must input them.
 
 ```python
 feature_names = ['Age',
@@ -243,8 +244,8 @@ After splitting our data into a training and a testing set, we can begin buildin
 ### Modelling Algorithm
 
 TuriCreate supports different classification algorithms, in our case, we will use the [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
-We use logistic regression since our model has a binary output. Our output can be either be positive or a negative, to show if a person is at risk of getting diabetes or not.
-Logistic regression is also better suited for our problem since this algorithm tends to give higher accuracy and is less inclined to over-fitting.
+We use logistic regression since our model has a binary output. Thus, our output can be either be positive or negative to show if a person is at risk of getting diabetes or not.
+Logistic regression is better suited for our problem since this algorithm gives higher accuracy and is less inclined to over-fitting.
 
 - To use the logistic regression algorithm use the following command:
 
@@ -280,12 +281,12 @@ Starting Newton Method
 SUCCESS: Optimal solution found.
 ```
 
-TuriCreate iterates through the dataset several times to get the 'Training Accuracy' and 'Validation Accuracy' after each iteration. Here we iterate 7 times, and the Training accuracy and Validation accuracy after 7 iterations will be 0.969716 and 0.843725, respectively.
+TuriCreate iterates through the dataset several times to get the 'Training Accuracy' and 'Validation Accuracy' after each iteration. Here we iterate seven times, and the Training accuracy and Validation accuracy after seven iterations will be 0.969716 and 0.843725, respectively.
 
 ### Getting the model summary
 
-After training our model, we can now check the model summary. Model summary shows us all the available classes and feature classes.
-Model summary gives us a deeper understanding of our model that enables us to gauge if our model will work well when making predictions.
+After training our model, we can now check the model summary. The model summary shows us all the available classes and feature classes.
+The model summary gives us a deeper understanding of our model, enabling us to gauge if our model will work well when making predictions.
 
 ```python
 logistic_model.summary()
@@ -359,12 +360,12 @@ metrics['accuracy']
 #### Rule of making a prediction
 
 To make predictions, you must submit an SFrame as input.
-SFrame means scalable data frame, its column-mutable dataframe object that can scale to big data and columns can be added and subtracted with ease SFrame.
-It also enables our model read the users input easily.
+SFrame means scalable data frame. It's column-mutable dataframe object can scale to big data, and columns can be added and subtracted with ease SFrame.
+It also enables our model to read the user's input easily.
 The following data formats are supported when constructing an SFrame.
 
-1. CSV file (comma separated value).
-2. SFrame directory archive (A directory where an sframe was saved previously).
+1. CSV file (comma-separated value).
+2. SFrame directory archive (A directory where an SFrame was saved previously).
 3. General text file.
 4. A Python dictionary.
 5. Pandas DataFrame.
@@ -427,9 +428,9 @@ logistic_model.save('diabetes_prediction.model')
 
 In this tutorial, we have learned how to create a machine learning model using Turi Create. We started by creating SFrames to load our dataset. We then did data manipulation for us to know the structure of the data we are working with.
 
-Finally, after properly understanding our data, we build a machine learning model to predict if a person is at risk of getting diabetes.
+Finally, after adequately understanding our data, we build a machine learning model to predict if a person is at risk of getting diabetes.
 
-This tutorial is beneficial for someone who wants to learn TuriCreate so that they can be able to create machine learning models more efficiently.
+This tutorial is beneficial for someone who wants to learn TuriCreate to be able to create machine learning models more efficiently.
 
 ### References
 
