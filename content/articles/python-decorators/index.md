@@ -167,7 +167,7 @@ x = umbrella_function(another_function)
 ```
 
 ### Passing parameters to decorators
-Sometimes we will need to define a decorator function that accepts parameters. We can achieve this by passing the parameters to the wrapper function, which we then pass to the function that is being decorated.
+Sometimes we may need to define a decorator function that accepts parameters. We can achieve this by passing the parameters to the wrapper function, which we then pass to the function that is being decorated.
 
 ```py
 def umbrella_function(function):
