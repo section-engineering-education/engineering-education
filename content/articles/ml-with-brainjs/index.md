@@ -2,18 +2,18 @@
 Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge.However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
 
 ### Table of content
-1. Understanding Neural Networks
-2. Prerequisites
-3. What is Brain.js?
-4. Project goal
-5. Project setup
-6. The training overview
-7. Creating the Neural Network
-8. Long Short Term Memory 
-9. Training the Model
-10. Testing the Model
-11. Conclusion
-12. Further Reading
+- [Understanding Neural Networks](#understanding-neural-networks)
+- [Prerequisites](#prerequisites)
+- [What is Brain.js?](#understanding-brainjs)
+- [Project goal](#project-goal)
+- [Project setup](#project-setup)
+- [The training overview](#the-training-overview)
+- [Creating the Neural Network](#creating-the-neural-network)
+- [Long Short Term Memory (LSTM)](#long-short-term-memory)
+- [Training the Model](#training-the-model)
+- [Testing the Model](#testing-the-model)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
 ### Understanding Neural Networks
 You can think of a Neural network like the human brain, with several interconnected nodes grouped into layers. The layers are categorized as input, hidden, and output layers. Data in neural networks move in a single direction from the input towards the output. 
@@ -26,7 +26,7 @@ The tutorial is beginner-friendly, so if you have done machine learning with Pyt
 - Have [Node.js](https://nodejs.org/) installed on your computer.
 - Your suitable code editor. I prefer using [VS Code](https://code.visualstudio.com/download).
 
-### UNderstanding Brainjs
+### Understanding Brainjs
 [Brain.js](https://brain.js.org/#/) is in an interesting way of building neural networks. It easily learns the patterns and relationships between inputs and outputs and uses the information to make intelligent guesses when dealing with related issues. 
 
 Brain.js is a cool concept because most of the documentation found on the internet is Python-based, therefore,  the learning ladder for developers with a web-development background becomes hard to climb.
@@ -151,7 +151,7 @@ const brain = require('brain.js')
 const data = require('./data.json')
 ```
 
-### Long Short Term Memory 
+### Long Short Term Memory
 If you have worked with machine learning before, you probably are familiar with the term  Long short-term memory(LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
 
 RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way  as it remembers the previous information and uses that information to process the current given input. 
