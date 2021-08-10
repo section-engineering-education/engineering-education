@@ -161,7 +161,7 @@ TFF provides two builder functions:
 
 - `tff.learning.build_federated_evaluation` generates the federated computations for federated evaluation.
 
-To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1wOCsCDi3X_vnC8f0TWG-wXCdfqmkvPa4?authuser=1). Please check it out.
+To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). Please check it out.
 
 ### Wrapping up
 
