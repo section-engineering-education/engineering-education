@@ -438,7 +438,7 @@ Now we shall add more routes for our machine learning model.
 
 We will add a get route for making nationality predictions.
 
-The following function can also be used to make predictions. We use the `predict_nationality()` when we want to make predictions about someone's nationality.
+The following function can also be used to make predictions. We use the `predict_nationality()` method when we want to make predictions about someone's nationality.
 
 ```python
 def predict_nationality(x):
