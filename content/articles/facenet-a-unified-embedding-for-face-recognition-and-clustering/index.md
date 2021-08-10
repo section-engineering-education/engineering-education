@@ -26,6 +26,10 @@ Let's now explore this model in depth.
 
 ### Understanding the FaceNet face recognition system model
 
+![FaceNet model architecture](/engineering-education/facenet-a-unified-embedding-for-face-recognition-and-clustering/facenet-model-architecture.png)
+
+*[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
+
 The FaceNet model takes as input the image of a person's face, produces a vector embedding of 128 numbers, which are then projected in a high-dimensional Euclidean space. Here, the distance between points corresponds to a measure of face similarity. The idea here is once you've mapped your input set of images to their corresponding embedding spaces, that embedding space can be used for face verification and clustering. Similar faces tend to have distances closer to 0 while dissimilar faces have a larger distance. In this paper, that distance is closer to 4. 
 
 This array of numbers/points in the Euclidean space are then stored and used for the classification and clustering of faces. This is quite impactful because once you have that small embedding or array, of a couple of faces, you can store it in the database and use it to classify other newer faces. This can be referred to as "one-shot training".
@@ -37,6 +41,10 @@ This model uses a deep convolution neural network that is trained to give an out
 These 128 numbers contain the characters/features of the face. Therefore, if we give a different face as input, then we will have a different set of numbers. If we input an image of the face of the same person but in different poses, then these numbers will be similar. It is also important to note that different faces have different sets of these 128 numbers. But for the same face but different poses, the set of these numbers is always the same. 
 
 In training, this model employs this technique known as *Triplet*. Essentially, what happens here during training is that in every row of training examples, they have two sets of images that are matching (both positive & matching) and a second example which is a pair of both the positive and negative images (non-matching). The idea is to let images that are similar be closer together while those not similar be far apart.
+
+![Triplet loss](/engineering-education/facenet-a-unified-embedding-for-face-recognition-and-clustering/triplet-loss.png)
+
+*[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
 
 ### Wrapping up
 
