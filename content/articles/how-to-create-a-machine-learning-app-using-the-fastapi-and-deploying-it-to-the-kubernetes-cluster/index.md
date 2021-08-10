@@ -1,5 +1,5 @@
-FastAPI is a new python-based web framework used to create Web APIs. FastAPI is fast when serving your application, also enhances the performance of our application.
-In this tutorial, we will start by building a simple machine learning model, which served as an API using the FastAPI, thereafter deploy the machine app to the Kubernetes cluster.
+FastAPI is a new Python-based web framework used to create Web APIs. FastAPI is fast when serving your application, also enhances the performance of our application.
+In this tutorial, we will build a simple machine learning model, which served as an API using the FastAPI, then deploy the machine app to the Kubernetes cluster.
 
 ### Table of contents
 
@@ -14,7 +14,7 @@ In this tutorial, we will start by building a simple machine learning model, whi
 ### Prerequisites
 
 1. You must have a good understanding of [Python](https://www.section.io/engineering-education/python-projects-for-beginners/)
-2. You must have a good working knowledge of [machine learning models](https://www.section.io/engineering-education/house-price-prediction/)
+2. You must have an excellent working knowledge of [machine learning models](https://www.section.io/engineering-education/house-price-prediction/)
 3. You must have [Docker](https://www.section.io/engineering-education/getting-started-with-docker/) installed in your machine.
 4. You must have [Kubernetes](https://www.section.io/engineering-education/introduction-to-kubernetes/) installed in your machine.
 5. Know how to use [Google Colab](https://research.google.com/) or [Jupyter Notebook](https://jupyter.org/). In this tutorial, we shall use Google Colab in building our model
