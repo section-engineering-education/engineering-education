@@ -1,5 +1,5 @@
-FastApi is a new python-based web framework used to create Web APIs. FastAPi is fast when serving your application, also enhances the performance of our application.
-In this tutorial, we will start by building a simple machine learning model, which served as an API using the FastAPI, thereafter deploy the machine app to the Kubernetes cluster.
+FastAPI is a new Python-based web framework used to create Web APIs. FastAPI is fast when serving your application, also enhances the performance of our application.
+In this tutorial, we will build a simple machine learning model, which served as an API using the FastAPI, then deploy the machine app to the Kubernetes cluster.
 
 ### Table of contents
 
@@ -14,14 +14,14 @@ In this tutorial, we will start by building a simple machine learning model, whi
 ### Prerequisites
 
 1. You must have a good understanding of Python
-2. You must have a good working knowledge of machine learning models
+2. You must have an excellent working knowledge of machine learning models
 3. You must have docker installed in your machine.
 4. You must have Kubernetes installed in your machine.
 
 ### Building the machine learning model
 
-We will build a machine learning model that will be used to predict the nationality of individuals using their names.
-This is a simple model that will be used to explain the key concepts used in machine learning modeling.
+We will build a machine learning model that will predict the nationality of individuals using their names.
+This is a simple model that will explain the key concepts used in machine learning modeling.
 
 ### Dataset to be used
 
@@ -58,7 +58,7 @@ import NumPy as np
 
 ### Loading from Scikit-learn package
 
-[Scikit-learn](https://scikit-learn.org/) will be the package to be used for predictive analysis since it contains different tools for machine learning modeling and various algorithms for classification, regression, and clustering.
+[Scikit-learn](https://scikit-learn.org/) will be the package used for predictive analysis since it contains different tools for machine learning modeling and various algorithms for classification, regression, and clustering.
 
 ```python
 import MultinomialNB from sklearn.naive_bayes
@@ -77,7 +77,7 @@ df = pd.read_csv("nationality.csv")
 
 ### Nature of our data
 
-We need to understand the nature of the dataset that we have, for example, we need to know the number of names in the dataset, the columns, and the rows present in the data.
+We need to understand the nature of the dataset that we have. For example, we need to know the number of names in the dataset, the columns, and the rows present in the data.
 
 ```python
 df.shape
@@ -105,7 +105,7 @@ df.groupby('nationality')['names'].size()
 
 ### Visualizing our data using the matplotlib library
 
-[Matplotlib](https://matplotlib.org/) is a python library that is used for plotting hence easy visualization of our data in form of a graph.
+[Matplotlib](https://matplotlib.org/) is a Python library used for plotting hence easy visualization of our data in the form of a graph.
 
 ```python
 import matplotlib.pyplot as plt
@@ -129,7 +129,7 @@ ylabels= df['nationality']
 
 ### Vectorizing our features
 
-We will use a count vectorizer to transform our dataset
+We will use a count vectorizer to transform our dataset.
 
 ```python
 vec = CountVectorizer()
@@ -142,7 +142,7 @@ vec.get_feature_names()
 
 ### Splitting of our data
 
-We use 70% of our data to train our model and 30% of our data for testing.
+We use 70% of our data to train our model and 30% for testing.
 
 ```python
 x_train,x_test,y_train,y_test = train_test_split(X,ylabels,test_size=0.30)
@@ -168,8 +168,8 @@ nb.score(x_test,y_test)
 
 ### Making predictions
 
-After we have trained our model we can now feed our model with new inputs so that it can start making predictions.
-Our model will make accurate predictions based on how well we trained it, the higher the accuracy score the better our model will be in making predictions.
+After we have trained our model, we can now feed our model with new inputs to start making predictions.
+Our model will make accurate predictions based on how well we trained it. Therefore, the higher the accuracy score, the better our model will be in making predictions.
 
 ```python
 name1 = ["Yin","Bathsheba","Brittany","Vladmir"]
@@ -199,9 +199,9 @@ We will name our pickle file 'naive_bayes.pkl'.
 
 ### Introduction to the FastAPI
 
-[FastApi](https://fastapi.tiangolo.com/) is a new python-based web framework that is used to create Web APIs. FastAPi is fast when serving the application, this enhances the app's performance.
+[FastAPI](https://fastapi.tiangolo.com/) is a new python-based web framework used to create Web APIs. FastAPi is fast when serving the application; this enhances the app's performance.
 It is used with Python 3.6+.
-Fast API is very powerful since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
+Fast API is potent since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
 
 ### Installing the FastApi
 
@@ -211,7 +211,7 @@ Use the following commands:
 pip install fast API
 ```
 
-Installing the server.
+Let's install the server.
 
 ```python
 pip install uvicorn[standard]
@@ -219,7 +219,7 @@ pip install uvicorn[standard]
 
 ### Creating and API for our machine learning model using the FastAPI
 
-1. First create a new Python file and name it 'main.py'
+1. First, create a new Python file and name it 'main.py.'
 2. Add our pickle file 'naive_bayes.pkl' in a new folder.
 
 The folder structure is as shown.
@@ -242,7 +242,7 @@ import FastAPI, Query from fast API
 
 ### Loading ML packages
 
-We will use joblib to unpickle our previously pickled file
+We will use joblib to unpickle our previously pickled file.
 
 ```python
 import joblib from sklearn.externals
@@ -298,7 +298,7 @@ def predict_nationality(x):
 
 ### Adding a route to make predictions
 
-This route will be used to get the ethnicity of a person based on the name input by the user.
+We will use this route to get the ethnicity of a person based on the name input by the user.
 
 ```python
 @app.get('/predict/{name}')
@@ -312,7 +312,7 @@ async def predict(name: str = Query(None, min_length=2, max_length=12)):
     return {"orig_name": name, "prediction": result}
 ```
 
-Make sure to include this in your file to specify the port your app will be served.
+Make sure to include this in your file to specify the port that will serve your app.
 
 ```python
 if __name__ == '__main__':
@@ -336,7 +336,7 @@ We have finally served our machine learning model as API using the FastAPI.
 To create a docker container, we have to use the following steps.
 
 1. Create a docker file.
-   In your working directory create a DockerFile.
+   In your working directory, create a DockerFile.
 
 Your working directory is as shown below:
 
@@ -445,11 +445,11 @@ Result:
 e0f1bd4gv1f7t3dti5e89fd1o29341a50ete9hgad8ed0ye0ff27dt81667fu16b
 ```
 
-After Dockerizing our FastApi application we now need to deploy it to Kubernetes Cluster.
+After Dockerizing our FastApi application, we now need to deploy it to Kubernetes Cluster.
 
 ### Deploying the FastAPI application to Kubernetes cluster
 
-Kubernetes is a container orchestration system that is used for the deployment of docker-created containers. Is meant to manage and coordinate clusters and workloads at a larger scale in a production environment in an efficient manner.
+Kubernetes is a container orchestration system that is used for the deployment of docker-created containers. It is meant to manage and coordinate clusters and workloads at a larger scale in a production environment efficiently.
 Helps to manage containerized services through automation in deployment.
 
 We create a new file called 'deployment.yaml' in our working directory.
@@ -507,15 +507,15 @@ The file has two sections:
 
 1. Service - Acts as the load balancer. A load balancer is used to distribute different sets of tasks to the various available servers in the network to maximize the usage of the available resources.
 
-2. Deployment- This is the intended application that we want to deploy to the Kubernetes engine. The user will then send a request to the load balancer in the service, then the load balancer distributes the request by creating the number of replicas that were defined in the deployment.yaml file. Here, are using five replicas for scalability, hence there will be 5 instances of the application running at a time.
+2. Deployment- This is the intended application that we want to deploy to the Kubernetes engine. The user will then send a request to the load balancer in the service. Then the load balancer distributes the request by creating the number of replicas defined in the deployment.yaml file. Here, we are using five replicas for scalability. Hence there will be five instances of the application running at a time.
 
-When we have various replicas it creates redundancy so that if one instance fails, the others will continue running.
+When we have various replicas, it creates redundancy so that if one instance fails, the others will continue running.
 
-The deployment. yaml file is connected to the Docker image created earlier, In the deployment. yaml file we specify the image name that was created earlier.
+The deployment. yaml file is connected to the Docker image created earlier. In the deployment .yaml file, we specify the image name created earlier.
 
 ### Deployment of our application to Kubernetes cluster
 
-We have dockerized our FastAPI application, now we will deploy it to a Kubernetes engine.
+We have dockerized our FastAPI application, and now we will deploy it to a Kubernetes engine.
 
 Run the following command:
 
@@ -549,10 +549,10 @@ Therefore we have deployed our Containerised FastAPI application to the Kubernet
 
 ### Conclusion
 
-In this tutorial, we have learned how to create a machine learning model. We have followed all the steps from data pre-processing to finally being able to train and build our model.
-We have also learned about the FastAPI, which is an efficient library for making WebAPIs, the FastAPI has helped us to serve our machine learning model as an API.
-We then containerized our fast API application using docker, we finally deployed the application to the Kubernetes cluster.
-By using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster
+In this tutorial, we have learned how to create a machine learning model. We have followed all the steps from data pre-processing to train and build our model finally.
+We have also learned about the FastAPI, which is an efficient library for making WebAPIs. The FastAPI has helped us to serve our machine learning model as an API.
+We then containerized our fast API application using docker. Finally, we deployed the application to the Kubernetes cluster.
+Using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster.
 
 ### References
 
