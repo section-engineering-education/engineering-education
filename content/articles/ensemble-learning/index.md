@@ -7,7 +7,7 @@ title: Ensemble Learning Techniques to Improve Machine Learning
 description: This article will be going over ensemble learning methods that allow us to average the performance of many models to generate one final model.
 author: collins-ayuya
 date: 2020-12-13T00:00:00-18:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 

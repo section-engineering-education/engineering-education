@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /deploying-nodejs-web-app/
 title: Deploying Your First Node.js Web App
-description: This guide will walk you through how to deploy a Node.js web app to DigitalOcean.
+description: This guide will walk you through how to deploy a Node.js web app to DigitalOcean. Since DigitalOcean droplets are created with a firewall enabled, you’ll have to allow Nginx through it so it can work properly.
 author: louise-findlay
 date: 2020-07-15T00:00:00-10:00
 topics: [Node.js]
@@ -14,15 +14,13 @@ images:
   - url: /engineering-education/deploying-nodejs-web-app/hero.jpeg
     alt: header image nodejs
 ---
-You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/static-site-dynamic-nodejs-web-app/) helpful.*
+You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/) helpful.*
 
 <!--more-->
 ### Deploying Your First Node.js Web App
-
 There are many hosting platforms you can use to deploy your Node.js web apps such as [Section](/modules/node-js), [Heroku](https://www.heroku.com), [Vultr](https://www.vultr.com), [Linode](https://www.linode.com), [Google Cloud Platform](https://console.cloud.google.com) and [Amazon Web Services](https://aws.amazon.com). In this walk-through, we will be using [DigitalOcean](https://www.digitalocean.com) to deploy our Node.js app.
 
 ### Setting up DigitalOcean
-
 First, create an account on the DigitalOcean platform. There are discount codes available to add free credit to your account such as the code available in the Github Student Developer Pack. Be aware that you can only redeem one code per account.
 
 Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to droplets under the Manage heading and click create and then droplets.
@@ -34,7 +32,6 @@ Also, choose the datacenter closest to the target audience of your app and chang
 All that’s left now is to pick a name (hostname) and click Create Droplet.
 
 ### Connecting to your Droplet
-
 Shortly afterward, you’ll receive an email containing the username and password of your droplet which you’ll use to login.
 
 Back on the DigitalOcean website, under droplets, click the name of your newly created droplet, and then click on Console. This will open a new tab that will let you control your droplet. Alternatively, you can use any SSH client with the IP address and user credentials contained in the email.
@@ -65,17 +62,18 @@ If you need to install MongoDB (if you’ve created a MongoDB database), then fo
 
 Finally, type `npm start` to start your web app. Now that your web app is running, in a new browser tab, type the IP Address of your droplet (found in the email that DigitalOcean sent when you created the droplet) followed by a colon and the port your app runs on. For example, `167.172.54.51:8080`.
 
-If you’re using an Express web server (which if you followed my getting started with [Node.js guide](/static-site-dynamic-nodejs-web-app/), you did), you’ll find the port number located in the `app.listen()` line inside the server.js file. For example, `app.listen(8080)` which is a common port used.
+If you’re using an Express web server (which if you followed my getting started with [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/), you did), you’ll find the port number located in the `app.listen()` line inside the server.js file. For example, `app.listen(8080)` which is a common port used.
 
 Congratulations, your first Node.js web app should be displayed in your web browser which is running on your DigitalOcean droplet.
 
-###  Configuring Your Domain Name
-
+###  Configuring your Domain Name
 You typed in an IP Address and port number to view your web app but, wouldn't you prefer a custom domain name like yourapp.com?
 
 Assuming you’ve already bought a domain, the first step is to add a DNS record so your domain name will resolve to the IP address of your DigitalOcean droplet. A DNS record tells your browser what to do when they load your domain. In this case, it should go to the IP address of your droplet.
 
-If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. See my guide for [Setting Up a Professional Email](/creating-professional-email/) to read a comparison of Office365 and GSuite.
+If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. 
+
+See my guide for [Setting Up a Professional Email](/engineering-education/creating-professional-email/) to read a comparison of Office365 and GSuite.
 
 ![Advanced DNS](/engineering-education/deploying-nodejs-web-app/advanced-dns.png)
 
@@ -92,7 +90,6 @@ It can take up to 24-48hrs for the changes to process, but it’s usually betwee
 The final test is to type your domain name followed by a colon and then the port number (e.g. `yourdomain.com:8080`). You should now see your web app loading.
 
 ### Removing the Port Number from your URL
-
 Now that you’ve got a cool domain name hooked up to your web app, you’ll probably want to remove that pesky port number. We can do this by setting up what’s called a reverse proxy. A reverse proxy will tell your droplet when a user goes to yourdomain.com, it should serve the site at yourdomain.com:8080. We will use the popular reverse proxy [Nginx](https://www.nginx.com) to do so.
 
 The first step is to install Nginx. Type the following to update your package list (so you can get the latest version) and install Nginx:
@@ -180,7 +177,6 @@ To test that there are no errors in the file, type  `sudo nginx -t`  and if ther
 Finally, you should be able to go to yourdomain.com and your web app will be running.
 
 ### Running the App on Boot (Setting up a Process Manager)
-
 You've hooked your domain name up to your droplet and configured Nginx to serve your web app, but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your Node.js web app, log any errors, and start/stop it as needed. We will be using the process manager called PM2.
 
 The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, run `pm2 startup systemd`. It should say to setup the startup script, copy and paste the following command which will be `sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u (username) --hp /home/(username)`. If you're using the default login that DigitalOcean provided, this will be root. Type this into the terminal and press enter. If it says command successfully executed (like below) then it has worked.
@@ -205,4 +201,4 @@ Try restarting your droplet by typing reboot and after a few minutes, go to `you
 
 Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? 
 
-Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/simple-guide-to-using-apis-nodejs).
+Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/engineering-education/simple-guide-to-using-apis-nodejs).

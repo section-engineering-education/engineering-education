@@ -81,7 +81,11 @@
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources">Edge Content Library</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/solution-briefs">Solution Briefs</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/videos">Product Videos</a></li>
+              {{ if hugo.Environment | eq "development" }}
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/">Engineering Education</a></li>
+              {{ else }}
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/">Engineering Education</a></li>
+              {{ end }}
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about">About Section</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/solutions-partners">Partners</a></li>
               <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/changelog">Changelog</a></li>
@@ -173,7 +177,11 @@
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources">Content Library</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/solution-briefs">Solution Briefs</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/changelog">Changelog</a></li>
+            {{ if hugo.Environment | eq "development" }}
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/">Engineering Education</a></li>
+            {{ else }}
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/">Engineering Education</a></li>
+            {{ end }}
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/solutions-partners">Partners</a></li>
             <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about">About Section</a></li>
           </ul>

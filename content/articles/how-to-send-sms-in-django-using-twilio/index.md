@@ -1,8 +1,24 @@
-SMS is a good way to send alerts, notifications and to even authenticate users. There comes a time where by we need SMS functionality in our app. Either to send notifications to clients or even serve as a way of having a "multifactor authentication" feature.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-send-sms-in-django-using-twilio/
+title: How to Send SMS in Django using Twilio
+description: This article will be teaching us how to send SMS from a Django app using Twilio. We will be building a simple Django app to demonstrate how to send SMS from a Django app.
+author: shuaib-oseni
+date: 2021-05-31T00:00:00-15:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-send-sms-in-django-using-twilio/hero.png
+    alt: Django Twilio SMS
+---
 In this tutorial, we will build a simple Django app with SMS capability to send messages to a phone number once a particular condition is met.
+<!--more-->
+SMS is a good way to send alerts, notifications, and to even authenticate users. There comes a time where by we need SMS functionality in our app. Either to send notifications to clients or even serve as a way of having a "multifactor authentication" feature.
 
-[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality to your app . It is actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
+[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality to your app. It is a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
@@ -73,14 +89,14 @@ INSTALLED_APPS = [
 ```
 
 ### Setting up Twilio
-To get started with Twilio, we need to sign up on [Twilio's](https://twilio.com) website to create an account and also get a Twilio number.
+To get started with Twilio, we need to sign up on [Twilio](https://twilio.com) to create an account and to also get a Twilio number.
 
 Click on the `Sign Up` button and fill in your details to create an account.
 
 ### Creating a model
 Now lets define a simple class.
 
-In the `score` directory, edit the `models.py` file and add the following lines of code to it:
+In the `score` directory, edit the `models.py` file and add the following lines of code:
 
 ```python
 from django.db import models
@@ -115,7 +131,9 @@ $ python manage.py makemigrations # migrating the app and database changes
 $ python manage.py migrate        # final migrations
 ```
 
-A superuser has the permissions to create, edit, update, and delete data in Django admin. Create a superuser by running the command below:
+A superuser has the permissions to create, edit, update, and delete data in Django admin. 
+
+Create a superuser by running the command below:
 
 ```bash
 $ python manage.py createsuperuser 
@@ -142,7 +160,7 @@ Click on score, then click `Add Score` to add a score.
 *Add score*
 
 ### Configuration
-To use twilio, we need a `trial number`, `account sid`, and `auth token`.
+To use Twilio, we need a `trial number`, `account sid`, and `auth token`.
 
 We can find our account-specific configuration credentials on the Dashboard page of the account console as shown below:
 
@@ -152,7 +170,7 @@ We can find our account-specific configuration credentials on the Dashboard page
 
 Click on the "Get a trial number" button to get a trial number.
 
-A trial number is a free phone number assigned to you upon sign up by twilio for testing purpose.
+A trial number is a free phone number assigned to you upon sign up by Twilio for testing purposes.
 
 ![Trial number](/engineering-education/how-to-send-sms-in-django-using-twilio/trial-number.png)
 
@@ -201,9 +219,9 @@ class Score(models.Model):
         return super().save(*args, **kwargs)
 ```
 
-With a trial number, we can only send sms to a Twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
+With a trial number, we can only send SMS to a Twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
 
-For testing purpose, our verified number will be the number we submitted for phone number verification when we created our Twilio account.
+For testing purposes, our verified number will be the number we submitted for phone number verification when we created our Twilio account.
 
 Now head over to the django-admin page, add a score less than 80 and you should recieve an SMS.
 
@@ -212,14 +230,17 @@ Now head over to the django-admin page, add a score less than 80 and you should 
 *Twilio SMS*
 
 ### Conclusion
-To conclude, we have learned about Twilio. We have also learned to send SMS from a Django app.
+To conclude, we have learned about Twilio. We have also learned how to send SMS from a Django app.
 
 There's still a lot you can achieve with Twilio. Upgrade from the trial version if you are looking to use Twilio in production.
 
-To summarize, you learnt to build a Django app and integrate it with Twilio. You have also learnt to send SMS using Twilio from a Django app.
+To summarize, we learned how to build a Django app and integrate it with Twilio. We also learned how to send SMS using Twilio from a Django app.
 
-For further learning on how to recieve phone calls, recieve test and perform other communication functions using Twilio, check out [Twilio docs](https://twilio.com/docs).
+For further learning on how to recieve phone calls, recieve tests, and perform other communication functions using Twilio, check out [Twilio docs](https://twilio.com/docs).
 
 That's all!
 
-Happy Coding!
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

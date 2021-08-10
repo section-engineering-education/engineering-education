@@ -21,8 +21,6 @@
 3/3/21
 To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 
 
-Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
-
 Our new payout structure will be:
 
 - $150 for tutorials

@@ -1,5 +1,6 @@
-{{ define "main" }}
-<article>
+ {{ define "main" }}
+<article> 
+
   <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
 
     <div class="hero-blocks-mobile">
@@ -66,6 +67,20 @@
         <div class="section-rich-text-leading">
         {{ .Content }}
         </div>
+
+        {{ if hugo.Environment | eq "development" }}
+
+        <script type = "text/javascript">
+          var images = document.getElementsByTagName('img'); 
+          for (var i = 0; i < images.length; i++) {
+            images[i].src = images[i].src.replace("/engineering-education/", "/");
+          };
+          console.log(images[2].src);
+        </script>
+
+        {{ else }}
+        {{ end }}
+
         {{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
         {{ with $.Site.GetPage $author_page }}
           <div class="section-rich-text-leading bio">
