@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true 
-url: /exception_handling_in_java/
-title: Exception handling in Java
+url: /exception-handling-in-java/
+title: Exception Handling in Java
 description: Errors can occur at any time in programs but what matters is how we handle them and rectify them to maintain the normal flow of our application. Java being the most major object-oriented programming language provides a powerful mechanism to handle these errors and exceptions.
 author: dawe-daniel
 date: 2021-07-23T00:00:00-03:13
@@ -17,7 +17,7 @@ images:
 ### Introduction 
 Errors can occur at any time in our programs. What matters is how we handle them and rectify them to maintain the normal flow of our application. 
 
-This article will use Java because it is a widley used object-oriented programming languages. It has a powerful error and exception handling system.
+This article will use Java because it is a widely used object-oriented programming language. It has a robust error and exception handling system.
 
 **Exception handling** in Java is among the most effective methods for resolving run-time errors. These errors are like `ClassNotFoundException`, `IOException`, `SQLException`, and `RemoteException`, among others. Effective exception handling makes your program more robust and easier to debug. 
 
@@ -42,11 +42,11 @@ An exception is an [issue that occurs during the execution of a program](https:/
 ### Exception hierarchy 
 All exceptions and errors types are [subclasses of the class throwable, which is the base class of the hierarchy](https://rkhindi.blogspot.com/2018/09/exceptions-in-java.html).
 
-One branch is headed by exception, a class used for exceptional situations that the user program can handle. For example, `NullpointErexception` and `RuntimeException`. Other branch errors are used by the Java run-time system to identify [errors related to the run-time environment](http://web.archive.org/web/20210307154442/https://iq.opengenus.org/exceptions-java). Examples are virtual machine errors or stack overflow errors.
+One branch is headed by exception, a class used for exceptional situations that the user program can handle. For example, `NullpointErexception` and `RuntimeException`. The Java run-time system uses other branch errors to identify [errors related to the run-time environment](http://web.archive.org/web/20210307154442/https://iq.opengenus.org/exceptions-java). Examples are virtual machine errors or stack overflow errors.
 
 Now, how does an exception get handled by the Java virtual machine?
 
-When a method throws an exception, the method creates an object called the exception object. This object provides to the run-time framework. This exception object stores the attribute of the exception, as well as the program's current location where the exception occurred. Also, it creates and delivers the exception object to the run-time system for exception handling (throwing an exception). Using `try-catch` finally methods these exceptions. 
+When a method throws an exception, the method creates an object called the exception object. This object provides to the run-time framework. This exception object stores the attribute of the exception and the program's current location where the exception occurred. Also, it creates and delivers the exception object to the run-time system for exception handling (throwing an exception). Using `try-catch` finally methods these exceptions. 
 
 This is how the JVM handles exceptions internally.
 
@@ -189,7 +189,7 @@ Exception in thread “main” java.lang.ArithmeticException: Trying to divide b
 Using the `throw` keyword, we can see how the program above throws the `ArithmeticException`.
 
 #### Example 4: Exception Handling using throws keyword
-The `throws` keyword can be used to declare the various types of exceptions that may occur within a function. We use this in the declaration of the method.
+The `throws` keyword can declare the various types of exceptions that may occur within a function. We use this in the declaration of the method.
 
 ```java
 import java.io.*;
@@ -225,7 +225,8 @@ java.io.FileNotFoundException: test.txt (The system is unable to locate the give
 In the program above, when we run it, the file `test.txt` does not exist. As a result, a FileNotFoundException is thrown by `FileInputStream`, which extends the `IOException` class. When using the `findFile()` method, an `IOException` can be thrown. The `main()` method invokes this method, which handles any exceptions that are thrown. When a method does not handle exceptions, the throws clause must define the types of exceptions that can occur.
 
 ### Conclusion
-This article has gone through exception handling in java along with a few examples. We have just discussed the extent to which a programmer will need to know and what standard college classes teach. Knowing how to handle exceptions is an essential skill that a developer should have. Hope this article helps you get started with Java exception handling
+This article has gone through exception handling in java along with a few examples. We have just discussed the extent to which a programmer will need to know and what standard college classes teach. Knowing how to handle exceptions is an essential skill that a developer should have. Hope this article helps you get started with Java exception handling.
+
 Happy coding!
 
 ---
