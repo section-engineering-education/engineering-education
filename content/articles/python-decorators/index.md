@@ -310,4 +310,4 @@ As we have seen above, Python decorators dynamically change the properties of a 
 To learn more about Python decorators, consider checking out how the concept is discussed in the [Python's Decorator Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
 
 ---
-Peer Review Contributions by: [Monica Masae](/engineering-education/authors/mercy-meave/)
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
