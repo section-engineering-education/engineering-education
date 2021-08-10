@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-machine-learning-app-using-turicreate/
+title: How to Create a Machine Learning App using Turi Create
+description: In this article, we will discuss the library developed by Apple to create core machine learning supervised and unsupervised machine learning models. 
+author: willyngashu
+date: 2021-08-10T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/how-to-create-a-machine-learning-app-using-turicreate/hero.jpg
+   alt: How to create machine learning app using Turing Create example image
+---
+
 Turi Create is an open-source python library developed by Apple, used to create core machine learning models for supervised and unsupervised learning. The models are used for classification, object detection, style transfers, regression, and recommender system by simplifying the development of custom machine learning models.
 
 Turi Create is easy-to-use since it focuses on tasks instead of algorithms and has ready-to-deploy tools. This is why it is used as an alternative for [scikit-learn](https://scikit-learn.org/) in building machine learning models.
@@ -436,3 +453,6 @@ This tutorial is beneficial for someone who wants to learn TuriCreate to be able
 
 - [Turi Create Documentation](https://apple.github.io/turicreate/docs/api/index.html)
 - [Logistic Regression Algorithm](https://en.wikipedia.org/wiki/Logistic_regression)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
