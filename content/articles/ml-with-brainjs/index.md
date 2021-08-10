@@ -9,7 +9,7 @@ Everybody knows that Machine Learning is mathematically intensive. For most begi
 5. Project setup
 6. The training overview
 7. Creating the Neural Network
-8. Long Short Term Memory (LSTM)
+8. Long Short Term Memory 
 9. Training the Model
 10. Testing the Model
 11. Conclusion
@@ -26,7 +26,7 @@ The tutorial is beginner-friendly, so if you have done machine learning with Pyt
 - Have [Node.js](https://nodejs.org/) installed on your computer.
 - Your suitable code editor. I prefer using [VS Code](https://code.visualstudio.com/download).
 
-### What is Brain.js?
+### UNderstanding Brainjs
 [Brain.js](https://brain.js.org/#/) is in an interesting way of building neural networks. It easily learns the patterns and relationships between inputs and outputs and uses the information to make intelligent guesses when dealing with related issues. 
 
 Brain.js is a cool concept because most of the documentation found on the internet is Python-based, therefore,  the learning ladder for developers with a web-development background becomes hard to climb.
@@ -151,7 +151,7 @@ const brain = require('brain.js')
 const data = require('./data.json')
 ```
 
-### Long Short Term Memory (LSTM)
+### Long Short Term Memory 
 If you have worked with machine learning before, you probably are familiar with the term  Long short-term memory(LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
 
 RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way  as it remembers the previous information and uses that information to process the current given input. 
