@@ -56,7 +56,7 @@ We need an API key for each of the modules we are going to use. However, if we c
 
 ### Webpage design
 In this section, we will create the webpage where our app will display the map.
-We will have a form with two input fields.One field will be where one enters the start point, and the second for the desired destination. 
+We will have a form with two input fields. One field will be where one enters the start point, and the second for the desired destination. 
 
 In the `index.html` file, add the snippets below:
 
