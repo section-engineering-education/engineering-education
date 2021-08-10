@@ -1,8 +1,8 @@
-Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech [wikipedia](https://en.wikipedia.org/wiki/Chatbot). Chatbots can be utilized for things like: reminders, booking of appointments, and also on social media platforms.
+Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech [wikipedia](https://en.wikipedia.org/wiki/Chatbot). Chatbots can be utilized for things like reminders, booking appointments, and also on social media platforms.
  
 In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using python.
 
-[Telegram](https://www.telegram.org/) is a free and open-source, cross-platform, cloud-based instant messaging (IM) software [wikepedia](https://en.wikipedia.org/wiki/Telegram_(software)). It provides video calling and file sharing amongst other features.
+[Telegram](https://www.telegram.org/) is a free and open-source, cross-platform, cloud-based instant messaging (IM) software [wikepedia](https://en.wikipedia.org/wiki/Telegram_(software)). It provides video calling and file-sharing amongst other features.
  
 
 
@@ -122,11 +122,11 @@ $ python bot.py
 
 Hurray, it works!
 
-Let's make our bot more interesting by connecting to an Api that feeds us with random programming quotes.
+Let's make our bot more interesting by connecting to an API that feeds us with random programming quotes.
 
-We'll be using [this](http://quotes.stormconsultancy.co.uk) Api, and the `/random` endpoint to get random quotes.
+We'll be using [this](http://quotes.stormconsultancy.co.uk) API, and the `/random` endpoint to get random quotes.
 
-Next, wee need to add the following lines of code at the top of our file
+Next, we need to add the following lines of code at the top of our file
 
 ```python
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -157,14 +157,14 @@ dispatcher.add_handler(quotes_handler)
 
 ```
 
-Now lets run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
+Now, let's run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
 
 ![random quotes](/engineering-education/building-a-telegram-bot-with-python/random.png)
 
 ### Conclusion
 To conclude, we have learned about building telegram bots for groups.
 
-There is still a lot you can achieve with a telegram bot, like connecting your bot to other API's and hosting on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
+There is still a lot you can achieve with a telegram bot, like connecting your bot to other APIs and hosting on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
 
 You can also check the [Telegram bot](https://core.telegram.org/bots/api) documentation for more info on creating bots.
 
