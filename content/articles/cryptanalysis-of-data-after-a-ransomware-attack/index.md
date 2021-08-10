@@ -16,7 +16,7 @@ images:
   - url: /engineering-education/cryptanalysis-of-data-after-a-ransomware-attack/hero.jpg
     alt: Cryptanalysis cover image 
 ---
-Cryptanalysis is a technique that has been majorly applied to helping find weaknesses in cryptographic algorithms and improve on them to make encryption robust to threats. Cryptanalysis can, however, be used to decipher data encrypted by malicous actors to save on the cost of paying the ransom and recover confidential data.
+Cryptanalysis is a technique that has been majorly applied to helping find weaknesses in cryptographic algorithms and improve on them to make encryption robust to threats. Cryptanalysis can, however, be used to decipher data encrypted by malicious actors to save on the cost of paying the ransom and recover confidential data.
 <!--more-->
 The concepts described in this article will help understand this process.
 
