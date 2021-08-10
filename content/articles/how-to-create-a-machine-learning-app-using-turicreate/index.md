@@ -36,14 +36,14 @@ We will build a machine model following various steps from data manipulation, tr
 
 ### Prerequisites
 
-1. A good understanding of python.
+1. A good understanding of Python.
 
 ### Get started with Turi Create
 
 Turi Create has built algorithms for classification, regression, and clustering.
 The supported algorithms are as follows:
 
-- Classification algorithms.
+#### Classification algorithms.
 
 1. Logistic regression
 2. Nearest neighbor classifier
@@ -52,12 +52,12 @@ The supported algorithms are as follows:
 5. Random Forests
 6. Decision Tree
 
-- Regression algorithms
+#### Regression algorithms
 
 1. Linear regression
 2. Boosted Decision Trees
 
-- clustering algorithms.
+#### Clustering algorithms.
 
 1. K-Means Clustering
 2. Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
@@ -84,9 +84,9 @@ An overview of our data is as shown:
 dataset_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00529/diabetes_data_upload.csv"
 ```
 
-### Loading Turicreate package
+### Loading Turi Create package
 
-We need to import Turicreate into our machine so that we can be able to use it.
+We need to import Turi Create into our machine so that we can be able to use it.
 
 ```python
 import turicreate as tc
@@ -125,7 +125,7 @@ Please run the following command to show us how our data is structured.
 df.head()
 ```
 
-### Checking the Datatype
+### Checking the datatype
 
 This will return the data type of every column in the dataset.
 
@@ -165,7 +165,7 @@ We will use this to give us a greater insight into the nature of our classes in 
 df['class'].show()
 ```
 
-### Getting Targets and features
+### Getting targets and features
 
 We first need to get all of our columns to pick what we use as our features and targets.
 
@@ -197,7 +197,7 @@ Output:
 
 The column titled `class` is our target variable.
 
-### Getting Features
+### Getting features
 
 Features are independent variables that will act as user inputs. The user will be able to feed these inputs into the system for the system to make predictions.
 All the `feature_names` shown below are what the model will use to make predictions, and a user must input them.
@@ -221,7 +221,7 @@ feature_names = ['Age',
  'Obesity']
 ```
 
-### Building Machine Learning Model
+### Building machine learning model
 
 In this phase, we will start building our model using the given dataset above.
 Before we begin, we need to split our dataset into a training set and a testing set. The training set will be 75%, and the testing set will be 25%.
@@ -258,7 +258,7 @@ Output:
 
 After splitting our data into a training and a testing set, we can begin building our model.
 
-### Modelling Algorithm
+### Modelling algorithm
 
 TuriCreate supports different classification algorithms, in our case, we will use the [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
 We use logistic regression since our model has a binary output. Thus, our output can be either be positive or negative to show if a person is at risk of getting diabetes or not.
@@ -354,7 +354,7 @@ weakness[No]                   : -0.283
 Age                            : -0.0729
 ```
 
-### Model Evaluation
+### Model evaluation
 
 This is assessing our model to find out how well it learned. We do this by using the `test_data`.
 
@@ -372,7 +372,7 @@ metrics
 metrics['accuracy']
 ```
 
-### Making Predictions
+### Making predictions
 
 #### Rule of making a prediction
 
@@ -433,7 +433,7 @@ logistic_model.predict(prediction1)
 logistic_model.classify(prediction1)
 ```
 
-### Save Model
+### Save model
 
 Use the following command to save our model.
 
