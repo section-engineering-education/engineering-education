@@ -1,6 +1,22 @@
-### Introduction
-Despite not being as popular as [JavaScript](https://www.javascript.com/), [CSS](https://en.wikipedia.org/wiki/CSS) is still among the top ten most used technologies according to [Redmonk](https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /css-hacks-for-web-developers/
+title: CSS Hacks for Web Developers
+description: In this article, we'll be looking at 7 of the most important CSS hacks for web developers.
+author: moses-wachiuri
+date: 2021-08-10T00:00:00-08:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/css-hacks-for-web-developers/hero.png
+   alt: CSS Image
+---
+
+Despite not being as popular as [JavaScript](https://www.javascript.com/), [CSS](https://en.wikipedia.org/wiki/CSS) is still among the top ten most used technologies according to [Redmonk](https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/).
+<!--more-->
 CSS is popular among web developers because it is robust, relatively straightforward to learn, and ubiquitous across different browsers.
 
 There are various CSS **hacks** that every developer should know to write cleaner code, improve design components, and save time.
@@ -263,3 +279,6 @@ In this tutorial, we have covered some important `hacks` that every developer ne
 - [CSS tricks to revolutionise your layouts](https://www.creativebloq.com/features/css-tricks-to-revolutionise-your-layouts)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
