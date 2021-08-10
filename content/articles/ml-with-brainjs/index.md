@@ -1,5 +1,21 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /ml-with-brainjs/
+title: Getting started with machine learning using Brain.js
+description: The goal of this article is to provide beginners, especially those who are coming from a web development background, a path into machine learning using the Brain.js javascript library.
+author: jamila-laureen
+date: 2021-08-10T00:00:00-08:56
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/ml-with-brainjs/hero.png
+    alt: Machine learning with Brain.js
+---
+
 Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge. However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
+<!--more-->
 
 ### Table of content
 - [Understanding Neural Networks](#understanding-neural-networks)
@@ -34,7 +50,7 @@ Brain.js is a cool concept because most of the documentation found on the intern
 > From their official documentation, Brain.js is a GPU accelerated neural network library built with JavaScript for browser and Node.js  applications. Brain.js is easy to understand and simple to use especially for beginners.
 
 ### Project goal
-The main goal of this article is to provide beginners; especially those who are coming from a web development background,a path to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
+The main goal of this article is to provide beginners, especially those who are coming from a web development background, a path to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
 
 The project will be based on the JavaScript machine learning library called [Brain.js](https://brain.js.org/#/).
 
@@ -42,6 +58,7 @@ The project will be based on the JavaScript machine learning library called [Bra
 Run `npm init -y` to create an empty `package.json` file. Next, execute the command `npm install brain.js` in your terminal to install the Brain.js package. 
 
 In the application's root folder, we will have the `index.js` file, which contains the driver code for the application. Will also have a file that contains the training data for our neural network. The training data will be in the form of JSON, so we will create a `data.json` file. 
+
 The final project structure should look like this:
 
 ```bash
@@ -138,7 +155,9 @@ Our training data will be an array of objects, where each object has a `text` an
 ```
 
 ### Creating the Neural Network
-When building the Neural network, we first need to import the `Brain.js` library into the project. After importing the library, we need to have our data file from where we will access the data to train the model. The code snippets below show how we import both the library and the data file.
+When building the Neural network, we first need to import the `Brain.js` library into the project. After importing the library, we need to have our data file from where we will access the data to train the model. 
+
+The code snippets below show how we import both the library and the data file.
 
 ```js
 /**
@@ -168,7 +187,9 @@ const network = new brain.recurrent.LSTM();
 ### Training the Model
 To train the model, we will take the data from our data file, convert it into an array of values with input and output pairs. We will train our model by running several interactions through the data pair. 
 
-This procedure will take time depending on the number of iteration you perform on the dataset. The more the number of iterations, the higher the accuracy and time it takes. The code snippets below choose how we are going to train the model.
+This procedure will take time depending on the number of iteration you perform on the dataset. The more the number of iterations, the higher the accuracy and time it takes.
+
+The code snippets below choose how we are going to train the model.
 
 ```js
 /**
@@ -181,7 +202,9 @@ network.train(trainingData, {
 ```
 
 ### Testing the Model
-In the last phase of our project, we will test the trained model for accuracy by giving it a sentence and letting it decide whether the sentence is a frontend or backend jargon. The snippets below will assist us to test the model.
+In the last phase of our project, we will test the trained model for accuracy by giving it a sentence and letting it decide whether the sentence is a frontend or backend jargon. 
+
+The snippets below will assist us to test the model.
 
 - #### First Test
 
