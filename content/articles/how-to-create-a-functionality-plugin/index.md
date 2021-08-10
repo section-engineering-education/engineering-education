@@ -6,15 +6,15 @@ url: /how-to-create-a-functionality-plugin/
 title: How to Create a WordPress Functionality Plugin
 description: This article takes the reader through creating a WordPress functionality plugin. WordPress plugins are crucial when designing any WordPress website. They are used to add extra functionality to wordpress websites.
 author: esther-waithera
-date: 2021-08-06T00:00:00-13:30
-topics: []
+date: 2021-08-10T00:00:00-05:45
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-create-a-functionality-plugin/hero.jpg
     alt: Functionality plugin example image
 ---
-WordPress plugins are crucial when designing any WordPress website. They are used to add extra functionality to a WordPress website. Some functionalities are either too basic, or too customized for there to be a plugin for it.
+WordPress plugins are crucial when designing any WordPress website. They are used to adding extra functionality to a WordPress website. Some functionalities are either too basic or too customized for there to be a plugin for it.
 <!--more-->
 Therefore, it may be challenging to find a plugin that meets your needs.
 
@@ -32,14 +32,14 @@ This article will walk you through WordPress functionality plugins and how to cr
 
 ### Prerequisites
 To create and run a plugin on your WordPress website, you will need:
-- A comprehensive understanding of WordPress, HTML, CSS, JavaScript, and PHP
-- A text editor
-- WordPress installed on your computer
+- A comprehensive understanding of WordPress, HTML, CSS, JavaScript, and PHP.
+- A text editor.
+- WordPress installed on your computer.
 
 ### An overview of WordPress plugins
 [Plugins](https://www.wpbeginner.com/glossary/plugin/) are tools that you install to add features and functionality to your WordPress website. A default WordPress installation is like a computer with no applications.
 
-With WordPress, plugins are like those extra applications/software you install to do different tasks.
+With WordPress, plugins are like those extra applications you install to do different tasks.
 
 Customizing a WordPress website may not be enough. You may need to add more functionality for it to meet your requirements. That is where plugins come in.
 
@@ -47,7 +47,7 @@ In this tutorial, we will create a functionality plugin that will display a link
 
 The link will direct you to another page for a service that may satisfy your needs.
 
-WordPress has plugins such as Yoast which help your site rank high in search engines, WooCommerce which helps you set up an online store, and others that allow you to improve your site's performance.
+WordPress has plugins such as Yoast, which helps your site rank high in search engines, WooCommerce which helps you set up an online store, and others that allow you to improve your site's performance.
 
 To use plugins, you can either build and import them, or install them directly on your website. Do not install plugins from sources you do not trust. You can trust plugins available on `wordpress.org`.
 
@@ -77,9 +77,9 @@ Consider what the features and functionalities of the plugin are.
 When you gather all the requirements, you can move to the second step of plugin development. In our case, we will create a plugin that will display a fixed link on the footer of our website.
 
 #### Step 2: Navigate to WordPress plugins folder and create your plugin file
-To create a WordPress plugin directory structure, first navigate to the default WP directory for storing the plugin code. On your text editor, head to the `wp-contents/plugins/` folder of your WordPress directory.
+To create a WordPress plugin directory structure, first, navigate to the default WP directory for storing the plugin code. On your text editor, head to the `wp-contents/plugins/` folder of your WordPress directory.
 
-In our case, we will use Visual Studio Code editor. Create a new folder and name it using the plugin's name; separate the words using hyphens such as `functionality-plugin`.
+In our case, we will use Visual Studio Code editor. Create a new folder and name it using the plugin's name; separate the words using hyphens, such as `functionality-plugin`.
 
 The next step is to create a PHP file inside the folder `functionality-plugin.php` as shown below:
 
@@ -106,13 +106,13 @@ Save the PHP file, then navigate to your WP dashboard and click on `Plugins`; lo
 ![Plugin description](/engineering-education/how-to-create-a-functionality-plugin/plugin-desc.jpg)
 
 #### Step 4: Set up your plugin to add functions
-Our plugin is empty after the basic plugin setup. Therefore, it can not add any functionality to a website.
+Our plugin is empty. Therefore, it can not add any functionality to a website.
 
-The next step of the plugin development is setting up the plugin code and adding functions. This is the step where you bring the idea to life.
+The next step is setting up the plugin code and adding functions. This is the step where you bring the idea to life.
 
-Our plugin example will display a fixed button that acts as a link in our website's footer. We will use CSS to style the plugin and JavaScript to implement the functionality. JavaScript displays an alert if the code is well executed.
+We will use CSS to style the plugin and JavaScript to implement the functionality. JavaScript displays an alert if the code is well executed.
 
-First, to make the button appear, we need a function, we also need to hook this function into an action hook. Action hooks add or override the core functionality of WordPress.
+First, to make the button appear, we need a function. We also need to hook this function into an action hook. Action hooks add or override the core functionality of WordPress.
 
 We will use the `functionality-plugin.php` file to add the plugin's functionality and the complete code will be as shown below:
 
@@ -133,12 +133,11 @@ function dl_fixed_button (){
 add_action ("wp_footer","dl_fixed_button");
 ```
 
-In the code above, we have created a new folder inside `functionality-plugin` folder and named it `styling`. Inside `styling` folder, we have created the `style.css` and the `script.js` files that style and add functionality to the plugin respectively.
+In the code above, we have created a new folder inside `functionality-plugin` folder and named it `styling`. Inside `styling` folder, we have created the `style.css` and the `script.js` files that style and add functionality to the plugin, respectively.
 
-In our main plugin code, we included the `style.css` and `script.js` files. Below is the CSS and JavaScript code you will include in your php file.
+In our main plugin code, we included the `style.css` and `script.js` files. Below is the CSS and JavaScript code you will include in your PHP file.
 
-`style.css`:
-
+**style.css**
 ```css
 .dl_fixed_button {
 	display: inline-block;
@@ -155,8 +154,7 @@ In our main plugin code, we included the `style.css` and `script.js` files. Belo
 }
 ```
 
-`script.js`:
-
+**script.js**
 ```JavaScript
  jQuery (function($){
    $ ('.dl_fixed_button').click(function(){
@@ -177,7 +175,7 @@ Hopefully, if you have made it this far, we agree that developing a WordPress pl
 Coding WP plugins help you gain a more profound knowledge of how WordPress works. Furthermore, you can freely share your plugin with others via the [WordPress plugin directory](https://wordpress.org/plugins/).
 
 ### Conclusion
-Congratulations! You developed a WordPress plugin. This tutorial gives you steps to follow when creating a WP functionality plugin. We have created a plugin that displays a fixed link inside the website's footer and shows up on every page.
+Congratulations! You developed a WordPress plugin. We have created a plugin that displays a fixed link inside the website's footer and shows up on every page.
 
 Following and putting this tutorial into practice enables you to build plugins, thus expanding your WordPress website's functionality.
 
