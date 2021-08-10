@@ -140,7 +140,7 @@ const data = require('./data.json')
 ### Long Short Term Memory (LSTM)
 If you have worked with machine learning before, you probably are familiar with the term  Long short-term memory(LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
 
-RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way. They remember the previous information and use that information to process the current given input. 
+RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way  as it remembers the previous information and uses that information to process the current given input. 
 
 The problem with RNN and if that they cannot remember long-term information due to vanishing gradient and for this reason,  LSTM is designed to avoid long-term dependency problems. We are going to use  the inbuilt LSTM in our example to create our network as shown below:
 
