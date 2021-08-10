@@ -6,7 +6,7 @@ url: /maps-api-in-a-webpage/
 title: Using Maps, Places and Directions APIs 
 description: This article will illustrate how to use Maps, Places and Directions APIs in a website to show location, direction and distance between two points.
 author: mercy-meave
-date: 2021-08-07T00:00:00-10:00
+date: 2021-08-10T00:00:00-12:20
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -287,3 +287,6 @@ In this article, we learn how to use three different Maps APIs in a single proje
 We also used the API to calculate the distance between two different places and the estimated time to cover the estimated distance.
 
 You can find the code for the project [here.](https://github.com/mercymeave/maps)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
