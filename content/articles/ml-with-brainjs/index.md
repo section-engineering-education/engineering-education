@@ -1,6 +1,20 @@
 ### Introduction
 Everybody knows that Machine Learning is mathematically intensive. For most beginners, trying to get into Machine Learning is a challenge.However, Brain.js makes the task easier, as it completely hides the mathematical logic and complexity that comes with understanding neural networks. It is therefore easy for beginners to get started with machine learning.
 
+### Table of content
+1. Understanding Neural Networks
+2. Prerequisites
+3. What is Brain.js?
+4. Project goal
+5. Project setup
+6. The training overview
+7. Creating the Neural Network
+8. Long Short Term Memory (LSTM)
+9. Training the Model
+10. Testing the Model
+11. Conclusion
+12. Further Reading
+
 ### Understanding Neural Networks
 You can think of a Neural network like the human brain, with several interconnected nodes grouped into layers. The layers are categorized as input, hidden, and output layers. Data in neural networks move in a single direction from the input towards the output. 
 
