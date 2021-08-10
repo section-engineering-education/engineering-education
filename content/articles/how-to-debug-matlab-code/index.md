@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-debug-matlab-code/
+url: /how-to-debug-matlab-code/
 title: How to Debug Matlab Code
 description: This article will discuss how to find and correct errors in Matlab code. We will also look at how to use an inbuilt debugger to analyze code.
 author: paul-juma
