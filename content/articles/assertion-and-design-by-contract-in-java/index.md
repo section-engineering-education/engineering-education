@@ -19,12 +19,11 @@ The technique of design by contract specifies the interaction between various co
 For interaction between various components to be achieved, a contract based on the components of the application to communicate with each other is defined by the concept. Assertions are used in the Design by contract technique to check if the requirements specified in the defined contract are met by the application. They are used to test the assumptions made by the programmer.
 
 ### prerequisites
-Before reading this tutorial, you need to have basic knowledge of Java. You need to be able to work with IDEs such as [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
+Before reading this tutorial, you need to have basic knowledge of Java. You also need to be able to work with IDEs such as [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
 
 ### Design by contract
 This technique allows a programmer to provide a detailed specification to create software based on the user requirements. Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given.
 The types of assertions are:
-
 1. Precondition: The specified conditions must be satisfied by the application before calling an external component.
 2. Postcondition: The specified condition must be satisfied by the application after an external condition has been executed.
 3. Invariant: The specified condition must be satisfied by the application.
@@ -34,9 +33,9 @@ To understand the techniques of assertions we will consider the operations of a 
 Pushing an element into the stack, we need to check whether the element is correctly added to the specified index. This condition is referred to as postcondition. An invariant condition is when a stack's number of elements should not exceed its carrying capacity or be equals to empty zero.
 
 ### Implementing Assertion
-An `assertion` is a statement with a boolean expression assumed by the programmer to be true. Thus, execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors.
+An `assertion` is a statement with a boolean expression assumed by the programmer to be true. Thus, the  execution of the program continues if the expression is false. Assumptions are made that the program is correct and free from errors.
 
-An `AssertionError` exception is thrown once the expression is false and contains details of the bug. That is, the line number and file in which the errors are in the program. To implement assertions in Java we use the assert statement. The assert statement can be implemented in two ways.
+An `AssertionError` exception is thrown once the expression is false and contains details of the bug. That is the line number and file in which the errors are in the program. To implement assertions in Java we use the assert statement. The assert statement can be implemented in two ways.
 
 ```Java
 assert Expression 1;
@@ -76,7 +75,7 @@ or
 -enableassertions
 ``` 
 
-Enabling assertions from a file Myfile.java we use the command:
+Enabling assertions from a file `Myfile.java` we use the command:
 
 ```Java
 java -enableassertions Myfile.java
@@ -86,14 +85,14 @@ or
 ```Java
 java -ea Myfile.java
 ```
-Disabling assertions  we use the command-line parameter:
+Disabling assertions, we use the command-line parameter:
 
 ```Java
 -da
 or
 disableassertions
 ```
-Disabling assertions from a file Myfile.java we use the command:
+Disabling assertions from a file `Myfile.java` we use the command:
 
 ```Java
 java -disableassertions Myfile.java
@@ -113,7 +112,6 @@ java -da Myfile.java
 
 ### Assertion Rules
 Since assertion is used to check on the validation of assumptions made by the programmer at the time of execution. Then, some rules govern the use of assertions:
-
 1. Checking the method arguments passed.
 2. Using the assertion in the default case of the switch statement.
 3. Making use of an assertion descriptive.
@@ -142,14 +140,15 @@ public class division
 ```
 
 The program above performs a division test of two variables, ensuring the denominator is not equal to zero, using the assert statement.
-Since the value of c is equal to zero an Assertionerror is thrown. 
+Since the value of c is equal to zero an `Assertionerror` is thrown.
+
 ### Differences between assertion and exceptions
 1. Assertions are intended to detect the programming errors that occur while an exception is used to indicate other kinds of errors such as missing files and invalid user inputs.
 2. Assertion tests the condition assumed by the programmer ensuring the program runs correctly while assertion will test the abnormal condition and does not ensure the efficient running of the program.
 3. Assertion is used to check on something that shouldn't happen while an exception is supposed to check on something that can or may happen.
 
 ### Conclusion 
-In this article, we have looked at assertions which are the assumptions you make as a programmer. This assumption should be correct to avoid errors in the functionality of the program. You need to understand as a programmer how to apply and use assertions to the ensure correct flow of your programs.
+In this article, we have looked at assertions which are the assumptions you make as a programmer. This assumption should be correct to avoid errors in the functionality of the program. You need to understand as a programmer how to apply and use assertions to ensure the correct flow of your programs.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
