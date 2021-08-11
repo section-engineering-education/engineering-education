@@ -1,38 +1,38 @@
 ﻿Developers have had difficulties in testing and debugging machine learning models to reach up the performance of the human level. Developers have been manually examining mistakes that algorithms are making to give insights on what to do next.
 ErrorAnalysis toolkit both saves the time and effort used in debugging machine learning models. It can save developers weeks of work by simplifying the process. There are several machine learning debugging toolkits available but in this article, we are going to explore the Error Analysis toolkit.
 
-### Table of Contents
+### Table of contents
 
-1. [Key Concepts](#key-concepts)
+1. [Key concepts](#key-concepts)
 2. [Introducing Error Analysis in Machine Learning](#introducing-error-analysis-in-machine-learning)
-3. [How Error Analysis Work](#how-error-analysis-work)
+3. [How Error Analysis works](#how-error-analysis-works)
     -[Identification](#identification)
     -[Diagnosis](#diagnosis)
 4. [Failures in Machine Learning](#failures-in-machine-learning)
-5. [Installation Process](#installation-process)
-    -[Getting Started](#getting-started)
+5. [Installation process](#installation-process)
+    -[Getting started](#getting-started)
 6. [Conclusion](#conclusion)
 7. [References](#references)
 
-### Key Concepts
+### Key concepts
 
-1. Machine Learning
+1. **Machine Learning**
 
 It is the study of computer algorithms that improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.<https://en.wikipedia.org/wiki/Machine_learning>
 
-2. Error Analysis 
+2. **Error Analysis** 
 
 Error analysis is a strategy used to document the errors that show up in learner language, decide if those errors are systematic, and if conceivable clarify what caused them.
 
-3. Systematic Errors
+3. **Systematic Errors**
 
 Ther are errors that are consistent and repeatable in a given data sets. Systematic errors are prone to appear in machine earning models.
 
-4. Learner Language
+4. **Learner Language**
 
 Language in which learners say or write when they are trying to communicate in a language they are learning. Therefore, machine learning models study computer algorithims that improve automatically by going through more data sets over and over again improving their performance.
 
-5. Cohorts
+5. **Cohorts**
  
 Cohorts are subgroups of data that the user may choose to save for later use if they wish to come back to those cohorts for future investigation
 
@@ -44,7 +44,7 @@ Error Analysis is used to distinguish cohorts with higher error rates and analyz
 ![ErrorAnaysis](/engineering-education/an-overview-of-error-analysis-toolkit/error-benchmark.jpg)
 *Error Analysis moves away from aggregate accuracy metrics, exposes the distribution of errors to developers in a transparent way, and enables developers to identify & diagnose errors efficiently.* 
 
-### How Error Analysis Work
+### How Error Analysis works
 
 #### Identification
 
@@ -61,6 +61,7 @@ Sometimes developers find it hard to discover hidden data pockets with critical 
 *Data representation* - number of instances in the node. This is shown through the thickness of the incoming edge to the node along with the actual total number of instances in the node.
 
 ![TreeMap](/engineering-education/an-overview-of-error-analysis-toolkit/error-detector.jpg)
+
 *Decision tree that aims at finding failure modes by separating error instances from success instances in the data. The hierarchical error pattern here shows that while the overall error rate is 23.65% for the dataset, it can be as high as 96.77% for individuals who are married, have a capital gain higher than 4401, and a number of education years higher than 12.
 
 2. Error Heatmap
@@ -69,6 +70,7 @@ Error Heatmap allows users to form hypotheses of the most impactful features for
 Error Heatmap works by visualizing cells with higher error, showing a darker red color indicating regions with higher error discrepancy.
 
 ![HeatMap](/engineering-education/an-overview-of-error-analysis-toolkit/heatmap.jpg)
+
 *While the overall error rate for the dataset is 23.65%, the heatmap reveals that the error rates are visibly higher, up to 83%, for individuals with higher education. Error rates are also higher for males vs. females.*
 
 #### Diagnosis
@@ -82,6 +84,7 @@ Methods for Error Diagnosis;
 Data exploration allows comparison between cohorts which enables benchmarking to be carried out. Dataset statistics and feature distribution are explored therefore,investigating whether certain cohorts are underrepresented or their feature distribution is a lot different from the overall data hinting if there's the existence of outliers or unusual covariate shift.
 
 ![DataExploration](/engineering-education/an-overview-of-error-analysis-toolkit/data-explorer.jpg)
+
 *When we look at how the data is distributed across the feature “education\_num” we can see that a) there are fewer instances for individuals with more than 12 years of education, and b) for this cohort the distribution between lower income (blue) and higher income (orange) is very different than for other cohorts. In fact, for this cohort there exist more people who have an income higher than 50K, which is not true for the overall data.*
 
 2. Global Explanation
@@ -89,6 +92,7 @@ Data exploration allows comparison between cohorts which enables benchmarking to
 Global Explanation allows users to explore the top important features that impact the overall model predictions for a selected sub-group of the cohort. This allows comparison between values for different cohorts side by side. Users can see the relationship between the values of the selected feature to its corresponding feature of important values. This shows them how the values of the selected feature impact model prediction.
 
 ![Explanation](/engineering-education/an-overview-of-error-analysis-toolkit/global-explanation.jpg)
+
 *Global feature explanations for the income prediction model show that marital status and number of education years are the most important features globally. By clicking on each feature, it is possible to observe more granular dependencies. For example, marital statuses like “divorced”, “never married”, “separated”, or “widowed” contribute to model predictions for lower income (<50K). Marital status of “civil spouse”instead contributes to model predictions for higher income (>50K).*
 
 3. Local Explanation
@@ -107,35 +111,45 @@ What-If Analysis allows users to change feature values of selected data points a
 It has been hard to detect Machine Learning algorithm errors by developers. Most of the time when Error Analysis has been carried out manually by developers, therefore, taking most time in testing and debugging of the Machine Learning models. There are many reasons why machine learning models fail which could be the architecture, or the training data, or the way the training data were preprocessed, or the context in which the model was deployed.
 Teams that deploy machine learning models into the real world face challenges while conducting model evaluation and testing. When testing a model, let's say given a model Y is 75% accurate on a given benchmark and therefore the model accuracy may not be uniform across subgroups of data. Such failures cause a lack of reliability, safety, and unfairness. Subgroups of data may display different error rates which are as model Y 75% accuracy. In order to diagnose errors from different subgroups, Error Analysis proves to be reliable by separating the subgroups of data and analyzing each data set differently, therefore giving more accurate results.
 
-### Installation Process
+### Installation process
 
 To install the Responsible AI Widgets “raiwidgets” package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have interpret-community already installed, you will also need to install this for supporting the generation of model explanations.
 
+```python
 pip install interpret-community
 
 pip install raiwidgets
+```
 
 Alternatively, you can also clone the open source repository and build the code from scratch:
 
+```python
 git clone https://github.com/microsoft/responsible-ai-widgets.git
+```
 
 You will need to install yarn and node to build the visualization code, and then you can run:
 
+```python
 yarn install
 
-yarn buildall
+yarn build all
+```
 
 And install from the raiwidgets folder locally:
 
+```python
 cd raiwidgets
 
 pip install –e .
+```
 
 For more information see the [contributing](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md)[ ](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md)[guide](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md).
 
 If you intend to run repository tests, in the raiwidgets folder of the repository run:
 
+```python
 pip install -r requirements.txt
+```
 
 #### Getting started
 
