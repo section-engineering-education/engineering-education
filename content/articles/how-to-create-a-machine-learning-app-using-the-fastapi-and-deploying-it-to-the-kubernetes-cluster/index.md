@@ -75,22 +75,32 @@ import accuracy_score from sklearn.metrics
 
 In the above code snippet, we have imported the following.
 
-- `MultinomialNB`
-  This is the classifier method that is found in the Naive Bayes algorithm. We shall use `MultinomialNB` in the building of our model.
-  Naive-Bayesa classification technique based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
+#### `MultinomialNB`
 
-  Naïve Bayes classifiers are highly scalable and requires a number of features when building a classification model.
-  This an important concept that a user needs to grasp because this is the building block for building our model.
-  In our case we specifically use `MultinomialNB` from the Naive Bayes algorithm since its suitable for suitable for classification with discrete features which best suited for our case.
-  For further reading about the Naive Bayes algorithm and how it's a powerful tool in classification you can check this amazing article.
-  [Understanding Naive Bayes Classifier](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+This is the classifier method that is found in the Naive Bayes algorithm. We shall use `MultinomialNB` in the building of our model.
+Naive-Bayesa classification technique based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
 
-- `CountVectorizer`
-  Is used to fit our model into the inputs of our dataset. `CountVectorizer` also transforms our dataset into vectors which are more readable inputs, the dataset is then used by our model during the training phase. It is also used to extract features from our dataset. Features are the inputs for our model.
-- `train_test_split`
-  This is what is used in splitting our dataset. Our dataset will be split into `train_set` and `test_set`.
-- `accuracy_score`
-  It is used to measure the accuracy of our model in percentage. USed gauge how our model learned during the training phase.
+Naïve Bayes classifiers are highly scalable algorithms that requires a number of features when building a classification model.
+This an important concept that a user needs to grasp because this is the building block for our model.
+In our case we specifically use `MultinomialNB` from the Naive Bayes algorithm since its suitable for classification with discrete features which is the case for our model.
+For further reading about the Naive Bayes algorithm and how it's useful in classification you can use this amazing article.
+
+[Understanding Naive Bayes Classifier](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+
+#### `CountVectorizer`
+
+Is used to fit our model into the inputs of our dataset. `CountVectorizer` also transforms our dataset into vectors which are more readable inputs, the dataset is then used by our model during the training phase. It is also used to extract features from our dataset. Features are the inputs for our model.
+For more details about CountVectorizer, this great article can be used for further reading.
+
+[Basics of CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+
+#### `train_test_split`
+
+This is what is used in splitting our dataset. Our dataset will be split into `train_set` and `test_set`.
+
+#### `accuracy_score`
+
+It is used to measure the accuracy of our model in percentage. USed gauge how our model learned during the training phase.
 
 We will use the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) for our modeling.
 We choose the Naive Bayes Classifier algorithm for our classification instead of the other algorithms due to the following reasons.
