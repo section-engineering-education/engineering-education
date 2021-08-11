@@ -6,12 +6,12 @@ url: /how-to-create-a-machine-learning-app-using-turicreate/
 title: How to Create a Machine Learning App using Turi Create
 description: In this article, we will discuss the library developed by Apple to create core machine learning supervised and unsupervised machine learning models. 
 author: willyngashu
-date: 2021-08-10T00:00:00-18:00
-topics: [machine-learning]
+date: 2021-08-11T00:00:00-05:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/how-to-create-a-machine-learning-app-using-turicreate/hero.jpg
+ - url: /engineering-education/how-to-create-a-machine-learning-app-using-turicreate/hero.jpg
    alt: How to create machine learning app using Turing Create example image
 ---
 
@@ -36,31 +36,31 @@ We will build a machine model following various steps from data manipulation, tr
 
 ### Prerequisites
 
-1. A good understanding of Python.
+- A good understanding of Python.
 
 ### Get started with Turi Create
 
 Turi Create has built algorithms for classification, regression, and clustering.
 The supported algorithms are as follows:
 
-#### Classification algorithms.
+#### Classification algorithms
 
-1. Logistic regression
-2. Nearest neighbor classifier
-3. Support vector machines (SVM)
-4. Boosted Decision Trees
-5. Random Forests
-6. Decision Tree
+1. Logistic regression.
+2. Nearest neighbor classifier.
+3. Support vector machines (SVM).
+4. Boosted Decision Trees.
+5. Random Forests.
+6. Decision Tree.
 
 #### Regression algorithms
 
-1. Linear regression
-2. Boosted Decision Trees
+1. Linear regression.
+2. Boosted Decision Trees.
 
-#### Clustering algorithms.
+#### Clustering algorithms
 
-1. K-Means Clustering
-2. Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+1. K-Means Clustering.
+2. Density-Based Spatial Clustering of Applications with Noise (DBSCAN).
 
 To get started, we need to install Turi Create into our machine using the following command:
 
@@ -68,23 +68,23 @@ To get started, we need to install Turi Create into our machine using the follow
 pip install turicreate
 ```
 
-### Data Manipulation
+### Data manipulation
 
 In this tutorial, we will build a machine learning model used for diabetes risk prediction.
-The dataset to be used will be from the [UCI Machine learning Repository](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.)
+The dataset to be used will be from the [UCI Machine learning Repository](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.).
 
 The dataset contains the signs and symptoms of a newly diabetic person. This will help in training and building our model. In the end, we will use this model to make predictions.
 
 An overview of our data is as shown:
 ![Dataset Overview](/engineering-education/how-to-create-a-machine-learning-app-using-turicreate/data.png)
 
-### Initializing dataset URL
+#### Initializing dataset URL
 
 ```python
 dataset_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00529/diabetes_data_upload.csv"
 ```
 
-### Loading Turi Create package
+#### Loading Turi Create package
 
 We need to import Turi Create into our machine so that we can be able to use it.
 
@@ -92,7 +92,7 @@ We need to import Turi Create into our machine so that we can be able to use it.
 import turicreate as tc
 ```
 
-### Loading dataset using SFrame
+#### Loading dataset using SFrame
 
 SFrame is a scalable data frame that is used to read the diabetes data CSV file.
 
@@ -100,7 +100,7 @@ SFrame is a scalable data frame that is used to read the diabetes data CSV file.
 df = tc.SFrame(dataset_url)
 ```
 
-Output:
+**Output**:
 
 ```bash
 Downloading https://archive.ics.uci.edu/ml/machine-learning-databases/00529/diabetes_data_upload.csv to /var/tmp/turicreate-root/59/2862b7a9-30ed-4b77-b817-7535c7012ac0.csv
@@ -117,7 +117,7 @@ Finished parsing file https://archive.ics.uci.edu/ml/machine-learning-databases/
 Parsing completed. Parsed 520 lines in 0.014424 secs.
 ```
 
-### Nature of dataset
+#### Nature of dataset
 
 Please run the following command to show us how our data is structured.
 
@@ -125,7 +125,7 @@ Please run the following command to show us how our data is structured.
 df.head()
 ```
 
-### Checking the datatype
+#### Checking the datatype
 
 This will return the data type of every column in the dataset.
 
@@ -133,7 +133,7 @@ This will return the data type of every column in the dataset.
 df.dtype()
 ```
 
-Output:
+**Output**:
 
 ```bash
 [int,
@@ -157,7 +157,7 @@ Output:
 
 The first column of our dataset is an integer, and the remaining columns are strings, as shown in our output.
 
-### Plot the Class distribution
+#### Plot the Class distribution
 
 We will use this to give us a greater insight into the nature of our classes in the form of a plotted graph:
 
@@ -165,7 +165,7 @@ We will use this to give us a greater insight into the nature of our classes in 
 df['class'].show()
 ```
 
-### Getting targets and features
+#### Getting targets and features
 
 We first need to get all of our columns to pick what we use as our features and targets.
 
@@ -173,7 +173,7 @@ We first need to get all of our columns to pick what we use as our features and 
 df.column_names()
 ```
 
-Output:
+**Output**:
 
 ```bash
 ['Age',
@@ -226,7 +226,7 @@ feature_names = ['Age',
 In this phase, we will start building our model using the given dataset above.
 Before we begin, we need to split our dataset into a training set and a testing set. The training set will be 75%, and the testing set will be 25%.
 
-### Dataset splitting
+#### Dataset splitting
 
 ```python
 train_data,test_data = df.random_split(0.75)
@@ -238,7 +238,7 @@ train_data,test_data = df.random_split(0.75)
 df.shape()
 ```
 
-Output:
+**Output**:
 
 ```bash
 (520, 17)
@@ -250,7 +250,7 @@ Output:
 train_data.shape
 ```
 
-Output:
+**Output**:
 
 ```bash
 (390, 17)
@@ -260,8 +260,9 @@ After splitting our data into a training and a testing set, we can begin buildin
 
 ### Modelling algorithm
 
-TuriCreate supports different classification algorithms, in our case, we will use the [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
-We use logistic regression since our model has a binary output. Thus, our output can be either be positive or negative to show if a person is at risk of getting diabetes or not.
+TuriCreate supports different classification algorithms, in our case, we will use the [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression).
+We use logistic regression since our model has a binary output. Thus, our output can be either positive or negative to show if a person is at risk of getting diabetes or not.
+
 Logistic regression is better suited for our problem since this algorithm gives higher accuracy and is less inclined to over-fitting.
 
 - To use the logistic regression algorithm use the following command:
@@ -270,7 +271,7 @@ Logistic regression is better suited for our problem since this algorithm gives 
 logistic_model = tc.logistic_classifier.create(train_data,target='class',features=feature_names)
 ```
 
-Output:
+**Output**:
 
 ```bash
 PROGRESS: Creating validation set data from 75% of train_data.
@@ -309,7 +310,7 @@ The model summary gives us a deeper understanding of our model, enabling us to g
 logistic_model.summary()
 ```
 
-Output:
+**Output**:
 
 ```bash
 Class                          : LogisticClassifier
@@ -377,16 +378,16 @@ metrics['accuracy']
 #### Rule of making a prediction
 
 To make predictions, you must submit an SFrame as input.
-SFrame means scalable data frame. It's column-mutable dataframe object can scale to big data, and columns can be added and subtracted with ease SFrame.
-It also enables our model to read the user's input easily.
-The following data formats are supported when constructing an SFrame.
+SFrame means scalable data frame. It's column-mutable dataframe object can scale to big data, and columns can be added and subtracted with ease.
 
-1. CSV file (comma-separated value).
-2. SFrame directory archive (A directory where an SFrame was saved previously).
+It also enables our model to read the user's input easily. The following data formats are supported when constructing an SFrame:
+
+1. CSV file - comma-separated value.
+2. SFrame directory archive - A directory where an SFrame was saved previously.
 3. General text file.
 4. A Python dictionary.
 5. Pandas DataFrame.
-6. JSON
+6. JSON.
 
 #### Sample SFrame
 
@@ -421,11 +422,11 @@ prediction1 = tc.SFrame({'data':[sf.values()]})
 #### Make prediction
 
 The following command will be used to make a prediction using the above SFrame as input:
-The output will be either positive or negative to show if a person may be at risk or not.
 
 ```python
 logistic_model.predict(prediction1)
 ```
+The output will be either positive or negative to show if a person may be at risk or not.
 
 - Get the prediction probability.
 
@@ -445,7 +446,7 @@ logistic_model.save('diabetes_prediction.model')
 
 In this tutorial, we have learned how to create a machine learning model using Turi Create. We started by creating SFrames to load our dataset. We then did data manipulation for us to know the structure of the data we are working with.
 
-Finally, after adequately understanding our data, we build a machine learning model to predict if a person is at risk of getting diabetes.
+Finally, after adequately understanding our data, we built a machine learning model to predict if a person is at risk of getting diabetes.
 
 This tutorial is beneficial for someone who wants to learn TuriCreate to be able to create machine learning models more efficiently.
 
