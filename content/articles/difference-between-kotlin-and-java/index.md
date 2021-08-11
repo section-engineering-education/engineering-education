@@ -3,9 +3,9 @@ layout: engineering-education
 status: publish
 published: true
 url: /difference-between-kotlin-and-java/
-title: Difference Between Kotlin and Java
-description: This article takes the reader through the differences between Java and Kotlin. It will look into the areas of specialization that make these two languages differ.
-date: 2021-08-08T00:00:00-08:00
+title: Differences Between Kotlin and Java
+description: This article takes the reader through the differences between Java and Kotlin. It will look into the areas of specialization that make these two languages different.
+date: 2021-08-11T00:00:00-05:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -13,8 +13,9 @@ images:
   - url: /engineering-education/difference-between-kotlin-and-java/hero.jpg
     alt: Difference between Kotlin and Java example image
 ---
-It has been quite sometime since Kotlin came out, and it has been progressing nicely. Since it was made explicitly as an alternative to Java, Kotlin has normally been contrasted with Java in numerous aspects such as syntax among others.
 
+It has been quite a while since Kotlin came out, and it has been progressing nicely. Since it was made explicitly as an alternative to Java, Kotlin has normally been contrasted with Java in numerous aspects such as syntax among others.
+<!--more-->
 Java is a programming language and a platform for computers. Most back-end projects, notably those involving big data and Android development, employ it as their server-side language.
 
 Kotlin, on the other hand, is a free, open-source, statically typed programming language that mixes object-oriented and functional programming capabilities.
@@ -37,21 +38,21 @@ One clear difference is that the presence of semicolons at the end of a statemen
 
 Java example:
 
-```Java
+```java
 public class myClass
 {
     public void Name(String Name){
-        String Name= Name " ";
+        String Name = " ";
         System.out.println("My name is :" + Name );
 }
 public void age()
 {
-    int age=30;
+    int age = 30;
     System.out.println("I am " + age + "years old");
 }
 public static void main(string [] args)
 {
-    myClass my=new myClass();
+    myClass my = new myClass();
     my.Name("Ben");
     my.age();
 }
@@ -60,19 +61,19 @@ public static void main(string [] args)
 
 Kotlin example:
 
-```Kotlin
+```kotlin
 class myClass
 {
     fun FullName(firstName:string , lastName:String)
     {
-        var fullName="$firstName $lastName"
+        var fullName = "$firstName $lastName"
         println("My name is  :$fullName")
     }
 }
 fun age()
     {
         var age : Int
-        age=30
+        age = 30
         println("My age is : $age")
     }
     fun main(args :Array<String>)
@@ -93,23 +94,23 @@ In Java, when implementing Lambda expressions, parenthesis is preferred, but if 
 
 Syntax:
 
-```Java
+```java
 parameter -> expression
 (parameter a, parameter b) -> {code}
 ```
 
 Java example:
 
-```Java
+```java
 interface Drawable{
     public void draw();
 }
 
 public class LambdaExpressionExample {
     public static void main(String[] args) {
-        int height=50;
+        int height = 50;
            //lambda implementation
-        Drawable d2=()->{
+        Drawable d2 = () -> {
             System.out.println("Draw "+height);
         };
         d2.draw();
@@ -121,13 +122,13 @@ In Kotlin, we use curly brackets to implement Lambda expressions.
 
 Kotlin syntax:
 
-```Kotlin
+```kotlin
 val lambdaName : Type = { argumentList -> codeBody }
 ```
 
 Kotlin example:
 
-```Kotlin
+```kotlin
 val square = { number: Int -> number * number }
 val nine = square(3)
 ```
@@ -141,7 +142,7 @@ A model class represents a data object that can be used to transfer data in a Ja
 
 To adhere to the encapsulation concept, properties in Java are defined as private. Java employs Getters and Setters to access these attributes, as well as the `isEqual` and `toString` methods as necessary:
 
-```Java
+```java
 public class Employee {
      private String name;
      private Integer age;
@@ -168,7 +169,7 @@ public class Employee {
 
 In Kotlin, data classes serve the purpose of model classes. Data classes make it possible to access properties directly. They also have several built-in utility functions such as `equals()`, `toString()`, and `copy()`.
 
-```Kotlin
+```kotlin
 //Kotlin data class
 data class Student(var name: String = "", var age: Int = 0)
 
@@ -183,7 +184,7 @@ A global variable can be seen and used throughout the application.
 
 Because it is not contained as an object, the `static` keyword in Java is used to supply global variables at the start of the program's execution. This indicates that it can be utilized without the need to build an object:
 
-```Java
+```java
 public class myClass {
    public static int global number = 19;
 }
@@ -193,7 +194,7 @@ myClass.globalNumber;
 
 In Kotlin, the static keyword is replaced by a companion object, which is similar to a singleton. It enables you to have access to various features like extensions and interfaces:
 
-```Kotlin
+```kotlin
 class myClass {
     companion object {
         val globalNumber = 19
@@ -207,7 +208,7 @@ This refers to a programming language's capacity to perform multiple tasks at on
 
 Java threads are mostly used to support concurrency. Making a thread in Java necessitates creating a class that extends the built-in Java thread class. The rest of its application should be uncomplicated.
 
-```Java
+```java
 // Creating a thread in Java by extending    //the Thread class
 class MultithreadingDemo extends Thread
 {
@@ -233,7 +234,7 @@ public class Multithread
     public static void main(String[] args)
     {
         int x = 30; // Number of threads
-        for (int i=0; i<x; i++)
+        for (int i = 0; i < x; i++)
         {
             MultithreadingDemo object = new MultithreadingDemo();
             object.start();
@@ -244,7 +245,7 @@ public class Multithread
 
 In Kotlin, threads are also available but what is used instead is coroutines. Coroutines are lightweight threads that excel in short non-blocking tasks.
 
-```Kotlin
+```kotlin
 for (x in 1..500)
     GlobalScope.launch {
         println(x)
