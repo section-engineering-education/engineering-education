@@ -1,10 +1,24 @@
-Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech [wikipedia](https://en.wikipedia.org/wiki/Chatbot). Chatbots can be utilized for things like reminders, booking appointments, and also on social media platforms.
- 
-In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using python.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-telegram-bot-with-python-to-generate-quotes/
+title: Building a Telegram Bot using Python to Generate Random Quotes
+description: This article will be an introduction to building Telegram bots using Python. Here, we will learn to fetch random quotes from an API, and display them as and when the user requests.
+author: shuaib-oseni
+date: 2021-07-11T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-[Telegram](https://www.telegram.org/) is a free and open-source, cross-platform, cloud-based instant messaging (IM) software [wikepedia](https://en.wikipedia.org/wiki/Telegram_(software)). It provides video calling and file-sharing amongst other features.
- 
+  - url: /engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/hero.png
+    alt: Telegran Bot image
+---
+Chatbots are software applications used to conduct online chat conversations and automate customer service via text or text-to-speech. [Chatbots](https://en.wikipedia.org/wiki/Chatbot) can be utilized for things like reminders, booking of appointments, and also on social media platforms.
+<!--more-->
+In this tutorial, we will build a simple Telegram bot that sends automated programming quotes to a Telegram group at intervals using Python.
 
+[Telegram](https://www.telegram.org/) is a [free and open-source](https://en.wikipedia.org/wiki/Telegram_(software)), cross-platform, cloud-based instant messaging (IM) software. It provides video calling and file-sharing amongst other features.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python 3](https://www.python.org/downloads/) installed on your machine and, a little understanding of Python would help the reader to follow along better.
@@ -159,7 +173,7 @@ quotes_handler = CommandHandler('random', random)
 dispatcher.add_handler(quotes_handler)
 ```
 
-Now, let's run the file and enter `/random` in our telegram group. Our bot should respond with a random quote.
+Now, let's run the file and enter `/random` in our Telegram group. Our bot should respond with a random quote.
 
 ![random quotes](/engineering-education/building-a-telegram-bot-with-python-to-generate-quotes/random.png)
 *Bot fetching random quote using an API*
@@ -167,7 +181,7 @@ Now, let's run the file and enter `/random` in our telegram group. Our bot shoul
 ### Conclusion
 To conclude, we have learned about building Telegram bots for groups.
 
-There is still a lot you can achieve with a telegram bot, like connecting your bot to other APIs and hosting on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
+There is still a lot you can achieve with a Telegram bot, like connecting your bot to other APIs and hosting them on a platform like [Heroku](https://medium.com/analytics-vidhya/schedule-a-python-script-on-heroku-a978b2f91ca8) to make your bot available 24/7.
 
 You can also check the [Telegram bot](https://core.telegram.org/bots/api) documentation for more info on creating bots.
 
