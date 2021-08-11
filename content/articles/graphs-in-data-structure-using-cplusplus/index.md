@@ -155,7 +155,7 @@ You can find the complete execution of the above code [here](https://replit.com/
 
 #### Output
 
-![output](/engineering-education/graphs-in-data-structure-using-cplusplus//output.JPG)
+![output](/engineering-education/graphs-in-data-structure-using-cplusplus/output.JPG)
 
 - In the output, you can see the implementation of graphs in the adjacency list view.
 
