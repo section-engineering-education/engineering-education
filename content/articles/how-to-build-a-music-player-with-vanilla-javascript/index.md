@@ -203,10 +203,10 @@ body {
 
 ```
 You have successfully designed the music player implementing a little bit of animation in the music image, making it rotate when the music is playing. You will see that in action after the JavaScript.
+
 Here’s what the music player looks like at this point:
 
 ![music-player](/engineering-education/how-to-build-a-music-player-with-vanilla-javascript/music-player.jpg)
-
 
 ### JavaScript
 In your javascript file, first thing we need to do is to bring in the different elements we need  into the DOM using the code below:
