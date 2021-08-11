@@ -171,7 +171,7 @@ Unnamed: 0  names nationality
 df.columns
 ```
 
-Output:
+Output is shown.
 
 ```bash
 Index(['Unnamed: 0', 'names', 'nationality'], dtype='object')
@@ -183,7 +183,7 @@ Index(['Unnamed: 0', 'names', 'nationality'], dtype='object')
 df['nationality'].unique()
 ```
 
-This gives an array of all the nationalities available in our dataset, as shown below.
+The ouput gives an array of all the nationalities available in our dataset, as shown below.
 
 ```bash
 array(['yiddish', 'gaelic', 'african', 'irish', 'hungarian', 'german',
@@ -207,7 +207,7 @@ As we can see most of the nationalities have a total of `100` names.
 df.groupby('nationality')['names'].size()
 ```
 
-Output:
+Output of our nationalities.
 
 ```bash
 nationality
@@ -267,8 +267,8 @@ Name: names, dtype: int64
 ### Visualizing our data using the Matplotlib library
 
 [Matplotlib](https://matplotlib.org/) is a Python library used for plotting hence easy visualization of our data in the form of a graph.
-In this tutorial we will be using [Google Colab](https://research.google.com/) in this tutoriial since its very fast in notebook in machine learning.
-Run the below code snippet on [Google Colab](https://research.google.com/) so you can start using Matplotlib.
+In this tutorial we will be using [Google Colab](https://research.google.com/) since it's very fast notebook used for machine learning.
+Run the below code snippet on [Google Colab](https://research.google.com/) so you can import Matplotlib.
 
 ```python
 import matplotlib.pyplot as plt
@@ -345,6 +345,8 @@ Our accuracy score is as shown:
 ```bash
 0.85036482694119869
 ```
+
+The final percentage accuracy for our model is `0.85036482694119869`.
 
 ### Making predictions
 
@@ -478,7 +480,7 @@ To create our route we shall use the concept of Asynchronous programming in crea
 - [Asynchronous programming](https://www.aeracode.org/2018/02/19/python-async-simplified/) allows a program to run multiple operations without waiting for other operations to complete.
 
 This is an important concept in any programming language since it allows multiple operations to run in parallel without blocking each other.
-Asynchronous programming is an advanced concept that has become very important in python language. For a detailes guided on this concept this article can be used for further reading.
+Asynchronous programming is an advanced concept that has become very important in Python language. For a detailed guidance on this concept this article is very helpful.
 
 - [Get started with async in Python](https://www.infoworld.com/article/3454442/get-started-with-async-in-python.html)
 
