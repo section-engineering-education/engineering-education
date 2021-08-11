@@ -6,7 +6,7 @@ url: /how-to-debug-matlab-code/
 title: How to Debug Matlab Code
 description: This article will discuss how to find and correct errors in Matlab code. We will also look at how to use an inbuilt debugger to analyze code.
 author: paul-juma
-date: 2021-08-07T00:00:00-07:00
+date: 2021-08-11T00:00:00-02:25
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-debug-matlab-code/hero.jpg
     alt: Matlab Code Example Image
 ---
-Errors occur everywhere in the world including in programming. These errors could be caused by writing code that the software does not understand or by mistyping.
+Errors occur everywhere in the world. In programming, these errors could be caused by writing code that the software does not understand or by mistyping.
 <!--more-->
 When you try running a program that has errors, it may either fail or give unexpected results.
 
@@ -92,9 +92,9 @@ end
 end
 ```
 
-In the example above, we expect our program to display odd numbers. However, the results are not what we expected.
+In the example above, the program should display odd numbers. However, the results are not what we expected.
 
-The output is as shown below:
+Output:
 
 ![Matlab logical error](/engineering-education/how-to-debug-matlab-code/debug-three.png)
 
@@ -154,7 +154,7 @@ x = randi(n,m);
 fprintf('The last element is %d\n', x(n,m))
 ```
 
-When we run this Matlab function, we have an error as shown below:
+When we run this Matlab function, we have the following error:
 
 ![sample error](/engineering-education/how-to-debug-matlab-code/debug-eight.png)
 
@@ -166,7 +166,7 @@ We get the result below:
 
 ![Sample debugging steps](/engineering-education/how-to-debug-matlab-code/debug-nine.png)
 
-We should input arguments to our function right in front of the `k` in the command window. For example, we will add the code below in front of the `k`.
+We should include arguments to our function right in front of the `k` in the command window. For example, we will add the code below in front of the `k`.
 
 ```Matlab
 rand_int(3,2)
@@ -180,7 +180,7 @@ If we look at Matlab's workspace, we will see something interesting.
 
 ![sampling debugging](/engineering-education/how-to-debug-matlab-code/debug-eleven.png)
 
-If we look at the workspace, our variables have been assigned a value, but the matrix that we get is a `2 x 2` matrix; not what we expect.
+In the workspace, our variables have been assigned a value, but the matrix that we get is a `2 x 2` matrix. This is not what we expect.
 
 We can type `whos` in the command window to see more details about our variables.
 
@@ -197,7 +197,7 @@ At this point, you can locate the source of the error and make appropriate chang
 ### Conclusion
 Debugging is essential in programming. It is used to avoid problems that may occur due to various errors in a program. 
 
-Therefore, all programmers must be equipped with debugging skills. One should understand how a program works, as well as the expected output. This makes debugging easy, especially when checking for logical errors.
+Therefore, all developers must be equipped with debugging skills. Furthermore, they should understand how a program works, as well as the expected output. This makes debugging easy, especially when checking for logical errors.
 
 Happy coding!
 
