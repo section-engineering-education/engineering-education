@@ -1,18 +1,17 @@
-# The concept of OOP In Java Getting Started with ABSTRACTION and ENCAPSULATION
+### The Concept of OOP in Java: Getting Started with Abstraction and Encapsulation
 
-In Java, everything is an object and as such; a real-life entity.
 
-Object-Oriented Programming (OOP) unlike Procedural programming is an approach. Or a programming paradigm where everything is an Object (Real-life entities). OOP tries to model real-life objects.
-Objects come from class, a form of generalization but the real thing is the Object. What then is a class?
+Object-Oriented Programming (OOP) is a programming paradigm (approach) as is procedural programming. unlike Procedural programming, we model everything as objects (Real-life entities). Java, as an object-oriented programming language, was design to follow this pattern.
+Objects come from class, a form of generalization but a real thing is an object. What then is a class?
 
 Class is a template from which objects are created 
 
-The process of creating Objects from a class is Instantiation
+The process of creating objects from a class is instantiation
 
-In this tutorial, you will learn about Abstraction, Encapsulation, Objects, and classes. 
+In this tutorial, you will learn about abstraction, encapsulation, objects, and classes. 
 The concept of OOP, to say the least, will be a nice piece to grab for absolute java beginners.
 
-## Prerequisites
+### Prerequisites
 
 The reader should have:
 
@@ -22,13 +21,13 @@ The reader should have:
 
 - Have any IDE of your choice
 
-## Objectives
+### Objectives
 
 At the end of this first OOP tutorial series readers should be able to:
 
 - Differentiate between classes and objects
 
-- Understand Abstraction and Encapsulation
+- Understand abstraction and encapsulation
 
 - Create objects from classes
 
@@ -36,19 +35,21 @@ At the end of this first OOP tutorial series readers should be able to:
 
 - Create abstract classes and interfaces
 
-### CLASS
+### Class:
 
-A class is a template from which an object is created. A class serves as a blueprint for object creation.
+A class is a template from which an object is created, serving as a blueprint for object creation.
 
-The Class has instance variables as attributes or properties and instance methods as their behaviors or actions
+To represent attributes or properties, a class uses instances variables. For behaviours or actions it uses instance methods
 
-Instance Variables: These are variables declared in the class, outside of methods and constructors. Instance variables have a global scope.
+### Instance Variables: 
+
+These are variables declared in the class, outside of methods and constructors. Instance variables have a global scope.
 
 ### Instance Methods: 
 
-This is a method that can be invoked only by an Object of its class.
+This is a method that can be invoked only by an object of its class.
 
-It is the class that defines what an object data fields or variables and methods will be.
+It is the class that defines what an object's data fields or variables and methods will be.
 
 Example of a class
 
@@ -100,9 +101,9 @@ public class Circle {
 
 With this, we’ve created a very simple class called Circle,
 The same goes for every other class like Car, Human, Animal, etc.
-Creating a class means you have a template or blueprints from which you can create different Objects of the same class. A class in simple terms is a model. I hope you get this.
+Creating a class means you have a template or blueprints from which you can create different objects of the same class. A class in simple terms is a model. I hope you get this.
 
-### OBJECTS
+### Objects:
 
 An object is an actual entity that has attributes and behaviors defined by its model.
 
@@ -138,7 +139,7 @@ public class CircleSize {
 
 ```
 
-The same thing applies if you want to create an Object of Dog.
+The same thing applies if you want to create an object of type Dog.
 
 The dog should have a name, color, age, and breed.
 
@@ -242,51 +243,52 @@ public class Dog_Main {
 
 Now you see, we’ve created a new dog with the name Bingo, you can go on to create as many dogs with different states or attributes.
 
-Here is the output
+Here is the output:
 
-Dog running
+    Dog running
 
-Is the dog running:? true
+    Is the dog running:? true
 
-Sleeping
+    Sleeping
 
-is the dog sleeping:? true
+    is the dog sleeping:? true
 
-Dog barking...
+    Dog barking...
 
-Is the dog barking:? true
+    Is the dog barking:? true
 
-Eating
+    Eating
 
-Is the dog eating:? true
+    Is the dog eating:? true
 
-The dog name is: Bingo
+    The dog name is: Bingo
 
-Now that we’ve got this out of the way, let's talk about Abstraction and Encapsulation properly.
+Now that we’ve got this out of the way, let's talk about abstraction and encapsulation properly.
 
-# ABSTRACTION
+### Abstraction
 
-Who could have imagined that Abstraction will be a thing in programming? Who? But right now you can’t talk about OOP without mentioning Abstraction. It is a major building block of OOP. So then, what is Abstraction? In this section, I will explain what Abstraction is and how to use it as a Java developer.
+Who could have imagined that abstraction will be a thing in programming? Who? But right now you can’t talk about OOP without mentioning abstraction. It is a major building block of OOP. So then, what is abstraction? In this section, I will explain what abstraction is and how to use it as a Java developer.
 
-In Abstraction, only the useful attributes of an object are on display or accessible. The unnecessary details are “hidden”.
-For example, while you’re typing on your computer. You’re only interested in punching the keys believing that it produces results on your screen but you know nothing about the mechanism that produces the result and I’m sure you haven’t even thought about it yet. Have you? 
-Another example to make things clearer,  imagine a car driver, he is only interested in starting, moving, and stopping the car. Accelerate or change gear and brake but he is not interested in the mechanism that works internally to perform all the above functions. Simply, in abstraction, the implementation details are hidden from the user while the functionality is exposed to the user. 
-The while the user will only know what a function(method in java) does but not how it does it.
+In abstraction, only the useful attributes of an object are on display or accessible. The unnecessary details are “hidden”.
+For example, while you’re typing on your computer. You’re only interested in punching the keys believing that it produces results on your screen. You know nothing about the mechanism that produces the result and I’m sure you haven’t even thought about it yet. Have you? 
+Here's another example to make things clearer: imagine a car driver, he is only interested in starting, moving, and stopping the car. Accelerate or change gear and brake but he is not interested in the mechanism that allows him to do this. In abstraction, we hide the implementation from the user but keep the functionality exposed. 
+This way, the user will only know what a function(method in java) does but not how it does it.
 
-How to implement Abstraction in Java
+### How to implement Abstraction in Java:
 
-In Java, abstraction is implemented in either of these two ways
+In Java, abstraction is implemented in either of these two ways:
 
-- By using the non-access modifier ‘abstract’ keyword. 
+- By using the non-access modifier ‘abstract’ keyword or
 
 - Interface
 
+
 - Non-Access Modifier keyword “Abstract” Implementation
 
-The abstract access modifier keyword can only be used with classes, methods but not with variables. Methods with the keyword abstract are methods without implementation.
+The abstract access modifier keyword can only be used with classes and methods but not with variables. Methods with the keyword abstract are methods without implementation.
 
-To implement an abstract class in Java, use the abstract keyword e.g public abstract class Circle, where Circle is the class name. 
-Use this pattern for abstract method implementation, public abstract returnType methodName() i.e public abstract double getArea().
+To implement an abstract class in Java, use the abstract keyword e.g `public abstract class Circle`, where Circle is the class name. 
+Use this pattern for abstract method implementation, `public abstract returnType methodName()` i.e `public abstract double getArea()`.
 
 Code snippet
 
@@ -397,13 +399,13 @@ public class Main{
 In the main method. The Car represents the interface class. Benz represents the concrete class or child class. The child class gives its memory to the Car object to have access to its implemented methods. The Benz class implemented the start and stop behaviors of the Car class in the manner it wanted. This makes our application robust. We can change or add requirements to our application without breaking down the application.
 For instance, we want to add another car that stops or starts differently, we can create a car class say Toyota that implements class Car. Override its stop, start methods and implements it the way we want our Toyota to start and stop. There is no need to go into the Car class to change our code whenever there are new requirements.
 
-Now, that we’ve finally gotten abstraction off the list, on to the next one, Encapsulation.
+Now, that we’ve finally gotten abstraction off the list, on to the next one, encapsulation.
 
-# ENCAPSULATION
+### Encapsulation:
 
 Imagine, you are building an application and the user can directly access and manipulate your data fields, how costly would that be? The outcome is better left to imagine than experience it.
 
-Apart from Inheritance and Polymorphism which I will write about in my next article. Encapsulation is another fundamental concept of OOP that every developer needs to get familiar with.
+Apart from inheritance and polymorphism which I will write about in my next article. Encapsulation is another fundamental concept of OOP that every developer needs to get familiar with.
 
 Encapsulation is simply the process of encapsulating and hiding the details of a class implementation from the user. Encapsulation is achieved by wrapping the class attributes or variables and the methods together as a unit.
 
@@ -451,7 +453,7 @@ In general, these two steps can be used to implement Encapsulation:
 
 -  Declare class attributes as private as we did in the code above
 
--  Provide public setter and getter methods. To access or manipulate instance variables, remember the setName() and getName method?
+-  Provide public setter and getter methods. To access or manipulate instance variables, remember the `setName()` and `getName()` method?
 
 ### Difference between Abstraction and Encapsulation
 
@@ -463,9 +465,9 @@ Encapsulation wraps both code and data together
 
 Abstraction hides complexity while encapsulation hides the internal working
 
-# Conclusion
+### Conclusion
 
-To this point, we’ve demystified the concept of OOP. To say the least, abstraction and encapsulation are two sides of the same coin. I hope you find this insightful. I hope to write about Inheritance and Polymorphism in my next OOP concept article.
+We have successfully learned about the concept of OOP starting with abstraction and encapsulation. You have learnt how to declare a class and create and object. You have also learnt how to implement abstraction and encapsulation,and you have seen also the differences between abstraction and encapsulation.
 
 ### References
 
@@ -473,10 +475,10 @@ Java- How to program 10th Ed-Early Object Version- Deitel
 
 Introduction to Java Programming (10th ed) Comprehensive Version [Liang- 2014-01-06]
 
-[oracle java docs](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
+[oracle java docs abstract methods and classes](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
 
-[oracle java docs](https://docs.oracle.com/javase/tutorial/java/concepts/index.html)
+[oracle java docs OOP concept](https://docs.oracle.com/javase/tutorial/java/concepts/index.html)
 
-[w3schools]([https://www.w3schools.com/java/java_abstract.asp)
+[w3schools abstract class]([https://www.w3schools.com/java/java_abstract.asp)
 
-[w3schools](https://www.w3schools.com/java/java_encapsulation.asp)
+[w3schools encapsulation](https://www.w3schools.com/java/java_encapsulation.asp)
