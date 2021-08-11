@@ -225,7 +225,9 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 ```
-The next thing you need to do is arrange your songs with their song titles in an array. Your song titles need to match the pieces you have in your music folder. Below is the array containing the songs I chose to use for this project.
+The next step is to arrange your songs with their song titles in an array. Your song titles need to match the pieces you have in your music folder. 
+
+Below is the array containing the songs I chose to use for this project.
 ```javascript
 const songs = [
     'Juice WRLD Ft Benny Blanco - Real Shit',
