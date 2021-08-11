@@ -138,7 +138,7 @@ Our code works successfully by using gradio to translate.
 
 This tutorial gives us an idea of how one can build a simple translation app. We installed our dependencies, loaded our translation model, and finally used gradio to build our user interface. This is a good example of a project that you can add to your resume or portfolio. It will show the employer of your Machine Learning capabilities. You can play around with the code by trying to translate languages other than french.
 
-You can find the full implementation of the code on this tutorial on my [Colab]](https://colab.research.google.com/drive/1MMgN89Xn7fz5zVh1XCuLd66ZBIoZ70DZ#scrollTo=62a4vvW_dLsx).
+You can find the full implementation of the code on this tutorial on my [Colab](https://colab.research.google.com/drive/1MMgN89Xn7fz5zVh1XCuLd66ZBIoZ70DZ#scrollTo=62a4vvW_dLsx).
 
 Happy coding!
 
