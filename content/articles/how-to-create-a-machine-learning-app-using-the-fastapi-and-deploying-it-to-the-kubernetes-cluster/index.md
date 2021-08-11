@@ -38,8 +38,17 @@ Our data used is as shown.
 We will use the following packages when building our model.
 
 1. [Pandas](https://pandas.pydata.org/)
+
+   Pandas is a software library written for the Python programming language for data manipulation and analysis.
+   It's a tool for reading and writing data between in-memory data structures and different file formats.
+
 2. [Numpy](https://numpy.org/)
+
+   NumPy is the fundamental package for scientific computing in Python. NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data.
+
 3. [Sckit-learn](https://scikit-learn.org/)
+
+   Is a free software machine learning library for the Python programming language. It consists various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and linear regression.
 
 Run the following commands to install the packages.
 
