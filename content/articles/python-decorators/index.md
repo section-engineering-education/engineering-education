@@ -36,7 +36,7 @@ Besides that, you need:
 - A working installation of Python on your computer.
 - A code editor to try out the snippets.
 
-### Understanding what decorators
+### Understanding what decorators are
 The concept of Python decorators is unclear to many people, even though it's simple. For this reason, you can consider Python decorators as high-level functions in Python which that takes another function as its argument and returns another function as a return value.
 
 Python decorators show how the Python programming language packs several features in your small and beneficial package. Decorators can be applied to classes and functions to make programming fascinating. They can speed up the performance, shorten and completely change the dynamics of what the code can do.
