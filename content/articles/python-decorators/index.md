@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-decorators/
-title: Getting started with decorators in Python
+url: /python-decorators/
+title: Getting Started with decorators in Python
 description: This tutorial will be a brief dive into the concept of python decorators. How to use them and their advantages to programmers.
 author: mia-roberts
-date: 2021-08-11T00:00:00-10:00
+date: 2021-08-11T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/python-decorators/hero.jpg
     alt: Python decorators image
 ---
-Python decorators are a design pattern that allows the developer to modify the structure of a function without changing the function's code structure. 
+Python decorators are a design pattern that allows the developer to modify the structure of a function without changing the functions code structure. 
 <!--more-->
-This concept is useful when you want to change the behavior of a function, so rather than going in and changing the entire cod, you create a Python decorator which will allow you to use a single line of code to change the behavior of all different functions.
+This concept is useful when you want to change the behavior of a function, so rather than going in and changing the entire code, you create a Python decorator which will allow you to use a single line of code to change the behavior of all different functions.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -313,7 +313,7 @@ As we have seen above, Python decorators dynamically change the properties of a 
 Happy coding!
 
 ### Further reading
-To learn more about Python decorators, consider checking out how the concept is discussed in the [Python's Decorator Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
+To learn more about Python decorators, consider checking out how the concept is discussed in the [Python's Decorator Library](https://wiki.python.org/moin/PythonDecoratorLibrary).
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
