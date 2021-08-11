@@ -1,9 +1,9 @@
-In C#, we can create and manage related objects in various ways, for example, through the use of [array](https://www.tutorialspoint.com/csharp/csharp_arrays.htm) or collections.
+In C#, we can create and manage related objects in various ways, for example, through the use of [arrays](https://www.tutorialspoint.com/csharp/csharp_arrays.htm) or collections.
 
-### What are Collections in C#
-A collection is a set of objects of similar types on which we may perform operations such as insert, delete, update, sorting, and so on. Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
+### What are Collections in C#?
+A collection is a set of objects of similar types on which we may perform operations such as insert, delete, update, sort, and so on. Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
 
-The goal of this article is to guide you on how to use collections (types) in the C# programming language. Collections are commonly used to handle and manage a set of similar data types. Arrays, as we all know, are also used to manage similar types of data, but collections offer additional flexibility when dealing with groups of items of different types.
+The goal of this article is to guide you on how to use collections (type) in the C# programming language. Collections are commonly used to handle and manage a set of similar data types. Arrays are also used to manage similar types of data, but collections offer additional flexibility when dealing with groups of items of different types.
 
 ### Types of collections
 C# collections are categorized into 3 main namespaces:
@@ -28,7 +28,7 @@ The classes provided by the Generic collections include:
 - `SortedList`
 
 ### System.Collections.Concurrent classes (Concurrent)
-Concurrent collections are supported in the `.NET` Framework 4 with the `System.Collections.Concurrent` namespace and help access collection objects from several threads.
+Concurrent collections are supported in the `.NET` Framework 4 with the `System.Collections.Concurrent` namespace. They help with access to collection objects from several threads.
 
 If many threads need to access a collection at the same time, the concurrent collections should be used instead of non-generic and generic collections.
 
@@ -50,10 +50,10 @@ The classes provided by the Non-Generic collections include:
 - `Queue`
 - `Hashtable`
 
-Let's Look at each one of them:
+Let's look at each one of them:
 
 ### ArrayList
-Unlike Array which has a fixed size, `ArrayList` is dynamic thus, they do not have a fixed size. ArrayList expands as more elements are added to the collection and can hold elements of different data types.
+Unlike `Array` which has a fixed size, `ArrayList` is dynamic. Thus, they do not have a fixed size. `ArrayList` expands as more elements are added to the collection and can hold elements of different data types.
 
 ### Example
 Let's look at an example of ArrayList.
@@ -84,19 +84,19 @@ ArrayList
 OurArrayList
 ```
 
-In the code above, we have created an `ArrayList` and added elements of different data types i.e, string, int, and a class object.
+In the code above, we have created an `ArrayList` and added elements of different data types, that is, `string`, `int`, and a class object.
 
 ```cs
 using System.Collections;
 ```
 
-We have used `System.Collections` to utilize the ArrayList collection.
+We have used `System.Collections` to utilize the `ArrayList` collection.
 
 ```cs
 var data = new ArrayList();
 ```
 
-We've made an ArrayList collection here.
+We've made an `ArrayList` collection here.
 
 ```cs
 data.Add(" ArrayList"); // for adding elements in a collection
@@ -112,10 +112,10 @@ data.Remove(23);
 Here, we have used the `Remove()` method to remove an element from the collection.
 
 ### Stack
-The Stack is a good example collection that reflects the idea of "Last in, First out". As a result, the last element to enter the queue will be the first to exit it. This approach is mostly applied in Calculators.
+The Stack is a good example of a collection that reflects the idea of "last in, first out". As a result, the last element to enter the queue will be the first to exit. This approach is mostly applied in calculators.
 
 ### Example
-Let's look at an example of Stack
+Let's look at an example of Stack.
 ```cs
 using System;
 using System.Collections;
@@ -152,7 +152,7 @@ foreach (int i in myStk)
 1
 ```
 ### Queue 
-The `Queue` is a good example collection that reflects the idea of "first-in, first-out".  As a result, the first element to enter the queue will be the first to exit it.
+The `Queue` is a good example collection that reflects the idea of "first in, first out". As a result, the first element to enter the queue will be the first to exit.
 
 ### Example
 Let's look at an example of a Queue:
@@ -188,10 +188,10 @@ Animal 4
 Animal 5
 ```
 ### Hashtable
-`Hashtable` is similar to ArrayList in that it stores things as a key-value pair.
+A `Hashtable` is similar to `ArrayList` in that it stores things as a key-value pair.
 
 ### Example
-Let's look at an example of Hashtable
+Let's look at an example of Hashtable.
 ```cs
 using System;
 using System.Collections;
@@ -216,4 +216,4 @@ asp asp.net
 ```
 
 ### Conclusion
-In this article, we have looked at the basics of the common collections in C# language. We have seen that collections help to manage a collection of data.
+In this article, we have looked at the basics of the common collections in C#. Collections help to manage a collection of data.
