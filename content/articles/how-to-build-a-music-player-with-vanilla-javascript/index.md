@@ -388,7 +388,7 @@ audio.addEventListener('ended', nextSong);
 
 ```
 
-Below is a video of the music player and all it’s functionalities in use:
+Below is a video of the music player and all its functionalities in use:
 <iframe width="478" height="269" src="https://www.youtube.com/embed/7dIH4kf0Et0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
