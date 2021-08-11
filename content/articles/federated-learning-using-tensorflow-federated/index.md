@@ -16,7 +16,7 @@ images:
 ---
 To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. 
 <!--more-->
-To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. Instead of sending our data to the cloud, we send the models on the cloud to our devices. These models are then trained locally on our devices. Essentially, data never leaves our devices. Once we have trained this models on our devices, we send the model updates to the server rather than sending our data to the server. The server aggregates the model updates from each of the devices and updates the global model on the cloud. This is Federated Learning.
+To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. Instead of sending our data to the cloud, we send the models on the cloud to our devices. These models are then trained locally on our devices. Essentially, data never leaves our devices. Once we have trained these models on our devices, we send the model updates to the server rather than sending our data to the server. The server aggregates the model updates from each of the devices and updates the global model on the cloud. This is Federated Learning.
 On the other hand, TensorFlow Federated is an open-source framework by Google that is used by developers in implementing Federated Learning.
 In this article, we will learn how TensorFlow Federated can be utilized by researchers and machine learning developers to implement federated learning on our own datasets.
 
@@ -48,11 +48,11 @@ This means that it is able to compile all code into an abstract representation. 
 
 2. TFF saves effort
 
-It is designed to mitigate pain points that we developers face when developing our own federated learning systems. Some of these pain points include interleaving the different types of logic, the global vs local perspective on communication, and tension between the order of construction vs. execution.
+It is designed to mitigate the pain points that we developers face when developing our own federated learning systems. Some of these pain points include interleaving the different types of logic, the global vs local perspective on communication, and tension between the order of construction vs. execution.
 
 3. TFF has many extensions.
 
-Differential privacy, compression and quantization are some of the few extensions available in TFF.
+Differential privacy, compression, and quantization are some of the few extensions available in TFF.
 
 #### TensorFlow federated layers
 
@@ -64,7 +64,7 @@ The FL API is a high-level API that implements federated training and evaluation
 
 2. Federated Core (FC) API
 
-The FC API is much more lower-level and sits below the FC API. This API gives you a more generic expressions that allows you to run and simulate custom types of computations and control your own orchestrations. It also has a local runtime which allows for simulations.
+The FC API is much more lower-level and sits below the FC API. This API gives you more generic expressions that allow you to run and simulate custom types of computations and control your own orchestrations. It also has a local runtime which allows for simulations.
 
 > In this tutorial, we will only be focusing on the FL API and the code behind it. This is to avoid the tutorial becoming too long. We will tackle the FC API in my next article.
 
@@ -74,15 +74,15 @@ There are different ways you can get involved depending on your interest:
 
 1. ML Devs
 
-ML devs helps in applying Federated Learning APIs to existing TensorFlow models.
+ML devs help in applying Federated Learning APIs to existing TensorFlow models.
 
 2. FL researchers
 
-This type of researchers help to design new federated learning algorithms using the FC API.
+This type of researchers helps to design new federated learning algorithms using the FC API.
 
 3. Systems researchers
 
-This types of researchers help in optimizing generated computation structures.
+These types of researchers help in optimizing generated computation structures.
 
 4. System Devs
 
@@ -110,7 +110,7 @@ First, let's briefly take a look at how the Keras model looks like:
     return model
 ```
 
-If you're familiar with TensorFlow, the above keras code already looks familiar to you. We will import it into our main function `model_fn` using the `create_compiled_keras_model()` method.
+If you're familiar with TensorFlow, the above Keras code already looks familiar to you. We will import it into our main function `model_fn` using the `create_compiled_keras_model()` method.
 
 ```python
     def model_fn():
@@ -130,7 +130,7 @@ The above code represents where you will plug in your own Keras model.
 
 ```
 
-In the above code the `initialize()` method will get our initial server state. It then calls `train.next` which will run our federated training. So, this includes sending the initial server state to each of the clients. Each of the clients will run their own local rounds of training and send their updates back to the server. Back on the server, we'll get this new aggregated global model that's been produced from the decentralized data of each of the clients.  
+In the above code, the `initialize()` method will get our initial server state. It then calls `train.next` which will run our federated training. So, this includes sending the initial server state to each of the clients. Each of the clients will run their own local rounds of training and send their updates back to the server. Back on the server, we'll get this new aggregated global model that's been produced from the decentralized data of each of the clients.  
 
 ```python
     eval = tff.learning.build_federated_evaluation(model_fn)
