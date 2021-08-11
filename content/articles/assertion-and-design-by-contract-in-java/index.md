@@ -19,7 +19,7 @@ The technique of design by contract specifies the interaction between various co
 For interaction between various components to be achieved, a contract based on the components of the application to communicate with each other is defined by the concept. Assertions are used in the Design by contract technique to check if the requirements specified in the defined contract are met by the application. They are used to test the assumptions made by the programmer.
 
 ### prerequisites
-Before reading this tutorial, you need to have basic knowledge of Java.
+Before reading this tutorial, you need to have basic knowledge of Java. You need to be able to work with IDEs such as [Netbeans](https://netbeans.apache.org/download/index.html) and [Intellij](https://www.jetbrains.com/idea/download/download-thanks.html). 
 
 ### Design by contract
 This technique allows a programmer to provide a detailed specification to create software based on the user requirements. Based on the given specifications a programmer will develop the software. The Design by Contract technique has three various types of assertion used in checking the software compliance based on the specification given.
@@ -129,7 +129,7 @@ public class division
 {
     void assertcheck(int b,int c)
     {
-        assert c!=0: "The value c cannnot be zero";
+        assert c!=0: "The value c cannnot be zero"; /// ensures that thevalue of c should not be zero
         double a=b/c;
         System.out.println("the result is:"+a);
     }
@@ -140,6 +140,9 @@ public class division
     }
 }
 ```
+
+The program above performs a division test of two variables, ensuring the denominator is not equal to zero, using the assert statement.
+Since the value of c is equal to zero an Assertionerror is thrown. 
 ### Differences between assertion and exceptions
 1. Assertions are intended to detect the programming errors that occur while an exception is used to indicate other kinds of errors such as missing files and invalid user inputs.
 2. Assertion tests the condition assumed by the programmer ensuring the program runs correctly while assertion will test the abnormal condition and does not ensure the efficient running of the program.
