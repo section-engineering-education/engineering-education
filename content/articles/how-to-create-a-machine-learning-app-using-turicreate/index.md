@@ -6,7 +6,7 @@ url: /how-to-create-a-machine-learning-app-using-turicreate/
 title: How to Create a Machine Learning App using Turi Create
 description: In this article, we will discuss the library developed by Apple to create core machine learning supervised and unsupervised machine learning models. 
 author: willyngashu
-date: 2021-08-11T00:00:00-05:00
+date: 2021-08-11T00:00:00-05:27
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
