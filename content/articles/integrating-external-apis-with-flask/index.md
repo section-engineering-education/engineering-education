@@ -123,7 +123,7 @@ Now, open your `templates/movie.html` and add the following code:
 </html>
 ```
 
-The `{% block content %}` tag is a special tag will be used to render the content of the template. Inside the block, we iterate over the `movies` using a `for` loop, rendering the backdrop image for each movie.
+The `{% block content %}` tag is a special tag that will be used to render the content of the template. Inside the block, we iterate over the `movies` using a `for` loop, rendering the backdrop image for each movie.
 
 > **Note:** The `backdrop_path` is not a direct URL to the image. Instead, it is a path to the image. We append the `backdrop_path` to <http://image.tmdb.org/t/p/w500> to obtain the direct URL to the image. You can learn more about images in the [TMDB documentation](https://developers.themoviedb.org/3/getting-started/images).
 
