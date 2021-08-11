@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /graphs-in-data-structure-using-cplusplus/
 title: Graphs in Data structure (using C++)
-description: 
+description: In this articles the reader will learn about Graphs in Data structure (using C++). We will briefly discuss undirected, directed, weighted, and Cyclic graphs. 
 author: anubhav-bansal
 date: 2021-08-11T00:00:00-13:00
 topics: []
