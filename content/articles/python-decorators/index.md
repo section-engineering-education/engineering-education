@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/python-decorators/
 title: Getting started with decorators in Python
-description: This tutorial will be a brief dive into the concept of python decorators. how to use them and their advantages to programmers.
+description: This tutorial will be a brief dive into the concept of python decorators. How to use them and their advantages to programmers.
 author: mia-roberts
-date: 2021-08-10T00:00:00-12:00
+date: 2021-08-11T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,9 +16,9 @@ images:
 ---
 Python decorators are a design pattern that allows the developer to modify the structure of a function without changing the function's code structure. 
 <!--more-->
-This concept is useful when you want to change the behavior of a function, so rather than going in and changing the entire cod, you create a python decorator which will allow you to use a single line of code to change the behavior of all different functions.
+This concept is useful when you want to change the behavior of a function, so rather than going in and changing the entire cod, you create a Python decorator which will allow you to use a single line of code to change the behavior of all different functions.
 
-### Table of content
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Understanding what decorators](#understanding-what-decorators)
 - [Core pillars of decorators](#core-pillars-of-decorators)
@@ -33,8 +33,8 @@ This concept is useful when you want to change the behavior of a function, so ra
 Appreciating that everything in Python programming comes as an object is a key to understanding this concept. The reader should be well conversant with Python, although the explanations are simple and precise for beginners.
 
 Besides that, you need:
-- A working installation of Python on your computer
-- A code editor to try out the snippets
+- A working installation of Python on your computer.
+- A code editor to try out the snippets.
 
 ### Understanding what decorators
 The concept of Python decorators is unclear to many people, even though it's simple. For this reason, you can consider Python decorators as high-level functions in Python which that takes another function as its argument and returns another function as a return value.
@@ -84,7 +84,7 @@ umbrella_function()
 I am the inner function
 ```
 
-The third pillar;  a function can be another function's return value because we can assign them to variables and nest them within other functions. 
+The third pillar; a function can be another function's return value because we can assign them to variables and nest them within other functions. 
 
 ```py
 def umbrella_function():
@@ -107,7 +107,7 @@ x()
 Mia Roberts
 ```
 
-Lastly, a function can be passed to another function as an argument, just as we could pass variables as parameters.
+Next, a function can be passed to another function as an argument, just as we could pass variables as parameters.
 
 ```py
 
@@ -158,9 +158,11 @@ Mia Roberts
 I am a computer science student
 ```
 
-In the example above `umbrella_function()`was a decorator but when we say `x = umbrella_function(another_function)` the function `another_function()` got decorated and the returned function was assigned to  the variable `x`.
+In the example above `umbrella_function()` was a decorator but when we say `x = umbrella_function(another_function)` the function `another_function()` got decorated and the returned function was assigned to  the variable `x`.
 
-To decorate a function in Python, we use the `@` symbol alongside the name of the decorator function and place it immediately above the function definition. For instance,
+To decorate a function in Python, we use the `@` symbol alongside the name of the decorator function and place it immediately above the function definition. 
+
+For instance:
 
 ```py
 @umbrella_function
@@ -168,7 +170,7 @@ def another_function():
     print('I am a computer science student')
 ```
 
-The above is the same as 
+The above is the same as: 
 
 ```py
 def another_function():
