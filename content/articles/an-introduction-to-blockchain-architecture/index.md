@@ -1,13 +1,15 @@
 ### An Introduction to Blockchain Architecture
 As a financial market analyst, I recently ventured into the cryptocurrency asset class. I was astonished by the price delivery mechanism of cryptocurrencies and the huge number of assets commonly referred to as tokens in the cryptocurrency market.
 
+During the early adoption phase of cryptocurrency assets, the theme behind its price delivery mechanism was "an extremely volatile asset." But, with institutions stepping into the marketplace, there has been a moderate fluctuation in its price delivery with less extreme volatility and whipsaws.
+
 Arguably, the cryptocurrency market structure imitates the stock market, where we have indexes like S&P500 and DJI, which can be alternated as Bitcoin and Ethereum in the cryptocurrency market.
 
 However, the financial aspect is intriguing, but what hooked my attention is the structure of blockchain technology. It is astounding and revolutionary. These aren't buzz words. We will get to it, and you will understand how my statement is true.
 
 ### Table of Contents
 - [What is Blockchain](#what-is-blockchain)
-- [Realms of Blockchain](#realms-of-blockchain)
+- [Components of Blockchain](#components-of-blockchain)
 - [Immutable Ledger](#immutable-ledger)
 - [Distributed P2P Network](#distributed-p2p-network)
 - [Hash Cryptography](#hash-cryptography)
@@ -30,7 +32,7 @@ The previous hash references the hash of the previous block. If a single charact
 
 The above process proceeds as more blocks are mined. Finally, they are linked to one another based on the previous hash. In summary, Blockchain is a series of cryptographically linked blocks with each other through these hashes.
 
-### Realms of Blockchain
+### Components of Blockchain
 The realms of blockchain are simply the characteristics or features that make blockchain what it is today. These characteristics are the founding pillars of blockchain technology, and they are:
 - Immutable Ledger
 - Distributed P2P Network
@@ -50,7 +52,9 @@ A ledger or block must be immutable. It must not be subject to change. In realit
 
 When a block is mined and added to the blockchain, a hash for the block is generated from combining the data in the block.
 
-In the image above, the first block is the genesis block, and it has no previous hash but its current hash. The next block has a previous hash that is the same as the hash of the first block, and it also consists of the current hash. These two blocks are chained based on the hashes, and when the data in the first block changes, the hash of the first block changes but not in the second block. This will result in the chain between the two blocks being broken.
+In the image above, the first block is the genesis block, and it has no previous hash but its current hash. The next block has a previous hash that is the same as the hash of the first block, and it also consists of the current hash. 
+
+The two blocks are chained based on the hashes, and when the data in the first block changes, the hash of the first block changes but not in the second block, which results in the chain between the two blocks breaking.
 
 The blockchain will notify of the change in the block's data as a result of the hash changing. This feature ensures that the data in the ledger doesn’t change.
 
@@ -88,11 +92,19 @@ Mining is a broad topic that deserves its write-up. In this article, I’ll give
 
 For a block to be mined and added to the blockchain after being verified, there is usually a target for miners to attain, and this is achieved by changing a field in the block until the block's hash falls below the target of the pool of hashes.
 
-We’ve established that one cannot change the data in the field, so how do we make the hash change until it falls in the target zone? Well, two fields change, and they cause the hash to change. These fields are Timestamp and Nonce. For this article, I’ll limit my focus to just the Nonce field.
+We’ve established that one cannot change the data in the field, so how do we make the hash change until it falls in the target zone? Well, two fields change, and they cause the hash to change. These fields are Timestamp and Nonce.
 
 Now, in the block, we have a new field called the Nonce. The Nonce takes a number that ranges between zero and approximately 4 billion. The miner dedicates their computing power (GPUs, CPUs, and ASICs) to iterate through the Nonce until a Nonce value is found that causes the hash to fall below the target.
 
-Once the miner successfully finds the Golden Nonce(the Nonce value that causes the hash to fall below the target),  the miner will go through a verification process that ensures that the miner dedicated power to solving the problem(the proof of work). Once the process is verified after running through checks, the block is mined and added to the blockchain.
+By iterating through the Nonce, it makes it easy for super-fast computers to mine a block, since all it has to do is iterate between zero and approximately 4 billion to find the perfect Nonce for the hash to fall below the target.
+
+However, mining a block is quite complex than just changing a Nonce, and this is because of the Timestamp field in the block.
+
+The timestamp field takes the number of seconds from January 1, 1970, to date, and field changes every second. This makes it difficult to mine a block because for every second change in the timestamp, the hash of the block changes.
+
+Thus, miners require computing resources to iterate through the Nonce before a second change in the timestamp. This is because once a second change and the Nonce value is correct, the entire hash changes, and as a result, miners will have to go through the process of changing the Nonce before the timestamp changes to achieve the target.
+
+Once the miner successfully finds the Golden Nonce plus the correlating timestamp(the Nonce value that causes the hash to fall below the target),  the miner will go through a verification process that ensures that the miner dedicated resources to solving the problem(the proof of work). Once the process is verified after running through checks, the block is mined and added to the blockchain.
 
 ### Consensus Protocol
 The consensus protocol involves an interrelationship between the distributed network, the blockchain, and mining.
