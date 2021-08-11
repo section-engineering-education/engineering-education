@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /federated-learning-using-tensorflow-federated/
+title: Federated Learning using TensorFlow Federated (TFF)
+description: In this article, we will learn how TensorFlow Federated can be utilized for image classification.
+author: willies-ogola
+date: 2021-08-12T00:00:00-02:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /federated-learning-using-tensorflow-federated/hero.png
+    alt: federated learning example image
+---
+To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. 
+<!--more-->
 To train a machine learning model, you have both the model and the data on the same device. We call this centralized machine learning. This means that companies such as Google upload our private data to the cloud to train their machine learning models. Federated Learning flips this paradigm. Instead of sending our data to the cloud, we send the models on the cloud to our devices. These models are then trained locally on our devices. Essentially, data never leaves our devices. Once we have trained this models on our devices, we send the model updates to the server rather than sending our data to the server. The server aggregates the model updates from each of the devices and updates the global model on the cloud. This is Federated Learning.
 On the other hand, TensorFlow Federated is an open-source framework by Google that is used by developers in implementing Federated Learning.
 In this article, we will learn how TensorFlow Federated can be utilized by researchers and machine learning developers to implement federated learning on our own datasets.
