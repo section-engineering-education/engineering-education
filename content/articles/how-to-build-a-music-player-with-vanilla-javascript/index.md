@@ -7,6 +7,7 @@ Streaming music is one of the major things people use the internet for these day
 ### Prerequisites
 A good code editor. Visual Studio Code can do the job.
 Some knowledge of HTML, CSS, and JavaScript.
+
 ### Designing the Music Player
 The first thing you have to do is to create three files in your code editor. Name them “index.html” for your HTML code, “style.css” for your CSS code, and a “script.js” for the JavaScript. You will also need to download three songs as “.mp3” files and their corresponding images as “.jpg” files. You can find the images and music used on this project on my [Github](https://github.com/Nomzy-kush/Music-Player-with-JS) repository.
 In your “index.html” file, copy and paste the following code to create the structure of the music player.
