@@ -298,7 +298,9 @@ function pauseSong() {
 }
 
 ```
-At this point, when you click the play button, it automatically switches to the pause button. The song Details will also pop up, and the song image will start spinning. The exact opposite occurs when the pause button is clicked. Note that the `audio.play()` and `audio.pause()` functions actually play and pause the songs respectively.
+At this point, when you click the play button, it automatically switches to the pause button. The song details will also pop up, and the song image will start spinning. 
+
+The exact opposite occurs when the pause button is clicked. Note that the `audio.play()` and `audio.pause()` functions actually plays and pauses the songs, respectively.
 
 Next, you need to implement the previous and next buttons and you’re going to need event listeners for these operations. Here is the code for below:
 ```javascript
