@@ -24,7 +24,7 @@ $ source venv/bin/activate
 $ pip install flask
 ```
 
-> **Note**: If you are using Windows OS, you may need to use `venv\Scripts\activate` instead of `venv\bin\activate`.
+> **Note**: If you are using Windows, you may need to use `venv\Scripts\activate` instead of `venv\bin\activate`.
 >
 > Tip 💡: **Pipenv** is a tool that makes it easier to manage Python virtual environments. It is a great alternative to venv and virtualenv. You can learn more about it [here](https://docs.pipenv.org/).
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-We have imported `Flask` and created a simple `hello_world` view, that returns a simple `HTML` page.
+We have imported `Flask` and created a simple `hello_world` view, that returns a simple HTML page.
 
 Open your terminal and run the app using the following command:
 
@@ -92,7 +92,7 @@ Inside the `get_movies()` function, we:
 
 To keep your API key safe, you should not store it in your code. Instead, you should store it in an environment variable.
 
-Open your terminal and run the following command to export your TMDB API key as an environment variable.
+On your terminal, run the following command to export your TMDB API key as an environment variable.
 
 ```bash
 export TMDB_API_KEY="<your_api_key>"
@@ -105,30 +105,31 @@ Now, open your `templates/movie.html` and add the following code:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Movies</title>
-    </head>
 
-    <body>
-        <div>
-        {% block content %}
-            {% for movie in movies %}
-            <div id="movie" style="background-image: url(http://image.tmdb.org/t/p/w500{{movie.backdrop_path}});">
-            </div>
-            {% endfor %}
-        {% endblock %}
+<head>
+    <title>Movies</title>
+</head>
+
+<body>
+    <div>
+    {% block content %}
+        {% for movie in movies %}
+        <div id="movie" style="background-image: url(http://image.tmdb.org/t/p/w500{{movie.backdrop_path}});">
         </div>
-    </body>
+        {% endfor %}
+    {% endblock %}
+    </div>
+</body>
 </html>
 ```
 
-The `{% block content %}` tag is a special tag that is used to render the content of the template. Inside the block, we iterate over the `movies` using a `for` loop, rendering the backdrop image for each movie.
+The `{% block content %}` tag is a special tag will be used to render the content of the template. Inside the block, we iterate over the `movies` using a `for` loop, rendering the backdrop image for each movie.
 
 > **Note:** The `backdrop_path` is not a direct URL to the image. Instead, it is a path to the image. We append the `backdrop_path` to <http://image.tmdb.org/t/p/w500> to obtain the direct URL to the image. You can learn more about images in the [TMDB documentation](https://developers.themoviedb.org/3/getting-started/images).
 
 You can display more movie properties in the template. For example, you can display the title, the release date, the rating, etc. Check the [TMDB documentation](https://developers.themoviedb.org/3/movies/get-movie-details) to see all the available properties.
 
-Let's add `CSS` to give the movie images a better appearance.
+Let's add a little CSS to make the movie images look better.
 
 ```css
 #movie {
