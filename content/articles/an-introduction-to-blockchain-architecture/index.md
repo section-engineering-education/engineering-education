@@ -1,7 +1,24 @@
-### An Introduction to Blockchain Architecture
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-introduction-to-blockchain-architecture/
+title: Introduction to Blockchain Architecture
+description: In this article we discuss the fundamentals that drive blockchain technology. We explore the components of blockchain, immutable ledgers, distributed peer to peer networks, etc in detail.
+author: adetu-ridwan
+date: 2021-08-11T00:00:00-18:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/an-introduction-to-blockchain-architecture/hero.jpg
+   alt: Introduction to Blockchain Protocol example image
+---
+
+
 As a financial market analyst, I recently ventured into the cryptocurrency asset class. I was astonished by the price delivery mechanism of cryptocurrencies and the huge number of assets commonly referred to as tokens in the cryptocurrency market.
 
-During the early adoption phase of cryptocurrency assets, the theme behind its price delivery mechanism was "an extremely volatile asset." But, with institutions stepping into the marketplace, there has been a moderate fluctuation in its price delivery with less extreme volatility and whipsaws.
+During the early adoption phase of cryptocurrency assets, the theme behind its price delivery mechanism was "an extremely volatile asset." But, with institutions stepping into the marketplace, there has been a moderate fluctuation in its price delivery with lesser instances of extreme volatility and whipsaws.
 
 Arguably, the cryptocurrency market structure imitates the stock market, where we have indexes like S&P500 and DJI, which can be alternated as Bitcoin and Ethereum in the cryptocurrency market.
 
@@ -24,11 +41,11 @@ There is usually an origin in the blockchain, that is, the first `block` in the 
 
 There might be some data in the first(Genesis) block, such as transactions details by cryptocurrency users. It also consists of a Hash, a string of characters derived from the fields in the blockchain but in an encrypted format. The blocks usually contain a previous hash, but the Genesis block doesn’t because it is the first block.
 
-The next block created will have some data in it. Some of the data includes:
+The next block created will have some data in it. The data includes information such as:
 - The hash
 - The previous hash
 
-The previous hash references the hash of the previous block. If a single character in the previous block's data before the current block is altered, this will cause the hash to change completely, and the algorithm won’t update it in the current block. Hence, the relationship between them will break.
+The previous hash references the hash of the previous block. If a single character in the previous block's data is altered, this will cause the hash to change completely, and the algorithm won’t update it in the current block. Hence, the relationship between them will break.
 
 The above process proceeds as more blocks are mined. Finally, they are linked to one another based on the previous hash. In summary, Blockchain is a series of cryptographically linked blocks with each other through these hashes.
 
@@ -43,6 +60,7 @@ The realms of blockchain are simply the characteristics or features that make bl
 In this article, I will touch briefly on them, and in future articles, I will explain them in detail.
 
 ### Immutable Ledger
+
 To understand the concept of the immutable ledger, I’ll add some visuals below:
 
 ![Blockchain Visual Representation](/engineering-education/an-introduction-to-blockchain-architecture/blockchain.png)
@@ -56,9 +74,10 @@ In the image above, the first block is the genesis block, and it has no previous
 
 The two blocks are chained based on the hashes, and when the data in the first block changes, the hash of the first block changes but not in the second block, which results in the chain between the two blocks breaking.
 
-The blockchain will notify of the change in the block's data as a result of the hash changing. This feature ensures that the data in the ledger doesn’t change.
+The blockchain will notify of the change in the block's data due to the hash changing. This feature ensures that the data in the ledger doesn’t change.
 
 ### Distributed P2P Network
+
 Here is an image view of what a distributed peer-to-peer network looks like:
 
 ![A Distributed Network - Image Credit(Wikipedia)](/engineering-education/an-introduction-to-blockchain-architecture/p2p.png)
@@ -75,6 +94,7 @@ The realm of Distributed P2P ensures that not one single central party have the 
 I find the function of the distributed P2P compelling and astonishing.
 
 ### Hash Cryptography
+
 In blockchain, there is the need for unique identification of each block, like a fingerprint. The way to ensure such is through an algorithm developed by the National Security Agency(NSA), the Secure Hash Algorithm 256 (SHA256).
 
 [Here](https://emn178.github.io/online-tools/sha256.html) is a link to test run the SHA256 algorithm. From the web application online, you can generate a hash of whatever text you input. Here’s what mine looks like:
@@ -88,6 +108,7 @@ The text input of hello world produces the hash. If I change a single text or ad
 In the blockchain, the data in the block + the previous hash and other properties are used to generate the hash for the block, which serves as a unique fingerprint for the block.
 
 ### Mining and Proof of Work
+
 Mining is a broad topic that deserves its write-up. In this article, I’ll give an illustration of how mining works.
 
 For a block to be mined and added to the blockchain after being verified, there is usually a target for miners to attain, and this is achieved by changing a field in the block until the block's hash falls below the target of the pool of hashes.
@@ -96,17 +117,18 @@ We’ve established that one cannot change the data in the field, so how do we m
 
 Now, in the block, we have a new field called the Nonce. The Nonce takes a number that ranges between zero and approximately 4 billion. The miner dedicates their computing power (GPUs, CPUs, and ASICs) to iterate through the Nonce until a Nonce value is found that causes the hash to fall below the target.
 
-By iterating through the Nonce, it makes it easy for super-fast computers to mine a block, since all it has to do is iterate between zero and approximately 4 billion to find the perfect Nonce for the hash to fall below the target.
+Iterating through the Nonce makes it easy for super-fast computers to mine a block since all it has to do is iterate between zero and approximately 4 billion to find the perfect Nonce for the hash to fall below the target.
 
 However, mining a block is quite complex than just changing a Nonce, and this is because of the Timestamp field in the block.
 
-The timestamp field takes the number of seconds from January 1, 1970, to date, and field changes every second. This makes it difficult to mine a block because for every second change in the timestamp, the hash of the block changes.
+The timestamp field takes the number of seconds from January 1, 1970, to date, and the field changes every second. This makes it difficult to mine a block because the hash of the block changes for every second change in the timestamp.
 
 Thus, miners require computing resources to iterate through the Nonce before a second change in the timestamp. This is because once a second change and the Nonce value is correct, the entire hash changes, and as a result, miners will have to go through the process of changing the Nonce before the timestamp changes to achieve the target.
 
-Once the miner successfully finds the Golden Nonce plus the correlating timestamp(the Nonce value that causes the hash to fall below the target),  the miner will go through a verification process that ensures that the miner dedicated resources to solving the problem(the proof of work). Once the process is verified after running through checks, the block is mined and added to the blockchain.
+Once the miner successfully finds the Golden Nonce plus the correlating timestamp(the Nonce value that causes the hash to fall below the target),  the miner will go through a verification process that ensures that the miner has dedicated resources to solve the problem(the proof of work). Once the process is verified after running through checks, the block is mined and added to the blockchain.
 
 ### Consensus Protocol
+
 The consensus protocol involves an interrelationship between the distributed network, the blockchain, and mining.
 
 When a block is mined by miner A and also at the same time another block is mined by miner B, these two blocks will be added to the blockchain and then in the distributed network.
@@ -123,3 +145,7 @@ The consensus protocol results in all the networks receiving the block mined by 
 You’ve made it to the end of this tutorial. You now have sufficient knowledge about blockchain technology and how specific characteristics make the blockchain magnificent. Here’s some additional reading for an in-depth understanding of blockchain technology:
 - [The meaning of decentralization](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274)
 - [The Blockchain Economy](https://medium.com/cryptoeconomics-australia/the-blockchain-economy-a-beginners-guide-to-institutional-cryptoeconomics-64bf2f2beec4)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
