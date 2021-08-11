@@ -1,4 +1,4 @@
-Many developers often use traditional logging classes when "logging" in Android. which tend to be tiresome and time-consuming. Timber, a library by `Jake Wharton` has made logging easy and simple. in this article, we'll be discussing the best and easiest way to plant timber trees.
+Logging is one of the important things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These have a tendency of being cumbersome. Timber, which is a library developed by `Jake Wharton` has made logging effortless. In this article, we will discuss the best practices in using `Timber` and planting the `Timber trees`.
 
 <!--more-->
 
@@ -7,9 +7,9 @@ Many developers often use traditional logging classes when "logging" in Android.
 To follow along with this tutorial, you should:
 
 - Have a working android studio IDE.
-- Know how to create a project in `Android Studio`.
-- Have a good understanding of `Kotlin` or `Java`.
-- Have basic knowledge of the basic `Logging class`.
+- Be able to create a project in `Android Studio`.
+- Have an understanding of `Kotlin` or `Java`.
+- Have some basic knowledge of the basic `Logging class`.
 
 ### Goal
 
@@ -20,16 +20,16 @@ At the end of this tutorial, you should be able to:
 
 ### Introduction
 
-Logging is one of the most important things we use while developing android apps. We use logs for almost everything. For instance; debugging if-else conditions and when handling exceptions. Many developers often use traditional logging classes when "logging" in Android. which tend to be tiresome and time-consuming. `Timber`, a library by `Jake Wharton` has made logging easy and simple.
+Logging is one of the most important things we use while developing android apps. We use logs for almost everything. For instance; debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These have a tendency of being cumbersome and time-consuming. Timber, which is a library developed by `Jake Wharton` has made logging easily attainable and with less code.
 
 ### What is a Logcat?
 
 From the official documentation, the logcat window in Android Studio displays system messages. For instance, when a garbage collection occurs, it displays messages in real-time. It also keeps a history so you can view older messages.
-When a code throws an exception, logcat shows a message. This is then followed by the associated stack trace containing links to the line of code.
+When your code throws an exception, the logcat displays a message. This is then followed by the associated stack trace containing links to the line of code.
 
 ### What are some of the traditional log class messages?
 
-According to the official documentation, this class allows you to create log messages. This messages appear in the logcat. From the highest to lowest priority (or, least to most verbose), we should use the following:
+According to the official documentation, this class allows you to create log messages. These messages appear in the logcat. From the highest priority to the lowest (or, least verbose to the most), we should use the following:
 - `Log.e(String, String)` - display errors
 - `Log.w(String, String)` - display warnings
 - `Log.i(String, String)` -display information
@@ -292,7 +292,7 @@ class MainActivity : AppCompatActivity() {
 ### Timber Logcat
 
 In the logcat you will see such a line like this `D/MainActivity: 7`.
-We did not specify the class-name but timber placed one for us; `D/MainActivity`.
+We did not specify the class name but timber placed one for us; `D/MainActivity`.
 That is the beauty of `Timber`.
 
 #### Demo screens
@@ -306,7 +306,7 @@ Once done, run the app. Here is what you should expect:
 Check out the entire project for `Java` on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)
 
 ### Conclusion
-That's not all about `Logging with Timber`, keep exploring. I hope you now have idea on how to "plant your `Timber` logs".
+That's not all about `Logging with Timber`, keep exploring. I hope you now have an idea on how to "plant your `Timber` logs".
 
 ### Resources
 
