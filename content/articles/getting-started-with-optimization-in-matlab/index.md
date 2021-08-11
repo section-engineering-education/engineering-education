@@ -1,17 +1,34 @@
-### GETTING STARTED WITH OPTIMIZATION IN MATLAB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-optimization-in-matlab/
+title: Getting Started with Optimization in MATLAB
+description: In this article we discuss 
+author: 
+date: 2021-08-10T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/getting-started-with-optimization-in-matlab/hero.jpg
+   alt: MATLAB optimization example image
+---
+
+
 ### Introduction
-Optimization combines the inputs to achieve the optimum output subject to satisfying certain specified constraints and conditions. It involves choosing 
-the best among a given data or combining the inputs to obtain the optimal working condition. It is a mathematical discipline that works to get the maxima
-and minima. Thus, optimization forms part of linear programming.
-Optimization is applicable in a wide range of fields. It includes the financial sector, transport sector, and many more. It makes it an important tool in
-everyday life of people and industries. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its
-application in various fields.
+
+Optimization combines the inputs to achieve the optimum output subject to satisfying certain specified constraints and conditions. It involves choosing the best among a given data or combining the inputs to obtain the optimal working condition. It is a mathematical discipline that works to get the maxima and minima. Thus, optimization forms part of linear programming. 
+
+Optimization is applicable in a wide range of fields. It includes the financial sector, transport sector, and many more. It makes it an important tool in everyday life of people and industries. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its application in various fields.
+
 ### Prerequisites
-- [Matlab](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-- Proper understanding of [matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+- [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 An optimization problem is defined by `df(x)/dx=0`. Finding the minimum point in a curve can be done using the while loop. For example given a function
 $ y(x)= 2x^2+20x-22$ to find its minimum point, we can do it using a simple while loop shown below;
+
 ```matlab
 clear
 clc
@@ -159,3 +176,39 @@ In our result, we see that `x` has two values. The first value is the `x` value,
 An optimization is an essential tool in the science and engineering section. It is applicable in a wide area such as model-based design and also machine 
 learning and data analysis. Matlab is an excellent language for optimization. As you can see above, the in-built functions make it so easy to carry out this
 optimization. Moreover, the code is easy to understand and use. Therefore, it makes it a suitable tool for working out this problem.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+
+
+---
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
