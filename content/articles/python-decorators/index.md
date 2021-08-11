@@ -271,7 +271,7 @@ I am the umbrella function
 ### Using multiple decorators
 Python allows the use of multiple decorators together. This process involves decorating a single function more than once with the same or different decorators.
 
-  To use several decorators, we place the decorators just above the desired function. Python automatically does the chaining of the decorators. 
+To use several decorators, we place the decorators just above the desired function. Python automatically does the chaining of the decorators. 
 
 ```py
 def umbrella_function(function):
@@ -297,6 +297,7 @@ def another_function(name, age):
 
 another_function('Mia', 18)
 ```
+
 **Output:**
 
 ```bash
@@ -307,6 +308,8 @@ So, Mia is 18 years old, and she is a programmer
 
 ### Conclusion
 As we have seen above, Python decorators dynamically change the properties of a function, method, or class without changing the code snippet directly. Decorators ensure that your code is not redundant and may be used to write cleaner code.
+
+Happy coding!
 
 ### Further reading
 To learn more about Python decorators, consider checking out how the concept is discussed in the [Python's Decorator Library](https://wiki.python.org/moin/PythonDecoratorLibrary)
