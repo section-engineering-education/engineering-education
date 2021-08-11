@@ -87,7 +87,7 @@ In the above code snippet, we have imported the following.
 #### `MultinomialNB`
 
 This is the classifier method that is found in the Naive Bayes algorithm. We shall use `MultinomialNB` in the building of our model.
-Naive-Bayes classification technique based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
+Naive-Bayes classification technique is based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
 
 Naïve Bayes classifiers are highly scalable algorithms that requires a number of features when building a classification model.
 This an important concept that a user needs to grasp because this is the building block for our model.
