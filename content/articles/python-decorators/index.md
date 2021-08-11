@@ -234,7 +234,8 @@ print(another_function.__doc__)
 **Output:**
 
 ```bash
-
+inner_function
+Inner docs
 ```
 
 However, if we use the `functools.wraps()`,  the metadata becomes accessible.
