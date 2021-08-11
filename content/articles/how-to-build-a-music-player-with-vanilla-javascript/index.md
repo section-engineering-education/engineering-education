@@ -344,7 +344,9 @@ function nextSong() {
 
 ```
 
-The last thing you need to do is to implement the progress bar. The progress bar contains the song title and the progress of the song being played as well as the timer. To implement this, you need to add an event listener to the `audio` tag, and with the HTML audio tag with the API, there’s an event called “timeupdate” which you will call in your event listener using the code below:
+The last thing you need to do is to implement the progress bar. The progress bar contains the song title and the progress of the song being played, as well as the timer. 
+
+To implement this, you need to add an event listener to the `audio` tag, and with the HTML audio tag with the API, there’s an event called “timeupdate” which you will call in your event listener using the code below:
 ```javascript
 audio.addEventListener('timeupdate', updateProgress);
 
