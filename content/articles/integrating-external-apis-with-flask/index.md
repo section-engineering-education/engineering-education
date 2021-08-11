@@ -2,7 +2,7 @@
 APIs are a major part of today's applications. There are many times that we need to use a third-party API either for authentication, file uploads, or just getting other information. APIs enable us to use features provided by other applications without having to actually build the logic ourselves. This also enables us to build applications that integrate with many services, since the interfaces are provided.
 
 ### Prerequisites
-Before proceeding, you are required to have a TMDB API key. To obtain one, you must have an account at [themoviedb.org](https://www.themoviedb.org/login). Then follow [these instructions](https://developers.themoviedb.org/3/getting-started/introduction) to obtain an API key.
+Before proceeding, you are required to have a TMDB (The Movie DB) API key. To obtain one, you must have an account at [themoviedb.org](https://www.themoviedb.org/login). Then follow [these instructions](https://developers.themoviedb.org/3/getting-started/introduction) to obtain an API key.
 
 ### Step 1 -- Setting up the working environment
 Create the following folder structure.
@@ -181,4 +181,4 @@ In the `get_movies()` function, we:
 Serve the app and navigate to <http://localhost:5000/movies>. You should see the movies titles and overviews.
 
 ### Conclusion
-In this tutorial, we have looked at how to send a request to an third party API. In this case, we have used the TMDB API. We have also seen how to send a request response to your app's endpoint as JSON.
+In this tutorial, we have looked at how to send a request to a third party API. In this case, we have used the TMDB API. We have also seen how to send a request response to your app's endpoint as JSON.
