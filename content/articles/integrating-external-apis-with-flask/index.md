@@ -11,7 +11,7 @@ Create the following folder structure:
 ├─────────────────┐
 ├── app.py
 └── templates
-    └── movie.html
+    └── movies.html
 
 1 directory, 2 files
 ```
@@ -74,9 +74,9 @@ def get_movies():
 
     response = urllib.request.urlopen(url)
     data = response.read()
-    jsondata = json.loads(data)
+    dict = json.loads(data)
 
-    return render_template ("movie.html", movies=jsondata["results"])
+    return render_template ("movies.html", movies=dict["results"])
 ```
 
 The imported [`urllib.request`](https://docs.python.org/3/library/urllib.request.html) is a Python module that will be used to send the request to the TMDB API. The imported `os` module will be used to obtain the TMDB API key.
@@ -100,7 +100,7 @@ export TMDB_API_KEY="<your_api_key>"
 
 If you are using Windows, you may need to use `set TMDB_API_KEY=<your_api_key>` instead of `export`.
 
-Now, open your `templates/movie.html` and add the following code:
+Now, open your `templates/movies.html` and add the following code:
 
 ```html
 <!DOCTYPE html>
@@ -132,15 +132,17 @@ You can display more movie properties in the template. For example, you can disp
 Let's add a little CSS to make the movie images look better.
 
 ```css
-#movie {
-  float: left;
-    width: 400px;
-    height: 250px;
-    margin: 10px;
-    border-radius: 7px;
-    box-shadow: 0px 0px 5px grey;
-    background-size: cover;
-}
+<style>
+  #movie {
+    float: left;
+      width: 400px;
+      height: 250px;
+      margin: 10px;
+      border-radius: 7px;
+      box-shadow: 0px 0px 5px grey;
+      background-size: cover;
+  }
+</style>
 ```
 
 Now serve the app and navigate to <http://localhost:5000/>. You should see the movies posters.
@@ -152,27 +154,27 @@ Open `app.py` and create a new endpoint as shown below:
 
 ```python
 @app.route("/movies")
-def get_movies():
+def get_movies_list():
     url = "https://api.themoviedb.org/3/discover/movie?api_key={}".format(os.environ.get("TMDB_API_KEY"))
 
     response = urllib.request.urlopen(url)
-    data = response.read()
-    jsondata = json.loads(data)
+    movies = response.read()
+    dict = json.loads(movies)
 
-    movie_json = []
+    movies = []
 
-    for movie in jsondata["results"]:
+    for movie in dict["results"]:
         movie = {
             "title": movie["title"],
             "overview": movie["overview"],
         }
         
-        movie_json.append(movie)
+        movies.append(movie)
 
-    return {"results": movie_json}
+    return {"results": movies}
 ```
 
-In the `get_movies()` function, we:
+In the `get_movies_list()` function, we:
 1. Create a URL using the TMDB API key.
 2. Send the request to the TMDB API.
 3. Read the response.
