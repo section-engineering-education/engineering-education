@@ -25,7 +25,7 @@ To follow through this tutorial, the reader should:
 - Be familiar with [ViewBinding](https://developer.android.com/topic/libraries/view-binding).
 
 ### Goal
-At the end of this tutorial, the reader should be able to:
+By the end of this tutorial, the reader should be able to:
 - Understand what [Glide](https://bumptech.github.io/glide/) is.
 - Add an [ImageView](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout
 - Load images using the `Glide` library.
@@ -81,7 +81,7 @@ Add internet permissions to your project.
 ```
 
 ### Step 3: Creating XML layouts
-In this step, we are going to design the XML layout consisting of `Buttons` and an `ImageView`.
+In this step, we are going to design the `XML` layout consisting of `Buttons` and an `ImageView`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -91,103 +91,103 @@ In this step, we are going to design the XML layout consisting of `Buttons` and 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-    <Button
-        android:id="@+id/buttonUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="URL"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-    <Button
-        android:id="@+id/buttonResize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Resize Image"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonUrl"
-        app:layout_constraintStart_toEndOf="@+id/buttonUrl"
-        app:layout_constraintTop_toTopOf="@+id/buttonUrl" />
-    <Button
-        android:id="@+id/buttonFitCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="FitCenter"
-        app:layout_constraintStart_toStartOf="@+id/buttonUrl"
-        app:layout_constraintTop_toBottomOf="@+id/buttonUrl" />
-    <Button
-        android:id="@+id/buttonCenterCrop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="CenterCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonFitCenter"
-        app:layout_constraintStart_toEndOf="@+id/buttonFitCenter"
-        app:layout_constraintTop_toTopOf="@+id/buttonFitCenter" />
-    <Button
-        android:id="@+id/buttonDrawable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Drawable"
-        app:layout_constraintStart_toStartOf="@+id/buttonFitCenter"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFitCenter" />
-    <Button
-        android:id="@+id/buttonPlaceholder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Placeholder"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonDrawable"
-        app:layout_constraintStart_toEndOf="@+id/buttonDrawable"
-        app:layout_constraintTop_toTopOf="@+id/buttonDrawable" />
-    <Button
-        android:id="@+id/buttonError"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Error"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonCircleCrop"
-        app:layout_constraintStart_toEndOf="@+id/buttonCircleCrop"
-        app:layout_constraintTop_toTopOf="@+id/buttonCircleCrop" />
-    <Button
-        android:id="@+id/buttonCache"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Cache"
-        app:layout_constraintStart_toStartOf="@+id/buttonDrawable"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDrawable" />
-    <Button
-        android:id="@+id/buttonCircleCrop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="CircleCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonCache"
-        app:layout_constraintStart_toEndOf="@+id/buttonCache"
-        app:layout_constraintTop_toTopOf="@+id/buttonCache" />
-    <Button
-        android:id="@+id/buttonTarget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Target"
-        app:layout_constraintStart_toStartOf="@+id/buttonCache"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCache" />
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:srcCompat="@tools:sample/avatars" />
+<Button
+    android:id="@+id/buttonUrl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="24dp"
+    android:text="URL"
+    app:layout_constraintStart_toStartOf="@+id/imageView"
+    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+<Button
+    android:id="@+id/buttonResize"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:text="Resize Image"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonUrl"
+    app:layout_constraintStart_toEndOf="@+id/buttonUrl"
+    app:layout_constraintTop_toTopOf="@+id/buttonUrl" />
+<Button
+    android:id="@+id/buttonFitCenter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="FitCenter"
+    app:layout_constraintStart_toStartOf="@+id/buttonUrl"
+    app:layout_constraintTop_toBottomOf="@+id/buttonUrl" />
+<Button
+    android:id="@+id/buttonCenterCrop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:text="CenterCrop"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonFitCenter"
+    app:layout_constraintStart_toEndOf="@+id/buttonFitCenter"
+    app:layout_constraintTop_toTopOf="@+id/buttonFitCenter" />
+<Button
+    android:id="@+id/buttonDrawable"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Drawable"
+    app:layout_constraintStart_toStartOf="@+id/buttonFitCenter"
+    app:layout_constraintTop_toBottomOf="@+id/buttonFitCenter" />
+<Button
+    android:id="@+id/buttonPlaceholder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:text="Placeholder"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonDrawable"
+    app:layout_constraintStart_toEndOf="@+id/buttonDrawable"
+    app:layout_constraintTop_toTopOf="@+id/buttonDrawable" />
+<Button
+    android:id="@+id/buttonError"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:text="Error"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonCircleCrop"
+    app:layout_constraintStart_toEndOf="@+id/buttonCircleCrop"
+    app:layout_constraintTop_toTopOf="@+id/buttonCircleCrop" />
+<Button
+    android:id="@+id/buttonCache"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Cache"
+    app:layout_constraintStart_toStartOf="@+id/buttonDrawable"
+    app:layout_constraintTop_toBottomOf="@+id/buttonDrawable" />
+<Button
+    android:id="@+id/buttonCircleCrop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:text="CircleCrop"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonCache"
+    app:layout_constraintStart_toEndOf="@+id/buttonCache"
+    app:layout_constraintTop_toTopOf="@+id/buttonCache" />
+<Button
+    android:id="@+id/buttonTarget"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="Target"
+    app:layout_constraintStart_toStartOf="@+id/buttonCache"
+    app:layout_constraintTop_toBottomOf="@+id/buttonCache" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ### Step 4: Implementing Glide features
@@ -336,7 +336,7 @@ Glide.with(this)
 
 ### Project Demo
 
-![Demo Project](/loading-image-with-glide-in-android/glide-demo.gif)
+![Demo Project](/engineering-education/loading-image-with-glide-in-android/glide-demo.gif)
  
 ### Conclusion
 Glide is a powerful image loading library that is easy to use.
