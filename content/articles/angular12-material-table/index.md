@@ -45,13 +45,14 @@ Enter `y` to proceed with the Angular Material installation. This will install a
 Now that we've successfully installed Material, let's now import material modules into our project.
 
 ```js
-//import angular material modules here for our table
-import { MatInputModule,
-         MatPaginatorModule,
-         MatProgressSpinnerModule, 
-         MatSortModule, MatTableModule 
-         }
-          from "@angular/material";
+//edit app.material-module.ts
+//import angular material modules here for our table 
+
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
 // since we're exporting these modules, add them to export
@@ -67,7 +68,7 @@ import { MatInputModule,
 export class AppMaterialModule {}
 ```
 
-In the above module, we're importing the Material modules from `@angular/material`. We then export all these modules since we'll be using them in our main module as shown below.
+In the above module, we're importing the Material modules from `@angular/material/*`. We then export all these modules since we'll be using them in our main module as shown below.
 
 ```js
 // ..........................
