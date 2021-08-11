@@ -1,6 +1,8 @@
 ### Building a Music Player with Vanilla JavaScript
 
-Streaming music is one of the major things people use the internet for these days, so it would only be right to create a media platform with almost all your regular music player app features. In this article, I would show you how I created a music player using just HTML, CSS, JavaScript, and the HTML5 Audio API with a clean UI where you can easily play music on the browser.
+Streaming music is one of the major things people use the internet for these days, so it would only be right to create a media platform with almost all your regular music player app features.
+
+ In this article, I would show you how I created a music player using just HTML, CSS, JavaScript, and the HTML5 Audio API with a clean UI where you can easily play music on the browser.
 
 ### Prerequisites
 A good code editor. Visual Studio Code can do the job.
