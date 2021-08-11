@@ -267,7 +267,7 @@ Name: names, dtype: int64
 ### Visualizing our data using the Matplotlib library
 
 [Matplotlib](https://matplotlib.org/) is a Python library used for plotting hence easy visualization of our data in the form of a graph.
-In this tutorial we will be using [Google Colab](https://research.google.com/) since it's very fast notebook used for machine learning.
+In this tutorial we will be using [Google Colab](https://research.google.com/) as our notebook since it's very fast in machine learning.
 Run the below code snippet on [Google Colab](https://research.google.com/) so you can import Matplotlib.
 
 ```python
