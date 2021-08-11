@@ -1,8 +1,7 @@
 Quarkus is an open-source Java native framework useful for creating and managing Kubernetes native Java stack, microservices, and serverless environments which is optimized for the open JDK and the GraalVM runtime. It is a very effective platform for Kubernetes, cloud, and serverless environments.
-
 In similarity to the Spring Boot framework, Quarkus is a combination of different Java libraries and standards, providing you a consolidation along with improvements on the JVM.
-
-Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers. Quarkus is natively integrated with Java libraries, hence you don't have to learn a new thing.
+Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers.
+Quarkus is natively integrated with Java libraries hence you don't have to learn a new thing.
 
 ![Quarkus Icon](Quarkus-hero.png "Quarkus Icon")
 _(Quarkus Official icon)_
@@ -10,6 +9,7 @@ _(Quarkus Official icon)_
 In this tutorial, we will get started on Quarkus and see how we can have some hands-on Quarkus projects using different tools and software environments.
 
 ### Table of Contents
+
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Quarkus briefs](#quarkus-briefs)
@@ -29,19 +29,22 @@ In this tutorial, we will get started on Quarkus and see how we can have some ha
 - [Build and run a Quarkus project in a Docker container](#build-and-run-a-quarkus-project-in-a-docker-container)
 - [Conclusion](#conclusion)
 - [Further activities](#further-activities)
-- [References](#references-1)
+- [References](#references)
 
 ### Key takeaways
+
 Coming to the tip of the article, we shall have the following to take with us:
+
 - Comparison between Quarkus and other Java frameworks
 - Quarkus prerequisites
 - Advantages and trade-offs of Quarkus framework
-- Creation of a Quarkus application using different methods or tools, such as from the [https://code.quarkus.io/](https://code.quarkus.io/) website, using Visual Studio Code and IntelliJ.
+- Creation of a Quarkus application using different methods or tools such as from the [https://code.quarkus.io/](https://code.quarkus.io/) website, using Visual Studio Code and IntelliJ.
 - Quarkus project structure
 - Differences between the Quarkus framework and the Spring Boot framework.
 - Testing Quarkus resources usage using JConsole.
 
 ### Pre-requisites
+
 Some basics required for easy follow-up on this article include:
 
 - A modern IDE that supports Java frameworks installed on your machine. This may either be Visual Studio Code or IntelliJ (Ultimate version) or any other. We shall focus on the two in this article.
@@ -58,52 +61,78 @@ Some basics required for easy follow-up on this article include:
 
 Some features provided by Quarkus include:
 
-- **Hot reload**: A change in the code will reload system and the differences to be automatically reflected in the system.
+- **Hot reload**: Each code change will trigger a reload in the system and the differences to be automatically reflected in the system.
 - **Imperative and Reactive development**: That is, it supports both synchronous and asynchronous operations.
 - **Standards and Libraries**: More Libraries built on known standards easily support full-stack development.
 
 ### Comparison between Quarkus and other Java frameworks
 
 Java is a well-built and supported language. It has many available frameworks for large and small projects. Some include:
+
 - Spring
-- Spring Boot
+- Springboot
 - Hibernate
 - Struts
-- Google Web Toolkit (GWT)
+- Google Web Toolkit, GWT
 - Blade
 - Grails
 - Quarkus
 - Micronaut
 - Microprofile among many more...
 
-Applications are built basing the choices of algorithms, data structures, and frameworks based on the performance and efficiency per requirements.
+Applications are build basing the choices of algorithms, data structures, and frameworks based on the performance and efficiency per requirements.
 
 You shall look at the similarities and differences between Quarkus and other Java frameworks such as Spring Boot, Micronaut, and Microprofile.
 
-When you compare Quarkus and Spring Boot, you will learn the following:
-The similarity is that Quarkus and Spring Boot both use Spring Web dependencies, have similar REST points, and are built using Maven and Gradle into JAR files.
+When you compare **Quarkus** and **Spring Boot**, you will learn the following:
 
-The differences are that Quarkus was built for performance and efficiency, in that it should take the least amount of memory and Boot and response time.
+_**Similarities**:_
 
-Quarkus is a modern framework while Spring Boot has existed for a long time. This has made Quarkus to be optimized ,hence better performance.
+- Both use Spring Web dependencies
+- Have similar REST points
+- Are built using Maven and Gradle into JAR files
+- Java EE frameworks
 
-As for Quarkus and Micronaut, they are both modern frameworks build for microservices and serverless applications build for JDK and GraalVM.
+_**Differences**:_
 
-The key differences are that Quarkus relies more on Java Enterprises and Eclipse MicroProfile APIs, while Micronaut defines its APIs and is more based on the Spring and Grails frameworks.
-Quarkus also is based on an extension architecture which makes it integrate easily with third-party frameworks, while Micronaut has an Aspect-Oriented Programming (AOP) implementation that doesn't use reflection to define cross-cutting concerns.
+- Quarkus' applications are faster and more efficient than Spring Boot's. Quarkus was built for performance and efficiency, in that it should take the least amount of memory and Boot and response time.
+- Quarkus is a modern framework while Spring Boot has stayed in the industry for some time.
+- Compared to Quarkus, Spring Boot has a great community due to its time present. Quarkus has an increasing community.
+
+**Quarkus** vs **Micronaut**:
+
+_**Similarities**:_
+
+- Are modern frameworks
+- Built for microservices and serverless applications
+- Build for JDK and GraalVM
+
+
+_**Differences**:_
+
+- Quarkus relies more on Java Enterprises and Eclipse MicroProfile APIs while Micronaut defines its APIs and is more based on the Spring and Grails frameworks.
+- Quarkus also is based on an extension architecture which makes it integrate easily with third-party frameworks while Micronaut has an Aspect-Oriented Programming (AOP) implementation that doesn't use reflection to define cross-cutting concerns.
 
 > **[GraalVM](https://www.graalvm.org/)**: a high-performance JDK distribution.
 > Is a high-performance Java Development Kit (JDK) distribution built to quicken the application executions written in Java and other JVM languages.
 > It provides other runtimes for Python, JavaScript, Ruby, and some other popular languages.
 > Availability of polyglot capabilities makes it possible to mix multiple programming languages in a single application while removing call costs of any foreign language.
 
-Lastly, as for Quarkus and Microprofile relationship, Microprofile is used to do microservices specification in the Java Enterprise environment.
-Quarkus on the other hand is an implementation of Microprofile which is well-built based on the given specifications.
-This makes them both compatible with each other.
+**Quarkus** vs **Microprofile**:
+
+_**Similarities**:_
+
+- Centered on microservices and serverless applications.
+- Are compatible with each other since Quarkus  is an implementation of Microprofile which is well-built based on the given specifications.
+
+_**Differences**:_
+- Microprofile is used to do microservices specification in the Java Enterprise environment.
+- Quarkus on the other hand is an implementation of Microprofile which is well-built based on the given specifications.
+
 If you have worked with Microprofile, Quarkus is going to be simpler for you to work with.
 
 Quarkus boasts of its reload speed and memory efficiency when built and run on Native environment via [GraalVM](https://www.graalvm.org/) followed by the JVM compared to the Traditional environment.
-This is well indicated by the image below, found on its [official website](https://quarkus.io/):
+This is well indicated by the image below found on its [official website](https://quarkus.io/):
 
 ![Quarkus efficiency and performance](Quarkus_efficiency_image.png "This shows how Quarkus performs in Native, JVM, and Traditional environments")
 _(Photo from Official Quarkus website)_
@@ -119,15 +148,16 @@ You shall look at how to start and create your Quarkus project using:
 #### Quarkus.io project initializer
 
 [Quarkus.io](https://code.quarkus.io/) project initializer, just like the [Spring initializer](https://start.spring.io/) or [Micronaut initializer](https://micronaut.io/launch), is used to quickly create a Quarkus project together with all needed dependencies.
-Just head over to the site. It looks as shown:
+Just head over to the site. It looks like this:
 
 ![code.quarkus.io](code.quarkus.io.png "The main code.quarkus.io page")
 _(Screenshot by Author)_
 
-You can see that you can rename the _Group_, _Artifact_, and the _Build Tool_.
-You can search and select the needed dependencies before generating your project zip file.
-Dependencies can also be added using the Quarkus CLI, as you will later see on.
-You may also add more configurations such as the SNAPSHOT version and availability of Starter code by clicking on the 'CONFIGURE MORE OPTIONS'.
+You can do the following:
+- Rename the _Group_, _Artifact_, and the _Build Tool_.
+- Search and select the needed dependencies before generating your project zip file.
+Dependencies can also be added using the Quarkus CLI as you will later see on.
+- Add more configurations such as the SNAPSHOT version and availability of Starter code by clicking on the 'CONFIGURE MORE OPTIONS'.
 
 Go ahead and generate your project with the following:
 
@@ -137,7 +167,7 @@ Go ahead and generate your project with the following:
 
   **Build Tool**: <_Select your build tool_>
 
-_Select your build tool_: That is, whether Maven or Gradle.
+_Select your build tool_: That is whether Maven or Gradle.
 
 - **Dependencies**: RESTEasy JAX-RS
 
@@ -193,7 +223,7 @@ or as shown below for Gradle users:
 
 Availability of Dockerfile in the project indicates that it can support microservices for your project run in containers.
 The project lacks the 'main' class, as in the Spring Boot framework, inside the `ecommerce-quarkus/src/main/java/org/ecommerce/quarkus`.
-It has the 'EcommerceResource.java' file, which by default has a simple 'hello' REST endpoint.
+It has the 'EcommerceResource.java' file which by default has a simple 'hello' REST endpoint.
 
 #### Using Visual Studio Code
 
@@ -204,7 +234,7 @@ Click on the extensions tab.
 Search for `Quarkus` in the extensions tab identified by `redhat.vscode-quarkus`, built by the 'Redhat team'.
 Its preview looks like shown below:
 
-![VS Code Quarkus extension](VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
+![VSCode Quarkus extension](VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
 _(Screenshot by Author)_
 
 Install it and restart the application.
@@ -218,15 +248,15 @@ _(Screenshot by Author)_
 If it doesn't, just navigate to the Command Palette found in the `Views` menu.
 Search for Quarkus and choose 'Create a Quarkus project'.
 On the pop-up window that displays, select the build tool, then the groupId, artifactId, project version, package name, resource name (i.e. EcommerceResource), select extensions or the dependencies (RESTEasy JAX-RS) by searching and clicking on it.
-Once you are done, click `Enter` to move to the next step. Select whether to use a starter code or not. Select the folder to generate the Project.
+Once done click Enter to move to the next step. Select whether to use a starter code or not. Select the folder to generate the Project.
 
 Now, select whether to open the project on the current or new window by adding it to the current workspace.
 
 #### Using IntelliJ
 
-Launcher, your IntelliJ application. Click on the 'Create New Project' button.
+Launcher your IntelliJ application. Click on the 'Create New Project' button.
 On the left-hand side of the opened window, select Quarkus as your project type.
-IntelliJ provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
+Intellij provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
 
 ![Quarkus IntelliJ start](Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
 _(Screenshot by Author)_
@@ -284,7 +314,7 @@ This will be as follows:
   The _Application configurations_ are always set in `ecommerce-quarkus/src/main/resources` inside the 'application.properties' file.
 
   Since Quarkus now ships with the Dev mode User Interface (Dev UI) available, you can use it to run and view the project in a dev mode.
-  Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available in dev mode_.
+  Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available at dev mode_.
 
 ![dev-ui](dev-ui.png "dev-ui")
 _(Screenshot by Author)_
@@ -382,7 +412,7 @@ from the list of extensions, you will need to run:
 ./mvnw quarkus:add-extension -Dextensions="quarkus-jsonb, quarkus-hibernate-reactive-panache"
 ```
 
-The extensions are fetched by using their unique identifier, in which the names are separated with hyphens(found on the right column of the displayed list).
+The extensions are fetched by using their unique identifier in which the names are separated with hyphens(found on the right column of the displayed list).
 
 _Remember to separate the extensions with commas._
 
@@ -445,7 +475,6 @@ Run the tests using the IDE and see if it is a whole successful test.
 
 To add a website template to be automatically displayed when `http://localhost:8080/` (default URL with no endpoints) is accessed, add it and its resources inside the `src/main/resources/META-INF/resources/` folder.
 Head over to [this](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/) link and download the free cakes' template to try it out.
-
 You can find and download other free templates at [https://themewagon.com/themes](https://themewagon.com/themes).
 Once downloaded, extract it and copy and paste all the contents inside the folder to the 'resources' folder mentioned previously.
 The contents include the 'index.html' and all its styling and scripts.
@@ -473,7 +502,7 @@ or in **Gradle** using:
 ./gradlew quarkusDev
 ```
 
-You can perform both the build and clean process, which will remove all the previous build output in the build directory.
+You can perform both the build and clean process which will remove all the previous build output in the build directory.
 This is done by running:
 
 - In **Maven**:
@@ -518,7 +547,7 @@ Access it in the browser and terminal again.
 
 > **JConsole**: is an OpenSource graphical JVM and Java applications monitoring tool used to monitor applications running both on a local or remote machine.
 
-It comes with a JDK installation, hence no additional installations are needed.
+It comes with a JDK installation hence no additional installations are needed.
 Open it by running `jconsole` in a new terminal. On the newly opened window, select your running local process.
 
 Run your packaged application by using:
@@ -550,14 +579,14 @@ You can use the IntelliJ profiler as a JConsole substitute. You can use it to vi
 
 It is located in your status bar as shown below. When you open it, it shows running JVMs and if you either click or right-click on any, it will show you some drop-down options.
 
-![IntelliJ profiler](Intellij-profiler.png "Intellij profiler")
+![Intellij profiler](Intellij-profiler.png "Intellij profiler")
 _(Screenshot by Author)_
 
 Some available options include: CPU and memory live charts, Attach profiler to process (Java flight recorder, Async profiler), Capture memory snapshots, and Get Thread dump.
 
 Select the '_CPU and memory live charts_' options. It will open up the window which looks as shown below:
 
-![IntelliJ profiler stats](Intellij-profiler-stats.png "Intellij profiler stats")
+![Intellij profiler stats](Intellij-profiler-stats.png "Intellij profiler stats")
 _(Screenshot by Author)_
 
 ### Build and run a Quarkus project in a Docker container
@@ -614,6 +643,7 @@ By this point, you have learned the following:
 - Working with Quarkus applications inside Docker containers
 
 ### Further activities
+
 
 - Build a native Quarkus image using GraalVM as illustrated [here](https://quarkus.io/guides/building-native-image).
 - Quarkus can be used to run another application inside it on a separate port by placing it inside the resources.
