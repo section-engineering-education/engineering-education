@@ -217,3 +217,6 @@ This tutorial was more of a beginners' starting point. To get more into the topi
 - [Internalization User Guide](https://files.flutter-io.cn/sources/flutter-design-docs/i18n-user-guide.pdf)
 - [Internationalizing Flutter Apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
 - [i18n vs l10n — what’s the diff?](https://blog.mozilla.org/l10n/2011/12/14/i18n-vs-l10n-whats-the-diff/)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
