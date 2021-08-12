@@ -246,9 +246,12 @@ Next, you need to initially load your songs into the Document Object Module(DOM)
 loadSong(songs[songIndex]);
 
 ```
+
 Now you have to create the `loadSong` function
+
 ### The loadSong Function
 In this function, you are going to update the song title, the audio source and the image source using the code below:
+
 ```javascript
 function loadSong(song) {
   title.innerText = song;
