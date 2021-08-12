@@ -573,7 +573,7 @@ Anyways, with that installed, we call the `initializeApp` method passing the obj
 
 This should handle all the magic of displaying notifications for us!
 
-With that created, try sending a `POST` request to our server to send notification while the app is inactive.
+With that created, try sending a `POST` request to our server to send a notification while the app is inactive.
 
 In case you don’t know, you can do so using a tool like [Postman](https://www.postman.com/).
 
@@ -586,7 +586,7 @@ In this guide, we went through the process of sending notifications in a full-st
 
 In the backend, we set up a REST API to tell Firebase what notifications to send and where. In the front end, we learned how to subscribe to receive notifications even when the app is closed.
 
-To best use this guide, try making your full-stack project that uses these concepts.
+To best use this guide, try making your own full-stack project that uses these concepts.
 
 If you need help or a reference to what we did here, I created a [Github repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote.
 
