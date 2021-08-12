@@ -90,9 +90,9 @@ This is the classifier method that is found in the Naive Bayes algorithm. We sha
 Naive-Bayes classification technique is based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
 
 Naïve Bayes classifiers are highly scalable algorithms that requires a number of features when building a classification model.
-This an important concept that a user needs to grasp because this is the building block for our model.
+This an important concept that a user needs to understand since this is the algorithm we will be using.
 In our case we specifically use `MultinomialNB` method from the Naive Bayes algorithm since its suitable for classification with discrete features which is the case for our model.
-For further reading about the Naive Bayes algorithm and how it's useful in classification you can use this amazing article.
+For further reading about the Naive Bayes algorithm and how it's useful in perfoming classification you can use this amazing article.
 
 [Understanding Naive Bayes Classifier](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
@@ -297,7 +297,7 @@ ylabels= df['nationality']
 ### Vectorizing our features
 
 We will use the `CountVectorizer()` method to transform our dataset into readable inputs to be used by our model.
-This method is also used to extract features from our dataset. Features are the inputs used for training our model.
+This method is also used to extract features from our dataset, features are the inputs used for training our model.
 For a detailed information on `CountVectorizer()`, this great article can be used for further reading.
 
 - [Basics of CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
@@ -386,7 +386,7 @@ We will name our pickle file 'naive_bayes.pkl'.
 
 ### Introduction to the FastAPI
 
-FastAPI is a modern, fast web framework for building APIs with Python 3.6+ based on standard Python type hints.
+FastAPI is a modern, fast web framework for building APIs with Python 3.6+ which is based on standard Python type hints.
 The key features for FastAPI are as follows:
 
 1. Fast when building APIs.
@@ -411,7 +411,7 @@ pip install fastapi
 Let's install the server.
 
 - `univicorn` is server that is used to run FastAPI. We specify the `standard` version of `univicorn` which contains minimal dependencies. This version contains pure Python dependencies.
-  This version is best suited for our model since we are dealing the core packages and dependancies used in building our model.
+  This version is best suited for our model since we are dealing the core Python packages and dependancies used in building our model.
 
 ```python
 pip install uvicorn[standard]
@@ -487,7 +487,7 @@ Asynchronous programming is an advanced concept that has become very important i
 
 We shall use then [`async`](https://fastapi.tiangolo.com/async/#in-a-hurry) function when creating our `FastAPI` routes. This enables the `FastAPI` to create multiple routes concurrently.
 
-To make our first route we use `async def index()` function to make the index route and it will run on localhost port `8000`.
+To make our first route we use `async def index()` function to makes the index route which will run on localhost port `8000`.
 
 ```python
 @app.get('/')
