@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /angular12-material-table/
-title: Displaying data using Angular Material Tables
+title: Displaying Data using Angular 12 Material Tables
 description: In this article, we'll be looking at how to use Angular Material Tables to display data. We will be using the Angular Material library to create a simple application that displays student data.
 author: benard-ogure
-date: 2021-08-12T00:00:00-08:00
+date: 2021-08-12T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
  - url: /engineering-education/angular12-material-table/hero.jpg
    alt: Angular Material Table Image
 ---
-
-In this tutorial, I'll show you how to create and populate an Angular material table with some data.
+This tutorial will teach you how to display data in Angular Material tables. We'll build a complete project for displaying data on the Angular Material table.
 <!--more-->
+
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -26,12 +26,9 @@ In this tutorial, I'll show you how to create and populate an Angular material t
 
 ### Prerequisites
 To follow along with this tutorial, you are required to have:
-- Some knowledge of Angular. In this tutorial, we'll be using Angular 12.
-- Knowledge of using Angular Material. It will help you get started quickly.
+- Some background knowledge on Angular. In this tutorial, we'll be using Angular 12.
+- Knowledge on using Angular Material. It will help you get started quicker.
 - An Angular project created on your machine.
-
-### Objectives
-This tutorial will teach you how to display data in Angular Material tables. We'll build a complete project for displaying data on the Angular Material table.
 
 ### Getting started with Angular Material
 In this section, I'll show you how to set up your Angular project to use Angular Material.
@@ -56,7 +53,7 @@ Enter `y` to proceed with the Angular Material installation. This will install a
 
 ![Material Installation](/engineering-education/angular12-material-table/material-output.png)
 
-Now that we've successfully installed Material, let's now import material modules into our project.
+Now that we've successfully installed Material, let's now import the material modules into our project.
 
 Create a new file `src/app/app.material-module.ts` and add the following code:
 
@@ -82,7 +79,7 @@ import {MatSortModule} from '@angular/material/sort';
 export class AppMaterialModule {}
 ```
 
-In the above module, we've imported the Material modules from `@angular/material/*`. We then export all these modules since we'll be using them in our main module (`app.module.ts`).
+In the module above, we've imported the Material modules from `@angular/material/*`. We will then export all these modules since we'll be using them in our main module (`app.module.ts`).
 
 Open your `app.module.ts` file and import the `AppMaterialModule` in the `imports` array:
 
@@ -106,7 +103,7 @@ export class AppModule { }
 
 We've updated our `app.module.ts` by importing the `AppMaterialModule` module to expose the Material modules we had imported.
 
-### Using Material table to display data
+### Using material table to display data
 In this section, I'll show you how to create the Material table to display some students information. The table will comprise basic student details such as `names` and `registrations`.
 
 Let's start by creating the details interface.
@@ -117,7 +114,9 @@ Run the following commands on your project root to create the student interface:
 ng g i student
 ```
 
-This will create an interface in the `app/student.ts` file. Proceed and edit it to look as follows:
+This will create an interface in the `app/student.ts` file. 
+
+Proceed and edit it to look as follows:
 
 ```typescript
 export interface Student {
@@ -266,7 +265,7 @@ At this point, you can now test your application by logging your API response ob
 2. Go to your browser and open the new tab and enter `localhost:3000`.
 3. `Ctrl + Shift + I` to go to the logs.
 
-You will see the following output if you followed the correct steps above:  
+You will see the following output if you followed the steps above correctly:  
 
 Output:
 
@@ -312,7 +311,7 @@ Now let's update our `app.component.html` as shown below to display our data.
 </table>
 ```
 
-Then open your `app.component.css` file and add the following css code:
+Then open your `app.component.css` file and add the following CSS code:
 
 ```css
 table {
@@ -329,14 +328,14 @@ th.mat-header-cell {
 
 You should now see the following table:
 
-[output](/engineering-education/angular12-material-table/output.png)
+![output](/engineering-education/angular12-material-table/output.png)
 
 ### Conclusion
-In this tutorial, we've discussed Angular Material tables. We've seen how we can use Angular material table to display data.
+In this tutorial, we've discussed Angular Material tables. We saw how we can use Angular material table to display data.
 
 I hope this article builds a firm foundation for you to use the Angular Material tables. From there, you can then sort or add other features to your tables. 
 
-You can find the code in this tutorial on [this Repl](https://replit.com/@benardogure/Angular-Material-Paging). The Repl only includes the project's `src` directory. 
+You can find the code in this tutorial on [this Replit](https://replit.com/@benardogure/Angular-Material-Paging). The Replit only includes the project's `src` directory. 
 
 Happy coding!
 
