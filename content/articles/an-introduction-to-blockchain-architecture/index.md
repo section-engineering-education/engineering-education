@@ -69,12 +69,13 @@ To understand the concept of the immutable ledger, I’ll add some visuals below
 A ledger or block must be immutable. It must not be subject to change. In reality, when we add entries to a ledger, it can be altered, which is a fraudulent act. One of the core pillars of blockchain is to ensure that data in the block is not subject to change, and here is how it guarantee it.
 
 When a block is mined and added to the blockchain, a hash for the block is generated from combining the data in the block.
+In the image above, the first block is the genesis block, and it has no previous hash by default due to the absence of a preceding block. It has its hash, which is generated through the combination of its data and identifiers, along with a nonce calculated and agreed upon.
 
-In the image above, the first block is the genesis block, and it has no previous hash but its current hash. The next block has a previous hash that is the same as the hash of the first block, and it also consists of the current hash. 
+The next block has a similar data field to that of the genesis block, except the previous hash won't be empty but rather, it takes the current hash of the previous block and assign the value to the previous hash variable in the current block.
 
-The two blocks are chained based on the hashes, and when the data in the first block changes, the hash of the first block changes but not in the second block, which results in the chain between the two blocks breaking.
+The current and previous blocks are linked based on the current hash and the previous hash field in the block. Note that if the previous block current hash changes, the current block previous hash data field will not change and this will result in an error in the blockchain.
 
-The blockchain will notify of the change in the block's data due to the hash changing. This feature ensures that the data in the ledger doesn’t change.
+The hashes ensure the concept of immutability in a block data to hold firm.
 
 ### Distributed P2P Network
 
@@ -89,9 +90,13 @@ When a block is mined in a blockchain, copies are made available across all inte
 
 In a distributed P2P network, once a new block is added to the blockchain, the block is added to all computers across the network but not simultaneously. As a result, some computers on the network will receive a block update faster than others, resulting in a problem, but we will get to this under consensus protocol.
 
-The realm of Distributed P2P ensures that not one single central party have the blockchain but rather thousands of systems in the network, and this protects against any form of attack, such that if a block is corrupted, the network can look across the distributed P2P and copy the last active and correct blockchain from the network to replace the invalid blockchain on the network.
+The immutable ledger and the distributed P2P network is a vital component of the blockchain. When a block is mined successfully, it is added to the nodes on the network.
 
-I find the function of the distributed P2P compelling and astonishing.
+The concept of immutability holds firm due to the existence of distributed P2P. Whenever a block is altered, and the data within the block changes, the hash changes and the link between the current block and previous block changes. 
+
+A corruption of the blockchain could occur on just one node or multiple on the network. 
+
+However, on a distributed network, each node has a copy of the blockchain. Therefore, if a node is corrupt, the network will scan through the other nodes in the distributed P2P system to find a node with the correct state of the blockchain, and copies the data to replace the corrupt node rendering the blockchain immutable.
 
 ### Hash Cryptography
 
