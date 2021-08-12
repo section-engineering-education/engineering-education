@@ -5,6 +5,7 @@ published: true
 url: /difference-between-kotlin-and-java/
 title: Differences Between Kotlin and Java
 description: This article takes the reader through the differences between Java and Kotlin. It will look into the areas of specialization that make these two languages different.
+author: nehemiah-maina
 date: 2021-08-11T00:00:00-05:45
 topics: [Languages]
 excerpt_separator: <!--more-->
