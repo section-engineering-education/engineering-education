@@ -1,10 +1,21 @@
-Title: Sending Notifications with Spring Boot, Angular, and Firebase Cloud Messaging
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/fcm-with-spring-and-angular/
+title: Sending Notifications with Spring Boot, Angular, and Firebase Cloud Messaging
+description: A starting guide on sending notifications to an Angular application. To do this, we will be using a Spring Boot backend and Firebase Cloud Messaging.
+author: john-amiscaray
+date: 2021-08-12T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Description: A starting guide on sending notifications to an Angular application. To do this, we will be using a Spring Boot backend and Firebase Cloud Messaging.
-
-### Introduction
+  - url: /engineering-education/fcm-with-spring-and-angular/hero.jpg
+    alt: Spring Angular FCM example image
+---
 Notifications are a great way to increase user engagement. By keeping the users notified of events in your app that interest them, you can keep them coming back to you.
-
+<!--more-->
 Many apps even rely on notifications as a core feature. For example, there are some reminder apps that help you remember important events. What would they be without being able to notify you while inactive? Either way, sending notifications is an important skill to learn as a developer.
 
 In this guide, we will be learning how to send notifications to an Angular application. To make this possible, we will be using a Spring Boot backend with the help of **Firebase Cloud Messaging**.
