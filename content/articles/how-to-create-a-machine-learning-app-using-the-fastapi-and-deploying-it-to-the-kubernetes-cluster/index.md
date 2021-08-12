@@ -91,7 +91,7 @@ Naive-Bayes classification technique is based on Bayes' Theorem, Naive Bayes mod
 
 Naïve Bayes classifiers are highly scalable algorithms that requires a number of features when building a classification model.
 This an important concept that a user needs to grasp because this is the building block for our model.
-In our case we specifically use `MultinomialNB` from the Naive Bayes algorithm since its suitable for classification with discrete features which is the case for our model.
+In our case we specifically use `MultinomialNB` method from the Naive Bayes algorithm since its suitable for classification with discrete features which is the case for our model.
 For further reading about the Naive Bayes algorithm and how it's useful in classification you can use this amazing article.
 
 [Understanding Naive Bayes Classifier](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
@@ -156,7 +156,7 @@ df.head
 ```
 
 The output is shown:
-This shows that our datasst has two columns: `names` and `nationality` column.
+This shows that our dataset has two columns: `names` and `nationality` column.
 
 ```bash
 Unnamed: 0  names nationality
@@ -171,7 +171,7 @@ Unnamed: 0  names nationality
 df.columns
 ```
 
-Output is shown.
+Output will show the available columns in our dataset.
 
 ```bash
 Index(['Unnamed: 0', 'names', 'nationality'], dtype='object')
@@ -267,8 +267,8 @@ Name: names, dtype: int64
 ### Visualizing our data using the Matplotlib library
 
 [Matplotlib](https://matplotlib.org/) is a Python library used for plotting hence easy visualization of our data in the form of a graph.
-In this tutorial we will be using [Google Colab](https://research.google.com/) as our notebook since it's very fast in machine learning.
-Run the below code snippet on [Google Colab](https://research.google.com/) so you can import Matplotlib.
+In this tutorial we will be using [Google Colab](https://research.google.com/) as our notebook since it's fast in machine learning.
+Run the below code snippet on [Google Colab](https://research.google.com/) so that you can import Matplotlib.
 
 ```python
 import matplotlib.pyplot as plt
@@ -326,6 +326,7 @@ x_train,x_test,y_train,y_test = train_test_split(X,ylabels,test_size=0.30)
 We build our model using the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier).
 Naive Bayes is a simple classification algorithm to train and fit our model.
 The reasons for choosing [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) over the other algorithms has been stated earlier.
+We also fit our model to our dataset using the `fit()` method.
 
 ```python
 nb = MultinomialNB()
@@ -346,7 +347,7 @@ Our accuracy score is as shown:
 0.85036482694119869
 ```
 
-The final percentage accuracy for our model is `0.85036482694119869`.
+The final percentage accuracy for our model is `0.85036482694119869`. This is about 85.04% accuracy.
 
 ### Making predictions
 
@@ -452,9 +453,9 @@ This article can give you a deeper understanding about `joblib`.
 import joblib from sklearn.externals
 ```
 
-### Unplickling our naive Bayes classifier file
+### Unplickling our Naive Bayes classifier file
 
-To use our saved model we need to convert it back to the original object. TThis allows us to use our model in the original form we had created.
+To use our saved model we need to convert it back to the original object. This allows us to use our model in the original form we had created. We use `joblib` for unpickling.
 This article can give you a more detailed guidance about unpliking a model.
 
 - [A Beginner's guide to Pickling and Unpickling](https://www.pythoncentral.io/how-to-pickle-unpickle-tutorial/)
@@ -523,7 +524,7 @@ def predict_nationality(x):
 ### Adding a route to make predictions
 
 We will use this route to get the ethnicity of a person based on the name input by the user.
-In order to get the prediction we need to send `GET` request to our `predict` route. We also need to include the `predict()` method used to query our route and return a prediction
+In order to get the prediction we need to send `GET` request to our `predict` route. We also need to include the `predict()` method used to query our route and return a prediction result.
 
 ```python
 @app.get('/predict/{name}')
@@ -588,7 +589,7 @@ If these steps are followed we will end up with a Docker image. The steps are as
 
 #### Define base image
 
-A base image is the image that is used to create all of your container images.
+A base image is the image that is used to create all of your container images. Here we shall use Python as our base imaage.
 
 ```docker
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
@@ -613,6 +614,8 @@ RUN pip install fastapi uvicorn
 ```
 
 #### Expose the port to serve your application
+
+Docker will run on port `8000`.
 
 ```docker
 EXPOSE 8000
@@ -667,6 +670,7 @@ Successfully tagged fastapi-test-app:new
 #### Listing all of our created images
 
 In order to list all the docker images we had created earlier you can use the following command.
+Our latest image is `fastapi-test-app`. This is the image we have just created with an id of `2de6fstf5uv09`.
 
 ```docker
 docker image ls
