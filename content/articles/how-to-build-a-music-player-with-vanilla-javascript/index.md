@@ -209,7 +209,7 @@ Here’s what the music player looks like at this point:
 ![music-player](/engineering-education/how-to-build-a-music-player-with-vanilla-javascript/music-player.jpg)
 
 ### JavaScript
-In your javascript file, first thing we need to do is to bring in the different elements we need  into the DOM using the code below:
+In your javascript file, the first thing we need to do is to bring in the different elements we need  into the DOM using the code below:
 ```javascript
 const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
