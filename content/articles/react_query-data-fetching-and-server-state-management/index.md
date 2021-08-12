@@ -1,3 +1,4 @@
+
 [React](https://reactjs.org/) is a powerful client-side JavaScript library. One of the complicated aspects to handle is state management. This pattern gets even more convoluted when dealing with server state. Server state is a bit different as it is asynchronous and persisted remotely. This means that we have to think about updating, caching, or re-fetching data to efficiently manage the state in our React applications. [React Query](https://react-query.tanstack.com/) is a pre-configured library that aims to solve this complexities. Using React Query, we can fetch, cache, and update data in React-based applications in a declarative and simple manner without touching any global state.
 
 ### Goal
@@ -11,7 +12,7 @@ Nowadays, almost every web app needs a remote data. Unfortunately, for developer
 
 - How will this tradeoffs impact users on a slow internet?
 
-When dealing with asynchronous data that needs frequent update, caching, and synchronization with the server, there is no better library than React-Query. In this tutorial, we will go through how React-Query library can improve user experience in our react applications. To demonstrate these concepts, we will use the [JSON Placeholder](https://jsonplaceholder.typicode.com/) as the thrid party REST API.
+When dealing with asynchronous data that needs frequent update, caching, and synchronization with the server, there is no better library than React-Query. In this tutorial, we will go through how React-Query library can improve user experience in our react applications. To demonstrate these concepts, we will use the [JSON Placeholder](https://jsonplaceholder.typicode.com/) as the third party REST API.
 
 ### Prerequisites
 - For this tutorial, intermediate React kills such as React Hooks and functional components is essential.
@@ -20,7 +21,7 @@ When dealing with asynchronous data that needs frequent update, caching, and syn
   
 - Make sure to have [Node.js](https://nodejs.org/en/) runtime installed on your machine.
 
-### The React Query benefits in React applications
+###  Benefits of using React Query in React applications
 Some of the features that React Query provides include:
 
 - Using Window focus refetching mechanism to refetch data depending on application tab activity.
@@ -31,10 +32,12 @@ Some of the features that React Query provides include:
   
 - Handling complex application caching so that the request operation are optimized.
 
-### Installation and Setup
+### Installation and setup
 First things first, let's setup a basic React application. Use the command below to create a React application in the `react-query-demo` directory:
 
-`npx create-react-app react-query-demo`
+```bash
+npx create-react-app react-query-demo
+```
 
 This will create the boilerplate for React application. Next, we need to add `axios` for making http requests and `react-query`. Run the command:
 
@@ -141,7 +144,7 @@ Let's briefly dissect the above code:
 - Before the return statement of the component, we execute a basic logic to check if the application is in loading state or if an error occured.
 - Inside the JSX part, we return the posts by mapping through the posts array.
 
->>> For an awesome developer experience, react-query includes the in built react-query-devtools, so that we can be able to view the state and the cache. To enable in your application, ` import { ReactQueryDevtools } from 'react-query/devtools'`. 
+> For an awesome developer experience, react-query includes the in built react-query-devtools, so that we can be able to view the state and the cache. To enable in your application, ` import { ReactQueryDevtools } from 'react-query/devtools'`. 
 [Check more](https://react-query.tanstack.com/devtools).
 
 
@@ -200,7 +203,13 @@ export default function Post(){
 }
 ```
 To briefly explain the above code:
+- `createPost` is a function that makes HTTP POST request using `axios` library.
 
+- The `useMutation()` hook returns `isLoading`, `isError`, `error`, and `mutate` function that will be used to wrap the values when making requests. It takes the `createPost` as an argument along with an option `{retry:3}` object. This comes handy when refetching queries after mutations and ensuring optimistic updates.
+
+- `useState()` hook is used to create and update the `title`, and description state in our input elements.
+
+- Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly.
 
 ### Conclusion
 
