@@ -1,6 +1,6 @@
 ### Introduction
 
-With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker to delete, it will not delete these unneeded items like containers, images, volumes, and networks. Some of the most effective techniques to manage Docker Containers directly from the Command Line Interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands that will make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
+With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker to delete, it will not delete these unneeded items like containers, images, volumes, and networks. Some of the most effective techniques to manage Docker Containers directly from the Command Line Interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands. These docker commands make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
 
 ### Table of contents
 
@@ -13,7 +13,7 @@ With Docker, you can build, test, and deploy applications in the form of portabl
 
 ### Using interactive shell to run a docker container
 
-In most circumstances, an `interactive shell` reads and writes to the user's terminal. Interactive behavior is enabled when the bash command is used without any non-option arguments, unless the option is a text to read from or the shell is started to read from standard input, in which case positional parameters can be provided.
+In most circumstances, an `interactive shell` reads and writes to the user's terminal. Interactive behavior is enabled when the bash command is used without any non-option arguments, unless the option is a text to read from or the shell is started to read from standard input. In this case positional parameters can be provided.
 
 Assume you have used the following command to get an Ubuntu image from Docker Hub:
 
@@ -21,7 +21,7 @@ Assume you have used the following command to get an Ubuntu image from Docker Hu
 sudo docker pull ubuntu
 ```
 
-Now you want to use an interactive shell to execute the Ubuntu container. After downloading a Docker Ubuntu image from the official `Docker registry`, you will use bash on the Ubuntu OS to edit or install packages. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
+Now you want to use an interactive shell to execute the Ubuntu container. After downloading a Docker Ubuntu image from the official `Docker registry` [click here](https://hub.docker.com/_/ubuntu/), you will use bash on the Ubuntu OS to edit or install packages. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
 
 To do this, use the following command:
 
@@ -52,6 +52,8 @@ sudo docker container ls
 sudo docker stop my-container-01
 sudo docker rm -v my-container-01
 ```
+The first command shows a list of all Docker containers that are currently running. After viewing the names of all the docker containers, stop a specific container using the second command.
+`sudo docker stop my-container-01`. write the name of the container after the word stop.
 
 ### Removing docker containers and images
 
@@ -63,13 +65,14 @@ sudo docker stop <name-of-the-container>
 sudo docker rm <name-of-the-container> 
 ```
 
-The first command lists all of your system's containers. The container's state may be found in the status column. Stopping the container before removing it is required if it has not been exited. You must know the container ID of the container you want to delete before you delete them.
+The first command lists all of your system's containers. The container's state may be found in the status column. Stopping the container before removing it is required if it has not been exited. You must know the container ID of the container you want to delete before you delete them. The abbreviation `rm` represents remove.
 
 Remove all the containers linked with a docker image before removing it using the command below:
 
 ```bash
 sudo docker rmi <The-ID-of-the-image>
 ```
+From the above command, the `sudo` permits users to run programs with another user's security rights, `docker` shows that we are executing the command to a docker. `rmi` means remove the docker objects specified by the name given.
 
 ### Using aliases
 
@@ -92,6 +95,7 @@ The Docker inspect command may be used to acquire information about a specific d
 sudo docker container ls 
 sudo docker container <name-of-the-container>
 ```
+The command `sudo docker container` shows a list of all Docker containers that are currently running. To view even the docker containers that are not running add `-a` after the `ls` **sudo docker container ls -a**. The `ls` symbol in a terminal displays all directories of the specified item.  The second command is used to open a specific docker container.
 
 ### Conclusion
 
