@@ -259,7 +259,9 @@ function loadSong(song) {
 ```
 Like I said earlier, your songs must be “.mp3” files and your pictures “.jpg” files if you want to use this exact script. Your song names must match your image names as well.  At this point, if you change your song index, the song image will change with the corresponding index you put there.
 
-The next functionality you need to implement is to make the play button play your songs. It should also change to the pause button while the song is playing. To do that, we need to create an event listener at the bottom of our code to listen for a click event on the play and pause buttons. Here is the code below:
+The next functionality you need to implement is to make the play button play your songs. It should also change to the pause button while the song is playing. To do that, we need to create an event listener at the bottom of our code to listen for a click event on the play and pause buttons. 
+
+Here is the code below:
 ```javascript
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
