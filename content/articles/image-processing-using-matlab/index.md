@@ -17,7 +17,7 @@ i = imread('name of the image;') %This will assign the image to i
 imshow(i);
 ```
 After running the above command the intended image will be displayed on the screen.
-![The imported image](import1.png) 
+![The imported image](/engineering-education/image-processing-using-matlab/import1.png) 
 ### Enhancement of an image using Matlab
 This is the process of improving digital images to get more suitable results for visual display or further processing, these processes include
 filtering, deblurring, and removal of noise. Noise is the random changes in certain image qualities like the brightness of color information in
@@ -30,7 +30,7 @@ image more visible. To carry out this, we first import the image using the code 
 i =  imread('nyali.jpg');       %this code imports the image
 imshow(i)
 ```
-![imported original image](import1.png)
+![imported original image](/engineering-education/image-processing-using-matlab/import1.png)
 Create a blurred image from the original image `i`, this image will be used as a simulator for the deblurring processes. Begin by making a point
 spread function(PSF) by using fspecial function with specified linear motion (for my case ill use 50 pixels at an angle of 10 degrees) then
 convolve the PSF with the image by using `imfilter` function.
@@ -40,13 +40,13 @@ Idouble = im2double(i);
 blurred = imfilter(Idouble,PSF,'conv','circular');
 imshow(blurred)
 ```
-![Blurr version of the original image](blurr.png)
+![Blurr version of the original image](/engineering-education/image-processing-using-matlab/blurr.png)
 Use command `deconvwnr` to restore the blurred image.
 ```matlab
 wnr1 = deconvwnr(blurred,PSF);
 imshow(wnr1)
 ```
-![Deblurred image](capturestep3.png)
+![Deblurred image](/engineering-education/image-processing-using-matlab/capturestep3.png)
 ### Editing color concentration of an image using Matlab
 color editing makes an image to be more attractive or to stress on certain information about an image for example green can stress more about
 vegetation while blue emphasizes on water bodies. This process can either make an image redish, greenish of bluish. `imhist` function gives a
@@ -62,22 +62,22 @@ temp = i;
 ```matlab
 imhist(Red);
 ```
-![Histogram of red](capturecolor1.png) 
+![Histogram of red](/engineering-education/image-processing-using-matlab/capturecolor1.png) 
 ```matlab
 imhist(Green);
 ```
-![Histogram of green](capturestepgreen.png)
+![Histogram of green](/engineering-education/image-processing-using-matlab/capturestepgreen.png)
 ```matlab
 imhist(Blue);
 ```
-![Histogram of blue](captureblue.png)
+![Histogram of blue](/engineering-education/image-processing-using-matlab/captureblue.png)
 ```matlab
 figure;
 temp = i;
 temp(:,:,1) = temp(:,:,1) + 100;
 imshow(temp);
 ```
-![image filtered red](capturered.png)
+![image filtered red](/engineering-education/image-processing-using-matlab/capturered.png)
 ```
 figure;
 imshow(i)
@@ -85,13 +85,13 @@ temp = i;
 temp(:,:,2) = temp(:,:,2) + 100;
 imshow(temp);
 ```
-![image filtered green](capturefinal.png)
+![image filtered green](/engineering-education/image-processing-using-matlab/capturefinal.png)
 ```matlab
 temp = i;
 temp(:,:,3) = temp(:,:,3) + 100;
 imshow(temp);
 ```
-![image filtered blue](captureb.png)
+![image filtered blue](/engineering-education/image-processing-using-matlab/captureb.png)
 
 ### Counting the number of objects in an image
 This process involves; removal of objects whose numerical value is not required, making the image have a uniform background by removing its
@@ -103,39 +103,39 @@ are used in the process.
 i = imread('imageName'); %import the image
 imshow(i)
 ```
-![Imported image](ob1.png)
+![Imported image](/engineering-education/image-processing-using-matlab/ob1.png)
 ```matlab
 se = strel('disk',150);
 background = imopen(i,se);  %Performs morphological openning
 imshow(background)
 ```
-![Morphological operation](ob2.png)
+![Morphological operation](/engineering-education/image-processing-using-matlab/ob2.png)
 Remove the background approximation image from the original image. This will form a resulting image with a uniform background but a bit dark.
 ```matlab
 i2 = i - background; 
 imshow(i2)
 ```
-![Image with uniform background](ob3.png)
+![Image with uniform background](/engineering-education/image-processing-using-matlab/ob3.png)
 Change the image format from RGB to gray then Increase the contrast of the image `i2` using the command `imadjust`. The newly processed
 image will be assigned to `i3`.
 ```matlab
 i3 = rgb2gray(i2);
 imshowi3
 ```
-![Grayscale image](ob4.png)
+![Grayscale image](/engineering-education/image-processing-using-matlab/ob4.png)
 Use `imbinarize` command to creat a binary version of the grayscale image `i3`.
 ```matlab
 bw = imbinarize(i3);
 bw = bwareaopen(bw,50);
 imshow(bw)
 ```
-![Binarized image](obb5.png)
+![Binarized image](/engineering-education/image-processing-using-matlab/obb5.png)
 The binary version of the image enables the performance of object analysis. The accuracy of the results depends on object size, parameters 
 connectivity, and the spacing between the objects. Note that the green-colored objects are not present in the binary version of the image.
 ```matlab
 cc = bwconncomp(bw) % shows image information
 ```
-![Results](obb6.png)
+![Results](/engineering-education/image-processing-using-matlab/obb6.png)
 ### Finding an area in an image of a specific color
 Areas of objects with different colors in an image can be determined using Matlab through color thresholding. Thresholding means assigning
 pixels to a certain class or classes. Color thresholding can also enable us to determine areas of certain features in a map for example finding
@@ -145,41 +145,41 @@ has a resolution of 480 * 494 pixels and a bit depth of 32 as per satellite.
 i = imread('l.victoria.png'); %import the image
 imshow(i)
 ```
-![Imported image](st6.png)
+![Imported image](/engineering-education/image-processing-using-matlab/st6.png)
 ```matlab
 i2 = rgb2gray(i); % make a grayscale image of i
 imshow(i2)
 ```
-![Gray scale image](st7.png)
+![Gray scale image](/engineering-education/image-processing-using-matlab/st7.png)
 ```matlab
 imhist(i2) %histogram for pixel distributions
 ```
-![Histogram of grayscale image](st8.png)
+![Histogram of grayscale image](/engineering-education/image-processing-using-matlab/st8.png)
 From the histogram, the X-axis represents the intensity value while the Y-axis represents pixel count. Open APPS in Matlab window toolbar,
 scroll down to image processing and computer vision then click on the color threshold. on the new window load an image from the workspace and
 then choose a color space, click HSV. 
-![Color space window](st1.png)
-![HSV window](st2.png)
+![Color space window](/engineering-education/image-processing-using-matlab/st1.png)
+![HSV window](/engineering-education/image-processing-using-matlab/st2.png)
 Adjust the knob labeled H to remove the background colors, adjust S and V to smoothen the boundary of the object to be analyzed.
-![Image with separated background](st11.png)
+![Image with separated background](/engineering-education/image-processing-using-matlab/st11.png)
 Create a binary version of the resultant image by clicking on the show binary button. 
-![Binary version of the image](st9.png)
+![Binary version of the image](/engineering-education/image-processing-using-matlab/st9.png)
 Import the binary version to the workspace for further analysis, it will be labeled as `BW`. The shape of the binary version resembles the
 shape of the lake, we can visually compare the two images using function `imshowpair`.
 ```matlab
 imshowpair(i,BW,'montage')
 ```
-![Comparision of `i` and `BW`](st55.png)
+![Comparision of `i` and `BW`](/engineering-education/image-processing-using-matlab/st55.png)
 To find the image statistics of the binary version of the image, use `regionprops` function.
 ```matlab
 stats = regionprops('table',BW,'all')
 ```
-![Props data table](st4.png)
+![Props data table](/engineering-education/image-processing-using-matlab/st4.png)
 Area in pixels is the sum of the area props in the table.
 ```matlab
 areainpixels = sum(props.Area)
 ```
-![Area results](st5.png)
+![Area results](/engineering-education/image-processing-using-matlab/st5.png)
 The area can be converted into square kilometers using a scale that may be provided on the map. The scale has a predetermined value indicated
 usually in miters, miles, or kilometers and it is in form of a straight line. Use `imtool(i)` function to measure the distance between the
 beginning and the end of the linear scale; the measured value will be in pixels and it represents the predetermined dimension of the scale.
