@@ -23,7 +23,7 @@ Traditionally, you might have thought that using a classification architecture w
 This article introduces and expounds a little further on this model and shows how you can develop a face recognition system using FaceNet.
 
 ### Outline
-1. [Problem wih traditional face recognition systems](#problem-with-traditional-recognition-systems)
+1. [Problem with traditional face recognition systems](#problem-with-traditional-face-recognition-systems)
 2. [Understanding the FaceNet face recognition system model](#understanding-the-facenet-face-recognition-system-model)
 3. [Wrapping up](#wrapping-up)
 
