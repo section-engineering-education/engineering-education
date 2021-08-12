@@ -1,5 +1,5 @@
 ---
-title: Moses M
+title: Moses Maina
 type: authors
 ---
 
