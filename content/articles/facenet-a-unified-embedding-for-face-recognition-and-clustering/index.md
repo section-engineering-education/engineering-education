@@ -20,7 +20,7 @@ An embedding is a dense vector representation of any object. A good embedding is
 
 Traditionally, you might have thought that using a classification architecture would be better. But in the classification architecture, you have a fixed number of classes. What happens when there is a new person that you want to classify? You will need to rebuild the model. Right? With embedding architectures such as FaceNet, you project people into an embedding space. You can then set a threshold to compute the distance between two people. You can then model it as a classification problem indirectly, or you can model it as a clustering problem. 
 
-This tutorial introduces and expounds a little further on this model and shows how you can develop a face recognition system using FaceNet.
+This article introduces and expounds a little further on this model and shows how you can develop a face recognition system using FaceNet.
 
 ### Outline
 1. [Problem wih traditional face recognition systems](#problem-with-traditional-recognition-systems)
@@ -61,9 +61,7 @@ In training, this model employs this technique known as *Triplet*. Essentially, 
 *[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
 
 ### Wrapping up
-This article has taken you through the problem with the traditional face recognition system and introduced the FaceNet model which solves that problem. This model can be used in schools to automatically register attendance by recognizing the faces of students. I hope you now have a deeper understanding of how this model works. In my follow-up tutorial, I will take you on a journey of implementing the FaceNet model using Keras on a well-known public dataset. 
-
-[DeepFace](https://research.fb.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/) is also a face recognition system by Facebook that also uses a similar architecture. You can take a look at it and compare it with the FaceNet model. 
+This article has taken you through the problem with the traditional face recognition system and introduced the FaceNet model which solves that problem. This model can be used in schools to automatically register attendance by recognizing the faces of students. I hope you now have a deeper understanding of how this model works. In a follow-up tutorial, I will take you on a journey of implementing the FaceNet model using Keras on a well-known public dataset. [DeepFace](https://research.fb.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/) is also a face recognition system by Facebook that also uses a similar architecture. You can take a look at it and compare it with the FaceNet model. 
 
 ### Further reading
 1. [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832)
