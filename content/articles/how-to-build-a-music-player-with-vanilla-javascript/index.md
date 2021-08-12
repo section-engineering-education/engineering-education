@@ -318,8 +318,14 @@ nextBtn.addEventListener('click', nextSong);
 
 ```
 Now, you have to create the `prevSong` and the `nextSong` functions.
+
 ### The prevSong Function
-When you click the previous button, you would want the song to go back by one song. You can do that by just decrementing the song index. You would also want to check the value of the song index, so it does not decrease lower than 0. If it does that, you will want it to loop back to the initial `songs.length -1`. You can implement these functions using the code below:
+When you click the previous button, you would want the song to go back by one song. You can do that by just decrementing the song index. 
+
+You would also want to check the value of the song index, so it does not decrease lower than 0. If it does that, you will want it to loop back to the initial `songs.length -1`. 
+
+You can implement these functions using the code below:
+
 ```javascript
 function prevSong() {
   songIndex--;
@@ -333,7 +339,6 @@ function prevSong() {
   playSong();
 }
 
-```
 ### The nextSong Function
 This time, when you click the next button, you would want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. Here is the code below:
 ```javascript
