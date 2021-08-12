@@ -126,8 +126,8 @@ _**Similarities**:_
 - Are compatible with each other since Quarkus  is an implementation of Microprofile which is well-built based on the given specifications.
 
 _**Differences**:_
-- Microprofile is used to do microservices specification in the Java Enterprise environment.
-- Quarkus on the other hand is an implementation of Microprofile which is well-built based on the given specifications.
+- These two can't be really said to be differing from each other. Microprofile is used to do microservices specification in the Java Enterprise environment.
+Quarkus on the other hand is an **implementation** of Microprofile which is well-built based on the given specifications.
 
 If you have worked with Microprofile, Quarkus is going to be simpler for you to work with.
 
