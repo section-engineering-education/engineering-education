@@ -30,13 +30,10 @@ To understand the contents of this article, you need to be familiar with:
 
 ### Outline
 
-1. [Introducing TensorFlow Federated (TFF)](#introducing-federated-learning-tff)
-    -[TensorFlow federated layers](#tensorflow-federated-layers)
-    -[Ways to get involved](#ways-to-get-involved)
+1. [Introducing TensorFlow Federated (TFF)](#introducing-tensorflow-federated-tff)
 2. [The code behind TensorFlow Federated (TFF)](the-code-behind-tensorflow-federated-TFF)
-3. [Implementing Federated Learning for Image classification using Tensorflow Federated](#implementing-federated-learning-for-image-classification-using-tensorflow-federated)
-4. [Wrapping up](#wrapping-up)
-5. [Additional resources](#additional-resources)
+3. [Wrapping up](#wrapping-up)
+4. [Additional resources](#additional-resources)
 
 ### Introducing TensorFlow Federated (TFF)
 
@@ -72,21 +69,21 @@ The FC API is much more lower-level and sits below the FC API. This API gives yo
 
 There are different ways you can get involved depending on your interest:
 
-1. ML Devs
+1. ML developer
 
-ML devs help in applying Federated Learning APIs to existing TensorFlow models.
+As a machine learning developer, you can apply Federated Learning APIs to existing TensorFlow models.
 
-2. FL researchers
+2. FL researcher
 
-This type of researchers helps to design new federated learning algorithms using the FC API.
+As a federated learning researcher, you can help to design new federated learning algorithms using the FC API.
 
-3. Systems researchers
+3. Systems researcher
 
-These types of researchers help in optimizing generated computation structures.
+As a systems researcher, you can help in optimizing generated computation structures.
 
-4. System Devs
+4. System developer
 
-These developers help integrate TFF with new types of development environments.
+As a system developers, you can help integrate TFF with new types of development environments.
 
 ### The code behind TensorFlow Federated (TFF)
 
@@ -110,7 +107,9 @@ First, let's briefly take a look at how the Keras model looks like:
     return model
 ```
 
-If you're familiar with TensorFlow, the above Keras code already looks familiar to you. We will import it into our main function `model_fn` using the `create_compiled_keras_model()` method.
+If you're familiar with TensorFlow, the above Keras code already looks familiar to you. For those not familiar with the keras model, the model uses a `Sequential()` API as it allows us to create models layer-by-layer. This is ideal for solving simple neural network problems like is the case in our tutorial. However, it isn't ideal for use in complex networks that share layers or have many inputs/outputs such as the residual and siamese networks. In that case, `functional` API's are used. The functional API has much more flexibility as one can easily define models where layers connect to more than just the previous and next layers. Refer to this [video](https://www.youtube.com/watch?v=EvGS3VAsG4Y) to understand these differences in depth.
+
+We will import it into our main function `model_fn` using the `create_compiled_keras_model()` method.
 
 ```python
     def model_fn():
