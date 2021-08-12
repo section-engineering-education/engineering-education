@@ -1,9 +1,25 @@
-### Introduction
-In this tutorial, I'll show you how to create and populate an Angular material table with some data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular12-material-table/
+title: Displaying data using Angular Material Tables
+description: In this article, we'll be looking at how to use Angular Material Tables to display data. We will be using the Angular Material library to create a simple application that displays student data.
+author: benard-ogure
+date: 2021-08-12T00:00:00-08:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/angular12-material-table/hero.jpg
+   alt: Angular Material Table Image
+---
+
+In this tutorial, I'll show you how to create and populate an Angular material table with some data.
+<!--more-->
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [ObjectivesAngular 12 Material Table With Pagination, Filtering, Sorting](#objectivesangular-12-material-table-with-pagination-filtering-sorting)
+- [Objectives](#objectives)
 - [Getting started with Angular Material](#getting-started-with-angular-material)
 - [Using Material Table to display data](#using-material-table-to-display-data)
 - [Conclusion](#conclusion)
@@ -15,7 +31,7 @@ To follow along with this tutorial, you are required to have:
 - An Angular project created on your machine.
 
 ### Objectives
-This tutorial will teach you how to display data in Angular Material tables. We'll build a complete project for implementing the Angular Material data table.
+This tutorial will teach you how to display data in Angular Material tables. We'll build a complete project for displaying data on the Angular Material table.
 
 ### Getting started with Angular Material
 In this section, I'll show you how to set up your Angular project to use Angular Material.
@@ -57,7 +73,7 @@ import {MatSortModule} from '@angular/material/sort';
     exports: [
         MatTableModule,
         MatSortModule,
-        MatProgressSpinnerModule  
+        MatProgressSpinnerModule,
         MatInputModule,
         MatPaginatorModule,
        
@@ -90,7 +106,7 @@ export class AppModule { }
 
 We've updated our `app.module.ts` by importing the `AppMaterialModule` module to expose the Material modules we had imported.
 
-### Using the Material table to display data
+### Using Material table to display data
 In this section, I'll show you how to create the Material table to display some students information. The table will comprise basic student details such as `names` and `registrations`.
 
 Let's start by creating the details interface.
@@ -101,7 +117,7 @@ Run the following commands on your project root to create the student interface:
 ng g i student
 ```
 
-This will create an interface in the `app/student.ts` file. Proceed and edit it as follows:
+This will create an interface in the `app/student.ts` file. Proceed and edit it to look as follows:
 
 ```typescript
 export interface Student {
@@ -255,6 +271,7 @@ You will see the following output if you followed the correct steps above:
 Output:
 
 ![first console output](/engineering-education/angular12-material-table/console.png)
+
 ![second console output](/engineering-education/angular12-material-table/expanded-console.png)
 
 Now let's update our `app.component.html` as shown below to display our data.
@@ -322,3 +339,6 @@ I hope this article builds a firm foundation for you to use the Angular Material
 You can find the code in this tutorial on [this Repl](https://replit.com/@benardogure/Angular-Material-Paging). The Repl only includes the project's `src` directory. 
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
