@@ -33,6 +33,7 @@ Some of the features that React Query provides include:
 - Handling complex application caching so that the request operation is optimized.
 
 ### Installation and setup
+To demonstrate these concepts, we will implement a data fetching React Todo application that fetches posts from the [JSON Placeholder](https://jsonplaceholder.typicode.com/) fake REST API.
 First things first, let's set up a basic React application. Use the command below to create a React application in the `react-query-demo` directory:
 
 ```bash
