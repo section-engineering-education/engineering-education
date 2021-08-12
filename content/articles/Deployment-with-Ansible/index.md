@@ -24,3 +24,16 @@ Simplicity in the language, scalability in operations, consistency in the execut
 **Who should use Ansible?**
 
 Ansible has many applications and has a broader customer base. Software developers can use Ansible as a tool for coding since it's written in a user-friendly and straightforward language and easy to understand. Also, System administrators can use Ansible to automate administration tasks, thus streamlining IT operations. Information Technology professionals use Ansible to automate IT processes that would be complex if done by humans, thus eliminating drudgery. Organizations also use Ansible in their day to day operations to cut costs, minimize errors, improve efficiency and increase profits.
+
+**List of references**
+
+Armesto, J. (2015). [Continuous Deployment: Implementation with Ansible and Docker](https://technologyconversations.com/2014/12/29/continuous-deployment-implementation-with-ansible-and-docker/)
+
+Dharmalingam, N.(2019). [Advantages and disadvantages of Ansible](https://www.whizlabs.com/blog/ansible-advantages-and-disadvantages/)
+
+Ghansham, M. (2018). [What is Ansible and advantages of using Ansible?](https://ghanshammahajan.com/what-is-ansible-and-advantages-of-using-ansible/)
+
+Sarav, A.K. (2021). [Find which EC2 instances are using EFS-Using Ansible](https://www.middlewareinventory.com/blog/collect-efs-ec2-ansible/)
+
+
+
