@@ -16,7 +16,7 @@ images:
 ---
 Notifications are a great way to increase user engagement. By keeping the users notified of events in your app that interest them, you can keep them coming back to you.
 <!--more-->
-Many apps even rely on notifications as a core feature. For example, there are some reminder apps that help you remember important events. What would they be without being able to notify you while inactive? Either way, sending notifications is an important skill to learn as a developer.
+Many apps even rely on notifications as a core feature. For example, some reminder apps help you remember important events. What would they be without being able to notify you while inactive? Either way, sending notifications is an important skill to learn as a developer.
 
 In this guide, we will be learning how to send notifications to an Angular application. To make this possible, we will be using a Spring Boot backend with the help of **Firebase Cloud Messaging**.
 
@@ -46,8 +46,8 @@ When the user first opens the application, we request permission to send notific
 
 Whenever our backend wants to send a notification, it will give details about the desired notification to Firebase. From there, the Firebase backend will send the notification to the correct device. 
 
-#### What will happen on the client side?
-On the client-side, we will either show the message within the app or as a notification popup. The former when our application is opened and the latter when our application is closed.
+#### What will happen on the client-side?
+On the client side, we will either show the message within the app or as a notification popup. The former when our application is opened and the latter when our application is closed.
 
 Although you may be asking: **How can we show the notification when our application is inactive?** We would do this with the help of a **service worker**.
 
@@ -56,8 +56,8 @@ A service worker is a special script that runs on a separate thread from your ap
 
 Since a service worker is separate from our app, we can use it to send notifications, even while the app is inactive. Although, when our app is active, we will let our angular project handle the message by displaying it on the page.
 
-#### What will happen on the server side?
-On the server-side, our Spring Boot app will use an SDK from Firebase called the **Admin SDK**. This SDK allows our application to interact with Firebase to send notifications for us.
+#### What will happen on the server-side?
+On the server side, our Spring Boot app will use an SDK from Firebase called the **Admin SDK**. This SDK allows our application to interact with Firebase to send notifications for us.
 
 When we initialize Firebase in the Firebase console, they will give us a special JSON file that we will use to authorize our Spring Boot app to send notifications.
 
@@ -294,7 +294,7 @@ class NotificationController(private val fcm: FCMService) {
 ```
 
 #### Configuring CORS
-The last thing we need to do for this to work, is to configure [CORS](https://youtu.be/4KHiSt0oLJ0). This way, our client will be allowed to send any requests it wants to our backend.
+The last thing we need to do for this to work is to configure [CORS](https://youtu.be/4KHiSt0oLJ0). This way, our client will be allowed to send any requests it wants to our backend.
 
 To do this, add the following bean:
 
@@ -573,7 +573,7 @@ Anyways, with that installed, we call the `initializeApp` method passing the obj
 
 This should handle all the magic of displaying notifications for us!
 
-With that created, try sending a `POST` request to our server to send a notification while the app is inactive.
+With that created, try sending a `POST` request to our server to send notification while the app is inactive.
 
 In case you don’t know, you can do so using a tool like [Postman](https://www.postman.com/).
 
@@ -586,7 +586,7 @@ In this guide, we went through the process of sending notifications in a full-st
 
 In the backend, we set up a REST API to tell Firebase what notifications to send and where. In the front end, we learned how to subscribe to receive notifications even when the app is closed.
 
-To best use this guide, try making your own full-stack project that uses these concepts.
+To best use this guide, try making your full-stack project that uses these concepts.
 
 If you need help or a reference to what we did here, I created a [Github repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote.
 
