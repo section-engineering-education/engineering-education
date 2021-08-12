@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /run-length-encoding-algorithm-in-python/
 title: Run Length Encoding (RLE) Compression Algorithm in Python
-description: This article will be an overview on understanding what compression is, different types of compression, and a brief intro to RLE algorithm and its implementation.
+description: This article will be an overview of understanding what compression is, different types of compression, and a brief intro to RLE algorithm and its implementation.
 author: terrence-aluda
-date: 2021-08-04T00:00:00-23:00
+date: 2021-08-12T00:00:00-06:48
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,21 +16,22 @@ images:
 ---
 Run Length Encoding is a lossless data compression algorithm. It compresses data by reducing repetitive, and consecutive data called **runs**. It does so by storing the number of these runs followed by the data.
 <!--more-->
-In this article, we will learn more about Compression algorithms, dive deep into implementing RLE algorithm, and understand its performance.
+In this article, we will learn more about Compression algorithms, dive deep into implementing RLE algorithm and understand its performance.
 
 ### Table of contents
-1. [Introduction](#introduction)
-2. [Compression](#compression)
-3. [Types of compression algorithms](#types-of-compression-algorithms)
-4. [Prerequisites](#prerequisites)
+1. [Prerequisites](#prerequisites)
+2. [Introduction](#introduction)
+3. [Compression](#compression)
+4. [Types of compression algorithms](#types-of-compression-algorithms)
 5. [Implementation](#implementation)
 6. [Time Complexity](#time-complexity)
 7. [Conclusion](#conclusion)
 8. [Further reading](#further-reading)
 
 ### Prerequisites
+To follow along with this tutorial, the reader should have:
 1. A basic understanding of Python. 
-2. Familiarity with a notebook-based interface like Google Colab(Normal Python files could be used as well).
+2. Familiarity with a notebook-based interface like Google Colab. Normal Python files could be used as well.
 
 ### Introduction
 Before we understand RLE, let's have a look at few examples:
@@ -43,37 +44,35 @@ From these examples, we see that RLE is suitable for compressing large amounts o
 ### Compression
 This is a process where a file size is reduced using algorithms resulting in a file that uses fewer storage bits than the original file.
 
-1. In a situation where one wants to send a picture to his/her friend, compression will be done at the source device, and decompressed at the destination device. This enables the file to be sent faster, and it reduces overhead traffic for transmitting the data.
-2. In social media apps like WhatsApp, we notice that the image recieved is of lower quality and consumes much lesser space. (For a few apps, we can set the quality of media to be downloaded)
+1. In a situation where one wants to send a picture to his/her friend, compression will be done at the source device and decompressed at the destination device. This enables the file to be sent faster, and it reduces overhead traffic for transmitting the data.
+2. In social media apps like WhatsApp, we notice that the image received is of lower quality and consumes much lesser space. For a few apps, we can set the quality of media to be downloaded.
 3. We also notice that compression in video streaming sites, where videos are loaded in low quality during poor internet connectivity. 
 
 ### Types of compression algorithms
 There two main classification types for compression algorithms are:
-1. Lossless
-2. Lossy
 
-#### Lossless algorithm
-Lossless algorithms are used when the information quality is very important. We try to avoid the loss of image quality.
+#### 1. Lossless algorithm
+Lossless algorithms are used when information quality is very important. We try to avoid the loss of image quality.
 
-These processes are reversible, and they've very low compression ratios, since we don't lose any information.
+These processes are reversible, and they've very low compression ratios since we don't lose any information.
 
 Examples include Run Length Encoding (RLE), Huffman coding, [Arithmetic coding](https://en.wikipedia.org/wiki/Arithmetic_coding), [Shannon-Fanno coding](https://www.geeksforgeeks.org/shannon-fano-algorithm-for-data-compression/), etc.
 
-> **Compression ratio** - We get this ratio by dividing the size before compression and size after compression. (`Size before compression/Size after compression`)
+> **Compression ratio** - We get this ratio by dividing the size before compression and size after compression. (`Size before compression/Size after compression`).
 
-You read more about Huffman coding [here](/engineering-education/huffman-coding-python/).
+You can read more about Huffman coding [here](/engineering-education/huffman-coding-python/).
 
-#### Lossy algorithm
-We use lossy algorithms where quality could be compromised. Here, we achieve high compression ratios hence greater size reduction.
+#### 2. Lossy algorithm
+We use lossy algorithms where quality could be compromised. Here, we achieve high compression ratios, hence greater size reduction.
 
-The lossy compression process is non-reversible unlike the one for lossless compression algorithms.
+The lossy compression process is non-reversible, unlike the one for lossless compression algorithms.
 
 Examples include [Lossy predictive coding](https://www.spiedigitallibrary.org/ebooks/TT/Digital-Image-Compression-Techniques/Chapter9/Lossy-Predictive-Coding/10.1117/3.34917.ch9),  [Block transform coding](https://web.ece.ucsb.edu/~manj/ece178-Fall2009/e178-L14.ppt.pdf), and [Vector quantization](https://www.spiedigitallibrary.org/ebooks/PM/Optical-Satellite-Data-Compression-and-Implementation/4/Vector-Quantization-Data-Compression/10.1117/3.1002297.ch4).
 
 ### Implementation
 Let's jump into the Python code.
 
-Create a new notebook and add the following code in the first cell.
+Create a new notebook and add the following code to the first cell.
 
 ```python
 def encode_message(message):
@@ -98,11 +97,10 @@ def encode_message(message):
 
 The above snippet contains a function `encode_message()` with a parameter `message` (string) to be encoded.
 
-The variable, `encoded_string` is usedfor storing the encoded string. The `while` loop is initialized with the count of `1` (one-indexed), and looped through the whole message.
-
+The variable, `encoded_string` is used for storing the encoded string. The `while` loop is initialized with the count of `1` (one-indexed), and looped through the whole message
 The innermost `while` loop checks if the character at the current index is the same as the character at the next index.
 
-If the characters are the same, the count is incremented to `1`. If not, the count and the character are concatenated to the `encoded_string` variable, and returned.
+If the characters are the same, the count is incremented to `1`. If not, the count and the character are concatenated to the `encoded_string` variable and returned.
 
 Next, we have to write a function for decoding the encoded messages. Create a new cell and paste this code:
 
@@ -130,7 +128,7 @@ The `while` loop is used for separating out the encoded message into respective 
 
 It contains a `for` loop for displaying the character multiple times specified by the count (`run_count`) to form a string. The string is then concatenated with the `decoded_message` variable. This continues until the decoded string is displayed in full.
 
-Finally, we write the method for displaying what we have written. Again, open a new cell and paste this.
+Finally, we write the method for displaying what we have written. Again, open a new cell and add the following:
 
 ```python
 def display():
@@ -169,13 +167,13 @@ RLE performs poorly on large amounts of data. This is clearly explained in [this
 You can learn about calculating time and space complexities [here](/engineering-education/big-o-notation/).
 
 ### Conclusion
-To conclude, we have learned what compression is, the types of compression, Run Length Encoding algorithm, and its implementation in Python.
+To conclude, we have learned what compression is, the types of compression, the Run Length Encoding algorithm, and its implementation in Python.
 
-Happy coding.
+Happy coding!
 
 ### Further reading
-- [Transform coding](https://en.wikipedia.org/wiki/Transform_coding).
-- [Predictive coding](https://web.stanford.edu/class/ee398a/handouts/lectures/06-Prediction.pdf).
+- [Transform coding](https://en.wikipedia.org/wiki/Transform_coding)
+- [Predictive coding](https://web.stanford.edu/class/ee398a/handouts/lectures/06-Prediction.pdf)
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
