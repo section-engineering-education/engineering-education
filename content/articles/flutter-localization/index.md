@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-localization/
+title: Getting Started with Flutter Localization
+description: This article will explain a step by step process on how to support different languages in a Flutter application
+author: jerim-kaura
+date: 2021-08-12T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/flutter-localization/hero.png
+   alt: Getting started with Flutter Localization
+---
 
 ### Introduction
 Most of the time, we develop applications that target users across the world. However, we all know that different people use different languages, and to make the application as user-friendly as possible, every user needs to access the application in their language. The need to access an application in the various languages is where localization comes in. 
