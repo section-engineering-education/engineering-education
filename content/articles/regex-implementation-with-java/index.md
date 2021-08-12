@@ -1,6 +1,6 @@
 ### HOW TO IMPLEMENT REGULAR EXPRESSIONS (REGEX) WITH JAVA
 
-The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. Regular Expression, popularly referred to as regex, is a handy tool designed to validate string operations very effectively.
+The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. Regular expression, popularly referred to as regex, is a handy tool designed to validate string operations effectively.
 
 The application of regex can be pretty daunting, especially to beginners. This is mainly due to the unusual or strange combinations of the characters applied in the expressions, making the syntax challenging to interpret.
 
@@ -23,23 +23,23 @@ In most programming languages, strings are immutable, and the operations mention
 
 #### WHY REGULAR EXPRESSION?
 
-Imagine you want to validate that a date input matches the format “MM/DD/YYYY”, while ensuring that the values provided for the month, day and year are valid for their respective fields, that is, the values are digits, and the month is between 1 and 12, the value of the day is valid with respect to the month and so on.
+Imagine you want to validate that a date input matches the format “MM/DD/YYYY” while ensuring that the values provided for the month, day and year are valid for their respective fields, that is, the values are digits, and the month is between 1 and 12, the value of the day is valid with respect to the month and so on.
 
 Also, imagine you want to ensure that the value provided in an email address field is in a valid email address format while recognizing that an email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of IF statements to ascertain the validity of the input. This is not an effective solution as it would result in your code becoming more complex and could reduce performance.
 
 However, with an accurate combination of the regex characters, you can achieve this with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages. One can use one regular expression to validate a variety of inputs.
 
-Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. Validations are faster when compared to applying IF and ELSE statements.
+Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. In addition, validations are faster when compared to applying IF and ELSE statements.
 
-In the following sections, we shall look at how these expressions can be applied using the Java programming language.
+We shall look at how these expressions can be applied using the Java programming language in the following sections.
 
 ### INTERPRETATION OF REGULAR EXPRESSIONS
 
-As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. This implies that each character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters are matched to themselves. In other words, the character ‘a’ if composed in a regex pattern would be matched to the character ‘a’ in the input string. 
+As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. This implies that each character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters are matched to themselves. In other words, if composed in a regex pattern, the character 'a' would be matched to the character ‘a’ in the input string. 
 
 ![matching string variable with regex](/regex-implementation-with-java/4xvou6_ibborrpudrcn_.png)
 
-In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable “word” to ascertain that its value “hello” matches the given regex pattern, “hello”. The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable is an exact match with the regex. This can also be performed on a string literal, and the output would be the same.
+In the code above, the predicate method `.matches("hello")` which takes a string argument representing a regex pattern, is invoked on the string variable "word" to ascertain that its value "hello" matches the given regex pattern, "hello". The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable match the regex. This can also be performed on a string literal, and the output would be the same.
 
 ![matching string literal with regex](/regex-implementation-with-java/w3uyuy2tsxkh9ovc9qdg.png)
 
