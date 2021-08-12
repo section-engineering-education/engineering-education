@@ -40,13 +40,13 @@ To understand the contents of this article, you need to be familiar with:
 
 ### Introducing TensorFlow Federated (TFF)
 
-As mentioned earlier, TFF is an open-source framework for Federated learning performed on decentralized data. It is a new project by the team at Google and has been rapidly evolving over the recent years. TFF has two main features:
+TFF is an open-source framework for Federated learning performed on decentralized data. It is a project by the team at Google and has been rapidly evolving over the recent years. TFF has three main features:
 
 1. TFF is architecture-agnostic. 
 
 This means that it is able to compile all code into an abstract representation. Its abstract representation nature enables it to be deployed in diverse environments.
 
-2. TFF saves effort
+2. TFF saves effort.
 
 It is designed to mitigate the pain points that we developers face when developing our own federated learning systems. Some of these pain points include interleaving the different types of logic, the global vs local perspective on communication, and tension between the order of construction vs. execution.
 
