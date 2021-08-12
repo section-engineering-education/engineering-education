@@ -69,21 +69,21 @@ The next activity is the determination of filter order and the filter cut-off fr
 ```
 We will get the filter order `N` and the cut-off frequency `wc` in the command window when we run this code. 
 
-![obtained filter order and cut-off frequency](filter_eight.PNG)
+![obtained filter order and cut-off frequency](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_eight.PNG)
 
 The next step is to normalize the cut-off frequency `wc` obtained above. Then, finally, the filter order is found from the transfer function, the output ratio to the input of a filter. Since we are designing a Butterworth filter, we use the `buttord` function and pass `wp`, `ws`, `kp`, and `ks` as the inputs.
 ```matlab
 [den num] = butter(N, wc, 'low');
 ```
 We obtain the filter's coefficients using the code above.The coefficients are the numerator(output) `num` and the denominator(input) `den`. It is done by passing the filter order obtained and cut-off frequency to the `butter` function. Since we are designing a low pass filter, we define using `low` when passing the filter order and the cut-off frequency. 
-![filter coefficients](filter_five.PNG)
+![filter coefficients](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_five.PNG)
 The coefficients that we obtained previously help plot the filter's response, which is done using the `freqz` function. Finally, we pass the filter coefficients, the number of points used for plotting, and the sampling frequency to this function.
 
 ```Matlab
 freqz(den, num, 1000, fs)
 ```
 When we run the program, we have;
-![Filter response](filter_seven.PNG)
+![Filter response](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_seven.PNG)
 
 ### Highpass butterworth filter
 If we want to design a Butterworth high pass filter, it is now easy because the codes remain the same. The only thing is to change the `low` that we defined when finding the filter's coefficients to be `high`. So, the code will be;
@@ -103,7 +103,7 @@ freqz(b, a, 1000, fs)
 ```
 The filter response will be as shown below;
 
-![Filter response](filter_six.PNG)
+![Filter response](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_six.PNG)
 
 ### How to design Chebyshev filter using Matlab
 We have two types of Chebyshev filters, that is, Chebyshev I and Chebyshev II. Chebyshev filters have more ripples in the passband for low pass Chebyshev filters and more ripples for high Chebyshev filters. The most commonly used Chebyshev filter is type I. We will use the similar specifications we used to design the Butterworth filter for our Chebyshev filter type I for `low` and `high`. The good thing about designing filters using Matlab is that you need to make a few changes and have your filter. Let's start by designing a lowpass Chebyshev filter. We have two types of Chebyshev filters.
@@ -127,17 +127,17 @@ We then use the `cheb1ord` function to find the order and the cut-off frequency 
 ```Matlab
 [N wc] = cheb1ord(wp, ws, kp, ks);   %order of the filter
 ```
-![filter order and cut-off frequency](filter_eight.PNG)
+![filter order and cut-off frequency](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_eight.PNG)
 In finding the numerator and the denominator coefficients, we need to add the passband ripple `kp`. It is because the Chebyshev has ripples in the passband. It is what makes the difference in the design of the Butterworth filter and Chebyshev filter. So we get these coefficients and then plot the response using the `freqz` function.
 ```Matlab
 [num den] = cheby1(N, kp, wc, 'low')    % numerator and denominator coefficients
 freqz(b, a, 1000, fs)    %plot the response
 ```
-![response of low pass chebyshev](filter_one.PNG)
+![response of low pass chebyshev](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_one.PNG)
 
 You zoom in on the passband to see the ripples. The alternative way of finding the filter order in Chebyshev filters is by counting the maxima and the minima for the ripples in the passband for the magnitude response. For example, we can zoom our response to see our filter order as shown below;
 
-![zoomed response](filter_two.PNG)
+![zoomed response](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_two.PNG)
 
 If we count these maxima as seen, we get the number of maxima and minima is four, equal to the filter order we found before. So if, for example, we want to design a high pass filter with similar specifications, just as we did when designing the lowpass and highpass Butterworth filter, we will change the `low` label to `high`.
 
@@ -157,7 +157,7 @@ ws = Fs/(fs/2);   %normalizing the passband
 [b a] = cheby1(N, kp, wc, 'high')    % numerator and denominator coefficients
 freqz(b, a, 1000, fs)    %plot the response
 ```
-![output response](filter_three.PNG)
+![output response](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_three.PNG)
 
 ### Conclusion
 A filter is essential in the engineering field. They help get rid of the unwanted part of a signal by considering specific prescriptions discussed above. Matlab forms a vital tool in the design of filters and the visualization of their response. Furthermore, it helps improve the performance of a filter since you can respond and compare with the expected response. Such activities are made easier in Matlab by the use of the in-built functions. Designing the various types of filters is made easy, and the codes are easy to understand. As we have seen before, you can use a code of a different filter to build another filter by making a few changes.
