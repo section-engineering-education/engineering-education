@@ -298,7 +298,7 @@ ylabels= df['nationality']
 
 We will use the `CountVectorizer()` method to transform our dataset into readable inputs to be used by our model.
 This method is also used to extract features from our dataset. Features are the inputs used for training our model.
-For more details about CountVectorizer, this great article can be used for further reading.
+For a detailed information on `CountVectorizer()`, this great article can be used for further reading.
 
 - [Basics of CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
 
@@ -315,7 +315,7 @@ vec.get_feature_names()
 
 ### Splitting of our data
 
-We need to split our dataset into `train_test` and `test_test.` We shall use 70% of our data to train our model and 30% of our data for testing.
+We need to split our dataset into `train_test` and `test_test.`. We use 70% of our data to train our model and 30% for testing.
 
 ```python
 x_train,x_test,y_train,y_test = train_test_split(X,ylabels,test_size=0.30)
@@ -386,7 +386,7 @@ We will name our pickle file 'naive_bayes.pkl'.
 ### Introduction to the FastAPI
 
 FastAPI is a modern, fast web framework for building APIs with Python 3.6+ based on standard Python type hints.
-The key features for FastApi are as follows:
+The key features for FastAPI are as follows:
 
 1. Fast when building APIs.
 2. Fast to code: Increases the speed of developing new features.
@@ -399,9 +399,9 @@ The key features for FastApi are as follows:
 
 This makes Fast API potent since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
 
-### Installing the FastApi
+### Installing the FastAPI
 
-Use the following commands in order to install FastAPi into our machine.
+Use the following commands in order to install FastAPI into our machine.
 
 ```python
 pip install fastapi
@@ -432,7 +432,7 @@ The folder structure is as shown.
 
 - Let's get started working with our new 'app.py' file.
 
-### Importing our FastApi packages
+### Importing our FastAPI packages
 
 We need to import the install packages such as `uvicorn` and `FastAPI` so that we can start using these packages.
 
@@ -484,7 +484,9 @@ Asynchronous programming is an advanced concept that has become very important i
 
 - [Get started with async in Python](https://www.infoworld.com/article/3454442/get-started-with-async-in-python.html)
 
-We shall use then [`async`](https://fastapi.tiangolo.com/async/#in-a-hurry) function when creating our `FastApi` routes. This enables the `FastApi` to create multiple routes concurrently.
+We shall use then [`async`](https://fastapi.tiangolo.com/async/#in-a-hurry) function when creating our `FastAPI` routes. This enables the `FastAPI` to create multiple routes concurrently.
+
+To make our first route we use `async def index()` function to make the index route and it will run on localhost port `8000`.
 
 ```python
 @app.get('/')
@@ -509,6 +511,7 @@ Now we shall add more routes for our machine learning model.
 We will add a get route for making nationality predictions.
 
 The following function can also be used to make predictions. We use the `predict_nationality()` method when we want to make predictions about someone's nationality.
+We also need to convert our data inputs into array using the `toarray()` so that it returns a list of the nationalities available in our dataset.
 
 ```python
 def predict_nationality(x):
@@ -520,6 +523,7 @@ def predict_nationality(x):
 ### Adding a route to make predictions
 
 We will use this route to get the ethnicity of a person based on the name input by the user.
+In order to get the prediction we need to send `GET` request to our `predict` route. We also need to include the `predict()` method used to query our route and return a prediction
 
 ```python
 @app.get('/predict/{name}')
@@ -533,7 +537,7 @@ async def predict(name: str = Query(None, min_length=2, max_length=12)):
     return {"orig_name": name, "prediction": result}
 ```
 
-Make sure to include this in your file to specify the port that will serve your app.
+Make sure to include this in your file to specify the port that will serve your app. This will enable our route run on localhost port `8000`.
 
 ```python
 if __name__ == '__main__':
@@ -564,7 +568,7 @@ Container images become containers at runtime and in the case of Docker containe
 To create a docker container, we have to use the following steps.
 
 1. Create a Docker file.
-   In your working directory create a DockerFile.
+   In your working directory, create a DockerFile.
 
 Your working directory is as shown below:
 
@@ -690,7 +694,7 @@ Result:
 e0f1bd4gv1f7t3dti5e89fd1o29341a50ete9hgad8ed0ye0ff27dt81667fu16b
 ```
 
-After Dockerizing our FastApi application, we now need to deploy it to Kubernetes Cluster.
+After Dockerizing our FastAPI application, we now need to deploy it to Kubernetes Cluster.
 
 ### Deploying the FastAPI application to Kubernetes cluster
 
