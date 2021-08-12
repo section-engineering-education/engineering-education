@@ -67,6 +67,7 @@ class L10n {
 ```
 
 The `l10n.dart` contains a list of languages that the application will support. You can add more language codes from this [resource](https://www.science.co.il/language/Locale-codes.php). We make the translations for each language in the `ARB` files. So we provide key-values pairs of a word and its translation equivalent in all the languages our application supports. For instance, our `app_en.arb`, which is the `English` ARB file, has the contents below:
+```
 {
   "language": "English",
   "helloWorld": "This is an example of speech synthesis in English.
@@ -196,7 +197,7 @@ Download the entire source code for the application from [this link](https://git
 This guide was a good starting point for creating a multi-language application. It provides a beginner with a direct head start for the concept. By going over autogeneration of dart translation files, creating `arb` files, importing the files for real-life implementation of multi-language, the reader can cement a good foundation for building a production-level application that supports multiple languages. 
 
 ### Further Reading
-This tutorial was more of a beginners` starting point. To get more into the topic, I recommend going over more complex and deep resources available on the internet and programming books. Some of the resources that could be helpful are listed below.
+This tutorial was more of a beginners' starting point. To get more into the topic, I recommend going over more complex and deep resources available on the internet and programming books. Some of the resources that could be helpful are listed below.
 - [Internalization User Guide](https://files.flutter-io.cn/sources/flutter-design-docs/i18n-user-guide.pdf)
 - [Internationalizing Flutter Apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
 - [i18n vs l10n — what’s the diff?](https://blog.mozilla.org/l10n/2011/12/14/i18n-vs-l10n-whats-the-diff/)
