@@ -108,3 +108,4 @@ Happy learning!
 -[Cryptanalysis tools](https://resources.infosecinstitute.com/topic/cryptanalysis-tools/)
 
 ---
+Peer Review Contributions by: [Samuel Mwangi](/engineering-education/authors/samuel-mwangi/)
