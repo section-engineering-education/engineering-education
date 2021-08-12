@@ -340,7 +340,9 @@ function prevSong() {
 }
 
 ### The nextSong Function
-This time, when you click the next button, you would want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. Here is the code below:
+This time, when you click the next button, you would want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. 
+
+Here is the code below:
 ```javascript
 function nextSong() {
   songIndex++;
