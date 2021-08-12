@@ -9,7 +9,7 @@ description: This article seeks to explore the concept of cryptanalysis in light
 The possible decryption algorithms will also be identified to be able to help the reader know their possible go-to option when they fall prey to a ransomware attack.
 author: ruth-mare
 date: 2021-08-06T00:00:00-18:00
-topics: []
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
