@@ -1,38 +1,38 @@
 ﻿Developers have had difficulties in testing and debugging machine learning models to reach up the performance of the human level. Developers have been manually examining mistakes that algorithms are making to give insights on what to do next.
 Error Analysis toolkit both saves the time and effort used in debugging machine learning models. It can save developers weeks of work by simplifying the process. There are several machine learning debugging toolkits available but in this article, we are going to explore the Error Analysis toolkit.
 
-### Table of Contents
+### Table of contents
 
-1. [Key Concepts](#key-concepts)
+1. [Key concepts](#key-concepts)
 2. [Introducing Error Analysis in Machine Learning](#introducing-error-analysis-in-machine-learning)
-3. [How Error Analysis Work](#how-error-analysis-work)
+3. [How Error Analysis works](#how-error-analysis-works)
     -[Identification](#identification)
     -[Diagnosis](#diagnosis)
 4. [Failures in Machine Learning](#failures-in-machine-learning)
-5. [Installation Process](#installation-process)
-    -[Getting Started](#getting-started)
+5. [Installation process](#installation-process)
+    -[Getting started](#getting-started)
 6. [Conclusion](#conclusion)
 7. [References](#references)
 
-### Key Concepts
+### Key concepts
 
-1. Machine Learning
+1. **Machine Learning**
 
 It is the study of computer algorithms that improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.<https://en.wikipedia.org/wiki/Machine_learning>
 
-2. Error Analysis 
+2. **Error Analysis** 
 
 Error analysis is a strategy used to document the errors that show up in learner language, decide if those errors are systematic, and if conceivable clarify what caused them.
 
-3. Systematic Errors
+3. **Systematic Errors**
 
 Ther are errors that are consistent and repeatable in a given data sets. Systematic errors are prone to appear in machine earning models.
 
-4. Learner Language
+4. **Learner Language**
 
 Language in which learners say or write when they are trying to communicate in a language they are learning. Therefore, machine learning models study computer algorithims that improve automatically by going through more data sets over and over again improving their performance.
 
-5. Cohorts
+5. **Cohorts**
  
 Cohorts are subgroups of data that the user may choose to save for later use if they wish to come back to those cohorts for future investigation
 
@@ -45,7 +45,7 @@ Error Analysis is used to distinguish cohorts with higher error rates and analyz
 *[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 *Error Analysis moves away from aggregate accuracy metrics, exposes the distribution of errors to developers in a transparent way, and enables developers to identify & diagnose errors efficiently.* 
 
-### How Error Analysis Work
+### How Error Analysis works
 
 #### Identification
 
@@ -113,35 +113,45 @@ What-If Analysis allows users to change feature values of selected data points a
 It has been hard to detect Machine Learning algorithm errors by developers. Most of the time when Error Analysis has been carried out manually by developers, therefore, taking most time in testing and debugging of the Machine Learning models. There are many reasons why machine learning models fail which could be the architecture, or the training data, or the way the training data were preprocessed, or the context in which the model was deployed.
 Teams that deploy machine learning models into the real world face challenges while conducting model evaluation and testing. When testing a model, let's say given a model Y is 75% accurate on a given benchmark and therefore the model accuracy may not be uniform across subgroups of data. Such failures cause a lack of reliability, safety, and unfairness. Subgroups of data may display different error rates which are as model Y 75% accuracy. In order to diagnose errors from different subgroups, Error Analysis proves to be reliable by separating the subgroups of data and analyzing each data set differently, therefore giving more accurate results.
 
-### Installation Process
+### Installation process
 
 To install the Responsible AI Widgets “raiwidgets” package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have interpret-community already installed, you will also need to install this for supporting the generation of model explanations.
 
+```python
 pip install interpret-community
 
 pip install raiwidgets
+```
 
 Alternatively, you can also clone the open source repository and build the code from scratch:
 
+```python
 git clone https://github.com/microsoft/responsible-ai-widgets.git
+```
 
 You will need to install yarn and node to build the visualization code, and then you can run:
 
+```python
 yarn install
 
-yarn buildall
+yarn build all
+```
 
 And install from the raiwidgets folder locally:
 
+```python
 cd raiwidgets
 
 pip install –e .
+```
 
 For more information see the [contributing](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md)[ ](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md)[guide](https://github.com/microsoft/responsible-ai-widgets/blob/main/CONTRIBUTING.md).
 
 If you intend to run repository tests, in the raiwidgets folder of the repository run:
 
+```python
 pip install -r requirements.txt
+```
 
 #### Getting started
 
