@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /facenet-a-unified-embedding-for-face-recognition-and-clustering/
+title: Unified Embedding for Face Recognition and Clustering Using FaceNet
+description: In this article, we will explore how the FaceNet face recognition system model improves upon traditional face recognition systems. 
+author: wilkister-mumbi
+date: 2021-08-12T00:00:00-17:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /facenet-a-unified-embedding-for-face-recognition-and-clustering/hero.png
+    alt: Facenet Image
+---
+An embedding is a dense vector representation of any object. A good embedding is one where two faces that are the same, have the cosine distance and Euclidean distance between them being very low.
+<!--more-->
 [FaceNet](https://arxiv.org/abs/1503.03832) is a face recognition project developed by three researchers at Google, Florian Schroff, Dmitry Kalenichenko, and James Philbin in 2015. The main goal of this research is to produce an embedding from the face of a person. An embedding is a dense vector representation of any object. A good embedding is one where two faces that are the same, have the cosine distance and Euclidean distance between them being very low. In contrast, two embeddings with dissimilar faces should have a Euclidean distance and cosine similarity being far apart. 
 
 Traditionally, you might have thought that using a classification architecture would be better. But in the classification architecture, you have a fixed number of classes. What happens when there is a new person that you want to classify? You will need to rebuild the model. Right? With embedding architectures such as FaceNet, you project people into an embedding space. You can then set a threshold to compute the distance between two people. You can then model it as a classification problem indirectly, or you can model it as a clustering problem. 
@@ -5,17 +23,14 @@ Traditionally, you might have thought that using a classification architecture w
 This tutorial introduces and expounds a little further on this model and shows how you can develop a face recognition system using FaceNet.
 
 ### Outline
-
 1. [Problem wih traditional face recognition systems](#problem-with-traditional-recognition-systems)
 2. [Understanding the FaceNet face recognition system model](#understanding-the-facenet-face-recognition-system-model)
 3. [Wrapping up](#wrapping-up)
 
 ### Prerequisites
-
 Before you read this article, you ought to be familiar with popular deep learning architectures used for face recognition such as Convolutional Neural Network (CNN) and frameworks/libraries such as TensorFlow and Keras.
 
 ### Problem with traditional face recognition systems
-
 Before we dive deep into the FaceNet model, let's first use an example to demonstrate the problem the model is trying to solve. Let's take an example of a face recognition system in a small start-up that uses the faces of people to unlock the door to the business's premises. The business has 10 employees. So, the system would be trained to classify only the 10 employee's faces. So, when one of the ten employees shows their face on the system it would allow him/her. If a new employee is added, the model will have to be re-trained on the new employee so that it can allow the new employee to gain access to the premises. This is okay to an extent because it's a small business anyway.
 
 But what if our company isn't a start-up but rather a big organization such as Amazon with thousands of employees, then we should have thousands of people in our classification. This approach cannot be scalable in such a scenario. The more classes you have, the more images you would have to have. If we can't use such a system, then we'll have to use something else.
@@ -25,7 +40,6 @@ This is where the FaceNet model comes in. Instead of doing classification, the m
 Let's now explore this model in depth. 
 
 ### Understanding the FaceNet face recognition system model
-
 ![FaceNet model architecture](/engineering-education/facenet-a-unified-embedding-for-face-recognition-and-clustering/facenet-model-architecture.png)
 
 *[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
@@ -47,12 +61,10 @@ In training, this model employs this technique known as *Triplet*. Essentially, 
 *[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
 
 ### Wrapping up
-
 This article has taken you through the problem with the traditional face recognition system and introduced the FaceNet model which solves that problem. This model can be used in schools to automatically register attendance by recognizing the faces of students. I hope you now have a deeper understanding of how this model works. In my follow-up tutorial, I will take you on a journey of implementing the FaceNet model using Keras on a well-known public dataset. 
 
 [DeepFace](https://research.fb.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/) is also a face recognition system by Facebook that also uses a similar architecture. You can take a look at it and compare it with the FaceNet model. 
 
 ### Further reading
-
 1. [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832)
 2. [DeepFace: Closing the Gap to Human-Level Performance in Face Verification](https://research.fb.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/)
