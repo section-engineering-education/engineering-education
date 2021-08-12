@@ -7,7 +7,7 @@ title: Network Automation
 description: This article will discuss the concept of network automation. It will also look at web service APIs and network management tools. 
 author: rabo-james-bature
 date: 2021-08-12T00:00:00-04:10
-topics: [networking]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
