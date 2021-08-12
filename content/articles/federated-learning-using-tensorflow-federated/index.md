@@ -180,6 +180,14 @@ TFF provides two builder functions:
 
 To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). Please check it out.
 
+The simulation dataset used is the federated version of the popular MNIST dataset called `emnist`. Why a federated version of the dataset? It's because the dataset in FL is obtained from multiple users. This poses a unique set of challenges that normal versions of dataset don't exhibit. We import it into our project by using the `load_data()` function. 
+
+In the training bit, you'll notice that we are only using a subset of client devices are selected to recieve the training model. As much as we have many devices on the network, not all devices are eligible. At any given time, only a few devices may have relevant data to solve your problem. Thus, only a subset of devices are selected.
+
+After the model has been trained on the selected devices, results are obtained and loss calculated.
+
+We encourage you to play around with the parameters (e.g., batch sizes, number of users, epochs, learning rates, etc.), to modify the code on my colab to simulate training on random samples of users.
+
 ### Wrapping up
 
 That was a simple introduction to TensorFlow Federated and the FC API. The code I've shown above is open-source and is available on Github. You can access it using this [link](https://github.com/tensorflow/federated). There are many ways to get involved as mentioned in the tutorial such as being system devs, ML devs, and ML researchers. You can check out this cool online [comic book](http://federated.withgoogle.com/) from [GoogleAI](https://ai.google/) that will help you learn Federated Learning easily using illustrated graphic art. 
