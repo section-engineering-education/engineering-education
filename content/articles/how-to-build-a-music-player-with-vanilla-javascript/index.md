@@ -278,7 +278,9 @@ playBtn.addEventListener('click', () => {
 
 ```
 Now, you need to create the `playSong` and `pauseSong` functions.
+
 ### The playSong Function
+
 To implement the playSong function, we are going to say:
 ```javascript
 function playSong() {
