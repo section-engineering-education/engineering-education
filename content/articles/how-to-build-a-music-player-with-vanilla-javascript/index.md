@@ -404,7 +404,10 @@ Below is a video of the music player and all its functionalities in use:
 <iframe width="478" height="269" src="https://www.youtube.com/embed/7dIH4kf0Et0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-We made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices.
-With that, you have a fully functional music player app in the browser. You can also add additional features to the project if you wish to.
+We made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices. With that, we have a fully functional music player app in the browser. 
+
+You can also add additional features to the project if you wish to.
+
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/Music-Player-with-JS).
+
 Happy Coding!!
