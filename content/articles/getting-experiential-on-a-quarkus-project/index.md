@@ -5,7 +5,7 @@ In similarity to the Spring Boot framework, Quarkus is a combination of differen
 
 Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers. Quarkus is natively integrated with Java libraries, hence you don't have to learn a new thing.
 
-![Quarkus Icon](Quarkus-hero.png "Quarkus Icon")
+![Quarkus Icon](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-hero.png "Quarkus Icon")
 _(Quarkus Official icon)_
 
 In this tutorial, we will get started on Quarkus and see how we can have some hands-on Quarkus projects using different tools and software environments.
@@ -136,7 +136,7 @@ Quarkus boasts of its reload speed and memory efficiency when built and run on N
 
 This is well indicated by the image below, found on its [official website](https://quarkus.io/).
 
-![Quarkus efficiency and performance](Quarkus_efficiency_image.png "This shows how Quarkus performs in Native, JVM, and Traditional environments")
+![Quarkus efficiency and performance](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus_efficiency_image.png "This shows how Quarkus performs in Native, JVM, and Traditional environments")
 _(Photo from Official Quarkus website)_
 
 ### Get started with a Quarkus project
@@ -152,7 +152,7 @@ You will create your Quarkus project using:
 [Quarkus.io](https://code.quarkus.io/) project initializer, just like the [Spring initializer](https://start.spring.io/) or [Micronaut initializer](https://micronaut.io/launch), is used to quickly create a Quarkus project together with all needed dependencies.
 Just head over to the site. It looks like this:
 
-![code.quarkus.io](code.quarkus.io.png "The main code.quarkus.io page")
+![code.quarkus.io](/engineering-education/getting-experiential-on-a-quarkus-project/code.quarkus.io.png "The main code.quarkus.io page")
 _(Screenshot by Author)_
 
 You can do the following:
@@ -236,7 +236,7 @@ Click on the extensions tab.
 Search for `Quarkus` in the extensions tab identified by `redhat.vscode-quarkus`, built by the 'Redhat team'.
 Its preview looks like shown below:
 
-![VSCode Quarkus extension](VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
+![VSCode Quarkus extension](/engineering-education/getting-experiential-on-a-quarkus-project/VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
 _(Screenshot by Author)_
 
 Install it and restart the application.
@@ -244,7 +244,7 @@ Install it and restart the application.
 You shall notice that when you wait for some time, the application automatically opens up a new Quarkus initializer window.
 The window will look as follows:
 
-![VSCode-Quarkus-start.png](VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
+![VSCode-Quarkus-start.png](/engineering-education/getting-experiential-on-a-quarkus-project/VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
 _(Screenshot by Author)_
 
 - If it doesn't, just navigate to the Command Palette found in the `Views` menu.
@@ -264,12 +264,12 @@ Now, select whether to open the project on the current or new window by adding i
 - Select Quarkus as your project type.
 Intellij provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
 
-![Quarkus IntelliJ start](Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
+![Quarkus IntelliJ start](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
 _(Screenshot by Author)_
 
 It then automatically fetches the files for your project, extracts them, and opens them up.
 
-![Quarkus IntelliJ start extensions](Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
+![Quarkus IntelliJ start extensions](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
 _(Screenshot by Author)_
 
 ### Compile your Quarkus project
@@ -306,7 +306,7 @@ As for a Gradle project, run:
 In the output displayed to the Terminal, you will see the _URL_ to access the application together with the installed features.
 This is shown in the image below:
 
-![Compilation development terminal](dev-terminal.png "Compilation development terminal")
+![Compilation development terminal](/engineering-education/getting-experiential-on-a-quarkus-project/dev-terminal.png "Compilation development terminal")
 _(Screenshot by Author)_
 
 By default, Quarkus on `http://localhost:8080/` request, will return the file in the `ecommerce-quarkus/src/main/resources/META-INF/resources/`.
@@ -324,7 +324,7 @@ This will be as follows:
   Since Quarkus now ships with the Dev mode User Interface (Dev UI) available, you can use it to run and view the project in a dev mode.
   Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available at dev mode_.
 
-![dev-ui](dev-ui.png "dev-ui")
+![dev-ui](/engineering-education/getting-experiential-on-a-quarkus-project/dev-ui.png "dev-ui")
 _(Screenshot by Author)_
 
 You can now easily add configurations for the project using the interface by clicking on the `Config Editor` button.
@@ -342,7 +342,7 @@ Change the return value to `Second hot reload!` and save. See that now the outpu
 Whenever a request is fetched, the application records the action in the Terminal.
 You can also notice that it is utilizing the [`Vert.X`](https://vertx.io/) framework per the Terminal output as shown in the image below:
 
-![vert.x-worker](vert.x-worker.png "vert.x-worker.png")
+![vert.x-worker](/engineering-education/getting-experiential-on-a-quarkus-project/vert.x-worker.png "vert.x-worker.png")
 _(Screenshot by Author)_
 
 > What is Vert.X?
@@ -461,7 +461,7 @@ It has the 'EcommerceResource.java' file which by default has a simple 'hello' R
 - Click on the extensions tab.
 - Search for `Quarkus` in the extensions tab identified by `redhat.vscode-quarkus`, built by the 'Redhat team'. Its preview looks like shown below:
 
-![VSCode Quarkus extension](VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
+![VSCode Quarkus extension](/engineering-education/getting-experiential-on-a-quarkus-project/VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
 _(Screenshot by Author)_
 
 - Install it and restart the application.
@@ -470,7 +470,7 @@ You shall notice that when you wait for some time, the application automatically
 
 The window will look as follows:
 
-![VSCode-Quarkus-start.png](VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
+![VSCode-Quarkus-start.png](/engineering-education/getting-experiential-on-a-quarkus-project/VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
 _(Screenshot by Author)_
 
 If it doesn't, just navigate to the `Command Palette` found in the `Views` menu.
@@ -488,12 +488,12 @@ Now, select whether to open the project on the current or new window by adding i
 - On the left-hand side of the opened window, select Quarkus as your project type.
 - Intellij provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
 
-![Quarkus IntelliJ start](Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
+![Quarkus IntelliJ start](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
 _(Screenshot by Author)_
 
 It then automatically fetches the files for your project, extracts them, and opens them up.
 
-![Quarkus IntelliJ start extensions](Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
+![Quarkus IntelliJ start extensions](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
 _(Screenshot by Author)_
 
 ### Compile your Quarkus project
@@ -529,7 +529,7 @@ As for a Gradle project, run:
 In the output displayed to the Terminal, you will see the _URL_ to access the application together with the installed features.
 This is shown in the image below:
 
-![Compilation development terminal](dev-terminal.png "Compilation development terminal")
+![Compilation development terminal](/engineering-education/getting-experiential-on-a-quarkus-project/dev-terminal.png "Compilation development terminal")
 _(Screenshot by Author)_
 
 By default, Quarkus on `http://localhost:8080/` request, will return the file in the `ecommerce-quarkus/src/main/resources/META-INF/resources/`.
@@ -547,7 +547,7 @@ This will be as follows:
 
   Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available at dev mode_.
 
-![dev-ui](dev-ui.png "dev-ui")
+![dev-ui](/engineering-education/getting-experiential-on-a-quarkus-project/dev-ui.png "dev-ui")
 _(Screenshot by Author)_
 
 You can now easily add configurations for the project using the interface by clicking on the 'Config Editor' button.
@@ -567,7 +567,7 @@ See that now the output will automatically be modified utilizing the hot reload 
 Whenever a request is fetched, the application records the action in the Terminal.
 You can also notice that it is utilizing the [**Vert.X**](https://vertx.io/) framework per the Terminal output as shown in the image below:
 
-![vert.x-worker](vert.x-worker.png "vert.x-worker.png")
+![vert.x-worker](/engineering-education/getting-experiential-on-a-quarkus-project/vert.x-worker.png "vert.x-worker.png")
 _(Screenshot by Author)_
 
 > What is Vert.X?
@@ -716,7 +716,7 @@ You can find and download other free templates at [https://themewagon.com/themes
 Once downloaded, extract it and copy and paste all the contents inside the folder to the 'resources' folder mentioned previously.
 The contents include the 'index.html' and all its styling and scripts.
 
-![Static webpage template](template.png "Static webpage template")
+![Static webpage template](/engineering-education/getting-experiential-on-a-quarkus-project/template.png "Static webpage template")
 _(Screenshot by Author)_
 
 Open the browser and access it via `http://localhost:8080/`. Find also the output through the Terminal using `curl http://localhost:8080/`.
@@ -795,13 +795,13 @@ java -jar target/quarkus-app/quarkus-run.jar
 
 That is the `quarkus-run.jar` JVM and connect to it.
 
-![JConsole Quarkus app](JConsole-Quarkus.png "JConsole Quarkus app")
+![JConsole Quarkus app](/engineering-education/getting-experiential-on-a-quarkus-project/JConsole-Quarkus.png "JConsole Quarkus app")
 _(Screenshot by Author)_
 
 Now, fetch some data on the end-points in terminal windows as before.
 
-![JConsole Quarkus Resources](JConsole-Quarkus-resources.png "JConsole Quarkus Resources")
-![JConsole VM Summary](JConsole-VM-Summary.png "JConsole VM Summary")
+![JConsole Quarkus Resources](/engineering-education/getting-experiential-on-a-quarkus-project/JConsole-Quarkus-resources.png "JConsole Quarkus Resources")
+![JConsole VM Summary](/engineering-education/getting-experiential-on-a-quarkus-project/JConsole-VM-Summary.png "JConsole VM Summary")
 _(Screenshots by Author)_
 
 Observe the application performance in terms of:
@@ -816,14 +816,14 @@ You can use the IntelliJ profiler as a JConsole substitute. You can use it to vi
 
 It is located in your status bar as shown below. When you open it, it shows running JVMs and if you either click or right-click on any, it will show you some drop-down options.
 
-![Intellij profiler](Intellij-profiler.png "Intellij profiler")
+![Intellij profiler](/engineering-education/getting-experiential-on-a-quarkus-project/Intellij-profiler.png "Intellij profiler")
 _(Screenshot by Author)_
 
 Some available options include: CPU and memory live charts, Attach profiler to process (Java flight recorder, Async profiler), Capture memory snapshots, and Get Thread dump.
 
 Select the '_CPU and memory live charts_' options. It will open up the window which looks as shown below:
 
-![Intellij profiler stats](Intellij-profiler-stats.png "Intellij profiler stats")
+![Intellij profiler stats](/engineering-education/getting-experiential-on-a-quarkus-project/Intellij-profiler-stats.png "Intellij profiler stats")
 _(Screenshot by Author)_
 
 ### Build and run a Quarkus project in a Docker container
