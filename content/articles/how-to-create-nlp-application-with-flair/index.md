@@ -114,7 +114,7 @@ import numpy as np
 
 The dataset used consists of a collection of offensive and non-offensive words. The dataset will be used to train our model so that it can be used to predict if a text is offensive or not.
 
-[CSV File of our data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
+[CSV File of our data](https://drive.google.com/file/d/1gBTApkByuBqAxQMLYueVai7RP-Gv9F48/view?usp=sharing)
 Download the dataset from the above link and name the file as `offensive and non_offensive_dataset.csv`.
 
 #### Using Pandas to read dataset
