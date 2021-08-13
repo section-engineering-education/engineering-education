@@ -1,5 +1,5 @@
-* text=auto
+*      text=auto
 
-*.md text  diff=markdown
+*.md   text working-tree-encoding=UTF-8
 
-*.png diff 
+*.png -text working-tree-encoding=UTF-8
