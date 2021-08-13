@@ -1,7 +1,7 @@
 ### Implementing Google reCAPTCHA in a SpringBoot application
 
 ### Introduction
-Google ReCAPTCHA is a system that enables users to protects their sites from bots. The ReCaptcha generates a score that ranges from zero to one, if the score is less than `0.5` there is a possibility the action was invoked by a bot and if the score is greater than `0.5` the action was not invoked by a bot. In this tutorial, you will learn how to Implement Google reCAPTCHA version 3 to protect a login form using SpringBoot. We will intercept the authentication during login and if the score generated is less than `0.5` the user will be requested to enter an OTP sent to their email else the authentication will continue processing. 
+Google ReCAPTCHA is a system that enables users to protects their sites from bots. The ReCaptcha generates a score that ranges from `0` to `1`, if the score is less than `0.5` there is a possibility the action was invoked by a bot and if the score is greater than `0.5` the action was not invoked by a bot. In this tutorial, you will learn how to Implement Google reCAPTCHA version 3 to protect a login form using SpringBoot. We will intercept the authentication during login and if the score generated is less than `0.5` the user will be requested to enter an OTP sent to their email else the authentication will continue processing. 
 
 ### Table of Contents
 - [Create new site with Google to verify your captcha response]()
