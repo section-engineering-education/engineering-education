@@ -1,5 +1,23 @@
-### Integrating an External API into a Flask Application
-APIs are a major part of today's applications. There are many times that we need to use a third-party API either for authentication, file uploads, or getting other information. APIs enable us to use features provided by other applications without having to build the logic ourselves. This also enables us to build applications that integrate with many services, since the interfaces are provided.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /integrating-external-apis-with-flask/
+title: Integrating an External API into a Flask Application
+description: This tutorial will show you how to integrate an external API into a Flask application. We will create a simple Flask application that will allow us to retrieve data from an external API.
+author: geoffrey-mungai
+date: 2021-08-13T00:00:00-16:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/integrating-external-apis-with-flask/hero.png
+    alt: Integrating an External API with Flask
+---
+
+APIs are a major part of applications nowadays. There are many times that we need to use a third-party API either for authentication, file uploads, or getting other information.
+<!--more-->
+APIs allow us to use features provided by other applications without having to build the logic ourselves. This also enables us to build applications that integrate with many services, since the interfaces are provided.
 
 ### Prerequisites
 Before proceeding, you are required to have a TMDB (The Movie DB) API key. To obtain one, you must have an account at [themoviedb.org](https://www.themoviedb.org/login). Then, follow [these instructions](https://developers.themoviedb.org/3/getting-started/introduction) to obtain an API key.
@@ -191,3 +209,6 @@ In this tutorial, we have looked at how to send a request to a third-party API. 
 The code in this tutorial can be found in [this GitHub repo](https://github.com/geoffrey45/flask-request).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
