@@ -119,3 +119,6 @@ The command `sudo docker container ls` shows a list of all Docker containers tha
 ### Conclusion
 
 In this article, we learned about using the command-line interface to manage Docker containers. We accomplished this by running a docker container in an interactive shell, removing all the dangling volumes, removing Docker containers and images, inspecting docker containers, and finally by using aliases. I would urge the reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded docker containers, images, and volumes.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
