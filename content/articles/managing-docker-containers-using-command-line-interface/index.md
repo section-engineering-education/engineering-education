@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /managing-docker-containers-using-command-line-interface/
+title: Managing Docker Containers using the Command Line Interface
+description: In this article, we will learn how to use the command-line interface to manage Docker containers.
+author: ruth-ngonyo
+date: 2021-08-13T00:00:00-21:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/managing-docker-containers-using-command-line-interface/hero.png
+    alt: Managing Docker Containers using the Command Line Interface
+---
+
 ### Introduction
 
 With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker to delete, it will not delete these unneeded items like containers, images, volumes, and networks. Some of the most effective techniques to manage Docker Containers directly from the Command Line Interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands. These docker commands make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
