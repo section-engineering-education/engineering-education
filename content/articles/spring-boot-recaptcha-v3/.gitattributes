@@ -1,5 +1,0 @@
-*      text=auto
-
-*.md   text working-tree-encoding=UTF-8
-
-*.png -text working-tree-encoding=UTF-8
