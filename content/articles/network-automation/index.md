@@ -111,10 +111,6 @@ These tools are:
 - SaltStack
 
 #### Ansible
-![Ansible](/engineering-education/network-automation/ani.png)
-
-[source](https://bryxx.eu/bryxx-puppet-service-delivery-partner)
-
 Ansible is an open-source IT automation tool sponsored by Red Hat. It uses the REST API architecture to describe how all systems in a network inter-relate. It supports the management of multiple systems rather than one system at a time. 
 
 Ansible relies on network nodes to send small programs called **ansible modules** for execution. 
@@ -122,10 +118,6 @@ Ansible relies on network nodes to send small programs called **ansible modules*
 Ansible modules are executed over Secure Shell (SSH) by default and can reside in any machine. A terminal program is used to configure the network, version control, as well as keep track of all changes and contents. 
 
 #### Saltstack
-![Saltstack](/engineering-education/network-automation/salt.png)
-
-[Source](https://sixfeetup.com/blog/saltstack-for-server-config-management)
-
 Saltstack is a flexible network configuration management tool that allows the simultaneous configuration of networks. It supports both agent-based and agentless configurations. 
 
 This means that a dedicated device known as the **Salt master** is used to control the configuration. Other devices will have to periodically connect to the **Master** for an update. 
@@ -133,10 +125,6 @@ This means that a dedicated device known as the **Salt master** is used to contr
 Saltstack uses the **pillar** keyword to refer to its instructions and specifications for device configuration. 
 
 #### Puppet 
-![Puppet](/engineering-education/network-automation/puppet.png)
-
-[source](https://en.wikipedia.org/wiki/Puppet_(software))
-
 Puppet is a network automation tool produced by Puppet.Inc. The company was founded in 2005 by Luke Kanies. 
 
 Puppet uses declarative language to manage various IT life cycles. It was built using Ruby programming language and supports both agentless and agent-based configuration management for system configuration. 
@@ -146,10 +134,6 @@ For agent-based configuration management, Puppet uses the **Puppet master** to c
 The instructions can then be applied directly to the system, compiled into a catalog, and distributed using a REST API architecture.
 
 #### Chef 
-![Chef](/engineering-education/network-automation/chef.png)
-
-[source](https://en.wikipedia.org/wiki/Chef_(software))
-
 Just like Puppet, Chef is written in Ruby programming language. Users can outline how it manages applications and utilities using written **recipes** which are then grouped in a **cookbook** for easy management.  
 
 The recipes describe which packages should be installed and which services should run to accelerate application delivery, DevOps collaboration, and network uptime. 
