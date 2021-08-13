@@ -180,7 +180,7 @@ TFF provides two builder functions:
 
 To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). Please check it out.
 
-### Summary of the our colab implementation
+### Summary of our colab implementation
 
 The simulation dataset used is the federated version of the MNIST dataset called NIST and is provided by the [Leaf project](https://github.com/TalwalkarLab/leaf). Leaf provides benchmarking framework for learning in federated settings such as federated learning. 
 
@@ -212,3 +212,4 @@ Make sure to try out the code yourself as it'll help you grasp TFF concepts fast
 2. [TensorFlow Federated](https://github.com/tensorflow/federated)
 3. [TensorFlow Federated: Machine Learning on Decentralized Data](https://www.tensorflow.org/federated)
 4. [An online comic book from GoogleAI to learn Federated learning](http://federated.withgoogle.com/)
+5. [Federated Learning for Image Classification](https://github.com/tensorflow/federated/blob/master/docs/tutorials/federated_learning_for_image_classification.ipynb)
