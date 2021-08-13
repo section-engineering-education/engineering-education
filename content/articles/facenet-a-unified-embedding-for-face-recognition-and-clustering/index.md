@@ -52,7 +52,7 @@ As mentioned above, the model uses a method known as "one-shot training". This m
 
 This model uses a deep convolution neural network that is trained to give an output of 128 nodes. Or we can say the model gives an output of 128 numbers. You may wonder, what's the use of these 128 numbers?
 
-These 128 numbers contain the characters/features of the face. Therefore, if we give a different face as input, then we will have a different set of numbers. If we input an image of the face of the same person but in different poses, then these numbers will be similar. It is also important to note that different faces have different sets of these 128 numbers. But for the same face but different poses, the set of these numbers is always the same. 
+These 128 numbers contain the characters/features of the face. Therefore, if we give a different face as input, then we will have a different set of numbers. If we input an image of the face of the same person but in different poses, then these numbers will be similar. 
 
 In training, this model employs this technique known as *Triplet*. Essentially, what happens here during training is that in every row of training examples, they have two sets of images that are matching (both positive & matching) and a second example which is a pair of both the positive and negative images (non-matching). The idea is to let images that are similar be closer together while those not similar be far apart.
 
