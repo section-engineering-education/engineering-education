@@ -114,7 +114,7 @@ import numpy as np
 
 The dataset used consists of a collection of offensive and non-offensive words. The dataset will be used to train our model so that it can be used to predict if a text is offensive or not.
 
-[CSV File of our data](https://drive.google.com/file/d/16G5WcQUcwyUh8OE4G7yd6JbTYuDsjL4I/view?usp=sharing)
+[CSV File of our data](https://drive.google.com/file/d/1FpEnJkw7XY3cdP1NeUzRRKGqNYsQ3Frz/view?usp=sharing)
 Download the dataset from the above link and name the file as `offensive_and_non_offensive_dataset.csv`.
 
 #### Using Pandas to read dataset
@@ -449,6 +449,7 @@ This is a really good tutorial for a reader to follow from the start to the end 
 
 ### References
 
+- [Code impementation of this tutorial](https://colab.research.google.com/drive/13cKGpH5k4ahseC6ARpTslHioSHEsCElu?usp=sharing)
 - [Pandas Documentation](https://pandas.pydata.org/)
 - [NumPy Documentation](https://numpy.org/)
 - [Flair Documentaion](https://github.com/flairNLP/flair)
