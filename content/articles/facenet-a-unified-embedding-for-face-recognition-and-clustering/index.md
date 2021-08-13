@@ -28,7 +28,7 @@ This article explores how a FaceNet face recognition system works, in contrast t
 3. [Wrapping up](#wrapping-up)
 
 ### Prerequisites
-Before you read this article, you ought to be familiar with popular deep learning architectures used for face recognition such as Convolutional Neural Network (CNN) and frameworks/libraries such as TensorFlow and Keras.
+Before you read this article, you ought to be familiar with popular deep learning architectures used for face recognition such as Convolutional Neural Network (CNN).
 
 ### Problem with traditional face recognition systems
 Before we dive deep into the FaceNet model, let's first use an example to demonstrate the problem the model is trying to solve. Let's take an example of a face recognition system in a small start-up that uses the faces of people to unlock the door to the business's premises. The business has 10 employees. So, the system would be trained to classify only the 10 employee's faces. So, when one of the ten employees shows their face on the system it would allow him/her. If a new employee is added, the model will have to be re-trained on the new employee so that it can allow the new employee to gain access to the premises. This is okay to an extent because it's a small business anyway.
