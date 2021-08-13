@@ -50,7 +50,7 @@ This array of numbers/points in the Euclidean space are then stored and used for
 
 As mentioned above, the model uses a method known as "one-shot training". This means that we do not need to train the network with many photos. For example, you only need one photo of yourself to train the network. Or you could use only two or three to improve on the model's accuracy (not a must). Thus, if I'm captured again, even when in a different pose, FaceNet can still identify that it is me.
 
-This model uses a deep convolution neural network that is trained to give an output of 128 nodes. Or we can say the model gives an output of 128 numbers. What's the use of these 128 numbers? You may ask.
+This model uses a deep convolution neural network that is trained to give an output of 128 nodes. Or we can say the model gives an output of 128 numbers. You may wonder, what's the use of these 128 numbers?
 
 These 128 numbers contain the characters/features of the face. Therefore, if we give a different face as input, then we will have a different set of numbers. If we input an image of the face of the same person but in different poses, then these numbers will be similar. It is also important to note that different faces have different sets of these 128 numbers. But for the same face but different poses, the set of these numbers is always the same. 
 
