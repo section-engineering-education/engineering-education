@@ -6,7 +6,7 @@ This article will cover the steps on how one can migrate an [on-premises](https:
 ### Case study system description
 The case study is about a client who runs an `Online Recruitment Platform`.  The illustration below demonstrates how the system works:
 
-![on prem](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/on-prem.jpeg)
+![on prem](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/on-prem.jpg)
 
 The system is running on-premises infrastructure and contains two web applications:
 
@@ -65,7 +65,7 @@ Containers speed up an application using minimal resources and can scale multipl
 ### 3. The migration approach
 The figure below shows our new proposed system:
 
-![proposed system](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/new-system.jpeg)
+![proposed system](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/new-system.jpg)
 
 Note that in our case, we have used [Azure Cloud Provider](https://azure.microsoft.com/en-us/overview/what-is-azure/) for the new system, but one can also use [AWS](https://aws.amazon.com/) and [Google Cloud](https://cloud.google.com/) for similar services.
 
@@ -104,13 +104,13 @@ First, we have to choose which function to migrate to serverless. Note that we a
 
 The most straightforward function to move to serverless first is the `Job Management` module, as illustrated below:
 
-![Backfill](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/facade.jpeg)
+![Backfill](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/facade.jpg)
 
 Next step, we will create a `Facade layer` that will provide a high-level abstraction over the `Job Management` function. It also refractors all consumers with the same functionality to use a similar facade.
 
 Next, we will utilize Azure Function and [Azure Cosmos Database](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) to implement our new system.  The essential thing in this implementation is synchronizing data between existing database with a new database using `Cosmos DB` and name it the `Backfill` process as illustrated below:
 
-![Toggler](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/toggler.jpeg)
+![Toggler](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/toggler.jpg)
 
 Next, we create a `Toggler`, our third implementation of the facade and acts as a traffic router. It forwards requests to either the existing or new function (Azure Function) through the facade layer.
 
@@ -118,11 +118,11 @@ After we are done with Azure Function, we will fire up `Canary Launch` and confi
 
 If everything goes as expected, we will eventually route 100% traffic of the requests to the `Job Management` function that is delivered via the new Azure Function. In case any problem happens with the new implementation, a fallback function is triggered to roll back the request and re-direct the request to the existing function as illustrated below:
 
-![Job management](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/job-mgt.jpeg)
+![Job management](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/job-mgt.jpg)
 
 Once we are satisfied with our new implementation of the Azure Function, we can go ahead and delete the deprecated existing implementation of the `Job Management` function. We can therefore remove the `Toggler` as illustrated below:
 
-![Delete toggler](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/no-toggler.jpeg)
+![Delete toggler](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/no-toggler.jpg)
 
 ### 4. Challenges
 Serverless is a new paradigm for developing and running modern applications in the cloud. It increases the developer's focus and productivity. However, there are challenges that one has to overcome during the development and delivery phase.
