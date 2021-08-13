@@ -20,7 +20,7 @@ An embedding is a dense vector representation of any object. A good embedding is
 
 Traditionally, you might have thought that using a classification architecture would be better. But in the classification architecture, you have a fixed number of classes. What happens when there is a new person that you want to classify? You will need to rebuild the model. Right? With embedding architectures such as FaceNet, you project people into an embedding space. You can then set a threshold to compute the distance between two people. You can then model it as a classification problem indirectly, or you can model it as a clustering problem. 
 
-This article introduces and expounds a little further on this model and shows how you can develop a face recognition system using FaceNet.
+This article explores how a FaceNet face recognition system works, in contrast to traditional face recognition systems.
 
 ### Outline
 1. [Problem with traditional face recognition systems](#problem-with-traditional-face-recognition-systems)
