@@ -1,6 +1,6 @@
 Flair is a natural language processing (NLP) used to build machine learning models used in text classification and speech recognition.
 
-Flair is used in language translation applications, speech recognition, and conversion of speech to text and text to speech applications.
+It is used in language translation applications, speech recognition, and conversion of speech to text and text to speech applications.
 
 Its made up of a text embedding library that enables one to combine different word and document embeddings during model building.
 
@@ -10,12 +10,12 @@ In this tutorial we will start with the Flair basics, then build a simple Natura
 
 - [Prerequisites](#prerequisites)
 - [How to Install Flair](#how-to-install-flair)
-- [Prepare Dataset](#prepare-dataset)
-- [Splitting Dataset](#splitting-dataset)
+- [Prepare the dataset](#prepare-the-dataset)
+- [Splitting the dataset](#splitting-the-dataset)
 - [Building Corpus](#building-corpus)
 - [Creating Label Dictionary](#creating-label-dictionary)
 - [Word Embeddings with Flair](#word-embeddings-with-flair)
-- [Building and Training model](#building-and-training-model)
+- [Building and training the model](#building-and-training-the-model)
 - [Making Predictions using our model](#making-predictions-using-our-model)
 - [Conclusion](#conclusion)
 - [References](#references)
@@ -29,7 +29,7 @@ In this tutorial we will start with the Flair basics, then build a simple Natura
 5. Working knowledge of [Numpy](<(https://numpy.org/)>).
 6. Use [Google Colab](https://research.google.com/) or [Jupyter Notebook](https://jupyter.org/). In this tutorial, I will be using Google Colab in building our model
 
-### How to Install Flair
+### How to install Flair
 
 Since we are using [Google Colab](https://research.google.com/), use this command to install flair.
 
@@ -95,9 +95,9 @@ The methods shown above such as `embeddings`, `data`, `models`, and `trainers` w
 `models`- This Will be used to specify the type of model we will be building.
 `trainers`- These methods will be used to train our model.
 
-### Prepare Dataset
+### Prepare the dataset
 
-To start with data preparation we need first to import the exploratory data analysis packages(EDA) to be used in data manipulation and analysis.
+To start with data preparation, we need first to import the exploratory data analysis packages(EDA) to be used in data manipulation and analysis.
 
 #### Importing exploratory data analysis(EDA) packages
 
@@ -171,7 +171,7 @@ df1.columns  = ['text','labels']
 
 The new column names will be `text` and `labels`.
 
-### Splitting Dataset
+### Splitting the dataset
 
 In this section, we have split our dataset into three: train set, test set, and dev or validation set.
 
@@ -320,7 +320,7 @@ document_embeddings = DocumentRNNEmbeddingss(word_embeddings,hidden_size=512,rep
 
 After we have successfully performed both `FlairEmbeddings` and `DocumentEmbeddings` we can now start building and training our model.
 
-### Building and Training model
+### Building and training the model
 
 In this section we start to build our model using the processed data, the processed data from the above sections will be used to train our model so that it can understand our dataset so that later the model can be used to make predictions.
 
