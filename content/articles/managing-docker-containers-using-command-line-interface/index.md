@@ -17,7 +17,7 @@ images:
 
 ### Introduction
 
-With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker to delete, it will not delete these unneeded items like containers, images, volumes, and networks. Some of the most effective techniques to manage Docker Containers directly from the Command Line Interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands. These docker commands make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
+With Docker, you can build, test, and deploy applications in the form of portable containers that can be used nearly anywhere. When using Docker, you might quickly get a huge number of useless items, which take up a lot of disk space and clog up the Docker command output. Unless you specifically instruct Docker to delete, it will not delete these unneeded items like containers, images, volumes, and networks. Some of the most effective techniques to manage Docker Containers directly from the command line interface are discussed in this article. We will look at some real-world examples of the most often used but very effective and efficient Docker commands. These docker commands make your Docker system organized and save up disk space by deleting unneeded Docker containers, images, volumes, and networks.
 
 ### Table of contents
 
@@ -38,7 +38,7 @@ Assume you have used the following command to get an Ubuntu image from Docker Hu
 sudo docker pull ubuntu
 ```
 
-Now you want to use an interactive shell to execute the Ubuntu container. After downloading the Docker Ubuntu image from the official Docker [registry](https://hub.docker.com/_/ubuntu/), you will use bash on the Ubuntu OS to edit or install packages. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
+Now you want to use an interactive shell to execute the Ubuntu container. After downloading the Docker Ubuntu image from the official Docker [registry](https://hub.docker.com/_/ubuntu/), you will use bash on the Ubuntu OS to edit and install packages. The Docker registry is a platform that hosts images. You may do so by using the `-I` flag to execute the Docker Container in interactive mode.
 
 To do this, use the following command:
 
@@ -81,7 +81,7 @@ sudo docker stop <name-of-the-container>
 sudo docker rm <name-of-the-container> 
 ```
 
-The first command lists all of your system's containers. The container's state may be found in the status column. Stopping the container before removing it is required if it has not been exited. You must know the container ID of the container you want to delete before you delete them. The abbreviation `rm` represents remove.
+The first command lists all your system's containers. The container's state may be found in the status column. Stopping the container before removing it is required if it has not been exited. You must know the container ID of the container you want to delete before you delete them. The abbreviation `rm` represents remove.
 
 Remove all the containers linked with a docker image before removing it using the command below:
 
@@ -96,7 +96,7 @@ There are times when we must repeat the same command-line instruction, which is 
 
 We may save time and effort by utilizing an `alias` command to avoid typing or duplicating the same command over and over again. Aliases allow us to execute a command or a group of instructions using a pre-defined 'string' that we can tailor to our liking.
 
-To handle aliases, simply create and use aliases in your `/.bashrc` file and mention them.
+To handle aliases, create and use aliases in your `/.bashrc` file and mention them.
 
 ```bash
 alias dockrm='docker rm'
@@ -107,7 +107,7 @@ Each of the commands above is used to create an alias. The first command creates
 
 ### Examining docker containers 
 
-The Docker `inspect` command may be used to acquire information about a specific docker container. It provides you with all of the information about the container, including the path, creation date, status, driver, and so on. The container name is required to check the container.
+The Docker `inspect` command may be used to get information about a specific docker container. It provides you with all the information about the container, including the path, creation date, status, driver, and so on. The container name is required to check the container.
 
 ```bash
 sudo docker container ls 
@@ -118,7 +118,7 @@ The command `sudo docker container ls` shows a list of all Docker containers tha
 
 ### Conclusion
 
-In this article, we learned about using the command-line interface to manage Docker containers. We accomplished this by running a docker container in an interactive shell, removing all the dangling volumes, removing Docker containers and images, inspecting docker containers, and finally by using aliases. I would urge a reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded docker containers, images, and volumes.
+In this article, we learned about using the command-line interface to manage Docker containers. We accomplished this by running a docker container in an interactive shell, removing all the dangling volumes, docker containers and images, inspecting docker containers, and finally by using aliases. I would urge a reader to use the knowledge gained from this article to keep their docker system organized and save up disk space by deleting unneeded docker containers, images, and volumes.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
