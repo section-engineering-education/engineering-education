@@ -187,3 +187,7 @@ Serve the app and navigate to <http://localhost:5000/movies>. You should see the
 
 ### Conclusion
 In this tutorial, we have looked at how to send a request to a third-party API. In this case, we have used the TMDB API. We have also seen how to send a request-response to your app's endpoint as JSON.
+
+The code in this tutorial can be found in [this GitHub repo](https://github.com/geoffrey45/flask-request).
+
+Happy coding!
