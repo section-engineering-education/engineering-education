@@ -6,7 +6,7 @@ url: /flutter-localization/
 title: Getting Started with Flutter Localization
 description: This article will explain a step by step process on how to support different languages in a Flutter application
 author: jerim-kaura
-date: 2021-08-13T00:08:30-18:00
+date: 2021-08-13T00:00:00-08:30
 topics: []
 excerpt_separator: <!--more-->
 images:
