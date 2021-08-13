@@ -118,8 +118,7 @@ This property has all the public properties of the superclass employees.
 ![properties engineer](/engineering-education/how-to-implement-object-oriented-programming/oop_two.png)
 
 ### Polymorphism
-It is a technique in object-oriented programming that allows you to eliminate long lines of codes of `if`, `else`, or `switch case` statements. There are two types of polymorphism;
-To implement this in Matlab, we look at the example we used in the cMatlabngineers implemented in the `function salary.`
+Polymorphism is a technique in object-oriented programming that allows you to eliminate long lines of codes of `if`, `else`, or `switch case` statements.To implement this technique in Matlab, we look at the example we used in the class engineers, and it is implemented in the `function salary.`
 ```Matlab
 % function for salary for an engineer
 function y = Salary(objE, noOfHours) 
@@ -134,8 +133,7 @@ function S = Salary(objS, noOfHours)
 S = (objS.baseSalary*noOfHours)*objS.commission;
 end
 ```
-In the above code, we have a function salary. Both the engineer and sales class have the same input argument, but they calculate the salary using different mathematical operations. Here we initiate our object of each class `objE` and `objS`. We use the name and the base salary from the superclass and provide new values for their properties. For example, we had our employees 'neha'. We must specify the products and sales of neha. 
-We first specify our objects i.e `objE` and `objS`. To define `objE`,
+In the above code, we have a function salary. Both the engineer and sales class have the same input argument, but they calculate the salary using different mathematical operations. Here we initiate our object of each class `objE` and `objS`. We use the name and the base salary from the superclass and provide new values for their properties. For example, we had our employees 'neha'. We must specify the products and sales of neha. We first specify our objects i.e `objE` and `objS`. To define `objE`,
 ```matlab
 objE = Engineer(obj.name, obj.baseSalary, "simulink")
 ```
@@ -159,8 +157,7 @@ The value 10 is the number of hours. When we run the codes separately, we get th
 The calculated salary is different as per the mathematical operations.
 
 ### Abstraction
-It can be said to be an extension of encapsulation. To implement it in our example, we can only define the function named `salary` in the base class employed, and it's derived will have the function implementation. 
-In Matlab, we can do it by making the class an abstract class. 
+Abstraction can be said to be an extension of encapsulation. To implement abstraction in our example, we only define the function named `salary` in the base class employed, and it's derived class will have the function implementation. In Matlab, we can do abstraction by making the class an abstract class. 
 ```Matlab
 classdef(Abstract) Employees
 properties
