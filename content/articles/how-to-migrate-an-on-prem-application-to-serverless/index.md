@@ -1,4 +1,4 @@
-### Introduction
+﻿### Introduction
 Serverless is not new in the technology world. It is gradually changing how companies and developers deliver business value to their clients using the [public cloud](https://www.ibm.com/cloud/learn/public-cloud).
 
 This article will cover the steps on how one can migrate an [on-premises](https://www.techopedia.com/definition/26714/on-premises-software) application to [serverless](https://aws.amazon.com/serverless/). We will use a case study of a recruitment web application to accomplish the task.
@@ -140,6 +140,6 @@ Also, for a new technology to succeed, more than half of the team members need t
 ### Conclusion
 It is a long journey to migrate from monolith architecture to serverless. It requires much investment and commitment from the management. Additionally, it also requires discipline from the team members that are developing it. However, the benefits associated with it can never be underestimated.
 
-It is usually a good idea to start small, rather than waiting for one big move. These incremental steps allow the developers to learn from their past mistakes, iterate, and try again. It is not a good idea to go for a perfect design. Instead, the team should be ready to iterate and improve.
+When migrating to serverless, organizations should start with less complex modules, rather than migrating the whole system at once. These incremental steps allow the developers to learn from their past mistakes, iterate, and try again. It is not a good idea to go for a perfect design. Instead, the team should be ready to iterate and improve.
 
 Finally, it is better to note that serverless is not a single step but involves continuous improvement.
