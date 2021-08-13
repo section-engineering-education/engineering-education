@@ -1,7 +1,9 @@
-Quarkus is an open-source Java native framework useful for creating and managing Kubernetes native Java stack, microservices, and serverless environments which is optimized for the open JDK and the GraalVM runtime. It is a very effective platform for Kubernetes, cloud, and serverless environments.
-In similarity to the Spring Boot framework, Quarkus is a combination of different Java libraries and standards, providing you a consolidation along with improvements on the JVM.
-Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers.
-Quarkus is natively integrated with Java libraries hence you don't have to learn a new thing.
+Quarkus is an open-source Java native framework useful for creating and managing Kubernetes native Java stack, microservices, and serverless environments which is optimized for the open JDK and the GraalVM runtime. 
+
+It is a very effective platform for Kubernetes, cloud, and serverless environments.
+In similarity to the Spring Boot framework, Quarkus is a combination of different Java libraries and standards, providing you a consolidation along with improvements on the JVM. 
+
+Although this framework is young compared with the language (over 20 years old), it has some promising features and results that make it catchy to developers. Quarkus is natively integrated with Java libraries, hence you don't have to learn a new thing.
 
 ![Quarkus Icon](Quarkus-hero.png "Quarkus Icon")
 _(Quarkus Official icon)_
@@ -15,7 +17,7 @@ In this tutorial, we will get started on Quarkus and see how we can have some ha
 - [Quarkus briefs](#quarkus-briefs)
 - [Comparison between Quarkus and other Java frameworks](#comparison-between-quarkus-and-other-java-frameworks)
 - [Get started with a Quarkus project](#get-started-with-a-quarkus-project)
-	- [Quarkus.io project initializer](#quarkusio-project-initializer)
+  - [Quarkus.io project initializer](#quarkusio-project-initializer)
         - [Folder structure](#folder-structure)
     - [Using Visual Studio Code](#using-visual-studio-code)
     - [Using IntelliJ](#using-intellij)
@@ -38,7 +40,7 @@ Coming to the tip of the article, we shall have the following to take with us:
 - Comparison between Quarkus and other Java frameworks
 - Quarkus prerequisites
 - Advantages and trade-offs of Quarkus framework
-- Creation of a Quarkus application using different methods or tools such as from the [https://code.quarkus.io/](https://code.quarkus.io/) website, using Visual Studio Code and IntelliJ.
+- Creation of a Quarkus application using different methods or tools, such as from the [https://code.quarkus.io/](https://code.quarkus.io/) website, using Visual Studio Code and IntelliJ.
 - Quarkus project structure
 - Differences between the Quarkus framework and the Spring Boot framework.
 - Testing Quarkus resources usage using JConsole.
@@ -55,13 +57,13 @@ Some basics required for easy follow-up on this article include:
 - Must have interacted with at least one Java framework
 - A stable internet connection.
 
-**_Note_** that some of these may change in the future.
+>**_Note_:** that some of these may change in the future.
 
 ### Quarkus briefs
 
 Some features provided by Quarkus include:
 
-- **Hot reload**: Each code change will trigger a reload in the system and the differences to be automatically reflected in the system.
+- **Hot reload**:  Each code change will  reload in the system and the differences  will  be automatically reflected in the system.
 - **Imperative and Reactive development**: That is, it supports both synchronous and asynchronous operations.
 - **Standards and Libraries**: More Libraries built on known standards easily support full-stack development.
 
@@ -70,10 +72,10 @@ Some features provided by Quarkus include:
 Java is a well-built and supported language. It has many available frameworks for large and small projects. Some include:
 
 - Spring
-- Springboot
+- Spring Boot
 - Hibernate
 - Struts
-- Google Web Toolkit, GWT
+- Google Web Toolkit (GWT)
 - Blade
 - Grails
 - Quarkus
@@ -84,8 +86,7 @@ Applications are build basing the choices of algorithms, data structures, and fr
 
 You shall look at the similarities and differences between Quarkus and other Java frameworks such as Spring Boot, Micronaut, and Microprofile.
 
-When you compare **Quarkus** and **Spring Boot**, you will learn the following:
-
+### Quarkus vs Spring Boot
 _**Similarities**:_
 
 - Both use Spring Web dependencies
@@ -96,10 +97,10 @@ _**Similarities**:_
 _**Differences**:_
 
 - Quarkus' applications are faster and more efficient than Spring Boot's. Quarkus was built for performance and efficiency, in that it should take the least amount of memory and Boot and response time.
-- Quarkus is a modern framework while Spring Boot has stayed in the industry for some time.
+- Quarkus is a modern framework, while Spring Boot has stayed in the industry for some time.
 - Compared to Quarkus, Spring Boot has a great community due to its time present. Quarkus has an increasing community.
 
-**Quarkus** vs **Micronaut**:
+#### Quarkus vs Micronaut
 
 _**Similarities**:_
 
@@ -110,15 +111,16 @@ _**Similarities**:_
 
 _**Differences**:_
 
-- Quarkus relies more on Java Enterprises and Eclipse MicroProfile APIs while Micronaut defines its APIs and is more based on the Spring and Grails frameworks.
-- Quarkus also is based on an extension architecture which makes it integrate easily with third-party frameworks while Micronaut has an Aspect-Oriented Programming (AOP) implementation that doesn't use reflection to define cross-cutting concerns.
+- Quarkus relies more on Java Enterprises and Eclipse MicroProfile APIs, while Micronaut defines its APIs and is more based on the Spring and Grails frameworks.
 
-> **[GraalVM](https://www.graalvm.org/)**: a high-performance JDK distribution.
-> Is a high-performance Java Development Kit (JDK) distribution built to quicken the application executions written in Java and other JVM languages.
-> It provides other runtimes for Python, JavaScript, Ruby, and some other popular languages.
-> Availability of polyglot capabilities makes it possible to mix multiple programming languages in a single application while removing call costs of any foreign language.
+- Quarkus is based on an extension architecture which makes it integrate easily with third-party frameworks, while Micronaut has an Aspect-Oriented Programming (AOP) implementation that doesn't use reflection to define cross-cutting concerns.
 
-**Quarkus** vs **Microprofile**:
+> **[GraalVM](https://www.graalvm.org/)**: A high-performance JDK distribution.
+Is a high-performance Java Development Kit (JDK) distribution built to quicken the application executions written in Java and other JVM languages.
+It provides other runtimes for Python, JavaScript, Ruby, and some other popular languages.
+Availability of polyglot capabilities makes it possible to mix multiple programming languages in a single application while removing call costs of any foreign language.
+
+#### Quarkus vs Microprofile
 
 _**Similarities**:_
 
@@ -126,20 +128,20 @@ _**Similarities**:_
 - Are compatible with each other since Quarkus  is an implementation of Microprofile which is well-built based on the given specifications.
 
 _**Differences**:_
-- These two can't be really said to be differing from each other. Microprofile is used to do microservices specification in the Java Enterprise environment.
-Quarkus on the other hand is an **implementation** of Microprofile which is well-built based on the given specifications.
+- While Microprofile is used to do microservices specification in the Java Enterprise environment, Quarkus is an **implementation** of Microprofile which is well-built based on the given specifications.
 
-If you have worked with Microprofile, Quarkus is going to be simpler for you to work with.
+If you have worked with Microprofile, Quarkus is going to be simpler for you.
 
 Quarkus boasts of its reload speed and memory efficiency when built and run on Native environment via [GraalVM](https://www.graalvm.org/) followed by the JVM compared to the Traditional environment.
-This is well indicated by the image below found on its [official website](https://quarkus.io/):
+
+This is well indicated by the image below, found on its [official website](https://quarkus.io/).
 
 ![Quarkus efficiency and performance](Quarkus_efficiency_image.png "This shows how Quarkus performs in Native, JVM, and Traditional environments")
 _(Photo from Official Quarkus website)_
 
 ### Get started with a Quarkus project
 
-You shall look at how to start and create your Quarkus project using:
+You will create your Quarkus project using:
 
 - [Quarkus.io](https://code.quarkus.io/) project initializer.
 - Using Visual Studio Code.
@@ -173,9 +175,9 @@ _Select your build tool_: That is whether Maven or Gradle.
 
 This will help you create REST API endpoints using JAX-RS.
 
-Click on the `Generate your Application` button to generate your app.
-Download the zip file, extract it and open it on your preferred IDE.
-You can notice that you can also 'Push to GitHub' directly by clicking on the dropdown options in the button.
+- Click on the `Generate your Application` button to generate your app.
+- Download the zip file, extract it and open it on your preferred IDE.
+- You can notice that you can also 'Push to GitHub' directly by clicking on the dropdown options in the button.
 
 ##### Folder structure
 
@@ -245,18 +247,246 @@ The window will look as follows:
 ![VSCode-Quarkus-start.png](VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
 _(Screenshot by Author)_
 
-If it doesn't, just navigate to the Command Palette found in the `Views` menu.
-Search for Quarkus and choose 'Create a Quarkus project'.
-On the pop-up window that displays, select the build tool, then the groupId, artifactId, project version, package name, resource name (i.e. EcommerceResource), select extensions or the dependencies (RESTEasy JAX-RS) by searching and clicking on it.
-Once done click Enter to move to the next step. Select whether to use a starter code or not. Select the folder to generate the Project.
+- If it doesn't, just navigate to the Command Palette found in the `Views` menu.
+- Search for Quarkus and choose 'Create a Quarkus project'.
+- On the pop-up window that displays, select the build tool, then the groupIdartifactId, project version, package name, resource name (i.e. EcommerceResource), 
+- Select extensions or the dependencies (RESTEasy JAX-RS) by searching and clicking on it.
+- Once done click Enter to move to the next step. 
+- Select whether to use a starter code or not. Select the folder to generate the Project.
 
 Now, select whether to open the project on the current or new window by adding it to the current workspace.
 
 #### Using IntelliJ
 
-Launcher your IntelliJ application. Click on the 'Create New Project' button.
-On the left-hand side of the opened window, select Quarkus as your project type.
+- Launcher your IntelliJ application.
+-  Click on the 'Create New Project' button.
+- On the left-hand side of the opened window.
+- Select Quarkus as your project type.
 Intellij provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
+
+![Quarkus IntelliJ start](Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
+_(Screenshot by Author)_
+
+It then automatically fetches the files for your project, extracts them, and opens them up.
+
+![Quarkus IntelliJ start extensions](Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
+_(Screenshot by Author)_
+
+### Compile your Quarkus project
+
+Compilation of the application is done using the `mvnw` file found inside the project folder ('ecommerce-quarkus').
+
+Make sure that you are in the folder which shall be your working directory.
+
+If not, run:
+
+```shell
+cd ecommerce-quarkus
+```
+
+You can now compile your application. Do this by running the following command in the terminal window:
+
+**Maven**:
+
+```shell
+./mvnw compile quarkus:dev
+```
+
+This builds the app in development mode, allowing live reloading (hot reload).
+You can follow the instructions provided on the terminal to navigate around.
+
+**Gradle**:
+
+As for a Gradle project, run:
+
+```shell
+./gradlew quarkusDev
+```
+
+In the output displayed to the Terminal, you will see the _URL_ to access the application together with the installed features.
+This is shown in the image below:
+
+![Compilation development terminal](dev-terminal.png "Compilation development terminal")
+_(Screenshot by Author)_
+
+By default, Quarkus on `http://localhost:8080/` request, will return the file in the `ecommerce-quarkus/src/main/resources/META-INF/resources/`.
+
+Commonly, the 'index.html' file found there will be your output.
+Access the app using the browser or terminal to view the outputs.
+This will be as follows:
+
+- **Browser**:
+
+  In the browser, open `localhost:8080` or `http://0.0.0.0:8080/` to access the application.
+  You will see the 'index.html' file found inside `ecommerce-quarkus/src/main/resources/META-INF/resources`.
+  The _Application configurations_ are always set in `ecommerce-quarkus/src/main/resources` inside the 'application.properties' file.
+
+  Since Quarkus now ships with the Dev mode User Interface (Dev UI) available, you can use it to run and view the project in a dev mode.
+  Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available at dev mode_.
+
+![dev-ui](dev-ui.png "dev-ui")
+_(Screenshot by Author)_
+
+You can now easily add configurations for the project using the interface by clicking on the `Config Editor` button.
+
+- **Terminal**:
+
+  If you have **_curl_** installed, you can do this in the terminal window. Run `curl http://localhost:8080/` to get the 'index.html' file output.
+
+  You shall also use _curl_ to test the REST Endpoint found in the 'EcommerceResource.java' file mentioned previously.
+  Find this file inside `/ecommerce-quarkus/src/main/java/org/ecommerce/quarkus/` folder.
+
+Run `curl http://localhost:8080/hello`. This gives the _return_ value as an output.
+Change the return value to `Second hot reload!` and save. See that now the output will automatically be modified utilizing the hot reload functionality.
+
+Whenever a request is fetched, the application records the action in the Terminal.
+You can also notice that it is utilizing the [`Vert.X`](https://vertx.io/) framework per the Terminal output as shown in the image below:
+
+![vert.x-worker](vert.x-worker.png "vert.x-worker.png")
+_(Screenshot by Author)_
+
+> What is Vert.X?
+[**Vert.X**](https://vertx.io/): is an _Opensource toolkit_ that is used to build distributed reactive systems on the top of the JVM using an asynchronous and non-blocking development model.
+
+To add built-in injection for instance, from the configurations, you will just need to do the following:
+
+In the `EcommerceResource.java` file, add the following lines:
+
+- First, import the application configurations
+- Injection and the configuration property to be injected into the file for use or display
+- Return the values as your output
+
+The `EcommerceResource.java` file will look like this:
+
+```java
+package org.ecommerce.quarkus;
+
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/hello")
+public class EcommerceResource {
+    @Inject
+    @ConfigProperty(name="greeting")
+    String greeting;
+
+    @Inject
+    @ConfigProperty(name="key")
+    String key;
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return greeting + " " + key;
+    }
+}
+```
+
+In the `application.properties` file, add the following:
+
+- A configuration property named 'greeting' and its value as 'Hi Docs?'
+- Another one with the configuration property named 'key' and its value like '4455'
+
+The `application.properties` file shall look like this:
+
+```properties
+greeting = Hi Docs?
+key = 4455
+```
+
+Save all and run `http://localhost:8080/hello` to see the return value as `Hi Docs? 4455`.X-RS
+
+This will help you create REST API endpoints using JAX-RS.
+
+Click on the `Generate your Application` button to generate your app.
+Download the zip file, extract it and open it on your preferred IDE.
+You can notice that you can also 'Push to GitHub' directly by clicking on the dropdown options in the button.
+
+#### Folder structure
+
+The following shows you how the application folder looks like if you have used Maven as your build tool:
+
+```shell
+.
+├── .mvn
+├── src
+│   ├── main
+│       ├── docker
+│       ├── java
+│       └── resources
+│   └── test
+├── mvnw.cmd
+├── mvnw
+├── .gitignore
+├── .dockerignore
+├── pom.xml
+└── README.md
+```
+
+or as shown below for Gradle users:
+
+```shell
+.
+├── gradle
+├── src
+│   ├── main
+│       ├── docker
+│       ├── java
+│       └── resources
+│   ├── native-test
+│   └── test
+├── .gitignore
+├── .dockerignore
+├── build.gradle
+├── gradle.properties
+├── gradlew
+├── gradle.bat
+├── settings.gradle
+├── pom.xml
+└── README.md
+```
+
+Availability of Dockerfile in the project indicates that it can support microservices for your project run in containers.
+The project lacks the 'main' class, as in the Spring Boot framework, inside the `ecommerce-quarkus/src/main/java/org/ecommerce/quarkus`.
+It has the 'EcommerceResource.java' file which by default has a simple 'hello' REST endpoint.
+
+#### Using Visual Studio Code
+
+- Open up VS Code. Make sure that Java tools are well installed. Some are shown [here](https://code.visualstudio.com/docs/languages/java).
+- Click on the extensions tab.
+- Search for `Quarkus` in the extensions tab identified by `redhat.vscode-quarkus`, built by the 'Redhat team'. Its preview looks like shown below:
+
+![VSCode Quarkus extension](VSCode-Quarkus-extension.png "VSCode-Quarkus-extension.png")
+_(Screenshot by Author)_
+
+- Install it and restart the application.
+
+You shall notice that when you wait for some time, the application automatically opens up a new Quarkus initializer window.
+
+The window will look as follows:
+
+![VSCode-Quarkus-start.png](VSCode-Quarkus-start.png "VSCode-Quarkus-start.png")
+_(Screenshot by Author)_
+
+If it doesn't, just navigate to the `Command Palette` found in the `Views` menu.
+- Search for Quarkus.
+- Choose 'Create a Quarkus project'.
+- On the pop-up window that displays, select the build tool, then the groupId, artifactId, project version, package name, resource name (i.e. EcommerceResource), select extensions or the dependencies (RESTEasy JAX-RS) by searching and clicking on it.
+- Once done click Enter to move to the next step. Select whether to use a starter code or not. Select the folder to generate the Project.
+
+Now, select whether to open the project on the current or new window by adding it to the current workspace.
+
+#### Using IntelliJ
+
+- Launcher your IntelliJ application. 
+- Click on the 'Create New Project' button.
+- On the left-hand side of the opened window, select Quarkus as your project type.
+- Intellij provides you with the text inputs for your project's _Group_, _Artifact_, _Build Tool_, _Language_ (Java or Kotlin), and _Project SDK_.
 
 ![Quarkus IntelliJ start](Quarkus-IntelliJ-start.png "Quarkus IntelliJ start")
 _(Screenshot by Author)_
@@ -314,6 +544,7 @@ This will be as follows:
   The _Application configurations_ are always set in `ecommerce-quarkus/src/main/resources` inside the 'application.properties' file.
 
   Since Quarkus now ships with the Dev mode User Interface (Dev UI) available, you can use it to run and view the project in a dev mode.
+
   Just access it in your browser using `http://localhost:8080/q/dev/`. _This functionality is only available at dev mode_.
 
 ![dev-ui](dev-ui.png "dev-ui")
@@ -329,7 +560,10 @@ You can now easily add configurations for the project using the interface by cli
   Find this file inside `/ecommerce-quarkus/src/main/java/org/ecommerce/quarkus/` folder.
 
 Run `curl http://localhost:8080/hello`. This gives the _return_ value as an output.
-Change the return value to '**_Second hot reload!_**' and save. See that now the output will automatically be modified utilizing the hot reload functionality.
+Change the return value to '**_Second hot reload!_**' and save. 
+
+See that now the output will automatically be modified utilizing the hot reload functionality.
+
 Whenever a request is fetched, the application records the action in the Terminal.
 You can also notice that it is utilizing the [**Vert.X**](https://vertx.io/) framework per the Terminal output as shown in the image below:
 
@@ -474,8 +708,11 @@ Run the tests using the IDE and see if it is a whole successful test.
 ### Add a website template to Quarkus resources
 
 To add a website template to be automatically displayed when `http://localhost:8080/` (default URL with no endpoints) is accessed, add it and its resources inside the `src/main/resources/META-INF/resources/` folder.
+
 Head over to [this](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/) link and download the free cakes' template to try it out.
+
 You can find and download other free templates at [https://themewagon.com/themes](https://themewagon.com/themes).
+
 Once downloaded, extract it and copy and paste all the contents inside the folder to the 'resources' folder mentioned previously.
 The contents include the 'index.html' and all its styling and scripts.
 
@@ -503,7 +740,7 @@ or in **Gradle** using:
 ```
 
 You can perform both the build and clean process which will remove all the previous build output in the build directory.
-This is done by running:
+This is done by running the command:
 
 - In **Maven**:
 
@@ -556,7 +793,7 @@ Run your packaged application by using:
 java -jar target/quarkus-app/quarkus-run.jar
 ```
 
-That is the '**quarkus-run.jar**' JVM and connect to it.
+That is the `quarkus-run.jar` JVM and connect to it.
 
 ![JConsole Quarkus app](JConsole-Quarkus.png "JConsole Quarkus app")
 _(Screenshot by Author)_
@@ -624,7 +861,6 @@ You can then run `docker ps -a` to view your container in the list of displayed 
 
 Access the Docker container application by first running it using the command above and then opening `http://localhost:8080/` in the browser or Terminal.
 
-****
 
 ### Conclusion
 
@@ -643,16 +879,14 @@ By this point, you have learned the following:
 - Working with Quarkus applications inside Docker containers
 
 ### Further activities
-
-
 - Build a native Quarkus image using GraalVM as illustrated [here](https://quarkus.io/guides/building-native-image).
 - Quarkus can be used to run another application inside it on a separate port by placing it inside the resources.
   Try this out and route the endpoints in your project to fetch values from a database.
   Do this by using Quarkus as your backend application.
-- Try using Quarkus to create a distributed microservices application by utilizing Kubernetes and Kafka dependencies available.
+- Try using Quarkus to create a distributed microservices' application by utilizing Kubernetes and Kafka dependencies available.
 
 ### References
 
 - [Free cakes' website template](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/)
 - [Other free templates](https://themewagon.com/themes/)
-- [RESTEasy JAX-RS guide](https://quarkus.io/guides/rest-json): REST endpoint framework implementing JAX-RS and more
+- [RESTEasy JAX-RS guide](https://quarkus.io/guides/rest-json): REST endpoint framework implementing JAX-RS and more.
