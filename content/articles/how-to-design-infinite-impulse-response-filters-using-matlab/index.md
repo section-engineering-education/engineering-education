@@ -17,7 +17,6 @@ images:
 To filter is to remove the unwanted properties of a signal. IIR filters with an infinite number of impulses. Here the output y(n) response depends on the present input x(n), previous input x(n-1) as well as the previous output y(n-1).
 <!--more-->
 
-### HOW TO DESIGN AN INFINITE IMPULSE RESPONSE FILTERS(IIR)
 ### Introduction
 To filter is to remove the unwanted properties of a signal. IIR are filters with an infinite number of impulses. Here the output y(n) response depends on the present input x(n), previous input x(n-1) as well as the previous output y(n-1). The differential equation for the IIR filter can be given by the differential equation $y(n)=b_0x(n)+b_1x(n-1)+---b_mx(n-m)-a_1y(n-1)---a_ny(m-n)$. To see more about this, you can get it [here](https://www.sciencedirect.com/topics/engineering/iir-filters). Since the filter uses the previous outputs, there is feedback from the filter structure. When designing an IIR filter, the transfer function($H_s$) that meets the filter's specification is considered. The transfer function($H_s$) is the ratio of the output response to the input response.
 
@@ -76,13 +75,16 @@ The next step is to normalize the cut-off frequency `wc` obtained above. Then, f
 [den num] = butter(N, wc, 'low');
 ```
 We obtain the filter's coefficients using the code above.The coefficients are the numerator(output) `num` and the denominator(input) `den`. It is done by passing the filter order obtained and cut-off frequency to the `butter` function. Since we are designing a low pass filter, we define using `low` when passing the filter order and the cut-off frequency. 
-![filter coefficients](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_five.PNG)
+
+![filter coefficients](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_five.PNG)  
+
 The coefficients that we obtained previously help plot the filter's response, which is done using the `freqz` function. Finally, we pass the filter coefficients, the number of points used for plotting, and the sampling frequency to this function.
 
 ```Matlab
 freqz(den, num, 1000, fs)
 ```
 When we run the program, we have;
+
 ![Filter response](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_seven.PNG)
 
 ### Highpass butterworth filter
@@ -127,7 +129,8 @@ We then use the `cheb1ord` function to find the order and the cut-off frequency 
 ```Matlab
 [N wc] = cheb1ord(wp, ws, kp, ks);   %order of the filter
 ```
-![filter order and cut-off frequency](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_eight.PNG)
+![filter order and cut-off frequency](/engineering-education/how-to-design-infinite-impulse-response-using-matlab/filter_eight.PNG)  
+
 In finding the numerator and the denominator coefficients, we need to add the passband ripple `kp`. It is because the Chebyshev has ripples in the passband. It is what makes the difference in the design of the Butterworth filter and Chebyshev filter. So we get these coefficients and then plot the response using the `freqz` function.
 ```Matlab
 [num den] = cheby1(N, kp, wc, 'low')    % numerator and denominator coefficients
@@ -162,4 +165,5 @@ freqz(b, a, 1000, fs)    %plot the response
 ### Conclusion
 A filter is essential in the engineering field. They help get rid of the unwanted part of a signal by considering specific prescriptions discussed above. Matlab forms a vital tool in the design of filters and the visualization of their response. Furthermore, it helps improve the performance of a filter since you can respond and compare with the expected response. Such activities are made easier in Matlab by the use of the in-built functions. Designing the various types of filters is made easy, and the codes are easy to understand. As we have seen before, you can use a code of a different filter to build another filter by making a few changes.
 
+---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
