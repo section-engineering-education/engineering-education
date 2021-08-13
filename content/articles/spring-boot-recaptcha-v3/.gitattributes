@@ -1,2 +1,5 @@
-*.md diff
+* text=auto
+
+*.md text  diff=markdown
+
 *.png diff 
