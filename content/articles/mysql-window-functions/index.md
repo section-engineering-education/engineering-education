@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/mysql-window-functions/hero.png
     alt: Mysql Window Functions Hero Image
 ---
-A MySQL window function is a function that uses basal queries to manipulate row values. Window functions must have an `OVER` clause. Therefore, any function without an `OVER` clause is not a window function.
+A MySQL window function is a function that uses basic queries to manipulate row values. Window functions must have an `OVER` clause. Therefore, any function without an `OVER` clause is not a window function.
 <!--more-->
 The `OVER` clause has the following potentials:
 - It defines a grouping of rows using the `PARTITION BY` clause.
