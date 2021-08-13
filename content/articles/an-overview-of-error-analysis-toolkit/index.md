@@ -26,11 +26,11 @@ Error analysis is a strategy used to document the errors that show up in learner
 
 3. **Systematic Errors**
 
-Ther are errors that are consistent and repeatable in a given data sets. Systematic errors are prone to appear in machine earning models.
+There are errors that are consistent and repeatable in a given dataset. Systematic errors are prone to appear in machine learning models.
 
 4. **Learner Language**
 
-Language in which learners say or write when they are trying to communicate in a language they are learning. Therefore, machine learning models study computer algorithims that improve automatically by going through more data sets over and over again improving their performance.
+Language in which learners say or write when they are trying to communicate in a language they are learning. Therefore, machine learning models study computer algorithms that improve automatically by going through more data sets over and over again improving their performance.
 
 5. **Cohorts**
  
@@ -67,7 +67,7 @@ Sometimes developers find it hard to discover hidden data pockets with critical 
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*Decision tree that aims at finding failure modes by separating error instances from success instances in the data. The hierarchical error pattern here shows that while the overall error rate is 23.65% for the dataset, it can be as high as 96.77% for individuals who are married, have a capital gain higher than 4401, and a number of education years higher than 12.
+*Decision tree aims at finding failure modes by separating error instances from success instances in the data. The hierarchical error pattern here shows that while the overall error rate is 23.65% for the dataset, it can be as high as 96.77% for individuals who are married, have a capital gain higher than 4401, and a number of education years higher than 12.
 
 2. Error Heatmap
 
@@ -84,19 +84,19 @@ Error Heatmap works by visualizing cells with higher error, showing a darker red
 
 This step is where Error Analysis enables further debugging of the cohorts earlier identified with errors. More information about the machine learning models errors is identified through data exploration and model interpretability.
 
-Methods for Error Diagnosis;
+Methods for Error Diagnosis:
 
-1. Data Exploration
+1. Data exploration
 
-Data exploration allows comparison between cohorts which enables benchmarking to be carried out. Dataset statistics and feature distribution are explored therefore,investigating whether certain cohorts are underrepresented or their feature distribution is a lot different from the overall data hinting if there's the existence of outliers or unusual covariate shift.
+Data exploration allows comparison between cohorts which enables benchmarking to be carried out. Dataset statistics and feature distribution are explored, therefore, investigating whether certain cohorts are underrepresented or their feature distribution is a lot different from the overall data hinting if there's the existence of outliers or unusual covariate shift.
 
 ![Data Exploration](/engineering-education/an-overview-of-error-analysis-toolkit/data-explorer.jpg)
 
 *[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*When we look at how the data is distributed across the feature “education\_num” we can see that a) there are fewer instances for individuals with more than 12 years of education, and b) for this cohort the distribution between lower income (blue) and higher income (orange) is very different than for other cohorts. In fact, for this cohort there exist more people who have an income higher than 50K, which is not true for the overall data.*
+*When we look at how the data is distributed across the feature “education\_num” we can see that a) there are fewer instances for individuals with more than 12 years of education, and b) for this cohort the distribution between lower-income (blue) and higher-income (orange) is very different than for other cohorts. In fact, for this cohort there exist more people who have an income higher than 50K, which is not true for the overall data.*
 
-2. Global Explanation
+2. Global explanation
 
 Global Explanation allows users to explore the top important features that impact the overall model predictions for a selected sub-group of the cohort. This allows comparison between values for different cohorts side by side. Users can see the relationship between the values of the selected feature to its corresponding feature of important values. This shows them how the values of the selected feature impact model prediction.
 
@@ -104,9 +104,9 @@ Global Explanation allows users to explore the top important features that impac
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*Global feature explanations for the income prediction model show that marital status and number of education years are the most important features globally. By clicking on each feature, it is possible to observe more granular dependencies. For example, marital statuses like “divorced”, “never married”, “separated”, or “widowed” contribute to model predictions for lower income (<50K). Marital status of “civil spouse”instead contributes to model predictions for higher income (>50K).*
+*Global feature explanations for the income prediction model show that marital status and number of education years are the most important features globally. By clicking on each feature, it is possible to observe more granular dependencies. For example, marital statuses like “divorced”, “never married”, “separated”, or “widowed” contribute to model predictions for lower income (<50K). Marital status of “civil spouse” instead contributes to model predictions for higher income (>50K).*
 
-3. Local Explanation
+3. Local explanation
 
 Local explanation allows users to select cohort data points in instance view, divided by correct or incorrect predictions. Missing features are examined as potential causes for incorrect predictions. Users can investigate important features for an individual prediction. It helps illustrate the local behavior of the underlying model on a specific data point.
 
@@ -123,11 +123,11 @@ What-If Analysis allows users to change feature values of selected data points a
 ### Failures in Machine Learning
 
 It has been hard to detect Machine Learning algorithm errors by developers. Most of the time when Error Analysis has been carried out manually by developers, therefore, taking most time in testing and debugging of the Machine Learning models. There are many reasons why machine learning models fail which could be the architecture, or the training data, or the way the training data were preprocessed, or the context in which the model was deployed.
-Teams that deploy machine learning models into the real world face challenges while conducting model evaluation and testing. When testing a model, let's say given a model Y is 75% accurate on a given benchmark and therefore the model accuracy may not be uniform across subgroups of data. Such failures cause a lack of reliability, safety, and unfairness. Subgroups of data may display different error rates which are as model Y 75% accuracy. In order to diagnose errors from different subgroups, Error Analysis proves to be reliable by separating the subgroups of data and analyzing each data set differently, therefore giving more accurate results.
+Teams that deploy machine learning models into the real world face challenges while conducting model evaluation and testing. When testing a model, let's say given a model Y is 75% accurate on a given benchmark and therefore the model accuracy may not be uniform across subgroups of data. Such failures cause a lack of reliability, safety, and unfairness. Subgroups of data may display different error rates which are as model Y 75% accuracy.To diagnose errors from different subgroups, error analysis proves to be reliable by separating the subgroups of data and analyzing each data set differently, therefore giving more accurate results.
 
 ### Installation process
 
-To install the Responsible AI Widgets “raiwidgets” package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have `interpret-community` already installed, you will also need to install this for supporting the generation of model explanations.
+To install the Responsible AI Widgets `raiwidgets` package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have `interpret-community` already installed, you will also need to install this for supporting the generation of model explanations.
 
 ```python
 pip install interpret-community
@@ -135,7 +135,7 @@ pip install interpret-community
 pip install raiwidgets
 ```
 
-Alternatively, you can also clone the open source repository and build the code from scratch:
+Alternatively, you can also clone the open-source repository and build the code from scratch:
 
 ```python
 git clone https://github.com/microsoft/responsible-ai-widgets.git
@@ -167,7 +167,7 @@ pip install -r requirements.txt
 
 #### Getting started
 
-We can call the error analysis dashboard using the API below, which takes in an explanation object computed by one of the explainers from the interpret-community repository, the model or pipeline, a dataset and the corresponding labels (true\_y parameter):
+We can call the error analysis dashboard using the API below, which takes in an explanation object computed by one of the explainers from the interpret-community repository, the model or pipeline, a dataset, and the corresponding labels (true\_y parameter):
 
 ErrorAnalysisDashboard(global\_explanation, model, dataset=x\_test, true\_y=y\_test) 
 
@@ -176,7 +176,7 @@ We can provide the downsampled explanation, the model or pipeline, the full data
 
 ErrorAnalysisDashboard(global\_explanation, model, dataset=X\_test\_original\_full,true\_y=y\_test, categorical\_features=categorical\_features, true\_y\_dataset=y\_test\_full)
 
-The screenshots in this article are generated using a LGBMClassifier with three estimators. 
+The screenshots in this article are generated using an LGBMClassifier with three estimators. 
 
 ### Conclusion
 
