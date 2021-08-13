@@ -1,6 +1,6 @@
 ### HOW TO IMPLEMENT REGULAR EXPRESSIONS (REGEX) WITH JAVA
 
-The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. Regular expression, popularly referred to as regex, is a handy tool designed to validate string operations effectively.
+The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. Regular Expression, popularly referred to as regex, is a handy tool designed to validate string operations very effectively.
 
 The application of regex can be pretty daunting, especially to beginners. This is mainly due to the unusual or strange combinations of the characters applied in the expressions, making the syntax challenging to interpret.
 
@@ -29,21 +29,43 @@ Also, imagine you want to ensure that the value provided in an email address fie
 
 However, with an accurate combination of the regex characters, you can achieve this with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages. One can use one regular expression to validate a variety of inputs.
 
-Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. In addition, validations are faster when compared to applying IF and ELSE statements.
+Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. Validations are faster when compared to applying IF and ELSE statements.
 
 We shall look at how these expressions can be applied using the Java programming language in the following sections.
 
 ### INTERPRETATION OF REGULAR EXPRESSIONS
 
-As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. This implies that each character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters are matched to themselves. In other words, if composed in a regex pattern, the character 'a' would be matched to the character ‘a’ in the input string. 
+As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. This implies that each character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters are matched to themselves. In other words, the character ‘a’ if composed in a regex pattern would be matched to the character ‘a’ in the input string.
 
-![matching string variable with regex](/regex-implementation-with-java/4xvou6_ibborrpudrcn_.png)
 
-In the code above, the predicate method `.matches("hello")` which takes a string argument representing a regex pattern, is invoked on the string variable "word" to ascertain that its value "hello" matches the given regex pattern, "hello". The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable match the regex. This can also be performed on a string literal, and the output would be the same.
+```java
 
-![matching string literal with regex](/regex-implementation-with-java/w3uyuy2tsxkh9ovc9qdg.png)
+    public static void main(String[] args){
 
-Sometimes, this is not always the case. The inclusion of special characters referred to as metacharacters redefines the interpretation of the associated character and the overall pattern of the regex. Some of these metacharacters include but are not restricted to `+ * ? \ [ ] ( ) `.
+        String word = "hello";
+        System.out.println(word.matches("hello"));
+
+ //      output: true  
+ 
+    }
+```
+
+In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable “word” to ascertain that its value “hello” matches the given regex pattern, “hello”. The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable matches the regex. This can also be performed on a string literal, and the output would be the same.
+
+```java
+
+    public static void main(String[] args){
+
+        System.out.println("hello".matches("hello"));
+
+//       output: true
+
+    }
+
+```
+
+
+Sometimes, this is not always the case. The inclusion of special characters referred to as metacharacters redefine the interpretation of the associated character and the overall pattern of the regex. Some of these metacharacters include but are not restricted to `+ * ? \ [ ] ( ) `.
 
 #### METACHARACTERS
 
@@ -61,43 +83,129 @@ A quantifier is used to specify the number of occurrences of a character that it
 
 * Zero or more times matcher (`*`): This is regarded as the “Zero or more” quantifier because it matches the instance of its preceding character occurring any number of times. The following examples illustrate the `*` quantifier:
 
-![Zero or more times quantifier](/regex-implementation-with-java/bvj1t4ysuzgbamt03rmm.png)
 
-In line 4 of the code above, the output is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`. Recall that the `*` quantifier matches a zero or more occurrences of its preceding character in the given string. An occurrence of 1 instance of the string `o` is a match on the regex pattern. This logic is also synonymous with the match in line 7. The output is `true` because multiple instances of the character `o` forming the given string literal are a match on the regex pattern.
+```java
 
-In line 10, despite the combination of different characters preceding the quantifier in the regex pattern, the output is `true` because the sequence of the characters ‘h’, ‘e’, ‘l’, ‘l’, ‘o’ which precede the quantifier is an exact match of the string literal invoking the method, and also because the character ‘o’ which immediately precedes the quantifier occurs at least zero number of time. This logic is also synonymous to the match the code in line 13 in which the output is `true` because the occurrence of the character `o` which precedes the quantifier is zero, but the sequence of the other preceding characters is a match.
+    public static void main(String[] args){
 
-On the contrary, the code in line 16 outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern.
+        System.out.println("o".matches("o*"));
+//          output: true
 
-* One or more times matcher  (`+`): This is regarded as the “one or more” quantifier because it matches the instance of its preceding character occurring at least once. The following examples illustrate the `+` quantifier:
+        System.out.println("oooooo".matches("o*"));
+//          output: true
 
-![One or more times quantifier](/regex-implementation-with-java/k91o_delu-5anhl6nnlh.png)
+        System.out.println("hello".matches("hello*"));
+//          output: true
 
-Using the same set of examples applied in the `*` quantifier above, the outputs of lines 4, 7, 10 are each of boolean value `true` because the instances of the immediate character (‘o’) preceding the `+` quantifier occur at least once in each example. 
+        System.out.println("hell".matches("hello*"));
+//          output: true
 
-Line 13 outputs boolean value `false` because despite the sequence of the preceding characters ‘h’, ‘e’, ‘l’, ‘l’ matching that of the regex pattern, the `+` quantifier expects at least one occurrence of ‘o’ immediately after the second ‘l’ character which turns out to be absent at the expected index of the string literal. 
+        System.out.println("hell".matches("o*"));
+//          output: false
 
-Line 16 outputs `false` because the regex defines its pattern to match an occurrence of exactly one or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern, as well as no occurrence of the character ‘o’.
+    }
+```
 
-It is important to note that the regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` as a result of case-mismatch.
+In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`. Recall that the `*` quantifier matches a zero or more occurrences of its preceding character in the given string. An occurrence of 1 instance of the string `o` is a match on the regex pattern. This logic is also synonymous with the match in the second print statement with String literal `oooooo`. The output is `true` because multiple instances of the character `o` forming the given string literal are a match on the regex pattern.
 
-![case mismatch effect on regex](/regex-implementation-with-java/y-0m7paj7-xrjqmergdf.png)
+For the third print statement, despite the combination of different characters preceding the quantifier in the regex pattern, the output is `true` because the sequence of the characters ‘h’, ‘e’, ‘l’, ‘l’, ‘o’ which precede the quantifier is an exact match of the string literal invoking the method, and also because the character ‘o’ which immediately precedes the quantifier occurs at least zero number of time. This logic is also synonymous to the match the code in the fourth print statement in which the output is `true` because the occurrence of the character `o` which precedes the quantifier is zero, but the sequence of the other preceding characters is a match.
 
-* Zero or One time matcher (`?`): This is regarded as the “zero or one” quantifier because it matches the instance of its preceding character occurring at most once. The following example illustrates the `?` quantifier:
+On the contrary, the code in the last print statement outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern.
 
-![zero or one time matcher](/regex-implementation-with-java/xgm9bwyjfut1j_aqbznu.png)
+* One or more times matcher  (`+`): This is regarded as the “one or more” quantifier because it matches the instance of its preceding character occurring at least once. The following examples illustrate the `+` quantifier:
+
+```java
+
+    public static void main(String[] args){
+
+        System.out.println("o".matches("o+"));
+//          output: true
+
+        System.out.println("oooooo".matches("o+"));
+//          output: true
+
+        System.out.println("helloo".matches("hello+"));
+//          output: true
+
+        System.out.println("hell".matches("hello+"));
+//          output: false
+
+        System.out.println("hell".matches("o+"));
+//          output: false
+
+    }
+```
+
+
+Using the same set of examples applied in the `*` quantifier above, the outputs of the first three print statements are each of boolean value `true` because the instances of the immediate character (‘o’) preceding the `+` quantifier occur at least once in each example. 
+
+The fourth print statement outputs boolean value `false` because, despite the sequence of the preceding characters ‘h’, ‘e’, ‘l’, ‘l’ matching that of the regex pattern, the `+` quantifier expects at least one occurrence of ‘o’ immediately after the second ‘l’ character which turns out to be absent at the expected index of the string literal. 
+
+The last print statements outputs `false` because the regex defines its pattern to match an occurrence of exactly one or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern, as well as no occurrence of the character ‘o’.
+
+It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` as a result of case-mismatch.
+
+```java
+
+    System.out.println("hello".matches("hellO+"));
+//      output: false
+
+    System.out.println("hello".matches("hellO*"));
+//      output: false
+```
+
+
+* Zero or One-time matcher (`?`): This is regarded as the “zero or one” quantifier because it matches the instance of its preceding character occurring at most once. The following example illustrates the `?` quantifier:
+
+```java
+
+    String[] words = {"cat", "care", "cast", "car", "forth", "caree"};
+    
+    for(String word: words){
+        if(word.matches("care?"))
+            System.out.print(word + " ");
+    }
+
+//      output: care car
+```
+
 
 In the given example above, the string array with the variable name “words” is iterated and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. The results obtained are concatenated side by side with a white space between each word.
 
 * N number of times matcher (`{n}`): This is regarded as the “n” quantifier, where ‘n’ is an integer because it matches the instance of its preceding character occurring exactly n number of times. The following examples illustrate the `{n}` quantifier:
 
-![N number of times matcher](/regex-implementation-with-java/n5qrb_vnkr-whmcv5f8w.png)
+```java
+
+    String words = {"bag", "sheet", "give", "show", "cling", "keep"};
+
+    for(String word: words){
+        if(word.matches("ke{2}p"))
+            System.out.print(word + " ");
+    }
+
+//      output: keep
+
+```
+
 
 The output of this code is “keep ” because the regex matches any element which has exactly two occurrences of the character ‘e’ right in between the characters ‘k’ and ‘p’.
 
 * At least N number of times matcher (`{n, }`): The `{n,}` quantifier matches the instance of its preceding character occurring at least ‘n’ number of times.
 
-![At least N number of times matcher](/regex-implementation-with-java/uvpord3vwvmip9hj9xur.png)
+
+```java
+
+    String words = {"bag", "feed", "give", "show", "cling", "fed"};
+
+    for(String word: words){
+        if(word.matches("fe{2,}d"))
+            System.out.print(word + " ");
+    }
+
+//      output: feed
+
+```
+
 
 The output of this code is “feed ” because the regex matches any element with at least two occurrences of the character ‘e’ right in between the characters ‘f’ and ‘d’.
 
@@ -105,9 +213,28 @@ The output of this code is “feed ” because the regex matches any element wit
 
 In the example below, the regex matches elements in the string array `words` which contain between 2 and 5 instances of the character ‘0’ to form a string.
 
-![match between N and M number of times](/regex-implementation-with-java/f5weoqb_mle0sp8udoyk.png)
+```java
 
-Quantifiers will match as many occurrences as possible, for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  However, in a situation where a quantifier is superseded by a question mark (?) such as in the format `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
+    String regexPattern = "0{2,5}";
+    String values = {"00", "0", "000", "210", "0000", "0000000", "00000"};
+
+    for(int i = 0; i < values.length; i++){
+        if(values[i].matches(regexPattern)){
+            System.out.println(values[i] + " matches the regex pattern and was found at index " + i);
+
+        }
+    }
+
+//      The outputs are:
+//        00 matches the regex pattern and was found at index 0
+//        000 matches the regex pattern and was found at index 2
+//        0000 matches the regex pattern and was found at index 4
+//        00000 matches the regex pattern and was found at index 6
+
+```
+
+
+Quantifiers will match as many occurrences as possible, for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  However, in a situation where a quantifier is superseded by a question mark (?) such as in the format `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
 
 #### CHARACTER CLASSES
 
@@ -117,7 +244,7 @@ A character class is used to specify a set of characters, whereby any one of suc
 | Characters | Description |
 | ---------- | ----------- |
 | `.`        | The dot (.) is used to match any single character except the newline character ‘\n’ and the carriage return character ‘\r’. |
-|  `\d` | This character matches any single decimal value or number or digit. |
+|  `\d` | This character matches any single decimal value or number or digit. |
 | `\D` | This matches any single character that is not a digit. |
 | `\w` | This matches any single alphanumeric character, that is, any alphabetical character, digits as well as the underscore character ‘_’ |
 | `\W` | This matches any single character that is not alphanumeric. |
@@ -152,7 +279,7 @@ Assertions are used to specify boundaries within which a match should occur. The
 
 | Character | Meaning|
 | ----------|--------
-|  `^`      | This ensures that the match starts at the beginning of the string or line. However, when this is used at the start of character groups or ranges, it ensures that every other character except the specified characters in the group is a match.|
+|  `^`      | This ensures that the match starts at the beginning of the string or line. However, when this is used at the start of character groups or ranges, it ensures that every other character except the specified characters in the group is a match.|
 | `$`       | This ensures that the match occurs at the end of the string or before a newline character.|
 | `\b`      | This denotes a word boundary and matches the occurrence of characters not preceded or followed by any word character. For example, string “anna” matches the pattern `\\b\\w+` because any other word character does not precede the string. Still, it is not a match for `a\\b` because the first character ‘a’ is immediately preceded by other word characters.|
 | `\B`      | This matches a non-word boundary, given a position where the previous and next characters are either both words or both non-words.|
@@ -161,19 +288,41 @@ Assertions are used to specify boundaries within which a match should occur. The
 
 The backslash `\` is used to obtain the literal meaning or value of a character, usually a quantifier or any other special character. For example, to obtain the literal backslash character, it is required to be escaped `\\`.
 
-It is also used to indicate that the character that follows it is a special character as described in the character classes section of this article.
+It is also used to indicate that the character that follows it is special as described in the character classes section of this article.
 
 ### JAVA PATTERN AND MATCHER APIs
 
 The Java class Pattern represents a compiled regular expression. The regex pattern is created using the `Pattern.compile()` method. This is an overloaded method whose first or only parameter (depending on its method is invoked) is a String. The String argument contains the regex pattern to be matched. 
 
-The Java class Matcher performs match operations on Strings or character sequences by interpreting a compiled regex pattern. 
+The Java class Matcher performs match operations on Strings or character sequences by interpreting a compiled regex pattern.
 
-![Java Pattern and Matcher example](/regex-implementation-with-java/xeyp8nanon6o8aadgfua.png)
+```java
 
-Line 12 compiles the regex pattern and stores the value in the variable `compiledRegex` which is an instance of the `Pattern` class. Line 13 creates the Matcher instance, `regexMatcher`, which holds the return value of the compiled regex pattern matching the String literal with variable name `statements`.
 
-In line 14, `Matcher` method `find` matches a portion of the String to the search pattern. Line 15 outputs the portion of the String that matches the search pattern.
+    public static void main(String[] args){
+        String statements = """
+                Paul's wedding was 09/15/2002
+                Today's date is 07/16/2015
+                Priscilla graduated on 10/25/20
+                """;
+
+        Pattern compiledRegex = Pattern.compile("P.*\\d{1,2}/\\d{1,2}/\\d{1,2}");
+        Matcher regexMatcher = compiledRegex.matcher(statements);
+
+        while(regexMatcher.find())
+            System.out.println(regexMatcher.group());
+
+//          output: Paul's wedding was 09/15/20
+//                  Priscilla graduated on 10/25/20  
+
+
+    }
+```
+
+
+In the code above, the Java class `Pattern` compiles the regex pattern and stores the value in the variable `compiledRegex` - an instance of the `Pattern` class which then creates the Matcher instance, `regexMatcher`, which also holds the returned value of the compiled regex pattern matching the String literal with variable name `statements`.
+
+`Matcher` method `find` matches a portion of the String to the search pattern and outputs the portion of the String that matches the search pattern.
 
 It is important to note that the method `matches` of class String, Pattern, or Matcher returns a boolean value `true` if the whole String to be matched matches the regular expression. 
 
@@ -185,9 +334,9 @@ Given two instances of String with variable names `s` and `replacement` and rege
 
 * `s.replaceAll(“regex”, “replacement”)`: This replaces all occurrences of `regex` in `s` with `replacement`.
 
-* `s.matches(“regex”)` : This evaluates the `s` and returns `true` if the entire sequence of characters in `s` matches the regex pattern in the method argument denoted as `regex`.
+* `s.matches(“regex”)`: This evaluates the `s` and returns `true` if the entire sequence of characters in `s` matches the regex pattern in the method argument denoted as `regex`.
 
-* `s.split(“regex”)` : This iterates through `s` and at an intersection(s) which match `regex`, it separates the composing character sequence of `s` as substrings which are stored in a String array. `regex` is not included in the resulting string array.
+* `s.split(“regex”)`: This iterates through `s` and at an intersection(s) which match `regex`, it separates the composing character sequence of `s` as substrings which are stored in a String array. `regex` is not included in the resulting string array.
 
 ### PASSWORD PATTERN VALIDATION USING REGEX
 
@@ -201,11 +350,35 @@ After all is said and done, let us proceed to practice what we’ve learned so f
 
 The pattern should be constructed such that the sequence of the character should not be a determinant of the match, rather, the regex is expected to check that the required characters are present in the given password.
 
-While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least 5 factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. In order to achieve this, we’ll take advantage of the `|` operator.
+While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least 5 factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. To achieve this, we’ll take advantage of the `|` operator.
 
-![password regex pattern implementation](/regex-implementation-with-java/oz6ycgbik5qjwldeu_8t.png)
 
-The regex provided in line 4 is an invalid password regex that does not match each and all of our requirements. Line 5 is an array of prospective password inputs. The array is iterated through, and in line 8, any password which does not match the invalid password regex is a valid password; else, the given password is invalid.
+```java
+
+    public static void main(String[] args){
+
+        String invalidPasswordRegex = "^([^0-9]*|[^A-Z]*|[^a-z]*|.{0,6}|[a-zA-z0-9]*)";
+        String[] passwords = {"_conDitional4", "guerrilA", "Fies8&", "Salutation_007"};
+
+        for(String password: passwords){
+            if(!password.matches(invalidPasswordRegex)){
+                System.out.println(password + " is a valid password match");
+            }else{
+                System.out.println(password + " is not a valid password match");
+            }
+        }
+
+//      output: 
+//              _conDitional4 is a valid password match
+//              _guerrilA is not a valid password match
+//              Fies8& is not a valid password match
+//              Salutation_007 is a valid password match
+
+
+    }
+```
+
+The regex assigned to the `invalidPasswordRegex` variable is an invalid password regex that does not match each and all of our requirements. ```passwords``` is an array of prospective password inputs. The array is iterated through, and any password that does not match the invalid password regex is valid; otherwise, the given password is invalid.
 
 ### CONCLUSION
 
@@ -220,3 +393,4 @@ The usefulness of regular expression cannot be overemphasized. Although it could
 * [Regular Expressions](https://eloquentjavascript.net/09_regexp.html)
 * [Regular expressions in Java - Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 * [Regular Expression Language - Quick Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference%23character-classes)
+
