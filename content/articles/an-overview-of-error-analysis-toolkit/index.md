@@ -1,5 +1,5 @@
 ﻿Developers have had difficulties in testing and debugging machine learning models to reach up the performance of the human level. Developers have been manually examining mistakes that algorithms are making to give insights on what to do next.
-Error Analysis toolkit both saves the time and effort used in debugging machine learning models. It can save developers weeks of work by simplifying the process. There are several machine learning debugging toolkits available but in this article, we are going to explore the Error Analysis toolkit.
+Error Analysis toolkit saves both time and effort used in debugging machine learning models. It can save developers weeks of work by simplifying the process. There are several machine learning debugging toolkits available but in this article, we are going to explore the Error Analysis toolkit.
 
 ### Table of contents
 
@@ -18,7 +18,7 @@ Error Analysis toolkit both saves the time and effort used in debugging machine 
 
 1. **Machine Learning**
 
-It is the study of computer algorithms that improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.<https://en.wikipedia.org/wiki/Machine_learning>
+It is the study of computer algorithms that improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.
 
 2. **Error Analysis** 
 
@@ -39,10 +39,12 @@ Cohorts are subgroups of data that the user may choose to save for later use if 
 ### Introducing Error Analysis in Machine Learning
 
 Error Analysis is a Responsible AI toolkit that enables you to get a more profound comprehension of Machine Learning model mistakes. While assessing a machine learning model, total precision isn't adequate and single-score assessment may shroud significant states of errors. 
-Error Analysis is used to distinguish cohorts with higher error rates and analyze the main drivers behind these errors. Error analysis in Machine Learning is not just to improve performance on your target metric, but also provides an avenue to know if your model is doing well and analyzing where your model went wrong on your test data, and how to make systematic changes to your model based on these insights.
+It is used to distinguish cohorts with higher error rates and analyze the main drivers behind these errors. Error analysis in Machine Learning is not just to improve performance on your target metric, but also provides an avenue to know if your model is doing well and analyzing where your model went wrong on your test data, and how to make systematic changes to your model based on these insights.
 
 ![ErrorAnaysis](/engineering-education/an-overview-of-error-analysis-toolkit/error-benchmark.jpg)
-*[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
+*[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *Error Analysis moves away from aggregate accuracy metrics, exposes the distribution of errors to developers in a transparent way, and enables developers to identify & diagnose errors efficiently.* 
 
 ### How Error Analysis works
@@ -62,7 +64,9 @@ Sometimes developers find it hard to discover hidden data pockets with critical 
 *Data representation* - number of instances in the node. This is shown through the thickness of the incoming edge to the node along with the actual total number of instances in the node.
 
 ![TreeMap](/engineering-education/an-overview-of-error-analysis-toolkit/error-detector.jpg)
-*[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
+*[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *Decision tree that aims at finding failure modes by separating error instances from success instances in the data. The hierarchical error pattern here shows that while the overall error rate is 23.65% for the dataset, it can be as high as 96.77% for individuals who are married, have a capital gain higher than 4401, and a number of education years higher than 12.
 
 2. Error Heatmap
@@ -71,7 +75,9 @@ Error Heatmap allows users to form hypotheses of the most impactful features for
 Error Heatmap works by visualizing cells with higher error, showing a darker red color indicating regions with higher error discrepancy.
 
 ![HeatMap](/engineering-education/an-overview-of-error-analysis-toolkit/heatmap.jpg)
-*[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
+*[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *While the overall error rate for the dataset is 23.65%, the heatmap reveals that the error rates are visibly higher, up to 83%, for individuals with higher education. Error rates are also higher for males vs. females.*
 
 #### Diagnosis
@@ -84,8 +90,10 @@ Methods for Error Diagnosis;
 
 Data exploration allows comparison between cohorts which enables benchmarking to be carried out. Dataset statistics and feature distribution are explored therefore,investigating whether certain cohorts are underrepresented or their feature distribution is a lot different from the overall data hinting if there's the existence of outliers or unusual covariate shift.
 
-![DataExploration](/engineering-education/an-overview-of-error-analysis-toolkit/data-explorer.jpg)
+![Data Exploration](/engineering-education/an-overview-of-error-analysis-toolkit/data-explorer.jpg)
+
 *[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *When we look at how the data is distributed across the feature “education\_num” we can see that a) there are fewer instances for individuals with more than 12 years of education, and b) for this cohort the distribution between lower income (blue) and higher income (orange) is very different than for other cohorts. In fact, for this cohort there exist more people who have an income higher than 50K, which is not true for the overall data.*
 
 2. Global Explanation
@@ -93,7 +101,9 @@ Data exploration allows comparison between cohorts which enables benchmarking to
 Global Explanation allows users to explore the top important features that impact the overall model predictions for a selected sub-group of the cohort. This allows comparison between values for different cohorts side by side. Users can see the relationship between the values of the selected feature to its corresponding feature of important values. This shows them how the values of the selected feature impact model prediction.
 
 ![Explanation](/engineering-education/an-overview-of-error-analysis-toolkit/global-explanation.jpg)
-*[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
+*[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *Global feature explanations for the income prediction model show that marital status and number of education years are the most important features globally. By clicking on each feature, it is possible to observe more granular dependencies. For example, marital statuses like “divorced”, “never married”, “separated”, or “widowed” contribute to model predictions for lower income (<50K). Marital status of “civil spouse”instead contributes to model predictions for higher income (>50K).*
 
 3. Local Explanation
@@ -104,8 +114,10 @@ Local explanation allows users to select cohort data points in instance view, di
 
 What-If Analysis allows users to change feature values of selected data points and observe changes in comparison to their predictions. This allows them to select their hypothetical what-if data points for further comparisons with benchmarked original data points.
 
-![GlobalExplanation](/engineering-education/an-overview-of-error-analysis-toolkit/data-table.jpg)
-*[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+![Global Explanation](/engineering-education/an-overview-of-error-analysis-toolkit/data-table.jpg)
+
+*[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
+
 *For this individual, the model outputs a wrong prediction, predicting that the individual earns less than 50K, while the opposite is true. With what-if explanations, it is possible to understand how the model would behave if one of the feature values changes. For instance, here we can see that if the individual were 10 years older (age changed from 32 to 42) the model would have made a correct prediction. While in the real world many of these features are not mutable, this sensitivity analysis is intended to further support practitioners with model understanding capabilities*
 
 ### Failures in Machine Learning
@@ -115,7 +127,7 @@ Teams that deploy machine learning models into the real world face challenges wh
 
 ### Installation process
 
-To install the Responsible AI Widgets “raiwidgets” package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have interpret-community already installed, you will also need to install this for supporting the generation of model explanations.
+To install the Responsible AI Widgets “raiwidgets” package, in your python environment simply run the following to install the raiwidgets package from [pypi](https://pypi.org/project/raiwidgets/). If you do not have `interpret-community` already installed, you will also need to install this for supporting the generation of model explanations.
 
 ```python
 pip install interpret-community
@@ -169,13 +181,13 @@ The screenshots in this article are generated using a LGBMClassifier with three 
 ### Conclusion
 
 Error Analysis tool kit has enabled proper testing and debugging of machine learning models. Early detection of errors can easily be made by developers improving the performance of the machine learning models. Other responsible AI toolkits are;
-*Fairlearn;* Helps to assess fairness and mitigate the unfairness of AI systems<https://fairlearn.org/>
-*InterpretML;* Helps to understand machine learning models behaviors and enable responsible machine learning <https://interpret.ml/>
+*[Fairlearn](https://fairlearn.org/);* Helps to assess fairness and mitigate the unfairness of AI systems.
+*[InterpretML](https://interpret.ml/);* Helps to understand machine learning models behaviors and enable responsible machine learning. 
 
-## References:
+### References:
 
-1. [https://techcommunity.microsoft.com/t5/azure-ai/responsible-machine-learning-with-](https://techcommunity.microsoft.com/t5/azure-ai/responsible-machine-learning-with-error-analysis/ba-p/2141774?wt.mc_id=aiml-17954-sejuare)
-2. [https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)
-3. <https://erroranalysis.ai/>
-4. <https://github.com/microsoft/responsible-ai-widgets/>
+1. [Responsible machine learning with error analysis](https://techcommunity.microsoft.com/t5/azure-ai/responsible-machine-learning-with-error-analysis/ba-p/2141774?wt.mc_id=aiml-17954-sejuare)
+2. [Responsible machine learning with error analysis](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)
+3. [Error Analysis](https://erroranalysis.ai/)
+4. [Responsible AI widgets](https://github.com/microsoft/responsible-ai-widgets/)
 
