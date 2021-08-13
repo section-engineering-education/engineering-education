@@ -87,15 +87,17 @@ alias dockrm='docker rm'
 alias docklist='docker ps -a'
 ```
 
+Each of the commands above is used to create an alias. The first command creates an alias to remove a docker container and the second command is used to create an alias to display all the docker containers specifying both running and not running containers when called in the `/.bashrc`. The `ps` represents process state while `-a` prompts even the docker containers that are not running to appear in the list.
+
 ### Examining docker containers 
 
-The Docker inspect command may be used to acquire information about a specific docker container. It provides you with all of the information about the container, including the path, creation date, status, driver, and so on. The container name is required to check the container.
+The Docker inspect command `sudo docker container inspect <name-of-the-container>` may be used to acquire information about a specific docker container. It provides you with all of the information about the container, including the path, creation date, status, driver, and so on. The container name is required to check the container.
 
 ```bash
 sudo docker container ls 
-sudo docker container <name-of-the-container>
+sudo docker container inspect <name-of-the-container>
 ```
-The command `sudo docker container` shows a list of all Docker containers that are currently running. To view even the docker containers that are not running add `-a` after the `ls` **sudo docker container ls -a**. The `ls` symbol in a terminal displays all directories of the specified item.  The second command is used to open a specific docker container.
+The command `sudo docker container ls` shows a list of all Docker containers that are currently running. To view even the docker containers that are not running add `-a` after the `ls` **sudo docker container ls -a**. The `ls` symbol in a terminal displays all directories of the specified item.
 
 ### Conclusion
 
