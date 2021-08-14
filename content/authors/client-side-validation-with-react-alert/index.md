@@ -37,8 +37,10 @@ We’ve had a look at what we’d be needing in this article in the first sectio
 
 I’d be making use of NextJS to bootstrap my react application because of its simplicity, its folder structure, and many other benefits of using it.
 
-You don’t need to make use of NextJS if you don’t want to, you can decide to make use of [create-react-app](https://create-react-app.dev/) or bootstrapping your react app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel). Feel free to make use of any approach that’d be most convenient for you.
-
+You don’t need to use Next.JS. You can either:
+1. Create a React app using [create-react-app](https://create-react-app.dev/). 
+2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel). 
+Feel free to make use of any approach that would be most convenient for you.
 To get started with NextJS, type the command below into your terminal, it will install all the dependencies that you’d need to create a React application.
 
 `npx create-next-app name-of-your-app`
