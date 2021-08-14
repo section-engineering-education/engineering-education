@@ -340,7 +340,7 @@ This snippet below shows a conditional statement but in a ternary syntax. What t
 
 The “msg-success” gives the alert template/modal a green background while “msg-error” adds a red background to the template.
 
-Once that is complete, we’d go-ahead to add the template as a parent element in the app component. That can be done by editing the content of `_app.js`
+Once that is complete, we’d go ahead and add the template as a parent element in the app component. This can be done by editing the content of `_app.js` file.
 
 ```js
 import React from “react”
