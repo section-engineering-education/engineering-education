@@ -4,15 +4,20 @@ This feature gives frontend developers the ability to create logic that checks t
 
 In this article, we’re going to look at how to verify input data using an npm package [react-alert](package link). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
-You should have an idea of the following before you read this article any further so that there wouldn’t be any form of confusion.
 
-1. We’d be needing [NodeJs](https://nodejs.org) since we’re making use of an npm package called react-alert
+### Prerequisites
 
-2. An idea of how conditional statements works in react/JavaScript
+To follow along with this tutorial, you'll need:
 
-3. How npm works and how to install npm packages as dependencies in your projects
+1. [Nodejs](https://nodejs.org) 10.x or newer.
 
-4. A little understanding of DOM Manipulation
+2. [NPM ](https://www.npmjs.com/package/npm5)  5.10 or newer.
+
+3. Knowledge of conditional statements in Javascript.
+
+4. Basic knowledge of React JS.
+
+5. Basic knowledge of DOM Manipulation.
 
 ### Overview
 
