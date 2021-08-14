@@ -41,7 +41,7 @@ You don’t need to use Next.JS. You can either:
 1. Create a React app using [create-react-app](https://create-react-app.dev/). 
 2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel). 
 Feel free to make use of any approach that would be most convenient for you.
-To get started with NextJS, type the command below into your terminal, it will install all the dependencies that you’d need to create a React application.
+To get started with Next.JS. In your workspace, open the terminal and run the command below.
 
 `npx create-next-app name-of-your-app`
 
