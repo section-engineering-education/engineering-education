@@ -1,28 +1,39 @@
-## Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-dark-mode-using-tailwind-css/
+title: Implementing Dark Mode Using Tailwind CSS
+description: This article takes the reader through implementing dark mode using Tailwind CSS. The new version of Tailwind released a feature that enables its users to add dark mode styles to their pages.
+author: monica-masae
+date: 2021-08-14T00:00:00-15:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/Implementing-Dark-Mode-using-Tailwind CSS/hero.jpg
+    alt: Implementing Dark Mode Using Tailwind CSS Hero image example
+---
 Dark Mode is a display setting built for user interfaces. It lets users change the theme color of the application to black or a color closer to black.
+<!--more-->
+Recently, most developers have been including this feature in their applications. The applications include a toggle switch that changes the color dark or light when clicked.
 
-Recently, most developers have been including this feature to there applications. The applications include a toggle switch that changes the color dark or light when clicked.
-
-The new version of Tailwind released a feature that enables its users to add dark mode styles to their pages. In this tutorial, we will use the feature to include a dark theme to our page.
+The new version of Tailwind released a feature that enables its users to add dark mode styles to their pages. In this tutorial, we will use the feature to include a dark theme on our page.
 
 ### Prerequisites
+- A clear understanding of HTML, CSS, Tailwind CSS, and Javascript.
 
-- A clear understanding of HTML, CSS , Tailwind CSS and Javascript.
-
-Lets get started!
+Let us get started!
 
 #### Step 1: Adding Tailwind to your project.
-
 I will assume that you already have the latest version of Tailwind installed. If not, I suggest you go through this [article](https://github.com/section-engineering-education/engineering-education/blob/master/articles/introduction-to-tailwind-css/index.md) first.
 
 #### Step 2: Our HTML
-
 Of course, we will need something on our page so that we can see the cool effects of dark mode. Here's a page of mine we will use:
 
 ![Blog page](blogpage.jpg)
 
-Its code:
+This is it's code:
 
 ```html
 <div class="flex flex-row items-center justify-center">
@@ -64,16 +75,15 @@ Its code:
 Now that we have a page to practice on, we can move to the next step.
 
 #### Step 3: Building the switch.
-
 Before you begin, ensure you have a clear idea of how you want your switch to look like and where you want it to be.
 
-Some web pages have the dark mode display feature in the "Settings" in the navigation bar. On the hand, some include this feature on the top-right corner of the page. For our case, we will place it on the right corner, it is much simpler.
+Some web pages have the dark mode display feature in the "Settings" tab of the navigation bar. On the other hand, some include this feature on the top-right corner of the page. For our case, we will place it on the right corner because it is much simpler.
 
-Lets get to it!
+Let us get to it!
 
 We will use the `input` element for the switch.
 
-Our first task is ensuring thet the switch is at the top-right corner. We do this by creating a `div` container under the `body` tag, then following classes:
+Our first task is ensuring thet the switch is at the top-right corner. We do this by creating a `div` container under the `body` tag, then the following classes:
 
 ```html
 <body>
@@ -84,12 +94,11 @@ Our first task is ensuring thet the switch is at the top-right corner. We do thi
 ```
 
 What's happening here?
+- `flex` will place the contents of the switch on the same line vertically.
+- `items-center`, `justify-center`, and `mx-auto` will align the switch at the center.
+- The `absolute` class positions elements outside of the normal flow of the page. Therefore, to control the absolutely positioned switch, we will add `top-5`, `right-0`, and `left-1/3`. This means that our element will be fully on the right side and at the top.
 
-- `flex` will place contents of the switch on the same line vertically.
-- `items-center`, `justify-center` and `mx-auto` will align the switch at the center.
-- The `absolute` class positions elements outside of the normal flow of the page. Therefore, to control the absolutely positioned switch, we will add `top-5`, `right-0`, and `left-1/3`. This means that our element will be fully at the right side and at the top.
-
-Now, lets add some content so that we could see the position.
+Now, let us add some content so that we can see the position.
 We will be adding another `div` element under the container which will contain the following classes:
 
 ```html
@@ -104,9 +113,8 @@ This is how it should look like at this point:
 ![Step 1 Result](switch1.jpg)
 
 In the code above:
-
 - `flex` will align content on the same line vertically, while `justify-end` will align the switch on the end of the containers space. The switch is moved to the right.
-- `space-x-2` adds some space between the toggle switch and the words "light" and "dark". In this case we will use words instead of icons for easy understanding.
+- `space-x-2` adds some space between the toggle switch and the words "light" and "dark". In this case, we will use words instead of icons for easy understanding.
 - The `<span>` element has added the words light and dark.
 - `relative` class positions the items to the right position. This means that the words will not affect the layout of the page or anything around them.
 
@@ -126,10 +134,9 @@ Under the `<span>` element that adds "Light" text, create another `div` element 
 ```
 
 So what have we added here?
-
 - First, we have created a checkbox. We have used `<input>` element to do so. The checkbox will help to apply an "ON" or "OFF" style to our switch, while it is hidden using the `hidden` class.
 - Below the `<input>` element there is a `<label>` element. It will allow us to click anywhere on the switch to turn it on or off. The class `cursor-pointer` has enabled that feature.
-- Under `<label>` there is another `<div>` element that has created an item where we would click on. The item has a gray bakground and its rounded - shaped as a pill.
+- Under `<label>` there is another `<div>` element that has created an item where we would click on. The item has a gray background and is rounded - shaped like a pill.
 - The second `<div>` element has created a ball inside the pill shape. This will help us see if the checkbox is checked or unchecked since it is hidden.
 
 At this point, our switch looks something like this:
@@ -157,17 +164,16 @@ What does this mean?
 It means that:
 
 - when the checkbox is clicked, the ball will slide to right. This is made possible by `transform` property.
-  `transition` property will make the ball slide smoothly and it will reach the other side within 0.3 seconds.
+- `transition` property will make the ball slide smoothly and it will reach the other side within 0.3 seconds.
 
 This is how it slides!
 
 ![Ball Sliding](switch3.gif)
 
 #### Step 3: Configuring Tailwind CSS
-
 Tailwind CSS dark mode is not enabled by default. According to the official documentation, it is not enabled by default because of the file size considerations.
 
-Therefore, to enable it, we need to set the dark mode option in our `tailwind.config`. Lets do so!
+Therefore, to enable it, we need to set the dark mode option in our `tailwind.config`. Let us do so!
 
 First, go to your `tailwind.config.js` file.
 
@@ -218,7 +224,6 @@ This will be the result:
 That shows that dark mode is enabled in our project. Our next task is adding it to our HTML.
 
 #### Step 4: Adding Dark mode classes to our HTML
-
 Since we are implementing dark mode using class mode, we need to add class `dark` on the `<html>` tag like this:
 
 ```html
@@ -227,13 +232,13 @@ Since we are implementing dark mode using class mode, we need to add class `dark
 
 To see if it works, start adding classes to your elements. For example, if you decide the background color of your page to be darker, choose a dark color like `bg-gray-800` then prefix "dark".
 
-So for the background color of our page, we will add the color like this:
+So for the background color of our page, we will add color like this:
 
 ```html
 <body class="dark:bg-gray-800 dark:text-gray-200"></body>
 ```
 
-In this case, the background in light mode will be totally white and black text color, while in dark mode, we will see a background of gray.
+In this case, the background in light mode will be white and black text color, while in dark mode, we will see a background of gray.
 
 When choosing the color combination for a dark theme, make sure they correspond.
 
@@ -241,10 +246,9 @@ After adding the `dark` classes to our page, it looks like this:
 
 ![Step 4 Result](darkpage.jpg)
 
-Now that we have an idea of how our dark theme would look like, lets make our switch work so we could see it change!
+Now that we have an idea of how our dark theme would look like, let us make our switch work so we could see it change!
 
 #### Step 5: Adding Javascript
-
 In this step, we are going to add a few lines of Javascript code for our switch to work.
 
 You can create an external Javascript file and link it, or you can add the code using `<script>`. We will use the latter.
@@ -271,19 +275,18 @@ So inside the script file, add the following lines:
 ```
 
 What will these lines do?
-
-- First, we have used querySelector() method to get the element `html` and an `id` we created for our checkbox.
-- We the created a function and called it **toggleDarkMode**. It tells us how the dark theme will be applied. It means that, when the checkbox is checked, the html file will add class `dark` and will remove it when the checkbox is unchecked.
-- In order to switch between themes, we need to call our function then add an event listener. In our case, it will be **click**.
+- First, we have used the `querySelector()` method to get the element `HTML` and an `id` we created for our checkbox.
+- We created a function and called it **toggleDarkMode**. It tells us how the dark theme will be applied. It means that, when the checkbox is checked, the HTML file will add class `dark` and will remove it when the checkbox is unchecked.
+- To switch between themes, we need to call our function then add an event listener. In our case, it will be **click**.
 
 Here is our page in both light and dark mode!
 
 ![Dark and light theme](result.gif)
 
 ### Conclusion
-Dark mode is said to reduce battery life in smart phones and also eye strain. It is clever to add this feature to yours web pages.
-I hope this tutorial was helpful!
+Dark mode is said to reduce battery life in smartphones and also eye strain. It is clever to add this feature to yours web pages.
 
+I hope you find this tutorial helpful!
 
-
-
+---
+Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
