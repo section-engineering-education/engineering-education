@@ -193,7 +193,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
   }
   ```
 
-  - This conditional statement checks if there is a match between the first and second passwords. The logic below employs the use of closures in JavaScript to perform this particular validation.
+  - The below conditional statement checks if there is a match between the first and second passwords. The logic employs the use of closures in JavaScript to perform this particular validation.
 
   ```js
   else if (typeof password !== "undefined" && typeof confirmPassword !== "undefined") {
