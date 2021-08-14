@@ -29,31 +29,36 @@ These events range from the click of a button `onClick`. The mouse hovering effe
 If you want to learn more about events in JavaScript. Visit [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
 Performing DOM manipulation in vanilla JS isn’t a big deal because the DOM is available. But in React, the DOM isn’t available, a virtual DOM is available instead.
 
-Although, manipulating the DOM in React undergoes the same process of doing that in vanillaJS but there are some quirks to it. One of them is how the `document` object isn’t available in React since it is being bundled with nodejs which doesn’t run on the client-side of a web browser.
+Although manipulating the DOM in React works the same way in vanilla JS, there are some quirks to it. One is that the Document object is not available in React. This is because it is being bundled with Node.js which doesn’t run on the client-side of a web browser
 
 ### Getting Started
 
-We’ve had a look at what we’d be needing in this article in the first section. To be able to perform client-side validation in React, in the scope of this article, let’s start by installing the necessary `npm` dependencies.
+We’ve mentioned the prerequisites for this article in the first section. To be able to perform client-side validation in React. Let’s start by installing the necessary `npm` dependencies.
 
 I’d be making use of NextJS to bootstrap my react application because of its simplicity, its folder structure, and many other benefits of using it.
 
 You don’t need to use Next.JS. You can either:
-1. Create a React app using [create-react-app](https://create-react-app.dev/). 
-2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel). 
-Feel free to make use of any approach that would be most convenient for you.
-To get started with NextJS, type the command below into your terminal, it will install all the dependencies that you’d need to create a React application.
 
-`npx create-next-app name-of-your-app`
+1. Create a React app using [create-react-app](https://create-react-app.dev/).
+2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel).
+   Feel free to make use of any approach that would be most convenient for you.
+   To get started with NextJS, type the command below into your terminal, it will install all the dependencies that you’d need to create a React application.
 
-Since this article focuses on the use of “react-alert” for client-side validation in react. We need to also add it to the list of dependencies that’d be used in the project. The command below will handle that for us.
+```bash
+npx create-next-app name-of-your-app
+```
 
-`npm install react-alert –save-dev`
+Since this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` to the list of dependencies that’d be used in the project. The command below will handle that for us.
 
-Foundational knowledge of conditional statements in JavaScript will speed up the process of writing/creating these conditions or checks on the input fields that’d be getting the data that’s being entered into them.
+```bash
+npm install react-alert –save-dev
+```
+
+A basic knowledge of how condtional statements operate in JavaScript will speed up the process of writing the validation function(s) on the client-side of your project.
 
 A basic conditional statement is shown below, the `if()` statement. It is the most used one in JavaScript, it checks if the value that is passed as an argument is true, if it isn’t, it returns false.
 
-```js
+```javascript
 if (username) {
   console.log(username);
 }
@@ -65,7 +70,7 @@ The other conditional statements that go _hand-in-hand_ with the `if()` statemen
 
 It is this same principle that we’re going to use in implementing the client validation in this project.
 
-Setting up the validation script
+### Setting up the validation script
 
 Before creating the validation script, let’s have a look at the folder structure of the app so that the process of traversing the app system/architecture doesn’t get confusing or ambiguous as we proceed.
 
@@ -154,7 +159,7 @@ export default signUpCheck;
 Wow! I know that might be your reaction right now, but do not fret, We’d have a breakdown of what each snippet does as we move on.
 
 - **Passing form values as props**
-  The snippet above is a helper function that performs validation on the type of data that gets into the form field before it is sent to the backend server. The function accepts the `email`, `password`, `confirmPassword`, and `alert` as arguments.
+  The snippet above is a helper function that performs validation on the input form data before it gets sent to the backend server. The function accepts the email, password, confirmPassword, and alert as arguments.
 
 ```js
 let errMsg;
