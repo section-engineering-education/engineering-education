@@ -21,8 +21,9 @@ To follow along with this tutorial, you'll need:
 
 ### Overview
 
-Before React, vanillaJS was the “go-to” solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling.
-Since the aim of this validation process is to check if the data or information sent by the user to the server is appropriate by listening to the events that take place on the webpage.
+Before React, vanilla JS was the go-to solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling. 
+
+The aim of this validation process is to check if the data sent by the user to the server is appropriate. Event listeners will help us listen to events that take place on the webpage.
 
 These events range from the click of a button `onClick`, the mouse hovering effect on a particular element on the page `onMouseOver`, the submission of details entered into a webform via the `onSubmit` event and many more that I can’t mention. If you want to know more about events in JavaScript, you should check them out [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
 
