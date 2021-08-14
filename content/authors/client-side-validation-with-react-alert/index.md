@@ -31,7 +31,8 @@ Performing these tasks (DOM manipulation) in vanillaJS isn’t a big deal becaus
 
 Although, manipulating the DOM in React undergoes the same process of doing that in vanillaJS but there are some quirks to it. One of them is how the `document` object isn’t available in React since it is being bundled with nodejs which doesn’t run on the client-side of a web browser.
 
-Getting Started
+### Getting Started
+
 We’ve had a look at what we’d be needing in this article in the first section. To be able to perform client-side validation in React, in the scope of this article, let’s start by installing the necessary `npm` dependencies.
 
 I’d be making use of NextJS to bootstrap my react application because of its simplicity, its folder structure, and many other benefits of using it.
