@@ -161,7 +161,7 @@ using System;
 using System.Collections;
 
 Queue animals = new Queue();
-animals.Enqueue("Animal 3");
+animals.Enqueue("Animal 3"); //adds items at the end of the queue
 animals.Enqueue("Animal 4");
 animals.Enqueue("Animal 5");
 
@@ -178,12 +178,10 @@ foreach (string anml in animals)
 ```
 ### Output
 ```bash
-Animal 1
-Animal 2
-Animal 2
-
-Animal 2
 Animal 3
+Animal 4
+Animal 4
+
 Animal 4
 Animal 5
 ```
@@ -214,6 +212,7 @@ ct Cat
 msg Message 1
 asp asp.net
 ```
+The order of the output doesn't matter in this context.
 
 ### Conclusion
 In this article, we have looked at the basics of the common collections in C#. Collections help to manage a collection of data.
