@@ -28,7 +28,7 @@ Let’s examine the parts of the call:
 
 The response's first several lines are shown in the below snippet:
 
-```json
+```bash
 {
   "total_count": 7668509,
   "incomplete_results": false,
