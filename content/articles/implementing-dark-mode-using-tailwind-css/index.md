@@ -110,7 +110,7 @@ We will be adding another `div` element under the container which will contain t
 
 This is how it should look like at this point:
 
-![Step 1 Result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch1.jpg)
+![Result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch1.jpg)
 
 In the code above:
 - `flex` will align content on the same line vertically, while `justify-end` will align the switch on the end of the containers space. The switch is moved to the right.
@@ -141,7 +141,7 @@ So what have we added here?
 
 At this point, our switch looks something like this:
 
-![Step 2 Result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch2.jpg)
+![Step 3 end result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch2.jpg)
 
 Let us add some custom CSS for the ball so that it could move when we click on it!
 
