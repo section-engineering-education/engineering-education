@@ -27,7 +27,7 @@ The aim of this validation process is to check if the data sent by the user to t
 These events range from the click of a button `onClick`. The mouse hovering effect on a particular element on the webpage `onMouseOver`. The submission of details entered into an input form using the `onSubmit` event, and much more.
 
 If you want to learn more about events in JavaScript. Visit [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
-Performing these tasks (DOM manipulation) in vanillaJS isn’t a big deal because the DOM is available. But in React, the DOM isn’t available a virtual DOM is available instead.
+Performing DOM manipulation in vanilla JS isn’t a big deal because the DOM is available. But in React, the DOM isn’t available, a virtual DOM is available instead.
 
 Although, manipulating the DOM in React undergoes the same process of doing that in vanillaJS but there are some quirks to it. One of them is how the `document` object isn’t available in React since it is being bundled with nodejs which doesn’t run on the client-side of a web browser.
 
