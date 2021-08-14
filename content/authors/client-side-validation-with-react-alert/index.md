@@ -51,7 +51,7 @@ Because this article focuses on the use of `react-alert` for client-side validat
 
 Foundational knowledge of conditional statements in JavaScript will speed up the process of writing/creating these conditions or checks on the input fields that’d be getting the data that’s being entered into them.
 
-A basic conditional statement is shown below, the `if()` statement. It is the most used one in JavaScript, it checks if the value that is passed as an argument is true, if it isn’t, it returns false.
+A basic conditional statement is as shown below, the `if` statement. It is one of the most used in JavaScript, it checks if the value passed as an argument is true, if it is not, it returns false.
 
 ```js
 if (username) {
