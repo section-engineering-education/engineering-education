@@ -167,7 +167,7 @@ The `errMsg` variable serves as the container that stores and thus displays the 
 
 - **The conditional statements**
 
-  - The first condition checks if the email field is empty, if it is, an alert error message is rendered in the user interface due to the execution of `alert.error()`
+  - The first condition checks if the email field is empty, if it is, an alert error message is rendered to the user interface with the help of `alert.error()` method
 
   The string inside the parenthesis is what will be displayed on the UI, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
 
