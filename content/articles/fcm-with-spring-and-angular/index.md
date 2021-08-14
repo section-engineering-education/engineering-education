@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/fcm-with-spring-and-angular/
+url: /fcm-with-spring-and-angular/
 title: Sending Notifications with Spring Boot, Angular, and Firebase Cloud Messaging
 description: A starting guide on sending notifications to an Angular application. To do this, we will be using a Spring Boot backend and Firebase Cloud Messaging.
 author: john-amiscaray
-date: 2021-08-12T00:00:00-19:00
-topics: []
+date: 2021-08-14T00:00:00-05:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -33,9 +33,10 @@ By the end of this guide, you should have a good understanding of how to send no
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+To follow along with this tutorial, you need to have:
 - Basic Angular knowledge including the CLI, HTTP client, and basic templating.
 - Basic Spring Boot concepts. This includes Spring MVC and the basic design patterns (i.e. [beans](https://www.baeldung.com/spring-bean), and [stereotype annotations](https://medium.com/javarevisited/spring-stereotype-annotations-1469ca0c3ad2)).
-- Ideally, some Kotlin experience, since we will be using that language. This is not required as all the concepts should be understandable by a pure Java developer.
+- Ideally, some Kotlin experience, since we will be using it. This is not required as all the concepts should be understandable by a pure Java developer.
 - Preferably, the [builder design pattern](https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/) since we will heavily use it in the backend.
 
 ### Understanding the high-level architecture of our project
@@ -96,14 +97,13 @@ Of course, make sure to set the group and artifact ids, along with the package n
 6. Below, generate a new private key. This private key is the JSON file I mentioned earlier to authorize our backend.
 7. Add a property to the `application.properties` file with the file path to the private key:
 
-```properties
+```kotlin
 app.firebase-config-file=firebase-config/[your-file-name-goes-here].json
 ```
 
 Now that we have the private key, we can start integrating Firebase with our Spring Boot app.
 
 To start, place the JSON file in the `resources` folder under a new folder called `firebase-config`.
-
 Next, we need to add the Firebase admin SDK to our project using Maven.
 
 Insert the following dependency within the **dependencies** tag of your `pom.xml` file:
@@ -522,7 +522,7 @@ this.msg.onMessage((payload) => {
 
 Finally, display these messages in our `app.component.html` file with a template like this:
 
-```angular2html
+```html
 <h1>Hello World</h1>
 <h3>These are your messages:</h3>
 <ul>
@@ -588,9 +588,9 @@ In the backend, we set up a REST API to tell Firebase what notifications to send
 
 To best use this guide, try making your own full-stack project that uses these concepts.
 
-If you need help or a reference to what we did here, I created a [Github repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote.
+If you need help or a reference to what we did here, I created a [GitHub repository](https://github.com/john-amiscaray/Spring-Angular-Firebase-Cloud-Messaging) with all the code we wrote.
 
-Happy coding.
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
