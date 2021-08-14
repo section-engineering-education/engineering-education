@@ -45,7 +45,7 @@ To get started with Next.JS. In your workspace, open the terminal and run the co
 
 `npx create-next-app name-of-your-app`
 This will install Next.JS all the dependencies needed to create a React application.
-Since this article focuses on the use of “react-alert” for client-side validation in react. We need to also add it to the list of dependencies that’d be used in the project. The command below will handle that for us.
+Because this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
 
 `npm install react-alert –save-dev`
 
