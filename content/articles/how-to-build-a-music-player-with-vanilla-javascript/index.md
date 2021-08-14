@@ -82,9 +82,10 @@ body {
   margin: 0;
 }
 
+/* styling the outer music container */
 .music-container {
   background-color: #efefef;
-  box-shadow: inset -1px -1px 5px rgba(33,33,33, 0.5), inset 1px 1px 5px rgba(33,33,33,0.5);
+  box-shadow: inset -1px -1px 5px rgba(33,33,33, 0.5), inset 1px 1px 5px rgba(33,33,33,0.5); 
   display: flex;
   padding: 20px 30px;
   position: relative;
@@ -97,6 +98,7 @@ body {
   width: 110px;
 }
 
+/* styling the image to look like a disc by placing a small circle in it*/
 .img-container::after {
   content: '';
   background-color: #fff;
@@ -109,6 +111,7 @@ body {
   transform: translate(-50%, 50%);
 }
 
+/* using animation to make the image rotate continiously when music is playing */
 .img-container img {
   border-radius: 50%;
   object-fit: cover;
@@ -122,10 +125,12 @@ body {
   animation-play-state: paused;
 }
 
+/* making sure the image rotates only when the music is playing */
 .music-container.play .img-container img {
   animation-play-state: running;
 }
 
+/* creating the animation keyframe and setting the image to rotate 360 degrees continiously */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -136,6 +141,7 @@ body {
   }
 }
 
+
 .navigation {
   display: flex;
   align-items: center;
@@ -143,6 +149,7 @@ body {
   z-index: 1;
 }
 
+/* styling the navigation buttons */
 .action-btn {
   border: 0;
   border-radius: 20px;
@@ -161,6 +168,7 @@ body {
   outline: 0;
 }
 
+/* styling the music-info div by placing it under the music container */
 .music-info {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px 15px 0 0;
@@ -175,6 +183,7 @@ body {
   z-index: 0;
 }
 
+/* making the music info pop up when the music playing using the transform property*/
 .music-container.play .music-info {
   opacity: 1;
   transform: translateY(-100%);
@@ -184,6 +193,7 @@ body {
   margin: 0;
 }
 
+/* styling the song progress container */
 .progress-container {
   background: #fff;
   border-radius: 5px;
@@ -193,6 +203,7 @@ body {
   width: 100%;
 }
 
+/* styling the actual progress bar and making it flow along with the song*/
 .progress {
   background-color: #fe8daa;
   border-radius: 5px;
