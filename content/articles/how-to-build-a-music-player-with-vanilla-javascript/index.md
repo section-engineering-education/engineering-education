@@ -457,7 +457,7 @@ We made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices.
 
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/Music-Player-with-JS).
 
-Happy Coding!!
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
