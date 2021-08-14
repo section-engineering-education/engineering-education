@@ -2,7 +2,7 @@ Having a way to check if the data that a user is sending to the webserver of a w
 
 This feature gives frontend developers the ability to create logic that checks the data that users type into the input fields of web apps.
 
-In this article, we’re going to have a look at how to do this by using an npm package called [react-alert](package link). react-alert makes it easier to render the error messages from the logic that developers create.
+In this article, we’re going to look at how to verify input data using an npm package [react-alert](package link). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
 You should have an idea of the following before you read this article any further so that there wouldn’t be any form of confusion.
 
