@@ -368,6 +368,8 @@ export default App;
 ```
 
 Wrapping it up
-You’d have noticed that we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go on ahead to any styling that befits this project. You can still check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you have a full understanding of how the package works.
+You have noticed we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go ahead and style your project to your own liking.
+
+You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you get a good understanding of how the package works.
 
 Thank you for reading this article, I hope it helped you!
