@@ -100,7 +100,7 @@ console.log(fullnameInputField)
 
 The snippet above logs the HTML code to the console. You can check the result by opening the developer tools of your browser. On Google chrome, this shortcut brings the console up. `ctrl + shift + i`.
 
-If we were to target the input element via its `className`, the snippet above would now be:
+If we were to target the input element via its `className`, the snippet above would change to:
 
 ```js
 const fullnameInputField = document.querySelector(“.fullname”)
