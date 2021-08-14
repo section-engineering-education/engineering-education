@@ -60,7 +60,7 @@ if (username) {
 ```
 
 There are cases where the conditional statement doesn’t stop at the closing curly braces. If there are other conditions that need checking, we can chain the next conditional statements until we get the desired result.
-The other conditional statements that go _hand-in-hand_ with the `if()` statement are `else` and `else if()`. As their naming convention implies, `else` is used whenever there is no condition left to be checked, while `else if` is used when there are more conditions to be checked.
+Other conditional statements that go _hand-in-hand_ with the `if` statement are `else` and `else if`. As their naming convention implies, `else` is used whenever there is no condition left to be checked. While `else if` is used when there are more conditions to be checked.
 
 It is this same principle that we’re going to use in implementing the client validation in this project.
 
