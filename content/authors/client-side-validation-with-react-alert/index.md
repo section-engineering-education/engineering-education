@@ -169,7 +169,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
 
   - The first condition checks if the email field is empty, if it is, an alert error message is rendered to the user interface with the help of `alert.error()` method
 
-  The string inside the parenthesis is what will be displayed on the UI, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
+  The `alert.error()` method takes a string as a parameter. The string is what will be displayed on the user interface, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
 
   ```js
   if (!email) {
