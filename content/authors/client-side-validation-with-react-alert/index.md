@@ -163,7 +163,7 @@ const validateSignUp = (email, password, confirmPassword, alert) => {};
 
 We’re passing `alert` as an argument to the function so that we can have access to it when it is imported into the app component. The same thing goes for the other arguments too.
 
-The `errMsg` variable serves as the container that stores and thus displays the error message from the logic. That is why we declared it with the `let` statement, so it can be reassigned to any other value in the code execution process.
+The `errMsg` variable stores the error messages from our validation logic. That is why we declared it with the `let` keyword, so it can be reassigned to any other value in the code execution process.
 
 - **The conditional statements**
 
