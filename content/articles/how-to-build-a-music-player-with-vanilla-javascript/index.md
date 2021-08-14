@@ -75,7 +75,9 @@ In your `index.html` file, copy and paste the following code to create the struc
 </html>
 
 ```
-The music container contains the music title, the progress bar, the previous, play, next button icons, and the music image. Now for the CSS:
+
+The music container contains the music title, the progress bar, the previous, play, next button icons, and the music image. Here is the CSS for the index.html file.
+
 ```css
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
@@ -229,6 +231,7 @@ body {
 }
 
 ```
+
 You have successfully designed the music player and added a bit of animation in the music theme image, making it rotate when the music is playing. 
 
 You will see that in action after coding the JavaScript.
@@ -255,6 +258,7 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 ```
+
 The next step is to arrange your songs with their song titles in an array. Your song titles need to match the pieces you have in your music folder.
 
 Below is an array containing the songs I chose to use for this project.
@@ -266,6 +270,7 @@ const songs = [
     'Polo G – I Know'
 ];
 ```
+
 We need to keep track of the songs by setting the default initial song index to 2, the third song on the array.
 
 ```js
@@ -368,10 +373,10 @@ function prevSong() {
     playSong();
 }
 ```
+
 ### The nextSong function
 This time, when you click the next button, you would want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. 
 
-Here is the code below:
 ```javascript
 function nextSong() {
   songIndex++;
@@ -453,3 +458,6 @@ We made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices.
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/Music-Player-with-JS).
 
 Happy Coding!!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
