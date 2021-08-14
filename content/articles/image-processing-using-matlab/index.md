@@ -42,7 +42,7 @@ Blue = i(:,:,3);
 temp = i;
 ```
 
-```Matlab
+```matlab
 imhist(Red);
 ```
 
@@ -113,6 +113,7 @@ Use command `deconvwnr` to restore the blurred image.
 wnr1 = deconvwnr(blurred,PSF);
 imshow(wnr1)
 ```
+
 ![Deblurred image](/engineering-education/image-processing-using-matlab/capturestep3.png)
 
 ### Obtaining the number of objects in an image
@@ -234,7 +235,7 @@ stats = regionprops('table',BW,'all')
 ```
 ![Props data table](/engineering-education/image-processing-using-matlab/st4.png)
 
-Area in pixels is the sum of the area props in the table.
+Area of the region in pixels is the sum of the area props in the table.
 
 ```matlab
 areainpixels = sum(props.Area)
