@@ -58,17 +58,11 @@ Since we are using [Google Colab](https://colab.research.google.com/) use the fo
 
 We also need to install other dependencies such as [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/).
 
-1. Pandas.
+**1. Pandas.** Pandas is used for data manipulation and analysis, it's also used for importing and reading our CSV file dataset.
 
-   Pandas is used for data manipulation and analysis, it's also used for importing and reading our CSV file dataset.
+**2. Matplotlib.** This will be used as a plotting library and is used for visualization purposes through the drawing of statistical graphs.
 
-2. Matplotlib.
-
-   This will be used as a plotting library and is used for visualization purposes through the drawing of statistical graphs.
-
-3. Seaborn.
-
-Seaborn is also used for data visualization and is built on top of the Matplotlib library and builds more intuitive graphs.
+**3. Seaborn.** Seaborn is also used for data visualization and is built on top of the Matplotlib library and builds more intuitive graphs.
 
 We use the following command to install the above libraries.
 
@@ -160,9 +154,7 @@ Other common algorithms used for clustering are as follows.
 3. [Agglomerative Hierarchical Clustering](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68)
 4. [Mean-Shift Clustering](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68)
 
-For this tutorial, we will go with [K-Means Algorithm](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68) due to the reasons stated above.
-To start using the K-Means algorithm, we need to specify the number of clusters in which we want our countries to be grouped according to their similarities.
-The number of clusters specified will be `7`, `7` is the number of continents in which we want the countries to be clustered.
+For this tutorial, we will go with [K-Means Algorithm](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68) due to the reasons stated above. To start using the K-Means algorithm, we need to specify the number of clusters in which we want our countries to be grouped according to their similarities. The number of clusters specified will be `7`, `7` is the number of continents in which we want the countries to be clustered.
 
 ```python
 km = pc.create_model('kmeans', num_clusters=7)
@@ -203,6 +195,7 @@ km_df2['Cluster'] = km_df2['Cluster'].str.replace('Cluster').apply(int)
 ```
 
 The above code snippet allows us to replace the third column of the dataset with integer values so that it makes it easy when plotting a scatter plot.
+
 After we have converted our third column from `str` (string) to an `int` (integer), we can start to plot our scatter plot.
 
 We can use the following code snippet to plot the scatter plot.
@@ -317,7 +310,7 @@ We started with data preparation, data preparation is an important stage in mach
 
 In the next section, we started building our clustering model, which can be able to cluster countries into their respective continents. In the end, we managed to build a clustering model which can be able to cluster countries into their continents.
 
-Finally, we used the trained model to make a prediction, which is the goal of any machine learning model. This is used to gauge our model to see how well it leaned.
+Finally, we used the trained model to make a prediction, which is the goal of any machine learning model. This is used to gauge our model to see how well it learned.
 
 ### References
 
