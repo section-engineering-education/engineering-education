@@ -219,7 +219,7 @@ npm run tw:build
 
 This will be the result:
 
-![Step 3 result](npmresult.jpg)
+![Step 4 result](npmresult.jpg)
 
 That shows that dark mode is enabled in our project. Our next task is adding it to our HTML.
 
@@ -244,7 +244,7 @@ When choosing the color combination for a dark theme, make sure they correspond.
 
 After adding the `dark` classes to our page, it looks like this:
 
-![Step 4 Result](darkpage.jpg)
+![Step 5 Result](darkpage.jpg)
 
 Now that we have an idea of how our dark theme would look like, let us make our switch work so we could see it change!
 
