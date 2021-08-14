@@ -31,7 +31,7 @@ To understand the contents of this article, you need to be familiar with:
 ### Outline
 
 1. [Introducing TensorFlow Federated (TFF)](#introducing-tensorflow-federated-tff)
-2. [The code behind TensorFlow Federated (TFF)](the-code-behind-tensorflow-federated-TFF)
+2. [The code behind TensorFlow Federated (TFF)](#the-code-behind-tensorflow-federated-tff)
 3. [Wrapping up](#wrapping-up)
 4. [Additional resources](#additional-resources)
 
