@@ -205,7 +205,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
   }
   ```
 
-  It runs a conditional execution on both password fields to see/make sure that both of them are not undefined (i.e that, they have string values in them). If this first condition passes, the next one will run, if not the next one wouldn’t.
+  It runs a conditional execution on both password fields to make sure that both of them are not undefined i.e. They are not empty fields. If this first condition passes, the next one will run, if not the next one would not run.
 
   - If all the conditions stated, have been checked, the alert window comes up with successful text
 
