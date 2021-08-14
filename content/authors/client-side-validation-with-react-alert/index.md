@@ -35,20 +35,18 @@ Although manipulating the DOM in React works the same way in vanilla JS, there a
 
 We’ve mentioned the prerequisites for this article in the first section. To be able to perform client-side validation in React. Let’s start by installing the necessary `npm` dependencies.
 
-I’d be making use of NextJS to bootstrap my react application because of its simplicity, its folder structure, and many other benefits of using it.
+I will be using Next.JS to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
 
 You don’t need to use Next.JS. You can either:
 
 1. Create a React app using [create-react-app](https://create-react-app.dev/).
 2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel).
    Feel free to make use of any approach that would be most convenient for you.
-   To get started with NextJS, type the command below into your terminal, it will install all the dependencies that you’d need to create a React application.
+   To get started with Next.JS. In your workspace, open the terminal and run the command below.
 
-```bash
-npx create-next-app name-of-your-app
-```
-
-Since this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` to the list of dependencies that’d be used in the project. The command below will handle that for us.
+`npx create-next-app name-of-your-app`
+This will install Next.JS all the dependencies needed to create a React application.
+Because this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
 
 ```bash
 npm install react-alert –save-dev
@@ -56,7 +54,7 @@ npm install react-alert –save-dev
 
 A basic knowledge of how condtional statements operate in JavaScript will speed up the process of writing the validation function(s) on the client-side of your project.
 
-A basic conditional statement is shown below, the `if()` statement. It is the most used one in JavaScript, it checks if the value that is passed as an argument is true, if it isn’t, it returns false.
+A basic conditional statement is as shown below, the `if` statement. It is one of the most used in JavaScript, it checks if the value passed as an argument is true, if it is not, it returns false.
 
 ```javascript
 if (username) {
@@ -64,15 +62,14 @@ if (username) {
 }
 ```
 
-There are cases where the conditional statement doesn’t just stop at the closing curly braces. If there are other conditions that need to be checked, we can add the next conditional statements until a satisfactory result is obtained
-
-The other conditional statements that go _hand-in-hand_ with the `if()` statement are `else` and `else if()`. As their naming convention implies, `else` is used whenever there is no condition left to be checked, while `else if` is used when there are more conditions to be checked.
+There are cases where the conditional statement doesn’t stop at the closing curly braces. If there are other conditions that need checking, we can chain the next conditional statements until we get the desired result.
+Other conditional statements that go _hand-in-hand_ with the `if` statement are `else` and `else if`. As their naming convention implies, `else` is used whenever there is no condition left to be checked. While `else if` is used when there are more conditions to be checked.
 
 It is this same principle that we’re going to use in implementing the client validation in this project.
 
 ### Setting up the validation script
 
-Before creating the validation script, let’s have a look at the folder structure of the app so that the process of traversing the app system/architecture doesn’t get confusing or ambiguous as we proceed.
+Before creating the validation script, let’s have a look at the app's folder structure. So that the process of traversing the app structure doesn’t get confusing or ambiguous as we proceed.
 
 ```
 |--pages
@@ -89,10 +86,10 @@ Before creating the validation script, let’s have a look at the folder structu
 
 The structure above is an excerpt of what the real application structure looks like. But, for the sake of brevity and the level of importance of the files that we’d be interacting with, the structure above fits the scope of this article.
 
-The structure above shows that `checks.js` is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
+The structure above shows that the `checks.js` file is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
 
-Since we’d be interacting/writing this logic for web forms... we need to look for a way to target the input elements that are receiving data from the user at the client side. Luckily for
-us, the browser has provided some DOM APIs that we can use to achieve that. Take a look at an example below:
+Since we’d be interacting/writing this logic for web forms. We need to look for a way to target the input elements that are receiving data from the user at the client side.
+Luckily for us, the browser has provided some DOM APIs that we can use to achieve that. Take a look at an example below:
 
 ```html
 <input type="”text”" name="”fullname”" id="”fullname”" className="”fullname”" />
@@ -104,15 +101,15 @@ const fullnameInputField = document.querySelector(“#fullname”)
 console.log(fullnameInputField)
 ```
 
-The snippet above logs the HTML code to the console. You can check the result by open the developer tools of your browser, on Google chrome, this shortcut brings the console up. `ctrl + shift + i`.
+The snippet above logs the HTML code to the console. You can check the result by opening the developer tools of your browser. On Google chrome, this shortcut brings the console up. `ctrl + shift + i`.
 
-If we were to target the input element via its `className`, the snippet above would now be:
+If we were to target the input element via its `className`, the snippet above would change to:
 
 ```js
 const fullnameInputField = document.querySelector(“.fullname”)
 ```
 
-Note that the pound sign `(#)` has changed to the period sign `(.)` because we’re targeting that DOM node via its className property.
+Note that the hash symbol `(#)` has changed to the period symbol `(.)` because we’re targeting that DOM node through its className property.
 
 Now let’s have a look at the validation snippet below:
 
@@ -156,7 +153,7 @@ const validateSignUp = (email, password, confirmPassword, alert) => {
 export default signUpCheck;
 ```
 
-Wow! I know that might be your reaction right now, but do not fret, We’d have a breakdown of what each snippet does as we move on.
+Wow! I can guess what might be your reaction right now, but do not fret. We will have a breakdown of what each snippet does as we move on.
 
 - **Passing form values as props**
   The snippet above is a helper function that performs validation on the input form data before it gets sent to the backend server. The function accepts the email, password, confirmPassword, and alert as arguments.
@@ -169,13 +166,13 @@ const validateSignUp = (email, password, confirmPassword, alert) => {};
 
 We’re passing `alert` as an argument to the function so that we can have access to it when it is imported into the app component. The same thing goes for the other arguments too.
 
-The `errMsg` variable serves as the container that stores and thus displays the error message from the logic. That is why we declared it with the `let` statement, so it can be reassigned to any other value in the code execution process.
+The `errMsg` variable stores the error messages from our validation logic. That is why we declared it with the `let` keyword, so it can be reassigned to any other value in the code execution process.
 
 - **The conditional statements**
 
-  - The first condition checks if the email field is empty, if it is, an alert error message is rendered in the user interface due to the execution of `alert.error()`
+  - The first condition checks if the email field is empty, if it is, an alert error message is rendered to the user interface with the help of `alert.error()` method
 
-  The string inside the parenthesis is what will be displayed on the UI, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
+  The `alert.error()` method takes a string as a parameter. The string is what will be displayed on the user interface, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
 
   ```js
   if (!email) {
@@ -185,7 +182,7 @@ The `errMsg` variable serves as the container that stores and thus displays the 
   }
   ```
 
-  - The next condition checks if the user enters any password at all. If there’s no value in the form field, an error pops up in the browser, while the next one checks for the validity of the password’s length.
+  - The next condition checks if the user has entered any password at all. If there’s no value in the password form field, an error pops up in the browser. While the next condition checks for the validity of the password’s length.
 
   ```js
   else if (password === "") {
@@ -199,7 +196,7 @@ The `errMsg` variable serves as the container that stores and thus displays the 
   }
   ```
 
-  - This conditional statement checks if there is a match between the first and second passwords. The logic below employs the use of closures in JavaScript to perform this particular validation.
+  - The below conditional statement checks if there is a match between the first and second passwords. The logic employs the use of closures in JavaScript to perform this particular validation.
 
   ```js
   else if (typeof password !== "undefined" && typeof confirmPassword !== "undefined") {
@@ -211,7 +208,7 @@ The `errMsg` variable serves as the container that stores and thus displays the 
   }
   ```
 
-  It runs a conditional execution on both password fields to see/make sure that both of them are not undefined (i.e that, they have string values in them). If this first condition passes, the next one will run, if not the next one wouldn’t.
+  It runs a conditional execution on both password fields to make sure that both of them are not undefined i.e. They are not empty fields. If this first condition passes, the next one will run, if not the next one would not run.
 
   - If all the conditions stated, have been checked, the alert window comes up with successful text
 
