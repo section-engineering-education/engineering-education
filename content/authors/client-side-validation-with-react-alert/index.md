@@ -83,7 +83,7 @@ Before creating the validation script, let’s have a look at the app's folder s
 
 The structure above is an excerpt of what the real application structure looks like. But, for the sake of brevity and the level of importance of the files that we’d be interacting with, the structure above fits the scope of this article.
 
-The structure above shows that `checks.js` is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
+The structure above shows that the `checks.js` file is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
 
 Since we’d be interacting/writing this logic for web forms... we need to look for a way to target the input elements that are receiving data from the user at the client side. Luckily for
 us, the browser has provided some DOM APIs that we can use to achieve that. Take a look at an example below:
