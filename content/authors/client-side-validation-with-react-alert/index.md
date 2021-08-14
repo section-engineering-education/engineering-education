@@ -35,7 +35,7 @@ Although, manipulating the DOM in React undergoes the same process of doing that
 
 We’ve had a look at what we’d be needing in this article in the first section. To be able to perform client-side validation in React, in the scope of this article, let’s start by installing the necessary `npm` dependencies.
 
-I’d be making use of NextJS to bootstrap my react application because of its simplicity, its folder structure, and many other benefits of using it.
+I will be using Next.JS to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
 
 You don’t need to use Next.JS. You can either:
 1. Create a React app using [create-react-app](https://create-react-app.dev/). 
