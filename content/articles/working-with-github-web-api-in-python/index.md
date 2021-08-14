@@ -48,7 +48,7 @@ The requests package enables requesting data from the website and evaluating the
 Consider the following command to install requests:
 
 ```python
-$ pip install --user requests
+pip install --user requests
 ```
 
 Visit [this](https://packaging.python.org/tutorials/installing-packages/) if this is your first time using pip.
