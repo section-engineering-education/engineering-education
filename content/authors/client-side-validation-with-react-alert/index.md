@@ -284,7 +284,7 @@ return (
 export default withAlert()(SignUp);
 ```
 
-Taking a look at the `handleSubmit` function, you’d notice how the arguments from the `signUpCheck` validator are being utilized. In the function, another condition must be met before the form can be submitted.
+Taking a look at the `handleSubmit` function, you’d notice how the arguments from the `signUpCheck` validator are being utilized. In the function, all conditions must be met before the form can be submitted.
 
 ```js
 const validate = validateSignUp(email, password, pwdConfirm, alert ||" ");
