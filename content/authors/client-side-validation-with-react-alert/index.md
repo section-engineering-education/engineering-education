@@ -1,6 +1,6 @@
-Having a way to check if the data that a user is sending to the webserver of a web application is correct or valid is a feat that JavaScript enables on the web.
+Javascript supports a feature to verify if the data sent by a user from a web application to a web server is valid or not.
 
-This feature gives frontend developers the ability to create logic that checks the data that users type into the input fields of web apps.
+This feature gives front-end developers the ability to verify a user's input data. Before the data gets sent to the webserver.
 
 In this article, we’re going to look at how to verify input data using an npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
