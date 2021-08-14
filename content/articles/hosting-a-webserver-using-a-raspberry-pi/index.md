@@ -19,13 +19,13 @@ For the reader to follow through and be guided accordingly, they are assumed to 
 There are various web servers that can be related to the Raspberry Pi and each has utilization advantages. This tutorial uses the Apache web server application. Apache is an open-source web server that provides content via the internet. It may be installed on a Raspberry Pi and used to deliver web pages. Apache can handle HTML files through HTTP, and with additional modules, it can help with dynamic web pages written in languages like PHP. Apache offers the advantage of being able to handle huge traffic amounts with less configuration. You can configure it to conduct an operation you wish and the approach to use. To increase its efficiency on the raspberry, you can eliminate modules that are not required. 
 
 ### Setting up Apache on Raspberry Pi 
-*Step one:*
-
-You need to access the command terminal through clicking CLRL+ALT+T from the Raspbian desktop. 
+#### *Step one:*- Acessing the terminal
+This step will give a description of how to access the raspberry pi's terminal. This can be achieve in two main ways as shown below:
+1. You can access the command terminal through clicking CLRL+ALT+T from the Raspbian desktop. 
 
 ![Raspberry Pi Terminal](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/terminal.png)
  
-You can also opt to connect remotely through SSH in case it is enabled on the raspberry Pi. This is possible through a tool such as Putty and then use the raspberry’s username and password to login. 
+2. You can also opt to connect remotely through SSH in case it is enabled on the raspberry Pi. This is possible through a tool such as Putty and then use the raspberry’s username and password to login. 
  
 Note: The default credentials for login into a raspberry Pi using SSH are as follows:
 Username: pi
@@ -33,53 +33,68 @@ Password: raspberry
 
 ![Putty Connection](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/puttylogin.PNG)
 
-*Step two:*
+#### *Step two:*- Updating packages
+In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the below command into the Terminal. This ensures you have the current versions of any file you download afterwards.
 
-Ensure the available packages are updated by typing the below command into the Terminal. This ensures you have the current versions of any file you download afterwards.
+````
 Sudo apt update 
+````
 
 ![Sudo apt update](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/sudoaptupdate.PNG)
  
-*Step three:*
+#### *Step three:*- Installing Apache
+In the third stage, we will be installing apache. In order to Install apache2 we run the following command
 
-Install the package of apache2 with the following command
+````
 Sudo apt install apache2 –y
+````
 
 ![Apache Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installapache.PNG)
  
-*Step four:*
-
+#### *Step four:*- Installing PHP
+This is the point where we install php. PHP helps in making sure that the webpages function as expected and also communicate with the database.
 Add php using the command;
+
+````
 sudo apt-get -y install php5-common php5-cgi php5 
+````
 
 ![PHP Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installphp.PNG)
  
-*Step five:*
+#### *Step five:*- Downloading MySQL
+After PHP has successfully installed, we can now download our desired database. In this case, this tutorial uses mysql database. Therefore, this step describes how to download mysql.
+To do this, run the following command in the terminal; 
 
-To install mysql database on the raspberry pi, run the following command in the terminal; 
+````
 sudo apt-get install mysql-server
+````
 
 ![My SQL Download](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/downloaddb.PNG)
  
 Note: When prompted to change the root password, please choose a strong password for the mysql and make sure to write it down somewhere you can refer to later on.  
 
-*Step 6:*
-
+#### *Step 6:*- Installing MySQL
+This stage describes the installation process of the already downloaded database.
 When the download is finished, formal installation is required and can be done using the command;
+
+````
 sudo mysql_secure_installation
+````
 
 ![My-SQL Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installdb.png)
  
-*Step 7:*
+#### *Step 7:*- Restarting the server
+At this point, we will restart the webserver, apache2, to confirm that the changes take effect and are running. Use the command;
 
-Restart the webserver, apache2, to confirm that the changes take effect and are running. Use the command;
+````
 sudo service apache2 restart
+````
 
 ![Restarting Apache](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/restartapache.png)
  
-*Step 8:*
+#### *Step 8:*- Testing the webserver
 
-Put the apache web server to test. Since Apache has a HTML file in the Apache web subdirectory, you can serve it on the raspberry when you browse http://[IP]/.
+We will now put the apache web server to test. Since Apache has a HTML file in the Apache web subdirectory, you can serve it on the raspberry when you browse http://[Host_IP_Address]/.
 When you browse to the default page of the web server on the Pi or on the network of another computer the following page will display if the Apache webserver is working. 
 
 ![Apache Default Page](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/defaultpage.PNG)
@@ -118,6 +133,3 @@ By following the steps presented above, it is possible to install and host a web
 - [Host a Website on Raspberry Pi](https://fireship.io/lessons/host-website-raspberry-pi/)
 - [Host a Raspberry Pi Web Server on the Internet](https://medium.com/swlh/host-a-raspberry-pi-web-server-on-the-internet-89786287db77)
 ---
-
-
-
