@@ -106,7 +106,7 @@ If we were to target the input element via its `className`, the snippet above wo
 const fullnameInputField = document.querySelector(“.fullname”)
 ```
 
-Note that the pound sign `(#)` has changed to the period sign `(.)` because we’re targeting that DOM node via its className property.
+Note that the hash symbol `(#)` has changed to the period symbol `(.)` because we’re targeting that DOM node through its className property.
 
 Now let’s have a look at the validation snippet below:
 
