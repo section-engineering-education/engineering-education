@@ -2,8 +2,7 @@ Having a way to check if the data that a user is sending to the webserver of a w
 
 This feature gives frontend developers the ability to create logic that checks the data that users type into the input fields of web apps.
 
-In this article, we’re going to look at how to verify input data using an npm package [react-alert](package link). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
-
+In this article, we’re going to look at how to verify input data using an npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
 ### Prerequisites
 
@@ -11,7 +10,7 @@ To follow along with this tutorial, you'll need:
 
 1. [Nodejs](https://nodejs.org) 10.x or newer.
 
-2. [NPM ](https://www.npmjs.com/package/npm5)  5.10 or newer.
+2. [NPM ](https://www.npmjs.com/package/npm5) 5.10 or newer.
 
 3. Knowledge of conditional statements in Javascript.
 
@@ -21,13 +20,13 @@ To follow along with this tutorial, you'll need:
 
 ### Overview
 
-Before React, vanilla JS was the go-to solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling. 
+Before React, vanilla JS was the go-to solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling.
 
 The aim of this validation process is to check if the data sent by the user to the server is appropriate. Event listeners will help us listen to events that take place on the webpage.
 
 These events range from the click of a button `onClick`. The mouse hovering effect on a particular element on the webpage `onMouseOver`. The submission of details entered into an input form using the `onSubmit` event, and much more.
 
- If you want to learn more about events in JavaScript. Visit [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
+If you want to learn more about events in JavaScript. Visit [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
 Performing these tasks (DOM manipulation) in vanillaJS isn’t a big deal because the DOM is available. But in React, the DOM isn’t available a virtual DOM is available instead.
 
 Although, manipulating the DOM in React undergoes the same process of doing that in vanillaJS but there are some quirks to it. One of them is how the `document` object isn’t available in React since it is being bundled with nodejs which doesn’t run on the client-side of a web browser.
@@ -367,7 +366,8 @@ function App({ Component, pageProps }) {
 export default App;
 ```
 
-Wrapping it up
+### Wrapping it up
+
 You have noticed we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go ahead and style your project to your own liking.
 
 You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you get a good understanding of how the package works.
