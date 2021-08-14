@@ -170,7 +170,7 @@ This is how it slides!
 
 ![Ball Sliding](switch3.gif)
 
-#### Step 3: Configuring Tailwind CSS
+#### Step 4: Configuring Tailwind CSS
 Tailwind CSS dark mode is not enabled by default. According to the official documentation, it is not enabled by default because of the file size considerations.
 
 Therefore, to enable it, we need to set the dark mode option in our `tailwind.config`. Let us do so!
@@ -223,7 +223,7 @@ This will be the result:
 
 That shows that dark mode is enabled in our project. Our next task is adding it to our HTML.
 
-#### Step 4: Adding Dark mode classes to our HTML
+#### Step 5: Adding Dark mode classes to our HTML
 Since we are implementing dark mode using class mode, we need to add class `dark` on the `<html>` tag like this:
 
 ```html
@@ -248,7 +248,7 @@ After adding the `dark` classes to our page, it looks like this:
 
 Now that we have an idea of how our dark theme would look like, let us make our switch work so we could see it change!
 
-#### Step 5: Adding Javascript
+#### Step 6: Adding Javascript
 In this step, we are going to add a few lines of Javascript code for our switch to work.
 
 You can create an external Javascript file and link it, or you can add the code using `<script>`. We will use the latter.
