@@ -179,7 +179,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
   }
   ```
 
-  - The next condition checks if the user enters any password at all. If there’s no value in the form field, an error pops up in the browser, while the next one checks for the validity of the password’s length.
+  - The next condition checks if the user has entered any password at all. If there’s no value in the password form field, an error pops up in the browser. While the next condition checks for the validity of the password’s length.
 
   ```js
   else if (password === "") {
