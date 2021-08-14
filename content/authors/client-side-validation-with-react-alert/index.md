@@ -150,7 +150,7 @@ const validateSignUp = (email, password, confirmPassword, alert) => {
 export default signUpCheck;
 ```
 
-Wow! I know that might be your reaction right now, but do not fret, We’d have a breakdown of what each snippet does as we move on.
+Wow! I can guess what might be your reaction right now, but do not fret. We will have a breakdown of what each snippet does as we move on.
 
 - **Passing form values as props**
   The snippet above is a helper function that performs validation on the type of data that gets into the form field before it is sent to the backend server. The function accepts the `email`, `password`, `confirmPassword`, and `alert` as arguments.
