@@ -66,7 +66,7 @@ It is this same principle that we’re going to use in implementing the client v
 
 Setting up the validation script
 
-Before creating the validation script, let’s have a look at the folder structure of the app so that the process of traversing the app system/architecture doesn’t get confusing or ambiguous as we proceed.
+Before creating the validation script, let’s have a look at the app's folder structure. So that the process of traversing the app structure doesn’t get confusing or ambiguous as we proceed.
 
 ```
 |--pages
