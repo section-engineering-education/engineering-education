@@ -1,8 +1,22 @@
-### Building a Music Player with Vanilla JavaScript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-music-player-with-vanilla-javascript/
+title: How to building a music player with vanilla JavaScript
+description: In this article, I will demonstrates how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API for playing music via a brower.
+author: doro-onome
+date: 2021-08-14T00:00:00-00:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /how-to-build-a-music-player-with-vanilla-javascript/hero.jpg
+    alt: Music player with vanilla Jabascript
+---
 
 Streaming music is one of the major activities people use the internet for these days. For this reason, creating a media platform with regular music player app features is right.
-
-In this article, I would show you how I created a music player using HTML, CSS, JavaScript, and the HTML5 Audio API with a clean user interface with which you can play music on the browser.
+<!--more-->
+In this article, I would show you how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API with which you can play music on the browser.
 
 ### Prerequisites
 - A good code editor. Visual Studio Code.
