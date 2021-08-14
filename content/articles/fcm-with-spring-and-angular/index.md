@@ -6,7 +6,7 @@ url: /fcm-with-spring-and-angular/
 title: Sending Notifications with Spring Boot, Angular, and Firebase Cloud Messaging
 description: A starting guide on sending notifications to an Angular application. To do this, we will be using a Spring Boot backend and Firebase Cloud Messaging.
 author: john-amiscaray
-date: 2021-08-14T00:00:00-05:00
+date: 2021-08-14T00:00:00-04:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
