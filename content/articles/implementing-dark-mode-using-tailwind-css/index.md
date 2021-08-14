@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Implementing-Dark-Mode-using-Tailwind CSS/hero.jpg
+  - url: /engineering-education/implementing-dark-mode-using-tailwind-css/hero.jpg
     alt: Implementing Dark Mode Using Tailwind CSS Hero image example
 ---
 Dark Mode is a display setting built for user interfaces. It lets users change the theme color of the application to black or a color closer to black.
@@ -31,7 +31,7 @@ I will assume that you already have the latest version of Tailwind installed. If
 #### Step 2: Our HTML
 Of course, we will need something on our page so that we can see the cool effects of dark mode. Here's a page of mine we will use:
 
-![Blog page](blogpage.jpg)
+![Blog page](/engineering-education/implementing-dark-mode-using-tailwind-css/blogpage.jpg)
 
 This is it's code:
 
@@ -110,7 +110,7 @@ We will be adding another `div` element under the container which will contain t
 
 This is how it should look like at this point:
 
-![Step 1 Result](switch1.jpg)
+![Step 1 Result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch1.jpg)
 
 In the code above:
 - `flex` will align content on the same line vertically, while `justify-end` will align the switch on the end of the containers space. The switch is moved to the right.
@@ -141,7 +141,7 @@ So what have we added here?
 
 At this point, our switch looks something like this:
 
-![Step 2 Result](switch2.jpg)
+![Step 2 Result](/engineering-education/implementing-dark-mode-using-tailwind-css/switch2.jpg)
 
 Let us add some custom CSS for the ball so that it could move when we click on it!
 
@@ -168,7 +168,7 @@ It means that:
 
 This is how it slides!
 
-![Ball Sliding](switch3.gif)
+![Ball Sliding](/engineering-education/implementing-dark-mode-using-tailwind-css/switch3.gif)
 
 #### Step 4: Configuring Tailwind CSS
 Tailwind CSS dark mode is not enabled by default. According to the official documentation, it is not enabled by default because of the file size considerations.
@@ -219,7 +219,7 @@ npm run tw:build
 
 This will be the result:
 
-![Step 4 result](npmresult.jpg)
+![Step 4 result](/engineering-education/implementing-dark-mode-using-tailwind-css/npmresult.jpg)
 
 That shows that dark mode is enabled in our project. Our next task is adding it to our HTML.
 
@@ -244,7 +244,7 @@ When choosing the color combination for a dark theme, make sure they correspond.
 
 After adding the `dark` classes to our page, it looks like this:
 
-![Step 5 Result](darkpage.jpg)
+![Step 5 Result](/engineering-education/implementing-dark-mode-using-tailwind-css/darkpage.jpg)
 
 Now that we have an idea of how our dark theme would look like, let us make our switch work so we could see it change!
 
@@ -281,7 +281,7 @@ What will these lines do?
 
 Here is our page in both light and dark mode!
 
-![Dark and light theme](result.gif)
+![Dark and light theme](/engineering-education/implementing-dark-mode-using-tailwind-css/result.gif)
 
 ### Conclusion
 Dark mode is said to reduce battery life in smartphones and also eye strain. It is clever to add this feature to yours web pages.
