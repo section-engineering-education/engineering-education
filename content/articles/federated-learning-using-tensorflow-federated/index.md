@@ -21,7 +21,6 @@ TensorFlow Federated is an open-source framework by Google that is used to imple
 In this article, we will learn how TensorFlow Federated can be utilized by researchers and machine learning developers to implement federated learning on our own datasets.
 
 ### Prerequisites
-
 To understand the contents of this article, you need to be familiar with:
 
 1. The Python programming language.
@@ -29,14 +28,12 @@ To understand the contents of this article, you need to be familiar with:
 3. Introduction to Federated Learning. 
 
 ### Outline
-
 1. [Introducing TensorFlow Federated (TFF)](#introducing-tensorflow-federated-tff)
 2. [The code behind TensorFlow Federated (TFF)](#the-code-behind-tensorflow-federated-tff)
 3. [Wrapping up](#wrapping-up)
 4. [Additional resources](#additional-resources)
 
 ### Introducing TensorFlow Federated (TFF)
-
 TFF is an open-source framework for Federated learning performed on decentralized data. It is a project by the team at Google and has been rapidly evolving over the recent years. TFF has three main features:
 
 1. TFF is architecture-agnostic. 
@@ -52,7 +49,6 @@ It is designed to mitigate the pain points that we developers face when developi
 Differential privacy, compression, and quantization are some of the few extensions available in TFF.
 
 #### TensorFlow federated layers
-
 TFF offers two main layers:
 
 1. Federated Learning (FL) API 
@@ -66,27 +62,17 @@ The FC API is much more lower-level and sits below the FC API. This API gives yo
 > In this tutorial, we will only be focusing on the FL API and the code behind it. This is to avoid the tutorial becoming too long. We will tackle the FC API in my next article.
 
 #### Ways to get involved
-
 There are different ways you can get involved depending on your interest:
 
-1. ML developer
+1. ML developer. As a machine learning developer, you can apply Federated Learning APIs to existing TensorFlow models.
 
-As a machine learning developer, you can apply Federated Learning APIs to existing TensorFlow models.
+2. FL researcher. As a federated learning researcher, you can help to design new federated learning algorithms using the FC API.
 
-2. FL researcher
+3. Systems researcher. As a systems researcher, you can help in optimizing generated computation structures.
 
-As a federated learning researcher, you can help to design new federated learning algorithms using the FC API.
-
-3. Systems researcher
-
-As a systems researcher, you can help in optimizing generated computation structures.
-
-4. System developer
-
-As a system developers, you can help integrate TFF with new types of development environments.
+4. System developer. As a system developers, you can help integrate TFF with new types of development environments.
 
 ### The code behind TensorFlow Federated (TFF)
-
 First, let's briefly take a look at how the Keras model looks like:
 
 ```python
@@ -178,10 +164,9 @@ TFF provides two builder functions:
 
 - `tff.learning.build_federated_evaluation` generates the federated computations for federated evaluation.
 
-To avoid making the article too long, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). Please check it out.
+For all the code, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). You may check it out.
 
 ### Summary of our colab implementation
-
 The simulation dataset used is the federated version of the MNIST dataset called NIST and is provided by the [Leaf project](https://github.com/TalwalkarLab/leaf). Leaf provides benchmarking framework for learning in federated settings such as federated learning. 
 
 Why a federated version of the dataset? 
@@ -195,7 +180,6 @@ In TFF, after the model has been trained on the selected devices, results are ob
 We encourage you to play around with the parameters (e.g., batch sizes, number of users, epochs, learning rates, etc.), to modify the code on my colab to simulate training on random samples of users.
 
 ### Wrapping up
-
 That was a simple introduction to TensorFlow Federated and the FC API. We used the MNIST training example to introduce the Federated Learning (FL) API layer of TFF. The code I've shown above is open-source and is available on Github. You can access it using this [link](https://github.com/tensorflow/federated). There are many ways to get involved as mentioned in the tutorial such as being a system developer, ML developer, and an ML researcher. You can check out this cool online [comic book](http://federated.withgoogle.com/) from [GoogleAI](https://ai.google/) that will help you learn Federated Learning easily using illustrated graphic art. 
 
 Remember, with Federated Learning, we can learn from everyone, without learning about anyone.
@@ -207,7 +191,6 @@ Remember, with Federated Learning, we can learn from everyone, without learning 
 Make sure to try out the code yourself as it'll help you grasp TFF concepts faster!
 
 ### Additional resources
-
 1. [Federated Learning for Mobile Keyboard Prediction](https://arxiv.org/pdf/1811.03604.pdf)
 2. [TensorFlow Federated](https://github.com/tensorflow/federated)
 3. [TensorFlow Federated: Machine Learning on Decentralized Data](https://www.tensorflow.org/federated)
