@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /ml-with-brainjs/
-title: Getting started with machine learning using Brain.js
+title: Getting Started with Machine Learning using Brain.js
 description: The goal of this article is to provide beginners, especially those who are coming from a web development background, a path into machine learning using the Brain.js JavaScript library.
 author: jamila-laureen
 date: 2021-08-15T00:00:00-05:14
