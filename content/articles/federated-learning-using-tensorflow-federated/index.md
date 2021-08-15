@@ -26,6 +26,7 @@ To understand the contents of this article, you need to be familiar with:
 1. The Python programming language.
 2. The TensorFlow machine learning framework.
 3. Introduction to Federated Learning. 
+4. [NIST dataset](https://www.nist.gov/srd/nist-special-database-19)
 
 ### Outline
 1. [Introducing TensorFlow Federated (TFF)](#introducing-tensorflow-federated-tff)
