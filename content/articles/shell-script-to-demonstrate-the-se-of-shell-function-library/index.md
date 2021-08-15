@@ -1,28 +1,71 @@
-### Introduction
-The Shell Function Library is a set of functions that may be called from any location in the development environment. Shell scripting becomes a little less laborious and repetitious as a result. We may access and call such functions from other files or scripts by building a shell script with some functions specified in it. It aids in the avoidance of code repetition in huge files and sophisticated scripts.
 
-In C/C++, a Shell Function Library is similar to a header file, whereas, in Python, it is similar to a module. The current script must be aware of the function's location. To be able to use the functions, we must additionally add the file's location to the Environment variables, or run the script in the terminal to temporarily load the function library into the current shell. Shell Script Functions are similar to regular shell scripts in that they only define functions.
+### Introduction
+What are functions? They are blocks of code that carry out a certain activity. Calling it and reusing it is possible. This bring a Shell Function Library which is a set of functions that may be called from any location in the development environment. Shell scripting becomes a little less laborious and repetitious as a result. We may access and call such functions from other files or scripts by building a shell script with some functions specified in it. It aids in the avoidance of code repetition in huge files and sophisticated scripts.
+
+### Prerequisites
+- [Introduction to shell scrpting](https://www.section.io/engineering-education/introduction-to-shell-scripting/)
+- [Download OATs from official website](https://www.oracle.com/enterprise-manager/downloads/oats-downloads.html)
+> OATs is the abbreviation of `Oracle Application Testing Suite`.
 
 ### Table of contents
+- [How to create a function](#how-to-create-a-function)
 - [Why use Function Library](#why-use-function-library)
 - [Creating function library](#creating-function-library)
 - [Using Functions From Library](#using-functions-from-library)
-- [A simple Demo of using Bash script as fuction library](a-simple-demo-of-using-bash-script-as-fuction-library)
+- [A simple Demo of using Bash script as fuction library](a-simple-demo-of-using-bash-script-as-function-library)
 - [Usage of Shell Function Library](#usage-of-shell-function-library)
 - [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
+### Goals
+By the end of this article, the reader will have understood:
+-  what function and function library is.
+- how to create a shell function.
+- how to use functions from the library and then demonstrate how to use bash script as a function library.
+
+### How to create a function
+As described in the introduction, a function is a block of code that carries out a certain activity. A function can be Called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
+
+Simply enter the following code to create a function:
+
+```bash
+function_name () { 
+   list of commands
+}
+```
+
+Your function's name is function_name, and you'll call it by that name throughout your scripts. The name of the function must be preceded by parentheses and a series of instructions surrounded by braces.
+
+Below is an example to show the use of a function:
+
+```bash
+Hello () {
+   echo "Hello World"
+}
+
+Hello
+``` 
+Save the script above in your Linux system as `test.sh` and then run it in the terminal by writing `./test.sh`
+
+The script above will display the following output.
+
+```bash
+Hello World
+```
+In C/C++, a Shell Function Library is similar to a header file, whereas, in Python, it is similar to a module. The current script must be aware of the function's location. To be able to use the functions, we must additionally add the file's location to the Environment variables, or run the script in the terminal to temporarily load the function library into the current shell. Shell Script Functions are similar to regular shell scripts in that they only define functions.
 
 ### Why use Function Library
+
 The most important reason for having a function library is for reusability. We require functions in a function library for the following reasons.
 
-1. Sometimes we require logic to address looping logic. For example, in Oracle Applications, whenever a concurrent request is sent, we usually click on the Refresh button to retrieve the most recent data about the concurrent program's status. Or, we may create a function and place it in the function library so it can be used in other scripts.
-2. We could need a collection of functions to deal with an excel file, a CSV file, an XML file, or a properties file at times. This is the situation when we wish to work with and would need across several test automation scripts, so once the functions are developed, they can be reused wherever they are needed. We may need to interact with these files for a variety of reasons, including test data iterations, spreadsheet verification, and so on.
+1. Sometimes we require logic to address looping logic. [To know more about looping logic click here](https://docs.oracle.com/cd/E13214_01/wli/docs102/bpguide/bpguideWhile.html) For example, in Oracle Applications, whenever a concurrent request is sent, we usually click on the Refresh button to retrieve the most recent data about the concurrent program's status. Or, we may create a function and place it in the function library so it can be used in other scripts.
+2. We could need a collection of functions to deal with an excel file, a CSV file, an XML file, or a properties file at times. This is the situation when we wish to work with  several test automation scripts.  When the functions are developed, they can be reused wherever they are needed in several test automation scripts. We may need to interact with these files for a variety of reasons, including test data iterations, spreadsheet verification, and so on.
 3. Some businesses even create functions for each business function of the application under test, which can then be utilized to create other test script combinations.
 
 > Similarly, individuals desire function libraries for a variety of reasons. Another advantage is that once these functions are exposed, they become central, so any changes made to them are reflected in any scripts that utilize them.
              
 ### Creating function library
-Let's look at how to make a function library with an Open script.
+Let's look at how to make a function library with an Open script from OATS.
 
 To construct a function library, follow these steps.
 
@@ -31,13 +74,15 @@ To construct a function library, follow these steps.
 3. Click Next after selecting a project type.
 4. Check the box labeled `Create a script as function library`.
 
-![How to create a Script as a Function Library](/engineering-education/Shell-Script-to-Demonstrate-the-Use-of-Shell-Function-Library/create_script_as_function_library.png)
+![How to create a Script as a Function Library](/engineering-education/shell-script-to-demonstrate-the-use-of-Shell-function-library/create_script_as_function_library.png)
+[Image by Author]()
 
 5. Next, type the name of the function library you want to use.
 6. Enter the desired package name, which may be the name of your company or a generic package name that we produce for every Java program.
 7. Enter your preferred Class name, which should be similar to the name of your function library.
 
-![How to enter a class name](/engineering-education/Shell-Script-to-Demonstrate-the-Use-of-Shell-Function-Library/class_name_entry.png)
+![How to enter a class name](/engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/class_name_entry.png)
+[Image by Author]()
 
 8. Finish by clicking the Finish button.
 
@@ -49,10 +94,11 @@ The following are the steps to using the function library:
 2. Make your way to the Assets section.
 3. Click Add after selecting the script's node.
 
-![How to add a script](/engineering-education/Shell-Script-to-Demonstrate-the-Use-of-Shell-Function-Library/adding_scripts_node.png)
+![How to add a script](/engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/adding_scripts_node.png)
+[Image by Author]()
 
 4. Enter the path to the function library we generated.
-5. CGive it a suitable alias name ( this name would be used in the scripts to call the functions )
+5. Give it a suitable alias name ( this name would be used in the scripts to call the functions )
 6. All functions in the function library are now ready for usage.
 
 #### A simple Demo of using Bash script as function library
@@ -93,9 +139,15 @@ echo "The reslut is $result"
 
 
 ### Usage of Shell Function Library
+The Shell Function Library is relatively basic, but it is dependent on the user's usability and order of choice since it has the potential to seriously disrupt the code structure. If the user needs to alter the function, he may forget where it is kept. 
 
-The Shell Function Library is relatively basic, but it is dependent on the user's usability and order of choice since it has the potential to seriously disrupt the code structure. If the user needs to alter the function, he may forget where it is kept. Shell Function Libraries are a fantastic method to become organized quickly and easily. It simplifies the process of memorizing or rewriting code over and over. It may save a lot of time and effort by allowing you to do things quickly and simply. This functionality of the Linux shell may be extremely useful in terms of increasing user productivity and maximizing time spent scripting files.
+Shell Function Libraries are a fantastic method to become organized quickly and easily. It simplifies the process of memorizing or rewriting code over and over. It may save a lot of time and effort by allowing you to do things quickly and simply. This functionality of the Linux shell may be extremely useful in terms of increasing user productivity and maximizing time spent scripting files.
 
 
 ### Conclusion
 In this article, we have learned what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions. I urge the reader to continue researching this article for further knowledge on automation using function libraries.
+
+### Further reading
+- [Introduction to shell scrpting](https://www.section.io/engineering-education/introduction-to-shell-scripting/)
+- [Dive into the Batch Scripting Language](https://www.section.io/engineering-education/dive-into-batch-scripting-language/)
+- [Introduction to Linux Shell and Shell Scripting](https://www.section.io/engineering-education/introduction-to-linux-shell-and-shell-scripting/)
