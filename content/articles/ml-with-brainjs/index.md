@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /ml-with-brainjs/
 title: Getting started with machine learning using Brain.js
-description: The goal of this article is to provide beginners, especially those who are coming from a web development background, a path into machine learning using the Brain.js javascript library.
+description: The goal of this article is to provide beginners, especially those who are coming from a web development background, a path into machine learning using the Brain.js JavaScript library.
 author: jamila-laureen
-date: 2021-08-10T00:00:00-08:56
-topics: []
+date: 2021-08-15T00:00:00-05:14
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/ml-with-brainjs/hero.png
@@ -34,25 +34,23 @@ Everybody knows that Machine Learning is mathematically intensive. For most begi
 ### Understanding Neural Networks
 You can think of a Neural network like the human brain, with several interconnected nodes grouped into layers. The layers are categorized as input, hidden, and output layers. Data in neural networks move in a single direction from the input towards the output. 
 
-This concept allows us to feed a vast amount of labeled data into the neural network and use it to train the network to give us a desirable output given some input. Given the processing time and accuracy of neural networks, they are far much better than human the brain.
+This concept allows us to feed a vast amount of labeled data into the neural network and use it to train the network to give us a desirable output given some input. Given the processing time and accuracy of neural networks, they are far much better than the human brain.
 
 ### Prerequisites
-The tutorial is beginner-friendly, so if you have done machine learning with Python or any other language, this will be a piece of cake. The article will require you to have the following beside the will to learn a new concept. 
+The tutorial is beginner-friendly, so if you have done machine learning with Python or any other language, this will be a piece of cake. The article will require you to have the following beside the will to learn a new concept:
 - A good understanding of [JavaScript.](https://www.javascript.com/)
 - Have [Node.js](https://nodejs.org/) installed on your computer.
-- Your suitable code editor. I prefer using [VS Code](https://code.visualstudio.com/download).
+- A code editor. I prefer using [VS Code](https://code.visualstudio.com/download).
 
 ### Understanding Brainjs
 [Brain.js](https://brain.js.org/#/) is in an interesting way of building neural networks. It easily learns the patterns and relationships between inputs and outputs and uses the information to make intelligent guesses when dealing with related issues. 
 
-Brain.js is a cool concept because most of the documentation found on the internet is Python-based, therefore,  the learning ladder for developers with a web-development background becomes hard to climb.
+Brain.js is a cool concept because most of the documentation found on the internet is Python-based. Therefore, the learning ladder for developers with a web-development background becomes hard to climb.
 
-> From their official documentation, Brain.js is a GPU accelerated neural network library built with JavaScript for browser and Node.js  applications. Brain.js is easy to understand and simple to use especially for beginners.
+> From their official documentation, Brain.js is a GPU accelerated neural network library built with JavaScript for browser and Node.js  applications. Brain.js is easy to understand and simple to use, especially for beginners.
 
 ### Project goal
-The main goal of this article is to provide beginners, especially those who are coming from a web development background, a path to get in machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
-
-The project will be based on the JavaScript machine learning library called [Brain.js](https://brain.js.org/#/).
+The main goal of this article is to provide beginners, especially those who are coming from a web development background, a path to get into machine learning. In the process, we will build a neural network, give it a set of data to train on, then ensure that our model can make a prediction based on the learning set of data provided. 
 
 ### Project setup
 Run `npm init -y` to create an empty `package.json` file. Next, execute the command `npm install brain.js` in your terminal to install the Brain.js package. 
@@ -71,7 +69,9 @@ brainjs
 ```
 
 ### The training overview
-Our training data will be an array of objects, where each object has a `text` and a `category`. Based on the words on the text, a given phrase can be categorized as `back-end` based or `front-end` based. We will supply this data to the neural network for training. Afterward, we will give it a phrase and let it determine whether the phrase falls into the `front-end` category or the `back-end`. In the `data.js` file, add the snippets below:
+Our training data will be an array of objects, where each object has a `text` and a `category`. Based on the words in the text, a given phrase can be categorized as `back-end` based or `front-end` based. We will supply this data to the neural network for training.
+
+Afterward, we will give it a phrase and let it determine whether the phrase falls into the `front-end` category or the `back-end`. In the `data.js` file, add the snippets below:
 
 ```json
 [
@@ -154,8 +154,8 @@ Our training data will be an array of objects, where each object has a `text` an
   ]
 ```
 
-### Creating the Neural Network
-When building the Neural network, we first need to import the `Brain.js` library into the project. After importing the library, we need to have our data file from where we will access the data to train the model. 
+### Creating the neural network
+When building the neural network, we first need to import the `Brain.js` library into the project. After importing the library, we need to have our data file from where we will access the data to train the model. 
 
 The code snippets below show how we import both the library and the data file.
 
@@ -170,12 +170,12 @@ const brain = require('brain.js')
 const data = require('./data.json')
 ```
 
-### Long Short Term Memory
-If you have worked with machine learning before, you probably are familiar with the term  Long short-term memory(LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
+### Long short-term memory
+If you have worked with machine learning before, you probably are familiar with the term Long short-term memory (LSTM). LSTM is an advanced Recurrent Neural Network (RNN) that allows information to stay long before getting lost.  
 
-RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way  as it remembers the previous information and uses that information to process the current given input. 
+RNN is a type of neural network that is used for persistent memory. Let's say you are discussing in class, and you remember a concept that the teacher taught in class, and you use the same concepts to solve a problem in your discussion group. The RNN works in the same way as it remembers the previous information and uses that information to process the current given input. 
 
-The problem with RNN and if that they cannot remember long-term information due to vanishing gradient and for this reason,  LSTM is designed to avoid long-term dependency problems. We are going to use  the inbuilt LSTM in our example to create our network as shown below:
+The problem with RNN is that they cannot remember long-term information due to vanishing gradient and for this reason, LSTM is designed to avoid long-term dependency problems. We are going to use the inbuilt LSTM in our example to create our network as shown below:
 
 ```js
 /**
@@ -184,10 +184,10 @@ The problem with RNN and if that they cannot remember long-term information due 
 const network = new brain.recurrent.LSTM();
 ```
 
-### Training the Model
+### Training the model
 To train the model, we will take the data from our data file, convert it into an array of values with input and output pairs. We will train our model by running several interactions through the data pair. 
 
-This procedure will take time depending on the number of iteration you perform on the dataset. The more the number of iterations, the higher the accuracy and time it takes.
+This procedure will take time depending on the number of iteration you perform on the dataset.
 
 The code snippets below choose how we are going to train the model.
 
@@ -206,7 +206,7 @@ In the last phase of our project, we will test the trained model for accuracy by
 
 The snippets below will assist us to test the model.
 
-- #### First Test
+#### First Test
 
 ```js
 /**
@@ -226,7 +226,7 @@ console.log(`Category: ${output}`)
 Category: frontend
 ```
 
-- #### Second Test:
+#### Second Test
 
 ```js
 /**
@@ -251,10 +251,10 @@ In this tutorial, we had an introduction to Brain.js Machine Library from a begi
 
 Testing the model and seeing that it could accurately predict whether a given phrase is a backend or frontend programmers' jargon, is where all the fun began. I am doing more research on this topic and I hope to do more projects on the same concept.
 
-You can find the code snippets for the application in [this](https://github.com/jamila-laureen/machine-learning-with-brain.js) link. Kindly reach out to me for any issue that a Google lookup won't help you with.
+You can find the code for the application [here](https://github.com/jamila-laureen/machine-learning-with-brain.js). Kindly reach out to me for any issue that a Google lookup won't help you with.
 
 ### Further Reading
-Brain.js may not be the only machine learning library made in and for JavaScript as there exist others like [TensorFlow](https://www.tensorflow.org/) and [MLjs](https://ml5js.org/), but it is one of the easiest to learn in my opinion. I would highly recommend you go through these articles to have more understanding of Machine Learning.
+Brain.js may not be the only machine learning library made in and for JavaScript as there exist others like [TensorFlow](https://www.tensorflow.org/) and [MLjs](https://ml5js.org/), but it is one of the easiest to learn in my opinion.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
