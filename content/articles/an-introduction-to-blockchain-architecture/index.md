@@ -6,7 +6,7 @@ url: /an-introduction-to-blockchain-architecture/
 title: Introduction to Blockchain Architecture
 description: In this article, we discuss the fundamentals that drive blockchain technology. We explore the components of blockchain, immutable ledgers, distributed peer-to-peer networks, etc., in detail.
 author: adetu-ridwan
-date: 2021-08-1T00:00:00-18:00
+date: 2021-08-15T00:00:00-18:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ As a financial market analyst, I recently ventured into the cryptocurrency asset
 
 During the early adoption phase of cryptocurrency assets, the theme behind its price delivery mechanism was "an extremely volatile asset." But, with institutions stepping into the marketplace, there has been a moderate fluctuation in its price delivery with lesser instances of extreme volatility and whipsaws.
 
-Arguably, the cryptocurrency market structure imitates the stock market, where we have indexes like S&P500 and DJI, which can be alternated as Bitcoin and Ethereum in the cryptocurrency market.
+Arguably, the cryptocurrency market structure is similar to the stock market. The cryptocurrencies are traded based on the merit seen by traders and investors. Several types of cryptocurrencies exist. They can be used as currencies (security tokens), store of value assets (value tokens), or utility tokens.  
 
 However, the financial aspect is intriguing, but what hooked my attention is the structure of blockchain technology. It is astounding and revolutionary. These aren't buzz words. We will get to it, and you will understand how my statement is true.
 
