@@ -164,20 +164,81 @@ TFF provides two builder functions:
 
 - `tff.learning.build_federated_evaluation` generates the federated computations for federated evaluation.
 
-For all the code, I have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). You may check it out.
+**Now that we have an idea about the FL API, let's use the MNIST training example to introduce the Federated Learning (FL) API layer of TFF.** 
 
-### Summary of our colab implementation
+#### Step 1: Installing TensorFlow Federated
+
+Please make sure to install TensorFlow Federated before importing it into your notebook. Failure to do this might give you an error. We do this by typing the following commands:
+
+```python
+pip install tensorflow-federated --upgrade
+```
+This will install TensorFlow Federated into your project. Let's now import them into our notebook.
+
+#### Step 2: Importing dependencies into our notebook
+
+```python
+import tensorflow as tf
+import tensorflow_federated as tff
+```
+We've imported both tensorflow and tensorflow federated into our project.
+
+#### Step 3: Simulation dataset
+
+```python
+emnist_train, emnist_test = tff.simulation.datasets.emnist.load_data()
+def client_data(n):
+  return emnist_train.create_tf_dataset_for_client(source.client_ids[n]).map(
+      lambda e: (tf.reshape(e['pixels'], [-1]), e['label'])
+  ).repeat(10).batch(20)
+  
+```
 The simulation dataset used is the federated version of the MNIST dataset called NIST and is provided by the [Leaf project](https://github.com/TalwalkarLab/leaf). Leaf provides benchmarking framework for learning in federated settings such as federated learning. 
 
 Why a federated version of the dataset? 
 
 It's because the dataset in FL is obtained from multiple users. This poses a unique set of challenges that normal versions of dataset don't exhibit. We import it into our project by using the `load_data()` function. 
 
+#### Step 4: Training using Federated data
+
+```python
+
+train_data = [client_data(n) for n in range(3)]
+
+trainer = tff.learning.build_federated_averaging_process(
+  model_fn,
+  client_optimizer_fn=lambda: tf.keras.optimizers.SGD(0.1))
+state = trainer.initialize()
+for _ in range(50):
+  state, metrics = trainer.next(state, train_data)
+  print(metrics['train']['loss'])
+```
 In the training bit, you'll notice that we are only using a subset of client devices are selected to recieve the training model. As much as we have many devices on the network, not all devices are eligible. At any given time, only a few devices may have relevant data to solve your problem. Thus, only a subset of devices are selected.
+
+```python
+12.931682
+13.094639
+12.765134
+11.813275
+11.521152
+10.681865
+10.033001
+......
+......
+......
+0.038877
+0.03537092
+0.032601092
+0.030380366
+0.028545696
+0.02700758
+```
 
 In TFF, after the model has been trained on the selected devices, results are obtained and loss calculated. In our experiment, we can notice that the training loss is decreasing after each round of federated training, indicating that the model is converging. We've set our training to go for 50 rounds. Our training loss at the end of the training is `0.02700758` down from `12.931682` recorded at the start of the training. In realistic deployments, users can and go depending on the availability of a device at a given time. This means that one would randomly select a sample of users for each round. However, to make things simple, and so that the system can converge quickly, we'll reuse the same users. For real-world deployments, please consider that factor.
 
-We encourage you to play around with the parameters (e.g., batch sizes, number of users, epochs, learning rates, etc.), to modify the code on my colab to simulate training on random samples of users.
+#### Summary of the implementation
+
+We encourage you to play around with the parameters (e.g., batch sizes, number of users, epochs, learning rates, etc.), to modify the code on my colab to simulate training on random samples of users. For all the code, we have implemented Federated Learning for Image classification using Tensorflow Federated on my [Google Colab](https://colab.research.google.com/drive/1EuSVn6gVVKy0pI_m1nooCd181v6ym5J-?authuser=1#scrollTo=0QIjHnqpGUy4). You may check it out.
 
 ### Wrapping up
 That was a simple introduction to TensorFlow Federated and the FC API. We used the MNIST training example to introduce the Federated Learning (FL) API layer of TFF. The code I've shown above is open-source and is available on Github. You can access it using this [link](https://github.com/tensorflow/federated). There are many ways to get involved as mentioned in the tutorial such as being a system developer, ML developer, and an ML researcher. You can check out this cool online [comic book](http://federated.withgoogle.com/) from [GoogleAI](https://ai.google/) that will help you learn Federated Learning easily using illustrated graphic art. 
