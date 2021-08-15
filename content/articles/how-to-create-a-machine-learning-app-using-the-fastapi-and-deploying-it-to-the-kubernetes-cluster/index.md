@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/
+title: Creating a Machine Learning App using FastAPI and Deploying it Using Kubernetes 
+description: In this article we discuss the concepts involved in building a machine learning model using FastAPI and deploying it using Kuberneters on Heroku.
+author: bravin-wasike
+date: 2021-08-15T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-the-kubernetes-cluster/hero.jpg
+   alt: FastAPI and Kubernetes example image
+---
+
 FastAPI is a new Python-based web framework used to create Web APIs. FastAPI is fast when serving your application, also enhances the performance of our application.
 
 ### Table of contents
@@ -18,17 +35,15 @@ FastAPI is a new Python-based web framework used to create Web APIs. FastAPI is 
 4. You must have [Kubernetes](https://www.section.io/engineering-education/introduction-to-kubernetes/) installed in your machine.
 5. Know how to use [Google Colab](https://research.google.com/) or [Jupyter Notebook](https://jupyter.org/). In this tutorial, we shall use Google Colab in building our model
 
-> NOTE: For you to follow along easily use [Google Colab](https://research.google.com/), it's easy to use fast when building models.
+> NOTE: For you to follow along easily, use [Google Colab](https://research.google.com/). It's an easy-to-use platform to get started quickly while building models.
 
 ### Building the machine learning model
 
-We will build a machine learning model that will predict the nationality of individuals using their names.
-This is a simple model that will explain the key concepts used in machine learning modeling.
+We will build a machine learning model that will predict the nationality of individuals using their names. This is a simple model that will explain the key concepts used in machine learning modeling.
 
 ### Dataset to be used
 
-The dataset used will contains common names of people and their nationalities.
-Our data used is as shown.
+The dataset used will contains common names of people and their nationalities. Our data used is as shown.
 
 ![A Snip of the data](/engineering-education/how-to-create-a-machine-learning-app-using-the-fast API-and-deploying-it-to-Kubernetes-cluster/snip.png)
 [CSV File of data](https://drive.google.com/file/d/1UNIqFDaqmfRxPmQaOC8SCPOQln27tfr-/view?usp=sharing)
@@ -37,18 +52,15 @@ Our data used is as shown.
 
 We will use the following packages when building our model.
 
-1. [Pandas](https://pandas.pydata.org/)
-
-   Pandas is a software library written for the Python programming language for data manipulation and analysis.
+#### Pandas
+   [Pandas](https://pandas.pydata.org/) is a software library written for the Python programming language for data manipulation and analysis.
    It's a tool for reading and writing data between in-memory data structures and different file formats.
 
-2. [Numpy](https://numpy.org/)
+#### NumPy
+   [Numpy](https://numpy.org/) is the fundamental package for scientific computing in Python. NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data.
 
-   NumPy is the fundamental package for scientific computing in Python. NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data.
-
-3. [Sckit-learn](https://scikit-learn.org/)
-
-   Is a free software machine learning library for the Python programming language. It consists various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and linear regression.
+#### Sckit-learn
+   [Scikit-learn](https://scikit-learn.org/) is an open-source software machine learning library for the Python programming language. It consists of various classification, regression, and clustering algorithms, including support vector machines, random forests, gradient boosting, k-means, and linear regression.
 
 Run the following commands to install the packages.
 
@@ -60,11 +72,12 @@ pip install sklearn
 
 ### Loading our exploratory data analysis(EDA) packages
 
-These packages are used for [Exploratory data analysis(EDA)](https://en.wikipedia.org/wiki/Exploratory_data_analysis) to summarise the main characteristics of our data for easy visualization.
-It helps determine how best to manipulate data sources to get the answers you need, making it easier in discovering patterns, spot anomalies, test a hypothesis and check for assumptions.
+These packages are used for [Exploratory Data Analysis (EDA)](https://en.wikipedia.org/wiki/Exploratory_data_analysis) to summarise the main characteristics of our data for easy visualization.
 
-- `pandas` is library written for the Python programming language for data manipulation and analysis.
-- `numpy` is the fundamental package for scientific computing in Python. NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data.
+It helps determine how best to manipulate data sources to get the answers you need, making it more accessible in discovering patterns, spot anomalies, test a hypothesis, and check for assumptions.
+
+- `pandas` is a library written for the Python programming language for data manipulation and analysis.
+- `NumPy` is the fundamental package for scientific computing in Python. NumPy arrays facilitate advanced mathematical and other types of operations on large numbers of data.
 
 ```python
 import pandas as pd
@@ -84,40 +97,34 @@ import accuracy_score from sklearn.metrics
 
 In the above code snippet, we have imported the following.
 
-#### `MultinomialNB`
+#### MultinomialNB
 
-This is the classifier method that is found in the Naive Bayes algorithm. We shall use `MultinomialNB` in the building of our model.
-Naive-Bayes classification technique is based on Bayes' Theorem, Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
+This is the classifier method that is found in the Naive Bayes algorithm. We shall use `MultinomialNB` to build our model. It is based on Bayes' Theorem, which is easy to build and particularly useful for enormous datasets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
 
-Naïve Bayes classifiers are highly scalable algorithms that requires a number of features when building a classification model.
-This an important concept that a user needs to understand since this is the algorithm we will be using.
-In our case we specifically use `MultinomialNB` method from the Naive Bayes algorithm since its suitable for classification with discrete features which is the case for our model.
-For further reading about the Naive Bayes algorithm and how it's useful in perfoming classification you can use this amazing article.
+Naïve Bayes classifiers are highly scalable algorithms that require several features when building a classification model. In our case, we use the `MultinomialNB` method from the Naive Bayes algorithm since its suitable for classification with discrete features, which is the case for our model.
 
-[Understanding Naive Bayes Classifier](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+You can use this amazing [article](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c) to further read about the Naive Bayes algorithm and how it's useful in performing classification.
 
-#### `CountVectorizer`
+#### CountVectorizer
 
-Is used to fit our model into the inputs of our dataset. `CountVectorizer` also transforms our dataset into vectors which are more readable inputs, the dataset is then used by our model during the training phase. It is also used to extract features from our dataset. Features are the inputs for our model.
-For more details about CountVectorizer, this great article can be used for further reading.
+It is used to fit our model into the inputs of our dataset. `CountVectorizer` also transforms our dataset into vectors which are more readable inputs. Our model then uses the dataset during the training phase. It is also used to extract features from our dataset. Features are the inputs for our model.
 
-[Basics of CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+For more details about [CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c), one can use this great article for further reading.
 
-#### `train_test_split`
+#### train_test_split
 
 This is what is used in splitting our dataset. Our dataset will be split into `train_set` and `test_set`.
 
-#### `accuracy_score`
+#### accuracy_score
 
-It is used to measure the accuracy of our model in percentage. USed gauge how our model learned during the training phase.
+It is used to measure our model's accuracy in percentage and gauge the model performance during the training phase.
 
-We will use the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) for our modeling.
-We choose the Naive Bayes Classifier algorithm for our classification instead of the other algorithms due to the following reasons.
+We will use the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) for our modeling. We choose the Naive Bayes Classifier algorithm for our classification instead of the other algorithms for the following reasons.
 
 1. It's simple and easy to implement.
 2. It tends to give a higher accuracy as compared to the other algorithm.
 3. Naive Bayes is fast during training as compared to other algorithms.
-4. Other algorithms tend to memorize rather than learn, unlike Naive Bayes which ensures that a model learns during training.
+4. Other algorithms tend to memorize rather than learn, unlike Naive Bayes, which ensures that a model learns during training.
 
 - Other common algorithms used are as follows.
 
@@ -129,8 +136,7 @@ We choose the Naive Bayes Classifier algorithm for our classification instead of
 
 ### Loading our dataset
 
-We use the `pandas` package to import our `nationality.csv` dataset.
-We also use `pandas` for data manipulation and data analysis.
+We use the `pandas` package to import our `nationality.csv` dataset. We also use `pandas` for data manipulation and data analysis.
 
 ```python
 df = pd.read_csv("nationality.csv")
@@ -144,8 +150,7 @@ We need to understand the nature of the dataset that we have. For example, we ne
 df.shape
 ```
 
-The output is as shown.
-This shows the size of our dataset.
+The output is as shown. This shows the size of our dataset.
 
 ```bash
 (3238, 3)
@@ -155,8 +160,7 @@ This shows the size of our dataset.
 df.head
 ```
 
-The output is shown:
-This shows that our dataset has two columns: `names` and `nationality` column.
+The output is shown: This shows that our dataset has two columns: the `names` and `nationality` columns.
 
 ```bash
 Unnamed: 0  names nationality
@@ -171,7 +175,7 @@ Unnamed: 0  names nationality
 df.columns
 ```
 
-Output will show the available columns in our dataset.
+The output will show the available columns in our dataset.
 
 ```bash
 Index(['Unnamed: 0', 'names', 'nationality'], dtype='object')
@@ -183,7 +187,7 @@ Index(['Unnamed: 0', 'names', 'nationality'], dtype='object')
 df['nationality'].unique()
 ```
 
-The ouput gives an array of all the nationalities available in our dataset, as shown below.
+The output gives an array of all the nationalities available in our dataset, as shown below.
 
 ```bash
 array(['yiddish', 'gaelic', 'african', 'irish', 'hungarian', 'german',
@@ -201,13 +205,13 @@ array(['yiddish', 'gaelic', 'african', 'irish', 'hungarian', 'german',
 ### Checking if our data is balanced
 
 This shows the available number of names in each nationality. The nationalities should have almost the same number of names to ensure that the model is well trained.
-As we can see most of the nationalities have a total of `100` names.
+As we can see, most of the nationalities have a total of `100` names.
 
 ```python
 df.groupby('nationality')['names'].size()
 ```
 
-Output of our nationalities.
+The output of our nationalities.
 
 ```bash
 nationality
@@ -267,8 +271,8 @@ Name: names, dtype: int64
 ### Visualizing our data using the Matplotlib library
 
 [Matplotlib](https://matplotlib.org/) is a Python library used for plotting hence easy visualization of our data in the form of a graph.
-In this tutorial we will be using [Google Colab](https://research.google.com/) as our notebook since it's fast in machine learning.
-Run the below code snippet on [Google Colab](https://research.google.com/) so that you can import Matplotlib.
+
+In this tutorial, we use [Google Colab](https://research.google.com/). Run the below code snippet on Google Colab so that you can import Matplotlib.
 
 ```python
 import matplotlib.pyplot as plt
@@ -285,7 +289,7 @@ Our bar graph is as shown:
 
 ### Checking our features
 
-- `Xfeatures` are individual independent variables that act like a input in your system, while making the predictions, models use such features to make the predictions.
+- `Xfeatures` are individual independent variables that act as input in your system. While making the predictions, models use such features to make the predictions.
 
 - `ylabels` will be used as outputs when making predictions.
 
@@ -296,24 +300,23 @@ ylabels= df['nationality']
 
 ### Vectorizing our features
 
-We will use the `CountVectorizer()` method to transform our dataset into readable inputs to be used by our model.
-This method is also used to extract features from our dataset, features are the inputs used for training our model.
-For a detailed information on `CountVectorizer()`, this great article can be used for further reading.
+We will use the `CountVectorizer()` method to transform our dataset into readable inputs to be used by our model. This method also extracts features from our dataset; features are the inputs used for training our model.
 
-- [Basics of CountVectorizer](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+For detailed information on `CountVectorizer()`, this [article](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c) can be used for further reading.
+
 
 ```python
 vec = CountVectorizer()
 X = vec.fit_transform(Xfeatures)
 ```
 
-We also need to initialize the `get_feature_names()` method which is used to get features of our system. Features are the independent variables in our dataset that are used as inputs when building our model.
+We also need to initialize the `get_feature_names()` method, which is used to get features of our system. Features are the independent variables in our dataset that are used as inputs when building our model.
 
 ```python
 vec.get_feature_names()
 ```
 
-### Splitting of our data
+### Splitting the data
 
 We need to split our dataset into `train_test` and `test_test.`. We use 70% of our data to train our model and 30% for testing.
 
@@ -321,12 +324,11 @@ We need to split our dataset into `train_test` and `test_test.`. We use 70% of o
 x_train,x_test,y_train,y_test = train_test_split(X,ylabels,test_size=0.30)
 ```
 
-### Building our model
+### Building the model
 
-We build our model using the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier).
-Naive Bayes is a simple classification algorithm to train and fit our model.
-The reasons for choosing [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) over the other algorithms has been stated earlier.
-We also fit our model to our dataset using the `fit()` method.
+As discussed above, Naive Bayes is a simple classification algorithm used to train and fit our model. The reasons for choosing [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) over the other algorithms have been stated earlier.
+
+We fit our model to our dataset using the `fit()` method.
 
 ```python
 nb = MultinomialNB()
@@ -335,7 +337,7 @@ nb.fit(x_train,y_train)
 
 ### Checking the accuracy of our model
 
-We have to check the accuracy score of our model to know how well we trained our model. The higher the accuracy the better we trained our model.
+We check the accuracy score of our model to know how well we trained our model. The higher the accuracy, the better we trained our model.
 
 ```python
 nb.score(x_test,y_test)
@@ -351,8 +353,7 @@ The final percentage accuracy for our model is `0.85036482694119869`. This is ab
 
 ### Making predictions
 
-After we have trained our model, we can now feed our model with new inputs to start making predictions.
-Our model will make accurate predictions based on how well we trained it. Therefore, the higher the accuracy score, the better our model will be in making predictions.
+After training our model, we can now feed our model with new inputs to start making predictions. Our model will make accurate predictions based on how well we trained it. Therefore, the higher the accuracy score, the better our model will be in making predictions.
 
 ```python
 name1 = ["Yin","Bathsheba","Brittany","Vladmir"]
@@ -364,13 +365,11 @@ nb.predict(vector1)
 
 ### Saving our model using joblib
 
-We will use `joblib` to save our model into a pickle file.
-Picking our model makes it easier to use our model in the future without repeating the training process.
-A pickle file is a byte stream of our model. To use `joblib` we have to import the package from `sklearn.externals`.
-Joblib is an important package that a user needs to underastand since this is what we will use in saving our model.
-Here a detailed article that can help a reader fully grasp the use and functionalities of `joblib`.
+We will use `joblib` to save our model into a pickle file. Pickling our model makes it easier to use our model in the future without repeating the training process.
+A pickle file is a byte stream of our model. 
 
-- [Saving Machine Learning Models using Joblib](https://medium.com/@harsz89/persist-reuse-trained-machine-learning-models-using-joblib-or-pickle-in-python-76f7e4fd707)
+To use `joblib`, we have to import the package from `sklearn.externals`. Here is a detailed [article](https://medium.com/@harsz89/persist-reuse-trained-machine-learning-models-using-joblib-or-pickle-in-python-76f7e4fd707) that helps a reader fully grasp the use and functionalities of `joblib`.
+
 
 ```python
 import joblib from sklearn.externals
@@ -382,27 +381,26 @@ joblib.dump(cv,nationality_vectorizer)
 nationality_predictor.close()
 ```
 
-We will name our pickle file 'naive_bayes.pkl'.
+We will name our pickle file `naive_bayes.pkl`.
 
 ### Introduction to the FastAPI
 
-FastAPI is a modern, fast web framework for building APIs with Python 3.6+ which is based on standard Python type hints.
-The key features for FastAPI are as follows:
+FastAPI is a modern, fast web framework for building APIs with Python 3.6+, based on standard Python-type hints. The key features for FastAPI are as follows:
 
-1. Fast when building APIs.
-2. Fast to code: Increases the speed of developing new features.
-3. Fewer bugs: Reduce developer induced errors
-4. Intuitive: Has great editor support, completion everywhere and less time debugging.
-5. Easy: Designed to be easy to use and learn.
-6. Short: Minimize code duplication with multiple features from each parameter declaration.
-7. Robust: Get production-ready code with automatic interactive documentation.
-8. Standards-based: Based on the open standards for APIs.
+
+- _Fast to code_: Increases the speed of developing new features.
+- _Fewer bugs_: Reduce developer induced errors
+- _Intuitive_: Has great editor support, completion everywhere, and less time debugging.
+- _Easy_: Designed to be easy to use and learn.
+- _Short_: Minimize code duplication with multiple features from each parameter declaration.
+- _Robust_: Get production-ready code with automatic interactive documentation.
+- Standards-based: Based on the open standards for APIs.
 
 This makes Fast API potent since it combines the functionalities of best frameworks such as [flask](https://flask.palletsprojects.com/) and [swagger](https://swagger.io/)
 
-### Installing the FastAPI
+### Installing FastAPI
 
-Use the following commands in order to install FastAPI into our machine.
+Use the following commands to install FastAPI into our machine.
 
 ```python
 pip install fastapi
@@ -410,17 +408,17 @@ pip install fastapi
 
 Let's install the server.
 
-- `univicorn` is server that is used to run FastAPI. We specify the `standard` version of `univicorn` which contains minimal dependencies. This version contains pure Python dependencies.
-  This version is best suited for our model since we are dealing the core Python packages and dependancies used in building our model.
+- `univicorn` is a server that is used to run FastAPI. First, we specify the `standard` version of `univicorn`, which contains minimal dependencies. This version contains pure Python dependencies.
+  This version is best suited for our model since we deal with the core Python packages and dependencies used to build our model.
 
 ```python
 pip install uvicorn[standard]
 ```
 
-### Creating an API for our machine learning model using the FastAPI
+### Creating an API for our machine learning model using FastAPI
 
-1. First, create a new Python file and name it 'main.py.'
-2. Add our pickle file 'naive_bayes.pkl' in a new folder.
+1. First, create a new Python file and name it `main.py.`
+2. Add our pickle file `naive_bayes.pkl` in a new folder.
 
 The folder structure is as shown.
 
@@ -431,11 +429,11 @@ The folder structure is as shown.
 
 ```
 
-- Let's get started working with our new 'app.py' file.
+- Let's get started working with our new `app.py` file.
 
 ### Importing our FastAPI packages
 
-We need to import the install packages such as `uvicorn` and `FastAPI` so that we can start using these packages.
+We need to import the install packages such as `uvicorn` and `FastAPI` to start using these packages.
 
 ```python
 import uvicorn
@@ -445,7 +443,7 @@ import FastAPI, Query from fast API
 ### Loading ML packages
 
 We will use `joblib` to unpickle our previously pickled file, convert our serialized model back to its original form.
-This article can give you a deeper understanding about `joblib`.
+This article can give you a deeper understanding of `joblib`.
 
 - [Saving Machine Learning Models using Joblib](https://medium.com/@harsz89/persist-reuse-trained-machine-learning-models-using-joblib-or-pickle-in-python-76f7e4fd707)
 
@@ -455,10 +453,8 @@ import joblib from sklearn.externals
 
 ### Unplickling our Naive Bayes classifier file
 
-To use our saved model we need to convert it back to the original object. This allows us to use our model in the original form we had created. We use `joblib` for unpickling.
-This article can give you a more detailed guidance about unpliking a model.
+To use our saved model, we need to convert it back to the original object. This allows us to use our model in the original form we had created. Again, we use `joblib` for unpickling. This [article](https://www.pythoncentral.io/how-to-pickle-unpickle-tutorial/) can give you more detailed guidance about unpliking a model.
 
-- [A Beginner's guide to Pickling and Unpickling](https://www.pythoncentral.io/how-to-pickle-unpickle-tutorial/)
 
 ```python
 nationality_naive_bayes = open("model/naive_bayes.pkl","rb")
@@ -475,19 +471,15 @@ app = FastAPI()
 
 ### Creating our routes
 
-We will create a simple route that will run localhost port 8000.
-To create our route we shall use the concept of Asynchronous programming in creating routes.
+We will create a simple route that will run on `localhost port 8000`. To create our route, we shall use the concept of Asynchronous programming in creating routes.
 
 - [Asynchronous programming](https://www.aeracode.org/2018/02/19/python-async-simplified/) allows a program to run multiple operations without waiting for other operations to complete.
 
-This is an important concept in any programming language since it allows multiple operations to run in parallel without blocking each other.
-Asynchronous programming is an advanced concept that has become very important in Python language. For a detailed guidance on this concept this article is very helpful.
+This is an important concept in any programming language since it allows multiple operations to run parallel without blocking each other. Asynchronous programming is an advanced concept that has become very important in the Python language. For detailed guidance on this concept, this [article](https://www.infoworld.com/article/3454442/get-started-with-async-in-python.html) is very helpful.
 
-- [Get started with async in Python](https://www.infoworld.com/article/3454442/get-started-with-async-in-python.html)
+We shall use the [`async`](https://fastapi.tiangolo.com/async/#in-a-hurry) function when creating our `FastAPI` routes. This enables the `FastAPI` to create multiple routes concurrently.
 
-We shall use then [`async`](https://fastapi.tiangolo.com/async/#in-a-hurry) function when creating our `FastAPI` routes. This enables the `FastAPI` to create multiple routes concurrently.
-
-To make our first route we use `async def index()` function to makes the index route which will run on localhost port `8000`.
+To make our first route, we use the `async def index()` function to makes the index route, which will run on localhost port `8000`.
 
 ```python
 @app.get('/')
@@ -504,15 +496,13 @@ if __name__ == '__main__':
 
 ![Interactive API docs](/engineering-education/how-to-create-a-machine-learning-app-using-the-fastapi-and-deploying-it-to-kubernates-cluster/main-doc.png)
 
-The above routes are used to show how to make a simple index route using the FastAPI.
-Now we shall add more routes for our machine learning model.
+The above routes are used to show how to make a simple index route using the FastAPI. Now we shall add more routes for our machine learning model.
 
 ### Adding route for our machine learning logic
 
 We will add a get route for making nationality predictions.
 
-The following function can also be used to make predictions. We use the `predict_nationality()` method when we want to make predictions about someone's nationality.
-We also need to convert our data inputs into array using the `toarray()` so that it returns a list of the nationalities available in our dataset.
+The following function can also be used to make predictions. For example, we use the `predict_nationality()` method to make predictions about someone's nationality. We also need to convert our data inputs into an array using the `toarray()` to return a list of the nationalities available in our dataset.
 
 ```python
 def predict_nationality(x):
@@ -523,8 +513,7 @@ def predict_nationality(x):
 
 ### Adding a route to make predictions
 
-We will use this route to get the ethnicity of a person based on the name input by the user.
-In order to get the prediction we need to send `GET` request to our `predict` route. We also need to include the `predict()` method used to query our route and return a prediction result.
+We will use this route to get the ethnicity of a person based on the name input by the user. We need to send a `GET` request to our `predict` route to get the prediction. We also need to include the `predict()` method to query our route and return a prediction result.
 
 ```python
 @app.get('/predict/{name}')
@@ -538,7 +527,7 @@ async def predict(name: str = Query(None, min_length=2, max_length=12)):
     return {"orig_name": name, "prediction": result}
 ```
 
-Make sure to include this in your file to specify the port that will serve your app. This will enable our route run on localhost port `8000`.
+Make sure to include this in your file to specify the port that will serve your app. For example, this will enable our route to run on localhost port `8000`.
 
 ```python
 if __name__ == '__main__':
@@ -561,14 +550,14 @@ We have finally served our machine learning model as API using the FastAPI.
 
 It involves creating a Docker Container for our application.
 
-A Docker Container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+A Docker Container is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another.
 
-Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
-Container images become containers at runtime and in the case of Docker containers, images become containers when they run on Docker Engine
+Container images become containers at runtime, and in Docker containers, images become containers when they run on Docker Engine.
 To create a docker container, we have to use the following steps.
 
-1. Create a Docker file.
+#### Create a Docker file.
    In your working directory, create a DockerFile.
 
 Your working directory is as shown below:
@@ -581,39 +570,39 @@ Your working directory is as shown below:
 
 ```
 
-2. Creating Docker Layers
+#### Creating Docker Layers
 
-Docker Layers are what compose the file system for both Docker images and Docker containers. Each layer corresponds to certain instructions in your Dockerfile. In our Dockerfile we have instructions, the instructions are shown below from defining our base image to creating an entry point to be used to execute our image.
+Docker Layers are what compose the file system for both Docker images and Docker containers. Each layer corresponds to certain instructions in your Dockerfile. For example, in our Dockerfile, we have instructions. The instructions are shown below, from defining our base image to creating an entry point to execute our image.
 
-If these steps are followed we will end up with a Docker image. The steps are as follows.
+If these steps are followed, we will end up with a Docker image. The steps are as follows.
 
-#### Define base image
+##### Define base image
 
-A base image is the image that is used to create all of your container images. Here we shall use Python as our base imaage.
+A base image is an image that is used to create all of your container images. Here we shall use Python as our base image.
 
 ```docker
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 ```
 
-#### Create a working directory
+##### Create a working directory
 
 ```docker
 WORKDIR /app
 ```
 
-#### Copy the app into the new directory created
+##### Copy the app into the new directory created
 
 ```docker
 COPY ./app /app
 ```
 
-#### Install in the new working directory
+##### Install in the new working directory
 
 ```docker
 RUN pip install fastapi uvicorn
 ```
 
-#### Expose the port to serve your application
+##### Expose the port to serve your application
 
 Docker will run on port `8000`.
 
@@ -621,7 +610,7 @@ Docker will run on port `8000`.
 EXPOSE 8000
 ```
 
-#### Create an entry point to be used to execute our image
+##### Create an entry point to be used to execute our image
 
 ```docker
 ENTRYPOINT ["uvicorn", "app:app --reload"]
@@ -629,16 +618,15 @@ ENTRYPOINT ["uvicorn", "app:app --reload"]
 CMD ["uvicorn", "app.app:app", "8000"]
 ```
 
-3. Create Docker image
+#### Create Docker image
 
-Image result for docker image
-A Docker image contains application code, libraries, tools, dependencies and other files needed to make an application run
+A Docker image contains application code, libraries, tools, dependencies, and other files needed to make an application run.
 
 ```docker
 docker build -t fastapi-test-app:new .
 ```
 
-#### The output is as shown
+##### The output is as shown
 
 This output shows the process used when creating a docker image.
 
@@ -667,9 +655,9 @@ Successfully built 2de6fstf5uv09
 Successfully tagged fastapi-test-app:new
 ```
 
-#### Listing all of our created images
+##### Listing all of our created images
 
-In order to list all the docker images we had created earlier you can use the following command.
+To list all the docker images we had created earlier, you can use the following command.
 Our latest image is `fastapi-test-app`. This is the image we have just created with an id of `2de6fstf5uv09`.
 
 ```docker
@@ -684,9 +672,9 @@ fastapi-test-app             new                2de6fstf5uv09      3 minutes ago
 testing                      latest             d661f1t3e0b         2 weeks ago          994MB
 ```
 
-4. Creating docker container
+#### Creating docker container
 
-Docker containers are the live, running instances of Docker images, users can interact with them, and administrators can adjust their settings and conditions using docker commands
+Docker containers are the live, running instances of Docker images, users can interact with them, and administrators can adjust their settings and conditions using docker commands.
 
 ```bash
 docker run -p 8000:8000 fastapi:new
@@ -702,10 +690,10 @@ After Dockerizing our FastAPI application, we now need to deploy it to Kubernete
 
 ### Deploying the FastAPI application to Kubernetes cluster
 
-Kubernetes is a container orchestration system that is used for the deployment of docker-created containers. It is meant to manage and coordinate clusters and workloads at a larger scale in a production environment efficiently.
+Kubernetes is a container orchestration system that is used for the deployment of docker-created containers. It is meant to efficiently manage and coordinate clusters and workloads at a larger scale in a production environment.
 Helps to manage containerized services through automation in deployment.
 
-We create a new file called 'deployment.yaml' in our working directory.
+We create a new file called `deployment.yaml` in our working directory.
 Our folder structure is as shown:
 
 ```bash
@@ -758,25 +746,24 @@ spec:
 
 The file has two sections:
 
-1. Service - Acts as the load balancer. A load balancer is used to distribute different sets of tasks to the various available servers in the network to maximize the usage of the available resources.
+1. _Service_: Acts as the load balancer. A load balancer is used to distribute different sets of tasks to the various available servers in the network to maximize the usage of the available resources.
 
-2. Deployment- This is the intended application that we want to deploy to the Kubernetes engine. The user will then send a request to the load balancer in the service. Then the load balancer distributes the request by creating the number of replicas defined in the deployment.yaml file. Here, we are using five replicas for scalability. Hence there will be five instances of the application running at a time.
+2. _Deployment_: This is the intended application that we want to deploy to the Kubernetes engine. The user will then send a request to the load balancer in the service. Then the load balancer distributes the request by creating the number of replicas defined in the `deployment.yaml` file. Here, we are using five replicas for scalability. Hence there will be five instances of the application running at a time.
 
 When we have various replicas, it creates redundancy so that if one instance fails, the others will continue running.
 
-The deployment. yaml file is connected to the Docker image created earlier. In the deployment .yaml file, we specify the image name created earlier.
+The `deployment.yaml` file is connected to the Docker image created earlier. In the `deployment.yaml` file, we specify the image name created earlier.
 
 ### Deployment of our application to Kubernetes cluster
 
-We have dockerized our FastAPI application, and now we will deploy it to a Kubernetes engine.
+We have dockerized our FastAPI application. We will now deploy it to a Kubernetes engine.
 
 Run the following command:
 
 ```bash
 kubectl apply -f deployment.yaml
 ```
-
-This command will deploy our service and application instances created above to the Kubernetes engine. After running this command, the fastapi-test-service and the fastapi-test-app are created.
+This command will deploy our service and application instances created above to the Kubernetes engine. After running this command, the `fastapi-test-service` and the `fastapi-test-app` are created.
 
 ### Deployment dashboard
 
@@ -802,10 +789,9 @@ Therefore we have deployed our Containerised FastAPI application to the Kubernet
 
 ### Conclusion
 
-In this tutorial, we have learned how to create a machine learning model. We have followed all the steps from data pre-processing to train and build our model finally.
-We have also learned about the FastAPI, which is an efficient library for making WebAPIs. The FastAPI has helped us to serve our machine learning model as an API.
-We then containerized our fast API application using docker. Finally, we deployed the application to the Kubernetes cluster.
-Using these steps, a reader should be able to comfortably build a FastAPI application and deploy it to the Kubernetes cluster.
+In this tutorial, we have learned how to create a machine learning model. We have followed all the steps from data pre-processing to train and build our model finally. We have also learned about the FastAPI, which is an efficient library for making WebAPIs. The FastAPI has helped us to serve our machine learning model as an API.
+
+We then containerized our fast API application using docker. Finally, we deployed the application to the Kubernetes cluster. Using these steps, a reader should comfortably build a FastAPI application and deploy it to the Kubernetes cluster.
 
 ### References
 
@@ -815,3 +801,7 @@ Using these steps, a reader should be able to comfortably build a FastAPI applic
 - [Docker Documentation](https://www.docker.com/)
 - [Kubernetes Documentation](https://kubernetes.io/)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
