@@ -2,7 +2,7 @@
 ## Testing Angular applications using Protractor and Jasmine
 
 
-![Protractor!](/testing-angular-app-with-protractor-and-jasmine/protrator.jpg)
+![protractor](./protractor.jpg "protractor")
 
 
 If you are into the tech world, you must have heard of testing and the various types of testing and how testing helps create better resilient applications. In this tutorial, we will be looking at testing Angular applications using protractor and jasmine.
@@ -61,42 +61,44 @@ Next Run command
 
 Create a conf.js file in your root directory of your angular application and input the following.
 
->	 exports.config = {
->  		directConnect: true,
-> 		specs: ['./**/tests/**-spec.js’],  //Specifies the link to test file(s)
->		
->	framework: ‘jasmine’,
->   
->		capabilities: {
->			‘browserName’: ‘chrome’
->			}
->		};
+```javascript
+    exports.config = {
+        directConnect: true,
+        specs: ['./**/tests/**-spec.js’],  //Specifies the link to test file(s)
+    
+        framework: ‘jasmine’,
+    
+        capabilities: {
+            ‘browserName’: ‘chrome’
+        }
+    };
+```
 
 For now these basic configuration will get your test up and running. Feeling unsatisfied, checkout this link provided. [ Protractor API ](https://www.protractortest.org/#/api-overview) for much specific issues.
 
 
 
-
 Create a test-spec.js file anywhere you see fit in your directory. Here you will write your tests. For now test using the code below in your test
 
-> describe('angularjs list app’, function() {
->  it(‘A’dd a list, function() {
->    browser.get('https://angularjs.org');
->
->    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
->   element(by.css('[value="add"]')).click();
->
->   let todoList = element.all(by.repeater('todo in todoList.todos'));
->  expect(todoList.count()).toEqual(3);
->    expect(todoList.get(2).getText()).toEqual('write first protractor test');
->
->    // You wrote your first test, cross it off the list
->    todoList.get(2).element(by.css('input')).click();
->    let completedAmount = element.all(by.css('.done-true'));
->    expect(completedAmount.count()).toEqual(2);
->  });
-> });
+```javascript
+    describe('angularjs list app’, function() {
+        it(‘A’dd a list, function() {
+            browser.get('https://angularjs.org');
 
+            element(by.model('todoList.todoText')).sendKeys('write first protractor test');
+            element(by.css('[value="add"]')).click();
+
+            let todoList = element.all(by.repeater('todo in todoList.todos'));
+            expect(todoList.count()).toEqual(3);
+            expect(todoList.get(2).getText()).toEqual('write first protractor test');
+
+            // You wrote your first test, cross it off the list
+            todoList.get(2).element(by.css('input')).click();
+            let completedAmount = element.all(by.css('.done-true'));
+            expect(completedAmount.count()).toEqual(2);
+        });
+    });
+```
 
 The describe and it syntax  used in the code is gotten from the Jasmine framework. browser is a global created by Protractor, which is used for browser-level commands such as navigation with browser.get.
 
@@ -119,12 +121,13 @@ Suites: describe Your Tests
 The describe function is for grouping related specs, typically each test file has one at the top level. The string parameter is for naming the collection of specs, and will be concatenated with specs to make a spec's full name. This aids in finding specs in a large suite. If you name them well, your specs read as full sentences in traditional BDD style.
 
 
->   describe("A suite", function() {
->    it("contains spec with an expectation", function() {
->     expect(true).toBe(true);
->    }); 
->  });
->
+```javascript
+    describe("A suite", function() {
+        it("contains spec with an expectation", function() {
+        expect(true).toBe(true);
+        }); 
+    });
+```
 
 
 
@@ -135,16 +138,16 @@ Specs are defined by calling the global Jasmine function it, which, like describ
 It's Just Functions
 Since describe and it blocks are functions, they can contain any executable code necessary to implement the test. JavaScript scoping rules apply, so variables declared in a describe are available to any it block inside the suite.
 
-> describe("A suite is just a function", function() {
->  var a;
->
->  it("and so is a spec", function() {
->    a = true;
->
->    expect(a).toBe(true);
->  });
-> });
+```javascript
+    describe("A suite is just a function", function() {
+        var a;
+        it("and so is a spec", function() {
+        a = true;
 
+        expect(a).toBe(true);
+        });
+    });
+```
 
 
 Expectations
@@ -156,23 +159,24 @@ Each matcher implements a true or false comparison between the actual and the ex
 Any matcher can evaluate to a negative assertion by chaining the call to expect with a not before calling the matcher.
 Jasmine has a rich set of matchers included, you can find the full list in the API docs There is also the ability to write custom matchers for when a project's domain calls for specific assertions that are not included in Jasmine.
 
-> describe("The 'toBe' matcher compares with ===", function() {
->	it("and has a positive case", function() {
->  	  expect(true).toBe(true);
->	  });
->	 it("and can have a negative case", function() {
->  	  expect(false).not.toBe(true);
-> 	 });
->
-> });
-
+```javascript
+    describe("The 'toBe' matcher compares with ===", function() {
+	    it("and has a positive case", function() {
+  	        expect(true).toBe(true);
+	    });
+	    it("and can have a negative case", function() {
+  	        expect(false).not.toBe(true);
+	    });
+    });
+```
 
 For more reference check out the jasmine docs
 [Your_first_suite](https://jasmine.github.io/tutorials/your_first_suite)
 
 References
 [Protractor](https://www.protractortest.org/#/)
-[Protractor API ](https://www.protractortest.org/#/api)
+
+[Protractor API](https://www.protractortest.org/#/api)
 
 
 
