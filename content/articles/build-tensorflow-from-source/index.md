@@ -6,7 +6,7 @@ url: /build-tensorflow-from-source/
 title: Introductory Guide to Building Tensorflow 2.5.0 from Source
 description: This tutorial explains what it means to build software from source, as well as its advantages. We will focus on building Tensorflow from source.
 author: lalithnarayan-c
-date: 2021-08-16T00:00:00-21:00
+date: 2021-08-16T00:00:00-04:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
