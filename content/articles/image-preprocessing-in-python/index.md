@@ -205,7 +205,7 @@ Output
 
 This is a processes of reversing the rows or columns of pixels in either vertical or horizontal cases respectively.
 
-Let's do a random flip below with both horizontal and vertical flips.
+Let's do a random flip with both horizontal and vertical flips.
 From the [code above](#a-shifting), change the **ImageDataGenerator** parameters as shown below:
 
 ```python
