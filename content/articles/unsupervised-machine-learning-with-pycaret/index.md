@@ -1,7 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /unsupervised-machine-learning-with-pycaret/
+title: Unsupervised machine learning with Pycaret
+description: This tutorial will teach the reader to learn the basics of Pycaret before he can advance into building a machine learning model.
+author: francis-ndiritu
+date: 2021-08-06T00:00:00-05:52
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/unsupervised-machine-learning-with-pycaret/hero.jpg
+    alt: Pycaret machine learning image
+---
+
 Unsupervised machine learning is a type of machine learning where the model is trained using an unlabeled dataset. The model is supposed to find the hidden patterns and information from the given dataset by itself.
-
+<!--more-->
 Pycaret is a powerful open-source library in python that is used as a wrapper around several popular machine learning and data science libraries in building a machine learning model.
-
 
 ### Table of content
 -  [Goal](#goal)
@@ -21,9 +36,7 @@ Pycaret is a powerful open-source library in python that is used as a wrapper ar
 - [References](#references)
 
 ### Goal
-In this tutorial, we shall use Pycaret to perform clustering, which is used in clustering countries into their respective continents.
-
-This tutorial will teach the reader to learn the basics of Pycaret before you can advance into building our machine learning model.
+In this tutorial, we shall use Pycaret to perform clustering, which is used in clustering countries into their respective continents. This tutorial will teach the reader to learn the basics of Pycaret before you can advance into building our machine learning model.
 
 As compared to other machine learning libraries such [Scikit-learn](https://scikit-learn.org/), Pycaret is simple and easy to use due to fewer lines of code that one has to write. This increases the productivity of a developer since the developer spends less time coding.
 
