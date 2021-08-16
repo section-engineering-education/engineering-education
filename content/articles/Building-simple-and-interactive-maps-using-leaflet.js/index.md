@@ -1,20 +1,20 @@
-## Introduction
+### Introduction
 Leaflet.js is an open-source javascript library used to build mobile-friendly and lightweight maps. Leaflet.js is easily used to create maps,  also supports a large number of plugins. It assists javascript developers in building web mapping and web-GIS functionalities. It also helps in making it easier to create geoportals and share maps all around the world.
 
 This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js libraries.
-## Prerequisite
+### Prerequisite
 To grasp this guide, the reader must have a level of knowledge on the following:
 - Javascript.
 - HTML (Hypertext Markup Language).
 - CSS (Cascading Style Sheet).
 - Code editors like *visual studio code, sublime text*.
-## Goal
+### Goal
 In this guide, we will create an easy osm map layer and plotting some markers on them. We will also be adding a simple layer control feature to add some swagger to the map layout. At the end of this guide, the reader should be able to:
 - Integrate leaflet.js using its unique content delivery network(CDN).
 - Create an easy osm map layer.
 - Plot markers on the map layer.
 - Add a simple layer control.
-## Setting up the Environment
+### Setting up the Environment
 First, we will need to set up the environment. It means loading the leaflet javascript and CSS files in our project. We can do this in three ways:
 - using Leaflet's unique CDN(Content delivery network).
 - Using javascript package manager.
@@ -48,7 +48,7 @@ To use npm, we would need to follow the steps below:
 npm install
 ```
 Once completed,  we can move to the next stage.
-## Getting Started
+### Getting Started
 ### Creating Map Container
 In this guide, we will be working with visual studio code, we would also be integrating our Leaflet using the CDN. We would start by creating an HTML file within our code editor. Then, we would initialize our HTML and of course, add our CDN above to the code below:
 ```html
