@@ -1,6 +1,6 @@
 ### Introduction
 
-In this tutorial, I'll show you how to create an analytic dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  Additionally, we will use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.
+In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.
 
 ### Table of contents
 
@@ -15,7 +15,7 @@ In this tutorial, I'll show you how to create an analytic dashboard. We'll be us
 
 ### Prerequisites
 
-- This tutorial requires a basic understanding of the MongoDB MongoDB BI connector.
+- This tutorial requires a basic understanding of the MongoDB and MongoDB BI connector.
 - Basic knowledge in Node.js, Express, and Cube.js.
 
 ### Objectives
@@ -27,7 +27,7 @@ By the end of this tutorial, you should be able to create a simple Node.js appli
 Let's begin by installing all the above requirements before starting the development process.  
 
 **Step 1:**
-Download [Node.js](https://nodejs.org/en/download/current/) for your local machine. In this tutorial, we'll be using Node version `v16.5.0` on Ubuntu 20.04. However, it's important to note that the concepts will remain the same.  
+Download [Node.js](https://nodejs.org/en/download/current/) for your local machine. In this tutorial, we'll be using Node version `v16.5.0` on Ubuntu 20.04. However, it's important to note that the concepts will remain the same for any operating system.  
 
 Check your installed version by running the following command:  
 
@@ -35,15 +35,14 @@ Check your installed version by running the following command:
 node --version
 ```
 
-Output
+Output:
 
 ```bash
 v16.5.0 # note that this version may vary from yours
 ```
 
 **Step 2:**  
-Let's now proceed and create our application skeleton using [Express](https://expressjs.com).  
-Run the following command to install it if you don't have it already.  
+Let's now proceed and create our application skeleton using [Express](https://expressjs.com) by running the following commands:
 
 ```bash
 npm install express-generator -g
