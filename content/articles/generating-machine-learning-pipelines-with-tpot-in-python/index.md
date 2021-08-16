@@ -1,7 +1,62 @@
+A machine learning pipeline is used to find the optimal path in machine learning building. It automates stages in machine learning.
+
+In machine learning stages are as follows.
+
+#### Data Cleaning
+
+We clean the dataset by removing missing values and noisy data. Ensures that the data is well-formatted so that the model can easily use it during training.
+
+#### Exploratory data analysis(EDA)
+
+Process of data analysis to find and summarize the main characteristics of the given dataset.
+
+#### Feature engineering and selection
+
+Process of selecting the independent variables in the dataset act as an input for the model.
+
+#### Model Selection
+
+It's selecting the best algorithm used to achieve the optimal results.
+
+#### Model building
+
+We use our processed data to train and build our model using the set parameters.
+
+#### Parameter Optimization
+
+We change the parameters of a model to optimize the model performance.
+
+#### Model Validation
+
+We check the accuracy of the model. The higher better the model.
+
+#### Making Prediction
+
+We test our model to check how it learned during training through making predictions.
+We use a machine learning pipeline to find the best algorithm to use.
+We also perform parameter optimization so that we can achieve optimal results.
+
+Machine learning pipeline is helpful in the following ways.
+
+1. Helps in finding the optimal solution for a model.
+2. Automate processes that would otherwise take longer.
+3. Prevents bugs by choosing a path that is less prone to errors.
+4. Pipeline has a fast iteration cycle that iterates through the processes in the shortest time possible and finds the optimal solution.
+
+The following are tools and libraries used to generate pipelines.
+
+1. [TPOT.](http://epistasislab.github.io/tpot/)
+2. [AutoML.](https://www.automl.org/automl/)
+3. [MLBox.](https://mlbox.readthedocs.io/en/latest/)
+4. [Auto-Keras.](http://autokeras.com/)
+5. [Featuretools.](https://www.featuretools.com/)
+6. [Auto Sklearn.](https://automl.github.io/auto-sklearn/)
+
+In this tutorial, we will be talking about TPOT and how to generate machine learning pipelines using this tool.
+
 ### Table of contents
 
 - [Prerequisites](#prerequisites)
-- [Introduction](#introduction)
 - [Getting started with TPOT](#getting-started-with-tpot)
 - [Model building using individual algorithms](#model-building-using-individual-algorithms)
 - [Model building using TPOT](#model-building-using-tpot)
@@ -18,8 +73,6 @@
 
 > NOTE: We are using [Google Colab](https://research.google.com/colaboratory/) since it has a Graphical Processing Unit(GPU) and Tensor Processing Unit(TPU) are fast when it comes to machine learning modeling.
 > TPOT requires a powerful tool for processing.
-
-### Introduction
 
 A machine learning pipeline is used to find the optimal path in machine learning building. It automates stages in machine learning.
 
