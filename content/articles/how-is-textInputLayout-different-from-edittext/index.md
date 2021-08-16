@@ -2,18 +2,18 @@ In this tutorial, we are going to focus on how TextInputLayout different from Ed
 
 ### Prerequisites
 To understand this tutorial, the reader should:
-•   Have Android Studio installed
-•   Have an understanding XML.
-•   Be familiar with Android studio. 
+-   Have Android Studio installed
+-   Have an understanding XML.
+-   Be familiar with Android studio. 
 
 ### Goal
 At the end of this tutorial, the reader should;
-•   Have an overview of  what  is TextInputLayout.
-•   Know the different between TextInputLayout and EditText.
-•   The ability to create and work with different text field .
+-   Have an overview of  what  is TextInputLayout.
+-   Know the different between TextInputLayout and EditText.
+-   The ability to create and work with different text field .
 
 ### Introduction
-Working with EditText in android applications it somehow tricky to do customization since the programmer have to do a lot of customization. The developers had to solve this problem by coming up with TextInputLayout which have more and better features compared to the normal EditText. In this article we will discuss about TextInputLayout.
+When Working with EditText in android applications.Developers finds it somehow tricky to do customization.To solve this problem. Developers have come up with TextInputLayout which have more and better features compared to the normal EditText. In this article we will discuss about TextInputLayout.
 
 ### What is TextInputLayout
 TextInputLayout is a layout that is use to add some features to EditText. It acts as a wrapper for edit text and it has some features like floating hint animation that you can  disable or enable, error labels that display error messages when an error occurs, character counter that counts the number of characters that the user is entering, password visibility toggle and their customization for EditText and also it extends LinearLayout.
@@ -38,7 +38,7 @@ It has two height variants, that is it consist of standard and dense text fields
 Filled text field is the default styles if the style is not set.
 
 ### Outlined text field
- In outlined text filled we apply styles on the TextInputLayout. As a result we will  get the outlined look text field.
+ In outlined text field we apply styles on the TextInputLayout. As a result we will  get the outlined look text field.
 Like filled text field, outlined text field has two height variants. that is, it consists of standard and dense text fields.
 We have attributes that you can use to set the outlined look (like corner radius outline and stroke color outline) of a text field.
 
@@ -70,12 +70,11 @@ Then we reach to the activity_main file and delete the default TextView add Text
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteX="1dp">
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -91,7 +90,7 @@ Inside TextInputLayout create TextInputEditText, where user can input or edit th
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -105,7 +104,7 @@ Inside TextInputLayout create TextInputEditText, where user can input or edit th
 ```
 
 ### Step 5: Adding  hint into  TextInputEditText attribute
-Add hint attribute (android:hint="Enter your name") to your TextInputEditText.
+Add hint attribute ``` android:hint="Enter your name" ``` to your TextInputEditText.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -115,7 +114,7 @@ Add hint attribute (android:hint="Enter your name") to your TextInputEditText.
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -134,7 +133,7 @@ Add hint attribute (android:hint="Enter your name") to your TextInputEditText.
 ```
 
 ### Step 6: Adding boxBackgroundMode into TextInputLayout
-Since we have filled text field, you can add boxBackgroundMode attribute (app:boxBackgroundMode="outline") to your TextInputLayout and you will have a box outline look text field.
+Since we have filled text field, you can add boxBackgroundMode attribute ``` app:boxBackgroundMode="outline" ``` to your TextInputLayout and you will have a box outline look text field.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -144,7 +143,7 @@ Since we have filled text field, you can add boxBackgroundMode attribute (app:bo
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -161,7 +160,7 @@ Since we have filled text field, you can add boxBackgroundMode attribute (app:bo
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ### Step 7: Styling filled text field (Changing filled text field to outlined text field)
-Then you can style your filled text field to change box outline look and change it to outlined text field using (style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox").
+Then you can style your filled text field to change box outline look and change it to outlined text field using ``` style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" ``` .
 now you will have an outlined text field.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -172,7 +171,7 @@ now you will have an outlined text field.
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -191,10 +190,12 @@ now you will have an outlined text field.
 ```
 ### Step 8: Adding boxCornerRadius attributes into TextInputLayout (This is Optional)
 You can also add boxCornerRadius attributes to your TextInputLayout to change corner radius of your box outline look.
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusBottomEnd="16dp"
+```
+   app:boxCornerRadiusTopEnd="16dp"
+   app:boxCornerRadiusTopStart="16dp"
+   app:boxCornerRadiusBottomStart="16dp"
+   app:boxCornerRadiusBottomEnd="16dp"
+```
 above are the available boxCornerRadius attributes.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -205,7 +206,7 @@ above are the available boxCornerRadius attributes.
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -227,7 +228,7 @@ above are the available boxCornerRadius attributes.
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ### Step 9: Adding helpertext into TextInputLayout (This is Optional)
-You can enable or disable helpertext using helpertext attribute (app:helperText="This is an helpertext").
+You can enable or disable helpertext using helpertext attribute ``` app:helperText="This is an helpertext" ```.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -237,7 +238,7 @@ You can enable or disable helpertext using helpertext attribute (app:helperText=
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -261,7 +262,7 @@ You can enable or disable helpertext using helpertext attribute (app:helperText=
 ```
 ### Step 10: Adding counter into TextInputLayout and maximum length into TextInputEditText
  (This is Optional)
-You can add a counter by enabling counter using counterEnable attribute (app:counterEnabled="true") and set maximum length using counterMaxLength attribute (app:counterMaxLength="20") to count the maximum length of users input required. maxLength attribute(android:maxLength="20") is added to TextInputEditText to prevent the user from exceeding maximum number of users input (characters) specified in  the counterMaxLength attribute in the TextInputLayout .
+You can add a counter by enabling counter using counterEnable attribute ``` app:counterEnabled="true" ``` and set maximum length using counterMaxLength attribute ``` app:counterMaxLength="20" ``` to count the maximum length of users input required. maxLength attribute ``` android:maxLength="20" ``` is added to TextInputEditText to prevent the user from exceeding maximum number of users input (characters) specified in  the counterMaxLength attribute in the TextInputLayout .
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -271,7 +272,7 @@ You can add a counter by enabling counter using counterEnable attribute (app:cou
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -297,8 +298,9 @@ You can add a counter by enabling counter using counterEnable attribute (app:cou
 ```
 ### Conclusion
 
-TextInputLayout is a powerful layout that is easy to use and it has awesome features compared to the normal EditText.
+TextInputLayout is a powerful layout that is easy to use and it has awesome features like floating hint animation,error labels, character counter, password visibility toggle which are not there in normal EditText.As a developer,TextInputLayout awesome features will allow you to create or design nice textfields that can be a filled text field, outlined text field or themed text field. 
 
 ### References
-[Android Developer Documentation](https://developer.android.com/reference/com/google/android/material/textfield/TextInputLayout.)
-(https://material.io/components/text-fields/android#filled-text-field.)
+[Android Developer Documentation](https://developer.android.com/reference/com/google/android/material/textfield/TextInputLayout)
+
+[Material Design](https://material.io/components/text-fields/android#filled-text-field.)
