@@ -1,1 +1,5 @@
+---
+title: Francis Ndiritu
+type: authors
+---
 Francis Ndiritu is an undergraduate student undertaking Bachelor of Science in Software Engineering. He is passionate about machine learning and building data-driven application. He is also a full-stack web application developer using the MERN stack.
