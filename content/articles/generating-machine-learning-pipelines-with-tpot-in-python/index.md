@@ -36,14 +36,9 @@ We test our model to check how it learned during training through making predict
 We use a machine learning pipeline to find the best algorithm to use.
 We also perform parameter optimization so that we can achieve optimal results.
 
-Machine learning pipeline is helpful in the following ways.
+### Introduction
 
-1. Helps in finding the optimal solution for a model.
-2. Automate processes that would otherwise take longer.
-3. Prevents bugs by choosing a path that is less prone to errors.
-4. Pipeline has a fast iteration cycle that iterates through the processes in the shortest time possible and finds the optimal solution.
-
-The following are tools and libraries used to generate pipelines.
+We have various tools and libraries used to generate machine learning pipelines, these tools are as follows.
 
 1. [TPOT.](http://epistasislab.github.io/tpot/)
 2. [AutoML.](https://www.automl.org/automl/)
@@ -51,6 +46,13 @@ The following are tools and libraries used to generate pipelines.
 4. [Auto-Keras.](http://autokeras.com/)
 5. [Featuretools.](https://www.featuretools.com/)
 6. [Auto Sklearn.](https://automl.github.io/auto-sklearn/)
+
+These tools are important in any machine learning process in the following ways.
+
+1. Helps in finding the optimal solution for a model.
+2. Automate processes that would otherwise take longer.
+3. Prevents bugs by choosing a path that is less prone to errors.
+4. Pipeline has a fast iteration cycle that iterates through the processes in the shortest time possible and finds the optimal solution.
 
 In this tutorial, we will be talking about TPOT and how to generate machine learning pipelines using this tool.
 
