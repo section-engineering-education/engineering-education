@@ -310,3 +310,6 @@ Finally, we used the trained model to make a prediction, which is the goal of an
 - [Matplotlib documentation](https://matplotlib.org/)
 - [Pycaret documentation](https://pycaret.org/)
 - [Geopandas documentation](https://geopandas.org/)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
