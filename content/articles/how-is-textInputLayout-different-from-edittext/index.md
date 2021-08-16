@@ -1,66 +1,75 @@
-In this tutorial, we are going to focus on how TextInputLayout different from EditText.
+In this tutorial, we are going to focus on how `TextInputLayout` is different from `EditText`.
 
 ### Prerequisites
-To understand this tutorial, the reader should:
--   Have Android Studio installed
--   Have an understanding XML.
--   Be familiar with Android studio. 
+To follow through this tutorial, the reader should:
+- Have Android Studio installed.
+- Have a good understanding of `XML`.
+- Be familiar with Android studio. 
 
 ### Goal
-At the end of this tutorial, the reader should;
--   Have an overview of  what  is TextInputLayout.
--   Know the different between TextInputLayout and EditText.
--   The ability to create and work with different text field .
+By the end of this tutorial, the reader should:
+- Have an overview of  what  is `TextInputLayout`.
+- Know the different between `TextInputLayout` and `EditText`.
+- Be able to create and work with different text field .
 
 ### Introduction
-When Working with EditText in android applications.Developers finds it somehow tricky to do customization.To solve this problem. Developers have come up with TextInputLayout which have more and better features compared to the normal EditText. In this article we will discuss about TextInputLayout.
+When Working with EditText in Android applications, developers find it tricky to do customization. To solve this problem, they have come up with TextInputLayout that have more and better features compared to the normal EditText. In this tutorial, we will discuss about TextInputLayout.
 
-### What is TextInputLayout
-TextInputLayout is a layout that is use to add some features to EditText. It acts as a wrapper for edit text and it has some features like floating hint animation that you can  disable or enable, error labels that display error messages when an error occurs, character counter that counts the number of characters that the user is entering, password visibility toggle and their customization for EditText and also it extends LinearLayout.
-In a nutshell, TextInputLayout is an improvement of existing EditText.
+### What is TextInputLayout?
+TextInputLayout is a view container that is used to add more features to an EditText. It acts as a wrapper for EditText and has some features like:
+
+- Floating hint
+- Animation that you can  disable or enable
+- Error labels that display error messages when an error occurs
+- Character counter that displays the number of characters that the user enters
+- Password visibility toggle and their customization for EditText
+- It also it extend LinearLayout
+
+In a nutshell, TextInputLayout is an improvement of the existing EditText.
 
 ### How TextInputLayout different from EditText
-The main difference between TextInputLayout and EditText is that:
-TextInputLayout extends LinearLayout and it must have or contain TextInputEditText which extends EditText.
-This is because TextInputEditText works inside TextInputLayout and if you substitute TextInputEditText with EditText and work with normal EditText inside TextInputLayout it might work but you will get a warning. This is because TextInputEditText provides accessibility support for the text field and allows TextInputLayout to have a greater control over the visual aspects of the input text. 
+The main difference between a TextInputLayout and an EditText is:
 
-### Text field
-A text field is a standard entry widget (single line) that when a user touches it, it places a cursor on it and displays a keyboard hence allowing user to type text into your app.  
-To add a text field to your layout we use EditText object.
+- TextInputLayout extends LinearLayout and it must contain TextInputEditText which extends EditText.
 
-### Using text field
-To use text field in your android application.
-First, Import or add the new material components dependency.
+This is so because TextInputEditText works when enclosed in a TextInputLayout and if you substitute TextInputEditText with an EditText, it might work but you will get a warning. This is because TextInputEditText provides accessibility support for the text field and allows TextInputLayout to have a greater control over the visual aspects of the input text.
 
-### Filled text field
-According to official documentation, filled text field have more visual emphasis than outlined text field and hence making them stand out when surrounded by other content and components.
-It has two height variants, that is it consist of standard and dense text fields.
-Filled text field is the default styles if the style is not set.
+### Text Field
+A text field is a standard entry widget (single line) that when a clicked, a cursor is placed on it and a keyboard pops up allowing the user to type text into the field. To add a text field to your layout we use EditText object.
 
-### Outlined text field
- In outlined text field we apply styles on the TextInputLayout. As a result we will  get the outlined look text field.
-Like filled text field, outlined text field has two height variants. that is, it consists of standard and dense text fields.
-We have attributes that you can use to set the outlined look (like corner radius outline and stroke color outline) of a text field.
+#### Using Text Field
+To use text field in your app, first, import or add the new material components dependency.
 
-### Theming text field
-In theming text field, we use material theming in text fields. You can be customize  text field in term of color, topography and shape.
-Like to filled text field and outlined text filled, theming text field has two height variants, that is, it consists of standard and dense text fields.
+### Filled Text Field
+According to the official documentation, filled text field have more visual emphasis than outlined text field hence making them stand out when surrounded by other content and components.
 
-### Adding TextInputLayout to our android app.
-Now, I am going to create a new project to show you how to work with TextInputLayout in an android application.I will be using a single activity application and we will do  all cool stuff inside activity_main.
+It has two height variants, that is, it consist of standard and dense text fields. Filled text field is the default styles if the style is not set.
 
-### Step 1:
-Creating Project
-First you have to open a new project in your android studio. Then open your build.gradle . Add material dependency and click sync now.
+### Outlined Text Field
+In outlined text field, we apply styles on the TextInputLayout. As a result we get the outlined look text field.
+
+Like the filled text field, outlined text field has two height variants. We have attributes that we can use to set the outlined look (like corner-radius outline and stroke color outline) of a text field.
+
+### Theming Text Field
+In theming, we use material theme in text fields. You can customize  text field in terms of color, topography and shape.
+
+Like in FilledTextField and OutlinedTextField, theming text field has two height variants, that is, it consists of standard and dense text fields.
+
+### Adding TextInputLayout in an Android app
+At this point, we are going to create a new project to practically learn how to work with TextInputLayout in an Android application. We will be using a single activity project and we will be working with `activity_main` file.
+
+### Step 1: Creating a Project
+First you have to open a new project in your Android Studio. Then open your app level `build.gradle` file, add material dependency, and click `sync now`.
 
 ### Step 2: Adding material dependency
 ```gradle 
-//Material  dependency 
+// Material dependency 
 implementation 'com.google.android.material:material:1.4.0'
 ``` 
 
-### Step 3: Adding TextInputLayout to your activity_main file
-Then we reach to the activity_main file and delete the default TextView add TextInputLayout as a child layout inside ConstraintLayout and constraint it and give it some margin.
+### Step 3: Adding `TextInputLayout` to your `activity_main` file
+Delete the default `TextView`, add TextInputLayout as a child layout inside the `ConstraintLayout`, and constrain it as shown below.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -77,10 +86,11 @@ Then we reach to the activity_main file and delete the default TextView add Text
         tools:layout_editor_absoluteX="1dp">
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 ```
+
 ### Step 4: Adding TextInputEditText into TextInputLayout
-Inside TextInputLayout create TextInputEditText, where user can input or edit the data.
+Inside TextInputLayout, create TextInputEditText - where users can input or edit the data.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -100,11 +110,11 @@ Inside TextInputLayout create TextInputEditText, where user can input or edit th
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 ```
 
-### Step 5: Adding  hint into  TextInputEditText attribute
-Add hint attribute ``` android:hint="Enter your name" ``` to your TextInputEditText.
+### Step 5: Adding hint attribute into TextInputEditText
+Add hint attribute `android:hint="Enter your name"` to your TextInputEditText as shown below.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -129,11 +139,11 @@ Add hint attribute ``` android:hint="Enter your name" ``` to your TextInputEditT
             android:hint="Enter your name" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 ```
 
 ### Step 6: Adding boxBackgroundMode into TextInputLayout
-Since we have filled text field, you can add boxBackgroundMode attribute ``` app:boxBackgroundMode="outline" ``` to your TextInputLayout and you will have a box outline look text field.
+Since we have a FilledTextField, we can add boxBackgroundMode attribute `app:boxBackgroundMode="outline"` to our TextInputLayout and it will have a box outline appearance.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -159,9 +169,10 @@ Since we have filled text field, you can add boxBackgroundMode attribute ``` app
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-### Step 7: Styling filled text field (Changing filled text field to outlined text field)
-Then you can style your filled text field to change box outline look and change it to outlined text field using ``` style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" ``` .
-now you will have an outlined text field.
+
+### Step 7: Styling FilledTextField (Changing FilledTextField to OutlinedTextField)
+You can style your FilledTextField to change box outline appearance to OutlinedTextField using `style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" `.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -188,15 +199,19 @@ now you will have an outlined text field.
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+
 ### Step 8: Adding boxCornerRadius attributes into TextInputLayout (This is Optional)
-You can also add boxCornerRadius attributes to your TextInputLayout to change corner radius of your box outline look.
+You can also add boxCornerRadius attributes to your TextInputLayout to change the corner radius of your box outline.
+
+```xml
+<com.google.android.material.textfield.TextInputLayout
+app:boxCornerRadiusTopEnd="16dp"
+app:boxCornerRadiusTopStart="16dp"
+app:boxCornerRadiusBottomStart="16dp"
+app:boxCornerRadiusBottomEnd="16dp" />
 ```
-   app:boxCornerRadiusTopEnd="16dp"
-   app:boxCornerRadiusTopStart="16dp"
-   app:boxCornerRadiusBottomStart="16dp"
-   app:boxCornerRadiusBottomEnd="16dp"
-```
-above are the available boxCornerRadius attributes.
+The above are the available boxCornerRadius attributes.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -227,8 +242,10 @@ above are the available boxCornerRadius attributes.
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-### Step 9: Adding helpertext into TextInputLayout (This is Optional)
-You can enable or disable helpertext using helpertext attribute ``` app:helperText="This is an helpertext" ```.
+
+### Step 9: Adding HelperText into TextInputLayout (This is Optional)
+You can enable or disable helper-text using the attribute `app:helperText="This is an helper-text"`.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -260,9 +277,12 @@ You can enable or disable helpertext using helpertext attribute ``` app:helperTe
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-### Step 10: Adding counter into TextInputLayout and maximum length into TextInputEditText
- (This is Optional)
-You can add a counter by enabling counter using counterEnable attribute ``` app:counterEnabled="true" ``` and set maximum length using counterMaxLength attribute ``` app:counterMaxLength="20" ``` to count the maximum length of users input required. maxLength attribute ``` android:maxLength="20" ``` is added to TextInputEditText to prevent the user from exceeding maximum number of users input (characters) specified in  the counterMaxLength attribute in the TextInputLayout .
+
+### Step 10: Adding text counter into TextInputLayout and maximum length into TextInputEditText (This is Optional)
+You can add a counter by enabling it using the attribute `app:counterEnabled="true"` and set the maximum length of the user input using counterMaxLength attribute `app:counterMaxLength="20"`.
+
+MaxLength attribute `android:maxLength="20"` is added to prevent the user from exceeding maximum number of input (characters) specified in the counterMaxLength value.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -296,11 +316,11 @@ You can add a counter by enabling counter using counterEnable attribute ``` app:
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+
 ### Conclusion
 
-TextInputLayout is a powerful layout that is easy to use and it has awesome features like floating hint animation,error labels, character counter, password visibility toggle which are not there in normal EditText.As a developer,TextInputLayout awesome features will allow you to create or design nice textfields that can be a filled text field, outlined text field or themed text field. 
+TextInputLayout is a powerful layout that is easy to use and has awesome features like floating hint animation, error labels, character counter, password visibility toggle that are not available in normal EditTexts. As a developer, TextInputLayout features allow you to create or design nice TextFields that can either be a filled text field, outlined text field or themed text field.
 
 ### References
-[Android Developer Documentation](https://developer.android.com/reference/com/google/android/material/textfield/TextInputLayout)
-
-[Material Design](https://material.io/components/text-fields/android#filled-text-field.)
+- [Android Developer Documentation](https://developer.android.com/reference/com/google/android/material/textfield/TextInputLayout)
+- [Material Design](https://material.io/components/text-fields/android#filled-text-field.)
