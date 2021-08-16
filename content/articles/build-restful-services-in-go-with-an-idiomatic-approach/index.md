@@ -68,7 +68,7 @@ Also, we have defined `productList`, an array of type `Product` that holds the d
 
 In the next step, we will create a *handler* to handle the API requests. Create a new file *product_handler.go* under the *handlers* folder.
 
-We will define a new `struct` called *Products* whose methods will satisfy the `Handler` interface, and a `ServeHTTP` method to handle the incoming requests, as shown below.
+As shown below, we will define a new *struct* called `Products` whose methods will satisfy the `Handler` interface.
 ```go
 package handlers
 // handlers here is the folder name
@@ -142,10 +142,9 @@ As per the docs, the syntax for `ListenAndServe` is:
 func ListenAndServe(addr string, handler Handler) error
 ```
 ---
-In our code, we are passing an instance of `ServeMux` as a *handler* here because `ServeMux` also has a `ServeHTTP` method defined, and hence it will satisfy the `Handler` interface. When it is `nil`, it will call
-the `DefaultServeMux` internally.
+In our code, we are passing an instance of `ServeMux` as a *handler* here. It has a `ServeHTTP` method defined, and hence it will satisfy the `Handler` interface. When it is `nil`, it will call the `DefaultServeMux` internally.
 
-So far, we have the *products* list and the handler template to serve the http requests, but how do we pass the *Coffee* data from the `Product` structure to our `ServeHTTP` function.
+So far, we have the *products* list and the handler template to serve the http requests. Now the question is, how do we pass the *Coffee* data from the `Product` structure to our `ServeHTTP` function.
 For that, Go's standard library offers us a package called `encoding/json`, used for encoding/decoding json data. You can read about it more [here](https://blog.golang.org/json).
 
 With the basic structure ready, we will define methods in the *products.go* file to return the `Product` data.
