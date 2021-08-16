@@ -2,7 +2,7 @@ Developers try hard to write readable, maintainable, and reusable code. A design
 
 One of the most crucial features of writing maintainable code is noticing the recurring structures and functionalities and optimizing them. JavaScript design patterns enable to write of organized and well-structured codes.
 
-This article will give you a better understanding of the most popular JavaScript design patterns. They will fall under three categories of design patterns: creation, structural, and behavioral design patterns.
+This article will give you an improved understanding of the most popular JavaScript design patterns. They will fall under three categories of design patterns: creation, structural, and behavioral design patterns.
 
 ### Table of contents
 [What is a design pattern](#what-is-a-design-pattern)
@@ -34,9 +34,7 @@ Primarily, design patterns allow the code you write to be easier to implement, b
 Design patterns are classified into multiple categories, but creational, structural, and behavioral design patterns are most common. We'll go through the three in this tutorial.
 
 #### Creational design patterns
-These patterns are designed for class instantiation or object creation. They provide class and object creation techniques that increase flexibility and code reuse.
-
-Class creation patterns use inheritance in the instantiation procedure, and object creation patterns use delegation to get a task done.
+These are design patterns that are concerned with object creation. They provide object creation techniques that increase flexibility and reduce complexities in a controlled manner.
 
 Creational design patterns are the:
 - [Factory method](https://en.wikipedia.org/wiki/Factory_method_pattern)
@@ -73,7 +71,7 @@ Behavioral design patterns include:
 - [Mediator](https://en.wikipedia.org/wiki/Mediator_pattern)
 
 ### JavaScript design patterns
-We have learned that there are numerous design patterns. In this section, we will explore and implement the most popular JavaScript design patterns. The design patterns will fall under the three categories of ways we discussed previously.
+We have learned that there are numerous design patterns. In this part, we will explore and implement the most popular JavaScript design patterns. The design patterns will fall under the three categories of ways we discussed previously.
 
 We'll discuss the seven most popular JavaScript patterns: constructor, singleton, prototype, module, decorator, chain responsibility, and command.
 
@@ -110,7 +108,7 @@ Teacher.fullName();  //Prints Freddy Chris in the console
 The above example demonstrates a constructor design pattern. We have defined a class or function `Person` with attributes `firstName` and `SecondName`. The `fullName()` method prints the first and second names of the teacher. We have instantiated an object for the class or function constructor by evoking the constructor method using a new keyword for the given attributes.
 
 #### Singleton pattern
-The singleton pattern controls the instantiation of a class to an object. A new instance of a class is created only when there is no instance existing. It is necessary only where one instance require to be created. Below is an example of implementing this pattern:
+Singleton design pattern controls the instantiation of a class to an object. A new instance of a class is created only when there is no instance existing. It is necessary only where one instance require to be created. Below is an example of implementing this pattern:
 
 ```JavaScript
 var singleton = (function() {
@@ -214,7 +212,7 @@ console.log(countApi.getvalue());
 ```
 
 #### Decorator pattern
-Decorator design patterns focus on advocating code reuse, thus extending an object's behavior dynamically. The primary purpose of these design patterns is to attach new features and behaviors to already defined classes and methods.
+Decorator design patterns focus on advocating code reuse, thus extending an object's behavior dynamically. The primary purpose of these design patterns is to fix new characteristics and behaviors to already defined classes and objects.
 
 For instance, let us create a function to give an object a common functionality or behaviour. Then decorate each object with its own functionality. The example below implements decorator pattern:
 
@@ -285,7 +283,7 @@ const request= function() {
 In this code example, a request object is created requesting a withdrawal amount. This invokes a sequence of calls for the object. Finally, the ATM distributes the combination of notes which satisfies the process request.
 
 #### Command pattern
-The command design pattern encapsulates actions or operations as objects. Therefore, it is helpful if you want to decompile or execute objects issuing the commands. The command, client, receiver, invoker are the participants involved in these design patterns.
+The command design pattern encapsulates actions as objects. Therefore, it is helpful if you want to decompile or execute objects issuing the commands. The command, client, receiver, invoker are the participants involved in these design patterns.
 
  The exmple below implements the command design pattern:
 
@@ -320,6 +318,6 @@ console.log(arithmetic.compile("multiply", 4, 3)); // prints 12
 ### Conclusion
 This tutorial went through JavaScript design patterns and how they tackle common and complex problems with ease. Also, we learned what design patterns are and the common categories of design patterns.
 
-That is all there is for this article. However, I hope the article helped you understand design patterns in JavaScript.
+I hope the article helped you understand design patterns in JavaScript.
 
 Happy Learning!
