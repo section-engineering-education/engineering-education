@@ -22,7 +22,7 @@ This is a form of image enhancement that emphasizes or omits certain features of
 Color filtering makes an image to be more attractive or stresses certain information about an image for example green can stress more about vegetation while blue emphasizes water bodies. This process can either make an image reddish, greenish or bluish depending on the concentration level applied.
 `imhist` function gives a graphical presentation of color concentration in an image per pixel(Histogram).
 ```Matlab
-i =  imread('C:/Users/user/Pictures/nyali.jpg');
+i =  imread('nyali.jpg');
 imshow(i)
 Red = i(:,:,1);
 Green = i(:,:,2);
@@ -33,22 +33,22 @@ temp = i;
 imhist(Red);
 ```
 ![Histogram of red](/engineering-education/image-processing-using-matlab/image_process-b.png) 
-```matlab
+```Matlab
 imhist(Green);
 ```
 ![Histogram of green](/engineering-education/image-processing-using-matlab/image_process-c.png)
-```matlab
+```Matlab
 imhist(Blue);
 ```
 ![Histogram of blue](/engineering-education/image-processing-using-matlab/image_process-d.png)
-```matlab
+```Matlab
 figure;
 temp = i;
 temp(:,:,1) = temp(:,:,1) + 100;
 imshow(temp);
 ```
 ![image filtered red](/engineering-education/image-processing-using-matlab/image_process-e.png)
-```
+```Matlab
 figure;
 imshow(i)
 temp = i;
@@ -56,7 +56,7 @@ temp(:,:,2) = temp(:,:,2) + 100;
 imshow(temp);
 ```
 ![image filtered green](/engineering-education/image-processing-using-matlab/image_process-f.png)
-```matlab
+```Matlab
 temp = i;
 temp(:,:,3) = temp(:,:,3) + 100;
 imshow(temp);
@@ -89,12 +89,12 @@ imshow(wnr1)
 The number of objects contained in an image can be determined through the following steps; 
 Removal of objects whose numerical value is not required, making the image have a uniform background by removing its original background, changing the image to a grayscale image, then creating a binary version of the image which will allow for numerical analysis of the objects to be analyzed.
 The following codes are used in the process.
-```matlab
+```Matlab
 i = imread('imageName'); %import the image
 imshow(i)
 ```
 ![Imported image](/engineering-education/image-processing-using-matlab/image_process-j.png)
-```matlab
+```Matlab
 se = strel('disk',150);
 background = imopen(i,se);  %Performs morphological openning
 imshow(background)
@@ -117,7 +117,7 @@ imshowi3
 ![Grayscale image](/engineering-education/image-processing-using-matlab/image_process-m.png)
 
 Use `imbinarize` command to creat a binary version of the grayscale image `i3`.
-```matlab
+```Matlab
 bw = imbinarize(i3);
 bw = bwareaopen(bw,50);
 imshow(bw)
@@ -130,28 +130,23 @@ cc = bwconncomp(bw) % shows image information
 ```
 ![Results](/engineering-education/image-processing-using-matlab/image_process-o.png)
 ### Finding an area in an image of a specific color
-Areas of objects with different colors in an image can be determined using Matlab through color thresholding. Thresholding means assigning
-pixels to a certain class or classes. Color thresholding can also enable us to determine areas of certain features in a map for example finding
-the area of a water body in a satellite Map. To demonstrate I will determine the area of a water body from a satellite map picture, the picture
-has a resolution of 480 * 494 pixels and a bit depth of 32 as per satellite.
+Areas of objects with different colors in an image can be determined using Matlab through color thresholding. Thresholding means assigning pixels to a certain class or classes. Color thresholding can also enable us to determine areas of certain features in a map for example finding the area of a water body in a satellite Map. To demonstrate, i will determine the area of a water body from a satellite map picture, the picture has a resolution of 480 * 494 pixels and a bit depth of 32 as per satellite.
 ```Matlab
 i = imread('l.victoria.png'); %import the image
 imshow(i)
 ```
 ![Imported image](/engineering-education/image-processing-using-matlab/image-process-p.png)
-```matlab
+```Matlab
 i2 = rgb2gray(i); % make a grayscale image of i
 imshow(i2)
 ```
 ![Gray scale image](/engineering-education/image-processing-using-matlab/image_process-q.png)
-```matlab
+```Matlab
 imhist(i2) %histogram for pixel distributions
 ```
 ![Histogram of grayscale image](/engineering-education/image-processing-using-matlab/image_process-r.png)
 
-From the histogram, the X-axis represents the intensity value while the Y-axis represents pixel count. Open APPS in Matlab window toolbar,
-scroll down to image processing and computer vision then click on the color threshold. on the new window load an image from the workspace and
-then choose a color space, click HSV. 
+From the histogram, the X-axis represents the intensity value while the Y-axis represents pixel count. Open APPS in Matlab window toolbar, scroll down to image processing and computer vision then click on the color threshold. on the new window load an image from the workspace and then choose a color space, click HSV. 
 
 ![Color space window](/engineering-education/image-processing-using-matlab/image_process-s.png)
 
@@ -173,12 +168,12 @@ imshowpair(i,BW,'montage')
 ![Comparision of i and BW](/engineering-education/image-processing-using-matlab/image_process-w.png)
 
 To find the image statistics of the binary version of the image, use `regionprops` function.
-```matlab
+```Matlab
 stats = regionprops('table',BW,'all')
 ```
 ![Props data table](/engineering-education/image-processing-using-matlab/image_process-x.png)
 
-Area in pixels is the sum of the area props in the table.
+Area of the region in pixels is the sum of the area props in the table.
 ```Matlab
 areainpixels = sum(props.Area)
 ```
