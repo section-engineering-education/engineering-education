@@ -1,11 +1,26 @@
 
 ### Introduction
-What are functions? They are blocks of code that carry out a certain activity. Calling it and reusing it is possible. This bring a Shell Function Library which is a set of functions that may be called from any location in the development environment. Shell scripting becomes a little less laborious and repetitious as a result. We may access and call such functions from other files or scripts by building a shell script with some functions specified in it. It aids in the avoidance of code repetition in huge files and sophisticated scripts.
+A good computer program has a lot of codes in it. These codes can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group pieces of code that are used repeatedly.
+
+In shell scripting, functions library may be called from any location in the development environment, thus making shell scripting less laborious and reduces errors.
+This article will take you through how to create a simple shell script function and how to use it.
+
+### Goals
+By the end of this article, the reader will have understood:
+-  what function and function library is.
+- how to create a shell function.
+- how to use functions from the library and then demonstrate how to use bash script as a function library.
+
+### Shell Function.
+A shell script is a computer program designed to be run by Unix/Linux shell. This script can perform operations such as file manipulation, program execution, and printing text.
+To execute these tasks, some pieces of code can be used repeatedly in the program. To make this process easy and reduce errors, such codes are grouped into a `Function`, which allows for them to be called and reused multiple times within the program.
 
 ### Prerequisites
-- [Introduction to shell scrpting](https://www.section.io/engineering-education/introduction-to-shell-scripting/)
-- [Download OATs from official website](https://www.oracle.com/enterprise-manager/downloads/oats-downloads.html)
-> OATs is the abbreviation of `Oracle Application Testing Suite`.
+To better understand this tutorial, the reader is expected to have some prior experience; namely:
+
+- Use of an interactive Unix/Linux shell
+- Understanding of some Unix/Linux commands,
+- Minimal programming knowledge - use of variables and functions
 
 ### Table of contents
 - [How to create a function](#how-to-create-a-function)
@@ -17,11 +32,6 @@ What are functions? They are blocks of code that carry out a certain activity. C
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Goals
-By the end of this article, the reader will have understood:
--  what function and function library is.
-- how to create a shell function.
-- how to use functions from the library and then demonstrate how to use bash script as a function library.
 
 ### How to create a function
 As described in the introduction, a function is a block of code that carries out a certain activity. A function can be Called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
@@ -148,6 +158,6 @@ Shell Function Libraries are a fantastic method to become organized quickly and 
 In this article, we have learned what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions. I urge the reader to continue researching this article for further knowledge on automation using function libraries.
 
 ### Further reading
-- [Introduction to shell scrpting](https://www.section.io/engineering-education/introduction-to-shell-scripting/)
-- [Dive into the Batch Scripting Language](https://www.section.io/engineering-education/dive-into-batch-scripting-language/)
-- [Introduction to Linux Shell and Shell Scripting](https://www.section.io/engineering-education/introduction-to-linux-shell-and-shell-scripting/)
+- [Introduction to shell scrpting](/engineering-education/introduction-to-shell-scripting/)
+- [Dive into the Batch Scripting Language](/engineering-education/dive-into-batch-scripting-language/)
+- [Introduction to Linux Shell and Shell Scripting](/engineering-education/introduction-to-linux-shell-and-shell-scripting/)
