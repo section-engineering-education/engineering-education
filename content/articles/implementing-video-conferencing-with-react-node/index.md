@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/
 title: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
-description: This article takes the reader through implementing dark mode using Tailwind CSS. The new version of Tailwind released a feature that enables its users to add dark mode styles to their pages.
+description: 
 author: samuel-cletus
 date: 2021-08-17T00:00:00-15:30
 topics: []
