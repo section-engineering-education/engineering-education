@@ -29,9 +29,9 @@ From the image above, data packets are received from the internet. The base oper
 The pi-hole prevents advertisements from being displayed on the internet. Use our automated installer to install Pi-hole on a supported operating system or run it from a container. When ads are blocked by the pi-hole software the filtered data packets are sent to the router.As a computer networking tool, a router is used to transport data packets from one network to the next over the Internet. On the Internet, routers are in charge of traffic direction to different devices such as computers, laptops, and phones. 
 
 ### The installation of pi-hole software
-Pi-hole may be installed in two ways on a Raspberry Pi and other Linux platforms such as Debian and Ubuntu. Use a single-line script from the terminal to install it if you're already running Raspberry Pi OS (Raspbian) or another Linux distribution. 
+Pi-hole may be installed in two ways on a Raspberry Pi and other Linux platforms such as Debian and Ubuntu. Use a single-line script from the terminal to install it if you're already running Raspberry Pi OS  or another Linux distribution. 
 
-To run Pi-hole in a separate software container, you can install Docker on your Raspberry Pi and execute it in that container.Both options are acceptable, however Docker requires more setup.
+To run Pi-hole in a separate software container on your Raspberry Pi, install Docker and run it in the container. Both options are acceptable, however Docker requires more setup.
 If you want to install Pi-hole, you can do so in one of two ways, as detailed below.
 
 #### Installing Pi-Hole using the automatic installation script
@@ -53,16 +53,16 @@ To do so, open a terminal and type the commands below:
 wget -O basic-install.sh https://install.pi-hole.net
 sudo bash basic-install.sh
 ```
-Using the same installation script, Pi-hole and any additional packages will be installed and configured before the configuration process is invoked again.
+Pi-hole and any extra packages will be installed and configured using the same installation script before the configuration procedure is started again.
 
 #### Pi-hole configuration during installation
 In the terminal window, you'll be asked to confirm different Pi-hole options, such as your network configuration and chosen logging levels. 
-1. To navigate through the first few information panels, press the Enter key. Using the arrow keys on the Choose an interface screen, choose Wi-Fi or Ethernet and press space or enter. Toggle to the OK option with the tab key, then confirm with hitting the Enter key.
+1. To navigate through the first few information panels, press the Enter key. Choose Wi-Fi or Ethernet using the arrow keys on the Choose an interface screen, then press space or enter. Toggle to the OK option with the tab key, then confirm with hitting the Enter key.
 
 2. After that, you'll be asked which external DNS server you want to use. Here, Cloudflare and Google are both good free solutions. Using your arrow keys, select the provider you want to use, then confirm using the enter key.
 
 3. Your choice of adblocking lists will be asked of you in the next round. Pi-hole comes with four default lists, which you should leave chosen, but you can enable or disable any of them by selecting them and pressing space on your keyboard.
-To proceed, press the tab key to go to the OK option, then enter.
+To continue, press the tab key to select OK, then enter.
 
 4. Pi-hole will prevent advertisements on IPv4 and IPv6 connections by default. If you don't want to alter anything, leave the default options selected, press the tab to select OK, and then press enter.
 
@@ -76,48 +76,48 @@ To proceed, press the tab key to go to the OK option, then enter.
 
 9. You can choose how detailed your Pi-hole statistics should be. In the documentation for Pi-hole, there are five levels, each of which is discussed in great detail. To ensure that you're happy with the default option of showing everything, press the tab and enter.
 
-10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, a final confirmation message will display in the terminal, with instructions on how to access the online portal as well as your auto-generated password for signing in. To complete the installation, press the tab, then enter.
+10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, the terminal will show a final confirmation message. This message will include information about logging in to the web portal and a password that will be generated automatically for you. Enter after pressing the tab. 
 
 #### Installing Pi-hole as a Docker container 
-If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Before you can accomplish anything, you'll need to install Docker on your Raspberry Pi.
+If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first. Installation of a doker
 
-#### Doker installation
-1. If Docker isn't already installed on your Raspberry Pi, you may do it fast by opening a terminal window and typing:
+#### Installation of a doker
+1. Open a terminal window and type the following instructions to install Docker on your Raspberry Pi:
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-2. After the Docker installation is complete, run the command `sudo usermod -aG docker pi` to allow non-root users to use Docker (such as the default pi user on Raspberry Pi OS).
+2. Then, run `sudo usermod -aG docker pi` to allow non-root users to use Docker after the installation has been completed (such as the default pi user on Raspberry Pi OS). Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
 
-3. To make sure that Docker starts automatically when your Raspberry Pi reboots, execute 
+3.  Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
 
 ```bash
 sudo systemctl enable docker.
 ```
 
 ### How to set up Pi-hole as a docker container
-To run Pi-hole in a Docker container, clone the Pi-hole Github repository and download a copy of the Pi-hole Docker installation files.
+Download the Docker installation files for Pi-hole from the Pi-hole Github repository and clone the repository to get the Docker installation files.
 
 1. To achieve this, open a terminal window (or use a remote SSH connection) and type the following:
 ```bash
 git clone https://github.com/pi-hole/docker-pi-hole.git
 ```
-The newest files to run Pi-hole as a Docker container will be downloaded from the Pi-hole Github repository. The cloned Pi-hole folder contains a startup script for your container `docker run.sh`. Before running this starting script, you might want to look over and change any of the options.
+To run Pi-hole in a Docker container, you'll need to download the latest files from the Pi-hole Github repo. For your container docker run, a startup script is included in the cloned folder of Pi-hole. Before running this starting script, you might want to look over and change any of the options.
 
-2. The script will automatically generate an administrator password for Pi-hole, change the default outgoing DNS server for Pihole to 1.1.1.1 or 8.8.8.8, and set other parameters for Pi-hole, such as the timezone it uses. If you don't live in the United States, for example, you can use a similar tz database timezone value to modify the TZ field to reflect your time zone.
+2. Pi-default hole's outgoing DNS server will be changed to 1.1.1.1 or 8.8.8.8, and other settings, such as the timezone, will be updated automatically by the script. Use a similar TZ database timezone setting if you don't live in the United States, for example, to alter the Time Zone column to suit your time zone.
 
 3. By entering `nano docker run.sh` and making appropriate adjustments, you can modify these parameters.
 
-4. Type `./docker run.sh` in the terminal when you're ready to run the script. Pi-hole should now launch within a new Docker container if the script is successful.
+4. Type `./docker run.sh` in the terminal when you're ready to run the script. A new Docker container should now launch Pi-hole if the script was successful. 
 
-> If you're successful, you'll see a password appear in the terminal output after the script has been successfully run. This is the password that you'll need to continue configuring Pi-hole.
+> A password will show in the terminal output if the script is successful. Use this password to continue setting up Pi-hole.
 
 ### How to use Pi-hole as the DNS
 Configuring all of your local network devices to use Pi-hole is time-consuming and inefficient, especially if you want to use Pi-hole on many devices throughout your network.
 
-If this is the case, you should update the DNS settings on your router to use your Raspberry Pi's IP address instead. This means that all of the devices on your local network will be protected from advertisements. This method is faster than the manual method, which requires you to manually configure DNS settings on each device.
+For those who find themselves in this situation, it is recommended that you change the DNS settings on your router to utilize the Raspberry Pi's IP address instead. Ads will be blocked on all devices on your local network. This method is faster than the manual method, which requires you to manually configure DNS settings on each device.
 
 Altering your router's nameserver configuration will be different for different models and brands. This information should be located on or in the box of your router and include the default IP address as well as the administrator username and password.
 
