@@ -3,21 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /javascript-form-events/
-title: Getting started with JavaScript events
-description: This tutorial explains the major types of JavaScript events, how to listen to them and pass them to event handlers.
+title: Getting Started with JavaScript Events
+description: This tutorial will walk the reader through the major types of JavaScript events, how to listen to them, and pass them to event handlers.
 author: samuel-zabastian
-date: 2021-08-06T00:00:00-10:00
-topics: []
+date: 2021-08-17T00:00:00-17:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
 - url: /engineering-education/javascript-form-events/hero.png
   alt: Getting started with JavaScript events
 ---
-
-A JavaScript event is any operation that occurs when a user interacts with a given web page. These event can be used to provide a user with dynamic interaction with a given website. Through JavaScript events, browsing becomes seamless and enjoyable. 
+A JavaScript event is any operation that occurs when a user interacts with a given web page. These events can be used to provide a user with dynamic interaction with a given website. Through JavaScript events, browsing becomes seamless and enjoyable. 
 <!--more-->
-It's the JavaScript events that are used to make a website interactive. You are probably scrolling smoothly on this page and make click on a link or two because of the underlying JavaScript events used to build this page. So let's take a look into these events and how to use them.
+It's the JavaScript events that are used to make a website interactive. You are probably scrolling smoothly on this page and may click on a link or two because of the underlying JavaScript events used to build this page. So let's take a look at these events and how to use them.
 
 ### Goal
 In this article, we are going to cover the major types of JavaScript events, how to listen to them, and pass them to event handlers that specify the tasks performed when a given event is handled.
@@ -26,7 +25,7 @@ In this article, we are going to cover the major types of JavaScript events, how
 This article requires the reader to have a basic understanding of HTML and JavaScript. The code snippets are simple and easy to understand for beginners and web experts as well.
 
 ### Project setup
-We, Will, create a new folder called `JavaScript events`. In the folder, create a new file called `index.htm` and another JavaScript file called `main.js`. We will use these two files to demonstrate the concept of JavaScript events. Your folder structure should look like this.
+We will create a new folder called `JavaScript events`. In this folder, create a new file called `index.htm` and another JavaScript file called `main.js`. We will use these two files to demonstrate the concept of JavaScript events. Your folder structure should look like this.
 
 ```bash
 |-- index.html
@@ -37,25 +36,27 @@ We, Will, create a new folder called `JavaScript events`. In the folder, create 
 ### JavaScript event examples
 They are many types of events that occur in a webpage, for instance;
 - Selecting an element.
-- Hover over a button.
-- Use a keyboard to scroll.
-- Resize or close a browser window.
-- Load a new webpage.
-- Submit a form after filling in details.
-- Play an audio or video file.
+- Hovering over a button.
+- Usin a keyboard to scroll.
+- Resizing or close a browser window.
+- Loading a new webpage.
+- Submitting a form after filling in details.
+- Playing an audio or video file.
 
 ### Event handlers
-For each of the events mentioned above, there is usually an event handler, which is a code snippet created by a programmer to run when the event fires. 
-Event handlers listen for events fired from the front end and handle them on the back end.
+For each of the events mentioned above, there is usually an event handler, which is a code snippet created by a programmer to run when the event fires. Event handlers listen for events fired from the front end and handle them on the back end.
 
 ### Types of JavaScript events
 JavaScript events used on a web page can be classified as below.
 
 #### 1. Mouse events
 This kind of event occurs when a user interacts with our web page using pointing devices such as a mouse or a trackpad. The common mouse events include a `single-click`, `double click`, `mouse up`, and `mouse down`. 
+
 An example of a mouse event is clicking a button, hovering over an HTML element, or dragging an element over a webpage. 
 
-- MouseClick Events. These kinds of events occur when a mouse clicks an element. The code snippets below demonstrate how to use `mouseClick()` event. In your `index.html` file, add the snippets below:
+- MouseClick Events. These kinds of events occur when a mouse clicks an element. The code snippets below demonstrate how to use `mouseClick()` event. 
+
+In your `index.html` file, add the snippets below:
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +85,7 @@ An example of a mouse event is clicking a button, hovering over an HTML element,
 </html>
 ```
 
-- Mouse Click event is handled by the `onClick` event handler. We will use the event handler to show the user that the button was clicked as below:
+- A mouse click event is handled by the `onClick` event handler. We will use the event handler to show the user that the button was clicked as below:
 
 ```js
 /**
@@ -105,7 +106,9 @@ function handleClickEvent(){
 }
 ```
 
-- Mouseover Events. These events are fired when a mouse cursor moves over an element. For instance, we could hover the mouse over the button to change the page themes using the snippets below:
+- Mouseover events. These events are fired when a mouse cursor moves over an element. 
+
+For instance, we could hover the mouse over the button to change the page themes using the snippets below:
 
 ```js
 /**
@@ -117,7 +120,7 @@ button.addEventListener('mouseover', () =>{
 
 
 ```
-- Mouseout Events. These kinds of events are fired when the mouse cursor is removed away from an HTML element. Just as we used the `mouseover` event, to change the background of the page, we could use the `mouseout` event to return the initial theme using the snippets below:
+- Mouseout events. These kinds of events are fired when the mouse cursor is removed away from an HTML element. Just as we used the `mouseover` event, to change the background of the page, we could use the `mouseout` event to return the initial theme using the snippets below:
 
 
 ```js
@@ -129,10 +132,11 @@ button.addEventListener('mouseout', () =>{
 })
 ```
 
-- Mousedown and Mouseup Event. Mousedown is a kind of event that gets fired when the mouse is pressed over an element. 
+- Mousedown and Mouseup event. Mousedown is a kind of event that gets fired when the mouse is pressed over an element. 
 `Mouseup` is exactly the opposite of `mousedown`. It gets fired when you release the mouse button. 
 
 The snippets below demonstrate how `mouseup` and `mousedown` events operate.
+
 > Remember to comment on the other functions when testing these two mouse events, as we are using the same files and elements.
 
 ```js
@@ -151,9 +155,9 @@ button.addEventListener('mouseup', () =>{
 })
 ```
 
-#### 2. Keyboard Events
+#### 2. Keyboard events
 Keyboard events occur when a key on the keyboard is pressed. These kinds of events belong to the keyboard event object. 
-Just as discussed [here](https://www.section.io/engineering-education/keyboard-events-in-javascript/), there are three different types of keyboard events in JavaScript, namely `keydown events`, `keypress events`, and `keyup events.`
+Just as discussed [here](/engineering-education/keyboard-events-in-javascript/), there are three different types of keyboard events in JavaScript, namely `keydown events`, `keypress events`, and `keyup events.`
 
 These events occur when the key is pressed down, when any alphanumeric key is pressed and when a key is pressed up respectively. Every button on the keyboard has a name and a value, which can be demonstrated by the code snippet below:
 
@@ -188,21 +192,23 @@ document.addEventListener('keypress', (e) => {
 
 #### 3. Window events
 A window represents the interface onto which a website script runs. For example, the browser screen on a mobile phone, PC, or MacBook. Several events can be triggered on a browser window. 
+
 Here are a few examples of window events.
 
-- Onload Window Event. This event is usually fired when a page is just about to finish loading, all assets, and scripts on the website. Most developers use this event to call other functions that are dependent on the elements of the window. So you have to wait until the window loads to call the function.
+- Onload window event. This event is usually fired when a page is just about to finish loading, all assets, and scripts on the website. Most developers use this event to call other functions that are dependent on the elements of the window. So you have to wait until the window loads to call the function.
 
-- Onresize Window Event. This event is called when the size of the browser changes. The browser may be resized by enlarging or reducing the size it covers on the screen.
+- Onresize window event. This event is called when the size of the browser changes. The browser may be resized by enlarging or reducing the size it covers on the screen.
 
-- OnUnload Window Event. This usually occurs when the browser window is closed, therefore all other components get unloaded from it.
+- OnUnload window event. This usually occurs when the browser window is closed, therefore all other components get unloaded from it.
 
-- Onerror Window Event. This event is fired when an error occurs during loading the window.
+- Onerror window event. This event is fired when an error occurs during the loading of the window.
 
 #### 4. Form events
 Form events occur when you work with forms. Usually, a form event occurs when you open, close, hover or submit form data to the backend of an application.
-Discussed below is a list of form events and their event handlers.
 
-- Submit Form Event. This event is triggered when a user submits form data. Usually, form data is submitted after all the fields are filled.
+Below is a list of form events and their event handlers.
+
+- Submit form event. This event is triggered when a user submits form data. Usually, form data is submitted after all the fields are filled.
 
 ```js
 /**
@@ -215,7 +221,7 @@ form.addEventListener('submit', () =>{
 });
 ```
 
-- Focus Form Event. This event usually happens when you focus on a specific element on the form.
+- Focus form event. This event usually happens when you focus on a specific element on the form.
 ```js
 **
  * Handling focus event to change the text to upper 
@@ -237,7 +243,7 @@ function containerFocusFunction(){
 }
 ```
 
-- On Blur Form Event. This event is the opposite of the `onfocus`. It is triggered when you remove focus away from a given element.
+- On blur form event. This event is the opposite of the `onfocus`. It is triggered when you remove focus away from a given element.
 
 ```js
 /**
@@ -274,7 +280,7 @@ html[lower='lower']{
 }
 ```
 
-- Change Form Event. This form event will be fired when the user changes the value of a form element. A change in value could be deleting entered data or changing a select option value. 
+- Change form event. This form event will be fired when the user changes the value of a form element. A change in value could be deleting entered data or changing a select option value. 
 
 Let us demonstrate this by printing the user input as soon as the input field has a value.
 
@@ -299,7 +305,9 @@ Events in JavaScript make browsing very comfortable, besides their usefulness to
 
 As discussed above, there are various JavaScript events, and how they are all useful in different contexts, varying from mouse, keyboard, form, and window events. Getting familiar with these concepts enables developers to use JavaScript to make event better websites.
 
-You can try the code snippets [here](https://replit.com/@bastian-zab/form-events#index.html)
+You can try the code snippets [here](https://replit.com/@bastian-zab/form-events#index.html).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
