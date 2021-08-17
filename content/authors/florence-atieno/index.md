@@ -1,5 +1,5 @@
 ---
-title: florenceatieno
+title: Florence Atieno
 type: authors
 ---
 Florence Atieno specializes in computer networking and cybersecurity. He loves to share cybersecurity and computer networking knowledge through writing 
