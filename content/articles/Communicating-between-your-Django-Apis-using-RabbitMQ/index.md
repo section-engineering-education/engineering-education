@@ -636,3 +636,5 @@ Notice when one tries to like a quote again by refreshing the page, a message is
 
 ### Conclusion
 So far you have learned the very basics of how RabbitMQ works and learned how to use it to process data in your Django REST APIs. You should take a look on [RabbitMQ official site](https://www.rabbitmq.com/) to learn more.
+
+You can find the Github repository [here](https://github.com/JohnKiguru/DjangoRabbitMQ)
