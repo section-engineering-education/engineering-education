@@ -26,7 +26,7 @@ This article will teach you how to make a coming soon landing page but first thi
 
 A timer is a feature that allows us to run a program at a predetermined time.
 Timers can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading.
-Timers, for example, can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things. In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers implement timer functions, and their implementations differ from one browser to another. The Node.js runtime also has a native implementation of timers. In browsers, the window interface is the parent of the main timer features. setTimeout can be used in the browser console since the window interface makes its elements available globally in the main javascript scope.
+Timers, for example, can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things. In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers implement timer functions, and their implementations differ from one browser to another. The Node.js runtime also has a native implementation of timers. In browsers, the window interface is the parent of the main timer features. Because the window interface makes its elements available globally in the main javascript scope, setTimeout may be used in the browser console.
 'Timers' is an object in NodeJs that functions like the browser's window interface.
 
 ### Code Execution After a Delay
@@ -94,7 +94,7 @@ Similarly, the setInterval() method may be used to execute a function or a given
 
 `setInterval(function, milliseconds)`.
 
-To begin with,the first parameter is the actual function to execute,and the second parameter is the interval which represents amount of time to wait before executing the function (1 second = 1000 milliseconds).
+Begin by defining two parameters, one of which defines the function to be performed and another which provides the period (one second = 1000 milliseconds) in which to wait until the function is executed.
 **Example**
 
 ```javascript
@@ -188,9 +188,9 @@ var intervalID = setInterval(showTime, 1000);
 
 ---
 
-#### 1. Make an impact without being overbearing.
+#### 1. Make a statement without being intrusive.
 
-Focus on the headline and a short description. Both should concentrate on what you're offering and how it will improve your customers' lives.
+Concentrate on the title and a brief summary of the article. Focus on what you're giving and how it will enhance the lives of the people you're trying to reach.
 
 As an example:
 
@@ -209,9 +209,9 @@ In the Example template below, you can add a modal form to the getNotified butto
 Setting a countdown is one approach to significantly boost the conversion rate of your coming soon page.A physical, adjustable countdown clock can be used to do this.
 If you don't have a specific launch date in mind, you might say something like "arriving this fall" or "out in time for Christmas."
 
-#### 4. Make it shareable
+#### 4.It should be easy to share.
 
-Create a giveaway to increase the number of social shares your landing page receives across important platforms. Customers can enter this giveaway by sharing it on Facebook, retweeting it on Twitter, or posting about it on Instagram.
+Your landing page will earn more social shares if you provide a prize. Share it on Facebook, retweet it on Twitter, or post about it on Instagram to enter the contest.
 
 #### 5. Make it mobile
 
@@ -221,7 +221,7 @@ This emphasizes that the page should be responsive, implying that all functional
 
 ---
 
-In this section, i have designed a responsive landing page.I have used some bootstrap to sought of achive page resposiveness.Feel free to edit the code to make more better.
+In this section, i have designed a responsive coming soon landing page.I have used some bootstrap to sought of achive page resposiveness.Make sure you identify the five pro tips shared above.
 
 ![large-devices](temp01.png)
 ![medium-devices](temp02.png)
@@ -361,22 +361,22 @@ hr {
 **JAVSCRIPT SECTION**
 
 ```javascript
-let countDownDate = new Date("sep 1,2021 00:00:00").getTime();
+let countDate = new Date("sep 1,2021 00:00:00").getTime();
 
 let x = setInterval(() => {
   let now = new Date().getTime();
 
-  let distance = countDownDate - now;
+  let dist = countDate - now;
 
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let days = Math.floor(dist / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((dist % (1000 * 60)) / 1000);
 
   document.querySelector("#launch").innerHTML =
     days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
 
-  if (distance < 0) {
+  if (dist < 0) {
     clearInterval(x);
     document.querySelector("#launch").innerHTML = "EXPIRED";
   }
