@@ -342,7 +342,7 @@ export default Message;
 
 This snippet below shows a conditional statement but in a ternary syntax. What this translates to, is: when the `options.type` is “success”, add a CSS class of “msg-success”, if not, add a CSS class of “msg-error”.
 
-The “msg-success” gives the alert template/modal a green background while “msg-error” adds a red background to the template.
+The `msg-success` gives the alert template/modal a green background while `msg-error` adds a red background to the template.
 
 Let's now go ahead and add the template as a parent element in the app component. This can be done by editing the content of `_app.js` file.
 
