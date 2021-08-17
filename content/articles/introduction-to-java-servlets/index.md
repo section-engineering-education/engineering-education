@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /introduction-to-java-servlets/
 title: Introduction to Java servlets
-description: This article introduces the foundations of Servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally advantages and disadvantages.
+description: This article introduces the foundations of servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally its advantages and disadvantages.
 author: Dennis-Kariuki
-date: 2021-08-04T00:00:00-08:00
+date: 2021-08-17T00:00:00-05:35
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,16 @@ images:
     alt: Introduction to Java servlets Hero image
 
 --- 
-A `Servlet` is often the software that improves a server's capabilities. The Servlet is usually written in Java and can process web requests. 
+A `servlet` is often the software that improves the capabilities of a server. It is usually written in Java and can process web requests. 
+Servlets are web server-based applications.
 <!--more-->
-Servlets are web server-based applications. Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these Servlets in these situations. Nowadays, we are all familiar with the need for developing dynamic web pages, or those that may change the information of the site based on the time or produce material based on the client's request. If you enjoy writing in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java. That method is known as Java Servlet. But before we get to the core of our discussion, it is important to understand why server-side extensions are necessary.
+Other technologies used to produce dynamic online content, such as ASP.NET and PHP, are the counterparts of these servlets in these situations. 
+
+Nowadays, we are all familiar with the need for developing dynamic web pages, or those that may change the information of the site based on the time or produce material based on the client's request. 
+
+If you enjoy coding in Java, you will be pleased to learn that there is a technique to produce dynamic web pages using Java. That method is known as Java Servlet. 
+
+Before we get to the core of our discussion, it's important to understand why server-side extensions are necessary.
 
 A Java servlet is a Java program that runs on a Java-enabled web server or application server. They are used to receive a request from a web server, process it, generate a reply, and then transmit the reply back to the webserver.
 
@@ -32,7 +39,7 @@ You will need the following to follow along with this article:
 
 - Some solid basic knowledge of Java is required.
 
-### Table of content:
+### Table of contents
 - [Properties and execution of Java servlets](#properties-and-execution-of-java-servlets)
 - [The Servlet Architecture](#the-servlet-architecture)
 - [Extensions on the server](#extensions-on-the-server)
@@ -43,9 +50,15 @@ You will need the following to follow along with this article:
 ### Properties and execution of Java servlets
 Servlets have two characteristics:  `the function on the server side` and the   `ability to handle sophisticated requests from the web server`.
 
-In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. The container also handles component security, limiting component access to the local operating environment. Also if desired, providing authentication services to authenticate a user's identity. A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is because the servlet container processes many requests in various threads. 
+In execution, Java servlets run in a container, which is a type of operating environment for a component that delivers a variety of services. The Web server or application server generally provides this container. 
 
-As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems. These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
+The container also handles component security, limiting component access to the local operating environment. Also if desired, it provides authentication services to authenticate a user's identity. 
+
+A request is mapped to a servlet component by the container, which also gives access to a set of developer-defined environment elements. This is because the servlet container processes many requests in various threads. 
+
+As developers, we must be aware of the servlet container's lifecycle and state operations in this multithreaded context and program accordingly. Inexperienced servlet developers are prone to code mistakes due to thread-safe problems.
+
+These coding mistakes may be avoided if you are aware from the outset that some sections of servlet code are not thread-safe.
 
 The execution of the java servlets involves several steps:
 
@@ -69,19 +82,21 @@ The servlet high-level architectural diagram is shown below. Let's have a look a
 - A web server that is constantly updated
 
 3. **Web container**: Another common component in servlet design is the web container, which handles interaction with the servlets. A web container has two primary functions:
-
-- Servlet lifecycle management
-- Mapping of URLs
+* Servlet lifecycle management
+* Mapping of URLs
 
 A web container is a server-side application that manages and handles all requests that come in via servlets, JSP pages, or any other file system.
 
 ### Extensions on the server
-As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages need a `container` or Web server to enable dynamic Web page functionality. Independent Web server vendors offer various proprietary solutions in the form of `APIs` to meet this need.
+As the name suggests, `server-side extensions` are used to create dynamic Web pages. Web pages need a `container` or Web server to enable dynamic Web page functionality. 
+
+Independent Web server vendors offer various proprietary solutions in the form of `APIs` to meet this need.
 
 With the help of these APIs, we can develop Web-based apps. As part of the Java Platform Enterprise Edition, which defines standards for creating dynamic Web applications in Java, Java Servlet is one of the component APIs.
+
 > It's vital to understand the necessity for something before learning about it; after all, this isn't the only technology for producing dynamic Web sites. 
 
-There are other Web server extensions that are linked to Servlet technology. Such as `CGI scripts` and `Hypertext Preprocessor` (PHP). Java Servlets, on the other hand, are more acceptable since they overcome CGI's constraints, such as slow performance and limited scalability.
+There are other Web server extensions that are linked to Servlet technology such as `CGI scripts` and `Hypertext Preprocessor` (PHP). Java Servlets, on the other hand, are more acceptable since they overcome CGI's constraints, such as slow performance and limited scalability.
 
 ### Common Gateway Interface
 `Common Gateway Interface` is an independent application that can process user requests and create dynamic content. It is built in any of the computer languages such as C or C++.
@@ -116,7 +131,7 @@ In basic terms, it's a system that handles Web client requests by managing Java 
 
 The Servlet container provides the following services:
 
-1. **Network Services**: This method loads a Servlet class. A local file system, a remote file system, or other network services may be used to load data. The network services the request and responses are sent over provided by the Servlet container.
+1. **Network Services**: This method loads a Servlet class. A local file system, a remote file system, or other network services may be used to load data. The network services, the request and responses are sent over provided by the Servlet container.
 2. **Decode and Encode MIME-based messages**: Provides decoding and encoding services for MIME-based messages.
 3. **Manage Servlet container**: A Servlet's lifecycle is managed by this class.
 4. **Resource management**: Static and dynamic resources, including HTML files, Servlets, and JSP pages, are managed via resource management.
@@ -132,9 +147,13 @@ In creating a java servlet the following steps are involved:
 - Launch the webserver and make the project available.
 - Obtain the servlet
 
-To execute a servlet program, we will need to install and set up the `Apache Tomcat Server`. Apache Tomcat is included with Eclipse for `Java EE`. You may begin working on your application once the server has been set up. One thing to keep in mind is that each servlet application requires three files: an `index.html file`, a `Java class file`, and a `web.xml file`. The first step is to establish a Dynamic Web Project, after which you may proceed.
+To execute a servlet program, we will need to install and set up the `Apache Tomcat Server`. 
 
-Let's look at how to use servlets to substruct two integers and display the result in the browser.
+Apache Tomcat is included with Eclipse for `Java EE`. You may begin working on your application once the server has been set up. 
+
+One thing to keep in mind is that each servlet application requires three files: an `index.html file`, a `Java class file`, and a `web.xml file`. 
+
+The first step is to establish a Dynamic Web Project, after which you may proceed. Let's look at how to use servlets to substruct two integers and display the result in the browser.
 
 First, I will create the index.html file.
 
@@ -155,47 +174,60 @@ The software above generates a form on which the user may input numbers for the 
 
 ```java
 package edureka;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class Substract extends HttpServlet{
-public void service(HttpServletRequest req, HttpServletResponse res) throws IOException
-{
-int x = Integer.parseInt(req.getParameter("number1"));
-int y = Integer.parseInt(req.getParameter("number2"));
-int k= x-y;
-PrintWriter out = res.getWriter();
-out.println("Result is"+k);
-}
+
+public class Substract extends HttpServlet {
+  public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    int x = Integer.parseInt(req.getParameter("number1"));
+    int y = Integer.parseInt(req.getParameter("number2"));
+    int k = x - y;
+    PrintWriter out = res.getWriter();
+    out.println("Result is"+k);
+  }
+} 
 ```
 
 The final step is to add mappings to the `web.xml` file after producing the Java class file. Let's have a look at how we can do that.
-Your web content's `WEB-INF` folder will contain the `web.xml` file. Go to Deployment Descriptor and choose Generate Deployment Descriptor Stub if it is not already present. Mappings must be added to the `web.xml` file once it has been created. Let's have a look at how mapping works using the following example:
+
+Your web content's `WEB-INF` folder will contain the `web.xml` file. Go to Deployment Descriptor and choose Generate Deployment Descriptor Stub if it is not already present. 
+
+Mappings must be added to the `web.xml` file once it has been created. Let's have a look at how mapping works using the following example:
 
 ```html
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xmlns="<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a>" xsi:schemaLocation="<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a> <a href="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd</a>" version="3.0">
-<display-name>Basic</display-name>
-<servlet>
-<servlet-name>substraction</servlet-name>
-<servlet-class>edureka.Add</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>substraction</servlet-name>
-<url-pattern>/substract</url-pattern>
-</servlet-mapping>
-<welcome-file-list>
-<welcome-file>index.html</welcome-file>
-</welcome-file-list>
+<web-app
+	xmlns:xsi="
+	<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>"
+	xmlns="
+	<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a>" xsi:schemaLocation="
+	<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a>
+	<a href="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd</a>" version="3.0">
+	<display-name>Basic</display-name>
+	<servlet>
+		<servlet-name>substraction</servlet-name>
+		<servlet-class>edureka.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>substraction</servlet-name>
+		<url-pattern>/substract</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
 </web-app>
 ```
 
 After that, you may start the server and run the application to receive the required result in the browser.
 
 ### Conclusion
-In this article, we introduced the foundations of Servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally advantages and disadvantages. Also, we learned how to create a java servlet and learned what a common gateway interface was before the introduction of servlets.
+In this article, we introduced the foundations of Servlets in a Java web application, its properties and execution, architecture, server-side extensions, and finally advantages and disadvantages. 
+
+We also learned how to create a java servlet and what a common gateway interface was before the introduction of servlets.
 
 ---
 
