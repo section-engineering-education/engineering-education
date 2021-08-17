@@ -1,16 +1,14 @@
 ### HOW TO IMPLEMENT REGULAR EXPRESSIONS (REGEX) WITH JAVA
 
-The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. Regular Expression, popularly referred to as regex, is a handy tool designed to validate string operations very effectively.
+The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. A regular expression, popularly referred to as regex, is a handy tool designed to validate string operations effectively.
 
 The application of regex can be pretty daunting, especially to beginners. This is mainly due to the unusual or strange combinations of the characters applied in the expressions, making the syntax challenging to interpret.
 
-Hence, I’ll attempt to simplify this article as much as possible, thereby making it beginner-friendly. I’ll guide us (hopefully in an effective way) by interpreting patterns in Regular Expressions using Java. 
-
 ### INTRODUCTION
 
-Regular Expressions can be regarded as strings used to describe search patterns that match the occurrences and combinations of characters in other strings.
+Regular Expressions are strings used to describe search patterns that match the occurrences and combinations of characters in other strings.
 
-In addition to searching a character or a combination of characters, regex is also used to:
+In addition to searching a character or a combination of characters, We can also use regex to:
 
 * extract strings, 
 * delete substrings, 
@@ -25,17 +23,13 @@ In most programming languages, strings are immutable, and the operations mention
 
 Imagine you want to validate that a date input matches the format “MM/DD/YYYY” while ensuring that the values provided for the month, day and year are valid for their respective fields, that is, the values are digits, and the month is between 1 and 12, the value of the day is valid with respect to the month and so on.
 
-Also, imagine you want to ensure that the value provided in an email address field is in a valid email address format while recognizing that an email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of IF statements to ascertain the validity of the input. This is not an effective solution as it would result in your code becoming more complex and could reduce performance.
+Imagine you want to validate that the value provided in an email address field is in a valid email address. An email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of `IF` statements to ascertain the validity of the input. Use of `IF` statements is not an effective solution as it would result in your code becoming more complex and could reduce performance.
 
-However, with an accurate combination of the regex characters, you can achieve this with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages. One can use one regular expression to validate a variety of inputs.
-
-Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. Validations are faster when compared to applying IF and ELSE statements.
-
-We shall look at how these expressions can be applied using the Java programming language in the following sections.
+However, with an accurate combination of the regex characters, you can validate emails with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages.
 
 ### INTERPRETATION OF REGULAR EXPRESSIONS
 
-As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. This implies that each character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters are matched to themselves. In other words, the character ‘a’ if composed in a regex pattern would be matched to the character ‘a’ in the input string.
+As mentioned earlier, regex combines simple characters and special characters that perform pattern matching on strings. Every character composed in the regex string, combined with other characters, is responsible for executing the expected match. Most regex characters match themselves. In other words, the character ‘a’ if composed in a regex pattern, would be compared to the character ‘a’ in the input string.
 
 
 ```java
@@ -50,7 +44,7 @@ As mentioned earlier, regex combines simple characters and special characters th
     }
 ```
 
-In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable “word” to ascertain that its value “hello” matches the given regex pattern, “hello”. The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable matches the regex. This can also be performed on a string literal, and the output would be the same.
+In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern, is invoked on the string variable `word` to ascertain that its value “hello” matches the given regex pattern, “hello”. The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable match the regex.
 
 ```java
 
@@ -65,11 +59,11 @@ In the code above, the predicate method `.matches(“hello”)` which takes a st
 ```
 
 
-Sometimes, this is not always the case. The inclusion of special characters referred to as metacharacters redefine the interpretation of the associated character and the overall pattern of the regex. Some of these metacharacters include but are not restricted to `+ * ? \ [ ] ( ) `.
+The inclusion of special characters redefines the interpretation of the associated character and the overall pattern of the regex. Some of these metacharacters include but are not restricted to `+ * ? \ [ ] ( ) `.
 
 #### METACHARACTERS
 
-These are characters that denote special meanings in the processing of regex patterns. They are usually represented by special characters that you can sometimes use independently or in association with other characters to provide a defined pattern. 
+These are characters that denote special meanings in the processing of regex patterns. Metacharacters are special characters that can be used independently or with other characters to provide a defined pattern. 
 
 Metacharacters are categorized differently depending on their functionalities as, but not limited to:
 
@@ -106,7 +100,7 @@ A quantifier is used to specify the number of occurrences of a character that it
     }
 ```
 
-In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`. Recall that the `*` quantifier matches a zero or more occurrences of its preceding character in the given string. An occurrence of 1 instance of the string `o` is a match on the regex pattern. This logic is also synonymous with the match in the second print statement with String literal `oooooo`. The output is `true` because multiple instances of the character `o` forming the given string literal are a match on the regex pattern.
+In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’, which precedes the `*`  in the regex expression `o*` matches the string literal `o`. Recall that the `*` quantifier matches a zero or more occurrences of its preceding character in the given string. Thus, one instance of the string `o` is a match on the regex pattern. This logic is also synonymous with the match in the second print statement with string literal `oooooo`. The output is `true` because multiple instances of the character `o` forming the given string literal are a match on the regex pattern.
 
 For the third print statement, despite the combination of different characters preceding the quantifier in the regex pattern, the output is `true` because the sequence of the characters ‘h’, ‘e’, ‘l’, ‘l’, ‘o’ which precede the quantifier is an exact match of the string literal invoking the method, and also because the character ‘o’ which immediately precedes the quantifier occurs at least zero number of time. This logic is also synonymous to the match the code in the fourth print statement in which the output is `true` because the occurrence of the character `o` which precedes the quantifier is zero, but the sequence of the other preceding characters is a match.
 
@@ -320,15 +314,15 @@ The Java class Matcher performs match operations on Strings or character sequenc
 ```
 
 
-In the code above, the Java class `Pattern` compiles the regex pattern and stores the value in the variable `compiledRegex` - an instance of the `Pattern` class which then creates the Matcher instance, `regexMatcher`, which also holds the returned value of the compiled regex pattern matching the String literal with variable name `statements`.
+In the code above, the Java class `Pattern` compiles the regex pattern and stores the value in the variable `compiledRegex` - an instance of the `Pattern` class which then creates the Matcher instance, `regexMatcher`, which also holds the returned value of the compiled regex pattern matching the string literal with variable name `statements`.
 
-`Matcher` method `find` matches a portion of the String to the search pattern and outputs the portion of the String that matches the search pattern.
+`Matcher` method `find` matches a portion of the string to the search pattern and outputs the portion of the string that matches the search pattern.
 
-It is important to note that the method `matches` of class String, Pattern, or Matcher returns a boolean value `true` if the whole String to be matched matches the regular expression. 
+It is important to note that the method `matches` of class String, Pattern, or matcher returns a boolean value `true` if the whole string to be matched matches the regular expression. 
 
 ### SOME STRING METHODS THAT APPLY REGEX
 
-Given two instances of String with variable names `s` and `replacement` and regex patterns represented as “regex”, the following operations can be carried out on `s`:
+Given two instances of string with variable names `s` and `replacement` and regex patterns represented as “regex”, the following operations can be carried out on `s`:
 
 * `s.replaceFirst(“regex”, “replacement”)` : This replaces the first occurrence of `regex` in `s` with `replacement`.
 
@@ -378,11 +372,11 @@ While trying to come up with a solution to this, my first attempt was to match t
     }
 ```
 
-The regex assigned to the `invalidPasswordRegex` variable is an invalid password regex that does not match each and all of our requirements. ```passwords``` is an array of prospective password inputs. The array is iterated through, and any password that does not match the invalid password regex is valid; otherwise, the given password is invalid.
+The regex assigned to the `invalidPasswordRegex` variable is an invalid password regex that does not match each and all of our requirements. `passwords` is an array of prospective password inputs. We iterate the array, and any password that does not match the invalid password regex is valid; otherwise, the given password is invalid.
 
 ### CONCLUSION
 
-The usefulness of regular expression cannot be overemphasized. Although it could be understandably difficult to read and implement, I believe that with a thorough understanding of the composing units of regex and proper piecing together of these units, the application is endless, and it gets better with practice.
+Although regular expression can be understandably difficult to read and implement, I believe that with a thorough understanding of the composing units of regex and proper piecing together of these units, the application is endless, and it gets better with practice.
 
 ### REFERENCES
 
