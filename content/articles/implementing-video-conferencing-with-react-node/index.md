@@ -56,7 +56,7 @@ The application being a full stack project is divided into two segments, namely
 ### Client-Side Setup - (index.js):
 The Client interface is setup using ReactJS which is a lightweight frontend JavaScript library. the various pages and subdivision of the client interface includes the following
 
-#### Step 1. Getting started with a new React app:
+#### Step 1: Getting started with a new React app:
 
 npx
 
@@ -77,7 +77,7 @@ the above command should get you started with a new react app with all the defau
 
 the above command will change the directory to your new react app and get the development server running.
 
-#### Step 2. Installing the required Client dependencies:
+#### Step 2: Installing the required Client dependencies:
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
 Run `npm install` or `yarn add` to initialize an empty NodeJs project.
@@ -111,7 +111,7 @@ Add the following dependencies in your package.json file and run `npm install` t
  "style-loader": "^0.20.2",
 ```
 
-#### Step 3. Setting up the Client Index file:
+#### Step 3: Setting up the Client Index file:
 This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.
 
 ```javascript
@@ -185,7 +185,7 @@ This file is the main file for integrating the client and the server codes toget
  render();
 ```
 
-#### Step 4. Setting up the routes and other pages for the client UI:
+#### Step 4: Setting up the routes and other pages for the client UI:
 The application is divided into five (5) pages namely
 - Home Page
 - Login/ Sign-Up Page
@@ -226,7 +226,7 @@ And their respective routes are implemented as follows
     }];
     ```
 
-#### Step 5. Setting up the Video components:
+#### Step 5: Setting up the Video components:
 The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 It also enables the following operations
 - Call Statuses
