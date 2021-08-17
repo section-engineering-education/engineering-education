@@ -6,7 +6,7 @@ url: /white-hat-seo-black-hat-seo/
 title: What are White-Hat and Black-Hat SEO Techniques?
 description: This article will explore white-hat and black-hat SEO techniques.
 author: kanishkvardhan-a-n
-date: 2021-08-04T00:00:00-22:00
+date: 2021-08-17T00:00:00-22:00
 topics: []
 excerpt_separator: <!--more-->
 images:
