@@ -4,4 +4,4 @@ type: authors
 github: https://github.com/EssyG10/
 ---
 
-Esther Maina is a student in science and engineering, Meru-Kenya, at Meru University. she is a fully-fledged web developer.She is interested in stage performance and is committed to voluntary service.
+Esther Maina is a Meru University student. She is a full-stack web developer. She is passionate in vfx design and is interested in stage performance.
