@@ -68,45 +68,44 @@ Now that you have a basic understanding of the library, let's dive deep and see 
 
 Install the Vee Validate library:
 
-```
+```bash
 yarn add vee-validate@next
 ```
 
 After installation, create an empty folder _plugin_ in the _src_ folder and set up the validator, in the folder created add a new file:
 
-```
+```bash
 validation.js
 ```
 
 Configure the plugin,
 
-```
-import { Form as VeeForm, Field as VeeField } from 'vee-validate';
+```js
+import { Form as VeeForm, Field as VeeField } from "vee-validate";
 
 export default {
   install(app) {
-    app.component('VeeForm', VeeForm)
-    app.component('VeeField', VeeField)
-  }
-}
+    app.component("VeeForm", VeeForm);
+    app.component("VeeField", VeeField);
+  },
+};
 ```
 
 We are importing and registering the components from the vee-validate library,giving them aliases so as not to collide with HTML elements.
 
 We need to let Vue know we are using the vee-validate library, update _main.js_ file to match:
 
-```
-import { createApp } from 'vue';
-import VeeValidatePlugin from './plugin/validation';
-import App from './App.vue';
-import './assets/tailwind.css';
+```js
+import { createApp } from "vue";
+import VeeValidatePlugin from "./plugin/validation";
+import App from "./App.vue";
+import "./assets/tailwind.css";
 
 const app = createApp(App);
 
 app.use(VeeValidatePlugin);
 
-app.mount('#app');
-
+app.mount("#app");
 ```
 
 In our template, replace the _form_ element with _vee-form_ component.
@@ -119,7 +118,7 @@ We are going to validate our first input field, _username_.We should change our 
 
 Our element should match the above:
 
-```
+```js
 <vee-field
   name="username"
   id="username"
@@ -131,27 +130,32 @@ Our element should match the above:
 
 We are done we the first two processes of form validation, lets add our rules. We are going to register the rules _globaly_ to avoid code repetition, but before that import the vee-validate-rule library.
 
-```
+```bash
 yarn add @vee-validate/rules
 ```
 
 Rules provide a list of criteria that a value must meet, it is a function that takes an input process and outputs an error message.
 We configure the library in our _validation.js_ file:
 
-```
-import { Form as VeeForm, Field as VeeField, defineRule, ErrorMessage } from 'vee-validate';
+```js
+import {
+  Form as VeeForm,
+  Field as VeeField,
+  defineRule,
+  ErrorMessage,
+} from "vee-validate";
 
-import { required } from '@vee-validate/rules';
+import { required } from "@vee-validate/rules";
 
 export default {
   install(app) {
-    app.component('VeeForm', VeeForm)
-    app.component('VeeField', VeeField)
-    app.component('ErrorMessage', ErrorMessage)
+    app.component("VeeForm", VeeForm);
+    app.component("VeeField", VeeField);
+    app.component("ErrorMessage", ErrorMessage);
 
-    defineRule('required', required);
-  }
-}
+    defineRule("required", required);
+  },
+};
 ```
 
 To avoid going back and forth in files, we import the _defineRule_ and _ErrorMessage_ from vee-validate, this is used to define rules and set error messages respectively.
@@ -161,7 +165,7 @@ The _defineRule_ is a function provided by the global validator, it takes two ar
 
 Let's get back to defining our rules, we will use the vee-validate property known as the _schema_, this will allow us to outsource our rules to an external object, define a schema object in the component that you pasted the tailwind template:
 
-```
+```js
 <script>
 export default {
   name: 'ComponentName', // replace with component-name
@@ -178,13 +182,13 @@ export default {
 
 We can now bind our object to the _form_ component
 
-```
+```js
 <vee-form :validation-schema="schema">
 ```
 
 We are done with step 3, is time to set up the error component. Below the _field_ component define the _ErrorMessage_ component with some basic styling and the _name_ identifier as below:
 
-```
+```js
 <ErrorMessage class="text-red-600" name="username" />
 ```
 
@@ -192,13 +196,13 @@ Note that the _name_ in the component must match with that defined in the _schem
 
 Let's add a guard that will enable validation only on form submission, add a _submit_ event provided by vee-validate. Update _Form_ component to match:
 
-```
+```js
 <vee-form :validation-schema="schema" @submit="register" " >
 ```
 
 We have emitted a _register_ function in our _Form_ component, let's define it:
 
-```
+```js
 methods: {
   register(values){
     console.log(values);
@@ -214,26 +218,41 @@ Now that we are familiar with validation and the vee-validate, let's validate ot
 
 Import and register rules that will be used in our forms, update _validation.js_ file to match the above:
 
-```
-import { Form as VeeForm, Field as VeeField, defineRule, ErrorMessage } from 'vee-validate'
-import { required, min, max, alpha_spaces as alphaSpaces, email, min_value as minVal, max_value as maxVal, not_one_of as excluded, confirmed } from '@vee-validate/rules'
+```js
+import {
+  Form as VeeForm,
+  Field as VeeField,
+  defineRule,
+  ErrorMessage,
+} from "vee-validate";
+import {
+  required,
+  min,
+  max,
+  alpha_spaces as alphaSpaces,
+  email,
+  min_value as minVal,
+  max_value as maxVal,
+  not_one_of as excluded,
+  confirmed,
+} from "@vee-validate/rules";
 
 export default {
   install(app) {
-    app.component('VeeForm', VeeForm);
-    app.component('VeeField', VeeField);
-    app.component('ErrorMessage', ErrorMessage);
+    app.component("VeeForm", VeeForm);
+    app.component("VeeField", VeeField);
+    app.component("ErrorMessage", ErrorMessage);
 
-    defineRule('required', required);
-    defineRule('min', min);
-    defineRule('max', max);
-    defineRule('alpha_spaces', alphaSpaces);
-    defineRule('email', email);
-    defineRule('min_value', minVal);
-    defineRule('max_value', maxVal);
-    defineRule('excluded', excluded);
-    defineRule('country_excluded', excluded)
-    defineRule('password_mismatch', confirmed);
+    defineRule("required", required);
+    defineRule("min", min);
+    defineRule("max", max);
+    defineRule("alpha_spaces", alphaSpaces);
+    defineRule("email", email);
+    defineRule("min_value", minVal);
+    defineRule("max_value", maxVal);
+    defineRule("excluded", excluded);
+    defineRule("country_excluded", excluded);
+    defineRule("password_mismatch", confirmed);
   },
 };
 ```
@@ -242,7 +261,7 @@ We are having aliases for some of our [rules][https://vee-validate.logaretm.com/
 
 Now that we have our rules in place, open the template file and update the input fields and schema object. Update schema object, multiple rules will be separated with a pipe character.
 
-```
+```js
 schema: {
   username: 'required|min:3|max:50|alpha_spaces',
   email: 'required|min:3|max:20|email',
@@ -261,9 +280,11 @@ The _as_ property, it defaults to an input element but allows us to render a roo
 
 The _Country field_ we be updated to match the above:
 
-```
- <div>
-  <label id="country" class="text-xs text-gray-500">Country</label>
+```js
+<div>
+  <label id="country" class="text-xs text-gray-500">
+    Country
+  </label>
   <vee-field
     as="select"
     name="country"
@@ -285,7 +306,7 @@ While still on the Coutry field, let's explore what we can do with the library, 
 
 Define an object _userData_ after our _schema_ object
 
-```
+```js
 userData: {
   country: 'USA',
 },
@@ -293,7 +314,7 @@ userData: {
 
 Update the _vee-form_ component to match the above:
 
-```
+```js
 <vee-form :validation-schema="schema" @submit="register" :initial-values="userData" >
 ```
 
@@ -304,13 +325,19 @@ Note that we are binding the initial value to the object userData, which contain
 Vee-validate provides us with its default error messages, but we can override it to match our custom messages. The _configure_ function will help us achieve this task:
 Install the function:
 
-```
-import { Form as VeeForm, Field as VeeField, defineRule, ErrorMessage, configure } from 'vee-validate'
+```js
+import {
+  Form as VeeForm,
+  Field as VeeField,
+  defineRule,
+  ErrorMessage,
+  configure,
+} from "vee-validate";
 ```
 
 Let's now create our custom rules, after the last rule registered with the defineRule, add the configure function.
 
-```
+```js
 configure({
   generateMessage: (context) => {
     const messages = {
@@ -321,11 +348,13 @@ configure({
       email: `This field ${context.field} is not a valid email.`,
       min_value: `This field ${context.field} is too low.`,
       max_value: `This field ${context.field} is too high.`,
-      excluded: 'This field is not allowed.',
-      country_excluded: 'We do not allow users from this location',
+      excluded: "This field is not allowed.",
+      country_excluded: "We do not allow users from this location",
       password_mismatch: `This field ${context.field} does not match.`,
     };
-    const message = messages[context.rule.name] ? messages[context.rule.name] : `The field ${context.field} is invalid`
+    const message = messages[context.rule.name]
+      ? messages[context.rule.name]
+      : `The field ${context.field} is invalid`;
     return message;
   },
 });
@@ -345,7 +374,7 @@ Validation happens on certain triggers, register it after the _generateMessage_ 
 
 In the configure function after the generateMessage object define the above:
 
-```
+```js
 validateOnBlur: true,
 validateOnChange: true,
 validateOnInput: false,
@@ -360,7 +389,7 @@ It is a best practice to disable clients from submitting spam forms, user should
 
 Add the properties after the _userData_ object.
 
-```
+```js
 reg_in_submission: false,
 reg_show_alert: false,
 reg_alert_variant: 'bg-indigo-500',
@@ -369,7 +398,7 @@ reg_alert_message: 'Please wait! Account is being registered.',
 
 These are properties that we set to disable alert element from displaying when the form is in the progress of validation, update the _alert_ element with the defined properties.
 
-```
+```js
 <div class="shadow-lg mt-3 pt-3 pb-3 w-full text-white text-center
   hover:bg-indigo-400 rounded-full cursor-pointer"
   v-if="reg_show_alert"
@@ -382,7 +411,7 @@ These are properties that we set to disable alert element from displaying when t
 We are using the v-if directive to toggle the alert message if set to a boolean and v-bind to display our tailwind properties.
 Define the properties in the _register function_, update it to match the above;
 
-```
+```js
 register(values) {
   this.reg_show_alert = true;
   this.reg_in_submission = true;
@@ -399,7 +428,7 @@ register(values) {
 We have defined alert properties and message but not included it in our form.
 Update our input element to a button binding it to _reg_in_submission_ property defined above:
 
-```
+```js
 <button
   :disabled="reg_in_submission"
   class="shadow-lg mt-3 pt-3 pb-3 w-full text-white bg-indigo-500
