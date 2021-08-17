@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /federated-learning-using-tensorflow-federated/hero.png
+  - url: /engineering-education/federated-learning-using-tensorflow-federated/hero.png
     alt: Federated Learning Example Image
 ---
 Centralized machine learning involves having the model and the dataset on the same device. Companies such as Google upload data to the cloud to train their machine learning models. 
