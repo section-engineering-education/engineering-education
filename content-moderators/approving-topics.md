@@ -14,7 +14,7 @@ If they have more than one - check that the older one has not already been publi
 
 We are looking for unique, practitioner-focused content that takes a deeper dive into programming-centric concepts. 
 
-We are looking to approve topic suggestions that are grammatically correct and have good readability to ensure that the student is putting their article through a thorough editing review prior to submitting for final approval. (We can refer them to some of the great free tools that we curated in the EngEd resources to help - see Cheat Sheet below for a templated response)
+We are looking to approve topic suggestions that are grammatically correct and have good readability to ensure that the student is putting their article through a thorough editing review prior to submitting for final approval. (We can refer them to some of the great free tools that we curated in the EngEd resources to help - see Cheat Sheet [here](https://github.com/section-engineering-education/engineering-education/blob/master/content-moderators/cheat-sheet.md) for a templated response)
 
 Any topic that already seems to have many grammatical errors and/or very little substance to go off on - we can close those. Then leave a comment explaining why we closed it - see Cheat Sheet below for a templated response.
 
