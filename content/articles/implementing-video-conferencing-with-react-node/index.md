@@ -57,7 +57,7 @@ The application being a full stack project is divided into two segments, namely
 The Client interface is setup using ReactJS which is a lightweight frontend JavaScript library. the various pages and subdivision of the client interface includes the following
 
 #### Step 1. Getting started with a new React app:
-```bash
+
 npx
 
     npx create-react-app react-video-conferencing-app
