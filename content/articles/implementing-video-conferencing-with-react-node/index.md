@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/
 title: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
-description: 
+description: In this article we will have an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. ReactJS and webRTC provide an excellent tool for making the implementation of web-based video conferencing easy.
 author: samuel-cletus
 date: 2021-08-17T00:00:00-15:30
 topics: []
@@ -80,11 +80,11 @@ the above command will change the directory to your new react app and get the de
 #### Step 2. Installing the required Client dependencies:
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
-    npm install
-    Or
-    yarn add
+Run `npm install` or `yarn add` to initialize an empty NodeJs project.
 
-```javascript
+Add the following dependencies in your package.json file and run `npm install` to download them.
+
+```json
  "apollo-cache-inmemory": "^1.1.9",
  "apollo-client": "^2.2.5",
  "apollo-client-preset": "^1.0.8",
@@ -187,7 +187,6 @@ This file is the main file for integrating the client and the server codes toget
 
 #### Step 4. Setting up the routes and other pages for the client UI:
 The application is divided into five (5) pages namely
-
 - Home Page
 - Login/ Sign-Up Page
 - Contacts Page
@@ -230,7 +229,6 @@ And their respective routes are implemented as follows
 #### Step 5. Setting up the Video components:
 The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 It also enables the following operations
-
 - Call Statuses
 - Accept Call
 - Ignore Call
@@ -238,7 +236,7 @@ It also enables the following operations
 
 The implementation of the video component is illustrated below
 
-    ```javascript
+```javascript
     import React from 'react';
     import PropTypes from 'prop-types';
     import { connect } from 'react-redux';
@@ -334,7 +332,7 @@ The implementation of the video component is illustrated below
           </div>
         );
 
-    ```
+```
 
 ### Server-Side Setup
 The first task in getting the server instance ready for subsequent development involves the following
@@ -359,7 +357,7 @@ the above command should initialize your server instance, ensure the instruction
     Or
     yarn add
 
-```javascript
+```json
 "bcrypt": "^5.0.0",
  "bluebird": "^3.5.1",
  "body-parser": "^1.18.2",
@@ -385,7 +383,7 @@ the above command should initialize your server instance, ensure the instruction
 ### Setting Up the Server – (index.js)
 The Backend server is setup using Nodejs and Graphql. In order to guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server
 
-    ```javascript
+```javascript
     import express from 'express';
     import bodyParser from 'body-parser';
     import morgan from 'morgan';
@@ -413,12 +411,12 @@ The Backend server is setup using Nodejs and Graphql. In order to guarantee opti
     app.use(deserealizeUser);
 
     export default app;
-    ```
+```
 
 ### Setting-up Graphql server
 In this project, Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers comes with fully equipped mutations for data modification and alteration, query for data fetch and subscription for real-time data instance monitoring. Below is the setup of the Graphql server.
 
-    ```javascript
+```javascript
     import graphqlExpress from 'express-graphql';
     import debug from 'debug';
     import { createServer } from 'http';
@@ -480,13 +478,13 @@ In this project, Graphql server is the tool used to interface between the client
         },
       ));
     };
-    ```
+```
 
 ### Setting Up the Required Mutations, Queries and Subscriptions
 #### Step 1:
 The first mutation will be to establish connection with the second user for data transfer. Below is the code implementation of the mutation
 
-    ```javascript
+```javascript
     import { GraphQLObjectType, GraphQLInt, GraphQLBoolean, GraphQLString } from 'graphql';
 
     export default {
@@ -518,12 +516,12 @@ The first mutation will be to establish connection with the second user for data
         }
       },
     };
-    ```
+```
 
 #### Step 2:
 Now that our mutation is up and running, we need to setup the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup.
 
-    ```javascript
+```javascript
     import { GraphQLList } from 'graphql';
     import Promise from 'bluebird';
     import moment from 'moment';
@@ -559,11 +557,10 @@ Now that our mutation is up and running, we need to setup the query to facilitat
         }
       },
     };
-
 ```
 
 #### Step 3:
-To enable real-time sockets monitoring, Graphql provides a tool called Subscription. Below is the subscription setup
+To enable real-time sockets monitoring, Graphql provides a tool called Subscription. Below is the subscription setup:
 
 ```javascript
  import { RedisPubSub } from 'graphql-redis-subscriptions';
@@ -583,12 +580,11 @@ To enable real-time sockets monitoring, Graphql provides a tool called Subscript
 
 ### Error Handling and Testing
 Applications as we know it has its own fair share of bugs and errors and handling these errors is a crucial part of application development. Graphql posses some errors that we will briefly look at and the ways of handling them.
-
 - Server Errors: these errors occur in the server and prevents appropriate server response to client-side queries and mutations.
 - Transaction Errors: these errors occur while a server update such as a mutation is being executed
 - Apollo Client Errors: these errors occur within the core or corresponding libraries.
 
-To set error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop along side the data returned from the server or cache
+To set error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop along side the data returned from the server or cache.
 
 ```javascript
     const MY_QUERY = gql`
@@ -614,7 +610,7 @@ To set error policy on each request the following code block provided by Graphql
 ```
 
 #### Ignoring Errors
-Errors may be ignored during application development. These errors are expected errors that the developer feels unbothered about, to achieve that the following code block should be integrated
+Errors may be ignored during application development. These errors are expected errors that the developer feels unbothered about, to achieve that the following code block should be integrated.
 
 ```javascript
     onError(({ response, operation }) => {
@@ -625,7 +621,7 @@ Errors may be ignored during application development. These errors are expected 
 ```
 
 #### Using React Testing Library
-React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils.** this is implemented using the following command
+React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils**. This is implemented using the following command:
 
     npm install --save-dev @testing-library/react
     or
