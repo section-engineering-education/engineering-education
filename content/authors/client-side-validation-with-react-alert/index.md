@@ -88,7 +88,7 @@ The structure above is an excerpt of what the real application structure looks l
 
 The structure above shows that the `checks.js` file is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
 
-Since we’d be interacting/writing this logic for web forms. We need to look for a way to target the input elements that are receiving data from the user at the client side.
+Since we’d be interacting/writing this logic for web forms, we need to look for a way to target the input elements that are receiving data from the user at the client side.
 Luckily for us, the browser has provided some DOM APIs that we can use to achieve that. Take a look at an example below:
 
 ```html
