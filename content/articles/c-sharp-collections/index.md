@@ -60,20 +60,26 @@ Let's look at an example of ArrayList.
 ```cs
 using System;
 using System.Collections;
-
-var data = new ArrayList();
-
-data.Add(" ArrayList"); // for adding elements in a collection
-data.Add(221);
-data.Add(23);
-data.Add(new OurArrayList());
-data.Remove(23);
-
-foreach (object el in data)
+class MainClass
 {
-    Console.WriteLine(el); // displaying the elements
-}
+    public static void Main(string[] args)
+    {
 
+        var data = new ArrayList();
+
+        data.Add(" ArrayList"); // for adding elements in a collection
+        data.Add(221);
+        data.Add(23);
+        data.Add(new OurArrayList());
+        data.Remove(23);
+
+        foreach (object el in data)
+        {
+            Console.WriteLine(el); // displaying the elements
+        }
+    }
+}
+class OurArrayList { }
 class OurArrayList {}
 ```
 
@@ -119,25 +125,31 @@ Let's look at an example of Stack.
 ```cs
 using System;
 using System.Collections;
-
-Stack myStk = new Stack(); // Creating a stack
-
-// Adding Items to the top most of the stack
-myStk.Push(1); //The Push() method is used to add items to the top most of the stack
-myStk.Push(4);
-myStk.Push(3);
-myStk.Push(6);
-myStk.Push(4);
-
-Console.WriteLine(myStk.Pop()); // The pop() method removes the top item from the stack and returns it.
-Console.WriteLine(myStk.Peek()); //The Peek() method just returns the items at the top of the list without deleting them.
-Console.WriteLine(myStk.Peek());
-
-Console.WriteLine();
-
-foreach (int i in myStk)
+class MainClass
 {
-    Console.WriteLine(i);
+    public static void Main(string[] args)
+    {
+
+        Stack myStk = new Stack(); // Creating a stack
+
+        // Adding Items to the top most of the stack
+        myStk.Push(1); //The Push() method is used to add items to the top most of the stack
+        myStk.Push(4);
+        myStk.Push(3);
+        myStk.Push(6);
+        myStk.Push(4);
+
+        Console.WriteLine(myStk.Pop()); // The pop() method removes the top item from the stack and returns it.
+        Console.WriteLine(myStk.Peek()); //The Peek() method just returns the items at the top of the list without deleting them.
+        Console.WriteLine(myStk.Peek());
+
+        Console.WriteLine();
+
+        foreach (int i in myStk)
+        {
+            Console.WriteLine(i);
+        }
+    }
 }
 ```
 ### Output
@@ -159,21 +171,26 @@ Let's look at an example of a Queue:
 ```cs
 using System;
 using System.Collections;
-
-Queue animals = new Queue();
-animals.Enqueue("Animal 3"); //adds items at the end of the queue
-animals.Enqueue("Animal 4");
-animals.Enqueue("Animal 5");
-
-Console.WriteLine(animals.Dequeue()); // removes the top item from the queue and returns it.
-Console.WriteLine(animals.Peek());
-Console.WriteLine(animals.Peek());
-
-Console.WriteLine();
-
-foreach (string anml in animals)
+class MainClass
 {
-    Console.WriteLine(anml);
+    public static void Main(string[] args)
+    {
+        Queue animals = new Queue();
+        animals.Enqueue("Animal 3"); //adds items at the end of the queue
+        animals.Enqueue("Animal 4");
+        animals.Enqueue("Animal 5");
+
+        Console.WriteLine(animals.Dequeue()); // removes the top item from the queue and returns it.
+        Console.WriteLine(animals.Peek());
+        Console.WriteLine(animals.Peek());
+
+        Console.WriteLine();
+
+        foreach (string anml in animals)
+        {
+            Console.WriteLine(anml);
+        }
+    }
 }
 ```
 ### Output
@@ -193,17 +210,23 @@ Let's look at an example of Hashtable.
 ```cs
 using System;
 using System.Collections;
-  Hashtable ht = new Hashtable();  //Creating a Hashtable
-    // Adding elements in the Hashtable
-    ht.Add("msg", "Message 1");
-    ht.Add("car", "BMW");
-    ht.Add("ct", "Cat");
-    ht.Add("asp", "asp.net");
-  
-    foreach (DictionaryEntry d in ht)
-    {  
-       Console.WriteLine(d.Key + " " + d.Value);  
+class MainClass
+{
+    public static void Main(string[] args)
+    {
+        Hashtable ht = new Hashtable();  //Creating a Hashtable
+                                         // Adding elements in the Hashtable
+        ht.Add("msg", "Message 1");
+        ht.Add("car", "BMW");
+        ht.Add("ct", "Cat");
+        ht.Add("asp", "asp.net");
+
+        foreach (DictionaryEntry d in ht)
+        {
+            Console.WriteLine(d.Key + " " + d.Value);
+        }
     }
+}
 ```
 ### Output
 ```bash
