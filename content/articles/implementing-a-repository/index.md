@@ -41,10 +41,10 @@ You will notice that the link returns data in `JSON` format, as shown below:
 
 ![Data Format](/engineering-education/implementing-a-repository/data.png)
 
-The above data includes variables such as `userID`, `id`, `title`, and `body`. We will need to define these variables in the application.
+The above data includes variables such as `userID`, `id`, `title`, and `body`. We will need to declare these variables in the app.
 
 ### Getting started
-Open `Android Studio` and create a new project. Choose an `empty` template and click `finish`. You will need to be patient since this process usually takes some time.
+Open `Android Studio` and generate a new project. Choose an `empty` template and click `finish`. You will need to be patient since this process maybe time consuming.
 
 When the project completes, Android Studio will display all the required files in a new window. Before going further, we need to add several permissions and dependencies to our application.
 
@@ -95,7 +95,7 @@ apply plugin: 'kotlin-kapt'
 ```
 
 ### Creating the data class
-A data class allows us to define variables and their values. As noted, the application has four major variables; `userID`, `id`, `title`, and `body`.
+A data class allows us to define variables and their values. As noted, the application has four major variables; `userId`, `id`, `title`, and `body`.
 
 In the main package directory, create a new class and name it `Post`. 
 
