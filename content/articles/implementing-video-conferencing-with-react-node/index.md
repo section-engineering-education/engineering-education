@@ -26,8 +26,9 @@ For better understanding and utilization of this article, the reader is expected
 - WebRTC
 
 ### Fundamentals of web-based video conferencing
-Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full-motion and high-definition audio between multiple nodes
-Implementing video conferencing requires basic knowledge of the following concepts
+Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full-motion and high-definition audio between multiple nodes.
+
+Implementing video conferencing requires basic knowledge of the following concepts:
 - WebRTC
 - Graphql
 - Nodejs
@@ -37,16 +38,16 @@ Implementing video conferencing requires basic knowledge of the following concep
 WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their applications effortlessly.
 
 ### Components of video conferencing system:
-Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following:
+Web-based video conferencing involves the synergy of various frameworks and libraries which includes the following:
 - A network connection for audio and video data transfer which involves the use of 3G, 4G, or 5G broadband.
-- Voice over data internet protocol (VoIP), Integrated Service Digital Networks (ISDN).
+- Voice over data Internet Protocol (VoIP), Integrated Service Digital Networks (ISDN).
 - Microphones and Webcams.
 - Display screen, monitor, or projector
 - Software-based coding and decoding technologies (CODEC).
 - Acoustic echo cancellation (AEC) software for audio optimization and real-time communication.
 
 ### Requirements for web packets handling:
-For network communication to succeed it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
+For network communication to succeed, it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
 
 ### Implementation and coding:
 The application is a full-stack project that is divided into two segments, namely
@@ -54,7 +55,7 @@ The application is a full-stack project that is divided into two segments, namel
 2. The Server-Side
 
 ### Client-side setup - (index.js):
-The client interface is set up using ReactJS which is a lightweight frontend Javascript library. The various pages and subdivision of the client interface includes the following:
+The client interface is set up using `ReactJS` which is a lightweight frontend Javascript library. The various pages and subdivision of the client interface includes the following:
 
 #### Step 1: Getting started with a new React app
 
@@ -70,12 +71,12 @@ yarn
 
     yarn create react-app react-video-conferencing-app
 
-the above command should get you started with a new react app with all the default dependencies appropriately installed.
+The command above should get you started with a new react app with all the default dependencies appropriately installed.
 
     cd react-video-conferencing-app
     npm start
 
-the above command will change the directory to your new react app and get the development server running.
+The command above will change the directory to your new react app and get the development server running.
 
 #### Step 2: Installing the required client dependencies
 For successful development of the application, a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
@@ -350,7 +351,7 @@ Yarn
 
     yarn init
 
-the above command should initialize your server instance, ensure the instructions are followed.
+The command above should initialize your server instance, ensure the instructions are followed.
 
 ### Installing the required server dependencies
 
@@ -415,7 +416,7 @@ The Backend server is set up using `Nodejs` and `Graphql`. To guarantee optimal 
 ```
 
 ### Setting-up graphql server
-In this project, the Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers come with fully equipped mutations for data modification and alteration, query for data fetch, and subscription for real-time data instance monitoring. Below is the setup of the Graphql server.
+In this project, the Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers come with fully equipped mutations for data modification and alteration, query for data fetch, and subscription for real-time data instance monitoring. Below is the setup of the Graphql server:
 
 ```javascript
     import graphqlExpress from 'express-graphql';
@@ -483,7 +484,7 @@ In this project, the Graphql server is the tool used to interface between the cl
 
 ### Setting up the required mutations, queries, and subscriptions
 #### Step 1
-The first mutation will be to establish a connection with the second user for data transfer. Below is the code implementation of the mutation
+The first mutation is used to establish a connection with the second user for data transfer. Below is the code implementation of the mutation:
 
 ```javascript
     import { GraphQLObjectType, GraphQLInt, GraphQLBoolean, GraphQLString } from 'graphql';
@@ -561,7 +562,7 @@ Now that our mutation is up and running, we need to set up the query to facilita
 ```
 
 #### Step 3
-To enable real-time sockets monitoring, Graphql provides a tool called Subscription. Below is the subscription setup:
+To enable real-time sockets monitoring, Graphql provides a tool called `Subscription`. Below is the subscription setup:
 
 ```javascript
  import { RedisPubSub } from 'graphql-redis-subscriptions';
@@ -624,7 +625,7 @@ Errors may be ignored during application development. These errors are expected 
 ```
 
 #### Using React testing library
-React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils**. This is implemented using the following command:
+React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils**. It is implemented using the following command:
 
     npm install --save-dev @testing-library/react
     or
