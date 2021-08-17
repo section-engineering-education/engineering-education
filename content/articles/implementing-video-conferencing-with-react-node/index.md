@@ -111,7 +111,7 @@ Add the following dependencies in your package.json file and run `npm install` t
  "style-loader": "^0.20.2",
 ```
 
-#### Step 3: Setting up the Client Index file:
+#### Step 3: Setting up the client index file:
 This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.
 
 ```javascript
