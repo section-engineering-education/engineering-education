@@ -53,8 +53,8 @@ The application is a full-stack project that is divided into two segments, namel
 1. The Client-Side and
 2. The Server-Side
 
-### Client-Side setup - (index.js):
-The Client interface is set up using ReactJS which is a lightweight frontend JavaScript library. the various pages and subdivision of the client interface includes the following
+### Client-side setup - (index.js):
+The client interface is set up using ReactJS which is a lightweight frontend Javascript library. The various pages and subdivision of the client interface includes the following:
 
 #### Step 1: Getting started with a new React app
 
@@ -193,7 +193,7 @@ The application is divided into five (5) pages namely
 - Message Page
 - Settings Page
 
-And their respective routes are implemented as follows
+And their respective routes are implemented as follows:
 
     ```javascript
     import React from 'react';
@@ -228,13 +228,14 @@ And their respective routes are implemented as follows
 
 #### Step 5: Setting up the video components:
 The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
-It also enables the following operations
+
+It also enables the following operations:
 - Call Statuses
 - Accept Call
 - Ignore Call
 - Hang Up
 
-The implementation of the video component is illustrated below
+The implementation of the video component is illustrated below:
 
 ```javascript
     import React from 'react';
@@ -335,12 +336,12 @@ The implementation of the video component is illustrated below
 ```
 
 ### Server-side setup
-The first task in getting the server instance ready for subsequent development involves the following
+The first task in getting the server instance ready for subsequent development involves the following:
 
     Mkdir server
     Cd server
 
-Ensure that the server folder is in the main application folder containing the client
+Ensure that the server folder is in the main application folder containing the client.
 Npm
 
     npm init
@@ -349,7 +350,7 @@ Yarn
 
     yarn init
 
-the above command should initialize your server instance, ensure the instructions are followed appropriately.
+the above command should initialize your server instance, ensure the instructions are followed.
 
 ### Installing the required server dependencies
 
@@ -381,7 +382,7 @@ the above command should initialize your server instance, ensure the instruction
 ```
 
 ### Setting up the server – (index.js)
-The Backend server is set up using Nodejs and Graphql. To guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server
+The Backend server is set up using `Nodejs` and `Graphql`. To guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server:
 
 ```javascript
     import express from 'express';
@@ -482,7 +483,7 @@ In this project, the Graphql server is the tool used to interface between the cl
 
 ### Setting up the required mutations, queries, and subscriptions
 #### Step 1
-The first mutation will be to establish connection with the second user for data transfer. Below is the code implementation of the mutation
+The first mutation will be to establish a connection with the second user for data transfer. Below is the code implementation of the mutation
 
 ```javascript
     import { GraphQLObjectType, GraphQLInt, GraphQLBoolean, GraphQLString } from 'graphql';
@@ -519,7 +520,7 @@ The first mutation will be to establish connection with the second user for data
 ```
 
 #### Step 2
-Now that our mutation is up and running, we need to setup the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup.
+Now that our mutation is up and running, we need to set up the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup:
 
 ```javascript
     import { GraphQLList } from 'graphql';
@@ -579,12 +580,14 @@ To enable real-time sockets monitoring, Graphql provides a tool called Subscript
 ```
 
 ### Error handling and testing
-Applications as we know it has its own fair share of bugs and errors and handling these errors is a crucial part of application development. Graphql posses some errors that we will briefly look at and the ways of handling them.
-- Server Errors: these errors occur in the server and prevents appropriate server response to client-side queries and mutations.
-- Transaction Errors: these errors occur while a server update such as a mutation is being executed
-- Apollo Client Errors: these errors occur within the core or corresponding libraries.
+Applications as we know it has its own fair share of bugs and errors and handling these errors is a crucial part of application development. Graphql possesses some errors that we will briefly look at and the ways of handling them. 
 
-To set error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop along side the data returned from the server or cache.
+They include:
+- Server Errors - These errors occur in the server and prevent appropriate server response to client-side queries and mutations.
+- Transaction Errors - These errors occur while a server update such as a mutation is being executed
+- Apollo Client Errors - These errors occur within the core of corresponding libraries.
+
+To set the error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop alongside the data returned from the server or cache.
 
 ```javascript
     const MY_QUERY = gql`
@@ -630,7 +633,7 @@ React testing library is an excellent tool used in application modules and compo
     node build/start
 
 ### Conclusion
-In this article we had an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
+In this article, we had an in-depth look at the various concepts, fundamentals, components, and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql, and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
 
 Best Regards and Happy Coding
 Cheers!
