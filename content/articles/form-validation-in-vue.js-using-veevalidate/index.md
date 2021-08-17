@@ -6,7 +6,7 @@ In this tutorial, we will discuss and set up form validation using the vee-valid
 
 ### Prerequisites
 
-To follow along in this article, it is helpful to have the following:
+To follow along with this article, it is helpful to have the following:
 
 - [Node](https://nodejs.org) installed
 - [Vue](https://vuejs.org/) installed
@@ -39,13 +39,13 @@ vue create vue-form-validation
 
 We are going to start by installing tailwind and setting up a demo template for practice. Install [tailwind plugin][https://www.npmjs.com/package/vue-cli-plugin-tailwind]
 
-In the newly created repository, install the plugin using the above command:
+In the newly created repository, install the plugin using the command below:
 
 ```bash
 vue add tailwind
 ```
 
-Let's clean up the default Vue setup by deleting the HelloWorld component and its dependencies. Create a new component and set up the tailwind template, copy and paste the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
+Let's clean up the default Vue setup by deleting the HelloWorld component and its dependencies. Create a new component and set up the tailwind template. Copy and paste the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
 
 ### Introducing VeeValidate
 
@@ -128,7 +128,7 @@ Our element should match the above:
 />
 ```
 
-We are done we the first two processes of form validation, lets add our rules. We are going to register the rules _globaly_ to avoid code repetition, but before that import the vee-validate-rule library.
+We are done with the first two processes of form validation, lets add our rules. We are going to register the rules _globaly_ to avoid code repetition, but before that import the vee-validate-rule library.
 
 ```bash
 yarn add @vee-validate/rules
@@ -197,7 +197,7 @@ Note that the _name_ in the component must match with that defined in the _schem
 Let's add a guard that will enable validation only on form submission, add a _submit_ event provided by vee-validate. Update _Form_ component to match:
 
 ```js
-<vee-form :validation-schema="schema" @submit="register" " >
+<vee-form :validation-schema="schema" @submit="register" >
 ```
 
 We have emitted a _register_ function in our _Form_ component, let's define it:
@@ -408,7 +408,7 @@ These are properties that we set to disable alert element from displaying when t
 </div>
 ```
 
-We are using the v-if directive to toggle the alert message if set to a boolean and v-bind to display our tailwind properties.
+We are using the `v-if` directive to toggle the alert message if set to a boolean and v-bind to display our tailwind properties.
 Define the properties in the _register function_, update it to match the above;
 
 ```js
