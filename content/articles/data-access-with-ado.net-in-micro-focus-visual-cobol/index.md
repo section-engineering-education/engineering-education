@@ -76,7 +76,7 @@ invoke sqlConnection::Open().
 The statement creates a "NEW" SQLConnection object with the name sqlConnection. The connection string attribute is then used to give parameters for the connection. The "Open" method of sqlConnection is then used to establish the connection in the following statement. The connection string is the most difficult component of this operation. We've specified the User ID, password, and database to which we're attempting to connect. Workspace variables that contain the connection string can be created and passed to methods for setting up connections, or they can be created directly in the connection-starting procedure. The connection string can be defined in a variety of ways. Only one example of syntax can be shown. (If you have any issues about the connection strings, talk to your DBA or IT staff, or look them up on MSDN.)
 
 ### Create a Command
-Now that we've created our connection, we need to inform the database of what we're trying to accomplish. A command structure is used to do this. If you've ever used embedded SQL, you'll know what I'm talking about. Your previous statement would have been "EXEC SQL SELECT * FROM EMPLOYEES END-EXEC." Exactly that's what we're going to strive to accomplish!. We're going to pull some data from the Employee database and present it in the console window. The following statements are used to establish the command:
+Now that we've created our connection, we need to inform the database of what we're trying to accomplish. A command structure is used to do this. If you've ever used embedded SQL, you'll know what I'm talking about. Your prior statement would have been "EXEC SQL SELECT * FROM EMPLOYEES END-EXEC." We're going to pull some data from the Employee database and present it in the console window. The following statements are used to establish the command:
 
 ```bash
 set sqlCmd to "SELECT FirstName, LastName, HomePhone FROM Employees".
@@ -84,15 +84,17 @@ set sqlCommand to new type System.Data.SqlClient.SqlCommand(sqlCmd, sqlConnectio
 set sqlDataReader to sqlCommand::ExecuteReader.
 ```
 
-I established a WORKING-STORAGE variable and transferred my Select statement into it for this stage of the procedure. My user's input allows me to build a Select statement. A work can be completed in many ways, and this is just one of them. A SQLCOMMAND instance must be established after the command string has been generated. For the SQLCOMMAND class to fulfill its duty, it takes two parameters: the connection object (you must tell it where to execute the command) and the command to execute (once you have the connection, now what do you want to do). The `execute reader` command is the way you'll use to return the data to you after you've instantiated the SQL COMMAND. As a result, you will be provided with a data reader object that you can use to access your data. Use what method to determine if it returns data or not.
+I established a WORKING-STORAGE variable and transferred my Select statement into it for this stage of the procedure. My user's input allows me to build a Select statement. A work can be completed in many ways, and this is just one of them. A SQLCOMMAND instance must be established after the command string has been generated. 
+
+The only parameters necessary for the SQLCOMMAND class to function are the connection object (you must tell it where to execute the command) and the command to execute. The `execute reader` command is the way you'll use to return the data to you after you've instantiated the SQL COMMAND. As a result, you will be provided with a data reader object that you can use to access your data. Use what method to determine if it returns data or not.
 
 ### Read the Data
-OK! A connection to a database has been established. We've created and run a command against the connection, and the data should have returned. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. The value will be true or B"1" if there is information. The value will be false or B"0" if no data has been read. We'll add a a returning line to our read statement to set a Boolean variable (dataFound), and then verify if we have data to pry.
+OK! A database connection has been made. The data should have returned when we formed and ran a command against the connection. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. True or B"1" will be the value if there is information. "False" will be returned if no data has been read. DataFound will be set by adding a returning line to our read statement, and then checking if we have any data to pry from the filesystem. 
 
-We utilize a Perform statement to iterate through the dataset, returning the information we requested because we don't know how much data we have to handle. The function we'll use is "GetString," and it'll return a string to a variable we've specified in WORKING-STORAGE based on an ordinal location inside the dataset. Always remember that when working with arrays,.NET utilizes offset zero, thus the first field we'll access will be zero, followed by 1 and then 2.
+The Perform statement is used since we don't know how much data we'll have to deal with. The function we'll use is "GetString," and it'll return a string to a variable we've specified in WORKING-STORAGE based on an ordinal location inside the dataset. Always remember that when working with arrays,.NET utilizes offset zero, thus the first field we'll access will be zero, followed by 1 and then 2.
 
-As an example, consider the following code for reading data:
-
+Consider the following code for reading data as an example: 
+.
 ```sql
 set dataFound to true.
 move zero to recordsRead.
@@ -107,17 +109,17 @@ perform with test before until dataFound not equal to true
 end-perform.
 ```
 
-We did a 'primer' read of the data before starting the Perform loop, as you can see. This is noteworthy because if we don't have any data to process, we won't run the Perform loop. The employee's First Name, Last Name, and Home Phone Number are returned by three "GetString" invocations within the Perform loop. We keep track of how many records we've read and display the most recent one on the console. Finally, we read to see if there is any additional data to process and if so, we repeat the procedure or exit the Perform loop.
+We did a 'primer' read of the data before starting the Perform loop, as you can see. This is noteworthy because if we don't have any data to process, we won't run the Perform loop. Perform loop contains three "GetString" calls, which return the employee's first name, last name & home phone number. We keep track of how many records we've read and use the console to display the most recent one. Finally, we check to see if there is any more data to process, and if there is, we either repeat the method or exit the Perform loop.
 
 When you run the sample application, the following data should be displayed:
 
 ![output of our project](engineering-education/data-access-with-ado.net-in-micro-focus-visual-cobol/output.png)
 
 
-Is there anything out of place? Perhaps there's a little something off about this picture. There is a lot of ‘space' between the final name and the phone number, yet the first and last names have the appropriate amount of space. Why? Working in a managed environment and using managed code types has several advantages, one of which is the environment's ability to convey information in a much clearer, structured manner. We defined the first name as a ‘string' entity in the Working-Storage section, and the last name as a normal COBOL data type of ‘PIC X(20)'. The managed code type is automatically scaled when we display the data, based on the number of non-space characters present. The amount of characters defined by the COBOL data type is displayed, which in this example is ‘20.' Experiment with the definitions in the section Working-Storage. Change the data type of the last name to ‘string' to see how it affects the display.
+Is there anything out of place? Perhaps there's a little something off about this picture.In contrast, there is too much space between the last name and the phone number, while there is just enough between the first and last names. Why? Working in a managed environment and using managed code types provides a number of benefits, one of which is the environment's ability to present information in a much more structured and clear manner. Working-Storage specifies the first name as a string entity, and the last name as a normal COBOL data type of 'PIC X(20)', respectively. Our data is automatically scaled based on how many non-space characters are present when we display it. The amount of characters defined by the COBOL data type is displayed, which in this example is ‘20.' Experiment with the definitions in the section Working-Storage. Change the data type of the last name to ‘string' to see how it affects the display.
 
 ### Housekeeping
-Following that, we processed all of our data. As a result, the Perform loop is terminated. We must close the data reader and the connection before closing the program. On the console, we display a message and wait for the user to quit by pressing the enter key. To show you the screen display, we run the "Accept" statement. The following is the housekeeping code:
+After that, we processed all of our information. As a result, the Perform loop is terminated. We must close the data reader and the connection before we can terminate the program. On the console, we display a message and wait for the user to quit by pressing the enter key. To show you the screen display, we run the "Accept" statement. The following is the housekeeping code:
 
 ```SQL
 invoke sqlDataReader::Close().
@@ -131,12 +133,12 @@ goback.
 ### Other Data Providers
 This article demonstrated how to use ADO for SQL Server to access data. Oracle and IBM have both given managed namespaces for their respective database environments, allowing for similar capability.
 
-If you're dealing with Oracle, you'll need to use ODP.NET or Oracle Data Provider for.NET. More information about ODP.NET can be found here. Oracle.DataAccess.The client is the namespace you'll be working with. For more details, go to the Oracle documentation.
+You'll need `ODP .NET`, or Oracle Data Provider for .NET, if you're dealing with Oracle. Here's where you can learn more about ODP .NET. Oracle.DataAccess.The client is the namespace you'll be working with. Go to the Oracle manual for further information.
 
 The [IBM Data Server Provider for.NET](https://www.ibm.com/docs/en/db2/10.5?topic=net-provider-support-microsoft-entity-framework) must be installed for IBM. If you're using IBM DB2, you'll be dealing with IBM.Data.DB2, and if you're using Informix, you'll be working with IBM.Data.Informix.
 
 ### Wrap-Up
-Data access in the Microsoft.NET environment can assist save time, automate operations, and simply show data. The steps provided in this article should assist you in comprehending the processing requirements. This article demonstrated how to develop ADO-based software by hand. Additionally, Micro Focus has provided an ADO Connection Editor and an OpenESQL utility for developing SQL-enabled source code as additional support.
+Data access in the Microsoft .NET environment can assist save time, automate operations, and simply show data. The steps provided in this article should assist you in comprehending the processing requirements. This article demonstrated how to develop ADO-based software by hand. Additionally, Micro Focus has provided an ADO Connection Editor and an OpenESQL utility for developing SQL-enabled source code as additional support.
 
 ### Conclusion
 In this article, we have learned how to access data with ADO.NET In Micro Focus Visual COBOL. We also have learned about the basic ADO Flow of data, the Preparation, how to create a Connection, creating a Command, read the Data, understood what housekeeping is, knowing other data providers, and finally understand what Wrap-Up is.
