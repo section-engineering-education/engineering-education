@@ -1,5 +1,5 @@
 ### Introduction 
-`Dependency injection` in Flutter is an object-oriented technique that sends the dependencies of another object to an object. We shift the creation and restriction of the dependant objects outside of the class that relies on them using dependency injection. This brings a more significant level of adaptability, decoupling, and simpler testing.
+`Dependency injection` in Flutter is an object-oriented technique that sends the dependencies of another object to an object. Using dependency injection, we can also move the creation and restriction of dependent objects outside of the classes. This brings a more significant level of adaptability, decoupling, and simpler testing.
 
  The `provider package` wraps Inherited Widgets in an easy-to-use wrapper. It makes it easy to manage and utilize, and it also includes a state management mechanism for managing data within the app.
 
@@ -15,7 +15,7 @@ Although dependency injection is a simple example, libraries are frequently used
 1. Mirrors are crippled for execution reasons. 
 2. The settled idea of widgets makes it unfeasible to pass conditions many levels down the tree.
 
-However, these problems can be overcome by the use of the inject library.
+The inject library, on the other hand, can be used to solve similar issues.
 Annotations used by the inject library are
 
 1. **@Injector**-An inversion of control container developed from a bunch of modules.
@@ -93,8 +93,8 @@ abstract class Main {
    }
 }
 ```
- In this example, `ExampleExa` and `NewExa` are already defined, `NewApp` is our root widget, and `main.inject.dart` is an auto-generated file.
-Therefore the main function can be like this ;
+ In this example, `ExampleExa` and `NewExa` are already defined, `NewApp` is our root widget, and `main.inject.dart` is a file that was created automatically.
+As a result, the primary function may be as follows:
 ```
 void main() async {
 var container = await Main.create(
@@ -104,7 +104,7 @@ NewExa(),
 runApp(container.app);
 }
 ```
- Inject also works with code generation and we require the use of `build runner` to generate the necessary code or watch command to keep the source code synced.
+ Because inject works with it, we recommend using either the build runner or the watch command to keep the source code in sync throughout code creation.
 ```
 flutter pub run build_runner build
 ```
@@ -112,7 +112,7 @@ or
 ```
 flutter pub run build_runner watch
 ```
-The code will be created in the cache folder, which is currently not supported by Flutter. As a result, we must include the following text in the inject_generator.build.yaml file:
+The code will be saved in the cache folder, which Flutter does not yet support. As a result, the following text must be included in the inject_generator.build.yaml file:
 ```
 builders:
  inject_generator:
