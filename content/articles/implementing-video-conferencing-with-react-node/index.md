@@ -1,37 +1,43 @@
-# Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/
+title: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
+description: This article takes the reader through implementing dark mode using Tailwind CSS. The new version of Tailwind released a feature that enables its users to add dark mode styles to their pages.
+author: samuel-cletus
+date: 2021-08-17T00:00:00-15:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction:
-
+  - url: /engineering-education/implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/hero.jpg
+    alt: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC Hero image example
+---
 Developers around the world have an incredible task of handling client requirements, and video conferencing is one of those requirements developers experience difficulty implementing due to its complexity. The pandemic has opened up opportunities in remote work and “work from home” which comes at the cost of efficient video conferencing and packets handling.
+ <!--more-->
 ReactJS and webRTC provides an excellent tool for making the implementation of web-based video conferencing seamlessly easy. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
 
 ### Prerequisites:
-
-For better understanding and utilization of this article, the reader is expected to have basic knowledge of the following
-
+For better understanding and utilization of this article, the reader is expected to have basic knowledge of the following:
 - Geting started with ReactJS ES6
 - Getting started with Nodejs
 - Getting started with Graphql and
 - WebRTC
 
 ### Fundamentals of Web-Based Video Conferencing:
-
 Video conferencing is essentially the visual interaction between two or more nodes connected to the internet. It provides the transmission of static images, texts, full motion and high-definition audio between multiple nodes
 Implementing video conferencing requires basic knowledge of the following concepts
-
 - WebRTC
 - Graphql
 - Nodejs
 - ReactJS
 
 #### WebRTC:
-
 WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their application effortlessly.
 
 ### Components of Video Conferencing System:
-
 Web-based video conferencing involves the synergy of the various frameworks and libraries which includes the following
-
 - A network connection for audio and video data transfer which involves the use of 3G, 4G or 5G broadband
 - Voice over data internet protocol (VoIP), Integrated service Digital Networks (ISDN)
 - Microphones and Webcams
@@ -40,22 +46,18 @@ Web-based video conferencing involves the synergy of the various frameworks and 
 - Acoustic echo cancellation (AEC) software for audio optimization and real-time communication.
 
 ### Requirements for Web Packets Handling:
-
 For a network communication to succeed it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
 
 ### Implementation and Coding:
-
 The application being a full stack project is divided into two segments, namely
-
 1. The Client-Side and
 2. The Server-Side
 
 ### Client-Side Setup - (index.js):
-
 The Client interface is setup using ReactJS which is a lightweight frontend JavaScript library. the various pages and subdivision of the client interface includes the following
 
 #### Step 1. Getting started with a new React app:
-
+```bash
 npx
 
     npx create-react-app react-video-conferencing-app
@@ -76,7 +78,6 @@ the above command should get you started with a new react app with all the defau
 the above command will change the directory to your new react app and get the development server running.
 
 #### Step 2. Installing the required Client dependencies:
-
 For a successful development of the application a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
 
     npm install
@@ -111,7 +112,6 @@ For a successful development of the application a few dependencies must be insta
 ```
 
 #### Step 3. Setting up the Client Index file:
-
 This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.
 
 ```javascript
@@ -186,7 +186,6 @@ This file is the main file for integrating the client and the server codes toget
 ```
 
 #### Step 4. Setting up the routes and other pages for the client UI:
-
 The application is divided into five (5) pages namely
 
 - Home Page
@@ -229,7 +228,6 @@ And their respective routes are implemented as follows
     ```
 
 #### Step 5. Setting up the Video components:
-
 The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 It also enables the following operations
 
@@ -339,7 +337,6 @@ The implementation of the video component is illustrated below
     ```
 
 ### Server-Side Setup
-
 The first task in getting the server instance ready for subsequent development involves the following
 
     Mkdir server
@@ -386,7 +383,6 @@ the above command should initialize your server instance, ensure the instruction
 ```
 
 ### Setting Up the Server – (index.js)
-
 The Backend server is setup using Nodejs and Graphql. In order to guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server
 
     ```javascript
@@ -420,7 +416,6 @@ The Backend server is setup using Nodejs and Graphql. In order to guarantee opti
     ```
 
 ### Setting-up Graphql server
-
 In this project, Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers comes with fully equipped mutations for data modification and alteration, query for data fetch and subscription for real-time data instance monitoring. Below is the setup of the Graphql server.
 
     ```javascript
@@ -488,9 +483,7 @@ In this project, Graphql server is the tool used to interface between the client
     ```
 
 ### Setting Up the Required Mutations, Queries and Subscriptions
-
 #### Step 1:
-
 The first mutation will be to establish connection with the second user for data transfer. Below is the code implementation of the mutation
 
     ```javascript
@@ -528,7 +521,6 @@ The first mutation will be to establish connection with the second user for data
     ```
 
 #### Step 2:
-
 Now that our mutation is up and running, we need to setup the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup.
 
     ```javascript
@@ -568,7 +560,7 @@ Now that our mutation is up and running, we need to setup the query to facilitat
       },
     };
 
-````
+```
 
 #### Step 3:
 To enable real-time sockets monitoring, Graphql provides a tool called Subscription. Below is the subscription setup
@@ -587,10 +579,9 @@ To enable real-time sockets monitoring, Graphql provides a tool called Subscript
    },
    retry_strategy: options => Math.max(options.attempt * 100, 3000),
  });
-````
+```
 
 ### Error Handling and Testing
-
 Applications as we know it has its own fair share of bugs and errors and handling these errors is a crucial part of application development. Graphql posses some errors that we will briefly look at and the ways of handling them.
 
 - Server Errors: these errors occur in the server and prevents appropriate server response to client-side queries and mutations.
@@ -599,7 +590,7 @@ Applications as we know it has its own fair share of bugs and errors and handlin
 
 To set error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop along side the data returned from the server or cache
 
-    ```javascript
+```javascript
     const MY_QUERY = gql`
       query WillFail {
         badField
@@ -620,22 +611,20 @@ To set error policy on each request the following code block provided by Graphql
         </div>
       );
     }
-    ```
+```
 
 #### Ignoring Errors
-
 Errors may be ignored during application development. These errors are expected errors that the developer feels unbothered about, to achieve that the following code block should be integrated
 
-    ```javascript
+```javascript
     onError(({ response, operation }) => {
       if (operation.operationName === "IgnoreErrorsQuery") {
         response.errors = null;
       }
     })
-    ```
+```
 
 #### Using React Testing Library
-
 React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils.** this is implemented using the following command
 
     npm install --save-dev @testing-library/react
@@ -645,14 +634,12 @@ React testing library is an excellent tool used in application modules and compo
     node build/start
 
 ### Conclusion
-
 In this article we had an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
 
 Best Regards and Happy Coding
 Cheers!
 
 ### References:
-
 Centralized Conferencing (xcon). Left.org. 2014-07-16. Retrieved 2019-07-11
 
 https://testing-library.com/docs/react-testing-library/intro/
