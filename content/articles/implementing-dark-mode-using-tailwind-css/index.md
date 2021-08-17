@@ -6,7 +6,7 @@ url: /implementing-dark-mode-using-tailwind-css/
 title: Implementing Dark Mode Using Tailwind CSS
 description: This article takes the reader through implementing dark mode using Tailwind CSS. The recent version of Tailwind css comes with a feature that enables users to add dark mode to their webpages.
 author: monica-masae
-date: 2021-08-17T00:00:00-10:00
+date: 2021-08-17T00:00:00-10:50
 topics: []
 excerpt_separator: <!--more-->
 images:
