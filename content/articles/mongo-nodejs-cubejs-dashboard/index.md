@@ -214,7 +214,6 @@ cube(`Employees`, {
 });
 
 ```
-
 From the above schema, we've both the measures and dimensions. Measures are used to represent quantitative data while the dimensions are categorical data.  
 
 ### Adding Cube.js environmental variables
@@ -248,7 +247,6 @@ A full source code can be found [here](https://github.com/bhanjibrilliant/mongod
 In this tutorial, we have seen how we can build an analytics dashboard using the Express, Cube.js, and MongoDB instance. We've also seen why we chose Cube.js to write queries instead of the normal repetitive SQL queries.  
 
 Happy Coding!
-
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
