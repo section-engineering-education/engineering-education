@@ -1,4 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /how-to-implement-inline-functions/
+title: Implementing inline functions in C++
+description: This article will introduce the reader to inline functions in C++ which is an important domain in programming and follow it up with a practical demonstration.
+author: dawe-daniel
+date: 2021-08-18T00:00:00-13:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /how-to-implement-inline-functions/hero.jpg
+    alt: How to implement inline functions image
+---
 
 One of the primary goals of employing functions in a program is to preserve memory especially when a function is likely to be called repeatedly. When a function is called, it takes a long time to execute operations like shifting to calling the function.
 <!--more-->
@@ -221,4 +236,3 @@ Inline functions, last but not least, are a key component of C++. When inline fu
 In this article, we have taken a look at inline functions, what they are, when to use them along some practical demonstrations. We have seen how inline functions are more effective than preprocessor macros. I hope that this tutorial gives you insight and helps you in your future programs.
 
 Happy Coding!
-
