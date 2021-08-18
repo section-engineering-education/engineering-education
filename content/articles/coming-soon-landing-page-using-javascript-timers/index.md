@@ -10,25 +10,25 @@ This article will teach you how to make a coming soon landing page, but first th
 - [Introduction](#introduction)
 - [JavaScript timers overview](#javascript-timers-overview)
 - [code execution after a delay](#code-execution-after-a-delay)
-- [Code Execution at regular intervals](#code-execution-at-regular-intervals)
+- [Code execution at regular intervals](#code-execution-at-regular-intervals)
 - [Cancelling a timer](#cancelling-a-timer)
 - [Template section](#template-section)
 - [Best practices](#best-practices)
 - [Conclusion](#conclusion)
 
-### Javascript timers overview
+### JavaScript timers overview
 A timer is a feature that allows us to run a program at a predetermined time. Timers can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading. For example, timers can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things.  
 
 In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers allow the implementation of timer functions, and their implementations differ from one browser to another.
 
-In browsers, the window interface is the parent to main timer features. Since the window interface makes its elements available globally in the main javascript scope, `setTimeout()` may be used in the browser console.
+In browsers, the window interface is the parent to main timer features. Since the window interface makes its elements available globally in the main JavaScript scope, `setTimeout()` may be used in the browser console.
 
 ### Code execution after a delay
 The `setTimeout()` function is used to only run a function or a piece of code once after a given amount of time has passed.
 
 **syntax**
 
-```javascript
+```JavaScript
 let timeout_id = setTimeout(function[, delay, arg1, arg2,arg3, ...]); //syntax 1
 //or
 let timeout_id= setTimeout(function[, delay]); //syntax 2
@@ -42,7 +42,7 @@ You must give two parameters to utilize this function: A (function)[https://deve
 
 Let's proceed and create HTML document `index.html`. Copy and paste the following code snippets:  
 
-```html
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,32 +53,31 @@ Let's proceed and create HTML document `index.html`. Copy and paste the followin
 </head>
 <body>
     <button type="button" onclick="setTimeout(delayGreetings,2000)">click Me</button>
-  
-  <script>
+</body>
+   <script>
 function delayGreetings() {
     console.log('Hello John Doe!');
 }
 </script>
-</body>
 </html>
 ```
-You notice that when the above code is executed on the browser, the button click displays `Hello John Doe!` after 2s on the console.
+You notice that when the above code is executed on the browser, the button click displays `Hello John Doe!` after 2s on the browser console.
 
 **_TASK-1_**
 
-Use the `set timeout function to print the following two messages after their respective delays.
+Use the `setTimeout()` function to print the following two messages after their respective delays.
 
 - After 4 seconds, display greetings "Hello John Doe after 4secs"
 - After 8 seconds, display greetings "Hello John Doe after 8secs."
 
-**CONSTRAIT :**
-In your solution, you can only define one function, which includes inline functions. As a result, a lot of setTimeout calls will have to use the same code.
+**CONSTRAINT:**
+In your solution, you can only define one function, which includes inline functions. As a result, a lot of `setTimeout()` calls will have to use the same code.
 
 **SOLUTION**
 
 - **Task-1** may be solved in a variety of ways, but this is one of them.
 
-```javascript
+```JavaScript
   const delayGreetings = (delay) => {
     console.log("Hello John Doe after " + delay + " seconds");
   };
@@ -89,14 +88,14 @@ In your solution, you can only define one function, which includes inline functi
 #### Explanation
 - I gave `delayGreetings()` a delay parameter and utilized the delay argument's value in the displayed message. As a result, depending on the delay value we provide to the function, it might print different messages.
 
-- After that, I used `delayGreetings()` function in two `setTimeout()` calls, one for 4 seconds and the other for 8 seconds. A `third parameter` is sent to both of these setTimeout calls to represent the `delay` argument for `delayGreetings()`.
+- After that, I used the `delayGreetings()` function in two `setTimeout()` calls, one for 4 seconds and the other for 8 seconds. A `third parameter` is sent to both of these setTimeout calls to represent the `delay` argument for `delayGreetings()`.
 
 ### Code execution at regular intervals
 Similarly, the `setInterval()` method may be used to execute a function or a given piece of code at certain intervals.
 
 **syntax**
 
-```javascript
+```JavaScript
 let interval_id = setInterval(func, [delay, arg1, arg2, ...]); //syntax 1
 //or
 let interval_id = setInterval(function[, delay]); //syntax 2
@@ -108,23 +107,23 @@ Begin by defining two parameters, one of which defines the `function` to be perf
 
 **Example**
 
-```javascript
+```JavaScript
 setInterval(
   () => console.log("Hello John Doe after every 3 seconds"),
   3000);
 ```
 
-The above code executes after every 3 seconds in the console.
+The above code executes after every 3 seconds in the browser console.
 
 **_Task-2_**
 - use the `setInterval()` function to display your local computer time after every one second.
 
 **Solution**
 One of the way to solve **Task-2** is as follows:
-- Create a HTML document save it as `index.html`.
-- In this page,after the paragraph,add javaScript code inside `<script></script>` tags.
+- Create an HTML document save it as `index.html`.
+- In this page,after the closing `body` tag,add JavaScript code inside `<script></script>` tags.
 
-```html
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,14 +135,15 @@ One of the way to solve **Task-2** is as follows:
 <body>
     
     <p>current time on your computer is: <span id="clock"></span></p>
-    <script>
+   
+</body>
+   <script>
         function showTime() {
             var d = new Date();
             document.querySelector("#clock").innerHTML = d.toLocaleTimeString();
         }
-        setInterval(displayTime, 1000);
+        setInterval(showTime, 1000);
         </script>
-</body>
 </html>
 ```
 
@@ -151,14 +151,14 @@ After every 1 second, the `showTime()` method is executed. It Retrieves your com
 
 ### Cancelling a timer
 Using the `setTimeout()` and `setInterval()` methods will return an integer value that will identify the timer generated by these methods by its `unique ID`.
-You may deactivate or clear the timer with this `ID` and stop the execution of code in advance by using this `ID` to disable or clear it. Two methods are available for clearing a timer: `clearTimeout()` and `clearInterval ()`.
+You may deactivate or clear the timer with this `ID` and stop the execution of code in advance by using this `ID` to disable or clear it. Two methods are available for clearing a timer: `clearTimeout()` and `clearInterval()`.
 
 To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen in the following example:
-- Create a HTML document save it as `index.html`.
-- In this page,after the button element,add JavaScript code inside `<script></script>` tags.
+- Create an HTML document save it as `index.html`.
+- In this page,after the closing `body` tag,add JavaScript code inside `<script></script>` tags.
 
 
-```html
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,7 +172,8 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
     <button type="button" onclick="delayedGreetings();">Show greetings After Two Seconds</button>
         
     <button type="button" onclick="clearGreetings();">Cancel greetings Before It is Display</button>
-    
+   
+</body>
     <script>
         
           function displayGreetings() {
@@ -187,15 +188,13 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
           clearTimeout(timeoutID);
         }
         </script>
-</body>
 </html>
 ```
-- It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` functions.
-- Create a html document save it as `index.html`.
-- In this page,after the button element,add JavaScript code inside `<script></script>` tags.
+ It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` functions.To do this : -
+- Create an HTML document save it as `index.html`.
+- In this page,after the closing body tag,add JavaScript code inside `<script></script>` tags.
 
-
-```html
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,10 +207,8 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
     <p>The current time on your computer is: <span id="clock"></span></p>
         
     <button onclick="stopClock();">Stop Clock</button>
-
-
-
-  <script>
+</body>
+   <script>
         var intervalID;
         
         function showTime() {
@@ -225,7 +222,6 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
         
         var intervalID = setInterval(showTime, 1000);
         </script>
-</body>
 </html>
 
 ```
@@ -266,15 +262,15 @@ In this section, I've designed a responsive coming soon landing page. I've used 
 ![small-devices](/engineering-education/coming-soon-landing-page-using-javascript-timers/temp03.png)
 
 #### Source code
-- Create a directory `coming-soon-landing-page`.
+- Create a directory `coming-soon-landing-page` which will be your main folder.
 - Create an HTML document save it as `index.html` in the main folder.
 - Create 3 sub-folders in the main folder : `css`,`img` and `js`.
 - From the `css` sub-folder you will store all your `stylesheets` and link them in the `<head>` section of the HTML document.
 - `js` sub-folder will contain your `JavaScript` files for example `main.js`.
-- All images will be in `img` sub-folder.
+- All images will be in the `img` sub-folder.
    
-**MARK-UP SECTION**
-```html
+**Mark-up Section**
+```HTML
 <!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
@@ -377,8 +373,8 @@ In this section, I've designed a responsive coming soon landing page. I've used 
 </html>
 ```
 
-**CSS SECTION**
-- style.css
+**Css Section**
+/*style.css*/
 ```css
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -402,9 +398,9 @@ hr {
 }
 ```
 
-**JAVSCRIPT SECTION**
-- main.js
-```javascript
+**JavaScript section**
+ //main.js
+```JavaScript
 let countDate = new Date("sep 1,2021 00:00:00").getTime();
 
 let x = setInterval(() => {
@@ -433,6 +429,6 @@ Because JavaScript engines only have one thread, asynchronous events are forced 
 All of this information is highly essential and paramount. Knowing how a JavaScript engine works is a wonderful basis for constructing complex application code, especially given the enormous amount of asynchronous events that normally occur.
 
 Building a user attractive coming soon landing page will boost the rate of attracting users to register in your site always go for user sight.
-To do so, make sure your landing page is responsive, include a countdown, and include your social media links. Also, make sure your website is capable of notifying people so that they may subscribe with their email addresses to be notified when the page is ready to be launched.
+To do so, make sure your landing page is responsive, include a countdown, and include your social media links. Also, make sure your website is capable of notifying people so that they may subscribe with their email addresses to be alerted when the page is ready to be launched.
 
 Happy Coding!
