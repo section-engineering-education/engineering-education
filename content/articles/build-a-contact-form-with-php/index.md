@@ -19,7 +19,18 @@ images:
 In this tutorial, will build a contact form with PHP. It will include the following features, form validation, the ability to send emails using Google Gmail SMTP server, and [PHPMailer library](https://github.com/PHPMailer/PHPMailer).
 
 ![Project](/engineering-education/build-a-contact-form-with-php/project.png)
-
+### Table of contents
+- [Prerequisites](#prerequisites).
+- [Project Setup & Overview](#project-setup-overview).
+- [PHP New Project](#php-new-project).
+  - Step 1
+  - Step 2
+- [Creating the Form](#creating-the-form).
+- [Form validation in PHP](#form-validation-in-php).
+- [Sending Email with PHP Mailer and Google Gmail SMTP server](#sending-email-with-php-mailer-and-google-gmail-smtp-server).
+  - Download PHP mailer
+  - Configure your Gmail account
+- [Conclusion](#conclusion).
 ### Prerequisites
 
 To follow along with this tutorial, a basic understanding of HTML and PHP is required. Therefore, you must have PHP installed. For this tutorial, we will be using [XAMPP](https://www.apachefriends.org/index.html) for our development purposes to run PHP locally on our machine.
