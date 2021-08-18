@@ -236,3 +236,6 @@ Inline functions, last but not least, are a key component of C++. When inline fu
 In this article, we have taken a look at inline functions, what they are, when to use them along some practical demonstrations. We have seen how inline functions are more effective than preprocessor macros. I hope that this tutorial gives you insight and helps you in your future programs.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
