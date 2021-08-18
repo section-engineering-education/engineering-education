@@ -81,7 +81,7 @@ We'll be creating a chart that visualize the trends in usage for different text 
 
 Here, for our model, we'll be creating two fields - User field `num_users` and text editor field `editor_name`.
 
-In the `editors` directory, edit the `models.py` file and add the following lines of code to it:
+In the `editors` directory, copy and paste the following code in the `models.py` file:
 
 ```python
 from django.db import models
@@ -105,11 +105,11 @@ from .models import Editors
 admin.site.register(Editors)
 ```
 
-The next step is to migrate our model to the database.
+Next, we need to migrate our model to the database
 
-Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. So, basically when create a new model, we also need to create a migration to create the required table in the database. 
+Migrations are Django’s way of publishing changes you make to your models into your database schema. So, basically when create a new model, we also need to create a migration to create the required table in the database. 
 
-Now, let's migrate our model to the database by running the commands below:
+Next, we migrate our model by running the commands below:
 
 ```bash
  python manage.py makemigrations # migrating the app and database changes
@@ -167,7 +167,7 @@ We do not have our `chart.html` file created yet. Let's create that by creating 
 ### Creating templates
 We start by creating a templates directory in our base directory. This templates directory will house our `base.html` file.
 
-`base.html` is basically a template that you extend on every page of your website.
+`base.html` is basically the skeleton for all pages in the application.
 
 We should have something like this: `django-charts/templates/base.html`.
 
@@ -309,7 +309,7 @@ Now, let's test this out by starting the server with the following command:
 ### Conclusion
 To conclude, we have learned about Chart.js. We have also learned to integrate charts in our Django app.
 
-There are tons of things you can achieve with chart.js. In this tutorial we used a `doughnut` chart type, there other chart types you can use. You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on chat types.
+There are lots of things you can achieve with chart.js. In this tutorial we used a `doughnut` chart type, there other chart types you can use. You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on chat types.
 
 Here is a link to the [github repo](https://github.com/shosenwales/Django-charts) that contains the full code.
 
