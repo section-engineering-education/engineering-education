@@ -1,6 +1,5 @@
 ### Introduction
-A `Coming Soon` landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon.
-Since a coming soon page lacks a header or a footer, visitors cannot navigate to the rest of your website hence it is important to capture what is under development so as to give as much information as possible.  
+A `Coming Soon` landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon. Since it lacks a header or a footer, visitors cannot navigate to the rest of your website hence it is important to capture what is under development so as to give as much information as possible.  
 
 Every coming soon page includes a statement encouraging visitors to return at a later time, as well as any other pertinent information concerning the website that is under development.  
 This article will teach you how to make a coming soon landing page but first things first you will learn about JavaScript timers to get you started.
