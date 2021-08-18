@@ -150,3 +150,5 @@ Using a phone's sensor to collect data is easy. It involves the activation of th
 They are also easy to access since you only need to have the mobile Matlab app, and you are ready to begin the collection. 
 
 The significant advantage is that the data can be collected using a readily available resource(phone's sensor). You can be sure that if 80% of the day, you have your iPhone or Android phone with you, and you can collect any data anywhere and anytime.
+---
+Peer Review Contributions by: [Monica-Masae](/engineering-education/authors/monica-masae/)
