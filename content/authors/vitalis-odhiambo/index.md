@@ -2,5 +2,5 @@
 title: Vitalis Odhiambo
 type: authors
 ---
-Vitalis is a student at the Technical University Of Mombasa pursuing  Bachelors Of Technology In Electrical And Electronics Engineering. 
-I am passionate about programming, technological trends, DIY projects, and football.
+Vitalis is a student at the Technical University of Mombasa pursuing  Bachelors of Technology In Electrical And Electronics Engineering. 
+He is passionate about programming, technological trends, DIY projects, and football.
