@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/
+title: What is RabbitMQ? Dockerize a RabbitMQ Instance using Docker Containers
+description: In this article, we will be introduced to RabbitMQ. We will deploy a RabbitMQ instance and a RabbitMQ management UI to Docker swarm using docker compose.
+author: faith-musyoka
+date: 2021-08-18T00:00:00-04:30
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/hero.png
+   alt: Getting started with RabbitMQ
+---
+
 [RabbitMQ](https://www.rabbitmq.com/) is an open-source distributed message queue that supports many communication protocols. It is a message broker, and it receives from senders (producer) and forwards messages to receivers (consumer). These messages are maintained in a queue. A queue is, in essence, a huge message buffer built upon the first-in, first-out(FIFO) principle. Many producers can submit messages to queues, and consumers can attempt to get messages from these queues.
 
 ### RabbitMQ architecture and essential components
