@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /c-sharp-collections/
-title: Collections in C#
+title: Introduction to Collections in C#
 description: In this article, we will be exploring the C# Collections Framework. We will be looking at the different collection types, and how to use them.
 author: geoffrey-mwangi
 date: 2021-08-18T00:00:00-16:00
