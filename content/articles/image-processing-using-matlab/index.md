@@ -239,7 +239,7 @@ The area can be converted into square kilometers using a scale that may be provi
 
 Use the `imtool(i)` function to measure the distance between the beginning and the end of the linear scale; The measured value will be in pixels, and it represents the predetermined dimension of the scale. Convert from pixel to the required unit.
 
-### conclusion
+### Conclusion
 Matlab provides a perfect environment for image processing, as the commands and snippets are easy to follow and apply. 
 
 Image processing has a wide range of application areas, such as;
