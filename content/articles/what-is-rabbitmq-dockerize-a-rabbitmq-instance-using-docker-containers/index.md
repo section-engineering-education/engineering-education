@@ -2,7 +2,7 @@
 
 ### RabbitMQ architecture and essential components
 
-RabbitMQ architecture starts with a producer and consumer. As we said, the producer is the application or service which is sending messages. The consumer is the application or service which will be receiving the messages. So instead of the producer calling consumer service directly, we set up another server that acts as the broker between the two. In this case, we will have a RabbitMQ server.
+RabbitMQ architecture is made up of a producer and consumer. As we said, the producer is the application or service which is sending messages. The consumer is the application or service which will be receiving the messages. So instead of the producer calling consumer service directly, we set up another server that acts as the broker between the two. In this case, we will have a RabbitMQ server.
 
 There are significant components that facilitate RabbitMQ message brokerage between the consumer and the producer. These are
 
@@ -196,8 +196,6 @@ Now we will create a binding to the newly created queue. Scroll down and Add bin
 ![binding](/engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/binding.png)
 
 ![queue-binding](/engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/queue-binding.png)
-
-At this point, the pattern you have created is similar to this one. Just as we have explained earlier. Now this time with the actual implementation.
 
 ![direct-exchange-queue](/engineering-education/what-is-rabbitmq-dockerize-a-rabbitmq-instance-using-docker-containers/direct-exchange-queue.png)
 
