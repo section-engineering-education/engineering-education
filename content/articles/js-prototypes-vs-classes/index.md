@@ -1,8 +1,29 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /js-prototypes-vs-classes/
+title: JavaScript Class vs Prototype
+description: This tutorial will walk the reader through the concept of JavaScript classes and protypes.
+author: owino-wendy
+date: 2021-08-18T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/js-prototypes-vs-classes/hero.jpg
+    alt: javascript class prototypes image
+---
+JavaScript classes are templates that are used to create objects. They act as encapsulators of data that a given code only accesses if it has the right permissions. 
+Prototypes provide a way for which an object may inherit the features from others.
+<!--more-->
+
+
 ### Introduction
 JavaScript classes are templates that are used to create objects. They act as encapsulators of data that a given code only accesses if it has the right permissions. 
 Prototypes provide a way for which an object may inherit the features from others.  
 
-This tutorial will teach you everything you need to know about JavaScript prototypes and classes. We will look at several examples, each executed using classes and prototypes, giving you a proper view of their key differences.  
+This tutorial will teach you everything you need to know about JavaScript prototypes and classes. We will look at several examples, each executed using classes and prototypes, giving you a proper understanding of their key differences.  
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -15,7 +36,7 @@ This tutorial will teach you everything you need to know about JavaScript protot
 
 ### Prerequisites
 - A basic knowledge in JavaScript is required.
-- A proper understanding of the HTML,and executing JavaScript code within the tags.
+- A proper understanding of HTML.
 
 ### Objectives
 By the end of this tutorial, you should be able to understand the difference between JavaScript classes and prototypes.
@@ -114,15 +135,19 @@ In this section, we convert the previous prototypal example to class. Let's go a
     </body>
 </html>
 ```
-What we've done in the above script is to rewrite the prototype example to class hence same output.
+What we've done in the above script is to rewrite the prototype example to class.
 As noted above, a class in JavaScript is merely syntactic sugar to make things easier for feature developers working in JavaScript. 
+
+> You notice that this generate the same output as the prototypal example
+
+![class output](/engineering-education/js/prototype-output.png)
 
 ### The key differences between JavaScript classes and prototypes
 In the previous sections, we've looked at the JavaScript classes and prototypes, in this part, let's have a look at their differences.
 
-JavaScript is based on **prototypes** and not classes. The prototypes themselves are objects instances as seen in the previous examples, while classes have types that are only instantiated at runtime. This explains why JavaScript developers should only stick to prototypes than using classes as advised by JavaScript purists.
+JavaScript is based on ***prototypes*** and not ***classes***. The prototypes themselves are objects instances as seen in the previous examples, while classes have types that are only instantiated at runtime. This explains why most JavaScript developers have stuck with prototypes than using classes.
 
-Let's look at this example:
+Let's look at an example:
 
 ```js
 //using prototypes
@@ -152,7 +177,12 @@ class ClassicalStudent {
 const classyStudent = new ClassicalStudent("John Doe", "ExampleSchool")
 console.log(classyStudent.studentProto())
 ```
-You quickly see a  prototypal inheritance in the first example, even though, it's more expressive in the second implementation. Nevertheless, you have seen how you can solve a problem using either case.
+You quickly see a  prototypal inheritance in the first example, even though, it's more expressive in the second implementation. Nevertheless, you have seen how you can solve a problem using either case.  
 
 ### Conclusion
 In this tutorial, we've seen how classes and prototypes are being used in JavaScript. We've also seen that prototypes themselves are object instances while classes only get instantiated at runtime. This background knowledge on how both features work in JavaScript, you can now decide on when to use either of the two.  
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
