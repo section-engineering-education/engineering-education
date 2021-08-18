@@ -1,16 +1,11 @@
 ### Introduction
+A `Coming Soon` landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon.
+Since a coming soon page lacks a header or a footer, visitors cannot navigate to the rest of your website hence it is important to capture what is under development so as to give as much information as possible.  
 
----
-
-A Coming Soon landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon.
-Since a coming soon page lacks a header or a footer, visitors cannot navigate to the rest of your website hence it is important to capture what is under development so as to give as much information as possible.
-Every coming soon page includes a statement encouraging visitors to return at a later time, as well as any other pertinent information concerning the website that is under development.
-This article will teach you how to make a coming soon landing page but first things first you will learn about JavaScript Timers to get you started.
+Every coming soon page includes a statement encouraging visitors to return at a later time, as well as any other pertinent information concerning the website that is under development.  
+This article will teach you how to make a coming soon landing page but first things first you will learn about JavaScript timers to get you started.
 
 #### Table Of Contents
-
----
-
 - [Introduction](#introduction)
 - [JavaScript timers overview](#javascript-timers-overview)
 - [code execution after a delay](#code-execution-after-a-delay)
@@ -21,12 +16,9 @@ This article will teach you how to make a coming soon landing page but first thi
 - [Conclusion](#conclusion)
 
 ### Javascript timers overview
+A timer is a feature that allows us to run a program at a predetermined time. They can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading. For example, they can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things.  
 
----
-
-A timer is a feature that allows us to run a program at a predetermined time.
-Timers can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading.
-Timers, for example, can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things. In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers implement timer functions, and their implementations differ from one browser to another. The Node.js runtime also has a native implementation of timers. In browsers, the window interface is the parent of the main timer features. Because the window interface makes its elements available globally in the main javascript scope, setTimeout may be used in the browser console.
+In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers implement timer functions, and their implementations differ from one browser to another. The Node.js runtime also has a native implementation of timers. In browsers, the window interface is the parent of the main timer features. Because the window interface makes its elements available globally in the main javascript scope, setTimeout may be used in the browser console.
 'Timers' is an object in NodeJs that functions like the browser's window interface.
 
 ### Code execution after a delay
