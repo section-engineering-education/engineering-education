@@ -185,34 +185,33 @@ Let's represent the above table using the Cube.js data schema:
 
 ```javascript
 
-cube(`Employees`, {
+cube('Employees', {
   sql: `SELECT * FROM employees`,
 
   measures: {
     count: {
-      sql: `id`,
-      type: `count`,
+      sql: 'id',
+      type: 'count',
     },
   },
 
   dimensions: {
     first_name: {
-      sql: `first_name`,
+      sql: 'first_name',
       type: `string`,
     },
   dimensions: {
     last_name: {
-      sql: `last_name`,
+      sql: 'last_name',
       type: `string`,
     },
 
     salary: {
-      sql: `salary`,
-      type: `number`,
+      sql: 'salary',
+      type: 'number',
     },
   },
 });
-
 ```
 From the above schema, we've both the measures and dimensions. Measures are used to represent quantitative data while the dimensions are categorical data.  
 
