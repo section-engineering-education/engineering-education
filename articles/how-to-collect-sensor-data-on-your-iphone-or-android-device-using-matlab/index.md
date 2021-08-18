@@ -1,4 +1,19 @@
-### How to collect sensor data on your iPhone or Android device using Matlab
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-collect-sensor-data-on-your-iphone-or-android-device-using-matlab/
+title: How to collect sensor data on your iPhone or android device using matlab
+description: This tutorial goes through all the steps involved in collecting data and information with sensors using Matlab app available on smartphones.
+author: queenter-bruce
+date: 2021-08-18T00:00:00-09:38
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /articles/how-to-collect-sensor-data-on-your-iphone-or-android-device-using-matlab/hero.png
+    alt: How to collect sensor data using Matlab hero image
+---
 ### Introduction
 Have you ever been in a situation where you are trying to build a project but are still waiting on sensors that haven't even left the warehouse? Well, there is a solution to this.
 
