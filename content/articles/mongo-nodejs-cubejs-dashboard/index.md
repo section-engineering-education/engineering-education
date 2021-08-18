@@ -1,6 +1,7 @@
 ### Introduction
+In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.  
 
-In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.
+The BI Connector allows for the use of MongoDB as a data source for SQL based business intelligence and analytics platforms.
 
 ### Table of contents
 
@@ -14,16 +15,13 @@ In this tutorial, I'll show you how to create analytics dashboard. We'll be usin
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
-- This tutorial requires a basic understanding of the MongoDB and MongoDB BI connector.
-- Basic knowledge in Node.js, Express, and Cube.js.
+- This tutorial requires a basic understanding of the MongoDB and MongoDB BI Connector.
+- Basic knowledge in [Node.js](https://nodejs.org/en/docs/), [Express](https://expressjs.com), and [Cube.js](https://cube.dev).
 
 ### Objectives
-
 By the end of this tutorial, you should be able to create a simple Node.js application dashboard for analytics, combining with the power of Cube.js and MongoDB.
 
 ### Setting up the development environment
-
 Let's begin by installing all the above requirements before starting the development process.  
 
 **Step 1:**
@@ -47,13 +45,12 @@ Let's now proceed and create our application skeleton using [Express](https://ex
 ```bash
 npm install express-generator -g
 ```
-
 Now proceed and generate our `example-analytics-dashboard` app by executing the following commands:
 
 ```bash
-express --view=hbs example-analytics-dashboard # notice that the view is set to use hbs
+express --view=hbs example-analytics-dashboard
+# notice that the view is set to use hbs
 ```
-
 Expected Output:
 
 ```bash
@@ -83,84 +80,71 @@ Expected Output:
 
    run the app:
      $ DEBUG=example-analytics-dashboard:* npm start
-
 ```
-
 **Step 3:**
-Let's now install the local MongoDB instance and MongoDB BI connector.  
-Begin by running the following command to import the MongoDB instance public key:
+Let's now install the local MongoDB instance and MongoDB BI connector by running the following commands:  
 
 ```bash
 wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 ```
-
 Expected Output:
 
 ```bash
 OK
 ```
-
 Next, run the following command to create list for MongoDB and reload packages:
 
 ```bash
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list && sudo apt-get update
 
 ```
-
-Now install the MongoDB packages as follows:
+Now install the MongoDB packages by exectuting the following on your terminal:
 
 ```bash
 sudo apt-get install -y mongodb-org
 ```
-
 On completion, now start your MongoDB by executing the following commands:
 
 ```bash
 sudo systemctl start mongod
 ```
-
 **Step 4:**
 With MongoDB instance locally available, now let's proceed and install the MongoDB BI Connector.
-> It's important to note that you MUST first have OpenSSL installed on your host.
+
+> It's important to note that you MUST first have OpenSSL installed on your host.\
 
 - Start by downloading MongoDB BI Connector [here](https://www.mongodb.com/download-center/bi-connector/releases).
 - Extract the downloaded file by running the following command:  
 
-  ```bash
-  cd # to downloads
-  tar -xvzf mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3.tgz 
-  ```
+```bash
+cd # to downloads
+tar -xvzf mongodb-bi-xxxxxx.tgz 
+```
+Expected Output
 
-  Expected Output
-
-  ```bash
-
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/LICENSE
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/README
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/THIRD-PARTY-NOTICES
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/example-mongosqld-config.yml
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongosqld
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongodrdl
-    mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongotranslate
-
-  ```
+```bash
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/LICENSE
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/README
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/THIRD-PARTY-NOTICES
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/example-mongosqld-config.yml
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongosqld
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongodrdl
+  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongotranslate
+```
 
 **Step 5:**
- Now that we've got a complete application skeleton, in the next step, let's now install the [Cube.js](https://cube.dev/docs/frontend-introduction).
+Now that we've got a complete application skeleton, in the next step, let's now install the [Cube.js](https://cube.dev/docs/frontend-introduction).
 
- ```bash
- cd example-analytics-dashboard
-
- npm install # this installs all the dependencies for our application
-
- npm install --save @cubejs-backend/server-core @cubejs-backend/mongobi dotenv
- ```
-
- In the above command, we first `cd` into our project directory and then execute the command to add Cube.js to Express dependencies.
-
+```bash
+# cd into project root directory
+cd example-analytics-dashboard
+# then execute the command to add Cube.js to Express dependencies.
+npm install 
+# this installs all the dependencies for our application
+npm install --save @cubejs-backend/server-core @cubejs-backend/mongobi dotenv
+```
 ### Generating Cube.js schema
-
-In the previous sections, we have seen how to set up our development environment, in this section, let's see how we can use the power of Cube.js to come up with a general schema to build an API analytics dashboard.  
+Previously, we have seen how to set up our development environment, in this section, let's see how we can use the power of `Cube.js` to come up with a general schema to build an API analytics dashboard.  
 
 We use the Cube.js schema since it can generate raw data into a meaningful business definition.  This data schema is then exposed via the `query API`, allowing the end-users to perform analytical queries.  
 
@@ -176,7 +160,7 @@ While analyzing the above table, a variety of questions arises:
 - How many employees does the company have?
 - How much does the company spend on salaries?
 
-These, among others, are questions that would be answered by writing a query for each question. But with Cube.js data schema, we can build well-organized and SQLs that are very reusable.  
+These, among others, are questions that would be answered by writing a query for each question. But with `Cube.js` data schema, we can build well-organized and SQLs that are very reusable.  
 
 Let's represent the above table using the Cube.js data schema:
 
@@ -215,23 +199,20 @@ cube(`Employees`, {
 From the above schema, we've both the measures and dimensions. Measures are used to represent quantitative data while the dimensions are categorical data.  
 
 ### Adding Cube.js environmental variables
-
 In the beginning, while adding Cube.js to our Express application, we also added the `dotenv` package which we use to manage our credentials.  
 In the `.env` file, add the following:
 
 ```properties
-
 CUBEJS_DB_HOST=localhost
 CUBEJS_DB_NAME=employees
 CUBEJS_DB_PORT=3307
 CUBEJS_DB_TYPE=mongobi
 CUBEJS_API_SECRET=SECRET
-
 ```
-
 Then proceed and initialize the Cube.js as shown below:
 
 ```js
+// inde.js file
 const cubejs = require('@cubejs-backend/server-core');
 // ... some codes goes here
 app.use('/', indexRouter);
@@ -245,5 +226,6 @@ With all these, you may now proceed and build a dashboard for any application.
 A full source code can be found [here](https://github.com/bhanjibrilliant/mongodb-json-files)
 
 ### Conclusion
-
 In this tutorial, we have seen how we can build an analytics dashboard using the Express, Cube.js, and MongoDB instance. We've also seen why we chose Cube.js to write queries instead of the normal repetitive SQL queries.  
+
+Happy Coding!
