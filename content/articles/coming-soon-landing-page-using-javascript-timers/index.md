@@ -28,7 +28,7 @@ The `setTimeout()` function is used to only run a function or a piece of code on
 
 **syntax**
 
-```JavaScript
+```javascript
 let timeout_id = setTimeout(function[, delay, arg1, arg2,arg3, ...]); //syntax 1
 //or
 let timeout_id= setTimeout(function[, delay]); //syntax 2
@@ -42,7 +42,7 @@ You must give two parameters to utilize this function: A (function)[https://deve
 
 Let's proceed and create HTML document `index.html`. Copy and paste the following code snippets:  
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +77,7 @@ In your solution, you can only define one function, which includes inline functi
 
 - **Task-1** may be solved in a variety of ways, but this is one of them.
 
-```JavaScript
+```javascript
   const delayGreetings = (delay) => {
     console.log("Hello John Doe after " + delay + " seconds");
   };
@@ -95,7 +95,7 @@ Similarly, the `setInterval()` method may be used to execute a function or a giv
 
 **syntax**
 
-```JavaScript
+```javascript
 let interval_id = setInterval(func, [delay, arg1, arg2, ...]); //syntax 1
 //or
 let interval_id = setInterval(function[, delay]); //syntax 2
@@ -107,7 +107,7 @@ Begin by defining two parameters, one of which defines the `function` to be perf
 
 **Example**
 
-```JavaScript
+```javascript
 setInterval(
   () => console.log("Hello John Doe after every 3 seconds"),
   3000);
@@ -123,7 +123,7 @@ One of the way to solve **Task-2** is as follows:
 - Create an HTML document save it as `index.html`.
 - In this page,after the closing `body` tag,add JavaScript code inside `<script></script>` tags.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,7 +158,7 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
 - In this page,after the closing `body` tag,add JavaScript code inside `<script></script>` tags.
 
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,7 +194,7 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
 - Create an HTML document save it as `index.html`.
 - In this page,after the closing body tag,add JavaScript code inside `<script></script>` tags.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,7 +270,7 @@ In this section, I've designed a responsive coming soon landing page. I've used 
 - All images will be in the `img` sub-folder.
    
 **Mark-up Section**
-```HTML
+```html
 <!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
@@ -400,7 +400,7 @@ hr {
 
 **JavaScript section**
  //main.js
-```JavaScript
+```javascript
 let countDate = new Date("sep 1,2021 00:00:00").getTime();
 
 let x = setInterval(() => {
