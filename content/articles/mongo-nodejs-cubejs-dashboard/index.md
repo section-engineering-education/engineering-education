@@ -1,10 +1,30 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mongo-nodejs-cubejs-dashboard/
+title: Node Express Analytics Dashboard with Cube.js
+description: This tutorial introduces the concept of Cube.js dashboard analytics.
+author: bhanji-brilliant
+date: 2021-08-18T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mongo-nodejs-cubejs-dashboard/hero.jpg
+    alt: cube.js analytics dashboard image
+---
+In the following tutorial, I'll show you how to create a basic analytics dashboard with Node, Express, and Cube.js. As a database, we're going to use MongoDB with MongoDB BI Connector
+<!--more-->
+
 ### Introduction
 In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.  
 
 The BI Connector allows for the use of MongoDB as a data source for SQL based business intelligence and analytics platforms.
 
+Cube.js solves a plethora of different problems every production-ready analytic application needs to solve: analytic SQL generation, query results caching and execution orchestration, data pre-aggregation, security, API for query results fetch, and visualization.
+ 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -32,7 +52,6 @@ Check your installed version by running the following command:
 ```bash
 node --version
 ```
-
 Output:
 
 ```bash
@@ -229,3 +248,7 @@ A full source code can be found [here](https://github.com/bhanjibrilliant/mongod
 In this tutorial, we have seen how we can build an analytics dashboard using the Express, Cube.js, and MongoDB instance. We've also seen why we chose Cube.js to write queries instead of the normal repetitive SQL queries.  
 
 Happy Coding!
+
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
