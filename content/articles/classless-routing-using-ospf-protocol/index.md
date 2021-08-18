@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/classless-routing-using-ospf-protocol/hero.jpg
-    alt: Classless Routing OSPF Using image
+    alt: Classless Routing using OSPF image
 ---
 
 Packets take various routes when sent in large and complex networks. The routes tend to be longer and others shorter, the fastest available routes are always the best  hence a mechanism is needed to find the best available fastest route.
