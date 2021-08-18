@@ -183,3 +183,6 @@ In this article, we have learned what a script is, how to create one using the o
 - [Introduction to shell scrpting](/engineering-education/introduction-to-shell-scripting/)
 - [Dive into the Batch Scripting Language](/engineering-education/dive-into-batch-scripting-language/)
 - [Introduction to Linux Shell and Shell Scripting](/engineering-education/introduction-to-linux-shell-and-shell-scripting/)
+
+---
+Peer Review Contributions by: [Rabo James Bature](/engineering-education/authors/rabo-james-bature/)
