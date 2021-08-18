@@ -41,7 +41,7 @@ Use this [page](https://www.apachefriends.org/index.html) to download and instal
 
 ### Project Setup & Overview
 
-In this section, we would be setting up our project. Recall that this tutorial uses XAMPP (a free cross-platform PHP development environment), therefore to follow exactly this tutorial download and install XAMPP using this [link](https://www.apachefriends.org/index.html). After the installation, start the `Apache` and `MySQL` module:
+In this section, we would set up our project. Recall that this tutorial uses XAMPP (a free cross-platform PHP development environment), therefore after the installation, start the `Apache` and `MySQL` module:
 
 ![XAMPP Settings](/engineering-education/build-a-contact-form-with-php/xampp-settings.png)
 
