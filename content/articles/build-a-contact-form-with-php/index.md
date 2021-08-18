@@ -192,7 +192,7 @@ $errors = array('name' => '', 'email' => '', 'message' => '');
 
 **What you should know**
 
-1. We created several variables to store user input and error or success message
+1. We created several variables to store user input and error or success messages.
 2. We also created an errors array for errors of specific error messages of the input fields.
 
 Navigate back to the homepage and refresh the homepage, all should work well since we have stated all the variables in our PHP script.
