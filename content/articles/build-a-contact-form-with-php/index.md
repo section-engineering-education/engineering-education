@@ -197,7 +197,7 @@ $errors = array('name' => '', 'email' => '', 'message' => '');
 
 Navigate back to the homepage and refresh the homepage, all should work well since we have stated all the variables in our PHP script.
 
-> Notice that this PHP script is wrapped inside a `<?php ?>` tag, if not they would not be treated as PHP code.
+> Notice that this PHP script is wrapped inside a `<?php ?>` tag, if not it would not be treated as PHP code.
 
 Next, add this function after the code above, but inside the PHP tags:
 
