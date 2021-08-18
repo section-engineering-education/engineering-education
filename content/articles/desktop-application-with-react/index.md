@@ -14,11 +14,11 @@ images:
     alt: Electron with Create React App image
 ---
 ### Electron with Create-React-App
-The methods of creating desktop applications have come a long way. Every day, developers are coming up with easier to use options for creating desktop applications. Electron is one of those solutions. It uses web technologies wrapped around Node.js to come up with web technologies. 
+The methods of creating desktop applications have come a long way. Every day, developers are coming up with easier to use options for creating desktop applications. Electron is one of those solutions. It uses web technologies wrapped around Node.js to come up with web technologies.
 <!--more-->
-For a more detailed introduction to the whole Electron.js ecosystem, you can read [this article](/cross-platform-applications-electron/). Electron uses HTML/CSS and JavaScript traditionally. You can use HTML, CSS, and vanilla JavaScript to build Electron applications. 
+For a more detailed introduction to the whole Electron.js ecosystem, you can read [this article](/cross-platform-applications-electron/). Electron uses HTML/CSS and JavaScript traditionally. You can use HTML, CSS, and vanilla JavaScript to build Electron applications.
 
-Other options available include using React and other JavaScript frameworks. 
+Other options available include using React and other JavaScript frameworks.
 
 In this article, we will accomplish the following:
 - We will create a React.js app using [Create-React-App](https://reactjs.org/docs/create-a-new-react-app.html).
@@ -31,8 +31,8 @@ To follow along comfortably with the following tutorial, you will need to have:
 - A basic understanding of React and how it works.
 - Node.js installed. If not, you can install it from [here](https://nodejs.org/en/download/).
 
-### Settting up the application
-This guide will use `create-react-app` to scaffold the application. create-react-app is a project generator for React application. 
+### Setting up the application
+This guide will use `create-react-app` to scaffold the application. create-react-app is a project generator for React application.
 
 In my personal opinion, when building a React app with CRA, it is relatively easier to create desktop applications compared to when you are building the React project from scratch.
 
@@ -44,7 +44,7 @@ cd ~/ your-prefered-location
 npx create-react-app electron-react-demo
 ```
 
-The `npx` command will create a React app called `electron-react-demo`. When that command is finished, navigate into the directory and install electron. 
+The `npx` command will create a React app called `electron-react-demo`. When that command is finished, navigate into the directory and install electron.
 
 You can do this in the terminal like this:
 
@@ -58,7 +58,7 @@ The command also installed a useful npm package called `electron-is-dev` used fo
 
 Next, create a configuration file for Electron. Create it in the public folder where all the HTML code is located which in your case is in the `public` folder called electron.js `/public/electron.js`.
 
-The next step is to add the Electron configuration into the file. 
+The next step is to add the Electron configuration into the file.
 
 Paste this code into the `electron.js` file:
 
@@ -112,21 +112,21 @@ app.on('activate', () => {
 });
 ```
 
-The code creates a `Browserwindow` instance provided by electron, which is used to render the web contents. It then loads the HTML file in the directory on to the `Browserwindow`. 
+The code creates a `Browserwindow` instance provided by electron, which is used to render the web contents. It then loads the HTML file in the directory on to the `Browserwindow`.
 
-It also handles other window events like `closed` when the window is closed, `focus` when the window is in focus, `ready-to-show` when the web page has been rendered, and window states like `maximize`, `minimize`, `restore`. 
+It also handles other window events like `closed` when the window is closed, `focus` when the window is in focus, `ready-to-show` when the web page has been rendered, and window states like `maximize`, `minimize`, `restore`.
 
 To read more on the configuration, you can visit the [docs](https://www.electronjs.org/docs/tutorial/quick-start).
 
 The significant change is that you added a custom HTML file to be launched. This will be in your build file, which will be the destination in production.
 
 #### Configuring package.json
-You now have electron installed, but still have to make a few changes in the `package.json` to syncronize the browser and desktop builds. First, update the project's entry file. 
+You now have electron installed, but still have to make a few changes in the `package.json` to syncronize the browser and desktop builds. First, update the project's entry file.
 
 In your `package.json` file, add this before your scripts:
 
 ```json
-  "main" : "main": "public/electron.js",
+  "main": "public/electron.js",
 ```
 
 Next, install the following packages, [concurrently](https://www.npmjs.com/package/concurrently) and [wait-on](https://www.npmjs.com/package/wait-on). These packages will listen to the app, and when it launches on the browser, it will launch as an electron app instead.
@@ -137,7 +137,7 @@ npm i -D concurrently wait-on
 
 `Concurently` allows us to run mutliple commands within one script and `wait-on` will wait for port 3000 which is the default CRA port, to launch the app.
 
-The flag, `BROWSER=none` that you passed in the `dev` script will prevent the browser from launching once the React app compiles successfully. 
+The flag, `BROWSER=none` that you passed in the `dev` script will prevent the browser from launching once the React app compiles successfully.
 
 Under `scripts` in your `package.json` file, add:
 
@@ -192,13 +192,13 @@ const { data, isLoading, errorMessage } = useOpenWeather({
 });
 ```
 
-This tutorial will use fixed latitude and longitude values. Feel free to make the values dynamic. For instance, you can have an input that the user can enter their prefered longitude and latitude. 
+This tutorial will use fixed latitude and longitude values. Feel free to make the values dynamic. For instance, you can have an input that the user can enter their prefered longitude and latitude.
 
 They can then supply them as variables to the `useOpenWeather` function. You can achieve this using the `useState` hook provided by react.
 
-Finally, in the return statement for the app function, return a beautiful weather component with the data from the API. You will also pass it some information as props. 
+Finally, in the return statement for the app function, return a beautiful weather component with the data from the API. You will also pass it some information as props.
 
-Some of this information includes, unit labels for the data, language, and it will also pass in the data object. 
+Some of this information includes, unit labels for the data, language, and it will also pass in the data object.
 
 The code will look like this:
 
@@ -216,7 +216,7 @@ The code will look like this:
 </div>
 ```
 
-With that, your weather application is complete. 
+With that, your weather application is complete.
 
 The full code for the app.js file should look like this:
 
