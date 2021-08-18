@@ -31,19 +31,19 @@ In this tutorial, we will get started on Quarkus and learn how we can develop Qu
 - [Pre-requisites](#pre-requisites)
 - [Quarkus briefs](#quarkus-briefs)
 - [Comparison between Quarkus and other Java frameworks](#comparison-between-quarkus-and-other-java-frameworks)
-- [Get started with a Quarkus project](#get-started-with-a-quarkus-project)
+- [Getting started with a Quarkus project](#getting-started-with-a-quarkus-project)
   - [Quarkus.io project initializer](#quarkusio-project-initializer)
         - [Folder structure](#folder-structure)
     - [Using Visual Studio Code](#using-visual-studio-code)
     - [Using IntelliJ](#using-intellij)
-- [Compile your Quarkus project](#compile-your-quarkus-project)
+- [Compiling your Quarkus project](#compiling-your-quarkus-project)
 - [Quarkus extensions](#quarkus-extensions)
-- [Run tests of the Endpoint](#run-tests-of-the-endpoint)
-- [Add a website template to Quarkus resources](#add-a-website-template-to-quarkus-resources)
-- [Build the application](#build-the-application)
-- [Run the created application](#run-the-created-application)
-- [Test the application using JConsole and IntelliJ profiler](#test-the-application-using-jconsole-and-intellij-profiler)
-- [Build and run a Quarkus project in a Docker container](#build-and-run-a-quarkus-project-in-a-docker-container)
+- [Running tests of the Endpoint](#running-tests-of-the-endpoint)
+- [Adding a website template to Quarkus resources](#adding-a-website-template-to-quarkus-resources)
+- [Building the application](#building-the-application)
+- [Runnning the created application](#running-the-created-application)
+- [Testing the application using JConsole and IntelliJ profiler](#testing-the-application-using-jconsole-and-intellij-profiler)
+- [Building and runnning a Quarkus project in a Docker container](#building-and-running-a-quarkus-project-in-a-docker-container)
 - [Conclusion](#conclusion)
 - [Further activities](#further-activities)
 - [References](#references)
@@ -126,7 +126,7 @@ Quarkus boasts of its reload speed and memory efficiency when built and run on N
 ![Quarkus efficiency and performance](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus_efficiency_image.png "This shows how Quarkus performs in Native, JVM, and Traditional environments")
 _(Photo from Official Quarkus website)_
 
-### Get started with a Quarkus project
+### Getting started with a Quarkus project
 We can use the tools below to create a Quarkus project.
 - [Quarkus.io](https://code.quarkus.io/) project initializer.
 - Using Visual Studio Code.
@@ -242,7 +242,7 @@ _(Screenshot by Author)_
 ![Quarkus IntelliJ start extensions](/engineering-education/getting-experiential-on-a-quarkus-project/Quarkus-IntelliJ-start-extensions.png "Quarkus IntelliJ start extensions")
 _(Screenshot by Author)_
 
-### Compile your Quarkus project
+### Compiling your Quarkus project
 Compilation of the application is done using the `mvnw` file found inside the project folder ('ecommerce-quarkus'). Make sure that you are in the folder which shall be your working directory, otherwise, run the command below:
 
 ```shell
@@ -389,7 +389,7 @@ For example, to install all which have 'Hibernate' in their name can be done as 
 To uninstall a Quarkus dependency, just head over to the '**pom.xml**' file and delete the dependency and the properties inside its tags.
 These may include the _groupId_ and the _artifactId_. Re-compile and re-build the application.
 
-### Run tests of the endpoint
+### Running tests of the endpoint
 Run the tests found in the '**test**' folder to see if the endpoints are working correctly. Open the `EcommerceResourceTest` file found in the `test/java/org.ecommerce.quarkus` folder. Since you had made the output of the Endpoint to be `Hi Docs? 4455`, change it to replace it with that of the initial results.
 
 ```java
@@ -415,7 +415,7 @@ public class EcommerceResourceTest {
 }
 ```
 
-### Add a website template to Quarkus resources
+### Adding a website template to Quarkus resources
 To add a website template to be automatically displayed when `http://localhost:8080/` (default URL with no endpoints) is accessed,
 
 - Head over to [this](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/) link and download the free cakes' template to try it out. You can find and download other free templates at [https://themewagon.com/themes](https://themewagon.com/themes).
@@ -471,7 +471,7 @@ When done successively, it creates the `quarkus-run.jar` file in the `target/qua
 > ./mvnw package -Dquarkus.package.type=uber-jar
 > ```
 
-### Run the created application
+### Running the created application
 
 Run the newly created JAR file using:
 
@@ -481,7 +481,7 @@ java -jar target/quarkus-app/quarkus-run.jar
 
 The application is now of a smaller size and more efficient. It has all dependencies and resources needed and can be accessed.
 
-### Test the application using JConsole and IntelliJ profiler
+### Testing the application using JConsole and IntelliJ profiler
 **JConsole** is an open-source graphical JVM and Java applications monitoring tool used to monitor applications running on both local and remote machines. 
 
 It comes with a JDK installation hence, no additional installations are needed.
@@ -523,7 +523,7 @@ Select the `CPU memory live charts` options.
 ![Intellij profiler stats](/engineering-education/getting-experiential-on-a-quarkus-project/Intellij-profiler-stats.png "Intellij profiler stats")
 _(Screenshot by Author)_
 
-### Build and run a Quarkus project in a docker container
+### Building and running a Quarkus project in a docker container
 - Before building the container image, first, run the following in a new terminal window:
 
 ```shell
