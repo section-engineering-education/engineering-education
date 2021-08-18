@@ -14,14 +14,15 @@ images:
   - url: /engineering-education/implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/hero.jpg
     alt: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC Hero image example
 ---
-Developers around the world have an incredible task of handling client requirements, and video conferencing is one of those requirements developers experience difficulty implementing due to its complexity. The pandemic has opened up opportunities in remote work and “work from home” which comes at the cost of efficient video conferencing and packets handling.
+Developers around the world have an incredible task of handling client requirements. Video conferencing is one of those requirements. Developers experience difficulty implementing it due to its complexity. The pandemic has opened up opportunities in  “work from home” which comes at the cost of efficient video conferencing and packets handling.
  <!--more-->
-ReactJS and webRTC provide an excellent tool for making the implementation of web-based video conferencing seamlessly easy. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
+ReactJS and webRTC provide an excellent tool for developing web-based video conferencing application. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
 
 ### Prerequisites
-For better understanding and utilization of this article, the reader is expected to have basic knowledge of the following:
+For better understanding and use of this article, the reader is expected to have basic knowledge of the following:`
+
 - Getting started with ReactJS ES6
-- Getting started with Nodejs
+- Getting started with Nodejs and Command Terminal
 - Getting started with Graphql and
 - WebRTC
 
@@ -35,7 +36,7 @@ Implementing video conferencing requires basic knowledge of the following concep
 - ReactJS
 
 #### WebRTC:
-WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their applications effortlessly.
+WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their applications.
 
 ### Components of video conferencing system:
 Web-based video conferencing involves the synergy of various frameworks and libraries which includes the following:
@@ -59,27 +60,21 @@ The client interface is set up using `ReactJS` which is a lightweight frontend J
 
 #### Step 1: Getting started with a new React app
 
+```bash
 npx
-
-    npx create-react-app react-video-conferencing-app
-
-npm
-
-    npm init react-app react-video-conferencing-app
-
-yarn
-
-    yarn create react-app react-video-conferencing-app
+   npx create-react-app react-video-conferencing-app
+```
 
 The command above should get you started with a new react app with all the default dependencies appropriately installed.
 
+```bash
     cd react-video-conferencing-app
     npm start
-
+```
 The command above will change the directory to your new react app and get the development server running.
 
 #### Step 2: Installing the required client dependencies
-For successful development of the application, a few dependencies must be installed to enable react process and perform specific instructions and they include the following.
+For successful development of the application, a few dependencies must be installed. These are used to enable the react process and perform specific instructions. To install the dependencies, we:
 
 Run `npm install` or `yarn add` to initialize an empty NodeJs project.
 
@@ -113,7 +108,7 @@ Add the following dependencies in your package.json file and run `npm install` t
 ```
 
 #### Step 3: Setting up the client index file:
-This file is the main file for integrating the client and the server codes together. It also enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter and the other facilities for the implementation of the application.
+This is the main file for integrating the client and the server codes together. It enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter. It also enables the other facilities for the implementation of the application.
 
 ```javascript
  import 'webrtc-adapter';
@@ -228,7 +223,7 @@ And their respective routes are implemented as follows:
     ```
 
 #### Step 5: Setting up the video components:
-The video component is the essential component of the application as it facilitates the connection and communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
+The video component is the essential component of the application as it facilitates the connection. This is as it facilitates the communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 
 It also enables the following operations:
 - Call Statuses
@@ -339,25 +334,23 @@ The implementation of the video component is illustrated below:
 ### Server-side setup
 The first task in getting the server instance ready for subsequent development involves the following:
 
+```bash
     Mkdir server
     Cd server
-
+```
 Ensure that the server folder is in the main application folder containing the client.
 Npm
-
+```bash
     npm init
-
-Yarn
-
-    yarn init
+```
 
 The command above should initialize your server instance, ensure the instructions are followed.
 
 ### Installing the required server dependencies
-
+For Nodejs to peform the required server operations some dependencies must be installed to the server folder. We do this by:
+```bash
     npm install
-    Or
-    yarn add
+ ```  
 
 ```json
 "bcrypt": "^5.0.0",
@@ -416,7 +409,7 @@ The Backend server is set up using `Nodejs` and `Graphql`. To guarantee optimal 
 ```
 
 ### Setting-up graphql server
-In this project, the Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer between both interfaces. Graphql servers come with fully equipped mutations for data modification and alteration, query for data fetch, and subscription for real-time data instance monitoring. Below is the setup of the Graphql server:
+The Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer across both interfaces. Graphql servers come with fully equipped mutations for data modification and alteration, query for data fetch, and subscription for real-time data instance monitoring. Below is the setup of the Graphql server:
 
 ```javascript
     import graphqlExpress from 'express-graphql';
@@ -614,7 +607,7 @@ To set the error policy on each request the following code block provided by Gra
 ```
 
 #### Ignoring errors
-Errors may be ignored during application development. These errors are expected errors that the developer feels unbothered about, to achieve that the following code block should be integrated.
+Errors may be ignored during application development. These errors are expected by the developer and feels unbothered about them. In such cases we wish to return `null` if an error occurs during the code execution process. To achieve that the following code block should be integrated:
 
 ```javascript
     onError(({ response, operation }) => {
@@ -626,15 +619,14 @@ Errors may be ignored during application development. These errors are expected 
 
 #### Using React testing library
 React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils**. It is implemented using the following command:
-
+```bash
     npm install --save-dev @testing-library/react
-    or
-    yarn add @testing-library/react
-    and
     node build/start
+ ```
+    
 
 ### Conclusion
-In this article, we had an in-depth look at the various concepts, fundamentals, components, and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql, and WebRTC. Other areas such as error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
+This article explained The fundamentals, components, and requirements for implementing a web-based video conferencing application. Error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
 
 Best Regards and Happy Coding
 Cheers!
