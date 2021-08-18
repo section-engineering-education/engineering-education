@@ -57,7 +57,7 @@ Inside your `C: drive` open the folder `xampp`, inside this folder open the fold
 
 ### Step 2
 
-Open the `php-contact` folder with your favourite code editor and create a new file called `index.php`. Paste the code below inside the `index.php` file.
+Open the `php-contact` folder with your favorite code editor and create a new file called `index.php`. Paste the code below inside the `index.php` file.
 
 ```html
 <!DOCTYPE html>
