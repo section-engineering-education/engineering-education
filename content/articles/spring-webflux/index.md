@@ -2,7 +2,7 @@ Reactive programming is a programming paradigm that supports an asynchronous, ev
 
 In the reactive programming paradigm, a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat applications.
 
-In this tutorial, we are going to create a student management system using Spring webflux and MongoDB.
+In this tutorial, we are going to create a student management system using Spring Webflux and MongoDB.
 
 
 ### Prerequisites
@@ -60,8 +60,8 @@ public interface Processor<T, R> extends Subscriber<T>, Publisher<R>
 
 > There are two popular implementations of the reactive streams, [RxJava](https://github.com/ReactiveX/RxJava) and [Project reactor](https://projectreactor.io/).
 
-### Spring webflux
-Spring webflux is simmilar to Spring MVC , but it suppoerts reactive and non blocking streams.
+### Spring Webflux
+Spring Webflux is similar to Spring MVC, but it supports reactive and non-blocking streams.
 
 Webflux has two publishers:
 
@@ -126,7 +126,7 @@ public class ApplicationConfig {
     }
 }
 ```
- - The code snippet above sets the path to the `application.properties` file, it contains the project configurations.
+ - The code snippet above sets the path to the `application.properties` file. It contains the project configurations.
 
 3. Create a new file named `MongoConfig.java` in the `config` package we created earlier and the code snippet below.
    
@@ -312,4 +312,4 @@ public class StudentController {
 ```
 
 ### Conclusion
-With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot webflux with any frontend client of your choice. You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
+With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot Webflux with any frontend client of your choice. You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
