@@ -186,7 +186,7 @@ Let's represent the above table using the Cube.js data schema:
 ```javascript
 
 cube('Employees', {
-  sql: `SELECT * FROM employees`,
+  sql: 'SELECT * FROM employees',
 
   measures: {
     count: {
@@ -198,12 +198,12 @@ cube('Employees', {
   dimensions: {
     first_name: {
       sql: 'first_name',
-      type: `string`,
+      type: 'string',
     },
   dimensions: {
     last_name: {
       sql: 'last_name',
-      type: `string`,
+      type: 'string',
     },
 
     salary: {
