@@ -572,3 +572,6 @@ The following is a list of the concepts discussed in this tutorial:
 - [Free cakes' website template](https://themewagon.com/themes/free-responsive-bootstrap-4-html5-food-website-template-cake/)
 - [Other free templates](https://themewagon.com/themes/)
 - [RESTEasy JAX-RS guide](https://quarkus.io/guides/rest-json)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
