@@ -33,7 +33,11 @@ In this tutorial, will build a contact form with PHP. It will include the follow
 - [Conclusion](#conclusion).
 ### Prerequisites
 
-To follow along with this tutorial, a basic understanding of HTML and PHP is required. Therefore, you must have PHP installed. For this tutorial, we will be using [XAMPP](https://www.apachefriends.org/index.html) for our development purposes to run PHP locally on our machine.
+To follow this tutorial the reader should;
+- Have a basic understanding of HTML and PHP.
+- Have PHP and XAMMP installed. We will use XAMMP for our development to run PHP locally on our machine.
+
+Use this [page](https://www.apachefriends.org/index.html) to download and install XAMMP.
 
 ### Project Setup & Overview
 
