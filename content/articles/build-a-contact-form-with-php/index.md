@@ -261,7 +261,7 @@ if (isset($_POST["submit"])) {
 
 ### Sending Email with PHP Mailer and Google Gmail SMTP server
 
-In other to send an email with Google Gmail we would need to have a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
+In order to send an email with Google Gmail we  need to have a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
 
 #### Download PHP mailer
 
