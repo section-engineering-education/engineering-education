@@ -1,9 +1,25 @@
-In C#, we can create and manage related objects in various ways, for example, through the use of [arrays](https://www.tutorialspoint.com/csharp/csharp_arrays.htm) or collections.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /c-sharp-collections/
+title: Collections in C#
+description: In this article, we will be exploring the C# Collections Framework. We will be looking at the different collection types, and how to use them.
+author: geoffrey-mwangi
+date: 2021-08-18T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/c-sharp-collections/hero.jpg
+   alt: C# Collections hero
+---
+In C#, we can create and manage related objects in various ways. For example, through the use of [arrays](https://www.tutorialspoint.com/csharp/csharp_arrays.htm) or collections.
+<!--more-->
 ### What are Collections in C#?
-A collection is a set of objects of similar types on which we may perform operations such as insert, delete, update, sort, and so on. Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
+A collection is a set of objects of similar type on which we may perform operations such as insert, delete, update, sort, and so on. Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
 
-The goal of this article is to guide you on how to use collections (type) in the C# programming language. Collections are commonly used to handle and manage a set of similar data types. Arrays are also used to manage similar types of data, but collections offer additional flexibility when dealing with groups of items of different types.
+The goal of this article is to guide you on how to use collections (type) in the C# programming language. Collections are commonly used to handle and manage a set of similar data types. Arrays are also used to manage similar types of data, but collections offer additional flexibility when dealing with grouped items of different types.
 
 ### Types of collections
 C# collections are categorized into 3 main namespaces:
@@ -32,7 +48,7 @@ Concurrent collections are supported in the `.NET` Framework 4 with the `System.
 
 If many threads need to access a collection at the same time, the concurrent collections should be used instead of non-generic and generic collections.
 
-The classes provided by the Concurrent collections include:
+The classes provided by the concurrent collections include:
 - `BlockingCollection`
 - `ConcurrentBag`
 - `ConcurrentStack`
@@ -53,13 +69,13 @@ The classes provided by the Non-Generic collections include:
 Let's look at each one of them:
 
 ### ArrayList
-Unlike `Array` which has a fixed size, `ArrayList` is dynamic. Thus, they do not have a fixed size. `ArrayList` expands as more elements are added to the collection and can hold elements of different data types.
+Unlike an `Array` which has a fixed size, an `ArrayList` is dynamic. Thus, it does not have a fixed size. An `ArrayList` expands as more elements are added to the collection and can hold elements of different data types.
 
-### Example
-Let's look at an example of ArrayList.
+Let's look at an example of an `ArrayList`.
 ```cs
 using System;
 using System.Collections;
+
 class MainClass
 {
     public static void Main(string[] args)
@@ -67,7 +83,7 @@ class MainClass
 
         var data = new ArrayList();
 
-        data.Add(" ArrayList"); // for adding elements in a collection
+        data.Add(" ArrayList"); // adding elements in a collection
         data.Add(221);
         data.Add(23);
         data.Add(new OurArrayList());
@@ -79,11 +95,10 @@ class MainClass
         }
     }
 }
-class OurArrayList { }
+
 class OurArrayList {}
 ```
-
-### Output
+Running the above snippet will display the following:
 ```bash
 ArrayList
 221
@@ -92,6 +107,7 @@ OurArrayList
 
 In the code above, we have created an `ArrayList` and added elements of different data types, that is, `string`, `int`, and a class object.
 
+Here is the code break down:
 ```cs
 using System.Collections;
 ```
@@ -102,7 +118,7 @@ We have used `System.Collections` to utilize the `ArrayList` collection.
 var data = new ArrayList();
 ```
 
-We've made an `ArrayList` collection here.
+We've made an `ArrayList` collection.
 
 ```cs
 data.Add(" ArrayList"); // for adding elements in a collection
@@ -110,21 +126,24 @@ data.Add(221);
 data.Add(23);
 data.Add(new OurArrayList()); // It adds a class 
 ```
-We have used the `Add()` method to add elements to the collection. 
+
+We have used the `Add()` method to add elements to the collection.
 
 ```cs
 data.Remove(23);
 ```
+
 Here, we have used the `Remove()` method to remove an element from the collection.
 
-### Stack
+### The Stack
 The Stack is a good example of a collection that reflects the idea of "last in, first out". As a result, the last element to enter the queue will be the first to exit. This approach is mostly applied in calculators.
 
-### Example
-Let's look at an example of Stack.
+Let's look at an example of a Stack.
+
 ```cs
 using System;
 using System.Collections;
+
 class MainClass
 {
     public static void Main(string[] args)
@@ -152,7 +171,7 @@ class MainClass
     }
 }
 ```
-### Output
+Running the snippet above will display the following:
 ```bash
 4
 6
@@ -163,14 +182,16 @@ class MainClass
 4
 1
 ```
-### Queue 
+
+### The Queue 
 The `Queue` is a good example collection that reflects the idea of "first in, first out". As a result, the first element to enter the queue will be the first to exit.
 
-### Example
 Let's look at an example of a Queue:
+
 ```cs
 using System;
 using System.Collections;
+
 class MainClass
 {
     public static void Main(string[] args)
@@ -193,7 +214,7 @@ class MainClass
     }
 }
 ```
-### Output
+Running the snippet above will display the following:
 ```bash
 Animal 3
 Animal 4
@@ -205,8 +226,8 @@ Animal 5
 ### Hashtable
 A `Hashtable` is similar to `ArrayList` in that it stores things as a key-value pair.
 
-### Example
 Let's look at an example of Hashtable.
+
 ```cs
 using System;
 using System.Collections;
@@ -228,7 +249,7 @@ class MainClass
     }
 }
 ```
-### Output
+Running the snippet above will display the following:
 ```bash
 car BMW
 ct Cat
@@ -239,3 +260,8 @@ The order of the output doesn't matter in this context.
 
 ### Conclusion
 In this article, we have looked at the basics of the common collections in C#. Collections help to manage a collection of data.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
