@@ -20,8 +20,6 @@ In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval (
 'Timers' is an object in NodeJs that functions like the browser's window interface.
 
 ### Code execution after a delay
----
-
 The `setTimeout()` function is used to only run a function or a piece of code once after a given amount of time has passed.
 
 **syntanx**
