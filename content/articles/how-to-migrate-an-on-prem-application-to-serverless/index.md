@@ -1,7 +1,24 @@
-﻿### Introduction
-Serverless is not new in the technology world. It is gradually changing how companies and developers deliver business value to their clients using the [public cloud](https://www.ibm.com/cloud/learn/public-cloud).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-migrate-an-on-prem-application-to-serverless/
+title: How to migrate an On-prem application to Serverless
+description: This article will cover how to migrate an on-prem application to serverless. Serverless is a new technology that allows developers to build applications without having to worry about infrastructure.
+author: lilian-ogoti
+date: 2021-08-18T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-This article will cover the steps on how one can migrate an [on-premises](https://www.techopedia.com/definition/26714/on-premises-software) application to [serverless](https://aws.amazon.com/serverless/). We will use a case study of a recruitment web application to accomplish the task.
+  - url: /engineering-education/how-to-migrate-an-on-prem-application-to-serverless/hero.jpg
+    alt: How to migrate an on-prem application to serverless image
+---
+
+Serverless is not new in the technology world. It is gradually changing how companies and developers deliver business value to their clients using the [public cloud](https://www.ibm.com/cloud/learn/public-cloud). This article will cover the steps on how one can migrate an [on-premises](https://www.techopedia.com/definition/26714/on-premises-software) application to [serverless](https://aws.amazon.com/serverless/).
+<!--more-->
+
+We will use a case study of a recruitment web application to accomplish the task.
 
 ### Case study system description
 The case study is about a client who runs an `Online Recruitment Platform`.  The illustration below demonstrates how the system works:
@@ -13,7 +30,7 @@ The system is running on-premises infrastructure and contains two web applicatio
 - **Identity server Web application**: It is used to authenticate and authorize users into the system. It provides user management (CRUD operations), login/logout function, user permissions, and allows them to log in with their Google or Facebook accounts.
 
 - **Recruitment Web application**: It is the main module of the system. A user can use the `Job Search` function to search for a job and use the `File Upload` function to upload a resume or CV.
-  
+
 An admin of the system uses `Reporting` feature for generating different reports in the system and `Customer support` for sending emails and SMS.
 
 These Web applications use a shared database called `Recruitment` database. In addition, the system also contains other modules such as `Message Queue` for sending notifications and `Background Jobs` that assist in data processing for reporting.
@@ -143,3 +160,6 @@ It is a long journey to migrate from monolith architecture to serverless. It req
 When migrating to serverless, organizations should start with less complex modules, rather than migrating the whole system at once. These incremental steps allow the developers to learn from their past mistakes, iterate, and try again. It is not a good idea to go for a perfect design. Instead, the team should be ready to iterate and improve.
 
 Finally, it is better to note that serverless is not a single step but involves continuous improvement.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
