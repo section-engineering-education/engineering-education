@@ -37,9 +37,7 @@ imshow(i);
 This is the process of improving digital images to get more suitable results for visual display. Image enhancement can be done through `image filtering` and `deblurring`.
 
 #### Image filtering
-This is a form of image enhancement that emphasizes or omits the selected properties of an image. Image filtering mainly involves altering the concentration of certain pixels in an image.
-
-Color filtering makes an image to be more attractive or stresses certain image pixels. For instance, green can stress more about vegetation, while blue emphasizes water bodies.
+This is a form of image enhancement that emphasizes or omits the selected properties of an image. Image filtering mainly involves altering the concentration of certain pixels in an image. Color filtering makes an image to be more attractive or stresses certain image pixels. For instance, green can stress vegetation, while blue emphasizes water bodies.
 
 This process can either make an image reddish, greenish or bluish depending on the concentration level applied.
 `imhist` function gives a graphical presentation of color concentration in an image per pixel(Histogram).
@@ -250,3 +248,6 @@ Image processing has a wide range of application areas, such as;
 - Machine vision, and entertainment. 
 
 The accuracy of information extracted from an image depends on the quality of the tool used to process the image, and Matlab provides better tools for image processing.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
