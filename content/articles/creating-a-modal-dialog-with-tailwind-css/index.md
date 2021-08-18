@@ -2,7 +2,7 @@
 
 When development web designs, one of the most important things to put attention to is user interactivity. A good examples of these things is by use of modal dialogs. 
 
-A modal is a popup window that appears on top of the main content of a webpage requiring user interaction. It temporarily disables the main content until the user interacts with the modal dialog. Modal dialogs are useful helpful because they give critical warnings to the user as a way of preventing errors.
+A modal is a popup window that appears on top of the main content of a webpage requiring user interaction. A modal dialog appears on the top of the main content and forces the user to interact with it before continuing with their work. Modal dialogs are useful helpful because they give critical warnings to the user as a way of preventing errors.
 
 Throughout this tutorial, we will be using Tailwind to style up our modal dialog. We also use JavaScript to add functionality to the modal dialog.
 
