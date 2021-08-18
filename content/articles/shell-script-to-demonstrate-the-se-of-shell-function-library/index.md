@@ -23,6 +23,7 @@ To better understand this tutorial, the reader is expected to have some prior ex
 - Minimal programming knowledge - use of variables and functions
 
 ### Table of contents
+- [Shell Function](#shell-function)
 - [How to create a function](#how-to-create-a-function)
 - [Why use Function Library](#why-use-function-library)
 - [Creating function library](#creating-function-library)
@@ -32,6 +33,9 @@ To better understand this tutorial, the reader is expected to have some prior ex
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
+### Shell Function
+A shell script is a computer program designed to be run by Unix/Linux shell. This script can perform operations such as file manipulation, program execution, and printing text.
+To execute these tasks, some pieces of code can be used repeatedly in the program. To make this process easy and reduce errors, such codes are grouped into a `Function`, which allows for them to be called and reused multiple times within the program.
 
 ### How to create a function
 As described in the introduction, a function is a block of code that carries out a certain activity. A function can be Called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
@@ -68,7 +72,7 @@ In C/C++, a Shell Function Library is similar to a header file, whereas, in Pyth
 
 The most important reason for having a function library is for reusability. We require functions in a function library for the following reasons.
 
-1. Sometimes we require logic to address looping logic. [To know more about looping logic click here](https://docs.oracle.com/cd/E13214_01/wli/docs102/bpguide/bpguideWhile.html) For example, in Oracle Applications, whenever a concurrent request is sent, we usually click on the Refresh button to retrieve the most recent data about the concurrent program's status. Or, we may create a function and place it in the function library so it can be used in other scripts.
+1. Sometimes we require logic to address looping logic. [looping logic](https://docs.oracle.com/cd/E13214_01/wli/docs102/bpguide/bpguideWhile.html) For example, in Oracle Applications, whenever a concurrent request is sent, we usually click on the Refresh button to retrieve the most recent data about the concurrent program's status. Or, we may create a function and place it in the function library so it can be used in other scripts.
 2. We could need a collection of functions to deal with an excel file, a CSV file, an XML file, or a properties file at times. This is the situation when we wish to work with  several test automation scripts.  When the functions are developed, they can be reused wherever they are needed in several test automation scripts. We may need to interact with these files for a variety of reasons, including test data iterations, spreadsheet verification, and so on.
 3. Some businesses even create functions for each business function of the application under test, which can then be utilized to create other test script combinations.
 
