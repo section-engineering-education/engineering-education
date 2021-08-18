@@ -177,7 +177,7 @@ In this section, we will be creating a basic form. Inside the `index.php` replac
 
 ### Form Validation in PHP
 
-In this section, we will be creating the logic of our web page to validate users input. In the same `index.php`, at the top of the file add the following code:
+In this section, we will create the logic of our web page inside the `index.php` to validate the user's input.  Add the code below at the top of the file.
 
 ```php
 <?php
