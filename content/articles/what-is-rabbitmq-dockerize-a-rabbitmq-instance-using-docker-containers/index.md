@@ -243,3 +243,7 @@ Other messaging queues (brokers) that you can use and learn include [Kafka](/eng
 - [Why You Should use Celery with RabbitMQ](/engineering-education/why-you-should-use-celery-with-rabbitmq/)
 - [What is Kafka? How to Build and Dockerize a Kafka Cluster](/engineering-education/what-is-kafka-how-to-build-and-dockerize-a-kafka-cluster/)
 - [Introduction to Kafka](/engineering-education/introduction-to-kafka/)
+
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
