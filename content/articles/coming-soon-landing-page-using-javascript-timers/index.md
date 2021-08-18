@@ -1,6 +1,9 @@
 ### Introduction
-A `Coming Soon` landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon. Since it lacks a header or a footer, visitors can not navigate to the rest of your website, hence it is important to capture what is under development so as to give as much information as possible.
+A coming soon landing page is a temporary home page that informs visitors that your website is in the process of being built or will be available soon.   
+Since it lacks a header or a footer, visitors can not navigate to the rest of your website, hence it is important to capture what is under development so as to give as much information as possible.
+
 Every coming soon page includes a statement encouraging visitors to return at a later time, as well as any other pertinent information concerning the website that is under development.
+
 This article will teach you how to make a coming soon landing page, but first things first, you will learn about JavaScript timers to get you started.
 
 #### Table Of Contents
@@ -16,21 +19,28 @@ This article will teach you how to make a coming soon landing page, but first th
 ### Javascript timers overview
 A timer is a feature that allows us to run a program at a predetermined time. Timers can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading. For example, timers can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things.  
 
-In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers allow implemention of timer functions, and their implementations differ from one browser to another.In browsers, the window interface is the parent to  main timer features.Since the window interface makes its elements available globally in the main javascript scope, `setTimeout` may be used in the browser console.
+In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers allow implemention of timer functions, and their implementations differ from one browser to another.
+
+In browsers, the window interface is the parent to main timer features. Since the window interface makes its elements available globally in the main javascript scope, `setTimeout()` may be used in the browser console.
 
 ### Code execution after a delay
 The `setTimeout()` function is used to only run a function or a piece of code once after a given amount of time has passed.
 
 **syntanx**
 
-`setTimeout(function, milliseconds)`.
+```javascript
+let timeout_id = setTimeout(function[, delay, arg1, arg2,arg3, ...]); //syntax 1
+//or
+let timeout_id= setTimeout(function[, delay]); //syntax 2
+//or
+let timeout_id = setTimeout(code[, delay]); //syntax 3
+```
 
-You must give two parameters to utilize this function: `A Function` parameter that describes the function to be executed, and an optional `Delay` parameter that determines how long to wait before the function is executed `(1 second = 1000 milliseconds)`.
+You must give two parameters to utilize this function: A (function)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function] parameter that describes the function to be executed, and an optional `Delay` parameter that determines how long to wait before the function is executed. 
 
 **Example**
 
-- Create a html document save it as `index.html`
-- In this page,after the button,add javaScript code inside `<script></script>` tags.
+Let's proceed and create HTML document `index.html`. Copy and paste the following code snippets:  
 
 ```html
 <!DOCTYPE html>
@@ -52,12 +62,9 @@ function delayGreetings() {
 </body>
 </html>
 ```
+You notice that when the above code is executed on the browser, button click displays `Hello John Doe!` after 2s on the console.
 
-**when the button is clicked the greetings will be displayed in the console after 2 seconds**
-
-**NOTE :** If the delay parameter is 0 or if it is not specified, the function is executed immediately.
-
-_TASK-1_
+**_TASK-1_**
 
 Use `setTimeout` function to print the following two messages after their respective delays .
 
@@ -80,38 +87,41 @@ In your solution, you can only define one function, which includes inline functi
   ```
 
 #### Explanation
-- I gave `delayGreetings` a delay parameter and utilized the delay argument's value in the displayed message. As a result, depending on the delay value we provide to the function, it might print different messages.
+- I gave `delayGreetings()` a delay parameter and utilized the delay argument's value in the displayed message. As a result, depending on the delay value we provide to the function, it might print different messages.
 
-- After that, I used `delayGreetings` function in two setTimeout calls, one for 4 seconds and the other for 8 seconds. A `third parameter` is sent to both of these setTimeout calls to represent the `delay` argument for `delayGreetings`.
+- After that, I used `delayGreetings()` function in two `setTimeout()` calls, one for 4 seconds and the other for 8 seconds. A `third parameter` is sent to both of these setTimeout calls to represent the `delay` argument for `delayGreetings()`.
 
 ### Code execution at regular intervals
 Similarly, the `setInterval()` method may be used to execute a function or a given piece of code at certain intervals.
 
 **syntanx**
 
-`setInterval(function, milliseconds)`.
+```javascript
+let interval_id = setInterval(func, [delay, arg1, arg2, ...]); //syntax 1
+//or
+let interval_id = setInterval(function[, delay]); //syntax 2
+//or
+let interval_id= setInterval(code, [delay]); // syntax 3
 
+```
 Begin by defining two parameters, one of which defines the `function` to be performed and another which provides the `period (one second = 1000 milliseconds)` in which to wait until the `function` is executed.
+
 **Example**
 
 ```javascript
 setInterval(
   () => console.log("Hello John Doe after every 3 seconds"),
-  3000
-);
+  3000);
 ```
 
 The above code executes after every 3 seconds in the console.
 
-_Task-2_
+**_Task-2_**
+- use `setInterval()` function to display your local computer time after every one second.
 
-- use `setInterval` function to display your local computer time after every one second.
-
-  **Solution**
-
-- one of the way to sovle **Task-2** is:
-
-- Create a html document save it as `index.html`
+**Solution**
+One of the way to solve **Task-2** is as follows:
+- Create a HTML document save it as `index.html`.
 - In this page,after the paragraph,add javaScript code inside `<script></script>` tags.
 
 ```html
@@ -141,12 +151,11 @@ After every 1 second, the `showTime()` method is executed. It Retrieves your com
 
 ### Cancelling a timer
 Using the `setTimeout()` and `setInterval()` methods will return an integer value that will identify the timer generated by these methods by its `unique ID`.
-You may deactivate or clear the timer with this ID and stop the execution of code in advance by using this ID to disable or clear it. Two methods are available for clearing a timer: `clearTimeout()` and `clearInterval ()`.
-To clear a `setTimeout()` timer for a specific Id, use this function, as seen in the following example:
+You may deactivate or clear the timer with this `ID` and stop the execution of code in advance by using this `ID` to disable or clear it. Two methods are available for clearing a timer: `clearTimeout()` and `clearInterval ()`.
 
-
-- Create a html document save it as `index.html`
-- In this page,after the button element,add javaScript code inside `<script></script>` tags.
+To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen in the following example:
+- Create a HTML document save it as `index.html`.
+- In this page,after the button element,add JavaScript code inside `<script></script>` tags.
 
 
 ```html
@@ -181,12 +190,9 @@ To clear a `setTimeout()` timer for a specific Id, use this function, as seen in
 </body>
 </html>
 ```
-
-- It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` function.
-
-
-- Create a html document save it as `index.html`
-- In this page,after the button element,add javaScript code inside `<script></script>` tags.
+- It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` functions.
+- Create a html document save it as `index.html`.
+- In this page,after the button element,add JavaScript code inside `<script></script>` tags.
 
 
 ```html
@@ -224,7 +230,7 @@ To clear a `setTimeout()` timer for a specific Id, use this function, as seen in
 
 ```
 
-**Note:** `clearTimeout()` and `clearInterval()` can be used interchangeably. You should avoid this, though, for the sake of clarity and code maintainability.
+> `clearTimeout()` and `clearInterval()` can be used interchangeably. You should avoid this, though, for the sake of clarity and code maintainability.
 
 ### Here are five pointers for developing a successful coming soon landing page.
 
@@ -232,49 +238,44 @@ To clear a `setTimeout()` timer for a specific Id, use this function, as seen in
 
 Concentrate on the title and a brief summary of the article. Focus on what you're giving and how it will enhance the lives of the people you're trying to reach.
 
-As an example:
-
+For example:  
 In the described template, the headline "THE REAL SOUND" evokes the appropriate emotions.
-
 Visitors to this website will at least have an idea of what to expect based on the headline, which is downloading and listening to HD hits.
 
 #### 2. You'll only have to fill out one form.
 
-A typical landing page can have up to two or three sign up pages, however a coming soon landing page can only have one. It's critical that you just focus on customers' eyes on a coming soon landing page because the more users you get to join and sign up, the more likely you are to lose them.
+A typical landing page can have upto two or three sign up pages, however a coming soon landing page can only have one. It's critical that you just focus on customers' eyes on a coming soon landing page because the more users you get to join and sign up, the more likely you are to lose them.
 
-In the Example template below, you can add a modal form to the getNotified button so that when constomers click it, a modal form appears, allowing them to sign up and be alerted.
+In the Example template below, you can add a modal form to the `getNotified` button so that when constomers click on it, a modal form appears, allowing them to sign up and be alerted.
 
 #### 3. Set a countdown
-
-Setting a countdown is one approach to significantly boost the conversion rate of your coming soon page.A physical, adjustable countdown clock can be used to do this.
-If you don't have a specific launch date in mind, you might say something like "arriving this fall" or "out in time for Christmas."
+Setting a countdown is one approach to significantly boost the conversion rate of your coming soon page. A physical, adjustable countdown clock can be used to do this.
+If you don't have a specific launch date in mind, you might say something like "Arriving this fall" or "Out in time for Christmas."
 
 #### 4.It should be easy to share.
-
-Your landing page will earn more social shares if you provide a prize. Share it on Facebook, retweet it on Twitter, or post about it on Instagram to enter the contest.
+Your landing page will earn more social shares if you provide a prize. Share it on social media platforms to enter the contest.  
 
 #### 5. Make it mobile
-
 This emphasizes that the page should be responsive, implying that all functionality should be the same regardless of whether the user is on a computer, an iPad, or a mobile phone.
 
 ### Template section
-In this section, i have designed a responsive coming soon landing page.I have used some bootstrap to sought of achive page resposiveness.Make sure you identify the five pro tips shared above.
+In this section, I've designed a responsive coming soon landing page. I've used some [Bootstrap](https://getbootstrap.com) to sought of achieve page responsiveness .Make sure you identify the five pro tips shared above.
 
-![large-devices](temp01.png)
-![medium-devices](temp02.png)
-![small-devices](temp03.png)
+![large-devices](/engineering-education/coming-soon-landing-page-using-javascript-timers/temp01.png)
+![medium-devices](/engineering-education/coming-soon-landing-page-using-javascript-timers/temp02.png)
+![small-devices](/engineering-education/coming-soon-landing-page-using-javascript-timers/temp03.png)
 
 #### Source code
-- Create a directory name it as `coming-soon-landing-page`
-- create a html doument save it as index.html in the main folder.
-- create 3 sub-folders in the main folder : `css`,`img` and `js`.
-- from the `css` sub-folder you will store all your `stylesheets` and link them in the `<head>` section of the html document.
-- `js` sub-folder will contain your `javaScript` files for example `main.js`.
+- Create a directory `coming-soon-landing-page`.
+- Create a HTML doument save it as `index.html` in the main folder.
+- Create 3 sub-folders in the main folder : `css`,`img` and `js`.
+- From the `css` sub-folder you will store all your `stylesheets` and link them in the `<head>` section of the HTML document.
+- `js` sub-folder will contain your `JavaScript` files for example `main.js`.
 - All images will be in `img` sub-folder.
    
-**MARK UP SECTION**
-- index.html
+**MARK-UP SECTION**
 ```html
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -427,9 +428,9 @@ let x = setInterval(() => {
 ```
 
 ### Conclusion
-Because JavaScript engines only have one thread, asynchronous events are forced to wait in a queue for execution.
-The way setTimeout and setInterval run asynchronous code is fundamentally different.
-All of this information is highly essential and paramount.Knowing how a JavaScript engine works is a wonderful basis for constructing complex application code, especially given the enormous amount of asynchronous events that normally occur.
+Because JavaScript engines only have one thread, asynchronous events are forced to wait in a queue for execution. The way `setTimeout()` and `setInterval()` run asynchronous code is fundamentally different.  
+
+All of thesse information is highly essential and paramount.Knowing how a JavaScript engine works is a wonderful basis for constructing complex application code, especially given the enormous amount of asynchronous events that normally occur.
 
 Building a user attractive coming soon landing page will boost the rate of attracting users to register in your site always go for user sight.
 To do so, make sure your landing page is responsive, include a countdown, and include your social media links. Also, make sure your website is capable of notifying people so that they may subscribe with their email addresses to be notified when the page is ready to be launched.
