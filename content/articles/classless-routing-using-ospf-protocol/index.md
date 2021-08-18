@@ -3,17 +3,18 @@ layout: engineering-education
 status: publish
 published: false
 url: /classless-routing-using-ospf-protocol/
-title: Classless Routing Using OSPF Protocol.
-description: The objective of this tutorial is to help one understand the concept of classless routing using the OSPF protocol in handling multiple routing areas and finding the fastest available path for the packets sent.
+title: Classless Routing Using Open Shortest Path First (OSPF) Protocol
+description: The objective of this tutorial is to help the reader understand the concept of classless routing using the OSPF protocol in handling multiple routing areas and finding the fastest available path for the packets sent.
 author: atonya-dennis
-date:
+date: 2021-08-18T00:00:00-15:30
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/classless-routing-using-ospf-protocol/hero.jpg
-    alt: Routing Example image
+    alt: Classless Routing OSPF Using image
 ---
+
 Packets take various routes when sent in large and complex networks. The routes tend to be longer and others shorter, the fastest available routes are always the best  hence a mechanism is needed to find the best available fastest route.
 <!--more-->
 This article will cover how we can apply classless routing protocols on networks in creating fast and available routes using the Open Shortest Path First (OSPF) protocol.
@@ -65,17 +66,17 @@ OSPF characteristics:
 - Sends only updates and not the entire routing table.
 - Uses path cost as its basic routing metric.
 - Supports authentication and the updates are sent every 10 seconds.
-- Updates sent withy multicast address 224.0.0.5
-
+- Updates sent withy multi-cast address 224.0.0.5
 
 ### OSPF Implementation
 OSPF  can be implemented in one of the two ways:
 ##### Single-Area OSPF
 This type of OSPF implementation occurs in small networks where the routers are in one area called the `backbone area` (area 0) resulting in large routing tables.
-![Single Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/singlearea.jpg)
-##### Multiarea OSPF
+![Single Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/singlearea.jpg).
+
+##### Multi-Area OSPF
 Here OSPF is implemented in a hierarchical fashion using multiple areas which must connect to the backbone area. With this method, we can divide a large autonomous system into smaller areas to support hierarchical routing. The Shortest Path First (SPF) is confined to an area resulting in smaller routing tables.
-![Multi Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/multiarea.jpg)
+![Multi Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/multiarea.jpg).
 
 ### OSPF Configuration
 We move on  and look at how we can configure and verify OSPF implementation on  a local area network.
@@ -87,13 +88,13 @@ Assign IP addresses to the interfaces on both routers and the PCs.
 Router>enable
 Router#configure terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
-Router(config)#interface gi0/0            !specifying interface
-Router(config-if)#ip address 192.168.20.1 255.255.255.0      !assigning IP address to interface
-Router(config-if)#no shutdown                         !activating tghe interface
-Router(config-if)#interface gi0/1
-Router(config-if)#ip address 192.168.10.1 255.255.255.0
-Router(config-if)#no shutdown
-Router(config-if)#do write                     !saving routers configuration
+Router(config)  #interface gi0/0    !specifying interface
+Router(config-if)   #ip address 192.168.20.1 255.255.255.0  !assigning IP address to interface
+Router(config-if)   #no shutdown    !activating the interface
+Router(config-if)   #interface gi0/1
+Router(config-if)   #ip address 192.168.10.1 255.255.255.0
+Router(config-if)   #no shutdown
+Router(config-if)   #do write   !saving routers configuration
 Building configuration...
 [OK]
 ```
@@ -102,38 +103,40 @@ Building configuration...
 Router>enable
 Router#config terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
-Router(config)#interface gi0/0
-Router(config-if)#ip address 192.168.20.2 255.255.255.0
-Router(config-if)#no shutdown
-Router(config-if)#interface gi0/1
-Router(config-if)#ip address 192.168.30.1  255.255.255.0
-Router(config-if)#no shutdown
-
+Router(config)  #interface gi0/0
+Router(config-if)   #ip address 192.168.20.2 255.255.255.0
+Router(config-if)   #no shutdown
+Router(config-if)   #interface gi0/1
+Router(config-if)   #ip address 192.168.30.1  255.255.255.0
+Router(config-if)   #no shutdown
 ```
+
 Establish a neighbor relationship between the two routers and advertise directly connected subnet into OSPF.
 
 ```bash
-Router(config)#router ospf 1    !enabling ospf
-Router(config-router)#network 192.168.10.0  0.0.0.255 area 0  !specifying the network, wildcard mask and the area
-Router(config-router)#network 192.168.20.0 0.0.0.255 area 0
-Router(config-router)#do write
+Router(config)  #router ospf 1    !enabling ospf
+Router(config-router)   #network 192.168.10.0  0.0.0.255 area 0  !specifying the network, wildcard mask and the area
+Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
+Router(config-router)   #do write
 Building configuration...
 [OK]
 ```
+
 ```bash
-outer(config-if)#router ospf 1
-Router(config-router)#network 192.168.30.0 0.0.0.255 area 0
-Router(config-router)#network 192.168.20.0 0.0.0.255 area 0
-Router(config-router)#
+outer(config-if)    #router ospf 1
+Router(config-router)   #network 192.168.30.0 0.0.0.255 area 0
+Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
+Router(config-router)
 ```
 
->NOTE: To diable the OSPF configurations on the routers, command `no router ospf` is used in the global configuartion mode.
+>NOTE: To disable the OSPF configurations on the routers, command `no router ospf` is used in the global configuration mode.
 
 ### OSPF Verification
 To verify that we configured OSPF on the network and its implementation is working, the command `show ip ospf`.
 
 ```bash
 Router#show ip ospf
+
  Routing Process "ospf 1" with ID 192.168.20.1
  Supports only single TOS(TOS0) routes
  Supports opaque LSA
@@ -156,8 +159,8 @@ Router#show ip ospf
         Number of indication LSA 0
         Number of DoNotAge LSA 0
         Flood list length 0
-
 ```
+
 To view the OSPF neighbors we use `show ip ospf neighbor`.
 
 ```bash
@@ -209,3 +212,4 @@ One can find more information about network management [here](https://study-ccna
 Happy coding!
 
 ---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
