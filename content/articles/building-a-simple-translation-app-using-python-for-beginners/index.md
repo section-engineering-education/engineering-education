@@ -32,7 +32,7 @@ To understand the contents of this tutorial, a reader needs to be familiar with 
 - [Wrapping up](#wrapping-up)
 
 ### Introduction
-The queries you make on websites such as Google and smart assistance such as Google assistant all have one thing in common. They both use Natural Language Process (NLP). NLP is a cutting-edge AI technology that gives a machine the ability to read, understand, and derive meaning from human languages. NLP is the reason why Google assistant sounds so intelligent and Google queries are responded to so intelligently. Data analysts and machine learning experts use NLP be mimic human linguistics behavior saving manpower and time. Every day, you use NLP unknowingly in your phone's auto-correct feature helping you correctly spell a word. To understand how NLP works in-depth, please refer to this [article](https://www.section.io/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/).
+The queries you make on websites such as Google and smart assistance such as Google assistant all have one thing in common, they both use Natural Language Process (NLP). NLP is a cutting-edge AI technology that gives a machine the ability to read, understand, and derive meaning from human languages. NLP is the reason why Google assistant sounds so intelligent and Google queries are responded to so intelligently. Data analysts and machine learning experts use NLP be mimic human linguistics behavior saving manpower and time. Every day, you use NLP unknowingly in your phone's auto-correct feature helping you correctly spell a word. To understand how NLP works in-depth, please refer to this [article](https://www.section.io/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/).
 
 NLP is a huge library that can be difficult to understand for beginners. Because of this, easy-to-use libraries such as [Hugging Face](https://www.section.io/engineering-education/hugging-face/) have been created to democratize NLP. It is one of the leading startups in the NLP space. This tutorial aims to use it to build a simple translation app.
 
@@ -45,7 +45,7 @@ Technology companies such as [Speech Brain](https://speechbrain.github.io/) and 
 [Gradio](https://gradio.app/), on the other hand, allows us to quickly create customizable UI components around PyTorch models. It allows you to create interfaces for your ML models. It helps you quickly test the models you've created using a web interface. There are free example code implementations on their official website demonstrating how you can use gradio to perform digit classification, face segmentation, and outbreak forecast. Please feel free to check it out.
 
 ### Installing dependencies
-> An important point to note is that recently, Google Colab comes pre-installed with PyTorch. You may need to ignore the PyTorch installation if you're using Colab and skip to the Hugging Face and Gradio installations. Only follow the steps to install PyTorch if you're installing it on your machine.
+> An important point to note before installing PyTorch is that Google Colab comes pre-installed with PyTorch. You may need to ignore the PyTorch installation if you're using Colab and skip to the Hugging Face and Gradio installations. Only follow the steps to install PyTorch if you're installing it on your machine.
 
 Our main dependencies are going to be PyTorch, Hugging Face Transformers, and Gradio. Let's go ahead and install them.
 
