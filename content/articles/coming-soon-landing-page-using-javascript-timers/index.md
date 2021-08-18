@@ -14,10 +14,9 @@ This article will teach you how to make a coming soon landing page, but first th
 - [Conclusion](#conclusion)
 
 ### Javascript timers overview
-A timer is a feature that allows us to run a program at a predetermined time. They can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading. For example, they can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things.  
+A timer is a feature that allows us to run a program at a predetermined time. Timers can be used to postpone code execution so that it doesn't finish at the same time as an event or a page loading. For example, timers can be used to alter your website's advertisement banners at regular intervals or to display a real-time clock, among other things.  
 
-In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers implement timer functions, and their implementations differ from one browser to another. The Node.js runtime also has a native implementation of timers. In browsers, the window interface is the parent of the main timer features. Because the window interface makes its elements available globally in the main javascript scope, setTimeout may be used in the browser console.
-'Timers' is an object in NodeJs that functions like the browser's window interface.
+In JavaScript, there are two timer functions: `setTimeout ()` and `setInterval ()`. Browsers allow implemention of timer functions, and their implementations differ from one browser to another.In browsers, the window interface is the parent to  main timer features.Since the window interface makes its elements available globally in the main javascript scope, `setTimeout` may be used in the browser console.
 
 ### Code execution after a delay
 The `setTimeout()` function is used to only run a function or a piece of code once after a given amount of time has passed.
