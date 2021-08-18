@@ -1,7 +1,23 @@
-### Introduction
-Image processing is the process of manipulating the digital properties of an image to improve its quality or to get the desired information from the image. It entails importing the image in the image processing application, analyzing the image, then manipulating the image to get a suitable output that can produce desired results. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /image-processing-using-matlab/
+title: Image processing using matlab
+description: In this article, we are going to discuss the basics of image processing and analysis using Matlab to determine image characteristics, adjusting image features, and improving image quality.
+author: vitalis-odhiambo
+date: 2021-08-18T00:00:06-30:50
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-In this article, we are going to discuss the basics of image processing and image analysis using Matlab. This analysis can be used to determine image characteristics, adjusting image features, and improving image quality.
+  - url: /engineering-education/image-processing-using-matlab/hero.jpg
+    alt: Image processing using matlab
+---
+
+Image processing is the process of manipulating the digital properties of an image to improve its quality or to get the desired information from the image. It entails importing the image in the image processing application, analyzing the image, then manipulating the image to get a suitable output that can produce desired results. 
+<!--more-->
+In this article, we are going to discuss the basics of image processing and analysis using Matlab to determine image characteristics, adjusting image features, and improving image quality.
 
 ### Prerequisites
 - [Matlab](https://www.mathworks.com/products/matlab.html) installed in your computer.
