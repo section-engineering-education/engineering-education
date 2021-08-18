@@ -1,5 +1,8 @@
-### Introduction
-One of the primary goals of employing functions in a program is to preserve memory especially when a function is likely to be called repeatedly. When a function is called, it takes a long time to execute operations like shifting to calling the function. If a function is short, overheads can consume a significant part of its execution time, and the time it takes to jump to the calling function may be longer than the time it takes to execute that function.
+
+
+One of the primary goals of employing functions in a program is to preserve memory especially when a function is likely to be called repeatedly. When a function is called, it takes a long time to execute operations like shifting to calling the function.
+<!--more-->
+If a function is short, overheads can consume a significant part of its execution time, and the time it takes to jump to the calling function may be longer than the time it takes to execute that function.
 
 Macro definitions; which are mostly referred to as macros are one of the solutions to this issue. In the C programming language, preprocessor macros are common, but the main disadvantage is that they are not true functions. Thus, the typical error checking process is bypassed during compilation. 
 
@@ -158,13 +161,15 @@ We can use the inline function to meet our requirements. Here are some helpful s
 - Over macros, we can always use the inline function.
 - To hide the details of the implementation of the function, developers recommend using the inline keyword well outside the class with the inline function.
 
-### Points to Remember When Using Inline Functions 
+### Points to remember when using inline functions 
 - We must keep inline functions tiny because they are more efficient and produce better outcomes.
 - Although inline functions improve efficiency, they should not be used for all functions Because putting huge functions inline might lead to code clutter and decrease efficiency.
 - Large functions should be defined outside a class declaration using the scope resolution operator  `::` since if we define them inside a class definition, they may become inline automatically, reducing the efficiency of our code.
 
 ### What's the problem with macros?
-Readers who are familiar with the C programming language are aware that it employs macros. All macro calls are replaced directly within the macro code by the preprocessor. Inline functions should always be used instead of macros. Macros are nearly never necessary in C++, according to Dr. Bjarne Stroustrup, the architect of C++, and they are mistake-prone. The use of macros in C++ has several drawbacks. A macro has no access to a class's private members. Macros appear to be function calls, however they are not.
+Readers who are familiar with the C programming language are aware that it employs macros. All macro calls are replaced directly within the macro code by the preprocessor. Inline functions should always be used instead of macros. Macros are nearly never necessary in C++, according to Dr. Bjarne Stroustrup, the architect of C++, and they are mistake-prone.
+
+The use of macros in C++ has several drawbacks. A macro has no access to a class's private members. Macros appear to be function calls, however they are not.
 
 Example:
 ```c++
@@ -198,13 +203,13 @@ If the function is not called inline, the compiler may issue a warning, dependin
 
 Inline functions, last but not least, are a key component of C++. When inline functions are utilized correctly, they can improve efficiency. But, when inline functions are used indiscriminately, they cannot. To put it another way, don't expect the software to improve. Ensure that a few of your functions are inline.
 
-### Merits of Inline function’s
+### Merits of inline functions
 - There is no overhead associated with function calls.
 - The overhead of a function's return call is avoided with inline functions.
 - When the function is invoked, It saves time by not having to push and pop variables on the stack.
 - When we utilize the inline function, the compiler may be able to apply context-specific optimizations on the function body, which are not available with regular function calls.
 
-### Demerits of Inline function's
+### Demerits of inline functions
 - Cache misses are caused by large inline routines, which reduce efficiency.
 - The overhead of copying the function body everywhere in the code during compilation is insignificant in small programs, but it can make a significant impact in huge code-bases.
 - If we need the address of a function in a program, the compiler won't be able to inline it. Because the compiler must allocate storage to a function to provide it with an address. Inline functions do not receive storage and are instead stored in the Symbol table.
@@ -216,3 +221,4 @@ Inline functions, last but not least, are a key component of C++. When inline fu
 In this article, we have taken a look at inline functions, what they are, when to use them along some practical demonstrations. We have seen how inline functions are more effective than preprocessor macros. I hope that this tutorial gives you insight and helps you in your future programs.
 
 Happy Coding!
+
