@@ -15,8 +15,8 @@ images:
 ---
 
 [PHP](https://www.php.net/) is a programming language used for creating interactive web applications. It's a widely used language that runs on the server.
-
-In this tutorial, you will be building a contact form with PHP. Features will include form validation and the ability to send an email using Google Gmail SMTP server and [PHPMailer library](https://github.com/PHPMailer/PHPMailer).
+<!--more-->
+In this tutorial, will build a contact form with PHP. It will include the following features, form validation, the ability to send emails using Google Gmail SMTP server, and [PHPMailer library](https://github.com/PHPMailer/PHPMailer).
 
 ![Project](/engineering-education/build-a-contact-form-with-php/project.png)
 
