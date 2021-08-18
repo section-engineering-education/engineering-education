@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /facenet-a-unified-embedding-for-face-recognition-and-clustering/
+url: /facenet-unified-embedding-face-recognition-clustering/
 title: Unified Embedding for Face Recognition and Clustering using FaceNet
 description: In this article, we will explore how the FaceNet face recognition system model improves upon traditional face recognition systems. 
 author: wilkister-mumbi
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /facenet-a-unified-embedding-for-face-recognition-and-clustering/hero.png
+  - url: /engineering-education/facenet-unified-embedding-face-recognition-clustering/hero.png
     alt: Facenet Image
 ---
 [FaceNet](https://arxiv.org/abs/1503.03832) is a face recognition project developed by three researchers at Google, Florian Schroff, Dmitry Kalenichenko, and James Philbin in 2015. The main goal of this research is to produce an embedding from the face of a person. 
@@ -44,7 +44,7 @@ This is where the FaceNet model comes in. Instead of doing classification, the m
 Let's now explore this model in depth. 
 
 ### Understanding the FaceNet face recognition system model
-![FaceNet model architecture](/engineering-education/facenet-a-unified-embedding-for-face-recognition-and-clustering/facenet-model-architecture.png)
+![FaceNet model architecture](/engineering-education/facenet-unified-embedding-face-recognition-clustering/facenet-model-architecture.png)
 
 *[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
 
@@ -62,7 +62,7 @@ These 128 numbers contain the characters/features of the face. Therefore, if we 
 
 In training, this model employs this technique known as *Triplet*. Essentially, what happens here during training is that in every row of training examples, they have two sets of images that are matching (both positive & matching) and a second example which is a pair of both the positive and negative images (non-matching). The idea is to let images that are similar be closer together while those not similar be far apart.
 
-![Triplet loss](/engineering-education/facenet-a-unified-embedding-for-face-recognition-and-clustering/triplet-loss.png)
+![Triplet loss](/engineering-education/facenet-unified-embedding-face-recognition-clustering/triplet-loss.png)
 
 *[Image Source: arXiv](https://arxiv.org/pdf/1503.03832.pdf)*
 
