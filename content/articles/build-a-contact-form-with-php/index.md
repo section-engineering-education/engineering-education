@@ -171,7 +171,7 @@ In this section, we will create a basic form Inside the `index.php`  to replace 
 > To learn more about PHP forms, check out this awesome [article](https://www.section.io/engineering-education/working-with-forms-in-php/).
 
 2. We are also using [materializeCSS](https://materializecss.com/about.html) for some default styling.
-3. And finally we added some PHP variables within our HTML page to echo out either the error messages or the value that you inputted inside your form. Note that we haven't created these variables yet inside our PHP script so it will produce some errors if you refresh your browser.
+3. We added some PHP variables within our HTML page to echo out either the error messages or the value that was entered in the form. Note that we haven't created these variables yet inside our PHP script so it will produce some errors if you refresh your browser.
 
 > The **htmlspecialchars** function is used to turn special characters returned into the ones HTML can understand and properly display. It prevents vulnerabilities like **cross-site scripting** attack (XSS) by replacing all harmful characters with harmless HTML entities. Therefore, always include this function when outputting users input in your HTML.
 
