@@ -44,7 +44,7 @@ In this section, we would be setting up our project. Recall that this tutorial u
 Next, open your browser to [http://localhost/dashboard/](http://localhost/dashboard/), you should see the following:
 
 ![XAMPP Server Hompage](/engineering-education/build-a-contact-form-with-php/xampp-server-homepage.png)
-
+### PHP New Project
 Let's create a new PHP project.
 
 ### Step 1
