@@ -75,7 +75,7 @@ Navigate back to [http://localhost/php-contact/](http://localhost/php-contact/),
 
 ### Creating the form
 
-In this section, we will be creating a basic form. Inside the `index.php` replace the previous code with the following:
+In this section, we will create a basic form Inside the `index.php`  to replace the previous code with code below:
 
 ```php
 <!DOCTYPE html>
