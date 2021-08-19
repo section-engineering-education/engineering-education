@@ -25,7 +25,7 @@ We will also set up CodeIgniter. We visit their download page and get the latest
 
 We will unzip the folder and place it in our server's root directory, which in XAMPP is `htdocs`, and rename it to `bizdir`.
 
-To verify that everything is working as expected, we will start up our apache server, launch our web browser, and access the link http://localhost/bizdir.
+To verify that everything is working as expected, we will start up our Apache server, launch our web browser, and access the link http://localhost/bizdir.
 
 ![code igniter](/engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/codeigniter-start-page.PNG)
 
@@ -210,7 +210,7 @@ tr:nth-child(even) {
 </table>
 ```
 
-In the header section we are displaying the `title` we defined in the controller. Inside the `index.php` file, we have created a loop that iterates through the list of businesses that are stored in our database. On each loop a new `<tr>` is created and all values are displayed inside `<td>`.
+In the header section, we are displaying the `title` we defined in the controller. Inside the `index.php` file, we have created a loop that iterates through the list of businesses that are stored in our database. On each loop, a new `<tr>` is created and all values are displayed inside `<td>`.
 
 We will create `any.php` file inside `application/views/bizdir` and add the below `HTML`:
 
