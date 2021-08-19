@@ -88,7 +88,35 @@ A Namespace can be defined as a group of code that is related to each other , it
 
 ```vb
 Module Program
-    'code declaration
+   'code declaration
 End Module 
 ```
-Since VB.NET is an object-oriented language , we must have a class module. For our *helloworld* program we have declared our method and named it `Program`.Inside this module we will be able to define methods to be used by our program.
+A module defines a refrence type available through out its namespace .We can also define it as a part of a program  that contains one or more routines . For our *helloworld* program we have declared our module and named it `Program`.Inside this module we will be able to define methods to be used by our program .To close our module we use the `End` keyword.
+
+**Line 3:** 
+
+```vb
+Sub Main(args As String())
+     'code declaration 
+End Sub
+```
+
+Our module has one procedure, `Sub` .A procedure is a block of statements enclosed by a declaration statement and a matching end declaration.Its From this line where execution of our program will begin.Each program in VB.NET should have a `main` method .
+
+**Line 4:**
+
+```vb
+Console.WriteLine("Hello World!")
+```
+
+`Console.WriteLine()` prints out text on the console. After printing a string it adds a new line character to the end of the string .In our program it will output  *"Hello World!"*.
+Alternatively we can use `Console.Write()` instead of `Console.WriteLine()` .The main diffrence between these two is that `Console.Write()` *does not* add a new line character to the end of the string. More about the two commands can be found [here](https://www.programiz.com/csharp-programming/basic-input-output).
+
+### Getting user input 
+To read the next **characters** from a standard input stream we use `Console.ReadLine()`.
+
+`Console.Read()` is used when we want to read the next **Character** from the standard input stream.
+
+`Console.ReadKey()` obtains the next character pressed by the user.The pressed key is displayed in the console window.
+
+### Comments in Visual Basic .NET
