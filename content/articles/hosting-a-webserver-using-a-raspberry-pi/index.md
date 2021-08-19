@@ -52,7 +52,7 @@ Password: raspberry
 ![Putty Connection](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/puttylogin.png)
 
 #### Step 2: Updating packages
-In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the below command into the Terminal. This ensures you have the current versions of any file you download afterward.
+In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the command below into the Terminal. This ensures you have the current versions of any file you download afterwards.
 
 ```bash
 Sudo apt update
