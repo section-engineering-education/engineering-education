@@ -6,8 +6,8 @@ url: /loading-image-with-glide-in-android/
 title: Loading Image with Glide in Android
 description: This tutorial takes the reader through the process of loading images with Glide in Android. Glide is a fast and efficient image loading library for Android focused on smooth scrolling and memory efficiency.
 author: collince-okeyo
-date: 2021-08-18T00:00:00-16:30
-topics: []
+date: 2021-08-19T00:00:00-04:33
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -27,7 +27,7 @@ To follow through this tutorial, the reader should:
 ### Goal
 By the end of this tutorial, the reader should be able to:
 - Understand what [Glide](https://bumptech.github.io/glide/) is.
-- Add an [ImageView](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout
+- Add an [ImageView](https://developer.android.com/reference/android/widget/ImageView) to an `XML` layout.
 - Load images using the `Glide` library.
 
 ### Introduction  
@@ -40,7 +40,7 @@ Glide supports fetching, decoding, and displaying video stills, images, and anim
 
 ### Features of Glide
 Glide has the following features:
-- **Image loading**- This allows access to images on the internet or from a drawable.
+- **Image loading** - This allows access to images on the internet or from a drawable.
 - **Circle cropping** - Displays an image in a circular view.
 - **Resizing and scaling** - This refers to adjusting the size of an image.
 - **Center cropping** - This is scaling the whole image by re-sampling it.
@@ -190,7 +190,7 @@ In this step, we are going to design the `XML` layout consisting of `Buttons` an
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> NOTE: The sample images used in this tutorial can be found [here](https://github.com/Collince-Okeyo/Glide)
+> NOTE: The sample images used in this tutorial can be found [here](https://github.com/Collince-Okeyo/Glide).
 
 ### Step 4: Implementing Glide features
 
@@ -221,7 +221,7 @@ Glide.with(this)
 ### Transformations
 Transformations in Glide involve taking an image resource, changing its appearance, and returning the changed resource. Transformations are also used to crop and apply filters on images.
 
-### a). CenterCrop
+#### a) CenterCrop
 It scales the image with the end goal that the width of the image coordinates with the given width of the `ImageView` and the height of the image is greater than the given height or the other way around. This method crops the image to fit into the dimensions of the given `ImageView`.
 
 Center crop is implemented by using the `centerCrop()` method.
@@ -235,8 +235,8 @@ Glide.with(this)
 }
 ```
 
-### b). FitCenter
-Scales the image consistently with the end goal that one of the measurements is equivalent to the given dimension of the `ImageView` and the other is not exact to the given dimension of the `ImageView`
+#### b) FitCenter
+Scales the image consistently with the end goal that one of the measurements is equivalent to the given dimension of the `ImageView` and the other is not exact to the given dimension of the `ImageView`.
 
 It is implemented by using the `fitCenter()` method.
 
@@ -249,7 +249,7 @@ Glide.with(this)
 }
 ```
 
-### c) CircleCrop
+#### c) CircleCrop
 Just like the FitCenter transformation, `circleCrop` scales the image inside the `ImageView` but the resulting image is converted to a circular outline.
 
 It is implemented by using the `circleCrop()` method.
