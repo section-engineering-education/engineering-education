@@ -44,7 +44,7 @@ Next, we will add a `div` tag and some styling to it.
 <div class="w-80 mx-auto mt-5 p-7">
 ```
 
-This `div` tag contains the `button` that when clicked, opens the modal dialog. In the `div` tag we have added classes:
+This `div` tag contains the `button` that when clicked, opens the modal dialog. In the `div` tag we have added the folowing classes:
 
 - `w-80` specifies a width of 320px.
 - `mx-auto` centers the `div` items in the screen.
@@ -64,16 +64,16 @@ We have styled up our `p` tag with the following classes:
 
 - `text-2xl`, `font-medium` and `text-gray-800` which makes the text in the tag to have a font size of 24px, font weight of 500 and gray font color respectively.
 
-We have also added classes to our `button`:
+We will style up our `button` by adding the following code :
 
-- `bg-green-500`, `text-white`, `text-base` and `font-medium` which changes the background color of the button to green, the font color to white, the font size to 16px and the font weight to 500 respectively.
-- `px-8` and `py-2` will add a padding of 32px to the x-axis and 8px to the y-axis respectively.
+- `bg-green-500`, `text-white`, `text-base` and `font-medium` changes the background color of the button to green, the font color to white, the font size to 16px and the font weight to 500 respectively.
+- `px-8` and `py-2` adds a padding of 32px to the x-axis and 8px to the y-axis respectively.
 - `hover:bg-green-600` adds a hover effect on the button by changing the background color to green.
-- `focus:outline-none` removes the outline border when the button is clicked.
+- `focus:outline-none` removes the outline border that appears when the button is clicked.
 - `focus:ring-2` creates an outline ring to the button.
 - `focus:ring-green-300` creates a green outline ring.
 
-We have also added a unique identifier (ID), `open-btn` to the button. Its purpose is to identify the element when scripting.
+We added a unique identifier (ID), `open-btn` to the button. Its purpose is to identify the element when scripting.
 
 ### Adding an overlay effect
 
@@ -84,14 +84,14 @@ We have also added a unique identifier (ID), `open-btn` to the button. Its purpo
 
 We have added classes to the `div` tag to make an overlay effect that will appear when the Open Modal button is clicked:
 
-- `fixed` will make the overlay effect stay in place when it appears.
+- `fixed` makes the overlay effect stay in place when it appears.
 - `hidden` hides the effect by default.
-- `inset-0` this makes the overlay effect fill the entire screen
-- `h-full` and `w-full` will set the height and width to 100% of its container.
-- `bg-opacity-50` the background will be 50% transparent.
-- `overflow-y-auto` this is to add scroll bars on the y-axis if the content overflows the bounds.
+- `inset-0` makes the overlay effect fill the entire screen
+- `h-full` and `w-full` sets the height and width to 100% of its container.
+- `bg-opacity-50` changes the background opacity to 50%.
+- `overflow-y-auto` adds a scroll bar on the y-axis if the content overflows the bounds.
  
- We have also added a unique identifier (ID), `my-modal` to the modal. Its purpose is to identify the element when scripting.
+ We added a unique identifier (ID), `my-modal` to the modal. Its purpose is to identify the element when scripting.
 
  ### Creating the modal dialog
 
@@ -135,7 +135,7 @@ We have used the following classes:
 - `rounded-md` makes the vertices of the dialog rounded.
 - `bg-white` makes the background of our modal dialog white.
 
-We then add another child `div` into which the icon, text and button will be placed. 
+We will add another child `div` into which the icon, text and button will be placed. 
 
 ```html
 <div class="mt-3 text-center">
@@ -145,13 +145,13 @@ We have added the following classes:
 - `mt-3` adds a top margin of 12px.
 - `text-center` centers the text in the `div`.
 
-We then add another child `div` to which we will add an icon.
+We will place the icon in another `div` as shown:
 
 ```html
 <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
 ```
 
-We have aded the following classes:
+We have added the following classes:
 
 - `flex`, `items-center` and `justify-center`
 - `rounded-full` makes the `div` a circle.
@@ -166,12 +166,12 @@ We will then add our SVG icon.
     </svg>
 ```
 
-We have added styling classes to it:
+We will add the following styling classes to our icon :
 
 - `h-6` and `w-6` specifies a height and width of 24px to the icon.
 - `text-green-600` changes the color of the icon to green.
 
-Now, we will add text to the dialog box.
+Next, we will add text to the dialog box.
 
 ```html
 <h3 class="text-lg leading-6 font-medium text-gray-900">Successfull!</h3>
@@ -194,7 +194,7 @@ The `div` tag has the following classes:
 - `mt-2` adds a top margin of 8px.
 - `px-7` and `py-3`adds a padding of 28px and 12px in the x-axis and y-axis respectively.
 
-We will now add the close button.
+We will now create the close button. We will place the button inside a `div` as shown:
 
 ```html
 <div class="items-center px-4 py-3">
@@ -202,14 +202,15 @@ We will now add the close button.
 </div>
 ```
 
-We have added some classes to the `div` tag. 
+We have added the following classes to the `div` :
+
 - `px-4` and `py-3` adds a padding of 16px to the x-axis and of 8px to the y-axis.
 - `items-center` centers the button to the container.
 
-We have also added the following classes to the button:
+We will add the following classes to the button:
 
-- `bg-green-500`, `text-white`, `text-base` and `font-medium` which changes the background color of the button to green, the font color to white, the font size to 16px and the font weight to 500 respectively.
-- `px-8` and `py-2` will add a padding of 32px to the x-axis and 8px to the y-axis respectively.
+- `bg-green-500`, `text-white`, `text-base` and `font-medium` changes the background color of the button to green, the font color to white, the font size to 16px and the font weight to 500 respectively.
+- `px-8` and `py-2` adds a padding of 32px to the x-axis and 8px to the y-axis respectively.
 - `rounded-md`
 - `shadow-sm`
 - `w-full`
@@ -218,7 +219,7 @@ We have also added the following classes to the button:
 - `focus:ring-2` creates an outline ring to the button.
 - `focus:ring-green-300` creates a green outline ring.
 
-We have also added a unique identifier (ID), `close-btn` to the button. Its purpose is to identify the element when scripting.
+We will add a unique identifier (ID), `close-btn` to the button. Its purpose is to identify the element when scripting.
 
 Well done! We are done designing our modal dialog!
 
@@ -229,13 +230,13 @@ Well done! We are done designing our modal dialog!
 We will grab all the elements that we want to add functionality to, like this:
 
 ```JavaScript
-    // Get the modal
+    // Gets the modal dialog by its Id
     var modal = document.getElementById("my-modal");
 
-    // Get the button that opens the modal
+    // Gets the button that opens the modal by its Id
     var btn = document.getElementById("open-btn");
 
-    // Get the button that closes the modal
+    // Gets the button that closes the modal by its Id
     var button = document.getElementById("close-btn")
 ```
 
@@ -246,7 +247,7 @@ We will then add functionality to the open and close buttons. This will enable u
     btn.onclick = function() {
     modal.style.display = "block";
     }
-    // When the user clicks on close, the modal closes
+    // When the user clicks on the close button, the modal closes
     button.onclick = function() {
     modal.style.display = "none";
     }
