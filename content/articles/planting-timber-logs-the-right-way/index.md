@@ -1,4 +1,4 @@
-Logging is one of the important things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These have a tendency to be cumbersome. Timber, which is a library developed by `Jake Wharton` has made logging effortless. In this article, we will discuss the best practices in using `Timber` and planting the `Timber trees`.
+Logging is one of the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. Timber, which is a library created by `Jake Wharton` has made logging effortless. This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
 
 <!--more-->
 
@@ -20,12 +20,12 @@ At the end of this tutorial, you should be able to:
 
 ### Introduction
 
-Logging is one of the most important things we use while developing android apps. We use logs for almost everything. For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These have a tendency to be cumbersome and time-consuming. Timber, which is a library developed by `Jake Wharton` has made logging easily attainable and with less code.
+Logging is one of the most important things we use while developing android apps. We use logs for almost everything. For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome and time-consuming. Timber, a library developed by `Jake Wharton` has made logging easily attainable and with less code.
 
 ### What is a Logcat?
 
 From the official documentation, the logcat window in Android Studio displays system messages. For instance, when a garbage collection occurs, it displays messages in real-time. It also keeps a history so you can view older messages.
-When your code throws an exception, the logcat displays a message. This is then followed by the associated stack trace containing links to the line of code.
+When your code throws an exception, the logcat displays a message. The exception contains an associated stack trace containing links to the line of code.
 
 ### What are some of the traditional log class messages?
 
@@ -39,7 +39,7 @@ According to the official documentation, this class allows you to create log mes
 ### What is Timber?
 
 Logging with the traditional class is cumbersome; that's where `Timber` comes in.
-In the official documentation, `Timber` is a logger with a small, extensible API. It provides utility on top of Android's normal Log class.
+In the official documentation, `Timber` is a logger with a small, extensible API. It provides utility on top of android's standard Log class.
 It's a library by `Jake Wharton` that enhances logging in android.
 `Timber` also has several log messages. For instance:
 - `Timber.i` - for information
@@ -58,7 +58,7 @@ In this example, we'll create an app that adds two numbers. Then we'll log the a
 
 #### Step 1: Creating the project
 
-In this step, we will create a new project; you can refer to the image below for guidance.
+We will create a new project; you can refer to the image below for guidance.
 
 ![create_project](/planting-timber-logs-the-right-way/creating_project2)
 
