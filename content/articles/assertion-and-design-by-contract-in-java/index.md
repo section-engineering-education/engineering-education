@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /assertion-and-design-by-contract-in-java/
-title: Assertion and design by contract in Java
+title: Assertion and Design by Contract in Java
 description: In this article, we will look at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program. 
 author: paul-mwangi
 date: 2021-08-14T00:00:00-06:00
