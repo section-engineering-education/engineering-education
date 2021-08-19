@@ -52,8 +52,8 @@ y(i)
 fprintf('the minimum of the curve is %d and %d\n', x(i), y(i))
 ```
 
-![plotted function]( /engineering-education/getting-started-with-optimization-in-matlab/opt1.png)
-![Obtained results]( /engineering-education/getting-started-with-optimization-in-matlab/opt2.png)
+![plotted function](/engineering-education/getting-started-with-optimization-in-matlab/opt1.png)
+![Obtained results](/engineering-education/getting-started-with-optimization-in-matlab/opt2.png)
 
 We can use this method in simple mathematical functions, but you will use the Matlab In-built functions for complex equations. The in-built functions used in optimization using Matlab are such as;
 `fminbnd()` is for finding the minimum of single-varied functions on a fixed interval. It means for single variable functions, we `fminbnd` function.
@@ -113,8 +113,8 @@ disp(xmin)
 disp(ymin)
 ```
 When we run our code, the result is as follows;
-![plot of the function]( /engineering-education/getting-started-with-optimization-in-matlab/opt3.png)
-![minimum point]( /engineering-education/getting-started-with-optimization-in-matlab/opt4.png)
+![plot of the function](/engineering-education/getting-started-with-optimization-in-matlab/opt3.png)
+![minimum point](/engineering-education/getting-started-with-optimization-in-matlab/opt4.png)
 
 ### Rosenbrock's banana function
 It is a function that is a famous test case for optimization software. Given a function $f(x,y) = (1-x)^2 + 100(y-x^2)^2$, this function is known as Rosenbrock's banana function. We will first plot this function and then find its minimum point. In this case, we have two variables in our function, i.e., `x` and `y`, we cannot use the previous `fminbnd` function, but instead, we will use the `fminsearch` function to obtain this.
@@ -138,7 +138,7 @@ surf(x,y,f)    %use surf function to plot the surf of the function, but in this 
 shading interp;
 colormap (hot);     %used to color the plot
 ```
-![plot of the banana function]( /engineering-education/getting-started-with-optimization-in-matlab/opt5.png)
+![plot of the banana function](/engineering-education/getting-started-with-optimization-in-matlab/opt5.png)
 
 We will use the `fminsearch` function to find the minimum of our given mathematical function. We will first create a function script in which we will define our function as shown below;
 
@@ -152,7 +152,7 @@ In the previous example, we used `x` and `y`, but we need to use vectors instead
 [x, fval] = fminsearch(@bananafunc, [-1.2; 1])  %fval is the f function values.
 ```
 Note that you first run your function script before executing the above command in the command window.
-![minimum point of banana function]( /engineering-education/getting-started-with-optimization-in-matlab/opt6.png)
+![minimum point of banana function](/engineering-education/getting-started-with-optimization-in-matlab/opt6.png)
 
 In our result, we see that `x` has two values. The first value is the `x` value, and the second is the `y` value. `fval` is the `z` value.
 
