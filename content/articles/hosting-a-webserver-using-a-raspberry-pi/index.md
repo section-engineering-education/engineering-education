@@ -1,4 +1,22 @@
-The Raspberry Pi can be used as a web server on your main local network or the internet at large. It is a great selection in cases where you want an Intranet for the office or web development server. You can create a local Pi webserver to deliver various contents while you are continuously surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network and ensured that it has the latest version of the operating system of Raspbian. These are the defined instructions that you need for any model to work even on the pocket-sized Raspberry Pi Zero W and the very powerful Raspberry Pi 4.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hosting-a-webserver-using-a-raspberry-pi/
+title: Hosting a Webserver Using a Raspberry Pi 
+description: This article takes the reader through implementing dark mode using Tailwind CSS. The recent version of Tailwind css comes with a feature that enables users to add dark mode to their webpages.
+author: eunice-wanjiku
+date: 2021-08-18T00:00:00-11:50
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/hosting-a-webserver-using-a-raspberry-pi/hero.jpg
+    alt: Hosting a Webserver Using a Raspberry Pi Hero Image
+---
+The Raspberry Pi can be used as a web server on your main local network or the internet at large. It is a great selection in cases where you want an Intranet for the office or web development server.
+<!--more-->
+You can create a local Pi webserver to deliver various contents while you are continuously surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network and ensured that it has the latest version of the operating system of Raspbian. These are the defined instructions that you need for any model to work even on the pocket-sized Raspberry Pi Zero W and the very powerful Raspberry Pi 4.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -8,7 +26,7 @@ The Raspberry Pi can be used as a web server on your main local network or the i
 - [Conclusion](#conclusion)
 - [Relevant resources](#relevant-resources)
 
-### Pre-requisites
+### Prerequisites
 For the reader to follow through and be guided accordingly, they are assumed to have an installed operating system with the Pixel window manager. In summary, you need to have;
 1.  A Raspberry Pi Zero W 
 2.  Apache webserver 
@@ -19,7 +37,7 @@ For the reader to follow through and be guided accordingly, they are assumed to 
 Various web servers can be related to the Raspberry Pi and each has utilization advantages. This tutorial uses the Apache webserver application. Apache is an open-source web server that provides content via the internet. It may be installed on a Raspberry Pi and used to deliver web pages. Apache can handle HTML files through HTTP, and with additional modules, it can help with dynamic web pages written in languages like PHP. Apache offers the advantage of being able to handle huge traffic amounts with less configuration. You can configure it to conduct an operation you wish and the approach to use. To increase its efficiency on the raspberry, you can eliminate modules that are not required. 
 
 ### Setting up Apache on Raspberry Pi 
-#### *Step one:*- Acessing the terminal
+#### Step 1: Acessing the terminal
 This step will describe how to access the raspberry pi's terminal. This can be achieved in two main ways as shown below:
 1. You can access the command terminal by clicking CLRL+ALT+T from the Raspbian desktop. 
 
@@ -33,7 +51,7 @@ Password: raspberry
 
 ![Putty Connection](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/puttylogin.png)
 
-#### *Step two:*- Updating packages
+#### Step 2: Updating packages
 In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the below command into the Terminal. This ensures you have the current versions of any file you download afterward.
 
 ````
@@ -42,7 +60,7 @@ Sudo apt update
 
 ![Sudo apt update](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/sudoaptupdate.png)
  
-#### *Step three:*- Installing Apache
+#### Step 3: Installing Apache
 In the third stage, we will be installing apache. To Install apache2 we run the following command
 
 ````
@@ -51,7 +69,7 @@ Sudo apt install apache2 –y
 
 ![Apache Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installapache.png)
  
-#### *Step four:*- Installing PHP
+#### Step 4: Installing PHP
 This is the point where we install PHP. PHP helps in making sure that the webpages function as expected and also communicate with the database.
 Add PHP using the command;
 
@@ -61,7 +79,7 @@ sudo apt-get -y install php5-common php5-cgi php5
 
 ![PHP Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installphp.png)
  
-#### *Step five:*- Downloading MySQL
+#### Step 5: Downloading MySQL
 After PHP has been successfully installed, we can now download our desired database. In this case, this tutorial uses the MySQL database. Therefore, this step describes how to download MySQL.
 To do this, run the following command in the terminal; 
 
@@ -73,7 +91,7 @@ sudo apt-get install MySQL-server
  
 Note: When prompted to change the root password, please choose a strong password for MySQL and make sure to write it down somewhere you can refer to later on.  
 
-#### *Step 6:*- Installing MySQL
+#### Step 6: Installing MySQL
 This stage describes the installation process of the already downloaded database.
 When the download is finished, formal installation is required and can be done using the command;
 
@@ -83,7 +101,7 @@ sudo mysql_secure_installation
 
 ![My-SQL Installation](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/installdb.png)
  
-#### *Step 7:*- Restarting the server
+#### Step 7: Restarting the server
 At this point, we will restart the webserver, apache2, to confirm that the changes take effect and are running. Use the command;
 
 ````
@@ -92,7 +110,7 @@ sudo service apache2 restart
 
 ![Restarting Apache](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/restartapache.png)
  
-#### *Step 8:*- Testing the webserver
+#### Step 8: Testing the webserver
 
 We will now put the apache webserver to test. Since Apache has an HTML file in the Apache web subdirectory, you can serve it on the raspberry when you browse HTTP://[Host_IP_Address]/.
 When you browse to the default page of the webserver on the Pi or the network of another computer the following page will display if the Apache webserver is working. 
@@ -132,5 +150,7 @@ By following the steps presented above, it is possible to install and host a web
 - [Host Your Website on Raspberry Pi](https://www.instructables.com/Host-your-website-on-Raspberry-pi/)
 - [Host a Website on Raspberry Pi](https://fireship.io/lessons/host-website-raspberry-pi/)
 - [Host a Raspberry Pi Web Server on the Internet](https://medium.com/swlh/host-a-raspberry-pi-web-server-on-the-internet-89786287db77)
+
 ---
+Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
 
