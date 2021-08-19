@@ -3,24 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/
-title: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC
-description: In this article we will have an in-depth look at the various concepts, fundamentals, components and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. ReactJS and webRTC provide an excellent tool for making the implementation of web-based video conferencing easy.
+title: Implementing Video Conferencing With ReactJS, NodeJS, and WebRTC
+description: In this article, we will have an in-depth look at the various concepts, fundamentals, components, and requirements for implementing a web-based video conferencing application with ReactJs, Nodejs, Graphql and WebRTC. ReactJS and webRTC provide an excellent tool for making the implementation of web-based video conferencing easy.
 author: samuel-cletus
 date: 2021-08-17T00:00:00-15:30
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/implementing-video-conferencing-with-reactjs-nodejs-and-webrtc/hero.jpg
     alt: Implementing Video Conferencing with ReactJS, NodeJS and WebRTC Hero image example
 ---
-Developers around the world have an incredible task of handling client requirements. Video conferencing is one of those requirements. Developers experience difficulty implementing it due to its complexity. The pandemic has opened up opportunities in  “work from home” which comes at the cost of efficient video conferencing and packets handling.
+Developers around the world have an incredible task of handling client requirements. Video conferencing is one of those requirements. Developers experience difficulty implementing it due to its complexity. The pandemic has opened up opportunities in “work from home” which comes at the cost of efficient video conferencing and packets handling.
  <!--more-->
-ReactJS and webRTC provide an excellent tool for developing web-based video conferencing application. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
+ReactJS and webRTC provide an excellent tool for developing web-based video conferencing applications. We will take a deep dive into the details of using these frameworks to efficiently and effectively develop a video conferencing handler.
 
 ### Prerequisites
-For better understanding and use of this article, the reader is expected to have basic knowledge of the following:`
-
+For better understanding and use of this article, the reader is expected to have basic knowledge of the following:
 - Getting started with ReactJS ES6
 - Getting started with Nodejs and Command Terminal
 - Getting started with Graphql and
@@ -35,27 +33,27 @@ Implementing video conferencing requires basic knowledge of the following concep
 - Nodejs
 - ReactJS
 
-#### WebRTC:
+### WebRTC
 WebRTC is an open-source technology that provides real-time communication capabilities to an application. It supports video, audio and other kinds of data to be transferred between nodes. It also allows developers to integrate voice and video functionalities into their applications.
 
-### Components of video conferencing system:
+### Components of video conferencing system
 Web-based video conferencing involves the synergy of various frameworks and libraries which includes the following:
 - A network connection for audio and video data transfer which involves the use of 3G, 4G, or 5G broadband.
-- Voice over data Internet Protocol (VoIP), Integrated Service Digital Networks (ISDN).
+- Voice over Internet Protocol (VoIP), Integrated Service Digital Networks (ISDN).
 - Microphones and Webcams.
-- Display screen, monitor, or projector
+- Display screen, monitor, or projector.
 - Software-based coding and decoding technologies (CODEC).
 - Acoustic echo cancellation (AEC) software for audio optimization and real-time communication.
 
-### Requirements for web packets handling:
+### Requirements for web packets handling
 For network communication to succeed, it is necessary to have a unified standard for defining the architecture of communication systems. A digital environment supporting multiple data types including audio and video significantly increases the efficiency of a video conferencing application including greater bandwidth utilization.
 
-### Implementation and coding:
-The application is a full-stack project that is divided into two segments, namely
-1. The Client-Side and
+### Implementation and coding
+The application is a full-stack project that is divided into two segments:
+1. The Client-Side
 2. The Server-Side
 
-### Client-side setup - (index.js):
+### Client-side setup - (index.js)
 The client interface is set up using `ReactJS` which is a lightweight frontend Javascript library. The various pages and subdivision of the client interface includes the following:
 
 #### Step 1: Getting started with a new React app
@@ -71,6 +69,7 @@ The command above should get you started with a new react app with all the defau
     cd react-video-conferencing-app
     npm start
 ```
+
 The command above will change the directory to your new react app and get the development server running.
 
 #### Step 2: Installing the required client dependencies
@@ -107,8 +106,8 @@ Add the following dependencies in your package.json file and run `npm install` t
  "style-loader": "^0.20.2",
 ```
 
-#### Step 3: Setting up the client index file:
-This is the main file for integrating the client and the server codes together. It enables the initialization of React DOM element, the Apollo-Client elements, WebRTC adapter. It also enables the other facilities for the implementation of the application.
+#### Step 3: Setting up the client index file
+This is the main file for integrating the client and the server codes together. It enables the initialization of the React DOM element, Apollo-Client elements, and the WebRTC adapter. It also enables the other facilities for the implementation of the application.
 
 ```javascript
  import 'webrtc-adapter';
@@ -182,7 +181,7 @@ This is the main file for integrating the client and the server codes together. 
 ```
 
 #### Step 4: Setting up the routes and other pages for the client UI
-The application is divided into five (5) pages namely
+The application is divided into five pages namely:
 - Home Page
 - Login/ Sign-Up Page
 - Contacts Page
@@ -191,40 +190,39 @@ The application is divided into five (5) pages namely
 
 And their respective routes are implemented as follows:
 
-    ```javascript
-    import React from 'react';
-    import { Redirect } from 'react-router';
-    import {
-      INDEX_ROUTE,
-      LOGIN_ROUTE,
-      SIGNUP_ROUTE,
-      CONTACTS_ROUTE,
-      MESSAGES_ROUTE,
-      CONTACT_REQUESTS_ROUTE,
-      SETTINGS_ROUTE,
-    } from '../constants';
-    import PageLayout from '../containers/PageLayout';
-    import Login from '../containers/Login';
-    import Signup from '../containers/Signup';
-    import Contacts from '../containers/Contacts';
-    import Messages from '../containers/Messages';
-    import Settings from '../containers/Settings';
-    export default [{
-      component: PageLayout,
-      routes: [
-        { path: INDEX_ROUTE, exact: true, component: () => <Redirect to={CONTACTS_ROUTE} /> },
-        { path: LOGIN_ROUTE, component: Login },
-        { path: SIGNUP_ROUTE, component: Signup },
-        { path: CONTACTS_ROUTE, component: Contacts },
-        { path: MESSAGES_ROUTE, component: Messages },
-        { path: SETTINGS_ROUTE, component: Settings },
-      ],
-    }];
-    ```
+```javascript
+  import React from 'react';
+  import { Redirect } from 'react-router';
+  import {
+    INDEX_ROUTE,
+    LOGIN_ROUTE,
+    SIGNUP_ROUTE,
+    CONTACTS_ROUTE,
+    MESSAGES_ROUTE,
+    CONTACT_REQUESTS_ROUTE,
+    SETTINGS_ROUTE,
+  } from '../constants';
+  import PageLayout from '../containers/PageLayout';
+  import Login from '../containers/Login';
+  import Signup from '../containers/Signup';
+  import Contacts from '../containers/Contacts';
+  import Messages from '../containers/Messages';
+  import Settings from '../containers/Settings';
+  export default [{
+    component: PageLayout,
+    routes: [
+      { path: INDEX_ROUTE, exact: true, component: () => <Redirect to={CONTACTS_ROUTE} /> },
+      { path: LOGIN_ROUTE, component: Login },
+      { path: SIGNUP_ROUTE, component: Signup },
+      { path: CONTACTS_ROUTE, component: Contacts },
+      { path: MESSAGES_ROUTE, component: Messages },
+      { path: SETTINGS_ROUTE, component: Settings },
+    ],
+  }];
+  ```
 
-#### Step 5: Setting up the video components:
-The video component is the essential component of the application as it facilitates the connection. This is as it facilitates the communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
-
+#### Step 5: Setting up the video components
+The video component is the essential component of the application as it facilitates the connection. It facilitates the communication between the various nodes in the application. It also attaches event listeners to the microphone and webcam of the connected devices.
 It also enables the following operations:
 - Call Statuses
 - Accept Call
@@ -234,101 +232,100 @@ It also enables the following operations:
 The implementation of the video component is illustrated below:
 
 ```javascript
-    import React from 'react';
-    import PropTypes from 'prop-types';
-    import { connect } from 'react-redux';
-    import classNames from 'classnames';
+  import React from 'react';
+  import PropTypes from 'prop-types';
+  import { connect } from 'react-redux';
+  import classNames from 'classnames';
 
-    import { preferOpus } from '../helpers/sdp-helpers';
-    import {
-      CallStatuses,
-      acceptCall,
-      ignoreCall,
-      handleIceCandidate,
-      sendSessionDescription,
-      setCallStatusToInCall,
-      setCallStatusToAvailable,
-      setCallStatusToHangingUp,
-      emitHangup,
-    } from '../actions/call';
-    import { addError } from '../actions/error';
-    import Available from '../components/VideoChat/Available';
-    import Calling from '../components/VideoChat/Calling';
-    import ReceivingCall from '../components/VideoChat/ReceivingCall';
-    import Controller from '../components/VideoChat/Controller';
-    import CallOverlay from '../components/VideoChat/CallOverlay';
-    import BannerContainer from '../components/Layout/BannerContainer';
-     startPeerConnection() {
-        try {
-          this.peerConnection = new RTCPeerConnection({
-            iceServers: this.props.iceServerConfig,
-          });
-          this.peerConnection.onicecandidate = this.props.handleIceCandidate;
-          this.peerConnection.onaddstream = this.onRemoteStreamAdded.bind(this);
-          this.peerConnection.onremovestream = this.onRemoteStreamRemoved.bind(this);
-          this.peerConnection.addStream(this.localStream);
-          if (!this.state.isInitiator) return;
-          this.peerConnection.createOffer(
-            this.setLocalDescriptionAndSendToPeer.bind(this),
-            e => (
-              console.log('createOffer() error', e)
-              || this.props.addError('Something went wrong setting up the peer connection')
-            )
-          );
-        } catch (err) {
-          console.error(err);
-          this.props.addError('Failed to create a connection.');
-          this.startHangup();
-        }
-      }
-     toggleAudioTrack() {
-        return this.localStream.getAudioTracks().forEach(
-          track => track.enabled = !track.enabled
+  import { preferOpus } from '../helpers/sdp-helpers';
+  import {
+    CallStatuses,
+    acceptCall,
+    ignoreCall,
+    handleIceCandidate,
+    sendSessionDescription,
+    setCallStatusToInCall,
+    setCallStatusToAvailable,
+    setCallStatusToHangingUp,
+    emitHangup,
+  } from '../actions/call';
+  import { addError } from '../actions/error';
+  import Available from '../components/VideoChat/Available';
+  import Calling from '../components/VideoChat/Calling';
+  import ReceivingCall from '../components/VideoChat/ReceivingCall';
+  import Controller from '../components/VideoChat/Controller';
+  import CallOverlay from '../components/VideoChat/CallOverlay';
+  import BannerContainer from '../components/Layout/BannerContainer';
+   startPeerConnection() {
+      try {
+        this.peerConnection = new RTCPeerConnection({
+          iceServers: this.props.iceServerConfig,
+        });
+        this.peerConnection.onicecandidate = this.props.handleIceCandidate;
+        this.peerConnection.onaddstream = this.onRemoteStreamAdded.bind(this);
+        this.peerConnection.onremovestream = this.onRemoteStreamRemoved.bind(this);
+        this.peerConnection.addStream(this.localStream);
+        if (!this.state.isInitiator) return;
+        this.peerConnection.createOffer(
+          this.setLocalDescriptionAndSendToPeer.bind(this),
+          e => (
+            console.log('createOffer() error', e)
+            || this.props.addError('Something went wrong setting up the peer connection')
+          )
         );
+      } catch (err) {
+        console.error(err);
+        this.props.addError('Failed to create a connection.');
+        this.startHangup();
       }
-      /**
-       * @returns {undefined}
-       */
-      toggleVideoTrack() {
-        return this.localStream.getVideoTracks().forEach(
-          track => track.enabled = !track.enabled
-        );
-      }
-    return (
-          <div className="video-chat-container">
-            <BannerContainer />
-            <div className="remote-video-container">
-              {[
-                CallStatuses.AcceptingCall,
-                CallStatuses.HangingUp,
-              ].includes(this.props.status)
-                && <CallOverlay />}
-              <video
-                ref={node => this.remoteVideo = node}
-                className={classNames(
-                  'remote-video',
-                  [
-                    CallStatuses.AcceptingCall,
-                    CallStatuses.HangingUp,
-                  ].includes(this.props.status) && 'partially-transparent',
-                )}
-                autoPlay
-              >
-                <track kind="captions" />
-              </video>
-              <video
-                ref={node => this.localVideo = node}
-                className="local-video"
-                autoPlay
-                muted="muted"
-              >
-                <track kind="captions" />
-              </video>
-            </div>
-            <Controller startHangup={this.startHangup} />
+    }
+   toggleAudioTrack() {
+      return this.localStream.getAudioTracks().forEach(
+        track => track.enabled = !track.enabled
+      );
+    }
+    /**
+     * @returns {undefined}
+     */
+    toggleVideoTrack() {
+      return this.localStream.getVideoTracks().forEach(
+        track => track.enabled = !track.enabled
+      );
+    }
+  return (
+        <div className="video-chat-container">
+          <BannerContainer />
+          <div className="remote-video-container">
+            {[
+              CallStatuses.AcceptingCall,
+              CallStatuses.HangingUp,
+            ].includes(this.props.status)
+              && <CallOverlay />}
+            <video
+              ref={node => this.remoteVideo = node}
+              className={classNames(
+                'remote-video',
+                [
+                  CallStatuses.AcceptingCall,
+                  CallStatuses.HangingUp,
+                ].includes(this.props.status) && 'partially-transparent',
+              )}
+              autoPlay
+            >
+              <track kind="captions" />
+            </video>
+            <video
+              ref={node => this.localVideo = node}
+              className="local-video"
+              autoPlay
+              muted="muted"
+            >
+              <track kind="captions" />
+            </video>
           </div>
-        );
-
+          <Controller startHangup={this.startHangup} />
+        </div>
+      );
 ```
 
 ### Server-side setup
@@ -338,8 +335,10 @@ The first task in getting the server instance ready for subsequent development i
     Mkdir server
     Cd server
 ```
+
 Ensure that the server folder is in the main application folder containing the client.
 Npm
+
 ```bash
     npm init
 ```
@@ -347,10 +346,11 @@ Npm
 The command above should initialize your server instance, ensure the instructions are followed.
 
 ### Installing the required server dependencies
-For Nodejs to peform the required server operations some dependencies must be installed to the server folder. We do this by:
+For Nodejs to peform the required server operations some dependencies must be installed to the server folder. We do this by running the command:
+
 ```bash
     npm install
- ```  
+```
 
 ```json
 "bcrypt": "^5.0.0",
@@ -379,87 +379,94 @@ For Nodejs to peform the required server operations some dependencies must be in
 The Backend server is set up using `Nodejs` and `Graphql`. To guarantee optimal operation of the application, it is essential to have a robust server instance. Here is the basic Nodejs setup for the server:
 
 ```javascript
-    import express from 'express';
-    import bodyParser from 'body-parser';
-    import morgan from 'morgan';
-    import path from 'path';
-    import compression from 'compression';
-    import cors from 'cors';
-    import models from './models';
-    import deserealizeUser from './lib/deserealize-user';
+import express from "express";
+import bodyParser from "body-parser";
+import morgan from "morgan";
+import path from "path";
+import compression from "compression";
+import cors from "cors";
+import models from "./models";
+import deserealizeUser from "./lib/deserealize-user";
 
-    // globals
-    global.models = models;
-    const app = express();
-    app.enable('trust proxy');
-    // Dev middleware
-    app.use(morgan('dev'));
-    // App middleware
-    app.use(cors({ credentials: true }));
-    app.use(bodyParser.urlencoded({ extended: false, limit: '2mb' }));
-    app.use(bodyParser.json({ limit: '5mb' }));
-    app.use(compression());
-    app.use(express.static(path.join('.', '/public')));
-    // Views
-    app.set('view engine', 'pug');
-    app.set('views', path.join('.', '/views/'));
-    app.use(deserealizeUser);
+// globals
+global.models = models;
+const app = express();
+app.enable("trust proxy");
+// Dev middleware
+app.use(morgan("dev"));
+// App middleware
+app.use(cors({ credentials: true }));
+app.use(bodyParser.urlencoded({ extended: false, limit: "2mb" }));
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(compression());
+app.use(express.static(path.join(".", "/public")));
+// Views
+app.set("view engine", "pug");
+app.set("views", path.join(".", "/views/"));
+app.use(deserealizeUser);
 
-    export default app;
+export default app;
 ```
 
 ### Setting-up graphql server
 The Graphql server is the tool used to interface between the client and the server to provide a robust mechanism for video and audio data transfer across both interfaces. Graphql servers come with fully equipped mutations for data modification and alteration, query for data fetch, and subscription for real-time data instance monitoring. Below is the setup of the Graphql server:
 
 ```javascript
-    import graphqlExpress from 'express-graphql';
-    import debug from 'debug';
-    import { createServer } from 'http';
-    import { execute, subscribe } from 'graphql';
-    import { SubscriptionServer } from 'subscriptions-transport-ws';
-    module.exports = function startServer() {
-      /* eslint-disable global-require */
-      if (!process.env.NODE_ENV) require('dotenv').load();
+import graphqlExpress from "express-graphql";
+import debug from "debug";
+import { createServer } from "http";
+import { execute, subscribe } from "graphql";
+import { SubscriptionServer } from "subscriptions-transport-ws";
+module.exports = function startServer() {
+  /* eslint-disable global-require */
+  if (!process.env.NODE_ENV) require("dotenv").load();
 
-      const app = require('../src/server/app').default;
-      const schema = require('../src/server/schema').default;
-      const render = require('../src/server/routes/render').default;
+  const app = require("../src/server/app").default;
+  const schema = require("../src/server/schema").default;
+  const render = require("../src/server/routes/render").default;
 
-      app.post('/graphql', graphqlExpress({ schema, graphiql: false }));
-      app.use(render);
-      const server = createServer(app);
-      /**
-       * onListen callback for server
-       * @returns {undefined}
-       */
-      function onListen() {
-        console.log(`Listening on port ${process.env.PORT}`);
-        const addr = server.address();
-        const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-        debug(`Listening on ${bind}`);
-      }
-      /**
-       * onError callback
-       * @param {Error} err the error
-       * @returns {undefined}
-       */
-      function onError(err) {
-        if (err.syscall !== 'listen') throw err;
-        const bind = typeof port === 'string' ? `Pipe ${process.env.PORT}` : `Port ${process.env.PORT}`;
-        switch (err.code) {
-          case 'EACCESS':
-            console.log(`${bind} requires elevated privilege`);
-            break;
-          case 'EADDRINUSE':
-            console.log(`${bind} is already in use`);
-            break;
-          default:
-            throw err;
-        }
-      }
-      server.on('listening', onListen);
-      server.on('error', onError);
-      server.listen(process.env.PORT, () => new SubscriptionServer(
+  app.post("/graphql", graphqlExpress({ schema, graphiql: false }));
+  app.use(render);
+  const server = createServer(app);
+  /**
+   * onListen callback for server
+   * @returns {undefined}
+   */
+  function onListen() {
+    console.log(`Listening on port ${process.env.PORT}`);
+    const addr = server.address();
+    const bind =
+      typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`;
+    debug(`Listening on ${bind}`);
+  }
+  /**
+   * onError callback
+   * @param {Error} err the error
+   * @returns {undefined}
+   */
+  function onError(err) {
+    if (err.syscall !== "listen") throw err;
+    const bind =
+      typeof port === "string"
+        ? `Pipe ${process.env.PORT}`
+        : `Port ${process.env.PORT}`;
+    switch (err.code) {
+      case "EACCESS":
+        console.log(`${bind} requires elevated privilege`);
+        break;
+      case "EADDRINUSE":
+        console.log(`${bind} is already in use`);
+        break;
+      default:
+        throw err;
+    }
+  }
+  server.on("listening", onListen);
+  server.on("error", onError);
+  server.listen(
+    process.env.PORT,
+    () =>
+      new SubscriptionServer(
         {
           keepAlive: 1000,
           schema,
@@ -469,10 +476,11 @@ The Graphql server is the tool used to interface between the client and the serv
         },
         {
           server,
-          path: '/subscriptions',
-        },
-      ));
-    };
+          path: "/subscriptions",
+        }
+      )
+  );
+};
 ```
 
 ### Setting up the required mutations, queries, and subscriptions
@@ -480,153 +488,174 @@ The Graphql server is the tool used to interface between the client and the serv
 The first mutation is used to establish a connection with the second user for data transfer. Below is the code implementation of the mutation:
 
 ```javascript
-    import { GraphQLObjectType, GraphQLInt, GraphQLBoolean, GraphQLString } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLInt,
+  GraphQLBoolean,
+  GraphQLString,
+} from "graphql";
 
-    export default {
-      type: new GraphQLObjectType({
-        name: 'CreateMessageThreadResponse',
-        fields: {
-          success: { type: GraphQLBoolean },
-          message: { type: GraphQLString },
-          threadId: { type: GraphQLInt },
-        },
-      }),
-      name: 'CreateMessageThread',
-      args: {
-        contactId: { type: GraphQLInt },
-      },
-      async resolve(parent, { contactId }) {
-        try {
-          const contact = await models.contact.findById(contactId, { where: { blocker_id: null } });
-          if (!contact) return { success: false, message: 'That contact is no longer reachable' };
-          const thread = await models.message_thread.create({
-            contact_id: contactId,
-            user_1: contact.user_1,
-            user_2: contact.user_2,
-          });
-          return { success: true, message: 'Success', threadId: thread.id };
-        } catch (err) {
-          console.log(err);
-          return { success: false, message: 'Something went wrong creating your message' };
-        }
-      },
-    };
+export default {
+  type: new GraphQLObjectType({
+    name: "CreateMessageThreadResponse",
+    fields: {
+      success: { type: GraphQLBoolean },
+      message: { type: GraphQLString },
+      threadId: { type: GraphQLInt },
+    },
+  }),
+  name: "CreateMessageThread",
+  args: {
+    contactId: { type: GraphQLInt },
+  },
+  async resolve(parent, { contactId }) {
+    try {
+      const contact = await models.contact.findById(contactId, {
+        where: { blocker_id: null },
+      });
+      if (!contact)
+        return {
+          success: false,
+          message: "That contact is no longer reachable",
+        };
+      const thread = await models.message_thread.create({
+        contact_id: contactId,
+        user_1: contact.user_1,
+        user_2: contact.user_2,
+      });
+      return { success: true, message: "Success", threadId: thread.id };
+    } catch (err) {
+      console.log(err);
+      return {
+        success: false,
+        message: "Something went wrong creating your message",
+      };
+    }
+  },
+};
 ```
 
 #### Step 2
 Now that our mutation is up and running, we need to set up the query to facilitate data fetch and retrieval for the client. Below is the Graphql server setup:
 
 ```javascript
-    import { GraphQLList } from 'graphql';
-    import Promise from 'bluebird';
-    import moment from 'moment';
-    import ContactRequest from '../types/ContactRequest';
+import { GraphQLList } from "graphql";
+import Promise from "bluebird";
+import moment from "moment";
+import ContactRequest from "../types/ContactRequest";
 
-    export default {
-      type: new GraphQLList(ContactRequest),
-      name: 'ContactRequests',
-      async resolve(parent, args, req) {
-        try {
-          const pendingRequests = await models.contact_request.findAll({
-            where: {
-              recipient_id: req.user && req.user.id,
-              status: models.contact_request.statuses.PENDING,
-            },
-            include: [{
-              model: models.user,
-              as: 'sender',
-            }],
-            order: [['createdAt', 'DESC']],
-            limit: 100,
-          });
-          await Promise.map(pendingRequests, async (request) => {
-            if (moment(request.createdAt) < moment().startOf('day').subtract(1, 'month')) {
-              request.status = models.contact_request.statuses.EXPIRED;
-              await request.save();
-            }
-          });
-          return pendingRequests;
-        } catch (err) {
-          console.log(err);
-          return [];
+export default {
+  type: new GraphQLList(ContactRequest),
+  name: "ContactRequests",
+  async resolve(parent, args, req) {
+    try {
+      const pendingRequests = await models.contact_request.findAll({
+        where: {
+          recipient_id: req.user && req.user.id,
+          status: models.contact_request.statuses.PENDING,
+        },
+        include: [
+          {
+            model: models.user,
+            as: "sender",
+          },
+        ],
+        order: [["createdAt", "DESC"]],
+        limit: 100,
+      });
+      await Promise.map(pendingRequests, async (request) => {
+        if (
+          moment(request.createdAt) <
+          moment().startOf("day").subtract(1, "month")
+        ) {
+          request.status = models.contact_request.statuses.EXPIRED;
+          await request.save();
         }
-      },
-    };
+      });
+      return pendingRequests;
+    } catch (err) {
+      console.log(err);
+      return [];
+    }
+  },
+};
 ```
 
 #### Step 3
 To enable real-time sockets monitoring, Graphql provides a tool called `Subscription`. Below is the subscription setup:
 
 ```javascript
- import { RedisPubSub } from 'graphql-redis-subscriptions';
- import url from 'url';
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import url from "url";
 
- export * from './constants';
- const redisUrl = url.parse(process.env.REDISCLOUD_URL);
- export default new RedisPubSub({
-   connection: {
-     host: redisUrl.hostname,
-     port: redisUrl.port,
-     password: redisUrl.auth.split(':')[1],
-   },
-   retry_strategy: options => Math.max(options.attempt * 100, 3000),
- });
+export * from "./constants";
+const redisUrl = url.parse(process.env.REDISCLOUD_URL);
+export default new RedisPubSub({
+  connection: {
+    host: redisUrl.hostname,
+    port: redisUrl.port,
+    password: redisUrl.auth.split(":")[1],
+  },
+  retry_strategy: (options) => Math.max(options.attempt * 100, 3000),
+});
 ```
 
 ### Error handling and testing
-Applications as we know it has its own fair share of bugs and errors and handling these errors is a crucial part of application development. Graphql possesses some errors that we will briefly look at and the ways of handling them. 
+Applications as we know it has its own fair share of bugs and errors. Handling these errors is a crucial part of application development. Graphql possesses some errors that we will briefly look at and the ways of handling them.
 
 They include:
 - Server Errors - These errors occur in the server and prevent appropriate server response to client-side queries and mutations.
-- Transaction Errors - These errors occur while a server update such as a mutation is being executed
+- Transaction Errors - These errors occur while a server update such as a mutation is being executed.
 - Apollo Client Errors - These errors occur within the core of corresponding libraries.
 
 To set the error policy on each request the following code block provided by Graphql should be integrated. Any error reported will fall under the ‘error’ prop alongside the data returned from the server or cache.
 
 ```javascript
-    const MY_QUERY = gql`
-      query WillFail {
-        badField
-        goodField
-      }
-    `;
-    function ShowingSomeErrors() {
-      const { loading, error, data } = useQuery(MY_QUERY, { errorPolicy: 'all' });
+const MY_QUERY = gql`
+  query WillFail {
+    badField
+    goodField
+  }
+`;
+function ShowingSomeErrors() {
+  const { loading, error, data } = useQuery(MY_QUERY, { errorPolicy: "all" });
 
-      if (loading) return <span>loading...</span>
-      return (
-        <div>
-          <h2>Good: {data.goodField}</h2>
-          <pre>Bad: {error.graphQLErrors.map(({ message }, i) => (
-            <span key={i}>{message}</span>
-          ))}
-          </pre>
-        </div>
-      );
-    }
+  if (loading) return <span>loading...</span>;
+  return (
+    <div>
+      <h2>Good: {data.goodField}</h2>
+      <pre>
+        Bad:{" "}
+        {error.graphQLErrors.map(({ message }, i) => (
+          <span key={i}>{message}</span>
+        ))}
+      </pre>
+    </div>
+  );
+}
 ```
 
 #### Ignoring errors
 Errors may be ignored during application development. These errors are expected by the developer and feels unbothered about them. In such cases we wish to return `null` if an error occurs during the code execution process. To achieve that the following code block should be integrated:
 
 ```javascript
-    onError(({ response, operation }) => {
-      if (operation.operationName === "IgnoreErrorsQuery") {
-        response.errors = null;
-      }
-    })
+onError(({ response, operation }) => {
+  if (operation.operationName === "IgnoreErrorsQuery") {
+    response.errors = null;
+  }
+});
 ```
 
 #### Using React testing library
 React testing library is an excellent tool used in application modules and components testing. It is a lightweight solution for testing react components as it provides utility functions on top of **react-dom** and **react-dom/test-utils**. It is implemented using the following command:
+
 ```bash
     npm install --save-dev @testing-library/react
     node build/start
- ```
-    
+```
 
 ### Conclusion
-This article explained The fundamentals, components, and requirements for implementing a web-based video conferencing application. Error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
+This article explained the fundamentals, components, and requirements for implementing a web-based video conferencing application. Error handling and testing were also discussed. I hope you find this article useful in your journey as a web developer.
 
 Best Regards and Happy Coding
 Cheers!
@@ -639,5 +668,4 @@ https://testing-library.com/docs/react-testing-library/intro/
 https://www.apollographql.com/docs/react/v2/data/error-handling/
 
 ---
-
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
