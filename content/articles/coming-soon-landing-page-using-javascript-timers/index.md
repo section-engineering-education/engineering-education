@@ -422,7 +422,10 @@ let x = setInterval(() => {
   }
 }, 1000);
 ```
-
+ - Here's a link to the github repository where you can view the source code.
+ 
+ - [view source code at github](https://github.com/EssyG10/coming-soon-landing-page.git)
+ 
 ### Conclusion
 Because JavaScript engines only have one thread, asynchronous events are forced to wait in a queue for execution. The way `setTimeout()` and `setInterval()` run asynchronous code is fundamentally different.  
 
