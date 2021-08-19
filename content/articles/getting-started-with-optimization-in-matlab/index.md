@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /getting-started-with-optimization-in-matlab/
 title: Getting Started with Optimization in MATLAB
-description: In this article we discuss 
+description: In this article we discuss the fundamentals of optimization and cover real world examples where optimization is applied using MATLAB. 
 author: florence-atieno
 date: 2021-08-20T00:00:00-18:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
