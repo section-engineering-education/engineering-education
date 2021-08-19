@@ -80,12 +80,9 @@ function createNode(node) {
 ```
 
 We have created 3 functions.
-
-The *appendNode function* will append a new node to the parent node. It will take the parent node and the new node as parameters.
-
-The *getDiv function* will return the div element with the id of a container.
-
-The *createNode function* will create a new node and return it. It will take a node as a parameter.
+1. The *appendNode function* will append a new node to the parent node. It will take the parent node and the new node as parameters.
+2. The *getDiv function* will return the div element with the id of a container.
+3. The *createNode function* will create a new node and return it. It will take a node as a parameter.
 
 We will use these functions to create the shopping list and the shopping cart.
 
@@ -137,7 +134,7 @@ The displayed lists look very basic at this point. Let's fix that.
 
 In your code editor, open the **index.html** file and paste the code below.
 
-```js
+```css
 #wrapper { 
     display: flex;
     } 
@@ -257,13 +254,9 @@ addOrRemoveItemsFromCart('remove');
 Passing add or remove as the action will:
 
 - Listen for clicks on the items container.
-
 - Call the takeAction function to add the item to the cart.
-
 - Call the displayItems function to display the updated list of items in the cart.
-
 - Listen for clicks in the cart container.
-
 - Call the takeAction function to remove the item from the cart.
 
 ### Conclusion
