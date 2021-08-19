@@ -240,12 +240,12 @@ export default function Post(){
 
 To briefly explain the above code:
 
-- `createPost` is a function that makes HTTP POST request using `axios` library.
-- The `useMutation()` hook returns `isLoading`, `isError`, `error`, and `mutate` function that will be used to wrap the values when making requests. It takes the `createPost` as an argument along with an option `{retry:3}` object. This comes in handy when prefetching queries after mutations and ensuring optimistic updates.
-- `useState()` hook is used to create and update the `title`, and description state in our input elements.
-- Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly.
+- `createPost` is a function that makes HTTP POST request using `axios` library to our third party API.
+- The `useMutation()` hook returns `isLoading`, `isError`, `error`, and `mutate` function that will be used to wrap the values when making requests. It takes the `createPost` as an argument along with an option `{retry:3}` object. This comes in handy when prefetching queries after mutations and ensuring optimistic updates. Prefetching allows us to perform fetch operations to the data before it is needed. The cool thing about optimistic updates is that we have an option to rollback our updates if anything wrong happens.
+- `useState()` hook is used to create and update the `title`, and `description` state in our input elements.
+- Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly. We can use `isLoading` to indicate that something is being posted to the server in an asynchronous manner. The `isErro`r and `error` will give us information in case of an error.
 
-The display to fetch and post data should look like:
+The above code with the fetch and post functionalities should look like:
 
 ![data fetch](/engineering-education/react-query-data-fetching-and-server-state-management/img-demo1.png)
 
