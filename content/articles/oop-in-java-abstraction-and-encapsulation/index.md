@@ -27,10 +27,10 @@ At the end of this first OOP tutorial series, readers should be able to:
 A class is a template or a blueprint for object creation.
 To represent attributes or properties, classes use instance variables whereas, for behaviors or actions, it uses instance methods.
  
-### Instance Variables
+#### Instance Variables
 These are variables declared in the class, outside of methods and constructors. Instance variables have a global scope.
  
-### Instance Methods
+#### Instance Methods
 These are methods that only an object of its class can invoke.
 It is the class that defines what an object data field or variables and methods will be.
 An example of a class is a circle class.
@@ -216,7 +216,7 @@ public static void main(String[] args) {
  
 ```
  
-Now you see, we’ve created a new dog with the name *Bingo*. You can go on to create as many dogs with different states or attributes.
+Now you see, we’ve created a new dog with the name `Bingo`. You can go on to create as many dogs with different states or attributes.
  
 Here is the output:
  
@@ -245,7 +245,7 @@ Now that we’ve got this out of the way let's talk about abstraction and encaps
 ### Abstraction 
 Who could have imagined that abstraction will be a thing in programming? Who? But right now, you can’t talk about OOP without mentioning abstraction. It is a significant building block of OOP. So then, what is abstraction? This section will explain what abstraction is and how to use it as a Java developer.
 
-In abstraction, only the useful attributes of an object are on display or accessible. The low-level details are *hidden*. For example, while you’re typing on your computer. You’re interested in punching the keys believing that it produces results on your screen. You know nothing about the mechanism that produces the result, and I’m sure you haven’t even thought about it yet. Have you?
+In abstraction, only the useful attributes of an object are on display or accessible. The low-level details are *hidden*. For example, imagine you’re typing on your computer. You’re interested in punching the keys believing that it produces results on your screen. You know nothing about the mechanism that produces the result, and I’m sure you haven’t even thought about it yet. Have you?
  
 Here's another example to make things clearer: imagine car drivers. They are only interested in starting, moving, and stopping the car, speed, or changing gear and brake. They are not interested in the mechanism that allows them to do this. In abstraction, we hide the implementation details from the user while exposing the functionality.
  
@@ -259,7 +259,7 @@ In Java, abstraction is implemented using either of these two ways:
 #### Working with the Abstract Keyword
 You can only use the abstract access modifier keyword with classes and methods but not with variables. Methods with the keyword *abstract* are methods without implementation.
  
-To implement an abstract class in Java, use the abstract keyword, e.g., ```public abstract class Circle```, where Circle is the class name. Let's illustrate this using this code snippet
+To implement an abstract class in Java, use the abstract keyword, e.g., ```public abstract class Circle```, where Circle is the class name. Let's illustrate this using this code snippet:
  
 ```java
  
@@ -363,9 +363,9 @@ public class Main{
  
 ```
  
-In the main method, *Car* represents the interface class, and *Benz* represents the concrete class or child class. The child class gives its memory to the *Car* object to access its implemented methods. The *Benz* class implemented the start and stop behaviors of the `Car` class in the manner it wanted. This makes our application robust. We can change or add requirements to our application without breaking down the application.
+In the main method, `Car` represents the interface class, and `Benz` represents the concrete class or child class. The child class gives its memory to the `Car` object to access its implemented methods. The `Benz` class implemented the start and stop behaviors of the `Car` class in the manner it wanted. This makes our application robust. We can change or add requirements to our application without breaking down the application.
  
-For instance, we want to add another car that stops or starts differently. We can create a car, e.g. *Toyota*, that implements class *Car*, overrides its `stop()` and `start()` methods, implements them the way we want our *Toyota* to start and stop. There is no need to go into the *Car* class to change our code whenever there are new requirements.
+For instance, we want to add another car that stops or starts differently. We can create a car, e.g. `Toyota`, that implements class `Car`, overrides its `stop()` and `start()` methods, implements them the way we want our `Toyota` to start and stop. There is no need to go into the `Car` class to change our code whenever there are new requirements.
  
 Now, that we’ve finally gotten abstraction off the list, on to the next one, encapsulation.
  
