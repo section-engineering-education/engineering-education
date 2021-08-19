@@ -1,4 +1,4 @@
-MicroProfile specifies a collection of Java EE (Enterprise) technologies and APIs which in consolidation from a core baseline microservice that aims to deliver application portability across multiple MicroProfile runtimes.
+MicroProfile specifies a collection of Java EE (Enterprise) technologies and APIs that consolidate from a core baseline microservice that aims to deliver application portability across multiple MicroProfile runtimes.
 It has been attracting attention from developers since this Java EE implementation does not take up much time in server booting and code run time as it did before when using former versions of Java EE.
 This is due to the continuous agile improvement of individual Java Specification Requests (JARs) that make up Java Enterprise (EE).
 
