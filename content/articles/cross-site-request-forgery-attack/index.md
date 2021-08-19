@@ -77,7 +77,7 @@ body onload="document.forms[0].submit()">
 ```
 
 ### Impacts of CSRF attacks
-CSRF is a dangerous vulnerability that abuses the trust between the victim's browser and the webserver. The magnitude of its impact depends on the number of benefits allocated to the user.
+CSRF is a dangerous vulnerability that abuses the trust between the victim's browser and the web server. The magnitude of its impact depends on the number of benefits allocated to the user.
 
 For instance, if the victim is a normal user, the attacker can fully control the user's account. However, if the victim has an administrative role, the attacker might exploit the entire web application.
 
