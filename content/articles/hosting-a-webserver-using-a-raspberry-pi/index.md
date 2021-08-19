@@ -134,7 +134,7 @@ Alternatively, use the start menu to navigate to Preferences->Raspberry configur
 ![Renamed Server](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/serverrenamed.png)
 
 3.  Click Ok.
-    Note: This will assist you in getting over the warning about not using characters other than numbers, hyphens, or letters. The hyphen is only allowed in situations where it is in between a name.
+Note: This will assist you in getting over the warning about not using characters other than numbers, hyphens, or letters. The hyphen is only allowed in situations where it is in between a name.
 4.  Choose Yes when prompted to restart.
 
 Once you have allowed your computer to reboot, the Raspberry Pi will now be shown with its changed name.
