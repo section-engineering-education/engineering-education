@@ -27,7 +27,7 @@ You can create a local Pi webserver to deliver various contents while you are su
 - [Relevant resources](#relevant-resources)
 
 ### Prerequisites
-For the reader to follow through and be guided accordingly, they are assumed to have an installed operating system with the Pixel window manager. In summary, you need to have;
+For the reader to follow through, they are assumed to have an installed operating system with the Pixel window manager. In summary, you need to have:
 1.  A Raspberry Pi Zero W
 2.  Apache webserver
 3.  Internet
