@@ -2,6 +2,7 @@
 [React](https://reactjs.org/) is a powerful client-side JavaScript library. Like any other JavaScript tool, React gives you a smooth sail when building reactive and declarative UIs. However, it has its complex aspects and one such is handling state and data fetching. The server state is a bit different as it is asynchronous and persists remotely without direct control. This means that we have to think about updating, caching, or re-fetching data to efficiently manage the state in our React applications. [React Query](https://react-query.tanstack.com/) is a pre-configured library that aims to solve these complexities. Using React Query, we can fetch, cache, and update data in React-based applications in a declarative and simple manner without touching any global state.
 
 ### Goal
+
 Nowadays, almost every web app needs remote data. Unfortunately, for developers, data fetching and handling server state in React applications is easier said than done. As developers we need to rethink about:
 
 - What to render while waiting for the remote data to load?
@@ -15,6 +16,7 @@ Nowadays, almost every web app needs remote data. Unfortunately, for developers,
 When dealing with asynchronous data that needs a frequent update, caching, and synchronization with the server, there is no better library than React-Query. In this tutorial, we will go through how the React-Query library can improve user experience in our react applications. To demonstrate these concepts, we will use the [JSON Placeholder](https://jsonplaceholder.typicode.com/) as the third-party REST API.
 
 ### Prerequisites
+
 - For this tutorial, intermediate React kills such as React Hooks and functional components are essential.
 
 - A basic understanding of REST APIs and data fetching in JavaScript.
@@ -22,6 +24,8 @@ When dealing with asynchronous data that needs a frequent update, caching, and s
 - Make sure to have [Node.js](https://nodejs.org/en/) runtime installed on your machine.
 
 ### Understanding State management and Server state
+
+Every interactive client-side applications will involve events that need to be responded. An example is when interacts with an application by clicking a button or closing a sidebar. When such events happen, the app is updated to reflect them. In this case, we say the state of the app has changed. In the context of React and single page applications, State management is a way to pass and share data across the React components. It is simply a JavaScript object representing part of a component that can change based on user actions. This is the high-level concept of app state and therefore, check more in [react docs](https://reactjs.org/docs/state-and-lifecycle.html). 
 
 ###  Benefits of using React Query in React applications
 Some of the features that React Query provides include:
@@ -113,7 +117,8 @@ Finally, create a React functional component:
 ```js
 
 function Posts(){
-    const {data, error, isError, isLoading } = useQuery('posts', fetchPosts) // first argument is a string to cache and track the query result
+    const {data, error, isError, isLoading } = useQuery('posts', fetchPosts) 
+    // first argument is a string to cache and track the query result
     if(isLoading){
         return <div>Loading...</div>
     }
@@ -205,6 +210,7 @@ export default function Post(){
     )
 }
 ```
+
 To briefly explain the above code:
 - `createPost` is a function that makes HTTP POST request using `axios` library.
 
