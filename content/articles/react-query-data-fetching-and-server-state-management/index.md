@@ -246,6 +246,7 @@ To briefly explain the above code:
 - Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly.
 
 The display to fetch and post data should look like:
+
 ![data fetch](/engineering-education/react-query-data-fetching-and-server-state-management/img-demo1.png)
 
 ![react-query-post](/engineering-education/react-query-data-fetching-and-server-state-management/react-query-post.png)
