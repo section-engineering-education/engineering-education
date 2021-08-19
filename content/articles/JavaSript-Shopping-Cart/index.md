@@ -1,7 +1,6 @@
 ### Introduction
 
 Building a shopping cart should be possible in an assortment of ways. I'll show you how to make a shopping cart with arrays and objects in this tutorial.
-
 The approach that we will use looks as follows.
 
 We will initially have 2 arrays. One holding the curated list of items to buy, and the other one empty, to hold the items in the cart.
@@ -18,8 +17,8 @@ To follow along with this tutorial, you are required to have understanding of th
 - EventTarget.addEventListener()
 
 ### The base html
-
 Create a new file **index.html** in the working directory. In your code editor, open the **index.html** file and paste the code below.
+
 ```html
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
