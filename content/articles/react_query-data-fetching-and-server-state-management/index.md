@@ -222,4 +222,4 @@ To briefly explain the above code:
 
 ### Conclusion
 
-Building front-end applications often start easy and turns to be complicated as we continue adding features. For every API endpoint we add, we also need to deal with state management, synchronization, caching, and error handling. React Query is the library that helps us manage data involved in the web service requests keeping our application maintainable as the complexity grows while improving user experience.
+Building front-end applications often start easy and turns to be complicated as we continue adding features. For every API endpoint we add, we also need to deal with state management, synchronization, caching, and error handling. React Query is the library that helps us manage data involved in the web service requests keeping our application maintainable as the complexity grows while improving user experience. Check the GitHub [link](https://github.com/KayveTech/react-query) for the source code.
