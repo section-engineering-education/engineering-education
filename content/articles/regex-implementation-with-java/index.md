@@ -25,7 +25,9 @@ In most programming languages, strings are immutable, and the operations mention
 
 Imagine you want to validate that a date input matches the format “MM/DD/YYYY” while ensuring that the values provided for the month, day and year are valid for their respective fields, that is, the values are digits, and the month is between 1 and 12, the value of the day is valid with respect to the month and so on.
 
-Also, imagine you want to ensure that the value provided in an email address field is in a valid email address format while recognizing that an email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of IF statements to ascertain the validity of the input. This is not an effective solution as it would result in your code becoming more complex and could reduce performance.
+Also, imagine you want to ensure that the value provided in an email address field is in a valid email address format while recognizing that an email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of IF statements to ascertain the validity of the input.
+
+ This is not an effective solution as it would result in your code becoming more complex and could reduce performance.
 
 However, with an accurate combination of the regex characters, you can achieve this with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages. One can use one regular expression to validate a variety of inputs.
 
@@ -50,7 +52,9 @@ As mentioned earlier, regex combines simple characters and special characters th
     }
 ```
 
-In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable “word” to ascertain that its value “hello” matches the given regex pattern, “hello”. The program outputs the boolean value `true` because the length and order of the characters of the value in the word variable matches the regex. This can also be performed on a string literal, and the output would be the same.
+In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable “word” to ascertain that its value “hello” matches the given regex pattern, “hello”. 
+
+The program outputs the boolean value `true` because the length and order of the characters of the value in the variable matches the regex. This can also be performed on a string literal, and the output would be the same.
 
 ```java
 
@@ -106,9 +110,7 @@ A quantifier is used to specify the number of occurrences of a character that it
     }
 ```
 
-In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`. Recall that the `*` quantifier matches a zero or more occurrences of its preceding character in the given string. An occurrence of 1 instance of the string `o` is a match on the regex pattern. This logic is also synonymous with the match in the second print statement with String literal `oooooo`. The output is `true` because multiple instances of the character `o` forming the given string literal are a match on the regex pattern.
-
-For the third print statement, despite the combination of different characters preceding the quantifier in the regex pattern, the output is `true` because the sequence of the characters ‘h’, ‘e’, ‘l’, ‘l’, ‘o’ which precede the quantifier is an exact match of the string literal invoking the method, and also because the character ‘o’ which immediately precedes the quantifier occurs at least zero number of time. This logic is also synonymous to the match the code in the fourth print statement in which the output is `true` because the occurrence of the character `o` which precedes the quantifier is zero, but the sequence of the other preceding characters is a match.
+In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`.
 
 On the contrary, the code in the last print statement outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern.
 
