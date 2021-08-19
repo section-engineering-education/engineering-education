@@ -23,7 +23,7 @@
 |  Mike Barasa | [EngEd Author Page](https://www.section.io/engineering-education/authors/michael-barasa/) | [GitHub Profile](https://github.com/WanjaMIKE) | - Kotlin - JavaScript - PHP - Java - Dart - Flutter/React/Node/Vue/Laravel|
 |  Willies Ogola | [EngEd Author Page](https://www.section.io/engineering-education/authors/willies-ogola/) | [GitHub Profile](https://github.com/Bayler) | - Artificial Intelligence - Machine Learning - Blockchain - Telecommunication & Networking - Internet of Things - Programming Languages (Python, C, JavaScript)|
 |  Dawe Daniel| [EngEd Author Page](https://www.section.io/engineering-education/authors/dawe-daniel/) | [GitHub Profile](https://github.com/Dawe-7) | - Android development (Java) - Networking - CCNA - Programming Languages (C++, C)|
-|  Jerim Kaura |   [EngEd Author Page](https://www.section.io/engineering-education/authors/jerim-kaura/) |   [GitHub Profile](https://github.com/jerimkaura) | - Flutter - Fullstack development(Djang/ Node/ Flask), Programming Languages (Python, Javascript, PHP,  C++) |
+|  Jerim Kaura |   [EngEd Author Page](https://www.section.io/engineering-education/authors/jerim-kaura/) |   [GitHub Profile](https://github.com/jerimkaura) | - Flutter - Fullstack development(Django/ Node/ Flask), Programming Languages (Python, Javascript, PHP,  C++) |
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
