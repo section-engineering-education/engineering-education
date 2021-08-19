@@ -14,15 +14,15 @@ images:
   - url: /engineering-education/shell-script-to-demonstrate-the-se-of-shell-function-library/hero.jpg
     alt: Shell Script Shell Function Library
 ---
-A good computer program has a lot of code in it. These code snippets can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group pieces of code that are used repeatedly.
+A good computer program has a lot of code in it. These code snippets can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group repetitive pieces of code.
 <!--more-->
 In shell scripting, functions library may be called from any location in the development environment, thus making shell scripting less laborious and reduces errors.
 ### Introduction
 This article will take you through how to create a simple shell script function and how to use it.
 
 ### Goals
-By the end of this article, the reader will know:
-- What s function and function library is.
+By the end of this article, the reader will have understood:
+- What function and function libraries are.
 - How to create a shell function.
 - How to use functions from the library and then demonstrate how to use bash script as a function library.
 
@@ -49,7 +49,7 @@ A shell script is a computer program designed to be run by Unix/Linux shell. Thi
 To execute these tasks, some pieces of code can be used repeatedly in the program. To make this process easy and reduce errors, such codes are grouped into a `Function`, which allows them to be called and reused multiple times within the program.
 
 ### How to create a function
-A function is a block of code that carries out a certain activity. A function can be Called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
+A function is a block of code that carries out a certain activity. A function can be called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
 
 Simply enter the following code to create a function:
 
@@ -92,7 +92,7 @@ The most important reason for having a function library is for reusability. We r
 
 When the functions are developed, they can be reused wherever they are needed in several test automation scripts. We may need to interact with these files for a variety of reasons, including test data iterations, spreadsheet verification, and so on.
 
-3. Some businesses even create functions for each business function of the application under test, which can then be utilized to create other test script combinations.
+3. Some companies construct functions for each of the application's business functions, which can then be utilized to create other test script combinations.
 
 > Similarly, individuals desire function libraries for a variety of reasons. Another advantage is that once these functions are exposed, they become central, so any changes made to them are reflected in any scripts that utilize them.
              
