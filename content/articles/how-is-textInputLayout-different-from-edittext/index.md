@@ -1,6 +1,22 @@
-### Introduction
-When Working with EditText in Android applications, developers found it tricky to customize. To solve this problem, they have came up with `TextInputLayout` that has more and better features compared to the normal `EditText`. In this tutorial, we will discuss about TextInputLayout and focus on how it differs from `EditText`.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /replacing-editTexts-with-textInputLayouts-in-android/
+title: Replacing EditTexts with TextInputLayouts in Android
+description: This tutorial takes the reader through the process of replacing EditTexts with TextInputLayouts in Android. A TextInputLayout has more and better features compared to the normal EditText and is a better fit for most use cases.
+author: washington-lokala
+date: 2021-08-20T00:00:00-02:40
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/replacing-editTexts-with-textInputLayouts-in-android/hero.jpg
+    alt: Replacing EditTexts with TextInputLayouts in Android image
+---
+
+When Working with EditText in Android applications, developers found it tricky to customize. To solve this problem, they have came up with `TextInputLayout` that has more and better features compared to the normal `EditText`. In this tutorial, we will discuss about TextInputLayout and focus on how it differs from `EditText`.
+<!--more-->
 ### Prerequisites
 To follow through this tutorial, the reader should:
 - Have [Android Studio](https://developer.android.com/studio/index.html) installed.
@@ -326,3 +342,8 @@ TextInputLayout is a powerful layout that is easy to use and has awesome feature
 ### References
 - [Android Developer Documentation](https://developer.android.com/reference/com/google/android/material/textfield/TextInputLayout)
 - [Material Design](https://material.io/components/text-fields/android#filled-text-field.)
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
