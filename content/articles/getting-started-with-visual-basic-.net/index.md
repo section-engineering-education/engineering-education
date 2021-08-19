@@ -129,3 +129,18 @@ In VB.NET comments start with a single apostophe `'` .
 ```
 
 Unfortunately for Visual Basic , we do not have block comments .All comments are single line comments.
+
+**Tips on writing good comments**
+- Ensure that your comments are not a duplicate of the code you have written. Some programmers tend to write comments that are very obvious and unnecessary.
+- Comments should not act as an excuse of unclear code. e.g When a programmer writes a comment to explain a single character variable declared.
+- When you find it hard to write a clear comment, your code might be where the problem is .
+- Your comments should clear any confussion , not create it.
+- Include links to additional refrences where you feel they will be most helpful.
+- Write comments when fixing bugs too .
+
+**Important points to note:**
+- VB.NET is case-insesitive but the CLR (common language runtime)is case sensitive .
+- VB.NET follows top to bottom order when executing a program
+
+**Congratulations!** You just wrote your first VB.NET program.  
+
