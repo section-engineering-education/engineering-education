@@ -1,4 +1,6 @@
-Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications from [Cross Site Scripting (XSS)](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/) and [SQL injection](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/). Web browsers are the most affected. When given a file to run, they can't tell if it is malicious or not. So, the web browsers go ahead and run the files.
+Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications from Cross-Site Scripting (XSS) and SQL injection (SQLi). XXS is a malicious code injection attack on the browser of a vulnerable web application that is executed when the web app user visits the website. The malicious code makes the web app do something that it is not supposed to do. SQLi is a web app vulnerability that enables attackers to interfere with the SQL queries in the database.
+
+Web browsers are the most affected. When given a file to run, they can't tell if it is malicious or not. So, the web browsers go ahead and run the files.
 
 CSRF attacks occur when an authenticated user sends a malicious request to a web application to perform an unwanted action. CSRF attacks exploit vulnerable web applications. This article will walk you through CSRF attacks and how to prevent them. 
 
@@ -17,7 +19,7 @@ Before you begin reading this article, you are required to have:
 ### Overview of CSRF attacks
 [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack is a web security vulnerability that forces users to conduct malicious actions on a web application they are currently authenticated unknowingly.
 
-CSRF attacks take advantage of the trust a web app has on the user. When you log in and get authenticated to a web application, the browser and web server trust that everything done is courtesy of you.
+CSRF attacks take advantage of the trust a web app has in the user. When you log in and get authenticated to a web application, the browser and web server trust that everything done is courtesy of you.
 
 In a CSRF attack, the attacker exploits the trust of the user to execute functions for themselves. This type of attack only happens to vulnerable web applications. With the help of social engineering platforms, attackers can launch a CSRF attack.
 
@@ -43,7 +45,7 @@ CSRF attack only works if the victim is logged in to the application when the re
 These are ways an attacker uses to exploit the CSRF vulnerability.
 
 #### GET requests
-Referring back to our previous example, let us assume that the online banking account uses the HTTP GET request method to conduct transactions. The users request to transfer funds to another person could look like this:
+Referring to our previous example, let us assume that the online banking account uses the HTTP GET request method to conduct transactions. The users request to transfer funds to another person could look like this:
 
 `http://bankexample.com/onlinetransfer?amount=5000&account=receiver`
 
@@ -75,7 +77,7 @@ body onload="document.forms[0].submit()">
 ```
 
 ### Impacts of CSRF attacks
-CSRF is a dangerous vulnerability that abuses the trust between the victim's browser and the web server. The magnitude of its impact depends on the number of benefits allocated to the user.
+CSRF is a dangerous vulnerability that abuses the trust between the victim's browser and the webserver. The magnitude of its impact depends on the number of benefits allocated to the user.
 
 For instance, if the victim is a normal user, the attacker can fully control the user's account. However, if the victim has an administrative role, the attacker might exploit the entire web application.
 
@@ -90,8 +92,12 @@ If you want to find out if the session is not secure, you need to examine the we
 Resources accessible via the HTTP GET requests are no doubt vulnerable. Even though JavaScript automates POST requests, they are exposed and vulnerable. Therefore, the use of POST only hardly solves CSRF vulnerabilities.
 
 The tester can use the following methods of testing:
-- Black box testing
+- Black box testing 
 - Gray box testing
+
+[Black box testing](https://www.javatpoint.com/black-box-testing) is a technique that helps the testers find vulnerabilities that make applications and systems exploitable from outside. It examines the functionality of an application without knowing much about the internal structure.
+
+[Gray box testing](https://www.javatpoint.com/grey-box-testing) is a technique for applications and systems to examine the external and internal workings. It aims to understand and identify errors that belong to applications and systems.
 
 #### Tools for CSRF testing
 1. [CSRF Tester](http://www.owasp.org/index.php/Category:OWASP_CSRFTester_Project)
@@ -124,3 +130,8 @@ To summarize, we have looked at:
 - How to prevent CSRF attacks.
 
 I hope this article has given you a better understanding of Cross-Site Request Forgery (CSRF)
+
+For further reading, go through:
+[Cross-site request forgery](https://owasp.org/www-community/attacks/csrf)
+[Cross-site scripting](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
+[SQL injection](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/)
