@@ -92,7 +92,7 @@ The most important reason for having a function library is for reusability. We r
 
 When the functions are developed, they can be reused wherever they are needed in several test automation scripts. We may need to interact with these files for a variety of reasons, including test data iterations, spreadsheet verification, and so on.
 
-3. Some companies construct functions for each of the application's business functions, which can then be utilized to create other test script combinations.
+3. Some firms develop functions for each of the application's business functions, which can then be utilized to create other test script combinations.
 
 > Similarly, individuals desire function libraries for a variety of reasons. Another advantage is that once these functions are exposed, they become central, so any changes made to them are reflected in any scripts that utilize them.
              
