@@ -89,7 +89,7 @@ sudo apt-get install MySQL-server
 
 ![My SQL Download](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/downloaddb.png)
 
-Note: When prompted to change the root password, please choose a strong password for MySQL and make sure to write it down somewhere you can refer to later on.
+>Note: When prompted to change the root password, please choose a strong password for MySQL. Make sure to write it down somewhere you can refer to later on.
 
 #### Step 6: Installing MySQL
 This stage describes the installation process of the already downloaded database.
