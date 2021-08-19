@@ -245,11 +245,16 @@ To briefly explain the above code:
 - `useState()` hook is used to create and update the `title`, and description state in our input elements.
 - Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly.
 
+The display to fetch and post data should look like:
+![data fetch](/engineering-education/react-query-data-fetching-and-server-state-management/img-demo1.png)
+
+![react-query-post](/engineering-education/react-query-data-fetching-and-server-state-management/react-query-post.png)
+
 ### Conclusion
 Building front-end applications often start easy and turns to be complicated as we continue adding features.
 
 For every API endpoint we add, we also need to deal with state management, synchronization, caching, and error handling.
 
-React Query is the library that helps us manage data involved in the web service requests keeping our application maintainable as the complexity grows while improving user experience.
+React Query is the library that helps us manage data involved in the web service requests keeping our application maintainable as the complexity grows while improving user experience. React Query is often described as the missing piece in React ecosystem and this tutorial gave us an overlook of this awesome tool.
 
-Check the GitHub [link](https://github.com/KayveTech/react-query) for the source code.
+Check the GitHub [link](https://github.com/KayveTech/react-query) for the source code. Happy coding!
