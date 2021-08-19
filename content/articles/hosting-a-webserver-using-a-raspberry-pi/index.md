@@ -16,7 +16,7 @@ images:
 ---
 The Raspberry Pi can be used as a web server on your main local network or the internet at large. It is a great selection in cases where you want an Intranet for the office or a web development server.
 <!--more-->
-You can create a local Pi webserver to deliver various contents while you are continuously surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network and ensured that it has the latest version of the operating system of Raspbian. These are the defined instructions that you need for any model to work even on the pocket-sized Raspberry Pi Zero W and the very powerful Raspberry Pi 4.
+You can create a local Pi webserver to deliver various contents while you are surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network.  And, ensured that it has the latest version of the operating system of **Raspbian**. These are the defined instructions that you need for any model to work even on the pocket-sized Raspberry Pi Zero W and the very powerful Raspberry Pi 4.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
