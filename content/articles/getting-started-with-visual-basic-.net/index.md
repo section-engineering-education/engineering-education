@@ -120,3 +120,12 @@ To read the next **characters** from a standard input stream we use `Console.Rea
 `Console.ReadKey()` obtains the next character pressed by the user.The pressed key is displayed in the console window.
 
 ### Comments in Visual Basic .NET
+Comments help a programmer understand what the code does a certain stage.They are mainly used to make code readable and easy to understand.
+Comments are ussually ignored by the complier when compiling the code.
+In VB.NET comments start with a single apostophe `'` .
+**Example**
+```vb
+    'This is a comment in VB.NET
+```
+
+Unfortunately for Visual Basic , we do not have block comments .All comments are single line comments.
