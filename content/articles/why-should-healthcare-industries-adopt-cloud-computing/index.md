@@ -1,6 +1,22 @@
-﻿Cloud computing refers to utilizing a network of remote servers residing on the internet for storage, managing, and processing data instead of a local server or physical computer. Health experts and managers believe that it can improve health care services, enhance health care research, and significantly change the face of health information technology. However, just like any other innovation, organizations should not rush into cloud computing without evaluating the specifics of their industry since most cloud vendors may not necessarily know their clients’ industry.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-should-healthcare-industries-adopt-cloud-computing/
+title: Why Should Healthcare Industries Adopt Cloud Computing?
+description: This article will explain why healthcare industries should adopt cloud computing. It will also explain the risks involved with cloud computing in healthcare and provide some possible solutions. 
+author: martha-ngugi
+date: 2021-08-19T00:00:00-16:00
+topics: [cloud computing]
+excerpt_separator: <!--more-->
+images:
 
-This article will provide an overview of why healthcare industries should adopt cloud computing. It will enable them to gain more information on the clients’ preferred deployment model, which is crucial in migration and custom application development.
+  - url: /engineering-education/why-should-healthcare-industries-adopt-cloud-computing/hero.jpg
+    alt: Cloud Computing example image
+---
+Cloud computing refers to utilizing a network of remote servers residing on the internet for storage, managing, and processing data instead of a local server or physical computer. Health experts and managers believe that it can improve health care services, enhance health care research, and significantly change the face of health information technology. However, just like any other innovation, organizations should not rush into cloud computing without evaluating the specifics of their industry since most cloud vendors may not necessarily know their clients’ industry.
+<!--more-->
+This article will provide an overview of why healthcare industries should adopt cloud computing. It will enable readers to gain more information on the clients’ preferred deployment model, which is crucial in migration and custom application development.
 
 ### Table of contents
 - [The concept of cloud computing in healthcare](#the-concept-of-cloud-computing-in-healthcare)
@@ -54,7 +70,7 @@ These costs are hugely cut using cloud computing, and the cloud offers higher se
 Cloud solution helps to improve on interoperability and enhances data sharing, which are equally important for future expansion plans.
 
 ### The key benefits of cloud computing in healthcare
-#### Minimal costs and less resource consumption
+#### Minimal cost and less resource consumption
 The main reason for migrating to a cloud solution in healthcare facilities is to gain access to computing power and storage without investing in infrastructure and hiring dedicated support staff.
 
 Cloud computing operates on a pay-as-you-use basis, meaning hospitals pay for the services they are using and need. In addition, there is no need for updating and patching the system since cloud vendors take care of that. It also relieves the healthcare facilities from long-term contracts and licensing agreements.
@@ -113,7 +129,7 @@ The healthcare facility should be aware that some cloud providers do not adhere 
 This means that healthcare organizations should carefully evaluate their cloud vendors to ensure that the solutions they are offering meet mandatory regulations and all documents needed are signed.
 
 #### Risk 4: Organizational unpreparedness
-Healthcare organizations may migrate to the cloud solution, before they adequately prepare for it. At times they fail to check if their existing systems and processes are well documented and may not possess enough knowledge on how their systems work. This increases the chances of errors been transferred to the cloud and the organization may not have a chance to fix its current system.
+Healthcare organizations may migrate to the cloud solution before they adequately prepare for it. At times they fail to check if their existing systems and processes are well documented and may not possess enough knowledge on how their systems work. This increases the chances of errors been transferred to the cloud and the organization may not have a chance to fix its current system.
 
 In addition, some clients never trust their cloud solution providers, hence misusing time and resources maintaining their private environment to protect the data in the cloud.
 
@@ -123,7 +139,7 @@ Healthcare organizations are required to prepare adequately for a cloud solution
 In addition, healthcare organizations need to familiarize themselves with their selected cloud platform in advance and involve all the users to make them ready for change and accept new ways after migration.
 
 #### Risk 5: Security threats
-It is possible to argue that the cloud is more secure compared to on-premises storage. However, the cloud still faces risks of data breaches and malware attacks. In most cases, it might be the problem with cloud vendors, but employee errors and internal intentional attacks cause some issues.
+It is plausible to argue that the cloud is more secure compared to on-premises storage. However, the cloud still faces risks of data breaches and malware attacks. In most cases, it might be the problem with cloud vendors, but employee errors and internal intentional attacks cause some issues.
 
 ##### Possible solution
 The healthcare organization must be ready to choose cloud vendors that offer a consistent offline backup solution to fight cloud computing security risks. The organization can recover its data from offline backup rather than paying ransom to the attacker.
@@ -140,3 +156,6 @@ Good research on different cloud vendors should be performed to understand their
 Moreover, if healthcare applications use the [public cloud](https://www.ibm.com/cloud/learn/public-cloud), the security of those applications purely lies on the organization and not the cloud vendor.
 
 Finally, suppose a healthcare organization is not sure on which cloud deployment models suit its needs. In that case, the organization should consult with different cloud vendors for offers and advice.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
