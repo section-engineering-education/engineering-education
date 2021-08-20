@@ -6,7 +6,7 @@ url: /mongo-nodejs-cubejs-dashboard/
 title: Node Express Analytics Dashboard with Cube.js
 description: This tutorial introduces the concept of Cube.js dashboard analytics.
 author: bhanji-brilliant
-date: 2021-08-18T00:00:00-19:00
+date: 2021-08-20T00:00:00-05:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
