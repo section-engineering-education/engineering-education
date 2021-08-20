@@ -40,16 +40,16 @@ To access the camera:
 > Note that Matlab mobile works online, and you must have an internet connection to use it.
 - Click on the three dashes at the top-left of the Matlab window.
 
-![Location of the dashes](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_one.jpeg)
+![Location of the dashes](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_one.jpg)
 
 - Click on the file section.
 
-![Location of the files](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_two.jpeg)
+![Location of the files](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_two.jpg)
 
 - Click on the `+` sign at the top-right corner.
 - Click on the `Take a photo` button to take a photo.
 
-![Tab for taking the photo](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_three.jpeg)
+![Tab for taking the photo](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_three.jpg)
 
 The camera on the Matlab mobile app is easy and intuitive to use.
 
@@ -68,7 +68,7 @@ I = imread('filename.jpg');
 imshow(I)
 ```
 
-![Showing our captured image](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_four.jpeg)
+![Showing our captured image](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_four.jpg)
 
 After accessing your image, you can do anything you wish to it. For example, you can change the image to gray-scale as shown below:
 
@@ -77,7 +77,7 @@ B = rgb2gray(I);
 imshow(B)
 ```
 
-![The gray-scale image](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_five.jpeg)
+![The gray-scale image](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_five.jpg)
 
 As you can see, it is easy to use your mobile Matlab to acquire the image and perform some quick image processing.
 
@@ -119,7 +119,7 @@ To do this, you will move around with your phone as it collects the data.
 
 To set your phone for this activity, activate the position sensor, click on the start button, and start collecting this data.
 
-![Data collection](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_eight.jpeg)
+![Data collection](/engineering-education/how-to-collect-sensor-data-on-your-mobile-device-using-matlab/sensor_eight.jpg)
 
 Once you are done, click on the Stop tab, then save your file. It allows you to use the data on your laptop or any other preferred place. This data will be uploaded to your Matlab drive.
 
