@@ -61,7 +61,7 @@ if (username) {
 }
 ```
 
-The code snippet above checks for the validity of the `username` variable, if it isn't, a reference error is displayed on the console. `Uncaught ReferenceError: username is not defined". Yes, username hasn't actually been defined. JavaScript tries searching for the `username`variable but it didn't find any. Hence the Reference Error. Getting rid of that error can be done by assigning`username` to a value.
+The code snippet above checks for the validity of the `username` variable, if it is not defined, a reference error is displayed on the cosele. `Uncaught ReferenceError: username is not defined". Yes, username hasn't actually been defined. JavaScript tries searching for the `username`variable but it didn't find any. Hence the Reference Error. Getting rid of that error can be done by assigning`username` to a value.
 
 ```javascript
 const username = "Malete";
@@ -88,7 +88,7 @@ Before creating the validation script, let’s have a look at the app's folder s
 |--src
 | |--container
 |   |--App
-|	|--index.js
+|	   |--index.js
 |--utils
   |--checks.js
   |--alert-template.js
@@ -124,6 +124,8 @@ Note that the hash symbol `(#)` has changed to the period symbol `(.)` because w
 Now let’s have a look at the validation snippet below:
 
 ```javascript
+// utils/check.js file
+
 let errMsg;
 
 const validateSignUp = (email, password, confirmPassword, alert) => {
@@ -229,9 +231,11 @@ Now that we have the validation script set up, and have gotten a grasp of what i
 First, we need to import the validation script into the App component, alongside the react-alert dependency. For brevity’s sake, I wouldn’t be doing much of an explanation on the React component structure, since it is among the pre-requisites of this article.
 
 ```javascript
+// src/App/index.js file
+
 import React from “react”
 import { withAlert } from "react-alert";
-import validateSignUp from "../../utils/check.js";
+import validateSignUp from "../../utils/checks";
 
 const SignUp = ({ alert }) => {
     const [fullname, setFullName] = React.useState("");
@@ -252,43 +256,41 @@ const SignUp = ({ alert }) => {
     };
 
 return (
-    <section className={style.signup__root}>
-        <div className={style.form__wrapper}>
+    <section>
+        <div>
             <form onSubmit={handleSubmit}>
-               <div className={style.form__group}>
+               <div>
                 <p>Email Address</p>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className={`form-control`}
-                    defaultText="youremail@example.com"
+                    placeholder="youremail@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                </div>
-               <div className={style.form__group}>
+               <div>
                 <p>Enter Password</p>
                   <input
                     name="password"
                     id="pwd"
-                    className={`form-control`}
                     placeholder="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                </div>
-               <div className={style.form__group}>
+               <div>
                 <p>Confirm Password</p>
                 <input
                   name="confirm__pwd"
                   id="pwd__conf"
-                  className={`form-control`}
                   placeholder="enter your password again"
                   value={pwdConfirm}
                   onChange={(e) => setPwdConfrim(e.target.value)}
                 />
-                <button className={`btn-primary`}>Sign up</button>
+                <button>Sign up</button>
+                </div>
             </form>
         </div>
     </section>
@@ -316,6 +318,8 @@ This step involves providing the `react-alert` template API to our application. 
 We’d start by creating a component that’d serve as a container for the error messages. In the `utils` folder, we’d add all the logic of the alert-template.
 
 ```javascript
+// alert-template.js file
+
 import React from "react";
 
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
@@ -357,8 +361,10 @@ The `msg-success` gives the alert template/modal a green background while `msg-e
 Let's now go ahead and add the template as a parent element in the app component. This can be done by editing the content of `_app.js` file.
 
 ```javascript
+// _app.js file
+
 import React from “react”
-import Message from "../src/utils/Message";
+import Message from "../src/utils/alert-template";
 import Head from “next/head”
 
 function App({ Component, pageProps }) {
@@ -370,6 +376,7 @@ function App({ Component, pageProps }) {
            name="viewport"
            content="minimum-scale=1, initial-scale=1, width=device-width"
          />
+         <title>React alert example</title>
        </Head>
        <Message>
           <Component {...pageProps} />
@@ -381,12 +388,23 @@ function App({ Component, pageProps }) {
 export default App;
 ```
 
+We have provided the alert template to the app component. Now let's import the SignUp form component into `pages/index.js`
+
+```javascript
+import React from "react";
+import SignUp from "../src/container/App";
+
+export default function IndexPage() {
+  return <SignUp />;
+}
+```
+
 ### Wrapping it up
 
 You have noticed we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go ahead and style your project to your own liking.
 
 You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you get a good understanding of how the package works.
 
-I have provided the link to the [repository](https://github.com/Caleb335/react-alert-test), check it out to see how it works.
+I have provided a link to the GitHub [repository](https://github.com/Caleb335/react-alert-test), check it out to see how it works.
 
-Thank you for reading this article, I hope it helped you!
+Thank you for reading this article, I hope it helped you. Happy Coding!
