@@ -10,13 +10,13 @@ In this article, we will learn how to implement dependency injection, get rid of
 - [Functionalities of dependency injection](#functionalities-of-dependency-injection)
 - [Reason why we need dependency injection](#Reason-why-we-need-dependency-injection)
 - [How to get rid of flutter package](#How-to-get-rid-of-flutter-package)
-- 
+ 
 ### Dependency injection in Flutter
-Although dependency injection is a simple example, libraries are frequently used to abstract it from the designer. Many of these libraries take advantage of reflection (mirrors in Dart). There are issues in a flutter:
+Although dependency injection is a simple example, libraries are frequently used to abstract it from the designer. Many of these libraries take advantage of reflection (mirrors in Dart). There are issues in a flutter, however:
 1. Mirrors are crippled for execution reasons. 
 2. The settled idea of widgets makes it unfeasible to pass conditions many levels down the tree.
 
-The inject library, on the other hand, can be used to solve similar issues.
+the inject library, on the other hand, can be used to solve similar issues.
 Annotations used by the inject library are listed below.
 
 1. **@Injector**-An inversion of control container developed from a bunch of modules.
@@ -29,7 +29,9 @@ Annotations used by the inject library are listed below.
 Can be like below:
 
 ```
+//inject/inject.dart’ is an outo genarated file that is imported
 import ‘package:inject/inject.dart’;
+//defining a class
 @provide
 class ExampleExa {
    // implementation
@@ -38,7 +40,7 @@ class ExampleExa {
 
 **Interface injection**
 
-First, create an abstract class then provide dependencies in the module.
+First, create an abstract class with some implementation then provide dependencies in the module.
 Abstract class:
 
 ```
@@ -51,20 +53,27 @@ abstract class NewExa{
    }
 }
 ```
-
+Afterward, we can add dependencies in our module.
 Final module:
 
 ```
+//inject/inject.dart’ is an outo genarated file that is imported
 import ‘package:inject/inject.dart’;
+//defining the class 
 @module
 class ExampleExa {
+//providing dependencies
 @provide
 NewExa newExa() => OldExa();
 }
 ```
 
 **Providers**
-Suppose we don't require an instance of a class injected, but rather a provider that will provide us a fresh instance of the class every time if we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance, and it will be injected correctly. We can define a helper and then use it in our classes;
+Suppose we don't require an instance of a class injected, but rather a provider that will provide us a fresh instance of the class every time if we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance, and it will be injected correctly. We can define a helper 
+```
+typedef Provider<T> = T Function();
+```
+and then use it in our classes;
 
 ```
 @provide
@@ -80,7 +89,9 @@ void _someFunction() {
 
 **Assisted injection**
 
-Since there is no implicit benefit to injecting objects that require only runtime contentions, we can use the standard factory. For example, create a factory class that takes all the compile-time dependencies in the constructor, inject it, and give it a factory technique runtime contention that will make a necessary case. We need to construct an injector for everything to work.
+Since there is no implicit benefit to injecting objects that require only runtime contentions, we can use the standard factory. For example, create a factory class that takes all the compile-time dependencies in the constructor, inject it, and give it a factory technique runtime contention that will make a necessary case.
+
+We need now to construct an injector for everything to work.
 
 ```
 import ‘main.inject.dart’ as g;
