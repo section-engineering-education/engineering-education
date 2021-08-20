@@ -6,7 +6,7 @@ url: /hosting-a-webserver-using-a-raspberry-pi/
 title: Hosting a Webserver Using a Raspberry Pi
 description: This article takes the reader through hosting a webserver using a Raspberry Pi. The Raspberry Pi can be used as a web server on your main local network or the internet at large. It is a great selection in cases where you want an Intranet for the office or web development server.
 author: eunice-wanjiku
-date: 2021-08-18T00:00:00-11:50
+date: 2021-08-20T00:00:00-11:50
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 The Raspberry Pi can be used as a web server on your main local network or the internet at large. It is a great selection in cases where you want an Intranet for the office or a web development server.
 <!--more-->
-You can create a local Pi webserver to deliver various contents while you are surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network.  And, ensured that it has the latest version of the operating system of **Raspbian**. These are the defined instructions that you need for any model to work even on the pocket-sized Raspberry Pi Zero W and the very powerful Raspberry Pi 4.
+You can create a local Pi webserver to deliver various contents while you are surfing over the internet. To make the webserver operational, the Raspberry Pi should be connected to the local network.  And, ensured that it has the latest version of the operating system of **Raspbian**. These are the defined instructions that you need for any model to work even on the pocket-sized `Raspberry Pi Zero W` and the very powerful `Raspberry Pi 4`.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -39,7 +39,7 @@ Various web servers can be related to the Raspberry Pi and each has utilization 
 ### Setting up Apache on Raspberry Pi
 #### Step 1: Accessing the terminal
 This step will describe how to access the raspberry pi's terminal. This can be achieved in two main ways as shown below:
-1. You can access the command terminal by clicking CLRL+ALT+T from the Raspbian desktop.
+1. You can access the command terminal by clicking `CLRL+ALT+T` from the Raspbian desktop.
 
 ![Raspberry Pi Terminal](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/terminal.png)
 
@@ -52,7 +52,7 @@ Password: raspberry
 ![Putty Connection](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/puttylogin.png)
 
 #### Step 2: Updating packages
-In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the command below into the Terminal. This ensures you have the current versions of any file you download afterwards.
+In this step, we will make sure that the available packages in our Raspberry pi are updated by typing the command below into the Terminal. This ensures you have the current versions of any file you download afterward.
 
 ```bash
 Sudo apt update
@@ -142,7 +142,7 @@ Once you have allowed your computer to reboot, the Raspberry Pi will now be show
 ![Raspberry Pi Reboot](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/reboot.png)
 
 ### Conclusion
-Web hosting offered by providers of such services is given at a price and in some cases, it can be very expensive. Hence, it is important to find ways of cutting such costs especially if the hosted service is only for a small group of people. By following the steps presented above, it is possible to install and host a web server using a Raspberry Pi. The hosted web server can be used to serve a small office through an intranet and is more cost efficient.
+Web hosting offered by providers of such services is given at a price and in some cases, it can be very expensive. Hence, it is important to find ways of cutting such costs especially if the hosted service is only for a small group of people. By following the steps presented above, it is possible to install and host a web server using a Raspberry Pi. The hosted web server can be used to serve a small office through an intranet and is more cost-efficient.
 
 ### Relevant resources
 - [Host Your Website on Raspberry Pi](https://www.instructables.com/Host-your-website-on-Raspberry-pi/)
