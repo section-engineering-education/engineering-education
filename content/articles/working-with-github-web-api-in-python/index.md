@@ -4,7 +4,8 @@ This tutorial will teach you how to create a self-contained application that gen
 ### Prerequisites
 You'll need some Python skills to continue with this tutorial.
 
-### What you will learn
+### Objectives
+In this article we will go through:
 - Using an API call to request data
 - Requests installation
 - Keeping track of an API response
@@ -83,12 +84,7 @@ The request was completed since the `status_code` is `200`.
 We can interact with the data contained in the dictionary since the result from the API call has been saved. Let's make a report that sums up the information. This is a cool method to ensure we got the information we wanted and to get started looking at the information we care about:
 
 ```python
-import requests
-
-# Create an API call 
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-j = requests.get(url)
-print("Status code:", j.status_code)
+  --snip--
 # In a variable, save the API response.
 respons_dict = j.json()
 print("Total repos:", respons_dict['total_count'])
@@ -131,16 +127,7 @@ The GitHub API gets back a range of data for every repository: `repos_dict` has 
 Let's have a look at what some of the keys in repos dict entail:
 
 ```python
-import requests
-
-# Create an API call 
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-j = requests.get(url)
-print("Status-code:", j.status_code)
-# In a variable, save the API response.
-respons_dict = j.json()
-print("Total repos:", respons_dict['total_count'])
-
+ --snip--
 # Find out more about the repositories.
 repos_dicts = respons_dict['items']
 print("Repositories found:", len(repos_dicts))
@@ -183,13 +170,8 @@ The project's repository `url` is displayed, as well as its construction date of
 We'll want to incorporate more than one repository in our visualisation of this data. Let's create a loop that prints specified information about each of the repositories supplied by the API call so that we can add them all in the visualization:
 
 ```python
-import requests
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-r = requests.get(url)
-print("Status-code:", r.status_code)
-respons_dict = r.json()
-print("Total repos:", respons_dict['total_count'])
-
+ --snip--
+# Find out more about the repositories.
 repos_dicts = respons_dict['items']
 print("Repositories found:", len(repos_dicts))
 print("\nListed details on each repository:")
