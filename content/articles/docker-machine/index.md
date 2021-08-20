@@ -1,6 +1,8 @@
 ### Introduction
 
-In this tutorial, we'll look at the docker machine in-depth, what it does, its key difference from docker, and build a simple application.
+Docker machine helps developers to create docker engines on the virtual hosts. They then expose created containers via some ports. This way, you can manage as many docker containers as possible.  
+
+In this tutorial, we'll look at the docker machine in-depth, what it does, its key difference from docker, and build a sample application.
 
 ### Table of contents
 
@@ -9,35 +11,42 @@ In this tutorial, we'll look at the docker machine in-depth, what it does, its k
 - [Requirements](#requirements)
 - [Objective](#objective)
 - [Getting started with a docker-machine](#getting-started-with-a-docker-machine)
-- [What’s the difference between Docker Engine and Docker Machine?](#whats-the-difference-between-docker-engine-and-docker-machine)
+- [Differences between Docker Machine & Docker Engine](#differences-between-docker-machine--docker-engine)
 - [Installing Docker Machine](#installing-docker-machine)
 - [Using Docker Machine to run Docker containers](#using-docker-machine-to-run-docker-containers)
 - [Run containers and experiment with Machine commands](#run-containers-and-experiment-with-machine-commands)
 - [Conclusion](#conclusion)
 
 ### Requirements
+
 Docker engine installed on your local machine.
+
 - In this tutorial, we'll be using Linux based operating system (Ubuntu 20.04) `focal fossa` and VirtualBox as our virtualization machine.  
 
 ### Objective
 
 This tutorial aims to introduce you to the concepts of the docker-machine. I will show you how to install and run docker on Ubuntu. We'll then proceed to provision and manage multiple docker remote docker hosts. Additionally, we'll also provision swarm clusters.
+
 ### Getting started with a docker-machine
- Docker machine is a tool that helps developers create/ install docker engines in a virtualized environment. These newly created docker engines can then be managed using the `docker-machine commands.
- In general terms, you can use this docker machine to create Docker hosts in a local machine or even in the cloud e.g AWS, Azure, etcetera.  
 
-### What’s the difference between Docker Engine and Docker Machine?
+As we had previously discussed, docker machine is a tool that helps in installing docker engines in a virtualized environment.
 
-Whenever you hear the term `docker`, it typically refers to the `docker engine`.when you run a command such as the one shown below, you're simply interacting with the docker engine command-line interface.
+In general terms, you can use this docker machine to create Docker hosts in a local machine or even in the cloud e.g AWS, Azure, etcetera.  
+
+### Differences between Docker Machine & Docker Engine
+
+Whenever you hear the term `docker`, it typically refers to the `docker engine`.When you run a command such as the one shown below, you're simply interacting with the docker engine command-line interface.
 
 ```bash
 docker run <image>
 ```
 
-Now, imagine a situation where you have multiple dockerized Angular applications. it would hard to independently manage these applications, running docker commands each time you need to manage a given host. That's where the docker-machine comes in.  
-As discussed earlier, it's used to provision and manage these dockerized hosts. How it works is that this machine is installed in a local machine. You then use it to install the docker engine in a virtualized environment.
+Now, imagine a situation where you have multiple dockerized Angular applications. It would be hard to independently manage these applications, running docker commands each time you need to manage a given host. This's where the docker-machine comes in.  
+
+As discussed earlier, it's used to provision and manage these dockerized hosts. How it works is that this machine is installed on a local machine. It's then used to install the docker engine in a virtualized environment.
 
 ### Installing Docker Machine
+
 ```bash
 # run this command to check your installed version
 docker --version
@@ -56,13 +65,13 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 \
 Output:
 
 ```bash
->   && sudo mv /tmp/docker-machine /usr/local/bin/docker-machine \
->   && chmod +x /usr/local/bin/docker-machine
+#...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   633  100   633    0     0    511      0  0:00:01  0:00:01 --:--:--   511
 100 26.8M  100 26.8M    0     0   374k      0  0:01:13  0:01:13 --:--:--  318k
 ```
+
 To check that the docker-machine has been successfully installed, run the following command on your terminal:
 
 ```bash
@@ -82,8 +91,11 @@ Let's now look at how the docker-machine can be used to manage docker containers
 
 ```bash
  $ docker-machine ls
- # no output since we've not created any machine.
+ # no output since we've not 
+ # created any machine.
+ 
  NAME   ACTIVE   DRIVER   STATE   URL   SWARM   DOCKER   ERRORS
+ 
 ```
 
 Let's proceed and create on machine by executing the commands below:
@@ -99,24 +111,25 @@ Output:
 # the output while installing the docker-machine
 Running pre-create checks...
 Creating machine...
-(default) Copying /home/username/.docker/machine/cache/boot2docker.iso to /home/username/.docker/machine/machines/default/boot2docker.iso...
-(default) Creating VirtualBox VM...
-(default) Creating SSH key...
-(default) Starting the VM...
-(default) Check network to re-create if needed...
-(default) Waiting for an IP...
+#... some output goes here
 Waiting for the machine to be running, may take a few minutes...
+# here the OS you're currently using for installation is being detected
 Detecting operating system of created instance...
+# ssh connection setup
 Waiting for SSH to be available...
+# detecting the provisioner
 Detecting the provisioner...
 Provisioning with boot2docker...
 Copying certs to the local machine directory...
+# here you notice we're connected to virtual machine
+# a remote machine hence certs are being generated and 
+# configured
 Copying certs to the remote machine...
+# docker configuration process
 Setting Docker configuration on the remote daemon...
-Checking the connection to Docker...
+#... installation complete
 Docker is up and running!
-To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env default
-
+#...
 
 ```
 
@@ -173,11 +186,10 @@ Output:
 
 ```bash
 # it downloads busybox and prints hello John doe
-Unable to find image 'busybox:latest' locally
-latest: Pulling from library/busybox
+# if the image is not locally available, you should it being pulled
 b71f96345d44: Pull complete 
 Digest: sha256:0f354ec1728d9ff32edcd7d1b8bbdfc798277ad36120dc3dc683be44524c8b60
-Status: Downloaded newer image for busybox:latest
+#...
 hello John doe
 
 ```
@@ -207,8 +219,7 @@ docker run -d -p 8000:80 nginx
 Expected Output:
 
 ```bash
-Unable to find image 'nginx:latest' locally
-latest: Pulling from library/nginx
+#...pulling image
 33847f680f63: Pull complete 
 dbb907d5159d: Pull complete 
 8a268f30c42a: Pull complete 
@@ -251,4 +262,3 @@ And that's how simple and easy to use a docker-machine to create and manage mult
 
 In this tutorial, we've discussed the key concepts of docker machines. We've seen how we can this tool to manage multiple dockerized applications.  
 Hopes it helps you build a strong foundation towards managing your applications.  
-
