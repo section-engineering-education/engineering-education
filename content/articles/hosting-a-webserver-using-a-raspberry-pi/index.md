@@ -63,7 +63,7 @@ Sudo apt update
 #### Step 3: Installing Apache
 In the third stage, we will be installing apache. To Install apache2 we run the following command:
 
-```
+```bash
 Sudo apt install apache2 –y
 ```
 
@@ -73,7 +73,7 @@ Sudo apt install apache2 –y
 This is the point where we install PHP. PHP helps in making sure that the web pages function as expected and also communicate with the database.
 Add PHP using the command:
 
-```
+```bash
 sudo apt-get -y install php5-common php5-cgi php5
 ```
 
@@ -83,7 +83,7 @@ sudo apt-get -y install php5-common php5-cgi php5
 After PHP has been successfully installed, we can now download our desired database. In this case, this tutorial uses the MySQL database. Thus, this step describes how to download MySQL.
 To do this, run the following command in the terminal:
 
-```
+```bash
 sudo apt-get install MySQL-server
 ```
 
@@ -95,7 +95,7 @@ sudo apt-get install MySQL-server
 This stage describes the installation process of the already downloaded database.
 When the download is finished, formal installation is required and can be done using the command:
 
-```
+```bash
 sudo mysql_secure_installation
 ```
 
@@ -104,7 +104,7 @@ sudo mysql_secure_installation
 #### Step 7: Restarting the server
 At this point, we will restart the webserver, apache2, to confirm that the changes take effect and are running. Use the command:
 
-```
+```bash
 sudo service apache2 restart
 ```
 
@@ -142,7 +142,7 @@ Once you have allowed your computer to reboot, the Raspberry Pi will now be show
 ![Raspberry Pi Reboot](/engineering-education/hosting-a-webserver-using-a-raspberry-pi/reboot.png)
 
 ### Conclusion
-By following the steps presented above, it is possible to install and host a web server using a Raspberry Pi. The hosted web server can be used to serve a small office through an intranet.
+Web hosting offered by providers of such services is given at a price and in some cases, it can be very expensive. Hence, it is important to find ways of cutting such costs especially if the hosted service is only for a small group of people. By following the steps presented above, it is possible to install and host a web server using a Raspberry Pi. The hosted web server can be used to serve a small office through an intranet and is more cost efficient.
 
 ### Relevant resources
 - [Host Your Website on Raspberry Pi](https://www.instructables.com/Host-your-website-on-Raspberry-pi/)
