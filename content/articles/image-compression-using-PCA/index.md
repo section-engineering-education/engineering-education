@@ -30,7 +30,7 @@ Principal Component Analysis, PCA, is a dimensionality reduction method used to 
 
 ### Prerequisites
 
-The reader needs to have basic knowledge of algebra(matrix operations and their properties) and statistics.
+The reader needs to have basic knowledge of linear algebra(matrix operations and their properties) and statistics. Also, readers need to be familiar with few terms of linear algebra, like [Basis](https://en.wikipedia.org/wiki/Basis_(linear_algebra)), [Vector Space](https://en.wikipedia.org/wiki/Vector_space), [Orthogonality](https://en.wikipedia.org/wiki/Orthogonality), and [Covariance](https://en.wikipedia.org/wiki/Covariance). Make sure you understand these terms before going through the blog.
 
 ### Introduction
 
@@ -47,7 +47,7 @@ To explain the concept of dimensionality reduction, I will take an example, cons
 <center>
 
 
-![first-graph](plot-1.png)
+![first-graph](/engineering-education/image-compression-using-PCA/plot-1.png)
 
 </center>
 
@@ -58,7 +58,7 @@ Now, what if we choose a different basis
 <center>
 
 
-![image2](plot-2.jpg)
+![image2](/engineering-education/image-compression-using-PCA/plot-2.jpg)
 
 </center>
 
@@ -77,11 +77,11 @@ Data correlation is how one set of data may correspond to another set. If two co
 <center>
 
 
-![Equation](capture.jpg)
+![Equation](/engineering-education/image-compression-using-PCA/capture.jpg)
 
 </center>
 
-#### Desideratum
+#### Requirements for Dimensionality Reduction
 
 In general, we are interested in representing the data using fewer dimensions such that,
 
@@ -95,7 +95,7 @@ In general, we are interested in representing the data using fewer dimensions su
 
 To explain the concept of PCA mathematically, I will take an example:
 
-#### Orthogonal  Transformation
+#### Orthogonal Transformation
 
 ##### Assumptions 
 
@@ -202,7 +202,7 @@ plt.imshow(faces[1], cmap='gray')
 plt.axis('off')
 ```
 
-![face-1](face1.png)
+![face-1](/engineering-education/image-compression-using-PCA/face1.png)
 
 Lets see what the average of all images looks like
 
@@ -212,7 +212,7 @@ plt.imshow(avgFace, cmap='gray')
 plt.axis('off')
 ```
 
-![face-2](face2.png)
+![face-2](/engineering-education/image-compression-using-PCA/face2.png)
 
 First of all, we will make all our images zero centered, for zero centering subtracting the average image from each image in the matrix.
 
@@ -226,7 +226,7 @@ plt.imshow(X[0].reshape(64,64), cmap='gray')
 plt.axis('off')
 ```
 
-![face-3](face3.png)
+![face-3](/engineering-education/image-compression-using-PCA/face3.png)
 
 Now, after making the images zero centered we will calculate covariance matrix
 
@@ -252,7 +252,7 @@ eigenvector_subset = sorted_eigenvectors[:,0:n_components]
 print(eigenvector_subset.shape)
 ```
 
-![snippet](image.jpg)
+![snippet](/engineering-education/image-compression-using-PCA/image.jpg)
 
 These 100 dimensions are the <b>Principal Components</b>. Now, as we can see, the shape of eigenvector_subset is (4096,100). If represented as a 64 X 64 image after performing transpose on this matrix, we can get 100 such images. These 100 images will be called <b>Eigenfaces</b>, and one can represent any image as a linear combination of these 100 images.
 
@@ -268,9 +268,9 @@ for i in range(16):
 plt.show()
 ```
 
-![eigenfaces](face5.png)
+![eigenfaces](/engineering-education/image-compression-using-PCA/face5.png)
 
-#### How  is  the  image compressed?
+#### How is the image compressed?
 
 Initially, the image had 4096 dimensions. Let's reduce the dimension from 4096  to 100
 
@@ -279,7 +279,7 @@ x_reduced = np.dot(eigenvector_subset.transpose(),X.transpose()).transpose()
 print(x_reduced.shape)
 ```
 
-![snippet](image2.jpg)
+![snippet](/engineering-education/image-compression-using-PCA/image2.jpg)
 
 Earlier, to store 400 images, we required a 400 X 4096 matrix. Now we need to store 400 X 100 matrix for x_reduced and 4096 X 100 matrix for storing principal components. As the image is gray-scale, let us suppose it requires 2 bits to store each pixel of an image. Therefore, after compressing the image, we will be able to save
 
@@ -306,13 +306,13 @@ plt.axis('off')
 
 <b>Reconstructed Image:</b>
 
-![face-6](face6.png)
+![face-6](/engineering-education/image-compression-using-PCA/face6.png)
 
 
 
 <b>Original Image</b>
 
-![face-1](face1.png)
+![face-1](/engineering-education/image-compression-using-PCA/face1.png)
 
 ### Conclusion
 
