@@ -6,7 +6,7 @@ url: /dockerize-a-rabbitmq-instance/
 title: Dockerizing a RabbitMQ Instance using Docker Containers
 description: In this article, we will be introduced to RabbitMQ. We will deploy a RabbitMQ instance and a RabbitMQ management UI to Docker swarm using docker compose.
 author: faith-musyoka
-date: 2021-08-18T00:00:00-04:30
+date: 2021-08-20T00:00:00-05:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
