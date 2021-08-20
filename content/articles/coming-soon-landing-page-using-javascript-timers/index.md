@@ -9,7 +9,7 @@ This article will teach you how to make a coming soon landing page, but first th
 #### Table Of Contents
 - [Introduction](#introduction)
 - [JavaScript timers overview](#javascript-timers-overview)
-- [code execution after a delay](#code-execution-after-a-delay)
+- [Code execution after a delay](#code-execution-after-a-delay)
 - [Code execution at regular intervals](#code-execution-at-regular-intervals)
 - [Cancelling a timer](#cancelling-a-timer)
 - [Template section](#template-section)
@@ -64,9 +64,7 @@ function delayGreetings() {
 You notice that when the above code is executed on the browser, the button click displays `Hello John Doe!` after 2s on the browser console.
 
 **_TASK-1_**
-
 Use the `setTimeout()` function to print the following two messages after their respective delays.
-
 - After 4 seconds, display greetings "Hello John Doe after 4secs"
 - After 8 seconds, display greetings "Hello John Doe after 8secs."
 
@@ -84,10 +82,8 @@ In your solution, you can only define one function, which includes inline functi
   setTimeout(delayGreetings, 4 * 1000, 4);
   setTimeout(delayGreetings, 8 * 1000, 8);
   ```
-
 #### Explanation
 - I gave `delayGreetings()` a delay parameter and utilized the delay argument's value in the displayed message. As a result, depending on the delay value we provide to the function, it might print different messages.
-
 - After that, I used the `delayGreetings()` function in two `setTimeout()` calls, one for 4 seconds and the other for 8 seconds. A `third parameter` is sent to both of these setTimeout calls to represent the `delay` argument for `delayGreetings()`.
 
 ### Code execution at regular intervals
@@ -112,7 +108,6 @@ setInterval(
   () => console.log("Hello John Doe after every 3 seconds"),
   3000);
 ```
-
 The above code executes after every 3 seconds in the browser console.
 
 **_Task-2_**
@@ -146,7 +141,6 @@ One of the way to solve **Task-2** is as follows:
         </script>
 </html>
 ```
-
 After every 1 second, the `showTime()` method is executed. It Retrieves your computer's current time and shows it in your browser each time it executes.
 
 ### Cancelling a timer
@@ -156,7 +150,6 @@ You may deactivate or clear the timer with this `ID` and stop the execution of c
 To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen in the following example:
 - Create an HTML document save it as `index.html`.
 - In this page,after the closing `body` tag,add JavaScript code inside `<script></script>` tags.
-
 
 ```html
 <!DOCTYPE html>
@@ -190,7 +183,7 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
         </script>
 </html>
 ```
- It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` functions.To do this : -
+ It is also possible to remove or disable a `setInterval()` timer using the `clearInterval()` functions.To do this:  
 - Create an HTML document save it as `index.html`.
 - In this page,after the closing body tag,add JavaScript code inside `<script></script>` tags.
 
@@ -210,22 +203,17 @@ To clear a `setTimeout()` timer for a specific `ID`, use this function, as seen 
 </body>
    <script>
         var intervalID;
-        
         function showTime() {
             var d = new Date();
             document.getElementById("clock").innerHTML = d.toLocaleTimeString();
         }
-        
         function stopClock() {
             clearInterval(intervalID);
         }
-        
         var intervalID = setInterval(showTime, 1000);
         </script>
 </html>
-
 ```
-
 > `clearTimeout()` and `clearInterval()` can be used interchangeably. You should avoid this, though, for the sake of clarity and code maintainability.
 
 ### Here are five pointers for developing a successful coming soon landing page.
@@ -239,14 +227,12 @@ In the described template, the headline "THE REAL SOUND" evokes the appropriate 
 Visitors to this website will at least have an idea of what to expect based on the headline, which is downloading and listening to HD hits.
 
 #### 2. You'll only have to fill out one form.
-
 A typical landing page can have up to two or three sign-up pages, however, a coming soon landing page can only have one. It's critical that you just focus on customers' eyes on a coming soon landing page because the more users you get to join and sign up, the more likely you are to lose them.
 
 In the Example template below, you can add a modal form to the `getNotified` button so that when consumers click on it, a modal form appears, allowing them to sign up and be alerted.
 
 #### 3. Set a countdown
-Setting a countdown is one approach to significantly boost the conversion rate of your coming soon page. A physical, adjustable countdown clock can be used to do this.
-If you don't have a specific launch date in mind, you might say something like "Arriving this fall" or "Out in time for Christmas."
+Setting a countdown is one approach to significantly boost the conversion rate of your coming soon page. A physical, adjustable countdown clock can be used to do this. If you don't have a specific launch date in mind, you might say something like "Arriving this fall" or "Out in time for Christmas."
 
 #### 4.It should be easy to share.
 Your landing page will earn more social shares if you provide a prize. Share it on social media platforms to enter the contest.  
@@ -270,6 +256,7 @@ In this section, I've designed a responsive coming soon landing page. I've used 
 - All images will be in the `img` sub-folder.
    
 **Mark-up Section**
+
 ```html
 <!--index.html-->
 <!DOCTYPE html>
