@@ -79,7 +79,7 @@ public void division()
 If the expression of the assert statement is false, an error is thrown specifying that the program has errors. This is referred to as `assertion failure`.
 
 ### Enabling and disabling assertions
-Java provides command line parameters to allow enabling and disabling assertions. Assertions enabling is done using the following parameters:
+Java provides command line parameters that allow us to enable and disable assertions. Assertions enabling is done using the following parameters:
 
 ```Java
 -ea
