@@ -239,5 +239,6 @@ Now we can visit http://localhost/bizdir/index.php/dir to verify if everything w
 As it can be seen, data is fetched from the database and rendered on the browser.
 
 ### Wrapping up
-Much functionality can be added and implemented in the application. However, it goes beyond the purpose of this tutorial. Its primary purpose was to show the learners how to get started with CodeIgniter as the MVC framework.
+Much functionality can be added and implemented in the application. However, that goes beyond the purpose of this tutorial as its primary purpose was to show the learners how to get started with CodeIgniter as the MVC framework.
+
 The code snippets used in this tutorial can be found at my [GitHub Repo](https://github.com/kerubo-tech/business_directory/).
