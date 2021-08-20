@@ -24,6 +24,8 @@
 |  Willies Ogola | [EngEd Author Page](https://www.section.io/engineering-education/authors/willies-ogola/) | [GitHub Profile](https://github.com/Bayler) | - Artificial Intelligence - Machine Learning - Blockchain - Telecommunication & Networking - Internet of Things - Programming Languages (Python, C, JavaScript)|
 |  Dawe Daniel| [EngEd Author Page](https://www.section.io/engineering-education/authors/dawe-daniel/) | [GitHub Profile](https://github.com/Dawe-7) | - Android development (Java) - Networking - CCNA - Programming Languages (C++, C)|
 |  Mercy Meave| [EngEd Author Page](https://www.section.io/engineering-education/authors/mercy-meave/) | [GitHub Profile](https://github.com/mercymeave) | - Fullstack web development(Node, React, Django) - Cloud -Machine Leaning -Languages(Javascript, Python, C++)|
+|  Eric Gacoki | [EngEd Author Page](https://www.section.io/engineering-education/authors/eric-gacoki/) | [GitHub Profile](https://github.com/Ericgacoki) | - Android development (Kotlin) - JavaScript - Python - Networking |
+
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
