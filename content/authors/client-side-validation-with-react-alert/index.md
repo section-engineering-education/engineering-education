@@ -5,6 +5,7 @@ This feature gives front-end developers the ability to verify a user's input dat
 In this article, we’re going to look at how to verify input data using an npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
 ### Prerequisites
+
 To follow along with this tutorial, you'll need:
 
 1. [Nodejs](https://nodejs.org) 10.x or newer.
@@ -14,6 +15,7 @@ To follow along with this tutorial, you'll need:
 5. Basic knowledge of DOM Manipulation.
 
 ### Overview
+
 Before React, vanilla JS was the go-to solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling.
 
 The aim of this validation process is to check if the data sent by the user to the server is appropriate. Event listeners will help us listen to events that take place on the webpage.
@@ -26,6 +28,7 @@ Performing DOM manipulation in vanilla JS isn’t a big deal because the DOM is 
 Although manipulating the DOM in React works the same way in vanilla JS, there are some quirks to it. One is that the Document object is not available in React. This is because it is being bundled with Node.js which doesn’t run on the client-side of a web browser
 
 ### Getting Started
+
 To be able to perform client-side validation in React. Let’s start by installing the necessary `npm` dependencies.
 
 I will be using Next.JS to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
@@ -37,9 +40,10 @@ You don’t need to use Next.JS. You can either:
    Feel free to make use of any approach that would be most convenient for you.
    To get started with Next.JS. In your workspace, open the terminal and run the command below.
 
-```bash 
+```bash
 npx create-next-app name-of-your-app
 ```
+
 This will install Next.JS all the dependencies needed to create a React application.
 Because this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
 
@@ -57,10 +61,10 @@ if (username) {
 }
 ```
 
-The code snippet above checks for the validity of the `username` variable, if it isn't, a reference error is displayed on the console. `Uncaught ReferenceError: username is not defined". Yes, username hasn't actually been defined. JavaScript tries searching for the `username` variable but it didn't find any. Hence the Reference Error. Getting rid of that error can be done by assigning `username` to a value.
+The code snippet above checks for the validity of the `username` variable, if it isn't, a reference error is displayed on the console. `Uncaught ReferenceError: username is not defined". Yes, username hasn't actually been defined. JavaScript tries searching for the `username`variable but it didn't find any. Hence the Reference Error. Getting rid of that error can be done by assigning`username` to a value.
 
 ```javascript
-const username = "Malete"
+const username = "Malete";
 if (username) {
   console.log(username);
 }
@@ -74,6 +78,7 @@ Other conditional statements that go _hand-in-hand_ with the `if` statement are 
 It is this same principle that we’re going to use in implementing the client validation in this project.
 
 ### Setting up the validation script
+
 Before creating the validation script, let’s have a look at the app's folder structure. So that the process of traversing the app structure doesn’t get confusing or ambiguous as we proceed.
 
 ```
@@ -143,7 +148,7 @@ const validateSignUp = (email, password, confirmPassword, alert) => {
     typeof password !== "undefined" &&
     typeof confirmPassword !== "undefined"
   ) {
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert.error("Passwords don't match");
       confirmPasswordInput.focus();
       errMsg = false;
@@ -218,6 +223,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
   - If all the conditions stated, have been checked, the alert window comes up with successful text
 
 ### Using the validator
+
 Now that we have the validation script set up, and have gotten a grasp of what is going on in the script, it is time to get it inside the app itself. We’d have a look at the step-by-step process of accomplishing that.
 
 First, we need to import the validation script into the App component, alongside the react-alert dependency. For brevity’s sake, I wouldn’t be doing much of an explanation on the React component structure, since it is among the pre-requisites of this article.
@@ -303,7 +309,7 @@ const validate = validateSignUp(email, password, pwdConfirm, alert ||" ");
 };
 ```
 
-- **Setting up the alert template**
+- #### Setting up the alert template
 
 This step involves providing the `react-alert` template API to our application. Without this, the error messages wouldn’t be displayed on the webpage. Let’s start by taking a look at the setup below.
 
@@ -376,8 +382,11 @@ export default App;
 ```
 
 ### Wrapping it up
+
 You have noticed we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go ahead and style your project to your own liking.
 
 You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you get a good understanding of how the package works.
+
+I have provided the link to the [repository](https://github.com/Caleb335/react-alert-test), check it out to see how it works.
 
 Thank you for reading this article, I hope it helped you!
