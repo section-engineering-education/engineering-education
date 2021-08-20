@@ -20,14 +20,16 @@ Packets take various routes when sent in large and complex networks. The routes 
 This article will cover how we can apply classless routing protocols on networks in creating fast and available routes using the Open Shortest Path First (OSPF) protocol.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Terminologies](#terminologies)
 - [OSPF components and characteristics](#ospf-components-and-characteristics)
+  - [OSPF characteristics](#ospf-characteristics)
 - [OSPF implementation](#ospf-implementation)
-  - Single-Area OSPF
-  - Multi-Area OSPF
+  - [i). Single-Area OSPF](#i-single-area-ospf)
+  - [ii). Multi-Area OSPF](#ii-multi-area-ospf)
 - [OSPF configuration](#ospf-configuration)
-- [OSPF verification](#ospf-verification)
+- [OSPF Verification](#ospf-verification)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -225,7 +227,7 @@ To summarize, we have:
 - Configured a network using OSPF Protocol.
 - Learned how OSPF is used in determining the best fastest available route and how to verify its implementation in a network
 
-You can find more information about network management [here](https://study-ccna.com/ospf-configuration/).
+You can find more information about classless routing using OSPF [here](https://study-ccna.com/ospf-configuration/).
 
 Happy coding!
 
