@@ -1,93 +1,56 @@
 ### Introduction
-
----
-
-In the Login Script, the 'Remember Me' functionality allows users who have logged in to keep their status.A user's logged-in status is serialized in PHP sessions, cookies, or other similar storage when they select the Remember Me option.
-It's important to be aware of security flaws that could compromise the application's authentication system when storing user login data in a session or a cookie. Cookie storage of plain passwords should be avoided, as this will allow application hacking.
-You will learn how to create a persistent PHP web application by reading this article. When a user attempts to log in to the program, their credentials are validated against the database.
-Before redirecting the user to their dashboard, the PHP session and cookies are used to preserve the user's logged-in state. Session IDs are created when users successfully log in.
-The cookies are then set to save the login name and password for a given length of time. To prevent hacking, a random password and token are produced and kept in the cookie instead of the users' plain password.
-While accessing application pages, a check is made to see if the user is currently logged in, and if not, the page is not displayed. After checking if the session is empty, a cookie check will be performed to determine if the user is logged in. This happens when both the session and cookies do not contain any information about a remembered login.
-With a 1 month expiration date, authentication cookies can be used to authenticate a user. It will be possible to store random passwords and tokens in a database along with their expiration date and time. When logging in, the cookie-based logged-in state validation is performed by checking the database for cookie expiration and availability.
-
-**Prerequisites**
-
-- PHP and MSQL
-- PHP cookies
-- PHP sessions
-
+In the Login Script, the 'Remember Me' functionality allows users who have logged in to keep their status. A user's logged-in status is serialized in PHP `sessions`, `cookies`, or other similar storage when they select the `Remember Me` option.
+In this edge, you will learn how to create a persistent PHP web application.
 #### Table of contents
-
 - [Introduction](#introduction)
-
-- [Preserve Logged in State](#create-cookies-to-preserve-the-logged-in-state)
+- [Preserve logged in state](#create-cookies-to-preserve-the-logged-in-state)
 - [validate remembered login](#validate-remembered-login-with-php-session-and-cookies)
-- [Clear Remembered Login](#clear-remembered-login-with-session-and-cookies-on-logout)
-- [Controller Classes](#auth-and-dbcontroller-classes)
-- [conclusion](#conclusion)
-
-### Create Cookies to Preserve the Logged-In State
-
----
-
-To obtain the username and password, I've created a login form. This form has a 'Remember Me' checkbox for the user's convenience, which allows the user to keep his logged-in state. When a user provides their login information, PHP receives it and compares it to the database of members.
-
-On successful login, if the user selected ‘Remember Me’ then the logged-in status is stored in PHP session and cookies.
-
-Because storing the plain password in the cookie is a security flaw, the authentication keys are produced using random integers. These keys are hashed and saved in a database with a one-month expiration time. When the timer runs out, the expiration flag is set to 0 and the keys are turned off.
-
+- [Clear remembered login](#clear-remembered-login-with-session-and-cookies-on-logout)
+- [Controller classes](#auth-and-dbcontroller-classes)
+- [Conclusion](#conclusion)
+- [check the code snippets at github](https://github.com/Juskam/secure-remember-me-for-login-using-php-session-and-cookies)
+Make sure to look at the source code on GitHub so you know what files to create.
+### Create cookies to preserve the logged-in state
+To obtain the `username` and `password`, I've created a login form. This form has a 'Remember Me' checkbox for the user's convenience, which allows the user to keep his logged-in state. When a user provides their login information, PHP receives it and compares it to the database of members.
+On successful login, if the user selected ‘Remember Me’ then the logged-in status is stored in PHP `session` and `cookies`.
+Because storing the plain password in the cookie is a security flaw, the authentication keys are produced using random integers. These keys are hashed and saved in a database with a one-month expiration time. When the timer runs out, the expiration flag is set to `0` and the keys are turned off.
 ```php
 <?php
 session_start();
-
 require_once "Auth.php";
 require_once "Util.php";
-
 $auth = new Auth();
 $db_handle = new DBController();
 $util = new Util();
-
 require_once "authCookieSessionValidate.php";
-
 if ($isLoggedIn) {
     $util->redirect("dashboard.php");
 }
 
 if (! empty($_POST["login"])) {
     $isAuthenticated = false;
-
     $username = $_POST["member_name"];
     $password = $_POST["member_password"];
-
     $user = $auth->getMemberByUsername($username);
     if (password_verify($password, $user[0]["member_password"])) {
         $isAuthenticated = true;
     }
 
     if ($isAuthenticated) {
-        $_SESSION["member_id"] = $user[0]["member_id"];
-
-        // Set Auth Cookies if 'Remember Me' checked
+        $_SESSION["member_id"] = $user[0]["member_id"];        
         if (! empty($_POST["remember"])) {
             setcookie("member_login", $username, $cookie_expiration_time);
-
             $random_password = $util->getToken(16);
             setcookie("random_password", $random_password, $cookie_expiration_time);
-
             $random_selector = $util->getToken(32);
             setcookie("random_selector", $random_selector, $cookie_expiration_time);
-
             $random_password_hash = password_hash($random_password, PASSWORD_DEFAULT);
             $random_selector_hash = password_hash($random_selector, PASSWORD_DEFAULT);
-
-            $expiry_date = date("Y-m-d H:i:s", $cookie_expiration_time);
-
-            // mark existing token as expired
+            $expiry_date = date("Y-m-d H:i:s", $cookie_expiration_time);          
             $userToken = $auth->getTokenByUsername($username, 0);
             if (! empty($userToken[0]["id"])) {
                 $auth->markAsExpired($userToken[0]["id"]);
-            }
-            // Insert new token
+            }     
             $auth->insertToken($username, $random_password_hash, $random_selector_hash, $expiry_date);
         } else {
             $util->clearAuthCookie();
@@ -99,9 +62,7 @@ if (! empty($_POST["login"])) {
 }
 ?>
 ```
-
 - HTML code to display login form with a "Remember Me" option.
-
 ```html
 <form action="" method="post" id="frmLogin">
     <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>
@@ -141,23 +102,16 @@ if (! empty($_POST["login"])) {
 </form>
 ```
 
-### Validate Remembered Login with PHP Session and Cookies
-
----
-
-authCookieSessionValidate.php, a PHP page, contains code for validating the logged-in state based on session and cookie data. For applications that require user authentication, it appears at the beginning of the application page.
-
-$loggedIn is set to true if it's present in the session or cookie array. It is determined by this boolean value whether or not the user can proceed or be redirected back to the login page.
-
+### Validate remembered login with PHP session and cookies
+`authCookieSessionValidate.php`, a PHP page, contains code for validating the logged-in state based on session and cookie data. For applications that require user authentication, it appears at the beginning of the application page.
+`$loggedIn` is set to true if it's present in the session or cookie array. It is determined by this boolean value whether or not the user can proceed or be redirected back to the login page.
 First, the PHP session is used to check the remembered login. If it returns false, the function will look in the cookies for the authentication keys. If the keys aren't empty, they'll be hashed and checked against the database.
-
 When a match is identified, the expiration date is checked against the current date and time. The user will be sent to the dashboard once the code has passed all of the validation checks.
 
 ```php
 <?php
 require_once "Auth.php";
 require_once "Util.php";
-
 $auth = new Auth();
 $db_handle = new DBController();
 $util = new Util();
@@ -173,15 +127,12 @@ else if (! empty($_COOKIE["member_login"]) && ! empty($_COOKIE["random_password"
     $isSelectorVerified = false;
     $isExpiryDateVerified = false;
     $userToken = $auth->getTokenByUsername($_COOKIE["member_login"],0);
-
     if (password_verify($_COOKIE["random_password"], $userToken[0]["password_hash"])) {
         $isPasswordVerified = true;
     }
-
     if (password_verify($_COOKIE["random_selector"], $userToken[0]["selector_hash"])) {
         $isSelectorVerified = true;
     }
-
     if($userToken[0]["expiry_date"] >= $current_date) {
         $isExpiryDateVerified = true;
     }
@@ -196,17 +147,11 @@ else if (! empty($_COOKIE["member_login"]) && ! empty($_COOKIE["random_password"
 }
 ?>
 ```
-
-### Clear Remembered Login with Session and Cookies on Logout
-
----
-
+### Clear remembered login with session and cookies on logout
 On the dashboard panel, the logout link is featured in the welcome text.The saved login status is erased from the PHP session and cookies when you click the logout link.
-
 ```php
 <?php
 session_start();
-
 require "Util.php";
 $util = new Util();
 $_SESSION["member_id"] = "";
@@ -215,11 +160,8 @@ $util->clearAuthCookie();
 header("Location: ./");
 ?>
 ```
-
-#### Database Script
-
-Test the example on your own system by importing the SQL script below. Log in with username admin and password admin to access the site.
-
+#### Database script
+Test the example on your system by importing the SQL script below. Log in with username admin and password admin to access the site.
 ```sql
 --
 -- Database: `db_auth`
@@ -294,14 +236,9 @@ ALTER TABLE `tbl_token_auth`
 COMMIT;
 ```
 
-### Auth and DBController Classes
-
----
-
+### Auth and DBController classes
 #### Auth.php
-
 These are the classes used to trigger and handle database operations. The database querying is performed efficiently with the MySQLi prepared statement
-
 ```php
 <?php
 require "DBController.php";
@@ -341,9 +278,7 @@ class Auth {
 }
 ?>
 ```
-
-#### DataBase Controller.php
-
+#### DataBase controller.php
 ```php
 <?php
 class DBController {
@@ -352,16 +287,13 @@ class DBController {
 	private $password = "test";
 	private $database = "db_auth";
 	private $conn;
-
     function __construct() {
         $this->conn = $this->connectDB();
 	}
-
 	function connectDB() {
 		$conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
 		return $conn;
 	}
-
     function runBaseQuery($query) {
                 $result = mysqli_query($this->conn,$query);
                 while($row=mysqli_fetch_assoc($result)) {
@@ -370,8 +302,6 @@ class DBController {
                 if(!empty($resultset))
                 return $resultset;
     }
-
-
 
     function runQuery($query, $param_type, $param_value_array) {
 
@@ -415,19 +345,12 @@ class DBController {
     }
 }
 ?>
-
 ```
-
 ### Conclusion
-
----
-
-If you check the "Remember Me" box, your browser will save a cookie so that if you exit the site window without signing out, you will be immediately logged back in the next time you visit.Otherwise, this will not work unless you set your browser to remember cookies.
-
+If you check the "Remember Me" box, your browser will save a cookie so that if you exit the site window without signing out, you will be immediately logged back in the next time you visit. Otherwise, this will not work unless you set your browser to remember cookies.
 If you select the "Remember Me" option, your browser will save a cookie so that if you close the site window without signing out, you will be automatically logged in the next time you visit. Otherwise, unless you set your browser to remember cookies, this will not work.
 
-**Further Reading**
+**further Reading****
+- [Understanding and Working With javascript Cookies](https://www.section.io/engineering-education/understanding-and-working-with-javascript-cookies/)
 
-- How to store User log-in details using javascript cookies.
-
-Happy Coding !
+Happy Coding!
