@@ -1,7 +1,23 @@
-﻿### Introduction
-[CodeIgniter](https://codeigniter.com/userguide3/tutorial/index.html) is a PHP [MVC framework](https://www.guru99.com/mvc-tutorial.html) which developers use to build web applications rapidly. It provides out-of-box libraries for connecting to the database such as MySQL and performing various tasks such as sending emails, uploading files, and managing sessions.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-develop-a-business-directory-using-codeigniter-and-mysql/
+title: Developing a business directory using Codeigniter and MySQL
+description: In this article, we will be using CodeIgniter and MySQL to build a simple business directory. Since CodeIgniter is an MVC framework, the Model will be related to the database, View will be the HTML part seen on the web browser, and Controller will be the logic that connects our Models with the Views. 
+author: lilian-kerubo
+date: 2021-07-22T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-In this article, we will be using CodeIgniter and MySQL to build a simple business directory. Since CodeIgniter is an MVC framework, the Model will be related to the database, View will be the HTML part seen on the web browser, and Controller will be the logic that connects our Models with the Views.
+  - url: /engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/hero.png
+    alt: Codeigniter and mysql business directory image
+---
+
+[CodeIgniter](https://codeigniter.com/userguide3/tutorial/index.html) is a PHP [MVC framework](https://www.guru99.com/mvc-tutorial.html) which developers use to build web applications rapidly. It provides out-of-box libraries for connecting to the database such as MySQL and performing various tasks such as sending emails, uploading files, and managing sessions.
+<!--more-->
+In this article, we will be using CodeIgniter and MySQL to build a simple business directory. Since CodeIgniter is an MVC framework, the `model` will be related to the database, `view` will be the HTML part seen on the web browser, and `controller` will be the logic that connects our models with the views.
 
 ### Table of contents
 - [Introduction](#introduction)
