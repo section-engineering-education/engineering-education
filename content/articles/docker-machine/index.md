@@ -65,7 +65,10 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 \
 Output:
 
 ```bash
-#...
+# when you run the above command, this this you're suppose to see somethig like this
+# you notice it moves the docker machine to a new directory
+# then sets the access mode to allow for execution
+
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   633  100   633    0     0    511      0  0:00:01  0:00:01 --:--:--   511
