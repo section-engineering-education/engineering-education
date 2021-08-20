@@ -15,8 +15,7 @@ images:
    alt: MATLAB optimization example image
 ---
 
-Optimization combines the inputs to achieve the optimum output subject to satisfying certain specified constraints and conditions. It involves choosing the best among given data or combining the inputs to obtain the optimal working condition. It is a mathematical discipline that works to get the maxima and minima. Thus, optimization forms a part of linear programming. 
-
+Optimization combines the inputs to achieve the optimum output subject to satisfying certain specified constraints and conditions. It involves choosing the best among given data using given criteria or combining the inputs to obtain the optimal working condition. It is a mathematical discipline that works to get the maxima and minima. Thus, optimization forms a part of linear programming. Optimization problems generally maximize or minimize a real function, systematically choosing input values from within an allowed set and computing the value of the function. 
 
 ### Prerequisites
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
@@ -24,7 +23,7 @@ Optimization combines the inputs to achieve the optimum output subject to satisf
 
 ### Introduction
 
-Optimization is applicable in a wide range of fields. It includes the financial sector, transport sector, and many more. Hence, it is an essential tool used in everyday life, with its impact felt by billions of people daily. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its application in various fields.
+Optimization problems of all sorts occur in all quantitative disciplines such as computer science, engineering, and even economics. Hence, it is an essential tool used in everyday life, with its impact felt by billions of people daily. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its application in various fields.
 
 An optimization problem is defined by `df(x)/dx=0`. Finding the minimum point in a curve can be done using a while loop. For example, given a function $y(x)= 2x^2+20x-22$, you can find it's  minimum point using a while loop as shown below;
 ```matlab
