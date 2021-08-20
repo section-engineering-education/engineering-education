@@ -14,10 +14,8 @@ images:
   - url: /engineering-education/mongo-nodejs-cubejs-dashboard/hero.jpg
     alt: cube.js analytics dashboard image
 ---
-In the following tutorial, I'll show you how to create a basic analytics dashboard with Node, Express, and Cube.js. As a database, we're going to use MongoDB with MongoDB BI Connector
+In this tutorial, I will be showing you how to create a basic analytics dashboard with NodeJs, Express, and Cube.js. For the database, we will be using MongoDB with MongoDB BI Connector
 <!--more-->
-
-### Introduction
 In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.  
 
 The BI Connector allows for the use of MongoDB as a data source for SQL based business intelligence and analytics platforms.
