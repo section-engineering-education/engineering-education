@@ -20,14 +20,12 @@ Packets take various routes when sent in large and complex networks. The routes 
 This article will cover how we can apply classless routing protocols on networks in creating fast and available routes using the Open Shortest Path First (OSPF) protocol.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Terminologies](#terminologies)
 - [OSPF components and characteristics](#ospf-components-and-characteristics)
-  - [OSPF characteristics](#ospf-characteristics)
 - [OSPF implementation](#ospf-implementation)
-  - [i). Single-Area OSPF](#i-single-area-ospf)
-  - [ii). Multi-Area OSPF](#ii-multi-area-ospf)
+  - Single-Area OSPF
+  - Multi-Area OSPF
 - [OSPF configuration](#ospf-configuration)
 - [OSPF Verification](#ospf-verification)
 - [Conclusion](#conclusion)
@@ -44,6 +42,7 @@ Use this [page](https://www.computernetworkingnotes.com/ccna-study-guide/downloa
 - **Classless routing** - Refers to a type of routing where the router is allowed to use the available default route to forward traffic if no other specific routes are found. It includes subnet mask information in the routing updates and is supported by RIPv2, OSPF, and EIGRP protocols.
 
 - **Administrative Distance (AD)** - Is a feature used by routers to select the best path possible, that is, the routers determine the source of routes to take and use if it has two identical routes from different sources. Routers need to be able to determine which routes to trust when receiving information from two different sources. Routing Information Protocol (RIP) and Enhanced Interior Gateway Routing Protocol (EIGRP) have default administrative distances of 120 and 90, respectively, while OSPF has a default administartive distance of 110.
+
 - **Metric** - Refers to the ways used by each classless routing protocol to determine the best path to a network. OSPF uses the `Sum of Inverse of Bandwidth`, RIP uses `Hop Count` and EIGRP uses `Min Bandwidth + Delay`.
 
 - **Wildcard Mask** - Inverses of subnet masks configured on interfaces used by OSPF to specify the range of IP addresses to examine for a match, usually 32 bit long.
@@ -133,7 +132,7 @@ Router(config-router)   #do write
 Router(config-if)    #router ospf 1
 Router(config-router)   #network 192.168.30.0 0.0.0.255 area 0
 Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
-Router(config-router)  #do write
+Router(config-router)   #do write
 ```
 
 >NOTE: To disable OSPF configurations on the routers, the command `no router ospf` is used in the global configuration mode.To view the OSPF information we can use `show ip protocols`.
@@ -143,9 +142,9 @@ To verify that we configured OSPF on the network and its implementation is worki
 ```bash
 Router#show ip ospf
 
- Routing Process "ospf 1" with ID 192.168.20.1
- Supports only single TOS(TOS0) routes
- Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+Routing Process "ospf 1" with ID 192.168.20.1
+Supports only single TOS(TOS0) routes
+Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
 ```
 To view the OSPF neighbors we use `show ip ospf neighbor`.
 
