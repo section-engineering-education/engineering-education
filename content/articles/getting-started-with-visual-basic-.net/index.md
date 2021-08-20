@@ -144,3 +144,57 @@ Unfortunately for Visual Basic , we do not have block comments .All comments are
 
 **Congratulations!** You just wrote your first VB.NET program.  
 
+To learn a few more terms , we will write a simple program to add two numbers entered by the user.
+
+```vb
+Imports System
+
+Module Program
+    Sub Main(args As String())
+        Dim firstNum, seconNum, sum As Integer
+        Console.WriteLine("enter first number:")
+        firstNum = Console.ReadLine()
+        Console.WriteLine(" enter second number:")
+        seconNum = Console.ReadLine()
+        sum = firstNum + seconNum
+        Console.WriteLine("the sum is:" & sum)
+        Console.ReadLine()
+
+    End Sub
+End Module
+```
+Here's how the output will look like when we input our first number as 2 and the second as 6 :
+
+```bash
+enter first number:
+2
+ enter second number:
+6
+the sum is:8
+```
+
+Let's take a look at the new lines in this program.
+
+```vb
+Dim firstNum, seconNum, sum As Integer
+```
+This line declares variables that will store the user input and also the result of the addition done by the system .
+`As Integer` means that the declared variables will be of the data type Integer `Int`. Apart from integers , we have other data types such as : 
+   - String - stores any number of numerical ,alphabetic and special characters
+    - Double - stores fractional numbers
+    - Boolean - stores data as either True or False
+    - Date - stores  the date value and has a range of January 1, 0001 - December 31, 9999. 
+    - Byte - this is a one byte integer. it holds an unsigned value from 0 to 255
+
+```vb
+firstNum = Console.ReadLine()
+```
+
+This line assigns the user input to our declared variable for storage.We can see that this step is repeated for the second input under a diffrent variable, this is because a variable can only hold value for one input ,incase we assign a second it will replace the original one.
+
+### Conclusion
+In this tutorial we  looked at :
+- Setting up a Visual Basic.NET development enviroment.
+- A sample of Visual Basic.NET that prints "Hello World".
+- Writting a Program to add two numbers from the user input.
+- Tips on writting good comments
