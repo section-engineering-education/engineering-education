@@ -1,200 +1,289 @@
-Visual Basic.net is a multi-paradigm , object-oriented programming language .We implement it in the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) developed by Microsoft .Visual Basic was invented in 2001 to replace Visual Basic 6 .
+Visual Basic.net is a multi-paradigm, object-oriented programming language. We implement it in the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) developed by Microsoft. They invented visual Basic in 2001 to replace Visual Basic 6.
 
-Visual Basic.Net is pronounced as "Visual basic dot net " . We commonly abbreviate it as VB.NET .
+Visual Basic.Net is pronounced as “Visual basic dot net “. We commonly abbreviate it as VB.NET.
 
-Although VB.NET is an evolved version of Visual Basic 6 ,it is not compatible with it , i.e. code written in Visual Basic 6 cannot be compiled under VB.NET
+Although VB.NET is a developed version of Visual Basic 6, it is not compatible with it, .i.e. we cannot compile code written in Visual Basic 6  under VB.NET
 
 ### Why VB.NET?
-- VB.NET is a simple languge that is easy to understand for both novice and advanced programmers.
-- With VB.NET you can create web applications with mordern features like performance counters ,file system and event logs.
-- Since we implement VB.NET using the .NET framework , we can connect our applications to others created in languages that run on the same framework .
-- You will enjoy drag and drop capabilities to replace any elements that you may need.
-- The language is not case sensitive .
 
-Although VB.NET may have a couple of advantages , it also has some drawbacks associated with it .They include :
-- VB.NET is not able to handle pointers directly.
-- Since VB.NET is an intermediate language , there is a large number of libraries required for the Just In Time compiler to interpret the application.
+- VB.NET is a simple language that is easy to understand for both novice and advanced programmers.
 
+- With VB.NET you can create web applications with modern features like performance counters, file systems, and event logs.
 
-To get started, you will need an IDE (Integrated Development Environment) to write and compile code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
+- Since we implement VB.NET using the .NET framework, we can connect our applications to others created in languages that run on the same framework.
 
-### Installing Visual Basic.Net 
+- You will enjoy drag-and-drop capabilities to replace any elements that you may need.
 
-After you have selected Visual Studio , choose .NET desktop develop and click *Modify*.
+- The language is not case sensitive.
+
+Although VB.NET may have a couple of advantages, it also has some drawbacks associated with it. They include :
+
+- VB.NET cannot handle pointers directly.
+
+- Since VB.NET is an intermediate language, there are many libraries required for the Just In Time compiler to interpret the application.
+
+To get started, you will need an IDE (Integrated Development Environment) to write and compile code. We will use [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
+
+### Installing Visual Basic.Net 
+
+After you have selected Visual Studio, choose .NET desktop to develop and click *Modify*.
 
 ![vscode](/engineering-education/getting-started-with-visual-basic-.net/visualstuio1.jpg)
 
-After the installation, click *Launch* to get started.  
+After the installation, click *Launch* to get started.  
 
-On the new window, choose *Create a new project*.
+On the new window, choose *Create a new project*.
 
 ![newproject](/engineering-education/getting-started-with-visual-basic-.net/visualtudio2.png)
 
-Once you have selected *Create a new project*, choose *"Install more tools and features"* then click *Next*.
+Once you have selected *Create a new project*, choose *” Install more tools and features"* then click *Next*.
 
 ![createproject](/engineering-education/getting-started-with-visual-basic-.net/newproject1.png)
 
-From the drop down menu , pick  *Visual basic* then  select *Console Application* from the list and click *Next*.
+From the drop-down menu, pick *Visual basic* then select *Console Application* from the list and click *Next*.
 
 ![picktemplate](/engineering-education/getting-started-with-visual-basic-.net/newproject.png)
 
-Enter your preferred project name and click *Next*. In this case, I will name my file *helloworld*.
+Enter your preferred project name and click *Next*. Here, I will name my file *hello world*.
 
 ![pickname](/engineering-education/getting-started-with-visual-basic-.net/newproject2.png)
 
-After selecting the target framework you desire , click *Create*.
+After selecting the target framework you desire, click *Create*.
 
-Visual Code will automatically generate some VB.NET  code for you.
+Visual Code will auto-generate some VB.NET code for you.
 
 ![project](/engineering-education/getting-started-with-visual-basic-.net/newproject3.png)
 
-Let's look at the code.
+Let’s look at the code.
 
-We have the code that will be generated below. It's a *Hello World* program.
-```vb  
+We have the code that was generated below. It’s a *Hello World* program.
+
+```vb  
+
 Imports System
 
 Module Program
-    Sub Main(args As String())
-        Console.WriteLine("Hello World!")
-    End Sub
-End Module 
+
+    Sub Main(args As String())
+
+        Console.WriteLine(“Hello World!”)
+
+    End Sub
+
+End Module 
 
 ```
-Press the *F5* key on your keyboard,to run your program, .
-This will compile and run your code. 
+
+Press the *F5* key on your keyboard to run your program.
+
+This will compile and run your code. 
 
 A console window will open with the following output:
+
 ```bash
+
 Hello World!
 
 C:\Users\sa\source\repos\helloworld\helloworld\bin\Debug\netcoreapp3.1\helloworld.exe (process 6544) exited with code 0.
+
 To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+
 Press any key to close this window . . .
 
 ```
-### The Syntax 
-We will look at each line of code from our program generated by Visual Studio. 
 
-**Line 1:** 
+### The Syntax 
+
+We will look at each line of code from our program generated by Visual Studio. 
+
+**Line 1:** 
 
 ```vb
+
 Imports System
-```
-This line is used to include a *namespace* ,System, in our program . With that namespace , we will be able to access all the methods defined in it without getting an error.
-A Namespace can be defined as a group of code that is related to each other , it majorly consists of pieces of code such as classes, procedures and functions .
 
-**Line 2:** 
+```
+
+This line is used to include a *namespace*, System, in our program. With that namespace, we will access all the methods defined in it without getting an error.
+
+A Namespace can be defined as a group of codes that is related to each other. It majorly comprises pieces of code such as classes, procedures, and functions.
+
+**Line 2:** 
 
 ```vb
+
 Module Program
-   'code declaration
-End Module 
-```
-A module defines a refrence type available through out its namespace .We can also define it as a part of a program  that contains one or more routines . For our *helloworld* program we have declared our module and named it `Program`.Inside this module we will be able to define methods to be used by our program .To close our module we use the `End` keyword.
 
-**Line 3:** 
+   ‘code declaration
+
+End Module 
+
+```
+
+A module defines a reference type available throughout its namespace. We can also define it as a part of a program that contains one or more routines. For our *helloworld* program, we have declared our module and named it `Program`. Inside this module, we will define methods to be used by our program. To close our module, we use the `End` keyword.
+
+**Line 3:** 
 
 ```vb
+
 Sub Main(args As String())
-     'code declaration 
+
+     ‘code declaration 
+
 End Sub
+
 ```
 
-Our module has one procedure, `Sub` .A procedure is a block of statements enclosed by a declaration statement and a matching end declaration.Its From this line where execution of our program will begin.Each program in VB.NET should have a `main` method .
+Our module has one procedure, `Sub`. A procedure is a block of statements enclosed by a declaration statement and a matching end declaration. From this line execution of our program will begin. Each program in VB.NET should have a `main` method.
 
 **Line 4:**
 
 ```vb
-Console.WriteLine("Hello World!")
+
+Console.WriteLine(“Hello World!”)
+
 ```
 
-`Console.WriteLine()` prints out text on the console. After printing a string it adds a new line character to the end of the string .In our program it will output  *"Hello World!"*.
-Alternatively we can use `Console.Write()` instead of `Console.WriteLine()` .The main diffrence between these two is that `Console.Write()` *does not* add a new line character to the end of the string. More about the two commands can be found [here](https://www.programiz.com/csharp-programming/basic-input-output).
+`Console.WriteLine()` prints out text on the console. After printing a string, it adds a newline character to the end of the string. In our program, it will output  *"Hello World!"*.
 
-### Getting user input 
-To read the next **characters** from a standard input stream we use `Console.ReadLine()`.
+Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .The major difference between these two is that `Console. Write()` *does not* add a newline character to the end of the string. We can find more about the two commands [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
-`Console.Read()` is used when we want to read the next **Character** from the standard input stream.
+### Getting user input 
 
-`Console.ReadKey()` obtains the next character pressed by the user.The pressed key is displayed in the console window.
+To read the next **characters** from a standard input stream, we use `Console.ReadLine()`.
+
+`Console. Read()` reads the next **Character** from the standard input stream.
+
+`Console.ReadKey()` gets the next character pressed by the user. We display the pressed key in the console window.
 
 ### Comments in Visual Basic .NET
-Comments help a programmer understand what the code does a certain stage.They are mainly used to make code readable and easy to understand.
-Comments are ussually ignored by the complier when compiling the code.
-In VB.NET comments start with a single apostophe `'` .
+
+Comments help a programmer understand what the code does at a certain stage. They are mainly used to make code readable and easy to understand.
+
+The compiler usually ignores comments when compiling the code.
+
+In VB.NET comments start with a single apostrophe `’`.
+
 **Example**
+
 ```vb
-    'This is a comment in VB.NET
+
+    ‘This is a comment in VB.NET
+
 ```
 
-Unfortunately for Visual Basic , we do not have block comments .All comments are single line comments.
+Unfortunately for Visual Basic, we do not have block comments. All comments are single-line comments.
 
 **Tips on writing good comments**
-- Ensure that your comments are not a duplicate of the code you have written. Some programmers tend to write comments that are very obvious and unnecessary.
-- Comments should not act as an excuse of unclear code. e.g When a programmer writes a comment to explain a single character variable declared.
-- When you find it hard to write a clear comment, your code might be where the problem is .
-- Your comments should clear any confussion , not create it.
-- Include links to additional refrences where you feel they will be most helpful.
-- Write comments when fixing bugs too .
+
+- Ensure that your comments are not a duplicate of the code you have written. Some programmers write comments that are very obvious and unnecessary.
+
+- Comments should not act as an excuse for unclear code. e.g. when a programmer writes a comment to explain a single character variable declared.
+
+- When you find it hard to write a simple comment, your code might be where the problem is.
+
+- Your comments should clear any confusion, not create it.
+
+- Include links to additional references where you feel they will be most helpful.
+
+- Write comments when fixing bugs, too.
 
 **Important points to note:**
-- VB.NET is case-insesitive but the CLR (common language runtime)is case sensitive .
-- VB.NET follows top to bottom order when executing a program
 
-**Congratulations!** You just wrote your first VB.NET program.  
+- VB.NET is case-insensitive, but the CLR (common language runtime)is case sensitive.
 
-To learn a few more terms , we will write a simple program to add two numbers entered by the user.
+- VB.NET follows top-to-bottom order when executing a program
+
+**Congratulations!** You just wrote your first VB.NET program.  
+
+To learn a few more terms, we will write a simple program to add two numbers entered by the user.
 
 ```vb
+
 Imports System
 
 Module Program
-    Sub Main(args As String())
-        Dim firstNum, seconNum, sum As Integer
-        Console.WriteLine("enter first number:")
-        firstNum = Console.ReadLine()
-        Console.WriteLine(" enter second number:")
-        seconNum = Console.ReadLine()
-        sum = firstNum + seconNum
-        Console.WriteLine("the sum is:" & sum)
-        Console.ReadLine()
 
-    End Sub
+    Sub Main(args As String())
+
+        Dim firstNum, seconNum, sum As Integer
+
+        Console.WriteLine(“enter first number:”)
+
+        firstNum = Console.ReadLine()
+
+        Console.WriteLine(“ enter second number:”)
+
+        seconNum = Console.ReadLine()
+
+        sum = firstNum + seconNum
+
+        Console.WriteLine(“the sum is:” & sum)
+
+        Console.ReadLine()
+
+    End Sub
+
 End Module
+
 ```
-Here's how the output will look like when we input our first number as 2 and the second as 6 :
+
+Here’s how the output will look like when we input our first number as 2 and the second as 6 :
 
 ```bash
-enter first number:
+
+enter the first number:
+
 2
- enter second number:
+
+ enter the second number:
+
 6
+
 the sum is:8
+
 ```
 
-Let's take a look at the new lines in this program.
+Let’s look at the new lines in this program.
 
 ```vb
+
 Dim firstNum, seconNum, sum As Integer
+
 ```
-This line declares variables that will store the user input and also the result of the addition done by the system .
-`As Integer` means that the declared variables will be of the data type Integer `Int`. Apart from integers , we have other data types such as : 
-   - String - stores any number of numerical ,alphabetic and special characters
-    - Double - stores fractional numbers
-    - Boolean - stores data as either True or False
-    - Date - stores  the date value and has a range of January 1, 0001 - December 31, 9999. 
-    - Byte - this is a one byte integer. it holds an unsigned value from 0 to 255
+
+This line declares variables that will store the user input and also the result of the addition by the system.
+
+`As Integer` means that the declared variables will be of the data type Integer `Int`. Apart from integers, we have other data types, such as 
+
+   - String - stores any numerical, alphabetic, and special characters
+
+    - Double - stores fractional numbers
+
+    - Boolean - stores data as either True or False
+
+    - Date - stores the date value and has a range of January 1, 0001 - December 31, 9999. 
+
+    - Byte - This is a one-byte integer. It holds an unsigned value from 0 to 255
 
 ```vb
+
 firstNum = Console.ReadLine()
+
 ```
 
-This line assigns the user input to our declared variable for storage.We can see that this step is repeated for the second input under a diffrent variable, this is because a variable can only hold value for one input ,incase we assign a second it will replace the original one.
+This line assigns the user input to our declared variable for storage. We can see that we repeat this step for the second input under a different variable, this is because a variable can only hold value for one input, in case we assign a second, it will replace the original one.
 
 ### Conclusion
-In this tutorial we  looked at :
-- Setting up a Visual Basic.NET development enviroment.
-- A sample of Visual Basic.NET that prints "Hello World".
-- Writting a Program to add two numbers from the user input.
-- Tips on writting good comments
+
+In this tutorial we looked at :
+
+- Setting up a Visual Basic.NET development environment.
+
+- A sample of Visual Basic.NET that prints “Hello World”.
+
+- Writing a program to add two numbers from the user input.
+
+- Tips on writing good comments
+
+Happy coding!
