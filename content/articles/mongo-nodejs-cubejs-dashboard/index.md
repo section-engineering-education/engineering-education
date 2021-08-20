@@ -11,20 +11,16 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/mongo-nodejs-cubejs-dashboard/hero.jpg
+  - url: /engineering-education/mongo-nodejs-cubejs-dashboard/hero.png
     alt: cube.js analytics dashboard image
 ---
-In this tutorial, I will be showing you how to create a basic analytics dashboard with NodeJs, Express, and Cube.js. For the database, we will be using MongoDB with MongoDB BI Connector
+In this tutorial, I will be showing you how to create a basic analytics dashboard with Node.js, Express.js, and Cube.js. For the database, we will be using MongoDB with MongoDB BI Connector.
 <!--more-->
-In this tutorial, I'll show you how to create analytics dashboard. We'll be using Node.js, Express, and Cube.js, an open-source tool for creating API analytics.  We will also use MongoDB as our database to store and retrieve data together with the MongoDB BI Connector.  
-
 The BI Connector allows for the use of MongoDB as a data source for SQL based business intelligence and analytics platforms.
 
-Cube.js solves a plethora of different problems every production-ready analytic application needs to solve: analytic SQL generation, query results caching and execution orchestration, data pre-aggregation, security, API for query results fetch, and visualization.
+Cube.js solves a plethora of different problems every production-ready analytic application needs to solve. Issues like analytic SQL generation, query results caching and execution orchestration, data pre-aggregation, security, API for query results fetch, and visualization.
  
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Setting up the development environment](#setting-up-the-development-environment)
@@ -33,8 +29,8 @@ Cube.js solves a plethora of different problems every production-ready analytic 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- This tutorial requires a basic understanding of the MongoDB and MongoDB BI Connector.
-- Basic knowledge in [Node.js](https://nodejs.org/en/docs/), [Express](https://expressjs.com), and [Cube.js](https://cube.dev).
+- This tutorial requires a basic understanding of MongoDB and MongoDB BI Connector.
+- Basic knowledge in [Node.js](https://nodejs.org/en/docs/), [Express.js](https://expressjs.com), and [Cube.js](https://cube.dev).
 
 ### Objectives
 By the end of this tutorial, you should be able to create a simple Node.js application dashboard for analytics, combining with the power of Cube.js and MongoDB.
@@ -57,12 +53,12 @@ v16.5.0 # note that this version may vary from yours
 ```
 
 **Step 2:**  
-Let's now proceed and create our application skeleton using [Express](https://expressjs.com) by running the following commands:
+Let's proceed and create our application skeleton using [Express](https://expressjs.com) by running the following commands:
 
 ```bash
 npm install express-generator -g
 ```
-Now proceed and generate our `example-analytics-dashboard` app by executing the following commands:
+We proceed to generate our `example-analytics-dashboard` app by executing the following commands:
 
 ```bash
 express --view=hbs example-analytics-dashboard
@@ -71,32 +67,32 @@ express --view=hbs example-analytics-dashboard
 Expected Output:
 
 ```bash
-   create : example-analytics-dashboard/
-   create : example-analytics-dashboard/public/
-   create : example-analytics-dashboard/public/javascripts/
-   create : example-analytics-dashboard/public/images/
-   create : example-analytics-dashboard/public/stylesheets/
-   create : example-analytics-dashboard/public/stylesheets/style.css
-   create : example-analytics-dashboard/routes/
-   create : example-analytics-dashboard/routes/index.js
-   create : example-analytics-dashboard/routes/users.js
-   create : example-analytics-dashboard/views/
-   create : example-analytics-dashboard/views/error.hbs
-   create : example-analytics-dashboard/views/index.hbs
-   create : example-analytics-dashboard/views/layout.hbs
-   create : example-analytics-dashboard/app.js
-   create : example-analytics-dashboard/package.json
-   create : example-analytics-dashboard/bin/
-   create : example-analytics-dashboard/bin/www
+create : example-analytics-dashboard/
+create : example-analytics-dashboard/public/
+create : example-analytics-dashboard/public/javascripts/
+create : example-analytics-dashboard/public/images/
+create : example-analytics-dashboard/public/stylesheets/
+create : example-analytics-dashboard/public/stylesheets/style.css
+create : example-analytics-dashboard/routes/
+create : example-analytics-dashboard/routes/index.js
+create : example-analytics-dashboard/routes/users.js
+create : example-analytics-dashboard/views/
+create : example-analytics-dashboard/views/error.hbs
+create : example-analytics-dashboard/views/index.hbs
+create : example-analytics-dashboard/views/layout.hbs
+create : example-analytics-dashboard/app.js
+create : example-analytics-dashboard/package.json
+create : example-analytics-dashboard/bin/
+create : example-analytics-dashboard/bin/www
 
-   change directory:
-     $ cd example-analytics-dashboard
+change directory:
+  $ cd example-analytics-dashboard
 
-   install dependencies:
-     $ npm install
+install dependencies:
+  $ npm install
 
-   run the app:
-     $ DEBUG=example-analytics-dashboard:* npm start
+run the app:
+  $ DEBUG=example-analytics-dashboard:* npm start
 ```
 **Step 3:**
 Let's now install the local MongoDB instance and MongoDB BI connector by running the following commands:  
@@ -109,26 +105,26 @@ Expected Output:
 ```bash
 OK
 ```
-Next, run the following command to create list for MongoDB and reload packages:
+Next, run the following command to create a list for MongoDB and reload packages:
 
 ```bash
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list && sudo apt-get update
 
 ```
-Now install the MongoDB packages by exectuting the following on your terminal:
+Install the MongoDB packages by exectuting the following on your terminal:
 
 ```bash
 sudo apt-get install -y mongodb-org
 ```
-On completion, now start your MongoDB by executing the following commands:
+On completion, start your MongoDB by executing the following commands:
 
 ```bash
 sudo systemctl start mongod
 ```
 **Step 4:**
-With MongoDB instance locally available, now let's proceed and install the MongoDB BI Connector.
+With MongoDB instance locally available, we can proceed and install the MongoDB BI Connector.
 
-> It's important to note that you MUST first have OpenSSL installed on your host.\
+> It's important to note that you MUST first have OpenSSL installed on your host.
 
 - Start by downloading MongoDB BI Connector [here](https://www.mongodb.com/download-center/bi-connector/releases).
 - Extract the downloaded file by running the following command:  
@@ -140,17 +136,17 @@ tar -xvzf mongodb-bi-xxxxxx.tgz
 Expected Output
 
 ```bash
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/LICENSE
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/README
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/THIRD-PARTY-NOTICES
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/example-mongosqld-config.yml
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongosqld
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongodrdl
-  mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongotranslate
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/LICENSE
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/README
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/THIRD-PARTY-NOTICES
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/example-mongosqld-config.yml
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongosqld
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongodrdl
+mongodb-bi-linux-x86_64-ubuntu2004-v2.14.3/bin/mongotranslate
 ```
 
 **Step 5:**
-Now that we've got a complete application skeleton, in the next step, let's now install the [Cube.js](https://cube.dev/docs/frontend-introduction).
+Now that we've got a complete application skeleton, in the next step, we will install [Cube.js](https://cube.dev/docs/frontend-introduction).
 
 ```bash
 # cd into project root directory
@@ -161,7 +157,7 @@ npm install
 npm install --save @cubejs-backend/server-core @cubejs-backend/mongobi dotenv
 ```
 ### Generating Cube.js schema
-Previously, we have seen how to set up our development environment, in this section, let's see how we can use the power of `Cube.js` to come up with a general schema to build an API analytics dashboard.  
+Previously, we have seen how to set up our development environment. In this section, we will see how we can use the power of `Cube.js` to come up with a general schema to build an API analytics dashboard.  
 
 We use the Cube.js schema since it can generate raw data into a meaningful business definition.  This data schema is then exposed via the `query API`, allowing the end-users to perform analytical queries.  
 
@@ -224,7 +220,8 @@ CUBEJS_DB_PORT=3307
 CUBEJS_DB_TYPE=mongobi
 CUBEJS_API_SECRET=SECRET
 ```
-Then proceed and initialize the Cube.js as shown below:
+
+Proceed and initialize the Cube.js as shown below:
 
 ```js
 // inde.js file
@@ -238,10 +235,11 @@ cubejs.create().initApp(app);
 ```  
 
 With all these, you may now proceed and build a dashboard for any application.
-A full source code can be found [here](https://github.com/bhanjibrilliant/mongodb-json-files)
+
+The full source code can be found [here](https://github.com/bhanjibrilliant/mongodb-json-files)
 
 ### Conclusion
-In this tutorial, we have seen how we can build an analytics dashboard using the Express, Cube.js, and MongoDB instance. We've also seen why we chose Cube.js to write queries instead of the normal repetitive SQL queries.  
+In this tutorial, we have seen how we can build an analytics dashboard using Express.js, Cube.js, and MongoDB instance. We've also seen why we chose Cube.js to write queries instead of the normal repetitive SQL queries.  
 
 Happy Coding!
 
