@@ -43,50 +43,48 @@ Use this [page](https://www.computernetworkingnotes.com/ccna-study-guide/downloa
 ### Terminologies
 - **Classless routing** - Refers to a type of routing where the router is allowed to use the available default route to forward traffic if no other specific routes are found. It includes subnet mask information in the routing updates and is supported by RIPv2, OSPF, and EIGRP protocols.
 
-- **Administrative Distance (AD)** - Is a feature used by routers to select the best path possible, that is, the routers determine the source of routes to take and use if it has two identical routes from different sources. Routers need to be able to determine which routes to trust when receiving information from two different sources. OSPF has a default administrative distance of 110 while that of Routing Information Protocol (RIP) and Enhanced Interior Gateway Routing Protocol (EIGRP) is 120 and 90 respectively.
-
+- **Administrative Distance (AD)** - Is a feature used by routers to select the best path possible, that is, the routers determine the source of routes to take and use if it has two identical routes from different sources. Routers need to be able to determine which routes to trust when receiving information from two different sources. Routing Information Protocol (RIP) and Enhanced Interior Gateway Routing Protocol (EIGRP) have default administrative distances of 120 and 90, respectively, while OSPF has a default administartive distance of 110.
 - **Metric** - Refers to the ways used by each classless routing protocol to determine the best path to a network. OSPF uses the `Sum of Inverse of Bandwidth`, RIP uses `Hop Count` and EIGRP uses `Min Bandwidth + Delay`.
 
 - **Wildcard Mask** - Inverses of subnet masks configured on interfaces used by OSPF to specify the range of IP addresses to examine for a match, usually 32 bit long.
 
-- **OSPF Area** - Refers to a logical collection of OSPF networks, routers, and links that have the same area identification. A router within an area must maintain a topological database for the area to which it belongs.
+- A logical grouping of OSP[F networks, routers, and links with the same area identification is referred to as an **OSPF area**. A router within an area is requitred to have a topological database foe the area it is part of.
 
 - **OSPF neighbors** - Refers to the relationship that exists between two OSPF-enabled routers in the same OSPF area that are connected by a common network.
 
 ### OSPF components and characteristics
 The Open Shortest Path First (OSPF) protocol is a link-state, classless, open standard routing protocol that was created as an inner gateway protocol. It uses the concept of areas and the routing metric "cost" to help control routing update traffic by providing fast convergence and scaling to much larger network implementations. It manages several routing zones and assists in determining the quickest available route for a given situation.
 
-OSPF protocol like other protocols share similar components:
+THe OSPF protocol, like other protocols, has componentsthat are comparable.That is:
 
-- **Routing Protocol Messages** - OSPF enable routers to exchange messages to convey routing information using packets, i.e. Hello packets, link-state request packets, database description packets, link-state acknowledgment packets, and link-state update packets used to discover OSPF neighbors to exchange routing information.
+- **Routing Protocol Messages** - OSPF allows routers to send and receive messages in the form of packets, such as hello packets, link-state request packets, database description packets, link-state acknowledghement packets, and link-state update packets, which are used to discover OSPF neighbors and exchange routing information.
 
-- **Data Structures** - The messages exchanged by the OSPF neighbors used to build data structures that contain a list of neighboring routers to exchange routing information with. They are kept and maintained in the RAM.
+- **Data Structures** - Created by the OSPF neighbors' messsages and contains a list of sorrounding routers with whom to share routing information. They are kept and maintained in the RAM.That is,
 
-They include:
-1. `Adjacency database` - Creates the neighbor table.
-2. `Link-state database (LSDB)` - Creates the topology table
-3. `Forwarding database` - Creates the routing table.
+1. The neighbor table is created by the `adjacency database`.
+2. The topology table is created by the `link-state database`(LSDB).
+3. The routing table is created by the `forwarding database`.
 
-- **Algorithm** - OSPF uses the Shortest Path First (SPF) algorithm based on the cumulative cost to reach a destination. The SPF creates an SPF tree by placing every router at the root of the tree and calculating the shortest path to each node. The SPF then calculates the best routes and places them in the forwarding database used to create the routing table.
+- **Algorithm** - OSPF employs the Shortest Path First(SPF) algorithm, which is based on the total cost of reaching a target. By placing every router at the root of the tree and computing the shortest path to each node, the SPF builds an SPF tree. The SPF then calculates the best routes and places them in the forwarding database used to create the routing table.
 
 #### OSPF characteristics
 - Uses link-state routing algorithm.
 - Supports CIDR addressing model.
-- Sends only updates and not the entire routing table.
-- Uses path cost as its basic routing metric.
+- Only sends updates rather than the complete routing table.
+- THe simplest routing statistics is path cost.
 - Supports authentication and the updates are sent every 10 seconds.
 - Updates are sent with multi-cast address `224.0.0.5`
 
 ### OSPF implementation
-OSPF can be implemented in one of these two ways:
+OSPF can be set up in two different ways:
 
 #### i). Single-Area OSPF
-This type of OSPF implementation occurs in small networks where the routers are in one area called the `backbone area` (area 0) resulting in large routing tables.
+This form of OSPF implementation happens in small networks with all routers in the backbone region (area 0), resulting in enormous routing tables.
 
 ![Single Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/singlearea.jpg).
 
 #### ii). Multi-Area OSPF
-Here OSPF is implemented in a hierarchical version using multiple areas which must connect to the backbone area. With this method, we can divide a large autonomous system into smaller areas to support hierarchical routing. The Shortest Path First (SPF) is confined to an area resulting in smaller routing tables.
+OSPF is done hierarchically in this case, with multiple locations that must link to the backbone. With this method, we can divide a large autonomous system into smaller areas to support hierarchical routing. The Shortest Path First (SPF) is confined to an area resulting in smaller routing tables.
 
 ![Multi Area OSPF Network Configuration](/engineering-education/classless-routing-using-ospf-protocol/multiarea.jpg).
 
@@ -102,22 +100,18 @@ Assign IP addresses to the interfaces on both routers and the PCs.
 ```bash
 Router>enable
 Router#configure terminal
-Enter configuration commands, one per line.  End with CNTL/Z.
 Router(config)  #interface gi0/0    !specifying interface
 Router(config-if)   #ip address 192.168.20.1 255.255.255.0  !assigning IP address to interface
 Router(config-if)   #no shutdown    !activating the interface
 Router(config-if)   #interface gi0/1
 Router(config-if)   #ip address 192.168.10.1 255.255.255.0
 Router(config-if)   #no shutdown
-Router(config-if)   #do write   !saving routers configuration
-Building configuration...
-[OK]
+Router(config-if)   #do write   ! routers configuration saving
 ```
 
 ```bash
 Router>enable
 Router#config terminal
-Enter configuration commands, one per line.  End with CNTL/Z.
 Router(config)  #interface gi0/0
 Router(config-if)   #ip address 192.168.20.2 255.255.255.0
 Router(config-if)   #no shutdown
@@ -126,15 +120,13 @@ Router(config-if)   #ip address 192.168.30.1  255.255.255.0
 Router(config-if)   #no shutdown
 ```
 
-Establish a neighbor relationship between the two routers and advertise directly connected subnet into OSPF.
+Create a neighbor relationship between the two routers and announce the directly connected subnet in OSPF.
 
 ```bash
-Router(config)  #router ospf 1  !enabling ospf
+Router(config)  #router ospf 1  !ospf is enabled
 Router(config-router)   #network 192.168.10.0  0.0.0.255 area 0  !specifying the network, wildcard mask and the area
 Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
 Router(config-router)   #do write
-Building configuration...
-[OK]
 ```
 
 ```bash
@@ -205,7 +197,7 @@ Routing Protocol is "ospf 1"
   Distance: (default is 110)
 ```
 
-To verify if directly connected subnets are really advertised into a different area, we can use the `show ip route ospf` command on both R1 and R3:
+On both Routers, we can use the `show ip route ospf` command to see if directly connected subnets are truly advertised into a different area: Since the PCs are directly connected in tha same region, they can interact.
 
 ```bash
 Router#show ip route ospf
