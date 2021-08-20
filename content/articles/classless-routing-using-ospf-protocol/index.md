@@ -130,44 +130,23 @@ Router(config-router)   #do write
 ```
 
 ```bash
-outer(config-if)    #router ospf 1
+Router(config-if)    #router ospf 1
 Router(config-router)   #network 192.168.30.0 0.0.0.255 area 0
 Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
-Router(config-router)
+Router(config-router)  #do write
 ```
 
->NOTE: To disable OSPF configurations on the routers, the command `no router ospf` is used in the global configuration mode.
-
+>NOTE: To disable OSPF configurations on the routers, the command `no router ospf` is used in the global configuration mode.To view the OSPF information we can use `show ip protocols`.
 ### OSPF Verification
-To verify that we configured OSPF on the network and its implementation is working, the command `show ip ospf`.
+To verify that we configured OSPF on the network and its implementation is working, the command `show ip ospf` is used.
 
 ```bash
 Router#show ip ospf
 
  Routing Process "ospf 1" with ID 192.168.20.1
  Supports only single TOS(TOS0) routes
- Supports opaque LSA
- SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
  Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
- Number of external LSA 0. Checksum Sum 0x000000
- Number of opaque AS LSA 0. Checksum Sum 0x000000
- Number of DCbitless external and opaque AS LSA 0
- Number of DoNotAge external and opaque AS LSA 0
- Number of areas in this router is 1. 1 normal 0 stub 0 nssa
- External flood list length 0
-    Area BACKBONE(0)
-        Number of interfaces in this area is 2
-        Area has no authentication
-        SPF algorithm executed 3 times
-        Area ranges are
-        Number of LSA 3. Checksum Sum 0x0200c6
-        Number of opaque link LSA 0. Checksum Sum 0x000000
-        Number of DCbitless LSA 0
-        Number of indication LSA 0
-        Number of DoNotAge LSA 0
-        Flood list length 0
 ```
-
 To view the OSPF neighbors we use `show ip ospf neighbor`.
 
 ```bash
@@ -175,28 +154,6 @@ Router#show ip ospf neighbor
 Neighbor ID     Pri   State           Dead Time   Address         Interface
 192.168.30.1      1   FULL/BDR        00:00:32    192.168.20.2    GigabitEthernet0/0
 ```
-
-To view the OSPF information we can use `show ip protocols`.
-
-```bash
-Router#show ip protocols
-
-Routing Protocol is "ospf 1"
-  Outgoing update filter list for all interfaces is not set
-  Incoming update filter list for all interfaces is not set
-  Router ID 192.168.30.1
-  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
-  Maximum path: 4
-  Routing for Networks:
-    192.168.30.0 0.0.0.255 area 0
-    192.168.20.0 0.0.0.255 area 0
-  Routing Information Sources:
-    Gateway         Distance      Last Update
-    192.168.20.1         110      00:28:57
-    192.168.30.1         110      00:28:57
-  Distance: (default is 110)
-```
-
 On both Routers, we can use the `show ip route ospf` command to see if directly connected subnets are truly advertised into a different area: Since the PCs are directly connected in tha same region, they can interact.
 
 ```bash
