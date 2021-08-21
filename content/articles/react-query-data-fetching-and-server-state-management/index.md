@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /react-query-data-fetching-and-server-state-management/
+title: Getting Started With React-Query for Data Fetching and State Management
+description: This article will be an introduction to understanding state management in React.js. We'll be building a simple React.js application using React-Query library to fetch, post data, and manage states.
+author: kevin-kimani
+date: 2021-08-21T00:00:00-12:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/react-query-data-fetching-and-server-state-management/hero.jpg
+    alt: Getting Started With React-Query for data fetching image
+---
 [React.js](https://reactjs.org/) is a powerful client-side JavaScript library. Like any other JavaScript library, React.js gives you a smooth sail when building reactive and declarative user interfaces.
-
+<!--more-->
 However, there are a few negative aspects to it, like state management and data fetching.
 
 Server state management is a little different from other libaries. In React.js, it is asynchronous and the data persists remotely without any direct control. This means that we have to update, cache, or re-fetch the data to efficiently manage the state in React.js applications.
