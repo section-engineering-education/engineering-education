@@ -5,12 +5,12 @@ Go is:
 
 > a *statically typed language*, i.e., the type of the variable is known during the compile time. 
 
-> similar to C but has garbage collection and concurrency, making it stand out from the other languages.
+> similar to *C* but has garbage collection and concurrency, making it stand out from the other languages.
 
-Idioms are hallmarks of shared values. As <cite>Dave Cheney</cite> cites in his article [the zen of go](https://dave.cheney.net/2020/02/23/the-zen-of-go):
+Writing good, understandable code is what every developer seeks, and they learn those patterns, properties, etc., by being part of a community where people follow a certain style. As ***Dave Cheney*** quotes in his article [the zen of go](https://dave.cheney.net/2020/02/23/the-zen-of-go):
 > To say that something is idiomatic is to say that it follows the style of the time. If something is not idiomatic, it is not following the prevailing style. It is unfashionable.
 
-RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. First, we will build an *API* that returns Coffee object data.
+RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. We will build an *API* that returns Coffee object data.
 
 ### Prerequisites
 * Go installed on your system. You can download it from [here](https://golang.org/dl/).
@@ -86,10 +86,12 @@ type Products struct {
     l *log.Logger
 }
 
+// a logger that references the Products struct
 func NewProducts(l *log.Logger) *Products {
     return &Products{l}  
 }
 
+// function to handle the incoming requests
 func (p *Products) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
     
 }
@@ -230,7 +232,7 @@ type Products struct {
   l *log.Logger
 }
 
-// a logger that refernces to struct Products
+// a logger that references the Products struct
 func NewProducts(l *log.Logger) *Products {
   return &Products{l}
 }
@@ -361,7 +363,7 @@ This completes our implementation of RESTful services in Go, and attached below 
 
 ### Conclusion
  
-To conclude, we created handlers to handle `HTTP` requests and understand how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used.
+To conclude, we created handlers to handle `HTTP` requests and understood how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used.
 
 ### Additional Resources
 * If you still don't get the whole idea of the `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
