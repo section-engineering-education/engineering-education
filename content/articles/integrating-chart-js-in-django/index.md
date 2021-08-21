@@ -1,5 +1,21 @@
-Chart.js is an open-source HTML5 based JavaScript chart and renders in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /integrating-chart-js-in-django/
+title: Integrating Chart.js in Django
+description: This article will be an introduction to Chart.js. Here, we will learning to integrate Chart.js with a simple Django application.
+author: shuaib-oseni
+date: 2021-08-21T00:00:00-17:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/integrating-chart-js-in-django/hero.png
+    alt: Integrating Chart.js in Django image
+---
+Chart.js is an open-source HTML5 based JavaScript chart and renders in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
+<!--more-->
 There several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
 
 Why Chart.js?
