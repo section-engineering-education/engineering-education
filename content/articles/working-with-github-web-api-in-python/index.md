@@ -1,32 +1,40 @@
-### Introduction
-This tutorial will teach you how to create a self-contained application that generates a visualization based on the information it obtains. Instead of requesting complete pages, a web application programming interface will be used by your program (API) to get certain information from the web. We'll use data from [GitHub](https://github.com/), a website where programmers can contribute to projects. We'll request information concerning Python projects on GitHub using Github's API.
+For fetching information from the web, we usually request for complete web pages, and extract information by parsing the HTML scripts. Alternatively, an Application Programming Interface (API) will be used to perform the same operation in a more efficient way.
+
+This tutorial will teach you how to create a self-contained application that generates a summary based on the information it obtains through the API.
+
+[GitHub](https://github.com/) is a website where programmers can contribute to various open-source projects.
+
+In this article, we will be requesting information related to Python projects on GitHub using the [Github API](https://api.github.com). Also, we will be summarizing information that we've obtained using the API.
 
 ### Prerequisites
-You'll need some Python skills to continue with this tutorial.
+You'll need beginner level skills in Python to continue with this tutorial.
 
 ### What you will learn
 - Using an API call to request data
-- Requests installation
+- Installation of `requests` library
 - Keeping track of an API response
 - Using the response dictionary
 - Summing up the top repositories
 
 ### Requesting data using an API call 
-GitHub's web API allows you to make API requests for a range of data. Type the following into your web browser URL bar and press **enter** to see how an API call appears like:
+GitHub's web API allows you to make API requests for a range of data.
+
+Type the following into your web browser URL bar and press **Enter** to see how an API call appears like:
 
 ```bash
 https://api.github.com/search/repositories?q=language:python&sort=stars
 ```
 
-Let’s examine the parts of the call:
- 1. `https://api.github.com/` - sends the request to the section of GitHub's website that handles API calls.
- 2. `search/repositories` - informs the API to search across all of GitHub's repositories.
- 3. `?` - indicates that an argument is about to be passed.
- 4. `q=`- the character q means for "query", and then we can start working with API by specifying a query with the equal sign. 
- 5. `language:python` - we specify that we only need data on repositories that use Python as their main language. 
- 6. `&sort=stars` - the projects are ordered by the number of stars they have gotten.
+Let's examine the parts of the API call:
 
-The response's first several lines are shown in the below snippet:
+1. `https://api.github.com/` - sends the request to the GitHub web server that handles API calls.
+2. `search/repositories` - is the endpoint that informs the API to search across all of GitHub repositories.
+3. `?` - indicates that an argument is about to be passed.
+4. `q=`- the character `q` stands for `query`.
+5. `language:python` - that queries repositories that use only Python as their main language. 
+6. `&sort=stars` - the projects are sorted by the number of stars they have gotten.
+
+On fetching the API data, the response will look like:
 
 ```bash
 {
@@ -41,75 +49,86 @@ The response's first several lines are shown in the below snippet:
       --snip--
 ```
 
-In the second line of the result, you can see that GitHub detected a total of `7668509` Python projects, as of this tutorial. We know the request was successful since the value for `incomplete results` is `false`. If GitHub was unable to complete the API request, it'd have returned `true` in this case. The `items` obtained are shown in the list that follows, which includes information for the most Python-based projects on GitHub.
+> **NOTE:** The above output shows only the first few lines of the response.
+
+Let's examine the output:
+
+- In the second line of the result, you can see that GitHub has detected a total of `7668509` Python projects.
+- We know the request was successful if the value for `incomplete results` is `false`.
+- The key `items` holds a list of objects that contains information of the Python-based projects on GitHub.
+
+Let's try to explore more such information by parsing the API's output using Python.
 
 ### Installing requests
-The requests package enables requesting data from the website and evaluating the result easily for a Python program.
-Consider the following command to install requests:
+The `requests` package enables us to request data from the website and evaluate the result easily using a Python program.
 
-```python
+Run the following command to install `requests`:
+
+```bash
 pip install --user requests
 ```
 
-Visit [this](https://packaging.python.org/tutorials/installing-packages/) if this is your first time using pip.
+Visit [this](https://packaging.python.org/tutorials/installing-packages/) link, if this is your first time using `pip` for installing packages.
 
 ### Processing an API response
-By selecting the most starred Python projects on GitHub, we'll start writing a program that will make an API call and evaluate the data.
+To fetch the most starred Python projects on GitHub, we'll start writing a program that will make an API call and evaluate the data as shown:
 
 ```python
 import requests
 
 # Create an API request 
 url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-j = requests.get(url)
-print("Status code:", j.status_code)
+response = requests.get(url)
+print("Status code: ", response.status_code)
 # In a variable, save the API response.
-respons_dict = j.json()
+response_dict = response.json()
 # Evaluate the results.
-print(respons_dict.keys())
-
+print(response_dict.keys())
 ```
 
-We begin by importing the `requests` module. Then we save the API call's `url` and make the call with `requests`. We use `get()` and provide it the `url`, and the response object is saved in the variable `j`. The `status_code` attribute of the response object indicates if the request was complete. (A complete response is denoted by a status code of `200`.) Then, to ensure that the call was complete, we print the result of `status_code`. We use the `json()` function to interpret the information from JSON to a Python dictionary since this API delivers it in JSON format. The resulting dictionary is stored in `respons_dict`. Lastly, we print the keys from `respons_dict`, which are as follows:
+Let's understand the above code snippet:
+
+- We begin by importing the `requests` module.
+- Then, we use the `requests` package to make the API call to the particular `url` using `get()`.
+- The API response is saved a variable called `response`.
+- The `status_code` attribute of the `response` object indicates if the request was complete.
+- A successful API call returns the `status_code` `200`, while an unsuccessful one returns `500`.
+- Then, we use the `json()` function to convert the information from JSON format to a Python dictionary.
+- We store the converted JSON in `response_dict`.
+
+Lastly, we print the keys from `response_dict`, which are as follows:
 
 ```bash
 Status code: 200
 dict_keys(['items', 'total_count', 'incomplete_results'])
 ```
 
-The request was completed since the `status_code` is `200`.
-
 ### Using the response dictionary
-We can interact with the data contained in the dictionary since the result from the API call has been saved. Let's make a report that sums up the information. This is a cool method to ensure we got the information we wanted and to get started looking at the information we care about:
+Now, let's make a report that sums up all the information.
+
+Here, we will calculating the total number of available repositories with language as `Python`, and fetch all the keys under `items` as shown:
 
 ```python
-import requests
-
-# Create an API call 
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-j = requests.get(url)
-print("Status code:", j.status_code)
-# In a variable, save the API response.
-respons_dict = j.json()
-print("Total repos:", respons_dict['total_count'])
-# Find out more about the repositories.
-repos_dicts = respons_dict['items']
+print("Total repos:", response_dict['total_count'])
+# find total number of repositories
+repos_dicts = response_dict['items']
 print("Repos found:", len(repos_dicts))
-# Examine the first repository.
-repos_dict = repos_dicts[0]
-print("Keys:", len(repos_dict))
-for key in sorted(repos_dict.keys()):
+# examine the first repository
+repo_dict = repos_dicts[0]
+print("Keys:", len(repo_dict))
+for key in sorted(repo_dict.keys()):
  print(key)
 ```
-The value linked with `total_count`, which reflects the amount of GitHub Python projects, is first printed.
 
-The value of `items` is a list of dictionaries, each of which provides information about a single Python repository.
+Let's understand the above code snippet:
 
-The list of dictionaries is then saved in `repos_dicts`. The length of `repos_dicts` is then printed to check  how many of repositories we have their information.
+- The value linked with `total_count` reflects the count of GitHub Python projects available.
+- The value of `items` is a list of dictionaries, each providing information about a single Python repository.
+- The list of dictionaries is then saved in `repos_dicts`.
+- We select the first item from `repos_dicts` to look more closely at the information given about each repository.
+- Finally, we print the all of keys of an `item`.
 
-We select the first item from `repos_dicts` and put it in `repos_dict` to look more closely at the information given about each repository. To see what information we have, we print the amount of keys in the dictionary. Finally, we write each of the dictionary's keys to check what type of data is contained.
-
-The output begins to paint a more detailed picture of the data.
+**Output:**
 
 ```bash
 Status code: 200
@@ -126,38 +145,33 @@ watchers
 watchers_count
 ```
 
-The GitHub API gets back a range of data for every repository: `repos_dict` has `74` keys. You may get a sense of the type of information you can get about a project by observing these keys.
+The GitHub API gets back a range of data for every repository like:
+- `status_code` as `200`.
+- Total number of repos as `7694326`.
+- Total number of repos found as `30`.
+- Each repository `repo_dict` having `74` keys.
+
+You may get a sense of the type of information you can get about a repository by observing these keys.
 
 Let's have a look at what some of the keys in repos dict entail:
 
 ```python
-import requests
-
-# Create an API call 
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-j = requests.get(url)
-print("Status-code:", j.status_code)
-# In a variable, save the API response.
-respons_dict = j.json()
-print("Total repos:", respons_dict['total_count'])
-
 # Find out more about the repositories.
-repos_dicts = respons_dict['items']
+repos_dicts = response_dict['items']
 print("Repositories found:", len(repos_dicts))
 # Examine the first repository.
-repos_dict = repos_dicts[0]
+repo_dict = repos_dicts[0]
 print("\nThe following is some information regarding the first repository:")
-print('Name:', repos_dict['name'])  #print the project's name
-print('Owner:', repos_dict['owner']['login'])  #use the key owner and the the key login to get the dictionary describing the owner and the owner’s login name respectively.
-print('Stars:', repos_dict['stargazers_count'])  #print how many stars the project has earned
-print('Repository:', repos_dict['html_url'])  #print URL for the project’s GitHub repository
-print('Created:', repos_dict['created_at'])  #print when it was created
-print('Updated:', repos_dict['updated_at'])  #show when it was last updated
-print('Description:', repos_dict['description']) #print the repository’s description
-
+print('Name:', repo_dict['name'])  #print the project's name
+print('Owner:', repo_dict['owner']['login'])  #use the key owner and the the key login to get the dictionary describing the owner and the owner’s login name respectively.
+print('Stars:', repo_dict['stargazers_count'])  #print how many stars the project has earned
+print('Repository:', repo_dict['html_url'])  #print URL for the project’s GitHub repoitory
+print('Created:', repo_dict['created_at'])  #print when it was created
+print('Updated:', repo_dict['updated_at'])  #show when it was last updated
+print('Description:', repo_dict['description']) #print the repository’s description
 ```
 
-The data for several keys with the dictionary of the first repository is printed here, and the result should look like this:
+**Output:**
 
 ```bash
 Status-code: 200
@@ -172,15 +186,19 @@ Repository: https://github.com/public-apis/public-apis
 Created: 2016-03-20T23:49:42Z
 Updated: 2021-07-31T13:15:51Z
 Description: A collective list of free APIs
-
 ```
 
-You can observe that the most popular Python work on GitHub as of this tutorial is `public-apis`, its founder is user `public-apis`, and more than `140,000` GitHub subscribers have given it a star.
-The project's repository `url` is displayed, as well as its construction date of `2016 March` and the information that it was just modified. Finally, `public-apis` is described as a `collective collection of open APIs` in the description.
-
+Examining the output:
+- You can observe that the most popular Python repository on GitHub is `public-apis`
+- Owner of the repository is `public-apis`
+- It has been starred more than `140,000` times.
+- Project has been created on date of `2016 March`.
+- Project description of `public-apis` is  `collective collection of open APIs`.
 
 ### Summing up the top repositories
-We'll want to incorporate more than one repository in our visualisation of this data. Let's create a loop that prints specified information about each of the repositories supplied by the API call so that we can add them all in the visualization:
+We'll try to analyze more than one repository.
+
+Let's create a loop that prints specified information about each of the repositories supplied by the API call:
 
 ```python
 import requests
@@ -199,13 +217,11 @@ for repos_dict in repos_dicts:   #loop through all the dictionaries in repos_dic
     print('Stars:', repos_dict['stargazers_count'])
     print('Repository:', repos_dict['html_url'])
     print('Description:', repos_dict['description'])
-
 ```
 
 We print the name of each project, its owner, the number of stars it has, its GitHub URL, and the project's description inside the loop:
 
 ```bash
-
 Name: public-apis
 Owner: public-apis
 Stars: 144910
@@ -224,18 +240,18 @@ Owner: TheAlgorithms
 Stars: 113616
 Repository: https://github.com/TheAlgorithms/Python
 Description: All Algorithms implemented in Python
-
 ```
 
 ### Conclusion
-In this tutorial, we have gained an understanding of the Python programming language on how to:
+In this tutorial, we have understood the following:
+
 - Use an API call to request data
 - Installing requests
 - Process an API response
 - Using the response dictionary
 - Summing up the top repositories
 
-Happy coding!
+Happy coding.
 
 ### Further reading
 You can learn more about other concepts by [visiting this page.](https://www.techgeekbuzz.com/how-to-use-github-api-in-python/).
