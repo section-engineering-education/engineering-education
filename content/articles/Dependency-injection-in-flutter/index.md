@@ -24,11 +24,11 @@ Annotations used by the inject library are listed below.
 3. **@component**-used in performing an injection.
 
 ### Functionalities of dependency injection
+
 **Concrete class injection**
+Concrete class injection can be as shown below:
 
-Can be like below:
-
-```
+```dart
 //inject/inject.dart’ is an outo genarated file that is imported
 import ‘package:inject/inject.dart’;
 //defining a class
@@ -39,11 +39,10 @@ class ExampleExa {
 ```
 
 **Interface injection**
-
 First, create an abstract class with some implementation then provide dependencies in the module.
 Abstract class:
 
-```
+```dart
 abstract class NewExa{
   
 }class OldExa implements NewExa {
@@ -56,7 +55,7 @@ abstract class NewExa{
 Afterward, we can add dependencies in our module.
 Final module:
 
-```
+```dart
 //inject/inject.dart’ is an outo genarated file that is imported
 import ‘package:inject/inject.dart’;
 //defining the class 
@@ -69,11 +68,13 @@ NewExa newExa() => OldExa();
 ```
 
 **Providers**
-Suppose we don't require an instance of a class injected, but rather a provider that will provide us a fresh instance of the class every time if we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance, and it will be injected correctly. We can define a helper 
-```
+Suppose we don't require an instance of a class injected, but rather a provider that will provide us a fresh instance of the class every time if we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance, and it will be injected correctly. We can define a helper and use as shown below.
+
+```dart
 typedef Provider<T> = T Function();
 ```
-and then use it in our classes;
+
+Usage:
 
 ```
 @provide
@@ -88,7 +89,6 @@ void _someFunction() {
 ```
 
 **Assisted injection**
-
 Since there is no implicit benefit to injecting objects that require only runtime contentions, we can use the standard factory. For example, create a factory class that takes all the compile-time dependencies in the constructor, inject it, and give it a factory technique runtime contention that will make a necessary case.
 
 We need now to construct an injector for everything to work.
@@ -123,19 +123,21 @@ NewExa(),
 runApp(container.app);
 }
 ```
+
 We recommend using either the build runner or the watch command to keep the source code in sync throughout code creation.
  
 ```
 flutter pub run build_runner build
 ```
-Or
+Alternatively:
+
 ```
 flutter pub run build_runner watch
 ```
 
 The code will be saved in the cache folder, which Flutter does not yet support. As a result, the following text must be included in the inject_generator.build.yaml file:
 
-```
+```dart
 builders:
  inject_generator:
  target: “:inject_generator”
@@ -155,7 +157,9 @@ We can now run the build runner, which will generate the required code (with err
 
 ### Reason why we need dependency injection
 As explained earlier, dependency injection in Flutter is an object-oriented technique that sends the dependencies of another object to an object.
-The objective of the dependency injection strategy is to eliminate this dependency by isolating the use from the formation of the item. This diminishes the measure of required standard code and further develops adaptability.
+The objective of the dependency injection strategy is to eliminate this dependency by isolating the use from the formation of the item. 
+
+This diminishes the measure of required standard code and further develops adaptability.
 
 ### How to get rid of flutter package.
 1. Run 'flutter clean'
