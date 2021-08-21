@@ -72,6 +72,8 @@ if (username) {
 // Malete get's printed to the console.
 ```
 
+The snippet above prints `Malete` to the console, since `username` is defined.
+
 There are cases where the conditional statement doesn’t stop at the closing curly braces. If there are other conditions that need checking, we can chain the next conditional statements until we get the desired result.
 Other conditional statements that go _hand-in-hand_ with the `if` statement are `else` and `else if`. As their naming convention implies, `else` is used whenever there is no condition left to be checked. While `else if` is used when there are more conditions to be checked.
 
