@@ -9,7 +9,8 @@ In this article, we will be requesting information related to Python projects on
 ### Prerequisites
 You'll need beginner level skills in Python to continue with this tutorial.
 
-### What you will learn
+### Objectives
+In this article we will go through:
 - Using an API call to request data
 - Installation of `requests` library
 - Keeping track of an API response
@@ -201,13 +202,8 @@ We'll try to analyze more than one repository.
 Let's create a loop that prints specified information about each of the repositories supplied by the API call:
 
 ```python
-import requests
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
-r = requests.get(url)
-print("Status-code:", r.status_code)
-respons_dict = r.json()
-print("Total repos:", respons_dict['total_count'])
-
+ --snip--
+# Find out more about the repositories.
 repos_dicts = respons_dict['items']
 print("Repositories found:", len(repos_dicts))
 print("\nListed details on each repository:")
