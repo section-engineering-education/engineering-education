@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /create-a-secure-home-connection-using-pi-hole-and-docker/
 title: Create a Secure Home Connection Using Pi-hole and Docker
-description: In this article, we will create a secure home connection using Pi-hole and Docker.
+description: In this tutorial, we will create a secure home connection using Pi-hole and Docker.
 author: lewis-macharia
 date: 2021-08-21T00:00:00-18:30
 topics: []
@@ -98,7 +98,7 @@ To continue, press the tab key to select OK, then enter.
 10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, the terminal will show a final confirmation message. This message will include information about logging in to the web portal and a password that will be generated automatically for you. Enter after pressing the tab. 
 
 #### Installing Pi-hole as a Docker container 
-If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first. Installation of a docker container.
+If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first.
 
 #### Installation of a docker container
 1. Open a terminal window and type the following instructions to install Docker on your Raspberry Pi:
