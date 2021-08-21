@@ -1,5 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-github-web-api-in-python/
+title: Working with GitHub API in Python
+description: This article will be an introduction to understanding GitHub API. We'll build a repository summarizer using Python.
+author: bonface-muriithi
+date: 2021-08-21T00:00:00-10:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/working-with-github-web-api-in-python/hero.jpeg
+    alt: Working with GitHub API in Python
+---
 For fetching information from the web, we usually request for complete web pages, and extract information by parsing the HTML scripts. Alternatively, an Application Programming Interface (API) will be used to perform the same operation in a more efficient way.
-
+<!--more-->
 This tutorial will teach you how to create a self-contained application that generates a summary based on the information it obtains through the API.
 
 [GitHub](https://github.com/) is a website where programmers can contribute to various open-source projects.
