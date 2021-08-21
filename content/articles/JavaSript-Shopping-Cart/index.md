@@ -8,7 +8,7 @@ We will first display the items in the first array. We will then add an item to 
 
 We will use the Javascript event listeners to handle these activities.
 
-Preferences
+### Preferences
 
 To follow along with this tutorial, you are required to have understanding of the following JavaScript methods:
 
