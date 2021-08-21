@@ -189,7 +189,7 @@ vоid  lоор()
 This code creates an Arduino subscriber ROS node that will listen to the toggle-led topic. The state of the LED will change whenever a value posts this subject.
 
 ### Conclusion
-This concludes our introductory lesson on the ROS-Arduino interface. To interact with an Arduino, we installed ROS and built up ROS serial packages. We successfully configured the interface and then used it to execute a basic `Blink` code. You can now make communication between a Robot Operating System with Arduino using this tutorial.
+This concludes our introductory lesson on the ROS-Arduino interface. To interact with an Arduino, we installed ROS and built up ROS serial packages. We successfully configured the interface and then used it to execute a basic `Blink` code. You can now make communication between a Robot Operating System and Arduino using this tutorial.
 
 Happy Coding!
 
