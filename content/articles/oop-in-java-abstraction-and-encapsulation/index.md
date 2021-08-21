@@ -54,7 +54,7 @@ public class Circle {
     //argument constructor
     
     public Circle(double radius){
-     this.radius = radius;
+        this.radius = radius;
     }
     
     //method
@@ -174,31 +174,31 @@ To create a new dog object.
 ```java
  
 public class Dog_Main {
- 
+
     public static void main(String[] args) {
 
-    Dog littleDog = new Dog("Bingo", 6,"Brown", "German Shepherd");
+        Dog littleDog = new Dog("Bingo", 6, "Brown", "German Shepherd");
 
-    System.out.println("Is the dog running:? "+ littleDog.isrunning());
+        System.out.println("Is the dog running:? " + littleDog.isrunning());
 
-    System.out.println();
+        System.out.println();
 
-    System.out.println("is the dog sleeping:? " + littleDog.isSleeping());
+        System.out.println("is the dog sleeping:? " + littleDog.isSleeping());
 
-    System.out.println();
+        System.out.println();
 
-    System.out.println("Is the dog barking:? " + littleDog.isbarking());
+        System.out.println("Is the dog barking:? " + littleDog.isbarking());
 
-    System.out.println();
+        System.out.println();
 
-    System.out.println("Is the dog eating:? " + littleDog.iseating());
+        System.out.println("Is the dog eating:? " + littleDog.iseating());
 
-    System.out.println();
+        System.out.println();
 
-    System.out.println("The dog name is:  " + littleDog.name);
+        System.out.println("The dog name is:  " + littleDog.name);
 
     }
- 
+
 }
  
 ```
@@ -258,7 +258,7 @@ public abstract class Dog {
  
 ```
  
-With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword. Abstract methods are implemented to void compilation error that the compiler will throw when the abstract method is not implemented.
+With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword. Abstract methods are implemented to void compilation errors that the compiler will throw when the abstract method is not implemented.
  
 Here is a Code snippet to illustrate the ```extends``` keyword:
  
@@ -289,7 +289,7 @@ public class MainDog extends Dog {
 ```
  
 #### Interface implementation
-An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword. Since methods in interface do not have body, the class implementing it must implement all the methods in the interface.
+An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword. Since methods in an interface do not have body, the class implementing it must implement all the methods in the interface.
 The child class inherits the parent class, overrides its method signatures, and provides a method body.
  
 ```java
