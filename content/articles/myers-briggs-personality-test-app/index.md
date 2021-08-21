@@ -1,20 +1,25 @@
 
-# Building a Myers Briggs Personality Test App with Java
+### Building a Myers Briggs Personality Test App with Java
 
 If you are trying to build a personality test app or a quiz app, this article is for you. In this article, you will learn about Java arrays, StringBuilder class, exception handling, and format specifiers in Java.
 
 I came across the Myers Briggs personality test, and then I thought I could do something magical by building a personality test app with Java.
 
 
-[TOC]
+###Table of Content
 
+- [How the Personality Test Works](#how-the-personality-test-works)
+- [The Four Key Elements](#the-four-Key-elements)
+- [Prerequisites](#prerequisites)
+- [Introduction to Java Arrays](#introduction-to-java-arrays)
+- [Building the Personality Test App](#building-the-personality-test-app)
+- [Explaining the Methods](#explaining-the-methods)
+- [Conclusion](#Conclusion)
+- [Reference](#reference)
 
-
-# How the Personality Test Works
+### How the Personality Test Works
 
 According to **Isabel Briggs Myers**, there are sixteen types of personality identities, and there are four vital elements of categorizing people into the various sixteen personality identities. The four key elements are:
-
-
 
 - **Introversion (I) or Extraversion (E)**
 - **Sensing (S) or Intuition (N)**
@@ -23,10 +28,7 @@ According to **Isabel Briggs Myers**, there are sixteen types of personality ide
 
 You can find more information on the personality types [here](https://www.truity.com/page/16-personality-types-myers-briggs)
 
-
-# The Four Key Elements
-
-
+### The Four Key Elements
 
 1. **Extraversion – Introversion.** We test the source and direction of a person’s energy expression. Extravert energy is mainly in the external world, while introverts’ power is mostly from their inner world.
 2. **Sensing – Intuition.** We test the method by which someone perceives information. Sensing means that a person mainly believes in the knowledge he receives directly from the external world. Intuition suggests that a person thinks about the information he receives from the inner or imaginative world.
@@ -35,24 +37,18 @@ You can find more information on the personality types [here](https://www.truity
 
 To learn more about the key elements, kindly follow this [link](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
-
-# Prerequisites
-
-
+### Prerequisites
 
 - Java JDK 8.0 and above
 - A Java IDE
 
+### Introduction to Java Arrays
 
-# Introduction to Java Arrays.
-
-
-## What are Arrays?
+### What are Arrays?
 
 Array in Java is a collection of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. A single-dimensional array is diagrammatically represented like a list of elements of the same data type, usually defined with one square bracket. In contrast, a multidimensional array takes the form of a table with rows and columns.
 
-
-## Declaration of Arrays
+### Declaration of Arrays
 
 We declare a single dimensional array like this;
 
@@ -90,13 +86,11 @@ int oneDarray [], numbers[][];
 
 ```
 
-
-## How to Create Arrays
+### How to Create Arrays
 
 We create arrays with the new keyword or with array literals. The index of the array is fixed size. Each element has its respective default values.
 
-
-## Creating an Array With the New Keyword
+### Creating an Array With the New Keyword
 
 We create an empty array like this;
 
@@ -140,8 +134,7 @@ String [] arrayOfStrings= new int [4] // array of Strings;
 
 ```
 
-
-## Creating an array with Array Literals.
+### Creating an array with Array Literals
 
 ```java
 
@@ -170,10 +163,10 @@ oneDstringValue [1] = “stores”;
 After the brief introduction to some basics of java array, let's dive into building our app.
 
 
-# Building the Personality Test App
+### Building the Personality Test App
 
 
-## Step One: Create a file with the name PersonalityTest.java
+### Step One: Create a file with the name PersonalityTest.java
 
 In this file, define a class with the same name PersonalityTest like this;
 
@@ -183,8 +176,7 @@ public class PersonalityTest {
 
 ```
 
-
-## Step Two: Define the Main Method
+### Step Two: Define the Main Method
 
 ```java
 
@@ -192,18 +184,17 @@ public static void main(String[] args) {
 
 ```
 
-
-## Step Three: Numbering of Questions.
+### Step Three: Numbering of Questions.
 
 Declare and initialize an integer variable for numbering your questions. It is declared and assigned in the class and not the main method because it is a static variable.
 
-**```**java
+```java
 
 static int questionNumber = 1;
 
 ```
 
-Step Four:  Create Array For Questions  Using Array Literals.
+### Step Four:  Create Array For Questions  Using Array Literals
 
 In our main method, let’s declare and initialize our array of questions with array literals.
 
@@ -267,8 +258,7 @@ String[] judgingVsPerceivingTest = {
 
 ```
 
-
-## Step Five: Create  Arrays for  Answers With The New Keyword:
+### Step Five: Create  Arrays for  Answers With The New Keyword:
 
 We will be using them to collect answers in “1”s and “0”s. Remember that by default, int is equal to 0 in an array. So, Java now knows that we want an integer array with indices. Once Java has executed the lines, a default value is assigned to the arrays; because we have an integer array, all positions will have an identical default of 0 as their values.
 
@@ -284,8 +274,7 @@ int[] judgingVsPerceivingAnswersStorage = new int[5];
 
 ```
 
-
-## Step Six: Create a StringBuilder Object
+### Step Six: Create a StringBuilder Object
 
 The StringBuilder class is used to create a mutable String. The code sample below creates an empty StringBuilder with a default capacity of 16.
 
@@ -295,8 +284,7 @@ StringBuilder result = new StringBuilder();
 
 ```
 
-
-## Step Seven: Serve the Questions And Collect the Answers.
+### Step Seven: Serve the Questions And Collect the Answers.
 
 This method serves questions and gets back A’s or B’s from the console but saves them into our array as 0s and 1s.
 
@@ -312,8 +300,7 @@ iterate(judgingVsPerceivingTest,judgingVsPerceivingAnswersStorage);
 
 ```
 
-
-## Step Eight: Calculate Answers
+### Step Eight: Calculate Answers
 
 Finds the sum of the ones and zeros in the user's collection of options.
 
@@ -329,8 +316,7 @@ int sumOfAsInJudging = sum(judgingVsPerceivingAnswersStorage);
 
 ```
 
-
-## Step Nine: Personality Typing
+### Step Nine: Personality Typing
 
 We call the append method in the String builder class and compare the result of the test.
 
@@ -372,8 +358,7 @@ else{
 
 ```
 
-
-## Step Ten: Displays Personality types In A Table
+### Step Ten: Displays Personality types In A Table
 
 ```java
 
@@ -443,8 +428,7 @@ else{
 
 ```
 
-
-# Explaining the Methods.
+### Explaining the Methods
 
 This Method Handles Exceptions, Ignores Whitespaces, and Capitalization in our I/O Operations.
 
@@ -484,8 +468,7 @@ public static String getOption(Scanner input){
 
 ```
 
-
-## This Method Serves Questions and Gets Options.
+### This Method Serves Questions and Gets Options.
 
 ```java
 
@@ -517,8 +500,7 @@ public static void iterate(String[] questions, int[] answers) {
 
 ```
 
-
-## Method for Summing the Number of A’s and B’s
+### Method for Summing the Number of A’s and B’s
 
 ```java
 
@@ -534,8 +516,7 @@ public static int sum(int[] intArrays){
 
 ```
 
-
-## Format Specifiers Method.
+### Format Specifiers Method.
 
 ```java
 
@@ -547,8 +528,7 @@ public static String placeCheckmark(int num, int position){
 
 ```
 
-
-## Method for Counting  Number of Zeros And Ones In Our Array
+### Method for Counting  Number of Zeros And Ones In Our Array
 
 ```java
 
@@ -568,15 +548,13 @@ public static int countNumbers(int[] numArray, int number){
 
 ```
 
-
-# Conclusion
+### Conclusion
 
 In this article, we learned about working with arrays, format specifiers, methods, and exception handling. You can find the source code of this project [here](https://github.com/CaptainBKola/myJavaProjects/commit/989ab6f8527c0c8f5ac3f7b8bf13ff1253ed2eba). You can also click the fork button to create a copy that you can modify.
 
 Happy coding!
 
-
-## Reference
+### Reference
 
 Michael B. White (Mastering Java)
 
