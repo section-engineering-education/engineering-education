@@ -40,7 +40,7 @@ At the end of this tutorial, readers should be able to:
 - Differentiate between type 1 and type 2 null hypothesis errors.
 - Explain the confidence of the null hypothesis.
 - Use pandas functions for data analysis.
-- Identify the best areas to apply T-test, Chi-squared test, and ANOVA test.
+- Identify the best areas to apply t-test, chi-square test, and ANOVA test.
  
 ### Understanding hypothesis testing
 The two types of hypothesis testing are null hypothesis and alternate hypothesis.
