@@ -1,16 +1,19 @@
-Chart.js is an open-source HTML5 based javascript chart and renders in HTML5 canvas. It basically helps in visualizing data using javascript. There several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
+Chart.js is an open-source HTML5 based JavaScript chart and renders in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
+
+There several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
 
 Why Chart.js?
 
-Chart.js is quite flexible and easy to setup. Plus you get to choose from about eight different chart types.
+Chart.js is quite flexible and easy to setup. Plus, you get to choose from about eight different chart types.
 
-
-In this tutorial, we'll be looking at how to integrate Chart.js in Django by creating a simple project.
+In this tutorial, we'll be looking at how to integrate Chart.js in Django by building a simple project.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
 
-A little understanding of Django would help the reader to follow along better. To understand more about Django, it is recommended to read these articles on [Django CRUD APIs](/engineering-education/django-crud-api/) and [Django API documentation](/engineering-education/django-api-documentation/).
+A little understanding of Django would help the reader to follow along better.
+
+To understand more about Django, it is recommended to read these articles on [Django CRUD APIs](/engineering-education/django-crud-api/) and [Django API documentation](/engineering-education/django-api-documentation/).
 
 ### Table of contents
 1. [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
@@ -22,14 +25,14 @@ A little understanding of Django would help the reader to follow along better. T
 ### Creating and setting up a new Django project
 Let's start by creating a new virtual environment.
 
-A virtual environment allows you to create different spaces on your computer, with a different set of libraries and versions.
+A virtual environment allows you to create a virtual space on your computer.
 
-By creating a virtual environment, you'll be able to separate the necessary library installation for a project, without having to install them globally.
+By creating a virtual environment, you'll be able to separate out the necessary library installation for a project, without having to install them globally.
 
 Now, create a virtual environment `env` by running the command below:
 
 ```bash
- python -m venv env
+python -m venv env
 ```
 
 Here, we tell Python to create the virtual environment in a folder named `env` in the current directory.
@@ -37,28 +40,29 @@ Here, we tell Python to create the virtual environment in a folder named `env` i
 On creation, activate the virtual environment using the following command:
 
 ```bash
- source env/bin/activate
+source env/bin/activate
 ```
 
 On activating the environment, install Django using the following command:
 
 ```bash
- pip install django
+pip install django
 ```
 
 Now, let's create a new Django project `Django-charts` using:
 
 ```bash
- django-admin startproject Django-charts
+django-admin startproject Django-charts
 ```
 
 Then, navigate to the `Django-charts` directory and create a Django app:
+
 ```bash
- cd Django-charts
- django-admin startapp charts
+cd Django-charts
+django-admin startapp charts
 ```
 
-Let's add our app to the list of installed apps.
+Let's add our app to the list of already installed apps.
 
 Navigate to the `Django-charts` directory and edit the `settings.py` file:
 
@@ -75,11 +79,11 @@ INSTALLED_APPS = [
 ```
 
 ### Creating a model
-A model in Django is a class which represents a single table and a database. It can be used to dynamically load data in a project.
+A model in Django is a class which represents a single table or a database. It can be used to dynamically load data into a project.
 
-We'll be creating a chart that visualize the trends in usage for different text editors.
+Here, in this tutorial, we'll be learning to create a chart that visualizes the trends in usage for different text editors.
 
-Here, for our model, we'll be creating two fields - User field `num_users` and text editor field `editor_name`.
+For our model, we'll be creating two fields - User field `num_users` and text editor field `editor_name`.
 
 In the `editors` directory, copy and paste the following code in the `models.py` file:
 
@@ -93,10 +97,9 @@ class Editors(models.Model):
 
     def __str__(self):
         return "{}-{}".format(self.editor_name, self.num_users) 
-
 ```
 
-Now let's register the model of Score in the `admin.py` file so that we can modify it in the Django admin section.
+Now, let's register the model `Editors` in the `admin.py` file so that we can modify it in the Django admin section.
 
 ```python
 from django.contrib import admin
@@ -105,45 +108,49 @@ from .models import Editors
 admin.site.register(Editors)
 ```
 
-Next, we need to migrate our model to the database
+Next, we need to migrate our model to the database.
 
-Migrations are Django’s way of publishing changes you make to your models into your database schema. So, basically when create a new model, we also need to create a migration to create the required table in the database. 
+Migrations are Django's way of publishing changes you make to your models into the database schema. So, when create a new model, we also need to migrate to create the required table in the database. 
 
 Next, we migrate our model by running the commands below:
 
 ```bash
- python manage.py makemigrations # migrating the app and database changes
- python manage.py migrate        # final migrations
+python manage.py makemigrations # migrating the app and database changes
+python manage.py migrate        # final migrations
 ```
 
-A superuser has the permissions to create, edit, update and delete data in Django admin. Create a superuser by running the command below:
+A superuser has the permissions to create, edit, update and delete data in Django admin.
+
+Create a superuser by running the command below:
 
 ```bash
- python manage.py createsuperuser 
+python manage.py createsuperuser 
 ```
 
 Now, we can log in to the admin page.
 
 To login to the admin section, serve the app again and go to `http://localhost:8000/admin` and log in with your superuser details.
 
-![Django admin login page](/engineering-education/content/articles/integrating-chart.js-in-django/login.png)
+![Django admin login page](/engineering-education/integrating-chart-js-in-django/login.png)
 
 *Django admin login page*
 
-![Django admin page](/engineering-education/content/articles/integrating-chart.js-in-django/admin.png)
+![Django admin page](/engineering-education/integrating-chart-js-in-django/admin.png)
 
 *Django admin page*
 
-Now, let's add an editor in the `Editors` category to test if its error-free.
+Now, let's add an editor in the `Editors` category, to test if its error-free.
 
 Click on editor, then click `Add Editor` to add an editor.
 
-![Add Editor](/engineering-education/content/articles/integrating-chart.js-in-django/add-editor.png)
+![Add Editor](/engineering-education/integrating-chart-js-in-django/add-editor.png)
 
 *Add editor*
 
 ### Creating a view
-A view in Django is basically a function accepts a web request and returns a web response. A web response can be an error page, redirect, image or even HTML contents.
+A view in Django is basically a function accepts a web request and returns a web response.
+
+A web response can be an error page, redirect, image or even HTML contents.
 
 Now, let's create a view by adding the following to our `view.py` file:
 
@@ -162,7 +169,9 @@ class EditorChartView(TemplateView):
         return context
 ```
 
-We do not have our `chart.html` file created yet. Let's create that by creating a templates folder in our `editors` directory. It should look like this `templates/editors/chart.html`.
+We do not have our `chart.html` file created yet.
+
+Let's create that by creating a templates folder in our `editors` directory. The file directory should look like `templates/editors/chart.html`.
 
 ### Creating templates
 We start by creating a templates directory in our base directory. This templates directory will house our `base.html` file.
@@ -197,6 +206,7 @@ Next, we add the following lines of code to the `base.html` file.
   </body>
 </html>
 ```
+
 Next, we need to update the `DIRS` to the path of the templates folder in our `settings.py` file.
 
 ```python
@@ -215,9 +225,9 @@ TEMPLATES = [
         },
     },
 ]
-
 ```
-Now, open up the `chart.html` file we created earlier and add the following code:
+
+Now, open up the `chart.html` file that we created earlier and add the following code:
 
 ```html
 {% extends 'base.html'%}
@@ -270,8 +280,6 @@ $(document).ready(function(){
 <!-- you can also play around with the width and height to increase or decrease the chart size -->
 <canvas id="myChart" width="400" height="100"></canvas>  
 {%endblock content%}
-
-
 ```
 
 In the above code, we are substituting the sample data with data being passed from the backend.
@@ -287,33 +295,31 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', EditorChartView.as_view(), name='index')
 ]
-
 ```
 
 Now, let's add a few text editors and a number of users to our Django admin.
 
-![Editors](/engineering-education/content/articles/integrating-chart.js-in-django/editors.png)
+![Editors](/engineering-education/integrating-chart-js-in-django/editors.png)
 
-*editors*
+*Adding new text editors*
 
 Now, let's test this out by starting the server with the following command:
 
 ```bash
- python manage.py runserver 
+python manage.py runserver 
 ```
 
-![chart](/engineering-education/content/articles/integrating-chart.js-in-django/chart.png)
+![chart](/engineering-education/integrating-chart-js-in-django/chart.png)
 
-*it works*
+*Display pie chart*
 
 ### Conclusion
-To conclude, we have learned about Chart.js. We have also learned to integrate charts in our Django app.
+To conclude, we have learned about Chart.js. We have also learned to integrate charts in a Django app.
 
-There are lots of things you can achieve with chart.js. In this tutorial we used a `doughnut` chart type, there other chart types you can use. You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on chat types.
+In this tutorial we used a `doughnut` chart type, there other chart types you can use.
 
-Here is a link to the [github repo](https://github.com/shosenwales/Django-charts) that contains the full code.
+You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on chat types.
 
-That's all!
+You can checkout the full code [here](https://github.com/shosenwales/Django-charts) on GitHub.
 
-Happy Coding!
-
+Happy coding.
