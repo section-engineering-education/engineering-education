@@ -25,10 +25,10 @@ In this article, we’re going to look at how to verify input data using the npm
 
 To follow along with this tutorial, you'll need:
 
-1. [Nodejs](https://nodejs.org) 10.x or newer.
+1. [Node.js](https://nodejs.org) 10.x or newer.
 2. [NPM](https://www.npmjs.com/package/npm5) 5.10 or newer.
 3. Knowledge of conditional statements in Javascript.
-4. Basic knowledge of React.JS.
+4. Basic knowledge of React.js.
 5. Basic knowledge of DOM Manipulation.
 
 ### Overview
@@ -49,22 +49,22 @@ Although manipulating the DOM in React works the same way in vanilla JS, there a
 
 To be able to perform client-side validation in React, let’s start by installing the necessary `npm` dependencies.
 
-I will be using Next.JS to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
+I will be using Next.js to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
 
-You don’t need to use Next.JS. You can either:
+You don’t need to use Next.js. You can either:
 
 1. Create a React app using [create-react-app](https://create-react-app.dev/).
-2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel).
+2. Or bootstrap your React app with [Parcel.js](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel).
    
 Feel free to use the approach that you feel comfortable with.
 
-To get started with Next.JS, in your workspace, open the terminal and run the command below.
+To get started with Next.js, in your workspace, open the terminal and run the command below.
 
 ```bash
 npx create-next-app name-of-your-app
 ```
 
-This will install Next.JS and all the dependencies needed to create a React application.
+This will install Next.js and all the dependencies needed to create a React application.
 Because this article focuses on the use of `react-alert` for client-side validation in React. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
 
 ```bash
