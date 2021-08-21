@@ -6,7 +6,7 @@ url: /client-side-validation-with-react-alert/
 title: Client Side Validation with React Alert
 description: In this article, we’re going to look at how to verify input data using the npm package react-alert. react-alert makes it easier to render the error messages back to the user, in case of invalid user input data.
 author: caleb-olojo
-date: 2021-08-21T00:00:00-06:10
+date: 2021-08-21T00:00:00-09:06
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,10 +16,10 @@ images:
 ---
 
 Javascript supports a feature to verify if the data sent by a user from a web application to a web server is valid or not.
-<!--more-->
-This feature gives front-end developers the ability to verify a user's input data. Before the data gets sent to the webserver.
 
-In this article, we’re going to look at how to verify input data using an npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
+This feature gives front-end developers the ability to verify a user's input data before the data gets sent to the webserver.
+
+In this article, we’re going to look at how to verify input data using the npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
 
 ### Prerequisites
 
@@ -28,25 +28,26 @@ To follow along with this tutorial, you'll need:
 1. [Nodejs](https://nodejs.org) 10.x or newer.
 2. [NPM](https://www.npmjs.com/package/npm5) 5.10 or newer.
 3. Knowledge of conditional statements in Javascript.
-4. Basic knowledge of React JS.
+4. Basic knowledge of React.JS.
 5. Basic knowledge of DOM Manipulation.
 
 ### Overview
 
 Before React, vanilla JS was the go-to solution for client-side validation. One would need to understand the fundamentals of DOM manipulation and event handling.
 
-The aim of this validation process is to check if the data sent by the user to the server is appropriate. Event listeners will help us listen to events that take place on the webpage.
+This validation process aims to check if the data sent by the user to the server is appropriate. Event listeners will help us listen to events that take place on the webpage.
 
-These events range from the click of a button `onClick`. The mouse hovering effect on a particular element on the webpage `onMouseOver`. The submission of details entered into an input form using the `onSubmit` event, and much more.
+These events range from the click of a button `onClick`, the mouse hovering effect on a particular element on the webpage `onMouseOver`, the submission of details entered into an input form using the `onSubmit` event, and much more.
 
-If you want to learn more about events in JavaScript. Visit [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
+> If you want to learn more about events in JavaScript [click here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
+
 Performing DOM manipulation in vanilla JS isn’t a big deal because the DOM is available. But in React, the DOM isn’t available, a virtual DOM is available instead.
 
-Although manipulating the DOM in React works the same way in vanilla JS, there are some quirks to it. One is that the Document object is not available in React. This is because it is being bundled with Node.js which doesn’t run on the client-side of a web browser
+Although manipulating the DOM in React works the same way in vanilla JS, there are some quirks to it. One is that the Document object is not available in React. This is because it is being bundled with Node.js which doesn’t run on the client-side of a web browser.
 
-### Getting Started
+### Getting started
 
-To be able to perform client-side validation in React. Let’s start by installing the necessary `npm` dependencies.
+To be able to perform client-side validation in React, let’s start by installing the necessary `npm` dependencies.
 
 I will be using Next.JS to bootstrap my React application. Because of its simplicity, its folder structure, and many other benefits.
 
@@ -54,23 +55,25 @@ You don’t need to use Next.JS. You can either:
 
 1. Create a React app using [create-react-app](https://create-react-app.dev/).
 2. Or bootstrap your React app with [ParcelJS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel).
-   Feel free to make use of any approach that would be most convenient for you.
-   To get started with Next.JS. In your workspace, open the terminal and run the command below.
+   
+Feel free to use the approach that you feel comfortable with.
+
+To get started with Next.JS, in your workspace, open the terminal and run the command below.
 
 ```bash
 npx create-next-app name-of-your-app
 ```
 
-This will install Next.JS all the dependencies needed to create a React application.
-Because this article focuses on the use of `react-alert` for client-side validation in react. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
+This will install Next.JS and all the dependencies needed to create a React application.
+Because this article focuses on the use of `react-alert` for client-side validation in React. We need to also add `react-alert` package to the list of dependencies needed in the project. The command below will handle that for us.
 
 ```bash
 npm install react-alert –save-dev
 ```
 
-A basic knowledge of how condtional statements operate in JavaScript will speed up the process of writing the validation function(s) on the client-side of your project.
+A basic knowledge of how conditional statements operate in JavaScript will speed up the process of writing the validation function(s) on the client-side of your project.
 
-A basic conditional statement is as shown below, the `if` statement. It is one of the most used in JavaScript, it checks if the value passed as an argument is true, if it is not, it returns false.
+A basic conditional statement is as shown below, the `if` statement. It is one of the most used statements in JavaScript, it executes the code only if the passed argument is true.
 
 ```javascript
 if (username) {
@@ -78,7 +81,7 @@ if (username) {
 }
 ```
 
-The code snippet above checks for the validity of the `username` variable, if it is not defined, a reference error is displayed on the cosele. `Uncaught ReferenceError: username is not defined". Yes, username hasn't actually been defined. JavaScript tries searching for the `username`variable but it didn't find any. Hence the Reference Error. Getting rid of that error can be done by assigning`username` to a value.
+The code snippet above checks for the validity of the `username` variable. If it is not defined, a reference error is displayed on the console "`username is not defined`".
 
 ```javascript
 const username = "Malete";
@@ -86,28 +89,29 @@ if (username) {
   console.log(username);
 }
 
-// Malete get's printed to the console.
+// Malete is printed on the console.
 ```
 
-The snippet above prints `Malete` to the console, since `username` is defined.
+The code above prints `Malete` on the console, since `username` is defined.
 
-There are cases where the conditional statement doesn’t stop at the closing curly braces. If there are other conditions that need checking, we can chain the next conditional statements until we get the desired result.
+There are cases where the conditional statement doesn’t stop at the closing curly braces. If other conditions need checking, we can chain the next conditional statements until we get the desired result.
+
 Other conditional statements that go _hand-in-hand_ with the `if` statement are `else` and `else if`. As their naming convention implies, `else` is used whenever there is no condition left to be checked. While `else if` is used when there are more conditions to be checked.
 
-It is this same principle that we’re going to use in implementing the client validation in this project.
+It is the same principle that we’re going to use in implementing the client validation in this project.
 
 ### Setting up the validation script
 
 Before creating the validation script, let’s have a look at the app's folder structure. So that the process of traversing the app structure doesn’t get confusing or ambiguous as we proceed.
 
-```
+```bash
 |--pages
 | |--_app.js
 | |--index.js
 |--src
 | |--container
 |   |--App
-|	   |--index.js
+|    |--index.js
 |--utils
   |--checks.js
   |--alert-template.js
@@ -117,7 +121,7 @@ The structure above is an excerpt of what the real application structure looks l
 
 The structure above shows that the `checks.js` file is inside the `utils` folder. `checks.js` is where we’d have all the client-side validation logic.
 
-Since we’d be interacting/writing this logic for web forms, we need to look for a way to target the input elements that are receiving data from the user at the client side.
+Since we’d be interacting/writing this logic for web forms, we need to look for a way to target the input elements that are receiving data from the user at the client-side.
 Luckily for us, the browser has provided some DOM APIs that we can use to achieve that. Take a look at an example below:
 
 ```html
@@ -130,7 +134,7 @@ const fullnameInputField = document.querySelector(“#fullname”)
 console.log(fullnameInputField)
 ```
 
-The snippet above logs the HTML code to the console. You can check the result by opening the developer tools of your browser. On Google chrome, this shortcut brings the console up. `ctrl + shift + i`.
+The code above logs the HTML code to the console. You can check the result by opening the developer tools of your browser. On Google chrome, the shortcut `ctrl + shift + i` opens the console.
 
 If we were to target the input element via its `className`, the snippet above would change to:
 
@@ -138,7 +142,7 @@ If we were to target the input element via its `className`, the snippet above wo
 const fullnameInputField = document.querySelector(“.fullname”)
 ```
 
-Note that the hash symbol `(#)` has changed to the period symbol `(.)` because we’re targeting that DOM node through its className property.
+> Note that the hash symbol `(#)` has changed to the period symbol `(.)` because we’re targeting that DOM node through its className property.
 
 Now let’s have a look at the validation snippet below:
 
@@ -184,7 +188,7 @@ const validateSignUp = (email, password, confirmPassword, alert) => {
 export default signUpCheck;
 ```
 
-Wow! I can guess what might be your reaction right now, but do not fret. We will have a breakdown of what each snippet does as we move on.
+We will have a breakdown of what each snippet does as we move on.
 
 - #### Passing form values as props
   The snippet above is a helper function that performs validation on the input form data before it gets sent to the backend server. The function accepts the email, password, confirmPassword, and alert as arguments.
@@ -201,7 +205,7 @@ The `errMsg` variable stores the error messages from our validation logic. That 
 
 - #### The conditional statements
 
-  - The first condition checks if the email field is empty, if it is, an alert error message is rendered to the user interface with the help of `alert.error()` method
+  - The first condition checks if the email field is empty, if it is, an alert error message is rendered to the user interface using the `alert.error()` method.
 
   The `alert.error()` method takes a string as a parameter. The string is what will be displayed on the user interface, and the browser makes sure that the input field is in focus so that it catches the attention of the user.
 
@@ -239,15 +243,15 @@ The `errMsg` variable stores the error messages from our validation logic. That 
   }
   ```
 
-  It runs a conditional execution on both password fields to make sure that both of them are not undefined i.e. They are not empty fields. If this first condition passes, the next one will run, if not the next one would not run.
+  It runs a conditional execution on both password fields to make sure that both of them are not undefined, i.e. They are not empty fields. If this first condition passes, the next one will run. If not, the next one would not run.
 
-  - If all the conditions stated, have been checked, the alert window comes up with successful text
+  - If all the conditions stated have been checked, the alert window comes up with successful text.
 
 ### Using the validator
 
-Now that we have the validation script set up, and have gotten a grasp of what is going on in the script, it is time to get it inside the app itself. We’d have a look at the step-by-step process of accomplishing that.
+Now that we have the validation script set up, and have gotten a grasp of what is going on in the script, it is time to get it inside the app itself. We will have a look at the step-by-step process of accomplishing that.
 
-First, we need to import the validation script into the App component, alongside the react-alert dependency. For brevity’s sake, I wouldn’t be doing much of an explanation on the React component structure, since it is among the pre-requisites of this article.
+First, we need to import the validation script into the app component, alongside the react-alert dependency. For brevity’s sake, I wouldn’t be doing much of an explanation on the React component structure, since it is among the pre-requisites of this article.
 
 ```javascript
 // src/App/index.js file
@@ -319,7 +323,7 @@ return (
 export default withAlert()(SignUp);
 ```
 
-Taking a look at the `handleSubmit` function, you’d notice how the arguments from the `signUpCheck` validator are being utilized. In the function, all conditions must be met before the form can be submitted.
+Taking a look at the `handleSubmit` function, you’d notice how the arguments from the `signUpCheck` validator are being used. In the function, all conditions must be met before the form can be submitted.
 
 ```javascript
 const validate = validateSignUp(email, password, pwdConfirm, alert ||" ");
@@ -420,13 +424,13 @@ export default function IndexPage() {
 
 ### Wrapping it up
 
-You have noticed we didn’t dive into the styling of this project, that is because I do not want the article to be too long. You can go ahead and style your project to your own liking.
+You have noticed we didn’t dive into the styling of this project. You can go ahead and style your project as you like.
 
-You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) so you get a good understanding of how the package works.
+You can also check out react-alert’s [documentation](https://github.com/schiehll/react-alert) to get a good understanding of how the package works.
 
 I have provided a link to the GitHub [repository](https://github.com/Caleb335/react-alert-test), check it out to see how it works.
 
-Thank you for reading this article, I hope it helped you. Happy Coding!
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Espira Marvin](/engineering-education/authors/espira-marvin/)
