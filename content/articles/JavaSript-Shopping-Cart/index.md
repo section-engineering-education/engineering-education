@@ -12,12 +12,12 @@ We will use the Javascript event listeners to handle these activities.
 
 To follow along with this tutorial, you are required to have understanding of the following JavaScript methods:
 
-- Array.push()
-- Array.pop()
-- EventTarget.addEventListener()
+- [Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- [Array.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+- [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
 ### The base html
-Create a new file **index.html** in the working directory. In your code editor, open the **index.html** file and paste the code below.
+Create a new file `index.html` in the working directory. In your code editor, open the `index.html` file and paste the code below.
 
 ```html
 <meta charset="UTF-8">
@@ -41,7 +41,7 @@ Create a new file **index.html** in the working directory. In your code editor, 
 
 ### Creating the items library
 
-Create a new file **script.js** in the working directory. In your code editor, open the **script.js** file and paste the code below.
+Create a new file `script.js` in the working directory. In your code editor, open the `script.js` file and paste the code below.
 
 ```js
 let items_array = [
@@ -55,13 +55,13 @@ let items_array = [
 let cart = [];
 ```
 
-The *items_array* is an array of objects which will be displayed for selection. A name and id property is given to each object.
-It also has a *count property* which is the number of items which will be used in the shopping cart.
+The `items_array` is an array of objects which will be displayed for selection. A name and id property is given to each object.
+It also has a `count` property which is the number of items which will be used in the shopping cart.
 
 The cart is an empty array which will be used to store the items which are selected in the shopping cart.
 
 ### Creating base functions
-Let's make a few functions to make our lives a little bit easier. In your code editor, open the **script.js** file and paste the code below.
+Let's make a few functions to make our lives a little bit easier. In your code editor, open the `script.js` file and paste the code below.
 
 ```js
 function appendNode(parent, element) {
@@ -79,15 +79,15 @@ function createNode(node) {
 ```
 
 We have created 3 functions.
-1. The *appendNode function* will append a new node to the parent node. It will take the parent node and the new node as parameters.
-2. The *getDiv function* will return the div element with the id of a container.
-3. The *createNode function* will create a new node and return it. It will take a node as a parameter.
+1. The `appendNode` function will append a new node to the parent node. It will take the parent node and the new node as parameters.
+2. The `getDiv` function will return the div element with the id of a container.
+3. The `createNode` function will create a new node and return it. It will take a node as a parameter.
 
 We will use these functions to create the shopping list and the shopping cart.
 
 ### Displaying the shopping list
 
-We will create a function which will display the shopping list. In your code editor, open the **script.js** file and paste the code below.
+We will create a function which will display the shopping list. In your code editor, open the `script.js` file and paste the code below.
 
 ```js
 function displayItems(items, container) {
@@ -109,19 +109,19 @@ function displayItems(items, container) {
 }
 ```
 
-The *displayItems function* will take the items array and the container id as parameters. The contents of the container will be shown.
+The `displayItems` function will take the items array and the container id as parameters. The contents of the container will be shown.
 
-It will iterate through the items array and create a new node for each item. It will set the id of the node to the item id. The *displayItems function* will then append the node to the container.
+It will iterate through the items array and create a new node for each item. It will set the id of the node to the item id. The `displayItems` function will then append the node to the container.
 
-If you look closely, you will notice that we are using the *setAttribute method* to set the attribute of the node. *setAttribute* is an in-built method used to add attributes to a node. You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute). 
+If you look closely, you will notice that we are using the `setAttribute` method to set the attribute of the node. `setAttribute` is an in-built method used to add attributes to a node. You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute). 
 
-The *displayItems* also clears the lists before updating them by setting the innerHTML property of the container to empty. This is done to avoid the previous items from showing up.
+The `displayItems` also clears the lists before updating them by setting the innerHTML property of the container to empty. This is done to avoid the previous items from showing up.
 
 ```js
 items_container.innerHTML = '';
 ```
 
-You should now proceed to calling the *displayItems function* to display the items list. In your code editor, open the **script.js** file and paste the code below.
+You should now proceed to calling the `displayItems` function to display the items list. In your code editor, open the `script.js` file and paste the code below.
 
 ```js
 displayItems(items_array, "items");
@@ -131,7 +131,7 @@ displayItems(items_array, "items");
 
 The displayed lists look very basic at this point. Let's fix that.
 
-In your code editor, open the **index.html** file and paste the code below.
+In your code editor, open the `index.html` file and paste the code below.
 
 ```css
 #wrapper { 
@@ -173,7 +173,7 @@ Check out the new look of your shopping list. I guess it look better.
 
 ### Adding and removing items from the cart
 
-We will create a function which will add an item to the shopping cart. In your code editor, open the **script.js** file and paste the code below.
+We will create a function which will add an item to the shopping cart. In your code editor, open the `script.js` file and paste the code below.
 
 ```js
 function addOrRemoveItemsFromCart(action) {
@@ -192,17 +192,17 @@ function addOrRemoveItemsFromCart(action) {
 }
 ```
 
-We create a function *addOrRemoveItemsFromCart* which will take an action as a parameter. The item will be added to the shopping basket if the activity is add. The item will be eliminated from the shopping basket if the activity is remove.
+We create a function `addOrRemoveItemsFromCart` which will take an action as a parameter. The item will be added to the shopping basket if the activity is add. The item will be eliminated from the shopping basket if the activity is remove.
 
-To check the action an *if else statement* is used. We pass the items container to the takeAction function if the action is add and the cart container if the action is remove. We will refer to this when listening for click events.
+To check the action an `if else` statement is used. We pass the items container to the `takeAction` function if the action is add and the cart container if the action is remove. We will refer to this when listening for click events.
 
-We will use the *getDiv function* to get the container to work with. We will use the takeAction function to add or remove the item from the cart.
+We will use the `getDiv` function to get the container to work with. We will use the `takeAction` function to add or remove the item from the cart.
 
-Open the **script.js** file in your code editor and add the code below, to create thetakeAction function.
+Open the `script.js` file in your code editor and add the code below, to create the `takeAction` function.
 
-**Note:** You can create the takeAction function inside the addOrRemoveItemsFromCart function, or outside it. The difference between these two is that when you have created it inside the function, takeAction() will not be available outside. In short, it can't be re-used.
+**Note:** You can create the `takeAction` function inside the `addOrRemoveItemsFromCart` function, or outside it. The difference between these two is that when you have created it inside the function, `takeAction()` will not be available outside. In short, it can't be re-used.
 
-In this example, we will create the *takeAction function* inside the *addOrRemoveItemsFromCart function*.
+In this example, we will create the `takeAction` function inside the `addOrRemoveItemsFromCart` function.
 
 ```js
 function addOrRemoveItemsFromCart(action) {
@@ -237,13 +237,13 @@ function addOrRemoveItemsFromCart(action) {
 }
 ```
 
-The *addEventListener* method is used to add an event listener to the container. The event listener is invoked when the user clicks on the item.. We will use the *event.target.id* to get the item id.
+The `addEventListener` method is used to add an event listener to the container. The event listener is invoked when the user clicks on the item.. We will use the `event.target.id` to get the item id.
 
-We check whether the item is already in the cart. If that's the case, we'll either add or remove the item from your shopping basket. We do this by incrementing or decrementing the *count property* of the item.
+We check whether the item is already in the cart. If that's the case, we'll either add or remove the item from your shopping basket. We do this by incrementing or decrementing the `count` property of the item.
 
-We finally call the *displayItems function* to display the updated list of items in the cart.
+We finally call the `displayItems` function* to display the updated list of items in the cart.
 
-The remaining part is to call the *addOrRemoveItemsFromCart* function. Open the **script.js** file in your code editor and add the code below.
+The remaining part is to call the `addOrRemoveItemsFromCart` function. Open the `script.js` file in your code editor and add the code below.
 
 ```js
 addOrRemoveItemsFromCart('add');
@@ -252,11 +252,11 @@ addOrRemoveItemsFromCart('remove');
 
 Passing add or remove as the action will:
 
-- Listen for clicks on the items container.
-- Call the takeAction function to add the item to the cart.
-- Call the displayItems function to display the updated list of items in the cart.
-- Listen for clicks in the cart container.
-- Call the takeAction function to remove the item from the cart.
+- Listen for clicks on the `items` container.
+- Call the `takeAction` function to add the item to the cart.
+- Call the `displayItems` function to display the updated list of items in the cart.
+- Listen for clicks in the `cart` container.
+- Call the `takeAction` function to remove the item from the cart.
 
 ### Conclusion
 
