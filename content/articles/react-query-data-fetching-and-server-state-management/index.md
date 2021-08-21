@@ -266,3 +266,6 @@ React-Query is often described as the missing piece in React ecosystem and this 
 Check the GitHub [link](https://github.com/KayveTech/react-query) for the source code.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
