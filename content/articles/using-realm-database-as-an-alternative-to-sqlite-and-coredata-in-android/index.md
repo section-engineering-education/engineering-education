@@ -420,7 +420,7 @@ Here are some of the screenshots on how the app should look like:
 ![Update Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/updatenote.jpg)
 
 
-Check out the entire project on [GitHub](https://github.com/JoelKanyi/RecyclerViewItemClicksDemo).
+Check out the entire project on [GitHub](https://github.com/JoelKanyi/RealmDatabaseDemo).
 
 ### Conclusion
 Realm can be a good alternative to the tradition SQLite database, keep exploring and trey and harnes the full capabilities of Realm such as RealmSyn.
