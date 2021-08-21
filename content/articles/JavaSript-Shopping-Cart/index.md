@@ -1,6 +1,7 @@
 ### Introduction
 
 Building a shopping cart should be possible in an assortment of ways. I'll show you how to make a shopping cart with arrays and objects in this tutorial.
+
 The approach that we will use looks as follows.
 
 We will initially have 2 arrays. One holding the curated list of items to buy, and the other one empty, to hold the items in the cart.
@@ -200,7 +201,7 @@ We will use the `getDiv` function to get the container to work with. We will use
 
 Open the `script.js` file in your code editor and add the code below, to create the `takeAction` function.
 
-**Note:** You can create the `takeAction` function inside the `addOrRemoveItemsFromCart` function, or outside it. The difference between these two is that when you have created it inside the function, `takeAction()` will not be available outside. In short, it can't be re-used.
+> Note: You can create the `takeAction` function inside the `addOrRemoveItemsFromCart` function, or outside it. The difference between these two is that when you have created it inside the function, `takeAction()` will not be available outside. In short, it can't be re-used.
 
 In this example, we will create the `takeAction` function inside the `addOrRemoveItemsFromCart` function.
 
