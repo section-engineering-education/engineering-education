@@ -11,7 +11,7 @@ images:
 In this article, we will discuss how cloud management and understand what there is to know about it.
 <!--more-->
 
-### Table of Contents
+### Table of contents
 - Cloud Management
 - Cloud Management Platforms
 - Cloud Management Challenges
