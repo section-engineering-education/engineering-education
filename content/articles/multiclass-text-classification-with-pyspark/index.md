@@ -3,6 +3,36 @@ PySpark is a python API written as a wrapper around the Apache Spark framework. 
 Apache Spark is best known for its speed when it comes to data processing and its ease of use. It has a high computation power that's why its best suited for Big Data.
 It supports popular libraries such as [Pandas](https://pandas.pydata.org/), [Scikit-Learn](https://scikit-learn.org/) and [NumPy](https://numpy.org/) used in data preparation and model buidling.
 
+### Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [PySpark Installation](#pyspark-installation)
+- [Creating SparkContext and SparkSession](#creating-sparkcontext-and-sparksession)
+- [Initialize TextClassifier app](#initialize-textclassifier-app)
+- [Loading Dataset](#loading-dataset)
+- [Selecting the needed columns](#selecting-the-needed-columns)
+- [Checking for missing values](#checking-for-missing-values)
+- [Feature Engineering](#feature-engineering)
+- [Pipeline stages](#pipeline-stages)
+- [Split Dataset](#split-dataset)
+- [Building the pipeline](#building-the-pipeline)
+- [Building model](#building-model)
+- [Model evaluation](#model-evaluation)
+- [Making a single prediction](#making-a-single-prediction)
+- [Conclusion](#conclusion)
+- [References](#references)
+
+### Prerequisites
+
+1. A good understanding of [Python](https://www.section.io/engineering-education/python-projects-for-beginners/)
+2. Have [Anaconda] installed in your machine.
+3. Have a good knowledge of [Jupyter Notebook](https://jupyter.org/).
+4. Understand [machine learning modeling][https://www.section.io/engineering-education/house-price-prediction/].
+5. Download the Udemy dataset [here](https://drive.google.com/file/d/1-TfybHeSWpP9UJLxeNDIFT1CPfxn7XWT/view?usp=sharing)
+
+> NOTE: To follow along easily, use [Jupyter Notebook](https://jupyter.org/) in building our text classification model.
+
 ### Introduction
 
 Pyspark uses the Spark API in data processing and model building. Spark API consists of the following libraries.
@@ -65,35 +95,6 @@ In this tutorial, we shall use `PySpark.ML API` in building our multiclass text 
 > NOTE: We are using `PySpark.ML API` in building our model because `PySpark.MLib` is deprecated and will be removed in the next PySpark releases.
 
 To further read about the components of PySpark and how it’s useful in processing [Big Data](https://en.wikipedia.org/wiki/Big_data) [click here](https://www.section.io/engineering-education/introduction-to-spark/)
-
-### Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [PySpark Installation](#pyspark-installation)
-- [Creating SparkContext and SparkSession](#creating-sparkcontext-and-sparksession)
-- [Initialize TextClassifier app](#initialize-textclassifier-app)
-- [Loading Dataset](#loading-dataset)
-- [Selecting the needed columns](#selecting-the-needed-columns)
-- [Checking for missing values](#checking-for-missing-values)
-- [Feature Engineering](#feature-engineering)
-- [Pipeline stages](#pipeline-stages)
-- [Split Dataset](#split-dataset)
-- [Building the pipeline](#building-the-pipeline)
-- [Building model](#building-model)
-- [Model evaluation](#model-evaluation)
-- [Making single prediction](#making-single-prediction)
-- [Conclusion](#conclusion)
-- [References](#references)
-
-### Prerequisites
-
-1. A good understanding of [Python](https://www.section.io/engineering-education/python-projects-for-beginners/)
-2. Have [Anaconda] installed in your machine.
-3. Have a good knowledge of [Jupyter Notebook](https://jupyter.org/).
-4. Understand [machine learning modeling][https://www.section.io/engineering-education/house-price-prediction/].
-5. Download the Udemy dataset [here](https://drive.google.com/file/d/1-TfybHeSWpP9UJLxeNDIFT1CPfxn7XWT/view?usp=sharing)
-
-> NOTE: To follow along easily, use [Jupyter Notebook](https://jupyter.org/) in building our text classification model.
 
 ### PySpark Installation
 
@@ -679,6 +680,7 @@ Finally, we used this model to make predictions, this is the goal of any better.
 
 ### References
 
+- [Code implementation for this tutorial](https://colab.research.google.com/drive/1whcB66Lpu_DjZH07Hu65-iTBmeVsz1HJ?usp=sharing)
 - [Introduction to PySpark](https://www.section.io/engineering-education/introduction-to-spark/)
 - [PySpark Tutorial](https://www.tutorialspoint.com/pyspark/index.htm)
 - [PySpark Components](https://spark.apache.org/docs/latest/api/python/)
