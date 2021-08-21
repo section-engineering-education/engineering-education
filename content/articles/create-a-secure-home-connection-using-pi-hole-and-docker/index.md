@@ -151,3 +151,6 @@ Any DNS server changes you make may need to be rebooted for them to take effect 
 
 ### Conclusion
 In this article, we have learned about how we can block unwanted ads from the internet using Pi-hole and a docker container. By doing this our data packets will be fast to access and minimize losses of data since it's cost-effective.
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
