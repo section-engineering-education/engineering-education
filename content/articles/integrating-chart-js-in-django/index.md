@@ -323,3 +323,6 @@ You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) d
 You can checkout the full code [here](https://github.com/shosenwales/Django-charts) on GitHub.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
