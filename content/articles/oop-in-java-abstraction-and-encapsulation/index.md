@@ -258,7 +258,7 @@ public abstract class Dog {
  
 ```
  
-With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword. Abstract methods are implemented to void compilation errors that the compiler will throw when the abstract method is not implemented.
+With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword. Abstract methods are implemented to avoid compilation errors that the compiler will throw when the abstract method is not implemented.
  
 Here is a Code snippet to illustrate the ```extends``` keyword:
  
