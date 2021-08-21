@@ -35,7 +35,7 @@ These are methods that only an object of its class can invoke.
 It is the class that defines what an object data field or variables and methods will be.
 An example of a class is a circle class.
 A circle has a radius from which we can create different objects of type circle.
-The following code snipet explains this idea.
+The following code snippet explains this idea.
  
 ```java
  
@@ -43,37 +43,31 @@ public class Circle {
  
   //instance variable
  
-private double radius=2.5;
- 
-  //no-argument constructor
- 
-  public Circle(){
- 
-  }
- 
-  //argument constructor
- 
-  public Circle(double radius){
- 
-  this.radius = radius;
- 
-  }
- 
-  //method
- 
-  public double getArea(){
- 
-  return Math.PI*radius*radius;
- 
-  }
- 
-  //method
- 
-  public  double getPerimeter(){
- 
-  return Math.PI*(2*radius);
- 
-  }
+    private double radius=2.5;
+    
+    //no-argument constructor
+    
+    public Circle(){
+    
+    }
+    
+    //argument constructor
+    
+    public Circle(double radius){
+     this.radius = radius;
+    }
+    
+    //method
+    
+    public double getArea(){
+        return Math.PI*radius*radius;
+    }
+    
+    //method
+    
+    public double getPerimeter(){
+        return Math.PI*(2*radius);
+    }
  
 }
  
@@ -89,26 +83,26 @@ Now that we’ve created a template for a Circle, creating circles of different 
  
 public class CircleSize {
  
-//entry point to every Java application
- 
-  public static void main(String[] args){
- 
-     Circle smallCircle = new Circle();
- 
-     /*The new keyword used here means a new object of type class is created and saved in the variable smallCircle of reference type Circle*/
- 
-     //to get the area of the circle created
- 
-   System.out.println("The area of this circle is " + smallCircle.getArea());
- 
-     /*you can also decide to use an arg constructor to construct your new circle*/
- 
-    Circle bigCircle = new Circle(2.5);
- 
-     System.out.println("The area of this circle is " + bigCircle.getArea());
- 
-  }
- 
+    //entry point to every Java application
+    
+    public static void main(String[] args){
+    
+        Circle smallCircle = new Circle();
+    
+        /*The new keyword used here means a new object of type class is created and saved in the variable smallCircle of reference type Circle*/
+    
+        //to get the area of the circle created
+    
+        System.out.println("The area of this circle is " + smallCircle.getArea());
+    
+        /*you can also decide to use an arg constructor to construct your new circle*/
+    
+        Circle bigCircle = new Circle(2.5);
+    
+        System.out.println("The area of this circle is " + bigCircle.getArea());
+    
+    }
+    
 }
  
 ```
@@ -124,59 +118,52 @@ The dog should be able to sleep, eat, run, or bark.
  
 public class Dog {
  
- private String name;
+    private String name;
+
+    private int age;
+
+    private String color;
+
+    private String breed;
+
+    //Dog arg constructor
+
+    public Dog(String name, int age, String color, String breed) {
+    
+        this.name = name;
+
+        this.age = age;
+
+        this.color = color;
+
+        this.breed = breed;
+    
+    }
  
- private int age;
+    public boolean isSleeping(){
+    
+        System.out.println("Sleeping");
+        return true;
+    }
+    
+    public boolean isEating(){
+    
+        System.out.println("Eating");
+        return true;
+    
+    }
  
- private String color;
- 
- private String breed;
- 
- //Dog arg constructor
- 
- public Dog(String name, int age, String color, String breed) {
- 
-     this.name = name;
- 
-     this.age = age;
- 
-     this.color = color;
- 
-     this.breed = breed;
- 
- }
- 
- public boolean isSleeping(){
- 
-     System.out.println("Sleeping");
- 
-     return true;
- 
- }
- 
- public boolean isEating(){
- 
-     System.out.println("Eating");
- 
-     return true;
- 
- }
- 
- public boolean isbarking(){
- 
-     System.out.println("Dog barking...");
- 
-     return true;
- 
- }
- 
- public boolean isRunning(){
- 
-     System.out.println("Dog running");
- 
-     return true;   
- 
- }  
+    public boolean isbarking(){
+
+        System.out.println("Dog barking...");
+        return true;
+    }
+    
+    public boolean isRunning(){
+    
+        System.out.println("Dog running");
+        return true;    
+    }  
  
 }
  
@@ -188,29 +175,29 @@ To create a new dog object.
  
 public class Dog_Main {
  
-public static void main(String[] args) {
- 
+    public static void main(String[] args) {
+
     Dog littleDog = new Dog("Bingo", 6,"Brown", "German Shepherd");
- 
+
     System.out.println("Is the dog running:? "+ littleDog.isrunning());
- 
+
     System.out.println();
- 
+
     System.out.println("is the dog sleeping:? " + littleDog.isSleeping());
- 
+
     System.out.println();
- 
+
     System.out.println("Is the dog barking:? " + littleDog.isbarking());
- 
+
     System.out.println();
- 
+
     System.out.println("Is the dog eating:? " + littleDog.iseating());
- 
+
     System.out.println();
- 
+
     System.out.println("The dog name is:  " + littleDog.name);
- 
-}
+
+    }
  
 }
  
@@ -271,7 +258,7 @@ public abstract class Dog {
  
 ```
  
-With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword.
+With the above code snippet, we've created an abstract class and an abstract method. One pertinent feature of abstract class is that objects cannot be instantiated or created from it. But don’t forget, classes only exist to create an object. To be able to create an object from an abstract class, we must create a new class that inherits from the superclass (base/parent).You can do this using the ```extends``` keyword. Abstract methods are implemented to void compilation error that the compiler will throw when the abstract method is not implemented.
  
 Here is a Code snippet to illustrate the ```extends``` keyword:
  
@@ -280,65 +267,56 @@ Here is a Code snippet to illustrate the ```extends``` keyword:
 public class MainDog extends Dog {
  
  //abstract method body definition
- 
+ @Override
  public void run(){
- 
-     //in this class the method is implemented
- 
-     System.out.println(“Dog is running”);
+   //in this class the method is implemented
+    System.out.println(“Dog is running”);
  
  }
  
  public static void main(Strings [] args){
- 
-     MainDog dog = new MainDog();
- 
-     //abstract method invocation
- 
-     dog.run();
- 
- }
+    
+        MainDog dog = new MainDog();
+    
+        //abstract method invocation
+    
+        dog.run();
+    
+    }
  
 }
  
 ```
  
 #### Interface implementation
-An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword.
+An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword. Since methods in interface do not have body, the class implementing it must implement all the methods in the interface.
 The child class inherits the parent class, overrides its method signatures, and provides a method body.
  
 ```java
  
 public interface Car{
- 
- public void start();
- 
- public void stop();
- 
+
+    public void start();
+    
+    public void stop();
 }
  
 public Benz implements Car{
- 
- /*@Override to override the stop method in the car class that has no implementation*/
- 
- @Override
- 
- public void start(){
- 
-     System.out.println(“I started my Benz car ”);
- 
- }
- 
- /*to override the stop method in the car class that has no implementation*/
- 
- @Override
- 
- public void stop(){
- 
-     System.out.println(“I stopped my Benz car”)
- 
- }
- 
+    
+    /*This stop method will execute independent of the @Override annotation but the annotation tell the compiler we are overriding a superclass method*/
+    
+    @Override
+    public void start(){
+        System.out.println(“I started my Benz car ”);
+    }
+    
+    /*This stop method will execute independent of the @Override annotation but the annotation tell the compiler we are overriding a superclass method*/
+    
+    @Override
+    public void stop(){
+        System.out.println(“I stopped my Benz car”)
+    }
+    
 }
  
 ```
@@ -373,7 +351,7 @@ Now, that we’ve finally gotten abstraction off the list, on to the next one, e
  
 Imagine you are building an application, and the user can directly access and manipulate your data fields. How costly would that be? The outcome is better left to imagine than experience it.
  
-Apart from inheritance and polymorphism which I will write about in my next article. Encapsulation is another fundamental concept of OOP that every developer needs to get familiar with.
+Apart from inheritance and polymorphism which I will write about in my next article, encapsulation is another fundamental concept of OOP that every developer needs to get familiar with.
  
 Encapsulation is simply the process of encapsulating and hiding the details of a class implementation from the user. Encapsulation is achieved by wrapping the class attributes or variables and the methods together as a unit.
  
@@ -405,16 +383,12 @@ In the code snippet above, we declare all the fields and attributes of the class
  
 ```java
  
-public void setName(String name){
- 
+public void setName(String name){ 
  this.name = name;
- 
 }
  
-public String getName(){
- 
- return name;
- 
+public String getName(){ 
+ return name; 
 }
  
 ```
