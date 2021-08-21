@@ -1,5 +1,22 @@
-Javascript supports a feature to verify if the data sent by a user from a web application to a web server is valid or not.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /client-side-validation-with-react-alert/
+title: Client Side Validation with React Alert
+description: In this article, we’re going to look at how to verify input data using the npm package react-alert. react-alert makes it easier to render the error messages back to the user, in case of invalid user input data.
+author: caleb-olojo
+date: 2021-08-21T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/client-side-validation-with-react-alert/hero.jpg
+    alt: Client Side Validation with React Alert Hero Image
+---
+
+Javascript supports a feature to verify if the data sent by a user from a web application to a web server is valid or not.
+<!--more-->
 This feature gives front-end developers the ability to verify a user's input data. Before the data gets sent to the webserver.
 
 In this article, we’re going to look at how to verify input data using an npm package [react-alert](https://www.npmjs.com/package/react-alert). `react-alert` makes it easier to render the error messages back to the user, in case of invalid user input data.
@@ -410,3 +427,6 @@ You can also check out react-alert’s [documentation](https://github.com/schieh
 I have provided a link to the GitHub [repository](https://github.com/Caleb335/react-alert-test), check it out to see how it works.
 
 Thank you for reading this article, I hope it helped you. Happy Coding!
+
+---
+Peer Review Contributions by: [Espira Marvin](/engineering-education/authors/espira-marvin/)
