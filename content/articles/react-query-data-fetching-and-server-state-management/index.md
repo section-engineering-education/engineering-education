@@ -18,14 +18,14 @@ images:
 <!--more-->
 However, there are a few negative aspects to it, like state management and data fetching.
 
-Server state management is a little different from other libaries. In React.js, it is asynchronous and the data persists remotely without any direct control. This means that we have to update, cache, or re-fetch the data to efficiently manage the state in React.js applications.
+Server state management is a little different from other libraries. In React.js, it is asynchronous and the data persists remotely without any direct control. This means that we have to update, cache or re-fetch the data to efficiently manage the state in React.js applications.
 
 [React Query](https://react-query.tanstack.com/) is a pre-configured library that aims to solve these complexities.
 
-Using React Query, we can fetch, cache, and update data in React based applications in a simple and declarative manner without mutating the global state.
+Using React Query, we can fetch, cache, and update data in React-based applications in a simple and declarative manner without mutating the global state.
 
 ### Goal
-Nowadays, almost every web application works with remote data. Unfortunately, for developers, data fetching and handling server state in React applications is easier said, than done.
+Nowadays, almost every web application works with remote data. Unfortunately, for developers, data fetching and handling server states in React applications are easier said, than done.
 
 As developers, we need to rethink about:
 
@@ -34,7 +34,7 @@ As developers, we need to rethink about:
 - How do we keep the client up to date with the server?
 - How will these tradeoffs impact the users with a poor internet connection?
 
-When dealing with asynchronous data that needs a frequent updation, caching, and synchronization with the server, there is no better library than React-Query.
+When dealing with asynchronous data that needs frequent updating, caching, and synchronization with the server, there is no better library than React-Query.
 
 In this tutorial, we will go through how the React-Query library can improve user experience in our react applications.
 
@@ -48,13 +48,13 @@ For this tutorial, we need to have:
 - Make sure to have [Node.js](https://nodejs.org/en/) runtime installed on your machine.
 
 ### Understanding state management and server state
-Every interactive client-side applications will involve interactive events.
+Every interactive client-side application will involve interactive events.
 
-For example, when an user interacts with an application by clicking a button or closing a sidebar, the app must re-render the page accordingly to reflect these changes. We call this change, as the state of the app.
+For example, when a user interacts with an application by clicking a button or closing a sidebar, the app must re-render the page accordingly to reflect these changes. We call this change, the state of the app.
 
 In the context of React.js and Single Page Applications (SPA), state management is a way to share the data across different React components.
 
-In other words, state is simply a JavaScript object representing part of a component that can change based on user actions.
+In other words, a state is simply a JavaScript object representing part of a component that can change based on user actions.
 
 You can read more about this in the [React.js documentation](https://reactjs.org/docs/state-and-lifecycle.html). 
 
@@ -97,9 +97,9 @@ npm start
 
 This triggers our development server with hot-reload at `http://localhost:3000`.
 
-To configure React-Query in a React.js application, we need to wrap the components that needs data fetching, with `QueryClientProvider` component.
+To configure React-Query in a React.js application, we need to wrap the components that need data fetching, with the `QueryClientProvider` component.
 
-The child components of the `QueryClientProvider` can now access the hooks provided by React-Query library that provides us with a `QueryClient` instance. We will be using this instance to access the hooks provided by React-Query library.
+The child components of the `QueryClientProvider` can now access the hooks provided by the React-Query library that provides us with a `QueryClient` instance. We will be using this instance to access the hooks provided by the React-Query library.
 
 To start the React-Query, we will use a basic configuration in the root directory file *`index.js`* as:
  
@@ -127,9 +127,9 @@ The difference between React-Query and the common data fetching patterns such as
 
 If the resource is the same as the first, React-Query will keep both the data as a reference without forcing the page to reload.
 
-While `useEffect` fetches the data irrespective of the modified data, and reloads the page.
+While `useEffect` fetches the data irrespective of the modified data and reloads the page.
 
-To demonstrate these concepts, we will be using `Post` and `Posts` component. The fetching data logic will be written in `Posts.js`.
+To demonstrate these concepts, we will be using the `Post` and `Posts` components. The fetching data logic will be written in `Posts.js`.
 
 Go ahead and create a `components` folder in the `src` application folder.
 
@@ -188,14 +188,14 @@ Let's briefly dissect the above code:
 - Before the return statement of the component, we execute a basic logic to check if the application is in a loading state or if an error occurs.
 - Inside the JSX part, we return the posts by mapping through the posts array.
 
-> For an awesome developer experience, you can use `react-query-devtools`. `react-query` includes in-built tool `react-query-devtools` that helps us view the state and the cache.
+> For an awesome developer experience, you can use `react-query-devtools`. `react-query` includes the in-built tool `react-query-devtools` that helps us view the state and the cache.
 
 To enable this in your application `import { ReactQueryDevtools } from 'react-query/devtools'`.
 
 You can read more about this [here](https://react-query.tanstack.com/devtools).
 
 ### Making a POST request using `useMutation` hook
-Unlike the `useQuery` hook, mutations are used to perform `CREATE`, `UPDATE`, or `DELETE` operations as the server side operations inside our components.
+Unlike the `useQuery` hook, mutations are used to perform `CREATE`, `UPDATE`, or `DELETE` operations as the server-side operations inside our components.
 
 In our case, we will perform a `POST` request using `useMutation`.
 
@@ -256,12 +256,12 @@ export default function Post(){
 
 To briefly explain the above code:
 
-- `createPost` is a function that makes HTTP POST request using `axios` library to the third party API.
+- `createPost` is a function that makes HTTP POST requests using the `axios` library to the third-party API.
 - The `useMutation()` hook returns `isLoading`, `isError`, `error`, and `mutate` function that will be used to wrap the values when making requests.
 - It takes the `createPost` as an argument along with an option `{retry:3}` object. This comes in handy when prefetching queries after mutations and ensuring optimistic updates.
-- Prefetching allows us to perform fetch operations to the data before it is needed. The cool thing about optimistic updates is that we have an option to rollback our updates if anything goes wrong.
+- Prefetching allows us to perform fetch operations to the data before it is needed. The cool thing about optimistic updates is that we have an option to roll back our updates if anything goes wrong.
 - `useState()` hook is used to create and update the `title`, and `description` state of the input elements.
-- Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly. We can use `isLoading` to indicate that something is being posted to the server in an asynchronous manner. The `isError` and `error` will give us information in case of an error.
+- Below the create post functionality, we use the `isLoading` and `isError` to handle the mutation state accordingly. We can use `isLoading` to indicate that something is being asynchronous posted to the server. The `isError` and `error` will give us information in case of an error.
 
 The above code with the fetch and post functionalities should look like:
 
@@ -269,7 +269,7 @@ The above code with the fetch and post functionalities should look like:
 
 ![react-query-post](/engineering-education/react-query-data-fetching-and-server-state-management/react-query-post.png)
 
-Thus, we are able to fetch and post the data from a third-party REST API using React-Query, without having to reload the screen.
+Thus, we can fetch and post the data from a third-party REST API using React-Query, without having to reload the screen.
 
 ### Conclusion
 Building front-end applications often start easy and turns to be complicated as we continue adding features. For every API endpoint we add, we also need to deal with state management, synchronization, caching, and error handling.
