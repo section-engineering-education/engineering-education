@@ -78,7 +78,7 @@ Cloud computing operates on a pay-as-you-use basis, meaning hospitals pay for th
 In addition to saving the costs, hospitals can cut down on internal IT and human resource personnel. This is because many applications can be consolidated into one. Therefore there is no need for massive applications, thus cutting down on the number of servers needed.
 
 #### Better security
-Right from the design, the cloud is made to be secure by default. It ranges from denying access to unauthorized users and services. The model is the opposite of what on-premises solutions offer since they are inherently open.
+Right from the design, the cloud is made to be secure by default. It denies access to unauthorized users and services. The model is the opposite of what on-premises solutions offer since they are inherently open.
 
 Moreover, cloud vendors work with highly qualified technical experts that most healthcare industries cannot recruit. The professionals conduct penetration testing and utilize other preventive measures to ensure that the system is always secure. They also use various security tools such as encryption, proactively monitoring, and addressing the security threats on time.
 
@@ -119,7 +119,7 @@ Most medical devices operate on legacy platforms, making it difficult for the me
 Before even migrating to cloud solutions, medical facilities should first identify and address any vulnerability that may come with legacy equipment. The facility may also consider using network segmentation to isolate high-risk devices that may cause potential breaches. This will limit the negative impact on the network caused by such devices.
 
 #### Risk 3: Regulatory compliance violations
-Patients’ data is protected under [strict regulations](https://datica.com/blog/what-are-the-hipaa-cloud-compliance-options-for-healthcare) offered by different authorities worldwide. The violation of these regulations destroy the hospital’s reputation and comes with adverse financial consequences.
+Patients’ data is protected under [strict regulations](https://datica.com/blog/what-are-the-hipaa-cloud-compliance-options-for-healthcare) offered by different authorities worldwide. The violation of these regulations destroys the hospital’s reputation and comes with adverse financial consequences.
 
 The violating healthcare organizations are forced to pay restitution fees to the victim and, if deemed appropriate, a risk to serve a jail term. Healthcare organizations should ensure that they are compliant with regulations set during and even after cloud migration. It means they have to observe data storage security, access, patient privacy, and breach notifications.
 
@@ -151,7 +151,7 @@ Healthcare organization needs to offer cybersecurity courses to their staffs. Al
 ### Conclusion
 Migrating to the cloud is a challenging process, and healthcare organizations should define their cloud options. This would enable them to set their goals and determine which system and data components they want to migrate.
 
-Good research on different cloud vendors should be performed to understand their offerings better. They should also have compliance in mind as not all cloud providers are compliant. This will help to avoid any violation of regulations.
+Thorough research should be done to better understand the offerings of different cloud vendors. Healthcare organizations should also have compliance in mind as not all cloud providers are compliant. This will help to avoid any violation of regulations.
 
 Moreover, if healthcare applications use the [public cloud](https://www.ibm.com/cloud/learn/public-cloud), the security of those applications purely lies on the organization and not the cloud vendor.
 
