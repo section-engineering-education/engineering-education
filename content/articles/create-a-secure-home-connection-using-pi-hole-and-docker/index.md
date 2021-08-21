@@ -1,9 +1,28 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-secure-home-connection-using-pi-hole-and-docker/
+title: Create a Secure Home Connection Using Pi-hole and Docker
+description: In this article, we will create a secure home connection using Pi-hole and Docker.
+author: lewis-macharia
+date: 2021-08-21T00:00:00-18:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /create-a-secure-home-connection-using-pi-hole-and-docker/hero.png
+    alt: Pi-hole example image
+---
+Pi-hole is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers.
+<!--more-->
+
 As human beings and the world they are living in continues to evolve, technology is not an exception as it’s one of the co-factors that mark a revolution. Internet use has become ingrained in our daily lives as a result of modern technologies. The largest population worldwide is now using internet connection either in messaging, sending letters, in the education sector, in the field of medicine, etc.
 
 ### Introduction
 Threats have also increased with an increase in internet use. Digital safety has become an important issue. Our screens always contain insensible ads, pop-ups, notifications, banner ads, and so on, which you might not know about harmful malware. It also can threaten the digital safety and health of an individual. It also leads to poor browsing. Fortunately, some tweaks can fix the bug and problems and one such foolproof way is to program a low-cost computer for Pi-hole. It will block anything irrelevant that emerges on your display, check all incoming data from your preferred blacklists, and decide whether the packets should be passed on to your device. 
 
-To reduce this risk that's where we create a sure-home connection using pi-hole and Docker. A `docker` is a containerized technology tool. It’s used with a variety of applications such as DNS and a web server. It helps in the packaging of applications and when one needs to affiliate their apps operating system. A `pi-hole is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers. It also aids in increasing the network's speed.
+To reduce this risk that's where we create a secure home connection using Pi-hole and Docker. `docker` is a containerized technology tool. It’s used with a variety of applications such as DNS and a web server. It helps in the packaging of applications and when one needs to affiliate their apps operating system. `pi-hole` is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers. It also aids in increasing the network's speed.
 
 ### Prerequisites
 - Any operating system. `windows or Linux os`.
