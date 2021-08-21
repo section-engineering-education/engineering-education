@@ -40,35 +40,35 @@ The following code snippet explains this idea.
 ```java
  
 public class Circle {
- 
-  //instance variable
- 
-    private double radius=2.5;
-    
+
+    //instance variable
+
+    private double radius = 2.5;
+
     //no-argument constructor
-    
-    public Circle(){
-    
+
+    public Circle() {
+
     }
-    
+
     //argument constructor
-    
-    public Circle(double radius){
+
+    public Circle(double radius) {
         this.radius = radius;
     }
-    
+
     //method
-    
-    public double getArea(){
-        return Math.PI*radius*radius;
+
+    public double getArea() {
+        return Math.PI * radius * radius;
     }
-    
+
     //method
-    
-    public double getPerimeter(){
-        return Math.PI*(2*radius);
+
+    public double getPerimeter() {
+        return Math.PI * (2 * radius);
     }
- 
+
 }
  
 ```
@@ -82,27 +82,27 @@ Now that we’ve created a template for a Circle, creating circles of different 
 ```java
  
 public class CircleSize {
- 
+
     //entry point to every Java application
-    
-    public static void main(String[] args){
-    
+
+    public static void main(String[] args) {
+
         Circle smallCircle = new Circle();
-    
+
         /*The new keyword used here means a new object of type class is created and saved in the variable smallCircle of reference type Circle*/
-    
+
         //to get the area of the circle created
-    
+
         System.out.println("The area of this circle is " + smallCircle.getArea());
-    
+
         /*you can also decide to use an arg constructor to construct your new circle*/
-    
+
         Circle bigCircle = new Circle(2.5);
-    
+
         System.out.println("The area of this circle is " + bigCircle.getArea());
-    
+
     }
-    
+
 }
  
 ```
@@ -117,7 +117,7 @@ The dog should be able to sleep, eat, run, or bark.
 ```java
  
 public class Dog {
- 
+
     private String name;
 
     private int age;
@@ -129,7 +129,7 @@ public class Dog {
     //Dog arg constructor
 
     public Dog(String name, int age, String color, String breed) {
-    
+
         this.name = name;
 
         this.age = age;
@@ -137,34 +137,34 @@ public class Dog {
         this.color = color;
 
         this.breed = breed;
-    
+
     }
- 
-    public boolean isSleeping(){
-    
+
+    public boolean isSleeping() {
+
         System.out.println("Sleeping");
         return true;
     }
-    
-    public boolean isEating(){
-    
+
+    public boolean isEating() {
+
         System.out.println("Eating");
         return true;
-    
+
     }
- 
-    public boolean isbarking(){
+
+    public boolean isbarking() {
 
         System.out.println("Dog barking...");
         return true;
     }
-    
-    public boolean isRunning(){
-    
+
+    public boolean isRunning() {
+
         System.out.println("Dog running");
-        return true;    
-    }  
- 
+        return true;
+    }
+
 }
  
 ```
@@ -251,9 +251,9 @@ To implement an abstract class in Java, use the abstract keyword, e.g., ```publi
 ```java
  
 public abstract class Dog {
- 
- public abstract void run();
- 
+
+    public abstract void run();
+
 }
  
 ```
@@ -265,25 +265,25 @@ Here is a Code snippet to illustrate the ```extends``` keyword:
 ```java
  
 public class MainDog extends Dog {
- 
- //abstract method body definition
- @Override
- public void run(){
-   //in this class the method is implemented
-    System.out.println(“Dog is running”);
- 
- }
- 
- public static void main(Strings [] args){
-    
-        MainDog dog = new MainDog();
-    
-        //abstract method invocation
-    
-        dog.run();
-    
+
+    //abstract method body definition
+    @Override
+    public void run() {
+        //in this class the method is implemented
+        System.out.println(“Dog is running”);
+
     }
- 
+
+    public static void main(Strings[] args) {
+
+        MainDog dog = new MainDog();
+
+        //abstract method invocation
+
+        dog.run();
+
+    }
+
 }
  
 ```
@@ -294,29 +294,29 @@ The child class inherits the parent class, overrides its method signatures, and 
  
 ```java
  
-public interface Car{
+public interface Car {
 
     public void start();
-    
+
     public void stop();
 }
- 
-public Benz implements Car{
-    
+
+public Benz implements Car {
+
     /*This stop method will execute independent of the @Override annotation but the annotation tell the compiler we are overriding a superclass method*/
-    
+
     @Override
-    public void start(){
-        System.out.println(“I started my Benz car ”);
+    public void start() {
+        System.out.println(“I started my Benz car”);
     }
-    
+
     /*This stop method will execute independent of the @Override annotation but the annotation tell the compiler we are overriding a superclass method*/
-    
+
     @Override
-    public void stop(){
+    public void stop() {
         System.out.println(“I stopped my Benz car”)
     }
-    
+
 }
  
 ```
@@ -325,18 +325,18 @@ To run this program, we need another class and the main method. The latter is th
  
 ```java
  
-public class Main{
- 
- public static void main(){
- 
-     Car car = new Benz();
- 
-     car.start();
- 
-     car.stop();
- 
- }
- 
+public class Main {
+
+    public static void main() {
+
+        Car car = new Benz();
+
+        car.start();
+
+        car.stop();
+
+    }
+
 }
  
 ```
@@ -367,14 +367,14 @@ Let’s use the following simple code snippet to explain that.
  
 ```java
  
-public class Human{
- 
- private String name;
- 
- private int age;
- 
- private String gender;
- 
+public class Human {
+
+    private String name;
+
+    private int age;
+
+    private String gender;
+
 }
  
 ```
@@ -383,12 +383,12 @@ In the code snippet above, we declare all the fields and attributes of the class
  
 ```java
  
-public void setName(String name){ 
- this.name = name;
+public void setName(String name) {
+    this.name = name;
 }
- 
-public String getName(){ 
- return name; 
+
+public String getName() {
+    return name;
 }
  
 ```
