@@ -2,10 +2,10 @@
 
 Building a shopping cart should be possible in an assortment of ways. I'll show you how to make a shopping cart with arrays and objects in this tutorial.
 
-The approach that we will use looks as follows.
-
-We will initially have 2 arrays. One holding the curated list of items to buy, and the other one empty, to hold the items in the cart.
-We will first display the items in the first array. We will then add an item to the second array and increment the count property in each item, on click. We will decrement the counter and delete the item from the array when the counter reaches zero.
+### The approach
+1. You initially have a curated list of shopping items.
+2. Each item has a counter.
+3. Decrease or increase the counter on adding the item to cart.
 
 We will use the Javascript event listeners to handle these activities.
 
