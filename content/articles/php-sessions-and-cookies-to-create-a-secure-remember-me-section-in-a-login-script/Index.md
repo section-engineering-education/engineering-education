@@ -1,6 +1,6 @@
 ### Introduction
-In the Login Script, the 'Remember Me' functionality allows users who have logged in to keep their status. A user's logged-in status is serialized in PHP `sessions`, `cookies`, or other similar storage when they select the `Remember Me` option.
-In this edge, you will learn how to create a persistent PHP web application.
+In a Login Script, the 'Remember Me' functionality allows users who have logged in to keep their logged-in status. A user's logged-in status is serialized in PHP `sessions`, `cookies`, or other similar storage when they select the `Remember Me` option.
+In this edge, you will learn how to create a persistent PHP login web application.
 #### Table of contents
 - [Introduction](#introduction)
 - [Preserve logged in state](#create-cookies-to-preserve-the-logged-in-state)
@@ -8,10 +8,30 @@ In this edge, you will learn how to create a persistent PHP web application.
 - [Clear remembered login](#clear-remembered-login-with-session-and-cookies-on-logout)
 - [Controller classes](#auth-and-dbcontroller-classes)
 - [Conclusion](#conclusion)
-- [check the code snippets at github](https://github.com/Juskam/secure-remember-me-for-login-using-php-session-and-cookies)
-Make sure to look at the source code on GitHub so you know what files to create.
+- [Check the code snippets at github](https://github.com/Juskam/secure-remember-me-for-login-using-php-session-and-cookies)
+Be sure to check the source code on GitHub.
+**Requirements**
+- You need a server.You can download and  install [XAMPP](https://www.apachefriends.org/download.html) server.
+- A text `Editor` of your choice.
+- After installing `XAMPP`,Locate `htdocs` folder in the XAMPP directory in your local Disk.
+- In this folder(`htdocs`),create your main directory to store the code snippets for this tutorial and name it `secure-login-page`.
+- Inside the main directory create the following files:
+      1.index.php  - will contain a login form
+      2.Auth.php - authenticate users
+      3.authCookieSessionValidate.php -store log-in session when `remember me` checkbox is selected
+      4.logout.php end user login session
+      5.DBController.phpwill allows us to establish a connection to the database
+      6.dashboard.php - an authentic user will be redirected here on successfull login
+      7.Util.php  - will enable us hash passwords
+ **How to run the project**
+ - Start up XAMPP server.
+ - Open your browser and paste `http://localhost/phpmyadmin/`.
+ - Create a database named `db_auth`.
+ - Paste the Database script or if you have downloaded the project source code files at github you can rather import `db_auth.sql`.
+ - Navigate to a new tab and paste the following link `http://localhost/secure-login-page/index.php`.
+ 
 ### Create cookies to preserve the logged-in state
-To obtain the `username` and `password`, I've created a login form. This form has a 'Remember Me' checkbox for the user's convenience, which allows the user to keep his logged-in state. When a user provides their login information, PHP receives it and compares it to the database of members.
+To obtain the `username` and `password`, I've created a login form. This form has a 'Remember Me' checkbox for the user's convenience, which allows the user to keep his logged-in state. When a user provides their login information, it is sent to the server for validation.
 On successful login, if the user selected ‘Remember Me’ then the logged-in status is stored in PHP `session` and `cookies`.
 Because storing the plain password in the cookie is a security flaw, the authentication keys are produced using random integers. These keys are hashed and saved in a database with a one-month expiration time. When the timer runs out, the expiration flag is set to `0` and the keys are turned off.
 ```php
@@ -103,9 +123,9 @@ if (! empty($_POST["login"])) {
 ```
 
 ### Validate remembered login with PHP session and cookies
-`authCookieSessionValidate.php`, a PHP page, contains code for validating the logged-in state based on session and cookie data. For applications that require user authentication, it appears at the beginning of the application page.
+The code for validating the logged-in state based on `session` and `cookie` data is contained in `authCookieSessionValidate.php`. For applications that require user authentication, it appears at the beginning of the application page.
 `$loggedIn` is set to true if it's present in the session or cookie array. It is determined by this boolean value whether or not the user can proceed or be redirected back to the login page.
-First, the PHP session is used to check the remembered login. If it returns false, the function will look in the cookies for the authentication keys. If the keys aren't empty, they'll be hashed and checked against the database.
+First, the PHP session is used to check the remembered login. If it returns false, the function will look in the cookies for the authentication keys. If the keys aren't empty, they'll be hashed and checked against the data contained in the database, `db.auth`.
 When a match is identified, the expiration date is checked against the current date and time. The user will be sent to the dashboard once the code has passed all of the validation checks.
 
 ```php
@@ -349,8 +369,8 @@ class DBController {
 ### Conclusion
 If you check the "Remember Me" box, your browser will save a cookie so that if you exit the site window without signing out, you will be immediately logged back in the next time you visit. Otherwise, this will not work unless you set your browser to remember cookies.
 If you select the "Remember Me" option, your browser will save a cookie so that if you close the site window without signing out, you will be automatically logged in the next time you visit. Otherwise, unless you set your browser to remember cookies, this will not work.
-
+We've seen how to create a secure login form and, more importantly, how to save user login status using PHP cookies for a set period of time making them signed in to your page during that time frame.
 **further Reading****
-- [Understanding and Working With javascript Cookies](https://www.section.io/engineering-education/understanding-and-working-with-javascript-cookies/)
+- [Understanding and Working With JavaScript Cookies](https://www.section.io/engineering-education/understanding-and-working-with-javascript-cookies/)
 
 Happy Coding!
