@@ -12,7 +12,7 @@ To reduce this risk that's where we create a sure-home connection using pi-hole 
 
 
 ### Table of contents:
-- [Understanding the Architecture](#understanding-the-architecture)
+- [Understanding the architecture](#architecture)
 - [The installation of pi-hole software](#the-installation-of-pi-hole-software)
 - [How to set up Pi-hole as a docker](#how-to-set-up-pi-hole-as-a-docker-container)
 - [How to use Pi-hole as the DNS](#how-to-use-pi-hole-as-the-dns)
@@ -26,12 +26,12 @@ From the image above, data packets are received from the internet. The base oper
 
 > The pi-hole and docker are inside the base operating system. That is why the symbols representing them are connected. 
 
-The pi-hole prevents advertisements from being displayed on the internet. Use our automated installer to install Pi-hole on a supported operating system or run it from a container. When ads are blocked by the pi-hole software the filtered data packets are sent to the router.As a computer networking tool, a router is used to transport data packets from one network to the next over the Internet. On the Internet, routers are in charge of traffic direction to different devices such as computers, laptops, and phones. 
+The pi-hole prevents advertisements from being displayed on the internet. Use our automated installer to install Pi-hole on a supported operating system or run it from a container. When ads are blocked by the pi-hole software the filtered data packets are sent to the router. As a computer networking tool, a router is used to transport data packets from one network to the next over the Internet. On the Internet, routers are in charge of traffic direction to different devices such as computers, laptops, and phones. 
 
 ### The installation of pi-hole software
 Pi-hole may be installed in two ways on a Raspberry Pi and other Linux platforms such as Debian and Ubuntu. Use a single-line script from the terminal to install it if you're already running Raspberry Pi OS  or another Linux distribution. 
 
-To run Pi-hole in a separate software container on your Raspberry Pi, install Docker and run it in the container. Both options are acceptable, however Docker requires more setup.
+To run Pi-hole in a separate software container on your Raspberry Pi, install Docker and run it in the container. Both options are acceptable, however, Docker requires more setup.
 If you want to install Pi-hole, you can do so in one of two ways, as detailed below.
 
 #### Installing Pi-Hole using the automatic installation script
@@ -57,7 +57,7 @@ Pi-hole and any extra packages will be installed and configured using the same i
 
 #### Pi-hole configuration during installation
 In the terminal window, you'll be asked to confirm different Pi-hole options, such as your network configuration and chosen logging levels. 
-1. To navigate through the first few information panels, press the Enter key. Choose Wi-Fi or Ethernet using the arrow keys on the Choose an interface screen, then press space or enter. Toggle to the OK option with the tab key, then confirm with hitting the Enter key.
+1. To navigate through the first few information panels, press the Enter key. Choose Wi-Fi or Ethernet using the arrow keys on the Choose an interface screen, then press space or enter. Toggle to the OK option with the tab key, then confirm by hitting the Enter key.
 
 2. After that, you'll be asked which external DNS server you want to use. Here, Cloudflare and Google are both good free solutions. Using your arrow keys, select the provider you want to use, then confirm using the enter key.
 
@@ -79,9 +79,9 @@ To continue, press the tab key to select OK, then enter.
 10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, the terminal will show a final confirmation message. This message will include information about logging in to the web portal and a password that will be generated automatically for you. Enter after pressing the tab. 
 
 #### Installing Pi-hole as a Docker container 
-If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first. Installation of a doker
+If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first. Installation of a docker container.
 
-#### Installation of a doker
+#### Installation of a docker container
 1. Open a terminal window and type the following instructions to install Docker on your Raspberry Pi:
 
 ```bash
