@@ -1,20 +1,24 @@
-**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson.
+**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. As of writing this article, the current version stands at 
+*go1.17*.
 
 Go is:
-- a *statically typed language*: the type of the variable is known during the compile time.
-- similar to C but has garbage collection and concurrency, making it stand out from the other languages.
 
-RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. We will be building an *API* that returns *Coffee* object data.
+> a *statically typed language*, i.e., the type of the variable is known during the compile time. 
 
-## Pre-requisites
+> similar to C but has garbage collection and concurrency, making it stand out from the other languages.
+
+Idioms are hallmarks of shared values. As <cite>Dave Cheney</cite> cites in his article [the zen of go](https://dave.cheney.net/2020/02/23/the-zen-of-go):
+> To say that something is idiomatic is to say that it follows the style of the time. If something is not idiomatic, it is not following the prevailing style. It is unfashionable.
+
+RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. First, we will build an *API* that returns Coffee object data.
+
+### Prerequisites
 * Go installed on your system. You can download it from [here](https://golang.org/dl/).
 * Basics of Go, if you aren't familiar with concepts like `interface`, `method`, etc., or new to Go, you can check out this excellent TDD tutorial over [here](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go).
 * Familiarity with Go's packages like `net/http` and `encoding/json`.
 * Basics of [REST](https://mlsdev.com/blog/81-a-beginner-s-tutorial-for-understanding-restful-api) services.
 
-Without a further due, let's begin the tutorial.
-
-The below image will give you a glimpse of how the folder is structured.
+The folder is structured in the following manner:
 ```html
 go_RESTful
 ├───data
@@ -24,7 +28,7 @@ go_RESTful
 └───main.go
 ```
 
-We will start by creating a product structure, which will hold our *Coffee* product's data. In *products.go* under data folder, create a structure `Product` of type `struct` as shown below.
+We will start by creating a product structure, which will hold our *Coffee* product's data. In *products.go* under the data folder, create a structure `Product` of type `struct` as shown below.
 ```go
 package data  
   
@@ -127,8 +131,6 @@ func main() {
   http.ListenAndServe(":4200", sm)
 }
 ```
-
-Here,
 * `ph` is a `handler` that will reference our struct `Products` from *product_handler.go* and serve the `ServeHTTP` method.
 * `sm` is an instance of `ServeMux`, a *multiplexer* to handle all the incoming HTTP requests.
   It compares the incoming HTTP requests against a lookup of predefined URL paths and calls that respective *handler* where the match is found.
@@ -180,11 +182,13 @@ type Product struct {
 
 type Products []*Product
 
+// converts the Product fields to JSON
 func (p *Products) ToJSON(w io.Writer) error {
   e := json.NewEncoder(w)
   return e.Encode(p)
 }
 
+// returns the list of products
 func GetProducts() Products {
   return productList
 }
@@ -226,10 +230,12 @@ type Products struct {
   l *log.Logger
 }
 
+// a logger that refernces to struct Products
 func NewProducts(l *log.Logger) *Products {
   return &Products{l}
 }
 
+// function to handle the incoming requests
 func (p *Products) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
   if r.Method == http.MethodGet {
     p.getProducts(rw, r)
@@ -239,21 +245,20 @@ func (p *Products) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
     p.addProduct(rw, r)
     return
   }
-  // if the method does not match the above methods.
   rw.WriteHeader(http.StatusMethodNotAllowed)
 }
 
+// function to handle GET requests
 func (p *Products) getProducts(rw http.ResponseWriter, r *http.Request) {
   p.l.Println("Handle GET Products")
-  // fetch the products from the productList
   lp := data.GetProducts()
-  // serialize the list to JSON
   err := lp.ToJSON(rw)
   if err != nil {
     http.Error(rw, "Unable to convert it to json", http.StatusInternalServerError)
   }
 }
 
+// function to handle POST requests
 func (p *Products) addProduct(rw http.ResponseWriter, r *http.Request) {
   p.l.Println("Handle POST Product")
   prod := &data.Product{}
@@ -286,25 +291,30 @@ type Product struct {
 
 type Products []*Product
 
+// converts the Product fields to JSON
 func (p *Products) ToJSON(w io.Writer) error {
   e := json.NewEncoder(w)
   return e.Encode(p)
 }
 
+// converts incoming JSON data to Product fields
 func (p *Product) FromJSON(r io.Reader) error {
   e := json.NewDecoder(r)
   return e.Decode(p)
 }
 
+// returns the list of products
 func GetProducts() Products {
   return productList
 }
 
+// adding a new Product item to productList
 func AddProduct(p *Product) {
   p.ID = getNextID()
   productList = append(productList, p)
 }
 
+// returns a new ID based on the last item in productList 
 func getNextID() int {
   lp := productList[len(productList)-1]
   return lp.ID + 1
@@ -330,33 +340,33 @@ var productList = []*Product{
   },
 }
 ```
+From the terminal, within the project directory run the command:
+```go
+  go run main.go
+```
+
 This completes our implementation of RESTful services in Go, and attached below are the results of the API calls.
 
 * `GET` request to query the current list of *Coffee* items.
 
-![get request first](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get_first.png)
+![get request first](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get-first.png)
 
 * `POST` request to insert a new *Coffee* item.
 
-![post request](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/post_first.png)
+![post request](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/post-first.png)
 
 * To verify the newly added item, we will again call the `GET` method.
 
-![get request second](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get_second.png)
+![get request second](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get-second.png)
 
-
-
-## Conclusion
+### Conclusion
  
-To conclude, we were able to:
+To conclude, we created handlers to handle `HTTP` requests and understand how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used.
 
-* create handlers to handle `HTTP` requests respectively.
-* understand how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used.
-
-## Additional Resources
-* If you still don't get the whole idea of `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
-* You can check out some additional helpful about `logger` [here](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
-* Last but not least, the go-to guide to understand and write better Go code is to follow the [Go-docs](https://pkg.go.dev/).
-* As for the next step, you can use *PostgreSQL* to store/retrieve data and use the famous [*Gorilla Mux*](https://www.gorillatoolkit.org/) toolkit to handle the API requests.
+### Additional Resources
+* If you still don't get the whole idea of the `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
+* You can check out some additional helpful source about `logger` [here](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
+* The go-to guide to understand and write better Go code is to follow [Go-docs](https://pkg.go.dev/).
+* As for the next step, you can use *PostgreSQL* to store/retrieve data and use the popular [*Gorilla Mux*](https://www.gorillatoolkit.org/) toolkit to handle API calls.
 
 
