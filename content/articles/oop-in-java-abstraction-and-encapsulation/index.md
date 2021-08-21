@@ -289,7 +289,7 @@ public class MainDog extends Dog {
 ```
  
 #### Interface implementation
-An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword. Since methods in an interface do not have body, the class implementing it must implement all the methods in the interface.
+An interface contains public, abstract method signatures (methods without implementation). It is also important to note that interfaces have no constructors and may contain final and static variables. Implementating abstraction by the interface method is possible by the use of the `implements` keyword. Since methods in an interface do not have a body, the class implementing it must implement all the methods in the interface.
 The child class inherits the parent class, overrides its method signatures, and provides a method body.
  
 ```java
