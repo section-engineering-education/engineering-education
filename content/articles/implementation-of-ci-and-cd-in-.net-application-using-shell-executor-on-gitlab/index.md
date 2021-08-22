@@ -14,21 +14,21 @@ images:
   - url: /engineering-education/implementation-of-ci-and-cd-in-.net-application-using-shell-executor-on-gitlab/hero.png
     alt: Implementation of ci and cd in java application(linux) using shell and docker executor on git lab Hero Image
 ---
-Shell Executor is a basic executor that aids in the local development of the solution on the computer where GitLab Runner is installed. Windows Batch has been deprecated in favor of Bash and Windows PowerShell scripts. You'll need to set up GitLab Runner in Shell executor mode and configure the paths to get started.
+Shell executor is a basic executor that aids in the local development of the solution on the computer where GitLab Runner is installed. Windows Batch has been deprecated in favor of Bash and Windows PowerShell scripts. You'll need to set up GitLab Runner in shell executor mode and configure the paths to get started.
 <!--more-->
-In this situation, the solution will be produced locally using Shell executor on the machine where GitLab Runner is installed. If you're running GitLab on Linux, then you'll need to install all the essential software on that same system.
+In this situation, the solution will be produced locally using a shell executor on the machine where GitLab Runner is installed. If you're running GitLab on Linux, then you'll need to install all the essential software on that same system.
 
-> .Net applications on run on Windows environment.
+> .Net applications run on Windows environment.
 
 ### prerequisites
-- Have a computer running Windows operating system.
+- Have a computer running the windows operating system.
 - Download git into your machine. [Click here to download](https://git-scm.com/downloads.).
-- Download `MSBuild` or use the visual studio building tools installed in the visual studio.
+- Download `MSBuild` or use the visual Studio building tools installed in the Visual Studio.
 - Use the same .exe files used to install MSBuild to install `VS Web Build`. We can achieve this by running the command ` vs_buildtools.exe — add Microsoft.VisualStudio.Workload.WebBuildTools` in the command-line.
 - Download Nuget to reinstall our application's packages from the official website. [Click here to download](https://www.nuget.org/downloads).
 
 ### Table of contents
-- [Installation of Gitlab runners](#installation-of-gitlab-runners)
+- [Installation of Gitlab Runners](#installation-of-gitlab-runners)
 - [Configuring the Runners](#configuring-the-runners)
 - [How to create a .gitlab-ci.yml file](#how-to-create-a-.gitlab-ci.yml-file)
 - [Conclusion](#conclusion)
@@ -70,23 +70,23 @@ GitLab Runner is a build instance that can be used to perform jobs across severa
 
 **Specific Runners**- These runners are important for deploying a specific project if the job has specific criteria or demands. Specific runners organize their data using the FIFO (First In First Out) method, which works on a first-come, first-served basis. An individual runner can be registered with the project registration token. An encrypted version of a certain Runner.
 
-#### Encryption of a specific Runner
+#### Encryption of a specific runner
 You can prevent a specific runner from being used in other projects by encrypting it. To do so, you must first register a runner, as described in the GitLab Runners installation guide above.
 
 Encrypt the runner using the following steps.
 - Go to your project and log in to your GitLab account.
-- By selecting the CI/CD option on the Settings page, you may expand the Runners Settings option.
-- The activated Runners for the project can be found under the Runners Settings section.
+- By selecting the CI/CD option on the Settings page, you may expand the runner's Settings option.
+- The activated runners for the project can be found under the runner's Settings section.
 - Now click on the pencil button.
-- The Runner screen will then be opened, and the Lock to current projects option will be checked. By clicking on save changes, you'll be able to keep the changes.
-- It will successfully update the Runner after saving the modifications.
+- The runner screen will then be opened, and the Lock to current projects option will be checked. By clicking on save changes, you'll be able to keep the changes.
+- It will successfully update the runner after saving the modifications.
 
 #### Protect Runners
-The Runners can be safeguarded to save critical data.
+The runners can be safeguarded to save critical data.
 
-You can protect the Runner by following the instructions below:
-- Go through the exact processes (from steps 1 to 4) as in the previous section (encrypting a specific Runner) (encrypting a specific Runner).
-- You'll get the Runner screen after tapping the pencil button; select the Protected option from there. Unless you click on the save changes button, your alterations will be temporary.
+You can protect the runner by following the instructions below:
+- Go through the exact processes (from steps 1 to 4) as in the previous section (encrypting a specific runner) (encrypting a specific runner).
+- You'll get the runner screen after tapping the pencil button; select the protected option from there. Unless you click on the save changes button, your alterations will be temporary.
 
 ### How to create a .gitlab-ci.yml file
 The `YAML file` .gitlab-ci.yml is used to configure particular instructions for GitLab CI/CD.
@@ -148,7 +148,7 @@ These stages include:
 **deploy stage**- In this stage, we put into practice the solution we built. From the example script above, the `CI_COMMIT_BRANCH` variable shows the name of the commit branch. These features are available in all branch pipelines, including the default branch pipelines. Merge request and tag pipelines are not supported.
 
 ### Conclusion
-In this article, we have understood what GitLab runners are, their installation and configuration.  Finally, we looked at the creation of GitLab yml files. I would urge the reader to dig deeper into this topic and be able to build concrete yml files.
+In this article, we have understood what GitLab runners are, their installation, and configuration.  Finally, we looked at the creation of GitLab yml files. I would urge the reader to dig deeper into this topic and be able to build concrete yml files.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
