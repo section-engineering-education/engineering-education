@@ -168,3 +168,6 @@ Happy coding!
 - [Gradio](https://gradio.app/)
 - [Hugging Face Transformer Pipelines](https://huggingface.co/transformers/main_classes/pipelines.html) 
 - [Full code](https://colab.research.google.com/drive/1MMgN89Xn7fz5zVh1XCuLd66ZBIoZ70DZ#scrollTo=62a4vvW_dLsx)
+
+---
+Peer Review Contributions by: [Prashanth Saravanan](/engineering-education/authors/prashanth-saravanan/)
