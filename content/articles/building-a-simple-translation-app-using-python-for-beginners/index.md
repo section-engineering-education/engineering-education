@@ -123,8 +123,8 @@ For our example, the web app allows a user to pass through some text and have it
 
 ```python
 def translate_transformers(from_text):
-translated_results = translation_pipeline(from_text)
-return translated_results[0]['translation_text']
+    translated_results = translation_pipeline(from_text)
+    return translated_results[0]['translation_text']
 ```
 
 We have created a function called `translate_transformers()`. We then pass through the text to our translate transformer pipeline. We are storing the results of the translation in a variable called `translated_results`. The function then grabs the first value in our list [0] and returns the translated text.
