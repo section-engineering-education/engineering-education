@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/abstraction-in-java/hero.jpg
-    alt: Abstraction in Java  Hero Image
+    alt: Abstraction in Java Hero Image
 ---
 Abstraction refers to process of exposing the vital elements of a software while obscuring the background details from the user. Only the essential details are displayed to the user while the non-essential or trivial are hidden because the user is not required to know them. 
 <!--more-->
