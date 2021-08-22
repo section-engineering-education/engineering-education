@@ -4,14 +4,14 @@ status: publish
 published: true
 url: /implementation-of-ci-and-cd-in-.net-application-using-shell-executor-on-gitlab/
 title: Implementation of ci and cd in java application(linux) using shell and docker executor on git lab
-description: This article takes the reader through GitLab runners, their installation and configuration, and finally the creation of GitLab yml files. Shell Executor is a basic executor that aids in the local development of the solution on the computer where GitLab Runner is installed. 
+description: This article takes the reader through GitLab runners, their installation and configuration, and finally the creation of GitLab yml files. Shell executor is a basic executor that aids in the local development of the solution on the computer where GitLab Runner is installed. 
 author: james-bundi
 date: 2021-08-21T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementation-of-ci-and-cd-in-.net-application-using-shell-executor-on-gitlab/hero.png
+  - url: /engineering-education/implementation-of-ci-and-cd-in-.net-application-using-shell-executor-on-gitlab/hero.jpg
     alt: Implementation of ci and cd in java application(linux) using shell and docker executor on git lab Hero Image
 ---
 Shell executor is a basic executor that aids in the local development of the solution on the computer where GitLab Runner is installed. Windows Batch has been deprecated in favor of Bash and Windows PowerShell scripts. You'll need to set up GitLab Runner in shell executor mode and configure the paths to get started.
@@ -20,7 +20,7 @@ In this situation, the solution will be produced locally using a shell executor 
 
 > .Net applications run on Windows environment.
 
-### prerequisites
+### Prerequisites
 - Have a computer running the windows operating system.
 - Download git into your machine. [Click here to download](https://git-scm.com/downloads.).
 - Download `MSBuild` or use the visual Studio building tools installed in the Visual Studio.
