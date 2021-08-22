@@ -1,19 +1,12 @@
-
-
-
-
-
-Azure functions is a cloud-native design strategy that allows a piece of code to be supplied and performed without the need for a web server or server infrastructure settings.
-C#, Java, JavaScript, TypeScript, and Python are just a few of the languages that can use Azure functions.
+Azure functions is a cloud-native design strategy that allows a piece of code to be supplied and executed without needing a web server or server infrastructure settings.
+C#, Java, JavaScript, TypeScript, and Python are just a few languages that can use Azure functions.
 
 This article explains what Azure Functions are and how to utilize them in the C# programming language.
 
 ### Introduction
-Azure Functions is a serverless computing platform that simplifies the execution of small amounts of code or functions in the cloud. It can improve the efficiency of our development. Only the code required for the task at hand is written, with no consideration for the rest of the program or the infrastructure required to operate it.
+Azure Functions is a serverless computing platform that simplifies the execution of small amounts of code or functions in the cloud. As a result, it improves the efficiency of our development. Only the code required for the task at hand is written, with no consideration for the rest of the program or the infrastructure needed to operate it.
 
-`Utilizing  Azure functions has  the following advantage `
-
-
+###  Utilizing Azure functions have the following advantage
 
 -  Azure functions are simple and do not require a server.
 - Writing and deploying Azure functions is a lot easier
@@ -24,7 +17,7 @@ Azure Functions is a serverless computing platform that simplifies the execution
 - Upgrades to Azure functions are simple and have no impact on other elements of the website.
 - Azure functions interface with other APIs, databases, and libraries using industry standards.
 - Because no huge application, startup time, initialization, or other    activities occur before the code is executed, Azure functions are quick to execute.
-- Because Azure functions are compute-on-demand, they are scalable. When the number of requests for execution increases, new resources is automatically allocated to the service, and when the number of requests decreases, all extra resources, and application instances is automatically terminated.
+- Because Azure functions are compute-on-demand, they scale up when the number of requests for execution increases and scale down when the number of requests decreases.
 
 
 
@@ -46,7 +39,7 @@ Azure Functions is a serverless computing platform that simplifies the execution
 - [Testing the APIs using Postman](#testing-the-apis-using-postman)
 
 ### How to set up Azure Function
-To build up Azure Functions, we use Visual Studio. In Visual Studio, we'll open the Blazor app and start a new project. On the project template page, look for the Azure function to get a template for Azure functions.
+To build up Azure Functions, we use Visual Studio. In Visual Studio, we'll open the Blazor app and start a new project. Then, on the project template page, look for the Azure function to get a template for Azure functions.
 
 `See below`
 
@@ -69,7 +62,7 @@ We will utilize the HTTP trigger, which fires anytime an HTTP request is sent.
 We shall create our app by clicking on the create button.
 
 
-`Here is an example of our function's complete code.`
+### Here is an example of our function's complete code
 
 
 ```c#
@@ -98,26 +91,18 @@ namespace HelloFunction {
     }    
 } 
 ```
-
-
-
-
-Output
-
-
-
-
+Output:
 
 ![This is the output](engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/core.jng)
  
 
 ### Entity Model and Database schema
 
-The logical setup of all or part of a relational database is represented by a database schema. It can be represented visually or as a series of formulas called `integrity constraints` that control a database. 
+A database schema represents the logical setup of all or part of a relational database. It can be represented visually or as a series of formulas called `integrity constraints` that control a database. 
 
-Integrity constraints are mechanisms that limit a database's potential states. If we consider a database employee, we do not want to have two rows for the same person. Employee ID must be unique across all rows in the table employee, according to the integrity constraint.
+Integrity constraints are mechanisms that limit a database's potential states. For example, if we consider a database employee, we do not want two rows for the same person. Therefore, employee ID must be unique across all rows in the table employee, according to the integrity constraint.
 
-The term `entity data model` refers to a set of concepts that define data structure regardless of how it is stored. This model describes data structure using three essential concepts: entity type, association type, and property. A set of primitive data types that specify attributes in a conceptual model are supported by EDM.
+The term `entity data model` refers to concepts that define data structure regardless of how it is stored. This model describes data structure using three essential concepts: entity type, association type, and property. A set of primitive data types that specify attributes in a conceptual model are supported by EDM.
 
 Below is the example for employee table schema.
 
@@ -134,14 +119,11 @@ CREATE TABLE Employee
 ```
 This is what we get ; 
 
-
-
 ![output of the setup](engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/B13.png)
 
+Create a folder and name it My_Model. Inside the folder, create a class named Employee- Entity Model. You can use few properties to make your implementation easier.
 
-Create a folder and name it My_Model. Inside the folder create a class named Employee- Entity Model  you can use few properties to make your implementation easier.
-
-Below is an example
+Below is an example.
 
 ```c#
 namespace API_EFCore_AzureFunctions.My_Model
@@ -185,15 +167,13 @@ namespace API_EFCore_AzureFunctions.model
 ### Setting up the Connection with SQL Database by using EF Core
 
 
-To get the Nuget package, in the `Solution Explorer` you will need to right-click either `Reference` or a project and then select Manage NuGet packages.
+To get the Nuget package, in the `Solution Explorer`, you need to right-click either `Reference` or a project and then select Manage NuGet packages.
 
-To use the Db first approach to connect to a SQL Database using EF Core, we will need the following packages.
+We will need the following packages to use the Db first approach to connect to a SQL Database using EF Core.
 
- We will install the desired data using the Nuget Package Manager or the Package Manager console, as shown below.
-
+As shown below, we will install the desired data using the Nuget Package Manager or the Package Manager console.
 
 ![output of the setup](engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/manage.png)
-
 
 Packages from the selected source will be displayed in the browse tab. Search for specific packages that should be used using the search box. The install button, as well as the version selection dropdown, should be enabled.
 
@@ -227,9 +207,9 @@ By registering a DbContext in the services, we can obtain the SQL connection str
 
 ```
 ### Injecting the DbContext into a Function
-Because of dependency injection, we can now declare our functions in classes that have their dependencies injected into their constructors. Open the Function1.cs file to inject our dependencies.
+Because of dependency injection, we can now declare our functions in classes with dependencies injected into their constructors because of dependency injection. First, open the Function1.cs file to inject our dependencies.
 
-This is how we will open our function as shown below.
+We will open our function, as shown below.
 
 ```c#
 #region Property
@@ -254,7 +234,7 @@ In the example below, we will use five functions in the implementation of the fu
 4. `UpdateEmployee:`Changes should be made to the existing employee.
 5. `DeleteEmployee:`  This will delete records of employee in the database. 
 
-`1. CreateEmployee`
+#### 1. CreateEmployee
 
 
 ```c#
@@ -287,7 +267,7 @@ In the example below, we will use five functions in the implementation of the fu
 
 ```
 
-`2. GetEmployee`
+#### 2. GetEmployee
 
 ```c#
 #region Function Get Employees
@@ -340,9 +320,9 @@ The line code `[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]`
             
 ```
 
-The code above is used in adding a try-catch block to manage exceptions and retrieving all Employee information from the database.
+The code above adds a try-catch block to manage exceptions and retrieve all Employee information from the database.
 
-`3. GetEmloyeebyld`
+#### 3. GetEmloyeebyld
 
 Below is an example ;
 
@@ -372,7 +352,7 @@ Below is an example ;
        #endregion
 ```
 
-`4. UpdateEmployee`
+#### 4. UpdateEmployee
 
 Let us look at the example below ;
 ```c#
@@ -404,7 +384,7 @@ Let us look at the example below ;
       #endregion
 ```
 
-`5. DeleteEmployee`
+#### 5. DeleteEmployee
 
 ```c#
 #region Delete Employee
@@ -428,20 +408,18 @@ Let us look at the example below ;
         #endregion
 ```
 
-Finally, we were able to implement all of the code changes. Run the application and check that all of the methods in Postman are working as intended. Because Azure Functions uses the Storage emulator to get responses inside the terminal, after starting the application, all of our functions will be loaded in the terminal.
+Finally, we were able to implement all of the code changes. First, run the application and check that all of the methods in Postman are working as intended. Because Azure Functions uses the Storage emulator to get responses inside the terminal, Azure will load all of our functions in the terminal after starting the application.
+
 
 ### Testing the APIs using Postman
 
-In testing we will create the Employee first using the CreateEmployee API using Postman 
+In testing, we will create the employee first using the CreateEmployee API using Postman. 
 We will get the request body from the HTTP Trigger, attaching it to the Employee model class for deserialization, and then provide the Employee object to the database in the CreateEmployee Function. Then fetch the list of employee from our GetEmployee API.
 
+
 The function UpdateEmployee API is used to update an existing record, and the Employee Id field is required in this object. We get an existing record from the database and update it with a new object based on the Id.
-By giving the EmployeeId as a Query Parameter in the route, you can delete the record from the database.
+You can delete the record from the database by giving the EmployeeId as a Query Parameter in the route.
 
 ### Conclusion
-We have covered how to develop Serverless APIs using Azure Functions and how to integrate with the database using Entity Framework Core Dependency Injection in this tutorial.
+In this tutorial, we have covered how to develop Serverless APIs using Azure Functions and integrate with the database using Entity Framework Core Dependency Injection.
 
-
-
-Until next time,
- good luck in your studies!
