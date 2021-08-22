@@ -9,9 +9,9 @@ In this tutorial, we'll learn the best practices to build such components.
 To follow through this tutorial, you need to have the following:
 - [Android Studio Arctic Fox (2020.3.1) Stable](https://developer.android.com/studio#downloads) or higher - These versions of Android Studio have the Jetpack Compose plugin.
 - [Basic knowledge on Jetpack Compose](https://developer.android.com/jetpack/compose/index.html). If you are not familiar with Compose, feel free to check out [this article on Section]() to get started.
-- A good understanding of the [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) as it will help you understand [Kotlin Coroutines with Jetpack Compose](https://developer.android.com/jetpack/compose/coroutines.html).
+- A basic understanding of the [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) as it will help you understand [Kotlin Coroutines with Jetpack Compose](https://developer.android.com/jetpack/compose/coroutines.html).
 
-> Note: At the time of writing this tutorial, Jetpack Compose is in version 1.0.0.
+> Note: At the time of writing this tutorial, Jetpack Compose is in version 1.0.0 -its first stable version ever.
 
 ### Terminologies
 In this tutorial, we'll use the following Compose components:
@@ -20,14 +20,14 @@ In this tutorial, we'll use the following Compose components:
 - `Painter` - A component that renders an image to the Image composable function.
 - `Modifier` - Manipulates the appearence of the component.
 - `Box` - Serves as a container for other components.
-- `Text` - This is a built-in composable function that shows a string that is passed as an argument. It is commonly used in Text and Button composables.
+- `Text` - This is a built-in composable function that displays a string that is passed as an argument.
 
 ### Creating a new project
 Launch Android Studio and create a new `Empty Copose Project`. Let's name it `Scrolls`.
 
 ![Create Compose project](create-compose-project.png)
 
-### Required dependenies
+### Required dependencies
 
 ### Vertical scrolling
 When working with containers such as a `Box` or a `Surface`, child elements can sometimes get out of view. In such cases, you can use the `Modifier.horizontalScroll` or `Modifier.verticalScroll` modifiers to enable the respective scrolling orientation mode.
@@ -39,8 +39,8 @@ Moving on, let's create a `LazyColumn` that will contain an item with an `image`
 ### Creating a sample list item
 A sample item is used to generate a list of items with similar appearance but might contain different data/content.
 
-#### i). List item model
-A model class is used to define the data used in a sample item.
+#### i). List item model class
+A model class is used to define the data type and its properties used in a sample item.
 
 ```kotlin
 data class ListItem(val name: String)
@@ -104,7 +104,7 @@ fun Preview() {
 ![Sample Item](sample-item.png)
 
 #### iii). List item objects
-The following is a an array of `ListItem` objects. These  items will be used to generate a srollable list.
+The following is an array of `ListItem` objects. These  items will be used to generate a srollable list.
 
 ```kotlin
 private val listItems: List<ListItem> = listOf(
@@ -163,7 +163,7 @@ Upon running the app, you should see a scrollable list of items as shown below:
 Unlike in imperative programming, decrarative programming is quite simple in terms of the number of steps required and the logic implemented.
 
 ### Grouping items with stickyHeaders
-In the following example, we'll be creating a scrollable list of items that will be grouped together with a sticky header. Each header will be identified by the first character of the emements in a common group. This way, each group will have its own header.
+In the following example, we'll be creating a scrollable list of items that will be grouped together with a sticky header. Each header will be identified by the first character of the elemements in a common group. This way, each group will have its own header.
 
 Its called sticky headers because the it is pinned to the top of the list when the user scrolls down.
 
@@ -174,7 +174,7 @@ The code below is an advancement of the [previous example](#iv-display-a-scrolla
 @Composable
 fun DisplayList(items: List<ListItem>) {
     LazyColumn(modifier = Modifier.fillMaxSize(1F)) {
-
+    // Note: This should be done in a viewModel
         val grouped = items.groupBy { it.name[0] }
         grouped.forEach {initial, items ->
             stickyHeader {
@@ -198,7 +198,7 @@ fun DisplayList(items: List<ListItem>) {
 ![Sticky headers](sticky-headers.png)
 
 ### Scroll states
-In Compose, a state is a property of an object that can be changed at run time. We use `LazyStates` to define a state of scrollable components at a any time.
+In Compose, a state is a property of an object that can be changed at run time. We use an inbuilt constructor called `LazyStates` to create a state object used to trace the state and interactions of scrollable components at a any time.
 
 Example:
 
@@ -215,12 +215,47 @@ fun DisplayList(items: List<ListItem>) {
         }
 ```
 
-A LazyState can keep track of the visible items and their position in the list.
-
 ### Scroll positions
+A LazyState can also be used keep track of the positions of the items in the list. Using the listState in the example above, we can keep track of the current scroll position or scroll to a certain valid position.
 
+This is done by using the state's `scrollToItem()` method. This method initiates a suspendable job hence the need to use Coroutines.
+
+#### Add Coroutines dependency
+```gradle
+implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+```
+
+#### Code example
+
+```kotlin
+fun DisplayList(items: List<ListItem>) {
+    val listState = rememberLazyListState()
+
+    LazyColumn(modifier = Modifier.fillMaxSize(1F), state = listState) {
+        val grouped = items.groupBy { it.name[0] }
+        grouped.forEach { initial, items ->
+            stickyHeader {
+                Text(
+                    text = initial.toString(),
+                    modifier = Modifier.padding(10.dp)
+                )
+            }
+            items(items) { item ->
+                ListItem(item = item)
+            }
+        }
+        CoroutineScope(Dispatchers.IO).launch {
+            listState.scrollToItem(items.size-1)
+        }
+    }
+}
+```
+For demonstration purposes, we have scrolled to the last item in the list. This can be advanced such that the list scrolls to a certain remembered position especially during a configuration change or a recomposition.
 
 ### Displaying a Horizontal Scrolable list
-Similar to ``  , we'll create a `LazyRow` that will contain the sample item created earlier:
-### Animating the list items
-Animations are a very important part of any UI. They can be used to give the user a sense of motion when scrolling through a list.
+As the name suggests, the main difference between a vertical and a horizontal scrollable component is the orientation. A `LazyRow` is a scrollable component that can be used to display a horizontal list. Its implementation is very similar to that of a LazyColumn.
+
+### Conclusion
+In this tutorial, we've covered the basics of creating a scrollable list in Compose. We've also learnt how to create sticky headers in a scrollable list. The knowledge gained from this tutorial will be useful in creating a more complex scrollable list.
+
+Happy composing!
