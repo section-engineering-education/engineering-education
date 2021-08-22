@@ -117,7 +117,9 @@ Amazing right? The translation pipeline is translating our text from English to 
 Lastly, we are going to create a function to wrap up all these and display it on a beautiful user interface. We'll be leveraging Gradio for this task.
 
 ### Building the web app for interaction using Gradio
-This web app allows a user to pass through some text and have it translated.
+[Web applications](https://en.wikipedia.org/wiki/Web_application) (web apps) are application softwares that allows interaction with the user on the web browser. Through interaction, a user may request a different type of information, or may even manipulate/change the information they've been given on the screen. Examples of popular web apps that you use everyday includes Twitter, YouTube, Facebook, and Gmail. With these web apps, users can change and manipulate information. 
+
+For our example, the web app allows a user to pass through some text and have it translated.
 
 ```python
 def translate_transformers(from_text):
