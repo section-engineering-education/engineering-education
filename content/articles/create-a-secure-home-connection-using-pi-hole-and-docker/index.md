@@ -87,7 +87,7 @@ To continue, press the tab key to select OK, then enter.
 
 5. The following step will require you to confirm that the IP address and IP gateway (most likely your local router) displayed are correct for the Pi-static hole's IP setting. To update your settings, press enters on Yes if this is right, or No if it isn't.
 
-6. Pi-hole will alert you about any possible IP conflicts. Accept the warning and continue by pressing the enter key.
+6. Pi-hole will alert you about any possible IP conflicts. Continue by pressing the enter key after you accept the warning.
 
 7. Pi-hole comes with a web browser admin panel that you may use to configure and monitor it by default. This is the recommended option for installation, and it is the default choice for the installation process. To continue, press the tab and then enter OK. This will also be required at a later stage to validate the installation of a web server for the admin interface.
 
@@ -95,13 +95,13 @@ To continue, press the tab key to select OK, then enter.
 
 9. You can choose how detailed your Pi-hole statistics should be. In the documentation for Pi-hole, there are five levels, each of which is discussed in great detail. To ensure that you're happy with the default option of showing everything, press the tab and enter.
 
-10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, the terminal will show a final confirmation message. This message will include information about logging in to the web portal and a password that will be generated automatically for you. Enter after pressing the tab. 
+10. The Pi-hole installation will begin once you've chosen your preferred logging level. Once the installation is complete, the terminal will show a final confirmation message. This message will include information about logging in to the web portal and a password that will be generated automatically for you. Click the tab to enter the text.
 
 #### Installing Pi-hole as a Docker container 
 If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first.
 
 #### Installation of a docker container
-1. Open a terminal window and type the following instructions to install Docker on your Raspberry Pi:
+1. To install Docker on your Raspberry Pi, open a terminal window and enter the following commands:
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -114,7 +114,7 @@ wget -O install-docker.sh https://get.docker.com
 sh install-docker.sh
 ```
 
-2. Then, run `sudo usermod -aG docker pi` to allow non-root users to use Docker after the installation has been completed (such as the default pi user on Raspberry Pi OS). Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
+2. To let non-root users to use Docker after the installation is complete, execute `sudo usermod -aG docker pi` (such as the default pi user on Raspberry Pi OS). Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`. Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`.
 
 3.  Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
 
@@ -129,7 +129,7 @@ Download the Docker installation files for Pi-hole from the Pi-hole Github repos
 ```bash
 git clone https://github.com/pi-hole/docker-pi-hole.git
 ```
-To run Pi-hole in a Docker container, you'll need to download the latest files from the Pi-hole Github repo. For your container docker run, a startup script is included in the cloned folder of Pi-hole. Before running this starting script, you might want to look over and change any of the options.
+As a first step, you'll need to obtain the newest files from Pi-Github hole's repository if you want to run it within Docker. For your container docker run, a startup script is included in the cloned folder of Pi-hole. Before running this starting script, you might want to look over and change any of the options.
 
 2. Pi-default hole's outgoing DNS server will be changed to 1.1.1.1 or 8.8.8.8, and other settings, such as the timezone, will be updated automatically by the script. Use a similar TZ database timezone setting if you don't live in the United States, for example, to alter the Time Zone column to suit your time zone.
 
@@ -137,7 +137,7 @@ To run Pi-hole in a Docker container, you'll need to download the latest files f
 
 4. Type `./docker run.sh` in the terminal when you're ready to run the script. A new Docker container should now launch Pi-hole if the script was successful. 
 
-> A password will show in the terminal output if the script is successful. Use this password to continue setting up Pi-hole.
+> Assuming the script is successful, the terminal output will reveal a password for the user. Use this password to continue setting up Pi-hole.
 
 ### How to use Pi-hole as the DNS
 Configuring all of your local network devices to use Pi-hole is time-consuming and inefficient, especially if you want to use Pi-hole on many devices throughout your network.
@@ -148,12 +148,12 @@ Altering your router's nameserver configuration will be different for different 
 
 If not, see your router's manual and use a web browser to access your router using popular IP addresses like `http://192.168.1.1` or `http://192.168.0.1`.
 
-As a rule, your router is set up with the DNS servers of your internet service provider (ISP).
+If you have an internet service provider (ISP), your router is usually set up to use their DNS servers.
  Make sure your DNS server settings (perhaps marked primary/secondary DNS) match your Raspberry Pi's IP address.
 
 We'll instruct every device that's connected in the first instance to redirect all DNS requests through Pi-hole. Any prohibited requests will be ignored, while approved requests will be forwarded to the third-party internet DNS provider configured in your Pi-hole (such as Cloudflare's 1.1.1.1 or Google's 8.8.8.8 public DNS servers).
 
-Any DNS server changes you make may need to be rebooted for them to take effect across your network.
+Reboot your network after making any DNS server changes to ensure they take effect across your network.
 
 ### Conclusion
 In this article, we have learned about how we can block unwanted ads from the internet using Pi-hole and a docker container. By doing this our data packets will be fast to access and minimize losses of data since it's cost-effective.
