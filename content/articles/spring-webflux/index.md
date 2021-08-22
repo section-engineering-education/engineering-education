@@ -14,7 +14,7 @@ In this tutorial, we are going to create a student management system using Sprin
 ### Streams API
 Software developers at Netflix, Twitter, Pivotal, and Redhat created the streams API. Streams API defines four interfaces below.
 
-**Publisher**
+#### Publisher
 The publisher interface emits events to subscribers based on the request sent by the subscribers. Thus, a single publisher can serve several subscribers.
 
 ```java
