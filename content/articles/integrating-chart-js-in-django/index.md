@@ -14,13 +14,17 @@ images:
   - url: /engineering-education/integrating-chart-js-in-django/hero.png
     alt: Integrating Chart.js in Django image
 ---
-Chart.js is an open-source HTML5 based JavaScript chart and renders in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
+Chart.js is an open-source HTML5 based JavaScript library for rendering charts in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
 <!--more-->
 There several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
 
 Why Chart.js?
 
-Chart.js is quite flexible and easy to setup. Plus, you get to choose from about eight different chart types.
+Chart.js is quite flexible and easy to setup. Plus, you get to choose from about eight different chart types. This project has a over of 55K stars on GitHub. Developers prefer Chart.js over other libaries because:
+
+- Charts are animated
+- Charts are customizable
+- Chart.js contains several extensions for improving the interactivity
 
 In this tutorial, we'll be looking at how to integrate Chart.js in Django by building a simple project.
 
@@ -95,13 +99,13 @@ INSTALLED_APPS = [
 ```
 
 ### Creating a model
-A model in Django is a class which represents a single table or a database. It can be used to dynamically load data into a project.
+A model in Django is a class that represents a single table or a database. It can be used to dynamically load data into a project.
 
 Here, in this tutorial, we'll be learning to create a chart that visualizes the trends in usage for different text editors.
 
 For our model, we'll be creating two fields - User field `num_users` and text editor field `editor_name`.
 
-In the `editors` directory, copy and paste the following code in the `models.py` file:
+Under the `editors` directory, copy and paste the following code in the `models.py` file:
 
 ```python
 from django.db import models
@@ -126,7 +130,7 @@ admin.site.register(Editors)
 
 Next, we need to migrate our model to the database.
 
-Migrations are Django's way of publishing changes you make to your models into the database schema. So, when create a new model, we also need to migrate to create the required table in the database. 
+Migrations are Django's way of publishing changes you make to your models into the database schema. So, when creating a new model, we migrate to create the required table in the database. 
 
 Next, we migrate our model by running the commands below:
 
@@ -166,7 +170,7 @@ Click on editor, then click `Add Editor` to add an editor.
 ### Creating a view
 A view in Django is basically a function accepts a web request and returns a web response.
 
-A web response can be an error page, redirect, image or even HTML contents.
+A web response can be an error page, redirect, image or even HTML content.
 
 Now, let's create a view by adding the following to our `view.py` file:
 
@@ -332,9 +336,9 @@ python manage.py runserver
 ### Conclusion
 To conclude, we have learned about Chart.js. We have also learned to integrate charts in a Django app.
 
-In this tutorial we used a `doughnut` chart type, there other chart types you can use.
+In this tutorial, we learned to use `doughnut` chart type. There other chart types you can use.
 
-You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on chat types.
+You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on the chart types.
 
 You can checkout the full code [here](https://github.com/shosenwales/Django-charts) on GitHub.
 
