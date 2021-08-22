@@ -170,7 +170,7 @@ body {
 }
 ```
 
-At the beginning of the CSS code, we have an import line stating that we are obtaining any preferred font form the Google font collection.
+At the beginning of the CSS code, we have an import line stating that we are obtaining any preferred font from the Google font collection.
 
 You may change the font you're using by visiting [here](https://fonts.google.com/).
 
@@ -180,7 +180,7 @@ Lets now add some HTML form components for `formBody`.
 
 #### Creating Form Body [ First name and Last name]
 
-I'm constructing a `<div>` with the class `horizontalGroup` inside `formBody`. Then, inside `horizontalGroup`, we will create two more `<div>` elements with the same class name `formGroup`.
+We are constructing a `<div>` with the class `horizontalGroup` inside `formBody`. Then, inside `horizontalGroup`, we will create two more `<div>` elements with the same class name `formGroup`.
 
 The placement of the `formGroup` on the page is indicated by adding an additional left or right class. Inside `formGroups`, there are 2 more HTML elements: `<label>` and `<input>`, as shown below.
 
@@ -333,7 +333,7 @@ In HTML, the email address will be a distinct block, and the Password and Confir
 </div>
 ```
 
-I don't need to add any additional style to the above code because I'm using the same CSS classes.
+Here we don't need to add any additional style to the above code because we are using the same CSS classes.
 
 #### Creating the Form Footer
 
