@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /create-a-secure-home-connection-using-pi-hole-and-docker/hero.png
+  - url: /create-a-secure-home-connection-using-pi-hole-and-docker/hero.png  
     alt: Pi-hole example image
 ---
 Pi-hole is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers.
@@ -107,6 +107,12 @@ If you want, instead of installing Pi-hole using the script above, you can use D
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
+You may also install Docker manually by downloading the script and running the following command in a terminal:
+
+```bash
+wget -O install-docker.sh https://get.docker.com
+sh install-docker.sh
+```
 
 2. Then, run `sudo usermod -aG docker pi` to allow non-root users to use Docker after the installation has been completed (such as the default pi user on Raspberry Pi OS). Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
 
@@ -151,6 +157,11 @@ Any DNS server changes you make may need to be rebooted for them to take effect 
 
 ### Conclusion
 In this article, we have learned about how we can block unwanted ads from the internet using Pi-hole and a docker container. By doing this our data packets will be fast to access and minimize losses of data since it's cost-effective.
+
+### References
+[Understanding Docker Concepts](section.io/engineering-education/docker-concepts/)
+[How to Set up a Secure Home Network](https://hackernoon.com/how-to-set-up-a-secure-home-network-a3d0f829fd6c)
+[Creating a Cyber Secure Home](https://www.premierbanking.bank/creating-a-cyber-secure-home)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
