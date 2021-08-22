@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /planting-timber-logs-the-right-way/
+title: Planting Timber logs the right way
+description: This article covers Timber android logging library, introduction to android logging, and setup Timber logging in an android application.
+author: michael-johnson-owallah
+date: 2021-08-22T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/planting-timber-logs-the-right-way/hero.png
+    alt: Getting started with Timber logs
+---
+
 Logging is one of the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. Timber, which is a library created by `Jake Wharton` has made logging effortless. This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
 
 <!--more-->
@@ -149,7 +166,7 @@ In this step, we will create the layout.
 
   
 
-### Step 4: The Timber App Class
+#### Step 4: The Timber App Class
 
 In this step, we will write the code for the `Application class of Timber`
 ![creating a class in java](/planting-timber-logs-the-right-way/creating_a_class_java.png)
@@ -190,7 +207,7 @@ class TimberDemoApp : Application() {
 
 ```
 
-###After creating the class, update your `Manifest file` with the name tag. Use your application class as the value as shown below:
+After creating the class, update your `Manifest file` with the name tag. Use your application class as the value as shown below:
 ![updating the manifest](/planting-timber-logs-the-right-way/manifest.png)
 
 #### Step 5: The code. (Main Activity)
@@ -246,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-### Kotlin
+##### Kotlin
 ``` Kotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -306,10 +323,13 @@ Once done, run the app. Here is what you should expect:
 Check out the entire project for `Java` on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)
 
 ### Conclusion
-That's not all about `Logging with Timber`; keep exploring. I hope you now have an idea on how to "plant your `Timber` logs".
+That's not all about `Logging with Timber`; keep exploring. Implement logging using Timber in your android applications and imporve the readablity of your application logs.
 
 ### Resources
 
 -  [Timber Official Documentation](https://github.com/JakeWharton/timber)
 
 -  [Android official documentation](https://developer.android.com/studio/debug/am-logcat)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
