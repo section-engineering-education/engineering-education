@@ -47,7 +47,7 @@ Use this [page](https://www.computernetworkingnotes.com/ccna-study-guide/downloa
 
 - **Wildcard Mask** - Inverses of subnet masks configured on interfaces used by OSPF to specify the range of IP addresses to examine for a match, usually 32 bit long.
 
-- A logical grouping of OSP[F networks, routers, and links with the same area identification is referred to as an **OSPF area**. A router within an area is requitred to have a topological database foe the area it is part of.
+- A logical grouping of OSPF networks, routers, and links with the same area identification is referred to as an **OSPF area**. A router within an area is requitred to have a topological database foe the area it is part of.
 
 - **OSPF neighbors** - Refers to the relationship that exists between two OSPF-enabled routers in the same OSPF area that are connected by a common network.
 
@@ -129,7 +129,7 @@ Router(config-router)   #do write
 ```
 
 ```bash
-Router(config-if)    #router ospf 1
+Router(config-if)   #router ospf 1
 Router(config-router)   #network 192.168.30.0 0.0.0.255 area 0
 Router(config-router)   #network 192.168.20.0 0.0.0.255 area 0
 Router(config-router)   #do write
