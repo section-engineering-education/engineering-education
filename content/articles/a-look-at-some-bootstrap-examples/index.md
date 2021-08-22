@@ -1,7 +1,7 @@
 ### Introduction
 [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) is a front-end framework for developing responsive, mobile-first projects on the web. It includes a powerful grid system, a flexible media object, and a powerful color system.
 
-It is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/). It includes a powerful grid system, a flexible media object, and a powerful color system.
+It is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
 ### Advantages of using Bootstrap:
 1. It saves on time and effort. With bootstrap, you can focus on writing your content, and the framework will take care of the rest, therefore, saving you time and effort.
 2. Developers can customize the framework to their needs. An advantage of bootstrap is that you can change it to your own.
@@ -38,7 +38,7 @@ In the folder containg the installed bootstrap files, create a `index.html` file
   </head>
   <body>
     <div class="alert alert-success">
-      <strong>Wow!</strong>
+      <strong> Congratulation!</strong>
       <p>Bootstrap is working Successful!</p>
     </div>
   </body>
@@ -166,7 +166,7 @@ Assume you want to add a modal plugin on your page. Below is an example to accom
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
               <div class="modal-header">
-                <p>You have created a modal. Congarats!</p>
+                <p>You have created a modal.  Congrats!</p>
               </div>
               <div class="modal-body">
                 <p>More information</p>
