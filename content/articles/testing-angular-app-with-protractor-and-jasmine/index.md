@@ -15,7 +15,7 @@ This means that the protractor cannot be used to test react or due but angular a
 
 **AngularJs** is an open-source javascript framework used to build front-end applications.
 
-**End-to-End** simply refers to the test that are being carried out for operations that flow through the various modules that make up your angular application flow. e.g Registration to Login to Profile to Logout can be an end to end test flow. While each individual module here, Registration or Login can have unit test operate on them.
+**End-to-End** this refers to the test that are being carried out for operations that flow through the various modules that make up your angular application flow. e.g Registration to Login to Profile to Logout can be an end to end test flow. While each individual module here, Registration or Login can have unit test operate on them.
 
 **Jasmine** is a behaviour-driven development framework for testing JavaScript code. 
 
@@ -35,20 +35,18 @@ Heres a reference to best style guides for protractor testing [ Protractor style
 
 #### Why use Jasmine
 
-Jasmine is well documented
+Jasmine is a well documented 
 It is supported by Protractor out of the box
 You can use beforeAll and afterAll
          
 
 #### Setting Up Protractor test
 
-``` Download and install nodeJs https://nodejs.org/en/download/```
+- Download and install [nodeJs](https://nodejs.org/en/download/)
 
 Next install protractor globally so it can be accessible anywhere
 
 ```npm install -g protractor```
-
-
 
 
 
@@ -64,7 +62,7 @@ Create a conf.js file in your root directory of your angular application and inp
 ```javascript
     exports.config = {
         directConnect: true,
-        specs: ['./**/tests/**-spec.js’],  //Specifies the link to test file(s)
+        specs: ['./**-spec.js’],  // Specifies the link to test file(s)
     
         framework: ‘jasmine’,
     
@@ -76,31 +74,9 @@ Create a conf.js file in your root directory of your angular application and inp
 
 For now these basic configuration will get your test up and running. Feeling unsatisfied, checkout this link provided. [ Protractor API ](https://www.protractortest.org/#/api-overview) for much specific issues.
 
+The value for the specs in the above code tells protractor to check the current directory and execute all files that have the letters "-spec.js" as their ending characters. This makes use of relative paths to files
 
-
-Create a test-spec.js file anywhere you see fit in your directory. Here you will write your tests. For now test using the code below in your test
-
-```javascript
-    describe('angularjs list app’, function() {
-        it(‘A’dd a list, function() {
-            browser.get('https://angularjs.org');
-
-            element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-            element(by.css('[value="add"]')).click();
-
-            let todoList = element.all(by.repeater('todo in todoList.todos'));
-            expect(todoList.count()).toEqual(3);
-            expect(todoList.get(2).getText()).toEqual('write first protractor test');
-
-            // You wrote your first test, cross it off the list
-            todoList.get(2).element(by.css('input')).click();
-            let completedAmount = element.all(by.css('.done-true'));
-            expect(completedAmount.count()).toEqual(2);
-        });
-    });
-```
-
-The describe and it syntax  used in the code is gotten from the Jasmine framework. browser is a global created by Protractor, which is used for browser-level commands such as navigation with browser.get.
+Create a test-spec.js file anywhere you see fit in the root directory. Here you will write your tests. For now test using the code below in your test
 
 
 
@@ -115,60 +91,94 @@ On your terminal navigate to the directory where the conf.js  file is located an
 
 Congratulations you have written your first test case in protractor.
 
-##### Jasmine syntax
+### Jasmine syntax
 
-Suites: describe Your Tests
-The describe function is for grouping related specs, typically each test file has one at the top level. The string parameter is for naming the collection of specs, and will be concatenated with specs to make a spec's full name. This aids in finding specs in a large suite. If you name them well, your specs read as full sentences in traditional BDD style.
-
+Suites: A Suite defines/describes your tests
+ A suite is identified by a describe funtion. The describe function is used to group specs that serve the same meaning. Just like in a component of a system or set of actions that can be grouped together. The first parameter is a string value that is used as an identifier for a set of tests. 
+ 
 
 ```javascript
-    describe("A suite", function() {
-        it("contains spec with an expectation", function() {
-        expect(true).toBe(true);
+    describe("A String that specifies a suite", function() {
+        it("Contains an expectation", () => {
+            let value = true;
+            expect(value).toBe(true);
         }); 
     });
 ```
 
 
 
-Specs
-Specs are defined by calling the global Jasmine function it, which, like describe takes a string and a function. The string is the title of the spec and the function is the spec, or test. A spec contains one or more expectations that test the state of the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec. A spec with one or more false expectations is a failing spec.
+### Specs
+You can define a spec by using a global function called "it". "it", just like describe takes a string and a function. The string specifies the title of the spec and the "function" defines the spec, or test. A spec can contain multiple expectations described using "expect" statement ( which will be discussed later ) and is used to test the state of the code. 
+An expectation on its own can amount to either one of the following.
+Either it amounts to true and the expectation passes or false it amounts to false and the expectation fails. If all the expectations in a test passes it means the test itself passes but if an expectation fails then the test in turn will be a failed test.
 
 
-It's Just Functions
-Since describe and it blocks are functions, they can contain any executable code necessary to implement the test. JavaScript scoping rules apply, so variables declared in a describe are available to any it block inside the suite.
+### It
+It in a nutshell is a function. They can include executable code required to tcarry out the test needed. Since jasmine is a javascript testing framework, javascript variable scope applies in the same way it does with normal javascript codes. a variable defined within a function is a local variable and is visible only with that particular function. This helps you plan out you data sharing between "It" blocks. If you want to share data between test blocks just use a global variable.
+
+
+### Expect
+These are already describe before. They are created using the functions and takes in a value called actual. It can be chained with a Matcher function. This can take in an argument which is the expected value.
+
+
+### Matchers
+A matcher is an implementation of a boolean outcome. i.e The result of a matcher checks to confirm if something is either true or it is false. In this case it checks the outcome of the expectation against a given outcome/value. If there is a match or there is none ( depending on the test case ), will determine if the test passes or if the test fails. In
+Jasmine you will find a huge set of matchers that can help you achieve the expectation you want to test for. These can be found in the API docs 
+
+
+### Excersice
+For this excersice we will be carring out a test on a popular website. We will test first on google search. We will then navigate to www.video.blender.org. Then we will proceed to make a search for free videos and check the DOM interaction it causes.
+
 
 ```javascript
-    describe("A suite is just a function", function() {
-        var a;
-        it("and so is a spec", function() {
-        a = true;
+describe("Testing exercise for protractor and Javascript application", function(){
+  /**
+   *  Because some of the request to be made will not happen in order but asynchronously 
+   *  we need to use an async and await.  
+   */
 
-        expect(a).toBe(true);
-        });
-    });
+  it("Navigate to Blender Video search for videos",  async function(done){
+    
+    // Awaiting browser navigation to the specific webpage specified as a string parameter
+    let url = "https://video.blender.org/"
+    await browser.get(url);
+    // Expecting the browser to have navigated to the page.
+    expect(await browser.getCurrentUrl()).toBe(url);
+
+    // Getting elements from the page that we will be using
+    let searchBar = element(by.css('#search-video'));
+    let searchButton = element(by.css('.icon-search'));
+    let searchResult = element(by.css('.search-result'));
+
+    // Using protractor API method to insert values into elements on the page
+    searchBar.sendKeys("free");
+
+    // Using protractor API method to perform click event on the page
+    searchButton.click();
+
+    // Expecting a list of reuslt which will be contained within a class.
+    // We use that class to test that theres an outcome to the search operation.
+    // We are not sure of the consistency of the type of data stored in their database so we only perform an interactive test.
+    expect(searchResult.getCssValue('display')).toBe('block');
+
+    // This appends to browser input elemet.
+    searchBar.sendKeys('neverdwelt');
+    searchButton.click();
+    
+    // Also expecting an interactive change whan we search for no value.
+    expect(searchResult.getCssValue('display')).toBe('block');
+
+    // This tells the test that we are done with our expectations.
+    // Once this is called out testing ends. The done() is that which is passed in as a variable to the "it" function.
+    done();
+
+  })
+})
 ```
 
-
-Expectations
-Expectations are built with the function expect which takes a value, called the actual. It is chained with a Matcher function, which takes the expected value.
-
-
-Matchers
-Each matcher implements a true or false comparison between the actual and the expected value. It reports to Jasmine if the expectation is true or false. Jasmine will then pass or fail the spec.
-Any matcher can evaluate to a negative assertion by chaining the call to expect with a not before calling the matcher.
-Jasmine has a rich set of matchers included, you can find the full list in the API docs There is also the ability to write custom matchers for when a project's domain calls for specific assertions that are not included in Jasmine.
-
-```javascript
-    describe("The 'toBe' matcher compares with ===", function() {
-	    it("and has a positive case", function() {
-  	        expect(true).toBe(true);
-	    });
-	    it("and can have a negative case", function() {
-  	        expect(false).not.toBe(true);
-	    });
-    });
-```
+There are a lot of options present which we can use to capture DOM elements so we can use and manipulate. 
+Also available are methods which can be used to provide interaction with the elements on the page.
 
 For more reference check out the jasmine docs
 [Your_first_suite](https://jasmine.github.io/tutorials/your_first_suite)
@@ -179,7 +189,7 @@ References
 [Protractor API](https://www.protractortest.org/#/api)
 
 
-
+    
 
 
 
