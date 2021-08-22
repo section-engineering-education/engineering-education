@@ -24,7 +24,7 @@ In this situation, the solution will be produced locally using Shell executor on
 - Have a computer running Windows operating system.
 - Download git into your machine. [Click here to download](https://git-scm.com/downloads.).
 - Download `MSBuild` or use the visual studio building tools installed in the visual studio.
-- Use the same .exe files used to install MSBuild to install `VS Web Build` by running the command ` vs_buildtools.exe — add Microsoft.VisualStudio.Workload.WebBuildTools` in the command-line
+- Use the same .exe files used to install MSBuild to install `VS Web Build`. We can achieve this by running the command ` vs_buildtools.exe — add Microsoft.VisualStudio.Workload.WebBuildTools` in the command-line.
 - Download Nuget to reinstall our application's packages from the official website. [Click here to download](https://www.nuget.org/downloads).
 
 ### Table of contents
@@ -39,7 +39,7 @@ To install and run GitLab Runner on Windows, you'll need Git and the user passwo
 step-by-step guide:
 1.  Make a folder on your computer first. For example `H:\Runners`
 
-2.  To install the GitLab Runner, first, download the binaries for either the Windows 64-bit or 32-bit operating systems and place them in the folder you created. Please note that the following assumes that you've changed GitLab-runner.exe to GitLab-runner (optional).
+2.  To install the GitLab Runner, first, download the binaries for either the Windows 64-bit or 32-bit operating systems. Then, place them in the folder you created. Please note that the following assumes that you've changed GitLab-runner.exe to GitLab-runner (optional).
 
 > The binary down depends on your computer specifications of the operating system.
 
@@ -59,14 +59,14 @@ The following is the process of registering a runner:
 - Provide the executor for the runner. Enter docker for the majority of usage cases.
 - For projects that don't have a default image defined, you'll be requested to select one if you selected docker as your executor. GitLab-ci.yml.
 
-6. Install GitLab Runner as a service and start it. You can either use the built-in System Account using the command `.\gitlab-runner.exe installs` to install and `.\gitlab-runner.exe start` to start the runner (which is preferred) or a user account to execute the service. Use the commands `.\gitlab-runner.exe install --user "Input your user name" --password "Input your password"` to install and `.\gitlab-runner.exe start` to start the runners.
+6. Install GitLab Runner as a service and start it. You can either use the built-in System Account using the command `.\gitlab-runner.exe installs` to install and `.\gitlab-runner.exe start` to start the runner (which is preferred). Or a user account to execute the service. Use the commands `.\gitlab-runner.exe install --user "Input your user name" --password "Input your password"` to install. And, `.\gitlab-runner.exe start` to start the runners.
 
 ### Configuring the Runners
 GitLab Runner is a build instance that can be used to perform jobs across several machines and send the results to GitLab. It can be installed on different users' computers, servers, and local devices. Once the runner has been installed, you can choose to make it shared or specific.
 
 > You can use either specific or shared runners to service your jobs.
 
-**Shared Runners**- These runners are handy for jobs that have similar requirements across numerous projects. Instead of using several runners for multiple projects, you may handle multiple projects with a single or small number of runners that are easy to maintain and update
+**Shared Runners**- These runners are handy for jobs that have similar requirements across many projects. Instead of using several runners for many projects, you may handle them with a single or small number of runners that are easy to maintain and update.
 
 **Specific Runners**- These runners are important for deploying a specific project if the job has specific criteria or demands. Specific runners organize their data using the FIFO (First In First Out) method, which works on a first-come, first-served basis. An individual runner can be registered with the project registration token. An encrypted version of a certain Runner.
 
@@ -148,7 +148,7 @@ These stages include:
 **deploy stage**- In this stage, we put into practice the solution we built. From the example script above, the `CI_COMMIT_BRANCH` variable shows the name of the commit branch. These features are available in all branch pipelines, including the default branch pipelines. Merge request and tag pipelines are not supported.
 
 ### Conclusion
-In this article, we have understood what GitLab runners are, their installation and configuration, and finally the creation of GitLab yml files. I would urge the reader to dig deeper into this topic and be able to build concrete yml files.
+In this article, we have understood what GitLab runners are, their installation and configuration.  Finally, we looked at the creation of GitLab yml files. I would urge the reader to dig deeper into this topic and be able to build concrete yml files.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
