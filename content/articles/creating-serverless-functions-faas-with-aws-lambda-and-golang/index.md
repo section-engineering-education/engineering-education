@@ -11,9 +11,9 @@ In this article, we will not only look at how to use FaaS, but we will also crea
 
 ### Setting up a Lambda Function
 
-1. After Creating your AWS account, on the main dashboard, search for Lambda.![search-aws-lambda](search-aws-dashboard.png)When you click on Lamda, you will see the AWS lambda page.![aws-lambda-dashboard](aws-lambda-dashboard.png)
-2. Click on the Create Function button to set up a new AWS Lambda function.![aws-create-lambda-setting](aws-create-lambda-setting.png)The name of the function is user-profile. Click on Create function.
-3. On the function’s dashboard, we will upload the function we want to run in the cloud. ![aws-lambda-function-dashboard](aws-lambda-function-dashboard.png)In the next section, we will see how to create a function that will run on AWS lambda.
+1. After Creating your AWS account, on the main dashboard, search for Lambda.![search-aws-lambda](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/search-aws-dashboard.png)When you click on Lamda, you will see the AWS lambda page.![aws-lambda-dashboard](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-dashboard.png)
+2. Click on the Create Function button to set up a new AWS Lambda function.![aws-create-lambda-setting](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-create-lambda-setting.png)The name of the function is user-profile. Click on Create function.
+3. On the function’s dashboard, we will upload the function we want to run in the cloud. ![aws-lambda-function-dashboard](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-function-dashboard.png)In the next section, we will see how to create a function that will run on AWS lambda.
 
 ### Creating the User-Profile Function in Golang
 
@@ -116,15 +116,15 @@ Go build -o main main.go
 
 You can now upload the zip file generated. You can test the function you uploaded right on AWS to see if it works well. First, we need to change the handler's name from the default `hello` to `main`. The Lambda function handler is the method in your function code that processes events.
 
-![aws-lambda-edit-hanler](aws-lambda-edit-handler.png)
+![aws-lambda-edit-hanler](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-edit-handler.png)
 
 Click on Edit:
 
-![aws-lambda-runtime-settings](aws-lambda-runtime-settings.png)Change the handler field from hello to main and save.
+![aws-lambda-runtime-settings](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-runtime-settings.png)Change the handler field from hello to main and save.
 
 ### Testing the Function on AWS Lambda
 
-1. On the main dashboard, click on Test![aws-lambda-dashboard-test](aws-lambda-test.png)
+1. On the main dashboard, click on Test![aws-lambda-dashboard-test](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-test.png)
 2. Input this sample data in the json editor on the page and click on Test.
 
 ```json
@@ -141,9 +141,9 @@ Click on Edit:
 
 ```
 
-![aws-lambda-test-prompt](aws-lambda-test-prompt.png)
+![aws-lambda-test-prompt](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-test-prompt.png)
 
-The function we uploaded is executed. This is the result.![aws-lambda-test-result](aws-lambda-test-result.png)
+The function we uploaded is executed. This is the result.![aws-lambda-test-result](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/aws-lambda-test-result.png)
 
 ### Calling the Lambda Function From Golang
 
@@ -275,9 +275,9 @@ func main() {
 
 You need to create an [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) user with the correct permissions. Store the `aws_access_key_id` and the `aws_secret_access_key` in a `.env` file in the directory you are currently working in.
 
-![sample-env-file](sample-env-file.png)After running the program, AWS will execute the cloud function, and you will get this result.
+![sample-env-file](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/sample-env-file.png)After running the program, AWS will execute the cloud function, and you will get this result.
 
-![sample-program-output](sample-program-output.png)
+![sample-program-output](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/sample-program-output.png)
 
 The program passes in some arguments into the cloud function and returns the result.
 
