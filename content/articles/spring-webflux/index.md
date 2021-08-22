@@ -1,6 +1,6 @@
 Reactive programming is a programming paradigm that supports an asynchronous, event-driven, and non-blocking approach to data processing. The reactive programming paradigm organizes events and data as streams.
 
-In the reactive programming paradigm, a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat applications.
+In the reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat applications.
 
 In this tutorial, we are going to create a student management system using Spring Webflux and MongoDB.
 
@@ -24,8 +24,8 @@ public interface Publisher<T>
 }
 ```
 
-**Subscriber**
-`Subscriber` interface listens and receives events from the `Publisher` interface. `Subscriber` interface has four methods to handle the response from the `Publisher` interface.
+#### Subscriber
+The `Subscriber` interface listens and receives events from the `Publisher` interface. The `Subscriber` interface has four methods to handle the response from the `Publisher` interface.
 
 ```java
 public interface Subscriber<T> 
@@ -37,8 +37,8 @@ public interface Subscriber<T>
 }
 ```
 
-**Subscription**
-`Subscription interface defines a one-to-one relationship between the `Publisher` and `Subscriber` interfaces. It can be used to request data and also cancel the request.
+#### Subscription
+The `Subscription` interface defines a one-to-one relationship between the `Publisher` and `Subscriber` interfaces. It can be used to request data and also cancel the request.
 
 ```java
 public interface Subscription<T> 
@@ -48,8 +48,8 @@ public interface Subscription<T>
 }
 ```
 
-**Processor**
-`Processor` interface represents the processing stage containing both the `Publisher` and the `Subscriber`.
+#### Processor
+The `Processor` interface represents the processing stage containing both the `Publisher` and the `Subscriber`.
 
 ```java
 public interface Processor<T, R> extends Subscriber<T>, Publisher<R> 
@@ -86,9 +86,9 @@ flux.subscribe();
 ```
 
 ### Application Setup
-We are going to use [spring initialr](https://start.spring.io/) to generate our application startup code.
-1. On your web browser, navigate to [spring initialr](https://start.spring.io/).
-2. Input the group as `io.section and name as `webfluxexample`.
+We are going to use [spring initializr](https://start.spring.io/) to generate our application startup code.
+1. On your web browser, navigate to [spring initializr](https://start.spring.io/).
+2. Input the group as `io.section` and name as `webfluxexample`.
 3. Add `Spring webflux`,`Mongo reactive`, and `lombok` as project dependencies.
 4. CLick generate to download the startup project files as a zip.
 5. Extract the zip file and open the project in your favorite code editor or IDE.
@@ -126,9 +126,9 @@ public class ApplicationConfig {
     }
 }
 ```
- - The code snippet above sets the path to the `application.properties` file. It contains the project configurations.
+ - The code snippet above sets the path to the `application.properties` file. This file contains the project configurations.
 
-3. Create a new file named `MongoConfig.java` in the `config` package we created earlier and the code snippet below.
+3. Create a new file named `MongoConfig.java` in the `config` package we created earlier and add the code snippet below.
    
 ```java
 @Configuration
