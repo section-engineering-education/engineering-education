@@ -7,7 +7,7 @@ Throughout this tutorial, we will be using Tailwind to create and style up our m
 
 The modal dialog will look like this when fully created:
 
-![Modal Dialog](modal-dialog.png)
+![Modal Dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog.png)
 
 ### Prerequisites
 
@@ -167,6 +167,8 @@ The classes will do the following
 For the icon, it is has a height and width of 24px. It also has a green color and background too to make it pop.
 
 This is how it looks like:
+
+![Icon](/engineering-education/creating-a-modal-dialog-with-tailwind-css/icon.png)
 
 Afterwards, we will add some content to it as shown below:
 
