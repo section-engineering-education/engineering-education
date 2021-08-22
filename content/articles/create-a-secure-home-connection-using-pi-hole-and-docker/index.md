@@ -160,7 +160,9 @@ In this article, we have learned about how we can block unwanted ads from the in
 
 ### References
 [Understanding Docker Concepts](section.io/engineering-education/docker-concepts/)
+
 [How to Set up a Secure Home Network](https://hackernoon.com/how-to-set-up-a-secure-home-network-a3d0f829fd6c)
+
 [Creating a Cyber Secure Home](https://www.premierbanking.bank/creating-a-cyber-secure-home)
 
 ---
