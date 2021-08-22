@@ -1,25 +1,10 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /image-preprocessing-in-python/
-title: Getting Started with Image Preprocessing in Python
-description: In this article we will understand and implement image pre-processing techniques used in majority of the computer vision applications.
-author: adhinga-fredrick
-date: 2021-08-20T00:00:00-18:00
-topics: [Languages]
-excerpt_separator: <!--more-->
-images:
-
-  -url: /engineering-education/image-preprocessing-in-python/hero.jpg
-   alt: Image Preprocessing in Python example image
----
+﻿### Getting Started with Image Data Pre-processing in Python
 
 Image data processing is one of the most under explored problems in the data specialists community. Every developer has his/her way of doing it. In Python; Pytorch, OpenCV, Keras, Tensorflow, Pillow, etc. are but a few of the tools used in image preprocessing.
 
 ### Introduction
 
-When building a machine learning/computer vision project, one thing we always need is data. In this case, image data. A few problems associated with image data include complexity, inaccuracy and inadequecy. This is why before building a computer vision model, it is important that the data is preprocessed (cleaned and processed to the desired format) in order to achieve the desired results.
+When building a machine learning/computer vision project, one thing we always need is data. In this case image data. A few problems associated with image data include complexity, inaccuracy and inadequecy. This is why before building a computer vision model, it is important that the data is preprocessed (cleaned and processed to the desired format) in order to achieve the desired results.
 
 In this tutorial, we shall be looking at **image data pre-processing**, which is the process of converting image data into a form that allows machine learning algorithms to solve it. It is often used in increasing a model's accuracy and reducing its complexity.
 
@@ -29,14 +14,14 @@ There are several techniques used to preprocess image data. Examples include; im
 
 To follow through the tutorial one needs:
 
-1. A Google or Kaggle account i.e on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true), or [Kaggle notebooks](https://www.kaggle.com/code) (, or have Python and Jupyter Notebook installed on your machine.)
+1. A google or kaggle account i.e on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true) or [Kaggle notebooks](https://www.kaggle.com/code) ( or have Python and Jupyter Notebook installed on your machine.)
 2. Have Python knowledge
 
 As for this tutorial we shall be using [Google Colab.](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true). After creating a new notebook, our first step will be to load data onto our colab environment.
 
 ### Mounting Google Drive onto Colab
 
-We shall first download the [data](https://www.kaggle.com/vishweshsalodkar/wild-animals/download) and then upload it to our Google [Drive](https://drive.google.com/drive/u/0/my-drive). After that, we will mount our drive to colab using the code below:
+We shall first download the [data](https://www.kaggle.com/vishweshsalodkar/wild-animals/download) and then upload it to our google [drive](https://drive.google.com/drive/u/0/my-drive). After that, we will mount our drive to colab using the code below:
 
 ```python
 from google.colab import drive
@@ -66,7 +51,7 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-Once this is done, we will go ahead and import the data which is now on Google Drive using the code block below:
+Once this is done, we will go ahead and import the data which is now on google drive using the code block below:
 
 ```python
 # Importing and Loading the data into data frame
@@ -98,7 +83,7 @@ By executing the above code block, we shall randomly print an image from the dat
 
 ![plotted image](/engineering-education/image-preprocessing-in-python/plotted_image.jpg)
 
-### Data preprocessing
+### Data Preprocessing
 
 Now that we're done with importing libraries and data, we shall go into data preprocessing. Since images exists in different formats, i.e natural, fake, grayscale etc., we need to take in these considerations and standardize them before feeding them into a neural network.
 
@@ -127,9 +112,9 @@ i.suptitle('Original & RGB image channels')
 Output
 ![rgb](/engineering-education/image-preprocessing-in-python/rgb.jpg)
 
-#### Grayscale conversion
+### 1. Grayscale conversion
 
-Grayscale is simply converting images from colored to black and white. It is normally used to reduce computation complexity in machine learning algorithms. Since most pictures don't need color to be recognized, it is wise to use grayscale which reduces the number of pixels in an image hence reducing the computations required.
+Grayscale is simply converting images from colored to black and white. It is normally used to reduce computation complexity in machine learning algorithms. Since most pictures don't need color to be recognized, it is wise to use grayscale which reduces the number of pixels in an image hence reducing the computation complexity.
 
 Execute the code below to convert the original image to grayscale:
 
@@ -141,11 +126,17 @@ plt.imshow(gray_image, cmap = 'gray')
 Output
 ![gray_scale](/engineering-education/image-preprocessing-in-python/gray_scale.jpg)
 
->**NB**: Converting images to grayscale might not always be practical in solving some problems. A few examples where it would impractical to use grayscale include: _traffic lights_, _healthcare diagnosis_, _autonomous vehicles_, _agriculture_, etc. The best way to know whether to use it or not depends on your human visual ability to be able to identify an object without colour.
+>**NB**: Converting images  to grayscale might not always be practical in solving some problems. A few examples where it would impractical to use grayscale include; traffic lights, healthcare diagnosis, autonomous vehicles, agriculture, etc. The best way to know whether to use it or not depends on your human visual ability to be able to identify an object without colour.
 
-#### Normalization
+### 2. Normalization
 
-Also referred as _data re-scaling_, it is the process of projecting image data pixels (intensity) to a predefined range (usually `(0,1)` or `(-1, 1)`).  This is commonly used on data of different formats and you want to normalize all of them so you can apply the same algorithms over them.
+Also referred as data re-scaling, is the process of projecting image data pixels (intensity) to a predefined range (usually `(0,1)` or `(-1, 1)`).  This is commonly used on data of different formats and you want to normalize all of them so you can apply the same algorithms over them.
+
+Normalization is usually applied to convert an image pixel values to a normal or more familiar sense. It's benefits include:
+
+- Fairness across all images - For example, scaling all images to an equal range of [0,1] or [-1,1] allows all images to contribute equally to the total loss rather than when other images have high and low pixels ranges which would give strong and weak loss respectively.
+
+- Provides a standard learning rate - Since high pixel images require a low learning rate and low pixel images high learning rate, re-scaling helps to provide a standard learning rate for all images.
 
 Let's write the code below to normalize our data
 
@@ -157,17 +148,21 @@ plt.imshow(norm_image)
 Output
 ![normalization](/engineering-education/image-preprocessing-in-python/norm.jpg)
 
-#### Data Augmentation
+### 3. Data Augmentation
 
-_Data augmentation_ is the process of making minor alterations on existing data to increase it's diversity without collecting new data. It is a technique basically used for enlarging a dataset. Some of the common data augmentation techniques include _horizontal & vertical flipping_, _rotation_, _cropping_, and _shearing_, etc.
+**Data augmentation**  is the process of making minor alterations on existing data (random transformatioms) to increase it's diversity without collecting new data. It is a technique basically used for enlarging a dataset.
+
+Performing data augmentation aids to prevent a nueral network from learning irrelavant features which results to a better model performance.
+
+Some of the common data augmentation techniques include horizontal & vertical flipping, rotation, cropping, and shearing etc.
 
  There are normally 2 types of augmentation:
 
-- _Offline augmentation _- used for small datasets.
+- Offline augmentation - used for small datasets.
 
 It is normally applied in the data pre-processing step. It is the one we shall be covering today.
 
-- _Online augmentation _- used for large datasets.
+- Online augmentation - used for large datasets.
 
 It is normally applied in real-time.
 
@@ -175,7 +170,7 @@ For this tutorial we shall be using **Keras's** `ImageDataGenerator` class to pe
 
 Let's now look at the different mostly used techniques of data augmentation:
 
-##### Shifting
+### a. Shifting
 
 This is the process of shifting image pixels horizontally or vertically.
 
@@ -216,9 +211,9 @@ Output
 
 ![shift](/engineering-education/image-preprocessing-in-python/shift.jpg)
 
-##### Flipping
+### b. Flipping
 
-This is a process of reversing the rows or columns of pixels in either vertical or horizontal cases respectively.
+This is a processes of reversing the rows or columns of pixels in either vertical or horizontal cases respectively.
 
 Let's do a random flip with both horizontal and vertical flips.
 From the [code above](#a-shifting), change the **ImageDataGenerator** parameters as shown below:
@@ -233,7 +228,7 @@ Output
 
 ![flipping](/engineering-education/image-preprocessing-in-python/flip.jpg)
 
-##### Rotation
+### c. Rotation
 
 This is the process of rotating an image by a specified degree.
 
@@ -247,7 +242,7 @@ Output
 
 ![rotation](/engineering-education/image-preprocessing-in-python/rotate.jpg)
 
-##### Changing brightness
+### d. Changing brightness
 
 This is the process of increasing or decreasing the contrast of an image.
 
@@ -263,17 +258,19 @@ Output
 
 Other Augmentation techniques include:
 
-##### Cropping
+### e. Cropping
 
  This the process of creating a random subset of an original image which is then resized to the size of the original image.
 
-##### Scaling
+### f. Scaling
 
  An image can be scaled either inward or outward.  When scaling an image outward, the image becomes bigger than the original and vise versa.
 
-#### Standardizing images
+### 4. Standardizing images
 
-**Standardization** is a method that scales and preprocesses images to have similar heights and widths. It rescales data to have a standard deviation of 1 (unit variance) and a mean of 0.
+**Standardization** is a method that scales and preprocesses images to have similar heights and widths. It simply rescales data to have a standard deviation of 1 (unit variance) and  a mean of 0.
+
+By transforming and standardizing data, standardization helps to improve the quality and consistency of our data.
 
 From the [code above](#a-shifting), change the **ImageDataGenerator** parameters as shown below:
 
@@ -285,9 +282,6 @@ datagen = ImageDataGenerator(featurewise_center =True,
 
 ### Conclusion
 
-Having explored the popular and commonly used image preprocesing techniques, what now remains is modelling your machine learning models to the desired level of high accuracy and performance. We are now ready to jump in to building custom computer vision projects.
+Having explored the popular and commonly used image preprocesing techniques, what now remains is modelling your machine learning models to the desired level of high accuracy and performance. We are now ready to jump in to our computer vision  projects  and reduce the projects luggage.
 
 Good luck!
-
----
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
