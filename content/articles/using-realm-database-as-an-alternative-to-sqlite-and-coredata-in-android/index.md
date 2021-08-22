@@ -1,43 +1,40 @@
-Realm is an open-source, developer-friendly  lightweight mobile database. It can be a good alternative to both SQLite and Coredata. Realm is faster and has tons of new features such as JSON support, a easy to use API, notifications when data changes, it is cross-platform, faster in terms of querying, and it is fully encrypted all of which makes mobile development easy.
+[Realm](https://realm.io/) is an open-source, developer-friendly lightweight mobile database. It can be a good alternative to both SQLite and CoreData. Realm is faster and has tons of new features such as `JSON` support, an easy-to-use API, notifications when the data changes, cross-platform support, faster in terms of querying, and it is fully encrypted all of which makes mobile development easy.
+
 In this tutorial, we are going to learn the basics of Realm for Android.
 
 ### Prerequisites
-- Android Studio Installed
-- Good knowledge on creating and running Android applications
-- Basic information about the Kotlin programming language.
-- Working with ViewModels and Livedata
+To follow this tutorial, you should have:
+- [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
+- Good knowledge of creating and running Android applications.
+- Basic information about the [Kotlin](https://kotlinlang.org/) programming language.
+- A good understanding of [MVVM architecture](https://en.wikipedia.org/wiki/Model_View_ViewModel) in Android.
 
 ### SQLite database
-Lightweight, open source, structured query base, standalone, offline database for Android devices. It supports embedded relational database features.
-The created database will be stored in a the device's local directory and data will be  represented in text format
+Lightweight, open-source, structured query base, a standalone, offline database for Android devices. It supports embedded relational database features.
+The database is stored on the device's local directory and data is represented in text format
 
-Android devices are shipped with a built in SQLite database implementation. SQLite is a relational database, which contains tables made of rows and columns, indexes and many more. Relational databases like SQLite have a schema which store information about, tables, relationships, triggers, indexes etc.
+Android devices are shipped with a built-in SQLite database implementation. SQLite is a relational database, that contains tables made of rows and columns, indexes, and many more. Relational databases like SQLite have a schema that stores information about, tables, relationships, triggers, indexes, etc.
 
-Room persistence library is an abstraction library that works on top of SQLite.  It allows more robustness and ease of harnessing the power of SQLite. In other words, the Room  is an (ORM) Object Relational Mapping library.
+Room persistence library is an abstraction library that works on top of SQLite. It allows more robustness and ease of harnessing the power of SQLite. In other words, the Room is an (ORM) Object Relational Mapping library.
 
+### Core data
+Core data is a data persistence framework created and maintained by Apple. Developed for both macOS and iOS Operating Systems. It saves structured data locally on the device. 
 
-### Coredata
-Coredata is a data persistence framework created and maintained by Apple. Developed for both macOS and iOS Operating Systems. It saves structured data locally on the device. 
-
-Coredata manages an object graph. An object graph is a group of objects that are linked with one another. Keep in mind that Coredata is not a database, it is a framework that manages complex object graphs.
-
+Core data manages an object graph. An object graph is a group of objects that are linked with one another. Keep in mind that CoreData is not a database, it is a framework that manages complex object graphs.
 
 ### Realm database
 Realm Database can be accessed directly which makes it faster. It stores live objects without the need for an Object Relational Mapping library.
 
-Realm is built from scratch with C++ as its core can run directly on different devices. It stores its data in a native object format whereby objects are represented in the database in a universal table-based format. This makes Realm database easy to use in different languages and platforms.
+Realm is built from scratch with C++ as its core can run directly on different devices. It stores data in a native object format whereby objects are represented in the database in a universal table-based format. This makes Realm database easy to use in different languages and platforms.
 
-In this article we will focus on Realm Database in Android with Kotlin
+In this tutorial, we will focus on the Realm database in Android with Kotlin.
 
-### Why use Realm database
-- Build apps quickly
-- Build bigger & better apps
-- Cross-platform database
+### Why use Realm database?
+- Build robust & better apps quickly
+- It is a cross-platform database
 - Offline mode when using realm database locally
 - Online data sync when using Realm Sync
-- Program for more than one app platform
-- Faster Queries
-- Easy to use
+- Easy and Faster Queries
 
 ### With Realm Database, we can:
 - Define an Object Schema
@@ -47,25 +44,25 @@ In this article we will focus on Realm Database in Android with Kotlin
 - Always Access the Latest Data
 
 ### Transactions in Realm
-Realm handles reads and writes of data into the database in terms of transactions. A transaction is a group of read and write operations that are treated as if they were a single operation that can't be split. A transaction can either succeed or not happen at all.
+Realm handles `reads` and `writes` of data into the database in terms of transactions. A transaction is a group of read and write operations that are treated as a single operation that can't be split. A transaction can either succeed or not happen at all.
 
-To run a transaction, we can either use `executeTransaction()` or `executeTransactionAsync()` functions . If the code in the function didn't succeed in executing, the transaction is canceled, otherwise, the transaction is committed
+To run a transaction, we can either use `executeTransaction()` or `executeTransactionAsync()` methods. If the execution fails, the transaction is canceled, otherwise, the transaction is committed.
 
-You should in most cases use `executeTransaction()` since it will handle errors and close the realm database for you.
+You should in most cases use `executeTransaction()` since it handles errors and closes the Realm database for you.
 
 ### Getting started with Realm in Android
-We will be creating a todo appplication to demonstrate the CRUD operations e.g Query, Create, Update and Delete 
+We will be creating a `Todo` application to demonstrate the CRUD operations, i.e Query, Create, Update and Delete 
 
 ### Step 1: Including Realm Dependency
-Open build.gradle project level and paste the Realm classpath inside dependencies
+Open `build.gradle` file (project level) and paste the Realm class-path dependency.
 
-``` Gradle
+```gradle
 classpath "io.realm:realm-gradle-plugin:10.7.0"
 ```
 
-Inside app level build.gradle plugins, make sure you add this two dependencies. Be sure to begin with the `kotlin-kapt` plugin before the `realm-android` plugin
+Inside app-level `build.gradle` plugins, add these two dependencies. Be sure, to begin with the `kotlin-kapt`.
 
-``` Gradle
+```gradle
 plugins {
     ...
     id 'kotlin-kapt'
@@ -74,8 +71,7 @@ plugins {
 ```
 
 ### Step 2: Creating a Base Application class
-This class will contain the `onCreate()` method which will be called once and before any other class, it will be used in the initialization of the realm databases
-initialize Realm once each time the application runs.
+This class will contain the `onCreate()` method that will be called once and before any other method. It will be used in the initialization of the Realm database each time the application is launched.
 
 ```kotlin
 class RealmApp : Application() {
@@ -100,13 +96,12 @@ class RealmApp : Application() {
 
 ### Code Explanation
 
-#### Initializing Realm
-`Realm.init(this)` 
+#### Initializing Realm - `Realm.init(this)` 
 
 Before you can use Realm in your app, you must initialize the Realm library. Your application should initialize Realm just once each time the application runs.
 
-#### Openning Realm
-Use RealmConfiguration to control the specifics of the realm you would like to open, 
+#### Opening and configuring  Realm
+Use RealmConfiguration to control the specifics of the Realm that you would like to open.
 
 ```kotlin
 val configuration = RealmConfiguration.Builder()
@@ -118,27 +113,26 @@ val configuration = RealmConfiguration.Builder()
             .build()
 ```
 
-`Realm.setDefaultConfiguration(configuration)`  - Sets this configuration as the default realm
+`Realm.setDefaultConfiguration(configuration)`  - Sets this configuration as the default Realm.
 
-Use the `readOnly()` method when configuring your realm to make it read-only.
+Use the `readOnly()` method when configuring your Realm to make it read-only.
 
-Note: It is important to remember to call the `realm.close()` method when done with a realm instance to free resources. Neglecting to close realms can lead to an OutOfMemoryError.
+> Note: It is important to remember to call the `realm.close()` method when done with a realm instance to free resources. Neglecting to close realms can lead to an OutOfMemoryError.
 
 ### Step 3: Registering Your Application Subclass in the Android Manifest
 
-If you create your own Application subclass, We must add the Application subclass to application's AndroidManifest.xml to execute our custom application code.
- Set the android.name property of your manifest's application definition to ensure that Android instantiates
-  your Application subclass before any other class when a user launches your application.
-```
+When you create your Application subclass, you must add it to application's `AndroidManifest.xml` to execute our custom application code. Set the `android.name` property of your manifest's application definition to ensure that Android instantiates the Application subclass before any other class when a user launches the application.
+
+```xml
 <application
       android:name=".MyApplicationSubclass"
       ...
    />
 ```
 
-### Step 4: Define Your Object Model
+### Step 4: Define your Object Model
 
-This Class defines the structure to which our data will be stored in the database
+This Class defines the structure in which our data will be stored in the database.
 
 ```kotlin
 import io.realm.RealmModel
@@ -162,9 +156,8 @@ open class Note : RealmModel {
 The Realm object should inherit from the `RealmModel` class, provide an empty constructor and use the `open` visibility modifier.
 The Realm model attributes can have annotations such as `@PrimaryKey` to define the unique attribute and `@Required` to define a must include field.
 
-
 ### Step 5: Create ViewModel class
-This lifecycle aware class will contain all our CRUD operation Functions i.e. Create, Update and Delete 
+This lifecycle aware class will contain all our CRUD operation functions, i.e. Create, Update and Delete 
 
 ```kotlin
 import androidx.lifecycle.LiveData
@@ -228,8 +221,7 @@ class MainViewModel : ViewModel() {
 ```
 
 ### Explanation
-`var realm: Realm = Realm.getDefaultInstance()` - instantiates the Realm with a default RealmConfiguration
-Once you have opened a realm, you can modify the objects within that realm in a write transaction block.
+`var realm: Realm = Realm.getDefaultInstance()` - instantiates the Realm with a default configuration. Once you have opened a realm, you can modify the objects within it in the write transaction block.
 
 #### Adding Data Into Realm
 ```kotlin
@@ -244,22 +236,21 @@ fun addNote(noteTitle: String, noteDescription: String) {
     }
 ```
 
-When adding data objects into realm we transaction inside the `executeTransaction` function
+When adding data objects into Realm, we perform a transaction in the `executeTransaction` method.
 
-Create an object that will be inserted in the database by using this method `r.createObject(ObjectClass, PrimaryKey)` which we pass our model class and the primary key
+Create an object that will be inserted in the database by using `r.createObject(ObjectClass, PrimaryKey)` to which we pass our model class and the primary key.
 
-Then from the object that we have created can add data by accessing its attribute and adding data in them 
+With the object that we have created, we can add data by accessing its attribute.
 
-We afterwards call the `realm.insertOrUpdate(object)` to commit the newly or updated data into database
-
+We afterward call the `realm.insertOrUpdate(object)` method to commit the new or updated data into the database.
 
 #### Query data from the Realm database
-To query all data of a particular object, we create an object that will store all the RealmResult of the queries data
-`realm.where(Note::class.java).findAll()` will find all data of the paricular object and store then in the created variable that was created to hold all the 
-RealmResult
+To query all data from a particular object, we create an object that will store all the RealmResult of the queries. `realm.where(Note::class.java).findAll()` will find all data and store it in the variable meant to hold all the RealmResult.
 
-This result can then converted into a list because they are of type RealmResult
-You can use this simple line of code to do that 
+This result can then be converted into a list because it contains data of the same type.
+
+You can use this line of code to do that.
+
 `list.value = notes?.subList(0, notes.size)`
 
 ```kotlin
@@ -271,12 +262,10 @@ private fun getAllNotes(): MutableLiveData<List<Note>> {
     }
 ```
 
-
 #### Updating data
-Updating data is somehow similar to the way we inserted data into realm only that this time, query data with the respective `id` of the data that 
-we need to update. In our query we will append `.findFirst()` method to find the first matching instance of the data being updated.
+Updating data is similar to the way we inserted data into realm only that this time, we query data with the respective `id` of the data that we need to update. In our query, we will append `.findFirst()` method to find the first matching instance of the data being updated.
 
-Then once found we will run our transaction inside the `executeTransaction()` method to commit the updated data object
+Then once a match is found, we will run our transaction inside the `executeTransaction()` method to commit the updated data object.
 
 ```kotlin
 fun updateNote(id: String, noteTitle: String, noteDesc: String) {
@@ -292,9 +281,8 @@ fun updateNote(id: String, noteTitle: String, noteDesc: String) {
     }
 ```
 
-#### Deleting A Single data of a paricular realm object
-To delete data from a realm object will also involve querying the paricular object we need to delete with its `id` 
-Once found we can use `deleteFromRealm()` to deleted the queried data inside the `executeTransaction()` 
+#### Deleting A Single data of a particular realm object
+To delete data from a realm object will also involve querying the particular object we need to delete using its `id`. Once found, we can use `deleteFromRealm()` to deleted the queried data in the `executeTransaction()` block.
 
 ```kotlin
 fun deleteNote(id: String) {
@@ -309,8 +297,7 @@ fun deleteNote(id: String) {
 ```
 
 #### Deleting all data from a realm object
-Deleting all data of a particular object is super easy: we call the `executeTransaction` and delete the whole object and all its data with
-`r.delete(Note::class.java)`
+Deleting all data of a particular object is super easy. We call the `executeTransaction` and delete the whole object and all its data using `r.delete(Note::class.java)`
 
 ```kotlin
 fun deleteAllNotes() {
@@ -320,10 +307,10 @@ fun deleteAllNotes() {
     }
 ```    
 
-Finally we can then call all this functions in our AddNoteActivity and the MainActivity to do their respective work.
+Finally, we can then call these functions in our `AddNoteActivity.kt` and the `MainActivity.kt` files to perform their respective tasks.
 
 ### Step 5: AddNoteActivity
-when adding a new note, we can call the function `addNote()` from the ViewModel class
+when adding a new note, we can call the function `addNote()` from the ViewModel class.
 
 ```kotlin
 binding.saveButton.setOnClickListener {
@@ -344,7 +331,8 @@ binding.saveButton.setOnClickListener {
 ```
 
 ### Step 6: MainActivity
-For Querying all notes we can call the `getAllNotes()` from the ViewModel class
+For Querying all notes we can call the `getAllNotes()` from the ViewModel class.
+
 ```kotlin
 viewModel.allNotes.observe(this, { allNotes ->
             notesAdapter.submitList(allNotes)
@@ -361,7 +349,8 @@ override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
             }
 ```
 
-For updating a particular note, we will display a dialog that will give the user a chance to make changes to the selected note
+For updating a particular note, we will display a dialog that will give the user a chance to make changes to the selected note.
+
 ```kotlin
  private fun createUpdateDialog(note: Note) {
         val viewGroup = findViewById<ViewGroup>(android.R.id.content)
@@ -394,8 +383,8 @@ For updating a particular note, we will display a dialog that will give the user
     }
 ```    
 
+To Delete all notes in the database, we can use the menu item as shown below.
 
-Deleting all notes in the database, I have include a optionsMenu
 ```kotlin
 override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
@@ -413,17 +402,16 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
     }
 ```    
 
-Here are some of the screenshots on how the app should look like:
+Here are some screenshots on how the app should look like:
 
 ![All Notes](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/allnotes.png)
 ![Add Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/addnote.png)
 ![Update Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/updatenote.jpg)
 
-
 Check out the entire project on [GitHub](https://github.com/JoelKanyi/RealmDatabaseDemo).
 
 ### Conclusion
-Realm can be a good alternative to the tradition SQLite database, keep exploring and trey and harnes the full capabilities of Realm such as RealmSyn.
+Realm is a good alternative to the traditional SQLite database. Keep exploring, try and harness the full capabilities of Realm such as RealmSyn.
 When Realm Sync is enabled, Realm Database synchronizes data with MongoDB Realm over the network in a background thread, pushing local data changes to MongoDB 
 Realm and pulling remote changes down. Keep learning 
 
