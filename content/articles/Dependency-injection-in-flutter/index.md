@@ -186,3 +186,6 @@ Reload the project and again perform 'pub get' and run the project.
 
 ### Conclusion
 Dependency injection permits a customer to eliminate all information on actual execution. It permits us to make more adaptable code and change one execution for another without changing the layer. 
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
