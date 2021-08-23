@@ -28,31 +28,31 @@ To get started, you will need a development enviroment.This is where we will wri
 
 After you have selected Visual Studio, choose .NET desktop to develop and click *Modify*.
 
-![vscode](/engineering-education/getting-started-with-visual-basic-.net/visualstuio1.jpg)
+![vscode](/engineering-education/getting-started-with-visual-basic-net/visualstuio1.jpg)
 
 After the installation, click *Launch* to get started.  
 
 On the new window, choose *Create a new project*.
 
-![newproject](/engineering-education/getting-started-with-visual-basic-.net/visualtudio2.png)
+![newproject](/engineering-education/getting-started-with-visual-basic-net/visualtudio2.png)
 
 Once you have selected *Create a new project*, choose *” Install more tools and features"* then click *Next*.
 
-![createproject](/engineering-education/getting-started-with-visual-basic-.net/newproject1.png)
+![createproject](/engineering-education/getting-started-with-visual-basic-net/newproject1.png)
 
 From the drop-down menu, pick *Visual basic* then select *Console Application* from the list and click *Next*.
 
-![picktemplate](/engineering-education/getting-started-with-visual-basic-.net/newproject.png)
+![picktemplate](/engineering-education/getting-started-with-visual-basic-net/newproject.png)
 
 Enter your preferred project name and click *Next*. Here, I will name my file *hello world*.
 
-![pickname](/engineering-education/getting-started-with-visual-basic-.net/newproject2.png)
+![pickname](/engineering-education/getting-started-with-visual-basic-net/newproject2.png)
 
 After selecting the target framework you desire, click *Create*.
 
 Visual Code will auto-generate some VB.NET code for you.
 
-![project](/engineering-education/getting-started-with-visual-basic-.net/newproject3.png)
+![project](/engineering-education/getting-started-with-visual-basic-net/newproject3.png)
 
 Let’s look at the code.
 
