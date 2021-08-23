@@ -1,4 +1,18 @@
-### Form Validation in Vue.js using VeeValidate
+---
+layout: engineering-education
+status: publish
+published: true
+url: /form-validation-in-vue.js-using-veevalidate/
+title: Form Validation in Vue.js using VeeValidate
+description: This article will discuss and demonstrate how to set up form validation using the vee-validate library.
+author: njunu-simon
+date: 2021-07-22T00:00:00-14:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/form-validation-in-vue.js-using-veevalidate/hero.jpg
+    alt: form-validation-in-vue.js-using-veevalidate
+---
 
 Client-side validation is common in today's web applications and pages, it improves user experience and saves on application resources. Vue provides us with its built-in custom validation, it's recommended to use a third-party library like Vee Validated to avoid code repetition and it is also tested to work with all browsers.
 
@@ -467,3 +481,7 @@ Please visit [VeeValidate](https://vee-validate.logaretm.com/v4/) official docum
 You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
 
 Happy coding!!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
