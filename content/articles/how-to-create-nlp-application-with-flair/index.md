@@ -88,14 +88,14 @@ Output of available methods and attributes:
 The methods shown above such as `embeddings`, `data`, `models`, and `trainers` will be used in building our model.
 
 `embeddings`- We use this method to perform word embeddings.
-`models`- We use this methhod to specify the type of model we will be building.
+`models`- We use this method to specify the type of model we will be building.
 `trainers`- This method is used to train our model.
 
 ### Preparing the dataset
 To start with data preparation, we need to import the exploratory data analysis packages (EDA) used in data manipulation and analysis.
 
 #### Importing exploratory data analysis (EDA) packages
-The exploratory data analysis packages are [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/). `Pandas` is a fast, powerful, flexible, and easy to use open-source data analysis and manipulation tool that is built on top of the Python programming language. These two packages will be used to read and analyse our data giving us the characteristics available in our data.
+The exploratory data analysis packages are [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/). `Pandas` is a fast, powerful, flexible, and easy-to-use open-source data analysis and manipulation tool that is built on top of the Python programming language. These two packages will be used to read and analyze our data giving us the characteristics available in our data.
 
 Let's import `pandas` and `numpy` into our Colab.
 
@@ -232,7 +232,7 @@ The output is as shown.
 ```
 
 In the above output, our dataset has `4671` words. If we split it into train set, test set, and dev set, the train set will have a total of `2802` words, the test set will have `934` words, and the dev set will have `935` words. The dataset has `2` columns as shown.
-After splitting the data into three sets, you need to store the data into a folder.
+After splitting the data into three sets, you need to store the data in a folder.
 
 #### Creating a folder
 Let's create a folder where we can store our three sets of data. Since we are using [Google Colab](https://research.google.com/), the following command will create a folder named `data_fst` for us.
@@ -429,7 +429,7 @@ We have to apply our `new_clf` model that was saved as the best model to make pr
 new_clf.predict(pred1)
 ```
 
-The following command will predict whether the labeled output are `offensive` or `non_offensive`.
+The following command will predict whether the labeled outputs are `offensive` or `non_offensive`.
 
 ```python
 pred1.labels
@@ -443,7 +443,7 @@ The output is as shown:
 
 In the first example, the output is offensive.
 
-Let's try predict the output of the second sentence and see its output.
+Let's try to predict the output of the second sentence and see its output.
 
 ```python
 new_clf.predict(pred2)
@@ -467,11 +467,11 @@ This tutorial is helpful to anyone interested in exploring Natural Language Proc
 
 We then prepared our dataset into a CSV format that our model can easily use. This helped in data-processing where we then split our data into three sets; test set, train set, and dev set.
 
-The next section that followed involved creating a corpus and label dictionary. This ensured that our dataset is represented with understandable labels. We began word embeddings that provide different methods and functionalities that allowed us to combine words and documents in different ways. These sections was helpful in preparing us for model building.
+The next section that followed involved creating a corpus and label dictionary. This ensured that our dataset is represented with understandable labels. We began word embeddings that provide different methods and functionalities that allowed us to combine words and documents in different ways. These sections helped prepare us for model building.
 
-Finally, we started building our model. We used the pre-processed data to train our model so that it can be able to perform text classification. Afterwards, we used our trained model predictions to determine whether a sentence is offensive or non-offensive.
+Finally, we started building our model. We used the pre-processed data to train our model so that it can be able to perform text classification. Afterward, we used our trained model predictions to determine whether a sentence is offensive or non-offensive.
 
-This is a good tutorial for a reader to follow from start to the end and learn about natural language processing.
+This is a good tutorial for a reader to follow from start to end and learn about natural language processing.
 
 ### References
 - [Code impementation of this tutorial](https://colab.research.google.com/drive/13cKGpH5k4ahseC6ARpTslHioSHEsCElu?usp=sharing)
