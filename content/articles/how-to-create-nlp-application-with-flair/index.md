@@ -1,5 +1,21 @@
-Flair is a simple natural language processing (NLP) library developed and open-sourced by Zalando Research. It's used to build machine learning models for text classification and speech recognition. It builds models used in language translation applications and speech recognition. It also enables the conversion of speech to text and text to speech applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-nlp-application-with-flair/
+title: How to create an NLP application with Flair
+description: In this tutorial, we will explain the Flair basics, then build a simple Natural Language Processing model using flair. The model built is a text classification model used to classify a given text as either offensive or non-offensive.
+author: brian-nyamache
+date: 2021-08-23T00:00:00-15:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-nlp-application-with-flair/hero.png
+    alt: How to create nlp application with flair
+---
+Flair is a simple natural language processing (NLP) library developed and open-sourced by Zalando Research. It's used to build machine learning models for text classification and speech recognition. It builds models used in language translation applications and speech recognition. It also enables the conversion of speech to text and text to speech applications.
+<!--more-->
 Flair has simple interfaces that allow you to use and combine different word and document embeddings.
 
 In this tutorial, we will start with the Flair basics, then build a simple Natural Language Processing model using flair. The model built is a text classification model used to classify a given text as either offensive or non-offensive.
