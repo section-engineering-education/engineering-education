@@ -2,7 +2,7 @@
 We are currently using Copyleaks to run our 3rd party plagiarism checks on incoming PRs. 
 (You should recieve an email to be added to the review "team"). Follow the instructions to sign-up and join up.
 
-![CopyLeaks main page](/static/images/screen_capture.jpg)
+![CopyLeaks main page](/static/images/screen_capture.JPG)
 
 We conduct a plagiarism check on every single PR that comes in for publishing. 
 
@@ -22,11 +22,11 @@ Click on the right hand side button labeled "New Scan".
 
 Click on "Free Text" this will allow you to copy and paste the content in to conduct the scan. 
 
-![Free text page](/static/images/free-text.jpg)
+![Free text page](/static/images/free-text.JPG)
 
 Over on GitHub using the labels go through (from the oldest to newest) list of PRs to perform our checks. 
 
-![List of PRs to scan](/static/images/listofprs.jpg)
+![List of PRs to scan](/static/images/listofprs.JPG)
 
 Click under "Files Changed" to better preview the text. Highlight and copy this PR text to past in the CopyLeaks screen. 
 
@@ -54,4 +54,4 @@ After downloading the PDF report - upload to the PR via GitHub comments and a ty
 >Please see attached PDF - and revisit the article to ensure we are contributing wholly unique and original content.
 >Be sure to see our resources page to see more info on plagiarism and what is considered as such.
 
-![comment](/static/images/comment.jpg)
+![comment](/static/images/comment.JPG)
