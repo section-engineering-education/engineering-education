@@ -1,6 +1,6 @@
 [Realm](https://realm.io/) is an open-source, developer-friendly lightweight mobile database. It can be a good alternative to both SQLite and CoreData. Realm is faster and has tons of new features such as `JSON` support, an easy-to-use API, notifications when the data changes, cross-platform support, faster in terms of querying, and it is fully encrypted all of which makes mobile development easy.
 
-In this tutorial, we are going to learn the basics of Realm for Android.
+In this tutorial, we'll explore the fundamentals of Realm for Android.
 
 ### Prerequisites
 To follow this tutorial, you should have:
@@ -15,12 +15,12 @@ The database is stored on the device's local directory and data is represented i
 
 Android devices are shipped with a built-in SQLite database implementation. SQLite is a relational database, that contains tables made of rows and columns, indexes, and many more. Relational databases like SQLite have a schema that stores information about, tables, relationships, triggers, indexes, etc.
 
-Room persistence library is an abstraction library that works on top of SQLite. It allows more robustness and ease of harnessing the power of SQLite. In other words, the Room is an (ORM) Object Relational Mapping library.
+Room persistence library is an abstraction library that works on top of SQLite. It allows more robustness and ease of harnessing the power of SQLite. Our database objects are translated into Java objects by the Room library. 
 
 ### Core data
-Core data is a data persistence framework created and maintained by Apple. Developed for both macOS and iOS Operating Systems. It saves structured data locally on the device. 
+Core data is a data persistence library provided by Apple. Developed to support both macOS and iOS Operating Systems. It saves structured data locally on the device. 
 
-Core data manages an object graph. An object graph is a group of objects that are linked with one another. Keep in mind that CoreData is not a database, it is a framework that manages complex object graphs.
+Core data manages an object graph. An object graph is a collection of objects that are connected with each other. Keep in mind that CoreData is not a database, it is a framework that manages complex object graphs.
 
 ### Realm database
 Realm Database can be accessed directly which makes it faster. It stores live objects without the need for an Object Relational Mapping library.
@@ -37,11 +37,11 @@ In this tutorial, we will focus on the Realm database in Android with Kotlin.
 - Easy and Faster Queries
 
 ### With Realm Database, we can:
-- Define an Object Schema
-- Query Realm Database
-- Update Live Objects
-- Watch for Object Updates
-- Always Access the Latest Data
+- Object Schema Definition
+- Access Data from Realm Database
+- Capability to Update Live Objects
+- Lookout for Object Updates
+- Always Get Access to the Most Recent Data
 
 ### Transactions in Realm
 Realm handles `reads` and `writes` of data into the database in terms of transactions. A transaction is a group of read and write operations that are treated as a single operation that can't be split. A transaction can either succeed or not happen at all.
@@ -98,7 +98,7 @@ class RealmApp : Application() {
 
 #### Initializing Realm - `Realm.init(this)` 
 
-Before you can use Realm in your app, you must initialize the Realm library. Your application should initialize Realm just once each time the application runs.
+You must first initialize the Realm library before you can utilize it in your project. Each time your application runs, it should initialize Realm only once.
 
 #### Opening and configuring  Realm
 Use RealmConfiguration to control the specifics of the Realm that you would like to open.
@@ -117,11 +117,11 @@ val configuration = RealmConfiguration.Builder()
 
 Use the `readOnly()` method when configuring your Realm to make it read-only.
 
-> Note: It is important to remember to call the `realm.close()` method when done with a realm instance to free resources. Neglecting to close realms can lead to an OutOfMemoryError.
+> Note: Always remember to call the `realm.close()` method when done with a realm instance to release used resources. Neglecting to close realms can lead to an OutOfMemoryError.
 
 ### Step 3: Registering Your Application Subclass in the Android Manifest
 
-When you create your Application subclass, you must add it to application's `AndroidManifest.xml` to execute our custom application code. Set the `android.name` property of your manifest's application definition to ensure that Android instantiates the Application subclass before any other class when a user launches the application.
+To execute our custom application code, you must include your Application subclass to the `AndroidManifest.xml` file. Set the `android.name` property of your manifest's application definition to ensure that when a user runs the application, Android instantiates the Application subclass before any other class.
 
 ```xml
 <application
@@ -221,7 +221,7 @@ class MainViewModel : ViewModel() {
 ```
 
 ### Explanation
-`var realm: Realm = Realm.getDefaultInstance()` - instantiates the Realm with a default configuration. Once you have opened a realm, you can modify the objects within it in the write transaction block.
+`var realm: Realm = Realm.getDefaultInstance()` - instantiates the Realm with a default configuration. Once you have opened a realm, you may use the write transaction block to change the items within it.
 
 #### Adding Data Into Realm
 ```kotlin
@@ -411,9 +411,8 @@ Here are some screenshots on how the app should look like:
 Check out the entire project on [GitHub](https://github.com/JoelKanyi/RealmDatabaseDemo).
 
 ### Conclusion
-Realm is a good alternative to the traditional SQLite database. Keep exploring, try and harness the full capabilities of Realm such as RealmSyn.
-When Realm Sync is enabled, Realm Database synchronizes data with MongoDB Realm over the network in a background thread, pushing local data changes to MongoDB 
-Realm and pulling remote changes down. Keep learning 
+Realm is a good alternative to the traditional SQLite database. Keep exploring, try and harness the full capabilities of Realm such as RealmSync.
+Realm Database synchronizes data with MongoDB Realm across the network in a background thread when Realm Sync is enabled. It pushes local data updates to MongoDB Realm and pulls remote changes down.
 
 ### References:
 - [Realm.io](https://realm.io/)
