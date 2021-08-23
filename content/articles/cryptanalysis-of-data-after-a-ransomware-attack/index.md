@@ -1,27 +1,24 @@
 ---
 layout: engineering-education
 status: publish
-published:
+published: true
 url: /cryptanalysis-of-data-after-a-ransomware-attack/
 title: Cryptanalysis of Data after A Ransomware Attack
 description: This article seeks to explore the concept of cryptanalysis in light of data encrypted by a malicious actor seeking ransom to decrypt the data. The process of cryptanalysis will be clearly outlined, highlighting the various ethical ways to do the same putting into consideration the possible cryptographic algorithm that may have been employed in encrypting the data.
-
-The possible decryption algorithms will also be identified to be able to help the reader know their possible go-to option when they fall prey to a ransomware attack.
 author: ruth-mare
-date: 2021-08-06T00:00:00-18:00
+date: 2021-08-23T00:00:00-04:35
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/cryptanalysis-of-data-after-a-ransomware-attack/hero.jpg
-    alt: Cryptanalysis cover image 
+    alt: Cryptanalysis hero image 
 ---
 Cryptanalysis is a technique that has been majorly applied to helping find weaknesses in cryptographic algorithms and improve on them to make encryption robust to threats. Cryptanalysis can, however, be used to decipher data encrypted by malicious actors to save on the cost of paying the ransom and recover confidential data.
 <!--more-->
 The concepts described in this article will help understand this process.
 
-### Overview
-This article will cover:
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [What is cryptanalysis](#what-is-cryptanalysis)
 - [Tools used in Cryptanalysis](#tools-used-in-cryptanalysis)
@@ -31,7 +28,7 @@ This article will cover:
 ### Prerequisites
 To follow along, you need:
 - A basic understanding of ransomware as a security threat.
-- A basic understanding of [Cryptography in computer networking](https://www.section.io/engineering-education/cryptography-in-computer-networking/)
+- A basic understanding of [Cryptography in computer networking](https://www.section.io/engineering-education/cryptography-in-computer-networking/).
 
 ### What is cryptanalysis
 Cryptanalysis is the process by which an individual studies cyphertexts (encrypted data), codes, and cryptographic algorithms without prior knowledge of the original text (plaintext), the encryption key, or the encryption algorithm used.
@@ -50,25 +47,26 @@ Cryptanalysis can help break through the encryption algorithms used by these bad
 Cryptanalysis employs the use of some software tools together with techniques to be able to crack through an encryption algorithm.
 
 Some of the tools are such as:
-***EverCrack:*** This is a tool that is used in mono-alphabetic substitution and transposition ciphertexts. It breaks down complex ciphers systematically into their simple equivalents for cryptanalysis by a kernel.
 
-***Jipher:*** This is a tool used in attacking old ciphers.
+**EverCrack:** This is a tool that is used in mono-alphabetic substitution and transposition ciphertexts. It breaks down complex ciphers systematically into their simple equivalents for cryptanalysis by a kernel.
 
-***Crypto Bench:*** This is a software used for various functions of cryptanalysis and can generate fourteen cryptography hashes and two checksums. It can encrypt with 29 and 6 different secret and public keys respectively.
+**Jipher:** This is a tool used in attacking old ciphers.
 
-***CalcChecksum:*** This is a GUI tool used for computing various checksums.
+**Crypto Bench:** It is a software used for various functions of cryptanalysis and can generate fourteen cryptography hashes and two checksums. It can encrypt with 29 and 6 different secret and public keys respectively.
 
-***Ganzúa:*** This is a tool used for both poly-alphabetic and mono-alphabetic ciphers and can work with close to any set of characters. In both applications, the relative frequencies for each character are calculated and output.
+**CalcChecksum:** This is a GUI tool used for computing various checksums.
 
-***Cryptol:*** It is a tool designed for learning in a programming language used for the design and implementation of new ciphers and also, for the verification of existing cryptography algorithms. It allows the supervision of the functioning of algorithms in software programs, written to indicate the algorithms or ciphers.
+**Ganzúa:** This is a tool used for both poly-alphabetic and mono-alphabetic ciphers and can work with close to any set of characters. In both applications, the relative frequencies for each character are calculated and output.
+
+**Cryptol:** It is a tool designed for learning in a programming language used for the design and implementation of new ciphers and also, for the verification of existing cryptography algorithms. It allows the supervision of the functioning of algorithms in software programs, written to indicate the algorithms or ciphers.
 
 ### Methods of encryption
-> *Encryption* is the process of transforming plaintext using an encryption algorithm into a ciphertext that cannot be decoded. This ensures that anybody else who doesn't have the encryption key cannot understand the message
+*Encryption* is the process of transforming plaintext using an encryption algorithm into a ciphertext that cannot be decoded. This ensures that anybody else who doesn't have the encryption key cannot understand the message
 
 There are several methods of encryptions but the three major ones are:
-- Advanced Encryption Standard (AES)
-- Rivest-Shamir-Adleman (RSA)
-- Data Encryption Standard (DES)
+- Advanced Encryption Standard (AES).
+- Rivest-Shamir-Adleman (RSA).
+- Data Encryption Standard (DES).
 
 #### DES Encryption
 This is an algorithm that encrypts only 56-bits of the data block at a time. This method of encryption however proved susceptible to easy hacking therefore robust variations of it were later developed such as Triple Data Encryption Standard (3DES). It has, however, served as the standard upon which future, more secure encryption algorithms are based. 3DES employs 3 times encryption by using 3 separate 56-bits keys instead of a single one. This mode of encryption is more secure but time-consuming to encrypt.
@@ -82,30 +80,30 @@ Data in AES is encrypted in blocks whose sizes determine the name of the differe
 [RSA](https://www.section.io/engineering-education/aes-rsa-encryption/#getting-started-with-the-rsa-encryption-algorithm) is majorly applied to data sent online and uses a public key for data encryption. The recipient on the other end of the communication channel will need their private key to decrypt the ciphertext.
 
 ### Methods of decryption.
-> Decryption: is a process by which ciphertext (encrypted text) is converted to plaintext normally done by the recipient at the other end of a communication channel using a specific decryption key. 
-> In a circumstance the decryption key cannot be accessed such as when a ransomware attack is encountered, special software such as mentioned in [Tools used in Cryptanalysis](#tools-used-in-Cryptanalysis) can also be used for decryption using some algorithms to crack decryption.
+Decryption: is a process by which ciphertext (encrypted text) is converted to plaintext normally done by the recipient at the other end of a communication channel using a specific decryption key. 
+In a circumstance the decryption key cannot be accessed such as when a ransomware attack is encountered, special software such as mentioned in [Tools used in Cryptanalysis](#tools-used-in-Cryptanalysis) can also be used for decryption using some algorithms to crack decryption.
 
 Some of the main decryption algorithms are:
-**Brute force attack**
+### Brute force attack
 This is a technique that employs a trial-and-error methodology until every possibility is exhausted and a match to the ciphertext is found.
 
-**Man-in-the-middle attack**
+### Man-in-the-middle attack
 In this technique, a cryptanalyst impersonates both the sender and the receiver to the two parties involved in the communication by intercepting the communication to obtain the shared keys over the communication channel. When the two parties initiate communication, they end up using keys similar to the cryptanalyst’s.
 
-**Chosen plaintext attack**
+### Chosen plaintext attack
 This is a technique where a cryptanalyst uses a plaintext of choice to generate a ciphertext which is then used with the plaintext to guess a possible encryption key applied to the data. The analyst, however, needs to either know the encryption algorithm or have access to the device used to do the encryption.
 
-**Known plaintext attack**
+### Known plaintext attack
 This method makes use of known bits of plaintext or all of it to find out the key used for encryption and decryption then the key can be used to decrypt all the data encrypted.
 
 Happy learning!
 
 ### Relevant resources
--[Cryptography in computer](https://www.section.io/engineering-education/cryptography-in-computer-networking/)
+- [Cryptography in computer](https://www.section.io/engineering-education/cryptography-in-computer-networking/)
 
--[Understanding AES and RSA encryption Algoritms](https://www.section.io/engineering-education/aes-rsa-encryption/)
+- [Understanding AES and RSA encryption Algoritms](https://www.section.io/engineering-education/aes-rsa-encryption/)
 
--[Cryptanalysis tools](https://resources.infosecinstitute.com/topic/cryptanalysis-tools/)
+- [Cryptanalysis tools](https://resources.infosecinstitute.com/topic/cryptanalysis-tools/)
 
 ---
 Peer Review Contributions by: [Samuel Mwangi](/engineering-education/authors/samuel-mwangi/)
