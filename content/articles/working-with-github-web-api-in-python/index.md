@@ -265,7 +265,9 @@ In this tutorial, we have understood the following:
 Happy coding.
 
 ### Further reading
-You can learn more about other concepts by [visiting this page.](https://www.techgeekbuzz.com/how-to-use-github-api-in-python/).
+You can check the full code snipppets used in this tutorial [here](https://github.com/Bonimum/Working-with-GitHub-s-web-API-in-Python/blob/main/index.md)
+
+You can also learn more about other concepts by [visiting this page.](https://www.techgeekbuzz.com/how-to-use-github-api-in-python/).
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
