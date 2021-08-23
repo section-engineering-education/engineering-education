@@ -10,13 +10,12 @@ For this data to be encoded it has to be converted to signal variations. These s
 
 Analog data to analog signal conversion – This includes Amplitude Modulation, Phase Modulation, and Frequency Modulation.
 
-Digital data to Analog signals − Modulation techniques include;
-
+Modulation techniques for digital data to analog signals include:
 1. Amplitude Shift Keying
 2. Frequency Shift Keying
 3. Phase Shift Keying
 
-Digital data to analog signals – This is what we are going to discuss in this article.
+Digital data to analog signals – This is what we will cover in this article.
 The types of encoding techniques include
 1.  Non-Return to Zero
 2.  Bi-phase encoding
@@ -41,12 +40,11 @@ The main disadvantage of NRZ is that the long voltage level causes the loss of c
 - Non-Return to Zero level
 - Non-Return to Zero Inverted
 
-#### Non-Return to Zero levels (NRZ-L)
-There is a change in polarity if the incoming signal changes from 1 to 0 or from 0 to 1.
-The first input signal should always have a change in polarity.
-
+#### Non-Return to Zero Level (NRZ-L)
+If the incoming signal changes from 1 to 0 or from 0 to 1, the polarity changes.
+The first input signal should always have a polarity change.
 #### Non-Return to Zero Inverted
-There is a transition at the beginning of the bit interval if a 1 occurs as the incoming signal.
+If the input current is a 1, there is a progression just at starting of the bit interval.
 The main disadvantage of the NRZ encoding is that there is a disturbance in clock synchronization between the transmitter clock and the receiver clock.
 ### Bi-phase encoding
 There is double-checking of the signal.
@@ -57,14 +55,13 @@ The clock synchronization is taken from the signal hence it requires a greater b
 We have Differential Manchester encoding and Bi-phase Manchester.
 
 #### Differential Manchester
-In Differential Manchester, a transition occurs at the middle of the bit interval.
-If a transition occurs at the beginning of the bit interval, it means that the input signal was 0 and there is no transition if the input signal is 1.
-
+In Differential Manchester, in the middle of the bit interval, a transition occurs.
+At a point where a change occurs at the start of a bit interval, it is an indication that the input signal was 0 unless otherwise.
 #### Bi-phase Manchester
 Here, a transition is done in the middle of the bit interval.
 The resultant pulse of the transition is from high to low when input is 1 in the middle and vice versa for input 0.
 
-The figure below shows the waveforms of NRZ-L, NRZ-I, Bi-phase Manchester, and Differential Manchester coding for different digital inputs.
+NRZ-L, NRZ-I, Biphase Manchester and Differential Manchester coding waveforms for different digital inputs are shown in the image below.
 
 ![Illustration image of different waveforms of Bi-phase and Non-Return to Zero encoding](/engineering-education/different-techniques-of-encoding-data-for-transmission/waveforms.png)
 ### Block encoding.
@@ -83,7 +80,7 @@ Like in Manchester encoding, clocks with double speed are required to send data.
 In this type of encoding, double speed clocks are not required rather 4 bits of codes are mapped to 5 bits having a 1-bit minimum in the group.
 
 Double speed clocks are avoided by assigning 5 bits in place of 4 consecutive 4 bits which are pre-determined in a dictionary.
-In selecting a 5-bit code, there should be one leading 0 and no more than two trailing 0s.
+When choosing a 5-bit code, there should be just one leading 0 and no more than two trailing 0s.
 
 Hence, transmission occurs as a block of bit.
 #### 8B/6T encoding technique
@@ -100,8 +97,7 @@ Block encoding is also more efficient since there are no double clocks needed to
 ## Cons
 As discussed above, in Non-Return to Zero encoding, we realize that NRZ encoding is not a better way of encoding data for transmission due to lack of clock synchronization hence the receiver might get a wrong message.
 
-These techniques that we have discussed are the ones mostly used for converting digital data into digital signals for reliable transmission.
-
+For reliable transmission, digital data is typically converted into digital signals using the techniques that we've studied so far.
 ### Conclusion
 This article enlightens readers for a better understanding of Bi-phase encoding, Block encoding, and Non-Return to zero encodings.
 
