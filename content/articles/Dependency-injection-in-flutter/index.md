@@ -1,9 +1,9 @@
 ### Introduction 
-`Dependency injection` is an object-oriented technique that sends the dependencies of another object to an object. Using dependency injection, we can also move the creation and restriction of dependent objects outside the classes. This brings a more significant level of adaptability, decoupling, and simpler testing.
+`Dependency injection` is an object-oriented technique that sends the dependencies of another object to an object. Using dependency injection, we can also move the creation and restriction of dependent objects outside the classes. This concept brings a more significant level of adaptability, decoupling, and simpler testing.
 
 The `provider package` wraps Inherited Widgets in an easy-to-use wrapper. It makes it easy to manage and utilize, and it also includes a state management mechanism for managing data within the app.
 
-In this article, we will learn how to implement dependency injection, get rid of flutter packages, and the reasons why we need dependency injection in a flutter.
+In this article, we will learn how to implement dependency injection, get rid of flutter packages, and why we need dependency injection in a flutter.
 
 ### Table of content
 - [Dependency injection in Flutter](#dependency-injection-in-Flutter)
@@ -16,8 +16,8 @@ Although dependency injection is a simple example, libraries are frequently used
 1. Mirrors are crippled for execution reasons. 
 2. The settled idea of widgets makes it unfeasible to pass conditions many levels down the tree.
 
-the inject library, on the other hand, can be used to solve similar issues.
-Annotations used by the inject library are listed below.
+The injection library, on the other hand, can be used to solve similar issues.
+Annotations used by the injection library are listed below.
 
 1. **@Injector**-An inversion of control container developed from a bunch of modules.
 2. **@provides and @module**-define classes and methods providing dependencies.
@@ -39,7 +39,7 @@ class ExampleExa {
 ```
 
 **Interface injection**
-First, create an abstract class with some implementation then provide dependencies in the module.
+First, create an abstract class with some implementation, then provide dependencies in the module.
 Abstract class:
 
 ```dart
@@ -68,7 +68,7 @@ NewExa newExa() => OldExa();
 ```
 
 **Providers**
-Suppose we don't require an instance of a class injected, but rather a provider that will provide us a fresh instance of the class every time if we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance, and it will be injected correctly. We can define a helper and use as shown below.
+Suppose we do not require an instance of a class injected, but rather a provider that will provide us with a fresh instance of the class every time we need to resolve a dependency. Instead of getting a concrete instance in the constructor, we can use a function that returns the appropriate instance and will do the injection correctly. We can define a helper and use it as shown below.
 
 ```dart
 typedef Provider<T> = T Function();
@@ -89,7 +89,7 @@ void _someFunction() {
 ```
 
 **Assisted injection**
-Since there is no implicit benefit to injecting objects that require only runtime contentions, we can use the standard factory. For example, create a factory class that takes all the compile-time dependencies in the constructor, inject it, and give it a factory technique runtime contention that will make a necessary case.
+Since there is no implicit benefit to injecting objects that require only runtime contentions, we can use the standard factory. For example, create a factory class that takes all the compile-time dependencies in the constructor, injects it, and gives a factory technique runtime contention that will make a crucial case.
 
 We need now to construct an injector for everything to work.
 
@@ -111,7 +111,7 @@ abstract class Main {
 }
 ```
 
-In this example, `ExampleExa` and `NewExa` are already defined, `NewApp` is our root widget, and `main.inject.dart` is a file that was created automatically.
+In this example, `ExampleExa` and `NewExa` are already defined, `NewApp` is our root widget, and `main.inject.dart` is a file that Flutter creates automatically.
 As a result, the primary function may be as follows:
 
 ```
@@ -169,4 +169,4 @@ This diminishes the measure of required standard code and further develops adapt
 Reload the project and again perform 'pub get' and run the project.
 
 ### Conclusion
-Dependency injection permits a customer to eliminate all information on a substantial execution. It permits us to make more adaptable code and change out one execution for another without changing the layer. 
+Dependency injection permits a customer to eliminate all information on actual execution. It permits us to make more adaptable code and change one execution for another without changing the layer. 
