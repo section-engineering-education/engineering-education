@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /getting-started-with-optimization-in-matlab/
 title: Getting Started with Optimization in MATLAB
-description: In this article we discuss the fundamentals of optimization and cover real world examples where optimization is applied using MATLAB. 
+description: In this article we will discuss the fundamentals of optimization and cover real world examples where optimization is applied using MATLAB. 
 author: florence-atieno
 date: 2021-08-20T00:00:00-18:00
 topics: [Languages]
@@ -23,9 +23,10 @@ Optimization combines the inputs to achieve the optimum output subject to satisf
 
 ### Introduction
 
-Optimization problems of all sorts occur in all quantitative disciplines such as computer science, engineering, and even economics. Hence, it is an essential tool used in everyday life, with its impact felt by billions of people daily. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its application in various fields.
+Optimization problems of all sorts occur in all quantitative disciplines such as computer science, engineering, and economics. Hence, it is an essential tool used in everyday life, with its impact felt by billions of people daily. This article will look at the basics of optimization and how to apply them in Matlab. We will also look at its application in various fields.
 
 An optimization problem is defined by `df(x)/dx=0`. Finding the minimum point in a curve can be done using a while loop. For example, given a function $y(x)= 2x^2+20x-22$, you can find it's  minimum point using a while loop as shown below;
+
 ```matlab
 clear
 clc
@@ -36,7 +37,8 @@ plot(x,y)                          %plotting the output
 grid
 ```
 
-Here, we plot the equation using the `plot` function as shown above. Then use the while loop to iterate over all the data points in the curve. The point at which the current value is larger than the previous value is identified as the curve's minimum. Once done, The output is printed using the `fprintf` function. This printed output is the minimum point of our function.
+Here, we plot the equation using the `plot` function as shown above. Then use the while loop to iterate over all the data points in the curve. The point at which the current value is larger than the previous value is identified as the curve's minimum. Once done, the output is printed using the `fprintf` function. This printed output is the minimum point of our function.
+
 ```Matlab
 i = 1;                    %initializing i to 1.
 while (y(i) > y(i + 1))    % when the initial i is greater than i+1
@@ -51,19 +53,22 @@ fprintf('the minimum of the curve is %d and %d\n', x(i), y(i))
 ![plotted function](/engineering-education/getting-started-with-optimization-in-matlab/opt1.png)
 ![Obtained results](/engineering-education/getting-started-with-optimization-in-matlab/opt2.png)
 
-The `while` loop method can is used in simple mathematical functions. For complex equations, we use the Matlab in-built functions. The in-built functions used in optimization in Matlab are;
+The `while` loop method is used in simple mathematical functions. For complex equations, we use the Matlab in-built functions. The in-built functions used in optimization in Matlab are as follows:
+
 - `fminbnd()` -is for finding the minimum of single-varied functions on a fixed interval. Single varied functions are functions with one variable.
 - `fminsearch()`-This function is similar to `fminbnd()` except that it handles functions with more than one variable.
 
-Let us apply the `fminbnd` function in the mathematical equation we used before in the `while` loop method. To get more information about the in-built function, type help `fminbnd,` in the command window, and Matlab displays the details about it in the command window. But, first, create a script where you define your functions.
+Let us apply the `fminbnd` function in the mathematical equation we used in the `while` loop method earlier. To get more information about the in-built function, type help `fminbnd,` in the command window. Matlab displays the details about it in the command window. But, first, create a script where you define your functions.
 
 > Note that the function name and the script's name should be the same.
+
 ```Matlab
 function f = mysimplefunc(x)
 
 f = 2.*x.^2 + 20.*x - 22;
 ```
 In this case, `mysimplefunc` is the name of the defined function in the script. It means that the name of our script should be `mysimplefunc.m`. `f` is the function variable. In this script, you define in which you are finding its minimum point. Now, create another script to define the variable and call the `mysimplefunc` function here. The code in this script should be as follows;
+
 ```Matlab
 x = -20:0.1:20;       % The x values
 
@@ -80,19 +85,23 @@ xmin = fminbnd(@mysimplefunc, -20, 20);
 ymin = mysimplefunc(xmin);
 ```
 When using the `fmibnd` function, give it the inputs, `@mysimplefunc` and the range of `x-axis` minimum and maximum values, respectively. After obtaining the minimum point in the x-axis, Matlab gets the minimum `y` by referring to the `x` minimum value and ask Matlab to display the results using the `disp` function.
+
 ```Matlab
 disp(xmin)
 disp(ymin)
 ```
 Matlab gets a similar result as that obtained when using the `while` loop method. So again, the equation that we are finding its minimum point is similar for both methods.
+
 ### Example 2
 Now let's introduce a more complex equation and find its lowest point. In this example, $ f(x)=x^3-4x $ is the function. The first step is plotting this function and then finding its lowest point. Now, use the `fminbnd` function to see how it applies in these complex equations. Create a script function `mysimplefunc.m` to define the mathematical equation. The script function code is;
+
 ```Matlab
 function f = mysimplefunc(x)
 
 f = x.^3 - 4*x;
 ```
 Create another script and call the `mysimplefunc` function, which contains our mathematical equation in this new script. Plot the mathematical function and obtain Its minimum point as follows;
+
 ```Matlab
 x = -3:0.1:3;
 
@@ -112,8 +121,12 @@ Running the code, the result is as follows;
 ![minimum point](/engineering-education/getting-started-with-optimization-in-matlab/opt4.png)
 
 ### Rosenbrock's banana function
+
 It is a function that is a famous test case for optimization software. Given a function $f(x,y) = (1-x)^2 + 100(y-x^2)^2$, this function is known as Rosenbrock's banana function. We will first plot this function and then find its minimum point. In this case, we have two variables in our function, i.e., `x` and `y`. You cannot use the previous `fminbnd` function, but instead, use the `fminsearch` function to obtain this.
+
 > Note that the `fminbnd` function can only handle one variable while `fminsearch` can take more than one variable. The first step is always plotting your function. For the `Rosenbrock's banana function`, plot the surf and mesh plots of it.
+
+```Matlab
 clear
 clc
 
@@ -132,15 +145,19 @@ surf(x,y,f)    %use surf function to plot the surf of the function, but in this 
 shading interp;
 colormap (hot);     %used to color the plot
 ```
+
 ![plot of the banana function](/engineering-education/getting-started-with-optimization-in-matlab/opt5.png)
 
-Use the `fminsearch` function to find the minimum of our given mathematical function. Create a function script in which you define the function.
+Use the `fminsearch` function to find the minimum of the given mathematical function. Once done, create a function script to define the function.
+
 ```Matlab
 function f = bananafunc(x)
 
 f = (1-x(1)).^2 + 100.*(x(2)-x(1).^2).^2;
 ```
+
 In the previous example, `x` and `y` were the variables, but we use vectors instead for this case. It is why we replace `x` with the first value of `x`, which is `x(1)` and `x(2)` for `y`. Now, execute the `fminsearch` in the command window to find this point. The code will be;
+
 ```Matlab
 [x, fval] = fminsearch(@bananafunc, [-1.2; 1])  %fval is the f function values.
 ```
