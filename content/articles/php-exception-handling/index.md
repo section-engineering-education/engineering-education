@@ -290,3 +290,6 @@ throw new Exception('Exception not caught');
 
 ### Conclusion
 Exception handling is becoming a rising star as opposed to error handling. With the endless advantages and the numerous possibilities, exception handling seems like the future of code debugging in PHP. 
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
