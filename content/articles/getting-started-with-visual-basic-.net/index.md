@@ -6,7 +6,7 @@ Although VB.NET is a developed version of Visual Basic 6, it is not compatible w
 
 ### Why VB.NET?
 
-- VB.NET is a simple language that is easy to understand for both novice and advanced programmers.
+- VB.NET is a beginner friendly language.
 
 - With VB.NET you can create web applications with modern features like performance counters, file systems, and event logs.
 
@@ -22,7 +22,7 @@ Although VB.NET may have a couple of advantages, it also has some drawbacks asso
 
 - Since VB.NET is an intermediate language, there are many libraries required for the Just In Time compiler to interpret the application.
 
-To get started, you will need an IDE (Integrated Development Environment) to write and compile code. We will use [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
+To get started, you will need a development enviroment.This is where we will write and debug our code. We will use [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
 
 ### Installing Visual Basic.Net 
 
@@ -120,7 +120,7 @@ End Module 
 
 ```
 
-A module defines a reference type available throughout its namespace. We can also define it as a part of a program that contains one or more routines. For our *helloworld* program, we have declared our module and named it `Program`. Inside this module, we will define methods to be used by our program. To close our module, we use the `End` keyword.
+A module defines a reference sort obtainable throughout its namespace. For our *helloworld* program, we have declared our module and named it `Program`. Inside this module, we will define methods to be used by our program. To close our module, we use the `End` keyword.
 
 **Line 3:** 
 
@@ -134,7 +134,7 @@ End Sub
 
 ```
 
-Our module has one procedure, `Sub`. A procedure is a block of statements enclosed by a declaration statement and a matching end declaration. From this line execution of our program will begin. Each program in VB.NET should have a `main` method.
+Our module has one procedure, `Sub`. A procedure is a block of code enclosed by a declaration statement with a matching end declaration. From this line execution of our program will begin. Each program in VB.NET should have a `main` method.
 
 **Line 4:**
 
@@ -144,17 +144,17 @@ Console.WriteLine(“Hello World!”)
 
 ```
 
-`Console.WriteLine()` prints out text on the console. After printing a string, it adds a newline character to the end of the string. In our program, it will output  *"Hello World!"*.
+`Console.WriteLine()` prints out text on the console. After printing a string, it adds a newline at the end . In our program, it will output  *"Hello World!"*.
 
-Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .The major difference between these two is that `Console. Write()` *does not* add a newline character to the end of the string. We can find more about the two commands [here](https://www.programiz.com/csharp-programming/basic-input-output).
+Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .The major difference  is that `Console. Write()` *does not* add a new line at the end of the string. We can find more about the two commands [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
 ### Getting user input 
 
 To read the next **characters** from a standard input stream, we use `Console.ReadLine()`.
 
-`Console. Read()` reads the next **Character** from the standard input stream.
+`Console. Read()` reads the next **Character** from the  input .
 
-`Console.ReadKey()` gets the next character pressed by the user. We display the pressed key in the console window.
+`Console.ReadKey()` gets the next character pressed by the user. We display the  key in the console window.
 
 ### Comments in Visual Basic .NET
 
@@ -178,21 +178,17 @@ Unfortunately for Visual Basic, we do not have block comments. All comments are 
 
 - Ensure that your comments are not a duplicate of the code you have written. Some programmers write comments that are very obvious and unnecessary.
 
-- Comments should not act as an excuse for unclear code. e.g. when a programmer writes a comment to explain a single character variable declared.
-
 - When you find it hard to write a simple comment, your code might be where the problem is.
 
 - Your comments should clear any confusion, not create it.
 
-- Include links to additional references where you feel they will be most helpful.
+- Incorporate links to additional references where you feel they will be most helpful.
 
 - Write comments when fixing bugs, too.
 
-**Important points to note:**
+**Important point to note:**
 
-- VB.NET is case-insensitive, but the CLR (common language runtime)is case sensitive.
-
-- VB.NET follows top-to-bottom order when executing a program
+- VB.NET follows top-to-bottom order when executing a program.
 
 **Congratulations!** You just wrote your first VB.NET program.  
 
@@ -264,8 +260,7 @@ This line declares variables that will store the user input and also the result 
 
     - Date - stores the date value and has a range of January 1, 0001 - December 31, 9999. 
 
-    - Byte - This is a one-byte integer. It holds an unsigned value from 0 to 255
-
+    
 ```vb
 
 firstNum = Console.ReadLine()
