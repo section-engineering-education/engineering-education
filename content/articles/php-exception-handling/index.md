@@ -1,5 +1,21 @@
-Exceptions are disruptions of the normal flow of program execution due to unexpected outcomes from the program. Exceptions are basically like typical programming errors. However, unlike standard errors, exceptions can be handled by the program itself.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /php-exception-handling/
+title: PHP exception handling
+description: Exceptions are disruptions of the normal flow of program execution due to unexpected outcomes from the program. This article gives an insight on php exception handling.
+author: mackrine-awino
+date: 2021-08-23T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url:  /engineering-education/php-exception-handling/hero.jpg
+    alt: Php exception handling image
+---
+Exceptions are disruptions of the normal flow of program execution due to unexpected outcomes from the program. Exceptions are basically like typical programming errors. However, unlike standard errors, exceptions can be handled by the program itself.
+<!--more--> 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Intoduction to Exception Handling](#introduction-to-exception-handling)
@@ -32,7 +48,7 @@ The throw keyword is used to throw exceptions in a PHP program. It also allows l
 The `finally block` is used in PHP clean-up activity. This block contains the core of the code and is responsible for its execution. This block can be used as a `catch block` and is always executed even if an exception is not handled.
 Below is a diagrammatic representation of the flow of events during exception handling:
 
-![diagram](/engineering-education/php-exception-handling/Flowfile.png)
+![diagram](Flowfile.png)
 
 ### Occurrences when an exception is triggered
 Whenever an exception is triggered during program runtime, the following events occur:
