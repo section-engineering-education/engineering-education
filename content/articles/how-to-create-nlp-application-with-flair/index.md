@@ -496,3 +496,6 @@ This is a good tutorial for a reader to follow from start to end and learn about
 - [Flair documentaion](https://github.com/flairNLP/flair)
 - [Python documentaion](https://www.python.org/)
 - [Natural language processing](https://machinelearningmastery.com/natural-language-processing/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
