@@ -1,6 +1,22 @@
-### Introduction 
-`Dependency injection` is an object-oriented technique that sends the dependencies of another object to an object. Using dependency injection, we can also move the creation and restriction of dependent objects outside the classes. This concept brings a more significant level of adaptability, decoupling, and simpler testing.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /dependency-injection-in-flutter/
+title: Dependency injection in Flutter
+description: In this article, the reader will learn how to implement dependency injection, get rid of flutter packages, and why dependency injection is needed in a Flutter application.
+author: bonface-ndolo
+date: 2021-08-23T00:00:00-02:19
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/Dependency-injection-in-flutter/hero.png
+    alt: Flutter dependency injection image
+---
+
+`Dependency injection` is an object-oriented technique that sends the dependencies of another object to an object. Using dependency injection, we can also move the creation and restriction of dependent objects outside the classes. This concept brings a more significant level of adaptability, decoupling, and simpler testing.
+<!--more-->
 The `provider package` wraps Inherited Widgets in an easy-to-use wrapper. It makes it easy to manage and utilize, and it also includes a state management mechanism for managing data within the app.
 
 In this article, we will learn how to implement dependency injection, get rid of flutter packages, and why we need dependency injection in a flutter.
