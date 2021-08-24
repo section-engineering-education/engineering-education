@@ -1,21 +1,19 @@
 ### Introduction
-
-Building a shopping cart should be possible in an assortment of ways. I'll show you how to make a shopping cart with arrays and objects in this tutorial.
+Building a shopping cart can be done in an assortment of ways. In this tutorial, I'll show you how to make a shopping cart using arrays and objects.
 
 ### The approach
 1. You initially have a curated list of shopping items.
 2. Each item has a counter.
-3. Decrease or increase the counter on adding the item to cart.
+3. You decrease or increase the counter on adding the item to cart.
 
 We will use the Javascript event listeners to handle these activities.
 
 ### Preferences
+To follow along with this tutorial, you are required to have an understanding of the following JavaScript methods:
 
-To follow along with this tutorial, you are required to have understanding of the following JavaScript methods:
-
-- [Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [Array.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-- [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+1. [Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+2. [Array.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+3. [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
 ### The base html
 Create a new file `index.html` in the working directory. In your code editor, open the `index.html` file and paste the code below.
@@ -25,7 +23,6 @@ Create a new file `index.html` in the working directory. In your code editor, op
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-
 
 <div id="wrapper">
    <div id="container">
@@ -41,10 +38,11 @@ Create a new file `index.html` in the working directory. In your code editor, op
 ```
 
 ### Creating the items library
+Create a new file `script.js` in the working directory.
 
-Create a new file `script.js` in the working directory. In your code editor, open the `script.js` file and paste the code below.
+In your code editor, open the `script.js` file and add the code below.
 
-```js
+```javascript
 let items_array = [
     { "name": "carrots", "id": 1, count: 1 },
     { "name": "spinach", "id": 2, count: 1 },
@@ -56,15 +54,17 @@ let items_array = [
 let cart = [];
 ```
 
-The `items_array` is an array of objects which will be displayed for selection. A name and id property is given to each object.
-It also has a `count` property which is the number of items which will be used in the shopping cart.
+The `items_array` is an array of objects which will be displayed for selection. A `name` and `id` property is given to each object.
+The `items_array` also has a `count` property, which is the number of items which will be used in the shopping cart.
 
-The cart is an empty array which will be used to store the items which are selected in the shopping cart.
+The cart is an empty array, which will be used to store the items which will be selected from the shopping cart.
 
-### Creating base functions
-Let's make a few functions to make our lives a little bit easier. In your code editor, open the `script.js` file and paste the code below.
+### Creating the base functions
+Let's make a few functions to make our lives a little bit easier. 
 
-```js
+In your code editor, open the `script.js` file and add the code below.
+
+```javascript
 function appendNode(parent, element) {
     parent.appendChild(element);
 };
@@ -84,13 +84,14 @@ We have created 3 functions.
 2. The `getDiv` function will return the div element with the id of a container.
 3. The `createNode` function will create a new node and return it. It will take a node as a parameter.
 
-We will use these functions to create the shopping list and the shopping cart.
+We will use these functions to create the shopping list and the shopping cart in the DOM.
 
 ### Displaying the shopping list
+We will create a function which will display the shopping list. 
 
-We will create a function which will display the shopping list. In your code editor, open the `script.js` file and paste the code below.
+In your code editor, open the `script.js` file and add the code below.
 
-```js
+```javascript
 function displayItems(items, container) {
     let items_container = getDiv(container);
     items_container.innerHTML = '';
@@ -112,27 +113,28 @@ function displayItems(items, container) {
 
 The `displayItems` function will take the items array and the container id as parameters. The contents of the container will be shown.
 
-It will iterate through the items array and create a new node for each item. It will set the id of the node to the item id. The `displayItems` function will then append the node to the container.
+The function will iterate through the items array and create a new node for each item. It will set the id of the node to the item id. The `displayItems` function will then append the node to the container.
 
 If you look closely, you will notice that we are using the `setAttribute` method to set the attribute of the node. `setAttribute` is an in-built method used to add attributes to a node. You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute). 
 
-The `displayItems` also clears the lists before updating them by setting the innerHTML property of the container to empty. This is done to avoid the previous items from showing up.
+The `displayItems` also clears the lists before updating them by setting the `innerHTML` property of the container to empty. This is done to avoid the previous items from showing up.
 
-```js
+```javascript
 items_container.innerHTML = '';
 ```
 
-You should now proceed to calling the `displayItems` function to display the items list. In your code editor, open the `script.js` file and paste the code below.
+You should now proceed to calling the `displayItems` function to display the items list.
 
-```js
+In your code editor, open `script.js` and add the code below.
+
+```javascript
 displayItems(items_array, "items");
 ```
 
 ### A little CSS
-
 The displayed lists look very basic at this point. Let's fix that.
 
-In your code editor, open the `index.html` file and paste the code below.
+In your code editor, open the `index.html` file and add the code below inside a `<style>` tag.
 
 ```css
 #wrapper { 
@@ -168,13 +170,14 @@ li{
 } 
 #container { 
     margin: 50px;
-     } 
+} 
 ```
 Check out the new look of your shopping list. I guess it look better.
 
 ### Adding and removing items from the cart
+We will create a function which will add an item to the shopping cart.
 
-We will create a function which will add an item to the shopping cart. In your code editor, open the `script.js` file and paste the code below.
+In your code editor, open `script.js` and add the code below.
 
 ```js
 function addOrRemoveItemsFromCart(action) {
@@ -195,17 +198,17 @@ function addOrRemoveItemsFromCart(action) {
 
 We create a function `addOrRemoveItemsFromCart` which will take an action as a parameter. The item will be added to the shopping basket if the activity is add. The item will be eliminated from the shopping basket if the activity is remove.
 
-To check the action an `if else` statement is used. We pass the items container to the `takeAction` function if the action is add and the cart container if the action is remove. We will refer to this when listening for click events.
+To check the action an `if else` statement is used. We pass the items container to the `takeAction` function if the action is "add" and the cart container if the action is "remove". We will refer to this when listening for click events.
 
 We will use the `getDiv` function to get the container to work with. We will use the `takeAction` function to add or remove the item from the cart.
 
-Open the `script.js` file in your code editor and add the code below, to create the `takeAction` function.
+To create the `takeAction` function, add the code below to `script.js`.
 
-> Note: You can create the `takeAction` function inside the `addOrRemoveItemsFromCart` function, or outside it. The difference between these two is that when you have created it inside the function, `takeAction()` will not be available outside. In short, it can't be re-used.
+> Note: You can create the `takeAction` function inside the `addOrRemoveItemsFromCart` function, or outside it. The difference between these two is that when you have created it inside the function, `takeAction()` will not be available outside the function. In short, it can't be re-used.
 
 In this example, we will create the `takeAction` function inside the `addOrRemoveItemsFromCart` function.
 
-```js
+```javascript
 function addOrRemoveItemsFromCart(action) {
     // code in the previous block is still there
 
@@ -238,11 +241,11 @@ function addOrRemoveItemsFromCart(action) {
 }
 ```
 
-The `addEventListener` method is used to add an event listener to the container. The event listener is invoked when the user clicks on the item.. We will use the `event.target.id` to get the item id.
+The `addEventListener` method is used to add an event listener to the container. The event listener is invoked when the user clicks on the item. We will use the `event.target.id` to get the item id.
 
 We check whether the item is already in the cart. If that's the case, we'll either add or remove the item from your shopping basket. We do this by incrementing or decrementing the `count` property of the item.
 
-We finally call the `displayItems` function* to display the updated list of items in the cart.
+We finally call the `displayItems` function to display the updated list of items in the cart.
 
 The remaining part is to call the `addOrRemoveItemsFromCart` function. Open the `script.js` file in your code editor and add the code below.
 
@@ -260,5 +263,6 @@ Passing add or remove as the action will:
 - Call the `takeAction` function to remove the item from the cart.
 
 ### Conclusion
+I hope you have learned something valuable from this article. I would also like to be live that it was fun creating the shopping cart from scratch, as it was for me.
 
-Finally!!! We have come to the end of the article. I hope you have learned something valuable from this article and also i would like to be live it was fun creating the shopping cart from scratch as it was for me.
+Happy coding!
