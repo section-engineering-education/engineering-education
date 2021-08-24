@@ -140,7 +140,8 @@ The fourth print statement outputs boolean value `false` because, despite the se
 
 The last print statements outputs `false` because the regex defines its pattern to match an occurrence of exactly one or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern, as well as no occurrence of the character ‘o’.
 
-It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` as a result of case-mismatch.
+It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` due to case-mismatch.
+
 
 ```java
 
@@ -167,7 +168,7 @@ It is important to note that regex matching is case-sensitive, and hence both li
 ```
 
 
-In the given example above, the string array with the variable name “words” is iterated and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. The results obtained are concatenated side by side with a white space between each word.
+In the example above, the string array with the variable name “words” is iterated, and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. Finally, the results obtained are concatenated side by side with a white space between each word.
 
 * N number of times matcher (`{n}`): This is regarded as the “n” quantifier, where ‘n’ is an integer because it matches the instance of its preceding character occurring exactly n number of times. The following examples illustrate the `{n}` quantifier:
 
@@ -231,11 +232,11 @@ In the example below, the regex matches elements in the string array `words` whi
 ```
 
 
-Quantifiers will match as many occurrences as possible, for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  However, in a situation where a quantifier is superseded by a question mark (?) such as in the format `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
+Quantifiers will match as many occurrences as possible for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  When a quantifier is superseded by a question mark (?), i.e. `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
 
 #### CHARACTER CLASSES
 
-A character class is used to specify a set of characters, whereby any one of such sets is required to be present in a given string for a match to occur. It is used to distinguish certain categories of characters, sometimes with similar attributes from other characters. For example, distinguishing alphabets from numbers, numbers from punctuation marks, specific alphabets from other alphabets, and so on.
+A character class is used to specify a set of characters, whereby any one of such sets is required to be present in a given string for a match to occur. It is used to distinguish certain categories of characters, sometimes with similar attributes from other characters. For example, it distinguishes alphabets from numbers, numbers from punctuation marks, specific alphabets from other alphabets, and so on.
 
 
 | Characters | Description |
@@ -283,9 +284,9 @@ Assertions are used to specify boundaries within which a match should occur. The
 
 #### CHARACTER ESCAPE (`\`)
 
-The backslash `\` is used to obtain the literal meaning or value of a character, usually a quantifier or any other special character. For example, to obtain the literal backslash character, it is required to be escaped `\\`.
+The backslash `\` is used to obtain the literal meaning or value, usually a quantifier or any other special character. For example, to obtain the literal backslash character, it is required to be escaped `\\`.
 
-It is also used to indicate that the character that follows it is special as described in the character classes section of this article.
+It is also used to indicate that the character that follows it is special, as described in the character classes section of this article.
 
 ### JAVA PATTERN AND MATCHER APIs
 
