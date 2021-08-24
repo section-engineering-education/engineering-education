@@ -110,7 +110,7 @@ A quantifier is used to specify the number of occurrences of a character that it
 
 The output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`.
 
-The last print statement outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string `o` and nothing more.
+The last print statement outputs `false` because the regex pattern matches an occurrence of exactly zero or more quantities of string `o` and nothing more.
 
 * One or more times matcher  (`+`): This is regarded as the “one or more” quantifier because it matches the instance of its preceding character occurring at least once. The following examples illustrate the `+` quantifier:
 
