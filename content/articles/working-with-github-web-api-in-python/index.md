@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/working-with-github-web-api-in-python/hero.jpeg
+  - url: /engineering-education/working-with-github-web-api-in-python/hero.jpg
     alt: Working with GitHub API in Python
 ---
 When fetching information from the web, we usually request for complete web pages, and extract information by parsing the HTML scripts. Similarly, an Application Programming Interface (API) performs the same operation in a more efficient way.
