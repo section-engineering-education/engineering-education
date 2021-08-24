@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-implement-object-oriented-programming-in-matlab/
 title: How to Implement Object Oriented Programming in Matlab
-description: This tutorial will guide the reader on how to avoid redundancy in code repetition and reduce complexityusing Matlab.
+description: This tutorial will guide the reader on how to avoid redundancy in code repetition and reduce complexity using Matlab.
 author: collince-odhiambo 
 date: 2021-08-24T00:00:00-16:00
 topics: []
