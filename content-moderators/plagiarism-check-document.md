@@ -14,9 +14,9 @@ Some red flags *may or may not* be actual red flags.
 
 We can (and should) look through the alerts brought forth and look through the article structure to ensure there is no plagiarism. 
 
-Anything above 10% (but less than 30~%) we want to download the report to share with the contributor to work on refining the content as we do NOT want any future reader to encounter their work while reading our site.
+Anything above 10% (but less than 30~%) we want to download the report to share with the contributor to work on refining the content as we do NOT want any future reader to encounter their work while reading our site. 
 
-If the % is between 10 and 30 we can download a copy (PDF) of the report to ping and attach to the PR via GitHub. We let the contributor know that the report had some red flags (see templated responses for more details) and include the link to our docs on what is plagiarism. 
+We share the report and attach it to the PR via GitHub. We let the contributor know that the report had some red flags (see templated responses for more details) and include the link to our docs on what is plagiarism. 
 
 After you are signed up and on the main CopyLeaks page. 
 
