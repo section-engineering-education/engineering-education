@@ -255,4 +255,4 @@ Object-oriented programming also makes it easy to make any change in your code o
 
 
 ---
-Peer Review Contributions by: [](/engineering-education/content/authors//)
+Peer Review Contributions by: [Mary Njeri](/engineering-education/content/authors/mary-njeri/)
