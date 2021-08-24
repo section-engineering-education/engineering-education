@@ -108,9 +108,9 @@ A quantifier is used to specify the number of occurrences of a character that it
     }
 ```
 
-In the code above, the output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`.
+The output for each print statement (except the last print statement) is `true` because the character ‘o’ which precedes the `*`  in the regex expression `o*` matches the string literal `o`.
 
-On the contrary, the code in the last print statement outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern.
+The last print statement outputs `false` because the regex defines its pattern to match an occurrence of exactly zero or more quantities of string `o` and nothing more.
 
 * One or more times matcher  (`+`): This is regarded as the “one or more” quantifier because it matches the instance of its preceding character occurring at least once. The following examples illustrate the `+` quantifier:
 
@@ -137,11 +137,7 @@ On the contrary, the code in the last print statement outputs `false` because th
 ```
 
 
-Using the same set of examples applied in the `*` quantifier above, the outputs of the first three print statements are each of boolean value `true` because the instances of the immediate character (‘o’) preceding the `+` quantifier occur at least once in each example. 
-
-The fourth print statement outputs boolean value `false` because, despite the sequence of the preceding characters ‘h’, ‘e’, ‘l’, ‘l’ matching that of the regex pattern, the `+` quantifier expects at least one occurrence of ‘o’ immediately after the second ‘l’ character which turns out to be absent at the expected index of the string literal. 
-
-The last print statements outputs `false` because the regex defines its pattern to match an occurrence of exactly one or more quantities of string “o” and nothing more, but the string literal “hell” contains other characters which were not accounted for in the regex pattern, as well as no occurrence of the character ‘o’.
+This scenario is similar to the `*` quantifier except that it requires one or more occurence of it's immediate character.
 
 It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` as a result of case-mismatch.
 
@@ -320,7 +316,7 @@ The Java class Matcher performs match operations on Strings or character sequenc
 ```
 
 
-In the code above, the Java class `Pattern` compiles the regex pattern and stores the value in the variable `compiledRegex` - an instance of the `Pattern` class which then creates the Matcher instance, `regexMatcher`, which also holds the returned value of the compiled regex pattern matching the string literal with variable name `statements`.
+The Java class `Pattern` compiles the regex pattern, then creates the Matcher instance, `regexMatcher`, which also holds the returned value of the compiled regex pattern.
 
 `Matcher` method `find` matches a portion of the string to the search pattern and outputs the portion of the string that matches the search pattern.
 
