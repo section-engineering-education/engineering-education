@@ -1,8 +1,23 @@
 ### Creating a Responsive HTML Registration form
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/creating-a responsive-html-registration-form/
+title: Creating a responsive HTML registration form
+description: In this article we will create a simple registration form using HTML and CSS. We will the add responsiveness to it so that it can be viewed in all screens.
+author: harshitab13
+date: 2021-03-25T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Good day, readers! In today's tutorial, we will learn how to make a Responsive HTML Registration Form.
+  - url: /engineering-education/creating-a responsive-html-registration-form/hero.jpg
+    alt: Registration form image example
+---
 
 Nowadays, HTML forms may be found on a wide range of websites. All such HTML forms are intended to gather data, feedback, and various information from your website's visitors.
+<!--more-->
 
 Contact forms, Login forms, and registration forms are just a few examples. This tutorial will guide you on how to create one.
 
@@ -51,7 +66,7 @@ We won't drag this with specifying it in more detail, but there are a few essent
 
 There are more aspects to be concerned about, but the above should be plenty for a basic registration form.
 
-![Editors for HTML](/engineering-education/creating-a-responsive-HTML-registration-form/editors.png)
+![Editors for HTML](/engineering-education/creating-a-responsive-html-registration-form/editors.png)
 
 It is entirely up to you to decide which editor you will use. Do you want anything to utilize in your browser? Probably take a glance at Codepen.
 
@@ -291,7 +306,7 @@ input[type="file"] {
 
 At this point, you should be able to see the styles applied to the page after reloading.
 
-#### Creating Form the Body [Email and Password]
+#### Creating the form body [Email and Password]
 
 In HTML, the email address will be a distinct block, and the Password and Confirm Password will be the equivalent of the first name and last name. After the end tags of the first name and last name, insert the following code; `horizontalGroup` but contained within the `formBody` wrapper.
 
@@ -337,7 +352,7 @@ Here we don't need to add any additional style to the above code because we are 
 
 #### Creating the Form Footer
 
-In our registration form footer consist of submit button in formFooter.
+In our form, the footer will consist of a submit button in `formFooter`.
 
 ```html
 <!-- form-footer -->
@@ -346,7 +361,7 @@ In our registration form footer consist of submit button in formFooter.
 </div>
 ```
 
-Now we will do CSS coding for FormFooter.
+Now we will add  CSS styling for `FormFooter`.
 
 ```css
 /*---------------------------------------*/
@@ -387,23 +402,21 @@ Now we will do CSS coding for FormFooter.
 }
 ```
 
-Now you can see the final output of the code that you have written. Isn’t it look like the form as shown below, right?
+With the blocks of code above, our form will now look like this one below:
 
-![Hurry we created the form](FinalForm.PNG)
+![Hurray we created the form!](/engineering-education/getting-started-with-optimization-in-matlab/final-form.png)
 
-Wait, we didn’t add the responsiveness yet.
+Our next task is adding responsiveness to our form.
 
-It's time to learn how to add responsiveness to your HTML registration form.
-
-#### Adding Responsiveness to the Form
+#### Adding responsiveness to the Form
 
 Responsiveness is part of CSS. Don’t worry we won’t do heavy coding for it. Just the basic one.
 
 At first, we need to know what is responsiveness?
 
-Responsiveness is a way to make your form, website, or application adjustable and perfect view on any screen. The screen may be of any device laptop, mobile phone, PC or Mac, etc.
+Responsiveness is a way to make your form, website, or application adjustable and perfect view on any screen. The screen may be of any device like laptop, mobile phone or a tablet.
 
-For making the form responsive we will use a media query. On the screens that are 680px or less, we need to set the width of our form accordingly to the screen.
+For making the form responsive we will use a media query. On the screens that are 680px or less, we need to set the width of our form according to the screen.
 
 ```css
 @media screen and (max-width: 680px)
@@ -414,3 +427,11 @@ For making the form responsive we will use a media query. On the screens that ar
 ```
 
 Hurray! You have successfully learned how to make a responsive HTML registration form.
+
+### Conclusion
+Finally, we have created our registration form in just few simple steps. We have also made it responsive. Our webpage visitors who use mobile phones will be able to view it whole without any problem!
+
+I hope you find this tutorial helpful! 
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
