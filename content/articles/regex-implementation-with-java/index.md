@@ -20,16 +20,13 @@ In addition to searching a character or a combination of characters, We can also
 In most programming languages, strings are immutable, and the operations mentioned above would require the formation of a new string literal or object.
 
 #### WHY REGULAR EXPRESSION?
+Imagine that you want to validate an email address; you could ordinarily attempt to iterate through the email string while validating each character of the email string.
 
-Imagine you want to validate that a date input matches the format “MM/DD/YYYY” while ensuring that the values provided for the month, day and year are valid for their respective fields, that is, the values are digits, and the month is between 1 and 12, the value of the day is valid with respect to the month and so on.
-
-Also, imagine you want to ensure that the value provided in an email address field is in a valid email address format while recognizing that an email address could be composed of alphanumeric characters, special characters within the email username, the “@” character separating the username from the domain name, a dot separating the domain name from the domain. One could ordinarily attempt to iterate through the string while performing a combination of IF statements to ascertain the validity of the input.
-
- This is not an effective solution as it would result in your code becoming more complex and could reduce performance.
+ Using iterators and IF statements is not a practical solution as it would result in your code being more complex and could reduce performance.
 
 However, with an accurate combination of the regex characters, you can achieve this with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages. One can use one regular expression to validate a variety of inputs.
 
-Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. Validations are faster when compared to applying IF and ELSE statements.
+Many programming languages support regex; you get to do more with fewer lines of code, thereby keeping your code cleaner. In addition, validations are faster when compared to applying IF and ELSE statements.
 
 However, with an accurate combination of the regex characters, you can validate emails with at least a line of code, thereby making your program more readable, cleaner, and more scalable. Regex has a broad range of usages.
 
@@ -50,9 +47,9 @@ As mentioned earlier, regex combines simple characters and special characters th
     }
 ```
 
-In the code above, the predicate method `.matches(“hello”)` which takes a string argument representing a regex pattern is invoked on the string variable `word` to ascertain that its value `hello` matches the given regex pattern, `hello`. 
+In the code above, the predicate method `.matches(“hello”)` takes a string argument representing a regex pattern is invoked on the string variable `word` to ascertain that its value `hello` matches the given regex pattern, `hello`. 
 
-The program outputs the boolean value `true` because the length and order of the characters of the value in the variable matches the regex. This can also be performed on a string literal, and the output would be the same.
+The program outputs the boolean value `true` because the length and order of the characters of the value in the variable match the regex. This can also be performed on a string literal, and the output would be the same.
 
 ```java
 
@@ -139,7 +136,8 @@ The last print statement outputs `false` because the regex pattern matches an oc
 
 This scenario is similar to the `*` quantifier except that it requires one or more occurence of it's immediate character.
 
-It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` as a result of case-mismatch.
+It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` due to case-mismatch.
+
 
 ```java
 
@@ -166,7 +164,7 @@ It is important to note that regex matching is case-sensitive, and hence both li
 ```
 
 
-In the given example above, the string array with the variable name “words” is iterated and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. The results obtained are concatenated side by side with a white space between each word.
+In the example above, the string array with the variable name “words” is iterated, and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. Finally, the results obtained are concatenated side by side with a white space between each word.
 
 * N number of times matcher (`{n}`): This is regarded as the “n” quantifier, where ‘n’ is an integer because it matches the instance of its preceding character occurring exactly n number of times. The following examples illustrate the `{n}` quantifier:
 
@@ -230,11 +228,11 @@ In the example below, the regex matches elements in the string array `words` whi
 ```
 
 
-Quantifiers will match as many occurrences as possible, for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  However, in a situation where a quantifier is superseded by a question mark (?) such as in the format `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
+Quantifiers will match as many occurrences as possible for as long as the match is still successful. Due to this, they are referred to as “Greedy”.  When a quantifier is superseded by a question mark (?), i.e. `*?`, the quantifier becomes reluctant or lazy. This causes it to match as few occurrences as possible as long as the match is still successful.
 
 #### CHARACTER CLASSES
 
-A character class is used to specify a set of characters, whereby any one of such sets is required to be present in a given string for a match to occur. It is used to distinguish certain categories of characters, sometimes with similar attributes from other characters. For example, distinguishing alphabets from numbers, numbers from punctuation marks, specific alphabets from other alphabets, and so on.
+A character class is used to specify a set of characters, whereby any one of such sets is required to be present in a given string for a match to occur. It is used to distinguish certain categories of characters, sometimes with similar attributes from other characters. For example, it distinguishes alphabets from numbers, numbers from punctuation marks, specific alphabets from other alphabets, and so on.
 
 
 | Characters | Description |
@@ -282,9 +280,9 @@ Assertions are used to specify boundaries within which a match should occur. The
 
 #### CHARACTER ESCAPE (`\`)
 
-The backslash `\` is used to obtain the literal meaning or value of a character, usually a quantifier or any other special character. For example, to obtain the literal backslash character, it is required to be escaped `\\`.
+The backslash `\` is used to obtain the literal meaning or value, usually a quantifier or any other special character. For example, to obtain the literal backslash character, it is required to be escaped `\\`.
 
-It is also used to indicate that the character that follows it is special as described in the character classes section of this article.
+It is also used to indicate that the character that follows it is special, as described in the character classes section of this article.
 
 ### JAVA PATTERN AND MATCHER APIs
 
@@ -324,7 +322,7 @@ It is important to note that the method `matches` of class String, Pattern, or m
 
 ### SOME STRING METHODS THAT APPLY REGEX
 
-Given two instances of string with variable names `s` and `replacement` and regex patterns represented as “regex”, the following operations can be carried out on `s`:
+Given two instances of a string with variable names `s` and `replacement` and regex patterns represented as “regex”, we can carry out the following operations on `s`:
 
 * `s.replaceFirst(“regex”, “replacement”)` : This replaces the first occurrence of `regex` in `s` with `replacement`.
 
@@ -336,17 +334,17 @@ Given two instances of string with variable names `s` and `replacement` and rege
 
 ### PASSWORD PATTERN VALIDATION USING REGEX
 
-After all is said and done, let us proceed to practice what we’ve learned so far by building a regex pattern that validates that a given password matches the following requirements:
+Let us proceed to practice what we’ve learned so far by building a regex pattern that validates that a given password matches the following requirements:
 
 * The password contains at least one upper case character.
 * The password contains at least one lower case character.
 * The password contains at least one digit.
 * The password contains at least one special character.
-* The password is at least 7 characters long.
+* The password is at least seven characters long.
 
-The pattern should be constructed such that the sequence of the character should not be a determinant of the match, rather, the regex is expected to check that the required characters are present in the given password.
+The pattern should be constructed such that the sequence of the character should not be a determinant of the match; rather, the regex is expected to check that the required characters are present in the given password.
 
-While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least 5 factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. To achieve this, we’ll take advantage of the `|` operator.
+While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least five factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. To achieve this, we’ll take advantage of the `|` operator.
 
 
 ```java
