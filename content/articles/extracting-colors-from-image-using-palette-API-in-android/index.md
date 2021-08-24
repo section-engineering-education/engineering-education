@@ -38,7 +38,7 @@ Palette is a support library in android. It allows you to extract prominent colo
 
 In your Android Studio, select New Project then Empty Activity. Name it as Palette Demo. Click Finish and wait for it to build.
 
-![create_project](/title/image_name.png)
+![CreateProject](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/create_project.png)
 
 ### Step 2: Setup the library
 
@@ -324,8 +324,11 @@ class MainActivity : AppCompatActivity() {
 
 On running the app, this is what to expect:
 
+![ScreenOne](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/screen_one.png)
 
-You can get the entire project from: 
+![ScreenTwo](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/screen_two.png)
+
+Check out the entire project on [GitHub](https://github.com/robert-muriithi/PaletteApiDemo).
 
 ### Conclusions
 
