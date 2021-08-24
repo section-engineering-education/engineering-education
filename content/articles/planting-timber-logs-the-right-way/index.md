@@ -15,7 +15,7 @@ images:
     alt: Getting started with Timber logs
 ---
 
-Logging is one of the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. Timber, which is a library created by `Jake Wharton` has made logging effortless. This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
+Logging is among the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. Timber, which is a library created by `Jake Wharton` has made logging effortless. This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
 
 <!--more-->
 
@@ -37,7 +37,7 @@ At the end of this tutorial, you should be able to:
 
 ### Introduction
 
-Logging is one of the most important things we use while developing android apps. We use logs for almost everything. For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome and time-consuming. Timber, a library developed by `Jake Wharton` has made logging easily attainable and with less code.
+Logging is essential and is of much importance while developing android apps. We use logs for almost everything. For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome and time-consuming. Timber, a library developed by `Jake Wharton` has made logging easily attainable and with less code.
 
 ### What is a Logcat?
 
@@ -46,7 +46,7 @@ When your code throws an exception, the logcat displays a message. The exception
 
 ### What are some of the traditional log class messages?
 
-According to the official documentation, this class allows you to create log messages. These messages appear in the logcat. From the highest priority to the lowest (or, least verbose to the most), we should use the following:
+According to the official documentation, this class allows for the creation of log messages. These messages appear in the logcat. From the highest priority to the lowest (or, least verbose to the most), we should use the following:
 - `Log.e(String, String)` - display errors
 - `Log.w(String, String)` - display warnings
 - `Log.i(String, String)` -display information
@@ -67,7 +67,7 @@ It's a library by `Jake Wharton` that enhances logging in android.
 ### How it works.
 
 - You plant a tree by calling `Timber.plant` in your `onCreate` in your Application Class
-- Call the `Timber` from any class. We can use the class-name as the tag.
+- Call the `Timber` from any class. Our class-name is what we can use as the tag.
 
 ### Now, how about we do some coding stuff...
 
@@ -75,7 +75,7 @@ In this example, we'll create an app that adds two numbers. Then we'll log the a
 
 #### Step 1: Creating the project
 
-We will create a new project; you can refer to the image below for guidance.
+We will kick off with creating a new project; you can refer to the image below for guidance.
 
 ![create_project](/planting-timber-logs-the-right-way/creating_project2)
 
@@ -91,7 +91,7 @@ implementation 'com.jakewharton.timber:timber:4.7.1'
 
 #### Step 3: XML layouts
 
-In this step, we will create the layout.
+In this step, we will create our layout.
 
 ##### Main Activity layout
 
@@ -168,7 +168,7 @@ In this step, we will create the layout.
 
 #### Step 4: The Timber App Class
 
-In this step, we will write the code for the `Application class of Timber`
+In this step, we will write  code for our `Application class of Timber`
 ![creating a class in java](/planting-timber-logs-the-right-way/creating_a_class_java.png)
 
 ```Java
@@ -323,7 +323,7 @@ Once done, run the app. Here is what you should expect:
 Check out the entire project for `Java` on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)
 
 ### Conclusion
-That's not all about `Logging with Timber`; keep exploring. Implement logging using Timber in your android applications and imporve the readablity of your application logs.
+That's not all about `Logging with Timber`; keep exploring. Implement logging using this amazing tool in your android applications and imporve the readablity of your application logs.
 
 ### Resources
 
