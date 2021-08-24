@@ -1,4 +1,4 @@
-Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications after Cross-site scripting (XSS) and SQL injection (SQLi). XXS is a malicious code injection attack on a vulnerable web application that is executed when the user visits the app on a browser. The malicious code makes the web app do something that it is not supposed to do. SQLi is a web app vulnerability that enables attackers to interfere with the SQL queries in the database.
+Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications after [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) and [SQL injection (SQLi)](https://owasp.org/www-community/attacks/SQL_Injection). XXS is a malicious code injection attack on a vulnerable web application that is executed when the user visits the app on a browser. The malicious code makes the web app do something that it is not supposed to do. SQLi is a web app vulnerability that enables attackers to interfere with the SQL queries in the database.
 
 Web browsers are the most affected by CSRF attacks. When given a file to run, they can't tell if it is malicious or not. So, the web browsers go ahead and run the files.
 
@@ -107,9 +107,8 @@ The tester can use the following methods of testing:
 
 #### Tools for CSRF testing
 1. [CSRF Tester](http://www.owasp.org/index.php/Category:OWASP_CSRFTester_Project)
-2. [Cross Site Requester](http://yehg.net/lab/pr0js/pentest/cross_site_request_forgery.php)
-3. [OWASP ZAP](https://www.zaproxy.org/)
-4. [Pinata CSRF tool](http://code.google.com/p/pinata-csrf-tool/)
+2. [OWASP ZAP](https://www.zaproxy.org/)
+3. [Pinata CSRF tool](http://code.google.com/p/pinata-csrf-tool/)
 
 ### How to prevent CSRF attacks
 IT security experts suggest multiple CSRF prevention techniques. Let's go through some practices to prevent CSRF vulnerabilities:
@@ -123,13 +122,13 @@ IT security experts suggest multiple CSRF prevention techniques. Let's go throug
 - Using referrer headers.
 - Reject unsolicited authentication requests.
 
-For more CSRF prevention alternatives, visit [CSRF prevention cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) by OWASP.
+For more CSRF prevention alternatives, visit the [CSRF prevention cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) by OWASP.
 
 ### Conclusion
 CSRF attack is a severe threat to web applications. The vulnerability depends on how the HTTP protocol manages web requests and processes. In a CSRF attack, the attacker tricks the authenticated user into performing malicious action on a web application without the user's knowledge. This causes a significant impact on the victim or the entire web application.
 
 To summarize, we have looked at:
-- What are CSRF attacks.
+- What are CSRF attacks?
 - How CSRF attacks work.
 - Impacts of CSRF attacks.
 - Testing of CSRF attacks.
@@ -139,8 +138,7 @@ I hope this article has given you a better understanding of Cross-Site Request F
 
 ### Further reading
 1. [Cross-site request forgery](https://owasp.org/www-community/attacks/csrf)
-2. [Cross-site scripting](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
-3. [SQL injection](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/)
-
+2. [How to prevent cross-site scripting in Node.js](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
+3. [How to fix and prevent SQL injection in WordPress](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/)
 
 Happy coding!
