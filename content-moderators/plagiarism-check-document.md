@@ -6,15 +6,17 @@ We are currently using Copyleaks to run our 3rd party plagiarism checks on incom
 
 We conduct a plagiarism check on every single PR that comes in for publishing. 
 
-We try to restrict the % to 10 or less. Anything over 30% is a candidate for closure. 
+We try to only approve Pull Requests that have a % of 10 or less. (As long as there is not verbatim content). Anything way over 30% is a candidate for closure - especially if we notice content copied verbatim. 
 
-Every article (pull request) should be considered in a case by case basis. 
+Every article (pull request) should be considered on a case by case basis. 
 
 Some red flags *may or may not* be actual red flags. 
 
 We can (and should) look through the alerts brought forth and look through the article structure to ensure there is no plagiarism. 
 
-If the % is close to 30 - we download a copy (PDF) of the report to ping and attach to the PR via GitHub. We let the contributor know that the report had some red flags (see templated responses for more details) and include the link to our docs on what is plagiarism. 
+Anything above 10% (but less than 30~%) we want to download the report to share with the contributor to work on refining the content as we do NOT want any future reader to encounter their work while reading our site.
+
+If the % is between 10 and 30 we can download a copy (PDF) of the report to ping and attach to the PR via GitHub. We let the contributor know that the report had some red flags (see templated responses for more details) and include the link to our docs on what is plagiarism. 
 
 After you are signed up and on the main CopyLeaks page. 
 
@@ -39,8 +41,6 @@ Copy and paste the content and click Scan.
 Wait for the scan to complete and to see the results. (Once you are familiar with the process you can run multiple scans at one time - lets just not forget to name them correctly to keep track and future search).
 
 After the scan is complete - go through the report carefully to keep an eye for false positives. 
-
-Anything above 10% we want to download the report to share with the contributor to work on refining the content as we do NOT want any future reader to encounter their work while reading our site.
 
 ![Download PDF](/static/images/download-pdf.jpg)
 
