@@ -1,4 +1,23 @@
-Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications after [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) and [SQL injection (SQLi)](https://owasp.org/www-community/attacks/SQL_Injection). XXS is a malicious code injection attack on a vulnerable web application that is executed when the user visits the app on a browser. The malicious code makes the web app do something that it is not supposed to do. SQLi is a web app vulnerability that enables attackers to interfere with the SQL queries in the database.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-csrf/
+title: Understanding Cross-site Request Forgery Attacks
+description: This tutorial will provide an overview of CSRF and how it works. We will look at the impact of CSRF on a web application and how to prevent it.
+author: pauline-mwangi
+date: 2021-08-24T00:00:00-16:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-csrf/hero.jpg
+    alt: Attack Cross-site CSRF Image
+---
+
+Cross-site request forgery (CSRF) is the third massive security vulnerability in web applications after [Cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) and [SQL injection (SQLi)](https://owasp.org/www-community/attacks/SQL_Injection). 
+<!--more-->
+XXS is a malicious code injection attack on a vulnerable web application that is executed when the user visits the app on a browser. The malicious code makes the web app do something that it is not supposed to. SQLi is a web app vulnerability that enables attackers to interfere with the SQL queries in the database.
 
 Web browsers are the most affected by CSRF attacks. When given a file to run, they can't tell if it is malicious or not. So, the web browsers go ahead and run the files.
 
@@ -6,9 +25,9 @@ CSRF attacks occur when an authenticated user sends a malicious request to a web
 
 ### Table of contents
 1. [Overview of CSRF attacks](#overview-of-csrf-attacks)
-2. [How CSRF attacks works](#how-csrf-attacks-works)
+2. [How CSRF attacks work](#how-csrf-attacks-work)
 3. [Impacts of CSRF attacks](#impacts-of-csrf-attacks)
-4. [Testing of CSRF attacks](#testing-of-csrf-attacks)
+4. [Testing for CSRF attacks](#testing-for-csrf-attacks)
 5. [How to prevent CSRF attacks](#how-to-prevent-csrf-attacks)
 
 ### Prerequisites
@@ -17,22 +36,22 @@ Before you proceed, you are required to have:
 - An understanding of [HTTP methods](https://www.w3schools.com/tags/ref_httpmethods.asp).
 
 ### Overview of CSRF attacks
-[CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack is a web security vulnerability that forces users to conduct malicious actions unknowingly on a web application they are currently authenticated.
+[CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack is a web security vulnerability that forces users to conduct malicious actions unknowingly on a web application they are currently authenticated on.
 
 CSRF attacks take advantage of the trust a web app has in the user. When you log in and get authenticated to a web application, the browser and web server trust that everything done is courtesy of you.
 
 In a CSRF attack, the attacker exploits the user's trust to execute functions for themselves. This type of attack only happens to vulnerable web applications. With the help of social engineering platforms, attackers can launch a CSRF attack.
 
-CSRF attacks should at no time occur if websites are correctly developed. First, the application is obliged to have anti-forgery mechanisms. Second, encryption and cryptography techniques ensure that third-party users can't handle requests using your browser.
+CSRF attacks should at no time occur if websites are correctly developed. First, the application must have anti-forgery mechanisms. Second, encryption and cryptography techniques ensure that third-party users can't handle requests using your browser.
 
-### How CSRF attacks works
-A CSRF attack aims for web applications that fail to differentiate between valid and forged requests dominated by the attacker. There are multiple ways an attacker uses to exploit the CSRF vulnerability.
+### How CSRF attacks work
+A CSRF attack aims at web applications that cannot differentiate between valid and forged requests dominated by the attacker. There are multiple ways an attacker uses to exploit the CSRF vulnerability.
 
 To understand how it works, let us go through this scenario:
 
 We have an attacker who wants to exploit a vulnerable online banking system. The attacker wants to forge a request to send money from a user's logged-in online banking account to his account.
 
-The attacker forges a request. Inside of that request, another request is embedded in a hyperlink. If the user clicks on that link, the request is sent to the server that transfers funds from the logged-in user into the attacker's bank account.
+The attacker forges a request. Inside of that request, another request is embedded in a hyperlink. If the user clicks on that link, the request is sent to the server, which transfers funds from the logged-in user's account into the attacker's account.
 
 From the above illustration, CSRF works by an attacker gaining access to a victim's browser through a malicious link. To launch this attack:
 1. The attacker must create a malicious URL.
@@ -90,7 +109,7 @@ For instance, if the victim is a normal user, the attacker can fully control the
 CSRF has been used to perform several malicious activities such as stealing data, unauthorized funds transfer, changing passwords, damaging clients' relationships, spreading worms or malware, and many more.
 
 ### Testing for CSRF attacks
-CSRF testing is the process of finding CSRF vulnerabilities in web applications. Testing for CSRF vulnerabilities can be done either manually or using automated tools. 
+CSRF testing is finding CSRF vulnerabilities in web applications. Testing for CSRF vulnerabilities can be done either manually or using automated tools. 
 
 #### Manual testing for CSRF attacks
 If you want to find out if the session is not secure, you need to examine the web app's session. If session handling is on the client-side and displays data to the browser, the web app is vulnerable. The data displayed on the browser is the HTTP authentication credentials and cookies.
@@ -131,14 +150,17 @@ To summarize, we have looked at:
 - What are CSRF attacks?
 - How CSRF attacks work.
 - Impacts of CSRF attacks.
-- Testing of CSRF attacks.
+- Testing for CSRF attacks.
 - How to prevent CSRF attacks.
 
-I hope this article has given you a better understanding of Cross-Site Request Forgery (CSRF)
+I hope this article has given you a better understanding of Cross-Site Request Forgery (CSRF).
 
 ### Further reading
 1. [Cross-site request forgery](https://owasp.org/www-community/attacks/csrf)
-2. [How to prevent cross-site scripting in Node.js](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
+2. [How to prevent Cross-site scripting in Node.js](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
 3. [How to fix and prevent SQL injection in WordPress](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
