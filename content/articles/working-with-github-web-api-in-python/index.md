@@ -43,12 +43,12 @@ https://api.github.com/search/repositories?q=language:python&sort=stars
 
 Let's examine the parts of the API call:
 
-1. `https://api.github.com/` - sends the request to the GitHub web server that handles API calls.
-2. `search/repositories` - is the endpoint that informs the API to search across all of GitHub repositories.
-3. `?` - indicates that an argument is about to be passed.
-4. `q=`- the character `q` stands for `query`.
-5. `language:python` - that queries repositories that use only Python as their main language. 
-6. `&sort=stars` - the projects are sorted by the number of stars they have gotten.
+- `https://api.github.com/` - sends the request to the GitHub web server that handles API calls.
+- `search/repositories` - is the endpoint that informs the API to search across all of GitHub repositories.
+- `?` - indicates that an argument is about to be passed.
+- `q=`- the character `q` stands for `query`.
+- `language:python` - that queries repositories that use only Python as their main language. 
+- `&sort=stars` - the projects are sorted by the number of stars they have gotten.
 
 On fetching the API data, the response will look like:
 
@@ -256,18 +256,18 @@ Description: All Algorithms implemented in Python
 ### Conclusion
 In this tutorial, we have understood the following:
 
-- Use an API call to request data
-- Installing requests
-- Process an API response
-- Using the response dictionary
-- Summing up the top repositories
+- Use an API call to request data.
+- Installing requests.
+- Process an API response.
+- Using the response dictionary.
+- Summing up the top repositories.
+
+You can check out the full code [here](https://github.com/Bonimum/Working-with-GitHub-s-web-API-in-Python/blob/main/index.md).
 
 Happy coding.
 
 ### Further reading
-You can check the full code snipppets used in this tutorial [here](https://github.com/Bonimum/Working-with-GitHub-s-web-API-in-Python/blob/main/index.md)
-
-You can also learn more about other concepts by [visiting this page.](https://www.techgeekbuzz.com/how-to-use-github-api-in-python/).
+- [How to use GitHub API in Python?](https://www.techgeekbuzz.com/how-to-use-github-api-in-python/).
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
