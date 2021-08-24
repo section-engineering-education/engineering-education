@@ -3,51 +3,51 @@ layout: engineering-education
 status: publish
 published: true
 url: /integrating-chart-js-in-django/
-title: Integrating Chart.js in Django
-description: This article will be an introduction to Chart.js. Here, we will learning to integrate Chart.js with a simple Django application.
+title: Getting Started with Chart.js in Django
+description: This article will be an introduction to Chart.js. We will learn how to integrate Chart.js with a simple Django application.
 author: shuaib-oseni
-date: 2021-08-21T00:00:00-17:30
-topics: []
+date: 2021-08-24T00:00:00-04:51
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/integrating-chart-js-in-django/hero.png
     alt: Integrating Chart.js in Django image
 ---
-Chart.js is an open-source HTML5 based JavaScript library for rendering charts in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter and so on.
+Chart.js is an open-source HTML5 based JavaScript library for rendering charts in HTML5 canvas. With Chart.js, you can visualize the data using several plots like line, bar, scatter, and so on.
 <!--more-->
-There several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
+There are several libraries out there for data visualization, such as [Django Highcharts](https://github.com/ernestoarbitrio/django-highcharts) and [Plotly.js](https://plotly.com/javascript/).
 
-Why Chart.js?
+#### Why Chart.js?
 
-Chart.js is quite flexible and easy to setup. Plus, you get to choose from about eight different chart types. This project has a over of 55K stars on GitHub. Developers prefer Chart.js over other libaries because:
+Chart.js is quite flexible and easy to set up. Plus, you get to choose from about eight different chart types. This project has over 55K stars on GitHub. Developers prefer Chart.js over other libraries because:
 
-- Charts are animated
-- Charts are customizable
-- Chart.js contains several extensions for improving the interactivity
+- Charts are animated.
+- Charts are customizable.
+- Chart.js contains several extensions for improving the interactivity.
 
 In this tutorial, we'll be looking at how to integrate Chart.js in Django by building a simple project.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
 
-A little understanding of Django would help the reader to follow along better.
+A little understanding of Django would help the reader follow along better.
 
 To understand more about Django, it is recommended to read these articles on [Django CRUD APIs](/engineering-education/django-crud-api/) and [Django API documentation](/engineering-education/django-api-documentation/).
 
 ### Table of contents
-1. [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
-2. [Creating a model](#creating-a-model)
-3. [Creating a view](#creating-a-view)
-4. [Creating templates](#creating-templates)
-5. [Conclusion](#conclusion)
+- [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
+- [Creating a model](#creating-a-model)
+- [Creating a view](#creating-a-view)
+- [Creating templates](#creating-templates)
+- [Conclusion](#conclusion)
 
 ### Creating and setting up a new Django project
 Let's start by creating a new virtual environment.
 
 A virtual environment allows you to create a virtual space on your computer.
 
-By creating a virtual environment, you'll be able to separate out the necessary library installation for a project, without having to install them globally.
+By creating a virtual environment, you'll be able to separate the necessary library installation for a project without having to install them globally.
 
 Now, create a virtual environment `env` by running the command below:
 
@@ -101,9 +101,9 @@ INSTALLED_APPS = [
 ### Creating a model
 A model in Django is a class that represents a single table or a database. It can be used to dynamically load data into a project.
 
-Here, in this tutorial, we'll be learning to create a chart that visualizes the trends in usage for different text editors.
+Here, in this tutorial, we'll be learning how to create a chart that visualizes the trends in usage for different text editors.
 
-For our model, we'll be creating two fields - User field `num_users` and text editor field `editor_name`.
+For our model, we'll be creating two fields: user field `num_users` and text editor field `editor_name`.
 
 Under the `editors` directory, copy and paste the following code in the `models.py` file:
 
@@ -130,7 +130,7 @@ admin.site.register(Editors)
 
 Next, we need to migrate our model to the database.
 
-Migrations are Django's way of publishing changes you make to your models into the database schema. So, when creating a new model, we migrate to create the required table in the database. 
+Migrations are Django's way of publishing changes you made to your models into the database schema. So, when creating a new model, we migrate to create the required table in the database. 
 
 Next, we migrate our model by running the commands below:
 
@@ -149,7 +149,7 @@ python manage.py createsuperuser
 
 Now, we can log in to the admin page.
 
-To login to the admin section, serve the app again and go to `http://localhost:8000/admin` and log in with your superuser details.
+To login to the admin section, serve the app again, go to `http://localhost:8000/admin`, and log in with your superuser credentials.
 
 ![Django admin login page](/engineering-education/integrating-chart-js-in-django/login.png)
 
@@ -159,18 +159,18 @@ To login to the admin section, serve the app again and go to `http://localhost:8
 
 *Django admin page*
 
-Now, let's add an editor in the `Editors` category, to test if its error-free.
+Now, let's add an editor in the `Editors` category, to test if it's error-free.
 
-Click on editor, then click `Add Editor` to add an editor.
+Click on the editor, then click `Add Editor` to add an editor.
 
 ![Add Editor](/engineering-education/integrating-chart-js-in-django/add-editor.png)
 
 *Add editor*
 
 ### Creating a view
-A view in Django is basically a function accepts a web request and returns a web response.
+A view in Django is basically a function that accepts a web request and returns a web response.
 
-A web response can be an error page, redirect, image or even HTML content.
+A web response can be an error page, redirect, image, or even HTML content.
 
 Now, let's create a view by adding the following to our `view.py` file:
 
@@ -317,13 +317,13 @@ urlpatterns = [
 ]
 ```
 
-Now, let's add a few text editors and a number of users to our Django admin.
+Now, let's add a few text editors and some users to our Django admin.
 
 ![Editors](/engineering-education/integrating-chart-js-in-django/editors.png)
 
 *Adding new text editors*
 
-Now, let's test this out by starting the server with the following command:
+Let's test this out by starting the server with the following command:
 
 ```bash
 python manage.py runserver 
@@ -334,15 +334,15 @@ python manage.py runserver
 *Display pie chart*
 
 ### Conclusion
-To conclude, we have learned about Chart.js. We have also learned to integrate charts in a Django app.
+To conclude, we have learned about Chart.js. We have also learned how to integrate charts in a Django app.
 
-In this tutorial, we learned to use `doughnut` chart type. There other chart types you can use.
+In this tutorial, we learned how to use `doughnut` chart type. There are other chart types you can use.
 
 You can also check the [Chart.js](https://www.chartjs.org/docs/latest/charts/) documentation for more info on the chart types.
 
-You can checkout the full code [here](https://github.com/shosenwales/Django-charts) on GitHub.
+You can check out the full code on [GitHub](https://github.com/shosenwales/Django-charts).
 
-Happy coding.
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
