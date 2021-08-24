@@ -326,7 +326,7 @@ It is important to note that the method `matches` of class String, Pattern, or m
 
 ### SOME STRING METHODS THAT APPLY REGEX
 
-Given two instances of string with variable names `s` and `replacement` and regex patterns represented as “regex”, the following operations can be carried out on `s`:
+Given two instances of a string with variable names `s` and `replacement` and regex patterns represented as “regex”, we can carry out the following operations on `s`:
 
 * `s.replaceFirst(“regex”, “replacement”)` : This replaces the first occurrence of `regex` in `s` with `replacement`.
 
@@ -338,17 +338,17 @@ Given two instances of string with variable names `s` and `replacement` and rege
 
 ### PASSWORD PATTERN VALIDATION USING REGEX
 
-After all is said and done, let us proceed to practice what we’ve learned so far by building a regex pattern that validates that a given password matches the following requirements:
+Let us proceed to practice what we’ve learned so far by building a regex pattern that validates that a given password matches the following requirements:
 
 * The password contains at least one upper case character.
 * The password contains at least one lower case character.
 * The password contains at least one digit.
 * The password contains at least one special character.
-* The password is at least 7 characters long.
+* The password is at least seven characters long.
 
-The pattern should be constructed such that the sequence of the character should not be a determinant of the match, rather, the regex is expected to check that the required characters are present in the given password.
+The pattern should be constructed such that the sequence of the character should not be a determinant of the match; rather, the regex is expected to check that the required characters are present in the given password.
 
-While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least 5 factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. To achieve this, we’ll take advantage of the `|` operator.
+While trying to come up with a solution to this, my first attempt was to match the possible sequence of the characters. This turned out to be a cumbersome solution as the possible combinations are at least five factorial. And so I figured that what if we construct a regex for an invalid password, and any password input which doesn’t match this regex is a valid password. To achieve this, we’ll take advantage of the `|` operator.
 
 
 ```java
