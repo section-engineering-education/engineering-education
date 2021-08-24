@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/working-with-github-web-api-in-python/hero.jpeg
     alt: Working with GitHub API in Python
 ---
-For fetching information from the web, we usually request for complete web pages, and extract information by parsing the HTML scripts. Alternatively, an Application Programming Interface (API) will be used to perform the same operation in a more efficient way.
+For fetching information from the web, we usually request for complete web pages, and extract information by parsing the HTML scripts. Similarly, an Application Programming Interface (API) performs the same operation in a more efficient way.
 <!--more-->
 This tutorial will teach you how to create a self-contained application that generates a summary based on the information it obtains through the API.
 
@@ -22,10 +22,11 @@ This tutorial will teach you how to create a self-contained application that gen
 In this article, we will be requesting information related to Python projects on GitHub using the [Github API](https://api.github.com). Also, we will be summarizing information that we've obtained using the API.
 
 ### Prerequisites
-You'll need beginner level skills in Python to continue with this tutorial.
+As a prerequisite, you must have a little understanding of Python to continue further.
 
 ### Objectives
 In this article we will go through:
+
 - Using an API call to request data
 - Installation of `requests` library
 - Keeping track of an API response
