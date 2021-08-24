@@ -2,36 +2,31 @@
 layout: engineering-education
 status: publish
 published: true
-url: /image-processing-with-coil-in-android/
-title: Image Processing with Coil in Android
-description: This tutorial will guide you on how to process images in Android using a fast, lightweight, and powerful open-source library known as Coil.
-author: noni-diana
-date: 2021-07-25T00:00:00-06:00
+url: /how-to-implement-object-oriented-programming-in-matlab/
+title: How to Implement Object Oriented Programming in Matlab
+description: This tutorial will guide the reader on how to avoid redundancy in code repetition and reduce complexityusing Matlab.
+author: collince-odhiambo 
+date: 2021-08-24T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/image-processing-with-coil-in-android/hero.png
-    alt: Image processing with Coil in Android
+  - url: /engineering-education/how-to-implement-object-oriented-programming-in-matlab/hero.jpg
+    alt: Object Oriented Programming in Matlab
 ---
-One of the essential skills that an Android developer must know is how to correctly work with images, especially from a remote source. This is because many applications in some way or another use images.
-<!--more-->
-
-
-
-### HOW TO IMPLEMENT OBJECT ORIENTED PROGRAMMING IN MATLAB
-### Introduction
 Object-oriented programming is a programming method that depends on structures known as objects. This object makes it easy to combine the properties of data and various functions operating on that data. 
 
-These functions are known as methods. For example, You can create an object that notes the distance covered by a moving particle. This object can be used as a building block in building complex systems in the real world.
+<!--more-->
+These functions are known as methods. For example, you could create an object that notes the distance covered by a moving particle. This object can be used as a building block in building complex systems in the real world. 
 
-Object-oriented programming in Matlab is used to manage your codes. It is done by organizing them into classes and functions. It makes it easy also to make any change to your code over time without any difficulties. 
+### Introduction
+Object-oriented programming in Matlab is used to manage your codes. It is done by organizing them into classes and functions. It makes it easier to make any change to your code over time. 
 
-You can avoid redundancy in your code, repetition, and reduce complexity. In this article, we will look at how this is applicable using Matlab.
+You can avoid redundancy in your code, repetition, and reduce complexity. In this article, we will look at how we can do this using Matlab.
 
 ### Prerequisites
-- [Matlab](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-- Proper understanding of [matlab](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+- Have [Matlab](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- A proper understanding of [Matlab](/engineering-education/getting-started-with-matlab/) basics.
 
 The four principles of object-oriented programming are:
 - Encapsulation
@@ -42,16 +37,16 @@ The four principles of object-oriented programming are:
 ### Encapsulation
 Encapsulation is enclosing something or depicting the essential features. This same approach is implemented in programming, but in this case, we use classes and objects. 
 
-The primary use of a class is definning the object that encloses the property(data) and the operations on that property. 
+The primary use of a class is definning the object that encloses the property (data) and the operations on that property. 
 
-This method hides the internal working of the class from outside code. To further implement the mechanism of hiding features, we have access modifiers by which you can restrict the access of the methods and properties of one class from another class. 
+This method hides the internal working of the class from outside code. To implement the mechanism of hiding features, we have access modifiers by which you can restrict the access of the methods and properties of one class from another class. 
 
 Access determines what other methods and functions can call the method. It also provides, gets, and access to properties. 
 
 The three types of access include:
-- Public - unrestricted access(default).
+- Public - unrestricted access (default).
 - Protected - Access from class methods or their subclass.
-- Private - Access from class methods only(not from sub-class)
+- Private - Access from class methods only (not from sub-class).
 
 ### How to implement incapsulation in Matlab
 
@@ -63,7 +58,11 @@ baseSalary
 end
 ```
 
-In the above code, we demonstrate a basic of the class employees. The properties defined are name and base salary. As mentioned earlier, here, there is no access attribute thus public. When the access attribute is not defined, then they are public by default. Since this is a `class employee`, we could make some of the properties private. For example, it could be properties such as `date of birth` and `address` and specify class `methods` that can access these properties. To restrict access to a given group, we use `GetAccess` and `SetAccess`. `GetAccess` permits to read the value of properties, while `SetAccess` permits to assign a value on the property. 
+In the code above, we demonstrated a basic of the class employees. The properties defined are name and base salary. As mentioned earlier, here, there is no access attribute therefore it is public. 
+
+When the access attribute is not defined, then they are public by default. Since this is a `class employee`, we could make some of the properties private. For example, it could be properties such as `date of birth` and `address` and specify class `methods` that can access these properties. 
+
+To restrict access to a given group, we use `GetAccess` and `SetAccess`. `GetAccess` permits to read the value of properties, while `SetAccess` permits us to assign a value on the property. 
 
 ```m
 properties(Access=private)
@@ -76,7 +75,7 @@ department
 end
 ```
 
-The value property or state of joining and department can be read from the three sub-classes i.e Engineer, Sales and TestEngineers. We then have two class methods, constructor(employees) and function `getname`.
+The value property or state of joining and department can be read from the three sub-classes which are - Engineer, Sales and TestEngineers. We then have two class methods, constructor (employees) and function `getname`.
 
 ```m
 methods
@@ -99,12 +98,18 @@ It is done by the command below:
 ```m
 obj = employees("neha", 1000)
 ```
+
 When we run this command in the command window, we will have our object.
 
-![our property](/engineering-education/how-to-implement-object-oriented-programming/oop_one.png)
+![our property](/engineering-education/how-to-implement-object-oriented-programming-in-matlab/oop_one.png)
 
 ### Inheritance
-Here, we organize the class into hierarchies. For example, in encapsulation, we have a class `employees` with the parameters name and baseSalary known as base class or superclass. Engineer and sales are subclasses having their properties(product and commission). Inheritance expresses an either `is-a` or `has-a` relationship between two objects. The advantage is that it eliminates the redundant code or re-using the code from superclass to subclass. They accept classes and inherit the public properties of their superclass. Let's implement this in Matlab. In this case, we will look at the class Engineers.
+Here, we organize the class into hierarchies. For example, in encapsulation, we have a class `employees` with the parameters name and baseSalary known as base class or superclass. Engineer and sales are subclasses having their properties (product and commission). 
+
+Inheritance expresses an either `is-a` or `has-a` relationship between two objects. The advantage is that it eliminates the redundant code or re-using the code from superclass to subclass. 
+
+They accept classes and inherit the public properties of their superclass. Let's implement this in Matlab. In this case, we will look at the class Engineers.
+
 Since we have our base class employees, which we defined earlier, we describe the subclass of this base class, in this case, Engineers. This subclass has its properties, which are products. 
 
 ```m
@@ -118,7 +123,7 @@ team
 end
 ```
 
-The less than(<) sign is used to represent the subclass and superclass relationship. 
+The less than (<) sign is used to represent the subclass and superclass relationship. 
 
 We can access the superclass constructor from the base class by the center below:
 
@@ -138,7 +143,7 @@ end
 end
 ```
 
-We can also have a subclass sales:
+We can also have a subclass for sales:
 
 
 ```m
@@ -168,12 +173,15 @@ In Matlab, you can check the final properties of the class by the command proper
 ```m
 properties Engineers
 ```
+
 This property has all the public properties of the superclass employees.
 
-![properties engineer](/engineering-education/how-to-implement-object-oriented-programming/oop_two.png)
+![properties engineer](/engineering-education/how-to-implement-object-oriented-programming-in-matlab/oop_two.png)
 
 ### Polymorphism
-Polymorphism is a technique in object-oriented programming that allows you to eliminate long lines of codes of `if`, `else`, or `switch case` statements.To implement this technique in Matlab, we look at the example we used in the class engineers, and it is implemented in the `function salary.`
+Polymorphism is a technique in object-oriented programming that allows you to eliminate long lines of codes of `if`, `else`, or `switch case` statements.
+
+To implement this technique in Matlab, we look at the example we used in the class engineers, and it is implemented in the `function salary.`
 
 ```m
 % function for salary for an engineer
@@ -200,7 +208,7 @@ To define `objE`:
 objE = Engineer(obj.name, obj.baseSalary, "simulink")
 ```
 
-![object engineer](/engineering-education/how-to-implement-object-oriented-programming/oop_Three.png)
+![object engineer](/engineering-education/how-to-implement-object-oriented-programming-in-matlab/oop_three.png)
 
 The parameters of our object are the name, salary, and the product, which is Simulink.
 
@@ -208,9 +216,9 @@ The parameters of our object are the name, salary, and the product, which is Sim
 objS = Sales(obj.name, obj.baseSalary, "NA", 500)
 ```
 
-Here the parameters are name, salary, region, which in this case is not applicable(NA), and commission which is 500.
+Here the parameters are name, salary, region, which in this case is not applicable (NA), and commission which is 500.
 
-![object sales](/engineering-education/how-to-implement-object-oriented-programming/oop_four.png)
+![object sales](/engineering-education/how-to-implement-object-oriented-programming-in-matlab/oop_four.png)
 
 To see the impact of these, we will execute the following command in the command window. 
 
@@ -220,9 +228,10 @@ SE = Salary(objE, 10)  %Calculates the salary
 
 SS =  Salary(objS,10)   %calculates the salary from sales
 ```
+
 The value 10 is the number of hours. When we run the codes separately, we get the salary and the sales.
 
-![image showing results](/engineering-education/how-to-implement-object-oriented-programming/oop_five.png)
+![image showing results](/engineering-education/how-to-implement-object-oriented-programming-in-matlab/oop_five.png)
 
 The calculated salary is different as per the mathematical operations.
 
@@ -249,10 +258,9 @@ A class is abstract when we either declare the attribute abstract, an abstract m
 The above code shows that the methods and properties are only defined in the abstract class, but the implementation will be done in their subclass that supports their specific requirement.
 
 ### Conclusion
-Object-oriented programming is essential programming where your codes are in order and organized into classes and subclasses. It enhances the clarity of the code. 
+Object-oriented programming is helpful because it allows your codes to be in order, It also helps get it organized into classes and subclasses. It enhances the clarity of the code. 
 
-Object-oriented programming also makes it easy to make any change in your code over time without any effect. It also enables the re-usability of the codes to prevent repetition.  
-
+Object-oriented programming also makes it easier to make any change in your code over time without any effect. It also enables the re-usability of the codes to prevent repetition.  
 
 ---
 Peer Review Contributions by: [Mary Njeri](/engineering-education/content/authors/mary-njeri/)
