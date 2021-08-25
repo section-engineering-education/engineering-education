@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /how-to-build-a-music-player-with-vanilla-javascript/hero.jpg
-    alt: Music player with vanilla Jabascript
+    alt: Music player with vanilla Javascript
 ---
 Streaming music is a major activity people use the internet these days. For this reason, creating a media platform with a regular music player app features is great and fun project.
 <!--more-->
