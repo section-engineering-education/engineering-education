@@ -1,9 +1,8 @@
-**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. As of writing this article, the latest version stands at 
-*go1.17*.
+**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. As of writing this article, the latest version stands at *go1.17*.
 
 Go is:
 
-> a *statically typed language*. 
+> a *statically typed language*, i.e., the type of the variable is known during the compile time.
 
 > similar to *C* but has garbage collection and concurrency, making it stand out from the other languages.
 
@@ -13,7 +12,7 @@ Writing good, understandable code is what every developer seeks, and they learn 
 RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. We will build an *API* that returns Coffee object data.
 
 ### Prerequisites
-* Go installed on your system.
+* Go installed on your system. You can download the latest version from [here](https://golang.org/dl/).
 * Basics of Go, if you aren't familiar with concepts like `interface`, `method`, etc., or new to Go, you can check out this excellent TDD tutorial over [here](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go).
 * Familiarity with Go's packages like `net/http` and `encoding/json`.
 * Basics of [REST](https://mlsdev.com/blog/81-a-beginner-s-tutorial-for-understanding-restful-api) services.
