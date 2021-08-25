@@ -447,7 +447,7 @@ Michael B. White (Mastering Java)
 
 [Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
-[Myers Briggs Personality Interpretation](https://www.truity.com/page/16-personality-types-myers-briggs)
+- [Myers Briggs Personality Interpretation](https://www.truity.com/page/16-personality-types-myers-briggs)
 
 ---
 Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
