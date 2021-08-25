@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /shell-script-to-demonstrate-the-use-of-shell-function-library/
+url: /shell-script-shell-function-library/
 title: Shell Script to Demonstrate the Use of Shell Function Library
 description: This article will guide the reader what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions.
 author: nicasious-githinji
-date: 2021-08-18T00:00:00-17:00
+date: 2021-08-25T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/hero.jpg
+  - url: /engineering-education/shell-script-shell-function-library/hero.jpg
     alt: Shell Script Shell Function Library
 ---
 A good computer program has a lot of code in it. These code snippets can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group repetitive pieces of code.
@@ -105,13 +105,13 @@ To construct a function library, follow these steps.
 3. Click Next after selecting a project type.
 4. Check the box labeled `Create a script as function library`.
 
-![How to create a Script as a Function Library](/engineering-education/shell-script-to-demonstrate-the-use-of-Shell-function-library/create_script_as_function_library.png)
+![How to create a Script as a Function Library](/engineering-education/shell-script-shell-function-library/create_script_as_function_library.png)
 
 5. Next, type the name of the function library you want to use.
 6. Enter the desired package name, which may be the name of your company or a generic package name that we produce for every Java program.
 7. Enter your preferred Class name, which should be similar to the name of your function library.
 
-![How to enter a class name](/engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/class_name_entry.png)
+![How to enter a class name](/engineering-education/shell-script-shell-function-library/class_name_entry.png)
 
 8. Finish by clicking the Finish button.
 
@@ -123,7 +123,7 @@ The following are the steps when using the function library:
 - Make your way to the Assets section.
 - Click Add after selecting the script's node.
 
-![How to add a script](/engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/adding_scripts_node.png)
+![How to add a script](/engineering-education/shell-script-shell-function-library/adding_scripts_node.png)
 
 - Enter the path to the function library we generated.
 - Give it a suitable alias name ( this name would be used in the scripts to call the functions )
