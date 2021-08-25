@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /searching-and-sorting-in-matlab/
+url: /sorting-searching-matlab/
 title: Searching and Sorting in Matlab
 description: This article will go over the importance of searching and sorting. Both are fundamental algorithms that make work easier and eases the handling of extensive data. 
 author: simon-mwaniki
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/searching-and-sorting-in-matlab/hero.jpg
+  - url: /engineering-education/sorting-searching-matlab/hero.jpg
     alt: searching sorting matlab example image
 ---
 Searching is the process of locating a given object or data within a large set of data. Sorting, on the other hand, is the arrangement of data in a specific required order. 
@@ -71,7 +71,7 @@ sequential_search(M, 34, 1, 10)
 
 When we execute this, we get the output which is the index of our target value which is 4.
 
-![index for the target](/engineering-education/searching-and-sorting-in-matlab/search_one.png)
+![index for the target](/engineering-education/sorting-searching-matlab/search_one.png)
 
 For extensive data, it takes time for sequential search to locate a given data. This is because it compares all the data with the target value to get a similar variable. For faster searching, you need to first sort your data, but this is not the case for sequential search. It means that it is the only algorithms used in searching unsorted lists.
 
@@ -139,7 +139,7 @@ binary_search_recursive(A, 89, 1, length(A))
 binary_search_recursive(A, 88, 1, length(A))  %unavailable 
 ```
 
-![output for target and out of range](/engineering-education/searching-and-sorting-in-matlab/search_two.png)
+![output for target and out of range](/engineering-education/sorting-searching-matlab/search_two.png)
 
 In a duplicate value, the function gives the index of the value it first locates, unlike a sequential search that finds the first variable in the list.
 
@@ -178,7 +178,7 @@ binary_search_iterative(A, 73, 1, length(A))
 
 The output will be:
 
-![index of 73](/engineering-education/searching-and-sorting-in-matlab/search_three.png)
+![index of 73](/engineering-education/sorting-searching-matlab/search_three.png)
 
 ### Sorting
 Sorting is arranging a list in a particular order. The algorithm used defines how to do the sorting. The importance of sorting is that it improvises searching to a high level. 
@@ -237,7 +237,7 @@ quicksort(M)
 
 The output will be:
 
-![output](/engineering-education/searching-and-sorting-in-matlab/search_four.png)
+![output](/engineering-education/sorting-searching-matlab/search_four.png)
 
 ### Merge sort
 This algorithm is better than quicksort. Quicksort divides the data into three, but if you look at it keenly, there was nothing really done in that list. 
