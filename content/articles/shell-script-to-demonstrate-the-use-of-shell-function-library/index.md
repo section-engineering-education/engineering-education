@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /shell-script-to-demonstrate-the-se-of-shell-function-library/
+url: /shell-script-to-demonstrate-the-use-of-shell-function-library/
 title: Shell Script to Demonstrate the Use of Shell Function Library
 description: This article will guide the reader what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions.
 author: 
