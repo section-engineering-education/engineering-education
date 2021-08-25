@@ -1,5 +1,21 @@
-[Next.js](https://nextjs.org/) is a JavaScript framework that lets you build server-side rendering and static web applications using React.js as a client-side web-driven framework, just like vue.js and Angular.js. It has many features that make it great such as pre-rendering, CSS in JS, and many more.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-nextjs-with-mongodb-and-deploy-on-vercel/
+title: How to build a Nextjs application with MongoDB and deploy on Vercel
+description: This article will guide you on how to create a Next.js application, connect it to MongoDB and deploy it on Vercel.
+author: rose-waitherero
+date: 2021-07-02T00:00:00-05:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/hero.png
+    alt: Next.js MongoDB Vercel
+---
+[Next.js](https://nextjs.org/) is a JavaScript framework that lets you build server-side rendering and static web applications using React.js as a client-side web-driven framework, just like vue.js and Angular.js. It has many features that make it great such as pre-rendering, CSS in JS, and many more.
+<!--more-->
 It is a hybrid framework and the easiest way to build React.js applications. It includes a lot of functionality that is easily extensible and customizable. Being a hybrid means it can be used for either CSR (Client-Side Rendering), SSR (Server-Side Rendering), or SSG (Static-Site Generation).
 
 ### Goal
@@ -960,3 +976,6 @@ In this tutorial, we focused on integrating Next.js with MongoDB. Check the foll
 - [MongoDB Node.js driver](https://www.npmjs.com/package/mongodb)
 - [MongoDB official Next.js article](https://developer.mongodbcom/how-to/nextjs-with-mongodb/)
 - [Next.js official docs](https://nextjs.org/)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
