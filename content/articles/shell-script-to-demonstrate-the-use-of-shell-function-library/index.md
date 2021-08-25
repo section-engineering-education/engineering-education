@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/shell-script-to-demonstrate-the-se-of-shell-function-library/hero.jpg
+  - url: /engineering-education/shell-script-to-demonstrate-the-use-of-shell-function-library/hero.jpg
     alt: Shell Script Shell Function Library
 ---
 A good computer program has a lot of code in it. These code snippets can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group repetitive pieces of code.
