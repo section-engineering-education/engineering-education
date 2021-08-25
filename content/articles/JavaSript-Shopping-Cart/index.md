@@ -96,7 +96,7 @@ function displayItems(items, container) {
     let items_container = getDiv(container);
     items_container.innerHTML = '';
 
-    for (let i = 0; i &lt; items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
         let item = items[i];
 
         let item_node = createNode("li");
