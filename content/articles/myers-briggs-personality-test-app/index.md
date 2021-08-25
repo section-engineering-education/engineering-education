@@ -459,7 +459,7 @@ Happy coding!
 
 - Michael B. White (Mastering Java)
 
-[Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
+- [Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
 
 - [Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
