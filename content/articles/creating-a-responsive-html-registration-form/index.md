@@ -1,4 +1,3 @@
-### Creating a Responsive HTML Registration form
 ---
 layout: engineering-education
 status: publish
@@ -6,7 +5,7 @@ published: true
 url: /engineering-education/creating-a responsive-html-registration-form/
 title: Creating a responsive HTML registration form
 description: In this article we will create a simple registration form using HTML and CSS. We will the add responsiveness to it so that it can be viewed in all screens.
-author: harshitab13
+author: harshita-bansal
 date: 2021-03-25T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
