@@ -225,7 +225,7 @@ Let start our server `python manage.py runserver` in our terminal. On the homepa
 
 ## Conclusion
 Congratutions on building a location based web-app using Django, GeoDjango, POSTGIS, Overpass Turboand PostgreSQL. The web-app can be upgraded to get the user location automatically using HTML5 Geolocation API. 
-Link to github repository
+[Link to github repository](https://github.com/isaiaholadapo/Djang-Geodjango-location-app.git)
 
 
 ## Further Reading
