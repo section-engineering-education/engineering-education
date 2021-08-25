@@ -1,6 +1,6 @@
 ## Introduction
 
-React is a viral and also one of the best front-end library as of today; this has made many developers their primary library for creating front-end applications. On the other hand, Typescript is a strict and statically typed programming language, making our javascript code more predictable. As developers, our goal is not just to create products but to create products that we can always predict their behavior; this is one of the main reasons Typescript was created. Using Typescript to build our React applications will make our react applications more predictable as we will be able to catch a lot of errors at runtime(during compilation).
+React is a viral and one of the best front-end library as of today; this has made many developers their primary library for creating front-end applications. On the other hand, Typescript is a strict and statically typed programming language, making our javascript code more predictable. As developers, our goal is not just to create products but to create products that we can always predict their behavior; this is one of the main reasons Typescript was created. Using Typescript to build our React applications will make our react applications more predictable as we will be able to catch a lot of errors at runtime(during compilation).
 In this article, I'd explain the following while building a simple Todo Application:
 1. How to bootstrap a react typescript application
 2. What are types and interfaces in Typescript and how to use them
