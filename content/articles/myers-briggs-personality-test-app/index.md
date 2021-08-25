@@ -1,9 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-personality-test-app-with-java/
+title: Building a Personality Test App with Java
+description:
+author: badmus-kola
+date: 2021-08-24T00:00:00-04:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-personality-test-app-with-java/hero.jpg
+    alt:
+---
 
 ### **Building a Myers Briggs Personality Test App with Java**
 
 If you are trying to build a personality test app or a quiz app, this article is for you. This article will use the concept of Java arrays, StringBuilder class, exception handling, and format specifiers in Java to make a personality test app.
-
-###Table of Content
+<!--more-->
+### Table of Content
 
 - [How the Personality Test Works](#how-the-personality-test-works)
 - [Prerequisites](#prerequisites)
@@ -17,10 +33,10 @@ If you are trying to build a personality test app or a quiz app, this article is
 
 According to Isabel Briggs Myers, there are sixteen types of personality identities, and there are four vital elements of categorizing people into the various sixteen personality identities. The four key elements are:
 
-* Introversion (I) or Extraversion (E)
-* Sensing (S) or Intuition (N)
-* Thinking (T) or Feeling (F)
-* Judging (J) or Perceiving (P)
+- Introversion (I) or Extroversion (E)
+- Sensing (S) or Intuition (N)
+- Thinking (T) or Feeling (F)
+- Judging (J) or Perceiving (P)
 
 You can find detailed information about the various personality types [here](https://www.truity.com/page/16-personality-types-myers-briggs).
 
@@ -28,15 +44,15 @@ To learn more about the above key elements, kindly follow this [link](https://ww
 
 ### **Prerequisites**
 
-* Java JDK 8.0 and above
+- Java JDK 8.0 and above
 * A Java IDE
 * Test [Questions](https://pdfcoffee.com/the-myers-test-pdf-free.html) in pdf format
 
 ### **Introduction to Java Arrays**
 
-### **Definition of Arrays?**
+### **Definition of Arrays**
 
-Array in Java is a set of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. A single-dimensional array can be represented as a list of the same data type, usually defined with one square bracket. In contrast, a multidimensional array depicts the structure of a table with rows and columns.
+An array in Java is a set of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. A single-dimensional array can be represented as a list of the same data type, usually defined with one square bracket. In contrast, a multidimensional array depicts the structure of a table with rows and columns.
 
 ### **Declaration of Arrays**
 
@@ -441,10 +457,13 @@ Happy coding!
 
 ### **Reference**
 
-Michael B. White (Mastering Java)
+- Michael B. White (Mastering Java)
 
-[Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
+- [Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
 
-[Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
+- [Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
-[Myers Briggs Personality Interpretation](https://www.truity.com/page/16-personality-types-myers-briggs)
+- [Myers Briggs Personality Interpretation](https://www.truity.com/page/16-personality-types-myers-briggs)
+
+---
+Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
