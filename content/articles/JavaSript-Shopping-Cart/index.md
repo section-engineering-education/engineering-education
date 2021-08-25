@@ -216,7 +216,7 @@ function addOrRemoveItemsFromCart(action) {
         container.addEventListener("click", function (event) {
             let item_id = event.target.id;
 
-            if (item_id !== "items" &amp;&amp; item_id !== "badge") {
+            if (item_id !== "items" && item_id !== "badge") {
                 let item = items_array.filter(function (item) {
                     return item.id == item_id;
                 })[0];
