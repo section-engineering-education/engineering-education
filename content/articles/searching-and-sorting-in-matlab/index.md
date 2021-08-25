@@ -10,8 +10,9 @@ date: 2021-08-25T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/searching-and-sorting-in-matlab/hero.jpg
-    alt: Sealed Classes in Kotlin
+    alt: searching sorting matlab example image
 ---
 Searching is the process of locating a given object or data within a large set of data. Sorting, on the other hand, is the arrangement of data in a specific required order. 
 <!--more-->
