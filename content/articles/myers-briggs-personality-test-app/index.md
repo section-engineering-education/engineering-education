@@ -33,7 +33,7 @@ If you are trying to build a personality test app or a quiz app, this article is
 
 According to Isabel Briggs Myers, there are sixteen types of personality identities, and there are four vital elements of categorizing people into the various sixteen personality identities. The four key elements are:
 
-* Introversion (I) or Extraversion (E)
+- Introversion (I) or Extroversion (E)
 * Sensing (S) or Intuition (N)
 * Thinking (T) or Feeling (F)
 * Judging (J) or Perceiving (P)
