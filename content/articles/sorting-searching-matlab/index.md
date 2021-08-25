@@ -6,7 +6,7 @@ url: /searching-and-sorting-in-matlab/
 title: Searching and Sorting in Matlab
 description: This article will go over the importance of searching and sorting. Both are fundamental algorithms that make work easier and eases the handling of extensive data. 
 author: simon-mwaniki
-date: 2021-08-25T00:00:00-10:30
+date: 2021-08-25T00:00:00-12:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
