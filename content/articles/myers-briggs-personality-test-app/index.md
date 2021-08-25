@@ -457,7 +457,7 @@ Happy coding!
 
 ### **Reference**
 
-Michael B. White (Mastering Java)
+- Michael B. White (Mastering Java)
 
 [Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
 
