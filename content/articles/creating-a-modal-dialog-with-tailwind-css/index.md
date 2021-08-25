@@ -7,7 +7,7 @@ Throughout this tutorial, we will be using Tailwind to create and style up our m
 
 The modal dialog will look like this when fully created:
 
-![Modal Dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog.png)
+![Modal Dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog-gif.gif)
 
 ### Prerequisites
 
@@ -238,7 +238,7 @@ This is how we will do it:
     }
 ```
 
-Well done! Our modal dialog is now fully functional!
+Well done! Our modal dialog is now fully functional! 
 
 ### Conclusion
 
