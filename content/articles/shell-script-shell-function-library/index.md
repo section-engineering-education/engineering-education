@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /shell-script-shell-function-library/
-title: Shell Script to Demonstrate the Use of Shell Function Library
-description: This article will guide the reader what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions.
+title: Shell Script to Demonstrate the use of the Shell Function Library
+description: This article will explain to the reader what a script is, how to create one using the open script, and then demonstrate the use of the Shell Function Library using Bash scripts in Linux distributions.
 author: nicasious-githinji
 date: 2021-08-25T00:00:00-10:00
 topics: []
@@ -16,37 +16,37 @@ images:
 ---
 A good computer program has a lot of code in it. These code snippets can sometimes be repeated and used multiple times in the program. To simplify the process and reduce errors, functions are used to group repetitive pieces of code.
 <!--more-->
-In shell scripting, functions library may be called from any location in the development environment, thus making shell scripting less laborious and reduces errors.
+In shell scripting, functions library may be called from any location in the development environment, making shell scripting less laborious and helpful when trying to reduce errors.
 ### Introduction
 This article will take you through how to create a simple shell script function and how to use it.
 
 ### Goals
 By the end of this article, the reader will have understood:
-- What function and function libraries are.
+- What a function is and what function libraries are.
 - How to create a shell function.
 - How to use functions from the library and then demonstrate how to use bash script as a function library.
 
 ### Prerequisites
-To better understand this tutorial, the reader is expected to have some prior experience; namely:
-- Use of an interactive Unix/Linux shell.
-- Understanding of some Unix/Linux commands.
-- Minimal programming knowledge - use of variables and functions.
+To better understand this tutorial, the reader is expected to have some prior background knowledge, mainly with:
+- How to use an interactive Unix/Linux shell.
+- Understanding some Unix/Linux commands.
+- Minimal programming knowledge - using variables and functions.
 
 ### Table of contents
-- [Shell Function](#shell-function)
+- [Shell function](#shell-function)
 - [How to create a function](#how-to-create-a-function)
-- [Why use Function Library](#why-use-function-library)
-- [Creating function library](#creating-function-library)
-- [Using Functions From Library](#using-functions-from-library)
-- [A simple Demo of using Bash script as fuction library](a-simple-demo-of-using-bash-script-as-function-library)
-- [Usage of Shell Function Library](#usage-of-shell-function-library)
+- [Why use the function Library](#why-use-the-function-library)
+- [Creating a function library](#creating-a-function-library)
+- [Using functions from the Library](#using-functions-from-the-library)
+- [A simple demo using Bash script as a fuction library](a-simple-demo-using-bash-script-as-a-function-library)
+- [Usage of Shell function Library](#usage-of-shell-function-library)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Shell function
-A shell script is a computer program designed to be run by Unix/Linux shell. This script can perform operations such as file manipulation, program execution, and printing text.
+A shell script is a computer program designed to be run by a Unix/Linux shell. This script can perform operations such as file manipulation, program execution, and printing text.
 
-To execute these tasks, some pieces of code can be used repeatedly in the program. To make this process easy and reduce errors, such codes are grouped into a `Function`, which allows them to be called and reused multiple times within the program.
+To execute these tasks, some pieces of code can be used repeatedly in the program. To make this process easier we can group these into a `Function`, which allows them to be called and reused multiple times within the program.
 
 ### How to create a function
 A function is a block of code that carries out a certain activity. A function can be called and reused. In shell scripting, functions are analogous to other programming languages' subroutines, procedures, and functions.
@@ -96,7 +96,7 @@ When the functions are developed, they can be reused wherever they are needed in
 
 > Similarly, individuals desire function libraries for a variety of reasons. Another advantage is that once these functions are exposed, they become central, so any changes made to them are reflected in any scripts that utilize them.
              
-### Creating function library
+### Creating a function library
 Let's look at how to make a function library with an Open script from OATS.
 
 To construct a function library, follow these steps.
@@ -129,7 +129,7 @@ The following are the steps when using the function library:
 - Give it a suitable alias name ( this name would be used in the scripts to call the functions )
 - All functions in the function library are now ready for usage.
 
-#### A simple demo of using Bash script as function library
+#### A simple demo using Bash script as a function library
 The first step in this procedure is to build a shared library file that contains all of the script's functionalities. Make a function library file called `myfuncs.sh` in this directory.
 
 ```bash
