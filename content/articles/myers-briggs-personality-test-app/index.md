@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-personality-test-app-with-java/
+title: Building a Personality Test App with Java
+description:
+author: badmus-kola
+date: 2021-08-24T00:00:00-04:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-personality-test-app-with-java/hero.jpg
+    alt:
+---
 
 ### **Building a Myers Briggs Personality Test App with Java**
 
