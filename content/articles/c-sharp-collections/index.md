@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /c-sharp-collections/
 title: Introduction to Collections in C#
-description: In this article, we will be exploring the C# Collections Framework. We will be looking at the different collection types, and how to use them.
+description: In this article, we will be exploring the C-sharp Collections Framework. We will be looking at the different collection types, and how to use them.
 author: geoffrey-mwangi
-date: 2021-08-18T00:00:00-16:00
+date: 2021-08-25T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,17 @@ images:
  - url: /engineering-education/c-sharp-collections/hero.jpg
    alt: C# Collections hero
 ---
+
 In C#, we can create and manage related objects in various ways. For example, through the use of [arrays](https://www.tutorialspoint.com/csharp/csharp_arrays.htm) or collections.
 <!--more-->
 ### What are Collections in C#?
-A collection is a set of objects of similar type on which we may perform operations such as insert, delete, update, sort, and so on. Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
+A collection is a set of objects of similar type on which we may perform operations such as insert, delete, update, sort, and so on. 
 
-The goal of this article is to guide you on how to use collections (type) in the C# programming language. Collections are commonly used to handle and manage a set of similar data types. Arrays are also used to manage similar types of data, but collections offer additional flexibility when dealing with grouped items of different types.
+Collections, compared to arrays, are a more efficient method of handling a set of related items or objects.
+
+The goal of this article is to guide you on how to use collections (type) in the C# programming language. 
+
+Collections are commonly used to handle and manage a set of similar data types. Arrays are also used to manage similar types of data, but collections offer additional flexibility when dealing with grouped items of different types.
 
 ### Types of collections
 C# collections are categorized into 3 main namespaces:
@@ -27,7 +32,9 @@ C# collections are categorized into 3 main namespaces:
 - `System.Collections.Concurrent classes (Concurrent)`
 - `System.Collections classes (Non-Generic)`
 
-To add elements to a collection, we declare an instance of a class. For example, when we are using elements of the same data type, we declare `System.Collections.Generic` namespace which will import all the [required classes](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-5.0).
+To add elements to a collection, we declare an instance of a class. 
+
+For example, when we are using elements of the same data type, we declare `System.Collections.Generic` namespace which will import all the [required classes](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-5.0).
 
 ### System.Collections.Generic classes (Generic)
 In case the elements are of the same data type, we use one of the classes in the `System.Collections.Generic` namespace. The generic collection only accepts one data type and no other data type.
