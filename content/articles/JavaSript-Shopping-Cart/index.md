@@ -19,22 +19,28 @@ To follow along with this tutorial, you are required to have an understanding of
 Create a new file `index.html` in the working directory. In your code editor, open the `index.html` file and paste the code below.
 
 ```html
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-
-<div id="wrapper">
-   <div id="container">
-       <h1>Shopping list</h1>
-       <div id="items"></div>
-   </div>
-    <div id="container">
-        <h1>Cart</h1>
-        <div id="cart"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+       <div id="container">
+           <h1>Shopping list</h1>
+           <div id="items"></div>
+       </div>
+        <div id="container">
+            <h1>Cart</h1>
+            <div id="cart"></div>
+        </div>
     </div>
-</div>
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
 ```
 
 ### Creating the items library
@@ -62,7 +68,7 @@ The cart is an empty array, which will be used to store the items which will be 
 ### Creating the base functions
 Let's make a few functions to make our lives a little bit easier. 
 
-In your code editor, open the `script.js` file and add the code below.
+Add the following code to `script.js`.
 
 ```javascript
 function appendNode(parent, element) {
@@ -89,7 +95,7 @@ We will use these functions to create the shopping list and the shopping cart in
 ### Displaying the shopping list
 We will create a function which will display the shopping list. 
 
-In your code editor, open the `script.js` file and add the code below.
+Add the following code to `script.js`.
 
 ```javascript
 function displayItems(items, container) {
@@ -177,8 +183,7 @@ Check out the new look of your shopping list. I guess it look better.
 ### Adding and removing items from the cart
 We will create a function which will add an item to the shopping cart.
 
-In your code editor, open `script.js` and add the code below.
-
+Add the following code to `script.js`.
 ```js
 function addOrRemoveItemsFromCart(action) {
     let container = '';
@@ -263,6 +268,6 @@ Passing add or remove as the action will:
 - Call the `takeAction` function to remove the item from the cart.
 
 ### Conclusion
-I hope you have learned something valuable from this article. I would also like to be live that it was fun creating the shopping cart from scratch, as it was for me.
+I hope you have learned something valuable from this article. I would also like to believe that it was fun creating the shopping cart from scratch, as it was for me.
 
 Happy coding!
