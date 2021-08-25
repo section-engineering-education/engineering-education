@@ -3,26 +3,26 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-music-player-with-vanilla-javascript/
-title: How to building a music player with vanilla JavaScript
-description: In this article, I will demonstrates how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API for playing music via a brower.
+title: Building a Music Player with Vanilla JavaScript
+description: In this article, we will demonstrate how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API for playing music via a brower.
 author: doro-onome
-date: 2021-08-14T00:00:00-00:30
+date: 2021-08-25T00:00:00-17:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /how-to-build-a-music-player-with-vanilla-javascript/hero.jpg
     alt: Music player with vanilla Jabascript
 ---
-
-Streaming music is one of the major activities people use the internet for these days. For this reason, creating a media platform with regular music player app features is right.
+Streaming music is a major activity people use the internet these days. For this reason, creating a media platform with a regular music player app features is great and fun project.
 <!--more-->
-In this article, I would show you how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API with which you can play music on the browser.
+In this article, we will show you how to create a music player using HTML, CSS, JavaScript, and the HTML5 Audio API with which can play music on your browser.
 
 ### Prerequisites
-- A good code editor. Visual Studio Code.
+- A good code editor. For example: Visual Studio Code.
 - Some knowledge of HTML, CSS, and JavaScript.
 
-### Designing the Music Player
+### Designing the music player
 The first thing you have to do is to create three files in your code editor. 
 
 Name them `index.html` for your HTML code, `style.css` for your CSS code, and a `script.js` for the JavaScript. 
@@ -241,7 +241,7 @@ Here’s what the music player looks like at this point:
 ![music-player](/engineering-education/how-to-build-a-music-player-with-vanilla-javascript/music-player.jpg)
 
 ### JavaScript
-In your javascript file, the first thing we need to do is to bring in the different elements we need  into the DOM using the code snippets below:
+In your JavaScript file, the first thing we need to do is to bring in the different elements we need into the DOM using the code snippets below:
 
 ```js
 const musicContainer = document.getElementById('music-container');
@@ -261,7 +261,7 @@ const durTime = document.querySelector('#durTime');
 
 The next step is to arrange your songs with their song titles in an array. Your song titles need to match the pieces you have in your music folder.
 
-Below is an array containing the songs I chose to use for this project.
+Below is an array containing the songs I picked to use for this project.
 
 ```js
 const songs = [
@@ -277,8 +277,8 @@ We need to keep track of the songs by setting the default initial song index to 
 let songIndex = 2;
 ```
 
-### The loadSong Function
-Next, you need to initially load your songs into the Document Object Module(DOM) using the code below:
+### The loadSong function
+Next, you need to initially load your songs into the Document Object Module (DOM) using the code below:
 
 ```js
 loadSong(songs[songIndex]);
@@ -292,13 +292,13 @@ function loadSong(song) {
 
 In this function, you are updating the song title, the audio source, and the image source.
 
-Like I said earlier, your songs must be `.mp3` files and your pictures `.jpg` files if you want to use this exact script. 
+Like mentioned earlier, your songs must be `.mp3` files and your pictures `.jpg` files if you want to use this exact script. 
 
-Your song names must match your image names as well.  At this point, if you change your song index, the song image will change with the corresponding index you input.
+Your song names must match your image names as well. At this point, if you change your song index, the song image will change with the corresponding index you input.
 
 The next function is to make the `play button` play your songs. It should also change to the `pause button` while the song is playing. 
 
-To do that, we need to create an event listener at the bottom of our code to listen for a click event on the play and pause buttons. 
+To do this, we need to create an event listener at the bottom of our code to listen for a click event on the play and pause buttons. 
 
 ```js
 playBtn.addEventListener('click', () => {
@@ -315,7 +315,7 @@ playBtn.addEventListener('click', () => {
 Now, you need to create the `playSong()` and `pauseSong()` functions.
 
 ### The playSong function
-Use the code snippets below to use implement the playSong function.
+Use the code snippets below to implement the playSong function.
 
 ```js
 function playSong() {
@@ -328,7 +328,7 @@ function playSong() {
 ```
 
 
-### The pauseSong Function
+### The pauseSong function
 Below is the code to implement the `pauseSong()` function. It does just the opposite of `playSong()`.
 
 ```js
@@ -343,7 +343,9 @@ function pauseSong() {
 
 At this point, when you click the `play button`, it automatically switches to the `pause button`. The song details will also pop up, and the song image will start spinning.
 
-The exact opposite occurs when the `pause button` is clicked. Note that the `audio.play()` and `audio.pause()` functions actually plays and pauses the songs, respectively.
+The exact opposite occurs when the `pause button` is clicked. 
+
+>Note that the `audio.play()` and `audio.pause()` functions actually plays and pauses the songs, respectively.
 
 Next, you need to implement the `previous` and `next` buttons, and you’re going to need event listeners for these operations.
 
@@ -351,12 +353,13 @@ Next, you need to implement the `previous` and `next` buttons, and you’re goin
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 ```
+
 Now, you have to create the `prevSong` and the `nextSong` functions.
 
 ### The prevSong function
 When you click the `previous button`, the player should play the previous song in the songs array. You can do that by just decrementing the song index. 
 
-You should ensure that the value of the song index does not decrease lower than 0. If it does that, the player should loop back to the initial `songs.length -1`. 
+You should ensure that the value of the song index does not decrease lower than 0. If it does, the player should loop back to the initial `songs.length -1`. 
 
 You can implement these functions using the code below:
 
@@ -375,7 +378,7 @@ function prevSong() {
 ```
 
 ### The nextSong function
-This time, when you click the next button, you would want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. 
+This time, when you click the next button, you want the song to skip to the next song. You can do that by incrementing the value of the song index. You also have to check the song index value, so it does not exceed the value of the `songs.length - 1`. 
 
 ```javascript
 function nextSong() {
@@ -414,20 +417,22 @@ function updateProgress(e) {
 ```
 
 ### Additional functionalities
-While your music is playing, you would want to click anywhere on the progress bar and have the song skip to that point. 
+While your music is playing, you may want to click anywhere on the progress bar and have the song skip to that point. 
 
-First, you have to create an event listener which will listen for a click on the progress bar using the snippets below:
+In order to do this we have to create an event listener which will listen for a click on the progress bar using the snippets below:
 
 ```js
 progressContainer.addEventListener('click', setProgress);
 ```
 
-Now, you have to create the `setProgress` function.
+Now, we have to create the `setProgress` function.
 
 ### The setProgress function
 In this function, we are going to pass in an event object. We are going to target the width and set it to `this.clientWidth`. Then, we will get the exact position we click on the x-axis within the progress bar using `e.offsetX`. 
 
-The next thing we want to get is the complete duration of the song by saying `audio.duration`. Lastly, you have to set the current time to wherever you click. 
+The next thing we want to get is the complete duration of the song by saying `audio.duration`. 
+
+Lastly, you have to set the current time to wherever you click. 
 
 Below is the code to set our progress bar:
 
@@ -450,14 +455,17 @@ audio.addEventListener('ended', nextSong);
 ```
 
 Below is a video of the music player and all its functionalities in use:
+
 <iframe width="478" height="269" src="https://www.youtube.com/embed/7dIH4kf0Et0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-We made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices. With that, we have a fully functional music player app in the browser. You can also add additional features to the project by cloning the repository on my Github account.
+In this tutorial we made use of CSS animation, pure Vanilla JavaScript with modern ES6 practices. With that, we have a fully functional music player app in the browser. 
 
-The source code of our application is available on [Github](https://github.com/Nomzy-kush/Music-Player-with-JS).
+You can also add additional features to the project by cloning the repository on my Github account.
 
-Happy Coding!
+The source code of our application is available on [GitHub](https://github.com/Nomzy-kush/Music-Player-with-JS).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
