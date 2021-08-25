@@ -100,12 +100,10 @@ type Handler interface {
 ```
 Remember this general rule that anything that adheres to the http `handler` interface needs to have the `ServeHTTP` method.
 
-We use the standard `log` package to log the basic information about
-our server and its events and write all the logs to `os.Stdout` stream.
+We use the standard `log` package to log the basic information about our server and its events and write all the logs to `os.Stdout` stream.
 Also, logging is a good practice, and they are beneficial while testing or debugging the code.
 
 The method `NewProducts` will be used as a reference to create a *handler* in the *main.go* file.
-
 
 In the `main.go` file; we will create a reference for the `Handler`.
 ```go
@@ -147,9 +145,7 @@ In our code, we are passing an instance of `ServeMux` as a *handler* here. It ha
 So far, we have the *products* list and the handler template to serve the http requests. Now the question is, how do we pass the *Coffee* data from the `Product` structure to our `ServeHTTP` function.
 For that, Go's standard library offers us a package called `encoding/json`, used for encoding/decoding json data. You can read about it more [here](https://blog.golang.org/json).
 
-With the basic structure ready, we will define methods in the *products.go* file to return the `Product` data.
-The reason behind defining those data model functions inside *products.go* is to create abstraction. 
-
+With the basic structure ready, we will define methods in the *products.go* file to return the `Product` data. The reason behind defining those data model functions inside *products.go* is to create *abstraction*. 
 
 Now, in the `products.go` file under *data* folder, we would need to create a function that
 returns us the list of `Product` as shown:
@@ -158,7 +154,7 @@ func GetProducts() []*Product {
 return productList
 } 
 ```
-Rather than doing it this way, we will create a *type* called `Products`, a list of `Product`, and then add methods.
+Rather than doing it this way, we will create a *type* called `Products`, a list of `Product`, and then add methods. 
 ```go
 package data
 
@@ -359,11 +355,11 @@ This completes our implementation of RESTful services in Go, and attached below 
 
 ### Conclusion
  
-To conclude, we created handlers to handle `HTTP` requests and understood how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used.
+To conclude, we created handlers to handle `HTTP` requests while ensuring the methods that operate on *Coffee* data list remain abstracted and understood how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used. 
 
 ### Additional Resources
 * If you still don't get the whole idea of the `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
-* To understand more about `logger`, checkout this [article](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
+* To understand more about `logger`, check out this [article](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
 * The go-to guide to understand and write better Go code is to follow [Go-docs](https://pkg.go.dev/).
 * As for the next step, you can use *PostgreSQL* to store/retrieve data and use the popular [*Gorilla Mux*](https://www.gorillatoolkit.org/) toolkit to handle API calls.
 
