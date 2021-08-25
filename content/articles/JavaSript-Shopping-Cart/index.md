@@ -102,7 +102,7 @@ function displayItems(items, container) {
         let item_node = createNode("li");
         item_node.setAttribute("id", item.id);
 
-        if (item.count &gt; 0) {
+        if (item.count > 0) {
             item_node.innerHTML = `${item.name} 
             <span id="badge">${item.count}</span>`;
             appendNode(items_container, item_node);
