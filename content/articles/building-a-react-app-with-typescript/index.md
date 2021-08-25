@@ -1,6 +1,6 @@
 ## Introduction
 
-React is a viral and best front-end library today; this has made many developers their primary library for creating front-end applications. On the other hand, Typescript is a strict and statically typed programming language, which makes our javascript code more predictable. As developers, our goal is not just to create products but to create products that we can always predict their behavior; this is one of the main reasons Typescript was created. Using Typescript to build our React applications will make our react applications more predictable as we will be able to catch a lot of errors at runtime(during compilation).
+React is a viral and also one of the best front-end library as of today; this has made many developers their primary library for creating front-end applications. On the other hand, Typescript is a strict and statically typed programming language, making our javascript code more predictable. As developers, our goal is not just to create products but to create products that we can always predict their behavior; this is one of the main reasons Typescript was created. Using Typescript to build our React applications will make our react applications more predictable as we will be able to catch a lot of errors at runtime(during compilation).
 In this article, I'd explain the following while building a simple Todo Application:
 1. How to bootstrap a react typescript application
 2. What are types and interfaces in Typescript and how to use them
@@ -73,7 +73,7 @@ const data: something = "Hey"
 As we can see, we were able to define a type for more complex data, and we can use this idea to model much more complex data. From this example, we might be able to see a difference between type and interface.
 
 
-### More Details ABout Our Application
+### More Details About Our Application
 In our `App.tsx` file, we need to delete everything inside the function and return a simple text 
 ```tsx
 import React 'react'
@@ -108,7 +108,7 @@ type ITodos = {
 ### How To Declare State and Props In A Functional Component
 We'd see different ways to declare a type for `props` in a functional component, and we'd also see how to declare the type for **state** in a functional component. To declare `props` for a functional component, we can either use normal type definition for functions, or we can pass the type as a generic type to the `React.FC` type
 Let's see how we can demonstrate the initial by creating our `AddTodoComponent`. This component has its state, and it also accepts `props` with one field, `addTodos`, a function that takes in a string and returns nothing. It just updates the `ITodos` state.
-To declare a type for a state in a functional component, all we need to do is to pass the type of that state as a generic type to `useState`.
+To declare a type for a state in a functional component, all we need to do is pass that state's type as a generic type to `useState`.
 ```typescript
 const AddTodoComponent = ({addTodos} : {addTodos: (text: string) => void}) => {
   const [todo, setTodo] = React.useState<string>("");
@@ -138,7 +138,7 @@ const AddTodoComponent = ({addTodos} : {addTodos: (text: string) => void}) => {
 What goes in the component is pretty straightforward, but the `submit` function defined inside this component is worth talking about. This function takes in an `event` object and returns `void`.
 
 #### Event Types In React
-Now the question how do we get to know the type that's given to the event? Well, React has a lot of events, but we certainly can not know the type assigned to each of them, so what I normally do is to put the event object in the handler that it's being used and hover on it, then copy the type 
+Now the question how do we get to know the type that's passed to the event? Well, React has a lot of events, but we certainly can not know the type assigned to each of them, so what I normally do is to put the event object in the handler that it's being used and hover on it, then copy the type 
 ```typescript
 <button onClick={e => {console.log(e) }}>Add</button>
 ```
@@ -182,14 +182,14 @@ const TodosComponent: React.FC<{
 };
 ```
 
-React gives us access to some in-built types that we can use; one of them is the `React.FC` type which we use to tell Typescript that this function returns JSX and is a functional component. `React.FC` is a general type which means it takes in another Type. This type indicates the kind of **props** this function is expecting. This makes sense as we're ensuring that the component will be used correctly; otherwise, there will be a compilation error. This component expects the following props
+React gives us access to some in-built types that we can use; one of them is the `React.FC` type which we use to tell Typescript that this function returns JSX and is a functional component. `React.FC` is a general type which means it takes in another Type. This type indicates the kind of **props** this function is expecting. This makes sense as we're ensuring that the component will be used correctly; otherwise, there will be a compilation error. This component expects the following props:
 1. `todos`: This is of the type `ITodos` that was declared earlier. The todos array is the array of all todos. 
-2. `toggleTodos`: This is a function that takes in an integer (`id`) and returns nothing (`void`); all it does is change the completed field of the current `ITodo.`
+2. `toggleTodos`: This function takes in an integer (`id`) and returns nothing (`void`); all it does is change the completed field of the current `ITodo.`
 3. `deleteTodos`: This is similar to `toggleTodos` except for the fact that instead of toggling it, it removes it from the state(`ITodos` array)
 
 What is going on inside the function is pretty much straightforward.
 
-So far, we've created the components that we need in our application, but our app is empty, which is because we've not connected it to the root `App` component.
+So far, we've created the components that we need in our application, but our app is empty because we have not connected it to the root `App` component.
 
 Let's update our root `App` component to the following.
 
@@ -229,12 +229,12 @@ function App() {
 
 ```
 
-This component has a state `ITodos` and three functions, which are passed down as props to the children component; there really isn't anything special going on in the element.
+This component has a state `ITodos` and three functions, which are passed down as props to the children component; there isn't anything special in the element.
 
 ![application demo](/section-engineering-education/building-a-react-app-with-typescript/app_demo.gif)
 
 ### How To Declare Types For State and Props In A Class-Based Component
-So far, we've been talking about functional components, but what if the codebase you're working is a class-based component? Then we need to figure out a way to connect our app with it, everything remains the same except for how we create state and props, and that's because they are created in a different way. All we need to do is to the type of the prop and state as generic type to `React.Component`.
+So far, we've been talking about functional components, but what if the codebase you're working is a class-based component? Then we need to figure out a way to connect our app with it, everything remains the same except for how we create state and props, and that's because they are created differently. We need to pass the prop type and state type as a generic type to `React.Component`.
 
 ```typescript
 class App extends React.Component<IProps, Istate> {
