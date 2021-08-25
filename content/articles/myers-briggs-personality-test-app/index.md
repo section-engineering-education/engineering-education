@@ -50,7 +50,7 @@ To learn more about the above key elements, kindly follow this [link](https://ww
 
 ### **Introduction to Java Arrays**
 
-### **Definition of Arrays?**
+### **Definition of Arrays**
 
 An array in Java is a set of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. A single-dimensional array can be represented as a list of the same data type, usually defined with one square bracket. In contrast, a multidimensional array depicts the structure of a table with rows and columns.
 
