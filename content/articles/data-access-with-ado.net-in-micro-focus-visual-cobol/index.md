@@ -14,7 +14,7 @@
 - [Wrap-Up](#wrap-up)
 
 ### Basic ADO Flow
-What do I do now that Microsoft has provided me with this one-of-a-kind library of data access procedures? How can I get started? What do I look for when I am looking for a place to stay? We will start by looking at `SQL Server's namespace`, which governs data access. At the end of this article, we will go over different data providers, but for now, we will stick with SQL Server. System.Data.SqlClient is the namespace to remember if you want to connect to SQL Server.
+What do I do now that Microsoft has provided me with this one-of-a-kind library of data access procedures? How can I get started? What do I look for when I am looking for a place to stay? We will start by looking at `SQL Server's namespace`, which governs data access. At the end of this article, we will go over different data providers, but for now, we will stick with SQL Server. A namespace is a set of symbols often used to distinguish and relate among objects of different types. As a result of a namespace, every particular collection of objects will have unique names, allowing them to be identified easily.System.Data.SqlClient is the namespace to remember if you want to connect to SQL Server.
 
 > Keep this namespace in mind. It's critical!
 
@@ -30,8 +30,13 @@ To complete the actions listed above, we will need to employ the following class
 2. System.Data.SqlClient.SqlCommand
 3. System.Data.SqlClient.SqlDataReader
 
+#### goals and objective
+By the end of this tutorial, the reader will have understood:
+- how to establish a link to the data objects in Ado.NET.
+- create commands that will help to access the data objects using Micro Focus Visual Studio.
+
 ### Preparation
-For this project, I used a safe console application. To begin, we must declare the variables that will be used. We will need to make a variable to hold the data, one to hold the connection attributes, and another to hold the SQL statements we will be issuing. Any exceptions that we encounter when reading from the database are noted. In the working-storage section, all of these items are listed below.
+For this project, I used a safe console application.A console application is Csharp/.NET program that uses unsafe codes to accept input and output from a command-line console. It has access to various basic data streams: standard error, standard output, and standard input. To begin, we must declare the variables that will be used. We will need to make a variable to hold the data, one to hold the connection attributes, and another to hold the SQL statements we will be issuing. Any exceptions that we encounter when reading from the database are noted. In the working-storage section, all of these items are listed below. Record description entries and data description entries for independent data items, referred to as data item description entries, are found in the working-storage area.
 
 ```SQL
 working-storage section.
@@ -62,7 +67,7 @@ junk               pic x(01)  value spaces.
 It's worth noting that I can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard .NET data types. By enabling this option, some of your source code can now be used without worrying about data type conversion. To read data from a table using ADO, we've generated all of the necessary divisions and references. We must now carry out the measures mentioned above.
 
 ### Create a Connection
-In order to use a database, we must first establish a connection. If you've ever used ODBC with embedded SQL, you'll know that you must first establish the connection in the Control Panel's ODBC administrators panel before issuing the SQL connect query. "EXEC SQL CONNECT TO DATABASE END-EXEC" was comparable to the connect statement.
+In order to use a database, we must first establish a connection. If you've ever used ODBC with embedded SQL, you'll know that you must first establish the connection in the Control Panel's ODBC administrators panel before issuing the SQL connect query. To openControl Panel's ODBC click Administrative Tools in the Control Panel. Click Data Sources under Administrative Tools (ODBC). In Windows Server 2008, open the ODBC Data Source Administrator. Select Administrative Tools from the Start menu, then Data Sources (ODBC). "EXEC SQL CONNECT TO DATABASE END-EXEC" was comparable to the connect statement.
 
 The connection in ADO is significantly more straightforward. To establish a database connection, the SQLConnection object is needed. One of the advantages of ADO is that we no longer need to configure the connection in the ODBC administration panel, which simplifies the configuration and distribution. Instead, we just construct our database connection string, create a database connection, and call the 'Open' method on the new object. The connection is formed in our example using the following code:
 
@@ -142,3 +147,10 @@ Data access in the Microsoft .NET environment can assist save time, automate ope
 
 ### Conclusion
 In this article, we have learned how to access data with ADO.NET In Micro Focus Visual COBOL. We also have learned about the basic ADO Flow of data, the Preparation, how to create a Connection, creating a Command, read the Data, understood what housekeeping is, knowing other data providers, and finally understand what Wrap-Up is.
+
+### Further readings
+[Function to Create an ADO Connection](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/348985/function-to-create-an-ado-connection)
+
+[Oracle Data Access Connectivity (ODAC) 64bit Connection issue when using ADO.Net Connection Editor](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/355802/oracle-data-access-connectivity-odac-64bit-connection-issue-when-using-ado-net-connection-editor)
+
+[Database Access](https://www.microfocus.com/documentation/visual-cobol/VC231/VS2012/GUID-62A76ED2-5851-47BD-A6EC-CA6830A3C745.html)
