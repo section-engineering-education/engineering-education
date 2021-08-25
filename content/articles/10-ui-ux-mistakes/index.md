@@ -36,7 +36,7 @@ You should use consistent styling to your components. If you decide to use a bor
 
 Using too much colors in your design is also a bad idea. It makes it hard to keep related components together.
 
-You can get balanced color palletes from <https://coolors.co>
+You can get balanced color palletes from [coolors.co](https://coolors.co)
 
 If you have a multi-platform app, the appearance of the app on all the platforms should be consistent.
 
