@@ -461,7 +461,7 @@ Michael B. White (Mastering Java)
 
 [Dietel Dietel](https://deitel.com/wp-content/uploads/2019/11/java-how-to-program-11-early-objects-table-of-contents.pdf)
 
-[Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
+- [Google](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
 - [Myers Briggs Personality Interpretation](https://www.truity.com/page/16-personality-types-myers-briggs)
 
