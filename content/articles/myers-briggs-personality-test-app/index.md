@@ -18,7 +18,7 @@ images:
 ### **Building a Myers Briggs Personality Test App with Java**
 
 If you are trying to build a personality test app or a quiz app, this article is for you. This article will use the concept of Java arrays, StringBuilder class, exception handling, and format specifiers in Java to make a personality test app.
-
+<!--more-->
 ###Table of Content
 
 - [How the Personality Test Works](#how-the-personality-test-works)
