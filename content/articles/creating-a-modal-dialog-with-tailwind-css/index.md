@@ -1,9 +1,9 @@
 ### Introduction
-When developing web designs, one of the most important things to put attention to is user interactivity. A good example of these things is by use of modal dialogs.
+When developing web designs, one of the most important things to put attention to is user interactivity. A good example of this is by the use of modal dialogs.
 
 A modal is a popup window that appears on top of the main content of a webpage requiring user interaction. It appears on the top of the main content and forces the user to interact with it before continuing with their work. Modal dialogs are helpful because they give critical warnings to the user as a way of preventing errors.
 
-Throughout this tutorial, we will be using Tailwind to create and style up our modal dialog. We also use JavaScript to add functionality to it.
+Throughout this tutorial, we will be using Tailwind to create and style up our modal dialog. We will also use JavaScript to add functionality to it.
 
 The modal dialog will look like this when fully created:
 
@@ -17,7 +17,7 @@ The modal dialog will look like this when fully created:
 
 #### Adding Tailwind CSS to your project
 
-I assume that you already have Tailwind installed. But if not, then visit this [article](/engineering-education/introduction-to-tailwind-css/) first for the full Tailwind installation process.
+I assume that you already have Tailwind installed. But if not, visit this [article](/engineering-education/introduction-to-tailwind-css/) first for the full Tailwind installation process.
 
 Let's get started!
 
@@ -111,11 +111,11 @@ The classes will be as follows:
         </div>
 ```
 
-In our code above, We have the following:
+In our code above:
 
-1. We have added classes that will help us to correctly align our items inside the parent `</div>`. we make the container position away from the top margin by using the class `top-20`. We will use class `relative` to be able to position the container using the class `top-20`. We have used class `mx-auto` to center it on the screen.
+1. We have added classes that will help us to correctly align our items inside the parent `</div>`. The container is positioned away from the top margin by using the class `top-20`. Class `relative` will make this possible.`mx-auto` will center it on the screen.
 
-2. We will add another child `div` into which the icon, text, and button will be placed. 
+2. We will then add another child `div` into which the icon, text, and button will be placed, like shown below: 
 
 ```html
 <div class="mt-3 text-center"></div>
@@ -126,9 +126,7 @@ In the code above, the class:
 
 Now, let us add some content so our styling can be applied!
 
-3. We have created another `<div>` that will add an icon to our pop-up window. 
-
-The code is as follows:
+We will create a `<div>` for that, with the following classes:
 
 ```html
 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
@@ -140,7 +138,7 @@ The code is as follows:
 
 The icon has a height and width of 24px. It also has a green color and background too to make it pop. We have added classes `mx-auto`, `flex`, `items-center`, and `justify-center` to align our icon to the center.
 
-This is how it looks like:
+This is how it looks like at this point:
 
 ![Icon](/engineering-education/creating-a-modal-dialog-with-tailwind-css/icon.png)
 
@@ -166,7 +164,7 @@ We have added the `div` tag so that we can align the text as shown below:
 - `mt-2` adds a top margin of 8px.
 - `text-center` aligns the text to the center.
 
-Now, we will add another `div` which will contain the OK button as shown:
+Now, we will add another `div` which will contain the **OK** button as shown:
 
 ```html
 <div class="items-center px-4 py-3">
@@ -193,7 +191,7 @@ Other classes are explained below:
 - `focus:ring-2` creates an outline ring to the button.
 - `focus:ring-green-300` creates a green outline ring.
 
-For scripting, we will give our button this `id`-`ok-btn`.
+For scripting, we have also given our button this an ID - `ok-btn`.
 
 Well done! We are done designing our modal dialog!
 
@@ -201,7 +199,9 @@ Well done! We are done designing our modal dialog!
 
 We will add functionality to the buttons we have created using simple JavaScript.
 
-We will grab all the elements that we want to add functionality to by the unique identifiers that we had given them previously.
+We will grab all the elements that we want to add functionality to by using the unique identifiers that we had given them earlier.
+
+We will add Javascript at the bottom of the page using `<script>` tag.
 
 ```JavaScript
     // Grabs all the Elements by their IDs which we had given them
@@ -212,7 +212,7 @@ We will grab all the elements that we want to add functionality to by the unique
     let button = document.getElementById("ok-btn");
 ```
 
-We will now add functionality to the open and OK buttons. We want the modal to open when the Open button is clicked and to close when the OK button is clicked. This is how we will do it:
+We also want the modal to open when the Open button is clicked and to close when the OK button is clicked. This is how we will do it:
 
 ```JavaScript
     // We want the modal to open when the Open button is clicked
@@ -225,7 +225,7 @@ We will now add functionality to the open and OK buttons. We want the modal to o
     }
 ```
 
-We will also add another functionality to our modal dialog. We want it to close when the user clicks anywhere outside the modal.
+Our modal dialog is now functional. Now we want it to close when the user clicks anywhere outside the it.
 
 This is how we will do it:
 
