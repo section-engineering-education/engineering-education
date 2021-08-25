@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/creating-a-modal-dialog-with-tailwind-css/
+title: Creating a modal dialog with Tailwind CSS
+description: In this article we will create a simple modal window using Tailwind CSS. We will the add a few lines of Javascript to add functionality to it.
+author: ianmasae
+date: 2021-03-25T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-modal-dialog-with-tailwind-css/hero.jpg
+    alt: Modal dialog image example
+---
+
 ### Introduction
 When developing web designs, one of the most important things to put attention to is user interactivity. A good example of this is by the use of modal dialogs.
+<!--more-->
 
 A modal is a popup window that appears on top of the main content of a webpage requiring user interaction. It appears on the top of the main content and forces the user to interact with it before continuing with their work. Modal dialogs are helpful because they give critical warnings to the user as a way of preventing errors.
 
@@ -10,19 +28,16 @@ The modal dialog will look like this when fully created:
 ![Modal Dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog-gif.gif)
 
 ### Prerequisites
-
 1. Latest version of Tailwind CSS installed
 2. Knowledge of Tailwind CSS
 3. Knowledge of JavaScript functions
 
 #### Adding Tailwind CSS to your project
-
 I assume that you already have Tailwind installed. But if not, visit this [article](/engineering-education/introduction-to-tailwind-css/) first for the full Tailwind installation process.
 
 Let's get started!
 
 #### Creating a Button that will open the modal dialog
-
 For your HTML, make sure to correctly link your Tailwind CSS stylesheet as shown below:
 
 ```html
@@ -53,9 +68,7 @@ In simpler terms, we have added instructions to our page. The instructions tell 
 
 For the button, we have created an `id` for it - `open-btn`. It will be used to identify the button when scripting.
 
-
 #### Adding an overlay effect
-
 In most web pages, when a dialog opens, the background becomes inactive. This means that the content behind the modal dialog cannot be accessed until the user interacts with it. This is called an overlay effect.
 
 We are going to create the effect with just a few lines of code, like shown below:
@@ -74,7 +87,6 @@ The effect is hidden by default using class `hidden`. It will not be visible unt
 There's also an `id`- `my-modal`. It will be used in the script.
 
 #### Creating the modal dialog
-
 At the beginning of this tutorial, we said that modal dialogs give users critical warnings.
 
 For example, if a user wants to delete some content, a window will pop up with a question like " Are you sure you want to delete this?". With it, it comes with choices like **"OK"** or **"CANCEL"**.
@@ -196,7 +208,6 @@ For scripting, we have also given our button this an ID - `ok-btn`.
 Well done! We are done designing our modal dialog!
 
 #### Adding Functionality to our modal dialog
-
 We will add functionality to the buttons we have created using simple JavaScript.
 
 We will grab all the elements that we want to add functionality to by using the unique identifiers that we had given them earlier.
@@ -241,7 +252,9 @@ This is how we will do it:
 Well done! Our modal dialog is now fully functional! 
 
 ### Conclusion
-
 In this tutorial, we have gone through creating and styling up our modal dialog with Tailwind CSS. We have also learned how to use JavaScript functions to make our modal dialog functional. A modal dialog is one of the many examples of things that can be used to improve user interactivity.
 
-I hope you found this tutorial useful.
+I hope you find this tutorial useful.
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
