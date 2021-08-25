@@ -1,10 +1,24 @@
-### 10 of the most annoying UI/UX mistakes to avoid while crafting your products
+---
+layout: engineering-education
+status: publish
+published: true
+url: /10-uiux-mistakes-to-avoid/
+title: 10 UI/UX Mistakes to Avoid
+description: In this article, we will be looking at 10 UI/UX mistakes that make the user experience of your website or app not great. We will also be looking at how to fix these mistakes.
+author: wanjiru-alice
+date: 2021-08-17T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/10-uiux-mistakes-to-avoid/hero.png
+   alt: 10 UI UX Image hero
+---
 UI/UX plays a major part in the success of your products. It is the first and the last thing that the customer sees, and interacts with.
+<!--more-->
+User interface is a complex subject, and there are many different ways to build a good user experience. User experience is not only about the look and feel of the interface, but also about the way the user interacts with it. The effectiveness and ease of use is a big factor in the effectiveness of your product.
 
-User interface is a complex subject, and there are many different ways to build a good user experience. User experience is not only about the look and feel of the interface, but also about the way the user interacts with it. The effectiveness and ease of use is a big factor in the success of your product.
-
-Here are a few UI/UX mistakes that really annoy us, the users.
+Here are a few UI/UX mistakes that annoy users.
 
 ### 1. Images
 Graphics play a major in passing information. Too large image sizes will make your product take longer to load. The right size is a balance between the size of the image and the amount of detail you want to show.
@@ -22,17 +36,17 @@ When dealing with many images, you should consider using services like [Cloudina
 ### 2. Placing all the validation warnings in the same place
 Each form field should have its own validation warnings just below the input. This makes it easier to find which fields are throwing the errors.
 
-![validation warnings placement](form-validation.png)
+![validation warnings placement](/engineering-education/10-uiux-mistakes-to-avoid/form-validation.png)
 
 ### 3. Showing the validation errors before the user has finished typing in a field
-Throwing the validation errors before the user has finished inputting that email or password is veeery annoying.
+Throwing the validation errors before the user has finished inputting that email or password is annoying.
 
 You should wait for the user to finish typing in a field before showing the validation errors. The errors should be shown only after the user has clicked outside the field, but not after every keystroke.
 
 ### 4. Design inconsistencies
 You should use consistent styling to your components. If you decide to use a border-radius of 20, stick to that all through.
 
-![design inconsistencies](inconsistent-design.png)
+![design inconsistencies](/engineering-education/10-uiux-mistakes-to-avoid/inconsistent-design.png)
 
 Using too much colors in your design is also a bad idea. It makes it hard to keep related components together.
 
@@ -43,9 +57,9 @@ If you have a multi-platform app, the appearance of the app on all the platforms
 ### 5. Very wide paragraph
 Having a very wide paragrah that spans to the full width of the screen makes it hard to read.
 
-Large paragraphs make it hard to follow a sentence to the next line. Paragraphs should take a maximum of 50-75 characters per line. They should also be centered to help the users concentrate on what they are reading and to be able to follow the content line after line.
+Large paragraphs make it hard to follow a sentence to the next line. Paragraphs should take a maximum of 50 to 75 characters per line. They should also be centered to help the users concentrate on what they are reading and to be able to follow the content line after line.
 
-![good paragraphs](paragraphs.png)
+![good paragraphs](/engineering-education/10-uiux-mistakes-to-avoid/paragraphs.png)
 
 ### 6. Small clickable areas
 Small clickable areas such as handles and cancel buttons is an issue, especially to mobile users.
@@ -85,10 +99,11 @@ The most relevant results should always be in the top rows of the search results
 ### Final remarks
 We have looked at a few mistakes that make the user experience of your products a mess. Some of them may not make a lot of sense to a developer, but they are an issue to the user.
 
-To avoid UI/UX mistakes, it's very recommended that you have a team to test your product.
+To avoid UI/UX mistakes, it's recommended that you have a team to test your product.
 
 Now that you are aware of what your users don't want, why don't you give them what they want?
 
 Happy coding!
 
-See you in the next one. 
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
