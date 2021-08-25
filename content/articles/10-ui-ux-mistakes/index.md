@@ -41,9 +41,9 @@ You can get balanced color palletes from [coolors.co](https://coolors.co)
 If you have a multi-platform app, the appearance of the app on all the platforms should be consistent.
 
 ### 5. Very wide paragraph
-Having a very wide paragrah that spans more than 2/3 the width of the screen makes it hard to read.
+Having a very wide paragrah that spans to the full width of the screen makes it hard to read.
 
-Large paragraphs make it hard to follow a sentence to the next line. Paragraphs should take a maximum of 2/3 of the width of the screen or less. They should also be centered to help the users concentrate on what they are reading and to be able to follow the content line after line.
+Large paragraphs make it hard to follow a sentence to the next line. Paragraphs should take a maximum of 50-75 characters per line. They should also be centered to help the users concentrate on what they are reading and to be able to follow the content line after line.
 
 ![good paragraphs](paragraphs.png)
 
