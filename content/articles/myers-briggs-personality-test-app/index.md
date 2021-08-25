@@ -36,7 +36,7 @@ According to Isabel Briggs Myers, there are sixteen types of personality identit
 - Introversion (I) or Extroversion (E)
 - Sensing (S) or Intuition (N)
 - Thinking (T) or Feeling (F)
-* Judging (J) or Perceiving (P)
+- Judging (J) or Perceiving (P)
 
 You can find detailed information about the various personality types [here](https://www.truity.com/page/16-personality-types-myers-briggs).
 
