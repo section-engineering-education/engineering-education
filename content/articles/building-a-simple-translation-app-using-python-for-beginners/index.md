@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-simple-translation-app-using-python-for-beginners/hero.png
+  - url: /engineering-education/building-a-simple-translation-app-using-python-for-beginners/hero.png
     alt: Translation App Example Image 
 ---
 In this tutorial, I will show you how you can build your own language translation app using Hugging Face Transformers and Gradio.
