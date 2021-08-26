@@ -4,25 +4,27 @@ status: publish
 published: true
 url: /create-a-secure-home-connection-using-pi-hole-and-docker/
 title: Create a Secure Home Connection Using Pi-hole and Docker
-description: In this tutorial, we will create a secure home connection using Pi-hole and Docker.
+description: In this tutorial, we will create a secure home connection using Pi-hole and Docker. We will learn how to block unwanted ads from the internet using Pi-hole and a docker container.
 author: lewis-macharia
-date: 2021-08-21T00:00:00-18:30
-topics: []
+date: 2021-08-26T00:00:00-09:30
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /create-a-secure-home-connection-using-pi-hole-and-docker/hero.png  
+  - url: /engineering-education/create-a-secure-home-connection-using-pi-hole-and-docker/hero.png  
     alt: Pi-hole example image
 ---
 Pi-hole is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers.
 <!--more-->
-
-As human beings and the world they are living in continues to evolve, technology is not an exception as it’s one of the co-factors that mark a revolution. Internet use has become ingrained in our daily lives as a result of modern technologies. The largest population worldwide is now using internet connection either in messaging, sending letters, in the education sector, in the field of medicine, etc.
-
+Digital safety has become an important issue. Our screens always contain insensible ads, pop-ups, notifications, banner ads, and so on, such as harmful malware. 
 ### Introduction
-Threats have also increased with an increase in internet use. Digital safety has become an important issue. Our screens always contain insensible ads, pop-ups, notifications, banner ads, and so on, which you might not know about harmful malware. It also can threaten the digital safety and health of an individual. It also leads to poor browsing. Fortunately, some tweaks can fix the bug and problems and one such foolproof way is to program a low-cost computer for Pi-hole. It will block anything irrelevant that emerges on your display, check all incoming data from your preferred blacklists, and decide whether the packets should be passed on to your device. 
+All these ads can also lead to a poor browsing exprience. Fortunately, some tweaks can fix the bug and problems and one such foolproof way is to program a low-cost computer for Pi-hole. 
 
-To reduce this risk that's where we create a secure home connection using Pi-hole and Docker. `docker` is a containerized technology tool. It’s used with a variety of applications such as DNS and a web server. It helps in the packaging of applications and when one needs to affiliate their apps operating system. `pi-hole` is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers. It also aids in increasing the network's speed.
+Pi-hole will block anything irrelevant that emerges on your display, check all incoming data from your preferred blacklists, and decide whether the packets should be passed on to your device. 
+
+To reduce the risk (of excessive ads and malware) we cab create a secure home connection using Pi-hole and Docker. `docker` is a containerized technology tool. It’s used with a variety of applications such as DNS and a web server. It helps in the packaging of applications and when one needs to affiliate their apps operating system. 
+
+`pi-hole` is a foolproof adblocker. It protects your network from harmful and undesired ads, pop-ups, advertisements, notifications, and so on. You only need to install pi-hole on your network and it will protect and block all ads from your devices and browsers. It also helps in increasing the network's speed.
 
 ### Prerequisites
 - Any operating system. `windows or Linux os`.
@@ -30,7 +32,7 @@ To reduce this risk that's where we create a secure home connection using Pi-hol
 - Background in Networking.
 
 
-### Table of contents:
+### Table of contents
 - [Understanding the architecture](#architecture)
 - [The installation of pi-hole software](#the-installation-of-pi-hole-software)
 - [How to set up Pi-hole as a docker](#how-to-set-up-pi-hole-as-a-docker-container)
@@ -39,19 +41,22 @@ To reduce this risk that's where we create a secure home connection using Pi-hol
 
 
 ### Architecture
-![The Architecture](engineering-education/create-a-secure-home-connection-using-pi-hole-and-docker/architecture.png)
+![The Architecture](/engineering-education/create-a-secure-home-connection-using-pi-hole-and-docker/architecture.png)
 
 From the image above, data packets are received from the internet. The base operating system connected to the internet received the data packets.
 
 > The pi-hole and docker are inside the base operating system. That is why the symbols representing them are connected. 
 
-The pi-hole prevents advertisements from being displayed on the internet. Use our automated installer to install Pi-hole on a supported operating system or run it from a container. When ads are blocked by the pi-hole software the filtered data packets are sent to the router. As a computer networking tool, a router is used to transport data packets from one network to the next over the Internet. On the Internet, routers are in charge of traffic direction to different devices such as computers, laptops, and phones. 
+The pi-hole prevents advertisements from being displayed on the internet. Use our automated installer to install Pi-hole on a supported operating system or run it from a container. When ads are blocked by the pi-hole software the filtered data packets are sent to the router. 
+
+As a computer networking tool, a router is used to transport data packets from one network to the next over the Internet. On the Internet, routers are in charge of traffic direction to different devices such as computers, laptops, and phones. 
 
 ### The installation of pi-hole software
-Pi-hole may be installed in two ways on a Raspberry Pi and other Linux platforms such as Debian and Ubuntu. Use a single-line script from the terminal to install it if you're already running Raspberry Pi OS  or another Linux distribution. 
+Pi-hole may be installed in one of two ways on a Raspberry Pi and other Linux platforms such as Debian and Ubuntu. Use a single-line script from the terminal to install it if you're already running Raspberry Pi OS  or another Linux distribution. 
 
-To run Pi-hole in a separate software container on your Raspberry Pi, install Docker and run it in the container. Both options are acceptable, however, Docker requires more setup.
-If you want to install Pi-hole, you can do so in one of two ways, as detailed below.
+To run Pi-hole in a separate software container on your Raspberry Pi, install Docker and run it in the container. Both options are acceptable, however, Docker requires more of a setup.
+
+If you want to install Pi-hole, you can do so, as detailed below.
 
 #### Installing Pi-Hole using the automatic installation script
 Using the developer's installation script is the quickest approach to set up Pi-hole. You can use curl to run the script directly from the Pi-hole website, or you can manually download and run it.
@@ -72,10 +77,12 @@ To do so, open a terminal and type the commands below:
 wget -O basic-install.sh https://install.pi-hole.net
 sudo bash basic-install.sh
 ```
+
 Pi-hole and any extra packages will be installed and configured using the same installation script before the configuration procedure is started again.
 
 #### Pi-hole configuration during installation
 In the terminal window, you'll be asked to confirm different Pi-hole options, such as your network configuration and chosen logging levels. 
+
 1. To navigate through the first few information panels, press the Enter key. Choose Wi-Fi or Ethernet using the arrow keys on the Choose an interface screen, then press space or enter. Toggle to the OK option with the tab key, then confirm by hitting the Enter key.
 
 2. After that, you'll be asked which external DNS server you want to use. Here, Cloudflare and Google are both good free solutions. Using your arrow keys, select the provider you want to use, then confirm using the enter key.
@@ -101,12 +108,13 @@ To continue, press the tab key to select OK, then enter.
 If you want, instead of installing Pi-hole using the script above, you can use Docker to run it in a separate Docker software container. Your Raspberry Pi must be installed using Docker first.
 
 #### Installation of a docker container
-1. To install Docker on your Raspberry Pi, open a terminal window and enter the following commands:
+- To install Docker on your Raspberry Pi, open a terminal window and enter the following commands:
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
+
 You may also install Docker manually by downloading the script and running the following command in a terminal:
 
 ```bash
@@ -114,22 +122,26 @@ wget -O install-docker.sh https://get.docker.com
 sh install-docker.sh
 ```
 
-2. To let non-root users to use Docker after the installation is complete, execute `sudo usermod -aG docker pi` (such as the default pi user on Raspberry Pi OS). Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`. Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`.
+- To allow non-root users to use Docker after the installation is complete, execute `sudo usermod -aG docker pi` (such as the default pi user on Raspberry Pi OS). Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`. Start Docker automatically when your Raspberry Pi reboots by running `sudo systemctl enable docker`.
 
-3.  Execute sudo systemctl enable docker to ensure Docker starts automatically when your Raspberry Pi reboots.
+- Execute `sudo systemctl enable docker` to ensure Docker starts automatically when your Raspberry Pi reboots.
 
 ```bash
 sudo systemctl enable docker.
 ```
 
-### How to set up Pi-hole as a docker container
+### How to set up Pi-hole as a Docker container
 Download the Docker installation files for Pi-hole from the Pi-hole Github repository and clone the repository to get the Docker installation files.
 
 1. To achieve this, open a terminal window (or use a remote SSH connection) and type the following:
+
 ```bash
 git clone https://github.com/pi-hole/docker-pi-hole.git
 ```
-As a first step, you'll need to obtain the newest files from Pi-Github hole's repository if you want to run it within Docker. For your container docker run, a startup script is included in the cloned folder of Pi-hole. Before running this starting script, you might want to look over and change any of the options.
+
+As a first step, you'll need to obtain the newest files from Pi-Github hole's repository if you want to run it within Docker. For your container docker run, a startup script is included in the cloned folder of Pi-hole. 
+
+Before running this starting script, you might want to look over and change any of the options.
 
 2. Pi-default hole's outgoing DNS server will be changed to 1.1.1.1 or 8.8.8.8, and other settings, such as the timezone, will be updated automatically by the script. Use a similar TZ database timezone setting if you don't live in the United States, for example, to alter the Time Zone column to suit your time zone.
 
@@ -142,21 +154,26 @@ As a first step, you'll need to obtain the newest files from Pi-Github hole's re
 ### How to use Pi-hole as the DNS
 Configuring all of your local network devices to use Pi-hole is time-consuming and inefficient, especially if you want to use Pi-hole on many devices throughout your network.
 
-For those who find themselves in this situation, it is recommended that you change the DNS settings on your router to utilize the Raspberry Pi's IP address instead. Ads will be blocked on all devices on your local network. This method is faster than the manual method, which requires you to manually configure DNS settings on each device.
+For those who find themselves in this situation, it is recommended that you change the DNS settings on your router to utilize the Raspberry Pi's IP address instead. 
+
+Ads will be blocked on all devices on your local network. This method is faster than the manual method, which requires you to manually configure DNS settings on each device.
 
 Altering your router's nameserver configuration will be different for different models and brands. This information should be located on or in the box of your router and include the default IP address as well as the administrator username and password.
 
 If not, see your router's manual and use a web browser to access your router using popular IP addresses like `http://192.168.1.1` or `http://192.168.0.1`.
 
-If you have an internet service provider (ISP), your router is usually set up to use their DNS servers.
- Make sure your DNS server settings (perhaps marked primary/secondary DNS) match your Raspberry Pi's IP address.
+If you have an internet service provider (ISP), your router is usually set up to use their DNS servers. Make sure your DNS server settings (perhaps marked primary/secondary DNS) match your Raspberry Pi's IP address.
 
-We'll instruct every device that's connected in the first instance to redirect all DNS requests through Pi-hole. Any prohibited requests will be ignored, while approved requests will be forwarded to the third-party internet DNS provider configured in your Pi-hole (such as Cloudflare's 1.1.1.1 or Google's 8.8.8.8 public DNS servers).
+We'll instruct every device that's connected in the first instance to redirect all DNS requests through Pi-hole. Any prohibited requests will be ignored. 
+
+While approved requests will be forwarded to the third-party internet DNS provider configured in your Pi-hole (such as Cloudflare's 1.1.1.1 or Google's 8.8.8.8 public DNS servers).
 
 Reboot your network after making any DNS server changes to ensure they take effect across your network.
 
 ### Conclusion
-In this article, we have learned about how we can block unwanted ads from the internet using Pi-hole and a docker container. By doing this our data packets will be fast to access and minimize losses of data since it's cost-effective.
+In this article, we learned how we can block unwanted ads from the internet using Pi-hole and a docker container. By doing this our data packets will be faster to access, it will help minimize losses of data, and it's cost-effective.
+
+Happy coding!
 
 ### References
 1. [Understanding Docker Concepts](section.io/engineering-education/docker-concepts/)
