@@ -147,7 +147,7 @@ In summary, it is wise to *choose token authentication when:*
    
 - Sessions regarding logins, shopping carts, and game scores may need tracking and saving in a database. Without cookies, you will need to log in every time you leave a site or rebuild your shopping cart if a page is closed.
 
-### Conculusion
+### Conclusion
 Authentication improves system security by granting authenticated users access to protected resources.
 
 In this article, we compared cookie-based authentication and token-based authentication. We highlighted the advantages and disadvantages that arise by choosing either of these approaches.
