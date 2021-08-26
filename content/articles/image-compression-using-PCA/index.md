@@ -58,7 +58,7 @@ The reader should have basic knowledge of linear algebra (matrix operations and 
 
 Dimensionality reduction refers to techniques that reduce the number of input variables in a dataset. More input features often make a predictive modeling task more challenging to model, generally referred to as the <b>curse of dimensionality</b>.
 
-To explain the concept of dimensionality reduction, I will take an example, consider the following data where each point(vector) is represented using a linear combination of the **x** and **y** axes:
+To explain the concept of dimensionality reduction, I will take an example, consider the following data where each point(vector) is represented using a linear combination of the $x$ and $y$ axes:
 
 <center>
 
@@ -77,7 +77,7 @@ Now, what if we choose a different basis?
 
 </center>
 
-Here I have used $u_1$ and $u_2$ as a basis instead of <b>x</b> and <b>y</b>. We can observe that all the points have a minimal component in the direction of $u_2$(almost noise). It seems that the same data that was initially in $R_2$:(x,y) can now be represented in $R_1$:($u_1$) by making an intelligent choice of basis.
+Here I have used $u_1$ and $u_2$ as a basis instead of $x$ and $y$. We can observe that all the points have a minimal component in the direction of $u_2$(almost noise). It seems that the same data that was initially in $R_2:(x,y)$ can now be represented in $R_1:(u_1)$ by making an intelligent choice of basis.
 
 #### Why not care about $u_2$.
 
@@ -114,27 +114,27 @@ To explain the concept of PCA mathematically, I will take an example:
 
 ##### Assumptions 
 
-Let $p_1$, $p_2$, $p_3$,....,$p_n$ be a set of n orthonormal vectors. Let p be a square matrix of order n such that $p_1$, $p_2$, $p_3$,....,$p_n$ are the columns of matrix p.
+Let $p_1$, $p_2$, $p_3$,....,$p_n$ be a set of $n$ orthonormal vectors. Let $p$ be a square matrix of order $n$ such that $p_1$, $p_2$, $p_3$,....,$p_n$ are the columns of matrix $p$.
 
-Let $x_1$, $x_2$, $x_3$,.....,$x_n$ $\in$ $R^n$ be n data points and let X be a square matrix such that $x_1$, $x_2$, $x_3$,.....,$x_n$  are the rows of a matrix (Assumption: Data is zero-mean and unit variance), why we have this assumption we will come to this at later part.
+Let $x_1$, $x_2$, $x_3$,.....,$x_n$ $\in$ $R^n$ be n data points and let $X$ be a square matrix such that $x_1$, $x_2$, $x_3$,.....,$x_n$  are the rows of a matrix (Assumption: Data is zero-mean and unit variance), why we have this assumption we will come to this at later part.
 
 ##### Transformation
 
-Suppose we want to represent $x_i$ using the new basis P.
+Suppose we want to represent $x_i$ using the new basis $P$.
 
-$x_i$ = $\alpha_{i1}$$p_1$ + $\alpha_{i2}$$p_2$ + ....... + $\alpha_{in}$$p_n$
+$x_i = \alpha_{i1}p_1 + \alpha_{i2}p_2 + ....... + \alpha_{in}p_n$
 
-As we have assumed P as an orthonormal basis, for an orthonormal basis, we can find $\alpha_i$ using, $\alpha_{ij}$ = $x_i^T$ $p_j$ .
+As we have assumed $P$ as an orthonormal basis, for an orthonormal basis, we can find $\alpha_i$ using, $\alpha_{ij} = x_i^T p_j$ .
 
-In general, the transformed data $x_i'$ is given by <b>$x_i'$  =  $x_i^T$ P </b>, thus transformed matrix will be given as:
+In general, the transformed data $x_i'$ is given by $x_i'  =  x_i^T P$ , thus transformed matrix will be given as:
 
-<center><b>X' = XP</b></center> 
+$X' = XP$
 
 #### Covariance Matrix ( $\Sigma$ )
 
-If X is a matrix with zero mean, then $\Sigma$ = 1/m*($X'^T$ X) is the covariance matrix. In other words,  $\Sigma_{ij}$ stores the covariance between columns i and j of X.
+If $X$ is a matrix with zero mean, then $\Sigma = 1/m*(X'^T X)$ is the covariance matrix. In other words,  $\Sigma_{ij}$ stores the covariance between columns $i$ and $j$ of $X$.
 
-<b>Explanation</b>: Let C be the covariance matrix of X. Let $\mu_i$ and $\mu_j$ denote the means of $i^{th}$ and $j^{th}$ column of X, respectively. Then by the definition of covariance, we can write:
+<b>Explanation</b>: Let $C$ be the covariance matrix of $X$. Let $\mu_i$ and $\mu_j$ denote the means of $i^{th}$ and $j^{th}$ column of $X$, respectively. Then by the definition of covariance, we can write:
 
  $C_{ij}$ = $1/m*$ $\Sigma_{k=1}^m$ ($X_{ki}$-$\mu_i$)($X_{kj}$-$\mu_j$)
 
@@ -195,7 +195,7 @@ Where $x_i'$ is a reconstructed vector with $k$ dimensions, earlier we were usin
 
 (<i>For illustration, I have used the Olivetti dataset, available at: </i>https://www.kaggle.com/imrandude/olivetti)
 
-Consider we are given a large number of images of human faces(for this dataset, we have 400 images), each image is 64X64(<b>4096 dimensions</b>). Now, we would like to represent and store the images using much fewer dimensions(say <b>100 dimensions</b>).
+Consider we are given a large number of images of human faces(for this dataset, we have $400$ images), each image is $64\times64$(<b>$4096$ dimensions</b>). Now, we would like to represent and store the images using much fewer dimensions(say <b>$100$ dimensions</b>).
 
 
 
@@ -259,7 +259,7 @@ sorted_eigenvalue = eigen_values[sorted_index]
 sorted_eigenvectors = eigen_vectors[:,sorted_index]
 ```
 
-Initially, the image had 4096 dimensions. Let's reduce the dimension from 4096  to 100
+Initially, the image had $4096$ dimensions. Let's reduce the dimension from $4096$  to $100$
 
 ```python
 n_components = 100
@@ -269,9 +269,9 @@ print(eigenvector_subset.shape)
 
 ![snippet](/engineering-education/image-compression-using-PCA/image.jpg)
 
-These 100 dimensions are the <b>Principal Components</b>. Now, as we can see, the shape of eigenvector_subset is (4096,100). If represented as a 64 X 64 image after performing transpose on this matrix, we can get 100 such images. These 100 images will be called <b>Eigenfaces</b>, and one can represent any image as a linear combination of these 100 images.
+These $100$ dimensions are the <b>Principal Components</b>. Now, as we can see, the shape of eigenvector_subset is $(4096,100)$. If represented as a $64 \times 64$ image after performing transpose on this matrix, we can get $100$ such images. These $100$ images will be called <b>Eigenfaces</b>, and one can represent any image as a linear combination of these $100$ images.
 
-Let's print first 16 eigenfaces.
+Let's print first $16$ eigenfaces.
 
 ```python
 fig = plt.figure(figsize=[25,25])
@@ -287,7 +287,7 @@ plt.show()
 
 #### How is the image compressed?
 
-Initially, the image had 4096 dimensions. Let's reduce the dimension from 4096  to 100
+Initially, the image had $4096$ dimensions. Let's reduce the dimension from $4096$  to $100$
 
 ```python
 x_reduced = np.dot(eigenvector_subset.transpose(),X.transpose()).transpose()
@@ -296,17 +296,17 @@ print(x_reduced.shape)
 
 ![snippet](/engineering-education/image-compression-using-PCA/image2.jpg)
 
-Earlier, to store 400 images, we required a 400 X 4096 matrix. We need to store 400 X 100 matrix for x_reduced and 4096 X 100 matrix for storing principal components. As the image is gray-scale, let us suppose it requires 2 bits to store each pixel of an image. Therefore, after compressing the image, we will be able to save
+Earlier, to store $400$ images, we required a $400 \times 4096$ matrix. We need to store $400 \times 100$ matrix for x_reduced and $4096 \times 100$ matrix for storing principal components. As the image is gray-scale, let us suppose it requires $2$ bits to store each pixel of an image. Therefore, after compressing the image, we will be able to save
 
-=((400&times;4096)&times;2) - ((400&times;100)+(4096&times;100))&times;2                                                                                                                                        
+$=((400\times4096)\times2) ] - ((400\times100)+(4096\times100))\times2$                                                                                                                                 
 
-=2377600 bits                                                                                                                                                                                                                              
+$=2377600$ bits                                                                                                                                                                                                                              
 
-=297200 bytes                                                                                                                                                                                                     
+$=297200$ bytes                                                                                                                                                                                                     
 
-&asymp; <b> 290 KB </b>
+$\approx 290$ KB
 
-For our example, the images were gray-scale and had a low resolution; that is why we were able to save only 290 KB. Suppose images have very high resolution with more than one channel, then one can use this method to save lots of space.
+For our example, the images were gray-scale and had a low resolution; that is why we were able to save only $290$ KB. Suppose images have very high resolution with more than one channel, then one can use this method to save lots of space.
 
 #### Reconstructing images using less information
 
