@@ -1,42 +1,36 @@
 ### Introduction
-Typically, we create services that run in containers we subsequently access via the local machine (localhost). Docker machine brings to the table a new way of managing and accessing these services. It allows developers to create docker engines on the virtual hosts. They then expose created containers via some ports.
-This way, you can manage as many docker containers as possible.
+Typically, we create services that run in containers which we then subsequently access via the localhost. Docker machine brings a new way of managing and accessing these services. It allows developers to create docker engines on the virtual hosts which are then exposed via a specified port.  
 
-In this tutorial, I will walk you through the concept of `Docker-Machine` and discuss how it exposes its services running in the virtual machine. It will also be interesting to learn how to replace the usual localhost IP address with that one provided to you by the docker machine.
+In this tutorial, I will walk you through the concept of docker machine and discuss how it exposes its services running in the virtual machine.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Objective](#objective)
 - [Getting started with a docker-machine](#getting-started-with-a-docker-machine)
-- [Differences between Docker Machine & Docker Engine](#differences-between-docker-machine--docker-engine)
-- [Installing Docker Machine](#installing-docker-machine)
+- [Differences between docker machine & docker engine](#differences-between-docker-machine--docker-engine)
+- [Installing docker machine](#installing-docker-machine)
 - [Using docker-machine to run docker containers](#using-docker-machine-to-run-docker-containers)
 - [Run containers and experiment with machine commands](#run-containers-and-experiment-with-machine-commands)
 - [Conclusion](#conclusion)
 
 ### Requirements
-
 - Basic knowledge of docker.
 - Docker engine installed on your local machine.
-- Virtual machine installed on your development environment. VirtualBox is preferred will be used in this tutorial.
+- Virtual machine installed on your development environment. We will be using VirtualBox in this tutorial.
 
 ### Objective
-
-This tutorial aims to introduce you to the concepts of the docker machine. I will show you how to install and run docker on Ubuntu. We'll then proceed to provision and manage multiple docker remote docker hosts. Additionally, we'll also see provision swarm clusters.
+This tutorial aims to introduce you to the concepts of the docker machine. I will show you how to install and run docker machine on Ubuntu. We'll then proceed to provision and manage multiple remote docker hosts.   
 
 ### Getting started with a docker-machine
-
-A Docker machine runs on the virtual environment or local development environment, cloud, or even on a server somewhere. 
+A Docker machine runs on the virtual host, local development environment, cloud, or even on a server somewhere. 
 With docker knowledge, we know that the Docker daemon does all the work of creating and executing the containers. 
 You can manage your containers and images using the docker command-line tool in this normal setup process.
 
 With the introduction of a docker-machine, you can easily set up as many containers as possible, deploy them to virtual hosts such as VirtualBox. This host then exposes an IP address, as we'll see in a minute, and provide you with an environment to manage these containers. The advantage of this docker-machine that we cannot achieve using just docker is that it provides you with a simple interactive environment to manage several containers. All you need is to set up the drivers, and you're done.
 
 ### Differences between Docker Machine & Docker Engine
-
 Whenever you hear the term `docker`, it typically refers to the `docker engine`.When you run a command such as the one shown below, you're simply interacting with the docker engine command-line interface.
 
 ```bash
@@ -48,7 +42,6 @@ Now, imagine a situation where you have multiple dockerized Java applications. I
 As discussed earlier, it's used to provision and manage these dockerized hosts. How it works is that this machine is installed on a local machine. It's then used to install the docker engine in a virtualized environment.
 
 ### Installing Docker Machine
-
 ```bash
 # run this command to check your installed version
 docker --version
@@ -264,6 +257,7 @@ Output:
 And that's how simple and easy to use a docker machine to create and manage multiple hosts using virtual and docker machines.
 
 ### Conclusion
+Deploying Docker ready cloud servers does not get much easier than with Docker Machine. The simplicity and ease of use will help you save time and money whether you wish to quickly test a container you are developing or build an on-demand scalable cluster.
 
 In this tutorial, we've discussed the key concepts of docker machines. We've seen how we can provide this tool to manage multiple dockerized applications.  
 Hopes it helps you build a strong foundation towards managing your applications.  
