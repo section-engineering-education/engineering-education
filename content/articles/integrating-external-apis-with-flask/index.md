@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /integrating-external-apis-with-flask/
 title: Integrating an External API into a Flask Application
-description: This tutorial will show you how to integrate an external API into a Flask application. We will create a simple Flask application that will allow us to retrieve data from an external API.
+description: This tutorial will show the reader how to integrate an external API into a Flask application. We will create a simple Flask application that will allow us to retrieve data from an external API.
 author: geoffrey-mungai
-date: 2021-08-13T00:00:00-16:30
+date: 2021-08-26T00:00:00-08:30
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/integrating-external-apis-with-flask/hero.png
     alt: Integrating an External API with Flask
 ---
-
-APIs are a major part of applications nowadays. There are many times that we need to use a third-party API either for authentication, file uploads, or getting other information.
+APIs are a major part of applications nowadays. There are often times that we need to use a third-party APIs either for authentication, file uploads, or getting other information.
 <!--more-->
-APIs allow us to use features provided by other applications without having to build the logic ourselves. This also enables us to build applications that integrate with many services, since the interfaces are provided.
+APIs allow us to use features provided by other applications without having to build the logic ourselves. This also enables us to build applications that integrate with many other services, since the interfaces are provided.
 
 ### Prerequisites
 Before proceeding, you are required to have a TMDB (The Movie DB) API key. To obtain one, you must have an account at [themoviedb.org](https://www.themoviedb.org/login). Then, follow [these instructions](https://developers.themoviedb.org/3/getting-started/introduction) to obtain an API key.
@@ -102,11 +101,11 @@ The imported [`urllib.request`](https://docs.python.org/3/library/urllib.request
 We have created a new route `/` that returns the TMDB API response. We have also added a new view function `get_movies()` that will be executed when the route is called.
 
 Inside the `get_movies()` function, we:
-1. Create a URL using the TMDB API key.
-2. Send the request to the TMDB API.
-3. Read the response.
-4. Convert the response to a Python dictionary.
-5. Return the dictionary to the template.
+- Create a URL using the TMDB API key.
+- Send the request to the TMDB API.
+- Read the response.
+- Convert the response to a Python dictionary.
+- Return the dictionary to the template.
 
 To keep your API key safe, you should not store it in your code. Instead, you should store it in an environment variable.
 
@@ -193,15 +192,15 @@ def get_movies_list():
 ```
 
 In the `get_movies_list()` function, we:
-1. Create a URL using the TMDB API key.
-2. Send the request to the TMDB API.
-3. Read the response.
-4. Convert the response to a Python dictionary.
-5. Extract the `results` property from the dictionary.
-6. Iterate over the `results` property and create a new dictionary for each movie, containing the title and the overview.
-7. Return the JSON data to the template.
+- Create a URL using the TMDB API key.
+- Send the request to the TMDB API.
+- Read the response.
+- Convert the response to a Python dictionary.
+- Extract the `results` property from the dictionary.
+- Iterate over the `results` property and create a new dictionary for each movie, containing the title and the overview.
+- Return the JSON data to the template.
 
-Serve the app and navigate to <http://localhost:5000/movies>. You should see the titles and overviews of the movies..
+Serve the app and navigate to <http://localhost:5000/movies>. You should see the titles and overviews of the movies.
 
 ### Conclusion
 In this tutorial, we have looked at how to send a request to a third-party API. In this case, we have used the TMDB API. We have also seen how to send a request-response to your app's endpoint as JSON.
