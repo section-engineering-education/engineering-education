@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /docker-machine/
+title: docker machine tutorial
+description: This tutorial introduces the concept of docker machine.
+author: vincent-oriyo
+date: 2021-08-26T00:00:00-05:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/docker-machine/hero.png
+    alt: docker machine image
+---
+Typically, we create services that run in containers which we then subsequently access via the local host. Docker machine brings a new way of managing and accessing these services.
+<!--more-->
+
 ### Introduction
 Typically, we create services that run in containers which we then subsequently access via the local host. Docker machine brings a new way of managing and accessing these services. It allows developers to create docker engines on the virtual hosts, then exposing them via a specified port.  
 In this tutorial, I will walk you through the concept of docker-machine and discuss how it exposes its services running in the virtual machine.
@@ -260,3 +279,6 @@ Deploying Docker-ready cloud servers does not get much easier than with Docker M
 
 In this tutorial, we've discussed the critical concepts of docker machines. We've seen how we can provide this tool to manage multiple dockerized applications.  
 Hopes it helps you build a strong foundation towards managing your applications.  
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
