@@ -31,8 +31,6 @@ Palette is a support library in android. It allows you to extract prominent colo
 - It 	provides a helper class to extract prominent colors from an image.
 - We can use colors obtained to make elegant application UI designs
 - We can customize the Color Palette using some in-build methods. For instance, adding filters and much more.
-     
-
 
 ### Step 1. Create a new Android studio project
 
@@ -44,17 +42,18 @@ In your Android Studio, select New Project then Empty Activity. Name it as Palet
 
 Add the following dependency to the app module-level build.gradle file
 
-`implementation("com.android.support:palette-v7:28.0.0")`
+```gradle
+implementation("com.android.support:palette-v7:28.0.0")
+```
 
 ### Step 3: Setup the XML layout for our project
 
 In this step, we will design the layout. This layout will contain a ToolBar, an ImageView. , a button, and TextViews.
 
 #### ActivityMain.xml
+
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
    xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -74,17 +73,14 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toTopOf="parent">
        
        <androidx.appcompat.widget.Toolbar
-
            android:id="@+id/toolbar"
            android:layout_width="match_parent"
            android:layout_height="?attr/actionBarSize"
            android:background="?attr/colorPrimary"
            app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
-
    </com.google.android.material.appbar.AppBarLayout>
 
    <ImageView
-  
        android:id="@+id/imageView"
        android:layout_width="match_parent"
        android:layout_height="250dp"
@@ -93,7 +89,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        tools:layout_editor_absoluteX="26dp" />
 
    <Button
-
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="Change Toolbar Color"
@@ -106,7 +101,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 
    <TextView
-
        android:id="@+id/lightVibrant"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -121,7 +115,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/change_toolbar_color_btn" />
 
    <TextView
-
        android:id="@+id/vibrant"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -136,10 +129,9 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/lightVibrant" />
 
    <TextView
-
        android:id="@+id/lightMuted"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content
+       android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Light Muted"
@@ -151,7 +143,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/vibrant" />
 
    <TextView
-
        android:id="@+id/muted"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -165,7 +156,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/lightMuted" />
 
    <TextView
-
        android:id="@+id/darkMuted"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -180,7 +170,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        app:layout_constraintTop_toBottomOf="@+id/muted" />
 
    <TextView
-
        android:id="@+id/darkVibrant"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -211,7 +200,6 @@ To create a synchronous palette, we use:
 ```kotlin
 // Synchronous Palette generated and returned
 fun createPaletteSync(bitmap: Bitmap): Palette = Palette.from(bitmap).generate()
-
 ```
 
 To create an asynchronous palette, we use:
@@ -248,7 +236,8 @@ For example,
     
 The get<Profile>Swatch() methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null to avoid your app crashing. 
 
-The following code checks if the swatch is present in the image bitmap.If it is not present, the default background color will be gray.  
+The following code checks if the swatch is present in the image bitmap. If it is not present, the default background color will be gray.
+
 ```kotlin
 if(palette?.lightMutedSwatch != null){
    setBackgroundColor(palette?.lightMutedSwatch!!.rgb
@@ -317,7 +306,6 @@ class MainActivity : AppCompatActivity() {
        }
    }
 }
-
 ```
 
 ### Demo Screens
