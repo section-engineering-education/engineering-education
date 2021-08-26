@@ -323,7 +323,7 @@ Once done, run the app. Here is what you should expect:
 Check out the entire project for `Java` on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)
 
 ### Conclusion
-That's not all about `Logging with Timber`; keep exploring. Implement logging using this amazing tool in your android applications and imporve the readablity of your application logs.
+That's not all about `Logging with Timber`; keep exploring. Implement logging using this amazing tool in your android applications and improve the readability of your application logs.
 
 ### Resources
 
