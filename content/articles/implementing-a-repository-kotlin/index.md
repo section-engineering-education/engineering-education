@@ -6,7 +6,7 @@ url: /implementing-a-repository-kotlin/
 title: Implementing a Repository in Android using Kotlin
 description: This tutorial will guide the reader on how to implement a repository in Android using Kotlin. A repository allows one to manage different data sources effectively.
 author: michael-barasa
-date: 2021-08-26T00:00:00-13:00
+date: 2021-08-26T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
