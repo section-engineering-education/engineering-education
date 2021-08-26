@@ -2,23 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing-a-repository/
-title: Implementing a Repository in Android Using Kotlin
-description: This tutorial will guide the reader on how to implement a repository in Android using Kotlin. A repository allows you to manage different data sources effectively.
+url: /implementing-a-repository-kotlin/
+title: Implementing a Repository in Android using Kotlin
+description: This tutorial will guide the reader on how to implement a repository in Android using Kotlin. A repository allows one to manage different data sources effectively.
 author: michael-barasa
 date: 2021-08-26T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-a-repository/hero.png
+  - url: /engineering-education/implementing-a-repository-kotlin/hero.png
     alt: Implementing a Repository in Android using Kotlin
 ---
 A repository is commonly regarded as the single source of truth in an Android application. In other words, it acts as an abstraction over a particular data source. A repository enables an application to consume data without worrying about its origin.
 <!--more-->
-Some of the common sources of data include local databases, cache, and online servers. Using a repository allows developers to manage data more effectively. It is also much easy to identify bugs or errors since there is the separation of business logic from the UI.
+Some of the common sources of data include local databases, cache, and online servers. Using a repository allows developers to manage data more effectively. It is also much easier to identify bugs or errors since there is the separation of business logic from the UI.
 
-![App Architecture](/engineering-education/implementing-a-repository/final-architecture.png)
+![App Architecture](/engineering-education/implementing-a-repository-kotlin/final-architecture.png)
 
 ### Goal 
 In this tutorial, we will incorporate a repository in an Android application that uses MVVM architecture. 
@@ -26,9 +26,9 @@ In this tutorial, we will incorporate a repository in an Android application tha
 ### Prerequisites
 To follow along, you need some basic understanding of Kotlin. Furthermore, you should have installed [Android Studio](https://developer.android.com/) on your computer. 
 
-Some knowledge of the [MVVM architecture](https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/) is also vital. 
+Some knowledge of the [MVVM architecture](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/) is also vital. 
 
-You can read more on the different architectural patterns in Android from [here](https://www.section.io/engineering-education/architectural-patterns-in-android/).
+You can read more on the different architectural patterns in Android from [here](/engineering-education/architectural-patterns-in-android/).
 
 > Note that the application will retrieve data from `https://jsonplaceholder.typicode.com/posts`.
 
@@ -39,9 +39,9 @@ Navigate to `https://jsonplaceholder.typicode.com/posts` on your browser.
 
 You will notice that the link returns data in `JSON` format, as shown below:
 
-![Data Format](/engineering-education/implementing-a-repository/data.png)
+![Data Format](/engineering-education/implementing-a-repository-kotlin/data.png)
 
-The above data includes variables such as `userID`, `id`, `title`, and `body`. We will need to declare these variables in the app.
+The data above includes variables such as `userID`, `id`, `title`, and `body`. We will need to declare these variables in the app.
 
 ### Getting started
 Open `Android Studio` and generate a new project. Choose an `empty` template and click `finish`. You will need to be patient since this process may be time consuming.
@@ -83,7 +83,7 @@ dependencies {
 }
 ```
 
-In the code above, we are importing the `Lifecycle` and `Volley` dependencies. The Lifecycle dependency is responsible for the [MVVM](https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/) architecture. It allows us to use elements such as LiveData and ViewModels. 
+In the code above, we are importing the `Lifecycle` and `Volley` dependencies. The Lifecycle dependency is responsible for the [MVVM](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/) architecture. It allows us to use elements such as LiveData and ViewModels. 
 
 We will use the `Volley` library to perform a network request to `https://jsonplaceholder.typicode.com/posts`.
 
@@ -107,7 +107,7 @@ Add the following code in the `Post` file:
 data class Post(val userId: Int, val id: Int, val title: String, val body: String)
 ```
 
-As highlighted above, the `Post` class will take `userID`, `id`, `title`, and `body` as its parameters. Note that the `getters` and `setters` will be generated automatically.
+As highlighted above, the `Post` class will take the `userID`, `id`, `title`, and `body` as its parameters. Note that the `getters` and `setters` will be generated automatically.
 
 ### Creating the repository
 The repository allows the application to connect to different data sources. This data is then sent to the main UI.
@@ -121,13 +121,17 @@ class MainRepository(var mRequestQueue: RequestQueue) {
 }
 ```
 
-Next, we need to add a `MutableLiveData` object to the application. This object will hold data that will be retrieved from the internet:
+Next, we need to add a `MutableLiveData` object to the application. 
+
+This object will hold data that will be retrieved from the internet:
 
 ```kt
  var posts = MutableLiveData<ArrayList<Post>>() //this MutableLiveData will hold an ArrayList of posts
 ```
 
-Let's create a method that returns a pre-filled `Arraylist`. It will simulate data retrieved from the local storage:
+Let's create a method that returns a pre-filled `Arraylist`. 
+
+It will simulate data retrieved from the local storage:
 
 ```kt
     fun getData(): ArrayList<Post>{ //this method returns an arraylist
@@ -244,7 +248,7 @@ class MainRepository(var mRequestQueue: RequestQueue) {
 ```
 
 ### Creating the ViewModel
-In this step, we will connect the above `MainRepository` to our `ViewModel`.
+In this step, we will connect the `MainRepository` above to our `ViewModel`.
 
 Create a new file in the main package directory and name it `MainViewModel`.
 
@@ -267,7 +271,7 @@ class MainViewModel(var mRequestQueue: RequestQueue) : ViewModel() {
 }
 ```
 
-In the code above, we include a `RequestQueue` in the class constructor. As noted, the `RequestQueue` allows us to perform a `Volley` network request.
+In the code above, we included a `RequestQueue` in the class constructor. As noted, the `RequestQueue` allows us to perform a `Volley` network request.
 
 We also defined `localposts` and `onlineposts` arrays. These components will store our application data.
 
@@ -276,7 +280,7 @@ The last thing was to initialize the `MainRepository`. We pass the `RequestQueue
 The `init` function is called whenever the ViewModel is initialized. It is, therefore, the perfect place to fetch and load data.
 
 ### Creating a ViewModelFactory
-A `viewModelFactory` allows us to pass certain values in the `ViewModel` Whenever it is Initialized. In our case, we need to pass a `RequestQueue` in the ViewModel's constructor.
+A `ViewModelFactory` allows us to pass certain values in the `ViewModel` whenever it is initialized. In our case, we need to pass a `RequestQueue` in the ViewModel's constructor.
 
 In the main directory, create a file called `MainViewModelFactory`.
 
@@ -329,6 +333,7 @@ In the `MainActivity` file, declare the following variables:
     private lateinit var mRequestQueue: RequestQueue //requestqueue
 
 ```
+
 The `lateinit` keyword enables us to declare variables without assigning them values.
 
 We now need to assign values to the above variables, as demonstrated below:
@@ -398,9 +403,11 @@ class MainActivity : AppCompatActivity() {
 When you test the application, it should display the local data then update the UI with the online posts.
 
 ### Conclusion
-This article has discussed how to implement a repository in an Android application using Kotlin. One huge advantage of a repository is that it supports the separation of business logic which leads to greater productivity.
+This article discussed how to implement a repository in an Android application using Kotlin. One huge advantage of a repository is that it supports the separation of business logic which leads to greater productivity.
 
 You can, therefore, use the knowledge and skills gained in this course to craft high-quality Android applications.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/content/authors/peter-kayere/)
