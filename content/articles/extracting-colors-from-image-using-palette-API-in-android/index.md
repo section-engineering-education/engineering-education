@@ -51,7 +51,7 @@ Add the following dependency to the app module-level build.gradle file
 In this step, we will design the layout. This layout will contain a ToolBar, an ImageView. , a button, and TextViews.
 
 #### ActivityMain.xml
-```
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -208,7 +208,7 @@ To create a palette on a different thread, we use Asynchronous palette. We then 
  
 To create a synchronous palette, we use:
 
-```
+```kotlin
 // Synchronous Palette generated and returned
 fun createPaletteSync(bitmap: Bitmap): Palette = Palette.from(bitmap).generate()
 
@@ -216,7 +216,7 @@ fun createPaletteSync(bitmap: Bitmap): Palette = Palette.from(bitmap).generate()
 
 To create an asynchronous palette, we use:
 
-```
+```kotlin
 // Palette created asynchronously and we use it on another thread using onGenerated() method
 fun createPaletteAsync(bitmap: Bitmap) {
    Palette.from(bitmap).generate { palette ->
@@ -249,7 +249,7 @@ For example,
 The get<Profile>Swatch() methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null to avoid your app crashing. 
 
 The following code checks if the swatch is present in the image bitmap.If it is not present, the default background color will be gray.  
-```
+```kotlin
 if(palette?.lightMutedSwatch != null){
    setBackgroundColor(palette?.lightMutedSwatch!!.rgb
 }
@@ -261,7 +261,7 @@ else{
 Here is our main activity code: 
 #### ActivityMain.kt
 
-```
+```kotlin
 package com.roberts.myapplication
 import android.content.Intent
 import android.graphics.Bitmap
