@@ -978,7 +978,6 @@ To bind a controller to a view using ``Obx`` wrap the widget as shown below:
 
 ### Conclusion
 We have successfully built a shopping mobile app using Flutter, and GetX for state management.
-
 You've learned how to build a shopping application with Flutter and use GetX for state management, navigation, and rendering widgets.
 You can clone the project on this [Git Repository](https://github.com/Lekwacious/shopping_app-_getx).
 Happy coding!
