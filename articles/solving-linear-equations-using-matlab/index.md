@@ -111,7 +111,7 @@ y2 = (14 -4*x)/5;
 plot(x, y1, x, y2)   %plotting the two equations
 legend('y1', 'y2')   %Adding legends to the plot
 ```
-![output](linear_one.png)
+![output](/engineering-education/solving-linear-equation-using-matlab/linear_one.png)
 The two lines are parallel. It means that the two lines meet intersect at infinity. So when you try two get the solution to this problem using Matlab, the output given for the unknowns is `inf`, which means infinity.
 ```
 x =
@@ -155,7 +155,7 @@ xlabel('x');
 ylabel('y');
 legend('y1', 'y2')
 ```
-![output two](linear_two.png)
+![output two](/engineering-education/solving-linear-equation-using-matlab/linear_two.png)
 We will use the `intersect function` to find the point of intersection to find the point at which the lines intersects. The intersect function uses the gradients and the constants as the inputs as shown below;
 ```matlab
 function [x0 y0] = intersectPoints(m1,m2,b1,b2) %m is the gradient while b is the constant. 
@@ -184,9 +184,9 @@ y3 = 7*x - 25;
 hold on
 plot(x, y1, x,y2, x, y3)
 ```
-![output](linear_three.png)
+![output](/engineering-education/solving-linear-equation-using-matlab/linear_three.png)
 When you execute the above commands, we get a 3rd line which is for the third equation. Looking at the plots, you may think these three lines intersect at a common point, but this is not the case. To see this, zoom out the plots. To zoom out, click on the magnifying lens icon having `+` inside it. After clicking it, move to the point at which the lines seems to intersect a few times, and the result will be;
-![output](linear_four.png)
+![output](/engineering-education/solving-linear-equation-using-matlab/linear_four.png)
 This shows that there is no perfect solution to these problems. If we try solving it using matlab and plot this output to see the position that matlab gives as the output. This can be done by the code below;
 ```matlab
 A = [4 5; 3 -2; 7 -1];
@@ -196,7 +196,7 @@ hold on
 plot(x(1),x(2),'k*')
 plot(x(1),x(2),'r*')
 ```
-![output](linear_five.png)
+![output](/engineering-education/solving-linear-equation-using-matlab/linear_five.png)
 As you can see, Matlab is trying to locate a point close to all three lines, and this is an approximation. The error to the solution is found by;
 ```Matlab
 error = A*x -b
