@@ -49,7 +49,7 @@ As mentioned earlier, regex combines simple characters and special characters th
 
 In the code above, the predicate method `.matches(“hello”)` takes a string argument representing a regex pattern is invoked on the string variable `word` to ascertain that its value `hello` matches the given regex pattern, `hello`. 
 
-The program outputs the boolean value `true` because the length and order of the characters of the value in the variable match the regex. This can also be performed on a string literal, and the output would be the same.
+The program outputs the boolean value `true` because the length and order of the characters in the variable match the regex. When we perform this match on a literal string, the output would be the same.
 
 ```java
 
@@ -78,7 +78,7 @@ Metacharacters are categorized differently depending on their functionalities as
 
 #### QUANTIFIERS
 
-A quantifier is used to specify the number of occurrences of a character that it precedes. It is usually placed right after a character or character class (which will be discussed subsequently in this article) to specify how many instances of such preceding instance must be present for the input to be matched.
+A quantifier specifies the number of occurrences of a character that it precedes. It is usually placed right after a character or character class (which will be discussed subsequently in this article) to specify how many instances of such preceding instance must be present for the input to match.
 
 * Zero or more times matcher (`*`): This is regarded as the “Zero or more” quantifier because it matches the instance of its preceding character occurring any number of times. The following examples illustrate the `*` quantifier:
 
@@ -134,7 +134,7 @@ The last print statement outputs `false` because the regex pattern matches an oc
 ```
 
 
-This scenario is similar to the `*` quantifier except that it requires one or more occurence of it's immediate character.
+This scenario is similar to the `*` quantifier except that it requires one or more occurrences of it's immediate character.
 
 It is important to note that regex matching is case-sensitive, and hence both lines of code in the examples given below each output boolean value `false` due to case-mismatch.
 
@@ -164,7 +164,7 @@ It is important to note that regex matching is case-sensitive, and hence both li
 ```
 
 
-In the example above, the string array with the variable name “words” is iterated, and elements of the array that match the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. Finally, the results obtained are concatenated side by side with a white space between each word.
+In the example above, we iterate through the string array with the variable name “words”, and the array elements matching the provided regex pattern are output. The pattern matches strings containing the characters ‘c’, ‘a’, ‘r’, and at most, one occurrence of the character ‘e’ positioned immediately. Finally, the results obtained are concatenated side by side with a white space between each word.
 
 * N number of times matcher (`{n}`): This is regarded as the “n” quantifier, where ‘n’ is an integer because it matches the instance of its preceding character occurring exactly n number of times. The following examples illustrate the `{n}` quantifier:
 
@@ -205,8 +205,7 @@ The output of this code is “feed ” because the regex matches any element wit
 
 * Match between N and M number of times (`{n,m}`): This quantifier matches the instance of its preceding character occurring between ‘n’ and ‘m’ number of times, with the values of ‘n’ and ‘m’ both being integer instances.
 
-In the example below, the regex matches elements in the string array `words` which contain between 2 and 5 instances of the character ‘0’ to form a string.
-
+In the example below, the regex matches elements in the string array `words`. The string `words` contains between 2 and 5 instances of the character ‘0’ that form a string.
 ```java
 
     String regexPattern = "0{2,5}";
@@ -247,7 +246,7 @@ A character class is used to specify a set of characters, whereby any one of suc
 
 #### CHARACTER GROUPS AND RANGES
 
-* The square bracket `[ ]` is used to contain a range of characters, any of which is required to be present in the string for a match to occur. 
+* The square bracket `[ ]` is used to contain a range of characters.
 
     `[a-z]` matches any lowercase alphabetic character.
 
@@ -267,13 +266,13 @@ A character class is used to specify a set of characters, whereby any one of suc
 
 #### ASSERTIONS
 
-Assertions are used to specify boundaries within which a match should occur. They are also referred to as regex anchors.
+We use assertions to specify the boundaries within which a match should occur. They are also known as regex anchors.
 
 
 
 | Character | Meaning|
 | ----------|--------
-|  `^`      | This ensures that the match starts at the beginning of the string or line. However, when this is used at the start of character groups or ranges, it ensures that every other character except the specified characters in the group is a match.|
+|  `^`      | This ensures that the match starts at the beginning of the string or line. When we use assertion at the start of character groups or ranges, it ensures that every other character except the specified characters in the group is a match.|
 | `$`       | This ensures that the match occurs at the end of the string or before a newline character.|
 | `\b`      | This denotes a word boundary and matches the occurrence of characters not preceded or followed by any word character. For example, string “anna” matches the pattern `\\b\\w+` because any other word character does not precede the string. Still, it is not a match for `a\\b` because the first character ‘a’ is immediately preceded by other word characters.|
 | `\B`      | This matches a non-word boundary, given a position where the previous and next characters are either both words or both non-words.|
