@@ -14,7 +14,7 @@ images:
     alt: form-validation-in-vue.js-using-veevalidate
 ---
 
-Client-side validation is common in today's web applications and pages, it improves user experience and saves on application resources. Vue provides us with its built-in custom validation, it's recommended to use a third-party library like Vee Validated to avoid code repetition and it is also tested to work with all browsers.
+Client-side validation is common in today's web applications and pages, it improves user experience and saves on application resources. Vue provides us with its built-in custom validation. Its recommended to use a third-party library like `Vee Validate` to avoid code repetition and it is also tested to work with all browsers.
 
 In this tutorial, we will discuss and set up form validation using the vee-validate library.
 
@@ -41,11 +41,11 @@ To follow along with this article, it is helpful to have the following:
 
 ### Why Client-Side Validation
 
-Client-side validation is essential, it provides users with immediate feedback thus increasing user experience and saves on application resources by eliminating the response request cycle process hence saving on bandwidth and time. This is not to say that server-side validation should not be performed on an application, client-side validation can be disabled in the browser, it is wise to perform validation both on the client and the server.
+Client-side validation is essential because it provides users with immediate feedback thus increasing user experience. This in turn saves on application resources by eliminating the response request cycle process hence saving on bandwidth and time. This is not to say that server-side validation should not be performed on an application, client-side validation can be disabled in the browser, it is wise to perform validation both on the client and the server.
 
 ### Project SetUp
 
-Make sure you have Vue configured in your machine. Create a new Vue app with the above command:
+Make sure you have `Vue` configured in your machine. Create a new Vue app with the above command:
 
 ```bash
 vue create vue-form-validation
@@ -59,11 +59,11 @@ In the newly created repository, install the plugin using the command below:
 vue add tailwind
 ```
 
-Let's clean up the default Vue setup by deleting the HelloWorld component and its dependencies. Create a new component and set up the tailwind template. Copy and paste the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
+Let's clean up the default Vue setup by deleting the `HelloWorld` component and its dependencies. Create a new component and set up the tailwind template. Copy and paste the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
 
 ### Introducing VeeValidate
 
-[VeeValidate][https://vee-validate.logaretm.com/v4/] is an effective validation library it is tested to work with most browsers. Before we get into working with the library let's explore it. The above library provides us with two ways of form validation, components and composition API. We are going to adopt the components approach in the above tutorial.
+[VeeValidate][https://vee-validate.logaretm.com/v4/] is an effective validation library. It is tested to work with most browsers. Before we get into working with the library let's explore it. The above library provides us with two ways of form validation, components and composition API. We are going to adopt the components approach in this tutorial.
 
 We are provided with the above components:
 
@@ -172,7 +172,7 @@ export default {
 };
 ```
 
-To avoid going back and forth in files, we import the _defineRule_ and _ErrorMessage_ from vee-validate, this is used to define rules and set error messages respectively.
+To avoid going back and forth in files, we import the _defineRule_ and _ErrorMessage_ from vee-validate. This is used to define rules and set error messages respectively.
 We register the _ErrorMessage_ component and define a _required_ rule, the rule ensures that an input element must be present.
 
 The _defineRule_ is a function provided by the global validator, it takes two arguments an _identifier_ this is a rule name, and a _validator_ function used to verify field value.
@@ -271,7 +271,7 @@ export default {
 };
 ```
 
-We are having aliases for some of our [rules][https://vee-validate.logaretm.com/v4/guide/global-validators#vee-validaterules], the apha_spaces and not_one_of, this is to escape linting and improve readability.
+We are having aliases for some of our [rules][https://vee-validate.logaretm.com/v4/guide/global-validators#vee-validaterules], the `apha_spaces` and `not_one_of`, this is to escape linting and improve readability.
 
 Now that we have our rules in place, open the template file and update the input fields and schema object. Update schema object, multiple rules will be separated with a pipe character.
 
@@ -374,7 +374,7 @@ configure({
 });
 ```
 
-The configure functions take an argument context and store a message which overrides the default error messages, the context argument stores input names.
+The `configure functions` take an argument context and store a message which overrides the default error messages, the context argument stores input names.
 We have the ternary operator which returns customized error messages.
 
 ### Validation Triggers
@@ -468,7 +468,7 @@ In this article, we have implemented form validation in vue.js using veevalidate
 - [Validation Triggers](#validation-triggers)
 - [Add Alert Message](#add-alert-message)
 
-The finalized code can be accessed from [here](https://github.com/Njunu-sk/Form-Validation). Feel free to give the project a star.
+The finalized code can be found [here](https://github.com/Njunu-sk/Form-Validation). Feel free to give the project a star.
 
 ### Conclusion
 
