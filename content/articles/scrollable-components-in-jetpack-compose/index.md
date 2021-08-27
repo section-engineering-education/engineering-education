@@ -192,8 +192,8 @@ fun DisplayList(items: List<ListItem>) {
 ```
 
 **Explanation:**
-- `grouped` - is a `Map` that contains a `List` of `ListItem` objects grouped by the first character of the `name` property.
-- `initial` - is the first character of the `name` property in the `List` of `ListItem` objects.
+- **grouped** - is a `Map` that contains a `List` of `ListItem` objects grouped by the first character of the `name` property.
+- **initial** - is the first character of the `name` property in the `List` of `ListItem` objects.
 
 > Note: The Sticky header API is still being developed and it might change in the future. For this reason, we're using the experimental API by annotating the function with `@ExperimentalFoundationApi`
 
