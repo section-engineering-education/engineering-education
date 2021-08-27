@@ -43,7 +43,7 @@ driver.get('https://www.google.com/')
 ```
 The above code snippet is used to open a browser and request a web `url`. The first line of code is importing webdriver from Selenium, in the second line we used the webdriver to open chrome which we stored in a variable `driver`.
 
->NOTE: There are different webdrivers for different browsers so if you prefer another browser just look for the webdriver for that browser on the internet, for instance, we would use `firefoxDriver` for the firefox browser. We are opening Chrome because we are using the `ChromeDriver`.
+>NOTE: There are different webdrivers for different browsers so if you prefer another browser just look for the webdriver for that browser on the internet, for instance, we would use `firefoxDriver` for the firefox browsers. We are opening Chrome because we are using the `ChromeDriver`.
 
 On the third line, we used the driver variable to send a request to the browser requesting for the `url` in the parenthesis. You can run the code using the command below
 
