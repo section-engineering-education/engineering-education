@@ -19,11 +19,11 @@ images:
 It is a hybrid framework and the easiest way to build React.js applications. It includes a lot of functionality that is easily extensible and customizable. Being a hybrid means it can be used for either CSR (Client-Side Rendering), SSR (Server-Side Rendering), or SSG (Static-Site Generation).
 
 ### Goal
-In this guide, you will learn how to create a Next.js application, connect it to MongoDB and deploy it on [Vercel](https://vercel.com/dashboard). We will create a simple blog application stores blog posts in a MongoDB database. This will allow you to add a new post to the blog app and update or delete a post from the app.
+In this guide, you will learn how to create a Next.js application, connect it to MongoDB and deploy it on [Vercel](https://vercel.com/dashboard). We will create a simple blog application that stores blog posts in a MongoDB database. This will allow you to add a new post to the blog app and update or delete a previous post from the app.
 
 ### Prerequisites
 To follow along with this guide you will need:
-- [Node.js](https://nodejs.org/en/) installed. Node.js will help us run NPM commands to install any necessary dependencies that will help us make a Next.js application and communicate with a MongoDB database.
+- [Node.js](https://nodejs.org/en/) installed. Node.js will help us run NPM commands to install any necessary dependencies that will help us build our Next.js application.
 - Since we are working with [Next.js](https://nextjs.org/), prior knowledge of how to use [Next.js](https://www.youtube.com/watch?v=mTz0GXj8NN0&t=53s) will be helpful.
 - We are using [MongoDB](https://www.mongodb.com/) as the database for the post storage. Prior knowledge of working with this database will be of great importance.
 
