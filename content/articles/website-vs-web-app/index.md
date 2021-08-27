@@ -112,5 +112,6 @@ Unlike developing a website that is a bit simple and less complicated, creating 
 From the above discussion, you can tell the difference between website and web app and what you interact with daily.
 
 Happy Learning!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
