@@ -19,18 +19,18 @@ Logging is among the essential things we do while developing android apps. Yet, 
 
 <!--more-->
 
-### Prerequisites
+### Requirements
 
-To follow along with this tutorial, you should:
+To tag along with this tutorial comfortably, you should:
 
 - Have a working android studio IDE.
 - Be able to create a project in `Android Studio`.
 - Have an understanding of `Kotlin` or `Java`.
 - Have some basic knowledge of the basic `Logging class`.
 
-### Goal
+### Objectives
 
-At the end of this tutorial, you should be able to:
+By the end of this tutorial, you should be able to:
 
 - Understand what `Timber` is (an overview).
 - log with `Timber`.
@@ -73,15 +73,15 @@ It's a library by `Jake Wharton` that enhances logging in android.
 
 In this example, we'll create an app that adds two numbers. Then we'll log the answer.
 
-#### Step 1: Creating the project
+#### Step 1: Create the project
 
-We will kick off with creating a new project; you can refer to the image below for guidance.
+We will kick off with creating a project. The image bellow will guide you into creating a project.
 
 ![create_project](/planting-timber-logs-the-right-way/creating_project2)
 
-#### Step 2: Adding dependencies
+#### Step 2: Adding Timber dependency
 
-After creating the project, we will add a dependency to our app-level build Gradle.
+After we have created the project, we will add `Timber's` dependency to our app-level build Gradle.
 
 ```gradle
 //Timber dependency
@@ -91,7 +91,7 @@ implementation 'com.jakewharton.timber:timber:4.7.1'
 
 #### Step 3: XML layouts
 
-In this step, we will create our layout.
+We will now create and design our layout.
 
 ##### Main Activity layout
 
@@ -168,7 +168,7 @@ In this step, we will create our layout.
 
 #### Step 4: The Timber App Class
 
-In this step, we will write  code for our `Application class of Timber`
+After creating the layout, we will write  code for our `Application class of Timber`
 ![creating a class in java](/planting-timber-logs-the-right-way/creating_a_class_java.png)
 
 ```Java
@@ -258,9 +258,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-    }
+  }
 }
 ```
 ##### Kotlin
@@ -299,21 +297,19 @@ class MainActivity : AppCompatActivity() {
                 Timber.d(answer.text.toString())
             }
         }
-
     }
 }
 ```
 
   
-
 ### Timber Logcat
 
 In the logcat you will see such a line like this `D/MainActivity: 7`.
 We did not specify the class name but timber placed one for us; `D/MainActivity`.
 That is the beauty of `Timber`.
 
-#### Demo screens
-Once done, run the app. Here is what you should expect:
+#### Demonstration screens
+Once we are done, run the app on your device or emulator. This is what you should expect to see:
 
 ![log output in java](/planting-timber-logs-the-right-way/timber_log_java.png)
 
