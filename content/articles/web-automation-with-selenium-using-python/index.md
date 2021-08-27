@@ -13,7 +13,7 @@ In this guide, we will be writing two python automation scrips one will perform 
 
 Our app will be able to run like the demo below.
 
-![demo](/engineering-education/web-automation-with-selenium/demo.gif)
+![demo](/web-automation-with-selenium-using-python/demo.gif)
 
 ### Setting up the environment
 First, we will need to create a virtual environment for its best practice to create a virtual environment for every python project we want to build so we don’t have issues with our project in the future. Click [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/) to learn how to create a virtual environment if you don’t know how to create one.
@@ -52,11 +52,11 @@ python app.py
 ```
 If your code is correct the code will open your chrome browser as shown in the image below.
 
-![browser open image](/engineering-education/web-automation-with-selenium/image1.png)
+![browser open image](/web-automation-with-selenium-using-pythonimage1.png)
 
 Next, we will be inputting a search keyword into the search field in the Google website. To do that we will have to get the search field element by inspecting the page. to inspect the page, right-click on the Google website page and click on inspect. The browser will open a window like shown in the image below
 
-![inspect browser](/engineering-education/web-automation-with-selenium/image2.png)
+![inspect browser](/web-automation-with-selenium-using-python/image2.png)
 
 Before we continue we will need to understand what locators in selenium are. **Locators** are ways we can identify web elements on the web page. They help us find any element on the webpage. There are different types of locators we can use to identify elements on a web page they include; id, class , name, and xpath. We use them as shown below
 - `find_element_by_id` 
