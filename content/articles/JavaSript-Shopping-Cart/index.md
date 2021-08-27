@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/javascript-shopping-cart-using-objects-and-arrays/hero.png
+ - url: /engineering-education/javascript-shopping-cart-using-objects-and-arrays/hero.jpg
    alt: Cart Shopping JavaScript Image Hero
 ---
 Building a shopping cart can be done in an assortment of ways. In this tutorial, I will ll show you how to make a shopping cart using arrays and objects.
