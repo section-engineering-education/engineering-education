@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/creating-a-modal-dialog-with-tailwind-css/
+url: /creating-a-modal-dialog-with-tailwind-css/
 title: Creating a Modal Dialog With Tailwind CSS
 description: In this article, we will create a simple modal window using Tailwind CSS. We will add a few lines of Javascript code to add functionality to it.
 author: ian-masae
-date: 2021-08-27T00:00:00-08:00
+date: 2021-08-27T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,9 @@ images:
 ---
 When developing web designs, one of the most important things to put attention to is user interaction. A good example of this is by the use of modal dialogs.
 <!--more-->
-A modal is a popup window that appears on top of the main content of a webpage seeking user interaction. It appears ot the top of the main content and forces the user to interact with it before continuing with their work.
+A modal is a popup window that appears on top of the main content of a webpage seeking user interaction.
+
+It appears at the top of the main content and forces the user to interact with it before continuing with their work.
 
 Modal dialogs are helpful because they give critical warnings to the user as a way of preventing errors.
 
@@ -24,7 +26,7 @@ Throughout this tutorial, we will be using Tailwind to create and style up our m
 
 The modal dialog will look like the one below:
 
-![Modal Dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog-gif.gif)
+![Modal dialog](/engineering-education/creating-a-modal-dialog-with-tailwind-css/modal-dialog-gif.gif)
 
 ### Prerequisites
 To follow through this article, you will need to have:
@@ -33,7 +35,7 @@ To follow through this article, you will need to have:
 3. Knowledge of JavaScript functions
 
 #### Adding Tailwind CSS to your project
-I assume that you already have Tailwind installed. If not, visit this [article](/engineering-education/introduction-to-tailwind-css/) first for the full Tailwind installation process.
+I assume that you already have Tailwind installed. If not, visit this [article](/engineering-education/introduction-to-tailwind-css/) for the full Tailwind installation process.
 
 Let's get started!
 
@@ -103,7 +105,7 @@ In a modal window like that, the user is required to check if they really wish t
 
 In our case, we are going to create a pop-up window similar to the one seen when an account is successfully registered.
 
-Let us get to it.
+Let's get to it.
 
 We will create a `div` where we will place our modal content. It will act as a container for an icon, text, and a button.
 
@@ -243,7 +245,7 @@ For scripting, we have also given our button an ID - `ok-btn`.
 
 We are done designing our modal dialog!
 
-#### Adding Functionality to our modal dialog
+#### Adding functionality to our modal dialog
 We will add functionality to the buttons we have created using simple JavaScript code.
 
 We will grab all the elements that we want to add functionality to by using the unique identifiers that we had given them earlier.
