@@ -282,4 +282,6 @@ fun LazyRowExample(items: List<ListItem>) {
 ### Conclusion
 In this tutorial, we have covered the basics of creating scrollable lists in Jetpack Compose. We've also learned how to create sticky headers in a scrollable list. The knowledge gained from this tutorial will be useful in creating a more complex scrollable list.
 
+The code in this tutorial can be found in [this GitHub repository](https://github.com/Janenjoki/scrollable-components-in-jetpack-compose)
+
 Happy Composing!
