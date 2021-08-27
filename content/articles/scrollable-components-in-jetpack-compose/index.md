@@ -8,7 +8,7 @@ In this tutorial, we'll learn the best practices to build such components.
 ### Prerequisites
 To follow through with this tutorial, you need to have the following:
 - [Android Studio Arctic Fox (2020.3.1) Stable](https://developer.android.com/studio#downloads) or higher - These versions of Android Studio have the Jetpack Compose plugin.
-- [Basic knowledge on Jetpack Compose](https://developer.android.com/jetpack/compose/index.html). If you are not familiar with Compose, feel free to check out [this article on Section]() to get started.
+- [Basic knowledge on Jetpack Compose](https://developer.android.com/jetpack/compose/index.html). If you are not familiar with Jetpack Compose, feel free to check out [this article on Section](https://www.section.io/engineering-education/getting-started-with-jetpack-compose-in-android/) to get started.
 - A good understanding of the [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) will help you understand [Kotlin Coroutines with Jetpack Compose](https://developer.android.com/jetpack/compose/coroutines.html).
 
 > Note: At the time of writing this tutorial, Jetpack Compose is in version 1.0.0 -its first stable version.
@@ -192,8 +192,8 @@ fun DisplayList(items: List<ListItem>) {
 ```
 
 **Explanation:**
-- **grouped** - is a `Map` that contains a `List` of `ListItem` objects grouped by the first character of the `name` property.
-- **initial** - is the first character of the `name` property in the `List` of `ListItem` objects.
+- `grouped` - is a `Map` that contains a `List` of `ListItem` objects grouped by the first character of the `name` property.
+- `initial` - is the first character of the `name` property in the `List` of `ListItem` objects.
 
 > Note: The Sticky header API is still being developed and it might change in the future. For this reason, we're using the experimental API by annotating the function with `@ExperimentalFoundationApi`
 
@@ -259,6 +259,25 @@ For demonstration purposes, we have scrolled to the last item in the list. This 
 
 ### Displaying a Horizontal Scrollable list
 As the name suggests, the main difference between a vertical and a horizontal scrollable component is the orientation. A `LazyRow` is a scrollable component that can be used to display a horizontal list. It's comparable to a LazyColumn in terms of implementation.
+
+Example:
+
+```kotlin
+@Composable
+fun LazyRowExample(items: List<ListItem>) {
+    // implement LazyRow
+	LazyRow(
+		contentPadding = PaddingValues(4.dp),
+		horizontalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.fillMaxSize(1F)
+	) {
+        // display items horizontally
+        items(items) { item ->
+            ListItem(list = item)
+        }
+	}
+}
+```
 
 ### Conclusion
 In this tutorial, we have covered the basics of creating scrollable lists in Jetpack Compose. We've also learned how to create sticky headers in a scrollable list. The knowledge gained from this tutorial will be useful in creating a more complex scrollable list.
