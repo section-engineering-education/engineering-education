@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
  
  - url: /engineering-education/statistical-hypothesis-testing-python-implementation/hero.PNG
-alt: statistic hypothesis testing with python cover image
+alt: statistic hypothesis testing with Python cover image
 ---
 Hypothesis testing is the analysis of assumptions on a population sample. In other words, it involves checking whether a hypothesis should be accepted or not. 
 <!--more-->
@@ -31,7 +31,7 @@ Hypothesis testing has improved decision-making in different sectors including b
 10. [Additional resources](#additional-resources)
  
 ### Prerequisites
-To follow along, readers should have some basic knowledge of Python programming. They should also understand how to perform data analysis using [pandas](https://pandas.pydata.org/) and [numpy](https://numpy.org/).
+To follow along, readers should have some basic knowledge of Python programming. They should also understand how to perform data analysis using [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/).
  
 ### Goal
 At the end of this tutorial, readers should be able to:
@@ -39,7 +39,7 @@ At the end of this tutorial, readers should be able to:
 - perform t-test, chi-squared test & ANOVA using python and a new dataset.
 - differentiate between type 1 and type 2 null hypothesis errors.
 - explain the confidence of the null hypothesis.
-- use pandas functions for data analysis.
+- use Pandas functions for data analysis.
 - identify the best areas to apply t-test, chi-square test, and ANOVA test.
  
 ### Understanding hypothesis testing
@@ -184,7 +184,7 @@ df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'spe
 
 df.head()
 ```
-On reading the dataset into the notebook, It is important to add columns name to it for a better understanding of the data we are working with. Hence, we proceed to check the first five to confirm our formatting works.
+On reading the dataset into the notebook, it is important to add columns name to it for a better understanding of the data we are working with. Hence, we proceed to check the first five to confirm our formatting works.
 
 ![dataset head](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_head.PNG)
 
@@ -292,7 +292,7 @@ print(df.sample(5))
 
 ![dfsample5](/engineering-education/statistical-hypothesis-testing-python-implementation/dfsample5.PNG)
 
-Drop all other columns but just the two columns that we need, the species and the new petal width columns.
+Drop all other columns but just the two columns that we need, the `species` and the `petal_width_new` columns.
 ```py
 df_new = df.drop(columns=["sepal_width", "sepal_length", "petal_length", "petal_width"])
 print(df_new.head())
@@ -382,7 +382,7 @@ For the sake of a one-sample t-test, we will be re-assigning the column of petal
 ```python
 df_ = df.petal_width
 ```
-The pandas dataframe sample() function is used here as well to have a random view of our dataframe.
+The pandas dataframe `sample()` function is used here as well to have a random view of our dataframe.
 ```python
 print(df_.sample(5))
 ```
@@ -408,11 +408,14 @@ Ttest_1sampResult(statistic=-0.0053494404016899925, pvalue=0.9957389399651244)
 Analyzing the one-sample t-test, it finds out if the hypothesized mean is the same or different from the group's mean. From the example above, we've selected the `petal_width` as the population sample to perform the test on.
 
 From the test, since the p-value beats the alpha level set at 0.05, we accept the null hypothesis because we don't have enough evidence to prove otherwise.
+
 Moreover, if you check, the p-value is very close to 1.0, which means that the mean of `petal_width` is most likely 1.199.
+
 The evidence is too strong to be rejected, it is almost accurate.
  
 #### Performing a Two-Sample T-Test
 The standard for the two-sample t-test is for the two independent groups we are sampling to have equal variances. We can only know [the variances are equal when the ratio of the higher to the lower variance is less than 4:1.](https://www.real-statistics.com/students-t-distribution/two-sample-t-test-equal-variances/)
+
 Checking of the variance is only making sure that two populations are probably spread out or normally distributed, this will help prevent bias. Hence, the null hypothesis will be assuming that since the two groups are normally distributed, they likely should have the same mean.
 ```python
 class1 = df.petal_width
@@ -426,7 +429,7 @@ print(np.var(class1), np.var(class2))
 ```bash
 0.5785315555555559 0.6811222222222222
 ```
-Do the ratio check
+Do the ratio check to know if it satisfies the condition for two-sample t-test. The ratio check is done on the variance to ensure that the two populations are normally distributed.
 ```python
 ratio_check = np.var(class2)/np.var(class1) 
 print(ratio_check)
@@ -435,7 +438,8 @@ print(ratio_check)
 1.1773294225379805
 ```
 Obviously, the ratio is less than 4:1, thus the variances are assumed to be equal.
-Applying the two-sample t-test function on our classes
+
+Applying the two-sample t-test function on our classes,
 ```python
 print(stats.ttest_ind(a=class1, b=class2, equal_var=True))
 ```
@@ -449,7 +453,7 @@ Evaluating this:
 
 Our `p-value` (p=3.7974378831185126e-148) is far less than `alpha` = 0.05.
 
-However, interpreting any form of t-test largely depends on the p-value, the result above explains that the means of the two samples(petal_width and sepal_length) are different. Thus, we will reject the null hypothesis which says the mean of the two samples are the same because their variances are assumed to be equal, there is no evidence sustainable enough to prove the two populations have the same mean. H1 (alternate hypothesis) is however true.
+However, interpreting any form of t-test largely depends on the `p-value`, the result above explains that the means of the two samples(`petal_width` and `sepal_length`) are different. Thus, we will reject the null hypothesis which says the mean of the two samples are the same because their variances are assumed to be equal, there is no evidence sustainable enough to prove the two populations have the same mean. H1 (alternate hypothesis) is however true.
  
 ### ANOVA with Python implementation
 ANOVA is a word coined from 'Analysis of Variance'. It is a statistical concept that shows the differences between the means of more than two independent groups, using variance analysis on samples from those groups.
@@ -459,9 +463,11 @@ It is used to check the contrast between three or more samples with one test. Es
 Why ANOVA? With ANOVA, you get to discover obvious differences between the means of your independent features, and on getting a clearer picture of the differences, you can get to understand how each of them connects to your dependent variable, and what are the influencing factors for the relationship.
  
 A typical example is as follows:
+
 'The growth department of a certain company discovered an increase in sales for a particular product. In recent times, they've tried several advertisement channels so it is difficult to say which one yielded the sales increase the most.’
  
 They did online posters, billboards, TV ads, mouth-to-mouth, and sponsorship. By carrying out an ANOVA test on the several advertisement channels, they will be able to better understand which one works best out of all channels(independent variables), with the connection it has with the increase in sales which is the dependent variable.
+
 This can be applied in the marketing department of every organization.
  
 During ANOVA testing, the hypothesis is:
@@ -471,13 +477,12 @@ During ANOVA testing, the hypothesis is:
 **H1:** When one or more samples are very much different.
  
 #### One Way ANOVA Test
-`Petal width`, `petal length` and `sepal length` are the classes we want to apply one-way anova test on.
+`petal width`, `petal length` and `sepal length` are the classes we want to apply one-way ANOVA test on.
 ```python
 class1 = df.petal_width
 class2 = df.sepal_length
 class3 = df.petal_length
-```
-```python
+
 print(f_oneway(class1, class2, class3))
 ```
 ```bash
@@ -488,8 +493,8 @@ Since our `p-value` (5.738282463819433e-122) is far less than `alpha` = 0.05, we
 This means that the sample means are very much different. Hence, our H1 (alternate hypothesis) is thus true.
  
 #### Two Way ANOVA Test
- 
 This is called for when we are dealing with three or more variables, trying to compare their means with each other.
+
 ```python
 petal = df.petal_width
 sepal = df.sepal_length
