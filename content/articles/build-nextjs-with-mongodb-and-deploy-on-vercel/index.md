@@ -25,7 +25,7 @@ In this guide, you will learn how to create a Next.js application, connect it to
 To follow along with this guide you will need:
 - [Node.js](https://nodejs.org/en/) installed. Node.js will help us run NPM commands to install any necessary dependencies that will help us build our Next.js application.
 - Since we are working with [Next.js](https://nextjs.org/), prior knowledge of how to use [Next.js](https://www.youtube.com/watch?v=mTz0GXj8NN0&t=53s) will be helpful.
-- We are using [MongoDB](https://www.mongodb.com/) as the database for the post storage. Prior knowledge of working with this database will be of great importance.
+- We are using [MongoDB](https://www.mongodb.com/) as the database. Prior knowledge of working with this database will be of great importance.
 
 ### Table of contents
 - [Goal](#goal)
@@ -370,7 +370,7 @@ This should connect to your remote MongoDB remote Atlas cluster.
 
 Now you can proceed to create a database. In this case, name the database `sample_posts` and name the collection `posts`.
 
-Now let's create parameters that will help the application to acces this datase connections. In the root of your project folder (`nextjs-blog-app-with-mongodb`), create a `.env.local` file. Enter the following contents in the file:
+Now let's create parameters that will help the application to acces this database connections. In the root of your project folder (`nextjs-blog-app-with-mongodb`), create a `.env.local` file. Enter the following contents in the file:
 
 ```js
 MONGODB_URI = ""
