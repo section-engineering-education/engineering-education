@@ -14,7 +14,7 @@ images:
     alt: form-validation-in-vue.js-using-veevalidate
 ---
 
-Client-side validation is common in today's web applications and pages, it improves user experience and saves on application resources. Vue provides us with its built-in custom validation. Its recommended to use a third-party library like `Vee Validate` to avoid code repetition and it is also tested to work with all browsers.
+As technology evolves we are posed with challenges of creating modern solutions, it's fundamental to validate your forms in the browser. This saves on application resources and improves user experience, Vue has its built-in validation but recommends libraries such as `Vee Validate`, tested to work on all browsers.
 
 In this tutorial, we will discuss and set up form validation using the vee-validate library.
 
@@ -59,11 +59,11 @@ In the newly created repository, install the plugin using the command below:
 vue add tailwind
 ```
 
-Let's clean up the default Vue setup by deleting the `HelloWorld` component and its dependencies. Create a new component and set up the tailwind template. Copy and paste the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
+Let's create a new component and set up the tailwind template. Copy the template(Tailwind Form Template) body elements from the above [pen][https://codepen.io/dev_njunu]. Fire up the server and navigate to the local port, you will have a registration form. Feel free to customize it to your liking.
 
 ### Introducing VeeValidate
 
-[VeeValidate][https://vee-validate.logaretm.com/v4/] is an effective validation library. It is tested to work with most browsers. Before we get into working with the library let's explore it. The above library provides us with two ways of form validation, components and composition API. We are going to adopt the components approach in this tutorial.
+[VeeValidate][https://vee-validate.logaretm.com/v4/] is an effective validation library. Before we get into working with the library let's explore it. The above library provides us with two ways of form validation, components and composition API. We are going to adopt the components approach in this tutorial.
 
 We are provided with the above components:
 
