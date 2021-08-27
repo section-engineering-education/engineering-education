@@ -2,10 +2,10 @@
 title: Creating a React app using Vite
 ---
 
-ReactJS is a Javascript library used to create the frontend of a single-page web application ***(SPAs)***. This means it is used to develop User Interfaces 
+React.js is a Javascript library used to create the frontend of a single-page web application ***(SPAs)***. This means it is used to develop User Interfaces 
 for web projects, by reducing the complex UI of the application into components, using relatively least possible code as compared to using HTML, CSS, and Javascript.
 
-If you are coming from the SPA development context using ReactJS, you are probably acquainted with the normal way of starting a React application using the **"npx create-react-app ***app-name***"** command. If this is unknown to you, you probably want to visit [this](https://create-react-app.dev/docs/getting-started/) page that clearly lays out the step-by-step guide on how to create one using **"npm"**.
+If you are coming from the SPA development context using React.js, you are probably acquainted with the normal way of starting a React application using the **"npx create-react-app ***app-name***"** command. If this is unknown to you, you probably want to visit [this](https://create-react-app.dev/docs/getting-started/) page that clearly lays out the step-by-step guide on how to create one using **"npm"**.
 
 
 <!--more-->
@@ -15,7 +15,7 @@ Stay tuned!.
 
 ### Prerequisites
 Care to know the concepts and install tools of what follows next before going further with this article.
-1. An overview of ReactJS.
+1. An overview of React.js.
 2. Concept of **Hot Module Replacement** in React. [This](https://webpack.js.org/guides/hot-module-replacement/) page talks more about the same.
 3. Have nodejs installed. Install from [here](https://nodejs.org/en/download/). Node provides the node package manager **(npm)** used to configure dependencies required to set up the application. Learn ***npm*** from [here](https://docs.npmjs.com/cli/v6/commands/npm).
 
@@ -52,7 +52,7 @@ Now you are ready to get started.
 ### Process of creating a react application using Vite.
 > Confirm that you have navigated into the folder you would want to create the application in as below.
 
-![Vite Directory](/engineering-education/creating-a-react-app-using-vite/ViteTut.PNG)
+![Vite Directory](/engineering-education/creating-a-react-app-using-vite/ViteTut.png)
 
 I will be using **npm** in this article but in case you prefer to use **yarn** visit the official Vite documentation which you can access from [this](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) link.
 
@@ -62,39 +62,41 @@ Write the following command in your CLI.
 npm init vite
 ```
 Add a project name and a package name you prefer as I have.
-![Vite project](/engineering-education/getting-started-with-sessions-in-php/viteproject.PNG)
+![Vite project](/engineering-education/getting-started-with-sessions-in-php/viteproject.png)
 
 You will then select a framework and a variant like in the images that follow. Remember we are using react so scroll down to select react for both framework and variant, and hit enter. 
-![framework](/engineering-education/creating-a-react-app-using-vite/framework.PNG)
-![variant](/engineering-education/creating-a-react-app-using-vite/variant.PNG)
+![framework](/engineering-education/creating-a-react-app-using-vite/framework.png)
+![variant](/engineering-education/creating-a-react-app-using-vite/variant.png)
 
 Our project is now created. All you should do now is install then run it.
-![install](/engineering-education/creating-a-react-app-using-vite/install.PNG)
+![install](/engineering-education/creating-a-react-app-using-vite/install.png)
 
 Move into the created project while you still are in your command line. In my case, ***ViteTutoral*** and type the command that follows.
 
 ```bash
 npm install
 ```
-![installing](/engineering-education/creating-a-react-app-using-vite/installing.PNG)
+![installing](/engineering-education/creating-a-react-app-using-vite/installing.png)
 This command installs every required dev dependencies which you can access from the **package.json** file and eventually, it creates a **node_modules** folder
 which can be viewed as an external modules' cache that is depended upon by your project.
 
 Your ***package.json*** file will look like this, of course with the project name being what you chose.
-![Packages file](/engineering-education/creating-a-react-app-using-vite/package.PNG)
+![Packages file](/engineering-education/creating-a-react-app-using-vite/package.png)
 
-Just one more command and we are done setting up Vite and React. Type the below command and hit enter.
+Just one more command, hit enter, and we are done setting up Vite and React. 
 
 ```bash
 npm run dev
 ```
-![Running app](/engineering-education/creating-a-react-app-using-vite/run.PNG)
+![Running app](/engineering-education/creating-a-react-app-using-vite/run.png)
 
 Copy and paste the local server link. And what do you know?! You have React and Vite running on your local server. Congratulations!
-![Local app](/engineering-education/creating-a-react-app-using-vite/app.PNG).
+![Local app](/engineering-education/creating-a-react-app-using-vite/app.png).
+
+> **npm run serve** command does the app build and renders the production version's preview. **npm run dev** gets the development server started.
 
 If you open your project folder from your editor, you will see different files among which is the **main.jsx** file. Whatever we saw on the browser was the code in **App.jsx** that is rendered from the ***main.jsx*** file.
-![files](/engineering-education/creating-a-react-app-using-vite/main.PNG).
+![files](/engineering-education/creating-a-react-app-using-vite/main.png).
 
 
 We could add fun to our learning by creating a simple Application that outputs our experience using Vite, in few statements.
@@ -123,12 +125,19 @@ function App() {
 export default App
 ```
 or like in this image.
-![appcode](/engineering-education/creating-a-react-app-using-vite/appcode.PNG).
+![appcode](/engineering-education/creating-a-react-app-using-vite/appcode.png).
 
 Now head to your terminal and run **npm run dev** command again and follow the local link provided. 
 
 You did really great! We have created our simple React+Vite app that looks like this:
-![finalapp](/engineering-education/creating-a-react-app-using-vite/finalapp.PNG).
+![finalapp](/engineering-education/creating-a-react-app-using-vite/finalapp.png).
+
+
+> In Vite, **index.html** file is not placed in the public folder as in React. This HTML file has a ***<script type="module" src='..'></script>*** script-type module, essentially the point of entry a React app has.
+
+
+> Furthermore, you realize ***%PUBLIC_URL%*** misses. This placeholder maps any static files within React's public folder.Therefore, because of the automatic rebasing of URLs in the index.html file for Vite, %PUBLIC_URL% is not required.
+
 
 Great Job!
 
