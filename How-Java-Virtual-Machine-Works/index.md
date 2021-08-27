@@ -6,7 +6,7 @@ The `Java Virtual Machine (JVM)` is the Java program that executes the main func
 2. **Application-based virtual machines (AVM)**: It lets a single process run as an application on the host machine without involving any hardware. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this article.
 
 AVM, on the other hand, allows a single process to run as an application on the host machine without engaging any hardware components. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this session.
-There are created a .java file, .class files with the identical names as those in the java file. This .class file breaks down the jvm into numerous phases that describe how it works.
+There are created a .java file, .class files with the identical names as those in the java file. This .class file breaks down the JVM into numerous phases that describe how it works.
 1. ClassLoader
 2. JVM Memory 
 3. Execution Engine 
@@ -18,7 +18,7 @@ There are three of the class loaders:
 - Extension class loader
 - Bootstrap class loader
 
-As one of the phases of jvm, it mainly consists of three activities which are listed below:
+As one of the phases of JVM, it mainly consists of three activities which are listed below:
 1. **Loading**:
 
  ".class" files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each ".class" file in JVM contains the following information.
@@ -90,7 +90,7 @@ The `Runtime Data Area` is another name for the memory area. In total, it's brok
 ### Execution Engine
 To run a ".class" file, you need an execution engine. Reading byte-code from a file, using data from various memory areas, then executing instructions. The execution engine consists of three components named below:
 
-1. **Interpreter**: Essentially, the interpreter takes bytecode and translates it to machine code. Interpreters may be faster at running one line of byte code than they are at executing the full code. Also, a fresh interpretation must be provided each time the same method is invoked.
+1. **Interpreter**: Essentially, the interpreter takes bytecode and translates it to machine code. Interpreters may be faster at running one line of bytecode than they are at executing the full code. Also, a fresh interpretation must be provided each time the same method is invoked.
 2. **JIT Compiler (Just In Time compiler)**: To execute byte code, the interpreter is the first choice of the execution engine. The JIT compiler will be used instead of the execution engine detects that a method is repeated. It consists of the following;
 -  Intermediate Code Generator.
 - Code Optimizer.
