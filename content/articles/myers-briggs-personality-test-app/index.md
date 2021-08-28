@@ -46,7 +46,7 @@ To learn more about the above key elements, kindly follow this [link](https://ww
 ### Prerequisites
 
 - Java JDK 8.0 and above
-* A Java IDE
+- A Java IDE
 - Test [Questions](https://pdfcoffee.com/the-myers-test-pdf-free.html) in pdf format
 
 ### Introduction to Java Arrays
