@@ -6,7 +6,7 @@ url: /build-nextjs-with-mongodb-and-deploy-on-vercel/
 title: How to build a Nextjs application with MongoDB and deploy on Vercel
 description: This article will guide you on how to create a Next.js application, connect it to MongoDB and deploy it on Vercel.
 author: rose-waitherero
-date: 2021-07-02T00:00:00-05:00
+date: 2021-08-27T00:00:00-05:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,10 +16,14 @@ images:
 ---
 [Next.js](https://nextjs.org/) is a JavaScript framework that lets you build server-side rendering and static web applications using React.js as a client-side web-driven framework, just like vue.js and Angular.js. It has many features that make it great such as pre-rendering, CSS in JS, and many more.
 <!--more-->
-It is a hybrid framework and the easiest way to build React.js applications. It includes a lot of functionality that is easily extensible and customizable. Being a hybrid means it can be used for either CSR (Client-Side Rendering), SSR (Server-Side Rendering), or SSG (Static-Site Generation).
+It is a hybrid framework and the easiest way to build React.js applications. It includes a lot of functionality that is easily extensible and customizable. 
+
+Being a hybrid means it can be used for either CSR (Client-Side Rendering), SSR (Server-Side Rendering), or SSG (Static-Site Generation).
 
 ### Goal
-In this guide, you will learn how to create a Next.js application, connect it to MongoDB and deploy it on [Vercel](https://vercel.com/dashboard). We will create a simple blog application that stores blog posts in a MongoDB database. This will allow you to add a new post to the blog app and update or delete a previous post from the app.
+In this guide, you will learn how to create a Next.js application, connect it to MongoDB and deploy it on [Vercel](https://vercel.com/dashboard). 
+
+We will create a simple blog application that stores blog posts in a MongoDB database. This will allow you to add a new post to the blog app and update or delete a previous post from the app.
 
 ### Prerequisites
 To follow along with this guide you will need:
@@ -49,7 +53,11 @@ To follow along with this guide you will need:
 - [Conclusion](#conclusion)
 
 ### Installing Next.js
-Next.js provides a one-time command that helps developers to scaffold a Next.js project. This will fasten the development time and serve a developer a well already structured application. First, create a folder and change the directory to it. Then, to create a Next.js app, run the command `npx create-next-app` inside that directory. This will then prompt you with what name you want to call your app. As a shortcut, you can still run this one command with `npx create-next-app` followed the app's name, as shown below:
+Next.js provides a one-time command that helps developers to scaffold a Next.js project. This will fasten the development time and serve a developer a well already structured application. 
+
+First, create a folder and change the directory to it. Then, to create a Next.js app, run the command `npx create-next-app` inside that directory. 
+
+This will then prompt you with what name you want to call your app. As a shortcut, you can still run this one command with `npx create-next-app` followed the app's name, as shown below:
 
 ```bash
 npx create-next-app nextjs-blog-app-with-mongodb
@@ -59,18 +67,24 @@ The above command will create a directory `nextjs-blog-app-with-mongodb` where a
 
 ![nextjs-app-scafold](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/nextjs-app-scafold.png)
 
-This template provides a ready-made project structure that you can use and increases your application development productivity. To test if it is working, change the directory to the newly created `nextjs-blog-app-with-mongodb` folder and run this command.
+This template provides a ready-made project structure that you can use and increases your application development productivity. 
+
+To test if it is working, change the directory to the newly created `nextjs-blog-app-with-mongodb` folder and run this command.
 
 ```bash
 npm run dev
 ```
 
-This will start up a local server that will expose this application on port `3000`. And you can access it through a browser using the URL `http://localhost:3000`. If this gives you a `Welcome to Next.js!`, we are ready to go.
+This will start up a local server that will expose this application on port `3000`. You can access it through a browser using the URL `http://localhost:3000`. 
+
+If this gives you a `Welcome to Next.js!`, we are ready to go.
 
 ![welcome-to-nextjs](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/welcome-to-nextjs.png)
 
 ### Laying out the postcards and a Navbar
-Now we have an app and database ready. We can start working on implementing our use case. To begin with, we will start by adding the page navigation bar and laying out the postcards to display the posts. On the `nextjs-blog-app-with-mongodb` create a directory and name it `components`. Here we will create three files.
+Now that we have an app and database ready, we can start working on implementing our use case. 
+
+To begin with, we will start by adding the page navigation bar and laying out the postcards to display the posts. On the `nextjs-blog-app-with-mongodb` create a directory and name it `components`. Here we will create three files.
 
 - `Nav.js` - Here will add a navigation bar. Inside this navigation bar will add a link that will help us navigate to the home page and a page to insert a new post. (we will configure the pages later).
 
@@ -193,12 +207,12 @@ export async function getServerSideProps(ctx) {
 }
 ```
 
-If your server was still running, it will recompile the changes and render them to the exposed port. Else you can rerun your server using `npm run dev`. When you refresh the `http://localhost:3000/`, you can see the Navbar and the Post Card are set.
+If your server was still running, it will recompile the changes and render them to the exposed port. Otherwise, you can rerun your server using `npm run dev`. When you refresh the `http://localhost:3000/`, you can see the Navbar and the Post Card are set.
 
 ![nav-bar-and-the-post-card](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/nav-bar-and-the-post-card.png)
 
 ### Setting up Next.js pages
-Here we will add the Next.js pages that will help us do all the navigation around the application. Next, we will add one page that will navigate to `Add new post`. Then, finally, we will add the functionalities that will help us add a post.
+Here we will add the Next.js pages that will help us do all the navigation around the application. Next, we will add one page that will navigate to `Add new post`. Then finally, we will add the functionalities that will help us add a post.
 
 First, navigate to the `pages` directory inside your Next.js app. Then, inside the pages folder, create a file and name it `add-post.js` and add the following lines of code.
 
@@ -315,14 +329,16 @@ To format and style the above page, navigate to the `styles` folder and replace 
 }
 ```
 
-Let's test if the page is working. Once again, if your server is still running, the above code changes will be recompiled and mapped to the exposed localhost on port `3000`. Else you can rerun the server.
+Let's test if the page is working. Once again, if your server is still running, the above code changes will be recompiled and mapped to the exposed localhost on port `3000`.
 
 Refresh `http://localhost:3000/` and on the Navbar, click `Add post`. This will redirect you to a `http://localhost:3000/add-post` page and serve you the following add new post form.
 
 ![add-new-post-form](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/add-new-post-form.png)
 
 ### Setting up MongoDB using MongoDB Atlas
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a cloud database service for MongoDB. This means that you get to store and access your data from a remote computer. This eliminates the process of setting up MongoDB locally on your computer. To use MongoDB Atlas, you need to have an account. If you don't have one, create a free account from [here](https://account.mongodb.com/account/register?nds=true). If already you have one, login from [here](https://account.mongodb.com/account/login?nds=true).
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a cloud database service for MongoDB. This means that you get to store and access your data from a remote computer. This eliminates the process of setting up MongoDB locally on your computer. 
+
+To use MongoDB Atlas, you need to have an account. If you don't have one, create a free account from [here](https://account.mongodb.com/account/register?nds=true). If already you have one, login from [here](https://account.mongodb.com/account/login?nds=true).
 
 Once you create an account, a project will be created and assigned a free **MO Sandbox** with a **Shared cluster**.
 
@@ -449,12 +465,18 @@ From the above function, we are:
 - Returning the `client` and `db`.
 
 ### Setting up the API route
-Next.js has the functionality of writing code that will run on the server. In this article, we will be utilizing the `api` folder configured in the `pages` folder. The `api` folder exposes files in it as endpoints. Therefore, the code you write here runs in the server, favoring the MongoDB package since it should run in the server.
+Next.js has the functionality of writing code that will run on the server. 
+
+In this article, we will be utilizing the `api` folder configured in the `pages` folder. The `api` folder exposes files in it as endpoints. 
+
+Therefore, the code you write here runs in the server, favoring the MongoDB package since it should run in the server.
 
 In the `api` folder, inside the `pages` folder in our project, create a `posts.js` file. This file will form the `/api/posts` endpoint.
 
 ### Add handler function
-The handler function will be called whenever a request is sent to that endpoint. Therefore, we will need to configure our various request methods and the various functions that should be called. To do that, edit the `handler` function as follows:
+The handler function will be called whenever a request is sent to that endpoint. Therefore, we will need to configure our various request methods and the various functions that should be called. 
+
+To do that, edit the `handler` function as follows:
 
 ```js
 const { connectToDatabase } = require('../../lib/mongodb');
@@ -489,12 +511,18 @@ From above, we are switching the various request methods and matching them to th
 - The PUT method for updating a post.
 - The DELETE method for deleting a post.
 
-Before implementing these functions, there are a couple of files that we need to update. The Postcards that we set earlier are a skeleton of the application design. Now we need to update them to communicate with the API and display the respective methods that each performs.
+Before implementing these functions, there are a couple of files that we need to update. The Postcards that we set earlier are a skeleton of the application design. 
+
+Now we need to update them to communicate with the API and display the respective methods that each performs.
 
 To do this, we will update the following files. First, we will replace the existing code with the following code.
 
 ### components/PostCard.js
-We already laid a form that will allow us to display the posts, delete and update a post. Next, we will add the API methods such as PUT and DELETE. This will help us process the API data and make a request to the server to perform the right operation. In this case, we will add API routes that will enable us to access the server to execute these methods. In `components/PostCard.js`, replace the existing code with the following.
+We already laid a form that will allow us to display the posts, delete and update a post. 
+
+Next, we will add the API methods such as PUT and DELETE. This will help us process the API data and make a request to the server to perform the right operation. 
+
+In this case, we will add API routes that will enable us to access the server to execute these methods. In `components/PostCard.js`, replace the existing code with the following.
 
 ```js
 import { useState } from 'react';
@@ -578,7 +606,9 @@ From the above;
 A form for displaying a post from the database, a delete button to erase a post, and a Publish button for updating an existing post.
 
 ### pages/add-post.js
-We will add the functionalities that will help us add a post. Inside the pages folder, create a file and name it `add-post.js`. Next, we will add the following lines of code.
+We will add the functionalities that will help us add a post. Inside the pages folder, create a file and name it `add-post.js`. 
+
+Next, add the following lines of code.
 
 ```js
 import { useState } from 'react';
@@ -824,7 +854,9 @@ If you go to `http://localhost:3000` (Home page), you should be able to see the 
 
 ![the-added-post](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/the-added-post.png)
 
-At this point, the post got is saved into our database. You verify that, go to MongoDB Compass and open the `sample_posts` database. The added post was saved in the `posts` collection. If you open it, you will see the details of the added post.
+At this point, the post got is saved into our database. You verify that, go to MongoDB Compass and open the `sample_posts` database. 
+
+The added post was saved in the `posts` collection. If you open it, you will see the details of the added post.
 
 ![mongodb-saved-post](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/mongodb-saved-post.png)
 
