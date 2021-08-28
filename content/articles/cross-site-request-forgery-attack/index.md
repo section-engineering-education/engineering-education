@@ -6,7 +6,7 @@ url: /understanding-csrf/
 title: Understanding Cross-site Request Forgery Attacks
 description: This tutorial will provide an overview of CSRF and how it works. We will look at the impact of CSRF on a web application and how to prevent it.
 author: pauline-mwangi
-date: 2021-08-24T00:00:00-16:30
+date: 2021-08-28T00:00:00-05:48
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -38,8 +38,6 @@ Before you proceed, you are required to have:
 ### Overview of CSRF attacks
 [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack is a web security vulnerability that forces users to conduct malicious actions unknowingly on a web application they are currently authenticated on.
 
-CSRF attacks take advantage of the trust a web app has in the user. When you log in and get authenticated to a web application, the browser and web server trust that everything done is courtesy of you.
-
 In a CSRF attack, the attacker exploits the user's trust to execute functions for themselves. This type of attack only happens to vulnerable web applications. With the help of social engineering platforms, attackers can launch a CSRF attack.
 
 CSRF attacks should at no time occur if websites are correctly developed. First, the application must have anti-forgery mechanisms. Second, encryption and cryptography techniques ensure that third-party users can't handle requests using your browser.
@@ -66,13 +64,13 @@ These are ways an attacker uses to exploit the CSRF vulnerability.
 #### GET requests
 Referring to our previous example, let us assume that the online banking account uses the HTTP GET request method to conduct transactions. The users request to transfer funds to another person could look like this:
 
-```
+```bash
 http://bankexample.com/onlinetransfer?amount=5000&account=receiver
 ```
 
 The attacker creates a malicious URL that transfers funds from the victim's account. The attacker takes the original request, then forges another request, and substitutes the beneficiary name with their own, as seen below:
 
-```
+```bash
 http://bankexample.com/onlinetransfer?amount=$5000&account=attacker
 ```
 
@@ -117,8 +115,8 @@ If you want to find out if the session is not secure, you need to examine the we
 Resources accessible via the HTTP GET requests are no doubt vulnerable. Even though JavaScript automates POST requests, they are exposed and vulnerable. Therefore, the use of POST hardly solves CSRF vulnerabilities.
 
 The tester can use the following methods of testing:
-- Black box testing 
-- Gray box testing
+- Black box testing.
+- Gray box testing.
 
 [Black box testing](https://www.javatpoint.com/black-box-testing) is a technique that helps testers find vulnerabilities that make applications and systems exploitable from the outside. It examines the functionality of an application without knowing much about the internal structure.
 
@@ -147,20 +145,17 @@ For more CSRF prevention alternatives, visit the [CSRF prevention cheat sheet](h
 CSRF attack is a severe threat to web applications. The vulnerability depends on how the HTTP protocol manages web requests and processes. In a CSRF attack, the attacker tricks the authenticated user into performing malicious action on a web application without the user's knowledge. This causes a significant impact on the victim or the entire web application.
 
 To summarize, we have looked at:
-- What are CSRF attacks?
+- What CSRF attacks are.
 - How CSRF attacks work.
 - Impacts of CSRF attacks.
 - Testing for CSRF attacks.
 - How to prevent CSRF attacks.
 
-I hope this article has given you a better understanding of Cross-Site Request Forgery (CSRF).
-
+Happy learning!
 ### Further reading
 1. [Cross-site request forgery](https://owasp.org/www-community/attacks/csrf)
 2. [How to prevent Cross-site scripting in Node.js](https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/)
 3. [How to fix and prevent SQL injection in WordPress](https://www.section.io/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/)
-
-Happy coding!
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
