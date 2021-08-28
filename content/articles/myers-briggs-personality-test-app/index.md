@@ -57,7 +57,7 @@ An array in Java is a set of elements of the same data type, either a primitive 
 
 ### Declaration of Arrays
 
-We declare a single-dimensional array like this.
+We declare a single-dimensional array like this:
 
 int [ ] oneDarray;
 
