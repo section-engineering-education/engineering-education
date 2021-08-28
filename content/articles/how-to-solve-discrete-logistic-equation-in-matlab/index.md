@@ -94,7 +94,8 @@ nvec = 1:1:N_end;    %stores n values to plot against
 plot(nvec,x);
 hold on
 ```
-![logistic model](logistic_one.png)
+![logistic model](/engineering-education/
+how-to-solve-discrete-logistic-equation-in-matlab/logistic_one.png)
 From the output, we see the population grows to a given level where the population is constant. This point is the carrying capacity. When the population rises past this point, the resources will be limited. When the resources are limited, the organisms begin to die, and the population starts to decline.
 
 ### Conclusion
