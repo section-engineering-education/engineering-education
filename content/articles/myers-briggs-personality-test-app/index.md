@@ -4,7 +4,8 @@ status: publish
 published: true
 url: /building-a-personality-test-app-with-java/
 title: Building a Personality Test App with Java
-description:
+description: The goals of this tutorial is to make convincing concepts clearer and understandable enough for beginners and show the implementation of multi-dimensional array in java in a way that enables the reader to know how arrays can be used in I/O applications such as quiz app or in a question and answer app.
+This tutorial will also, show how to write java functions  for arrays, string, and floating-point manipulations, how to use StringBuilder class in java, and make a clean implementation of formatting strings in java in relation to data representation in a table.
 author: badmus-kola
 date: 2021-08-24T00:00:00-04:35
 topics: [Languages]
