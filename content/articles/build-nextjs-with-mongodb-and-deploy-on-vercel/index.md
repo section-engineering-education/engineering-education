@@ -6,7 +6,7 @@ url: /build-nextjs-with-mongodb-and-deploy-on-vercel/
 title: How to build a Nextjs application with MongoDB and deploy on Vercel
 description: This article will guide you on how to create a Next.js application, connect it to MongoDB and deploy it on Vercel.
 author: rose-waitherero
-date: 2021-08-27T00:00:00-05:00
+date: 2021-08-28T00:00:00-05:00
 topics: []
 excerpt_separator: <!--more-->
 images:
