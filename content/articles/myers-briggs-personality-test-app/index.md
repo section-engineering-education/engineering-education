@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-personality-test-app-with-java/hero.jpg
-    alt:
+    alt: Personality test hero image
 ---
 
 ### Building a Myers Briggs Personality Test App with Java
