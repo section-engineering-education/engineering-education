@@ -10,10 +10,10 @@ In this tutorial, we shall be looking at the use of **foremost** in data recover
 
 ### Prerequisites
 
-To understand this article a reader needs to:
+To understand this article a reader needs to have:
 
-- Have Kali Linux or any other Linux distribution installed.
-- Have prior knowledge of the basic commands in the Linux terminal.
+- Kali Linux or any other Linux distribution installed.
+- Prior knowledge of the basic commands in the Linux terminal.
 
 Check the following article to understand the prerequisites.
 [Getting started with kali linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/)
@@ -28,7 +28,7 @@ sudo apt install foremost
 
 ### Foremost package tools
 
-**foremost** package include some flags. Use the following command to display them.
+**Foremost** package includes some flags. We use the following command to display them.
 
 ```bash
 foremost -h
@@ -79,10 +79,10 @@ The above command will list the drives attached to your computer and all their p
 
 **Recovery of files from a hard drive can be done in two ways:**
 
-- Recover files from the entire hard drive. i.e **foremost** will recover files from all partitions of a hard drive. This process will take more time.
-- Recover files from a specific partition. i.e You can specify the partition from which **foremost** will recover the files. This is applicable where you know from which partition your deleted files were located.
+- Recover files from the entire hard drive i.e., **foremost** will recover files from all partitions of a hard drive. This process will take more time.
+- Recover files from a specific partition i.e., you can specify the partition from which **foremost** will recover the files. This is applicable where you know from which partition your deleted files were located.
 
-**To recover files from the entire hard drive use the following command.**
+**To recover files from the entire hard drive use the following command:**
 
 ```bash
 sudo foremost -v -t png,mp4,pdf  -i /dev/sda -o /home/Desktop/recover -T
@@ -94,7 +94,7 @@ Replace the hard drive path with your own. You will find the path in the output 
 
 Be patient as this process will take a while.
 
-**To recover files from a single partition, use the following command.**
+**To recover files from a single partition, use the following command:**
 
 ```bash
 sudo foremost -v -t png,mp4,pdf -i /dev/sda1  -o /home/Desktop/recover -T
@@ -118,4 +118,4 @@ The above command will automatically generate an output folder called output. Th
 
 ### Conclusion
 
-We have discussed the numerous ways you can use **foremost** to recover your deleted files. There is really no limitations to what you can do with **foremost**. Use the tools we discussed above to your preference.
+We have discussed the numerous ways you can use **foremost** to recover your deleted files. There are no limitations to what you can do with **foremost**. Use the tools we discussed above to your preference.
