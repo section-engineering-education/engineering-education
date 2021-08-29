@@ -22,31 +22,29 @@ For beginners, these languages seem familiar in the beginning but in reality, th
 This text compares C# and C++ in terms of syntax(which is more friendly), performance(which is more performance-oriented), game development(real vs Unreal Engine) to enable a user choose the programmer to settle on a language that he/she is more comfortable with.
 
 ### Table of Contents
-- [Defining C# vs C++](#defining-c#-vs-c++)
-- [Syntax rules: C# vs C++](#syntax-rules:-c#-vs-c++)
-- [Main Differences: C# vs C++](#Main-Differences:-C#-vs-C++)
+- [Defining](#defining)
+- [Syntax rules](#syntax-rules)
+- [Main Differences](#main-differences)
 - [Game Development ](#game-development)
-- [Real Engine](#real-engine(c#-and-unity))
-- [Unreal Engine](#Unreal-Engine(c++))
-- [Performance:C# vs C++](#Performance,-C#-vs-C++)
-- [Choosing between C# and C++](#Choosing-between-C#-and-C++)
+- [Real Engine](#real-engine)
+- [Unreal Engine](#unreal-engine)
+- [Performance](#performance)
+- [Picking the right Choice](#picking-the-right-choice)
 - [Conclusion](#conclusion)
 
-#### Defining C-sharp vs C++
-C++ could be a general-purpose language and an extension to C programing language. C++ improved C in terms of objects and their behavior without decreasing the speed and overall efficiency of the code.
+#### Defining 
+**C++** could be a general-purpose language and an extension to C programing language. C++ enhanced C in terms of objects and their behavior while maintaining the code's speed and general efficiency.
+Because of its complex syntactic rules, numerous conventions, error-prone memory management, and non-intuitive features, C++ can be difficult to learn for beginners.
 
-C++ could be challenging to find out for beginners thanks to its complex syntax rules, many conventions, error-prone memory management, and non-intuitive features of the language.
+**C# (C-sharp)** is a general-purpose programming language that is primarily intended for use with the.NET framework.
+It is extensively used by developers in the creation of Windows desktop apps, web applications, and games.
 
-C#(C-sharp) could be a general purpose programing language mainly designed for creating programs that execute on the .NET framework.
+C#, on the other hand, is problem-oriented, which means that its code is simple to read and understand even for beginners.
 
-Developers frequently apply it within the development of windows desktop programs, web application, and games.
+C# is also a statically-typed language, which means that the code is double-checked for faults before being included into the application.. However,some feaatures are not (for instance, the dynamic keywords).
 
-Well, C# could be a problem-oriented language, meaning that its code is easy-to-read even for beginners.
-
-C# is also a statically-typed language, meaning that the code is checked for errors before it is made into the program. However, there are some non-statically typed features in C#(for instance, the dynamic keywords).
-
-### Syntax rules: C# vs C++
-The comparison of C# vs C++ is simple to work out. For beginners, C# structure and conventions may appear simpler to know than C++.
+### Syntax rules
+The comparison of C# and C++ is simple to work out. For beginners, C# structure and conventions may appear simpler to know than C++.
 
 Let's take a look at the most differences between the syntax rules of both languages:
 
@@ -57,7 +55,7 @@ Let's take a look at the most differences between the syntax rules of both langu
 
 - Pointers don't seem to be employed in C# instead use references within the unsafe code.
 
-### Main Differences: C# vs C++
+### Main Differences
 Since C# is less complicated to master and use than C++, it's becoming a more popular choice round the globe.
 
 However, when developers have to have more control over their projects, they intercommunicate C++.
@@ -91,7 +89,7 @@ This allows people with average programming skills to provide entertaining gamin
 
 Additionally, the scripting in game engines differs from regular programming.
 
-#### Real Engine(C# and Unity)
+#### Real Engine
 C# and unity are the tools that the majority beginners start with. Unity may be a real game engine that enable you to produce scripts for interactive content of games.
 
 Every content in unity starts with a game object which gets components to perform certain actions.
@@ -100,40 +98,40 @@ You'll note that once you combine C# and Unity, you will be ready to **add addit
 
 However, beginners cash in of the prevailing components resulting to similarity in Unity-based games.
 
-#### Unreal Engine(C++)
+#### Unreal Engine
+
 The ability to distribute across various platforms play an enormous role when choosing between C++ or C# for game development.
 
 C++ is less complicated to distribute, but beginners mustn't choose this language for the primary game development attempt.
 
-Programmers who want to form games with C++ often choose Unreal engine , which presents a group of tools for developing and designing games.
-
+Programmers who want to **form games with C++ often choose ## Unreal engine** , which presents a group of tools for developing and designing games.
 By using **C++ within the Unreal Engine**, developers add the most structure of the gameplay system, and designers enhance it.
 
-#### Performance: C# vs C++
-We have previously compared C# and C++ in other sections in terms of speed and overall performance.
-In theory, there's no reason why C# loses the battle to C++ in terms of optimized performance (though it's losing).
+#### Performance
+We have previously discussed the differences between the two languages and have basically seen that C++ is better in speed and overall performance.
+There is no specific reason that explain in words why C++ is better in terms of optimized performance than C# though it is practicall/functionally proven.
 
-We will compare C# vs C++ performance to work out why one language is slower than the other, and why the slower speed must not discourage you from using the other.
+We will compare C# and C++ in terms of performance to work out why one language is slower than the other, and why the slower speed must not discourage you from using the other.
 
-C# has an **additional execution step called JIT compilation**.
-This is often the optimization step but not as advanced because of the optimization in C++.
+C# has an **additional execution step called Just-In-Time(JIT) compilation**.
+This is a form of dynamic compilation and the optimization step but not as advanced as the optimization in C++.
 
 C# features plenty of *overheads and adds libraries before compilation*.
-Specialists believe that the differences within the C# vs C++ performance are **minimal and exaggerated**.
+Experts view differences in performance as **small and always exaggerated.**
 
 The speed of programming languages isn't always a priority. If you reach your goals much faster in C#, you do not have to spend more time trying to work out the principles of C++.
 
-#### Choosing between C# and C++
+#### Picking the right Choice
 With C++ and Unreal engine, you would possibly take longer trying to urge your code to figure. However, **games developed in C++ tend to figure faster and are more polished**.
 
 Compared to **C# and Unity**, **C++ and Unreal Engine** isn't beginner-friendly, meaning that developers need more advanced skills to use it.
 
-For beginners, kidding within the Unity environment is enough, but if you would like a more powerful engine, choose C++ with Unreal Engine
+It is enough for beginners to play around the Unity environment, but if you want a more powerful engine, choose C++ and Unreal Engine
 
 ### Conclusion
-The verdict within the decision of C# vs C++ for games development **depends on your level of programming and determination**.
+C # and C ++ game development decisions depend on your **programming skill level and determination**.
 
-Beginners should start with a more friendly environment for game creation i.e. C# with unity and attain Unreal Engine with C++ as their skills improve.
+New developers should start with a more friendly environment for game creation i.e. C# with unity and attain Unreal Engine with C++ as their skills improve.
 
 ---
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
