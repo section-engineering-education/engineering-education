@@ -6,15 +6,17 @@ Unintentional deletion of important files can be tragic. This has led to operati
 
 [**Foremost**](https://pkgs.org/download/foremost) is a free data retrieval software. You can download it on the internet. It operates on Linux operating systems. Throughout this tutorial, we will be using Kali Linux. Anyone using any other Linux distribution can follow through.
 
-### What we will learn
+In this tutorial, we shall be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive. We shall then go through how to recover deleted files from a whole hard disk. Finally, we will learn how to recover deleted files from a particular partition of a hard drive.
 
-In this tutorial, we shall be looking at:
-- Installation of **foremost** in Kali Linux.
-- Tools included in the **foremost** package and their use.
-- Use of **foremost** in data recovery of lost/deleted files from a USB drive.
-- Recovering deleted files from a whole hard disk. 
-- Recovering deleted files from a particular partition of a hard drive.
-- Recovering files of all types.
+### Table of contents
+
+- [Prerequisites](#prerequisites)
+- [Installing foremost in Kali Linux](#installing-foremost-in-kali-linux)
+- [Foremost package tools](#foremost-package-tools)
+- [Recovering files from a USB drive](#1-recovering-files-from-a-usb-drive)
+- [Recovering files from a hard disk](#2-recovering-files-from-a-hard-disk)
+- [Recovering files of all types](#recovering-files-of-all-types)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 
