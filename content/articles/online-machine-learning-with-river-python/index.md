@@ -422,6 +422,7 @@ This is a good tutorial that a reader can follow and learn online machine learni
 
 ### References
 
+- [Code implementation of this tutorial](https://colab.research.google.com/drive/17Xtmymg8Sh8E1m3zeNhmzqkauBRjyLh1?usp=sharing)
 - [Online machine learning](https://en.wikipedia.org/wiki/Online_machine_learning)
 - [Online vs offline machine learning differences](https://blog.goodaudience.com/online-vs-offline-machine-learning-which-one-to-use-934801e0a418?gi=ddf3aa016f62)
 - [River Python documentation](https://riverml.xyz/latest/getting-started/getting-started/)
