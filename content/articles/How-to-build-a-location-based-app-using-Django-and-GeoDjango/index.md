@@ -2,13 +2,17 @@
 Let us start development, we look at the tools that we will use to build our app:
 GeoDjango is a Django module that is used for creating geographic applications, manage spatial databases in Python and is integrated with Django but it can work as a standalone framework as well.
 Django is a python framework that uses the model–template–views (MTV) architectural pattern and is used for building a web-apps.
-PostgreSQL is a free and open-source RDMS that focus on emphasizing extensibility and SQL compliance.
-PostGIS is a PostgreSQL extension that manages spatial data. Overpass Turbo is a web-based data mining tool for OpenStreetMap. 
+PostgreSQL Relational Database Management System that is free and open-source, focuses on maintaining extensibility and SQL compliance.
+PostGIS is a PostgreSQL addon that manages spatial data. 
+Overpass Turbo is an OpenStreetMap web-based tool for analysing large data.
  ## Setup
-We will create our virtual environment and also install the prerequisites that we will use for the project: Run the following command to create and activate the virtual environment. 
-virtualenv env env\scripts\activate
+We will create our virtual environment and also install the prerequisites that we will use for the project: Let's type the following codes in our terminal to create and activate the virtual environment. 
+```
+virtualenv env 
+env\scripts\activate
+```
 The virtual environment has been activated, the next step is to install prerequisites using Python3-pip. The codes below will install Django and Psycopg2
-``` pip install django, psycopg2-binary ``` The next step is to install GeoDjango use the link below to download the step up and also follow the instruction on this page on how to install it.
+``` pip install django psycopg2-binary ``` The next step is to install GeoDjango use the link below to download the step up and also follow the instruction on this page on how to install it.
 https://docs.djangoproject.com/en/3.2/ref/contrib/gis/install/#windows
 We will use the codes below to create our spatial database from the terminal. Type your Postgres password when prompted for a password.
  ```
@@ -51,7 +55,7 @@ INSTALLED_APPS = [
     'hotels', ] 
 ```
 
-Let's create our models, it is the abstraction layer between Django and the database. It will contain the following fields name, location and address. Let add these codes to the hotel/models.py file
+Let's create our models, it will contain the following fields name, location and address. Let add these codes to the hotel/models.py file
  ```
 from django.db import models 
 from django.contrib.gis.db import models 
@@ -61,12 +65,12 @@ name = models.CharField(max_length=100)
 location = models.PointField() 
 address = models.CharField(max_length=100)
 ```
-The location field is created as a point field because we want to save the coordinate of each hotel. In Django we don't need to write SQL queries to create our tables, all we need to do is to run migration. So type the following codes in your terminal to create our tables.
+The location field is created as a point field because we want to save the coordinate of each hotel. In Django we don't need to write SQL queries to create our tables, the codes in the model file will be will create the table during migration because the model act as an abstraction layer between Django and the database. So type the following codes in your terminal to create our tables.
  ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-We need to add the tables to the admin dashboard, add the following code to the hotels/admin.py file. 
+We need to update the admin.py file in hotels/admin.py with these codes so that we can view the tables in the admin dashboard.
 ```
 from django.contrib.gis.admin import OSMGeoAdmin 
 from .models import Hotel 
@@ -83,9 +87,9 @@ Let login to the admin dashboard by typing the following codes in our terminal t
 ```
 python manage.py runserver
 ```
-The web app is running on http://127.0.0.1:8000/ but we need to visit this URL in our browser so that we can log in to the admin dashboard: http://127.0.0.1:8000/admin You will notice that the hotel filed is empty, we will populate it using Overpasss Turbo. Click on the link below:
-https://overpass-turbo.eu/
-Click on the wizard button, and type `tourism=hotel in Miami` in the text field. Now click on the build and run query wizard. It will build the query, so the next step is to click on the export text. In the data, section click on download/copy as raw OSM data. This is to download a JSON file. Copy the downloaded file to the project folder and rename it as hotels.json To populate our database, we need to create an empty migration. Run this code in your terminal
+The web app is running on http://127.0.0.1:8000/ but we need to populate the database with a dummy database from Overpass Turbo. We will do that from the admin dashboard using the URL below: http://127.0.0.1:8000/admin.
+ Click on the link below: https://overpass-turbo.eu/
+Click on the wizard button, and type `tourism=hotel in Miami` in the text field. Now select the build and run query wizard button. It will build the query, so the next step is to select the export button. Locate the data, section and click on download/copy as raw OSM data. This is to download a JSON file. Copy the downloaded file to the project folder and rename it as hotels.json To populate our database, we need to create an empty migration. Run this code in your terminal
 ```
 python manage.py makemigrations hotels --empty
 ```
@@ -125,7 +129,7 @@ operations = [
         migrations.RunPython(load_data)
     ]
 ```
-Our migration file will look like this
+Here is a copy of the migration file
 
 
     from django.db import migrations  
@@ -175,7 +179,7 @@ from django.contrib.gis.geos import fromstr
 from django.contrib.gis.db.models.functions import Distance
 from .models import Hotel
 ```
-We will create a variable that stores the user's coordinates.
+We will create a variable that stores the user current coordinates.
 
     longitude = -80.191788  
     latitude = 25.761681  
@@ -220,7 +224,7 @@ We need to add the HotelListView class to our url.py file so that we can view th
       path('admin/', admin.site.urls),  
       path('', views.HotelListView.as_view())  
     ]
-Let start our server `python manage.py runserver` in our terminal. On the homepage, we will see a list of all the hotels that are close to the user.
+Let start our server `python manage.py runserver` in our terminal. All the hotels that are closed to the user will be displayed on the homepage.
 
 
 ## Conclusion
