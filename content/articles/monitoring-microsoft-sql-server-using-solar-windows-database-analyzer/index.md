@@ -39,7 +39,7 @@ Note: DPA is short for Database Performance Analyzer.
 
 ![Accept License](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Accept License.png)
 
-6.	To change the default installation directory, go to change and enter the new location.
+6.	To install DPA in a different location, go to change and enter the new location.
 
 ![Change Directory](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Change Directory.png)
 
@@ -48,7 +48,7 @@ Note: DPA is short for Database Performance Analyzer.
 ![No Configuration](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/No Configuration.png)
 
 8.	This option can help prevent CPU spikes if the Find SQL feature is enabled. After the installation, you can manually generate an exception.
-Note: If an exception already exists or if Microsoft Defender is not enabled, this check box is not visible.
+Note: This check box is not visible if there is a Microsoft Defender exception or the antivirus is disabled.
 9.	To begin the installation, click Next, then Install.
 10.	Click Finish after the installation is finished.
 
@@ -96,7 +96,7 @@ Identifying the privileged user
 	The privileged user must have the following privileges for self-managed SQL Server database instances: SYSADMIN (system administrator).
 
 #### Stage 1: Process Initiation
-Click Register DB Instance for Monitoring on the DPA homepage.
+Tap the button for “Register DB Instance for Monitoring” on DPA homepage.
 
 ![Select Register Instance](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Select Register Instance.png)
 
@@ -106,24 +106,23 @@ Click Microsoft SQL Server under Self-Managed.
 ![SQL Self-mananged](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/SQL Self-mananged.png)
 
 #### Stage 3 : Input connection information
-1. Select  Next and complete the wizard panels as outlined in the options below:
+1. Select Next and finish the other steps as described below:
 2. Input the connection information for the Monitored Database Instance enter the following connection information.
-3. If the SQL Server Browser service is running, use the following syntax to input the IP address or server name and the name of the instance: Server\Instance.
-4. See the [Note](Note-:-Each-instance-must-be-registered-separately) below for information on how to register primary and secondary replicas if the instance has additional groups.  
+3. When service for SQL Server Browser is available, enter the IP address or hostname as well as name of the instance, in the following format: Server\Instance.
+4. See the [Note](Note-:-Each-instance-must-be-registered-separately) below for a guide to register replicas if the registered instance has additional groups.  
 5. Otherwise, input the name of the server or its IP address, as well as the port number, if necessary.
 
-#### Note : Each instance must be registered separately
+#### Note: Each instance must be registered separately
 
 1. Choose the authentication method you want to use. You can choose any option if Mixed Mode was selected during SQL Server installation.
 2. DPA can use the SYSADMIN login to register instances.
 3. In the SYSADMIN User field, type DOMAIN>username> for Windows authentication.
-4. Enter the credentials that you entered on the Connect to Server dialog in SQL Server Management Studio for SQL Server authentication (with Database Engine as the Server type).
-5. By default, SSL is requested. A simple connection is utilized if the server does not support SSL.
-
+4. Enter the credentials for authenticating SQL server.
+5. By default, SSL is requested. For server that do not support SSL, a simple connection is used.
 ![Connection to SQL details](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Connection to SQL details.png)
 
 #### Stage 4: Enter the Monitoring User
-1. Create or define the account that will be used by DPA to collect data. SolarWinds recommends creating a new account to guarantee that the account has the required rights.
+1. Create or define the account that will be used by DPA to collect data. A new account is recommended by Solar Winds. This ensures that enough rights are allocated.
 
 ![Monitoring User](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Monitoring User.png)
 
@@ -138,7 +137,7 @@ After you've double-checked the information, click the "Register Database Instan
 
 #### Stage 6: Confirm registration.
 1. Return to the DPA's main page by clicking "Finish".
-2. After successful creation, you should be able to see the page below.
+2. After successful creation, the page below is displayed.
 
 ![Confirmation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Confirmation.png)
 
