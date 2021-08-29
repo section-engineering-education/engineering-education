@@ -6,7 +6,15 @@ Unintentional deletion of important files can be tragic. This has led to operati
 
 [**Foremost**](https://pkgs.org/download/foremost) is a free data retrieval software. You can download it on the internet. It operates on Linux operating systems. Throughout this tutorial, we will be using Kali Linux. Anyone using any other Linux distribution can follow through.
 
-In this tutorial, we shall be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive. We shall then go through how to recover deleted files from a whole hard disk. Finally, we will learn how to recover deleted files from a particular partition of a hard drive.
+### What we will learn
+
+In this tutorial, we shall be looking at:
+- Installation of **foremost** in Kali Linux.
+- Tools included in the **foremost** package and their use.
+- Use of **foremost** in data recovery of lost/deleted files from a USB drive.
+- Recovering deleted files from a whole hard disk. 
+- Recovering deleted files from a particular partition of a hard drive.
+- Recovering files of all types.
 
 ### Prerequisites
 
@@ -16,11 +24,15 @@ To understand this article a reader needs to have:
 - Prior knowledge of the basic commands in the Linux terminal.
 
 Check the following article to understand the prerequisites.
-[Getting started with kali linux](https://www.section.io/engineering-education/getting-started-with-kali-linux/)
+[Getting started with kali linux](/engineering-education/getting-started-with-kali-linux/)
 
 ### Installing foremost in Kali Linux
 
-Foremost comes pre-installed in most Linux distributions. If it is not installed, type the following command in the terminal. After executing the command **foremost** will be installed.
+Foremost comes pre-installed in most Linux distributions. To check whether it is installed in yours, type in the following command:
+```bash
+$ dpkg -s foremost
+```
+If it is not installed, type the following command in the terminal. After executing the command **foremost** will be installed.
 
 ```bash
 sudo apt install foremost
@@ -28,7 +40,7 @@ sudo apt install foremost
 
 ### Foremost package tools
 
-**Foremost** package includes some flags. We use the following command to display them.
+**Foremost** package includes some flags. A flag is a value which acts as a signal for a process. It determines what a program will do next. We use the following command to display flags included in the foremost package.
 
 ```bash
 foremost -h
@@ -61,9 +73,13 @@ The command gives the following output.
 
 ![start recovery](/engineering-education/recover-deleted-files-with-foremost/recover.png)
 
+The output shows the files being recovered in real time. They are the same files that will be saved in the output path.
+
 After the recovery process has run to completion, the recovered files will be saved in the output file path. You may need to practice some patience as the process may take longer than usual depending on the drive's size. Below is the output file.
 
 ![Output](/engineering-education/recover-deleted-files-with-foremost/output.png)
+
+The above output shows a folder named recover. All the files that the program recovered will be saved inside this folder.
 
 ### 2. Recovering files from a hard disk
 
@@ -104,7 +120,7 @@ Replace the partition path with your own. This process will take a while dependi
 
 ### Recovering files of all types
 
-To recover all the file types that foremost supports, use the following command.
+To recover all the files that foremost supports, use the following command.
 
 ```bash
 sudo foremost -v  -q -i /dev/sdc 
@@ -118,4 +134,6 @@ The above command will automatically generate an output folder called output. Th
 
 ### Conclusion
 
-We have discussed the numerous ways you can use **foremost** to recover your deleted files. There are no limitations to what you can do with **foremost**. Use the tools we discussed above to your preference.
+In this tutorial,we have discussed the numerous ways you can use **foremost** to recover your deleted files. You now have all the skills you need to use this powerful free data recovery software. You can now recover your deleted files from the comfort of your home saving you time and money.
+
+Happy data recovery experience!
