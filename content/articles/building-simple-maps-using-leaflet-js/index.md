@@ -1,17 +1,19 @@
 ### Introduction
-Leaflet.js is an open-source JavaScript library used in building mobile-friendly and lightweight maps. Leaflet.js is easily used to create maps, also supports many plugins this includes, basemap providers, search and popups, layer switching controls etc. It assists JavaScript developers in building web mapping and web-GIS functionalities.  Leaflet.js makes it easier to build geoportals such as coordinate reference systems(CRS). Leaflet.js has been used to build web applications such as [Worldweather app](https://github.com/Christophler/EngHack2021-WorldWeatherApp), which is an app built as a way of getting weather data for a specific location.
+Leaflet.js is an open-source JavaScript library used to build mobile-friendly and lightweight maps. Leaflet.js is easily used to create maps. The library also supports many plugins which include, base map providers, search and popups, and layer switching controls. 
+It assists JavaScript developers in building web mapping and web-GIS functionalities. Leaflet.js makes it easier to build geoportals such as the Coordinate Reference Systems (CRS). Leaflet.js has been used to build web applications such as the [Worldweather app](https://github.com/Christophler/EngHack2021-WorldWeatherApp), which is an app built as a way of getting weather data for a specific location.
 
-This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js libraries.
+This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js library.
 
-### Prerequisite
+### Prerequisites
 To grasp this guide, the reader must have a level of knowledge on:
-- JavaScript. View documentation [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
-- HTML (Hypertext Markup Language). View documentation [here](https://developer.mozilla.org/en-US/docs/Web/HTML).
-- CSS (Cascading Style Sheet). View documentation [here](https://developer.mozilla.org/en-US/docs/Web/css)
-- Code editors like [*visual studio code*](https://code.visualstudio.com/download), [*sublime text*](https://www.sublimetext.com/3).
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+- [HTML (Hypertext Markup Language)](https://developer.mozilla.org/en-US/docs/Web/HTML).
+- [CSS (Cascading Style Sheet)](https://developer.mozilla.org/en-US/docs/Web/css)
+- Code editors like [*Visual studio code*](https://code.visualstudio.com/download), and [*Sublime text*](https://www.sublimetext.com/3).
 
 ### Goal
-In a moment, we will guide you on how to create an easy `OSM` map layer using leaflet.js and how to plot markers on them. We will also add a simple layer control feature to add some swagger to the map layout. At the end of this guide, the reader should be able to:
+In a moment, we will guide you on how to create an easy `OSM` map layer using leaflet.js and how to plot markers on them. We will also add a simple layer control feature to add some sparkle to the map layout. At the end of this guide, the reader should be able to:
+
 - Integrate leaflet.js using its unique content delivery network (CDN).
 - Create an easy `OSM` map layer.
 - Plot markers on the map layer.
@@ -19,19 +21,21 @@ In a moment, we will guide you on how to create an easy `OSM` map layer using le
 
 ### Setting up the environment
 First, we will need to set up the environment. It means loading the leaflet JavaScript and CSS files into our project. We can do this in three ways:
-- using Leaflet unique CDN (Content delivery network).
+- Using Leaflet's unique CDN (Content delivery network).
 - Using JavaScript package manager.
 - And last, the conventional method of downloading both the Leaflet JavaScript and CSS file to your local storage.
 
-But in this tutorial, we would deal alone with the first two.
+But in this tutorial, we will only deal with the first two.
 
 ### Using Leaflet's CDN 
-The CDN is a hosted version of Leaflet, and to use it, place the content below in the `head` section of your HTML code:
+The CDN is a hosted version of Leaflet. To use it, place the content below in the `head` section of your HTML code:
+
 ```html
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 ```
-To avoid potential security problems, it is necessary we enable [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) when using Leaflet from a CDN.
+To avoid potential security problems, it is necessary we enable the [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) security option when using Leaflet from a CDN.
+
 ```html
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -41,13 +45,14 @@ To avoid potential security problems, it is necessary we enable [subresource int
         crossorigin=""></script>
 ```
 ### Using the JavaScript package manager
-If we are using the `npm` package manager, we can fetch a local copy of leaflet by running:
+If we are using the `npm` package manager, we can fetch a local copy of the leaflet by running:
 ```
 npm install leaflet
 ```
 To use `npm`, we would need to follow the steps below:
 - [Download and install node](https://nodejs.org/en/).
-- run the following command:
+- Run the following command:
+
 ```
 npm install
 ```
@@ -55,7 +60,8 @@ Once completed, we can move on to the next stage.
 
 ### Getting Started
 #### Creating Map Container
-In this guide, we will work with visual studio code. We would also integrate our leaflet using the CDN (content delivery network). We would start by creating an HTML file within our code editor. Then, we would initialize our HTML and, of course, add our CDN above to the code below:
+In this guide, we will work with the Visual studio code. We would also integrate our leaflet using the CDN (content delivery network). We would start by creating an HTML file within our code editor. Then, we would initialize our HTML and, of course, add our CDN above to the code below:
+
 ```html
 <html lang="en">
 <head>
@@ -81,6 +87,7 @@ We will create a div within the body and give it an id name called `map`. The di
     <div id="map"></div>
 ```
 In the head section, we create a style tag with the div id's name and style with any choice of ours. In this tutorial, we will give it basic styling. It is important that when styling your map, the div id should have a defined height. Otherwise, the map won't show.
+
 ```CSS
 <style>
     body {
@@ -95,6 +102,7 @@ In the head section, we create a style tag with the div id's name and style with
 </style>
 ```
 At the moment, our code looks like this:
+
 ```html
 <html lang="en">
 <head>
@@ -130,24 +138,29 @@ At the moment, our code looks like this:
 
 #### Initialising and creating map layer
 To initialise the map, we can check the leaflet documentation [here](https://leafletjs.com/reference-1.7.1.html). All we need to do is create a variable name called *map_init*.
+
 ```js
     var map_init = L.map('map',{
         center: [9.0820, 8.6753],
         zoom:8
     });
 ``` 
-`L.map` represents a map object given the DOM ID of a `<div>` element. The values in the center variable name are known as coordinates in which 9.0820 and 8.6753 are the Latitude and Longitude, respectively. They are coordinate systems used in determining or describing any position or place on the earth's surface. In leaflet.js, the zoom level is as essential as the latitude and longitude. The zoom level determined the detail specifications. Meaning, lower zoom level shows the entire continent while higher zoom levels can display details of a city. So we can use different zoom levels. It all depends on our focus at the moment.
+`L.map` represents a map object given the DOM ID of a `<div>` element. The values in the center variable name are known as coordinates in which the values `9.0820` and `8.6753` are the Latitude and Longitude, respectively. They are coordinate systems used in determining or describing any position or place on the earth's surface. In leaflet.js, the zoom level is as essential as the latitude and longitude. The zoom level determined the detail specifications. Meaning, lower zoom level shows the entire continent while higher zoom levels can display details of a city. So we can use different zoom levels. It all depends on our focus at the moment.
 
-Note: we used the div id name map to prevent errors like this.
+Note: We used the div id name `map` to prevent errors like this.
+
  ```
  Uncaught Error: Map container not found.
 ```
-We then add our map layer. A tile is a map displayed in a web browser by seamlessly joining dozens of individually requested image or vector data files. We would use the OSM(Open Street Map) map layer because of its easily understandable structure and simplicity. If you want to explore, you can check on other tile layers compatible with Leaflet [here](https://leaflet-extras.github.io/leaflet-providers/preview/).
+
+We then add our map layer using tiles. A tile is a map displayed in a web browser by seamlessly joining dozens of individually requested image or vector data files. We would use the OSM (Open Street Map) map layer because of its easily understandable structure and simplicity. If you want to explore, you can check on other tile layers compatible with Leaflet [here](https://leaflet-extras.github.io/leaflet-providers/preview/).
+
 ```js
     var osm = L.tileLayer ('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo (map_init);
 ```
+
 `addTo` is a method used for adding data to a container. So, if you are planning on creating another tile layer, make sure you comment on the `addTo` method first and add it to your new tile layer. As we go on, we will learn how to put each tile layer in a layer controller. 
 
 So let us continue.
@@ -161,7 +174,9 @@ So let us continue.
 At the moment, we have been able to integrate leaflet.js using its unique content delivery network (CDN), create an easy osm map layer, plot markers on the map layer.
 
 #### Adding layer controller
-In this section, we will show you how to add a layer controller. Layer controllers are there to give your map an orderly look. It also gives you a choice to select which feature you would like to view at the moment. To get this started, we create a variable name called *Basemaps* and another variable name called *Overlaymaps*. In the first variable, we create an object with key *"OSM"* and value *osm* (the variable name for our tile layer). For the second variable, we will do mostly the same as the first, but with different keys and values. The key is *"Marker"*, the value is *marker* (the variable name for our marker).
+In this section, we will show you how to add a layer controller. Layer controllers are there to give your map an orderly look. It also gives you a choice to select which feature you would like to view at that moment. 
+
+To get this started, we create a variable name called *Basemaps* and another variable name called *Overlaymaps*. In the first variable, we create an object with key *"OSM"* and value *osm* (the variable name for our tile layer). For the second variable, we will do mostly the same as the first, but with different keys and values. The key is *"Marker"*, the value is *marker* (the variable name for our marker).
 
 Example:
 ```js
@@ -173,7 +188,8 @@ var Overlaymaps = {
 }
 L.control.layers(Basemaps, Overlaymaps).addTo(map_init);
 ```
-Finally, we have our code as
+Finally, we have our code as follows:
+
 ```html
 <html lang="en">
 <head>
@@ -223,28 +239,33 @@ Finally, we have our code as
 </script>
 </html>
 ```
-If we run the above HTML code in our browser, we would have our simple, lightweight web map like the image below.
+If we run the above HTML code in our browser, we would have our simple, lightweight web map like the image sshown below:
 
 ![browser image](/Building-simple-and-interactive-maps-using-leaflet.js/mapimage.png).
 
-The coordinates used are the absolute location of Nigeria. As we said earlier, coordinates determine any position on the earth surface. So if you want to get the coordinates of any location, you can follow the steps below:
+The coordinates used are the absolute location of Nigeria. As we mentioned earlier, coordinates determine any position on the earth's surface. So, if you want to get the coordinates of any location, you can follow the steps below:
+
 - On your computer, open [Google Maps](https://www.google.com/maps/). 
-- Right-click the place or area on the map.
+- Right-click on any place or area on the map.
 - Select the latitude and longitude. The coordinates will automatically be copied.
 
-For the markers, we can use a different icon. It is all based on preference. If you want to use another icon, you have to follow the steps below:
-- Create the icon
+For the markers, we can use a different icon. It is all based on preference. If you want to use another icon, you have to follow the steps below to create the icon:
+
 ```
     var greenIcon = L.icon({
     iconUrl: 'filename',
 
 });
 ```
-- Adding a marker with the new icon to the map
+- To add the newly created `greenIcon` marker to the map, we type in the following:
+
 ```
 L.marker([9.0820, 8.6753],  {icon: greenIcon}).addTo(map_init)
 ```
-Markers via coordinates are not the only spatial representation that is done using leaflet. Polygons, circles can also be done using a group of coordinates or coordinates. To add a polygon, copy the code below:
+
+Adding markers via coordinates is not the only spatial representation that is done using the leaflet library. Polygons, circles can also be done using a group of coordinates or coordinates. 
+
+To add a polygon, copy the code below:
 ```
       var polygonPoints = [
         [37.786617, -122.404654],
@@ -254,7 +275,7 @@ Markers via coordinates are not the only spatial representation that is done usi
       var poly = L.polygon(polygonPoints).addTo(map_init);
 ```
 
-and to add circles, you can copy the code below:
+To add circles, you can copy the code below:
 ```
       var circle = L.circle([37.786542, -122.386022], {
           color: "red",
@@ -263,7 +284,8 @@ and to add circles, you can copy the code below:
           radius: 50.0
       }).addTo(map-init);
 ```
-The key *colour* with value *red* determines the colour of the circle, *fillOpacity* determines the transparency within the circle's border(the higher the opacity, the less transparent it is). The key *radius* determines the circumference of the circle(the higher the radius, the larger the circumference ). 
+The key *color* with the value *red* determines the color of the circle. The key *fillOpacity* determines the transparency within the circle's border (the higher the opacity, the less transparent it is). The key *radius* determines the circumference of the circle (the higher the radius, the larger the circumference). 
+
 ### Conclusion
 In conclusion, we learned how to add tile layers, plot markers,  plot polygons and circles, create a layer control, and bring all these components together to have a simple map, all with leaflet.js.
 
