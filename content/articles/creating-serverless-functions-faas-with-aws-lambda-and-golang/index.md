@@ -1,19 +1,19 @@
 Creating Serverless Functions (Faas) with AWS Lambda and Golang
 
-Serverless architecture is a new paradigm that is being used in the development of modern applications. The term "serverless" refers to the abstraction of "servers" from application development. Function-as-a-Service (FaaS) is a serverless method of running modular code on the cloud. FaaS allows you to write code that events can trigger. For example, when a user clicks on a button in your web application, a specific cloud function is executed.
+Serverless architecture is a new paradigm that is being used in the development of modern applications. The term "serverless" refers to the abstraction of "servers" from application development. Function-as-a-Service (FaaS) is a serverless method of running modular code on the cloud. You can use FaaS to write code that is triggered by events. For example, when a user clicks on a button in your web application, a specific cloud function is executed.
 
-In this article, we will not only look at how to use FaaS, but we will also create some for others to use. We'll be working in Golang, but the same method can be applied to Python, Node, Java, or any other language or framework you want.
+We will not only look at how to use FaaS in this tutorial, but we will also construct some for others to use. We'll be working in Golang, but the same method can be applied to Python, Node, Java, or any other language or framework you want.
 
 ### Requirements
 
 * [AWS](https://aws.amazon.com) account
 * Go 1.x installed on your machine
 
-### Setting up a Lambda Function
+### Setting up a Lambda Function on AWS
 
-1. After Creating your AWS account, on the main dashboard, search for Lambda.![search-aws-lambda](search-aws-dashboard.png)When you click on Lamda, you will see the AWS lambda page.![aws-lambda-dashboard](aws-lambda-dashboard.png)
+1. After Creating your AWS account, on the main dashboard, search for Lambda.![search-aws-lambda](search-aws-dashboard.png)When you click on Lamda, the AWS lambda will be visible.![aws-lambda-dashboard](aws-lambda-dashboard.png)
 2. Click on the Create Function button to set up a new AWS Lambda function.![aws-create-lambda-setting](aws-create-lambda-setting.png)The name of the function is user-profile. Click on Create function.
-3. On the function’s dashboard, we will upload the function we want to run in the cloud. ![aws-lambda-function-dashboard](aws-lambda-function-dashboard.png)In the next section, we will see how to create a function that will run on AWS lambda.
+3. On the function’s dashboard, we will upload the function we want to run in the cloud. ![aws-lambda-function-dashboard](aws-lambda-function-dashboard.png)In the next section, we'll look at how to make a function that runs on AWS Lambda.
 
 ### Creating the User-Profile Function in Golang
 
@@ -283,4 +283,4 @@ The program passes in some arguments into the cloud function and returns the res
 
 ### Conclusion
 
-We have successfully deployed and tested our AWS Lambda function with Golang. You can also use the same process to create serverless functions in other languages like Python, JavaScript, Java.
+We have successfully deployed and tested our AWS Lambda function with Golang. The same method may be used to build serverless functions in other languages such as Python, JavaScript, and Java.
