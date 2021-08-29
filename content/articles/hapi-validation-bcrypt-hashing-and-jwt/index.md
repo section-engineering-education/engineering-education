@@ -21,7 +21,7 @@ npm init -y
 
 It is preferable to work on a web project using the MVC architecture. So we will follow the same architecture for this project. Working with this architecture ensures an organized folder structure and easy to debug code. So set up the project folder structure as below.
 
-![Folder organization](folders.png)
+![Folder organization](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/folders.png)
 
 ### Installing dependencies
 We need the following dependencies to make this project work:
@@ -148,7 +148,7 @@ In the `routes` folder, create a new file for validation. In the file, we will h
 //validation
 const Joi = require('@hapi/joi')
 
-const registerValidation = data =>{
+const userRegistrationValidation = data =>{
     const schema = Joi.object(
     { 
         name: Joi.string().min(6).required(),
@@ -159,7 +159,7 @@ const registerValidation = data =>{
     return schema.validate(data);
 };
 
-const loginValidation = data =>{
+const userLoginValidation = data =>{
     const schema = Joi.object(
     { 
         email: Joi.string().min(6).required().email(),
@@ -170,8 +170,8 @@ const loginValidation = data =>{
 };
 
 
-module.exports.registerValidation = registerValidation
-module.exports.loginValidation = loginValidation
+module.exports.userRegistrationValidation = userRegistrationValidation
+module.exports.userLoginValidation = userLoginValidation
 ```
 
 ### Creating routes
@@ -182,27 +182,27 @@ Create a new file called `auth.js` in the' routes folder and add the snippets be
 ```js
 const router = require('express').Router();
 const User = require('../models/User')
-const {registerValidation, loginValidation} = require('./validation')
+const {userRegistrationValidation, userLoginValidation} = require('./validation')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 
 
 router.post('/login', async (req, res) =>{
-    const { error } = loginValidation(req.body)
+    const { error } = userLoginValidation(req.body)
     
     if(error){
         return res.status(400).send(error.details[0].message)
     }
 
-    // Check if the user is existing
+    // check user existence in the database
     const user = await User.findOne({email:req.body.email});
     if(!user){
         return res.status(400).send('Sorry email is not with our records')
     }
 
     //compare passwords
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
-    if(!validPassword){
+    const validUserPassword = await bcrypt.compare(req.body.password, user.password);
+    if(!validUserPassword){
         return res.status(400).send('Sorry the password is invalid')
     }
 
@@ -217,17 +217,17 @@ module.exports = router;
 ```
 
 #### Registration route
-This route registers users into the database. The data passed to this route is taken for validation in the `registerValidation`. 
+This route registers users into the database. The data passed to this route is taken for validation in the `userRegistrationValidation`. 
 
 ```js
 router.post('/register', async (req, res) =>{
-    const { error } = registerValidation(req.body)
+    const { error } = userRegistrationValidation(req.body)
     
     if(error){
         return res.status(400).send(error.details[0].message)
     }
 
-    // Check if the user is existing
+    // check user existence in the database in the mongo db database
     const emailExists = await User.findOne({email:req.body.email});
     if(emailExists){
         return res.status(400).send('Email already in the database')
@@ -264,17 +264,17 @@ try{
 ```
 
 #### The login route
-The login route takes data in the request body and passes it for validation by the `loginValidation`. Next, `Hapi` checks the data for any errors. If there is none, the database is queried for a record with the supplied email.
+The login route takes data in the request body and passes it for validation by the `userLoginValidation`. Next, `Hapi` checks the data for any errors. If there is none, the database is queried for a record with the supplied email.
 
 ```js
 router.post('/login', async (req, res) =>{
-    const { error } = loginValidation(req.body)
+    const { error } = userLoginValidation(req.body)
     
     if(error){
         return res.status(400).send(error.details[0].message)
     }
 
-    // Check if the user is existing
+    // check user existence in the database
     const user = await User.findOne({email:req.body.email});
     if(!user){
         return res.status(400).send('Sorry email is not with our records')
@@ -284,9 +284,9 @@ router.post('/login', async (req, res) =>{
 In the next step, we use `bcrypt` to compare the supplied password in the request body with its equivalent hash in the database. If the passwords match, the user is logged in and assigned a `JSON web token secret` to his `userID`, which allows them to access protected routes since the token is attached to the request header.
 
 ```js
-//compare passwords
-const validPassword = await bcrypt.compare(req.body.password, user.password);
-if(!validPassword){
+//make a comparison between entered password and the database password
+const validUserPassword = await bcrypt.compare(req.body.password, user.password);
+if(!validUserPassword){
     return res.status(400).send('Sorry the password is invalid')
 }
 
@@ -314,8 +314,8 @@ However, if the token is available in the request header, we mark the user as ve
 
 ```js
 try {
-    const verified = jwt.verify(token, process.env.TOKEN_SECRET)
-    req.user = verified;
+    const verifiedUser = jwt.verify(token, process.env.TOKEN_SECRET)
+    req.user = verifiedUser;
     next()
 } catch (error) {
     res.status(400).send('Invalid token')
@@ -349,20 +349,20 @@ The above snippet means that only authenticated users can access the posts.
 To test this project, we need to run the command `nodemon index` to start the development and try the endpoint in `Insomnia`. Of course, Postman can work here as well.
 
 #### Testing validation
-Let us try using a short password/ email than the length specified in the `registerValidation` to see if our validation worked. We will begin by navigating to the `register` route.
-![Password check](password-check.png)
+Let us try using a short password/ email than the length specified in the `userRegistrationValidation` to see if our validation worked. We will begin by navigating to the `register` route.
+![Password check](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/password-check.png)
 
 Next, if we use the wrong email, we get a validation error, as shown below.
-![Email check](email-check.png)
+![Email check](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/email-check.png)
 
 However, when all fields are filled correctly, and the validation is passed, the user is added to the database. The `user-id` is returned as shown.
-![User saved](user-saved.png)
+![User saved](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/user-saved.png)
 
 
 #### Testing protected route access
 When we try accessing the `posts` route without being logged in, we are denied access.
 
-![Acees denied](access-denied.png)
+![Acees denied](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/access-denied.png)
 
 
 However, when we are logged in, we get an authentication token that we add to the request's header and obtain access to the protected route.
