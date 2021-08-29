@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /regex-implementation-with-java/
+title: Getting started with REGEX
+description: In this article, we will discus regular expressions (REGEX) and how to define REGEX patterns in Java.
+author: damilare-jolayemi
+date: 2021-08-29T00:00:00-05:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/regex-implementation-with-java/hero.png
+   alt: Getting started with REGEX
+---
+
 ### HOW TO IMPLEMENT REGULAR EXPRESSIONS (REGEX) WITH JAVA
 
 The need to validate string inputs is a ubiquitous necessity that projects would require every developer to use at some point in their programming activities. A regular expression, popularly referred to as regex, is a handy tool designed to validate string operations effectively.
@@ -381,3 +398,5 @@ Although regular expression can be understandably difficult to read and implemen
 * [Regular expressions in Java - Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 * [Regular Expression Language - Quick Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference%23character-classes)
 
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
