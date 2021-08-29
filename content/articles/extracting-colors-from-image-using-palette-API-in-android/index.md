@@ -1,61 +1,51 @@
-### Extracting colors from images using palette API(Application Development Interface) in android
+### Introduction
+User Interface (UI) is very important when developing Android apps. Many developers tend to neglect this aspect. A great UI  gives the user a great experience. Color selection in an app is very crucial in making it successful.
 
-User Interface(UI) is very important when developing android apps. Yet, many developers tend to neglect this aspect . A great UI  gives the user a great experience. Colors selection to an app is very crucial to make an app successful. In this tutorial, we will extract colors for use in our app from the image.
+In this tutorial, we will extract colors to use in our app from an image.
 
 ### Prerequisites
-
 To follow along with this tutorial, the reader should:
-- Have installed `Android Studio` and 	know how to create a project
-- Have an understanding of `Kotlin`programming language.s
-- Have an understanding on the use of `XML` in designing layouts
-- Have anunderstanding of how to use Viewbinding
-- `Android Toolbar`
-     
-### Goal
+- Have `Android Studio` installed and know how to create Android projects.
+- Have a good understanding of the [Kotlin](https://developer.android.com/kotlin) programming language.
+- Have a good understanding of `XML`.
+- Be able to use [ViewBinding](https://developer.android.com/topic/libraries/view-binding).
+- Have a basic knowledge on `Android Toolbar`.
 
-By the end of this tutorial, the reader will have:
-- Have an understanding of what `Palette API` is
-- Have an understanding of how the Palette API work
-- Know how to set up the Palette API Library
-- Know how to extract colors from an image
-
-### Introduction
-
-The palette API library extracts prominent colors from bitmap images. We can then use this in styling our view components in the app. The views will then match the prominent color from the image. For instance, the toolbar, background, or even text. 
+### Goals
+By the end of this tutorial, the reader should:
+- Have an understanding of what `Palette API` is.
+- Know how to set up the Palette API library.
+- Know how to extract colors from an image using the Palette API.
 
 ### What is Palette?
+Palette is a support library in Android. The Palette library extracts prominent colors from Bitmap images. We can use it in styling View components in the app. The Views matches the prominent color from the image. For instance, the toolbar, background, or even text color.
 
-Palette is a support library in android. It allows you to extract prominent colors from a bitmap image and make use of them in designing the UI of your app.
+### Advantages of Using Palette API
+- It provides a helper class to extract prominent colors from an image.
+- We can use colors obtained to make elegant application UI designs.
+- We can customize the color Palette using in-build methods. For instance, adding filters and much more.
 
-### Advantages of Using Palette
-- It 	provides a helper class to extract prominent colors from an image.
-- We can use colors obtained to make elegant application UI designs
-- We can customize the Color Palette using some in-build methods. For instance, adding filters and much more.
+### Step 1. Create a new Android project
+Launch Android Studio, select `New Project` then `Empty Activity`. Name it `Palette Demo`. Click *finish* and wait for it to build.
 
-### Step 1. Create a new Android studio project
+![Create Project](/engineering-education/extracting-colors-from-image-using-palette-api-in-android/create_project.png)
 
-In your Android Studio, select New Project then Empty Activity. Name it as Palette Demo. Click Finish and wait for it to build.
-
-![CreateProject](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/create_project.png)
-
-### Step 2: Setup the library
-
-Add the following dependency to the app module-level build.gradle file
+### Step 2: Set up the Palette library
+Add the following dependency in the app-module level `build.gradle` file.
 
 ```gradle
 implementation("com.android.support:palette-v7:28.0.0")
 ```
 
-### Step 3: Setup the XML layout for our project
+### Step 3: Set up the layout for our project
 
-In this step, we will design the layout. This layout will contain a ToolBar, an ImageView. , a button, and TextViews.
+In this step, we will design the UI. This will contain a `ToolBar`, an `ImageView`, a `Button`, and `TextViews`.
 
-#### ActivityMain.xml
+#### ActivityMain.xml file
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
    xmlns:app="http://schemas.android.com/apk/res-auto"
    xmlns:tools="http://schemas.android.com/tools"
    android:layout_width="match_parent"
@@ -107,7 +97,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Light Vibrant"
-       android:textColor="@color/black"
        android:textAllCaps="false"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +110,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Vibrant"
-       android:textColor="@color/black"
        android:textAllCaps="false"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +125,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:text="Light Muted"
        android:textAllCaps="false"
        android:textSize="18sp"
-       android:textColor="@color/black"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/vibrant" />
@@ -149,7 +136,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Muted"
-       android:textColor="@color/black"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
@@ -162,7 +148,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Dark Muted"
-       android:textColor="@color/black"
        android:textAllCaps="false"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
@@ -176,7 +161,6 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
        android:layout_marginTop="8dp"
        android:gravity="center"
        android:text="Dark Vibrant"
-       android:textColor="@color/black"
        android:textAllCaps="false"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
@@ -186,14 +170,13 @@ In this step, we will design the layout. This layout will contain a ToolBar, an 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-### Step 4: Create a Palette
+### Step 4: Create a Palette object
 
-A palette object will allow accessing the prominent colors on an image bitmap. We use palettes to style our application. We achieve this by changing our application color scheme based on the image bitmap in the app.
-To create a palette, we generate an instance using `from(Bitmap bitmap)` method. This creates a `Palette.Builder` from a bitmap.
-The builder will generate either synchronous palette or asynchronous  palette.
+A palette object allows us to access the prominent colors in an image bitmap. We use palettes to style our application. This is achieved by changing the application's color scheme based on the image bitmap.
 
-To create a palette on the same thread as the method we are invoking, we use Synchronous palette.
-To create a palette on a different thread, we use Asynchronous palette. We then follow with onGenerated() method to access the created palette.
+To create a palette, we generate an instance using `from(bitmap: Bitmap)` method. This creates a `Builder` from a bitmap. 
+
+The builder either generates synchronous or asynchronous palettes. To create a palette on the same thread as the method we are invoking, we use synchronous palette while to create a palette on another thread, we use asynchronous palette. `onGenerated()` method is used to access the palette.
  
 To create a synchronous palette, we use:
 
@@ -205,38 +188,38 @@ fun createPaletteSync(bitmap: Bitmap): Palette = Palette.from(bitmap).generate()
 To create an asynchronous palette, we use:
 
 ```kotlin
-// Palette created asynchronously and we use it on another thread using onGenerated() method
+// Palette created asynchronously. We use it on another thread using onGenerated() method
 fun createPaletteAsync(bitmap: Bitmap) {
    Palette.from(bitmap).generate { palette ->
-       // Use generated instance
+       // Use the generated instance
    }
 }
 ```
 
-To generate a palette, I would suggest using asynchronous generation. Synchronous generation may not create a smooth experience . This is evident on older devices or when the Bitmap object is large. 
+To generate a palette, I would suggest using asynchronous technique. Synchronous generation may not create a smooth experience. This is evident on older devices or when the Bitmap object is relatively large.
 
 ### Step 5: Extracting color profiles
 
-A `Target` will define each color extracted.We score the colors against the profile. We do this based on saturation and the number of pixels in the bitmap image.
-The palette extracts the following six color profiles using the following methods:
+A `Target` defines each color extracted. We score the colors against the profile. This is done based on the saturation and the number of pixels in the bitmap image.
+
+The palette extracts the following **six color profiles** using the respective methods:
 - Light Vibrant : `Palette.getLightVibrantSwatch()`
 - Dark Vibrant: `Palette.getDarkVibrantSwatch()`
 - Vibrant: `Palette.getVibrantSwatch()`
 - Light Muted: `Palette.getLightMutedSwatch()`
-- Dark Muted: `Palette.getDrakMutedSwatch()`
-- Muted:`1Palette.getMutedSwatch()`
-     
-We are going to use swatches to get these colors from our bitmap image. We use `Palette.Swatch` object to get each color profile. The palette has other methods for accessing more information about the color profiles. This includes, pixels population. 
+- Dark Muted: `Palette.getDarkMutedSwatch()`
+- Muted:`Palette.getMutedSwatch()`
 
-For example, 
-- `getPopulation()`: gets the amount of pixels represented by this swatch
-- `getRgb()`: gets the color RGB value
-- `getBodyTextColor()`: gets text color RGB value which is to we display on top of this 	color
-- `getTitleTextColor()`: gets text color RGB value which is to we display on top of this 	color
-    
-The get<Profile>Swatch() methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null to avoid your app crashing. 
+We are going to use swatches to get colors from the bitmap image. We use `Palette.Swatch` object to get each color profile. The palette has other methods for accessing more information about the color profiles.
 
-The following code checks if the swatch is present in the image bitmap. If it is not present, the default background color will be gray.
+They include:
+- `getPopulation()` -gets the amount of pixels represented by this swatch.
+- `getRgb()` -gets the color RGB value.
+- `getBodyTextColor()` and  `getTitleTextColor()` -gets text color RGB value for use over the swatch’s color.
+
+The `get<Profile>Swatch()` methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null or not to prevent your app from crashing. 
+
+The following code checks if the swatch is present in the image bitmap. If it is not, the default background color is set to Gray.
 
 ```kotlin
 if(palette?.lightMutedSwatch != null){
@@ -247,20 +230,12 @@ else{
 }
 ```
 
-Here is our main activity code: 
-#### ActivityMain.kt
+Here is the main activity's code:
+
+#### ActivityMain.kt file
 
 ```kotlin
-package com.roberts.myapplication
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.palette.graphics.Palette
-import com.roberts.myapplication.databinding.ActivityMainBinding
+// Press Alt + Enter to import the libraries
 
 class MainActivity : AppCompatActivity() {
 
@@ -269,23 +244,29 @@ class MainActivity : AppCompatActivity() {
    
    override fun onCreate(savedInstanceState: Bundle?) {
        super.onCreate(savedInstanceState)
+
        binding = ActivityMainBinding.inflate(layoutInflater)
        setContentView(binding.root)
+
        setSupportActionBar(binding.toolbar)
        createPaletteAsync((ContextCompat.getDrawable(this,R.drawable.index) as BitmapDrawable).bitmap)
    }
 
    private fun createPaletteAsync(bitmap: Bitmap) {
        Palette.from(bitmap).generate(){ palette ->
+           // Change toolbar background color
            binding.changeToolbarColorBtn.setOnClickListener {
                binding.toolbar.setBackgroundColor(palette?.vibrantSwatch!!.rgb)
            }
+
            binding.lightVibrant.apply {
                setBackgroundColor(palette?.lightVibrantSwatch!!.rgb)
            }
+
            binding.vibrant.apply {
                setBackgroundColor(palette?.vibrantSwatch!!.rgb)
            }
+
            binding.lightMuted.apply {
                if(lightVibrantSwatch != null ){
                    setBackgroundColor(palette?.lightMutedSwatch!!.rgb)
@@ -293,13 +274,16 @@ class MainActivity : AppCompatActivity() {
                else{
                    setBackgroundColor(Color.Grey)
                }
-           }       
+           }
+
            binding.muted.apply {
                setBackgroundColor(palette?.mutedSwatch!!.rgb)
-           }        
+           }   
+
            binding.darkMuted.apply {
                setBackgroundColor(palette?.darkMutedSwatch!!.rgb)
-           }          
+           }
+
            binding.darkVibrant.apply {
                setBackgroundColor(palette?.darkVibrantSwatch!!.rgb)
            }
@@ -310,15 +294,16 @@ class MainActivity : AppCompatActivity() {
 
 ### Demo Screens
 
-On running the app, this is what to expect:
+Upon running the app, this is what to expect:
 
-![ScreenOne](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/screen_one.png)
+![Screen one](/engineering-education/extracting-colors-from-image-using-palette-api-in-android/screen_one.png)
 
-![ScreenTwo](/engineering-education/extracting-colors-from-image-using-palette-API-in-android/screen_two.png)
+![Screen two](/engineering-education/extracting-colors-from-image-using-palette-api-in-android/screen_two.png)
 
-Check out the entire project on [GitHub](https://github.com/robert-muriithi/PaletteApiDemo).
+### Conclusion
 
-### Conclusions
+The Palette library is a powerful tool that we can use to make elegant UI designs in Android apps. It opens doors to infinite possibilities when it comes to the set up of colors and themes. Use this tool to materialize your application as you continue exploring and learning.
 
-Palette library is a powerful tool that we can use to make elegant app designs. 
-Palette opens doors to infinite possibilities when it comes to the set up of colors and themes. Use this tool to materialize your application as you continue exploring and learning. Happy coding!
+Check out the entire project on [this GitHub repository](https://github.com/robert-muriithi/PaletteApiDemo).
+
+Happy coding!
