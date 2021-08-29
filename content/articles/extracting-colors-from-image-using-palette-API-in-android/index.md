@@ -1,6 +1,21 @@
-### Introduction
-User Interface (UI) is very important when developing Android apps. Many developers tend to neglect this aspect. A great UI  gives the user a great experience. Color selection in an app is very crucial in making it successful.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /extracting-colors-from-image-using-palette-api-in-android/
+title: Extracting Colors from Images using the Palette API in Android
+description: This tutorial will take the reader through the process of extracting colors from images using the Palette API in Android. Palette is a powerful support library for Android that allows you to extract prominent colors from images and apply them to your UI.
+author: robert-muriithi
+date: 2021-08-30T00:00:00-01:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/extracting-colors-from-image-using-palette-api-in-android/hero.png
+    alt: Extracting Colors from Images using the Palette API in Android image
+---
+User Interface (UI) is very important when developing Android apps. Many developers tend to neglect this aspect. A great UI  gives the user a great experience. Color selection in an app is very crucial in making it successful.
+<!--more-->
 In this tutorial, we will extract colors to use in our app from an image.
 
 ### Prerequisites
@@ -208,7 +223,7 @@ The palette extracts the following **six color profiles** using the respective m
 - Vibrant: `Palette.getVibrantSwatch()`
 - Light Muted: `Palette.getLightMutedSwatch()`
 - Dark Muted: `Palette.getDarkMutedSwatch()`
-- Muted:`Palette.getMutedSwatch()`
+- Muted: `Palette.getMutedSwatch()`
 
 We are going to use swatches to get colors from the bitmap image. We use `Palette.Swatch` object to get each color profile. The palette has other methods for accessing more information about the color profiles.
 
@@ -217,7 +232,7 @@ They include:
 - `getRgb()` -gets the color RGB value.
 - `getBodyTextColor()` and  `getTitleTextColor()` -gets text color RGB value for use over the swatch’s color.
 
-The `get<Profile>Swatch()` methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null or not to prevent your app from crashing. 
+The `get<Profile>Swatch()` methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null or not to prevent your app from crashing.
 
 The following code checks if the swatch is present in the image bitmap. If it is not, the default background color is set to Gray.
 
@@ -307,3 +322,6 @@ The Palette library is a powerful tool that we can use to make elegant UI design
 Check out the entire project on [this GitHub repository](https://github.com/robert-muriithi/PaletteApiDemo).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
