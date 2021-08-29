@@ -310,3 +310,6 @@ In conclusion, we learned how to add tile layers, plot markers,  plot polygons a
 - [Go through the leaflet documentation](https://leafletjs.com/reference-1.7.1.html)
 - [Hero image](https://unsplash.com/photos/eyfMgGvo9PA)
 - [Link to repo](https://github.com/muyiwexy/Leafletmap)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
