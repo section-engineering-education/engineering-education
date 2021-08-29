@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-simple-maps-using-leaflet-js/
+title: Building Simple Maps using Leaflet.js
+description: This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js library.
+author: femi-ige-muyiwa
+date: 2021-08-29T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-simple-maps-using-leaflet-js/hero.jpg
+    alt: Building Simple Maps using Leaflet.js
+---
+
 ### Introduction
 Leaflet.js is an open-source JavaScript library used to build mobile-friendly and lightweight maps. Leaflet.js is easily used to create maps. The library also supports many plugins which include, base map providers, search and popups, and layer switching controls. 
 It assists JavaScript developers in building web mapping and web-GIS functionalities. Leaflet.js makes it easier to build geoportals such as the Coordinate Reference Systems (CRS). Leaflet.js has been used to build web applications such as the [Worldweather app](https://github.com/Christophler/EngHack2021-WorldWeatherApp), which is an app built as a way of getting weather data for a specific location.
