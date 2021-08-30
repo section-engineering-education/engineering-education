@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /regex-implementation-with-java/
 title: Getting started with REGEX
-description: In this article, we will discus regular expressions (REGEX) and how to define REGEX patterns in Java.
+description: In this article, we will discuss regular expressions (REGEX) and how to define REGEX patterns in Java.
 author: damilare-jolayemi
 date: 2021-08-29T00:00:00-05:30
 topics: []
