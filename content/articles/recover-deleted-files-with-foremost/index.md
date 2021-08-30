@@ -1,4 +1,20 @@
-### **Recovering deleted files using foremost**
+---
+layout: engineering-education
+status: publish
+published: true
+url: /recover-deleted-files-with-foremost/
+title: Recovering deleted files using Foremost
+description: In this tutorial, we will be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive, how to recover deleted files from a whole hard disk, and finally learn how to recover deleted files from a particular partition of a hard drive.
+author: denis-kuria
+date: 2021-08-30T00:00:00-13:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/recover-deleted-files-with-foremost/hero.jpg
+    alt: Recovering deleted files using Foremost
+---
+
 Unintentional deletion of important files can be tragic. This has led to operating systems having a restore point. In Linux, the restore point is the trash. In Windows, the restore point is the recycle bin. Sometimes we delete these files in the restore points too. At this point, we opt to visit data recovery centers or buy expensive data recovery software.
 
 ### Introduction
