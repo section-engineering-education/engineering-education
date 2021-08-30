@@ -199,7 +199,7 @@ AppName
 pyspark-shell
 ```
 
-The `Spark UI` in the above output is a link that opens the Spark dashboard in localhost: `http://192.168.0.6:4040/`, which was running in the background. When one clicks the link it will open a Spark dashboard that shows the available jobs running on our machine. Currently, we have no running jobs as shown.
+In the above output, the `Spark UI` is a link that opens the Spark dashboard in localhost: `http://192.168.0.6:4040/`, which will be running in the background. When one clicks the link it will open a Spark dashboard that shows the available jobs running on our machine. Currently, we have no running jobs as shown.
 
 ![PySpark UI](/engineering-education/multiclass-text-classification-with-pyspark/pyspark-ui.jpg)
 
