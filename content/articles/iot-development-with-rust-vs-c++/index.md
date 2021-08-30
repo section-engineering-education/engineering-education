@@ -2,7 +2,7 @@ The 21st century has seen unprecedented growth in software development. People a
 
 IoT solutions are bringing in many advantages to businesses and individuals alike. Such benefits include improved operations, work safety, and cost-effectiveness. However, realizing these benefits requires starting with the correct programming language for IoT devices.
 
-Thus, learning about embedded software development and the IoT concept is a step in the right direction. This article discusses the development of IoT solutions with both [Rust](https://www.rust-lang.org/) and C++. It also compares the two to help you chose the right programming language for developing IoT applications and devices.
+Thus, learning about embedded software development and the IoT concept is a step in the right direction. This article discusses the development of IoT solutions with both [Rust](https://www.rust-lang.org/) and C++. It also compares the two to help you chose the correct programming language for developing IoT applications and devices.
 
 ### IoT development with C++
 
@@ -34,7 +34,7 @@ The lack of a garbage collector in Rust is essential for memory management. Rust
 
 #### Memory safety
 
-Both Rust and C++ have various features that prevent memory corruption and enhance memory stability. In Rust, bindings on data have a unique owner with either one mutable borrow or all-immutable borrows. This ownership model ensures memory safety in Rust and between threads.
+Both Rust and C++ have various features that prevent memory corruption and enhance memory stability. For example, in Rust, bindings on data have a unique owner with either one mutable borrow or all-immutable borrows. This ownership model ensures memory safety in Rust and between threads.
 
 Immutable borrow allows the variable borrowing to read the value but not mutate. This happens regardless of a mutable original value. In addition, immutable borrowing guarantees the borrowing variable that the value would not change. A compute-time error occurs if a code violates these conditions.
 
@@ -52,7 +52,7 @@ C++ has special standard libraries for extreme low-level purposes. By sacrificin
 
 #### Convenience
 
-Rust utilizes [LLVM](https://llvm.org/) compiler infrastructure, ensuring that the same back-end optimizations for C++ are also available for Rust. The LLVM has comprehensive platform support and is open-source. This is significant for IoT applications since most of them share common design technologies.
+Rust utilizes [LLVM](https://llvm.org/) compiler infrastructure, ensuring that the same back-end optimizations for C++ are also available for Rust. In addition, the LLVM has comprehensive platform support and is open-source. This is significant for IoT applications since most of them share common design technologies.
 
 [Clang](https://clang.llvm.org/) provides a tooling and frontend infrastructure for C++ and other languages in the C language family. As an LLVM native, Clang empowers C++ to deliver fast compiles, error and warning messages. It also creates a platform for integrated source-level debugging. Examples of tools you can build using the Clang frontend as a library to parse C++ code include [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) and [Clang Static Analyzer](https://clang-analyzer.llvm.org/). These tools automatically find bugs in your code.
 
