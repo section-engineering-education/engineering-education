@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /C-sharp-or-C++-for-game-development/
+url: /engineering-education/C-sharp-or-C++-for-game-development/
 title: C-sharp 0r C++ for game development
 description: In this tutorial, we will learn the differences between C-sharp and C++ programming languages. We will get to know which one we can use for game developmet as beginners.
 author: victor-kamau
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /C-sharp-or-C++-for-game-development/hero.jpg
+  - url: /engineering-education/C-sharp-or-C++-for-game-development/hero.jpg
     alt:  C-sharp 0r C++ for game development image example
 ---
 
@@ -33,30 +33,32 @@ This text compares C# and C++ in terms of syntax(which is more friendly), perfor
 - [Conclusion](#conclusion)
 
 #### Defining 
-**C++** could be a general-purpose language and an extension to C programing language. C++ enhanced C in terms of objects and their behavior while maintaining the code's speed and general efficiency.
-Because of its complex syntactic rules, numerous conventions, error-prone memory management, and non-intuitive features, C++ can be difficult to learn for beginners.
+**C++** could be a general-purpose language and an extension to C programing language. C++ enhanced C in terms of objects and their behavior while maintaining the code speed and general efficiency.
 
-**C# (C-sharp)** is a general-purpose programming language that is primarily intended for use with the.NET framework.
+Due its complex syntactic rules, numerous conventions, error-prone memory management, and non-intuitive features, C++ can be difficult to learn for beginners.
+
+**C# (C-sharp)** is a general-purpose programming language that is primarily intended for use with the .NET framework.
+
 It is extensively used by developers in the creation of Windows desktop apps, web applications, and games.
 
-C#, on the other hand, is problem-oriented, which means that its code is simple to read and understand even for beginners.
+C-sharp, on the other hand, is problem-oriented, which means that its code is simple to read and understand even for beginners.
 
-C# is also a statically-typed language, which means that the code is double-checked for faults before being included into the application.. However,some feaatures are not (for instance, the dynamic keywords).
+C-sharp is also a statically-typed language, which means that the code is double-checked for faults before being included into the application. However,some features are not (for instance, the dynamic keywords).
 
 ### Syntax rules
-The comparison of C# and C++ is simple to work out. For beginners, C# structure and conventions may appear simpler to know than C++.
+The comparison of C-sharp and C++ is simple to work out. For beginners, C-sharp structure and conventions may appear simpler to know than C++.
 
 Let's take a look at the most differences between the syntax rules of both languages:
 
-- **C++ has header files, while C# doesn't have them.**
-- **C# doesn't have global functions** like in C++. Instead it uses static classes to serve that function.
+- **C++ has header files, while C-sharp doesn't have them.**
+- **C-sharp doesn't have global functions** like in C++. Instead it uses static classes to serve that function.
 
-- **C++** supports **multiple inheritance** while C# only supports **single inheritance**.
+- **C++** supports **multiple inheritance** while **C-sharp** only supports **single inheritance**.
 
 - Pointers don't seem to be employed in C# instead use references within the unsafe code.
 
 ### Main Differences
-Since C# is less complicated to master and use than C++, and it's becoming a popular choice for programmers all over.
+Since C# is less complicated to master and use than C++, it's becoming a popular choice for programmers all over.
 
 However, when developers have to have more control over their projects, they intercommunicate C++.
 
@@ -90,11 +92,11 @@ This allows developers with average programming skills to produce equally good g
 Note that, scripting in game engines is different from regular programming.
 
 #### Real Engine
-C# and unity game enngine are the best choice tools that beginners start with. Unity is a real game engine that enable you to produce scripts for interactive content of games.
+C# and unity game engines are the best choice tools that beginners start with. Unity is a real game engine that enable you to produce scripts for interactive content of games.
 
 Every content in unity starts with a game object which gets components to perform certain actions.
 
-You'll note that once you combine C# and Unity, you will be ready to **add additional attributes and make them unique** by writing scripts rather than using inbuilt features.
+You'll note that once you combine C-sharp and Unity, you will be ready to **add additional attributes and make them unique** by writing scripts rather than using inbuilt features.
 
 However, beginners cash in of the prevailing components resulting to similarity in Unity-based games.
 
@@ -102,15 +104,17 @@ However, beginners cash in of the prevailing components resulting to similarity 
 
 The ability to distribute across various platforms play an enormous role when choosing between C++ or C# for game development.
 
-C++ is less complicated to distribute, but beginners mustn't choose this language for the primary game development attempt.
+C++ is less complicated to distribute, but beginners must not choose this language for the primary game development attempt.
 
-Programmers with better skills **often choose ## Unreal engine** to develop their games, which is a group of tools with improved capabilities and features.
+Programmers with better skills **often choose Unreal engine** to develop their games, which is a group of tools with improved capabilities and features.
+
 These tools tend to produce better gaming applications compared to unity and C#.
 By using **C++ within the Unreal Engine**, developers add the most structure of the gameplay system, and designers enhance it.
 
 #### Performance
 We have previously discussed the differences between the two languages and have basically seen that C++ is better in speed and overall performance.
-There is no specific reason that explain in words why C++ is better in terms of optimized performance than C# though it is practicall/functionally proven.
+
+There is no specific reason that explain in words why C++ is better in terms of optimized performance than C# though it is practically/functionally proven.
 
 We will compare C# and C++ in terms of performance to work out why one language is slower than the other, and why the slower speed must not discourage you from using the other.
 
@@ -126,10 +130,10 @@ With C++ and Unreal engine, you would possibly take longer trying to urge your c
 
 Compared to **C# and Unity**, **C++ and Unreal Engine** isn't beginner-friendly, meaning that developers need more advanced skills to use it.
 
-It is enough for beginners to play around the Unity environment, but if you want a more powerful engine, choose C++ and Unreal Engine
+It is enough for beginners to play around the Unity environment, but if you want a more powerful engine, choose C++ and Unreal Engine.
 
 ### Conclusion
-C # and C ++ game development decisions depend on your **programming skill level and determination**.
+C-sharp and C++ game development decisions depend on your **programming skill level and determination**.
 
 New developers should start with a more friendly environment for game creation i.e. C# with unity and attain Unreal Engine with C++ as their skills improve.
 
