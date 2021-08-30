@@ -1,4 +1,4 @@
-Based on the type of application one wants to deploy, Google provides various web hosting options for a developer. Deciding on this depends on whether your application is dynamic or static. For static sites, Google offers Cloud storage and Firebase hosting. However, dynamic application have a diffeent set of options including Compute Engine, App Engine, and Cloud Run are the options. 
+Based on the type of application one wants to deploy, Google provides various web hosting options for a developer. Deciding on this depends on whether your application is dynamic or static. For static sites, Google offers Cloud storage and Firebase hosting. However, dynamic applications have a different set of options, including Compute Engine, App Engine, and Cloud Run are the options. 
 
 This article will focus on our deployment using Google Compute Engine(GCE). In the demonstration, we will build a Flutter web application, and at the end of the tutorial, we should have our flutter project running live on Google Compute Engine with a unique IP address to access it. 
 
@@ -12,9 +12,9 @@ This article will focus on our deployment using Google Compute Engine(GCE). In t
 - [Conclusion](#conclusion)
 
 ### Creating a project on Google Cloud
-Everything with Google requires a project accessed using an API key. To get started, we have to create a new Google Cloud Platform project and enable the Google Compute Engine API. Make sure that you set up billing so that you can use the Google compute engine API.
+Everything with Google requires a project accessed using an API key. We have to create a new Google Cloud Platform project and enable the Google Compute Engine API to get started. Make sure that you set up billing so that you can use the Google compute engine API.
 
-Google provides you with the $300 free credit to use for 90 days as you try out the new products they provide. However, make sure that you shut down your running instances if you don't want to incur extra charges after the 90 days.
+Google provides you with the $300 free credit to use for 90 days as you try out the new products they provide. However, make sure that you shut down your running instances if you do not want to incur extra charges after the 90 days.
 
 After successfully creating our project, we need to install the Google Cloud SDK using the command-line tool. 
 
@@ -66,12 +66,12 @@ sudo apt-get install apache2 php libapache2-mod-php
 
 ```bash
 sudo apt-get update
-sudo apt-get install mariadb-server php php-mysql
+sudo apt-get install MariaDB-server PHP PHP-MySQL
 ```
 - Start the MariaDB service on the virtual machine instance.
 
 ```bash
-sudo systemctl start mariadb
+sudo systemctl start MariaDB
 ```
 
 ### The Flutter application
@@ -90,7 +90,7 @@ Click the link below and clone the application.
 flutter run -d chrome
 ```
 
-- Next, build an up loadable web version of the project that we are to deploy to GCE.
+- Next, build an uploadable web version of the project that we are to deploy to GCE.
 
 ```bash
 flutter build web
@@ -133,7 +133,7 @@ sudo apt-get install unzip
 sudo unzip web.zip
 ```
 
-Navigate to the directory of your application using `cd web` then execute the command below:
+Navigate to the directory of your application using `cd web`, then execute the command below:
 
 ```bash
 sudo mv * ../
@@ -142,7 +142,7 @@ sudo rm -r web
 ```
 
 ### Testing the deployment
-Now, if you head over to your browser and paste the URL `http://your-external-ip` you should see your application running.
+Now, if you head over to your browser and paste the URL `http://your-external-ip`, you should see your application running.
 
 ![Application running on Google computer engine](app-live.png)
 
@@ -150,4 +150,4 @@ Now, if you head over to your browser and paste the URL `http://your-external-ip
 In this article, we demonstrated how to deploy a flutter web application on Google's compute engine. It's so satisfying that we can use the GCE to explore the Google infrastructure in running applications. Having built a web application, we successfully deployed and accessed the application using a public IP address that we can access from any device.
 
 ### Further reading
-You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `https` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer certificate(SSL). You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
+You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `HTTPS` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer certificate(SSL). You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
