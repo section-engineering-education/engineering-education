@@ -87,7 +87,7 @@ Because the variance in the data in this direction is minimal (all data points h
 
 #### Correlation
 
-Data correlation is how one set of data may correspond to another set. If two columns are highly correlated(or have high covariance), one of them is redundant since it is linearly dependent on the other column. We can normalize the correlation to get the correlation coefficient. The formula for the correlation coefficient is defined as :
+Data correlation is how one set of data may correspond to another set. If two columns are highly correlated(or have high covariance), one is redundant since it is linearly dependent on the other column. We can normalize the correlation to get the correlation coefficient. The formula for the correlation coefficient is defined as :
 
 <center>
 
@@ -171,7 +171,7 @@ Ideally we want,
 
 #### Few points to ponder
 
-- $X^TX$  is symmetrical in nature.
+- $X^TX$  is symmetrical.
 - It will have distinct non-negative eigenvalues, and thus, linearly independent eigenvectors.                           
 - Eigenvectors of a symmetric matrix are orthogonal, which can be turned into an orthonormal basis.                                        
 
@@ -229,7 +229,7 @@ plt.axis('off')
 
 ![face-2](/engineering-education/image-compression-using-PCA/face2.png)
 
-First of all, we will make all our images zero centered, subtracting the average image from each image in the matrix for zero centering.
+First, we will make all our images zero centered, subtracting the average image from each image in the matrix for zero centering.
 
 ```python
 X = faces
@@ -306,7 +306,7 @@ $=297200$ bytes
 
 $\approx 290$ KB
 
-For our example, the images were gray-scale and had a low resolution; that is why we were able to save only $290$ KB. Suppose images have very high resolution with more than one channel, then one can use this method to save lots of space.
+For our example, the images were gray-scale and had a low resolution; that is why we could save only $290$ KB. On the other hand, suppose images have very high resolution with more than one channel, then one can use this method to save lots of space.
 
 #### Reconstructing images using less information
 
@@ -336,3 +336,33 @@ As we have seen in this tutorial, using the concept of PCA, we have compressed t
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
+---
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
