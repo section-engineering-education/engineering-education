@@ -10,13 +10,13 @@ We will use PySpark to build our multi-class text classification model. This inv
 - [Introduction](#introduction)
 - [PySpark Installation](#pyspark-installation)
 - [Creating SparkContext and SparkSession](#creating-sparkcontext-and-sparksession)
-- [Initialize TextClassifier app](#initialize-textclassifier-app)
+- [Initializing the TextClassifier app](#initialize-the-textclassifier-app)
 - [Loading Dataset](#loading-dataset)
 - [Selecting the needed columns](#selecting-the-needed-columns)
 - [Checking for missing values](#checking-for-missing-values)
 - [Feature Engineering](#feature-engineering)
 - [Pipeline stages](#pipeline-stages)
-- [Split Dataset](#split-dataset)
+- [Splitting our dataset](#splitting-our-dataset)
 - [Building the pipeline](#building-the-pipeline)
 - [Building model](#building-model)
 - [Model evaluation](#model-evaluation)
@@ -38,19 +38,19 @@ A reader must have:
 ### Introduction
 Pyspark uses the Spark API in data processing and model building. Spark API consists of the following libraries:
 
-1. Spark SQl.
+1. [Spark SQL](https://spark.apache.org/docs/latest/api/python/).
 2. Spark Streaming.
-3. MLib.
-4. Spark Core.
-5. GraphX.
+3. [MLib](https://spark.apache.org/mllib/).
+4. [Spark Core](https://spark.apache.org/docs/latest/api/python/).
+5. [GraphX](https://spark.apache.org/docs/latest/graphx-programming-guide.html).
 
-#### [Spark SQL](https://spark.apache.org/docs/latest/api/python/)
+#### Spark SQL
 
 This is the structured query language used in the data processing. It's used to query the datasets in exploring the data used in model building.
 
 #### Spark Streaming
 
-Allows processing and analysis of real-time data from various sources such as [Flume](https://flume.apache.org/), [Kafka](https://kafka.apache.org/) and [Amazon Kinesis.](https://aws.amazon.com/kinesis/)
+This library allows the processing and analysis of real-time data from various sources such as [Flume](https://flume.apache.org/), [Kafka](https://kafka.apache.org/) and [Amazon Kinesis](https://aws.amazon.com/kinesis/).
 
 The image below shows the components of spark streaming:
 
@@ -58,15 +58,15 @@ The image below shows the components of spark streaming:
 
 *[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)*
 
-#### [MLib](https://spark.apache.org/mllib/)
+#### MLib
 
-Contains a uniform set of high-level APIs used in model creation. Help to train our model and find the best algorithm.
+Mlib contains a uniform set of high-level APIs used in model creation. It helps to train our model and find the best algorithm.
 
-#### [Spark Core](https://spark.apache.org/docs/latest/api/python/)
+#### Spark Core
 
 This is the root of the Spark API. It's involved with the core functionalities such as basic I/O functionalities, task scheduling, and memory management.
 
-#### [GraphX](https://spark.apache.org/docs/latest/graphx-programming-guide.html)
+#### GraphX
 
 Used in plotting of graphs for Spark computations.
 
@@ -78,60 +78,59 @@ The image below shows components of the Spark API:
 
 Pyspark supports two data structures that are used during data processing and machine learning building:
 
-1. Resilient Distributed Dataset(RDD).
-2. Dataframe.
+1. [Resilient Distributed Dataset(RDD)](https://www.tutorialspoint.com/apache_spark/apache_spark_core_programming.htm).
+2. [Dataframe](https://www.tutorialspoint.com/apache_spark/apache_spark_core_programming.htm).
 
-#### [Resilient Distributed Dataset(RDD)](https://www.tutorialspoint.com/apache_spark/apache_spark_core_programming.htm)
+#### Resilient Distributed Dataset (RDD)
 
 This is a distributed collection of data spread and distributed across multiple machines in a cluster.
 
-RDD is best described in three ways.
+RDD is best described in three ways:
 
-- Resilient: Fault-tolerant and can rebuild itself if a failure occurs.
-- Distributed: Data is distributed and spread across multiple machines in a cluster.
-- Dataset: Collection of partitioned data with values.
+- **Resilient**: Fault-tolerant and can rebuild itself if a failure occurs.
+- **Distributed**: Data is distributed and spread across multiple machines in a cluster.
+- **Dataset**: Collection of partitioned data with values.
 
-#### [Dataframe](https://www.tutorialspoint.com/apache_spark/apache_spark_core_programming.htm)
+#### Dataframe
 
-This is distributed collection of either structured or semi-structured datasets. Dataset has organized columns in relational databases and excels sheets and its current dataset structure.
+This is distributed collection of either structured or semi-structured datasets. A dataset has organized columns in relational databases and excel sheets and its current dataset structure.
 
 These two are what defines the nature of the dataset that we will be using when building a model.
 
 There are two APIs that are used for machine learning.
 
-1. PySpark.ML.
-2. PySpark.MLib.
+1. [PySpark.ML](https://spark.apache.org/docs/3.0.2/api/python/pyspark.ml.html).
+2. [PySpark.MLib](https://spark.apache.org/docs/latest/ml-guide.html).
 
-#### [PySpark.ML](https://spark.apache.org/docs/3.0.2/api/python/pyspark.ml.html)
+#### PySpark.ML
 
-Contains high-level API built on top of Dataframes in building machine learning models. It has easy to use [machine learning pipelines](https://spark.apache.org/docs/2.3.1/api/python/pyspark.ml.html) used to automate machine learning workflow.
+It contains high-level API built on top of dataframes in building machine learning models. It has easy to use machine learning [pipelines](https://spark.apache.org/docs/2.3.1/api/python/pyspark.ml.html) used to automate the machine learning workflow.
 
-#### [PySpark.MLib](https://spark.apache.org/docs/latest/ml-guide.html)
+#### PySpark.MLib
 
-Contains high-level API built on top of RDD in building machine learning models. It consists of common learning algorithms for regression, classification, clustering, and collaborative filtering.
+It contains high-level API built on top of RDD in building machine learning models. It consists of common learning algorithms for regression, classification, clustering, and collaborative filtering.
 
 In this tutorial, we shall use `PySpark.ML API` in building our multiclass text classification model.
 
-> NOTE: We are using `PySpark.ML API` in building our model because `PySpark.MLib` is deprecated and will be removed in the next PySpark releases.
+> NOTE: We are using `PySpark.ML API` in building our model because `PySpark.MLib` is deprecated and will be removed in the next PySpark release.
 
-To further read about the components of PySpark and how it’s useful in processing [Big Data](https://en.wikipedia.org/wiki/Big_data) [click here](/engineering-education/introduction-to-spark/)
+To learn more about the components of PySpark and how it’s useful in processing [big data](https://en.wikipedia.org/wiki/Big_data), click [here](/engineering-education/introduction-to-spark/).
 
 ### PySpark Installation
 
-We install PySpark by creating a virtual environment that keeps all the dependencies required for our project.
-Before we install PySpark we need to have `Pipenv` in our machine and we install it using the following command.
+We install PySpark by creating a virtual environment that keeps all the dependencies required for our project. Before we install PySpark, we need to have `Pipenv` in our machine and we install it using the following command:
 
 ```python
 pip install pipenv
 ```
 
-We can now install PySpark using this command.
+We can now install PySpark using this command:
 
 ```python
 pipenv install pyspark
 ```
 
-Since we are using [Jupyter Notebook](https://jupyter.org/) in this tutorial we install it using the following command:
+Since we are using [Jupyter Notebook](https://jupyter.org/) in this tutorial, we install `jupyterlab` using the following command:
 
 ```python
 pipenv install jupyterlab
@@ -143,15 +142,15 @@ In order to launch PySpark, use this command:
 pipenv run pyspark
 ```
 
-This will launch PySpark to show if it is successfully installed in our machine.
+This will launch PySpark. Its successful launch will show us if it is successfully installed in our machine.
 
-Let's activate virtual environment we have created.
+Let's activate the virtual environment that we have created.
 
 ```python
 pipenv shell
 ```
 
-To launch our notebook use this command.
+To launch our notebook, use this command:
 
 ```python
 pipenv run jupyter lab
@@ -160,9 +159,9 @@ pipenv run jupyter lab
 This will launch the notebook and from here we can start working on our model.
 
 ### Creating SparkContext and SparkSession
-In this tutorial, we will be building a multiclass text classification model that can predict the subject category given a course title or text. We will use the Udemy dataset in the building of our model.
+In this tutorial, we will be building a multiclass text classification model that can predict the subject category given a course title or text. We will use the Udemy dataset in building our model.
 
-Let's import our machine learning packages.
+Let's import our machine learning packages:
 
 ```python
 import SparkContext from pyspark
@@ -198,19 +197,18 @@ pyspark-shell
 ```
 
 #### Creating SparkSession
-By creating a `SparkSession` enables us to interact with the different Spark functionalities. The functionalities are data analysis and creating our text classification model.
+By creating `SparkSession`, it enables us to interact with the different Spark functionalities. The functionalities includes data analysis and creating our text classification model.
 
 ```python
 import SparkSession from pyspark.sql
 ```
 
-### Initialize TextClassifier app
+### Initializing the TextClassifier app
 Using the imported `SparkSession` we can now initialize our app.
 
 ```python
 spark = SparkSession.builder.appName("TextClassifierApp").getOrCreate()
 ```
-
 We use the `builder.appName()` method to give a name to our app.
 
 After initializing our app, we can now view our launched UI to see the running jobs. The running jobs are shown below:
@@ -222,17 +220,17 @@ After initializing our app, we can now view our launched UI to see the running j
 ### Loading dataset
 We use the Udemy dataset that contains all the courses offered by Udemy. The dataset contains the course title and subject they belong to.
 
-![Dataset Used](/engineering-education/multiclass-text-classification-with-pyspark/dataset.jpg)
+![Dataset](/engineering-education/multiclass-text-classification-with-pyspark/dataset.jpg)
 
-To get the CSV file of this dataset [click here](https://drive.google.com/file/d/1-TfybHeSWpP9UJLxeNDIFT1CPfxn7XWT/view?usp=sharing)
+To get the CSV file of this dataset, click [here](https://drive.google.com/file/d/1-TfybHeSWpP9UJLxeNDIFT1CPfxn7XWT/view?usp=sharing).
 
-After you have downloaded the dataset using the link above, we can now load our dataset into our machine using the following snippet.
+After you have downloaded the dataset using the link above, we can now load our dataset into our machine using the following snippet:
 
 ```python
 df = spark.read.csv("udemy_dataset.csv",header=True,inferSchema=True)
 ```
 
-To show the structure of our dataset use this command
+To show the structure of our dataset, use the following command:
 
 ```python
 df.show()
@@ -240,7 +238,7 @@ df.show()
 
 ![Dataset Structure](/engineering-education/multiclass-text-classification-with-pyspark/dataset-structure.jpg)
 
-We can see the available columns in our dataset as shown.
+To see the available columns in our dataset, we use the `df.column` command as shown:
 
 ```python
 df.columns
@@ -303,17 +301,17 @@ The output of the available `course_title` and `subject` in our dataset is shown
 |7 Deadly Mistakes...|Business Finance|
 |Financial Stateme...|Business Finance|
 +--------------------+----------------+
-only showing the top 20 rows
 ```
+>Note: This only shows the top 20 rows.
 
-Saving our selected columns in the `df` variable.
+Let's save our selected columns in the `df` variable.
 
 ```python
 df = df.select('course_title','subject')
 ```
 
 ### Checking for missing values
-We need to check for any missing values in our dataset, this ensures that we have a well-formated dataset that can easily train our model.
+We need to check for any missing values in our dataset. This ensures that we have a well-formated dataset that can easily train our model.
 
 ```python
 df.toPandas()['subject'].isnull().sum()
@@ -328,19 +326,17 @@ df = df.dropna(subset=('subject'))
 This will drop all the missing values in our `subject` column.
 
 ### Feature engineering
-Feature engineering is the process of getting the relavant features and characteristics from our raw data. We extract various characteristics from our Udemy dataset that will act as inputs into our machine.
-
-Features will be used by our model in making predictions.
+Feature engineering is the process of getting the relavant features and characteristics from our raw data. We extract various characteristics from our Udemy dataset that will act as inputs into our machine. Features will be used by our model in making predictions.
 
 Machine learning algorithms do not understand the text so we have to convert them into numeric values during this stage.
 
-We import all the packages required for feature engineering.
+We import all the packages required for feature engineering:
 
 ```python
 import pyspark.ml.feature
 ```
 
-To list all the available methods, run this command.
+To list all the available methods, run this command:
 
 ```python
 dir(pyspark.ml.feature)
@@ -349,25 +345,20 @@ dir(pyspark.ml.feature)
 These features are in form of an extractor, vectorizer, and tokenizer.
 
 1. Tokenizer
-   It involves splitting of a sentence into smaller words. This tutorial shall convert the input text in our dataset into word tokens that our machine can understand.
-
-   For a detailed understanding about Tokenizer [click here](https://huggingface.co/transformers/main_classes/tokenizer.html)
+- It involves splitting of a sentence into smaller words. This tutorial shall convert the input text in our dataset into word tokens that our machine can understand. For a detailed understanding about Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
 
 2. CountVectorizer
-   It is a great tool in machine learning that converts our given text into vectors of numeric numbers. Machines understand numeric values easily rather than text.
-
-   For a detailed understanding about CountVectorizer [click here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+- It is a great tool in machine learning that converts our given text into vectors of numeric numbers. Machines understand numeric values easily rather than text. For a detailed understanding about CountVectorizer click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c).
 
 3. Extractor
-
-Process of extract various characteristics and features from our dataset. This enables our model to easily understand patterns in predictive analysis.
+- This is the process of extract various characteristics and features from our dataset. This enables our model to easily understand patterns in predictive analysis.
 
 In order to automate these processes, we shall use a machine learning pipeline. This will simplfy machine learning workflow.
 
 ### Pipeline stages
-We shall use the pipeline to automate the process of machine learning from the process of feature engineering to model building.
+We willuse the pipeline to automate the process of machine learning from the process of feature engineering to model building.
 
-The pipeline stages are categorized into two.
+The pipeline stages are categorized into two:
 
 ![Pipeline Stages](/engineering-education/multiclass-text-classification-with-pyspark/pipeline-stages.jpg)
 
@@ -375,31 +366,31 @@ The pipeline stages are categorized into two.
 
 This includes different methods that take data and fit them into the data or feature.
 
-Transformers involve the following stages.
+Transformers involve the following stages:
 
 #### Tokenizer
-Convert the input text and converts it into word tokens. This word tokens into short phrases that act as input into our model.
+It convert the input text and converts it into word tokens. This word tokens are short phrases that act as inputs into our model.
 
-For a detailed information about Tokenizer [click here](https://huggingface.co/transformers/main_classes/tokenizer.html)
+For a detailed information about Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
 
 #### StopWordsRemover
-Extract all the stop word available in our dataset. Stop words are set of words that are used in a given language frequently. These words may be biased when building the classifier.
+It extract all the stop words available in our dataset. Stop words are set of words that are used in a given sentence frequently. These words may be biased when building the classifier.
 
-For a detailed information about StopWordsRemover [click here](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StopWordsRemover.html)
+For a detailed information about StopWordsRemover click [here](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StopWordsRemover.html).
 
 #### CountVectorizer
-Convert from text to vectors of numbers. Numbers are easily understood by the machine rather than text.
+It convert from text to vectors of numbers. Numbers are easily understood by the machine rather than text.
 
-For a detailed information about CountVectorizer [click here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+For a detailed information about CountVectorizer click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c).
 
 #### Inverse Document Frequency(IDF)
-It's a statistic measure which indicates how important a word is relative to other documents in a collection of documents. This creates a relation between different words in a document. If a word frequently appears in a given document and also frequently appears in other documents, it shows that it has no predictive power towards classification.
+It's a statistic measure that indicates how important a word is relative to other documents in a collection of documents. This creates a relation between different words in a document. If a word frequently appears in a given document, and also frequently appears in other documents, it shows that it has no predictive power towards classification.
 The more the word is rare in given documents the more it has value in predictive analysis.
 
-For a detailed understanding about IDF [click here](https://medium.com/the-programmer/how-does-bag-of-words-tf-idf-works-in-deep-learning-d668d05d281b)
+For a detailed understanding about IDF click [here](https://medium.com/the-programmer/how-does-bag-of-words-tf-idf-works-in-deep-learning-d668d05d281b).
 
 2. Estimators
-An estimator takes data as input, fits model into the data, and produces a model into a model we can use to make predictions.
+An estimator takes data as input, fits model into the data, and produces a model we can use to make predictions.
 
 The estimator is as shown.
 
@@ -422,14 +413,14 @@ We also need to import `StringIndexer`.
 from pyspark.ml.feature import StringIndexer
 ```
 
-#### Initialize the pipeline stages
+#### Initializing the pipeline stages
 We need to initialize the pipeline stages as shown. We saved the stages in the following variables: `tokenizer`, `stopwords_remover`, `vectorizer`, and `idf`.
 
 Our initial output column is `course_title` which is transformed into `mytoken` as the output column. The columns are further transformed until we reach the `vectorizedFeatures` after the four pipeline stages.
 
 `vectorizedFeatures` will now become the input of the last pipeline stage which is `LogisticRegression`.The last stage is where we build our model.
 
-This is a sequential process starting from the `tokenizer` stage to the `idf` stage as shown below.
+This is a sequential process starting from the `tokenizer` stage to the `idf` stage as shown below:
 
 ```python
 tokenizer = Tokenizer(inputCol='course_title',outputCol='mytokens')
@@ -447,7 +438,7 @@ labelEncoder = StringIndexer(inputCol='subject',outputCol='label').fit(df)
 
 We add labels into our `subject` column to be used when predicting the type of subject. This helps our model to know what it intends to predict. We use the `StringIndexer` function to add our labels.
 
-To see how the different subjects are labeled using the following code.
+To see how the different subjects are labeled, use the following code:
 
 ```python
 labelEncoder.transform(df).show(5)
@@ -467,8 +458,9 @@ labelEncoder.transform(df).show(5)
 |Beginner to Pro -...|Business Finance|  1.0|
 |How To Maximize Y...|Business Finance|  1.0|
 +--------------------+----------------+-----+
-only showing the top 5 rows
+
 ```
+>Note: This only shows the top 5 rows.
 
 #### Dictionary of all labels
 We have to assign numeric values to the subject categories available in our dataset for easy predictions.
@@ -480,15 +472,16 @@ label_dict = {'Web Development':0.0,
  'Graphic Design':3.0}
 ```
 
-As shown `Web Development` is labeled `0.0`, `Business Finance` labeled `1.0`, `Musical Instruments` labeled `2.0`, and `graphic design` assigned `3.0`.
+As shown, `Web Development` is assigned `0.0`, `Business Finance` assigned `1.0`, `Musical Instruments` assigned `2.0`, and `Graphic Design` assigned `3.0`.
 
-Adding these labels into our dataset as shown.
+We add these labels into our dataset as shown:
 
 ```python
 df = labelEncoder.transform(df)
 ```
+We use the `transform()` method to add the labels to the respective subject categories.
 
-The output show our data is labelled.
+The output below shows that our data is labelled:
 
 ```bash
 +--------------------+--------------------+-----+
@@ -514,13 +507,12 @@ The output show our data is labelled.
 |30 Day Guitar Jum...|Musical Instruments|  2.0|
 |3DS MAX - Learn 3...|     Graphic Design|  3.0|
 +--------------------+--------------------+-----+
-only showing top 20 rows
+
 ```
+>Note: This only shows the top 20 rows.
 
-We use the `transform()` method to add the labels to the respective subject categories.
-
-### Split Dataset
-We split our dataset into train set and test set, the split data is used as the input of the last pipeline stage.
+### Splitting our dataset
+We split our dataset into train set and test set. These data is used as the input in the last pipeline stage.
 
 The last stage involves building our model using the `LogisticRegression` algorithm.
 
@@ -531,7 +523,7 @@ The last stage involves building our model using the `LogisticRegression` algori
 70% of our dataset will be used for training and 30% for testing.
 
 ### Importing LogisticRegression
-We import the `LogisticRegression` algorithm which we shall use in building our model to perform classification.
+We import the `LogisticRegression` algorithm which we will use in building our model to perform classification.
 
 ```python
 from pyspark.ml.classification import LogisticRegression
@@ -546,7 +538,7 @@ lr = LogisticRegression(featuresCol='vectorizedFeatures',labelCol='label')
 
 The `IDF` stage inputs `vectorizedFeatures` into this stage of the pipeline. `vectorizedFeatures` will be used as the input column used by the LogisticRegression algorithm to build our model and our target label will be the `label` column.
 
-We have initialized all the five pipeline stages, we can start building the pipeline to perform these tasks.
+We have initialized all the five pipeline stages. We can start building the pipeline to perform these tasks.
 
 ### Building the pipeline
 Let's import the `Pipeline()` method used to build our model.
@@ -563,7 +555,7 @@ pipeline = Pipeline(stages=[tokenizer,stopwords_remover,vectorizer,idf,lr])
 ```
 
 ### Building model
-We build our model by fitting our model into our training dataset by using the `fit()` method and pass `trainDF` as our parameter.
+We build our model by fitting our model into our training dataset by using the `fit()` method and passing the `trainDF` as our parameter.
 
 Let's initialize our model pipeline as `lr_model`.
 
@@ -578,7 +570,7 @@ We test our model using the test dataset to see if it can classify the course ti
 predictions = lr_model.transform(testDF)
 ```
 
-To see if our model was able to do the right classification use this command.
+To see if our model was able to do the right classification, use the following command:
 
 ```python
 predictions.show()
@@ -586,7 +578,7 @@ predictions.show()
 
 ![Prediction Output](/engineering-education/multiclass-text-classification-with-pyspark/prediction-output.jpg)
 
-We select the necessary columns used for predictions and see the first `10` rows.
+We select the necessary columns used for predictions and view the first `10` rows.
 
 ```python
 predictions.select('rawPrediction','probability','subject','label','prediction').show(10)
@@ -609,10 +601,9 @@ The output is as shown:
 |[-19.729920863390...|[4.16984026967754...|     Graphic Design|  3.0|       3.0|
 |[-2.6725325296694...|[9.29048167255554...|Musical Instruments|  2.0|       2.0|
 +--------------------+--------------------+-------------------+-----+----------+
-only showing top 10 rows
-```
 
-We are only showing the top 10 rows.
+```
+Note: This is only showing top 10 rows.
 
 From the above output, we can see that our model can accurately make predictions since the `label` columns match with the `prediction` columns.
 
@@ -625,7 +616,7 @@ Let's import the `MulticlassClassificationEvaluator` which will be used to evalu
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 ```
 
-The `MulticlassClassificationEvaluator` uses the `label` column and `prediction` column in calculating the `accuracy`. If the two column matches, it increases the accuracy score of our model.
+The `MulticlassClassificationEvaluator` uses the `label`, `column` and `prediction` columns to calculate the `accuracy`. If the two column matches, it increases the accuracy score of our model.
 
 ```python
 evaluator = MulticlassClassificationEvaluator(labelCol='label',predictionCol='prediction',metricName='accuracy')
@@ -653,7 +644,7 @@ This shows that our model is `91.635%` accurate.
 We use our trained model to make a single prediction. We input a text into our model and see if our model can classify the right subject.
 Single predictions expose our model to a new set of data that was not available in the training set or the testing set. This makes sure that our model makes new predictions on its own under a new environment.
 
-To perform a single prediction we need to prepare our sample input as a string using the `StringType()` function.
+To perform a single prediction, we need to prepare our sample input as a string using the `StringType()` function.
 
 ```python
 from pyspark.sql.types import StringType
@@ -682,16 +673,17 @@ After we formatting our input string, now let's make a prediction.
 pred1 = lr_model.transform(sample1)
 ```
 
-To sho the output use the this command.
+To show the output, use the following command:
 
 ```python
 pred1.show()
 ```
 
 Output:
+
 ![Output](/engineering-education/multiclass-text-classification-with-pyspark/output.jpg)
 
-We select the necessary columns that will give the prediction results.
+Let's select the necessary columns that will give the prediction results.
 
 ```python
 pred1.select('course_title','rawPrediction','probability','prediction').show()
