@@ -159,8 +159,11 @@ import io.realm.annotations.Required
 @RealmClass
 open class Note : RealmModel {
     @PrimaryKey
-    var id: String = ""/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/
-
+    var id: String = ""
+    
+    @Required
+    var title: String? = ""
+    
     @Required
     var description: String? = ""
 }
@@ -429,7 +432,7 @@ Here are some screenshots on how the app should look like:
 
 ![Add Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/addnote.png)
 
-![Update Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/updatenote.jpg)
+![Update Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/updatenote.png)
 
 Check out the entire project on [this GitHub repository](https://github.com/JoelKanyi/RealmDatabaseDemo).
 
