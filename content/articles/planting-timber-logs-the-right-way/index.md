@@ -41,7 +41,7 @@ Logging is essential and is of much importance while developing android apps. We
 
 ### What is a Logcat?
 
-From the official documentation, the logcat window in Android Studio displays system messages. For instance, when a garbage collection occurs, it displays messages in real-time. It also keeps a history so you can view older messages.
+From the official documentation, the logcat window in Android Studio displays system messages. For instance, when a garbage collection occurs, the logcat displays these messages in real-time. It also allows you to view older messages. This is because it keeps a history of the log messages.
 When your code throws an exception, the logcat displays a message. The exception contains an associated stack trace containing links to the line of code.
 
 ### What are some of the traditional log class messages?
