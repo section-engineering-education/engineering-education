@@ -1,0 +1,264 @@
+
+Title: Spring Boot Configuration Basics
+
+Description: A beginner’s guide to configuring a Spring Boot application for different environments.
+
+### Introduction
+
+In the development of software, many changes take place depending on the stage your team is at. For example, you may need to change from a test database to a production-ready database. Whatever it is, the environment where your code runs changes and so does your configuration.
+
+In this guide, we will have a look at some of the strategies Spring Boot provides us to deal with this challenge. We will look at how to change environments, extract environment variables, and more. By the end of this article, you will be more equipped to deal with the challenges of configuration.
+
+### Table of Contents
+
+- [What are profiles?](#what-are-profiles)
+
+- [Using configuration files](#using-configuration-files)
+
+- [Using the `@Value` annotation](#using-the-value-annotation)
+
+- [Using the `@ConfigurationProperties` annotation](#using-the-configurationproperties-annotation)
+
+- [Using profiles within your code](#using-profiles-within-your-code)
+
+- [Conclusion](#conclusion)
+
+### Prerequisites
+
+- Basic knowledge of Spring Boot (i.e. beans, services, dependency injection)
+
+- Java fundamentals
+
+- Packaging and running jar files (optional but recommended)
+
+### What are profiles?
+
+When talking about environment configuration, it is important to understand what profiles are. A profile in Spring is the name of the environment you want to run your application in. The names for your profiles can be whatever you want and can represent any environment you want. Two very common ones would be a development and production environment.
+
+Using the profile, we can change certain configuration variables to suit the environment. By default, your Spring Boot application will have a profile of **default**. This of course can be overridden to suit your needs.
+
+#### Setting the profile
+
+To set the profile, you would add a command-line argument when you package or run the jar file. This command-line argument is named `Dspring.profiles.active` and the value should be the profile you want to use. For example, if you want to run your jar with a profile of **prod**, you would run a command like so:
+
+```
+java -jar -Dspring.profiles.active=prod my-project-0.0.1-SNAPSHOT.jar
+```
+
+If you want to run your application from IntelliJ, you can set the active profile in your run configurations. You would first click **run**, then **edit configurations** and you should see an input to set your VM options:
+
+![run-config](/engineering-education/spring-boot-configuration/run-config.png)
+
+Here, you can add the above command argument. If you are using IntelliJ Ultimate, there should be a separate input field where you can put the profiles.
+
+> Note: you can set multiple profiles when running your application. For the sake of simplicity, we will only use one profile at a time throughout this guide.
+
+### Using configuration files
+
+#### Profile specific configuration files
+
+Now that we know how to set the profile, how can we take advantage of this? Spring Boot allows us to override values in your config file based on the profile. To do this, you would create a new properties file at the same location as the `application.properties` file. These files need to follow this specific naming convention to distinguish between profiles:
+
+```
+application-{profile}.properties
+```
+
+Properties in these files will override your `application.properties` if the profile is active. So in a **dev** profile, `application-dev.properties` will override common properties in `application.properties`. Note, we can put custom properties in these files that we can use in our code. It is not restricted to the built-in properties you are used to seeing. We will be going over how to do this later.
+
+#### Hiding sensitive properties
+
+Let’s say you were creating an `application-prod.properties` file. This of course would contain properties for your production-ready application. These details should be private since they deal with actual databases or secret keys. How then could we take the proper measures to secure this data?
+
+One great way to achieve this is by injecting system variables into your config files. When you install Java, you had to go through the process of setting a system variable called **JAVA_HOME**. This variable stores the folder location of your JDK. System variables like these can be injected into your config files like so:
+
+```properties
+test.property=${JAVA_HOME}
+```
+
+Using this, you can set sensitive data as system variables on the device running your server. For example, if you are hosting your app using Heroku, they will give you the option to set system variables which they call **config vars**. This has the added benefit of being easily changed later.
+
+#### External Configuration
+
+Let’s say you packaged a production-ready application into a jar. Out of nowhere, you realized you need to change a property in your config file. You then realize that this file was also packaged into the jar which would require you to unzip said jar. How could you make changes to the configuration file without restarting the server?
+
+Spring Boot provides a simple solution to this problem using externalized configuration. All you need to do is create a new config file in the same directory as your jar file. You can use this new config file to override any configuration inside the jar. Note that your command line needs to be pointing to the folder your jar is in when running the jar in this case. I believe the reason for this is that it looks at the current directory you are at for the externalized configuration.
+
+### Using the `@Value` annotation
+
+Now you may be wondering, how can we use the values in our configuration files? Spring Boot provides us a few strategies to do this, the first of which is the `@Value` annotation. Using this annotation, we can inject values from our config files into fields in a bean. To do this, we would use the following pattern:
+
+```java
+package me.john.amiscaray.demo.controllers;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+
+    // Inject the test.property variable above into the javaHome field.
+    @Value("${test.property}")
+    private String javaHome;
+
+    @GetMapping("/")
+    public String test(){
+
+        return javaHome;
+
+    }
+
+}
+```
+
+Notice how we wrap the property name in curly brackets with a dollar sign in front. If we don’t do this, it will inject the string literal into the field and not the `test.property` variable. Now if you were to send a **GET** request to the root URL, you should see the location of your JDK.
+
+### Using the `@ConfigurationProperties` annotation
+
+Another way to extract your config variables is through the `@ConfigurationProperties` annotation. This annotation allows you to inject every configuration variable with a specific prefix into a bean. Say you had an `application.properties` file like this:
+
+```properties
+app.property.name=My cool app
+app.property.creator=John Amiscaray
+app.property.version=5.9.0
+```
+
+With the annotation, you can create a bean that contains all these values like so:
+
+```java
+package me.john.amiscaray.demo.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+// Make this a bean using the @Configuration annotation.
+@Configuration
+// Try to extract all the config variables with the prefix "app.property" into the fields here.
+@ConfigurationProperties("app.property")
+public class AppProperties {
+
+    private String name;
+    private String creator;
+    private String version;
+
+    // Getters and setters below...
+
+}
+```
+
+Here, we first declare our class as a bean using the `@Configuration` annotation. Then, we use the `@ConfigurationProperties` annotation with the value *app.property*. This specifies that we want to get any properties with that prefix. Then, we declare fields that match the names of our config variables. Those variables being the ones with the given prefix. With that, Spring will inject the values *My cool app*, *John Amiscaray*, and *5.9.0* into the name, creator, and version fields respectively.
+
+### Using profiles within your code
+
+So far, we have looked at how to set config variables based on your profile and how to extract them in your code. Now we’ll take a look at how you can change behaviors within your code based on the profile you are in. Personally, I’ve rarely found good use cases for this but it can be helpful when the time comes.
+
+#### Using the `@Profile` annotation
+
+You can use the `@Profile` annotation to have certain beans active depending on the profile. To illustrate this point, take the following example.
+
+> Note: I would not recommend using the following architecture. I'm using this architecture just as an easy example.
+
+Let’s say you had the following interface:
+
+```java
+package me.john.amiscaray.demo.config;
+
+public interface AppEnvironment {
+
+    String getJWTSecret();
+    String getClientUrl();
+
+}
+```
+
+You could implement it for a **dev** environment like so:
+
+```java
+@Profile("dev")
+@Configuration
+public class DevEnvironment implements AppEnvironment{
+    @Override
+    public String getJWTSecret() {
+        return "secret";
+    }
+
+    @Override
+    public String getClientUrl() {
+        return "http://localhost:8100";
+    }
+}
+```
+
+Along with one for a **prod** environment:
+
+```java
+package me.john.amiscaray.demo.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+@Profile("prod")
+@Configuration
+public class ProdEnvironment implements AppEnvironment{
+    @Override
+    public String getJWTSecret() {
+        return "this is a more secure secret you'll never guess";
+    }
+
+    @Override
+    public String getClientUrl() {
+        return "Some URL";
+    }
+}
+```
+
+From there, you could inject an object of type `AppEnvironment` into your Spring beans. If the profile is **dev** it would use the first class, for a **prod** profile the second one. This same approach can be done using methods annotated with `@Bean`. This is possible since `@Profile` also works on methods with the `@Bean` annotation.
+
+As I said earlier, I would be against using an architecture like this. I would instead use the `@ConfigurationProperties` annotation along with profile-specific config files. This way, we can use an externalized configuration for future flexibility. We could even shorten this to one class using some profile-specific config files in this new approach.
+
+#### Using the environment bean
+
+Spring Boot also provides a pre-made bean of type `Environment` for you. This bean can be used to find the active profiles and get config variables.
+
+I’ve rarely used this bean since there are better ways to get config variables. As well, I’ve scarcely found myself needing to know within my code what environment I’m in. As such, we won’t go into much detail about this class, especially since you can easily read the documentation on it.
+
+There was, however, one small use case I found for this bean. For a particular service I was creating, there was a list that I made only accessible within the class. Although for testing, I wanted to be able to alter and view the state of that list. As a solution, I used the environment bean like so:
+
+```java
+package me.john.amiscaray.demo.service;
+
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+@Service
+public class ExampleService {
+    private final Environment environment;
+    private final List<String> privateList = new ArrayList<>();
+
+    public ExampleService(Environment environment){
+        this.environment = environment;
+    }
+
+    /**
+    * Returns the list for testing purposes. If not in the test environment, throw an exception.
+    * @return the private list
+    * @throws IllegalAccessException if called in a non-test environment
+    */
+    public List<String> getPrivateList() throws IllegalAccessException {
+        if(!Arrays.asList(environment.getActiveProfiles()).contains("test")){
+            throw new IllegalAccessException("This is only available in test environments");
+        }
+        return privateList;
+    }
+}
+```
+
+Overall, while not that useful, it can be handy to know this bean exists for small use cases like this.
+
+### Conclusion
+
+In this guide, we looked at how to configure your Spring Boot application to handle changes in environments. We looked at how Spring Boot represents environments (as profiles) and ways to change your app’s behavior based on it. With this, you can start creating smarter, more reusable applications using Spring Boot.
+
