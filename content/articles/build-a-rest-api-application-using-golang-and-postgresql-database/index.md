@@ -1,5 +1,21 @@
-[Golang](https://golang.org/) is an open-source programming language that makes it easy to build simple, reliable, and efficient apps. It is an up-and-coming language that developed technologies like Docker and Kubernetes. Go is a compiled language. Therefore, when one writes a program,  it gets compiled and generates the machine code equivalent of the program.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-a-rest-api-application-using-golang-and-postgresql-database/
+title: How to build a REST-API using Golang and PostreSQL
+description: This tutorial will discuss Golang and use it create a REST API application in conjunction with PostgreSQL database. 
+author: joakim-gakure
+date: 2021-08-30T00:00:00-07:14
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/hero.jpg
+    alt: golang and postresql image example
+---
 
+[Golang](https://golang.org/) is an open-source programming language that makes it easy to build simple, reliable, and efficient apps. It is an up-and-coming language that developed technologies like Docker and Kubernetes. Go is a compiled language. Therefore, when one writes a program,  it gets compiled and generates the machine code equivalent of the program.
+ <!--more-->
 This tutorial will discuss Golang and finally create a REST API application using Golang and PostgreSQL database.
 
 ### History of Golang 
