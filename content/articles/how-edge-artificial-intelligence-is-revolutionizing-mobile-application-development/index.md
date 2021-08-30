@@ -6,7 +6,23 @@ They have embraced the current trend in the mobile app industry dominated by the
 
 The solution to fully unleash the potential of big data and avoid issues associated with cloud computing is to bring AI to the network edge. This is what edge artificial intelligence does by combining AI and edge computing.
 
-This article looks at artificial intelligence at the edge, discusses how it is changing the mobile application development landscape and gives examples of intelligence edge.
+This article looks at artificial intelligence at the edge, discusses how it is changing the mobile application development landscape, and gives examples of intelligence edge.
+
+### Table of contents
+
+- [Artificial intelligence at the edge](#artificial-intelligence-at-the-edge)
+- [Edge AI is driven by and IoT and big data](#edge-ai-is-driven-by-and-iot-and-big-data)
+- [Why do we need edge AI?](#why-do-we-need-edge-ai?)
+- [How mobile applications are leveraging AI](#how-mobile-applications-are-leveraging-ai)
+- [IoT integration](#iot-integration)
+- [Voice-based technology](#voice-based-technology)
+- [Delivering personalized content](delivering-personalized-content)
+- [Examples of intelligent edge](#examples-of-intelligent-edge)
+- [Gaming industry](#gaming-industry)
+- [Automotive industry](#automotive-industry)
+- [Healthcare industry](#healthcare-industry)
+- [Conclusion](#conclusion)
+- [Further reading](#Further-reading)
 
 ### Artificial intelligence at the edge
 
@@ -30,6 +46,8 @@ Edge AI leverages on-device artificial intelligence to provide a rapid response 
 
 ### How mobile applications are leveraging AI
 
+Mobile app developers have turned to edge AI in their quest to improve mobile app user experiences. They are applying edge intelligence in IoT integration, voice-based technology, and delivering personalized content. 
+
 #### IoT integration
 
 IoT integrated with AI is a great step towards creating personalized experiences for users. A large chunk of real-time data is collected when you use an app with IoT technology. Edge AI allows analysis of [sensor data](https://internetofthingsagenda.techtarget.com/definition/sensor-data#) locally and automation of operational decisions. The most significant data is stored in a data warehouse located in a data center or the cloud.
@@ -38,11 +56,11 @@ By learning customer's behavior patterns, AI streamlines services offered to tha
 
 #### Voice-based technology
 
-Voice-powered technologies offer individualized experiences by identifying and differentiating users between voices. While this might pose privacy fears, edge voice-AI comes to seal loopholes. Edge Voice-AI eliminates the compliance and privacy issue by not sending users voices.
+Voice-powered technologies offer individualized experiences by identifying and differentiating users between voices. While this might pose privacy fears, edge voice-AI comes to seal loopholes. Edge Voice-AI eliminates the compliance and privacy issue by not sending voices to users.
 
 Edge voice-AI works by turning the user's speech into text on a device at the edge. Natural language understanding ([NLU](https://searchenterpriseai.techtarget.com/definition/natural-language-understanding-NLU)) interprets the text and performs operations like simple conversions and mathematical calculations.
 
-Actions requiring storage and complex computation are sent to the fog for processing. These include conversations with translation, fact retrieval, and user history. Additional outside information, including time and weather, is retrieved from the cloud when needed.
+Actions requiring storage and complex computation are sent to the [fog](https://internetofthingsagenda.techtarget.com/definition/fog-computing-fogging) for processing. These include conversations with translation, fact retrieval, and user history. Additional outside information, including time and weather, is retrieved from the cloud when needed.
 
 Speech is constructed upon the creation of a complete response to the users from either fog or cloud. The speech is them made at the fog or edge. Robotic speech is made at the edge, while natural-sounding speech is made at the fog, but this depends on the present state of the technology.
 
@@ -53,6 +71,8 @@ Consumer behavior is changing rapidly, and edge AI is the direct response. Edge 
 With AI, businesses analyze users' behavior to determine their preferences. For instance, by leveraging machine learning, a retailer can generate more electronic device options consumers may like based on their previous purchases.
 
 ### Examples of intelligent edge
+
+Intelligent edge has various use cases. It is applied in many industries, including the gaming industry, automotive industry, and healthcare industry. 
 
 #### Gaming industry
 
@@ -83,3 +103,5 @@ The need for local data storage and local data computation is inevitable. With t
 [Artificial Intelligence for Smarter Cybersecurity](/engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/)
 
 [How Artificial Intelligence has Transformed the Sports Industry](/engineering-education/how-artificial-intelligence-has-transformed-the-sports-industry/)
+
+[What is Fog Computing vs. Edge Computing?](/blog/fog-computing-vs-edge-computing/)
