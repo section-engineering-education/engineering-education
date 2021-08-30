@@ -20,7 +20,7 @@ It has been attracting attention from developers since this Java EE implementati
   
 This is due to the continuous agile improvement of individual Java Specification Requests (JARs) that make up Java Enterprise (EE).	 
 
-At the edge of this course, you will learn how MicroProfiles work and how they are used and how to use them.	 
+At the end of this tutorial, you will have learned how MicroProfiles work and how they are used.	 
   
 You shall also get hands-on one MicroProfile Project.	 
   
