@@ -2,10 +2,10 @@ Python is a very easy-to-learn language due to its user-friendly syntax. Moreove
 
 Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus very easy for beginners to stated and scaled up to the complex application.
 
-To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not be aware of the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. In this article, we will create a simple note application using Flask and MongoDB database.
+To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. In this article, we will create a simple note application using Flask and MongoDB database.
 
 ### Prerequisites
-To get along this article, the following basic information will be essential.
+To follow this article, the following basic information will be essential.
 
 - Basic knowledge of working with Python.
 - [Python](https://www.python.org/downloads/) installed on your computer.
@@ -13,19 +13,19 @@ To get along this article, the following basic information will be essential.
 - [Pip](https://pypi.org/project/pip/) installed on your computer.
 
 ### Setting up the Flask application
-To set up the application, we will use [virtualenv](https://pypi.org/project/virtualenv/). It is basically a tool for creating standalone Python environments. This prevents the process of installing dependencies globally, whereas they are only used in a single project. To install it, run this command.
+To set up the application, we will use [virtualenv](https://pypi.org/project/virtualenv/). It is a tool for creating standalone Python environments. This prevents the process of installing dependencies globally, whereas they are only used in a single project. To install it, run this command.
 
 ```bash
 pip install virtualenv
 ```
 
-To test if virtualenv is correctly installed run the following command;
+To test if virtualenv is correctly installed, run the following command;
 
 ```bash
 virtualenv --version
 ```
 
-To start off, in the project folder where you want the project to reside, run this command;
+To start, in the project folder where you want the project to reside, run this command;
 
 ```bash
 virtualenv venv
@@ -49,11 +49,11 @@ pip install flask PyMongo
 ```
 
 ### Setting up MongoDB
-To begin setting up MongoDB in our application, we need to first create an `app.py` file at the project root folder. This will be our entry and main file.
+To begin setting up MongoDB in our application, we need to create an `app.py` file at the project root folder. This will be our entry and main file.
 
 In this `app.py` file, add the following block of code.
 
-```python
+```Python
 from flask import Flask
 from flask_pymongo import PyMongo
 
@@ -70,7 +70,7 @@ Here we have done basic configuration for a basic Flask app. we;
 - Have imported the necessary packages.
 - Set up the main `app` variable.
 - Initialized an instance of `PyMongo`.
-- Started the app in `debug` mode. This means that each change we make to the app will be reloaded automatically; we will just refresh the page.
+- Started the app in `debug` mode. This means that each change we make to the app will be reloaded automatically; we will refresh the page.
 
 To test this, from your terminal run;
 
@@ -78,13 +78,13 @@ To test this, from your terminal run;
 python3 app.py
 ```
 
-The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message since we have not defined any route. Let's get to that in the next step.
+The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message since we have not defined any route. Let us get to that in the next step.
 
 ### Setting up the routes
-First, let's import the `request` module from `flask`. Here is the code to that.
+First, let us import the `request` module from `flask`. Here is the code to that.
 
-```python
-from flask import request,Flask
+```Python
+from flask import request, Flask
 ```
 
 We will have four requesting routes, namely;
@@ -94,7 +94,7 @@ We will have four requesting routes, namely;
 - Editing a note route, and
 - Deleting a note route.
 
-Let's start by adding the fetching notes route. This will be the home page. Next, add the following in your `app.py` file.
+Let us start by adding the fetching notes route. This will be the home page. Next, add the following in your `app.py` file.
 
 ```python
 @app.route('/')
@@ -102,7 +102,7 @@ def home():
     return "<p>The home page</p>"
 ```
 
-Whenever one visits the home page `(/)`, the decorator will execute the function below, which returns a paragraph. Let's do the same for the `add-note` route, `edit-note` route, and `delete-note` route by adding the following code.
+Whenever one visits the home page `(/)`, the decorator will execute the function below, which returns a paragraph. Let us do the same for the `add-note` route, `edit-note` route, and `delete-note` route by adding the following code.
 
 ```python
 @app.route('/add-note', methods=['GET','POST'])
@@ -131,14 +131,14 @@ def deleteNote():
     # logic for deleting a note
 ```
 
-From above, the  `add-note` route accepts two methods. `GET` notes while a user visits that page, and `POST` when a user submits a filled form containing details of a new note. The same for `edit-note`, `GET` when the user visits the page, and a `POST` when the user submits a form on the page.
+From above, the  `add-note` route accepts two methods. `GET` notes while a user visits that page, and `POST` when a user submits a filled form containing details of a new note. The same for `edit-note`, `GET` when the user visits the page, and `POST` when the user submits a form on the page.
 
-At this point, we are only returning paragraphs for the pages. We need to return much more visual content and handle the commented logic for the routes that don't return pages. We do this in the next step.
+At this point, we are only returning paragraphs for the pages. We need to return more visual content and handle the commented logic for the routes that do not return pages. We do this in the next step.
 
 ### Adding logic and templates to the routes
 First, we will import the `render_template` and `redirect` module from `flask`.
 
-```python
+```Python
 from flask import request,Flask,render_template,redirect
 ```
 
@@ -185,9 +185,9 @@ In the project root folder, create a folder and name it `templates`. Inside the 
 </html>
 ```
 
-To enhance code re-usability, all templates will be loaded from one base file. Furthermore, since Flask uses [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) for templating, dynamic content will be loaded for each different page.
+To enhance code reusability, all templates will be loaded from one base file. Furthermore, since Flask uses [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) for templating, dynamic content will be loaded for each different page.
 
-According to the above file, only the `title`, and the `body content` will be different for each page, and that's pretty much what we want in our simple application.
+According to the above file, only the `title` and the `body content` will be different for each page, and that is pretty much what we want in our simple application.
 
 2. **The home page route**
 
@@ -241,7 +241,7 @@ In the above file, we are;
 
 - Extending the base file we had created previously.
 - Setting the title of the page.
-- Setting the body of the page, which basically comprises checking whether we have notes added, if we have, we loop through them, or we output a message and a call to action. For every note, we are showing its date of creation, its title, and description.
+- Setting the body of the page, which comprises checking whether we have notes added, if we have, we loop through them, or we output a message and a call to action. For every note, we are showing its date of creation, its title, and description.
 
 In `app.py`, edit the `home` route function as shown below;
 
@@ -261,13 +261,13 @@ In the `home()`, we are;
 - Fetching the notes from the database, ordered in descending order.
 - returning a view passing along data. `homeIsActive` and addNoteIsActive` for the navbar to set the active page, and `notes` for the data fetched.
 
-To test this home route, make sure your application is running and refresh the page on the browser. Since you don't have any added notes, you will receive a message and a call to action.
+To test this home route, make sure your application is running and refresh the page on the browser. Since you do not have any added notes, you will receive a message and a call to action.
 
 In the next step, we will handle the `add-note` route.
 
 3. **The add-note route**
 
-In `templates/pages`, create a file `add-note.html`. In this file, add the following code.
+In `templates/pages, create a file `add-note.html`. In this file, add the following code.
 
 ```html
 {% extends 'base.html'%}
@@ -301,7 +301,7 @@ In the above file, we are;
 
 - Extending the common `base.html` file.
 - Setting the title.
-- Setting the body, which is basically a form with a title and a description field.
+- Setting the body, which is a form with a title and a description field.
 
 In `app.py`, edit the `addNote()` as follows:
 
@@ -326,7 +326,7 @@ def addNote():
         return redirect("/")
 ```
 
-In the above function, when we have a `GET` call, we are simply returning a view with navigation bar configuration variables. Else when we have a `POST` call, we get the data submitted from the form, save it to the database, and redirect the home page.
+When we have a `GET` call in the above function, we are simply returning a view with navigation bar configuration variables. Elsewhen we have a `POST` call, we get the data submitted from the form, save it to the database, and redirect the home page.
 
 To test the functionality, ensure the development server is running, and refresh the `add-note` page, you should see a form, and when you fill it and submit it, you will be redirected to the home page now with a saved note.
 
@@ -334,7 +334,7 @@ To test the functionality, ensure the development server is running, and refresh
 
 In the `templates/pages` folder, create a `edit-note.html` file. In the file, add the following:
 
-```html
+```HTML
 {% extends 'base.html'%}
 
 {% block title %} Edit note {% endblock %}
@@ -363,7 +363,7 @@ In the `templates/pages` folder, create a `edit-note.html` file. In the file, ad
 {% endblock %}
 ```
 
-In the above file, we extend the common `base.html` file, adding a title and a body content which is simply a pre-filled form with a specific note's data.
+In the above file, we extend the common `base.html` file, adding a title and a body content simply a pre-filled form with a specific note's data.
 
 In `app.py`, edit the `editNote` function as follows:
 
@@ -402,7 +402,7 @@ In the above function, we have two types of calls. A `GET` call where we get the
 To test this functionality, ensure the development server is running.
 
 - Refresh the home page.
-- For any note, click on edit, edit any field, and then hit `Submit`. The new details should be reflected.
+- For any note, click on edit, edit any field, and then hit `Submit. The new details should be reflected.
 
 5. **The delete-note route**
 
@@ -422,7 +422,7 @@ def deleteNote():
     return redirect("/")
 ```
 
-From the above function, we are getting the id of the note to be deleted, deleting it from the database, and redirecting to the home page.
+From the above function, we are getting the id of the note to be deleted, deleting it from the database, and redirecting it to the home page.
 
 To test this functionality, make sure the development server is running.
 
