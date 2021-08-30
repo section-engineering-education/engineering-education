@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-a responsive-html-registration-form/hero.jpg
+  - url: /engineering-education/creating-a-responsive-html-registration-form/hero.jpg
     alt: Registration form image example
 ---
 
