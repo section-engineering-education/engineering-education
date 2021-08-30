@@ -1,12 +1,12 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
 url: /image-preprocessing-in-python/
 title: Getting Started with Image Preprocessing in Python
-description: In this article we will understand and implement image pre-processing techniques used in majority of the computer vision applications.
+description: In this article, we will understand and implement image preprocessing techniques used in most computer vision applications.
 author: adhinga-fredrick
-date: 2021-08-20T00:00:00-18:00
+date: 2021-08-30T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,24 +15,24 @@ images:
    alt: Image Preprocessing in Python example image
 ---
 
-Image data processing is one of the most under explored problems in the data specialists community. Every developer has his/her way of doing it. In Python; Pytorch, OpenCV, Keras, Tensorflow, Pillow, etc. are but a few of the tools used in image preprocessing.
+Image data processing is one of the most under-explored problems in the data specialists community. Yet, every developer has an unique way of doing it. For example, in Python, Pytorch, OpenCV, Keras, Tensorflow, Pillow, etc. are few of the tools used in image preprocessing.
 
 ### Introduction
 
-When building a machine learning/computer vision project, one thing we always need is data. In this case, image data. A few problems associated with image data include complexity, inaccuracy and inadequecy. This is why before building a computer vision model, it is important that the data is preprocessed (cleaned and processed to the desired format) in order to achieve the desired results.
+When building a machine learning/computer vision project, one thing we always need is data. In this case, image data. Unfortunately, a few problems associated with image data include complexity, inaccuracy, and inadequacy. This is why before building a computer vision model, it is essential that the data is preprocessed (cleaned and processed to the desired format) to achieve the desired results.
 
-In this tutorial, we shall be looking at **image data pre-processing**, which is the process of converting image data into a form that allows machine learning algorithms to solve it. It is often used in increasing a model's accuracy and reducing its complexity.
+In this tutorial, we shall be looking at **image data preprocessing**, which converts image data into a form that allows machine learning algorithms to solve it. It is often used in increasing a model's accuracy and reducing its complexity.
 
 There are several techniques used to preprocess image data. Examples include; image resizing, converting images to grayscale, image augmentation, etc.
 
 ### Prerequisites
 
-To follow through the tutorial one needs:
+To follow through the tutorial, one needs:
 
-1. A Google or Kaggle account i.e on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true), or [Kaggle notebooks](https://www.kaggle.com/code) (, or have Python and Jupyter Notebook installed on your machine.)
+1. A Google or Kaggle account, i.e., on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true), or [Kaggle notebooks](https://www.kaggle.com/code) (, or have Python and Jupyter Notebook installed on your machine.)
 2. Have Python knowledge
 
-As for this tutorial we shall be using [Google Colab.](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true). After creating a new notebook, our first step will be to load data onto our colab environment.
+As for this tutorial, we shall be using [Google Colab.](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index#recent=true). So, after creating a new notebook, our first step will be to load data onto our colab environment.
 
 ### Mounting Google Drive onto Colab
 
@@ -45,12 +45,12 @@ drive.mount("/content/drive/")
 
 Run the cell by clicking **shift** + **enter** keys and follow the instructions below:
 
-1. Click on the *url* displayed to authenticate with your desired Google account where the drive with the data is located.
-2. Copy the generated authorization code and paste it on the space below the url and click **Enter** key to execute.
+1. Click on the *URL* displayed to authenticate with your desired Google account where the drive with the data is located.
+2. Copy the generated authorization code, paste it on the space below the URL, and click the **Enter** key to execute.
 
 ### Importing the Dataset
 
-The next step is loading the dataset to colab. In order to import the dataset, we first need to import some of the necessary libraries.
+The next step is loading the dataset to colab. To import the dataset, we first need to import some of the necessary libraries.
 
 ```python
 
@@ -66,10 +66,10 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-Once this is done, we will go ahead and import the data which is now on Google Drive using the code block below:
+Once this is done, we will go ahead and import the data, which is now on Google Drive using the code block below:
 
 ```python
-# Importing and Loading the data into data frame
+# Importing and Loading the data into a data frame
 
 dataset_path = '/content/drive/MyDrive/Animals'
 class_names = ['Cheetah', 'Jaguar', 'Leopard', 'Lion','Tiger']
@@ -82,7 +82,7 @@ animal_path = glob.glob(animal_path)
 
 Now that we have already loaded our dataset onto our workspace, the next step would be to visualize the data.
 
-In order to verify if our data is properly loaded, we shall try accessing an image file from the dataset:
+To verify if our data is properly loaded, we shall try accessing an image file from the dataset:
 
 ```python
 # accessing an image file from the dataset classes
@@ -100,7 +100,7 @@ By executing the above code block, we shall randomly print an image from the dat
 
 ### Data preprocessing
 
-Now that we're done with importing libraries and data, we shall go into data preprocessing. Since images exists in different formats, i.e natural, fake, grayscale etc., we need to take in these considerations and standardize them before feeding them into a neural network.
+Now that we're done with importing libraries and data, we shall go into data preprocessing. Since images exist in different formats, i.e., natural, fake, grayscale, etc., we need to take in these considerations and standardize them before feeding them into a neural network.
 
 In this tutorial, we shall look at the following image preprocessing techniques:
 
@@ -129,7 +129,7 @@ Output
 
 #### Grayscale conversion
 
-Grayscale is simply converting images from colored to black and white. It is normally used to reduce computation complexity in machine learning algorithms. Since most pictures don't need color to be recognized, it is wise to use grayscale which reduces the number of pixels in an image hence reducing the computations required.
+Grayscale is simply converting images from colored to black and white. It is normally used to reduce computation complexity in machine learning algorithms. Since most pictures don't need color to be recognized, it is wise to use grayscale, which reduces the number of pixels in an image, reducing the computations required.
 
 Execute the code below to convert the original image to grayscale:
 
@@ -141,19 +141,19 @@ plt.imshow(gray_image, cmap = 'gray')
 Output
 ![gray_scale](/engineering-education/image-preprocessing-in-python/gray_scale.jpg)
 
->**NB**: Converting images  to grayscale might not always be practical in solving some problems. A few examples where it would impractical to use grayscale include: _traffic lights_, _healthcare diagnosis_, _autonomous vehicles_, _agriculture_, etc. The best way to know whether to use it or not depends on your human visual ability to be able to identify an object without colour.
+> **NB**: Converting images to grayscale might not always be practical in solving some problems. A few examples where it would be impractical to use grayscale include: _traffic lights_, _healthcare diagnosis_, _autonomous vehicles_, _agriculture_, etc. The best way to know whether to use it or not depends on your human visual ability to identify an object without color.
 
 #### Normalization
 
-Also referred as _data re-scaling_, it is the process of projecting image data pixels (intensity) to a predefined range (usually `(0,1)` or `(-1, 1)`).  This is commonly used on data of different formats and you want to normalize all of them so you can apply the same algorithms over them.
+Also referred to as _data re-scaling_, it is the process of projecting image data pixels (intensity) to a predefined range (usually `(0,1)` or `(-1, 1)`).  This is commonly used on data of different formats, and you want to normalize all of them to apply the same algorithms over them.
 
-Normalization is usually applied to convert an image pixel values to a normal or more familiar sense. It's benefits include:
+Normalization is usually applied to convert an image's pixel values to a typical or more familiar sense. Its benefits include:
 
-- Fairness across all images - For example, scaling all images to an equal range of [0,1] or [-1,1] allows all images to contribute equally to the total loss rather than when other images have high and low pixels ranges which would give strong and weak loss respectively.
+- Fairness across all images - For example, scaling all images to an equal range of [0,1] or [-1,1] allows all images to contribute equally to the total loss rather than when other images have high and low pixels ranges give strong and weak loss, respectively.
 
-- Provides a standard learning rate - Since high pixel images require a low learning rate and low pixel images high learning rate, re-scaling helps to provide a standard learning rate for all images.
+- Provides a standard learning rate - Since high pixel images require a low learning rate and low pixel images high learning rate, re-scaling helps provide a standard learning rate for all images.
 
-Let's write the code below to normalize our data
+Let's write the code below to normalize our data.
 
 ```python
 norm_image = (gray_image - np.min(gray_image)) / (np.max(gray_image) - np.min(gray_image))
@@ -165,23 +165,23 @@ Output
 
 #### Data Augmentation
 
-_Data augmentation_ is the process of making minor alterations on existing data to increase it's diversity without collecting new data. It is a technique basically used for enlarging a dataset. Some of the common data augmentation techniques include _horizontal & vertical flipping_, _rotation_, _cropping_, and _shearing_, etc.
+_Data augmentation_ is the process of making minor alterations to existing data to increase its diversity without collecting new data. Thus, it is a technique used for enlarging a dataset. Standard data augmentation techniques include _horizontal & vertical flipping_, _rotation_, _cropping_, _shearing_, etc.
 
-Performing data augmentation aids to prevent a nueral network from learning irrelavant features which results to a better model performance.
+Performing data augmentation aids in preventing a neural network from learning irrelevant features, which results in better model performance.
 
-Some of the common data augmentation techniques include horizontal & vertical flipping, rotation, cropping, and shearing etc.
+Standard data augmentation techniques include horizontal & vertical flipping, rotation, cropping, shearing, etc.
 
- There are normally 2 types of augmentation:
+ There usually are two types of augmentation:
 
 - _Offline augmentation_- used for small datasets.
 
-It is normally applied in the data pre-processing step. It is the one we shall be covering today.
+It usually is applied in the data preprocessing step. It is the one we shall be covering today.
 
 - _Online augmentation_- used for large datasets.
 
 It is normally applied in real-time.
 
-For this tutorial we shall be using **Keras's** `ImageDataGenerator` class to perform augmentation on our data. This is because it provides a quick and easy way to augment your images. It supports a list of augmentation techniques like flips, rotations, brightness change, etc.
+For this tutorial, we shall use **Keras's** `ImageDataGenerator` class to augment our data. This is because it provides a quick and easy way to augment your images. In addition, it supports a list of augmentation techniques like flips, rotations, brightness change, etc.
 
 Let's now look at the different mostly used techniques of data augmentation:
 
@@ -228,7 +228,7 @@ Output
 
 ##### Flipping
 
-This is a process of reversing the rows or columns of pixels in either vertical or horizontal cases respectively.
+This reverses the rows or columns of pixels in either vertical or horizontal cases, respectively.
 
 Let's do a random flip with both horizontal and vertical flips.
 From the [code above](#shifting), change the **ImageDataGenerator** parameters as shown below:
@@ -275,15 +275,15 @@ Other Augmentation techniques include:
 
 ##### Cropping
 
- This the process of creating a random subset of an original image which is then resized to the size of the original image.
+ This is the process of creating a random subset of an original image which is then resized to the size of the original image.
 
 ##### Scaling
 
- An image can be scaled either inward or outward.  When scaling an image outward, the image becomes bigger than the original and vise versa.
+ An image can be scaled either inward or outward.  When scaling an image outward, the image becomes more significant than the original and vise versa.
 
 #### Standardizing images
 
-**Standardization** is a method that scales and preprocesses images to have similar heights and widths. It rescales data to have a standard deviation of 1 (unit variance) and a mean of 0.
+**Standardization** is a method that scales and preprocesses images to have similar heights and widths. It re-scales data to have a standard deviation of 1 (unit variance) and a mean of 0.
 
 By transforming and standardizing data, standardization helps to improve the quality and consistency of our data.
 
@@ -297,7 +297,7 @@ datagen = ImageDataGenerator(featurewise_center =True,
 
 ### Conclusion
 
-Having explored the popular and commonly used image preprocesing techniques, what now remains is modelling your machine learning models to the desired level of high accuracy and performance. We are now ready to jump in to building custom computer vision projects.
+Having explored the popular and commonly used image preprocessing techniques, what now remains is modeling your machine learning models to the desired level of high accuracy and performance. Thus, we are now ready to jump into building custom computer vision projects.
 
 Good luck!
 
