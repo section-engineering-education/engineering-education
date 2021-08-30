@@ -1,5 +1,22 @@
-The 21st century has seen unprecedented growth in software development. People are embracing current trends such as the Internet of Things (IoT) and virtual reality more and more. The impact of this is being felt in our day-to-day activities.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /iot-development-with-rust-vs-c++/
+title: Comparing Rust and C++ in IOT Development
+description: This article discusses the development of IoT solutions with both [Rust](https://www.rust-lang.org/) and C++ to help one chose the correct programming language for developing IoT applications and devices.
+author: steve-nzovi
+date: 2021-08-30T00:00:00-05:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/iot-development-with-rust-vs-c++/hero.jpg
+    alt: Rust vs C++ in IOT development image
+---
+
+The 21st century has seen unprecedented growth in software development. People are embracing current trends such as the Internet of Things (IoT) and virtual reality more and more. The impact of this is being felt in our day-to-day activities.
+<!--more-->
 IoT solutions are bringing in many advantages to businesses and individuals alike. Such benefits include improved operations, work safety, and cost-effectiveness. However, realizing these benefits requires starting with the correct programming language for IoT devices.
 
 Thus, learning about embedded software development and the IoT concept is a step in the right direction. This article discusses the development of IoT solutions with both [Rust](https://www.rust-lang.org/) and C++. It also compares the two to help you chose the correct programming language for developing IoT applications and devices.
