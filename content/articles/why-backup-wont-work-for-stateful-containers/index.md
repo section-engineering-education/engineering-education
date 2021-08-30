@@ -1,9 +1,9 @@
 ﻿### Introduction
-There is a myth that containers are stateless. It is not the truth since a container can contain a state. However, the state is temporal, unique, and resides on the host machine it is running on. The myth focuses on that container images are stateless and should store persistent data outside the container image.
+There is a myth that containers are stateless. It is not the truth since a container can contain a state. However, the state is temporal, unique, and resides on the host machine it is running on. The myth focuses on that container images does not contain state and stores persistent data outside the container image.
 
 Containers consist of layers that are read-only and cannot be changed. Every layer holds the last changes made on the config file with configuration and installation commands. After executing the commands from the config file, the system changes are stored in a disk layer.
 
-A temporal writable layer is usually created on top of the disk image when the container is running. The writable layer is unique to every container on a specific host and can survive when the container restarts. This writable layer does not store any stateful data, such as persistent application data. It is only used to temporarily store the data of the running application in the container.
+A temporal writable layer is usually created at the top of the previous disk image when the container is running. The writable layer is unique to every container on a specific host and can survive when the container restarts. This writable layer does not store any stateful data, such as persistent application data. It is only used to temporarily store the data of the running application in the container.
 
 ### Table of contents
 1. [Introduction](#introduction)
@@ -118,21 +118,21 @@ $ docker run -ti wordpress-backup:latest
 ### Reasons why backup solutions fail
 [Storage-based snapshots](https://stonefly.com/resources/what-is-storage-snapshot-technology/) cannot be enough for data mobility and backup. They are periodic, require scheduling, and do not deliver the granularity that DevOps requires in today’s world. In a fast-paced technological world, where containers regularly start-up and terminate as per user preferences, a backup snapshot is, without a doubt, not enough.
 
-In addition, backing up at the storage layer would mean the organization is prone to vendor lock-ins. As the business grows, they will be stuck with one solution that cannot support the agility needed in today's IT world.
+In addition, performing container back up at the storage layer means the organization will be prone to vendor lock-ins. As the business grows, they will be stuck with one solution that cannot support the agility needed in today's IT world.
 
-Also, containers are not the right entry point of backing up data either, for below two reasons:
+Also, containers are not perfect for backing up data either, for below two reasons:
 
-- Containers are highly scalable, with many instances, each performing a small part of the same task. It means that there is no single container that can be the master in an application. There may be many containers accessing the same persistent data at the same time. This is unlike virtual machines (VMs), where only one VM is accessing the same data.
-- Containers are temporal and cannot be guaranteed to run when backups need to be taken. This is different from VMS, which mostly kept running the VM machine software such as VMware HA smoothly. Any single container does not determine container application availability and resilience.
+- Containers are highly scalable, with numerous instances, each performing a little part of the same task. It means that there is no single container that can be the master in an application. There may be many containers accessing similar persistent data each time. This is unlike virtual machines (VMs), where only one VM accesses similar data.
+- Containers are temporal and cannot be up each time backups need to be taken. This is different from VMS, which mostly kept running the VM machine software such as VMware HA smoothly. Any single container does not determine container application availability and resilience.
 
-The differences in architectures that come with containers demonstrate why backup solutions may not work for containers. There is a need for a different approach to performing continuous granular backups of stateful application data.
+The differences in architectures that come with containers demonstrate why backup solutions may not work for containers. A different approach to performing continuous backups of stateful application data is needed.
 
 ### Possible backup solution
-The better solution cannot rely on the container for purposes of backup and replication. Also, it cannot rely on one storage solution. Instead, it can be installed on the Kubernetes cluster as [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) and offers continuous data protection with an [RPO](https://www.ibm.com/services/business-continuity/rpo) from 5 or 10 seconds.
+The better solution cannot rely on the container for purposes of backup and replication. Also, it cannot rely on one storage solution. Instead, it can be installed on the Kubernetes cluster as [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) and will offer data protection with an [RPO](https://www.ibm.com/services/business-continuity/rpo) from 5 or 10 seconds.
 
 These DaemonSets integrate into the persistent storage to gain access to persistent data independent of any container. By unifying all cluster nodes and the cluster API, [Zerto](https://www.zerto.com/solutions/workloads-and-applications/zerto-for-kubernetes/) for Kubernetes can work most efficiently. It journals the persistent data without container duplication or performance impact.
 
-It can also be integrated with clusters, making replication of persistent data for disaster recovery purposes easier. It is storage agnostic and supports [CSI-compatible](https://kubernetes-csi.github.io/docs/) block storage, thus making it ideal for data mobility and migration solution.
+It can also be integrated with clusters, making persistent data replication used for disaster recovery easier. It is storage agnostic and supports [CSI-compatible](https://kubernetes-csi.github.io/docs/) block storage, thus making it ideal for data migration and mobility solution.
 
 The organization should ensure they go for a solution that stores stateful data and captures the Kubernetes state for each application. It will ensure that data protection for components like [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/) and services. These components can rebuild the application when performing data recovery on the same or another cluster.
 
