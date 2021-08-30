@@ -1,12 +1,13 @@
-[Golang](https://golang.org/) is an open-source programming language that makes it easy to build simple, reliable, and efficient apps. It is a very promising language. It's a very powerful language run. The Google team runs it. Certain technologies like Docker and Kubernetes are developed in Go. Go is a compiled language. When you write a code, you have to compile it and generate machine code directly. This tutorial will discuss Golang and finally create a REST API application using Golang and PostgreSQL database.
+[Golang](https://golang.org/) is an open-source programming language that makes it easy to build simple, reliable, and efficient apps. It is an up-and-coming language that developed technologies like Docker and Kubernetes. Go is a compiled language. Therefore, when one writes a program,  it gets compiled and generates the machine code equivalent of the program.
 
-### How Golang came to be
+This tutorial will discuss Golang and finally create a REST API application using Golang and PostgreSQL database.
 
+### History of Golang 
 Go was developed by Google. Go is commonly known as Golang. It is [refered as Golang](https://golang.org/doc/faq) due to its domain name `golang.org`, the reason being `go.org` was not available for use. Hence the Go language was shortened to Golang and thus the domain name `golang.org`.
 
-The project of the Golang development started in 2007. Its main objective was to utilize multi-core processors. With the ability to develop large and distributed systems and highly scalable network servers.
+The project of the Golang development started in 2007.  Its main objective was to utilize multi-core processors to develop large distributed systems and highly scalable network servers.
 
-Golang project was made opensource in 2009, and its very first initial version 1.0 was released in 2012.
+Golang project was made open source in 2009, and its very first initial version, 1.0, was released in 2012.
 
 The Google Jetbrain team refers to Go as the most promising programming language.
 
@@ -29,24 +30,25 @@ Also, on a yearly survey done by stack overflow, Go was one of the topmost wante
 [Image source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted)
 
 ### Getting started with Go
+To get started with Go, you need to get Go runtime installed on your computer. 
 
-To get started with Go, you need to get Go runtime installed on your computer. Install it, head over here, and select the Go environment that you want to install. Once downloaded, you can go ahead and install it. Once installed, you run the `go version` in your terminal, and the go version installed in your computer will be printed out. This way, you will know that Go is installed correctly and ready to tun some Golang code.
+Once installed,  run the `go version` command in your terminal, and the go version installed in your computer will be printed out. This way, you will know that Go is correctly installed.
 
-One thing about Go is that it is very opinionated on how you arrange and set up the project folder and file structure. This means you need to arrange your directory hierarchy well to tun Go code. Check this guide and learn how to arrange your [Go workflow](https://pkg.go.dev/go.temporal.io/temporal/workflow).
+One thing about Go is that it is very opinionated on how you arrange and set up the project folder and file structure. This means you need to arrange your directory hierarchy well to tun Go code. So check this guide and learn how to arrange your [Go workflow](https://pkg.go.dev/go.temporal.io/temporal/workflow).
 
-Here we are going to use Visual studio code to interact with go. So download he visula stusio code and intsall it. After that, open Visual studio code and download the following Go package. This will help us write and execute Go as well as providing inellicece for Go code.
+Here, we are going to use Visual studio code to interact with go. So download and install it. After that, open Visual studio code and download the Go extension. This will help us write and execute Go as well as providing IntelliSense for Go code.
 
 ![golang-vscode](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/golang-vscode.png)
 
-Let's create a simple Go application and see how it works. We will create the simplest Go application (`Hello world!`) and see how God works. So create a project folder, open it using VisualStudio code, and create an `index.go` file.
+We will create a simple  Go application (`Hello world!`) and see how Go works. So create a project folder, open it using VisualStudio code, and create an `index.go` file.
 
-- The first thing do when we create an application is to define a package. All go files are created inside a package. By default, the package is always `package main`. Thus, every file will have its package, which acts as a module for that file, and you can import it to the file.
+- The first thing to do when we create an application is to define a package. All go files are created inside a package. By default, the package is always `package main`. Thus, every file will have its package, which acts as a module for that file and can be imported.
 
-- The next thing is to import modules (this could be local modules or Go modules). In this case, we would use the `fmt` module. `fmt` module allows you to print messages and text to the console, so we need to use it to lof a hello world string to the console.
+- The next thing is to import modules (this could be local modules or Go modules). In this case, we would use the `fmt` module. The `fmt` module allows you to print messages and text to the console.
 
-- After that, you need an entry point for your application. This is a Go main function that helps you to execute your file and code. The function will be automatically be called when you build and run the Go program.
+- You need an entry point for your application. This is a Go primary function that helps you to execute your code. The function will be automatically called when you build and run the Go program.
 
-Now when you write the hello world program, you will have the following key properties.
+Now when you write the hello world program, you will have the following fundamental properties.
 
 ```go
 // Go package
@@ -61,21 +63,20 @@ func main() {
 }
 ```
 
-Now we need to run this application. To do so, open a terminal. You can use the Visual studio code integrated terminal. Else you can open your computer terminal and then cd to the project folder. Then run `go run <file name or file path for nested folders>`.
-
-For this application, we will run `go run main.go`. This will execute and run the application and print the hello world on the console. And there, you have the simplest Go application set and running.
-
+Navigate to the project directory to run the code, then execute the command `go run <file name or file path for nested folders>` in your preferred terminal.
 ### Build a REST API application using Golang and PostgreSQL database
 
-Golang is used on the server-side to create a backend for the web application. This means we can use it to create web-based APIs. So let's see how we can build a REST API application using Golang and PostgreSQL database.
+Golang is used on the server-side to create a backend for the web application. Therefore we can use it to create web-based APIs. So let us see how we can build a REST API application using Golang and PostgreSQL databases.
 
 #### Install PostgreSQL database setup
 
-Since we are using PostgreSQL as our database, download and install [PostgreSQL](https://www.postgresql.org/download/windows/) into your local computer. Then we will create a database, add a table and some records to it. Here are some sample queries. First, create a `movies` database in your PostgreSQL pgAdmin.
+Since we use PostgreSQL as our database, download and install [PostgreSQL](https://www.postgresql.org/download/windows/) into your local computer. 
 
-To create a table use:
+Then, we will create a database, add a table and some records to it. Here are some sample queries. First, create a `movies` database in your PostgreSQL pgAdmin.
 
-```sql
+To create a table, use the query below:
+
+```SQL
 CREATE TABLE movies (
     id SERIAL,
     movieID varchar(50) NOT NULL,
@@ -86,7 +87,7 @@ CREATE TABLE movies (
 
 To add some data to the table, use:
 
-```sql
+```SQL
 INSERT INTO movies (
     movieID,
     movieName
@@ -132,8 +133,7 @@ Here we have two third-party libraries. To use them, we need to install them so 
 First, run `go mod init example.com/m`. This will generate a `go.mod` file that saves the third-party libraries we require. To install `mux` run `go get github.com/gorilla/mux`. To install `pq` run `go get github.com/lib/pq`.
 
 #### Add PostgreSQL database connection parameters
-
-To communicate to a SQL database such as PostgreSQL, we need to add some database parameters to help us access the database and manipulate data. This includes the database user (by default, this should be `postgres`), the password set when installing PostgreSQL, and a database name you want to use.
+To communicate to a SQL database such as PostgreSQL, we need to add database parameters to help us access and manipulate data. This includes the database user (by default, this should be `Postgres), the password set when installing PostgreSQL, and a database name you want to use.
 
 ```go
 const (
@@ -149,13 +149,12 @@ func setupDB() *sql.DB {
 
     checkErr(err)
 
-    return db
+    return DB
 }
 ```
 
 #### Add JSON structs
-
-A struct is like a class. It's used for object-oriented programming in Golang, which can have properties and methods. Structs work similarly to an ES6 class in JavaScript and classes in Java and C sharp. For example, the struct `Movie` will define the json fields that we want to fetch. The struct `JsonResponse` will display the Json response once the data is fetched.
+A struct is like a class. It is used for object-oriented programming in Golang, which can have properties and methods. Structs work similarly to an ES6 class in JavaScript and classes in Java and C sharp. For example, the struct `Movie` will define the JSON fields that we want to fetch. The struct `JsonResponse` will display the JSON response once the data is fetched.
 
 ```go
 type Movie struct {
@@ -172,7 +171,9 @@ type JsonResponse struct {
 
 #### Add Go main function
 
-When the main function gets executed, we also need to run some endpoints that will help us get into the server through an HTTP request. Here, each endpoint will execute a method. When that endpoint is called, the method will be executed by calling the function that defines the necessary parameters for a certain method. So first, initialize the `mux` router, then add the router handlers to establish the endpoints for our API. Finally, add a port to serve the application.
+When the main function gets executed, we also need to run some endpoints that will help us get into the server through an HTTP request. Here, each endpoint will execute a method. When that endpoint is called, the method will be executed by calling the function that defines the necessary parameters for a particular method. 
+
+So first, initialize the `mux` router, then add the router handlers to establish the endpoints for our API. Finally, add a port to serve the application.
 
 ```go
 // Main function
@@ -365,13 +366,13 @@ To start testing, use postman and start sending requests to the respective endpo
 
 ### Some pros and cons of using Golang
 
-- Go is made to be compatible with large enterprises. Go has the ability to handle a large amount of data processing. Go is a good choice if the application is progressively increasing the amount of data to process.
+- Go is made to be compatible with large enterprises. It has the ability to handle a large amount of data processing. Therefore it is a good choice if the application is progressively increasing the amount of data to process.
 - Go processes data with low latency. This means you don't have to worry about the response time between when a user requests some data and when that data is served to the user.
-- Well-established concurrency and multi-threading support. Go concurrency is built within the language itself and not from libraries and external features. Thus compiling and execution are done faster
-- Go focuses a lot on the efficiency of the application. It is very minimalistic. It has a small code base with no generics templates and separate runtime libraries. Thus when compiled, the binary ends up being small. This makes Golang fast to write, compile and execute.
+- Well-established concurrency and multi-threading support. Go concurrency is inbuilt; thus, compilation and execution are done faster
+- Go focuses a lot on the efficiency of the application. It is very minimalistic. It has a small code base with no generics templates and separate runtime libraries. Thus when compiled, the binary becomes smaller, making Golang fast to write, compile and execute.
 - Learning curve. Go is a combination of low-level languages such as C and modern languages such as Python. This makes it easier to learn if you have previously learned another language before. Also, like Trpescipt go supports structural and static typing. You can spot errors before compilation; hence, basics can be learned quickly, making it fast to learn.
 - It has no GUI library. Thus you'll need to connect the library instead of using native solutions available in languages such as Python or java.
-- Go is still a young language. Go doesn't have the maturity and user experience that many other established languages such as Java and Python have. However, they have huge built-in code and many libraries constantly created and maintained by different open-source community developers. The fact that it is still young means that the job market for Go programmers isn't extensive yet.
+- Go is still a young language. Go doesn't have the maturity and user experience that many other established languages such as Java and Python have. However, they have substantial built-in code and many libraries constantly created and maintained by different open-source community developers. The fact that it is still young means that the job market for Go programmers isn't extensive yet.
 
 ### Conclusion
 
