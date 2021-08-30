@@ -1,7 +1,7 @@
----
+ ---
 layout: engineering-education
 title: Cloud Management
-description: Cloud management is the control of products and services running in the cloud. It caters for these products and services. In this article we will get to understand how to choose the best cloud platforms. Also, we'll discuss challenges of cloud management and ways to beat them.
+description: Cloud management is the control of products and services running in the cloud. It caters for these products and services. With Cloud management you don't have to hand over resources to outside parties. People who do not share in your company vision and mission. Self-service is flexible. Learning about cloud management gives you an edge. You'll understand the processes hence it's easier to incorporate them into your company. You’ll have full access to workflow automation. The team will be able to create cloud instances, manage resources. Track cost usage, and divide costs. In this article we will get to understand how to choose the best cloud platforms. Also, we'll discuss challenges of cloud management and ways to beat them.
 author: anyebe-blessing-ene
 date: 2021-08-06T00:00:00-10:30
 topics: {Cloud}
@@ -21,17 +21,33 @@ In this article, we will discuss how cloud management and understand what there 
 ### Prerequisities 
 Basic knowledge of cloud computing
 
+### Goals and Objectives
+
+* The goal of the tutorial is to give the easiest introduction to the cloud, regardless of the field of study.
+I want everyone who reads this article to get acquainted with cloud management. It'll be easier to read further. 
+* Introduce you to good cloud brokerage services. 
+* Enlighten you on better ways to use cloud resources
+
+**P.S: At the end of this article, I added link resources to learn more about the cloud**
+ 
+
 Let's dive right in by learning about the concept
 
 ### Cloud Management
 
 The medium that permits administration control of technologies and software. Its the control of all the products and services operating within the cloud. Also, managing resources and automating the processes. Whist checking the value and the way it’s used. Cloud management caters to products and services. It allows the operations of the kinds of cloud infrastructure. Also, it manages products and services, including its flexibility. The scalability, security, and adaptation when the wants arise. 
+Cloud management aids enterprises gain an enthralling business. 
+Cloud computing designs help businesses interact and share data easily. As opposed to using the traditional means of data transfer. It gives access to many people enabling work on a particular file at the same time. It is a flexible way to grow a business. 
+Getting acquainted with cloud management will fast-track service delivery. Increase efficiency, create a steamer workflow between IT and business unit. 
+By learning about cloud management, you will know that it goes beyond storing data in the cloud. Cloud technology is the future. It offers easier ways to scale businesses, develop new products. It is faster. 
+Cloud management gives enterprises a competitive edge over others.
+On the side, cloud computing and management is not a decision to hand over to the IT department. As much as it relates to IT, it affects and impacts to your business. 
 
 ### Cloud Management Platforms
 
 They are set tools that assist companies to scale during a cloud environment. They need embedded features in them that aids them. Used with the various kinds of cloud (private, public, hybrid, and multi-cloud).
 
-**List of suggested (20) platforms**
+#### List of suggested (20) platforms**
 
 1. CloudBot software
 2. SnowWare software 
@@ -69,7 +85,7 @@ Some examples include;
 In this century, enterprises have migrated from storing data or their applications online. Neither are uploads stored through storage device and servers. Given that, using cloud storage seems more efficient. Regardless cloud management doesn’t come without its setbacks and challenges. One major oblivious factor is the resources it costs but that's one of the few. Thus, we'd like to grasp about its challenges. Also, the simplest solutions required for them. Hence we are able to completely maximize the advantages of cloud management. 
 Here some of the challenges of cloud management and ways to beat them; 
 
-**Cost Management**
+#### Cost Management**
 It aids companies to manage the value associated with their cloud service. This could be very tricky, as managing resources can get out of hand and even become redundant. The high demand for cloud storage increases its cost. 
 
 **Ways to Beat**
@@ -78,7 +94,7 @@ It aids companies to manage the value associated with their cloud service. This 
 - Estimate the budget from the start.
 - Get experts to assist with the value management analysis. 
 
-**Cloud Sprawl**
+#### Cloud Sprawl**
 Its the method cloud organization losses track of cloud resources. It's an uncontrolled escalation of enterprise cloud services, instances, and providers. This may happen when there are too many clouds happening. While the organization didn't manage cloud instances.
 
 **Ways to Beat**
@@ -89,7 +105,7 @@ Its the method cloud organization losses track of cloud resources. It's an uncon
 - Auto-Scaling
 - They ought to be set alerts that trigger when management is losing control.
 
-### Interactivity
+#### Interactivity
 
 This is often the sharing, exchange, and use of knowledge. Goes on between software and computer systems. Cloud services have lock-in periods. This makes it difficult to transact with the other forums or environment. Any form of cloud migration ends up in the reformatting of information. Also, extra unmounted costs, legal issues.
 
@@ -100,36 +116,53 @@ This is often the sharing, exchange, and use of knowledge. Goes on between softw
 - Event-driven architecture
 - Cloud providers must have the power to integrate a client’s cloud computing needs. With their on-premise IT operations in an seamless fashion.
 
+### Better Ways to Manage Cloud Resources
+* Monitor your cloud space, the essential purpose of cloud management
+* Use the best security
+* Create the infrastructure that will suit your business 
+* Modify storage environment
+* Use automation 
+* Keep records: Write down what you do, document your experience. 
+- Software used, including the version
+- Errors encountered 
+- Commands run, arguments provided, data files used
+- Fixes you applied, how you applied them, and where you found them
+- Links to sites you found tips and  hints (sustainability institue, 2020).
+
 ### Cloud Management Benefits
 
-**Scalability**
+#### Scalability**
 Cloud can increase or decrease resources. It does that in line with the precise needed cloud service. In times once you have to scale large, you increase it. After the workload reduces you'll decrease usage. It also helps to chop costs. 
 
-**Resilience** 
+#### Resilience** 
 Cloud has data recovery and management systems. They use third parties applications too. Thus, the cloud can separate resources when there are server and storage failures. 
 
-**Multi-Tenancy**
+#### Multi-Tenancy**
 The prominent characteristics of the cloud. Cloud services can host many users on the identical cloud infrastructure. 
 
 ### Functionalities a decent Cloud Manager should have 
 
 They are peaks to place into consideration once you want to settle on a cloud service provider. From starting anew with the cloud or cloud migration. These features should guide you in your decision-making. 
 
-**Security and Privacy Management**
+#### Security and Privacy Management**
 Cloud security is important for any cloud resource provider. you must know the measure the service is taking or using to shield your data. Know the protection goals you would like to meet. User data protection is additionally protected by the law. With the switch to the cloud, we do not use firewalls to safeguard data. Don’t hesitate to measure the operation of the cloud. Choose the cloud service provider that has trusted encrypted security applications. It should have trusted security tools. Make sure that they have data loss systems which will also prevent attacks on their file systems. Check for security protocols that hackers can't breach.
 
-**Service Levels**
+#### Service Levels**
 This consideration is important when businesses have strict needs for availability. Time interval, capacity, and support (which, let’s be honest, most do these days). Cloud Service Level Agreements (Cloud SLAs) are important when choosing a provider. Have a contractual relationship between cloud service customer and a cloud service provider. Verify the legal requirements safety of information hosted within the cloud service. It should be in light of GDPR. You would like a legal agreement that may back you up if something goes wrong.
 
-**Cost Mangement**
+#### Cost Mangement**
 A decent cloud provider checks and cut financial resources. Regardless of the sort of cloud used. When selecting a cloud provider, you must know the pricing structure. Also, you would like to understand the most fees charged and other related fees you have got to pay. Starting from your cloud support team to other third-party service charges. 
 
-**Customer Service Support**
+#### Customer Service Support**
  While choosing a cloud provider, understand how the customer can reach the service. Most of them use an embedded chatbot, which can not be effective for support. It should be less strenuous to induce in-tuned with the web of the cloud provider you decide on.
 
-**How Easy it's to Manage**
+#### How Easy it's to Manage**
  Many cloud services need the employment of third-party apps. When choosing, you ought to consider how easy is it to integrate between each of the services. Consider the time it'll take your enterprise to prepare the mixing. * They must be cloud services that incorporate self-service features.
 
+ ### References
+1. [Cloud Migration](https://searchcloudcomputing.techtarget.com/definition/cloud-migration)
+2. [Importance of Cloud Computing](https://www.hashmicro.com/blog/reasons-why-cloud-computing-is-important-to-business/#:~:text=Cloud%20Computing%20model%20enables%20your,files%20at%20the%20same%20time)
+3. [Best Practice for using Cloud](https://www.software.ac.uk/best-practice-using-cloud-research)(sustainability institue, 2020)
 
 ### Conclusion
 Cloud management is an essential knowledge. We need it to grasps the workings of cloud computing while starting out. It does not matter if you have an enterprise or intend on getting one. If you are tech inclined and used mobile devices. You should get acquainted to the modern day storage systems.  
