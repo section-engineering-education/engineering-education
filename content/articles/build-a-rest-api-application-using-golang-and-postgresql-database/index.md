@@ -5,11 +5,7 @@ This tutorial will discuss Golang and finally create a REST API application usin
 ### History of Golang 
 Go was developed by Google. Go is commonly known as Golang. It is [refered as Golang](https://golang.org/doc/faq) due to its domain name `golang.org`, the reason being `go.org` was not available for use. Hence the Go language was shortened to Golang and thus the domain name `golang.org`.
 
-The project of the Golang development started in 2007.  Its main objective was to utilize multi-core processors to develop large distributed systems and highly scalable network servers.
-
-Golang project was made open source in 2009, and its very first initial version, 1.0, was released in 2012.
-
-The Google Jetbrain team refers to Go as the most promising programming language.
+The project of the Golang development started in 2007.  Its main objective was to utilize multi-core processors to develop large distributed systems and highly scalable network servers. Golang project was made open source in 2009, and its very first initial version, 1.0, was released in 2012. The Google Jetbrain team refers to Go as the most promising programming language.
 
 ![Go-jetbrain](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/go-jetbrain.png)
 
