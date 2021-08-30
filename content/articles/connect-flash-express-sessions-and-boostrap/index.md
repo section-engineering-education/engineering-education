@@ -29,7 +29,7 @@ const session = require('express-session');
 ```
 
 ### Project setup
-We will have a separate folder for our routes, so create a folder called `routes` in the application's root folder. In the routes' folder, create two files named `index.js` and `users.js`. The authentication requests will go to the `user.js`  while other requests will go to the `index.js` route.
+We will have a separate folder for our routes, so create a `routes` folder in the application's root folder. In the folder, create two files named `index.js` and `users.js`. The authentication requests will go to the `user.js`  while other requests will go to the `index.js` route.
 
 Create another folder called `views`. This folder will contain our view files that will be rendered to the user on the screen. In the folder, add the following files. The `login.ejs` `register.ejs` `layout.ejs` and `dashboard.ejs`. 
 
@@ -72,7 +72,7 @@ For the registrations page, we will have a form that submits users data to the d
 ```
 
 ### Connecting to database
-Since the application will use Mongo Atlas, we will create a connection string and store it into a file. First, create a directory in the root directory of the application called `config`. In the created folder, add two files named `connection.js` and `config.env`.
+Since the application will use Mongo Atlas, we will create a connection string and store it into a file. First, create a directory in the root directory of the application called `config`. Then, in the created folder, add two files named `connection.js` and `config.env`.
 
 The `config` file contains environmental variables that are uniform throughout the application. This file restores our connection string and the port in which our application will run.
 
@@ -178,7 +178,7 @@ User.findOne({email: email}).then(user =>{
 })
 ```
 
-If the supplied email is unique, `bcryptjs` hashes the password. Saving a plain text password is a security risk, so we hash the password to avoid system breaches. After hashing, the user instance is saved to the database, then the user is redirected to the login page.
+If the supplied email is unique, `bcryptjs` hashes the password. Saving a plain text password is a security risk, so we hash the password to avoid system breaches. After hashing, the user instance is saved to the database, and then the user is redirected to the login page.
 
 
 ```js
@@ -203,7 +203,7 @@ bcrypt.genSalt(10, (err, salt) =>{
 ![Registration validation](/engineering-education/connect-flash-express-sessions-and-boostrap/connect-flash-errors.png)
 
 ### Implementing connect-flash module
-At the moment, we are passing the errors to a view that will render on the registration page. However, we want to store the messages in a session to display them after a redirect is done. This operation requires the `connect-flash` middleware.
+At the moment, we are passing the errors to a view that will render on the registration page. However, we want to store the messages in a session to display them after a redirect. This operation requires the `connect-flash` middleware.
 
 ```js
 const flash = require('connect-flash');
@@ -275,7 +275,7 @@ const User = require('../models/User');
 ```
 First, we need to bring in the `local strategy` and `mongoose` to find users in the database. In this case, we are using `bcrypt` to compare the password entered by the user during registration to the one entered during login. 
 
-The passport needs to check email and password, then tries to find a user with the same email. If there exists a record of a user with the same email, then the supplied password is compared against the user's password to see if there is a match; if the password is similar to the entered password, the passport authenticates the user. However, if the password is not similar an error is displayed to the user telling him to correct the email of the password.
+The passport needs to check email and password, then find a user with the same email. If there exists a record of a user with the same email, then the supplied password is compared against the user's password to see if there is a match; if the password is similar to the entered password, the passport authenticates the user. However, if the password is not similar, an error is displayed to the user telling him to correct the email of the password.
 
 ```js
 module.exports = function(passport) {
