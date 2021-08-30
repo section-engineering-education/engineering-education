@@ -6,12 +6,12 @@ url: /dependency-injection-in-flutter/
 title: Dependency Injection in Flutter
 description: In this article, the reader will learn how to implement dependency injection, get rid of flutter packages, and why dependency injection is needed in a Flutter application.
 author: bonface-ndolo
-date: 2021-08-23T00:00:00-05:19
+date: 2021-08-23T00:00:00-04:23
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Dependency-injection-in-flutter/hero.png
+  - url: /engineering-education/dependency-injection-in-flutter/hero.jpg
     alt: Flutter Dependency Injection Image
 ---
 
