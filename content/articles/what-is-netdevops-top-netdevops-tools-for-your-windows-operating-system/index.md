@@ -1,8 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/
+title: What is NetDevOps? Top NetDevOps Tools for your Windows Operating System
+description: In this article we shall explore the top NetDevOps tools for the Windows Operating System.
+author: edwin-wachira
+date: 2021-08-30T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/hero.png
+    alt: NetDevOps example
+---
+As an engineer, you must have heard of the term DevOps. This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker to constantly develop software solutions for your clients at high velocity to remain competitive in the market.
+<!--more-->
 The network ecosystem is one of the essential components of information technology, yet it is viewed as sophisticated and fragile. This brings in fear of network modifications, preventing the networking teams from delivering the agility demanded by today's digital enterprises.
 
 As a NetDevOp engineer, the culture of change and the reinforcing loop need to be automation-curious. Your network infrastructure is completely managed and described by code around the [CI/CD pipeline](/engineering-education/an-introduction-to-cicd-tools/). So there's no more logging into the live routers by typing passwords, typing commands (where a typo can bring down the whole network), cut and paste the entire configuration over a console, etc.
 
-This blog will teach the basic concept of NetDevOp, and the development toolset network developers need to set up for Windows workstation as a development environment for networking.
+This article will teach the basic concept of NetDevOp, and the development toolset network developers need to set up for Windows workstation as a development environment for networking.
 
 Since network engineering is heavily carried on Linux-based OS, this article will help the network engineers who work on the Windows operating system know and learn the tools they need to make it easier and faster to work as a network NetDevOp.
 
