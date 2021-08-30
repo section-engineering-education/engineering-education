@@ -11,8 +11,8 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  url: /engineering-education/image-compression-using-pca/hero.png
-  alt: First Hop Redundancy Protocol example image
+  - url: /engineering-education/image-compression-using-pca/hero.png
+    alt: irst Hop Redundancy Protocol example image image example
 ---
 Principal Component Analysis (PCA), is a dimensionality reduction method used to reduce the dimensionality of a dataset by transforming the data to a new basis where the dimensions are non-redundant (low covariance) and have high variance. 
 <!--more-->
