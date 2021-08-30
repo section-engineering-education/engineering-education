@@ -6,7 +6,7 @@ url: /image-compression-using-PCA/
 title: Image Compression using Principal Component Analysis
 description: In this article, we will discuss PCA in detail. It is a dimensionality reduction algorithm with many applications in the field of computer vision and image processing. We will look at image compression using PCA. 
 author: deewakar-chakraborty
-date: 2021-08-23T00:00:00-18:00
+date: 2021-08-30T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
