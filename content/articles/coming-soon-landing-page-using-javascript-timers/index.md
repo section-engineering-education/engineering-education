@@ -444,3 +444,6 @@ Building a user attractive coming soon landing page will boost the rate of attra
 Also, make sure your website is capable of notifying people so that they may subscribe with their email addresses to be alerted when the page is ready to be launched.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
