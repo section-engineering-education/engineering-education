@@ -200,7 +200,7 @@ bcrypt.genSalt(10, (err, salt) =>{
     })
 })
 ```
-![Registration validation](connect-flash-errors.png)
+![Registration validation](/engineering-education/connect-flash-express-sessions-and-boostrap/connect-flash-errors.png)
 
 ### Implementing connect-flash module
 At the moment, we are passing the errors to a view that will render on the registration page. However, we want to store the messages in a session to display them after a redirect is done. This operation requires the `connect-flash` middleware.
@@ -261,7 +261,7 @@ In the `messages.js` file, we check whether a message is a `success` or an `erro
 <% } %>
 ```
 
-![Login page redirect](login-page-redirect.png)
+![Login page redirect](/engineering-education/connect-flash-express-sessions-and-boostrap/login-page-redirect.png)
 
 ### Passport authentication setup
 Create a new file called `passport.js` in the' config' folder, then add the snippet below.
@@ -315,7 +315,7 @@ module.exports = function(passport) {
     });
 };
 ```
-[Login validatrion](login-form-validation.png)
+[Login validatrion](/engineering-education/connect-flash-express-sessions-and-boostrap/login-form-validation.png)
 
 ### Building the login module handler.
 The login handler uses the Passport middleware to authenticate users. An authenticated user is redirected to the `home` route to see his account details. However, if the user is not authenticated, the system redirects him to the login page to correct their details and try again.
@@ -361,7 +361,7 @@ router.get('/home', ensureAuthenticated, (req, res) => {
 })
 ```
 
-[User's homepage](homepage.png)
+[User's homepage](/engineering-education/connect-flash-express-sessions-and-boostrap/homepage.png)
 
 ### Setting up the logout handler
 The logout handler is responsible for signing out a user and destroying the session of the logged-in user. When users are logged in, their sessions are stored in a cookie that the logout handler destroys.
@@ -374,7 +374,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/users/login');
 });
 ```
-![log out](logout.png)
+![log out](/engineering-education/connect-flash-express-sessions-and-boostrap/logout.png)
 
 ### Conclusion
 This article taught us how to use connect-flash to display error messages in a system, store the messages in express sessions, and style error messages using bootstrap. We implemented these concepts by building a complete authentication system based on the passport. This project should provide a head start for actively working on the authentication module of any node.js project.
