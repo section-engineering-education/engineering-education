@@ -1,16 +1,26 @@
 ### Introduction
-Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems. Visual COBOL for Studio is a multi-language Integrated Development Environment (IDE).
+Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems for streamlining application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
 
-`ADO` is a Microsoft technology that stands for `ActiveX Data Object`. It is a collection of ActiveX controls that give you programmatic access to Microsoft's most recent data access technologies. As the name suggests, it's a wrapper for fundamental database access techniques.
+`ADO` is a Microsoft technology that stands for `ActiveX Data Object`. It is a collection of [ActiveX](https://en.wikipedia.org/wiki/ActiveX) controls that give you programmatic access to Microsoft's most recent data access technologies. As the name suggests, it's a wrapper for fundamental database access techniques.
 
-`ADO.NET` is the next step in data access technology advancement. Using the previously mentioned ADO technology, `ADO.NET` extends this by adding XML into a common model that applies to both relational and text-based XML data. First-class languages are supported by the .NET Framework's .NET API, which is managed code. .NET can use the classes that have already been established, rather than having to reinvent the wheel when it comes to data access. It's essentially a set of access and manipulation processes that a developer can utilize to gain access to his or her data. The best part is that you don't need to install anything because it's already included in the .NET Framework.
+In simple words, ADO acts as a middleware between the programming language and the database. The developers write programs to access the data, without knowing how the database is implemented.
+
+`ADO.NET` is the next step in data access technology advancement. `ADO.NET` extends this by adding XML into a common model that applies to both relational and text-based XML data.
+
+First-class languages are supported by the `.NET` framework's API. `.NET` can use the existing classes with API, rather than having to reinvent the wheel for accessing the data.
+
+It's essentially a set of access and manipulation processes that a developer can utilize to gain access to his or her data.
+
+The best part is that you don't need to install anything, because it's already included in the `.NET` Framework.
 
 ### Prerequisite
-- Have visual studio code where the Microfocus Cobol extension will be added. [click here to download](https://code.visualstudio.com/)
-- Have Microfocus visual studio installed from the official website. [click here to download](https://marketplace.visualstudio.com/items?itemName=Micro-Focus-AMC.mfcobol)
+- Install [Visual Studio Code](https://code.visualstudio.com/).
+- Add [Microfocus COBOL extension](https://marketplace.visualstudio.com/items?itemName=Micro-Focus-AMC.mfcobol) to Visual Studio code editor.
 - Have some background information on database management.
 
-### Table of contents:
+### Table of contents
+- [Objective](#objective)
+- [What is data object?](#what-is-a-data-object)
 - [Basic ADO flow](#basic-ado-flow)
 - [Preparation](#preparation)
 - [Create a Connection](#create-a-connection)
@@ -20,26 +30,44 @@ Micro Focus Visual COBOL is a modern development package that enables developers
 - [Other Data Providers](#other-data-providers)
 - [Wrap-Up](#wrap-up)
 
-#### goals and objective
+### Objective
 By the end of this tutorial, the reader will have understood:
-- how to establish a link to the data objects in Ado.NET.
-- create commands that will help to access the data objects using Micro Focus Visual Studio.
+- How to establish a link to the data objects in ADO.NET.
+- Create commands that will help to access the data objects using Micro Focus Visual Studio.
 
-#### What is a data object
-A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using the object's identification or a more complicated phrase. Furthermore, each object has its data type. They are also are made up of data sets. As an example, store products, sales, and customer are examples of data objects in a sales database; patients may be objects in a medical database; students, professors, and courses may be objects in a university database.
+### What is a data object
+A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using the object's identifier like a variable.
+
+Furthermore, each object has its data type.
+
+For example:
+- Products, sales, and customer are examples of data objects of a sales database
+- Patients may be objects of a medical database
+- Students, professors, and courses may be objects of an University database.
 
 ### Basic ADO flow
-What do I do now that Microsoft has provided me with this one-of-a-kind library of data access procedures? How can I get started? What do I look for when I am looking for a place to stay? We will start by looking at `SQL Server's namespace`, which governs data access. At the end of this article, we will go over different data providers, but for now, we will stick with SQL Server. A namespace is a set of symbols often used to distinguish and relate among objects of different types. As a result of a namespace, every particular collection of objects will have unique names, allowing them to be identified easily. System.Data.SqlClient is the namespace to remember if you want to connect to SQL Server. The.NET Data Provider for SQL Server is located in this namespace. 
+We will start by looking what `SQL Server's namespace` are, which governs data access.
 
-For example, while writing any code to connect to SQL servers in .NET flamework you will start by writing the namespace.
+At the end of this article, we will go over different data providers.
+
+A namespace is a set of symbols often used to distinguish and relate objects of different types.
+
+As a result of a namespace, every particular collection of objects will have unique names, allowing them to be identified easily.
+
+> `System.Data.SqlClient` is the namespace to remember if you want to connect to SQL Server. The `.NET` data provider for SQL server is located in this namespace. 
+
+To connect to SQL servers in `.NET` framework, you will start by writing the namespace:
 
 ```
 using System.Data;
 using System.Data.SqlClient;
 ```
+
 > Keep this namespace in mind. It's critical!
 
-There are presently 16 classes in the SQLClient namespace. These classes provide a programmatic way to establish connections to databases, verify permissions, manage exceptions, and do other duties related to data access. Let's get started using ADO.
+There are presently 16 classes in the SQLClient namespace. These classes provide a programmatic way to establish connections to databases, verify permissions, manage exceptions, and do other duties related to data access.
+
+Let's get started using ADO.
 
 To view data object, follow this basic procedure:
 1. Establish a link to the data object.
@@ -52,7 +80,15 @@ To complete the actions listed above, we will need to employ the following class
 3. System.Data.SqlClient.SqlDataReader
 
 ### Preparation
-For this tutorial, I used a safe console application. Microsoft's Data Access technology (ADO.NET application) is one of safe console applicationt. It's a part of the.NET Framework that's utilized to connect the.NET Application to data sources. It has access to various basic data streams: standard error, standard output, and standard input. To begin, we must declare the variables that will be used. We will need to make a variable to hold the data, one to hold the connection attributes, and another to hold the SQL statements we will be issuing. Any exceptions that we encounter when reading from the database are noted. In the working-storage area, you'll find record description entries and data description entries for independent data items, referred to as data item description entries.
+For this tutorial, I used a safe console application. Microsoft's Data Access technology (ADO.NET application) is one of safe console applicationt. It's a part of the `.NET` Framework that's utilized to connect the `.NET` Application to data sources.
+
+It has access to various basic data streams: standard error, standard output, and standard input.
+
+To begin, we must declare the variables that will be used. We will need to make a variable to hold the data, one to hold the connection attributes, and another to hold the SQL statements we will be issuing.
+
+Any exceptions that we encounter when reading from the database are noted.
+
+In the working-storage area, you'll find record description entries and data description entries for independent data items, referred to as data item description entries.
 
 > The working-storage section is a work ground where all the commands are written on as shon in the figure below:
 ![working storage section](engineering-education/data-access-with-ado.net-in-microfocus-visual-cobol-storage-section.png)
@@ -62,6 +98,7 @@ sqlConnection type System.Data.SqlClient.SqlConnection.
 sqlDataReader type System.Data.SqlClient.SqlDataReader.
 sqlCommand    type System.Data.SqlClient.SqlCommand.
 ```
+
 These are the essential objects that will allow us to connect to the database engine and use ADO, as well as get information from the database engine about the operations we run there.
 
 A few functional fields will be added next, as well as a few fields for storing data we'll be retrieving from the database. The following are the contents of the completed working-storage section:
@@ -79,6 +116,7 @@ FirstName          string.
 HomePhone          pic x(24)  value spaces.    
 junk               pic x(01)  value spaces.
 ```
+
 From the code above,we have delared the variables that we will be using in this tutorial: There are variables to hold the data `sqlDataReader type System.Data.SqlClient.SqlDataReader`, the connection attributes `sqlConnection type System.Data.SqlClient.SqlConnection` and finally the SQL statements/ commands `sqlCommand    type System.Data.SqlClient.SqlCommand`.
 
 It's worth noting that we can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard .NET data types. By enabling this option, some of your source code can now be used without worrying about data type conversion. To read data from a table using ADO, we've generated all of the necessary divisions and references. We must now carry out the measures mentioned above.
