@@ -1,14 +1,30 @@
-MicroProfile specifies a collection of Java EE (Enterprise) technologies and APIs that consolidate from a core baseline microservice to deliver application portability across multiple MicroProfile runtimes.	 
- It has been attracting attention from developers since this Java EE implementation does not take up much time in server booting and code run time as it did before when using former versions of Java EE.	 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-hands-on-a-microprofile-project/
+title: Getting Started with a Microprofile Project 
+description: This tutorial will guide
+author: 
+date: 2021-08-30T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-hands-on-a-microprofile-project/hero.jpg
+    alt: generic programming in csharp example image
+---
+MicroProfile specifies a collection of Java EE (Enterprise) technologies and APIs that consolidate from a core baseline microservice to deliver application portability across multiple MicroProfile runtimes.	
+<!--more-->
+It has been attracting attention from developers since this Java EE implementation does not take up much time in server booting and code run time as it did before when using former versions of Java EE.	 
   
- This is due to the continuous agile improvement of individual Java Specification Requests (JARs) that make up Java Enterprise (EE).	 
+This is due to the continuous agile improvement of individual Java Specification Requests (JARs) that make up Java Enterprise (EE).	 
+
 At the edge of this course, you will learn how MicroProfiles work and how they are used and how to use them.	 
   
- You shall also get hands-on on one MicroProfile Project.	 
+You shall also get hands-on one MicroProfile Project.	 
   
-
- ### Table of Contents	 
- 
+### Table of contents	 
  - [Key takeaways](#key-takeaways)
  - [Pre-requisites](#pre-requisites)	 
  - [What is MicroProfile?](#what-is-microprofile)	 
@@ -36,7 +52,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  - MicroProfile project structure	 
  - Running microprofile microservices applications	 
   
- ### Pre-requisites	 
+ ### Prerequisites	 
  Some basics required for easy follow-up on this article include:	 
   
  - An IDE that supports Java frameworks installed on your machine.	  
@@ -44,7 +60,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  - Gradle or Apache Maven 3.8.1+ installed.	 
  - Java programming skills	 
   
- **Note**: Some of these requirements may change in the _future_.	 
+ >**Note**: Some of these requirements may change in the _future_.	 
   
  ### What is MicroProfile?	 
  As stated earlier, it is an Opensource community-driven specification used to define Microservices' standards in Java Enterprises technologies.	 
@@ -53,16 +69,14 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
   
  A great community of individuals, organizations, and vendors who collaborate within an open-source project bring out the microservices to the Enterprise Java Community.	 
 
- ### Microprofile Servers in the market	 
-
+ ### Microprofile servers in the market	 
  Currently, there are almost ten Runtimes.	 
   
  Some of these are shown in the image and table below:	 
  
+ ![microprofile runtimes](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-runtimes.png)	 
   
- ![microprofile runtimes](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-runtimes.png "microprofile runtimes")	 
-  
- _(Image from official website)_	 
+ *(Image from official website)*
 
  | MicroProfile architecture | Details |	 
  |---|---|	 
@@ -79,7 +93,6 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  
   
  ### Generating a MicroProfile application	 
-
  In the steps below, you will learn how to generate Microprofile applications using the following methods and tools:	 
 
  - [start.microprofile.io](https://start.microprofile.io/index.xhtml), Microprofile initializer	 
@@ -87,22 +100,21 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  - [Visual Studio Code](https://code.visualstudio.com/), [IntelliJ IDE](https://www.jetbrains.com/idea/), or any other IDE that supports Java development.	 
   	 
 
- #### [start.microprofile.io](https://start.microprofile.io/index.xhtml), Microprofile initializer	 
+ #### start.microprofile.io, Microprofile initializer	 
 
  Head over to the [https://start.microprofile.io/index.xhtml](https://start.microprofile.io/index.xhtml) website using your browser.	 
   
  It appears as shown in the image below:	 
 
- ![microprofile initializer webpage](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-initializer-webpage.png "microprofile initializer webpage")	 
+ ![microprofile initializer webpage](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-initializer-webpage.png)	 
   
- _(Screenshot by Author)_	  
+ *(Screenshot by Author)*	  
   
- You will see some options in it such as the _groupId_, _artifactId_,_MicroProfile Version_, _Java SE Version_, _Build Tool_ (i.e., Maven and Gradle), _MicroProfile Runtime_, and _Examples for Specifications_.	 
+ You will see some options in it such as the _groupId_, _artifactId_,_MicroProfile Version_, _Java SE Version_, _Build Tool_ (i.e., Maven and Gradle), *MicroProfile Runtime*, and *Examples for Specifications*.	 
   
  Once these are set, you can be able to download the zipped project. Then, unzip it to get the project as you would expect.	 
 
  Set the following:	 
-  
  - _**groupId**_: to be '**starter**'	 
  - _**artifactId**_: to be '**com.starter**'	 
  - _**MicroProfile Version**_: to be **3.2**	 
@@ -114,10 +126,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
 
  Click on the 'Download' button to download.	 
 
-  
- > **Note**: To use Quarkus as your _MicroProfile Runtime_, you will have to choose a lower _MicroProfile Version_ [3.2](https://quarkus.io/blog/tag/microprofile/).	 
-
- ****	 
+ > **Note**: To use Quarkus as your _MicroProfile Runtime_, you will have to choose a lower _MicroProfile Version_ [3.2](https://quarkus.io/blog/tag/microprofile/).	 	 
   
  Some versions and Runtimes supported:	 
 
@@ -134,25 +143,23 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  | 4.0 | Open Liberty, WildFly, Payara Micro |	 
   
  
-	 
-  
  As of the 4.1 version, the notable Microprofile API's specifications, 18 in number, are divided into two main categories: MicroProfile applications (13) and stand-alone applications (5).	 
 
  They are shown below:	 
   
- _(As of July 2021 in Version 4.1 release)_	 
+ *(As of July 2021 in Version 4.1 release)* 
   
  ![microprofile 4.1 specifications preview](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-4.1-specifications-preview.png "microprofile 4.1 specifications preview")	 
   
- _(Image from official website)_	 
+ *(Image from official website)*	 
  
  Just to add, Quarkus has passed all the Microprofile 3.3 [Technology Compatibility Kit (TCK)](https://jcp.org/en/resources/tdk) tests as shown [here](https://microprofile.io/2021/08/05/microprofile-4-1-is-now-available/) or as in the image below:	 
  
- ![microprofile 4.1 specifications update](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-4.1-specifications.png "microprofile 4.1 specifications update")	 
+ ![microprofile 4.1 specifications update](/engineering-education/getting-hands-on-on-a-microprofile-project/microprofile-4.1-specifications.png)	 
   
- ![Quarkus TCK passed](/engineering-education/getting-hands-on-on-a-microprofile-project/Quarkus-TCK.png "Quarkus TCK passed")	 
+ ![Quarkus TCK passed](/engineering-education/getting-hands-on-on-a-microprofile-project/Quarkus-TCK.png)	 
   
- _(Images from official website)_	 
+*(Images from official website)*	 
 
  Technology Compatibility Kit (TCK) is a suite of tests. It checks for an implementation of a Java Specification Request (JSR) for compliance.	 
 
@@ -175,8 +182,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  | CDI (Jakarta Contexts and Dependency Injection) | provides the base for a growing number of APIs included in MicroProfile |	 
 
  You can read more [here](https://download.eclipse.org/microprofile/microprofile-4.1/microprofile-spec-4.1.html#required-apis).	 
-  
- ****	 
+
  Depending on your project specifications, you can add or remove the microprofile specifications.	 
 
  Head over to the zipped file and extract it. Then, open it up with your IDE.	 
@@ -184,9 +190,9 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  If you are using Visual Studio Code, head over to the section below to see some extensions, you will require installing to support your project.	  
   
  ### Visual Studio Code IDE	 
-
- First, install the needed extensions. These are:	 
+ First, install the needed extensions. 
  
+ These are:	 
  - Microprofile Starter	 
  - Tools for microprofile	 
  - Extension pack for microprofile	 
@@ -205,11 +211,11 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
 
  ![VS Code microprofile extensions](/engineering-education/getting-hands-on-on-a-microprofile-project/VSCode-microprofile-extensions.png "VS Code microprofile extensions")	 
   
- _(Screenshots by Author)_	 
+ *(Screenshots by Author)*
   
   
- Once you are done, head over to the Command Palette using key combinations `Ctrl + Shift + P` or find it in the Menu bar under _View_.	 
-  
+ Once you are done, head over to the Command Palette using key combinations `Ctrl + Shift + P` or find it in the Menu bar under *View*.	 
+
  Search for 'MicroProfile' and select 'Generate a new Microprofile starter project'.	 
   
  It shall generate the project by getting the file from the [microprofile initializer website](http://start.microprofile.io)	 
@@ -217,9 +223,8 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
 
  ![VSCode Generate microprofile starter project](/engineering-education/getting-hands-on-on-a-microprofile-project/VSCode-Generate-microprofile-starter-project.png "VSCode-Generate-microprofile-starter-project")	 
   
- _(Screenshot by Author)_	 
+ *(Screenshot by Author)*	 
 
-  
  Now, in the next over-head pop-up window, set your project:	 
  
  - `Group Id`: to 'com.starter'	 
@@ -230,20 +235,19 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  - `MicroProfile specifications`: Select all	 
  - Set the folder in which your project root folder will lie	 
 
- ![select all microprofile specifications](/engineering-education/getting-hands-on-on-a-microprofile-project/select-all-microprofile-specifications.png "select all microprofile specifications")	 
+ ![select all microprofile specifications](/engineering-education/getting-hands-on-on-a-microprofile-project/select-all-microprofile-specifications.png)	 
  _(Screenshot by Author)	 
 
  - Open it in a new window or the current	 
 
- ![choose if to add it to your workspace or in a new window](/engineering-education/getting-hands-on-on-a-microprofile-project/choose-if-to-add-it-to-your-workspace.png "choose if to add it to your workspace or in a new window")	 
- _(Screenshot by Author)_	 
+ ![choose if to add it to your workspace or in a new window](/engineering-education/getting-hands-on-on-a-microprofile-project/choose-if-to-add-it-to-your-workspace.png)	
+
+ *(Screenshot by Author)*	 
 
  ### IntelliJ IDE	 
+Open IntelliJ IDEA. Create a new project and in the project type on your left-hand side, select 'Microprofile'.	 
 
- Open IntelliJ IDEA. Create a new project and in the project type on your left-hand side, select 'Microprofile'.	 
-
- Set the following:	 
-
+Set the following:
  - `Name`: starter	 
  - `Location`: Set the folder for your project root folder	 
  - `Runtime`: Quarkus	 
@@ -252,25 +256,28 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  - `Project SDK`: 11	 
 
   
- ![Intellij Microprofile start](/engineering-education/getting-hands-on-on-a-microprofile-project/Intellij-Microprofile-start.png "Intellij Microprofile start")	 
- _(Screenshot by Author)_	 
+ ![Intellij Microprofile start](/engineering-education/getting-hands-on-on-a-microprofile-project/Intellij-Microprofile-start.png)	 
+
+ *(Screenshot by Author)*	 
 
  Now, on the next step, select the Specifications; **Select all**.	 
   
  On the top of the window, you shall see the MicroProfile version already set to 3.2.	 
   
- ![Intellij specifications](/engineering-education/getting-hands-on-on-a-microprofile-project/Intellij-specifications.png "Intellij-specifications.png")	 
- _(Screenshot by Author)_	 
+ ![Intellij specifications](/engineering-education/getting-hands-on-on-a-microprofile-project/Intellij-specifications.png)	 
+ 
+ *(Screenshot by Author)*	 
   
  In case you could select WildFly, you would see that you can choose up to 4.0.
+
  Click on finish and wait for the IDE to **finish** indexing of the project.	 
  
- ### Microprofile Project structure	 
+ ### Microprofile project structure	 
  As you can notice, the project has two separate microservices; '**service-a**' and '**service-b**'.	 
   
  Your project folder structure is as shown below:	 
   
- ```shell
+ ```bash
  .	 
  ├── service-a (Folder)	 
  ├── service-b (Folder)	 
@@ -280,16 +287,16 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
 
  In the first microservice, you will see that all the specifications are each in a separate folder under the `src/main/java/com/starter/starter`.	 
 
- These include the _client_, _config_, _health_, _metric_, _openapi_, _resilient_, and _secure_ folders.	 
- As of **service-b**, it has the _client_ and _secure_ folders only.	 
+ These include the *client*, *config*, *health*, *metric*, *openapi*, *resilient*, and *secure* folders.	 
+ As of **service-b**, it has the *client* and *secure* folders only.	 
 
  ### Build the microservices
- 
  Open two separate terminals and align them side to side. This will be useful for you to see them running separately.	 
  On the first terminal, navigate to the '**service-a**' folder.	 
+
  Do it by running from the 'starter' folder:	 
 
- ```shell	 
+ ```bash	 
  cd service-a
  ```	 
   
@@ -297,14 +304,14 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
   
  - **In Maven**:	 	 
   
- ```shell	 
+ ```bash	 
  mvn package	 
  ```	 
   
  - or **in Gradle** using:	 
    
   
- ```shell	 
+ ```bash	 
  ./gradlew build	
  ```	 
 
@@ -322,13 +329,13 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
 
  - In **Maven**:	 
 
- ```shell
+ ```bash
  mvn compile quarkus:dev	 
  ```	 
 
  - or **Gradle**:	 
 
- ```shell	 
+ ```bash	 
  ./gradlew quarkusDev	 
  ```	 
 
@@ -337,7 +344,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  When you access the application via `http://localhost:8080` in the browser it looks as shown below:	 
 
  ![service-a webpage](/engineering-education/getting-hands-on-on-a-microprofile-project/service-a.png "service-a webpage")	
- _(Screenshot by Author)_	 
+ *(Screenshot by Author)*	 
 
  #### Run Service-b	 
 
@@ -347,7 +354,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  Run:	 
  
   
- ```shell
+ ```bash
  java -Dquarkus.http.port=8180 -jar target/starter-runner.jar
  ```	 
 
@@ -364,7 +371,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  Do this by opening the document using a text editor, then copy-paste the text into the site and access the endpoints using the Graphical User Interface (GUI).	 
 
  ![swagger editor](/engineering-education/getting-hands-on-on-a-microprofile-project/swagger-editor.png "swagger editor")
- _(Screenshot by Author)_	 
+ *(Screenshot by Author)*	 
  
  - **Using embedded OpenAPI document viewer:**	 
   
@@ -385,7 +392,7 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  For **Gradle**:	 
  Head over to the 'build.gradle' file found in the 'service-a' folder and add the following piece of code under the dependencies:	 
 
- ```shell	 
+ ```bash	 
  // https://mvnrepository.com/artifact/org.openapitools/openapi-generator	 
  implementation group: 'org.openapitools', name: 'openapi-generator', version: '5.2.0'	 
  ```	 
@@ -397,33 +404,30 @@ At the edge of this course, you will learn how MicroProfiles work and how they a
  That is at `http://localhost:8080/swagger-ui`.	
  It shall look as follows:	 
  
- ![local openapi viewer](/engineering-education/getting-hands-on-on-a-microprofile-project/local-openapi-viewer.png "local openapi viewer")	 
- _(Screenshot by Author)_	 
+ ![local openapi viewer](/engineering-education/getting-hands-on-on-a-microprofile-project/local-openapi-viewer.png)	
+
+ *(Screenshot by Author)*	 
  
  It is useful when you want to test input values, parameters, definitions, and output values.
  As for Open Tracing capability is done using [Jaeger](https://www.jaegertracing.io/download/), head over to the links provided in the page or Readme.md file to configure it and run it.	 
  
- ### Conclusion	 
- 
- MicroProfile is used to set Microservices' standards used in Enterprises Java frameworks.	 
- It has several features and specifications, including but not limited to: Config, JWT Propagation, OpenApi, Health, Metrics, Fault Tolerance, Open Tracing, Restful Web services, JSON-B, JSON-P, Jakarta Annotations, and Jakarta CDI.	 
- Some servers used include:	 Quarkus, Payara Micro, WildFly, Apache TomEE, Hammock, Open Liberty, Helidon, KumuluzEE, and ThornTail.	 
- Different versions have different features and specifications.	 
- This is the tip of the article and a summary of what you have learned is:	 
+ ### Conclusion	
+ MicroProfile is used to set Microservices' standards used in Enterprises Java frameworks. It has several features and specifications, including but not limited to: Config, JWT Propagation, OpenApi, Health, Metrics, Fault Tolerance, Open Tracing, Restful Web services, JSON-B, JSON-P, Jakarta Annotations, and Jakarta CDI.	 
 
+ Some servers used include:	 Quarkus, Payara Micro, WildFly, Apache TomEE, Hammock, Open Liberty, Helidon, KumuluzEE, and ThornTail. Different versions have different features and specifications.	 
+
+ This is the tip of the entire topic, here is a brief summary of what you have learned is:	 
  - What is MicroProfile	 
  - How to initialize a MicroProfile project using the [microprofile initializer](http://start.microprofile.io) site, Visual Studio Code, and IntelliJ IDEA (Ultimate).	 
  - How to build the application microservices separately	 
  - How to run the microprofile services separately in the development and operation mode.	 
  - How to view the OpenAPI documentation via an online Swagger OpenApi editor and locally by adding it as a dependency.	 
 
- ### Further reading	 
-
+ ### Further reading
  - You can check out [this](https://dzone.com/articles/configuring-microservices-with-microprofile-and-ku) article on Configuring MicroProfile microservices on Kubernetes for more knowledge as you try to implement one.	 
  - Try building microprofile projects using Payara Micro, Open Liberty, and WildFly for more insights on the pros and cons and case usages for each.	 
 
- Success in your Development!	 
+ May you have success in your development!	 
 
  ### References	 
-
 - [MicroProfile 4.1 documentation](https://download.eclipse.org/microprofile/microprofile-4.1/microprofile-spec-4.1.html)
