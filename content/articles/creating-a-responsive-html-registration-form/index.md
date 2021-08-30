@@ -15,35 +15,21 @@ images:
     alt: Registration form image example
 ---
 
-Nowadays, HTML forms may be found on a wide range of websites. All such HTML forms are intended to gather data, feedback, and various information from your website's visitors.
+Nowadays, HTML forms may be found on a wide range of websites. All such HTML forms are intended to gather data, feedback, and various information from website's visitors.
 <!--more-->
 
 Contact forms, Login forms, and registration forms are just a few examples. This tutorial will guide you on how to create one.
 
 The registration form has multiple input fields (checkboxes, text areas, submit buttons, radio buttons, etc) with varied input details (email address, name, and age, etc) where the visitor must provide the information required to register for a certain web page.
 
-By the end of the tutorial, you will be able to make a registration form using only HTML and CSS. Isn’t it good?
-
 There are several kinds of the registration forms. In this tutorial, you will get to know how to make a basic responsive HTML registration form.
 
-Our HTML form consists of:
+Our HTML form will consists of:
 
 - First Name / Last Name
 - Username or Email
 - Password / Confirm Password
 - Signup Button
-
-**Table of Content**
-
-- Selecting an editor for HTML.
-- Creating a HTML file.
-- Creating the form.
-- Creating a structure for form
-- Creating a form header
-- Creating form the body [ First name and Last name}
-- Creating form the body [Email and Password]
-- Creating the footer
-- Adding responsiveness to the form
 
 Lets start learning!
 
@@ -77,9 +63,9 @@ There’s hardly any need to get too worked up over it. Unfortunately, no HTML e
 
 #### Creating a HTML File.
 
-Next, inform your text editor that you're going to generate a HTML file. To do this, create a new file and save it with the ".html" extension.
+Next, inform your text editor that you're going to generate a HTML file. To do this, create a new file and save it with the ".html" extension. For instance, "myform.html."
 
-For instance, "myform.html." Once you are done , it should create the following code for you automatically:
+Once you are done , type in the following code:
 
 ```html
 <!DOCTYPE html>
@@ -94,8 +80,9 @@ For instance, "myform.html." Once you are done , it should create the following 
 **Tip**: Some editors will not autofill. That's OK. Simply copy and paste the code above to get the same result.
 
 ### Creating the Form
+In any HTML page, the `<form>` element is used to create a form that could be a contact, registration, or login form.
 
-In any HTML page, the `<form>` element is used to begin a form that could be a contact, registration, or login form. In this tutorial, we are adding a `<form>` element within the `<body>` element.
+In this tutorial, we are adding a `<form>` element within the `<body>` element, as shown below:
 
 ```html
 <!DOCTYPE html>
@@ -121,7 +108,7 @@ The method property specifies the HTTP method to be used by the browser when sub
 
 #### Creating a Structure For form
 
-Once the `<form>` element is in place, we use three additional `<div>` inside it to represent the `<form>` element's header, body, and footer, as seen in the code below:
+Once the `<form>` element is in place, we add three more `<div>` elements inside it to represent the `<form>` element's header, body, and footer, as seen in the code below:
 
 ```html
 form class="signupForm" action="/register" method="post">
@@ -143,7 +130,7 @@ form class="signupForm" action="/register" method="post">
 
 #### Creating a form Header
 
-Within the `.formHeader` element, insert an `<h1>` element.
+Within the `.formHeader` element, insert an `<h1>` element:
 
 ```html
 <!-- form header -->
@@ -196,7 +183,7 @@ Lets now add some HTML form components for `formBody`.
 
 We are constructing a `<div>` with the class `horizontalGroup` inside `formBody`. Then, inside `horizontalGroup`, we will create two more `<div>` elements with the same class name `formGroup`.
 
-The placement of the `formGroup` on the page is indicated by adding an additional left or right class. Inside `formGroups`, there are 2 more HTML elements: `<label>` and `<input>`, as shown below.
+The placement of the `formGroup` on the page is indicated by adding an additional left or right class. Inside `formGroups`, there are two more HTML elements: `<label>` and `<input>`, as shown below.
 
 ```html
 <!-- form body -->
@@ -403,13 +390,13 @@ Now we will add  CSS styling for `FormFooter`.
 
 With the blocks of code above, our form will now look like this one below:
 
-![Hurray we created the form!](/engineering-education/getting-started-with-optimization-in-matlab/final-form.png)
+![Hurray we created the form!](/engineering-education/creating-a-responsive-html-registration-form/final-form.png)
 
 Our next task is adding responsiveness to our form.
 
 #### Adding responsiveness to the Form
 
-Responsiveness is part of CSS. Don’t worry we won’t do heavy coding for it. Just the basic one.
+Responsiveness is part of CSS. Don’t worry we won’t do heavy coding for it.
 
 At first, we need to know what is responsiveness?
 
