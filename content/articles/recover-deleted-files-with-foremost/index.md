@@ -146,3 +146,6 @@ The above command will automatically generate an output folder called output. Th
 In this tutorial, we have discussed the many ways you can use **foremost** to recover your deleted files. You now have all the skills you need to use this powerful free data recovery software. You can now recover your deleted files from the comfort of your home saving you time and money.
 
 Happy data recovery experience!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
