@@ -389,3 +389,6 @@ To start testing, use postman and start sending requests to the respective endpo
 ### Conclusion
 
 Go is a fantastic and quite elegant language. Go aims to speed the efficiency of low-level languages such as C. Go shines most with its ability to utilize multi-core processing, which ensures low memory usage and low GPU power.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
