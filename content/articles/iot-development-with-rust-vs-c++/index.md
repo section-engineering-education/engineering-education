@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /iot-development-with-rust-vs-c++/
 title: Comparing Rust and C++ in IOT Development
-description: This article discusses the development of IoT solutions with both [Rust](https://www.rust-lang.org/) and C++ to help one chose the correct programming language for developing IoT applications and devices.
+description: This article discusses the development of IoT solutions with both Rust and C++ to help one chose the correct programming language for developing IoT applications and devices.
 author: steve-nzovi
 date: 2021-08-30T00:00:00-05:00
 topics: [Languages]
