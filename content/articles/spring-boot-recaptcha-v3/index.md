@@ -1,7 +1,8 @@
 ### Implementing Google reCAPTCHA in a SpringBoot application
 
 ### Introduction
-reCAPTCHA is a system that enables users to protects their sites from bots. The ReCaptcha generates a score that ranges from `0` to `1`, if the score is less than `0.5` there is a possibility the action was invoked by a bot and if the score is greater than `0.5` the action was not invoked by a bot. In this tutorial, you will learn how to Implement Google reCAPTCHA version 3 to protect a login form using SpringBoot. We will intercept the authentication during login and if the score generated is less than `0.5` the user will be requested to enter an OTP sent to their email else the authentication will continue processing. 
+reCAPTCHA is a system that enables users to protects their sites from bots. ReCaptcha generates a score that ranges from `0` to `1`. If the score is less than `0.5`, there is a possibility a bot invoked the action, and if the score is greater than `0.5`, the action was not invoked by a bot. This tutorial will teach you how to Implement Google reCAPTCHA version 3 to protect a login form using SpringBoot. We will intercept the authentication during login. If the score generated is less than `0.5`, the user will be requested to enter an OTP sent to their email, or the authentication will continue processing. 
+
 
 ### Table of Contents
 - [Create new site with Google to verify your captcha response]()
@@ -29,7 +30,7 @@ reCAPTCHA is a system that enables users to protects their sites from bots. The 
 - Intellij IDE
 
 ### Create a new site with Google to verify your captcha response
-[Create a new reCAPTCHA V3 site ](https://www.google.com/recaptcha/admin/create) with any name you want but the domain can be localhost as we will be testing the application locally. Take note of the site key and secret key which will be used later in the application.
+[Create a new reCAPTCHA V3 site ](https://www.google.com/recaptcha/admin/create) with any name you want, but the domain can be localhost as we will be testing the application locally. Take note of the site key and secret key, which we will use later in the application.
 
 ### Create a SpringBoot application using spring initializr
 Go to [Spring Initialzr](https://start.spring.io/) and generate a new project with dependency `Spring Web`, `Spring Security`, `Spring Data JPA`, `Thymeleaf`, `Spring Boot Dev Tools`, `MySQL Driver` and `Lombok`.
