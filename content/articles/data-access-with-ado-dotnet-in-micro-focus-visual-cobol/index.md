@@ -28,7 +28,7 @@ First-class languages are supported by the `.NET` framework's API. `.NET` can ac
 
 It's essentially a set of access and manipulation processes that a developer can utilize to gain access to his or her data.
 
-The best part is that you don't need to install anything, because it's already included in the `.NET` Framework.
+The best part is that you don't need to install anything because it's already included in the `.NET` Framework.
 
 ### Prerequisite
 - Install [Visual Studio Code](https://code.visualstudio.com/).
@@ -37,7 +37,7 @@ The best part is that you don't need to install anything, because it's already i
 
 ### Table of contents
 - [Objective](#objective)
-- [What is data object?](#what-is-a-data-object)
+- [What is a data object?](#what-is-a-data-object)
 - [Basic ADO flow](#basic-ado-flow)
 - [Preparation](#preparation)
 - [Create a Connection](#create-a-connection)
@@ -52,18 +52,18 @@ By the end of this tutorial, the reader will have understood:
 - How to establish a link to the data objects in ADO.NET.
 - Create commands that will help to access the data objects using Micro Focus Visual Studio.
 
-### What is a data object
-A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using an object's identifier like a variable.
+### What is a data object?
+A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using an object's identifier as a variable.
 
 Furthermore, each object has its data type.
 
 For example:
-- Products, sales, and customer are examples of data objects of a sales database.
+- Products, sales, and customers are examples of data objects of a sales database.
 - Patients may be objects of a medical database.
-- Students, professors, and courses may be objects of an University database.
+- Students, professors, and courses may be objects of a University database.
 
 ### Basic ADO flow
-We will start by looking what `SQL Server's namespace` are, that governs data access.
+We will start by looking at what `SQL Server's namespace` are, governs data access.
 
 At the end of this article, we will go over different data providers.
 
@@ -71,9 +71,9 @@ A namespace is a set of symbols often used to distinguish and relate objects of 
 
 As a result of a namespace, every particular collection of objects will have unique names, allowing them to be identified easily.
 
-> `System.Data.SqlClient` is the namespace to remember if you want to connect to SQL Server. The `.NET` data provider for SQL server is located in this namespace. 
+> `System.Data.SqlClient` is the namespace to remember if you want to connect to SQL Server. The `.NET` data provider for the SQL server is located in this namespace. 
 
-To connect to SQL servers in `.NET` framework, you will start by writing the namespace:
+To connect to SQL servers in the `.NET` framework, you will start by writing the namespace:
 
 ```sql
 using System.Data;
@@ -97,24 +97,24 @@ To complete the actions listed above, we will need to import the following class
 ### Preparation
 For this tutorial, we will use a safe console application.
 
-Microsoft's data access technology (ADO.NET application) is one of safe console application. It's a part of the `.NET` framework that connects the `.NET` application to various data sources.
+Microsoft's data access technology (ADO.NET application) is one of the safe console applications. It's a part of the `.NET` framework that connects the `.NET` application to various data sources.
 
 It has access to various basic data streams - standard input, standard output, and standard error.
 
 To begin, we declare the variables and initialize them. One holds the connection attributes, and another holds the SQL statements.
 
-In the working-storage area, you'll find record and data description entries for all the data items (commonly referred as data item description entries).
+In the working-storage area, you'll find record and data description entries for all the data items (commonly referred to as data item description entries).
 
-> According to [IBM](https://www.ibm.com/docs/en/cobol-zos/4.2?topic=overview-working-storage-section), working-storage section describes data records that are not part of data files but are developed and processed by a program or method. It also describes data items whose values are assigned in the source program or method and do not change during execution of the object program.
+> According to [IBM](https://www.ibm.com/docs/en/cobol-zos/4.2?topic=overview-working-storage-section), the working-storage section describes data records that are not part of data files but are developed and processed by a program or method. It also describes data items whose values are assigned in the source program or method and do not change during the execution of the object program.
 
-The working-storage section is a work ground where all the commands are written on as shown in the figure below:
+The working-storage section is a working ground where all the commands are written on as shown in the figure below:
 
 ![working storage section](/engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/storage-section.png)
 
 ```SQL
 sqlConnection type System.Data.SqlClient.SqlConnection.
 sqlDataReader type System.Data.SqlClient.SqlDataReader.
-sqlCommand    type System.Data.SqlClient.SqlCommand.
+sqlCommand type System.Data.SqlClient.SqlCommand.
 ```
 
 These are the essential objects that will allow us to connect to the database engine, and fetch information about the operations.
@@ -143,13 +143,13 @@ From the code above:
   - the connection attributes in `sqlConnection type System.Data.SqlClient.SqlConnection`, and
   - the SQL commands in `sqlCommand type System.Data.SqlClient.SqlCommand`.
 - The command `dataFound type system.Boolean` is used for invoking the `sqlDataReader` to return `true` or `false`.
-- The `recordsRead pic x(20) value spaces` customizes the length of the data to be read.
-- The next three lines of code, we declare the variables ` FirstName, LastName and HomePhone` for customizing the PIC clause.
+- The `recordsRead pic x(20) value spaces` customize the length of the data to be read.
+- In the next three lines of code, we declare the variables ` FirstName, LastName, and HomePhone` for customizing the PIC clause.
 - The last line of code ends the declaration process by prompting that no other junk file should exceed the limit of declared variables.
 
 > It's worth noting that we can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard `.NET` data types.
 
-By enabling this option, we need worry about the data type conversion.
+By enabling this option, we need not worry about the data type conversion.
 
 > In many programming systems, a PIC clause is used to allow the user to customize how text is printed or presented. It describes the general characteristics and editing requirements of an elementary item
 
@@ -166,7 +166,7 @@ Setting up an ODBC connection is complicated.
 
 In ADO, the connection is significantly more straightforward.
 
-One of the key advantage of ADO is that, we no longer need to configure the connection in the ODBC administration panel.
+One of the key advantages of ADO is that we no longer need to configure the connection in the ODBC administration panel.
 
 Instead, we just construct the database connection string, create a database connection, and call the `Open` method for the new object.
 
@@ -209,7 +209,7 @@ set sqlDataReader to sqlCommand::ExecuteReader.
 
 The code above prompts the connection to only fetch the details related to employees. Then, the second line specifies the connection to be made to the `System.Data.SqlClient.SqlCommand` namespace.
 
-We created a working-storage variable to hold the data from the `Select` statement. An SQL command instance `sqlCommand` must be established only after the command string has been generated. 
+We created a working storage variable to hold the data from the `Select` statement. An SQL command instance `sqlCommand` must be established only after the command string has been generated. 
 
 The only parameter necessary for a SQL command class is a connection object. You must specify where to execute the command and the command to execute.
 
@@ -220,7 +220,7 @@ As a result, you will be provided with a data reader object that could be used t
 ### Read the data
 A database connection has been made.
 
-The data should have been returned when we ran a command for execution of the connection.
+The data should have been returned when we ran the command for execution of the connection.
 
 How will you know if any data has been returned?
 
@@ -256,7 +256,7 @@ For example, the reader reads the strings (FirstName, LastName, and HomePhone) a
 
 > If we don't have any data to process, we won't run the Perform loop.
 
-Perform loop contains three `GetString` call that returns the employee's first name, last name & home phone number.
+Perform loop contains three `GetString` calls that return the employee's first name, last name & home phone number.
 
 We keep track of how many records we've read and use the console to display the most recent one.
 
@@ -274,7 +274,7 @@ In contrast, there is too much space between the last name and the phone number,
 
 Why?
 
-Working in a managed environment and using managed code types provides a number of benefits. One of which is the environment's ability to present information in a much more structured and clear manner.
+Working in a managed environment and using managed code types provides several benefits. One of which is the environment's ability to present information in a much more structured and clear manner.
 
 Working-storage specifies the first name as a string entity, and the last name as a normal COBOL data type of `PIC X(20)`, respectively.
 
@@ -309,7 +309,7 @@ This article demonstrated how to use ADO for SQL Server to access data.
 
 Oracle and IBM have both given managed namespaces for their respective database environments, allowing similar capabilities.
 
-You'll need `ODP .NET`, or Oracle Data Provider for `.NET`, if you're dealing with Oracle.
+You'll need `ODP .NET`, or Oracle Data Provider for `.NET` if you're dealing with Oracle.
 
 The [IBM Data Server Provider for .NET](https://www.ibm.com/docs/en/db2/10.5?topic=net-provider-support-microsoft-entity-framework) must be installed for IBM.
 
