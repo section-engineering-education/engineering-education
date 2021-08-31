@@ -2,7 +2,7 @@ Creating Serverless Functions (Faas) with AWS Lambda and Golang
 
 Serverless architecture is a new paradigm that is being used in the development of modern applications. The term "serverless" refers to the abstraction of "servers" from application development. Function-as-a-Service (FaaS) is a serverless method of running modular code on the cloud. You can use FaaS to write code that is triggered by events. For example, when a user clicks on a button in your web application, a specific cloud function is executed.
 
-We will not only look at how to use FaaS in this tutorial, but we will also construct some for others to use. We'll be working in Golang, but the same method can be applied to Python, Node, Java, or any other language or framework you want.
+We will not only look at how to use FaaS in this tutorial, but we will also construct some for others to use through AWS. We'll be working in Golang, but the same method can be applied to Python, Node, Java, or any other language or framework you want.
 
 ### Requirements
 
@@ -213,13 +213,13 @@ type Response struct {
  
 
 func main() {
-
+ // Load the environment variable which has the IAM credentials needed to connect to AWS
  godotenv.Load()
-
+ // Initialize new aws session
  sess := session.Must(session.NewSessionWithOptions(session.Options{SharedConfigState: session.SharedConfigEnable}))
-
+ // Initialize new aws client using IAM credentials
  client := lambda.New(sess, &aws.Config{Region: aws.String("us-east-1"), Credentials: credentials.NewStaticCredentials(os.Getenv("aws_access_key_id"), os.Getenv("aws_secret_access_key"), "")})
-
+ // Prepare request parameters
  request := Info{Firstname: "Oluwatomisin", Lastname: "Bamimore", Age: 16}
 
  payload, err := json.Marshal(request)
@@ -255,7 +255,7 @@ func main() {
  }
 
  
-
+ // Print response from lambda function
  fmt.Println(resp.Profile)
 
 }
@@ -268,7 +268,7 @@ You need to create an [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_
 
 ![sample-program-output](sample-program-output.png)
 
-The program passes in some arguments into the cloud function and returns the result.
+The program passes in some arguments (json format) into the cloud function and returns the result.
 
 ### Conclusion
 
