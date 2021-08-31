@@ -1,8 +1,8 @@
 ### Introduction
 
-A PHP Regular Expression, commonly known as RegEx, is a sequence of letters that form a search pattern. When searching for data in text, one can use this search method to define what he wants.
+A PHP Regular Expression, commonly known as RegEx, is a group of letters and characters that form a search pattern everytime a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she  wants.
 
-A RegEx can be a single letter or a more complex pattern. These expressions can be used to perform all types of text search and replacements.
+A RegEx is always a single letter or a group of letters forming a more complex pattern. RegEx can therefore be used to perform all types of text searches and replacements.
 
 ### Table of contents
 
@@ -31,15 +31,15 @@ PHP RegEx functions are made of delimiters, pattern and variation of choice. Bel
 $ exp = "/ category / i";
 ```
 
-In the example above, `/` with the delimiter, the `category` is a searchable pattern, and finally, the `i` is used to make the search case-insensitive. The delimiter can be any character. The most common delimiter is slash forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
+In the example above, the delimiter `/` is used , the `category` is a searchable pattern, and finally, the `i` is used to ensure search case-insensitivity. The delimiter can be any character. The most common one is usually slash forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
 
 ### Examples of RegEx functions
 
-There are numerous functions in PHP that are used together with the RegEx functions. The functions of `preg_match ()`, `preg_match_all ()` and `preg_replace ()` are some of the most widely used:
+There are numerous functions in PHP that are used together with the RegEx functions. The functions of `preg_match ()`, `preg_match_all ()` and `preg_replace ()` are most frequently used in PHP programming:
 
 - The `preg_match ()` function
 
-This function is used to determine whether a pattern is found in the subject of the search or not. It outputs a one when the search is positive and a zero if the search is negative.
+This function is used to find out whether a pattern is present in the subject of the search or not. It outputs a one when the search is positive and a zero if the search is negative.
 Below is a code illustration that shows how this function is used:
 
 ```php
@@ -59,7 +59,7 @@ This code searches for the pattern `category` in the string 'In which category a
 
 - The `preg_match_all ()` function
 
-This function is used to count the number of times the pattern is found in the search criteria. It outputs the number of times the pattern was obtained in the search criteria. The number can always be a zero when the pattern is not found.
+This function is used in counting the number of times a search pattern is present in the search criteria. It then outputs the result. The number can always be a zero when the pattern is not found.
 Below is a code illustration that shows how this function is used:
 
 ```php
@@ -74,7 +74,7 @@ echo preg_match_all ($ pattern, $ string2);
 ?>
 ```
 
-This code searches for the pattern `beautiful` in `string2` and returns the number of positive matches.
+This code searches for the pattern `beautiful` in `string2` and displays the number of positive matches.
 
 - The `preg_replace ()` function
 
@@ -97,17 +97,17 @@ This code searches for all the instances of the pattern `cold` in string3, repla
 
 ### Modifiers used with RegEx functions
 
-Modifiers are used to transpose how a search is carried out. Below are some modifiers discussed briefly.
-- u - This modifier is used to allow for searches on patterns encoded with the UTF-8.
+Modifiers transposes how a search is conducted on a search phrase. Below are some modifiers discussed briefly.
+- u - This modifier allows for searches on patterns encoded with the UTF-8.
 - i - This modifier allows for case-insensitive searches on a string.
-- m - This modifier allows for searches on multiple lines at the same time.
+- m - This modifier allows for concurrent searches on multiple lines.
 
 ### PHP RegEx patterns
 
 This describes how the search patterns are decided. A pair of box brackets are used to enclose a list of characters. The brackets specify the range of the search, as discussed below:
 
 1. [^abd]- This specifies that any character can be found except those in the bracket list.
-2. [cdef]-This requires that one character from the list in the brackets should be found in the string during a search.
+2. [cdef]-This requires that one of the listed characters in the brackets should be present in the string during a search.
 3. [100-200]- This specifies that one number can be found from the specified range of 100 to 200.
 
 
@@ -116,7 +116,7 @@ This describes how the search patterns are decided. A pair of box brackets are u
 Brackets () are used for the grouping of parts of search patterns. They also come in handy in cases where quantifiers are being added to the search patterns.
 An example is used to illustrate it, as shown below:
 
-Use the collection to search for the word "hippopotamus" by searching for hip followed by two "po" conditions:
+Use the collection to look for "hippopotamus" through searching for hip and two "po" conditions:
 
 ```php
 <? php
