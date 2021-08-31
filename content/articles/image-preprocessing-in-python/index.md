@@ -6,17 +6,16 @@ url: /image-preprocessing-in-python/
 title: Getting Started with Image Preprocessing in Python
 description: In this article, we will understand and implement image preprocessing techniques used in most computer vision applications.
 author: adhinga-fredrick
-date: 2021-08-31T00:00:00-04:00
+date: 2021-08-31T00:00:00-04:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/image-preprocessing-in-python/hero.jpg
-   alt: Image Preprocessing in Python example image
+  - url: /engineering-education/image-preprocessing-in-python/hero.jpg
+    alt: Image Preprocessing in Python example image
 ---
 Image data processing is one of the most under explored problems in the data science community. Every developer has an unique way of doing it. Some of the tools and platforms used in image preprocessing include Python, Pytorch, OpenCV, Keras, Tensorflow, and Pillow.
 <!--more-->
-
 ### Introduction
 When building a machine learning/computer vision project, one thing we always need is data. In this case, image data. 
 
