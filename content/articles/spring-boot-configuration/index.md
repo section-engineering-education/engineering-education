@@ -95,7 +95,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public class TestController {   
 
     // Inject the test.property variable above into the javaHome field.
     @Value("${test.property}")
@@ -107,7 +107,7 @@ public class TestController {
         return javaHome;
 
     }
-
+    
 }
 ```
 
@@ -177,6 +177,7 @@ You could implement it for a **dev** environment like so:
 @Profile("dev")
 @Configuration
 public class DevEnvironment implements AppEnvironment{
+
     @Override
     public String getJWTSecret() {
         return "secret";
@@ -186,6 +187,7 @@ public class DevEnvironment implements AppEnvironment{
     public String getClientUrl() {
         return "http://localhost:8100";
     }
+
 }
 ```
 
@@ -200,6 +202,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("prod")
 @Configuration
 public class ProdEnvironment implements AppEnvironment{
+
     @Override
     public String getJWTSecret() {
         return "this is a more secure secret you'll never guess";
@@ -209,6 +212,7 @@ public class ProdEnvironment implements AppEnvironment{
     public String getClientUrl() {
         return "Some URL";
     }
+
 }
 ```
 
@@ -235,6 +239,7 @@ import java.util.List;
 
 @Service
 public class ExampleService {
+
     private final Environment environment;
     private final List<String> privateList = new ArrayList<>();
 
@@ -253,6 +258,7 @@ public class ExampleService {
         }
         return privateList;
     }
+
 }
 ```
 
