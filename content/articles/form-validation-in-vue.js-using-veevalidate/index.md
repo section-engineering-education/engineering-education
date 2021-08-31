@@ -14,7 +14,7 @@ images:
     alt: form-validation-in-vue.js-using-veevalidate
 ---
 
-As technology evolves we are posed with challenges of creating modern solutions, it's fundamental to validate your forms in the browser. This saves on application resources and improves user experience, Vue has its built-in validation but recommends libraries such as `Vee Validate`, tested to work on all browsers.
+As technology evolves we are posed with challenges of creating modern solutions. It's fundamental to validate your forms in the browser. This saves on application resources and improves user experience, Vue has its built-in validation but recommends libraries such as `Vee Validate`, tested to work on all browsers.
 
 In this tutorial, we will discuss and set up form validation using the vee-validate library.
 
@@ -200,7 +200,7 @@ We can now bind our object to the _form_ component
 <vee-form :validation-schema="schema">
 ```
 
-We are done with step 3, is time to set up the error component. Below the _field_ component define the _ErrorMessage_ component with some basic styling and the _name_ identifier as below:
+We are done with step 3. Next, we will set up the error component. Below the _field_ component define the _ErrorMessage_ component with some basic styling and the _name_ identifier as below:
 
 ```js
 <ErrorMessage class="text-red-600" name="username" />
@@ -273,7 +273,7 @@ export default {
 
 We are having aliases for some of our [rules][https://vee-validate.logaretm.com/v4/guide/global-validators#vee-validaterules], the `apha_spaces` and `not_one_of`, this is to escape linting and improve readability.
 
-Now that we have our rules in place, open the template file and update the input fields and schema object. Update schema object, multiple rules will be separated with a pipe character.
+Now that we have our rules in place, open the template file and update the `input fields` and `schema object`. To update the schema object, multiple rules will be separated with a pipe character.
 
 ```js
 schema: {
@@ -288,9 +288,7 @@ schema: {
 
 We can update our input elements and ErrorMessage as illustrated above in the _username_ example, our form should be validated.
 
-When updating the input elements you will have trouble with the drop down field, this will give us a chance to explore another _field_ property.
-
-The _as_ property, it defaults to an input element but allows us to render a root node.
+When updating the input elements, you will have trouble with the drop down field, this will give us a chance to explore another _field_ property, the _as_ property. It defaults to an input element but allows us to render a root node.
 
 The _Country field_ we be updated to match the above:
 
