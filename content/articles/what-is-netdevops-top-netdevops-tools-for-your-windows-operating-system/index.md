@@ -10,7 +10,7 @@ date: 2021-08-30T00:00:00-20:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/hero.png
+  - url: /engineering-education/what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/hero.png
     alt: NetDevOps example
 ---
 As an engineer, you must have heard of the term DevOps. This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker to constantly develop software solutions for your clients at high velocity to remain competitive in the market.
