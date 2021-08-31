@@ -1,152 +1,184 @@
 ---
-title: Creating a React app using Vite
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-react-app-using-vite/
+title: Creating a React.js App using Vite
+description: This tutorial will guide you on how to create a React application using Vite. It also highlights the benefits and features of Vite.
+author: neema-muganga 
+date: 2021-08-31T00:00:00-04:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-react-app-using-vite/hero.jpg
+    alt: Creating a React.js app using Vite Hero Image
 ---
-
-React.js is a Javascript library used to create the frontend of a single-page web application ***(SPAs)***. This means it is used to develop User Interfaces 
-for web projects, by reducing the complex UI of the application into components, using relatively least possible code as compared to using HTML, CSS, and Javascript.
-
-If you are coming from the SPA development context using React.js, you are probably acquainted with the normal way of starting a React application using the **"npx create-react-app ***app-name***"** command. If this is unknown to you, you probably want to visit [this](https://create-react-app.dev/docs/getting-started/) page that clearly lays out the step-by-step guide on how to create one using **"npm"**.
-
-
+React.js is a JavaScript library used to create the frontend of a single-page web application. It reduces the complexity of an application by dividing the UI into small and more manageable components.
 <!--more-->
-This article will talk of an alternative way of setting up a React application using Vite. Below, we will appreciate what Vite is, why you should use it, features of Vite, and finally cover the process of creating a React application using Vite. 
-Stay tuned!.
+We usually create a React application using the `npx create-react-app app-name` command. You can learn more about creating a React app from [here](https://create-react-app.dev/docs/getting-started/).
 
+This article discusses an alternative way of setting up a React application using Vite. 
+
+We will focus on:
+- Meaning of Vite.
+- Benefits of Vite.
+- Features of Vite.
+- How to create a React application using Vite. 
 
 ### Prerequisites
-Care to know the concepts and install tools of what follows next before going further with this article.
-1. An overview of React.js.
-2. Concept of **Hot Module Replacement** in React. [This](https://webpack.js.org/guides/hot-module-replacement/) page talks more about the same.
-3. Have nodejs installed. Install from [here](https://nodejs.org/en/download/). Node provides the node package manager **(npm)** used to configure dependencies required to set up the application. Learn ***npm*** from [here](https://docs.npmjs.com/cli/v6/commands/npm).
+To follow along, you need a basic understanding of:
+1. React.js.
+2. [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/) page talks 
 
-
-### Table of contents
-1. What Vite is?
-2. Why use Vite?
-3. Features of Vite
-4. Process of creating a react application using Vite.
+You should also have installed [Node](https://nodejs.org/en/download/) on your computer.
+Node provides the Node Package Manager **(npm)** used to configure dependencies in a React application.
 
 ### What Vite is?
-Vite is a build tool that seeks to ensure a relatively faster development experience for developers. 
-Evan You, creator of Vue.js, a Javascript frontend framework created Vite also.
+Vite is a build tool that promotes a faster development experience for developers. It was created by Evan You.
 
-Vite as a tool is split majorly into two sections:
-- A flash-like speed dev server, that provides swift **Hot Module Replacement**(HMR), owing to the dev server's enhanced rich features as compared to native ES modules. You can see what ES native modules are and how they work in a module setup from [this](https://flaviocopes.com/es-modules/) link. Not so long, we will come to terms with how Vite enhances the HMR feature.
-- Vite has a build command that bundles the developer's code with **Rollup**, a Javascript module bundler that does a compilation of simple pieces of code and builds them into rather complex products like a library or an application. You may want to understand Rollup more and how you could set it up. So head [here](https://rollupjs.org/guide/en/).
-  Rollup comes pre-configured and therefore produces static applications or what they call static assets that are highly optimized for production.
+[Vite](https://vitejs.dev/) supports the following:
 
-### Why use Vite?
-A developer's productivity will always be enhanced by many factors. Performance and speed of the developed application is one. It is only common to experience slow loading of the dev server as an application grows more complex, thanks to Javascript. Javascript causes the bottleneck in performance from its tools. 
-Vite resolves this issue by making use of the Esbuild, which is a dependency pre-bundler that makes the pre-bundling of dependencies quite fast compared to normal Javascript-based bundlers. This results in the loading of the dev server taking even seconds, and the Hot Module Replacement also taking few seconds each time a developer makes edits to the code.
+1. **Hot Module Replacement**
+A fast development server, that provides swift **Hot Module Replacement**(HMR), due to its enhanced features. 
+
+You can read more about `ES native modules` from [here](https://flaviocopes.com/es-modules/).
+
+2. **Rollup**
+Vite has a build command that bundles the developer's code with **Rollup**. 
+
+This is a JavaScript module bundler that compiles simple pieces of code and builds them into complex applications. 
+
+Since `Rollup` is pre-configured, it's easy to generate static applications that are highly optimized for production.
+
+You can access more information about `Rollup` from [here](https://rollupjs.org/guide/en/).
+
+### Benefits of Vite
+A developer's productivity is influenced by many factors including performance and speed. 
+
+JavaScript can cause an application to slow down depending on its complexity. Vite resolves this issue by using [Esbuild](https://esbuild.github.io/).
+
+EsBuild is a dependency pre-bundler that enhances the pre-bundling of dependencies than other frameworks. This results in increased server speeds and Hot Module Replacement.
 
 ### Features of Vite
-Already, we have seen that Vite has several properties as a build tool.
-1. Starting the dev server instantly.
-2. Very fast Hot Module Replacement feature.
-3. It has its build process optimized as a result of the pre-bundling of the dependencies.
+The key features of Vite include:
+1. Instant server start.
+2. Fast Hot Module Replacement.
+3. Optimized build process.
 
-Without a doubt, you now understand Vite well enough. We will get down to the process of using it to create a React application now.
-Open your command-line interface(CMD) and create a directory where you will be setting up the application and then navigate into it.
-Now you are ready to get started.
+Let's now create a React application using Vite.
 
-### Process of creating a react application using Vite.
-> Confirm that you have navigated into the folder you would want to create the application in as below.
+### Creating a react application using Vite.
+Navigate to your desktop and create a new folder. This directory will store all of our files.
 
-![Vite Directory](/engineering-education/creating-a-react-app-using-vite/ViteTut.png)
+Next, launch a command window and navigate to the app's directory, as shown below:
 
-I will be using **npm** in this article but in case you prefer to use **yarn** visit the official Vite documentation which you can access from [this](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) link.
+![Vite Directory](/engineering-education/creating-a-react-app-using-vite/viteTut.png)
 
-Write the following command in your CLI.
+Note that we will be using  **npm** in this tutorial. However, if you prefer **yarn**, you can access it from [here](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+
+Write the following command in your `CLI`.
 
 ```bash
 npm init vite
 ```
-Add a project name and a package name you prefer as I have.
+
+We need to add a project and package name, as demonstrated below:
+
 ![Vite project](/engineering-education/getting-started-with-sessions-in-php/viteproject.png)
 
-You will then select a framework and a variant like in the images that follow. Remember we are using react so scroll down to select react for both framework and variant, and hit enter. 
+We then need to select React as the framework and variant: 
+
 ![framework](/engineering-education/creating-a-react-app-using-vite/framework.png)
+
 ![variant](/engineering-education/creating-a-react-app-using-vite/variant.png)
 
-Our project is now created. All you should do now is install then run it.
+Our project is now created. Let's install and then run it.
+
 ![install](/engineering-education/creating-a-react-app-using-vite/install.png)
 
-Move into the created project while you still are in your command line. In my case, ***ViteTutoral*** and type the command that follows.
+In the terminal, navigate into the generated project. In my case, `ViteTutoral` and type the command below:
 
 ```bash
 npm install
 ```
-![installing](/engineering-education/creating-a-react-app-using-vite/installing.png)
-This command installs every required dev dependencies which you can access from the **package.json** file and eventually, it creates a **node_modules** folder
-which can be viewed as an external modules' cache that is depended upon by your project.
 
-Your ***package.json*** file will look like this, of course with the project name being what you chose.
+![installing](/engineering-education/creating-a-react-app-using-vite/installing.png)
+
+This command installs the required dev dependencies which you can access from the `package.json` file. 
+
+It also creates a `node_modules` folder which can be viewed as an external modules' cache.
+
+Your `package.json` file should look, as shown below:
+
 ![Packages file](/engineering-education/creating-a-react-app-using-vite/package.png)
 
-Just one more command, hit enter, and we are done setting up Vite and React. 
+Finally, include the following command to start the dev server:
 
 ```bash
 npm run dev
 ```
+
 ![Running app](/engineering-education/creating-a-react-app-using-vite/run.png)
 
-Copy and paste the local server link. And what do you know?! You have React and Vite running on your local server. Congratulations!
+Copy and paste the provided link on your browser. You now have React and Vite running on your local server. Congratulations!
+
 ![Local app](/engineering-education/creating-a-react-app-using-vite/app.png).
 
-> **npm run serve** command does the app build and renders the production version's preview. **npm run dev** gets the development server started.
+> **npm run serve** command does the app build and renders the production version while **npm run dev** initializes the development server.
 
-If you open your project folder from your editor, you will see different files among which is the **main.jsx** file. Whatever we saw on the browser was the code in **App.jsx** that is rendered from the ***main.jsx*** file.
+When you open the project folder in your code editor, you will see different files among which is the `main.jsx` file. 
+
+The code responsible for the browser's output is in the `App.jsx` and is rendered from the `main.jsx` file.
+
 ![files](/engineering-education/creating-a-react-app-using-vite/main.png).
 
+Let's create a simple application to learn more about Vite.
 
-We could add fun to our learning by creating a simple Application that outputs our experience using Vite, in few statements.
+Include the code below in the `App.jsx`` file:
 
-Edit the ***App.jsx*** file with the code below and save.
 ```JSX
 import React from 'react'
 import './App.css'
 
 function App() {
-  
+  return (
+    <div className="App">
+        <h1>Working with Vite</h1>
+        <p>Hello There! This was such a first fun experience creating a React app using Vite.
+          The lightning-fast starting of the dev server is such an amazing experience while using this tool compared to the normal<b>npx create-react-app (app-name) way.</b>
+          Now I will run the **"npm run serve"** command to experience the instant HMR experience that Vite provides.
+        </p>
 
-  return (
-    <div className="App">
-        <h1>Working with Vite</h1>
-        <p>Hello There! This was such a first fun experience creating a React app using Vite.
-          The lightning-fast starting of the dev server is such an amazing experience while using this tool compared to the normal <b>npx create-react-app (app-name) way.</b>
-          Now I will run the **"npm run serve"** command to experience the instant HMR experience that Vite provides.
-        </p>
-
-        <h1>Happy Coding!</h1>
-   </div>
-  )
+        <h1>Happy Coding!</h1>
+   </div>
+  )
 }
 
 export default App
 ```
-or like in this image.
-![appcode](/engineering-education/creating-a-react-app-using-vite/appcode.png).
 
-Now head to your terminal and run **npm run dev** command again and follow the local link provided. 
+Now head to your terminal and run the **npm run dev** command again and follow the provided local link. 
 
-You did really great! We have created our simple React+Vite app that looks like this:
+We have now created our simple React+Vite app that looks like this:
+
 ![finalapp](/engineering-education/creating-a-react-app-using-vite/finalapp.png).
 
+> Note that in Vite, **index.html** file is not placed in the public folder as in React. This HTML file has a `<script type="module" src='..'></script>` module which is essentially the point of entry of a React app.
 
-> In Vite, **index.html** file is not placed in the public folder as in React. This HTML file has a ***<script type="module" src='..'></script>*** script-type module, essentially the point of entry a React app has.
+You will also realize that the `%PUBLIC_URL%` option is missing. This placeholder maps any static files within React's public folder.
 
+`%PUBLIC_URL%` is not required in Vite due to the automatic rebasing of URLs in the `index.html` file.
 
-> Furthermore, you realize ***%PUBLIC_URL%*** misses. This placeholder maps any static files within React's public folder.Therefore, because of the automatic rebasing of URLs in the index.html file for Vite, %PUBLIC_URL% is not required.
+### Conclusion
+This article has discussed how to create a React + Vite app using the Vite build tool. It also highlighted the features and benefits of Vite.
 
-
-Great Job!
-
-
-### Wrap Up
-This article is intended to teach you how to create a React+Vite app using the Vite build tool. I believe the step-by-step guide made the concept more clear.
-You can create your own application using the process and see how the fast HMR feature makes development fun.
+You can, therefore, use the knowledge and skills acquired from this tutorial to craft more quality applications.
 
 Good luck!
 
-### References
+### Further reading
 -[The Vite guide documentation](https://vitejs.dev/guide/)
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
