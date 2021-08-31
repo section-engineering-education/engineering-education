@@ -130,3 +130,6 @@ The controller will then respond to the browser based on the `HTML` file from th
 In this tutorial, we have covered the basics of Model-View-Controller Architecture. We have also seen how the MVC architecture works.
 
 The most exciting thing about MVC is that it is not a single pattern. Instead, it is a set of patterns that are used together to build a complex application.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
