@@ -220,11 +220,21 @@ As a result, you will be provided with a data reader object that could be used t
 ### Read the data
 A database connection has been made.
 
-The data should have returned when we formed and ran a command against the connection. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. True will be the value if there is information. "False" will be returned if no data has been read. DataFound will be set by adding a returning line to our read statement, and then checking if we have any data to pry from the filesystem. 
+The data should have been returned when we ran a command for execution of the connection.
 
-The Perform statement is used since we don't know how much data we'll have to deal with. The function we'll use is "GetString," and it'll return a string to a variable we've specified in WORKING-STORAGE based on an ordinal location inside the dataset. Always remember that when working with arrays,.NET utilizes offset zero, thus the first field we'll access will be zero, followed by 1 and then 2.
+How will you know if any data has been returned?
 
-Consider the following code for reading data as an example: 
+We'll use the `Read` method to get data from the data reader object. This method produces a boolean result that indicates whether data was read or not.
+
+`DataFound` will be set by adding a return line to the read statement, and then checking if we have any data from the filesystem. 
+
+The `Perform` statement is used since we might not know the size of the data that we're dealing with.
+
+This function we use "GetString" that returns a string to a variable we've specified earlier.
+
+> Always remember that when working with arrays, `.NET` uses zero-indexing.
+
+The following code helps in reading the data: 
 
 ```sql
 set dataFound to true.
@@ -240,18 +250,46 @@ perform with test before until dataFound not equal to true
 end-perform.
 ```
 
-From the command above, we invoke the data reader to read all the data values of the variables we had earlier declared in the `Preparation` heading. For example, the reader reads the strings(FirstName, LastName, and HomePhone) and then display their record using the code `display "record: "`. For every string the reader reads it returns the data found sequence loop until this command returns data found is not true. 
+From the code above, we invoke the data reader to read all the data values of the variables that we had earlier declared in the `Preparation` heading.
 
-We did a 'primer' read of the data before starting the Perform loop, as you can see. This is noteworthy because if we don't have any data to process, we won't run the Perform loop. Perform loop contains three `GetString` calls, which return the employee's first name, last name & home phone number. We keep track of how many records we've read and use the console to display the most recent one. Finally, we check to see if there is any more data to process, and if there is, we either repeat the method or exit the Perform loop.
+For example, the reader reads the strings (FirstName, LastName, and HomePhone) and then displays their record using the code `display "record: "`.
+
+> If we don't have any data to process, we won't run the Perform loop.
+
+Perform loop contains three `GetString` call that returns the employee's first name, last name & home phone number.
+
+We keep track of how many records we've read and use the console to display the most recent one.
+
+Finally, we check to see if there is any more data to process. If we have more data to process, we either repeat the method or exit the Perform loop.
 
 When you run the sample application, the following data should be displayed:
 
 ![output of our project](/engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/output.png)
 
-Is there anything out of place? Perhaps there's a little something off about this picture. In contrast, there is too much space between the last name and the phone number, while there is just enough between the first and last names. Why? Working in a managed environment and using managed code types provides a number of benefits, one of which is the environment's ability to present information in a much more structured and clear manner. Working-Storage specifies the first name as a string entity, and the last name as a normal COBOL data type of 'PIC X(20)', respectively. Our data is automatically scaled based on how many non-space characters are present when we display it. The amount of characters defined by the COBOL data type is displayed, which in this example is ‘20.' Experiment with the definitions in the section Working-Storage. Change the data type of the last name to ‘string' to see how it affects the display.
+Is there anything out of place?
+
+Perhaps, there is something off about this picture.
+
+In contrast, there is too much space between the last name and the phone number, while there is just enough between the first and last name.
+
+Why?
+
+Working in a managed environment and using managed code types provides a number of benefits. One of which is the environment's ability to present information in a much more structured and clear manner.
+
+Working-storage specifies the first name as a string entity, and the last name as a normal COBOL data type of `PIC X(20)`, respectively.
+
+> The data is automatically scaled based on the number of non-space characters.
+
+The amount of characters defined by the COBOL data type is displayed, which in this example is `20`.
 
 ### Housekeeping
-After that, we processed all of our information. As a result, the Perform loop is terminated. We must close the data reader and the connection before we can terminate the program. On the console, we display a message and wait for the user to quit by pressing the enter key. To show you the screen display, we run the `Accept` statement. The following is the housekeeping code:
+After processing all the information, the `Perform` loop is terminated.
+
+We must close the data reader and the connection before we can terminate the program.
+
+On the console, we display a message and wait for the user to quit by pressing the `Enter` key.
+
+The following is the housekeeping code:
 
 ```SQL
 invoke sqlDataReader::Close().
@@ -261,20 +299,35 @@ accept junk from console.
 
 goback.
 ```
-The first line in the above code closes the SQL data reader we initiated in the `Read data` heading, the second closes the SQL database connection we had earlier created in the `create connection` heading, the third line of code shows the dialog display to prompt the user to hit the enter key to implement the two lines of commands above. 
 
-### Other Data Providers
-This article demonstrated how to use ADO for SQL Server to access data. Oracle and IBM have both given managed namespaces for their respective database environments, allowing for similar capability.
+- The first line in the above code closes the SQL data reader that we initiated in the `Read data` heading.
+- The second line closes the SQL database connection we had earlier created in the `create connection` heading.
+- The third line of code shows the dialog display to prompt the user to hit the `Enter` key to implement the two lines of commands above. 
 
-You'll need `ODP .NET`, or Oracle Data Provider for .NET, if you're dealing with Oracle. Here's where you can learn more about ODP . NET. Oracle.DataAccess.The client is the namespace you'll be working with. Go to the Oracle manual for further information.
+### Other data providers
+This article demonstrated how to use ADO for SQL Server to access data.
 
-The [IBM Data Server Provider for.NET](https://www.ibm.com/docs/en/db2/10.5?topic=net-provider-support-microsoft-entity-framework) must be installed for IBM. If you're using IBM DB2, you'll be dealing with IBM.Data.DB2, and if you're using Informix, you'll be working with IBM.Data.Informix.
+Oracle and IBM have both given managed namespaces for their respective database environments, allowing similar capabilities.
+
+You'll need `ODP .NET`, or Oracle Data Provider for `.NET`, if you're dealing with Oracle.
+
+The [IBM Data Server Provider for .NET](https://www.ibm.com/docs/en/db2/10.5?topic=net-provider-support-microsoft-entity-framework) must be installed for IBM.
+
+If you're using `IBM DB2`, you'll be dealing with I`BM.Data.DB2`, and if you're using `Informix`, you'll be working with `IBM.Data.Informix`.
 
 ### Wrap-Up
-Data access in the Microsoft .NET environment can assist save time, automate operations, and simply show data. The steps provided in this article should assist you in comprehending the processing requirements. This article demonstrated how to develop ADO-based software by hand. Additionally, Micro Focus has provided an ADO Connection Editor and an OpenESQL utility for developing SQL-enabled source code as additional support.
+Data access in the Microsoft `.NET` environment can save time, automate operations, and simply show data.
+
+The steps provided in this article should assist you in comprehending the processing requirements.
+
+This article demonstrated how to develop ADO-based software by hand.
+
+Additionally, Micro Focus has provided an `ADO Connection Editor` and an `OpenESQL` utility for developing SQL-enabled source code as additional support.
 
 ### Conclusion
-In this article, we have learned how to access data with ADO.NET In Micro Focus Visual COBOL. We also have learned about the basic ADO Flow of data, the Preparation, how to create a Connection, creating a Command, read the Data, understood what housekeeping is, knowing other data providers, and finally understand what Wrap-Up is.
+In this article, we have learned how to access data with ADO.NET.
+
+In Micro Focus Visual COBOL, we also have learned about the basic ADO Flow of data, the preparation, how to create a connection, creating a command, reading the data, understood what housekeeping is, and getting to know about other data providers.
 
 ### Further reading
 - [Function to Create an ADO Connection](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/348985/function-to-create-an-ado-connection)
