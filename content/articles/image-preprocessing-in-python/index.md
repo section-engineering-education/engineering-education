@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/image-preprocessing-in-python/hero.jpg
     alt: Image Preprocessing in Python example image
 ---
-Image data processing is one of the most under explored problems in the data science community. Every developer has an unique way of doing it. Some of the tools and platforms used in image preprocessing include Python, Pytorch, OpenCV, Keras, Tensorflow, and Pillow.
+Image data processing is one of the most under-explored problems in the data science community. Every developer has a unique way of doing it. Some of the tools and platforms used in image preprocessing include Python, Pytorch, OpenCV, Keras, Tensorflow, and Pillow.
 <!--more-->
 ### Introduction
 When building a machine learning/computer vision project, one thing we always need is data. In this case, image data. 
@@ -150,7 +150,7 @@ Also referred to as _data re-scaling_, it is the process of projecting image dat
 
 Normalization is usually applied to convert an image's pixel values to a typical or more familiar sense. 
 
-It's benefits include:
+Its benefits include:
 
 - Fairness across all images - For example, scaling all images to an equal range of [0,1] or [-1,1] allows all images to contribute equally to the total loss rather than when other images have high and low pixels ranges give strong and weak loss, respectively.
 
@@ -185,7 +185,7 @@ For this tutorial, we shall use **Keras's** `ImageDataGenerator` class to augmen
 
 In addition, it supports augmentation techniques such as flips, rotations, brightness change, etc.
 
-Let's now look at the mostly used data augmentation techniques:
+Let's now look at the most used data augmentation techniques:
 
 ##### Shifting
 This is the process of shifting image pixels horizontally or vertically.
@@ -216,11 +216,11 @@ fig, im = plt.subplots(nrows=1, ncols=3, figsize=(15,15))
 # generate batch of images
 for i in range(3):
 
- 	# convert to unsigned integers
-	image = next(it)[0].astype('uint8')
+    # convert to unsigned integers
+    image = next(it)[0].astype('uint8')
  
-	# plot image
-	im[i].imshow(image) 
+    # plot image
+    im[i].imshow(image) 
 ```
 
 Output
