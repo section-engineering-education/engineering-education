@@ -6,8 +6,8 @@ url: /creating-a-react-app-using-vite/
 title: Creating a React.js App using Vite
 description: This tutorial will guide you on how to create a React application using Vite. It also highlights the benefits and features of Vite.
 author: neema-muganga 
-date: 2021-08-31T00:00:00-04:00
-topics: []
+date: 2021-08-31T00:00:00-04:05
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -28,10 +28,10 @@ We will focus on:
 
 ### Prerequisites
 To follow along, you need a basic understanding of:
-1. React.js.
-2. [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/) page talks 
+1. [React.js](https://reactjs.org/).
+2. [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/) page talks. 
 
-You should also have installed [Node](https://nodejs.org/en/download/) on your computer.
+You should also have [Node.js](https://nodejs.org/en/download/) installed on your computer.
 Node provides the Node Package Manager **(npm)** used to configure dependencies in a React application.
 
 ### What Vite is?
@@ -39,12 +39,12 @@ Vite is a build tool that promotes a faster development experience for developer
 
 [Vite](https://vitejs.dev/) supports the following:
 
-1. **Hot Module Replacement**
-A fast development server, that provides swift **Hot Module Replacement**(HMR), due to its enhanced features. 
+#### 1. Hot Module Replacement
+A fast development server, that provides swift **Hot Module Replacement** (HMR), due to its enhanced features. 
 
 You can read more about `ES native modules` from [here](https://flaviocopes.com/es-modules/).
 
-2. **Rollup**
+#### 2. Rollup
 Vite has a build command that bundles the developer's code with **Rollup**. 
 
 This is a JavaScript module bundler that compiles simple pieces of code and builds them into complex applications. 
@@ -73,7 +73,7 @@ Navigate to your desktop and create a new folder. This directory will store all 
 
 Next, launch a command window and navigate to the app's directory, as shown below:
 
-![Vite Directory](/engineering-education/creating-a-react-app-using-vite/viteTut.png)
+![Vite Directory](/engineering-education/creating-a-react-app-using-vite/viteTut.PNG)
 
 Note that we will be using  **npm** in this tutorial. However, if you prefer **yarn**, you can access it from [here](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
 
@@ -85,17 +85,17 @@ npm init vite
 
 We need to add a project and package name, as demonstrated below:
 
-![Vite project](/engineering-education/getting-started-with-sessions-in-php/viteproject.png)
+![Vite project](/engineering-education/creating-a-react-app-using-vite/viteproject.PNG)
 
 We then need to select React as the framework and variant: 
 
-![framework](/engineering-education/creating-a-react-app-using-vite/framework.png)
+![framework](/engineering-education/creating-a-react-app-using-vite/framework.PNG)
 
-![variant](/engineering-education/creating-a-react-app-using-vite/variant.png)
+![variant](/engineering-education/creating-a-react-app-using-vite/variant.PNG)
 
 Our project is now created. Let's install and then run it.
 
-![install](/engineering-education/creating-a-react-app-using-vite/install.png)
+![install](/engineering-education/creating-a-react-app-using-vite/install.PNG)
 
 In the terminal, navigate into the generated project. In my case, `ViteTutoral` and type the command below:
 
@@ -103,7 +103,7 @@ In the terminal, navigate into the generated project. In my case, `ViteTutoral` 
 npm install
 ```
 
-![installing](/engineering-education/creating-a-react-app-using-vite/installing.png)
+![installing](/engineering-education/creating-a-react-app-using-vite/installing.PNG)
 
 This command installs the required dev dependencies which you can access from the `package.json` file. 
 
@@ -111,7 +111,7 @@ It also creates a `node_modules` folder which can be viewed as an external modul
 
 Your `package.json` file should look, as shown below:
 
-![Packages file](/engineering-education/creating-a-react-app-using-vite/package.png)
+![Packages file](/engineering-education/creating-a-react-app-using-vite/package.PNG)
 
 Finally, include the following command to start the dev server:
 
@@ -119,11 +119,11 @@ Finally, include the following command to start the dev server:
 npm run dev
 ```
 
-![Running app](/engineering-education/creating-a-react-app-using-vite/run.png)
+![Running app](/engineering-education/creating-a-react-app-using-vite/run.PNG)
 
 Copy and paste the provided link on your browser. You now have React and Vite running on your local server. Congratulations!
 
-![Local app](/engineering-education/creating-a-react-app-using-vite/app.png).
+![Local app](/engineering-education/creating-a-react-app-using-vite/app.PNG)
 
 > **npm run serve** command does the app build and renders the production version while **npm run dev** initializes the development server.
 
@@ -131,11 +131,11 @@ When you open the project folder in your code editor, you will see different fil
 
 The code responsible for the browser's output is in the `App.jsx` and is rendered from the `main.jsx` file.
 
-![files](/engineering-education/creating-a-react-app-using-vite/main.png).
+![files](/engineering-education/creating-a-react-app-using-vite/main.PNG)
 
 Let's create a simple application to learn more about Vite.
 
-Include the code below in the `App.jsx`` file:
+Include the code below in the `App.jsx` file:
 
 ```JSX
 import React from 'react'
@@ -162,7 +162,7 @@ Now head to your terminal and run the **npm run dev** command again and follow t
 
 We have now created our simple React+Vite app that looks like this:
 
-![finalapp](/engineering-education/creating-a-react-app-using-vite/finalapp.png).
+![finalapp](/engineering-education/creating-a-react-app-using-vite/finalapp.PNG).
 
 > Note that in Vite, **index.html** file is not placed in the public folder as in React. This HTML file has a `<script type="module" src='..'></script>` module which is essentially the point of entry of a React app.
 
@@ -178,7 +178,7 @@ You can, therefore, use the knowledge and skills acquired from this tutorial to 
 Good luck!
 
 ### Further reading
--[The Vite guide documentation](https://vitejs.dev/guide/)
+- [The Vite guide documentation](https://vitejs.dev/guide/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
