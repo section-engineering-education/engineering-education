@@ -1,7 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /what-is-mvc-and-how-does-it-work_/
+title: In this article, the reader will learn about the MVC framework, its benefits, and how to develop efficient software applications using MVC framework.
+author: esther-mwangi
+date: 2021-08-31T00:00:00-13:40
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/what-is-mvc-and-how-does-it-work_/hero.png
+    alt: How mvc framework works image
+--- 
 
-### Introduction
 Today, developers have changed their patterns of designing websites. Most of them use frameworks like [Django](https://www.djangoproject.com), [Rails](https://rubyonrails.org/), [Laravel](https://laravel.com/), [Yii 2](https://www.yiiframework.com/), etc. 
-
+<!--more-->
 Programmers utilize various patterns and software architectures to make their code easier to understand and develop applications faster. `Model-View-Controller Architecture (MVC)` is one of the design patterns utilized by developers. Therefore, the MVC framework has become an essential component of modern web application development.
 
 In this article, we will learn about the MVC framework, its benefits, and how to develop efficient software applications.
