@@ -45,7 +45,8 @@ The best part is that you don't need to install anything because it's already in
 - [Read the Data](#read-the-data)
 - [Housekeeping](#housekeeping)
 - [Other Data Providers](#other-data-providers)
-- [Wrap-Up](#wrap-up)
+- [Wrapping it up](#wrapping-it-up)
+- [Conclusion](#conclusion)
 
 ### Objective
 By the end of this tutorial, the reader will have understood:
@@ -315,7 +316,7 @@ The [IBM Data Server Provider for .NET](https://www.ibm.com/docs/en/db2/10.5?top
 
 If you're using `IBM DB2`, you'll be dealing with I`BM.Data.DB2`, and if you're using `Informix`, you'll be working with `IBM.Data.Informix`.
 
-### Wrap-Up
+### Wrapping it up
 Data access in the Microsoft `.NET` environment can save time, automate operations, and simply show data.
 
 The steps provided in this article should assist you in comprehending the processing requirements.
