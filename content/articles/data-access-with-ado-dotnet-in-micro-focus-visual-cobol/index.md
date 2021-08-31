@@ -1,13 +1,15 @@
 ### Introduction
-Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems for streamlining application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
+Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems to streamline application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
 
-`ADO` is a Microsoft technology that stands for `ActiveX Data Object`. It is a collection of [ActiveX](https://en.wikipedia.org/wiki/ActiveX) controls that give you programmatic access to Microsoft's most recent data access technologies. As the name suggests, it's a wrapper for fundamental database access techniques.
+`ADO` is a Microsoft technology that stands for `ActiveX Data Object`. It is a collection of [ActiveX](https://en.wikipedia.org/wiki/ActiveX) controls that give you programmatic access to Microsoft's most recent data access technologies.
 
 In simple words, ADO acts as a middleware between the programming language and the database. The developers write programs to access the data, without knowing how the database is implemented.
 
-`ADO.NET` is a collection of programming elements that allow programmers to retrieve data and data services from a database.  It is most typically used by programmers to access and alter data in relational database systems, but it may also retrieve data from non-relational data sources.
+`ADO.NET` is a collection of programming elements that allow programmers to retrieve data and data services from a database.  
 
-First-class languages are supported by the `.NET` framework's API. `.NET` can use the existing classes with API, rather than having to reinvent the wheel for accessing the data.
+Typically, programmers access and alter data in relational database systems (RDBMS), but they can also retrieve data from non-relational data sources.
+
+First-class languages are supported by the `.NET` framework's API. `.NET` can access the existing classes using API, rather than having to reinvent the wheel for accessing the data.
 
 It's essentially a set of access and manipulation processes that a developer can utilize to gain access to his or her data.
 
@@ -15,7 +17,7 @@ The best part is that you don't need to install anything, because it's already i
 
 ### Prerequisite
 - Install [Visual Studio Code](https://code.visualstudio.com/).
-- Add [Microfocus COBOL extension](https://marketplace.visualstudio.com/items?itemName=Micro-Focus-AMC.mfcobol) to Visual Studio code editor.
+- Add [Microfocus COBOL extension](https://marketplace.visualstudio.com/items?itemName=Micro-Focus-AMC.mfcobol) to the Visual Studio code editor.
 - Have some background information on database management.
 
 ### Table of contents
@@ -36,17 +38,17 @@ By the end of this tutorial, the reader will have understood:
 - Create commands that will help to access the data objects using Micro Focus Visual Studio.
 
 ### What is a data object
-A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using the object's identifier like a variable.
+A data object is indeed a storage area that holds a value or a set of values. Each value could be accessed by using an object's identifier like a variable.
 
 Furthermore, each object has its data type.
 
 For example:
-- Products, sales, and customer are examples of data objects of a sales database
-- Patients may be objects of a medical database
+- Products, sales, and customer are examples of data objects of a sales database.
+- Patients may be objects of a medical database.
 - Students, professors, and courses may be objects of an University database.
 
 ### Basic ADO flow
-We will start by looking what `SQL Server's namespace` are, which governs data access.
+We will start by looking what `SQL Server's namespace` are, that governs data access.
 
 At the end of this article, we will go over different data providers.
 
@@ -58,12 +60,10 @@ As a result of a namespace, every particular collection of objects will have uni
 
 To connect to SQL servers in `.NET` framework, you will start by writing the namespace:
 
-```
+```sql
 using System.Data;
 using System.Data.SqlClient;
 ```
-
-> Keep this namespace in mind. It's critical!
 
 There are presently 16 classes in the SQLClient namespace. These classes provide a programmatic way to establish connections to databases, verify permissions, manage exceptions, and do other duties related to data access.
 
@@ -74,25 +74,27 @@ To view data object, follow this basic procedure:
 2. Create a command for the data object to act upon.
 3. Read the data returned by the data object.
 
-To complete the actions listed above, we will need to employ the following classes:
+To complete the actions listed above, we will need to import the following classes:
 1. System.Data.SqlClient.SqlConnection
 2. System.Data.SqlClient.SqlCommand
 3. System.Data.SqlClient.SqlDataReader
 
 ### Preparation
-For this tutorial, I used a safe console application. Microsoft's Data Access technology (ADO.NET application) is one of safe console application. It's a part of the `.NET` Framework that's utilized to connect the `.NET` Application to data sources.
+For this tutorial, we will use a safe console application.
 
-It has access to various basic data streams: standard error, standard output, and standard input.
+Microsoft's data access technology (ADO.NET application) is one of safe console application. It's a part of the `.NET` framework that connects the `.NET` application to various data sources.
 
-To begin, we must declare the variables that will be used. We will need to make a variable to hold the data, one to hold the connection attributes, and another to hold the SQL statements we will be issuing.
+It has access to various basic data streams - standard input, standard output, and standard error.
 
-Any exceptions that we encounter when reading from the database are noted.
+To begin, we declare the variables and initialize them. One holds the connection attributes, and another holds the SQL statements.
 
-In the working-storage area, you'll find record description entries and data description entries for independent data items, referred to as data item description entries.
+In the working-storage area, you'll find record and data description entries for all the data items (commonly referred as data item description entries).
 
-> The working-storage section is a work ground where all the commands are written on as shon in the figure below:
+> According to [IBM](https://www.ibm.com/docs/en/cobol-zos/4.2?topic=overview-working-storage-section), working-storage section describes data records that are not part of data files but are developed and processed by a program or method. It also describes data items whose values are assigned in the source program or method and do not change during execution of the object program.
 
-![working storage section](engineering-education/data-access-with-ado.net-in-microfocus-visual-cobol-storage-section.png)
+The working-storage section is a work ground where all the commands are written on as shown in the figure below:
+
+![working storage section](engineering-education/data-access-with-ado-dotnet-in-microfocus-visual-cobol-storage-section.png)
 
 ```SQL
 sqlConnection type System.Data.SqlClient.SqlConnection.
@@ -100,9 +102,11 @@ sqlDataReader type System.Data.SqlClient.SqlDataReader.
 sqlCommand    type System.Data.SqlClient.SqlCommand.
 ```
 
-These are the essential objects that will allow us to connect to the database engine and use ADO, as well as get information from the database engine about the operations we run there.
+These are the essential objects that will allow us to connect to the database engine, and fetch information about the operations.
 
-A few functional fields will be added next, as well as a few fields for storing data we'll be retrieving from the database. The following are the contents of the completed working-storage section:
+Apart from the existing functional fields, we add fields for storing data.
+
+The following are the contents of the completed working-storage section:
 
 ```sql
 sqlConnection type System.Data.SqlClient.SqlConnection.
@@ -118,16 +122,40 @@ HomePhone          pic x(24)  value spaces.
 junk               pic x(01)  value spaces.
 ```
 
-From the code above, we have declared the variables that we will be using in this tutorial: There are variables to hold the data `sqlDataReader type System.Data.SqlClient.SqlDataReader`, the connection attributes `sqlConnection type System.Data.SqlClient.SqlConnection` and finally the SQL statements/ commands `sqlCommand    type System.Data.SqlClient.SqlCommand`.The command `dataFound  type system.Boolean` is used while invoking the sqlDataReader to return true or false for data found. The `recordsRead pic x(20) value spaces` customizes the length of the data to be read. The other three lines of code declare the variables ` FirstName, LastName and HomePhone` customizing them using the PIC clause. the last line of code ends the declaration process by prompting that any other junk file should not exceed the declared variables.
+From the code above:
+- We declare variables that hold:
+  - the data in `sqlDataReader type System.Data.SqlClient.SqlDataReader`,
+  - the connection attributes in `sqlConnection type System.Data.SqlClient.SqlConnection`, and
+  - the SQL commands in `sqlCommand type System.Data.SqlClient.SqlCommand`.
+- The command `dataFound type system.Boolean` is used for invoking the `sqlDataReader` to return `true` or `false`.
+- The `recordsRead pic x(20) value spaces` customizes the length of the data to be read.
+- The next three lines of code, we declare the variables ` FirstName, LastName and HomePhone` for customizing the PIC clause.
+- The last line of code ends the declaration process by prompting that no other junk file should exceed the limit of declared variables.
 
-It's worth noting that we can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard .NET data types. By enabling this option, some of your source code can now be used without worrying about data type conversion. To read data from a table using ADO, we've generated all of the necessary divisions and references. We must now carry out the measures mentioned above.
+> It's worth noting that we can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard `.NET` data types.
 
-> In many programming systems, a PIC clause is used to allow the user to customize how text is printed or presented. To alter a PIC clause, the user must type characters with various consequences, such as adding letters or formatting a section of text. Because some controlling characters are used to enhance font size or suggest other characters, they may not be seen in the actual text. Most applications do this automatically, so users rarely have to do it manually.
+By enabling this option, we need worry about the data type conversion.
 
-### Create a Connection
-To use a database, we must first establish a connection. If you've ever used ODBC with embedded SQL, you'll know that you must first establish the connection in the Control Panel's ODBC administrators panel before issuing the SQL connect query. To openControl Panel's ODBC click Administrative Tools in the Control Panel. Click Data Sources under Administrative Tools (ODBC). In Windows Server 2008, open the ODBC Data Source Administrator. Select Administrative Tools from the Start menu, then Data Sources (ODBC). "EXEC SQL CONNECT TO DATABASE END-EXEC" was comparable to the connect statement.
+> In many programming systems, a PIC clause is used to allow the user to customize how text is printed or presented. It describes the general characteristics and editing requirements of an elementary item
 
-The connection in ADO is significantly more straightforward. To establish a database connection, the SQLConnection object is needed. One of the advantages of ADO is that we no longer need to configure the connection in the ODBC administration panel, which simplifies the configuration and distribution. Instead, we just construct our database connection string, create a database connection, and call the `Open` method on the new object. The connection is formed in our example using the following code:
+To alter a PIC clause, the user must type characters with various text combinations, such as adding letters or formatting a section of text.
+
+### Create a connection
+To use a database, we must first establish a connection.
+
+When working with ODBC - embedded SQL, we must first establish the connection in the ODBC administrator panel before issuing the SQL connect query.
+
+To establish ODBC connection, click `Administrative Tools` in the `Control Panel`, then click `Data Sources` under `Administrative Tools` (ODBC).
+
+Setting up an ODBC connection is complicated.
+
+In ADO, the connection is significantly more straightforward.
+
+One of the key advantage of ADO is that, we no longer need to configure the connection in the ODBC administration panel.
+
+Instead, we just construct the database connection string, create a database connection, and call the `Open` method for the new object.
+
+In our example, the connection can be setup as shown in the following code:
 
 ```sql
 set sqlConnection to new type System.Data.SqlClient.SqlConnection.
@@ -136,11 +164,27 @@ set sqlConnection::ConnectionString to
 invoke sqlConnection::Open().
 ```
 
-From the above code, the statement creates a `NEW` SQLConnection object with the name sqlConnection. Then the `connection string attribute` is then used to give parameters for the connection. The `Open` method of sqlConnection is then used to establish the connection in the following statement. The connection string is the most difficult component of this operation. We've specified the User ID, password, and database to which we're attempting to connect. Workspace variables that contain the connection string can be created and passed to methods for setting up connections, or they can be created directly in the connection-starting procedure. The connection string can be defined in a variety of ways. Only one example of syntax can be shown.
+From the code above:
+- We create a new SQLConnection object with the name `sqlConnection`.
+- Then, the connection string attribute is set up as the parameters for the connection.
+- The `Open` method of `sqlConnection` is then used to establish the connection.
 
-### Create a Command
-Now that we've created our connection, we need to inform the database of what we're trying to accomplish. A command structure is used to do this. The prior statement would have been `EXEC SQL SELECT * FROM EMPLOYEES END-EXEC.` We're going to pull some data from the Employee database and present it in the console window. The following statements are used to establish the command: 
-> The Employee database contains the variables we had declared earlier in the `Preparation heading`. To understand how to create a SQL-server database [click here](https://www.wikihow.com/Create-a-SQL-Server-Database). Now with the knowledge learned, create a simple database and call it `Employee database` with the fields `FirstName, LastName, HomePhone`. This is the database we will use in this tutorial.
+In the connection string, we've specified the User ID, password, and database that we are attempting to connect.
+
+Workspace variables that contain the connection string can be created and passed to methods for setting up connections.
+
+### Create a command
+Now that we've created our connection, we need to inform the database of what we're trying to accomplish.
+
+Earlier, we would have used `EXEC SQL SELECT * FROM EMPLOYEES END-EXEC` to fetch data from the Employees database.
+
+The Employee database contains the variables we had declared earlier in the `Preparation heading`.
+
+To understand how to create a SQL-server database [click here](https://www.wikihow.com/Create-a-SQL-Server-Database).
+
+Now, with the knowledge learned, create a simple database `Employee database` with the fields `FirstName, LastName, HomePhone`.
+
+We'll be using this database in our tutorial.
 
 ```bash
 set sqlCmd to "SELECT FirstName, LastName, HomePhone FROM Employees".
@@ -148,19 +192,25 @@ set sqlCommand to new type System.Data.SqlClient.SqlCommand(sqlCmd, sqlConnectio
 set sqlDataReader to sqlCommand::ExecuteReader.
 ```
 
-The code above prompts the connection to only select the variables specified in the first line. Then the second line specifies the connection to be made to the `System.Data.SqlClient.SqlCommand` namespace.
+The code above prompts the connection to only fetch the details related to employees. Then, the second line specifies the connection to be made to the `System.Data.SqlClient.SqlCommand` namespace.
 
-We established a WORKING-STORAGE variable and transferred my Select statement into it for this stage of the procedure. My user's input allows me to build a Select statement. Work can be completed in many ways, and this is just one of them. An SQL COMMAND instance must be established after the command string has been generated. 
+We created a working-storage variable to hold the data from the `Select` statement. An SQL command instance `sqlCommand` must be established only after the command string has been generated. 
 
-The only parameters necessary for the SQL COMMAND class to function are the connection object (you must tell it where to execute the command) and the command to execute. The `execute reader` command is the way you'll use to return the data to you after you've instantiated the SQL COMMAND. As a result, you will be provided with a data reader object that you can use to access your data. Use what method to determine if it returns data or not.
+The only parameter necessary for a SQL command class is a connection object. You must specify where to execute the command and the command to execute.
+
+The `ExecuteReader` command would be used to execute and return the data.
+
+As a result, you will be provided with a data reader object that could be used to access the data.
 
 ### Read the Data
-OK! A database connection has been made. The data should have returned when we formed and ran a command against the connection. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. True will be the value if there is information. "False" will be returned if no data has been read. DataFound will be set by adding a returning line to our read statement, and then checking if we have any data to pry from the filesystem. 
+A database connection has been made.
+
+The data should have returned when we formed and ran a command against the connection. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. True will be the value if there is information. "False" will be returned if no data has been read. DataFound will be set by adding a returning line to our read statement, and then checking if we have any data to pry from the filesystem. 
 
 The Perform statement is used since we don't know how much data we'll have to deal with. The function we'll use is "GetString," and it'll return a string to a variable we've specified in WORKING-STORAGE based on an ordinal location inside the dataset. Always remember that when working with arrays,.NET utilizes offset zero, thus the first field we'll access will be zero, followed by 1 and then 2.
 
 Consider the following code for reading data as an example: 
-.
+
 ```sql
 set dataFound to true.
 move zero to recordsRead.
