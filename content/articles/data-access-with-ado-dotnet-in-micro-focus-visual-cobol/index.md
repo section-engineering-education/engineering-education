@@ -202,7 +202,7 @@ The `ExecuteReader` command would be used to execute and return the data.
 
 As a result, you will be provided with a data reader object that could be used to access the data.
 
-### Read the Data
+### Read the data
 A database connection has been made.
 
 The data should have returned when we formed and ran a command against the connection. How can you know if any data has been returned? In addition to the alternatives listed above, here is a quick way to verify. We'll use the 'Read' method to get data from the data reader object. The Read method produces a Boolean result that indicates whether data was read or not. True will be the value if there is information. "False" will be returned if no data has been read. DataFound will be set by adding a returning line to our read statement, and then checking if we have any data to pry from the filesystem. 
@@ -224,13 +224,14 @@ perform with test before until dataFound not equal to true
     invoke sqlDataReader::Read returning dataFound
 end-perform.
 ```
+
 From the command above, we invoke the data reader to read all the data values of the variables we had earlier declared in the `Preparation` heading. For example, the reader reads the strings(FirstName, LastName, and HomePhone) and then display their record using the code `display "record: "`. For every string the reader reads it returns the data found sequence loop until this command returns data found is not true. 
 
 We did a 'primer' read of the data before starting the Perform loop, as you can see. This is noteworthy because if we don't have any data to process, we won't run the Perform loop. Perform loop contains three `GetString` calls, which return the employee's first name, last name & home phone number. We keep track of how many records we've read and use the console to display the most recent one. Finally, we check to see if there is any more data to process, and if there is, we either repeat the method or exit the Perform loop.
 
 When you run the sample application, the following data should be displayed:
 
-![output of our project](engineering-education/data-access-with-ado.net-in-microfocus-visual-cobol/output.png)
+![output of our project](engineering-education/data-access-with-ado-dotnet-in-microfocus-visual-cobol/output.png)
 
 
 Is there anything out of place? Perhaps there's a little something off about this picture. In contrast, there is too much space between the last name and the phone number, while there is just enough between the first and last names. Why? Working in a managed environment and using managed code types provides a number of benefits, one of which is the environment's ability to present information in a much more structured and clear manner. Working-Storage specifies the first name as a string entity, and the last name as a normal COBOL data type of 'PIC X(20)', respectively. Our data is automatically scaled based on how many non-space characters are present when we display it. The amount of characters defined by the COBOL data type is displayed, which in this example is ‘20.' Experiment with the definitions in the section Working-Storage. Change the data type of the last name to ‘string' to see how it affects the display.
@@ -261,7 +262,10 @@ Data access in the Microsoft .NET environment can assist save time, automate ope
 ### Conclusion
 In this article, we have learned how to access data with ADO.NET In Micro Focus Visual COBOL. We also have learned about the basic ADO Flow of data, the Preparation, how to create a Connection, creating a Command, read the Data, understood what housekeeping is, knowing other data providers, and finally understand what Wrap-Up is.
 
-### Further readings
+### Further reading
 - [Function to Create an ADO Connection](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/348985/function-to-create-an-ado-connection)
 - [Oracle Data Access Connectivity (ODAC) 64bit Connection issue when using ADO.Net Connection Editor](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/355802/oracle-data-access-connectivity-odac-64bit-connection-issue-when-using-ado-net-connection-editor)
 - [Database Access](https://www.microfocus.com/documentation/visual-cobol/VC231/VS2012/GUID-62A76ED2-5851-47BD-A6EC-CA6830A3C745.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
