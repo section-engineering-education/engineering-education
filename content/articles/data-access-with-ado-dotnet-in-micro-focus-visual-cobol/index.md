@@ -1,6 +1,21 @@
-### Introduction
-Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems to streamline application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-access-with-ado-dotnet-in-micro-focus-visual-cobol/
+title: Data Access With ADO.NET In Micro Focus Visual COBOL
+description: This article will be an introduction to understanding ADO.NET. We will learn how to access data using Micro Focus Visual COBOL.
+author: amos-magu
+date: 2021-08-31T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/hero.png
+    alt: Micro Focus ADO.NET example image
+---
+Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems to streamline application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
+<!--more-->
 `ADO` is a Microsoft technology that stands for `ActiveX Data Object`. It is a collection of [ActiveX](https://en.wikipedia.org/wiki/ActiveX) controls that give you programmatic access to Microsoft's most recent data access technologies.
 
 In simple words, ADO acts as a middleware between the programming language and the database. The developers write programs to access the data, without knowing how the database is implemented.
@@ -94,7 +109,7 @@ In the working-storage area, you'll find record and data description entries for
 
 The working-storage section is a work ground where all the commands are written on as shown in the figure below:
 
-![working storage section](engineering-education/data-access-with-ado-dotnet-in-microfocus-visual-cobol-storage-section.png)
+![working storage section](/engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/storage-section.png)
 
 ```SQL
 sqlConnection type System.Data.SqlClient.SqlConnection.
@@ -231,8 +246,7 @@ We did a 'primer' read of the data before starting the Perform loop, as you can 
 
 When you run the sample application, the following data should be displayed:
 
-![output of our project](engineering-education/data-access-with-ado-dotnet-in-microfocus-visual-cobol/output.png)
-
+![output of our project](/engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/output.png)
 
 Is there anything out of place? Perhaps there's a little something off about this picture. In contrast, there is too much space between the last name and the phone number, while there is just enough between the first and last names. Why? Working in a managed environment and using managed code types provides a number of benefits, one of which is the environment's ability to present information in a much more structured and clear manner. Working-Storage specifies the first name as a string entity, and the last name as a normal COBOL data type of 'PIC X(20)', respectively. Our data is automatically scaled based on how many non-space characters are present when we display it. The amount of characters defined by the COBOL data type is displayed, which in this example is ‘20.' Experiment with the definitions in the section Working-Storage. Change the data type of the last name to ‘string' to see how it affects the display.
 
