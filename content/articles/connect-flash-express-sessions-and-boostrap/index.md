@@ -1,5 +1,5 @@
 ### Introduction
-This article aims at exploring `express-session`, `connect-flash`, `passport`, and `bootstrap` modules and demonstrating their functionality in a single application. We will build a login system based on `Passport authentication`,  manage our sessions using `express sessions` and, show flash messages using `connect-flash` with `Bootstrap` styling.
+This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation. We will build an authentication system using the `express-session`, `connect-flash`, `passport`, and `bootstrap` modules and demonstrating their functionality in a single application.
 
 ### Prerequisites
 To follow along, the reader needs to have the following.
@@ -33,7 +33,7 @@ We will have a separate folder for our routes, so create a `routes` folder in th
 
 Create another folder called `views`. This folder will contain our view files that will be rendered to the user on the screen. In the folder, add the following files. The `login.ejs` `register.ejs` `layout.ejs` and `dashboard.ejs`. 
 
-When a user navigates to the index route of the project, he will be redirected to the welcome page, which renders the `welcome.ejs` file. From there, he chooses to log in or register a new account. Once the user is successfully registered, he can log in, he then he is redirected to the dashboard page.
+When a user navigates to the index route of the project, the system directs him/her to the welcome page, which renders the `welcome.ejs` file. From there, he chooses to log in or register a new account. Once the user is successfully registered, he can log in, he then he is redirected to the dashboard page.
 
 In the `login.ejs`, we have a form that submits user email and password for authentication, as the snippets below illustrate.
 
@@ -54,16 +54,16 @@ For the registrations page, we will have a form that submits users data to the d
 ```html
 <form action="/users/register" method="POST">
     <div class="form-group">
-        <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+        <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"/>
     </div>
     <div class="form-group">
-        <input  type="email" id="email"  name="email" class="form-control"  placeholder="Enter Email"   value="<%= typeof email != 'undefined' ? email : '' %>" />
+        <input  type="email" id="email"  name="email" class="form-control"  placeholder="Enter Email" />
     </div>
     <div class="form-group">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+        <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"/>
     </div>
     <div class="form-group">
-        <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' " />
+        <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" />
     </div>
     <button type="submit" class="btn btn-success btn-block">
         Register
@@ -86,26 +86,26 @@ The `connection.js` file will contain the `connection function`. The function is
 ```js
 const mongoose = require('mongoose')
 
-//connnect to database
-const connectDB = async () => {
+//connnect the system to the database
+const connectDatabase = async () => {
     try {
         const conn = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
         })
-        console.log(`MongoDB Connected: ${conn.connection.host}`)
-    } catch (err) {
-        console.error(err)
+        console.log(`Database connection successful`)
+    } catch (error) {
+        console.error(error)
         process.exit(1)
     }
 }
 
-module.exports = connectDB
+module.exports = connectDatabase
 ```
 
 ### Creating the user model
-Models define how database records look like. For our case, users will keep a record of the emails, usernames, and passwords. These fields need to appear in the user model and the database as well. In the root folder of the application, create a new folder called `models`. Create a new file called `user.js` in the' models' folder, then add the snippet below.
+Models define how database records look like. For our case, users will keep a record of the emails, usernames, and passwords. These fields need to appear in the user model and the database as well. In the root folder of the application, create a new directory named `models`. Create a new file called `user.js` in the `models' folder, then add the snippet below.
 
 ```js
 const mongoose = require('mongoose');
@@ -136,27 +136,27 @@ Next, we need to set up a register-handler that collects the form data from the 
 
 ```js
 //registration handler
-router.post('/register', (req, res) =>{
+router.post('/register', (request, response) =>{
 
     //extract the data from request body
-    const { name, email, password, password2 } = req.body;
+    const { name, email, password, password2 } = request.body;
     let errors = []
 
     //validation
     if (!name || !email || !password || !password2) {
-        errors.push({ msg: 'Please enter all fields in the form' });
+        errors.push({ message: 'All the fields must be filled to proceed' });
     }
 
     if (password != password2) {
-        errors.push({ msg: 'Passwords do not match' });
+        errors.push({ message: 'The two passwords must match to proceed' });
     }
 
     if (password.length < 5) {
-        errors.push({ msg: 'Password must be at least 5 characters long' });
+        errors.push({ message: 'Sorry the password must be at least 5 characters long' });
     }
 
     if (errors.length > 0) {
-        res.render('register', { errors, name, email,  password, password2  });
+        response.render('register', { errors, name, email,  password, password2  });
     }else{
         //Check if the user exists
     }
@@ -164,12 +164,12 @@ router.post('/register', (req, res) =>{
 
 ```
 
-After the form validation is passed, we need to check if the email submitted by the user already exists in the database or not. If the email exists, we push the error to the errors array, then render the registration page with the errors.
+After the form validation is passed, we have to confirm if the email submitted by the user already exists in the database or not. If the email exists, we push the error to the errors array, then render the registration page with the errors.
 
 ```js
 User.findOne({email: email}).then(user =>{
     if(user){
-        errors.push({msg: 'Email already in the database'})
+        errors.push({messageg: 'Email already in the database'})
         res.render('register', {  errors,  name, email,  password,   password2 })
     }else{
 
@@ -178,21 +178,21 @@ User.findOne({email: email}).then(user =>{
 })
 ```
 
-If the supplied email is unique, `bcryptjs` hashes the password. Saving a plain text password is a security risk, so we hash the password to avoid system breaches. After hashing, the user instance is saved to the database, and then the user is redirected to the login page.
+If the supplied email is unique, `bcryptjs` hashes the password. Saving a plain text password is a security risk, so we hash the password to avoid system breaches. After hashing, the user instance is saved to the database, and then the system redirects the user to the login page.
 
 
 ```js
 const newUser = new User({name, email, password});
 
-bcrypt.genSalt(10, (err, salt) =>{
-    bcrypt.hash(password, salt, (err, hash) => {
-        if(err){
-            throw err;
+bcrypt.genSalt(10, (error, salt) =>{
+    bcrypt.hash(password, salt, (error, hash) => {
+        if(error){
+            throw error;
         }else{
             newUser.password = hash
             newUser.save().then(user =>{
-                req.flash('success_msg', 'Successfully registered. Login')
-                res.redirect('/users/login')
+                request.flash('success_msg', 'Successfully registered. Login')
+                response.redirect('/users/login')
             }).catch(err =>{
                 console.log(err)
             })
@@ -220,10 +220,10 @@ To make every error appear in a different color, we create global variables and 
 
 ```js
 // Global variables
-app.use(function(req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
+app.use(function(request, response, next) {
+    response.locals.success_message = request.flash('success_message');
+    response.locals.error_message = request.flash('error_message');
+    response.locals.error = request.flash('error');
     next();
 });
 ```
@@ -231,29 +231,18 @@ app.use(function(req, res, next) {
 In the `messages.js` file, we check whether a message is a `success` or an `error` then render the respective alert. 
 
 ```html
-<% if(typeof errors != 'undefined') { %>
-    <% errors.forEach( error => { %>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <%= error.msg %>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-    <% })%>
-<% } %>
-
-<% if(success_msg != ''){ %>
+<% if(success_message != ''){ %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <%= success_msg %>
+      <%= success_message %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 <% } %>
 
-<% if(error_msg != ''){ %>
+<% if(error_message != ''){ %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <%= error_msg %>
+      <%= error_message %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -288,12 +277,12 @@ module.exports = function(passport) {
 
                 //user not found
                 if (!user) {
-                    return done(null, false, { message: 'Thhe email entered is not with our records' });
+                    return done(null, false, { message: 'The user email entered is not with our records' });
                 }
         
                 //use bcrypt to compare the passwords and validate
-                bcrypt.compare(password, user.password, (err, isMatch) => {
-                    if (err) throw err;
+                bcrypt.compare(password, user.password, (error, isMatch) => {
+                    if (err) throw error;
                     if (isMatch) {
                         return done(null, user);
                     } else {
@@ -309,25 +298,25 @@ module.exports = function(passport) {
     });
   
     passport.deserializeUser(function(id, done) {
-      User.findById(id, function(err, user) {
-        done(err, user);
+      User.findById(id, function(error, user) {
+        done(error, user);
       });
     });
 };
 ```
-[Login validatrion](/engineering-education/connect-flash-express-sessions-and-boostrap/login-form-validation.png)
+[Login validation](/engineering-education/connect-flash-express-sessions-and-boostrap/login-form-validation.png)
 
 ### Building the login module handler.
 The login handler uses the Passport middleware to authenticate users. An authenticated user is redirected to the `home` route to see his account details. However, if the user is not authenticated, the system redirects him to the login page to correct their details and try again.
 
 ```js
 //handling login
-router.post('/login', (req, res, next) => {
+router.post('/login', (request, response, next) => {
     passport.authenticate('local', {
         successRedirect: '/home',
         failureRedirect: '/users/login',
         failureFlash: true
-    })(req, res, next);
+    })(request, response, next);
 });
 ```
 
@@ -336,19 +325,19 @@ We secure a route to make it inaccessible to unauthenticated users. For our case
 
 ```js
 module.exports = {
-    ensureAuthenticated: function(req, res, next) {
-        if (req.isAuthenticated()) {
+    ensureUserIsAuthenticated: function(request, response, next) {
+        if (request.isAuthenticated()) {
             return next();
         }
-        req.flash('error_msg', 'Please log in to access the requested page');
-        res.redirect('/users/login');
+        request.flash('error_message', 'Please log in to access the requested page');
+        response.redirect('/users/login');
     },
 
-    forwardAuthenticated: function(req, res, next) {
-        if (!req.isAuthenticated()) {
+    forwardAuthenticatedUser: function(request, response, next) {
+        if (!request.isAuthenticated()) {
             return next();
         }
-        res.redirect('/home');      
+        response.redirect('/home');      
     }
 };
 ```
@@ -356,8 +345,8 @@ module.exports = {
 In the `index.js` file in the `routes` folder, add the code below to import the authentication and secure the `home` route.
 
 ```js
-router.get('/home', ensureAuthenticated, (req, res) => {
-    res.render('dashboard')
+router.get('/home', ensureUserIsAuthenticated, (request, response) => {
+    response.render('dashboard')
 })
 ```
 
@@ -368,10 +357,10 @@ The logout handler is responsible for signing out a user and destroying the sess
 
 ```js
 //logout handler
-router.get('/logout', (req, res) => {
-    req.logout();
-    req.flash('success_msg', 'You are logged out');
-    res.redirect('/users/login');
+router.get('/logout', (request, response) => {
+    request.logout();
+    request.flash('success_message', 'You are succesfully logged out');
+    response.redirect('/users/login');
 });
 ```
 ![log out](/engineering-education/connect-flash-express-sessions-and-boostrap/logout.png)
