@@ -1,8 +1,8 @@
 ### Introduction
 
-A PHP Regular Expression, commonly known as RegEx, is a group of letters and characters that form a search pattern everytime a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she  wants.
+A PHP Regular Expression, commonly known as Regex, is a group of letters and characters that form a search pattern every time a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she  wants.
 
-A RegEx is always a single letter or a group of letters forming a more complex pattern. RegEx can therefore be used to perform all types of text searches and replacements.
+A Regex is always a single letter or a group of letters forming a more complex pattern. Regex can therefore be used to perform all types of text searches and replacements.
 
 ### Table of contents
 
@@ -31,7 +31,7 @@ PHP RegEx functions are made of delimiters, pattern and variation of choice. Bel
 $ exp = "/ category / i";
 ```
 
-In the example above, the delimiter `/` is used , the `category` is a searchable pattern, and finally, the `i` is used to ensure search case-insensitivity. The delimiter can be any character. The most common one is usually slash forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
+In the example above, the delimiter `/` is used, the `category` is a searchable pattern, and finally, the `i` is used to ensure search case-insensitivity. The delimiter can be any character. The most common one is usually slash forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
 
 ### Examples of RegEx functions
 
@@ -97,7 +97,7 @@ This code searches for all the instances of the pattern `cold` in string3, repla
 
 ### Modifiers used with RegEx functions
 
-Modifiers transposes how a search is conducted on a search phrase. Below are some modifiers discussed briefly.
+Modifiers transpose how a search is conducted on a search phrase. Below are some modifiers discussed briefly.
 - u - This modifier allows for searches on patterns encoded with the UTF-8.
 - i - This modifier allows for case-insensitive searches on a string.
 - m - This modifier allows for concurrent searches on multiple lines.
