@@ -793,3 +793,6 @@ Finally, we used this model to make predictions, this is the goal of any machine
 - [PySpark Documentation](https://spark.apache.org/docs/latest/api/python/)
 - [PySpark Basics](https://towardsdatascience.com/a-brief-introduction-to-pyspark-ff4284701873)
 - [Getting started with PySpark](/engineering-education/getting-started-with-pyspark-spark-part2/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
