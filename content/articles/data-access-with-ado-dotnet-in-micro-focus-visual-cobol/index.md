@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /data-access-with-ado-dotnet-in-micro-focus-visual-cobol/
-title: Data Access With ADO.NET In Micro Focus Visual COBOL
-description: This article will be an introduction to understanding ADO.NET. We will learn how to access data using Micro Focus Visual COBOL.
+title: Data Access with ADO.NET in Micro Focus Visual COBOL
+description: This article will be an introduction to understand ADO.NET. We will learn how to access data using Micro Focus Visual COBOL.
 author: amos-magu
-date: 2021-08-31T00:00:00-14:00
-topics: []
+date: 2021-09-01T00:00:00-04:25
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/data-access-with-ado-dotnet-in-micro-focus-visual-cobol/hero.png
-    alt: Micro Focus ADO.NET example image
+    alt: Micro Focus ADO.NET Example Image
 ---
 Micro Focus Visual COBOL is a modern development package that enables developers to maintain, create, and upgrade their systems to streamline application development and delivery. Visual COBOL is a multi-language Integrated Development Environment (IDE).
 <!--more-->
@@ -64,7 +64,7 @@ For example:
 - Students, professors, and courses may be objects of a University database.
 
 ### Basic ADO flow
-We will start by looking at what `SQL Server's namespace` are, governs data access.
+We will start by looking at what `SQL Server's namespace` is, governs data access.
 
 At the end of this article, we will go over different data providers.
 
@@ -138,8 +138,7 @@ HomePhone          pic x(24)  value spaces.
 junk               pic x(01)  value spaces.
 ```
 
-From the code above:
-- We declare variables that hold:
+From the code above, we declare variables that hold:
   - the data in `sqlDataReader type System.Data.SqlClient.SqlDataReader`,
   - the connection attributes in `sqlConnection type System.Data.SqlClient.SqlConnection`, and
   - the SQL commands in `sqlCommand type System.Data.SqlClient.SqlCommand`.
@@ -150,11 +149,11 @@ From the code above:
 
 > It's worth noting that we can mix and match the types of data definitions. Some variables were defined using typical COBOL syntax for the PIC clause, while others were defined using standard `.NET` data types.
 
-By enabling this option, we need not worry about the data type conversion.
+By enabling this option, we don't need to worry about the data type conversion.
 
-> In many programming systems, a PIC clause is used to allow the user to customize how text is printed or presented. It describes the general characteristics and editing requirements of an elementary item
+> In many programming systems, a PIC clause is used to allow the user to customize how text is printed or presented. It describes the general characteristics and editing requirements of an elementary item.
 
-To alter a PIC clause, the user must type characters with various text combinations, such as adding letters or formatting a section of text.
+To alter a PIC clause, the user must type characters with various text combinations, such as adding letters or formatting a section of text.
 
 ### Create a connection
 To use a database, we must first establish a connection.
@@ -171,7 +170,7 @@ One of the key advantages of ADO is that we no longer need to configure the conn
 
 Instead, we just construct the database connection string, create a database connection, and call the `Open` method for the new object.
 
-In our example, the connection can be setup as shown in the following code:
+In our example, the connection can be set up as shown in the following code:
 
 ```sql
 set sqlConnection to new type System.Data.SqlClient.SqlConnection.
@@ -221,7 +220,7 @@ As a result, you will be provided with a data reader object that could be used t
 ### Read the data
 A database connection has been made.
 
-The data should have been returned when we ran the command for execution of the connection.
+The data should have been returned when we ran the command for the execution of the connection.
 
 How will you know if any data has been returned?
 
@@ -231,7 +230,7 @@ We'll use the `Read` method to get data from the data reader object. This method
 
 The `Perform` statement is used since we might not know the size of the data that we're dealing with.
 
-This function we use "GetString" that returns a string to a variable we've specified earlier.
+In this function we use "GetString" that returns a string to a variable we've specified earlier.
 
 > Always remember that when working with arrays, `.NET` uses zero-indexing.
 
@@ -314,7 +313,7 @@ You'll need `ODP .NET`, or Oracle Data Provider for `.NET` if you're dealing wit
 
 The [IBM Data Server Provider for .NET](https://www.ibm.com/docs/en/db2/10.5?topic=net-provider-support-microsoft-entity-framework) must be installed for IBM.
 
-If you're using `IBM DB2`, you'll be dealing with I`BM.Data.DB2`, and if you're using `Informix`, you'll be working with `IBM.Data.Informix`.
+If you're using `IBM DB2`, you'll be dealing with `IBM.Data.DB2`, and if you're using `Informix`, you'll be working with `IBM.Data.Informix`.
 
 ### Wrapping it up
 Data access in the Microsoft `.NET` environment can save time, automate operations, and simply show data.
@@ -328,7 +327,7 @@ Additionally, Micro Focus has provided an `ADO Connection Editor` and an `OpenES
 ### Conclusion
 In this article, we have learned how to access data with ADO.NET.
 
-In Micro Focus Visual COBOL, we also have learned about the basic ADO Flow of data, the preparation, how to create a connection, creating a command, reading the data, understood what housekeeping is, and getting to know about other data providers.
+In Micro Focus Visual COBOL, we also have learned about the basic ADO flow of data, the preparation, how to create a connection, creating a command, reading the data, understood what housekeeping is, and getting to know about other data providers.
 
 ### Further reading
 - [Function to Create an ADO Connection](https://community.microfocus.com/cobol/visualcobol/f/forumid-18/348985/function-to-create-an-ado-connection)
