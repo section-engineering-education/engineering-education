@@ -1,16 +1,15 @@
 ### Introduction
 Reactive programming is a programming paradigm that supports an asynchronous, event-driven, and non-blocking approach to data processing. The reactive programming paradigm organizes events and data as streams.
 
-In the reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat applications.
+In the reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat apps.
 
 In this tutorial, we are going to create a student management system using Spring Webflux and MongoDB.
-
 
 ### Prerequisites
 - [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
 - Your favorite IDE or editor installed.
 - Knowledge of [Java](https://www.tutorialspoint.com/java/index.htm) and [Spring Boot](https://spring.io/projects/spring-boot).
-- Knowledge of [Mongodb](https://www.mongodb.com/).
+- Knowledge of [MongoDB](https://www.mongodb.com/).
 
 ### Streams API
 Software developers at Netflix, Twitter, Pivotal, and Redhat created the streams API. Streams API defines four interfaces below.
@@ -67,7 +66,7 @@ Spring Webflux is similar to Spring MVC, but it supports reactive and non-blocki
 Webflux has two publishers:
 
 #### Mono
-`Mono` publisher that returns 0 or 1 element.
+`Mono` is a publisher that returns 0 or 1 element.
 ```java
 Mono<String> mono = Mono.just("Jonh");
 Mono<String> mono = Mono.empty();
@@ -81,7 +80,7 @@ Flux<String> flux = Flux.just("x", "y", "z");
 Flux<String> flux = Flux.fromArray(new String[]{"x", "y", "z"});
 Flux<String> flux = Flux.fromIterable(Arrays.asList("x", "y", "z"));
  
-//To subscribe, call the method
+// To subscribe, call the method
  
 flux.subscribe();
 ```
@@ -90,10 +89,10 @@ flux.subscribe();
 We are going to use [spring initializr](https://start.spring.io/) to generate our application startup code.
 1. On your web browser, navigate to [spring initializr](https://start.spring.io/).
 2. Input the group as `io.section` and name as `webfluxexample`.
-3. Add `Spring webflux`, `Mongo reactive`, and `lombok` as project dependencies.
+3. Add `Spring webflux`, `Mongo reactive`, and `Lombok` as project dependencies.
 4. Click generate to download the startup project files as a zip.
 5. Extract the zip file and open the project in your favorite code editor or IDE.
-6. Add dependencies below to `pom.xml` file.
+6. Add the following dependencies below to the `pom.xml` file.
    ```xml
    <dependencies>
      <dependency>
@@ -115,9 +114,9 @@ We are going to use [spring initializr](https://start.spring.io/) to generate ou
 2. Create a file named `ApplicationConfig.java` and add the code snippet below.
     
 ```java
-@Configuration //Marks the class as a configuration class
+@Configuration // Marks the class as a configuration class
 public class ApplicationConfig {
-    //Method below sets the path to the application.properties file.
+    // The method below sets the path to the application.properties file.
     @Bean
     public PropertyPlaceholderConfigurer placeholderConfigurer() {
         PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
@@ -136,9 +135,9 @@ public class ApplicationConfig {
 @EnableMongoRepositories(basePackages = "io.section.webfluxexample.repositories")
 public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
 
-    @Value("${database.name}")//Gets the database name from application.properties
+    @Value("${database.name}")// Gets the database name from application.properties
     private String databaseName;
-    //Mongodb connection string. Replace <username> and <password> with your mongodb username and password
+    // MongoDB connection string. Replace <username> and <password> with your mongoDB username and password
     private String name = "mongodb+srv://<username>:<password>@cluster0.mk0n7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     @Override
@@ -158,14 +157,14 @@ public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
 }
 
 ```
-> For instructions on creating MongoDB collection in Mongo atlas, read [Spring Data and Mongodb](/engineering-education/spring-data-mongodb/).
+> For instructions on creating MongoDB collection in Mongo atlas, read [Spring Data and MongoDB](/engineering-education/spring-data-mongodb/).
 
 
-4. In the `config` package, create a new file named `WebFLuxConfig.java` and add the code snippet below.
+4. In the `config` package, create a new file named `WebFluxConfig.java` and add the code snippet below.
 ```java
-@Configuration // marks the class as configuration class
-@EnableWebFlux // Enables Webflux in out application
-public class WebFLuxConfig implements WebFluxConfigurer {
+@Configuration // Marks the class as configuration class
+@EnableWebFlux // Enables Webflux in our application
+public class WebFluxConfig implements WebFluxConfigurer {
 }
 
 ```
@@ -180,8 +179,8 @@ database.name=myFirstDatabase # database name property
    
 ```java
 @Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
-@Document //Marks this class as a Mongodb document
-@Data // Lombok annotation to generate getters, setters, toString and equals methods
+@Document // Marks this class as a MongoDB document
+@Data // Lombok annotation to generate getters, setters, toString, and equals methods
 public class Student {
     @Id
     private int id;
@@ -198,7 +197,7 @@ public class Student {
 ```java
 public interface StudentRepository extends ReactiveMongoRepository<Student, Integer> {
     @Query("{ 'name': ?0 }")
-    Flux<Student> findByName(final String name); //Flux returns zero or n elements
+    Flux<Student> findByName(final String name); // Flux returns zero or n elements
 }
 
 ```
@@ -208,7 +207,7 @@ public interface StudentRepository extends ReactiveMongoRepository<Student, Inte
 2. Create a file named `StudentService.java` and add the code snippet below. 
 ```java
 public interface StudentService {
-    void createStudent(Student student); // returns null after creating a student
+    void createStudent(Student student); // Returns null after creating a student
 
     Mono<Student> findById(int id); // Returns 0 or a single student
 
@@ -218,7 +217,7 @@ public interface StudentService {
 
     Mono<Student> update(Student student); // Updates and returns the updated student
 
-    Mono<Void> delete(int id); //delete the student
+    Mono<Void> delete(int id); // Delete the student
 
 }
 ```
@@ -229,33 +228,33 @@ public interface StudentService {
 @AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository repository;
-    //Saves the student into the database
+    // Saves the student into the database
     @Override
     public void createStudent(Student student) {
 
         repository.save(student).subscribe();
     }
-    //Finds a single student by id
+    // Finds a single student by id
     @Override
     public Mono<Student> findById(int id) {
         return repository.findById(id);
     }
-    //Finds a list of students whose names match the searched name
+    // Finds a list of students whose names match the searched name
     @Override
     public Flux<Student> findByName(String name) {
         return repository.findByName(name);
     }
-    //returns a list of all students from the database
+    // Returns a list of all students from the database
     @Override
     public Flux<Student> findAll() {
         return repository.findAll();
     }
-    //Saves a student into the database
+    // Saves a student into the database
     @Override
     public Mono<Student> update(Student student) {
         return repository.save(student);
     }
-    //Deletes a student from the database
+    // Deletes a student from the database
     @Override
     public Mono<Void> delete(int id) {
         return repository.deleteById(id);
@@ -263,7 +262,6 @@ public class StudentServiceImpl implements StudentService {
 }
 
 ```
-
 
 ### Controller layer
 1. In the root project package, create a new package named `controllers`.
@@ -274,35 +272,35 @@ public class StudentServiceImpl implements StudentService {
 @AllArgsConstructor // Lombok annotation to generates a constructor for the class
 public class StudentController {
     private final StudentService service;
-    //Handles the student creation POST request.
+    // Handles the student creation POST request.
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createStudent(Student student) {
         service.createStudent(student);
     }
-    //Handles get student by id endpoint
+    // Handles get student by id endpoint
     @GetMapping("/{id}")
     public ResponseEntity<Mono<Student>> getById(@PathVariable("id") int id) {
         Mono<Student> student = service.findById(id);
         HttpStatus status = student != null ? HttpStatus.OK : HttpStatus.NOT_FOUND;
         return new ResponseEntity<>(student, status);
     }
-    //Handles the search student by name endpoint
+    // Handles the search student by name endpoint
     @GetMapping("/{name}")
     public Flux<Student> getByName(@PathVariable("name") String name) {
         return service.findByName(name);
     }
-    //Returns a list of students
+    // Returns a list of students
     @GetMapping
     public Flux<Student> findAll() {
         return service.findAll();
     }
-    //Updates the student with the provided id
+    // Updates the student with the provided id
     @PutMapping("/{id}")
     public Mono<Student> updateStudent(@RequestBody Student student) {
         return service.update(student);
     }
-    //Deletes the student with the provided id
+    // Deletes the student with the provided id
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteStudent(@PathVariable("id") int id) {
