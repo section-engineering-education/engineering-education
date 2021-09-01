@@ -1,0 +1,19 @@
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+  Congratulations 🎉 on submitting your first topic suggestion. We look forward to reviewing it. Be sure to follow the template to make it easier for our content moderators to review your article. 
+  
+ 💡 Another top tip for swift topic approval is to ensure your proposed article is detailed and will cover a range of areas in your desired topic. We aim to publish unique and interesting software-centric articles that benefit our readers.
+  
+  ▶ For more details and examples, check out our [New Contributors](https://github.com/section-engineering-education/engineering-education/tree/master/new_contributors) folder which contains a wealth of resources to aid you.
+
+# Configuration for new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  Great work submitting your first article 🚀. If you have not already done so, please follow the article checklist to ensure a swift review and payout. Also, check out our [New Contributors](https://github.com/section-engineering-education/engineering-education/tree/master/new_contributors) folder for a list of resources that will help through the process.
+
+# Configuration for first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: >
+  Congratulations, you've published your first article 🥳. We hope this will be the first of many.
