@@ -1,21 +1,21 @@
 ### Introduction
-QR codes are a form of barcode, or scannable series, that can store a range of data, including web links, credit card info, contact information, and even freebies. To analyze information in a machine-readable format, many apps use QR codes. These patterns are used to encode information in a format that only machines, not humans, can understand.
+Quick response (QR) codes are a type of barcode, or scannable series, that can store a range of data, including web links, credit card info, contact information, and even freebies. QR codes are used to encode information in a format that only machines, not humans, can understand.
 
 In this tutorial, we will learn how to generate QR codes to store simple text format data in an Android application.
 
-#### Why use Quick Response Code?
+#### Why use Quick Response Codes?
 QR codes have the following advantages:
 1. Unlike other barcodes, they are not subject to the same security risks as traditional barcodes.
-2. QR codes hold large amounts of data -over 2000 characters.
+2. QR codes hold large amounts of data -over 2500 characters.
 3. They minimize processing errors since they are difficult to tamper with.
-4. Unlike the traditional BarCode, QR codes stores data in 2D (both vertically and horizontally).
+4. Unlike the traditional barcode, QR codes stores data in 2D (both vertically and horizontally).
 
 ### Prerequisites
-To follow through this tutorial, you'll need to be conversant with:
-- Creating Android apps with the Kotlin programming language
-- Imperative paradigm in Android (XML)
-- ViewBinding
-- Android permissions
+To follow along with this tutorial, you'll need to be conversant with:
+- Creating Android apps with the Kotlin programming language.
+- Imperative paradigm in Android (XML).
+- ViewBinding.
+- Android permissions.
 
 ### Creating an Android project
 Run Android Studio and build a new `Empty Activity` project named `QR Code`.
@@ -25,7 +25,7 @@ Run Android Studio and build a new `Empty Activity` project named `QR Code`.
 ### Setting up the project
 Before we get into coding, let's first enrich our project in the following ways.
 
-#### Add Camera Permission
+#### Add Camera permission
 Android OS prohibits the use of the camera without authorization. Since we'll need it when scanning a QR code, add the following permission in the manifest file.
 
 ```xml
@@ -38,9 +38,8 @@ Android OS prohibits the use of the camera without authorization. Since we'll ne
 ```
 
 #### Add required dependencies and repositories
-
 **ZXing Library**
-`ZXing` (an acronym for "Zebra Crossing") -is Google's open-source, multi-format 1D/2D bar-code image processing tool built with Java and is compatible with other programming languages.
+`ZXing` (an acronym for "Zebra Crossing") is an open-source, multi-format 1D/2D bar-code image processing tool built with Java and is compatible with other programming languages.
 
 ```gradle
 implementation 'com.google.zxing:core:3.4.0'
@@ -80,9 +79,9 @@ android{
 ```
 
 #### System requirements
-ZXing creators recommend using Android API-24 as the minimum SDK version when working with ZXing. Failure to do this, the app won't compile.
+ZXing creators recommend using Android API-24 as the minimum SDK version. Otherwise, the app won't compile.
 
-```kotlin
+```gradle
 android {
     ...
 
@@ -96,7 +95,7 @@ android {
 ```
 
 ### Data Encoding/Encryption
-To illustrate how QR code decoding works, we are going to create one activity named `GenerateQR` and its corresponding XML file named `activity_generate_qr`. You can also rename the default, `MainActivity.kt` and its XML file.
+To illustrate how QR code decoding works, we are going to create one activity named `GenerateQR` and its corresponding XML layout file named `activity_generate_qr`. You can also rename the default, `MainActivity.kt` and its XML file.
 
 #### activity_generate_qr.xml
 
@@ -162,7 +161,8 @@ To illustrate how QR code decoding works, we are going to create one activity na
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-In the above code, we have created a text input field, two buttons, and an ImageView -where the QR Code will be displayed.
+
+In the code above, we have created a text input field, two buttons, and an ImageView that will display the QR code once it is generated.
 
 Preview:
 
@@ -222,11 +222,13 @@ private fun generateQRCode(inputText: String?): Bitmap? {
 ```
 
 **Explanation:**
-In the code above, we have captured the text entered by the user and encoded it into a square BitMap. If the input is not empty, the function returns a BitMap, otherwise it returns null and an error message is displayed in the textField.
+In the code above, we have captured the text entered by the user and encoded it into a square BitMap.
 
-In case an error occurs during the encoding process, the exception is displayed on the logCat for easy debugging.
+If the input is not empty, the function returns a BitMap, otherwise it returns null and an error message is displayed in the textField.
 
-`Matrix` - A data matrix is a two-dimensional code made up of white and black cells organized in a square arrangement (rectangular ones also exist). The number of columns and rows grows in proportion to the quantity of data stored in the code. 
+In case an error occurs during the encoding process, the exception is displayed on the logcat for easy debugging.
+
+`Data matrix` - A matrix is a two-dimensional code made up of black and white cells organized in a square arrangement (rectangular ones also exist). The number of columns and rows grows in proportion to the quantity of data stored in the code. 
 
 Using the encoder provided by ZXing, the matrix is converted into a BitMap.
 
@@ -240,9 +242,9 @@ That's all about generating QR codes from texts (Strings).
 
 Moving on, let's look at how we can scan an already existing QR Code. This is the reverse of encoding.
 
-> NOTE: You can scan any QR code including the ones generated by other systems. The decoding algorithm will always produce the same data.
+> NOTE: You can scan any QR code including the ones generated by other systems. The decoding algorithm will always produce the same result.
 
-Create one more activity named `ScanQR` and its corresponding XML file named `activity_scan_qr` 
+Create one more activity named `ScanQR` and its corresponding XML layout file named `activity_scan_qr`.
 
 ### activity_scan_qr.xml
 
@@ -273,7 +275,7 @@ Create one more activity named `ScanQR` and its corresponding XML file named `ac
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-The above code generates a code scanner used to capture a picture when correctly aligned with the frame. This code scanner provides two action buttons -the focus button and the flashlight button. The two can the enabled by altering the respective values in the attributes or using the scanner properties .
+The above code generates a code scanner used to capture a picture when correctly aligned with the frame. This code scanner provides two action buttons -the focus button and the flashlight button. The two can be enabled by altering the respective values in the attributes or using the scanner properties.
 
 preview:
 
@@ -361,7 +363,7 @@ codeScanner?.apply {
 ```
 
 **Decode Callback (Results)**
-The following code is called after a code is captured. Note that to capture a QR code successfully, it must be aligned it the scanner flame.
+The following code is called after a code is captured. Note that to capture a QR code successfully, it must be aligned in the scanner flame.
 
 > 💡 TIP: The orientation does not matter 😎
 
@@ -373,7 +375,7 @@ codeScanner!!.decodeCallback = DecodeCallback {
 }
 ```
 
-The result is displayed in a Snackbar that lasts for five seconds.
+The result is displayed in a Snackbar that lasts for five seconds. Likewise, you can handle the result in your desired approach.
 
 **Handle decryption error(s)**
 
@@ -388,7 +390,7 @@ codeScanner?.errorCallback = ErrorCallback {
 }
 ```
 
-This runs whenever an error occurs when decoding. In most cases, if for some reason the QR code is not decode-able, the scanner tends to ignore it. This way, you'll rarely get exceptions.
+This runs whenever an error occurs when decoding. In most cases, if the QR code is not decode-able, the scanner tends to ignore it. This way, you'll rarely get exceptions.
 
 **Restart Scan when the Scanner is tapped**
 
@@ -464,6 +466,6 @@ Upon running the app, navigate to `ScanQR` activity and you should expect to see
 ![Scan QR Code](scan-qr-code-2.jpg)
 
 ### Conclusion
-In this tutorial, we've covered the basics of how to encode data using quick response (QR) codes in an Android app. We've also learned how to use a `CodeScanner` to scan/decode QR codes. The knowledge gained in this tutorial can be applied to other scenarios where QR codes are used. Keep learning and stay safe!
+In this tutorial, we've covered the fundamentals of how to encode data using quick response (QR) codes in an Android app. We've also learned how to use a `CodeScanner` to scan/decode QR codes. The knowledge gained in this tutorial can be applied to other scenarios where QR codes are applicable. Keep learning and stay safe!
 
 Happy coding!
