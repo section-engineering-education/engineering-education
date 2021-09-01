@@ -421,5 +421,5 @@ The function UpdateEmployee API is used to update an existing record, and the Em
 You can delete the record from the database by giving the EmployeeId as a Query Parameter in the route.
 
 ### Conclusion
-In this tutorial, we have covered how to develop Serverless APIs using Azure Functions and integrate with the database using Entity Framework Core Dependency Injection.
+This tutorial covered how to develop Serverless APIs using Azure Functions and integrate with the database using Entity Framework Core Dependency Injection.
 
