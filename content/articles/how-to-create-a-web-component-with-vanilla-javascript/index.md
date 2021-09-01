@@ -1,6 +1,6 @@
-Web application development is a quite crowded field of technology. There are different types of frameworks, libraries and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
+Web application development is a quite crowded field of technology. There are different types of frameworks, libraries, and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
 
-Therefore, when you use a framework like React, Vue, Angular or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
+Therefore, when you use frameworks like React, Vue, Angular, or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
 
 This article will talk about what web components are and why they are useful. Finally, it will take you through how to create a web component from scratch.
 
@@ -12,19 +12,19 @@ This article will talk about what web components are and why they are useful. Fi
 [Step 2: Load the template with content](#step-2-load-the-template-with-content)
 [Step 3: Create the HTML element](#step-3-create-the-html-element)
 [Step 4: Encapsulate the HTML element](#step-4-encapsulate-the-html-element)
-[Step 5: Lifecyle methods](#step-5-lifecycle-methods)
+[Step 5: Lifecycle methods](#step-5-lifecycle-methods)
 [Step 6: Creating custom elements](#step-6-creating-custom-elements)
 
 
 ### Prerequisites
-Web components are an awesome and interactive guide. Therefore a good understanding of HTML, CSS, and JavaScript is needed.
+Web components are a fantastic and interactive guide. Therefore a good understanding of HTML, CSS, and JavaScript is needed.
 
-### What are web component 
+### What are web components 
 [Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) are sets of specifications that add functionalities and features to web pages and applications. Web components are custom, reusable HTML elements with their functionality encapsulated away from the rest of your code. 
 
 The web components enable you to create a functionality inside a page that can be reused on another web platform, application, or page.
 
-Web components consist of three main technologies used to create custom elements that can be reused when you like. They include:
+Web components consist of three leading technologies used to create custom elements that can be reused when you like. They include:
 
 - **Custom elements:** APIs that allow you to define and create custom elements to provide the desired UI.
 
@@ -32,9 +32,11 @@ Web components consist of three main technologies used to create custom elements
 
 - **HTML templates:** Elements that allow you to write markup templates that are not displayed on the page. These elements are used as a template for markup to reuse in multiple places.
 
-Web browsers including chrome, firefox and edge offer support for web components. That means technologies, i.e. (Custom Elements, Shadow DOM, and HTML templates) are supported fully.
+Web browsers including chrome, firefox, and edge offer support for web components. That means technologies, i.e. (Custom Elements, Shadow DOM, and HTML templates) are supported fully.
 
-This image from [WebComponents.org](https://www.webcomponents.org/) shows the current browser support for Web Components.
+This image from [webcomponents.org](https://www.webcomponents.org/) shows the current browser support for Web Components.
+
+![Browser support](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/browser-support.jpg)
 
 ### Why use web components
 Code reusability has proven to be useful, and before the initiation of web components,  it wasn't easy to implement a reusable user interface that works across diverse frameworks and projects.
@@ -46,8 +48,7 @@ In this tutorial, we look at creating a web component with [Vanilla JavaScript](
 
 We will create an employee card web component. It will contain a user image, name, id, job title, phone, and email. Below is the user image we will use:
 
-![Employee card web component](/engineering-education/working-with-forms-in-php/employee-card.png)
-
+![User Image](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/image.png)
 
 We will begin by creating an `index.html` and `employee-card.js` files. Then copy and paste this code:
 
@@ -143,7 +144,7 @@ const template = document.createElement('template');
 
 The first step is creating an HTML content template element `<template>`. The `<template>` element holds HTML that is not rendered immediately after running a page. 
 
-#### Step2: Load the template with content
+#### Step 2: Load the template with content
 ```JavaScript
 template.innerHTML = `
 <style>
@@ -173,7 +174,7 @@ template.innerHTML = `
 `;
 ```
 
-The template element is stored in a variable called `template`, linked with `inner HTML` properties. The `innerHTML` property sets the HTML content on the element. Therefore, we can add the HTML we want to display on the screen, such as `<div>`, `<p>` and more HTML elements.
+The template element is stored in a variable called `template` and linked with `inner HTML` properties. The `innerHTML` property sets the HTML content on the element. Therefore, we can add the HTML we want to display on the screen, such as `<div>`, `<p>`, and more HTML elements.
 
 #### Step 3: Create the HTML element
 ```JavaScript
@@ -199,7 +200,7 @@ constructor(){
 
 We have an empty class. Next, we create a constructor and call the base class `super()` method to inherit the features of a class.
 
-A shadow DOM is created `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our components behaviour independent and from the rest of the Html.
+A shadow DOM is created `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our component's behaviour independent and from the rest of the Html.
 
 You can have your shadow DOM mode as closed or open. This means whether you can access shadow DOM via JavaScript in your components.
 
@@ -210,9 +211,9 @@ this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
 
 this.shadowRoot.querySelector('img').src = this.getAttribute('avatar')
 ```
-The web component API then get attributes name and avatar to be displayed on the page.
+The web component API then gets attributes name and avatar to be displayed on the page.
 
-#### Step 5: Lifecyle methods
+#### Step 5: Lifecycle methods
 ```JavaScript
 connectedCallback(){
    this.h3 = this.getAttribute("name")
@@ -223,6 +224,7 @@ connectedCallback(){
    this.h3;
  }
 ```
+
 There are four callback methods defined inside the custom elements. They enable the code to run when events occur in an element.
 
 Let us take a look at some of the callback methods:
@@ -242,15 +244,15 @@ We use the JavaScript class `EmployeeCard` while creating the custom elements. W
 
 Finally, open the `index.html` file using a web browser to test if we created an employee card web component. It will appear as shown below:
 
-![Employee card web component](/engineering-education/working-with-forms-in-php/employee-card.png)
+![Employee card web component](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/employee-card.jpg)
 
 ### Wrapping up
 Congratulations, you have successfully created a web component. With this tutorial, you have learned how to create a simple web component with vanilla JavaScript.
  
- Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be done using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
+Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be done using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
 
- Happy Coding!
+Happy Coding!
 
- ### References
+### References
  https://developer.mozilla.org/en-US/docs/Web/Web_Components
  
