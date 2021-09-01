@@ -12,10 +12,10 @@ QR codes have the following advantages:
 
 ### Prerequisites
 To follow along with this tutorial, you'll need to be conversant with:
-- Creating Android apps with the Kotlin programming language.
+- Creating Android apps with the [Kotlin programming language](https://developer.android.com/kotlin).
 - Imperative paradigm in Android (XML).
-- ViewBinding.
-- Android permissions.
+- [ViewBinding in Android](https://developer.android.com/topic/libraries/view-binding).
+- [Android permissions](https://developer.android.com/guide/topics/permissions/overview).
 
 ### Creating an Android project
 Run Android Studio and build a new `Empty Activity` project named `QR Code`.
