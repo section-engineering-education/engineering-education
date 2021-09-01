@@ -6,7 +6,7 @@ url: /form-validation-in-vue.js-using-veevalidate/
 title: Form Validation in Vue.js using VeeValidate
 description: This article will discuss and demonstrate how to set up form validation using the vee-validate library.
 author: njunu-simon
-date: 2021-09-01T00:00:00-12:00
+date: 2021-09-01T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
