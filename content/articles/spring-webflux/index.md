@@ -137,7 +137,7 @@ public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
 
     @Value("${database.name}")// Gets the database name from application.properties
     private String databaseName;
-    // MongoDB connection string. Replace <username> and <password> with your mongoDB username and password
+    // MongoDB connection string. Replace <username> and <password> with your MongoDB username and password
     private String name = "mongodb+srv://<username>:<password>@cluster0.mk0n7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     @Override
