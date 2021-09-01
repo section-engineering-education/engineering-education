@@ -213,9 +213,13 @@ When you run the app, you should expect to see the following output:
 ![demo](/engineering-education/displaying-images-with-fresco-library-in-android/demo.gif)
 
 ### Conclusion
-Fresco is a unique library that offers features such as animations, streaming, image loading, and transformation. Explore more on the other features provided by Fresco from their official documentation to help you in your android development process.
+In this tutorial, we have learned how to add Fresco library to an Android App.
+We have also learned about streaming, adding GIF animations, loading, placeholders and adding a circular shape to an image.
+Keep exploring and building amazing apps with this beautiful library.
 
 Check out the entire project on [GitHub](https://github.com/brandy-kay/FrescoLibraryDemo).
+
+Happy coding!!!
 
 ### References
 - [Fresco Official Documentation](https://frescolib.org/).
