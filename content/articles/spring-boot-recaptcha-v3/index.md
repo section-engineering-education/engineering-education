@@ -40,9 +40,9 @@ Import the generated project into Intellij and ensure you have an active interne
 ![Spring Initializr image](spring-initializr.png)
 
 ### Configure database connection properties
-Since we will not deploy the application to production, the database tables, and data will be automatically created for us during application initialization using `spring.jpa.hibernate.ddl-auto=create` property.
+Since we will not deploy the application to production, the database tables, and data will be automatically created during application initialization using `spring.jpa.hibernate.ddl-auto=create` property.
 
-The SQL statements that will be generated will be displayed to the console to see what is happening behind the scenes and this will be enabled by `spring.jpa.show-sql=true` property.
+The hibernate-generated SQL statements are displayed in the console, and we enable this by setting the `spring.jpa.show-sql` property.
 
 To ensure that we read the SQL statements easily, we can ensure they are formatted well by including the `spring.jpa.properties.hibernate.format_sql=true` property.
 
@@ -58,7 +58,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 ```
 
 ### Create User, Role, and ReCaptchaResponse models
-We will make use of project `Lombok` to generate getters and setters, no-argument constructor, and all arguments constructor for all the models that will be used.
+We will use of project `Lombok` to generate getters and setters, no-argument constructor, and all arguments constructor for all the models in the project.
 
 Create a class named Role with fields `id` and `role name` where the role name represents the authority that a user can have.
 ```java
@@ -98,9 +98,9 @@ public class Role {
 `@ToString` - Generates a string representation of the fields that can be used when debugging.
 
 
-Create a class named AppUser with fields `id`, `username`, and `password` which represents different users who can interact with the application depending on the rights they have.
+Create a class named AppUser with fields `id`, `username`, and `password` representing different users who can interact with the application depending on their rights.
 
-Since a user can have many rights we must include a Role field in the app user class and annotate with `@ManyToMany` annotation.
+Since users can have many rights, we must include a Role field in the `AppUser` class and annotate with the `@ManyToMany` annotation.
 
 ```java
 import lombok.AllArgsConstructor;
@@ -157,9 +157,9 @@ public class ReCaptchaResponse {
 ```
 
 ### Create User and Role repositories
-Create an interface named `AppUserRepository` and extend `JpaRepository` which will provide us the capability to perform CRUD operations without writing any queries.
+Create an interface named `AppUserRepository` and extend `JpaRepository`, which will allow us to perform CRUD operations without writing any queries.
 
-Create a method that returns an `AppUser` by searching for a username and this can be achieved by adding the following method which is created by chaining the field names using special keywords.
+Create a method that returns an `AppUser` by searching for a username, and we can achieve this by adding the following method, created by chaining the field names using special keywords.
 
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -191,7 +191,7 @@ PasswordEncoder passwordEncoder(){
 
 Inside the main class, create a `CommandLineRunner` Bean that we will use to create some custom users to test our application when the application bootstraps.
 
-The command-line runner will accept three parameters including `AppUserRepository`, `RoleRepository`, and `PasswordEncoder`.
+The command-line runner will accept three parameters: `AppUserRepository`, `RoleRepository`, and `PasswordEncoder`.
 
 ```java
 @Bean
@@ -205,7 +205,7 @@ The command-line runner will accept three parameters including `AppUserRepositor
 }
 ```
 
-Inside the arrow function of the command, line runner create a list of roles and use the `RoleRepository` to save the roles in the database using the `saveAll(roles)` method.
+Inside the command's arrow function,the command-line runner creates a list of roles and uses the `RoleRepository` to save the roles in the database using the `saveAll(roles)` method.
 
 ```java
 return args -> {
