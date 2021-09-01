@@ -10,7 +10,6 @@ date: 2021-09-01T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/multiclass-text-classification-with-pyspark/hero.jpg
     alt: Multi-Class Text Classification with PySpark
 ---
@@ -75,7 +74,7 @@ The image below shows the components of spark streaming:
 
 ![Spark Streaming](/engineering-education/multiclass-text-classification-with-pyspark/spark-streaming.png)
 
-*[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)*
+_[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)_
 
 #### MLib
 
@@ -93,7 +92,7 @@ The image below shows components of the Spark API:
 
 ![Components-of-Spark-API](/engineering-education/multiclass-text-classification-with-pyspark/components-of-spark.jpg)
 
-*[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)*
+_[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)_
 
 Pyspark supports two data structures that are used during data processing and machine learning building:
 
@@ -197,11 +196,12 @@ import SparkContext from pyspark
 sc = SparkContext(master="local[2]")
 ```
 
-To launch the Spark dashboard use the following command: 
+To launch the Spark dashboard use the following command:
 
 ```python
 sc
 ```
+
 > Note that the Spark Dashboard will run in the background.
 
 The output is as shown below:
@@ -390,7 +390,7 @@ These features are in form of an extractor, vectorizer, and tokenizer.
 3. Extractor
 
 - This is the process of extract various characteristics and features from our dataset. This enables our model to understand patterns during predictive analysis.
-To automate these processes, we shall use a machine learning pipeline. This will simplify the machine learning workflow.
+  To automate these processes, we shall use a machine learning pipeline. This will simplify the machine learning workflow.
 
 ### Pipeline stages
 
@@ -434,6 +434,7 @@ The more the word is rare in given documents, the more it has value in predictiv
 For a detailed understanding of IDF click [here](https://medium.com/the-programmer/how-does-bag-of-words-tf-idf-works-in-deep-learning-d668d05d281b).
 
 2. Estimators
+
 - An estimator takes data as input, fits the model into the data, and produces a model we can use to make predictions.
 
 #### LogisticRegression
@@ -643,7 +644,28 @@ predictions.show()
 
 ![Prediction Output](/engineering-education/multiclass-text-classification-with-pyspark/prediction-output.jpg)
 
-We select the necessary columns used for predictions and view the first `10` rows.
+To get all the available columns use this command.
+
+```python
+predictions.columns
+```
+
+The output of the columns is as shown.
+
+```bash
+['course_title',
+ 'subject',
+ 'label',
+ 'mytokens',
+ 'filtered_tokens',
+ 'rawFeatures',
+ 'vectorizedFeatures',
+ 'rawPrediction',
+ 'probability',
+ 'prediction']
+```
+
+From the above columns, we select the necessary columns used for predictions and view the first `10` rows.
 
 ```python
 predictions.select('rawPrediction','probability','subject','label','prediction').show(10)
@@ -724,7 +746,7 @@ from pyspark.sql.types import StringType
 Create a sample data frame made up of the `course_title` column.
 
 ```python
-sample1 = spark.createDataFrame([
+ex1 = spark.createDataFrame([
     ("Building Machine Learning Apps with Python and PySpark",StringType())
 ],
 ["course_title"]
@@ -735,29 +757,49 @@ sample1 = spark.createDataFrame([
 Let's output our data frame without truncating.
 
 ```python
-sample1.show(truncate=False)
+ex1.show(truncate=False)
 ```
 
 After we formatting our input string, now let's make a prediction.
 
 ```python
-pred1 = lr_model.transform(sample1)
+pred_ex1 = lr_model.transform(ex1)
 ```
 
 To show the output, use the following command:
 
 ```python
-pred1.show()
+pred_ex1.show()
 ```
 
 Output:
 
 ![Output](/engineering-education/multiclass-text-classification-with-pyspark/output.jpg)
 
-Let's select the necessary columns that will give the prediction results.
+Get all the available columns.
 
 ```python
-pred1.select('course_title','rawPrediction','probability','prediction').show()
+pred_ex1.columns
+```
+
+The output is as shown.
+
+```bash
+['course_title',
+ '_2',
+ 'mytokens',
+ 'filtered_tokens',
+ 'rawFeatures',
+ 'vectorizedFeatures',
+ 'rawPrediction',
+ 'probability',
+ 'prediction']
+```
+
+From the above columns, let's select the necessary columns that gives the prediction results.
+
+```python
+pred_ex1.select('course_title','rawPrediction','probability','prediction').show()
 ```
 
 Output:
@@ -772,7 +814,22 @@ Output:
 
 The prediction is `0.0` which is web development according to our created label dictionary.
 
-This shows that our model can accurately classify the given text into the right subject with an accuracy of `99.999999`.
+To see our label dictionary use the following command.
+
+```python
+label_dict
+```
+
+The output of the label dictionary is as shown.
+
+```bash
+{'Web Development': 0.0,
+ 'Business Finance': 1.0,
+ 'Musical Instruments': 2.0,
+ 'Graphic Design': 3.0}
+```
+
+This shows that our model can accurately classify the given text into the right subject with an accuracy of `91.63498`.
 
 ### Conclusion
 
@@ -795,4 +852,5 @@ Finally, we used this model to make predictions, this is the goal of any machine
 - [Getting started with PySpark](/engineering-education/getting-started-with-pyspark-spark-part2/)
 
 ---
+
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
