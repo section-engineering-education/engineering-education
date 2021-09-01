@@ -4,11 +4,12 @@ Real-time applications are now essential for all web applications and most of us
 
 #### What exactly is socket programming?
 
-A socket configuration is a method of connecting two network nodes so that they can communicate with one another. One socket (node) listens to a specific port on IP, while another socket accesses another to build a connection. The server creates a listener socket while the client accesses the server.
+A socket setup is a way of connecting two network nodes so that they can interact. One socket (node) listens for traffic on a specified IP port, while another socket connects to it. While the client connects to the server, the server generates a listener socket.
 
 #### What you will learn
 
-Many programming languages such as `java` have a method used to deal with socket systems as well as PHP. The focus of this article will be how you can deal with sockets in PHP, how you can create a simple client-server application, and learn how to send and receive messages on a server with a client application.
+Many computer languages, including Java and PHP, include a technique for dealing with socket systems.
+This post will focus on dealing with sockets in PHP, creating a simple clientserver application, and learning how to transmit messages on a server using a client application.
 
 #### Prerequisites
 
@@ -27,9 +28,9 @@ Many programming languages such as `java` have a method used to deal with socket
   - [Set up host and port](#set-up-host-and-port)
   - [Make a socket](#make-a-socket)
   - [Connect the socket to the port and host.](#connect-the-socket-to-the-port-and-host)
-  - [Begin listening to the socket.](#begin-listening-to-the-socket)
+  - [Start by listening to the socket.](#start-by-listening-to-the-socket)
   - [Accept incoming connection](#accept-incoming-connection)
-  - [Read the message from the Client socket](#read-the-message-from-the-client-socket)
+  - [Start by looking at the message in the Client socket.](#start-by-looking-at-the-message-in-the-client-socket.)
   - [Message reversal](#message-reversal)
   - [Send the client socket message](#send-the-client-socket-message)
   - [Close the plug](#close-the-plug)
@@ -91,7 +92,7 @@ In this case, The newly created socket resource is therefore bound to an `IP add
 $result = socket_bind($sock, $host, $port) or die(“failed to bind to socket\n”);
 ```
 
-#### Begin listening to the socket.
+#### Start by listening to the socket.
 
 **syntax**
 
@@ -121,7 +122,7 @@ $listen = socket_accept($sock) or die(“failed to accept incoming connection\n�
 
 The script doesn't do anything yet. To keep to our above objective, we will read a customer's socket message and send it to the customer socket.
 
-#### Read the message from the Client socket
+#### Start by looking at the message in the client socket.
 
 **syntax**
 
@@ -217,7 +218,7 @@ Here, the data on the client socket is sent on the server socket.
 socket_write($sock, $message, strlen($message)) or die(“Failed to send data to server\n”);
 ```
 
-#### Read the response from the server
+#### Take a look at the server's reaction.
 
 ```php
 $result = socket_read($sock, 1024) or die(“Failed to generate response from the server\n”);
