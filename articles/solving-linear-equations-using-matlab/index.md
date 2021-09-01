@@ -1,18 +1,17 @@
 ### Linear algebra using matlab
 ### Introduction
-Equations in the form Ax=b in mathematics are linear algebra problems. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such problems are common in engineering and scientific disciplines. Therefore, understanding the setup plus the solution tothese problems forms an essential part of the learning for many engineers and scientists.
-MATLAB gives a powerful and reliable way to find the solution to these problems. However, we will also realize that solutions provided are not always what it
-appears to be. Therefore, we will see in this article how to solve these problems using Matlab since Matlab offers the best environment for solving matrix problems
-as it is a matrix laboratory.
+Equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
+Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
 
 ### Prerequisites
+
+To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
-- Basic understanding of matrix
+- Basic understanding of matrix.
 
 ### Solving simultaneous equations
-We are going to look on how to solve simultaneous equations using matlab. Since matlab is a matrix laboratory, we are going to look on how to solve these equations
-using the matrix method. Matrix is a two dimensional arrangment of numbers for example, 
+We are going to look on how to solve simultaneous equations using matlab. Simultaneous equations are finite set of equation for which common solution are set. What we mean is that, they are conditions that defines the relationship between two unknowns thruogh an equal number of equations. We are going to use the matrix method. Matrix is a two dimensional arrangment of numbers for example, 
 $$\left[\begin{array}
 {rrr}
 1 & 3 & 4 \\
@@ -24,13 +23,11 @@ $$\left[\begin{array}
 4 & 1
 \end{array}\right]
 $$
-Defining the matrix is by dimensions m x n, where m is the number of rows while n is the number of columns. A row is a horizontal arrangement, while a column is 
-the vertical arrangement of the numbers. If we have a 3x2 matrix, then what that means is that it has 3rows and 2columns. These matrices are used compactly to work
-with linear equations. The different forms of the matrix are;
-- Row vector - Are matrices with a single row
-- column vector - Are matrices with a single column
+Defining the matrix is by dimensions m x n, where m is the number of rows while n is the number of columns. A row is a horizontal arrangement, while a column is the vertical arrangement of the numbers. If we have a 3x2 matrix, then what that means is that it has 3 rows and 2 columns. These matrices are used compactly to work with linear equations. The different forms of the matrix are;
+- Row vector - Are matrices with a single row.
+- Column vector - Are matrices with a single column.
 - Square matrices - Are matrices where m=n, that is, the number of columns equals the number of rows. The basic form of linear equations is;
-![lineq](http://mathurl.com/yacqpchy.png)
+> ![lineq](http://mathurl.com/yacqpchy.png)
   
 Where $A_ij$ are the elements of the MxN matrix, $X_j$ are the elements of Nx1 matrix column vectors, and $b_i$ are the elements of the Mx1 row vector. For example, given a simultaneous equation shown below;
 
@@ -88,18 +85,20 @@ x =
     3.5652
    -1.6522
 ```
-Matlab provides a solution to linear algebra. However, just as it solution, at some point, it doesn't produce the solution or the solutions provided is less trustworthy. Therefore, Matlab will give the user a warning at some point, but this happens in rare cases. Now, the fault here may not be due to poor syntax or Matlab's fault, but it could be due to the user's failure to understand linear algebra. But don't worry now. I am here to show you the causes of such problems or situations and the meaning of the output given by Matlab.
-The problem we solved before had two unknowns, x, and y, and since there were two unknowns, the output had a length of two(column vector). There are various types of simultaneous equations, that is,
+Matlab provides a solution to linear algebra. But, at some point, it doesn't produce the solution, or the solutions provided are less trustworthy. So, Matlab will give the user a warning at some point, but this happens in rare cases. Now, the fault here may not be due to poor syntax or Matlab's fault, but it could be due to the user's failure to understand linear algebra. But don't worry. I am here to show you the causes of such problems or situations and the meaning of the output given by Matlab.
+The problem we solved before had two unknowns, `x` and `y`, and since there were two unknowns, the output had a length of two(column vector). There are various types of simultaneous equations, that is,
 - Inconsistent equations
 - Undetermined problems
 - Overdetermined problems
 
 ### Inconsistent equations
-Inconsistent equations are equations in which m=n but the solution does not exist. In this type of equation, the left side is equal to the, but right sides are not e.g
+Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equation, the left side is equal to the, but right sides are not e.g
 $$
 \begin{cases} 4x+5y=6\\4x+5y=14\end{cases}
 $$
-As you can see, the equation is inconsistent. Solving simultaneous is just finding the point at which two equations meet when plot. When you plot these two equations, the lines are parallel. Let's make a plot to visualize what we are talking our statement. Since we are plotting 'x' against 'y', we will first make `y` the subject of the equation for each then plot. When we make `y` as the subject, we will have;
+As you can see, the equation is inconsistent. Solving simultaneous is finding the point at which two equations meet when plotted. When you plot these two equations, the lines are parallel.
+
+Let's make a plot to visualize what we are talking about in the above statement. Since we are plotting `x` against `y`, we will first make `y` the subject for each equation then plot. As shown below:
 $$
 \begin{cases} y1=(6-4x)/5\\y2=(14-4x)/5\end{cases}
 $$
@@ -112,7 +111,7 @@ plot(x, y1, x, y2)   %plotting the two equations
 legend('y1', 'y2')   %Adding legends to the plot
 ```
 ![output](/engineering-education/solving-linear-equation-using-matlab/linear_one.png)
-The two lines are parallel. It means that the two lines meet intersect at infinity. So when you try two get the solution to this problem using Matlab, the output given for the unknowns is `inf`, which means infinity.
+The two lines are parallel. It means that the two lines intersect at infinity. So when you try to get the solution to this problem using Matlab, the output given for the unknowns is `inf`, which means infinity.
 ```
 x =
 
@@ -156,7 +155,8 @@ ylabel('y');
 legend('y1', 'y2')
 ```
 ![output two](/engineering-education/solving-linear-equation-using-matlab/linear_two.png)
-We will use the `intersect function` to find the point of intersection to find the point at which the lines intersects. The intersect function uses the gradients and the constants as the inputs as shown below;
+
+We will use the `intersect function` to find the point at which the lines intersects. The intersect function uses the gradients and the constants as the inputs as shown below;
 ```matlab
 function [x0 y0] = intersectPoints(m1,m2,b1,b2) %m is the gradient while b is the constant. 
 x0 = (b2-b1)/(m1-m2); %find the x point
@@ -173,20 +173,23 @@ ans =
 
     3.5652
 ```
-This function gives a single output corresponding to the `x` value for the point of intersection. To find the `y`, you can replace the `x` in the equation and get your `y`.
-The diagram shows that the solution is similar to that we found before(3.5652,-1.6522). It means that the solution is correct. Now assume that now we have the equation below;
+This function gives a single output corresponding to the `x` value for the point of intersection. To find  `y`, you can replace `x` in the equation and get your `y`.
+The diagram shows that the solution is similar to the one we found before(3.5652,-1.6522). It means that the solution is correct. Now assume that now we have the equation below;
 $$
 \begin{cases} 4x + 5y=6\\8x + 10y=12\\ -2x -2.5y =-3\\ 7x - y =25\end{cases}
 $$
-Let's plot the line of the three equations. To do that, we add the below code;
+Let's plot the line of the three equations. To do that, we add the code below;
 ```Matlab
 y3 = 7*x - 25;
 hold on
 plot(x, y1, x,y2, x, y3)
 ```
 ![output](/engineering-education/solving-linear-equation-using-matlab/linear_three.png)
-When you execute the above commands, we get a 3rd line which is for the third equation. Looking at the plots, you may think these three lines intersect at a common point, but this is not the case. To see this, zoom out the plots. To zoom out, click on the magnifying lens icon having `+` inside it. After clicking it, move to the point at which the lines seems to intersect a few times, and the result will be;
+
+When you execute the above commands, we get a 3rd line(the green line) which is for the third equation. Looking at the plots, you may think these three lines intersect at a common point, but this is not the case. To see this, zoom out the plots. To zoom out, click on the magnifying lens icon having `+` inside it. After clicking it, move to the point at which the lines seems to intersect a few times, and the result will be;
+
 ![output](/engineering-education/solving-linear-equation-using-matlab/linear_four.png)
+
 This shows that there is no perfect solution to these problems. If we try solving it using matlab and plot this output to see the position that matlab gives as the output. This can be done by the code below;
 ```matlab
 A = [4 5; 3 -2; 7 -1];
@@ -197,7 +200,7 @@ plot(x(1),x(2),'k*')
 plot(x(1),x(2),'r*')
 ```
 ![output](/engineering-education/solving-linear-equation-using-matlab/linear_five.png)
-As you can see, Matlab is trying to locate a point close to all three lines, and this is an approximation. The error to the solution is found by;
+As you can see, Matlab is trying to locate a point close to all three lines, and this is an approximation. You can find the error to the solution by;
 ```Matlab
 error = A*x -b
 ```
@@ -208,4 +211,4 @@ norm(error)
 The output is `0.7941` and is known as `optimum solution in the least square sense`. It is the point at which the `norm(error)` is as small as possible. If we try other points, we get `norm(error)` to be higher than `0.7941`.
 
 ### Conclusion
-Solving simultaneous equations in Matlab depends on the type of problem that you are handling. As a user, you should know the type of equation or problem you are trying to solve. In addition, it will help you know the output you expect from Matlab. What you must know is that Matlab will provide a solution to all these problems. Also, knowing the type of equation helps you avoid errors in linear equations.
+Solving simultaneous equations in Matlab depends on the type of problem that you are handling. As a user, you should know the type of equation or problem you are trying to solve. Besides, it will help you know the output you expect from Matlab. What you must know is that Matlab will provide a solution to all these problems. Also, knowing the type of equation helps you avoid errors in linear equations.
