@@ -1,3 +1,4 @@
+### Introduction
 Reactive programming is a programming paradigm that supports an asynchronous, event-driven, and non-blocking approach to data processing. The reactive programming paradigm organizes events and data as streams.
 
 In the reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat applications.
@@ -65,14 +66,14 @@ Spring Webflux is similar to Spring MVC, but it supports reactive and non-blocki
 
 Webflux has two publishers:
 
-**Mono**
+#### Mono
 `Mono` publisher that returns 0 or 1 element.
 ```java
 Mono<String> mono = Mono.just("Jonh");
 Mono<String> mono = Mono.empty();
 ```
 
-**Flux**
+#### Flux
 `Flux` is a publisher that emits 0 or N elements.
 
 ```java
@@ -89,8 +90,8 @@ flux.subscribe();
 We are going to use [spring initializr](https://start.spring.io/) to generate our application startup code.
 1. On your web browser, navigate to [spring initializr](https://start.spring.io/).
 2. Input the group as `io.section` and name as `webfluxexample`.
-3. Add `Spring webflux`,`Mongo reactive`, and `lombok` as project dependencies.
-4. CLick generate to download the startup project files as a zip.
+3. Add `Spring webflux`, `Mongo reactive`, and `lombok` as project dependencies.
+4. Click generate to download the startup project files as a zip.
 5. Extract the zip file and open the project in your favorite code editor or IDE.
 6. Add dependencies below to `pom.xml` file.
    ```xml
@@ -180,7 +181,7 @@ database.name=myFirstDatabase # database name property
 ```java
 @Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Document //Marks this class as a Mongodb document
-@Data // Lombol annotation to generate getters, setters, toString and equals methods
+@Data // Lombok annotation to generate getters, setters, toString and equals methods
 public class Student {
     @Id
     private int id;
@@ -191,7 +192,7 @@ public class Student {
 ```
 
 ### Repository layer
-1. In the root project directory, create a new package name `repository`.
+1. In the root project directory, create a new package named `repository`.
 2. Create a new file named `StudentRepository.java` in the `repository` package created above.
     
 ```java
@@ -270,7 +271,7 @@ public class StudentServiceImpl implements StudentService {
 ```java
 @RestController // Marks this class as a REST controller
 @RequestMapping("/api/students") // Sets the base URL for students API
-@AllArgsConstructor // Lombok annotation to generate constructor for the class
+@AllArgsConstructor // Lombok annotation to generates a constructor for the class
 public class StudentController {
     private final StudentService service;
     //Handles the student creation POST request.
