@@ -1,6 +1,6 @@
 ### Introduction
 
-A PHP Regular Expression, commonly known as Regex, is a group of letters and characters that form a search pattern every time a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she  wants.
+A PHP Regular Expression, commonly known as Regex, is a group of letters and characters that form a search pattern every time a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she wants.
 
 A Regex is always a single letter or a group of letters forming a more complex pattern. Regex can therefore be used to perform all types of text searches and replacements.
 
@@ -31,7 +31,7 @@ PHP RegEx functions are made of delimiters, pattern and variation of choice. Bel
 $ exp = "/ category / i";
 ```
 
-In the example above, the delimiter `/` is used, the `category` is a searchable pattern, and finally, the `i` is used to ensure search case-insensitivity. The delimiter can be any character. The most common one is usually slash forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
+In the example above, the delimiter `/` is used, the `category` is a searchable pattern, and finally, the `i` is used to ensure search case-insensitivity. The delimiter can be any character. The most common one is usually slashing forward (/). When the search pattern is made up of `/`, it is advisable to use other delimiters like `#`.
 
 ### Examples of RegEx functions
 
@@ -42,8 +42,8 @@ There are numerous functions in PHP that are used together with the RegEx functi
 This function is used to find out whether a pattern is present in the subject of the search or not. It outputs a one when the search is positive and a zero if the search is negative.
 Below is a code illustration that shows how this function is used:
 
-```php
-<? php
+```PHP
+<? PHP
 
 //declare varriables
 $string1 = "In which category are you?";
@@ -59,11 +59,11 @@ This code searches for the pattern `category` in the string 'In which category a
 
 - The `preg_match_all ()` function
 
-This function is used in counting the number of times a search pattern is present in the search criteria. It then outputs the result. The number can always be a zero when the pattern is not found.
+This function counts the number of times a search pattern is present in the search criteria. It then outputs the result. The number can always be a zero when the pattern is not found.
 Below is a code illustration that shows how this function is used:
 
-```php
-<? php
+```PHP
+<? PHP
 
 //Declare varriables
 $string2 = "All the ladies are beautiful though Ruth is the most beautiful";
@@ -111,15 +111,15 @@ This describes how the search patterns are decided. A pair of box brackets are u
 3. [100-200]- This specifies that one number can be found from the specified range of 100 to 200.
 
 
-### PHP RegEx Grouping
+### PHP RegEx grouping
 
 Brackets () are used for the grouping of parts of search patterns. They also come in handy in cases where quantifiers are being added to the search patterns.
 An example is used to illustrate it, as shown below:
 
 Use the collection to look for "hippopotamus" through searching for hip and two "po" conditions:
 
-```php
-<? php
+```PHP
+<? PHP
 
 //varriable declaration
 $string4 = "I saw an hippopotamus last night.";
