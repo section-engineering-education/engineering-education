@@ -1,9 +1,26 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /multiclass-text-classification-with-pyspark/
+title: Multi-class Text Classification with PySpark
+description: This tutorial will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title.
+author: james-omina
+date: 2021-09-01T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/multiclass-text-classification-with-pyspark/hero.jpg
+    alt: Multi-class Text Classification with PySpark
+---
+
 PySpark is a python API written as a wrapper around the Apache Spark framework. Apache Spark is an open-source Python framework used for processing [Big Data](https://en.wikipedia.org/wiki/Big_data) and [data mining.](https://www.investopedia.com/terms/d/datamining.asp)
 
 Apache Spark is best known for its speed when it comes to data processing and its ease of use. It has a high computation power that's why its best suited for Big Data.
 It supports popular libraries such as [Pandas](https://pandas.pydata.org/), [Scikit-Learn](https://scikit-learn.org/) and [NumPy](https://numpy.org/) used in data preparation and model buidling.
 
-We will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title. We have various subjects in our dataset that can be assigned, specific classes.
+We will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title. We have various subjects in our dataset that can be assigned specific classes.
 
 ### Table of contents
 
@@ -59,7 +76,7 @@ The image below shows the components of spark streaming:
 
 ![Spark Streaming](/engineering-education/multiclass-text-classification-with-pyspark/spark-streaming.png)
 
-_[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)_
+*[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)*
 
 #### MLib
 
@@ -77,7 +94,7 @@ The image below shows components of the Spark API:
 
 ![Components-of-Spark-API](/engineering-education/multiclass-text-classification-with-pyspark/components-of-spark.jpg)
 
-_[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)_
+*[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)*
 
 Pyspark supports two data structures that are used during data processing and machine learning building:
 
