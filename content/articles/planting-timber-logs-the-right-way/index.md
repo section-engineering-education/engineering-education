@@ -6,7 +6,7 @@ url: /planting-timber-logs-the-right-way/
 title: Planting Timber logs the right way
 description: This article covers Timber android logging library, introduction to android logging, and how to setup Timber logging in an android application.
 author: michael-johnson-owallah
-date: 2021-08-22T00:00:00-15:00
+date: 2021-09-01T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,39 +15,40 @@ images:
     alt: Getting started with Timber logs
 ---
 
-Logging is among the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. Timber, which is a library created by `Jake Wharton` has made logging effortless. This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
-
+Logging is among the essential things we do while developing android apps. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome. 
 <!--more-->
+Timber, which is a library created by `Jake Wharton` has made logging effortless. 
+
+This article will discuss the best practices in using `Timber` and planting the `Timber trees`.
 
 ### Requirements
-
 To tag along with this tutorial comfortably, you should:
-
 - Have a working android studio IDE.
 - Be able to create a project in `Android Studio`.
 - Have an understanding of `Kotlin` or `Java`.
-- Have some basic knowledge of the basic `Logging class`.
+- Have some basic knowledge of the `Logging class`.
 
 ### Objectives
-
 By the end of this tutorial, you should be able to:
-
 - Know what is `Timber`.
 - Android logging with `Timber`.
 
 ### Introduction
+Logging is essential and is of much importance while developing android apps. We use logs for almost everything. 
 
-Logging is essential and is of much importance while developing android apps. We use logs for almost everything. For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome and time-consuming. Timber, a library developed by `Jake Wharton` has made logging easily attainable and less code.
+For instance, when debugging if-else conditions and when handling exceptions. Yet, as developers, we sometimes use the traditional log classes. These tend to be cumbersome and time-consuming. 
+
+Timber has made logging easily attainable and less code.
 
 ### What is a Logcat?
+From the official documentation, the logcat window in Android Studio displays system messages. 
 
-From the official documentation, the logcat window in Android Studio displays system messages. For instance, when a garbage collection occurs, the logcat displays these messages in real-time. It also allows you to view older messages.
+For example, when a garbage collection occurs, the logcat displays these messages in real-time. It also allows you to view older messages.
 
 When your code throws an exception, the logcat displays a message. The exception contains an associated stack trace containing links to the line of code.
 
 ### What are some of the traditional log class messages?
-
-According to the official documentation, this class allows for the creation of log messages. These messages appear in the logcat. From the highest priority to the lowest (or, least verbose to the most), we should use the following:
+According to the official documentation, this class allows for the creation of log messages. These messages appear in the logcat. From the highest priority to the lowest (or, least verbose to the most). We should use the following:
 - `Log.e(String, String)` - display errors
 - `Log.w(String, String)` - display warnings
 - `Log.i(String, String)` -display information
@@ -55,33 +56,29 @@ According to the official documentation, this class allows for the creation of l
 - `Log.v(String, String)` - for verbose
 
 ### What is Timber?
-
 Logging with the traditional class is cumbersome; that's where `Timber` comes in.
+
 In the official documentation, `Timber` is a logger with a small, extensible API. It provides utility on top of android's standard Log class.
-It's a library by `Jake Wharton` that enhances logging in android.
-`Timber` also has several log messages. For instance:
+
+`Timber` also has several log messages:
 - `Timber.i` - for information
 - `Timber.d` - for debug information
 - `Timber.v` - for verbose
 - `Timber.w` and `Timber.wtf` - for warning
 
 ### How it works.
-
 - You plant a tree by calling `Timber.plant` in your `onCreate` in your Application Class
 - Call the `Timber` from any class. Our class name is what we can use as the tag.
 
-### Now, how about we do some coding stuff...
-
+### Now, how about we do some coding...
 In this example, we'll create an app that adds two numbers. Then we'll log the answer.
 
 #### Step 1: Create the project
-
 We will kick off by creating a project. The image below will guide you into creating a project.
 
-![create_project](/planting-timber-logs-the-right-way/creating_project2)
+![create_project](/engineering-education/planting-timber-logs-the-right-way/creating_project2.png)
 
 #### Step 2: Adding Timber dependency
-
 After creating the project, we will add `Timber's` dependency to our app-level build Gradle.
 
 ```gradle
@@ -91,11 +88,9 @@ implementation 'com.jakewharton.timber:timber:4.7.1'
 ![adding dependency](/planting-timber-logs-the-right-way/add_dependency.png)
 
 #### Step 3: XML layouts
-
 We will now create and design our layout.
 
 ##### Main Activity layout
-
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -164,15 +159,11 @@ We will now create and design our layout.
         app:layout_constraintTop_toBottomOf="@+id/second_number" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-
-  
-
 #### Step 4: The Timber App Class
-
-After creating the layout, we will write  code for our `Application class of Timber`
+After creating the layout, we will write the code for our `Application class of Timber`
 ![creating a class in java](/planting-timber-logs-the-right-way/creating_a_class_java.png)
 
-```Java
+```java
 import android.app.Application;
 
 import timber.log.Timber;
@@ -190,9 +181,7 @@ public class TimberDemoApp extends Application {
 
 ![creating a class in kotlin](/planting-timber-logs-the-right-way/creating_a_class_kotlin.png)
 
-  
-
-```Kotlin
+```kotlin
 import android.app.Application
 import timber.log.Timber
 import timber.log.Timber.DebugTree
@@ -212,7 +201,6 @@ After creating the class, update your `Manifest file` with the name tag. Use you
 ![updating the manifest](/planting-timber-logs-the-right-way/manifest.png)
 
 #### Step 5: The code. (Main Activity)
-
 In this step, we will write the code for the two-number-adder that we have designed above.
 
 ```Java
@@ -225,7 +213,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import timber.log.Timber;
-
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
@@ -300,14 +287,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-```
-
-  
+``` 
 ### Timber Logcat
-
-In the logcat, you will see such a line like this `D/MainActivity:`
-We did not specify the class name but timber placed one for us; `D/MainActivity`.
-That is the beauty of `Timber`.
+In the logcat, you will see such a line like this `D/MainActivity:` We did not specify the class name but timber placed one for us. That is the beauty of `Timber`.
 
 #### Demonstration screens
 Let's run the application on a device or emulator. The logcat output should be as shown below.
@@ -320,13 +302,13 @@ Let's run the application on a device or emulator. The logcat output should be a
 Check out the entire `Java` project on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)
 
 ### Conclusion
-That's not all about `Logging with Timber`; keep exploring. Implement logging using this amazing tool in your android applications and improve the readability of your application logs.
+That's not all about `Logging with Timber`; keep exploring. 
+
+Implement logging using this amazing tool in your android applications and improve the readability of your application logs.
 
 ### Resources
-
--  [Timber Official Documentation](https://github.com/JakeWharton/timber)
-
--  [Android official documentation](https://developer.android.com/studio/debug/am-logcat)
+- [Timber Official Documentation](https://github.com/JakeWharton/timber)
+- [Android official documentation](https://developer.android.com/studio/debug/am-logcat)
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
