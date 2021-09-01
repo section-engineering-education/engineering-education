@@ -11,8 +11,10 @@ images:
     alt: Building a clock using JavaScript and SVG
 ---
 
-When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" - a typical example of which might be:
+When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" - a typical example of which might be: storing location ( in terms of longitude and latitude values).
 <!--more-->
+In this article, we will use Sqlite and its spatial extension to create a database that supports spatial data read and write operations, for a simple flask server.
+
 
 ### Table of Contents
 
