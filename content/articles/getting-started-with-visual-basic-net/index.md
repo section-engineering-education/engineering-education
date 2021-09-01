@@ -1,14 +1,14 @@
 Visual Basic.net is a multi-paradigm, object-oriented programming language. We implement it in the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) developed by Microsoft. They invented visual Basic in 2001 to replace Visual Basic 6.
 
-Visual Basic.Net is pronounced as “Visual basic dot net “. We commonly abbreviate it as VB.NET.
+Visual Basic.Net is pronounced as “Visual basic dot net. “ We commonly abbreviate it as VB.NET.
 
 Although VB.NET is a developed version of Visual Basic 6, it is not compatible with it, .i.e. we cannot compile code written in Visual Basic 6  under VB.NET
 
 ### Why VB.NET?
 
-- VB.NET is a beginner friendly language.
+- VB.NET is a beginner-friendly language.
 
-- With VB.NET you can create web applications with modern features like performance counters, file systems, and event logs.
+- With VB.NET, you can create web applications with modern features like performance counters, file systems, and event logs.
 
 - Since we implement VB.NET using the .NET framework, we can connect our applications to others created in languages that run on the same framework.
 
@@ -20,9 +20,9 @@ Although VB.NET may have a couple of advantages, it also has some drawbacks asso
 
 - VB.NET cannot handle pointers directly.
 
-- Since VB.NET is an intermediate language, there are many libraries required for the Just In Time compiler to interpret the application.
+- Since VB.NET is an intermediate language, many libraries are required for the Just In Time compiler to interpret the application.
 
-To get started, you will need a development enviroment.This is where we will write and debug our code. We will use [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
+To get started, you will need a development environment. This is where we will write and debug our code. We will use [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
 
 ### Installing Visual Basic.Net 
 
@@ -40,7 +40,7 @@ Once you have selected *Create a new project*, choose *” Install more tools 
 
 ![createproject](/engineering-education/getting-started-with-visual-basic-net/newproject1.png)
 
-From the drop-down menu, pick *Visual basic* then select *Console Application* from the list and click *Next*.
+Pick *Visual Basic* from the drop-down menu, then select *Console Application* from the list and click *Next*.
 
 ![picktemplate](/engineering-education/getting-started-with-visual-basic-net/newproject.png)
 
@@ -86,7 +86,7 @@ Hello World!
 
 C:\Users\sa\source\repos\helloworld\helloworld\bin\Debug\netcoreapp3.1\helloworld.exe (process 6544) exited with code 0.
 
-To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console.
 
 Press any key to close this window . . .
 
@@ -104,9 +104,9 @@ Imports System
 
 ```
 
-This line is used to include a *namespace*, System, in our program. With that namespace, we will access all the methods defined in it without getting an error.
+This line is used to include a *namespace*, system in our program. With that namespace, we will access all the methods defined in it without getting an error.
 
-A Namespace can be defined as a group of codes that is related to each other. It majorly comprises pieces of code such as classes, procedures, and functions.
+A Namespace can be defined as a group of codes that are related to each other. It majorly comprises pieces of code such as classes, procedures, and functions.
 
 **Line 2:** 
 
@@ -144,25 +144,25 @@ Console.WriteLine(“Hello World!”)
 
 ```
 
-`Console.WriteLine()` prints out text on the console. After printing a string, it adds a newline at the end . In our program, it will output  *"Hello World!"*.
+`Console.WriteLine()` prints out text on the console. After printing a string, it adds a new line at the end. In our program, it will output  *"Hello World!"*.
 
-Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .The major difference  is that `Console. Write()` *does not* add a new line at the end of the string. We can find more about the two commands [here](https://www.programiz.com/csharp-programming/basic-input-output).
+Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .The major difference is that `Console. Write()` *does not* add a new line at the end of the string. We can find more about the two commands [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
 ### Getting user input 
 
 To read the next **characters** from a standard input stream, we use `Console.ReadLine()`.
 
-`Console. Read()` reads the next **Character** from the  input .
+`Console. Read()` reads the next **Character** from the input.
 
-`Console.ReadKey()` gets the next character pressed by the user. We display the  key in the console window.
+`Console.ReadKey()` gets the next character pressed by the user. Then, we display the key in the console window.
 
 ### Comments in Visual Basic .NET
 
-Comments help a programmer understand what the code does at a certain stage. They are mainly used to make code readable and easy to understand.
+Comments help a programmer understand what the code does at a particular stage. They are mainly used to make code readable and easy to understand.
 
 The compiler usually ignores comments when compiling the code.
 
-In VB.NET comments start with a single apostrophe `’`.
+In VB.NET, comments start with a single apostrophe `’`.
 
 **Example**
 
@@ -172,7 +172,7 @@ In VB.NET comments start with a single apostrophe `’`.
 
 ```
 
-Unfortunately for Visual Basic, we do not have block comments. All comments are single-line comments.
+Unfortunately, for Visual Basic, we do not have block comments. All comments are single-line comments.
 
 **Tips on writing good comments**
 
@@ -248,7 +248,7 @@ Dim firstNum, seconNum, sum As Integer
 
 ```
 
-This line declares variables that will store the user input and also the result of the addition by the system.
+This line declares variables that will store the user input and the result of the addition by the system.
 
 `As Integer` means that the declared variables will be of the data type Integer `Int`. Apart from integers, we have other data types, such as 
 
@@ -267,11 +267,11 @@ firstNum = Console.ReadLine()
 
 ```
 
-This line assigns the user input to our declared variable for storage. We can see that we repeat this step for the second input under a different variable, this is because a variable can only hold value for one input, in case we assign a second, it will replace the original one.
+This line assigns the user input to our declared variable for storage. We can see that we repeat this step for the second input under a different variable. This is because a variable can only hold value for one input. So in case, we assign a second, it will replace the original one.
 
 ### Conclusion
 
-In this tutorial we looked at :
+In this tutorial, we looked at :
 
 - Setting up a Visual Basic.NET development environment.
 
