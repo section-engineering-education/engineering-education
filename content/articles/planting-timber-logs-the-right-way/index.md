@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /planting-timber-logs-the-right-way/
 title: Planting Timber logs the right way
-description: This article covers Timber android logging library, introduction to android logging, and setup Timber logging in an android application.
+description: This article covers Timber android logging library, introduction to android logging, and how to setup Timber logging in an android application.
 author: michael-johnson-owallah
 date: 2021-08-22T00:00:00-15:00
 topics: []
