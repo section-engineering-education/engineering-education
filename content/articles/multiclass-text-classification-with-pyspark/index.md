@@ -74,7 +74,7 @@ The image below shows the components of spark streaming:
 
 ![Spark Streaming](/engineering-education/multiclass-text-classification-with-pyspark/spark-streaming.png)
 
-_[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)_
+*[Image source: Databricks](https://databricks.com/wp-content/uploads/2018/05/Apache-Spark-Streaming-ecosystem-diagram.png)*
 
 #### MLib
 
@@ -92,7 +92,7 @@ The image below shows components of the Spark API:
 
 ![Components-of-Spark-API](/engineering-education/multiclass-text-classification-with-pyspark/components-of-spark.jpg)
 
-_[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)_
+*[Image source: Tutorialspoint](https://www.tutorialspoint.com/apache_spark/images/components_of_spark.jpg)*
 
 Pyspark supports two data structures that are used during data processing and machine learning building:
 
