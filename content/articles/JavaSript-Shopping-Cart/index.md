@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /javascript-shopping-cart-using-arrays-and-objects/
-title: Creating a Shopping Cart using Arrays and Objects using vanilla JavaScript
+title: Creating a Shopping Cart using Arrays and Objects in vanilla JavaScript
 description: In this article, we will be looking at how to create a shopping cart using arrays and objects in vanilla JavaScript.The shopping cart will allow users to add items, remove items, and view the contents of the cart.
 author: caroline-gatwiri
 date: 2021-08-27T00:00:00-16:00
@@ -17,9 +17,9 @@ images:
 Building a shopping cart can be done in an assortment of ways. In this tutorial, I will ll show you how to make a shopping cart using arrays and objects.
 <!--more-->
 ### The approach
-1. You initially have a curated list of shopping items.
-2. Each item has a counter variable.
-3. You decrease or increase the counter on adding the item to the cart.
+- Initially, you have a curated list of shopping items.
+- Each item has a counter variable.
+- You decrease or increase the counter on adding the item to the cart.
 
 We will use the Javascript event listeners to handle these activities.
 
