@@ -1,19 +1,32 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /php-regular-expressions/
+title: Php regular expressions
+description: This article will illustrate how to use regular expressions in php.
+author: steve-kwachie
+date: 2021-09-1T00:00:00-13:25
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/php-regular-expressions/hero.jpg
+    alt: php regular expressions image
+---
 
 A PHP Regular Expression, commonly known as Regex, is a group of letters and characters that form a search pattern every time a search is conducted on a phrase of words. When searching for data through a line of text, one can use this search method to define what he or she wants.
-
+<!--more-->
 A Regex is always a single letter or a group of letters forming a more complex pattern. Regex can therefore be used to perform all types of text searches and replacements.
 
 ### Table of contents
-
- 1. [Introduction](#introduction)
- 2. [Prerequisites](#prerequisites)
- 3. [Syntax of PHP RegEx](#syntax-of-php-regex)
- 4. [Examples of RegEx functions](#examples-of-regex-functions)
- 5. [Modifiers used with RegEx functions](#modifiers-used-with-regex-functions)
- 6. [PHP RegEx patterns](#php-regex-patterns)
- 7. [PHP RegEx Grouping](#php-regex-grouping)
- 8. [Conclusion](#conclusion)
+ 1. [Prerequisites](#prerequisites)
+ 2. [Syntax of PHP RegEx](#syntax-of-php-regex)
+ 3. [Examples of RegEx functions](#examples-of-regex-functions)
+ 4. [Modifiers used with RegEx functions](#modifiers-used-with-regex-functions)
+ 5. [PHP RegEx patterns](#php-regex-patterns)
+ 6. [PHP RegEx Grouping](#php-regex-grouping)
+ 7. [Conclusion](#conclusion)
 
 
 ### Prerequisites
