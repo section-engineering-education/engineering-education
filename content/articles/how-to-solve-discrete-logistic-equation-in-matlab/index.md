@@ -34,13 +34,19 @@ In this article, we will look at how to use Matlab to solve these logistic probl
 
 #### Overview of the logistic equation
 The logistic model gets its base on the mathematical equation below:
+
 $$
 \begin{cases} X_{t+1} = X_t + KX_t(1-X_t/C)\\X_0 = 10 \end{cases}
 $$
+
 Where:
+
 K = growth rate.
+
 C = Carrying capacity.
+
 $X_n$ = The population at a given time.
+
 n = Time.
 
 The logistic equation is a more realistic model for population growth. This means that the logistic model looks at the population of any set of the organism at a given time.
