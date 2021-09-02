@@ -1,53 +1,24 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /different-techniques-of-encoding-data-for-transmission/
-title: Different Techniques of Encoding Data for Transmission
-description: This article goes through how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
-author: geoffrey-omukuba
-date: 2021-09-02T00:00:00-02:30
-topics: [Networking]
-excerpt_separator: <!--more-->
-images:
-
-  - url: /engineering-education/different-techniques-of-encoding-data-for-transmission/hero.jpg
-    alt: Different Techniques of Encoding Data for Transmission Hero Image
----
+### Introduction
 For a data packet to be appropriately transmitted on a network, it needs to be converted into the best and most reliable way of transmission. For this reason, data is encoded in a way that is best understood by computers.
 <!--more-->
 Data encoding is the conversion of data into digital signals i.e. zeros and ones.
 
-<<<<<<< HEAD
 This tutorial intends to cover how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
-=======
-This article intends to cover how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 The different data encoding techniques that shall be focused on include; Non-Return to Zero Level, Non-Return to Zero, Non-Return to Zero Inverted, Bi-phase encoding, and Block encoding.
 
 For data to be encoded, it has to be converted to signal variations.
-<<<<<<< HEAD
 
 These signal variations include:
 1. Analog data to analog signal conversion – This includes; Amplitude Modulation, Phase Modulation, and Frequency Modulation.
 2. Digital data to analog signals - This include; Amplitude Shift Keying, frequency Shift Keying, Phase Shift Keying.
 3. Digital data to digital signals - This is what we will focus on.
 
-=======
-
-These signal variations include:
-1. Analog data to analog signal conversion – This includes; Amplitude Modulation, Phase Modulation, and Frequency Modulation.
-2. Digital data to analog signals - This include; Amplitude Shift Keying, frequency Shift Keying, Phase Shift Keying.
-3. Digital data to digital signals - This is what we will focus on.
-
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 The types of encoding techniques include:
 1. Non-Return to Zero
 2. Bi-phase encoding
 3. Block encoding
 
-<<<<<<< HEAD
 ### Non- Return to Zero Scheme.
 Non Return to Zero Signal involves both the positive and negative voltages.
 NRZ- Level and NRZ- Inverted are the two variations of  Non return to zero scheme
@@ -75,20 +46,10 @@ Let us look at an example,
 We consider the same data as before and assume that the signal was at positive level before time 1. Now for bit 1, we know that there will be a change in the signal level. Hence, the signal will shift to negative level.
 
 Next for bit 1, there is  a change in the signal level. Since the current level is at negative, we will now draw the signal at positive.
-=======
-### Non-Return to Zero
-In Non-Return to Zero encoding technique, high voltages are represented by 1s and low voltages represent 0s. Voltages remain the same during bit intervals.
-
-There is no indication for the beginning and the ending of a bit. Due to no voltage change during bit interval, there is no difference in the previous and present bit value.
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 Next bit 0, which means no change and hence, we continue at positive level since current is at positive. Again, we have bit 0 and we continue at positive level.
 
-<<<<<<< HEAD
 Next bit is 1, so now we move from positive to negative.
-=======
-The above diagram shows the NRZ encoding technique. The main disadvantage of NRZ is that the long voltage level causes the loss of clock synchronization, and hence the receiver cannot differentiate between 0s and 1s.
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 Next bit is 1, so we have to change the level again, and hence we now draw the signal at negative.
 
@@ -109,14 +70,6 @@ The synchronization problem also exists in both schemes. Again, this problem is 
 
 Another problem with NRZ-L occurs when there is a sudden change of polarity in the system. If the polarity of the system changes, signal is inverted. As a result, all 0s are interpreted as 1s and all 1s are interpreted as 0s. However, NRZ-I does not have this problem because in NRZ-I bit value is not determined by voltage level.
 
-<<<<<<< HEAD
-=======
-#### Non-Return to Zero Level (NRZ-L)
-If the incoming signal changes from 1 to 0 or from 0 to 1, the polarity changes. The first input signal should always have a polarity change.
-
-#### Non-Return to Zero Inverted
-If the input current is a 1, there is a progression just at the starting of the bit interval. The main disadvantage of the NRZ encoding is that there is a disturbance in clock synchronization between the transmitter and the receiver clock.
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 ### Bi-phase encoding
 Bi-phase encoding involves double-checking of the signal. Signals are checked at the beginning and in the middle. Due to double-checking of the signal, the clock rate is twice the rate of data transfer.
@@ -124,7 +77,6 @@ Bi-phase encoding involves double-checking of the signal. Signals are checked at
 The clock synchronization is taken from the signal; hence it requires a greater bandwidth. The two types of Bi-phase encoding are Differential Manchester and Bi-phase Manchester.
 
 #### Differential Manchester
-<<<<<<< HEAD
 In different Manchester, a transition occurs whenever there is a zero in the in the middle of the bit interval.
 
 For instance in the example a signal of 101101 can be encoded as;
@@ -147,30 +99,14 @@ Here, a transition is done in the middle of the bit interval. The resultant puls
 For example to encode 1011
 
 The first bit is 1, so we start at the top to the middle downwards while when it is zero you start from the bottom to the middle upwards as shown in the figure below.
-=======
-In Differential Manchester, a transition occurs in the middle of the bit interval. Where a change occurs at the start of a bit interval, it is an indication that the input signal was 0 unless otherwise.
-
-#### Bi-phase Manchester
-Here, a transition is done in the middle of the bit interval. The resultant pulse of the transition is from high to low when input is 1 in the middle and vice versa for input 0.
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 ![Illustration image of Bi-phase Manchester](/engineering-education/different-techniques-of-encoding-data-for-transmission/manchester.png)
 
-<<<<<<< HEAD
 ### Block encoding
 For clock synchronization to be achieved, redundancy is needed for error detecting. This redundancy can be achieved by block encoding to improve performance. This type of encoding changes a block of x bits into a block of y bits in which the y bits are more significant than the x bits. Referred to as xB/yB encoding. This involves typically three steps i.e
 
 Division - In this step, a group of bits is divided into x bits.
 
-=======
-![Illustration image of different waveforms of Bi-phase and Non-Return to Zero encoding](/engineering-education/different-techniques-of-encoding-data-for-transmission/waveforms.png)
-
-### Block encoding
-For clock synchronization to be achieved, redundancy is needed for error detecting. This redundancy can be achieved by block encoding to improve performance. This type of encoding changes a block of x bits into a block of y bits in which the y bits are more significant than the x bits. Referred to as xB/yB encoding. This involves typically three steps i.e
-
-Division - In this step, a group of bits is divided into x bits.
-
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 Substitution - This is the main step; x bits are substituted for the y bit group.
 
 Combination - Here, the y bit groups are combined to form a stream. The newly formed stream has more bits than the original bits; hence more data is sent.
@@ -183,10 +119,7 @@ Like in Manchester encoding, clocks with double speed are required to send data.
 In this type of encoding, double speed clocks are not required. Instead, 4 bits of codes are mapped to 5 bits having a minimum of 1-bit in the group.
 
 Double speed clocks are avoided by assigning 5 bits in place of 4 consecutive bits, which are pre-determined in a dictionary. When choosing a 5-bit code, there should be just one leading 0 and no more than two trailing 0s.
-<<<<<<< HEAD
 For example a 4 bit 0110 can be used to represent a 5 bit 01110.
-=======
->>>>>>> 223afe60898ef55282326bef1c2c757a0ae9e52a
 
 Hence, transmission occurs as a block of bit.
 
@@ -218,6 +151,3 @@ References:
 - [Link to coursehero web page](https://www.coursehero.com/file/91850719/Bautista-Assignmentdocx)
 - [Referenced from pubmed](https://pubmed.ncbi.nlm.nih.gov/31496943)
 - [Link to wisdom jobs web page](https://www.wisdomjobs.com/e-university/digital-communication-tutorial-1983/data-encoding-techniques-25989.html)
-
----
-Peer Review Contributions by: [Wilson Gichuhi](/engineering-education/authors/wilson-gichuhi/)
