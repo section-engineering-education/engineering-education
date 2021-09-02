@@ -2,7 +2,7 @@ Creating Serverless Functions (Faas) with AWS Lambda and Golang
 
 Serverless architecture is a new paradigm that is being used in the development of modern applications. The term "serverless" refers to the abstraction of "servers" from application development. Function-as-a-Service (FaaS) is a serverless method of running modular code on the cloud. You can use FaaS to write code that is triggered by events. For example, when a user clicks on a button in your web application, a specific cloud function is executed.
 
-We will not only look at how to use FaaS in this tutorial, but we will also construct some for others to use through AWS. We'll be working in Golang, but the same method can be applied to Python, Node, Java, or any other language or framework you want.
+We'll build a user profile generator function in this tutorial. The function will accept some user data and return a proifle based on the data. After uploading the generator function to AWS lambda, we'll create a client program that communicates with user profile generating function on AWS Lambda.
 
 ### Requirements
 
