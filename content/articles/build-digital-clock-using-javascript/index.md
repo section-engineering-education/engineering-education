@@ -364,3 +364,8 @@ We need to create a CSS file and add these styles. I call mine ```index.css```.
 In this article, we have learned about function declaration and function call, we've also learned about the ternary operator and JavaScript date class. We talked about how to get the string value of months in a year using the toLocaleString method.
 
 We have also been able to build our digital clock using only HTML, CSS, and JavaScript.
+
+
+### References
+-[JavaScript date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+-[W3school JavaScript date object](https://www.w3schools.com/js/js_dates.asp)
