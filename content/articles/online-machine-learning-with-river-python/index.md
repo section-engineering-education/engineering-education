@@ -286,7 +286,7 @@ Let's initialize these two stages.
 To initialize our pipeline, use this code snippet.
 
 ```python
-pipe_stages = Pipeline(('vectorizer',BagOfWords(lowercase=True)),('nb',MultinomialNB()))
+pipe_nb = Pipeline(('vectorizer',BagOfWords(lowercase=True)),('nb',MultinomialNB()))
 ```
 
 This will initialize our two stages `BagOfWords` as `vectorizer` and `MultinomialNB` as `nb`. We also change our text to lowercase by setting `lowercase=True`.
@@ -296,7 +296,7 @@ This will initialize our two stages `BagOfWords` as `vectorizer` and `Multinomia
 To visualize the initialized pipeline use this command.
 
 ```python
-pipe_stages
+pipe_nb
 ```
 
 The output is as shown
@@ -307,7 +307,7 @@ The output is as shown
 To get the pipeline steps use the following command. In this tutorial, we have two steps.
 
 ```python
-pipe_stages.steps
+pipe_nb.steps
 ```
 
 Output:
@@ -338,7 +338,7 @@ Our data is in form of a list of tuples so we can learn from it one a time by it
 
 ```python
 for text,label in data:
-    pipe_stages = pipe_stages.learn_one(text,label)
+    pipe_nb = pipe_nb.learn_one(text,label)
 ```
 
 When looping through our dataset we use the `learn_one()` method to learn one at a time from our given list of the tuple. `learn_one()` will learn from the first `text` and `label` which is `"my python program is running", "software"` according to our data set.
@@ -350,7 +350,7 @@ It will then store this knowledge learned and use it when the next data arrives.
 Since this is online machine learning, the model does not wait till the end to make predictions. It will predict this instance and continue training when the next data arrives.
 
 ```python
-pipe_stages.predict_one("I built an API")
+pipe_nb.predict_one("I built an API")
 ```
 
 We use `predict_one` to predict according to this instance.
@@ -368,44 +368,61 @@ This is true since our text is `software` related.
 To get the probability of the above classification use this command.
 
 ```python
-pipe_stages.predict_proba_one("I built an API")
+pipe_nb.predict_proba_one("I built an API")
 ```
 
 We use the `predict_proba_one()` method to get the probability of prediction at this instance.
 The output is as shown.
 
 ```python
-{'software': 0.5794679370463756, 'hardware': 0.4205320629536237}
+{'software': 0.732646964375691, 'hardware': 0.2673530356243093}
 ```
 
-This shows that the probability of the text being classified as `software` is more than that of `hardware`. Their probabilities are `0.579` and `421` respectively.
+This shows that the probability of the text being classified as `software` is more than that of `hardware`. Their probabilities are `0.7326` and `0.2673` respectively.
 
 Online machine learning is a continuous process since we are real-time time data that is continuously being generated.
+
+Let's make another prediction.
+
+#### Other prediction
+
+```python
+pipe_nb.predict_one("the hard drive  in the computer is damaged")
+```
+
+The prediction output:
+
+```bash
+'software'
+```
 
 At the beginning of the training phase, the model might give a lower accuracy but with time the accuracy increases.
 This is because the model stores the knowledge it has learned at each point making it more accurate.
 
 ### Model accuracy
 
-We need to get the accuracy of our model at this instance. We use the Accuracy() method to calculate the accuracy.
+We need to get the accuracy of our model at this instance. We use the `river.metrics.Accuracy()` method to calculate the accuracy.
 
-We loop through our data set to get the instance we want to calculate the accuracy and update our model with the accuracy score after making a prediction using `model_accuracy.update`.
-
-We finally print our `model_accuracy` score.
+We loop through our data set to get the instance we want to calculate the accuracy and update our model with the accuracy score after making a prediction using `metric.update`.
 
 ```python
-model_accuracy = Accuracy()
-for t,l in data:
-    y_pred_before = pipe_stages.predict_one(t)
-    model_accuracy = model_accuracy.update(l,y_pred_before)
-    pipe_stages = pipe_nb.fit_one(t,l)
-print("Calculated Accuracy",model_accuracy)
+metric = river.metrics.Accuracy()
+for text,label in test_data:
+    y_pred_before = pipe_nb.predict_one(text)
+    metric = metric.update(label,y_pred_before)
+    pipe_nb = pipe_nb.learn_one(text,label)
+```
+
+To get the accuracy score use the following command.
+
+```python
+metric
 ```
 
 The output is as shown.
 
 ```bash
-Calculated Accuracy: 75.00%
+Accuracy: 75.00%
 ```
 
 ### Conclusion
