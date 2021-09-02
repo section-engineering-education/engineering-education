@@ -18,7 +18,7 @@ For beginners, C# and C++ seem familiar in the beginning. However, in reality, t
 <!--more-->
 This article compares C# and C++ in terms of syntax (which is more friendly), performance (which is more performance-oriented), game development (real vs Unreal Engine) to enable the programmer to settle on a language that he/she is more comfortable with.
 
-### Table of Contents
+### Table of contents
 - [Defining](#defining)
 - [Syntax rules](#syntax-rules)
 - [Main Differences](#main-differences)
@@ -51,7 +51,7 @@ Let's take a look at the differences between the syntax rules of both languages:
 - **C++** supports **multiple inheritance** while **C#** only supports **single inheritance**.
 - Pointers are not employed in C#. Instead C# uses references within the unsafe code.
 
-### Main Differences
+### Main differences
 Since C# is less complicated to master and use compared to C++, it is becoming a popular choice for programmers all over.
 
 However, when developers need to have more control over their projects, they incorporate C++.
@@ -67,7 +67,7 @@ Despite the very fact that *C#* is **compatible with all major operating systems
 
 C++ on the other hand has no preferred working environment.
 
-### Game Development
+### Game development
 From the previous points and explanations, we have seen that **C++ has better hardware control on the PC or server**.
 
 Therefore, it is usually a more suitable preference for game development. However, this doesn't exclude C# from the choices.
@@ -78,7 +78,7 @@ This allows developers with average programming skills to produce equally good g
 
 Note that scripting in game engines is different from regular programming.
 
-#### Real Engine
+#### Real engine
 C# and unity game engines are the best tools that beginners start with. Unity is a real game engine that enables you to produce scripts for interactive content in games.
 
 Every content in unity starts with a game object which gets components to perform certain actions.
@@ -87,7 +87,7 @@ You'll note that once you combine C# and Unity, you will be ready to **add addit
 
 However, beginners cash in the prevailing components resulting to similarity in Unity-based games.
 
-#### Unreal Engine
+#### Unreal engine
 The ability to distribute across various platforms play an enormous role when choosing between C++ or C# for game development.
 
 C++ is less complicated to distribute, but beginners must not choose this language for the primary game development attempt.
@@ -111,7 +111,7 @@ Experts view differences in performance as **small and always exaggerated.**
 
 The speed factor is not always the biggest priority. For instance, if a developer can achieve his goals much faster in C#, then there is no need of spending time trying to learn C++ principles.
 
-#### Picking the right Choice
+#### Picking the right choice
 With C++ and Unreal engine, you would possibly take longer trying to urge your code to figure. However, **games developed in C++ tend to figure faster and are more polished**.
 
 Compared to **C# and Unity**, **C++ and Unreal Engine** isn't beginner-friendly, meaning that developers need more advanced skills to use it.
