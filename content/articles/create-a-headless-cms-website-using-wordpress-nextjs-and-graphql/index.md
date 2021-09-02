@@ -1,13 +1,11 @@
 ### Overview
-
-- [Adding a post category](#adding-a-post-category).
 - [Adding a post](#adding-a-post)
-- [Installing the WpGraphQL plugin](#wp-graphql-plugin)
+- [Installing the WpGraphQL plugin](#installing-the-wpgraphql-plugin)
 - [Running a query from the GraphiQL IDE](#running-a-query-from-the-graphiql-ide)
-- [Setting up the Next.js environment](#setting-up-the-next.js-environment)
+- [Setting up the Next.js environment](#setting-up-the-nextjs-environment)
 - [Conclusion](#conclusion)
 
-### Adding a post
+### Adding a post 
 
 Since WordPress and Next.js are used to develop blog-based websites, we will use this scenario by first adding and posting a post in WordPress admin.
 
@@ -401,10 +399,10 @@ In your browser, navigate to `http://localhost:3000`.
 
 To test the implementation, click on the title of any post on the home page. You should be redirected to a single post page. Then, click on the back arrow and explore the other posts.
 
-#### Conclusion
-
+### Conclusion
 We have managed to create posts in WordPress, query, and show them from a Next.js application. To gain more insightful knowledge about the various technologies and concepts used, check out the following resources.
 
+### References
 - [WpGraphQL](https://www.wpgraphql.com/)
 - [Wordpress CMS](https://wordpress.org/)
 - [Next.js](https://nextjs.org/)
