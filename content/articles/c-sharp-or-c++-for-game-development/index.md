@@ -7,7 +7,7 @@ title: C# or C++ for Game Development
 description: In this article, we will learn the differences between C# and C++ programming languages. We will get to know which one we can use for game development as beginners.
 author: victor-kamau
 date: 2021-09-02T00:00:00-06:30
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
