@@ -4,60 +4,60 @@ status: draft
 published: false
 url: /build-a-contact-form-with-php/
 title: Build a Contact Form with PHP
-description: The aim of this tutorial is to help the reader learn how to add a contact form to a PHP website.
+description: This tutorial will help the reader understand how to create a contact form using PHP. These forms are crucial since they assist in retrieving certain information from the user.
 author: samuel-torimiro
-date:
+date: 2021-09-02T00:00:00-11:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/build-a-contact-form-with-php/hero.jpg
-    alt: PHP example image
+    alt: Building a Contact Form using PHP Hero Image
 ---
-
-[PHP](https://www.php.net/) is a programming language used for creating interactive web applications. It's a widely used language that runs on the server.
+PHP is a programming language used for creating interactive web applications. It is a popular server-side language.
 <!--more-->
-In this tutorial, will build a contact form with PHP. It will include the following features, form validation, the ability to send emails using the Google Gmail SMTP server, and the [PHPMailer library](https://github.com/PHPMailer/PHPMailer).
+In this tutorial, will build a contact form using PHP. It will include features such as form validation, the ability to send emails using the Gmail SMTP server, and the [PHPMailer library](https://github.com/PHPMailer/PHPMailer).
+
+Our final contact form will look, as shown below:
 
 ![Project](/engineering-education/build-a-contact-form-with-php/project.png)
+
 ### Table of contents
 - [Prerequisites](#prerequisites).
 - [Project Setup & Overview](#project-setup-overview).
 - [PHP New Project](#php-new-project).
-  - Step 1
-  - Step 2
 - [Creating the Form](#creating-the-form).
 - [Form validation in PHP](#form-validation-in-php).
 - [Sending Email with PHP Mailer and Google Gmail SMTP server](#sending-email-with-php-mailer-and-google-gmail-smtp-server).
-  - Download PHP mailer
-  - Configure your Gmail account
 - [Conclusion](#conclusion).
-### Prerequisites
 
-To follow this tutorial the reader should;
+### Prerequisites
+To follow this tutorial, the reader should:
 - Have a basic understanding of HTML and PHP.
-- Have PHP and XAMMP installed. We will use XAMMP for our development to run PHP locally on our machine.
+- Have PHP and XAMMP installed. We will use XAMMP to run PHP locally on our machine.
 
 Use this [page](https://www.apachefriends.org/index.html) to download and install XAMMP.
 
 ### Project Setup & Overview
+In this section, we would set up our project. Note that this tutorial uses XAMPP (a free cross-platform PHP development environment).
 
-In this section, we would set up our project. Recall that this tutorial uses XAMPP (a free cross-platform PHP development environment), therefore after the installation, start the `Apache` and `MySQL` module:
+Therefore after the installation, start the `Apache` and `MySQL` modules:
 
 ![XAMPP Settings](/engineering-education/build-a-contact-form-with-php/xampp-settings.png)
 
-Next, open your browser to [http://localhost/dashboard/](http://localhost/dashboard/), you should see the following:
+Next, open your browser and navigate to [http://localhost/dashboard/](http://localhost/dashboard/). You should see the following:
 
 ![XAMPP Server Hompage](/engineering-education/build-a-contact-form-with-php/xampp-server-homepage.png)
+
 ### PHP New Project
 Let's create a new PHP project.
 
-### Step 1
+#### Step 1
+In your `C: drive`, open the folder `xampp`. In this folder, navigate to the `htdocs` directory and create a new folder with the name `php-contact`.
 
-Inside your `C: drive` open the folder `xampp`, inside this folder open the folder `htdocs` and create a new folder with the name `php-contact`.
+#### Step 2
+Open the `php-contact` folder in your favorite code editor and create a new file called `index.php`. 
 
-### Step 2
-
-Open the `php-contact` folder with your favorite code editor and create a new file called `index.php`. Paste the code below inside the `index.php` file.
+Paste the code below inside the `index.php` file:
 
 ```html
 <!DOCTYPE html>
@@ -71,13 +71,16 @@ Open the `php-contact` folder with your favorite code editor and create a new fi
 </html>
 ```
 
-Navigate back to [http://localhost/php-contact/](http://localhost/php-contact/), you should see a heading with the text **Hello World**. Note that we didn't add to the URL path `index.php` because by default in PHP navigating to the root page of a folder automatically loads the index.php file, although we could have explicitly stated it as [http://localhost/php-contact/index.php](http://localhost/php-contact/index.php).
+Navigate back to `http://localhost/php-contact/`, you should see a heading with the text **Hello World**. 
+
+Note that we didn't add an URL path to `index.php` because by default in PHP navigating to the root page of a folder automatically loads the index.php file.
 
 ### Creating the form
+In this section, we will create a basic form Inside the `index.php`. 
 
-In this section, we will create a basic form Inside the `index.php`  to replace the previous code with the code below:
+Replace the previous code with the following:
 
-```php
+```html
 <!DOCTYPE html>
 <html>
 
@@ -106,7 +109,6 @@ In this section, we will create a basic form Inside the `index.php`  to replace 
         }
     </style>
 </head>
-
 
 <body>
 
@@ -149,18 +151,13 @@ In this section, we will create a basic form Inside the `index.php`  to replace 
                     </div>
 
                 </form>
-
-
             </div>
         </div>
-
-
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
-
 </html>
 ```
 
@@ -168,16 +165,18 @@ In this section, we will create a basic form Inside the `index.php`  to replace 
 
 1. We created a basic form with the **POST** method which ultimately sends the request back to this page.
 
-> To learn more about PHP forms, check out this awesome [article](https://www.section.io/engineering-education/working-with-forms-in-php/).
+> To learn more about PHP forms, check out this awesome [article](/engineering-education/working-with-forms-in-php/).
 
 2. We are also using [materializeCSS](https://materializecss.com/about.html) for some default styling.
+
 3. We added some PHP variables within our HTML page to echo out either the error messages or the value that was entered in the form. Note that we haven't created these variables yet inside our PHP script so it will produce some errors if you refresh your browser.
 
-> The **htmlspecialchars** function is used to turn special characters returned into the ones HTML can understand and properly display. It prevents vulnerabilities like **cross-site scripting** attack (XSS) by replacing all harmful characters with harmless HTML entities. Therefore, always include this function when outputting users input in your HTML.
+> The **htmlspecialchars** function is used to change special characters into ones that HTML can understand and display properly. This prevents vulnerabilities like **cross-site scripting** attack (XSS) by replacing all harmful characters with harmless HTML entities. Therefore, always include this function when outputting users input in your HTML.
 
 ### Form Validation in PHP
+In this section, we will create the logic of our web page in the `index.php` to validate the user's input.  
 
-In this section, we will create the logic of our web page inside the `index.php` to validate the user's input.  Add the code below at the top of the file.
+Add the code below at the top of the file.
 
 ```php
 <?php
@@ -192,14 +191,15 @@ $errors = array('name' => '', 'email' => '', 'message' => '');
 
 **What you should know**
 
-1. We created several variables to store user input and error or success messages.
-2. We also created an errors array for errors of specific error messages of the input fields.
+In the above code:
+1. We created several variables to store `user input`, `error` or `success` messages.
+2. We also created an `errors` array to store specific error messages.
 
-Navigate back to the homepage and refresh the homepage, all should work well since we have stated all the variables in our PHP script.
+Navigate back to the `homepage` and refresh your browser.
 
 > Notice that this PHP script is wrapped inside a `<?php ?>` tag, if not it would not be treated as PHP code.
 
-Next, add this function after the code above, but inside the PHP tags:
+Next, add the following function inside the PHP tags:
 
 ```php
 function SanitizeString($var)
@@ -212,9 +212,9 @@ function SanitizeString($var)
 
 **What you should know**
 
-1. This function is used to sanitize the string of user input, by removing `HTML entities`, `slashes` and `tags`. This is very important to prevent malicious users from inputting malicious text.
+1. This function is used to sanitize the string (user input) by removing `HTML entities`, `slashes`, and `tags`. This is very important to prevent hackers from inputting malicious text.
 
-Next, add this after the code above, but inside the PHP tags:
+Next, add the following code:
 
 ```php
 if (isset($_POST["submit"])) {
@@ -254,32 +254,36 @@ if (isset($_POST["submit"])) {
 
 **What's happening here**
 
-1. This conditional statement checks whether the form was submitted. If it was, it performs several functions to sanitize and validate users input or display any error messages.
-2. The combination of the `trim` and `empty` function checks whether the form that is required was not left empty.
-3. The `preg_match` function is used to check user input based on some criteria given using **regex**.
-4. And finally, if there are no errors in the errors array, it's time to send the email
+1. The above conditional statement checks whether the form was submitted. If it was, it performs several functions to sanitize and validate users input or display any error messages.
+
+2. The combination of the `trim` and `empty` function checks whether the form is empty.
+
+3. The `preg_match` function is used to check assess user input based on some criteria using **regex**.
+
+4. And finally, if there are no errors in the `errors` array, the email will be sent.
 
 ### Sending Email with PHP Mailer and Google Gmail SMTP server
-
-In order to send an email with Google Gmail, we  need to have a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create a new Google account.
+To send an email with Gmail, we  need to have a Google account. If you don't have one, follow this [link](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to create one.
 
 #### Download PHP mailer
+[PHPMailer](https://github.com/PHPMailer/PHPMailer) is a popular library written in PHP for sending emails. 
 
-[PHPMailer](https://github.com/PHPMailer/PHPMailer) is a popular library written in PHP for sending emails. It as a whole lot of additional features. Download this library using [this link](https://github.com/PHPMailer/PHPMailer/archive/master.zip).
+Download PHPMailer using [this link](https://github.com/PHPMailer/PHPMailer/archive/master.zip).
 
-Unzip the package inside the directory where you want to save the **php-contact** directory.
+Unzip the package inside the **php-contact** directory.
 
 > You can go through the **readme** file to understand more about this library.
 
 #### Configure your Gmail account
-
-To use your Google Gmail account to send an email, you will need to enable access for less secure applications using [this link](https://myaccount.google.com/lesssecureapps).
+To send an email, you will need to enable access for less secure applications using [this link](https://myaccount.google.com/lesssecureapps).
 
 ![Google Less Secure Homepage](/engineering-education/build-a-contact-form-with-php/google-less-secure.jpg)
 
-Note that Google accounts with the 2-step Verification turned on don't work with secure apps. Instead, you use app passwords. You can generate an app password using [this link](https://myaccount.google.com/u/1/apppasswords).
+Note that Google accounts with the 2-step Verification turned on don't work with secure apps. 
 
-Add the following code to the `index.php` file at the top of the file, but inside the PHP tags:
+Instead, you use app passwords. You can generate an app password using [this link](https://myaccount.google.com/u/1/apppasswords).
+
+Add the following code at the top of the `index.php` file:
 
 ```php
 
@@ -308,8 +312,10 @@ $mail->Password   = "<paste Google password or app password here>";
 
 **What you should know**
 
+In the code above:
+
 1. We included the packages and files for PHPMailer and SMTP protocol.
-2. We initialize the PHP Mailer, configured it to use SMTP protocol and added credentials.
+2. We initialize the PHP Mailer, configured it to use SMTP protocol, and added credentials.
 
 Next, replace this comment `// Send email` with the following code
 
@@ -348,14 +354,13 @@ try {
 **What's happening here**
 
 1. We added the email sender and name **(setFrom function)**.
-2. We also added the email recipient **(addAddress function)** with the input from our form.
+2. We also added the email recipient **(addAddress function)**.
 3. We added the subject and body and finally sent the mail.
 
 ### Conclusion
+In this tutorial, we have learned how to add a contact form to a PHP website. We also looked at how to send emails using Google Gmail account and PHPMailer library.
 
-We have come to the end of this tutorial on how to add a contact form to your PHP website using your Google Gmail account and PHPMailer library.
-
-Grab the complete code from the [repo](https://github.com/Samuel-2626/php-contact).
+You can download the full code from [here](https://github.com/Samuel-2626/php-contact).
 
 Happy coding!
 
