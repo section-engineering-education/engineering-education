@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /C-sharp-or-C++-for-game-development/
+url: /c-sharp-or-c++-for-game-development/
 title: C# or C++ for Game Development
 description: In this article, we will learn the differences between C# and C++ programming languages. We will get to know which one we can use for game development as beginners.
 author: victor-kamau
