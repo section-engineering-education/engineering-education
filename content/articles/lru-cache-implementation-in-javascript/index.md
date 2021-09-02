@@ -43,6 +43,9 @@ Before adding the 8, we need to search first and see if it is available in the c
 
 ### Implementing LRU Cache in JavaScript.
 
+By visiting the below link, there is a leet code question to help us in the implementation of the LRU Cache. The code implementation below can guide us in the implementation.
+[List Recently Used Cache](https://leetcode.com/problems/lru-cache/)
+
 Below are the steps we will use to implement the LRU Cache class
 
 1.  We first initialize the LRU cache with a positive capacity.
@@ -87,7 +90,7 @@ Below are the steps we will use to implement the LRU Cache class
 
     ```
 
-3.  Put operation. The out operation will update the value of the key if it is found. If found, add the Key and the value pair to the cache. If the number of keys has exceeded the initialized capacity of the cache, evict the least recently accessed item.
+3.  Put operation. The put operation will update the value of the key if it is found. If found, add the Key and the value pair to the cache. If the number of keys has exceeded the initialized capacity of the cache, evict the least recently accessed item.
 
            ```js
            LRUCache.prototype.put = function(key, value) {
@@ -118,9 +121,6 @@ Below are the steps we will use to implement the LRU Cache class
 
             };
             ```
-
-By visiting the below link, there is a leet code question to help us in the implementation of the LRU Cache. The code implementation above can also be run there.
-[List Recently Used Cache](https://leetcode.com/problems/lru-cache/)
 
 ### Conclusion
 
