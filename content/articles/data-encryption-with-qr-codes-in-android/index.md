@@ -1,6 +1,21 @@
-### Introduction
-Quick response (QR) codes are a type of barcode, or scannable series, that can store a range of data, including web links, credit card info, contact information, and even freebies. QR codes are used to encode information in a format that only machines, not humans, can understand.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-encryption-with-qr-codes-in-android/
+title: Data Encryption with Quick Response (QR) Codes in Android
+description: This tutorial takes the reader through the process of using Quick Response (QR) codes to encrypt data in Android. QR codes are a type of barcode, or scannable series, that can store a range of data, including web links, credit card info, contact information, and even freebies.
+author: maurine-muthoki
+date: 2021-09-02T00:00:00-15:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/data-encryption-with-qr-codes-in-android/hero.png
+    alt: Data Encryption with QR codes in Android image
+---
+Quick response (QR) codes are a type of barcode, or scannable series, that can store a range of data, including web links, credit card info, contact information, and even freebies. QR codes are used to encode information in a format that only machines, not humans, can understand.
+<!--more-->
 In this tutorial, we will learn how to generate QR codes to store simple text format data in an Android application.
 
 #### Why use Quick Response Codes?
@@ -20,7 +35,7 @@ To follow along with this tutorial, you'll need to be conversant with:
 ### Creating an Android project
 Run Android Studio and build a new `Empty Activity` project named `QR Code`.
 
-![New Android project](create-new-project.png)
+![New Android project](/engineering-education/data-encryption-with-qr-codes-in-android/create-new-project.png)
 
 ### Setting up the project
 Before we get into coding, let's first enrich our project in the following ways.
@@ -166,7 +181,7 @@ In the code above, we have created a text input field, two buttons, and an Image
 
 Preview:
 
-![Generate QR Code preview image](generate-qr-code-preview.png)
+![Generate QR Code preview image](/engineering-education/data-encryption-with-qr-codes-in-android/generate-qr-code-preview.png)
 
 #### GenerateQR.kt
 This is where the logic to generate a QR code is applied. This class aims to encode the input (text) into a BitMap and display it in the ImageView.
@@ -234,7 +249,7 @@ Using the encoder provided by ZXing, the matrix is converted into a BitMap.
 
 Upon running the app, you should see something similar to this:
 
-![QR Code example](generate-qr-code-example.jpg)
+![QR Code example](/engineering-education/data-encryption-with-qr-codes-in-android/generate-qr-code-example.jpg)
 
 That's all about generating QR codes from texts (Strings).
 
@@ -279,7 +294,7 @@ The above code generates a code scanner used to capture a picture when correctly
 
 preview:
 
-![Code Scanner preview](code-scanner-preview.png)
+![Code Scanner preview](/engineering-education/data-encryption-with-qr-codes-in-android/code-scanner-preview.png)
 
 ### ScanQR.kt file
 Unlike when generating a QR code, scanning involves several stages discussed below.
@@ -461,11 +476,14 @@ override fun onPause() {
 ### Run the App
 Upon running the app, navigate to `ScanQR` activity and you should expect to see a QR code scanner similar to the one below:
 
-![Scan QR Code](scan-qr-code-1.jpg)
+![Scan QR Code](/engineering-education/data-encryption-with-qr-codes-in-android/scan-qr-code-1.jpg)
 
-![Scan QR Code](scan-qr-code-2.jpg)
+![Scan QR Code](/engineering-education/data-encryption-with-qr-codes-in-android/scan-qr-code-2.jpg)
 
 ### Conclusion
 In this tutorial, we've covered the fundamentals of how to encode data using quick response (QR) codes in an Android app. We've also learned how to use a `CodeScanner` to scan/decode QR codes. The knowledge gained in this tutorial can be applied to other scenarios where QR codes are applicable. Keep learning and stay safe!
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
