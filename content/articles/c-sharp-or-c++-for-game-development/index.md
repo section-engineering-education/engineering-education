@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/C-sharp-or-C++-for-game-development/hero.jpg
+  - url: /engineering-education/c-sharp-or-c++-for-game-development/hero.jpg
     alt:  C# or C++ for game development image example
 ---
 For beginners, C# and C++ seem familiar in the beginning. However, in reality, they are distinct programming languages targeting various fields.
