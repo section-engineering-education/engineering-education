@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: draft
-published: false
+published: true
 url: /build-a-contact-form-with-php/
 title: Build a Contact Form with PHP
 description: This tutorial will help the reader understand how to create a contact form using PHP. These forms are crucial since they assist in retrieving certain information from the user.
