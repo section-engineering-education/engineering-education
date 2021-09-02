@@ -1,4 +1,3 @@
-### Introduction
 For a data packet to be appropriately transmitted on a network, it needs to be converted into the best and most reliable way of transmission. For this reason, data is encoded in a way that is best understood by computers.
 <!--more-->
 Data encoding is the conversion of data into digital signals i.e. zeros and ones.
@@ -69,7 +68,6 @@ Although baseline wandering is a problem for both variations, it is twice as sev
 The synchronization problem also exists in both schemes. Again, this problem is more serious in NRZ-L than in NRZ-I. While a long sequence of 0s can cause a problem in both schemes, a long sequence of 1s affect only NRZ-L.
 
 Another problem with NRZ-L occurs when there is a sudden change of polarity in the system. If the polarity of the system changes, signal is inverted. As a result, all 0s are interpreted as 1s and all 1s are interpreted as 0s. However, NRZ-I does not have this problem because in NRZ-I bit value is not determined by voltage level.
-
 
 ### Bi-phase encoding
 Bi-phase encoding involves double-checking of the signal. Signals are checked at the beginning and in the middle. Due to double-checking of the signal, the clock rate is twice the rate of data transfer.
