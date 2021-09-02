@@ -13,20 +13,20 @@ images:
   - url: /engineering-education/what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/hero.png
     alt: NetDevOps example
 ---
-As an engineer, you must have heard of the term DevOps. This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker to constantly develop software solutions for your clients at high velocity to remain competitive in the market.
+As an engineer, you must have heard of the term DevOps. This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker. This allow to constantly develop software solutions for your clients at high velocity to remain competitive in the market.
 <!--more-->
 The network ecosystem is one of the essential components of information technology, yet it is viewed as sophisticated and fragile. This brings in fear of network modifications, preventing the networking teams from delivering the agility demanded by today's digital enterprises.
 
 As a NetDevOp engineer, the culture of change and the reinforcing loop need to be automation-curious. Your network infrastructure is completely managed and described by code around the [CI/CD pipeline](/engineering-education/an-introduction-to-cicd-tools/). So there's no more logging into the live routers by typing passwords, typing commands (where a typo can bring down the whole network), cut and paste the entire configuration over a console, etc.
 
-This article will teach the basic concept of NetDevOps, and the development toolset network developers need to set up for Windows workstation as a development environment for networking.
+This article will teach the basic concept of NetDevOps. Discus the development toolset network developers need to set up for Windows workstation as a development environment for networking.
 
-Since network engineering is heavily carried on Linux-based OS, this article will help the network engineers who work on the Windows operating system know and learn the tools they need to make it easier and faster to work as a network NetDevOp.
+Network engineering is heavily carried on Linux-based OS. This article will help the network engineers who work on the Windows operating system know and learn the tools they need. Thus making it easier and faster to work as a network NetDevOp.
 
 ### What is NetDevOps
 Working in an organization that makes little changes several times a year (from medium to large enterprises) would be a goal for most engineers. This relies mainly on automation, continuous integration, continuous deployment, configuration generation, data collection, software updates, testing, monitoring, and logging, etc.
 
-As an engineer, you must have heard of the term [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) ("development" and "operations"). This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker to constantly develop software solutions for your clients at high velocity to remain competitive in the market.
+As an engineer, you must have heard of the term [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) ("development" and "operations"). This is a combination of methodologies, concepts, and technologies aimed to rapidly boost an organization's capacity to provide services and applications quicker. Thus to constantly develop software solutions for your clients at high velocity and remain competitive in the market.
 
 You can consider DevOps as a delivery pipeline that comprises cycles for coding, creating, evaluating, and deploying. Teams are not siloed. Different teams are merged into a single unit. To achieve continuous integration and delivery, engineers such as programmers, system analysts, and IT administrators work across the whole application lifecycle.
 
@@ -49,10 +49,16 @@ According to [NetDevOps survey report 2020](https://dgarros.github.io/netdevops-
 ### Top NetDevOps tools that are important for your Windows OS
 Network engineers love working on Linux or some form of Unix OS as their network operating system. Some of the reasons why Linux is considered best when working on network-related operations include.
 
-- Linux operating system is the foundation of most network-based OSs such as [Cisco IOS](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-software-releases-listing.html), [Cisco NX-OS](https://www.cisco.com/c/en/us/products/ios-nx-os-software/nx-os/index.html), [Nexus OS](https://www.oreilly.com/library/view/troubleshooting-cisco-nexus/9780134783208/ch01.xhtml), and [Junos OS](https://www.juniper.net/documentation/us/en/software/junos/junos-overview/topics/concept/junos-software-introduction.html). This makes it easier to understand the Linux internals.
-- Linux networking top most open source projects are build based on the Linux internals. This includes container technologies such as LXC and LXD and Docker container network isolation and OpenStack. For example, Docker leverages Linux namespaces along with basic Linux interfaces and Lineage 2 (L2) internals to achieve network isolation from the base operating system.
+- Linux operating system is the foundation of most network-based OSs. This include [Cisco IOS](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-software-releases-listing.html), [Cisco NX-OS](https://www.cisco.com/c/en/us/products/ios-nx-os-software/nx-os/index.html), [Nexus OS](https://www.oreilly.com/library/view/troubleshooting-cisco-nexus/9780134783208/ch01.xhtml), and [Junos OS](https://www.juniper.net/documentation/us/en/software/junos/junos-overview/topics/concept/junos-software-introduction.html). This makes it easier to understand the Linux internals.
+- Linux networking top most open source projects are build based on the Linux internals. This includes container technologies such as [LXC](https://linuxcontainers.org/) and [LXD](https://linuxcontainers.org/lxd/introduction/) and Docker container network isolation and OpenStack. For example, Docker leverages Linux namespaces along with basic Linux interfaces and [Lineage 2](https://forums.linuxmint.com/viewtopic.php?t=317896) (L2) internals to achieve network isolation from the base operating system.
 
-However, as a NetDevOps engineer, your network tooling ecosystem will define how well you can leverage DevOps for network infrastructure. This starts with coding languages such as Python and Ansible, Network automation libraries such as Cisco or Juniper, cloud computing, OpenStack, virtualization, source control, etc. So let's, let's discuss some essential tools that you would add to your Windows operating system network stack to make your NetDevOps more minimal and robust for automating and managing your network processes.
+However, as a NetDevOps engineer, your network tooling ecosystem will define how well you can leverage DevOps for network infrastructure. This starts with;
+
+- Coding languages such as Python and Ansible,
+- Network automation libraries such as Cisco or Juniper,
+- Cloud computing, OpenStack, virtualization, source control, etc.
+
+So let's discuss some essential tools that you would add to your Windows operating system network stack to make your NetDevOps more minimal and robust for automating and managing your network processes.
 
 ### Git
 When working with networking projects, you would likely use source control systems. The control system tracks the changes done to the code over time in a database known as the repository.
@@ -61,7 +67,7 @@ When working with networking projects, you would likely use source control syste
 
 Thereafter, each member's version of that project can be merged and integrated into the project's main version. And incase the recent file updates generate errors to the system, you can roll back the previous stable version.
 
-Without a version control system, we'll have to constantly store copies of the entire project in various directories. This can be very slow and doesn't scale up, especially if multiple people work on the same project. This means you would have to constantly check the latest code for each member via email or other manual mechanisms and then manually merge the changes to the main projects. And if the new changes generate errors, it will be hard to roll back to the previous stable version. This will bring out outrange the whole system, and it can consume a lot of time to restore it. In some cases, losing data or bringing the whole system down.
+Without a version control system, we'll have to constantly store copies of the entire project in various directories. This can be very slow and doesn't scale up, especially if multiple people work on the same project. This means you would have to constantly check the latest code for each member via email or other manual mechanisms. Then manually merge the changes to the main projects. And if the new changes generate errors, it will be hard to roll back to the previous stable version. This will bring out outrange the whole system, and it can consume a lot of time to restore it. In some cases, losing data or bringing the whole system down.
 
 Apart from Git, there are other VCS that can be used. These are;
 
@@ -75,18 +81,18 @@ In relation to Git, [GitHub](https://github.com/) allows publishing your code an
 
 In addition to Git, you can run [Git bash](https://gitforwindows.org/) terminals and bash scripts. For example, when working with network configuration, you will constantly run the command on the terminal/shell. However, you will note shell differences between Windows OS and on Linux or Mac.
 
-Windows OS comes bundled with native command interpreters such as CMD and PowerShell terminal interfaces. Nevertheless, you can use a third-party shell and terminal command interpreter such as Git Bash on your Windows workstation. The advantage of Git bash is that it provides a bash-like interface similar to what you would see inside of a Mac or a Linux workstation.
+Windows OS comes bundled with native command interpreters such as CMD and PowerShell interfaces. Nevertheless, you can use a third-party command interpreter such as Git Bash on your Windows workstation. The advantage of Git bash is that it provides a bash-like interface similar to what you would see inside of a Mac or a Linux workstation.
 
 This way, you can also run bash scripts and work like we were working inside of that type of Linux environment.
 
 ### Python
-Network configuration runs as code. Therefore, it would be essential to learn at least one programming language to manage Network configurations and automation processes. [Python](https://www.python.org/downloads/windows/) is the programming language that most Network engineer loves working with.
+Network configuration runs as code. Therefore, it would be essential to learn at least one programming language. This will aid in managing Network configurations and automation processes. [Python](https://www.python.org/downloads/windows/) is the programming language that most Network engineer loves working with.
 
 ![NetDevOps survey env language stack](/engineering-education/what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/netdevops-survey-env-language-stack.png)
 
 [Image source](https://dgarros.github.io/netdevops-survey/reports/2020)
 
-A lot of networking tools are written with Python. Therefore, learning Python as your networking programming language will keep you a step further in understanding how different Python written tools works and how to use them.
+A lot of networking tools are written with Python. As a result, studying Python as a networking programming language will help you grasp how various Python written tools work and how to use them.
 
 In addition, Python provides many free and open-source libraries and tools.
 
@@ -103,7 +109,7 @@ While learning a programming language like Python, there are so many text editor
 
 Two main free text editors provide developer-friendly features and functionalities that increase your productivity and how you write down your script. These are [Atom](https://atom.io/) and [Visual studio code](https://code.visualstudio.com/). The great thing about this two is that they have features such as inbuilt Version Control, code auto-completion, syntax highlighting, extension support, and multiple selection editing. These tools will help you fasten your python development pipeline. Thus meeting NetDevOps become even much simpler.
 
-To help you choose between the two, check this [Atom vs Visual Studio Code comparison](https://www.section.io/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/) guide, compare and contrast the two and decide which one to choose depending on your requirement.
+To help you choose between the two, check this [Atom vs Visual Studio Code comparison](https://www.section.io/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/) guide. Compare and contrast the two and decide which one to choose depending on your requirement.
 
 ### Containerization Technologies
 [Containers](/engineering-education/history-of-container-technology/) help build, ship, deploy and scale applications with ease and dependently. Before containers, if you want to develop an application, you would start setting the environments necessary to run that application. This includes installing the necessary libraries and modules to use, create configuration files manually. These environments are set at the base of the local computer. So it would be hard and time-consuming to transfer the application to another computer. AS the other computer user have to set the same local environment, ensuring every version machines to the parent project. This means the code can easily break along different local environments. Moreover, when deploying this application to another computer, there are chances that the modules and libraries you are using have been upgraded. Thus your production environment ends up with a different version of libraries, modules, and conflicting dependencies you used in the development environment.
@@ -120,7 +126,7 @@ A Docker container creates a Docker image which is a template Docker container. 
 Containers are the best in leveraging the concept of Continuous Integration / Continuous Delivery. Although Docker being the popular one, there are other [container technologies such as Kubernetes](/engineering-education/deploy-docker-container-to-kubernetes-cluster/).
 
 #### Kubernetes
-[Kubernetes](/engineering-education/what-is-kubernetes/) is an open-source framework for managing containerized workloads and services that allows for declarative setup and automation. This enables you to run distributed systems in a robust manner, complete with scaling and failover for your application. It is used as a [orchestration tool for containers technologies](/engineering-education/top-container-orchestration-tools/) such as Docker. Ocheartaion tools ensure that each container is where it's supposed to be and that the containers can work together. In this case. An application has several functionalities (services). With an orchestrator, each piece of functionality is split apart into smaller individual artifacts. This means if there's an update, only that exact service has to be worked on. And if it fails, the whole application is not affected. This brings in a microservice model that has scaling benefits.
+[Kubernetes](/engineering-education/what-is-kubernetes/) is an open-source platform for managing containerized workloads and services, including declarative setup and automation capabilities. This enables you to run distributed systems in a robust manner, complete with scaling and failover for your application. It is used as a [orchestration tool for containers technologies](/engineering-education/top-container-orchestration-tools/) such as Docker. Ocheartaion tools guarantee that each container is where it should be and that the containers can communicate with one another. In this case. An application has several functionalities (services). Each piece of functionality is divided into smaller individual objects by an orchestrator. This means if there's an update, only that exact service has to be worked on. And if it fails, the whole application is not affected. This brings in a microservice model that has scaling benefits.
 
 When you create an application with Docker containers, these serves are packaged together with all their dependencies and any necessary configuration. Therefore, each service will run as an individual container. That is why maintaining it is straightforward, as you can add a new container, replace an older container, upgrade, start, restart or stop.
 
@@ -163,7 +169,7 @@ To spin up the above example on your computer, check this tutorial and see how y
 
 [Image source](https://devnetsandbox.cisco.com/RM/Diagram/Index/4d0cb9d9-350c-41fd-b4d2-57090155b069?diagramType=Topology)
 
-The above workflow utilizes Cisco IOx Application Framework, [Gogs](https://gogs.io/), [Drone](https://docs.drone.io/) and [Kubernetes](https://kubernetes.io/) to create a Cisco IoT and Edge Compute application. [This toolset](https://devnetsandbox.cisco.com/RM/Diagram/Index/4d0cb9d9-350c-41fd-b4d2-57090155b069?diagramType=Topology) allows you to take code from a repository, build, commit, publish and deploy Docker/container-based images into the [Cisco IOx Application Ecosystem](https://devnetsandbox.cisco.com/RM/Diagram/Index/4d0cb9d9-350c-41fd-b4d2-57090155b069?diagramType=Topology) - all by issuing in a Git commit to your repository. It is built to leverage the CI/CD pipeline for your code.
+The above workflow utilizes Cisco IOx Application Framework, [Gogs](https://gogs.io/), [Drone](https://docs.drone.io/) and [Kubernetes](https://kubernetes.io/) to create a Cisco IoT and Edge Compute application. [By making a Git commit]((https://devnetsandbox.cisco.com/RM/Diagram/Index/4d0cb9d9-350c-41fd-b4d2-57090155b069?diagramType=Topology)) to your repository, you may take code from a repository, create, commit, publish, and deploy Docker/container-based images into the [Cisco IOx Application Ecosystem](https://devnetsandbox.cisco.com/RM/Diagram/Index/4d0cb9d9-350c-41fd-b4d2-57090155b069?diagramType=Topology). It is built to leverage the CI/CD pipeline for your code.
 
 Here is how the lab model looks like.
 
@@ -181,7 +187,7 @@ In this CI/CD environment, the developer can;
 To learn more about this workflow and how to implement it, check [this step-by-step tutorial](https://developer.cisco.com/learning/tracks/iot/cicd-iox/iox-app-building-cicd/step/1).
 
 ### Conclusion
-There are many NetDevOps tools that you can use to ensure your Netwokg model leverage the DevOps concept. These toolsets will help you package almost every model, ensuring the workflow pipeline is clean and easy to manage. NetDevOps solutions, like DevOps, result in significant cultural shifts, requiring employees from many professions to adapt their everyday work habits and procedures and collaborate more efficiently.
+There are many NetDevOps tools that you can use to ensure your Netwokg model leverage the DevOps concept. These toolsets will help you package almost every model, ensuring the workflow pipeline is clean and easy to manage. NetDevOps solutions, like DevOps, result in significant cultural shifts. This require employees from many professions to adapt their everyday work habits and procedures and collaborate more efficiently.
 
 ![cisco-network-culture-change](/engineering-education/what-is-netdevops-top-netdevops-tools-for-your-windows-operating-system/cisco-network-culture-change.png)
 
@@ -189,7 +195,7 @@ There are many NetDevOps tools that you can use to ensure your Netwokg model lev
 
 Other essential tools include;
 
-- [Ansible](https://www.ansible.com/) - Ansible is a Red Hat-supported open-source technology. It allows you to control and configure many servers from a centralized location. Rather than manually configuring each server, you may use the [Ansible playbook](/engineering-education/it-automation-using-ansible/) to automate all of your operations. Check [how to run Ansible on Windows](https://www.youtube.com/watch?v=vE5unuqIauE&list=PLhfrWIlLOoKMduetaIJgOoQCyfiJNEX74&index=11).
+- [Ansible](https://www.ansible.com/) - Ansible is a Red Hat-supported open-source technology. It enables you to control and configure several servers from a single place. Rather than manually configuring each server, you may use the [Ansible playbook](/engineering-education/it-automation-using-ansible/) to automate all of your operations. Check [how to run Ansible on Windows](https://www.youtube.com/watch?v=vE5unuqIauE&list=PLhfrWIlLOoKMduetaIJgOoQCyfiJNEX74&index=11).
 - [Chef Infra](https://docs.chef.io/chef_overview/) - an infrastructure-to-code automation tool. It assists you in automating the build, deployment, and management of your whole networking infrastructure and ecosystem.
 - [Puppet](https://puppet.com/) - a mechanism for managing server settings. It assists in the automation of IT operations. It is utilized in many aspects of IT automation, including network automation. You may use Puppet to automate the planned state of your server switches, routers, and other devices. Puppet may be used on both Unix and Windows platforms.
 - [Postman](https://www.postman.com/) - for testing any [networking API that you develop](https://netdevops.me/2019/creating-a-bootstrap-based-front-end-for-your-simple-rest-service/) with the language of your choice.
