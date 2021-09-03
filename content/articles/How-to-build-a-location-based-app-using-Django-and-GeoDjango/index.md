@@ -124,7 +124,7 @@ Let login to the admin dashboard by typing the following codes in our terminal t
 ```
 python manage.py runserver
 ```
-The web app is running on ```http://127.0.0.1:8000/``` but we need to populate the database with a dummy database from Overpass Turbo. We will do that from the admin dashboard using the URL below: ```http://127.0.0.1:8000/admin```.
+The web app is running on `http://127.0.0.1:8000/` but we need to populate the database with a dummy database from Overpass Turbo. We will do that from the admin dashboard using the URL below: `http://127.0.0.1:8000/admin`.
 
 ### Importing Dummy Data
  Click on the link below: `https://overpass-turbo.eu/` and  click the wizard button. Type `tourism=hotel in Miami` in the text field. Now select the build and run query wizard button. It will build the query, so the next step is to select the export button. Locate the data, section and click on download/copy as raw OSM data. This will download a JSON file. Copy the downloaded file to the project folder and rename it as hotels.json To populate our database, we need to create an empty migration. Run this code in your terminal.
@@ -268,7 +268,7 @@ Let start our server `python manage.py runserver` in our terminal. All the hotel
 
 
 ## Conclusion
-Congratulations on building a location-based web-app using Django, GeoDjango, POSTGIS, Overpass Turbo and PostgreSQL. The web-app can be upgraded to get the user location automatically using HTML5 Geolocation API. 
+In this tutorial you learnt how to build a location based web-app using Django, GeoDjango, POSTGIS, Overpass Turbo and PostgreSQL. User's location can be gotten automatically from the browser using HTML5 Geolocation API, instead of hard coding it in the web-app. You can use the links in the futher reading section to read more about Geospatial Analysis.
 [Link to GitHub repository](https://github.com/isaiaholadapo/Djang-Geodjango-location-app.git)
 
 
