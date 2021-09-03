@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-develop-a-business-directory-using-codeigniter-and-mysql/
-title: Developing a business directory using Codeigniter and MySQL
-description: In this article, we will be using CodeIgniter and MySQL to build a simple business directory. 
+title: Developing a Business Directory Using CodeIgniter and MySQL
+description: In this article, we will use CodeIgniter and MySQL to build a simple business directory. CodeIgniter is a PHP MVC framework used to build web applications rapidly.
 author: lilian-kerubo
-date: 2021-07-22T00:00:00-02:029
+date: 2021-09-03T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/hero.png
     alt: Codeigniter and mysql business directory image
 ---
-[CodeIgniter](https://codeigniter.com/userguide3/tutorial/index.html) is a PHP [MVC framework](https://www.guru99.com/mvc-tutorial.html) which developers use to build web applications rapidly. It provides out-of-box libraries for connecting to the database such as MySQL and performing various tasks such as sending emails, uploading files, and managing sessions.
+[CodeIgniter](https://codeigniter.com/userguide3/tutorial/index.html) is a PHP [MVC framework](https://www.guru99.com/mvc-tutorial.html) used to build web applications rapidly. It provides out-of-box libraries for connecting to databases such as MySQL, and performing various tasks such as sending emails, uploading files, and managing sessions.
 <!--more-->
-In this article, we will be using CodeIgniter and MySQL to build a simple business directory. Since CodeIgniter is an MVC framework, the `model` will be related to the database, `view` will be the HTML part seen on the web browser, and `controller` will be the logic that connects our models with the views.
+In this article, we will be using CodeIgniter and MySQL to build a simple business directory. Since CodeIgniter is an MVC framework, the `model` will be related to the database, `view` will be the HTML part seen on the web browser, and `controller` will be the logic that connects our models to the views.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -28,30 +28,33 @@ In this article, we will be using CodeIgniter and MySQL to build a simple busine
 - [Wrapping up](#wrapping-up)
 
 ### Prerequisites
-- [Code Igniter](https://codeigniter.com/download) installed
+To follow through this article, you will need to have:
+- [CodeIgniter](https://codeigniter.com/download) installed
 - [XAMPP](https://www.apachefriends.org/download.html) installed
 - Working knowledge of [PHP](https://www.php.net/) and [MySQL](https://www.mysql.com/)
 - A web browser, we will be using [Google Chrome](https://www.google.com/chrome/)
 
 ### Installation and setup
-First, we will install XAMPP software in our development environment. The software package comes preinstalled with Apache, MySQL, and PHP. Of course, a developer can decide to install them separately, but in our case, we will use XAMPP to provide an environment for developing PHP and MySQL applications.
+First, we will install XAMPP software in our development environment. The software package comes preinstalled with Apache, MySQL, and PHP.
 
-We will also set up CodeIgniter. First, we visit their download page and get the latest version. Then we will follow the installation instructions provided in their documentation. 
+You can decide to install them separately, but in our case, we will use XAMPP to provide an environment for developing PHP and MySQL applications.
+
+We will also set up CodeIgniter. First visit their download page to get the latest version, then follow the installation instructions provided in their documentation.
 
 We will unzip the folder and place it in our server's root directory, which in XAMPP is `htdocs`, and rename it to `bizdir`.
 
-To verify that everything is working as expected, we will start up our Apache server, launch our web browser, and access the link http://localhost/bizdir.
+To verify that everything is working as expected, we will start up our Apache server, launch our web browser, and access the link [http://localhost/bizdir](http://localhost/bizdir).
 
-![code igniter](/engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/codeigniter-start-page.PNG)
+![code igniter](/engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/codeigniter-start-page.png)
 
 ### Database setup
-We will create a database named `bizdir` by running the below command in the MySQL Console terminal:
+We will create a database named `bizdir` by running the command below in the MySQL Console terminal:
 
 ```SQL
 create database bizdir;
 ```
 
-Inside the database created, we will create a table by the name `business_dir` by executing the below command:
+Inside the database created, we will create a table by the name `business_dir` by executing the command below:
 
 ```SQL
 create table business_dir
@@ -66,7 +69,7 @@ create table business_dir
 );
 ```
 
-Back to our project directory, we go to `application/config/database.php` and edit the desired configuration for our database by setting the value in `$db[‘default’]` array. We will need to edit the database username, password and name as shown below:
+Back to our project directory, go to `application/config/database.php` and edit the desired configuration for our database by setting the value in `$db[‘default’]` array. We will need to edit the database username, password, and name as shown below:
 
 ```php
 $db['default'] = array(
@@ -82,10 +85,12 @@ $db['default'] = array(
 ```
 
 ### Coding the application
-As mentioned earlier, CodeIgniter is an MVC framework, meaning we have models, views, and controllers. In our case, models are database-related. The view is the application's front end, the `HTML` part is seen in the web browser, and the controller is the logic that connects our models with views. Finally, the controller forms the business logic of the application.
+As mentioned earlier, CodeIgniter is an MVC framework, meaning we have models, views, and controllers. In our case, models are database-related.
+
+The view is the application's front end; the `HTML` part seen in the web browser. The controller is the logic that connects our models with views. The controller forms the business logic of the application.
 
 #### Model
-We will first define our models. We create a file named `Bizdir_model.php` inside `application/models` and add the below code:
+We will first define our models. We create a file named `Bizdir_model.php` inside `application/models` and add the code below:
 
 ```php
 <?php
@@ -97,11 +102,11 @@ class Bizdir_model extends CI_Model {
 }
 ```
 
-In the above code snippet, we have created a class named `Bizdir_model`, which inherits the properties of `CI_Model` class prebuilt in the CodeIgniter framework. Then the constructor loads the database using `$this->db` to access the database.
+In the code snippet above, we have created a class named `Bizdir_model`, which inherits the properties of `CI_Model` class prebuilt in the CodeIgniter framework. The constructor loads the database using `$this->db`.
 
-Next, we have to insert and retrieve data into our database. We will achieve this by adding a method `get_bizdir()` to retrieve data as below:
+Next, we have to insert and retrieve data into our database. We will achieve this by adding a method `get_bizdir()` to retrieve data as shown below:
 
-```PHP
+```php
 public function get_bizdir()
     {
         $query = $this->db->get('business_dir');
@@ -109,9 +114,9 @@ public function get_bizdir()
     }
 ```
 
-Inside the function `get_bizdir`, we are fetching all the data stored inside our directory table. The function is the same as running the `SELECT * FROM business_dir;` query.
+Inside the function `get_bizdir`, we are fetching all the data stored inside our directory table. The function does the same purpose as the query `SELECT * FROM business_dir;`.
 
-We will insert dummy data into our table via `PHPMyAdmin` or even `MySQL` console window by running the below command:
+We will insert dummy data into our table via `PHPMyAdmin` or even `MySQL` console window by running the command below:
 
 ```SQL
 INSERT INTO `business_dir` (`id`, `biz_name`, `cat`, `addr`, `tel`, `website`, `email`) VALUES
@@ -123,9 +128,9 @@ INSERT INTO `business_dir` (`id`, `biz_name`, `cat`, `addr`, `tel`, `website`, `
 ```
 
 #### Controller
-Next, we will create a controller that fetches the data from the earlier model and pass it to our view. We will create a file named `Bizdir.php` inside the `application/controllers` directory and add the below code:
+Next, we will create a controller that fetches the data from the model and passes it to our view. We will create a file named `Bizdir.php` inside the `application/controllers` directory and add the code below:
 
-```PHP
+```php
 <?PHP
 class Bizdir extends CI_Controller {
 
@@ -144,7 +149,7 @@ class Bizdir extends CI_Controller {
       $this->load->view('bizdir/index', $data);
       $this->load->view('templates/footer');
    }
-    
+
    public function any()
    {
       $data['title'] = 'Business Directory: Any Page';
@@ -153,16 +158,16 @@ class Bizdir extends CI_Controller {
 }
 ```
 
-The `Bizdir` class inherits the `CI_Controller` class. Inside the constructor, we call `CI_Controller` our parent class. Then next line loads the model by making it accessible using `$this->load->model('bizdir_model');`. 
+The `Bizdir` class inherits the `CI_Controller` class. Inside the constructor, we call `CI_Controller`; our parent class. Then next line loads the model by making it accessible using `$this->load->model('bizdir_model');`.
 
 We fetched all the data in the index method and stored it in `$data['directories']`. Then, another key named `title` is added to the variable `$data`, and in the rest of the code, we pass the variable and render the views.
 
 The key `$data` will be accessible to our views like `$title` and `$directories`. The `any()` method redirects any other URL that is not matched.
 
 #### View
-Next, we will create the views for our application. First, we will create a new directory called `templates` inside the `application/views` folder, then create two files, `header.php` and `footer.php`, inside the `templates` folder.
+Next, we will create the views for our application. First create a new directory called `templates` inside the `application/views` folder, then create two files, `header.php` and `footer.php`, inside the `templates` folder.
 
-The `application/views/templates/header.php` file will appear as below:
+The `application/views/templates/header.php` file will appear as shown below:
 
 ```php
 <html>
@@ -173,7 +178,7 @@ The `application/views/templates/header.php` file will appear as below:
 <h1 style="text-align: center"><?php echo $title; ?></h1>
 ```
 
-And the `application/views/templates/footer.php` file will have the below code:
+And the `application/views/templates/footer.php` file will have the code below:
 
 ```php
 <p style="text-align: center; margin-top: 15px">&copy; 2021 Business Directory. All rights reserved.</p>
@@ -181,14 +186,14 @@ And the `application/views/templates/footer.php` file will have the below code:
 </html>
 ```
 
-Then we can proceed create a new directory name `bizdir` and code the file `index.php` inside `application/views/bizdir/index.php` as below:
+Then we can proceed to create a new directory named `bizdir` and write the code below in the file `index.php` located inside `application/views/bizdir/index.php`:
 
 ```php
 <table>
 <style>
 table {
   border-collapse: collapse;
-  width: 100%;  
+  width: 100%;
   font-family: arial, sans-serif;
 }
 td, th {
@@ -225,9 +230,11 @@ tr:nth-child(even) {
 </table>
 ```
 
-In the header section, we are displaying the `title` we defined in the controller. Inside the `index.php` file, we have created a loop that iterates through the list of businesses stored in our database. A new `<tr>` is created on each loop, and all values are displayed inside `<td>`.
+In the header section, we are displaying the `title` that we defined in the controller. Inside the `index.php` file, we have created a loop that iterates through the list of businesses stored in our database.
 
-We will create `any.php` file inside `application/views/bizdir` and add the below `HTML`:
+A new `<tr>` is created on each loop, and all values are displayed inside `<td>`.
+
+We will create `any.php` file inside `application/views/bizdir` and add the code below:
 
 ```php
 <div style="text-align: center; margin-top: 50px; padding-top: 50px;">
@@ -237,7 +244,7 @@ We will create `any.php` file inside `application/views/bizdir` and add the belo
 ```
 
 ### Routing
-We are now done setting up our MVC, next is to create the routes to the specific views. We start by opening the `application/config/router.php` file and edit the code as below:
+We are now done setting up our MVC, next step is to create the routes to the specific views. We start by opening the `application/config/router.php` file and edding the code below:
 
 ```php
 $route['dir'] = 'bizdir';
@@ -245,17 +252,24 @@ $route['dir/(:any)'] = 'bizdir/any';
 $route['default_controller'] = 'welcome';
 ```
 
-In the above code snippet, the key of `$route` appears in the browser URL. Then the value on the right points to which method from the controller to call. If only the controller's name is given, such as `bizdir` in our case, it will call the `index()` method. Also, if the URL contains anything after `dir/`, it will call the `any()` method.
+In the code snippet above, the key `$route` appears in the browser URL. Then the value on the right points the method from the controller that will be called.
 
-Now we can visit http://localhost/bizdir/index.php/dir to verify if everything works as expected. The results will be as shown below:
+If only the controller's name is given, such as `bizdir` in our case, it will call the `index()` method. Also, if the URL contains anything after `dir/`, it will call the `any()` method.
 
-![Business Directory](/engineering-education/how-to-develop-a-business-directory-using-Codeigniter-and-mysql/biz-dir.PNG)
+Now we can visit [http://localhost/bizdir/index.php/dir](http://localhost/bizdir/index.php/dir) to verify if everything works as expected.
 
-As it can be seen, data is fetched from the database and rendered on the browser.
+The results will be as shown below:
+
+![Business Directory](/engineering-education/how-to-develop-a-business-directory-using-codeigniter-and-mysql/biz-dir.png)
+
+As you can seen, data is fetched from the database and rendered on the browser.
 
 ### Conclusion
-Much functionality can be added and implemented in the application. However, that goes beyond the purpose of this tutorial. The primary goal of this tutorial was to show the learners how to get started with CodeIgniter.
-The code snippets used in this tutorial can be found at this [GitHub Repo](https://github.com/kerubo-tech/business_directory/).
+Much functionality can be added and implemented in the application. However, that goes beyond the purpose of this tutorial.
+
+The primary goal of this tutorial was to show you how to get started with CodeIgniter.
+
+The code snippets used in this tutorial can be found at this [GitHub Repository](https://github.com/kerubo-tech/business_directory/).
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
