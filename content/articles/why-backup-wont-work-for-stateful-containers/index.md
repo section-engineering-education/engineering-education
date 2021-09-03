@@ -1,4 +1,20 @@
-﻿### Introduction
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /why-backup-wont-work-for-stateful-containers/
+title: Why Backup won't work for Stateful containers?
+description: Any data that containers create need to be backed up. It is easier to backup data stored in stateful apps compared to stateless apps. This article will debunk these myths and misconceptions and explore why backup solutions may not work for stateful containers.
+author: verah-ombui
+date: 2021-09-03T00:00:00-05:27
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/why-backup-wont-work-for-stateful-containers/hero.png
+    alt: Why Backup won't work for Stateful containers cover image 
+---
+### Introduction
 There is a myth that containers are stateless. It is not the truth since a container can contain a state. However, the state is temporal, unique, and resides on the host machine it is running on. The myth focuses on that container images does not contain state and stores persistent data outside the container image.
 
 Containers consist of layers that are read-only and cannot be changed. Every layer holds the last changes made on the config file with configuration and installation commands. After executing the commands from the config file, the system changes are stored in a disk layer.
