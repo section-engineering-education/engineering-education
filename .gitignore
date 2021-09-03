@@ -13,3 +13,6 @@ public
 resources
 hugo-image-id
 .env
+
+# VS code
+.history/
