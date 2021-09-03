@@ -483,6 +483,8 @@ Upon running the app, navigate to `ScanQR` activity and you should expect to see
 ### Conclusion
 In this tutorial, we've covered the fundamentals of how to encode data using quick response (QR) codes in an Android app. We've also learned how to use a `CodeScanner` to scan/decode QR codes. The knowledge gained in this tutorial can be applied to other scenarios where QR codes are applicable. Keep learning and stay safe!
 
+The source code for the project in this tutorial can be found in [this GitHub repository](https://github.com/MaurineM/QR-codes in Android).
+
 Happy coding!
 
 ---
