@@ -15,7 +15,24 @@ To follow along with this tutorial, you'll need:
 
 ### Solving simultaneous equations
 
-We are going to look on how to solve simultaneous equations using matlab. Simultaneous equations are finite set of equation for which common solution are set. What we mean is that, they are conditions that defines the relationship between two unknowns thruogh an equal number of equations. We are going to use the matrix method. Matrix is a two dimensional arrangment of numbers for example,
+### Linear algebra using matlab
+
+### Introduction
+
+Equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
+
+Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
+
+### Prerequisites
+
+To follow along with this tutorial, you'll need:
+- [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+- Basic understanding of matrix.
+
+### Solving simultaneous equations
+
+We are going to look at how to solve simultaneous equations using Matlab. Simultaneous equations are finite sets of equations for which common solutions are set. What we mean is that they are conditions that define the relationship between two unknowns through an equal number of equations. We are going to use the matrix method. A matrix is a two-dimensional arrangement of numbers. For example, 
 
 $$\left[\begin{array}
 {rrr}
@@ -162,7 +179,8 @@ These are problems in which m>n. It means that the provided information is insuf
 Mathematically, the solution is y = (6-4x)/5. It means that the `x` value can range from `-inf` to `inf` as long as it works with the provided y. If Matlab is used to solve such equations, it will give only one value and the other set to 0. 
 
 ```Matlab
-A = [4 5]; b = 6;
+A = [4 5];
+b = 6;
 x = A\b
 ```
 
@@ -209,7 +227,7 @@ legend('y1', 'y2')
 We will use the `intersect function` to find the point at which the lines intersects. The intersect function uses the gradients and the constants as the inputs as shown below;
 
 ```matlab
-function [x0 y0] = intersectPoints(m1,m2,b1,b2) %m is the gradient while b is the constant. 
+function [x0, y0] = intersectPoints(m1,m2,b1,b2) %m is the gradient while b is the constant. 
 x0 = (b2-b1)/(m1-m2); %find the x point
 y0 = m1*x0+b1;
 end
