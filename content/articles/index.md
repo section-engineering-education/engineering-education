@@ -2,7 +2,7 @@
 
 #### Intoduction
 
-Welcome to the Core Concept of Redux Store Management article!. Today, I will be enlightening you on the concepts and essentials of Redux store management. By the time you finished reading this article, you should be confident to tell what Redux is all about and how it is been used.
+Welcome to the Core Concept of Redux Store Management article!. In this article, I will be discussing the concepts and essentials of Redux store management. By the time you finished reading this article, you should be confident to tell what Redux is all about and how it is been used.
 
 #### Keys Takeaway 
 In this article, I will be covering these sub-topics been the most essentials of the Redux itself. Join me to explore more on this journey.
@@ -10,7 +10,7 @@ In this article, I will be covering these sub-topics been the most essentials of
 * What is Redux and Store Management?
 * How to set up the Redux Store.
 * Concepts of Action and Reducers in Redux Data Flow.
-* How to connect an application with Redux Store.
+* Connecting an application with Redux Store.
 * Finally, How to make asynchronous calls with Redux Thunk.
 
 ### What is Redux and Store Management?
@@ -129,7 +129,7 @@ However, a reducer should never mutate the whole application state directly rath
 
 We use a conditional statement to switch between the action types and each type return their updated state.
 
-Note that reducers depend on how bulky the application developing. So there is no limit to the number of reducers to be made. But if there is more than one reducer, then you need a `rootReducers` that will combine all reducers to one for the `store`. This is achieved by making use of the `combineReducers` function from `redux` installed and pass in the reducers.
+Note that the number of reducer functions depends on how bulky the application developing. But if there is more than one reducer, then you need a `rootReducers` that will combine all reducers to one for the `store`. This is achieved by making use of the `combineReducers` function from `redux` installed and pass in the reducers.
 
 Reducers live in their folder and the root reducers are exported to the store. Take for instance, inside the `reducers` folder, we can have different files for each reducer and one `index.js` file for the `rootReducer`.
 
@@ -171,7 +171,7 @@ However, the Redux reducer logic instance goes thus below.
 
     export default leads;
 ```
-Furthermore, if you notice the `...state` that I used, that is called a `spread operator` in JavaScript. What that does is to copy the whole state, so that the part needed can be referenced.
+Furthermore, notice the `...state` command used, which is called a `spread operator` in JavaScript. What that does is to copy the whole state, so that the part needed can be referenced.
 
 
 ### Connecting the Redux Store With The Application Components
