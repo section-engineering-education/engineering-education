@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 layout: engineering-education
 status: publish
@@ -19,11 +18,7 @@ images:
 ### Introduction
 Pygal allows us to create a range of graphs and charts. In this article, you'll learn how to construct a visualization that shows the comparative popularity of Python works on GitHub. We'll create an interactive bar chart, where the height of each bar will represent the sum of stars earned by the project. By clicking a bar, you'll be sent to the project's GitHub page.
 <!--more-->
-=======
-### Introduction
-Pygal allows us to create a range of graphs and charts. In this article, you'll learn how to construct a visualization that shows the comparative popularity of Python works on GitHub. We'll create an interactive bar chart, where the height of each bar will represent the sum of stars earned by the project. By clicking a bar, you'll be sent to the project's GitHub page.
 
->>>>>>> 1174eeb587d875422d92e0c2ee99417df5967b10
 ### Prerequisites
 You'll need some Python skills to follow along with this tutorial. You must be in a position to work with web APIs in Python. Also you need to have [PIP](https://pip.pypa.io/en/stable/installation/) installed.
 
@@ -57,19 +52,12 @@ repos_dicts = respons_dict['items']
 print("Repos found:", len(repos_dicts))
 print("\nSelected info about each repository:")
 for repos_dict in repos_dicts:   #go through all the dictionaries in repos_dicts.
-<<<<<<< HEAD
     print('name-:', repos_dict['name'])  #write the name of the project
     print('owner-:', repos_dict['owner']['login']) #show the owner of the project
     print('stars-:', repos_dict['stargazers_count'])#print the number of stars the project has
     print('repo-:', repos_dict['html_url'])  # print the link to the project's repository
     print('Description-:', repos_dict['description']) # print the description of the project
-=======
-    print('name-:', repos_dict['name'])
-    print('owner-:', repos_dict['owner']['login'])
-    print('stars-:', repos_dict['stargazers_count'])
-    print('repo-:', repos_dict['html_url'])
-    print('Description-:', repos_dict['description'])
->>>>>>> 1174eeb587d875422d92e0c2ee99417df5967b10
+   
 ```
 
 We print the owner of each project, its name, the number of stars it has, the project's description, and its GitHub URL inside the loop:
@@ -275,8 +263,4 @@ In this tutorial, we have seen how to:
 You can learn more about other concepts by [visiting this page.](https://www.pluralsight.com/guides/building-visualizations-with-pygal).
 
 
-<<<<<<< HEAD
 Peer Review Contributions by: [Elly Omondi](/engineering-education/authors/elly-omondi)
-=======
-Peer Review Contributions by: [Elly Omondi](https://github.com/engineering-education/authors/elly-omondi)
->>>>>>> 1174eeb587d875422d92e0c2ee99417df5967b10
