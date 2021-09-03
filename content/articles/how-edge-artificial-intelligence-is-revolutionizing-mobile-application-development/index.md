@@ -1,6 +1,6 @@
 ### How Edge Artificial Intelligence is Revolutionizing Mobile Application Development
 
-The explosive growth of artificial intelligence has influenced app development in recent years. AI and machine learning have matured to provide flexible algorithms for intuitive and seamless experiences. Developers, users, and businesses now have a whole new view of intelligent interactions within mobile apps.
+The explosive growth of [artificial intelligence](https://www.section.io/engineering-education/artificial-intelligence-future/) has influenced app development in recent years. AI and machine learning have matured to provide flexible algorithms for intuitive and seamless experiences. Developers, users, and businesses now have a whole new view of intelligent interactions within mobile apps.
 
 They have embraced the current trend in the mobile app industry dominated by the Internet of Things (IoT) and mobile computing applications. IoT and mobile devices generate loads and loads of data at the network edge. Collecting such massive amounts of data in cloud data centers comes with a fair share of challenges, such as high network bandwidth and latency usage.
 
@@ -26,11 +26,11 @@ This article looks at artificial intelligence at the edge, discusses how it is c
 
 ### Artificial intelligence at the edge
 
-#### Edge AI is driven by and IoT and big data
-
 In today's Internet of Things (IoT) era, connected devices are generating large volumes of data available for collection and analysis. Artificial intelligence systems are required to make sense of this large quantity of data in real-time.
 
-A typical edge computing environment hosts machine learning models on the cloud. In this setup, a prediction request is sent from the device to an application programming interface ([API](https://www.ibm.com/cloud/learn/api)) based on the cloud. A response to the request is sent back over the internet.
+#### Edge AI is driven by and IoT and big data
+
+A typical [edge computing](https://www.section.io/blog/fog-computing-vs-edge-computing/) environment hosts machine learning models on the cloud. In this setup, a prediction request is sent from the device to an application programming interface ([API](https://www.ibm.com/cloud/learn/api)) based on the cloud. A response to the request is sent back over the internet.
 
 Transmitting a small amount of data to a cloud-hosted API over the internet is usually straightforward with no issues. However, you may face challenges if you want to transmit a large amount of data like high-quality photos and videos. Still, you may not be able to transmit data from the device to the cloud over the internet in areas with poor network coverage. That is why it is significant for data computation and data storage to be located on the device.
 
@@ -46,7 +46,10 @@ Edge AI leverages on-device artificial intelligence to provide a rapid response 
 
 ### How mobile applications are leveraging AI
 
-Mobile app developers have turned to edge AI in their quest to improve mobile app user experiences. They are applying edge intelligence in IoT integration, voice-based technology, and delivering personalized content. 
+Mobile app developers have turned to edge AI in their quest to improve mobile app user experiences. They are applying edge intelligence in:
+- IoT integration
+- Voice-based technology
+- Delivering personalized content 
 
 #### IoT integration
 
