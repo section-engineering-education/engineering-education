@@ -272,3 +272,6 @@ Remember, with Federated Learning, we can learn from everyone, without learning 
 - [TensorFlow Federated: Machine Learning on Decentralized Data](https://www.tensorflow.org/federated)
 - [An online comic book from GoogleAI to learn Federated learning](http://federated.withgoogle.com/)
 - [Federated Learning for Image Classification](https://github.com/tensorflow/federated/blob/master/docs/tutorials/federated_learning_for_image_classification.ipynb)
+
+---
+Peer Review Contributions by: [Collins Ayuya](/engineering-education/authors/collins-ayuya/)

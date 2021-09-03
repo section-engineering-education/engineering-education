@@ -211,8 +211,7 @@ from api import views
 urlpatterns = [
     path('', views.NoteList.as_view()),
     path('<int:pk>/', views.NoteDetail.as_view()),
-This conversation was marked as resolved by hectorkambow
-]
+
 ```
 
 Next, set up the `urls.py` file of the project to point to the app level `urlpatterns`. Then, include a path to the `urls.py` file of the `api` app.

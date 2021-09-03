@@ -1,5 +1,5 @@
 ---
 title: Worawat Kaewsanmuang
-type: engineering-education/authors
+type: authors
 ---
-Worawat Kaewsanmuang is an Undergraduate Electrical Engineer student from Chiangmai University, Thailand. He is passionate about blockchain technology and mobile development.
+Worawat Kaewsanmuang is an Undergraduate Electrical Engineering student from Chiangmai University, Thailand. He is passionate about blockchain technology and mobile development.
