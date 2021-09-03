@@ -99,7 +99,7 @@ By executing the above code block, we shall randomly print an image from the dat
 ![plotted image](/engineering-education/image-preprocessing-in-python/plotted_image.jpg)
 
 ### Data preprocessing
-Now that we're done with importing libraries and data, we shall go into data preprocessing.
+Now that we're done with importing libraries and data, let's proceed to data preprocessing.
 
 Since images exist in different formats, i.e., natural, fake, grayscale, etc., we need to take into consideration and standardize them before feeding them into a neural network.
 
