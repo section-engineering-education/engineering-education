@@ -1,16 +1,31 @@
-### Introduction
-Fresco was created by Facebook engineers to make efficient use of memory and improve productivity. Fresco was open-sourced for the first time in early 2015. This library is used by firms including Wikipedia, Twitter, and Redfin for their Android apps, Facebook included.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /displaying-images-with-fresco-library-in-android/
+title: Displaying images with Fresco library in Android
+description: This tutorial takes the reader through the process of loading images with the Fresco library in Android. Fresco is a powerful collection of methods majorly used to display images, GIFs and WEBPs on mobile devices.
+author: brandy-odhiambo
+date: 2021-09-03T00:00:00-11:20
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/displaying-images-with-fresco-library-in-android/hero.png
+    alt: Displaying Images with Fresco library in Android image
+---
+Fresco was created by Facebook engineers to make efficient use of memory and improve productivity. Fresco was open-sourced for the first time in early 2015. This library is used by firms including Wikipedia, Twitter, and Redfin for their Android apps, Facebook included.
+<!--more-->
 Fresco is a collection of build-in methods majorly used to display images, GIFs and WEBPs on mobile devices.
 
 It covers up the issues of image loading and displaying, reducing the tedious work to worry about the logic used to load the image from:
-- Internet (URLs)
+- Internet (URL).
 - Internal storage and resources and present a placeholder until the image is loaded.
 
 ### Prerequisites
 To follow through this tutorial, you need to:
 - Have Android Studio installed on your machine.
-- Ensure you are conversant with Android applications essential ideas.
+- Ensure you are conversant with Android application development essential ideas.
 - Understand the Kotlin programming language fundamentals.
 - Be able to use ViewBinding.
 
@@ -50,7 +65,7 @@ Furthermore, certain common tools have restrictions. Resize, for example, can on
 The consideration of mobile application animations like GIF and WebPs is an issue because each frame is a large bitmap and every animation series is a frame. Fresco is primarily responsible for loading and disposing frames as well as managing their memory.
 
 #### Streaming
-Streaming is a criterion that present images in a low resolution at a previous instance, then progressively upgrades the quality as the image is downloaded. It is always advantageous for users on a slow network. Glide, Picasso, and other Android image displaying libraries do not support streaming, but Fresco does. All you have to do is specify a URI, and the app will automatically update its display as the image is downloaded.
+Streaming is a criterion that present images in a low resolution at a previous instance, then progressively upgrades the quality as the image is downloaded. It is always advantageous for users on a slow network. Glide, Picasso, and other Android image displaying libraries do not support streaming, but Fresco does. All you have to do is specify a URL, and the app will automatically update its display as the image is downloaded.
 
 #### Loading
 Fresco uses pipeline as a technique to load images from local storage or resource to save data and CPU. It entails a three-level cache with two in memory and one in internal storage.
@@ -71,7 +86,6 @@ Drawee provides several features:
 - Ability to display a progress bar on the image.
 
 ### Getting Started with Fresco
-
 ### Creating Project
 In this step, we need to create an empty Android Studio project.
 
@@ -131,7 +145,7 @@ fresco:placeholderImage="@drawable/ic_launcher_background"
 ```
 
 #### Add Round corners and circular outline
- - Round Corners
+- Round Corners
 
 ```xml
 <com.facebook.drawee.view.SimpleDraweeView
@@ -175,7 +189,7 @@ val imageRequest= ImageRequestBuilder
 ```
 
 ### Loading images from the internet 
-Loading images from the network is also a feature provided by fresco. This allows users to obtain the necessary image from the network directly. To have this capability, the method `setImageURI()` is used by passing the image link to the method.
+Loading images from the network is also a feature provided by Fresco. This allows users to obtain the necessary image from the network directly. To have this capability, the method `setImageURI()` is used by passing the image link to the method.
 
 ```kotlin
 binding.networkimage.setImageURI("https://upload.wikimedia.org/wikipedia/commons/7/7c/Mount_Kenya.jpg")
@@ -213,13 +227,14 @@ When you run the app, you should expect to see the following output:
 ![demo](/engineering-education/displaying-images-with-fresco-library-in-android/demo.gif)
 
 ### Conclusion
-In this tutorial, we have learned how to add Fresco library to an Android App.
-We have also learned about streaming, adding GIF animations, loading, placeholders and adding a circular shape to an image.
-Keep exploring and building amazing apps with this beautiful library.
+In this tutorial, we have learned how to add Fresco library to an Android App. We have also learned about streaming, adding GIF animations, loading, placeholders and adding a circular shape to an image. Keep exploring and building amazing apps with this powerful library.
 
 Check out the entire project on [GitHub](https://github.com/brandy-kay/FrescoLibraryDemo).
 
-Happy coding!!!
-
 ### References
 - [Fresco Official Documentation](https://frescolib.org/).
+
+Happy coding!!!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
