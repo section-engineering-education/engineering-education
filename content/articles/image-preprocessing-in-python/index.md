@@ -96,7 +96,7 @@ im1.imshow(image)
 
 By executing the above code block, we shall randomly print an image from the dataset.
 
-![plotted image](/engineering-education/image-preprocessing-in-python/plotted_image.jpg)
+![plotted image](/engineering-education/image-preprocessing-in-python/plotted_image.png)
 
 ### Data preprocessing
 Now that we're done with importing libraries and data, let's proceed to data preprocessing.
@@ -126,7 +126,7 @@ i.suptitle('Original & RGB image channels')
 ```
 
 Output
-![rgb](/engineering-education/image-preprocessing-in-python/rgb.jpg)
+![rgb](/engineering-education/image-preprocessing-in-python/rgb.png)
 
 #### Grayscale conversion
 Grayscale is simply converting images from colored to black and white. It is normally used to reduce computation complexity in machine learning algorithms. 
@@ -141,7 +141,7 @@ plt.imshow(gray_image, cmap = 'gray')
 ```
 
 Output
-![gray_scale](/engineering-education/image-preprocessing-in-python/gray_scale.jpg)
+![gray_scale](/engineering-education/image-preprocessing-in-python/gray_scale.png)
 
 > **NB**: Converting images to grayscale might not always be practical in solving some problems. A few examples where it would be impractical to use grayscale include: _traffic lights_, _healthcare diagnosis_, _autonomous vehicles_, _agriculture_, etc. The best way to know whether to use it or not depends on your human visual ability to identify an object without color.
 
@@ -164,7 +164,7 @@ plt.imshow(norm_image)
 ```
 
 Output
-![normalization](/engineering-education/image-preprocessing-in-python/norm.jpg)
+![normalization](/engineering-education/image-preprocessing-in-python/norm.png)
 
 #### Data augmentation
 _Data augmentation_ is the process of making minor alterations to existing data to increase its diversity without collecting new data. 
@@ -225,7 +225,7 @@ for i in range(3):
 
 Output
 
-![shift](/engineering-education/image-preprocessing-in-python/shift.jpg)
+![shift](/engineering-education/image-preprocessing-in-python/shift.png)
 
 ##### Flipping
 This reverses the rows or columns of pixels in either vertical or horizontal cases, respectively.
@@ -241,7 +241,7 @@ datagen = ImageDataGenerator(horizontal_flip=True, vertical_flip=True)
 
 Output
 
-![flipping](/engineering-education/image-preprocessing-in-python/flip.jpg)
+![flipping](/engineering-education/image-preprocessing-in-python/flip.png)
 
 ##### Rotation
 This process involves rotating an image by a specified degree.
@@ -254,7 +254,7 @@ From the [code above](#shifting), change the **ImageDataGenerator** parameters, 
 
 Output
 
-![rotation](/engineering-education/image-preprocessing-in-python/rotate.jpg)
+![rotation](/engineering-education/image-preprocessing-in-python/rotate.png)
 
 ##### Changing brightness
 This is the process of increasing or decreasing image contrast.
@@ -267,7 +267,7 @@ datagen = ImageDataGenerator(brightness_range=[0.5,2.0])
 
 Output
 
-![contrast](/engineering-education/image-preprocessing-in-python/contrast.jpg)
+![contrast](/engineering-education/image-preprocessing-in-python/contrast.png)
 
 Other Augmentation techniques include:
 
