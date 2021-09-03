@@ -18,11 +18,11 @@ Error Analysis toolkit saves both time and effort used in debugging machine lear
 
 1. **Machine Learning**
 
-It is the study of computer algorithms that improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.
+It is a part of artificial intelligence (AI), that enables systems to automatically learn and improve their accuracy from experience without being programmed using algorithms and data.
 
 2. **Error Analysis** 
 
-Error analysis is a strategy used to document the errors that show up in learner language, decide if those errors are systematic, and if conceivable clarify what caused them.
+Error analysis is a strategy used to indicate the errors that show up in a system by pointing out if those errors are systematic and suggesting what caused them.
 
 3. **Systematic Errors**
 
@@ -30,22 +30,22 @@ There are errors that are consistent and repeatable in a given dataset. Systemat
 
 4. **Learner Language**
 
-Language in which learners say or write when they are trying to communicate in a language they are learning. Therefore, machine learning models study computer algorithms that improve automatically by going through more data sets over and over again improving their performance.
+Language in which learners try to communicate in a language they are learning. Therefore, machine learning models study computer algorithms that improve automatically by going through more data sets over and over again improving their accuracy.
 
 5. **Cohorts**
  
-Cohorts are subgroups of data that the user may choose to save for later use if they wish to come back to those cohorts for future investigation
+Cohorts are subgroups of data that are saved by a user who can later use them for future investigation.
 
 ### Introducing Error Analysis in Machine Learning
 
-Error Analysis is a Responsible AI toolkit that enables you to get a more profound comprehension of Machine Learning model mistakes. While assessing a machine learning model, total precision isn't adequate and single-score assessment may shroud significant states of errors. 
-It is used to distinguish cohorts with higher error rates and analyze the main drivers behind these errors. Error analysis in Machine Learning is not just to improve performance on your target metric, but also provides an avenue to know if your model is doing well and analyzing where your model went wrong on your test data, and how to make systematic changes to your model based on these insights.
+Error Analysis AI toolkit allows developers to get a more profound comprehension of Machine Learning model mistakes. While assessing a machine learning model, total precision isn't adequate and single-score assessment may shroud significant states of errors. 
+It is used to distinguish cohorts with higher error rates and analyze the main drivers behind these errors. Error analysis in Machine Learning is not just to improve performance on your target metric, but also provides an avenue for the developers to know the accuracy of the model and exactly where the errors occur and how to mitigate based on the insights provided.
 
 ![ErrorAnaysis](/engineering-education/an-overview-of-error-analysis-toolkit/error-benchmark.jpg)
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*Error Analysis moves away from aggregate accuracy metrics, exposes the distribution of errors to developers in a transparent way, and enables developers to identify & diagnose errors efficiently.* 
+*Error Analysis showing the distribution of errors to developers in a way that enables them to identify & diagnose errors efficiently.* 
 
 ### How Error Analysis works
 
@@ -59,15 +59,15 @@ Error Analysis uses Decision Tree and Error Heatmap processes to evaluate the ma
 The decision tree is used to identify errors patterns that are complex involving more than one feature. Cohorts with high error rates across multiple features are identified using the binary tree visualization, therefore, coming up with indicators such as error rate, error coverage, and data representation for each discovered cohort which users get more insights.
 Sometimes developers find it hard to discover hidden data pockets with critical failures while exploring possible combinations of features. Binary tree visualization partitions the benchmark data into subgroups showing high or low error rates therefore it separates model error from success. For each node defining a data set, users can investigate the following information:
 
-*Error rate* - a portion of instances in the node for which the model is incorrect. This is shown through the intensity of the red color.
-*Error coverage* - a portion of all errors that fall into the node. This is shown through the fill rate of the node.
-*Data representation* - number of instances in the node. This is shown through the thickness of the incoming edge to the node along with the actual total number of instances in the node.
+*Error rate* - a section of instances in the node in which indicates errors in the model that are clarified by the intensity of the color of the node.
+*Error coverage* - a section of all errors that fall into the node which is indicated by the fill rate of the node.
+*Data representation* - is the number of instances in the node which is pointed out through the thickness of the incoming edge to the node along with the actual total number of instances in the node.
 
 ![TreeMap](/engineering-education/an-overview-of-error-analysis-toolkit/error-detector.jpg)
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*Decision tree aims at finding failure modes by separating error instances from success instances in the data. The hierarchical error pattern here shows that while the overall error rate is 23.65% for the dataset, it can be as high as 96.77% for individuals who are married, have a capital gain higher than 4401, and a number of education years higher than 12.
+*Decision tree aims to separates error instances from success instances in the data. The hierarchical error pattern here shows that error can be as high as 96.77% for individuals who are married, while the overall error rate is 23.65%.*
 
 2. Error Heatmap
 
@@ -78,7 +78,7 @@ Error Heatmap works by visualizing cells with higher error, showing a darker red
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*While the overall error rate for the dataset is 23.65%, the heatmap reveals that the error rates are visibly higher, up to 83%, for individuals with higher education. Error rates are also higher for males vs. females.*
+*The error hit map indicates that error rates are higher up to 83%, for individuals with higher education while the overall error rate for the dataset is 23.65%. Error rates are also seen to be higher in males compared to females.*
 
 #### Diagnosis
 
@@ -94,7 +94,7 @@ Data exploration allows comparison between cohorts which enables benchmarking to
 
 *[Image Source: towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*When we look at how the data is distributed across the feature “education\_num” we can see that a) there are fewer instances for individuals with more than 12 years of education, and b) for this cohort the distribution between lower-income (blue) and higher-income (orange) is very different than for other cohorts. In fact, for this cohort there exist more people who have an income higher than 50K, which is not true for the overall data.*
+*The data distributed indicates that there are fewer instances for individuals with more than 12 years of education, and for this cohort, the distribution between lower-income and higher-income is very different than for other cohorts. More people in this cohort have an income higher than 50K, which is the opposite of the overall data.*
 
 2. Global explanation
 
@@ -104,7 +104,7 @@ Global Explanation allows users to explore the top important features that impac
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*Global feature explanations for the income prediction model show that marital status and number of education years are the most important features globally. By clicking on each feature, it is possible to observe more granular dependencies. For example, marital statuses like “divorced”, “never married”, “separated”, or “widowed” contribute to model predictions for lower income (<50K). Marital status of “civil spouse” instead contributes to model predictions for higher income (>50K).*
+*The important features globally in the income prediction model are marital status and number of education years. When you click each feature you can observe more granular dependencies such as in the marital status, "civil spouse" contribute to model prediction for higher income (>50K) while the other marital status such as "widowed", "separated" or "divorced" contribute to model predictions for lower-income (<50k).*
 
 3. Local explanation
 
@@ -118,7 +118,8 @@ What-If Analysis allows users to change feature values of selected data points a
 
 *[Image Source: Towards data science](https://towardsdatascience.com/responsible-machine-learning-with-error-analysis-a7553f649915)*
 
-*For this individual, the model outputs a wrong prediction, predicting that the individual earns less than 50K, while the opposite is true. With what-if explanations, it is possible to understand how the model would behave if one of the feature values changes. For instance, here we can see that if the individual were 10 years older (age changed from 32 to 42) the model would have made a correct prediction. While in the real world many of these features are not mutable, this sensitivity analysis is intended to further support practitioners with model understanding capabilities*
+*The model outputs the wrong prediction for the individual highlighted showing the individual earns less than 50k while the opposite is true. What-if explanations make it possible to understand model behavior if one of the feature values changes. Many features are usually not mutable in the real world, therefore sensitivity analysis is intended to further support practitioners with model understanding capabilities.*
+
 
 ### Failures in Machine Learning
 
@@ -171,12 +172,11 @@ We can call the error analysis dashboard using the API below, which takes in an 
 
 ErrorAnalysisDashboard(global\_explanation, model, dataset=x\_test, true\_y=y\_test) 
 
-For larger datasets, we can downsample the explanation to fewer rows but run error analysis on the full dataset. 
-We can provide the downsampled explanation, the model or pipeline, the full dataset, and then both the labels for the sampled explanation and the full dataset, as well as (optionally) the names of the categorical features:
+We can downsample the explanation to fewer rows for larger datasets but run error analysis on the full dataset. We can provide the downsampled explanation, the model or pipeline, the full dataset, and then both the labels for the sampled explanation and the full dataset, as well as (optionally) the names of the categorical features:
 
 ErrorAnalysisDashboard(global\_explanation, model, dataset=X\_test\_original\_full,true\_y=y\_test, categorical\_features=categorical\_features, true\_y\_dataset=y\_test\_full)
 
-The screenshots in this article are generated using an LGBMClassifier with three estimators. 
+
 
 ### Conclusion
 
