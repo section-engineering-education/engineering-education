@@ -5,7 +5,7 @@ published: true
 url: /web-automation-with-selenium-using-python/
 title: Getting Started with Web Automation using Selenium with Python
 description: This article will be an introduction to Web automation using Selenium. We will be using Python to build automation scripts using Selenium for automating web processes.
-author: nathaniel-dauda-wobin
+author: nathaniel-dauda-musa
 date: 2021-09-04T00:00:00-09:20
 topics: [Languages]
 excerpt_separator: <!--more-->
