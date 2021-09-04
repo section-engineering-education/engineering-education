@@ -5,7 +5,7 @@ published: true
 url: /building-simple-maps-using-leaflet-js/
 title: Building Simple Maps using Leaflet.js
 description: This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js library.
-author: femi-ige-muyiwa
+author: femi-ige-muyiwa-oladele
 date: 2021-09-02T00:00:00-10:31
 topics: [Languages]
 excerpt_separator: <!--more-->
