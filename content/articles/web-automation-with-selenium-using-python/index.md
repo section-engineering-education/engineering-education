@@ -183,7 +183,7 @@ searchField.submit()
 
 If you run your code, it will open up the browser, request for the Google webpage, input the `university` value in the search box, and submits it automatically.
 
-### Logging into a website
+### Automate logging into a website
 Using what we have learned from the previous example let us try to log in to the quora website. To do that let us create a new file inside our project directory with the name `main.py`. Paste or type in the below code into the file.
 
 ```python
