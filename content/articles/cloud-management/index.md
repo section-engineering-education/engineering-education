@@ -21,6 +21,13 @@ In this article, we will discuss how cloud management and understand what there 
 ### Prerequisities 
 Basic knowledge of cloud computing
 
+### Key Takeaways
+
+* Understanding of Cloud Management
+* Lists of decent Cloud Management Platforms
+* Best ways to manage cloud management resources and challenges facing cloud management
+* Methods of identifying decent cloud managers/ vendors
+
 ### Goals and Objectives
 
 * The goal of the tutorial is to give the easiest introduction to the cloud, regardless of the field of study.
@@ -80,6 +87,68 @@ Some examples include;
 - Microfocus
 - ServiceNow
 
+### Cloud Scenarios 
+
+Currently, the cloud computing market value is at USD 274.79 billion in 2020. (Grand View Research, 2020) 
+These were the accumulated rates of the cloud scenarios. According to Cloud Forecast in 2018 by Gartner.
+
+- Software as a Service (SaaS)  - 41%
+- Business Platform as a Service (BPaaS) - 26%
+- Infrastructure as a Service (IaaS) - 18%
+- Platform as a Service (PaaS) - 9%
+- Management and Security Services - 6% 
+
+##### The current cloud scenarios are;
+
+### Infrastructure as a Service (IaaS): 
+This allows cloud users to access infrastructure for their activities. The payment plan is in a way that customers pay for resources as they use. IaaS is the most cost-efficient scenario. The IaaS gives enterprises control over the virtual cloud infrastructure. 
+Most times you would use this medium for short-term projects. Also, test runs for new applications, etc. If you decide to stick with it, the cost increases.
+The IaaS is for; Web applications, Data storage, backup and recovery, High-performance computing. Big data analytics, testing and development environment, and hosting front-end websites. 
+
+List of IaaS vendors
+
+- Amazon Web Services
+- Google Cloud Platform
+- Microsoft Azure Virtual Machine
+- Hostwind
+- Linode
+- IBM Cloud Private
+- Alibaba Elastic Compute Service
+- CenturyLink Cloud
+
+### Platform as a Service (PaaS): 
+Its resources help users build minimal products to sophisticated complex ones. Usually, these cloud service providers give users the environment to deploy their services.
+With PaaS, you have access to manage your data and application. 
+The cloud service providers manage everything else such as storage, server, networking, virtualization. The middleware and others.
+Some advantages of PaaS are it adds development abilities. You don't have to search for the expertise of a deployment staff.
+You can also develop for many platforms. Ranging from mobile devices, computers, and web browsers. 
+
+List of PaaS Vendors
+
+- Amazon Web Service Elastic Beanstalk
+- Heroku
+- Windows Azure 
+- Firebase
+- MetLife
+- Netlify
+
+### Software as a Service (SaaS): 
+In this scenario, enterprises have little or no control over the service. The designed model allows service distribution of software via the web. It is the most used scenario, especially in the tech space.
+You subscribe, the cloud service providers manage everything. Ranging from, networking, storage, data, application, runtime, virtualization, and others.
+Benefits of SaaS: You get rapid deployment which includes automated software updates. Also, it is faster to scale, cost management.
+
+Lists of SaaS Vendors
+
+- Dropbox
+- Slack
+- Shopify
+- HubSpot
+- Salesforce
+- Zendesk
+- Cisco WebEx
+- Google Workspace
+
+
 ### Cloud Management Challenges
 
 In this century, enterprises have migrated from storing data or their applications online. Neither are uploads stored through storage device and servers. Given that, using cloud storage seems more efficient. Regardless cloud management doesn’t come without its setbacks and challenges. One major oblivious factor is the resources it costs but that's one of the few. Thus, we'd like to grasp about its challenges. Also, the simplest solutions required for them. Hence we are able to completely maximize the advantages of cloud management. 
@@ -117,12 +186,12 @@ This is often the sharing, exchange, and use of knowledge. Goes on between softw
 - Cloud providers must have the power to integrate a client’s cloud computing needs. With their on-premise IT operations in an seamless fashion.
 
 ### Better Ways to Manage Cloud Resources
-* Monitor your cloud space, the essential purpose of cloud management
-* Use the best security
-* Create the infrastructure that will suit your business 
-* Modify storage environment
-* Use automation 
-* Keep records: Write down what you do, document your experience. 
+- Monitor your cloud space, the essential purpose of cloud management
+- Use the best security
+- Create the infrastructure that will suit your business 
+- Modify storage environment
+- Use automation 
+- Keep records: Write down what you do, document your experience. 
 - Software used, including the version
 - Errors encountered 
 - Commands run, arguments provided, data files used
@@ -163,6 +232,9 @@ A decent cloud provider checks and cut financial resources. Regardless of the so
 1. [Cloud Migration](https://searchcloudcomputing.techtarget.com/definition/cloud-migration)
 2. [Importance of Cloud Computing](https://www.hashmicro.com/blog/reasons-why-cloud-computing-is-important-to-business/#:~:text=Cloud%20Computing%20model%20enables%20your,files%20at%20the%20same%20time)
 3. [Best Practice for using Cloud](https://www.software.ac.uk/best-practice-using-cloud-research)(sustainability institue, 2020)
+4. [Grand View Reserch](https://www.grandviewresearch.com/industry-analysis/cloud-computing-industry)
+5. [Cloud Scenerio](https://searchcloudcomputing.techtarget.com/definition/Infrastructure-as-a-Service-IaaS?amp=1)
+6. [Cloud Computing: The current state of the industry]( https://www.criticalcase.com/blog/cloud-computing-the-current-state-of-the-industry.html)
 
 ### Conclusion
 Cloud management is an essential knowledge. We need it to grasps the workings of cloud computing while starting out. It does not matter if you have an enterprise or intend on getting one. If you are tech inclined and used mobile devices. You should get acquainted to the modern day storage systems.  
