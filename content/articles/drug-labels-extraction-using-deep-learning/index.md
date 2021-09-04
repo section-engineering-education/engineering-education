@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /drug-labels-extraction-using-deep-learning/
+title: Drug Label Extraction Using Deep Learning
+description: In this tutorial, we will use OCR to help extract drug labels from prescription medicine.
+author: wilkister-mumbi
+date: 2021-09-04T00:00:00-18:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/drug-labels-extraction-using-deep-learning/hero.png
+    alt: Drug Label Image
+---
+Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
+<!--more-->
 Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare thereby improving people's lives. Machine learning has been used in hospitals to identify patients quickly, in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis. 
 One notable area of concern in healthcare that hasn't been explored a lot is in drug labels extraction. Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services such as Adobe provide this feature on their app.  
 This technology is what our tutorial will be based on. We'll use OCR to enable us automatically extract drug labels/text from prescription medicine. We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). This is a model that was originally built by the engineers at [Baidu](https://www.baidu.com/). 
