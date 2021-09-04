@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/web-automation-with-selenium-using-python/
+title: Web Automation With Selenium Using Python
+description: This article will be an introduction to Web automation using Selenium. We will be using Python to build automation scripts using Selenium for automating web processes.
+author: nathaniel-dauda-wobin
+date: 2021-09-04T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/web-automation-with-selenium-using-python/hero.jpg
+    alt: Selenium web automation image
+---
 Automation can be seen as a process of removing human effort in a process that uses electronic machines or robots to perform tasks.
 
 In this article, we will be looking at automating web processes.
