@@ -45,7 +45,7 @@ There are two parts to the installation process. First, you have to install `pad
 
 The PaddleOCR model can run on both a GPU and CPU.
 
-If you have a GPU-enable machine. use the following command to install the PaddleOCR:
+If you have a GPU-enabled machine. use the following command to install the PaddleOCR:
 
 ```python
 !python3 -m pip install paddlepaddle-gpu==2.0.0 -i https://mirror.baidu.com/pypi/simple
@@ -149,7 +149,7 @@ TWICEDAILY
 ```
 The above few lines of code allow us to quickly extract the drug labels in drug bottles/capsules. 
 
-> Please note that we using `drug1.jpg` in this example, you can play around with the code and use `drug2.jpg`, and see the outcome.
+> Please note that we are using `drug1.jpg` in this example, you can play around with the code and use `drug2.jpg`, and see the outcome.
 
 ### Extracting prescription medication labels using PaddleOCR
 
@@ -210,3 +210,5 @@ In a nutshell, this tutorial shows you how you can use OCR to extract text from 
 ### References
 1. [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf)
 
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
