@@ -28,14 +28,14 @@ To understand this guide the reader must be familiar with:
 ### Goal
 In this guide, we will be focusing on building two python automation scripts.
 
-One will perform a Google search based on the keyword "University", and the other will automatically login to [Quora](https://quora.com).
+One will perform a Google search based on the keyword "University", and the other will automatically log in to [Quora](https://quora.com).
 
 At the end of this guide the reader will be able to write python scripts that can:
 - Find elements in the browser.
 - Insert text to form fields in the browser.
 - Click buttons in the browser.
 
-The expected end result would be:
+The expected result would be:
 
 ![demo](/engineering-education/web-automation-with-selenium-using-python/demo.gif)
 
@@ -52,7 +52,7 @@ To install, use the following command:
 pip install selenium
 ```
 
-We also have to install a webdriver (a tool that is needed for web automation). The web driver helps us interact with the browser.
+We also have to install a web driver (a tool that is needed for web automation). The web driver helps us interact with the browser.
 
 If you are using Windows, we will be using a windows package manager known as `chocolatey` to install the web driver.
 
@@ -64,7 +64,7 @@ To install, we will use the command below:
 choco install chromedriver
 ```
 
-If you are using MacOS, we will use the command below:
+If you are using macOS, we will use the command below:
 
 ```shell
 brew cask install chromedriver
@@ -72,10 +72,10 @@ brew cask install chromedriver
 
 The version of `chromedriver` should be compatible with your browser version.
 
-If you encounter a compatability error, then download the driver based on your browser version from [here](https://chromedriver.chromium.org/downloads).
+If you encounter a compatibility error, then download the driver based on your browser version from [here](https://chromedriver.chromium.org/downloads).
 
 ### Automating Google search
-Create a file `app.py`and add the code below:
+Create a file `app.py` and add the code below:
 
 ```python
 from selenium import webdriver
@@ -87,13 +87,13 @@ driver.get('https://www.google.com/')
 
 The above code snippet is used to open a browser and request a web `url`.
 
-The first line of code imports the webdriver from Selenium. The second line opens the chrome webdriver `driver`.
+The first line of code imports the web driver from Selenium. The second line opens the chrome web driver `driver`.
 
-> NOTE: There are different webdrivers for different browsers. If you prefer to use a different browser, browse for the driver's name on the internet.
+> NOTE: There are different web drivers for different browsers. If you prefer to use a different browser, browse for the driver's name on the internet.
 
-For instance, we would use `firefoxDriver` for Firefox browser.
+For instance, we would use `firefoxDriver` for the Firefox browser.
 
-On the third line, we use `driver` to send a request to the browser requesting for the `url`.
+On the third line, we use `driver` to send a request to the browser requesting the `url`.
 
 You can run the code using the command below:
 
@@ -144,11 +144,11 @@ searchField.submit()
 
 From the above code snippet:
 - We initialized the variable `searchField` with the `xpath` value that we copied.
-- `send_keys()` is used to insert the text in `searchField` object.
+- `send_keys()` is used to insert the text in the `searchField` object.
 - `searchField.send_keys('university')` inserts the value `university` into the search box.
 - `searchField.submit()` submit the search request.
 
-> NOTE: You can also search for the `submit` button if the web page has such element and use the `click()` method on it. But, the `submit()` method makes it easier.
+> NOTE: You can also search for the `submit` button if the web page has such an element and use the `click()` method on it. But, the `submit()` method makes it easier.
 
 Your complete code will look like the snippet below:
 
@@ -165,7 +165,7 @@ searchField.send_keys('university')
 searchField.submit()
 ```
 
-If you run your code, it will open up the browser, request for the Google webpage, input the `university` value in the search box, and submits automatically.
+If you run your code, it will open up the browser, request for the Google webpage, input the `university` value in the search box, and submits it automatically.
 
 ### Logging into a website
 Using what we have learned from the previous example let us try to log in to the quora website. To do that let us create a new file inside our project directory with the name `main.py`. Paste or type in the below code into the file.
@@ -190,7 +190,7 @@ button.click()
 
 From the code snippet above:
 - First, we import `webdriver` from `selenium`.
-- To avoid multiple usage of `webdriver.Chrome()`, we store them in a variable `driver`.
+- To avoid multiple usages of `webdriver.Chrome()`, we store them in a variable `driver`.
 - `driver.get('https://www.quora.com/')` sends a request to [Quora](https://quora.com).
 - `emailField = driver.find_element_by_xpath('//*[@id="email"]')` finds the `email` field by `xpath`.
 - `emailField.send_keys('crixadsinfo@gmail.com')` inserts the email address into the `email` field.
@@ -199,12 +199,12 @@ From the code snippet above:
 - `button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button/div/div/div')`, finds the `login` button by `xpath`.
 - `button.click()` clicks the `login` button.
 
-When you run the app, Chrome browser opens, sends a request to Quora website, fills the login details, and logs you into your Quora account.
+When you run the app, the Chrome browser opens, sends a request to the Quora website, fills in the login details, and logs you into your Quora account.
 
-> NOTE: Modify the login credentials in your code, to view full execution of code.
+> NOTE: Modify the login credentials in your code, to view the full execution of the code.
 
 ### Conclusion
-To conclusion, we were able to write two Python scripts that performs a Google search and logins to Quora.
+In conclusion, we were able to write two Python scripts that perform a Google search and logins to Quora.
 
 Understanding the two examples above will give you an understanding of how you can use selenium to:
 - Direct to any URL
@@ -218,4 +218,4 @@ You can check out the full code [here](https://github.com/wobin1/google-search-a
 - [Selenium with python](https://selenium-python.readthedocs.io/)
 - [modern web automation with python](https://realpython.com/modern-web-automation-with-python-and-selenium/)
 - [getting started with selenium automation](engineering-education/getting-started-with-selenium-automation-testing/)
-- [Automation testing in Selenum](engineering-education/automation-testing-in-selenium/)
+- [Automation testing in Selenium](engineering-education/automation-testing-in-selenium/)
