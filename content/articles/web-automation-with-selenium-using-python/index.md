@@ -191,17 +191,17 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 
-driver.get('https://www.quora.com/')
+driver.get('https://www.quora.com/') # Open Quora website
 
-emailField = driver.find_element_by_xpath('//*[@id="email"]')
-emailField.send_keys('crixadsinfo@gmail.com')
+emailField = driver.find_element_by_xpath('//*[@id="email"]') # HTML tag element for email field
+emailField.send_keys('crixadsinfo@gmail.com') # Login user name
 
-passwordField = driver.find_element_by_xpath('//*[@id="password"]')
-passwordField.send_keys('crixADS001')
+passwordField = driver.find_element_by_xpath('//*[@id="password"]') # HTML tag element for password field
+passwordField.send_keys('crixADS001') # Login password
 
-button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button/div/div/div')
+button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button/div/div/div') # HTML tag element for button
 
-button.click()
+button.click() # onClick event handler for HTML button
 ```
 
 From the code snippet above:
