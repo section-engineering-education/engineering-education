@@ -226,7 +226,7 @@ The above function removes the unnecessary methods, packages, and attributes, th
 dir(river)
 ```
 
-The output of the remaining methods is shown.
+The output of the remaining methods and attributes is shown.
 
 ```bash
 ['anomaly',
