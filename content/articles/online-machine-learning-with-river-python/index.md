@@ -1,4 +1,4 @@
-Online machine learning is a type of machine learning in which data becomes available in one at a time in a sequential order. At each step the model is updated until at the end we have a more accurate and robust model.
+Online machine learning is a type of machine learning in which data becomes available one at a time in sequential order. At each step, the model is updated until at the end we have a more accurate and robust model.
 
 The data is in motion and keeps on changing over time. Its best suited when we have streaming data, where we want to process one sample of data at a time.
 
@@ -6,7 +6,7 @@ This is different from traditional or offline machine learning where the dataset
 
 ![Online vs Offline machine learning](/engineering-education/multiclass-text-classification-with-pyspark/offline-vs-online-machine-learning.jpg)
 
-In this tutorial, we shall use [River Python](https://riverml.xyz/latest/) to build our model and simulate streaming data.
+In this tutorial, we will use [River Python](https://riverml.xyz/latest/) to build our model and simulate streaming data.
 
 This will be a text classification model that classifies a given input text as either software or hardware-related.
 
@@ -37,13 +37,13 @@ A reader must have:
 1. [Python](/engineering-education/python-projects-for-beginners/) installed in your machine.
 2. A good understanding of [Python.](/engineering-education/python-projects-for-beginners/)
 3. Have a good knowledge of [machine learning models.](/engineering-education/house-price-prediction/)
-4. Know how to use [Google Colab](https://research.google.com/) or [Jupyter Notebook](https://jupyter.org/). In this tutorial, we shall use Google Colab
+4. Know how to use [Google Colab](https://research.google.com/) or [Jupyter Notebook](https://jupyter.org/). In this tutorial, we will use Google Colab
 
-> NOTE: for you to follow along easily, use Google Colab
+> NOTE: For you to follow along easily, use Google Colab
 
 ### Introduction
 
-As mentioned earlier we shall use [River Python](https://riverml.xyz/latest/) to build our model. [River Python](https://riverml.xyz/latest/) is the best suited due to the following reasons.
+As mentioned earlier we will use [River Python](https://riverml.xyz/latest/) to build our model. [River Python](https://riverml.xyz/latest/) is the best suited due to the following reasons.
 
 - Has incremental functionality
   This library can be updated after each observation and therefore can be used to process streaming data.
@@ -51,11 +51,11 @@ As mentioned earlier we shall use [River Python](https://riverml.xyz/latest/) to
   Since we are dealing with streaming data that keeps on changing over time, we need a library that is robust and can work under changing environments.
 
 - General-purpose
-  River Python is used for classification, clustering and regression. Both supervised and unsupervised machine learning.
+  River Python is used for classification, clustering, and regression. Both supervised and unsupervised machine learning.
 - Efficient & easy to use
   It's very efficient when handling streaming data, it is also simple and easy to use and a beginner can easily follow.
 
-In online machine learning, the model uses real-time data fo training and makes a sigle observation at a time.
+In online machine learning, the model uses real-time data for training and makes a single observation at a time.
 We then update our model as each new data arrives, this increases the model accuracy over time. The input data is continuously used to improve the current model's knowledge and as we further train the model becomes more adaptive and robust.
 
 ### River Python installation
@@ -137,19 +137,19 @@ Some of the methods that we will be using are as follows.
   This is the algorithm that we will be using to build our text classification model.
 
 - `preprocessing`
-  Will be used in the processing of our dataset used to train our model.
+  It will be used in the processing of our dataset used to train our model.
 
 - `metrics`
-  Calculate the accuracy score of our model.
+  It is used to calculate the accuracy score of our model.
 
 - `stream`
-  Will be used to simulate our dataset to be streaming data.
+  It will be used to simulate our dataset to be streaming data.
 
 - `anomaly`
-  Will be used to detect errors and anomalies in our model.
+  It will be used to detect errors and anomalies in our model.
 
 - `compose`
-  Used to build a pipeline to automate machine learning workflows.
+  It is used to build a pipeline to automate machine learning workflows.
 
 These methods are very helpful in this tutorial.
 
@@ -166,13 +166,19 @@ We have imported the following packages:
 
 This is a Naive Bayes method that is used for text classification. This contains the algorithm that is useful in the building of our model.
 
-For a detailed understanding about MultinomialNB [click here](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.htmll)
+For a detailed understanding about MultinomialNB [click here](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html)
 
 #### BagOfWords
 
 Is used to extract various features in our dataset. Features are the independent variables that are used as input for our model.
 
 It also converts our text inputs into vectors that are more machine-readable. BagOfWords work the same as `CountVectorizer` in offline machine learning.
+
+In offline machine learning `CountVectorizer` is used to transform a given text into a vector-based on the frequency of each word that occurs in the entire text. This is helpful when we have the text and we wish to convert text into vectors for further text analysis.
+
+`CountVectorizer` is also used for very basic preprocessing like removing the punctuation marks and converting all the words to lowercase.
+
+In this tutorial we are dealing with online machine learning thus we replace `CountVectorizer` with `BagOfWords` which perform the same functionalities.
 
 For a detailed understanding about TFIDF [click here](https://en.wikipedia.org/wiki/Bag-of-words_model)
 
@@ -186,10 +192,10 @@ For a detailed understanding of TFIDF [click here](https://towardsdatascience.co
 
 ### Getting the relevant methods and attributes
 
-To use the methods stated earlier we need to add them to our program. To do this we used the following Python function.
+To use the methods stated earlier we need to add them to our program. To do this, we use the following Python function.
 
 ```python
-def add_all_attributes(package):
+def get_all_attributes(package):
     subpackages = []
     submodules = []
     for i in dir(package):
@@ -204,7 +210,7 @@ def add_all_attributes(package):
     return res_df
 ```
 
-We name this function `add_all_attributes` to get all the attributes and methods needed to build our model.
+We name this function `get_all_attributes` to get all the attributes and methods needed to build our model.
 
 The functios loops through the package and remove the followig: `__all__`, `__builtins__`, `__cached__`, `__doc__`, `__file__`, `__loader__`, `__name__`, `__package__`, `__path__`, `__pdoc__`, `__spec__` and `__version__`.
 
@@ -214,11 +220,65 @@ The remaining sub-packages and sub-modules in the list are added using the `subp
 
 We then add these sub-packages and submodules into our data frame using the `pd.DataFrame(submodules)` method. The data frame is what will be used to train our model. The data frame will now have all the sub-packages and submodules.
 
-To now get these methods and attributes use this command.
+The above function removes the unnecessary methods, packages, and attributes, the remaining methods, attributes, and packages are as shown.
 
 ```python
-river_df = add_all_attributes(river)
+dir(river)
 ```
+
+The output of the remaining methods is shown.
+
+```bash
+['anomaly',
+ 'base',
+ 'cluster',
+ 'compat',
+ 'compose',
+ 'datasets',
+ 'drift',
+ 'dummy',
+ 'ensemble',
+ 'evaluate',
+ 'expert',
+ 'facto',
+ 'feature_extraction',
+ 'feature_selection',
+ 'imblearn',
+ 'linear_model',
+ 'meta',
+ 'metrics',
+ 'multiclass',
+ 'multioutput',
+ 'naive_bayes',
+ 'neighbors',
+ 'neural_net',
+ 'optim',
+ 'preprocessing',
+ 'proba',
+ 'reco',
+ 'stats',
+ 'stream',
+ 'synth',
+ 'time_series',
+ 'tree',
+ 'utils']
+```
+
+To now add these methods and attributes into our program use these commands. This will make them available for use when building our model.
+
+```python
+river_df = get_all_attributes(river)
+```
+
+To see if these methods and attributes are added use this command.
+
+```python
+river_df
+```
+
+The output is as shown.
+![Methods and attributes](/engineering-education/multiclass-text-classification-with-pyspark/methods-and-attributes-1.jpg)
+![More methods and attributes](/engineering-education/multiclass-text-classification-with-pyspark/methods-and-attributes-2.jpg)
 
 ### Simulating streaming data
 
@@ -226,7 +286,7 @@ To use River Python we need streaming data.
 
 Streaming data comes in incrementally over time and comes one at a time. To simulate streaming data we use our dataset as a list of a tuple as shown.
 
-We shall have two lists of data: A train list and a test list.
+We will have two lists of data: A train list and a test list.
 
 #### Train list
 
@@ -260,11 +320,11 @@ test_data = [('he writes programs daily','software'),
              ('The drive is full','hardware')]
 ```
 
-Used to test our model to gauge how it learned.
+This test data will be used to test our model and gauge the model performance.
 
 ### Building pipeline
 
-A machine learning pipeline is a way to automate a machine learning workflow that produces a machine learning model.
+A machine learning pipeline is a way to codify and automate the workflow it takes to produce a machine learning model.
 
 Machine learning pipelines are made up of sequential steps, these steps involve data extraction and preprocessing to model training and finally deployment.
 
@@ -299,7 +359,7 @@ To visualize the initialized pipeline use this command.
 pipe_nb
 ```
 
-The output is as shown
+The output is as shown.
 ![Pipeline Visualization](/engineering-education/multiclass-text-classification-with-pyspark/pipeline-visualization.jpg)
 
 ### Get pipeline steps
@@ -396,8 +456,9 @@ The prediction output:
 'software'
 ```
 
-At the beginning of the training phase, the model might give a lower accuracy but with time the accuracy increases.
-This is because the model stores the knowledge it has learned at each point making it more accurate.
+This gives a wrong prediction because it is still early in the learning process, but as we continue training using our dataset, the model will gain more knowledge which it will then use when making predictions. The aim is for the learning model to adapt to new data without forgetting its existing knowledge.
+
+At the beginning of the training phase, the model gives a lower accuracy but with time the accuracy increases. Let's calculate the model accuracy at this instance.
 
 ### Model accuracy
 
@@ -425,15 +486,17 @@ The output is as shown.
 Accuracy: 75.00%
 ```
 
+Being the first prediction, this is a good accuracy for our model, this shows that our model has a 75% chance of making an accurate prediction, as we continue training, our model will learn from the dataset and store the knowledge. It will then use this accumulated knowledge to increase the accuracy score when making predictions, this is the goal of any model.
+
 ### Conclusion
 
 In this tutorial, we have learned about online machine learning. We have started by stating the difference between online and offline machine learning, this gave us a good working knowledge of this kind of model.
 
 We then explored River Python which is a good library that can handle streaming data. River Python has various methods and attributes that are important in building our machine learning model.
 
-We then applied a machine learning pipeline that automated our workflow from data-precessing, feature extraction, and building our model, we build our model using the Naive Bayes algorithm.
+We then applied a machine learning pipeline that automated our workflow from data processing, feature extraction, and building our model, we build our model using the Naive Bayes algorithm.
 
-We finally used our trained model to make a prediction and also check the model accuracy. The higher the accuracy the better our model. Our model should be able to classify a given text to be either hardware or software related.
+We finally used our trained model to make a prediction and also check the model accuracy. The higher the accuracy the better our model. Our model should be able to classify a given text to be either hardware or software-related.
 
 This is a good tutorial that a reader can follow and learn online machine learning.
 
