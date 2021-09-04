@@ -1,10 +1,28 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /abstractive-summarization-using-deep-learning/
+title: Abstractive Summarization Using Deep Learning
+description: In this tutorial we will learn how to use the Pegasus model to perform abstractive summarization from start to finish.
+author: sharon-kinyan
+date: 2021-09-04T00:00:00-20:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/abstractive-summarization-using-deep-learning/hero.png
+    alt: abstractive summarization example image 
+---
+Abstractive summarization uses Google's Pegasus model. The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
+<!--more-->
 Abstractive summarization aims to take a body of text , turning it into a shorter version. Not only does abstractive summarization shorten body of texts, but also generates new sentences. They cover principal information in the input and is linguistically fluent, generating novel words.
 
 This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. Basically, it copies informative fragments from input sentences.
 
 Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper known as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 
-This tutorial will walk you through how use the Pegasus model to perform abstract summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News and Scientific Journals documents.
+This tutorial will walk you through how to use the Pegasus model to perform abstractive summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News and Scientific Journals documents.
 
 ### Table of contents
 - [Prerequisites](#prerequisites) 
