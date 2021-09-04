@@ -10,7 +10,6 @@ This article contains the construction of the shooting method code for a linear 
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
-- Basic understanding of matrix.
 
 ### Overview
 
