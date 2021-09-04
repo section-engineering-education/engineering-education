@@ -1,51 +1,81 @@
-### Introduction
-Automation can be seen as a process of removing human effort in a process. It can be seen as a process of using electronic machines or robots to perform tasks. Automation can be done in many processes where humans are involved but in this article, we will be looking at automating web processes.
+Automation can be seen as a process of removing human effort in a process that uses electronic machines or robots to perform tasks.
 
-The ability to enable software robots to automatically perform processes and tasks on the web is known as WEB AUTOMATION. These processes may include; searching the web, deleting emails, filling forms, logging in to a website, and many other processes. The need for speed in performing tasks is a necessity in our modern world, this makes the automation of repetitive tasks necessary.
+In this article, we will be looking at automating web processes.
 
-Selenium is a framework for web application testing. In python, Selenium can be seen as a set of libraries that helps developers interact with the web to enable the automation of web processes. Primarily Selenium is used for automating software tests but it is also used for web scraping. Selenium is a very powerful tool when it comes to interacting with web browsers, it works with all modern web browsers and its scripts can be written in different programming languages such as Java, python, c#, etc.
-In this guide, we will be looking at how to use selenium to write scripts that will automate basic web tasks using python to give you a background of how Selenium works.
+The ability to enable software robots to automatically perform processes and tasks on the web is known as web automation.
+
+By automating the web processes, we can:
+- Search the web
+- Delete emails
+- Fill forms
+- Log into websites
+
+The need for speed in performing repetitive tasks is a necessity in the modern world, this makes automation necessary.
+
+Selenium is a framework used for web application testing, automating software tests, and scraping the web.
+
+In python, selenium can be seen as a set of libraries that helps developers interact with the web to enable the automation of web processes.
+
+Selenium is a very powerful tool when it comes to interacting with web browsers, it supports all modern web browsers and can be coded in various programming languages such as Java, Python, C#, and so on.
+
+In this guide, we will be looking at how to use selenium to write scripts that will automate basic web tasks using Python.
 
 ### Prerequisite
-To understand this guide the reader must be familiar with HTML syntax such as; tags, elements, Ids, and classes. It is also assumed the reader is familiar with the basics of python programming language, concepts such as its syntax and creating a virtual environment are required.
+To understand this guide the reader must be familiar with:
+- HTML tags, elements, IDs, and classes.
+- Basics of Python programming language
 
 ### Goal
-In this guide, we will be writing two python automation scrips one will perform a search on the keyword University and the other will login to qoura website. At the end of this guide the reader will be able to write a python script that can;
-- Find elements in the browser
-- send text to form fields in the browser
+In this guide, we will be focusing on building two python automation scripts.
+
+One will perform a Google search based on the keyword "University", and the other will automatically login to [Quora](https://quora.com).
+
+At the end of this guide the reader will be able to write python scripts that can:
+- Find elements in the browser.
+- Insert text to form fields in the browser.
 - Click buttons in the browser.
 
-Our app will be able to run like the demo below.
+The expected end result would be:
 
-![demo](/web-automation-with-selenium-using-python/demo.gif)
+![demo](/engineering-education/web-automation-with-selenium-using-python/demo.gif)
 
 ### Setting up the environment
-First, we will need to create a virtual environment for its best practice to create a virtual environment for every python project we want to build so we don’t have issues with our project in the future. Click [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/) to learn how to create a virtual environment if you don’t know how to create one.
+First, we will need to create a virtual environment in Python.
 
-To work with selenium we will have to install selenium, we will do that using the command below:
+Click [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/) to learn how to create a virtual environment.
+
+To work with selenium, we will have to install selenium.
+
+To install, use the following command:
 
 ```shell
 pip install selenium
 ```
 
-We also have to install a webdriver which is a tool that is needed for web automation. The web driver helps us interact with the browser. If you are using windows We will be using a windows package manager known as chocolatey to install the web driver, click [here]( https://chocolatey.org/install) to install chocolatey.
+We also have to install a webdriver (a tool that is needed for web automation). The web driver helps us interact with the browser.
 
-To install we will use the command below:
+If you are using Windows, we will be using a windows package manager known as `chocolatey` to install the web driver.
+
+Click [here]( https://chocolatey.org/install) to install chocolatey.
+
+To install, we will use the command below:
 
 ```shell
-choco install chromdriver
+choco install chromedriver
 ```
 
-If you are on a mac you the below command will do
+If you are using MacOS, we will use the command below:
 
+```shell
+brew cask install chromedriver
 ```
-brew cask install chromdriver
-```
 
-The chromedriver version should be compatible with your browser version but if in any way you encounter a compactable error, go to this [site](https://chromedriver.chromium.org/downloads) to download for your browser version and replace the one you have.
+The version of `chromedriver` should be compatible with your browser version.
 
-### Automating Google Search
-Create a file `app.py` or whatever you will want to call your app and update it with the code below.
+If you encounter a compatability error, then download the driver based on your browser version from [here](https://chromedriver.chromium.org/downloads).
+
+### Automating Google search
+Create a file `app.py`and add the code below:
 
 ```python
 from selenium import webdriver
@@ -55,33 +85,55 @@ driver = webdriver.Chrome()
 driver.get('https://www.google.com/')
 ```
 
-The above code snippet is used to open a browser and request a web `url`. The first line of code is importing webdriver from Selenium, in the second line we used the webdriver to open chrome which we stored in a variable `driver`.
+The above code snippet is used to open a browser and request a web `url`.
 
-> NOTE: There are different webdrivers for different browsers so if you prefer another browser just look for the webdriver for that browser on the internet, for instance, we would use `firefoxDriver` for the firefox browsers. We are opening Chrome because we are using the `ChromeDriver`.
+The first line of code imports the webdriver from Selenium. The second line opens the chrome webdriver `driver`.
 
-On the third line, we used the driver variable to send a request to the browser requesting for the `url` in the parenthesis. You can run the code using the command below
+> NOTE: There are different webdrivers for different browsers. If you prefer to use a different browser, browse for the driver's name on the internet.
+
+For instance, we would use `firefoxDriver` for Firefox browser.
+
+On the third line, we use `driver` to send a request to the browser requesting for the `url`.
+
+You can run the code using the command below:
 
 ```bash
 python app.py
 ```
 
-If your code is correct the code will open your chrome browser as shown in the image below.
+The above code opens up the Chrome browser as shown in the image below:
 
-![browser open image](/web-automation-with-selenium-using-pythonimage1.png)
+![browser open image](/engineering-education/web-automation-with-selenium-using-python/image1.PNG)
 
-Next, we will be inputting a search keyword into the search field in the Google website. To do that we will have to get the search field element by inspecting the page. to inspect the page, right-click on the Google website page and click on inspect. The browser will open a window like shown in the image below
+Next, we will be entering a `search` keyword into the search field of the Google website.
 
-![inspect browser](/web-automation-with-selenium-using-python/image2.png)
+To do that, we will have to get the search field element by inspecting the page.
 
-Before we continue we will need to understand what locators in selenium are. **Locators** are ways we can identify web elements on the web page. They help us find any element on the webpage. There are different types of locators we can use to identify elements on a web page they include; id, class , name, and xpath. We use them as shown below
+To inspect the page, right-click on the Google website page and click on `Inspect element`.
+
+The browser will open a window as shown in the image below:
+
+![inspect browser](/engineering-education/web-automation-with-selenium-using-python/image2.PNG)
+
+Before we continue, we will need to understand what locators in selenium are.
+
+**Locators** are ways we can identify web elements on the web page. They help us find any element on the webpage.
+
+There are different types of locators we can use to identify elements on a web page. They include - `id`, `class`, `name`, and `xpath`.
+
+We use them as shown below:
 - `find_element_by_id` 
 - `find_element_by_name`
 - `find_element_by_className`
 - `find_element_by_xpath`
 
-From the above `id`, `name`, and `className` are Html attributes used inside Html tags to control their behavior. `xpath` stands for extensible markup language path (**XML path**), its a syntax for finding elements on a webpage. Xpath helps in finding elements that cant be found by ids, names, and classes. In the course of this guide, we will be using xpath.
+From the above `id`, `name`, and `className` are HTML attributes used inside HTML tags to control their behavior.
 
-To get the element, hover on the `div` tags and keep opening the one that highlights the search bar inclusive until you find the one that highlights only the search field then right-click on it, then click on copy and then click on copy xpath and paste it somewhere. Next, add the below lines to your code
+`xpath` stands for extensible markup language path (**XML path**) is a syntax for finding elements on a webpage.
+
+To get the element, hover on the `div` tags and keep opening the one that highlights the search bar inclusive until you find the one that highlights only the search field.
+
+Then, right-click the tag, click on copy `xpath`. Next, paste the `xpath` as shown:
 
 ```python
 searchField = driver.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
@@ -90,12 +142,13 @@ searchField.send_keys('university')
 searchField.submit()
 ```
 
-From the above code snippet, we saved the element in a variable `searchField` we copied the xpath we copied from the inspect window and pasted it in that position i.e. into the parenthesis of the find element method.
+From the above code snippet:
+- We initialized the variable `searchField` with the `xpath` value that we copied.
+- `send_keys()` is used to insert the text in `searchField` object.
+- `searchField.send_keys('university')` inserts the value `university` into the search box.
+- `searchField.submit()` submit the search request.
 
-`send_keys()` is used to input text in selenium so the code snippet `searchField.send_keys('university')` is sending the keyword university into the search box.
-The code snippet `searchField.submit()` submit the search request.
-
-> NOTE: you can also search for the submit button if the site you are searching from has one and use the `click()` method on it. But the `submit()` method makes it easier.
+> NOTE: You can also search for the `submit` button if the web page has such element and use the `click()` method on it. But, the `submit()` method makes it easier.
 
 Your complete code will look like the snippet below:
 
@@ -112,7 +165,7 @@ searchField.send_keys('university')
 searchField.submit()
 ```
 
-If you run your code it will open your browser, request for the Google webpage, input the university keyword in the search box and click to search.
+If you run your code, it will open up the browser, request for the Google webpage, input the `university` value in the search box, and submits automatically.
 
 ### Logging into a website
 Using what we have learned from the previous example let us try to log in to the quora website. To do that let us create a new file inside our project directory with the name `main.py`. Paste or type in the below code into the file.
@@ -135,24 +188,34 @@ button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/di
 button.click()
 ```
 
-From the code snippet above, first we imported `webdriver` from `selenium`. Because we will use `webdriver.Chrome()` to perform almost every operation that's why saved it in the variable `driver` to avoid repetation. `driver.get('https://www.quora.com/')` is used to send to send a request for the qoura website. `emailField = driver.find_element_by_xpath('//*[@id="email"]')` is finding the email field by xpath. `emailField.send_keys('crixadsinfo@gmail.com')` is inputing our email into the email field. `passwordField = driver.find_element_by_xpath('//*[@id="password"]')` is finding the password field by xpath. `passwordField.send_keys('crixADS001')`, is inputing the password into the password field. `button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button/div/div/div')`, is finding the login button by xpath. `button.click()` is clicking the login button. When you run the app app the app will start chrome, open the qoura website and fill in the login details and log you into your qoura account.
+From the code snippet above:
+- First, we import `webdriver` from `selenium`.
+- To avoid multiple usage of `webdriver.Chrome()`, we store them in a variable `driver`.
+- `driver.get('https://www.quora.com/')` sends a request to [Quora](https://quora.com).
+- `emailField = driver.find_element_by_xpath('//*[@id="email"]')` finds the `email` field by `xpath`.
+- `emailField.send_keys('crixadsinfo@gmail.com')` inserts the email address into the `email` field.
+- `passwordField = driver.find_element_by_xpath('//*[@id="password"]')` finds the password field by `xpath`.
+- `passwordField.send_keys('crixADS001')` inserts the password into the `password` field.
+- `button = driver.find_element_by_xpath('//*[@id="root"]/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button/div/div/div')`, finds the `login` button by `xpath`.
+- `button.click()` clicks the `login` button.
 
-> Note: Change the login details in the code snippet to your own, because i will change my password by the time this article is published.
+When you run the app, Chrome browser opens, sends a request to Quora website, fills the login details, and logs you into your Quora account.
+
+> NOTE: Modify the login credentials in your code, to view full execution of code.
 
 ### Conclusion
-In conclusion, we were able to write two python scripts one to perform a Google search and the other to login to quora. Understanding the two examples above will give you an understanding of how you can use selenium to;
-- go to any URL
-- find any Html element
-- fill any form and
-- submit any form
+To conclusion, we were able to write two Python scripts that performs a Google search and logins to Quora.
 
-Link to github repo [here](https://github.com/wobin1/google-search-automation).
+Understanding the two examples above will give you an understanding of how you can use selenium to:
+- Direct to any URL
+- Find any HTML element
+- Fill any form, and
+- Submit any form
+
+You can check out the full code [here](https://github.com/wobin1/google-search-automation).
 
 ### Further reading
 - [Selenium with python](https://selenium-python.readthedocs.io/)
 - [modern web automation with python](https://realpython.com/modern-web-automation-with-python-and-selenium/)
 - [getting started with selenium automation](engineering-education/getting-started-with-selenium-automation-testing/)
 - [Automation testing in Selenum](engineering-education/automation-testing-in-selenium/)
-
-
-
