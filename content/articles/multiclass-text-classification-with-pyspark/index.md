@@ -6,7 +6,7 @@ url: /multiclass-text-classification-with-pyspark/
 title: Multi-Class Text Classification with PySpark
 description: This tutorial will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title.
 author: james-omina
-date: 2021-09-01T00:00:00-13:00
+date: 2021-09-02T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,9 +16,9 @@ images:
 
 PySpark is a python API written as a wrapper around the Apache Spark framework. Apache Spark is an open-source Python framework used for processing [big data](https://en.wikipedia.org/wiki/Big_data) and [data mining](https://www.investopedia.com/terms/d/datamining.asp).
 
-Apache Spark is best known for its speed when it comes to data processing and its ease of use. It has a high computation power, that's why its best suited for big data. It supports popular libraries such as [Pandas](https://pandas.pydata.org/), [Scikit-Learn](https://scikit-learn.org/) and [NumPy](https://numpy.org/) used in data preparation and model buidling.
+Apache Spark is best known for its speed when it comes to data processing and its ease of use. It has a high computation power, that's why it's best suited for big data. It supports popular libraries such as [Pandas](https://pandas.pydata.org/), [Scikit-Learn](https://scikit-learn.org/) and [NumPy](https://numpy.org/) used in data preparation and model building.
 
-We will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title. We have various subjects in our dataset that can be assigned specific classes.
+We will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title. We have various subjects in our dataset that can be assigned, specific classes.
 
 ### Table of contents
 
@@ -26,7 +26,7 @@ We will use PySpark to build our multi-class text classification model. This inv
 - [Introduction](#introduction)
 - [PySpark Installation](#pyspark-installation)
 - [Creating SparkContext and SparkSession](#creating-sparkcontext-and-sparksession)
-- [Initializing the TextClassifier app](#initialize-the-textclassifier-app)
+- [Initializing the TextClassifier app](#initializing-the-textclassifier-app)
 - [Loading Dataset](#loading-dataset)
 - [Selecting the needed columns](#selecting-the-needed-columns)
 - [Checking for missing values](#checking-for-missing-values)
@@ -64,7 +64,7 @@ Pyspark uses the Spark API in data processing and model building. Spark API cons
 
 #### Spark SQL
 
-This is the structured query language used in the data processing. It's used to query the datasets in exploring the data used in model building.
+This is the structured query language used in data processing. It's used to query the datasets in exploring the data used in model building.
 
 #### Spark Streaming
 
@@ -86,7 +86,7 @@ This is the root of the Spark API. It's involved with the core functionalities s
 
 #### GraphX
 
-It is used in plotting of graphs for Spark computations.
+It is used in the plotting of graphs for Spark computations.
 
 The image below shows components of the Spark API:
 
@@ -111,7 +111,7 @@ RDD is best described in three ways:
 
 #### Dataframe
 
-Dataframe in PySpark is the distributed collection of structured or semi-structured data. This data in Dataframe is stored in rows under named columns. It is similar to the relational database tables or excel sheets.
+Dataframe in PySpark is the distributed collection of structured or semi-structured data. This data in Dataframe is stored in rows under named columns. It is similar to relational database tables or excel sheets.
 
 These two define the nature of the dataset that we will be using when building a model.
 
@@ -130,7 +130,7 @@ It contains a high-level API built on top of data frames used in building machin
 
 It contains a high-level API built on top of RDD that is used in building machine learning models. It consists of learning algorithms for regression, classification, clustering, and collaborative filtering.
 
-In this tutorial, we shall use the `PySpark.ML API` in building our multi-class text classification model.
+In this tutorial, we will use the `PySpark.ML API` in building our multi-class text classification model.
 
 > NOTE: We are using `PySpark.ML API` in building our model because `PySpark.MLib` is deprecated and will be removed in the next PySpark release.
 
@@ -162,7 +162,7 @@ To launch PySpark, use this command:
 pipenv run pyspark
 ```
 
-The avoce command will launch PySpark.
+The above command will launch PySpark.
 
 Let's now activate the virtual environment that we have created.
 
@@ -363,7 +363,7 @@ This will drop all the missing values in our `subject` column.
 
 Feature engineering is the process of getting the relevant features and characteristics from raw data. We extract various characteristics from our Udemy dataset that will act as inputs into our machine. The features will be used in making predictions.
 
-Machine learning algorithms do not understand text so we have to convert them into numeric values during this stage.
+Machine learning algorithms do not understand texts so we have to convert them into numeric values during this stage.
 
 We import all the packages required for feature engineering:
 
@@ -381,7 +381,7 @@ These features are in form of an extractor, vectorizer, and tokenizer.
 
 1. Tokenizer
 
-- It involves splitting a sentence into smaller words. This tutorial shall convert the input text in our dataset into word tokens that our machine can understand. For a detailed understanding of Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
+- It involves splitting a sentence into smaller words. This tutorial will convert the input text in our dataset into word tokens that our machine can understand. For a detailed understanding of Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
 
 2. CountVectorizer
 
@@ -390,7 +390,7 @@ These features are in form of an extractor, vectorizer, and tokenizer.
 3. Extractor
 
 - This is the process of extract various characteristics and features from our dataset. This enables our model to understand patterns during predictive analysis.
-  To automate these processes, we shall use a machine learning pipeline. This will simplify the machine learning workflow.
+  To automate these processes, we will use a machine learning pipeline. This will simplify the machine learning workflow.
 
 ### Pipeline stages
 
@@ -439,7 +439,7 @@ For a detailed understanding of IDF click [here](https://medium.com/the-programm
 
 #### LogisticRegression
 
-This is the algorithm that we shall use in building our model. It's a statistical analysis method used to predict an output based on prior pattern recognition and analysis.
+This is the algorithm that we will use in building our model. It's a statistical analysis method used to predict an output based on prior pattern recognition and analysis.
 
 We shall have five pipeline stages: Tokenizer, StopWordsRemover, CountVectorizer, Inverse Document Frequency(IDF), and LogisticRegression.
 
@@ -693,7 +693,7 @@ The output is as shown:
 
 Note: This is only showing the top 10 rows.
 
-From the above output, we can see that our model can accurately make predictions. The `label` columns matches with the `prediction` columns.
+From the above output, we can see that our model can accurately make predictions. The `label` columns match with the `prediction` columns.
 
 ### Model evaluation
 
@@ -796,7 +796,7 @@ The output is as shown.
  'prediction']
 ```
 
-From the above columns, let's select the necessary columns that gives the prediction results.
+From the above columns, let's select the necessary columns that give the prediction results.
 
 ```python
 pred_ex1.select('course_title','rawPrediction','probability','prediction').show()
@@ -837,7 +837,7 @@ In the tutorial, we have learned about multi-class text classification with PySp
 
 From here we then started preparing our dataset by removing missing values. We used the Udemy dataset to build our model.
 
-We then followed the stages in the machine learning workflow. We started with feature engineering then applied the pipeline approach to automate certain workflows. Pipeline makes the process of building a machine learning model easier.After following all the pipeline stages, we ended up with a machine learning model.
+We then followed the stages in the machine learning workflow. We started with feature engineering then applied the pipeline approach to automate certain workflows. Pipeline makes the process of building a machine learning model easier. After following all the pipeline stages, we ended up with a machine learning model.
 
 Finally, we used this model to make predictions, this is the goal of any machine learning model. If a model can accurately make predictions, the better the model. Using these steps, a reader should comfortably build a multi-class text classification with PySpark.
 
