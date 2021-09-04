@@ -275,7 +275,6 @@ for (final field in visitor.fields.keys) {
 ### Using a Generator to Create an Extension
 As methods of extension, you'll produce the getters and setters for each variable. Now make extension generator.dart in the lib/src directory with the following set of code:
 ```dart
-//Import packages
 import 'package:build/src/builder/build_step.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:source_gen/source_gen.dart';
@@ -327,7 +326,6 @@ Being the last step in this article now create builder.dart in lib and add the f
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-// import the generators you created above
 import 'src/extension_generator.dart';
 import 'src/subclass_generator.dart';
 
