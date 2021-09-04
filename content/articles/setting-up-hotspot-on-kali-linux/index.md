@@ -26,7 +26,7 @@ In the case of using a USB adapter use the command shown below:
  lsusb
  ```
  The output is as follows:
- ![Configuration](/engineering-education/setting-up-hotspot-on-kali-linux/Screenshot2.png)
+ ![Drivers](/engineering-education/setting-up-hotspot-on-kali-linux/drivers.png)
 ### Installation of the necessary tools
 In order to create our hotspot, we need to install the required tools. The first and crucial tool is **hostapd** which acts as the hotspot server.
 To install **`hostapd`**, type in the following command:
@@ -59,7 +59,7 @@ sudo update-rc.d dnsmasq disable
 ```
 The output is as follows:
 
-![Configuration](/engineering-education/setting-up-hotspot-on-kali-linux/Screenshot4.png)
+![Installations](/engineering-education/setting-up-hotspot-on-kali-linux/installations.png)
 
  ###  Setting up configuration files
 After installing the services, we shall then need to configure the necessary files i.e **`hotspot.sh`**.
@@ -115,15 +115,15 @@ For a wired connection, you will be required to change **ppp0** to **eth0** or a
 In this part, we will be using the graphical interface to do the configurations.
 - Go to advanced network settings, click on the gear icon to open it up. Your screen should look like this: 
 
-![Configuration](/engineering-education/setting-up-hotspot-on-kali-linux/Screenshot8.png)
+![Settings](/engineering-education/setting-up-hotspot-on-kali-linux/settings.png)
 To proceed with our configuration, follow the steps below:
 **Step I**: In the window, you click the “+”  button and another window pops up.
 In the new window here we are going to do the configuration of your hotspot.
-![Configuration](/engineering-education/setting-up-hotspot-on-kali-linux/Screenshot11.png)
+![Connection](/engineering-education/setting-up-hotspot-on-kali-linux/connection.png)
 **Step II**: Under the network type select “Wi-Fi”.
 Ensure your configuration resembles the second screenshot  below
 
-![Configuration](/engineering-education/setting-up-hotspot-on-kali-linux/Screenshot10.png) 
+![Security](/engineering-education/setting-up-hotspot-on-kali-linux/security.png) 
 **Step III**: To set a password, click on **“Wi-Fi security ”** and select **“ WPA & WPA2 Personal”**
 >N/B: Security being an essential  feature, this type of encryption protection is designed for homes and small office networks and does not need authentication server, also  known as WPA-PSK(pre-shared key). WPA Personal is available on all 3 WPA versions that are; WPA, WPA2, and WPA3) 
 
