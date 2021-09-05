@@ -162,7 +162,7 @@ boxes = [res[0] for res in result]
 texts = [res[1][0] for res in result]
 scores = [res[1][1] for res in result]
 ```
-The next step involves specifying the font path for our `draw_ocr` method. This is the reason why I mentioned earlier in the tutorial that you need to clone the PaddleOCR Github repository. I hope you do remember. To use the `draw_ocr` method, we need a path defined to the specific fonts. Inside the downloaded repo, when you follow that path shown below, you'll find different fonts in a folder. For our case, we use `latin.ttf`. `ttf` is the font format. It stands for `True Type Font`.
+The next step involves specifying the font path for our `draw_ocr` method. This is the reason why I mentioned earlier in the tutorial that you need to clone the PaddleOCR Github repository. To use the `draw_ocr` method, we need a path defined to the specific fonts. Inside the downloaded repo, when you follow that path shown below, you'll find different fonts in a folder. For our case, we use `latin.ttf`. `ttf` is the font format. It stands for `True Type Font`.
 
 We do this by issuing the following command:
 
