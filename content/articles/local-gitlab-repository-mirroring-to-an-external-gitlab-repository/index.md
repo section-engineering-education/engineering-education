@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /local-gitlab-repository-mirroring-to-an-external-gitlab-repository/
-title: local gitlab repository mirroring to an external gitlab repository
+title: local GitLab repository mirroring to an external GitLab repository
 description: In this tutorial, we will learn how to install Gitlab and how you can import Gitlab projects to a local Gitlab repository.
 author: kelvin-munene
 date: 2021-07-21T00:00:00-17:00
@@ -35,13 +35,13 @@ Pulling updates is not free, but pushing updates is. This works nicely because a
 - [Conclusion](#conclusion)
 
 ### Installation of Gitlab 
-We'll set up Ubuntu locale and install Gitlab for Ubuntu running on LXC Container in Proxmox. It's as simple as installing dependencies and creating a new repository, according to GitLab's instructions.
+We'll set up the Ubuntu locale and install Gitlab for Ubuntu running on LXC Container in Proxmox. It's as simple as installing dependencies and creating a new repository, according to GitLab's instructions.
 
 Installing programs on Ubuntu using a classic package repository follows a relatively standard procedure.
 
 Simply use the commands below to install the required dependencies, package repository, and GitLab : 
 
-> Login as the root user to be able to run the command given in this tutorial.To login to ubuntu as a root user, type the command `sudo su` on the ubuntu terminal and the system will prompt you to enter your password to verify the user.
+> Login as the root user to be able to run the command given in this tutorial. To login to ubuntu as a root user, type the command `sudo su` on the ubuntu terminal and the system will prompt you to enter your password to verify the user.
 
 ```bash
 apt-get install -y curl openssh-server ca-certificates tzdata perl
@@ -49,12 +49,12 @@ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.de
 EXTERNAL_URL="https://gitlab.example.com" apt-get install GitLab-ee
 ```
 
-> The EXTERNAL URL above must be replaced with the right URL for accessing your GitLab server. Before setting the URL, double-check that your hostname/DNS is configured correctly so that you can visit your GitLab server after installation. Please keep in mind that in order for your GitLab server to install a Let's Encrypt certificate, you'll need to provide external access to it (which is a more difficult process). 
+> The EXTERNAL URL above must be replaced with the right URL for accessing your GitLab server. Before setting the URL, double-check that your hostname/DNS is configured correctly so that you can visit your GitLab server after installation. Please keep in mind that for your GitLab server to install a Let's Encrypt certificate, you'll need to provide external access to it (which is a more difficult process). 
 
 Even though the installation process is straightforward, I received two warnings, one of which appeared to prevent the installation from proceeding.
 
 #### Set the locale in Ubuntu.
-The first warning was for failing to set a locale. Because I used an LXC template to create a new Ubuntu installation in Proxmox, it does not prompt you to set the locale during the container formation process, as it would with a standard OS installation.
+The first warning was for failing to set a locale. During the container formation procedure, it does not prompt you to specify the locale because I used an LXC template to make a fresh Ubuntu installation in Proxmox, as it would with a traditional OS installation.
 
 As a result of an incomplete installation, I was unable to access GitLab's online interface.
 
@@ -78,7 +78,7 @@ LC_TELEPHONE="C"
 LC_ALL=
 ```
 
-To set a locale, use the following command to generate one:
+The following command can be used to create a locale:
 
 ```bash
 locale-gen en_US.UTF-8
@@ -90,81 +90,79 @@ If your system does not support United States English, you should pick a differe
 update-locale LANG=en_US.UTF-8
 ```
 
-You'll need to reboot your container for the changes to take effect.
-The lack of a root password
+For the modifications to take effect, you'll need to restart your container. It's not possible to log in because there is no root password
 
-#### Not having a Root Password
-The second issue was an error message that appeared throughout the installation process, claiming that the root password for GitLab had not been set.
+#### fixing the lack of a root password
+The second problem was an error notice that arrived throughout the installation process and claimed that the GitLab root password had not been established.
 
 After launching the web interface for the first time, you'll be able to set it, but only after you've connected to GitLab, according to the installation instructions.
 
-It was necessary to update other programs after entering a password on the website. I used the standard apt update and apt upgrade instructions. 
+It was necessary to update other programs after entering a password on the website. I used the regular apt update and upgrade procedures.
 
 Because it had a root password, it completed the entire GitLab installation procedure. That process seemed strange to me at first, but it worked.
 
 ### GitLab configuration
-Before you set up your repository mirror, you must have a bare minimum configuration set up on your GitLab installation.
+For a repository mirror to work, GitLab needs to be configured to the absolute minimum.
 
-Rather than assuming you already have things configured, I'll discuss what I believe is the bare minimum of configuration required for everything to work effectively.
+Instead of presuming that you already have everything configured, I'll go over what I believe is the absolute minimum configuration required for everything to work properly.
 
 #### Configure email in your GitLab installation
-Set up your email settings if you haven't done so, after installing GitLab, before moving on. Configuring the email server is required if you wish to get notifications from your GitLab server via e-mail.
+After installing GitLab, if you haven't already, set up your email settings. Configuring the email server is required if you wish to get notifications from your GitLab server via e-mail.
 
 On GitLab's website, there are various setup samples. For my setup, I just utilized Gmail to send myself emails.
 
-Since I don't have to run a local mail server, I sometimes prefer to utilize Gmail.
+I sometimes prefer to use Gmail because I don't have to run a local mail server.
 
-Additionally, because the email sent from your server does not originate from a well-known email service provider, it is less likely to be rejected or labeled as spam when sent to multiple email accounts.
+Furthermore, because your server's email does not originate from a well-known email service provider, it is less likely to be rejected or branded as spam when sent to many email accounts.
 
 #### Create a GitLab user on your local machine.
 Your project may not have a user account on your GitLab server. If this is the case, you can create one by using the root administrator account.
 
-Concidering you don't want to utilize the root user account, you'll need the user account to import your GitLab.com project.
+Considering you don't want to utilize the root user account, you'll need the user account to import your GitLab.com project.
 
-It is not required that you use the same user account name as your GitLab.com account.
+It is not necessary to use the same username as your GitLab.com account.
 
-To ensure that all commits to a remote repository are made by the same GitLab.com user, even if your local identity differs from your GitLab.com identity, you can specify the user account in the URL when pushing changes to a remote repository.
+Changes made locally can be published to a remote repository using the GitLab.com user account, even if your GitLab.com identity differs from your local identity.
 
-To make sure that everything looks to be from the same user, I made my username the same for both.
+As a result, I made sure that everything appeared to be from the same individual by using the same username for both accounts.
 
 ### How to export GitLab project from GitLab.com
-It's time to export your project from GitLab.com now that your local GitLab server is up and running. Expand the `Advanced` section on the `Settings > General` page.
+GitLab.com is ready to export your project now that your local server is up and running. On the Settings > General tab, expand the Advanced section.
 
-GitLab.com may take some time to build your exported project file, depending on the size of your project. You can check if the export is complete by refreshing the page.
+As a result, GitLab.com may take a while to export your project. The export status can be checked by refreshing the page.
 
-The `Download export` and `Generate new export` buttons should be noted. To obtain a copy of your exported project, click the `Download Export` button.
+In addition, there are buttons for "Download export" and "Generate new export". A copy of your exported project can be obtained by clicking "Download Exported Project."
 
 ### GitLab project import into your local GitLab server
-You can now import the repository you exported from GitLab.com using the user account you created on your GitLab server. 
+After creating a user account on your server, you can import the GitLab.com repository using the user account you created on your server.
 
-**Step by step procedure of importing gitlab project**
+**Step by step procedure of importing GitLab project**
 
-- Go to the page `Projects > GitLab Import.` You'll need to fill out the `Project name` and `Project slug` fields, which are used to uniquely identify the project within your repository.
+- Go to the 'Projects > GitLab Import' page. The Project name and Project slug fields, which are used to uniquely identify the project within your repository, must be filled out.
 
-The **Project URL** is presented dependent on the GitLab installation method you chose. It is displayed so you can see your repository's entire URL.
+You'll see the **Project URL** depending on which GitLab installation method you've chosen. So that you can see the entire URL of your repository, it is displayed.
 
-You'll need to select the exported file you want to import by clicking the `Choose File` option.
+As soon as you're ready to import, click the `Import project` button on the toolbar to get started 
 
-- When you're ready to import, click the `Import project` button.
-You'll notice a notification that says `Import in Progress` while you're importing the project.  
+>There will be a notification that says import in progress while the project is being imported.` 
 
 - After the import process, you'll see the imported project in your `Projects` menu once the import has been completed successfully.
 
 ### Configuring repository mirroring
-Your local GitLab repository should now have the same commit history and data as the remote GitLab repository. 
+Your local GitLab repository should now have the same commit history and data as the remote GitLab repository.
 
-> Do not make any new changes to your GitLab.com database for all of your future commits to be pushed through your local GitLab repository.
+> For all future commits to be pushed through your local GitLab repository, do not make any new modifications to your GitLab.com database.
 
-You must go to the `Settings > Repositories` tab to configure mirroring. Then open the `Mirroring repositories` section to view the appropriate mirroring settings.
+To configure mirroring, click on the Settings > Repositories tab. Then go to the section called "Mirroring repositories" to see the appropriate mirroring settings.
 
-You'll need to provide the `Git repository URL` for your project on GitLab.com, which you may get using the `Clone` button. In this case, I'm utilizing HTTPS.
+You'll need to input your project's GitLab.com repository URL, which you can acquire by clicking the Clone button. I'm using HTTPS in this scenario.
 
-In addition, I modified the URL to incorporate my GitLab.com login. This may not be necessary if there is only one project user, but I decided to include it nonetheless.
+In addition, I changed the URL to include my GitLab.com username and password. If there is only one project, this may not be essential.
 
-For GitLab.com, I entered the user's `Password`. To finish setting up the mirror, click the `Mirror repository` button.
+For GitLab.com, I entered the user's `Password`. When you're done, click on Mirror repository to complete the setup.
 
 ### Switching to your local GitLab repository
-After you've imported the project into your local GitLab server and configured mirroring, you'll need to switch to the repository on your GitLab server.
+Your GitLab server must be switched to the repository after you've imported the project and configured mirroring.
 
 This technique will work regardless of which IDE/editor you use to switch to your repository if you utilize the git command line.
 
@@ -191,23 +189,23 @@ origin  http://git.carteblanchemunene.com/carteblanchemunene/carte-blanche-munen
 
 Instead of GitLab.com, your repository now uses the URL of your GitLab server.
 
-That is all there is to mirroring your repository. You may now start submitting commits to your local repository to test if the changes are pushed to GitLab.com.
+It's that simple to mirror your repository. Test out your local repository by committing code and checking GitLab.com for changes made.
 
 ### Verifying proper mirror configuration
-If you want to verify that repository mirroring is working properly, navigate to `Settings > Repository` and open the `Mirroring repositories` section on your GitLab server.
+You can check if repository mirroring is working properly by going to Settings > Repository on your GitLab server and looking at the Mirroring repositories section there.
 
-You should be able to view the most recent failed update attempt as well as the most recent successful update.
+If you look at the most recent successful update, you should also be able to see the most recent unsuccessful update attempt.
 
 To double-check for a successful push, go to GitLab.com's `Repository > Commits` page and see if your most recent update was pushed to GitLab.com.
 
 If everything went well, the last commit will be displayed.
 
 ### Conclusion
-Mirroring a GitLab repository is rather simple, as illustrated. Even if you already have a repository, you can complete the process by exporting and importing the GitLab project.
+There is no need to be intimidated by mirroring GitLab repositories, as you can see. To complete the procedure, you can either export or import your GitLab repository.
 
-To transfer your project to the local GitLab server, all you need is a simple git command.
+The git command is all you need to migrate your project to the GitLab server.
 
-Using the mirroring setting will automatically keep the remote repository up-to-date with the latest updates.
+This will automatically maintain the remote repository up-to-date with the latest updates when you use the mirroring setting.
 
 ---
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
