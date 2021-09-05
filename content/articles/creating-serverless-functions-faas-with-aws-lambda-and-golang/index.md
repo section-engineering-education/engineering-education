@@ -6,9 +6,9 @@ We'll build a user profile generator function in this tutorial. The function wil
 
 ### Requirements
 
-- [AWS](https://aws.amazon.com) account
+- [AWS](https://aws.amazon.com) account to access AWS lambda dashboard
 - `git clone https://github.com/Bamimore-Tomi/faas-golang.git`
-- Go 1.x installed on your machine
+- [Go 1.x](https://golang.org/doc/install) installed on your machine
 
 ### Setting up a Lambda Function on AWS
 
@@ -24,53 +24,40 @@ In this section, we will see how to make the function that AWS Lambda will run a
 - `go get github.com/aws/aws-lambda-go/lambda`
 
 ```go
-
 package main
 
- 
-
 import (
+	"fmt"
 
- "fmt"
-
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
- 
 // Struct for the input the program expects from the client
 type InfoEvent struct {
+	Firstname string `json:"firstname"`
 
- Firstname string `json:"firstname"`
+	Lastname string `json:"lastname"`
 
- Lastname string `json:"lastname"`
-
- Age int `json:"age"`
-
+	Age int `json:"age"`
 }
 
- 
 // Struct for the output the server will send back to the client
 type Response struct {
-
- Profile string `json:"profile"`
-
+	Profile string `json:"profile"`
 }
 
- 
 // Event handler, this function handles requests from clients
 func HandleInfoEvent(event InfoEvent) (Response, error) {
 
- return Response{Profile: fmt.Sprintf("Their name is %s %s, they are %d ", event.Firstname, event.Lastname, event.Age)}, nil
+	return Response{Profile: fmt.Sprintf("Their name is %s %s, they are %d ", event.Firstname, event.Lastname, event.Age)}, nil
 
 }
-
- 
 
 func main() {
 
- lambda.Start(HandleInfoEvent)
+	lambda.Start(HandleInfoEvent)
 
 }
-
 ```
 
 Navigate to the “server” folder to see this source code. In the program above, we created the `HandleInfoEvent` function. This is the function that runs in the cloud. Use the following steps to compile and zip the program.
@@ -159,107 +146,85 @@ go get github.com/aws/aws-sdk-go
 We can now use this code segment to execute the function in the cloud and see the results locally.
 
 ```go
-
 package main
 
- 
-
 import (
+	"encoding/json"
 
- "encoding/json"
+	"fmt"
 
- "fmt"
+	"os"
 
- "os"
+	"github.com/aws/aws-sdk-go/aws"
 
- 
+	"github.com/aws/aws-sdk-go/service/lambda"
 
- "github.com/aws/aws-sdk-go/aws"
+	"github.com/joho/godotenv"
 
- "github.com/aws/aws-sdk-go/service/lambda"
+	"github.com/aws/aws-sdk-go/aws/credentials"
 
- "github.com/joho/godotenv"
-
- 
-
- "github.com/aws/aws-sdk-go/aws/credentials"
-
- "github.com/aws/aws-sdk-go/aws/session"
-
- // "github.com/aws/aws-lambda-go/lambda"
-
+	"github.com/aws/aws-sdk-go/aws/session"
+	// "github.com/aws/aws-lambda-go/lambda"
 )
 
- 
-
 type Info struct {
+	Firstname string `json:"firstname"`
 
- Firstname string `json:"firstname"`
+	Lastname string `json:"lastname"`
 
- Lastname string `json:"lastname"`
-
- Age int `json:"age"`
-
+	Age int `json:"age"`
 }
-
- 
 
 type Response struct {
-
- Profile string `json:"profile"`
-
+	Profile string `json:"profile"`
 }
-
- 
 
 func main() {
- // Load the environment variable which has the IAM credentials needed to connect to AWS
- godotenv.Load()
- // Initialize new aws session
- sess := session.Must(session.NewSessionWithOptions(session.Options{SharedConfigState: session.SharedConfigEnable}))
- // Initialize new aws client using IAM credentials
- client := lambda.New(sess, &aws.Config{Region: aws.String("us-east-1"), Credentials: credentials.NewStaticCredentials(os.Getenv("aws_access_key_id"), os.Getenv("aws_secret_access_key"), "")})
- // Prepare request parameters
- request := Info{Firstname: "Oluwatomisin", Lastname: "Bamimore", Age: 16}
+	// Load the environment variable which has the IAM credentials needed to connect to AWS
+	godotenv.Load()
+	// Initialize new aws session
+	sess := session.Must(session.NewSessionWithOptions(session.Options{SharedConfigState: session.SharedConfigEnable}))
+	// Initialize new aws client using IAM credentials
+	client := lambda.New(sess, &aws.Config{Region: aws.String("us-east-1"), Credentials: credentials.NewStaticCredentials(os.Getenv("aws_access_key_id"), os.Getenv("aws_secret_access_key"), "")})
+	// Prepare request parameters
+	request := Info{Firstname: "Oluwatomisin", Lastname: "Bamimore", Age: 16}
 
- payload, err := json.Marshal(request)
+	payload, err := json.Marshal(request)
 
- if err != nil {
+	if err != nil {
 
- fmt.Println("Error marshalling request")
+		fmt.Println("Error marshalling request")
 
- os.Exit(0)
+		os.Exit(0)
 
- }
+	}
 
- result, err := client.Invoke(&lambda.InvokeInput{FunctionName: aws.String("user-profile"), Payload: payload})
+	result, err := client.Invoke(&lambda.InvokeInput{FunctionName: aws.String("user-profile"), Payload: payload})
 
- if err != nil {
+	if err != nil {
 
- fmt.Println("Error calling user-profile function", err)
+		fmt.Println("Error calling user-profile function", err)
 
- os.Exit(0)
+		os.Exit(0)
 
- }
+	}
 
- var resp Response
+	var resp Response
 
- err = json.Unmarshal(result.Payload, &resp)
+	err = json.Unmarshal(result.Payload, &resp)
 
- if err != nil {
+	if err != nil {
 
- fmt.Println("Error unmarshalling user-profile response")
+		fmt.Println("Error unmarshalling user-profile response")
 
- os.Exit(0)
+		os.Exit(0)
 
- }
+	}
 
- 
- // Print response from lambda function
- fmt.Println(resp.Profile)
+	// Print response from lambda function
+	fmt.Println(resp.Profile)
 
 }
-
 ```
 
 You need to create an [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) user with the correct permissions. Store the `aws_access_key_id` and the `aws_secret_access_key` in a `.env` file in the directory you are currently working in.
@@ -273,3 +238,9 @@ The program passes in some arguments (json format) into the cloud function and r
 ### Conclusion
 
 We have successfully deployed and tested our AWS Lambda function. We also tested the Lambda function using an actual client program and the Lambda console on AWS. In other languages, such as Python, JavaScript, and Java, the same mechanism can be used to create serverless functions.
+
+### Further reading
+You can visit any of these places for further reading: 
+- https://www.ibm.com/cloud/learn/faas
+- https://en.wikipedia.org/wiki/Function_as_a_service
+- https://aws.amazon.com/lambda/faqs/
