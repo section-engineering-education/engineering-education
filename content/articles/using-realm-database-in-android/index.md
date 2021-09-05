@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/
-title: Using Realm Database as an alternative to SQLite and Coredata in Android
+url: /using-realm-database-in-android/
+title: Using Realm Database in Android
 description: This tutorial will take the reader through the process of using Realm to store data in Android. Realm is an open-source, developer-friendly, lightweight, and fast mobile database.
 author: joel-kanyi
 date: 2021-08-30T00:00:00-10:00
@@ -11,11 +11,14 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/hero.png
+  - url: /engineering-education/using-realm-database-in-android/hero.png
     alt: Using Realm Database as an alternative to SQLite and Coredata in Android image
 ---
-[Realm](https://realm.io/) is an open-source, developer-friendly lightweight mobile database. It can be a good alternative to both SQLite and CoreData. Realm is faster and has tons of new features such as JSON support, an easy-to-use API, notifications when the data changes, cross-platform support, faster in terms of querying, and it is fully encrypted all of which makes mobile development easy.
+
+[Realm](https://realm.io/) is an open-source, developer-friendly and lightweight mobile database. It can be a good alternative to both SQLite and CoreData.
 <!--more-->
+Realm is faster and has tons of new features such as JSON support, an easy-to-use API, notifications when the data changes, cross-platform support, faster querying, and it is fully encrypted all of which make mobile development easy.
+
 In this tutorial, we'll explore the fundamentals of Realm for Android.
 
 ### Prerequisites
@@ -26,7 +29,7 @@ To follow through this tutorial, you should have:
 - A good understanding of [MVVM architecture](https://en.wikipedia.org/wiki/Model_View_ViewModel) in Android.
 
 ### SQLite database
-Lightweight, open-source, structured query base, a standalone, offline database for Android devices. It supports embedded relational database features.
+Lightweight, open-source, structured query base, standalone, and offline database for Android devices. It supports embedded relational database features.
 The database is stored on the device's local directory and data is represented in text format.
 
 Android devices are shipped with an in-built SQLite database implementation. SQLite is a relational database, that contains tables made of rows and columns, indexes, and many more. Relational databases like SQLite have a schema that stores information about, tables, relationships, triggers, indexes, etc.
@@ -360,7 +363,7 @@ viewModel.allNotes.observe(this, { allNotes ->
         })
 ```
 
-To deleting a note, we have used the swipe to delete ItemTouchHelper which calls the `deleteNote()` function from viewModel class.
+To delete a note, we have used the swipe to delete ItemTouchHelper which calls the `deleteNote()` function from viewModel class.
 
 ```kotlin
 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -428,16 +431,18 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
 Here are some screenshots on how the app should look like:
 
-![All Notes](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/allnotes.png)
+![All Notes](/engineering-education/using-realm-database-in-android/allnotes.png)
 
-![Add Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/addnote.png)
+![Add Note](/engineering-education/using-realm-database-in-android/addnote.png)
 
-![Update Note](/engineering-education/using-realm-database-as-an-alternative-to-sqlite-and-coredata-in-android/updatenote.png)
+![Update Note](/engineering-education/using-realm-database-in-android/updatenote.png)
 
 Check out the entire project on [this GitHub repository](https://github.com/JoelKanyi/RealmDatabaseDemo).
 
 ### Conclusion
-Realm is a good alternative to the traditional SQLite database. Keep exploring, try and harness the full capabilities of Realm such as RealmSync. Realm Database synchronizes data with MongoDB Realm across the network in a background thread when Realm Sync is enabled. It pushes local data updates to MongoDB Realm and pulls remote changes.
+Realm is a good alternative to the traditional SQLite database. Keep exploring and trying other capabilities of Realm such as RealmSync. 
+
+Realm Database synchronizes data with MongoDB Realm across the network in a background thread when Realm Sync is enabled. It pushes local data updates to MongoDB Realm and pulls remote changes.
 
 ### References:
 - [Realm.io](https://realm.io/)
