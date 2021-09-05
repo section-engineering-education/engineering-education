@@ -6,7 +6,7 @@ url: /using-realm-database-in-android/
 title: Using Realm Database in Android
 description: This tutorial will take the reader through the process of using Realm to store data in Android. Realm is an open-source, developer-friendly, lightweight, and fast mobile database.
 author: joel-kanyi
-date: 2021-08-30T00:00:00-10:00
+date: 2021-09-05T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
