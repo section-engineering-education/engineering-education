@@ -7,7 +7,7 @@ We'll build a user profile generator function in this tutorial. The function wil
 ### Requirements
 
 - [AWS](https://aws.amazon.com) account to access AWS lambda dashboard
-- `git clone https://github.com/Bamimore-Tomi/faas-golang.git`
+- Use `git clone https://github.com/Bamimore-Tomi/faas-golang.git` to get the source code for this demo
 - [Go 1.x](https://golang.org/doc/install) installed on your machine
 
 ### Setting up a Lambda Function on AWS
