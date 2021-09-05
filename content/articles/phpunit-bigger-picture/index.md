@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/phpunit-bigger-picture/
+title: PHPUnit, The Bigger Picture
+description: This tuturial introduces the reader the basic concepts of unit testings in PHP.
+author: odongo-albert
+date: 2021-09-05T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/phpunit-bigger-picture/hero.jpg
+    alt: phpunit bigger picture Hero Image
+---
+Developers mainly write unit Tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
+<!--more-->
+
 ### Introduction
 Developers mainly write unit Tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
 
@@ -181,3 +200,6 @@ At the root of your application, run the followings commands:
 In this tutorial, we've discussed the basic concepts of PHPUnit 8. Then, we've seen how we create the test classes to test an application. We've also configured the XML file for ease of testings.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
