@@ -1,11 +1,9 @@
 ### Introduction
+Developers mainly write unit Tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
 
-Unit Tests in PHP or any other language are mainly written by developers as a good practice to help them identify and fix bugs in time, refactor code and serve as documentation for a unit of the program under test.
-
-In this tutorial, we'll be discussing the basic concepts of PHPUnit.I'll show you how to get started with this tool to write basic tests for your PHP application.
+In this tutorial, we'll be discussing the basic concepts of PHPUnit. Then, I'll show you how to get started with this tool to write basic tests for your PHP application.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
@@ -19,36 +17,30 @@ In this tutorial, we'll be discussing the basic concepts of PHPUnit.I'll show yo
 - [Conclusion](#conclusion)
   
 ### Prerequisites
-
-To follow this tutorial along, you should already be familiar with basic PHP concepts. This includes PHP installation and serving the application from the command line.
+To follow this tutorial along, you should already be familiar with basic PHP concepts. It would be best to have PHP installed in your local development environment to help you test as you read.
 
 ### Objectives
-
 This tutorial aims to teach you everything you need to know about Unit Testings. By the end, you should be able to structure your PHP application, write basic unit tests using assertions and show the results on your terminal.
 
 ### Getting started with PHPUnit
+Unit testing ensures that every single unit of your source code is working as expected. Writing these tests is very important as they help in error diagnosis if an error occurs while running your application.  
+One way to achieve this is by using the PHPUnit.
 
-Unit testing ensures that every single unit of your source code is working as expected. Writing these tests is very important as they help in error diagnosis in case an error occurs while running your application.  
-One way to achieve this is by using the PHPUnit. These tests can be run on the application methods or even files.
-
-These tests should be written in such a way that they are independent of each other. This means that when a test case returns false, for instance, it should only pinpoint the error location and not otherwise.  
+It would be best if you did unit testings so that they are independent of each other, which means that when a test case returns false, for instance, it should only pinpoint the error location and not otherwise.  
 
 ### Installing PHPUnit
-
-In this tutorial, we'll be installing PHPUnit 9.5. This package works well with PHP 7.3, but the latest version of PHP is highly recommended. The current version as at the time of writing is PHP version 8.  
+In this tutorial, we'll be installing PHPUnit 9.5. This package works well with PHP 7.3, but the latest version of PHP would work better. The current version as at the time of writing is PHP version 8.  
 
 Now, to install PHPUnit on your local development environment, run the following command on your terminal:
-
 ```bash
 composer require --dev phpunit/phpunit ^8 # this version may vary
 ```
 
-Depending on your internet connectivity, this takes a few minutes. Now proceed and check the installed version as shown below:
+Depending on your internet connectivity, this takes a few minutes. On completion, proceed and check the installed version by running the following commands:
 
 ```bash
 ./vendor/bin/phpunit --version
 ```
-
 ***Output***
 
 ```bash
@@ -57,21 +49,18 @@ PHPUnit 8.5.2 by Sebastian Bergmann and contributors.
 ```
 
 ### Test case rules
-
-To write unit tests, the following rules should be followed:  
-
-- The test takes the format `<prefix>Test`. For example `exampleTest`.
-- The test class methods MUST take the format `test<suffix>`. For example `testMethod`.
+Writing unit tests has a set of rules to be followed as described below:  
+- The test takes the format `<prefix>Test`. For example, `exampleTest`.
+- The test class methods MUST take the format `test<suffix>`. For example, `testMethod`.
 - The test class must extend the `\PHPUnit\Framework\TestCase` class.
-- Each test case file MUST have the same name as the class name. This will be shown in the examples.
+- Each test case file MUST have the same name as the class name, as shown in the next section.
 
 ### Writing unit tests
-
 Now that we've installed PHPUnit, let's proceed and structure our project as shown in the screenshot below:  
 
 ![project structure](/engineering-education/phpunit/folder-structure.png)
 
-As a rule of the thump, it's important to write the tests before writing the actual code. Now, let proceed and write our test cases which we'll then use in our application.  
+As a rule of the thump, it's essential to write the tests before writing the actual code. So now, let proceed and write our test cases which we'll then use in our application.  
 
 In the `myTests` directory, create a file `ModularArithmenticTest.php` and add the following:  
 
@@ -86,15 +75,13 @@ public function testDivisionTheorem()
    }
 }
 ```
+In the above file, you notice that we've followed every rule we defined in the previous section. We begin by creating a file, `ModularArithmenticTest.php`.  Inside this script, we create a class with the same name as that of the file. We then extend the `\PHPUnit\Framework\TestCase` class. Inside the class, we define the method `testDivisionTheorem()` prefixed with `test`.
 
-You notice that in the above file, we've followed every single rule we defined previously. We create a file `ModularArithmenticTest.php`.  Inside this script, we create a class with the same name as the file. We then extend the `\PHPUnit\Framework\TestCase` class. Inside the class, we define the method `testDivisionTheorem` prefixed with `test`.
+This method `testDivisionTheorem()`  has `$divisionTheorem` object that we instantiate from the `Division` class. It's important to note that we've not defined the `Division` class, as we're defining our test cases first. The `divisionTheorem` has the `setValues([])` that takes a single argument of type array.
 
-This method `testDivisionTheorem()`  has `$divisionTheorem` object that we instantiate from the `Division` class. This has not already been created as we're defining our test cases first. The `divisionTheorem` has the `setValues([])` that takes a single argument of type array.
-
-This method also calls the `assertEquals()` method from the current class. This method simply takes in two parameters and compares them to check if they are indeed equal.
+This method also calls the `assertEquals()` method from the current class. This method takes in two parameters and compares them to check if they are indeed equal.
 
 ### Creating application for testing
-
 Now that we've defined our unit tests to check if two numbers are equal using the PHPUnit's in-built method `assertEquals()`, let's proceed and create the `Division` class.
 
 In the `application` folder we created earlier, create a file `Division.php` and add the following:  
@@ -128,23 +115,17 @@ class Division
 }
 
 ```
-
-In the above script, we've created a class `Division`. In this class we've two properties:
-
-- $first_number
-- $last_number
-
+In the above script, we've created a class, `Division`, with two properties:
+- `$first_number`
+- `$last_number`
 We've also defined two methods:
-
-- setValues() - this method takes two arguments of type number. It takes the `first_number` and the `last_number`.
-- modulus() - this function returns the modulus of the two numbers created previously.
+-`setValues()` - this method takes two arguments of type number. It takes the `first_number` and the `last_number`.
+-` modulus()` - this function returns the modulus of the two numbers created previously.
 
 ### Running PHPUnit tests
-
 Now that we've defined our two classes, the `Division` and the `ModularArithmenticTest`. In this section, we'll be executing the PHPUnit tests to assert that they are working or not.
 
 First, update your `composer.json` file as shown below:  
-
 ```json
 {
     "require-dev": {
@@ -156,22 +137,17 @@ First, update your `composer.json` file as shown below:
         }
     }
 }
-
 ```
 
-The update simply states that we're using the directory `Application` and our namespace `Application`.
+The update states that we're using the directory `Application` and `Application` namespace.
 
 Run the following command to update this composer file:
-
 ```bash
 composer update
 ```
-
 Next, add the `phpunit.xml` file:
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-
 <phpunit bootstrap = "vendor/autoload.php"
     backupGlobals               = "false"
     backupStaticAttributes      = "false"
@@ -199,13 +175,9 @@ Next, add the `phpunit.xml` file:
 </phpunit>
 
 ```
-
 At the root of your application, run the followings commands:
-
 ```bash
 ./vendor/bin/phpunit
 ```
-
 ### Conclusion
-
-In this tutorial, we've discussed the basic concepts of PHPUnit 8. We've seen how we create the test classes to test an application. We've also configured the XML file for ease of testings.
+In this tutorial, we've discussed the basic concepts of PHPUnit 8. Then, we've seen how we create the test classes to test an application. We've also configured the XML file for ease of testings.
