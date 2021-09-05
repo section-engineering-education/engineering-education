@@ -16,7 +16,7 @@ images:
 ---
 UI/UX plays a major part in the success of your products. It is the first and the last thing that the customer sees, and interacts with.
 <!--more-->
-User interface is a complex subject, and there are many different ways to build a good user experience. User experience is not only about the look and feel of the interface, but also about the way the user interacts with it. The effectiveness and ease of use is a big factor in the effectiveness of your product.
+User interface is a complex subject, and there are many different ways to build a good user experience. User experience is not only about the look and feel of the interface, but also about the way the user interacts with it. The ease of use is a big factor in the effectiveness of your product.
 
 Here are a few UI/UX mistakes that annoy users.
 
