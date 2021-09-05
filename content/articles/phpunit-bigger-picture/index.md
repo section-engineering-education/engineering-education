@@ -17,14 +17,13 @@ In this tutorial, we'll be discussing the basic concepts of PHPUnit. Then, I'll 
 - [Conclusion](#conclusion)
   
 ### Prerequisites
-To follow this tutorial along, you should already be familiar with basic PHP concepts. It would be best to have PHP installed in your local development environment to help you test as you read.
+To follow this tutorial along, you should already be familiar with basic PHP concepts. It would be best to have PHP installed on your local development environment to help you test as you read.
 
 ### Objectives
 This tutorial aims to teach you everything you need to know about Unit Testings. By the end, you should be able to structure your PHP application, write basic unit tests using assertions and show the results on your terminal.
 
 ### Getting started with PHPUnit
-Unit testing ensures that every single unit of your source code is working as expected. Writing these tests is very important as they help in error diagnosis if an error occurs while running your application.  
-One way to achieve this is by using the PHPUnit.
+Unit testing ensures that every single unit of your source code is working as expected. Writing these tests is very important as they help in error diagnosis if an error occurs while running your application.  One way to achieve this is by using the PHPUnit.
 
 It would be best if you did unit testings so that they are independent of each other, which means that when a test case returns false, for instance, it should only pinpoint the error location and not otherwise.  
 
@@ -41,7 +40,7 @@ Depending on your internet connectivity, this takes a few minutes. On completion
 ```bash
 ./vendor/bin/phpunit --version
 ```
-***Output***
+***Expected Output***
 
 ```bash
 # note that this version may vary from your PHPUnit version
@@ -58,9 +57,9 @@ Writing unit tests has a set of rules to be followed as described below:
 ### Writing unit tests
 Now that we've installed PHPUnit, let's proceed and structure our project as shown in the screenshot below:  
 
-![project structure](/engineering-education/phpunit/folder-structure.png)
+![project structure](/engineering-education/phpunit-bigger-picture/folder-structure.png)
 
-As a rule of the thump, it's essential to write the tests before writing the actual code. So now, let proceed and write our test cases which we'll then use in our application.  
+As a rule of the thump, it's essential to write the tests before writing the actual code. So now, let's proceed and write our test cases which we'll then use in our application.  
 
 In the `myTests` directory, create a file `ModularArithmenticTest.php` and add the following:  
 
@@ -77,7 +76,7 @@ public function testDivisionTheorem()
 ```
 In the above file, you notice that we've followed every rule we defined in the previous section. We begin by creating a file, `ModularArithmenticTest.php`.  Inside this script, we create a class with the same name as that of the file. We then extend the `\PHPUnit\Framework\TestCase` class. Inside the class, we define the method `testDivisionTheorem()` prefixed with `test`.
 
-This method `testDivisionTheorem()`  has `$divisionTheorem` object that we instantiate from the `Division` class. It's important to note that we've not defined the `Division` class, as we're defining our test cases first. The `divisionTheorem` has the `setValues([])` that takes a single argument of type array.
+This method `testDivisionTheorem()`  has `$divisionTheorem` object that we instantiate from the `Division` class. It's important to note that we've not defined the `Division` class, as we're defining our test cases first. The `divisionTheorem` has the `setValues(arg1,arg2)` that takes two arguments.
 
 This method also calls the `assertEquals()` method from the current class. This method takes in two parameters and compares them to check if they are indeed equal.
 
@@ -138,7 +137,6 @@ First, update your `composer.json` file as shown below:
     }
 }
 ```
-
 The update states that we're using the directory `Application` and `Application` namespace.
 
 Run the following command to update this composer file:
@@ -181,3 +179,5 @@ At the root of your application, run the followings commands:
 ```
 ### Conclusion
 In this tutorial, we've discussed the basic concepts of PHPUnit 8. Then, we've seen how we create the test classes to test an application. We've also configured the XML file for ease of testings.
+
+Happy coding!
