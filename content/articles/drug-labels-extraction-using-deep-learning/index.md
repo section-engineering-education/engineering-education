@@ -155,7 +155,7 @@ The above few lines of code allow us to quickly extract the drug labels in drug 
 
 This step involves visualizing the results. The `draw_ocr` method, `opencv` and `matplotlib` library help us achieve this.
 
-Let's extract the boxes, scores, and text coordinates into separate variables. We then pass these coordinates into the `draw_ocr` method. This is similar to object detection if you've ever performed a similar experiment. The `boxes` variable loops through and grabs the first index inside our `result` variable, the `texts` variable grabs the second, and the `scores` grab the third.
+Let's extract the boxes, scores, and text coordinates into separate variables. We then pass these coordinates into the `draw_ocr` method. This feels similar to object detection if you've ever performed such a task. The `boxes` variable loops through and grabs the first index inside our `result` variable, the `texts` variable grabs the second, and the `scores` grab the third.
 
 ```python
 boxes = [res[0] for res in result] 
