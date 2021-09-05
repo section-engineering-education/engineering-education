@@ -102,7 +102,7 @@ Let's set it up using the following command:
 ```python
 ocr_model = PaddleOCR(lang='en')
 ```
-This command specifies the language of choice. For our case, we set it to English. Since the PaddleOCR is made by engineers at Baidu, it can also recognize Chinese characters. You can also set your language to Chinese or any other language if you so wish.
+This command specifies the language of choice. For our case, we set it to English. Since the PaddleOCR is made by engineers at Baidu, it can also recognize Chinese characters. You may set your language to Chinese or any other supported language.
 
 This next command sets up the path to our images on the machine. 
 
