@@ -6,7 +6,7 @@ url: /what-is-mvc-and-how-does-it-work/
 title: What is MVC Architecture and how does it work?
 description: In this article, the reader will learn about the MVC framework, its benefits, and how to develop efficient software applications using MVC framework.
 author: esther-mwangi
-date: 2021-08-31T00:00:00-13:40
+date: 2021-09-05T00:00:00-11:30
 topics: []
 excerpt_separator: <!--more-->
 images:
