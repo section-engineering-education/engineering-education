@@ -241,7 +241,7 @@ We have seen how to deploy and consume AWS Lambda functions. In this case, it wa
 
 ### Further reading
 
-- https://www.ibm.com/cloud/learn/faas
-- https://en.wikipedia.org/wiki/Function_as_a_service
-- https://aws.amazon.com/lambda/faqs/
-- https://en.wikipedia.org/wiki/AWS_Lambda
+- [Learn FaaS](https://www.ibm.com/cloud/learn/faas)
+- [FaaS in Wikipedia](https://en.wikipedia.org/wiki/Function_as_a_service)
+- [AWS Lambda FAQs](https://aws.amazon.com/lambda/faqs/)
+- [More about AWS Lambda](https://en.wikipedia.org/wiki/AWS_Lambda)
