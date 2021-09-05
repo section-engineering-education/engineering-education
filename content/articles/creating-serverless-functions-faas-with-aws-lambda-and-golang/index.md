@@ -237,7 +237,7 @@ The program passes in some arguments (json format) into the cloud function and r
 
 ### Conclusion
 
-We have successfully deployed and tested our AWS Lambda function. We also tested the Lambda function using an actual client program and the Lambda console on AWS. In other languages, such as Python, JavaScript, and Java, the same mechanism can be used to create serverless functions.
+We have seen how to deploy and consume AWS Lambda functions. In this case, it was a user-profile generator function written in Golang. We also tested the Lambda function by sending triggers using an actual client program and the Lambda console on AWS. In other languages, such as Python, JavaScript, and Java, the same mechanism can be used to create serverless functions.
 
 ### Further reading
 
