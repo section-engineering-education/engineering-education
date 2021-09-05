@@ -29,13 +29,14 @@ Let us look at the tools that we will use to build our app:
 
 ### Objectives
 The aim of this tutorial is to teach reader, how to:
-- Build a gis application from scratch
+- Build a Geographic Information System application from scratch
 - Create a spatial database and use spatial features
 - Implement geolocation features
 
 ### Setup
 We will create our virtual environment and also install the prerequisites. Let's type the following codes in our terminal so that we can create and activate the virtual environment. 
 ```
+pip install virtualenv
 virtualenv env 
 env\scripts\activate
 ```
