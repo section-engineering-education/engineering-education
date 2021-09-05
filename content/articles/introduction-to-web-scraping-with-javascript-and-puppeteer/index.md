@@ -98,8 +98,7 @@ nodemon index.js
 Now when you navigate to http://localhost:3000/, you will see the message "Server is running". This means that you have successfully started the server, and you can now proceed to the next steps.
 
 ## Setting up puppeteer
-Since our server is working, it's time we set up puppeteer to get started with web scraping.
-In our **index.js** file, add the following line of code just below the line that sets the port number:
+Since our server is working, it's time we set up puppeteer to get started with web scraping. In our **index.js** file, add the following line of code just below the line that sets the port number:
 
 ```js
 const puppeteer = require("puppeteer");
@@ -133,10 +132,10 @@ The code is explained below:
 
 Next up, we need to grab the page markup and extract the exact information we need.
 
-Before doing this, open your browser and go to the url provided (https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/). From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
+Before doing this, open your browser and go to the URL provided (https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/). From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
 1. Right-click on the image and select the **inspect** option.
-2. The action above will open the developer tools. On the elements tab, you will see the page's markup, specifically the **img** since it's the one we are inspecting. Note the **id** of the image from the attributes of the image and note it down somewhere. In this case the **id** is **landingImage**.
-3. Next up, right-click on the price of the keyboard and select **inspect**. Note down the **id** if the span containing the price of the keyboard. In this case, the id is **priceblock_ourprice**.
+2. The action above will open the developer tools. On the elements tab, you will see the page's markup, specifically the **img** since it's the one we are inspecting. Note the **id** of the image from the attributes of the image and note it down somewhere. In this case, the **id** is **landingImage**.
+3. Next up, right-click on the price of the keyboard and select **inspect**. Note down the **id** of the span containing the price of the keyboard. In this case, the id is **priceblock_ourprice**.
 4. Right-click on the keyboard name and click **inspect**. Note down the **id** of the span containing the keyboard name. In this case, it is **productTitle**
 
 With the above information, we can now write the function we need to extract the information we require. Below is the code:
@@ -157,8 +156,8 @@ async function checkDetails(page) {
 Code explanation:
 - We are using the `evaluate()` method, a puppeteer method used to get the content of the web page. This method takes a callback function and in it, we can add the code needed to get the elements of the page that we require. In this case, we need the product name, its price, and its image src. This callback function returns an object containing the information that we get from the webpage.
 - To get the product name, price, and the image src, we use the `querySelector()` method that usually returns the first element within the current document that matches the selector we have specified. To learn more about `querySelector()`, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector).
-- We assign the results of the evaluate method to a variable named html.
-- Then, the `checkDetails` function returns html, which is a variable that contains the information that we grabbed from the webpage.
+- We assign the results of the `evaluate` method to a variable named `html`.
+- Then, the `checkDetails` function returns `html`, which is a variable that contains the information that we grabbed from the webpage.
 
 ## Setting up the express route
 We need to set up an express route that will get the scraped data and send it to our client-side once the specific route is invoked.
