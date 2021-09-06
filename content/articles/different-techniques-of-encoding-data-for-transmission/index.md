@@ -6,7 +6,7 @@ url: /different-techniques-of-encoding-data-for-transmission/
 title: Different Techniques of Encoding Data for Transmission
 description: This article goes through how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
 author: geoffrey-omukuba
-date: 2021-09-02T00:00:00-02:30
+date: 2021-09-06T00:00:00-12:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +26,7 @@ For data to be encoded, it has to be converted to signal variations.
 
 These signal variations include:
 1. Analog data to analog signal conversion – This includes; Amplitude Modulation, Phase Modulation, and Frequency Modulation.
-2. Digital data to analog signals - This include; Amplitude Shift Keying, frequency Shift Keying, Phase Shift Keying.
+2. Digital data to analog signals - This includes; Amplitude Shift Keying, frequency Shift Keying, and Phase Shift Keying.
 3. Digital data to digital signals - This is what we will focus on.
 
 The types of encoding techniques include:
@@ -35,7 +35,7 @@ The types of encoding techniques include:
 3. Block encoding
 
 ### Non-Return to Zero scheme
-Non Return to Zero signal involves both the positive and negative voltages. NRZ-Level and NRZ-Inverted are the two variations of  Non return to zero scheme.
+Non Return to Zero signal involves both the positive and negative voltages. NRZ-Level and NRZ-Inverted are the two variations of Non return to zero scheme.
 
 #### Non Return to Zero Level
 In Non-Return to zero Level, also abbreviated as NRZ-L, level of voltage determines the value of a bit. We take positive and negative voltages to represent bit 1 and 0 respectively.
@@ -67,9 +67,9 @@ For the next bit 1, there is a change in the signal level. Since the current lev
 
 Next bit is 0, which means no change, therefore, we continue at positive level since current is at positive. Again, we have bit 0, therefore, we continue at positive level.
 
-Next bit is 1, so now we move from positive to negative.
+Next bit is 1, so we move from positive to negative.
 
-Next bit is 1, so we have to change the level again, and hence we now draw the signal at negative.
+Next bit is 1, so we have to change the level again, and hence we draw the signal at negative.
 
 Again, we have 1, so we change the level again and go from negative to positive.
 
@@ -84,9 +84,11 @@ We get the waveform below after encoding:
 #### Problems encountered in NRZ-L and NRZ-I
 Although baseline wandering is a problem for both variations, it is twice as severe in NRZ-L.
 
-If there is a long sequence of 0s or 1s, in NRZ-I we get flat line which causes the average signal power to become skewed. As a result, the receiver has difficulty discerning the bit value. In NRZ-I, this problem occurs only for a long sequence of 0s.
+If there is a long sequence of 0s or 1s, in NRZ-I, we get flat line which causes the average signal power to become skewed. As a result, the receiver has difficulty discerning the bit value. In NRZ-I, this problem occurs only for a long sequence of 0s.
 
-The synchronization problem also exists in both schemes. Again, this problem is more serious in NRZ-L than in NRZ-I. While a long sequence of 0s can cause a problem in both schemes, a long sequence of 1s affect only NRZ-L.
+The synchronization problem also exists in both schemes. Again, this problem is more serious in NRZ-L than in NRZ-I.
+
+While a long sequence of 0s can cause a problem in both schemes, a long sequence of 1s affect only NRZ-L.
 
 Another problem with NRZ-L occurs when there is a sudden change of polarity in the system. If the polarity of the system changes, signal is inverted. As a result, all 0s are interpreted as 1s and all 1s are interpreted as 0s.
 
@@ -104,7 +106,7 @@ For instance in our example, a signal of 101101 can be encoded as:
 
 A voltage of signal 1 which is a high voltage starts from the top.
 
-Now that the next bit is zero, there is a transition and the signal starts from the top again. The same procedure is followed until all the bits are recorded.
+Now that the next bit is zero, there is a transition, and the signal starts from the top again. The same procedure is followed until all the bits are recorded.
 
 The figure below is the resultant encoded signal:
 
@@ -121,14 +123,14 @@ Here, a transition is done in the middle of the bit interval. The resultant puls
 
 For example, to encode 1011:
 
-The first bit is 1, so we start at the top to the middle. When it is zero you start from the bottom to the middle upwards as shown in the figure below:
+The first bit is 1, so we start at the top to the middle. When it is zero you start from the bottom to the middle as shown in the figure below:
 
 ![Illustration image of Bi-phase Manchester](/engineering-education/different-techniques-of-encoding-data-for-transmission/manchester.png)
 
 ### Block encoding
 For clock synchronization to be achieved, redundancy is needed for error detection. This redundancy can be achieved by block encoding to improve performance.
 
-This type of encoding changes a block of x bits into a block of y bits in which the y bits are more significant compared to the x bits;Referred to as `xB/yB` encoding.
+This type of encoding changes a block of x bits into a block of y bits in which the y bits are more significant compared to the x bits;referred to as `xB/yB` encoding.
 
 This involves three steps:
 
@@ -143,7 +145,7 @@ The two types of block encoding are; 4B/5B and 8B/6T encoding techniques.
 #### 4B/5B encoding technique
 Like in Manchester encoding, clocks with double speed are required to send data.
 
-In this type of encoding, double speed clocks are not required. Instead, 4 bits of codes are mapped to 5 bits having a minimum of 1-bit in the group.
+In this type of encoding, double speed clocks are not required. Instead, 4 bits of codes are mapped to 5 bits; having a minimum of 1-bit in the group.
 
 Double speed clocks are avoided by assigning 5 bits in place of 4 consecutive bits, which are pre-determined in a dictionary.
 
@@ -176,10 +178,10 @@ You have understood the different types of Bi-phase encoding, both differential 
 You should be able to know the demerits of the Non-return to zero encodings and know a good method to encode a message for transmission i.e. Block encoding.
 
 References:
-- [Link to interfacebus web page](http://www.interfacebus.com/NRZ_Definition.html)
-- [Link to coursehero web page](https://www.coursehero.com/file/91850719/Bautista-Assignmentdocx)
-- [Referenced from pubmed](https://pubmed.ncbi.nlm.nih.gov/31496943)
-- [Link to wisdom jobs web page](https://www.wisdomjobs.com/e-university/digital-communication-tutorial-1983/data-encoding-techniques-25989.html)
+- [Interfacebus](http://www.interfacebus.com/NRZ_Definition.html)
+- [Coursehero](https://www.coursehero.com/file/91850719/Bautista-Assignmentdocx)
+- [Pubmed](https://pubmed.ncbi.nlm.nih.gov/31496943)
+- [Wisdom jobs](https://www.wisdomjobs.com/e-university/digital-communication-tutorial-1983/data-encoding-techniques-25989.html)
 
 ---
 Peer Review Contributions by: [Wilson Gichuhi](/engineering-education/authors/wilson-gichuhi/)
