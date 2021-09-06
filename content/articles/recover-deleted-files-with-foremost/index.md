@@ -6,7 +6,7 @@ url: /recover-deleted-files-with-foremost/
 title: Recovering deleted files using Foremost
 description: In this tutorial, we will be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive, how to recover deleted files from a whole hard disk, and finally learn how to recover deleted files from a particular partition of a hard drive.
 author: denis-kuria
-date: 2021-08-30T00:00:00-13:00
+date: 2021-09-05T00:00:00-23:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
