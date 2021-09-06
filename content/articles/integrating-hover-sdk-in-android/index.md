@@ -1,32 +1,31 @@
-### Integrating Hover SDK for Offline M-Pesa Payments in Android with Kotlin 
-Integrating payment modules to an Android app is fun and at the same time hard to know where to start from. Payment is a key feature in many applications that do monetization or have e-commerce features. With the current era, M-PESA payments can be made Online or Offline. 
+### Introduction
+Integrating payment modules in an Android app is fun but it can be hard to know where to start. E-Payment is a key feature in monetization or e-commerce applications. In the modern era, M-PESA payments can be made online or offline.
 
- ### Introduction
-There are different payment gateways on which to choose if you wish to incorporate payment capabilities in your app. You can use Safaricom Daraja API, iPay, Pesapal to name a few; but all these gateways lack one thing - offline payment. Most people own smartphones but are not always connected to the internet. They may need to make transactions such as sending money while not connected to the internet. This is where the Hover SDK comes in.
+There are different payment gateways to choose from when you wish to incorporate payment capabilities in your app. You can use Safaricom Daraja API, iPay, Pesapal to name a few, but all these gateways lack one thing -offline payment.
 
-### What is Hover SDK
-Hover SDK is an Android SDK that allows mobile developers to integrate monetary functionality into their apps.
-This SDK does not require a connection to the internet; instead, it automates USSD sessions inside an Android app.  
+Most people own smartphones but are not always connected to the internet. They may need to make transactions such as sending money while offline. This is where the `Hover SDK` comes in.
 
-The SDK can run USSD sessions on any mobile network globally. This includes USSD interactions like mobile money payments, buying of airtime, paying bills, purchasing bundles, accessing banking services, and many more.
+### What is Hover SDK?
+Hover SDK is an Android SDK that allows the integration of monetary functionalities into mobile apps.
+
+The SDK can run USSD sessions on any mobile network globally. This includes USSD interactions like mobile money payments, buying of airtime, paying bills, purchasing internet bundles, accessing banking services, and many more.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
-- [How Does Hover Work](#how-does-hover-work)
+- [How Does Hover SDK Work?](#how-does-hover-work)
 - [What is an Action](#what-is-an-action)
 - [Creating a Hover App in the Hover Dashboard](#creating-a-hover-app-in-the-hover-dashboard)
-- [Getting Started](#getting-started)
+- [Implementing Hover in Android](#implementing-hover-in-android)
 - [Conclusion](#conclusion)
 - [References](#references)
-
 
 ### Prerequisites
 To follow through this tutorial, you should have:
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
 - Good knowledge of creating and running Android applications.
 - Basic information of the [Kotlin](https://kotlinlang.org/) programming language.
-- Have a Hover account, if you don't have one, you can [Sign Up](https://www.usehover.com/u/sign_up) to get started.
+- Have a Hover account, if you don't have one yet, you can [Sign Up](https://www.usehover.com/u/sign_up) to get started.
 
 ### Goals
 In this tutorial we will:
@@ -79,15 +78,12 @@ Here's how you can put the steps together in the Hover dashboard:
 
 [AddStepsToAction](/engineering-education/integrating-hover-sdk-for-offline-mpesa-payments-in-android-with-kotlin/add_steps.png)
 
-For the two variables that we have included, you will use the variable names `phoneNumber` and `amount`, to provide values for these steps from your Android Application code.
-
-Once you've saved the action, you may move on to the next step.
 On your dashboard, you'll see something similar to this. 
 
 [CreatedAction](/engineering-education/integrating-hover-sdk-for-offline-mpesa-payments-in-android-with-kotlin/hover_app.png)
 
 ### Creating a Hover App in the Hover Dashboard
-Your Android app is represented by a Hover "app" that runs on Hover's server. A unique API token is assigned to each app built on the hover dashboard.
+Your Android app is represented by a Hover "app" that runs on Hover's server.
 To create a Hover 'app,' go to your account dashboard and select " + New App":
 - Enter your app's name; this will only be used as a reference.
 - Enter the name of your app package; it must be the same as the `applicationId` in your app-level `build.gradle`.
@@ -95,7 +91,7 @@ To create a Hover 'app,' go to your account dashboard and select " + New App":
 
 [CreatingHoverApp](/engineering-education/integrating-hover-sdk-for-offline-mpesa-payments-in-android-with-kotlin/hover_app.png)
 
-### Getting Started
+### Implementing Hover in Android
 With the Hover SDK, we'll create a simple Android app that performs M-PESA Send Money.
 
 ### Step 1 — Creating Our Android Application
@@ -223,7 +219,7 @@ binding.buttonSend.setOnClickListener {
             }
         }
 ```
-Here we create an intent of type `HoverParameters` and chain the following methods:
+Here we create an intent of type `HoverParameters`.
 - `.request("ActionID")` and pass your Action ID that was generated in the hover dashboard.
 - `.extra("phoneNumber", PHONE_NUMBER)` and `.extra("amount", AMOUNT)` - this are the runtime variables that you declared while creating the Action.
 - Finally, add the `buildIntent()` method to create your `HoverParamater` intent.
@@ -270,4 +266,3 @@ Happy Coding!!!.
 
 ### References
 - [Hover SDK Official Documentation](https://docs.usehover.com/)
-
