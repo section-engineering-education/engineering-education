@@ -31,7 +31,7 @@ Note: DPA is short for Database Performance Analyzer.
 
 ![File Extraction](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/File Extraction.png)
 
-4.	Open SolarWindsDPASetup-x64.exe and run it. Click next once the installer has started.
+4.	Open `SolarWindsDPASetup-x64.exe` and run it. Click next once the installer has started.
 
 ![Installation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Installation.png)
 
