@@ -43,7 +43,7 @@ First, what we need to do is to open either your colab or notebook and install t
 
 There are two parts to the installation process. First, you have to install `paddlepaddle` which is the underlying framework behind the PaddleOCR model. Secondly, we'll go ahead and install the `paddleOCR`.
 
-The PaddleOCR model can run on both a GPU and CPU. A GPU is most preferred because of its fast processing. But if not, just use your CPU machine. 
+The PaddleOCR model can run on both a GPU and CPU. GPUs are often preferred because of their greater memory bandwidth. 
 
 If you have a GPU-enabled machine. use the following command to install the PaddleOCR:
 
@@ -205,7 +205,7 @@ Please find the full code to my code implementation [here](https://colab.researc
 ### Wrapping up
 One key feature of the PaddleOCR model is that it's extremely fast. We also note that with just a few lines of code, you can extract labels from prescribed medicine. Amazing, right? 
 
-In a nutshell, this tutorial shows you how you can use OCR to extract text from drug labels. The sizes and quality of your image will greatly impact your results. Please note that the colab version I'm using may give you an error since the image file may not be available to you remotely. You can import an image of your choice into your colab, or you can carry out the task locally for the best outcome i.e., faster processing due to local CPU/GPU usage, and ease of adding images. 
+In a nutshell, this tutorial shows you how you can use OCR to extract text from drug labels. The sizes and quality of your image will greatly impact your results. Please note that remotely running this colab project may give you an error since you can not use my image path remotely. You can import an image of your choice into your colab, or you can carry out the task locally to circumvent this error. 
 
 Try playing around with the code and see what you find.  
 
