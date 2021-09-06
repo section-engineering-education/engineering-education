@@ -1,4 +1,5 @@
-The React library has quickly established itself as a popular JavaScript UI library. One of its main selling points is that it allows developers to build reusable UI components. React Cosmos is a library that provides a playground environment for testing and developing isolated React UI components. Using the React Cosmos sandbox, we can make changes to props and have interactive and instant changes during development.
+The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. Reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library the that provides an environment so that developers can reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
+
 
 ### Prerequisites for React Cosmos
 
@@ -22,20 +23,15 @@ The key benefits of using React Cosmos include:
 - Using a component-based library like React is essential in design systems. Building your components using React Cosmos ensures reusability across multiple projects. This avoids duplication of effort in creating a uniform branding across your product suite.
 
 
-To do that you only need to write some fixtures for your components. A fixture is simply a snapshot of the component, a serialization of its state and props at a given moment. Then, point Cosmos at those fixtures and you’re ready to go.
-
 ### Project Setup
 
-To get started with React Cosmos, we will clone an app from this repository. This is a simple food ordering application made using React and [tailwind CSS](https://tailwindcss.com/). To clone it, make sure you have git installed on your system then run the command:
+To get started with React Cosmos, we will clone an app from this repository. This is a simple food ordering application made using React and [tailwind CSS](https://tailwindcss.com/). Make sure you have git installed on your system and clone the repository with the command:
 
 ```bash
-git clone https://github.com/Origho-precious/cosmos-food.git
+git clone https://github.com/marienjus/React-Cosmos.git
 ```
 
-Next, install the needed project dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favorite IDE.
-
-
-Let’s quickly go over how our components are structures in this project.
+Next, install the needed project dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favorite IDE. Below is the structure of our components in this application.
 
 Our `src/components` folder has:
 
@@ -74,11 +70,15 @@ The React development server starts at `http://localhost:3000/`. The application
 
 Let's install the React Cosmos package as a dev dependency. On your terminal, execute the command:
 
-`yarn add --dev react-cosmos`
+```bash
+yarn add --dev react-cosmos
+```
 
 If you use npm, run the command:
 
-`npm i -D react-cosmos`
+```bash
+ npm i -D react-cosmos
+```
 
 To make sure that React Cosmos works with create-react-app, add a `cosmos.config.json` file in our project root folder with the code below:
 
@@ -135,7 +135,7 @@ After the server starts successfully, head over to `http://localhost/5000` in yo
 
 ![img](src)
 
-### Building Components using Fixtures
+### Creating a Component using Fixtures
 
 In React Cosmos, we build components by creating fixtures. [Fixtures](https://github.com/react-cosmos/react-cosmos/tree/main/docs#fixtures) are files that contain a default export (as either a React Components or React Node). React cosmos displays the fixtures in a sandboxed explorer. We need to add `.fixture` to the file names containing our component so that React Cosmos can track it. 
 To get started, create a file within our `src` folder and name it `Button.fixture.jsx`. Inside the file, import the Button component as:
@@ -153,8 +153,157 @@ export default (
   </div>
 )
 ```
-In our Cosmos Explorer, we should see:
+In our Cosmos Explorer under **ALL FIXTURES**, we should see:
 ![]()
+
+Using the right panel, we can update any prop to the button component. Let’s add a variant prop that includes a primary and secondary Button variant.
+
+Go back to our `src/components/Button/Button.jsx`  component and update it with the code below:
+
+```js
+const Button = ({ children, variant = "primary" }) => {
+  return (
+    <button
+      className={`block w-full h-12 ${
+        variant === 'primary' ? "bg-black" : "bg-blue-600"
+      } hover:opacity-70 mt-3 text-sm rounded-sm`}
+      style={{ color: '#fff', border: "none", outline: "none" }}
+      type="button"
+    >
+      {children}
+    </button>
+  )
+}
+
+export default Button
+```
+
+Next, we need to update the `Button.fixtures.js` file to look like this:
+
+```jsx
+import { useSelect } from 'react-cosmos/fixture';
+import Button  from "./components/Button/Button";
+
+export default () => { 
+  const [variant] = useSelect('variant', {
+    options: ['primary', 'secondary'],
+  });
+
+return (
+  <div className="w-60 mx-auto">
+    <Button variant={variant}>Cosmos</Button>
+  </div>
+)}
+```
+
+Let's briefly dissect the above code:
+- Our Button fixture includes a variant prop with a Control panel hook useSelect. The useSelect hook is what we use to set options of the variant prop. Therefore, in our sandbox, we can manually select this rather than typing.
+
+Let's run a demo in the sandbox:
+
+We can toggle between either of the two variant options. Try changing the variant prop to confirm that our background color changes accordingly.
+
+### Creating a fixture for Checkout Component
+
+Within your `src` folder, add another file as `Checkout.fixture.jsx`:
+
+Import the Checkout component from the `components/Checkout/Checkout` file:
+
+```jsx
+import Checkout from "./components/Checkout/Checkout"
+```
+Next, add mock data inside the Checkout fixture file and export this as default.
+
+```jsx
+const data = {
+  subTotal: 100,
+  deliveryFee: 5,
+  total: 105,
+}
+
+export default (
+  <div className="w-60 mx-auto">
+    <Checkout
+      subTotal={data.subTotal}
+      deliveryFee={data.deliveryFee}
+      total={data.total}
+    />
+  </div>
+)
+```
+
+Click on the left panel under **ALL FIXTURE** option to what it looks like in our React Cosmos sandbox.
+We perform any visual tests by passing different prop values to our `data` object and playing around with it in the sandbox.
+
+### Cards Fixture
+For this fixture, create a `Cards.fixture.jsx` file within the `src` folder. Our Cards Fixture exports multiple fixtures as objects with React's `export default` keywords. 
+
+First, import the CartCard and FoodCard components.
+
+```jsx
+import CartCard from "./components/CartCard/CartCard"
+import FoodCard from "./components/FoodCard/FoodCard"
+```
+Next, include the food and order objects which will serve as our data for props.
+
+```jsx
+const food = {
+  id: 1,
+  name: "Peppered Chicken",
+  imgURL: "https://sisijemimah.com/wp-content/uploads/2015/07/image70.jpg",
+  price: "8.00",
+}
+
+const order = {
+  id: 1,
+  name: "Peppered Chicken",
+  imgURL: "https://sisijemimah.com/wp-content/uploads/2015/07/image70.jpg",
+  price: "8.00",
+  qty: 1,
+  updateList: () => {},
+}
+```
+
+Finally, export the `FoodCard` and `CartCard` fixtures:
+
+```jsx
+export default {
+  FoodCard: (
+    <FoodCard
+      id={food.id}
+      name={food.name}
+      price={food.price}
+      imgURL={food.imgURL}
+    />
+  ),
+  CartCard: (
+    <CartCard
+      id={order.id}
+      name={order.name}
+      price={order.price}
+      imgURL={order.imgURL}
+      qty={order.qty}
+      updateList={order.updateList}
+    />
+  ),
+}
+```
+In our sandbox, we have a `Cards` fixture. Within it, we have CartCard and FoodCard as components. This makes everything much more organized especially as the sandbox gets more fixtures.
+
+### Static Exports
+
+When hosting our fixtures as a component library in any static hosting service like Netlify, React Cosmos allows us to export our fixtures. Simply run the command:
+
+```bash
+yarn cosmos: export
+```
+OR
+
+```bash
+npm run cosmos: export
+```
+
+The export we perform excludes some development available features to reduce dependencies but will allow you to browse fixtures and play with component inputs as in the development sandbox. 
 
 ### Conclusion
 
