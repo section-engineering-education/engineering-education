@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published: true 
+published: true
 url: /why-backup-wont-work-for-stateful-containers/
 title: Why Backup won't work for Stateful containers?
 description: Any data that containers create need to be backed up. It is easier to backup data stored in stateful apps compared to stateless apps. This article will debunk these myths and misconceptions and explore why backup solutions may not work for stateful containers.
@@ -12,14 +12,14 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/why-backup-wont-work-for-stateful-containers/hero.png
-    alt: Why Backup won't work for Stateful containers cover image 
+    alt: Why Backup won't work for Stateful containers cover image
 ---
 ### Introduction
 There is a myth that containers are stateless. It is not true since a container can contain a state. However, the state is temporal, unique, and resides on the host machine it is running on. The myth focuses on that container images do not contain state and stores persistent data outside the container image.
 
 Containers consist of layers that are read-only and cannot be changed. Every layer holds the last changes made on the `config` file with configuration and installation commands. After executing the commands from the `config` file, the system changes are stored in a disk layer.
 
-A temporal writable layer is usually created at the top of the previous disk image when the container is running. The writable layer is unique to every container on a specific host and can survive when the container restarts. This writable layer does not store any stateful data, such as persistent application data. Its only purpose is to temporarily store the data of the running application in the container.
+A temporal writable layer is usually created on top of the previous disk image when the container is running. The writable layer is unique to every container on a specific host and can survive when the container restarts. This writable layer does not store any stateful data, such as persistent application data. Its only purpose is to temporarily store the data of the running application in the container.
 
 ### Table of contents
 1. [Introduction](#introduction)
@@ -36,19 +36,19 @@ A temporal writable layer is usually created at the top of the previous disk ima
 - Basic knowledge of [containers](https://www.cio.com/article/2924995/what-are-containers-and-why-do-you-need-them.html)
 
 ### Where containers stores state
-As mentioned earlier, containers do not store the state in the container image. Instead, it is stored in persistent external storage like [blocks](https://www.ibm.com/cloud/learn/block-storage), [objects](https://www.netapp.com/data-storage/storagegrid/what-is-object-storage/), or [file](https://www.ibm.com/cloud/learn/file-storage) storage systems and services.
+As mentioned earlier, containers can never save the state inside the container image. In alternative, they store the state in persistent external storage like [blocks](https://www.ibm.com/cloud/learn/block-storage), [objects](https://www.netapp.com/data-storage/storagegrid/what-is-object-storage/), or [file](https://www.ibm.com/cloud/learn/file-storage) storage services and systems.
 
 In most cases, enterprises use a [storage array](https://www.dnsstuff.com/storage-array) integrated into the Kubernetes environment using [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVCs).
 
 ### Backing up and restoring a Docker container
-Docker assists the developers in automating the process of developing and deploying an application. It also allows them to build a packaged environment that can run the application, making applications more portable and lightweight. It also assists in maintaining applications’ versions. The applications that run on Docker are platform-independent.
+Docker assists the developers in automating the development and deployment process of an application. Developers are also able to build a packaged environment that runs an application, making applications more portable and lightweight. It also assists in maintaining applications’ versions. The applications that run on Docker are platform-independent.
 
-Assume there is a Docker container running in a local environment. We can take a snapshot or backup of the said container to undo the changes or even run a container with a previous timestamp in case of an unforeseen disaster.
+We will assume we have a container executing in a local environment. We can take a snapshot or backup of the said container so as we can undo any changes or even run a container in the previous timestamp in case of an unforeseen disaster.
 
 This section will cover how we can backup and restore Docker containers using inbuilt Docker commands.
 
 #### Backing up a Docker container
-To back up a Docker container, we will use the following command to list all running containers and get their ids and choose one that we want to copy:
+We can back up a Docker container by using the following command to list all running containers and get their ids and choose one that we want to copy:
 
 ```bash
 $ docker ps −a
@@ -57,7 +57,7 @@ $ docker ps −a
 Then we will copy the container ID that we want to back up. To take a snapshot of the docker container, we will execute the below docker command:
 
 ```bash
-$ docker commit −p <CONTAINER_ID> <BACKUP_NAME>
+$ docker commit −p (ID of the CONTAINER) (BACKUP_NAME)
 ```
 
 For instance, we can pull a WordPress docker image using the below commands:
@@ -93,14 +93,14 @@ $ docker commit -p 1571dbfe094f wordpress-backup
 sha256:abe166f1f1ff6c59c978ab898dbc6f843c10c4a8415d7a2b012660420d205f8a
 ```
 
-To store the container image as a tar file in the local storage, we can execute the below command:
+We store our container image in form of tar file in our local storage, we can execute the below command:
 
 ```bash
 $ docker save -output wordpress-backup.tar wordpress-backup
 ```
 
 #### Restoring a Docker Container
-After creating a Docker container backup, we can be able to restore the container. We can restore a backup of the Docker container tar file using the below command:
+After we have created a Docker container backup, we can be able to restore the container. We can restore a backup of the Docker container tar file using the below command:
 
 ```bash
 $ docker load -i wordpress-backup.tar
@@ -113,7 +113,7 @@ $ docker load -i wordpress-backup.tar
 Loaded image: wordpress-backup:latest
 ```
 
-To confirm if the image was restored successfully, we can execute the command below:
+We can check whether the image was restored successfully by executing the command below:
 
 ```bash
 $ docker images
@@ -125,7 +125,7 @@ We can then pull back the Docker image using the below command:
 $ docker pull wordpress-backup:latest
 ```
 
-After restoring the Docker image, we can use the following command to execute a new instance of the Docker container as below:
+After restoring the Docker image, we can use the following command to execute a restored instance of the Docker container as below:
 
 ```bash
 $ docker run -ti wordpress-backup:latest
@@ -145,15 +145,15 @@ The differences in architectures that come with containers demonstrate why backu
 ### Possible backup solution
 The better solution cannot rely on the container for purposes of backup and replication. Also, it cannot rely on one storage solution. Instead, it can be installed on the Kubernetes cluster as [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) and offer data protection with an [RPO](https://www.ibm.com/services/business-continuity/rpo) from 5 or 10 seconds.
 
-These DaemonSets integrate into the persistent storage to gain access to persistent data independent of any container. By unifying all cluster nodes and the cluster API, [Zerto](https://www.zerto.com/solutions/workloads-and-applications/zerto-for-kubernetes/) for Kubernetes can work most efficiently. It journals the persistent data without container duplication or performance impact.
+These DaemonSets integrate into the persistent storage to gain access to persistent data independent of any container. By unifying all cluster nodes and the cluster API, [Zerto](https://www.zerto.com/solutions/workloads-and-applications/zerto-for-kubernetes/) for Kubernetes works most efficiently. It journals the persistent data without container duplication or performance impact.
 
 It can also be integrated with clusters, making persistent data replication used for disaster recovery easier. It is storage agnostic and supports [CSI-compatible](https://kubernetes-csi.github.io/docs/) block storage, thus making it ideal for data migration and mobility solutions.
 
 The organization should ensure they go for a solution that stores stateful data and captures the Kubernetes state for each application. It will ensure that data protection for components like [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/) and services. These components can rebuild the application when performing data recovery on the same or another cluster.
 
 ### Conclusion
-For many users and developers, backing up a container is foreign to them. Most argue containers are stateless, and there is no data stored in them; thus, it does not warrant backup and recovery operations. The container infrastructure offers high availability while Kubernetes runs in a cluster. Containers are spawned and killed as needed. Most users confuse the high availability with the ability to recover from a disaster.
+For many users and developers, backing up a container is foreign to them. Most argue containers are stateless, and they cannot store data; thus, it does not warrant backup and recovery operations. The container infrastructure offers high availability while Kubernetes runs in a cluster. Containers are started and stopped as needed. Most users cannot differentiate between the containers’ high availability with the ability to recover from a disaster.
 
-However, if anything happens, the entire cluster and container nodes with associated persistent data are destroyed or lost. It would mean that Kubernetes, Docker, and associated applications need to back up. The reasons backup might be needed for disaster recovery, migration purposes, and moving from development/test environment to production in case of upgrades.
+However, if anything happens, the entire cluster and container nodes with associated persistent data are destroyed or lost. It would mean that Kubernetes, Docker, and associated applications may need to back up. The reasons backup might be needed for disaster recovery, migration purposes, and moving from development/test environment to production in case of upgrades.
 
 Happy learning!
