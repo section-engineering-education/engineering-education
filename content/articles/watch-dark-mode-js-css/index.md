@@ -1,9 +1,24 @@
-### Watching for system dark mode changes using JavaScript and CSS
+---
+layout: engineering-education
+status: publish
+published: true
+url: /watch-for-system-dark-mode-using-js-css/
+title: How to Watch for System Dark Mode Changes Using JavaScript and CSS
+description: In this article, we will learn how to watch for system dark mode changes using JavaScript and CSS. We will use the matchMedia function to detect if the system is in dark mode.
+author: njeri-kariuki
+date: 2021-08-17T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/watch-for-system-dark-mode-using-js-css/hero.png
+   alt: Dark Mode JavaScript Js CSS Image Hero
+---
 Dark mode is one of the most neccesary features of the web. Many people prefer it because it's easy on the eyes.
+<!--more-->
+In this tutorial we will learn how to use JavaScript and CSS to detect when the system dark mode is enabled, and change the colors of the page accordingly.
 
-In this tutorial we will learn how to use JavaScript and CSS to detect when the system dark mode is enabled and change the colors of the page accordingly.
-
-In the first part of this tutorial we will learn how to detect the system dark mode using JavaScript. In the second part we will detect the system dark mode using CSS.
+In the first part of this tutorial, we will learn how to detect the system dark mode using JavaScript. In the second part, we will detect the system dark mode using CSS.
 
 ### 1. Using JavaScript
 In this  part we will learn how to detect the system dark mode using JavaScript.
@@ -99,8 +114,6 @@ The event name is `change` and the callback function is the `e` variable. The `e
 You can now open `index.html` in your browser and see the result.
 
 ### Using CSS
-In this part of this tutorial, we will learn how to detect the system dark mode using CSS.
-
 CSS has improved over time adding more capabilities to web browsers. It is now possible to use the `prefers-color-scheme` media query. This media query will return `true` if the system dark mode is enabled.
 
 Using the Html in the first part of this tutorial, let's see how you can detect the system dark mode using CSS.
@@ -121,7 +134,7 @@ Using the Html in the first part of this tutorial, let's see how you can detect 
 }
 ```
 
-This CSS code will set the `body` background color to `#f5f5f5` if the system dark mode is disabled. If it is not, it will set the `body` background color to `#222`.
+This CSS code will set the `body` background color to `#f5f5f5` if the system dark mode is disabled. If not, it will set the `body` background color to `#222`.
 
 This method responds in realtime to change in the system dark mode.
 
@@ -131,3 +144,6 @@ In this tutorial, we learned how to detect the system dark mode using JavaScript
 When building web apps, you can either use JavaScript or CSS to detect the system dark mode.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
