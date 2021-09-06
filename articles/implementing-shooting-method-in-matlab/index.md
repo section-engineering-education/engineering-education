@@ -1,18 +1,15 @@
 ### Shooting method using Matlab
 ### Introduction
+In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
 
-In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. Since this method is a two-point boundary value problem, then it has two initial values. In the shooting method, one of the initial values is not known. This value is guessed and compared to the known solution at the boundary conditions until the target thus shooting method.
-
-This article contains the construction of the shooting method code for a linear BVP. We will look at recognizing the boundary value problem and formulate the BVP as an equivalent system of IVP.
+Since this method is a two-point boundary value problem, then it has two initial values. In the shooting method, one of the initial values is not known. This value is guessed and compared to the known solution at the boundary conditions until the target thus shooting method. This article contains the construction of the shooting method code for a linear BVP. We will look at recognizing the boundary value problem and formulate the BVP as an equivalent system of IVP.
 
 ### Prerequisites
-
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Overview
-
 Higher-order ODE's are written as;
 
 $
@@ -29,13 +26,11 @@ So if we know everything at the initial value, we would step the integration for
 The formulation of boundary value problems is different. It might be the same differential equation but what is different is that we know `y` at maybe two different time values, y(t0), y(t1).
 
 ### Why do we need a different strategy for the boundary value problem(BVP)?
-
 Well, thinking about the second-order initial value, there are two basic approaches: Runga Kutta 4 and the multistep method. Both approaches require that we know the solution's value (s) at `t=t0` and step forward in time using the ODE function f(t,y). Now, this is not the case with BVP. It is because we don't know the condition at the first point of integration. There are two basic approaches to BVPs, that is;
 - Shooting method
 - Finite difference method
 
 ### Shooting method concept
-
 The basic idea of the shooting method is that we take the second-order ODE and write it as a system of the first-order ODE. This system is known as equivalent IVP.
 
 $
@@ -59,7 +54,6 @@ Now in this situation, we don't know one of the initial conditions, that is, bet
 This way, it is called the shooting method. First, we aim the solution at the target and then use the IVP solver such as ODE45 to integrate the solution forward and see if we will hit the target. The next step in the shooting method is coming up with an intelligent way to keep improving our guesses to hit that target.
 
 ### Shooting method algorithm
-
 It is the combination of all that we have been doing;
 1. Convert the BVP into equivalent IVP.
 2. Guess the value for the undefined `y0` initial condition.
@@ -71,7 +65,6 @@ We do the first and second shots with a different guess and interpolate between 
 ![demonstration](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_two.png)
 
 ### Example implementation of the shooting method
-
 The ODE governing the deflection of a supported beam with a constant distributed load is;
 
 $
@@ -155,7 +148,9 @@ To demonstrate what is happening in the code above, we look at the sketch below.
 
 ![demonstration](shooting_four.png)
 
-Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. Since this is a linear equation, we use the linear interpolation defined by `linear interp`. The last call in that function is the `extrap`, which means extrapolation. It is in case the `$y_l$` is not between the two shots.
+Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
+
+Since this is a linear equation, we use the linear interpolation defined by `linear interp`. The last call in that function is the `extrap`, which means extrapolation. It is in case the `$y_l$` is not between the two shots.
 
 The final step for the shooting method is to use the new initial condition for the final call to ODE45 to our solution.
 
@@ -187,5 +182,4 @@ title('Beam Deflection')
 As we can see from the plot, the shooting method is accurate as of the analytical method. For the error behavior for the shooting method, it is going to be the same as whichever IVP solver you are using.
 
 ### Conclusion
-
 Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guess for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values. Also, at some point, the methods used to find these initial values are so tiresome, e.g., the Runga Kutta method, which is not involved in the shooting method. Matlab also makes it easier since it has some in-built functions that help to work such problems easier.
