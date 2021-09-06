@@ -112,7 +112,7 @@ Click Microsoft SQL Server under Self-Managed.
 4. See the [Note](Note-:-Each-instance-must-be-registered-separately) below for a guide to register replicas if the registered instance has additional groups.  
 5. Otherwise, input the name of the server or its IP address, as well as the port number, if necessary.
 
-#### Note: Each instance must be registered separately
+> NOTE: Each instance must be registered separately
 
 1. Choose the authentication method you want to use. You can choose any option if Mixed Mode was selected during SQL Server installation.
 2. DPA can use the SYSADMIN login to register instances.
