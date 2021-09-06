@@ -70,7 +70,7 @@ In online machine learning, the model uses real-time data for training and makes
 
 ### River Python installation
 
-Since we are using Google Colab, we install using the following command:
+Since we are using Google Colab, we install river using the following command:
 
 ```python
 !pip install river
@@ -189,13 +189,13 @@ In offline machine learning, the `CountVectorizer` is used to transform a given 
 
 `CountVectorizer` is also used for very basic preprocessing like removing the punctuation marks and converting all the words to lowercase.
 
-In this tutorial we are dealing with online machine learning, thus we replace `CountVectorizer` with `BagOfWords` which perform the same functionalities.
+In this tutorial we are dealing with online machine learning, thus, we replace `CountVectorizer` with `BagOfWords` which perform the same functionalities.
 
 For a detailed understanding about TFIDF, please click [here](https://en.wikipedia.org/wiki/Bag-of-words_model).
 
 #### TFIDF
 
-It stands for Term Frequency-Inverse Document Frequency. It shows how words are relevant in a given document, and gives the importance of words.
+TDIDF stands for Term Frequency-Inverse Document Frequency. It shows how words are relevant in a given document, and gives the importance of words.
 
 This is done by measuring the frequency of how words appear in a given document. If a word appears frequently in a document, while not appearing frequently in others, it means this word is more relevant and has a more classification power as compared to words that appear in all the documents.
 
@@ -223,15 +223,15 @@ def get_all_attributes(package):
 
 We name this function `get_all_attributes` to get all the attributes and methods needed to build our model.
 
-The functios loops through the package and remove the following: `__all__`, `__builtins__`, `__cached__`, `__doc__`, `__file__`, `__loader__`, `__name__`, `__package__`, `__path__`, `__pdoc__`, `__spec__` and `__version__`.
+The function loops through the package and removes the following: `__all__`, `__builtins__`, `__cached__`, `__doc__`, `__file__`, `__loader__`, `__name__`, `__package__`, `__path__`, `__pdoc__`, `__spec__` and `__version__`.
 
 We remove them since they are not used to build our model.
 
 The remaining sub-packages and sub-modules in the list are added using the `subpackages.append()` method.
 
-We then add these sub-packages and sub-modules into our data frame using the `pd.DataFrame(submodules)` method. The data frame is what will be used to train our model. The data frame will now have all the sub-packages and submodules.
+We then add these sub-packages and sub-modules into our data frame using the `pd.DataFrame(submodules)` method. The data frame is what will be used to train our model. The data frame will now have all the sub-packages and sub-modules.
 
-The above function removes the unnecessary methods, packages, and attributes, the remaining methods, attributes, and packages are as shown:
+The above function removes the unnecessary methods, packages, and attributes as shown:
 
 ```python
 dir(river)
@@ -281,7 +281,7 @@ To add these methods and attributes into our program, use the commands shown bel
 river_df = get_all_attributes(river)
 ```
 
-To see if these methods and attributes are added use this command:
+To see if these methods and attributes are added, use this command:
 
 ```python
 river_df
@@ -295,7 +295,7 @@ The output is as shown:
 
 ### Simulating streaming data
 
-To use River Python we need streaming data. Streaming data comes in incrementally over time and, comes one at a time. To simulate streaming data, we use our dataset as a list of a tuple as shown:
+To use River Python, we need streaming data. Streaming data comes in incrementally over time and, comes one at a time. To simulate streaming data, we use our dataset as a list of a tuple as shown:
 
 > We will have two lists of data: A train list and a test list.
 
@@ -364,7 +364,7 @@ This will initialize our two stages; `BagOfWords` as `vectorizer` and `Multinomi
 
 ### Visualizing the pipeline
 
-To visualize the initialized pipeline use this command:
+To visualize the initialized pipeline, use this command:
 
 ```python
 pipe_nb
@@ -404,7 +404,7 @@ OrderedDict([('vectorizer',
 
 Since we are dealing with streaming data, we have to learn from our data one a time to simulate streaming data.
 
-Our data is in form of a list of tuples, so we can learn from it one a time by iterating through our data using a `for` loop. This will ensure that we train a model to give each instance in our loop over time before going to the next instance as if we are dealing with real-time data that comes in streams.
+Our data is in form of a list of tuples, so we can learn from it one a time by iterating through our data using the `for` loop. This will ensure that we train a model to give each instance in our loop over time before going to the next instance as if we are dealing with real-time data that comes in streams.
 
 #### Looping through our dataset
 
@@ -415,7 +415,7 @@ for text,label in data:
 
 When looping through our dataset, we use the `learn_one()` method to learn one at a time from our given list of the tuple. `learn_one()` will learn from the first `text` and `label` which is `"my python program is running", "software"` according to our data set.
 
-It will then store the knowledge learned and use it when the next data arrives. Since the model remembers the knowledge gained over time, it will be able to adapt to changes in the dataset. Over time, the model will be more accurate than the beginning of the training since it would have accumulated knowledge.
+It will store the knowledge learned and use it when the next data arrives. Since the model remembers the knowledge gained over time, it will be able to adapt to changes in the dataset. Over time, the model will be more accurate than the beginning of the training since it would have accumulated knowledge.
 
 ### Making prediction
 
@@ -469,7 +469,7 @@ The prediction output:
 'software'
 ```
 
-This gives a wrong prediction because it is still early in the learning process. But as we continue training using our dataset, the model will gain more knowledge which it will then use when making predictions. The aim is for the learning model to adapt to new data without forgetting the existing knowledge.
+This gives a wrong prediction because it is still early in the learning process. But as we continue training using our dataset, the model will gain more knowledge which it will use when making predictions. The aim is for the learning model to adapt to new data without forgetting the existing knowledge.
 
 At the beginning of the training phase, the model gives a lower accuracy, but with time the accuracy increases. Let's calculate the model accuracy at this instance.
 
@@ -487,7 +487,7 @@ for text,label in test_data:
     pipe_nb = pipe_nb.learn_one(text,label)
 ```
 
-To get the accuracy score use the following command:
+To get the accuracy score, use the following command:
 
 ```python
 metric
