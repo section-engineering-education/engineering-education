@@ -520,3 +520,6 @@ This is a good tutorial that a reader can follow and learn online machine learni
 - [Online vs offline machine learning differences](https://blog.goodaudience.com/online-vs-offline-machine-learning-which-one-to-use-934801e0a418?gi=ddf3aa016f62)
 - [River Python documentation](https://riverml.xyz/latest/getting-started/getting-started/)
 - [Text Classification](https://monkeylearn.com/text-classification/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
