@@ -301,7 +301,7 @@ Finally, we have our final code as follows:
 ```
 If we run the above HTML code in our browser, we would have our simple, lightweight web map like the image shown below:
 
-![browser image](/building-simple-maps-using-leaflet-js/mapimage.PNG)
+![browser image](/engineering-education/building-simple-maps-using-leaflet-js/mapimage.PNG)
 
 The coordinates used are the absolute location of Nigeria. As we mentioned earlier, coordinates determine any position on the earth's surface. So, if you want to get the coordinates of any location, you can follow the steps below:
 
