@@ -1,5 +1,5 @@
 ---
-title: Nathaniel Dauda Wobin
+title: Nathaniel Dauda Musa
 type: authors
 ---
-Nathaniel Dauda Wobin is a Mobile App Developer with a degree in Physics from Kaduna State University. He builds most of his projects using Flutter and Django.
+Nathaniel Dauda Musa is a backend and mobile app developer with a degree in Physics from Kaduna State University. He builds most of his backend projects using Flutter and Python.
