@@ -1,0 +1,139 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /How-Java-Virtual-Machine-Works/
+title: How Java Virtual Machine Works
+description: In this article we will discuss Java Virtual Machine
+author: geofrey-mwangi
+date: 2021-09-10T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education//How-Java-Virtual-Machine-Works/hero.jpg
+   alt: First Hop Redundancy Protocol example image
+---
+
+### Introduction
+
+The `Java Virtual Machine (JVM)` is the Java program that executes the main function. When you install **JRE**, you'll also get JVM (Java Runtime Environment). A compiler in other programming languages generates machine code. To compile Java code, Java Virtual Machine is used. It enables Java applications to execute on the system.
+
+### Types of virtual machines
+
+1. **System-based virtual machines (SVM)**: As a replacement for physical computers, SVMs were developed. A host computer runs them and uses its hardware resources.
+
+2. **Application-based virtual machines (AVM)**: The host machine allows a single process to execute as an application without involving any hardware whatsoever. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this article.
+
+An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this session.
+
+There are created a .java file, .class files with the identical names as those in the java file. This .class file breaks down the JVM into numerous phases that describe how it works.
+
+1. ClassLoader
+2. JVM Memory 
+3. Execution Engine 
+4. Java Native Interface (JNI)
+5. Native Method Libraries
+
+### Class loader subsystem
+
+There are three of the class loaders:
+- Application class loader
+- Extension class loader
+- Bootstrap class loader
+
+As one of the phases of JVM, it mainly consists of three activities which are listed below:
+1. **Loading**:
+
+ ".class" files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each ".class" file in JVM contains the following information.
+- Class name and its immediate parent class.
+- ".class" files can be classified as Class or Interface.
+- There is a lot of detail on the modifier, variables, and method.
+
+As soon as the ".class" file is loaded, the JVM constructs a Class object to represent it in the heap memory. This object belongs to the Java.lang package's Class class.Class objects allow the programmer to extract class-level information such as the class name, parent class, methods, and variables. getClass() of the Object class can be used to retrieve this reference to the object.
+
+```java
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+public class Test {
+    public static void main(String[] args)
+    {
+        pupil p1 = new pupil();
+        Class cl1 = p1.getClass();
+        System.out.println(cl1.getName());
+        Method m[] = cl1.getDeclaredMethods();
+        for (Method method : m)
+            System.out.println(method.getName());
+        Field f[] = cl1.getDeclaredFields();
+        for (Field field : f)
+            System.out.println(field.getName());
+    }
+}
+class pupil {
+    private String name;
+    private int roll_No;
+  
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public int getRoll_no() { return roll_No; }
+    public void setRoll_no(int roll_no)
+    {
+        this.roll_No = roll_no;
+    }
+}
+```
+**Output**
+```
+pupil
+getName
+setName
+getRoll_no
+setRoll_no
+name
+roll_No
+```
+> Note that each ".class" file loaded creates only one object of the class.
+
+2. **Linking**:
+
+Executes three operations, including:
+
+- **Preparation**: It allocates memory and initializes it to default settings for class variables.
+- **Verification**: You may be sure that a file is correct as long as it has been correctly formatted and created by a valid compiler. The java.lang run-time exception is thrown when the verification fails. VerifyError. In this case, the component ByteCodeVerifier is responsible. After that, the class file is ready to be compiled.
+- **Resolution**: There is a straightforward substitution for the sorts of symbolic references as the name suggests. Searching for the referenced entity in the method area is how it is accomplished.
+
+> Delegation-Hierarchy principle is used by JVM to load classes. Loading requests are delegated to extension classloaders, which in turn delegate requests to bootstrapping classloaders by system classloaders. Any other requests that are not routed through an extension class loader are routed through the system class loader if found in the boot-strap path. As a last resort, java.lang. These run-time errors are thrown when the system class loader cannot load the class that was supplied.
+
+### JVM Memory 
+
+The `Runtime Data Area` is another name for the memory area. In total, it's broken down into five sub-areas.
+
+1. **Method area**: Class information such as the class name, parent class name, and methods are also preserved in the method area.
+2. **Heap area**: In the heap area, all objects' information is saved. There is also a Heap Area for each Java Virtual Machine. It's also a resource that's shared.
+3. **Stack area**: Every block of this stack is termed an activation record/stack frame, and it stores method calls in each of the blocks therein. There is a frame for each local variable. JVM will destroy a thread's run-time stack after it has terminated. Because of this, it is not an accessible resource to the general public.
+4. **PC registers**: Store the address of the thread's current instruction. Each thread has its PC Registers, as you might expect.
+5. **Native method area**: Every thread has its native stack. Stores information about a native method's parameters.
+
+### Execution Engine
+
+To run a ".class" file, you need an execution engine. For example, reading bytecode from a file, using data from various memory areas, then executing instructions. The execution engine consists of three components named below:
+
+1. **Interpreter**: Essentially, the interpreter takes bytecode and translates it to machine code. Interpreters may be faster at running one line of bytecode than they are at executing the entire code. Also, a fresh interpretation must be provided each time the same method is invoked.
+2. **JIT Compiler (Just In Time compiler)**: Execution engines use the interpreter to execute byte code. The JIT compiler will be used instead of the execution engine detects that a method is repeated. It consists of the following;
+-  Intermediate Code Generator.
+- Code Optimizer.
+- Target Code Generator.
+- Profiler.
+3. **Garbage Collector(GC)**: Objects that are not referenced can be removed by the garbage collector is a background process, freeing up space on the heap.
+
+### Java Native Interface (JNI)
+Interacting with Native Method Libraries and providing native libraries (C, C++) for execution. A hardware-specific C/C++ library can call and be called from the JVM as a result of this feature.
+
+### Native Method Libraries
+It's a set of native libraries (C, C++) required by the Execution Engine.
+
+### Conclusion
+Virtual machines are not based on reality, but they can make you feel as though they are.  When it comes time to compile Java code, it does so using the Java Virtual Machine. It allows Java apps to run.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
