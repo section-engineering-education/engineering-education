@@ -2,76 +2,77 @@
 `Service classes` are a wonderful method to keep third-party code implementation details out of your software. Useful when calling an API method from numerous locations in your code. With the help of service classes, we'll learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. We'll use authentication as an example.
 
 Using service classes, you may hide the implementation details of third-party code in your app.
-Especially when you need to call an API method several times throughout your codebase, they can be really beneficial.
+They can be especially useful when you need to call an API method multiple times across your codebase.
 
 In a nutshell:
-1. The API wrapper class can be used to hide implementation details.
+1. To hide implementation details, the API wrapper class can be utilized.
 
 2. Includes all arguments for API methods, both input and output.
-3. Establish a basic abstract class for the service class if you want to make it easier to swap out an alternate version.
-4. 
+3. A basic abstract service class can be created to facilitate swapping out an other version easier.
+ 
 In its role as `API wrapper`, the service class hides any implementation details from the end-user or application.
 ```dart
-class SignUpPage extends StatelessWidget {
-  Future<void> _signUpAnonymously() async {
+// new login class
+class Login extends StatelessWidget {
+  Future<void> _loginAnonymously() async {
     try {
-    
-      final firebaseAut = Provider.of<FirebaseAut>(context);
-      await firebaseAut.signUpAnonymously();
+    //firebaseA=> Firebase Authentication
+      final firebaseA = Provider.of<FirebaseA>(context);
+      await firebaseA.loginAnonymously();
     } catch (e) {
-    
       print(e); 
     }
   }
   ...
 }
 ```
-We utilize this code to sign up with FirebaseAuth. Use Provider.ofFirebaseAut> to retrieve a FirebaseAut instance (context). There aren't any issues with global access because of this.
+We utilize this code to sign up with `Firebase Authentication` (FirebaseA). Use Provider.ofFirebaseA> to retrieve a Firebase Authentication instance (context). There aren't any issues with global access because of this.
 
-Although we are using the FirebaseAut API in our code, we are still accessing it directly and this can lead to several issues:
+Although we are using the Firebase Authentication API in our code, we are still accessing it directly and this can lead to several issues:
 
-1. How will you manage changes that cause problems in future versions of FirebaseAuth?
-2. In the future, let's say that we want to switch from FirebaseAuth to a different auth service.
+1. How will you deal with modifications in future versions of Firebase Authentication that cause problems?
+2. In the future, let's say that we want to switch from Firebase Authentication to a different auth service.
 
-We'll need to update or replace all FirebaseAuth calls in our codebase. in addition, if and when our project grows, we'll likely add a lot more things to our arsenal. Sharing preferences, granting permissions, tracking analytics, and local authentication are among the most common security features. Because of this, maintaining our code as APIs change becomes more challenging.
+In our codebase, we'll have to update or replace all Firebase Authentication calls. if and when our project expands, we'll likely add a lot more stuff to our arsenal as well. The most frequent security features include sharing preferences, granting rights, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more difficult as a result of this.
 ### Creating service classes
-As we covered previously, a service class is nothing more than a wrapper. The answer to all of our issues Using FirebaseAut, we can build a generic authentication service:
+As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems It is possible to create a generic authentication service using Firebase Authentication :
 ```Dart
-class User {
-  const User({@required this.id});
+class TheUser {
+  const TheUser({@required this.id});
   final String id;
 }
-class FirebaseAutService {
-  final FirebaseAut _firebaseAuth = FirebaseAut.instance;
-  // It is possible to create a new user by calling the 'FirebaseUser' private method "User".
+class FirebaseAService {
+//firebaseA=> Firebase Authentication
+  final FirebaseA _firebaseA = FirebaseA.instance;
+  // It is possible to create a new user by calling the 'FirebaseTheUser' private method "TheUser".
   
-  User _userFromFirebase(FirebaseUser user) 
+  TheUser _userFromFirebase(FirebaseTheUser theuser) 
   {
-    return user == null? null : User(id: user.id);
+    return theuser == null? null : TheUser(id: theuser.id);
   }
-  Stream<User> get onAuthStateChanged {
+  Stream<TheUser> get onAuthStateChanged {
     return _firebaseAuth.onAuthStateChanged.map(_userFromFirebase);
   }
-  Future<User> signUpAnonymously() async
+  Future<TheUser> loginAnonymously() async
   {
-    final user = await_firebaseAut.signUpAnonymously();
-    return_userFromFirebase(user);
+    final theuser = await_firebaseA.loginAnonymously();
+    return_userFromFirebase(theuser);
   }
-  Future<void> signOut() async
+  Future<void> logOut() async
   {
-    return_firebaseAut.signOut();
+    return_firebaseA.logOut();
   }
 }
 ```
-When we use FirebaseAuth in our example, we use the FirebaseAutService class which implements the FirebaseAuth API calls. Remember to create a simple User class which will be used as the return type for all methods in the FirebaseAutService class. Because the client code can work with User objects instead of FirebaseUser objects, the firebase auth package isn't needed. It's time to update our top-level widget, which will now use the new service class:
+When we use Firebase Authentication in our example, we use the Firebase Authentication Service class which implements the Firebase Authentication API calls. Don't forget to construct a simple TheUser class that will be used as the return type for all functions in the Firebase Authentication Service class. There's no need for the Firebase Authentication package because TheUser objects can be used in place of Firebase User objects in client code. Update our top-level widget to use the new service class:
 ```dart
-class MyApp extends StatelessWidget
+class ThisApp extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) 
   {
-    return Provider<FirebaseAutService>(
-      builder: (_) => FirebaseAutService(),
+    return Provider<FirebaseAService>(
+      builder: (_) => FirebaseAService(),
       
       child: MaterialApp(
         theme: ThemeData(
@@ -79,25 +80,26 @@ class MyApp extends StatelessWidget
         ),
         home: LandingPage(),
       ),
-    );}
+    );
+  }
 }
 ```
-All calls to Provider.ofFirebaseAut>(context) will be replaced by Provider.ofFirebaseAutService> (context). Therefore, all of our client code no longer requires this line to be imported. If firebase auth introduces a breaking update, build problems will only surface in our FirebaseAutService class. This method makes our program more maintainable as we add more and more packages. The creation of a base class is optional and we could also create it:
+All calls to Provider.ofFirebaseA>(context) will be replaced by Provider.ofFirebaseAService> (context). Therefore, all of our client code no longer requires this line to be imported. If Firebase Authentication introduces a breaking update, build problems will only surface in our Firebase Authentication Service class. This method makes our program more maintainable as we add more and more packages. The establishment of a base class is optional, and we might create it in the following manner:
 ```dart
-abstract class AuthService {
-  Future<User> signUpAnonymously();
-  Future<void> signOut();
-  Stream<User> get onAuthStateChanged;
+abstract class AService {
+  Future<TheUser> loginAnonymously();
+  Future<void> logOut();
+  Stream<TheUser> get onAStateChanged;
 }
-class FirebaseAutService implements AuthService {
+class FirebaseAService implements AService {
 }
 ```
-Generate an instance of a subclass and then utilize the base class type to create an instance of that subclass.
+Using the base class type, build an instance of a subclass.
 ```dart
-class MyApp extends StatelessWidget {
+class ThisApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Provider<AuthService>( // base class
+    return Provider<AService>( // base class
       builder: (_) => FirebaseAutService(), // concrete subclass
       child: MaterialApp(
         theme: ThemeData(
@@ -109,6 +111,6 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-To be fair, introducing a base class is a step in the wrong direction. Investing in many implementations will only be worthwhile if we know we'll need them all at once. Aside from that, I recommend writing no more than one concrete service class at a time instead. En outre, modern integrated development environments make it easy to perform tasks such as renaming classes and their usages, if appropriate. There are two implementations of the base AutService in my project. Testing and demo purposes benefit from the ability to swap between Firebase and a dummy authentication service at runtime.
+To be fair, introducing a base class is a step in the wrong direction. Investing in many implementations will only be worthwhile if we know we'll need them all at once. Aside from that, I recommend writing no more than one concrete service class at a time instead. En outre, modern integrated development environments make it easy to perform tasks such as renaming classes and their usages, if appropriate. There are two implementations of the base Authentication Service in my project. Testing and demo purposes benefit from the ability to swap between Firebase and a dummy authentication service at runtime.
 ### Conclusion
-You can hide the implementation details of 3rd party code in your app using service classes. Especially when you need to call an API method several times throughout your codebase, they can be really beneficial.
+Using service classes, you may hide the implementation details of third-party code in your app. Especially when you need to call an API method several times throughout your codebase, they can be really beneficial.
