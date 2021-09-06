@@ -218,7 +218,7 @@ ___
 
 Once you're on the download page, you need to select the first option to download the compressed file containing Spatialite binaries. Once downloaded, you can extract the folder using any file extractor tool like winrar. The extracted folder should containing files like these:
 
-![](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.png)
+![spatialite-folder](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.png)
 
 Next, copy the path to this folder and add it as an environment variable called `spat_path` from the terminal
 ```bash
