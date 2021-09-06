@@ -34,13 +34,13 @@ How does one make provisions for such data?, the aim of this article is to show 
 ### Building A Simple Web Server
 We'll start by creating a simple backend server for a service-hailing platform, where users can connect with 'service providers' in close proximity to them, and get them to offer their services to them for a fee. For this kind of platform, we have to deal with spatial information like "location of client", "location of service-providers", and we might also want to make queries to the database to perhaps find "the closest 10 service-providers" to a given location for example. We can only achieve this if we set things up correctly and add support for these kind of information to our database, since they don't directly have that kind of support for spatial data.
 
-#### <u>Pre-Requisites</u>
+#### Pre-Requisites
 - Python3 Installed
 - Basic Flask Knowledge
 
 We'll start by creating a folder called `server` and in this folder, we'll add a new folder called `core` and three other files called `wsgi.py`, `models.py` and `config.py`. Inside the `core` folder, add two new files called: `__init__.py`, and `views.py`. Once you're done your `server` folder should have a structure like this one below:
 
-```
+```bash
 -server/
     -core/
         -__init__.py
@@ -50,20 +50,20 @@ We'll start by creating a folder called `server` and in this folder, we'll add a
     -config.py
 ```
 
-#### <u>Installing Dependencies</u>
+#### Installing Dependencies
 From the command prompt/terminal, navigate to the server folder we just created and create a new virtual environment for the project, using `virtualenv`. If you don't have `virtualenv` installed you can install via `pip` as follows:
 
-```
+```bash
  pip install virtualenv
 ```
 
 If you already have it installed, you can skip that step and install the libraries we need as follows:
 
-``` 
+```bash
 pip install flask flask-sqlalchemy flask-migrate geoalchemy2
 ```
 
-#### <u>Creating and configuring the Flask server</u>
+#### Creating and configuring the Flask server
 In the `__init__.py` file in the **core/** folder we will add the following lines of code to create an application factory. This is a function that we can call to help with creating and configuring out flask application - this is great, because it can take arguments that we need to create an application at any point when we call the function.
 
 ```python
@@ -129,7 +129,7 @@ from config import config_
 app.config.from_object(config_[config_name])
 ```
 
-#### <u>Running Our Flask Server</u>
+#### Running Our Flask Server
 
 To run our flask app we need to add some final instructions in the `wsgi.py` which is what will help us run the flask app. So go to that file and add the following lines of code:
 
@@ -141,29 +141,30 @@ import os
 app = create_app('default' or os.getenv('FLASK_CONFIG'))
 ```
 Let's also set the `FLASK_ENV` environment variable to `development` from the terminal so we don't have to restart our server each time we make a change.
-```
+
+```bash
 FLASK_ENV=development
 ```
 
 Now let's run our flask app from the command-prompt/terminal using the following command :
 
-```
+```bash
 flask run
 ```
 
 _**Note**: This command works because flask looks for any file named `wsgi.py` or `app.py` by default. If you changed your naming convention for this file, you'll have to set the FLASK_APP environment variable to the name of the file you're using._ 
 
-```
+```bash
 set FLASK_APP=myfilename.py
 ```
 
 Once you run this command, you should see the logs on the terminal indicate that the server is running, as shown bellow:
 
-![Demo1](demo1.png)
+![server-logs](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo1.png)
 
 ### Adding Support For Spatial Data
 
-#### <u>Pre-requisite</u>
+#### Pre-requisite
 - Spatialite
 - Pandas
 
@@ -206,7 +207,7 @@ class Gig(Base, db.Model):
 ```
 Our models defines `User` objects as well as `Gig` objects - a user could be a regular customer who needs to request for a service on the platform, or a user that identifies as a handyman (or a service-provider). In each of these models we collect `lon` and `lat` values which should be used to define their location, however these don't mean anything geometrically (they're just floating point values), until we add the support for it, so that our database can handle them correctly. 
 
-#### <u>Installing Spatialite</u>
+#### Installing Spatialite
 In order to add support for proper handling of the spatial data we're collecting, we need to install an extension called `Spatialite` which adds the support for us to the database. To install `Spatialite`, visit this [link](http://www.gaia-gis.it/gaia-sins/windows-bin-amd64/) to download the binaries for windows. This should take you to a page like the one shown below:
 
 ![spatialite-download-page](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo2.Png)
@@ -220,7 +221,7 @@ Once you're on the download page, you need to select the first option to downloa
 ![](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.png)
 
 Next, copy the path to this folder and add it as an environment variable called `spat_path` from the terminal
-```
+```bash
 set spat_path=/path/to/your/spatialite/folder
 ```
 Next go to the `wsgi.py` file where we created the app instance. We'll add some cnofiguration options so that we can load the `Spatialite` extension when we create our application. Update the `wsgi.py` file so it contains these lines of code:
@@ -254,12 +255,12 @@ Lastly, we need to get a later version of sqlite3 installed because the one that
 
 Once downloaded, extract the contents and you should find a `sqlite3.dll` file - this is what we need. So copy it and look for the sqlite.dll that comes preinstalled with python, this should be in a folder called `DLLS` that's usually in the same location where python is installed. Mine is found at 
 
-```
+```bash
 C:\Users\Paulo\AppData\Local\Programs\Python\Python38\DLLs
 ```
 once there copy the old one to a safe location as backup, and paste the newly downloaded one in there to replace the old one, it might ask for admin-access so grant it access to copy the file there, and we'll be on our way.
 
-#### <u>Updating Our Models And Creating The Database</u>
+#### Updating Our Models And Creating The Database
 
 Now that we've added the support for spatial data to the database engine, we will now add some special fields to the models from earlier, these are the spatial fields that hold geometric information that can be handled by the database as such. 
 
@@ -280,20 +281,20 @@ class Gig(db.Model):
 ```
 Geoalchemy2 helps us to define these 'geometrical' fields which can have different `geometry_type` as specified by the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) (Well Known Text) format. The longitude and latitude values for my application would be in the form of a point, or at least thats what I anticipate:
 
-```
+```bash
 X(lon, lat)
 ```
 Hence I specify the `geometry_type` attribute for the field as `POINT`, this may differ depending on your usecase. You can always check the geolalchemy2 reference docs [here](https://geoalchemy-2.readthedocs.io/en/latest/types.html) to see the available options.
 
-#### <u>**Creating The Database**</u>
+#### **Creating The Database**
 
 We can now get to creating the database - we will begin by running migrations on the models using flask_migrate. We have already added configuration for this extension in the `__init__.py` file earlier on, so we can initialize migrations, run them and upgrade our database with the current versions of our models. So run the following commands from the terminal:
 
-```
+```bash
 flask db init
 ```
 This would initialize migrations for our database and create a `migrations/` folder for us in our project folder, this would contain metadata on the current version(s) of our models in a subfolder called `versions/`. We can edit these files before applying them to the database. Next we run migrations to create a version file for us to introspect.
-```
+```bash
 flask db migrate
 ```
 
@@ -321,7 +322,7 @@ def upgrade():
 ```
 Save this file and run the upgrade command from the terminal as follows:
 
-```
+```bash
 flask db upgrade
 ```
 This should update the database with our tables along with some other tables that are required by geoalchemy for the database to manage our data properly. 
@@ -335,7 +336,7 @@ The site also allows you to download this as an excel spreadsheet, so head over 
 
  So I'm going to use pandas to parse this file. We can do this from a new file called `data.py`, create this file in the root level of your project folder on the same level as `wsgi.py`. If you don't have `Pandas` installed, you can install it using the pip command as follows:
 
-```
+```bash
 pip install pandas
 ```
 
