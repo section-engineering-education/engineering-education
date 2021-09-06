@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-azure-functions-and-csharp-to-create-serverless-apis/
+title: Getting started with Azure functions
+description: This article covers the basics of Azure functions and how to create RESTful APIs using Azure functions
+author: dennis-mwangi
+date: 2021-09-06T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/hero.png
+    alt: Getting started with Azure functions
+---
+
+
 Azure functions is a cloud-native design strategy that allows a piece of code to be supplied and executed without needing a web server or server infrastructure settings.
 C#, Java, JavaScript, TypeScript, and Python are just a few languages that integrate with Azure functions.
 
@@ -396,3 +414,6 @@ Finally, we were able to implement all of the code changes. First, run the appli
 
 ### Conclusion
 This tutorial covered how to develop Serverless APIs using Azure Functions and integrate with the database using Entity Framework Core Dependency Injection.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
