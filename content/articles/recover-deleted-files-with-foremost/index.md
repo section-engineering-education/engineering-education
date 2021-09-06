@@ -15,12 +15,17 @@ images:
     alt: Recovering deleted files using Foremost
 ---
 
-Unintentional deletion of important files can be tragic. This has led to operating systems having a restore point. In Linux, the restore point is the trash. In Windows, the restore point is the recycle bin. Sometimes we delete these files in the restore points too. At this point, we opt to visit data recovery centers or buy expensive data recovery software.
-
+Unintentional deletion of important files can be tragic. This has led to operating systems having a restore point. In Linux, the restore point is the trash. In Windows, the restore point is the recycle bin. 
+<!--more-->
+Sometimes we delete these files in the restore points too. At this point, we opt to visit data recovery centers or buy expensive data recovery software.
 ### Introduction
-[**Foremost**](https://pkgs.org/download/foremost) is a free data retrieval software. You can download it on the internet. It operates on Linux operating systems. Throughout this tutorial, we will be using Kali Linux. Anyone using any other Linux distribution can follow through.
+[**Foremost**](https://pkgs.org/download/foremost) is a free data retrieval software. You can download it on the internet. It operates on Linux operating systems. 
 
-In this tutorial, we will be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive. We will then go through how to recover deleted files from a whole hard disk. Finally, we will learn how to recover deleted files from a particular partition of a hard drive.
+Throughout this tutorial, we will be using Kali Linux. Anyone using any other Linux distribution can also follow through.
+
+In this tutorial, we will be looking at the use of **foremost** in data recovery of lost/deleted files from a USB drive. We will then go through how to recover deleted files from a whole hard disk. 
+
+Finally, we will learn how to recover deleted files from a particular partition of a hard drive.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,7 +38,6 @@ In this tutorial, we will be looking at the use of **foremost** in data recovery
 
 ### Prerequisites
 To understand this article a reader needs to have:
-
 - [Kali Linux]((/engineering-education/getting-started-with-kali-linux/)) or any other Linux distribution installed.
 - Prior knowledge of the basic commands in the Linux terminal.
 
@@ -47,9 +51,10 @@ If it is not installed, type the following command in the terminal. After execut
 ```bash
 sudo apt install foremost
 ```
-
 ### Foremost package tools
-**Foremost** package includes some flags. A flag is a value that acts as a signal for a process. It determines what a program will do next. We use the following command to display flags included in the foremost package:
+**Foremost** package includes some flags. A flag is a value that acts as a signal for a process. It determines what a program will do next. 
+
+We use the following command to display flags included in the foremost package:
 
 ```bash
 foremost -h
@@ -68,7 +73,7 @@ sudo fdisk -l
 
 The above command gives the following output.
 
-![List Drives](/engineering-education/recover-deleted-files-with-foremost/drives.png)
+![List Drives](/engineering-education/recover-deleted-files-with-foremost/drives.jpg)
 
 Scroll down to where your USB is located and copy the file path. To start the file recovery process, use the command below:
 
@@ -142,7 +147,6 @@ The above command will automatically generate an output folder called output. Th
 ![Output](/engineering-education/recover-deleted-files-with-foremost/all.png)
 
 ### Conclusion
-
 In this tutorial, we have discussed the many ways you can use **foremost** to recover your deleted files. You now have all the skills you need to use this powerful free data recovery software. You can now recover your deleted files from the comfort of your home saving you time and money.
 
 Happy data recovery experience!
