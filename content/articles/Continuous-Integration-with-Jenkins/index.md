@@ -5,7 +5,7 @@ published: true
 url: /continuous-integration-with-jenkins/
 title: Continuous Integration with Jenkins
 description: This tutorial will help you understand Jenkins. This coninuous integration tool helps in the management of software projects.
-author: elijah-ndungu
+author: 
 date: 2021-08-04T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
