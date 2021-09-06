@@ -19,10 +19,10 @@ But we can also get data from any website even if it does not provide a public A
 
 We will use Puppeteer and Node.js(a JavaScript runtime environment). More information about puppeteer can be found [here](https://github.com/puppeteer/puppeteer)
 
-## Goal
+### Goal
 By the end of this tutorial, you should be able to get data from any website and display it on a web page.
 
-## Prerequisites
+### Prerequisites
 To be able to follow along in this tutorial, you will need to have an understanding of the following concepts:
 - Basic knowledge of HTML and CSS.
 - Intermediate JavaScript knowledge.
@@ -32,7 +32,7 @@ To be able to follow along in this tutorial, you will need to have an understand
 
 > You should note that not all websites allow the scraping of data. Make sure to check a website's policy before you scrape data from it. In this article, we will scrape Amazon. Amazon allows scraping as long as you extract publicly available data such as product information, price, and reviews.
 
-## Setting up our project
+### Setting up our project
 Open your code editor and create a folder named price-tracker.
 Then, open your terminal and type:
 
@@ -63,7 +63,7 @@ npm install puppeteer
 
 When you install puppeteer, it automatically downloads a recent/updated version of chromium.
 
-## Setting up our server
+### Setting up our server
 To start our NodeJs server with Express, we create a file named `index.js` that is used as the entry point.
 
 Open the file and add the following code:
@@ -97,7 +97,7 @@ nodemon index.js
 
 Now when you navigate to http://localhost:3000/, you will see the message "Server is running". This means that you have successfully started the server, and you can now proceed to the next steps.
 
-## Setting up puppeteer
+#### Setting up puppeteer
 Since our server is working, it's time we set up puppeteer to get started with web scraping. In our **index.js** file, add the following line of code just below the line that sets the port number:
 
 ```js
@@ -159,7 +159,7 @@ Code explanation:
 - We assign the results of the `evaluate` method to a variable named `html`.
 - Then, the `checkDetails` function returns `html`, which is a variable that contains the information that we grabbed from the webpage.
 
-## Setting up the express route
+#### Setting up the express routes
 We need to set up an express route that will get the scraped data and send it to our client-side once the specific route is invoked.
 
 ```js
@@ -222,7 +222,7 @@ app.listen(port, () => {
 });
 ```
 
-## Setting up our frontend
+### Setting up our frontend
 Inside our project directory, create a folder named public. Inside the folder, create two files named `index.html` and `main.js`.
 
 Open the index.html and paste the code below:
@@ -304,7 +304,7 @@ This Js file listens to a click event on the button and uses an asynchronous fun
 
 To learn more about the fetch API, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-## Starting our application
+### Starting our application
 Save all your files and open the terminal. Type the following command and press enter:
 
 ```bash
@@ -315,9 +315,10 @@ This will start the server. Open your browser and navigate to this URL: Example 
 
 The page contains a button with the text "Check Price". Click on it and wait for the details of the keyboard to be displayed.
 
-## Conclusion
-This example is simple but it is a good introduction to web scraping.
+### Conclusion
+This example is simple but it is a good introduction to web scraping. 
 Always make sure to check whether a website allows web scraping before you scrape data.
+Now that we have managed to scrape and track the price of a single product, go ahead and try to track multiple products. You can also create a web app that tracks prices of similar items from different sellers, compares the prices and suggests to the user from which seller he/she should buy from.
 
 Happy Scraping!
 
