@@ -1,8 +1,25 @@
-Visual Basic.net is a multi-paradigm, object-oriented programming language. We implement it in the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) developed by Microsoft. They invented visual Basic in 2001 to replace Visual Basic 6.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-visual-basic-net/
+title: Getting Started with Visual Basic.NET
+description: In this article we will discuss VB.NET which is a multi-paradigm, object oriented programming language. It is used to create web applications with modern features like performance counters, file systems, and event logs.
+author: felix-vaati
+date: 2021-09-06T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/getting-started-with-visual-basic-net/hero.png
+   alt: VB Dot NETProtocol example image
+---
+
+Visual Basic.net is a multi-paradigm, object-oriented programming language. We implement it in the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) developed by Microsoft. They invented Visual Basic in 2001 to replace Visual Basic 6.
 
 Visual Basic.Net is pronounced as “Visual basic dot net. “ We commonly abbreviate it as VB.NET.
 
-Although VB.NET is a developed version of Visual Basic 6, it is not compatible with it, .i.e. we cannot compile code written in Visual Basic 6  under VB.NET
+Although VB.NET is a developed version of Visual Basic 6, it is not compatible with it, .i.e. we cannot compile code written in Visual Basic 6 under VB.NET.
 
 ### Why VB.NET?
 
@@ -26,29 +43,29 @@ To get started, you will need a development environment. This is where we will w
 
 ### Installing Visual Basic.Net 
 
-After you have selected Visual Studio, choose .NET desktop to develop and click *Modify*.
+- After you have selected Visual Studio, choose .NET desktop to develop and click *Modify*.
 
 ![vscode](/engineering-education/getting-started-with-visual-basic-net/visualstuio1.jpg)
 
-After the installation, click *Launch* to get started.  
+- After the installation, click *Launch* to get started.  
 
 On the new window, choose *Create a new project*.
 
 ![newproject](/engineering-education/getting-started-with-visual-basic-net/visualtudio2.png)
 
-Once you have selected *Create a new project*, choose *” Install more tools and features"* then click *Next*.
+- Once you have selected *Create a new project*, choose *” Install more tools and features"* then click *Next*.
 
 ![createproject](/engineering-education/getting-started-with-visual-basic-net/newproject1.png)
 
-Pick *Visual Basic* from the drop-down menu, then select *Console Application* from the list and click *Next*.
+- Pick *Visual Basic* from the drop-down menu, then select *Console Application* from the list and click *Next*.
 
 ![picktemplate](/engineering-education/getting-started-with-visual-basic-net/newproject.png)
 
-Enter your preferred project name and click *Next*. Here, I will name my file *hello world*.
+- Enter your preferred project name and click *Next*. Here, I will name my file *hello world*.
 
 ![pickname](/engineering-education/getting-started-with-visual-basic-net/newproject2.png)
 
-After selecting the target framework you desire, click *Create*.
+- After selecting the target framework you desire, click *Create*.
 
 Visual Code will auto-generate some VB.NET code for you.
 
@@ -56,7 +73,7 @@ Visual Code will auto-generate some VB.NET code for you.
 
 Let’s look at the code.
 
-We have the code that was generated below. It’s a *Hello World* program.
+We have the code generated below. It’s a *Hello World* program.
 
 ```vb  
 
@@ -86,7 +103,7 @@ Hello World!
 
 C:\Users\sa\source\repos\helloworld\helloworld\bin\Debug\netcoreapp3.1\helloworld.exe (process 6544) exited with code 0.
 
-To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console.
+To automatically close the Console when debugging stops, enable Tools->Options->Debugging->Automatically close the Console.
 
 Press any key to close this window . . .
 
@@ -120,7 +137,7 @@ End Module 
 
 ```
 
-A module defines a reference sort obtainable throughout its namespace. For our *helloworld* program, we have declared our module and named it `Program`. Inside this module, we will define methods to be used by our program. To close our module, we use the `End` keyword.
+A module defines a reference sort obtainable throughout its namespace. For our *HelloWorld* program, we have declared our module and named it `Program.` Inside this module, we will define methods to be used by our program. To close our module, we use the `End` keyword.
 
 **Line 3:** 
 
@@ -152,7 +169,7 @@ Alternatively, we can use `Console.Write()` instead of `Console.WriteLine()` .Th
 
 To read the next **characters** from a standard input stream, we use `Console.ReadLine()`.
 
-`Console. Read()` reads the next **Character** from the input.
+`Console.Read()` reads the next **Character** from the input.
 
 `Console.ReadKey()` gets the next character pressed by the user. Then, we display the key in the console window.
 
@@ -168,7 +185,7 @@ In VB.NET, comments start with a single apostrophe `’`.
 
 ```vb
 
-    ‘This is a comment in VB.NET
+    ‘This is a comment in VB.NET.
 
 ```
 
@@ -282,3 +299,6 @@ In this tutorial, we looked at :
 - Tips on writing good comments
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
