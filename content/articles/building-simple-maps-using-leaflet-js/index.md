@@ -25,7 +25,7 @@ It has been used to build web applications such as the [World Weather App](https
 This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js library.
 
 ### Prerequisites
-To grasp this guide, the reader must have a level of knowledge on:
+To follow this guide, the reader should understand:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 - [HTML (Hypertext Markup Language)](https://developer.mozilla.org/en-US/docs/Web/HTML).
 - [CSS (Cascading Style Sheet)](https://developer.mozilla.org/en-US/docs/Web/css).
