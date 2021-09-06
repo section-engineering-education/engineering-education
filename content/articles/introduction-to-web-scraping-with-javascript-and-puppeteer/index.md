@@ -15,7 +15,7 @@ images:
 ---
 Most of our web apps require data to process and present to the user. There are many sources of data like databases and APIs.
 <!--more-->
-But we can also get data from any website even if it does not provide a public API. This process is known as **web scraping**, and it has been described in this article. 
+But we can also get data from any website even if it does not provide a public API. This process is known as **web scraping**, and we will take a look at it in this article. 
 
 We will use Puppeteer and Node.js(a JavaScript runtime environment). More information about puppeteer can be found [here](https://github.com/puppeteer/puppeteer)
 
@@ -106,7 +106,7 @@ const puppeteer = require("puppeteer");
 
 The above code imports the puppeteer package into our app.
 
-In this tutorial, this is the URL of the product that we will be tracking on amazon: https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/
+In this tutorial, this is the [URL](https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/) of the product that we will be tracking on amazon: 
 
 So we assign the URL to a constant using the line of code below:
 
@@ -132,7 +132,7 @@ The code is explained below:
 
 Next up, we need to grab the page markup and extract the exact information we need.
 
-Before doing this, open your browser and go to the URL provided (https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/). From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
+Before doing this, open your browser and go to the [URL](https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/) provided . From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
 1. Right-click on the image and select the **inspect** option.
 2. The action above will open the developer tools. On the elements tab, you will see the page's markup, specifically the **img** since it's the one we are inspecting. Note the **id** of the image from the attributes of the image and note it down somewhere. In this case, the **id** is **landingImage**.
 3. Next up, right-click on the price of the keyboard and select **inspect**. Note down the **id** of the span containing the price of the keyboard. In this case, the id is **priceblock_ourprice**.
