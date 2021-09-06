@@ -1,10 +1,9 @@
-JavaFX is an open-source Java framework that is used to create, develop, and deliver highly portable hardware-accelerated user interfaces. It is used to create GUI's for Rich Internet Applications (RIA), Web, desktop, and embedded and mobile applications. Login and Sign-up forms have a unique design which makes the site presentable and of a unique design.
+JavaFX is an open-source Java framework. It's used to create, develop, and deliver portable hardware-accelerated user interfaces. JavaFX creates GUI's for Rich Internet Applications (RIA), Web, desktop, and embedded and mobile applications. For example, login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
 
 In this article, you will learn how to build a JavaFX Login and Sign-up User Interface(UI).
 
 ### Table of Content
 
-- [Table of Content](#table-of-content)
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [What is JavaFX](#what-is-javafx)
