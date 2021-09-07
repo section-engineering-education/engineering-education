@@ -1,10 +1,10 @@
  
 
-# How to build a digital clock with only HTML, CSS, and JavaScript
+title: How to build a digital clock with only HTML, CSS, and JavaScript
 
 ### Introduction
 
-The web made almost everything possible, and the emergence of JavaScript as the programming language of the web enables us to see our code live as they appear on the web and give us the ability to interact with web content. This article seeks to use this important tool of the web to build a digital clock that runs on the web with other web-based technologies such as HTML, CSS.
+The web made almost everything possible. The emergence of JavaScript as the programming language of the web enables us to see our code live and interact with web content. This article seeks to use this important tool to build a digital clock that runs on the web with other web-based technologies such as HTML, CSS.
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ The reader should have basic knowledge of:
 
 At the end of this tutorial, readers should be able to:
 
-- Understand JavaScript setInterval built-in method
+- Understand Javascript's built-in `setInterval` function
 
 - Know how to use the JavaScript Date class
 
@@ -40,23 +40,19 @@ At the end of this tutorial, readers should be able to:
 
 #### HTML
 
-This is a markup language that gives the web content its structure, it is also referred to as the skeleton of the web. HTML is an abbreviation meaning Hypertext Markup Language.
+HTML is a markup language that gives the web content its structure, it is also referred to as the skeleton of the web. HTML is an abbreviation meaning Hypertext Markup Language.
 
 #### CSS
 
-It is an abbreviation meaning Cascading Style Sheet, it is the tool used to add designs like colors to our web content. It is the design, style, and formatting tool of web pages.
+CSS is an abbreviation meaning Cascading Style Sheet, it is the tool used to add designs like colors to our web content. It is the design, style, and formatting tool of web pages.
 
 #### JavaScript
 
-It is the scripting language of the web and it is also a lightweight interpreted language that compiles at runtime.
+JavaScript is the scripting language of the web and it is also a lightweight interpreted language that compiles at runtime. It is the language that adds interactivity to the web content hence it is widely in use. In this tutorial, we will use these tools to build a digital clock that displays the time of the day (hours, minutes, and seconds), the day, month, and the year.
 
-It is the language that adds interactivity to the web content hence it is widely in use. 
+### Implementation
 
-In this tutorial, we will use these tools to build a digital clock that displays the time of the day (hours, minutes, and seconds), the day, month, and the year.
-
-#### Implementation
-
-To implement this tutorial, first, we need to create a folder in which you’ll create HTML, CSS, and JavaScript files with their respective extension(.html, .css, .js) using any code editor of your choice but for this tutorial, I’d prefer you use VScode.
+To implement the clock, first, we need to create a folder for our HTML, CSS, and JavaScript files with their respective extensions (.html, .css, .js). You could use any editor you wish but for this tutorial, I’d prefer you use vscode.
 
 #### First step
 
@@ -65,7 +61,6 @@ Create your ```HTML``` file, name it ```index.html```.
 The code snippet below shows the HTML file structure.
 
 ```html
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -91,59 +86,44 @@ To link JavaScript file and CSS file in HTML file, ```script``` and ```link`` ta
 
 #### Second step
 
-Create a JavaScript file, in it declare a function, I call mine ```displayTime```. In this function declare a variable and assign the JavaScript date object to it. But before we go ahead, what is a *Function*?
+Create a JavaScript file, in it declare a function, I call mine ```displayTime```. In this function, declare a variable and assign the JavaScript date object to it. But before we go ahead, what is a *Function*?
 
-Function in JavaScript is almost the same as what is known as a method in Java, it is a set of statements or codes that performs an action. For instance, you’re writing a program and you need to calculate the multiplication of two values in different instances in your code, without function or method you’ll need to always repeat the same code over and over whenever you want to multiply two numbers but with a function, you write the code once and call the function that does the multiplication whenever you have the need to calculate the multiplication of two numbers. I hope this is clear enough? Functions help for code modularity and for a cleaner code, the function is expected to perform just one task in this case multiplication.
+A function in JavaScript is almost the same as what is known as a method in Java, it is a set of statements or code that performs an action. For instance, you’re writing a program and you need to multiply two values in different instances in your code. Without a function or method, you’ll need to always repeat the same code over and over whenever you want to multiply two numbers. With a function, you write the code once and call the function that does the multiplication whenever you need it. I hope this is clear enough. Functions help for code modularity and cleanliness. The function is expected to perform just one task in this case multiplication.
 
 Here is a code snippet to explain this better:
 
 ```js
-
 //function declaration
 
 function displayTime(){
-
    //variable
-
    const timeNow = new Date();
-
 }
-
 ```
 
-All we need to be able to build our digital clock will be in the function block apart from the ```setInterval``` method that takes the function as a parameter. The ```setInterval```, is a method in JavaScript that takes two parameters, a function and the time it will take before the function execute.
+All we need to build our digital clock will be in the function block apart from the ```setInterval``` method. ```setInterval```, is a method in JavaScript that takes two parameters, a function and the time it will take before the function executes.
 
 Here is the syntax on how to represent ```setInterval```:
 
 ```js
-
 setInterval(displayTime, 1000);
-
 ```
 
-From the code above it means that the function ```displayTime``` will keep executing after every 1000 milliseconds. Now that we've got this out of the way, let's go on to declare other variables that will take hours, minutes, seconds, days of the week, months, year, and period of the day.
+From the code above it means that the function ```displayTime``` will keep executing after every 1000 milliseconds. Now that we've got this out of the way, let's go on to declare other variables. These will take the hours, minutes, seconds, days of the week, months, year, and period of the day.
+
 
 ```js
-
 let hours = timeNow.getHours();
-
 let minutes = timeNow.getMinutes();
-
 let seconds = timeNow.getSeconds();
-
 let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
 let today = weekDay[timeNow.getDay()];
-
 let months = timeNow.toLocaleString("default", { month: "long" });
-
 let year = timeNow.getFullYear();
-
 let period = "AM";
-
 ```
 
-If we look closely, you will notice that we're using the ```timeNow``` variable to access the various methods in the JavaScript *date* class. We declared it up above in our function block.
+> If we look closely, you will notice that we're using the ```timeNow``` variable to access the various methods in the JavaScript *date* class. We declared it up above in our function block.
 
 - Hours, minutes, and seconds are assigned to the ```hours```, ```minutes```, and ```seconds``` variables.
 
@@ -151,38 +131,29 @@ If we look closely, you will notice that we're using the ```timeNow``` variable 
 
 - The ```today``` variable gets a particular day from the ```weekDay``` collection.
 
-- The ```months``` variable gets the string representation of months of the year. We can use ```timeNow.getMonths```to get months of the year but it is the number representation that will be printed using this method. Hence, the need to use the ```toLocaleString``` method that converts the month to string. The string *long* in the parenthesis means the complete spelling of the months should be printed, if you don't want that you can use *short* instead of long, and Feb instead of February will be printed for instance.
+- The ```months``` variable gets the string representation of months of the year. We can use ```timeNow.getMonths``` to get months of the year but it is the number representation that will be printed using this method. Hence, the need to use the ```toLocaleString``` method that converts the month to string. The string *long* in the parenthesis means the complete spelling of the months should be printed. If you don't want that you can use *short* instead of long, and Feb instead of February will be printed for instance.
 
 - The ```year``` variable gets the year from the ```getFullYear()``` method.
 
 - The ```period``` variable is initialized to *AM*, this prints the period of the day.
 
-I think that is enough explanation up there. Our next step would be to couple all of these variables in the function, here is how:-
+I think that is enough explanation up there. Our next step would be to couple all of these variables in the function, here is how:
 
 ```js
-
 function displayTime(){
 
    const timeNow = new Date();
 
    let hours = timeNow.getHours();
-
    let minutes = timeNow.getMinutes();
-
    let seconds = timeNow.getSeconds();
-
    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
    let today = weekDay[timeNow.getDay()];
-
    let months = timeNow.toLocaleString("default", { month: "long" });
-
    let year = timeNow.getFullYear();
-
    let period = "AM"; 
 
 }
-
 ```
 
 That is what our function looks like right now. But this is not enough to build our digital clock, the reason you're reading this article. The next is to set our period.
@@ -197,79 +168,60 @@ let period = "AM";
 
 let hours = timeNow.getHours();
 
-//write a condition that set our period to AM or PM
+// write a condition that set our period to AM or PM
 
 if(hours > 12) {
-
    hours -= 12;
-
    period = "PM";
-
-   /*This block checks whether the hour is greater than 12 and if that is true, 12 is subtracted from the hour and the result is assigned back to ```hour``` then the period is set to PM. 12 is subtracted since we're building a 12-hour time clock*/
-
+   /*This block checks whether the hour is greater than 12 and if that is true, 12 is subtracted from the hour. The result is then assigned back to ```hour``` and the period is set to PM. 12 is subtracted since we're building a 12-hour time clock*/
 }
 
 if(hours == 0) {
-
    hours = 12;
-
    period = "AM";
-
-   /*This block checks whether hour is equal to or is 0 and if that is true, hour is set to 12 then period is set to AM. 12 is assigned to hours since we're building a 12 hour time clock*/
-
+  /*This block checks whether the hour is greater than 12 and if that is true, 12 is subtracted from the hour. The result is then assigned back to ```hour``` and the period is set to PM. 12 is subtracted since we're building a 12-hour time clock*/
 }
 
 ```
 
-The next step is to set our clock display pattern. In our HTML file, we set our clock to display 2 digits for hours, seconds, and minutes (00:00:00). We need to write a program to conform to that pattern. In doing that, we will use *ternary operator*, represented as (?). 
+The next step is to set our clock display pattern. In our HTML file, we set our clock to display 2 digits for hours, seconds, and minutes (00:00:00). We need to write a program to conform to that pattern. In doing that, we will use *ternary operator*, represented as **?**. 
 
-What then is a ternary operator? The ternary operator is a conditional operator that takes three operands: A condition followed by a question mark (?), an expression to execute if the condition is true, followed by a colon (:) and another expression to execute if the condition is false. Simple right? It is a simpler way to write an if-else statement.
+What then is a ternary operator? The ternary operator is a conditional operator that takes three operands. The first being condition followed by a question mark (?). The second is an expression to execute if the condition is true, followed by a colon (:). Finally, the third operand is another expression to execute if the condition is false. Simple right? It is a simpler way to write an if-else statement.
 
 Here is the code snippet to illustrate that:
 
 ```js
-
 hours = hours < 10 ? "0" + hours : hours;
-
-//if hours is less than 10, set hour position to 0 plus hours else set position to hours
-
+// if hours is less than 10, set hour position to 0 plus hours else set position to hours
 minutes = minutes < 10 ? "0" + minutes : minutes;
-
-//if minutes is less than 10, set minutes position to 0 plus hours else set position to hours
-
+// if minutes is less than 10, set minutes position to 0 plus minutes else set position to minutes
 seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//if seconds is less than 10, set seconds position to 0 plus hours else set position to hours
-
+// if seconds is less than 10, set seconds position to 0 plus seconds else set position to seconds
 ```
 
 I hope the ternary operator is clear to you now.
 
-We are almost done, the next thing is to set our time, I mean current time. To do that, we need to declare a variable, I call mine ```currentTime```. Here is how:
+We are almost done, the next thing is to set our current time. To do that, we need to declare a variable called ```currentTime```. Here is how:
 
 ```js
-
 let currentTime = hours + ":" + minutes + ":" + seconds + period;
-
 ```
 
-The ```currentTime``` variable initialization takes the ```hours``` values, a colon, ```minutes``` values, a colon, ```seconds``` values and ```period```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```currentTime``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
+The ```currentTime``` variable initialization takes ```hours```, a colon, ```minutes```, a colon, ```seconds```, and ```period```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```currentTime``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
 
-Our next task is to display our clock on the web page and to be able to do this, we need a way that allows our JavaScript to manipulate our HTML. This is where the knowledge of the Document Object Model (DOM) becomes handy.
+Our next task is to display our clock on the web page and to do this, we need our JavaScript to manipulate our HTML. This is where the knowledge of the Document Object Model (DOM) becomes handy.
 
-There are various document methods but in this tutorial, we'll be using  ```document.getElementById``` with this we'll be able to access an HTML element with a particular *id* and in this case *Digital_Clock*.
+There are various document methods but in this tutorial, we'll be using  ```document.getElementById```. With this, we'll be able to access an HTML element with a particular *id*. In this case, we will access the element with the id *Digital_Clock*.
 
 Here is the code snippet to illustrate how:
 
 ```js
-
 document.getElementById('Digital_Clock').innerHTML =  currentTime + " " + today +" " + months + " " + year;
-
 ```
 
-The ```.innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Digital_Clock``` is set to ```currentTime```, ```today```, ```months```, ```year```. 
+The ```innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Digital_Clock``` is set to ```currentTime```, ```today```, ```months```, ```year```. 
 
-The last thing is a function call or invocation. After our function has been declared, given a function body, it will still not work unless it is invoked or called. This is done by placing the function name immediately after the function closing curly braces (}).
+The last thing is a function call or invocation. After our function has been declared, given a function body, it will still not work unless it is invoked or called. This is done by placing the function name and brackets immediately after the function's closing curly braces (}).
 
 This is how our final code will look:
 
@@ -312,7 +264,7 @@ function displayTime() {
 displayTime();
 ```
 
-Did you see how we intentionally declare all our variables within the function? The goal is to make them locally scope to the function.
+Did you see how we intentionally declare all our variables within the function? The goal is to make them in the function's local scope.
 
 #### Third Step
 
@@ -321,34 +273,33 @@ With what we have now, our code should work but we need to add style to it to ma
 We need to create a CSS file and add these styles. I call mine ```index.css```.
 
 ```css
-
 * {
      padding: 0;
      margin: 0;
      box-sizing: border-box;
      font-family: 'IBM Plex Sans', sans-serif;
 }
- body {
+body {
      display: flex;
      align-items: center;
      justify-content: center;
      height: 100vh;
      background: #000;
 }
- body{
+body{
      padding: 0;
      margin: 0;
      box-sizing: border-box;
      font-family: 'IBM Plex Sans', sans-serif;
 }
- body {
+body {
      display: flex;
      align-items: center;
      justify-content: center;
      height: 100vh;
      background: #000;
 }
- .glow {
+.glow {
      font-size: 60px;
      color: #fff;
      font-weight: bold;
@@ -356,16 +307,14 @@ We need to create a CSS file and add these styles. I call mine ```index.css```.
      -moz-animation: glow 1s ease-in-out infinite alternate;
      -webkit-animation: glow 1s ease-in-out infinite alternate;
 }
- 
 ```
 
 ### Conclusion
 
-In this article, we have learned about function declaration and function call, we've also learned about the ternary operator and JavaScript date class. We talked about how to get the string value of months in a year using the toLocaleString method.
+In this article, we have learned about function declaration and function calls. We've also learned about the ternary operator and JavaScript date class. Finally, talked about how to get the string value of months in a year using the toLocaleString method.
 
-We have also been able to build our digital clock using only HTML, CSS, and JavaScript.
-
+With all this, we have been able to build our digital clock using only HTML, CSS, and JavaScript.
 
 ### References
--[JavaScript date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
--[W3school JavaScript date object](https://www.w3schools.com/js/js_dates.asp)
+- [JavaScript date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3school on the JavaScript date object](https://www.w3schools.com/js/js_dates.asp)
