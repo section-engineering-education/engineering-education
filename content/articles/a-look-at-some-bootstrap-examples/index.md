@@ -15,7 +15,7 @@ images:
 ---
 [Bootstrap](<https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)>) is a front-end framework for developing responsive, mobile-first projects on the web. It includes a powerful grid system, a flexible media object, and a powerful color system.
 <!--more-->
-It is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
+It is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
 
 ### Advantages of using bootstrap:
 1. It saves time and effort - With bootstrap, you can focus on writing your content, and the framework will take care of the rest, thus, saving you time and effort.
