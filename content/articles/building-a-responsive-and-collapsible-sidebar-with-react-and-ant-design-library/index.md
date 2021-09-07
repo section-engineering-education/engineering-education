@@ -55,57 +55,79 @@ Npm start
 
 #### Step 3: Creating the Navbar Components:
 
-In our `src` folder we will create a `Navbar.js` file which will accommodate the Navbar component. The `Navbar`will be fixed at the top of our page. It will contain a logo, texts, icons and a button. To achieve that, in the`navbar.js` file we implement the code snippet below
+In our `src` folder we will create a `Navbar.js` file which will accommodate the Navbar component. `Navbar` components are usually displayed right above other components on the page. It will contain a logo, texts, icons and a button. To achieve that, in the`navbar.js` file we implement the code snippet below
 
 ```JavaScript
 import React, { useState } from "react";
-import LeftMenu from "./Sections/LeftMenu";
-import RightMenu from "./Sections/RightMenu";
 import { Drawer, Button } from "antd";
 import { AlignRightOutlined } from "@ant-design/icons";
 import { MiniSidebar } from "./Sidebar ";
 import "./Navbar.css";
 
 function NavBar() {
-  const [visible, setVisible] = useState(false);
+  const [shown, setShown] = useState(false);
 
-  const showDrawer = () => {
-    setVisible(true);
+  const showSidebar = () => {
+    setShown(true);
   };
 
-  const onClose = () => {
-    setVisible(false);
+  const drawerClosed = () => {
+    setShown(false);
   };
 
+function LeftMenu({mode}) {
+  return (
+    <Menu mode={mode}>
+    <Menu.Item key="mail">
+      <Link to="/">Home</Link>
+    </Menu.Item>
+    <Menu.Item key="subscription">
+      <Link to="/subscription">Subscription</Link>
+    </Menu.Item>
+  </Menu>
+  )
+}
+function LeftMenu({mode}) {
+ return (
+      <Menu mode={mode}>
+        <Menu.Item key="mail">
+          <a href="/login">Signin</a>
+        </Menu.Item>
+        <Menu.Item key="app">
+          <a href="/register">Signup</a>
+        </Menu.Item>
+      </Menu>
+    )
+}
   return (
     <nav
       className="menu"
       style={{ position: "fixed", zIndex: 5, width: "100%" }}
     >
-      <div className="menu__logo">
+      <div className="main-logo">
         <a href="/">Logo</a>
       </div>
-      <div className="menu__container">
-        <div className="menu_left">
+      <div className="menu-container">
+        <div className="left-menu">
           <LeftMenu mode="horizontal" />
         </div>
-        <div className="menu_rigth">
+        <div className="right-menu">
           <RightMenu mode="horizontal" />
         </div>
         <Button
-          className="menu__mobile-button"
+          className="small-screen-btn"
           type="primary"
-          onClick={showDrawer}
+          onClick={showSidebar}
         >
           <AlignRightOutlined size="medium" />
         </Button>
         <Drawer
-          title="Basic Drawer"
+          title="Sidebar Drawer"
           placement="left"
-          className="menu_drawer"
+          className="menu-drawer"
           closable={false}
-          onClose={onClose}
-          visible={visible}
+          onClose={drawerClosed}
+          visible={shown}
         >
           <MiniSidebar />
         </Drawer>
@@ -127,88 +149,87 @@ We have created a raw navbar that requires styling. To do that, we create a `Nav
 @import "~antd/dist/antd.css";
 
 .menu {
-  padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
+  border-bottom: solid 1px #f5e2e2;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  padding: 0px 19px;
+  box-shadow: 1 0 28px #dbd6d6;
+  background-color: #fff;
 }
 
-.menu__logo {
-  width: 150px;
-  float: left;
+.main-logo {
+  width: 152px;
+  float: left !important;
 }
 
-.menu__logo a {
-  display: inline-block;
+.main-logo a {
+  padding: 18px 21px;
   font-size: 20px;
-  padding: 19px 20px;
+  display: inline-block;
 }
 
-.menu__container .ant-menu-item {
+.menu-container .ant-menu-item {
   padding: 0px 5px;
 }
 
-.menu__container .ant-menu-submenu-title {
+.menu-container .ant-menu-submenu-title {
   padding: 10px 20px;
 }
 
-.menu__container .ant-menu-item a,
-.menu__container .ant-menu-submenu-title a {
+.menu-container .ant-menu-item a,
+.menu-container .ant-menu-submenu-title a {
   padding: 10px 15px;
 }
 
-.menu__container .ant-menu-horizontal {
+.menu-container .ant-menu-horizontal {
   border-bottom: none;
 }
 
-.menu__container .menu_left {
+.menu-container .left-menu {
   float: left;
 }
 
-.menu__container .menu_rigth {
+.menu-container .right-menu {
   float: right;
 }
 
-.menu__mobile-button {
+.small-screen-btn {
+  height: 33px;
+  padding: 7px;
+  margin-top: 9px;
+  display: none !important;
   float: right;
-  height: 32px;
-  padding: 6px;
-  margin-top: 8px;
-  display: none !important; /* use of important to overwrite ant-btn */
   background: #3e91f7;
 }
 
-.menu_drawer .ant-drawer-body {
-  padding: 0 !important;
+.menu-drawer .ant-drawer-body {
+  padding: 0 1px !important;
 }
 
-/* align header of Drawer with header of page */
-.menu_drawer .ant-drawer-header {
-  padding: 14px 24px !important;
+.menu-drawer .ant-drawer-header {
+  padding: 15px 23px !important;
 }
 
 @media (max-width: 700px) {
-  .menu__mobile-button {
+  .small-screen-btn {
     display: inline-block !important;
   }
 
-  .menu_left,
-  .menu_rigth {
-    display: none;
+  .left-menu,
+  .right-menu {
+    display: none !important;
   }
 
-  .menu__logo a {
-    margin-left: -20px;
+  .main-logo a {
+    margin-left: -22px;
   }
 
-  .menu__container .ant-menu-item,
-  .menu__container .ant-menu-submenu-title {
-    padding: 1px 20px;
+  .menu-container .ant-menu-item,
+  .menu-container .ant-menu-submenu-title {
+    padding: 1.5px 19px;
   }
 
-  .menu__logo a {
-    padding: 10px 20px;
+  .main-logo a {
+    padding: 11px 19px;
   }
 }
 
@@ -298,7 +319,7 @@ Note: Ensure all the Icons are properly imported from `@ant-design/icons` depend
 
 #### Step 6: Customization and styling the Sidebar Component:
 
-It is time to customize our `Sidebar`. We will go ahead to add the styles and responsiveness to improve the appearance of our Sidebar.
+It is time to customize our `Sidebar`. We will go ahead and include the styles and responsiveness to improve the appearance of our Sidebar.
 To do that, we create a `Sidebar.css` file and implement the code snippet below.
 
 ```CSS
