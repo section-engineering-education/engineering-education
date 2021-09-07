@@ -1,5 +1,9 @@
 ### Introduction
 Databases hold a lot of critical and highly sensitive data for various organizations. For this reason, it is crucial to monitor them and hence make sure they are securely accessed. The article will aim at enlightening the reader on how to monitor a Microsoft SQL Server database using Solar Winds Database Performance Analyzer (Self-Managed). This is a software offered by Solar Winds and is very useful in attaining the security of a database.
+By the end of this tutorial, the user will be able to know how to:
+- Install Database Performance Analyzer on a windows device.
+- How to register a MySQL server for monitoring on Solar winds.
+- How to register database instances for monitoring.
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -10,52 +14,52 @@ Databases hold a lot of critical and highly sensitive data for various organizat
 - [Best practices](#best-practices)
 - [Conclusion](#conclusion)
 ### Prerequisites
-1.	Correct and needed credentials
-2.	Correct system requirements
-3.	A powerful server where the DPA (Database performance analyzer) will be installed.
-4.	A repository database
-5.	Customer portal account to help access licenses and downloads. The customer portal can be accessed using this [link](https://customerportal.solarwinds.com/).
-6.	A local administrator account to be used by the server hosting DPA.
-7.	Updated operating system.
-8.	Open the following ports on the server and firewall: 8124, 8123, 8127, 443, 80, and 587.
-9.	Exclude the DPA directory from antivirus scanning to ensure smooth installation: C:\Program Files\SolarWinds\DPA
+1. Correct and needed credentials
+2. Correct system requirements
+3. A powerful server where the DPA (Database performance analyzer) will be installed.
+4. A repository database
+5. Customer portal account to help access licenses and downloads. The customer portal can be accessed using this [link](https://customerportal.solarwinds.com/).
+6. A local administrator account to be used by the server hosting DPA.
+7. Updated operating system.
+8. Open the following ports on the server and firewall: 8124, 8123, 8127, 443, 80, and 587.
+9. Exclude the DPA directory from antivirus scanning to ensure smooth installation: C:\Program Files\SolarWinds\DPA
 
 Note: DPA is short for Database Performance Analyzer.
 
 ### Phase 1
 
 ### Installing the DPA on windows
-1.	If you're installing a trial version, [click here](https://www.solarwinds.com/database-performance-analyzer) or the SolarWinds Customer Portal to get the installation file.
-2.	Log in to the Windows server using the administrator account.
-3.	Extract the ZIP file you downloaded into a traceable folder.
+- If you're installing a trial version, [click here](https://www.solarwinds.com/database-performance-analyzer) or the SolarWinds Customer Portal to get the installation file.
+- Log in to the Windows server using the administrator account.
+- Extract the ZIP file you downloaded into a traceable folder.
 
-![File Extraction](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/File Extraction.png)
+![File Extraction](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/file-extraction.png)
 
-4.	Open `SolarWindsDPASetup-x64.exe` and run it. Click next once the installer has started.
+- Open SolarWindsDPASetup-x64.exe and run it. Click next once the installer has started.
 
-![Installation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Installation.png)
+![Installation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/installation.png)
 
-5.	Select "I accept the terms in the License Agreement" if you agree to the conditions of the license agreement.
+- Select "I accept the terms in the License Agreement" if you agree to the conditions of the license agreement.
 
-![Accept License](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Accept License.png)
+![Accept License](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/accept-license.png)
 
-6.	To install DPA in a different location, go to change and enter the new location.
+- To install DPA in a different location, go to change and enter the new location.
 
-![Change Directory](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Change Directory.png)
+![Change Directory](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/change-directory.png)
 
-7.	If the “Do you wish to configure Microsoft Defender check” box appears, select it to create an exception that prevents Microsoft Defender from scanning the Find SQL indexes folder.
+- If the “Do you wish to configure Microsoft Defender check” box appears, select it to create an exception that prevents Microsoft Defender from scanning the Find SQL indexes folder.
 
-![No Configuration](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/No Configuration.png)
+![No Configuration](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/no-configuration.png)
 
-8.	This option can help prevent CPU spikes if the Find SQL feature is enabled. After the installation, you can manually generate an exception.
+- This option can help prevent CPU spikes if the Find SQL feature is enabled. After the installation, you can manually generate an exception.
 Note: This check box is not visible if there is a Microsoft Defender exception or the antivirus is disabled.
-9.	To begin the installation, click Next, then Install.
-10.	Click Finish after the installation is finished.
+- To begin the installation, click Next, then Install.
+- Click Finish after the installation is finished.
 
-![DPA Finish](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/DPA Finish.png)
+![DPA Finish](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/dpa-finish.png)
 Note: After a successful installation, access URLs are displayed as shown below.
 
-![URLs](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/URLs.png)
+![URLs](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/urls.png)
 
 ### Phase 2
 
@@ -63,28 +67,28 @@ Note: After a successful installation, access URLs are displayed as shown below.
 #### Step 1
 Select Microsoft SQL in the window shown below.
 
- ![SQL Selection](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/SQL Selection.png)
+ ![SQL Selection](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/sql-selection.png)
 
 #### Step 2
 Enter the database connection details below
 
-![DB details](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/DB details.png)
+![DB details](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/db-details.png)
 
 #### Step 3
 Select the type of user to be used to log into the DPA account and also for the creation of the DPA repository.
 Note: Creating a new user account is recommended
 
-![Repository Admin User](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Repository Admin User.png)
+![Repository Admin User](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/repository-admin-user.png)
 
 #### Step 4:
 Confirm the details entered and then click "create a repository".
 
-![Repository Creation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Repository Creation.png)
+![Repository Creation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/repository-creation.png)
 
 #### Step 5:
 If the process completes successfully, the green message below will be displayed.
 
-![Success-Message](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Success-Message.png)
+![Success-Message](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/success-message.png)
 
 ### Phase 3
 
@@ -98,48 +102,48 @@ Identifying the privileged user
 #### Stage 1: Process Initiation
 Tap the button for “Register DB Instance for Monitoring” on DPA homepage.
 
-![Select Register Instance](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Select Register Instance.png)
+![Select Register Instance](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/select-register-instance.png)
 
 #### Stage 2 : Database selection
 Click Microsoft SQL Server under Self-Managed.
 
-![SQL Self-mananged](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/SQL Self-mananged.png)
+![SQL Self-mananged](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/sql-self-managed.png)
 
 #### Stage 3 : Input connection information
-1. Select Next and finish the other steps as described below:
-2. Input the connection information for the Monitored Database Instance enter the following connection information.
-3. When service for SQL Server Browser is available, enter the IP address or hostname as well as name of the instance, in the following format: Server\Instance.
-4. See the [Note](Note-:-Each-instance-must-be-registered-separately) below for a guide to register replicas if the registered instance has additional groups.  
-5. Otherwise, input the name of the server or its IP address, as well as the port number, if necessary.
+- Select Next and finish the other steps as described below:
+- Input the connection information for the Monitored Database Instance enter the following connection information.
+- When service for SQL Server Browser is available, enter the IP address or hostname as well as name of the instance, in the following format: Server\Instance.
+- See the [Note](Note-:-Each-instance-must-be-registered-separately) below for a guide to register replicas if the registered instance has additional groups.  
+- Otherwise, input the name of the server or its IP address, as well as the port number, if necessary.
 
-> NOTE: Each instance must be registered separately
+#### Note: Each instance must be registered separately
 
-1. Choose the authentication method you want to use. You can choose any option if Mixed Mode was selected during SQL Server installation.
-2. DPA can use the SYSADMIN login to register instances.
-3. In the SYSADMIN User field, type DOMAIN>username> for Windows authentication.
-4. Enter the credentials for authenticating SQL server.
-5. By default, SSL is requested. For server that do not support SSL, a simple connection is used.
-![Connection to SQL details](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Connection to SQL details.png)
+- Choose the authentication method you want to use. You can choose any option if Mixed Mode was selected during SQL Server installation.
+- DPA can use the SYSADMIN login to register instances.
+- In the SYSADMIN User field, type DOMAIN>username> for Windows authentication.
+- Enter the credentials for authenticating SQL server.
+- By default, SSL is requested. For server that do not support SSL, a simple connection is used.
+![Connection to SQL details](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/connection-to-sql-details.png)
 
 #### Stage 4: Enter the Monitoring User
-1. Create or define the account that will be used by DPA to collect data. A new account is recommended by Solar Winds. This ensures that enough rights are allocated.
+- Create or define the account that will be used by DPA to collect data. A new account is recommended by Solar Winds. This ensures that enough rights are allocated.
 
-![Monitoring User](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Monitoring User.png)
+![Monitoring User](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/monitoring-user.png)
 
-2. Click Yes to start a new account.
-3. As the authentication method, choose SQL Server.  Give the new account a user name and password, or leave them blank.
-3. To specify an existing account, select “let DPA configure an existing user” and then select any authentication method.
+- Click Yes to start a new account.
+- As the authentication method, choose SQL Server.  Give the new account a user name and password, or leave them blank.
+- To specify an existing account, select “let DPA configure an existing user” and then select any authentication method.
 
 #### Stage 5: Verify input information
 After you've double-checked the information, click the "Register Database Instance" button.
 
-![Summary](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Summary.png)
+![Summary](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/summary.png)
 
 #### Stage 6: Confirm registration.
-1. Return to the DPA's main page by clicking "Finish".
-2. After successful creation, the page below is displayed.
+- Return to the DPA's main page by clicking "Finish".
+- After successful creation, the page below is displayed.
 
-![Confirmation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/Confirmation.png)
+![Confirmation](/engineering-education/monitoring-microsoft-sql-server-using-solar-windows-database-analyzer/confirmation.png)
 
 ### Best practices
 
