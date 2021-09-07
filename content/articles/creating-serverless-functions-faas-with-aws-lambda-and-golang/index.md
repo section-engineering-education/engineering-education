@@ -24,7 +24,7 @@ For example, when a user clicks on a button in your web application, a specific 
 
 In this tutorial, we'll build a user profile generator function.
 
-The function will accept some user data and return a profile based on the data. After uploading the generator function to AWS lambda, we'll create a client program that communicates with user profile generating function on AWS Lambda.
+The function will accept some user data and return a profile based on the data. After uploading the generator function to AWS Lambda, we'll create a client program that communicates with the user profile generating function on AWS Lambda.
 
 If you are new to serverless computing, it is highly recommended to go through these articles:
 - [How to build apps with Serverless architecture](/how-to-build-apps-with-serverless-architecture/)
@@ -37,7 +37,7 @@ If you are new to serverless computing, it is highly recommended to go through t
 - Use `git clone https://github.com/Bamimore-Tomi/faas-golang.git` to download the source code for this demo
 - Install [Go 1.x](https://golang.org/doc/install) runtime on your machine
 
-### Setting up a AWS Lambda function
+### Setting up an AWS Lambda function
 1. After creating your AWS account, on the main dashboard, search for `Lambda`.
 
 ![search-aws-lambda](/engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/search-aws-dashboard.png)
@@ -58,7 +58,7 @@ Here, we specify the name of the function as `user-profile`.
 
 In the next section, we'll look at how to make a function that runs on AWS Lambda.
 
-### Creating an user-profile function in Golang
+### Creating a user-profile function in Golang
 In this section, we will see how to create a function that converts it into a zip file before we upload it on AWS Lambda.
 
 We need to install the `aws-lambda-go` package using:
@@ -102,7 +102,7 @@ In the program above, we created the `HandleInfoEvent` function. This function r
 
 Use the following steps to compile and zip the program:
 
-### Installation - Macos and Linux
+### Installation - MacOS and Linux
 
 1. Compile the executable:
 
