@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-boot-recaptcha-v3/
+title: Getting started with Spring Boot reCapture V3 authentication
+description: In this tutorial a reader will learn how to integrate Google reCapture V3 in a Spring Boot application
+author: david-mbochi
+date: 2021-09-07T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/spring-boot-recaptcha-v3/hero.jpg
+    alt: Getting started with Spring Boot reCapture V3 authentication
+---
+
+
 ### Introduction
 reCAPTCHA is a system that enables users to protects their sites from bots. ReCaptcha generates a score that ranges from `0` to `1`. If the score is less than `0.5`, there is a possibility a bot invoked the action, and if the score is greater than `0.5`, the action was not invoked by a bot. This tutorial will teach you how to Implement Google reCAPTCHA version 3 to protect Spring Boot login form. We will intercept the authentication during login and check if the score generated is less than `0.5`, then request the user to enter an OTP sent to their email or authenticate the user. 
 
@@ -647,7 +664,7 @@ When creating the login form, you add ReCaptcha to the site by adding the follow
         data-action='submit'>Submit</button>
 ```
 
-Create an `login.html` file and add the code snippet below.
+Create `login.html` file and add the code snippet below.
 ```html
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
