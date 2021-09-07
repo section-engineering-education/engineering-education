@@ -22,27 +22,27 @@ First, navigate to the website [replit.com](https://replit.com/languages/python3
 
 Let's import the sha256 constructor from the `hashlib module` by running the command below.
 
-```
+```python
     from hashlib import sha256
 ```
 Now let us instantiate the `sha256` class.
-```
+```python
     h = sha256()
 ```
 Using the `update()` method, we will now update the hash object.
-```
+```python
     h.update(b'test123')
 ```
 We will now use the `hexdigest()` method to digest the string passed via the `update()` method.
-```
+```python
     hash = h.hexdigest()
 ```
 Lastly, print the `hash` variable to output the result which happens to be the hashed form of the input.
-```
+```python
     print(hash)
 ```
 You can run the complete script once as shown below:
-```
+```python
     from hashlib import sha256
     h = sha256()
     h.update(b'python1990K00L')
@@ -50,7 +50,7 @@ You can run the complete script once as shown below:
     print(hash)
 ```
 Run the script and you will get an output as below:
-```
+```bash
    f84ad825bc3e5ccc7f5e35b6a5e83cb79a998f106e79410ae382c7d43019b6d6
 ```
 **Summary:** This process allows you to give input of a string that represents the password and you receive a hashed output.
