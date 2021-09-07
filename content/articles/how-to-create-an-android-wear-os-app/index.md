@@ -163,7 +163,7 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.wear.widget.BoxInsetLayout
-    xmlns:app="https://schemas.android.com/apk/res-auto"                                        
+    xmlns:app="https://schemas.android.com/apk/res-auto"
     xmlns:android="https://schemas.android.com/apk/res/android"
     xmlns:tools="https://schemas.android.com/tools"
     android:layout_width="409dp"
@@ -173,7 +173,7 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
       <TextView
           android:id="@+id/text_1"
           android:layout_height="wrap_content"
-          android:layout_width="match_parent"      
+          android:layout_width="match_parent"
           android:text="Hello world" />
   
     <FrameLayout
@@ -182,13 +182,13 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
         android:padding="8dp">
 
         <android.support.wear.widget.SwipeDismissFrameLayout
-            android:layout_width="match_parent"                                                
-            android:id="@+id/slide_dissmiss"                                                
+            android:layout_width="match_parent"
+            android:id="@+id/slide_dissmiss"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/test_content"
-                android:layout_height="wrap_content"      
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Slide"/>
         </android.support.wear.widget.SwipeDismissFrameLayout>
