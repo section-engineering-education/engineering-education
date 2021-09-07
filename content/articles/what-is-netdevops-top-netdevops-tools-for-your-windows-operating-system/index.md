@@ -23,6 +23,14 @@ This article will teach the basic concept of NetDevOps. Discuss the development 
 
 Network engineering is heavily carried on Linux-based OS. This article will help the network engineers who work on the Windows operating system know and learn the tools they need. Thus making it easier and faster to work as a network NetDevOp.
 
+### Prerequisites
+This article assumes you have some basic understanding of the following topics.
+
+- Basic understanding of what [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) entails.
+- Know what [CI/CD pipeline](/engineering-education/an-introduction-to-cicd-tools/) is.
+- Basic knowledge of working and building networking models.
+- Good understanding of networking toolsets.
+
 ### What is NetDevOps
 Working in an organization that makes little changes several times a year (from medium to large enterprises) would be a goal for most engineers. This relies mainly on automation, continuous integration, continuous deployment, configuration generation, data collection, software updates, testing, monitoring, logging, etc.
 
@@ -203,3 +211,19 @@ Other essential tools include;
 - [Postman](https://www.postman.com/) - for testing any [networking API that you develop](https://netdevops.me/2019/creating-a-bootstrap-based-front-end-for-your-simple-rest-service/) with the language of your choice.
 - [Gitlab](https://about.gitlab.com/) - a remote VCS host where you can share and collaborate on your Git repositories with other developers. It's made to make sure that CI/CD covers the whole DevOps lifecycle. Furthermore, it assures that the whole development team collaborates on the same code source.
 - A [Cloud Platform](/engineering-education/introduction-to-cloud-computing/) - for hosting network model codes.
+
+### Further reading
+- [What it Takes to be a DevOps Engineer](/what-it-takes-to-be-a-devops-engineer/)
+- [An Introduction to CI/CD Tools](/engineering-education/an-introduction-to-cicd-tools/)
+- [Automation Using Ansible](/engineering-education/it-automation-using-ansible/)
+- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+- [Setting up CI/CD for Python Packages using GitHub Actions](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/)
+- [Python Projects for Beginners](/engineering-education/python-projects-for-beginners/)
+- [How to Containerize a Python Application](/engineering-education/how-to-containerize-a-python-application/)
+- [What is Kubernetes?](/engineering-education/what-is-kubernetes/)
+- [How to Deploy Docker Container to a Kubernetes Cluster](/engineering-education/deploy-docker-container-to-kubernetes-cluster/)
+- [Getting Started with Kubernetes](/engineering-education/introduction-to-kubernetes/)
+- [Getting Started with Kubernetes Clusters](/engineering-education/kubernetes-clusters-intro/)
+- [Top Container Orchestration tools](/engineering-education/top-container-orchestration-tools/)
+- [Why and When You Should Use Kubernetes](/engineering-education/why-and-when-you-should-use-kubernetes/)
