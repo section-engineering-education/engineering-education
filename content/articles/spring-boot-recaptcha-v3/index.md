@@ -858,3 +858,6 @@ Return a random score in the verify method less than `0.5` and run the applicati
 
 ### Conclusion
 In this tutorial, you have learned how to implement Google ReCAPTCHA V3 in a Spring Boot application by leveraging a login form protected by Spring security and backed with persistent users in the database who have specific roles. Depending on the generated score, many decisions can be decided, as I mentioned in the introduction section, not requiring the user to send the one-time password (OTP) emailed to them.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
