@@ -19,12 +19,11 @@ Azure functions is a cloud-native design strategy that allows a piece of code to
 <!--more-->
 C#, Java, JavaScript, TypeScript, and Python are just a few languages that integrate with Azure functions.
 
-This article explains what Azure Functions are and how to utilize them in the C# programming language.
-
-### Introduction
 Azure Functions is a serverless computing platform that simplifies the execution of small amounts of code or functions in the cloud. As a result, it improves the efficiency of our development. 
 
 Only the code required for the task at hand is written, with no consideration for the rest of the program or the infrastructure needed to operate it.
+
+This article explains what Azure Functions are and how to utilize them in the C# programming language.
 
 ### Advantages
 - Azure functions are simple and do not require a server.
