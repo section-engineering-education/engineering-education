@@ -4,7 +4,9 @@ We normally concentrate on only two types of devices when developing mobile apps
 Smart watches varies from smart phones in terms of design and interactivity due to distinct usage circumstances and smaller screens. The layout is simpler and more reliant on swiping actions to function. You'll learn how to make an app for a Wear OS  wearable device in this article.
 
 ### Prerequisites
-
+The reader should:
+- Have Android studio installed
+- Be knowledgeable on Kotlin
 
 ### How does Wear OS compare to Android? 
 Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and set of functionality.
@@ -108,7 +110,7 @@ Such transformations are ignored at the system level for square displays. As a r
 
 **WearableRecyclerView** is a useful design that's widely used in mobile apps, but it's been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
 
-**EdgeItemsCenteringEnabled** is a setting that allows you to create a curved layout for scrolling items and improve the core element, making it easier to view on a relatively small screen.
+**EdgeItemsCenteringEnabled** makes you capable of creating a curved views for items that are scrolled and improve the components of code, making it easier to view on a relatively small screen.
 
 SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe from left to right. 
 
@@ -121,38 +123,39 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:padding="8dp"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    tools:contect=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:padding="4dp"
+        android:layout_height="match_parent"
         app:layout_boxedEdges="all">
-
+      
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            app:layout_constraintStart_toStartOf="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_ok" />
+      
+      <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="40dp"
+            android:src="@drawable/ic_cancel" />
+      
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/text"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:background="@android:color/transparent"
-            android:layout_height="60dp"
-            android:layout_width="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/ic_ok" />
-
-        <ImageButton
-            android:background="@android:color/transparent"
-            android:layout_height="60dp"
-            android:layout_width="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/ic_cancel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>
 ```
@@ -162,46 +165,41 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.wear.widget.BoxInsetLayout
+    xmlns:app="https://schemas.android.com/apk/res-auto"                                        
     xmlns:android="https://schemas.android.com/apk/res/android"
-    xmlns:app="https://schemas.android.com/apk/res-auto"
     xmlns:tools="https://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp"
-    tools:context=".MainActivity"
-    tools:deviceIds="wear">
-
+    android:layout_width="409dp"
+    android:layout_height="wrap_content"
+    android:padding="8dp" >
+  
+      <TextView
+          android:id="@+id/text_1"
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"      
+          android:text="Hello world" />
+  
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:boxedEdges="none">
+        android:layout_height="wrap_content"
+        android:padding="8dp">
 
         <android.support.wear.widget.SwipeDismissFrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/swipe_dismiss_root" >
+            android:layout_width="match_parent"                                                
+            android:id="@+id/slide_dissmiss"                                                
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/test_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:text="Swipe to dismiss"/>
+                android:layout_height="wrap_content"      
+                android:layout_width="wrap_content"
+                android:text="Slide"/>
         </android.support.wear.widget.SwipeDismissFrameLayout>
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Hello world" />
-
     </FrameLayout>
 </android.support.wear.widget.BoxInsetLayout>
 ```
 
 ### Navigation
+This refers to starting or opening new destinations from the other.
 
 #### Using NavigationDrawer
 The watch application normally does not have a title bar to conserve significant display space. When using ViewPager, TabLayout is not displayed, but we can't be sure what page we're on.
@@ -251,9 +249,9 @@ class DrawerAdapter(context: Context) : WearableNavigationDrawerView.WearableNav
 Set it in the Activity.
 
 ```kotlin
-navigation_drawer.setAdapter(MainDrawerAdapter(this))
-navigation_drawer.controller.peekDrawer()
-navigation_drawer.addOnItemSelectedListener { pos ->
+drawer.setAdapter(MainDrawerAdapter(this))
+drawer.controller.peekDrawer()
+drawer.addOnItemSelectedListener { pos ->
     // switch the page
 }
 ```
