@@ -1,15 +1,6 @@
- ---
-layout: engineering-education
-title: Cloud Management
 description: Cloud management is the control of products and services running in the cloud. It caters for these products and services. With Cloud management you don't have to hand over resources to outside parties. People who do not share in your company vision and mission. Self-service is flexible. Learning about cloud management gives you an edge. You'll understand the processes hence it's easier to incorporate them into your company. You’ll have full access to workflow automation. The team will be able to create cloud instances, manage resources. Track cost usage, and divide costs. In this article we will get to understand how to choose the best cloud platforms. Also, we'll discuss challenges of cloud management and ways to beat them.
-author: anyebe-blessing-ene
-date: 2021-08-06T00:00:00-10:30
-topics: {Cloud}
-excerpt_seperator: <!--more-->
-images: 
----
+
 In this article, we will discuss how cloud management and understand what there is to know about it.
-<!--more-->
 
 ### Table of contents
 - Cloud Management
@@ -23,17 +14,17 @@ Basic knowledge of cloud computing
 
 ### Key Takeaways
 
-* Understanding of Cloud Management
-* Lists of decent Cloud Management Platforms
-* Best ways to manage cloud management resources and challenges facing cloud management
-* Methods of identifying decent cloud managers/ vendors
+- Understanding of Cloud Management
+- Lists of decent Cloud Management Platforms
+- Best ways to manage cloud management resources and challenges facing cloud management
+- Methods of identifying decent cloud managers/ vendors
 
 ### Goals and Objectives
 
-* The goal of the tutorial is to give the easiest introduction to the cloud, regardless of the field of study.
+- The goal of the tutorial is to give the easiest introduction to the cloud, regardless of the field of study.
 I want everyone who reads this article to get acquainted with cloud management. It'll be easier to read further. 
-* Introduce you to good cloud brokerage services. 
-* Enlighten you on better ways to use cloud resources
+- Introduce you to good cloud brokerage services. 
+- Enlighten you on better ways to use cloud resources
 
 **P.S: At the end of this article, I added link resources to learn more about the cloud**
  
