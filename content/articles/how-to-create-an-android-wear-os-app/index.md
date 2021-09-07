@@ -25,8 +25,6 @@ Other more specialized packages linked to printing make use these fundamental cl
 - **android.hardware.usb** allows Android-based devices to communicate with USB peripheral facilities. 
 
 ### Creating a Wear OS project on Android Studio
-<!--add intro here-->
-
 
 In the packages of your application, two modules will appear right away: a wear module for smart watches and an application module for tablets and phones.
 
