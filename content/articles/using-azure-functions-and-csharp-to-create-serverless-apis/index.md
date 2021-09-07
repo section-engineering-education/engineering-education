@@ -12,29 +12,29 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/hero.png
-    alt: Getting started with Azure functions
+    alt: Getting started with Azure functions example image
 ---
 
-
 Azure functions is a cloud-native design strategy that allows a piece of code to be supplied and executed without needing a web server or server infrastructure settings.
+<!--more-->
 C#, Java, JavaScript, TypeScript, and Python are just a few languages that integrate with Azure functions.
 
 This article explains what Azure Functions are and how to utilize them in the C# programming language.
 
 ### Introduction
-Azure Functions is a serverless computing platform that simplifies the execution of small amounts of code or functions in the cloud. As a result, it improves the efficiency of our development. Only the code required for the task at hand is written, with no consideration for the rest of the program or the infrastructure needed to operate it.
+Azure Functions is a serverless computing platform that simplifies the execution of small amounts of code or functions in the cloud. As a result, it improves the efficiency of our development. 
 
-###  Utilizing Azure functions have the following advantages
+Only the code required for the task at hand is written, with no consideration for the rest of the program or the infrastructure needed to operate it.
+
+### Advantages
 - Azure functions are simple and do not require a server.
 - Writing and deploying Azure functions is a lot easier.
 - The execution of Azure functions is initiated when an event occurs.
 - Azure functions don't require any infrastructure and don't require any upkeep.
 - Using the Azure interface and a browser, we can create, test, and deploy Azure functions.
 - Upgrades to Azure functions are simple and have no impact on other elements of the website.
-- Azure functions interface with other APIs, databases, and libraries using industry standards.
+- Azure functions integrates with other APIs, databases, and libraries using industry standards.
 - Because Azure functions are compute-on-demand, they scale up when the number of requests for execution increases and scale down when the number of requests reduces.
-
-
 
 ### Table of contents
 - [How to set up Azure Function ](#how-to-set-up-azure-function)
@@ -47,21 +47,19 @@ Azure Functions is a serverless computing platform that simplifies the execution
 ### How to set up Azure Function
 To build up Azure Functions, we will use Visual Studio. In Visual Studio, open the Blazor app and create a new project. Then, select the Azure function on the project template page.
 
-![Output of the setup](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/create.png)
+![Output of the setup](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/create.jpg)
 
 Click Next after selecting the Azure Functions template.
 You will need to name your functional application and choose a location for the Visual Studio project to operate.
 
-![This what you will see](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/configure.jng)
+![This what you will see](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/configure.jpg)
 
 The image below depicts the numerous triggers available in Visual Studio for an Azure function app.
 
-
-![Trigger of the Visual Studio](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/app.jng)
+![Trigger of the Visual Studio](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/app.jpg)
  
-Each trigger, as we can see, has a distinct role. We will utilize the HTTP trigger, which fires anytime an HTTP request is sent. 
-Clicking on the create button to create the application.
-
+Each trigger, as we can see, has a distinct role. We will utilize the HTTP trigger, which fires anytime a HTTP request is sent. 
+Click the create button to create the application.
 
 #### Here is an example of our function's complete code
 
@@ -91,14 +89,13 @@ namespace HelloFunction {
     }    
 } 
 ```
-Every trigger in the code above prompts the function to run. A function will only have one trigger and has a single purpose. For example, the HTTP trigger will execute when we initiate an HTTP request, causing our function to run.
+Every trigger in the code above prompts the function to run. A function will only have one trigger and has a single purpose. For example, the HTTP trigger will execute when we initiate a HTTP request, causing our function to run.
 
 Output:
 
-![This is the output](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/core.jng)
+![This is the output](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/core.jpg)
 
 ### Entity Model and Database schema
-
 A database schema represents the logical setup of all or part of a relational database. We can represent the database schema visually or as a series of formulas called `integrity constraints` that control a database. 
 
 Integrity constraints are mechanisms that limit a database's potential states. For example, if we consider a database employee, we do not want two rows for the same person. Therefore, employee ID must be unique across all rows in the table employee, according to the integrity constraint.
@@ -119,9 +116,9 @@ CREATE TABLE Employee
 ```
 In the above code, we are creating a table for the employee in the database that we will be using.
 
-![output of the setup](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/B13.png)
+![output of the setup](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/b13.png)
 
-Create a folder and name it My_Model. Inside the folder, create a class named `Employee`. You can use few properties to make your implementation simpler.
+Create a folder and name it **My_Model**. Inside the folder, create a class named `Employee`. You can use few properties to make your implementation simpler.
 
 Below is an example.
 
@@ -164,19 +161,17 @@ namespace API_EFCore_AzureFunctions.model
 ```
 The code above explains how we can create database context to access tables from the database.
 
-### Setting up the Connection with SQL Database by using EF Core
-
-To get the Nuget package, in the `Solution Explorer`, you need to right-click either `Reference` or a project and select Manage NuGet packages.
+### Setting up the Connection
+To get the Nuget package in the `Solution Explorer`, you need to right-click either `Reference` or a project and select Manage NuGet packages.
 
 As shown below, we will install the desired package using the Nuget Package Manager or the Package Manager console.
 
-![output of the setup](/engineering-education/using-azure-functions-and-c#-to-create-serverless-apis/manage.png)
+![output of the setup](/engineering-education/using-azure-functions-and-csharp-to-create-serverless-apis/manage.png)
 
-Visual studio displays packages from the selected source in the browse tab. Search for specific packages using the search box. The install button, as well as the version selection dropdown, should be enabled.
+Visual studio displays packages from the selected source in the browse tab. Search for specific packages using the search box. The install button, as well as the version selection dropdown should be enabled.
 
 ### Initialize Dependency Injection
-
-To set up dependency injection for our function app, we use the Assembly's `FunctionsStartup` feature to define a starter class that will run when the function app starts. In that class, which is derived from Functions Startup, we override the Configure function.
+To set up dependency injection for our function app, we use the Assembly's `FunctionsStartup` feature to define a starter class that will run when the function app starts. In that class, which is derived from Functions Startup, we will override the Configure function.
 
 By registering a `DbContext` in the services, we can obtain the SQL connection string from the configuration and inject the `AppDbContext` into our method. Create a class called `Startup.cs`.
 
@@ -226,19 +221,14 @@ public Function one (AppDataBaseContext appDataBaseContext)
 We will use the above code to inject the class dependency.
 
 ### Implementing the Functions
-
 In the example below, we will use five functions in the implementation of the functions:
-
-1. `CreateEmployee:` - saves the employee information into a database.
-2. `GetEmployees:` - gets a list of all the employees from the database.
-3. `GetEmployeebyId:` - gets the Employee record using their employee ID.
-4. `UpdateEmployee:` - updates the employee information in the database.
-5. `DeleteEmployee:` - deletes records of an employee in the database. 
-		
+1. `CreateEmployee` - saves the employee information into a database.
+2. `GetEmployees` - gets a list of all the employees from the database.
+3. `GetEmployeebyId` - gets the Employee record using their employee ID.
+4. `UpdateEmployee` - updates the employee information in the database.
+5. `DeleteEmployee` - deletes records of an employee in the database. 
 
 #### 1. CreateEmployee
-
-
 ```c#
 #region Create Employee
        
@@ -298,13 +288,13 @@ The line code `[public async Task<IActionResult> GetAllEmployees]` is used in de
 
 The line code `[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]` is used as an attribute Property for HTTP Trigger
 
-- Authorization Level; Authorization keys secure your HTTP trigger an Azure Function. There are three types of authorization levels.
-  - Anonymous: No key is required
-  - Function: You will need a special function key. If no value is supplied, this is the default.
-  - Admin: You will need a master key.
+- **Authorization Level:** Authorization keys secure your HTTP trigger an Azure Function. There are three types of authorization levels.
+- **Anonymous:** No key is required
+- **Function:** You will need a special function key. If no value is supplied, this is the default.
+- **Admin:** You will need a master key.
 
-- Route It specifies the route template for endpoint. `API/FunctionName>` is the default value for the route.
-- Method This is where the HTTP verbs for the functions are defined.
+- **Route:** It specifies the route template for endpoint. `API/FunctionName>` is the default value for the route.
+- **Method:** This is where the HTTP verbs for the functions are defined.
 
 ```c#
  {
@@ -320,7 +310,7 @@ The line code `[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]`
             
 ```
 
-The above code, part of the `getEmployee` function, add a try-catch block to manage exceptions and retrieves all Employee information from the database.
+The above code, part of the `getEmployee` function, adds a try-catch block to manage exceptions and retrieves all Employee information from the database.
 
 #### 3. GetEmloyeebyld
 
