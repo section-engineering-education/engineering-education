@@ -258,3 +258,6 @@ Happy coding.
 - [FaaS in Wikipedia](https://en.wikipedia.org/wiki/Function_as_a_service)
 - [AWS Lambda FAQs](https://aws.amazon.com/lambda/faqs/)
 - [More about AWS Lambda](https://en.wikipedia.org/wiki/AWS_Lambda)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
