@@ -1,7 +1,21 @@
-Creating Serverless Functions (Faas) with AWS Lambda and Golang
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-serverless-functions-faas-with-aws-lambda-and-golang/
+title: Creating Serverless Functions (Faas) with AWS Lambda and Golang
+description: This tutorial will guide the reader on how to create serverless functions with AWS Lambda using Golang
+author: oluwatomisin-bamimore
+date: 2021-09-08T00:00:00-04:00
+topics: [Edge Computing]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-serverless-functions-faas-with-aws-lambda-and-golang/hero.png
+    alt: Serverless functions on AWS Lambda Image
+---
 Serverless architecture is a new paradigm that is being used in the development of modern applications. The term "serverless" refers to the abstraction of "servers" from application development.
-
+<!--more-->
 One advantage of serverless computing over server computing is that the cloud provider takes care of the servers while you concentrate on application development.
 
 Function-as-a-Service (FaaS) is a serverless method of running modular code on the cloud. You can use FaaS to write code that is triggered by events.
