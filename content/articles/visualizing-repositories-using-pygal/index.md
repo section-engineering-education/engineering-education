@@ -20,7 +20,7 @@ Pygal allows us to create a range of graphs and charts. In this article, you'll 
 <!--more-->
 
 ### Prerequisites
-You'll need some Python skills to follow along with this tutorial. You must be in a position to work with web APIs in Python. Also you need to have [PIP](https://pip.pypa.io/en/stable/installation/) installed.
+You'll need some Python skills to follow along with this tutorial. You must be in a position to work with web APIs in Python. Also, you need to have [PIP](https://pip.pypa.io/en/stable/installation/) installed.
 
 ### Installing pygal
 To install Pygal, run the command below;
@@ -29,7 +29,7 @@ To install Pygal, run the command below;
 pip install pygal
 ```
 
-You can visit [Pygal official site](http://www.pygal.org/en/stable/installing.html) for more information installation of Pygal.
+You can visit [Pygal's official site](http://www.pygal.org/en/stable/installing.html) for more information on the installation of Pygal.
 
 ### The pygal gallery
 The Pygal gallery is a collection of charts that Pygal can generate.
@@ -85,7 +85,7 @@ Description: All Algorithms implemented in Python
 
 ```
 
-Let's construct a visual representation of the current popularity of Python works on GitHub, since we have some relevant data. We will create a bar chart: the amount of stars the project has earned will be represented by the height of each bar.
+Let's construct a visual representation of the current popularity of Python works on GitHub since we have some relevant data. We will create a bar chart: the tally of stars the project has earned will be represented by the height of each bar.
 To get this done, you can run the code below:
 
 ```python
@@ -122,7 +122,7 @@ To begin, we `import pygal` as well as the `Pygal styles` we'll require for the 
 
 First, we make two empty lists to hold the data we’ll include in the chart. We’ll use the name, and the number of stars of each project to label and determine the height of the bars respectively. In the loop, we append the name of each project and the number of stars it has to these lists.
 
-Next, we define a style using the `LightenStyle` class (`alias LSe`) and base it on a dark shade of blue. We also pass the `base_style` argument to use the `LightColorizedStyle` class (`alias LCSe`). We then use `Bar()` to make a simple bar chart and pass it `mystyle`.We pass two more style arguments: we set the rotation of the labels along the x-axis to 45 degrees (`x_label_rotation=45`), and we hide the legend, because we’re plotting only one series on the chart (`show_legend=False`). We then give the chart a title and set the `x_labels`attribute to the list names.
+Next, we define a style using the `LightenStyle` class (`alias LSe`) and base it on a dark shade of blue. We also pass the `base_style` argument to use the `LightColorizedStyle` class (`alias LCSe`). We then use `Bar()` to make a simple bar chart and pass it `mystyle`.We pass two more style arguments: we set the rotation of the labels along the x-axis to 45 degrees (`x_label_rotation=45`), and we hide the legend because we’re plotting only one series on the chart (`show_legend=False`). We then give the chart a title and set the `x_labels`attribute to the list names.
 
 Because we don’t need this data series to be labeled, we pass an empty string for the label when we add the data. The resulting chart is shown below:
 
@@ -177,7 +177,7 @@ The figure below shows the restyled chart:
 
 ### Adding Custom Tooltips
 
-In Pygal, floating the mouse over a single bar displays the data it represents. This is known as a tooltip, and it usually displays the amount of stars that a project possesses. Let's make a custom tooltip to display the descriptions of each project.
+In Pygal, floating the mouse over a single bar displays the data it represents. This is known as a tooltip, and it usually displays the tally of stars that a project possesses. Let's make a custom tooltip to display the descriptions of each project.
 
 Let's have a look at a simple example that uses the first three projects plotted singly with custom labels for each bar. Rather than passing a list of values to `add()`, we'll pass a list of dictionaries with the code below:
 
@@ -199,7 +199,7 @@ chart.render_to_file('bar_desc.svg')
 
 We define a list called `plot_dictoinaries` that contains three dictionaries: one for the `public-apis` project, one for the `system-design-primer` project, and one for `Python`. There are two keys in every dictionary: `value` and `label`. Pygal calculates the height of each bar using the number linked with `value`, and it creates the **tooltip** for each bar using the string connected with `label`. The first dictionary, for instance, will generate a bar indicating a project with `144904` stars, with the tooltip `"Description of public-apis."`
 
-The `add()` function requires a string and a list. We pass the list of dictionaries containing the bars (plot dictoinaries) to `add()`. Pygal has a default tooltip that contains the number of stars, besides the customized tooltip we gave it.
+The `add()` function requires a string and a list. We pass the list of dictionaries containing the bars (plot dictionaries) to `add()`. Pygal has a default tooltip that contains the number of stars, besides the customized tooltip we gave it.
 
 One of the tooltips is shown below:
 
