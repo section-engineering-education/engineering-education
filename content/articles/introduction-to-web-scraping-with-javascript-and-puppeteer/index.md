@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /introduction-to-web-scraping-with-javascript-and-puppeteer/
 title: Introduction to Web Scraping With JavaScript and Puppeteer
-description: This article takes the reader through Web Scraping With JavaScript and Puppeteer. Web scraping enables users to get data from any website even if it does not provide a public API and display it on a web page.
+description: This article takes the reader through web scraping with javaScript and puppeteer. Web scraping enables users to get data from any website even if it does not provide a public API and display it on a web page.
 author: kevin-murimi
 date: 2021-09-05T00:00:00-17:50
 topics: []
@@ -316,9 +316,9 @@ This will start the server. Open your browser and navigate to this URL: Example 
 The page contains a button with the text "Check Price". Click on it and wait for the details of the keyboard to be displayed.
 
 ### Conclusion
-This example is simple but it is a good introduction to web scraping. 
-Always make sure to check whether a website allows web scraping before you scrape data.
-Now that we have managed to scrape and track the price of a single product, go ahead and try to track multiple products. You can also create a web app that tracks prices of similar items from different sellers, compares the prices and suggests to the user from which seller he/she should buy from.
+This example is simple but it is a good introduction to web scraping. Always make sure to check whether a website allows web scraping before you scrape data. Now that we have managed to scrape and track the price of a single product, go ahead and try to track multiple products. 
+
+You can also create a web app that tracks prices of similar items from different sellers, compares the prices and suggests to the user from which seller he/she should buy from.
 
 Happy Scraping!
 
