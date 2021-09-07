@@ -1,5 +1,21 @@
-Cloud management is the control of products and services running in the cloud.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-cloud-management/
+title: Introduction to Cloud Management
+description: This article will cover the needs of managing cloud, understanding the challenges and benefits of cloud management. We will also go through the best practices for managing cloud.
+author: anyebe-blessing-ene
+date: 2021-09-07T00:00:00-23:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-cloud-management/hero.jpg
+    alt: Cloud management example
+---
+Cloud management is the control of products and services running in the cloud.
+<!--more-->
 By learning to manage cloud, you learn to manage cloud processes, have full access to workflow automation, create cloud instances, manage resources, track cost usage, and divide costs.
 
 In this article, we will understand how to choose the best cloud platform. Also, we'll discuss challenges of cloud management and ways to beat them.
