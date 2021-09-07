@@ -267,3 +267,6 @@ Thank you for reading!
 4. [Grand View Reserch](https://www.grandviewresearch.com/industry-analysis/cloud-computing-industry)
 5. [Cloud Scenerio](https://searchcloudcomputing.techtarget.com/definition/Infrastructure-as-a-Service-IaaS?amp=1)
 6. [Cloud Computing: The current state of the industry](https://www.criticalcase.com/blog/cloud-computing-the-current-state-of-the-industry.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
