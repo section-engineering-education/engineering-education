@@ -12,6 +12,12 @@ In this tutorial, we'll build a user profile generator function.
 
 The function will accept some user data and return a profile based on the data. After uploading the generator function to AWS lambda, we'll create a client program that communicates with user profile generating function on AWS Lambda.
 
+If you are new to serverless computing, it is highly recommended to go through these articles:
+- [How to build apps with Serverless architecture](/how-to-build-apps-with-serverless-architecture/)
+- [Comparing serverless computing with containers](/engineering-education/comparing-serverless-computing-vs-containers/)
+- [How to migrate an on-premise application to serverless](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/)
+
+
 ### Requirements
 - [AWS](https://aws.amazon.com) account to access AWS lambda dashboard
 - Use `git clone https://github.com/Bamimore-Tomi/faas-golang.git` to download the source code for this demo
