@@ -1,45 +1,40 @@
-### Implementing Google reCAPTCHA in a SpringBoot application
-
 ### Introduction
 reCAPTCHA is a system that enables users to protects their sites from bots. ReCaptcha generates a score that ranges from `0` to `1`. If the score is less than `0.5`, there is a possibility a bot invoked the action, and if the score is greater than `0.5`, the action was not invoked by a bot. This tutorial will teach you how to Implement Google reCAPTCHA version 3 to protect Spring Boot login form. We will intercept the authentication during login and check if the score generated is less than `0.5`, then request the user to enter an OTP sent to their email or authenticate the user. 
 
 
 ### Table of Contents
-- [Create new site with Google to verify your captcha response]()
-- [Create a SpringBoot application using spring initializr]()
-- [Configure database connection properties]()
-- [Create User, Role, and ReCaptchaResponse models]()
-- [Create User and Role repositories]()
-- [Add a `CommandLineRunner` to create custom users]()
-- [Create a user service to handle user details]()
-- [Add `WebSecurityConfigurerAdapter` configuration class to handle login ]()
-- [Create ReCAPTCHA handler to get the score]()
-- [Create a Login Filter to redirect the user based on the score]()
-- [Add the `addFilterBefore()` to `HttpSecurity`]()
-- [Create a login and OTP Controller]()
-- [Create a login and OTP form and a default success page]()
-- [Test the login when the score is greater than 0.5]()
-- [Test the login when the score is less than 0.5]()
+- [Prerequisites](#prerequisites)
+- [Creating Google recapture project](#creating-google-recapture-project)
+- [Create a Spring Boot application](#create-a-spring-boot-application)
+- [Database configuration](#database-configuration)
+- [Domain layer](#domain-layer)
+- [Repository layer](#repository-layer)
+- [Configuration layer](#configuration-layer)
+- [Service layer](#service-layer)
+- [Security and reCapture setup](#security-and-recapture-setup)
+- [Controller layer](#controller-layer)
+- [Templates](#templates)
+- [Test the login when the score is greater than 0.5](#test-the-login-when-the-score-is-greater-than-05)
+- [Test the login when the score is less than 0.5](#test-the-login-when-the-score-is-less-than-05)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
-- Spring Boot
-- Spring Data JPA
-- Spring Security
-- Thymeleaf
-- JDK 11+
-- Intellij IDEA
+- Knowledge in [Spring Boot](https://spring.io/guides/gs/spring-boot/).
+- Knowledge in [Thymeleaf](https://www.thymeleaf.org/).
+- [JDK 11+](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
+- [Intellij IDEA](https://www.jetbrains.com/idea/) installed on your computer.
 
-### Create a new site with Google to verify your captcha response
+### Creating Google recapture project
 [Create a new reCAPTCHA V3 site ](https://www.google.com/recaptcha/admin/create) with any name you want, set the domain to localhost as we will be testing the application locally. Take note of the site key and secret key, which we will use later in the application.
 
-### Create a SpringBoot application using spring initializr
+### Creating a Spring Boot application
 Navigate to [Spring Initialzr](https://start.spring.io/) and generate a new project with dependencies `Spring Web`, `Spring Security`, `Spring Data JPA`, `Thymeleaf`, `Spring Boot Dev Tools`, `MySQL Driver` and `Lombok`.
 
 Import the generated project into Intellij, ensure you have an active internet connection to download the dependencies from the remote central repository.
 
-![Spring Initializr image](spring-initializr.png)
+![Spring Initializr image](/engineering-education/pring-boot-recaptcha-v3/spring-initializr.png)
 
-### Configure database connection properties
+### Database configuration
 Since we will not deploy the application to production, the database tables will be automatically created during application initialization when we set `spring.jpa.hibernate.ddl-auto=create` property.
 
 Add the properties below into the `application.properties` file.
@@ -54,7 +49,7 @@ spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 ```
 
-### Create User, Role, and ReCaptchaResponse models
+### Domain layer
 We will use project `Lombok` to generate getters and setters, a no-argument constructor, and an all-argument constructor for all the models in the project.
 
 Create a `Role` class with fields `id` and `role name` where the role name represents a user's authority.
@@ -153,7 +148,7 @@ public class ReCaptchaResponse {
 }
 ```
 
-### Create User and Role repositories
+### Repository layer
 Create an interface named `AppUserRepository` extending `JpaRepository`. This interface will allow us to perform CRUD operations without writing any queries.
 
 Create a method that returns an `AppUser` when the username is passed to it, and we can achieve this by adding the following method.
@@ -176,7 +171,7 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
     Role findRoleByRoleName(String roleName);
 }
 ```
-### Add a `CommandLineRunner` to create custom users
+### Configuration layer
 In the Application class, create a password encoder `Bean` that we will use to encode the password before saving it to the database.
   
 ```java
@@ -293,7 +288,7 @@ public class ReCaptchaApplication {
     }
 }
 ```
-### Create a user service to handle user details.
+### Service layer
 Create an interface named `AppUserService` that extends `UserDetailsService`. The user detail service authenticates the user by returning the username, password, and roles for a particular user.
 
 ```java
@@ -337,7 +332,8 @@ public class  AppUserServiceImpl implements AppUserService{
     }
 }
 ```
-### Add `WebSecurityConfigurerAdapter` configuration class to handle login
+
+
 Create a class named `AppConfig` that extends the `WebSecurityConfigurerAdapter` class to add custom security information to our application and Override two methods `configure(AuthenticationManagerBuilder)` and `configure(HttpSecurity)`.
 
 Declare a final property for the `AppUserService` interface inside the class. The `@RequiredArgsConstructor` annotation will create a constructor with the fields declared as final.
@@ -411,7 +407,7 @@ The `/login` is the path that returns the login form, `/processLogin` is the pat
     }
 ```
 
-### Create ReCAPTCHA handler to get the score
+### Security and reCapture setup
 The class `ReCaptcharV3Handler` will be used to verify the `g-recaptcha-respone` of the form by providing additional information such as the secret key and the server URL to verify our response.
 
 After successful verification, this class will return a JSON response that will map to a plain java object to produce the `ReCaptchaResponse` object and score used by the authentication filter.
@@ -474,7 +470,6 @@ public class ReCaptcharV3Handler {
 }
 ```
 
-### Create a Login Filter to redirect the user based on the score
 This class will intercept the request before the authentication happens.In order for the interception of the request to work we need to extend the `UsernamePasswordAuthenticationFilter` class from spring security and then Override the `attemptAuthentication()` method which accepts the `HttpServeletRequest` and `HttpServletResponse` arguments.
 
 With the request, we can retrieve the `g-captcha-response` from the URL and pass it to the verify method as an argument depending on the score returned. Then, we can allow the authentication to continue or request the user to input the OTP emailed to them.
@@ -540,7 +535,6 @@ public class CustomLoginFilter extends UsernamePasswordAuthenticationFilter {
 }
 ```
 
-### Add the `addFilterBefore()` method to `HttpSecurity`
 Create a method named `getCustomLoginFilter()` that returns a `CustomLoginFilter` in `AppConfig` class.
 
 Add a `CustomLoginFilter` constructor inside the method and use `/login` and `post` parameters to intercept the authentication.
@@ -587,7 +581,7 @@ The `addFilterBefore()` method has two parameters composed of the filter we crea
     }
 ```
 
-### Create a login and OTP Controller
+### Controller layer
 
 The login controller consists of two `GET` methods, one to return the login form and the other to return the success page once the login is successful.
 
@@ -624,7 +618,7 @@ public class OTPController {
 
 }
 ```
-### Create a login and OTP form and a default success page
+### Templates
 
 When creating the login form, you add ReCaptcha to the site by adding the following information.
 
@@ -653,7 +647,7 @@ When creating the login form, you add ReCaptcha to the site by adding the follow
         data-action='submit'>Submit</button>
 ```
 
-login.html
+Create an `login.html` file and add the code snippet below.
 ```html
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -725,7 +719,7 @@ login.html
 </html>
 ```
 
-otp_login.html
+Create `otp_login.html` file and add the code snippet below.
 
 ```html
 <!doctype html>
@@ -783,7 +777,7 @@ otp_login.html
 </html>
 ```
 
-success.html
+Create `success.html` file and add the code snippet below.
 
 ```java
 <!doctype html>
@@ -821,28 +815,29 @@ success.html
 </body>
 </html>
 ```
-### Test the login when the score is greater than 0.5
+### Testing 
+#### Testing login when the score is greater than 0.5
 The server will often return a score greater than 0.5, meaning the authentication will continue processing. On successful login, Spring will redirect the user to the success page.
 
 Run the application and navigate to`http://localhost:8080/login` on your browser. Fill in the login details with any username and password of a user created by the `CommandLineRunner`.
 
 
-![login image](login-image.png)
+![login image](/engineering-education/pring-boot-recaptcha-v3/login-image.png)
 
 On pressing the login button, you will notice the following `g-captcha-response` generated and the result returned by the server after verification on the console.
 
-![larger score image](larger-score-image.png)
+![larger score image](/engineering-education/pring-boot-recaptcha-v3/larger-score-image.png)
 
 The score generated by the server is `0.9`, and it will allow the authentication to continue to the success page if the login is successful.
 
-![success page image](success-page-image.png)
+![success page image](/engineering-education/pring-boot-recaptcha-v3/success-page-image.png)
 
-### Test the login when the score is less than 0.5
+#### Testing login when the score is less than 0.5
 As indicated earlier, the server mostly generates a score greater than `0.5`, so we have to modify our application manually so that the verify method returns a score less than `0.5` for testing purposes.
 
 Return a random score in the verify method less than `0.5` and run the application again. When you enter the login details and press the login button, the interceptor will return the OTP page meaning the score generated was less than `0.5`.
 
-![otp image](otp-image.png)
+![otp image](/engineering-education/pring-boot-recaptcha-v3/otp-image.png)
 
 ### Conclusion
 In this tutorial, you have learned how to implement Google ReCAPTCHA V3 in a Spring Boot application by leveraging a login form protected by Spring security and backed with persistent users in the database who have specific roles. Depending on the generated score, many decisions can be decided, as I mentioned in the introduction section, not requiring the user to send the one-time password (OTP) emailed to them.
