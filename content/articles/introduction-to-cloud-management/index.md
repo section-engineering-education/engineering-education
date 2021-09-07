@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /introduction-to-cloud-management/
 title: Introduction to Cloud Management
-description: This article will cover the needs of managing cloud, understanding the challenges and benefits of cloud management. We will also go through the best practices for managing cloud.
+description: This article will cover the needs of managing cloud, understanding the challenges, and benefits of cloud management. We will also go through the best practices for managing cloud.
 author: anyebe-blessing-ene
-date: 2021-09-07T00:00:00-23:30
+date: 2021-09-07T00:00:00-16:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,9 @@ images:
   - url: /engineering-education/introduction-to-cloud-management/hero.jpg
     alt: Cloud management example
 ---
-Cloud management is the control of products and services running in the cloud.
+Cloud management is the control of products and services running in the cloud. By learning to manage the cloud, you will learn to manage cloud processes, have full access to workflow automation, create cloud instances, manage resources, track cost usage, and divide costs.
 <!--more-->
-By learning to manage the cloud, you learn to manage cloud processes, have full access to workflow automation, create cloud instances, manage resources, track cost usage, and divide costs.
-
-In this article, we will understand how to choose the best cloud platform. Also, we'll discuss the challenges of cloud management and ways to beat them.
+In this article, we will understand how to choose the best cloud platform. We will also discuss the challenges of cloud management and ways to beat them.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -32,16 +30,16 @@ In this article, we will understand how to choose the best cloud platform. Also,
 - [References](#references)
 
 ### Prerequisite 
-Basic knowledge of cloud computing.
+To follow along with this article - the reader will need a dasic knowledge of cloud computing.
 
 Let's dive right in by understanding the concept.
 
 ### Introduction
-Cloud permits administrating control of technologies and software. It helps manage resources and automate processes.
+The cloud permits us to administrate control of technologies and software. It helps manage resources and automate processes.
 
 Cloud management caters to the needs of products and services by providing the necessary functionalities like flexibility, scalability, security, and adaptation.
 
-Cloud management aids enterprises gain an enthralling business.  It helps businesses interact and share data easily. It gives access to many people, enabling work on a particular file at the same time. It is a flexible way to grow a business.
+Cloud management helps enterprises interact and share data easily. It gives access to many people, enabling work to be done on a particular file at the same time. It is a flexible way to grow a business.
 
 Getting acquainted with cloud management will fast-track service delivery, increase efficiency, create a workflow between the IT and the business unit.
 
@@ -83,7 +81,9 @@ Examples of traditional IT services management are:
 - ServiceNow
 
 ### Cloud services
-Currently, the [cloud computing market value is at USD 274.79 billion in 2020](https://www.grandviewresearch.com/industry-analysis/cloud-computing-industry). (Grand View Research, 2020)
+Currently, the [cloud computing market value is at USD 274.79 billion in 2020](https://www.grandviewresearch.com/industry-analysis/cloud-computing-industry). 
+
+(Grand View Research, 2020)
 
 According to [Cloud Forecast in 2018 by Gartner](https://www.gartner.com/en/newsroom/press-releases/2019-04-02-gartner-forecasts-worldwide-public-cloud-revenue-to-g), the market share for the cloud services are:
 
@@ -121,10 +121,10 @@ PaaS helps users build minimal products to sophisticated complex ones. Usually, 
 
 With PaaS, you have access to manage your data and application. PaaS helps in managing storage, server, networking, virtualization, and middleware.
 
-Some advantages of PaaS are:
-- Adds development abilities
-- Expertise in deployment is not necessary
-- Multi-device applications can be deployed easily
+Some advantages of PaaS include:
+- Added development abilities.
+- Expertise in deployment is not necessary.
+- Multi-device applications can be deployed easily.
 
 List of PaaS Vendors:
 - Amazon Web Service Elastic Beanstalk
@@ -161,23 +161,23 @@ Cloud management doesn't come without setbacks or challenges.
 
 One major oblivious factor is the cost of resources. We need to understand the challenges of managing clouds to maximize the advantages of managing the cloud.
 
-Some of the challenges of cloud management and ways to beat them are:
+Some of the challenges of cloud management and ways to mitigate them are:
 
-#### Cost Management
-It aids companies to manage the value associated with their cloud service. This could be very tricky, as managing resources can get out of hand and even become redundant. The high demand for cloud storage increases its cost. 
+#### Cost management
+It helps companies to manage the value associated with their cloud service. This could be very tricky, as managing resources can get out of hand and even become redundant. The high demand for cloud storage increases its cost. 
 
-##### Ways to overcome
+#### Ways to mitigate
 - Enterprises should use cloud storage with Government aided policies and regulations.
 - Conduct proper financial analysis.
 - Estimate the budget from the start.
 - Hire experts to assist with the value-management analysis. 
 
-#### Cloud Sprawl
+#### Cloud sprawl
 It is a scenario where an organization losses track of the cloud resources. It's an uncontrolled escalation of an enterprise cloud service, instance, and provider.
 
 This commonly occurs when an organization fails to manage its cloud environments effectively.
 
-##### Ways to overcome
+##### Ways to mitigate
 - Enterprises should use cloud management tools.
 - They must understand the usage of clear-cut user policies.
 - Build a cloud strategy.
@@ -186,13 +186,9 @@ This commonly occurs when an organization fails to manage its cloud environments
 - Set alerts that trigger management when losing control.
 
 #### Interactivity
-This deals with sharing, exchange, and use of knowledge that goes between the software and the computer system.
+This deals with sharing, exchange, and use of knowledge that goes between the software and the computer system. Cloud services have lock-in periods. This makes it difficult to transact with the other forums or environments. Any form of cloud migration ends up in the reformatting of information.
 
-Cloud services have lock-in periods. This makes it difficult to transact with the other forums or environments.
-
-Any form of cloud migration ends up in the reformatting of information.
-
-##### Ways to overcome
+##### Ways to mitigate
 - Build portable applications.
 - Install a multi-cloud strategy.
 - Use microservices.
@@ -200,23 +196,23 @@ Any form of cloud migration ends up in the reformatting of information.
 - Cloud providers must have the right resources to integrate a client's cloud computing needs.
 
 ### Better ways to manage cloud resources
-- Monitor the cloud storage space
-- Use the best security
-- Create the infrastructure that suits the business 
+- Monitor the cloud storage space.
+- Use the best security.
+- Create the infrastructure that suits the business. 
 - Automate processes
-- Document experiences and issues faced
+- Document experiences and issues faced.
 - Keep track of
   - Software version
   - Errors encountered 
   - Command runs
   - Arguments provided
   - Data files used
-  - Fixes applied, how you applied them, and where you can find them
-  - Useful reference links that helped to fix the issue
+  - Fixes applied, how you applied them, and where you can find them.
+  - Useful reference links that helped to fix the issue.
 
 ### Benefits
 #### Scalability
-Cloud can increase or decrease resources based on the needs. Upscaling the resources - reduces the workload, while increasing the costs. We downscale the resources when not needed.
+The cloud can increase or decrease resources based on the needs. Upscaling the resources - reduces the workload, while increasing the costs. We downscale the resources when not needed.
 
 #### Resilience 
 Cloud provides data recovery services. They use third parties applications to separate resources when there are server and storage failures. 
@@ -230,8 +226,7 @@ When you are starting with the cloud or cloud migration, these features should g
 #### Security and privacy management
 Cloud security is important for any cloud resource provider.
 
-You must know the measure the service is taking or using to shield your data.
-
+You must know the measures the service is taking or using to shield your data.
 - User data protection is protected by the law.
 - By switching to the cloud, we do not use firewalls to safeguard the data.
 - Choose the cloud service provider that trusts encrypted security applications.
@@ -247,34 +242,24 @@ Service level consideration is important when businesses have strict needs for a
 - Must follow GDPR.
 
 #### Cost management
-A decent cloud provider checks and cut financial resources regardless of the cloud service used.
-
-When selecting a cloud provider, you must know the pricing structure.
-
-Also, you would have to understand the services that have high fees.
+A decent cloud provider checks and cut financial resources regardless of the cloud service used. When selecting a cloud provider, you must know the pricing structure. Also, you would have to understand the services that come with higher fees.
 
 #### Customer service support
-While choosing a cloud provider, understand how the customer can reach the service.
-
-It should be less strenuous to the cloud provider you decide on.
+While choosing a cloud provider, it is best to understand how the customer can reach the service. It should be less strenuous to the cloud provider you decide on.
 
 #### Deployment
-Many cloud services would require third-party apps for deploying.
-
-When choosing, you must consider how easy it is to integrate between each of the services.
-
-Consider the time taken by the enterprise to prepare for interoperability.
+Many cloud services would require third-party apps for deploying. When choosing, you must consider how easy it is to integrate between each of the services. Consider the time taken by the enterprise to prepare for interoperability.
 
 ### Conclusion
 Cloud management is essential to any cloud organization. We need to grasp the workings of the cloud environment while starting out.
 
-The key takeaways from this article are:
-- Understanding how to manage a cloud environment
-- Getting to know various cloud management platforms
-- Best ways to manage cloud resources and understanding challenges
-- Methods of identifying good cloud managers and vendors
+The key takeaways from this article were:
+- Understanding how to manage a cloud environment.
+- Getting to know various cloud management platforms.
+- Best ways to manage cloud resources and understanding challenges.
+- Methods of identifying good cloud managers and vendors.
 
-Thank you for reading!
+Thank you for reading! Happy learning!
 
 ### References
 1. [Cloud Migration](https://searchcloudcomputing.techtarget.com/definition/cloud-migration)
