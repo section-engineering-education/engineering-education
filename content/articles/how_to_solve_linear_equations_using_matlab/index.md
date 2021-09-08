@@ -172,7 +172,7 @@ x =
 
 ### Undetermined equations
 
-These are problems in which m>n. It means that the provided information is insufficient to give a solution to the problem example;
+These are equations in which m>n. It means that the provided information is insufficient to give a solution to the problem example;
 
 4x + 5y =6
 
@@ -203,7 +203,7 @@ In the above equation, the information is insufficient since equations (i) and (
 
 ### Overdetermined equations
 
-This kind of problem mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
+This kind of equations mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
 
 $$
 \begin{cases} 4x + 5y=6\\3x - 2y=14\end{cases}
