@@ -25,7 +25,7 @@ It has been used to build web applications such as the [World Weather App](https
 This tutorial will show you how to build an easy and mobile-friendly map using the leaflet.js library.
 
 ### Prerequisites
-To grasp this guide, the reader must have a level of knowledge on:
+To follow this guide, the reader should understand:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 - [HTML (Hypertext Markup Language)](https://developer.mozilla.org/en-US/docs/Web/HTML).
 - [CSS (Cascading Style Sheet)](https://developer.mozilla.org/en-US/docs/Web/css).
@@ -301,7 +301,7 @@ Finally, we have our final code as follows:
 ```
 If we run the above HTML code in our browser, we would have our simple, lightweight web map like the image shown below:
 
-![browser image](/building-simple-maps-using-leaflet-js/mapimage.PNG)
+![browser image](/engineering-education/building-simple-maps-using-leaflet-js/mapimage.PNG)
 
 The coordinates used are the absolute location of Nigeria. As we mentioned earlier, coordinates determine any position on the earth's surface. So, if you want to get the coordinates of any location, you can follow the steps below:
 
