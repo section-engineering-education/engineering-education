@@ -1,30 +1,30 @@
-Web application development is a quite crowded field of technology. There are different types of frameworks, libraries, and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
+Web application development is a pretty crowded field of technology. There are different types of frameworks, libraries, and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
 
 Therefore, when you use frameworks like React, Vue, Angular, or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
 
 This article will talk about what web components are and why they are useful. Finally, it will take you through how to create a web component from scratch.
 
 ### Table of contents
-[What are web components](#what-are-web-components)
-[Why use web components](#why-use-web-components)
-[Creating a web component with Vanilla JavaScript](#creating-a-web-component-with-vanilla-javascript)
-[Step 1: Create the template](#step-1-create-the-template)
-[Step 2: Load the template with content](#step-2-load-the-template-with-content)
-[Step 3: Create the HTML element](#step-3-create-the-html-element)
-[Step 4: Encapsulate the HTML element](#step-4-encapsulate-the-html-element)
-[Step 5: Lifecycle methods](#step-5-lifecycle-methods)
-[Step 6: Creating custom elements](#step-6-creating-custom-elements)
+- [What are web components](#what-are-web-components)
+- [Why use web components](#why-use-web-components)
+- [Creating a web component with Vanilla JavaScript](#creating-a-web-component-with-vanilla-javascript)
+  - [Create the template](#step-1-create-the-template)
+  - [Load the template with content](#step-2-load-the-template-with-content)
+  - [Create the HTML element](#step-3-create-the-html-element)
+  - [Encapsulate the HTML element](#step-4-encapsulate-the-html-element)
+  - [Lifecycle methods](#step-5-lifecycle-methods)
+  - [Creating custom elements](#step-6-creating-custom-elements)
 
 
 ### Prerequisites
 Web components are a fantastic and interactive guide. Therefore a good understanding of HTML, CSS, and JavaScript is needed. 
 
 ### What are web components 
-[Web components](https://www.webcomponents.org/introduction) are sets of specifications that add functionalities and features to web pages and applications. They allow reusability and encapsulation of  HTML elements.
+[Web components](https://www.webcomponents.org/introduction) are sets of specifications that add functionalities and features to web pages and applications. For example, they allow reusability and encapsulation of  HTML elements.
 
 The web components enable you to build functions that can be reused on a different web platform, application, or page.
 
-Web components consist of three leading technologies used to create custom elements that can be reused when you like. They include:
+Web components consist of three leading technologies to create custom elements that can be reused when you like. They include:
 
 - **Custom elements:** these APIs allow you to define and create custom elements to provide the desired UI.
 
@@ -39,12 +39,12 @@ This image from [webcomponents.org](https://www.webcomponents.org/) shows the cu
 ![Browser support](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/browser-support.jpg)
 
 ### Why use web components
-Code reusability has proven to be useful, and before the initiation of web components,  it wasn't easy to implement a reusable user interface that works across diverse frameworks and projects.
+Code reusability has proven to be useful, and before the initiation of web components,  it was not easy to implement a reusable user interface that works across diverse frameworks and projects.
 
-Web Components allow web developers to build reusable UI's using built-in web APIs. This means we can create a web component for one project and carry it to another project with no additional coding needed.
+Web Components allow web developers to build reusable UI's using built-in web APIs. This means we can create a web component for one project and carry it to another with no additional coding.
 
 ### Creating a web component with Vanilla JavaScript
-In this tutorial, we look at creating a web component with [Vanilla JavaScript](https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks#:~:text=What%20is%20%22Vanilla%20JavaScript%22%3F&text=%22VanillaJS%20is%20a%20name%20to,need%20for%20additional%20JavaScript%20libraries.%22) or without the help of any framework or libraries.
+In this tutorial, we create a web component with [Vanilla JavaScript](https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks#:~:text=What%20is%20%22Vanilla%20JavaScript%22%3F&text=%22VanillaJS%20is%20a%20name%20to,need%20for%20additional%20JavaScript%20libraries.%22) or without the help of any framework or libraries.
 
 We are going to create an employee card web component. It will contain a user image, name, id, job title, phone, and email. Below is the user image we will use:
 
@@ -174,7 +174,7 @@ template.innerHTML = `
 `;
 ```
 
-The template element is stored in a variable called `template` and linked with `inner HTML` properties. The `innerHTML` property sets the HTML content on the element. Therefore, we can add the HTML we want to display on the screen, such as `<div>`, `<p>`, and more HTML elements.
+The template element is stored in a `template` variable and linked with `inner HTML` properties. The `innerHTML` property sets the HTML content on the element. Therefore, we can add the HTML we want to display on the screen, such as `<div>`, `<p>`, and more HTML elements.
 
 #### Step 3: Create the HTML element
 ```JavaScript
