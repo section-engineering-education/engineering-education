@@ -6,7 +6,7 @@ url: /spring-boot-recaptcha/
 title: Getting started with Spring Boot reCapture
 description: In this tutorial we will learn how to integrate Google reCapture V3 in a Spring Boot application
 author: david-mbochi
-date: 2021-09-07T00:00:00-12:00
+date: 2021-09-08T00:00:00-00:00
 topics: []
 excerpt_separator: <!--more-->
 images:
