@@ -1,17 +1,16 @@
-### Introduction
-In addition to mobile, Flutter's `web support` enables a seamless online experience. For example, you can now create apps for both iOS and Android, and web Flutter apps can be converted to run on the web in this situation because it is a similar framework and the web is just another device target. 
 
-In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will take you through making the Flutter plugin web-enabled.
+### Introduction
+Flutter's `web support` enables a seamless online experience. For example, you can create apps for both iOS, Android, and web apps can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will take you through making the Flutter plugin web-enabled.
 
 Anyone can add support for additional platforms using the federated plugin architecture. In contrast to a package, a plugin only contains Dart code, while a package only contains Native code. If a package wishes to, it can use plugins. However, it will still be considered a package.
 
-### Platform interface
-It is the process of abstracting what plugin package is to be implemented via its platforms,  Abstraction of how the plugin package communicates with the platform implementation, and its replacement by a description of what the plugin package wants from the platform.
+### Platform interfacing
+Pingatform interfacing is the process of abstracting what plugin package is to be implemented via its platforms, how the plugin package communicates with the platform implementation, and its replacement of what the plugin package wants from the platform.
 
 ### Creating the platform interface package
 In the other example, the plugin sits in a directory like packages/URL launcher in the flutter/plugins directory GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
 
-We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated subfolder in the packages/ directory. 
+We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated sub-folder in the packages/ directory. 
 
 Run the following code in the current directory you created earlier to create the platform interface package.
 
@@ -33,9 +32,7 @@ You can use **pubspec.yaml** as a template for the actual package:url_launcher_i
 
 4.  **README.md** file
 
-As a starting point, look at the README.md in the package:url_launcher_interface_platform.
-
-Now copy and paste the following code into the file lib/url_launcher_interface_platform.dart:
+As a starting point, look at the README.md in the package:url_launcher_interface_platform. Now copy and paste the following code into the file lib/url_launcher_interface_platform.dart:
 
 ```dart
 import 'dart:async';
