@@ -37,12 +37,13 @@ The only requirement is that the article has to be at least 750 words, there is 
 **Articles should be a minimum of 750 words.**
 
 ### How does the revision process work?
-Article payout will be as follows:
-- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
-- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
-- Articles with (3+) and up rounds of revisions) we will consider closing the PR
+Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for Tutorials)
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
+
+### What is the difference between a tutorial and an article?
+A tutorial is a walk-through implementation on a topic. For example: How to set up Ubuntu on Linux. Steps laid out, with screenshots, and accompanying snippets. 
+An article is a piece describing, explaining, or exploring a topic (with out any steps on HOW TO implement). For example - The Difference between Java and C++.
 
 ### What counts as a round of revision?
 Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
