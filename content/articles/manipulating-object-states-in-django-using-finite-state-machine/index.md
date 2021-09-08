@@ -1,3 +1,5 @@
+![banner-image](hero.jpg)
+
 As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable –
 conditions here and there, choices up and down; all to accommodate the intricacies of a growing system.
 One way to avoid these complications is to apply Finite State Machines (FSM) concept in handling state changes
