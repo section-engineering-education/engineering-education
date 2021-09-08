@@ -268,7 +268,7 @@ val uuid = data?.getStringExtra("uuid");
 ```
 
 ### Conclusion
-Hover SDK can be integrated into large projects that have payment modules. In the following section of this tutorial, you will learn how to parse a transaction confirmation SMS and send it to the Hover dashboard. Parsing will help us update the status of the transaction as either "succeeded", "failed" or "pending". Keep learning more about Hover SDK. Check out this Github repository to find out the whole implementation [Hover SDK demo](https://github.com/JoelKanyi/HoverSDKDemo).
+Hover SDK can be integrated into large projects that have payment modules. In this tutorial we have learned how to create actions and add steps, create hover app on the Hover dashboard and also integrate the SDK into an Android Application. Keep learning more about Hover SDK. Check out this Github repository to find out the whole implementation [Hover SDK demo](https://github.com/JoelKanyi/HoverSDKDemo).
 
 Happy Coding!
 
