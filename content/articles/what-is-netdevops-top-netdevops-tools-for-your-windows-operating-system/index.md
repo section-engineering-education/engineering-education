@@ -24,7 +24,7 @@ This article will teach the basic concept of NetDevOps. Discuss the development 
 Network engineering is heavily carried on Linux-based OS. This article will help the network engineers who work on the Windows operating system know and learn the tools they need. Thus making it easier and faster to work as a network NetDevOp.
 
 ### Prerequisites
-This article assumes you have some basic understanding of the following topics.
+This article assumes you have some basic understanding of the following topics:
 
 - Basic understanding of what [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) entails.
 - Know what [CI/CD pipeline](/engineering-education/an-introduction-to-cicd-tools/) is.
@@ -213,17 +213,17 @@ Other essential tools include;
 - A [Cloud Platform](/engineering-education/introduction-to-cloud-computing/) - for hosting network model codes.
 
 ### Further reading
-- [What it Takes to be a DevOps Engineer](/what-it-takes-to-be-a-devops-engineer/)
-- [An Introduction to CI/CD Tools](/engineering-education/an-introduction-to-cicd-tools/)
-- [Automation Using Ansible](/engineering-education/it-automation-using-ansible/)
-- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
-- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
-- [Setting up CI/CD for Python Packages using GitHub Actions](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/)
-- [Python Projects for Beginners](/engineering-education/python-projects-for-beginners/)
-- [How to Containerize a Python Application](/engineering-education/how-to-containerize-a-python-application/)
-- [What is Kubernetes?](/engineering-education/what-is-kubernetes/)
-- [How to Deploy Docker Container to a Kubernetes Cluster](/engineering-education/deploy-docker-container-to-kubernetes-cluster/)
-- [Getting Started with Kubernetes](/engineering-education/introduction-to-kubernetes/)
-- [Getting Started with Kubernetes Clusters](/engineering-education/kubernetes-clusters-intro/)
-- [Top Container Orchestration tools](/engineering-education/top-container-orchestration-tools/)
-- [Why and When You Should Use Kubernetes](/engineering-education/why-and-when-you-should-use-kubernetes/)
+1. [What it Takes to be a DevOps Engineer](/what-it-takes-to-be-a-devops-engineer/)
+2. [An Introduction to CI/CD Tools](/engineering-education/an-introduction-to-cicd-tools/)
+3. [Automation Using Ansible](/engineering-education/it-automation-using-ansible/)
+4. [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+5. [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+6. [Setting up CI/CD for Python Packages using GitHub Actions](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/)
+7. [Python Projects for Beginners](/engineering-education/python-projects-for-beginners/)
+8. [How to Containerize a Python Application](/engineering-education/how-to-containerize-a-python-application/)
+9. [What is Kubernetes?](/engineering-education/what-is-kubernetes/)
+10. [How to Deploy Docker Container to a Kubernetes Cluster](/engineering-education/deploy-docker-container-to-kubernetes-cluster/)
+11. [Getting Started with Kubernetes](/engineering-education/introduction-to-kubernetes/)
+12. [Getting Started with Kubernetes Clusters](/engineering-education/kubernetes-clusters-intro/)
+13. [Top Container Orchestration tools](/engineering-education/top-container-orchestration-tools/)
+14. [Why and When You Should Use Kubernetes](/engineering-education/why-and-when-you-should-use-kubernetes/)
