@@ -225,7 +225,7 @@ step 4: Finally, heapify the tree's root.
 
 step 5: Repeat steps 2,3 and 4 as long as the heap is larger than one.
 ### Conclusion
-Searching in data structures is the process of finding a particular component in an array of 't' components. In terms of searching, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories. 
+Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories. 
 
 Binary and linear searches are two quick and easy techniques, with binary working quicker than linear search techniques.
 
