@@ -146,3 +146,6 @@ All the essential code for creating a package is contained in this class. As a r
 
 ### Conclusion
 Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. In this case, you may convert existing Flutter code written in Dart to operate on the web because it's the same framework, and the web is just another device target for your project. It is time to start writing your plugins!.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
