@@ -146,7 +146,8 @@ Step 1: If it's the first element, it's already sorted.
 
 Step 2: Select the next item.
 
-Step 3: Compare the element to be sorted to all items in the sorted sublist.
+Step 3: Compare the element to be sorted to all items in the sorted sub list.
+
 
 step 4: All elements in the sorted sub-list with values higher than that of the sorted value must be moved.
 
