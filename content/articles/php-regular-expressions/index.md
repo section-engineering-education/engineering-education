@@ -6,7 +6,7 @@ url: /php-regular-expressions/
 title: Php regular expressions
 description: This article will illustrate how to use regular expressions in php.
 author: steve-kwachie
-date: 2021-09-1T00:00:00-13:25
+date: 2021-09-8T00:00:00-7:56
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -148,3 +148,6 @@ This code first searches for the phrase "hip" and then finds 2 phases of  "po"  
 ### Conclusion
 
 Having discussed the different PHP RegEx in this write-up, we now understand well why regular expressions are essential in PHP and how much they eased everyday tasks that would otherwise prove to be complicated.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
