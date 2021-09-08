@@ -587,5 +587,5 @@ When you create a task, say "Complete application" and click submit button once 
 
 ### Conclusion. 
 We have learnt how create a kivy application and how to use Django in such applications. You can therefore
-be able to create similar such applications that make use of Django. You can read the [Kivy Documnetation](www.example.com) to learn more.
+be able to create similar such applications that make use of Django. You can read the [Kivy Documnetation](https://kivy.org/doc/stable/) to learn more.
 
