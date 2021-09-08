@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-simple-angular-app/hero.png
+  - url: /engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/hero.png
     alt: Data Binding using Angular example image
 ---
 **Go**, also known as *goLang*, is the [brainchild](https://en.wikipedia.org/wiki/Go_(programming_language) of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. 
