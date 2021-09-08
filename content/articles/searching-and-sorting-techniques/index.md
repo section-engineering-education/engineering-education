@@ -159,7 +159,8 @@ Bubble Sort is a basic sorting technique that t compares each adjacent element a
 
 Bubble sort works well with small sets of data.
 ##### Algorithm
-The stages involved in bubble sort (sorting a given array in ascending order) are as follows:
+The stages involved in bubble sort (sorting an array in ascending order) are:
+
 
 step 1: Compare the current element to the next element of the array, starting with the first element (index = 0).
 
