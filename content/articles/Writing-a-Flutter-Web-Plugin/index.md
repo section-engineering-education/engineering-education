@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /writing-a-flutter-web-plugin/
+title: Writing a Flutter Web Plugin
+description:  This article will walk the reader through writing their first web plugin in flutter.
+author: faith-zawadi
+date: 2021-09-08T00:00:00-12:14
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/writing-a-flutter-web-plugin//hero.jpg
+    alt: Flutter web plugin image
+---
 
 ### Introduction
 Flutter's `web support` enables a seamless online experience. For example, you can create apps for both iOS, Android, and web apps can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will take you through making the Flutter plugin web-enabled.
