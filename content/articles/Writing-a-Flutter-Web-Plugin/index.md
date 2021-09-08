@@ -11,7 +11,7 @@ It is the process of abstracting what plugin package is to be implemented via it
 ### Creating the platform interface package
 In the other example, the plugin sits in a directory like packages/URL launcher in the flutter/plugins directory GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
 
-We are creating a directory that contains not just the plugin package but also the platform interface and web packages. For example, the URL launcher plugin can be moved to a federated subfolder in the packages/ directory. 
+We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated subfolder in the packages/ directory. 
 
 Run the following code in the current directory you created earlier to create the platform interface package.
 
@@ -80,10 +80,10 @@ class MethodChannelUrlLauncher extends UrlLauncherPlatform {
 }
 ```
 
-Upload the new package to pub.dev after committing the new code and submitting it to version control.
+Upload the new package to `pub.dev` after committing the new code and submitting it to version control.
 
 ### Refactoring package:url_launcher
-We will now utilize package: URL launcher, which has been uploaded to the pub.dev as a platform interface package, and after that, add a dependency on url_launcher_interface_platform.
+We will now utilize package: URL launcher, which has been uploaded to the `pub.dev` as a platform interface package, and after that, add a dependency on url_launcher_interface_platform.
 
 Then we will now refactor all usages of MethodChannel.
 
@@ -127,9 +127,9 @@ Stating that this is the UrlLauncherPlatform default instance, rather than regis
 
 All the essential code for creating a package is contained in this class. As a result, understanding Flutter's MethodChannel APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
 
-1. It is possible to create a platform interface method for each plugin area that makes use of MethodChannel. An upshot of this is that the plugin package can be more adaptable because it does not import abstractions from the platform interface package.
+1. It is possible to create a platform interface method for each plugin area that uses MethodChannel. An upshot of this is that the plugin package can be more adaptable because it does not import abstractions from the platform interface package.
 
 2. Make sure to use package:plugin_platform_interface to force your platform interface implementers to use extends instead of implements.
 
 ### Conclusion
-Thanks to the Flutter framework's versatility, you can now create apps for iOS, Android, and the web using the same codebase. In this case, you may convert existing Flutter code written in Dart to operate on the web because it's the same framework, and the web is just another device target for your project. It is time to start writing your plugins!.
+Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. In this case, you may convert existing Flutter code written in Dart to operate on the web because it's the same framework, and the web is just another device target for your project. It is time to start writing your plugins!.
