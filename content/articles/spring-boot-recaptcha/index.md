@@ -2,27 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-recaptcha-v3/
-title: Getting started with Spring Boot reCapture V3 authentication
-description: In this tutorial a reader will learn how to integrate Google reCapture V3 in a Spring Boot application
+url: /spring-boot-recaptcha/
+title: Getting started with Spring Boot reCapture
+description: In this tutorial we will learn how to integrate Google reCapture V3 in a Spring Boot application
 author: david-mbochi
 date: 2021-09-07T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/spring-boot-recaptcha-v3/hero.jpg
-    alt: Getting started with Spring Boot reCapture V3 authentication
+  - url: /engineering-education/spring-boot-recaptcha/hero.jpg
+    alt: Getting started with Spring Boot reCapture example image
 ---
 
-
-### Introduction
-reCAPTCHA is a system that enables users to protects their sites from bots. ReCaptcha generates a score that ranges from `0` to `1`. If the score is less than `0.5`, there is a possibility a bot invoked the action, and if the score is greater than `0.5`, the action was not invoked by a bot. This tutorial will teach you how to Implement Google reCAPTCHA version 3 to protect Spring Boot login form. We will intercept the authentication during login and check if the score generated is less than `0.5`, then request the user to enter an OTP sent to their email or authenticate the user. 
-
+reCAPTCHA is a system that enables users to protects their sites from bots. ReCaptcha generates a score that ranges from `0` to `1`. If the score is less than `0.5`, there is a possibility a bot invoked the action.
+<!--more-->
+This tutorial will teach you how to Implement Google reCAPTCHA version 3 to protect Spring Boot login form. We will intercept the authentication during login and check if the score generated is less than `0.5`, then request the user to enter an OTP sent to their email. Otherwise, we authenticate the user. 
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Creating Google recapture project](#creating-google-recapture-project)
-- [Create a Spring Boot application](#create-a-spring-boot-application)
+- [Creating a Spring Boot application](#creating-a-spring-boot-application)
 - [Database configuration](#database-configuration)
 - [Domain layer](#domain-layer)
 - [Repository layer](#repository-layer)
@@ -31,8 +30,7 @@ reCAPTCHA is a system that enables users to protects their sites from bots. ReCa
 - [Security and reCapture setup](#security-and-recapture-setup)
 - [Controller layer](#controller-layer)
 - [Templates](#templates)
-- [Test the login when the score is greater than 0.5](#test-the-login-when-the-score-is-greater-than-05)
-- [Test the login when the score is less than 0.5](#test-the-login-when-the-score-is-less-than-05)
+- [Testing](#testing)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -42,17 +40,19 @@ reCAPTCHA is a system that enables users to protects their sites from bots. ReCa
 - [Intellij IDEA](https://www.jetbrains.com/idea/) installed on your computer.
 
 ### Creating Google recapture project
-[Create a new reCAPTCHA V3 site ](https://www.google.com/recaptcha/admin/create) with any name you want, set the domain to localhost as we will be testing the application locally. Take note of the site key and secret key, which we will use later in the application.
+[Create a new reCAPTCHA V3 site ](https://www.google.com/recaptcha/admin/create) with any name you want. 
+
+Set the domain to localhost as we will be testing the application locally. Take note of the site key and secret key, which we will use later in the application.
 
 ### Creating a Spring Boot application
 Navigate to [Spring Initialzr](https://start.spring.io/) and generate a new project with dependencies `Spring Web`, `Spring Security`, `Spring Data JPA`, `Thymeleaf`, `Spring Boot Dev Tools`, `MySQL Driver` and `Lombok`.
 
-Import the generated project into Intellij, ensure you have an active internet connection to download the dependencies from the remote central repository.
+Import the generated project into Intellij and ensure you have an active internet connection to download the dependencies from the remote central repository.
 
-![Spring Initializr image](/engineering-education/pring-boot-recaptcha-v3/spring-initializr.png)
+![Spring Initializr image](/engineering-education/spring-boot-recaptcha/spring-initializr.png)
 
 ### Database configuration
-Since we will not deploy the application to production, the database tables will be automatically created during application initialization when we set `spring.jpa.hibernate.ddl-auto=create` property.
+Since we will not deploy the application to production, the database tables will be automatically created during application initialization. This is because we set `spring.jpa.hibernate.ddl-auto=create` property.
 
 Add the properties below into the `application.properties` file.
 
@@ -98,18 +98,14 @@ public class Role {
 
 ```
 
-`@Data` - Generates all getters and setters for the fields in the class.
-
-`@AllArgsConstructor` - Generates a constructor with all the fields declared in the class.
-
-`@NoArgsConstructor` - Generates a constructor without any arguments.
-
-`@ToString` - Generates a string representation of the fields that we can use when debugging.
-
+* `@Data` generates all getters and setters for the fields in the class.
+* `@AllArgsConstructor` generates a constructor with all the fields declared in the class.
+* `@NoArgsConstructor` generates a constructor without any arguments.
+* `@ToString` generates a string representation of the fields that we can use when debugging.
 
 Create a class named `AppUser` with fields `id`, `username`, and `password` representing different users who can interact with the application depending on their rights.
 		
-Since users can have many rights, we must include a Role field in the `AppUser` class and annotate it with the `@ManyToMany` annotation.
+Since users can have many rights, we must include a role field in the `AppUser` class and annotate it with the `@ManyToMany` annotation.
 
 ```java
 import lombok.AllArgsConstructor;
@@ -146,7 +142,7 @@ public class AppUser {
     }
 }
 ```
-Create a class named `ReCaptchaResponse` with fields `success`, `hostname`, `action`, `score`, `challenge_ts`, and `errorCodes` which is an array of string and annotate it with `@JsonProperty("error-codes")` indicating that response from the server is a `JSON` and maps to an array of strings
+Create a class named `ReCaptchaResponse` with fields `success`, `hostname`, `action`, `score`, `challenge_ts`, and `errorCodes` which is an array of string. Annotate it with `@JsonProperty("error-codes")` indicating that response from the server is a `JSON` and maps to an array of strings
 
 ```java
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -168,7 +164,7 @@ public class ReCaptchaResponse {
 ### Repository layer
 Create an interface named `AppUserRepository` extending `JpaRepository`. This interface will allow us to perform CRUD operations without writing any queries.
 
-Create a method that returns an `AppUser` when the username is passed to it, and we can achieve this by adding the following method.
+Create a method that returns an `AppUser` when the username is passed to it. We can achieve this by adding the following method.
 
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -198,23 +194,22 @@ PasswordEncoder passwordEncoder(){
 }
 ```
 
-Inside the Application class, create a `CommandLineRunner` Bean that we will use to create custom users to test our application when the application starts.
+Inside the Application class, create a `CommandLineRunner` Bean that we will use to create custom users and test our application when the application starts.
 
 The command-line runner will accept three parameters: `AppUserRepository`, `RoleRepository`, and `PasswordEncoder`.
 
 ```java
 @Bean
-    CommandLineRunner commandLineRunner(AppUserRepository appUserRepository,
-                                        RoleRepository roleRepository,
-                                        PasswordEncoder passwordEncoder){
-        return args -> {
+CommandLineRunner commandLineRunner(AppUserRepository appUserRepository,
+    RoleRepository roleRepository,
+    PasswordEncoder passwordEncoder) {
+    return args - > {
 
-        }
-                                       
+    }
 }
 ```
 
-Inside the command's lambda function, the command-line runner creates a list of roles and uses the `RoleRepository` to save the roles in the database using the `saveAll(roles)` method.
+Inside the command's lambda function, the command-line runner creates a list of roles and uses the `RoleRepository` to save the roles in the database using the `saveAll` method.
 
 ```java
 return args -> {
@@ -227,26 +222,26 @@ return args -> {
 }
 ```
 
-Create two users in the arrow function with username `johndoe` and `marypublic` and password of `1234` for both users.
+Create two users in the arrow function with username `johndoe` and `marypublic` and passwords `1234` for both users.
 
 ```java
-return args -> {
-            List<Role> roles = List.of(
-                    new Role("ROLE_USER"),
-                    new Role("ROLE_ADMIN")
-            );
+return args - > {
+    List < Role > roles = List.of(
+        new Role("ROLE_USER"),
+        new Role("ROLE_ADMIN")
+    );
 
-            roleRepository.saveAll(roles);
+    roleRepository.saveAll(roles);
 
 
-            List<AppUser> appUsers = List.of(
-                    new AppUser("johndoe",passwordEncoder.encode("1234")),
-                    new AppUser("marypublic",passwordEncoder.encode("1234"))
-            );
-            appUserRepository.saveAll(appUsers);
+    List < AppUser > appUsers = List.of(
+        new AppUser("johndoe", passwordEncoder.encode("1234")),
+        new AppUser("marypublic", passwordEncoder.encode("1234"))
+    );
+    appUserRepository.saveAll(appUsers);
 }
 ```
-Add role `ROLE_USER` to user `johndoe` and role `ROLE_ADMIN` to user `marypublic` and ensure the changes are committed to the database using the `save()` method.
+Add role `ROLE_USER` to `johndoe` and role `ROLE_ADMIN` to `marypublic` and ensure the changes are committed to the database using the `save()` method.
 
 The Application class will finally look as shown below.
 
@@ -314,7 +309,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public interface AppUserService extends UserDetailsService {
 }
 ```
-Create a class naed `AppUserServiceImpl` and implement `AppUserService` then Override the `loadUserByUsername(username`) method to locate the user.
+Create a class naed `AppUserServiceImpl` and implement `AppUserService` then Override the `loadUserByUsername` method to locate the user.
 
 ```java
 import lombok.RequiredArgsConstructor;
@@ -351,7 +346,7 @@ public class  AppUserServiceImpl implements AppUserService{
 ```
 
 
-Create a class named `AppConfig` that extends the `WebSecurityConfigurerAdapter` class to add custom security information to our application and Override two methods `configure(AuthenticationManagerBuilder)` and `configure(HttpSecurity)`.
+Create a class named `AppConfig` that extends the `WebSecurityConfigurerAdapter` class to add custom security information to our application. Override the methods `configure` and `configure`.
 
 Declare a final property for the `AppUserService` interface inside the class. The `@RequiredArgsConstructor` annotation will create a constructor with the fields declared as final.
 
@@ -402,7 +397,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.authenticationProvider(daoAuthenticationProvider());
 }
 ```
-Configure the route that will return the login page process the login page, and redirect the user after successful login in the `configure(HttpSecurity)` method.
+Configure the route that will return the login page process and redirect the user after successful login in the `configure` method.
 
 The `/login` is the path that returns the login form, `/processLogin` is the path that processes the login form, and `/success` is the path that returns the success page after successful authentication.
 
@@ -487,20 +482,20 @@ public class ReCaptcharV3Handler {
 }
 ```
 
-This class will intercept the request before the authentication happens.In order for the interception of the request to work we need to extend the `UsernamePasswordAuthenticationFilter` class from spring security and then Override the `attemptAuthentication()` method which accepts the `HttpServeletRequest` and `HttpServletResponse` arguments.
+This class will intercept the request before the authentication happens. 
+
+In order for the interception of the request to work, we need to extend the `UsernamePasswordAuthenticationFilter` class from spring security. Then we override the `attemptAuthentication` method which accepts the `HttpServeletRequest` and `HttpServletResponse` arguments.
 
 With the request, we can retrieve the `g-captcha-response` from the URL and pass it to the verify method as an argument depending on the score returned. Then, we can allow the authentication to continue or request the user to input the OTP emailed to them.
 
-Create a class named `CustomLoginFilter` with parameters `loginURL` and `httpMethod` of type String and inside the constructor, call the parent method `setRequiresAuthenticationRequestMatcher()` that takes in `loginURL` and `httpMethod` as arguments.
+Create a class named `CustomLoginFilter` with parameters `loginURL` and `httpMethod` of type String. Inside the constructor, call the parent method `setRequiresAuthenticationRequestMatcher` that takes in `loginURL` and `httpMethod` as arguments.
 
-The method will match the request with the given path and HTTP method, and if true, We will intercept the request.
+The method will match the request with the given path and HTTP method, and if true, we will intercept the request.
 
 ```java
 public CustomLoginFilter(String loginURL, String httpMethod){
-        super.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher(loginURL,httpMethod));
-    }
-
-
+    super.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher(loginURL,httpMethod));
+}
 ```
 
 The `CustomLoginFilter` class will finally look as shown below. 
@@ -552,15 +547,15 @@ public class CustomLoginFilter extends UsernamePasswordAuthenticationFilter {
 }
 ```
 
-Create a method named `getCustomLoginFilter()` that returns a `CustomLoginFilter` in `AppConfig` class.
+Create a method named `getCustomLoginFilter` that returns a `CustomLoginFilter` in `AppConfig` class.
 
 Add a `CustomLoginFilter` constructor inside the method and use `/login` and `post` parameters to intercept the authentication.
 
-Set the authentication manager to the default provided by spring security `authenticationManager()` and the login form processing url using `setFilterProcessesUrl()` method.
+Set the authentication manager to the default provided by `authenticationManager` and the login form processing url using `setFilterProcessesUrl` method.
 
-Override the `onAuthenticationSuccess()` method that tells Spring the page the user should be redirected to once the authentication is successful.
+Override the `onAuthenticationSuccess` method that tells Spring the page the user should be redirected to once the authentication is successful.
 
-Override the `onAuthenticationFailure()` that tells Spring the page the user should be redirected to if there was an error.
+Override the `onAuthenticationFailure` method which tells Spring the page the user should be redirected to if there was an error.
 
 ```java
 private CustomLoginFilter getCustomLoginFilter() throws Exception{
@@ -587,9 +582,9 @@ private CustomLoginFilter getCustomLoginFilter() throws Exception{
         return filter;
     }
 ```
-To ensure the request is intercepted before the authentication happens, we need to add the method `addFilterBefore()` in the `configure(HttpSecurity)` method of the `AppConfig` class.
+To ensure the request is intercepted before the authentication happens, we need to add the method `addFilterBefore` in the `configure` method of the `AppConfig` class.
 
-The `addFilterBefore()` method has two parameters composed of the filter we created above and its class.
+The `addFilterBefore` method has two parameters composed of the filter we created above and its class.
 
 ```java
  @Override
@@ -599,7 +594,6 @@ The `addFilterBefore()` method has two parameters composed of the filter we crea
 ```
 
 ### Controller layer
-
 The login controller consists of two `GET` methods, one to return the login form and the other to return the success page once the login is successful.
 
 ```java
@@ -636,7 +630,6 @@ public class OTPController {
 }
 ```
 ### Templates
-
 When creating the login form, you add ReCaptcha to the site by adding the following information.
 
 - Load the javascript API.
@@ -836,28 +829,30 @@ Create `success.html` file and add the code snippet below.
 #### Testing login when the score is greater than 0.5
 The server will often return a score greater than 0.5, meaning the authentication will continue processing. On successful login, Spring will redirect the user to the success page.
 
-Run the application and navigate to`http://localhost:8080/login` on your browser. Fill in the login details with any username and password of a user created by the `CommandLineRunner`.
+Run the application and navigate to `http://localhost:8080/login` on your browser. Fill in the login details with any username and password of a user created by the `CommandLineRunner`.
 
 
-![login image](/engineering-education/pring-boot-recaptcha-v3/login-image.png)
+![login image](/engineering-education/spring-boot-recaptcha/login-image.png)
 
 On pressing the login button, you will notice the following `g-captcha-response` generated and the result returned by the server after verification on the console.
 
-![larger score image](/engineering-education/pring-boot-recaptcha-v3/larger-score-image.png)
+![larger score image](/engineering-education/spring-boot-recaptcha/larger-score-image.png)
 
 The score generated by the server is `0.9`, and it will allow the authentication to continue to the success page if the login is successful.
 
-![success page image](/engineering-education/pring-boot-recaptcha-v3/success-page-image.png)
+![success page image](/engineering-education/spring-boot-recaptcha/success-page-image.png)
 
 #### Testing login when the score is less than 0.5
 As indicated earlier, the server mostly generates a score greater than `0.5`, so we have to modify our application manually so that the verify method returns a score less than `0.5` for testing purposes.
 
 Return a random score in the verify method less than `0.5` and run the application again. When you enter the login details and press the login button, the interceptor will return the OTP page meaning the score generated was less than `0.5`.
 
-![otp image](/engineering-education/pring-boot-recaptcha-v3/otp-image.png)
+![otp image](/engineering-education/spring-boot-recaptcha/otp-image.png)
 
 ### Conclusion
-In this tutorial, you have learned how to implement Google ReCAPTCHA V3 in a Spring Boot application by leveraging a login form protected by Spring security and backed with persistent users in the database who have specific roles. Depending on the generated score, many decisions can be decided, as I mentioned in the introduction section, not requiring the user to send the one-time password (OTP) emailed to them.
+In this tutorial, you have learned how to implement Google ReCAPTCHA V3 in a Spring Boot application by leveraging a login form protected by Spring security and backed with persistent users in the database who have specific roles. 
+
+Depending on the generated score, many decisions can be decided, as I mentioned in the introduction section, not requiring the user to send the one-time password (OTP) emailed to them.
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
