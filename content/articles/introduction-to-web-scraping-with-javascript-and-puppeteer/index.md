@@ -6,18 +6,18 @@ url: /introduction-to-web-scraping-with-javascript-and-puppeteer/
 title: Introduction to Web Scraping With JavaScript and Puppeteer
 description: This article takes the reader through web scraping with javaScript and puppeteer. Web scraping enables users to get data from any website even if it does not provide a public API and display it on a web page.
 author: kevin-murimi
-date: 2021-09-05T00:00:00-17:50
-topics: []
+date: 2021-09-08T00:00:00-06:11
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/introduction-to-web-scraping-with-javascript-and-puppeteer/hero.jpg
     alt: Introduction to Web Scraping With JavaScript and Puppeteer Hero Image
 ---
 Most of our web apps require data to process and present to the user. There are many sources of data like databases and APIs.
-<!--more-->
-But we can also get data from any website even if it does not provide a public API. This process is known as **web scraping**, and we will take a look at it in this article. 
 
-We will use Puppeteer and Node.js(a JavaScript runtime environment). More information about puppeteer can be found [here](https://github.com/puppeteer/puppeteer)
+But we can also get data from any website even if it does not provide a public API. This process is known as **web scraping**, and we will take a look at it in this article. 
+<!--more-->
+We will use Puppeteer and Node.js (a JavaScript runtime environment). More information about puppeteer can be found [here](https://github.com/puppeteer/puppeteer).
 
 ### Goal
 By the end of this tutorial, you should be able to get data from any website and display it on a web page.
@@ -28,7 +28,7 @@ To be able to follow along in this tutorial, you will need to have an understand
 - Intermediate JavaScript knowledge.
 - A code editor, preferably VS Code, installed on your machine.
 - A web browser, preferably chrome.
-- NodeJs installed on your computer.
+- Node.js installed on your computer.
 
 > You should note that not all websites allow the scraping of data. Make sure to check a website's policy before you scrape data from it. In this article, we will scrape Amazon. Amazon allows scraping as long as you extract publicly available data such as product information, price, and reviews.
 
@@ -43,7 +43,7 @@ npm init -y
 The code above will create a JSON file and store it in our directory.
 
 Next, we need to install various npm packages:
-- `express` - Express is the NodeJs framework that we are going to use to configure our backend.
+- `express` - Express is the Node.js framework that we are going to use to configure our backend.
 - `puppeteer` - We will use this to visit web pages and extract the data we need.
 - `nodemon` - Nodemon restarts the node application automatically when changes are detected after saving the file.
 
@@ -64,7 +64,7 @@ npm install puppeteer
 When you install puppeteer, it automatically downloads a recent/updated version of chromium.
 
 ### Setting up our server
-To start our NodeJs server with Express, we create a file named `index.js` that is used as the entry point.
+To start our Node.js server with Express, we create a file named `index.js` that is used as the entry point.
 
 Open the file and add the following code:
 
@@ -82,12 +82,13 @@ app.listen(port, () => {
 });
 ```
 
-This is the Express JS starter template used to create a server. The code is explained below:
-We first import the express package using **const express = require('express')**.
+This is the Express JS starter template used to create a server.
 
-Then, we create an instance of our app using **const app = express()** and specify the port we will listen to using **const port = 3000**.
+We first import the express package using `const express = require('express')`.
 
-**app.listen** is a method that takes two arguments. The first argument is the port number that the server will listen to. The second argument is a callback function that is executed when a connection is successfully established.
+Then, we create an instance of our app using `const app = express()` and specify the port we will listen to using `const port = 3000`.
+
+`app.listen` is a method that takes two arguments. The first argument is the port number that the server will listen to. The second argument is a callback function that is executed when a connection is successfully established.
 
 To start the server, key in the following command and press enter:
 
@@ -95,7 +96,7 @@ To start the server, key in the following command and press enter:
 nodemon index.js
 ```
 
-Now when you navigate to http://localhost:3000/, you will see the message "Server is running". This means that you have successfully started the server, and you can now proceed to the next steps.
+Now when you navigate to `http://localhost:3000/`, you will see the message "Server is running". This means that you have successfully started the server, and you can now proceed to the next steps.
 
 #### Setting up puppeteer
 Since our server is working, it's time we set up puppeteer to get started with web scraping. In our **index.js** file, add the following line of code just below the line that sets the port number:
@@ -132,11 +133,11 @@ The code is explained below:
 
 Next up, we need to grab the page markup and extract the exact information we need.
 
-Before doing this, open your browser and go to the [URL](https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/) provided . From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
+Before doing this, open your browser and go to the [URL](https://www.amazon.com/Redragon-S101-Keyboard-Ergonomic-Programmable/dp/B00NLZUM36/) provided. From this page, we need to get the image of the keyboard, its price, and its name. Follow these steps:
 1. Right-click on the image and select the **inspect** option.
 2. The action above will open the developer tools. On the elements tab, you will see the page's markup, specifically the **img** since it's the one we are inspecting. Note the **id** of the image from the attributes of the image and note it down somewhere. In this case, the **id** is **landingImage**.
 3. Next up, right-click on the price of the keyboard and select **inspect**. Note down the **id** of the span containing the price of the keyboard. In this case, the id is **priceblock_ourprice**.
-4. Right-click on the keyboard name and click **inspect**. Note down the **id** of the span containing the keyboard name. In this case, it is **productTitle**
+4. Right-click on the keyboard name and click **inspect**. Note down the **id** of the span containing the keyboard name. In this case, it is **productTitle**.
 
 With the above information, we can now write the function we need to extract the information we require. Below is the code:
 
@@ -171,7 +172,8 @@ app.get("/price", async (req, res) => {
 ```
 
 Code explanation:
-The code above defines a simple route that responds to a GET request. To learn more about express routing, click [here](https://expressjs.com/en/starter/basic-routing.html)
+
+The code above defines a simple route that responds to a GET request. To learn more about express routing, click [here](https://expressjs.com/en/starter/basic-routing.html).
 
 The `get` method takes two parameters. One is the route, and the other one is the callback function that is executed when the route is invoked.
 
@@ -302,7 +304,7 @@ async function getPrice() {
 
 This Js file listens to a click event on the button and uses an asynchronous function together with the fetch API to get fetch data from the backend. 
 
-To learn more about the fetch API, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+To learn more about the fetch API, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 ### Starting our application
 Save all your files and open the terminal. Type the following command and press enter:
@@ -318,9 +320,12 @@ The page contains a button with the text "Check Price". Click on it and wait for
 ### Conclusion
 This example is simple but it is a good introduction to web scraping. Always make sure to check whether a website allows web scraping before you scrape data. Now that we have managed to scrape and track the price of a single product, go ahead and try to track multiple products. 
 
-You can also create a web app that tracks prices of similar items from different sellers, compares the prices and suggests to the user from which seller he/she should buy from.
+You can also create a web app that tracks prices of similar items from different sellers, compares the prices, and suggests to the user from which seller he/she should buy.
 
 Happy Scraping!
 
+### Further reading
+- [Getting Started with Web Scraping using Python](https://www.section.io/engineering-education/getting-started-with-web-scraping-using-python/)
+
 ---
-Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
