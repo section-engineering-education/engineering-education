@@ -133,8 +133,7 @@ The sample that we have created above performs an out shuffle, with the top and 
 shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 ```
 When you execute the program once more, you will note that the deck 'takes 52 iterations to reshuffle itself. This is contributed to by several factors. You may address one of the key causes of this reduction in performance which is the inefficient lazy evaluation. Note that we used a LINQ query to create the original deck. The three queries of LINQ on the previous deck are used to generate each shuffle. All of this occurs at a glacial speed. This indicates that the sequence is repeated each time it is requested. By the moment you reach the fifty second iteration, you will have regenerated the initial deck severaly i.e more than once. Let's make a log to show how this works. Then you'll take care of it.
-
-Type or copy the method below into your Extensions.cs file. This extension method results into the creation of a new file which is named as debug.log in your project directory and logs the query that is presently being run. This extension method can be used to indicate the completion of a query.
+Type or copy the method below into your Extensions.cs file. This extension method creates a new file named.log in your project directory and logs the query that is presently being running. We can use this extension method to indicate the completion of a query.
 ```c#
 public static IEnumerable<T> LogQuery<T>
     (this IEnumerable<T> sequence, string x)
@@ -153,4 +152,4 @@ In the above code, do not forget to add the input-output extension so that the p
 using System.IO;
 ```
 ### Conclusion
-In conclusion, we have got to see some working functionalities of the LINQ in C# and how they are implemented in say a program or solving some real-life problems.
+In conclusion, we have got to see some working functionalities of the LINQ in C# and how to implement them in a program or solve real-life problems.
