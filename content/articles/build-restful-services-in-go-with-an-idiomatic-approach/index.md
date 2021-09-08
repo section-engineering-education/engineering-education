@@ -1,5 +1,21 @@
-**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. As of writing this article, the latest version stands at *go1.17*.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-restful-services-in-go-with-an-idiomatic-approach/
+title: Building RESTful Services in Go with an Idiomatic Approach
+description: This article will walk 
+author: mahantesh-r
+date: 2021-09-08T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-simple-angular-app/hero.png
+    alt: Data Binding using Angular example image
+---
+**Go**, also known as *goLang*, is the brainchild of Rob Pike, Robert Griesemer, and Ken Thompson. The development started at Google in 2007 and was open-sourced in 2009, with version 1.0 released in March 2012. As of writing this article, the latest version stands at *go1.17*.
+<!--more-->
 Go is:
 
 > a *statically typed language*, i.e., the type of the variable is known during the compile time.
@@ -12,10 +28,10 @@ Writing good, understandable code is what every developer seeks, and they learn 
 RESTful services are some of the most common practices used across software industries. In this tutorial, we will see how to build RESTful services using Go with an idiomatic approach. We will build an *API* that returns Coffee object data.
 
 ### Prerequisites
-* Go installed on your system. You can download the latest version from [here](https://golang.org/dl/).
-* Basics of Go, if you aren't familiar with concepts like `interface`, `method`, etc., or new to Go, you can check out this excellent TDD tutorial over [here](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go).
-* Familiarity with Go's packages like `net/http` and `encoding/json`.
-* Basics of [REST](https://mlsdev.com/blog/81-a-beginner-s-tutorial-for-understanding-restful-api) services.
+- Go installed on your system. You can download the latest version from [here](https://golang.org/dl/).
+- Basics of Go, if you aren't familiar with concepts like `interface`, `method`, etc., or new to Go, you can check out this excellent TDD tutorial over [here](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go).
+- Familiarity with Go's packages like `net/http` and `encoding/json`.
+- Basics of [REST](https://mlsdev.com/blog/81-a-beginner-s-tutorial-for-understanding-restful-api) services.
 
 The folder is structured in the following manner:
 ```html
@@ -63,6 +79,7 @@ var productList = []*Product{
   },
 }
 ```
+
 The `Product` struct has the fields mentioned above defined with struct tags, respectively. The *struct tags* feature allows us to add annotations to the fields and write parsers to pick up those annotations.
 
 So here, our field name `ID` gets renamed to `id` in the http response as defined in the struct tag.
@@ -127,19 +144,20 @@ func main() {
   http.ListenAndServe(":4200", sm)
 }
 ```
-* `ph` is a `handler` that will reference our struct `Products` from *product_handler.go* and serve the `ServeHTTP` method.
-* `sm` is an instance of `ServeMux`, a *multiplexer* to handle all the API requests.
-  It compares the incoming HTTP requests against a lookup of predefined URL paths and calls that respective *handler* where the match is found.
-* The method `ListenAndServe` listens to the TCP connection on the port defined and calls the `handler` to handle the requests.
 
----
-**_Note:_**
+- `ph` is a `handler` that will reference our struct `Products` from *product_handler.go* and serve the `ServeHTTP` method.
+- `sm` is an instance of `ServeMux`, a *multiplexer* to handle all the API requests.
+It compares the incoming HTTP requests against a lookup of predefined URL paths and calls that respective *handler* where the match is found.
+- The method `ListenAndServe` listens to the TCP connection on the port defined and calls the `handler` to handle the requests.
+
+
+***Note:***
 
 As per the docs, the syntax for `ListenAndServe` is:
 ```go
 func ListenAndServe(addr string, handler Handler) error
 ```
----
+
 In our code, we are passing an instance of `ServeMux` as a *handler* here. It has a `ServeHTTP` method defined, and hence it will satisfy the `Handler` interface. When it is `nil`, it will call the `DefaultServeMux` internally.
 
 So far, we have the *products* list and the handler template to serve the http requests. Now the question is, how do we pass the *Coffee* data from the `Product` structure to our `ServeHTTP` function.
@@ -207,6 +225,7 @@ var productList = []*Product{
   },
 }
 ```
+
 The *ToJSON* method has the function `NewEncoder` from `encoding/json` package that writes
 data directly onto `io.Writer`.
 
@@ -263,6 +282,7 @@ func (p *Products) addProduct(rw http.ResponseWriter, r *http.Request) {
   data.AddProduct(prod)
 }
 ```
+
 We have added the methods to handle the requests. Now we will add the data model methods in *products.go*
 ```go
 package data
@@ -341,26 +361,25 @@ From the terminal, within the project directory, run the command:
 
 This completes our implementation of RESTful services in Go, and attached below are the results of the API calls.
 
-* `GET` request to query the current list of *Coffee* items.
+- `GET` request to query the current list of *Coffee* items.
 
 ![get request first](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get-first.png)
 
-* `POST` request to insert a new *Coffee* item.
+- `POST` request to insert a new *Coffee* item.
 
 ![post request](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/post-first.png)
 
-* To verify the newly added item, we will again call the `GET` method.
+- To verify the newly added item, we will again call the `GET` method.
 
 ![get request second](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/get-second.png)
 
 ### Conclusion
- 
 To conclude, we created handlers to handle `HTTP` requests while ensuring the methods that operate on *Coffee* data list remain abstracted and understood how Go's standard packages like `encoding/json`, `log`, and `net/http` can be used. 
 
 ### Additional Resources
-* If you still don't get the whole idea of the `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
-* To understand more about `logger`, check out this [article](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
-* The go-to guide to understand and write better Go code is to follow [Go-docs](https://pkg.go.dev/).
-* As for the next step, you can use *PostgreSQL* to store/retrieve data and use the popular [*Gorilla Mux*](https://www.gorillatoolkit.org/) toolkit to handle API calls.
+- If you still don't get the whole idea of the `Handler` interface, check out this source [here](https://perennialsky.medium.com/understand-handle-handler-and-handlefunc-in-go-e2c3c9ecef03).
+- To understand more about `logger`, check out this [article](https://www.loggly.com/use-cases/logging-in-golang-how-to-start/).
+- The go-to guide to understand and write better Go code is to follow [Go-docs](https://pkg.go.dev/).
+- As for the next step, you can use *PostgreSQL* to store/retrieve data and use the popular [*Gorilla Mux*](https://www.gorillatoolkit.org/) toolkit to handle API calls.
 
 
