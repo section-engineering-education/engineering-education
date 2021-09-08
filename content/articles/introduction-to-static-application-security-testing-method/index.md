@@ -5,7 +5,7 @@ published:
 url: /introduction-to-static-application-security-testing-method/
 title: Introduction to Static Application Security Testing Method
 description: This article will introduce a reader to application vulnerability testing, outlining the various ways of performing the same. The article will further focus on the static secutity testing method outlining how it works and its advantages.
-This article will try to make a brief comparison between the static testing method and dynamic method and any other methods in existences.
+This article will try to make a brief comparison between the static testing method and dynamic method and any other methods in existence.
 author: ruth-mare
 date: 2021-09-02T00:00:00-18:00
 topics: [Security]
@@ -19,6 +19,7 @@ images:
 
 ### Overview
 This article will cover:
+- [Prerequisites](prerequisites)
 - [What is SAST](what-is-sast)
 - [How SAST Works](how-sast-works)
 - [Advantages and Disadvantages of SAST](advantages-and-disadvantages-of-sast)
@@ -26,10 +27,13 @@ This article will cover:
 - [Conclusion](conclusion)
 - [Reference](reference)
 
+### Prerequisites
+The learner should be familiar with git commands and commands in a linux operating System.
+
 ### What is SAST
 Static Application Security Testing, also known as SAST, is a method of vulnerability testing that does an analysis of the source code of an application to determine the security vulnerabilities that may cause the application to be compromised.
 
-A vulnerability is any loophole within an application that can be exploited by a bad actor to gain access to the application or propagate malware through the application. A vulnerability that is not fixed could lead to dire consequences for the user and even owners of an application. SAST is one of the ways used to assess application vulnerabilities.
+> A vulnerability is any loophole within an application that can be exploited by a bad actor to gain access to the application or propagate malware through the application. A vulnerability that is not fixed could lead to dire consequences for the user and even owners of an application. SAST is one of the ways used to assess application vulnerabilities.
 
 SAST does application scanning before the compilation of the code, a scenario also known as the white box testing normally done at the beginning of the SDLC because it does not require an executing application. SAST helps developers to identify weaknesses of an application in the early stages of development and quickly resolve issues that may otherwise have effects on the final rolled out application.
 
@@ -39,11 +43,54 @@ Developers can also create customized reports they need with SAST tools; these r
 
 ### How SAST works
 SAST performs automatic scanning of applications using these six simple steps required to perform SAST effectively:
-1. *Choosing of the tool* - Choose a Static analysis tool that can carry out code reviews for applications written in the programming languages ​of your choice and can understand the application’s underlying framework.
+1. *Choosing of the tool* - Choose a Static analysis tool that can carry out code reviews for applications written in the programming languages of your choice and can understand the application’s underlying framework.
 2. *Creation of the scanning infrastructure, and deployment of the tool* - This entails managing licensing requirements, creating access control and authorization, and acquiring the necessary resources such as servers and databases on which the tool is to be deployed.
 3. *Customization of the tool* - Adjusting the tool to fit your specification e.g., you can prepare it to minimize false positives or capture additional security vulnerabilities by forming new rules or reviewing existing ones. Integrate the tool into the build environment, create a dashboard of scanning results, and create custom reports.
 4. *Prioritization and onboarding of applications* - When the tool is ready, the applications are then onboarded onto the tool.
 5. *Analysis of scan results* - This step involves triaging the results of the vulnerability scan to eliminate any false positives. Once the problems have been completely put together, they can be tracked and assigned to the deployment teams for appropriate and timely correction.
+
+#### Process of SAST
+Static Application security Testing is done in the following simple steps;
+
+**Step 1: Choosing of the tool**
+Choose a specific tool from the majority of tools in existence. For this sample test we will use MobSF (Mobile Security Framework), which is an open source, automated mobile penetration testing tool, as the tool for this sample security testing.
+For purposes of  this example, we will also use a linux operating system environment and the MobSF will be deployed in a Docker container.
+
+**Step 2: Creation and deployment of the scanning environment and tool**
+We will setup the docker container first then the MobSF tool.
+Set up the docker PGP key, configure Docker then install using the following commands:
+```bash
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add –
+```
+```bash
+echo ‘deb [arch=amd64] https://download.docker.com/linux/debian buster stable’ | sudo tee /etc/apt/sources.list.d/docker.list
+```
+```bash
+apt install docker-ce
+```
+When the above installation is done, we will then download the MobSF tool docker image from [this](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/) git repository using the following command:
+```bash
+docker pull opensecurity/mobile-security-framework-mobsf
+```
+When the pull is done to completion, we then proceed to running the MobSF tool in the next step.
+
+**Step 3: Running tool**
+Run MobSF with the following command:
+```bash
+docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
+```
+The terminal will indicate "listening at http://0.0.0.0:8000" when the tool is succefully run to completion.
+You can then access MobSF at the above URL and upload the application to be tested.
+Click on http://0.0.0.0:8000 then click upload and anlyze as shown:
+![upload and analyze](upload.jpg)
+
+The process will take place automatically and present the results after completion as shown below:
+![results display](results.jpg)
+
+**Step 4: Downloading report**
+Navigate on the task pane to view the pdf report or download an offline report as shown:
+![report](report.jpg)
+Download the report for offline analysis.
 
 ### Advantages and Disadvantages of SAST
 #### Advantages of SAST
@@ -78,5 +125,5 @@ Happy learning!
 
 ### Reference
 - [Static Application Security Testing: SAST Basics](https://www.whitesourcesoftware.com/resources/blog/sast-static-application-security-testing/)
-
+- [Mobile Security Framework (MobSF) Static Analysis](https://medium.com/@kshitishirke/mobile-security-framework-mobsf-static-analysis-df22fcdae46e)
 ---
