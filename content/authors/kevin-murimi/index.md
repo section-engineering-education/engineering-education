@@ -1,7 +1,5 @@
 ---
 title: Kevin Murimi
-type: engineering-education/author
+type: authors
 ---
-
-
-Kevin is a JKUAT CS student. He is passionate about web development and cyber security
+Kevin is a JKUAT CS student. He is passionate about web development and cyber security.
