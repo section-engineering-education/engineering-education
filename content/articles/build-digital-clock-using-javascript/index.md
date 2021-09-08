@@ -4,7 +4,7 @@
 
 ### Introduction
 
-The web made almost everything possible, and the emergence of JavaScript as the programming language of the web enables us to see our code live as they appear on the web and give us the ability to interact with web content. This article seeks to use this important tool of the web to build a digital clock that runs on the web with other web-based technologies such as HTML, CSS.
+The web made almost everything possible, and the emergence of JavaScript, the programming language of the web enables us to see our code live as they appear on the web and give us the ability to interact with web content. This article seeks to use this important tool of the web to build a digital clock that runs on the web with other web-based technologies such as HTML, CSS.
 
 ### Prerequisites
 
@@ -72,20 +72,20 @@ The code snippet below shows the HTML file structure.
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Digital_Clock</title>
+      <title>Clock</title>
       <link rel="stylesheet" href="index.css">
    </head>
    <body>
       <div>
          <div style="color: white;">The Time is: </div>
-         <div id="Digital_Clock" class="glow">00:00:00</div>
+         <div id="Clock" class="glow">00:00:00</div>
       </div>
       <script src= index.js></script>
    </body>
 </html>
 ```
 
-This structure should be familiar to you, the ```id = Digital_Clock``` and ```class = glow``` will be used in our JavaScript and CSS files respectively.
+This structure should be familiar to you, the ```id = Clock``` and ```class = glow``` will be used in our JavaScript and CSS files respectively.
 
 To link JavaScript file and CSS file in HTML file, ```script``` and ```link`` tag is used as shown above respectively. Though there are other ways of adding JavaScript and CSS to HTML in this article, I choose to use the external file source.
 
@@ -125,7 +125,7 @@ From the code above it means that the function ```displayTime``` will keep execu
 
 ```js
 
-let hours = timeNow.getHours();
+let hoursOfDay = timeNow.getHours();
 
 let minutes = timeNow.getMinutes();
 
@@ -139,13 +139,13 @@ let months = timeNow.toLocaleString("default", { month: "long" });
 
 let year = timeNow.getFullYear();
 
-let period = "AM";
+let periodOfDay = "AM";
 
 ```
 
 If we look closely, you will notice that we're using the ```timeNow``` variable to access the various methods in the JavaScript *date* class. We declared it up above in our function block.
 
-- Hours, minutes, and seconds are assigned to the ```hours```, ```minutes```, and ```seconds``` variables.
+- Hours, minutes, and seconds are assigned to the ```hoursOfDay```, ```minutes```, and ```seconds``` variables.
 
 - The ```weekDay``` variable contains an array of days of the week.
 
@@ -155,7 +155,7 @@ If we look closely, you will notice that we're using the ```timeNow``` variable 
 
 - The ```year``` variable gets the year from the ```getFullYear()``` method.
 
-- The ```period``` variable is initialized to *AM*, this prints the period of the day.
+- The ```periodOfDay``` variable is initialized to *AM*, this prints the period of the day.
 
 I think that is enough explanation up there. Our next step would be to couple all of these variables in the function, here is how:-
 
@@ -165,7 +165,7 @@ function displayTime(){
 
    const timeNow = new Date();
 
-   let hours = timeNow.getHours();
+   let hoursOfDay = timeNow.getHours();
 
    let minutes = timeNow.getMinutes();
 
@@ -179,13 +179,13 @@ function displayTime(){
 
    let year = timeNow.getFullYear();
 
-   let period = "AM"; 
+   let periodOfDay = "AM"; 
 
 }
 
 ```
 
-That is what our function looks like right now. But this is not enough to build our digital clock, the reason you're reading this article. The next is to set our period.
+That is what our function looks like right now. But this is not enough to build our digital clock, the reason you're reading this article. The next is to set period of day.
 
 Here is the code snippet to illustrate that:
 
@@ -193,27 +193,27 @@ Here is the code snippet to illustrate that:
 
 // Permit me to declare the period and hours again even though we've declared them before
 
-let period = "AM";
+let periodOfDay = "AM";
 
-let hours = timeNow.getHours();
+let hoursOfDay = timeNow.getHours();
 
 //write a condition that set our period to AM or PM
 
-if(hours > 12) {
+if(hoursOfDay > 12) {
 
-   hours -= 12;
+   hoursOfDay -= 12;
 
-   period = "PM";
+   periodOfDay = "PM";
 
    /*This block checks whether the hour is greater than 12 and if that is true, 12 is subtracted from the hour and the result is assigned back to ```hour``` then the period is set to PM. 12 is subtracted since we're building a 12-hour time clock*/
 
 }
 
-if(hours == 0) {
+if(hoursOfDay == 0) {
 
-   hours = 12;
+   hoursOfDay = 12;
 
-   period = "AM";
+   periodOfDay = "AM";
 
    /*This block checks whether hour is equal to or is 0 and if that is true, hour is set to 12 then period is set to AM. 12 is assigned to hours since we're building a 12 hour time clock*/
 
@@ -223,13 +223,13 @@ if(hours == 0) {
 
 The next step is to set our clock display pattern. In our HTML file, we set our clock to display 2 digits for hours, seconds, and minutes (00:00:00). We need to write a program to conform to that pattern. In doing that, we will use *ternary operator*, represented as (?). 
 
-What then is a ternary operator? The ternary operator is a conditional operator that takes three operands: A condition followed by a question mark (?), an expression to execute if the condition is true, followed by a colon (:) and another expression to execute if the condition is false. Simple right? It is a simpler way to write an if-else statement.
+What then is a ternary operator? A ternary operator is a conditional operator that takes three operands: A condition followed by a question mark (?), first expression, followed by a colon (:) and a second expression. The first expression is executed if the condition is true, else the second expression is executed if the condition is false. Simple right? It is a simpler way to write an if-else statement.
 
 Here is the code snippet to illustrate that:
 
 ```js
 
-hours = hours < 10 ? "0" + hours : hours;
+hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
 
 //if hours is less than 10, set hour position to 0 plus hours else set position to hours
 
@@ -245,29 +245,29 @@ seconds = seconds < 10 ? "0" + seconds : seconds;
 
 I hope the ternary operator is clear to you now.
 
-We are almost done, the next thing is to set our time, I mean current time. To do that, we need to declare a variable, I call mine ```currentTime```. Here is how:
+We are almost done, the next thing is to set our time. To do that, we need to declare a variable, I call mine ```time```. Here is how:
 
 ```js
 
-let currentTime = hours + ":" + minutes + ":" + seconds + period;
+let time = hoursOfDay + ":" + minutes + ":" + seconds + period;
 
 ```
 
-The ```currentTime``` variable initialization takes the ```hours``` values, a colon, ```minutes``` values, a colon, ```seconds``` values and ```period```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```currentTime``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
+The ```time``` variable initialization takes the ```hoursOfDay``` values, a colon, ```minutes``` values, a colon, ```seconds``` values and ```periodOfDay```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```time``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
 
 Our next task is to display our clock on the web page and to be able to do this, we need a way that allows our JavaScript to manipulate our HTML. This is where the knowledge of the Document Object Model (DOM) becomes handy.
 
-There are various document methods but in this tutorial, we'll be using  ```document.getElementById``` with this we'll be able to access an HTML element with a particular *id* and in this case *Digital_Clock*.
+There are various document methods but in this tutorial, we'll be using  ```document.getElementById``` with this we'll be able to access an HTML element with a particular *id* and in this case *Clock*.
 
 Here is the code snippet to illustrate how:
 
 ```js
 
-document.getElementById('Digital_Clock').innerHTML =  currentTime + " " + today +" " + months + " " + year;
+document.getElementById('Clock').innerHTML =  time + " " + today +" " + months + " " + year;
 
 ```
 
-The ```.innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Digital_Clock``` is set to ```currentTime```, ```today```, ```months```, ```year```. 
+The ```.innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Clock``` is set to ```time```, ```today```, ```months```, ```year```. 
 
 The last thing is a function call or invocation. After our function has been declared, given a function body, it will still not work unless it is invoked or called. This is done by placing the function name immediately after the function closing curly braces (}).
 
@@ -278,8 +278,7 @@ This is how our final code will look:
 setInterval(displayTime, 1000);
 
 function displayTime() {
-    const timeNow = new Date();
-    let hours = timeNow.getHours();
+    const hoursOfDay = timeNow.getHours();
     let minutes = timeNow.getMinutes();
     let seconds = timeNow.getSeconds();
     let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -290,29 +289,29 @@ function displayTime() {
     let year = timeNow.getFullYear();
     let period = "AM";
 
-    if (hours > 12) {
-        hours -= 12;
-        period = "PM";
+    if (hoursOfDays > 12) {
+        hoursOfDay-= 12;
+        periodOfDay = "PM";
     }
 
-    if (hours == 0) {
-        hours = 12;
-        period = "AM";
+    if (hoursOfDay == 0) {
+        hoursOfDay = 12;
+        periodOfDay = "AM";
     }
 
-    hours = hours < 10 ? "0" + hours : hours;
+    hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    let currentTime = hours + ":" + minutes + ":" + seconds + period;
+    let time = hoursOfDay + ":" + minutes + ":" + seconds + period;
 
-    document.getElementById('Digital_Clock').innerHTML = currentTime + " " + today + " " + months + " " + year;
+    document.getElementById('Clock').innerHTML = time + " " + today + " " + months + " " + year;
 
 }
 displayTime();
 ```
 
-Did you see how we intentionally declare all our variables within the function? The goal is to make them locally scope to the function.
+Did you see how we intentionally declare all our variables within the function? The goal is to make them locally scoped to the function.
 
 #### Third Step
 
@@ -323,39 +322,28 @@ We need to create a CSS file and add these styles. I call mine ```index.css```.
 ```css
 
 * {
-     padding: 0;
-     margin: 0;
-     box-sizing: border-box;
-     font-family: 'IBM Plex Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
- body {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
-     background: #000;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(199, 172, 172);
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
- body{
-     padding: 0;
-     margin: 0;
-     box-sizing: border-box;
-     font-family: 'IBM Plex Sans', sans-serif;
-}
- body {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
-     background: #000;
-}
- .glow {
-     font-size: 60px;
-     color: #fff;
-     font-weight: bold;
-     animation: glow 1s ease-in-out infinite alternate;
-     -moz-animation: glow 1s ease-in-out infinite alternate;
-     -webkit-animation: glow 1s ease-in-out infinite alternate;
-}
+.glow {
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+  }
  
 ```
 
