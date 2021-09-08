@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: 
-url: /introduction-to-static-application-security-testing-method/
-title: Introduction to Static Application Security Testing Method
+url: /how-to-analyze-code-using-static-application-security-testing-method/
+title: How To Analyze Code Using Static Application Security Testing Method
 description: This article will introduce a reader to application vulnerability testing, outlining the various ways of performing the same. The article will further focus on the static secutity testing method outlining how it works and its advantages.
 This article will try to make a brief comparison between the static testing method and dynamic method and any other methods in existence.
 author: ruth-mare
@@ -53,10 +53,12 @@ SAST performs automatic scanning of applications using these six simple steps re
 Static Application security Testing is done in the following simple steps;
 
 **Step 1: Choosing of the tool**
+
 Choose a specific tool from the majority of tools in existence. For this sample test we will use MobSF (Mobile Security Framework), which is an open source, automated mobile penetration testing tool, as the tool for this sample security testing.
 For purposes of  this example, we will also use a linux operating system environment and the MobSF will be deployed in a Docker container.
 
 **Step 2: Creation and deployment of the scanning environment and tool**
+
 We will setup the docker container first then the MobSF tool.
 Set up the docker PGP key, configure Docker then install using the following commands:
 ```bash
@@ -75,6 +77,7 @@ docker pull opensecurity/mobile-security-framework-mobsf
 When the pull is done to completion, we then proceed to running the MobSF tool in the next step.
 
 **Step 3: Running tool**
+
 Run MobSF with the following command:
 ```bash
 docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
@@ -82,14 +85,19 @@ docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
 The terminal will indicate "listening at http://0.0.0.0:8000" when the tool is succefully run to completion.
 You can then access MobSF at the above URL and upload the application to be tested.
 Click on http://0.0.0.0:8000 then click upload and anlyze as shown:
-![upload and analyze](upload.jpg)
+
+![upload and analyze](upload.png)
 
 The process will take place automatically and present the results after completion as shown below:
-![results display](results.jpg)
+
+![results display](results.png)
 
 **Step 4: Downloading report**
+
 Navigate on the task pane to view the pdf report or download an offline report as shown:
-![report](report.jpg)
+
+![report](report.png)
+
 Download the report for offline analysis.
 
 ### Advantages and Disadvantages of SAST
