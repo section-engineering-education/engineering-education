@@ -27,7 +27,8 @@ Searching in data structure refers to the act of locating needed information fro
 ### What is sorting?
 Sorting refers to the operation or technique of ordering and rearranging groups of data in a specified order.
 ### Techniques for searching and how they are implemented 
-These techniques are divided into categories depending on the kind of search operation they undertake, for example:
+These techniques are divided into categories depending on the search operation they undertake, for example:
+
 #### 1. Linear Search
 The linear search method is pretty simple. A sequential search is performed on all things one by one in this sort of search. Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
 ##### Algorithm
