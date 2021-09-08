@@ -34,6 +34,11 @@ This article explains what Azure Functions are and how to utilize them in the C#
 - Upgrades to Azure functions are simple and have no impact on other elements of the website.
 - Azure functions integrates with other APIs, databases, and libraries using industry standards.
 - Because Azure functions are compute-on-demand, they scale up when the number of requests for execution increases and scale down when the number of requests reduces.
+### Prerequisites
+- Have background information on using the visual studio 2019 and the SQL database creator.
+- Download [Visual studio 2019](https://visualstudio.microsoft.com/vs/) for compiling the Csharp codes.
+- Have some prior knowledge of SQL databases and connections.
+- To execute the SQL command, use the SQL compiler. For my case, I used the [oracle terminal online](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the commands.
 
 ### Table of contents
 - [How to set up Azure Function ](#how-to-set-up-azure-function)
