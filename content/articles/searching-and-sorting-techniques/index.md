@@ -209,7 +209,7 @@ Step 7: Swap left and right if both steps 5 and 6 don't match.
 
 Step 8: If they meet on the left or right, the place where they met becomes the new pivot.
 #### 6) Heap Sort
-Heapsort is a sorting algorithm that compares objects using a Binary Heap dataset. It's comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
+Heap sort is a sorting algorithm that compares objects using a Binary Heap dataset. It’s comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
 
 A Binary Heap is a Complete Binary Tree in which elements are placed in such a way that the value of a parent node is higher (or lower) than the elements of its two offspring nodes.
 ##### Algorithm
