@@ -6,7 +6,7 @@ url: /using-azure-functions-and-csharp-to-create-serverless-apis/
 title: Getting started with Azure functions
 description: This article covers the basics of Azure functions and how to create RESTful APIs using Azure functions
 author: dennis-mwangi
-date: 2021-09-06T00:00:00-12:00
+date: 2021-09-08T00:00:00-04:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ This article explains what Azure Functions are and how to utilize them in the C#
 - Because Azure functions are compute-on-demand, they scale up when the number of requests for execution increases and scale down when the number of requests reduces.
 ### Prerequisites
 - Have background information on using the visual studio 2019 and the SQL database creator.
-- Download [Visual studio 2019](https://visualstudio.microsoft.com/vs/) for compiling the Csharp codes.
+- Download [Visual studio 2019](https://visualstudio.microsoft.com/vs/) for compiling the Csharp code.
 - Have some prior knowledge of SQL databases and connections.
 - To execute the SQL command, use the SQL compiler. For my case, I used the [oracle terminal online](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the commands.
 
