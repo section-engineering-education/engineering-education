@@ -48,7 +48,8 @@ step 7: Send a message if all of the objects have been searched and no match has
 #### 2. Binary Search
 To search a sorted array, divide the search interval in half regularly. Begin by creating an interval that spans the whole array. If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
 ##### Algorithm
-The procedures for implementing binary search are as follows:
+The procedures for implementing binary search are:
+
 
 Step 1: Ask the user for the search element.
 
