@@ -1,0 +1,23 @@
+{{ $jquery := resources.Get "js/vendor/jquery.js" }}
+{{ $lunr := resources.Get "js/vendor/lunr.js" }}
+{{ $aos := resources.Get "js/vendor/aos.js" }}
+{{ $axios := resources.Get "js/vendor/axios.js" }}
+{{ $slick := resources.Get "js/vendor/slick.js" }}
+{{ $lozad := resources.Get "js/vendor/lozad.js" }}
+{{ $vue := resources.Get "js/vendor/vue.js" }}
+{{ $vuepagination := resources.Get "js/vendor/vuepagination.js" }}
+{{ $search := resources.Get "js/search.js" }}
+
+{{ $main := resources.Get "js/app.js" }}
+
+{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main | resources.Concat "js/app.js" | resources.Minify }}
+
+{{ $secureJS := $defaultJS | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+{{ $searchJS := slice $vue $vuepagination $search | resources.Concat "js/search.js" | resources.Minify }}
+
+{{ $secureSearchJS := $searchJS | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureSearchJS.Permalink }}" integrity="{{ $secureSearchJS.Data.Integrity }}"></script>
+
+{{- block "additionalFooterScripts" . -}}{{- end -}}

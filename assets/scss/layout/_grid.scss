@@ -1,0 +1,55 @@
+$container-max-width: pxem(1600);
+$hero-max-width: pxem(1468);
+$inner-max-width: pxem(1320);
+$narrow-max-width: pxem(790);
+
+body,
+html {
+  background: $fill-white;
+  overflow-x: hidden;
+}
+
+.main-wrapper {
+  overflow: hidden;
+}
+
+.section-mega-dropdown::-webkit-scrollbar,
+.section-mega-wrapper::-webkit-scrollbar {
+  display: none;
+  overflow-y: hidden;
+  width: 0;
+  scrollbar-width: none;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: $container-max-width;
+}
+
+.section-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: $inner-max-width;
+  width: 100%;
+}
+
+.section-hero-container {
+  margin-left: auto;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: $container-max-width;
+  width: 100%;
+}
+
+.col-half {
+  min-width: 50%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
