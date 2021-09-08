@@ -1,13 +1,3 @@
--What are Null Safety principles?
--What are Nullable and Nonnullable types?.
--When it comes to design principles, what do you mean by "no safety?"
--Unsound null safety.
--Making the use of a null safety easier
--Null-safety migration
--Null-safety migration in Flutter
--Reasons to migrate a Flutter app to null safety
-
-
 ### Introduction
 As soon as a variable begins with "null", it cannot end with "null." If there is a problem, it will now be shown at compilation time thanks to null safety. Null Safety helps you avoid a wide range of problems during development, rather than waiting until runtime to capture null errors.
 When it comes to type safety, Dart excels.
