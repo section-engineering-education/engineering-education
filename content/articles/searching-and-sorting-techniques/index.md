@@ -1,5 +1,5 @@
 ### Introduction
-Searching is the process of determining the position of an item in a list. This is a crucial aspect of any data structure technique because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised as we will discuss in this article.
+Searching is determining the position of an item in a list. This is a crucial aspect of any data structure technique because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
 
 Sorting is the process of putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently. Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
