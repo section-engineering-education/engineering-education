@@ -1,6 +1,6 @@
 ![hero](/engineering-education/core-concepts-of-redux-store-management/hero.png)
 
-#### Intoduction
+#### Introduction
 
 Welcome! In this article, I will be discussing the core concepts of Redux store management. 
 
