@@ -1,4 +1,3 @@
-![hero](/engineering-education/core-concepts-of-redux-store-management/hero.png)
 
 #### Introduction
 
