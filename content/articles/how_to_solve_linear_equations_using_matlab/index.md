@@ -110,7 +110,7 @@ x =
    -1.6522
 ```
 
-Matlab provides a solution to linear algebra. But, at some point, it doesn't produce the solution, or the solutions provided are less trustworthy. So, Matlab will give the user a warning at some point, but this happens in rare cases. Now, the fault here may not be due to poor syntax or Matlab's fault, but it could be due to the user's failure to understand linear algebra. But don't worry. I am here to show you the causes of such problems or situations and the meaning of the output given by Matlab.
+Matlab provides a solution to linear algebra. But, at some point, it doesn't produce the solution, or the solutions provided are less trustworthy. So, Matlab will give the user a warning at some point, but this happens in rare cases. Now, the fault here may not be due to poor syntax or Matlab's fault, but it could be due to the user's failure to understand linear algebra. But don't worry. I am here to show you the causes of such problems and the meaning of the output given by Matlab.
 
 The problem we solved before had two unknowns, `x` and `y`, and since there were two unknowns, the output had a length of two(column vector). There are various types of simultaneous equations, that is,
 
@@ -120,7 +120,7 @@ The problem we solved before had two unknowns, `x` and `y`, and since there were
 
 ### Inconsistent equations
 
-Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equation, the left side are equal, but right sides are not e.g
+Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equation, the left side is equal, but right sides are not e.g
 
 $$
 \begin{cases} 4x+5y=6\\4x+5y=14\end{cases}
