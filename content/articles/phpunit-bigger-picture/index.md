@@ -2,24 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/phpunit-bigger-picture/
+url: /phpunit-bigger-picture/
 title: PHPUnit, The Bigger Picture
-description: This tuturial introduces the reader the basic concepts of unit testings in PHP.
+description: This tutorial introduces the reader the basic concepts of unit testings in PHP. Then we will go over how to get started with this tool to write basic tests for your PHP application.
 author: odongo-albert
-date: 2021-09-05T00:00:00-13:00
+date: 2021-09-09T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/phpunit-bigger-picture/hero.jpg
+  - url: /engineering-education/phpunit-bigger-picture/hero.png
     alt: phpunit bigger picture Hero Image
 ---
-Developers mainly write unit Tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
+Developers mainly write unit tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
 <!--more-->
 
 ### Introduction
-Developers mainly write unit Tests in PHP or any other language as a good practice to help them identify and fix bugs in time, refactor code and document a unit of the program under test.
-
 In this tutorial, we'll be discussing the basic concepts of PHPUnit. Then, I'll show you how to get started with this tool to write basic tests for your PHP application.
 
 ### Table of contents
@@ -47,7 +45,7 @@ Unit testing ensures that every single unit of your source code is working as ex
 It would be best if you did unit testings so that they are independent of each other, which means that when a test case returns false, for instance, it should only pinpoint the error location and not otherwise.  
 
 ### Installing PHPUnit
-In this tutorial, we'll be installing PHPUnit 9.5. This package works well with PHP 7.3, but the latest version of PHP would work better. The current version as at the time of writing is PHP version 8.  
+In this tutorial, we'll be installing PHPUnit 9.5. This package works well with PHP 7.3, but the latest version of PHP would work best. The current version as at the time of writing is PHP version 8.  
 
 Now, to install PHPUnit on your local development environment, run the following command on your terminal:
 ```bash
@@ -59,6 +57,7 @@ Depending on your internet connectivity, this takes a few minutes. On completion
 ```bash
 ./vendor/bin/phpunit --version
 ```
+
 ***Expected Output***
 
 ```bash
@@ -78,7 +77,7 @@ Now that we've installed PHPUnit, let's proceed and structure our project as sho
 
 ![project structure](/engineering-education/phpunit-bigger-picture/folder-structure.png)
 
-As a rule of the thump, it's essential to write the tests before writing the actual code. So now, let's proceed and write our test cases which we'll then use in our application.  
+As a rule of the thumb, it's essential to write the tests before writing the actual code. So now, let's proceed and write our test cases which we'll then use in our application.  
 
 In the `myTests` directory, create a file `ModularArithmenticTest.php` and add the following:  
 
@@ -93,9 +92,12 @@ public function testDivisionTheorem()
    }
 }
 ```
-In the above file, you notice that we've followed every rule we defined in the previous section. We begin by creating a file, `ModularArithmenticTest.php`.  Inside this script, we create a class with the same name as that of the file. We then extend the `\PHPUnit\Framework\TestCase` class. Inside the class, we define the method `testDivisionTheorem()` prefixed with `test`.
 
-This method `testDivisionTheorem()`  has `$divisionTheorem` object that we instantiate from the `Division` class. It's important to note that we've not defined the `Division` class, as we're defining our test cases first. The `divisionTheorem` has the `setValues(arg1,arg2)` that takes two arguments.
+In the file above, you'll notice that we've followed every rule we defined in the previous section. We begin by creating a file, `ModularArithmenticTest.php`.  
+
+Inside this script, we create a class with the same name as that of the file. We then extend the `\PHPUnit\Framework\TestCase` class. Inside the class, we define the method `testDivisionTheorem()` prefixed with `test`.
+
+This method `testDivisionTheorem()` has `$divisionTheorem` object that we instantiate from the `Division` class. It's important to note that we've not defined the `Division` class, as we're defining our test cases first. The `divisionTheorem` has the `setValues(arg1,arg2)` that takes two arguments.
 
 This method also calls the `assertEquals()` method from the current class. This method takes in two parameters and compares them to check if they are indeed equal.
 
@@ -133,12 +135,14 @@ class Division
 }
 
 ```
-In the above script, we've created a class, `Division`, with two properties:
+
+In the script above, we've created a class, `Division`, with two properties:
 - `$first_number`
 - `$last_number`
+
 We've also defined two methods:
--`setValues()` - this method takes two arguments of type number. It takes the `first_number` and the `last_number`.
--` modulus()` - this function returns the modulus of the two numbers created previously.
+- `setValues()` - this method takes two arguments of the type number. It takes the `first_number` and the `last_number`.
+- ` modulus()` - this function returns the modulus of the two numbers created previously.
 
 ### Running PHPUnit tests
 Now that we've defined our two classes, the `Division` and the `ModularArithmenticTest`. In this section, we'll be executing the PHPUnit tests to assert that they are working or not.
@@ -156,12 +160,15 @@ First, update your `composer.json` file as shown below:
     }
 }
 ```
+
 The update states that we're using the directory `Application` and `Application` namespace.
 
 Run the following command to update this composer file:
+
 ```bash
 composer update
 ```
+
 Next, add the `phpunit.xml` file:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -192,12 +199,14 @@ Next, add the `phpunit.xml` file:
 </phpunit>
 
 ```
+
 At the root of your application, run the followings commands:
 ```bash
 ./vendor/bin/phpunit
 ```
+
 ### Conclusion
-In this tutorial, we've discussed the basic concepts of PHPUnit 8. Then, we've seen how we create the test classes to test an application. We've also configured the XML file for ease of testings.
+In this tutorial, we've discussed the basic concepts of PHPUnit 8. Then, we saw how to create the test classes to test an application. We've also configured the XML file for ease of testings.
 
 Happy coding!
 
