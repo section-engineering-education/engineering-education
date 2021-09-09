@@ -3,22 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /statistical-hypothesis-testing-python-implementation/
-title: Statistical Hypothesis Testing With Python Implementation
+title: Statistical Hypothesis Testing with Python Implementation
 description: This tutorial is a comprehensive explanation and implementation of statistical hypothesis testing methods in Python.
 author: qoyum-olatunde-yusuf
-date: 2021-06-16T00:00:00-11:00
-topics: [Statistical Analysis, Hypothesis Testing, Data Science, Python]
+date: 2021-09-09T00:00:00-15:00
+topics: []
 excerpt_separator: <!--more-->
 images:
  
  - url: /engineering-education/statistical-hypothesis-testing-python-implementation/hero.PNG
-alt: statistic hypothesis testing with Python cover image
+   alt: statistic hypothesis testing with Python cover image
 ---
 Hypothesis testing is the analysis of assumptions on a population sample. In other words, it involves checking whether a hypothesis should be accepted or not. 
 <!--more-->
 Hypothesis testing has improved decision-making in different sectors including business. Today, organizations rely on hypothesis testing due to the huge amount of data generated across the globe.
 
-### Table of Contents
+### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [Goal](#goal)
 3. [Understanding hypothesis testing](#understanding-hypothesis-testing)
@@ -36,7 +36,7 @@ To follow along, readers should have some basic knowledge of Python programming.
 ### Goal
 At the end of this tutorial, readers should be able to:
 - understand statistical hypothesis testing.
-- perform t-test, chi-squared test & ANOVA using python and a new dataset.
+- perform t-test, chi-squared test & ANOVA using Python and a new dataset.
 - differentiate between type 1 and type 2 null hypothesis errors.
 - explain the confidence of the null hypothesis.
 - use Pandas functions for data analysis.
@@ -47,7 +47,7 @@ The two types of hypothesis testing are null hypothesis and alternate hypothesis
  
 [Null hypothesis](https://en.wikipedia.org/wiki/Null_Hypothesis:_The_Journal_of_Unlikely_Science) is the initial assumption about an event (also referred to as the ground truth). 
 
-On the other hand, [alternate hypothesis](https://en.wikipedia.org/wiki/Alternative_hypothesis) is an assumption that counters the initial assumption.
+[Alternate hypothesis](https://en.wikipedia.org/wiki/Alternative_hypothesis) is an assumption that counters the initial assumption.
  
 Consider a situation where a seventy-year-old woman has a visible bump in her belly. Medical officers may assume that the bump is fibroid. 
 
@@ -60,14 +60,12 @@ The next step is to collect the available data samples to support the null hypot
 We should collect data pertaining to the hypothesis and analyze it to decide if H0 can be accepted or rejected.
 
 While doing that, there is a likelihood of the following events happening:
- 
 1. The ground truth (H0) is true, so H0 is accepted.
 2. The ground truth (H0) is not true, so H0 is rejected and H1 is accepted.
  
 The above two cases are the desired possibilities. It's either our null hypothesis was right and adopted or our null hypothesis was wrong and rejected.
  
 The remaining possibilities are outlined below:
- 
 3. Null hypothesis (H0) is true but we reject it.
 4. Null hypothesis (H0) is not true, but we did not reject it.
  
@@ -79,7 +77,7 @@ These cases are not desirable since we have not recognized the right hypothesis.
 
 The severity of type-1 and type-2 errors depends on the task at hand. Data analysts should therefore determine the errors that could impact the outcome negatively.
  
-Base on the above example, it is important to be sure due to the huge risks involved. For instance, we can assume that the patient does not have fibroids while in real life she is affected. It would be safe to conclude that the consequences of making a type-1 error, in this case, are much more grave than making a type-2 error. 
+Base on the above example, it is important to be sure due of the huge risks involved. For instance, we can assume that the patient does not have fibroids while in real life she is affected. It would be safer to conclude that the consequences of making a type-1 error, in this case, are much more grave than making a type-2 error. 
 
 When making assumptions, it's crucial to use the p-value to determine whether to accept or reject the null hypothesis.
 
