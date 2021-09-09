@@ -16,14 +16,14 @@ images:
 ---
 Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience. Bootstrap has been the leading design library preferred by many front-end developers until now.
 <!--more-->
-Semantic UI React and other modern design libraries are reducing the complexity of web styling by providing advanced elements and features. These will be subsequently discuss in this article.
+Semantic UI React and other modern design libraries are reducing the complexity of web styling by providing advanced elements and features. These will be subsequently discussed in this article.
 
 ### Prerequisites:
 It is expected that the reader has basic knowledge of ReactJS, CSS, Bootstrap. For absolute beginners, a crash course on the above is required to begin this tutorial.
 
 ### Part 1: Setting Up Bootstrap in ReactJS
-To fully understand the rationale for transitioning from bootstrap to semantic-UI React, the article will be divided into two sections. In the first section will perform the following tasks: `
-- First create a React App
+To fully understand the rationale for transitioning from bootstrap to semantic-UI React, the article will be divided into two sections. The first section will perform the following tasks: `
+- First, create a React App
 - Add Bootstrap dependencies to the App
 - Create a sample page that includes a Form, Table, and Button with React
 - Examine the flaws and limitations of using Bootstrap
@@ -97,7 +97,7 @@ After which your `public/index.js` will look similar to this:
 Please note that bootstrap v.4 requires `jQuery` to enable its JavaScript functionalities.
 
 #### Step 3: Creating a sample page with Bootstrap
-At this point our `react` app has bootstrap running. And we will create a home page that contains a navbar, form, button, and some text using react-bootstrap. To do this, we will create two files `Navbar.js` and `Forms.js` in our `src` directory.
+At this point, our `react` app has bootstrap running. And we will create a home page that contains a navbar, form, button, and some text using react-bootstrap. To do this, we will create two files `Navbar.js` and `Forms.js` in our `src` directory.
 
 #### Bootstrap Navbar Component:
 The navbar component will be displayed at the top of the page and will have some elements in it. To create a navbar using Bootstrap, the imports and code block below should be implemented.
@@ -155,7 +155,7 @@ We are ready to move on with the page `Form` component and it will contain the f
 - Grid
 - Row
 - Form-Group
-- Button, Radio and Checkbox.
+- Button, Radio, and Checkbox.
 
 Below is a view of the code block for implementation.
   
@@ -295,7 +295,7 @@ On successful compilation, a home page containing the following bootstrap elemen
 Bootstrap, however, popular and widely used has some flaws and limitations and we will discuss each of them.
 1.  Bootstrap Icon package is inferior to other modern design libraries, e.g. Semantic-UI react.
 2.  Bootstrap elements and components are generic and easily recognizable thereby producing similar websites.
-3.  Bootstrap `ClassName` are complicated and difficult to remember
+3.  Bootstrap `ClassName` is complicated and difficult to remember
 4.  Element Customization is difficult in Bootstrap compared to others.
 
 ### Part 2: Setting Up Semantic-UI in ReactJS
