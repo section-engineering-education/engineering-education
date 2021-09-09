@@ -3,7 +3,7 @@
 The term "Language-Integrated Query" (LINQ) refers to a group of technologies that incorporate query capabilities directly into the C# programming language. Querying data has traditionally been plain text, with no type checking or IntelliSense assistance at build time. LINQ access data from objects, data sets, SQL Server, and XML, among other things.
 
 ### Generating sequences with LINQ
-Make sure the below three lines are at the very top the Program.cs file produced by dotnet new console before you begin. For our program to run, the lines below should be in the program so that the results shall be obtained as expected
+Make sure the below three lines are at the very top of the Program.cs file produced by dotnet new console before you begin. For our program to run, the lines below should be in the program so that the results shall be obtained as expected
 ```c#
 using System;
 using System.Collections.Generics;
