@@ -1,25 +1,10 @@
-### Linear algebra using matlab
-
-### Introduction
-
-Equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
-
-Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
-
-### Prerequisites
-
-To follow along with this tutorial, you'll need:
-- [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-- Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
-- Basic understanding of matrix.
-
 ### Solving simultaneous equations
 
 ### Linear algebra using matlab
 
 ### Introduction
 
-Equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
+In mathematics, equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
 
 Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
 
