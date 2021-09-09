@@ -120,7 +120,7 @@ The problem we solved before had two unknowns, `x` and `y`, and since there were
 
 ### Inconsistent equations
 
-Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equations, the left sides are equal, but right sides are not e.g
+Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In these type of equations, the left sides are equal, but right sides are not e.g
 
 $$
 \begin{cases} 4x+5y=6\\4x+5y=14\end{cases}
@@ -188,7 +188,7 @@ In the above equation, the information is insufficient since equations (i) and (
 
 ### Overdetermined equations
 
-This kind of equations mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
+These kind of equations mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
 
 $$
 \begin{cases} 4x + 5y=6\\3x - 2y=14\end{cases}
