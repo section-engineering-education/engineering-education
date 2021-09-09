@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /java-swing-setter-and-getters/
 title: Java Swing Components Set and Get Methods
-description: This article will discuss setters and getters methods of essential Java Swing components used in a desktop application. Java Swing components have getters and setters methods used to get and set values, respectively.
+description: This article will discuss setters and getters methods of Java Swing components used in desktop applications. Java Swing components have getters and setters methods used to get and set values, respectively.
 author: ayoma-joseph
 date: 2021-09-08T00:00:00-07:02
 topics: [Languages]
@@ -15,9 +15,9 @@ images:
 ---
 Java Swing components have getters and setters methods used to get and set values, respectively. They are essential because they protect the user's data, mainly when creating classes.
 <!--more-->
-For either instance, Java swings component variable; a getter method usually returns its value (component value) while a setter method sets (updates) its value. This makes getters accessors since they allow users to access the values of the Java swing components. 
+For either instance, Java Swings component variable; a getter method usually returns its value (component value) while a setter method sets (updates) its value. This makes getters accessors since they allow users to access the values of the Java swing components. 
 
-At the same time, setters are mutators since they are used to control changes made to the Java swing components variable. 
+At the same time, setters are mutators since they are used to control changes made to the Java Swing components variable. 
 
 This article will discuss setters and getters methods of Java Swing components used in a desktop application. We will use an application example to show how these methods are used in developing and implementing a desktop application in Java Swing.
 
@@ -116,7 +116,7 @@ Getter for the JLabel values- Gets the value of the JLabel variable and assigns 
 ```
 
 ### JTextField
-Declaration of the JTextField components- JTextField components allow the application to interact with the users.
+Declaration of the JTextField components - JTextField components allow the application to interact with the users.
 
 ```java
     JTextField fname = new JTextField();
