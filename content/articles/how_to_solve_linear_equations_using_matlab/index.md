@@ -120,7 +120,7 @@ The problem we solved before had two unknowns, `x` and `y`, and since there were
 
 ### Inconsistent equations
 
-Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equation, the left side is equal, but right sides are not e.g
+Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In this type of equations, the left sides are equal, but right sides are not e.g
 
 $$
 \begin{cases} 4x+5y=6\\4x+5y=14\end{cases}
