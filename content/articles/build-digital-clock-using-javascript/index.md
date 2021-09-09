@@ -48,7 +48,7 @@ CSS is an abbreviation meaning Cascading Style Sheet, it is the tool used to add
 
 #### JavaScript
 
-JavaScript is the scripting language of the web and it is also a lightweight interpreted language that compiles at runtime. It is the language that adds interactivity to the web content hence it is widely in use. In this tutorial, we will use these tools to build a digital clock that displays the time of the day (hourOfDay, minutes, and seconds), the day, month, and the year.
+JavaScript is the scripting language of the web and it is also a lightweight interpreted language that compiles at runtime. It is the language that adds interactivity to the web content hence it is widely in use. In this tutorial, we will use these tools to build a digital clock that displays the current time, day, month, and year.
 
 ### Implementation
 
@@ -156,7 +156,7 @@ function displayTime(){
 }
 ```
 
-That is what our function looks like right now. But this is not enough to build our digital clock, the reason you're reading this article. The next is to set period of day.
+That is what our function looks like right now. But this is not enough to build our digital clock, the reason you're reading this article. The next step is to set the period of the day.
 
 Here is the code snippet to illustrate that:
 
@@ -201,13 +201,13 @@ seconds = seconds < 10 ? "0" + seconds : seconds;
 
 I hope the ternary operator is clear to you now.
 
-We are almost done, the next thing is to set our current time. To do that, we need to declare a variable called ```currentTime```. Here is how:
+We are almost done, the next thing to do is to set our current time. To do that, we need to declare a variable called ```currentTime```. Here is how:
 
 ```js
 let currentTime = hourOfDay + ":" + minutes + ":" + seconds + period;
 ```
 
-The ```currentTime``` variable initialization takes ```hourOfDay```, a colon, ```minutes```, a colon, ```seconds```, and ```period```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```currentTime``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
+We initialize the ```currentTime``` variable with ```hourOfDay```, a colon, ```minutes```, a colon, ```seconds```, and ```period```. So for instance if the hour is 10, minutes is 12, seconds is 23, and period is AM, ```currentTime``` will be 10:12:23AM. This is clear, right? Two more things and we're done with the function body and JavaScript part of this article.
 
 Our next task is to display our clock on the web page and to do this, we need our JavaScript to manipulate our HTML. This is where the knowledge of the Document Object Model (DOM) becomes handy.
 
