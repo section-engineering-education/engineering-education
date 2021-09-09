@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-react-app-with-typescript/hero.png
     alt: Typescript example image React
 ---
-React is a viral and one of the best front-end libraries as of today; this has become many developers primary library for creating front-end applications.
+[React](https://en.wikipedia.org/wiki/React_(JavaScript_library) is a viral and one of the best front-end libraries as of today; this has become many developers primary library for creating front-end applications.
 <!--more-->
 On the other hand, Typescript is a strict and statically typed programming language, making our JavaScript code more predictable. As developers, our goal is not just to create products but to create products where we can always predict their behavior; this is one of the main reasons Typescript was created. 
 
