@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /transitioning-from-bootstrap-to-semantic-ui-react/
 title: Transitioning from Bootstrap to Semantic-UI React
-description: This article will compare both Bootstrap and Semantic-UI design library and help readers decide which one best suits their web needs. Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience.
+description: This article will compare both Bootstrap and Semantic-UI design libraries and help readers decide which one best suits their web needs. Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience.
 author: toro-nyong
 date: 2021-09-09T00:00:00-14:50
 topics: []
@@ -49,12 +49,12 @@ yarn create-react-app Design-demo
 
 There are various methods of adding the bootstrap package to your new `react` application, but we will look at two methods which are:
 
-- Installing Bootstrap as a dependency using the `command terminal`, and
+- Installing Bootstrap as a dependency using the `command terminal`
 - Using the BootstrapCDN
 
 #### Installing Bootstrap as a Dependency
 
-This method is widely used by React developers who are comfortable with their `command terminal`. Your `public/index.html` is not altered, and the packages are automatically installed to the `node-modules`. This is done by running:
+This method is widely used by React developers who are comfortable with the `command terminal`. Your `public/index.html` is not altered, and the packages are automatically installed to the `node-modules`. This is done by running:
 
 ```bash
 npm install react-bootstrap
@@ -117,7 +117,7 @@ At this point our `react` app has bootstrap running. And we will create a home p
 
 #### Bootstrap Navbar Component:
 
-The navbar component will be displayed at the top of the page and will have some elements in it. To create a navbar using Bootstrap the imports and code block below should be implemented.
+The navbar component will be displayed at the top of the page and will have some elements in it. To create a navbar using Bootstrap, the imports and code block below should be implemented.
 
 ```JavaScript
 import React, {Component} from 'react';
@@ -318,7 +318,7 @@ On successful compilation, a home page containing the following bootstrap elemen
 
 #### Design Flaws and Limitations of Bootstrap
 
-Bootstrap, however popular and widely used has some flaws and limitations and we will discuss each of them.
+Bootstrap, however, popular and widely used has some flaws and limitations and we will discuss each of them.
 
 1.  Bootstrap Icon package is inferior to other modern design libraries, e.g. Semantic-UI react.
 2.  Bootstrap elements and components are generic and easily recognizable thereby producing similar websites.
@@ -327,12 +327,12 @@ Bootstrap, however popular and widely used has some flaws and limitations and we
 
 ### Part 2: Setting Up Semantic-UI in ReactJS
 
-In the first part of this article we discussed the concept of using bootstrap in a react application, we also looked at the limitations and design flaws in bootstrap. The second part of the article will focus on the following
+In the first part of this article we discussed the concept of using bootstrap in a react application, we also looked at the limitations and design flaws in bootstrap. The second part of the article will focus on the following:
 
-- Getting Started with Semantic-UI React
+- Getting started with Semantic-UI React
 - Creating a sample web page with Semantic-UI elements
 - Customization of elements in semantic-UI
-- Modern features and Advancements offered by Semantic-UI
+- Modern features and advancements offered by Semantic-UI
 - Why you should pick Semantic-UI React
 
 #### Getting started with Semantic-UI React
@@ -343,7 +343,8 @@ Semantic-UI is a modern web design and styling framework. It provides efficient 
 2. Modals
 3. Popups
 4. Cards and Icons, etc.
-   Using semantic-UI in your `React` application is simple. But for absolute beginners we will go through the steps to get you familiar with the usage.
+
+Using semantic-UI in your `React` application is simple. But for absolute beginners we will go through the steps to get you familiar with the usage.
 
 #### Installing Semantic-UI package to your Project
 
@@ -360,11 +361,11 @@ For yarn users
 Yarn add semantic-ui-react
 ```
 
-Once the installation is completed you should be able to use `semantic-ui-react` in your `react` project.
+Once the installation is complete, you should be able to use `semantic-ui-react` in your `react` project.
 
 #### Building a Sample Page with Semantic-UI React
 
-We now have access to the library and we will use it to create a sample page. The page will contain the following elements
+We now have access to the library and we will use it to create a sample page. The page will contain the following elements:
 
 - Navbar
 - Avatar
@@ -377,7 +378,7 @@ To achieve this, we will create two files `Navbar.js` and `Body.js` thereafter w
 
 #### step 1: Creating the Navbar component:
 
-To create a Navbar with semantic-UI, we open our `Navbar.js` file and implement the code snippet below.
+To create a Navbar with semantic-UI, we open our `Navbar.js` file and implement the code snippet below:
 
 ```JavaScript
 import React "react";
@@ -434,7 +435,7 @@ export default Navbar;
 
 #### step 2: Creating the Body component:
 
-We will create the body component for our web page. To do this we open our `Body.js` file and implement the block of code below.
+We will create the body component for our web page. To do this we open our `Body.js` file and implement the block of code below:
 
 ```JavaScript
 import React, { useContext, useState } from "react";
@@ -502,7 +503,7 @@ Export default function PostCard() {
 
 #### step 3: Main Page Component:
 
-The main page will enable both the `Navbar` and `Body` components to be displayed on the web page. To achieve this, we open our `app.js` file and import both components as illustrated below.
+The main page will enable both the `Navbar` and `Body` components to be displayed on the web page. To achieve this, we open our `app.js` file and import both components as illustrated below:
 
 ```JavaScript
 import React from 'react';
@@ -523,7 +524,7 @@ export default App;
 
 #### Customizing Elements in Semantic-UI React
 
-Semantic-UI components and elements are designed with default values in color, size, orientation and layout. with the aid a `CSS` file you can customize each Semantic-UI element to your desired specifications. Below is an example of element customization using CSS.
+Semantic-UI components and elements are designed with default values in color, size, orientation and layout. with the aid a `CSS` file you can customize each Semantic-UI element to your desired specifications. Below is an example of element customization using CSS:
 
 ```JavaScript
 import React from "react";
@@ -592,9 +593,9 @@ Note that the `!important` flag is used to override the default values of the `S
 
 #### Modern features of Semantic-UI
 
-The Semantic-UI package comes with numerous modern features. A few of which includes the following
+The Semantic-UI package comes with numerous modern features. A few of which includes the following:
 
-1. Simplified Error handling and debugging
+1. Simplified error handling and debugging
 2. High level theming variables
 3. Advanced elements such as Accordions, Dividers, Segments, Menu, etc.
 4. Easy to use APIs
@@ -604,8 +605,8 @@ The Semantic-UI package comes with numerous modern features. A few of which incl
 
 Every developer wants the easiest and most efficient way of solving problems. I will share a few reasons why I think you should consider Semantic-UI React in your next project. They include the following:
 
-1. Semantic-UI design Library is light-weight and easy to use: meaning it does not increase the package size of your project.
-2. Semantic-UI contains hundreds of customizable icons: all you have to do is import whichever icon into your project.
+1. Semantic-UI design library is light-weight and easy to use - This means it does not increase the package size of your project.
+2. Semantic-UI contains hundreds of customizable icons - All you have to do is import whichever icon into your project.
 3. Semantic-UI has high efficiency and compilation rate.
 4. Semantic-UI is easy to use and understand.
 5. Semantic-UI is used by numerous tech companies, such as Snapchat, Google Cloud Partners etc.
