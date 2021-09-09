@@ -1,10 +1,10 @@
-![Hero image](/hero-img.png)
+![Hero image](https://cloud-ed45a3xcq-hack-club-bot.vercel.app/1hero-img.png)
 
 Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. You can take advantage of browser capabilities for building flexible web applications. [JAMstack](https://jamstack.org) is the modern approach for building lightning fast web applications. Database technologies became more user-friendly. In this tutorial, you'll learn how to integrate the Airtable API with a simple web application.
 
 ### What we're going to build?
 
-![final-grocery-list](/final-grocery-list.png)
+![final-grocery-list](https://cloud-ed45a3xcq-hack-club-bot.vercel.app/0final-grocery-list.png)
 
 [Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
 
