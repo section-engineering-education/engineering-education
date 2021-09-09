@@ -46,7 +46,7 @@ Below are the criteria for selecting the proper framework for migrating from a m
 - **Implement backward compatibility for the exposed endpoints**: The rigid contract tests to safeguard against breaking changes should be implemented. It will allow backward compatibility for the API calls to respond to each user query. This assists businesses in developing production-ready applications quickly.
 
 #### Data storage and management of the microservices
-- **Implement different databases for each microservice**: The database that fulfills the needs of the service should be selected. Then the infrastructure and storage that matches the data it contains should be customized and used entirely for that microservice. A service mesh ensures that a robust microservice framework has been achieved. Each service is separately maintained while working together with other services.
+- **Implement different databases for each microservice**: The database that fulfils the service needs should be selected. Then the infrastructure and storage that matches the data it contains should be customized and used entirely for that microservice. A service mesh ensures that a robust microservice framework has been achieved. Each service is separately maintained while working together with other services.
 
 #### Deployment and hosting of the microservices
 - **Separate microservices deployment**: It helps to save time while coordinating different teams when performing regular maintenance or upgrades. It also assists in preventing a single service from using enormous resources while impacting other services just because of sharing resources. A dedicated infrastructure that hosts each microservice should be implemented. This ensures that each microservice's fault is isolated from other components, improving the fault torelance and avoid outages.
@@ -58,7 +58,7 @@ Below are the criteria for selecting the proper framework for migrating from a m
 
 ### Popular microservices frameworks
 #### Spring Boot
-It is a popular Java framework for developing microservices. It comes with various extension projects under [Spring Cloud](https://spring.io/projects/spring-cloud) that enables the developers to build microservices. Spring Boot allows the building of large-scale systems by starting a simple architecture and combining several components. Spring Boot can also be used to develop small and large-scale systems. It is also easy to be integrated with other frameworks through the use of [Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring).
+It is a popular Java framework for developing microservices. It comes with various extension projects under [Spring Cloud](https://spring.io/projects/spring-cloud) that enable developers to build microservices. Spring Boot allows the building of large-scale systems by starting a simple architecture and combining several components. Software developers can also use spring Boot to develop small and large-scale systems. It is also easy to be integrated with other frameworks through the use of [Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring).
 
 #### Eclipse Vert.X
 It is a popular microservices framework developed by the Eclipse foundation. It supports multiple languages such as [Java](https://www.oracle.com/java/) and [Kotlin](https://kotlinlang.org/), and [JavaScript](https://www.codecademy.com/learn/introduction-to-javascript) developers find it useful. [Vertx](https://vertx.io/) is a tool kit that assists in building reactive microservices that executes on the [Java Virtual Machine](https://www.infoworld.com/article/3272244/what-is-the-jvm-introducing-the-java-virtual-machine.html) (JVM).
@@ -81,6 +81,6 @@ As technology evolves, the infrastructure stack also changes. Micro addresses th
 It is a microservice architecture that utilizes Node.js and is popular among JavaScript developers. [Molecular](https://moleculer.services/docs/0.14/) is a fast, modern, and robust microservices framework that helps developers build efficient, reliable, and scalable services.
 
 ### Conclusion
-As covered in the article, microservices assist in managing applications better. However, moving from monolith architecture to microservices can be complex.  The microservices implementation approach may differ for different organizations depending on their needs. Organizations can utilize the above criteria and best practices when choosing the right microservices for their applications.
+As covered in the article, microservices assist in managing applications better. However, moving from monolith architecture to microservices can be complex. The microservices implementation approach may differ for different organizations depending on their needs. Nevertheless, organizations can utilize the above criteria and best practices when choosing the right microservices for their applications.
 
-As always, the primary goal for all microservices is to use a loosely coupled, distributed, and independent framework. It should follow the DevOps model that provides automation and efficiency.
+As always, the primary goal for all microservices is to use a loosely coupled, distributed, and independent framework. In addition, microservices should follow the DevOps model that provides automation and efficiency.
