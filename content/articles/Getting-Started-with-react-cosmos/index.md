@@ -1,4 +1,4 @@
-The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. Reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library the that provides an environment so that developers can reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
+The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
 
 
 ### Prerequisites for React Cosmos
@@ -13,10 +13,10 @@ The React library has quickly established itself as a popular JavaScript UI libr
 
 ### Benefits of using React Cosmos
 
-React has revolutionized frontend development forever. As frontend developers, most of our tasks involve crafting clean and functional UIs. Ensuring that they will work flawlessly in large applications involves a lot of testing, compatibility support, and more. To solve this, we need to ensure consistency in design across components.
+React has revolutionized frontend development forever. As frontend developers, most of our tasks involve crafting clean and functional UIs. However, ensuring that they will work flawlessly in large applications involves a lot of testing, compatibility support, and more. To solve this, we need to ensure consistency in design across components.
 
 The key benefits of using React Cosmos include:
-- Its Real-time external API mocking can be used for visual regression testing or even snapshot testing.
+- We can use its Real-time external API mocking for visual regression testing or even snapshot testing.
   
 - Debugging is much easier due to isolated components.
   
@@ -31,7 +31,7 @@ To get started with React Cosmos, we will clone an app from this repository. Thi
 git clone https://github.com/marienjus/React-Cosmos.git
 ```
 
-Next, install the needed project dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favorite IDE. Below is the structure of our components in this application.
+Next, install the needed project dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favourite IDE. Below is the structure of our components in this application.
 
 Our `src/components` folder has:
 
@@ -39,7 +39,7 @@ Our `src/components` folder has:
 
 - A `CartCard` component that shows details of a cart item.
   
-- `Checkout` component has a summary of the cart such as total price, sub-total price, and delivery fee.
+- `Checkout` component summarises the cart, such as total price, sub-total price, and delivery fee.
   
 - `FoodCard`  component displays the details about the food with a button to add the food.
 
@@ -131,13 +131,13 @@ If you prefer yarn:
 
 `yarn cosmos`
 
-After the server starts successfully, head over to `http://localhost/5000` in your favorite browser, you should see this.
+After the server starts successfully, head over to `http://localhost/5000` in your favourite browser, you should see this.
 
 ![img](src)
 
 ### Creating a Component using Fixtures
 
-In React Cosmos, we build components by creating fixtures. [Fixtures](https://github.com/react-cosmos/react-cosmos/tree/main/docs#fixtures) are files that contain a default export (as either a React Components or React Node). React cosmos displays the fixtures in a sandboxed explorer. We need to add `.fixture` to the file names containing our component so that React Cosmos can track it. 
+In React Cosmos, we build components by creating fixtures. [Fixtures](https://github.com/react-cosmos/react-cosmos/tree/main/docs#fixtures) are files that contain a default export (as either a React Components or React Node). React cosmos displays the fixtures in a sandboxed explorer. Therefore, we need to add `.fixture` to the file names containing our component so that React Cosmos can track it. 
 To get started, create a file within our `src` folder and name it `Button.fixture.jsx`. Inside the file, import the Button component as:
 
 ```jsx
@@ -288,11 +288,11 @@ export default {
   ),
 }
 ```
-In our sandbox, we have a `Cards` fixture. Within it, we have CartCard and FoodCard as components. This makes everything much more organized especially as the sandbox gets more fixtures.
+In our sandbox, we have a `Cards` fixture. Within it, we have CartCard and FoodCard as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
 
 ### Static Exports
 
-When hosting our fixtures as a component library in any static hosting service like Netlify, React Cosmos allows us to export our fixtures. Simply run the command:
+When hosting our fixtures as a component library in any static hosting service like Netlify, React Cosmos allows us to export our fixtures. Run the command:
 
 ```bash
 yarn cosmos: export
@@ -303,10 +303,10 @@ OR
 npm run cosmos: export
 ```
 
-The export we perform excludes some development available features to reduce dependencies but will allow you to browse fixtures and play with component inputs as in the development sandbox. 
+The export we perform excludes some available development features to reduce dependencies but will allow you to browse fixtures and play with component inputs as in the development sandbox.
 
 ### Conclusion
 
 Failing to reuse your components is slowing your development. 
-React Cosmos improves the developer experience by making it possible to build UI components iteratively and in isolation. Having features such as snapshot and visual regression testing tailored to our needs makes developers even more productive.
+React Cosmos improves the developer experience by making it possible to build UI components iteratively and in isolation. In addition, having features such as snapshot and visual regression testing tailored to our needs makes developers even more productive.
 As of the time of writing, React Cosmos only supports [Creact React App](https://reactjs.org/docs/create-a-new-react-app.html) and [Nextjs](https://nextjs.org/).
