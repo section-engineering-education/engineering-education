@@ -1,9 +1,22 @@
-# Transitioning from Bootstrap to Semantic-UI React
+---
+layout: engineering-education
+status: publish
+published: true
+url: /transitioning-from-bootstrap-to-semantic-ui-react/
+title: Transitioning from Bootstrap to Semantic-UI React
+description: This article will compare both Bootstrap and Semantic-UI design library and help readers decide which one best suits their web needs. Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience.
+author: toro-nyong
+date: 2021-09-09T00:00:00-14:50
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction:
-
-Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience.
-Bootstrap has been the leading design library preferred by many front-end developers until now. Semantic UI React and other modern design libraries are reducing the complexity of web styling by providing advanced elements and features. These will be subsequently discuss in this article.
+  - url: /engineering-education/transitioning-from-bootstrap-to-semantic-ui-react/hero.jpg
+    alt: Transitioning from Bootstrap to Semantic-UI React Hero Image
+---
+Website styling and design is an integral part of front-end web development and web developers are expected to build a flawless interface that enhances user experience. Bootstrap has been the leading design library preferred by many front-end developers until now.
+<!--more-->
+Semantic UI React and other modern design libraries are reducing the complexity of web styling by providing advanced elements and features. These will be subsequently discuss in this article.
 
 ### Prerequisites:
 
@@ -600,7 +613,10 @@ Every developer wants the easiest and most efficient way of solving problems. I 
 ### Conclusion
 
 We have compared both Bootstrap and Semantic-UI design library in this article. The verdict is out and is up to you to decide which one best suit your web needs, but I strongly recommend Semantic-UI. I hope you find this article helpful in your web development journey.
-Cheers
-Happy Coding
+
+Happy Coding!
 
 ### References
+
+---
+Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
