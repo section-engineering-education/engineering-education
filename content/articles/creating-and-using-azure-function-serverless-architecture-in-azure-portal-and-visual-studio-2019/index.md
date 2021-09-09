@@ -1,6 +1,10 @@
 ### Introduction
-We may construct a serverless solution using Azure functions, which has the advantages of requiring less code, requiring less infrastructure upkeep, and cutting costs. So, despite putting a lot of effort into application deployments and server maintenance, cloud infrastructure like Azure provides us with all of the latest resources we need to keep our apps functioning.
+We may construct a serverless solution using Azure functions, which has the advantages of requiring less code, requiring less infrastructure upkeep, and cutting costs. 
+
+So, despite putting a lot of effort into application deployments and server maintenance, cloud infrastructure like Azure provides us with all of the latest resources we need to keep our apps functioning.
+
 C#, Java, JavaScript, TypeScript, and Python are just a few of the languages that Azure Functions are available in.
+
 ### Table of contents
 - [Features of azure functions](#features-of-azure-functions)
 - [Advantages of using Azure Functions](#advantages-of-using-azure-functions)
@@ -10,6 +14,7 @@ C#, Java, JavaScript, TypeScript, and Python are just a few of the languages tha
 - [Creating Function App using Azure Portal](#creating-function-app-using-azure-portal)
 - [Creating Azure Function using Azure Portal](#creating-azure-function-using-azure-portal)
 - [Using Visual Studio 2019 to create an Azure Function](#using-visual-studio-2019-to-create-an-azure-function)
+
 #### Features of azure functions
 1. You could write your function code in whatever language you choose. Azure Functions may be deployed and run on any platform that supports the.NET Core programming language.
 2. *Scalability*-Azure functions make use of compute-on-demand, which is designed to be scalable. When the number of requests for execution increases, new resources is automatically allocated to the service, and when the number of requests decreases, all extra resources and application instances are automatically terminated.
@@ -22,6 +27,7 @@ C#, Java, JavaScript, TypeScript, and Python are just a few of the languages tha
 9. Optimized Pricing – You only pay while your app is running.
 10. Performance and Monitoring - Easily add Azure App Insight to your app for performance monitoring and analysis.
 11. To allow your serverless apps to respond to events and connect to other services, use triggers and bindings.
+
 ### Advantages of using Azure Functions
 - The Azure functions app is small and uses very few resources to deploy and run.
 - The Azure Functions app is serverless, which means it doesn't require you to set up a Web server in the cloud.
@@ -32,11 +38,17 @@ C#, Java, JavaScript, TypeScript, and Python are just a few of the languages tha
 - It's simple to create and deploy an Azure functions app.
 - It has a simplicity to update and support.
 - The Azure functions app is industry-standard, including industry-standard language and technologies for development and consumption.
+
 ### ARM templates concept
 `Azure Resource Manager` (ARM) templates are one of the ways to deliver infrastructure-as-code to an Azure environment in a simple and repeatable manner.
 We can define the objects we desire, along with their types, names, and properties, in a JSON file that the ARM API can understand.
-The key benefit of using the ARM API is that it allows us to publish numerous resources in a single JSON file. We declare the categories of resources, the names we intend to use for those resources, and the attributes of the resources in this file. The ARM API then assigns the indicated properties to those resources, either by creating new objects that match these details or by changing an existing object if the resource name and type are the same.
+
+>The key benefit of using the ARM API is that it allows us to publish numerous resources in a single JSON file. 
+
+We declare the categories of resources, the names we intend to use for those resources, and the attributes of the resources in this file. The ARM API then assigns the indicated properties to those resources, either by creating new objects that match these details or by changing an existing object if the resource name and type are the same.
+
 The ARM API adds resources to Azure, but it doesn't add any code or applications on those resources. For example, we can deploy a virtual machine with SQL Server already installed using an ARM template, but we can't deploy or restore a database using an SSDT package using an ARM template.
+
 ### Uses of azure functions
 - Tasks that have been scheduled
 - Notifications and Reminders
@@ -45,11 +57,13 @@ The ARM API adds resources to Azure, but it doesn't add any code or applications
 - Performing backup activities in the background
 - Calculations in the backend
 >Azure functions make use of triggers, and when an event is triggered, the task is run in the background. Therefore not all applications are subjected to using azure functions apps.
+
 **Azure functions should be avoided if:**
 - Multitasking
 - The function code contains too much-complicated logic.
 - Substituting a set of Azure functions apps for an API
 - Using data from front-end applications while saving to and from back-end databases.
+
 ### Azure functions vs Web jobs
 `WebJobs` is a component of the Azure App Service that one may use in automating the execution of a program or script. WebJobs are divided into two categories:
 
@@ -69,6 +83,7 @@ In general, Azure Functions are more adaptable and simple to use. WebJobs, on th
 - You must have a complete command in front of the object that waits for it to launche the operation of the code.
 ### Using Visual Studio 2019 to create an Azure Function
 In this section, we'll go over how to use the Azure Portal to build an Azure function. We must first construct a Function App in Azure Portal before we can create an Azure Function. After that, we can use the Function App to develop various types of Azure Functions.
+
 #### Creating Function App using Azure Portal
 **Step 1a**:
 To begin, we must first login into the Azure Portal. From the Dashboard, select the Create a Resource option. Then, from the resource list, choose Function App options.
@@ -85,7 +100,7 @@ To construct a function app, we must now supply the following choices in the Cre
 - Region - We must choose the region in which the data centre will be located.
 After entering the values for the aforementioned fields, we must click the Create + Review Button. Then press the Create Button button.
 
-![Step 2a](/engineering-education/creating-and-using-azure-function/step-2a.png/)
+![Step 2a](/engineering-education/creating-and-using-azure-function/step-2a.png)
 
 **Step 3a**:
 Once the Function App has been deployed, navigate to the function app and it will appear as seen below.
@@ -95,6 +110,7 @@ Once the Function App has been deployed, navigate to the function app and it wil
 **Step 4a**:
 If we copy the Function App URL and paste it into a browser tab, it will show that our Function App is already up and running.
 Our Function App is now available. Within this Function App, we must develop our first Azure Function.
+
 #### Creating Azure Function using Azure Portal
 **Step 1b**:
 Now, under the Function App area, select the Function choices from the left-side menu panel.
@@ -116,6 +132,7 @@ After the function has been deployed, select the Code + Test option. Within the 
 
 **Step 4b**:
 To run the result, select Test/Run from the drop-down menu.
+
 #### How to Make an Azure Function using Visual Studio 2019
 **Step 1c**:
 To begin, open Microsoft Visual Studio 2019 and then select Create New Project from the drop-down menu.
@@ -149,6 +166,7 @@ To pass the name parameter, make the following changes to the URL:
 The output changes to the following after changing the above URL:
 
 ![Output](/engineering-education/creating-and-using-azure-function/output.png)
+
 ### Conclusion
 In this tutorial, I have discussed what is entailed in Azure Functions as well as comparing Azure function with WEB Jobs. The step by step as outlined in the tutorial will enable you to handle Azure Function in Azure Portal and Visual Studio 2019.
 Happy learning!
