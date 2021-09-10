@@ -583,10 +583,9 @@ Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-
 
 ### Conclusion
 
-JavaFX is a stable User Interface for developers developing computer pieces of software.
-It's not only interactive but more efficient and secure.
-One only uses elements they need.
-The User Interface files and the System files are separated. These two bring about security and understandability.
+In conclusion, JavaFX is a stable, efficient and secure UI library for Java developers.
+
+The User Interface and the System files remain separated. The separation prevents unintended code changes and brings about understandability.
 
 On reaching here, one has gained the following knowledge:
 
@@ -599,8 +598,8 @@ On reaching here, one has gained the following knowledge:
 ### Further your understanding
 
 - Explore the JavaFX community found [here](https://openjfx.io/ "JavaFX website").
-  This site is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
-- Try using some JavaFX libraries for other projects. Such include scientific calculators, modelers, and games.
+ This site is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
+- Try using some JavaFX libraries for other projects. Such include scientific calculators, modellers, and games.
 
 ### References
 
