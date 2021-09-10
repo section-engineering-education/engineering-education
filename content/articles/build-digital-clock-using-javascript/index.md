@@ -82,11 +82,11 @@ The code snippet below shows the HTML file structure.
 
 This structure should be familiar to you, the ```id = Clock``` and ```class = glow``` will be used in our JavaScript and CSS files respectively.
 
-To link JavaScript file and CSS file in HTML file, ```script``` and ```link`` tag is used as shown above respectively. Though there are other ways of adding JavaScript and CSS to HTML in this article, I choose to use the external file source.
+To link our JavaScript and CSS files in the HTML file, the ```script``` and ```link``` tags are used as shown above. Though there are other ways of adding JavaScript and CSS to HTML in this article, I choose to use the external file source.
 
 #### Second step
 
-Create a JavaScript file, in it declare a function, I call mine ```displayTime```. In this function, declare a variable and assign the JavaScript date object to it. But before we go ahead, what is a *Function*?
+Create a JavaScript file, in it declare a function. I call mine ```displayTime```. In this function, declare a variable and assign the JavaScript date object to it. But before we go ahead, what is a *Function*?
 
 A function in JavaScript is almost the same as what is known as a method in Java, it is a set of statements or code that performs an action. For instance, you’re writing a program and you need to multiply two values in different instances in your code. Without a function or method, you’ll need to always repeat the same code over and over whenever you want to multiply two numbers. With a function, you write the code once and call the function that does the multiplication whenever you need it. I hope this is clear enough. Functions help for code modularity and cleanliness. The function is expected to perform just one task in this case multiplication.
 
@@ -109,8 +109,7 @@ Here is the syntax on how to represent ```setInterval```:
 setInterval(displayTime, 1000);
 ```
 
-From the code above it means that the function ```displayTime``` will keep executing after every 1000 milliseconds. Now that we've got this out of the way, let's go on to declare other variables. These will take the hourOfDay, minutes, seconds, days of the week, months, year, and period of the day.
-
+The code above means that the function ```displayTime``` will keep executing after every 1000 milliseconds. Now that we've got this out of the way, let's go on to declare other variables. These will take the hour of day, minutes, seconds, days of the week, months, year, and period of the day.
 
 ```js
 let hourOfDay = timeNow.getHours();
@@ -219,7 +218,7 @@ Here is the code snippet to illustrate how:
 document.getElementById('Digital_Clock').innerHTML =  currentTime + " " + today +" " + months + " " + year;
 ```
 
-The ```innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Digital_Clock``` is set to ```currentTime```, ```today```, ```months```, ```year```. 
+The ```innerHTML``` is a property of the DOM that sets or returns the HTML content of an element. In this case, the content of the div tag with an id of ```Digital_Clock``` is set to show the values of ```currentTime```, ```today```, ```months```, and ```year```. 
 
 The last thing is a function call or invocation. After our function has been declared, given a function body, it will still not work unless it is invoked or called. This is done by placing the function name and brackets immediately after the function's closing curly braces (}).
 
