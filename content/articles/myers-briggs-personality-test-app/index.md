@@ -40,6 +40,7 @@ You can find detailed information about the various personality types [here](htt
 To learn more about the above key elements, kindly follow this [link](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583).
 
 ### Prerequisites
+
 To follow along with this tutorial, you need to have:
 - Java JDK 8.0 and above.
 - A Java IDE.
