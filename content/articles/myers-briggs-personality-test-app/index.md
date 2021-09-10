@@ -86,7 +86,7 @@ We create arrays with the new keyword or with array literals. The index of the a
 
 #### Creating an array with the new keyword
 
-We create an empty array like this;
+We create an empty array like this:
 
 ```java
 int[ ] emptyArray = new int[0]; // this is an empty array
