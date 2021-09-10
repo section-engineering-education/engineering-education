@@ -129,7 +129,7 @@ After the brief introduction to some basics of java array, let's dive into build
 
 #### Step one: Create a file with the name PersonalityTest.java
 
-In this file, define a class with the same name PersonalityTest like this;
+In this file, define a class with the same name PersonalityTest like this:
 
 ```java
 public class PersonalityTest {
