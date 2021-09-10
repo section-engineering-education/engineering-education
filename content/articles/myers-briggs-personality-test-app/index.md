@@ -22,7 +22,7 @@ If you are trying to build a personality test app or a quiz app, this article is
 - [Prerequisites](#prerequisites)
 - [Introduction to Java arrays](#introduction-to-java-arrays)
 - [Building the personality test app](#building-the-personality-test-app)
-- [Explaining the Methods](#explaining-the-methods)
+- [Explaining the methods](#explaining-the-methods)
 - [Conclusion](#Conclusion)
 - [Reference](#reference)
 
