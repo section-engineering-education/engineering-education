@@ -58,7 +58,7 @@ We declare a single-dimensional array like this:
 ```java
 int [ ] oneDarray;
 ```
-At this point, an array object is yet to be created. It is similar to declaring an integer like this;
+At this point, an array object is yet to be created. It is similar to declaring an integer like this:
 
 ```java
 int number;
