@@ -99,9 +99,9 @@ from django.db import models
 from django.contrib.gis.db import models 
 
 class Hotel(models.Model): 
-name = models.CharField(max_length=100) 
-location = models.PointField() 
-address = models.CharField(max_length=100)
+hotel = models.CharField(max_length=100) 
+hotel_coordinate = models.PointField() 
+
 ```
 The location field is created as a point field because we want to save the coordinate of each hotel. In Django we don't need to write SQL queries to create our tables, the codes in the model file will create the table during migration because the model act as an abstraction layer between Django and the database. So type the following codes in your terminal to create our tables.
 ```
@@ -115,7 +115,7 @@ from .models import Hotel
 
 @admin.register(Hotel) 
 class HotelAdmin(OSMGeoAdmin): 
-list_display = ('name', 'location', 'address')
+list_display = ('hotel', 'hotel_coordinate')
 ```
 Before we can access the admin panel, we will create the superuser. Let's type some codes in our terminal and follow the instructions.
 ```
@@ -156,52 +156,18 @@ def load_data(apps, schema_editor):
                     longitude = obj.get('lon', 0)
                     latitude = obj.get('lat', 0)
                     location = fromstr(f'POINT({longitude} {latitude})', srid=4326)
-                    Facility(name=name, location=location).save()
+                    Facility(hotel=name, hotel_coordinate=location).save()
             except KeyError:
                 pass 
 ```
 
-We loop through the objects of the element containing the location and tags shop, inside the loop we extracted the name and coordinates. Then we return a valid GEOSGeometry object that is corresponding to spatial data. The with statement automatically close the file. We will call the function inside the Migration class.
+We loop through the objects of the element containing the location and tags hotel, inside the loop we extracted the name and coordinates. Then we return a valid GEOSGeometry object that is corresponding to spatial data. The with statement automatically close the file. We will call the function inside the Migration class.
 
 ```
 operations = [
         migrations.RunPython(load_data)
     ]
 ```
-Here is the final copy of the migration file
-
-
-    from django.db import migrations  
-    import json  
-    from django.contrib.gis.geos import fromstr  
-    from pathlib import Path  
-    DATA_FILENAME = 'hotels.json'  
-    def load_data(apps, schema_editor):  
-    Hotel = apps.get_model('hotels', 'Hotel')  
-    jsonfile = Path(__file__).parents[2] / DATA_FILENAME  
- 
-    with open(str(jsonfile)) as datafile:  
-        objects = json.load(datafile)  
-        for obj in objects['elements']:  
-            try:  
-                objType = obj['type']  
-                if objType == 'node':  
-                    tags = obj['tags']  
-                    name = tags.get('name','no-name')  
-                    longitude = obj.get('lon', 0)  
-                    latitude = obj.get('lat', 0)  
-                    location = fromstr(f'POINT({longitude} {latitude})', srid=4326)  
-                    Hotel(name=name, location=location).save()  
-            except KeyError:  
-                pass  
-    class Migration(migrations.Migration):  
-    dependencies = [  
-        ('hotels', '0001_initial'),  
-    ]  
-  
-    operations = [  
-        migrations.RunPython(load_data)  
-    ]
 
 So let's finish the migration by running:
 ```
@@ -222,8 +188,8 @@ from .models import Hotel
 ```
 Let's create a variable that stores the user current coordinates.
 
-    longitude = -80.191788  
-    latitude = 25.761681  
+    longitude = -74.005974 
+    latitude = 40.712776 
       
     user_coordinate = Point(longitude, latitude, srid=4326)
 
@@ -231,8 +197,8 @@ Next, we will query our database for hotels that are within the user coordinate.
 
     class HotelListView(generic.ListView):  
         model = Hotel  
-        context_object_name = 'shops'  
-      queryset = Hotel.objects.annotate(distance=Distance('location', user_coordinate)).order_by('distance')[0:6]  
+        context_object_name = 'hotel'  
+      queryset = Hotel.objects.annotate(distance=Distance('hotel_coordinate', user_coordinate)).order_by('distance')[0:6]  
 
 
 The queryset uses the .annotate() to calculate the distance between the user coordinate and the nearest hotel. Next, we will create the home page where the user will see the hotels that are within his region. We will create the index.html file in `hotels/templates/hotels/home_list.html`
@@ -249,7 +215,7 @@ The queryset uses the .annotate() to calculate the distance between the user coo
     <ul>
     {% for hotel in hotels %}
         <li>
-        {{ hotel.name }}: {{hotel.distance}}
+        {{ hotel.hotel }}: {{hotel.distance}}
         </li>
     {% endfor %}
     </ul>
