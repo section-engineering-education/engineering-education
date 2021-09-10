@@ -112,7 +112,7 @@ String [] arrayOfStrings= new int [4] // array of Strings;
 ```java
 String [ ] subjects = {“English”,”Mathematics”};
 ```
-Whenever we declare and initialize an array with array literals, we wouldn't need the new keyword except for a boolean data type. We declare and initialize boolean values like this;
+Whenever we declare and initialize an array with array literals, we wouldn't need the new keyword except for a boolean data type. We declare and initialize boolean values like this:
 
 ```java
 boolean [ ] boolValues = new boolean { true,false,true,false};//exception to array literal rule.
