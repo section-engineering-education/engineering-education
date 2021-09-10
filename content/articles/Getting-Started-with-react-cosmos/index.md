@@ -1,6 +1,6 @@
 The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
-In this tutorial, we will cover the basics of React Cosmos using a food odering React application. Let's get started!
 
+In this tutorial, we will cover the basics of React Cosmos using a food odering React application. Let's get started!
 
 ### Prerequisites for React Cosmos
 
@@ -64,15 +64,15 @@ npm start
 
 The React development server starts at `http://localhost:3000/`. The application in the browser should look like this:
 
-![cosmos landing page](./cosmos-app.png)
+![cosmos landing page](/engineering-education/Getting-Started-with-react-cosmos/cosmos-app.png)
 
-![cosmos cart page](./cosmos-app-cart.png)
+![cosmos cart page](/engineering-education/Getting-Started-with-react-cosmos/cosmos-app-cart.png)
 
 
 Let's install the React Cosmos package as a dev dependency. On your terminal, execute the command:
 
 ```bash
-yarn add --dev react-cosmos
+yarn add -D react-cosmos
 ```
 
 If you use npm, run the command:
@@ -127,9 +127,9 @@ If you prefer yarn:
 
 `yarn cosmos`
 
-When the server is up and running, navigate to http://localhost/5000 in your favourite browser and you should see something like this.
+When the server is up and running, navigate to `http://localhost/5000` in your favourite browser and you should see something like this.
 
-![img](src)
+![cosmos starter](/engineering-education/Getting-Started-with-react-cosmos/cosmos-starter.png)
 
 ### Creating a Component using Fixtures
 
@@ -144,42 +144,55 @@ Then export it as default:
 
 ```jsx
 export default (
-  <div className="w-60 mx-auto">
+  <div>
+  <div className="w-50 mx-auto">
     <Button>Cosmos</Button>
+  </div>
   </div>
 )
 ```
+
 In our Cosmos Explorer under **ALL FIXTURES**, we should see:
-![]()
 
-Using the right panel, we can update any prop to the button component. Let’s add a variant prop that includes a primary and secondary Button variant.
+![cosmos button](/engineering-education/Getting-Started-with-react-cosmos/cosmos-btn.png)
 
-Go back to our `src/components/Button/Button.jsx`  component and update it with the code below:
+
+On the right panel, we can edit any of the button component's properties. Let's add a secondary and primary Button variant to a variant prop.
+
+Return to our `src/component` folder and update the `Button.jsx` component with the following code:
 
 ```js
-const Button = ({ children, variant = "primary" }) => {
+
+export default function Button({ children, variant = "primary" }) => {
   return (
+    <div>
     <button
-      className={`block w-full h-12 ${
-        variant === 'primary' ? "bg-black" : "bg-blue-600"
-      } hover:opacity-70 mt-3 text-sm rounded-sm`}
-      style={{ color: '#fff', border: "none", outline: "none" }}
+      className={`w-full block h-12 ${
+        variant === 'primary' ? "bg-black" : "bg-blue-500"
+      } hover:opacity-60 rounded-sm mt-3`}
+      style={{ color: 'white', border: "none", outline: "none" }}
       type="button"
     >
       {children}
     </button>
+    </div>
   )
 }
-
-export default Button
 ```
 
-Next, we need to update the `Button.fixtures.js` file to look like this:
+Next, import the fixture feaure from `react-cosmos` and the `Button` component.
 
 ```jsx
-import { useSelect } from 'react-cosmos/fixture';
-import Button  from "./components/Button/Button";
+// import useSelect to use enable the selection feature
+import { useSelect } from 'react-cosmos/fixture'
 
+// Add the Button component to the fixture file
+import Button  from "./components/Button/Button"
+```
+
+Finally, export the Button component as default in our `Buttton.fixtures.js` file. 
+
+```jsx
 export default () => { 
   const [variant] = useSelect('variant', {
     options: ['primary', 'secondary'],
@@ -193,9 +206,11 @@ return (
 ```
 
 Let's briefly dissect the above code:
-- Our Button fixture includes a variant prop with a Control panel hook useSelect. The useSelect hook is what we use to set options of the variant prop. Therefore, in our sandbox, we can manually select this rather than typing.
+- Our Button fixture includes a variant prop with a Control panel hook useSelect. We import the `useSelect` hook to enable us set options of the variant prop. Therefore, in our sandbox, we can manually select this rather than typing.
 
 Let's run a demo in the sandbox:
+
+![cosmos variants](/engineering-education/Getting-Started-with-react-cosmos/cosmos-variants.gif)
 
 We can toggle between either of the two variant options. Try changing the variant prop to confirm that our background color changes accordingly.
 
@@ -211,25 +226,26 @@ import Checkout from "./components/Checkout/Checkout"
 Next, add mock data inside the Checkout fixture file and export this as default.
 
 ```jsx
-const data = {
-  subTotal: 100,
-  deliveryFee: 5,
-  total: 105,
+const dummyData = {
+  subTotalPrice: 150,
+  deliveryFee: 15,
+  totalPrice: 165,
 }
 
 export default (
-  <div className="w-60 mx-auto">
+  <div className="mx-auto w-50">
+
     <Checkout
-      subTotal={data.subTotal}
-      deliveryFee={data.deliveryFee}
-      total={data.total}
+      subTotal={dummyData.subTotalPrice}
+      deliveryFee={dummyData.deliveryFee}
+      total={dummyData.totalPrice}
     />
+
   </div>
 )
 ```
 
-Click on the left panel under **ALL FIXTURE** option to what it looks like in our React Cosmos sandbox.
-We perform any visual tests by passing different prop values to our `data` object and playing around with it in the sandbox.
+Click on the left panel under **ALL FIXTURE** option. Here is where we perform any visual tests by passing different prop values to our `dummyData` object and playing around with it in the sandbox.
 
 ### Cards Fixture
 For this fixture, create a `Cards.fixture.jsx` file within the `src` folder. Our Cards Fixture exports multiple fixtures as objects with React's `export default` keywords. 
@@ -239,49 +255,51 @@ First, import the CartCard and FoodCard components.
 ```jsx
 import CartCard from "./components/CartCard/CartCard"
 import FoodCard from "./components/FoodCard/FoodCard"
+import foodImg from "./images/food1.jpg"
 ```
 Next, include the food and order objects which will serve as our data for props.
 
 ```jsx
-const food = {
-  id: 1,
-  name: "Peppered Chicken",
-  imgURL: "https://sisijemimah.com/wp-content/uploads/2015/07/image70.jpg",
+const order = {
+  orderId: 1,
+  name: "Chicken",
   price: "8.00",
+  quantity: 1,
+  updateList: () => {},
 }
 
-const order = {
-  id: 1,
-  name: "Peppered Chicken",
-  imgURL: "https://sisijemimah.com/wp-content/uploads/2015/07/image70.jpg",
+const food = {
+  foodId: 2,
+  name: "Hot Chicken",
   price: "8.00",
-  qty: 1,
-  updateList: () => {},
 }
 ```
 
 Finally, export the `FoodCard` and `CartCard` fixtures:
 
 ```jsx
+
 export default {
+
   FoodCard: (
     <FoodCard
-      id={food.id}
+      id={food.foodId}
       name={food.name}
       price={food.price}
-      imgURL={food.imgURL}
+      imgSrc={foodImg}
     />
+
   ),
   CartCard: (
     <CartCard
-      id={order.id}
+      id={order.orderId}
       name={order.name}
       price={order.price}
-      imgURL={order.imgURL}
-      qty={order.qty}
+      imgSrc={foodImg}
+      quantity={order.quantity}
       updateList={order.updateList}
     />
-  ),
+  )
 }
 ```
 Our sandbox has a `Cards` fixture and within it, export `CartCard` and `FoodCard` as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
