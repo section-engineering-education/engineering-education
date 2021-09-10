@@ -386,7 +386,7 @@ for(int number : intArrays) sum += number;
 ```
 
 #### Format specifiers method
-This method is used with to place tick marks at every option picked.
+This method is used to place tick marks on every option picked. We only used it in our table.
 
 ```java
 public static String placeCheckmark(int num, int position){
