@@ -21,6 +21,7 @@ If you are trying to build a personality test app or a quiz app, this article is
 - [How the personality test works](#how-the-personality-test-works)
 - [Prerequisites](#prerequisites)
 - [Introduction to Java arrays](#introduction-to-java-arrays)
+- [How to create arrays](#how-to-create-arrays)
 - [Building the personality test app](#building-the-personality-test-app)
 - [Explaining the methods](#explaining-the-methods)
 - [Conclusion](#Conclusion)
@@ -86,7 +87,7 @@ We create arrays with the new keyword or with array literals. The index of the a
 
 #### Creating an array with the new keyword
 
-We create an empty array like this;
+We create an empty array like this:
 
 ```java
 int[ ] emptyArray = new int[0]; // this is an empty array
@@ -266,6 +267,7 @@ result.append("J");
 ```
 
 #### Step ten: Displays personality types in a table
+
 Print personality results in a table.
 
 ```java
