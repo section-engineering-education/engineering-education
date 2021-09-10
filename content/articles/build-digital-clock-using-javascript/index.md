@@ -134,7 +134,7 @@ let period = "AM";
 
 - The ```year``` variable gets the year from the ```getFullYear()``` method.
 
-- The ```periodOfDay``` variable is initialized to *AM*, this prints the period of the day.
+- The ```period``` variable is initialized to *AM*, this prints the period of the day.
 
 I think that is enough explanation up there. Our next step would be to couple all of these variables in the function, here is how:
 
@@ -163,7 +163,7 @@ Here is the code snippet to illustrate that:
 
 // Permit me to declare the period and hourOfDay again even though we've declared them before
 
-let periodOfDay = "AM";
+let period = "AM";
 
 let hourOfDay = timeNow.getHours();
 
@@ -225,11 +225,13 @@ The last thing is a function call or invocation. After our function has been dec
 This is how our final code will look:
 
 ```js
-
 setInterval(displayTime, 1000);
 
 function displayTime() {
-    const hoursOfDay = timeNow.getHours();
+
+    const timeNow = new Date();
+
+    let hoursOfDay = timeNow.getHours();
     let minutes = timeNow.getMinutes();
     let seconds = timeNow.getSeconds();
     let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -240,14 +242,14 @@ function displayTime() {
     let year = timeNow.getFullYear();
     let period = "AM";
 
-    if (hoursOfDays > 12) {
+    if (hoursOfDay > 12) {
         hoursOfDay-= 12;
-        periodOfDay = "PM";
+        period = "PM";
     }
 
-    if (hoursOfDay == 0) {
+    if (hoursOfDay === 0) {
         hoursOfDay = 12;
-        periodOfDay = "AM";
+        period = "AM";
     }
 
     hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
