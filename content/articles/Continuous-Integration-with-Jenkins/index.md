@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /continuous-integration-with-jenkins/
 title: Continuous Integration with Jenkins
-description: This tutorial will help you understand Jenkins. This coninuous integration tool helps in the management of software projects.
-author: 
-date: 2021-08-04T00:00:00-14:00
+description: This tutorial will help you understand Jenkins. This continuous integration tool helps in the management of software projects.
+author: ruth-wambui
+date: 2021-08-10T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/continuous-integration-with-jenkins/hero.jpg
     alt: Continuous Integration with Jenkins Hero Image
 ---
-Today, software developers collaborate in different projects. For instance, they can contribute code to create specific frameworks.
+Today, software developers collaborate on different projects. For instance, they can contribute code to create specific frameworks.
 <!--more-->
 This process requires a version control system (VCS) where different developers can get code from other developers using pull requests, send their changes to other developers using push requests, and combine different code bases from different contributors using merge requests. 
 
@@ -39,7 +39,7 @@ It facilitates continuous integration by supporting different languages, source 
 
 Jenkins continuously tests projects during software development, detects and reports any errors. This is done by performing a software build, and execution of a shell script. 
 
-Jenkins, therefore, facilitates integration by conducting repository checks, preparing builds, deploying built-in test servers, generating of feedback, and verifying source code repository changes.
+Jenkins, therefore, facilitates integration by conducting repository checks, preparing builds, deploying built-in test servers, generating feedback, and verifying source code repository changes.
 
 ### Basic setup of Jenkins
 Before downloading and setting up Jenkins, users should check for certain prerequisites. This includes enough memory in the hard drive, and at least 1GB and 256MB RAM. 
@@ -55,9 +55,9 @@ In Jenkins, a [pipeline](https://www.jenkins.io/doc/book/pipeline/) is a collect
 
 They are a combination of plugins that support the integration and implementation of continuous delivery in Jenkins. 
 
-The pipeline has extensible automation servers that create code via Domain Specific Languages [DSL](https://en.wikipedia.org/wiki/Domain-specific_language#Overview). 
+The pipeline has extensible automation servers that create code via Domain-Specific Languages [DSL](https://en.wikipedia.org/wiki/Domain-specific_language#Overview). 
 
-Jenkin pipelines allow many users to access it. The system is robust and resumes automatically incase of restarts.
+Jenkin pipelines allow many users to access them. The system is robust and resumes automatically in case of restarts.
 
 Pipelines are developed in two ways, namely, Scripted and [Declarative pipelines](https://www.jenkins.io/doc/book/pipeline/syntax/). 
 
@@ -65,7 +65,7 @@ A [scripted pipeline](https://www.jenkins.io/doc/book/pipeline/#scripted-pipelin
 
 Declarative pipeline provides simple syntax to define a pipeline without a groovy script. 
 
-Pipelines are written in a Jenkins file, making them durable, extensible, and easier to code. Jenkins pipelines involves the use of nodes which are machines capable of executing a pipeline.
+Pipelines are written in a Jenkins file, making them durable, extensible, and easier to code. Jenkins pipelines involve the use of nodes that are machines capable of executing a pipeline.
 
 A node can also be regarded as a stage block that defines distinct tasks to be performed in the entire pipeline.
 
@@ -80,18 +80,18 @@ Such plugins help developers to integrate Jenkins into their custom workplace fo
 
 As a continuous integration tool, Jenkins is easy to use with updated documentation and support for all major operating systems. Users with basic IT skills can easily utilize the software. 
 
-In addition, Jenkins is distributed with a quality Application Programming Interface [API](https://www.club-oracle.com/threads/apis-what-is-api.16190/) suite that enables the user to customize the amount of accessible data.
+In addition, Jenkins is distributed using a quality Application Programming Interface [API](https://www.club-oracle.com/threads/apis-what-is-api.16190/) suite that enables the user to customize the amount of accessible data.
 
 Due to its flexibility, Jenkins supports projects of various sizes and complexities. Furthermore, it does not limit the number of connected servers. Therefore, many teams can engage in continuous delivery without challenges.
 
 Another benefit of Jenkins is that it has a huge developer community. This facilitates faster releases, bug fixes, and creative interactions
 
-Jenkins also allows Source Code Management ([SCM](https://www.atlassian.com/git/tutorials/source-code-management#:~:text=Source%20code%20management%20%28SCM%29%20is%20used%20to%20track,contributors.%20SCM%20is%20also%20synonymous%20with%20Version%20control)) which supports different source code repositories. This enables developers to set different triggers after code changes in languages such as Java and Python.
+Jenkins also allows Source Code Management [SCM](https://www.atlassian.com/git/tutorials/source-code-management#:~:text=Source%20code%20management%20%28SCM%29%20is%20used%20to%20track,contributors.%20SCM%20is%20also%20synonymous%20with%20Version%20control) which supports different source code repositories. This enables developers to set different triggers after code changes in languages such as Java and Python.
 
 ### Shortcomings of using Jenkins as a continuous integration tool
 One of the biggest disadvantages of Jenkins is the presence of many plugins. Some of these plugins do not provide optimal functionality. Some of the areas where plugins are required seem too basic. 
 
-The second disadvantage relates to the way Jenkins is designed.It does not support latest technologies such as Docker. 
+The second disadvantage relates to the way Jenkins is designed. It does not support the latest technologies such as Docker. 
 
 Jenkins lacks enough collaborative features. It does not allow developers to see the commits done by other team members. It is, therefore, challenging to track the project's progress. 
 
@@ -102,7 +102,7 @@ Jenkins does not provide enough analytics on the end-to-end deployment cycle, wh
 - [Jenkins: pros and cons.](https://ezeelive.com/jenkins-pros-cons/)
 - [Advantages of Jenkins](https://apiumhub.com/tech-blog-barcelona/advantages-of-jenkins/)
 - [Jenkins for continuous integration](https://www.dotnettricks.com/learn/devops/what-is-jenkins-jenkins-for-continuous-integration)
-- [Setting up Jenkins.](https://saucelabs.com/blog/a-getting-started-guide-to-setting-up-jenkins#:~:text=%20The%20basics%20of%20setting%20up%20a%20Jenkins,port%20for%20JNLP%20slave%20agents%20to...%20More%20)
+- [Setting up Jenkins](https://saucelabs.com/blog/a-getting-started-guide-to-setting-up-jenkins#:~:text=%20The%20basics%20of%20setting%20up%20a%20Jenkins,port%20for%20JNLP%20slave%20agents%20to...%20More%20)
 
 
 ---
