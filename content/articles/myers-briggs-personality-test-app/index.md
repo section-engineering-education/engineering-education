@@ -212,7 +212,7 @@ int[] judgingVsPerceivingAnswersStorage = new int[5];
 
 #### Step six: Create a StringBuilder object
 
-The StringBuilder class is used to create a mutable String. The code sample below creates an empty StringBuilder with a default capacity of 16.
+The StringBuilder class is used to create a mutable String. The code sample below creates an empty StringBuilder with a default capacity of 16. It must be noted that StringBuilder class is more efficient than implementing an empty string. Each time we add to an empty string we create an object which tend to be less efficient.
 
 ```java
 StringBuilder result = new StringBuilder();
@@ -231,7 +231,7 @@ iterate(judgingVsPerceivingTest,judgingVsPerceivingAnswersStorage);
 
 #### Step eight: Calculate answers
 
-Find the sum of the ones and zeros in the array.
+Find the sum of numbers in the array.
 
 ```java
 int sumOfAsInExtroversion = sum(extrovertVsIntrovertAnswersStorage);
@@ -277,13 +277,13 @@ The code sample below displays the heading of our table.
 System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "A", "B"," ", "A", "B", " ", "A", "B", " ", "A", "B");
 ```
 
-We set number of questions to 1 to keep track of questions our users answered.
+We set number of questions to 1 because we want to display all question numbers in our table.
 
 ```java
 int numbering = 1;
 ```
 
-The code sample below uses repeats '-' in 74 times on a single line. We use this to demarcate our table sectioning.
+The code sample below repeats '-' in 74 times on a single line. We use this to demarcate our table sections.
 
 ```java
 System.out.printf("%s%n", "-".repeat(74));
@@ -310,7 +310,7 @@ for (int i = 0; i&lt; extrovertVsIntrovertAnswersStorage.length; i++) {
 System.out.printf("%s%n", "-".repeat(74));
 ```
 
-The code sample below displays in a table, the number times A and B exist in the array and also displays personality type.
+The code sample below displays in a table, the number of time A and B exist in the array and also displays the personality type.
 
 ```java
 System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL",countNumbers(extrovertVsIntrovertAnswersStorage, 1), countNumbers(extrovertVsIntrovertAnswersStorage, 0),
@@ -321,7 +321,7 @@ System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | 
 System.out.println("Your personality type is " + result);
 ```
 
-The code sample below displays the website link about personality type.
+The code sample below displays the website link for information about user's personality identity.
 
 ```java
 System.out.print("For your personality interpretation, visit : ");
@@ -395,6 +395,7 @@ public static String placeCheckmark(int num, int position){
 ```
 
 #### Method for counting number of zeros and ones in our array
+
 This method takes an array and a number. It finds the number of times the number exists in the array.
 
 ```java
