@@ -178,7 +178,7 @@ if(hourOfDay > 12) {
 if(hourOfDay == 0) {
    hourOfDay = 12;
    period = "AM";
-  /*This block checks whether the hour is greater than 12 and if that is true, 12 is subtracted from the hour. The result is then assigned back to ```hour``` and the period is set to PM. 12 is subtracted since we're building a 12-hour time clock*/
+  /*This block checks whether the hour is equals 0 and if that is true, 12 is assigned to hour of day. The period is set to AM.*/
 }
 
 ```
@@ -263,8 +263,12 @@ function displayTime() {
 }
 displayTime();
 ```
+#### Variable Scope
+A variable is a said to have a *global scope* when it can be seen, accessed or used anywhere within a program. Global variables are declared outside of a function. Any variable declared within a function can only be used within the function.
 
-Did you see how we intentionally declare all our variables within the function? The goal is to make them in the function's local scope.
+Did you see how we intentionally declared all our variables within the function? The aim is to make them local variables to the function. Hence, a *local variable* is one whose scope is only within its function definition. That is a variable whose value cannot be accessed outside the scope where it was declared.
+
+We declared all the variables inside the function because there was no need to use them outside the function body.
 
 #### Third Step
 
@@ -305,6 +309,8 @@ body {
 In this article, we have learned about function declaration and function calls. We've also learned about the ternary operator and JavaScript date class. Finally, talked about how to get the string value of months in a year using the toLocaleString method.
 
 With all this, we have been able to build our digital clock using only HTML, CSS, and JavaScript.
+
+-[link to complete code](https://replit.com/@Frank-dev20/Clock)
 
 ### References
 - [JavaScript date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
