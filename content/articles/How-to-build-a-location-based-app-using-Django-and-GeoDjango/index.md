@@ -54,17 +54,8 @@ Now that we are done setting up the prerequisites, we will create our web app an
 ```
 django-admin startproject mysite
 ``` 
-The code above created a project called mysite. Let's create our hotel app that will display all the hotels in a given area. But before we do that we need to add Deodjango to our installed app sections in the `settings.py` file. Add this code to the last line: 'django.contrib.gis'
-```
-INSTALLED_APPS = [ 
-    'django.contrib.admin', 
-    'django.contrib.auth', 
-    'django.contrib.contenttypes',
-    'django.contrib.sessions', 
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.gis', ]
-```
+The code above created a project called mysite. Let's create our hotel app that will display all the hotels in a given area. But before we do that we need to add Deodjango to our INSTALLED_APPS sections in the `settings.py` file. Add this code to the last line: `'django.contrib.gis'`
+
 Type the following code in your terminal to create a new app. `py manage.py startapp hotels` We will also add the new app to the list of the installed app in the `settings.py` file: 'hotels'
 The updated installed app should look like this
 ```
@@ -140,34 +131,73 @@ from pathlib import Path
 ```
 Next we will create the load_data() function
 ```
-DATA_FILENAME = 'hotels.json'
+exported_hotels = 'hotels.json'
 def load_data(apps, schema_editor):
     Facility = apps.get_model('facilities', 'Facility')
-    jsonfile = Path(__file__).parents[2] / DATA_FILENAME
+    hotel_json = Path(__file__).parents[2] / exported_hotels
 
-    with open(str(jsonfile), encoding="utf8") as datafile:
-        objects = json.load(datafile)
-        for obj in objects['elements']:
+    with open(str(hotel_json), encoding="utf8") as exp_hotel:
+        hotel_objects = json.load(exp_hotel)
+        for hotel_obj in hotel_objects['elements']:
             try:
-                objType = obj['type']
+                objType = hotel_obj['type']
                 if objType == 'node':
-                    tags = obj['tags']
-                    name = tags.get('name','no-name')
-                    longitude = obj.get('lon', 0)
-                    latitude = obj.get('lat', 0)
-                    location = fromstr(f'POINT({longitude} {latitude})', srid=4326)
-                    Facility(hotel=name, hotel_coordinate=location).save()
+                    tags = hotel_obj['tags']
+                    hotel_name = tags.get('name','no-name')
+                    hotel_lon = hotel_obj.get('lon', 0)
+                    hotel_lat = hotel_obj.get('lat', 0)
+                    location = fromstr(f'POINT({hotel_lon} {hotel_lat})', srid=4326)
+                    Facility(hotel=hotel_name, hotel_coordinate=location).save()
             except KeyError:
                 pass 
 ```
 
-We loop through the objects of the element containing the location and tags hotel, inside the loop we extracted the name and coordinates. Then we return a valid GEOSGeometry object that is corresponding to spatial data. The with statement automatically close the file. We will call the function inside the Migration class.
+We loop through the objects of the element containing the location and tags hotel, inside the loop we extracted the hotel name and coordinates. Then we return a valid GEOSGeometry object that is corresponding to spatial data. The with statement automatically close the file. We will call the function inside the Migration class.
 
 ```
 operations = [
         migrations.RunPython(load_data)
     ]
 ```
+
+```
+Here is the final copy of the migration file
+
+
+    from django.db import migrations  
+    import json  
+    from django.contrib.gis.geos import fromstr  
+    from pathlib import Path  
+
+    exported_hotels = 'hotels.json'
+    def load_data(apps, schema_editor):
+    Facility = apps.get_model('facilities', 'Facility')
+    hotel_json = Path(__file__).parents[2] / exported_hotels
+
+    with open(str(hotel_json), encoding="utf8") as exp_hotel:
+        hotel_objects = json.load(exp_hotel)
+        for hotel_obj in hotel_objects['elements']:
+            try:
+                objType = hotel_obj['type']
+                if objType == 'node':
+                    tags = hotel_obj['tags']
+                    hotel_name = tags.get('name','no-name')
+                    hotel_lon = hotel_obj.get('lon', 0)
+                    hotel_lat = hotel_obj.get('lat', 0)
+                    location = fromstr(f'POINT({hotel_lon} {hotel_lat})', srid=4326)
+                    Facility(hotel=hotel_name, hotel_coordinate=location).save()
+            except KeyError:
+                pass 
+
+    class Migration(migrations.Migration):  
+    dependencies = [  
+        ('hotels', '0001_initial'),  
+    ]  
+
+    operations = [  
+        migrations.RunPython(load_data)  
+    ]
+    ```
 
 So let's finish the migration by running:
 ```
@@ -194,12 +224,12 @@ Let's create a variable that stores the user current coordinates.
     user_coordinate = Point(longitude, latitude, srid=4326)
 
 Next, we will query our database for hotels that are within the user coordinate.
-
+```
     class HotelListView(generic.ListView):  
         model = Hotel  
-        context_object_name = 'hotel'  
+        context_object_name = 'hotels'  
       queryset = Hotel.objects.annotate(distance=Distance('hotel_coordinate', user_coordinate)).order_by('distance')[0:6]  
-
+```
 
 The queryset uses the .annotate() to calculate the distance between the user coordinate and the nearest hotel. Next, we will create the home page where the user will see the hotels that are within his region. We will create the index.html file in `hotels/templates/hotels/home_list.html`
 
