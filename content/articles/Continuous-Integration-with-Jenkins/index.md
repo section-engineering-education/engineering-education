@@ -6,7 +6,7 @@ url: /continuous-integration-with-jenkins/
 title: Continuous Integration with Jenkins
 description: This tutorial will help you understand Jenkins. This continuous integration tool helps in the management of software projects.
 author: ruth-wambui
-date: 2021-08-10T00:00:00-14:00
+date: 2021-09-10T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -18,26 +18,20 @@ Today, software developers collaborate on different projects. For instance, they
 <!--more-->
 This process requires a version control system (VCS) where different developers can get code from other developers using pull requests, send their changes to other developers using push requests, and combine different code bases from different contributors using merge requests. 
 
-The above processes can be automated using continuous integration.
-
-Tools such as Jenkins can be used for continuous integration. 
+We can automate this process using continuous integration. Tools such as Jenkins can be used for continuous integration. 
 
 This article will focus on Jenkins as a tool for continuous integration. It is a popular open-source tool for automating different build processes. 
 
-These processes are predefined and can be triggered by different processes including time intervals and user actions.
+These processes are predefined and can be triggered by different processes, including time intervals and user actions.
 
 ### Understanding Jenkins and its role in the integration
-Jenkins is open-source automation software that is used in continuous integration. 
+Jenkins is open-source automation software that is used in continuous integration. It's written in Java using plugins that support the process of integration and delivery. This helps build and test software projects. 
 
-It's written in java using plugins that support the process of integration and delivery. This helps build and test software projects. 
+Jenkins plays an important role by helping developers integrate changes to projects that in turn enables users to access new updates. 
 
-Jenkins plays an important role by helping developers to integrate changes to projects which in turn enables users to access new updates. 
+Jenkins is compatible with a number of testing and deployment technologies thereby allowing continuous delivery. It facilitates continuous integration by supporting different languages, source code repositories using pipelines, and automation of other routine tasks.
 
-Jenkins is compatible with a number of testing and deployment technologies hence allows continuous delivery. 
-
-It facilitates continuous integration by supporting different languages, source code repositories using pipelines, and automation of other routine tasks.
-
-Jenkins continuously tests projects during software development, detects and reports any errors. This is done by performing a software build, and execution of a shell script. 
+Jenkins continuously tests projects during software development, detects, and reports any errors. This is done by performing a software build, and execution of a shell script. 
 
 Jenkins, therefore, facilitates integration by conducting repository checks, preparing builds, deploying built-in test servers, generating feedback, and verifying source code repository changes.
 
@@ -53,9 +47,7 @@ After successful installation, a configuration is done to unblock Jenkins by ent
 ### What are pipelines, and how are they used with Jenkins?
 In Jenkins, a [pipeline](https://www.jenkins.io/doc/book/pipeline/) is a collection of events and jobs interlinked with each other in a sequence. 
 
-They are a combination of plugins that support the integration and implementation of continuous delivery in Jenkins. 
-
-The pipeline has extensible automation servers that create code via Domain-Specific Languages [DSL](https://en.wikipedia.org/wiki/Domain-specific_language#Overview). 
+They are a combination of plugins that support the integration and implementation of continuous delivery in Jenkins. The pipeline has extensible automation servers that create code via Domain-Specific Languages [DSL](https://en.wikipedia.org/wiki/Domain-specific_language#Overview). 
 
 Jenkin pipelines allow many users to access them. The system is robust and resumes automatically in case of restarts.
 
@@ -76,7 +68,7 @@ This ensures that better and more updated versions are available to developers.
 
 By supporting a wide range of plugins such as [Jenkins Maven](https://plugins.jenkins.io/maven-plugin/), [Global Build Stats](https://plugins.jenkins.io/global-build-stats/), [Job Generator](https://plugins.jenkins.io/jobgenerator/), and Multiple SCMs, Jenkins grants developers added features and control over the inbuilt Jenkins feature. 
 
-Such plugins help developers to integrate Jenkins into their custom workplace for IT projects.
+Such plugins help developers integrate Jenkins into their custom workplace for IT projects.
 
 As a continuous integration tool, Jenkins is easy to use with updated documentation and support for all major operating systems. Users with basic IT skills can easily utilize the software. 
 
@@ -96,6 +88,8 @@ The second disadvantage relates to the way Jenkins is designed. It does not supp
 Jenkins lacks enough collaborative features. It does not allow developers to see the commits done by other team members. It is, therefore, challenging to track the project's progress. 
 
 Jenkins does not provide enough analytics on the end-to-end deployment cycle, which in turn hinders the overall tracking of the process. Additional personnel are required to manage the server. This, in turn, increases operational costs.
+
+Happy learning!
 
 ### Further reading
 - [Top 5 benefits of Jenkins pipeline](https://staragile.com/blog/what-is-jenkins-pipeline)
