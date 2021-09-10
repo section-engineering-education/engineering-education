@@ -63,7 +63,7 @@ At this point, an array object is yet to be created. It is similar to declaring 
 ```java
 int number;
 ```
-We declare a two-dimensional array like this;
+We declare a two-dimensional array like this:
 
 ```java
 int [ ][ ] twoDarray;
