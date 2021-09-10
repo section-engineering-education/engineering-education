@@ -200,7 +200,7 @@ In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700.
 
 Head over to the "controls" tab found on the left-hand side. Drag and drop an ImageView control into the AnchorPane.
 On the Layout tab under the Properties tab, set its `Fit Width` and `Fit Height` to 400 and 400.
-To move it to be at almost the centre of the AnchorPane, set the `Layout X` and `Layout Y` values to 0 and 180.
+To move it to be at almost the center of the AnchorPane, set the `Layout X` and `Layout Y` values to 0 and 180.
 Download the logo and other images in the repository found in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) link.
 Copy the images into the resource folder to the location of the "hello-view.fxml" file.
 In the properties tab, set the image name to "logo.png".
@@ -583,7 +583,7 @@ Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-
 
 ### Conclusion
 
-In conclusion, JavaFX is a stable, efficient and secure UI library for Java developers.
+In conclusion, JavaFX is a stable, efficient, and secure UI library for Java developers.
 
 The User Interface and the System files remain separated. The separation prevents unintended code changes and brings about understandability.
 
@@ -599,7 +599,7 @@ On reaching here, one has gained the following knowledge:
 
 - Explore the JavaFX community found [here](https://openjfx.io/ "JavaFX website").
  This site is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
-- Try using some JavaFX libraries for other projects. Such include scientific calculators, modellers, and games.
+- Try using some JavaFX libraries for other projects. Such include scientific calculators, modelers, and games.
 
 ### References
 
