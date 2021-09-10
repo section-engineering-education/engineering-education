@@ -18,7 +18,7 @@ If you are trying to build a personality test app or a quiz app, this article is
 <!--more-->
 ### Table of contents
 
-- [How the Personality Test Works](#how-the-personality-test-works)
+- [How the personality test works](#how-the-personality-test-works)
 - [Prerequisites](#prerequisites)
 - [Introduction to Java Arrays](#introduction-to-java-arrays)
 - [Building the Personality Test App](#building-the-personality-test-app)
