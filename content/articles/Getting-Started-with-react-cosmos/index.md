@@ -1,4 +1,5 @@
 The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
+In this tutorial, we will cover the basics of React Cosmos using a food odering React application. Let's get started!
 
 
 ### Prerequisites for React Cosmos
@@ -11,7 +12,7 @@ The React library has quickly established itself as a popular JavaScript UI libr
   
 - Have a basic understanding of the [React](https://reactjs.org/) library and [JavaScript](https://www.w3schools.com/js/) programming language.
 
-### Benefits of using React Cosmos
+### The Benefits of React Cosmos in React Applications
 
 React has revolutionized frontend development forever. As frontend developers, most of our tasks involve crafting clean and functional UIs. However, ensuring that they will work flawlessly in large applications involves a lot of testing, compatibility support, and more. To solve this, we need to ensure consistency in design across components.
 
@@ -25,13 +26,13 @@ The key benefits of using React Cosmos include:
 
 ### Project Setup
 
-To get started with React Cosmos, we will clone an app from this repository. This is a simple food ordering application made using React and [tailwind CSS](https://tailwindcss.com/). Make sure you have git installed on your system and clone the repository with the command:
+To get started with React Cosmos, we will clone an app from this repository. This is a simple food ordering application made using React and [tailwind CSS](https://tailwindcss.com/). Using [git](https://git-scm.com/) on your system, clone our starter code in this repository with the command:
 
 ```bash
 git clone https://github.com/marienjus/React-Cosmos.git
 ```
 
-Next, install the needed project dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favourite IDE. Below is the structure of our components in this application.
+Once you've cloned the repo, install dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favorite IDE. Below is the structure of our components in this application.
 
 Our `src/components` folder has:
 
@@ -45,9 +46,9 @@ Our `src/components` folder has:
 
 In our `src/pages`, we have:
 
-- The `cart` component page will display the cart items and the checkout component.
+- The `cart` component page which displays our cart items and the checkout component.
 
-- The `home` page is our app’s landing page. It renders a navbar and food items.
+- The `home` page component is our landing page. It renders a navbar and the `FoodCard` component.
   
 Launch the development server with the command:
 
@@ -94,7 +95,7 @@ To make sure that React Cosmos works with create-react-app, add a `cosmos.config
 ```
 Here, `watchDirs` and `staticPath` properties tell React Cosmos to watch our `src` directory any static assets in the public folder. Finally, We then need to point our webpack config file and use `globalImports` to enable our CSS global files.
 
-The next step is to solve an issue that arises with React Cosmos and create-react-app hot reload by adding the `cross-env` package. Install the `cross-env` package with the command:
+Next, we should first install a `cross-env` package to resolve the issue with React Cosmos and hot reload. To install it, run the following command:mand:
 
 ```bash 
 yarn add cross-env -D
@@ -106,21 +107,16 @@ Or use npm:
 npm install cross-env -D
 ```
 
-Finally, we need to update our `package.json` file to include the React Cosmos in the scripts section:
+Finally, we need to add the React Cosmos to the scripts part of our `package.json` file:
 
 ```json
   "scripts": {
-    "start": "npm run watch:css && react-scripts start",
-    "build": "npm run watch:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "watch:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "cosmos": "cross-env FAST_REFRESH=false cosmos",
     "cosmos:export": "cross-env FAST_REFRESH=false cosmos-export"
   }
 ```
 
-In the next section, we will begin working with React Cosmos!
+Congratulations! You have now set up React Cosmos. In the following section, we will start using React Cosmos in our React application.
 
 ### Running React application using React Cosmos
 To start the application using the React Cosmos server on your terminal, run the command:
@@ -131,13 +127,13 @@ If you prefer yarn:
 
 `yarn cosmos`
 
-After the server starts successfully, head over to `http://localhost/5000` in your favourite browser, you should see this.
+When the server is up and running, navigate to http://localhost/5000 in your favourite browser and you should see something like this.
 
 ![img](src)
 
 ### Creating a Component using Fixtures
 
-In React Cosmos, we build components by creating fixtures. [Fixtures](https://github.com/react-cosmos/react-cosmos/tree/main/docs#fixtures) are files that contain a default export (as either a React Components or React Node). React cosmos displays the fixtures in a sandboxed explorer. Therefore, we need to add `.fixture` to the file names containing our component so that React Cosmos can track it. 
+In React Cosmos, we build components by creating fixtures. [Fixtures](https://github.com/react-cosmos/react-cosmos/tree/main/docs#fixtures) are files that contain a default export (as either a React Components or React Node). React cosmos displays the fixtures in a sandboxed explorer. Therefore, to enable React Cosmos to track our components, we need to append `.fixture` to the file names containing it.
 To get started, create a file within our `src` folder and name it `Button.fixture.jsx`. Inside the file, import the Button component as:
 
 ```jsx
@@ -288,7 +284,7 @@ export default {
   ),
 }
 ```
-In our sandbox, we have a `Cards` fixture. Within it, we have CartCard and FoodCard as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
+Our sandbox has a `Cards` fixture and within it, export `CartCard` and `FoodCard` as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
 
 ### Static Exports
 
