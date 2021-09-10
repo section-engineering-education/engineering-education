@@ -72,9 +72,7 @@ The square brackets show the dimensions; for instance, a three-dimensional array
 
 ```java
 int [ ] oneDarray, numbers[];
-
 // is the same as
-
 int oneDarray [], numbers[][];
 ```
 ### How to create arrays
@@ -278,15 +276,19 @@ Print personality results in a table.
 ```java
 System.out.println("\nYour choice at a glance\n");
 ```
+The code sample below displays the heading of our table.
 ```java
 System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "A", "B"," ", "A", "B", " ", "A", "B", " ", "A", "B");
 ```
+We set number of questions to 1 to keep track of questions our users answered.
 ```java
 int numbering = 1;
 ```
+The code sample below uses repeats '-' in 74 times on a single line. We use this to demarcate our table sectioning.
 ```java
 System.out.printf("%s%n", "-".repeat(74));
 ```
+The code sample below displays number of questions in a table. It ranges from 1 to 20. We then use our method to mark our users options accordingly.
 ```java
 for (int i = 0; i&lt; extrovertVsIntrovertAnswersStorage.length; i++) {
  System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", numbering++,
@@ -304,6 +306,7 @@ for (int i = 0; i&lt; extrovertVsIntrovertAnswersStorage.length; i++) {
 ```java
 System.out.printf("%s%n", "-".repeat(74));
 ```
+The code sample below displays in a table, the number times A and B exist in the array and also displays personality type.
 ```java
 System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL",countNumbers(extrovertVsIntrovertAnswersStorage, 1), countNumbers(extrovertVsIntrovertAnswersStorage, 0),
  " ", countNumbers(sensingVsIntuitionsAnswersStorage, 1), countNumbers(sensingVsIntuitionsAnswersStorage, 0), " ",
@@ -311,9 +314,11 @@ System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | 
  countNumbers(thinkingVsFeelingAnswersStorage, 0), " ",
  countNumbers(judgingVsPerceivingAnswersStorage, 1), countNumbers(judgingVsPerceivingAnswersStorage, 0));System.out.printf("%s%n", "-".repeat(74)); System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "E", "I"," ", "S", "N", " ", "T", "F", " ", "J", "P");
 System.out.println("Your personality type is " + result);
+```
+The code sample below displays the website link about personality type.
+```java
 System.out.print("For your personality interpretation, visit : ");
 System.out.println("https://www.truity.com/page/16-personality-types-myers-briggs");
-
 }
 ```
 
@@ -339,12 +344,12 @@ while (true){
       }catch (IllegalArgumentException ex){
          System.err.println(ex.getMessage());
    }
-
 }
-
 }
 ```
 #### This method serves questions and gets options
+
+This method takes two arrays. The first array contains the list of questions, while the second array contains 0s by default. We aim to collect an option from the user. If the option is an A,  it saves it into our collection as 1. Alternatively, if the choice is a B, it retains the default value (the default values in the list of answers are zeros).
 
 ```java
 public static void iterate(String[] questions, int[] answers) {
@@ -358,14 +363,14 @@ System.out.println("Pick an option: A or B");
       if ((optionAorB.equalsIgnoreCase("A"))){
           answers[number] = 1;
       }
-
 }
-
 }
 ```
 
-
 #### Method for summing the number of A's and B's
+
+This method takes an array of numbers and return the sum of numbers in it. Therefore, we use it to count the number of A's and B's in our answers at all level. This enables us to set a personality type with if statement. Remember that an A is denoted as 1, and a B is denoted as zero.
+
 ```java
 public static int sum(int[] intArrays){
 int sum = 0;
@@ -375,21 +380,22 @@ for(int number : intArrays) sum += number;
 ```
 
 #### Format specifiers method
+This method is used with to place tick marks at every option picked.
+
 ```java
 public static String placeCheckmark(int num, int position){
        return (num == 1 && position == 1) || (num == 0 && position == 2) ? String.format("%c", '\u2713') : "";
    }
 ```
 #### Method for counting number of zeros and ones in our array
+This method takes an array and a number. It finds the number of times the number exists in the array.
 ```java
 public static int countNumbers(int[] numArray, int number){
 int count = 0;
 for(int num : numArray){
       if(num == number) count++;
 }
-
 return count;
-
 }
 ```
 ### Conclusion
