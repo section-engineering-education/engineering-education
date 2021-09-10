@@ -1,5 +1,5 @@
 JavaFX is an open-source Java framework.
-It's used to create, develop, and deliver portable hardware-accelerated user interfaces.
+It's for creating, developing, and delivering portable hardware-accelerated user interfaces.
 JavaFX creates GUI's for Rich Internet Applications (RIA).
 It is for Web, desktop, and embedded and mobile applications.
 For example, one use for it would be for login and sign-up forms.
@@ -46,17 +46,17 @@ At the end of this article, you will have gained the following knowledge:
 The basics of the article include the following:
 
 - Java language knowledge and use.
-- A Java IDE is set up in your machine. I recommend IntelliJ IDEA Community Edition which is free and very interactive.
+- A Java IDE is set up in the machine. I recommend IntelliJ IDEA Community Edition, which is free and very interactive.
   The ultimate version also supports JavaFX.
 - A stable internet connection.
 
 ### What is JavaFX
 
-As stated above, it is for the creation of User Interfaces for use in WIMP (Windows, Icons, Menus, and Pointers) based systems.
+As stated above, it is for creating User Interfaces for use in WIMP (Windows, Icons, Menus, and Pointers) based systems.
 It is suitable for Java applications with User Interfaces.
 It is easy to use, and it has several tools and aids used during the design process and testing.
 The UI is designed in Java or XML.
-**FXML** files are a type of XML files used to design and build user interfaces separate from the main application logic.
+**FXML** files are XML files used to design and build user interfaces separate from the main application logic.
 This separation enables one to distinguish between the User Interface files and those of the main app.
 In the tutorial, you will interact with it to develop a visual interface for your application.
 
@@ -69,22 +69,23 @@ The application's storage space is small since it has what is needed.
 Some of these libraries and their functionality include:
 
 - **ControlsFX**: Provides the developer with controls such as buttons, checkboxes, radio buttons, labels, text, password fields, e.t.c.
-- **BootstrapFX**: Provides the program with CSS styling for the application, designed for a JavaFX application.
+- **BootstrapFX**: Provides the program with CSS styling, designed for a JavaFX application.
   It formats the controls and other elements put in the application.
 - **FormsFX**: It helps in the quick creation and design of forms.
-  It contains features such as validation, predefined controls, and localization tools. These are to reduce the time taken to create methods to validate arguments in the form.
+  It contains features such as validation, predefined controls, and localization tools.
+  These are to reduce the time taken to create methods to validate arguments in the form.
 - **Ikonli**: Has a list of Icon packs for easy access in the application.
   **TilesFX**: It enables the designer to use tiles to enhance the application's appearance, e.g. on Dashboards.
 - **ValidatorFX**: This makes forms made in the application super easy.
 - **FXGL**: This is for game developers. It has tools used to develop games.
-- **Charts**: This is recommended when one wants to create scientific charts.
+- **Charts**: Recommendation is when one wants to create scientific charts.
   It has stunning chart templates for one's use through quick manipulation.
 
 ### Set Up a JavaFX project
 
 #### Simple JavaFX "Hello" application
 
-Open the IDE and click on create a new project. Choose JavaFX on the left-hand side of the window opened.
+Open the IDE and click on create a new project. Next, choose JavaFX on the left-hand side of the window opened.
 
 In the text fields, fill them as follows:
 
@@ -92,11 +93,11 @@ In the text fields, fill them as follows:
 - `Group`: login
 - `Artifact`: loginform
 
-This is shown in the image below:
+This step is shown in the image below:
 
 ![Create a new JavaFX project](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-newProject.png)
 
-Click 'Next' to go to the next window. In the dependencies window, choose BootstrapFX, ControlsFx, and FormsFX. This is as shown in the image below:
+Click 'Next' to go to the next window. In the dependencies window, choose BootstrapFX, ControlsFx, and FormsFX. This step is as shown in the image below:
 
 ![JavaFX dependencies](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-dependencies.png)
 
@@ -122,24 +123,24 @@ The project's folders will look as shown below:
 ```
 
 Open the `HelloApplication.java` file found inside the "src/main/java/com/login/loginform/".
-Run it using `Shift + F10`. This opens a new "Hello!" window where clicking the button displays text.
+Run it using `Shift + F10`. This combination opens a new "Hello!" window where clicking the button displays text.
 It looks as follows:
 
 ![Hello JavaFX Window](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/hello-JavaFX.png)
 
-You will modify it to fit the application you want.
+Modify it to fit the application of choice.
 
 #### Set up a JavaFX Scene Builder
 
-Close the window opened and head over to the "resources" folder and in the subsequent subfolder open the `hello-view.fxml`.
-On the bottom of the window choose Scene Builder to view the file using JavaFX ScreenBuilder.
+Close the window opened and head over to the "resources" folder, and in the subsequent subfolder, open the `hello-view.fxml`.
+At the bottom of the window, choose Scene Builder to view the file using JavaFX ScreenBuilder.
 
-In case of errors due to missing the Scene Builder, click on "Download Scene Builder" as shown in the image below.
+In case of errors due to missing the Scene Builder, click "Download Scene Builder", as shown in the image below.
 Wait as it completes the process.
 
 ![Download Screen Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/download_screen_builder.png)
 
-After a few moments, it will open up the Scene Builder and a view of how the application will look like when run.
+After a few moments, it will open up the Scene Builder and view how the application will look when run.
 It looks as shown below:
 
 ![Scene Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Scene-Builder.png)
@@ -150,9 +151,9 @@ It looks as shown below:
 
 #### Change the stage appearance
 
-First, you will change the title of the window, then increase its size.
+First, change the title of the window, then increase its size.
 In the "HelloApplication.java" file, replace its title from "Hello!" to "Login or Sign-Up Form!".
-Change the size to 1000 by 700, that is, the width, and the height.
+Change the size to 1000 by 700, that is, the width and the height.
 It will look like shown below:
 
 ```java
@@ -180,18 +181,18 @@ public class HelloApplication extends Application {
 #### Customize the User Interface
 
 In the "hello-view.fxml" file, view it using the Scene Builder.
-On the left-hand side, delete the VBox which contains the label and button you saw in the application.
+On the left-hand side, delete the VBox that contains the label and button as seen in the application.
 
 ![Delete VBox](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Delete-VBox.png "Delete VBox")
 
 Add a border pane by dragging and dropping it from the containers section to the window where the VBox was.
-A border pane allows one to keep controls in the Top, Left, Right, Center, and Bottom of the window easily.
-This will aid in dividing the window.
+A border pane allows one to easily keep controls in the Top, Left, Right, Center, and Bottom of the window.
+This step will aid in dividing the window.
 
 Now drag and drop an AnchorPane from the containers section into the left side of the border pane.
-Here you will later place your Logo.
-On the right-hand side, on the properties window, in the style enter the CSS style attribute.
-It will be `-fx-background-color` and next to it place the value to be `#A9A9A9`.
+Here, place the Logo.
+On the right-hand side, on the properties window, in Style, enter the CSS style attribute.
+It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
 
 In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700.
 
@@ -201,63 +202,14 @@ Head over to the "controls" tab found on the left-hand side. Drag and drop an Im
 On the Layout tab under the Properties tab, set its `Fit Width` and `Fit Height` to 400 and 400.
 To move it to be at almost the centre of the AnchorPane, set the `Layout X` and `Layout Y` values to 0 and 180.
 Download the logo and other images in the repository found in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) link.
-Copy the images into the resource folder where the "hello-view.fxml" file is found.
+Copy the images into the resource folder to the location of the "hello-view.fxml" file.
 In the properties tab, set the image name to "logo.png".
 
-Now head over to the right side of the BorderPane and drag and drop another AnchorPane in it. Set its `Pref Width` and `Pref Height` to 600 and 700 .
-This makes the left and right BorderPane parts fit the initial height.
+Now head over to the right side of the BorderPane and drag and drop another AnchorPane in it. Set its `Pref Width` and `Pref Height` to 600 and 700.
+This step makes the left and right BorderPane parts fit the initial height.
 
-Inside the AnchorPane, add the following:
+The Code shall look as follows when viewed:
 
-##### A Header
-
-- **An ImageView control**: will carry in it a small cart logo. In its properties tab, set the image name to "cart.png". It has the following layout settings: `Fit Width` of 100, `Fit Height` of 55, `Layout X` of 120, `Layout Y` of 5.
-- **Label:** with the following properties `Text` of SHOP NOW, `Font` of Sans Serif 25px. In `Style`: `-fx-background-color of transparent`, and `-fx-text-fill` of #24a0ed. To add more styles, just click on the addition button in the Style section. It also contains the following Layouts: `Pref Width` of 263, `Pref Height` of 57, `Layout X` of 203, and `Layout Y` of 1.
-- **A Button**: In Properties tab: `Text` is Cancel, `Font` of SanSerif 15px. In `Style`: `-fx-background-color`:  transparent, `-fx-text-fill`:  #A9A9A9, `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. Its layouts are: `Layout X`: 502, and `Layout Y`: 13.
-
-##### Login Section
-
-- **Label**: Properties are: `Text`: Login, `Font`: SanSerif 30px. Apply the following `Style`: `-fx-text-fill`:  #A9A9A9. In the Layouts: `Pref Width`: 90, `Pref Height`: 30, `Layout X`: 244, `Layout Y`: 60.
-- **ImageView**: Properties are: `Image`: users.png. The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 100.
-- **TextField**: Properties are: `Prompt Text`: Username / Email, `Font`: SanSerif 14px. Use the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 100.
-- **PasswordField**: Properties are: `Promp Text`: Password, `Font`: SanSerif 14px. Use the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 140.
-- **ImageView**: Properties are: `Image`: lock.png. The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 140.
-- **CheckBox**: Properties are: `Text`: Remember Me, `Font`: SanSerif 15px. Apply the following `Style`: `-fx-text-fill`: #A9A9A9. The Layouts are: `Layout X`: 150, and `Layout Y`: 195.
-- **Button**: Properties are: `Text`: Login, `Font`: SanSerif 15px. For `Style`: `-fx-background-color`: #24a0ed, `-fx-text-fill`: White, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`:  #24a0ed. The Layouts are: `Layout X`: 335, and `Layout Y`: 195.
-- **Button**: Properties are: `Text`: Forgot your Password?, `Font`: SanSerif 15px. Apply the following `Style`: `-fx-background-color`:   transparent, `-fx-text-fill`: #A9A9A9. The Layouts are: `Layout X`: 190, and `Layout Y`: 235.
-
-##### Line break
-
-- **Line**. This is from the Shapes section: Properties are: `Fill`: DARKGRAY, and the`Stroke` to #a8a8a8 for it to fade.
-Check the Smooth option. The Layouts are: `Layout X`: 0, `Layout Y`: -110, `Start X`: 100, `Start Y`: 380, `End X`: 500, and `End Y`: 380.
-
-##### Sign Up Section
-
-- **Label**: Properties are: `Text`: Sign-Up, `Font`: SanSerif 30px. Set the following `Style`: `-fx-text-fill`:  #A9A9A9. The following Layouts: `Pref Width`: 130, `Pref Height`: 36, `Layout X`: 230, `Layout Y`: 275.
-- **ImageView**: Properties are: `Image`: users.png. The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 320.
-- **TextField**: Properties are: `Prompt Text`: Username, `Font`: SanSerif 14px. Apply the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 320.
-- **ImageView**: Properties are: `Image`: email.png. The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 360.
-- **TextField**: Properties are: `Prompt Text`: Email, `Font`: SanSerif 14px. Apply the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 360.
-- **PasswordField**: Properties are: `Promp Text`: Password, `Font`: SanSerif 14px. Set the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 400.
-- **ImageView**: Properties are: `Image`: lock.png. The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 400.
-- **PasswordField**: Properties are: `Promp Text`: Repeat Password, `Font`: SanSerif 14px. Set the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 440.
-- **Label**: Properties are: `Text`: Date of Birth, `Font`: SanSerif 15px. Set the following `Style`: `-fx-text-fill`:  #A9A9A9. The following Layouts: `Pref Width`: 105, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 480.
-- **DatePicker**: Properties are: `Prompt Text`: mm/dd/yyyy. Enable the `Editable` and `Show Week number` checkboxes. Enabling them allows one to enter data into the field without using the date picker. It also shows week numbers. The Layouts are: `Layout X`: 250, and `Layout Y`: 480.
-- **Label**: Properties are: `Text`: Gender, `Font`: SanSerif 15px. Set the following `Style`: `-fx-text-fill`:  #A9A9A9. The following Layouts: `Pref Width`: 90, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 515.
-- **RadioButton**: Properties are: `Text`: Male, `Font`: SanSerif 14px, check the `Selected` checkbox. In the `Toggle Group` key in `Gender`. This will group the radio buttons of the same group hence only one is selected per instance. The following Layouts: `Layout X`: 300, `Layout Y`: 515.
-- **RadioButton**: Properties are: `Text`: Female, `Font`: SanSerif 14px, and in the `Toggle Group` key in Gender. This will group the radio buttons of the same group hence only one is selected per instance. The following Layouts: `Layout X`: 390, `Layout Y`: 515.
-- **CheckBox**: Properties are: `Text`: I have read the Terms and Conditions, `Font`: SanSerif 15px.  check the `Selected` checkbox. Set the following `Style`: `-fx-text-fill`: #A9A9A9. The Layouts are: `Layout X`: 160, and `Layout Y`: 545.
-- **Button**: Properties are: `Text`: Sign-Up, `Font`: SanSerif 15px. Set the `Style`: `-fx-background-color`: #24a0ed, `-fx-text-fill`: White, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`:  #24a0ed. The Layouts are: `Pref Width`: 130, `Pref Height`: 33, `Layout X`: 230, and `Layout Y`: 615.
-- **Button**: Properties are: `Text`: Terms and Conditions, `Font`: SanSerif 15px. Set the following `Style`: `-fx-background-color`:   transparent, `-fx-text-fill`: #A9A9A9. The Layouts are: `Layout X`: 200, and `Layout Y`: 660.
-
-##### Footer
-
-In the footer section, you will add your copyright. Drag and drop a Label control into the Bottom section of your main BorderPane.
-
-This label will have the following Property attributes: `Text`: Shop © 2021.
-Set the following `Style`: `-fx-text-fill`:  #B9a9a9. It will have the following Layouts: `Pref Width`: 107, `Pref Height`: 16.
-
-The fxml Code will look as shown below:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -280,7 +232,7 @@ The fxml Code will look as shown below:
         <!-- An AnchorPane in the Left BorderPane -->
         <AnchorPane prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
             <children>
-
+                
                 <!-- Logo -->
                 <ImageView fitHeight="400.0" fitWidth="400.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -293,6 +245,42 @@ The fxml Code will look as shown below:
     <!-- Ending of the left part of the Borderpane -->
 
     <!-- Beginning of the right part of the Borderpane -->
+    <right>
+        <AnchorPane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            
+        </AnchorPane>
+    </right>
+    <!-- Ending of the left part of the Borderpane -->
+
+    <!-- Beginning of the bottom part of the Borderpane -->
+    <bottom>
+
+        
+    </bottom>
+    <!-- Ending of the bottom part of the Borderpane -->
+
+</BorderPane>
+```
+
+Inside the AnchorPane, add the following:
+
+##### A Header
+
+- **An ImageView control**: will carry in it a small cart logo.
+  In its properties tab, set the image name to "cart.png".
+  It has the following layout settings: `Fit Width` of 100, `Fit Height` of 55, `Layout X` of 120, `Layout Y` of 5.
+- **Label:** with the following properties `Text` of SHOP NOW, `Font` of Sans Serif 25px.
+  In `Style`: `-fx-background-color of transparent`, and `-fx-text-fill` of #24a0ed.
+  To add more styles, click on the addition button in the Style section.
+  It also contains the following Layouts: `Pref Width` of 263, `Pref Height` of 57, `Layout X` of 203, and `Layout Y` of 1.
+- **A Button**: In Properties tab: `Text` is Cancel, `Font` of SanSerif 15px.
+  In `Style`: `-fx-background-color`:  transparent, `-fx-text-fill`:  #A9A9A9, `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  Its layouts are: `Layout X`: 502, and `Layout Y`: 13.
+
+It results in the following Code:
+
+
+```xml
     <right>
         <AnchorPane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
@@ -310,17 +298,52 @@ The fxml Code will look as shown below:
                 </Label>
                 <!-- The End of Logo -->
 
+
+            </children>
+        </AnchorPane>
+    </right>
+```
+
+##### Login Section
+
+- **Label**: Properties are: `Text`: Login, `Font`: SanSerif 30px.
+  Apply the following `Style`: `-fx-text-fill`:  #A9A9A9. In the Layouts: `Pref Width`: 90, `Pref Height`: 30, `Layout X`: 244, `Layout Y`: 60.
+- **ImageView**: Properties are: `Image`: users.png.
+  The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 100.
+- **TextField**: Properties are: `Prompt Text`: Username / Email, `Font`: SanSerif 14px.
+  Use the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 100.
+- **PasswordField**: Properties are: `Promp Text`: Password, `Font`: SanSerif 14px.
+  Use the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 140.
+- **ImageView**: Properties are: `Image`: lock.png.
+  The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 140.
+- **CheckBox**: Properties are: `Text`: Remember Me, `Font`: SanSerif 15px. Apply the following `Style`: `-fx-text-fill`: #A9A9A9.
+  The Layouts are: `Layout X`: 150, and `Layout Y`: 195.
+- **Button**: Properties are: `Text`: Login, `Font`: SanSerif 15px. For `Style`: `-fx-background-color`: #24a0ed, `-fx-text-fill`: White, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`:  #24a0ed.
+  The Layouts are: `Layout X`: 335, and `Layout Y`: 195.
+- **Button**: Properties are: `Text`: Forgot your Password?, `Font`: SanSerif 15px. Apply the following `Style`: `-fx-background-color`:   transparent, `-fx-text-fill`: #A9A9A9.
+  The Layouts are: `Layout X`: 190, and `Layout Y`: 235.
+
+The Scene Builder produces the following Code:
+
+
+```xml
                 <!-- The Beginning of Login form -->
                 <Label layoutX="244.0" layoutY="60.0" prefHeight="30.0" prefWidth="90.0" style="-fx-text-fill: #A9A9A9;" text="Login">
                     <font>
                         <Font name="SansSerif Regular" size="30.0" />
                     </font>
                 </Label>
+
+                 <!-- Cancel Button -->
                 <Button fx:id="cancelButton" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9; -fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;" text="Cancel">
                     <font>
                         <Font name="SansSerif Regular" size="15.0" />
                     </font>
                 </Button>
+
+                 <!-- Inputs -->
                 <TextField fx:id="loginUsernameTextField" layoutX="150.0" layoutY="100.0" prefHeight="30.0" prefWidth="300.0" promptText="Username / Email" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
                     <font>
                         <Font name="SansSerif Regular" size="14.0" />
@@ -349,33 +372,97 @@ The fxml Code will look as shown below:
                         <Font name="SansSerif Regular" size="15.0" />
                     </font>
                 </CheckBox>
+
+                 <!-- Forgot your password button -->
                 <Button layoutX="190.0" layoutY="235.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #Aac9A9A9;" text="Forgot your Password?" underline="true">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Button>
-                <Label fx:id="invalidLoginCredentials" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="175.0" prefHeight="16.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Label>
+
+                <!-- Login Button -->
                 <Button fx:id="LoginButton" layoutX="335.0" layoutY="195.0" mnemonicParsing="false" style="-fx-background-color: #24a0ed; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #24a0ed;" text="Login">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Button>
                 <!-- End of Login Form -->
+```
 
+##### Line break
+
+- **Line**. This element is from the Shapes section: Properties are: `Fill`: DARKGRAY, and the`Stroke` to #a8a8a8 for a fade effect.
+  Check the Smooth option.
+  The Layouts are: `Layout X`: 0, `Layout Y`: -110, `Start X`: 100, `Start Y`: 380, `End X`: 500, and `End Y`: 380.
+
+Its Code produced is as shown:
+
+```xml
                 <!-- A simple line Separator -->
                 <Line endX="500.0" endY="380.0" fill="DARKGRAY" layoutY="-110.0" opacity="0.5" startX="100.0" startY="380.0" stroke="#a8a8a8ad" strokeLineJoin="BEVEL" strokeWidth="3.0" />
 
+```
 
+##### Sign Up Section
+
+- **Label**: Properties are: `Text`: Sign-Up, `Font`: SanSerif 30px. Set the following `Style`: `-fx-text-fill`:  #A9A9A9.
+  The following Layouts: `Pref Width`: 130, `Pref Height`: 36, `Layout X`: 230, `Layout Y`: 275.
+- **ImageView**: Properties are: `Image`: users.png.
+  The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 320.
+- **TextField**: Properties are: `Prompt Text`: Username, `Font`: SanSerif 14px.
+  Apply the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 320.
+- **ImageView**: Properties are: `Image`: email.png.
+  The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 360.
+- **TextField**: Properties are: `Prompt Text`: Email, `Font`: SanSerif 14px.
+  Apply the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 360.
+- **PasswordField**: Properties are: `Promp Text`: Password, `Font`: SanSerif 14px.
+  Set the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 400.
+- **ImageView**: Properties are: `Image`: lock.png.
+  The following Layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 400.
+- **PasswordField**: Properties are: `Promp Text`: Repeat Password, `Font`: SanSerif 14px.
+  Set the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5.
+  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 440.
+- **Label**: Properties are: `Text`: Date of Birth, `Font`: SanSerif 15px.
+  Set the following `Style`: `-fx-text-fill`:  #A9A9A9.
+  The following Layouts: `Pref Width`: 105, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 480.
+- **DatePicker**: Properties are: `Prompt Text`: mm/dd/yyyy.
+  Enable the `Editable` and `Show Week number` checkboxes.
+  Enabling them allows one to enter data into the field without using the date picker.
+  It also shows week numbers. The Layouts are: `Layout X`: 250, and `Layout Y`: 480.
+- **Label**: Properties are: `Text`: Gender, `Font`: SanSerif 15px.
+  Set the following `Style`: `-fx-text-fill`:  #A9A9A9.
+  The following Layouts: `Pref Width`: 90, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 515.
+- **RadioButton**: Properties are: `Text`: Male, `Font`: SanSerif 14px, check the `Selected` checkbox.
+  In the `Toggle Group` key in `Gender`.
+  This step will group the radio buttons of the same group; hence only one is selected per instance.
+  The following Layouts: `Layout X`: 300, `Layout Y`: 515.
+- **RadioButton**: Properties are: `Text`: Female, `Font`: SanSerif 14px, and in the `Toggle Group` key in Gender.
+  This step groups the radio buttons of the same group; hence only one can be selected per instance.
+  The following Layouts: `Layout X`: 390, `Layout Y`: 515.
+- **CheckBox**: Properties are: `Text`: I have read the Terms and Conditions, `Font`: SanSerif 15px.  check the `Selected` checkbox.
+  Set the following `Style`: `-fx-text-fill`: #A9A9A9.
+  The Layouts are: `Layout X`: 160, and `Layout Y`: 545.
+- **Button**: Properties are: `Text`: Sign-Up, `Font`: SanSerif 15px.
+  Set the `Style`: `-fx-background-color`: #24a0ed, `-fx-text-fill`: White, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`:  #24a0ed.
+  The Layouts are: `Pref Width`: 130, `Pref Height`: 33, `Layout X`: 230, and `Layout Y`: 615.
+- **Button**: Properties are: `Text`: Terms and Conditions, `Font`: SanSerif 15px.
+  Set the following `Style`: `-fx-background-color`:   transparent, `-fx-text-fill`: #A9A9A9.
+  The Layouts are: `Layout X`: 200, and `Layout Y`: 660.
+
+Its Code is shown below:
+
+```xml
                 <!-- The Beginning of Signup form -->
                 <Label layoutX="230.0" layoutY="275.0" prefHeight="36.0" prefWidth="130.0" style="-fx-text-fill: #A9A9A9;" text="Sign-Up">
                     <font>
                         <Font name="SansSerif Regular" size="30.0" />
                     </font>
                 </Label>
+
+                <!-- User Inputs -->
                 <TextField fx:id="signUpUsernameTextField" layoutX="155.0" layoutY="320.0" prefHeight="30.0" prefWidth="300.0" promptText="Username" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
                     <font>
                         <Font name="SansSerif Regular" size="14.0" />
@@ -446,11 +533,8 @@ The fxml Code will look as shown below:
                         <Font name="SansSerif Regular" size="15.0" />
                     </font>
                 </CheckBox>
-                <Label fx:id="invalidSignupCredentials" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="580.0" prefHeight="16.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Label>
+
+                <!-- Sign up button -->
                 <Button fx:id="signUpButton" layoutX="230.0" layoutY="615.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #24a0ed; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #24a0ed;" text="Sign-Up">
                     <font>
                         <Font size="15.0" />
@@ -462,12 +546,20 @@ The fxml Code will look as shown below:
                     </font>
                 </Button>
                 <!-- The End of Signup form -->
+```
 
-            </children>
-        </AnchorPane>
-    </right>
-    <!-- Ending of the left part of the Borderpane -->
+##### Footer
 
+In the footer section, you will add your copyright.
+Drag and drop a Label control into the Bottom section of your main BorderPane.
+
+This label will have the following Property attributes: `Text`: Shop © 2021.
+Set the following `Style`: `-fx-text-fill`:  #B9a9a9.
+It will have the following Layouts: `Pref Width`: 107, `Pref Height`: 16.
+
+The FXML Code will look as shown below:
+
+```xml
     <!-- Beginning of the bottom part of the Borderpane -->
     <bottom>
 
@@ -475,14 +567,11 @@ The fxml Code will look as shown below:
         <Label prefHeight="16.0" prefWidth="107.0" style="-fx-text-fill: #B9a9a9;" text="Shop © 2021" BorderPane.alignment="CENTER" />
     </bottom>
     <!-- Ending of the bottom part of the Borderpane -->
-
-</BorderPane>
-
 ```
 
 > **NOTE**: Paths may vary depending on Project Name and with your machine.
 >
-> In case you add controls and other elements manually using code, make sure you import them into the project.
+> If controls and other elements have been added using Code, make sure to import them into the project.
 
 ### Run the Application
 
@@ -490,16 +579,16 @@ Run the application as before using the `Shift + F10` shortcut. The results are 
 
 ![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Final-product.png "Final Product")
 
-You can find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) repository.
+Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) repository.
 
 ### Conclusion
 
 JavaFX is a stable User Interface for developers developing computer pieces of software.
 It's not only interactive but more efficient and secure.
 One only uses elements they need.
-The User Interface files are separated from the System files. These two bring about security and understandability.
+The User Interface files and the System files are separated. These two bring about security and understandability.
 
-On reaching here, you have gained the following knowledge:
+On reaching here, one has gained the following knowledge:
 
 - What is JavaFX
 - JavaFX libraries
@@ -510,7 +599,7 @@ On reaching here, you have gained the following knowledge:
 ### Further your understanding
 
 - Explore the JavaFX community found [here](https://openjfx.io/ "JavaFX website").
-This is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
+  This site is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
 - Try using some JavaFX libraries for other projects. Such include scientific calculators, modelers, and games.
 
 ### References
