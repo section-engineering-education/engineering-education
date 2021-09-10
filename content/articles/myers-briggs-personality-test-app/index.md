@@ -347,7 +347,7 @@ while (true){
 }
 }
 ```
-#### This method serves questions and gets options
+#### Method for serving questions and getting options
 
 This method takes two arrays. The first array contains the list of questions, while the second array contains 0s by default. We aim to collect an option from the user. If the option is an A,  it saves it into our collection as 1. Alternatively, if the choice is a B, it retains the default value (the default values in the list of answers are zeros).
 
