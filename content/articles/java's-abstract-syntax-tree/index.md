@@ -2,9 +2,14 @@
 Metaphorical Syntax Source code produced in a computer language can be represented as a tree. Each node in the tree represents a source code construct.
 
 Compilers employ abstract syntax trees (ASTs) to express program code structure, which has a great deal of value. In general, an AST is a result of the compiler's syntax analysis phase. It is typically used as an intermediate representation of the program during the several phases that the compiler required, and it has a significant impact on the compiler's ultimate output.
+### Parse tree
+To put it simply, the main difference between parse tree and syntax tree is the fact that parse tree represents the derivation of input strings from grammar, while syntax tree represents programming language syntax in a similar hierarchical structure as well.
+Our interpreter and compiler won't make use of parse trees, but visualizing the execution trace of the parser can help you understand how your parser interpreted the input. To see why ASTs are better for intermediate representation, we'll also compare them to parse trees. What exactly is a parse tree, then? According to our grammar definition, a parse-tree (also known as an actual syntax tree) represents the syntactic structure of a language construct. In other words, it shows how the start symbol of your grammar generates a certain string in your programming language.
 
 In the **org.eclipse.jdt.core** plug-in, the **org.eclipse.jdt.core.dom** package is the main AST package. To represent each Java source element, the ASTNode class is used. It's important to note that each node in the AST contains information relevant to the object it represents. When creating an AST, the Java Model's ICompilationUnit is often used as the basis.
 ### The AST Working Process
+A syntax tree is a visual representation of grammatical hierarchy. Nodes are the intersection points in a tree diagram. An instantaneous dominance is called a daughter node. There isn't just one way to draw a syntax tree that's right or wrong.
+Here is now the process:
 - Allow the parsing of a few Java source codes
 
 - **org.eclipse.jdt.core.dom.AST** is used to parse Java code and Parser returns an AST.
@@ -26,8 +31,6 @@ Step-by-step instructions for creating an AST are provided.
  java -jar checkstyle-8.43-all.jar -t YourFile.java
 ```
 > Make sure your AST is updated.
-
-
 
 **Example**
 ```Java
@@ -99,6 +102,13 @@ AST of the above Binary expression
   LiteralExpr:
    value: 7
 ```
+### How is ASTs used for
+A program's source code is represented as an abstract syntax tree, which the compiler can use. A compiler's syntax analysis phase produces an abstract syntax tree. It is often used as an intermediate representation of the program during the various stages that the compiler requires, and it has a significant impact on the compiler's final output. For example, static code analysis relies on ASTs. To find syntax errors and bad patterns in code without actually running it, automated tools can traverse the AST.
+### Obtaining Information from an AST Node
+Java element-specific information is contained within each subclass of ASTNode. E.g. A method declaration contains information on the name, return type and parameters. The information contained in a node's structural properties is referred to as such. Properties that hold simple values, properties that contain a single child AST node, and properties that contain multiple child AST nodes are the three types of structural properties.
+### Finding an AST Node
+Just one line of code will produce an enormous tree. How do I get the MethodInvocation of that println("Example") callback function? It is possible to scan all levels, but it is not very convenient.
+Every ASTNode has a visitor that allows you to search for a child node. Visit ASTVisitor.com. Every subclass of ASTNode has two methods: visit() and endVisit(). In addition, the ASTVisitor identifies the following two methods: preVisit and postVisit (ASTNode node). To any AST node, the ASTVisitor subclass is passed on. Recursively traversing the tree, the AST will call the visitor's methods for each AST node in this order.
 ### Printing ASTs
 A modified AST must be printed once it has been edited, hence printing and modifying ASTs often go hand in hand. When using recast, some libraries will print the AST exactly as it was originally written, but there are a variety of situations when you may want to publish your AST differently.
 
@@ -108,6 +118,7 @@ Others include printing code in another language or creating your minification t
 
 It is possible to print ASTs using escodegen or string. In addition, you may design your own based on your needs, or create a plugin for Prettier that does the same thing.
 ### Conclusion
-If you're unfamiliar with the term "AST," it's a tree representation of Java source code. A source code API is defined by the AST. It allows you to alter, generate, read, and remove code.
+If you're unfamiliar with the term "AST," it's a tree representation of Java source code. A source code API is defined by the AST. It allows you to alter, generate, read, and remove code. When creating an AST from scratch, existing Java code is usually used as a starting point. The ASTParser is used for this. As well as processing entire Java files, it can also process Java code segments.
+Parsing and validation logic can be separated from implementation by using an AST. Implemented interpreters are much easier to understand and maintain when they are written in AST.
 
 I hope you found this tutorial helpful!
