@@ -34,7 +34,13 @@ npm init
 ```
 <a href="https://ibb.co/sCZXP2s"><img src="https://i.ibb.co/HCj92VG/Screenshot-2021-09-11-at-13-24-05.png" alt="Screenshot-2021-09-11-at-13-24-05" border="0"></a>
 
-**Note: You can only run the Command npm init if NodeJs and NPM is properly installed on your device. Kindly Check out this URL's to install NodeJS and NPM [Installing NodeJS] (https://nodejs.org/en/download/package-manager/) [Installing NPM] (https://docs.npmjs.com/cli/v6/commands/npm-install)**
+**Note: You can only run the Command npm init if NodeJs is properly installed on your device. Kindly Check out this URL's to install NodeJS [Installing NodeJS with Package Manager] (https://nodejs.org/en/download/package-manager/)**
 
 <a href="https://ibb.co/zPqBj0P"><img src="https://i.ibb.co/p4YMG94/Screenshot-2021-09-11-at-13-48-57.png" alt="Screenshot-2021-09-11-at-13-48-57" border="0"></a>
 If you initalised npm properly, it will generate a package.json file for you, just like you have here. 
+
+Now, we have properly initlaised our node pacakage and we have our package.json file. Next thing to do, is to install Webpack, and one thing you should note is that installing Webpack only, can make you have some issues later on, so it is always advisable to install Webpack along with the CLI. So you enter this command in your terminal. 
+
+```
+npm i webpack webpack-cli --save-dev
+```
