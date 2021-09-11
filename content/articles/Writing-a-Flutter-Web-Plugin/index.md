@@ -145,7 +145,7 @@ All the essential code for creating a package is contained in this class. As a r
 2. Make sure to use package:plugin_platform_interface to force your platform interface implementers to use extends instead of implements.
 
 ### How a Flutter Web Plugin works
-When it comes to creating web content, Flutter supports HTML/CSS/JavaScript standards-based web technologies. Using web support, you can compile existing Flutter code written in Dart and deploy it to any web server. You can utilize all of Flutter's capabilities without installing a plug-in. Web Flutter is presently under technical preview. Consider Flutter's importance in mobile and online development if still undecided.
+When it comes to creating web content, Flutter supports HTML/CSS/JavaScript standards-based web technologies. Using web support, you can compile existing Flutter code written in Dart and deploy it to any web server. You can utilize all of Flutter's capabilities without installing a plug-in. Web Flutter is presently under technical preview.
 
 To use this plugin:
 - Initiate a new launchdemo project.
