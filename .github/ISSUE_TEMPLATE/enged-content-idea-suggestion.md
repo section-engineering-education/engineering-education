@@ -29,17 +29,22 @@ assignees: ''
 
 > Use keyword research to improve your article's SEO.
 
-#### Proposed article introduction:
+#### Proposed article introduction
 > We're looking for the first 2-3 paragraphs of your article that appropriately summarize what your article will be about.
 
 > We will use this writing snippet to help us assess the overall quality before approval so ensure it has been proofread, spellchecked and grammarchecked.
 
-#### Key takeaways: 
+#### Key takeaways 
 > What are the 3-5 most important things the reader should understand or be able to do after reading this article?
 
 > Use this area to get your ideas down on the bulk of your article or tutorial.
 
-#### References: 
+#### Article quality
+> How is your article unique? Tell us what makes your approach different from similar articles that have published on the same topic?
+
+> Is yours more in-depth? Does it cover additional topics? Do you provide handy tips or anecdotal advice?
+
+#### References
 > Please list links to any published content/research that you intend to use to support/guide this article.
 
 ### Conclusion
