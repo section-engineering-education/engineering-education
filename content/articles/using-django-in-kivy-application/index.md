@@ -1,31 +1,29 @@
-### Using Django in Kivy applications.
+### Using Django in Kivy applications
 
-### Introduction.
+### Introduction
 
-Kivy is a popular library for developing applications that can run across all major platforms.
-There may, however, be situations that require your application to access and manipulate data being provided by a web server 
-hosted at a site.In this tutorial, we are going to learn how to make requests to a server
-using the `requests` library. We are going to use Django to develop the server that holds the data we want to manipulate.
+Kivy is a popular library for developing media-rich multi-touch enabled applications that can run across all major platforms.
+There may, however, be situations that require your application to access and manipulate data being provided by a web server hosted at a site.In this tutorial, we are going to learn how to create a kivy application and how to make requests to a server using the `requests` library. We are going to use Django to develop the server that holds the data we want to manipulate.
 
-### Prerequisites.
+### Prerequisites
 For you to follow along, it's important that:
 1. You have `Django` and `djangorestframework` installed.
 2. You are familiar with building APIs using Django REST framework.
 3. You have the `kivy` library installed. You can run `pip install kivy`.
 4. Basic knowledge of python is important, especially the concept of object-oriented programming in python.
 
-### Takeaways.
+### Takeaways
 1. Improve your python skills. 
 2. Learn how to build applications using the `kivy` library.
 3. Learn how to use Django for your kivy applications.
 
-### Getting Started.
+### Getting Started
 We are going to create a simple todo application that allows one to view available tasks and
 offers an option for adding a new task.We will begin by creating the tasks API with `djangorestframework`
 and then create our application using `kivy`. We will use the `requests` library to make 
 requests to our Django server.
 
-### Creating the tasks API.
+### Creating the tasks API
 In a folder of choice, let's create a new project by running `django-admin startproject TodoAPI`.Cd into the `TodoAPI` project and create a new app 
 `tasks` that will handle creation of tasks. Run `python3 manage.py startapp tasks`. Your project structure should look something like this:
 
@@ -48,7 +46,12 @@ In a folder of choice, let's create a new project by running `django-admin start
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-Edit the `settings.py` file as follows under `INSTALLED APPS`:
+
+
+
+```
+We need to register our `tasks` app and `rest_framework` in order to use our app and use the  Django REST framework. Edit the `settings.py` file as follows under `INSTALLED APPS`:
+
 `TodoAPI/settings.py`
 
 ```python
@@ -76,7 +79,7 @@ class Task(models.Model):
         return self.name
 ```
 
-Let's create a `serializer.py` file that handles serialization and deserialization of task instances.Add the following lines of code to it:
+Let's create a `serializer.py` file that handles serialization and deserialization of task instances.Serialization is the process of saving an object in a way that can be accessed in a uniform format by different applications.Deserialization is the reverse of serialization.You may learn more about serialization and deserialization in Django REST framework by visiting [here](https://www.django-rest-framework.org/api-guide/serializers/). Add the following lines of code to it:
 
 `tasks/serializer.py`
 
@@ -91,8 +94,9 @@ class TaskSerializer(serializers.ModelSerializer):
         field = '__all__'
 
 ```
-We are going to also create some views to render data to a web page. There are different ways to create the views and we will use
-fuction-based views. Edit the `views.py` file to match the following:
+### Creating views
+We are going to also create some views to render data to a web page. Views are python functions that handle web requests and return web responses. There are different ways to create the views and we will use
+fuction-based views.Function-based views are views in Django that are written as python functions. Edit the `views.py` file to match the following:
 
 `tasks/views.py`
 
@@ -123,6 +127,10 @@ def create_task(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 ```
+We begin by defining a function `all_tasks` that will return a response containing all our tasks. The function gets all the tasks with the line `tasks = Task,objects.all()` The data is then serialized on the succeeding line and the function returns the response.The line `@api_view(['GET'])` is a decorator takes `GET` as the HTTP method our function should respond to. The same concept applies to the our second function, only that this time it takes a `POST` HTTP method.
+
+### Routing views
+
 We then create a `urls.py` file to for routing our views. Create the file and add the following code:
 
 `tasks/urls.py`
@@ -136,7 +144,9 @@ urlpatterns = [
     path('create', views.create_task, name='create_task')
 ]
 ```
-We then configure our `urls.py` file in `TodoAPI` like this:
+The above mappings imply that our requests will first be handled by this file and then routed to a corresponding view function. For instance, when we visit `http://127.0.0.1:8000/create`, the `create_task` function is called and implemented.
+
+We have to create a route for our `tasks` app.This way, the routing first occurs on the `TodoAPI/urls.py` file and then `tasks/urls.py`. We therefore configure our `urls.py` file in `TodoAPI` like this:
 
 `TodoAPI/urls.py`
 
@@ -155,26 +165,24 @@ When we run `python3 manage.py runserver`, we should have a page similar to this
 
 `http://127.0.0.1:8000/`
 
-![Tasks Home Page](section-engineering-education/engineering-education/content/articles/using-djnago-in-kivy-application/tasks_home_page.png)
+![Tasks Home Page](/engineering-education/content/articles/using-djnago-in-kivy-application/tasks_home_page.png)
 
 When you create a task instance as follows:
 
 `http://127.0.0.1:8000/create`
 
-![Create Task Page](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/create_task_page.png)
+![Create Task Page](/engineering-education/content/articles/using-djnago-in-kivy-application/create_task_page.png)
 
 You should be able to see something similar to this:
 
 `http://127.0.0.1:8000/`
 
-![Task Created](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/task_created.png)
+![Task Created](/engineering-education/content/articles/using-djnago-in-kivy-application/task_created.png)
 
 Our Django API is working and we can now proceed to creating the `kivy` application.
 
-### Creating the Kivy application.
-Let's create a `main.py` in a folder of choice.I am going to keep the file in the same directory as our `TodoAPI` project folder.
-We are going to get started with these lines of code in our `main.py` file.The `TodoApp` is our main entrypoint
-of our application and every execution begins from there.
+### Creating the Kivy application
+Let's create a `main.py` in a folder of choice.I am going to keep the file in the same directory as our `TodoAPI` project folder.We are going to get started with these lines of code in our `main.py` file.The `TodoApp` is our main entrypoint of our application and every execution begins from there.
 
 `Your folder/main.py`
 ```python
@@ -188,10 +196,9 @@ if __name__ == '__main__':
 ```
 When you run the file, you should get the following result:
 
-![Original Kivy App](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/original_kivy_app.png)
+![Original Kivy App](/engineering-education/content/articles/using-djnago-in-kivy-application/original_kivy_app.png)
 
-We are now going to replace the `main.py` file with the following lines of code. The description of what is happening
-will be explained after the code:
+We are now going to replace the `main.py` file with the following lines of code.
 
 `Your folder/main.py`
 ```python
@@ -247,17 +254,14 @@ BoxLayout:
 ```
 This is what is happening to our files:
 
-1. We begin by creating a `Menu ` class that inherits from `BoxLayout` class.This menu will contain
-    the buttons we will use to explore the application.
-2. We then proceed by creating the `ScreenManger` class that manages the display of what is displayed where in the application.
-3. In the `todo.kv` file, we declare a `BoxLayout` as our main interface that our program will show.We then 
-    We give the menu a position of bottom set by ` size_hint_y: .1`. We also declare that it's managed by `ScreenManager` by declaring ` manager: screen_manager`.
-    By setting the `id` property of the `ScreenManager` as `screen_manager` the position of the Menu is now on top.
-4. We the declare the properties of our `Menu` class. The class will have an action bar which will contain two buttons, the `Home` action button and the `Add New` action button.
++ We begin by creating a `Menu ` class that inherits from `BoxLayout` class.This menu will contain the buttons we will use to explore the application.
++ We then proceed by creating the `ScreenManger` class that manages the display of what is displayed where in the application.
++ In the `todo.kv` file, we declare a `BoxLayout` as our main interface that our program will show.We then  give the menu a position of bottom set by ` size_hint_y: .1`. We also declare that it's managed by `ScreenManager` by declaring ` manager: screen_manager`.By setting the `id` property of the `ScreenManager` as `screen_manager` the position of the Menu is now on top.
++ We the declare the properties of our `Menu` class. The class will have an action bar which will contain two buttons, the `Home` action button and the `Add New`     action button.
 
 Your application should be similar to the one below:
 
-![Creating The Action Bar](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/creating_the_action_bar.png)
+![Creating The Action Bar](/engineering-education/content/articles/using-djnago-in-kivy-application/creating_the_action_bar.png)
 
 We now need to transition to a different screen when creating a task. We therefore need to declare two screens so that one 
 displays the tasks and another one to add a new task. Both of these screens will be managed by `ScreenManager` class.
@@ -341,7 +345,7 @@ We have given both screens as children of `ScreenManagement`. We also have given
 making them being able to access the screen by defining ` on_press: root.manager.current = 'screen_home'` and ` on_press: root.manager.current = 'screen_add'`. You should now be able to explore the two screens 
 and see the "Home" text in the `HomeScreen` and "Add to list..." in the `AddScreen`
 
-### Using the Django API.
+### Using the Django API
 Let's create a class that contains a function that send requests to our server for available tasks. Under the `class Menu(BoxLayout):` declaration 
 add the following lines of code:
 
@@ -435,7 +439,7 @@ We then declare the properties of our `MyRecycleView ` as having BoxLayout that 
 
 You should now be able to see the `code` task we created in our web-based interface earlier.
 
-![Displaying Tasks from server](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/displaying_tasks_from_server.png)
+![Displaying Tasks from server](/engineering-education/content/articles/using-djnago-in-kivy-application/displaying_tasks_from_server.png)
 
 Let us now handle the functionality of creating a new task. We begin by creating form to submit the creation request to our server
 We then add the form to our `AddScreen` screen. This will make our application complete.
@@ -580,13 +584,19 @@ We then declare a `BoxLayout ` class that will contain the `AddNewForm` and a la
 
 When you now click `Add New` you should now see the following:
 
-![Creating a task](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/creating_a_task.png)
+![Creating a task](/engineering-education/content/articles/using-djnago-in-kivy-application/creating_a_task.png)
 
 When you create a task, say "Complete application" and click submit button once and click `Home`, you should have the following:
 
-![Task submitted successfully](section-engineering-education/engineering-education/content/articles/using-django-in-kivy-application/task_submitted_successfully.png)
+![Task submitted successfully](/engineering-education/content/articles/using-djnago-in-kivy-application/task_submitted_successfully.png)
 
-### Conclusion. 
-We have learnt how create a kivy application and how to use Django in such applications. You can therefore
-be able to create similar such applications that make use of Django. You can read the [Kivy Documnetation](https://kivy.org/doc/stable/) to learn more.
+### Conclusion
+In this tutorial, we have covered the basics of kivy by  creating a simple todo kivy appication that allows one to view and add tasks. We have also seen how we can use Django as a back-end for our application by creating a server that holds our tasks. With this knowledge, you can create similar applications to suit your different needs.
+
+### Further reading
+The following are important links that will help you create kivy applications and build APIs using Django and the Django REST framework:
+1. [Kivy documentation](https://kivy.org/doc/stable/)
+2. [Django documentation](https://docs.djangoproject.com/en/3.2/)
+3. [Django REST framework documentation](https://www.django-rest-framework.org/)
+
 
