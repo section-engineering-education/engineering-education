@@ -1,5 +1,22 @@
-Based on the type of application one wants to deploy, Google provides various web hosting options for a developer. Deciding on this depends on whether your application is dynamic or static. For static sites, Google offers Cloud storage and Firebase hosting. However, dynamic applications have a different set of options, including Compute Engine, App Engine, and Cloud Run are the options. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /deploy-flutter-to-computer-engine/
+title: Deploying a Flutter web application to Google Computer Engine
+description: This article will focus on our deployment using Google Compute Engine(GCE). In the demonstration, we will build a Flutter web application, and at the end of the tutorial, we should have our flutter project running live on Google Compute Engine with a unique IP address to access it. 
+author: paul-romans
+date: 2021-09-11T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/deploy-flutter-to-computer-engine/hero.png
+    alt: Deploying a Flutter web application to Google Computer Engine Image
+---
+
+Based on the type of application one wants to deploy, Google provides various web hosting options for a developer. Deciding on this depends on whether your application is dynamic or static. For static sites, Google offers Cloud storage and Firebase hosting. However, dynamic applications have a different set of options, including Compute Engine, App Engine, and Cloud Run are the options. 
+<!--more-->
 This article will focus on our deployment using Google Compute Engine(GCE). In the demonstration, we will build a Flutter web application, and at the end of the tutorial, we should have our flutter project running live on Google Compute Engine with a unique IP address to access it. 
 
 ### Table of content
