@@ -23,3 +23,5 @@ First thing you are going to do is to create a directory or folder, you can call
 <a href="https://ibb.co/xLkRx46"><img src="https://i.ibb.co/wgkx5v4/Screenshot-2021-09-11-at-12-37-51.png" alt="Screenshot-2021-09-11-at-12-37-51" border="0"></a>
 
 The next thing we are going to do now is to open the Webpack Tutorial Folder with your favourite code editor, in my case is Visual Studio Code!
+So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created
+<a href="https://ibb.co/FV7bbk1"><img src="https://i.ibb.co/4dNZZwL/Screenshot-2021-09-11-at-13-06-15.png" alt="Screenshot 2021-09-11 at 13.06.15" border="0"></a>
