@@ -4,11 +4,11 @@ Metaphorical Syntax Source code produced in a computer language can be represent
 Compilers employ abstract syntax trees (ASTs) to express program code structure, which has a great deal of value. In general, an AST is a result of the compiler's syntax analysis phase. It is typically used as an intermediate representation of the program during the several phases that the compiler required, and it has a significant impact on the compiler's ultimate output.
 ### Parse tree
 To put it simply, the main difference between parse tree and syntax tree is the fact that parse tree represents the derivation of input strings from grammar, while syntax tree represents programming language syntax in a similar hierarchical structure as well.
-Our interpreter and compiler won't make use of parse trees, but visualizing the execution trace of the parser can help you understand how your parser interpreted the input. To see why ASTs are better for intermediate representation, we'll also compare them to parse trees. What exactly is a parse tree, then? According to our grammar definition, a parse-tree (also known as an actual syntax tree) represents the syntactic structure of a language construct. In other words, it shows how the start symbol of your grammar generates a certain string in your programming language.
+Neither our interpreter nor our compiler will make use of parse trees, but a visual representation of the parser's execution trace can help you understand how it understood the input. ASTs and parse trees are compared to determine why ASTs are superior to parse trees in terms of intermediate representation. How does it work then? Parse trees (also known as syntax trees) depict the syntactic structure of a language construct, according to our grammar definition. Also, it demonstrates how the start symbol in your grammar creates a specific string in your programming language.
 
 In the **org.eclipse.jdt.core** plug-in, the **org.eclipse.jdt.core.dom** package is the main AST package. To represent each Java source element, the ASTNode class is used. It's important to note that each node in the AST contains information relevant to the object it represents. When creating an AST, the Java Model's ICompilationUnit is often used as the basis.
 ### The AST Working Process
-A syntax tree is a visual representation of grammatical hierarchy. Nodes are the intersection points in a tree diagram. An instantaneous dominance is called a daughter node. There isn't just one way to draw a syntax tree that's right or wrong.
+A syntax tree is a diagram that depicts the grammatical hierarchy. Nodes are the intersection points in a tree diagram. An instantaneous dominance is called a daughter node. There isn't just one way to draw a syntax tree that's right or wrong.
 Here is now the process:
 - Allow the parsing of a few Java source codes
 
@@ -18,11 +18,11 @@ Here is now the process:
 
 - By using the IDocument interface, the AST modifications are written back into the source code via the IDocument.
 ### AST's Uses
-ASTs are mostly used in compilers to verify the accuracy of code. An error message is printed if there are any errors in the tree that was produced. Some grammar structures, such as implicit type, can't be represented in context-free grammar and so the Abstract Syntax Tree (AST) is employed. However, research is being done on universal syntax trees, which are highly particular to computer languages.
+ASTs are mostly used in compilers to verify the accuracy of code. If there are any problems in the tree that was generated, an error message is printed. Some grammar structures, such as implicit type, can't be represented in context-free grammar and so the Abstract Syntax Tree (AST) is employed. However, research is being done on universal syntax trees, which are highly particular to computer languages.
 ### Making an AST 
 The same java source code as described in this post will be used to create bespoke Java source code, for which we will provide AST.
 
-Step-by-step instructions for creating an AST are provided.
+You will find detailed instructions on generating an AST.
 - Your local environment should be able to run the source code.
 - Checkstyle Command line should be downloaded.
 -Checkstyle in your Terminal can be used to verify the program and therefore verify.
@@ -103,9 +103,9 @@ AST of the above Binary expression
    value: 7
 ```
 ### How is ASTs used for
-A program's source code is represented as an abstract syntax tree, which the compiler can use. A compiler's syntax analysis phase produces an abstract syntax tree. It is often used as an intermediate representation of the program during the various stages that the compiler requires, and it has a significant impact on the compiler's final output. For example, static code analysis relies on ASTs. To find syntax errors and bad patterns in code without actually running it, automated tools can traverse the AST.
+A program's source code is represented as an abstract syntax tree, which the compiler can use. A compiler's syntax analysis phase produces an abstract syntax tree. As an intermediate representation of the program, it has a major influence on the compiler's ultimate output. For example, static code analysis relies on ASTs. To find syntax errors and bad patterns in code without actually running it, automated tools can traverse the AST.
 ### Obtaining Information from an AST Node
-Java element-specific information is contained within each subclass of ASTNode. E.g. A method declaration contains information on the name, return type and parameters. The information contained in a node's structural properties is referred to as such. Properties that hold simple values, properties that contain a single child AST node, and properties that contain multiple child AST nodes are the three types of structural properties.
+Java element-specific information is contained within each subclass of ASTNode. E.g. A method declaration contains information on the name, return type and parameters. The information contained in a node's structural properties is referred to as such. The three forms of structural characteristics are simple values, single child AST nodes, and many child AST nodes.
 ### Finding an AST Node
 Just one line of code will produce an enormous tree. How do I get the MethodInvocation of that println("Example") callback function? It is possible to scan all levels, but it is not very convenient.
 Every ASTNode has a visitor that allows you to search for a child node. Visit ASTVisitor.com. Every subclass of ASTNode has two methods: visit() and endVisit(). In addition, the ASTVisitor identifies the following two methods: preVisit and postVisit (ASTNode node). To any AST node, the ASTVisitor subclass is passed on. Recursively traversing the tree, the AST will call the visitor's methods for each AST node in this order.
