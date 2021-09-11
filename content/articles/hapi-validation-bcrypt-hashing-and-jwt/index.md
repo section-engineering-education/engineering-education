@@ -387,3 +387,6 @@ However, when we are logged in, we get an authentication token that we add to th
 
 ### Conclusion
 This tutorial taught us to validate user input using `Hapi`, password encryption with `bcrypt`, and JWT authentication. We built an authentication API using the three and testes=d out application. This tutorial should give the reader a way of getting started with data cleaning and securing data for their web project.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
