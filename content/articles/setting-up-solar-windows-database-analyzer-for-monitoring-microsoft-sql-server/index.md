@@ -1,5 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/
+title: Setting up Solar Winds Database Analyzer for Monitoring Microsoft SQL Server
+description: This article will be an introduction to setting up and installing Solar Winds DB analyzer for monitoring Microsoft SQL server 
+author: ruphus-muita
+date: 2021-09-11T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/hero.jpg
+    alt: Solar Winds DBA Analyzer example image
+---
 Databases hold a lot of critical and highly sensitive data for various organizations. It is crucial to monitor them and hence make sure they are securely accessed.
-
+<!--more-->
 The article will enlighten the reader on how to monitor a Microsoft SQL Server database using Solar Winds Database Performance Analyzer (Self-Managed).
 
 This is software offered by Solar Winds and is very useful in attaining the security of a database.
