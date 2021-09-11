@@ -1,5 +1,4 @@
 # Importing External Files using Webpack Loaders:The Beginners Guide 
-======================================================================
 Today, I am going to show you how to utilize Webpack loaders and easily import external files while making use of Webpack. In this tutorial, I am going to be very concise, because I have understood that making use of Webpack loaders to import external files in a web project, can be quite demanding and may look like rocket science,especially for beginners, but it is actually quite easy. 
 
 ## Table Of Contents
@@ -20,7 +19,7 @@ Webpack is a tool that allows you to modularise your code and helps you to push 
 
 ## Installing Webpack
 First thing you are going to do is to create a directory or folder, you can call it webpack or anything you feel appropriate, and then you create another file cand name it Webpack_tutorial. 
-![Image Directory][https://ibb.co/B3nkWJX]
+![Image Directory](https://ibb.co/B3nkWJX)
 
 
 
