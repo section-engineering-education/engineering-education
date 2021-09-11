@@ -21,7 +21,7 @@ Flutter's `web support` enables a seamless online experience. For example, you c
 Anyone can add support for additional platforms using the federated plugin architecture. In contrast to a package, a plugin only contains Dart code, while a package only contains Native code. If a package wishes to, it can use plugins. However, it will still be considered a package.
 
 ### Platform interfacing
-Pingatform interfacing is the process of abstracting what plugin package is to be implemented via its platforms, how the plugin package communicates with the platform implementation, and its replacement of what the plugin package wants from the platform.
+Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms, how the plugin package communicates with the platform implementation, and its replacement of what the plugin package wants from the platform.
 
 ### Creating the platform interface package
 In the other example, the plugin sits in a directory like packages/URL launcher in the flutter/plugins directory GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
