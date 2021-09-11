@@ -164,3 +164,6 @@ In a nutshell:
 3. A basic abstract service class can be created to facilitate swapping out another version easier.
 
 You are now ready!
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
