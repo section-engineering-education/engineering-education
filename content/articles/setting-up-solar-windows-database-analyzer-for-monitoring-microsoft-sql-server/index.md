@@ -2,7 +2,7 @@ Databases hold a lot of critical and highly sensitive data for various organizat
 
 The article will enlighten the reader on how to monitor a Microsoft SQL Server database using Solar Winds Database Performance Analyzer (Self-Managed).
 
-This is a software offered by Solar Winds and is very useful in attaining the security of a database.
+This is software offered by Solar Winds and is very useful in attaining the security of a database.
 
 By the end of this tutorial, the user will understand how to:
 - Install Database Performance Analyzer on Windows.
@@ -24,7 +24,7 @@ By the end of this tutorial, the user will understand how to:
 4. A local administrator account to be used by the server hosting DPA.
 5. Updated operating system.
 6. Open the following ports on the server and firewall: `8124`, `8123`, `8127`, `443`, `80`, and `587`.
-7. Exclude the DPA folder directory from antivirus scanning to ensure smooth installation.
+7. Exclude the DPA folder directory from antivirus scanning to ensure a smooth installation.
 
 ### Installing the DPA on windows
 - If you're installing a trial version, [click here](https://www.solarwinds.com/database-performance-analyzer) or the SolarWinds Customer Portal to get the installation file.
@@ -38,7 +38,7 @@ By the end of this tutorial, the user will understand how to:
 
 ![Installation](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/installation.png)
 
-- Select `I accept the terms in the License Agreement`, if you agree to the conditions of the license agreement.
+- Select `I accept the terms in the License Agreement` if you agree to the conditions of the license agreement.
 
 ![Accept License](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/accept-license.png)
 
@@ -52,7 +52,7 @@ By the end of this tutorial, the user will understand how to:
 
 - This option can help prevent CPU spikes if the `Find` SQL feature is enabled. After the installation, you can manually generate an exception.
 
-> Note: This check box will not visible if there is a Microsoft Defender exception or have the antivirus disabled.
+> Note: This check box will not be visible if there is a Microsoft Defender exception or have the antivirus disabled.
 
 - To begin the installation, click `Next`, then `Install`.
 - Click `Finish` after the installation is finished.
@@ -96,10 +96,10 @@ Identifying the privileged user:
 
 > Note: The privileged user's credentials are not stored by the DPA.
 
-- The privileged user must be a system administrator the for self-managed SQL server database instance: SYSADMIN (system administrator).
+- The privileged user must be a system administrator for self-managed SQL server database instance: SYSADMIN (system administrator).
 
 #### Stage 1: Process initiation
-Tap the button for `Register DB Instance for Monitoring` on DPA homepage.
+Tap the button for `Register DB Instance for Monitoring` on the DPA homepage.
 
 ![Select Register Instance](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/select-register-instance.png)
 
@@ -119,7 +119,7 @@ Select `Next` and finish the other steps as described below:
 - Choose the authentication method.
 - DPA can use the SYSADMIN login to register instances.
 - In the SYSADMIN user field, type the domain username that was used for Windows authentication.
-- Enter the credentials for authenticating SQL server.
+- Enter the credentials for authenticating the SQL server.
 - By default, SSL is requested.
 
 ![Connection to SQL details](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/connection-to-sql-details.png)
@@ -154,7 +154,7 @@ The best practice for the installation and configuration process is as follows:
 ### Conclusion
 Monitoring of the database is important to any application's upkeep. Early detection of database issues can help keep the resource healthy and accessible. Database outages can go undiscovered until it's too late, resulting in a loss of money and clients if there's no solid monitoring in place. This is precisely why organizations should use a database monitoring tool.
 
-### Relevant Resources
+### Relevant resources
 - [SQL Database Monitoring Software](https://www.solarwinds.com/database-performance-analyzer/use-cases/sql-database-monitor)
 - [SolarWinds Unites the Features of Database Performance Analyzer and SQL Sentry](https://www.dbta.com/Editorial/News-Flashes/SolarWinds-Unites-the-Features-of-Database-Performance-Analyzer-and-SQL-Sentry-147362.aspx)
 - [SolarWinds Database Performance Analyzer Reviews](https://www.trustradius.com/products/solarwinds-database-performance-analyzer/reviews)
