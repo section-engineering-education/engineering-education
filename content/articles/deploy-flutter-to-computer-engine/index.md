@@ -6,7 +6,7 @@ url: /deploy-flutter-to-computer-engine/
 title: Deploying a Flutter web application to Google Computer Engine
 description: This article will focus on our deployment using Google Compute Engine(GCE). In the demonstration, we will build a Flutter web application, and at the end of the tutorial, we should have our flutter project running live on Google Compute Engine with a unique IP address to access it. 
 author: paul-romans
-date: 2021-09-11T00:00:00-14:00
+date: 2021-09-11T00:00:00-04:42
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -168,3 +168,6 @@ In this article, we demonstrated how to deploy a flutter web application on Goog
 
 ### Further reading
 You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `HTTPS` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer certificate(SSL). You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
