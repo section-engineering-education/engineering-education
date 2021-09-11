@@ -1,15 +1,15 @@
 Python is a very easy-to-learn language due to its user-friendly syntax. Moreover, Python has many open-source libraries, and almost every use case of Python has an existing library for that. So no need for immense amounts of coding in the respective use-case.
 
-Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus very easy for beginners to stated and scaled up to the complex application.
+Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus, very easy for beginners to stated and scaled up to the complex application.
 
 To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. In this article, we will create a simple note application using Flask and MongoDB database.
 
 ### Prerequisites
-To follow this article, the following basic information will be essential.
+To follow along with this article, the following basic information will be essential.
 
 - Basic knowledge of working with Python.
 - [Python](https://www.python.org/downloads/) installed on your computer.
-- [Mongodb](https://docs.mongodb.com/manual/administration/install-community/) installed on your computer.
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) installed on your computer.
 - [Pip](https://pypi.org/project/pip/) installed on your computer.
 
 ### Setting up the Flask application
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Here we have done basic configuration for a basic Flask app. we;
+Here we have done basic configuration for a basic Flask app. We;
 
 - Have imported the necessary packages.
 - Set up the main `app` variable.
@@ -78,7 +78,7 @@ To test this, from your terminal run;
 python3 app.py
 ```
 
-The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message since we have not defined any route. Let us get to that in the next step.
+The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message, since we have not defined any route. Let us get to that in the next step.
 
 ### Setting up the routes
 First, let us import the `request` module from `flask`. Here is the code to that.
@@ -286,7 +286,7 @@ In `templates/pages, create a file `add-note.html`. In this file, add the follow
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" placeholder="Some description" aria-describedby="description" required></textarea>
+                <textarea id="description" name="description" class="form-control" placeholder="Some description" aria-describedby="description" required>                           </textarea>
                 <small id="description" class="form-text text-muted">E.g My new room number is 1234.</small>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
