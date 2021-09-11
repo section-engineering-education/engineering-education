@@ -18,8 +18,8 @@ Webpack is a tool that allows you to modularise your code and helps you to push 
 **Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for more elaborate definition of Webpack, check out this Wiki Definition of Webpack [Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
 
 ## Installing Webpack
-First thing you are going to do is to create a directory or folder, you can call it webpack or anything you feel appropriate, and then you create another file cand name it Webpack_tutorial. 
+First thing you are going to do is to create a directory or folder, you can call it Webpack or anything you feel appropriate, and then you create another folder and name it Webpack Tutorial. 
 
 <a href="https://ibb.co/xLkRx46"><img src="https://i.ibb.co/wgkx5v4/Screenshot-2021-09-11-at-12-37-51.png" alt="Screenshot-2021-09-11-at-12-37-51" border="0"></a>
 
-
+The next thing we are going to do now is to open the Webpack Tutorial Folder with your favourite code editor, in my case is Visual Studio Code!
