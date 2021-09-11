@@ -15,7 +15,7 @@ This tutorial is tailored to suit the needs of a beginner, so if you are just a 
 ## What is Webpack?
 Webpack is a tool that allows you to modularise your code and helps you to push your codes to just one file in other for you not to worry about the hierarchy of your files, especially when working with JavaScript files and also helps you to inject external files, like an SVG, images, your CSS files or other modern JS codes, in your web app. Webpack simply provides a configuration file, where you declare how things should be sorted out and then you relax. 
 
-**Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for more elaborate definition of Webpack, check out this Wiki Definition of Webpack[Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
+**Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for more elaborate definition of Webpack, check out this Wiki Definition of Webpack [Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
 
 ## Installing Webpack
 First thing you are going to do is to create a directory or folder, you can call it webpack or anything you feel appropriate, and then you create another file cand name it Webpack_tutorial. 
