@@ -1,6 +1,21 @@
-### Introduction
-`Service classes` are a wonderful method to keep third-party code implementation details out of your software. Useful when calling an API method from numerous locations in your code. A side consequence of Services is that it produces a domain language specific to your app through the APIs of your services. So your view models can be read as well. Moreover, the view models can be read as well. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /designing-an-authentication-api-using-service-classes-in-flutter/
+title: Designing an authentication API using service classes in Flutter
+description: Service classes are instrumental when you need to call an API method multiple times across your codebase. This article will demonstrate how to design an authentication API using service classes in Flutter.
+date: 2021-09-11T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url:  /engineering-education/designing-an-authentication-api-using-service-classes-in-flutter/hero.jpg
+    alt: Authentication API using flutter service classes image
+---
+
+`Service classes` are a wonderful method to keep third-party code implementation details out of your software. Useful when calling an API method from numerous locations in your code. A side consequence of Services is that it produces a domain language specific to your app through the APIs of your services. So your view models can be read as well. Moreover, the view models can be read as well. 
+<!--more-->
 Creating services becomes second nature once you have mastered the concept. That certain functionality may be so simple when you follow that path, it is mind-blowing!. With the help of service classes, we will learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. We will use authentication as an example.
 
 Using service classes, you may hide the implementation details of third-party code in your app. They can be instrumental when you need to call an API method multiple times across your codebase.
