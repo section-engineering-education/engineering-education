@@ -25,3 +25,11 @@ First thing you are going to do is to create a directory or folder, you can call
 The next thing we are going to do now is to open the Webpack Tutorial Folder with your favourite code editor, in my case is Visual Studio Code!
 So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created
 <a href="https://ibb.co/0XnKnCd"><img src="https://i.ibb.co/Db1Y19S/Screenshot-2021-09-11-at-13-06-15.png" alt="Screenshot-2021-09-11-at-13-06-15" border="0"></a>
+As you can see there is no file in our folder and this is totally fine!
+
+Now the next thing we are going to be doing, is to initialize NPM (Node Package Manager), so I am going to open my terminal in VS Code and enter this command: 
+
+```
+npm init
+```
+<a href="https://ibb.co/sCZXP2s"><img src="https://i.ibb.co/HCj92VG/Screenshot-2021-09-11-at-13-24-05.png" alt="Screenshot-2021-09-11-at-13-24-05" border="0"></a>
