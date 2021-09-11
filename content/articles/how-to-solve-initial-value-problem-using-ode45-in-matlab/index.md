@@ -1,11 +1,11 @@
 ### How to solve initial value problem(IVP) using ODE45 in Matlab
 ### Introduction
 
-MATLAB’s standard solver for ordinary differential equations (ODEs) is the function `ode45`. This function implements a Runge-Kutta method with a variable time step for efficient computation. `ode45` is designed to handle the following general problem:
+MATLAB’s uses the `ode45` function as the standard solver for ordinary differential equations. The `ode45` function applies Runga-Kutta formulae with the time step variable for easy computation. `ode45` is meant to solve the equation of the general form shown below;
 
 dx/dt = f(t,x), x(t0) = xo
 
-Where t is the independent variable, x is a vector of dependent variables to be found, and f (t, x) is a function of t and x. The mathematical problem is specified when the vector of functions on the right-hand side of Eq. (1), f (t, x), is set, and the initial conditions, x = x0 at time t0, are given.
+Here, `t` is the independent variable, `x` is a vector of dependent variables to be found, and f (t, x) is a function of t and x. The mathematical equation is defined when the `x` of functions on the right-hand side of Eq. (1), f (t, x), is pre-determined, and the initial conditions, x = x0 at time t0, are given.
 
 In this article, we will consider the Matlab algorithm `ode45` to solve the IVP. IVP is an ODE together with some initial value(s). Here you have a differential equation describing the dynamics of how something is changing, but you know where to start. The initial value tells you where to start, but the differential equation tells you where to go next. `ode45` is a work course in Matlab, and it's the first algorithm you go to solve ode problems.
 
@@ -13,9 +13,9 @@ To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
-In Runga Kutta 4 method, we obtain the solution of $y_i$ at various values of $t_i$ between the range $t_0$ and $t_n$. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runga Kutta 4 method. What that means is that the step size `H` is not a constant value. It means that you have to pre-determine what the step size is going to be.  Step size is the distance between the current value and the subsequent initial value.
+In Runga Kutta 4 method, we obtain the solution of $y_i$ at various values of $t_i$ between the range $t_0$ and $t_n$. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runga Kutta 4 method. This indicates that stepsize `H` is a varying value. It means that you have to define the stepsize.  Step size is the distance between the current value and the subsequent initial value.
 
-In ODE45, the step size is not pre-determined, but at each step, it calculates the optimum size to minimize the error, to get the error among the tolerance that we have set for it. Note that for all the ODE solvers in Matlab, the variable step size for an adaptive step size is where Matlab internally decides the step size. It is to get errors within the required tolerance interval.
+In ODE45, the step size is not pre-determined, but at each step, it calculates the optimum size to reduce the error and get the error among the tolerance that we have defined. Note that for all the ODE solvers in Matlab, the variable step size for an adaptive step size is where Matlab decides the step size internally. It is to get errors within the required tolerance interval.
 
 ### ODE45 syntax
 
@@ -33,7 +33,7 @@ Where;
 
 To understand our syntax, lets say you are given a function $\frac{dy}{dt}=f(t,y)$ and the initial condition as y(t0)=y0.
 
-In this case, the `F` is the function for both *t* and *y*, and we must provide that function. This function takes in two variables, that is, the independent variable `t` and dependent variable `y` and returns a vector $\frac{dy}{dt}$. Because we are interested in looking at a single variable problem, the output $\frac{dy}{dt}$ will be a scalar. Single variables are equations with single variables.
+In this case, the `F` is the function for both *t* and *y*, which we must provide. This function takes in two variables, that is, the independent variable `t` and dependent variable `y` and returns a vector $\frac{dy}{dt}$. Since we want to look at the single variable equations, the output $\frac{dy}{dt}$ will be a scalar. Single variables are equations with single variables.
 
 ODE45 gives `t` and `y` as the arguments passed on to the function `fname`. Thus, we pass the initial conditions `t0`, `t_end` and the initial solution `y0` to the function.
 
@@ -57,7 +57,7 @@ We will now consider our ODE syntax.
 [tsol, ysol]=ode45(@(t,y) firstODEfun(t,y), [t0 tEnd], y0);
 ```
 
-`t` and `y` are the variables passed to the function `ode45` and then call the function `firstODEfun`. Note that the order of `t` and `y` is very important. It has to be `t` and then `y` not the other way round. It is a mistake commonly made by many students. After this, we need to define our function `firstODEfun`. It should be on a separate script. The code below defines our function.
+`t` and `y` are the variables passed to the function `ode45` and then call the function `firstODEfun`. Note, the arrangement of `t` and `y` is essential. It has to be `t` and then `y` not the other way round. It is a mistake commonly made by many students. After this, we need to define our function `firstODEfun`. It should be on a separate script. The code below defines our function.
 
 ```matlab
 function dy = firstODEfun(t,y)
@@ -70,7 +70,7 @@ The `dy` is the defined function.
 plot(tsol, ysol)
 ```
 
-Now we save this script and then plot the output of our function.
+Now we save this script and plot the output of our function.
 
 ![our function plot](ode_one.png)
 
@@ -80,13 +80,13 @@ Let's make a small mistake in the `firstODEfun` by renaming the `t` in the `dy` 
 
 ![error defination](ode_two.png)
 
-The error indicates that the `t1` is undefined. It is because the input variable was `t`. Keep in mind that our `t` and `y` are dummy variables. It means that they don't have any specification name, but you can use any name. The only thing that you should note is to use a similar name for the input and, in the definition, your function `dy`. Then, it won't be a problem. Also, as you use a different name, the order of the variable must remain, independent variable followed by the independent.
+The error indicates that the `t1` is undefined since the input variable was `t`. Keep in mind that our `t` and `y` are dummy variables. It means that they don't have any specification name, but you can use any name. The only thing that you should note is to use a similar name for the input and, in the definition, your function `dy`. Then, it won't be a problem. Also, as you use a different name, the order of the variable must remain, independent variable followed by the independent.
 
 ### Plug flow reactor(PFR)
 
 Plug flow reactor, also known as tabular reactor, consists of a cylindrical pipe with an opening on each end for the reactor and products to flow through. Consumption of reactors is continuous as they flow down the length of the reactors. It means that as the reaction continues, the products increases.
 
-The plug flow reactor may be figured as one long tube or several short tubes. They range in diameter from few centimeters to several meters. The choice of diameter is based on the construction cost, pumping cost, and heat transfer needed. They have a wide variety of applications in either gas or liquid phase systems.
+The plug flow reactor may be figured as one long tube or several short tubes. They range in diameter from few centimetres to several meters. The choice of diameter is based on the construction cost, pumping cost, and heat transfer needed. They have a wide variety of applications in either gas or liquid phase systems.
 
 Now, let's look for an example of solving the plug flow reactor equation using Matlab.
 
@@ -101,7 +101,7 @@ $
 With C(0)=1 and 
 `C` is the concentration, and `V` is the volume.
 
-Solve to find C for reactors volume of 1, 5, and 10 liters.
+Solve to find C for reactors volume of 1, 5, and 10 litres.
 
 To solve this, we first define the variables.
 
