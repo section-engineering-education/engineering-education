@@ -144,6 +144,15 @@ All the essential code for creating a package is contained in this class. As a r
 
 2. Make sure to use package:plugin_platform_interface to force your platform interface implementers to use extends instead of implements.
 
+### How a Flutter Web Plugin works
+When it comes to creating web content, Flutter supports HTML/CSS/JavaScript standards-based web technologies. Using web support, you can compile existing Flutter code written in Dart and deploy it to any web server. You can utilize all of Flutter's capabilities without installing a plug-in. Web Flutter is presently under technical preview. Consider Flutter's importance in mobile and online development if still undecided.
+
+To use this plugin:
+- Initiate a new launchdemo project.
+- Create a dependency for content copy in pubspec.yaml by opening it and adding it to the list.
+- Run, flutter, and pub! Packages get in the terminal or IntelliJ or Android Studio's Packages get menu.
+- Try it out! (or stop and restart it, if it was already running before adding the plugin).
+
 ### Conclusion
 Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. In this case, you may convert existing Flutter code written in Dart to operate on the web because it's the same framework, and the web is just another device target for your project. It is time to start writing your plugins!.
 
