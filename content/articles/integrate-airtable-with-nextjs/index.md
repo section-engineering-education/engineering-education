@@ -1,37 +1,37 @@
-![Hero image](https://cloud-ed45a3xcq-hack-club-bot.vercel.app/1hero-img.png)
+![Hero image](/hero.png)
 
-Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. You can take advantage of browser capabilities for building flexible web applications. [JAMstack](https://jamstack.org) is the modern approach for building lightning fast web applications. Database technologies became more user-friendly. In this tutorial, you'll learn how to integrate the Airtable API with a simple web application.
+Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. You can take advantage of browser capabilities for building flexible web applications. [JAMstack](https://jamstack.org) is the modern approach for building lightning-fast web applications. Database technologies became more user-friendly. In this tutorial, you'll learn how to integrate the Airtable API with a simple web application.
 
 ### What we're going to build?
 
-![final-grocery-list](https://cloud-ed45a3xcq-hack-club-bot.vercel.app/0final-grocery-list.png)
+![final-grocery-list](/final.png)
 
 [Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
 
 You'll build a Grocery list application where you can add all your groceries before visiting the store. You'll be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. You will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution you will use is [Airtable](https://airtable.com/).
 
-Before diving into the tutorial, you should have intermediate knowledge of React. You should be comfortable using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [Context API](https://reactjs.org/docs/context.html).
+Before diving into the tutorial, you should have intermediate knowledge of React. It would help if you were comfortable using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [Context API](https://reactjs.org/docs/context.html).
 
 ### The **JAM**stack and Airtable
 
-The **JAM**stack is a modern approach for developing fast and scalable web applications. The **JAM**stack is the combination of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Itemduction), and [Markup](https://developer.mozilla.org/en-US/docs/Glossary/markup). The JAMstack website employs third-party APIs to get data.
+The **JAM**stack combines [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Itemduction), and [Markup](https://developer.mozilla.org/en-US/docs/Glossary/markup) for developing fast and scalable web applications. The JAMstack website employs third-party APIs to get data.
 
-You will use serverless functions for communicating with Airtable. [Airtable](https://try.airtable.com/database) is a mix of spreadsheet and database. You can integrate Airtable into your application easily using it's excellent API. Airtable API has wonderful documentation. The example code contains all your API keys and base names. To use them in your application, you can copy and paste the code. You can find the Airtable API documentation here: [https://airtable.com/api](https://airtable.com/api).
+You will use serverless functions for communicating with Airtable. [Airtable](https://try.airtable.com/database) is a spreadsheet and database hybrid that you can easily integrate into your application using its excellent API. Airtable API has wonderful documentation. The example code contains all your API keys and base names. To use them in your application, you can copy and paste the code. You can find the Airtable API documentation here: [https://airtable.com/api](https://airtable.com/api).
 
 ### Getting started
 
 Open your favorite code editor and run the command `npx create-next-app -e with-tailwindcss`. It generates a Next.js application that has tailwindcss installed. Install Airtable using the command: `npm install airtable`. To verify that everything is working, try running the command: `npm run dev`. You're good to go if you see it render normally.
 
-Next.js supports server-side rendering without the use of any other frameworks. It includes a router that allows you to access any file in the `pages` directory as a new route. Within the `/pages/api` directory, you can create API endpoints using serverless functions.
+Next.js supports server-side rendering without the use of any other frameworks. It includes a router that allows you to access any file in the `/pages` directory as a new route. Within the `/pages/api` directory, you can create API endpoints using serverless functions.
 
 ### Airtable JavaScript setup
 
-Head over to [airtable.com](https://airtable.com/) and sign up for a free account. After you sign in successfully, create a new base starting from scratch. The base is what airtable refers to as a database. You'll have a starter table created with some primary fields. You can personalize the entire base; start with the base's title and the table's name. You can see that the user interface is very friendly, and you can work in the same way you would in a spreadsheet. By right-clicking on a field in the table, you can customize it. You need a `item` field for the grocery name and a `brought` checkbox field. Navigate to [Airtable API](https://www.airtable.com/api/) and select the base you'd like to integrate.
+Head over to [airtable.com](https://airtable.com/) and sign up for a free account. After you sign in successfully, create a new `base` starting from scratch. The `base` is what airtable refers to as a database. You'll have a starter table created with some primary fields. You can personalize the entire base; start with the base's title and the table's name. You can see that the user interface is amicable, and you can work in the same way you would in a spreadsheet. By right-clicking on a field in the table, you can customize it. You need an `item` field for the grocery name and a `brought` checkbox field. Navigate to [Airtable API](https://www.airtable.com/api/) and select the base you'd like to integrate.
 
 Let's connect Airtable to our app, but first, let's define a few variables that you will need in the code:
 
-- `API_KEY`: the Airtable API key. You can find it within the documentation or in your [account](https://airtable.com/account) page.
-- `BASE_ID`: the id of the base you want to integrate. You can find it in the documentation page.
+- `API_KEY`: the Airtable API key. You can find it within the documentation or on your [account](https://airtable.com/account) page.
+- `BASE_ID`: the id of the base you want to integrate. You can find it on the documentation page.
 - `TABLE_NAME`: the name of the table in that base (you can use a single base for multiple tables).
 
 Add all these secrets in your application's environment variables (`.env` file). Make sure you ignore them if you're using version control. Learn more about [environment variables](https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html).
@@ -46,7 +46,7 @@ AIRTABLE_TABLE_NAME=
 
 ### Connecting to Airtable
 
-Create a new `Airtable.js` file. I prefer to create it inside a new `utils` folder under the `root` directory, you can create it where ever you want. Add the following code:
+Create a new `Airtable.js` file. I prefer to create it inside a new `utils` folder under the `root` directory; you can create it wherever you want. Add the following code:
 
 ```js
 const Airtable = require('airtable')
@@ -69,7 +69,7 @@ The above code establishes a connection with the Airtable base. It first authent
 
 ### Building an API using Next.js
 
-Next.js allows you to create your own API using [API routes](https://nextjs.org/docs/api-routes/itemduction). Next.js maps any file inside the `/pages/api` folder to `/api/*`, an API endpoint instead of a route. For example, the boiler-plate code comes with a simple api endpoint `/api/hello` ([see more on API routes](https://nextjs.org/docs/api-routes/itemduction)).
+Next.js allows you to create your own API using [API routes](https://nextjs.org/docs/api-routes/itemduction). Next.js maps any file inside the `/pages/api` folder to `/api/*`, an API endpoint instead of a route. For example, the boiler-plate code comes with a simple API endpoint `/api/hello` ([see more on API routes](https://nextjs.org/docs/api-routes/itemduction)).
 
 You can handle any request that hits the endpoint using serverless functions ([what are serverless functions?](https://vercel.com/docs/serverless-functions/introduction)). It has read and write access to the request and response objects. You can handle different types of requests with a single function using a conditional block. But in this project, we are going to create a separate file for handling each request. However, it is not the best practice for developing an API (learn about API [best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)).
 
@@ -254,7 +254,7 @@ export default function Home() {
 
 ```
 
-The above code is nothing but a React functional component. Next.js has a built-in `Head` component that will act as the `head` tag of your HTML page. Now, if you start running the server, you will see the title of your app. Tailwindcss is a class-based framework. You have to add the classes according to the styles you want, just like in [bootstrap](https://getbootstrap.com).
+The above code is nothing but a React functional component. Next.js has a built-in `Head` component that will act as the `head` tag of your HTML page. Now, if you start running the server, you will see your app. Tailwindcss is a class-based framework. You have to add the classes according to the styles you want, just like in [bootstrap](https://getbootstrap.com).
 
 Next.js has a built-in function `getServerSideProps` for enabling the server-side rendering inside a page. Next.js executes the code inside this function every time before rendering the page. Learn more on `getServersideProps` [here](https://nextjs.org/docs/basic-features/data-fetching###getserversideprops-server-side-rendering).
 
@@ -401,7 +401,7 @@ export default MyApp
 
 ```
 
-You can set the `items` in `index.js` file. Pass the `initialItems` you have fetched before to the `setItems` function. It updates ItemsContext and you can use the items in any component.
+You can set the `items` in the `index.js` file. Pass the `initialItems` you have fetched before to the `setItems` function. It updates `ItemsContext`, and you can use the items in any component.
 
 ```jsx
 // /pages/index.js
@@ -538,7 +538,7 @@ const ItemForm = () => {
 					name="item"
 					value={item}
 					onChange={(e) => setItem(e.target.value)}
-					placeholder="ex. Learn Next.js"
+					placeholder="ex. Eggs"
 					className="flex-1 border border-gray-200 p-2 mr-2 rounded-lg appearance-none focus:outline-none focus:border-gray-500"
 				/>
 				<button
@@ -592,8 +592,8 @@ Let's deploy this application using [vercel](https://vercel.com). I recommend us
 
 ### Next steps
 
-Now that you have a full JAMstack application, try extending it's functionality:
+Now that you have a complete JAMstack application, try extending its functionality:
 
 - Use the API [best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/) for building a perfect API.
-- Try to add filtering option. You should show all the brought and pending seperately.
+- Try to add a filtering option. You should show all the brought and pending separately.
 - Try to add [Authentication](https://en.wikipedia.org/wiki/Authentication). If you add an item, everyone can see that one. You can use authenticate a user using third-party services like [Auth0](https://auth0.com/).
