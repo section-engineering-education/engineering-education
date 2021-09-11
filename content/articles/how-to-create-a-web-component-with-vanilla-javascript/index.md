@@ -8,12 +8,14 @@ This article will talk about what web components are and why they are useful. Fi
 - [What are web components](#what-are-web-components)
 - [Why use web components](#why-use-web-components)
 - [Creating a web component with Vanilla JavaScript](#creating-a-web-component-with-vanilla-javascript)
-  - [Create the template](#step-1-create-the-template)
-  - [Load the template with content](#step-2-load-the-template-with-content)
-  - [Create the HTML element](#step-3-create-the-html-element)
-  - [Encapsulate the HTML element](#step-4-encapsulate-the-html-element)
-  - [Lifecycle methods](#step-5-lifecycle-methods)
-  - [Creating custom elements](#step-6-creating-custom-elements)
+  - [Create the template](#create-the-template)
+  - [Load the template with content](#load-the-template-with-content)
+  - [Create the HTML element](#create-the-html-element)
+  - [Encapsulate the HTML element](#encapsulate-the-html-element)
+  - [Lifecycle methods](#lifecycle-methods)
+  - [Creating custom elements](#creating-custom-elements)
+- [Conclusion](conslusion)
+- [References](references)
 
 
 ### Prerequisites
@@ -27,9 +29,7 @@ The web components enable you to build functions that can be reused on a differe
 Web components consist of three leading technologies to create custom elements that can be reused when you like. They include:
 
 - **Custom elements:** these APIs allow you to define and create custom elements to provide the desired UI.
-
 - **Shadow DOM:** APIs that enable encapsulation. Specific elements are separated from your main DOM, thus preventing issues such as document collision.
-
 - **HTML templates:** elements that allow you to declare fragments of markup templates that are not displayed on the page. These elements are used as a template to reuse in multiple places.
 
 Web browsers including chrome, firefox, and edge offer support for web components. That means technologies, i.e. (Custom Elements, Shadow DOM, and HTML templates) are supported fully.
@@ -43,7 +43,7 @@ Code reusability has proven to be useful, and before the initiation of web compo
 
 Web Components allow web developers to build reusable UI's using built-in web APIs. This means we can create a web component for one project and carry it to another with no additional coding.
 
-### Creating a web component with Vanilla JavaScript
+### Creating a web component with vanilla JavaScript
 In this tutorial, we create a web component with [Vanilla JavaScript](https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks#:~:text=What%20is%20%22Vanilla%20JavaScript%22%3F&text=%22VanillaJS%20is%20a%20name%20to,need%20for%20additional%20JavaScript%20libraries.%22) or without the help of any framework or libraries.
 
 We are going to create an employee card web component. It will contain a user image, name, id, job title, phone, and email. Below is the user image we will use:
@@ -97,25 +97,23 @@ template.innerHTML = `
 
 </style>
 <div class="employee-card">
-<img/>
-<div>
-<h3></h3>
-<div class="details">
-<p><slot name="id"/></p>
-<p><slot name="job title"/></p>
-<p><slot name="email"/></p>
-<p><slot name="phone"/></p>
-</div>
-</div>
+  <img/>
+  <div>
+    <h3></h3>
+    <div class="details">
+      <p><slot name="id"/></p>
+      <p><slot name="job title"/></p>
+      <p><slot name="email"/></p>
+      <p><slot name="phone"/></p>
+    </div>
+  </div>
 </div>
 `;
 
 class EmployeeCard extends HTMLElement{
  constructor(){
      super();
-
      this.attachShadow({ mode: 'open'});
-
      this.shadowRoot.appendChild(template.content.cloneNode(true));
      this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
      this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');   
@@ -130,21 +128,19 @@ class EmployeeCard extends HTMLElement{
    this.h3;
  }
 }
-
 window.customElements.define('employee-card', EmployeeCard);
-
 ```
 
 The code above shows how to create an employee card web component, so let us understand each part step by step.
 
-#### Step 1: Create the template
+#### Create the template
 ```JavaScript
 const template = document.createElement('template');
 ```
 
 The first step is creating an HTML content template element `<template>`. The `<template>` element holds HTML that is not rendered immediately after running a page. 
 
-#### Step 2: Load the template with content
+#### Load the template with content
 ```JavaScript
 template.innerHTML = `
 <style>
@@ -160,60 +156,51 @@ template.innerHTML = `
 
 </style>
 <div class="employee-card">
-<img/>
-<div>
-<h3></h3>
-<div class="details">
-<p><slot name="id"/></p>
-<p><slot name="job title"/></p>
-<p><slot name="email"/></p>
-<p><slot name="phone"/></p>
-</div>
-</div>
+  <img/>
+  <div>
+    <h3></h3>
+    <div class="details">
+      <p><slot name="id"/></p>
+      <p><slot name="job title"/></p>
+      <p><slot name="email"/></p>
+      <p><slot name="phone"/></p>
+    </div>
+  </div>
 </div>
 `;
 ```
 
 The template element is stored in a `template` variable and linked with `inner HTML` properties. The `innerHTML` property sets the HTML content on the element. Therefore, we can add the HTML we want to display on the screen, such as `<div>`, `<p>`, and more HTML elements.
 
-#### Step 3: Create the HTML element
+#### Create the HTML element
 ```JavaScript
 class EmployeeCard extends HTMLElement{}
 ```
 
 We create a class `EmployeeCard` that extends the HTMLElement class. The HTMLElement represents all the HTML elements.
 
-#### Step 4: Encapsulate the HTML element
+#### Encapsulate the HTML element
 ```JavaScript
 constructor(){
      super();
-
      this.attachShadow({ mode: 'open'});
-
      this.shadowRoot.appendChild(template.content.cloneNode(true));
-
      this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
-
      this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');   
  } 
 ```
 
-We have an empty class. Next, we create a constructor and call the base class `super()` method to inherit the features of a class.
-
-A shadow DOM is created `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our component's behaviour independent and from the rest of the Html.
-
-You can have your shadow DOM mode closed or open. This means whether you can access shadow DOM via JavaScript in your components.
+We have an empty class. Next, we create a constructor and call the base class `super()` method to inherit the features of a class. A shadow DOM is created `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our component's behaviour independent and from the rest of the Html. You can have your shadow DOM mode closed or open. This means whether you can access shadow DOM via JavaScript in your components.
 
 Web Components enable us to use shadow DOM, a feature built into the browser. So if child elements are added to a shadow DOM of a component, they are wrapped inside a shadow root.
 
 ```JavaScript
 this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
-
 this.shadowRoot.querySelector('img').src = this.getAttribute('avatar')
 ```
 The web component API then gets attributes name and avatar to be displayed on the page.
 
-#### Step 5: Lifecycle methods
+#### Lifecycle methods
 ```JavaScript
 connectedCallback(){
    this.h3 = this.getAttribute("name")
@@ -233,23 +220,19 @@ Let us take a look at some of the callback methods:
 - `adoptedCallback:` is called when the component is moved to another HTML document.
 - `attributeChangedCallback:` is when the attributes of the component are changed.
 
-#### Step 6: Creating custom elements
+#### Creating custom elements
 ```JavaScript
 window.customElements.define('employee-card', EmployeeCard);
 ```
 
-Our web component has been created, but there is one more step remaining: creating custom elements.
-
-We use the JavaScript class `EmployeeCard` while creating the custom elements. Whereby the class inherits the properties of `HTML Element`.
+Our web component has been created, but there is one more step remaining: creating custom elements. We use the JavaScript class `EmployeeCard` while creating the custom elements. Whereby the class inherits the properties of `HTML Element`.
 
 Finally, to test if we created an employee card web component, open the `index.html` file using a browser. The output is as shown below:
 
 ![Employee card web component](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/employee-card.jpg)
 
-### Wrapping up
-Congratulations, you have successfully created a web component. With this tutorial, you have learned how to build a simple web component with vanilla JavaScript.
- 
-Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be achieved using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
+### Conclusion
+With this tutorial, you have learned how to build a simple web component with vanilla JavaScript. Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be achieved using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
 
 Happy Coding!
 
