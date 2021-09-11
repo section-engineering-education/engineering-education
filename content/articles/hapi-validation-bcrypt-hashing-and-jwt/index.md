@@ -1,6 +1,22 @@
-### Introduction
-A website's security begins with having clean data in a database. It is good practice to ensure that information submitted to a database is accurate and filtered to avoid clouding it with either redundant or unrealistic records. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hapi-validation-bcrypt-hashing-and-jwt/
+title: Hapi validation, Bcrypt hashing and JWT in action
+description: This article enables the reader to learn how to use Hapi to clean data submitted in a form and ensure a correct validation before submitting the data to a database. Additionally, we will learn how to use Bcrypt in hashing passwords to avoid submitting plaintext password fields into our database. 
+author: phina-kersly
+date: 2021-09-11T00:00:00-04:34
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/hapi-validation-bcrypt-hashing-and-jwt/hero.png
+    alt: JHapi validation bcrypt hashing and JWT image example
+---
+
+A website's security begins with having clean data in a database. It is good practice to ensure that information submitted to a database is accurate and filtered to avoid clouding it with either redundant or unrealistic records. 
+ <!--more-->
 This article enables the reader to learn how to use `Hapi` to clean data submitted in a form and ensure a correct validation before submitting the data to a database. Additionally, we will learn how to use `Bcrypt` in hashing passwords to avoid submitting plaintext password fields into our database. 
 
 The two components work with `Json Web Tokens` to implement an authentication API to ensure security and clean data entry.
@@ -243,7 +259,7 @@ const salt = bcrypt.genSaltSync(10);
 const hashedPassword  = bcrypt.hashSync(req.body.password, salt);
 ```
 
-Afterward, a new user instance is created and saved into the database.
+Afterwards, a new user instance is created and saved into the database.
 
 ```js
 const user = new User(
@@ -355,7 +371,7 @@ Let us try using a short password/ email than the length specified in the `userR
 Next, if we use the wrong email, we get a validation error, as shown below.
 ![Email check](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/email-check.png)
 
-However, when all fields are filled correctly, and the validation is passed, the user is added to the database. The `user-id` is returned as shown.
+However, when all fields are filled correctly and the validation is passed, the user is added to the database. The `user-id` is returned as shown.
 ![User saved](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/user-saved.png)
 
 
