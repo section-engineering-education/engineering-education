@@ -48,10 +48,6 @@ In a folder of choice, let's create a new project by running `django-admin start
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-
-
-
-```
 Edit the `settings.py` file as follows under `INSTALLED APPS`:
 `TodoAPI/settings.py`
 
