@@ -33,3 +33,8 @@ Now the next thing we are going to be doing, is to initialize NPM (Node Package 
 npm init
 ```
 <a href="https://ibb.co/sCZXP2s"><img src="https://i.ibb.co/HCj92VG/Screenshot-2021-09-11-at-13-24-05.png" alt="Screenshot-2021-09-11-at-13-24-05" border="0"></a>
+
+**Note: You can only run the Command npm init if NodeJs and NPM is properly installed on your device. Kindly Check out this URL's to install NodeJS and NPM [Installing NodeJS] (https://nodejs.org/en/download/package-manager/) [Installing NPM] (https://docs.npmjs.com/cli/v6/commands/npm-install)**
+
+<a href="https://ibb.co/zPqBj0P"><img src="https://i.ibb.co/p4YMG94/Screenshot-2021-09-11-at-13-48-57.png" alt="Screenshot-2021-09-11-at-13-48-57" border="0"></a>
+If you initalised npm properly, it will generate a package.json file for you, just like you have here. 
