@@ -382,8 +382,8 @@ When we try accessing the `posts` route without being logged in, we are denied a
 
 
 However, when we are logged in, we get an authentication token that we add to the request's header and obtain access to the protected route.
-![Authentication token](user-auth-token.png)
-![View protected route](view-protected-route.png)
+![Authentication token](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/user-auth-token.png)
+![View protected route](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/view-protected-route.png)
 
 ### Conclusion
 This tutorial taught us to validate user input using `Hapi`, password encryption with `bcrypt`, and JWT authentication. We built an authentication API using the three and testes=d out application. This tutorial should give the reader a way of getting started with data cleaning and securing data for their web project.
