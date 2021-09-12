@@ -1,21 +1,21 @@
 ### Introduction
-We normally concentrate on only two types of devices when developing mobile apps: tablets and smart phones. Have you ever considered how to build applications for wearables?
+We normally concentrate on only two types of devices when developing mobile apps: tablets and smart phones. Every time we start a new Android Studio project, we generally come across the suggested templates for other types of devices. Have you ever considered how to build applications for wearables?
 
 Smart watches varies from smart phones in terms of design and interactivity due to distinct usage circumstances and smaller screens. The layout is simpler and more reliant on swiping actions to function. You'll learn how to make an app for a Wear OS  wearable device in this article.
 
 ### Prerequisites
-The reader should:
-- Have Android studio installed
-- Be knowledgeable on Kotlin
+To follow through this tutorial, you should have:
+- Android Studio installed on your machine.
+- A basic knowledge of the kotlin programming language.
 
 ### How does Wear OS compare to Android? 
-Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and set of functionality.
+Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and set of functionality. Wear OS shouldn't be a challenge if you're already acquainted with Android mobile application development. 
 
 #### Packages exclusively for Wear OS
 - **android.webkit** is an open-source web page rendering engine that has become a mobile browser mainstream.
 It was created using the code from the KDE desktop environment's KHTML and KJS modules. 
 
--**android.print** includes classes for implementing printing capabilities in Android apps.
+- **android.print** includes classes for implementing printing capabilities in Android apps.
 Other more specialized packages linked to printing make use these fundamental classes as well. 
 
 - Backup and recovery functions are included in **android.app.backup**. As a result, when apps with backups replication enabled are reinstalled, the old user data can be restored. 
@@ -25,6 +25,7 @@ Other more specialized packages linked to printing make use these fundamental cl
 - **android.hardware.usb** allows Android-based devices to communicate with USB peripheral facilities. 
 
 ### Creating a Wear OS project on Android Studio
+When establishing an Android Wear app for a smart watch, select the Wear OS tab, an empty Activity, or any other available option, based on the project requirements or your tastes.
 
 In the packages of your application, two modules will appear right away: a wear module for smart watches and an application module for tablets and phones.
 
@@ -33,15 +34,18 @@ After that, a folder will appear with the filename of the desired module.
 
 Two different.apk or.aab files will be created from the two modules. They must, however, have the same package name and be verified with the same certification when they are published.
 
+This is important because Google Services allows applications to communicate with one another.
 You can still make a Wear OS app without using a smartphone platform. 
 
 ### Creating User Interface Layouts
 The first step is to design a layout for your application.
 The layout is a visual depiction of your application's user interface. It is the app's graphic illustration that is displayed to the users. 
 
-One of the primary concerns in Android app development is the huge range of devices - varied sizes, shapes, and configurations.
+One of the primary concerns in Android app development is the huge range of devices - varied sizes, shapes, and configurations. Even when it comes to Wear OS, there are a variety of screen styles to consider, including round, square, and circular with chopped edges. 
 
 Wear OS and Android OS have similar UI patterns. You can also use Google's Wear UI Toolkit, which has a comprehensive set of features required to match smartwatch style requirements. As a result, the implementation process is simplified, and development resources are reduced. 
+
+To do this, you should include the following dependencies:
 
 ```gradle
 dependencies {
@@ -58,7 +62,9 @@ dependencies {
 }
 ```
 
-In the manifest, must define the feature and wear OS library, as well as other metadata, in this section.
+#### Set Up the Manifest file
+The manifest for Wear OS Apps differs slightly from that of Android Smartphone.
+We must define the feature and wear OS library, as well as other metadata, in this section.
 
 ```xml
 <manifest xmlns:android="https://schemas.android.com/apk/res/android"
@@ -97,20 +103,21 @@ In the manifest, must define the feature and wear OS library, as well as other m
 
 </manifest>
 ```
+
 ### Most common Wear OS UI components
-There are four UI elements in the toolkit that deserve special attention because they are critical for Wear OS development.
+There are four UI main elements in the toolkit that deserve special attention because they are critical for Wear OS development.
 
-- **WearableLinearLayoutManager** allows you to scroll through a list using the watch's mechanical wheels. Furthermore, it moves objects that are positioned along the screen borders to the center, which is highly useful when employing circular interface. 
+- **WearableLinearLayoutManager** - allows you to scroll through a list using the watch's mechanical wheels. Furthermore, it moves objects that are positioned along the screen borders to the center, which is highly useful when employing circular interface. 
 
-- **BoxInsetLayout** is an Android FrameLayout capable of adapting child items to a circular display. It positions them in the rectangle region defined by the screen circle. 
+- **BoxInsetLayout** - is an Android FrameLayout capable of adapting child items to a circular display. It positions them in the rectangle region defined by the screen circle. 
 
 Such transformations are ignored at the system level for square displays. As a result, the layout will be similar across all watch interfaces.
 
-**WearableRecyclerView** is a useful design that's widely used in mobile apps, but it's been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
+- **WearableRecyclerView** - is a useful design that's widely used in mobile apps, but it's been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
 
-**EdgeItemsCenteringEnabled** makes you capable of creating a curved views for items that are scrolled and improve the components of code, making it easier to view on a relatively small screen.
+- **EdgeItemsCenteringEnabled** - is a setting that allows you to create a curved layout for scrolling items and improve the core element, making it easier to view on a relatively small screen.
 
-SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe from left to right. 
+- **SwipeDismissFrameLayout** is another popular layout. It makes it possible to swipe from left to right. 
 
 ### Code example using the `BoxInsetLayout`
 
@@ -122,38 +129,38 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
     android:layout_width="match_parent"
     android:padding="8dp"
     tools:deviceIds="wear"
-    tools:contect=".MainActivity">
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:padding="4dp"
         android:layout_height="match_parent"
+        android:padding="4dp"
         app:layout_boxedEdges="all">
-      
+
         <ImageButton
             android:background="@android:color/transparent"
             android:layout_height="60dp"
             android:layout_width="60dp"
-            app:layout_constraintStart_toStartOf="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/ic_ok" />
-      
-      <ImageButton
-            android:background="@android:color/transparent"
-            android:layout_height="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="40dp"
-            android:src="@drawable/ic_cancel" />
-      
+
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/text"
             android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_cancel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>
 ```
@@ -163,41 +170,47 @@ SwipeDismissFrameLayout is another popular layout. It makes it possible to swipe
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.wear.widget.BoxInsetLayout
-    xmlns:app="https://schemas.android.com/apk/res-auto"
     xmlns:android="https://schemas.android.com/apk/res/android"
+    xmlns:app="https://schemas.android.com/apk/res-auto"
     xmlns:tools="https://schemas.android.com/tools"
-    android:layout_width="409dp"
-    android:layout_height="wrap_content"
-    android:padding="8dp" >
-  
-      <TextView
-          android:id="@+id/text_1"
-          android:layout_height="wrap_content"
-          android:layout_width="match_parent"
-          android:text="Hello world" />
-  
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:boxedEdges="none">
 
         <android.support.wear.widget.SwipeDismissFrameLayout
             android:layout_width="match_parent"
-            android:id="@+id/slide_dissmiss"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:id="@+id/swipe_dismiss_root" >
 
             <TextView
                 android:id="@+id/test_content"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Slide"/>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="Swipe to dismiss"/>
         </android.support.wear.widget.SwipeDismissFrameLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hello world" />
+
     </FrameLayout>
 </android.support.wear.widget.BoxInsetLayout>
 ```
 
 ### Navigation
-This refers to starting or opening new destinations from the other.
+Navigation refers to the interactions that allow users to navigate across, into, and back out from the different screens or destinations within the app.
 
 #### Using NavigationDrawer
 The watch application normally does not have a title bar to conserve significant display space. When using ViewPager, TabLayout is not displayed, but we can't be sure what page we're on.
@@ -231,6 +244,7 @@ class DrawerAdapter(context: Context) : WearableNavigationDrawerView.WearableNav
     }
 
     override fun getItemDrawable(pos: Int): Drawable {
+        // create two icons and name them as shown below
         return when (pos) {
             0 -> ContextCompat.getDrawable(context, R.drawable.icon_one)!!
             else -> ContextCompat.getDrawable(context, R.drawable.icon_two)!!
@@ -244,12 +258,12 @@ class DrawerAdapter(context: Context) : WearableNavigationDrawerView.WearableNav
 }
 ```
 
-Set it in the Activity.
+Set the drawer in the `MainActivity`.
 
 ```kotlin
-drawer.setAdapter(MainDrawerAdapter(this))
-drawer.controller.peekDrawer()
-drawer.addOnItemSelectedListener { pos ->
+navigation_drawer.setAdapter(MainDrawerAdapter(this))
+navigation_drawer.controller.peekDrawer()
+navigation_drawer.addOnItemSelectedListener { pos ->
     // switch the page
 }
 ```
