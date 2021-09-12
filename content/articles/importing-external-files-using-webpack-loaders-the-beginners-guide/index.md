@@ -171,3 +171,24 @@ const path = require("path")
 ```
 If you did everything correctly your webpack.config.js should now look like this
 <a href="https://ibb.co/7NyTvy2"><img src="https://i.ibb.co/YTjK2jp/Screenshot-2021-09-12-at-16-46-43.png" alt="Screenshot-2021-09-12-at-16-46-43" border="0"></a>
+
+One thing to note here is that you are importing four different files and those files will be bundled up into our bundle.js file but we also need to inject these files into our html file, and that is what we are going to be doing next, with the help of HTML webpack plugin. 
+
+To install, we run the command below in the terminal: 
+
+```
+npm install --save-dev html-webpack-plugin
+```
+The next thing to do is to add the code below to the top of our webpack.config.js file
+
+```
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+```
+
+Then we add the plugins after the output with the code below: 
+
+```
+  plugins: [new HtmlWebpackPlugin()],
+```
+<a href="https://ibb.co/6DRcBVZ"><img src="https://i.ibb.co/Yf74ZYW/Screenshot-2021-09-12-at-16-57-16.png" alt="Screenshot-2021-09-12-at-16-57-16" border="0"></a>
+If you did everything correctly, your webpack.config.js file should now be like this. 
