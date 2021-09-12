@@ -104,6 +104,6 @@ After succesfully installing the SVG Inline loader for webpack,using the command
         use: 'svg-inline-loader'
     }
 ```
-If you did that correctly, your webpack.config.js file should look like this. 
+If you did that correctly, your webpack.config.js should look like this. 
 
 <a href="https://ibb.co/wz6DcMH"><img src="https://i.ibb.co/HHgmhnv/Screenshot-2021-09-12-at-15-28-00.png" alt="Screenshot-2021-09-12-at-15-28-00" border="0"></a>
