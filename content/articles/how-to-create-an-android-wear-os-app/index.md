@@ -1,7 +1,9 @@
 ### Introduction
-We normally concentrate on only two types of devices when developing mobile apps: tablets and smart phones. Every time we start a new Android Studio project, we generally come across the suggested templates for other types of devices. Have you ever considered how to build applications for wearables?
+When developing mobile apps, we normally concentrate on only two types of devices: tablets and smart phones. Every time we start a new Android Studio project, we generally come across the suggested templates for other types of devices. Have you ever considered how to build applications for wearables?
 
-Smart watches varies from smart phones in terms of design and interactivity due to distinct usage circumstances and smaller screens. The layout is simpler and more reliant on swiping actions to function. You'll learn how to make an app for a Wear OS  wearable device in this article.
+Smart watches varies from smart phones in terms of design and interactivity due to distinct usage circumstances and smaller screens. The layout is simpler and more reliant on swiping actions to operate.
+
+In this article, we will learn how to create an app for a Wear OS  wearable device.
 
 ### Prerequisites
 To follow through this tutorial, you should have:
@@ -9,43 +11,40 @@ To follow through this tutorial, you should have:
 - A basic knowledge of the kotlin programming language.
 
 ### How does Wear OS compare to Android? 
-Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and set of functionality. Wear OS shouldn't be a challenge if you're already acquainted with Android mobile application development. 
+Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and a set of functionalities. Wear OS shouldn't be a challenge if you're already acquainted with Android mobile application development.
 
-#### Packages exclusively for Wear OS
-- **android.webkit** is an open-source web page rendering engine that has become a mobile browser mainstream.
-It was created using the code from the KDE desktop environment's KHTML and KJS modules. 
+### Packages exclusively for Wear OS
+- **android.webkit** - is an open-source web page rendering engine that has become a mobile browser mainstream. It was created using the code from the KDE desktop environment's [KHTML](https://api.kde.org/frameworks/khtml/html/index.html) and [KJS](https://en.wikipedia.org/wiki/KJS_(software)) modules.
 
-- **android.print** includes classes for implementing printing capabilities in Android apps.
-Other more specialized packages linked to printing make use these fundamental classes as well. 
+- **android.print** - includes classes for implementing printing capabilities in Android apps. Other more specialized packages linked to printing make use these fundamental classes as well.
 
-- Backup and recovery functions are included in **android.app.backup**. As a result, when apps with backups replication enabled are reinstalled, the old user data can be restored. 
+- **android.app.backup** - includes backup and recovery functions. As a result, when apps with backups replication enabled are reinstalled, the old user data can be restored. 
 
-- **android.appwidget** contains the tools required to develop applications widgets that allow users to access app data and services without having to create the solution itself.
+- **android.appwidget** - contains the tools required to develop applications widgets that allow users to access app data and services without having to create the solution itself.
 
-- **android.hardware.usb** allows Android-based devices to communicate with USB peripheral facilities. 
+- **android.hardware.usb** - allows Android-based devices to communicate with USB peripheral facilities. 
 
 ### Creating a Wear OS project on Android Studio
 When establishing an Android Wear app for a smart watch, select the Wear OS tab, an empty Activity, or any other available option, based on the project requirements or your tastes.
 
 In the packages of your application, two modules will appear right away: a wear module for smart watches and an application module for tablets and phones.
 
-If you wish to add smartwatch functionality to an existing app, open it, pick the Wear OS Module from the *File -> New -> New Module* menu, and set things up.
-After that, a folder will appear with the filename of the desired module.
+If you wish to add smartwatch functionality to an existing app, open it, pick the Wear OS module from the *File -> New -> New Module* menu, and set it up. After that, a folder will appear with the filename of the desired module.
 
-Two different.apk or.aab files will be created from the two modules. They must, however, have the same package name and be verified with the same certification when they are published.
+Two different `.apk` or `.aab` files will be created from the two modules. They must, however, have the same package name and be verified with the same certification when they are published.
 
-This is important because Google Services allows applications to communicate with one another.
-You can still make a Wear OS app without using a smartphone platform. 
+This is important because Google services allows applications to communicate with one another. You can still make a Wear OS app without using a smartphone platform.
 
 ### Creating User Interface Layouts
 The first step is to design a layout for your application.
+
 The layout is a visual depiction of your application's user interface. It is the app's graphic illustration that is displayed to the users. 
 
 One of the primary concerns in Android app development is the huge range of devices - varied sizes, shapes, and configurations. Even when it comes to Wear OS, there are a variety of screen styles to consider, including round, square, and circular with chopped edges. 
 
-Wear OS and Android OS have similar UI patterns. You can also use Google's Wear UI Toolkit, which has a comprehensive set of features required to match smartwatch style requirements. As a result, the implementation process is simplified, and development resources are reduced. 
+Wear OS and Android OS have similar UI patterns. You can also use Google's Wear UI toolkit, that has a comprehensive set of features required to match smartwatch style requirements. As a result, the implementation process is simplified, and development resources are reduced. 
 
-To do this, you should include the following dependencies:
+To do this, you should include the following dependencies in the app-level `build.gradle` file. 
 
 ```gradle
 dependencies {
@@ -62,8 +61,9 @@ dependencies {
 }
 ```
 
-#### Set Up the Manifest file
+#### Set Up the Manifest
 The manifest for Wear OS Apps differs slightly from that of Android Smartphone.
+
 We must define the feature and wear OS library, as well as other metadata, in this section.
 
 ```xml
@@ -105,7 +105,7 @@ We must define the feature and wear OS library, as well as other metadata, in th
 ```
 
 ### Most common Wear OS UI components
-There are four UI main elements in the toolkit that deserve special attention because they are critical for Wear OS development.
+There are four main UI  elements in the toolkit that deserve special attention because they are useful in Wear OS development.
 
 - **WearableLinearLayoutManager** - allows you to scroll through a list using the watch's mechanical wheels. Furthermore, it moves objects that are positioned along the screen borders to the center, which is highly useful when employing circular interface. 
 
@@ -113,13 +113,13 @@ There are four UI main elements in the toolkit that deserve special attention be
 
 Such transformations are ignored at the system level for square displays. As a result, the layout will be similar across all watch interfaces.
 
-- **WearableRecyclerView** - is a useful design that's widely used in mobile apps, but it's been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
+- **WearableRecyclerView** - RecyclerView is a useful tool that's widely used in mobile apps, but it's been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
 
 - **EdgeItemsCenteringEnabled** - is a setting that allows you to create a curved layout for scrolling items and improve the core element, making it easier to view on a relatively small screen.
 
-- **SwipeDismissFrameLayout** is another popular layout. It makes it possible to swipe from left to right. 
+- **SwipeDismissFrameLayout** is another popular layout that makes it possible to swipe from left to right. 
 
-### Code example using the `BoxInsetLayout`
+### Code example using the `BoxInsetLayout` element
 
 ```xml
 <androidx.wear.widget.BoxInsetLayout
@@ -148,12 +148,13 @@ Such transformations are ignored at the system level for square displays. As a r
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="@string/text"
+            android:text="some text"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--In this example, this ImageButton requires an icon named ic_cancel-->
         <ImageButton
             android:background="@android:color/transparent"
             android:layout_height="60dp"
@@ -165,7 +166,7 @@ Such transformations are ignored at the system level for square displays. As a r
 </androidx.wear.widget.BoxInsetLayout>
 ```
 
-### Code example using the SwipeDismissFrameLayout
+### Code example using the `SwipeDismissFrameLayout` element
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,7 +230,7 @@ Let's look at how it's used. We change the layout file and make WearableDrawerLa
         app:navigationStyle="multiPage"/>
 ```
 
-Set an adapter for the ViewPager, as well as the icon and title for each page, as shown below.
+Set an adapter for the NavigationDrawer, as well as the icon and title for each page, as shown below.
 
 ```kotlin
 class DrawerAdapter(context: Context) : WearableNavigationDrawerView.WearableNavigationDrawerAdapter() {
@@ -261,15 +262,17 @@ class DrawerAdapter(context: Context) : WearableNavigationDrawerView.WearableNav
 Set the drawer in the `MainActivity`.
 
 ```kotlin
-navigation_drawer.setAdapter(MainDrawerAdapter(this))
-navigation_drawer.controller.peekDrawer()
-navigation_drawer.addOnItemSelectedListener { pos ->
+navigation_drawer.apply{
+    setAdapter(MainDrawerAdapter(this))
+    controller.peekDrawer()
+    addOnItemSelectedListener { pos ->
     // switch the page
+    }
 }
 ```
 
 #### RemoteIntent
-This allow you to start an activity on another device. This api currently supports sharing intents with action set to `ACTION_VIEW`, a data uri provided by setData(Uri), and with the `CATEGORY_BROWSABLE` category present.
+This allows you to start an activity on another device. This API currently supports sharing intents with action set to `ACTION_VIEW`, a data uri provided by setData(Uri), and with the `CATEGORY_BROWSABLE` category present.
 
 ```kotlin
  RemoteIntent.startRemoteActivity(context, nodeId, Intent(Intent.ACTION_VIEW)
@@ -278,6 +281,6 @@ This allow you to start an activity on another device. This api currently suppor
 ```
 
 ### Conclusion
-In this tutorial, we have learned how to create an Android based Wear OS app using the ConstraintLayout, SwipeDismissFrameLayout, and WearableNavigationDrawerView. This tutorial offers fundamental knowledge that you can use to create a wear OS app based on your imagination.
+In this tutorial, we have learned how to create an Android-based Wear OS app using the ConstraintLayout, SwipeDismissFrameLayout, and WearableNavigationDrawerView. This tutorial offers fundamental knowledge that you can use to create a wear OS app based on your imagination.
 
 Happy coding!
