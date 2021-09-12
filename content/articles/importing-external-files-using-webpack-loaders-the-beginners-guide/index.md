@@ -71,7 +71,7 @@ As we proceed to importing external files using webpack loaders we will understa
 The first thing we are going to do is to run the command below in our terminal
 
 ```
-npm install --save-dev css-loader
+npm install --save-dev css-loader style-loader
 ```
 
 Then you add the following into your webpack.config.js file
@@ -87,3 +87,12 @@ Then you add the following into your webpack.config.js file
 ```
 <a href="https://ibb.co/GPPNfWc"><img src="https://i.ibb.co/vzzRC3Z/Screenshot-2021-09-12-at-15-02-36.png" alt="Screenshot-2021-09-12-at-15-02-36" border="0"></a>
 Your webpack.config.js file should now look like this. 
+
+We have successfully configured our webpack.config.js file now to be able to load our CSS files and inject our styles into our JavaScript file. 
+
+### Importing an SVG file
+The first thing to do is to install the SVG Inline Loader for Webpack. You copy and run this command in the terminal, to do this. 
+
+```
+npm install svg-inline-loader --save-dev
+```
