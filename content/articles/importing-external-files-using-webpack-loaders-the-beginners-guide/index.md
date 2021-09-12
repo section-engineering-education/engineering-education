@@ -4,7 +4,7 @@ Today, I am going to show you how to utilize Webpack loaders and easily import e
 ## Table Of Contents
 1. What is Webpack?
 2. Installing Webpack
-3. Plugins and Loaders
+3. Loaders and Plugins
 4. Make use of Webpack loaders to import various types of files
 
 ## Prerequisites
@@ -37,7 +37,7 @@ npm init
 **Note: You can only run the npm init command if NodeJs is properly installed on your device. Kindly Check out this link to install NodeJS [Installing NodeJS with Package Manager] (https://nodejs.org/en/download/package-manager/)**
 
 <a href="https://ibb.co/zPqBj0P"><img src="https://i.ibb.co/p4YMG94/Screenshot-2021-09-11-at-13-48-57.png" alt="Screenshot-2021-09-11-at-13-48-57" border="0"></a>
-<p style="text-align:center;">If you initalised npm properly, it will generate a package.json file for you, just like you have here. </p>
+If you initalised npm properly, it will generate a package.json file for you, just like you have here.
 
 Now, we have properly initlaised our node pacakage and we have our package.json file. Next thing to do, is to install Webpack, and one thing you should note is that installing Webpack only, can make you have some issues later on, so it is always advisable to install Webpack along with the CLI. So you enter this command in your terminal. 
 
@@ -45,4 +45,45 @@ Now, we have properly initlaised our node pacakage and we have our package.json 
 npm i webpack webpack-cli --save-dev
 ```
 <a href="https://ibb.co/fHPDr1D"><img src="https://i.ibb.co/3cLRSrR/Screenshot-2021-09-12-at-14-17-09.png" alt="Screenshot-2021-09-12-at-14-17-09" border="0"></a>
-<p>If you successfully installed Webpack you should have a package-lock.json file and the node_modules folder in your root directory, just like I have here. </p>
+If you successfully installed Webpack you should have a package-lock.json file and the node_modules folder in your root directory, just like I have here.
+
+Moving forward now, the first thing to do in configuring your webpack, is to create a new file in your root directory and name it webpack.config.js and then we are going to add some codes into this our newly created configuration file. 
+
+Add the following codes into your webpack.config.js file:
+
+```
+module.exports = {
+    entry: "./app/index.js"
+};
+```
+So in the code above we have the module.exports object and then we declared the entry point for our project which is the app directory and in the app directory you have the index.js file which is your main file. 
+
+## Loaders and Plugins
+Now we have successfully installed webpack and set up our webpack.config.js file. So before we continue to importing our files using Webpack loaders, you need to understand what are loaders and plugins, because this is what we will be using to successfuly handle the importation of our files. 
+
+Whenever there are new things to load in the webpack, for example we want to import an svg, or a CSS file the job of the loaders is simply to bring in these files that we need while things are loaded. So before the final output.js file is created whatever configuration you need to do to bring in your files is being done by the loaders. And whatever configuration that you need to do after the output.js file is created is handled by the plugins. 
+
+As we proceed to importing external files using webpack loaders we will understand more the work of the loaders and plugins. 
+
+## Making use of Webpack loaders to import various type of files. 
+
+### Importing your CSS File
+The first thing we are going to do is to run the command below in out terminal
+
+```
+npm install --save-dev css-loader
+```
+
+Then you add the following into your webpack.config.js file
+ ```
+ module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+```
+<a href="https://ibb.co/GPPNfWc"><img src="https://i.ibb.co/vzzRC3Z/Screenshot-2021-09-12-at-15-02-36.png" alt="Screenshot-2021-09-12-at-15-02-36" border="0"></a>
+Your webpack.config.js file should now look like this. 
