@@ -170,4 +170,4 @@ Also we are going to be importing another module which is path and this comes in
 const path = require("path")
 ```
 If you did everything correctly your webpack.config.js should now look like this
-<a href="https://ibb.co/jrh727P"><img src="https://i.ibb.co/crJzHzS/Screenshot-2021-09-12-at-16-44-37.png" alt="Screenshot-2021-09-12-at-16-44-37" border="0"></a>
+<a href="https://ibb.co/7NyTvy2"><img src="https://i.ibb.co/YTjK2jp/Screenshot-2021-09-12-at-16-46-43.png" alt="Screenshot-2021-09-12-at-16-46-43" border="0"></a>
