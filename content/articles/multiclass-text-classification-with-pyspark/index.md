@@ -6,11 +6,12 @@ url: /multiclass-text-classification-with-pyspark/
 title: Multi-Class Text Classification with PySpark
 description: This tutorial will use PySpark to build our multi-class text classification model. This involves classifying the subject category given the course title.
 author: james-omina
-date: 2021-09-02T00:00:00-13:00
+date: 2021-09-12T00:00:00-05:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/multiclass-text-classification-with-pyspark/hero.jpg
+
+  - url: /engineering-education/multiclass-text-classification-with-pyspark/hero.png
     alt: Multi-Class Text Classification with PySpark
 ---
 
@@ -45,7 +46,7 @@ We will use PySpark to build our multi-class text classification model. This inv
 A reader must have:
 
 1. A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
-2. [Anaconda](https://www.anaconda.com/) installed in your machine.
+2. [Anaconda](https://www.anaconda.com/) installed on your machine.
 3. A good knowledge of [Jupyter Notebook](https://jupyter.org/).
 4. An understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
 5. Downloaded the Udemy [dataset](https://drive.google.com/file/d/1-TfybHeSWpP9UJLxeNDIFT1CPfxn7XWT/view?usp=sharing).
@@ -381,16 +382,16 @@ These features are in form of an extractor, vectorizer, and tokenizer.
 
 1. Tokenizer
 
-- It involves splitting a sentence into smaller words. This tutorial will convert the input text in our dataset into word tokens that our machine can understand. For a detailed understanding of Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
+It involves splitting a sentence into smaller words. This tutorial will convert the input text in our dataset into word tokens that our machine can understand. For a detailed understanding of Tokenizer click [here](https://huggingface.co/transformers/main_classes/tokenizer.html).
 
 2. CountVectorizer
 
-- It is a great tool in machine learning that converts our given text into vectors of numeric numbers. Machines understand numeric values easily rather than text. For a detailed understanding about CountVectorizer click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c).
+It is a great tool in machine learning that converts our given text into vectors of numeric numbers. Machines understand numeric values easily rather than text. For a detailed understanding about CountVectorizer click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c).
 
 3. Extractor
 
-- This is the process of extract various characteristics and features from our dataset. This enables our model to understand patterns during predictive analysis.
-  To automate these processes, we will use a machine learning pipeline. This will simplify the machine learning workflow.
+This is the process of extract various characteristics and features from our dataset. This enables our model to understand patterns during predictive analysis.
+To automate these processes, we will use a machine learning pipeline. This will simplify the machine learning workflow.
 
 ### Pipeline stages
 
@@ -435,7 +436,7 @@ For a detailed understanding of IDF click [here](https://medium.com/the-programm
 
 2. Estimators
 
-- An estimator takes data as input, fits the model into the data, and produces a model we can use to make predictions.
+An estimator takes data as input, fits the model into the data, and produces a model we can use to make predictions.
 
 #### LogisticRegression
 
@@ -467,8 +468,8 @@ The `transformers` category stages are as shown:
 
 1. `tokenizer`.
 2. `stopwords_remover`.
-3. `vectorizer`
-4. `idf`
+3. `vectorizer`.
+4. `idf`.
 
 The pipeline stages are sequential, the first stage has a column named `course_title` which is transformed into `mytokens` as the output column. The columns are further transformed until we reach the `vectorizedFeatures` after the four pipeline stages.
 
@@ -691,7 +692,7 @@ The output is as shown:
 
 ```
 
-Note: This is only showing the top 10 rows.
+> Note: This is only showing the top 10 rows.
 
 From the above output, we can see that our model can accurately make predictions. The `label` columns match with the `prediction` columns.
 
@@ -841,8 +842,10 @@ We then followed the stages in the machine learning workflow. We started with fe
 
 Finally, we used this model to make predictions, this is the goal of any machine learning model. If a model can accurately make predictions, the better the model. Using these steps, a reader should comfortably build a multi-class text classification with PySpark.
 
-### References
+### Further reading
+- [Building a Stock Price Predictor Using Python](/engineering-education/stock-price-prediction-using-python/)
 
+### References
 - [Code implementation for this tutorial](https://colab.research.google.com/drive/1whcB66Lpu_DjZH07Hu65-iTBmeVsz1HJ?usp=sharing)
 - [Introduction to PySpark](/engineering-education/introduction-to-spark/)
 - [PySpark Tutorial](https://www.tutorialspoint.com/pyspark/index.htm)
@@ -852,5 +855,4 @@ Finally, we used this model to make predictions, this is the goal of any machine
 - [Getting started with PySpark](/engineering-education/getting-started-with-pyspark-spark-part2/)
 
 ---
-
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
