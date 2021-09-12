@@ -111,3 +111,24 @@ If you did that correctly, your webpack.config.js should look like this.
 **Kindly note that in some other learning resources, you will have them make use of loader instead of use while trying to configure our SVG file in the rules array, but for consistency we will make use of use instead of loader. Also I have found out that in recent learning resources / docs they make use of "use" instead of loader, for example in the documentation below, loader was used instead.**
 
 <a href="https://ibb.co/YRp0pYJ"><img src="https://i.ibb.co/yfW4WGK/Screenshot-2021-09-12-at-15-41-40.png" alt="Screenshot-2021-09-12-at-15-41-40" border="0"></a>
+
+### Importing images
+Firstly, you are going to install the Image Loader for Webpack by running the command in the terminal below:
+
+```
+$ npm install img-loader --save-dev
+```
+Next we are going to add the Image loader configuration in our webpack.config.js file:
+
+```
+    {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      use: [
+        'url-loader?limit=10000',
+        'img-loader'
+      ]
+    }
+```
+
+<a href="https://ibb.co/Z6sZsVv"><img src="https://i.ibb.co/tMfdf4n/Screenshot-2021-09-12-at-16-08-28.png" alt="Screenshot-2021-09-12-at-16-08-28" border="0"></a>
+Your webpack.config.js file should look like this, if you added the Image Loader configuration properly. 
