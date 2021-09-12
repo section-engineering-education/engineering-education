@@ -25,7 +25,7 @@ First thing you are going to do is to create a directory or folder, you can call
 The next thing we are going to do now is to open the Webpack Tutorial Folder with your favourite code editor, in my case is Visual Studio Code!
 So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created
 <a href="https://ibb.co/0XnKnCd"><img src="https://i.ibb.co/Db1Y19S/Screenshot-2021-09-11-at-13-06-15.png" alt="Screenshot-2021-09-11-at-13-06-15" border="0"></a>
-As you can see there is no file in our folder and this is totally fine!
+<p style="text-align:center;">As you can see there is no file in our folder and this is totally fine!</p>
 
 Now the next thing we are going to be doing, is to initialize NPM (Node Package Manager), so I am going to open my terminal in VS Code and enter this command: 
 
@@ -37,7 +37,7 @@ npm init
 **Note: You can only run the npm init command if NodeJs is properly installed on your device. Kindly Check out this link to install NodeJS [Installing NodeJS with Package Manager] (https://nodejs.org/en/download/package-manager/)**
 
 <a href="https://ibb.co/zPqBj0P"><img src="https://i.ibb.co/p4YMG94/Screenshot-2021-09-11-at-13-48-57.png" alt="Screenshot-2021-09-11-at-13-48-57" border="0"></a>
-If you initalised npm properly, it will generate a package.json file for you, just like you have here. 
+<p style="text-align:center;">If you initalised npm properly, it will generate a package.json file for you, just like you have here. </p>
 
 Now, we have properly initlaised our node pacakage and we have our package.json file. Next thing to do, is to install Webpack, and one thing you should note is that installing Webpack only, can make you have some issues later on, so it is always advisable to install Webpack along with the CLI. So you enter this command in your terminal. 
 
