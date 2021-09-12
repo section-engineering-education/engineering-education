@@ -152,3 +152,22 @@ If you have successfully installed the Bable Loader Package, then we are going t
 After doing that your webpack.config.js file should now look like this
 <a href="https://ibb.co/hWYkTpX"><img src="https://i.ibb.co/QNDZxs8/Screenshot-2021-09-12-at-16-26-02.png" alt="Screenshot-2021-09-12-at-16-26-02" border="0"></a>
 
+We have successfully imported our CSS, SVG, Image and Babel files and added the configuration in our webpack.config.js file but that is not all. 
+
+The next thing we are going to be doing now is to add the output object in our webpack.config.js file. 
+
+So we are going to create an output object and add the path and filename parameter into this object, just copy the code below
+
+```
+output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js"
+    }
+```
+Also we are going to be importing another module which is path and this comes in directly as long as you are using node, so you do not need to install it, just add this code to the top of your weback.config.js. 
+
+```
+const path = require("path")
+```
+If you did everything correctly your webpack.config.js should now look like this
+<a href="https://ibb.co/Y7D8N15"><img src="https://i.ibb.co/278PFCz/Screenshot-2021-09-12-at-16-41-13.png" alt="Screenshot-2021-09-12-at-16-41-13" border="0"></a>
