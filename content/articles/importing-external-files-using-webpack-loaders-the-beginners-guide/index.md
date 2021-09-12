@@ -164,10 +164,10 @@ output: {
         filename: "bundle.js"
     }
 ```
-Also we are going to be importing another module which is path and this comes in directly as long as you are using node, so you do not need to install it, just add this code to the top of your weback.config.js. 
+Also we are going to be importing another module which is path and this comes in directly as long as you are using node, so you do not need to install it, just add this code to the top of your webpack.config.js. 
 
 ```
 const path = require("path")
 ```
 If you did everything correctly your webpack.config.js should now look like this
-<a href="https://ibb.co/Y7D8N15"><img src="https://i.ibb.co/278PFCz/Screenshot-2021-09-12-at-16-41-13.png" alt="Screenshot-2021-09-12-at-16-41-13" border="0"></a>
+<a href="https://ibb.co/jrh727P"><img src="https://i.ibb.co/crJzHzS/Screenshot-2021-09-12-at-16-44-37.png" alt="Screenshot-2021-09-12-at-16-44-37" border="0"></a>
