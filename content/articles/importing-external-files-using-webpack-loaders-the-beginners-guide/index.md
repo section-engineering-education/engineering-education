@@ -199,3 +199,53 @@ Run the code below in your terminal
 ```
 npm install webpack-dev-server --save-dev
 ```
+**Note while configuring your webpack there are two modes which is the Production and Development mode, so we are going to declare our modes in the webpack.config.js file**
+
+Add the following to your webpack.config.js file to declare the mode. 
+
+```
+mode: process.env.NODE_ENV === "production" ? "production" : "development",
+```
+In the code above we defined our Environment Variarbale or env and call it NODE_ENV and then we assigned the mode to production and gave a condition.The condition we gave is if it is defined as production, go ahead and use production mode or else use the development mode.  To define your mode to be development, kindly use this instead: 
+
+```
+mode: process.env.NODE_ENV === "development" ? "development" : "production",
+```
+
+Next thing to do is to add a start and build script, so add the following in your package.json file
+
+```
+    "start": "webpack serve",
+    "build": "NODE_ENV='production' webpack",
+```
+
+Now all configuration have been done in our webpack.config.js file, so if we have an svg file, an image or a CSS file, our webpack have been configured properly to handle these files. 
+
+Next thing we do is to create our app folder in our root directory and inside that app folder, you create a new file called index.js. 
+
+Inside this index.js file we just add some codes, to test everything we have done so far, so copy the codes below into your index.js file. 
+
+```
+const evenNumbers = [2, 4, 6, 8, 10];
+
+console.log(evenNumbers);
+```
+Next thing to do is to run the following commands in your terminal:
+
+```
+npm run build
+```
+
+```
+npm start
+```
+After running these two commands, we see that we now have some files that are automatically generated for us. 
+
+<a href="https://ibb.co/Y8BfyNc"><img src="https://i.ibb.co/xGqzf21/Screenshot-2021-09-12-at-21-40-56.png" alt="Screenshot-2021-09-12-at-21-40-56" border="0"></a>
+
+Remember that we added an Array of Even Numbers in our index.js file, but then we get our array also in our bundle.js file and then we have the bundle.js script is also inserted into our HTML Webpack plugin generated index.html file. This shows that our Webpack configuration is totally okay and now you can have a CSS file, an SVG file, an image file or a modern JS file (Babel JS) and the webpack will take care of it. 
+
+**This tutorial is tailored for total beginners, who are just finding their way around trying to make use of Webpack, for further direction, kindly go through this links:** 
+1. [Installing Webpack](https://webpack.js.org/guides/getting-started/)
+2. [Webpack Loaders and Plugins](https://stackoverflow.com/questions/37452402/webpack-loaders-vs-plugins-whats-the-difference)
+3. [Making use of webpack loaders to import various file types](https://webpack.js.org/guides/asset-management/)
