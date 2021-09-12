@@ -132,3 +132,23 @@ Next we are going to add the Image loader configuration in our webpack.config.js
 
 <a href="https://ibb.co/Z6sZsVv"><img src="https://i.ibb.co/tMfdf4n/Screenshot-2021-09-12-at-16-08-28.png" alt="Screenshot-2021-09-12-at-16-08-28" border="0"></a>
 Your webpack.config.js file should look like this, if you added the Image Loader configuration properly. 
+
+### Importing Babel 
+This tutorial is targeted for beginners, but I am going to show you how to also import your Babel JS file. 
+
+The first thing we are going to be doing is to run the command below in our terminal to install the Babel Loader package. 
+
+```
+npm install --save-dev babel-loader
+```
+If you have successfully installed the Bable Loader Package, then we are going to add some configuration in our webpack.config.js file and we will be writing Regex Code. Just copy and add the following in your webpack.config.js file. 
+
+```
+    {
+        test: /\.(js)$/,
+        use: "babel-loader",
+    },
+```
+After doing that your webpack.config.js file should now look like this
+<a href="https://ibb.co/hWYkTpX"><img src="https://i.ibb.co/QNDZxs8/Screenshot-2021-09-12-at-16-26-02.png" alt="Screenshot-2021-09-12-at-16-26-02" border="0"></a>
+
