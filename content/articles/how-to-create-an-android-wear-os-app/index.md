@@ -1,9 +1,24 @@
-### Introduction
-When developing mobile apps, we normally concentrate on only two types of devices: tablets and smart phones. Every time we start a new Android Studio project, we generally come across the suggested templates for other types of devices. Have you ever considered how to build applications for wearables?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-an-android-wear-os-app/
+title: How to create an Android Wear OS app
+description: This article will cover how to create an Android-based Wear OS application. Wear OS is a new operating system for wearables, such as smartwatches and smartbands. Although it is centered on Android, it offers a unique look and a set of functionalities that are not available on other Android devices.
+author: antony-muriuki
+date: 2021-09-13T00:00:00-01:25
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-an-android-wear-os-app/hero.png
+    alt: How to create an Android Wear OS app image
+---
+When developing mobile apps, we normally concentrate on only two types of devices: tablets and smart phones. Every time we start a new Android Studio project, we generally come across the suggested templates for other types of devices. Have you ever considered how to build applications for wearables?
+<!--more-->
 Smart watches varies from smart phones in terms of design and interactivity due to distinct usage circumstances and smaller screens. The layout is simpler and more reliant on swiping actions to operate.
 
-In this article, we will learn how to create an app for a Wear OS  wearable device.
+In this article, we will learn how to create an app for a Wear OS wearable device.
 
 ### Prerequisites
 To follow through this tutorial, you should have:
@@ -284,3 +299,6 @@ This allows you to start an activity on another device. This API currently suppo
 In this tutorial, we have learned how to create an Android-based Wear OS app using the ConstraintLayout, SwipeDismissFrameLayout, and WearableNavigationDrawerView. This tutorial offers fundamental knowledge that you can use to create a wear OS app based on your imagination.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
