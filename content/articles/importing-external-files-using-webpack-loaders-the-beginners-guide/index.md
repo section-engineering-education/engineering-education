@@ -107,3 +107,5 @@ After succesfully installing the SVG Inline loader for webpack,using the command
 If you did that correctly, your webpack.config.js should look like this. 
 
 <a href="https://ibb.co/wz6DcMH"><img src="https://i.ibb.co/HHgmhnv/Screenshot-2021-09-12-at-15-28-00.png" alt="Screenshot-2021-09-12-at-15-28-00" border="0"></a>
+
+**Kindly note that in some other learning resources, you will have them make use of loader instead of use while trying to configure our SVG file in the rules array, but for consistency we will make use of use instead of loader. Also I have found out that in recent learning resources / docs they make use of use instead of loader.**
