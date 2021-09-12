@@ -68,7 +68,7 @@ As we proceed to importing external files using webpack loaders we will understa
 ## Making use of Webpack loaders to import various type of files. 
 
 ### Importing your CSS File
-The first thing we are going to do is to run the command below in out terminal
+The first thing we are going to do is to run the command below in our terminal
 
 ```
 npm install --save-dev css-loader
