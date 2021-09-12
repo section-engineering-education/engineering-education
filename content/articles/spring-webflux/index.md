@@ -342,22 +342,20 @@ Make a POST request to `http://localhost:8080/api/students` on postman, passing 
 }
 ```
 
-![Save a new student](/engineering-education/spring-webflux/)
-
 #### Getting all students
 Make a GET request to `http://localhost:8080/api/students` on Postman.
 
-![Get all students](/engineering-education/spring-webflux/get-all.png)
+![Get all students](/engineering-education/spring-webflux/get_all.png)
 
 #### Getting a student by id
 Make a GET request to `http://localhost:8080/api/students/id/2` on Postman. Number 2 at the end of the URL is the id of the student.
 
-![Get student by id](/engineering-education/spring-webflux/)
+![Get student by id](/engineering-education/spring-webflux/get_by_id.png)
 
 #### Getting student by name
 Make a GET request to `http://localhost:8080/api/students/name/Denis`on Postman. Denis is the name of the student whose details will be returned.
 
-![Getting student by name](/engineering-education/spring-webflux/)
+![Getting student by name](/engineering-education/spring-webflux/get_by_name.png)
 
 #### Updating student details
 Make a PUT request to `http://localhost:8080/api/students/2` on Postman, passing in the JSON payload below in the request body.
@@ -370,13 +368,13 @@ Make a PUT request to `http://localhost:8080/api/students/2` on Postman, passing
 }
 ```
 
-![Updating student details](/engineering-education/spring-webflux/)
+![Updating student details](/engineering-education/spring-webflux/update.png)
 
 #### Deleting a student
 Make a DELETE request to `http://localhost:8080/api/students/2` on postman.
 The number 2 at the end of the URL is the id of the student to be deleted.
 
-![Deleting student](/engineering-education/spring-webflux/)
+![Deleting student](/engineering-education/spring-webflux/delete.png)
 
 ### Conclusion
 With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot Webflux with any frontend client of your choice. You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
