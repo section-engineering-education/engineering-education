@@ -110,35 +110,20 @@ We are going to use [spring initializr](https://start.spring.io/) to generate ou
    ```
 
 ### Configuration layer
-1. Create a package named `config` in the project root package.
-2. Create a file named `ApplicationConfig.java` and add the code snippet below.
-    
-```java
-@Configuration // Marks the class as a configuration class
-public class ApplicationConfig {
-    // The method below sets the path to the application.properties file.
-    @Bean
-    public PropertyPlaceholderConfigurer placeholderConfigurer() {
-        PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
-        configurer.setLocation(new ClassPathResource("application.properties"));
-        configurer.setIgnoreUnresolvablePlaceholders(true);
-        return configurer;
-    }
-}
-```
- - The code snippet above sets the path to the `application.properties` file. This file contains the project configurations.
 
-3. Create a new file named `MongoConfig.java` in the `config` package we created earlier and add the code snippet below.
+1. Create a new file named `MongoConfig.java` in the `config` package we created earlier and add the code snippet below.
    
 ```java
 @Configuration
 @EnableMongoRepositories(basePackages = "io.section.webfluxexample.repositories")
 public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
 
-    @Value("${database.name}")// Gets the database name from application.properties
+    @Value("${database.name}")
     private String databaseName;
-    // MongoDB connection string. Replace <username> and <password> with your MongoDB username and password
-    private String name = "mongodb+srv://<username>:<password>@cluster0.mk0n7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+    @Value("${database.host}")
+    private String databaseHost;
+
 
     @Override
     protected String getDatabaseName() {
@@ -147,6 +132,7 @@ public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
 
     @Override
     public MongoClient reactiveMongoClient() {
+        String name = databaseHost;
         return MongoClients.create(name);
     }
 
@@ -171,6 +157,7 @@ public class WebFluxConfig implements WebFluxConfigurer {
 5. In the resources directory, add the code snippet below in the `applications.properties` file.
 ```yml
 database.name=myFirstDatabase # database name property
+database.host = mongodb+srv://<username>:<password>@cluster0.mk0n7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority #database connection string from mongo atlas
 ```
 
 ### Data layer
@@ -232,7 +219,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void createStudent(Student student) {
 
-        repository.save(student).subscribe();
+        repository.insert(student).subscribe();
     }
     // Finds a single student by id
     @Override
@@ -309,6 +296,87 @@ public class StudentController {
 }
 
 ```
+We need to populate the database with some dummy data whenever our application starts.
+In the application class, add the code snippet below.
+
+```java
+@SpringBootApplication
+public class WebFluxExampleApplication {
+    //This block of code executes everytime the application starts
+    @Bean
+    CommandLineRunner employees(StudentRepository studentRepository) {
+        return args -> studentRepository
+                .deleteAll() // deletes all the records in the database
+                .subscribe(null, null, () -> Stream.of(
+                                new Student(1, "Samuel", "Computer science"),
+                                new Student(2, "Dana", "Electrical engineering"),
+                                new Student(3, "Paul", "Pure and Applied mathematics"),
+                                new Student(4, "Denis", "Software engineering")
+                        )
+                        .forEach(student -> {
+                            studentRepository
+                                    .save(student) // saves all the new records in the database
+                                    .subscribe(System.out::println);
+
+                        }));
+
+    }
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebFluxExampleApplication.class, args);
+    }
+
+}
+
+```
+### Testing
+Let's run the application and test in postman.
+#### Adding a student
+Make a POST request to `http://localhost:8080/api/students` on postman, passing the JSON payload below in the request body.
+
+```json
+{
+    "name": "Job", //Student name
+    "course": "Software engineering" //student
+}
+```
+
+![Save a new student](/engineering-education/spring-webflux/)
+
+#### Getting all students
+Make a GET request to `http://localhost:8080/api/students` on Postman.
+
+![Get all students](/engineering-education/spring-webflux/get-all.png)
+
+#### Getting a student by id
+Make a GET request to `http://localhost:8080/api/students/id/2` on Postman. Number 2 at the end of the URL is the id of the student.
+
+![Get student by id](/engineering-education/spring-webflux/)
+
+#### Getting student by name
+Make a GET request to `http://localhost:8080/api/students/name/Denis`on Postman. Denis is the name of the student whose details will be returned.
+
+![Getting student by name](/engineering-education/spring-webflux/)
+
+#### Updating student details
+Make a PUT request to `http://localhost:8080/api/students/2` on Postman, passing in the JSON payload below in the request body.
+
+```json
+{
+    "id": 2,
+    "name": "Diana",
+    "course": "Electrical engineering"
+}
+```
+
+![Updating student details](/engineering-education/spring-webflux/)
+
+#### Deleting a student
+Make a DELETE request to `http://localhost:8080/api/students/2` on postman.
+The number 2 at the end of the URL is the id of the student to be deleted.
+
+![Deleting student](/engineering-education/spring-webflux/)
 
 ### Conclusion
 With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot Webflux with any frontend client of your choice. You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
