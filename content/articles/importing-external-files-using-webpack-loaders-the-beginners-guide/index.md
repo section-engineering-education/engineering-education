@@ -174,7 +174,7 @@ If you did everything correctly your webpack.config.js should now look like this
 
 One thing to note here is that you are importing four different files and those files will be bundled up into our bundle.js file but we also need to inject these files into our html file, and that is what we are going to be doing next, with the help of HTML webpack plugin. 
 
-To install, we run the command below in the terminal: 
+To install the HTML Webpack Plugin, we run the command below in the terminal: 
 
 ```
 npm install --save-dev html-webpack-plugin
@@ -192,3 +192,10 @@ Then we add the plugins after the output with the code below:
 ```
 <a href="https://ibb.co/6DRcBVZ"><img src="https://i.ibb.co/Yf74ZYW/Screenshot-2021-09-12-at-16-57-16.png" alt="Screenshot-2021-09-12-at-16-57-16" border="0"></a>
 If you did everything correctly, your webpack.config.js file should now be like this. 
+
+Finally, we are going to be installing the Webpack Development Server. 
+
+Run the code below in your terminal
+```
+npm install webpack-dev-server --save-dev
+```
