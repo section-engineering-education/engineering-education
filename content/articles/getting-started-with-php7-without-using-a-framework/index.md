@@ -3,20 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /getting-started-with-php7-without-using-a-framework/
-title: Getting Started with PHP 7+ Without using a Framework
+title: Getting Started with PHP 7+ without using a Framework
 description: This tutorial will guide readers on how to build a Blog API project with basic routing using third-party packages, as well as testing the application without utilizing any framework.
 author: lewel-murithi
-date: 2021-09-010T00:00:00-13:00
-topics: []
+date: 2021-09-13T00:00:00-10:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-php7-without-using-a-framework/hero.jpg
-    alt: Understanding Laravel 8 Collections
+    alt: Understanding PHP 7+
 ---
-Many developers use frameworks to develop and manage their PHP projects. However, the introduction of packages such as composer and new PHP standards allows developers to write and maintain their PHP code easily.
+Many developers use frameworks to develop and manage their PHP projects. However, the introduction of packages such as composer and new PHP standards allows developers to write and maintain their PHP code easier.
 <!--more-->
-Our main objective is to develop a small Blog API with a unique `id`, `title`, and `body`. The users of this Blog API will list, create, and view a new blog post. 
+The main objective for this article is to develop a small Blog API with a unique `id`, `title`, and `body`. The users of this Blog API will list, create, and view a new blog post. 
 
 We will use a JSON file to act as a database, and therefore all requests and responses will be in a JSON format.
 
@@ -33,12 +33,12 @@ We will use a JSON file to act as a database, and therefore all requests and res
 
 ### Prerequisites
 To follow along, you need:
-- The latest version of [PHP](https://www.php.net/downloads.php) installed
-- [PHP Composer](https://getcomposer.org/doc/00-intro.md) installed
-- Practical knowledge of [PHP classes](https://www.php.net/manual/en/language.oop5.php), [composer](https://getcomposer.org/doc/00-intro.md), and [MVC](https://www.javatpoint.com/php-mvc-architecture) pattern
+- The latest version of [PHP](https://www.php.net/downloads.php) installed.
+- [PHP Composer](https://getcomposer.org/doc/00-intro.md) installed.
+- Practical knowledge of [PHP classes](https://www.php.net/manual/en/language.oop5.php), [composer](https://getcomposer.org/doc/00-intro.md), and [MVC](https://www.javatpoint.com/php-mvc-architecture) pattern.
 
 ### Setting up composer
-First, we will create the `composer.json` file. It is essential in adding third-party packages and managing projects using the [autoload](https://getcomposer.org/doc/04-schema.md) feature. 
+First, we will create the `composer.json` file. It is essential, when adding third-party packages and managing projects to use the [autoload](https://getcomposer.org/doc/04-schema.md) feature. 
 
 We will create our project root directory, then run the command below in the terminal and fill in the required information or leave them as default:
 
@@ -46,11 +46,11 @@ We will create our project root directory, then run the command below in the ter
 $ composer init
 ```
 
-The above command will create a `composer.json` file in the root directory. Then we will create another folder named `Application` and include two other files called `index.php` and `app_config.php`. 
+The command above will create a `composer.json` file in the root directory. Then we will create another folder named `Application` and include two other files called `index.php` and `app_config.php`. 
 
 Our project folder structure will appear as below:
 
-![folder structure](/engineering-education/getting-started-with-php7-without-using-a-framework/folder-structure.png)
+![folder structure](/engineering-education/getting-started-with-php7-without-using-a-framework/folder-structure.PNG)
 
 Next, we will add our first package by executing the following command in the terminal:
 
@@ -58,7 +58,7 @@ Next, we will add our first package by executing the following command in the te
 $ composer require monolog/monolog:1.25.1
 ```
 
-The above command creates a `vendor` folder with the `monolog` package and a file named `autoload.php`. 
+The command above creates a `vendor` folder with the `monolog` package and a file named `autoload.php`. 
 
 The `autoload.php` file contains all the paths to the classes that we will add from third parties and our classes, a `monolog` package assists in generating log files.
 
@@ -91,18 +91,20 @@ The `autoload` entry registers all our classes. The [psr-4](https://www.php-fig.
 
 If we add classes to our application, we do not have to regenerate the autoloader.
 
-As of now, our application can work with `composer`. To verify this, we can execute the below command in the terminal:
+As of now, our application can work with `composer`. 
+
+To verify this, we can execute the command below in the terminal:
 
 ```bash
 $ php index.php
 ```
 
-If the above command returns no error, everything is working as expected.
+If the command above returns no error, everything is working as expected.
 
 ### Adding the first class
 We will deal with `config` files required across our project. Note that we will have two `config` files in our project.
 
-First, we will start with the `app_config.php` file located at the root directory. We will put the `API Key`, `Cache setting`, and other `settings` for our application in this file. 
+We will start with the `app_config.php` file located at the root directory. We will put the `API Key`, `Cache setting`, and other `settings` for our application in this file. 
 
 The other `config` file will be placed at `Application/Controller/App_config.php` to read the variables.
 
@@ -151,7 +153,7 @@ $LOG_PATH = App_config::get('LOG_PATH', '');
 echo "[LOG_PATH]: $LOG_PATH";
 ```
 
-We will then execute the below command:
+We will then execute the command below:
 
 ```bash
 $ php index.php
@@ -159,7 +161,7 @@ $ php index.php
 
 The above command displays the logs' path that is specified on `app_config.php`.
 
-We will add more classes into the `Application` folder, and because of autoloading feature, they will be accessible anywhere in the application.
+We will add more classes into the `Application` folder, and because of the autoloading feature, they will be accessible anywhere in the application.
 
 ### Adding logging
 Logging is essential in any application module since it ensures that everything is working as expected. 
@@ -264,7 +266,7 @@ One file will be showing the `requested content`, whereas the other will contain
 
 Developers can change the request to suit their needs and show or remove specific information.
 
-Finally, we can bootstrap our application by creating a new file named `App.php` in the location `Application/Controller`, as demonstrated below:
+We can then bootstrap our application by creating a new file named `App.php` in the location `Application/Controller`, as demonstrated below:
 
 ```php
 <?php namespace Application\Controller;
@@ -297,7 +299,7 @@ In our case, we will create three classes `Router.php`, `Request.php`, and `Resp
 
 The `Router.php` verifies the request method and matches the path using regex. If it matches, it runs a callback function we will specify using two parameters; `Request` and `Response`.
 
-The `Request.php` has methods that fetch the data sent in the request. For instance, the POST data like title and body.
+The `Request.php` has methods that fetches the data sent in the request. For instance, the POST data like title and body.
 
 The `Response.php` will have functions that output `JSON` with specific `HTTP status`.
 
@@ -473,7 +475,7 @@ We will implement three endpoints:
 - `POST /post` – assists in creating a new post.
 - `GET /post/{id}`-  shows specific post.
 
-First, we will create a `Posts` model and call it from our router. We will create the `Posts.php` file inside `Application/Model` directory and include the below code:
+We will create a `Posts` model and call it from our router. We will create the `Posts.php` file inside `Application/Model` directory and include the code below: 
 
 ```php
 <?php namespace Application\Model;
@@ -578,7 +580,7 @@ Router::get('/post/([0-9]*)', function (Request $request, Response $response) {
 App::run();
 ```
 
-In the above code snippet, we have added the `Posts::load()` function to load our database from the `db.json` file. 
+In the code snippet above, we have added the `Posts::load()` function to load our database from the `db.json` file. 
 
 We have used three routes: `GET /post` that lists the existing posts, `POST /post` creates new posts, and `GET /post([0-9]\*)` that fetches specific posts.
 
@@ -606,7 +608,7 @@ We can then list one post using the below command:
 $ curl -X GET http://localhost:8000/post/2
 ```
 
-And the output would be:
+And the output should be:
 
 ```json
 [{"id":2,"title":"The Post 2","body":"The Post Content"}]
@@ -618,7 +620,9 @@ We can also create a post using the below command:
 $ curl -i -X POST -H "Content-Type: application/json" -d "{\"title\":\"Hello World\",\"body\":\"My Content\"}" http://localhost:8000/post
 ```
 
-We can confirm that the application is working as expected. Next, we will add testing.
+We can confirm that the application is working as expected. \
+
+Next, we will go through some testing.
 
 ### Testing
 We can test the `Router.php` file with use cases and [psr-2](https://www.php-fig.org/psr/psr-2/) coding style standard. 
@@ -644,7 +648,7 @@ For white spaces errors, we use the following command to fix them automatically:
 $ composer ./vendor/bin/phpcbf — standard=psr2 Application/
 ```
 
-We can perform unit testing using [peridot](https://peridot-php.github.io/), which offers two plugins, [leo](http://peridot-php.github.io/leo/plugins.html) - which provides [expect](http://peridot-php.github.io/leo/expect.html) functionality, and [phony-peridot](https://github.com/eloquent/phony-peridot), which provides [stubs](https://eloquent-software.com/phony/latest/#stubs) vital for checking if a function was called.
+We can perform unit testing using [peridot](https://peridot-php.github.io/), which offers two plugins, [leo](http://peridot-php.github.io/leo/plugins.html) - that provides [expect](http://peridot-php.github.io/leo/expect.html) functionality, and [phony-peridot](https://github.com/eloquent/phony-peridot), which provides [stubs](https://eloquent-software.com/phony/latest/#stubs) vital for checking if a function was called.
 
 We will create the `Test/Router.spec.php` file and add the following code:
 
@@ -739,7 +743,7 @@ $ composer test
 
 The following output will be displayed:
 
-![app test](/engineering-education/getting-started-with-php7-without-using-a-framework/app-test.png)
+![app test](/engineering-education/getting-started-with-php7-without-using-a-framework/app-test.PNG)
 
 The error messages will be displayed in case of any issues. Otherwise, no error will be returned.
 
@@ -748,6 +752,7 @@ We have successfully implemented our Blog API project. A lot more can be added, 
 
 All the code snippets used in this guide can be accessed at this [GitHub Repo](https://github.com/lewe01/php7-blog-API).
 
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/content/authors/michael-barasa/)
