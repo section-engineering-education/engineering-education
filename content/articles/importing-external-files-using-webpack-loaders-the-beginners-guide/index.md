@@ -250,7 +250,12 @@ After running these two commands, we see that we now have some files that are au
 
 <img src="./images/webpack13.png" alt="webpack config file new look 8" border="0"></a>
 
-Remember that we added an Array of Even Numbers in our index.js file, but then we get our array also in our bundle.js file and then we have the bundle.js script is also inserted into our HTML Webpack plugin generated index.html file. This shows that our Webpack configuration is totally okay and now you can have a CSS file, an SVG file, an image file, or a modern JS file (Babel JS) and the webpack will take care of it. 
+Remember that we added an Array of Even Numbers in our index.js file, but then we get our array also in our bundle.js file and then we have the bundle.js script is also inserted into our HTML Webpack plugin generated index.html file. As shown in the images below: 
+
+<img src="./images/bundle.js file image.png" alt="bundle JS file new look" border="0"></a>
+
+
+This shows that our Webpack configuration is totally okay and now you can have a CSS file, an SVG file, an image file, or a modern JS file (Babel JS) and the webpack will take care of it. 
 
 **This tutorial is tailored for total beginners, who are just finding their way around trying to make use of Webpack, for further direction, kindly go through these links:** 
 1. [Installing Webpack](https://webpack.js.org/guides/getting-started/)
