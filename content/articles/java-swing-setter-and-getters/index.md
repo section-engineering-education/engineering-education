@@ -6,22 +6,23 @@ url: /java-swing-setter-and-getters/
 title: Java Swing Components Set and Get Methods
 description: This article will discuss setters and getters methods of Java Swing components used in desktop applications. Java Swing components have getters and setters methods used to get and set values, respectively.
 author: ayoma-joseph
-date: 2021-09-08T00:00:00-07:02
+date: 2021-09-13T00:00:00-12:02
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/java-swing-setter-and-getters/hero.jpg
+
+  - url: /engineering-education/java-swing-setter-and-getters/hero.png
     alt: Java Swing Components Set and Get Methods Hero Image
 ---
 Java Swing components have getters and setters methods used to get and set values, respectively. They are essential because they protect the user's data, mainly when creating classes.
 <!--more-->
-For either instance, Java Swings component variable; a getter method usually returns its value (component value) while a setter method sets (updates) its value. This makes getters accessors since they allow users to access the values of the Java swing components. 
+A getter method usually returns its value (component value) while a setter method sets (updates) its value. 
 
-At the same time, setters are mutators since they are used to control changes made to the Java Swing components variable. 
+This makes getters accessors since they allow users to access the values of the Java swing components. At the same time, setters are mutators since they are used to control changes made to the Java Swing components variable. 
 
-This article will discuss setters and getters methods of Java Swing components used in a desktop application. We will use an application example to show how these methods are used in developing and implementing a desktop application in Java Swing.
+This article will discuss the setters and getters methods of Java Swing components used in a desktop application. We will use an application example to show how these methods are used in developing and implementing a desktop application in Java Swing.
 
-### Table of Contents
+### Table of contents
 - [Java Swing Graphical User Interface](#java-swing-graphical-user-interface)
 - [JLabel](#jlabel)
 - [JTextField](#jtextfield)
@@ -34,10 +35,10 @@ This article will discuss setters and getters methods of Java Swing components u
 - [Java Development Kit](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html) installed.
 - Basic knowledge of Java Swing.
 
-### Java Swing Graphical User Interface
+### Java swing graphical user interface
 We define a class method in our project where we design the user interface. In this class, we add Java Swing components to our project. 
 
-We could use a drag and drop palette in NetBeans IDE as described in the article found [here](https://www.section.io/engineering-education/introduction-to-java-swing/) or hard code and declare the swing components.
+We could use a drag and drop palette in NetBeans IDE as described in the article found [here](/engineering-education/introduction-to-java-swing/) or hard code and declare the swing components.
 
 In this article, we will declare, hard code and add the components to our project. The method below creates our user interface.
 
@@ -80,7 +81,7 @@ In this article, we will declare, hard code and add the components to our projec
 ```
 
 ### JLabel
-We start by declaring our JLabel Components as below:
+We start by declaring our JLabel components as shown below:
 
 ```java
     JLabel Fname = new JLabel();
@@ -150,17 +151,20 @@ Displaying the values to a JTable
 ```
 
 ### JButton
-JButton swing component has a platform-independent implementation class method. When the button is pushed or clicked with a mouse it results in some action. The event fires an action which could be getting the values of other components and displaying them or storing them in a database. 
+The JButton swing component has a platform-independent implementation class method. When the button is pushed or clicked with a mouse it results in some action. 
+
+The event fires an action which could be getting the values of other components and displaying them or storing them in a database. 
 
 In this article, we will see the action event method of a JButton. It will display the values of the JTextField components to the JTable.
 
-JButton declaration
+#### JButton declaration
 
 ```java
  JButton submit = new JButton();
 ```
 
-JButton Setter method - This sets the text value displayed on the JButton variable.
+#### JButton Setter method 
+- This sets the text value displayed on the JButton variable.
 
 ```java
     	submit.setText("SUBMIT"); //this sets the text value displayed on the JButton as the text in braces
@@ -172,7 +176,8 @@ JButton getter method - This gets the value of the text set on the JButton.
   String submitButtonValue=submit.getText();
 ```
 
-JButton Action Event - The inner class method defines the action event for the JButton. On click, the swingGetter() method is called.
+#### JButton Action Event 
+- The inner class method defines the action event for the JButton. On click, the swingGetter() method is called.
 
 ```java
         submit.addActionListener(new ActionListener() {
@@ -183,7 +188,7 @@ JButton Action Event - The inner class method defines the action event for the J
         });//The action event for the JButton
 ```
 
-Below is the whole swingGetter() method called in the Jbutton action event
+Below is the whole swingGetter() method called in the Jbutton action event.
 
 ```java
  public void swingGetter() {
@@ -207,27 +212,30 @@ Below is the whole swingGetter() method called in the Jbutton action event
 ```
 
 ### Output
-When we run our project, first, the graphical user interface will be displayed. This is to allow the user to enter values into the text field as shown in the figure below:
+When we run our project, the graphical user interface will be displayed. This is to allow the user to enter values into the text field as shown in the figure below:
 
 ![GUI](/engineering-education/java-swing-setter-and-getters/guidesign.png)
 
-When the user clicks on the submit button after keying in the values in the text field, the values will be displayed in the table. The text field is set to empty for subsequent entry as shown in figure 2 below:
+When the user clicks on the submit button after keying in the values in the text field, the values will be displayed in the table. 
+
+The text field is set to empty for subsequent entry as shown in figure 2 below:
 
 ![output](/engineering-education/java-swing-setter-and-getters/output.png)
 
 ### Conclusion
 From this article, we have learned the following:
 
-1. Java swing components declaration and user interface design
+1. Java swing components declaration and user interface design.
 2. Setter and getter methods for:
    i. JLabel
    ii. JTextField
    iii. JButton
-
-3. JButton action event
-4. Displaying values to a JTable from JTextField using the getter method
+3. JButton action event.
+4. How to display values to a JTable from JTextField using the getter method.
 
 The code snippets used in this guide can be accessed at my [GitHub Repo](https://github.com/JosephAyoma/javaswing-Setters-and-Getters).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
