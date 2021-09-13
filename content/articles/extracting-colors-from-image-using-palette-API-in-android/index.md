@@ -33,7 +33,9 @@ By the end of this tutorial, the reader should:
 - Know how to extract colors from an image using the Palette API.
 
 ### What is Palette?
-Palette is a support library in Android. The Palette library extracts prominent colors from Bitmap images. We can use it in styling View components in the app. The Views matches the prominent color from the image. For instance, the toolbar, background, or even text color.
+Palette is a support library in Android. It extracts prominent colors from Bitmap images. We can use it in styling view components in the app. 
+
+The views matche the prominent color from the image. For instance, the toolbar, background, or even text color.
 
 ### Advantages of Using Palette API
 - It provides a helper class to extract prominent colors from an image.
@@ -53,11 +55,9 @@ implementation("com.android.support:palette-v7:28.0.0")
 ```
 
 ### Step 3: Set up the layout for our project
-
 In this step, we will design the UI. This will contain a `ToolBar`, an `ImageView`, a `Button`, and `TextViews`.
 
 #### ActivityMain.xml file
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -186,12 +186,13 @@ In this step, we will design the UI. This will contain a `ToolBar`, an `ImageVie
 ```
 
 ### Step 4: Create a Palette object
-
-A palette object allows us to access the prominent colors in an image bitmap. We use palettes to style our application. This is achieved by changing the application's color scheme based on the image bitmap.
+A palette object allows us to access the prominent colors in an image bitmap. We use palettes to style our application by changing the application's color scheme based on the image bitmap.
 
 To create a palette, we generate an instance using `from(bitmap: Bitmap)` method. This creates a `Builder` from a bitmap. 
 
-The builder either generates synchronous or asynchronous palettes. To create a palette on the same thread as the method we are invoking, we use synchronous palette while to create a palette on another thread, we use asynchronous palette. `onGenerated()` method is used to access the palette.
+The builder either generates synchronous or asynchronous palettes. To create a palette on the same thread as the method we are invoking, we use synchronous palette .To create a palette on another thread, we use asynchronous palette. 
+
+The`onGenerated()` method is used to access the palette.
  
 To create a synchronous palette, we use:
 
@@ -214,7 +215,6 @@ fun createPaletteAsync(bitmap: Bitmap) {
 To generate a palette, I would suggest using asynchronous technique. Synchronous generation may not create a smooth experience. This is evident on older devices or when the Bitmap object is relatively large.
 
 ### Step 5: Extracting color profiles
-
 A `Target` defines each color extracted. We score the colors against the profile. This is done based on the saturation and the number of pixels in the bitmap image.
 
 The palette extracts the following **six color profiles** using the respective methods:
@@ -228,13 +228,13 @@ The palette extracts the following **six color profiles** using the respective m
 We are going to use swatches to get colors from the bitmap image. We use `Palette.Swatch` object to get each color profile. The palette has other methods for accessing more information about the color profiles.
 
 They include:
-- `getPopulation()` -gets the amount of pixels represented by this swatch.
-- `getRgb()` -gets the color RGB value.
-- `getBodyTextColor()` and  `getTitleTextColor()` -gets text color RGB value for use over the swatch’s color.
+- `getPopulation` gets the amount of pixels represented by this swatch.
+- `getRgb` gets the color RGB value.
+- `getBodyTextColor` and `getTitleTextColor` get text color RGB value for use over the swatch’s color.
 
-The `get<Profile>Swatch()` methods usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null or not to prevent your app from crashing.
+The `get<Profile>Swatch` method usually needs no parameter. But, it may return null if a particular profile is not present in the bitmap image. Before accessing a swatch, first, check if it is null or not to prevent your app from crashing.
 
-The following code checks if the swatch is present in the image bitmap. If it is not, the default background color is set to Gray.
+The following code checks if the swatch is present in the image bitmap. Otherwise, the default background color is set to Gray.
 
 ```kotlin
 if(palette?.lightMutedSwatch != null){
@@ -248,7 +248,6 @@ else{
 Here is the main activity's code:
 
 #### ActivityMain.kt file
-
 ```kotlin
 // Press Alt + Enter to import the libraries
 
@@ -308,7 +307,6 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Demo Screens
-
 Upon running the app, this is what to expect:
 
 ![Screen one](/engineering-education/extracting-colors-from-image-using-palette-api-in-android/screen_one.png)
@@ -316,8 +314,9 @@ Upon running the app, this is what to expect:
 ![Screen two](/engineering-education/extracting-colors-from-image-using-palette-api-in-android/screen_two.png)
 
 ### Conclusion
+The Palette library is a powerful tool that we can use to make elegant UI designs in Android apps. It opens doors to infinite possibilities when it comes to the set up of colors and themes. 
 
-The Palette library is a powerful tool that we can use to make elegant UI designs in Android apps. It opens doors to infinite possibilities when it comes to the set up of colors and themes. Use this tool to materialize your application as you continue exploring and learning.
+Use this tool to materialize your application as you continue exploring and learning.
 
 Check out the entire project on [this GitHub repository](https://github.com/robert-muriithi/PaletteApiDemo).
 
