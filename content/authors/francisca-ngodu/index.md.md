@@ -1,5 +1,5 @@
 ---
-title: Francisca Ngondo
+title: Francisca Ngondu
 type: authors
 github: https://github.com/FranciscaNg
 ---
