@@ -109,7 +109,7 @@ Executes three operations, including:
 
 ### JVM Memory 
 
-The `Runtime Data Area` is another name for the memory area. In total, it's broken down into five sub-areas.
+The `Runtime Data Area` is another name for the memory area. As defined by the JVM specification, some run-time data regions are required throughout the execution of the program. A few of these are created when the JVM is booting up. Another type of object is a thread-specific object, formed just when a thread is created and destroyed when the thread is destroyed. It's used to keep track of instructions, usually. In total, it's broken down into five sub-areas.
 
 1. **Method area**: Class information such as the class name, parent class name, and methods are also preserved in the method area.
 2. **Heap area**: In the heap area, all objects' information is saved. There is also a Heap Area for each Java Virtual Machine. It's also a resource that's shared.
