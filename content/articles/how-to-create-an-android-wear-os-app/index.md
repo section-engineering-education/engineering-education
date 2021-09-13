@@ -278,7 +278,7 @@ Set the drawer in the `MainActivity`.
 
 ```kotlin
 navigation_drawer.apply{
-    setAdapter(MainDrawerAdapter(this))
+    setAdapter(DrawerAdapter(this))
     controller.peekDrawer()
     addOnItemSelectedListener { pos ->
     // switch the page
