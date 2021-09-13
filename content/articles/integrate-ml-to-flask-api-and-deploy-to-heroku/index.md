@@ -1,4 +1,21 @@
-It is not enough to build and train ML models. Your ML model is useless if it just sits in your PC after training. Would it not be great to show others what your machine learning model can do after training it? This article covers how to integrate a ML model into a Flask REST API. It also covers how to deploy a Flask REST API to Heroku. You can merge this REST API into web applications and android applications. The repo for this project is [here.](https://github.com/Inyrkz/diagnose-diabetes-svm)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /concept-of-first-hop-redundancy-protocol/
+title: Concept of First Hop Redundancy Protocol
+description: In this article we will discuss the process of integrating an ML model into a Flask REST API. We will deploy the model to Heroku.
+author: 
+date: 2021-06-10T00:00:00-18:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/concept-of-first-hop-redundancy-protocol/hero.jpg
+   alt: First Hop Redundancy Protocol example image
+---
+
+It is not enough to build and train ML models. Your ML model is useless if it just sits in your PC after training. Would it not be great to show others what your machine learning model can do after training it? This article covers how to integrate an ML model into a Flask REST API. It also covers how to deploy a Flask REST API to Heroku. You can merge this REST API into web applications and android applications. The repo for this project is [here.](https://github.com/Inyrkz/diagnose-diabetes-svm)
 
 ### Prerequisites
 -	Building [ML model](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/) guide,
@@ -9,12 +26,13 @@ It is not enough to build and train ML models. Your ML model is useless if it ju
 -	[Pickling ML model](#pickling-ml-model)
 -	[Integrating ML model to a Flask-RESTful API](#integrating-ml-model-to-a-flask-restful-api)
 -	[Deploying to Heroku](#deploying-to-heroku)
--   [Conclusion](#conclusion)
+- [Conclusion](#conclusion)
 
-### Pickling ML Model
-To build the Machine Learning model for this project, use this [guide](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/). After training the model, we have to save it to a file. Serialization comes to play here. Serialization is the process of turning a Python object into a byte stream. The conventional method of serializing objects in Python is by using `pickle`. With `pickle`, we can serialize our machine learning model. We then save the serialized format to a file. It relieves us the stress of retraining our machine learning model each time we want to use it. We can load the saved file and de-serialize it. Then, we use it to make new predictions.
+### Pickling ML model
 
-Add the code below to a new cell in your Jupyter Notebook. It pickles the machine learning model and training set. You maybe wondering why we are pickling the training set. In this [guide](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/), we feature scaled our test set with the mean and standard deviation of each feature in the training set. We need to use those same values to scale the new record before making predictions.
+To build the Machine Learning model for this project, use this [guide](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/). After training the model, we have to save it to a file. Serialization comes to play here. Serialization is the process of turning a Python object into a byte stream. The conventional method of serializing objects in Python is by using `pickle`. With `pickle`, we can serialize our machine learning model. We then save the serialized format to a file. It relieves us the stress of retraining our machine learning model each time we want to use it. Then, we can load the saved file and de-serialize it. Then, we use it to make new predictions.
+
+Add the code below to a new cell in your Jupyter Notebook. It pickles the machine learning model and training set. You may be wondering why we are pickling the training set. In this [guide](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/), we feature scaled our test set with the mean and standard deviation of each feature in the training set. We need to use those same values to scale the new record before making predictions.
 
 ```python
 # pickle the training set
@@ -29,8 +47,9 @@ Running the code above creates two new files in your current directory: `X_train
 
 
 ### Integrating ML model to a Flask-RESTful API
-Using a text editor (VS Code), create a new file and rename it to `api.py`. 
-We create a virtual environment to isolate the libraries we will be using for this project. The virtual environment will not change the modules installed on our system. It will create a unique environment where we can install only the libraries we need for our project. It helps us avoid conflict between the libraries installed in our system and the libraries we will be using for our project. First, we install `virtualenv`. We use `virtualenv` to build separate Python environments.
+
+Using a text editor (VS Code), create a new file and rename it to `api.py.` 
+We create a virtual environment to isolate the libraries we will be using for this project. The virtual environment will not change the modules installed on our system. Instead, it will create a unique environment where we can install only the libraries we need for our project. Thus, it helps us avoid conflict between the libraries installed in our system and the libraries we will be using for our project. First, we install `virtualenv`. Then, we use `virtualenv` to build separate Python environments.
 
 ```bash
 pip install virtualenv
@@ -48,7 +67,7 @@ To activate the virtual environment on Windows, run the command below.
 venv\Scripts\activate.bat 
 ```
 
-Once we activate the virtual environment, we install all the libraries we need to run our API. The `pickle` module comes by default with python. So we do not need to install it. We install the version of the scikit-learn library we used to build the ML model in our Jupyter Notebook. To check for the version, run the code below in your notebook.
+Once we activate the virtual environment, we install all the libraries we need to run our API. The `pickle` module comes by default with python. So we do not need to install it. Next, we installed the version of the scikit-learn library we used to build the ML model in our Jupyter Notebook. To check for the version, run the code below in your notebook.
 
 ```python
 import sklearn
@@ -84,7 +103,7 @@ app = Flask(__name__)
 api = Api(app)
 ```
 
-The Flask-RESTful library in Flask enables us to build REST APIs with ease. It strictly follows the REST API standard. Let us load our pickled model and training set.
+The Flask-RESTful library in Flask enables us to build REST APIs with ease. It strictly follows the REST API standard. First, let us load our pickled model and training set.
 
 ```python
 # load the pickled model and X_train
@@ -119,7 +138,7 @@ class Records(Resource):
                 }, 200
 ```
 
-We create a GET request which will return the format our JSON data should be in when sending a POST request. The status code is 200. It means the request was successful. We create a POST request which will get the patient’s record and return the model prediction.
+We create a GET request which will return the format our JSON data should be in when sending a POST request. The status code is 200. It means the request was successful. Next, we create a POST request to get the patient’s record and return the model prediction.
 
 ```python
     def post(self):
@@ -177,21 +196,24 @@ We test the local API with Postman to make sure it works before deploying it.
 
 ![GET request to local server](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/get_request_local.PNG)
 
-After sending a GET request, we get a response showing the JSON format we should send in a POST request. Now we send a POST request with JSON data in the same format shown above. 
+After sending a GET request, we get a response showing the JSON format we should send in a POST request. So now we send a POST request with JSON data in the same format shown above. 
 
 ![POST request to local server](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/post_request_to_local_api.PNG)
 
 After sending the POST request, we get the model prediction as a response. Let us see what happens if the client sends the wrong JSON data to the API.
 
-![POST request with wrong format to local server](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/post_wrong_request_to_local_server.PNG)
+![POST request with the wrong format to local server](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/post_wrong_request_to_local_server.PNG)
 
-If we send the wrong JSON data to the API, we get an error message with the 500 status code. The client will also receive the correct JSON data format. Since our API is working fine, we can proceed to deploy it.
+If we send the wrong JSON data to the API, we get an error message with the 500 status code. However, the client will also receive the correct JSON data format. Since our API is working fine, we can proceed to deploy it.
 
 
 ### Deploying to Heroku
-The next step is to deploy our API so other developers can have access to it. We will deploy the API to Heroku. Heroku is a cloud platform that allows developers to build, run, and deploy their apps. If you do not have a Heroku account, you will have to create one by clicking [here](https://signup.heroku.com/).
 
-We need to install Git and Heroku CLI (Command Line Interface) on our PC. Heroku uses git to manage the deployment of apps. Click [here](https://git-scm.com/downloads) to download and install git. Use the link [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) to download and install Heroku CLI. With Heroku CLI, we can use our terminal to deploy. The Heroku CLI allows us to access Heroku from our terminal. With it, we can create and manage applications on Heroku with ease. To access Heroku CLI, we log in to Heroku from our terminal. 
+The next step is to deploy our API so other developers can have access to it. Next, we will deploy the API to Heroku. Heroku is a cloud platform that allows developers to build, run, and deploy their apps. If you do not have a Heroku account, you will have to create one by clicking [here](https://signup.heroku.com/).
+
+We need to install Git and Heroku CLI (Command Line Interface) on our PC. Heroku uses git to manage the deployment of apps. Click [here](https://git-scm.com/downloads) to download and install git. Use the link [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) to download and install Heroku CLI. 
+
+With Heroku CLI, we can use our terminal to deploy. The Heroku CLI allows us to access Heroku from our terminal. With it, we can create and manage applications on Heroku with ease. To access Heroku CLI, we log in to Heroku from our terminal. 
 
 ```bash
 heroku login
@@ -209,18 +231,20 @@ After successfully logging in, we can proceed. We can initialize a git repo in o
 git init
 ```
 
-There are two files we need to add to our project directory: `Procfile` and `requirements.txt`. The `Procfile` tells Heroku what to do with the code you want to push to their server. The `requirements.txt` contains all the dependencies we need to install to run our API on Heroku. We will be running the API using `Gunicorn`. We need to install it. `Gunicorn` is a web server that is more powerful than the built-in server that flask gives you. The built-in server in flask can only handle one user at a time. But `Gunicorn` can deal with many users at once.
+We need to add two files to our project directory: `Procfile` and `requirements.txt`. The `Procfile` tells Heroku what to do with the code you want to push to their server. The `requirements.txt` contains all the dependencies we need to install to run our API on Heroku. We will be running the API using `Gunicorn`. First, we need to install it. 
+
+`Gunicorn` is a web server that is more powerful than the built-in server that flask gives you. The built-in server in the flask can only handle one user at a time. But `Gunicorn` can deal with many users at once.
 
 ```bash
 pip install gunicorn
 ```
 
-Create a new file `Procfile`, and add the code below in the file. 
+Create a new file, `Procfile`, and add the code below in the file. 
 
 ```
 web: gunicorn api: app
 ```
-Here, the `Procfile` tells Heroku that we want to run a web API using gunicorn. The api in the code above represents the name of our python script. We want to run the app inside the `api.py` script.
+Here, the `Procfile` tells Heroku that we want to run a web API using gunicorn. The api in the code above represents the name of our python script. So, we want to run the app inside the `api.py` script.
 
 For the `requirements.txt` file, run the command below in your terminal. 
 
@@ -262,14 +286,14 @@ Before we push our API to Heroku, we need to remove the last line of code in the
 # app.run(port=5000, debug=True)
 ```
 
-Create one more file `.gitignore`. Add the name of the virtual environment venv to the file. We want git to ignore the virtual environment. Now we can commit our code and push it to Heroku.
+Create one more file, `.gitignore`. Add the name of the virtual environment venv to the file. We want git to ignore the virtual environment. Now we can commit our code and push it to Heroku.
 
 ```bash
 git add .
 git commit -m "comment last line of code"
 ```
 
-The heroku create command creates a new empty app on the Heroku server. It gives us the URL for the app and the associated Heroku Git Repository.
+The Heroku create command creates a new empty app on the Heroku server. It gives us the URL for the app and the associated Heroku Git Repository.
 
 ```bash
 heroku create <app-name>
@@ -287,7 +311,7 @@ We push our API to Heroku.
 git push heroku main
 ```
 
-It will take a while to deploy your API to Heroku. Here is what you may see on your screen.
+It will take a while to deploy your API to Heroku. However, here is what you may see on your screen.
 
 ![Deploying to Heroku](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/push_to_heroku.PNG)
  
@@ -301,8 +325,12 @@ The GET request works.
  
 The POST request also returns the correct response. If the client sends incorrect JSON data, the API returns the correct JSON format as a response.
 
-![POST request with wrong format to Deployed API](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/post_wrong_request_to_deployed_api.PNG)
+![POST request with the wrong format to Deployed API](/engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/post_wrong_request_to_deployed_api.PNG)
 
 
-### CONCLUSION
-In this guide, we learned how to save a machine learning model to a file. We integrated the ML model into a Flask-REST API and deployed it to Heroku using Heroku CLI. Besides using Heroku CLI, you can also deploy your API to Heroku from GitHub. Other software developers can now use the API you deployed in their apps, whether it is a web app or an Android app. You can also integrate your machine learning model into a web application. This [article](https://www.section.io/engineering-education/deploying-machine-learning-models-using-flask/) will help you with that.
+### Conclusion
+
+In this guide, we learned how to save a machine learning model to a file. Then, we integrated the ML model into a Flask-REST API and deployed it to Heroku using Heroku CLI. Besides using Heroku CLI, you can also deploy your API to Heroku from GitHub. Other software developers can now use the API you deployed in their apps, whether a web app or an Android app. You can also integrate your machine learning model into a web application. This [article](https://www.section.io/engineering-education/deploying-machine-learning-models-using-flask/) will help you with that.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
