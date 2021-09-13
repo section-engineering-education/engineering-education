@@ -1,6 +1,6 @@
 ### Indexers in c#
 ### Introduction
-The concept of indexers is analogous to that of properties. Indexers and properties are quite similar in terms of linguistic qualities. Indexers make it possible to have indexed properties, which are properties that are referred to by one or more arguments. Those arguments are used to create an index into a set of values. Indexers are most commonly used in types that have the primary goal of encapsulating an internal collection or array.
+The concept of indexers is analogous to that of properties. Indexers properties are quite similar in terms of linguistic qualities. Indexers make it possible to have indexed properties, which are properties that are referred by one or more arguments. Those arguments are used to create an index into a set of values. Indexers are most commonly used in types that have the primary goal of encapsulating an internal collection or an array.
 
 Smart arrays are the most common name for C# indexers. To access a member variable of a class or structure in C#, you can use an array indexer as well. This keyword is used in C# to create indexers. In C#, indexers can be used on both classes and structs.
 ### Indexer Syntax in C#
