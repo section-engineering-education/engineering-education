@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /drug-labels-extraction-using-deep-learning/
 title: Drug Label Extraction Using Deep Learning
-description: In this tutorial, we will use OCR to help extract drug labels from prescription medicine.
+description: This tutorial will show the reader how to extract drug labels from prescription medicine using OCR.
 author: wilkister-mumbi
-date: 2021-09-04T00:00:00-18:30
+date: 2021-09-13T00:00:00-18:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,17 @@ images:
   - url: /engineering-education/drug-labels-extraction-using-deep-learning/hero.png
     alt: Drug Label Image
 ---
-Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
+Optical Character Recognition (OCR) is a technology that can be used to extract readable text into a machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
 <!--more-->
 Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare thereby improving people's lives. Machine learning has been used in hospitals to identify patients faster, in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis.
-One notable area of concern in healthcare that hasn't been explored a lot is in drug labels extraction. Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services such as Adobe provide this feature on their app.  
-This technology is what our tutorial will be based on. We'll use OCR to enable us automatically extract drug labels/text from prescription medicine. We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). This is a model that was originally built by the engineers at [Baidu](https://www.baidu.com/). 
+
+One notable area of concern in healthcare that hasn't been explored a lot is in drug labels extraction. Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. 
+
+The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services such as Adobe provide this feature on their app.  
+
+This technology is what our tutorial will be based on. We'll use OCR to enable us automatically extract drug labels/text from prescription medicine. 
+
+We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). This is a model that was originally built by the engineers at [Baidu](https://www.baidu.com/). 
 
 ### Prerequisites
 To understand this tutorial, you need:
@@ -39,7 +45,9 @@ To go through with our drug label extraction, we need to perform three key thing
 - Visualize the results.
 
 ### Installing PaddleOCR for Python
-First, what we need to do is to open either your colab or notebook and install the dependencies. The dependency we want to install is the PaddleOCR. Please head on to Paddle OCR's Github [page](https://github.com/PaddlePaddle/PaddleOCR). On the `Tutorial` section down below on the page, go to the `installation` link and click on it. On this page, you will be provided with a quick installation guide for the PaddleOCR.
+First, what we need to do is to open either your colab or notebook and install the dependencies. The dependency we want to install is the PaddleOCR. Please head on to Paddle OCR's Github [page](https://github.com/PaddlePaddle/PaddleOCR). 
+
+On the `Tutorial` section down below on the page, go to the `installation` link and click on it. On this page, you will be provided with a quick installation guide for the PaddleOCR.
 
 There are two parts to the installation process. First, you have to install `paddlepaddle` which is the underlying framework behind the PaddleOCR model. Secondly, we'll go ahead and install the `paddleOCR`.
 
