@@ -1,12 +1,12 @@
 ### Adding custom methods for LINQ queries (C#) 
 ### Introduction
-By introducing extension methods to the IEnumerableT> interface, you may expand the set of methods available for LINQ queries. Any data sequence can be converted into one single value by creating your custom aggregate method in SQL Server. 
+By introducing extension methods to the IEnumerableT> interface, you may expand the set of methods available for LINQ queries. You can convert any data sequence into one value by creating your custom aggregate method in SQL Server. 
 
 You can also build a method that returns a new series of values and acts as a custom filter or a specialized data transform for a sequence of variables. 
 
 A few examples include the Distinct and Skip techniques, as well as the Reverse.
 
-You may apply your methods to any enumerable collection when you extend the IEnumerableT> interface. In this article, we shall deeply take a look at various custom methods that are used in LINQ queries in C#.
+You may apply your methods to any enumerable collection when you extend the IEnumerableT> interface. In this article, we shall look at various custom methods used in LINQ queries in C#.
 ### Adding an aggregate method
 When a set of values is aggregated, a single value can be generated. Average, Min, and Max are just a few of the aggregate techniques available in LINQ. By introducing an extension method to the IEnumerableT> interface, you can design your aggregate method.
 
@@ -56,7 +56,7 @@ Console.WriteLine("double: Median = " + query1);
 */
 ```
 ### An aggregate method is overloaded by accepting a variety of types.
-To accept sequences of different types, you can overload your aggregate method. Overloading each type is the typical technique. It's also possible to use a delegate to build an overload for a generic type. Combining both approaches is also an option.
+To accept sequences of different types, you can overload your aggregate method. Overloading each type is the typical technique. However, it's also possible to use a delegate to build an overload for a generic type. Combining both approaches is also an option.
 ### To build a type overload
 A separate overload for each kind you want to support can be created. Here's an int-type overload of the Median method, which you can see in the following code example.
 ```c#
