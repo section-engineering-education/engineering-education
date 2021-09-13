@@ -6,7 +6,7 @@ url: /getting-started-with-visual-basic-net/
 title: Getting Started with Visual Basic.NET
 description: In this article we will discuss VB.NET which is a multi-paradigm, object oriented programming language. It is used to create web applications with modern features like performance counters, file systems, and event logs.
 author: felix-vaati
-date: 2021-09-06T00:00:00-18:00
+date: 2021-09-13T00:00:00-00:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
