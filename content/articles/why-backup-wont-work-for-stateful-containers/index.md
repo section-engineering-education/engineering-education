@@ -36,14 +36,14 @@ A temporal writable layer is usually created on top of the previous disk image w
 - Basic knowledge of [containers](https://www.cio.com/article/2924995/what-are-containers-and-why-do-you-need-them.html)
 
 ### Where containers stores state
-As mentioned earlier, containers can never save the state inside the container image. In alternative, they store the state in persistent external storage like [blocks](https://www.ibm.com/cloud/learn/block-storage), [objects](https://www.netapp.com/data-storage/storagegrid/what-is-object-storage/), or [file](https://www.ibm.com/cloud/learn/file-storage) storage services and systems.
+As mentioned earlier, containers can never save the state inside the container image. Alternatively, they store the state in persistent external storage like [blocks](https://www.ibm.com/cloud/learn/block-storage), [objects](https://www.netapp.com/data-storage/storagegrid/what-is-object-storage/), or [file](https://www.ibm.com/cloud/learn/file-storage) storage services and systems.
 
 In most cases, enterprises use a [storage array](https://www.dnsstuff.com/storage-array) integrated into the Kubernetes environment using [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) (PVCs).
 
 ### Backing up and restoring a Docker container
-Docker assists the developers in automating the development and deployment process of an application. Developers are also able to build a packaged environment that runs an application, making applications more portable and lightweight. It also assists in maintaining applications’ versions. The applications that run on Docker are platform-independent.
+Docker assists the developers in automating the development and deployment process of an application. Developers can also build a packaged environment that runs an application, making applications more portable and lightweight. It also assists in maintaining applications’ versions. The applications that run on Docker are platform-independent.
 
-We will assume we have a container executing in a local environment. We can take a snapshot or backup of the said container so as we can undo any changes or even run a container in the previous timestamp in case of an unforeseen disaster.
+We will assume we have a container executing in a local environment. We can take a snapshot or backup of the said container to undo any changes or even run a container in the previous timestamp in case of an unforeseen disaster.
 
 This section will cover how we can backup and restore Docker containers using inbuilt Docker commands.
 
@@ -138,7 +138,7 @@ In addition, performing container backup at the storage layer means the organiza
 
 Also, containers are not perfect for backing up data either, for below two reasons:
 - Containers are highly scalable, with numerous instances, each performing a tiny part of the same task. It means that there is no single container that can be the master in an application. Many containers may access similar persistent data each time, unlike virtual machines (VMs), where only one VM accesses similar data.
-- Containers are temporal and cannot be up each time backups need to be taken, which is different from VMS, which mostly kept running the VM machine software such as VMware HA smoothly. Any single container does not determine container application availability and resilience.
+- Containers are temporal and cannot be up each time backups need to be taken, which is different from VMS, which mostly keeps running the VM machine software such as VMware HA smoothly. Any single container does not determine container application availability and resilience.
 
 The differences in architectures that come with containers demonstrate why backup solutions may not work for containers. A different approach to performing continuous backups of stateful application data is needed.
 
@@ -152,8 +152,11 @@ It can also be integrated with clusters, making persistent data replication used
 The organization should ensure they go for a solution that stores stateful data and captures the Kubernetes state for each application. It will ensure that data protection for components like [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/) and services. These components can rebuild the application when performing data recovery on the same or another cluster.
 
 ### Conclusion
-For many users and developers, backing up a container is foreign to them. Most argue containers are stateless, and they cannot store data; thus, it does not warrant backup and recovery operations. The container infrastructure offers high availability while Kubernetes runs in a cluster. Containers are started and stopped as needed. Most users cannot differentiate between the containers’ high availability with the ability to recover from a disaster.
+For many users and developers, backing up a container is foreign to them. Most argue that containers are stateless and cannot store data; thus, it does not warrant backup and recovery operations. The container infrastructure offers high availability while Kubernetes runs in a cluster. Containers are started and stopped as needed. Most users cannot differentiate between the containers' high availability to recover from a disaster.
 
 However, if anything happens, the entire cluster and container nodes with associated persistent data are destroyed or lost. It would mean that Kubernetes, Docker, and associated applications may need to back up. The reasons backup might be needed for disaster recovery, migration purposes, and moving from development/test environment to production in case of upgrades.
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
