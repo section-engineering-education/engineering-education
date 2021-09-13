@@ -4,7 +4,7 @@
 
 ### Introduction
 
-In mathematics, equations in the form Ax=b in mathematics are linear algebra equations. In such equations, A is a matrix while x and b are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
+In mathematics, equations in the form Ax=b in mathematics are linear algebra equations. In such equations, `A` is a matrix while `x` and `b` are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
 
 Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
 
@@ -29,7 +29,7 @@ Defining the matrix is by dimensions m x n, where m is the number of rows while 
 - 
 > ![lineq](/engineering-education/solving-linear-equation-using-matlab/linear_six.png)
   
-Where `A_ij` are the elements of the MxN matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the Mx1 row vector. For example, given a simultaneous equation shown below;
+Where `A_ij` are the elements of the MxN matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the `Mx1` row vector. For example, given a simultaneous equation shown below;
 
 ![sample simultaneous equation](/engineering-education/solving-linear-equation-using-matlab/linear_seven.png)
 
@@ -39,26 +39,26 @@ The simplification of this equation is;
 
 For you to solve these simultaneous equations using the matrix method, `m` of the second matrix must equalize `n` of the first matrix after the simplification done above. It is because solving simultaneous equations using Matlab involves the multiplication of the matrix.
 
-These equations are simultaneous because one set of `x_i` must satisfy all the equations of M. Assume that you have the value of A and x to find b, then the equation is easy to solve. You apply the matrix multiplication method. The big problem is finding `x` given `A` and `b`; focusing on such problems, we will see how to handle them.
+These equations are simultaneous because one set of `x_i` must satisfy all the equations of `M`. Assume that you have the value of `A` and `x` to find `b`, then the equation is easy to solve. You apply the matrix multiplication method. The big problem is finding `x` given `A` and `b`; focusing on such problems, we will see how to handle them.
 
 ### Matlab's solution
 
 The basic operations that you use to solve these equations in Matlab depend on the variable provided. When;
-- A and x are provided, the solution is b = A*x. The `n` of `A` must equal `m` of ` x` for this operation to work.
+- `A` and `x` are provided, the solution is `b = A*x`. The `n` of `A` must equal `m` of ` x` for this operation to work.
 
-- A and b is provided, the solution is A/b. Here, `m` of `A`  must equal to `m` of b.
+- `A` and `b` is provided, the solution is `A/b`. Here, `m` of `A`  must equal to `m` of `b`.
 Example
 
 ![simultaneous equation](/engineering-education/solving-linear-equation-using-matlab/linear_nine.png)
 
-Below is the first matrix, A.
+Below is the first matrix, `A`.
 ![first matrix](/engineering-education/solving-linear-equation-using-matlab/linear_ten.png)
 
-Below is the second matrix b.
+Below is the second matrix `b`.
 
 ![second matrix](/engineering-education/solving-linear-equation-using-matlab/linear_eleven.png)
 
-Now that you have A and b, then we are supposed to find x. When you have A and b, we use x =A\b. So to get this done, execute the following command in the command window.
+Now that you have `A` and `b`, then we are supposed to find `x`. When you have `A` and `b`, we use `x =A\b`. So to get this done, execute the following command in the command window.
 
 ```Matlab
 A = [4 5; 3 -2];
@@ -85,7 +85,7 @@ The problem we solved before had two unknowns, `x` and `y`, and since there were
 
 ### Inconsistent equations
 
-Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In these types of equations, the left sides are equal, but right sides are not e.g
+Inconsistent equations are equations in which `m=n`(number of rows equals the number of columns), but the solution does not exist. In these types of equations, the left sides are equal, but right sides are not e.g
 
 ![inconsistent equation](/engineering-education/solving-linear-equation-using-matlab/linear_twelve.png)
 
@@ -118,11 +118,11 @@ x =
 
 ### Undetermined equations
 
-These are equations in which m>n. It means that the provided information is insufficient to give a solution to the problem example;
+These are equations in which `m>n`. It means that the provided information is insufficient to give a solution to the problem example;
 
 4x + 5y =6
 
-Mathematically, the solution is y = (6-4x)/5. It means that the `x` value can range from `-inf` to `inf` as long as it works with the provided y. If Matlab is used to solve such equations, it will give only one value and the other set to 0. 
+Mathematically, the solution is `y = (6-4x)/5`. It means that the `x` value can range from `-inf` to `inf` as long as it works with the provided `y`. If Matlab is used to solve such equations, it will give only one value and the other set to 0. 
 
 ```Matlab
 A = [4 5];
@@ -139,18 +139,18 @@ x =
     1.2000
 ```
 
-Inadequate information not only occurs in cases where m=n, but it can also occur for problems in which m>n. It could be due to the redundancy of other equations. e.g
+Inadequate information not only occurs in cases where `m=n`, but it can also occur for problems in which `m>n`. It could be due to the redundancy of other equations. e.g
 
 ![underdertermined equations](/engineering-education/solving-linear-equation-using-matlab/linear_fourteen.png)
 In the above equation, the information is insufficient since equations (i) and (ii) can be generated from equation (i). If you take equation(i) and multiply by 2, we get equation (ii), and also, if you take equation(i) and divide by -2, we get equation(iii).
 
 ### Overdetermined equations
 
-These kind of equations mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
+These kind of equations mainly occurs when `m>n`. Here, the information provided by the equations is too much. The equation `Ax=b` cannot be satisfied simultaneously by any value of the vector `x`. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule `a*x =b`. To understand this, we start by plotting the equations below;
 
 ![overdetermined equation](/engineering-education/solving-linear-equation-using-matlab/linear_fifteen.png)
 
-For the first equation, y1 = -(4x - 6)/5. To plot `y2` and `y1` against `x`.
+For the first equation, `y1 = -(4x - 6)/5`. To plot `y2` and `y1` against `x`.
 
 ```matlab
 x = [-10;10];
