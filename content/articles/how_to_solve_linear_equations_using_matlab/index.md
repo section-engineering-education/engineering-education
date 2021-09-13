@@ -4,7 +4,7 @@
 
 ### Introduction
 
-In mathematics, equations in the form Ax=b in mathematics are linear algebra equations. In such equations, `A` is a matrix while `x` and `b` are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
+In mathematics, equations in the form `Ax=b` in mathematics are linear algebra equations. In such equations, `A` is a matrix while `x` and `b` are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
 
 Matlab gives a powerful and reliable way to find solutions to these problems. But, we will also realize that the solutions provided are not always what they appear to be. In this article, we will learn how to solve these problems using Matlab. It is a matrix laboratory, hence the best environment for solving matrix problems.
 
@@ -21,15 +21,15 @@ We are going to look at how to solve simultaneous equations using Matlab. Simult
 
 ![sample matrix](/engineering-education/solving-linear-equation-using-matlab/linear_seventeen.png)
 
-Defining the matrix is by dimensions m x n, where m is the number of rows while n is the number of columns. A row is a horizontal arrangement, while a column is the vertical arrangement of the numbers. If we have a 3x2 matrix, then what that means is that it has 3 rows and 2 columns. These matrices are used compactly to work with linear equations. The different forms of the matrix are;
+Defining the matrix is by dimensions `m x n`, where `m` is the number of rows while `n` is the number of columns. A row is a horizontal arrangement, while a column is the vertical arrangement of the numbers. If we have a 3x2 matrix, then what that means is that it has 3 rows and 2 columns. These matrices are used compactly to work with linear equations. The different forms of the matrix are;
 
 - Row vector - Are matrices with a single row.
 - Column vector - Are matrices with a single column.
-- Square matrices - Are matrices where m=n, that is, the number of columns equals the number of rows. The basic form of linear equations is;
-- 
+- Square matrices - Are matrices where `m=n`, that is, the number of columns equals the number of rows. The basic form of linear equations is;
+
 > ![lineq](/engineering-education/solving-linear-equation-using-matlab/linear_six.png)
   
-Where `A_ij` are the elements of the MxN matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the `Mx1` row vector. For example, given a simultaneous equation shown below;
+Where `A_ij` are the elements of the `MxN` matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the `Mx1` row vector. For example, given a simultaneous equation shown below;
 
 ![sample simultaneous equation](/engineering-education/solving-linear-equation-using-matlab/linear_seven.png)
 
