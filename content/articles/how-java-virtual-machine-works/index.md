@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /How-Java-Virtual-Machine-Works/
 title: How Java Virtual Machine Works
-description: In this article we will discuss Java Virtual Machine
+description: In this article, we will discuss Java Virtual Machine, used to compile Java code. We will understand the various types of virtual machines and discuss them in detail.
 author: geofrey-mwangi
 date: 2021-09-10T00:00:00-18:00
 topics: []
@@ -23,11 +23,11 @@ The `Java Virtual Machine (JVM)` is the Java program that executes the main func
 
 1. **System-based virtual machines (SVM)**: As a replacement for physical computers, SVMs were developed. A host computer runs them and uses its hardware resources.
 
-2. **Application-based virtual machines (AVM)**: The host machine allows a single process to execute as an application without involving any hardware whatsoever. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this article.
+2. **Application-based virtual machines (AVM)**: The host machine allows a single process to execute as an application without involving any hardware whatsoever. Process-based virtual machines are another name for them. JVMs belong to this group of VMs, which we will discuss at length in this article.
 
-An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. Process-based virtual machines are another name for them. To this group belongs the JVM, which we'll discuss in this session.
+An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. They are also known as process-based virtual machines. 
 
-There are created a .java file, .class files with the identical names as those in the java file. This .class file breaks down the JVM into numerous phases that describe how it works.
+The following files are created: a `.java` file, `.class` files with the identical names as those in the java file. This `.class` file breaks down the JVM into numerous phases that describe how it works:
 
 1. ClassLoader
 2. JVM Memory 
@@ -37,20 +37,20 @@ There are created a .java file, .class files with the identical names as those i
 
 ### Class loader subsystem
 
-There are three of the class loaders:
+There are three components of the class loaders:
 - Application class loader
 - Extension class loader
 - Bootstrap class loader
 
 As one of the phases of JVM, it mainly consists of three activities which are listed below:
-1. **Loading**:
 
- ".class" files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each ".class" file in JVM contains the following information.
+1. **Loading**: `.class` files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each `.class` file in JVM contains the following information.
+
 - Class name and its immediate parent class.
-- ".class" files can be classified as Class or Interface.
+- `.class` files can be classified as Class or Interface.
 - There is a lot of detail on the modifier, variables, and method.
 
-As soon as the ".class" file is loaded, the JVM constructs a Class object to represent it in the heap memory. This object belongs to the Java.lang package's Class class.Class objects allow the programmer to extract class-level information such as the class name, parent class, methods, and variables. getClass() of the Object class can be used to retrieve this reference to the object.
+As soon as the `.class` file is loaded, the JVM constructs a Class object to represent it in the heap memory. This object belongs to the Java.lang package's Class class.Class objects allow the programmer to extract class-level information such as the class name, parent class, methods, and variables. getClass() of the Object class can be used to retrieve this reference to the object.
 
 ```java
 import java.lang.reflect.Field;
@@ -92,7 +92,7 @@ setRoll_no
 name
 roll_No
 ```
-> Note that each ".class" file loaded creates only one object of the class.
+> Note that each `.class` file loaded creates only one object of the class.
 
 2. **Linking**:
 
@@ -102,7 +102,7 @@ Executes three operations, including:
 - **Verification**: You may be sure that a file is correct as long as it has been correctly formatted and created by a valid compiler. The java.lang run-time exception is thrown when the verification fails. VerifyError. In this case, the component ByteCodeVerifier is responsible. After that, the class file is ready to be compiled.
 - **Resolution**: There is a straightforward substitution for the sorts of symbolic references as the name suggests. Searching for the referenced entity in the method area is how it is accomplished.
 
-> Delegation-Hierarchy principle is used by JVM to load classes. Loading requests are delegated to extension classloaders, which in turn delegate requests to bootstrapping classloaders by system classloaders. Any other requests that are not routed through an extension class loader are routed through the system class loader if found in the boot-strap path. As a last resort, java.lang. These run-time errors are thrown when the system class loader cannot load the class that was supplied.
+> Delegation-Hierarchy principle is used by JVM to load classes. Loading requests are delegated to extension classloaders, which in turn delegate requests to bootstrapping classloaders by system classloaders. Any other requests that are not routed through an extension class loader are routed through the system class loader if found in the bootstrap path. As a last resort, java.lang. These run-time errors are thrown when the system class loader cannot load the class that was supplied.
 
 ### JVM Memory 
 
