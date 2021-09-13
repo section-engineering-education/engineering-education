@@ -4,7 +4,7 @@ Kivy python takes the same path, allowing developers to develop multi-platform a
 
 In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
 
-The development of this project will enable the reader to understand the entry level programming with the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. Besides, this tutorial will teach the user how to interact with various layout components.
+The development of this project will enable the reader to understand the entry-level programming with the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. Besides, this tutorial will teach the user how to interact with various layout components.
 
 ### Prerequisites
 The reader should have a good understanding of the following in order to follow along with this tutorial.
@@ -33,7 +33,7 @@ from kivy.uix.text input import TextInput
 ### Coding the application widgets
 The snippet above imports the component widgets we require to build the `Age Calculator`application.
 
-Next, create a window object for the application by initializing a class called `AgeCalculator`. Kivy Python is based on Classes and Objects, so if the reader is not well equiped with the knowledge of Python classes, they can look at that before the tutorial.
+Next, create a window object for the application by initializing a class called `AgeCalculator`. Kivy Python is based on Classes and Objects, so if the reader is not well-equipped with the knowledge of Python classes, they can look at that before the tutorial.
 
 ```py
 class AgeCalculator(App):
@@ -49,13 +49,13 @@ if __name__ == "__main__":
  AgeCalculator().run()
 ```
 
-We need to style our application so that it looks fantastic. For instance, we will begin by setting the number of columns that our grid layout takes. We will do further styling after we have implemented full functionality.
+We need to style our application so that it looks fantastic. For instance, we will begin by setting the number of columns that our grid layout takes. Then, we will do other style after we have implemented full functionality.
 
 ```py
 self.window.cols = 1
 ```
 
-In the same class, we will set the logo for our application using the snippet below. Again, save the application's logo in the same direcory as the `main.py` file, so the application will easily find it.
+In the same class, we will set the logo for our application using the snippet below. Again, save the application's logo in the same directory as the `main.py` file, so the application will easily find it.
 
 ```py
 self.window.add_widget(Image(source("logo_image.png")))
@@ -79,7 +79,7 @@ self.date = TextInput()
 ```
 
 ### Bind to calculate age function to the button
-We need to bind the callback function that calculates the age to the button such that when the `Claculate Age` button is clicked, the `getAge` function is called to calculate the age from the input year of birth.
+We need to bind the callback function that calculates the age to the button such that when the `Calculate Age` button is clicked, the `getAge` function is called to calculate the age from the input year of birth.
 
 ```py
 self.button = Button(text = "Calculate Age")
@@ -88,7 +88,7 @@ self.window.add_widget(self.button)
 ```
 
 ### Calculate age function
-This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` Python module and extract the year part from it. Additionally, we convert the user input year from string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
+This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` Python module and extract the year part from it. Additionally, we convert the user input year from a string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
 
 ```py
 def getAge(self, event):
@@ -98,7 +98,7 @@ def getAge(self, event):
     self.ageRequest.text = "You are " + str(int(age)) + " years old"
 ```
 
-### styling the application.
+### styling the application's UI.
 To style our application correctly, we can begin by adding margins to the application's sides and bottom. Margin is the space around a given component in the application. For our case, the margin will be the space around the container layout. Subsequently, we play around with all other components of the application using the snippet below. 
 
 Another advantage of the module is that the application developed automatically responds to screen size and gives a clear outline of the subjected screen size.
@@ -149,4 +149,4 @@ python main.py
 
 ![Kivy app running ](app.png)
 ### Conclusion
-In this article, the reader learned  the process of creating a mobile application using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
+In this article, the reader learned how to create a mobile application using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
