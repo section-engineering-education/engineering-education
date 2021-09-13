@@ -1,4 +1,21 @@
-### How to solve initial value problem(IVP) using ODE45 in Matlab
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-solve-initial-value-problem-using-ode45-in-matlab/
+title: How to solve initial value problem(IVP) using ODE45 in Matlab
+description: 
+author: joseph_odhiambo
+date: 2021-09-15T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/how-to-solve-initial-value-problem-using-ode45-in-matlab/hero.jpg
+   alt: MATLAB solve Initial Value Problem example image
+---
+
+
 ### Introduction
 
 MATLAB’s uses the `ode45` function as the standard solver for ordinary differential equations. The `ode45` function applies Runga-Kutta formulae with the time step variable for easy computation. `ode45` is meant to solve the equation of the general form shown below;
@@ -143,3 +160,6 @@ Note that the solution in the `V` column vector corresponds to the equivalent po
 Solving the initial value problem in Matlab using the ode45 method is made easy in Matlab. It is because Matlab has an in-built function, `ode45`. It is a solver in Matlab that helped to solve ode problems. Using this function is easy as you just need to call the function, and the problem is solved. Also, the ode syntax for solving the initial problem in Matlab is so easy. The other advantage is that you can use this ode function to solve the PFR problems.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
