@@ -1,7 +1,5 @@
 ### Solving simultaneous equations
 
-### Linear algebra using matlab
-
 ### Introduction
 
 In mathematics, equations in the form `Ax=b` in mathematics are linear algebra equations. In such equations, `A` is a matrix while `x` and `b` are column vectors. A matrix is a two-dimensional arrangement of numbers. Such equations are common in engineering and scientific disciplines. Thus, understanding the setup of these equations and finding solutions to the problems is an essential skill.
@@ -60,7 +58,7 @@ Below is the second matrix `b`.
 
 Now that you have `A` and `b`, then we are supposed to find `x`. When you have `A` and `b`, we use `x =A\b`. So to get this done, execute the following command in the command window.
 
-```Matlab
+```matlab
 A = [4 5; 3 -2];
 b = [6; 14];
 x = A\b
@@ -124,7 +122,7 @@ These are equations in which `m>n`. It means that the provided information is in
 
 Mathematically, the solution is `y = (6-4x)/5`. It means that the `x` value can range from `-inf` to `inf` as long as it works with the provided `y`. If Matlab is used to solve such equations, it will give only one value and the other set to 0. 
 
-```Matlab
+```matlab
 A = [4 5];
 b = 6;
 x = A\b
@@ -195,7 +193,7 @@ The diagram shows that the solution is similar to the one we found before(3.5652
 
 Let's plot the line of the three equations. To do that, we add the code below;
 
-```Matlab
+```matlab
 y3 = 7*x - 25;
 hold on
 plot(x, y1, x,y2, x, y3)
@@ -222,13 +220,13 @@ plot(x(1),x(2),'r*')
 
 As you can see, Matlab is trying to locate a point close to all three lines, and this is an approximation. You can find the error to the solution by;
 
-```Matlab
+```matlab
 error = A*x -b
 ```
 
 Matlab locates this closest point by finding the square root of the sum of squares of elements of the input vector. Locating this point is by use of the `norm` function.
 
-```Matlab
+```matlab
 norm(error)
 ```
 
