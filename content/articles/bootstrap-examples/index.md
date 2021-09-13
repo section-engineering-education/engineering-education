@@ -13,14 +13,14 @@ images:
   - url: /engineering-education/a-look-at-some-bootstrap-examples/hero.jpg
     alt: A Look at Some Bootstrap Examples Hero Image
 ---
-[Bootstrap](<https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)>) is a front-end framework for developing responsive, mobile-first projects on the web. It includes a powerful grid system, a flexible media object, and a powerful color system.
+Bootstrap is a front-end framework for developing responsive web projects. It includes a powerful grid system, a flexible media object, and a powerful color system.
 <!--more-->
-It is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
+Boostrap is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
 
 ### Advantages of using bootstrap:
 1. It saves time and effort - With bootstrap, you can focus on writing your content, and the framework will take care of the rest, thus, saving you time and effort.
-2. Developers can customize the framework to their needs - An advantage of bootstrap is that you can change it to your own.
-3. Bootstrap is responsive - It can be used on any device. A code can run on a tablet and the same code can run on a laptop without breaking.
+2. Developers can customize the framework to their needs.
+3. Bootstrap is responsive - It can be used on any device without breaking.
 4. The grid system is easy to use - Bootstrap has a friendly grid system for developing responsive websites.
 
 ### Getting started!
@@ -29,7 +29,7 @@ Bootstrap was developed at [Twitter](https://en.wikipedia.org/wiki/Twitter) to h
 ### Downloading bootstrap
 To use bootstrap, you need to download its files and add them to your project. In this tutorial, we will install the bootstrap using the `package manager`. 
 
-To do this, we need to first install `Node.js` as it has the `npm` package manager. In [Node.js](https://nodejs.org/en/), download the latest files based on the Operating System (OS) you are using and install them. In my case, I am using Ubuntu.
+To do this, we need to first install [Node.js]((https://nodejs.org/en/)) as it has the `npm` package manager. Download the latest files based on your Operating System (OS) and install them. In my case, I am using Ubuntu.
 
 After installing, navigate to the folder where you have downloaded the files and run the following command in the terminal:
 
@@ -43,7 +43,7 @@ A new folder will be created called `node_modules`. This folder contains the fil
 - `/@popperjs` - This folder contains the files required for the `popper.js` library.
 
 ### How to use the bootstrap files in your project
-In the folder containg the installed bootstrap files, create a `index.html` file and add the code snipet below:
+In the folder containing the installed bootstrap files, create an `index.html` file and add the code snipet below:
 
 ```html
 <html>
@@ -68,14 +68,14 @@ In the folder containg the installed bootstrap files, create a `index.html` file
 </html>
 ```
 
-In the code snippet above, we have added the `bootstrap file` to our project in the `head` section. Open the `index.html` file in your browser.
+In the code above, we have added the `bootstrap file` to our project in the `head` section. Open the `index.html` file in your browser.
 
-If you see the alert box, you have successfully installed bootstrap. Congratulations!
+If you see the alert box, then you have successfully installed bootstrap. Congratulations!
 
 > We will use the above `index.html` in all examples in this tutorial.
 
 ### Container
-In bootstrap, the container is the wrapper for the entire section of a page. It is a block element and is used to contain the content of the page. They align the content within a device or a viewpoint.
+In bootstrap, the `container` is the wrapper for the entire section of a page. It is a block element used to contain the page's content. Containers align the content within a device or a viewpoint.
 
 The syntax for containers is as follows:
 
@@ -87,7 +87,7 @@ The syntax for containers is as follows:
 ```
 
 ### Rows
-Rows are the wrappers for the columns. They are used to align the content in the columns. They help structure the grid system hence keeps everything in order.
+Rows are wrappers for the columns. They are used to align the content in the columns. They help structure the grid system, hence, keep everything in order.
 
 The syntax for rows is as follow:
 
@@ -96,16 +96,16 @@ The syntax for rows is as follow:
 ```
 
 ### Jumbotron
-The jumbotron is a special type of container that helps to give more importance to the content. It is a block element and it is used to contain the content of the page. It helps to give more importance and extra attention to the content.
+Jumbotron is a special type of container that allows specific content to standout. It is a block element and it is used to contain the page's content. 
 
-To display jumbotron, a grey box with rounded corners is used. The font size of the text inside the jumbotron is also enlarged. 
+To display Jumbotron, a grey box with rounded corners is used. The font size of the text inside the jumbotron is also enlarged. 
 
-You can place the jumbotron inside the container or outside the container.
+You can place the Jumbotron inside or outside a container.
 
-#### Placing the jumbotron inside the container
+#### Placing the Jumbotron inside the container
 If you add the bootstrap inside the container, it will not extend the edges of your screen.
 
-Assuming you want to add a jumbotron to a `index.html` file above, then the syntax would be as follows:
+Assuming you want to add a Jumbotron to the `index.html` file above, then the syntax would be as follows:
 
 ```html
 <div class="container">
@@ -119,8 +119,8 @@ Assuming you want to add a jumbotron to a `index.html` file above, then the synt
 </div>
 ```
 
-#### Placing the jumbotron outside the container
-This method will result in the jumbotron extending the edges of the screen.
+#### Placing the Jumbotron outside the container
+This method will result in the Jumbotron extending the edges of the screen.
 
 To understand this better place the code snippet below in the `index.html` file and open it with a browser.
 
@@ -136,12 +136,14 @@ To understand this better place the code snippet below in the `index.html` file 
 </div>
 ```
 
-Comparing the two code snippets, the second one will result in the jumbotron extending the edges of the screen while the first one will not.
+Comparing the two code snippets, the second one will result in the Jumbotron extending the edges of the screen while the first one will not.
 
 ### Bootstrap collapse
-The collapse is a component that allows you to hide and show content. It is a block element and it is used to contain the content of the page. It helps to give more importance and extra attention to the content.
+The collapse is a component that allows you to hide and show content. It is a block element and it is used to contain the content of the page. 
 
-For instance, if you won't have a lot of content on a phone(which has a small screen), the navbar might end up taking too much space. This is where the collapse comes in.
+It helps to give more importance or extra attention to the content.
+
+For instance, if you have a lot of content, the navbar might end up taking too much space on mobile devices. This is where the `collapse` comes in.
 
 To accomplish this, you need to add the following code to our `index.html` file:
 
@@ -175,12 +177,12 @@ To accomplish this, you need to add the following code to our `index.html` file:
 </html>
 ```
 
-In the code snippet above, we have added the collapse to the page. On Clicking the button `Click On Me`, the collapse having `About` and `Contact` will be shown.
+In the code snippet above, we have added the `collapse` to the page. When you press on the `Click On Me` button, the `collapse` having `About` and `Contact` will be shown.
 
 ### Bootstrap modal plugin
-Bootstrap modal plugin is a dialog that pops up when you click on a button. It is displayed on top of the page being displayed.
+Bootstrap modal plugin is a dialog that pops up when you click on a button. It is displayed on top of a page.
 
-Assume you want to add a modal plugin on your page. Below is an example to accomplish that task:
+The following example shows how to use a modal plugin:
 
 ```html
 <html>
@@ -232,7 +234,7 @@ Assume you want to add a modal plugin on your page. Below is an example to accom
 ```
 
 ### Conclusion
-Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies like [Spotify](https://www.spotify.com/us/), [Twitter](https://twitter.com/?laneng=), etc.
+Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=).
 
 ---
 Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
