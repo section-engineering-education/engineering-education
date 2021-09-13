@@ -6,7 +6,7 @@ url: /extracting-colors-from-image-using-palette-api-in-android/
 title: Extracting Colors from Images using the Palette API in Android
 description: This tutorial will take the reader through the process of extracting colors from images using the Palette API in Android. Palette is a powerful support library for Android that allows you to extract prominent colors from images and apply them to your UI.
 author: robert-muriithi
-date: 2021-08-30T00:00:00-01:30
+date: 2021-09-13T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/extracting-colors-from-image-using-palette-api-in-android/hero.png
     alt: Extracting Colors from Images using the Palette API in Android image
 ---
+
 User Interface (UI) is very important when developing Android apps. Many developers tend to neglect this aspect. A great UI  gives the user a great experience. Color selection in an app is very crucial in making it successful.
 <!--more-->
 In this tutorial, we will extract colors to use in our app from an image.
