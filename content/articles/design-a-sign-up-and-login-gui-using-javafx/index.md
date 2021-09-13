@@ -230,9 +230,48 @@ Inside the AnchorPane, add the following:
 
 ##### A Header
 
-- **An ImageView control**: will carry in it a small cart logo. In its properties tab, set the image name to *cart.png*. It has the following layout settings: `Fit Width` of 100, `Fit Height` of 55, `Layout X` of 120, `Layout Y` of 5.
-- **Label:** with the following properties `Text` of *SHOP NOW*, `Font` of *Sans Serif 25px*. In `Style`: `-fx-background-color` of `transparent`, and `-fx-text-fill` of *#24a0ed*. To add more styles, click on the addition button in the Style section. It also contains the following layouts: `Pref Width` of 263, `Pref Height` of 57, `Layout X` of 203, and `Layout Y` of 1.
-- **A Button** with these properties: `Text` of *Cancel*, `Font` of *SanSerif 15px*. In `Style`: `-fx-background-color`:  *transparent* `-fx-text-fill`:  *#A9A9A9*, `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, and `-fx-border-radius`: 5. Its layouts are: `Layout X`: 502, and `Layout Y`: 13.
+**ImageView**
+
+This control will carry in it a small cart logo.
+
+- **Properties:**
+- - `Image`: cart.png
+- **Layouts:**
+- - `Fit Width`: 100
+- - `Fit Height`: 55
+- - `Layout X`: 120
+- - `Layout Y`: 5
+
+**Label**
+- **Properties:**
+- - `Text`: SHOP NOW
+- - `Font`: SanSerif 25px
+- **Style:**
+- - `-fx-background-color`:  transparent
+- - `-fx-text-fill`:  #24a0ed
+
+> To add more styles, click on the addition button in the Style section.
+
+- **Layouts:**
+- - `Pref Width`: 263
+- - `Pref Height`: 57
+- - `Layout X`: 203
+- - `Layout Y`: 1
+
+**Button**
+- **Properties:**
+- - `Text`: Cancel
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-background-color`:  transparent
+- - `-fx-text-fill`: #A9A9A9
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Layout X`: 502
+- - `Layout Y`: 13
+
 
 It results in the following Code:
 
@@ -263,14 +302,99 @@ It results in the following Code:
 
 ##### Login Section
 
-- **Label**: its properties are: `Text`: *Login*, `Font`: *SanSerif 30px*. Apply the following `Style`: `-fx-text-fill`:  *#A9A9A9*. In the layouts: `Pref Width`: 90, `Pref Height`: 30, `Layout X`: 244, `Layout Y`: 60.
-- **ImageView**: its properties are: `Image`: *users.png*. The following layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 100.
-- **TextField**: its properties are: `Prompt Text`: *Username / Email*, `Font`: *SanSerif 14px*. Use the following styles: `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, `-fx-border-radius`: 5. The layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 100.
-- **PasswordField**: its properties are: `Promp Text`: *Password*, `Font`: *SanSerif 14px*. Use the following styles: `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, `-fx-border-radius`: 5. The layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 140.
-- **ImageView**: its properties are: `Image`: *lock.png*. The following are the layouts: `Fit Width`: 35, `Fit Height`: 40 `Layout X`: 110, `Layout Y`: 140.
-- **CheckBox**: its properties are: `Text`: *Remember Me*, `Font`: *SanSerif 15px*. Apply the following `Style`: `-fx-text-fill`: *#A9A9A9*. The layouts are: `Layout X`: 150, and `Layout Y`: 195.
-- **Button**: its properties are: `Text`: *Login*, `Font`: *SanSerif 15px*. For `Style`: `-fx-background-color`: *#24a0ed*, `-fx-text-fill`: *White*, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`:  *#24a0ed*.The layouts are: `Layout X`: 335, and `Layout Y`: 195.
-- **Button**: its properties are: `Text`: *Forgot your Password?*, `Font`: *SanSerif 15px*. Apply the following styles: `-fx-background-color`: *transparent*, `-fx-text-fill`: *#A9A9A9*. The layouts are: `Layout X`: 190, and `Layout Y`: 235.
+**Label**
+- **Properties:**
+- - `Text`: Login
+- - `Font`: SanSerif 30px
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Pref Width`: 90
+- - `Pref Height`: 30
+- - `Layout X`: 244
+- - `Layout Y`: 60
+
+**ImageView**
+- **Properties:**
+- - `Image`: users.png
+- **Layouts:**
+- - `Fit Width`: 35
+- - `Fit Height`: 40
+- - `Layout X`: 110
+- - `Layout Y`: 100
+
+**TextField**
+- **Properties:**
+- - `Prompt Text`: Username / Email
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 150
+- - `Layout Y`: 100
+
+**PasswordField**
+- **Properties:**
+- - `Prompt Text`: Password
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 150
+- - `Layout Y`: 140
+
+**ImageView**
+- **Properties:**
+- - `Image`: lock.png
+- **Layouts:**
+- - `Fit Width`: 35
+- - `Fit Height`: 40
+- - `Layout X`: 110
+- - `Layout Y`: 140
+
+**CheckBox**
+- **Properties:**
+- - `Text`: Remember Me
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Layout X`: 150
+- - `Layout Y`: 195
+
+**Button**
+- **Properties:**
+- - `Text`: Login
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-background-color`:  24a0ed
+- - `-fx-text-fill`: White
+- - `-fx-border-radius`: 5
+- - `-fx-border-width`: 2
+- - `-fx-border-radius`: 5
+- - `-fx-border-color`:  *#24a0ed*
+- **Layouts:**
+- - `Layout X`: 335
+- - `Layout Y`: 195
+
+**Button**
+- **Properties:**
+- - `Text`: Forgot your Password?
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-background-color`:  transparent
+- - `-fx-text-fill`: #A9A9A9
+- **Layouts:**
+- - `Layout X`: 190
+- - `Layout Y`: 235
 
 The Scene Builder produces the following Code:
 
@@ -337,7 +461,28 @@ The Scene Builder produces the following Code:
 
 ##### Line break
 
-- **Line**. This element is from the shapes section: its properties are: `Fill`: *DARKGRAY*, and the `Stroke` to *#a8a8a8* for a fade effect. Check the smooth option. The layouts are: `Layout X`: 0, `Layout Y`: -110, `Start X`: 100, `Start Y`: 380, `End X`: 500, and `End Y`: 380.
+**Line**
+
+This element is from the shapes section
+
+- **Properties:**
+- - `Fill`: DARKGRAY
+- - `Stroke`: #a8a8a8
+- - `Smooth` option: Check
+
+This property is for a fade effect.
+
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Pref Width`: 130
+- - `Pref Height`: 36
+- - `Layout X`: 0
+- - `Layout Y`: -110
+- - `Start X`: 100
+- - `Start Y`: 380
+- - `End X`: 500
+- - `End Y`: 380
 
 Its code produced is as shown:
 
@@ -349,23 +494,215 @@ Its code produced is as shown:
 
 ##### Sign Up Section
 
-- **Label**: its properties are: `Text`: *Sign-Up*, `Font`: *SanSerif 30px*. Set the following styles: `-fx-text-fill`:  *#A9A9A9*. The following are the layouts: `Pref Width`: 130, `Pref Height`: 36, `Layout X`: 230, `Layout Y`: 275.
-- **ImageView**: its properties are: `Image`: *users.png*. The following are the layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 320.
-- **TextField**: its properties are: `Prompt Text`: *Username*, `Font`: *SanSerif 14px*. Apply the following styles: `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, `-fx-border-radius`: 5. The layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 320.
-- **ImageView**: its properties are: `Image`: *email.png*. The following are the layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 360.
-- **TextField**: its properties are: `Prompt Text`: *Email*, `Font`: *SanSerif 14px*. Apply the following `Style`: `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, `-fx-border-radius`: 5.
-  The Layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 360.
-- **PasswordField**: its properties are: `Promp Text`: *Password*, `Font`: *SanSerif 14px*. Set the following styles: `-fx-border-width`: 2, `-fx-border-color`:  #A9A9A9, `-fx-border-radius`: 5. The layouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 155, and `Layout Y`: 400.
-- **ImageView**: its properties are: `Image`: *lock.png*. The following are the layouts: `Fit Width`: 35, `Fit Height`: 40, `Layout X`: 110, `Layout Y`: 400.
-- **PasswordField**: its properties are: `Promp Text`: *Repeat Password*, `Font`: *SanSerif 14px*. Set the following styles: `-fx-border-width`: 2, `-fx-border-color`:  *#A9A9A9*, `-fx-border-radius`: 5. The lsayouts are: `Pref Width`: 300, `Pref Height`: 30, `Layout X`: 150, and `Layout Y`: 440.
-- **Label**: its properties are: `Text`: *Date of Birth*, `Font`: *SanSerif 15px*. Set the following styles: `-fx-text-fill`:  *#A9A9A9*. The following layouts: `Pref Width`: 105, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 480.
-- **DatePicker**: its properties are: `Prompt Text`: *mm/dd/yyyy*. Enable the `Editable` and `Show Week number` checkboxes. Enabling them allows one to enter data into the field without using the date picker. It also shows week numbers. The layouts are: `Layout X`: 250, and `Layout Y`: 480.
-- **Label**: its properties are: `Text`: *Gender*, `Font`: *SanSerif 15px*. Set the following `Style`: `-fx-text-fill`:  *#A9A9A9*. The following are the layouts: `Pref Width`: 90, `Pref Height`: 20, `Layout X`: 130, `Layout Y`: 515.
-- **RadioButton**: its properties are: `Text`: *Male*, `Font`: *SanSerif 14px*, check the `Selected` checkbox. In the `Toggle Group` key in `Gender`. This step will group the radio buttons of the same group; hence only one is selected per instance. The following are the layouts: `Layout X`: 300, `Layout Y`: 515.
-- **RadioButton**: its properties are: `Text`: *Female*, `Font`: *SanSerif 14px*, and in the `Toggle Group` key in gender. This step groups the radio buttons of the same group; hence only one can be selected per instance. The following layouts: `Layout X`: 390, `Layout Y`: 515.
-- **CheckBox**: its properties are: `Text`: *I have read the Terms and Conditions*, `Font`: *SanSerif 15px*.  check the `Selected` checkbox. Set the following `Style`: `-fx-text-fill`: *#A9A9A9*. The layouts are: `Layout X`: 160, and `Layout Y`: 545.
-- **Button**: its properties are: `Text`: *Sign-Up*, `Font`: *SanSerif 15px*. Set the `Style`: `-fx-background-color`: *#24a0ed*, `-fx-text-fill`: *White*, `-fx-border-radius`: 5, `-fx-border-width`: 2, `-fx-border-color`: *#24a0ed*. The layouts are: `Pref Width`: 130, `Pref Height`: 33, `Layout X`: 230, and `Layout Y`: 615.
-- **Button**: its properties are: `Text`: *Terms and Conditions*, `Font`: *SanSerif 15px*. Set the following `Style`: `-fx-background-color`: *transparent*, `-fx-text-fill`: *#A9A9A9*. The layouts are: `Layout X`: 200, and `Layout Y`: 660.
+**Label**
+- **Properties:**
+- - `Text`: Sign-Up
+- - `Font`: SanSerif 30px
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:** 
+- - `Pref Width`: 130
+- - `Pref Height`: 36
+- - `Layout X`: 230
+- - `Layout Y`: 275
+
+**ImageView**
+- **Properties:**
+- - `Image`: users.png
+- **Layouts:**
+- - `Fit Width`: 35
+- - `Fit Height`: 40
+- - `Layout X`: 110
+- - `Layout Y`: 320
+
+
+**TextField**
+- **Properties:**
+- - `Prompt Text`: Username
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 155
+- - `Layout Y`: 320
+
+
+**ImageView**
+- **Properties:**
+- - `Image`: email.png
+- **Layouts:**
+- - `Fit Width`: 35
+- - `Fit Height`: 40
+- - `Layout X`: 110
+- - `Layout Y`: 360
+
+**TextField**
+- **Properties:**
+- - `Prompt Text`: Email
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 155
+- - `Layout Y`: 360
+
+**PasswordField**
+- **Properties:**
+- - `Prompt Text`: Password
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 155
+- - `Layout Y`: 400
+
+
+**ImageView**
+- **Properties:**
+- - `Image`: lock.png
+- **Layouts:**
+- - `Fit Width`: 35
+- - `Fit Height`: 40
+- - `Layout X`: 110
+- - `Layout Y`: 400
+
+**PasswordField**
+- **Properties:**
+- - `Prompt Text`: Repeat Password
+- - `Font`: SanSerif 14px
+- **Style:**
+- - `-fx-border-width`: 2
+- - `-fx-border-color`:  #A9A9A9
+- - `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 300
+- - `Pref Height`: 30
+- - `Layout X`: 150
+- - `Layout Y`: 440
+
+**Label**
+- **Properties:**
+- - `Text`: Date of Birth
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Pref Width`: 105
+- - `Pref Height`: 20
+- - `Layout X`: 130
+- - `Layout Y`: 480
+
+**DatePicker**
+- **Properties:**
+- - `Prompt Text`: mm/dd/yyyy
+- - `Editable` checkbox: Check
+- - `Show Week number` checkbox: Check
+
+Enabling them allows one to enter data into the field without using the date picker. It also shows week numbers.
+
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Layout X`: 250
+- - `Layout Y`: 480
+
+**Label**
+- **Properties:**
+- - `Text`: Gender
+- - `Font`: SanSerif 15px
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Pref Width`: 90
+- - `Pref Height`: 20
+- - `Layout X`: 130
+- - `Layout Y`: 515
+
+**RadioButton**
+- **Properties:**
+- - `Text`: Male
+- - `Font`: SanSerif 14px
+- - `Selected` checkbox: Check
+- - `Toggle Group`: Gender
+
+This step will group the radio buttons of the same group; hence only one is selected per instance.
+
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Layout X`: 300
+- - `Layout Y`: 515
+
+**RadioButton**
+- **Properties:**
+- - `Text`: Female
+- - `Font`: SanSerif 14px
+- - `Toggle Group`: Gender
+
+This step groups the radio buttons of the same group; hence only one can be selected per instance.
+
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Layout X`: 390
+- - `Layout Y`: 515
+
+**CheckBox**
+- **Properties:**
+- - `Text`: I have read the Terms and Conditions
+- - `Font`: SanSerif 15px
+- - `Selected` checkbox: Check
+- - `Toggle Group`: Gender
+- **Style:**
+- - `-fx-text-fill`:  #A9A9A9
+- **Layouts:**
+- - `Layout X`: 160
+- - `Layout Y`: 545
+
+**Button**
+- **Properties:**
+- - `Text`: Sign-Up
+- - `Font`: SanSerif 15px
+- - `Selected` checkbox: Check
+- - `Toggle Group`: Gender
+- **Style:**
+- - `-fx-background-color`:  #24a0ed
+- - `-fx-text-fill`: White
+- - `-fx-border-radius`: 5
+- - `-fx-border-width`: 2
+- - `-fx-border-color`: #24a0ed
+- `-fx-border-radius`: 5
+- **Layouts:**
+- - `Pref Width`: 130
+- - `Pref Height`: 33
+- - `Layout X`: 230
+- - `Layout Y`: 615
+
+**Button**
+- **Properties:**
+- - `Text`: Terms and Conditions
+- - `Font`: SanSerif 15px
+- - `Selected` checkbox: Check
+- - `Toggle Group`: Gender
+- **Style:**
+- - `-fx-background-color`:  transparent
+- - `-fx-text-fill`: #A9A9A9
+- **Layouts:**
+- - `Layout X`: 230
+- - `Layout Y`: 660
+
 
 Its code is shown below:
 
@@ -493,11 +830,7 @@ Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-
 
 ### Conclusion
 
-In conclusion, JavaFX is a stable, efficient, and secure UI library for Java developers.
-
-The user interface and the system files remain separated. The separation prevents unintended code changes and brings about understandability.
-
-On reaching here, one has gained the following knowledge:
+In this guide, you have learnt:
 
 - What is JavaFX
 - JavaFX libraries
