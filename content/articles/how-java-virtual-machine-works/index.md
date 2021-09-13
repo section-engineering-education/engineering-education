@@ -18,6 +18,7 @@ images:
 ### Introduction
 
 The `Java Virtual Machine (JVM)` is the Java program that executes the main function. When you install **JRE**, you'll also get JVM (Java Runtime Environment). A compiler in other programming languages generates machine code. To compile Java code, Java Virtual Machine is used. It enables Java applications to execute on the system.
+As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without the need for any modifications. JVM makes all of this possible. As part of the Java compiler's process of compiling a `.java` file,`.class` files (which contain byte-code) with the same class names are generated. When we run this `.class` file, it goes through a series of steps. All of these steps describe the JVM as a whole and we will be discussing them in this article.
 
 ### Types of virtual machines
 
@@ -50,9 +51,10 @@ As one of the phases of JVM, it mainly consists of three activities which are li
 - `.class` files can be classified as Class or Interface.
 - There is a lot of detail on the modifier, variables, and method.
 
-As soon as the `.class` file is loaded, the JVM constructs a Class object to represent it in the heap memory. This object belongs to the Java.lang package's Class class.Class objects allow the programmer to extract class-level information such as the class name, parent class, methods, and variables. getClass() of the Object class can be used to retrieve this reference to the object.
+For each `.class` file that is loaded, the JVM produces a Class object to represent it in heap memory. It should be noted that this object belongs to the `Java.lang` package's Class type. If the programmer wants information about a class, such as its name, its parent or any methods or variables that are associated with it, he or she can use these Class objects. The getClass() function of the Object class can be used to retrieve this object reference.
 
 ```java
+//The class object built by JVM to represent the.class file in memory is demonstrated in this Java application
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 public class Test {
@@ -69,6 +71,7 @@ public class Test {
             System.out.println(field.getName());
     }
 }
+//Using the Class object, we can retrieve information about a sample class.
 class pupil {
     private String name;
     private int roll_No;
@@ -116,7 +119,7 @@ The `Runtime Data Area` is another name for the memory area. In total, it's brok
 
 ### Execution Engine
 
-To run a ".class" file, you need an execution engine. For example, reading bytecode from a file, using data from various memory areas, then executing instructions. The execution engine consists of three components named below:
+To run a `.class` file, you need an execution engine. For example, reading bytecode from a file, using data from various memory areas, then executing instructions. The execution engine consists of three components named below:
 
 1. **Interpreter**: Essentially, the interpreter takes bytecode and translates it to machine code. Interpreters may be faster at running one line of bytecode than they are at executing the entire code. Also, a fresh interpretation must be provided each time the same method is invoked.
 2. **JIT Compiler (Just In Time compiler)**: Execution engines use the interpreter to execute byte code. The JIT compiler will be used instead of the execution engine detects that a method is repeated. It consists of the following;
