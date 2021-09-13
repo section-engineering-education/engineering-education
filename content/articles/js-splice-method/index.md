@@ -25,8 +25,7 @@ array.slice(start, to);
 ```
 Start: Slice the array from the specified element index
 To: Slice the array to another element index that you specify.
-
-Lets take an example, let slice the first three items from the above array above. We will begin slicing from index 0 since the initial element of an array is always indexed at 0.
+To show you how the slice() method works let's us follow the example below. We will focus on slicing the first 3 items from the array. I hope you all know that indexing in an array starts from 0.
 ```js
 array.slice(0, 3);
 ``` 
@@ -78,10 +77,11 @@ array
 ```
 Starting at index 2, every piece will be eliminated until there is no more index 2.
 ### Adding Elements Using Splice() Method
-To add elements, we must pass them to the splice ( ) method as the 3rd, 4th, or 5th parameter (depending on how many we want to add):
+No matter how many items we are needed to add to an arrau we must always pass them through the splice() method.
+Syntax for the splice method is:
 
 ```js
-array.splice(index, number of elements, element, element);
+array.splice(index, number of items, item1, ..., itemN);//itemN means tou can enter any number of items.
 ```
 I'm adding m and n to the very beginning of the array as an example, and I'm not removing anything:
 ```js
@@ -93,43 +93,40 @@ array
 (8)["m","n",5,6,7,"pizza",3.32,true]
 ```
 ### Split ( )
-For arrays, the slice( ) and splice( ) functions are used. Strings are split using the split( ) function. It returns an array of substrings after dividing a string into substrings7. It has two optional parameters.
+For arrays, the slice( ) and splice( ) functions are used but as for the strings the split () function is used to divide the strings and return subtrings after splitting the string.The substrings are returned in an array.
+The split() method has some parameters which are not compusory to use.
+THe split () method syntax is shown below.
 ```js
 string.split(separator, limit);
 ```
-Separator: Defines how a string is separated, for example, by a comma or a character.
+Separator: This parameter shows how a string is separated, for example, by a comma or a character.
 Limit: Sets a limit on the number of splits that can be made with a given number of divides. 
-The split( ) method does not directly operate with arrays. However, after turning the members of our array to a string, we may use the split( ) method.
-Let's take a closer look at how it functions. To convert our array to a string, we first use the toString( ) method:
-
-The split( ) technique does not work with arrays directly. However, we can utilize the split( ) method after first converting the members of our array to a string.
-
-Let's have a look at how it works.
-
-First, we use the toString( ) method to convert our array to a string:
+It is important to note that the split() function won't with arrays directly therefore we need to change the members of our array into a string.
+Let's take a closer look at how it functions. Converting our array into a string requires the use of toString( ) method:
+Using the toString() method let us convert our array into string:
 ```js
-let myString = array.toString();
+let ourString = array.toString();
 ```
 Result:
 
 ```js
-let myString = array.toString();
+let ourString = array.toString();
 ```
 Result:
 ```js
-myString
+ourString
 "5, 6, 7, "pizza", 3.32, true"
 ```
-Let's break myString down into three substrings, limit them to three, and return the results as an array:
+We will now divide ourString down into three substrings, keep them to three, and return the results as an array:
 
 ```js
-let newArray = myString.split(",", 3);
+let ourNewArray = ourString.split(",", 3);
 ```
 Result:
 ```js
 (3)["5","6","7"]
 ```
-MyString is separated by commas, as we can see. Only the top three elements are returned because we limit split to three.
+ourString is separated by commas, as we can see. Only the top three elements are returned because we limit split to three.
 
 
 ### Conclusion
