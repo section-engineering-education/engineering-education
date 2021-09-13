@@ -65,15 +65,15 @@ To follow along, readers should have some basic knowledge of Python programming.
 
 At the end of this tutorial, readers should be able to:
 
-- understand statistical hypothesis testing.
+- understand statistical hypothesis testing,
 
-- perform t-test, chi-squared test & ANOVA using Python and a new dataset.
+- perform t-test, chi-squared test & ANOVA using Python and a new dataset,
 
-- differentiate between the two types of null hypothesis errors.
+- differentiate between the two types of null hypothesis errors,
 
-- explain the confidence of the null hypothesis.
+- explain the confidence of the null hypothesis,
 
-- use Pandas functions for data analysis.
+- use Pandas functions for data analysis, and
 
 - identify the best areas to apply t-test, chi-square test, and ANOVA test.
 
@@ -89,7 +89,7 @@ The two types of hypothesis testing are null hypothesis and alternate hypothesis
 Consider a situation where a seventy-year-old woman has a visible bump in her belly. Medical officers may assume that the bump is fibroid.
 
 
-In this case, our initial conclusion (or our null hypothesis) is that she has fibroid while our alternate hypothesis will be she does not have a fibroid.
+In this case, our initial conclusion (or our null hypothesis) is that she has fibroid while our alternate hypothesis is that she does not have a fibroid.
 
 To carry out hypothesis testing, we will refer to the null hypothesis (initial assumption) as the H0 hypothesis and the alternate hypothesis (counter assumption) as the H1 hypothesis.
 
@@ -119,7 +119,7 @@ These cases are not desirable since we have not recognized the right hypothesis.
 [Type-1 error](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) occurs when we reject the null hypothesis even though it was true.
 
 
-[Type-2 error](https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414) involves accepting the null hypothesis even though it was wrong.
+[Type-2 error](https://www.ssc.wisc.edu/~gwallace/PA_818/Resources/Type%20II%20Error%20and%20Power%20Calculations.pdf) involves accepting the null hypothesis even though it was wrong.
 
 
 The severity of type-1 and type-2 errors depends on the task at hand. Data analysts should therefore determine the errors that could impact the outcome negatively.
@@ -222,9 +222,9 @@ Let's denote the expected and observed values with letters to make them more und
 
 Let the
 
-- observed good be `A` and the expected good be `a`.
+- observed good be `A` and the expected good be `a`,
 
-- observed average be `B` and the expected average be `b`.
+- observed average be `B` and the expected average be `b`,
 
 - observed fail be `C` and the expected to fail to be `c`.
 
@@ -277,6 +277,7 @@ In this tutorial, we will be using the popular Iris dataset. It can be downloade
 
 The next phase is to load the data into the notebook:
 
+On reading the dataset into the notebook, it is important to add columns name to it for a better understanding of the data we are working with. Hence, we proceed to check the first five to confirm our formatting works.
 
 ```py
 
@@ -288,9 +289,6 @@ df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'spe
 df.head()
 
 ```
-
-On reading the dataset into the notebook, it is important to add columns name to it for a better understanding of the data we are working with. Hence, we proceed to check the first five to confirm our formatting works.
-
 
 ![dataset head](/engineering-education/statistical-hypothesis-testing-python-implementation/dataset_head.PNG)
 
@@ -776,7 +774,7 @@ During ANOVA testing, the hypothesis is:
 
 #### One Way ANOVA Test
 
-`petal width`, `petal length` and `sepal length` are the classes we want to apply one-way ANOVA test on.
+This is employed to determine the effect of a variable on one or two other variables by comparing their means. We will hence check if `petal width`, has an effect on `petal length` and `sepal length` using one-way ANOVA test.
 
 ```python
 
@@ -797,7 +795,7 @@ F_onewayResult(statistic=555.8702565323317, pvalue=5.738282463819433e-122)
 
 ```
 
-Since our `p-value` (5.738282463819433e-122) is far less than `alpha` = 0.05, we dismiss the null hypothesis, as there exists no evidence sustainable enough to accept it.
+Since our `p-value` (5.738282463819433e-122) is far less than `alpha` (0.05), we dismiss the null hypothesis, as there exists no evidence sustainable enough to accept it.
 
 This means that the sample means are very much different. Hence, our H1 (alternate hypothesis) is thus true.
 
@@ -822,9 +820,9 @@ print(sm.stats.anova_lm(model, typ=2))
 
 ![twowayanova](/engineering-education/statistical-hypothesis-testing-python-implementation/twowayanova.PNG)
 
-The p-value of `petal width` is more than 0.05, which increases the probability of our null hypothesis being accepted.
+The p-value of `petal_width` is more than 0.05, which increases the probability of our null hypothesis being accepted.
 
-The p-value of `sepal length` is less than 0.05, which increases the probability of our null hypothesis being rejected.
+The p-value of `sepal_length` is less than 0.05, which increases the probability of our null hypothesis being rejected.
 
 Likewise, the p-value of both `petal_width` and `sepal_length` is lower than 0.05, we dismiss the null hypothesis since it is obvious one or more samples are very much different in their means. That is the same thing as saying, the average of all data samples is not equal.
 
