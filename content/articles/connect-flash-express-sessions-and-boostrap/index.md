@@ -1,6 +1,22 @@
-### Introduction
-This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /connect-flash-express-sessions-and-boostrap/
+title: Connect flash, express sessions and bootstrap in action
+description: This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation.
+author: simon-salva
+date: 2021-09-13T00:00:00-2:25
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/connect-flash-express-sessions-and-boostrap/hero.png
+    alt: Connect flash, express sessions and bootstrap image example
+---
+
+This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation.
+<!--more-->
 We will build an authentication system using the `express-session`, `connect-flash`, `passport`, and `bootstrap` modules and demonstrating their functionality in a single application.
 
 ### Prerequisites
