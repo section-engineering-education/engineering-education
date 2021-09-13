@@ -4,7 +4,7 @@ Kivy python takes the same path, allowing developers to develop multi-platform a
 
 In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
 
-The development of this project will enable the user to learn how to use the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. Besides, this tutorial will teach the user how to interact with various layout components.
+The development of this project will enable the reader to understand the entry level programming with the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. Besides, this tutorial will teach the user how to interact with various layout components.
 
 ### Prerequisites
 The reader should have a good understanding of the following in order to follow along with this tutorial.
@@ -19,7 +19,7 @@ pip install kivy
 ```
 
 ### Library import
-Create a folder and call it the `calculator app`. This name is the name of the application, and it can be modified. In the folder created, create a new file, call it `main.py`, and add the snippet below.
+Create a folder and call it the `calculator app`. This name is the application's name. In the folder created, create a new file, call it `main.py`, and add the snippet below.
 
 ```py
 from kivy.app import App
@@ -33,7 +33,7 @@ from kivy.uix.text input import TextInput
 ### Coding the application widgets
 The snippet above imports the component widgets we require to build the `Age Calculator`application.
 
-Next, create a window object for the application by initializing a class called `AgeCalculator`. Kivy Python is based on Classes and Objects, so if one is not good with Python classes, they can look at that before the tutorial.
+Next, create a window object for the application by initializing a class called `AgeCalculator`. Kivy Python is based on Classes and Objects, so if the reader is not well equiped with the knowledge of Python classes, they can look at that before the tutorial.
 
 ```py
 class AgeCalculator(App):
@@ -79,7 +79,7 @@ self.date = TextInput()
 ```
 
 ### Bind to calculate age function to the button
-We need to bind the callback function that calculates the age to the button such that when the button is clicked, the `getAge` function is called to calculate the age from the input year of birth.
+We need to bind the callback function that calculates the age to the button such that when the `Claculate Age` button is clicked, the `getAge` function is called to calculate the age from the input year of birth.
 
 ```py
 self.button = Button(text = "Calculate Age")
@@ -88,7 +88,7 @@ self.window.add_widget(self.button)
 ```
 
 ### Calculate age function
-This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` module in python and extract the year part from it. Additionally, we convert the user input year from string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
+This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` Python module and extract the year part from it. Additionally, we convert the user input year from string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
 
 ```py
 def getAge(self, event):
@@ -141,7 +141,7 @@ def build(self):
 ```
 
 ### Running the application
-To run the application, open the terminal, then navigate to the project directory. Next, run the command below in the project directory.
+For the application to run, open the terminal, then navigate to the project directory. Next, run the command below in the project directory.
 
 ```bash
 python main.py
@@ -149,4 +149,4 @@ python main.py
 
 ![Kivy app running ](app.png)
 ### Conclusion
-In this article, the reader learned how to create an application using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
+In this article, the reader learned  the process of creating a mobile application using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
