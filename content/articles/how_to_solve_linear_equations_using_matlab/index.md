@@ -19,17 +19,7 @@ To follow along with this tutorial, you'll need:
 
 We are going to look at how to solve simultaneous equations using Matlab. Simultaneous equations are finite sets of equations for which common solutions are set. What we mean is that they are conditions that define the relationship between two unknowns through an equal number of equations. We are going to use the matrix method. A matrix is a two-dimensional arrangement of numbers. For example, 
 
-$$\left[\begin{array}
-{rrr}
-1 & 3 & 4 \\
-4 & 1 & 3
-\end{array}\right]$$ 
-$$\left[\begin{array}
-{rrr}
-1 & 3 \\
-4 & 1
-\end{array}\right]
-$$
+![sample matrix](/engineering-education/solving-linear-equation-using-matlab/linear_seventeen.png)
 
 Defining the matrix is by dimensions m x n, where m is the number of rows while n is the number of columns. A row is a horizontal arrangement, while a column is the vertical arrangement of the numbers. If we have a 3x2 matrix, then what that means is that it has 3 rows and 2 columns. These matrices are used compactly to work with linear equations. The different forms of the matrix are;
 
@@ -37,34 +27,19 @@ Defining the matrix is by dimensions m x n, where m is the number of rows while 
 - Column vector - Are matrices with a single column.
 - Square matrices - Are matrices where m=n, that is, the number of columns equals the number of rows. The basic form of linear equations is;
 - 
-> ![lineq](http://mathurl.com/yacqpchy.png)
+> ![lineq](/engineering-education/solving-linear-equation-using-matlab/linear_six.png)
   
-Where $A_ij$ are the elements of the MxN matrix, $X_j$ are the elements of Nx1 matrix column vectors, and $b_i$ are the elements of the Mx1 row vector. For example, given a simultaneous equation shown below;
+Where `A_ij` are the elements of the MxN matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the Mx1 row vector. For example, given a simultaneous equation shown below;
 
-$$
-\begin{cases} 4x+5y=3\\3x-2y=14\end{cases}
-$$
+![sample simultaneous equation](/engineering-education/solving-linear-equation-using-matlab/linear_seven.png)
 
 The simplification of this equation is;
 
-$$
-\left(\begin{array}{cc} 
-4 & 5\\
-3 & 2
-\end{array}\right)
-\left(\begin{array}{cc} 
-x\\ 
-y
-\end{array}\right)=
-\left(\begin{array}{cc} 
-3\\
-14
-\end{array}\right)
-$$
+![simplified](/engineering-education/solving-linear-equation-using-matlab/linear_eight.png)
 
 For you to solve these simultaneous equations using the matrix method, `m` of the second matrix must equalize `n` of the first matrix after the simplification done above. It is because solving simultaneous equations using Matlab involves the multiplication of the matrix.
 
-These equations are simultaneous because one set of $x_i$ must satisfy all the equations of M. Assume that you have the value of A and x to find b, then the equation is easy to solve. You apply the matrix multiplication method. The big problem is finding `x` given `A` and `b`; focusing on such problems, we will see how to handle them.
+These equations are simultaneous because one set of `x_i` must satisfy all the equations of M. Assume that you have the value of A and x to find b, then the equation is easy to solve. You apply the matrix multiplication method. The big problem is finding `x` given `A` and `b`; focusing on such problems, we will see how to handle them.
 
 ### Matlab's solution
 
@@ -74,26 +49,16 @@ The basic operations that you use to solve these equations in Matlab depend on t
 - A and b is provided, the solution is A/b. Here, `m` of `A`  must equal to `m` of b.
 Example
 
-$$
-\begin{cases} 4x+5y=3\\3x-2y=14\end{cases}
-$$
-$$\left[\begin{array}
-{rrr}
-4 & 5 \\
-3 & -2
-\end{array}\right]
-$$
+![simultaneous equation](/engineering-education/solving-linear-equation-using-matlab/linear_nine.png)
 
-This is the first matrix, A.
+Below is the first matrix, A.
+![first matrix](/engineering-education/solving-linear-equation-using-matlab/linear_ten.png)
 
-$$\left[\begin{array}
-{rrr}
-6\\
-14
-\end{array}\right]
-$$
+Below is the second matrix b.
 
-It is the second matrix b. Now that you have A and b, then we are supposed to find x. When you have A and b, we use x =A\b. So to get this done, execute the following command in the command window.
+![second matrix](/engineering-education/solving-linear-equation-using-matlab/linear_eleven.png)
+
+Now that you have A and b, then we are supposed to find x. When you have A and b, we use x =A\b. So to get this done, execute the following command in the command window.
 
 ```Matlab
 A = [4 5; 3 -2];
@@ -103,7 +68,7 @@ x = A\b
 
 We have assigned our matrices to variables `A` and `b` then gave the formulae used to solve the problem. In Matlab, the separation of rows is by semicolons. When you execute the command, the result is displayed as shown below;
 
-```
+```matlab
 x =
 
     3.5652
@@ -122,17 +87,13 @@ The problem we solved before had two unknowns, `x` and `y`, and since there were
 
 Inconsistent equations are equations in which m=n(number of rows equals the number of columns), but the solution does not exist. In these types of equations, the left sides are equal, but right sides are not e.g
 
-$$
-\begin{cases} 4x+5y=6\\4x+5y=14\end{cases}
-$$
+![inconsistent equation](/engineering-education/solving-linear-equation-using-matlab/linear_twelve.png)
 
-What we mean is that for the left side we have *4x+y* for both equation 1 and 2 while for the right side we have 6 and 14 for equation 1 and 2 respectively. It shows that the equations are inconsistent. Solving simultaneous is finding the point at which two equations meet when plotted. When you plot these two equations, the lines are parallel.
+What we mean is that for the left side we have `4x+y` for both equation 1 and 2 while for the right side we have 6 and 14 for equation 1 and 2 respectively. It shows that the equations are inconsistent. Solving simultaneous is finding the point at which two equations meet when plotted. When you plot these two equations, the lines are parallel.
 
 Let's make a plot to visualize what we are talking about in the above statement. Since we are plotting `x` against `y`, we will first make `y` the subject for each equation then plot. As shown below:
 
-$$
-\begin{cases} y1=(6-4x)/5\\y2=(14-4x)/5\end{cases}
-$$
+![inconsistent equation](/engineering-education/solving-linear-equation-using-matlab/linear_thirteen.png)
 
 To plot, we give the `x` variables first
 
@@ -148,7 +109,7 @@ legend('y1', 'y2')   %Adding legends to the plot
 
 The two lines are parallel. It means that the two lines intersect at infinity. So when you try to get the solution to this problem using Matlab, the output given for the unknowns is `inf`, which means infinity.
 
-```
+```matlab
 x =
 
   -Inf
@@ -171,7 +132,7 @@ x = A\b
 
 The output will be;
 
-```
+```matlab
 x =
 
          0
@@ -180,19 +141,14 @@ x =
 
 Inadequate information not only occurs in cases where m=n, but it can also occur for problems in which m>n. It could be due to the redundancy of other equations. e.g
 
-$$
-\begin{cases} 4x + 5y=6\\8x + 10y=12\\ -2x -2.5y =-3\end{cases}
-$$
-
+![underdertermined equations](/engineering-education/solving-linear-equation-using-matlab/linear_fourteen.png)
 In the above equation, the information is insufficient since equations (i) and (ii) can be generated from equation (i). If you take equation(i) and multiply by 2, we get equation (ii), and also, if you take equation(i) and divide by -2, we get equation(iii).
 
 ### Overdetermined equations
 
 These kind of equations mainly occurs when m>n. Here, the information provided by the equations is too much. The equation Ax=b cannot be satisfied simultaneously by any value of the vector x. When you solve the equation using Matlab, it will give an output, but it does not satisfy the matrix rule a*x =b. To understand this, we start by plotting the equations below;
 
-$$
-\begin{cases} 4x + 5y=6\\3x - 2y=14\end{cases}
-$$
+![overdetermined equation](/engineering-education/solving-linear-equation-using-matlab/linear_fifteen.png)
 
 For the first equation, y1 = -(4x - 6)/5. To plot `y2` and `y1` against `x`.
 
@@ -226,7 +182,7 @@ intersectPoints(-4/5, 3/2, 6/5, -14/2)
 
 The output will be;
 
-```
+```matlab
 ans =
 
     3.5652
@@ -235,9 +191,7 @@ ans =
 This function gives a single output corresponding to the `x` value for the point of intersection. To find  `y`, you can replace `x` in the equation and get your `y`.
 The diagram shows that the solution is similar to the one we found before(3.5652,-1.6522). It means that the solution is correct. Now assume that now we have the equation below;
 
-$$
-\begin{cases} 4x + 5y=6\\8x + 10y=12\\ -2x -2.5y =-3\\ 7x - y =25\end{cases}
-$$
+![overdetermined equations](/engineering-education/solving-linear-equation-using-matlab/linear_sixteen.png)
 
 Let's plot the line of the three equations. To do that, we add the code below;
 
