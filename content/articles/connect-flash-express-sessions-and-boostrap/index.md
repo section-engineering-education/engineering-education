@@ -1,5 +1,7 @@
 ### Introduction
-This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation. We will build an authentication system using the `express-session`, `connect-flash`, `passport`, and `bootstrap` modules and demonstrating their functionality in a single application.
+This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation.
+
+We will build an authentication system using the `express-session`, `connect-flash`, `passport`, and `bootstrap` modules and demonstrating their functionality in a single application.
 
 ### Prerequisites
 To follow along, the reader needs to have the following.
@@ -363,9 +365,11 @@ router.get('/logout', (request, response) => {
     response.redirect('/users/login');
 });
 ```
-![log out](/engineering-education/connect-flash-express-sessions-and-boostrap/logout.png)
+![Log out](/engineering-education/connect-flash-express-sessions-and-boostrap/logout.png)
 
 ### Conclusion
-This article taught us how to use connect-flash to display error messages in a system, store the messages in express sessions, and style error messages using bootstrap. We implemented these concepts by building a complete authentication system based on the passport. This project should provide a head start for actively working on the authentication module of any node.js project.
+This article taught us how to use connect-flash to display error messages in a system, store the messages in express sessions, and style error messages using bootstrap. We implemented these concepts by building a complete authentication system based on the passport. 
+
+This project should provide a head start for actively working on the authentication module of any node.js project.
 
 You can find the source code for this application in [this.](https://replit.com/@salvador02/authetication)
