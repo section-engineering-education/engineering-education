@@ -143,7 +143,7 @@ Interacting with Native Method Libraries and providing native libraries (C, C++)
 It's a set of native libraries (C, C++) required by the Execution Engine.
 
 ### Conclusion
-Virtual machines are not based on reality, but they can make you feel as though they are.  When it comes time to compile Java code, it does so using the Java Virtual Machine. It allows Java apps to run.
+Virtual machines are not based on reality, but they can make you feel as though they are. When it comes time to compile Java code, it does so using the Java Virtual Machine. It allows Java apps to run.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
