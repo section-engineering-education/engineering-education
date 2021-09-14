@@ -21,13 +21,14 @@ Webpack is a tool that allows you to modularise your code and helps you to push 
 ### Installing Webpack
 The first thing you are going to do is to create a directory or folder, you can call it Webpack or anything you feel appropriate, and then you create another folder and name it Webpack Tutorial. 
 
-![alt text](webpack1.png)
+![File directory image(webpack1.png)
 
-<img src="webpack1.png" alt="File directory image" border="0"></a>
 
 The next thing we are going to do now is to open the Webpack Tutorial Folder with your favorite code editor, in my case is Visual Studio Code!
 So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created
-<img src="webpack2.png" alt="Empty folder image" border="0"></a>
+
+![Empty folder image](webpack2.png)
+
 As you can see there is no file in our folder and this is totally fine!
 
 Now the next thing we are going to be doing, is to initialize NPM (Node Package Manager), so I am going to open my terminal in VS Code and enter this command: 
@@ -35,11 +36,14 @@ Now the next thing we are going to be doing, is to initialize NPM (Node Package 
 ```
 npm init
 ```
-<img src="webpack3.png" alt="terminal command image" border="0"></a>
+
+![Terminal Command image](webpack3.png)
+
 
 **Note: You can only run the npm init command if NodeJs is properly installed on your device. Kindly Check out this link to install NodeJS [Installing NodeJS with Package Manager](https://nodejs.org/en/download/package-manager/)**
 
-<img src="webpack4.png" alt="generated package.json file image" border="0"></a>
+![Generated package.json file screenshot](webpack4.png)
+
 
 If you initalised npm properly, it will generate a package.json file for you, just like I have here.
 
@@ -48,7 +52,8 @@ Now, we have properly initialised our node package and we have our package.json 
 ```
 npm i webpack webpack-cli --save-dev
 ```
-<img src="webpack5.png" alt="additional files generated image" border="0"></a>
+
+![Additional files generated image](webpack5.png)
 
 If you successfully installed Webpack you should have a package-lock.json file and the node_modules folder in your root directory, just like I have here.
 
@@ -90,7 +95,8 @@ Then you add the following into your webpack.config.js file
     ],
   },
 ```
-<img src="webpack6.png" alt="webpack config file new look 1" border="0"></a>
+
+![webpack config file new look 1](webpack6.png)
 
 Your webpack.config.js file should now look like this. 
 
@@ -112,11 +118,11 @@ After successfully installing the SVG Inline loader for webpack, using the comma
 ```
 If you did that correctly, your webpack.config.js should look like this. 
 
-<img src="webpack7.png" alt="webpack config file new look 2" border="0"></a>
+![webpack config file new look 2](webpack7.png)
 
 **Kindly note that in some other learning resources, you will have them make use of loader instead of use while trying to configure our SVG file in the rules array, but for consistency, we will make use of use instead of the loader. Also, I have found out that in recent learning resources/docs they make use of "use" instead of the loader, for example in the documentation below, the loader was used instead.**
 
-<img src="webpack8.png" alt="webpack config file new look 3" border="0"></a>
+![webpack config file new look 3](webpack8.png)
 
 ### Importing images
 Firstly, you are going to install the Image Loader for Webpack by running the command in the terminal below:
@@ -136,7 +142,7 @@ Next, we are going to add the Image loader configuration in our webpack.config.j
     }
 ```
 
-<img src="webpack9.png" alt="webpack config file new look 4" border="0"></a>
+![webpack config file new look 4](webpack9.png)
 
 Your webpack.config.js file should look like this if you added the Image Loader configuration properly. 
 
@@ -158,7 +164,7 @@ If you have successfully installed the Bable Loader Package, then we are going t
 ```
 After doing that your webpack.config.js file should now look like this
 
-<img src="webpack10.png" alt="webpack config file new look 5" border="0"></a>
+![webpack config file new look 5](webpack10.png)
 
 We have successfully imported our CSS, SVG, Image and Babel files and added the configuration in our webpack.config.js file but that is not all. 
 
@@ -179,7 +185,7 @@ const path = require("path")
 ```
 If you did everything correctly your webpack.config.js should now look like this
 
-<img src="webpack11.png" alt="webpack config file new look 6" border="0"></a>
+![webpack config file new look 6](webpack11.png)
 
 One thing to note here is that you are importing four different files and those files will be bundled up into our bundle.js file but we also need to inject these files into our HTML file, and that is what we are going to be doing next, with the help of HTML webpack plugin. 
 
@@ -199,7 +205,7 @@ Then we add the plugins after the output with the code below:
 ```
   plugins: [new HtmlWebpackPlugin()],
 ```
-<img src="webpack12.png" alt="webpack config file new look 7" border="0"></a>
+![webpack config file new look 7](webpack12.png)
 
 If you did everything correctly, your webpack.config.js file should now be like this. 
 
@@ -251,11 +257,11 @@ npm start
 ```
 After running these two commands, we see that we now have some files that are automatically generated for us. 
 
-<img src="webpack13.png" alt="webpack config file new look 8" border="0"></a>
+![webpack config file new look 8](webpack13.png)
 
 Remember that we added an Array of Even Numbers in our index.js file, but then we get our array also in our bundle.js file and then we have the bundle.js script is also inserted into our HTML Webpack plugin generated index.html file. As shown in the images below: 
 
-<img src="bundle.js file image.png" alt="bundle JS file new look" border="0"></a>
+![bundle JS file new look](bundle.js file image.png)
 
 
 This shows that our Webpack configuration is totally okay and now you can have a CSS file, an SVG file, an image file, or a modern JS file (Babel JS) and the webpack will take care of it. 
