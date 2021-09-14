@@ -29,6 +29,7 @@ By the end of this tutorial, the user will understand how to:
 - [Installing the DPA on windows](#installing-the-dpa-on-windows)
 - [How to register MySQL Server for Monitoring](#how-to-register-mysql-server-for-monitoring)
 - [How to register the database instances for monitoring](#how-to-register-the-database-instances-for-monitoring)
+- [Monitoring Database using Solar Winds DBA](#monitoring-database-using-solar-winds-dba)
 - [Best practices](#best-practices)
 - [Conclusion](#conclusion)
 
@@ -158,6 +159,47 @@ After you've double-checked the information, click the `Register Database Instan
 - After successful creation, the page below is displayed.
 
 ![Confirmation](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/confirmation.png)
+
+
+ ### Monitoring Database using Solar Winds DBA
+
+Now that we have successfully installed the Database Performance Analyzer, we can now look at the most useful features of the solution. In the section below, we will take a look at five most important features and functions that database administrators would find very useful. These functions include:
+
+#### 1. *Database performance optimization*
+
+![ Database performance optimization](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/optimization.png)
+
+With Solarwinds, it is possible to identify bottlenecks and pinpoint exactly where the problem is arising. This is turn help the database administrator make the necessary adjustment and hence solve the problem as fast as possible. In addition to that, the solution offers direct visibility into issues that as poorly performing applications long before they can cause bigger errors.
+Through the solution’s machine learning-powered anomaly detection, it becomes very easy to know exactly what needs to be tuned for the database to be at optimum performance. This particular function helps in the identification of inefficient workloads and heavy queries that affect overall database performance.
+
+#### 2. *Resource usage*
+
+![Resource Usage](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/resources.png)
+
+ 
+Resource utilization and allocation form a big part of database performance and it is, therefore, crucial to keep track of this information. DPA offers the user high-level visibility into how resources are utilized. With Solar Winds DPA, the database administrator has access to computation metrics such as disk, CPU, memory, and network usage. 
+
+#### 3. *Detailed issue analysis reports*
+
+![ Analysis Reports](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/reports.png)
+
+ 
+Solar winds DPA offers a multidimensional performance analysis of the database with a central view of all variables related to the database. DPA identifies all faults within a database including inefficient queries and poorly scripted SQL statements. This kind of visibility is what’s needed for seamless and efficient database administration. 
+
+#### 4. *Automated notifications*
+
+![ Notifications](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-microsoft-sql-server/notifications.png)
+ 
+The Solar winds DBA tool has an automated notification system that enables the system administrator and other responsible parties to be notified of any critical alerts. Further, these reports can be customized to suit the organization and user needs.
+
+#### 5. *Query tuning advice*
+
+![ Query Advisor](/engineering-education/setting-up-solar-windows-database-analyzer-for-monitoring-Microsoft-SQL-server/query_advisor.png)
+ 
+Solar winds database performance analyzer uses information acquired to provide the user with insight and predictions through a feature known as table tuning advisor. 
+
+
+
 
 ### Best practices
 
