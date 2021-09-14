@@ -19,7 +19,7 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 
 ### Proposed title of article
 Your title should be descriptive of the article/tutorial. Be Specific. *Use keyword research to gain your article higher ranking.*
-Use the following format as the title of the issue: [Category of Topic] Title for the article.
+**Use the following format as the title of the issue: [Category of Topic] Title for the article.**
 
 For example, if the article is based on machine learning, use the following: [Machine learning] Introduction to Machine Learning.
 If the article is based on developing an Android application, use the following: [Android] Developing Apps using Android.
