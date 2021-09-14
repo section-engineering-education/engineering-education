@@ -13,14 +13,13 @@ images:
   - url:  /engineering-education/designing-an-authentication-api-using-service-classes-in-flutter/hero.jpg
     alt: Authentication API using flutter service classes image
 ---
+### Introduction
 
 `Service classes` are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code. A side consequence of Services is that it produces a domain language specific to your app through the APIs of your services. So your view models can be read as well. Moreover, the view models can be read as well. 
 <!--more-->
 Creating services becomes second nature once you have mastered the concept. However, that certain functionality may be so simple when you follow that path.
 
-With the help of service classes, we will learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. We will use authentication as an example.
-
-Using service classes, you may hide the implementation details of third-party code in your app. When you need to call an API function numerous times across your codebase, they can be very useful.
+With the help of service classes, we will learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. As an example, we'll look at authentication. You can hide the implementation details of third-party code in your app using service classes. When you need to call an API function numerous times across your codebase, they can be very useful.
 ### When to create service classes
 When adopting the Stacked architecture, service is always established in certain instances. A service class does not have to finish the work service if it does not make sense. 
 
@@ -71,7 +70,6 @@ class Login extends StatelessWidget {
       print(e); 
     }
   }
-  ...
 }
 ```
 > Even while many programs do not require users to sign in explicitly, it is critical to be able to recognize them individually.
