@@ -266,14 +266,14 @@ public class StudentController {
         service.createStudent(student);
     }
     // Handles get student by id endpoint
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Mono<Student>> getById(@PathVariable("id") int id) {
         Mono<Student> student = service.findById(id);
         HttpStatus status = student != null ? HttpStatus.OK : HttpStatus.NOT_FOUND;
         return new ResponseEntity<>(student, status);
     }
     // Handles the search student by name endpoint
-    @GetMapping("/{name}")
+    @GetMapping("/name/{name}")
     public Flux<Student> getByName(@PathVariable("name") String name) {
         return service.findByName(name);
     }
