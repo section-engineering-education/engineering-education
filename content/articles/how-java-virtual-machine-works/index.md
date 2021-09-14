@@ -2,23 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /How-Java-Virtual-Machine-Works/
+url: /how-java-virtual-machine-works/
 title: How Java Virtual Machine Works
-description: In this article, we will discuss Java Virtual Machine, used to compile Java code. We will understand the various types of virtual machines and discuss them in detail.
+description: In this article, we will discuss Java Virtual Machine which is used to compile Java code. We will understand the various types of virtual machines and discuss them in detail.
 author: geofrey-mwangi
-date: 2021-09-10T00:00:00-18:00
+date: 2021-09-15T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education//How-Java-Virtual-Machine-Works/hero.jpg
-   alt: First Hop Redundancy Protocol example image
+  -url: /engineering-education/how-java-virtual-machine-works/hero.jpg
+   alt: Java Virtual Machine example image
 ---
+
+The `Java Virtual Machine (JVM)` is the Java program that executes the main function. When you install **JRE**, you'll also get JVM (Java Runtime Environment). A compiler in other programming languages generates machine code. To compile Java code, Java Virtual Machine is used. It enables Java applications to execute on the system. <!--more-->
 
 ### Introduction
 
-The `Java Virtual Machine (JVM)` is the Java program that executes the main function. When you install **JRE**, you'll also get JVM (Java Runtime Environment). A compiler in other programming languages generates machine code. To compile Java code, Java Virtual Machine is used. It enables Java applications to execute on the system.
-As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without the need for any modifications. JVM makes all of this possible. As part of the Java compiler's process of compiling a `.java` file,`.class` files (which contain byte-code) with the same class names are generated. When we run this `.class` file, it goes through a series of steps. All of these steps describe the JVM as a whole and we will be discussing them in this article.
+As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without any modifications. 
+
+JVM makes all of this possible. As part of the Java compiler's process of compiling a `.java` file,`.class` files (which contain bytecode) with the same class names are generated. When we run this `.class` file, it goes through a series of steps. These steps describe the JVM as a whole, and we will discuss them in this article.
 
 ### Types of virtual machines
 
@@ -26,9 +29,9 @@ As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must
 
 2. **Application-based virtual machines (AVM)**: The host machine allows a single process to execute as an application without involving any hardware whatsoever. Process-based virtual machines are another name for them. JVMs belong to this group of VMs, which we will discuss at length in this article.
 
-An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. They are also known as process-based virtual machines. 
+An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. Thus, they are also known as process-based virtual machines. 
 
-The following files are created: a `.java` file, `.class` files with the identical names as those in the java file. This `.class` file breaks down the JVM into numerous phases that describe how it works:
+The following files are created: a `.java` file, `.class` files with identical names to those in the java file. This `.class` file breaks down the JVM into numerous phases that describe how it works:
 
 1. ClassLoader
 2. JVM Memory 
@@ -51,7 +54,9 @@ As one of the phases of JVM, it mainly consists of three activities which are li
 - `.class` files can be classified as Class or Interface.
 - There is a lot of detail on the modifier, variables, and method.
 
-For each `.class` file that is loaded, the JVM produces a Class object to represent it in heap memory. It should be noted that this object belongs to the `Java.lang` package's Class type. If the programmer wants information about a class, such as its name, its parent or any methods or variables that are associated with it, he or she can use these Class objects. The getClass() function of the Object class can be used to retrieve this object reference.
+For each `.class` file loaded, the JVM produces a Class object to represent it in heap memory. One should note that this object belongs to the `Java.lang` package's Class type. 
+
+If the programmer wants information about a class, such as its name, its parent, or any methods or variables associated with it, they can use these Class objects. One can use the getClass() function of the Object class to retrieve this object reference.
 
 ```java
 //The class object built by JVM to represent the.class file in memory is demonstrated in this Java application
@@ -109,7 +114,9 @@ Executes three operations, including:
 
 ### JVM Memory 
 
-The `Runtime Data Area` is another name for the memory area. As defined by the JVM specification, some run-time data regions are required throughout the execution of the program. A few of these are created when the JVM is booting up. Another type of object is a thread-specific object, formed just when a thread is created and destroyed when the thread is destroyed. It's used to keep track of instructions, usually. In total, it's broken down into five sub-areas.
+The `Runtime Data Area` is another name for the memory area. As defined by the JVM specification, some run-time data regions are required throughout the program's execution. A few of these are created when the JVM is booting up. 
+
+Another type of object is a thread-specific object, formed just when a thread is created and destroyed when the thread is destroyed. It's used to keep track of instructions usually. In total, it's broken down into five sub-areas.
 
 1. **Method area**: Class information such as the class name, parent class name, and methods are also preserved in the method area.
 2. **Heap area**: In the heap area, all objects' information is saved. There is also a Heap Area for each Java Virtual Machine. It's also a resource that's shared.
