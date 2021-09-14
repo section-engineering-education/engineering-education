@@ -2,6 +2,7 @@
 Because of their inaccuracy, floating-point data types cannot be used in financial calculations. This is why Java provides a separate class named "BigDecimal" for executing operations and reducing the chances of calculation errors. On double numbers, the BigDecimal class provides arithmetic, scale management, rounding, comparison, format conversion, and hashing functions. It compensates for the time complexity, however, by handling extremely large and extremely small floating-point integers with exceptional precision.
 
 These basic arithmetic operations can be performed on BigDecimal as well as between BigDecimal and primitive data types, which is what our essay will cover.
+While both BigInteger and BigDecimal support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. BigDecimal/BigInteger is not for you if you're constructing a low-latency application where every microsecond counts.
 
 Let us look at our first example of Adding, subtracting, and multiplying two large decimal integers with a Java program.:
 ```Java
@@ -135,8 +136,19 @@ Subtracting first1 and sec2 = -5
 Multiplying first1 and sec2 = 300
 Dividing first1 and sec2 = 0.75
 ```
+> No null values are allowed in a database, application or view and everything is initialized with new BigDecimal(0), or you execute null checks on every use of nullable values.
+### Need for BigDecimal
+There is a lot of fun to be had with floating point numbers. A double type is commonly used for quantities, unless the value is an integer, in which case an int type is usually acceptable. In addition, a float or a long can be used, depending on the size of a value's value type. It should be noted that these kinds are the very worst thing you can use when dealing with money. They do not provide the correct value, but rather one that can be stored in a binary format. As an example, let's look at the dangers of utilizing a double.
+### About premitive data types
+They are the simplest types. It is possible to design your own complicated kinds by using primitive types as a starting point for development. Primitive types are easier to use in applications since they boost the performance by a large amount. Object-based implementation of primitive types would result in a considerable performance. As a result of their name, they can relate to a wide range of objects. The non-primitive data types in Java, on the other hand, are built by the programmers. For the same reason, primitive types are substantially more efficient when compared with instances of wrapper classes.
+### Primal and non-primitive data types 
+Primal and non-primitive data types differ primarily in their underlying data types:
+- This means that Java comes with a set of primitive types that are already specified.
+- In contrast, primitive types cannot be used to call methods to execute particular actions.
+- While a primitive type always has a value, other types can be null.
 ### Conclusion
 A BigDecimal is a means to represent numbers that is accurate. Having a Double gives you a certain level of precision in your game. When working with doubles of varying magnitudes, the smaller one could be dropped from the sum because the magnitude difference is so huge. This would not happen with BigDecimal.
+If you want to work with double numbers for arithmetic or scale handling or rounding or comparison or format conversion then the BigDecimal class is for you. While it can handle very large and very small floating point numbers with remarkable precision, the time complexity compensates a little.
 
 BigDecimal has the drawback of being slower and more difficult to write algorithms with.
 
