@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/core-concepts-of-redux-store-management/
+url: /core-concepts-of-redux-store-management/
 title: Core Concepts of Redux Store Management
 description: This tutorial will guide you on how to set up and integrate Redux into an application. We will also discuss how to connect an application to Redux flow.
 author: arafat-olayiwola
