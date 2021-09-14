@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/hapi-validation-bcrypt-hashing-and-jwt/hero.png
-    alt: JHapi validation bcrypt hashing and JWT image example
+    alt: Hapi validation bcrypt hashing and JWT image example
 ---
 
 A website's security begins with having clean data in a database. It is good practice to ensure that information submitted to a database is accurate and filtered to avoid clouding it with either redundant or unrealistic records. 
@@ -34,6 +34,7 @@ Start by setting up an open application in the desired folder using the command:
 ```js
 npm init -y
 ```
+The `-y` flag autocompletes other dependecies required when setting up a new project.
 
 It is preferable to work on a web project using the MVC architecture. So we will follow the same architecture for this project. Working with this architecture ensures an organized folder structure and easy to debug code. So set up the project folder structure as below.
 
@@ -59,20 +60,21 @@ npm install express mongoose jsonwebtokens @hapi/Joi bcryptjs dotenv body-parser
 To import the dependencies installed, we need to add the snippets below in the application's entry point in the `index.js` file.
 
 ```js
+// importing express
 const express = require('express')
 const app = express(); 
 
-//body parser
+//import body parser
 const bodyParser = require('body-parser')
 
-//dotenv
+//import dotenv
 const dotenv = require('dotenv')
 
-//databse connection object
+//import the databse connection object
 const connectDB = require('./config/database')
 dotenv.config({path: './config/config.env'})
 
-// auth router
+// auth route
 const authRoute = require('./routes/auth');
 
 // posts route
@@ -100,20 +102,20 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema(
     {
         name: {
-            type: String,
+            type: String, //type string
             required: true,
-            min: 6
+            min: 6 //min length
         },
          email:{
-            type: String,
+            type: String,  //type string
             required: true, 
-            min: 5,
-            max: 255
+            min: 5, //min length
+            max: 255 //max length
         },
         password:{
-            type: String,
-            required: true,
-            max: 1024
+            type: String,  //type string
+            required: true, 
+            max: 1024 //max password length
         },
         date: {
             type: Date,
@@ -128,9 +130,9 @@ module.exports = mongoose.model('User', userSchema);
 ### Connecting to the database
 We will use mongo DB Atlas to keep our records. You can follow [this tutorial](https://docs.atlas.mongodb.com/connect-to-cluster/) to find out how to connect a mongo DB Atlas to a web Project. In the `config` folder, create a new file and name it `config.env`.  In this file, we are going to define our global variables for the project,
 
-```env
-PORT = 5000
-MONGO_URI = 'YOUR MONGOBD CONNECTION URL'
+```js
+PORT = 5000 //environmental port where the project runs
+MONGO_URI = 'YOUR MONGOBD CONNECTION URL' // mongodb connection url
 TOKEN_SECRET = any random string
 ```
 >The `TOKEN_SECRET` is a secret we will use with JSON Web Token later in the tutorial.
@@ -138,6 +140,7 @@ TOKEN_SECRET = any random string
 In the same folder, create a file called `database.js`, then add the snippets below to connect to the database.
 
 ```js
+//import mongoose
 const mongoose = require('mongoose')
 
 //connnect to database
@@ -150,6 +153,7 @@ const connectDB = async () => {
         })
         console.log(`MongoDB Connected: ${conn.connection.host}`)
     } catch (err) {
+      //log the error incase of any then exit execution
         console.error(err)
         process.exit(1)
     }
@@ -158,10 +162,12 @@ const connectDB = async () => {
 module.exports = connectDB
 ```
 ### Validating inputs 
-In the `routes` folder, create a new file for validation. In the file, we will have two constants for validation during registration and login. Add the snippets below for the validation process. The data object passed contains the information in the request body.
+In the `routes` folder, create a new file for validation. In the file, we will have two constants for validation during registration and login. Add the snippets below for the validation process. The data object passed contains the information in the request body. This information is used against the preset conditions to perfom the validation.
+
+After the validation is complete, the functions are exported for use in the front-end where they will be called when as soon as the form data is submitted.
 
 ```js
-//validation
+//import validation module
 const Joi = require('@hapi/joi')
 
 const userRegistrationValidation = data =>{
@@ -202,7 +208,7 @@ const {userRegistrationValidation, userLoginValidation} = require('./validation'
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 
-
+//posting form data to login route
 router.post('/login', async (req, res) =>{
     const { error } = userLoginValidation(req.body)
     
@@ -233,12 +239,14 @@ module.exports = router;
 ```
 
 #### Registration route
-This route registers users into the database. The data passed to this route is taken for validation in the `userRegistrationValidation`. 
+This route registers users into the database. The data passed to this route is taken for validation in the `userRegistrationValidation`.  If any error exists in the request , especially form the validation, the server sends the error to with the response back to the user. 
 
 ```js
+//postung data to register route
 router.post('/register', async (req, res) =>{
     const { error } = userRegistrationValidation(req.body)
     
+    //send any error to the user incase of any
     if(error){
         return res.status(400).send(error.details[0].message)
     }
@@ -262,6 +270,7 @@ const hashedPassword  = bcrypt.hashSync(req.body.password, salt);
 Afterwards, a new user instance is created and saved into the database.
 
 ```js
+//creating a new user object
 const user = new User(
     {
         name: req.body.name,
@@ -271,6 +280,7 @@ const user = new User(
 );
 
 try{
+  //saving the newly created user 
     const savedUser = await user.save()
     res.send({savedUser: user._id})
 }catch(err){
@@ -315,9 +325,11 @@ res.header('authentication-token', token).send(token)
 We need to verify that the token is passed to the request header so that only authenticated users can access protected routes. We check if there is an `authentication token` in a request, and if the request has no token, it is denied access to a protected route. 
 
 ```js
+//importing the jwt module
 const jwt = require('jsonwebtoken')
 
 module.exports = function(req, res, next){
+    //fetch the token from the request header
     const token = req.header('authentication-token');
     if(!token){
         return res.status(400).send('Access denied!');
@@ -329,6 +341,7 @@ module.exports = function(req, res, next){
 However, if the token is available in the request header, we mark the user as verified and allow him to access protected routes.
 
 ```js
+// verify the user
 try {
     const verifiedUser = jwt.verify(token, process.env.TOKEN_SECRET)
     req.user = verifiedUser;
@@ -342,6 +355,7 @@ try {
 To protect a given route, we need to add the `verify` method before the request as show below:
 
 ```js
+//extrating the router module from express
 const router = require('express').Router();
 
 //verify
@@ -359,6 +373,7 @@ router.get('/', verify, (req, res) =>{
 
 module.exports = router;
 ```
+
 The above snippet means that only authenticated users can access the posts. 
 
 ### Testing the project
