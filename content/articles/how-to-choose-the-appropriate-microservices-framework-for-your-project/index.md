@@ -40,10 +40,10 @@ Below are the criteria for selecting the proper framework for migrating from a m
 - **Using APIs and events for communication**: Services ought not to communicate with others directly. Instead, an API gateway that allows authentication, request, responses, and throttling services should be designed. Traffic can then be redirected from the API gateway to the updated version of services.
 - **Security concerns**: Microservices are vulnerable to attacks due to their distributed nature and structure. This means that a different, more secure approach such as the [DevSecOps model](https://snyk.io/devsecops/) has to be adopted compared to monolith architecture.
 
-#### Developing the microservices
-- **Version control strategy**: Each service should reside in its repository for easy access and maintaining clean version control logs. It is also vital when implementing changes that can break other services.
-- **Consistent development environments**: the services development environments should be set as virtual machines to ensure developers adapt to the framework and get started quickly.
-- **Implement backward compatibility for the exposed endpoints**: The rigid contract tests to safeguard against breaking changes should be implemented. It will allow backward compatibility for the API calls to respond to each user query. This assists businesses in developing production-ready applications quickly.
+#### Development of the microservices
+- **Version control**: Each service should be kept in separate repository for ease of access and to ensure clean version control logs are kept. It is also vital when making changes that can affect other services.
+- **Consistent development environments**: The services development environments should be deployed as VMs to ensure developers familiarize with the framework easily.
+- **Implement backward compatibility**: The rigid contract tests to safeguard against the changes that can break the system should be implemented. It will ensure backward compatibility for the API calls that respond to each user query. This also ensures businesses develop the production-ready applications easily.
 
 #### Data storage and management of the microservices
 - **Implement different databases for each microservice**: The database that fulfils the service needs should be selected. Then the infrastructure and storage that matches the data it contains should be customized and used entirely for that microservice. A service mesh ensures that a robust microservice framework has been achieved. Each service is separately maintained while working together with other services.
