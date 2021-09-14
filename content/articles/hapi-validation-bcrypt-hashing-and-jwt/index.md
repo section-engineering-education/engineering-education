@@ -31,10 +31,12 @@ To follow along, the reader needs to have the following.
 
 ### Project setup
 Start by setting up an open application in the desired folder using the command:
+
 ```js
 npm init -y
 ```
-The `-y` flag autocompletes other dependecies required when setting up a new project.
+
+The `-y' flag autocompletes other dependencies required when setting up a new project.
 
 It is preferable to work on a web project using the MVC architecture. So we will follow the same architecture for this project. Working with this architecture ensures an organized folder structure and easy to debug code. So set up the project folder structure as below.
 
@@ -162,9 +164,9 @@ const connectDB = async () => {
 module.exports = connectDB
 ```
 ### Validating inputs 
-In the `routes` folder, create a new file for validation. In the file, we will have two constants for validation during registration and login. Add the snippets below for the validation process. The data object passed contains the information in the request body. This information is used against the preset conditions to perfom the validation.
+In the `routes` folder, create a new file for validation. In the file, we will have two constants for validation during registration and login. Add the snippets below for the validation process. The data object passed contains the information in the request body. This information is used against the preset conditions to perform the validation.
 
-After the validation is complete, the functions are exported for use in the front-end where they will be called when as soon as the form data is submitted.
+After the validation is complete, the functions are exported for use in the front-end, where they will be called when the form data is submitted.
 
 ```js
 //import validation module
@@ -239,7 +241,7 @@ module.exports = router;
 ```
 
 #### Registration route
-This route registers users into the database. The data passed to this route is taken for validation in the `userRegistrationValidation`.  If any error exists in the request , especially form the validation, the server sends the error to with the response back to the user. 
+This route registers users into the database. The data passed to this route is taken for validation in the `userRegistrationValidation`.  If any error exists in the request, especially from the validation, the server sends the error back to the user. 
 
 ```js
 //postung data to register route
@@ -307,6 +309,7 @@ router.post('/login', async (req, res) =>{
     }
 })
 ```
+
 In the next step, we use `bcrypt` to compare the supplied password in the request body with its equivalent hash in the database. If the passwords match, the user is logged in and assigned a `JSON web token secret` to his `userID`, which allows them to access protected routes since the token is attached to the request header.
 
 ```js
@@ -352,10 +355,10 @@ try {
 ```
 
 ### Protecting routes
-To protect a given route, we need to add the `verify` method before the request as show below:
+To protect a given route, we need to add the `verify` method before the request, as shown below:
 
 ```js
-//extrating the router module from express
+//extracting the router module from the express
 const router = require('express').Router();
 
 //verify
@@ -377,7 +380,7 @@ module.exports = router;
 The above snippet means that only authenticated users can access the posts. 
 
 ### Testing the project
-To test this project, we need to run the command `nodemon index` to start the development and try the endpoint in `Insomnia`. Of course, Postman can work here as well.
+We need to run the command `nodemon index` to test this project. Start the development server and try the endpoint in `Insomnia`. Of course, Postman can work here as well.
 
 #### Testing validation
 Let us try using a short password/ email than the length specified in the `userRegistrationValidation` to see if our validation worked. We will begin by navigating to the `register` route.
@@ -396,7 +399,7 @@ When we try accessing the `posts` route without being logged in, we are denied a
 ![Acees denied](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/access-denied.png)
 
 
-However, when we are logged in, we get an authentication token that we add to the request's header and obtain access to the protected route.
+However, when logged in, we get an authentication token that we add to the request's header and obtain access to the protected route.
 ![Authentication token](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/user-auth-token.png)
 ![View protected route](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/view-protected-route.png)
 
