@@ -1,4 +1,4 @@
-# Importing External Files using Webpack Loaders: The Beginners Guide 
+### Importing External Files using Webpack Loaders: The Beginners Guide 
 Today, I am going to show you how to use Webpack loaders and import external files while making use of Webpack. In this tutorial, I am going to be very concise, because I have understood that making use of Webpack loaders to import external files in a web project, can be quite demanding and may look like rocket science, especially for beginners, but it is actually quite easy. 
 
 ## Table Of Contents
