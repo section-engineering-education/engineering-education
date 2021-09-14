@@ -25,7 +25,7 @@ Defining the matrix is by dimensions `m x n`, where `m` is the number of rows wh
 - Column vector - Are matrices with a single column.
 - Square matrices - Are matrices where `m=n`, that is, the number of columns equals the number of rows. The basic form of linear equations is;
 
-> ![lineq](/engineering-education/solving-linear-equation-using-matlab/linear_six.png)
+![lineq](/engineering-education/solving-linear-equation-using-matlab/linear_six.png)
   
 Where `A_ij` are the elements of the `MxN` matrix, `X_j` are the elements of Nx1 matrix column vectors, and `b_i` are the elements of the `Mx1` row vector. For example, given a simultaneous equation shown below;
 
