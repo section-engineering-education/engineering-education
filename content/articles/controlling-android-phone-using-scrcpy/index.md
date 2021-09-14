@@ -143,7 +143,12 @@ Replace `SERIAL_NUM` with the device serial number.
 ```
 scrcpy --serial SERIAL_NUM
 ```
+##About SCRCPY
+With Scrcpy, you get all the capabilities you need for free, including the ability to share files and change resolutions. Scrcpy is one of the safest mirror applications for Android because it doesn't require you to install anything on your device.
+As a means of communication, the Android debugging tool is used by scrcpy (adb). As the name suggests, Android Debug Bridge (adb) allows you to communicate with a device via command-line interfaces. With the adb command, you may do a variety of device operations, including installing and debugging apps. It also gives you access to a Unix shell, which you can use to run any number of commands on your device. 
+>ADB It stands for Android Debug Bridge, a command-line tool that comes with Google's Android SDK (Software Development Kit).
 
+As long as the device supports TCP/IP, adb can connect to it. Connect the Android device to the PC by USB first, and then you can wirelessly connect. To enable TCP/IP on your device, perform the following command.
 ### Conclusion
 Scrcpy is among the top free and open-source Android screen mirroring programs.
 
