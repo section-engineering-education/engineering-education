@@ -6,15 +6,15 @@ url: /online-machine-learning-with-river-python/
 title: Online Machine Learning with River Python
 description: In this tutorial, we will use River Python to build our model and simulate streaming data. This will be a text classification model that classifies a given input text as either software or hardware-related.
 author: bravin-wasike
-date: 2021-09-06T00:00:00-13:00
+date: 2021-09-13T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/online-machine-learning-with-river-python/hero.jpg 
     alt: Online Machine Learning with River Python
 ---
-
-Online machine learning is a type of machine learning in which data becomes available one at a time in sequential order. At each step, the model is updated until at the end, we have a more accurate and robust model.
+Online machine learning is a type of machine learning in which data becomes available in a sequential order. At each step, the model is updated until we have a more accurate and robust model.
+<!--more-->
 
 The data is in motion and keeps on changing over time. It's best suited when we have streaming data, where we want to process one sample of data at a time.
 
@@ -375,7 +375,6 @@ The output is as shown:
 ![Pipeline Visualization](/engineering-education/multiclass-text-classification-with-pyspark/pipeline-visualization.jpg)
 
 ### Get pipeline steps
-
 To get the pipeline steps, use the following command. In this tutorial, we have two steps.
 
 ```python
