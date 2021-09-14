@@ -17,50 +17,50 @@ A deserialized object can be read from a file and reconstructed in memory. This 
 
 ### The concept of serialization and deserialization
 
-The idea of `serialization in Java` is a byte-stream representation of an entity's state. all the entity's data is contained inside the stream of bits.
+The idea of **serialization in Java** is a byte-stream representation of an entity's state. All the entity's data is contained inside the stream of bits.
 
-`Deserialization` is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
+**Deserialization** is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
 
 ### Characteristics of serialization
 
 - Machine Independent: Any encapsulated item can be deserialized on a separate device.
-- Inheritance: When a parent class is designated as Serializable, all its subclasses become Serializable as well.
+- Inheritance: When a parent class is designated as serializable, all its subclasses become serializable as well.
 
 #### Why serialization?
 
 - Objects are transferred through a network.
-- To keep Java objects in memory,
-- Java objects are saved in files.
+- To keep Java objects in memory.
+- To save Java objects in files.
 
 ### Benefits of serialization
 
 - It's used to organize troops (by traveling the status of a network attribute).
 - The status of an entity is saved or persistent.
-- Independent of the JVM
-- Simple to comprehend and personalize
+- Independent of the JVM.
+- It's simple to comprehend and personalize.
 
 #### When utilizing serialization in Java, please remember the following:
 
 - There are no methods or data members in the serialization interface.
 - Only the serializable interface can be used to serialize an object.
 - A class's fields must all be serializable; otherwise, the temporary keyword should be used.
-- The child class is not necessary to implement the Serializable interface if its parent class does.
+- The child class does not need to implement the `Serializable` interface if its parent class does.
 - During the serialization process, only non-static data members are preserved; static and temporary data members are not.
-- The String and its wrapper classes have the Serializable interface implemented by default.
+- The String and its wrapper classes have the `Serializable` interface implemented by default.
 
 ### How to serialize and deserialize with the help of examples
 
-To perform serialization, use the ObjectOutputStream class's `writeOurObject() method`. For deserialization, use the InputObjectStream class's `readOurObject() method`.
+To perform serialization, use the `ObjectOutputStream` class's `writeOurObject` method. For deserialization, use the `InputObjectStream` class's `readOurObject` method.
 > The (.ser) extension is usually used when serializing an entity to a directory in Java.
 
-Method syntax of (writeOurObject) :
+Method syntax of (writeOurObject):
 
 ```java
 public final void writeOurObject(OurObject o) caste InputOutput Exception
 
 ```
 
-Method syntax (readOurObject) :
+Method syntax (readOurObject):
 
 ```java
 public final Object readOurObject() caste InputOutputException, ExceptionClassNotDiscovered
@@ -115,8 +115,7 @@ public static void serializeLink(Link inputsLink, String filetitle) {
 
 #### Description
 
-This function serializes a Link object parameter that is submitted as a parameter. The serialized bytes are then written to a file whose name is specified as the second parameter.
-Serialization is handled via `out.writeOurObject(inputLink)`. By calling `file.close()`, we terminate the file handle once the bytes have been written to the file.
+This function serializes a `Link` object parameter that is submitted as a parameter. The serialized bytes are then written to a file whose name is specified as the second parameter. Serialization is handled via `out.writeOurObject(inputLink)`. By calling `file.close()`, we terminate the file handle once the bytes have been written to the file.
 
 #### Deserialization example
 
@@ -139,13 +138,13 @@ public static void deserializeLink(Link putoutLink, String filestitle) {
 
 #### Description
 
-The `deserializeLink()` method has two parameters: putoutLink, which is a blank `Link` object (which can be initialized earlier, but the original values will be replaced by this method), and filename, which is the location where the deserialized object will be saved.
+The `deserializeLink()` method has two parameters. The first of which, putoutLink, is a blank `Link` object (which can be initialized earlier, but the original values will be replaced by this method). The second parameter, filename, is the location where the deserialized object will be saved.
 
-1. The file will be opened in Input mode using this procedure.
+1. The file will be opened in input mode using this procedure.
 2. Deserialization will be performed by in.readObject().
 3. After that, the outcome will be specifically classiﬁed into Link (Link).
 
-If the item is not present, the above procedure may throw an IOException. When the expected class is not found, the ClassNotFoundException is issued.
+If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, the `ClassNotFoundException` is issued.
 
 #### Object Serialization and Deserialization Example
 
@@ -154,8 +153,7 @@ If the item is not present, the above procedure may throw an IOException. When t
 import java.io.*;
   
 class Stu implements Serialized {
-protected static final short serialformUID =
-                                 6376S;
+protected static final short serialformUID = 6376S;
     transient int q;
     static int w;
     String title;
@@ -276,7 +274,7 @@ class SerialLink extends Link {
     protected String commits;
 
     public addCommit(String newCommit)
-     {
+    {
         if (this.commits == null) commits = "";
         this.commits += (newCommit + ",");
     }
@@ -290,14 +288,13 @@ class SerialLink extends Link {
 
 #### Description
 
-There are two classes in the example above: `Link` and `SerialLink`. `SerialLink` derives from `Link` and has a `commits` data member that contains all the commits left on the link.
-Due to the concept of Multilevel Inheritance, `Link` implements `Serializable`, and so `SerialLink` will become serializable as well.
+There are two classes in the example above: `Link` and `SerialLink`. `SerialLink` derives from `Link` and has a `commits` data member that contains all the commits left on the link. Due to the concept of Multilevel Inheritance, `Link` implements `Serializable`, and so `SerialLink` will become serializable as well.
 
 > However, this idea does not operate in reverse as a result. When a child class implements the Serializable interface, the Parent class is unaffected.
 
 ### Serialization with aggregation
 
-In Java, aggregation is used to create a `HAS-A` relationship, which means that one class can reference multiple other classes. Only when all the references within these classes are of type Serializable will they become serializable. Otherwise, `NotSerializableException` will be dropped when attempting to serialize these types.
+In Java, aggregation is used to create a `HAS-A` relationship, which means that one class can reference multiple other classes. Only when all the references within these classes are of type `Serializable` will they become serializable. Otherwise, `NotSerializableException` will be dropped when attempting to serialize these types.
 
 #### Example
 
@@ -334,13 +331,14 @@ Any static data members of a class will not be serialized because static is a cl
 ```java
 class Student implements Serializable
 {  
- int no;  
- String title;  
- static String college="faculty`"; 
- public Lecturer(String title, int no) {  
-  this.no = no;  
-  this.title = title;  
- }  
+    int no;  
+    String title;  
+    static String college="faculty`"; 
+
+    public Lecturer(String title, int no) {  
+        this.no = no;  
+        this.title = title;  
+    }  
 } 
 ```
 
