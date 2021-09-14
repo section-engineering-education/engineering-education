@@ -167,7 +167,7 @@ Now, if you head over to your browser and paste the URL `http://your-external-ip
 In this article, we demonstrated how to deploy a Flutter web application on Google's compute engine. It's so satisfying that we can use the GCE to explore the Google infrastructure in running applications. Having built a web application, we successfully deployed and accessed the application using a public IP address that we can access from any device.
 
 ### Further reading
-You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `HTTPS` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer certificate(SSL). You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
+You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `HTTPS` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer(SSL) certificate. You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
