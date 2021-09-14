@@ -20,8 +20,7 @@ Creating services becomes second nature once you have mastered the concept. Howe
 
 With the help of service classes, we will learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. We will use authentication as an example.
 
-Using service classes, you may hide the implementation details of third-party code in your app. They can be instrumental when you need to call an API method multiple times across your codebase.
-
+Using service classes, you may hide the implementation details of third-party code in your app. When you need to call an API function numerous times across your codebase, they can be very useful.
 ### When to create service classes
 When adopting the Stacked architecture, service is always established in certain instances. A service class does not have to finish the work service if it does not make sense. 
 
@@ -75,7 +74,7 @@ class Login extends StatelessWidget {
   ...
 }
 ```
-> It is crucial to be able to individually identify your users even if many applications do not require the user to expressly sign in (for both analytical and security reasons). 
+> Even while many programs do not require users to sign in explicitly, it is critical to be able to recognize them individually.
 
 The ability to determine whether a request originates from an authenticated user, whether utilizing Firebase Firestore, Realtime Database, or even an external API, thanks to anonymous sign-in, adds a layer of security to your application.
 
@@ -86,7 +85,7 @@ Although we are using the Firebase Authentication API in our code, we are still 
 1. How will you deal with modifications in future versions of Firebase Authentication that cause problems?
 2. In the future, let us say that we want to switch from Firebase Authentication to a different auth service.
 
-In our codebase, we will have to update or replace all Firebase Authentication calls. If and when our project expands, we will likely add a lot more stuff to our application. The most frequent security features include sharing preferences, granting rights, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more difficult as a result of this.
+All Firebase Authentication calls in our codebase will need to be updated or replaced. If and when our project expands, we will likely add a lot more stuff to our application. The most frequent security features include sharing preferences, granting rights, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more difficult as a result of this.
 
 ### Creating service classes
 As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems. It is possible to create a generic authentication service using Firebase Authentication :
