@@ -6,7 +6,7 @@ url: /hapi-validation-bcrypt-hashing-and-jwt/
 title: Hapi validation, Bcrypt hashing and JWT in action
 description: This article enables the reader to learn how to use Hapi to clean data submitted in a form and ensure a correct validation before submitting the data to a database. Additionally, we will learn how to use Bcrypt in hashing passwords to avoid submitting plaintext password fields into our database. 
 author: phina-kersly
-date: 2021-09-11T00:00:00-04:34
+date: 2021-09-11T00:00:00-23:27
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -405,6 +405,8 @@ However, when logged in, we get an authentication token that we add to the reque
 
 ### Conclusion
 This tutorial taught us to validate user input using `Hapi`, password encryption with `bcrypt`, and JWT authentication. We built an authentication API using the three and testes=d out application. This tutorial should give the reader a way of getting started with data cleaning and securing data for their web project.
+
+You can find the entire code for this project [here.](https://replit.com/@PhinaKersly/Hapi-and-bcrypt#config/database.js)
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
