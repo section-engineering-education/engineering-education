@@ -119,7 +119,7 @@ python manage.py runserver
 The web app is running on `http://127.0.0.1:8000/` but we need to populate the database with a dummy database from Overpass Turbo. We will do that from the admin dashboard using the URL below: `http://127.0.0.1:8000/admin`.
 
 ### Importing Dummy Data
- Click on the link below: `https://overpass-turbo.eu/` and  click the wizard button. Type `tourism=hotel in Miami` in the text field. Now select the build and run query wizard button. It will build the query, so the next step is to select the export button. Locate the data, section and click on download/copy as raw OSM data. This will download a JSON file. Copy the downloaded file to the project folder and rename it as hotels.json To populate our database, we need to create an empty migration. Run this code in your terminal.
+ Click on the link below: `https://overpass-turbo.eu/` and  click the wizard button. Type `tourism=hotel in Miami` in the text field. Now select the build and run query wizard button. It will build the query, so the next step is to select the export button. Locate the data, section and download it as a JSON file. Copy the downloaded file to the project folder and rename it as hotels.json To populate our database, we need to create an empty migration. Run this code in your terminal.
 ```
 python manage.py makemigrations hotels --empty
 ```
@@ -152,6 +152,7 @@ def load_data(apps, schema_editor):
                 pass 
 ```
 
+
 We loop through the objects of the element containing the location and tags hotel, inside the loop we extracted the hotel name and coordinates. Then we return a valid GEOSGeometry object that is corresponding to spatial data. The with statement automatically close the file. We will call the function inside the Migration class.
 
 ```
@@ -178,8 +179,8 @@ Here is the final copy of the migration file
         hotel_objects = json.load(exp_hotel)
         for hotel_obj in hotel_objects['elements']:
             try:
-                objType = hotel_obj['type']
-                if objType == 'node':
+                obj = hotel_obj['type']
+                if obj == 'node':
                     tags = hotel_obj['tags']
                     hotel_name = tags.get('name','no-name')
                     hotel_lon = hotel_obj.get('lon', 0)
