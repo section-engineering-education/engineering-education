@@ -18,7 +18,7 @@ This article discusses the core concepts of Redux store management. We will unde
 <!--more-->
 Let's first discuss what Redux is all about and how it can be integrated into an application.
 
-### Key Takeaways 
+### Key takeaways 
 The following subtopics are covered in this article:
 - What is Redux and store management?
 - How to set up the Redux store.
@@ -26,7 +26,7 @@ The following subtopics are covered in this article:
 - Connecting an application to the Redux store.
 - Making asynchronous calls with Redux Thunk.
 
-### What is Redux and Store Management?
+### What is Redux and store management?
 Redux is a JavaScript library that depicts how an application's state should be managed and accessed. 
 
 It supports state management via a centralized store. 
@@ -147,7 +147,7 @@ However, doing this will make the Redux store accessible by the browser and all 
 
 To reference the Redux dev tools, press `CTRL+SHIFT+i` on windows or `CMD+SHIFT+i` on Mac inside your browser.
 
-### Action and Reducers In Redux Data Flow
+### Action and reducers in Redux data flow
 Each client's action can trigger a specific activity that binds with the reducer.
 
 The store is called by the reducer to update the state based on the data sent. It then re-renders the user interface to display the changes.
@@ -190,7 +190,7 @@ Normal reducers are constrained to a specific folder while root reducers are exp
 
 For instance, in the `reducers` folder, we can have different files for each reducer and one `index.js` file for the `rootReducer`:
 
-```JS
+```js
     import { combineReducers } from "redux";
     import leads from './leads';
     import auth from './auth';
@@ -200,9 +200,9 @@ For instance, in the `reducers` folder, we can have different files for each red
         authReducer: auth
     })
 ```
-However, the Redux reducer logic instance goes thus below:
+The Redux reducer logic instance is highlighted below:
 
-```JavaScript
+```js
     import * as actionTypes from './actions';
 
     const initialState = {
