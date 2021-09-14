@@ -233,6 +233,114 @@ The following example shows how to use a modal plugin:
 </html>
 ```
 
+### Bootstrap progress bar
+The progress bar is a component that shows the progress of a task, eg the progress of installing software. The progress is normally represented in a percentage form. 
+
+In the `index.html` file replace, the existing snippet with the one below and open the file with a browser:
+
+```html
+<html>
+  <head>
+    <title>progress bar</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container" style="border: 1px solid; width: 300px; height: 150px; top: 50%; ">
+      <h5>Example of a Progress bar</h5>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40"  aria-valuemin="0" aria-valuemax="10" style="width: 57%;">
+          67% Complete
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="10" style="width: 82%;">
+          82% Complete
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="10" style="width: 100%;">
+          100% Complete
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+### Bootstrap Media Objects
+The media object is a component that is used to display a media object. It is used to display images, videos, and other media.
+ 
+They are accompanied by a right-aligned or left-aligned image and text content.
+
+Assume that you have an image `media.jpg` and you want to add some content describing the image on the right side of the image. You can accomplish that task using the snippet below:
+
+```html
+<html>
+  <head>
+    <title>Media Object</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container mt-3" >
+      <div class="media border p-3 ">
+        <img src="img/media.jpg" alt="media" class="mr-3 mt-3 rounded-circle" style="width: 40px;">
+        <div class="media-body" >
+          <h6><strong>Peter</strong>Joined Section on 1st June 2020</h6>
+          <p>Peter is currently a reviewer.</p>
+        </div>
+      </div>
+    </div>
+</html>
+```
+
+### Bootstrap star rating
+The star rating is a component that allows end-users to rate a product or service. The number of stars chosen by the user is indicated by the number of filled stars.
+
+Assuming you are asking a user to rate your work and the user rates your work using only two stars. The snippet below shows the feedback you would get:
+
+```html
+<html>
+  <head>
+    <title>Rating Star</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="rating" style="border: 1px solid; width: 300px; height: 100px; top: 50%;">
+      <h5>Please Rate my work</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <style>
+      .checked {
+        color: red;
+      }
+      .rating {
+        position: absolute;
+        border-bottom: 20px;
+        margin-left: 500px;
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
+```
+
+In the above example, we have used the `star icon` to represent the star rating.
+
 ### Conclusion
 Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=).
 
