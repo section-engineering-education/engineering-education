@@ -1,26 +1,27 @@
 ### Importing External Files using Webpack Loaders: The Beginners Guide 
-Today, I am going to show you how to use Webpack loaders and import external files while making use of Webpack. In this tutorial, I am going to be very concise, because I have understood that making use of Webpack loaders to import external files in a web project, can be quite demanding and may look like rocket science, especially for beginners, but it is actually quite easy. 
+In this article,  we will learn about Webpack and how to use Webpack loaders to import external files while making use of Webpack. 
 
-## Table Of Contents
+I am going to be very concise, because I have understood that making use of Webpack loaders to import external files in a web project, can be quite demanding and may look like rocket science, especially for beginners, but it is actually quite easy. 
+
+This tutorial is tailored to suit the needs of a beginner. As a prerequisite, your understanding of HTML, CSS, JavaScript and the use of the Terminal will be helpful. 
+
+### Table Of Contents
 1. What is Webpack?
 2. Installing Webpack
 3. Loaders and Plugins
 4. Make use of Webpack loaders to import various types of files
 
-## Prerequisites
-This tutorial is tailored to suit the needs of a beginner, so if you are a beginner frontend developer who writes HTML, CSS, and normal JavaScript, then you are good to go. 
-
 **Let us dive in!**
 
-## What is Webpack?
+### What is Webpack?
 Webpack is a tool that allows you to modularise your code and helps you to push your codes to one file in other for you not to worry about the hierarchy of your files, especially when working with JavaScript files and also helps you to inject external files, like an SVG, images, your CSS files or other modern JS codes, in your web app. Webpack provides a configuration file, where you declare how things should be sorted out and then you relax. 
 
 **Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for a more elaborate definition of Webpack, check out this Wiki Definition of Webpack [Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
 
-## Installing Webpack
+### Installing Webpack
 The first thing you are going to do is to create a directory or folder, you can call it Webpack or anything you feel appropriate, and then you create another folder and name it Webpack Tutorial. 
 
-![File Directory Screenshot](/importing-external-files-using-webpack-loaders-the-beginners-guide/webpack1.png)
+![File Directory Screenshot](/importing-external-files-using-webpack-loaders-the-beginners-guide/bundle.js file image.png)
 
 
 <img src="webpack1.png" alt="File directory image" border="0"></a>
@@ -63,14 +64,14 @@ module.exports = {
 ```
 So in the code above we have the module.exports object and then we declared the entry point for our project which is the app directory and in the app directory, you have the index.js file which is your main file. 
 
-## Loaders and Plugins
+### Loaders and Plugins
 Now we have successfully installed webpack and set up our webpack.config.js file. So before we continue to importing our files using Webpack loaders, you need to understand what are loaders and plugins, because this is what we will be using to successfuly handle the importation of our files. 
 
 Whenever there are new things to load in the webpack, for example, we want to import an SVG, or a CSS file, the job of the loaders is simply to bring in these files that we need while things are loaded. So before the final output.js file is created whatever configuration you need to do to bring in your files is being done by the loaders. And whatever configuration that you need to do after the output.js file is created is handled by the plugins. 
 
 As we proceed to import external files using webpack loaders we will understand more the work of the loaders and plugins. 
 
-## Making use of Webpack loaders to import various types of files. 
+### Making use of Webpack loaders to import various types of files. 
 
 ### Importing your CSS File
 The first thing we are going to do is to run the command below in our terminal
@@ -260,7 +261,13 @@ Remember that we added an Array of Even Numbers in our index.js file, but then w
 
 This shows that our Webpack configuration is totally okay and now you can have a CSS file, an SVG file, an image file, or a modern JS file (Babel JS) and the webpack will take care of it. 
 
-**This tutorial is tailored for total beginners, who are just finding their way around trying to make use of Webpack, for further direction, kindly go through these links:** 
+### Conclusion
+- We gave a brief description of Webpack
+- We learned how to install webpack 
+- We briefly discussed about Loaders and plugins
+- And finally we made use of webpack loaders to import various file types using a step-by-step approach. 
+
+### Further Reading:
 1. [Installing Webpack](https://webpack.js.org/guides/getting-started/)
 2. [Webpack Loaders and Plugins](https://stackoverflow.com/questions/37452402/webpack-loaders-vs-plugins-whats-the-difference)
 3. [Making use of webpack loaders to import various file types](https://webpack.js.org/guides/asset-management/)
