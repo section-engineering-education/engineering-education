@@ -29,7 +29,7 @@ This article will focus on our deployment using Google Compute Engine(GCE). In t
 - [Conclusion](#conclusion)
 
 ### Creating a project on Google Cloud
-Everything with Google requires a project accessed using an API key. We have to create a new Google Cloud Platform project and enable the Google Compute Engine API to get started. Make sure that you set up billing so that you can use the Google compute engine API.
+Every Google cloud service API requires a project accessed using an API key. We have to create a new Google Cloud Platform project and enable the Google Compute Engine API to get started. Make sure that you set up billing so that you can use the Google compute engine API.
 
 Google provides you with the $300 free credit to use for 90 days as you try out the new products they provide. However, make sure that you shut down your running instances if you do not want to incur extra charges after the 90 days.
 
@@ -62,7 +62,7 @@ Next, we add the complete engine by creating a new instance through the steps be
 
 You will see the running instance as below.
 
-![Running instance](running-instance.png)
+![Running instance](/engineering-education/deploy-flutter-to-computer-engine/running-instance.png)
 
 ### Server stack deployment
 Most of the popular open-source web applications are running the LAMP stack. LAMP stack is a collection of open development software that facilitate hosting of dynamic application.
@@ -71,7 +71,7 @@ LAMP is an acronym for Linux Apache MySQL and PHP, which provide a set of softwa
 
 - To install LAMP, head over to launch a new terminal, then run the commands below:
 
-![New terminal](console.png)
+![New terminal](/engineering-education/deploy-flutter-to-computer-engine/console.png)
 
 ```bash
 sudo apt-get update
@@ -96,7 +96,7 @@ The Flutter application we will use for this project is a simple landing page bu
 
 Writing the code and describing every piece of the source code would make this tutorial unnecessarily long so, I have created and uploaded the files for the project in my [Repl.it](https://replit.com/@paulromans/flutter-web#). 
 
-Click the link below and clone the application.
+Click the link below to clone the application.
 
 [Link to project used for the tutorial.](https://replit.com/@paulromans/flutter-web#)
 
@@ -118,11 +118,11 @@ If you are application compiled and runs well, you can proceed to the next step.
 - Compress the web folder or your application from your machine, then obtain a `web.zip` file inside the `build` folder.
 - Head over to your virtual machine instance, then click `SSH tools` to upload the file.
 
-![Select upload file](upload-file.png)
+![Select upload file](/engineering-education/deploy-flutter-to-computer-engine/upload-file.png)
 
 - Google virtual machine provides the upload function to deploy the application to the VM. Select the `web.zip` file.
 
-![Web zip file](select-web.png)
+![Web zip file](/engineering-education/deploy-flutter-to-computer-engine/select-web.png)
 
 - However, you can use the gcloud command if you have installed Cloud SDK in your workstation.
 
@@ -136,7 +136,7 @@ gcloud compute scp [LOCAL_FILE_PATH] root@lamp-tutorial:/var/www/html
 sudo mv web.zip /var/www/html
 ```
 
-- At this moment, the application cannot run because it's still a zip file, and as you know that our virtual machine is empty, we can't unzip the folder unless we install an application for that. 
+- At this moment, the application cannot run because it's still a zip file. Since our virtual machine is empty, we can't unzip the folder unless we install an application for that. 
 
 - We will install `unzip` using the command
 
@@ -161,10 +161,10 @@ sudo rm -r web
 ### Testing the deployment
 Now, if you head over to your browser and paste the URL `http://your-external-ip`, you should see your application running.
 
-![Application running on Google computer engine](app-live.png)
+![Application running on Google computer engine](/engineering-education/deploy-flutter-to-computer-engine/app-live.png)
 
 ### Conclusion
-In this article, we demonstrated how to deploy a flutter web application on Google's compute engine. It's so satisfying that we can use the GCE to explore the Google infrastructure in running applications. Having built a web application, we successfully deployed and accessed the application using a public IP address that we can access from any device.
+In this article, we demonstrated how to deploy a Flutter web application on Google's compute engine. It's so satisfying that we can use the GCE to explore the Google infrastructure in running applications. Having built a web application, we successfully deployed and accessed the application using a public IP address that we can access from any device.
 
 ### Further reading
 You can do more research on this topic. For instance, our application IP address is insecure such that you cannot access it using the `HTTPS` protocol. The insecurity problem is tackled by securing the Apache server using a Secure Socket Layer certificate(SSL). You can find more about the process in [this link](https://www.linux.com/topic/networking/how-install-ssl-certificate-linux-server/).
