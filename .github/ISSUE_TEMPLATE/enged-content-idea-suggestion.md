@@ -19,6 +19,22 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 
 ### Proposed title of article
 Your title should be descriptive of the article/tutorial. Be Specific. *Use keyword research to gain your article higher ranking.*
+Use the following format as the title of the issue: [Category of Topic] Title for the article.
+
+For example, if the article is based on machine learning, use the following: [Machine learning] Introduction to Machine Learning.
+If the article is based on developing an Android application, use the following: [Android] Developing Apps using Android.
+
+ONLY viable topics to pick from:
+- API
+- Artificial Intelligence
+- Blockchain
+- Containers
+- Edge Computing
+- Languages
+- Machine Learning
+- Networking
+- Node.js
+- Security
 
 ### Introduction paragraph (2-3 paragraphs):
 Please write the Introductory paragraph(s), that would be included in your article. We will use this writing snippet to help us assess overall quality before approval. We're looking for the first 2-3 paragraphs of the article that appropriately summarize what your article will be about.
