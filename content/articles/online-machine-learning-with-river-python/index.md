@@ -10,19 +10,21 @@ date: 2021-09-13T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/online-machine-learning-with-river-python/hero.jpg 
+  - url: /engineering-education/online-machine-learning-with-river-python/hero.jpg
     alt: Online Machine Learning with River Python
 ---
+
 Online machine learning is a type of machine learning in which data becomes available in a sequential order. At each step, the model is updated until we have a more accurate and robust model.
+
 <!--more-->
 
 The data is in motion and keeps on changing over time. It's best suited when we have streaming data, where we want to process one sample of data at a time.
 
-This is different from traditional or offline machine learning where the dataset is available locally and a model is generated at the end after learning from the entire dataset. In offline machine learning, all our datasets are usually locally available. 
+This is different from traditional or offline machine learning where the dataset is available locally and a model is generated at the end after learning from the entire dataset. In offline machine learning, all our datasets are usually locally available.
 
 An overview of the difference between online and offline machine learning is shown below:
 
-![Online vs Offline machine learning](/engineering-education/multiclass-text-classification-with-pyspark/offline-vs-online-machine-learning.jpg)
+![Online vs Offline machine learning](/engineering-education/online-machine-learning-with-river-python/offline-vs-online-machine-learning.jpg)
 
 In this tutorial, we will use [River Python](https://riverml.xyz/latest/) to build our model and simulate streaming data. This will be a text classification model that classifies a given input text as either software or hardware-related.
 
@@ -164,6 +166,7 @@ Some of the methods that we will be using are as follows:
 These methods will be very helpful in this tutorial.
 
 ### Loading machine learning packages
+
 To load our machine learning packages, use the following commands:
 
 ```python
@@ -289,9 +292,9 @@ river_df
 
 The output is as shown:
 
-![Methods and attributes](/engineering-education/multiclass-text-classification-with-pyspark/methods-and-attributes-1.jpg)
+![Methods and attributes](/engineering-education/online-machine-learning-with-river-python/methods-and-attributes-1.jpg)
 
-![More methods and attributes](/engineering-education/multiclass-text-classification-with-pyspark/methods-and-attributes-2.jpg)
+![More methods and attributes](/engineering-education/online-machine-learning-with-river-python/methods-and-attributes-2.jpg)
 
 ### Simulating streaming data
 
@@ -372,9 +375,10 @@ pipe_nb
 
 The output is as shown:
 
-![Pipeline Visualization](/engineering-education/multiclass-text-classification-with-pyspark/pipeline-visualization.jpg)
+![Pipeline Visualization](/engineering-education/online-machine-learning-with-river-python/pipeline-visualization.jpg)
 
 ### Get pipeline steps
+
 To get the pipeline steps, use the following command. In this tutorial, we have two steps.
 
 ```python
@@ -521,4 +525,5 @@ This is a good tutorial that a reader can follow and learn online machine learni
 - [Text Classification](https://monkeylearn.com/text-classification/)
 
 ---
+
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
