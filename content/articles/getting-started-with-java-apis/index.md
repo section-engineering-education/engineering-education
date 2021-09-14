@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-java-apis/
+title: Getting started with Java APIs
+description: In Java, application programming interfaces (APIs) are predefined software tools that easily enable interactivity between multiple applications. This article offers a detailed explanation of Java APIs.
+author: kelvin-munene
+date: 2021-09-14T00:00:00-15:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-java-apis/hero.png
+    alt: Getting started with Java APIs Cover image
+---
 ### Introduction
 API stands for Application Programming Interface, and it is a set of communication protocols and subroutines that allow different programs to communicate with one another. A programmer can utilize a variety of API tools to make his or her program easier to understand. Additionally, an API allows programmers to construct software programs more efficiently.
 In basic terms, an API facilitates communication between two programs or apps by providing them with the tools and services they require. It receives the user's request and sends it to the service provider, after which it sends the service provider's response to the target user.
