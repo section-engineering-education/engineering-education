@@ -49,7 +49,9 @@ Running the code above creates two new files in your current directory: `X_train
 ### Integrating ML model to a Flask-RESTful API
 
 Using a text editor (VS Code), create a new file and rename it to `api.py.` 
-We create a virtual environment to isolate the libraries we will be using for this project. The virtual environment will not change the modules installed on our system. Instead, it will create a unique environment where we can install only the libraries we need for our project. Thus, it helps us avoid conflict between the libraries installed in our system and the libraries we will be using for our project. First, we install `virtualenv`. Then, we use `virtualenv` to build separate Python environments.
+We create a virtual environment to isolate the libraries we will be using for this project. The virtual environment will not change the modules installed on our system. Instead, it will create a unique environment where we can install only the libraries we need for our project. 
+
+Thus, it helps us avoid conflict between the libraries installed in our system and the libraries we will be using for our project. First, we install `virtualenv`. Then, we use `virtualenv` to build separate Python environments.
 
 ```bash
 pip install virtualenv
