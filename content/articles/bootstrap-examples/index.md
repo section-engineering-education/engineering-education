@@ -236,7 +236,7 @@ The following example shows how to use a modal plugin:
 ### Bootstrap progress bar
 The progress bar is a component that shows the progress of a task, eg the progress of installing software. The progress is normally represented in a percentage form. 
 
-In the `index.html` file replace, the existing snippet with the one below and open the file with a browser:
+In the `index.html` file, replace the existing snippet with the one below, open the file with your favourite browser to see the output:
 
 ```html
 <html>
@@ -272,8 +272,8 @@ In the `index.html` file replace, the existing snippet with the one below and op
 </html>
 ```
 
-### Bootstrap Media Objects
-The media object is a component that is used to display a media object. It is used to display images, videos, and other media.
+### Bootstrap Media Object
+The media object is a component used to display a media object. It is used to display images, videos, and other media.
  
 They are accompanied by a right-aligned or left-aligned image and text content.
 
@@ -339,7 +339,7 @@ Assuming you are asking a user to rate your work and the user rates your work us
 </html>
 ```
 
-In the above example, we have used the `star icon` to represent the star rating.
+In the code snippet above, we have used the `star icon` to represent the star rating.
 
 ### Conclusion
 Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=).
