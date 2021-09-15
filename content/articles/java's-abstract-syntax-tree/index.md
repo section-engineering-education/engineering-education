@@ -99,7 +99,7 @@ AST of the above Binary expression
    value: 3
  - right_vaue:
   LiteralExpr:
-   value: 
+   value: 2
 ```
 ### How is ASTs used for
 A program's source code is represented as an abstract syntax tree, which the compiler can use. A compiler's syntax analysis phase produces an abstract syntax tree. As an intermediate representation of the program, it has a major influence on the compiler's ultimate output. For example, static code analysis relies on ASTs. To find syntax errors and bad patterns in code without actually running it, automated tools can traverse the AST.
