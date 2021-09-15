@@ -2,6 +2,11 @@
 ### Introduction
 The term "Language-Integrated Query" (LINQ) refers to a group of technologies that incorporate query capabilities directly into the C# programming language. Querying data has traditionally been plain text, with no type checking or IntelliSense assistance at build time. LINQ access data from objects, data sets, SQL Server, and XML, among other things.
 
+### Project setup
+1. Open Visual studio, select `New Project` on the start window.
+2. On the Create a new project window, enter or type the console in the search box. Next, choose C# from the Language list, and then select Windows from the Platform list.
+3. In the Configure your new project window, type LinqProject in the Project name box. Then, choose Create.
+
 ### Generating sequences with LINQ
 Make sure the below three lines are at the very top of the Program.cs file produced by dotnet new console before you begin. For our program to run, the lines below should be in the program so that the results shall be obtained as expected
 ```c#
@@ -9,7 +14,8 @@ using System;
 using System.Collections.Generics;
 using System.Linq;
 ```
-Consider what comprises a collection of cards now that you've got all the necessary references. One set of cards used in playing various games usually comprises four suites, each with thirteen values. Normally, you'd consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than you can with the traditional method of generating a pack of playing cards. A class called card may be initiated, but Suits and rankings are represented by sequences, sequences that may be built as two of them. You will then write a pair of straightforward iterator methods to generate the rankings and suits as IEnumerable<T>s of strings.
+Consider a collection of cards, one set of cards used in various games usually comprises four suites, each with thirteen values. Typically, you'd consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than you can with the traditional method of generating a pack of playing cards. A class called card may be initiated, but Suits and rankings are represented by sequences, sequences that may be built as two of them. You will then write a pair of straightforward iterator methods to generate the rankings and suits as IEnumerable<T>s of strings.
+  
 ```c#
 static IEnumerable<String> Suits()
 {
