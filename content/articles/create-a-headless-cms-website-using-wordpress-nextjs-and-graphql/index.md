@@ -1,34 +1,64 @@
+Building a website can be a little overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
+
+However, with WordPress being beginner-friendly, its backing technology is server-side rendered (SSR). This means you can encounter some performance overhead over other technologies such as Next.js. WordPress content is served directly from the server. This means every request has to go over to the server, requesting the necessary resources. With many requests to process, server with less processing power can be overwhelmed when such requesting traffic increases.
+
+Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user makes a request to the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With outstanding technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
+
+### What is a headless CMS
+First, a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website, a mobile application, etc to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS any more.
+
+In simple terms, you still have WordPress CMS for content creation, and management saved to a database. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
+
+### Reasons for running WorPress as a headless CMS
+- You can change the content delivery channels when you would like to without re-authoring the content.
+
+- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. As a developer, this allows you things that matter most, such as creating great digital experiences for your users.
+
+- API driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
+
+- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
+
 ### Overview
+- [What is a headless CMS](#what-is-a-headless-cms)
+- [Reasons for running WorPress as a headless CMS](#reasons-for-running-worpress-as-a-headless-cms)
+- [Overview](#overview)
 - [Adding a post](#adding-a-post)
 - [Installing the WpGraphQL plugin](#installing-the-wpgraphql-plugin)
 - [Running a query from the GraphiQL IDE](#running-a-query-from-the-graphiql-ide)
 - [Setting up the Next.js environment](#setting-up-the-nextjs-environment)
+- [Adding WordPress API to Next.js using the GraphQL schema](#adding-wordpress-api-to-nextjs-using-the-graphql-schema)
+- [Connecting to the WordPress CMS](#connecting-to-the-wordpress-cms)
+- [Fetch all WordPress posts](#fetch-all-wordpress-posts)
+- [Fetch a single WordPress post](#fetch-a-single-wordpress-post)
+- [Testing](#testing)
+- [Testing with a single post](#testing-with-a-single-post)
 - [Conclusion](#conclusion)
+- [References](#references)
 
-### Adding a post 
+### Adding a post
 
 Since WordPress and Next.js are used to develop blog-based websites, we will use this scenario by first adding and posting a post in WordPress admin.
 
-First, from your WpAdmin dashboard, navigate to `posts` and add a `categories`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`. Here is how I entered these fields.
+First, from your WpAdmin dashboard, navigate to `posts` and add a `category`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`. Here is how I entered these fields.
 
-![add-post-category](add-post-category.png)
+![add-post-category](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/add-post-category.png)
 
 Now add a new post.
 From the Admin dashboard, navigate to the left sidebar and click on `posts`. On the resulting right pop-up, click on `Add new`. In the resulting panel, enter the title and some dummy content as below:
 
-![add-post-form](add-post-form.png)
+![add-post-form](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/add-post-form.png)
 
 Each post published in a WordPress blog can be associated with a particular category. On the right side, click on the `Post` tab. And in the `Categories` menu tab, check the category you created in the previous step:
 
-![post-category-selection](post-category-selection.png)
+![post-category-selection](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/post-category-selection.png)
 
 If you want to add a featured image, you can do so in the `Featured image` menu tab. In the `Excerpt` menu tab, add a short description of the post.
 
-![post-excerpt](post-excerpt.png)
+![post-excerpt](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/post-excerpt.png)
 
 Once done, navigate to the top right corner and click `Publish`, and your post will be live.
 
-![post-publish-button](post-publish-button.png)
+![post-publish-button](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/post-publish-button.png)
 
 With that, you have a post set up. Repeat the process a couple of times so that you can have a number of posts to query from.
 
@@ -38,11 +68,11 @@ With that, you have a post set up. Repeat the process a couple of times so that 
 
 From the left sidebar of the dashboard, Navigate to plugins. On the resulting pop-up to the right, click on `Add new`. On the search bar, search `WpGraphQL`:
 
-![plugins-search-bar](plugins-search-bar.png).
+![plugins-search-bar](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/plugins-search-bar.png).
 
 Click `Install now` on the following result. Once the installation is over, make sure you activate the plugin.
 
-![wp-graphql-plugin](wp-graphql-plugin.png)
+![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-plugin.png)
 
 ### Running a query from the GraphiQL IDE
 
@@ -84,7 +114,7 @@ To set up the Next.js environment, follow the following steps;
 npx create-next-app cms-wordpress-app
 ```
 
-- A folder `cms-wordpress-app` will be created, which will contain all the necessary files to start working on a Next.js project. change to the directory to this folder path (project folder) by running;
+- A folder `cms-wordpress-app` will be created, which will contain all the necessary files to start working on a Next.js project. Change to the directory to this folder path (project folder) by running;
 
 ```bash
 cd cms-wordpress-app
@@ -96,9 +126,9 @@ cd cms-wordpress-app
 npm run dev
 ```
 
-The above command will start the development server on port 3000 and expose it to your local host. Open your browser and visit `http://localhost:3000`. A Next.js boilerplate blog will be served on your browser.
+The above command will start the development server on port 3000 and expose it to your localhost. Open your browser and visit `http://localhost:3000`. A Next.js boilerplate blog will be served on your browser.
 
-![default-next-js-page](default-next-js-page.png).
+![default-next-js-page](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/default-next-js-page.png).
 
 ### Adding WordPress API to Next.js using the GraphQL schema
 
@@ -116,7 +146,7 @@ To get your `API_URL`;
 
 - Get your URL under *GraphQL Endpoint*.
 
-### Connectiong to the WordPress CMS
+### Connecting to the WordPress CMS
 
 Create a folder `lib`. In this folder, we will handle the connection from our app to the WordPress CMS.
 
@@ -325,7 +355,7 @@ npm run dev
 
 In your browser, navigate to `http://localhost:3000`. Your post will be displayed based on the posts you added to your WordPress blog.
 
-![posts-page](posts-page.png)
+![posts-page](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/posts-page.png)
 
 ### Testing with a single post
 
@@ -404,7 +434,7 @@ We have managed to create posts in WordPress, query, and show them from a Next.j
 
 ### References
 - [WpGraphQL](https://www.wpgraphql.com/)
-- [Wordpress CMS](https://wordpress.org/)
+- [WordPress CMS](https://wordpress.org/)
 - [Next.js](https://nextjs.org/)
 - [GraphQL](https://graphql.org/)
 - [Data fetching in Next.js](https://nextjs.org/docs/basic-features/data-fetching)
