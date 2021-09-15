@@ -90,7 +90,7 @@ pip install flask-restful
 pip install numpy
 pip install scikit-learn==0.24.2
 ```
-I am using Flask==2.0.1, Flask-RESTful==0.3.9, and numpy==1.21.2.
+I am using `Flask==2.0.1`, `Flask-RESTful==0.3.9`, `numpy==1.21.2`, and `scikit-learn==0.24.2`.
 Now we can build our RESTful API. We start by importing the libraries and instantiating the Flask RESTful API in `api.py`.
 
 ```python
