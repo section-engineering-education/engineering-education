@@ -6,7 +6,7 @@ url: /hapi-validation-bcrypt-hashing-and-jwt/
 title: Hapi validation, Bcrypt hashing and JWT in action
 description: This article enables the reader to learn how to use Hapi to clean data submitted in a form and ensure a correct validation before submitting the data to a database. Additionally, we will learn how to use Bcrypt in hashing passwords to avoid submitting plaintext password fields into our database. 
 author: phina-kersly
-date: 2021-09-11T00:00:00-23:27
+date: 2021-09-11T00:00:00-00:01
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -135,9 +135,9 @@ We will use mongo DB Atlas to keep our records. You can follow [this tutorial](h
 ```js
 PORT = 5000 //environmental port where the project runs
 MONGO_URI = 'YOUR MONGOBD CONNECTION URL' // mongodb connection url
-TOKEN_SECRET = any random string
+AUTH_TOKEN_SECRET = any random string
 ```
->The `TOKEN_SECRET` is a secret we will use with JSON Web Token later in the tutorial.
+>The `AUTH_TOKEN_SECRET` is a secret we will use with JSON Web Token later in the tutorial.
 
 In the same folder, create a file called `database.js`, then add the snippets below to connect to the database.
 
@@ -146,9 +146,9 @@ In the same folder, create a file called `database.js`, then add the snippets be
 const mongoose = require('mongoose')
 
 //connnect to database
-const connectDB = async () => {
+const connectDatabase = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
+        const connection = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
@@ -161,7 +161,7 @@ const connectDB = async () => {
     }
 }
 
-module.exports = connectDB
+module.exports = connectDatabase
 ```
 ### Validating inputs 
 In the `routes` folder, create a new file for validation. In the file, we will have two constants for validation during registration and login. Add the snippets below for the validation process. The data object passed contains the information in the request body. This information is used against the preset conditions to perform the validation.
@@ -212,27 +212,27 @@ const jwt = require('jsonwebtoken')
 
 //posting form data to login route
 router.post('/login', async (req, res) =>{
-    const { error } = userLoginValidation(req.body)
+    const { error } = userLoginValidation(request.body)
     
     if(error){
-        return res.status(400).send(error.details[0].message)
+        return response.status(400).send(error.details[0].message)
     }
 
     // check user existence in the database
-    const user = await User.findOne({email:req.body.email});
+    const user = await User.findOne({email:request.body.email});
     if(!user){
-        return res.status(400).send('Sorry email is not with our records')
+        return response.status(400).send('Sorry email is not with our records')
     }
 
     //compare passwords
-    const validUserPassword = await bcrypt.compare(req.body.password, user.password);
+    const validUserPassword = await bcrypt.compare(request.body.password, user.password);
     if(!validUserPassword){
-        return res.status(400).send('Sorry the password is invalid')
+        return response.status(400).send('Sorry the password is invalid')
     }
 
     //creating and assignikng token 
-    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
-    res.header('authentication-token', token).send(token)
+    const token = jwt.sign({_id: user._id}, process.env.AUTH_TOKEN_SECRET)
+    response.header('authentication-token', token).send(token)
   
     
 })
@@ -245,18 +245,18 @@ This route registers users into the database. The data passed to this route is t
 
 ```js
 //postung data to register route
-router.post('/register', async (req, res) =>{
+router.post('/register', async (request, response) =>{
     const { error } = userRegistrationValidation(req.body)
     
     //send any error to the user incase of any
     if(error){
-        return res.status(400).send(error.details[0].message)
+        return response.status(400).send(error.details[0].message)
     }
 
     // check user existence in the database in the mongo db database
-    const emailExists = await User.findOne({email:req.body.email});
+    const emailExists = await User.findOne({email:request.body.email});
     if(emailExists){
-        return res.status(400).send('Email already in the database')
+        return response.status(400).send('Email already in the database')
     }
 })
 ```
@@ -266,7 +266,7 @@ If there are no errors, the email in the request body is checked against all the
 ```js
 //Hashing the passwords
 const salt = bcrypt.genSaltSync(10);
-const hashedPassword  = bcrypt.hashSync(req.body.password, salt);
+const hashedPassword  = bcrypt.hashSync(request.body.password, salt);
 ```
 
 Afterwards, a new user instance is created and saved into the database.
@@ -275,8 +275,8 @@ Afterwards, a new user instance is created and saved into the database.
 //creating a new user object
 const user = new User(
     {
-        name: req.body.name,
-        email: req.body.email,
+        name: request.body.name,
+        email: request.body.email,
         password: hashedPassword
     }
 );
@@ -284,10 +284,10 @@ const user = new User(
 try{
   //saving the newly created user 
     const savedUser = await user.save()
-    res.send({savedUser: user._id})
+    response.send({savedUser: user._id})
 }catch(err){
     console.log(err)
-    res.status(400).send(err)
+    response.status(400).send(err)
 }
 ```
 
@@ -295,17 +295,17 @@ try{
 The login route takes data in the request body and passes it for validation by the `userLoginValidation`. Next, `Hapi` checks the data for any errors. If there is none, the database is queried for a record with the supplied email.
 
 ```js
-router.post('/login', async (req, res) =>{
-    const { error } = userLoginValidation(req.body)
+router.post('/login', async (request, response) =>{
+    const { error } = userLoginValidation(request.body)
     
     if(error){
-        return res.status(400).send(error.details[0].message)
+        return response.status(400).send(error.details[0].message)
     }
 
     // check user existence in the database
     const user = await User.findOne({email:req.body.email});
     if(!user){
-        return res.status(400).send('Sorry email is not with our records')
+        return response.status(400).send('Sorry email is not with our records')
     }
 })
 ```
@@ -314,14 +314,14 @@ In the next step, we use `bcrypt` to compare the supplied password in the reques
 
 ```js
 //make a comparison between entered password and the database password
-const validUserPassword = await bcrypt.compare(req.body.password, user.password);
+const validUserPassword = await bcrypt.compare(request.body.password, user.password);
 if(!validUserPassword){
-    return res.status(400).send('Sorry the password is invalid')
+    return response.status(400).send('Sorry the password is invalid')
 }
 
 //creating and assignikng token 
-const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
-res.header('authentication-token', token).send(token)
+const token = jwt.sign({_id: user._id}, process.env.AUTH_TOKEN_SECRET)
+response.header('authentication-token', token).send(token)
 ```
 
 ### Token verification
@@ -331,11 +331,11 @@ We need to verify that the token is passed to the request header so that only au
 //importing the jwt module
 const jwt = require('jsonwebtoken')
 
-module.exports = function(req, res, next){
+module.exports = function(request, response, next){
     //fetch the token from the request header
     const token = req.header('authentication-token');
     if(!token){
-        return res.status(400).send('Access denied!');
+        return response.status(400).send('Access denied!');
     }
 }
 
@@ -346,11 +346,11 @@ However, if the token is available in the request header, we mark the user as ve
 ```js
 // verify the user
 try {
-    const verifiedUser = jwt.verify(token, process.env.TOKEN_SECRET)
-    req.user = verifiedUser;
+    const verifiedUser = jwt.verify(token, process.env.AUTH_TOKEN_SECRET)
+    request.user = verifiedUser;
     next()
 } catch (error) {
-    res.status(400).send('Invalid token')
+    response.status(400).send('Invalid token')
 }
 ```
 
@@ -365,8 +365,8 @@ const router = require('express').Router();
 const verify = require('./verifyToken')
 
 //method called in the request
-router.get('/', verify, (req, res) =>{
-    res.json({
+router.get('/', verify, (request, response) =>{
+    response.json({
         posts:{
             title:"Very first post",
             body: "Random post you should not even see"
@@ -380,7 +380,7 @@ module.exports = router;
 The above snippet means that only authenticated users can access the posts. 
 
 ### Testing the project
-We need to run the command `nodemon index` to test this project. Start the development server and try the endpoint in `Insomnia`. Of course, Postman can work here as well.
+We need to run the command `nodemon index` to test this project. Then, start the development server and try the endpoint in `Insomnia`. Of course, Postman can work here as well.
 
 #### Testing validation
 Let us try using a short password/ email than the length specified in the `userRegistrationValidation` to see if our validation worked. We will begin by navigating to the `register` route.
@@ -399,7 +399,7 @@ When we try accessing the `posts` route without being logged in, we are denied a
 ![Acees denied](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/access-denied.png)
 
 
-However, when logged in, we get an authentication token that we add to the request's header and obtain access to the protected route.
+However, when logged in, we get an authentication token that we add to the request's header and access the protected route.
 ![Authentication token](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/user-auth-token.png)
 ![View protected route](/engineering-education/hapi-validation-bcrypt-hashing-and-jwt/view-protected-route.png)
 
