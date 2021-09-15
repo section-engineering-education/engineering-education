@@ -118,7 +118,7 @@ After successfully installing the SVG Inline loader for webpack, using the comma
 ```
 If you did that correctly, your webpack.config.js should look like this. 
 
-![webpack config file new look 2](webpack7.png)
+![webpack config file new look 2](webpack7(1).png)
 
 **Kindly note that in some other learning resources, you will have them make use of loader instead of use while trying to configure our SVG file in the rules array, but for consistency, we will make use of use instead of the loader. Also, I have found out that in recent learning resources/docs they make use of "use" instead of the loader, for example in the documentation below, the loader was used instead.**
 
