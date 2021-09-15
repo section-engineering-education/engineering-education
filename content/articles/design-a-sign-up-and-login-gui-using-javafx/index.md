@@ -234,44 +234,44 @@ Inside the AnchorPane, add the following:
 This control will carry in it a small cart logo.
 
 - **Properties:**
-- - `Image`: cart.png
+  - `Image`: cart.png
 - **Layouts:**
-- - `Fit Width`: 100
-- - `Fit Height`: 55
-- - `Layout X`: 120
-- - `Layout Y`: 5
+  - `Fit Width`: 100
+  - `Fit Height`: 55
+  - `Layout X`: 120
+  - `Layout Y`: 5
 
 **Label**
 
 - **Properties:**
-- - `Text`: SHOP NOW
-- - `Font`: SanSerif 25px
+  - `Text`: SHOP NOW
+  - `Font`: SanSerif 25px
 - **Style:**
-- - `-fx-background-color`:  transparent
-- - `-fx-text-fill`:  #24a0ed
+  - `-fx-background-color`:  transparent
+  - `-fx-text-fill`:  #24a0ed
 
 > To add more styles, click on the addition button in the Style section.
 
 - **Layouts:**
-- - `Pref Width`: 263
-- - `Pref Height`: 57
-- - `Layout X`: 203
-- - `Layout Y`: 1
+  - `Pref Width`: 263
+  - `Pref Height`: 57
+  - `Layout X`: 203
+  - `Layout Y`: 1
 
 **Button**
 
 - **Properties:**
-- - `Text`: Cancel
-- - `Font`: SanSerif 15px
+  - `Text`: Cancel
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-background-color`:  transparent
-- - `-fx-text-fill`: #A9A9A9
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-background-color`:  transparent
+  - `-fx-text-fill`: #A9A9A9
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Layout X`: 502
-- - `Layout Y`: 13
+  - `Layout X`: 502
+  - `Layout Y`: 13
 
 It results in the following Code:
 
@@ -305,104 +305,104 @@ It results in the following Code:
 **Label**
 
 - **Properties:**
-- - `Text`: Login
-- - `Font`: SanSerif 30px
+  - `Text`: Login
+  - `Font`: SanSerif 30px
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Pref Width`: 90
-- - `Pref Height`: 30
-- - `Layout X`: 244
-- - `Layout Y`: 60
+  - `Pref Width`: 90
+  - `Pref Height`: 30
+  - `Layout X`: 244
+  - `Layout Y`: 60
 
 **ImageView**
 
 - **Properties:**
-- - `Image`: users.png
+  - `Image`: users.png
 - **Layouts:**
-- - `Fit Width`: 35
-- - `Fit Height`: 40
-- - `Layout X`: 110
-- - `Layout Y`: 100
+  - `Fit Width`: 35
+  - `Fit Height`: 40
+  - `Layout X`: 110
+  - `Layout Y`: 100
 
 **TextField**
 
 - **Properties:**
-- - `Prompt Text`: Username / Email
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Username / Email
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 150
-- - `Layout Y`: 100
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 150
+  - `Layout Y`: 100
 
 **PasswordField**
 
 - **Properties:**
-- - `Prompt Text`: Password
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Password
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 150
-- - `Layout Y`: 140
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 150
+  - `Layout Y`: 140
 
 **ImageView**
 
 - **Properties:**
-- - `Image`: lock.png
+  - `Image`: lock.png
 - **Layouts:**
-- - `Fit Width`: 35
-- - `Fit Height`: 40
-- - `Layout X`: 110
-- - `Layout Y`: 140
+  - `Fit Width`: 35
+  - `Fit Height`: 40
+  - `Layout X`: 110
+  - `Layout Y`: 140
 
 **CheckBox**
 
 - **Properties:**
-- - `Text`: Remember Me
-- - `Font`: SanSerif 15px
+  - `Text`: Remember Me
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Layout X`: 150
-- - `Layout Y`: 195
+  - `Layout X`: 150
+  - `Layout Y`: 195
 
 **Button**
 
 - **Properties:**
-- - `Text`: Login
-- - `Font`: SanSerif 15px
+  - `Text`: Login
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-background-color`:  24a0ed
-- - `-fx-text-fill`: White
-- - `-fx-border-radius`: 5
-- - `-fx-border-width`: 2
-- - `-fx-border-radius`: 5
-- - `-fx-border-color`:  *#24a0ed*
+  - `-fx-background-color`:  24a0ed
+  - `-fx-text-fill`: White
+  - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-radius`: 5
+  - `-fx-border-color`:  *#24a0ed*
 - **Layouts:**
-- - `Layout X`: 335
-- - `Layout Y`: 195
+  - `Layout X`: 335
+  - `Layout Y`: 195
 
 **Button**
 
 - **Properties:**
-- - `Text`: Forgot your Password?
-- - `Font`: SanSerif 15px
+  - `Text`: Forgot your Password?
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-background-color`:  transparent
-- - `-fx-text-fill`: #A9A9A9
+  - `-fx-background-color`:  transparent
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
-- - `Layout X`: 190
-- - `Layout Y`: 235
+  - `Layout X`: 190
+  - `Layout Y`: 235
 
 The Scene Builder produces the following Code:
 
@@ -474,23 +474,23 @@ The Scene Builder produces the following Code:
 This element is from the shapes section
 
 - **Properties:**
-- - `Fill`: DARKGRAY
-- - `Stroke`: #a8a8a8
-- - `Smooth` option: Check
+  - `Fill`: DARKGRAY
+  - `Stroke`: #a8a8a8
+  - `Smooth` option: Check
 
 This property is for a fade effect.
 
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Pref Width`: 130
-- - `Pref Height`: 36
-- - `Layout X`: 0
-- - `Layout Y`: -110
-- - `Start X`: 100
-- - `Start Y`: 380
-- - `End X`: 500
-- - `End Y`: 380
+  - `Pref Width`: 130
+  - `Pref Height`: 36
+  - `Layout X`: 0
+  - `Layout Y`: -110
+  - `Start X`: 100
+  - `Start Y`: 380
+  - `End X`: 500
+  - `End Y`: 380
 
 Its code produced is as shown:
 
@@ -505,223 +505,223 @@ Its code produced is as shown:
 **Label**
 
 - **Properties:**
-- - `Text`: Sign-Up
-- - `Font`: SanSerif 30px
+  - `Text`: Sign-Up
+  - `Font`: SanSerif 30px
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:** 
-- - `Pref Width`: 130
-- - `Pref Height`: 36
-- - `Layout X`: 230
-- - `Layout Y`: 275
+  - `Pref Width`: 130
+  - `Pref Height`: 36
+  - `Layout X`: 230
+  - `Layout Y`: 275
 
 **ImageView**
 
 - **Properties:**
-- - `Image`: users.png
+  - `Image`: users.png
 - **Layouts:**
-- - `Fit Width`: 35
-- - `Fit Height`: 40
-- - `Layout X`: 110
-- - `Layout Y`: 320
+  - `Fit Width`: 35
+  - `Fit Height`: 40
+  - `Layout X`: 110
+  - `Layout Y`: 320
 
 **TextField**
 
 - **Properties:**
-- - `Prompt Text`: Username
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Username
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 155
-- - `Layout Y`: 320
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 155
+  - `Layout Y`: 320
 
 **ImageView**
 
 - **Properties:**
-- - `Image`: email.png
+  - `Image`: email.png
 - **Layouts:**
-- - `Fit Width`: 35
-- - `Fit Height`: 40
-- - `Layout X`: 110
-- - `Layout Y`: 360
+  - `Fit Width`: 35
+  - `Fit Height`: 40
+  - `Layout X`: 110
+  - `Layout Y`: 360
 
 **TextField**
 
 - **Properties:**
-- - `Prompt Text`: Email
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Email
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 155
-- - `Layout Y`: 360
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 155
+  - `Layout Y`: 360
 
 **PasswordField**
 
 - **Properties:**
-- - `Prompt Text`: Password
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Password
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 155
-- - `Layout Y`: 400
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 155
+  - `Layout Y`: 400
 
 **ImageView**
 
 - **Properties:**
-- - `Image`: lock.png
+  - `Image`: lock.png
 - **Layouts:**
-- - `Fit Width`: 35
-- - `Fit Height`: 40
-- - `Layout X`: 110
-- - `Layout Y`: 400
+  - `Fit Width`: 35
+  - `Fit Height`: 40
+  - `Layout X`: 110
+  - `Layout Y`: 400
 
 **PasswordField**
 
 - **Properties:**
-- - `Prompt Text`: Repeat Password
-- - `Font`: SanSerif 14px
+  - `Prompt Text`: Repeat Password
+  - `Font`: SanSerif 14px
 - **Style:**
-- - `-fx-border-width`: 2
-- - `-fx-border-color`:  #A9A9A9
-- - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 300
-- - `Pref Height`: 30
-- - `Layout X`: 150
-- - `Layout Y`: 440
+  - `Pref Width`: 300
+  - `Pref Height`: 30
+  - `Layout X`: 150
+  - `Layout Y`: 440
 
 **Label**
 
 - **Properties:**
-- - `Text`: Date of Birth
-- - `Font`: SanSerif 15px
+  - `Text`: Date of Birth
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Pref Width`: 105
-- - `Pref Height`: 20
-- - `Layout X`: 130
-- - `Layout Y`: 480
+  - `Pref Width`: 105
+  - `Pref Height`: 20
+  - `Layout X`: 130
+  - `Layout Y`: 480
 
 **DatePicker**
 
 - **Properties:**
-- - `Prompt Text`: mm/dd/yyyy
-- - `Editable` checkbox: Check
-- - `Show Week number` checkbox: Check
+  - `Prompt Text`: mm/dd/yyyy
+  - `Editable` checkbox: Check
+  - `Show Week number` checkbox: Check
 
 Enabling them allows one to enter data into the field without using the date picker. It also shows week numbers.
 
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Layout X`: 250
-- - `Layout Y`: 480
+  - `Layout X`: 250
+  - `Layout Y`: 480
 
 **Label**
 
 - **Properties:**
-- - `Text`: Gender
-- - `Font`: SanSerif 15px
+  - `Text`: Gender
+  - `Font`: SanSerif 15px
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Pref Width`: 90
-- - `Pref Height`: 20
-- - `Layout X`: 130
-- - `Layout Y`: 515
+  - `Pref Width`: 90
+  - `Pref Height`: 20
+  - `Layout X`: 130
+  - `Layout Y`: 515
 
 **RadioButton**
 
 - **Properties:**
-- - `Text`: Male
-- - `Font`: SanSerif 14px
-- - `Selected` checkbox: Check
-- - `Toggle Group`: Gender
+  - `Text`: Male
+  - `Font`: SanSerif 14px
+  - `Selected` checkbox: Check
+  - `Toggle Group`: Gender
 
 This step will group the radio buttons of the same group; hence only one is selected per instance.
 
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Layout X`: 300
-- - `Layout Y`: 515
+  - `Layout X`: 300
+  - `Layout Y`: 515
 
 **RadioButton**
 - **Properties:**
-- - `Text`: Female
-- - `Font`: SanSerif 14px
-- - `Toggle Group`: Gender
+  - `Text`: Female
+  - `Font`: SanSerif 14px
+  - `Toggle Group`: Gender
 
 This step groups the radio buttons of the same group; hence only one can be selected per instance.
 
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Layout X`: 390
-- - `Layout Y`: 515
+  - `Layout X`: 390
+  - `Layout Y`: 515
 
 **CheckBox**
 
 - **Properties:**
-- - `Text`: I have read the Terms and Conditions
-- - `Font`: SanSerif 15px
-- - `Selected` checkbox: Check
-- - `Toggle Group`: Gender
+  - `Text`: I have read the Terms and Conditions
+  - `Font`: SanSerif 15px
+  - `Selected` checkbox: Check
+  - `Toggle Group`: Gender
 - **Style:**
-- - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-- - `Layout X`: 160
-- - `Layout Y`: 545
+  - `Layout X`: 160
+  - `Layout Y`: 545
 
 **Button**
 
 - **Properties:**
-- - `Text`: Sign-Up
-- - `Font`: SanSerif 15px
-- - `Selected` checkbox: Check
-- - `Toggle Group`: Gender
+  - `Text`: Sign-Up
+  - `Font`: SanSerif 15px
+  - `Selected` checkbox: Check
+  - `Toggle Group`: Gender
 - **Style:**
-- - `-fx-background-color`:  #24a0ed
-- - `-fx-text-fill`: White
-- - `-fx-border-radius`: 5
-- - `-fx-border-width`: 2
-- - `-fx-border-color`: #24a0ed
-- `-fx-border-radius`: 5
+  - `-fx-background-color`:  #24a0ed
+  - `-fx-text-fill`: White
+  - `-fx-border-radius`: 5
+  - `-fx-border-width`: 2
+  - `-fx-border-color`: #24a0ed
+  - `-fx-border-radius`: 5
 - **Layouts:**
-- - `Pref Width`: 130
-- - `Pref Height`: 33
-- - `Layout X`: 230
-- - `Layout Y`: 615
+  - `Pref Width`: 130
+  - `Pref Height`: 33
+  - `Layout X`: 230
+  - `Layout Y`: 615
 
 **Button**
 
 - **Properties:**
-- - `Text`: Terms and Conditions
-- - `Font`: SanSerif 15px
-- - `Selected` checkbox: Check
-- - `Toggle Group`: Gender
+  - `Text`: Terms and Conditions
+  - `Font`: SanSerif 15px
+  - `Selected` checkbox: Check
+  - `Toggle Group`: Gender
 - **Style:**
-- - `-fx-background-color`:  transparent
-- - `-fx-text-fill`: #A9A9A9
+  - `-fx-background-color`:  transparent
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
-- - `Layout X`: 230
-- - `Layout Y`: 660
+  - `Layout X`: 230
+  - `Layout Y`: 660
 
 
 Its code is shown below:
