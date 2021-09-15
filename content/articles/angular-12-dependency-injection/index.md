@@ -1,3 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-12-dependency-injection/
+title: Angular 12+ Dependency Injection Tutorial
+description: This tutorial walks the reader through the concepts of dependency injection using Angular.
+author: naomi-seint
+date: 2021-09-09T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/angular-12-dependency-injection/hero.png
+    alt: dependincy injection angular 12
+---
+Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
+<!--more-->
+
+
 ### Introduction
 Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
 
@@ -240,3 +260,6 @@ Expected output:
 
 ### Conclusion
 In this tutorial, we've discussed a wide range of concepts of Angular DI with examples. We've seen how the services are created and then consumed within a component. We've also gone a step further to test our application on the browser.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
