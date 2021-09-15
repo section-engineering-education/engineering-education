@@ -1,25 +1,26 @@
+
 ---
 layout: engineering-education
 status: publish
 published: true
 url: /creating-a-simple-python-note-app-with-flask-and-mongodb-database/
-title: Building a note app using Flask and Mongodb daatabase.
-description: This tutorial will help readers build a a Python note application using Flask framework and Mongodb database.
+title: Building a Python note app using Flask and MongoDB database.
+description: This tutorial will help readers build a Python note application using Flask framework and MongoDB database.
 author: joseph-chege
-date: 2021-08-02T00:00:00-00:53
+date: 2021-09-15T00:00:00-00:53
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-a-simple-python-note-app-with-flask-and-mongodb-database/hero.jpg
-    alt: Python notes app with Flask and Mongodb image
+    alt: Python notes app with Flask and MongoDB image
 ---
 
 Python is a very easy-to-learn language due to its user-friendly syntax. Moreover, Python has many open-source libraries, and almost every use case of Python has an existing library for that. So no need for immense amounts of coding in the respective use-case.
 <!--more-->
 Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus, very easy for beginners to stated and scaled up to the complex application.
 
-To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. 
+We will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. 
 
 In this article, we will create a simple note application using Flask and MongoDB database.
 
@@ -100,8 +101,7 @@ python3 app.py
 The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message since we have not defined any route. Let us get to that in the next step.
 
 ### Setting up the routes
-First, let us import the `request` module from `flask`. Here is the code to that.
-
+First, let us import the `request` module from `flask`.
 ```Python
 from flask import request, Flask
 ```
@@ -164,7 +164,6 @@ from flask import request,Flask,render_template,redirect
 As the name suggests, `render_template` will load an `HTML` template file, and `redirect` will be called when redirecting from one route to another, particularly those that do not return pages.
 
 #### Working on the templates
-
 In the project root folder, create a folder and name it `templates`. Inside the folder, create a `base.html` file and add the following.
 
 ```html
@@ -209,9 +208,6 @@ To enhance code reusability, all templates will be loaded from one base file. Fu
 According to the above file, only the `title` and the `body content` will be different for each page, and that is pretty much what we want in our simple application.
 
 #### The home page route
-
-To complete the home page route, we will follow the below steps;
-
 In the templates folder, create a `pages` folder, inside add a `home.html` file. In this file, add the following code.
 
 ```html
@@ -278,14 +274,11 @@ def home():
 In the `home()`, we are;
 
 - Fetching the notes from the database, ordered in descending order.
-- returning a view passing along data. `homeIsActive` and addNoteIsActive` for the navbar to set the active page, and `notes` for the data fetched.
+- returning a view, passing along data. `homeIsActive` and addNoteIsActive` for the navbar to set the active page, and `notes` for the data fetched.
 
 To test this home route, make sure your application is running and refresh the page on the browser. Since you do not have any added notes, you will receive a message and a call to action.
 
-In the next step, we will handle the `add-note` route.
-
 #### The add-note route
-
 In `templates/pages, create a file `add-note.html`. In this file, add the following code.
 
 ```html
@@ -350,7 +343,6 @@ When we have a `GET` call in the above function, we are simply returning a view 
 To test the functionality, ensure the development server is running, and refresh the `add-note` page, you should see a form, and when you fill it and submit it, you will be redirected to the home page now with a saved note.
 
 #### The edit-note route
-
 In the `templates/pages` folder, create a `edit-note.html` file. In the file, add the following:
 
 ```HTML
@@ -382,11 +374,9 @@ In the `templates/pages` folder, create a `edit-note.html` file. In the file, ad
 {% endblock %}
 ```
 
-In the above file, we extend the common `base.html` file, adding a title and a body content simply a pre-filled form with a specific note's data.
+In the above file, we extend the common `base.html` file, adding a title and a body content simply a pre-filled form with a specific note's data. In `app.py`, edit the `editNote` function as follows:
 
-In `app.py`, edit the `editNote` function as follows:
-
-```python
+```Python
 @app.route('/edit-note', methods=['GET','POST'])
 def editNote():
 
@@ -424,7 +414,6 @@ To test this functionality, ensure the development server is running.
 - For any note, click on edit, edit any field, and then hit `Submit. The new details should be reflected.
 
 #### The delete-note route
-
 In `app.py`, edit the `deleteNote` as follows:
 
 ```python
@@ -441,9 +430,7 @@ def deleteNote():
     return redirect("/")
 ```
 
-From the above function, we are getting the id of the note to be deleted, deleting it from the database, and redirecting it to the home page.
-
-To test this functionality, make sure the development server is running.
+From the above function, we are getting the `id` of the note to be deleted, deleting it from the database, and redirecting it to the home page. To test this functionality, make sure the development server is running.
 
 - Refresh the home page.
 - For any note, click on delete; it should be deleted successfully.
