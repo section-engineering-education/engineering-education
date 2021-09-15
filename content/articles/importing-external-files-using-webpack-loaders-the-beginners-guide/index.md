@@ -9,23 +9,23 @@ This tutorial is tailored to suit the needs of a beginner. As a prerequisite, yo
 1. What is Webpack?
 2. Installing Webpack
 3. Loaders and Plugins
-4. Make use of Webpack loaders to import various types of files
+4. Making use of Webpack loaders to import various types of files
 
 **Let us dive in!**
 
 ### What is Webpack?
-Webpack is a tool that allows you to modularise your code and helps you to push your codes to one file in other for you not to worry about the hierarchy of your files, especially when working with JavaScript files and also helps you to inject external files, like an SVG, images, your CSS files or other modern JS codes, in your web app. Webpack provides a configuration file, where you declare how things should be sorted out and then you relax. 
+Webpack is a tool that allows you to modularise your code and helps you to push your codes to one file in other for you not to worry about the hierarchy of your files, especially when working with multiple JavaScript files. 
 
-**Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for a more elaborate definition of Webpack, check out this Wiki Definition of Webpack [Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
+Webpack also helps you to inject external files, like an SVG, images, your CSS files or other modern JS codes, in your web app. 
+
+**Remember I stated earlier that this tutorial is going to be concise, hence a very simple definition of Webpack, which is what I have stated above, for a more elaborate definition of Webpack, check out this Wiki's Definition of Webpack [Wikipedia's Definition of Webpack](https://en.wikipedia.org/wiki/Webpack)**
 
 ### Installing Webpack
 The first thing you are going to do is to create a directory or folder, you can call it Webpack or anything you feel appropriate, and then you create another folder and name it Webpack Tutorial. 
 
-![File directory image(webpack1.png)
+Next, you are going to open the Webpack Tutorial Folder with your favorite code editor, in my case is Visual Studio Code!
 
-
-The next thing we are going to do now is to open the Webpack Tutorial Folder with your favorite code editor, in my case is Visual Studio Code!
-So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created
+So I am going to head over to Visual Studio Code and then drag and drop the Folder we last created.
 
 ![Empty folder image](webpack2.png)
 
