@@ -30,40 +30,44 @@ As a prerequisite, the reader must have a good understanding of:
 ### Terms and Terminologies
 - [AngularJs](https://angularjs.org/) is an open-source javascript framework used to build front-end applications.
 - [Jasmine](https://jasmine.github.io/) is an open-source, behavior-driven development framework for testing JavaScript code.
-- [WebDriver Js](https://www.npmjs.com/package/webdriver-manager) is the official Javascript implementation of selenium. It helps to interact with elements on the web.
+- [WebDriver Js](https://www.npmjs.com/package/webdriver-manager) is the official Javascript implementation of [Selenium](https://www.selenium.dev). It helps to interact with elements on the web.
 - [Protractor](https://www.protractortest.org/#/) is a NodeJS program built on top of WebDriverJs that supports the Jasmine test framework and is used as an end-to-end test framework for testing Angular applications. Protractor extends what WebDriverJs can do by enabling automation and interactions of possible user events on the browser.
 - End-to-End testing refers to the test that is carried out on operations that occur through the various modules that make up your angular application flow.
 
-For example, testing the flow of Registration, to Login, to Profile, and to Logout can be an end-to-end test flow. While each module here, have their own unit test cases.
+For example, we start testing a simple flow of a web page, by testing Registration page, to Login page, to Profile page, and to Logout can be an end-to-end test flow. While each module here, have their own unit test cases.
 
-#### Why protractor
-If you open a non-angular webpage, you have elements that users can interact with such as an input field, a dropdown tab, or a clickable buttons. All these elements can be tested for using selenium framework.
+### Why protractor
+If you open a non-angular webpage, you have elements that users can interact with such as an input field, a dropdown tab, or a clickable buttons. All these elements can be tested using [Selenium](https://www.selenium.dev) web framework.
 
-If you have a website built using angularJs, angularJs introduce to the DOM extra properties which are identifiable only to angular applications like "ng-model", "ng-repeater" or "ng-controller" and these properties sit on top of natural HTML Dom elements.
+A website built using AngularJS introduces to the extra DOM properties that are identifiable only to Angular applications like "ng-model", "ng-repeater", or "ng-controller".
 
-These properties introduced by angular are not visible to selenium and so cannot be captured by selenium for testing.
+These properties wraps the existing HTML DOM elements. These properties are not visible to Selenium for testing.
 
-With protractor however it enables you the ability to capture these elements introduced by angular. In addition, protractor provides you specific functions such as waitForAngular, By.binding, WebElement.evaluate e.t.c which gives you a variety of options to perform your tests.
+Using protractor, enables the ability to capture these hidden elements.
 
-Selenium WebDriver also has a lot of synchronization issues related to using bare selenium. Angular (like pure Javascript) is mostly asynchronous throughout and makes use of promises to handle async callbacks.
+In addition, protractor provides functions like `waitForAngular`,` by.binding`, `WebElement.evaluate`, and others, provides a variety of options to perform your tests.
 
-A lot of applications are created using angular and angularjs and so a tool is needed to carry out the automation of these kinds of applications.
+Selenium WebDriver deals with a lot of synchronization issues related to using bare selenium. On the other hand, Angular (like pure Javascript) works asynchronously making use of promises to handle the callbacks.
 
-Here is a reference to best style guides for protractor testing [ Protractor style guide ](https://www.protractortest.org/#/style-guide)
+You can read more about the Protractor style guide [here](https://www.protractortest.org/#/style-guide).
 
-#### Why Jasmine
-Jasmine is a well-documented open-source Behavior Driven Development testing framework for JavaScript that does not rely on browsers, DOM, or any JavaScript framework.
+### Why Jasmine
+Jasmine is a well-documented open-source behavior-driven testing framework for JavaScript that does not rely on browsers, DOM, or any JavaScript framework.
 
-Other testing frameworks include Jest and Mocha.
+We have several testing frameworks like Jest and Mocha.
 
-Jasmine is recommended over the others because AngularJs CLI comes chipped by default with Jasmine as the test runner and it is relatively easy to learn. But you can still configure the others to test angular-built web applications.
+Jasmine is recommended over the others because AngularJS CLI comes chipped by default with Jasmine as the test runner and it is relatively easy to learn.
+
+But, you can still configure the other testing frameworks to test angular-built web applications.
 
 #### Suites
-A Suite defines/describes your tests
+A suite defines or describes your test cases.
 
-A suite is identified by a description function. The describe function is used to group specs that serve the same meaning. Just like in a component of a system or set of actions that can be grouped.
+A suite is identified by a description function. The `describe()` groups the specifications just like grouping a component of a system or set of actions.
 
-The first parameter is a string value that is used as an identifier for a set of tests defined within the function body.
+We set the first parameter as a string that is used as an identifier for the test cases that are defined within the function body.
+
+For example:
 
 ```javascript
 describe("A String that specifies a suite", function() {
@@ -74,24 +78,37 @@ describe("A String that specifies a suite", function() {
 });
 ```
 
-#### Specs
-You can define a spec by using a global function called "it". "it", is similar in syntax to describe in that it takes a string as its first parameter and as its second parameter a function.
+#### Specification
+You can define a specification (spec) using a global function called `it()`.
 
-The string parameter determines the title of the spec and is used to identify the spec when there are multiple specs present. The "function" on the other hand defines the spec or test. A spec can contain multiple expectations described using the "expect" statement ( which will be discussed later ) and is used to test the state of the code.
+`it()` is similar to `describe()` that takes a string as its first parameter and a function as its second parameter.
 
-An expectation on its own can amount to either one of the following.
+The string parameter determines the title of the specification and is used to identify the spec when there are multiple specs present.
 
-Either it amounts to true and the expectation passes or false it amounts to false and the expectation fails. If all the expectations in a test pass it means the test itself passes but if an expectation fails then the test in turn will be a failed test.
+On the other hand, the function defines a test.
+
+A spec can contain multiple expectations described using the "expect" statement (which will be discussed later) that is used to test the state of the code.
+
+An expectation of a test case with original result can either be true or false.
 
 #### It
-It in a nutshell is a function. They can include executable code required to carry out the test needed. Since jasmine is a javascript testing framework, javascript variable scope applies in the same way it does with normal javascript codes. a variable defined within a function is a local variable and is visible only with that particular function. This helps you plan out your data sharing between "It" blocks. If you want to share data between test blocks just use a global variable.
+`it()` in a nutshell is a function that includes executable code to carry out the required test.
+
+Since jasmine is a JavaScript testing framework, the variable scope applies in the same way it does with vanilla JavaScript codes.
+
+A variable defined within a function is local and visible only with that particular function. This helps in data sharing within the `it()` blocks.
+
+If you want to share data between other test blocks just use a global variable.
 
 #### Expect
-They are created using the functions and take in a value called actual. "it" is being appended with a Matcher function. This can take in an argument that is the expected value.
+They are functions that takes in resultant and the expected value. These functions determine if a test if successful or a failure.
 
 #### Matchers
-A matcher is an implementation of a boolean outcome. i.e The result of a matcher checks to confirm if something is either true or it is false. In this case, it checks the outcome of the expectation against a given outcome/value. If there is a match or there is none ( depending on the test case ), will determine if the test passes or if the test fails. In
-Jasmine, you will find a huge set of matchers that can help you achieve the expectation you want to test for. These can be found in the API docs
+A matcher is an implementation of a boolean outcome i.e., the result of a matcher confirms if something is either true or it is false.
+
+In this case, it checks the outcome of the expectation against a given outcome/value. This determines if a test case passes or fails.
+
+In Jasmine, you will find several matchers that helps you achieve the expected test scenarios.
 
 ### Setup and configuration
 - Download and install [nodeJs](https://nodejs.org/en/download/)
