@@ -90,7 +90,7 @@ pip install flask-restful
 pip install numpy
 pip install scikit-learn==0.24.2
 ```
-
+I am using Flask==2.0.1, Flask-RESTful==0.3.9, and numpy==1.21.2.
 Now we can build our RESTful API. We start by importing the libraries and instantiating the Flask RESTful API in `api.py`.
 
 ```python
@@ -113,7 +113,7 @@ X_train = pickle.load(open('X_train.sav', 'rb'))
 model = pickle.load(open('model.sav', 'rb'))
 ```
 
-We feature scale the training set. We will scale the new patient's data later before making predictions.
+We standardize the training set. We will scale the new patient's data later before making predictions.
 
 ```python
 # feature scale data after fitting scalar object to pickled training set
@@ -211,7 +211,7 @@ If we send the wrong JSON data to the API, we get an error message with the 500 
 
 ### Deploying to Heroku
 
-The next step is to deploy our API so other developers can have access to it. Next, we will deploy the API to Heroku. Heroku is a cloud platform that allows developers to build, run, and deploy their apps. If you do not have a Heroku account, you will have to create one by clicking [here](https://signup.heroku.com/).
+The next step is to deploy our API so other developers can have access to it. Next, we will deploy the API to Heroku. Heroku is a cloud platform that allows developers to build, run, and deploy their apps. If you do not have a Heroku account, you can create one by clicking [here](https://signup.heroku.com/).
 
 We need to install Git and Heroku CLI (Command Line Interface) on our PC. Heroku uses git to manage the deployment of apps. Click [here](https://git-scm.com/downloads) to download and install git. Use the link [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) to download and install Heroku CLI. 
 
@@ -235,7 +235,7 @@ git init
 
 We need to add two files to our project directory: `Procfile` and `requirements.txt`. The `Procfile` tells Heroku what to do with the code you want to push to their server. The `requirements.txt` contains all the dependencies we need to install to run our API on Heroku. We will be running the API using `Gunicorn`. First, we need to install it. 
 
-`Gunicorn` is a web server that is more powerful than the built-in server that flask gives you. The built-in server in the flask can only handle one user at a time. But `Gunicorn` can deal with many users at once.
+`Gunicorn` is a web server that is more powerful than the built-in server that flask gives you. The built-in server in the flask can only handle one user at a time. But `Gunicorn` can deal with many users at once. Click [here](https://towardsdatascience.com/my-favorite-python-servers-to-deploy-into-production-d92289764fbe) to learn more.
 
 ```bash
 pip install gunicorn
