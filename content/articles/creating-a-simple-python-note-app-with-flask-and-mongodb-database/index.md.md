@@ -1,4 +1,3 @@
-
 ---
 layout: engineering-education
 status: publish
@@ -73,7 +72,7 @@ To begin setting up MongoDB in our application, we need to create an `app.py` fi
 
 In this `app.py` file, add the following block of code.
 
-```Python
+```python
 from flask import Flask
 from flask_pymongo import PyMongo
 
@@ -102,7 +101,7 @@ The above command will start the application. You can access it from port number
 
 ### Setting up the routes
 First, let us import the `request` module from `flask`.
-```Python
+```python
 from flask import request, Flask
 ```
 
@@ -157,7 +156,7 @@ At this point, we are only returning paragraphs for the pages. We need to return
 ### Adding logic and templates to the routes
 First, we will import the `render_template` and `redirect` module from `flask`.
 
-```Python
+```python
 from flask import request,Flask,render_template,redirect
 ```
 
@@ -345,7 +344,7 @@ To test the functionality, ensure the development server is running, and refresh
 #### The edit-note route
 In the `templates/pages` folder, create a `edit-note.html` file. In the file, add the following:
 
-```HTML
+```html
 {% extends 'base.html'%}
 
 {% block title %} Edit note {% endblock %}
@@ -376,7 +375,7 @@ In the `templates/pages` folder, create a `edit-note.html` file. In the file, ad
 
 In the above file, we extend the common `base.html` file, adding a title and a body content simply a pre-filled form with a specific note's data. In `app.py`, edit the `editNote` function as follows:
 
-```Python
+```python
 @app.route('/edit-note', methods=['GET','POST'])
 def editNote():
 
