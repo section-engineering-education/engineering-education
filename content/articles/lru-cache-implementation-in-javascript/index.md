@@ -39,7 +39,7 @@ When adding an item to the list, the time complexity of that operation is O(n).
 
 We can optimize the shifting operation by eliminating it. To do so we use a double liked list. How?
 
-Still using the example red, green, white, and blue, we needed to add black. Since it wasn't in our list, what we did was remove the oldest element blue and shift the entire list items.
+Still using the example `[red, green, white, blue]` we needed to add `black`. Since it wasn't in our list, what we did was remove the oldest element `blue` and shift the entire list items.
 
 In a doubly-linked list, all you need to do is to remove the rear item and update the rear element to the previous element. Then add a new node and make it point to the second element and update the front. The entire operation is 0(1) time complexity.
 
@@ -51,17 +51,17 @@ Searching can be optimized by using a hash table. With a Hash, you will have a k
 
 ![Hash Table & Double Linked List Diagram](/ddl_hash.png)
 
-To add black to our list, by using a doubly-linked list. We will remove the rear element blue from our list. Blue in this case is our least recently accessed item. Update the rear element to point to the previous element white. In our hash table, we will remove the value(address) that is associated with our key blue. Therefore, the value for our key blue will be null. A new node will is created where we put the black. The previous front gets updated to point to the node that has black. Black will also have an address associated with it as well.
+To add `black` to our list, by using a doubly-linked list. We will remove the rear element `blue` from our list. `Blue` in this case is our least recently accessed item. Update the rear element to point to the previous element `white`. In our hash table, we will remove the value(address) that is associated with our key `blue`. Therefore, the value for our key blue will be null in the hashtable. A new node will is created where we put the `black`. The previous front gets updated to point to the node that has `black`. `Black` will also have an address associated with it as well.
 
 The shifting, in this case, is done in 0(1) time complexity.
 
-Before adding black, we need to search first and see if it is available in the cache. To search for black, we go to the hash table. In the Hash table, key black will not have a corresponding value attached to it. This means that it is not present in our cache. This allows us to find out whether an item is in the cache with just O(1) time complexity.
+Before adding `black`, we need to search first and see if it is available in the cache. To search for black, we go to the hash table. In the Hash table, key `black` will not have a corresponding value attached to it. This means that it is not present in our cache. This allows us to find out whether an item is in the cache with just O(1) time complexity.
 
 ### Implementing LRU Cache in JavaScript.
 
 - Visit [This](https://leetcode.com/)
 - Sign in to the account
-- Visit [This]https://leetcode.com/problems/lru-cache/
+- Visit [This](https://leetcode.com/problems/lru-cache/)
 - Go through the problem statement.
 - Implement the lrucache class.
 
