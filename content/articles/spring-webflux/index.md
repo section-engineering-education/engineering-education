@@ -202,7 +202,7 @@ public interface StudentService {
 
     Flux<Student> findAll(); // Returns all students
 
-    Mono<Student> update(Student student); // Updates and returns the updated student
+    Mono<Student> update(Student student, int id); // Updates and returns the updated student
 
     Mono<Void> delete(int id); // Delete the student
 
@@ -238,8 +238,8 @@ public class StudentServiceImpl implements StudentService {
     }
     // Saves a student into the database
     @Override
-    public Mono<Student> update(Student student) {
-        return repository.findById(student.getId()) // tries to get a student with the specified id
+    public Mono<Student> update(Student student, int id) {
+        return repository.findById(id) // tries to get a student with the specified id
                 .doOnError(IllegalStateException::new) 
                 .map(studentMap -> {
                     studentMap.setName(student.getName());
@@ -290,7 +290,7 @@ public class StudentController {
     }
     // Updates the student with the provided id
     @PutMapping("/{id}")
-    public Mono<Student> updateStudent(@RequestBody Student student) {
+    public Mono<Student> updateStudent(@RequestBody Student student, @PathVariable("id") int id) {
         return service.update(student);
     }
     // Deletes the student with the provided id
