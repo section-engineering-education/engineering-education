@@ -96,7 +96,7 @@ Then you add the following into your webpack.config.js file
   },
 ```
 
-![webpack config file new look 1](webpack6.png)
+![webpack config file new look ](webpack6.png)
 
 Your webpack.config.js file should now look like this. 
 
