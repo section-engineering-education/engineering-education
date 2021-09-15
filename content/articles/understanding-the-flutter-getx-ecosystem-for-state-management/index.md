@@ -1,42 +1,47 @@
 
 
 ### Introduction
-State management allows for the sharing of application state between screens, across your app. Put differently, it enables you to pass data from one User Interface to another so that when the state of your app changes, you change the state, and that rebuilds the user interface. Flutter traditionally uses the Stateful Widget to manage the state. While this works, but as your app grows bigger with nested widgets, it becomes a little difficult to pass data from a parent widget to a child widget and vice versa. In this kind of situation, you will have to pass the data through the constructors of the child widgets. The side effect is that data are passed to widgets that don't need them, just because they are within the widget tree. Also, the business logic will be tightly coupled to the User interface.
+State management allows for the sharing of application state between screens, across your app. Put differently, it enables you to pass data from one user interface to another so that when the state of your app changes, you change the state, and that rebuilds the user interface. 
+
+Flutter traditionally uses the Stateful Widget to manage the state. While this works, but as your app grows bigger with nested widgets, it becomes a little difficult to pass data from a parent widget to a child widget and vice versa. In this kind of situation, you will have to pass the data through the constructors of the child widgets. The side effect is that data are passed to widgets that don't need them, just because they are within the widget tree. Also, the business logic will be tightly coupled to the user interface.
 
 ### Goals
-This article teaches you how to use the GetX state management package to solve these problems. GetX is an extra-light and powerful solution for Flutter. It mixes high-performance state management, intelligent dependency injection, and route management swiftly and efficiently. It helps Developers realize a high level of productivity through easy and pleasant syntax without sacrificing the maximum performance your application can deliver. It enables for complete decoupling of the User Interface, presentation logic, business logic, dependency injection, and navigation. This helps to produce clean code by default.
-In this tutorial, we will build a shopping mobile application that allows users to view products in the shop, like a product, add a product to a cart, and place orders. After placing orders successfully, users can view others as well. With this app, we will demonstrate the power of the GetX package and you will learn how to use GetX for state management, routing, etc.
+This article teaches you how to use the GetX state management package to solve the above problems. In this tutorial, we will build a shopping mobile application that allows users to view products in the shop, like a product, add a product to a cart, and place orders. After placing orders successfully, users can view others as well. With this app, we will demonstrate the power of the GetX package and you will learn how to use GetX for state management, routing, etc.
 
 ### Key Takeaways
 - How to setup Flutter project and configure dependencies
 - How to use GetX as a state management tool
 - Using Obx to maximize the power of reactive programming
-- Exploring the Navigator Manager.
+- Explore the Getx Navigation capabilities.
 - How to use the GetBuilder sub ecosystem to manage state.
 Reusable component of the GetX ecosystem.
 
 ### Prerequisites
-To follow along with this tutorial, you are expected to have the following in place:
-- Good knowledge of programming generally.
-- An understanding of Dart and Flutter.
-- Flutter SDK installed or [click](https://flutter.dev/docs/get-started/install) on this link to install.
+To code along with me, you're expected to have:
+
+- A good knowledge of programming generally.
+- A knowledge of how to code in Dart and Flutter.
+- Flutter installed. You can [click](https://flutter.dev/docs/get-started/install) on this link to install it on your computer.
 - Andriod studio installed or get it installed by [clicking](https://developer.android.com/studio/install) on this link. You can install Visual Studio Code as well by [clicking](https://code.visualstudio.com/download) here. 
 
 ### Creating a Flutter application in Android Studio
 The IDEA we are using for this project is Andriod studio. To get started launch your Android studio and click and click new Flutter project from File > New.
 Since we are not building a package or plugin, select Flutter App. Be sure you selected the path where your Flutter SDK is located then click next. ![creating a new Flutter project](new-project.png)
 Next fill in the following project details to set up the project completely:
-- Give the project a name. Let’s call it ``shopping_getx``.
-- Choose a location where you want to save your project.
-- Then a project description.
+- Since we are building an online shop, we can call the name of the project `shopping_getx`.
+- Choose a directory where you want the project to be saved.
+- Add a project description.
 - Let’s name the organization com.lekwacious.
 - Leave the default Andriod and ios languages to Kotlin and Swift respectively.
-- Select the platform you want to develop for. Let's select and build for Andriod and ios. If you want to build for the web feel free to select the web option too then click on the finish button. ![Adding project details](project-details.png) 
+- Let's select and build for Andriod and ios. If you want to build for the web feel free to select the web option too then click on the finish button. ![Adding project details](project-details.png) 
 This will generate the default Flutter counter project in the main.dart file.
 
 ### Integrating the GetX Ecosystem
+
+#### What is GetX?
+Before integrating GetX into the application, we need to answer the question what is getX? GetX is a simple but powerful Flutter package. The major pillars of the GetX package are high-performance state management, intelligent dependency injection, and route management. It helps Developers realize a high level of productivity through easy and pleasant syntax without sacrificing the maximum performance your application can deliver. It enables for complete decoupling of the User Interface, presentation logic, business logic, dependency injection, and navigation. This helps to produce clean code by default.
 ![GetX Documentation](getx-documentation.png)
- Go to the [GetX Documentation here](https://pub.dev/packages/get/install), copy ``get: ^4.3.8``, and add it  the project ``pubspec.yaml`` file under the ``dependencies section`` and then run dart ``pub get``. This will install the getX ecosystem to your project. Add ``intl: ^0.17.0`` to the  ``dependecies section`` too to install the ``intl package`` then run ``gub get` to install the dependency.  
+ To add integrate Getx into the application go to the [GetX Documentation ](https://pub.dev/packages/get/install), copy `get: ^4.3.8`, and add it to the project `pubspec.yaml` file under the `dependencies section` and then run dart `pub get`. This will install the getX ecosystem to your project. Add `intl: ^0.17.0` to the  `dependencies section` too to install the `intl package` then run `gub get` to install the dependency.  
  ![Pubspec file](pubspec-file.png)
 
 Replace the generated code in the main.dart file with the following:
@@ -69,12 +74,12 @@ class MyApp extends StatelessWidget {
 }
 ```
 - We have created the main method which is the entry point for the Dart VM to execute the program. The main method runs MyApp class.
-- ``MyApp class`` extends the stateless widget and overrides the build method returns a GetMaterialApp.
-- ``GetMaterialApp``: The build method is returning the GetMaterialApp as against the usual MaterialApp. This is because we can use GetX for Navigation. The GetMaterialApp is a class from the Getx package use for navigation.
-- In the ``home``, We are rendering the ``ProductOverviewpage`` which is the next screen we are going to build.
+- `MyApp class` extends the stateless widget and overrides the build method returns a GetMaterialApp.
+- `GetMaterialApp`: The build method is returning the GetMaterialApp as against the usual MaterialApp. This is because we can use GetX for Navigation. The GetMaterialApp is a class from the Getx package use for navigation.
+- In the `home`, We are rendering the `ProductOverviewpage` which is the next screen we are going to build.
 
 ### Project Structure
-We are going to structure the project as follows. Inside the ``lib folder`` create four folders namely ``screens``(houses our UI), ``controller``(business logic), and ``models``(Object representation of the data to be stored). Let's begin with the ``models``. Inside the ``model folder`` create a file named ``product.dart`` and add the following code.
+We are going to structure the project as follows. Inside the `lib folder` create four folders namely `screens`(houses our UI), `controller`(business logic), and `models`(Object representation of the data to be stored). Let's begin with the `models`. Inside the `model folder` create a dart file named `product.dart` as shown below.
 
 ### The models
 #### The Product Model
@@ -82,7 +87,7 @@ We are going to structure the project as follows. Inside the ``lib folder`` crea
 ```Dart
 class Product{
   final int   id;
-  final String title;
+  final String productTitle;
   final String imageUrl;
   final String description;
   final double price;
@@ -90,7 +95,7 @@ class Product{
  
   Product(
       {required this.id,
-      required this.title,
+      required this.productTitle,
       required this.imageUrl,
       required this.description,
       required this.price,
@@ -101,22 +106,22 @@ class Product{
  
  
 - This is just a Dart class that contains the fields of the product.
-- We added a constructor that initializes all the fields. All the fieds were made required except for isFavourite initialized to false.
+- We added a constructor that initializes all the fields. All the fields were made required except for isFavourite initialized to false.
 
 #### CartItem Model
 
 ```Dart
 class CartItem {
   final String id;
-  final String title;
-  final int quantity;
-  final double price;
+  final String productTitle;
+  final int productQuantity;
+  final double productPrice;
  
   CartItem(
       {required this.id,
-      required this.title,
-      required this.quantity,
-      required this.price});
+      required this.productTitle,
+      required this.productQuantity,
+      required this.productPrice});
 }
 ```
  
@@ -129,13 +134,13 @@ class CartItem {
 import 'package:shopping_app/models/cart_item.dart';
  
 class Order {
-  final String id;
+  final String orderId;
   final double amount;
   final List<CartItem> products;
   final DateTime dateTime;
  
   Order(
-      {required this.id,
+      {required this.orderId,
       required this.amount,
       required this.products,
       required this.dateTime});
@@ -143,10 +148,10 @@ class Order {
 ```
  
 - This is just a Dart class that contains the fields of the Order that will be placed.
-- We Created a ``Constructor`` with all the fields required.
+- We Created a `Constructor` with all the fields required.
 
 ### The Controllers
-As stated earlier, all our business logic will be on the controller. This will help the application to be loosely coupled with the User Interface. Create a file named ``product_controller`` in the ``controller folder`` and write the following code:
+As stated earlier, all our business logic will be on the controller. This will help the application to be loosely coupled with the User Interface. Create a file named `product_controller` in the `controller folder` and write the following code:
 
 #### The Product Controller
 
@@ -159,23 +164,23 @@ class ProductController extends GetxController {
   List<Product> _items = [
     Product(
       id: 1,
-      title: 'Red Shirt',
-      description: 'A red shirt - it is pretty red!',
-      price: 2500.00,
+      productTitle: 'Sport Shoe',
+      description: 'Made for you Check it out!',
+      price: 7000.00,
       imageUrl:
-          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+         'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Cavalier-Black-1.jpg?v=1589391819',
     ),
     Product(
         id: 2,
-        title: 'Legend',
+        productTitle: 'Legend',
         description:
-            'Built to last with matte leather uppers, StormKing™ lug rubber outsoles and a flexible elastic goring, the Legend blends form and function like nothing you\'ve seen anywhere else.',
-        price: 12000.00,
+            'Built to last forever, StormKing™ lug rubber outsoles and a flexible elastic goring, this can only be for the Legends and i bet you, you have not seen it anywhere.',
+        price: 63000.00,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Legend-BlackMatte-3.4_672x672.jpg?v=1600886623'),
     Product(
         id: 3,
-        title: 'The Chelsea',
+        productTitle: 'The Chelsea',
         description: 'Functional and Fashionable.',
         price: 49.00,
         imageUrl:
@@ -183,50 +188,50 @@ class ProductController extends GetxController {
     Product(
         id: 4,
         title: 'Men\'s Sneakers',
-        description: 'Clean & Comfortable Sneakers made with classic Leathers.',
+        productTitle: 'Clean & Comfortable Sneakers made with classic Leathers.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-PremierLowTop-Black-3.4.jpg?v=1600270679'),
     Product(
         id: 5,
-        title: 'The Chelsea',
+        productTitle: 'The Chelsea',
         description:
-            'This hardwearing Chelsea is every bit as comfortable as you\'d expect from a slip-on boot but with the durability of our Rugged & Resilient collection.',
+            'Comfortable as you\'d expect.This can only be found at Resilient collection.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Captain-Natural-3.jpg?v=1584114360'),
     Product(
         id: 6,
-        title: 'Men\'s Sneakers',
+        productTitle: 'Men\'s Sneakers',
         description: 'Clean & Comfortable Sneakers made with classic Leathers.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-PremierLowTop-Black-3.4.jpg?v=1600270679'),
     Product(
         id: 7,
-        title: 'The Chelsea',
+        productTitle: 'The Chelsea',
         description:
-            'Handcrafted for the men who wear their boots hard, every detail was carefully selected so you can go the extra mile with confidence.',
+            'Made for the men who understand what classic means, every bit was carefully selected so you can go the extra mile with confidence and alacrity.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Cavalier-Toffee-210402-2.jpg?v=1618424894'),
     Product(
         id: 8,
-        title: 'Men\'s Sneakers',
+        productTitle: 'Men\'s Sneakers',
         description: 'Clean & Comfortable Sneakers made with classic Leathers.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Cavalier-Toffee-210402-3.jpg?v=1618424894'),
     Product(
         id: 9,
-        title: 'The Chelsea',
+        productTitle: 'The Chelsea',
         description: 'Functional and Fashionable.',
         price: 49.99,
         imageUrl:
             'https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Cavalier-Black-1.jpg?v=1589391819'),
     Product(
         id: 10,
-        title: 'Men\'s Sneakers',
+        productTitle: 'Men\'s Sneakers',
         description: 'Clean & Comfortable Sneakers made with classic Leathers.',
         price: 49.99,
         imageUrl:
@@ -254,15 +259,16 @@ class ProductController extends GetxController {
  
  ```
  
-- The GetxController: The ``ProductController`` class we just created is extending the ``GetxController`` class which is an abstract class that extends the ``DisposableInterface``. By extending ``DisposableInterface`` Getx helps us to reduce memory consumption by deleting our controller from memory immediately after the widget using it is removed from the navigation stack.
-- What we need in the controller is the element we want to bind to the User Interface. In this case a list of ``Products``, as such we have created the field ``_items`` which contains the list of all the products. The underscore in the ``_items`` makes it private. We are hard-coding this, we can equally retrieve the product from the backend by making an HTTP call to the backend server.
+- The GetxController: The `ProductController` class we just created is extending the `GetxController` class which is an abstract class that extends the `DisposableInterface`. By extending `DisposableInterface` Getx helps us to reduce memory consumption by deleting our controller from memory immediately after the widget using it is removed from the navigation stack.
+- What we need in the controller is the element we want to bind to the User Interface. In this case a list of `Products`, as such we have created the field `_items` which contains the list of all the products. The underscore in the `_items` makes it private. We are hard-coding this, we can equally retrieve the product from the backend by making an HTTP call to the backend server.
 - Next, we created two getters that return all the list of the product and the product that has been marked as favorite respectively.
-- The ``findProductById`` method takes in an ``ID`` as an argument and returns the product with that particular ``ID``.
-- The ``toggleFavouriteStatus`` method takes in an ``ID`` and marks the product with that ``ID`` as favorite.
-- ``Update``: We called the update from ``Getx`` to update the User Interface on-click. The update method listens for changes in the ``toggleFavouriteStatus`` method and updates the appropriate User Interface. If you are familiar with the Provider package, the ``update`` method functions like the ``notifyListeners`` of the Provider package.
+- The `findProductById` method takes in an `ID` as an argument and returns the product with that particular `ID`.
+- The ``toggleFavouriteStatus` method takes in an `ID` and marks the product with that `ID` as favorite.
+- `Update`: We called the update from `Getx` to update the User Interface on-click. The update method listens for changes in the `toggleFavouriteStatus` method and updates the appropriate User Interface. If you are familiar with the Provider package, the `update` method functions like the `notifyListeners` of the Provider package.
 
 #### The Cart Controller
-Create a dart file called ``cart_controller.dart`` in the ``controller`` folder and add the following code:
+The CartController will contain business logic on how an item can be added and removed from the cart. It will also contain  methods that return all items on the cart, the total amount of all the items on the cart  etc.
+Create a dart file called `cart_controller.dart` in the `controller` folder and add the following code:
 
 ```Dart
 
@@ -327,17 +333,18 @@ class CartController extends GetxController {
  ```
  
  
-- We have created a class ``CartContoller`` that extends the ``GetxController``. Remember to import the ``GetXController`` from the package.
-- We created a ``map`` that holds the CartItem objects.
+- We have created a class `CartContoller` that extends the `GetxController`. Remember to import the `GetXController` from the package.
+- We created a `map` that holds the CartItem objects.
 - We also created two getters that return all the items on the cart and the number of the items respectively.
-- Next we created a method ``totalAmount`` that calculates and returns the total amount of all the products on the cart.
-- The ``addItem`` method adds the products to the cart. First, we check, if the product exists already in the cart, we will update the number and if it does not we add it to the cart.
-- The ``removeitem`` method takes a ``productId`` and removes a product with that ``ID`` from the cart.
-- The ``clear`` method clears the cart once an order has been successfully placed.
-- The ``Update`` method: Note we have invoked the update method from ``Getx`` in all the methods we created to listen for changes to update the appropriate User Interface where this data is needed.
+- Next we created a method `totalAmount` that calculates and returns the total amount of all the products on the cart.
+- The `addItem` method adds the products to the cart. First, we check, if the product exists already in the cart, we will update the number and if it does not we add it to the cart.
+- The `removeitem` method takes a `productId` and removes a product with that `ID` from the cart.
+- The `clear` method clears the cart once an order has been successfully placed.
+- The `Update` method: Note we have invoked the update method from `Getx` in all the methods we created to listen for changes and update the appropriate User Interface where this data is needed.
 
 #### The order Controller
-Create a dart file called ``order_controller.dart`` in the ``controller folder`` and add the following code:
+The OrderController will contain methods that place an order and get all the orders place.
+Create a dart file called `order_controller.dart` in the `controller folder` and add the following code:
 
 ```Dart
 import 'package:get/get.dart';
@@ -365,12 +372,12 @@ class OrderController extends GetxController {
 ```
 
 - We created a list the holds all the orders.
-- Next, we created a getter called ``orders`` to return all the orders placed.
-- The ``addOrder`` method takes in a list of ``CartItem`` which are the products that have been added to the cart and a ``total`` of type ``double`` which is the sum of all the products added to the cart and places an order.
-- The ``update`` method: Again we have called the ``update`` method to listen for changes and updates the UI. As simple as that, that's the beauty of the Getx package.
+- Next, we created a getter called `orders` to return all the orders placed.
+- The `addOrder` method takes in a list of `CartItem` which are the products that have been added to the cart and a `total` of type `double` which is the sum of all the products added to the cart and places an order.
+- The `update` method: Again we have called the `update` method to listen for changes and updates the UI. As simple as that, that's the beauty of the Getx package.
 
 ### The UI
-Inside the screens folder create a dart file ``product_overview_screen.dart`` and add the following code:
+Inside the screens folder create a dart file `product_overview_screen.dart` and add the following code:
 
 #### The ProductOverviewPage
 
@@ -415,18 +422,18 @@ class ProductOverviewPage extends StatelessWidget {
   }
 }
 ```
-- ``Dependency injection``: Dependency injection allows for injecting instances of one class into another. To define what a ``dependency`` is, if some class C uses the functionality of a class D, then D is a dependency for C, or, in other words, C has a dependency on D.
-- ``Getx`` allows you to perform Dependency injection with just one line of code, no Provider context, no inheritedWidget. With this line of code: 
+- `Dependency injection`: Dependency injection allows for injecting instances of one class into another. To define what a `dependency` is, if some class C uses the functionality of a class D, then D is a dependency for C, or, in other words, C has a dependency on D.
+- `Getx` allows you to perform Dependency injection with just one line of code, no Provider context, no inheritedWidget. With this line of code: 
 ```Dart 
 final cartController = Get.put(CartController());
 ```
- we have injected the ``cartController`` into our UI so that we can access the data on the controller.
-- The ``GetBuilder`` when wrapped over any widget to makes it interact with the methods and variables of the controller. So whatever widget is wrapped with a Getbuilder, Getx applies setState on it. With this, we were able to call the itemCount functions in the CartController class to return the number of products on the cart, etc.
-- We use the ``Getx navigation manager`` to navigate to the ``CartScreen`` page when even the ``shopping_cart icon`` is pressed.
+ we have injected the `cartController` into our UI so that we can access the data on the controller.
+- The `GetBuilder` when wrapped over any widget to makes it interact with the methods and variables of the controller. So whatever widget is wrapped with a Getbuilder, Getx applies setState on it. With this, we were able to call the itemCount functions in the CartController class to return the number of products on the cart, etc.
+- We use the `Getx navigation manager` to navigate to the `CartScreen` page when even the `shopping_cart icon` is pressed.
 - In the body of this class, we have called the ProductsGrid class to return a grid showing all the products in the shop.
 
 ### Widgets
-We have broken down our UI to make keep it simple and reusable. create a folder called ``widget``. Inside the ``widget folder``, create a dart file called ``productgrid.dart``.
+We have broken down our UI to make keep it simple and reusable. create a folder called `widget`. Inside the `widget folder`, create a dart file called `productgrid.dart`.
 
 #### The ProductsGrid class
 
@@ -515,14 +522,14 @@ class ProductsGrid extends StatelessWidget {
 }
 ```
 
-- We injected the ``ProductController`` and ``CartController`` into the ``ProductGrid`` class to have access to the functions defined in them.
-- We wrap the ``ClipRRect`` widget with a ``GetBuilder`` to update it when the state changes. With the injected ``ProductController`` we displayed the products showing their title, image.
-- We used the navigator manager to route to the ``ProductDetailsScreen`` when a particular product is clicked by simply calling the ``Get.to()`` and pass in the title, price, image, and description of the product selected.
-- On click of the favorite icon, we call the product controller access the ``toggleFavouriteStatus`` function and change the color of the icon appropriately.
-- The ``shopping_cart`` icon has been wrapped with the ``Getbuilder`` so that whenever it is clicked we add the product to the cart by calling the ``addItem`` function from the CartController.
+- We injected the `ProductController` and `CartController` into the `ProductGrid` class to have access to the functions defined in them.
+- We wrap the `ClipRRect` widget with a `GetBuilder` to update it when the state changes. With the injected `ProductController` we displayed the products showing their title, image.
+- We used the navigator manager to route to the `ProductDetailsScreen` when a particular product is clicked by simply calling the `Get.to()` and pass in the title, price, image, and description of the product selected.
+- On click of the favorite icon, we call the product controller access the `toggleFavouriteStatus` function and change the color of the icon appropriately.
+- The `shopping_cart` icon has been wrapped with the `Getbuilder` so that whenever it is clicked we add the product to the cart by calling the `addItem` function from the CartController.
 
 #### The ProductDetailsScreen
-Inside the screens folder create a dart file ``product_details_screen.dart`` and add the following code:
+Inside the screens folder create a dart file `product_details_screen.dart` and add the following code:
 
 ```Dart
 import 'package:flutter/cupertino.dart';
@@ -600,10 +607,10 @@ class ProductDetailsScreen extends StatelessWidget {
 }
  ```
  
-- We use the constructor to pass in the detail from the ``productGrid`` class when you click on a product to view the details.
+- We use the constructor to pass in the detail from the `productGrid` class when you click on a product to view the details.
 
 #### The CartScreen
-Inside the ``screens folder`` create a dart file ``cart_screen.dart`` and write the following code:
+Inside the `screens folder` create a dart file `cart_screen.dart` and write the following code:
 
 ```Dart
 
@@ -696,10 +703,10 @@ class CartScreen extends StatelessWidget {
 }
 ```
 
-- Again we have injected the ``OrderController`` and ``CartController`` into the cartScreen class to have access to the functions defined in them.
-- We used the ``GetBuilder ``to update the widgets that need to be rebuilt as the state changes. The total amount is updated accordingly by calling the ``CartController``.
-- The ``Listview.bulder`` widget has been used to render the list of all products added to the cart that is the ``Cartitem`` class. We are showing the title, amount, quantity, and price of products in the cart.
-- We used the injected instance of the ``OrderController`` to invoke the ``addOrder`` function so that whenever the ``TextButton`` widget is clicked we place an order.
+- Again we have injected the `OrderController` and `CartController` into the cartScreen class to have access to the functions defined in them.
+- We used the `GetBuilder ` to update the widgets that need to be rebuilt as the state changes. The total amount is updated accordingly by calling the `CartController`.
+- The `Listview.bulder` widget has been used to render the list of all products added to the cart that is the `Cartitem` class. We are showing the title, amount, quantity, and price of products in the cart.
+- We used the injected instance of the `OrderController` to invoke the `addOrder` function so that whenever the `TextButton` widget is clicked we place an order.
 - If an order is placed successfully, we use the ``snackbar`` from GetX to show a message to the user that the order has been placed successfully simply by adding this code
 ```Dart
 Get.snackbar(
@@ -711,10 +718,10 @@ Get.snackbar(
 ```
 
 That is the power of GetX ecosystem.
-- Once an order is placed successfully we invoke the ``clear`` method from the ``cartController`` to clear the cart.
+- Once an order is placed successfully we invoke the `clear` method from the `cartController` to clear the cart.
 
 #### The CartItem
-In the ``widget folder`` create a dart file ``cart_items.dart`` with the following code:
+In the `widget folder` create a dart file `cart_items.dart` with the following code:
 ```Dart
 
 import 'package:flutter/material.dart';
@@ -773,8 +780,8 @@ class CartItem extends StatelessWidget {
 }
  ```
  
-- We created the ``CartItem`` class which extends the stateless widget. The fields include the id, productId, price, quantity, and title. The constructor was used to initialize the fields.
-- The ``CartController`` has been injected. We used that to access the ``removeitem`` method to delete a product from the cart whenever the Dismissible widget is swiped.
+- We created the `CartItem` class which extends the stateless widget. The fields include the id, productId, price, quantity, and title. The constructor was used to initialize the fields.
+- The `CartController` has been injected. We used that to access the `removeitem` method to delete a product from the cart whenever the Dismissible widget is swiped.
 
 #### The OrderScreen
 
@@ -803,9 +810,9 @@ class OrderScreen extends StatelessWidget {
 }
  ```
  
-- The ``OrderScreen`` class renders the ``OrderItem`` widget.
-- We injected the ``OrderController`` to access the ``orders`` which contain the list of all the orders place.
-- We rendered the ``AppDrawer`` to show the ``Orders`` and the ``Shops`` depending on the one selected.
+- The `OrderScreen` class renders the `OrderItem` widget.
+- We injected the `OrderController` to access the `orders` which contain the list of all the orders place.
+- We rendered the `AppDrawer` to show the `Orders` and the `Shops` depending on the one selected.
 
 #### The OrderItem
 
@@ -927,17 +934,14 @@ class AppDrawer extends StatelessWidget {
 }
  ```
 
-- The class returns a Column with ``Drawer`` widget so users can select to either navigate to the shop that is the ``ProductOverviewPage`` showing all the products or navigate to the order page that has the list of the orders placed, whichever the user selected, we use the GetX navigator to route to the appropriate screen.
+- The class returns a Column with `Drawer` widget so users can select to either navigate to the shop that is the `ProductOverviewPage` showing all the products or navigate to the order page that has the list of the orders placed, whichever the user selected, we use the GetX navigator to route to the appropriate screen.
 
 ### OBX
-While the GetBuilder is fast and has a low memory footprint, it is not reactive. Obx is one of the reactive state managers of the GetX ecosystem. GetX turns reactive programming into something quite simple:
-- You won't need to create StreamControllers.
-- You won't need to create a StreamBuilder for each variable
-- You will not need to create a class for each state.
-- You will not need to create a get for an initial value.
-- You will not need to use code generators
+While the GetBuilder is fast and has a low memory footprint, it is not reactive. Obx is one of the reactive state managers of the GetX ecosystem. GetX turned reactive programming paradigm into something quite simple:
+- There is no need to create StreamControllers, StreamBuilder for each variable any more.
+- It saves you the stress of creating a class for each state, a get for an initial value and the use of code generators
 
-The tuttorial has focuesed on the GetBuilder, however if we were to use the reactive streans(OBX) the ``OrderController`` class would have looked like this.
+The tuttorial has focuesed on the GetBuilder, however if we were to use the reactive streans(OBX) the `OrderController` class would have looked like this.
 
 ```Dart
 
@@ -964,9 +968,9 @@ class OrderController extends GetxController {
 }
  ```
  
-- ``obs``: We have declared a variable that is going to hold a list of all orders and we made it an observable by making it an obs using the dot notation. By making it an obs, every time the orders change, all widgets that use it are automatically changed.
-- In the ``addOrder`` method, we don't need to manually call the ``update`` method to update the UI that is bound to it. ``Obx`` intelligently observes and updates accordingly.
-To bind a controller to a view using ``Obx`` wrap the widget as shown below:
+- `obs`: We have declared a variable that is going to hold a list of all orders and we made it an observable by making it an obs using the dot notation. By making it an obs, every time the orders change, all widgets that use it are automatically changed.
+- In the `addOrder` method, we don't need to manually call the `update` method to update the UI that is bound to it. `Obx` intelligently observes and updates accordingly.
+To bind a controller to a view using `Obx` wrap the widget as shown below:
 ```Dart
 
     body: Obx(() => ListView.builder(
@@ -979,5 +983,5 @@ To bind a controller to a view using ``Obx`` wrap the widget as shown below:
 ### Conclusion
 We have successfully built a shopping mobile app using Flutter, and GetX for state management.
 You've learned how to build a shopping application with Flutter and use GetX for state management, navigation, and rendering widgets.
-You can clone the project on this [Git Repository](https://github.com/Lekwacious/shopping_app-_getx).
-Happy coding!
+The source code can be found on this [Git Repository](https://github.com/Lekwacious/shopping_app-_getx).
+
