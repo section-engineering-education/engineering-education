@@ -239,7 +239,13 @@ public class StudentServiceImpl implements StudentService {
     // Saves a student into the database
     @Override
     public Mono<Student> update(Student student) {
-        return repository.save(student);
+        return repository.findById(student.getId()) // tries to get a student with the specified id
+                .doOnError(IllegalStateException::new) 
+                .map(studentMap -> {
+                    studentMap.setName(student.getName());
+                    studentMap.setCourse(student.getCourse());
+                    return studentMap;
+                }).flatMap(repository::save); // Updates the student with the id passed if the student is present in the database
     }
     // Deletes a student from the database
     @Override
