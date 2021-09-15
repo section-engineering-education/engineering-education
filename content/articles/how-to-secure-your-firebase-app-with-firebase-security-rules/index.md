@@ -1,5 +1,21 @@
-Firebase application's security is essential. In this guide, we will learn how we can secure Firebase apps. This tutorial will give you easy steps that you can take to make your application a lot safer. Also, it answers questions on what Firebase is and why security is vital in cloud Firestore.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-secure-firebase-apps-with-firebase-security-rules/
+title: How to secure Firebase Apps with Firebase security rules
+description: This article aims to explain how to secure Firebase Apps with Firebase security rules in a simple and easy way.
+author: julie-ruguru
+date: 2021-09-15T00:00:00-11:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/hero.jpg
+    alt: How to secure Firebase Apps with Firebase security rules image
+---
+Firebase application's security is essential. In this guide, we will learn how we can secure Firebase apps. This tutorial will give you easy steps that you can take to make your application a lot safer. Also, it answers questions on what Firebase is and why security is vital in cloud Firestore.
+<!--more-->
 Based on the rules and conditions you set, some users will be restricted from reading or writing the content.
 
 Next, we're going to dive deeper into how security rules work and look at a simple use case (project) to get you more comfortable building secure, production-ready applications.
@@ -46,7 +62,7 @@ We will demonstrate how this works by building a simple messaging app using Clou
 #### Step 1: Create a Firebase project
 To begin, navigate to [Firebase](https://firebase.google.com/) and sign in using your `Gmail` account.
 
-![Firebase](/engineering-education/how-to-secure-your-firebase-app-with-firebase-security-rules/firebase.jpg)
+![Firebase](/engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/firebase.jpg)
 
 After a successful sign-in, navigate to [Google Firebase console](https://console.firebase.google.com/u/0/) and click `add project` button to create a new project. Give your project a name and follow the on-screen steps to finish up.
 
@@ -55,7 +71,7 @@ In your Firebase console, select Cloud Firestore and you'll be directed to the d
 
 After that, add a collection named `chat` and a document named `message` into it as shown below:
 
-![Create database](/engineering-education/how-to-secure-your-firebase-app-with-firebase-security-rules/create-db.jpg)
+![Create database](/engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/create-db.jpg)
 
 #### Step 3: Create a basic messaging app
 Our project is simple. You only need to create a folder where the messaging app is placed. Then add `index.html` and `script.js` files.
@@ -113,18 +129,18 @@ The `index.html` file contains our HTML code and links to other files. To start 
 
 Below is how the app looks like:
 
-![Chat App](/engineering-education/how-to-secure-your-firebase-app-with-firebase-security-rules/chatapp.jpg)
+![Chat App](/engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/chatapp.jpg)
 
 #### Step 4: Firebase security rules
 
 ##### Read and write rule
 To add this rule, navigate to the `rules tab` next to the `data tab` in the Firebase console and you will see the cloud Firestore policy configuration that looks like this:
 
-![Cloud Firestore Policy Configuration](/engineering-education/how-to-secure-your-firebase-app-with-firebase-security-rules/cloud-firestone-policy-config.jpg)
+![Cloud Firestone Policy Configuration](/engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/cloud-firestone-policy-config.jpg)
 
 To update the Cloud Firestore security policy, click `Edit rules` at the top left corner to change the security rules.
 
-![Edit Rules](/engineering-education/how-to-secure-your-firebase-app-with-firebase-security-rules/edit-rules.jpg)
+![Edit Rules](/engineering-education/how-to-secure-firebase-apps-with-firebase-security-rules/edit-rules.jpg)
 
 Syntax:
 
@@ -192,7 +208,7 @@ You could use a two factor authentication (2FA) by using an email to verify as a
 service cloud.firestore {
   match /databases/{database}/documents {
   match /users/userId {
-      allow read, write: request.auth.uid == userId
+      allow read, write: if request.auth.uid == userId
       && request.auth.token.email_verified ==true
     }
   }
@@ -208,7 +224,10 @@ To summarize, this guide has touched on:
 - What is Firebase.
 - How to create a Firebase application.
 - How to set up a Cloud Firestore database.
-- Why security is important in Cloud Firestore. 
+- Why security is important in Cloud Firestore.
 - Security rules in Cloud Firestore.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
