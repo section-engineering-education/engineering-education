@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-java-virtual-machine-works/
-title: How Java Virtual Machine Works
+title: How the Java Virtual Machine Works
 description: In this article, we will discuss Java Virtual Machine which is used to compile Java code. We will understand the various types of virtual machines and discuss them in detail.
 author: geofrey-mwangi
 date: 2021-09-15T00:00:00-18:00
@@ -14,20 +14,21 @@ images:
   -url: /engineering-education/how-java-virtual-machine-works/hero.jpg
    alt: Java Virtual Machine example image
 ---
-
-The `Java Virtual Machine (JVM)` is the Java program that executes the main function. When you install **JRE**, you'll also get JVM (Java Runtime Environment). A compiler in other programming languages generates machine code. To compile Java code, Java Virtual Machine is used. It enables Java applications to execute on the system. <!--more-->
-
+The Java Virtual Machine (JVM) allows a computer to interpret or run Java programs. It acts as a compiler for generating machine code. All Java programs require a Runtime Environment. 
+<!--more-->
 ### Introduction
+JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and then installed on any other Java-enabled system without any modifications. 
 
-As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without any modifications. 
-
-JVM makes all of this possible. As part of the Java compiler's process of compiling a `.java` file,`.class` files (which contain bytecode) with the same class names are generated. When we run this `.class` file, it goes through a series of steps. These steps describe the JVM as a whole, and we will discuss them in this article.
+Java compiler compiles a `.java` program,` to .class` files (which contain bytecode). When we run the `.class` file, it goes through a series of steps which will be discussed in this article.
 
 ### Types of virtual machines
+**System-based virtual machines (SVM)**
 
-1. **System-based virtual machines (SVM)**: As a replacement for physical computers, SVMs were developed. A host computer runs them and uses its hardware resources.
+SVMs were developed to replace physical computers. A host computer executes them using its hardware resources.
 
-2. **Application-based virtual machines (AVM)**: The host machine allows a single process to execute as an application without involving any hardware whatsoever. Process-based virtual machines are another name for them. JVMs belong to this group of VMs, which we will discuss at length in this article.
+**Application-based virtual machines (AVM)** 
+
+The host machine allows a single process to execute as an application without involving any hardware whatsoever. They are also called Process-based virtual machines. JVMs belong to this group of VMs, which we will discuss at length in this article.
 
 An application-level virtual machine (AVM) allows a single process to execute as an application on the host machine without any hardware components. Thus, they are also known as process-based virtual machines. 
 
@@ -48,7 +49,9 @@ There are three components of the class loaders:
 
 As one of the phases of JVM, it mainly consists of three activities which are listed below:
 
-1. **Loading**: `.class` files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each `.class` file in JVM contains the following information.
+1. **Loading**
+
+`.class` files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each `.class` file in JVM contains the following information.
 
 - Class name and its immediate parent class.
 - `.class` files can be classified as Class or Interface.
