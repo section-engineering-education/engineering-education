@@ -78,56 +78,64 @@ adb connect IP_ADDR:3333
 ### Mobile modifications in real-time
 Scrcpy can be used in several ways to manipulate a mobile device.
 
-1. **Reducing resolution**
+**Reducing resolution** 
+
 You can replicate the device's screen at a reduced resolution, while retaining the aspect ratio using the following command.
 
 ```BASH
 scrcpy --max-size 1020
 ```
 
-2. **Setting a frame rate limit**
+**Setting a frame rate limit** 
+
 You may also alter the recorded screen frame rate.
 
 ```bash
 scrcpy --max-fps 30
 ```
 
-3. **Cropping the screen**
+**Cropping the screen** 
+
 To display a specific area of the screen, use this command.
 
 ```bash
 scrcpy --crop 1020:1440:0:0
 ```
 
-4. **Displaying fullscreen mode**
+**Displaying fullscreen mode** 
+
 You may launch the program in a full-screen mode right away.
 
 ```bash
 scrcpy --fullscreen
 ```
 
-5. **Screen recording**
+**Screen recording** 
+
 While mirroring, you can also record the screen, as demonstrated below.
 
 ```bash
 scrcpy --record myrecording.mp4
 ```
 
-6. **Showing touches**
+**Showing touches** 
+
 The command below is useful, especially when you need to test the device's screen.
 
 ```bash
 scrcpy --show-touches
 ```
 
-7. **Staying awake**
+**Staying awake** 
+
 Use the following command to prevent the device from sleeping:
 
 ```bash
 scrcpy --stay-awake
 ```
 
-8. **Connecting multiple devices**
+**Connecting multiple devices** 
+
 Users can connect several devices to Scrcpy.
 
 All devices compatible with `adb` will be displayed once you enable USB debugging.
