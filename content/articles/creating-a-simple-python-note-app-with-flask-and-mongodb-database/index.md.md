@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-a-simple-python-note-app-with-flask-and-mongodb-database//hero.jpg
+  - url: /engineering-education/creating-a-simple-python-note-app-with-flask-and-mongodb-database/hero.jpg
     alt: Python notes app with Flask and Mongodb image
 ---
 
