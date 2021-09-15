@@ -28,7 +28,9 @@ To follow through this tutorial, you should have:
 - A basic knowledge of the kotlin programming language.
 
 ### How does Wear OS compare to Android?
-Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and a set of distinct functionalities. Wear OS shouldn't be a challenge if you're already acquainted with Android mobile application development.
+Wear OS is a new platform designed specifically for wearable devices. Although it is centered on Android, it offers a unique look and a set of distinct functionalities.
+
+Wear OS shouldn't be a challenge if you're already acquainted with Android mobile application development.
 
 ### Packages exclusively for Wear OS
 - **android.webkit** - is an open-source web page rendering engine that has become a mobile browser mainstream. It was created using the code from the KDE desktop environment's [KHTML](https://api.kde.org/frameworks/khtml/html/index.html) and [KJS](<https://en.wikipedia.org/wiki/KJS_(software)>) modules.
@@ -42,7 +44,7 @@ When establishing an Android Wear app for a smart watch, select the Wear OS tab,
 
 In the packages of your application, two modules will appear right away: a wear module for smart watches, and an application module for tablets and phones.
 
-If you wish to add smartwatch functionality to an existing app, open it, pick the Wear OS module from the _File -> New -> New Module_ menu, and set it up. After that, a folder will appear with the filename of the desired module.
+If you wish to add smartwatch functionality to an existing app, open it, pick the Wear OS module from the `File -> New -> New Module` menu, and set it up. After that, a folder will appear with the filename of the desired module.
 
 Two different `.apk` or `.aab` files will be created from the two modules. However, they must have the same package name and be verified with the same certification when they are published.
 
@@ -176,6 +178,7 @@ Such transformations are ignored at the system level for square displays. As a r
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>
 ```
+Result:
 
 ![BoxInsetLayout](/engineering-education/how-to-create-an-android-wear-os-app/box-inset-layout.png)
 
@@ -222,6 +225,8 @@ Such transformations are ignored at the system level for square displays. As a r
     </FrameLayout>
 </android.support.wear.widget.BoxInsetLayout>
 ```
+
+Result:
 
 ![SwipeDismissFrameLayout](/engineering-education/how-to-create-an-android-wear-os-app/swipe-dismiss-frame-layout.png)
 
@@ -285,6 +290,8 @@ navigation_drawer.apply{
     }
 }
 ```
+
+Result:
 
 ![Drawer](/engineering-education/how-to-create-an-android-wear-os-app/drawer.png)
 
