@@ -1,6 +1,21 @@
-### Introduction
-Firestore database is a modern, object-based database that stores data in JSON format. In this tutorial, we will learn how to prepare data, design the database, and perform simple and complex queries using the Android platform.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /firestore-data-modeling-and-query-customization-in-android/
+title: Firestore data modeling and query customization in Android
+description: This tutorial will guide you on how to use Firestore to model data and customize queries in your Android app.
+author: noni-diana
+date: 2021-09-15T00:00:00-12:15
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/firestore-data-modeling-and-query-customization-in-android/hero.png
+    alt: Firestore data modeling and query customization in Android image
+---
+Firestore database is a modern, object-based database that stores data in JSON format. In this tutorial, we will learn how to prepare data, design the database, and perform simple and complex queries using the Android platform.
+<!--more-->
 ### Prerequisites
 To follow along with this tutorial, you will need the following:
 - Android Studio installed on your machine.
@@ -51,7 +66,7 @@ Let's take an example of an agricultural farm in which we have a collection of c
 
 It should look as shown below:
 
-![Database design](database-design.png)
+![Database design](/engineering-education/firestore-data-modeling-and-query-customization-in-android/database-design.png)
 
 You can design this using the console or using the code as discussed in the later part of this tutorial.
 
@@ -194,7 +209,7 @@ Upon running the app, click `btnSaveData` button and head to Firebase console to
 
 You should expect to see something similar to this:
 
-![Saved data](saved-data.png)
+![Saved data](/engineering-education/firestore-data-modeling-and-query-customization-in-android/saved-data.png)
 
 ### Performing Queries
 To query the data, we will use the `get()` method of the `DocumentReference` class. This method returns a `DocumentSnapshot` object.
@@ -276,7 +291,7 @@ docReference.whereGreaterThan("count", 15).get().addOnSuccessListener {querySnap
 
 The code above returns two fruits, `Blackberries` and `Banana` because their count satisfies the condition. Refer to the [dummy data](#generate-dummy-data) to confirm.
 
-![Query -Greater than](custom-query-greater-than.png)
+![Query -Greater than](/engineering-education/firestore-data-modeling-and-query-customization-in-android/custom-query-greater-than.png)
 
 Multiple operators can be chained to form a more specific query. For example, we can get all documents in the `fruits` collection that have a `count` greater than 5 but less than 20.
 
@@ -306,3 +321,6 @@ The order of the conditions/filter operations is very important as the result of
 In this tutorial, we have covered the fundamental concepts of modeling data in Firestore and how to query it. The knowledge gained in this tutorial can be used to build a robust and scalable application. Keep practicing to gain a better understanding of custom queries and indexing.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
