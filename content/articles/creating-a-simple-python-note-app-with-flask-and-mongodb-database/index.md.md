@@ -2,7 +2,9 @@ Python is a very easy-to-learn language due to its user-friendly syntax. Moreove
 
 Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus, very easy for beginners to stated and scaled up to the complex application.
 
-To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. In this article, we will create a simple note application using Flask and MongoDB database.
+To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. 
+
+In this article, we will create a simple note application using Flask and MongoDB database.
 
 ### Prerequisites
 To follow along with this article, the following basic information will be essential.
@@ -78,7 +80,7 @@ To test this, from your terminal run;
 python3 app.py
 ```
 
-The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message, since we have not defined any route. Let us get to that in the next step.
+The above command will start the application. You can access it from port number 5000, i.e. `http://localhost:5000`. For now, you will get a `Not Found` message since we have not defined any route. Let us get to that in the next step.
 
 ### Setting up the routes
 First, let us import the `request` module from `flask`. Here is the code to that.
@@ -144,7 +146,7 @@ from flask import request,Flask,render_template,redirect
 
 As the name suggests, `render_template` will load an `HTML` template file, and `redirect` will be called when redirecting from one route to another, particularly those that do not return pages.
 
-1. **Work on the templates first**
+#### Working on the templates
 
 In the project root folder, create a folder and name it `templates`. Inside the folder, create a `base.html` file and add the following.
 
@@ -189,7 +191,7 @@ To enhance code reusability, all templates will be loaded from one base file. Fu
 
 According to the above file, only the `title` and the `body content` will be different for each page, and that is pretty much what we want in our simple application.
 
-2. **The home page route**
+#### The home page route
 
 To complete the home page route, we will follow the below steps;
 
@@ -265,7 +267,7 @@ To test this home route, make sure your application is running and refresh the p
 
 In the next step, we will handle the `add-note` route.
 
-3. **The add-note route**
+#### The add-note route
 
 In `templates/pages, create a file `add-note.html`. In this file, add the following code.
 
@@ -330,7 +332,7 @@ When we have a `GET` call in the above function, we are simply returning a view 
 
 To test the functionality, ensure the development server is running, and refresh the `add-note` page, you should see a form, and when you fill it and submit it, you will be redirected to the home page now with a saved note.
 
-4. **The edit-note route**
+#### The edit-note route
 
 In the `templates/pages` folder, create a `edit-note.html` file. In the file, add the following:
 
@@ -404,7 +406,7 @@ To test this functionality, ensure the development server is running.
 - Refresh the home page.
 - For any note, click on edit, edit any field, and then hit `Submit. The new details should be reflected.
 
-5. **The delete-note route**
+#### The delete-note route
 
 In `app.py`, edit the `deleteNote` as follows:
 
@@ -429,7 +431,7 @@ To test this functionality, make sure the development server is running.
 - Refresh the home page.
 - For any note, click on delete; it should be deleted successfully.
 
-#### Conclusion
+### Conclusion
 In this article, we have built a simple notes app using Flask and MongoDB using PyMongo driver. Here are some resources that will help you gain more insights into the covered technologies.
 
 - [Installing packages using virtual environments](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
