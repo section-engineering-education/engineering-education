@@ -1,11 +1,11 @@
 ### Introduction
-Meaningless data elements are called `literals` because they have fixed values. Java literals are hence also known as constants. It is possible to represent a wide variety of values with the help of literals. Strings in Java are objects.
+Meaningless data elements are called literals because they have fixed values. In Java, literals are also known as constants. It is possible to represent a wide variety of values with the help of literals. Strings in Java are objects.
 Only a single String object may be stored in memory by Java's virtual engine if we specify the same string in many variables.
 There is an international standard for encoding characters that can be used by everyone. 
 
-Many different characters can be represented in various forms, such as text files and websites, using this character set. Characters can be stored in 4 bytes in Unicode. Character literals can be stored in char data types. You can pick between three alternative character encodings: UTF-8, 16 and 32. Web content should use only UTF-8.
-### Method approaches
-1. First method: Giving the char datatypes Unicode.
+Many different characters can be represented in various forms such as text files and websites, using this character set. Characters can be stored in 4 bytes in Unicode. Character literals can be stored in char data types. There are three types of character encoding: UTF-8, UTF-16, and UTF-32. Web content should use only UTF-8.
+### Encoding approaches
+#### 1. First method: Giving the char datatypes Unicode.
 
 In this approach, use single quotes to store Unicode characters in a char variable, and then output the variable. The implementation is shown below.
 ```Java
@@ -40,7 +40,7 @@ $
 a
 A
 ```
-2. Second method: Attributing Unicode values to the char data types
+#### 2. Second method: Attributing Unicode values to the char data types
 
 Using single quotes, you'll establish a character variable, store a Unicode value in the variable, and then print the variable.
 The implementation is shown below.
@@ -76,7 +76,7 @@ $
 a
 A
 ```
-3. Third method: Giving ASCII data types ASCII characters
+#### 3. Third method: Giving ASCII data types ASCII characters
 
 A single quote will save the ASCII value in a variable, which will then be used to print the value. The implementation is shown below.
 ```Java
@@ -111,7 +111,7 @@ $
 a
 A
 ```
-In order to print Unicode characters, enter the escape sequence "u".
+To print Unicode characters, enter the escape sequence "u".
 
 Unicode sequences can be used everywhere in Java code. As long as it contains Unicode characters, it can be used as an identifier. Using Unicode, you may convey comments, IDs, and even the content of character and string literals, as well as other information. Use caution, as they are interpreted by the compiler early. Using the Unicode linefeed as part of a print statement would cause an error in your source code because your source code would treat this as an actual linefeed that appears before the closing single quote of a character literal, which would result in an error. 'n' and 'r' for line termination literals is the basis for the prior warning to always use these characters.
 
