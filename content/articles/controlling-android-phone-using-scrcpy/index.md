@@ -6,7 +6,7 @@ url: /controlling-android-phone-using-scrcpy/
 title: Controlling Android Phones using Scrcpy
 description: This tutorial will take the reader through the steps of mirroring and controlling Android phones using Scrcpy.
 author: nancy-mumbi
-date: 2021-09-15T00:00:00-12:00
+date: 2021-09-15T00:00:00-12:10
 topics: []
 excerpt_separator: <!--more-->
 images:
