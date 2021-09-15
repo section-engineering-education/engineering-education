@@ -70,20 +70,18 @@ Add the following code in your `MainActivity`:
 ```kotlin
 class MainActivity : AppCompatActivity() {
 
-private var myBackground: Drawable? = null
-
-override fun onCreate(savedInstanceState: Bundle?) {
-super.onCreate(savedInstanceState)
-setContentView(R.layout.activity_main)
-
-val textView = TextView(this)
-textView.text = "Memory leaks are not good to applications"
-if (myBackground == null) {
-myBackground = getDrawable(R.drawable.ic_launcher_background)
-}
-textView.setBackgroundDrawable(myBackground)
-setContentView(textView)
-} 
+    private var myBackground: Drawable? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //setContentView(R.layout.activity_main)
+        val textView = TextView(this)
+        textView.text = "Memory leaks are not good to applications"
+        if (myBackground == null) {
+            myBackground = getDrawable(R.drawable.ic_launcher_background)
+        }
+        textView.setBackgroundDrawable(myBackground)
+        setContentView(textView)
+    }
 }
 ```
 ### Code Explanation
@@ -134,6 +132,8 @@ LeakCanary shows the location of the leak and underlines the objects causing the
 
 ### Conclusion
 LeakCanary is a powerful leak detection library. When you want to deploy your application for production, it is appropriate to remove the LeakCanary library to avoid taking `Leaks` app to production. 
+
+For further reference, checkout the entire project on ![GitHub](https://github.com/Collince-Okeyo/LeakCanary)
 
 ### References
 - [LeakCanary](https://square.github.io/leakcanary/).
