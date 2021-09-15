@@ -454,3 +454,6 @@ In this article, we have built a simple notes app using Flask and MongoDB using 
 - [Installing packages using virtual environments](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 - [Guide using PyMongo](https://analyticsindiamag.com/guide-to-pymongo-a-python-wrapper-for-mongodb/)
 - [Understanding Jinja](https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e?gi=79dbb3611ff)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
