@@ -1,4 +1,4 @@
-JavaFX is an open-source Java framework. It's for creating, developing, and delivering portable hardware-accelerated user interfaces. JavaFX creates GUI's for rich internet applications (RIA). It is for Web, desktop, and embedded and mobile applications. For example, one use for it would be for login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
+JavaFX is an open-source Java framework. It's for creating, developing, and delivering portable hardware-accelerated user interfaces. JavaFX creates GUIs for rich internet applications (RIA). It is for web, desktop, and embedded and mobile applications. For example, one would use for it would be for login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
 
 In this article, you will learn how to build a JavaFX login and sign-up user interface (UI).
 
@@ -48,7 +48,7 @@ The basics of the article include the following:
 
 As stated above, JavaFX is for creating user interfaces for use in WIMP (Windows, Icons, Menus, and Pointers) based systems. It is suitable for Java applications with user interfaces. It is easy to use, and it has several tools and aids used during the design process and testing.
 
-The UI is designed in Java or XML. **FXML** files are XML files used to design and build user interfaces separate from the main application logic. This separation enables one to distinguish between the User Interface files and those of the main app. In the tutorial, you will interact with it to develop a visual interface for your application.
+The UI is designed in Java or XML. **FXML** files are XML files used to design and build user interfaces separate from the main application logic. This separation enables one to distinguish between the user interface files and those of the main app. In the tutorial, you will interact with it to develop a visual interface for your application.
 
 ### JavaFX Libraries
 
@@ -59,8 +59,8 @@ Some of these libraries and their functionality include:
 - **ControlsFX**: Provides the developer with controls such as buttons, checkboxes, radio buttons, labels, text, password fields, etc.
 - **BootstrapFX**: Provides the program with CSS styling, designed for a JavaFX application. It formats the controls and other elements put in the application.
 - **FormsFX**: It helps in the quick creation and design of forms. It contains features such as validation, predefined controls, and localization tools. These are to reduce the time taken to create methods to validate arguments in the form.
-- **Ikonli**: Has a list of Icon packs for easy access in the application.
-  **TilesFX**: It enables the designer to use tiles to enhance the application's appearance, e.g. on Dashboards.
+- **Ikonli**: Has a list of icon packs for easy access in the application.
+  **TilesFX**: It enables the designer to use tiles to enhance the application's appearance, e.g. on dashboards.
 - **ValidatorFX**: This makes forms made in the application super easy.
 - **FXGL**: This is for game developers. It has tools used to develop games.
 - **Charts**: This is recommended when one wants to create scientific charts. It has stunning chart templates for one's use through quick manipulation.
@@ -114,7 +114,7 @@ Modify it to fit the application of choice.
 
 #### Set up a JavaFX Scene Builder
 
-Close the window opened and head over to the *resources* folder, and in the subsequent subfolder, open the `hello-view.fxml`. At the bottom of the window, choose Scene Builder to view the file using JavaFX ScreenBuilder.
+Close the window opened and head over to the *resources* folder, and in the subsequent subfolder, open the `hello-view.fxml`. At the bottom of the window, choose *Scene Builder* to view the file using JavaFX ScreenBuilder.
 
 In case of errors due to missing the Scene Builder, click *Download Scene Builder*, as shown in the image below. Wait as it completes the process.
 
@@ -162,7 +162,7 @@ In the `hello-view.fxml` file, view it using the Scene Builder. On the left-hand
 
 Add a border pane by dragging and dropping it from the containers section to the window where the VBox was. A border pane allows one to easily keep controls in the top, left, right, center, and bottom of the window. This step will aid in dividing the window.
 
-Now drag and drop an AnchorPane from the containers section into the left side of the border pane. Here, place the Logo. On the right-hand side, on the properties window, in Style, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
+Now drag and drop an AnchorPane from the containers section into the left side of the border pane. Here, place the Logo. On the right-hand side, on the properties window, in *Style*, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
 
 In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700.
 
@@ -173,7 +173,6 @@ Head over to the *controls* tab found on the left-hand side. Drag and drop an Im
 Now head over to the right side of the BorderPane and drag and drop another AnchorPane in it. Set its `Pref Width` and `Pref Height` to 600 and 700. This step makes the left and right BorderPane parts fit the initial height.
 
 The Code shall look as follows when viewed:
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -243,6 +242,7 @@ This control will carry in it a small cart logo.
 - - `Layout Y`: 5
 
 **Label**
+
 - **Properties:**
 - - `Text`: SHOP NOW
 - - `Font`: SanSerif 25px
@@ -259,6 +259,7 @@ This control will carry in it a small cart logo.
 - - `Layout Y`: 1
 
 **Button**
+
 - **Properties:**
 - - `Text`: Cancel
 - - `Font`: SanSerif 15px
@@ -271,7 +272,6 @@ This control will carry in it a small cart logo.
 - **Layouts:**
 - - `Layout X`: 502
 - - `Layout Y`: 13
-
 
 It results in the following Code:
 
@@ -303,6 +303,7 @@ It results in the following Code:
 ##### Login Section
 
 **Label**
+
 - **Properties:**
 - - `Text`: Login
 - - `Font`: SanSerif 30px
@@ -315,6 +316,7 @@ It results in the following Code:
 - - `Layout Y`: 60
 
 **ImageView**
+
 - **Properties:**
 - - `Image`: users.png
 - **Layouts:**
@@ -324,6 +326,7 @@ It results in the following Code:
 - - `Layout Y`: 100
 
 **TextField**
+
 - **Properties:**
 - - `Prompt Text`: Username / Email
 - - `Font`: SanSerif 14px
@@ -338,6 +341,7 @@ It results in the following Code:
 - - `Layout Y`: 100
 
 **PasswordField**
+
 - **Properties:**
 - - `Prompt Text`: Password
 - - `Font`: SanSerif 14px
@@ -352,6 +356,7 @@ It results in the following Code:
 - - `Layout Y`: 140
 
 **ImageView**
+
 - **Properties:**
 - - `Image`: lock.png
 - **Layouts:**
@@ -361,6 +366,7 @@ It results in the following Code:
 - - `Layout Y`: 140
 
 **CheckBox**
+
 - **Properties:**
 - - `Text`: Remember Me
 - - `Font`: SanSerif 15px
@@ -371,6 +377,7 @@ It results in the following Code:
 - - `Layout Y`: 195
 
 **Button**
+
 - **Properties:**
 - - `Text`: Login
 - - `Font`: SanSerif 15px
@@ -386,6 +393,7 @@ It results in the following Code:
 - - `Layout Y`: 195
 
 **Button**
+
 - **Properties:**
 - - `Text`: Forgot your Password?
 - - `Font`: SanSerif 15px
@@ -495,6 +503,7 @@ Its code produced is as shown:
 ##### Sign Up Section
 
 **Label**
+
 - **Properties:**
 - - `Text`: Sign-Up
 - - `Font`: SanSerif 30px
@@ -507,6 +516,7 @@ Its code produced is as shown:
 - - `Layout Y`: 275
 
 **ImageView**
+
 - **Properties:**
 - - `Image`: users.png
 - **Layouts:**
@@ -515,8 +525,8 @@ Its code produced is as shown:
 - - `Layout X`: 110
 - - `Layout Y`: 320
 
-
 **TextField**
+
 - **Properties:**
 - - `Prompt Text`: Username
 - - `Font`: SanSerif 14px
@@ -530,8 +540,8 @@ Its code produced is as shown:
 - - `Layout X`: 155
 - - `Layout Y`: 320
 
-
 **ImageView**
+
 - **Properties:**
 - - `Image`: email.png
 - **Layouts:**
@@ -541,6 +551,7 @@ Its code produced is as shown:
 - - `Layout Y`: 360
 
 **TextField**
+
 - **Properties:**
 - - `Prompt Text`: Email
 - - `Font`: SanSerif 14px
@@ -555,6 +566,7 @@ Its code produced is as shown:
 - - `Layout Y`: 360
 
 **PasswordField**
+
 - **Properties:**
 - - `Prompt Text`: Password
 - - `Font`: SanSerif 14px
@@ -568,8 +580,8 @@ Its code produced is as shown:
 - - `Layout X`: 155
 - - `Layout Y`: 400
 
-
 **ImageView**
+
 - **Properties:**
 - - `Image`: lock.png
 - **Layouts:**
@@ -579,6 +591,7 @@ Its code produced is as shown:
 - - `Layout Y`: 400
 
 **PasswordField**
+
 - **Properties:**
 - - `Prompt Text`: Repeat Password
 - - `Font`: SanSerif 14px
@@ -593,6 +606,7 @@ Its code produced is as shown:
 - - `Layout Y`: 440
 
 **Label**
+
 - **Properties:**
 - - `Text`: Date of Birth
 - - `Font`: SanSerif 15px
@@ -605,6 +619,7 @@ Its code produced is as shown:
 - - `Layout Y`: 480
 
 **DatePicker**
+
 - **Properties:**
 - - `Prompt Text`: mm/dd/yyyy
 - - `Editable` checkbox: Check
@@ -619,6 +634,7 @@ Enabling them allows one to enter data into the field without using the date pic
 - - `Layout Y`: 480
 
 **Label**
+
 - **Properties:**
 - - `Text`: Gender
 - - `Font`: SanSerif 15px
@@ -631,6 +647,7 @@ Enabling them allows one to enter data into the field without using the date pic
 - - `Layout Y`: 515
 
 **RadioButton**
+
 - **Properties:**
 - - `Text`: Male
 - - `Font`: SanSerif 14px
@@ -660,6 +677,7 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - - `Layout Y`: 515
 
 **CheckBox**
+
 - **Properties:**
 - - `Text`: I have read the Terms and Conditions
 - - `Font`: SanSerif 15px
@@ -672,6 +690,7 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - - `Layout Y`: 545
 
 **Button**
+
 - **Properties:**
 - - `Text`: Sign-Up
 - - `Font`: SanSerif 15px
@@ -691,6 +710,7 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - - `Layout Y`: 615
 
 **Button**
+
 - **Properties:**
 - - `Text`: Terms and Conditions
 - - `Font`: SanSerif 15px
@@ -804,7 +824,7 @@ Its code is shown below:
 
 In the footer section, you will add your copyright. Drag and drop a label control into the bottom section of your main BorderPane.
 
-This label will have the following Property attributes: `Text`: *Shop © 2021*. Set the following styles: `-fx-text-fill`:  *#B9a9a9*. It will have the following layouts: `Pref Width`: 107, `Pref Height`: 16.
+This label will have the following property attributes: `Text`: *Shop © 2021*. Set the following styles: `-fx-text-fill`:  *#B9a9a9*. It will have the following layouts: `Pref Width`: 107, `Pref Height`: 16.
 
 The FXML Code will look as shown below:
 
@@ -830,7 +850,7 @@ Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-
 
 ### Conclusion
 
-In this guide, you have learnt:
+In this guide, you have learned:
 
 - What is JavaFX
 - JavaFX libraries
