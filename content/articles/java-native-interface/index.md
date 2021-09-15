@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /java-native-interface/
+title: Java Native Interface
+description: One of Java's key advantages is its portability. However, there are situations when we need to use natively compiled code for a specific architecture. This article will cover understanding Java Native Interface and how to implement it.
+author: mary-wanjiku
+date: 2021-09-15T00:00:00-15:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/java-native-interface/hero.jpg
+    alt: Java Native Interface Cover image
+---
 The Java Native Interface (JNI) standard, which has been part of the Java platform since Java 1.1, allows Java code to communicate with code scripted in different languages. Although the JNI was developed primarily for natively compiled languages, C and C++ are two examples of programming languages. It is not something that restricts you from utilizing other languages as long as the proper calling conventions are implemented.
 
 ### Introduction
