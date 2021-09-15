@@ -1,7 +1,7 @@
 ### Introduction
 Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
 
-In this tutorial, we'll be building a sample student listing Angular 12 application that uses the dependency Injection in Angular 12.
+In this tutorial, we'll be building a sample student listing Angular 12 application that uses the dependency Injection.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -16,11 +16,11 @@ In this tutorial, we'll be building a sample student listing Angular 12 applicat
 
 ### Tutorial requirements
 - Angular CLI (latest version preferred) installed on your local development environment.
-- Basic knowledge in Angular would go hand in hand.
+- Basic knowledge in Angular.
 - Prior knowledge in JavaScript or TypeScript.
 
 ### Expected outcome
-This tutorial aims to get you started with Angular2+ dependency injection. By following this tutorial, you'll have an in-depth knowledge of DI, which you may advance as you implement your own projects.
+This tutorial aims to get you started with Angular 12 dependency injection. By following this tutorial, you'll have an in-depth knowledge of DI, which you may advance as you implement your own projects.
 
 ### Getting started with Angular dependency injection
 Dependency injection is all about resource sharing. Let's say, for example; you have a `StudentService` and `StudentComponent` that displays a list of students in a school. We may argue that the component class depends on the service class to display data since we're using the service to get data from API, as we'll see in the next section.  
@@ -32,7 +32,7 @@ Now that we've background knowledge in DI let's create a service that we'll use 
 
 > Service is a term widely used in programming, especially in the world of microservices. It's simply a function or group of methods that are used to handle a specific task.
 
-Now, let's begin by creating a students model as shown below:
+Let's begin by creating a students model as shown below:
 
 ```bash
 cd injectionExample
