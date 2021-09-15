@@ -177,6 +177,8 @@ Such transformations are ignored at the system level for square displays. As a r
 </androidx.wear.widget.BoxInsetLayout>
 ```
 
+![BoxInsetLayout](box-inset-layout.png)
+
 ### Code example using the SwipeDismissFrameLayout element
 
 ```xml
@@ -220,6 +222,8 @@ Such transformations are ignored at the system level for square displays. As a r
     </FrameLayout>
 </android.support.wear.widget.BoxInsetLayout>
 ```
+
+![SwipeDismissFrameLayout](swipe-dismiss-frame-layout.png)
 
 ### Navigation
 Navigation refers to the interactions that allow users to navigate across, into, and back out from the different screens or destinations within an application.
@@ -281,6 +285,8 @@ navigation_drawer.apply{
     }
 }
 ```
+
+![Drawer](drawer.png)
 
 #### RemoteIntent
 This allows you to start an activity on another device. This API currently supports sharing intents with action set to `ACTION_VIEW`, a data uri provided by setData (Uri), and with the `CATEGORY_BROWSABLE` category present.
