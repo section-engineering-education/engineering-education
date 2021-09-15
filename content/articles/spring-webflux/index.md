@@ -291,7 +291,7 @@ public class StudentController {
     // Updates the student with the provided id
     @PutMapping("/{id}")
     public Mono<Student> updateStudent(@RequestBody Student student, @PathVariable("id") int id) {
-        return service.update(student);
+        return service.update(student, id);
     }
     // Deletes the student with the provided id
     @DeleteMapping("/{id}")
