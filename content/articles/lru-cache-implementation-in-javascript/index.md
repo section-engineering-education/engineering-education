@@ -32,7 +32,8 @@ From the example above, we have performed many operations while building the LRU
 #### 1. Searching
 When we want to get the color `red` from our list, first, we need to check our entire list to check whether the item is there. 
 
-If the element is present, we reorder the list and move `red` to the beginning of the list. In this case, the time complexity for the re-ordering will be `O(n)`. Time complexity is the amount of time a block of code takes to execute. I recommend this article, to learn about time complexity.[This] (https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
+If the element is present, we reorder the list and move `red` to the beginning of the list. In this case, the time complexity for the re-ordering will be `O(n)`. Time complexity is the amount of time a block of code takes to execute. I recommend [Time complexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
+ article, to learn about time complexity.
 
 #### 2. Adding items
 When adding an item to the list, the time complexity of that operation is O(n).
@@ -59,9 +60,9 @@ Before adding `black`, we need to search first and see if it is available in the
 
 ### Implementing LRU Cache in JavaScript.
 
-- Visit [This](https://leetcode.com/)
+- Visit [leetecode](https://leetcode.com/)
 - Sign in to the account
-- Visit [This](https://leetcode.com/problems/lru-cache/)
+- Visit [lru-cache](https://leetcode.com/problems/lru-cache/)
 - Go through the problem statement.
 - Implement the lrucache class.
 
