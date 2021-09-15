@@ -43,11 +43,11 @@ In a nutshell:
 ### Authentication with Firebase
 We will use the firebase authentication service as an example in this article to encapsulate. 
 
-First, install and import the `firebase_auth` plugin into your Dart code to gain access to it. 
+To use it, first install and import the firebase_auth plugin into your Dart code.
 ```
 import 'package:firebase_auth/firebase_auth.dart';
 ```
-You can also create a new instance of Firebase Auth by using the instance getter on FirebaseAuth:
+You can also use the instance getter on FirebaseAuth to create a new instance of Firebase Auth:
 ```
 FirebaseAuth auth = FirebaseAuth.instance;
 ```
@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
 ```
 > Even while many programs do not require users to sign in explicitly, it is critical to be able to recognize them individually.
 
-The ability to determine whether a request originates from an authenticated user, whether utilizing Firebase Firestore, Realtime Database, or even an external API, thanks to anonymous sign-in, adds a layer of security to your application.
+The ability to verify whether a request originates from an authenticated user, whether leveraging Firebase Firestore, Realtime Database, or even an external API, due to anonymous sign-in, provides a layer of security to your application.
 
 We utilize this code to sign up with `Firebase Authentication` (FirebaseAuth). Use Provider.ofFirebaseAuth> to retrieve a Firebase Authentication instance (context). There are not any issues with global access because of this.
 
@@ -83,7 +83,7 @@ Although we are using the Firebase Authentication API in our code, we are still 
 1. How will you deal with modifications in future versions of Firebase Authentication that cause problems?
 2. In the future, let us say that we want to switch from Firebase Authentication to a different auth service.
 
-All Firebase Authentication calls in our codebase will need to be updated or replaced. If and when our project expands, we will likely add a lot more stuff to our application. The most frequent security features include sharing preferences, granting rights, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more difficult as a result of this.
+All Firebase Authentication calls in our codebase will need to be modified or replaced. If and when our project expands, we will likely add a lot more content to our application. The most frequent security features include sharing preferences, providing privileges, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more challenging as a result of this.
 
 ### Creating service classes
 As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems. It is possible to create a generic authentication service using Firebase Authentication :
@@ -94,7 +94,7 @@ class TheUser {
   final String id;
 }
 class FirebaseAuthService {
-//firebaseAuth=> Firebase Authentication
+
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   // It is possible to create a new user by calling the 'FirebaseTheUser' private method "TheUser".
   
@@ -117,9 +117,9 @@ class FirebaseAuthService {
 }
 ```
 
-When we use Firebase Authentication in our example, we use the `Firebase Authentication Service` class, which implements the Firebase Authentication API calls. Do not forget to construct a simple User class that will be used as the return type for all functions in the Firebase Authentication Service class. 
+When we use Firebase Authentication in our example, we use the `Firebase Authentication Service` class, which implements the Firebase Authentication API calls. Remember to create a simple User class to serve as the return type for all functions in the Firebase Authentication Service class.
 
-There is no need for the `Firebase Authentication` package because the user objects can be used in place of `Firebase User objects` in the client code. Update our top-level widget to use the new service class:
+Because the user objects can be used in place of Firebase User objects in the client code, the Firebase Authentication package is not required. To use the new service class, we'll need to update our top-level widget:
 
 ```dart
 class ThisApp extends StatelessWidget
@@ -128,6 +128,7 @@ class ThisApp extends StatelessWidget
   Widget build(BuildContext context) 
   {
     return Provider<FirebaseAuthService>(
+    //final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
       builder: (_) => FirebaseAuthService(),
       
       child: MaterialApp(
@@ -141,16 +142,17 @@ class ThisApp extends StatelessWidget
 }
 ```
 
-All calls to `Provider.ofFirebaseAuth>(context)` will be replaced by `Provider.ofFirebaseAuthService> (context)`. Therefore, all of our client code no longer requires this line to be imported.
+Provider.ofFirebaseAuth>(context) will be replaced by Provider.ofFirebaseAuthService> (context) for all calls. As a result, this line is no longer required to be imported in any of our client code.
 
 ```dart
 import 'package:firebaseAuth/firebaseAuth.dart';
 ```
 
-If Firebase Authentication introduces a breaking update, build problems will only surface in our Firebase Authentication Service class. This method makes our program more maintainable as we add more and more packages. The establishment of a base class is optional, and we might create it in the following manner:
+If Firebase Authentication introduces a breaking update, build problems will only surface in our Firebase Authentication Service class.As we add more packages, this strategy makes our software more maintainable. The creation of a base class is optional, and we could do it by following these steps:
 
 ```dart
 abstract class AuthService {
+//creation of a base class
   Future<TheUser> loginAnonymously();
   Future<void> logOut();
   Stream<TheUser> get onAStateChanged;
@@ -178,7 +180,7 @@ class ThisApp extends StatelessWidget {
 }
 ```
 
-Introducing a base class is a step in the wrong direction. Investing in many implementations will only be worthwhile if we know we will need them all at once. Aside from that, I recommend writing no more than one concrete service class at a time instead. Modern integrated development environments make it easy to perform tasks such as renaming classes and their usages. 
+The introduction of a base class is a step backwards. Investing in a large number of implementations is only worthwhile if we know we'll need them all at the same time. Aside from that, I recommend focusing on writing only one concrete service class at a time. Modern integrated development environments make it easy to perform tasks such as renaming classes and their usages. 
 
 For example, there are two implementations of the base Authentication Service in my project. In addition, testing and demo purposes benefit from swapping between Firebase and a dummy authentication service at runtime.
 
@@ -189,11 +191,11 @@ Essentially, when you have a code that is tightly coupled to a single function, 
 In this case, you'll need assistance. StorageService, for example, is the name of a new class you've created. How it operates internally isn't known to the other classes. It's as simple as calling a service's functions to store and get the data.
 
 ### Conclusion
-Using service classes, you may hide the implementation details of third-party code in your app. However, especially when you need to call an API method several times throughout your codebase.
+You can hide the implementation details of third-party code in your app using service classes. However, this is especially true if you need to contact an API method multiple times in your codebase.
 In a nutshell:
-1. To hide implementation details, the API wrapper class can be utilized.
-2. Includes all arguments for API methods, both input and output.
-3. A basic abstract service class can be created to facilitate swapping out another version easier.
+1. The API wrapper class can be used to hide implementation details.
+2. All input and output arguments for API methods are included.
+3. To make swapping out another version easier, a basic abstract service class can be built.
 
 You are now ready!
 
