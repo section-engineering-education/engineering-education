@@ -123,6 +123,7 @@ If you did that correctly, your webpack.config.js should look like this.
 **Kindly note that in some other learning resources, you will have them make use of loader instead of use while trying to configure our SVG file in the rules array, but for consistency, we will make use of use instead of the loader. Also, I have found out that in recent learning resources/docs they make use of "use" instead of the loader, for example in the documentation below, the loader was used instead.**
 
 ![webpack config file new look 3](webpack8.png)
+[Image Source](https://www.npmjs.com/package/svg-inline-loader)
 
 ### Importing images
 Firstly, you are going to install the Image Loader for Webpack by running the command in the terminal below:
