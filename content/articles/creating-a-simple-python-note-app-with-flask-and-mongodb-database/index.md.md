@@ -1,5 +1,22 @@
-Python is a very easy-to-learn language due to its user-friendly syntax. Moreover, Python has many open-source libraries, and almost every use case of Python has an existing library for that. So no need for immense amounts of coding in the respective use-case.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-simple-python-note-app-with-flask-and-mongodb-database/
+title: Building a note app using Flask and Mongodb daatabase.
+description: This tutorial will help readers build a a Python note application using Flask framework and Mongodb database.
+author: joseph-chege
+date: 2021-08-02T00:00:00-00:53
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-a-simple-python-note-app-with-flask-and-mongodb-database//hero.jpg
+    alt: Python notes app with Flask and Mongodb image
+---
+
+Python is a very easy-to-learn language due to its user-friendly syntax. Moreover, Python has many open-source libraries, and almost every use case of Python has an existing library for that. So no need for immense amounts of coding in the respective use-case.
+<!--more-->
 Python has several web application frameworks such as Django and Flask. Flash is an open-source, lightweight Python web application framework. Flask is designed to make getting started quick and easy as it has a simple boilerplate to get, a simple application running. Thus, very easy for beginners to stated and scaled up to the complex application.
 
 To implement a Flask application, we will use MongoDB as the database. MongoDB is a cross-platform document-oriented database platform, classified as a NoSQL database. It uses JSON objects as its data tuples. When working with a web application, you might not know the exact data format being sent, and a NoSQL database such a MongoDB would be a good solution for data handling and storage. 
