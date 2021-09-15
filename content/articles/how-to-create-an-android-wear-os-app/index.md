@@ -6,7 +6,7 @@ url: /how-to-create-an-android-wear-os-app/
 title: How to Create an Android Wear OS Application
 description: This article will cover how to create an Android-based Wear OS application. Wear OS is a new operating system for wearables, such as smartwatches, and smartbands. Although it is centered on Android, it offers a unique look and a set of functionalities that are not available on other Android devices.
 author: antony-muriuki
-date: 2021-09-15T00:00:00-05:00
+date: 2021-09-15T00:00:00-13:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -126,7 +126,7 @@ There are four main UI elements in the toolkit that deserve special attention be
 
 Such transformations are ignored at the system level for square displays. As a result, the layout will be similar across all watch interfaces.
 
-- **WearableRecyclerView** - RecyclerView is a useful tool that is widely used in mobile apps, but it is been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges, thus this pattern is used to address the problem.
+- **WearableRecyclerView** - RecyclerView is a useful tool that is widely used in mobile apps, but it is been tailored for the watch in this case. The top and bottom Views may be truncated along the edges due to the display's curved edges. Thus, this pattern is used to address the problem.
 - **EdgeItemsCenteringEnabled** - is a setting that allows you to create a curved layout for scrolling items and improve the core element, making it easier to view on a relatively small screen.
 - **SwipeDismissFrameLayout** is another popular layout that makes it possible to swipe from left to right.
 
