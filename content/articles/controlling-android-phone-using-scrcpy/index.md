@@ -6,7 +6,7 @@ url: /controlling-android-phone-using-scrcpy/
 title: Controlling Android Phones using Scrcpy
 description: This tutorial will take the reader through the steps of mirroring and controlling Android phones using Scrcpy.
 author: nancy-mumbi
-date: 2021-09-14T00:00:00-02:00
+date: 2021-09-15T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -18,11 +18,11 @@ Scrcpy is among the most popular and free Android screen-mirroring applications.
 <!--more-->
 ### Prerequisites
 To follow along, you need:
-1. USB cable.
-2. Android phone.
+1. A USB cable.
+2. An Android phone.
 4. A computer that runs Windows, Linux, or macOS.
 
-### Enabling USB Debugging
+### Enabling USB debugging
 We need to complete a few tasks before using Scrcpy. The first step is to activate USB debugging on your phone.
 
 Navigate to your phone settings and press the `build number` several times until a message that says `Congratulations, you've now a developer` appears.
@@ -143,12 +143,19 @@ Replace `SERIAL_NUM` with the device serial number.
 ```
 scrcpy --serial SERIAL_NUM
 ```
-##About SCRCPY
-With Scrcpy, you get all the capabilities you need for free, including the ability to share files and change resolutions. Scrcpy is one of the safest mirror applications for Android because it doesn't require you to install anything on your device.
-As a means of communication, the Android debugging tool is used by scrcpy (adb). As the name suggests, Android Debug Bridge (adb) allows you to communicate with a device via command-line interfaces. With the adb command, you may do a variety of device operations, including installing and debugging apps. It also gives you access to a Unix shell, which you can use to run any number of commands on your device. 
->ADB It stands for Android Debug Bridge, a command-line tool that comes with Google's Android SDK (Software Development Kit).
+### Benefits of Scrcpy
+With Scrcpy, you get all the capabilities you need for free, including the ability to share files and change resolutions. 
 
-As long as the device supports TCP/IP, adb can connect to it. Connect the Android device to the PC by USB first, and then you can wirelessly connect. To enable TCP/IP on your device, perform the following command.
+Scrcpy is one of the safest Android mirroring applications because it doesn't require you to install anything on your device.
+
+Scrcpy allows you to install and debug apps via ADB (Android Debug Bridge). It also gives you access to a Unix shell, which you can use to run numerous commands on your device. 
+
+> ADB is a command-line tool that comes with Google's Android SDK (Software Development Kit).
+
+As long as the device supports TCP/IP, adb can connect to it. 
+
+Note that you need to connect an Android device to your PC using a USB first before accessing it wirelessly. 
+
 ### Conclusion
 Scrcpy is among the top free and open-source Android screen mirroring programs.
 
