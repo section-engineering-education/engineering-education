@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/drug-labels-extraction-using-deep-learning/hero.png
     alt: Drug Label Image
 ---
-Optical Character Recognition (OCR) is a technology that can be used to extract readable text into machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
+Optical Character Recognition (OCR) is a technology that can use optics to extract readable text into machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
 <!--more-->
-Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare thereby improving people's lives. Machine learning has been used in hospitals to identify patients faster, in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis.
+Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare, thereby improving people's lives. Machine learning has been used in hospitals to identify patients faster in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis.
 
-One notable area of concern in healthcare that hasn't been explored a lot is in drug labels extraction. Optical Character Recognition (OCR) is a technology that can be used to extract readable/handwritten text into a machine-encoded text. 
+One notable area of concern in healthcare that hasn't been explored a lot is drug label extraction. Optical Character Recognition (OCR) is a technology that can use optics to extract readable text into machine-encoded text.
 
-The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services such as Adobe provide this feature on their app.  
+The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services, such as Adobe, provided this feature on their app.   
 
-This technology is what our tutorial will be based on. We'll use OCR to enable us to automatically extract drug labels/text from prescription medicine. 
+This technology is what our tutorial will be based on. We'll use OCR to enable us to extract drug labels/text from prescription medicine automatically. 
 
-We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). This is a model that was originally built by the engineers at [Baidu](https://www.baidu.com/). 
+We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). The PaddleOCR is a model that the engineers originally built at [Baidu](https://www.baidu.com/).
 
 ### Prerequisites
 To understand this tutorial, you need:
@@ -45,11 +45,13 @@ To go through with our drug label extraction, we need to perform three key thing
 - Visualize the results.
 
 ### Installing PaddleOCR for Python
-We begin with opening a Jupyter notebook either on Colab or locally and install the required libraries. The dependency we want to install is the PaddleOCR. Please head on to Paddle OCR's Github [page](https://github.com/PaddlePaddle/PaddleOCR). 
+We begin with opening a Jupyter notebook either on Colab or locally and install the required libraries. The dependency we want to install is the PaddleOCR. 
+
+Head on to Paddle OCR's Github [page](https://github.com/PaddlePaddle/PaddleOCR). 
 
 Under the `Tutorial` section, navigate to the `installation` sub-section. A thorough guide to install PaddleOCR is available [here](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.3/doc/doc_en/environment_en.md#2).
 
-There are two parts to the installation process. First, you have to install `paddlepaddle` which is the underlying framework behind the PaddleOCR model. Secondly, we'll go ahead and install the `paddleOCR`.
+There are two parts to the installation process. First, you have to install `paddlepaddle`, which is the underlying framework behind the PaddleOCR model. Secondly, we'll go ahead and install the `paddleOCR`.
 
 The PaddleOCR model can run on both a GPU and CPU. GPUs are often preferred because of their greater memory bandwidth. 
 
@@ -72,12 +74,12 @@ Let's now install PaddleOCR. It is a quick pip install. Let's type in the follow
 pip install paddleocr
 ```
 
-Lastly, you need to clone the PaddleOCR repo on Github.
+Lastly, it would be best if you cloned the PaddleOCR repo on Github.
 
 ```bash
 !git clone https://github.com/PaddlePaddle/PaddleOCR
 ```
-This is important as it'll enable the look-up of some specific fonts when we go to visualize our results in the last step. 
+This clone is crucial as it'll enable the look-up of specific fonts when we visualize our results in the last step.  
 
 Now that we've installed our dependencies, let's import them into our notebook/colab.
 
@@ -89,7 +91,7 @@ import os
 ```
 - `paddleocr` is our main OCR dependency
 - `matplotlib` allows us to plot images
-- `cv2` allows us to use the opencv library
+- `cv2` allows us to use the OpenCV library
 - `os` allows for folder directory navigation
 
 ### Applying PaddleOCR model to images
@@ -110,19 +112,19 @@ Let's set it up using the following command:
 ```python
 ocr_model = PaddleOCR(lang='en')
 ```
-This command specifies the language of choice. For our case, we set it to English. Since the PaddleOCR is made by engineers at Baidu, it can also recognize Chinese characters. You may set your language to Chinese or any other supported language.
+This command specifies the language of choice. For our case, we set it to English. Since the PaddleOCR is made by engineers at Baidu, it can also recognize Chinese characters. You may select your language as Chinese or any other supported language.
 
-This next command sets up the path to our images on the machine. 
+The following command sets up the path to our images on the machine. 
 
 ```python
 img_path = os.path.join('.', 'drug1.jpg')
 ```
-Let's run the OCR method on the `ocr_model` to make some detection. We store the results in a variable known as `result`.
+Let's run the OCR method on the `ocr_model` to make some detection. We store the results in a variable known as `result.`
 
 ```python
 result = ocr_model.ocr(img_path)
 ```
-This is our output:
+Running the command above gives the output:
 
 ```bash
 [[[[114.0, 39.0], [265.0, 5.0], [273.0, 39.0], [121.0, 72.0]],
@@ -138,7 +140,7 @@ This is our output:
  [[[154.0, 204.0], [455.0, 127.0], [468.0, 175.0], [167.0, 253.0]],
   ('TWICEDAILY', 0.99549305)]]
 ```
-Using the `type(result)` command, we find these results stored in a list. We can use standard list indexing to get the results out. To grab all the texts, let's loop through the result variable picking the first index that is the text. The following command is going to print out the text only.
+Using the `type(result)` command, we find these results stored in a list. We can use standard list indexing to get the results out. To grab all the texts, let's loop through the result variable, picking the first index that is the text. The following command is going to print out the text only.
 
 ```python
 for res in result:
@@ -155,24 +157,24 @@ THEN
 ONLY.
 TWICEDAILY
 ```
-The above few lines of code allow us to quickly extract the drug labels in drug bottles/capsules. 
+The above few lines of code allow us to extract the drug labels in drug bottles/capsules quickly.  
 
-> Please note that we are using `drug1.jpg` in this example, you can play around with the code and use `drug2.jpg`, and see the outcome.
+> Please note that we are using `drug1.jpg` in this example. You can play around with the code and use `drug2.jpg` and see the outcome.
 
 ### Extracting prescription medication labels using PaddleOCR
 
-This step involves visualizing the results. The `draw_ocr` method, `opencv` and `matplotlib` library help us achieve this.
+This step involves visualizing the results. The `draw_ocr` method, `opencv`, and `matplotlib` library help us achieve this.
 
-Let's extract the boxes, scores, and text coordinates into separate variables. We then pass these coordinates into the `draw_ocr` method. This feels similar to object detection if you've ever performed such a task. The `boxes` variable loops through and grabs the first index inside our `result` variable, the `texts` variable grabs the second, and the `scores` grab the third.
+Let's extract the boxes, scores, and text coordinates into separate variables. We then pass these coordinates into the `draw_ocr` method. This process feels similar to object detection if you've ever performed such a task. The `boxes` variable loops through and grabs the first index inside our `result` variable, the `texts` variable grabs the second, and the `scores` grab the third.
 
 ```python
 boxes = [res[0] for res in result] 
 texts = [res[1][0] for res in result]
 scores = [res[1][1] for res in result]
 ```
-The next step involves specifying the font path for our `draw_ocr` method. This is the reason why I mentioned earlier in the tutorial that you need to clone the PaddleOCR Github repository. 
+The next step involves specifying the font path for our `draw_ocr` method. This is why I mentioned earlier in the tutorial that you need to clone the PaddleOCR Github repository. 
 
-To use the `draw_ocr` method, we need a path defined to the specific fonts. Inside the downloaded repo, follow that path shown below, and you'll find different fonts inside a folder. For our case, we use `latin.ttf`. `ttf` is the font format which stands for `True Type Font`.
+To use the `draw_ocr` method, we need a path defined to the specific fonts. Inside the downloaded repo, follow that path shown below, and you'll find different fonts inside a folder. For our case, we use `latin.ttf`. `ttf` is the font format for `True Type Font`.
 
 We do this by issuing the following command:
 
@@ -195,13 +197,13 @@ Using matplotlib, let's first resize our display area.
 ```python
 plt.figure(figsize=(15,15))
 ```
-We then use the `draw_ocr` method to draw annotations on the image
+We then use the `draw_ocr` method to draw annotations on the image.
 
 ```python
 annotated = draw_ocr(img, boxes, texts, scores, font_path=font_path) 
 ```
 
-Finally, we use matplotlib's `imshow()` method to visualize the image
+Finally, we use matplotlib's `imshow()` method to visualize the image.
 
 ```python
 plt.imshow(annotated)
@@ -210,12 +212,12 @@ Let's take a look at the result. This's the same image we had earlier. We can se
 
 ![Output image using PaddleOCR](/engineering-education/drug-labels-extraction-using-deep-learning/output.png)
 
-Please find the full code to my code implementation [here](https://colab.research.google.com/drive/11EfSPacknXm16wWIkbyCCbyFSqVou0Ht).
+Please find the complete code to my code implementation [here](https://colab.research.google.com/drive/11EfSPacknXm16wWIkbyCCbyFSqVou0Ht).
 
 ### Wrapping up
-One key feature of the PaddleOCR model is that it's extremely fast. We also note that with a few lines of code, you can extract labels from prescribed medicine. Amazing, right? 
+One key feature of the PaddleOCR model is that it's swift. We also note that with a few lines of code, you can extract labels from prescribed medicine. Amazing, right? 
 
-In a nutshell, this tutorial showed you how you can use OCR to extract text from drug labels. The sizes and quality of your image will greatly impact your results. Remotely running this colab project may give you an error since you can't use my image path remotely. You can import an image of your choice into your colab, or you can carry out the task locally to circumvent this error. 
+In a nutshell, this tutorial showed you how you could use OCR to extract text from drug labels. The sizes and quality of your image will significantly impact your results. Remotely running this colab project may give you an error since you can't use my image path remotely. You can import an image of your choice into your colab, or you can carry out the task locally to circumvent this error.  
 
 Try playing around with the code and see what you find.  
 
