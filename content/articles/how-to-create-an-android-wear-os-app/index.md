@@ -6,7 +6,7 @@ url: /how-to-create-an-android-wear-os-app/
 title: How to Create an Android Wear OS Application
 description: This article will cover how to create an Android-based Wear OS application. Wear OS is a new operating system for wearables, such as smartwatches, and smartbands. Although it is centered on Android, it offers a unique look and a set of functionalities that are not available on other Android devices.
 author: antony-muriuki
-date: 2021-09-15T00:00:00-13:40
+date: 2021-09-15T00:00:00-14:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
