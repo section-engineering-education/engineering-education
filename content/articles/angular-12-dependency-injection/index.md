@@ -1,11 +1,9 @@
 ### Introduction
-
 Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
 
-In this tutorial, we'll be building a sample student listing Angular 12 application that uses the dependency Injection.
+In this tutorial, we'll be building a sample student listing Angular 12 application that uses the dependency Injection in Angular 12.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Tutorial requirements](#tutorial-requirements)
@@ -17,23 +15,19 @@ In this tutorial, we'll be building a sample student listing Angular 12 applicat
 - [Conclusion](#conclusion)
 
 ### Tutorial requirements
-
 - Angular CLI (latest version preferred) installed on your local development environment.
 - Basic knowledge in Angular would go hand in hand.
 - Prior knowledge in JavaScript or TypeScript.
 
 ### Expected outcome
-
-This tutorial aims to get you started with Angular Dependency Injection. By following this tutorial, you'll have an in-depth knowledge of DI, which you may advance as you implement your projects.
+This tutorial aims to get you started with Angular2+ dependency injection. By following this tutorial, you'll have an in-depth knowledge of DI, which you may advance as you implement your own projects.
 
 ### Getting started with Angular dependency injection
-
 Dependency injection is all about resource sharing. Let's say, for example; you have a `StudentService` and `StudentComponent` that displays a list of students in a school. We may argue that the component class depends on the service class to display data since we're using the service to get data from API, as we'll see in the next section.  
 
 So it's essential to keep in mind that dependency injection is a style of programming approach that enables you as the developer to write code that communicates to each other. So, for example, when one class doesn't have a given resource, it can quickly get it from another type that has it and so on and forth.
 
 ### Creating Angular services
-
 Now that we've background knowledge in DI let's create a service that we'll use to return the list of interns in a given company.
 
 > Service is a term widely used in programming, especially in the world of microservices. It's simply a function or group of methods that are used to handle a specific task.
@@ -51,7 +45,7 @@ Output:
 CREATE src/app/student.ts (29 bytes)
 ```
 
-Now copy and add the following contents into this model as shown below:
+Next, copy and add the following contents into this model as shown below:
 
 ```ts
 export interface Student {
@@ -65,7 +59,6 @@ export interface Student {
 }
 
 ```
-
 Now that we have got the model let's proceed and create a service that will contain the functions to display the list of students.
 
 > It's important to note that the reason we're creating these services is to loosely couple our application and to allow for reusability.
@@ -82,7 +75,7 @@ CREATE src/app/student-list.service.spec.ts (359 bytes)
 CREATE src/app/student-list.service.ts (140 bytes)
 ```
 
-Now that we have a service let's add a function that will return the list of students with their respective details.
+Now that we have a service, let's add a function that returns the list of interns with their respective details.
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -145,8 +138,7 @@ export class StudentListService {
 }
 
 ```
-
-Now let's analyze the above service:
+Let's analyze the above service:
 
 - **Line 1** - We're importing `injectable` decorator. Without this decorator, this service cannot be injected (requested) by other application components.
 - **Line 2** - `Student` model is imported from `./student`. It's a common practice to always keep all your services in a `service` directory. Feel free to test it out.
@@ -236,7 +228,13 @@ Let's edit the `src/app/student/student.component.html` as shown below:
 
 ```
 
-Now run your Angular application.
+Now run your Angular application by executing the following command at the root of your application:
+
+```bash
+ng serve --port 4200
+```
+
+Expected output:
 
 ![Student table](/engineering-education/angular-di/output.png)
 
