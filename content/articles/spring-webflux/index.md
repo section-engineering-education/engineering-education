@@ -289,7 +289,7 @@ public class StudentController {
         return service.findAll();
     }
     // Updates the student with the provided id
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Mono<Student> updateStudent(@RequestBody Student student, @PathVariable("id") int id) {
         return service.update(student, id);
     }
