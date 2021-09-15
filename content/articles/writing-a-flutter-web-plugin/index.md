@@ -18,10 +18,12 @@ images:
 ### Introduction
 Flutter's `web support` enables a seamless online experience. For example, you can create apps for both iOS, Android, and web apps can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will take you through making the Flutter plugin web-enabled.
 
-When it comes to constructing Flutter plugins, the fundamental distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner, as shown. By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without you needing to do so yourself. A flutter plugin, on the other hand, contains just Dart code, while a package only contains Native code. Plugins can be used by a package if it so chooses. 
+When it comes to constructing Flutter plugins, the fundamental distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
+
+By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without you needing to do so yourself. A flutter plugin, on the other hand, contains just Dart code, while a package only contains Native code. Plugins can be used by a package if it so chooses. 
 
 ### Platform interfacing
-Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Also, Platform interfacing explains how the plugin package communicates with the platform implementation and its replacement of what the plugin package wants from the platform.
+Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Additionally, platform interfacing explains how the plugin package communicates with the platform implementation and its replacement of what the plugin package needs from the platform.
 
 ### Creating the platform interface package
 In the other example, the plugin sits in a directory like packages/URL launcher in the flutter/plugins directory GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
@@ -69,9 +71,10 @@ import 'method_channel_url_launcher.dart';
 }
 ```
 
-Implementations of url launchers must adhere to this interface.
-Platform implementations should extend the above class instead of implementing a URL launcher.
+Implementations of url launchers must adhere to this interface. Platform implementations should extend the above class instead of implementing a URL launcher.
+
 By definition, new methods are not considered breaking changes. Extending the above class (with extends) assures that the subclass receives the default implementation, whereas the newly added interface will damage platform implementations of this interface.
+
 > The default implementation of all platform interface functions should throw a UnimplementedError.
 
  For example, to write `MethodChannelUrlLauncher`, now edit lib/method channel url launcher and paste the following:
@@ -153,7 +156,7 @@ To use this plugin:
 - Try it out! (or stop and restart it, if it was already running before adding the plugin).
 
 ### Conclusion
-Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. In this case, you may convert existing Flutter code written in Dart to operate on the web because it's the same framework. The web is also another device target for your project. It is time to start writing your plugins!.
+Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. Programmers can convert Flutter code to operate on the web because the code is from the same framework besides the versatility. It is time to start writing your plugins!.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
