@@ -20,7 +20,7 @@ Applying cutting-edge technologies to modern problems has enabled various proble
 
 One notable area of concern in healthcare that hasn't been explored a lot is drug label extraction. Optical Character Recognition (OCR) uses optics to extract readable text into machine-encoded text.
 
-The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services, such as Adobe, provided this feature on their app.   
+OCR has been used on Google's visual translation service. A large number of companies that process paper-based forms also use OCR to extract texts from documents. Recently, most companies offering PDF services, such as Adobe, provided this feature on their app.
 
 This technology is what our tutorial will be based on. We'll use OCR to enable us to extract drug labels/text from prescription medicine automatically. 
 
