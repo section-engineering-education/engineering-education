@@ -29,14 +29,6 @@ All runtime null-dereference problems will now be shown at compile-time, thanks 
 If you get a variable or something similar, the compiler can ensure it but even if the variable is not null, type safety alone does not guarantee that it is and when an error occurs, the null value is returned. 
 
 This article will cover how null Safety is implemented in Flutter, how it impacts the development process, the benefits it brings, and how to transition your flutter applications to Null Safety.
-
-Table of content:
-- [Principles of Null Safety](#principles-of-null-safety)
-- [What are Nullable and Non-nullable types?](#what-are-nullable-and-non-nullable-types)
-- [Sound and Unsound null safety](#sound-and-unsound-null-safety)
-- [How Null-safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
-- [Reasons for Null-safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
-
 ### Prerequisites
 There are several basic requirements that must be met before you can use Null Safety in your Flutter apps.
 1. Flutter SDK version 2.0.0
