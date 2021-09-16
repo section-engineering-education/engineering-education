@@ -4,24 +4,9 @@ However, with WordPress being beginner-friendly, its backing technology is serve
 
 Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user makes a request to the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With outstanding technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
 
-### What is a headless CMS
-First, a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website, a mobile application, etc to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS any more.
-
-In simple terms, you still have WordPress CMS for content creation, and management saved to a database. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
-
-### Reasons for running WorPress as a headless CMS
-- You can change the content delivery channels when you would like to without re-authoring the content.
-
-- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. As a developer, this allows you things that matter most, such as creating great digital experiences for your users.
-
-- API driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
-
-- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
-
 ### Overview
 - [What is a headless CMS](#what-is-a-headless-cms)
-- [Reasons for running WorPress as a headless CMS](#reasons-for-running-worpress-as-a-headless-cms)
-- [Overview](#overview)
+- [Reasons for running WordPress as a headless CMS](#reasons-for-running-wordpress-as-a-headless-cms)
 - [Adding a post](#adding-a-post)
 - [Installing the WpGraphQL plugin](#installing-the-wpgraphql-plugin)
 - [Running a query from the GraphiQL IDE](#running-a-query-from-the-graphiql-ide)
@@ -34,6 +19,20 @@ In simple terms, you still have WordPress CMS for content creation, and manageme
 - [Testing with a single post](#testing-with-a-single-post)
 - [Conclusion](#conclusion)
 - [References](#references)
+
+### What is a headless CMS
+First, a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website, a mobile application, etc to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS any more.
+
+In simple terms, you still have WordPress CMS for content creation, and management saved to a database. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
+
+### Reasons for running WordPress as a headless CMS
+- You can change the content delivery channels when you would like to without re-authoring the content.
+
+- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. As a developer, this allows you things that matter most, such as creating great digital experiences for your users.
+
+- API driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
+
+- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
 
 ### Adding a post
 
