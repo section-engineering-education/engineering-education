@@ -236,7 +236,7 @@ The following example shows how to use a modal plugin:
 ### Bootstrap progress bar
 The progress bar is a component that shows the progress of a task, eg the progress of installing software. The progress is normally represented in a percentage form. 
 
-In the `index.html` file, replace the existing snippet with the one below, open the file with your favourite browser to see the output:
+In the `index.html` file, replace the existing snippet with the one below:
 
 ```html
 <html>
